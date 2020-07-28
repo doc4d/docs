@@ -234,7 +234,7 @@ All database tables can be used, regardless of whether the form is related to a 
 This property is available in the following conditions:
 
 - a [choice list](#choice-list) is associated with the object
-- for [inputs](input_overview.md) and [list box columns](listbox_overview.md#list-box-columns), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
+- for [list box columns](listbox_overview.md#list-box-columns), a [required list](properties_RangeOfValues.md#required-list) is also defined for the object (both options should use usually the same list), so that only values from the list can be entered by the user.
 
 This property specifies, in the context of a field or variable associated with a list of values, the type of contents to save:
 
@@ -257,7 +257,7 @@ Using this property requires compliance with the following principles:
 |saveAs| string|"value", "reference"|
 
 #### Objects Supported
-[Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+[Drop-down List](dropdownList_Overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
 
 
