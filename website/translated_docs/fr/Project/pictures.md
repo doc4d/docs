@@ -55,7 +55,7 @@ Cette icône indique que l'image ne peut être ni affichée ni manipulée locale
 *   Boutons d'image/pop-ups
 *   Tab controls
 *   Menu icons
-*   List box headers
+*   En-têtes de list box
 
 High resolution displays have a higher pixel density than traditional standard displays. For pictures to render correctly on high resolution displays, the number of pixels in the picture must be multiplied by the *scale factor* (*i.e.*, two times larger, three times larger, etc.).
 

@@ -141,7 +141,7 @@ Im Explorer werden Klassen auf der Seite **Methoden** in der Kategorie **Klassen
 Um eine neue Klasse zu erstellen:
 
 - Wählen Sie die Kategorie **Klassen** und klicken auf die Schaltfläche![](assets/en/Users/PlussNew.png).
-- Wählen Sie am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen den Eintrag **Neue Klasse**. ![](assets/en/Concepts/newClass.png)
+- Wählen Sie den Eintrag **Neue Klasse** am unteren Rand des Explorer-Fensters im Menü Optionen oder im Kontextmenü der Kategorie Klassen. ![](assets/en/Concepts/newClass.png)
 - Wählen Sie auf der Seite Home im Menü Optionen am unteren Rand den Eintrag **Neu > Klasse...**.
 
 #### Unterstützung von Code für Klassen
@@ -198,21 +198,21 @@ Function getAge
   $0:=(Current date-This.birthdate)/365.25
 ```
 
-For a class function, the `Current method name` command returns: "*\<ClassName>.\<FunctionName>*", for example "MyClass.myMethod".
+Der Befehl `Current method name` gibt für eine Function zurück: "*\<ClassName>.\<FunctionName>*", z.B. "MyClass.myMethod".
 
-In the database code, class functions are called as member methods of the object instance and can receive parameters if any. Folgende Syntaxarten werden unterstützt
+Im Code der Anwendung werden Functions der Klasse als Member Methods der Instanz des Objekts aufgerufen und können Parameter empfangen, falls vorhanden. Folgende Syntaxarten werden unterstützt
 
-- Verwendung des Operators `()` For example `myObject.methodName("hello")`.
-- use of a "Function" class member methods
+- Verwendung des Operators `()` Zum Beispiel verwendet  `myObject.methodName("hello")`.
+- eine der Class member Methods "Function"
     - `apply()`
     - `call()`
 
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:  
-> - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **Thread-safety Warnung:** Ist eine Class Function nicht thread-safe und wird von einer Methode mit der Option "Als preemptive Prozess starten" aufgerufen:  
+> - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden), - gibt 4D einen Fehler nur im laufenden Betrieb aus.
 
 
-#### Example
+#### Beispiel
 
 ```4d
 // Class: Rectangle
@@ -239,7 +239,7 @@ $area:=$o.getArea(50;100) //5000
 ```
 
 
-### Class constructor
+### Class Constructor
 
 #### Syntax
 
@@ -249,14 +249,14 @@ Class Constructor
 // code
 ```
 
-A class constructor function, which can accept parameters, can be used to define a user class.
+Mit einer Function Class Constructor, die Parameter zulässt, lässt sich eine Benutzerklasse definieren.
 
-In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionally passed to the `new()` function.
+Dann wird beim Aufrufen der Member Method `new()` der Klasse der Class Constructor mit den optional in `new()` übergebenen Parametern aufgerufen.
 
-For a class constructor function, the `Current method name` command returns: "*\<ClassName>.constructor*", for example "MyClass.constructor".
+Für eine Function Class Constructor gibt der Befehl `Current method name` zurück: "*\<ClassName>.constructor*", zum Beispiel "MyClass.constructor".
 
 
-#### Example:
+#### Beispiel:
 
 ```4d
 // Class: MyClass
@@ -286,22 +286,22 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
+Das Schlüsselwort  `Class extends` dient beim Deklarieren der Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
 
-Class extension must respect the following rules:
+Für Erweiterungen einer Klasse gelten folgende Regeln:
 
-- A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
-- A user class cannot extend a user class from another database or component.
-- A user class cannot extend itself.
-- It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
+- Eine Benutzerklasse kann keine vorgegebene Klasse erweitern (außer 4D.Object, die standardmäßig für Benutzerklassen erweitert wird.)
+- Eine Benutzerklasse kann keine Benutzerklasse aus einem anderen Projekt bzw. einer Komponente erweitern. .
+- Eine Benutzerklasse kann sich nicht selbst erweitern.
+- Klassen lassen sich nicht kreisförmig erweitern (z.B. "a" erweitert "b", das wieder "a" erweitert).
 
-Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
+Ein Verstoß gegen eine dieser Regeln wird weder vom Code-Editor noch vom Interpreter erkannt, in diesem Fall lösen nur der Compiler und `Syntaxprüfung` einen Fehler aus.
 
-An extended class can call the constructor of its parent class using the [`Super`](#super) command.
+Eine erweiterte Klasse kann den Constructor seiner übergeordneten Klasse über den Befehl [`Super`](#super) aufrufen.
 
-#### Example
+#### Beispiel
 
-This example creates a class called `Square` from a class called `Polygon`.
+Dieses Beispiel erstellt eine Klasse mit Namen `Square` aus einer Klasse mit Namen `Polygon`.
 
 ```4d
   //Class: Square
@@ -328,49 +328,49 @@ $0:=This.height*This.width
 
 #### Super {( param{;...;paramN} )} {-> Object}
 
-| Parameter | Type   |    | Description                                    |
-| --------- | ------ | -- | ---------------------------------------------- |
-| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
-| Result    | object | <- | Object's parent                                |
+| Parameter | Typ    |    | Beschreibung                                 |
+| --------- | ------ | -- | -------------------------------------------- |
+| param     | mixed  | -> | Parameter für den übergeordneten Constructor |
+| Ergebnis  | object | <- | Überordnung des Objekts                      |
 
-The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
+Mit dem Schlüsselwort  `Super` lassen sich Aufrufe zur  `superclass`, z.B. die übergeordnete Klasse.
 
-`Super` serves two different purposes:
+`Super` dient für zwei unterschiedliche Zwecke:
 
-- inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
-    - If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
-    - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
-    - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
+- innerhalb des [Constructor Code](#class-constructor) ist `Super` ein Befehl zum Aufrufen des Constructor der Superklasse. In einem Constructor erscheint der Befehl `Super` alleine und muss vor dem Schlüsselwort `This` aufgerufen werden.
+    - Werden nicht alle Class Constructors im Vererbungsbaum korrekt aufgerufen, wird der Fehler -10748 generiert. Der 4D Entwickler muss sicherstellen, dass Aufrufe gültig sind.
+    - Wird `This` in einem Objekt aufgerufen, dessen Superklassen nicht aufgebaut wurden, wird Fehler -10743 generiert.
+    - Wird `Super` in der Reichweite eines Objekts aufgerufen oder in einem Objekt, dessen Constructor der Superklasse bereits aufgerufen wurde, wird Fehler -10746 generiert.
 
 ```4d
-  // inside myClass constructor
+// inside myClass constructor
  C_TEXT($1;$2)
  Super($1) //calls superclass constructor with a text param
  This.param:=$2 // use second param
 ```
 
-- inside a [class member function](#class-function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
+- Innerhalb einer [Class Member Function](#class-function) bezeichnet `Super` den Prototyp der Superklasse und erlaubt, eine Function in der Hierarchie der Superklasse aufzurufen.
 
 ```4d
  Super.doSomething(42) //calls "doSomething" function  
     //declared in superclasses
 ```
 
-#### Example 1
+#### Beispiel 1
 
-This example illustrates the use of `Super` in a class constructor. The command is called to avoid duplicating the constructor parts that are common between `Rectangle` and `Square` classes.
+Dieses Beispiel zeigt die Verwendung von `Super` in einem Class Constructor. Dieser Befehl sorgt dafür, dass Teile des Constructors, die für `Rectangle` und `Square` gleich sind, nicht dupliziert werden.
 
 ```4d
-  //Class: Rectangle
+// Class: Rectangle
 
- Class constructor
+Class constructor
  C_LONGINT($1;$2)
- This.name:="Rectangle"
- This.height:=$1
- This.width:=$2
+    This.name:="Rectangle"
+    This.height:=$1
+    This.width:=$2
 
- Function sayName
- ALERT("Hi, I am a "+This.name+".")
+Function sayName
+    ALERT("Hi, I am a "+This.name+".")
 
  Function getArea
  C_LONGINT($0)
@@ -394,9 +394,9 @@ This example illustrates the use of `Super` in a class constructor. The command 
  This.name:="Square"
 ```
 
-#### Example 2
+#### Beispiel 2
 
-This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
+Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. You created the `Rectangle` class with a function:
 
 ```4d
   //Class: Rectangle
