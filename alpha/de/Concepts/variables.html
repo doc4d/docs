@@ -78,7 +78,7 @@
 <li>Über das Schlüsselwort <code>var</code> (empfohlen, besonders wenn Ihr Code Objekte und Klassen verwendet),</li>
 <li>Über Befehle der 4D Programmiersprache in den Kapiteln &quot;Compiler&quot; oder &quot;Arrays&quot; (überholt, nur in der klassischen Programmiersprache).</li>
 </ul>
-<p><strong>Note:</strong> Although it is usually not recommended, you can create basic variables simply by using them; you do not necessarily need to formally define them. Beispiel: Für eine Variable, die das aktuelle Datum plus 30 Tage angibt, können Sie schreiben:</p>
+<p><strong>Hinweis:</strong> Auch wenn wir davon abraten, können Sie Variablen einfach durch ihre Verwendung erstellen; Sie müssen sie nicht formell mit Typ definieren. Beispiel: Für eine Variable, die das aktuelle Datum plus 30 Tage angibt, können Sie schreiben:</p>
 <pre><code class="hljs css language-4d"> MyDate:=Current date+<span class="hljs-number">30</span> <span class="hljs-comment">//MyDate is created  </span>
  <span class="hljs-comment">// 4D guesses it is of date type  </span>
  <span class="hljs-comment">// and assigns the current date plus 30 days</span>
@@ -93,14 +93,14 @@ var</span> myDate1; myDate2 : Date  <span class="hljs-comment">//several date va
 var</span> <span class="hljs-variable">$myFile </span>: 4D.File  <span class="hljs-comment">//a file class object variable</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">//a variant variable</span>
 </code></pre>
-<p><code>varName</code> is the variable name, it must comply with the <a href="/docs/alpha/de/Concepts/identifiers.html">4D rules</a> about identifiers.<br>
-This syntax only supports <a href="#local-process-and-interprocess-variables">local and process variables</a> declarations, thus excluding <a href="#interprocess-variables">interprocess variables</a> and <a href="/docs/alpha/de/Concepts/arrays.html">arrays</a>.</p>
+<p><code>varName</code> ist der Variablenname, er muss mit den <a href="/docs/alpha/de/Concepts/identifiers.html">4D Regeln</a> für Identifier konform sein.<br>
+Diese Syntax unterstützt nur <a href="#local-process-and-interprocess-variables">Deklarationen für lokale und Prozessvariablen</a>, d. h. <a href="#interprocess-variables">Interprozessvariablen</a> und <a href="/docs/alpha/de/Concepts/arrays.html">Arrays</a> sind ausgeschlossen.</p>
 <p><code>varTyp</code> kann folgendes sein:</p>
 <ul>
 <li><a href="/docs/alpha/de/Concepts/data-types.html">Datentyp</a>, dann enthält die Variable einen Wert vom deklarierten Typ</li>
 <li><a href="/docs/alpha/de/Concepts/classes.html">Referenz auf eine Klasse</a> (4D Klasse oder Benutzerklasse), dann enthält die Variable die Referenz auf ein Objekt der definierten Klasse.</li>
 </ul>
-<p>If <code>varType</code> is omitted, a variable of the <strong>variant</strong> type is created.</p>
+<p>Ist <code>varTyp</code> nicht übergeben, wird eine Variable vom Typ <strong>variant</strong> erstellt.</p>
 <p>Nachfolgende Liste zeigt alle unterstützten Werte für <code>varTyp</code>:</p>
 <table spaces-before="0" line-breaks-before="2">
   <tr>
@@ -266,7 +266,7 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="eine-c_direktive-verwenden"></a><a href="#eine-c_direktive-verwenden" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Eine C_Direktive verwenden</h3>
 <blockquote>
-<p><strong>Compatibility Note:</strong> This feature is deprecated as of 4D v18 R3. Es wird empfohlen, das Schlüsselwort <a href="#using-the-var-keyword">var</a> zu verwenden.</p>
+<p><strong>Hinweis zur Kompatibilität:</strong> Diese Funktionalität ist ab 4D v18 R3 veraltet. Es wird empfohlen, das Schlüsselwort <a href="#using-the-var-keyword">var</a> zu verwenden.</p>
 </blockquote>
 <p>Über Direktiven von Compiler-Befehlen können Sie Grundtypen von Variablen deklarieren.</p>
 <p>Wollen Sie z. B. eine Textvariable definieren, schreiben Sie:</p>
@@ -280,7 +280,7 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 <span class="hljs-function"> C_COLLECTION</span>(<span class="hljs-variable">$vCol</span>) <span class="hljs-comment">// Die lokale Variable $vCol ist als eine Variable vom Typ Collection deklariert</span>
 <span class="hljs-function"> ARRAY LONGINT</span>(alAnArray;<span class="hljs-number">10</span>) <span class="hljs-comment">//Die Prozessvariable alAnArray ist als ein Array vom Typ Lange Ganzzahl mit 10 Elementen deklariert</span>
 </code></pre>
-<p><strong>Note:</strong> Arrays are a particular type of variables. Ein Array ist eine sortierte Reihe von Variablen desselben Typs. Weitere Informationen dazu finden Sie unter <a href="/docs/alpha/de/Concepts/arrays.html">Arrays</a>.</p>
+<p><strong>Hinweis:</strong> Arrays sind ein besonderer Variablentyp. Ein Array ist eine sortierte Reihe von Variablen desselben Typs. Weitere Informationen dazu finden Sie unter <a href="/docs/alpha/de/Concepts/arrays.html">Arrays</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="daten-zuweisen"></a><a href="#daten-zuweisen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Daten zuweisen</h2>
 <p>Daten lassen sich in Variablen und Arrays setzen und daraus kopieren. Daten in eine Variable setzen heißt, <strong>der Variablen die Daten zuweisen</strong>. Das geschieht über den Zuweisungsoperator (:=). Der Zuweisungsoperator wird auch verwendet, um Feldern Daten zuzuweisen.</p>
 <p>Der Zuweisungsoperator ist wesentlich, um eine Variable zu erstellen und Daten in sie einzusetzen. Sie schreiben den Namen der gewünschten Variablen auf die linke Seite des Zuweisungsoperators. Beispiel:</p>
