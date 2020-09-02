@@ -94,7 +94,7 @@ MyVar:=<span class="hljs-function">Length</span>(<span class="hljs-string">"Acme
 <p>Auch wenn es normalerweise nicht empfehlenswert ist, können Sie Variablen einfach über ihre Verwendung deklarieren; Sie müssen sie nicht unbedingt förmlich definieren. Beispiel: Für eine Variable, die das aktuelle Datum plus 30 Tage angibt, können Sie schreiben:</p>
 <pre><code class="hljs css language-4d">MyOtherDate:=Current date+<span class="hljs-number">30</span>
 </code></pre>
-<p>Die Code-Zeile bedeutet &quot;MyOtherDate erhält das aktuelle Datum plus 30 Tage.&quot; This line declares the variable, assigns it with both the (temporary) date type and a content. Eine per Zuweisung deklarierte Variable wird als typlos interpretiert, d. h. sie kann mit anderen Typen in anderen Zeilen zugewiesen werden und ändert dann den Typ dynamisch. Eine mit <code>var</code> typisierte Variable kann ihren Typ nicht ändern. Im <a href="/docs/de/Concepts/interpreted-compiled.html">kompilierten Modus</a> lässt sich der Typ dagegen niemals ändern, unabhängig wie die Variable deklariert wurde.</p>
+<p>Die Code-Zeile bedeutet &quot;MyOtherDate erhält das aktuelle Datum plus 30 Tage.&quot; Diese Zeile erstellt die Variable, weist ihr den Datentyp (temporär) und einen Inhalt zu. Eine per Zuweisung deklarierte Variable wird als typlos interpretiert, d. h. sie kann mit anderen Typen in anderen Zeilen zugewiesen werden und ändert dann den Typ dynamisch. Eine mit <code>var</code> typisierte Variable kann ihren Typ nicht ändern. Im <a href="/docs/de/Concepts/interpreted-compiled.html">kompilierten Modus</a> lässt sich der Typ dagegen niemals ändern, unabhängig wie die Variable deklariert wurde.</p>
 <h2><a class="anchor" aria-hidden="true" id="befehle"></a><a href="#befehle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Befehle</h2>
 <p>4D Befehle sind integrierte Methoden zum Ausführen einer Aktion. Alle 4D Befehle, wie z. B. <code>CREATE RECORD</code> oder <code>ALERT</code> werden im Handbuch <em>4D Programmiersprache</em> beschrieben und sind nach Themen gruppiert. Befehle werden oft mit Parametern verwendet, die in Klammern () und durch Strichpunkt (;) voneinander getrennt übergeben werden. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">COPY DOCUMENT</span>(<span class="hljs-string">"folder1\\name1"</span>;<span class="hljs-string">"folder2\\"</span> ; <span class="hljs-string">"new"</span>)
@@ -173,11 +173,11 @@ myColl[<span class="hljs-number">3</span>]  <span class="hljs-comment">//access 
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="klassen"></a><a href="#klassen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Klassen</h2>
 <p>Die 4D Programmiersprache unterstützt Objekt Klassen. Um eine Klasse mit Name &quot;myClass&quot; zu erstellen, fügen Sie im Ordner Project/Sources/Classes eines Projekts die Datei <code>myClass.4dm</code> hinzu.</p>
-<p>To instantiate an object of the class in a method, call the user class from the <em>class store</em> (<code>cs</code>) and use the <code>new()</code> member function. Sie können Parameter übergeben.</p>
+<p>Um eine Instanz auf ein Objekt der Klasse in einer Methode zu setzen, rufen Sie die Benutzerklasse aus dem <em>Class Store</em> auf (<code>cs</code>) und verwenden die Member Function <code>new()</code>. Sie können Parameter übergeben.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// in a 4D method</span>
 <span class="hljs-variable">$o</span>:=cs.myClass.<span class="hljs-function">new</span>() 
 </code></pre>
-<p>In the <code>myClass</code> class method, use the <code>Function &lt;methodName&gt;</code>  statement to define the <em>methodName</em> class member method. Sie kann wie jede andere Methode Parameter empfangen und zurückgeben, und <code>This</code> als Instanz des Objekts verwenden.</p>
+<p>In der Klassenmethode <code>myClass</code> definieren Sie mit der Anweisung <code>Function &lt;methodName&gt;</code> die Member Method <em>methodName</em> der Klasse. Sie kann wie jede andere Methode Parameter empfangen und zurückgeben, und <code>This</code> als Instanz des Objekts verwenden.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//in the myClass.4dm file</span><span class="hljs-keyword">
 Function</span> hello
 <span class="hljs-function">  C_TEXT</span>(<span class="hljs-variable">$0</span>)
@@ -197,7 +197,7 @@ Class constructor</span>
 <span class="hljs-literal">This</span>.width:=<span class="hljs-variable">$2  </span>
 <span class="hljs-literal">This</span>.name:=<span class="hljs-string">"Rectangle"</span>
 </code></pre>
-<p>A class can extend another class by using <code>Class extends &lt;ClassName&gt;</code>. Superklassen lassen sich über den Befehl <code>Super</code> aufrufen. Beispiel:</p>
+<p>Eine Klasse kann über <code>Class extends &lt;ClassName&gt;</code> eine andere Klasse erweitern. Superklassen lassen sich über den Befehl <code>Super</code> aufrufen. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//in the Square.4dm file</span><span class="hljs-keyword">
 Class extends</span> rectangle<span class="hljs-keyword">
 
