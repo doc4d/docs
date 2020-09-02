@@ -339,14 +339,26 @@ Mit dem Schlüsselwort `Super` lassen sich Aufrufe zur `Superklasse` machen, z.B
 
 - innerhalb des [Constructor Code](#class-constructor) ist `Super` ein Befehl zum Aufrufen des Constructor der Superklasse. In einem Constructor erscheint der Befehl `Super` alleine und muss vor dem Schlüsselwort `This` aufgerufen werden.
     - Werden nicht alle Class Constructors im Vererbungsbaum korrekt aufgerufen, wird der Fehler -10748 generiert. Der 4D Entwickler muss sicherstellen, dass Aufrufe gültig sind.
-    - Wird `This<code> in einem Objekt aufgerufen, dessen Superklassen nicht aufgebaut wurden, wird Fehler -10743 generiert.</li>
-<li>Wird <code>Super` in der Reichweite eines Objekts aufgerufen oder in einem Objekt, dessen Constructor der Superklasse bereits aufgerufen wurde, wird Fehler  -10746 generiert.
+    - Wird `This` in einem Objekt aufgerufen, dessen Superklassen nicht aufgebaut wurden, wird Fehler -10743 generiert.
+    - Wird `Super` in der Reichweite eines Objekts aufgerufen oder in einem Objekt, dessen Constructor der Superklasse bereits aufgerufen wurde, wird Fehler -10746 generiert.
 
-<code class="4d" spaces="0" spaces-closing-marker="0" marker="```" spaces-after-opening-marker="0" line-breaks-before="2">// inside myClass constructor
+```4d
+// inside myClass constructor
  C_TEXT($1;$2)
  Super($1) //calls superclass constructor with a text param
  This.param:=$2 // use second param
-</code></pre> <8> <9>Innerhalb einer <10>Class Member Function</10> bezeichnet <2>Super</2> den Prototyp der Superklasse und erlaubt, eine Function in der Hierarchie der Superklasse aufzurufen.</9> </8> <7>Super.doSomething(42) //calls "doSomething" function //declared in superclasses </7> <11>Beispiel 1</11> <12>Dieses Beispiel zeigt die Verwendung von <2>Super</2> in einem Class Constructor. Dieser Befehl sorgt dafür, dass Teile des Constructors, die für `Rectangle` und `Square` gleich sind, nicht dupliziert werden.</p>
+```
+
+- Innerhalb einer [Class Member Function](#class-function) bezeichnet `Super` den Prototyp der Superklasse und erlaubt, eine Function in der Hierarchie der Superklasse aufzurufen.
+
+```4d
+ Super.doSomething(42) //calls "doSomething" function  
+    //declared in superclasses
+```
+
+#### Beispiel 1
+
+Dieses Beispiel zeigt die Verwendung von `Super` in einem Class Constructor. Dieser Befehl sorgt dafür, dass Teile des Constructors, die für `Rectangle` und `Square` gleich sind, nicht dupliziert werden.
 
 ```4d
 // Class: Rectangle
@@ -384,7 +396,7 @@ Function sayName
 
 #### Beispiel 2
 
-Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. You created the `Rectangle` class with a function:
+Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. Sie haben die Klasse `Rectangle` mit einer Function:
 
 ```4d
   //Class: Rectangle
@@ -394,7 +406,7 @@ Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. 
  $0:="I have 4 sides"
 ```
 
-You also created the `Square` class with a function calling the superclass function:
+Und die Klasse  `Square` mit einer Function, die die Superclass Function aufruft::
 
 ```4d
   //Class: Square
@@ -406,7 +418,7 @@ You also created the `Square` class with a function calling the superclass funct
  $0:=Super.nbSides()+" which are all equal"
 ```
 
-Then you can write in a project method:
+Dann können Sie in einer Projektmethode schreiben:
 
 ```4d
  C_OBJECT($square)
@@ -419,11 +431,11 @@ Then you can write in a project method:
 
 #### This -> Object
 
-| Parameter | Type   |    | Description    |
-| --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
+| Parameter | Typ    |    | Beschreibung     |
+| --------- | ------ | -- | ---------------- |
+| Ergebnis  | object | <- | Aktuelles Objekt |
 
-The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+Das Schlüsselwort  `This` gibt eine Referenz auf das gerade bearbeitete Objekt zurück. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
 In most cases, the value of `This` is determined by how a function is called. Er lässt sich während der Ausführung nicht per Zuweisung setzen und ist u. U. bei jedem Aufruf der Funktion anders.
 
