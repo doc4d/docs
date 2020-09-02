@@ -351,12 +351,13 @@ Mit dem Schlüsselwort  `Super` lassen sich Aufrufe zur  `superclass`, z.B. die 
 ```4d
 // Class: Rectangle
 
-Class constructor(: Integer;: Integer)
+Class constructor
+ C_LONGINT($1;$2)
     This.name:="Rectangle"
-    This.height:=
-    This.width:=$width
+    This.height:=$1
+    This.width:=$2
 
-Function sayName()
+Function sayName
     ALERT("Hi, I am a "+This.name+".")
 
  Function getArea
@@ -383,7 +384,7 @@ Function sayName()
 
 #### Beispiel 2
 
-Dieses Beispiel erläutert die Verwendung von `Super` in einer Class Member Method. You created the `Rectangle` class with a function:
+Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. You created the `Rectangle` class with a function:
 
 ```4d
   //Class: Rectangle
