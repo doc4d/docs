@@ -396,7 +396,7 @@ Function sayName
 
 #### Beispiel 2
 
-Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. You created the `Rectangle` class with a function:
+Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. Sie haben die Klasse `Rectangle` mit einer Function:
 
 ```4d
   //Class: Rectangle
@@ -406,7 +406,7 @@ Dieses Beispiel zeigt die Verwendung von  `Super` in einer Class Member Method. 
  $0:="I have 4 sides"
 ```
 
-You also created the `Square` class with a function calling the superclass function:
+Und die Klasse  `Square` mit einer Function, die die Superclass Function aufruft::
 
 ```4d
   //Class: Square
@@ -418,7 +418,7 @@ You also created the `Square` class with a function calling the superclass funct
  $0:=Super.nbSides()+" which are all equal"
 ```
 
-Then you can write in a project method:
+Dann können Sie in einer Projektmethode schreiben:
 
 ```4d
  C_OBJECT($square)
@@ -431,11 +431,11 @@ Then you can write in a project method:
 
 #### This -> Object
 
-| Parameter | Type   |    | Description    |
-| --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
+| Parameter | Typ    |    | Beschreibung     |
+| --------- | ------ | -- | ---------------- |
+| Ergebnis  | object | <- | Aktuelles Objekt |
 
-The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+Das Schlüsselwort  `This` gibt eine Referenz auf das gerade bearbeitete Objekt zurück. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
 In most cases, the value of `This` is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called.
 
