@@ -4,7 +4,7 @@ title: Aide
 ---
 
 ---
-## Help Tip
+## Message d'aide
 
 This property allows associating help messages with active objects in your forms. They can be displayed at runtime:
 
@@ -22,9 +22,9 @@ You can either:
 
 #### Grammaire JSON
 
-|   Nom   | Type de données | Valeurs possibles                     |
-|:-------:|:---------------:| ------------------------------------- |
-| tooltip |      Texte      | additional information to help a user |
+|   Nom   | Type de données | Valeurs possibles                                            |
+|:-------:|:---------------:| ------------------------------------------------------------ |
+| tooltip |      Texte      | informations supplémentaires destinées à aider l'utilisateur |
 
 #### Objets pris en charge
 
