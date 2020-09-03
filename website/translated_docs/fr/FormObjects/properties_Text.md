@@ -4,16 +4,16 @@ title: Texte
 ---
 
 ---
-## Allow font/color picker
+## Auoriser sélecteur police/couleur
 
 When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-FONT-PICKER.301-4505612.en.html) and [OPEN COLOR PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-COLOR-PICKER.301-4505611.en.html) commands can be called to display the system font and color picker windows. Using these windows, the users can change the font or color of a form object that has the focus directly by clicking. When this property is disabled (default), the open picker commands have no effect.
 
 
 #### Grammaire JSON
 
-| Propriété            | Type de données | Valeurs possibles     |
-| -------------------- | --------------- | --------------------- |
-| allowFontColorPicker | boolean         | false (default), true |
+| Propriété            | Type de données | Valeurs possibles        |
+| -------------------- | --------------- | ------------------------ |
+| allowFontColorPicker | boolean         | false (par défaut), true |
 
 #### Objets pris en charge
 
