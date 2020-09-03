@@ -435,18 +435,18 @@ Dann können Sie in einer Projektmethode schreiben:
 | --------- | ------ | -- | ---------------- |
 | Ergebnis  | object | <- | Aktuelles Objekt |
 
-Das Schlüsselwort  `This` gibt eine Referenz auf das gerade bearbeitete Objekt zurück. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+Das Schlüsselwort  `This` gibt eine Referenz auf das zu bearbeitende Objekt zurück. In 4D lässt es sich in [verschiedenen Kontexten](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html) verwenden.
 
-In most cases, the value of `This` is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called.
+In den meisten Fällen bestimmt der Wert von `This`, wie eine Function aufgerufen wird. Es lässt sich während der Ausführung nicht per Zuweisung setzen und kann bei jedem Aufrufen der Funktion anders sein.
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. For example:
+Wird eine Formel als Member Method eines Objekts aufgerufen, wird das dazugehörige `This` auf das Objekt gesetzt, wo die Methode aufgerufen wird. Zum Beispiel:
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
 $val:=$o.f() //42
 ```
 
-When a [class constructor](#class-constructor) function is used (with the `new()` keyword), its `This` is bound to the new object being constructed.
+Mit der Function [Class Constructor](#class-constructor) mit dem Schlüsselwort `new()` wird das dazugehörige `This` an das neue Objekt in Konstruktion gebunden.
 
 ```4d
   //Class: ob
@@ -463,10 +463,10 @@ $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. See [this example](#example-1).
+> Rufen Sie den Superclass Constructor in einen Constructor mit [Super](#super) auf, darf `This` nicht vor dem Superclass Constructor aufgerufen werden, sonst wird ein Fehler generiert. Siehe [dieses Beispiel](#example-1).
 
 
-In any cases, `This` refers to the object the method was called on, as if the method were on the object.
+In jedem Fall bezieht sich `This` auf das Objekt, in dem die Methode aufgerufen wurde, als ob die Methode im Objekt wäre.
 
 ```4d
   //Class: ob
@@ -475,7 +475,7 @@ In any cases, `This` refers to the object the method was called on, as if the me
     $0:=This.a+This.b
 ```
 
-Then you can write in a project method:
+Dann können Sie in einer Projektmethode schreiben:
 
 ```4d
 $o:=cs.ob.new()
@@ -483,23 +483,23 @@ $o.a:=5
 $o.b:=3
 $val:=$o.f() //8
 ```
-In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Since *f* is called as a method of $o, its `This` refers to $o.
+In diesem Beispiel hat das der Variablen $o zugewiesene Objekt keine eigene Eigenschaft *f*, sondern erbt sie von der dazugehörigen Klasse. Da *f* als eine Methode von $o, aufgerufen wird, bezieht sich das dazugehörige `This` auf $o.
 
 
-## Class commands
+## Befehle für Klassen
 
-Several commands of the 4D language allows you to handle class features.
+Einige Befehle der 4D Programmiersprache eignen sich zum Verwalten von Features für Klassen.
 
 
 ### OB Class
 
 #### OB Class ( object ) -> Object | Null
 
-`OB Class` returns the class of the object passed in parameter.
+`OB Class` gibt die Klasse des Objekts zurück, das im Parameter übergeben ist.
 
 
 ### OB Instance of
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
+`OB Instance of` gibt `wahr` zurück, wenn `object` zu `class` gehört oder zu einer seiner geerbten Klassen, sonst `false`.
