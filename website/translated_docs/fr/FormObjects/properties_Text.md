@@ -62,7 +62,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande [**OB
 ---
 ## Souligné
 Sets the text to have a line running beneath it.
-> This is normal text.<br> This is <span style="text-decoration:underline">underlined</span> text.
+> Ceci est un texte normal.<br> <span style="text-decoration:underline">Ceci est un texte souligné.</span>.
 
 #### Grammaire JSON
 
@@ -128,13 +128,13 @@ There are two types of font family names:
 * *generic-family:* The name of a generic-family, like "serif", "sans-serif", "cursive", "fantasy", "monospace".
 
 You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT.301-4054834.en.html) command.
-> <span style="font-family:Times New Roman; font-size:20pt"> This is Times New Roman font.</span><br> <span style="font-family:Calibri; font-size:20pt"> This is Calibri font.</span><br> <span style="font-family:Papyrus; font-size:20pt"> This is Papyrus font.</span>
+> <span style="font-family:Times New Roman; font-size:20pt"> Ceci est une police Times New Roman.</span><br> <span style="font-family:Calibri; font-size:20pt"> Ceci est une police Calibri.</span><br> <span style="font-family:Papyrus; font-size:20pt"> Ceci est une police Papyrus.</span>
 
 #### Grammaire JSON
 
-| Nom        | Type de données | Valeurs possibles    |
-| ---------- | --------------- | -------------------- |
-| fontFamily | string          | CSS font family name |
+| Nom        | Type de données | Valeurs possibles               |
+| ---------- | --------------- | ------------------------------- |
+| fontFamily | string          | Nom d'une famille de police CSS |
 > 4D recommends using only [web safe](https://www.w3schools.com/cssref/css_websafe_fonts.asp) fonts.
 
 #### Objets pris en charge
@@ -146,13 +146,13 @@ You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/1
 ---
 ## Taille
 
-Allows defining the object's font size in points.
+Permet de définir en points la taille de police de l'objet.
 
 #### Grammaire JSON
 
-| Nom      | Type de données | Valeurs possibles                     |
-| -------- | --------------- | ------------------------------------- |
-| fontSize | integer         | Font size in points. Minimum value: 0 |
+| Nom      | Type de données | Valeurs possibles                                  |
+| -------- | --------------- | -------------------------------------------------- |
+| fontSize | integer         | Taille de la police en points. Valeur minimale : 0 |
 
 #### Objets pris en charge
 
@@ -162,9 +162,9 @@ Allows defining the object's font size in points.
 ---
 ## Couleur de la police
 
-Designates the font color.
+Désigne la couleur de la police.
 
-> This property also sets the color of object's [border](#border-line-style-dotted-line-type) (if any) when "plain" or "dotted" style is used.
+> Cette propriété définit également la couleur de [bordure](#border-line-style-dotted-line-type) (le cas échéant) de l'objet lorsque le style "plein" ou "pointillé" est utilisé.
 
 The color can be specified by:
 
