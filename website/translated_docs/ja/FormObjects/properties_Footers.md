@@ -37,9 +37,9 @@ title: フッター
 
 単位の変換: 単位を変更した場合、4D は自動で値を再計算し、結果をプロパティリストに表示します。 たとえば、使用されるフォントが "Lucida grande 24" で高さが "1 行" に設定されていれば "30 ピクセル" に、高さが "60 ピクセル" なら "2 行" になります。
 
-単位の変更を繰り返すと、4D が自動で計算を行うため、最初の値とは結果が異なってしまうこともあります。 たとえば以下のようになります :
+単位の変更を繰り返すと、4D が自動で計算を行うため、最初の値とは結果が異なってしまうこともあります。 たとえば以下のようになります:
 
-*(font Arial 18)*: 52 pixels -> 2 lines -> 40 pixels *(font Arial 12)*: 3 pixels -> 0.4 line rounded up to 1 line -> 19 pixels
+*(Arial 18)*: 52 ピクセル -> 2 行 -> 40 ピクセル *(Arial 12)*: 3 ピクセル -> 0.4 行が 1 行に切り上げられる -> 19 ピクセル
 
 
 #### JSON 例:
@@ -56,9 +56,9 @@ title: フッター
 
 #### JSON 文法
 
-| 名            | データタイプ | とりうる値                         |
-| ------------ | ------ | ----------------------------- |
-| footerHeight | string | positive decimal+px &#124; em |
+| 名            | データタイプ | とりうる値                 |
+| ------------ | ------ | --------------------- |
+| footerHeight | string | 正の10進数 + px &#124; em |
 
 #### 対象オブジェクト
 
@@ -67,4 +67,4 @@ title: フッター
 
 #### 参照
 
-[Headers](properties_Headers.md) - [List box footers](listbox_overview.md#list-box-footers)
+[ヘッダー](properties_Headers.md) - [リストボックスフッター](listbox_overview.md#リストボックスフッター)
