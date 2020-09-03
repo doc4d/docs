@@ -146,13 +146,13 @@ You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/1
 ---
 ## Taille
 
-Allows defining the object's font size in points.
+Permet de définir en points la taille de police de l'objet.
 
 #### Grammaire JSON
 
-| Nom      | Type de données | Valeurs possibles                     |
-| -------- | --------------- | ------------------------------------- |
-| fontSize | integer         | Font size in points. Minimum value: 0 |
+| Nom      | Type de données | Valeurs possibles                                  |
+| -------- | --------------- | -------------------------------------------------- |
+| fontSize | integer         | Taille de la police en points. Valeur minimale : 0 |
 
 #### Objets pris en charge
 
@@ -162,9 +162,9 @@ Allows defining the object's font size in points.
 ---
 ## Couleur de la police
 
-Designates the font color.
+Désigne la couleur de la police.
 
-> This property also sets the color of object's [border](#border-line-style-dotted-line-type) (if any) when "plain" or "dotted" style is used.
+> Cette propriété définit également la couleur de [bordure](#border-line-style-dotted-line-type) (le cas échéant) de l'objet lorsque le style "plein" ou "pointillé" est utilisé.
 
 The color can be specified by:
 
@@ -183,7 +183,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 
 #### Objets pris en charge
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[Bouton](button_overview.md) - [Case à cocher](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Liste déroulante](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Liste hiérarchique](list_overview.md#overview) - [Zone de saisie](input_overview.md) - [List Box](listbox_overview.md#overview) - [Colonne List Box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers) - [En-tête List Box](listbox_overview.md#list-box-headers) - [Indicateurs de progression](progressIndicator.md) - [Règle](ruler.md) - [Bouton Radio](radio_overview.md) - [Zone de texte](text.md)
 
 
 
@@ -209,9 +209,9 @@ Foreground color;Dark shadow color)
 
 #### Grammaire JSON
 
-| Nom             | Type de données | Valeurs possibles     |
-| --------------- | --------------- | --------------------- |
-| rowStrokeSource | string          | Font color expression |
+| Nom             | Type de données | Valeurs possibles         |
+| --------------- | --------------- | ------------------------- |
+| rowStrokeSource | string          | Expression couleur police |
 
 #### Objets pris en charge
 
