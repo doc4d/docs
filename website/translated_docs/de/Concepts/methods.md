@@ -16,31 +16,31 @@ In der 4D Programmiersprache gibt es verschiedene Kategorien von Methoden. Die K
 
 | Typ                                              | Kontext des Aufrufs                                                                                                         | Akzeptiert Parameter | Beschreibung                                                                                                                                                                                                     |
 | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Projektmethode**                               | Bei Bedarf, wenn der Name einer Projektmethode aufgerufen wird (siehe [Projektmethoden aufrufen](#calling-project-methods)) | Ja                   | Can contain any code to execute any custom actions. Once a project method is created, it becomes part of the language of the project.                                                                            |
+| **Projektmethode**                               | Bei Bedarf, wenn der Name einer Projektmethode aufgerufen wird (siehe [Projektmethoden aufrufen](#calling-project-methods)) | Ja                   | Kann beliebigen Code zum Ausführen eigener Aktionen enthalten. Eine einmal erstellte Projektmethode wird Teil der Programmierung des Projekts.                                                                   |
 | **Objekt (Widget) Methode**                      | Automatisch, wenn ein Ereignis das Objekt betrifft, dem die Methode zugeordnet ist                                          | Nein                 | Eigenschaft eines Formularobjekts (auch Widget genannt)                                                                                                                                                          |
 | **Formularmethode**                              | Automatisch, wenn ein Ereignis das Formular betrifft, dem die Methode zugeordnet ist                                        | Nein                 | Eigenschaft eines Formulars. Sie können eine Formularmethode zum Verwalten von Daten und Objekten verwenden. Für diese Zwecke ist es jedoch generell einfacher und effizienter, eine Objektmethode zu verwenden. |
 | **Trigger** (auch bekannt als *Tabellenmethode*) | Automatisch, jedes Mal wenn Sie die Datensätze einer Tabelle bearbeiten (Hinzufügen, Löschen, Ändern)                       | Nein                 | Eigenschaft einer Tabelle. Trigger sind Methoden, die “illegale” Operationen mit Datensätzen in Ihrer Datenbank verhindern.                                                                                      |
 | **Datenbankmethoden**                            | Automatisch, wenn ein Ereignis in der Arbeitssitzung eintritt                                                               | Ja (vordefiniert)    | Es gibt 16 Datenbankmethoden in 4D. Siehe Abschnitt zu Datenbankmethoden                                                                                                                                         |
 
 
-> The 4D Language also supports **Class functions**, that can be called in the context of an object instance. Class functions can be built-in (*e.g.* `collection.orderBy()` or `entity.save()`), or [created by the 4D developer](classes.md#class-function).
+> Die 4D Programmiersprache unterstützt auch **Class functions**, die im Kontext der Instanz eines Objekts aufgerufen werden. Class Functions können integriert sein (*z.B.* `collection.orderBy()` oder `entity.save()`) oder vom 4D Entwickler [erstellt worden sein](classes.md#class-function).
 
 
 ## Projektmethoden aufrufen
 
 Eine Projektmethode kann je nach Ausführung und Verwendung folgende Rolle haben:
 
-- Subroutine
-- Object formula
+- Unterroutine
+- Objekt Formel
 - Menümethode
 - Prozessmethode
 - Auf Ereignis oder Fehler bezogene Methode
 
-### Subroutines
+### Unterroutinen
 
 Eine Unterroutine ist eine Projektmethode, die man sich als Diener vorstellen kann. Sie führt die Aufgaben (tasks) aus, deren Durchführung andere Methoden anfordern. Eine Funktion ist eine Unterroutine, die einen Wert an die Methode zurückgibt, die sie aufgerufen hat.
 
-When you create a project method, it becomes part of the language of the project in which you create it. You can then call the project method from another method (project method, object method...) in the same way that you call 4D’s built-in commands. Eine so verwendete Projektmethode heißt Unterroutine.
+Eine einmal erstellte Projektmethode wird Teil der Programmierung des Projekts, in dem sie angelegt wurde. You can then call the project method from another method (project method, object method...) in the same way that you call 4D’s built-in commands. Eine so verwendete Projektmethode heißt Unterroutine.
 
 Sie verwenden Unterroutinen, um:
 
