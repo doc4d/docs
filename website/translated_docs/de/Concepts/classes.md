@@ -435,9 +435,9 @@ Dann können Sie in einer Projektmethode schreiben:
 | --------- | ------ | -- | ---------------- |
 | Ergebnis  | object | <- | Aktuelles Objekt |
 
-Das Schlüsselwort  `This` gibt eine Referenz auf das gerade bearbeitete Objekt zurück. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+Das Schlüsselwort  `This` gibt eine Referenz auf zu bearbeitende Objekt zurück. In 4D lässt es sich in [verschiedenen Kontexten](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html) verwenden.
 
-In most cases, the value of `This` is determined by how a function is called. Er lässt sich während der Ausführung nicht per Zuweisung setzen und ist u. U. bei jedem Aufruf der Funktion anders.
+In den meisten Fällen bestimmt der Wert von `This`, wie eine Function aufgerufen wird. Er lässt sich während der Ausführung nicht per Zuweisung setzen und ist u. U. bei jedem Aufruf der Funktion anders.
 
 Wird eine Formel als Member Method eines Objekts aufgerufen, wird das dazugehörige `This` in das Objekt gesetzt, in dem die Methode aufgerufen wird. Zum Beispiel:
 
