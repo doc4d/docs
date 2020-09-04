@@ -6,7 +6,7 @@ title: ヘルプ
 ---
 ## ヘルプTips
 
-This property allows associating help messages with active objects in your forms. They can be displayed at runtime:
+このプロパティで、フォーム上のアクティブオブジェクトにヘルプTip を付加することができます。 ランタイムにおいてマウスがオブジェクト上にあるとき、ヘルプメッセージが Tip として表示されます:
 
 ![](assets/en/FormObjects/property_helpTip.png)
 
