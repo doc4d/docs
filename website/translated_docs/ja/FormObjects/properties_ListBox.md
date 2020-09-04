@@ -98,27 +98,27 @@ title: リストボックス
 
 
 ---
-## スクロールしない列数/ドラッグしない列数
+## スクロールしない列とドラッグしない列
 
-リストボックスの横スクロールしない列とドラッグしない列はそれぞれ独立して動作します:
+リストボックスのスクロールしない列とドラッグしない列はそれぞれ独立して動作します:
 
-*   横スクロールしない列は常にリストボックスの左側に表示され、横スクロールされません。
-*   ドラッグしない列数は、実行時にドラッグで移動できない列の数を指定します。
-> これらのプロパティはプログラミングによって指定することも可能です。詳細は [4Dランゲージリファレンス](https://doc.4d.com/4Dv18/4D/18/4D-Language-Reference.100-4504285.ja.html) マニュアルの [リストボックス](https://doc.4d.com/4Dv18/4D/18/List-Box.201-4504332.ja.html) を参照ください。
+*   スクロールしない列は常にリストボックスの左側に表示され、横スクロールされません。
+*   ドラッグしない列は、リストボックス中でドラッグ＆ドロップによる列の移動ができません。
+> これらのプロパティはプログラミングによって設定することも可能です。詳細は [4Dランゲージリファレンス](https://doc.4d.com/4Dv18/4D/18/4D-Language-Reference.100-4504285.ja.html) マニュアルの [リストボックス](https://doc.4d.com/4Dv18/4D/18/List-Box.201-4504332.ja.html) を参照ください。
 
-These properties interact as follows:
+これらのプロパティは以下のように相互作用します:
 
-*   If you set columns that are only static, they cannot be moved.
+*   列を "ドラッグしない" のみを設定した場合、その列は移動することができません。
 
-*   If you set columns that are locked but not static, you can still change their position freely within the locked area. However, a locked column cannot be moved outside of this locked area.
+*   列を "スクロールしない" のみに設定した場合、横スクロールしないエリア内に限りドラッグで列を移動することができます。 しかし、そのスクロールしないエリアを越えて移動することはできません。
 
 ![](assets/en/FormObjects/property_lockedStaticColumns1.png)
 
-*   If you set all of the columns in the locked area as static, you cannot move these columns within the locked area.
+*   "スクロールしない" 列と "ドラッグしない" 列を同じ数に設定した場合、スクロールしないエリア内ではドラッグで移動することもできません。
 
 ![](assets/en/FormObjects/property_lockedStaticColumns2.png)
 
-*   You can set a combination of locked and static columns according to your needs. For example, if you set three locked columns and one static column, the user can swap the two right-most columns within the locked area (since only the first column is static).
+*   必要に応じてスクロールしない列数とドラッグしない列数をそれぞれ設定できます。 たとえば、スクロールしない列を 3、ドラッグしない列を 1に設定した場合、ユーザーは横スクロールしないエリア内で右側 2つの列を入れ替えることができます。
 
 ### スクロールしない列数
 
@@ -137,7 +137,7 @@ These properties interact as follows:
 
 ### ドラッグしない列数
 
-Number of columns that cannot be moved during execution.
+実行時にドラッグで移動できない列の数を指定します。
 
 #### JSON 文法
 
