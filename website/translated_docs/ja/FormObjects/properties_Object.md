@@ -256,9 +256,9 @@ A list of space-separated words used as class selectors in [css files](FormEdito
 
 #### JSON 文法
 
-| 名              | データタイプ | とりうる値                                                         |
-| -------------- | ------ | ------------------------------------------------------------- |
-| pluginAreaKind | string | Name of the plug-in external area (starts with a % character) |
+| 名              | データタイプ | とりうる値                 |
+| -------------- | ------ | --------------------- |
+| pluginAreaKind | string | プラグインの名称 (% 文字で始まります) |
 
 
 #### 対象オブジェクト
