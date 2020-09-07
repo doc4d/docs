@@ -182,9 +182,9 @@ A list of space-separated words used as class selectors in [css files](FormEdito
 
 #### JSON 文法
 
-| 名     | データタイプ | とりうる値                                                     |
-| ----- | ------ | --------------------------------------------------------- |
-| class | string | One string with CSS name(s) separated by space characters |
+| 名     | データタイプ | とりうる値                       |
+| ----- | ------ | --------------------------- |
+| class | string | (複数の場合は半角スペース区切りの) クラス名の文字列 |
 
 
 #### 対象オブジェクト
