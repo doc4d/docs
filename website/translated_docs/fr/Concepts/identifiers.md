@@ -39,7 +39,7 @@ Les règles suivantes s'appliquent à toutes les structures de 4D.
 Vous désignez un tableau en écrivant simplement son nom, qui est celui que vous passez à une commande de déclaration de tableau (par exemple ARRAY LONGINT) lorsque vous créez le tableau. Arrays are variables, and like variables, the name of an array can be up to 31 characters, not including the scope symbols, and there are three different types of arrays:
 
 - Le nom d'un tableau **local** est précédé du symbole dollar ($).
-- The name of a **process** array cannot start with the <> symbols nor the dollar sign $).
+- Le nom d'un tableau **process** ne peut pas commencer par les symboles <> ni par le symbole dollar $).
 - Le nom d’un tableau **interprocess** est précédé des symboles (<>), -- les caractères “inférieur à” suivi de “supérieur à”.
 
 Voici quelques exemples :
