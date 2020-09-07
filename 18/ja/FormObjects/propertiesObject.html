@@ -200,7 +200,7 @@
 <li>エンティティセレクションを使用した場合、データソース式内で <strong>This</strong> コマンドを呼び出すことで、各属性値へとアクセスすることが可能です。例: <strong>This.&lt;attributePath&gt;</strong>。</li>
 </ul>
 <blockquote>
-<p>If you used a collection of scalar values (and not objects), 4D allows you to display each value by calling <strong>This.value</strong> in the datasource expression. However in this case you will not be able to modify values or to access the current ite object (see below) Note: For information about entity selections, please refer to the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/ORDA.200-4354624.en.html">ORDA</a> chapter.</p>
+<p>(オブジェクトでない) スカラー値のコレクションを使用した場合、データソース式内で <strong>This.value</strong> を呼び出すことで各値にアクセスすることが可能です。 ただし、この場合は値を編集したり、&quot;カレントの項目&quot; オブジェクトにアクセスすることはできません (以下参照)。<br /> 注: エンティティセレクションについての詳細については、<a href="https://doc.4d.com/4Dv18/4D/18/ORDA.200-4575453.ja.html">ORDA</a> の章を参照してください。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-5"></a><a href="#json-文法-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
 <table>
@@ -208,20 +208,20 @@
 <tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
 </thead>
 <tbody>
-<tr><td>dataSource</td><td>string</td><td>Expression that returns a collection or an entity selection.</td></tr>
+<tr><td>dataSource</td><td>string</td><td>コレクションあるいはエンティティセレクションを返す式</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-5"></a><a href="#対象オブジェクト-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
 <p><a href="/docs/18/ja/FormObjects/listboxOverview.html">リストボックス</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="データソース"></a><a href="#データソース" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>データソース</h2>
-<p>Specify the type of list box.</p>
+<p>リストボックスの種類を指定します。</p>
 <p><img src="/docs/18/assets/en/FormObjects/listbox_dataSource.png" alt=""></p>
 <ul>
-<li><strong>Arrays</strong>(default): use array elements as the rows of the list box.</li>
-<li><strong>Current Selection</strong>: use expressions, fields or methods whose values will be evaluated for each record of the current selection of a table.</li>
-<li><strong>Named Selection</strong>: use expressions, fields or methods whose values will be evaluated for each record of a named selection.</li>
-<li><strong>Collection or Entity Selection</strong>: use collection elements or entities to define the row contents of the list box. Note that with this list box type, you need to define the <a href="/docs/18/ja/FormObjects/propertiesObject.html#collection-or-entity-selection">Collection or Entity Selection</a> property.</li>
+<li><strong>配列</strong> (デフォルト): リストボックスの各行に 配列要素を割り当てます。</li>
+<li><strong>カレントセレクション</strong>: 指定したテーブルのカレントセレクションの各レコードごとに式、フィールド、メソッドが評価されます。</li>
+<li><strong>命名セレクション</strong>: 指定した命名セレクションに含まれる各レコードごとに式、フィールド、メソッドが評価されます。</li>
+<li><strong>コレクションまたはエンティティセレクション</strong>: コレクション要素あるいはエンティティを使用してリストボックスの行の中身を定義します。 この場合 <a href="/docs/18/ja/FormObjects/propertiesObject.html#コレクションまたはエンティティセレクション">コレクションまたはエンティティセレクション</a> プロパティを定義する必要があります。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-6"></a><a href="#json-文法-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
 <table>
@@ -236,14 +236,14 @@
 <p><a href="/docs/18/ja/FormObjects/listboxOverview.html">リストボックス</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="プラグインの種類"></a><a href="#プラグインの種類" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プラグインの種類</h2>
-<p>Name of the <a href="/docs/18/ja/FormObjects/pluginAreaOverview.html">plug-in external area</a> associated to the object. Plug-in external area names are published in the manifest.json file of the plug-in.</p>
+<p>オブジェクトに関連付ける <a href="/docs/18/ja/FormObjects/pluginAreaOverview.html">プラグイン</a> の名称。 ここで指定するプラグイン名は、プラグインの manifest.json ファイルにて公開されています。</p>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-7"></a><a href="#json-文法-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
 <table>
 <thead>
 <tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
 </thead>
 <tbody>
-<tr><td>pluginAreaKind</td><td>string</td><td>Name of the plug-in external area (starts with a % character)</td></tr>
+<tr><td>pluginAreaKind</td><td>string</td><td>プラグインの名称 (% 文字で始まります)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-7"></a><a href="#対象オブジェクト-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
