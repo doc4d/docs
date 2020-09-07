@@ -121,7 +121,7 @@ USE NAMED SELECTION([Customers];"<>ByZipcode") //Sélection temporaire interproc
 
 ## Propriétés (attributs) d'objets
 
-You designate an object attribute (also called object property) by placing a point (".") between the name of the object and the name of the attribute. Un nom d'attribut peut contenir jusqu'à 255 caractères et est sensible à la casse.
+Désignez un attribut d'objet (également appelé propriété d'objet) en plaçant un point (".") entre le nom de l'objet et le nom de l'attribut. Un nom d'attribut peut contenir jusqu'à 255 caractères et est sensible à la casse.
 
 Voici quelques exemples :
 ```4d
@@ -143,12 +143,12 @@ $erreur:=SMTP_From($smtp_id;"henry@gmail.com")
 
 ## Process
 
-A process name can contain up to 255 characters, not including scope character.
+Le nom d'un process peut contenir jusqu’à 255 caractères, symbole <> non compris.
 
 In the single-user version, or in Client/Server on the Client side, there are two process scopes: **global** or **local**.
 
-- You denote a **global** process by using a string expression that represents its name (which cannot start with the dollar sign $).
-- You denote a **local** process if the name of the process is preceded by a dollar ($) sign.
+- Déclarez un process **global** en passant une expression de type chaîne qui représente son nom (qui ne doit pas commencer par le symbole $).
+- Déclarez un process **local** lorsque son nom est précédé du symbole dollar ($).
 
 Voici quelques exemples :
 ```4d
@@ -172,7 +172,7 @@ DELETE DUPLICATED VALUES
 APPLY TO SELECTION([Employés];AUGMENTER SALARIES)
 ```
 
-**Conseil :** Nous vous recommandons d'adopter, pour nommer vos méthodes, la même convention que celle utilisée dans le langage de 4D : écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. By doing so, when you reopen a project for maintenance after a few months, you will already know if a method returns a result by simply looking at its name in the Explorer window.
+**Conseil :** Nous vous recommandons d'adopter, pour nommer vos méthodes, la même convention que celle utilisée dans le langage de 4D : écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. écrivez les noms de vos procédures en caractères majuscules, et vos fonctions en minuscules avec la première lettre en majuscule. Ainsi, lorsque vous rouvrirez un projet au bout de plusieurs mois, vous identifierez immédiatement si une méthode retourne ou non un résultat, en regardant son nom dans la fenêtre de l'Explorateur.
 
 **Note :** Lorsque vous souhaitez appeler une méthode, vous saisissez simplement son nom. Toutefois, certaines commandes intégrées telles que `APPELER SUR EVENEMENT`, ainsi que les commandes des plug-ins, nécessitent que vous passiez le nom d'une méthode en tant que chaîne lorsqu'un paramètre de type méthode est requis. Voici quelques exemples :
 ```4d
