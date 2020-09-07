@@ -38,15 +38,15 @@ Les règles suivantes s'appliquent à toutes les structures de 4D.
 
 Vous désignez un tableau en écrivant simplement son nom, qui est celui que vous passez à une commande de déclaration de tableau (par exemple ARRAY LONGINT) lorsque vous créez le tableau. Arrays are variables, and like variables, the name of an array can be up to 31 characters, not including the scope symbols, and there are three different types of arrays:
 
-- The name of a **local** array is preceded by the dollar sign ($).
+- Le nom d'un tableau **local** est précédé du symbole dollar ($).
 - The name of a **process** array cannot start with the <> symbols nor the dollar sign $).
-- The name of an **interprocess** array is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign.
+- Le nom d’un tableau **interprocess** est précédé des symboles (<>), -- les caractères “inférieur à” suivi de “supérieur à”.
 
 Voici quelques exemples :
 ```4d
-ARRAY TEXT($atSubjects;Records in table([Topics])) //local array
-SORT ARRAY(asKeywords;>) //process array
-ARRAY BOOLEAN(<>settings;Records in table([MySettings])) //interprocess array
+ARRAY TEXT($atSubjects;Records in table([Topics])) //tableau local
+SORT ARRAY(asKeywords;>) //tableau process
+ARRAY BOOLEAN(<>settings;Records in table([MySettings])) //tableau interprocess
 ```
 
 
@@ -55,7 +55,7 @@ Vous désignez un élément d’un tableau local, process ou interprocess à l�
 
 Voici quelques exemples :
 ```4d   
-    //Addressing an element of a local array
+    //Traiter un élément d'un tableau local
 If($asKeywords{1}="Stop")
 $atSubjects{$vlElem}:=[Topics]Subject
 $viNextValue:=$aiBigArray{Size of array($aiBigArray)}
@@ -66,7 +66,7 @@ Vous désignez un élément d’un tableau à deux dimensions à l’aide d'une 
 
 Voici quelques exemples :
 ```4d
-    //Addressing an element of a two-dimensional process array
+    //Traiter un élément d'un tableau process bidimensionnel
 If(asKeywords{$vlNextRow}{1}="Stop")
 atSubjects{10}{$vlElem}:=[Topics]Subject
 $viNextValue:=aiBigArray{$vlSet}{Size of array(aiBigArray{$vlSet})}
@@ -107,7 +107,7 @@ FORM SET OUTPUT([Personnes];"Sortie")
 
 ## Sélections temporaires
 
-A named selection name can contain up to 255 characters, not including scope character(s).
+Le nom d'une sélection nommée peut contenir jusqu’à 255 caractères, symbole <> non compris).
 
 - You denote a **process** named selection by using a string expression that represents its name (which cannot start with the <> symbols nor the dollar sign $).
 - You denote an **interprocess** named selection if its name is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign.
