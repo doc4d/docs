@@ -36,7 +36,7 @@ Les règles suivantes s'appliquent à toutes les structures de 4D.
 
 ## Tableaux
 
-Vous désignez un tableau en écrivant simplement son nom, qui est celui que vous passez à une commande de déclaration de tableau (par exemple ARRAY LONGINT) lorsque vous créez le tableau. Arrays are variables, and like variables, the name of an array can be up to 31 characters, not including the scope symbols, and there are three different types of arrays:
+Vous désignez un tableau en écrivant simplement son nom, qui est celui que vous passez à une commande de déclaration de tableau (par exemple ARRAY LONGINT) lorsque vous créez le tableau. Les tableaux sont des variables, et tout comme les variables, le nom d'un tableau peut comporter jusqu'à 31 caractères, sans compter les symboles de portée, et il existe trois types de tableaux différents :
 
 - Le nom d'un tableau **local** est précédé du symbole dollar ($).
 - Le nom d'un tableau **process** ne peut pas commencer par les symboles <> ni par le symbole dollar $).
@@ -107,15 +107,15 @@ FORM SET OUTPUT([Personnes];"Sortie")
 
 ## Sélections temporaires
 
-Le nom d'une sélection nommée peut contenir jusqu’à 255 caractères, symbole <> non compris).
+Le nom d'une sélection temporaire peut contenir jusqu’à 255 caractères, symbole <> non compris).
 
-- You denote a **process** named selection by using a string expression that represents its name (which cannot start with the <> symbols nor the dollar sign $).
-- You denote an **interprocess** named selection if its name is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign.
+- Déclarez une sélection temporaire **process** en passant une expression de type chaîne qui représente son nom (et qui ne doit pas débuter par les symboles <> ou $).
+- Désignez une sélection temporaire **interprocess** si son nom est précédé des caractères (<>) -- un symbole “inférieur à” suivi de “supérieur à”.
 
 Voici quelques exemples :
 ```4d
-USE NAMED SELECTION([Customers];"Closed")//Process Named Selection
-USE NAMED SELECTION([Customers];"<>ByZipcode") //Interprocess Named Selection
+USE NAMED SELECTION([Customers];"Closed")//Sélection temporaire process
+USE NAMED SELECTION([Customers];"<>ByZipcode") //Sélection temporaire interprocess
 ```
 
 
