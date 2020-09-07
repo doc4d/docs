@@ -33,7 +33,7 @@ The web server object of the host application (default web server) is automatica
 
 ```4d
 $nbSrv:=WEB Server list.length   
-//$nbSrv value is 1
+//la valeur de $nbSrv est 1
 ```
 
 To instantiate a web server object, call the `WEB Server` command:
