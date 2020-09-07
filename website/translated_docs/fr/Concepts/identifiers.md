@@ -241,9 +241,9 @@ ADD RECORD([Lettres])
 
 ## Variables
 
-The name of a variable can be up to 31 characters, not including the scope symbols.
+Le nom d’une variable peut contenir jusqu’à 31 caractères, symbole de portée non compris.
 
-- You designate a **local** variable by placing a dollar sign ($) before the variable name.
+- Désignez une variable **locale** en faisant précéder son nom du symbole dollar ($).
 - You designate a **process** variable by using its name (which cannot start with the <> symbols nor the dollar sign $)
 - You designate an **interprocess** variable by preceding the name of the variable with the symbols (<>) — a “less than” sign followed by a “greater than” sign.
 
