@@ -210,11 +210,11 @@ Voici quelques exemples :
 
 ## Ensembles
 
-A set name can contain up to 255 characters, not including scope character()s).
+Un nom d'ensemble peut contenir jusqu’à 255 caractères, symbole(s) <> non compri(s).
 
-- You denote a **process** set by using a string expression that represents its name (which cannot start with the <> symbols or the dollar sign $).
-- You denote an **interprocess** set if the name of the set is preceded by the symbols (<>) — a “less than” sign followed by a “greater than” sign.
-- On 4D Server, the name of a **client** set is preceded by the dollar sign ($). Ce nom peut comporter jusqu'à 255 caractères, symbole dollar non compris.
+- Déclarez un ensemble **process** en passant une expression de type chaîne qui représente son nom (et qui ne doit pas débuter par les symboles <> ou $).
+- Désignez un ensemble temporaire **interprocess** si son nom est précédé des caractères (<>) -- un symbole “inférieur à” suivi de “supérieur à”.
+- Sur 4D Server, le nom d'un ensemble **client** est précédé du symbole dollar ($). Ce nom peut comporter jusqu'à 255 caractères, symbole dollar non compris.
 
 > Sets are maintained on the Server machine. Dans certains cas, pour des raisons particulières ou d'optimisation, vous pourrez avoir besoin d'utiliser des ensembles localement, sur les postes clients. To do so, you use client sets.
 
@@ -287,7 +287,7 @@ Le tableau suivant résume les principes de nommage des identifiants dans les m�
 
 ## Résoudre les conflits de noms
 
-Be sure to use unique names for the different elements in your project. If a particular element has the same name as another element of a different type (for example, if a field is named Person and a variable is also named Person), 4D uses a priority system.
+Veillez à utiliser des noms uniques pour les différents éléments de votre projet. Si un élément particulier porte le même nom qu’un autre élément d’un autre type (par exemple, si un champ est nommé Personnes et qu’une variable est également nommée Personnes), 4D utilise un système de priorité.
 
 4D identifie les noms utilisés dans les méthodes en fonction de l’ordre de priorité suivant :
 
