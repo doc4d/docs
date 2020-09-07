@@ -140,32 +140,32 @@ These properties are defined:
 
 The 4D Language contains [several commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) that can be used to control the web server. However, these commands are designed to work with a single (default) web server. When using these commands in the context of web server objects, make sure their scope is appropriate.
 
-| Commande                        | Portée                               |
-| ------------------------------- | ------------------------------------ |
-| `SET DATABASE PARAMETER`        | Serveur Web de la base hôte          |
-| `WEB CLOSE SESSION`             | Web server that received the request |
-| `WEB GET BODY PART`             | Web server that received the request |
-| `WEB Get body part count`       | Web server that received the request |
-| `WEB Get Current Session ID`    | Web server that received the request |
-| `WEB GET HTTP BODY`             | Web server that received the request |
-| `WEB GET HTTP HEADER`           | Web server that received the request |
-| `WEB GET OPTION`                | Serveur Web de la base hôte          |
-| `WEB Get server info`           | Serveur Web de la base hôte          |
-| `WEB GET SESSION EXPIRATION`    | Web server that received the request |
-| `WEB Get session process count` | Web server that received the request |
-| `WEB GET STATISTICS`            | Serveur Web de la base hôte          |
-| `WEB GET VARIABLES`             | Web server that received the request |
-| `WEB Is secured connection`     | Web server that received the request |
-| `WEB Is server running`         | Serveur Web de la base hôte          |
-| `WEB SEND BLOB`                 | Web server that received the request |
-| `WEB SEND FILE`                 | Web server that received the request |
-| `WEB SEND HTTP REDIRECT`        | Web server that received the request |
-| `WEB SEND RAW DATA`             | Web server that received the request |
-| `WEB SEND TEXT`                 | Web server that received the request |
-| `WEB SET HOME PAGE`             | Serveur Web de la base hôte          |
-| `WEB SET HTTP HEADER`           | Web server that received the request |
-| `WEB SET OPTION`                | Serveur Web de la base hôte          |
-| `WEB SET ROOT FOLDER`           | Serveur Web de la base hôte          |
-| `WEB START SERVER`              | Serveur Web de la base hôte          |
-| `WEB STOP SERVER`               | Serveur Web de la base hôte          |
-| `WEB Validate digest`           | Web server that received the request |
+| Commande                        | Portée                            |
+| ------------------------------- | --------------------------------- |
+| `SET DATABASE PARAMETER`        | Serveur Web de la base hôte       |
+| `WEB CLOSE SESSION`             | Serveur Web ayant reçu la requête |
+| `WEB GET BODY PART`             | Serveur Web ayant reçu la requête |
+| `WEB Get body part count`       | Serveur Web ayant reçu la requête |
+| `WEB Get Current Session ID`    | Serveur Web ayant reçu la requête |
+| `WEB GET HTTP BODY`             | Serveur Web ayant reçu la requête |
+| `WEB GET HTTP HEADER`           | Serveur Web ayant reçu la requête |
+| `WEB GET OPTION`                | Serveur Web de la base hôte       |
+| `WEB Get server info`           | Serveur Web de la base hôte       |
+| `WEB GET SESSION EXPIRATION`    | Serveur Web ayant reçu la requête |
+| `WEB Get session process count` | Serveur Web ayant reçu la requête |
+| `WEB GET STATISTICS`            | Serveur Web de la base hôte       |
+| `WEB GET VARIABLES`             | Serveur Web ayant reçu la requête |
+| `WEB Is secured connection`     | Serveur Web ayant reçu la requête |
+| `WEB Is server running`         | Serveur Web de la base hôte       |
+| `WEB SEND BLOB`                 | Serveur Web ayant reçu la requête |
+| `WEB SEND FILE`                 | Serveur Web ayant reçu la requête |
+| `WEB SEND HTTP REDIRECT`        | Serveur Web ayant reçu la requête |
+| `WEB SEND RAW DATA`             | Serveur Web ayant reçu la requête |
+| `WEB SEND TEXT`                 | Serveur Web ayant reçu la requête |
+| `WEB SET HOME PAGE`             | Serveur Web de la base hôte       |
+| `WEB SET HTTP HEADER`           | Serveur Web ayant reçu la requête |
+| `WEB SET OPTION`                | Serveur Web de la base hôte       |
+| `WEB SET ROOT FOLDER`           | Serveur Web de la base hôte       |
+| `WEB START SERVER`              | Serveur Web de la base hôte       |
+| `WEB STOP SERVER`               | Serveur Web de la base hôte       |
+| `WEB Validate digest`           | Serveur Web ayant reçu la requête |
