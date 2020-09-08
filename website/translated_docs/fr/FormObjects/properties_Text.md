@@ -94,15 +94,15 @@ La propriété de thème de police désigne un nom de style automatique. Les sty
 - la langue du système,
 - et le type d'objet de formulaire.
 
-With the font theme, you are guaranteed that titles are always displayed in accordance with the current interface standards of the system. However, their size may vary from one machine to another.
+Avec le thème de police, vous avez la garantie que les titres s'affichent toujours conformément aux normes de l'interface du système. Cependant, leur taille peut varier d'une machine à l'autre.
 
-Three font themes are available:
-- **normal**: automatic style, applied by default to any new object created in the Form editor.
-- **main** and **additional** font themes are only supported by [text areas](text.md) and [inputs](input_overview.md). These themes are primarily intended for designing dialog boxes. They refer to font styles used, respectively, for main text and additional information in your interface windows. Here are typical dialog boxes (macOS and Windows) using these font themes:
+Trois thèmes de polices sont disponibles :
+- **normal** : style automatique, appliqué par défaut à tout nouvel objet créé dans l'éditeur de formulaires.
+- Les thèmes de polices **principaux** et **supplémentaires** ne sont pris en charge uniquement par les [zones de texte](text.md) et les [zones de saisie](input_overview.md). Ces thèmes sont principalement destinés à la conception de boîtes de dialogue. Ils font référence aux styles de police utilisés respectivement pour le texte principal et les informations supplémentaires dans vos fenêtres d'interface. Voici les boîtes de dialogue typiques (macOS et Windows) utilisant ces thèmes de polices :
 
 ![](assets/en/FormObjects/FontThemes.png)
 
-> Font themes manage the font as well as its size and color. You can apply custom style properties (Bold, Italic or Underline) without altering its functioning.
+> Les thèmes de polices gèrent la police ainsi que sa taille et sa couleur. You can apply custom style properties (Bold, Italic or Underline) without altering its functioning.
 
 
 
@@ -120,14 +120,14 @@ Three font themes are available:
 
 
 
-### Font Family
+### Famille de police
 
-There are two types of font family names:
+Il existe deux types de noms de familles de polices :
 
-* *family-name:* The name of a font-family, like "times", "courier", "arial", etc.
-* *generic-family:* The name of a generic-family, like "serif", "sans-serif", "cursive", "fantasy", "monospace".
+* *family-name :* Le nom d'une famille de polices, comme "times", "courier", "arial", etc.
+* *generic-family *: Le nom d'une famille générique, comme "serif", "sans-serif", "cursive", "fantasy", "monospace".
 
-You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT.301-4054834.en.html) command.
+Vous pouvez la définir à l'aide de la commande [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT.301-4054834.en.html) .
 > <span style="font-family:Times New Roman; font-size:20pt"> Ceci est une police Times New Roman.</span><br> <span style="font-family:Calibri; font-size:20pt"> Ceci est une police Calibri.</span><br> <span style="font-family:Papyrus; font-size:20pt"> Ceci est une police Papyrus.</span>
 
 #### Grammaire JSON
@@ -135,7 +135,7 @@ You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/1
 | Nom        | Type de données | Valeurs possibles               |
 | ---------- | --------------- | ------------------------------- |
 | fontFamily | string          | Nom d'une famille de police CSS |
-> 4D recommends using only [web safe](https://www.w3schools.com/cssref/css_websafe_fonts.asp) fonts.
+> 4D recommande d'utiliser uniquement les polices de [sécurité Web](https://www.w3schools.com/cssref/css_websafe_fonts.asp).
 
 #### Objets pris en charge
 
