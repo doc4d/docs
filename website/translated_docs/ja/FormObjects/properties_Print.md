@@ -13,11 +13,11 @@ title: 印刷
 > `Print object` と `Print form` コマンドはこのプロパティをサポートしません。
 
 
-The print options are:
+印刷オプションは次の通りです:
 
-- **Variable** option / **Print Variable Frame** checked: 4D enlarges or reduces the form object area in order to print all the subrecords.
+- **可変** オプション (**印刷時可変** 選択時): すべてのサブレコードが印刷されるよう、4D はフォームオブジェクトエリアを拡大あるいは縮小します。
 
-- **Fixed (Truncation)** option / **Print Variable Frame** unchecked: 4D only prints the contents that appear in the object area. The form is only printed once and the contents not printed are ignored.
+- **固定 (トランケート)** オプション (**印刷時可変** 非選択時): オブジェクトエリアに表示されている内容のみを 4D は印刷します。 フォームが印刷されるのは一度のみで、印刷されなかった内容は無視されます。
 
 - **Fixed (Multiple Records)** (subforms only): the initial size of the subform area is kept but 4D prints the form several times in order to print all the records.
 
