@@ -341,8 +341,8 @@ For application translation purposes, you can enter an XLIFF reference in the ti
 
 計算が選択されると、リストボックス列内のすべての値が自動計算の対象となります。 リストボックス行の表示/非表示状態は考慮されません。 表示行だけを計算対象にしたい場合、カスタムを選択してプログラムコードで計算しなくてはなりません。
 
-When **Custom** ("none" in JSON) is set, no automatic calculations are performed by 4D and you must assign the value of the variable in this area by programming.
-> Automatic calculations are not supported with: *  footers of columns based on formulas, *  footers of [Collection and Entity selection](listbox_overview.md#collection-or-entity-selection-list-boxes) list boxes. You need to use custom calculations.
+**カスタム** (JSON では "none") を選択した場合、4D は自動計算をおこないません。プログラムを使用して表示する値をエリアの変数に代入しなければなりません。
+> 以下のフッターに対しては自動計算を関連付けることができません:<br /> ・フォーミュラを割り当てた列のフッター<br /> ・[コレクションまたはエンティティセレクションリストボックス](listbox_overview.md#コレクションまたはエンティティセレクションリストボックス) のフッター これらの場合には、カスタム計算を使用する必要があります。
 
 #### JSON 文法
 
