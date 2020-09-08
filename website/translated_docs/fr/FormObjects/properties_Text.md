@@ -531,7 +531,7 @@ This property enables the possibility of using specific styles in the selected a
 </h4>
 
 <p spaces-before="0">
-  <a href="input_overview.md">Input</a> (non-enterable) - <a href="text.md">Text Area</a>
+  <a href="input_overview.md">Zone de saisie</a> (non saisissable) - <a href="text.md">Zone de texte</a>
 </p>
 
 
