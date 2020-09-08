@@ -33,7 +33,7 @@ L'objet serveur Web de la base de données hôte (serveur Web par défaut) est a
 
 ```4d
 $nbSrv:=WEB Server list.length   
-//$nbSrv value is 1
+//la valeur de $nbSrv est 1
 ```
 
 To instantiate a web server object, call the `WEB Server` command:
@@ -124,7 +124,7 @@ Un objet serveur Web contient les propriétés suivantes.
 | sessionCookiePath          | Texte              | "path" field of the session cookie. Used to control the scope of the session cookies. If you set, for example, the value "/4DACTION" for this selector, the client will only send a cookie for dynamic requests beginning with 4DACTION, and not for pictures, static pages, etc.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | sessionIPAddressValidation | boolean            | IP address validation for session cookies. For security reasons, by default the web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between Wifi and 3G/4G networks, their IP address will change. In this case, you can allow clients to be able to continue using their web sessions even when the IP addresses change. <p><p>Note: this setting lowers the security level of your application |
 
-These properties are defined:
+Ces propriétés sont définies :
 
 1. using the `settings` parameter of the `webServer.start( )` method (except for read-only properties, see below),
 2. si elles ne sont pas utilisées, à l'aide de la commande `WEB SET OPTION` (bases de données hôtes uniquement),
@@ -138,34 +138,34 @@ These properties are defined:
 
 ## Portée des commandes 4D Web
 
-The 4D Language contains [several commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) that can be used to control the web server. However, these commands are designed to work with a single (default) web server. When using these commands in the context of web server objects, make sure their scope is appropriate.
+Le langage 4D contient [plusieurs commandes](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) permettant de contrôler le serveur Web. Cependant, ces commandes sont destinées à fonctionner avec un seul serveur Web (par défaut). Lorsque vous utilisez ces commandes dans le contexte d'objets serveur Web, assurez-vous que leur portée est appropriée.
 
-| Commande                        | Portée                               |
-| ------------------------------- | ------------------------------------ |
-| `SET DATABASE PARAMETER`        | Serveur Web de la base hôte          |
-| `WEB CLOSE SESSION`             | Web server that received the request |
-| `WEB GET BODY PART`             | Web server that received the request |
-| `WEB Get body part count`       | Web server that received the request |
-| `WEB Get Current Session ID`    | Web server that received the request |
-| `WEB GET HTTP BODY`             | Web server that received the request |
-| `WEB GET HTTP HEADER`           | Web server that received the request |
-| `WEB GET OPTION`                | Serveur Web de la base hôte          |
-| `WEB Get server info`           | Serveur Web de la base hôte          |
-| `WEB GET SESSION EXPIRATION`    | Web server that received the request |
-| `WEB Get session process count` | Web server that received the request |
-| `WEB GET STATISTICS`            | Serveur Web de la base hôte          |
-| `WEB GET VARIABLES`             | Web server that received the request |
-| `WEB Is secured connection`     | Web server that received the request |
-| `WEB Is server running`         | Serveur Web de la base hôte          |
-| `WEB SEND BLOB`                 | Web server that received the request |
-| `WEB SEND FILE`                 | Web server that received the request |
-| `WEB SEND HTTP REDIRECT`        | Web server that received the request |
-| `WEB SEND RAW DATA`             | Web server that received the request |
-| `WEB SEND TEXT`                 | Web server that received the request |
-| `WEB SET HOME PAGE`             | Serveur Web de la base hôte          |
-| `WEB SET HTTP HEADER`           | Web server that received the request |
-| `WEB SET OPTION`                | Serveur Web de la base hôte          |
-| `WEB SET ROOT FOLDER`           | Serveur Web de la base hôte          |
-| `WEB START SERVER`              | Serveur Web de la base hôte          |
-| `WEB STOP SERVER`               | Serveur Web de la base hôte          |
-| `WEB Validate digest`           | Web server that received the request |
+| Commande                        | Portée                            |
+| ------------------------------- | --------------------------------- |
+| `SET DATABASE PARAMETER`        | Serveur Web de la base hôte       |
+| `WEB CLOSE SESSION`             | Serveur Web ayant reçu la requête |
+| `WEB GET BODY PART`             | Serveur Web ayant reçu la requête |
+| `WEB Get body part count`       | Serveur Web ayant reçu la requête |
+| `WEB Get Current Session ID`    | Serveur Web ayant reçu la requête |
+| `WEB GET HTTP BODY`             | Serveur Web ayant reçu la requête |
+| `WEB GET HTTP HEADER`           | Serveur Web ayant reçu la requête |
+| `WEB GET OPTION`                | Serveur Web de la base hôte       |
+| `WEB Get server info`           | Serveur Web de la base hôte       |
+| `WEB GET SESSION EXPIRATION`    | Serveur Web ayant reçu la requête |
+| `WEB Get session process count` | Serveur Web ayant reçu la requête |
+| `WEB GET STATISTICS`            | Serveur Web de la base hôte       |
+| `WEB GET VARIABLES`             | Serveur Web ayant reçu la requête |
+| `WEB Is secured connection`     | Serveur Web ayant reçu la requête |
+| `WEB Is server running`         | Serveur Web de la base hôte       |
+| `WEB SEND BLOB`                 | Serveur Web ayant reçu la requête |
+| `WEB SEND FILE`                 | Serveur Web ayant reçu la requête |
+| `WEB SEND HTTP REDIRECT`        | Serveur Web ayant reçu la requête |
+| `WEB SEND RAW DATA`             | Serveur Web ayant reçu la requête |
+| `WEB SEND TEXT`                 | Serveur Web ayant reçu la requête |
+| `WEB SET HOME PAGE`             | Serveur Web de la base hôte       |
+| `WEB SET HTTP HEADER`           | Serveur Web ayant reçu la requête |
+| `WEB SET OPTION`                | Serveur Web de la base hôte       |
+| `WEB SET ROOT FOLDER`           | Serveur Web de la base hôte       |
+| `WEB START SERVER`              | Serveur Web de la base hôte       |
+| `WEB STOP SERVER`               | Serveur Web de la base hôte       |
+| `WEB Validate digest`           | Serveur Web ayant reçu la requête |
