@@ -270,7 +270,7 @@ A list of space-separated words used as class selectors in [css files](FormEdito
 
 ## ラジオグループ
 
-Enables radio buttons to be used in coordinated sets: only one button at a time can be selected in the set.
+複数のラジオボタンを連動させるためのプロパティです。同じラジオグループに属している複数のラジオボタンは、一度にその内の一つのみを選択することができます。
 
 #### JSON 文法
 
