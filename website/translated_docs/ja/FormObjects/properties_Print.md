@@ -8,14 +8,14 @@ title: 印刷
 
 このプロパティは、レコードの中身に応じてサイズが変化しうるオブジェクトの印刷モードを管理します。 これらのオブジェクト固定長フレームまたは可変長フレームでの印刷を設定することができます。 固定長フレームオブジェクトは、フォーム上でオブジェクト作成するように、オブジェクトのサイズの制限内で印刷をします。 可変長フレームオブジェクトはオブジェクトの中身をすべて印刷するために、印刷時に展開します。 可変サイズとして印刷されるオブジェクト幅 (オブジェクトプロパティによって定義) はこのオプションによって影響はされないという点に注意してください。オブジェクトの中身に応じて、高さのみが変化します。
 
-フォーム内において複数の可変長フレームを隣同士に配置することはできません。 You can place non-variable frame objects on either side of an object that will be printed with a variable size provided that the variable frame object is at least one line longer than the object beside it and that all objects are aligned on the top. If this condition is not respected, the contents of the other fields will be repeated for every horizontal slice of the variable frame object.
+フォーム内において複数の可変長フレームを隣同士に配置することはできません。 非可変長フレームオブジェクトであれば、可変サイズで印刷されるオブジェクトのどちら側でも配置することができます。ただし、可変長フレームオブジェクトが最低でも横のオブジェクトより一行分長く、すべてのオブジェクトが上揃えで配置されていなければなりません。 この条件が遵守されない場合、可変長フレームオブジェクトの水平方向の部分ごとに、ほかのフィールドのコンテンツが繰り返されます。
 
-> The `Print object` and `Print form` commands do not support this property.
+> `Print object` と `Print form` コマンドはこのプロパティをサポートしません。
 
 
-The print options are:
+印刷オプションは次の通りです:
 
-- **Variable** option / **Print Variable Frame** checked: 4D enlarges or reduces the form object area in order to print all the subrecords.
+- **可変** オプション (**印刷時可変** 選択時): すべてのサブレコードが印刷されるよう、4D はフォームオブジェクトエリアを拡大あるいは縮小します。
 
 - **Fixed (Truncation)** option / **Print Variable Frame** unchecked: 4D only prints the contents that appear in the object area. The form is only printed once and the contents not printed are ignored.
 
