@@ -110,13 +110,13 @@ Reportez-vous aux exemples de [réception d'une sélection d'entité](#receiving
 
 ## Exemples de requêtes
 
-This database is exposed as a remote datastore on localhost (port 8111):
+Cette base de données est exposée comme un datastore distant sur localhost (port 8111) :
 
 ![alt-text](assets/en/REST/ordastructure.png)
 
 ### Utiliser une fonction de classe de datastore
 
-The US_Cities `DataStore` class provides an API:
+La classe de `DataStore` US_Cities fournit une API :
 
 ```  
 // DataStore class
@@ -127,7 +127,7 @@ Function getName()
     $0:="US cities and zip codes manager" 
 ```
 
-You can then run this request:
+Vous pouvez lancer cette requête :
 
 **POST** `127.0.0.1:8111/rest/$catalog/getName`
 
@@ -141,7 +141,7 @@ You can then run this request:
 
 ### Utiliser une fonction de classe de dataclass
 
-The Dataclass class `City` provides an API that returns a city entity from a name passed in parameter:
+La classe de Dataclass `City` fournit une API qui retourne une entité de ville à partir du nom passé en paramètre :
 
 ```
 // City class
@@ -155,7 +155,7 @@ Fonction getCity()
     $0:=This.query("name = :1";$nameParam).first()
 ```
 
-You can then run this request:
+Vous pouvez lancer cette requête :
 
 **POST** `127.0.0.1:8111/rest/City/getCity`
 
@@ -190,7 +190,7 @@ Le résultat est une entité :
 
 ### Utiliser une fonction de classe d'une entité
 
-The Entity class `CityEntity` provides an API:
+La classe d'entité `CityEntity` fournit une API :
 
 ```
 // CityEntity class
@@ -201,7 +201,7 @@ Function getPopulation()
     $0:=This.zips.sum("population")
 ```
 
-You can then run this request:
+Vous pouvez lancer cette requête :
 
 **POST** `127.0.0.1:8111/rest/City(2)/getPopulation`
 
@@ -214,9 +214,9 @@ You can then run this request:
 ```
 
 
-### Using an entitySelection class function
+### Utiliser une fonction de classe d'une sélection d'entité
 
-The EntitySelection class `CitySelection` provides an API:
+La classe de sélection d'entité `CityEntity` fournit une API :
 
 ```
 // CitySelection class
@@ -227,7 +227,7 @@ Function getPopulation()
     $0:=This.zips.sum("population")
 ```
 
-You can then run this request:
+Vous pouvez lancer cette requête :
 
 **POST** `127.0.0.1:8111/rest/City/getPopulation/?$filter="ID<3"`
 
@@ -239,9 +239,9 @@ You can then run this request:
 }
 ```
 
-### Using an entitySelection class function and an entitySet
+### Utiliser une fonction de classe de sélection d'entité et un ensemble d'entité
 
-The `StudentsSelection` class has a `getAgeAverage` function:
+La classe `StudentsSelection` a une fonction `getAgeAverage` :
 
 ```  
 // StudentsSelection Class
@@ -259,7 +259,7 @@ Function getAgeAverage
     $0:=$sum/This.length
 ```
 
-Once you have created an entityset, you can run this request:
+Une fois que vous avez créé un ensemble d'entité, vous pouvez lancer cette requête :
 
 **POST** `127.0.0.1:8044/rest/Students/getAgeAverage/$entityset/17E83633FFB54ECDBF947E5C620BB532`
 
@@ -271,9 +271,9 @@ Once you have created an entityset, you can run this request:
 }
 ```
 
-### Using an entitySelection class function and an orderBy
+### Utiliser une fonction de classe de sélection d'entité et un "orderBy"
 
-The `StudentsSelection` class has a `getLastSummary` function:
+La classe `StudentsSelection` a une fonction `getLastSummary` :
 
 ```  
 // StudentsSelection Class
@@ -289,7 +289,7 @@ Function getLastSummary
     $0:=$last.firstname+" - "+$last.lastname+" is ... "+String($last.age())
 ```
 
-You can then run this request:
+Vous pouvez lancer cette requête :
 
 **POST** `127.0.0.1:8044/rest/Students/getLastSummary/$entityset/?$filter="lastname=b@"&$orderby="lastname"`
 
@@ -303,10 +303,10 @@ You can then run this request:
 ```
 
 
-### Using an entity to be created on the server
+### Utiliser une entité à créer sur le serveur
 
 
-The Dataclass class `Students` has the function `pushData()` receiving an entity containing data from the client. The `checkData()` method runs some controls. If they are OK, the entity is saved and returned.
+La classe de Dataclass `Students` possède la fonction `pushData()` qui reçoit une entité contenant les données du client. La méthode `checkData()` effectue quelques contrôles. Si elles sont valides, l'entité est sauvegardée et retournée.
 
 ```
 // Students Class
@@ -331,11 +331,11 @@ Function pushData
 
 ```
 
-You run this request:
+Lancez cette requête :
 
 **POST** `http://127.0.0.1:8044/rest/Students/pushData`
 
-Body of the request:
+Corps de la requête :
 
 ```
 [{
@@ -346,7 +346,7 @@ Body of the request:
 }]
 ```
 
-Since no `__KEY` is given, a new Students entity is loaded on the server **with the attributes received from the client**. Because the `pushData()` function runs a `save()` action, the new entity is created.
+Si aucune `__KEY` n'est donnée, une nouvelle entité Students est chargée sur le serveur **avec les attributs du client**. Parce que la fonction `pushData()` exécute une action `save()`, la nouvelle entité est créée.
 
 
 #### Résultat
@@ -366,15 +366,15 @@ Since no `__KEY` is given, a new Students entity is loaded on the server **with 
 }
 ```
 
-### Using an entity to be updated on the server
+### Utiliser une entité à mettre à jour sur le serveur
 
-Same as above but with a __KEY attribute
+Description semblable à la précédente, avec l'attribut _KEY
 
-You run this request:
+Lancez cette requête :
 
 **POST:**`http://127.0.0.1:8044/rest/Students/pushData`
 
-Body of the request:
+Corps de la requête :
 ```
 [{
 "__DATACLASS":"Students",
@@ -407,11 +407,11 @@ Since `__KEY` is given, the Students entity with primary key 55 is loaded **with
 
 In this example, we create a new Students entity with the Schools entity having primary key 2.
 
-You run this request:
+Lancez cette requête :
 
 **POST:**`http://127.0.0.1:8044/rest/Students/pushData`
 
-Body of the request:
+Corps de la requête :
 ```
 [{
 "__DATACLASS":"Students",
@@ -530,7 +530,7 @@ Then you can run this request:
 
 **POST** `http://127.0.0.1:8044/rest/Students/setFinalExam`
 
-Body of the request:
+Corps de la requête :
 
 ```
 [
