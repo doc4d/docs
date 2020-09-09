@@ -53,7 +53,7 @@ Three options are available:
 
 | オプション | JSON 値  | 戻り値                                                                                                                    |
 | ----- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Grow  | "grow"  | The same percentage is applied to the object’s width when the user resizes the width of the window,                    |
+| 拡大    | "grow"  | The same percentage is applied to the object’s width when the user resizes the width of the window,                    |
 | 移動    | "move"  | The object is moved the same amount left or right as the width increase when the user resizes the width of the window, |
 | なし    | "fixed" | The object remains stationary when the form is resized                                                                 |
 > This property works in conjunction with the [Vertical Sizing](#vertical-sizing) property.
@@ -78,7 +78,7 @@ Three options are available:
 
 | オプション | JSON 値  | 戻り値                                                                                                                  |
 | ----- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| Grow  | "grow"  | The same percentage is applied to the object's height when the user resizes the width of the window,                 |
+| 拡大    | "grow"  | The same percentage is applied to the object's height when the user resizes the width of the window,                 |
 | 移動    | "move"  | The object is moved the same amount up or down as the height increase when the user resizes the width of the window, |
 | なし    | "fixed" | The object remains stationary when the form is resized                                                               |
 > This property works in conjunction with the [Horizontal Sizing](#horizontal-sizing) property.
