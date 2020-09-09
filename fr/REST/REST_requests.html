@@ -69,7 +69,7 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/REST/REST_requests.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">A propos des requêtes REST</h1></header><article><div><span><p>Les structures suivantes sont prises en charge par les requêtes REST :</p>
 <table>
 <thead>
-<tr><th>URI</th><th>Resource (Input)</th><th>/? or &amp;{filter} (Output)</th></tr>
+<tr><th>URI</th><th>Resource (Input)</th><th>/? ou &amp;{filter} (Output)</th></tr>
 </thead>
 <tbody>
 <tr><td>http://{servername}:{port}/rest/</td><td><a href="%7BdataClass%7D.html">{dataClass}</a></td><td><a href="/docs/fr/REST/filter.html">$filter</a>, <a href="/docs/fr/REST/attributes.html">$attributes</a>, <a href="/docs/fr/REST/skip.html">$skip</a>, <a href="/docs/fr/REST/method.html">$method=...</a>...</td></tr>
@@ -78,7 +78,7 @@
 <tr><td></td><td><a href="%7BdataClass%7D.html#dataclassattributevalue">{dataClass}:{attribute}(value)</a></td><td></td></tr>
 </tbody>
 </table>
-<p>While all REST requests must contain the URI and Resource parameters, the Output (which filters the data returned) is optional.</p>
+<p>Si toutes les requêtes REST doivent contenir les paramètres URI et Resource, les filtres d'Output (qui filtrent les données retournées) sont facultatifs.</p>
 <p>Comme pour tous les URI, le premier paramètre est délimité par un «?» et tous les paramètres suivants par un «&amp;». Par exemple:</p>
 <p><code>GET /rest/Person/?$filter=&quot;lastName!=Jones&quot;&amp;$method=entityset&amp;$timeout=600</code></p>
 <blockquote>
