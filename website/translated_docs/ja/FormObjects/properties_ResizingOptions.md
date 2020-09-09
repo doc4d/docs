@@ -47,15 +47,15 @@ title: リサイズオプション
 ---
 ## 横方向サイズ変更
 
-This property specifies if the horizontal size of an object should be moved or resized when a user resizes the form. It can also be set dynamically by the `OBJECT SET RESIZING OPTIONS` language command.
+このプロパティは、ユーザーがフォームの幅をサイズ変更したときの、当該オブジェクトの挙動を指定します。 このプロパティは `OBJECT SET RESIZING OPTIONS` ランゲージコマンドによっても設定することができます。
 
-Three options are available:
+次の値が提供されています:
 
-| オプション | JSON 値  | 戻り値                                                                                                                    |
-| ----- | ------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Grow  | "grow"  | The same percentage is applied to the object’s width when the user resizes the width of the window,                    |
-| 移動    | "move"  | The object is moved the same amount left or right as the width increase when the user resizes the width of the window, |
-| なし    | "fixed" | The object remains stationary when the form is resized                                                                 |
+| オプション | JSON 値  | 戻り値                                                    |
+| ----- | ------- | ------------------------------------------------------ |
+| 拡大    | "grow"  | ユーザーがウィンドウの幅を変更すると、オブジェクトの幅にも同じ割合を適用します。               |
+| 移動    | "move"  | ユーザーがウィンドウの幅を変更すると、幅の増加分と同じだけオブジェクトを左か右に移動します。         |
+| なし    | "fixed" | The object remains stationary when the form is resized |
 > This property works in conjunction with the [Vertical Sizing](#vertical-sizing) property.
 
 #### JSON 文法
@@ -72,13 +72,13 @@ Three options are available:
 ---
 ## 縦方向サイズ変更
 
-This property specifies if the vertical size of an object should be moved or resized when a user resizes the form. It can also be set dynamically by the `OBJECT SET RESIZING OPTIONS` language command.
+This property specifies if the vertical size of an object should be moved or resized when a user resizes the form. このプロパティは `OBJECT SET RESIZING OPTIONS` ランゲージコマンドによっても設定することができます。
 
-Three options are available:
+次の値が提供されています:
 
 | オプション | JSON 値  | 戻り値                                                                                                                  |
 | ----- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| Grow  | "grow"  | The same percentage is applied to the object's height when the user resizes the width of the window,                 |
+| 拡大    | "grow"  | The same percentage is applied to the object's height when the user resizes the width of the window,                 |
 | 移動    | "move"  | The object is moved the same amount up or down as the height increase when the user resizes the width of the window, |
 | なし    | "fixed" | The object remains stationary when the form is resized                                                               |
 > This property works in conjunction with the [Horizontal Sizing](#horizontal-sizing) property.
