@@ -39,29 +39,29 @@ Les fonctions sont appelées sur l'objet correspondant au datastore du serveur.
 
 
 > `/rest/{dataClass}/Function` peut être utilisé pour appeler une fonction de dataclass ou de sélection d'entité (`/rest/{dataClass}` retourne toutes les entités de la DataClass en tant que sélection d'entité).   
-> La fonction est d'abord recherchée dans la classe de sélection d'entité. Si elle n'est pas trouvée, elle est recherchée dans la dataclass. In other words, if a function with the same name is defined in both the DataClass class and the EntitySelection class, the dataclass class function will never be executed.
+> La fonction est d'abord recherchée dans la classe de sélection d'entité. Si elle n'est pas trouvée, elle est recherchée dans la dataclass. En d'autres termes, si une fonction portant le même nom est définie à la fois dans la classe DataClass et la classe EntitySelection, la fonction de classe de dataclass ne sera jamais exécutée.
 
 
 ## Paramètres
 
 
-You can send parameters to functions defined in ORDA user classes. On the server side, they will be received in the class functions in regular $1, $2, etc. parameters.
+Vous pouvez envoyer des paramètres aux fonctions définies dans les classes utilisateurs ORDA. Côté serveur, ils seront reçus dans les fonctions de classe dans les paramètres normaux $1, $2, etc.
 
-The following rules apply:
+Les règles suivantes s'appliquent :
 
-- Parameters must be passed in the **body of the POST request**
-- Parameters must be enclosed within a collection (JSON format)
-- All scalar data types supported in JSON collections can be passed as parameters.
-- Entity and entity selection can be passed as parameters. The JSON object must contain specific attributes used by the REST server to assign data to the corresponding ORDA objects: __DATACLASS, __ENTITY, __ENTITIES, __DATASET.
+- Les paramètres doivent être passés dans le **corps de la requête POST**
+- Les paramètres doivent être inclus dans une collection (format JSON)
+- Tous les types de données scalaires pris en charge dans les collections JSON peuvent être passés en tant que paramètres.
+- La sélection d'entité et l'entité peuvent être passées en tant que paramètres. L'objet JSON doit contenir des attributs spécifiques utilisés par le serveur REST pour affecter des données aux objets ORDA correspondants : __DATACLASS, __ENTITY, __ENTITIES, __DATASET.
 
-See [this example](#request-receiving-an-entity-as-parameter) and [this example](#request-receiving-an-entity-selection-as-parameter).
+Voir [cet exemple](#request-receiving-an-entity-as-parameter) et [cet exemple](#request-receiving-an-entity-selection-as-parameter).
 
 
-### Scalar value parameter
+### Paramètre de valeur scalaire
 
-Parameter(s) must simply be enclosed in a collection defined in the body. For example, with a  dataclass function `getCities()` receiving text parameters: `/rest/City/getCities`
+Le(s) paramètre(s) doivent simplement être incluse dans une collection définie dans le corps. Par exemple, avec une fonction de dataclass `getCities()` qui reçoit des paramètres de type texte : `/rest/City/getCities`
 
-**Parameters in body:** ["Aguada","Paris"]
+**Parmaètres dans le corps :** ["Aguada","Paris"]
 
 All JSON data types are supported in parameters, including JSON pointers. Dates can be passed as strings in ISO 8601 date format (e.g. "2020-08-22T22:00:000Z").
 
@@ -73,14 +73,14 @@ Entities passed in parameters are referenced on the server through their key (*i
 > If the request sends modified attribute values for an existing entity on the server, the called ORDA data model function will be automatically executed on the server with modified values. This feature allows you, for example, to check the result of an operation on an entity, after applying all business rules, from the client application. You can then decide to save or not the entity on the server.
 
 
-| Propriétés            | Type                                 | Description                                                                |
-| --------------------- | ------------------------------------ | -------------------------------------------------------------------------- |
-| Attributs de l'entité | mixed                                | Optional - Values to modify                                                |
-| __DATACLASS           | Chaine                               | Mandatory - Indicates the Dataclass of the entity                          |
-| __ENTITY              | Booléen                              | Mandatory - True to indicate to the server that the parameter is an entity |
-| __KEY                 | mixed (same type as the primary key) | Optional - Primary key of the entity                                       |
+| Propriétés            | Type                                              | Description                                                                 |
+| --------------------- | ------------------------------------------------- | --------------------------------------------------------------------------- |
+| Attributs de l'entité | mixte                                             | Optionnelle - Valeurs à modifier                                            |
+| __DATACLASS           | Chaine                                            | Obligatoire - Indique la Dataclass de l'entité                              |
+| __ENTITY              | Booléen                                           | Obligatoire - Vrai pour indiquer au serveur que le paramètre est une entité |
+| __KEY                 | mixte (type identique à celui de la clé primaire) | Optionnel - clé primaire de l'entité                                        |
 
-- If __KEY is not provided, a new entity is created on the server with the given attributes.
+- Si __KEY n'est pas fourni, une nouvelle entité est créée sur le serveur avec les attributs donnés.
 - If __KEY is provided, the entity corresponding to __KEY is loaded on the server with the given attributes
 
 See examples for [creating](#creating-an-entity) or [updating](#updating-an-entity) entities.
@@ -101,7 +101,7 @@ The entity selection must have been defined beforehand using [$method=entityset]
 
 | Propriétés            | Type    | Description                                                                          |
 | --------------------- | ------- | ------------------------------------------------------------------------------------ |
-| Attributs de l'entité | mixed   | Optional - Values to modify                                                          |
+| Attributs de l'entité | mixte   | Optionnelle - Valeurs à modifier                                                     |
 | __DATASET             | Chaine  | Mandatory - entitySetID (UUID) of the entity selection                               |
 | __ENTITIES            | Booléen | Mandatory - True to indicate to the server that the parameter is an entity selection |
 
