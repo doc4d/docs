@@ -20,11 +20,11 @@ $city:=ds.City.getCity("Aguada")
 ```
 
 
-## Function calls
+## Appeler des fonctions
 
-Functions must always be called using REST **POST** requests (a GET request will receive an error).
+Les fonctions doivent toujours être appelées à l'aide des requêtes **POST** (une requête GET recevra une erreur).
 
-Functions are called on the corresponding object on the server datastore.
+Les fonctions sont appelées sur l'objet correspondant au datastore du serveur.
 
 | Fonction de classe                                                 | Syntaxe                                                                     |
 | ------------------------------------------------------------------ | --------------------------------------------------------------------------- |
@@ -38,8 +38,8 @@ Functions are called on the corresponding object on the server datastore.
 
 
 
-> `/rest/{dataClass}/Function` can be used to call either a dataclass or an entity selection function (`/rest/{dataClass}` returns all entities of the DataClass as an entity selection).   
-> The function is searched in the entity selection class first. If not found, it is searched in the dataclass. In other words, if a function with the same name is defined in both the DataClass class and the EntitySelection class, the dataclass class function will never be executed.
+> `/rest/{dataClass}/Function` peut être utilisé pour appeler une fonction de dataclass ou de sélection d'entité (`/rest/{dataClass}` retourne toutes les entités de la DataClass en tant que sélection d'entité).   
+> La fonction est d'abord recherchée dans la classe de sélection d'entité. Si elle n'est pas trouvée, elle est recherchée dans la dataclass. In other words, if a function with the same name is defined in both the DataClass class and the EntitySelection class, the dataclass class function will never be executed.
 
 
 ## Paramètres
