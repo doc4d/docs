@@ -102,7 +102,7 @@ An entity selection can also be empty.
 
 ## Generic class
 
-Built-in class for ORDA objects such as entities, or dataclasses. Functions and properties of generic classes are automatically available in user extended classes, e.g. `EmployeeEntity`.
+Built-in class for ORDA objects such as entities, or dataclasses. Les fonctions et propriétés des classes génériques sont automatiquement disponibles dans les classes utilisateur étendues, telles que `EmployeeEntity`.
 
 
 ## Lazy loading
