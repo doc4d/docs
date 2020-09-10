@@ -384,7 +384,7 @@ Corps de la requête :
 }]
 ```
 
-Since `__KEY` is given, the Students entity with primary key 55 is loaded **with the lastname value received from the client**. Because the function runs a `save()` action, the entity is updated.
+Si aucune `__KEY` n'est donnée, l'entité Students est chargée avec la clé primaire 55 **avec la valeur lastname reçue par le client**. Parce que la fonction exécute une action `save()`, la nouvelle entité est mise à jour.
 
 #### Résultat
 
@@ -403,9 +403,9 @@ Since `__KEY` is given, the Students entity with primary key 55 is loaded **with
 }
 ```
 
-### Creating an entity with a related entity
+### Créer une entité avec une entité liée
 
-In this example, we create a new Students entity with the Schools entity having primary key 2.
+Dans cet exemple, nous créons une nouvelle entité Students avec l'entité Schools ayant la clé primaire 2.
 
 Lancez cette requête :
 
@@ -445,9 +445,9 @@ Corps de la requête :
 ```
 
 
-### Updating an entity with a related entity
+### Mettre à jour une entité avec une entité liée
 
-In this example, we associate an existing school to a Students entity. The `StudentsEntity` class has an API:
+Dans cet exemple, nous associons une école existante à l'entité Students. La classe `StudentsEntity` possède une API :
 
 ```
 // classe StudentsEntity
@@ -492,25 +492,25 @@ You run this request, called on a Students entity : **POST** `http://127.0.0.1:8
 In the `Students` Dataclass class, the `setFinalExam()` function updates a received entity selection ($1). It actually updates the *finalExam* attribute with the received value ($2). It returns the primary keys of the updated entities.
 
 ```
-// Students class
+// classe Students
 
 Class extends DataClass
 
-Function setFinalExam()
+Fonction setFinalExam()
 
     var $1, $es, $student, $status : Object
     var $2, $examResult : Text
 
     var $keys, $0 : Collection
 
-      //Entity selection
+      //Sélection d'entité
     $es:=$1
 
     $examResult:=$2
 
     $keys:=New collection()
 
-      //Loop on the entity selection
+      //Boucle sur la sélection d'entité
     For each ($student;$es)
         $student.finalExam:=$examResult
         $status:=$student.save()
@@ -545,7 +545,7 @@ Corps de la requête :
 
 #### Résultat
 
-The entities with primary keys 1 and 2 have been updated.
+Les entités ayant les clés primaires sont 1 et 2 ont été mises à jour.
 
 ```
 {
@@ -556,7 +556,7 @@ The entities with primary keys 1 and 2 have been updated.
 }
 ```
 
-### Using an entity selection updated on the client
+### Utiliser une sélection d'entité mise à jour sur le client
 
 Using the `getAgeAverage()` function [defined above](#using-an-entityselection-class-function-and-an-entityset).
 
@@ -566,7 +566,7 @@ var $ageAverage : Integer
 
 $remoteDS:=Open datastore(New object("hostname";"127.0.0.1:8044");"students")
 
-// $newStudent is a student entity to procees
+// $newStudent est une entité "student" à traiter
 $newStudent:=...
 $students:=$remoteDS.Students.query("school.name = :1";"Math school")
 // We add an entity to the $students entity selection on the client
