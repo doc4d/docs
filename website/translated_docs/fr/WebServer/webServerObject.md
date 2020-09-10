@@ -10,8 +10,8 @@ Un projet 4D peut démarrer et surveiller un serveur Web pour la base de donnée
 Par exemple, si vous avez installé deux composants dans votre base de données principale, vous pouvez démarrer et contrôler jusqu'à trois serveurs Web indépendants à partir de votre application :
 
 - un serveur web pour la base hôte,
-- one web server for the component #1,
-- one web server for the component #2.
+- un serveur web pour le composant n°1,
+- un serveur web pour le composant n°2.
 
 En dehors de la mémoire, il n'y a pas de limite au nombre de composants et donc, de serveurs Web, pouvant être rattachés à un seul projet de base de données 4D.
 
@@ -20,11 +20,11 @@ Chaque serveur web 4D, y compris le serveur web de la base de données principal
 > Les [commandes WEB](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) héritées du langage 4D sont prises en charge mais ne peuvent pas contrôler le serveur Web auquel elles s'appliquent (voir ci-dessous).
 
 Chaque serveur web (base hôte ou composant) peut être utilisé dans son propre contexte, notamment :
-- `On Web Authentication` and `On Web Connection` database method calls
-- 4D tags processing and method calls,
-- managing web sessions and TLS protocols.
+- les appels vers la méthode base `On Web Authentication` et `On Web Connection`
+- le traitement des balises 4D et les appels de méthodes,
+- la gestion de sessions web et des protocoles TLS.
 
-This feature allows you to develop independant components and features that come with their own web interfaces.
+Cette fonctionnalité vous permet de développer des composants indépendants et des fonctionnalités qui accompagnent leurs propres interfaces Web.
 
 
 ## Instancier un objet serveur web
@@ -36,19 +36,19 @@ $nbSrv:=WEB Server list.length
 //la valeur de $nbSrv est 1
 ```
 
-To instantiate a web server object, call the `WEB Server` command:
+Pour instancier un objet serveur web, appelez la commande `WEB Server` :
 
 ```4d
 C_OBJECT(webServer)
-    //call the web server from the current context
+    //appeler le serveur web depuis le contexte courant
 webServer:=WEB Server  
-    //equivalent to
+    //équivalent à
 webServer:=WEB Server(Web server database)
 ```
 
 If the database uses components and you want to call:
 - the host database's web server from a component or
-- the server that received the request (whatever the server),
+- le serveur qui a reçu la requête (quel que soit le serveur)
 
 you can also use:
 
