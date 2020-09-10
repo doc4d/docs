@@ -127,14 +127,14 @@ $myClass.query("name = smith")
 
 In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. Das gilt für:
 
-*   number
+*   Zahl
 *   Text
 *   Null
-*   boolean
-*   date
-*   object
-*   collection
-*   picture(\*)
+*   Boolean
+*   Datum
+*   Objekt
+*   Collection
+*   Bild (\*)
 
 *(\*) picture type is not supported by statistical methods such as* `entitySelection.max( )`.
 
