@@ -63,7 +63,7 @@ Beachten Sie, dass das `Storage` Objekt, im Gegensatz zu den standardmäßigen s
 Weitere Informationen dazu finden Sie unter dem Befehl `Storage`.
 
 ## Use...End use
-The formal syntax of the `Use...End use` structure is:
+Die formale Syntax der Abfragefolge `For..End for` lautet:
 
 ```4d
  Use(Shared_object_or_Shared_collection)
@@ -87,7 +87,7 @@ Shared objects and shared collections are designed to allow communication betwee
 
 ## Beispiel 1
 
-You want to launch several processes that perform an inventory task on different products and update the same shared object. The main process instantiates an empty shared object and then, launches the other processes, passing the shared object and the products to count as parameters:
+Sie wollen mehrere Prozesse starten, die eine Inventur von verschiedenen Produkten durchführen und das gleiche shared object aktualisieren. Der Hauptprozess erstellt eine Instanz von einem leeren shared object, startet dann die anderen Prozesse und übergibt das shared object und die zu zählenden Produkte als Parameter:
 
 ```4d
  ARRAY TEXT($_items;0)
@@ -106,7 +106,7 @@ You want to launch several processes that perform an inventory task on different
  End for
 ```
 
-In the "HowMany" method, inventory is done and the $inventory shared object is updated as soon as possible:
+In der Methode "HowMany" ist "inventory" ausgeführt und das shared object $inventory wird sobald wie möglich aktualisiert:
 
 ```4d
  C_TEXT($1)
@@ -124,7 +124,7 @@ In the "HowMany" method, inventory is done and the $inventory shared object is u
 
 ## Beispiel 2
 
-The following examples highlight specific rules when handling shared groups:
+Nachfolgende Beispiele zeigen spezifische Regeln beim Verwalten von shared groups:
 
 ```4d
  $ob1:=New shared object
