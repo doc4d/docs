@@ -79,7 +79,7 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <ul>
 <li><p>You can &quot;hide&quot; the overall complexity of the underlying physical structure and only expose understandable and ready-to-use functions.</p></li>
 <li><p>If the physical structure evolves, you can simply adapt function code and client applications will continue to call them transparently.</p></li>
-<li><p>By default, all of your data model class functions are set as <strong>private</strong> and cannot be called from remote requests. You must explicitly declare each public function with the <a href="#exposed-vs-non-exposed-functions"><code>exposed</code></a> keyword.</p></li>
+<li><p>By default, all of your data model class functions are <strong>not exposed</strong> and cannot be called from remote requests. You must explicitly declare each public function with the <a href="#exposed-vs-non-exposed-functions"><code>exposed</code></a> keyword.</p></li>
 </ul>
 <p><img src="/docs/alpha/assets/en/ORDA/api.png" alt=""></p>
 <p>In addition, 4D <a href="#creating-classes">automatically pre-creates</a> the classes for each available data model object.</p>
@@ -251,7 +251,7 @@ End if</span>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="exposed-vs-non-exposed-functions"></a><a href="#exposed-vs-non-exposed-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exposed vs non-exposed functions</h2>
 <p>For security reasons, all of your data model class functions are <strong>not exposed</strong> (i.e., private) by default.</p>
-<p>A function that is not exposed is not available on remote applications and cannot be called on any object instance from a remote request, it can only be called from the application itself. Remote requests include:</p>
+<p>A function that is not exposed is not available on remote applications and cannot be called on any object instance from a remote request. It can only be called from the application itself. Remote requests include:</p>
 <ul>
 <li>Requests sent by client 4D applications working with remote datastores</li>
 <li>REST requests</li>
@@ -262,7 +262,7 @@ End if</span>
 exposed<span class="hljs-keyword"> Function</span> &lt;functionName&gt;   
 </code></pre>
 <blockquote>
-<p>The <code>exposed</code> keyword can only be used with Data model class functions. If used with a <a href="/docs/alpha/en/Concepts/classes.html">regular user class</a> function, an error is returned.</p>
+<p>The <code>exposed</code> keyword can only be used with Data model class functions. If used with a <a href="/docs/alpha/en/Concepts/classes.html">regular user class</a> function, it is ignored and an error is returned by the compiler.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="example-4"></a><a href="#example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
 <p>You want an exposed function to use a private function in a dataclass class:</p>
@@ -307,7 +307,7 @@ local<span class="hljs-keyword"> Function</span> &lt;functionName&gt;
 <li>no part of the function code will send a request to the server (for example, <code>Current time(*)</code> will always call the server).</li>
 </ul>
 <blockquote>
-<p>The <code>local</code> keyword can only be used with data model class functions. If used with a <a href="/docs/alpha/en/Concepts/classes.html">regular user class</a> function, an error is returned.</p>
+<p>The <code>local</code> keyword can only be used with data model class functions. If used with a <a href="/docs/alpha/en/Concepts/classes.html">regular user class</a> function, it is ignored and an error is returned by the compiler.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
 <h4><a class="anchor" aria-hidden="true" id="calculating-age"></a><a href="#calculating-age" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calculating age</h4>
