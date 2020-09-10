@@ -82,7 +82,7 @@ Shared objects und shared collections wurden zur Kommunikation zwischen Prozesse
 - Die Zeile **End use** entsperrt die Eigenschaften _Shared_object_or_Shared_collection_ und alle Objekte, die sich den gleichen Sperrschlüssel (locking identifier) teilen.
 - Im 4D Code können auch mehrere Strukturen **Use...End use** eingebunden sein. In diesem Fall werden alle Sperrungen gestapelt und Eigenschaften/Elemente erst nach Ausführen der letzten Zeile End use freigegeben.
 
-**Note:** If a collection method modifies a shared collection, an internal **Use** is automatically called for this shared collection while the function is executed.
+**Hinweis:** Verändert eine Collection Methode eine shared collection, wird beim Ausführen der Methode für diese shared collection automatisch ein internes **Use** aufgerufen.
 
 
 ## Beispiel 1
