@@ -10,17 +10,17 @@ A 4D project can start and monitor a web server for the main (host) application 
 For example, if you installed two components in your main application, you can start and monitor up to three independant web servers from your application:
 
 - one web server for the host application,
-- one web server for the component #1,
-- one web server for the component #2.
+- un serveur web pour le composant n°1,
+- un serveur web pour le composant n°2.
 
 Other than memory, there is no limit to the number of components and thus, of web servers, that can be attached to a single 4D application project.
 
 Each 4D web server, including the main application's web server, is exposed as a specific **object**. Once instantiated, a web server object can be handled from the current application or from any component.
 
-> The legacy [WEB commands](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) of the 4D language are supported but cannot select the web server to which they apply (see below).
+> Les [commandes WEB](https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html) héritées du langage 4D sont prises en charge mais ne peuvent pas sélectionner le serveur Web auquel elles s'appliquent (voir ci-dessous).
 
-Each web server (host application or component) can be used in its own separate context, including:
-- `On Web Authentication` and `On Web Connection` database method calls
+Chaque serveur web (application hôte ou composant) peut être utilisé dans son propre contexte, notamment :
+- les appels vers la méthode base `On Web Authentication` et `On Web Connection`
 - 4D tags processing and method calls,
 - managing web sessions and TLS protocols.
 
