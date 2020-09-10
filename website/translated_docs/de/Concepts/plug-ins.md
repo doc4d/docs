@@ -9,9 +9,9 @@ Beim Entwickeln einer 4D Anwendung entdecken Sie viele Fähigkeiten, die Sie bei
 
 Auch wenn 4D hunderte von integrierten Methoden zum Verwalten von Objekten, Datensätzen und Steuern von Benutzeroberflächen bietet, ist u.U. eine spezielle Verwendung oder Funktionalität (manchmal abhängig von der Plattform) erforderlich: Einer benötigt ODBC unter Windows, ein anderer Apple-Dienste auf MacOS, und weitere möchten spezielle Statistik-Tools, Zahlungsmodalitäten einbauen, Login für soziale Netzwerke oder Dateizugriff über das Netzwerk gewähren, eine branchenspezifische Benutzeroberfläche oder eine eigene Bildstruktur hinzufügen.
 
-Würden all diese Bereiche für die beiden Betriebssysteme macOS und Windows über 4D Befehle abgedeckt, hätten wir als Effekt ein Produkt mit tausenden von Befehlen und gleichzeitig viele Benutzer, die solch einen Funktionsumfang gar nicht benötigen. Also, creating such an all-encompassing tool would make the 4D environment incredibly complex and would take most users months of study before useful results could be expected.
+Würden all diese Bereiche für die beiden Betriebssysteme macOS und Windows über 4D Befehle abgedeckt, hätten wir als Effekt ein Produkt mit tausenden von Befehlen und gleichzeitig viele Benutzer, die solch einen Funktionsumfang gar nicht benötigen. Solch ein allumfassendes Tool würde die 4D Umgebung unglaublich komplex machen, so dass die meisten Benutzer erst ein paar Monate studieren müssten, bevor sie brauchbare Ergebnisse liefern könnten.
 
-The modular nature of the 4D environment allows the creation of basic applications but does not preclude the development of highly complex systems. The 4D Plug-in architecture opens the 4D environment to any type of application or user. 4D Plug-ins multiply that application or user's power and productivity.
+Der modulare Aufbau der 4D Umgebung ermöglicht die Erstellung von Basisanwendungen, schließt aber die Entwicklung hochkomplexer Systeme nicht aus. Die 4D Plug-in Architektur öffnet die 4D Umgebung für jede Art von Anwendung oder Benutzer. 4D Plug-ins multiply that application or user's power and productivity.
 
 ## What is a plug-in and what can it do?
 
