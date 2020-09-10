@@ -68,18 +68,18 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/ORDA/ordaClasses.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Data Model Classes</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="overview"></a><a href="#overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview</h2>
 <p>ORDA allows you to create high-level class functions above the data model. This allows you to write business-oriented code and &quot;publish&quot; it just like an API. Datastore, dataclasses, entity selections, and entities are all available as class objects that can contain functions.</p>
-<p>For example, you could create a <code>getNextWithHigherSalary()</code> function in the <code>EmployeeEntity</code> class to return employees with a salary higher than the selected one. It would be as simple to call as:</p>
+<p>For example, you could create a <code>getNextWithHigherSalary()</code> function in the <code>EmployeeEntity</code> class to return employees with a salary higher than the selected one. It would be as simple as calling:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$nextHigh</span>:=ds.<span class="hljs-function">Employee</span>(<span class="hljs-number">1</span>).<span class="hljs-function">getNextWithHigherSalary</span>()
 </code></pre>
-<p>Developers can not only use these functions in local datastores, but also in client/server as well as remote architectures (see the full example <a href="#example-with-remote-datastore">below</a>):</p>
+<p>Developers can not only use these functions in local datastores, but also in client/server and remote architectures (see the full example <a href="#example-with-remote-datastore">below</a>):</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-comment">//$cityManager is the reference of a remote datastore</span>
 Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class="hljs-function">getCityName</span>(Form.comp.zipcode)
 </code></pre>
-<p>Thanks to this feature, the entire business logic of your 4D application can be stored as a independent layer so that it can be easily maintained, reused, with a high level of security:</p>
+<p>Thanks to this feature, the entire business logic of your 4D application can be stored as a independent layer so that it can be easily maintained and reused with a high level of security:</p>
 <ul>
-<li><p>it allows you to &quot;hide&quot; the overall complexity of the underlying physical structure and only expose understandable and ready-to-use functions.</p></li>
-<li><p>if the physical structure evolves, you simply to adapt function code and client applications will continue to call them transparently.</p></li>
-<li><p>by default, all your data model class functions are set to <strong>private</strong> and cannot be called from remote requests. You must declare explicitly each public function using the <a href="#exposed-vs-non-exposed-functions"><code>exposed</code></a> keyword.</p></li>
+<li><p>You can &quot;hide&quot; the overall complexity of the underlying physical structure and only expose understandable and ready-to-use functions.</p></li>
+<li><p>If the physical structure evolves, you can simply adapt function code and client applications will continue to call them transparently.</p></li>
+<li><p>By default, all of your data model class functions are set as <strong>private</strong> and cannot be called from remote requests. You must explicitly declare each public function with the <a href="#exposed-vs-non-exposed-functions"><code>exposed</code></a> keyword.</p></li>
 </ul>
 <p><img src="/docs/alpha/assets/en/ORDA/api.png" alt=""></p>
 <p>In addition, 4D <a href="#creating-classes">automatically pre-creates</a> the classes for each available data model object.</p>
@@ -101,7 +101,7 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <blockquote>
 <p>ORDA user classes are stored as regular class files (.4dm) in the Classes subfolder of the project <a href="#class-files">(see below)</a>.</p>
 </blockquote>
-<p>In addition, object instances from ORDA data model user classes benefit from their parent's properties and functions. For example, an Entity class object can call functions from the <a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html">ORDA Entity generic class</a>.</p>
+<p>Also, object instances from ORDA data model user classes benefit from their parent's properties and functions. For example, an Entity class object can call functions from the <a href="https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html">ORDA Entity generic class</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="class-description"></a><a href="#class-description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Class Description</h2>
 <p><details><summary>History</summary></p>
 <table>
@@ -144,14 +144,14 @@ Function</span> getDesc
 
 Class extends</span> DataClass
 
-<span class="hljs-comment">// Returns companies which revenue is over the average</span>
-<span class="hljs-comment">// Returns an entity selection related to the DataClass Company </span><span class="hljs-keyword">
+<span class="hljs-comment">// Returns companies whose revenue is over the average</span>
+<span class="hljs-comment">// Returns an entity selection related to the Company DataClass</span><span class="hljs-keyword">
 
 Function</span><span class="hljs-function"> GetBestOnes</span>()
     <span class="hljs-variable">$sel</span>:=<span class="hljs-literal">This</span>.<span class="hljs-function">query</span>(<span class="hljs-string">"revenues &gt;= :1"</span>;<span class="hljs-literal">This</span>.<span class="hljs-function">all</span>().<span class="hljs-function">average</span>(<span class="hljs-string">"revenues"</span>));
     <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$sel</span>
 </code></pre>
-<p>Then, you can get an entity selection of the &quot;best&quot; companies by executing:</p>
+<p>Then you can get an entity selection of the &quot;best&quot; companies by executing:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">    var</span> <span class="hljs-variable">$best </span>: cs.CompanySelection
     <span class="hljs-variable">$best</span>:=ds.Company.<span class="hljs-function">GetBestOnes</span>()
 </code></pre>
@@ -196,14 +196,14 @@ Function</span><span class="hljs-function"> getCityName</span>()<span class="hlj
 
 Class extends</span> EntitySelection
 
-<span class="hljs-comment">//Extract from this entity selection the employees with a salary greater than the average</span><span class="hljs-keyword">
+<span class="hljs-comment">//Extract the employees with a salary greater than the average from this entity selection </span><span class="hljs-keyword">
 
 Function</span> withSalaryGreaterThanAverage
 <span class="hljs-function">    C_OBJECT</span>(<span class="hljs-variable">$0</span>)
     <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.<span class="hljs-function">query</span>(<span class="hljs-string">"salary &gt; :1"</span>;<span class="hljs-literal">This</span>.<span class="hljs-function">average</span>(<span class="hljs-string">"salary"</span>)).<span class="hljs-function">orderBy</span>(<span class="hljs-string">"salary"</span>)
 
 </code></pre>
-<p>Then, you can get employees with a salary greater than the average in any entity selection by executing:</p>
+<p>Then you can get employees with a salary greater than the average in any entity selection by executing:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$moreThanAvg</span>:=ds.Company.<span class="hljs-function">all</span>().employees.<span class="hljs-function">withSalaryGreaterThanAverage</span>()
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="entity-class"></a><a href="#entity-class" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Entity Class</h3>
@@ -216,7 +216,6 @@ Function</span> withSalaryGreaterThanAverage
 <h4><a class="anchor" aria-hidden="true" id="example-3"></a><a href="#example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// cs.CityEntity class</span><span class="hljs-keyword">
 
-
 Class extends</span> Entity<span class="hljs-keyword">
 
 Function</span><span class="hljs-function"> getPopulation</span>()
@@ -225,10 +224,10 @@ Function</span><span class="hljs-function"> getPopulation</span>()
 
 Function</span> isBigCity
 <span class="hljs-function">C_BOOLEAN</span>(<span class="hljs-variable">$0</span>)
-<span class="hljs-comment">// The function getPopulation() is usable inside the class</span>
+<span class="hljs-comment">// The getPopulation() function is usable inside the class</span>
 <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.<span class="hljs-function">getPopulation</span>()&gt;<span class="hljs-number">50000</span>
 </code></pre>
-<p>Then, you can call this code:</p>
+<p>Then you can call this code:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$cityManager</span>; <span class="hljs-variable">$city </span>: Object
 
 <span class="hljs-variable">$cityManager</span>:=<span class="hljs-function">Open datastore</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"hostname"</span>;<span class="hljs-string">"127.0.0.1:8111"</span>);<span class="hljs-string">"CityManager"</span>)
@@ -239,26 +238,26 @@ If</span> (<span class="hljs-variable">$city</span>.<span class="hljs-function">
 End if</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="specific-rules"></a><a href="#specific-rules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Specific rules</h3>
-<p>When creating or editing data model classes, you must pay attention to the rules described below.</p>
+<p>When creating or editing data model classes, you must pay attention to the following rules:</p>
 <ul>
-<li><p>Since they are used to define automatic DataClass class names in the <strong>cs</strong> <a href="/docs/alpha/en/Concepts/classes.html#class-stores">class store</a>, 4D table names must be compliant in order to avoid any conflict in the <strong>cs</strong> namespace. In particular:</p>
+<li><p>Since they are used to define automatic DataClass class names in the <strong>cs</strong> <a href="/docs/alpha/en/Concepts/classes.html#class-stores">class store</a>, 4D tables must be named in order to avoid any conflict in the <strong>cs</strong> namespace. In particular:</p>
 <ul>
 <li>Do not give the same name to a 4D table and to a <a href="/docs/alpha/en/Concepts/classes.html#class-names">user class name</a>. If such a case occurs, the constructor of the user class becomes unusable (a warning is returned by the compiler).</li>
-<li>Do not use a reserved name for a 4D table (e.g. &quot;DataClass&quot;).</li>
+<li>Do not use a reserved name for a 4D table (e.g., &quot;DataClass&quot;).</li>
 </ul></li>
-<li><p>When defining a class, make sure the <a href="/docs/alpha/en/Concepts/classes.html#class-extends-classnameclass"><code>Class extends</code></a> statement matches exactly the parent class (case sensitive) name. For example, <code>Class extends EntitySelection</code> for an entity selection class.</p></li>
+<li><p>When defining a class, make sure the <a href="/docs/alpha/en/Concepts/classes.html#class-extends-classnameclass"><code>Class extends</code></a> statement exactly matches the parent class name (remember that they're case sensitive). For example, <code>Class extends EntitySelection</code> for an entity selection class.</p></li>
 <li><p>You cannot instantiate a data model class object with the <code>new()</code> keyword (an error is returned). You must use a regular method as listed in the <a href="#architecture"><code>Instantiated by</code> column of the ORDA class table</a>.</p></li>
 <li><p>You cannot override a native ORDA class function from the <strong><code>4D</code></strong> <a href="/docs/alpha/en/Concepts/classes.html#class-stores">class store</a> with a data model user class function.</p></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="exposed-vs-non-exposed-functions"></a><a href="#exposed-vs-non-exposed-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exposed vs non-exposed functions</h2>
-<p>By default for security reasons, all your data model class functions are <strong>not exposed</strong> (i.e. private).</p>
-<p>A function that is not exposed is not available on remote applications and cannot be called on any object instance from a remote request (it can however be called from the application itself). Remote requests include:</p>
+<p>For security reasons, all of your data model class functions are <strong>not exposed</strong> (i.e., private) by default.</p>
+<p>A function that is not exposed is not available on remote applications and cannot be called on any object instance from a remote request, however it can be called from the application itself. Remote requests include:</p>
 <ul>
-<li>requests sent by client 4D applications working with remote datastores</li>
+<li>Requests sent by client 4D applications working with remote datastores</li>
 <li>REST requests</li>
 </ul>
-<p>If a remote application tries to access a non-exposed function, the error &quot;-10729 - Unknown member method&quot; is returned.</p>
-<p>To allow a data model class function to be called by a remote request, you must declare it explicitly using the <code>exposed</code> keyword. The formal syntax is:</p>
+<p>If a remote application tries to access a non-exposed function, the &quot;-10729 - Unknown member method&quot; error is returned.</p>
+<p>To allow a data model class function to be called by a remote request, you must explicitly declare it using the <code>exposed</code> keyword. The formal syntax is:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// declare an exposed function</span>
 exposed<span class="hljs-keyword"> Function</span> &lt;functionName&gt;   
 </code></pre>
@@ -297,25 +296,23 @@ var</span> <span class="hljs-variable">$serialNumber </span>: Integer
 <span class="hljs-variable">$serialNumber</span>:=<span class="hljs-variable">$remoteDS</span>.Schools.<span class="hljs-function">computeSerialNumber</span>() <span class="hljs-comment">// Error "Unknown member method" </span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="local-functions"></a><a href="#local-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Local functions</h2>
-<p>By default in client/server architecture, ORDA data model functions are executed <strong>on the server</strong>. It means that calling a function generates a request to the server.</p>
-<p>However, it happens that a function could be executed on the client side, for example when it processes data that are already in the local cache. In this case, you can save requests to the server and thus, enhance the application performance by inserting the <code>local</code> keyword. The function will then be executed on the client and will not generate requests to the server. The formal syntax is:</p>
+<p>By default in client/server architecture, ORDA data model functions are executed <strong>on the server</strong>. This means that calling a function generates a request to the server.</p>
+<p>However, it could happen that a function is executed on the client side (e.g., when it processes data that's already in the local cache). In this case, you can save requests to the server and thus, enhance the application performance by inserting the <code>local</code> keyword. The function will then be executed on the client and will not generate requests to the server. The formal syntax is:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// declare a function to execute locally in client/server</span>
 local<span class="hljs-keyword"> Function</span> &lt;functionName&gt;   
 </code></pre>
-<p>Obviously, you need to make sure that the function is actually eligible to a local execution. In particular, you need to make sure that:</p>
+<p>Obviously, you need to make sure that the function is actually eligible for local execution. In particular, you need to make sure that:</p>
 <ul>
-<li>required data are in loaded the ORDA cache and is not expired - otherwise, requests may be triggered to the server,</li>
+<li>required data is loaded in the ORDA cache and not expired - otherwise, requests may be triggered to the server,</li>
 <li>no part of the function code will send a request to the server (for example, <code>Current time(*)</code> will always call the server).</li>
 </ul>
 <blockquote>
-<p>The <code>local</code> keyword can only be used with Data model class functions. If used with a <a href="/docs/alpha/en/Concepts/classes.html">regular user class</a> function, an error is returned.</p>
+<p>The <code>local</code> keyword can only be used with data model class functions. If used with a <a href="/docs/alpha/en/Concepts/classes.html">regular user class</a> function, an error is returned.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
 <h4><a class="anchor" aria-hidden="true" id="calculating-age"></a><a href="#calculating-age" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calculating age</h4>
 <p>Given an entity with a <em>birthDate</em> attribute, we want to define an <code>age()</code> function that would be called in a list box. This function can be executed on the client, which avoids triggering a request to the server for each line of the list box.</p>
-<ul>
-<li>On the StudentsEntity class</li>
-</ul>
+<p>On the <em>StudentsEntity</em> class:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Class extends</span> Entity
 
 <span class="hljs-function">local Function age</span>() -&gt; <span class="hljs-variable">$age</span>: Variant<span class="hljs-keyword">
@@ -327,7 +324,7 @@ Else</span>
 End if</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="checking-attributes"></a><a href="#checking-attributes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Checking attributes</h4>
-<p>We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server for save.</p>
+<p>We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server to save them.</p>
 <p>On the <em>StudentsEntity</em> class, the local <code>checkData()</code> function checks the Student's age:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Class extends</span> Entity
 
@@ -360,7 +357,7 @@ End if</span>
 <p>4D automatically pre-creates empty classes in memory for each available data model object.</p>
 <p><img src="/docs/alpha/assets/en/ORDA/ORDA_Classes-3.png" alt=""></p>
 <blockquote>
-<p>By default, empty ORDA classes are not displayed in the Explorer. You need to show them by selecting <strong>Show all data classes</strong> from the Explorer's options menu:
+<p>By default, empty ORDA classes are not displayed in the Explorer. To show them you need to select <strong>Show all data classes</strong> from the Explorer's options menu:
 <img src="/docs/alpha/assets/en/ORDA/showClass.png" alt=""></p>
 </blockquote>
 <p>ORDA user classes have a different icon from regular classes. Empty classes are dimmed:</p>
@@ -370,7 +367,7 @@ End if</span>
 </code></pre>
 <p>Once a class is defined, its name is no longer dimmed in the Explorer.</p>
 <h3><a class="anchor" aria-hidden="true" id="editing-classes"></a><a href="#editing-classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Editing classes</h3>
-<p>To open a defined ORDA class in the 4D method editor, select or double-click on an ORDA class name and use <strong>Edit...</strong> from the contextual menu/options menu of the Explorer window (like for any class):</p>
+<p>To open a defined ORDA class in the 4D method editor, select or double-click on an ORDA class name and use <strong>Edit...</strong> from the contextual menu/options menu of the Explorer window:</p>
 <p><img src="/docs/alpha/assets/en/ORDA/classORDA4.png" alt=""></p>
 <p>For ORDA classes based upon the local datastore (<code>ds</code>), you can directly access the class code from the 4D Structure window:</p>
 <p><img src="/docs/alpha/assets/en/ORDA/classORDA5.png" alt=""></p>
