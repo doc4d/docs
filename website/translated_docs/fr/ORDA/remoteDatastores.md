@@ -1,19 +1,19 @@
 ---
 id: datastores
-title: Using a remote datastore
+title: Utiliser un datastore distant
 ---
 
-A [datastore](dsMapping.md#datastore) exposed on a 4D application can be accessed simultaneously through different clients:
+Un [datastore](dsMapping.md#datastore) exposé sur une application 4D Server est accessible simultanément via différents clients :
 
-- 4D remote applications using ORDA to access the main datastore with the `ds` command. Note that the 4D remote application can still access the database in classic mode. These accesses are handled by the **4D application server**.
-- Other 4D applications (4D remote, 4D Server) opening a session on the remote datastore through the `Open datastore` command. These accesses are handled by the **HTTP REST server**.
-- 4D for iOS queries for updating iOS applications. These accesses are handled by the **HTTP server**.
+- Les applications 4D distantes utilisant ORDA pour accéder au datastore principal à l’aide de la commande `ds`. A noter que l'application 4D distante peut toujours accéder à la base de données en mode classique. Ces accès sont gérés par le **serveur d'applications 4D**.
+- D'autres applications 4D (4D Remote, 4D Server) ouvrant une session sur le datastore distant via la commande `Open datastore`. Ces accès sont transmis par le **serveur HTTP REST**.
+- Les requêtes 4D for iOS pour la mise à jour des applications iOS. Ces accès sont remis par le **serveur HTTP**.
 
 
 When you work with a remote datastore referenced through calls to the `Open datastore` command, the connection between the requesting processes and the remote datastore is handled via sessions.
 
 
-## Opening sessions
+## Ouverture des sessions
 
 When a 4D application (*i.e.* a process) opens an external datastore using the `Open datastore` command, a session in created on the remote datastore to handle the connection. This session is identified using a internal session ID which is associated to the `localID` on the 4D application. This session automatically manages access to data, entity selections, or entities.
 
@@ -29,7 +29,7 @@ These principles are illustrated in the following graphics:
 
 > For sessions opened by REST requests, please refer to [Users and sessions](REST/authUsers.md).
 
-## Viewing sessions
+## Visionnage des sessions
 
 Processes that manage sessions for datastore access are shown in the 4D Server administration window:
 
@@ -41,7 +41,7 @@ In the following example, two processes are running for the same session:
 
 ![](assets/en/Orda/sessionAdmin.png)
 
-## Locking and transactions
+## Verrouillage et transactions
 
 ORDA features related to entity locking and transaction are managed at process level in remote datastores, just like in ORDA client/server mode:
 
@@ -53,7 +53,7 @@ ORDA features related to entity locking and transaction are managed at process l
     *   when the session is closed on the server
     *   when the session is killed from the server administration window.
 
-## Closing sessions
+## Fermeture des sessions
 
 A session is automatically closed by 4D when there has been no activity during its timeout period. The default timeout is 60 mn, but this value can be modified using the `connectionInfo` parameter of the `Open datastore` command.
 
