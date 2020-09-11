@@ -157,7 +157,7 @@ Action to perform in case of a double-click on an empty line of a list subform. 
 - **複数**: 標準のショートカットを使用して複数行を同時に選択できます。
     - 選択されたサブレコードは `GET HIGHLIGHTED RECORDS` で取得できます。
     - レコードはクリックにより選択されますが、カレントレコードは変更されません。
-    - A **Ctrl+click** (Windows) or **Command+click** (macOS) on a record toggles its state (between selected or not). The Up and Down arrow keys select the previous/next record in the list. その他のナビゲーションキーはリストをスクロールします。 The `On Selection Change` form event is generated every time the selected record is changed.
+    - **Ctrl+クリック** (Windows) や **Command+クリック** (macOS) を使うと、対象レコードの選択状態 (選択・非選択) が切り替わります。 上下キーを使うとリストの前後のレコードが選択されます。 その他のナビゲーションキーはリストをスクロールします。 選択レコードが変更されるたびに、`On Selection Change` フォームイベントが生成されます。
 
 
 #### JSON 文法
