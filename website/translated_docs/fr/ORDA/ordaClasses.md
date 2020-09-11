@@ -83,7 +83,7 @@ Function getDesc
   $0:="Database exposing employees and their companies"
 ```
 
-This function can then be called:
+Cette foncton peut alors être appelée :
 
 ```4d
 $desc:=ds.getDesc() //"Database exposing..."
@@ -91,7 +91,7 @@ $desc:=ds.getDesc() //"Database exposing..."
 
 
 
-### DataClass Class
+### Classe DataClass
 
 Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 
@@ -117,7 +117,7 @@ Function GetBestOnes()
     $0:=$sel
 ```
 
-Then, you can get an entity selection of the "best" companies by executing:
+Vous pouvez ensuite obtenir une sélection d'entité des "meilleures" entreprises en exécutant le code suivant :
 
 ```4d
     var $best : cs.CompanySelection
@@ -127,7 +127,7 @@ Then, you can get an entity selection of the "best" companies by executing:
 
 #### Exemple avec un datastore distant
 
-The following *City* catalog is exposed in a remote datastore (partial view):
+Le catalogue *City* suivant est exposé dans un datastore distant (vue partielle) :
 
 ![](assets/en/ORDA/Orda_example.png)
 
