@@ -10,12 +10,12 @@ Un [datastore](dsMapping.md#datastore) exposé sur une application 4D Server est
 - Les requêtes 4D for iOS pour la mise à jour des applications iOS. Ces accès sont remis par le **serveur HTTP**.
 
 
-When you work with a remote datastore referenced through calls to the `Open datastore` command, the connection between the requesting processes and the remote datastore is handled via sessions.
+Lorsque vous travaillez avec un datastore distant référencé par des appels à la commande `Open datastore`, la connexion entre les process qui effectuent la requête et le datastore distant est gérée par des sessions.
 
 
 ## Ouverture des sessions
 
-When a 4D application (*i.e.* a process) opens an external datastore using the `Open datastore` command, a session in created on the remote datastore to handle the connection. This session is identified using a internal session ID which is associated to the `localID` on the 4D application. This session automatically manages access to data, entity selections, or entities.
+Lorsqu'une application 4D (c'est-à-dire un process) ouvre un datastore externe à l'aide de la commande `Open datastore`, une session est créée sur le datastore distant pour gérer la connexion. This session is identified using a internal session ID which is associated to the `localID` on the 4D application. This session automatically manages access to data, entity selections, or entities.
 
 The `localID` is local to the machine that connects to the remote datastore, which means:
 
