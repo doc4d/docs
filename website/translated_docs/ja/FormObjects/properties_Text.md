@@ -102,7 +102,7 @@ title: テキスト
 
 ![](assets/en/FormObjects/FontThemes.png)
 
-> Font themes manage the font as well as its size and color. You can apply custom style properties (Bold, Italic or Underline) without altering its functioning.
+> フォントテーマはフォントだけでなく、サイズやカラーも定めます。 You can apply custom style properties (Bold, Italic or Underline) without altering its functioning.
 
 
 
