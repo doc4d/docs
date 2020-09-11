@@ -53,24 +53,24 @@ Toutes les classes de modèle de données ORDA sont exposées en tant que propri
 
 > Les classes utilisateur ORDA sont stockées sous forme de fichiers de classe standard (.4dm) dans le sous-dossier Classes du projet [(voir ci-dessous)](#class-files).
 
-In addition, object instances from ORDA data model user classes benefit from their parent's properties and functions. For example, an Entity class object can call functions from the [ORDA Entity generic class](https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html).
+De plus, les instances d'objet de classes utilisateurs du modèles de données ORDA bénéficient des propriétés et fonctions de leurs parents. Par exemple, un objet de classe Entity peut appeler des fonctions de la [classe générique d'entité ORDA](https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html).
 
 
-## Class Description
+## Description de la classe
 
 
-> **Note**: Keep in mind that ORDA data model functions are always executed on the server. Thus, calling a function generates a request to the server.
+> **Note** : Les fonctions du modèle de données ORDA sont toujours exécutées sur le serveur. Ainsi, l'appel d'une fonction génère une requête auprès du serveur.
 
 
-### DataStore Class
+### Classe DataStore
 
 
-A 4D database exposes its own DataStore class in the `cs` class store.
+Une base de données 4D expose sa propre classe DataStore dans le class store `cs`.
 
 - **Extends**: 4D.DataStoreImplementation
 - **Class name**: cs.DataStore
 
-You can create functions in the DataStore class that will be available through the `ds` object.
+Vous pouvez créer des fonctions dans la classe DataStore qui seront disponibles via l'objet `ds`.
 
 #### Exemple
 
