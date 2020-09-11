@@ -15,29 +15,29 @@ Lorsque vous travaillez avec un datastore distant référencé par des appels à
 
 ## Ouverture des sessions
 
-Lorsqu'une application 4D (c'est-à-dire un process) ouvre un datastore externe à l'aide de la commande `Open datastore`, une session est créée sur le datastore distant pour gérer la connexion. This session is identified using a internal session ID which is associated to the `localID` on the 4D application. This session automatically manages access to data, entity selections, or entities.
+Lorsqu'une application 4D (c'est-à-dire un process) ouvre un datastore externe à l'aide de la commande `Open datastore`, une session est créée sur le datastore distant pour gérer la connexion. Cette session est identifiée à l'aide d'un ID de session interne, associé au `localID` de l'application 4D. Cette session gère automatiquement l'accès aux données, aux sélections d'entités ou aux entités.
 
-The `localID` is local to the machine that connects to the remote datastore, which means:
+Le `localID` est local à la machine qui se connecte au datastore distant, ce qui signifie :
 
-*   If other processes of the same application need to access the same remote datastore, they can use the same `localID` and thus, share the same session.
-*   If another process of the same application opens the same remote datastore but with another `localID`, it will create a new session on the remote datastore.
-*   If another machine connects to the same remote datastore with the same `localID`, it will create another session with another cookie.
+*   Que si d'autres process de la même application doivent accéder au même datastore distant, ils peuvent utiliser le même `localID` et partager alors la même session.
+*   Que si un autre process de la même application ouvre le même datastore distant, mais avec un autre `localID`, il créera une nouvelle session sur le datastore distant.
+*   Que si un autre poste se connecte au même datastore distant avec le même `localID`, il créera une autre session avec un autre cookie.
 
-These principles are illustrated in the following graphics:
+Ces principes sont illustrés dans les graphiques suivants :
 
 ![](assets/en/Orda/sessions.png)
 
-> For sessions opened by REST requests, please refer to [Users and sessions](REST/authUsers.md).
+> Pour les sessions ouvertes par des requêtes REST, veuillez consulter aux [Utilisateurs et sessions](REST/authUsers.md).
 
 ## Visionnage des sessions
 
-Processes that manage sessions for datastore access are shown in the 4D Server administration window:
+Les process qui gèrent les sessions d'accès aux datastore apparaissent dans la fenêtre d'administration de 4D Server :
 
-*   name: "REST Handler: \<process name>"
-*   type: HTTP Server Worker type
-*   session: session name is the user name passed to the Open datastore command.
+*   nom : "Gestionnaire REST: \<process name>"
+*   type : type Worker Server HTTP
+*   session : le nom de session est le nom d'utilisateur passé à la commande Open datastore.
 
-In the following example, two processes are running for the same session:
+Dans l'exemple suivant, deux process sont en cours d'exécution pour la même session :
 
 ![](assets/en/Orda/sessionAdmin.png)
 
