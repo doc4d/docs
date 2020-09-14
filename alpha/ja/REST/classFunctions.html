@@ -67,13 +67,16 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/REST/ClassFunctions.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Calling ORDA class functions</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="概要"></a><a href="#概要" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>概要</h2>
-<p>You can call <a href="/docs/alpha/ja/ORDA/ordaClasses.html">user class functions</a> defined for the ORDA Data Model through your REST requests, so that you can benefit from the exposed API of the targeted 4D application.</p>
+<p>You can call <a href="/docs/alpha/ja/ORDA/ordaClasses.html">data model class functions</a> defined for the ORDA Data Model through your REST requests, so that you can benefit from the exposed API of the targeted 4D application.</p>
 <p>Functions are simply called in POST requests on the appropriate ORDA interface, without (). For example, if you have defined a <code>getCity()</code> function in the City dataclass class, you could call it using the following request:</p>
 <p><code>/rest/City/getCity</code></p>
 <p>with data in the body of the POST request: <code>[&quot;Aguada&quot;]</code></p>
 <p>In 4D language, this call is equivalent to, :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$city</span>:=ds.City.<span class="hljs-function">getCity</span>(<span class="hljs-string">"Aguada"</span>)
 </code></pre>
+<blockquote>
+<p>Only functions with the <code>exposed</code> keyword can be directly called from REST requests. See <a href="ordaClasses.md#exposed-vs-non-exposed-functions">Exposed vs non-exposed functions</a> section.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="function-calls"></a><a href="#function-calls" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Function calls</h2>
 <p>Functions must always be called using REST <strong>POST</strong> requests (a GET request will receive an error).</p>
 <p>Functions are called on the corresponding object on the server datastore.</p>
@@ -158,7 +161,7 @@ The function is searched in the entity selection class first. If not found, it i
 
 <span class="hljs-class"><span class="hljs-keyword">Class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DataStoreImplementation</span></span>
 
-<span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">getName</span>(</span>)
+exposed <span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">getName</span>(</span>)
     <span class="hljs-number">$0</span>:=<span class="hljs-string">"US cities and zip codes manager"</span> 
 </code></pre>
 <p>You can then run this request:</p>
@@ -172,9 +175,9 @@ The function is searched in the entity selection class first. If not found, it i
 <p>The Dataclass class <code>City</code> provides an API that returns a city entity from a name passed in parameter:</p>
 <pre><code class="hljs"><span class="hljs-comment">// City class</span><span class="hljs-keyword">
 
-Class extends</span> DataClass<span class="hljs-keyword">
+Class extends</span> DataClass
 
-Function</span><span class="hljs-function"> getCity</span>()<span class="hljs-keyword">
+<span class="hljs-function">exposed Function getCity</span>()<span class="hljs-keyword">
     var</span> <span class="hljs-variable">$0 </span>: cs.CityEntity<span class="hljs-keyword">
     var</span> <span class="hljs-variable">$1</span>,<span class="hljs-variable">$nameParam </span>: text
     <span class="hljs-variable">$nameParam</span>:=<span class="hljs-variable">$1</span>
@@ -213,7 +216,7 @@ Function</span><span class="hljs-function"> getCity</span>()<span class="hljs-ke
 
 <span class="hljs-class"><span class="hljs-keyword">Class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Entity</span></span>
 
-<span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">getPopulation</span>(</span>)
+exposed <span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">getPopulation</span>(</span>)
     <span class="hljs-number">$0</span>:=This.zips.sum(<span class="hljs-string">"population"</span>)
 </code></pre>
 <p>You can then run this request:</p>
@@ -229,7 +232,7 @@ Function</span><span class="hljs-function"> getCity</span>()<span class="hljs-ke
 
 <span class="hljs-class"><span class="hljs-keyword">Class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">EntitySelection</span></span>
 
-<span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">getPopulation</span>(</span>)
+exposed <span class="hljs-function"><span class="hljs-keyword">Function</span> <span class="hljs-title">getPopulation</span>(</span>)
     <span class="hljs-number">$0</span>:=This.zips.sum(<span class="hljs-string">"population"</span>)
 </code></pre>
 <p>You can then run this request:</p>
@@ -243,9 +246,9 @@ Function</span><span class="hljs-function"> getCity</span>()<span class="hljs-ke
 <p>The <code>StudentsSelection</code> class has a <code>getAgeAverage</code> function:</p>
 <pre><code class="hljs"><span class="hljs-comment">// StudentsSelection Class</span><span class="hljs-keyword">
 
-Class extends</span> EntitySelection<span class="hljs-keyword">
+Class extends</span> EntitySelection
 
-Function</span> getAgeAverage
+exposed<span class="hljs-keyword"> Function</span> getAgeAverage
 <span class="hljs-function">    C_LONGINT</span>(<span class="hljs-variable">$sum</span>;<span class="hljs-variable">$0</span>)
 <span class="hljs-function">    C_OBJECT</span>(<span class="hljs-variable">$s</span>)
 
@@ -267,9 +270,9 @@ Function</span> getAgeAverage
 <pre><code class="hljs"><span class="hljs-comment">// StudentsSelection Class</span><span class="hljs-keyword">
 
 
-Class extends</span> EntitySelection<span class="hljs-keyword">
+Class extends</span> EntitySelection
 
-Function</span> getLastSummary
+exposed<span class="hljs-keyword"> Function</span> getLastSummary
 <span class="hljs-function">    C_TEXT</span>(<span class="hljs-variable">$0</span>)
 <span class="hljs-function">    C_OBJECT</span>(<span class="hljs-variable">$last</span>)
 
@@ -287,9 +290,9 @@ Function</span> getLastSummary
 <p>The Dataclass class <code>Students</code> has the function <code>pushData()</code> receiving an entity containing data from the client. The <code>checkData()</code> method runs some controls. If they are OK, the entity is saved and returned.</p>
 <pre><code class="hljs"><span class="hljs-comment">// Students Class</span><span class="hljs-keyword">
 
-Class extends</span> DataClass<span class="hljs-keyword">
+Class extends</span> DataClass
 
-Function</span> pushData<span class="hljs-keyword">
+exposed<span class="hljs-keyword"> Function</span> pushData<span class="hljs-keyword">
     var</span> <span class="hljs-variable">$1</span>, <span class="hljs-variable">$entity</span>, <span class="hljs-variable">$status</span>, <span class="hljs-variable">$0 </span>: Object
 
     <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$1</span>
@@ -394,9 +397,9 @@ Function</span> pushData<span class="hljs-keyword">
 <p>In this example, we associate an existing school to a Students entity. The <code>StudentsEntity</code> class has an API:</p>
 <pre><code class="hljs"><span class="hljs-comment">// StudentsEntity class</span><span class="hljs-keyword">
 
-Class extends</span> Entity<span class="hljs-keyword">
+Class extends</span> Entity
 
-Function</span><span class="hljs-function"> putToSchool</span>()<span class="hljs-keyword">
+<span class="hljs-function">exposed Function putToSchool</span>()<span class="hljs-keyword">
     var</span> <span class="hljs-variable">$1</span>, <span class="hljs-variable">$school </span>, <span class="hljs-variable">$0</span>, <span class="hljs-variable">$status </span>: Object
 
         <span class="hljs-comment">//$1 is a Schools entity</span>
@@ -426,9 +429,9 @@ Function</span><span class="hljs-function"> putToSchool</span>()<span class="hlj
 <p>In the <code>Students</code> Dataclass class, the <code>setFinalExam()</code> function updates a received entity selection ($1). It actually updates the <em>finalExam</em> attribute with the received value ($2). It returns the primary keys of the updated entities.</p>
 <pre><code class="hljs"><span class="hljs-comment">// Students class</span><span class="hljs-keyword">
 
-Class extends</span> DataClass<span class="hljs-keyword">
+Class extends</span> DataClass
 
-Function</span><span class="hljs-function"> setFinalExam</span>()<span class="hljs-keyword">
+<span class="hljs-function">exposed Function setFinalExam</span>()<span class="hljs-keyword">
 
     var</span> <span class="hljs-variable">$1</span>, <span class="hljs-variable">$es</span>, <span class="hljs-variable">$student</span>, <span class="hljs-variable">$status </span>: Object<span class="hljs-keyword">
     var</span> <span class="hljs-variable">$2</span>, <span class="hljs-variable">$examResult </span>: Text<span class="hljs-keyword">
