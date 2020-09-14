@@ -38,39 +38,39 @@ De plus, 4D Developer [crée préalablement et automatiquement](#creating-classe
 
 ## Architecture
 
-ORDA provides **generic classes** exposed through the **`4D`** [class store](Concepts/classes.md#class-stores), as well as **user classes** (extending generic classes) exposed in the **`cs`** [class store](Concepts/classes.md#class-stores):
+ORDA fournit des **classes génériques** exposées via le [class store](Concepts/classes.md#class-stores) **`4D`**, ainsi que des **classes utilisateurs** (étendant les classes génériques) exposées dans le [class store](Concepts/classes.md#class-stores) **`cs`** :
 
 ![](assets/en/ORDA/ClassDiagramImage.png)
 
-All ORDA data model classes are exposed as properties of the **`cs`** class store. The following ORDA classes are available:
+Toutes les classes de modèle de données ORDA sont exposées en tant que propriétés du class store **`cs`**. Les classes ORDA suivantes sont disponibles :
 
-| Classe                      | Example name         | Instanciée par                                                                                                                                                                                                                                                                                                                                                                    |
+| Classe                      | Nom de l'exemple     | Instanciée par                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | cs.DataStore                | cs.DataStore         | Commande `ds`                                                                                                                                                                                                                                                                                                                                                                     |
 | cs.*DataClassName*          | cs.Employee          | `dataStore.DataClassName`, `dataStore[DataClassName]`                                                                                                                                                                                                                                                                                                                             |
 | cs.*DataClassName*Entity    | cs.EmployeeEntity    | `dataClass.get()`, `dataClass.new()`, `entitySelection.first()`, `entitySelection.last()`, `entity.previous()`, `entity.next()`, `entity.first()`, `entity.last()`, `entity.clone()`                                                                                                                                                                                              |
 | cs.*DataClassName*Selection | cs.EmployeeSelection | `dataClass.query()`, `entitySelection.query()`, `dataClass.all()`, `dataClass.fromCollection()`, `dataClass.newSelection()`, `entitySelection.drop()`, `entity.getSelection()`, `entitySelection.and()`, `entitySelection.minus()`, `entitySelection.or()`, `entitySelection.orderBy()`, `entitySelection.orderByFormula()`, `entitySelection.slice()`, `Create entity selection` |
 
-> ORDA user classes are stored as regular class files (.4dm) in the Classes subfolder of the project [(see below)](#class-files).
+> Les classes utilisateur ORDA sont stockées sous forme de fichiers de classe standard (.4dm) dans le sous-dossier Classes du projet [(voir ci-dessous)](#class-files).
 
-In addition, object instances from ORDA data model user classes benefit from their parent's properties and functions. For example, an Entity class object can call functions from the [ORDA Entity generic class](https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html).
-
-
-## Class Description
+De plus, les instances d'objet de classes utilisateurs du modèles de données ORDA bénéficient des propriétés et fonctions de leurs parents. Par exemple, un objet de classe Entity peut appeler des fonctions de la [classe générique d'entité ORDA](https://doc.4d.com/4Dv18R3/4D/18-R3/ORDA-Entity.201-4900374.en.html).
 
 
-> **Note**: Keep in mind that ORDA data model functions are always executed on the server. Thus, calling a function generates a request to the server.
+## Description de la classe
 
 
-### DataStore Class
+> **Note** : Les fonctions du modèle de données ORDA sont toujours exécutées sur le serveur. Ainsi, l'appel d'une fonction génère une requête auprès du serveur.
 
 
-A 4D database exposes its own DataStore class in the `cs` class store.
+### Classe DataStore
+
+
+Une base de données 4D expose sa propre classe DataStore dans le class store `cs`.
 
 - **Extends**: 4D.DataStoreImplementation
 - **Class name**: cs.DataStore
 
-You can create functions in the DataStore class that will be available through the `ds` object.
+Vous pouvez créer des fonctions dans la classe DataStore qui seront disponibles via l'objet `ds`.
 
 #### Exemple
 
@@ -83,7 +83,7 @@ Function getDesc
   $0:="Database exposing employees and their companies"
 ```
 
-This function can then be called:
+Cette foncton peut alors être appelée :
 
 ```4d
 $desc:=ds.getDesc() //"Database exposing..."
@@ -91,7 +91,7 @@ $desc:=ds.getDesc() //"Database exposing..."
 
 
 
-### DataClass Class
+### Classe DataClass
 
 Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 
@@ -117,7 +117,7 @@ Function GetBestOnes()
     $0:=$sel
 ```
 
-Then, you can get an entity selection of the "best" companies by executing:
+Vous pouvez ensuite obtenir une sélection d'entité des "meilleures" entreprises en exécutant le code suivant :
 
 ```4d
     var $best : cs.CompanySelection
@@ -127,7 +127,7 @@ Then, you can get an entity selection of the "best" companies by executing:
 
 #### Exemple avec un datastore distant
 
-The following *City* catalog is exposed in a remote datastore (partial view):
+Le catalogue *City* suivant est exposé dans un datastore distant (vue partielle) :
 
 ![](assets/en/ORDA/Orda_example.png)
 
@@ -223,7 +223,7 @@ C_BOOLEAN($0)
 $0:=This.getPopulation()>50000
 ```
 
-Then, you can call this code:
+Vous pouvez ensuite appeler ce code :
 
 ```4d
 var $cityManager; $city : Object
