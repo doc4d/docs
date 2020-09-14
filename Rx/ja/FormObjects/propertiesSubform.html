@@ -106,7 +106,7 @@
 <p><a href="/docs/Rx/ja/FormObjects/subformOverview.html">サブフォーム</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="空行をダブルクリック"></a><a href="#空行をダブルクリック" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>空行をダブルクリック</h2>
-<p>Action to perform in case of a double-click on an empty line of a list subform. 次のオプションから選択することができます:</p>
+<p>リストサブフォームの空行がダブルクリックされた際に実行されるアクションを指定します。 次のオプションから選択することができます:</p>
 <ul>
 <li>何もしない: ダブルクリックを無視します。</li>
 <li>レコード追加: サブフォーム中に新規レコードを作成し、編集モードにします。 &quot;リスト更新可&quot; オプションが選択されている場合、レコードは直接リスト内に作成されます。 選択されていない場合、レコードはサブフォームに割り当てられた <a href="#詳細フォーム">詳細フォーム</a> 上に作成されます。</li>
@@ -117,7 +117,7 @@
 <tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
 </thead>
 <tbody>
-<tr><td>doubleClickInEmptyAreaAction</td><td>string</td><td>&quot;addSubrecord&quot; or &quot;&quot; to do nothing</td></tr>
+<tr><td>doubleClickInEmptyAreaAction</td><td>string</td><td>&quot;addSubrecord&quot;, 何もしない場合は &quot;&quot;</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-2"></a><a href="#対象オブジェクト-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
@@ -167,9 +167,8 @@
 <p><a href="/docs/Rx/ja/FormObjects/subformOverview.html">サブフォーム</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="リストフォーム"></a><a href="#リストフォーム" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リストフォーム</h2>
-<p>このプロパティを使用して、サブフォームで使用するリストフォームを割り当てます。  リストサブフォームを使うことで、他のテーブルのデータを入力、表示、および更新することができます。</p>
+<p>このプロパティを使用して、サブフォームで使用するリストフォームを割り当てます。 リストサブフォームを使うことで、他のテーブルのデータを入力、表示、および更新することができます。</p>
 <p>リストサブフォームをデータ入力に使用するには 2つの方法があります。一つは <a href="#詳細フォーム">入力フォーム</a> を開いてデータを入力する方法です。 この設定では、サブフォームとして使用されるフォームがリストフォーム、 入力のために使用されるフォームが詳細フォームとなります。</p>
-<p>また、ユーザーがリストサブフォームに直接データを入力するようにもできます。</p>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-5"></a><a href="#json-文法-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
 <table>
 <thead>
@@ -183,14 +182,14 @@
 <p><a href="/docs/Rx/ja/FormObjects/subformOverview.html">サブフォーム</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="ソース"></a><a href="#ソース" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ソース</h2>
-<p>Specifies the table that the list subform belongs to (if any).</p>
+<p>リストサブフォームが属するテーブル (あれば) を指定します。</p>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-6"></a><a href="#json-文法-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
 <table>
 <thead>
 <tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
 </thead>
 <tbody>
-<tr><td>table</td><td>string</td><td>4D table name, or &quot;&quot; if no table.</td></tr>
+<tr><td>table</td><td>string</td><td>4D テーブル名, テーブルなしの場合は &quot;&quot;</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-6"></a><a href="#対象オブジェクト-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
@@ -199,14 +198,14 @@
 <h2><a class="anchor" aria-hidden="true" id="選択モード"></a><a href="#選択モード" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>選択モード</h2>
 <p>リストボックス行の選択モードを指定します:</p>
 <ul>
-<li><strong>なし</strong>: 行を選択することはできません。 Clicking on the list will have no effect unless the <a href="/docs/Rx/ja/FormObjects/subformOverview.html#enterable-in-list">Enterable in list</a> option is enabled. ナビゲーションキーを使用しても、リストをスクロールするだけとなり、その際に <code>On Selection Change</code> フォームイベントは生成されません。</li>
-<li><strong>単一</strong>: 一度に一行のみ選択できます。 クリックすることで、行を選択できます。 <strong>Ctrl+クリック</strong> (Windows) や <strong>Command+クリック</strong> (macOS) を使うと、対象行の選択状態 (選択・非選択) が切り替わります<br>
+<li><strong>なし</strong>: 行を選択することはできません。 <a href="/docs/Rx/ja/FormObjects/propertiesEntry.html#リスト更新可">リスト更新可</a> オプションがチェックされている場合を除き、リストをクリックしても効果はありません。 ナビゲーションキーを使用しても、リストをスクロールするだけとなり、その際に <code>On Selection Change</code> フォームイベントは生成されません。</li>
+<li><strong>単一</strong>: 一度に一行のみ選択できます。 クリックすることで、行を選択できます。 <strong>Ctrl+クリック</strong> (Windows) や <strong>Command+クリック</strong> (macOS) を使うと、対象行の選択状態 (選択・非選択) が切り替わります。<br>
 上下キーを使うとリストの前後の行が選択されます。 その他のナビゲーションキーはリストをスクロールします。 カレントの行が変更されるたびに、<code>On Selection Change</code> フォームイベントが生成されます。</li>
 <li><strong>複数</strong>: 標準のショートカットを使用して複数行を同時に選択できます。
 <ul>
-<li>The selected subrecords are returned by the <code>GET HIGHLIGHTED RECORDS</code> command.</li>
-<li>Clicking on the record will select it, but it does not modify the current record.</li>
-<li>A <strong>Ctrl+click</strong> (Windows) or <strong>Command+click</strong> (macOS) on a record toggles its state (between selected or not). The Up and Down arrow keys select the previous/next record in the list. その他のナビゲーションキーはリストをスクロールします。 The <code>On Selection Change</code> form event is generated every time the selected record is changed.</li>
+<li>選択されたサブレコードは <code>GET HIGHLIGHTED RECORDS</code> で取得できます。</li>
+<li>レコードはクリックにより選択されますが、カレントレコードは変更されません。</li>
+<li><strong>Ctrl+クリック</strong> (Windows) や <strong>Command+クリック</strong> (macOS) を使うと、対象レコードの選択状態 (選択・非選択) が切り替わります。 上下キーを使うとリストの前後のレコードが選択されます。 その他のナビゲーションキーはリストをスクロールします。 選択レコードが変更されるたびに、<code>On Selection Change</code> フォームイベントが生成されます。</li>
 </ul></li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-7"></a><a href="#json-文法-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
