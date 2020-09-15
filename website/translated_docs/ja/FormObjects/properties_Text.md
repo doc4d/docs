@@ -258,7 +258,7 @@ Choose([Companies]ID;Bold;Plain;Italic;Underline)
 ```
 
 
-You can also set this property using the `LISTBOX SET PROPERTY` command with `lk font style expression` constant.
+また、このプロパティは `LISTBOX SET PROPERTY` コマンドに `lk font style expression` 定数を指定して設定することもできます。
 
 
 > このプロパティは [メタ情報式](properties_Text.md#メタ情報式) を使用しても設定することができます。
@@ -268,9 +268,9 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 
 #### JSON 文法
 
-| 名              | データタイプ | とりうる値                                           |
-| -------------- | ------ | ----------------------------------------------- |
-| rowStyleSource | string | Style expression to evaluate for each row/cell. |
+| 名              | データタイプ | とりうる値                   |
+| -------------- | ------ | ----------------------- |
+| rowStyleSource | string | 表示される行/セルごとに評価されるスタイル式。 |
 
 
 
