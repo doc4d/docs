@@ -338,18 +338,26 @@ If you want to build a client application for a “concurrent” platform, you m
 <p>In some specific cases, you might need to customize the names of these folders (see below). 4D provides you with the <code>ClientServerSystemFolderName</code> and <code>ServerStructureFolderName</code> keys to be set in the <em>buildApp</em> settings file.</p>
 <h4><a class="anchor" aria-hidden="true" id="client-cache-folder"></a><a href="#client-cache-folder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client cache folder</h4>
 <p>Customizing the client-side cache folder name can be useful when your client application is used to connect to several merged servers which are similar but use different data sets. In this case, to save multiple unnecessary downloads of identical local resources, you can use the same custom local cache folder.</p>
-<p>Default configuration (<em>for each connection to a server, a specific cache folder is downloaded/updated</em>):</p>
+<ul>
+<li>Default configuration (<em>for each connection to a server, a specific cache folder is downloaded/updated</em>):</li>
+</ul>
 <p><img src="/docs/alpha/assets/en/Admin/cachea.png" alt=""></p>
-<p>Using the [<code>ClientServerSystemFolderName</code>] key (<em>a single cache folder is used for all servers</em>):</p>
+<ul>
+<li>Using the <code>ClientServerSystemFolderName</code> key (<em>a single cache folder is used for all servers</em>):</li>
+</ul>
 <p><img src="/docs/alpha/assets/en/Admin/cacheb.png" alt=""></p>
 <blockquote>
 <p>Using a custom cache folder name disables the automatic update of local resources. If you modify the application resources, you need to &quot;force&quot; the local cache folders to be updated, for example using the <a href="#current-version"><strong>Current version</strong></a> feature.</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="server-cache-folder"></a><a href="#server-cache-folder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server cache folder</h4>
 <p>Customizing the server-side cache folder name is useful when you run several identical server applications built with different 4D versions on the same computer. If you want each server to use its own set of resources, you need to customize the server cache folder.</p>
-<p>Default configuration (<em>same server applications share the same cache folder</em>):</p>
+<ul>
+<li>Default configuration (<em>same server applications share the same cache folder</em>):</li>
+</ul>
 <p><img src="/docs/alpha/assets/en/Admin/cacheServera.png" alt=""></p>
-<p>Using the [<code>ServerStructureFolderName</code>] key (<em>a dedicated cache folder is used for each server</em>):</p>
+<ul>
+<li>Using the <code>ServerStructureFolderName</code> key (<em>a dedicated cache folder is used for each server application</em>):</li>
+</ul>
 <p><img src="/docs/alpha/assets/en/Admin/cacheServerb.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="plugins--components-page"></a><a href="#plugins--components-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins &amp; components page</h2>
 <p>On this tab, you set each <a href="/docs/alpha/en/Concepts/plug-ins.html">plug-in</a> and each <a href="/docs/alpha/en/Concepts/components.html">component</a> that you will use in your stand-alone or client/server application.</p>
