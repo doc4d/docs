@@ -128,7 +128,7 @@ title: テキスト
 * *総称ファミリー:* "serif", "sans-serif", "cursive", "fantasy", "monospace" などの汎用ファミリーの名称。
 
 このプロパティは [**OBJECT SET FONT**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-FONT.301-4505454.ja.html) コマンドによって設定することができます。
-> <span style="font-family:Times New Roman; font-size:20pt"> これは Times New Roman フォントです。</span><br> <span style="font-family:Calibri; font-size:20pt"> これは Calibri フォントです。</span><br> <span style="font-family:Papyrus; font-size:20pt"> これは Papyrus フォントです。</span>
+> <span style="font-family:YuGothic; font-size:20pt"> これは 游ゴシック フォントです。</span><br> <span style="font-family:YuMincho; font-size:20pt"> これは 游明朝 フォントです。</span>
 
 #### JSON 文法
 
@@ -146,13 +146,13 @@ title: テキスト
 ---
 ## フォントサイズ
 
-Allows defining the object's font size in points.
+文字の大きさをポイントで指定します。
 
 #### JSON 文法
 
-| 名        | データタイプ  | とりうる値                       |
-| -------- | ------- | --------------------------- |
-| fontSize | integer | Font size in points. 最小値: 0 |
+| 名        | データタイプ  | とりうる値                   |
+| -------- | ------- | ----------------------- |
+| fontSize | integer | フォントサイズ (ポイント単位) 最小値: 0 |
 
 #### 対象オブジェクト
 
@@ -162,9 +162,9 @@ Allows defining the object's font size in points.
 ---
 ## フォントカラー
 
-Designates the font color.
+文字の色を指定します。
 
-> This property also sets the color of object's [border](#border-line-style-dotted-line-type) (if any) when "plain" or "dotted" style is used.
+> オブジェクトの [境界線スタイル](properties_backgrounandborder.md#境界線スタイル) に "標準" または "ドット" を選択している場合、このプロパティはその境界線の色も指定します。
 
 カラーは次の方法で指定できます:
 
@@ -188,7 +188,7 @@ Designates the font color.
 
 #### 対象オブジェクト
 
-[Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
+[ボタン](button_overview.md) - [チェックボックス](checkbox_overview.md) - [コンボボックス](comboBox_overview.md) - [ドロップダウンリスト](dropdownList_Overview.md) - [グループボックス](groupBox.md) - [階層リスト](list_overview.md) - [入力](input_overview.md) - [リストボックス](listbox_overview.md) - [リストボックス列](listbox_overview.md#リストボックス列) - [リストボックスフッター](listbox_overview.md#リストボックスフッター) - [リストボックスヘッダー](listbox_overview.md#リストボックスヘッダー) - [進捗インジケーター](progressIndicator.md) - [ルーラー](ruler.md) - [ラジオボタン](radio_overview.md) - [テキストエリア](text.md)
 
 
 
@@ -200,7 +200,7 @@ Designates the font color.
 
 ## フォントカラー式
 
-`Selection and collection/entity selection type list boxes`
+`セレクションおよびコレクション/エンティティセレクション型のリストボックス`
 
 Used to apply a custom font color to each row of the list box. You must use RGB color values. For more information about this, refer to the description of the [OBJECT SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/OBJECT-SET-RGB-COLORS.301-4311385.en.html) command in the 4D Language Reference manual.
 
@@ -243,7 +243,7 @@ Foreground color;Dark shadow color)
 
 ## スタイル式
 
-`Selection and collection/entity selection type list boxes`
+`セレクションおよびコレクション/エンティティセレクション型のリストボックス`
 
 Used to apply a custom character style to each row of the list box or each cell of the column.
 
@@ -360,7 +360,7 @@ This property can also be handled by the [OBJECT Get vertical alignment](https:/
 
 Specifies an expression or a variable which will be evaluated for each row displayed. It allows defining a whole set of row text attributes. You must pass an **object variable** or an **expression that returns an object**. The following properties are supported:
 
-| Property name       | 型       | 説明                                                                                                                                                                                                                                                                                                                                             |
+| Property name       | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                             |
 | ------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | stroke              | string  | Font color. Any CSS color (ex: "#FF00FF"), "automatic", "transparent"                                                                                                                                                                                                                                                                          |
 | fill                | string  | Background color. Any CSS color (ex: "#F00FFF"), "automatic", "transparent"                                                                                                                                                                                                                                                                    |
