@@ -25,16 +25,16 @@ La flexibilité du développement d'un projet 4D est particulièrement démontr�
 Votre application 4D peut ouvrir des projets **en local** ou **à distance** :
 
 - **[en loca](creating.md#opening-a-local-project)** - les fichiers de projet sont stockés sur le même poste que l'application 4D; ils sont exécutés et édités par une seule application 4D.
-- **[remotely](creating.md#opening-a-remote-project)** - project files are stored on the 4D Server machine; 4D applications connect to the server and open the project in read-only mode, usually for testing purposes. However, a project opened by 4D Server is editable by 4D if [both applications are on the same machine](Project/developing.md#using-4d-developer-on-the-same-machine).
+- **[à distance](creating.md#opening-a-remote-project)** - les fichiers de projet sont stockés sur la machine 4D Server; Les applications 4D se connectent au serveur et ouvrent le projet en lecture seule, généralement à des fins de test. Cependant, un projet ouvert par 4D Server est modifiable par 4D si [les deux applications sont sur la même machine](Project/developing.md#using-4d-developer-on-the-same-machine).
 
 ![](assets/en/getStart/localremote.png)
 
-When you select the project to open, you also select the mode to be used.
+Lorsque vous sélectionnez le projet à ouvrir, vous sélectionnez également le mode à utiliser.
 
 
-## Deployment
+## Déploiement
 
-Project files can be compiled and easily deployed for your web, mobile, or desktop (client-server or single-user) application.
+Les fichiers de projet peuvent être compilés et facilement déployés pour votre application Web, mobile ou de bureau (client-serveur ou monoposte).
 
 Final application deployment files are generated during the building process, using the [4D build manager](Admin/building.md). Applications can be opened by 4D Server, 4D, or merged with 4D Volume license.
 
