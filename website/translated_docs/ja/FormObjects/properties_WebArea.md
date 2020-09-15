@@ -90,7 +90,7 @@ URL変数は [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-450484
         *   `WA enable Java applets`
         *   `WA enable JavaScript`
         *   `WA enable plugins`
-    *   When URL drops are enabled by the `WA enable URL drop` selector of the [WA SET PREFERENCE](https://doc.4d.com/4Dv17R6/4D/17-R6/WA-SET-PREFERENCE.301-4310780.en.html) command, the first drop must be preceded by at least one call to [WA OPEN URL](https://doc.4d.com/4Dv17R6/4D/17-R6/WA-OPEN-URL.301-4310772.en.html) or one assignment to the URL variable associated to the area.
+    *   [WA SET PREFERENCE](https://doc.4d.com/4Dv18/4D/18/WA-SET-PREFERENCE.301-4504849.ja.html) コマンドの `WA enable URL drop` セレクターによって URLドロップが許可されている場合、最初のドロップをする前に少なくとも 1度は [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-4504841.ja.html) コマンドを呼び出すか、またはエリアに割り当てられている URL変数に URL が渡されている必要があります。
 
 #### JSON 文法
 
