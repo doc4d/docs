@@ -129,7 +129,7 @@ Here is the list of objects whose value can be saved:
 
 ### 配列リストボックス
 
-配列型リストボックスの場合、リストボックスおよびリストボックス各列の **変数あるいは式** プロパティには、それぞれに関連付ける配列変数の名前を指定します。 However, you can use a string array (containing arrays names) as *dataSource* value for a list box column to define a [hierarchical list box](listbox_overview.md#hierarchical-list-boxes).
+配列型リストボックスの場合、リストボックスおよびリストボックス各列の **変数あるいは式** プロパティには、それぞれに関連付ける配列変数の名前を指定します。 ただし、リストボックスの JSON定義においては、列の *dataSource* 値として、配列名 (文字列) のコレクションを指定すると [階層リストボックス](listbox_overview.md#階層リストボックス) が定義されます。
 
 
 
