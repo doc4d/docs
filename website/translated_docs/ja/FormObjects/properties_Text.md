@@ -777,11 +777,11 @@ $0:=Form.meta
 </h2>
 
 <p spaces-before="0">
-  このプロパティは <a href="#マルチスタイル">マルチスタイル</a> 入力エリアの場合にのみ提供されます。 When this property is enabled, the area will store the style tags with the text, even if no modification has been made. In this case, the tags correspond to the default style. When this property is disabled, only modified style tags are stored.
+  このプロパティは <a href="#マルチスタイル">マルチスタイル</a> 入力エリアの場合にのみ提供されます。 このオプションがチェックされている場合には、たとえ変更がおこなわれていなくても、エリアはテキストとともにスタイルタグを格納します。 この場合、タグはデフォルトスタイルが適用されます。 このオプションがチェックされていないと、変更されたスタイルタグのみが格納されます。
 </p>
 
 <p spaces-before="0">
-  For example, here is a text that includes a style modification:
+  たとえば、以下のようにスタイルが変更されたテキストがあります:
 </p>
 
 <p spaces-before="0">
@@ -789,14 +789,14 @@ $0:=Form.meta
 </p>
 
 <p spaces-before="0">
-  When the property is disabled, the area only stores the modification. The stored contents are therefore:
+  このプロパティが無効な場合、エリアは更新されたスタイルのみを格納します。 つまり、格納される内容は以下のようになります:
 </p>
 
 <pre><code>What a &lt;SPAN STYLE="font-size:13.5pt"&gt;beautiful&lt;/SPAN&gt; day!
 </code></pre>
 
 <p spaces-before="0">
-  When the property is enabled, the area stores all the formatting information. The first generic tag describes the default style then each variation is the subject of a pair of nested tags. The contents stored in the area are therefore:
+  同プロパティが有効な場合には、エリアはすべてのフォーマット情報を格納します。 先頭の汎用タグはデフォルトスタイルを定義し、変更されたスタイルはネストされたタグに書き込まれます。 格納される内容は以下のようになります:
 </p>
 
 <pre><code>&lt;SPAN STYLE="font-family:'Arial';font-size:9pt;text-align:left;font-weight:normal;font-style:normal;text-decoration:none;color:#000000;background-color:#FFFFFF"&gt;What a &lt;SPAN STYLE="font-size:13.5pt"&gt;beautiful&lt;/SPAN&gt; day!&lt;/SPAN&gt;
@@ -833,7 +833,7 @@ $0:=Form.meta
     </td>
     
     <td>
-      true, false (default).
+      true, false (デフォルト)
     </td>
   </tr>
 </table>
