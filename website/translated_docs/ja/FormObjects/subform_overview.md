@@ -125,7 +125,7 @@ title: サブフォーム
 
 "MySubForm" サブフォームオブジェクト中の "MyButton" オブジェクトに割り当てられた変数へのポインターを返します。 このシンタックスを使用すれば、親フォームからサブフォーム内のオブジェクトにアクセスできます。 また、`OBJECT Get name` コマンドを使用すればフォーカスを持つオブジェクトの名前を取得できます。
 
-#### CALL SUBFORM CONTAINER command
+#### CALL SUBFORM CONTAINER コマンド
 
 The `CALL SUBFORM CONTAINER` command lets a subform instance send an event to the subform container object, which can then process it in the context of the parent form. The event is received in the container object method. It may be at the origin of any event detected by the subform (click, drag-and-drop, etc.).
 
