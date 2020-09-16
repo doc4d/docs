@@ -23,7 +23,7 @@ title: タブコントロール
 
 タブコントロールが十分大きく、ラベルとアイコンが設定されたタブをすべて表示できる場合は、その両方が表示されます。 タブコントロールの大きさが足らず、ラベルとアイコンを両方とも表示できない場合には、4Dはアイコンだけを表示します。 すべてのアイコンが収まりきらない場合、表示される最後のタブの右側にスクロール矢印が置かれます。 このスクロール矢印を使用し、アイコンを左右にスクロールできます。
 
-Under macOS, in addition to the standard position (top), the tab controls can also be aligned to the bottom.
+macOSの場合、タブコントロールを標準位置 (上) だけでなく、下にも配置することができます。
 
 
 ### JSON 例:
@@ -35,18 +35,18 @@ Under macOS, in addition to the standard position (top), the tab controls can al
         "top": 160,  
         "width": 100,   
         "height": 20,   
-        "labelsPlacement": "bottom" //define the direction
+        "labelsPlacement": "bottom" // タブコントロールの位置
     }
 ```
 
 
 
-## Adding labels to a tab control
+## タブコントロールへのラベルの追加
 
-There are several ways to supply the labels for a tab control:
+タブコントロールにラベルを設定するには、いくつかの方法があります:
 
 *   You can assign a [choice list](properties_DataSource.md#choice-list-static-list) to the tab control, either through a collection (static list) or a JSON pointer ("$ref") to a json list. Icons associated with list items in the Lists editor will be displayed in the tob control.
-*   You can create a Text array that contains the names of each page of the form. This code must be executed before the form is presented to the user. For example, you could place the code in the object method of the tab control and execute it when the `On Load` event occurs.
+*   フォームの各ページの名前を格納するテキスト配列を作成することができます。 このコードはユーザーにフォームを表示する前に実行しなければなりません。 たとえば、このコードをタブコントロールのオブジェクトメソッドに置いて、`On Load` イベントが生じたときにこのメソッドを実行します。
 
 ```4d
  ARRAY TEXT(arrPages;3)
@@ -54,22 +54,22 @@ There are several ways to supply the labels for a tab control:
  arrPages{2}:="Address"
  arrPages{3}:="Notes"  
 ```
-> You can also store the names of the pages in a hierarchical list and use the `Load list` command to load the values into the array.
+> ページの名前を階層リストに保存し、`Load list` コマンドを使用して値をロードすることも可能です。
 
 
-## Managing tabs programmatically
+## プログラムによるタブの管理
 
-### FORM GOTO PAGE command
+### FORM GOTO PAGE コマンド
 
-You can use the [FORM GOTO PAGE](https://doc.4d.com/4Dv17R5/4D/17-R5/FORM-GOTO-PAGE.301-4128536.en.html) command in the tab control’s method:
+タブコントロールのメソッドで [FORM GOTO PAGE](https://doc.4d.com/4Dv18R3/4D/18-R3/FORM-GOTO-PAGE.301-4900983.ja.html) コマンドを使用できます:
 
 ```4d
 FORM GOTO PAGE(arrPages)
 ```
 
-The command is executed when the `On Clicked` event occurs. You should then clear the array when the `On Unload` event occurs.
+`On Clicked` イベントが発生すると、このコマンドが実行されます。 この後 `On Unload` イベントの発生時にこの配列をクリアします。
 
-Here is an example object method:
+オブジェクトメソッドの例を次に示します:
 
 ```4d
  Case of
@@ -82,11 +82,11 @@ Here is an example object method:
  End case
 ```
 
-### Goto Page action
+### gotoPage 標準アクション
 
-When you assign the `gotoPage` [standard action](properties_Action.md#standard-action) to a tab control, 4D will automatically display the page of the form that corresponds to the number of the tab that is selected.
+タブコントロールに `gotoPage` [標準アクション](properties_Action.md#標準アクション) を割り当てることができます。すると、4Dはクリックされたタブコントロールの番号に相当するフォームのページを自動的に表示します。
 
-For example, if the user selects the 3rd tab, 4D will display the third page of the current form (if it exists).
+たとえば、ユーザーが 3番目のタブをクリックすると、4Dはカレントフォームの 3ページ目 (存在する場合) を表示します。
 
 
 ## プロパティ一覧
