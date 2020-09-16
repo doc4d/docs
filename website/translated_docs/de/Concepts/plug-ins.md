@@ -25,8 +25,8 @@ In der Regel macht ein Plug-In Dinge, die:
 Ein Plug-In enthält in der Regel einen Satz Routinen für den 4D Entwickler. Es kann einen externen Bereich verwalten und einen externen Prozess steuern.
 
 - Eine **Plug-In Routine** ist eine Routine, die in native Programmiersprache (im allgemeinen C oder C++) geschrieben ist und die eine Aktion auslöst.
-- An **external area** is a part of a form that can display almost everything and interact with the user when necessary.
-- An **external process** is a process that runs alone, usually in a loop, doing almost everything it wants. All process code belongs to the plug-in, 4D is simply present to receive/send events to the process.
+- Ein **externer Bereich** ist Teil eines Formulars, der fast alles anzeigen und bei Bedarf mit dem Benutzer interagieren kann.
+- Ein **externer Prozess** ist ein eigenständiger Prozess, der normalerweise in eíner Schleife läuft und so ziemlich alles Gewünschte ausführen kann. All process code belongs to the plug-in, 4D is simply present to receive/send events to the process.
 
 ### Important note
 
