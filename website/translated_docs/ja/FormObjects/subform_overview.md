@@ -79,15 +79,15 @@ title: サブフォーム
 
 ### サブフォームにバインドされたオブジェクトの使用
 
-4Dは自動的にオブジェクト (`C_OBJECT`) をそれぞれのサブフォームとバインドします。 The contents of this object can be read and/or modified from within the context of the subform, allowing you to share values in a local context.
+4Dは自動的にオブジェクト (`C_OBJECT`) をそれぞれのサブフォームとバインドします。 このオブジェクトの中身はサブフォームのコンテキストから読み書き可能なため、ローカルなコンテキストにおいて値を共有することができます。
 
-The object can be created automatically or be the parent container variable, if explicitely named and typed as Object (see below). In all cases, the object is returned by the `Form` command, which can be called directy the subform (using a pointer is useless). Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself.
+オブジェクトは自動的に作成することもできますし、明示的に命名しオブジェクトとして型指定された場合には、親コンテナーの変数として使用できます (以下参照)。 いずれの場合にも、オブジェクトは `Form` コマンドによって返され、サブフォームから直接呼び出すことが可能です (ポインターの使用は不要です)。 オブジェクトは常に参照によって渡されるため、ユーザーがサブフォーム内でプロパティ値を変更した場合には、その値は自動的にオブジェクト自身に保存されます。
 
-For example, in your subform, field labels are stored in the bound object so that you can display different languages:
+たとえば、サブフォームにおいて異なる言語での表示を可能にするために、バインドされたオブジェクトにフィールドラベルが保存されている場合を考えます:
 
 ![](assets/en/FormObjects/subforms4.png)
 
-You can modify the labels from the subform by assigning values to the *InvoiceAddress* object:
+*InvoiceAddress* オブジェクトに値を割り当てることで、サブフォームのラベルを変更することができます:
 
 ```4d
  C_OBJECT($lang)
