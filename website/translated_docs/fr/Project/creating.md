@@ -85,8 +85,8 @@ Once a connection to the server has been established, the remote project will be
 
 4D propose deux façons d’ouvrir directement des projets, sans passer par la boîte de dialogue d’ouverture :
 
-- via menu options:
-    -   *Menu bar* - **File** > **Open Recent Projects / {project name}**
+- via les options du menu :
+    -   *Barre de menu* - **Fichier** > **Ouvrir Projets récents / {project name}**
     -   *4D Tool bar* -  Select the project from the menu associated with the **Open** button
 
 - via preferences:
