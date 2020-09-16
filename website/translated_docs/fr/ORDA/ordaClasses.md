@@ -166,32 +166,32 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 ```
 
 
-### EntitySelection Class
+### Classe EntitySelection
 
-Each table exposed with ORDA offers an EntitySelection class in the `cs` class store.
+Chaque table exposée avec ORDA affiche une classe EntitySelection dans le class store `cs`.
 
-- **Extends**: 4D.EntitySelection
-- **Class name**: *DataClassName*Selection (where *DataClassName* is the table name)
-- **Example name**: cs.EmployeeSelection
+- **Extends** : 4D.EntitySelection
+- **Nom de classe** : *DataClassName*Selection (où *DataClassName* est le nom de la table)
+- **Exemple ** : cs.EmployeeSelection
 
 
 #### Exemple
 
 ```4d
-// cs.EmployeeSelection class
+// Classe cs.EmployeeSelection 
 
 
-Class extends EntitySelection
+Classe extends EntitySelection
 
-//Extract from this entity selection the employees with a salary greater than the average
+//Extrait, de cette sélection d'entité, les employés ayant un salaire supérieur à la moyenne
 
-Function withSalaryGreaterThanAverage
+Fonction withSalaryGreaterThanAverage
     C_OBJECT($0)
     $0:=This.query("salary > :1";This.average("salary")).orderBy("salary")
 
 ```
 
-Then, you can get employees with a salary greater than the average in any entity selection by executing:
+Vous pouvez alors obtenir les employés dont le salaire est supérieur à la moyenne, dans une sélection d'entité, en exécutant le code suivant :
 
 ```4d
 $moreThanAvg:=ds.Company.all().employees.withSalaryGreaterThanAverage()
@@ -199,9 +199,9 @@ $moreThanAvg:=ds.Company.all().employees.withSalaryGreaterThanAverage()
 
 ### Entity Class
 
-Each table exposed with ORDA offers an Entity class in the `cs` class store.
+Chaque table exposée avec ORDA affiche une classe Entity dans le class store `cs`.
 
-- **Extends**: 4D.Entity
+- **Extends** : 4D.Entity
 - **Class name**: *DataClassName*Entity (where *DataClassName* is the table name)
 - **Example name**: cs.CityEntity
 
