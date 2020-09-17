@@ -51,14 +51,14 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 You can use any [expression](Concepts/quick-tour.md#expression-types) as parameter, except:
 
 - tables
-- arrays
+- Arrays
 
 Tables or array expressions can only be passed [as reference using a pointer](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
 
 
-## Returning values
+## Zurückgegebener Wert
 
-Data can be returned from methods. For example, the following line is a statement that uses the built-in command, `Length`, to return the length of a string. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
+Data can be returned from methods. Folgende Zeile ist beispielsweise eine Anweisung mit dem integrierten Befehl `Length`, um die Länge eines String zurückzugeben. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
 
 ```4d
 MyLength:=Length("How did I get here?")
@@ -66,21 +66,21 @@ MyLength:=Length("How did I get here?")
 
 Any subroutine can return a value. The value to be returned is put into the local variable `$0`.
 
-For example, the following method, called `Uppercase4`, returns a string with the first four characters of the string passed to it in uppercase:
+Zum Beispiel gibt die folgende Methode mit Namen `Uppercase4` einen String zurück, der seine ersten vier Zeichen in Großbuchstaben gesetzt hat:
 
 ```4d
 $0:=Uppercase(Substring($1;1;4))+Substring($1;5)
 ```
 
-The following is an example that uses the Uppercase4 method:
+Hier ein Beispiel mit der Methode Uppercase4:
 
 ```4d
 $NewPhrase:=Uppercase4("This is good.")
 ```
 
-In this example, the variable *$NewPhrase* gets “THIS is good.”
+Die Variable *$NewPhrase* erhält “THIS is good.”
 
-The returned value, `$0`, is a local variable within the subroutine. It can be used as such within the subroutine. For example, you can write:
+Der zurückgegebene Wert `$0` ist eine lokale Variable innerhalb der Unterroutine. It can be used as such within the subroutine. For example, you can write:
 
 ```4d
 // Do_something
