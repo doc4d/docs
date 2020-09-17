@@ -17,7 +17,7 @@ Le développement multi-utilisateur est géré via des outils de contrôle de ve
 Les projets interprétés (*applicationName.4DProject*, voir [Architecture d'un project 4D](architecture.md)) peuvent être ouverts dans les configurations suivantes :
 
 - 4D opening **local project files** - in this case, all aspects of the project are available to the developer. Les fichiers projet peuvent être ouverts, modifiés, compilés, etc. The result of the development can be tested at any moment by using the **Test application** menu command from 4D or using the [integrated web server](WebServer/webServerObject.md).
-- 4D connection from the **same machine as 4D Server** - in this case, development is supported the same as local projects. This feature allows you to develop a client/server application in the same context as the deployment context ()[detailed below](#developing-projects-with-4d-server)).
+- 4D connection from the **same machine as 4D Server** - in this case, development is supported the same as local projects. Cette fonctionnalité vous permet de développer une application client/serveur dans le même contexte que le contexte de déploiement ([détaillé ci-dessous](#developing-projects-with-4d-server)).
 - 4D connection from a **remote machine** - in this case, 4D Server sends a .4dz version of the project ([compressed format](Admin/building.md#build-compiled-structure)) to 4D. As a consequence, all structure files are read-only. This feature is useful for testing purposes.
 
 
