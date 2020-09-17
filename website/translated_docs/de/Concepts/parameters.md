@@ -1,6 +1,6 @@
 ---
 id: parameters
-title: Parameters
+title: Parameter
 ---
 
 
@@ -19,7 +19,7 @@ Parameters are passed to methods in the same way. For example, if a project meth
 ```4d
 DO SOMETHING($WithThis;$AndThat;$ThisWay)
 ```
-The parameters are separated by semicolons (;). Their [value is evaluated](#values-or-references) at the moment of the call.
+The parameters are separated by semicolons (;). Ihr [Wert wird im Moment des Aufrufs bewertet](#values-or-references).
 
 In the subroutine (the method that is called), the value of each parameter is automatically copied into sequentially numbered local variables: $1, $2, $3, and so on. The numbering of the local variables represents the order of the parameters.
 
@@ -50,7 +50,7 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 
 You can use any [expression](Concepts/quick-tour.md#expression-types) as parameter, except:
 
-- tables
+- Tabellen
 - Arrays
 
 Tables or array expressions can only be passed [as reference using a pointer](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
