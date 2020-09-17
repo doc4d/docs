@@ -5,7 +5,7 @@ title: Développer un projet
 
 ## Aperçu
 
-4D projects are developed using the **4D** application. It provides an Integrated Development Environment (IDE) for 4D projects as well as an application runtime, allowing to develop, test, and debug the project.
+4D projects are developed using the **4D** application. Elle fournit un environnement de développement intégré (IDE) pour les projets 4D ainsi qu'une d'application runtime, permettant de développer, tester et déboguer le projet.
 
 > Because most of the 4D project files are text files, you can use any text editor to work in them. L'accès simultané aux fichiers est géré via un gestionnaire d'accès aux fichiers (voir ci-dessous).
 
