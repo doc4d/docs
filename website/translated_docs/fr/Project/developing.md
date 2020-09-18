@@ -52,7 +52,7 @@ Veillez cependant aux différences de comportement suivantes, comparées à [l'a
 
 - le dossier userPreferences.{username} utilisé par 4D ne correspond pas au même dossier utilisé par 4D Server dans le dossier projet. Instead, it is a dedicated folder, named "userPreferences", stored in the project system folder (i.e., the same location as when opening a .4dz project).
 - the folder used by 4D for derived data is not the folder named "DerivedData" in the project folder. Instead it is a dedicated folder named "DerivedDataRemote" located in the project system folder.
-- the catalog.4DCatalog file is not edited by 4D but by 4D Server. Catalog information is synchronised using client/server requests
+- the catalog.4DCatalog file is not edited by 4D but by 4D Server. Les informations du catalogue sont synchronisées à l'aide des requêtes client/serveur
 - the directory.json file is not edited by 4D but by 4D Server. Directory information is synchronised using client/server requests
 - 4D uses its own internal components and plug-ins instead of those in 4D Server.
 
