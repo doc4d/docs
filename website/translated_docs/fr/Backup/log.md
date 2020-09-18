@@ -45,9 +45,9 @@ Vous pouvez à tout moment savoir si votre application utilise un fichier d’hi
 
 Pour créer un fichier d’historique :
 
-1. On the **Backup/Configuration** page of the Structure Settings, check the **Use Log** option. Le programme affiche une boîte de dialogue standard de création de fichier. Par défaut, le fichier d’historique est baptisé *data.journal*.
+1. Dans la Page **Sauvegarde/Configuration** des Propriétés de structure, cochez l’option **Utiliser le fichier d’historique**. Le programme affiche une boîte de dialogue standard de création de fichier. Par défaut, le fichier d’historique est baptisé *data.journal*.
 
-2. Conservez le nom du fichier par défaut ou choisissez-en un autre et déterminez l’emplacement du fichier. If you have at least two hard drives, it is recommended that you place the log file on a disk other than the one containing the application project. If the application hard drive is lost, you can still recall your log file.
+2. Conservez le nom du fichier par défaut ou choisissez-en un autre et déterminez l’emplacement du fichier. Si vous disposez d’au moins deux disques durs, il est recommandé de placer le fichier d'historique sur un autre disque que celui contenant le projet d'application. Si le disque dur de l'application est perdu, vous pouvez toujours rappeler votre fichier d'historique.
 
 3. Cliquez sur le bouton **Enregistrer**. Le disque et le nom du fichier d’historique ouvert s’affichent alors dans la zone **“Utiliser le fichier d’historique”** de la boîte de dialogue. Vous pouvez cliquer dans cette zone afin d’afficher un pop up menu contenant l’enchaînement des dossiers à partir du disque.
 
@@ -58,7 +58,7 @@ Pour que vous puissiez directement créer un fichier d’historique, les donnée
 - Le fichier de données est vierge,
 - Vous venez d’effectuer une sauvegarde et aucune modification sur les données n’a encore été effectuée.
 
-Dans tous les autres cas, au moment où vous validez la fenêtre des Propriétés, une boîte de dialogue d’alerte vous informe qu’une sauvegarde est nécessaire. Si vous cliquez sur **OK**, la sauvegarde démarre immédiatement puis l’historique est activé. If you click **Cancel**, the request is saved but the creation of the log file is postponed and it will actually be created only after the next backup of the application. This precaution is indispensable because, in order to restore an application after any incidents, you will need a copy of the application into which the operations recorded in the log file will be integrated.
+Dans tous les autres cas, au moment où vous validez la fenêtre des Propriétés, une boîte de dialogue d’alerte vous informe qu’une sauvegarde est nécessaire. Si vous cliquez sur **OK**, la sauvegarde démarre immédiatement puis l’historique est activé. Si vous cliquez sur **Annuler**, la requête est enregistrée mais la création du fichier d’historique est différée et sera créée uniquement après la prochaine sauvegarde de l'application. Cette précaution est indispensable car il vous faudra, pour restituer une application après un éventuel incident, disposer d’une copie de l'application dans laquelle pourront s’intégrer les opérations enregistrées dans le fichier d’historique.
 
 Sans autre manipulation de votre part, toutes les opérations effectuées sur les données s’inscriront dans ce fichier, et il sera utilisé également lors des ouvertures ultérieures de l'application.
 
