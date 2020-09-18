@@ -9,7 +9,7 @@ title: Sauvegarde
 Une sauvegarde peut être déclenchée de trois manières :
 
 - Manuellement, via la commande **Sauvegarde...** du menu **Fichier** de 4D ou le bouton **Sauvegarde** du [Centre de sécurité et de maintenance (CSM)](MSC/backup.md).
-- Automatically, using the scheduler that can be set in the Settings,
+- Automatiquement, via le programmateur paramétrable dans les Propriétés,
 - Par programmation, à l’aide de la commande `BACKUP`.
 
 > 4D Server : Il est possible de déclencher “manuellement” une sauvegarde depuis un poste distant, via une méthode appelant la commande `BACKUP`. Dans tous les cas, la commande sera exécutée sur le serveur.
