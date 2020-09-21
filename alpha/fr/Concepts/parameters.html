@@ -67,8 +67,8 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/parameters.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Paramètres</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="aperçu"></a><a href="#aperçu" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Aperçu</h2>
-<p>Vous aurez souvent besoin de fournir des valeurs à vos méthodes. Vous pouvez facilement effectuer cette opération grâce aux paramètres.</p>
-<p><strong>Les paramètres</strong> (ou <strong>arguments</strong>) sont des données dont les méthodes ont besoin pour s’exécuter. Le terme <em>paramètres</em> ou <em>arguments</em> est utilisé indifféremment dans ce manuel. Des paramètres sont également passés aux commandes intégrées de 4D. Dans l’exemple ci-dessous, la chaîne “Bonjour” est un paramètre de la commande <code>ALERTE</code> :</p>
+<p>You'll often find that you need to pass data to your methods and functions. Vous pouvez facilement effectuer cette opération grâce aux paramètres.</p>
+<p><strong>Parameters</strong> (or <strong>arguments</strong>) are pieces of data that a method or a class function needs in order to perform its task. Le terme <em>paramètres</em> ou <em>arguments</em> est utilisé indifféremment dans ce manuel. Des paramètres sont également passés aux commandes intégrées de 4D. Dans l’exemple ci-dessous, la chaîne “Bonjour” est un paramètre de la commande <code>ALERTE</code> :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">ALERT</span>(<span class="hljs-string">"Bonjour"</span>)
 </code></pre>
 <p>Les paramètres sont passés de la même manière aux méthodes ou aux fonctions de classe (class functions). Par exemple, si une fonction de classe nommée <code>getArea()</code> accepte deux paramètres, voilà) à quoi pourrait ressembler un appel à la fonction de classe :</p>
@@ -77,171 +77,130 @@
 <p>Ou si la méthode <code>FAIRE QUELQUE CHOSE</code> accepte trois paramètres, l'appel à cette méthode pourrait être de la forme suivante :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">FAIRE QUELQUE CHOSE</span>(AvecCeci; EtCela; CommeCeci)
 </code></pre>
-<p>Les paramètres sont séparés par des points-virgules (;). Leur valeur est <a href="#values-or-references">évaluée</a> au moment de l'appel et copiée dans les variables locales au sein de la fonction de classe ou de la méthode appelée, ou bien dans :</p>
+<p>The input parameters are separated by semicolons (;).</p>
+<p>Les mêmes principes s'appliquent lorsque des méthodes sont exécutées via des commandes consacrées, comme par exemple :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-function">EXECUTE METHOD IN SUBFORM</span>(<span class="hljs-string">"Cal2"</span>;<span class="hljs-string">"SetCalendarDate"</span>;*;<span class="hljs-literal">!05/05/20!</span>)  
+<span class="hljs-comment">//pass the !05/05/20! date as parameter to the SetCalendarDate  </span>
+<span class="hljs-comment">//in the context of a subform</span>
+</code></pre>
+<p>Data can also be <strong>returned</strong> from methods and class functions. Par exemple, la ligne d’instruction suivante utilise une commande intégrée, <code>Longueur</code>, qui retourne la longueur d’une chaîne. La valeur retournée par <code>Longueur</code> est placée dans une variable appelée <em>MaLongueur</em>.</p>
+<pre><code class="hljs css language-4d">MaLongueur:=<span class="hljs-function">Length</span>(<span class="hljs-string">"Comment suis-je arrivé là ?"</span>)
+</code></pre>
+<p>Toute sous-routine peut retourner une valeur. Only one single output parameter can be declared per method or class function.</p>
+<p>Input and output values are <a href="#values-or-references">evaluated</a> at the moment of the call and copied into local variables within the called class function or method. Two syntaxes are proposed to declare variable parameters in the called code:</p>
 <ul>
-<li><a href="#named-parameters-class-functions">variables nommées</a> (fonctions de classe uniquement), ou</li>
-<li><a href="#sequential-parameters">variables numérotées séquentiellement</a> (méthodes et fonctions de classe).</li>
+<li><a href="#named-parameters">named variables</a> (recommended in most cases) or</li>
+<li><a href="#sequential-parameters">sequentially numbered variables</a>.</li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="paramètres-nommés-fonctions-de-classe-ou-class-functions"></a><a href="#paramètres-nommés-fonctions-de-classe-ou-class-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Paramètres nommés (fonctions de classe ou class functions)</h2>
-<p>Dans les fonctions de classe qui sont appelées, les valeurs des paramètres sont assignées aux variables locales. Vous pouvez déclarer des paramètres de fonction de classe en utilisant un <strong>nom de paramètre</strong> avec un <strong>type de paramètre</strong>, séparés par deux-points. Le nom du paramètre doit être conforme aux <a href="/docs/alpha/fr/Concepts/object.html#object-property-identifiers">règles de nommage des propriétés</a>. Plusieurs paramètres (et types) sont séparés par des points-virgules (;).</p>
 <blockquote>
-<p>Cette syntaxe n'est pas prise en charge avec les méthodes. Voir <a href="#sequential-parameters">Paramètres séquentiels</a>.</p>
+<p>Both <a href="#named-parameters">named</a> and <a href="#sequential-parameters">sequential</a> variables syntaxes can be mixed with no restriction to declare parameters. Par exemple:</p>
+<pre><code class="hljs css language-4d"></code></pre>
 </blockquote>
-<p>Par exemple, lorsque vous appelez une fonction <code>getArea()</code> avec deux paramètres :</p>
+<p>Function add($x : Integer)
+var $0;$2 : Integer
+$0:=$x+$2</p>
+<pre><code class="hljs">
+
+<span class="http">
+
+<span class="sql"><span class="hljs-comment">## Paramètres nommés</span>
+
+Inside called methods or class functions, parameter <span class="hljs-keyword">values</span> <span class="hljs-keyword">are</span> assigned <span class="hljs-keyword">to</span> <span class="hljs-keyword">local</span> variables. You can <span class="hljs-keyword">declare</span> <span class="hljs-keyword">parameters</span> <span class="hljs-keyword">using</span> a **parameter <span class="hljs-keyword">name</span>** along <span class="hljs-keyword">with</span> a **parameter <span class="hljs-keyword">type</span>**, separated <span class="hljs-keyword">by</span> colon.
+
+- <span class="hljs-keyword">For</span> <span class="hljs-keyword">class</span> functions, <span class="hljs-keyword">parameters</span> <span class="hljs-keyword">are</span> declared along <span class="hljs-keyword">with</span> the <span class="hljs-string">`Function`</span> keyword.
+- <span class="hljs-keyword">For</span> methods (<span class="hljs-keyword">project</span> methods, <span class="hljs-keyword">form</span> <span class="hljs-keyword">object</span> methods, <span class="hljs-keyword">database</span> methods, <span class="hljs-keyword">and</span> <span class="hljs-keyword">triggers</span>), <span class="hljs-keyword">parameters</span> <span class="hljs-keyword">are</span> declared <span class="hljs-keyword">using</span> the <span class="hljs-string">`#DECLARE`</span> keyword <span class="hljs-keyword">at</span> the <span class="hljs-keyword">beginning</span> <span class="hljs-keyword">of</span> the method code.
+
+Voici quelques exemples :
+
+<span class="hljs-string">``</span><span class="hljs-string">`4d
+Function getArea($width : Integer; $height : Integer) -&gt; $area : Integer
+</span></span></span></code></pre>
+<pre><code class="hljs css language-4d"> <span class="hljs-comment">//myProjectMethod</span>
+#<span class="hljs-function">DECLARE </span>(<span class="hljs-variable">$i </span>: Integer) -&gt; <span class="hljs-variable">$myResult </span>: Object
+</code></pre>
+<p>Les règles suivantes s'appliquent :</p>
+<ul>
+<li>The declaration line must be the first line of the method or function code, otherwise an error is displayed (only comments or line breaks can precede the declaration).</li>
+<li>Parameter names must start with a <code>$</code> character and be compliant with <a href="Concepts/dt_object.md#object-property-identifiers">property naming rules</a>.</li>
+<li>Plusieurs paramètres (et types) sont séparés par des points-virgules (;).</li>
+<li>Multiline syntaxes are supported (using &quot;\&quot; character).</li>
+</ul>
+<p>For example, when you call a <code>getArea()</code> function with two parameters:</p>
 <pre><code class="hljs"><span class="hljs-variable">$area</span>:=<span class="hljs-variable">$o</span>.<span class="hljs-function">getArea</span>(<span class="hljs-number">50</span>;<span class="hljs-number">100</span>)
 </code></pre>
-<p>Dans le code de la fonction de classe, la valeur de chaque paramètre est copiée dans le paramètre déclaré correspondant :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// Classe : Polygon</span>
-<span class="hljs-function">Fonction getArea</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)-&gt; <span class="hljs-variable">$area </span>: Integer
+<p>In the class function code, the value of each parameter is copied into the corresponding declared parameter:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Class: Polygon</span><span class="hljs-keyword">
+Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)-&gt; <span class="hljs-variable">$area </span>: Integer
     <span class="hljs-variable">$area</span>:=<span class="hljs-variable">$width</span>*<span class="hljs-variable">$height</span>
 </code></pre>
 <blockquote>
-<p>Si le type n'est pas défini, le paramètre sera défini comme <code>Variant</code>.
-<a href="#sequential-parameters">La syntaxe des paramètres séquentiels</a> peut être utilisée pour déclarer des paramètres de fonction de classe. Les deux syntaxes peuvent être mélangées. Par exemple:</p>
-<pre><code class="hljs css language-4d"></code></pre>
+<p>Si le type n'est pas défini, le paramètre sera défini comme <code>Variant</code>.</p>
 </blockquote>
-<p>Fonction add($x : Integer)
-var $0,$2 : Integer
-$0:=$x+$2</p>
-<pre><code class="hljs">
-### <span class="hljs-keyword">Type</span> <span class="hljs-keyword">de</span> données pris <span class="hljs-keyword">en</span> charge
-
-Avec les paramètres nommés, vous pouvez utiliser les <span class="hljs-keyword">m</span>êmes types <span class="hljs-keyword">de</span> données <span class="hljs-keyword">que</span> ceux <span class="hljs-keyword">qui</span> sont [pris <span class="hljs-keyword">en</span> charge par le mot-<span class="hljs-keyword">cl</span>é `<span class="hljs-keyword">var</span>`](variables.md#using-the-<span class="hljs-keyword">var</span>-keyword), y compris par exemple :
-
-```4d
-Fonction saveToFile(<span class="hljs-variable">$entity</span> : <span class="hljs-keyword">cs</span>.ShapesEntity; <span class="hljs-variable">$file</span> : 4D.<span class="hljs-keyword">File</span>)
+<p>All 4D method kinds support the <code>#DECLARE</code> keyword, including database methods. For example, in the <code>On Web Authentication</code> database method, you can declare named parameters:</p>
+<pre><code class="hljs css language-4d">    <span class="hljs-comment">// On Web Authentication database method</span>
+#<span class="hljs-function">DECLARE </span>(<span class="hljs-variable">$url </span>: Text; <span class="hljs-variable">$header </span>: Text; \
+  <span class="hljs-variable">$BrowserIP </span>: Text; <span class="hljs-variable">$ServerIP </span>: Text; \
+  <span class="hljs-variable">$user </span>: Text; <span class="hljs-variable">$password </span>: Text) \
+  -&gt; <span class="hljs-variable">$RequestAccepted </span>: Boolean
+<span class="hljs-variable">$entitySelection</span>:=ds.User.<span class="hljs-function">query</span>(<span class="hljs-string">"login=:1"</span>; <span class="hljs-variable">$user</span>)
+<span class="hljs-comment">// Check hash password...</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="returned-value"></a><a href="#returned-value" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returned value</h3>
+<p>You declare the return parameter of a function by adding an arrow (-&gt;) and the parameter definition after the input parameter(s) list. Par exemple:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer) -&gt; <span class="hljs-variable">$result </span>: Integer
+</code></pre>
+<p>You can also declare the return parameter only by adding <code>: type</code>, in which case it will automatically be available through <code>$0</code> (<a href="#returned-value-1">see sequential syntax below</a>). Par exemple:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer): Integer
+    <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$x</span>+<span class="hljs-variable">$y</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="supported-data-types"></a><a href="#supported-data-types" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported data types</h3>
+<p>With named parameters, you can use the same data types as those which are <a href="variables.md#using-the-var-keyword">supported by the <code>var</code> keyword</a>, including class objects.  Par exemple:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> saveToFile</span>(<span class="hljs-variable">$entity </span>: cs.ShapesEntity; <span class="hljs-variable">$file </span>: 4D.File)
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="paramètres-séquentiels"></a><a href="#paramètres-séquentiels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Paramètres séquentiels</h2>
-<p>Vous pouvez déclarer des paramètres de méthodes à l'aide de variables numérotées séquentiellement : <strong>$1</strong>, <strong>$2</strong>, <strong>$3</strong>, etc. La numérotation des variables locales représente l’ordre des paramètres.</p>
+<p>As an alternative to <a href="#named-parameters">named parameters</a> syntax, you can declare parameters using sequentially numbered variables: <strong>$1</strong>, <strong>$2</strong>, <strong>$3</strong>, and so on. La numérotation des variables locales représente l’ordre des paramètres.</p>
 <blockquote>
-<p>Cette syntaxe est prise en charge pour les méthodes et les fonctions de classe. Cependant, pour les fonctions de classe, il est recommandé d'utiliser la syntaxe des <a href="#named-parameters-class-functions">paramètres nommés</a>.</p>
+<p>Although this syntax is supported by class functions, it is recommended to use <a href="#named-parameters">named parameters</a> syntax in this case.</p>
 </blockquote>
-<p>Par exemple, lorsque vous appelez une méthode projet <code>FAIRE QUELQUE CHOSE</code> avec trois paramètres :</p>
+<p>For example, when you call a <code>DO_SOMETHING</code> project method with three parameters:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">FAIRE QUELQUE CHOSE</span>(AvecCeci; EtCela; CommeCeci)
 </code></pre>
-<p>Dans le code de la méthode, la valeur de chaque paramètre est automatiquement copiée dans des variables $1, $2, $3 :</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//Code de la méthode FAIRE QUELQUE CHOSE</span>
-  <span class="hljs-comment">//Supposons que tous les paramètres sont de type texte</span>
+<p>In the method code, the value of each parameter is automatically copied into $1, $2, $3 variables:</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//Code of the method DO_SOMETHING</span>
+  <span class="hljs-comment">//Assuming all parameters are of the text type</span>
 <span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>;<span class="hljs-variable">$3</span>)
-<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"J'ai reçu "</span>+<span class="hljs-variable">$1</span>+<span class="hljs-string">" et "</span>+<span class="hljs-variable">$2</span>+<span class="hljs-string">" et aussi "</span>+<span class="hljs-variable">$3</span>)
-  <span class="hljs-comment">//$1 contient le paramètre $AvecCeci</span>
-  <span class="hljs-comment">//$2 contient le paramètre $EtCela</span>
-  <span class="hljs-comment">//$3 contient le paramètre $CommeCeci</span>
+<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"I received "</span>+<span class="hljs-variable">$1</span>+<span class="hljs-string">" and "</span>+<span class="hljs-variable">$2</span>+<span class="hljs-string">" and also "</span>+<span class="hljs-variable">$3</span>)
+  <span class="hljs-comment">//$1 contains the $WithThis parameter</span>
+  <span class="hljs-comment">//$2 contains the $AndThat parameter</span>
+  <span class="hljs-comment">//$3 contains the $ThisWay parameter</span>
 </code></pre>
-<p>Les mêmes principes s'appliquent lorsque des méthodes sont exécutées via des commandes consacrées, comme par exemple :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-function">EXECUTE METHOD IN SUBFORM</span>(<span class="hljs-string">"Cal2"</span>;<span class="hljs-string">"SetCalendarDate"</span>;*;<span class="hljs-literal">!05/05/20!</span>)  
-<span class="hljs-comment">//passez la date du !05/05/20! comme paramètre de SetCalendarDate</span>
-<span class="hljs-comment">// dans le contexte d'un sous-formulaire</span>
+<h3><a class="anchor" aria-hidden="true" id="returned-value-1"></a><a href="#returned-value-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returned value</h3>
+<p>The value to be returned is automatically put into the local variable <code>$0</code>.</p>
+<p>Par exemple, la méthode suivante, appelée <code>Uppercase4</code>, retourne une chaîne dont les quatre premiers caractères ont été passés en majuscules :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$0</span>:=<span class="hljs-function">Uppercase</span>(<span class="hljs-function">Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">4</span>))+<span class="hljs-function">Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">5</span>)
 </code></pre>
-<p><strong>Note :</strong> Pour une bonne exécution du code, assurez-vous que tous les paramètres <code>$1</code>, <code>$2</code> etc. sont correctement déclarés dans les méthodes appelées (voir <a href="#declaring-parameters">Déclaration des paramètres</a> ci-dessous).</p>
-<h3><a class="anchor" aria-hidden="true" id="variables-dentréede-sortie"></a><a href="#variables-dentréede-sortie" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variables d'entrée/de sortie</h3>
-<p>Dans une sous-méthode, vous pouvez utiliser les paramètres $1, $2... comme n'importe quelle autre variable locale. Toutefois, dans le cas où vous utilisez des commandes qui modifient la valeur de la variable passée en paramètre (par exemple <code>Trouver dans champ</code>), les paramètres $1, $2, etc. ne peuvent pas être utilisés directement. Vous devez d'abord les recopier dans des variables locales standard (par exemple <code>$mavar:=$1</code>).</p>
-<h3><a class="anchor" aria-hidden="true" id="type-de-données-pris-en-charge"></a><a href="#type-de-données-pris-en-charge" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type de données pris en charge</h3>
-<p>Vous pouvez utiliser n'importe quelle <a href="Concepts/quick-tour.md#expression-types">expression</a> comme paramètre séquentiel, à l'exception des :</p>
+<p>Voici un exemple qui utilise la méthode Uppercase4 :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$NewPhrase</span>:=<span class="hljs-function">Uppercase4</span>(<span class="hljs-string">"This is good."</span>)
+</code></pre>
+<p>In this example, the variable <em>$NewPhrase</em> gets “THIS is good.”</p>
+<p>La valeur retournée, <code>$0</code>, est une variable locale à la sous-routine. Elle peut être utilisée en tant que telle à l'intérieur de la sous-routine. Par exemple, vous pouvez écrire :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Faire_quelque chose</span>
+<span class="hljs-variable">$0</span>:=<span class="hljs-function">Uppercase</span>(<span class="hljs-variable">$1</span>)
+<span class="hljs-function">ALERT</span>(<span class="hljs-variable">$0</span>)
+</code></pre>
+<p>Dans cet exemple, <code>$0</code> recevait d'abord la valeur de <code>$1</code>, puis était utilisée en tant que paramètre de la commande <code>ALERT</code>. Dans une sous-méthode, vous pouvez utiliser <code>$0</code> comme n'importe quelle autre variable locale. C'est 4D qui retourne sa valeur finale <code>$0</code> (sa valeur courante au moment où la sous-routine se termine) à la méthode appelée.</p>
+<h3><a class="anchor" aria-hidden="true" id="supported-data-types-1"></a><a href="#supported-data-types-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported data types</h3>
+<p>You can use any <a href="Concepts/quick-tour.md#expression-types">expression</a> as sequential parameter, except:</p>
 <ul>
 <li>tables</li>
 <li>arrays</li>
 </ul>
 <p>Les expressions de tables ou de tableaux peuvent être passées uniquement <a href="Concepts/dt_pointer.md#pointers-as-parameters-to-methods">comme une référence utilisant un pointeur</a>.</p>
-<h3><a class="anchor" aria-hidden="true" id="using-objects-properties-as-named-parameters"></a><a href="#using-objects-properties-as-named-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using objects properties as named parameters</h3>
-<p>L'utilisation d'objets en tant que paramètres vous permet de gérer des <strong>paramètres nommés</strong>, même sans méthodes. Ce style de programmation est simple, souple et facile à lire.</p>
-<p>Par exemple, si vous utilisez la méthode <code>CreatePerson</code> :</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//La méthode CreatePerson crée un objet et l'envoie en tant que paramètre</span>
-<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$person</span>)
- <span class="hljs-variable">$person</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"Name"</span>;<span class="hljs-string">"Smith"</span>;<span class="hljs-string">"Age"</span>;<span class="hljs-number">40</span>)
-<span class="hljs-function"> ChangeAge</span>(<span class="hljs-variable">$person</span>)
-<span class="hljs-function"> ALERT</span>(<span class="hljs-function">Chaine</span>(<span class="hljs-function">OB Lire</span>(<span class="hljs-variable">$person</span>;<span class="hljs-string">"Age"</span>)))  
-</code></pre>
-<p>Dans la méthode <code>ChangeAge</code>, vous pouvez écrire :</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//ChangeAge</span>
-<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$para</span>)
- <span class="hljs-variable">$para</span>:=<span class="hljs-variable">$1  </span>
- <span class="hljs-variable">$para</span>.Age:=<span class="hljs-variable">$para</span>.Age+<span class="hljs-number">10</span>
-<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$para</span>.Nom+<span class="hljs-string">" a "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-string">" ans."</span>)
-</code></pre>
-<p>C'est un moyen puissant de définir des <a href="#optional-parameters">paramètres optionnels</a> (voir ci-dessous également). Pour gérer les paramètres manquants, vous pouvez :</p>
-<ul>
-<li>vérifier si tous les paramètres attendus sont fournis en les comparant à la valeur <code>Null</code>, ou</li>
-<li>prédéfinir les valeurs des paramètres, ou</li>
-<li>les utiliser sous forme de valeurs vides.</li>
-</ul>
-<p>Dans la méthode <code>ChangeAge</code> ci-dessus, les propriétés Age et Nom sont obligatoires et pourraient générer des erreurs si elles sont manquantes. Pour éviter cela, vous pouvez simplement écrire :</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//ChangeAge</span>
-<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$para</span>)
- <span class="hljs-variable">$para</span>:=<span class="hljs-variable">$1  </span>
- <span class="hljs-variable">$para</span>.Age:=<span class="hljs-function">Num</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-number">10</span>
-<span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Nom+<span class="hljs-string">" a "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-string">" ans."</span>)
-</code></pre>
-<p>Les deux paramètres sont alors optionnels. S'ils ne sont pas renseignés, le résultat sera &quot;a 10 ans&quot;, mais aucune erreur ne sera générée.</p>
-<p>Enfin, les paramètres nommés permettent de maintenir et de reproduire des applications en toutes simplicité et sécurité. Imaginez que vous réalisez, par la suite, qu'ajouter 10 ans n'est pas toujours approprié. Vous aurez besoin d'un autre paramètre pour définir le nombre d'années à ajouter. Vous pouvez écrire :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$person</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"Nom"</span>;<span class="hljs-string">"Smith"</span>;<span class="hljs-string">"Age"</span>;<span class="hljs-number">40</span>;<span class="hljs-string">"àAjouter"</span>;<span class="hljs-number">10</span>)
-<span class="hljs-function">ChangeAge</span>(<span class="hljs-variable">$person</span>)
-
-<span class="hljs-comment">//ChangeAge</span>
-<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$para</span>)
-<span class="hljs-variable">$para</span>:=<span class="hljs-variable">$1  </span><span class="hljs-keyword">
-If</span> (<span class="hljs-variable">$para</span>.toAdd=<span class="hljs-literal">Null</span>)
-    <span class="hljs-variable">$para</span>.toAdd:=<span class="hljs-number">10</span><span class="hljs-keyword">
-End if</span>
-<span class="hljs-variable">$para</span>.Age:=<span class="hljs-function">Num</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-variable">$para</span>.toAdd
-<span class="hljs-function">ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Nom)+<span class="hljs-string">" a "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-string">" ans."</span>)
-</code></pre>
-<p>Ici, toute la puissance réside dans le fait de ne pas avoir à changer votre code existant. Cela fonctionnera toujours dans l'ancienne version, mais le cas échéant, vous pouvez utiliser une autre valeur que 10 ans.</p>
-<p>Avec les variables nommées, n'importe quel paramètre peut être optionnel. Dans l'exemple ci-dessus, tous les paramètres sont optionnels et peuvent être donnés, dans n'importe quel ordre.</p>
-<h3><a class="anchor" aria-hidden="true" id="declaring-variables-for-sequential-parameters"></a><a href="#declaring-variables-for-sequential-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Declaring variables for sequential parameters</h3>
-<p>Even if it is not mandatory in <a href="Concepts/interpreted.md">interpreted mode</a>, you must declare each sequential variable in the called methods to prevent any trouble.</p>
-<p>Dans l'exemple suivant, la méthode projet <code>ajoutCapitale</code> accepte un paramètre texte et retourne un résultat texte :</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">// Méthode projet ajoutCapitale</span>
-  <span class="hljs-comment">// ajoutCapitale ( Texte ) -&gt; Texte</span>
-  <span class="hljs-comment">// ajoutCapitale( Chaîne source ) -&gt; chaîne avec la première lettre capitale</span>
-
-<span class="hljs-function"> C_TEXTE</span>(<span class="hljs-variable">$0</span>;<span class="hljs-variable">$1</span>)
- <span class="hljs-variable">$0</span>:=<span class="hljs-function">Majusc</span>(<span class="hljs-function">Sous chaine</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">1</span>))+<span class="hljs-function">Minusc</span>(<span class="hljs-function">Sous chaine</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">2</span>))
-</code></pre>
-<p>L'utilisation de commandes telles que <code>Nouveau process</code> avec les méthodes process qui acceptent les paramètres nécessite également que les paramètres soient explicitement déclarés dans la méthode appelée. Par exemple:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$string</span>)
-<span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$idProc</span>;<span class="hljs-variable">$int</span>)
-<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$obj</span>)
-
-<span class="hljs-variable">$idProc</span>:=<span class="hljs-function">New process</span>(<span class="hljs-string">"foo_method"</span>;<span class="hljs-number">0</span>;<span class="hljs-string">"foo_process"</span>;<span class="hljs-variable">$string</span>;<span class="hljs-variable">$int</span>;<span class="hljs-variable">$obj</span>)
-</code></pre>
-<p>Ce code peut être exécuté en mode compilé, uniquement si &quot;foo_method&quot; déclare ses paramètres :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">//foo_method</span>
-<span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>)
-<span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$2</span>)
-<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$3</span>)
-...
-</code></pre>
-<blockquote>
-<p>For compiled mode, you can group all local variable parameters for project methods in a specific method with a name starting with &quot;Compiler&quot;. Dans cette méthode, vous pouvez prédéclarer les paramètres de chaque méthode, comme par exemple :</p>
-</blockquote>
-<pre><code class="hljs css language-4d"> <span class="hljs-comment">// Compiler_method</span>
-<span class="hljs-function"> C_REAL</span>(OneMethodAmongOthers;<span class="hljs-variable">$1</span>) 
-</code></pre>
-<p>Pour plus d'informations, consultez la page <a href="Concepts/interpreted.md">Modes interprété et compilé</a>.</p>
-<p>La déclaration des paramètres est également obligatoire dans les contextes suivants (ces contextes ne prennent pas en charge les déclarations dans une méthode &quot;Compiler&quot;) :</p>
-<ul>
-<li>Méthodes base - Par exemple, la <code>méthode base Sur connexion Web</code> reçoit six paramètres, allant de $1 à $6, de type Texte. Au début de la méthode base, vous devez écrire (même si tous les paramètres ne sont pas utilisés) :</li>
-</ul>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// Sur connexion Web</span>
-<span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>;<span class="hljs-variable">$3</span>;<span class="hljs-variable">$4</span>;<span class="hljs-variable">$5</span>;<span class="hljs-variable">$6</span>)
-</code></pre>
-<ul>
-<li><p>Triggers - Le paramètre $0 (Entier long), qui résulte d'un trigger, sera typé par le compilateur si le paramètre n'a pas été explicitement déclaré. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans le trigger lui-même.</p></li>
-<li><p>Objets formulaires qui acceptent l'événement formulaire <code>Sur glisser</code> - Le paramètre $0 (Entier long), qui résulte de l'événement formulaire <code>Sur glisser</code> est typé par le compilateur si le paramètre n'a pas été explicitement déclaré. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans la méthode projet. <strong>Note :</strong> Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire <code>Sur glisser</code>, vous devez initialiser $0. Par exemple:</p></li>
-</ul>
-<pre><code class="hljs css language-4d"><span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$0</span>)<span class="hljs-keyword">
- If</span>(Form event=On Drag Over)
-    <span class="hljs-variable">$0</span>:=<span class="hljs-number">0</span>
-    ...<span class="hljs-keyword">
-    If</span>(<span class="hljs-variable">$DataType</span>=Is picture)
-       <span class="hljs-variable">$0</span>:=<span class="hljs-number">-1</span><span class="hljs-keyword">
-    End if</span>
-    ...<span class="hljs-keyword">
- End if</span>
-</code></pre>
 <h3><a class="anchor" aria-hidden="true" id="indirections-sur-les-paramètres"></a><a href="#indirections-sur-les-paramètres" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Indirections sur les paramètres</h3>
 <p>Les méthodes projets 4D acceptent un grand nombre de paramètres de même type, commençant par la droite. Ce principe est appelé <strong>l'indirection des paramètres</strong>. L'utilisation de la commande <code>Count parameters</code> vous permet d'adresser ces paramètres avec la boucle <code>For...End for</code> ainsi que la syntaxe de l'indirection des paramètres.</p>
+<blockquote>
+<p>Parameter indirection can only be used with the <a href="#sequential-parameters">sequential</a> syntax.</p>
+</blockquote>
 <p>Dans l'exemple qui suit, la méthode projet <code>ENVOYER PAQUET</code> accepte le paramètre de temps suivi d'un nombre de variables des paramètres de texte :</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//SEND PACKETS Project Method</span>
   <span class="hljs-comment">//SEND PACKETS ( Time ; Text { ; Text2... ; TextN } )</span>
@@ -278,41 +237,114 @@ End if</span>
 </code></pre>
 <p>La commande ci-dessus signifie que tous les paramètres à partir du quatrième (inclus) seront adressés par indirection. Ils seront tous de type Entier long. Les types de $1, $2 et $3 pourront être quelconques. En revanche, si vous utilisez $2 par indirection, le type utilisé sera le type générique. Il sera donc de type Entier long, même si pour vous, par exemple, il était de type Réel.</p>
 <blockquote>
-<p>Le nombre, dans la déclaration, doit toujours être une constante et jamais une variable.</p>
+<p>The number in the declaration has to be a constant and not a variable.</p>
 </blockquote>
-<h2><a class="anchor" aria-hidden="true" id="valeurs-retournées"></a><a href="#valeurs-retournées" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Valeurs retournées</h2>
-<p>Data can be returned from methods and class functions. Par exemple, la ligne d’instruction suivante utilise une commande intégrée, <code>Longueur</code>, qui retourne la longueur d’une chaîne. La valeur retournée par <code>Longueur</code> est placée dans une variable appelée <em>MaLongueur</em>.</p>
-<pre><code class="hljs css language-4d">MaLongueur:=<span class="hljs-function">Length</span>(<span class="hljs-string">"Comment suis-je arrivé là ?"</span>)
+<h3><a class="anchor" aria-hidden="true" id="declaring-parameters-for-compiled-mode"></a><a href="#declaring-parameters-for-compiled-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Declaring parameters for compiled mode</h3>
+<p>Even if it is not mandatory in <a href="Concepts/interpreted.md">interpreted mode</a>, you must declare each parameter in the called methods or functions to prevent any trouble.</p>
+<p>When using the <a href="#named-parameters">named variable syntax</a>, parameters are automatically declared through the <code>#DECLARE</code> keyword or <code>Function</code> prototype. Par exemple:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer)-&gt; <span class="hljs-variable">$result </span>: Integer
+    <span class="hljs-comment">// all parameters are declared with their type</span>
 </code></pre>
-<p>Toute sous-routine peut retourner une valeur. Only one single return parameter can be declared per method or class function.</p>
-<p>Like for <a href="#named-parameters-class-functions">input parameters</a>, return parameters can be declared using:</p>
+<p>When using the sequential variable syntax, you need to make sure all parameters are properly declared. Dans l'exemple suivant, la méthode projet <code>ajoutCapitale</code> accepte un paramètre texte et retourne un résultat texte :</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">// Méthode projet ajoutCapitale</span>
+  <span class="hljs-comment">// ajoutCapitale ( Texte ) -&gt; Texte</span>
+  <span class="hljs-comment">// ajoutCapitale( Chaîne source ) -&gt; chaîne avec la première lettre capitale</span>
+
+<span class="hljs-function"> C_TEXTE</span>(<span class="hljs-variable">$0</span>;<span class="hljs-variable">$1</span>)
+ <span class="hljs-variable">$0</span>:=<span class="hljs-function">Majusc</span>(<span class="hljs-function">Sous chaine</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">1</span>))+<span class="hljs-function">Minusc</span>(<span class="hljs-function">Sous chaine</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">2</span>))
+</code></pre>
+<p>L'utilisation de commandes telles que <code>Nouveau process</code> avec les méthodes process qui acceptent les paramètres nécessite également que les paramètres soient explicitement déclarés dans la méthode appelée. Par exemple:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$string</span>)
+<span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$idProc</span>;<span class="hljs-variable">$int</span>)
+<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$obj</span>)
+
+<span class="hljs-variable">$idProc</span>:=<span class="hljs-function">New process</span>(<span class="hljs-string">"foo_method"</span>;<span class="hljs-number">0</span>;<span class="hljs-string">"foo_process"</span>;<span class="hljs-variable">$string</span>;<span class="hljs-variable">$int</span>;<span class="hljs-variable">$obj</span>)
+</code></pre>
+<p>Ce code peut être exécuté en mode compilé, uniquement si &quot;foo_method&quot; déclare ses paramètres :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">//foo_method</span>
+<span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>)
+<span class="hljs-function">C_LONGINT</span>(<span class="hljs-variable">$2</span>)
+<span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$3</span>)
+...
+</code></pre>
+<blockquote>
+<p>For compiled mode, you can group all local variable parameters for project methods in a specific method with a name starting with &quot;Compiler&quot;. Dans cette méthode, vous pouvez prédéclarer les paramètres de chaque méthode, comme par exemple :</p>
+</blockquote>
+<pre><code class="hljs css language-4d"> <span class="hljs-comment">// Compiler_method</span>
+<span class="hljs-function"> C_REAL</span>(OneMethodAmongOthers;<span class="hljs-variable">$1</span>) 
+</code></pre>
+<p>Pour plus d'informations, consultez la page <a href="Concepts/interpreted.md">Modes interprété et compilé</a>.</p>
+<p>La déclaration des paramètres est également obligatoire dans les contextes suivants (ces contextes ne prennent pas en charge les déclarations dans une méthode &quot;Compiler&quot;) :</p>
 <ul>
-<li>the named syntax (class functions only), or</li>
-<li>the sequential syntax (methods and class functions).</li>
+<li>Méthodes base - Par exemple, la <code>méthode base Sur connexion Web</code> reçoit six paramètres, allant de $1 à $6, de type Texte. Au début de la méthode base, vous devez écrire (même si tous les paramètres ne sont pas utilisés) :</li>
 </ul>
-<h3><a class="anchor" aria-hidden="true" id="named-syntax-class-functions"></a><a href="#named-syntax-class-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Named syntax (class functions)</h3>
-<p>Vous déclarez le paramètre de retour d'une fonction en ajoutant une flèche (-&gt;) et la définition du paramètre après la liste des paramètres d'entrée. Par exemple:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer)-&gt;<span class="hljs-variable">$result </span>: Integer
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Sur connexion Web</span>
+<span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>;<span class="hljs-variable">$3</span>;<span class="hljs-variable">$4</span>;<span class="hljs-variable">$5</span>;<span class="hljs-variable">$6</span>)
 </code></pre>
-<p>You can also declare the return parameter only by adding <code>: type</code>, in which case it will automatically be available through <code>$0</code> (<a href="#sequential-syntax">see sequential syntax below</a>). Par exemple:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer): Integer
-    <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$x</span>+<span class="hljs-variable">$y</span>
+<blockquote>
+<p>You can also use <a href="#named-parameters">named parameters</a> with the <code>#DECLARE</code> keyword.</p>
+</blockquote>
+<ul>
+<li><p>Triggers - Le paramètre $0 (Entier long), qui résulte d'un trigger, sera typé par le compilateur si le paramètre n'a pas été explicitement déclaré. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans le trigger lui-même.</p></li>
+<li><p>Objets formulaires qui acceptent l'événement formulaire <code>Sur glisser</code> - Le paramètre $0 (Entier long), qui résulte de l'événement formulaire <code>Sur glisser</code> est typé par le compilateur si le paramètre n'a pas été explicitement déclaré. Néanmoins, si vous souhaitez le déclarer, vous devez le faire dans la méthode projet. <strong>Note :</strong> Le compilateur n'initialise pas le paramètre $0. Ainsi, dès que vous utilisez l'événement formulaire <code>Sur glisser</code>, vous devez initialiser $0. Par exemple:</p></li>
+</ul>
+<pre><code class="hljs css language-4d"><span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$0</span>)<span class="hljs-keyword">
+ If</span>(Form event=On Drag Over)
+    <span class="hljs-variable">$0</span>:=<span class="hljs-number">0</span>
+    ...<span class="hljs-keyword">
+    If</span>(<span class="hljs-variable">$DataType</span>=Is picture)
+       <span class="hljs-variable">$0</span>:=<span class="hljs-number">-1</span><span class="hljs-keyword">
+    End if</span>
+    ...<span class="hljs-keyword">
+ End if</span>
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="syntaxe-séquentielle"></a><a href="#syntaxe-séquentielle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntaxe séquentielle</h3>
-<p>La valeur à retourner est automatiquement placée dans la variable locale <code>$0</code>.</p>
-<p>Par exemple, la méthode suivante, appelée <code>Uppercase4</code>, retourne une chaîne dont les quatre premiers caractères ont été passés en majuscules :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$0</span>:=<span class="hljs-function">Uppercase</span>(<span class="hljs-function">Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">1</span>;<span class="hljs-number">4</span>))+<span class="hljs-function">Substring</span>(<span class="hljs-variable">$1</span>;<span class="hljs-number">5</span>)
+<h2><a class="anchor" aria-hidden="true" id="using-object-properties-as-named-parameters"></a><a href="#using-object-properties-as-named-parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using object properties as named parameters</h2>
+<p>L'utilisation d'objets en tant que paramètres vous permet de gérer des <strong>paramètres nommés</strong>. Ce style de programmation est simple, souple et facile à lire.</p>
+<p>Par exemple, si vous utilisez la méthode <code>CreatePerson</code> :</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//CreatePerson</span><span class="hljs-keyword">
+ var</span> <span class="hljs-variable">$person </span>: Object
+ <span class="hljs-variable">$person</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"Name"</span>;<span class="hljs-string">"Smith"</span>;<span class="hljs-string">"Age"</span>;<span class="hljs-number">40</span>)
+<span class="hljs-function"> ChangeAge</span>(<span class="hljs-variable">$person</span>)
+<span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$person</span>.Age))  
 </code></pre>
-<p>Voici un exemple qui utilise la méthode Uppercase4 :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$NewPhrase</span>:=<span class="hljs-function">Uppercase4</span>(<span class="hljs-string">"This is good."</span>)
+<p>Dans la méthode <code>ChangeAge</code>, vous pouvez écrire :</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//ChangeAge</span><span class="hljs-keyword">
+ var</span> <span class="hljs-variable">$1</span>; <span class="hljs-variable">$para </span>: Object
+ <span class="hljs-variable">$para</span>:=<span class="hljs-variable">$1  </span>
+ <span class="hljs-variable">$para</span>.Age:=<span class="hljs-variable">$para</span>.Age+<span class="hljs-number">10</span>
+<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$para</span>.Name+<span class="hljs-string">" is "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-string">" years old."</span>)
 </code></pre>
-<p>In this example, the variable <em>$NewPhrase</em> gets “THIS is good.”</p>
-<p>La valeur retournée, <code>$0</code>, est une variable locale à la sous-routine. Elle peut être utilisée en tant que telle à l'intérieur de la sous-routine. Par exemple, vous pouvez écrire :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// Faire_quelque chose</span>
-<span class="hljs-variable">$0</span>:=<span class="hljs-function">Uppercase</span>(<span class="hljs-variable">$1</span>)
-<span class="hljs-function">ALERT</span>(<span class="hljs-variable">$0</span>)
+<p>C'est un moyen puissant de définir des <a href="#optional-parameters">paramètres optionnels</a> (voir ci-dessous également). Pour gérer les paramètres manquants, vous pouvez :</p>
+<ul>
+<li>vérifier si tous les paramètres attendus sont fournis en les comparant à la valeur <code>Null</code>, ou</li>
+<li>prédéfinir les valeurs des paramètres, ou</li>
+<li>les utiliser sous forme de valeurs vides.</li>
+</ul>
+<p>Dans la méthode <code>ChangeAge</code> ci-dessus, les propriétés Age et Nom sont obligatoires et pourraient générer des erreurs si elles sont manquantes. Pour éviter cela, vous pouvez simplement écrire :</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//ChangeAge</span><span class="hljs-keyword">
+ var</span> <span class="hljs-variable">$1</span>; <span class="hljs-variable">$para </span>: Object
+ <span class="hljs-variable">$para</span>:=<span class="hljs-variable">$1  </span>
+ <span class="hljs-variable">$para</span>.Age:=<span class="hljs-function">Num</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-number">10</span>
+<span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Name)+<span class="hljs-string">" is "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-string">" years old."</span>)
 </code></pre>
-<p>Dans cet exemple, <code>$0</code> recevait d'abord la valeur de <code>$1</code>, puis était utilisée en tant que paramètre de la commande <code>ALERT</code>. Dans une sous-méthode, vous pouvez utiliser <code>$0</code> comme n'importe quelle autre variable locale. C'est 4D qui retourne sa valeur finale <code>$0</code> (sa valeur courante au moment où la sous-routine se termine) à la méthode appelée.</p>
+<p>Les deux paramètres sont alors optionnels. S'ils ne sont pas renseignés, le résultat sera &quot;a 10 ans&quot;, mais aucune erreur ne sera générée.</p>
+<p>Enfin, les paramètres nommés permettent de maintenir et de reproduire des applications en toutes simplicité et sécurité. Imaginez que vous réalisez, par la suite, qu'ajouter 10 ans n'est pas toujours approprié. Vous aurez besoin d'un autre paramètre pour définir le nombre d'années à ajouter. Vous pouvez écrire :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$person</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"Name"</span>;<span class="hljs-string">"Smith"</span>;<span class="hljs-string">"Age"</span>;<span class="hljs-number">40</span>;<span class="hljs-string">"toAdd"</span>;<span class="hljs-number">10</span>)
+<span class="hljs-function">ChangeAge</span>(<span class="hljs-variable">$person</span>)
+
+<span class="hljs-comment">//ChangeAge</span><span class="hljs-keyword">
+var</span> <span class="hljs-variable">$1</span>;<span class="hljs-variable">$para </span>: Object
+<span class="hljs-variable">$para</span>:=<span class="hljs-variable">$1  </span><span class="hljs-keyword">
+If</span> (<span class="hljs-variable">$para</span>.toAdd=<span class="hljs-literal">Null</span>)
+    <span class="hljs-variable">$para</span>.toAdd:=<span class="hljs-number">10</span><span class="hljs-keyword">
+End if</span>
+<span class="hljs-variable">$para</span>.Age:=<span class="hljs-function">Num</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-variable">$para</span>.toAdd
+<span class="hljs-function">ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Name)+<span class="hljs-string">" is "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$para</span>.Age)+<span class="hljs-string">" years old."</span>)
+</code></pre>
+<p>Ici, toute la puissance réside dans le fait de ne pas avoir à changer votre code existant. Cela fonctionnera toujours dans l'ancienne version, mais le cas échéant, vous pouvez utiliser une autre valeur que 10 ans.</p>
+<p>Avec les variables nommées, n'importe quel paramètre peut être optionnel. Dans l'exemple ci-dessus, tous les paramètres sont optionnels et peuvent être donnés, dans n'importe quel ordre.</p>
+<h2><a class="anchor" aria-hidden="true" id="inputoutput-variables"></a><a href="#inputoutput-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Input/Output variables</h2>
+<p>Dans une sous-méthode, vous pouvez utiliser les paramètres $1, $2... comme n'importe quelle autre variable locale. Toutefois, dans le cas où vous utilisez des commandes qui modifient la valeur de la variable passée en paramètre (par exemple <code>Trouver dans champ</code>), les paramètres $1, $2, etc. ne peuvent pas être utilisés directement. Vous devez d'abord les recopier dans des variables locales standard (par exemple <code>$mavar:=$1</code>).</p>
 <h2><a class="anchor" aria-hidden="true" id="paramètres-optionnels"></a><a href="#paramètres-optionnels" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Paramètres optionnels</h2>
 <p>Dans le manuel <em>Langage de 4D</em>, les caractères { } (accolades) indiquent des paramètres facultatifs. Par exemple, <code>ALERT (message{; okButtonTitle})</code> signifie que le paramètre <em>okButtonTitle</em> doit être omis lors de l'appel de la commande. Vous pouvez l'appeler comme suit :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">ALERT</span>(<span class="hljs-string">"Etes*vous sûr?"</span>;<span class="hljs-string">"Oui, je le suis"</span>) <span class="hljs-comment">//2 paramètres</span>
@@ -320,23 +352,22 @@ End if</span>
 </code></pre>
 <p>Les méthodes projet 4D acceptent également des paramètres optionnels, en commençant par la droite. Cependant, il est difficile de gérer les paramètres optionnels lorsque certains d'entre eux sont manquants dans la méthode appelée - cela ne devrait jamais générer d'erreur. Une bonne pratique consisterait à assigner des valeurs par défaut aux paramètres non utilisés.</p>
 <blockquote>
-<p>Lorsque les paramètres sont nécessaires dans vos méthodes, vous pouvez également envisager des <a href="#using-objects-properties-as-named-parameters">propriétés d'objet comme paramètres nommés</a> pour gérer plusieurs paramètres de manière flexible.</p>
+<p>When optional parameters are needed in your methods, you might also consider using <a href="#using-objects-properties-as-named-parameters">object properties as named parameters</a> which provide a flexible way to handle variable numbers of parameters.</p>
 </blockquote>
 <p>A l'aide de la commande <code>Count parameters</code> contenue dans la méthode appelée, vous pouvez détecter le nombre de paramètres et effectuer des opérations différentes en fonction de ce nombre.</p>
 <p>L'exemple suivant affiche un message et peut insérer le texte dans un document sur disque ou dans une zone 4D Write Pro :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// Méthode projet APPEND TEXT</span>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// APPEND TEXT Project Method</span>
 <span class="hljs-comment">// APPEND TEXT ( Text { ; Text { ; Object } } )</span>
 <span class="hljs-comment">// APPEND TEXT ( Message { ; Path { ; 4DWPArea } } )</span>
 
-<span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$2</span>)
-<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$3</span>)
+<span class="hljs-function"> Method</span>(<span class="hljs-variable">$message </span>: Text; <span class="hljs-variable">$path </span>: Text; <span class="hljs-variable">$wpArea </span>: Object)
 
-<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$1</span>)<span class="hljs-keyword">
+<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$message</span>)<span class="hljs-keyword">
  If</span>(Count parameters&gt;=<span class="hljs-number">3</span>)
-<span class="hljs-function">    WP SET TEXT</span>(<span class="hljs-variable">$3</span>;<span class="hljs-variable">$1</span>;wk append)<span class="hljs-keyword">
+<span class="hljs-function">    WP SET TEXT</span>(<span class="hljs-variable">$wpArea</span>;<span class="hljs-variable">$1</span>;wk append)<span class="hljs-keyword">
  Else</span><span class="hljs-keyword">
     If</span>(Count parameters&gt;=<span class="hljs-number">2</span>)
-<span class="hljs-function">       TEXT TO DOCUMENT</span>(<span class="hljs-variable">$2</span>;<span class="hljs-variable">$1</span>)<span class="hljs-keyword">
+<span class="hljs-function">       TEXT TO DOCUMENT</span>(<span class="hljs-variable">$path</span>;<span class="hljs-variable">$message</span>)<span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
@@ -346,7 +377,7 @@ End if</span>
 <span class="hljs-function">APPEND TEXT</span>(vtSomeText;<span class="hljs-string">""</span>;<span class="hljs-variable">$wpArea</span>) <span class="hljs-comment">//Affiche le message et l'écrit dans $wpArea</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="valeurs-ou-références"></a><a href="#valeurs-ou-références" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Valeurs ou références</h2>
-<p>Lorsque vous passez un paramètre, 4D évalue toujours l'expression du paramètre dans le contexte de la méthode appelée et définit la <strong>valeur résultante</strong> sur les variables locales dans la fonction de classe ou la sous-routine. Les variables/paramètres locaux ne correspondent pas aux véritables champs, variables ou expressions passés par la méthode appelée; ils contiennent uniquement les valeurs qui n'ont pas été passées. Cette portée étant locale, si la valeur d'un paramètre est modifiée dans la sous-routine/fonction de classe, elle ne modifie pas la valeur dans la méthode appelée. Par exemple:</p>
+<p>When you pass a parameter, 4D always evaluates the parameter expression in the context of the calling method and sets the <strong>resulting value</strong> to the local variables in the class function or subroutine. Les variables/paramètres locaux ne correspondent pas aux véritables champs, variables ou expressions passés par la méthode appelée; ils contiennent uniquement les valeurs qui n'ont pas été passées. Since its scope is local, if the value of a parameter is modified in the class function/subroutine, it does not change the value in the calling method. Par exemple:</p>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//Voici du code extrait de la méthode MY_METHOD</span>
 <span class="hljs-function">DO_SOMETHING</span>([People]Name) <span class="hljs-comment">//Let's say [People]Name value is "williams"</span>
 <span class="hljs-function">ALERT</span>([People]Name)
@@ -380,26 +411,26 @@ End if</span>
  <span class="hljs-variable">$0</span>:=<span class="hljs-function">Uppercase</span>(<span class="hljs-variable">$1</span>)
 <span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$0</span>)
 </code></pre>
-<p>Cette deuxième technique de renvoi d'une valeur par une sous-routine est appelée «utilisation d'une fonction». Ceci est décrit dans le paragraphe <a href="#returning-values">Valeurs retournées</a>.</p>
+<p>Cette deuxième technique de renvoi d'une valeur par une sous-routine est appelée «utilisation d'une fonction». This is described in the <a href="#returning-values">Returning values</a> paragraph.</p>
 <h3><a class="anchor" aria-hidden="true" id="cas-particuliers--objets-et-collections"></a><a href="#cas-particuliers--objets-et-collections" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cas particuliers : objets et collections</h3>
 <p>Veillez à ce que les types de données d'Objet et Collection ne puissent être gérés que via une référence (c'est-à-dire un* pointeur* interne).</p>
 <p>Par conséquent, lorsque vous utilisez des types de données comme paramètres, <code>$1, $2 ...</code> ne contiennent pas des <em>valeurs</em>, mais des <em>références</em>. La modification de la valeur des paramètres <code>$1, $2 ...</code> dans la sous-routine sera propagée à chaque fois que l'objet ou la collection source est utilisé(e). C'est le même principe que pour <a href="Concepts/dt_pointer.md#pointers-as-parameters-to-methods">les pointeurs</a>, à l'exception des paramètres <code>$1, $2 ...</code> n'ont pas besoin d'être déréférencés dans la sous-routine.</p>
 <p>Par exemple, considérons que la méthode <code>CreatePerson</code>, qui crée un objet et qui l'envoie comme paramètre :</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//La méthode CreatePerson crée un objet et l'envoie en tant que paramètre</span>
-<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$person</span>)
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//CreatePerson</span><span class="hljs-keyword">
+ var</span> <span class="hljs-variable">$person </span>: Object
  <span class="hljs-variable">$person</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"Name"</span>;<span class="hljs-string">"Smith"</span>;<span class="hljs-string">"Age"</span>;<span class="hljs-number">40</span>)
 <span class="hljs-function"> ChangeAge</span>(<span class="hljs-variable">$person</span>)
-<span class="hljs-function"> ALERT</span>(<span class="hljs-function">Chaine</span>(<span class="hljs-function">OB Lire</span>(<span class="hljs-variable">$person</span>;<span class="hljs-string">"Age"</span>)))  
+<span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$person</span>.Age))  
 </code></pre>
 <p>La méthode <code>ChangeAge</code> ajoute 10 à l'attribut Age de l'objet reçu</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//ChangeAge</span>
-<span class="hljs-function"> C_OBJECT</span>(<span class="hljs-variable">$1</span>)
-<span class="hljs-variable">$1</span>.Age:=<span class="hljs-variable">$1</span>.Age+<span class="hljs-number">10</span>
-<span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$1</span>;Age))
+ #<span class="hljs-function">DECLARE </span>(<span class="hljs-variable">$person </span>: Object)
+ <span class="hljs-variable">$person</span>.Age:=<span class="hljs-variable">$person</span>.Age+<span class="hljs-number">10</span>
+<span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$person</span>.Age))
 </code></pre>
 <p>Si vous exécutez la méthode <code>CreatePerson</code>, les deux messages d'alerte contiendront &quot;50&quot; car le même objet est traité par les deux méthodes.</p>
 <p><strong>4D Server :</strong> Lorsque des paramètres sont passés entre des méthodes qui ne sont pas exécutées sur la même machine (lors de l'utilisation de l'option Exécuter sur serveur par exemple), il n'est pas possible d'utiliser des références. Dans ce cas, ce sont des copies des paramètres objet ou collection qui sont envoyées au lieu de références.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/fr/Concepts/methods.html"><span class="arrow-prev">← </span><span>Méthodes</span></a><a class="docs-next button" href="/docs/alpha/fr/Concepts/shared.html"><span>Objets et collections partagés</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#aperçu">Aperçu</a></li><li><a href="#paramètres-nommés-fonctions-de-classe-ou-class-functions">Paramètres nommés (fonctions de classe ou class functions)</a></li><li><a href="#paramètres-séquentiels">Paramètres séquentiels</a><ul class="toc-headings"><li><a href="#variables-dentréede-sortie">Variables d'entrée/de sortie</a></li><li><a href="#type-de-données-pris-en-charge">Type de données pris en charge</a></li><li><a href="#using-objects-properties-as-named-parameters">Using objects properties as named parameters</a></li><li><a href="#declaring-variables-for-sequential-parameters">Declaring variables for sequential parameters</a></li><li><a href="#indirections-sur-les-paramètres">Indirections sur les paramètres</a></li></ul></li><li><a href="#valeurs-retournées">Valeurs retournées</a><ul class="toc-headings"><li><a href="#named-syntax-class-functions">Named syntax (class functions)</a></li><li><a href="#syntaxe-séquentielle">Syntaxe séquentielle</a></li></ul></li><li><a href="#paramètres-optionnels">Paramètres optionnels</a></li><li><a href="#valeurs-ou-références">Valeurs ou références</a><ul class="toc-headings"><li><a href="#cas-particuliers--objets-et-collections">Cas particuliers : objets et collections</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/fr/Concepts/methods.html"><span class="arrow-prev">← </span><span>Méthodes</span></a><a class="docs-next button" href="/docs/alpha/fr/Concepts/shared.html"><span>Objets et collections partagés</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#aperçu">Aperçu</a><ul class="toc-headings"><li><a href="#returned-value">Returned value</a></li><li><a href="#supported-data-types">Supported data types</a></li></ul></li><li><a href="#paramètres-séquentiels">Paramètres séquentiels</a><ul class="toc-headings"><li><a href="#returned-value-1">Returned value</a></li><li><a href="#supported-data-types-1">Supported data types</a></li><li><a href="#indirections-sur-les-paramètres">Indirections sur les paramètres</a></li><li><a href="#declaring-parameters-for-compiled-mode">Declaring parameters for compiled mode</a></li></ul></li><li><a href="#using-object-properties-as-named-parameters">Using object properties as named parameters</a></li><li><a href="#inputoutput-variables">Input/Output variables</a></li><li><a href="#paramètres-optionnels">Paramètres optionnels</a></li><li><a href="#valeurs-ou-références">Valeurs ou références</a><ul class="toc-headings"><li><a href="#cas-particuliers--objets-et-collections">Cas particuliers : objets et collections</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
