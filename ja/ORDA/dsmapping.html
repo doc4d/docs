@@ -74,7 +74,7 @@
 <li>フィールドはストレージ属性へとマップされます。</li>
 <li>リレーションはリレーション属性へとマップされます。ストラクチャーエディター内で定義されたリレーション名はリレーション属性名として使用されます。</li>
 </ul>
-<p><img src="/docs/assets/en/Orda/datastoreMapping.png" alt=""></p>
+<p><img src="/docs/assets/en/ORDA/datastoreMapping.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="変換のルール"></a><a href="#変換のルール" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変換のルール</h3>
 <p>変換の際には以下のルールが適用されます:</p>
 <ul>
@@ -95,7 +95,7 @@
 <h3><a class="anchor" aria-hidden="true" id="リモートデータストアの利用"></a><a href="#リモートデータストアの利用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リモートデータストアの利用</h3>
 <p><code>Open datastore</code> コマンドまたは <a href="/docs/ja/REST/gettingStarted.html">REST リクエスト</a> によってリモートデータストアにアクセスする場合、<strong>RESTリソースとして公開</strong> プロパティが設定されているテーブルとフィールドのみ利用可能です。</p>
 <p>このプロパティは、データストアにデータクラスおよび属性として公開したい各テーブルおよびフィールドについて 4D ストラクチャーのレベルで設定する必要があります:</p>
-<p><img src="/docs/assets/en/Orda/ExposeDataclass.png" alt=""></p>
+<p><img src="/docs/assets/en/ORDA/ExposeDataclass.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="データモデルのアップデート"></a><a href="#データモデルのアップデート" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>データモデルのアップデート</h3>
 <p>データベースストラクチャーレベルで変更がおこなわれると、カレントの ORDA モデルレイヤーは無効化されます。 これらの変更には、以下のものが含まれます:</p>
 <ul>
@@ -136,7 +136,7 @@
 <p>データクラスとは、テーブルに相当するものです。 オブジェクトモデルとして使用され、リレーショナル属性 (データクラス間のリレーションに基づいてビルドされた属性) を含めてすべてのフィールドを属性として参照します。 リレーショナル属性はクエリにおいて通常の属性のように使用することができます。</p>
 <p>4D プロジェクト内のすべてのデータクラスは、<code>ds</code> データストアのプロパティとして利用可能です。 <code>Open datastore</code> コマンドまたは <a href="/docs/ja/REST/gettingStarted.html">REST リクエスト</a> によってアクセスするリモートデータストアの場合、データストアのデータクラスとして公開したい各テーブルについて 4D ストラクチャーのレベルで <strong>RESTリソースとして公開</strong> プロパティを設定する必要があります。</p>
 <p>たとえば、4D ストラクチャー内の以下のテーブルについて考えます。</p>
-<p><img src="/docs/assets/en/Orda/companyTable.png" alt=""></p>
+<p><img src="/docs/assets/en/ORDA/companyTable.png" alt=""></p>
 <p><code>Company</code> テーブルは <code>ds</code> データストア内のデータクラスとして自動的に利用可能です。 以下のように書くことができます:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$compClass </span>: cs.Company <span class="hljs-comment">// Company クラスのオブジェクト変数として $compClass を宣言します</span>
 <span class="hljs-variable">$compClass</span>:=ds.Company <span class="hljs-comment">// Company データクラスへの参照を $compClass に代入します</span>
@@ -169,7 +169,7 @@ OB GET PROPERTY <span class="hljs-constructor">NAMES(<span class="hljs-params">d
 <li><strong>リレーション属性</strong> は他のエンティティへのアクセスを提供します。 リレーション属性は単一のエンティティ (あるいはエンティティなし) あるいはエンティティセレクション (0からNまでのエンティティ) のどちらかになります。 リレーション属性はリレーショナルストラクチャーの &quot;クラシックな&quot; リレーションに基づいており、リレートエンティティあるいはリレートエンティティズへの直接的なアクセスを提供します。 リレーション属性は、ORDA においては名前を使用することで直接的に利用可能です。</li>
 </ul>
 <p>たとえば、以下の部分的なデータベースストラクチャーと、そのリレーションプロパティについて考えます:</p>
-<p><img src="/docs/assets/en/Orda/relationProperties.png" alt=""></p>
+<p><img src="/docs/assets/en/ORDA/relationProperties.png" alt=""></p>
 <p>すべてのストレージ属性は自動的に利用可能です:</p>
 <ul>
 <li>Project データクラス内: &quot;ID&quot;, &quot;name&quot;, および &quot;companyID&quot;</li>
@@ -184,7 +184,7 @@ OB GET PROPERTY <span class="hljs-constructor">NAMES(<span class="hljs-params">d
 <p>データベースリレーションの手動あるいは自動プロパティは、ORDA においては何の効力も持ちません。</p>
 </blockquote>
 <p>すべてのデータクラス属性はデータクラスのプロパティとして公開されています:</p>
-<p><img src="/docs/assets/en/Orda/dataclassProperties.png" alt=""></p>
+<p><img src="/docs/assets/en/ORDA/dataclassProperties.png" alt=""></p>
 <p>これらのオブジェクトは属性を表しますが、データへのアクセスは与えないという点に注意してください。 データの読み書きは <a href="/docs/ja/ORDA/entities.html#エンティティ属性の使用">エンティティオブジェクト</a> を通しておこなわれます。</p>
 <h3><a class="anchor" aria-hidden="true" id="エンティティ"></a><a href="#エンティティ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>エンティティ</h3>
 <p>エンティティとは、レコードに相当するものです。 実際にはデータベース内のレコードを参照するオブジェクトです。 エンティティは、<a href="#データクラス">データクラス</a> のインスタンスとも解釈可能なオブジェクトです。 同時にエンティティは、データストアがもとにしているデータベースに相関するデータも格納しています。</p>
