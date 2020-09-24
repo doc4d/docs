@@ -62,29 +62,29 @@ Daten können von Methoden zurückgegeben werden. Eine Methode, die einen Wert z
 
 4D oder 4D Plug-In Befehle, die einen Wert zurückgeben, werden auch Funktionen genannt.
 
-Folgende Zeile ist beispielsweise eine Anweisung mit der integrierten Funktion `Length`, um die Länge eines String zurückzugeben. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
+Folgende Zeile ist beispielsweise eine Anweisung mit der integrierten Funktion `Length`, um die Länge eines String zurückzugeben. Die Anweisung setzt den von `Length` zurückgegebenen Wert in eine Variable mit Namen *MyLength*. Hier sehen Sie die Anweisung:
 
 ```4d
 MyLength:=Length("How did I get here?")
 ```
 
-Any subroutine can return a value. The value to be returned is put into the local variable `$0`.
+Jede Subroutine kann einen Wert zurückgeben. Der zurückzugebende Wert wird automatisch in die lokale Variable `$0` gesetzt.
 
-For example, the following function, called `Uppercase4`, returns a string with the first four characters of the string passed to it in uppercase:
+Zum Beispiel gibt die folgende Funktion mit Namen `Uppercase4` einen String zurück, der seine ersten vier Zeichen in Großbuchstaben gesetzt hat:
 
 ```4d
 $0:=Uppercase(Substring($1;1;4))+Substring($1;5)
 ```
 
-The following is an example that uses the Uppercase4 function:
+Hier ein Beispiel mit der Funktion Uppercase4:
 
 ```4d
 NewPhrase:=Uppercase4("This is good.")
 ```
 
-In this example, the variable *NewPhrase* gets “THIS is good.”
+Die Variable *$NewPhrase* erhält “THIS is good.”
 
-The function result, `$0`, is a local variable within the subroutine. It can be used as such within the subroutine. For example, you can write:
+Das Funktionsergebnis `$0` ist eine lokale Variable innerhalb der Unterroutine. Sie lässt sich als solche innerhalb der Unterroutine verwenden. For example, you can write:
 
 ```4d
 // Do_something
@@ -92,14 +92,14 @@ $0:=Uppercase($1)
 ALERT($0)
 ```
 
-In diesem Beispiel wird `$0` zuerst der Wert von `$1` zugewiesen und dann als Parameter für den Befehl`ALERT` verwendet. Within the subroutine, you can use `$0` in the same way you would use any other local variable. It is 4D that returns the value of `$0` (as it is when the subroutine ends) to the called method.
+In diesem Beispiel wird `$0` zuerst der Wert von `$1` zugewiesen und dann als Parameter für den Befehl`ALERT` verwendet. Innerhalb der Unterroutine können Sie `$0` auf dieselbe Weise wie jede andere lokale Variable verwenden. Es ist 4D, das den Wert von`$0` (genauso wenn die Unterroutine endet) an die aufgerufene Methode zurückgibt.
 
 
-## Declaring parameters
+## Parameter deklarieren
 
-Even if it is not mandatory in [interpreted mode](Concepts/interpreted.md), you must declare each parameter in the called methods to prevent any trouble.
+Auch wenn es im [interpretierten Modus](Concepts/interpreted.md) nicht zwingend ist, müssen Sie jeden Parameter in den aufgerufenen Methoden deklarieren, um Probleme zu vermeiden.
 
-In the following example, the `OneMethodAmongOthers` project method declares three parameters:
+Im folgenden Beispiel deklariert die Projektmethode `OneMethodAmongOthers` drei Parameter:
 
 ```4d
   // OneMethodAmongOthers Project Method
@@ -111,7 +111,7 @@ In the following example, the `OneMethodAmongOthers` project method declares thr
  C_LONGINT($3) // 3rd parameter is of type Long Integer
 ```
 
-In the following example, the `Capitalize` project method accepts a text parameter and returns a text result:
+Im folgenden Beispiel akzeptiert die Projektmethode `Capitalize` einen Textparameter und gibt ein Textergebnis zurück:
 
 ```4d
   // Capitalize Project Method
