@@ -49,7 +49,7 @@ $instance:=OB Instance of($poly;4D.Object)
  // true
 ```
 
-When enumerating properties of an object, its class prototype is not enumerated. As a consequence, `For each` statement and `JSON Stringify` command do not return properties of the class prototype object. The prototype object property of a class is an internal hidden property.
+Lors de l'énumération des propriétés d'un objet, son prototype de classe n'est pas énuméré. Par conséquent, l'instruction `For each` et la commande `JSON Stringify` ne retournent pas les propriétés de l'objet du prototype de classe. The prototype object property of a class is an internal hidden property.
 
 ### Définition d'une classe
 
@@ -460,33 +460,33 @@ Then you can write in a project method:
 | --------- | ------ | -- | -------------- |
 | Result    | object | <- | Current object |
 
-The `This` keyword returns a reference to the currently processed object. It can't be set by assignment during execution, and it may be different each time the function is called.
+The `This` keyword returns a reference to the currently processed object. Il ne peut pas être défini par affectation lors de l'exécution, et il peut être différent à chaque fois que la fonction est appelée.
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. For example:
+Lorsqu'une formule est appelée en tant que méthode membre d'un objet, son `This` est défini sur l'objet sur lequel la méthode est appelée. Par exemple :
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
 $val:=$o.f() //42
 ```
 
-When a [class constructor](#class-constructor) function is used (with the `new()` keyword), its `This` is bound to the new object being constructed.
+Lorsqu'une fonction de [class constructor](#class-constructor) est utilisée (avec le mot clé `new()`), son `This` est lié au nouvel objet en cours de construction..
 
 ```4d
-  //Class: ob
+  //Classe : ob
 
 Class Constructor  
-    // Create properties on This as
-    // desired by assigning to them
+    // Créer des propriétés sur This 
+    // en leur assignant
     This.a:=42
 ```
 
 ```4d
-    // in a 4D method  
+    // dans une méthode 4D  
 $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. For example:
+> Lorsque vous appelez le superclass constructor dans un constructeur à l'aide du mot clé [Super](#super), gardez à l'esprit que `This` ne doit pas être appelé avant le superclass constructor, sinon une erreur est générée. For example:
 > 
 > ```4d
 > $o:=New object("prop";42;"f";Formula(This.prop))
