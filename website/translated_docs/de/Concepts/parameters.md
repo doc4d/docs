@@ -277,7 +277,7 @@ Das ist ein leistungsstarker Weg zum Definieren von [optionale Parameter](#optio
 - Sie setzen Parameterwerte vorab, oder
 - Sie verwenden sie als leere Werte.
 
-In the `ChangeAge` method above, both Age and Name properties are mandatory and would produce errors if they were missing. To avoid this case, you can just write:
+In der oberen Methode `ChangeAge` sind die beiden Eigenschaften Age und Name zwingend und würden Fehler produzieren, falls sie fehlen. Um das zu vermeiden, schreiben Sie einfach:
 
 ```4d
   //ChangeAge
@@ -288,7 +288,7 @@ In the `ChangeAge` method above, both Age and Name properties are mandatory and 
 ```
 Then both parameters are optional; if they are not filled, the result will be " is 10 years old", but no error will be generated.
 
-Finally, with named parameters, maintaining or refactoring applications is very simple and safe. Imagine you later realize that adding 10 years is not always appropriate. You need another parameter to set how many years to add. You write:
+Letztendlich ist die Wartung und Umgestaltung von Anwendungen, die Parameter mit Namen verwenden, sehr einfach und sicher. Sie könnten beispielsweise später feststellen, dass 10 Jahre hinzufügen nicht immer geeignet ist. Sie benötigen einen anderen Parameter, um zu setzen, wieviel Jahre hinzugefügt werden sollen. Dazu schreiben Sie:
 
 ```4d
 $person:=New object("Name";"Smith";"Age";40;"toAdd";10)
@@ -303,7 +303,7 @@ End if
 $para.Age:=Num($para.Age)+$para.toAdd
 ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
 ```
-The power here is that you will not need to change your existing code. It will always work as in the previous version, but if necessary, you can use another value than 10 years.
+Hier ist die Leistungsstärke, dass sie Ihren vorhandenen Code nicht verändern müssen. It will always work as in the previous version, but if necessary, you can use another value than 10 years.
 
 With named variables, any parameter can be optional. In the above example, all parameters are optional and anyone can be given, in any order.
 
