@@ -19,7 +19,7 @@ Les paramètres sont passés de la même manière aux méthodes. Par exemple, si
 ```4d
 FAIRE QUELQUE CHOSE($WithThis;$AndThat;$ThisWay)
 ```
-Les paramètres sont séparés par des points-virgules (;). Their [value is evaluated](#values-or-references) at the moment of the call.
+Les paramètres sont séparés par des points-virgules (;). Leur [valeur est calculée](#values-or-references) au moment de l'appel.
 
 Dans la sous-routine (la méthode appelée), la valeur de chaque paramètre est automatiquement copiée séquentiellement dans des variables locales numérotées : $1, $2, $3, etc. La numérotation des variables locales représente l’ordre des paramètres.
 
@@ -51,7 +51,7 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 Vous pouvez utiliser n'importe quelle [expression](Concepts/quick-tour.md#expression-types) comme paramètre, à l'exception des :
 
 - tables
-- arrays
+- tableaux
 
 Les expressions de tables ou de tableaux peuvent être passées uniquement [comme une référence utilisant un pointeur](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
 
@@ -78,7 +78,7 @@ Voici un exemple qui utilise la méthode Uppercase4 :
 $NewPhrase:=Uppercase4("This is good.")
 ```
 
-In this example, the variable *$NewPhrase* gets “THIS is good.”
+Dans cet exemple, la variable *$NewPhrase* prend la valeur “THIS is good.”
 
 La valeur retournée, `$0`, est une variable locale à la sous-routine. Elle peut être utilisée en tant que telle à l'intérieur de la sous-routine. Par exemple, vous pouvez écrire :
 
@@ -354,7 +354,7 @@ Si vous exécutez la méthode `CreatePerson`, les deux messages d'alerte contien
 **4D Server :** Lorsque des paramètres sont passés entre des méthodes qui ne sont pas exécutées sur la même machine (lors de l'utilisation de l'option Exécuter sur serveur par exemple), il n'est pas possible d'utiliser des références. Dans ce cas, ce sont des copies des paramètres objet ou collection qui sont envoyées au lieu de références.
 
 
-### Object named parameters
+### Paramètres nommés des objets
 
 L'utilisation d'objets en tant que paramètres vous permet de gérer des **paramètres nommés**. Ce style de programmation est simple, souple et facile à lire.
 
