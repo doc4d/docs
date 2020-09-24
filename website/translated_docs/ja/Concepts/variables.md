@@ -194,7 +194,7 @@ var $myVar // バリアント型変数
   
   <tr>
     <td>
-      4D.\<className>
+      4D.\<className\>
     </td>
     
     <td>
@@ -204,7 +204,7 @@ var $myVar // バリアント型変数
   
   <tr>
     <td>
-      cs.\<className>
+      cs.\<className\>
     </td>
     
     <td>
