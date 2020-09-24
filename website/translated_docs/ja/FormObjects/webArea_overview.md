@@ -21,7 +21,7 @@ Two specific variables can be associated with each web area:
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the web area.
 
-### Web rendering engine
+### Webレンダリングエンジン
 
 You can choose between [two rendering engines](properties_WebArea.md#use-embedded-web-rendering-engine) for the web area, depending on the specifics of your application.
 
@@ -32,7 +32,7 @@ When the [Access 4D methods](properties_WebArea.md#access-4d-methods) property i
 
 > This property is only available if the web area [uses the embedded web rendering engine](#use-embedded-web-rendering-engine).
 
-### $4d object
+### $4dオブジェクトの使用
 
 
 
