@@ -174,7 +174,7 @@ C_TEXT($1;$2;$3;$4;$5;$6)
 
 ## Werte oder Referenzen
 
-Übergeben Sie einen Parameter, bewertet 4D den Parameterausdruck immer im Kontext der aufrufenden Methode und setzt den **Ergebniswert** in die lokalen Variablen $1, $2... in der Unterroutine (siehe [Parameter verwenden](#using-parameters)). Die lokalen Variablen/Parameter sind nicht die aktuellen Felder, Variablen oder Ausdrücke, die von der aufrufenden Methode übergeben werden; sie enthalten nur die Werte, die übergeben wurden. Since its scope is local, if the value of a parameter is modified in the subroutine, it does not change the value in the calling method. Beispiel:
+Übergeben Sie einen Parameter, bewertet 4D den Parameterausdruck immer im Kontext der aufrufenden Methode und setzt den **Ergebniswert** in die lokalen Variablen $1, $2... in der Unterroutine (siehe [Parameter verwenden](#using-parameters)). Die lokalen Variablen/Parameter sind nicht die aktuellen Felder, Variablen oder Ausdrücke, die von der aufrufenden Methode übergeben werden; sie enthalten nur die Werte, die übergeben wurden. Da ein Parameterwert nur lokal gültig ist, wird bei einer Änderung in der Unterroutine nicht der Wert in der aufrufenden Methode geändert. Beispiel:
 
 ```4d
     //Here is some code from the method MY_METHOD
@@ -186,11 +186,11 @@ ALERT([People]Name)
  ALERT($1)
 ```
 
-The alert box displayed by `DO_SOMETHING` will read "WILLIAMS" and the alert box displayed by `MY_METHOD` will read "williams". The method locally changed the value of the parameter $1, but this does not affect the value of the field `[People]Name` passed as parameter by the method `MY_METHOD`.
+Die von `DO_SOMETHING` angezeigte Meldung liest "WILLIAMS", die von `MY_METHOD` angezeigte Meldung liest "williams". Die Methode hat lokal den Wert des Parameters $1 lokal geändert. Das beeinflusst aber nicht den Wert des Feldes `[People]Name`, der von der Methode `MY_METHOD` als Parameter übergeben wurde.
 
-There are two ways to make the method `DO_SOMETHING` change the value of the field:
+Es gibt zwei Wege, damit die Methode `DO_SOMETHING` den Wert des Feldes verändert:
 
-1. Rather than passing the field to the method, you pass a pointer to it, so you would write:
+1. Anstatt das Feld in der Methode zu übergeben, setzen Sie einen Zeiger auf das Feld. Sie schreiben folgendes:
 
 ```4d
   //Here is some code from the method MY_METHOD
