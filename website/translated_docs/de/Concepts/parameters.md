@@ -328,9 +328,9 @@ Dieser zweite Weg (durch eine Unterroutine einen Wert zurückgeben) wird "eine F
 
 Sie müssen die Tatsache beachten, dass sich Daten vom Typ Objekt und Collection nur über eine Referenz verwalten lassen (z.B. ein interner *Zeiger*).
 
-Werden also solche Datentypen als Parameter verwendet, enthalten `$1, $2...` keine *Werte*, sondern *Referenzen*. Eine Änderung des Werts von Parameter `$1, $2...` in der Unterroutine wird überall, wo Quellobjekt oder Collection verwendet wird, weitergegeben. This is the same principle as for [pointers](Concepts/dt_pointer.md#pointers-as-parameters-to-methods), except that `$1, $2...` parameters do not need to be dereferenced in the subroutine.
+Werden also solche Datentypen als Parameter verwendet, enthalten `$1, $2...` keine *Werte*, sondern *Referenzen*. Eine Änderung des Werts von Parameter `$1, $2...` in der Unterroutine wird überall, wo Quellobjekt oder Collection verwendet wird, weitergegeben. Das ist dasselbe Prinzip wie für [Zeiger](Concepts/dt_pointer.md#pointers-as-parameters-to-methods), außer dass die Parameter `$1, $2...` in der Unterroutine nicht dereferenziert werden müssen.
 
-For example, consider the `CreatePerson` method that creates an object and sends it as a parameter:
+Nehmen wir z. B. die Methode `CreatePerson`, die ein Objekt erstellt und es als Parameter sendet:
 
 ```4d
   //CreatePerson
@@ -340,7 +340,7 @@ For example, consider the `CreatePerson` method that creates an object and sends
  ALERT(String($person.Age))  
 ```
 
-The `ChangeAge` method adds 10 to the Age attribute of the received object
+Die Methode `ChangeAge` fügt dem Attribut Age des empfangenen Objekts 10 hinzu
 
 ```4d
   //ChangeAge
@@ -349,16 +349,16 @@ The `ChangeAge` method adds 10 to the Age attribute of the received object
  ALERT(String($1.Age))
 ```
 
-When you execute the `CreatePerson` method, both alert boxes will read "50" since the same object reference is handled by both methods.
+Führen Sie die Methode `CreatePerson` aus, zeigen beide Meldungen "50", da beide Methoden dieselbe Objektreferenz verwalten.
 
-**4D Server:** When parameters are passed between methods that are not executed on the same machine (using for example the "Execute on Server" option), references are not usable. In these cases, copies of object and collection parameters are sent instead of references.
+**4D Server:** Bei Parametern in Methoden, die nicht auf demselben Rechner ausgeführt werden (z. B. mit der Option "auf Server ausführen"), lassen sich Referenzen nicht verwenden. In solchen Fällen werden keine Referenzen, sondern Kopien der Objekt und Collection Parameter gesendet.
 
 
 ### Objekte als benannte Parameter
 
-Using objects as parameters allow you to handle **named parameters**. This programming style is simple, flexible, and easy to read.
+Bei Objekten als Parameter können Sie auch **Parameter mit Namen** verwalten. Dieser Programmierstil ist einfach, flexibel und leicht lesbar.
 
-For example, using the `CreatePerson` method:
+Wir verwenden zum Beispiel die Methode `CreatePerson`:
 
 ```4d
   //CreatePerson
@@ -367,7 +367,7 @@ For example, using the `CreatePerson` method:
  ChangeAge($person)
  ALERT(String($person.Age))  
 ```
-In the `ChangeAge` method you can write:
+In der Methode `ChangeAge` schreiben Sie:
 
 ```4d
   //ChangeAge
@@ -377,7 +377,7 @@ In the `ChangeAge` method you can write:
  ALERT($para.Name+" is "+String($para.Age)+" years old.")
 ```
 
-This provides a powerful way to define [optional parameters](#optional-parameters) (see also below). To handle missing parameters, you can either:
+Das ist ein leistungsstarker Weg zum Definieren von [optionale Parameter](#optional-parameters) (siehe auch unten). Zum Verwalten fehlender Parameter können Sie folgendes tun:
 - check if all expected parameters are provided by comparing them to the `Null` value, or
 - preset parameter values, or
 - use them as empty values.
