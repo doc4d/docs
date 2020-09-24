@@ -246,14 +246,14 @@ Die Methode `ChangeAge` fügt dem Attribut Age des empfangenen Objekts 10 hinzu
 
 Führen Sie die Methode `CreatePerson` aus, zeigen beide Meldungen "50", da beide Methoden dieselbe Objektreferenz verwalten.
 
-**4D Server:** When parameters are passed between methods that are not executed on the same machine (using for example the "Execute on Server" option), references are not usable. In these cases, copies of object and collection parameters are sent instead of references.
+**4D Server:** Bei Parametern in Methoden, die nicht auf demselben Rechner ausgeführt werden (z. B. mit der Option "auf Server ausführen"), lassen sich Referenzen nicht verwenden. In solchen Fällen werden keine Referenzen, sondern Kopien der Objekt und Collection Parameter gesendet.
 
 
-## Named parameters
+## Parameter mit Namen
 
-Using objects as parameters allow you to handle **named parameters**. This programming style is simple, flexible, and easy to read.
+Bei Objekten als Parameter können Sie auch **Parameter mit Namen** verwalten. Dieser Programmierstil ist einfach, flexibel und leicht lesbar.
 
-For example, using the `CreatePerson` method:
+Wir verwenden zum Beispiel die Methode `CreatePerson`:
 
 ```4d
   //CreatePerson
@@ -262,7 +262,7 @@ For example, using the `CreatePerson` method:
  ChangeAge($person)
  ALERT(String($person.Age))  
 ```
-In the `ChangeAge` method you can write:
+In der Methode `ChangeAge` schreiben Sie:
 
 ```4d
   //ChangeAge
@@ -272,10 +272,10 @@ In the `ChangeAge` method you can write:
  ALERT($para.Name+" is "+String($para.Age)+" years old.")
 ```
 
-This provides a powerful way to define [optional parameters](#optional-parameters) (see also below). To handle missing parameters, you can either:
-- check if all expected parameters are provided by comparing them to the `Null` value, or
-- preset parameter values, or
-- use them as empty values.
+Das ist ein leistungsstarker Weg zum Definieren von [optionale Parameter](#optional-parameters) (siehe auch unten). Fehlende Parameter können Sie wie folgt verwalten:
+- Sie prüfen, ob alle erwarteten Parameter geliefert werden, durch Vergleichen mit dem Wert `Null`, oder
+- Sie setzen Parameterwerte vorab, oder
+- Sie verwenden sie als leere Werte.
 
 In the `ChangeAge` method above, both Age and Name properties are mandatory and would produce errors if they were missing. To avoid this case, you can just write:
 
