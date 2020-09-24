@@ -49,7 +49,7 @@ title: オブジェクト
 ---
 ## 値を記憶
 
-This property is available when the [Save Geometry](FormEditor/properties_FormProperties.md#save-geometry) option is checked for the form.
+このオプションは、フォームの [配置を記憶](FormEditor/properties_FormProperties.md#配置を記憶) プロパティがチェックされている場合に利用可能です。
 
 This feature is only supported for objects that contribute to the overall geometry of the form. For example, this option is available for check boxes because their value can be used to hide or display additional areas in the window.
 
