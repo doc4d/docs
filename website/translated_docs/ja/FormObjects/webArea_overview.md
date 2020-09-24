@@ -124,10 +124,10 @@ $4d.calcSum(33, 45, 75, 102.5, 7, function(dollarZero)
 
 ## 標準アクション
 
-Four specific standard actions are available for managing web areas automatically: `Open Back URL`, `Open Next URL`, `Refresh Current URL` and `Stop Loading URL`. These actions can be associated with buttons or menu commands and allow quick implementation of basic web interfaces. These actions are described in [Standard actions](https://doc.4d.com/4Dv17R6/4D/17-R6/Standard-actions.300-4354791.en.html).
+Four specific standard actions are available for managing web areas automatically: `Open Back URL`, `Open Next URL`, `Refresh Current URL` and `Stop Loading URL`. These actions can be associated with buttons or menu commands and allow quick implementation of basic web interfaces. これらのアクションについては [標準アクション](https://doc.4d.com/4Dv18/4D/18/Standard-actions.300-4575620.ja.html) で説明しています。
 
 
-## Form events
+## フォームイベント
 
 Specific form events are intended for programmed management of web areas, more particularly concerning the activation of links:
 
@@ -147,14 +147,14 @@ In addition, web areas support the following generic form events:
 - `On Losing Focus`
 
 
-## Web area rules
+## Webエリアのルール
 
-### User interface
+### ユーザーインターフェース
 
 When the form is executed, standard browser interface functions are available to the user in the web area, which permit interaction with other form areas:
 
 - **Edit menu commands**: When the web area has the focus, the **Edit** menu commands can be used to carry out actions such as copy, paste, select all, etc., according to the selection.
-- **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. Display of the context menu can be controlled using the `WA SET PREFERENCE` command.
+- **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. コンテキストメニューの表示は、`WA SET PREFERENCE` コマンドを使用することで管理可能です。
 - **Drag and drop**: The user can drag and drop text, pictures and documents within the web area or between a web area and the 4D form objects, according to the 4D object properties. For security reasons, changing the contents of a web area by means of dragging and dropping a file or URL is not allowed by default. In this case, the cursor displays a "forbidden" icon ![](assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE` command to explicitly allow the dropping of URLs or files in the web area.
 
 ### Subforms
