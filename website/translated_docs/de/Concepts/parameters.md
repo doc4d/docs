@@ -4,24 +4,24 @@ title: Parameter
 ---
 
 
-## Using parameters
+## Parameter verwenden
 
-You'll often find that you need to pass data to your methods. This is easily done with parameters.
+Sie werden öfters sehen, dass Sie Ihren Methoden Daten übergeben müssen. Das lässt sich leicht mit Parametern durchführen.
 
-**Parameters** (or **arguments**) are pieces of data that a method needs in order to perform its task. The terms *parameter* and *argument* are used interchangeably throughout this manual. Parameters are also passed to built-in 4D commands. In this example, the string “Hello” is an argument to the `ALERT` built-in command:
+**Parameter** (oder **Argumente**) sind Datenteile, die eine Methode zum Ausführen ihrer Aufgaben benötigen. Die Begriffe *Parameter* und *Argument* werden in der Dokumentation ohne Unterscheidung verwendet. Parameter werden auch in den integrierten 4D Befehlen verwendet. In diesem Beispiel ist der String “Hello” ein Argument des 4D Befehls `ALERT`:
 
 ```4d
 ALERT("Hello")
 ```
 
-Parameters are passed to methods in the same way. For example, if a project method named DO SOMETHING accepted three parameters, a call to the method might look like this:
+Parameter werden Methoden auf dieselbe Weise übergeben. Akzeptiert beispielsweise eine Projektmethode mit Namen DO_SOMETHING drei Parameter, könnte ein Aufruf der Methode wie folgt aussehen:
 
 ```4d
 DO SOMETHING($WithThis;$AndThat;$ThisWay)
 ```
-The parameters are separated by semicolons (;). Ihr [Wert wird im Moment des Aufrufs bewertet](#values-or-references).
+Parameter werden durch Strichpunkte (;) voneinander getrennt. Ihr [Wert wird im Moment des Aufrufs bewertet](#values-or-references).
 
-In the subroutine (the method that is called), the value of each parameter is automatically copied into sequentially numbered local variables: $1, $2, $3, and so on. The numbering of the local variables represents the order of the parameters.
+In der Unterroutine (die aufgerufene Methode) wird der Wert jedes Parameters automatisch in fortlaufend nummerierte lokale Variablen kopiert: $1, $2, $3, usw. Die Nummerierung der lokalen Variablen zeigt die Reihenfolge der Parameter.
 
 ```4d
   //Code of the method DO SOMETHING
@@ -33,9 +33,9 @@ In the subroutine (the method that is called), the value of each parameter is au
   //$3 contains the $ThisWay parameter
 ```
 
-Within the subroutine, you can use the parameters $1, $2... in the same way you would use any other local variable. However, in the case where you use commands that modify the value of the variable passed as parameter (for example `Find in field`), the parameters $1, $2, and so on cannot be used directly. You must first copy them into standard local variables (for example: `$myvar:=$1`).
+Innerhalb der Unterroutine können Sie die Parameter $1, $2... auf dieselbe Weise wie jede andere lokale Variable verwenden. Dagegen lassen sich bei Befehlen, die den Wert der als Parameter übergebenen Variablen verändern, wie z. B. `Find in field` die Parameter $1, $2, usw. nicht direkt verwenden. Sie müssen sie erst in standardmäßige lokale Variablen kopieren, wie z. B. `$myvar=$1`.
 
-The same principles are used when methods are executed through dedicated commands, for example:
+Dassselbe Prinzip gilt, wenn Methoden durch bestimmte Befehle ausgeführt werden, zum Beispiel:
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)  
@@ -43,28 +43,28 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 // in the context of a subform
 ```
 
-**Note:** For a good execution of code, you need to make sure that all `$1`, `$2`... parameters are correctly declared within called methods (see [Declaring parameters](#declaring-parameters) below).
+**Hinweis:** Für eine gute Ausführung von Code müssen Sie sicherstellen, dass alle Parameter `$1`, `$2`... innerhalb der aufgerufenen Methoden korrekt deklariert sind (siehe unten [Parameter deklarieren](#declaring-parameters)).
 
 
-### Supported expressions
+### Unterstützte Ausdrücke
 
-You can use any [expression](Concepts/quick-tour.md#expression-types) as parameter, except:
+Sie können jeden [Ausdruck](Concepts/quick-tour.md#expression-types) als Parameter verwenden, außer:
 
 - Tabellen
 - Arrays
 
-Tables or array expressions can only be passed [as reference using a pointer](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
+Tabellen oder Array Ausdrücke lassen sich nur [über einen Zeiger als Referenz übergeben](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
 
 
 ## Zurückgegebener Wert
 
-Data can be returned from methods. Folgende Zeile ist beispielsweise eine Anweisung mit dem integrierten Befehl `Length`, um die Länge eines String zurückzugeben. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
+Daten können von Methoden zurückgegeben werden. Folgende Zeile ist beispielsweise eine Anweisung mit dem integrierten Befehl `Length`, um die Länge eines String zurückzugeben. Die Anweisung setzt den von `Length` zurückgegebenen Wert in eine Variable mit Namen *MyLength*. Hier sehen Sie die Anweisung:
 
 ```4d
 MyLength:=Length("How did I get here?")
 ```
 
-Any subroutine can return a value. The value to be returned is put into the local variable `$0`.
+Jede Subroutine kann einen Wert zurückgeben. Der zurückzugebende Wert wird automatisch in die lokale Variable `$0` gesetzt.
 
 Zum Beispiel gibt die folgende Methode mit Namen `Uppercase4` einen String zurück, der seine ersten vier Zeichen in Großbuchstaben gesetzt hat:
 
@@ -80,7 +80,7 @@ $NewPhrase:=Uppercase4("This is good.")
 
 Die Variable *$NewPhrase* erhält “THIS is good.”
 
-Der zurückgegebene Wert `$0` ist eine lokale Variable innerhalb der Unterroutine. It can be used as such within the subroutine. For example, you can write:
+Der zurückgegebene Wert `$0` ist eine lokale Variable innerhalb der Unterroutine. Sie lässt sich als solche innerhalb der Unterroutine verwenden. For example, you can write:
 
 ```4d
 // Do_something
@@ -88,14 +88,14 @@ $0:=Uppercase($1)
 ALERT($0)
 ```
 
-In diesem Beispiel wird `$0` zuerst der Wert von `$1` zugewiesen und dann als Parameter für den Befehl`ALERT` verwendet. Within the subroutine, you can use `$0` in the same way you would use any other local variable. It is 4D that returns the value of `$0` (as it is when the subroutine ends) to the called method.
+In diesem Beispiel wird `$0` zuerst der Wert von `$1` zugewiesen und dann als Parameter für den Befehl`ALERT` verwendet. Innerhalb der Unterroutine können Sie `$0` auf dieselbe Weise wie jede andere lokale Variable verwenden. Es ist 4D, das den Wert von`$0` (genauso wenn die Unterroutine endet) an die aufgerufene Methode zurückgibt.
 
 
-## Declaring parameters
+## Parameter deklarieren
 
-Even if it is not mandatory in [interpreted mode](Concepts/interpreted.md), you must declare each parameter in the called methods to prevent any trouble.
+Auch wenn es im [interpretierten Modus](Concepts/interpreted.md) nicht zwingend ist, müssen Sie jeden Parameter in den aufgerufenen Methoden deklarieren, um Probleme zu vermeiden.
 
-In the following example, the `OneMethodAmongOthers` project method declares three parameters:
+Im folgenden Beispiel deklariert die Projektmethode `OneMethodAmongOthers` drei Parameter:
 
 ```4d
   // OneMethodAmongOthers Project Method
@@ -107,7 +107,7 @@ In the following example, the `OneMethodAmongOthers` project method declares thr
  C_LONGINT($3) // 3rd parameter is of type Long Integer
 ```
 
-In the following example, the `Capitalize` project method accepts a text parameter and returns a text result:
+Im folgenden Beispiel akzeptiert die Projektmethode `Capitalize` einen Textparameter und gibt ein Textergebnis zurück:
 
 ```4d
   // Capitalize Project Method
