@@ -169,7 +169,7 @@ Um eine vorhandene Klasse zu löschen, können Sie:
 In der Definition von Klassen lassen sich spezifische 4D Schlüsselwörter verwenden:
 
 - `Function <Name>` zum Definieren von Member Methods der Objekte.
-- `Class constructor` zum Definieren der Eigenschaften der Objekte (z.B. prototype).
+- `Class constructor` zum Definieren der Eigenschaften der Objekte (z.B. Prototype).
 - `Class extends <ClassName>` zum Definieren der Vererbung.
 
 
@@ -182,7 +182,7 @@ Function <name>
 // code
 ```
 
-Class Functions sind Eigenschaften des Objekts prototype der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
+Class Functions sind Eigenschaften des Objekts Prototype der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
 
 In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort `Function` und den Namen von Function. Der Name muss mit den Regeln von ECMAScript konform sein.
 
