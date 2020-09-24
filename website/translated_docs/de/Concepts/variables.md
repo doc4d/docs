@@ -194,7 +194,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
   
   <tr>
     <td>
-      4D.\<className>
+      4D.\<className\>
     </td>
     
     <td>
@@ -204,7 +204,7 @@ Nachfolgende Liste zeigt alle unterstützten Werte für `varTyp`:
   
   <tr>
     <td>
-      cs.\<className>
+      cs.\<className\>
     </td>
     
     <td>
