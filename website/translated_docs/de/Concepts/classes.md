@@ -502,4 +502,4 @@ Einige Befehle der 4D Programmiersprache eignen sich zum Verwalten von Features 
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` gibt `wahr` zurück, wenn `object` zu `class` gehört oder zu einer seiner geerbten Klassen, sonst `falsch`.
+`OB Instance of` gibt `wahr` zurück, wenn `object` zu `class` gehört oder zu einer seiner geerbten Klasse, sonst `falsch`.
