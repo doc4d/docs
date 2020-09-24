@@ -169,7 +169,7 @@ Um eine vorhandene Klasse zu löschen, können Sie:
 In der Definition von Klassen lassen sich spezifische 4D Schlüsselwörter verwenden:
 
 - `Function <Name>` zum Definieren von Member Methods der Objekte.
-- `Class constructor` zum Definieren der Eigenschaften der Objekte (z.B. prototype).
+- `Class constructor` zum Definieren der Eigenschaften der Objekte (z.B. Prototype).
 - `Class extends <ClassName>` zum Definieren der Vererbung.
 
 
@@ -182,7 +182,7 @@ Function <name>
 // code
 ```
 
-Class Functions sind Eigenschaften des Objekts prototype der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
+Class Functions sind Eigenschaften des Objekts Prototype der Klasse des Eigentümers. Das sind Objekte der Klasse "Function".
 
 In der Datei mit der Definition der Klasse verwenden Function Deklarationen das Schlüsselwort `Function` und den Namen von Function. Der Name muss mit den Regeln von ECMAScript konform sein.
 
@@ -209,7 +209,7 @@ Im Code der Anwendung werden Class Functions als Member Methods der Instanz des 
 
 
 > **Thread-safety Warnung:** Ist eine Class Function nicht thread-safe und wird von einer Methode mit der Option "Als preemptive Prozess starten" aufgerufen:  
-> - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden),</br> - 4D gibt einen Fehler nur im laufenden Betrieb aus.
+> - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden),</br> - gibt 4D einen Fehler nur im laufenden Betrieb aus.
 
 
 #### Beispiel
@@ -253,7 +253,7 @@ Mit einer Function Class Constructor, die Parameter zulässt, lässt sich eine B
 
 Dann wird beim Aufrufen der Member Method `new()` der Klasse der Class Constructor mit den optional in `new()` übergebenen Parametern aufgerufen.
 
-Für eine Function Class Constructor gibt der Befehl `Current method name` zurück: "*\<ClassName>.constructor*", for example "MyClass.constructor".
+Für eine Function Class Constructor gibt der Befehl `Current method name` zurück: "*\<ClassName>.constructor*", zum Beispiel "MyClass.constructor".
 
 
 #### Beispiel:
@@ -286,7 +286,7 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-Das Schlüsselwort`Class extends` dient beim Deklarieren der Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
+Das Schlüsselwort `Class extends` dient beim Deklarieren der Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
 
 Für Erweiterungen einer Klasse gelten folgende Regeln:
 
