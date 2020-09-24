@@ -49,7 +49,7 @@ $instance:=OB Instance of($poly;4D.Object)
  // true 
 ```
 
-When enumerating properties of an object, its class prototype is not enumerated. As a consequence, `For each` statement and `JSON Stringify` command do not return properties of the class prototype object. The prototype object property of a class is an internal hidden property.
+Lors de l'énumération des propriétés d'un objet, son prototype de classe n'est pas énuméré. Par conséquent, l'instruction `For each` et la commande `JSON Stringify` ne retournent pas les propriétés de l'objet du prototype de classe. The prototype object property of a class is an internal hidden property.
 
 ### Définition d'une classe
 
