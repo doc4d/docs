@@ -277,9 +277,9 @@ This command means that starting with the fourth  parameter (included), the meth
 **Note:** The number in the declaration has to be a constant and not a variable.
 
 
-## Values or references
+## Werte oder Referenzen
 
-When you pass a parameter, 4D always evaluates the parameter expression in the context of the calling method and sets the **resulting value** to the $1, $2... local variables in the subroutine (see [Using parameters](#using-parameters)). The local variables/parameters are not the actual fields, variables, or expressions passed by the calling method; they only contain the values that have been passed. Since its scope is local, if the value of a parameter is modified in the subroutine, it does not change the value in the calling method. Beispiel:
+Übergeben Sie einen Parameter, bewertet 4D den Parameterausdruck immer im Kontext der aufrufenden Methode und setzt den **Ergebniswert** in die lokalen Variablen $1, $2... in der Unterroutine (siehe [Parameter verwenden](#using-parameters)). Die lokalen Variablen/Parameter sind nicht die aktuellen Felder, Variablen oder Ausdrücke, die von der aufrufenden Methode übergeben werden; sie enthalten nur die Werte, die übergeben wurden. Da ein Parameterwert nur lokal gültig ist, wird bei einer Änderung in der Unterroutine nicht der Wert in der aufrufenden Methode geändert. Beispiel:
 
 ```4d
     //Here is some code from the method MY_METHOD
@@ -291,7 +291,7 @@ ALERT([People]Name)
  ALERT($1)
 ```
 
-The alert box displayed by `DO_SOMETHING` will read "WILLIAMS" and the alert box displayed by `MY_METHOD` will read "williams". The method locally changed the value of the parameter $1, but this does not affect the value of the field `[People]Name` passed as parameter by the method `MY_METHOD`.
+Die von `DO_SOMETHING` angezeigte Meldung liest "WILLIAMS", die von `MY_METHOD` angezeigte Meldung liest "williams". The method locally changed the value of the parameter $1, but this does not affect the value of the field `[People]Name` passed as parameter by the method `MY_METHOD`.
 
 There are two ways to make the method `DO_SOMETHING` change the value of the field:
 
