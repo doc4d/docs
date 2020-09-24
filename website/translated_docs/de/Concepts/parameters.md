@@ -381,9 +381,9 @@ Diese Funktion wird folgendermaßen aufgerufen:
 
 ```
 
-In diesem Fall erhält die aufrufende Methode den String “182.70”, das ist die Summe der Zahlen im angegebenen Format. The function's parameters must be passed in the correct order: first the format and then the values.
+In diesem Fall erhält die aufrufende Methode den String “182.70”, das ist die Summe der Zahlen im angegebenen Format. Die Parameter der Funktion müssen in der richtigen Reihenfolge sein: erst das Format, dann die Werte.
 
-Here is the function, named `MySum`:
+Hier ist die Funktion, genannt `MySum`:
 ```4d
  $Sum:=0
  For($i;2;Count parameters)
@@ -392,7 +392,7 @@ Here is the function, named `MySum`:
  $0:=String($Sum;$1)
 ```
 
-This function can now be called in various ways:
+Sie lässt sich auf unterschiedliche Weise aufrufen:
 
 ```4d
  Result:=MySum("##0.00";125,2;33,5;24)
@@ -400,14 +400,14 @@ This function can now be called in various ways:
 ```
 
 
-### Declaring generic parameters
+### Generische Parameter deklarieren
 
-As with other local variables, it is not mandatory to declare generic parameters by compiler directive. However, it is recommended to avoid any ambiguity. To declare these parameters, you use a compiler directive to which you pass ${N} as a parameter, where N specifies the first generic parameter.
+Analog zu anderen lokalen Variablen müssen auch generische Parameter nicht zwingend über Compiler Direktive aufgerufen werden. Es wird jedoch empfohlen, um jegliche Zweideutigkeiten zu vermeiden. Zum Deklarieren dieser Parameter verwenden Sie eine Compiler Direktive, in der Sie ${N} als Parameter übergeben, wobei N den ersten generischen Parameter angibt.
 
 ```4d
  C_LONGINT(${4})
 ```
 
-This command means that starting with the fourth  parameter (included), the method can receive a variable number of parameters of longint type. $1, $2 and $3 can be of any data type. However, if you use $2 by indirection, the data type used will be the generic type. Thus, it will be of the data type Longint, even if for you it was, for instance, of the data type Real.
+Dieser Befehl bedeutet, dass die Methode ab dem 4. Parameter (eingeschlossen) eine variable Anzahl an Parametern vom Typ Lange Ganzzahl empfangen kann. $1, $2 und $3 können einen beliebigen Datentyp haben. Nutzen Sie jedoch $2 per Indirektion, wird als Datentyp der generische Typ verwendet. Es wird also der Datentyp Lange Ganzzahl sein, auch wenn es für Sie z. B. der Datentyp Zahl war.
 
-**Note:** The number in the declaration has to be a constant and not a variable.
+**Hinweis:** Die Zahl in der Deklaration muss eine feste Größe und keine Variable sein.
