@@ -14,23 +14,23 @@ Vous aurez souvent besoin de fournir des valeurs à vos méthodes. Vous pouvez f
 ALERT("Bonjour")
 ```
 
-Les paramètres sont passés de la même manière aux méthodes. Par exemple, si la méthode FAIRE QUELQUE CHOSE accepte trois paramètres, l'appel à cette méthode pourrait être de la forme suivante :
+Les paramètres sont passés de la même manière aux méthodes. Par exemple, si la méthode DO SOMETHING accepte trois paramètres, l'appel à cette méthode pourrait être de la forme suivante :
 
 ```4d
-DO SOMETHING($WithThis;$AndThat;$ThisWay)
+FAIRE QUELQUE CHOSE($WithThis;$AndThat;$ThisWay)
 ```
 Les paramètres sont séparés par des points-virgules (;). Their [value is evaluated](#values-or-references) at the moment of the call.
 
 Dans la sous-routine (la méthode appelée), la valeur de chaque paramètre est automatiquement copiée séquentiellement dans des variables locales numérotées : $1, $2, $3, etc. La numérotation des variables locales représente l’ordre des paramètres.
 
 ```4d
-  //Code of the method DO SOMETHING
-  //Assuming all parameters are of the text type
+  //Code de la méthode DO SOMETHING
+  //Supposons que tous les paramètres sont de type texte
  C_TEXT($1;$2;$3)
- ALERT("I received "+$1+" and "+$2+" and also "+$3)
-  //$1 contains the $WithThis parameter
-  //$2 contains the $AndThat parameter
-  //$3 contains the $ThisWay parameter
+ ALERT("J'ai reçu "+$1+" et "+$2+" et aussi "+$3)
+  //$1 contient le paramètre $WithThis
+  //$2 contient le paramètre $AndThat
+  //$3 contient le paramètre $ThisWay
 ```
 
 Dans une sous-méthode, vous pouvez utiliser les paramètres $1, $2... comme n'importe quelle autre variable locale. Toutefois, dans le cas où vous utilisez des commandes qui modifient la valeur de la variable passée en paramètre (par exemple `Trouver dans champ`), les paramètres $1, $2, etc. ne peuvent pas être utilisés directement. Vous devez d'abord les recopier dans des variables locales standard (par exemple `$mavar:=$1`).
