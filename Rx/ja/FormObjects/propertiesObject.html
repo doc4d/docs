@@ -102,18 +102,18 @@
 <p><a href="/docs/Rx/ja/FormObjects/viewProAreaOverview.html">4D View Pro エリア</a> - <a href="/docs/Rx/ja/FormObjects/writeProAreaOverview.html">4D Write Pro エリア</a> - <a href="/docs/Rx/ja/FormObjects/buttonOverview.html">ボタン</a> - <a href="/docs/Rx/ja/FormObjects/buttonGridOverview.html">ボタングリッド</a> - <a href="/docs/Rx/ja/FormObjects/checkboxOverview.html">チェックボックス</a> - <a href="/docs/Rx/ja/FormObjects/comboBoxOverview.html">コンボボックス</a> - <a href="/docs/Rx/ja/FormObjects/dropdownListOverview.html">ドロップダウンリスト</a> - <a href="/docs/Rx/ja/FormObjects/groupBox.html">グループボックス</a> - <a href="/docs/Rx/ja/FormObjects/listOverview.html">階層リスト</a> - <a href="/docs/Rx/ja/FormObjects/listboxOverview.html">リストボックス</a> - <a href="/docs/Rx/ja/FormObjects/listboxOverview.html#リストボックス列">リストボックス列</a> - <a href="/docs/Rx/ja/FormObjects/listboxOverview.html#リストボックスフッター">リストボックスフッター</a> - <a href="/docs/Rx/ja/FormObjects/listboxOverview.html#リストボックスヘッダー">リストボックスヘッダー</a> - <a href="/docs/Rx/ja/FormObjects/pictureButtonOverview.html">ピクチャーボタン</a> - <a href="/docs/Rx/ja/FormObjects/picturePopupMenuOverview.html">ピクチャーポップアップメニュー</a> - <a href="/docs/Rx/ja/FormObjects/pluginAreaOverview.html">プラグインエリア</a> - <a href="/docs/Rx/ja/FormObjects/progressIndicator.html">進捗インジケーター</a> - <a href="/docs/Rx/ja/FormObjects/spinner.html">スピナー</a> - <a href="/docs/Rx/ja/FormObjects/splitters.html">スプリッター</a> - <a href="/docs/Rx/ja/FormObjects/staticPicture.html">スタティックピクチャー</a> - <a href="/docs/Rx/ja/FormObjects/stepper.html">ステッパー</a> - <a href="/docs/Rx/ja/FormObjects/radiobuttonOverview.html">ラジオボタン</a> - <a href="/docs/Rx/ja/FormObjects/subformOverview.html">サブフォーム</a> - <a href="/docs/Rx/ja/FormObjects/tabControl.html">タブコントロール</a> - <a href="/docs/Rx/ja/FormObjects/text.html">テキストエリア</a> - <a href="/docs/Rx/ja/FormObjects/webAreaOverview.html">Web エリア</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="値を記憶"></a><a href="#値を記憶" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>値を記憶</h2>
-<p>This property is available when the <a href="/docs/Rx/ja/FormEditor/propertiesForm.html#save-geometry">Save Geometry</a> option is checked for the form.</p>
-<p>This feature is only supported for objects that contribute to the overall geometry of the form. For example, this option is available for check boxes because their value can be used to hide or display additional areas in the window.</p>
-<p>Here is the list of objects whose value can be saved:</p>
+<p>このオプションは、フォームの <a href="/docs/Rx/ja/FormEditor/propertiesForm.html#配置を記憶">配置を記憶</a> プロパティがチェックされている場合に利用可能です。</p>
+<p>この機能は、フォームの全体的な配置に関係するオブジェクトに対してのみサポートされています。 たとえばチェックボックスは、ウィンドウ内の追加エリアを表示/非表示するのに使用することができるため、このオプションが存在します。</p>
+<p>「値」を保存できるオブジェクトは以下のとおりです:</p>
 <table>
 <thead>
-<tr><th>オブジェクト</th><th>Saved value</th></tr>
+<tr><th>オブジェクト</th><th>保存される値</th></tr>
 </thead>
 <tbody>
-<tr><td><a href="/docs/Rx/ja/FormObjects/checkboxOverview.html">チェックボックス</a></td><td>Value of associated variable (0, 1, 2)</td></tr>
-<tr><td><a href="/docs/Rx/ja/FormObjects/dropdownListOverview.html">ドロップダウンリスト</a></td><td>Number of selected row</td></tr>
-<tr><td><a href="/docs/Rx/ja/FormObjects/radiobuttonOverview.html">ラジオボタン</a></td><td>Value of associated variable (1, 0, True or False for buttons according to their type)</td></tr>
-<tr><td><a href="/docs/Rx/ja/FormObjects/tabControl.html">Tab control</a></td><td>Number of selected tab</td></tr>
+<tr><td><a href="/docs/Rx/ja/FormObjects/checkboxOverview.html">チェックボックス</a></td><td>関連付けられた変数の値 (0, 1, 2)</td></tr>
+<tr><td><a href="/docs/Rx/ja/FormObjects/dropdownListOverview.html">ドロップダウンリスト</a></td><td>選択されている項目の番号</td></tr>
+<tr><td><a href="/docs/Rx/ja/FormObjects/radiobuttonOverview.html">ラジオボタン</a></td><td>関連付けられた変数の値 (1、0、ボタンにおいては true/false など型による)</td></tr>
+<tr><td><a href="/docs/Rx/ja/FormObjects/tabControl.html">タブコントロール</a></td><td>選択されているタブの番号</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="json-文法-2"></a><a href="#json-文法-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
@@ -126,7 +126,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-2"></a><a href="#対象オブジェクト-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
-<p><a href="/docs/Rx/ja/FormObjects/checkboxOverview.html">Check Box</a> - <a href="/docs/Rx/ja/FormObjects/dropdownListOverview.html">Drop-down List</a> - <a href="/docs/Rx/ja/FormObjects/radiobuttonOverview.html">Radio Button</a> - <a href="/docs/Rx/ja/FormObjects/tabControl.html">Tab control</a></p>
+<p><a href="/docs/Rx/ja/FormObjects/checkboxOverview.html">チェックボックス</a> - <a href="/docs/Rx/ja/FormObjects/dropdownListOverview.html">ドロップダウンリスト</a> - <a href="/docs/Rx/ja/FormObjects/radiobuttonOverview.html">ラジオボタン</a> - <a href="/docs/Rx/ja/FormObjects/tabControl.html">タブコントロール</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="変数あるいは式"></a><a href="#変数あるいは式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数あるいは式</h2>
 <blockquote>
