@@ -88,7 +88,7 @@ $0:=Uppercase($1)
 ALERT($0)
 ```
 
-In diesem Beispiel wird `$0` zuerst der Wert von `$1` zugewiesen und dann als Parameter für den Befehl`ALERT` verwendet. Innerhalb der Unterroutine können Sie `$0` auf dieselbe Weise wie jede andere lokale Variable verwenden. Es ist 4D, das den Wert von`$0` (genauso wenn die Unterroutine endet) an die aufgerufene Methode zurückgibt.
+In diesem Beispiel wird `$0` zuerst der Wert von `$1` zugewiesen und dann als Parameter für den Befehl`ALERT` verwendet. Innerhalb der Unterroutine können Sie `$0` auf dieselbe Weise wie jede andere lokale Variable verwenden. Es ist 4D, das den Wert von `$0` (genauso wenn die Unterroutine endet) an die aufgerufene Methode zurückgibt.
 
 
 ## Parameter deklarieren
@@ -326,7 +326,7 @@ Dieser zweite Weg (durch eine Unterroutine einen Wert zurückgeben) wird "eine F
 
 ### Sonderfälle: Objekte und Collections
 
-Sie müssen die Tatsache beachten, dass sich Daten vom Typ Objekt und Collection nur über eine Referenz verwalten lassen (z.B. ein interner *Zeiger*).
+Sie müssen im Blick behalten, dass sich Daten vom Typ Objekt und Collection nur über eine Referenz verwalten lassen (z.B. ein interner *Zeiger*).
 
 Werden also solche Datentypen als Parameter verwendet, enthalten `$1, $2...` keine *Werte*, sondern *Referenzen*. Eine Änderung des Werts von Parameter `$1, $2...` in der Unterroutine wird überall, wo Quellobjekt oder Collection verwendet wird, weitergegeben. Das ist dasselbe Prinzip wie für [Zeiger](Concepts/dt_pointer.md#pointers-as-parameters-to-methods), außer dass die Parameter `$1, $2...` in der Unterroutine nicht dereferenziert werden müssen.
 
@@ -377,7 +377,7 @@ In der Methode `ChangeAge` schreiben Sie:
  ALERT($para.Name+" is "+String($para.Age)+" years old.")
 ```
 
-Das ist ein leistungsstarker Weg zum Definieren von [optionale Parameter](#optional-parameters) (siehe auch unten). Fehlende Parameter können Sie wie folgt verwalten:
+Das ist eine leistungsstarke Möglichkeit zum Definieren von [optionale Parameter](#optional-parameters) (siehe auch unten). Fehlende Parameter können Sie wie folgt verwalten:
 - Sie prüfen, ob alle erwarteten Parameter geliefert werden, durch Vergleichen mit dem Wert `Null`, oder
 - Sie setzen Parameterwerte vorab, oder
 - Sie verwenden sie als leere Werte.
@@ -391,9 +391,9 @@ In der oberen Methode `ChangeAge` sind die beiden Eigenschaften Age und Name zwi
  $para.Age:=Num($para.Age)+10
  ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
 ```
-Then both parameters are optional; if they are not filled, the result will be " is 10 years old", but no error will be generated.
+Dann sind beide Parameter optional; werden sie nicht gefüllt, ist das Ergebnis "is 10 years old" und es wird kein Fehler generiert.
 
-Letztendlich ist die Wartung und Umgestaltung von Anwendungen, die Parameter mit Namen verwenden, sehr einfach und sicher. Sie könnten beispielsweise später feststellen, dass 10 Jahre hinzufügen nicht immer geeignet ist. Sie benötigen einen anderen Parameter, um zu setzen, wieviel Jahre hinzugefügt werden sollen. Dazu schreiben Sie:
+Letztendlich ist die Wartung und Umgestaltung von Anwendungen, die Parameter mit Namen verwenden, sehr einfach und sicher. Sie könnten beispielsweise später feststellen, dass 10 Jahre hinzufügen nicht immer geeignet ist. Sie benötigen einen anderen Parameter zum festsetzen, wieviel Jahre hinzugefügt werden sollen. Dazu schreiben Sie:
 
 ```4d
 $person:=New object("Name";"Smith";"Age";40;"toAdd";10)
