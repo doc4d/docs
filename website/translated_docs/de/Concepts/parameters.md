@@ -8,7 +8,7 @@ title: Parameter
 
 Sie werden öfters sehen, dass Sie Ihren Methoden Daten übergeben müssen. Das lässt sich leicht mit Parametern durchführen.
 
-**Parameter** (oder **Argumente**) sind Datenteile, die eine Methode zum Ausführen ihrer Aufgaben benötigen. Die Begriffe *Parameter* und*Argument* werden in der Dokumentation ohne Unterscheidung verwendet. Parameter werden auch in den integrierten 4D Befehlen verwendet. In diesem Beispiel ist der String “Hello” ein Argument des 4D Befehls `ALERT`:
+**Parameter** (oder **Argumente**) sind Datenteile, die eine Methode zum Ausführen ihrer Aufgaben benötigen. Die Begriffe *Parameter* und *Argument* werden in der Dokumentation ohne Unterscheidung verwendet. Parameter werden auch in den integrierten 4D Befehlen verwendet. In diesem Beispiel ist der String “Hello” ein Argument des 4D Befehls `ALERT`:
 
 ```4d
 ALERT("Hello")
@@ -35,7 +35,7 @@ In der Unterroutine (die aufgerufene Methode) wird der Wert jedes Parameters aut
 
 Innerhalb der Unterroutine können Sie die Parameter $1, $2... auf dieselbe Weise wie jede andere lokale Variable verwenden. Dagegen lassen sich bei Befehlen, die den Wert der als Parameter übergebenen Variablen verändern, wie z. B. `Find in field` die Parameter $1, $2, usw. nicht direkt verwenden. Sie müssen sie erst in standardmäßige lokale Variablen kopieren, wie z. B. `$myvar=$1`.
 
-The same principles are used when methods are executed through dedicated commands, for example:
+Dassselbe Prinzip gilt, wenn Methoden durch bestimmte Befehle ausgeführt werden, zum Beispiel:
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)  
@@ -43,26 +43,26 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 // in the context of a subform
 ```
 
-**Note:** For a good execution of code, you need to make sure that all `$1`, `$2`... parameters are correctly declared within called methods (see [Declaring parameters](#declaring-parameters) below).
+**Hinweis:** Für eine gute Ausführung von Code müssen Sie sicherstellen, dass alle Parameter `$1`, `$2`... innerhalb der aufgerufenen Methoden korrekt deklariert sind (siehe unten [Parameter deklarieren](#declaring-parameters)).
 
 
-### Supported expressions
+### Unterstützte Ausdrücke
 
-You can use any [expression](Concepts/quick-tour.md#expression-types) as parameter, except:
+Sie können jeden [Ausdruck](Concepts/quick-tour.md#expression-types) als Parameter verwenden, außer:
 
-- tables
+- Tabellen
 - arrays
 
-Tables or array expressions can only be passed [as reference using a pointer](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
+Tabellen oder Array Ausdrücke lassen sich nur [über einen Zeiger als Referenz übergeben](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
 
 
-## Functions
+## Funktionen
 
-Data can be returned from methods. A method that returns a value is called a function.
+Daten können von Methoden zurückgegeben werden. Eine Methode, die einen Wert zurückgibt, heißt Funktion.
 
-4D or 4D Plug-in commands that return a value are also called functions.
+4D oder 4D Plug-In Befehle, die einen Wert zurückgeben, werden auch Funktionen genannt.
 
-For example, the following line is a statement that uses the built-in function, `Length`, to return the length of a string. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
+Folgende Zeile ist beispielsweise eine Anweisung mit der integrierten Funktion `Length`, um die Länge eines String zurückzugeben. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
 
 ```4d
 MyLength:=Length("How did I get here?")
