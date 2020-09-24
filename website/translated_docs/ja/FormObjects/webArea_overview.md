@@ -198,7 +198,7 @@ Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コ�
 ### Webインスペクターの使用
 上記のとおり設定を完了すると、エリア内のコンテキストメニュー内に **要素を調査** という新しいオプションが追加されているはずです: この項目を選択すると、Webインスペクターウィンドウが表示されます。
 
-> この Webインスペクターは、埋め込みWebレンダリングエンジンに含まれています。 For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
+> この Webインスペクターは、埋め込みWebレンダリングエンジンに含まれています。 このデバッガーの機能の詳細に関しては、Webレンダリングエンジンにより提供されているドキュメントを参照してください。
 
 
 
