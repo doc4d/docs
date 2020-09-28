@@ -338,22 +338,22 @@ Items must be installed:
     *   **Client application** - next to the *\<ApplicationName>Client* software package.
 
 
-### Embedding a single-user client application
+### シングルユーザークライアントアプリケーションの埋め込み
 
-4D allows you to embed a compiled structure in the Client application. This feature can be used, for example, to provide users with a "portal" application, that gives access to different server applications thanks to the `OPEN DATABASE` command executing a `.4dlink` file.
+4D ではクライアントアプリケーションにコンパイル済ストラクチャーを埋め込むことができます。 この機能を使用すると、たとえば、`.4dlink` ファイルを `OPEN DATABASE` コマンドで実行することで異なるサーバーアプリケーションにアクセスできるような "ポータル" アプリケーションをユーザーに提供することができます。
 
-To enable this feature, add the `DatabaseToEmbedInClientWinFolder` and/or `DatabaseToEmbedInClientMacFolder` keys in the *buildApp* settings file. When one of these keys is present, the client application building process generates a single-user application: the compiled structure, instead of the *EnginedServer.4Dlink* file, is placed in the "Database" folder.
+この機能を有効化するためには、*buildApp* 設定ファイルに `DatabaseToEmbedInClientWinFolder` または `DatabaseToEmbedInClientMacFolder` キーを追加します。 いずれかのキーが存在する場合、アプリケーションビルドプロセスの途中で組み込みシングルユーザーアプリケーションが生成され、コンパイルされたストラクチャーが (EnginedServer.4Dlink ファイルの代わりに) "Database" フォルダー内に置かれます。
 
-- If a default data folder exists in the single-user application, a licence is embedded.
-- If no default data folder exists in the single-user application, it will be executed without data file and without licence.
+- シングルユーザーアプリケーション内にデフォルトの Data フォルダーがあれば、アプリケーションにはライセンスが埋め込まれます。
+- シングルユーザーアプリケーション内にデフォルトの Data フォルダーがなければ、データファイルおよびライセンスなしでアプリケーションが実行されます。
 
-The basic scenario is:
+基本シナリオは以下の通りです:
 
-1. In the Build application dialog box, select the "Build compiled structure" option to produce a .4DZ or .4DC for the application to be used in single-user mode.
-2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
+1. アプリケーションビルド ダイアログボックス内にて、"コンパイルされたストラクチャーをビルド" オプションを選択し、シングルユーザーモードで使用されるアプリケーションの .4DC または .4DZ ファイルを生成します。
+2. クライアント/サーバーアプリケーションの *buildApp.4DSettings* ファイル内で、コンパイルされたシングルユーザーアプリケーションを格納しているフォルダへのパスを以下の xml キーに指示します:
     - `DatabaseToEmbedInClientWinFolder`
     - `DatabaseToEmbedInClientMacFolder`
-3. Build the client-server application. This will have following effects:
+3. クライアント/サーバーアプリケーションをビルドします。 This will have following effects:
     - the whole folder of the single user application is copied inside the "Database" folder of the merged client
     - the *EnginedServer.4Dlink* file of the "Database" folder is not generated
     - the .4DC, .4DZ, .4DIndy files of the single user application copy are renamed using the name of the merged client
