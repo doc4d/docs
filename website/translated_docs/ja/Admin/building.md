@@ -365,13 +365,13 @@ Items must be installed:
 
 ## Plugins & components page
 
-On this tab, you set each [plug-in](Concepts/plug-ins.md) and each [component](Concepts/components.md) that you will use in your stand-alone or client/server application.
+このページでは、シングルユーザーまたはクライアント/サーバーアプリケーションに含める [プラグイン](Concepts/plug-ins.md) や [コンポーネント](Concepts/components.md) を設定できます。
 
-The page lists the elements loaded by the current 4D application:
+このページには、現在の 4Dアプリケーションにロードされている要素がリストされます:
 
 ![](assets/en/Project/buildapppluginsProj.png)
 
-*    **Active** column - Indicates that the items will be integrated into the application package built. デフォルトですべての項目が選択されています。 To exclude a plug-in or a component, deselect the check box next to it.
+*    **アクティブ** 列 - ビルドするアプリケーションパッケージに項目を統合するかどうかを指定します。 デフォルトですべての項目が選択されています。 プラグインやコンポーネントを除外するには、チェックボックスの選択を外します。
 
 *   **Plugins and components** column - Displays the name of the plug-in/component.
 
