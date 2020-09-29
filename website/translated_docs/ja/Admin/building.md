@@ -78,25 +78,25 @@ title: プロジェクトパッケージのビルド
 
 ### コンパイル済みストラクチャーをビルド
 
-Builds an application containing only compiled code.
+インタープリターコードを含まないアプリケーションをビルドします。
 
-This feature creates a *.4dz* file within a *Compiled Database/\<project name>* folder. For example, if you have named your application “MyProject”, 4D will create:
+これにより、*Compiled Database/\<project name>* フォルダーの中に *.4dz* ファイルが作成されます。 たとえば、アプリケーション名を "MyProject" にした場合、4D は次のものを作成します:
 
 *\<destination\>/Compiled Database/MyProject/MyProject.4dz*
 
-> .4dz ファイルは ZIP 圧縮されたプロジェクトフォルダーです (**注:** バイナリデータベースの場合に生成される .4DC ファイルと同義ではないことに注意が必要です)。 .4dz files can be used by 4D Server, 4D Volume license (merged applications), and 4D Developer (4D). 圧縮・最適化された .4dz ファイルによってプロジェクトパッケージの展開が容易になります。
+> .4dz ファイルは ZIP 圧縮されたプロジェクトフォルダーです (**注:** バイナリデータベースの場合に生成される .4DC ファイルと同義ではないことに注意が必要です)。 .4dz ファイルを開けるのは 4D Server、4D Volume ライセンス (組み込みアプリケーション)、および 4D Developer (4D) です。 圧縮・最適化された .4dz ファイルによってプロジェクトパッケージの展開が容易になります。
 
 
 #### 関連するフォルダーを含む
 
-When you check this option, any folders related to the project are copied into the Build folder as *Components* and *Resources* folders. For more information about these folders, refer to the [description of project architecture](Project/architecture.md).
+このオプションを選択すると、プロジェクトに関連するフォルダーが、Build フォルダーの *Components* および *Resources* フォルダーにコピーされます。 これらのフォルダーの詳細については [プロジェクトアーキテクチャーの説明](Project/architecture.md) を参照ください。
 
 
 ### コンポーネントをビルド
 
 ストラクチャーからコンパイル済みコンポーネントをビルドします。
 
-コンポーネントは特定の機能を実装した標準の 4D プロジェクトです。 Once the component has been configured and installed in another 4D project (the host application project), its functionalities are accessible from the host project.
+コンポーネントは特定の機能を実装した標準の 4D プロジェクトです。 ビルドされたコンポーネントを他の 4Dプロジェクト (ホストアプリケーションプロジェクト) にインストールすると、ホストプロジェクトはその機能を利用できるようになります。
 
 If you have named your application, *MyComponent*, 4D will create a *Components* folder containing *MyComponent.4dbase* folder:
 
