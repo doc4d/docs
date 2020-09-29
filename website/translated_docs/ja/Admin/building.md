@@ -373,11 +373,11 @@ Items must be installed:
 
 *    **アクティブ** 列 - ビルドするアプリケーションパッケージに項目を統合するかどうかを指定します。 デフォルトですべての項目が選択されています。 プラグインやコンポーネントを除外するには、チェックボックスの選択を外します。
 
-*   **Plugins and components** column - Displays the name of the plug-in/component.
+*   **プラグイン&コンポーネント** 列 - プラグイン/コンポーネントの名称を表示します。
 
-*   **ID** column - Displays the plug-in/component's identification number (if any).
+*   **ID** 列 - プラグイン/コンポーネントの ID (あれば) を表示します。
 
-*   **Type** column - Indicates the type of item: plug-in or component.
+*   **タイプ** 列 - その要素がプラグインであるかコンポーネントであるかが表示されます。
 
 If you want to integrate other plug-ins or components into the executable application, you just need to place them in a **PlugIns** or **Components** folder next to the 4D Volume Desktop application or next to the 4D Server application. The mechanism for copying the contents of the source application folder (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)) can be used to integrate any type of file into the executable application.
 
