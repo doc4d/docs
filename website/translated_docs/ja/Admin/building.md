@@ -153,7 +153,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 データリンクモードについての詳細は [最後に開かれたデータファイル](#最後に開かれたデータファイル) を参照してください。
 
 
-#### Generated files
+#### 生成されるファイル
 
 **ビルド** ボタンをクリックすると、4D は **保存先フォルダー** に **Final Application** フォルダーを作成し、 その中に指定したアプリケーション名のサブフォルダーを作成します。
 
@@ -210,31 +210,31 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 クライアント/サーバーアプリケーションは、以下の3つの項目の組み合わせから成ります:
 
 - コンパイルされた 4Dプロジェクト
-- The 4D Server application,
-- The 4D Volume Desktop application (macOS and/or Windows).
+- 4D Server アプリケーション
+- 4D Volume Desktop アプリケーション (macOS / Windows)
 
-Once built, a client/server application is composed of two customized parts: the Server portion (unique) and the Client portion (to install on each client machine).
+ビルドを行うと、クライアント/サーバーアプリケーションは 2つのカスタマイズされたパーツ (サーバーと、各クライアントマシンにインストールするクライアント) で構成されます。
 
-Also, the client/server application is customized and its handling simplified:
+ビルドされたクライアント/サーバーアプリケーションは起動や接続処理が簡易です:
 
-- To launch the server portion, the user simply double-clicks on the server application. The project file does not need to be selected.
-- To launch the client portion, the user simply double-clicks the client application, which connects directly to the server application. You do not need to choose a server in a connection dialog box. クライアントは接続対象のサーバーを名称 (サーバーが同じサブネットワーク上にある場合)、あるいはIPアドレスによって認識します。IPアドレスの指定は buildapp.4DSettings ファイル内の `IPAddress` XMLキーを使用して設定されます。 接続が失敗した場合のために、代替機構を実装することができます。これについては [クライアント接続の管理](#クライアント接続の管理) の章で説明されています。 また、**Option** (macOS) や **Alt** (Windows) キーを押しながらクライアントアプリケーション起動すると、標準の接続ダイアログを強制的に表示させることもできます。 サーバーアプリケーションには、対応するクライアントアプリケーションのみが接続できます。 If a user tries to connect to the server portion using a standard 4D application, an error message is returned and connection is impossible.
-- A client/server application can be set so that the client portion [can be updated automatically over the network](#copy-of-client-applications-in-the-server-application).
-- It is also possible to automate the update of the server part through the use of a sequence of language commands ([SET UPDATE FOLDER](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-UPDATE-FOLDER.301-4311308.en.html) and [RESTART 4D](https://doc.4d.com/4Dv17R6/4D/17-R6/RESTART-4D.301-4311311.en.html)).
+- サーバーを起動するには、サーバーアプリケーションをダブルクリックします。 プロジェクトファイルを選択する必要はありません。
+- クライアントを起動するにも、同様にクライアントアプリケーションをダブルクリックします。すると、サーバーアプリケーションへの接続が直接おこなわれるため、 接続ダイアログでサーバーを選択する必要はありません。 クライアントは接続対象のサーバーを名称 (サーバーが同じサブネットワーク上にある場合)、あるいはIPアドレスによって認識します。IPアドレスの指定は buildapp.4DSettings ファイル内の `IPAddress` XMLキーを使用して設定されます。 接続が失敗した場合のために、代替機構を実装することができます。これについては [クライアント接続の管理](#クライアント接続の管理) の章で説明されています。 また、**Option** (macOS) や **Alt** (Windows) キーを押しながらクライアントアプリケーション起動すると、標準の接続ダイアログを強制的に表示させることもできます。 サーバーアプリケーションには、対応するクライアントアプリケーションのみが接続できます。 標準の 4Dアプリケーションを使用してサーバーアプリケーションに接続を試みると、接続は拒否されエラーが返されます。
+- クライアント側を [ネットワーク越しに自動更新](#サーバーアプリケーション内部のクライアントアプリケーションのコピー) するようにクライアント/サーバーアプリケーションを設定することも可能です。
+- また、ランゲージコマンド ([SET UPDATE FOLDER](https://doc.4d.com/4Dv18/4D/18/SET-UPDATE-FOLDER.301-4505379.ja.html)、および [RESTART 4D](https://doc.4d.com/4Dv18/4D/18/RESTART-4D.301-4505382.ja.html)) を使用して、サーバーアプリケーションの更新を自動化することも可能です
 
 
 
-### Build server application
+### サーバーアプリケーションをビルド
 
-Check this option to generate the server part of your application during the building phase. ビルドに使用する 4D Server アプリケーションの場所を選択する必要があります。 この 4D Server はビルドをおこなうプラットフォームに対応していなければなりません (たとえば、Windows 用のサーバーアプリケーションをビルドするには Windows 上でビルドを実行する必要があり、Windows 版の 4D Server アプリケーションを指定する必要があります)。
+アプリケーションのサーバー部分をビルドするにはこのオプションを選択します。 ビルドに使用する 4D Server アプリケーションの場所を選択する必要があります。 この 4D Server はビルドをおこなうプラットフォームに対応していなければなりません (たとえば、Windows 用のサーバーアプリケーションをビルドするには Windows 上でビルドを実行する必要があり、Windows 版の 4D Server アプリケーションを指定する必要があります)。
 
-#### 4D Server location
+#### 4D Server の場所
 
-Click on the **[...]** button and use the *Browse for folder* dialog box to locate the 4D Server application. In macOS, you must select the 4D Server package directly.
+4D Server フォルダーを選択するには**[...]**ボタンをクリックします。 macOS では 4D Server パッケージを選択します。
 
-#### Current version
+#### 現在のバージョン
 
-Used to indicate the current version number for the application generated. このバージョン番号をもとに、クライアントアプリケーションからの接続を受け入れたり拒否したりできます。 クライアントとサーバーアプリケーションで互換性のある番号の範囲は [XML キー](#アプリケーションビルド設定) で設定します。
+生成されるアプリケーションのバージョン番号を指定します。 このバージョン番号をもとに、クライアントアプリケーションからの接続を受け入れたり拒否したりできます。 クライアントとサーバーアプリケーションで互換性のある番号の範囲は [XML キー](#アプリケーションビルド設定) で設定します。
 
 #### データリンクモードの基準
 
@@ -247,64 +247,64 @@ Used to indicate the current version number for the application generated. こ�
 データリンクモードについての詳細は [最後に開かれたデータファイル](#最後に開かれたデータファイル) を参照してください。
 
 
-### Build client application
+### クライアントアプリケーションをビルド
 
-Checking this option generates the client part of your application during the building phase.
+アプリケーションのクライアント部分をビルドするにはこのオプションを選択します。
 
-#### 4D Volume Desktop
+#### 4D Volume Desktopの場所
 
-You must designate the location on your disk of the 4D Volume Desktop application to be used. この 4D Volume Desktop はビルドをおこなうプラットフォームに対応していなければなりません。 異なるプラットフォーム用のクライアントアプリケーションをビルドするには、そのプラットフォームで 4D アプリケーションを実行し、追加のビルド処理をしなければなりません。 これはクライアントアプリケーションの最初のバージョンをビルドするときのみ必要です。自動アップデート機構を利用することで、それ以降のアップデートは同じプラットフォーム上から管理することができます。 For more information about this point, see [Customizing 4D Server and/or 4D Client folders](#customizing-4d-server-and-or-4d-client-folders).
+ビルドに使用する 4D Volume Desktop アプリケーションの場所を選択する必要があります。 この 4D Volume Desktop はビルドをおこなうプラットフォームに対応していなければなりません。 異なるプラットフォーム用のクライアントアプリケーションをビルドするには、そのプラットフォームで 4D アプリケーションを実行し、追加のビルド処理をしなければなりません。 これはクライアントアプリケーションの最初のバージョンをビルドするときのみ必要です。自動アップデート機構を利用することで、それ以降のアップデートは同じプラットフォーム上から管理することができます。 詳細については [サーバーやクライアントフォルダーのカスタマイズ](#サーバーやクライアントフォルダーのカスタマイズ) を参照ください。
 
 > 4D Volume Desktop のバージョン番号は、4D Developer のバージョン番号と合致する必要があります。 たとえば、4D Developer の v18 を利用していれば、4D Volume Desktop v18 が必要です。
 
-If you want the client application to connect to the server using a specific address (other than the server name published on the sub-network), you must use the `IPAddress` XML key in the buildapp.4DSettings file. この点についてのより詳細な情報については、[BUILD APPLICATION](https://doc.4d.com/4Dv18/4D/18/BUILD-APPLICATION.301-4505371.ja.html) コマンドを参照してください。 接続失敗時の特定の機構を実装することもできます。 The different scenarios proposed are described in the [Management of connections by client applications](#management-of-client-connections) paragraph.
+クライアントアプリから特定のアドレスを使用して (サブネットワーク上にサーバー名が公開されていない) サーバーに接続したい場合、buildapp.4DSettings ファイル内の `IPAddress` XML キーを使用する必要があります。 この点についてのより詳細な情報については、[BUILD APPLICATION](https://doc.4d.com/4Dv18/4D/18/BUILD-APPLICATION.301-4505371.ja.html) コマンドを参照してください。 接続失敗時の特定の機構を実装することもできます。 詳細は [クライアント接続の管理](#クライアント接続の管理) で説明されています。
 
-#### Copy of client applications in the server application
+#### サーバーアプリケーション内部のクライアントアプリケーションのコピー
 
-The options of this area to set up the mechanism for updating the client parts of your client/server applications using the network each time a new version of the application is generated.
+このエリアのオプションを使用して、クライアント/サーバーアプリケーションの新しいバージョンがビルドされた際の、ネットワーク越しにクライアントを自動更新するメカニズムを設定できます。
 
-- **Allow automatic update of Windows client application** - Check these options so that your Windows client/server application can take advantage of the automatic update mechanism for clients via the network.
-- **Allow automatic update of Macintosh client application** - Check these options so that your Macintosh client/server application can take advantage of the automatic update mechanism for clients via the network.
+- **Windows クライアントアプリケーションの自動更新を有効にする** - このオプションを選択すると、ネットワーク越しの Windows クライアントの自動更新を有効にすることができます。
+- **macOS クライアントアプリケーションの自動更新を有効にする** - このオプションを選択すると、ネットワーク越しの macOS クライアントの自動更新を有効にすることができます。
 
-*   **Allow automatic update of Macintosh client application** - If you want to create a cross-platform client application, you must designate the location on your disk of the 4D Volume Desktop application that corresponds to the “concurrent” platform of the build platform.
+*   クロスプラットフォームなクライアントアプリケーションの場合には、ビルドをおこなうマシンとは別のプラットフォーム用の 4D Volume Desktop アプリケーションの場所を選択する必要があります。
 
-    For example, if you build your application in Windows, you must use the **[...]** button to designate the 4D Volume Desktop macOS application (provided as a package).
-
-
-
-#### Displaying update notification
-
-The client application update notification is carried out automatically following the server application update.
-
-It works as follows: when a new version of the client/server application is built using the application builder, the new client portion is copied as a compressed file in the **Upgrade4DClient** subfolder of the **ApplicationName** Server folder (in macOS, these folders are included in the server package). If you have followed the process for generating a cross-platform client application, a .*4darchive* update file is available for each platform:
-
-To trigger client application update notifications, simply replace the old version of the server application with the new one and then execute it. あとの処理は自動でおこなわれます。
-
-On the client side, when the “old” client application tries to connect to the updated server application, a dialog box is displayed on the client machine, indicating that a new version is available. The user can either update their version or cancel the dialog box.
-
-*   If the user clicks **OK**, the new version is downloaded to the client machine over the network. ダウンロードが完了すると古いクライアントアプリケーションが閉じられて、新しいバージョンが起動しサーバーに接続します。 The old version of the application is then placed in the machine’s recycle bin.
-*   If the user clicks **Cancel**, the update is cancelled; if the old version of the client application is not in the range of versions accepted by the server (please refer to the following paragraph), the application is closed and connection is impossible. Otherwise (by default), the connection is established.
-
-#### Forcing automatic updates
-
-In some cases, you may want to prevent client applications from being able to cancel the update download. For example, if you used a new version of the 4D Server source application, the new version of the client application must absolutely be installed on each client machine.
-
-To force the update, simply exclude the current version number of client applications (X-1 and earlier) in the version number range compatible with the server application. すると、未更新クライアントからの接続は更新メカニズムによって拒否されます。 たとえば、クライアントサーバーアプリケーションの新しいバージョン番号がの 6 の場合、バージョン番号が 5 以下のクライアントアプリケーションを許可しないようにできます。
-
-[現在のバージョン番号](#現在のバージョン) はアプリケーションビルドダイアログのクライアント/サーバーページで設定できます。 The intervals of authorized numbers are set in the application project using specific [XML keys](#build-application-settings).
+    たとえば Windows 上で **[...]** ボタンをクリックし、パッケージ形式で提供される macOS 用の 4D Volume Desktop.app フォルダーを選択します。
 
 
-#### Update Error
 
-If 4D cannot carry out the update of the client application, the client machine displays the following error message: “The update of the client application failed. The application is now going to quit.”
+#### 更新通知の表示
 
-There are many possible causes for this error. When you get this message, it is advisable to check the following parameters first off:
+サーバーアプリケーションが更新されると、クライアントアプリケーションへの更新通知が自動でおこなわれます。
 
-*   **Pathnames** - Check the validity of the pathnames set in the application project via the Application builder dialog box or via XML keys (for example *ClientMacFolderToWin*). More particularly, check the pathnames to the versions of 4D Volume Desktop.
-*   **Read/write privileges** - On the client machine, check that the current user has write access rights for the client application update.
+これは次のように動作します: クライアント/サーバーアプリケーションの新しいバージョンをビルドする際、新しいクライアントは **ApplicationName** Server フォルダー内の **Upgrade4DClient** サブフォルダーに圧縮して格納されます (macOS では、これらのフォルダーはサーバーパッケージ内に配置されます)。 クロスプラットフォームのクライアントアプリケーションを生成した場合には、各プラットフォーム用に *.4darchive* という更新ファイルが格納されます:
+
+クライアントアプリケーションに更新を通知するには、古いサーバーアプリケーションを新しいバージョンで置き換えて起動します。 あとの処理は自動でおこなわれます。
+
+古いバージョンのクライアントが、更新されたサーバーに接続を試みると、新しいバージョンが利用可能である旨を伝えるダイアログがクライアントマシン上に表示されます。 ユーザーはバージョンを更新するか、ダイアログをキャンセルできます。
+
+*   ユーザーが **OK** をクリックすると、新バージョンがネットワーク越しにクライアントマシンにダウンロードされます。 ダウンロードが完了すると古いクライアントアプリケーションが閉じられて、新しいバージョンが起動しサーバーに接続します。 古いバージョンのアプリケーションはマシンのゴミ箱に移動されます。
+*   ユーザーが **キャンセル** をクリックすると、更新手続きはキャンセルされます。古いクライアントのバージョンがサーバーの許可する範囲外であれば (後述参照)、アプリケーションは閉じられて、接続することはできません。 そうでなければ (デフォルトで) 接続がおこなわれます。
+
+#### 自動更新の強制
+
+更新のダウンロードをキャンセルさせたくない場合、 たとえば新しいメジャーバージョンの 4D Server を使用するような場合、新しいバージョンのクライアントアプリケーションを各クライアントマシンに必ずインストールしなければなりません。
+
+更新を強制するには、サーバーアプリケーションと互換性のあるバージョン番号の範囲からクライアントアプリケーションの現バージョン番号を除外します。 すると、未更新クライアントからの接続は更新メカニズムによって拒否されます。 たとえば、クライアントサーバーアプリケーションの新しいバージョン番号がの 6 の場合、バージョン番号が 5 以下のクライアントアプリケーションを許可しないようにできます。
+
+[現在のバージョン番号](#現在のバージョン) はアプリケーションビルドダイアログのクライアント/サーバーページで設定できます。 接続を許可するバージョン番号の範囲は [XMLキー](#アプリケーションビルド設定) で設定します。
 
 
-### Generated files
+#### エラーが発生する場合
+
+クライアントアプリケーションの更新を実行できなかった場合、クライアントマシンには次のメッセージが表示されます: "クライアントアプリケーションの更新に失敗しました。 アプリケーションは終了します。"
+
+このエラーが発生する原因は複数ありえます。 このエラーが表示されるような場合は、まず次の点をチェックしてみてください:
+
+*   **パス名** - アプリケーションビルドダイアログや XMLキー (たとえば *ClientMacFolderToWin*) で指定されたパス名の有効性をチェックしてください。 とくに 4D Volume Desktop へのパスをチェックしてください。
+*   **読み書き権限** - クライアントマシン上でカレントユーザーがクライアントアプリケーションを更新する書き込みアクセス権を持っているか確認してください。
+
+
+### 生成されるファイル
 
 Once a client/server application is built, you will find a new folder in the destination folder named **Client Server executable**. This folder contains two subfolders, *\<ApplicationName>Client* and *\<ApplicationName>Server*.
 > These folders are not generated if an error occurs. In this case, open the [log file](#log-file) in order to find out the cause of the error.
