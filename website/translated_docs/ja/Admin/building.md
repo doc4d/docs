@@ -155,61 +155,61 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 #### Generated files
 
-When you click on the **Build** button, 4D automatically creates a **Final Application** folder in the specified **Destination Folder**. その中に指定したアプリケーション名のサブフォルダーを作成します。
+**ビルド** ボタンをクリックすると、4D は **保存先フォルダー** に **Final Application** フォルダーを作成し、 その中に指定したアプリケーション名のサブフォルダーを作成します。
 
-If you have specified "MyProject" as the name of the application, you will find the following files in this subfolder (aka MyProject):
+アプリケーション名に "MyProject"と指定した場合、MyProject サブフォルダー内には以下のファイルが置かれます:
 
 *   *Windows*
-    *   MyProject.exe  - Your executable and a MyProject.rsr (the application resources)
-    *   4D Extensions folder, Resources folder, various libraries (DLL), Native Components folder, SASL Plugins folder - Files necessary for the operation of the application
-    *   Database folder  - Includes a Resources folder and  MyProject.4DZ file. They make up the compiled structure of the project as well as the project Resources folder. **Note**: This folder also contains the *Default Data* folder, if it has been defined (see [Data file management in final applications](#data-file-management-in-final-applicatons).
-    *   (Optional) Components folder and/or Plugins folder - Contains any components and/or plug-in files included in the project. For more information about this, refer to the [Plugins and components](#plugins-and-components) section.
-    *   Licenses folder - An XML file of license numbers integrated into the application. For more information about this, refer to the [Licenses & Certificate](#licenses-and-certificate) section.
-    *   Additional items added to the 4D Volume Desktop folder, if any (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)).
+    *   MyProject.exe - 実行可能ファイル、そして MyProject.rsr (アプリケーションリソースファイル)
+    *   4D Extensions および Resources フォルダー、さまざまなライブラリ (DLL)、 Native Components フォルダー、SASL Plugins フォルダーなど、アプリケーション実行に必要なファイル
+    *   Databaseフォルダー: Resources フォルダーと MyProject.4DZ ファイルが格納されています。 これらはプロジェクトのコンパイル済みストラクチャーおよびプロジェクトの Resources フォルダーです。 **注**: このフォルダには、定義されていれば *Default Data* フォルダーも含まれています ([最終アプリケーションでのデータファイルの管理](#データファイルの管理)を参照してください)。
+    *   (オプション) データベースに含まれるコンポーネントやプラグインが配置された Components フォルダーおよび Plugins フォルダー。 この点に関する詳細は [プラグイン＆コンポーネントページ](#プラグイン＆コンポーネントページ) を参照してください。
+    *   Licenses フォルダー - アプリケーションに統合されたライセンス番号の XML ファイルが含まれます。 この点に関する詳細は [ライセンス＆証明書ページ](#ライセンス＆証明書ページ) を参照してください。
+    *   4D Volume Desktop フォルダーに追加されたその他の項目 (あれば) ([4D Volume Desktop フォルダーのカスタマイズ](#4d-volume-desktop-フォルダーのカスタマイズ) 参照)
 
-    All these items must be kept in the same folder in order for the executable to operate.
+    実行ファイルの動作には、これらすべての項目が同じフォルダー内に必要です。
 
 *   *macOS*
-    -   A software package named MyProject.app containing your application and all the items necessary for its operation, including the plug-ins, components and licenses. プラグインやコンポーネントの統合に関する詳細は [プラグイン ＆コンポーネントページ](#プラグインコンポーネントページ) を参照してください。 ライセンスの統合に関しては [ライセンス & 証明書ページ](#ライセンス証明書ページ) を参照してください。 **Note**: In macOS, the [Application file](https://doc.4d.com/4Dv18R4/4D/18-R4/Application-file.301-4982855.en.html) command of the 4D language returns the pathname of the ApplicationName file (located in the Contents:macOS folder of the software package) and not that of the .comp file (Contents:Resources folder of the software package).
+    -   MyProject.app という名称のソフトウェアパッケージに、プラグインやコンポーネント、ライセンスなど必要な項目がすべて格納されます。 プラグインやコンポーネントの統合に関する詳細は [プラグイン＆コンポーネントページ](#プラグイン＆コンポーネントページ) を参照してください。 ライセンスの統合に関しては [ライセンス＆証明書ページ](#ライセンス＆証明書ページ) を参照してください。 **注**: macOSでは、4D ランゲージの [Application file](https://doc.4d.com/4Dv18R4/4D/18-R4/Application-file.301-4982855.en.html) コマンドが返すのは、ソフトウェアパッケージ内の "Contents:macOS" フォルダー内にコピーされる ApplicationName ファイルのパス名です (ソフトウェアパッケージの "Contents:Resources" フォルダー内の .comp ファイルのパスではありません)。
 
 
-#### Customizing 4D Volume Desktop folder
+#### 4D Volume Desktop フォルダーのカスタマイズ
 
-When building a stand-alone application, 4D copies the contents of the 4D Volume Desktop folder into Destination folder > *Final Application* folder. 必要に応じて、このコピー元である 4D Volume Desktop フォルダーの内容をカスタマイズすることできます。 You can, for example:
+ダブルクリックで起動可能なアプリケーションをビルドする際、4D は 4D Volume Desktop フォルダーの内容を *Final Application* 内のアプリケーション名サブフォルダーにコピーします。 必要に応じて、このコピー元である 4D Volume Desktop フォルダーの内容をカスタマイズすることできます。 たとえば:
 
-*   Install a 4D Volume Desktop version corresponding to a specific language;
-*   Add a custom *PlugIns* folder;
-*   Customize the contents of the *Resources* folder.
-> In macOS, 4D Volume Desktop is provided in the form of a software package. In order to modify it, you must first display its contents (**Control+click** on the icon).
-
-
-#### Location of Web files
-
-If your stand-alone application is used as a Web server, the files and folders required by the server must be installed in specific locations. These items are the following:
-
-*   *cert.pem* and *key.pem* files (optional): These files are used for TLS connections and by data encryption commands,
-*   default Web root folder.
-
-Items must be installed:
-
-- **on Windows**: in the *Final Application\MyProject\Database* subfolder.
-- **on macOS**: next to the *MyProject.app* software package.
+*   特定の言語バージョンに対応する 4D Volume Desktop をインストールする
+*   カスタムプラグインを *Plugins* フォルダーに置く
+*   *Resources* フォルダーの内容をカスタマイズする
+> macOS では、4D Volume Desktop はソフトウェアパッケージ形式で提供されています。 内容を変更するにはパッケージを開きます (アイコンを **Control+click**)。
 
 
+#### Webファイルの場所
+
+ダブルクリックで起動可能なアプリケーションを Webサーバーとして使用する場合、Web フォルダーやファイルは特定の場所にインストールする必要があります :
+
+*   *cert.pem* と *key.pem* ファイル (オプション): これらのファイルはTLS接続とデータ暗号化コマンドに使用されます。
+*   デフォルト Web ルートフォルダー
+
+インストール場所:
+
+- **Windows**: *Final Application\MyProject\Database* サブフォルダー内
+- **macOS**: *MyProject.app* ソフトウェアパッケージと同階層
 
 
 
-## Client/Server page
 
-On this tab, you can build customized client-server applications that are homogenous, cross-platform and with an automatic update option.
+
+## クライアント/サーバーページ
+
+このページでは、クライアントの自動更新もサポートできるクロスプラットフォームなクライアント/サーバーアプリケーションをビルドするための設定をおこないます。
 
 ![](assets/en/Project/buildappCSProj.png)
 
-### What is a Client/Server application?
+### クライアント/サーバーアプリケーションとは
 
-A client/server application comes from the combination of three items:
+クライアント/サーバーアプリケーションは、以下の3つの項目の組み合わせから成ります:
 
-- A compiled 4D project,
+- コンパイルされた 4Dプロジェクト
 - The 4D Server application,
 - The 4D Volume Desktop application (macOS and/or Windows).
 
@@ -321,14 +321,14 @@ The contents of these folders vary depending on the current platform:
 If you checked the “Allow automatic update of client application” option, an additional subfolder called *Upgrade4DClient* is added in the *\<ApplicationName>Server* folder/package. このサブフォルダーには macOS/Windows 版のクライアントアプリケーションが圧縮されて格納されます。 This file is used during the automatic client application update.
 
 
-#### Location of Web files
+#### Webファイルの場所
 
-If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. These items are the following:
+If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. :
 
 - *cert.pem* and *key.pem* files (optional): These files are used for SSL connections and by data encryption commands,
 - Default Web root folder (WebFolder).
 
-Items must be installed:
+インストール場所:
 *   **on Windows**
     *   **Server application** - in the *Client Server executable\ \<ApplicationName>Server\Server Database* subfolder.
     *   **Client application** - in the *Client Server executable\ \<ApplicationName>Client* subfolder.
@@ -363,7 +363,7 @@ Items must be installed:
 4D Server の自動アップデート機能 ([現在のバージョン](#現在のバージョン) 番号、`SET UPDATE FOLDER</a> コマンドなど...) は、シングルユーザーアプリケーションにおいても標準のリモートアプリケーションと同様に動きます。 接続時、シングルユーザーアプリケーションは <code>CurrentVers` キーを 4D Server バージョンレンジと比較します。 レンジ外だった場合、アップデートされているシングルユーザーアプリケーションがサーバーからダウンロードされ、アップデーターがローカルアップデートプロセスを実行します。
 
 
-## Plugins & components page
+## プラグイン＆コンポーネントページ
 
 このページでは、シングルユーザーまたはクライアント/サーバーアプリケーションに含める [プラグイン](Concepts/plug-ins.md) や [コンポーネント](Concepts/components.md) を設定できます。
 
@@ -389,7 +389,7 @@ Items must be installed:
 
 
 
-## Licenses & Certificate page
+## ライセンス＆証明書ページ
 
 ライセンス&証明書のページでは、次のようなことができます:
 
