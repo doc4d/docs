@@ -306,36 +306,36 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 ### 生成されるファイル
 
-Once a client/server application is built, you will find a new folder in the destination folder named **Client Server executable**. This folder contains two subfolders, *\<ApplicationName>Client* and *\<ApplicationName>Server*.
-> These folders are not generated if an error occurs. In this case, open the [log file](#log-file) in order to find out the cause of the error.
+クライアント/サーバーアプリケーションをビルドすると、保存先フォルダー内に **Client Server executable** という名前の新しいフォルダーが作成されます。 このフォルダーにはさらに2つのサブフォルダー、 *\<ApplicationName> Client* と *\<ApplicationName> Server* があります。
+> エラーが発生した場合これらのフォルダーは作成されません。 そのような場合には、エラーの原因を特定するために [ログファイル](#ログファイル) の内容を確認してください。
 
-The *\<ApplicationName>Client* folder contains the client portion of the application corresponding to the execution platform of the application builder. このフォルダーを各クライアントにインストールします。 *\<ApplicationName> Server* フォルダーはサーバーアプリケーションを格納します。
+*\<ApplicationName> Client* フォルダーは、アプリケーションビルダーを実行したプラットフォームに対応するクライアントアプリケーションを格納します。 このフォルダーを各クライアントにインストールします。 *\<ApplicationName> Server* フォルダーはサーバーアプリケーションを格納します。
 
-The contents of these folders vary depending on the current platform:
+これらのフォルダーの内容はカレントのプラットフォームにより異なります:
 
-*   *Windows* - Each folder contains the application executable file, named *\<ApplicationName>Client.exe* for the client part and *\<ApplicationName>Server.exe* for the server part as well as the corresponding .rsr files. The folders also contain various files and folders necessary for the applications to work and customized items that may be in the original 4D Volume Desktop and 4D Server folders.
-*   *macOS* - Each folder contains only the application package, named \<ApplicationName> Client for the client part and \<ApplicationName> Server for the server part. 各パッケージには動作に必要なすべてのファイルが含まれます。 Under macOS, launch a package by double-clicking it.
+*   *Windows* - 各フォルダーに*\<ApplicationName>Client.exe* (クライアント用) あるいは *\<ApplicationName>Server.exe* (サーバー用) という名前の実行ファイル、およびそれぞれに対応する.rsrファイルが作成されます。 これらのフォルダーには、アプリケーション実行のために必要な様々なファイルやフォルダー、および元の 4D Server や 4D Volume Desktop に追加されたカスタマイズ項目も格納されます。
+*   *macOS* - 各フォルダーは \<ApplicationName> Client (クライアント用) と \<ApplicationName> Server (サーバー用) という名前のアプリケーションパッケージになっています。 各パッケージには動作に必要なすべてのファイルが含まれます。 macOS では、アプリケーションを実行するためにパッケージをダブルクリックします。
 
-    > The macOS packages built contain the same items as the Windows subfolders. ビルドされた macOS パッケージの内容を表示するにはアイコンを **Control+クリック** して、"パッケージの内容を表示"を選択します。
+    > ビルドされた macOSパッケージには、Windows版のサブフォルダーと同じものが格納されています。 ビルドされた macOS パッケージの内容を表示するにはアイコンを **Control+クリック** して、"パッケージの内容を表示"を選択します。
 
-If you checked the “Allow automatic update of client application” option, an additional subfolder called *Upgrade4DClient* is added in the *\<ApplicationName>Server* folder/package. このサブフォルダーには macOS/Windows 版のクライアントアプリケーションが圧縮されて格納されます。 This file is used during the automatic client application update.
+"クライアントの自動更新を有効にする" オプションを選択している場合、*\<ApplicationName>Server* フォルダー/パッケージには追加で *Upgrade4DClient* サブフォルダーが作成されます。 このサブフォルダーには macOS/Windows 版のクライアントアプリケーションが圧縮されて格納されます。 クライアントアプリケーションを自動更新するときに、このファイルは使用されます。
 
 
 #### Webファイルの場所
 
-If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. :
+サーバーやクライアントを Webサーバーとして使用する場合、Webサーバーが使用するファイルを特定の場所に配置しなければなりません :
 
-- *cert.pem* and *key.pem* files (optional): These files are used for SSL connections and by data encryption commands,
-- Default Web root folder (WebFolder).
+- *cert.pem* と *key.pem* ファイル (オプション): これらのファイルはTLS接続とデータ暗号化コマンドに使用されます。
+- デフォルト Web ルートフォルダー (WebFolder)
 
 インストール場所:
-*   **on Windows**
-    *   **Server application** - in the *Client Server executable\ \<ApplicationName>Server\Server Database* subfolder.
-    *   **Client application** - in the *Client Server executable\ \<ApplicationName>Client* subfolder.
+*   **Windows**
+    *   **サーバーアプリケーション** - *Client Server executable\ \<ApplicationName>Server\Server Database* サブフォルダー内にこれらの項目を配置します。
+    *   **クライアントアプリケーション** - *Client Server executable\ \<ApplicationName>Client* サブフォルダー内にこれらの項目を配置します。
 
-*   **on macOS**
-    *   **Server application** - next to the *\<ApplicationName>Server* software package.
-    *   **Client application** - next to the *\<ApplicationName>Client* software package.
+*   **macOS**
+    *   **サーバーアプリケーション** - *\<ApplicationName>Server* ソフトウェアパッケージと同階層にこれらの項目を配置します。
+    *   **クライアントアプリケーション** - *\<ApplicationName>Client* ソフトウェアパッケージと同階層にこれらの項目を配置します。
 
 
 ### シングルユーザークライアントアプリケーションの埋め込み
@@ -463,7 +463,7 @@ Apple の公証サービスを利用するのに必要な条件を満たすた�
 
 [Apple のデベロッパー Web サイト](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow) を参照ください。 </p>
 
-## Customizing application icons
+## アプリケーションアイコンのカスタマイズ
 
 4Dは、ダブルクリックで実行可能なアプリケーションにデフォルトアイコンを割り当てますが、アプリケーションごとにこのアイコンをカスタマイズできます。
 
@@ -489,7 +489,7 @@ Apple の公証サービスを利用するのに必要な条件を満たすた�
 
 
 
-## Management of data file(s)
+## データファイルの管理
 
 ### データファイルを開く
 
@@ -563,7 +563,7 @@ userPrefs:=Get 4D folder(Active 4D Folder)
 デフォルトのデータファイルが初回起動時に検知された場合、データファイルは自動的に読み込み専用モードで開かれ、データファイルの変更を伴わないカスタムオペレーションを実行できるようになります。
 
 
-## Management of client connection(s)
+## クライアント接続の管理
 
 ここでは、組み込みクライアントアプリが運用環境において対象サーバーへと接続する際のメカニズムについて説明します。
 
