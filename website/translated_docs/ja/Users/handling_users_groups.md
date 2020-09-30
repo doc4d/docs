@@ -22,7 +22,7 @@ title: 4Dユーザー＆グループの管理
 
 管理者は次のことができません:
 - デザイナーユーザーを編集する。
-- by default, access to protected parts of the application. とくにデザインモードが制限されている場合には、管理者はアクセスすることができません。 The Administrator must be part of one or more groups to have access privileges in the application. The Administrator is placed in every new group, but you can remove the Administrator’s name from any group.
+- by default, access to protected parts of the application. とくにデザインモードが制限されている場合には、管理者はアクセスすることができません。 The Administrator must be part of one or more groups to have access privileges in the application. 管理者はすべての新規グループに含まれますが、任意のグループから管理者の名前を取り除くことができます。
 
 Both the Designer and Administrator are available by default in all applications. In the [user management dialog box](#users-and-groups-editor), the icons of the Designer and Administrator are displayed in red and green respectively:
 
