@@ -21,8 +21,8 @@ title: 4Dユーザー＆グループの管理
 - バックアップ、復元、サーバーの監視のため、MSC にアクセスする。
 
 管理者は次のことができません:
-- デザイナーユーザーの編集
-- by default, access to protected parts of the application. In particular, the Administrator cannot access to the Design mode if it is restricted. The Administrator must be part of one or more groups to have access privileges in the application. The Administrator is placed in every new group, but you can remove the Administrator’s name from any group.
+- デザイナーユーザーを編集する。
+- by default, access to protected parts of the application. とくにデザインモードが制限されている場合には、管理者はアクセスすることができません。 The Administrator must be part of one or more groups to have access privileges in the application. The Administrator is placed in every new group, but you can remove the Administrator’s name from any group.
 
 Both the Designer and Administrator are available by default in all applications. In the [user management dialog box](#users-and-groups-editor), the icons of the Designer and Administrator are displayed in red and green respectively:
 
