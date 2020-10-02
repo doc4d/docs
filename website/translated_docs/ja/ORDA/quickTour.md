@@ -78,7 +78,7 @@ $status:=$entity.save()
 
 
 
-ユーザーとグループのエディターは 4Dのツールボックスにあります。
+ユーザーのエディターは 4Dのツールボックスにあります。
 
 ![](assets/en/Users/editor.png)
 
@@ -118,12 +118,12 @@ $status:=$entity.save()
 
 - **ユーザーの種類**: "デザイナー"、"管理者"、または (それ以外のすべてのユーザーの場合にあ) "ユーザー"
 
-- **開始メソッド**: ユーザーがデータベースを開いたときに自動実行されるメソッドの名称 (任意) This method can be used for example to load the user preferences.
+- **開始メソッド**: ユーザーがデータベースを開いたときに自動実行されるメソッドの名称 (任意) このメソッドを使って、たとえばユーザー設定をロードできます。
 
 
 ## グループエディター
 
-The editor for groups is located in the Toolbox of 4D.
+グループのエディターは 4Dのツールボックスにあります。
 
 ### グループの設定
 
