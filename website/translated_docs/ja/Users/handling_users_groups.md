@@ -37,7 +37,7 @@ Both the Designer and Administrator are available by default in all applications
 
 ## ユーザーエディター
 
-ユーザーとグループのエディターは 4Dのツールボックスにあります。
+ユーザーのエディターは 4Dのツールボックスにあります。
 
 ![](assets/en/Users/editor.png)
 
@@ -77,12 +77,12 @@ Both the Designer and Administrator are available by default in all applications
 
 - **ユーザーの種類**: "デザイナー"、"管理者"、または (それ以外のすべてのユーザーの場合にあ) "ユーザー"
 
-- **Startup Method**: Name of an associated method that will be automatically executed when the user opens the application (optional). This method can be used for example to load the user preferences.
+- **Startup Method**: Name of an associated method that will be automatically executed when the user opens the application (optional). このメソッドを使って、たとえばユーザー設定をロードできます。
 
 
 ## グループエディター
 
-The editor for groups is located in the Toolbox of 4D.
+グループのエディターは 4Dのツールボックスにあります。
 
 ### グループの設定
 
