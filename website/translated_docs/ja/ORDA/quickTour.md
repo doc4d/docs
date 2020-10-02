@@ -148,21 +148,21 @@ $status:=$entity.save()
 
 ### ユーザーやグループをグループに入れる
 
-You can place any user or group into a group, and you can also place the group itself into several other groups. It is not mandatory to place a user in a group.
+任意のユーザーやグループをグループ内に配置することができます。さらに、そのグループ自体を他のいくつかのグループ内に入れることも可能です。 必ずしもユーザーをグループに入れる必要はありません。
 
-To place a user or group in a group, you simply need to check the "Member" option for each user or group in the member attribution area:
+ユーザーやグループをグループに配置するには、当該グループのユーザー/グループ一覧にてメンバーカラムにチェックを入れます:
 
 ![](assets/en/Users/groups.png)
 
-If you check the name of a user, this user is added to the group. If you check the name of a group, all the users of the group are added to the new group. The affiliated user or group will then have the same access privileges as those assigned to the new group.
+ユーザー名をチェックすると、そのユーザーがグループに追加されます。 グループ名をチェックした場合は、そのグループの全ユーザーがグループへ追加されます。 メンバーの一員となったユーザーやグループには、そのグループに割り当てられたものと同じアクセス権が与えられます。
 
-Placing groups into other groups lets you create a user hierarchy. The users of a group placed in another group will have the access privileges of both groups. See "[An access hierarchy scheme](#an-access-hierarchy-scheme)" below.
+グループを別のグループ内に入れることにより、ユーザーの階層構造が作成されます。 別のグループの配下に入れられたグループのユーザーは、両グループのアクセス権を保持します。 後述の [アクセス権の階層構造](#アクセス権の階層構造) を参照してください。
 
-To remove a user or group from another group, you just need to deselect the corresponding option in the member attribution area.
+ユーザーやグループをグループから取り除くには、ユーザー/グループ一覧でチェックを解除します。
 
-### Assigning a group to a plug-in or to a server
+### プラグインやサーバーにグループを割り当てる
 
-You can assign a group privileges to any plug-ins installed in the database. This includes all the 4D plug-ins and any third-party plug-ins.
+データベースにインストールされたプラグインへのアクセス権をグループに割り当てることができます。 これには 4D のプラグインと任意のサードパーティープラグインが含まれます。
 
 Distributing access to the plug-ins lets you control the use of the licenses you possess for these plug-ins. Any users that do not belong to the access group of a plug-in cannot load this plug-in.
 
@@ -175,7 +175,7 @@ The “Plug-in” area on the Groups page of the tool box lists all the plug-ins
 The **4D Client Web Server** and **4D Client SOAP Server** items lets you control the possibility of Web and SOAP (Web Services) publication for each 4D in remote mode. These licenses are considered as plug-in licenses by 4D Server. Therefore, in the same way as for plug-ins, you can restrict the right to use these licenses to a specific group of users.
 
 
-### An access hierarchy scheme
+### アクセス権の階層構造
 
 The best way to ensure the security of your database and provide users with different levels of access is to use an access hierarchy scheme. Users can be assigned to appropriate groups and groups can be nested to create a hierarchy of access rights. This section discusses several approaches to such a scheme.
 
