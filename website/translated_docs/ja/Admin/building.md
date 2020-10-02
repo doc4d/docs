@@ -41,7 +41,7 @@ Building can only be carried out once the project is compiled. If you select thi
 
 アプリケーションビルドダイアログが初めて表示されるときにはデフォルトパラメーターが使用されます。 **ビルド** ボタンや **設定保存** ボタンをクリックすると、このプロジェクトファイルの内容が更新されます。 同じデータベースについて内容の異なる複数の XML ファイルを定義し、[BUILD APPLICATION](https://doc.4d.com/4Dv18/4D/18/BUILD-APPLICATION.301-4505371.ja.html) コマンドでそれらを使い分けることができます。
 
-また、XML キーを使用すれば、アプリケーションビルドダイアログには表示されない追加の設定をおこなうことができます。 詳細は専用のドキュメント [アプリケーションビルド設定ファイル](https://doc.4d.com/4Dv18/4D/18/4D-XML-Keys-BuildApplication.100-4670981.ja.html) を参照してください。
+また、XML キーを使用すれば、アプリケーションビルドダイアログには表示されない追加の設定をおこなうことができます。 The description of these keys are detailed in the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv18R4/4D/18-R4/4D-XML-Keys-BuildApplication.100-5068211.en.html) manual.
 
 ### ログファイル
 
@@ -338,22 +338,22 @@ Items must be installed:
     *   **Client application** - next to the *\<ApplicationName>Client* software package.
 
 
-### シングルユーザークライアントアプリケーションの埋め込み
+### Embedding a single-user client application
 
-4D ではクライアントアプリケーションにコンパイル済ストラクチャーを埋め込むことができます。 この機能を使用すると、たとえば、`.4dlink` ファイルを `OPEN DATABASE` コマンドで実行することで異なるサーバーアプリケーションにアクセスできるような "ポータル" アプリケーションをユーザーに提供することができます。
+4D allows you to embed a compiled structure in the Client application. This feature can be used, for example, to provide users with a "portal" application, that gives access to different server applications thanks to the `OPEN DATABASE` command executing a `.4dlink` file.
 
-この機能を有効化するためには、*buildApp* 設定ファイルに `DatabaseToEmbedInClientWinFolder` または `DatabaseToEmbedInClientMacFolder` キーを追加します。 いずれかのキーが存在する場合、アプリケーションビルドプロセスの途中で組み込みシングルユーザーアプリケーションが生成され、コンパイルされたストラクチャーが (EnginedServer.4Dlink ファイルの代わりに) "Database" フォルダー内に置かれます。
+To enable this feature, add the `DatabaseToEmbedInClientWinFolder` and/or `DatabaseToEmbedInClientMacFolder` keys in the *buildApp* settings file. When one of these keys is present, the client application building process generates a single-user application: the compiled structure, instead of the *EnginedServer.4Dlink* file, is placed in the "Database" folder.
 
-- シングルユーザーアプリケーション内にデフォルトの Data フォルダーがあれば、アプリケーションにはライセンスが埋め込まれます。
-- シングルユーザーアプリケーション内にデフォルトの Data フォルダーがなければ、データファイルおよびライセンスなしでアプリケーションが実行されます。
+- If a default data folder exists in the single-user application, a licence is embedded.
+- If no default data folder exists in the single-user application, it will be executed without data file and without licence.
 
-基本シナリオは以下の通りです:
+The basic scenario is:
 
-1. アプリケーションビルド ダイアログボックス内にて、"コンパイルされたストラクチャーをビルド" オプションを選択し、シングルユーザーモードで使用されるアプリケーションの .4DC または .4DZ ファイルを生成します。
-2. クライアント/サーバーアプリケーションの *buildApp.4DSettings* ファイル内で、コンパイルされたシングルユーザーアプリケーションを格納しているフォルダへのパスを以下の xml キーに指示します:
+1. In the Build application dialog box, select the "Build compiled structure" option to produce a .4DZ or .4DC for the application to be used in single-user mode.
+2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
     - `DatabaseToEmbedInClientWinFolder`
     - `DatabaseToEmbedInClientMacFolder`
-3. クライアント/サーバーアプリケーションをビルドします。 This will have following effects:
+3. Build the client-server application. This will have following effects:
     - the whole folder of the single user application is copied inside the "Database" folder of the merged client
     - the *EnginedServer.4Dlink* file of the "Database" folder is not generated
     - the .4DC, .4DZ, .4DIndy files of the single user application copy are renamed using the name of the merged client
@@ -361,6 +361,41 @@ Items must be installed:
     - if the single-user application does not have a "Default data" folder, the merged client will run with no data.
 
 Automatic update 4D Server features ([Current version](#current-version) number, `SET UPDATE FOLDER` command...) work with single-user application as with standard remote application. At connection, the single-user application compares its `CurrentVers` key to the 4D Server version range. If outside the range, the updated client application is downloaded from the server and the Updater launches the local update process.
+
+
+### Customizing client and/or server cache folder names
+
+Client and server cache folders are used to store shared elements such as resources or components. They are required to manage exchanges between server and remote clients. Client/server applications use default pathnames for both client and server system cache folders.
+
+In some specific cases, you might need to customize the names of these folders to implement specific architectures (see below). 4D provides you with the `ClientServerSystemFolderName` and `ServerStructureFolderName` keys to be set in the *buildApp* settings file.
+
+
+#### Client cache folder
+
+Customizing the client-side cache folder name can be useful when your client application is used to connect to several merged servers which are similar but use different data sets. In this case, to save multiple unnecessary downloads of identical local resources, you can use the same custom local cache folder.
+
+- Default configuration (*for each connection to a server, a specific cache folder is downloaded/updated*):
+
+![](assets/en/Admin/cachea.png)
+
+- Using the `ClientServerSystemFolderName` key (*a single cache folder is used for all servers*):
+
+![](assets/en/Admin/cacheb.png)
+
+
+#### Server cache folder
+
+Customizing the server-side cache folder name is useful when you run several identical server applications built with different 4D versions on the same computer. If you want each server to use its own set of resources, you need to customize the server cache folder.
+
+- Default configuration (*same server applications share the same cache folder*):
+
+![](assets/en/Admin/cacheServera.png)
+
+- Using the `ServerStructureFolderName` key (*a dedicated cache folder is used for each server application*):
+
+![](assets/en/Admin/cacheServerb.png)
+
+
 
 
 ## Plugins & components page
