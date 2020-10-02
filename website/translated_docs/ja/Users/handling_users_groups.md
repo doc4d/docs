@@ -7,8 +7,8 @@ title: 4Dユーザー＆グループの管理
 
 4Dは、ユーザーに対して標準的なアクセス権と特定の権限を与えます。 ユーザー＆グループシステムが起動されると、これらの標準的な権限が有効になります。
 
-最も強力なユーザーは **デザイナー (Designer)** です。 デザイナーは、データベースに関するあらゆる操作をおこなうことができます。 デザイナーは次のことができます:
-- 制限なく、すべてのデータベースサーバーにアクセスする。
+最も強力なユーザーは **デザイナー (Designer)** です。 No aspect of the application is closed to the Designer. デザイナーは次のことができます:
+- access all application servers without restriction,
 - ユーザーやグループを作成する。
 - グループにアクセス権を割り当てる。
 - デザインモードを使用する。 シングルユーザー環境では、常にデザイナーアクセス権が使用されます。 クライアント/サーバー環境にといては、デザイナーにパスワードを割り当てることで、4Dユーザーログインダイアログが表示されるようになります。  この環境では、デザインモードは読み取り専用です。
@@ -22,9 +22,9 @@ title: 4Dユーザー＆グループの管理
 
 管理者は次のことができません:
 - デザイナーユーザーを編集する。
-- データベースの保護された領域にアクセスする。 とくにデザインモードが制限されている場合には、管理者はアクセスすることができません。 管理者がデータベース内でアクセス権を得るには、1つ以上のグループに属さなければなりません。 管理者はすべての新規グループに含まれますが、任意のグループから管理者の名前を取り除くことができます。
+- by default, access to protected parts of the application. とくにデザインモードが制限されている場合には、管理者はアクセスすることができません。 The Administrator must be part of one or more groups to have access privileges in the application. 管理者はすべての新規グループに含まれますが、任意のグループから管理者の名前を取り除くことができます。
 
-デザイナーと管理者は、すべてのデータベースにおいてデフォルトで利用可能です。 [ユーザー管理のダイアログボックス](#ユーザーエディター)において、デザイナーと管理者のアイコンは、それぞれ赤色と緑色で表示されます:
+Both the Designer and Administrator are available by default in all applications. [ユーザー管理のダイアログボックス](#ユーザーエディター)において、デザイナーと管理者のアイコンは、それぞれ赤色と緑色で表示されます:
 
 - デザイナーアイコン: ![](assets/en/Users/IconDesigner.png)
 - 管理者アイコン: ![](assets/en/Users/IconAdmin.png)
@@ -57,11 +57,11 @@ title: 4Dユーザー＆グループの管理
 
 4D は新規ユーザーをリストに追加し、デフォルトとして "新規ユーザーX" という名前を設定します。
 
-3. 新しいユーザー名を入力します。 この名前は、ユーザーがデータベースを開く際に使用されます。 ユーザー名をいつでも変更することができます。変更するにはコンテキストメニューの **名称変更** コマンドを使用するか、Alt+クリック (Windows) または Option+クリック (macOS) ショートカットを使用、または変更したい名前を 2回クリックします。
+3. 新しいユーザー名を入力します。 This name will be used by the user to open the application. ユーザー名をいつでも変更することができます。変更するにはコンテキストメニューの **名称変更** コマンドを使用するか、Alt+クリック (Windows) または Option+クリック (macOS) ショートカットを使用、または変更したい名前を 2回クリックします。
 
 4. ユーザーのパスワードを設定するには、プロパティエリアで **編集...** ボタンをクリックして、ダイアログボックスの 2つのパスワード欄に同じパスワードをそれぞれ入力します。 パスワードには 15桁までの英数字を使用することができます。 パスワードでは文字の大小が区別されます。
 
-> データベース設定の "セキュリティ" ページで許可されていれば、ユーザーは自分のパスワードを変更できます。また、パスワードは `CHANGE PASSWORD` コマンドを使って変更することもできます。
+> Users can change their password at any time according to the options in the "Security" page of the structure settings, or using the `CHANGE PASSWORD` command.
 
 5. グループメンバー表を用いて、そのユーザーが所属するグループを設定します。 メンバーカラムの該当するオプションをチェックして、選択したユーザーをグループに対して追加・削除することができます。
 
@@ -77,7 +77,7 @@ title: 4Dユーザー＆グループの管理
 
 - **ユーザーの種類**: "デザイナー"、"管理者"、または (それ以外のすべてのユーザーの場合にあ) "ユーザー"
 
-- **開始メソッド**: ユーザーがデータベースを開いたときに自動実行されるメソッドの名称 (任意) このメソッドを使って、たとえばユーザー設定をロードできます。
+- **Startup Method**: Name of an associated method that will be automatically executed when the user opens the application (optional). このメソッドを使って、たとえばユーザー設定をロードできます。
 
 
 ## グループエディター
@@ -92,7 +92,7 @@ title: 4Dユーザー＆グループの管理
 
 グループを作成するには:
 
-1. **デザイン** メニューから **ツールボックス＞ユーザーグループ** を選択、または 4Dツールバーの **ツールボックス** ボタンをクリックし、**グループ** ページを開きます。 4D はグループエディターウインドウを表示します: グループリストには、データベースのすべてのグループが表示されます。
+1. **デザイン** メニューから **ツールボックス＞ユーザーグループ** を選択、または 4Dツールバーの **ツールボックス** ボタンをクリックし、**グループ** ページを開きます。 4D はグループエディターウインドウを表示します: The list of groups displays all the groups of the application project.
 
 2. グループリストの下にある追加ボタン ![](assets/en/Users/PlussNew.png) をクリックします。  
    または  
@@ -121,11 +121,11 @@ title: 4Dユーザー＆グループの管理
 
 ### プラグインやサーバーにグループを割り当てる
 
-データベースにインストールされたプラグインへのアクセス権をグループに割り当てることができます。 これには 4D のプラグインと任意のサードパーティープラグインが含まれます。
+You can assign a group privileges to any plug-ins installed in the project. これには 4D のプラグインと任意のサードパーティープラグインが含まれます。
 
 プラグインへのアクセス権を割り当てると、所有するプラグインライセンスの使用を管理できるようになります。 プラグインのアクセスグループに属さないユーザーは、そのプラグインをロードすることができません。
 
-また、プラグインアクセスエリアを使用して、4D Client Webサーバーと SOAPサーバーの使用を制限することも可能です。
+> Used licenses remain attached to 4D user accounts in the group for the whole 4D session.
 
 ツールボックスのグループページにある "プラグイン" エリアには、4Dアプリケーションによりロードされたプラグインがすべて表示されます。 プラグインへのアクセス権をグループに与えるには、該当するオプションをチェックします。
 
@@ -136,7 +136,7 @@ title: 4Dユーザー＆グループの管理
 
 ### アクセス権の階層構造
 
-The best way to ensure the security of your database and provide users with different levels of access is to use an access hierarchy scheme. Users can be assigned to appropriate groups and groups can be nested to create a hierarchy of access rights. This section discusses several approaches to such a scheme.
+The best way to ensure the security of your application and provide users with different levels of access is to use an access hierarchy scheme. Users can be assigned to appropriate groups and groups can be nested to create a hierarchy of access rights. This section discusses several approaches to such a scheme.
 
 In this example, a user is assigned to one of three groups depending on their level of responsibility. Users assigned to the Accounting group are responsible for data entry. Users assigned to the Finances group are responsible for maintaining the data, including updating records and deleting outdated records. Users assigned to the General Management group are responsible for analyzing the data, including performing searches and printing analytical reports.
 
