@@ -337,11 +337,9 @@ The figure below shows objects with no alignment, &quot;aligned left&quot;, &quo
 <h3><a class="anchor" aria-hidden="true" id="data-entry-order"></a><a href="#data-entry-order" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Data entry order</h3>
 <p>The data entry order is the order in which fields, subforms, and other active objects are selected as you hit the <strong>Tab</strong> or the <strong>Carriage return</strong> key in an input form. It is possible to move through the form in the opposite direction (reverse data entry order) by pressing the <strong>Shift+Tab</strong> or <strong>Shift+Carriage</strong> return keys.</p>
 <blockquote>
-<ul>
-<li>You can change the entry order at runtime using the <code>FORM SET ENTRY ORDER</code> and <code>FORM GET ENTRY ORDER</code> commands.</li>
-</ul>
+<p>You can change the entry order at runtime using the <code>FORM SET ENTRY ORDER</code> and <code>FORM GET ENTRY ORDER</code> commands.</p>
 </blockquote>
-<p>Every obeject that supports the focusable property is included in the data entry order by default.</p>
+<p>Every object that supports the focusable property is included in the data entry order by default.</p>
 <p>Setting the entry order for a JSON form is done with the <a href="/docs/alpha/en/FormEditor/jsonReference.html"><code>entryOrder</code></a> property.</p>
 <p>If you don’t specify a custom entry order, by default 4D uses the layering of the objects to determine the entry order in the direction “background towards foreground.” The standard entry order thus corresponds to the order in which the objects were created in the form.</p>
 <p>In some forms, a custom data entry order is needed. Below, for example, additional fields related to the address have been added after the creation of the form. The resulting standard entry order thus becomes illogical and forces the user to enter the information in an awkward manner:</p>
@@ -359,9 +357,7 @@ The figure below shows objects with no alignment, &quot;aligned left&quot;, &quo
 <li><p>When you are satisfied with the data entry order, click any unselected tool in the toolbar or choose <strong>Entry Order</strong> from the <strong>Form</strong> menu.<p>4D returns to normal operation of the Form editor.</p></li>
 </ol>
 <blockquote>
-<ul>
-<li>Only the entry order of the current page of the form is displayed. If the form contains enterable objects on page 0 or coming from an inherited form, the default entry order is as follows: Objects from page 0 of the inherited form &gt; Objects from page 1 of the inherited form &gt; Objects from page 0 of the open form &gt; Objects from the current page of the open form.</li>
-</ul>
+<p>Only the entry order of the current page of the form is displayed. If the form contains enterable objects on page 0 or coming from an inherited form, the default entry order is as follows: Objects from page 0 of the inherited form &gt; Objects from page 1 of the inherited form &gt; Objects from page 0 of the open form &gt; Objects from the current page of the open form.</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="using-a-data-entry-group"></a><a href="#using-a-data-entry-group" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using a data entry group</h4>
 <p>While you are changing the data entry order, you can select a group of objects in a form so that the standard data entry order applies to the objects within the group. This allows you to easily set the data entry order on forms in which fields are separated into groups or columns.</p>
