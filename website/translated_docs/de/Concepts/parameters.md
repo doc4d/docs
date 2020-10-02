@@ -17,9 +17,9 @@ ALERT("Hello")
 Parameter werden Methoden auf dieselbe Weise übergeben. Akzeptiert beispielsweise eine Projektmethode mit Namen DO_SOMETHING drei Parameter, könnte ein Aufruf der Methode wie folgt aussehen:
 
 ```4d
-DO SOMETHING(WithThis;AndThat;ThisWay)
+DO SOMETHING($WithThis;$AndThat;$ThisWay)
 ```
-Parameter werden durch Strichpunkte (;) voneinander getrennt. Ihr Wert wird im Moment des Aufrufs bewertet.
+Parameter werden durch Strichpunkte (;) voneinander getrennt. Ihr [Wert wird im Moment des Aufrufs bewertet](#values-or-references).
 
 In der Unterroutine (die aufgerufene Methode) wird der Wert jedes Parameters automatisch in fortlaufend nummerierte lokale Variablen kopiert: $1, $2, $3, usw. Die Nummerierung der lokalen Variablen zeigt die Reihenfolge der Parameter.
 
@@ -28,9 +28,9 @@ In der Unterroutine (die aufgerufene Methode) wird der Wert jedes Parameters aut
   //Assuming all parameters are of the text type
  C_TEXT($1;$2;$3)
  ALERT("I received "+$1+" and "+$2+" and also "+$3)
-  //$1 contains the WithThis parameter
-  //$2 contains the AndThat parameter
-  //$3 contains the ThisWay parameter
+  //$1 contains the $WithThis parameter
+  //$2 contains the $AndThat parameter
+  //$3 contains the $ThisWay parameter
 ```
 
 Innerhalb der Unterroutine können Sie die Parameter $1, $2... auf dieselbe Weise wie jede andere lokale Variable verwenden. Dagegen lassen sich bei Befehlen, die den Wert der als Parameter übergebenen Variablen verändern, wie z. B. `Find in field` die Parameter $1, $2, usw. nicht direkt verwenden. Sie müssen sie erst in standardmäßige lokale Variablen kopieren, wie z. B. `$myvar=$1`.
@@ -51,18 +51,14 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 Sie können jeden [Ausdruck](Concepts/quick-tour.md#expression-types) als Parameter verwenden, außer:
 
 - Tabellen
-- arrays
+- Arrays
 
 Tabellen oder Array Ausdrücke lassen sich nur [über einen Zeiger als Referenz übergeben](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
 
 
-## Funktionen
+## Zurückgegebener Wert
 
-Daten können von Methoden zurückgegeben werden. Eine Methode, die einen Wert zurückgibt, heißt Funktion.
-
-4D oder 4D Plug-In Befehle, die einen Wert zurückgeben, werden auch Funktionen genannt.
-
-Folgende Zeile ist beispielsweise eine Anweisung mit der integrierten Funktion `Length`, um die Länge eines String zurückzugeben. Die Anweisung setzt den von `Length` zurückgegebenen Wert in eine Variable mit Namen *MyLength*. Hier sehen Sie die Anweisung:
+Daten können von Methoden zurückgegeben werden. Folgende Zeile ist beispielsweise eine Anweisung mit dem integrierten Befehl `Length`, um die Länge eines String zurückzugeben. Die Anweisung setzt den von `Length` zurückgegebenen Wert in eine Variable mit Namen *MyLength*. Hier sehen Sie die Anweisung:
 
 ```4d
 MyLength:=Length("How did I get here?")
@@ -70,21 +66,21 @@ MyLength:=Length("How did I get here?")
 
 Jede Subroutine kann einen Wert zurückgeben. Der zurückzugebende Wert wird automatisch in die lokale Variable `$0` gesetzt.
 
-Zum Beispiel gibt die folgende Funktion mit Namen `Uppercase4` einen String zurück, der seine ersten vier Zeichen in Großbuchstaben gesetzt hat:
+Zum Beispiel gibt die folgende Methode mit Namen `Uppercase4` einen String zurück, der seine ersten vier Zeichen in Großbuchstaben gesetzt hat:
 
 ```4d
 $0:=Uppercase(Substring($1;1;4))+Substring($1;5)
 ```
 
-Hier ein Beispiel mit der Funktion Uppercase4:
+Hier ein Beispiel mit der Methode Uppercase4:
 
 ```4d
-NewPhrase:=Uppercase4("This is good.")
+$NewPhrase:=Uppercase4("This is good.")
 ```
 
 Die Variable *$NewPhrase* erhält “THIS is good.”
 
-Das Funktionsergebnis `$0` ist eine lokale Variable innerhalb der Unterroutine. Sie lässt sich als solche innerhalb der Unterroutine verwenden. For example, you can write:
+Der zurückgegebene Wert `$0` ist eine lokale Variable innerhalb der Unterroutine. Sie lässt sich als solche innerhalb der Unterroutine verwenden. For example, you can write:
 
 ```4d
 // Do_something
@@ -143,19 +139,21 @@ C_OBJECT($3)
 ```
 
 **Hinweis:** Für den kompilierten Modus können Sie alle Parameter von lokalen Variablen für Projektmethoden in einer spezifischen Methode gruppieren, deren Namen mit "Compiler" beginnt. In dieser Methode können Sie die Parameter für jede Methode vorab deklarieren, zum Beispiel:
-```4d
+```4d  
+ // Compiler_method
  C_REAL(OneMethodAmongOthers;$1) 
 ```
 Weitere Informationen dazu finden Sie auf der Seite [Interpretierter und komplierter Modus](Concepts/interpreted.md).
 
 Deklarieren der Parameter ist auch in folgenden Kontexten zwingend (sie unterstützen nicht die Deklaration in einer "Compiler" Methode):
 
-- Datenbankmethoden - Zum Beispiel erhält die `Datenbankmethode On Web Connection` sechs Parameter, $1 bis $6, vom Datentyp Text. Zu Beginn der Datenbankmethode müssen Sie schreiben (selbst wenn keiner der Parameter genutzt wird):
+- Datenbankmethoden - Zum Beispiel erhält die `Datenbankmethode On Web Connection` die sechs Parameter $1 bis $6 vom Datentyp Text. Zu Beginn der Datenbankmethode müssen Sie schreiben (selbst wenn keiner der Parameter genutzt wird):
 
 ```4d
 // On Web Connection
 C_TEXT($1;$2;$3;$4;$5;$6)
 ```
+
 
 - Trigger - Der Parameter $0 (Lange Ganzzahl), der das Ergebnis eines Trigger ist, wird vom Compiler typisiert, wenn der Parameter nicht explizit deklariert wurde. Wollen Sie ihn jedoch deklarieren, müssen Sie das direkt im Trigger tun.
 
@@ -172,140 +170,6 @@ C_TEXT($1;$2;$3;$4;$5;$6)
  End if
 ```
 
-## Werte oder Referenzen
-
-Übergeben Sie einen Parameter, bewertet 4D den Parameterausdruck immer im Kontext der aufrufenden Methode und setzt den **Ergebniswert** in die lokalen Variablen $1, $2... in der Unterroutine (siehe [Parameter verwenden](#using-parameters)). Die lokalen Variablen/Parameter sind nicht die aktuellen Felder, Variablen oder Ausdrücke, die von der aufrufenden Methode übergeben werden; sie enthalten nur die Werte, die übergeben wurden. Da ein Parameterwert nur lokal gültig ist, wird bei einer Änderung in der Unterroutine nicht der Wert in der aufrufenden Methode geändert. Beispiel:
-
-```4d
-    //Here is some code from the method MY_METHOD
-DO_SOMETHING([People]Name) //Let's say [People]Name value is "williams"
-ALERT([People]Name)
-
-    //Here is the code of the method DO_SOMETHING
- $1:=Uppercase($1)
- ALERT($1)
-```
-
-Die von `DO_SOMETHING` angezeigte Meldung liest "WILLIAMS", die von `MY_METHOD` angezeigte Meldung liest "williams". Die Methode hat lokal den Wert des Parameters $1 lokal geändert. Das beeinflusst aber nicht den Wert des Feldes `[People]Name`, der von der Methode `MY_METHOD` als Parameter übergeben wurde.
-
-Es gibt zwei Wege, damit die Methode `DO_SOMETHING` den Wert des Feldes verändert:
-
-1. Anstatt das Feld in der Methode zu übergeben, setzen Sie einen Zeiger auf das Feld. Sie schreiben folgendes:
-
-```4d
-  //Here is some code from the method MY_METHOD
- DO_SOMETHING(->[People]Name) //Let's say [People]Name value is "williams"
- ALERT([People]Last Name)
-
-  //Here the code of the method DO_SOMETHING
- $1->:=Uppercase($1->)
- ALERT($1->)
-```
-
-Hier ist der Parameter nicht das Feld, sondern ein Zeiger auf das Feld. Deshalb ist $1 in der Methode `DO SOMETHING` nicht mehr der Wert des Feldes, sondern ein Zeiger darauf. Das **referenzierte** Objekt durch $1(im Code oben $1->) ist das aktuelle Feld. Das bedeutet, dass eine Änderung des referenzierten Objekts über die Reichweite der Unterroutine hinausgeht und das aktuelle Feld beeinflusst. In diesem Beispiel lesen beide Meldungen "WILLIAMS".
-
-2. Anstatt die Methode `DO_SOMETHING` "etwas tun lassen", können Sie die Methode umschreiben, so dass sie einen Wert zurückgibt. Sie schreiben wie folgt:
-
-```4d
-    //Here is some code from the method MY METHOD
- [People]Name:=DO_SOMETHING([People]Name) //Let's say [People]Name value is "williams"
- ALERT([People]Name)
-
-    //Here the code of the method DO SOMETHING
- $0:=Uppercase($1)
- ALERT($0)
-```
-
-Dieser zweite Weg (durch eine Unterroutine einen Wert zurückgeben) wird "eine Funktion verwenden" genannt. Weitere Informationen dazu finden Sie im Abschnitt [Funktionen](#functions).
-
-
-### Sonderfälle: Objekte und Collections
-
-Sie müssen im Blick behalten, dass sich Daten vom Typ Objekt und Collection nur über eine Referenz verwalten lassen (z.B. ein interner *Zeiger*).
-
-Werden also solche Datentypen als Parameter verwendet, enthalten `$1, $2...` keine *Werte*, sondern *Referenzen*. Eine Änderung des Werts von Parameter `$1, $2...` in der Unterroutine wird überall, wo Quellobjekt oder Collection verwendet wird, weitergegeben. Das ist dasselbe Prinzip wie für [Zeiger](Concepts/dt_pointer.md#pointers-as-parameters-to-methods), außer dass die Parameter `$1, $2...` in der Unterroutine nicht dereferenziert werden müssen.
-
-Nehmen wir z. B. die Methode `CreatePerson`, die ein Objekt erstellt und es als Parameter sendet:
-
-```4d
-  //CreatePerson
- C_OBJECT($person)
- $person:=New object("Name";"Smith";"Age";40)
- ChangeAge($person)
- ALERT(String($person.Age))  
-```
-
-Die Methode `ChangeAge` fügt dem Attribut Age des empfangenen Objekts 10 hinzu
-
-```4d
-  //ChangeAge
- C_OBJECT($1)
- $1.Age:=$1.Age+10
- ALERT(String($1.Age))
-```
-
-Führen Sie die Methode `CreatePerson` aus, zeigen beide Meldungen "50", da beide Methoden dieselbe Objektreferenz verwalten.
-
-**4D Server:** Bei Parametern in Methoden, die nicht auf demselben Rechner ausgeführt werden (z. B. mit der Option "auf Server ausführen"), lassen sich Referenzen nicht verwenden. In solchen Fällen werden keine Referenzen, sondern Kopien der Objekt und Collection Parameter gesendet.
-
-
-## Parameter mit Namen
-
-Bei Objekten als Parameter können Sie auch **Parameter mit Namen** verwalten. Dieser Programmierstil ist einfach, flexibel und leicht lesbar.
-
-Wir verwenden zum Beispiel die Methode `CreatePerson`:
-
-```4d
-  //CreatePerson
- C_OBJECT($person)
- $person:=New object("Name";"Smith";"Age";40)
- ChangeAge($person)
- ALERT(String($person.Age))  
-```
-In der Methode `ChangeAge` schreiben Sie:
-
-```4d
-  //ChangeAge
- C_OBJECT($1;$para)
- $para:=$1  
- $para.Age:=$para.Age+10
- ALERT($para.Name+" is "+String($para.Age)+" years old.")
-```
-
-Das ist eine leistungsstarke Möglichkeit zum Definieren von [optionale Parameter](#optional-parameters) (siehe auch unten). Fehlende Parameter können Sie wie folgt verwalten:
-- Sie prüfen, ob alle erwarteten Parameter geliefert werden, durch Vergleichen mit dem Wert `Null`, oder
-- Sie setzen Parameterwerte vorab, oder
-- Sie verwenden sie als leere Werte.
-
-In der oberen Methode `ChangeAge` sind die beiden Eigenschaften Age und Name zwingend und würden Fehler produzieren, falls sie fehlen. Um das zu vermeiden, schreiben Sie einfach:
-
-```4d
-  //ChangeAge
- C_OBJECT($1;$para)
- $para:=$1  
- $para.Age:=Num($para.Age)+10
- ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
-```
-Dann sind beide Parameter optional; werden sie nicht gefüllt, ist das Ergebnis "is 10 years old" und es wird kein Fehler generiert.
-
-Letztendlich ist die Wartung und Umgestaltung von Anwendungen, die Parameter mit Namen verwenden, sehr einfach und sicher. Sie könnten beispielsweise später feststellen, dass 10 Jahre hinzufügen nicht immer geeignet ist. Sie benötigen einen anderen Parameter zum festsetzen, wieviel Jahre hinzugefügt werden sollen. Dazu schreiben Sie:
-
-```4d
-$person:=New object("Name";"Smith";"Age";40;"toAdd";10)
-ChangeAge($person)
-
-//ChangeAge
-C_OBJECT($1;$para)
-$para:=$1  
-If ($para.toAdd=Null)
-    $para.toAdd:=10
-End if
-$para.Age:=Num($para.Age)+$para.toAdd
-ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
-```
-Hier ist der Vorteil, dass sie Ihren vorhandenen Code nicht verändern müssen. Er wird immer wie in der vorigen Version funktionieren, aber bei Bedarf können Sie einen anderen Wert als 10 Jahre verwenden.
-
-Bei Variablen mit Namen kann jeder Parameter optional sein. Im oberen Beispiel sind alle Parameter optional und jeder kann gegeben sein, in beliebiger Reihenfolge.
 
 
 ## Optionale Parameter
@@ -411,3 +275,139 @@ Analog zu anderen lokalen Variablen müssen auch generische Parameter nicht zwin
 Dieser Befehl bedeutet, dass die Methode ab dem 4. Parameter (eingeschlossen) eine variable Anzahl an Parametern vom Typ Lange Ganzzahl empfangen kann. $1, $2 und $3 können einen beliebigen Datentyp haben. Nutzen Sie jedoch $2 per Indirektion, wird als Datentyp der generische Typ verwendet. Es wird also der Datentyp Lange Ganzzahl sein, auch wenn es für Sie z. B. der Datentyp Zahl war.
 
 **Hinweis:** Die Zahl in der Deklaration muss eine feste Größe und keine Variable sein.
+
+
+## Werte oder Referenzen
+
+Übergeben Sie einen Parameter, bewertet 4D den Parameterausdruck immer im Kontext der aufrufenden Methode und setzt den **Ergebniswert** in die lokalen Variablen $1, $2... in der Unterroutine (siehe [Parameter verwenden](#using-parameters)). Die lokalen Variablen/Parameter sind nicht die aktuellen Felder, Variablen oder Ausdrücke, die von der aufrufenden Methode übergeben werden; sie enthalten nur die Werte, die übergeben wurden. Da ein Parameterwert nur lokal gültig ist, wird bei einer Änderung in der Unterroutine nicht der Wert in der aufrufenden Methode geändert. Beispiel:
+
+```4d
+    //Here is some code from the method MY_METHOD
+DO_SOMETHING([People]Name) //Let's say [People]Name value is "williams"
+ALERT([People]Name)
+
+    //Here is the code of the method DO_SOMETHING
+ $1:=Uppercase($1)
+ ALERT($1)
+```
+
+Die von `DO_SOMETHING` angezeigte Meldung liest "WILLIAMS", die von `MY_METHOD` angezeigte Meldung liest "williams". Die Methode hat lokal den Wert des Parameters $1 lokal geändert. Das beeinflusst aber nicht den Wert des Feldes `[People]Name`, der von der Methode `MY_METHOD` als Parameter übergeben wurde.
+
+Es gibt zwei Wege, damit die Methode `DO_SOMETHING` den Wert des Feldes verändert:
+
+1. Anstatt das Feld in der Methode zu übergeben, setzen Sie einen Zeiger auf das Feld. Sie schreiben folgendes:
+
+```4d
+  //Here is some code from the method MY_METHOD
+ DO_SOMETHING(->[People]Name) //Let's say [People]Name value is "williams"
+ ALERT([People]Last Name)
+
+  //Here the code of the method DO_SOMETHING
+ $1->:=Uppercase($1->)
+ ALERT($1->)
+```
+
+Hier ist der Parameter nicht das Feld, sondern ein Zeiger auf das Feld. Deshalb ist $1 in der Methode `DO SOMETHING` nicht mehr der Wert des Feldes, sondern ein Zeiger darauf. Das **referenzierte** Objekt durch $1(im Code oben $1->) ist das aktuelle Feld. Das bedeutet, dass eine Änderung des referenzierten Objekts über die Reichweite der Unterroutine hinausgeht und das aktuelle Feld beeinflusst. In diesem Beispiel lesen beide Meldungen "WILLIAMS".
+
+2. Anstatt die Methode `DO_SOMETHING` "etwas tun lassen", können Sie die Methode umschreiben, so dass sie einen Wert zurückgibt. Sie schreiben wie folgt:
+
+```4d
+    //Here is some code from the method MY METHOD
+ [People]Name:=DO_SOMETHING([People]Name) //Let's say [People]Name value is "williams"
+ ALERT([People]Name)
+
+    //Here the code of the method DO SOMETHING
+ $0:=Uppercase($1)
+ ALERT($0)
+```
+
+Dieser zweite Weg (durch eine Unterroutine einen Wert zurückgeben) wird "eine Funktion verwenden" genannt. Weitere Informationen dazu finden Sie im Abschnitt [Funktionen](#functions).
+
+
+### Sonderfälle: Objekte und Collections
+
+Sie müssen im Blick behalten, dass sich Daten vom Typ Objekt und Collection nur über eine Referenz verwalten lassen (z.B. ein interner *Zeiger*).
+
+Werden also solche Datentypen als Parameter verwendet, enthalten `$1, $2...` keine *Werte*, sondern *Referenzen*. Eine Änderung des Werts von Parameter `$1, $2...` in der Unterroutine wird überall, wo Quellobjekt oder Collection verwendet wird, weitergegeben. Das ist dasselbe Prinzip wie für [Zeiger](Concepts/dt_pointer.md#pointers-as-parameters-to-methods), außer dass die Parameter `$1, $2...` in der Unterroutine nicht dereferenziert werden müssen.
+
+Nehmen wir z. B. die Methode `CreatePerson`, die ein Objekt erstellt und es als Parameter sendet:
+
+```4d
+  //CreatePerson
+ C_OBJECT($person)
+ $person:=New object("Name";"Smith";"Age";40)
+ ChangeAge($person)
+ ALERT(String($person.Age))  
+```
+
+Die Methode `ChangeAge` fügt dem Attribut Age des empfangenen Objekts 10 hinzu
+
+```4d
+  //ChangeAge
+ C_OBJECT($1)
+ $1.Age:=$1.Age+10
+ ALERT(String($1.Age))
+```
+
+Führen Sie die Methode `CreatePerson` aus, zeigen beide Meldungen "50", da beide Methoden dieselbe Objektreferenz verwalten.
+
+**4D Server:** Bei Parametern in Methoden, die nicht auf demselben Rechner ausgeführt werden (z. B. mit der Option "auf Server ausführen"), lassen sich Referenzen nicht verwenden. In solchen Fällen werden keine Referenzen, sondern Kopien der Objekt und Collection Parameter gesendet.
+
+
+### Objekte als benannte Parameter
+
+Bei Objekten als Parameter können Sie auch **Parameter mit Namen** verwalten. Dieser Programmierstil ist einfach, flexibel und leicht lesbar.
+
+Wir verwenden zum Beispiel die Methode `CreatePerson`:
+
+```4d
+  //CreatePerson
+ C_OBJECT($person)
+ $person:=New object("Name";"Smith";"Age";40)
+ ChangeAge($person)
+ ALERT(String($person.Age))  
+```
+In der Methode `ChangeAge` schreiben Sie:
+
+```4d
+  //ChangeAge
+ C_OBJECT($1;$para)
+ $para:=$1  
+ $para.Age:=$para.Age+10
+ ALERT($para.Name+" is "+String($para.Age)+" years old.")
+```
+
+Das ist eine leistungsstarke Möglichkeit zum Definieren von [optionale Parameter](#optional-parameters) (siehe auch unten). Fehlende Parameter können Sie wie folgt verwalten:
+- Sie prüfen, ob alle erwarteten Parameter geliefert werden, durch Vergleichen mit dem Wert `Null`, oder
+- Sie setzen Parameterwerte vorab, oder
+- Sie verwenden sie als leere Werte.
+
+In der oberen Methode `ChangeAge` sind die beiden Eigenschaften Age und Name zwingend und würden Fehler produzieren, falls sie fehlen. Um das zu vermeiden, schreiben Sie einfach:
+
+```4d
+  //ChangeAge
+ C_OBJECT($1;$para)
+ $para:=$1  
+ $para.Age:=Num($para.Age)+10
+ ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
+```
+Dann sind beide Parameter optional; werden sie nicht gefüllt, ist das Ergebnis "is 10 years old" und es wird kein Fehler generiert.
+
+Letztendlich ist die Wartung und Umgestaltung von Anwendungen, die Parameter mit Namen verwenden, sehr einfach und sicher. Sie könnten beispielsweise später feststellen, dass 10 Jahre hinzufügen nicht immer geeignet ist. Sie benötigen einen anderen Parameter zum festsetzen, wieviel Jahre hinzugefügt werden sollen. Dazu schreiben Sie:
+
+```4d
+$person:=New object("Name";"Smith";"Age";40;"toAdd";10)
+ChangeAge($person)
+
+//ChangeAge
+C_OBJECT($1;$para)
+$para:=$1  
+If ($para.toAdd=Null)
+    $para.toAdd:=10
+End if
+$para.Age:=Num($para.Age)+$para.toAdd
+ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
+```
+Hier ist der Vorteil, dass sie Ihren vorhandenen Code nicht verändern müssen. Er wird immer wie in der vorigen Version funktionieren, aber bei Bedarf können Sie einen anderen Wert als 10 Jahre verwenden.
+
+Bei Variablen mit Namen kann jeder Parameter optional sein. Im oberen Beispiel sind alle Parameter optional und jeder kann gegeben sein, in beliebiger Reihenfolge. 
