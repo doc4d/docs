@@ -7,9 +7,9 @@ title: Building a project package
 
 The application builder allows you to:
 
-*	Build a compiled database, without interpreted code,
+*	Build a compiled structure, without interpreted code,
 *	Build a stand-alone, double-clickable application, *i.e.*, merged with 4D Volume Desktop, the 4D database engine,
-*	Build different applications from the same compiled database via an XML project,
+*	Build different applications from the same compiled structure via an XML project,
 *	Build homogeneous client-server applications,
 *	Build client-server applications with automatic updating of client and server parts.
 *	Save your build settings for future use (*Save settings* button).
@@ -20,7 +20,7 @@ The application builder allows you to:
 
 Building a project package can be carried out using:
 
-- either the [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html) command, 
+- either the [BUILD APPLICATION](https://doc.4d.com/4Dv18R4/4D/18-R4/BUILD-APPLICATION.301-4982852.en.html) command, 
 - or the [Build Application window](#application-builder). 
 
 To display the Build Application dialog, select **Design** > **Build Application...** from the menu bar.
@@ -32,12 +32,12 @@ The Build Application dialog includes several pages that can be accessed using t
 ![](assets/en/Project/appbuilderProj.png)
 
 
-Building can only be carried out once the database is compiled. If you select this command without having previously compiled the database, or if the compiled code does not correspond to the interpreted code, a warning dialog box appears indicating that the database must be (re)compiled.
+Building can only be carried out once the project is compiled. If you select this command without having previously compiled the project, or if the compiled code does not correspond to the interpreted code, a warning dialog box appears indicating that the project must be (re)compiled.
 
 
 ### Build application settings
 
-Each build application parameter is stored as an XML key in the application project file named "buildApp.4DSettings" XML file, located in the Settings folder of the database.
+Each build application parameter is stored as an XML key in the application project file named "buildApp.4DSettings" XML file, located in the Settings folder of the project.
 
 Default parameters are used the first time the Build Application dialog box is used. The contents of the project file are updated, if necessary, when you click **Build** or **Save settings**. You can define several other XML settings file for the same project and employ them using the [BUILD APPLICATION](https://doc.4d.com/4Dv17R6/4D/17-R6/BUILD-APPLICATION.301-4311300.en.html) command.
 
@@ -45,11 +45,17 @@ XML keys provide additional options besides those displayed in the Build Applica
 
 ### Log file
 
-When an application is built, 4D generates a log file in the **Logs** folder. The log file stores the following information for each build:
+When an application is built, 4D generates a log file named *BuildApp.log.xml* in the **Logs** folder of the project. The log file stores the following information for each build:
+
 - The start and end of building of targets,
 - The name and full access path of the files generated,
 - The date and time of the build,
-- Any errors that occurred.
+- Any errors that occurred,
+- Any signing issues (e.g. a non-signed plug-in).
+
+Checking this file may help you saving time during the subsequent deployment steps, for example if you intend to notarize your application. 
+
+> Use the `Get 4D file(Build application log file)` command to get the log file location. 
 
 
 
@@ -72,27 +78,29 @@ This tab allows you to build a standard compiled structure file and/or a compile
 
 ### Build compiled structure
 
-Builds a database containing only compiled code. 
+Builds an application containing only compiled code. 
 
-This feature creates a *.4dz* file within a *Compiled Database* folder. If you have named your application “MyProject”, 4D will create: 
+This feature creates a *.4dz* file within a *Compiled Database/\<project name>* folder. For example, if you have named your application “MyProject”, 4D will create: 
 
-*\<destination\>/Compiled Database/\<database name>/\MyProject.4dz*
+*\<destination\>/Compiled Database/MyProject/MyProject.4dz*
 
-> A .4dz file is essentially a zipped (packed) version of the project folder. .4dz files can be used by 4D Server, 4D Volume license (merged applications), and 4D Developer. The compact and optimized size of .4dz files makes project packages easy to deploy.
+> A .4dz file is essentially a zipped (packed) version of the project folder. .4dz files can be used by 4D Server, 4D Volume license (merged applications), and 4D Developer (4D). The compact and optimized size of .4dz files makes project packages easy to deploy.
 
 
 #### Include related folders
 
-When you check this option, any folders related to the database are copied into the Build folder as *Components* and *Resources* folders. For more information about these folders, refer to [Database Architecture](https://livedoc.4d.com/4D-Design-Reference-18/Managing-4D-databases/Description-of-4D-files.300-4575698.en.html#100374).
+When you check this option, any folders related to the project are copied into the Build folder as *Components* and *Resources* folders. For more information about these folders, refer to the [description of project architecture](Project/architecture.md).
 
 
 ### Build component
 
 Builds a compiled component from the structure.
 	
-A component is a standard 4D project in which specific functionalities have been developed. Once the component has been configured and installed in another 4D database (the host database), its functionalities are accessible from the host database. For more information about components, refer to the Developing and installing 4D components" documentation. 
+A component is a standard 4D project in which specific functionalities have been developed. Once the component has been configured and installed in another 4D project (the host application project), its functionalities are accessible from the host project. 
 
-If you have named your application, *MyComponent*, 4D will create a Components folder containing *MyComponent.4dbase* folder: <p>*\<destination>/Components/name.4dbase/\<name>.4DZ*. 
+If you have named your application, *MyComponent*, 4D will create a *Components* folder containing *MyComponent.4dbase* folder:
+
+*\<destination>/Components/MyComponent.4dbase/MyComponent.4DZ*. 
 
 The *MyComponent.4dbase* folder contains:
 -	*MyComponent.4DZ* file
@@ -107,7 +115,7 @@ This tab allows you can build a stand-alone, single-user version of your applica
 
 ### Build stand-alone Application
 
-Checking the **Build stand-alone Application** option and clicking **Build** will create a stand-alone (double-clickable) application directly from your database project. 
+Checking the **Build stand-alone Application** option and clicking **Build** will create a stand-alone (double-clickable) application directly from your application project. 
 
 The following elements are required for the build:
 - 4D Volume Desktop (the 4D database engine),
@@ -154,16 +162,16 @@ If you have specified "MyProject" as the name of the application, you will find 
 *	*Windows*
 	*	MyProject.exe  - Your executable and a MyProject.rsr (the application resources)
 	*	4D Extensions folder, Resources folder, various libraries (DLL), Native Components folder, SASL Plugins folder - Files necessary for the operation of the application
-	*	Database folder  - Includes a Resources folder and  MyProject.4DZ file. They make up the compiled structure of the database as well as the database Resources folder. 
+	*	Database folder  - Includes a Resources folder and  MyProject.4DZ file. They make up the compiled structure of the project as well as the project Resources folder. 
 **Note**: This folder also contains the *Default Data* folder, if it has been defined (see [Data file management in final applications](#data-file-management-in-final-applicatons).
-	*	(Optional) Components folder and/or Plugins folder - Contains any components and/or plug-in files included in the database. For more information about this, refer to the [Plugins and components](#plugins-and-components) section.
+	*	(Optional) Components folder and/or Plugins folder - Contains any components and/or plug-in files included in the project. For more information about this, refer to the [Plugins and components](#plugins-and-components) section.
 	*	Licenses folder - An XML file of license numbers integrated into the application. For more information about this, refer to the [Licenses & Certificate](#licenses-and-certificate) section.	
 	*	Additional items added to the 4D Volume Desktop folder, if any (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)).
 	
 	All these items must be kept in the same folder in order for the executable to operate.
 
 *	*macOS*
-	-	A software package named MyProject.app containing your application and all the items necessary for its operation, including the plug-ins, components and licenses. For more information about integrating plug-ins and components, refer to the [Plugins and components](#plugins-and-components) section. For more information about integrating licenses, refer to the [Licenses & Certificate](#licenses-and-certificate) section. **Note**: In macOS, the [Application file](https://doc.4d.com/4Dv17R6/4D/17-R6/Application-file.301-4311297.en.html) command of the 4D language returns the pathname of the ApplicationName file (located in the Contents:macOS folder of the software package) and not that of the .comp file (Contents:Resources folder of the software package). 
+	-	A software package named MyProject.app containing your application and all the items necessary for its operation, including the plug-ins, components and licenses. For more information about integrating plug-ins and components, refer to the [Plugins and components](#plugins-and-components) section. For more information about integrating licenses, refer to the [Licenses & Certificate](#licenses-and-certificate) section. **Note**: In macOS, the [Application file](https://doc.4d.com/4Dv18R4/4D/18-R4/Application-file.301-4982855.en.html) command of the 4D language returns the pathname of the ApplicationName file (located in the Contents:macOS folder of the software package) and not that of the .comp file (Contents:Resources folder of the software package). 
 
 
 #### Customizing 4D Volume Desktop folder
@@ -181,7 +189,7 @@ When building a stand-alone application, 4D copies the contents of the 4D Volume
 
 If your stand-alone application is used as a Web server, the files and folders required by the server must be installed in specific locations. These items are the following:
 
-*	*cert.pem* and *key.pem* files (optional): These files are used for SSL connections and by data encryption commands,
+*	*cert.pem* and *key.pem* files (optional): These files are used for TLS connections and by data encryption commands,
 *	default Web root folder.
 
 Items must be installed:  
@@ -203,7 +211,7 @@ On this tab, you can build customized client-server applications that are homoge
 
 A client/server application comes from the combination of three items:
 
-- A compiled 4D database,
+- A compiled 4D project,
 - The 4D Server application,
 - The 4D Volume Desktop application (macOS and/or Windows).
 
@@ -211,8 +219,8 @@ Once built, a client/server application is composed of two customized parts: the
 
 Also, the client/server application is customized and its handling simplified:
 
-- To launch the server portion, the user simply double-clicks on the server application. The database does not need to be selected.
-- To launch the client portion, the user simply double-clicks the client application, which connects directly to the server application. You do not need to choose a database in a connection dialog box. The client targets the server either using its name, when the client and server are on the same sub-network, or using its IP address, which is set using the `IPAddress` XML key in the buildapp.4DSettings file. If the connection fails, [specific alternative mechanisms can be implemented](#management-of-client-connections). You can "force" the display of the standard connection dialog box by holding down the **Option** (macOS) or **Alt** (Windows) key while launching the client application. 
+- To launch the server portion, the user simply double-clicks on the server application. The project file does not need to be selected.
+- To launch the client portion, the user simply double-clicks the client application, which connects directly to the server application. You do not need to choose a server in a connection dialog box. The client targets the server either using its name, when the client and server are on the same sub-network, or using its IP address, which is set using the `IPAddress` XML key in the buildapp.4DSettings file. If the connection fails, [specific alternative mechanisms can be implemented](#management-of-client-connections). You can "force" the display of the standard connection dialog box by holding down the **Option** (macOS) or **Alt** (Windows) key while launching the client application. 
 Only the client portion can connect to the corresponding server portion. If a user tries to connect to the server portion using a standard 4D application, an error message is returned and connection is impossible.
 - A client/server application can be set so that the client portion [can be updated automatically over the network](#copy-of-client-applications-in-the-server-application).
 - It is also possible to automate the update of the server part through the use of a sequence of language commands ([SET UPDATE FOLDER](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-UPDATE-FOLDER.301-4311308.en.html) and [RESTART 4D](https://doc.4d.com/4Dv17R6/4D/17-R6/RESTART-4D.301-4311311.en.html)).
@@ -287,7 +295,7 @@ In some cases, you may want to prevent client applications from being able to ca
 
 To force the update, simply exclude the current version number of client applications (X-1 and earlier) in the version number range compatible with the server application. In this case, the update mechanism will not allow non-updated client applications to connect. For example, if the new version of the client-server application is 6, you can stipulate that any client application with a version number lower than 6 will not be allowed to connect. 
 
-The [current version number](build-server-application) is set on the Client/Server page of the Build Application dialog box. The intervals of authorized numbers are set in the application project using specific [XML keys](#build-application-settings).
+The [current version number](#current_version) is set on the Client/Server page of the Build Application dialog box. The intervals of authorized numbers are set in the application project using specific [XML keys](#build-application-settings).
 
 
 #### Update Error  
@@ -317,13 +325,6 @@ The contents of these folders vary depending on the current platform:
 
 If you checked the “Allow automatic update of client application” option, an additional subfolder called *Upgrade4DClient* is added in the *\<ApplicationName>Server* folder/package. This subfolder contains the client application in macOS and/or Windows format as a compressed file. This file is used during the automatic client application update.
 
-#### Customizing 4D Volume Desktop folder  
-
-When building a double-clickable application, 4D copies the contents of the 4D Volume Desktop folder into the Final Application subfolder of the destination folder. You are then able to customize the contents of the original 4D Volume Desktop folder according to your needs. You can, for instance:
-
-- Install a 4D Volume Desktop version corresponding to a specific language;
-- Add a custom PlugIns folder;
-- Customize the contents of the Resources folder.
 
 #### Location of Web files  
 
@@ -342,7 +343,29 @@ Items must be installed:
 	*	**Client application** - next to the *\<ApplicationName>Client* software package.
 
 
+### Embedding a single-user client application
 
+4D allows you to embed a compiled structure in the Client application. This feature can be used, for example, to provide users with a "portal" application, that gives access to different server applications thanks to the `OPEN DATABASE` command executing a `.4dlink` file.
+
+To enable this feature, add the `DatabaseToEmbedInClientWinFolder` and/or `DatabaseToEmbedInClientMacFolder` keys in the *buildApp* settings file. When one of these keys is present, the client application building process generates a single-user application: the compiled structure, instead of the *EnginedServer.4Dlink* file, is placed in the "Database" folder. 
+
+- If a default data folder exists in the single-user application, a licence is embedded.
+- If no default data folder exists in the single-user application, it will be executed without data file and without licence.
+
+The basic scenario is:
+
+1. In the Build application dialog box, select the "Build compiled structure" option to produce a .4DZ or .4DC for the application to be used in single-user mode.
+2. In the *buildApp.4DSettings* file of the client-server application, use following xml key(s) to indicate the path to the folder containing the compiled single user application:
+	- `DatabaseToEmbedInClientWinFolder` 
+	- `DatabaseToEmbedInClientMacFolder` 
+3. Build the client-server application. This will have following effects:
+	- the whole folder of the single user application is copied inside the "Database" folder of the merged client 
+	- the *EnginedServer.4Dlink* file of the "Database" folder is not generated
+	- the .4DC, .4DZ, .4DIndy files of the single user application copy are renamed using the name of the merged client
+	- the `PublishName` key is not copied in the *info.plist* of the merged client
+	- if the single-user application does not have a "Default data" folder, the merged client will run with no data.
+
+Automatic update 4D Server features ([Current version](#current-version) number, `SET UPDATE FOLDER` command...) work with single-user application as with standard remote application. At connection, the single-user application compares its `CurrentVers` key to the 4D Server version range. If outside the range, the updated client application is downloaded from the server and the Updater launches the local update process.
 
 
 ## Plugins & components page
@@ -379,8 +402,7 @@ The Licences & Certificate page can be used to:
 *	designate the license number(s) that you want to integrate into your single-user stand-alone application
 *	sign the application by means of a certificate in macOS.
 
-
-![](assets/en/Project/buildapplicenseProj.png)
+![](assets/en/Admin/buildappCertif.png)
 
 ### Licenses
 
@@ -414,7 +436,7 @@ The application builder can sign merged 4D applications under macOS (single-user
 
 - Check the **Sign application** option to include certification in the application builder procedure for OS X. 4D will check the availability of elements required for certification when the build occurs: 
 
-![](assets/en/Project/buildapposxcertProj.png)
+![](assets/en/Admin/buildapposxcertProj.png)
 
 This option is displayed under both Windows and macOS, but it is only taken into account for macOS versions.
 
@@ -425,6 +447,13 @@ This option is displayed under both Windows and macOS, but it is only taken into
 To obtain a developer certificate from Apple, Inc., you can use the commands of the Keychain Access menu or go here: [http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html](http://developer.apple.com/library/mac/#documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html).
 
 >This certificate requires the presence of the Apple codesign utility, which is provided by default and usually located in the “/usr/bin/” folder. If an error occurs, make sure that this utility is present on your disk.
+
+* **Generate self-signed certificate** - runs the "Certificate Assistant" that allows you to generate a self-signed certificate. If you do not have an Apple developer certificate, you need to provide a self-signed certificate. With this certificate, no alert message is displayed if the application is deployed internally. If the application is deployed externally (i.e. through http or email), at launch macOS displays an alert message that the application's developer is unidentified. The user can "force" the opening of the application. <p>In the "Certificate Assistant", be sure to select the appropriate options:
+![](assets/en/Admin/Cert1.png)
+![](assets/en/Admin/Cert2.png)
+
+> 4D recommends to subscribe to the Apple Developer Program to get access to Developer Certificates that are necessary to notarize applications (see below). 
+
 
 
 #### About Gatekeeper  
@@ -535,7 +564,7 @@ More specifically, the following cases are covered:
 
 To define and use a default data file:
 
-- You provide a default data file (named "Default.4DD") and store it in a default folder (named "Default Data") inside the database project folder. This file must be provided along with all other necessary files, depending on the database configuration: index (.4DIndx), external Blobs, journal, etc. It is your responsibility to provide a valid default data file. Note however that since a default data file is opened in read-only mode, it is recommended to uncheck the "Use Log File" option in the original structure file before creating the data file.
+- You provide a default data file (named "Default.4DD") and store it in a default folder (named "Default Data") inside the application project folder. This file must be provided along with all other necessary files, depending on the project configuration: index (.4DIndx), external Blobs, journal, etc. It is your responsibility to provide a valid default data file. Note however that since a default data file is opened in read-only mode, it is recommended to uncheck the "Use Log File" option in the original structure file before creating the data file.
 - When the application is built, the default data folder is integrated into the merged application. All files within this default data folder are also embedded.
 
 The following graphic illustrates this feature:

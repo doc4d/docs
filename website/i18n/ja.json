@@ -5,6 +5,15 @@
     "previous": "前へ",
     "tagline": " 4D 開発リファレンス",
     "docs": {
+      "Admin/building": {
+        "title": "プロジェクトパッケージのビルド"
+      },
+      "Admin/licenses": {
+        "title": "4D ライセンスの管理"
+      },
+      "API/cryptoClass": {
+        "title": "CryptoKey クラス"
+      },
       "Backup/backup": {
         "title": "Backup"
       },
@@ -490,7 +499,7 @@
         "title": "4D Write Pro エリア"
       },
       "GettingStarted/installation": {
-        "title": "インストールとアクティベーション"
+        "title": "インストール"
       },
       "Menus/bars": {
         "title": "Menu bar features"
@@ -547,14 +556,32 @@
         "title": "Verify Page",
         "sidebar_label": "Verify Page"
       },
-      "Project/architecture": {
-        "title": "4D プロジェクトのアーキテクチャー"
+      "ORDA/dsmapping": {
+        "title": "データモデルオブジェクト"
       },
-      "Project/building": {
-        "title": "プロジェクトパッケージのビルド"
+      "ORDA/entities": {
+        "title": "データ操作"
+      },
+      "ORDA/glossary": {
+        "title": "用語集"
+      },
+      "ORDA/ordaClasses": {
+        "title": "データモデルクラス"
+      },
+      "ORDA/overview": {
+        "title": "概要"
+      },
+      "ORDA/quickTour": {
+        "title": "A Quick Tour in ORDA"
+      },
+      "ORDA/datastores": {
+        "title": "リモートデータストアの利用"
+      },
+      "Project/architecture": {
+        "title": "プロジェクトのアーキテクチャー"
       },
       "Project/creating": {
-        "title": "4D プロジェクトの作成"
+        "title": "プロジェクトの作成・開始"
       },
       "Project/developing": {
         "title": "プロジェクトの開発"
@@ -564,9 +591,6 @@
       },
       "Project/overview": {
         "title": "概要"
-      },
-      "Project/pictures": {
-        "title": "ピクチャー"
       },
       "REST/{dataClass}": {
         "title": "{dataClass}"
@@ -646,6 +670,9 @@
       "REST/authUsers": {
         "title": "Users and sessions"
       },
+      "REST/classFunctions": {
+        "title": "Calling ORDA class functions"
+      },
       "REST/configuration": {
         "title": "Server Configuration"
       },
@@ -678,8 +705,16 @@
     },
     "categories": {
       "Getting Started": "はじめに",
+      "Project Management": "プロジェクト管理",
       "4D Language Concepts": "ランゲージのコンセプト",
-      "Project Databases": "プロジェクトデータベース",
+      "ORDA": "ORDA",
+      "Class API Reference": "クラス API リファレンス",
+      "Access Rights": "アクセス権限",
+      "Administration": "データベース管理",
+      "MSC": "MSC",
+      "Backup and Restore": "Backup and Restore",
+      "Web Server": "Web Server",
+      "REST Server": "REST Server",
       "Forms": "Forms",
       "Form Properties": "Form Properties",
       "Form Objects": "フォームオブジェクト",
@@ -694,9 +729,12 @@
     }
   },
   "pages-strings": {
-    "Installation and activation|in index page Getting started": "インストールとアクティベーション",
+    "Installation|in index page Getting started": "インストール",
+    "Starting 4D|in index page Getting started": "4D を始める",
     "Language Concepts|in index page Getting started": "ランゲージのコンセプト",
-    "Project databases|in index page Getting started": "プロジェクトデータベース",
+    "Project Management|in index page Getting started": "プロジェクト管理",
+    "Object Relational Data Access (ORDA)|in index page Getting started": "ORDA",
+    "Class API Reference|no description given": "クラス API リファレンス",
     "Forms|no description given": "Forms",
     "Form Properties|no description given": "Form Properties",
     "Form Events|no description given": "Form Events",
@@ -707,13 +745,16 @@
     "REST Server|no description given": "REST Server",
     "Maintenance and Security Center|no description given": "Maintenance ＆ Security Center",
     "Backup and Restore|no description given": "Backup and Restore",
+    "License Management|no description given": "ライセンス管理",
+    "Build Application|no description given": "アプリケーションビルド",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
-    "Users and Groups|no description given": "ユーザー＆グループ",
+    "Access Rights|no description given": "アクセス権限",
     "Getting started|no description given": "はじめに",
-    "Developing a Desktop application|no description given": "デスクトップアプリの開発",
-    "Developing a Web application|no description given": "Web アプリの開発",
-    "Developing a Mobile application|no description given": "モバイルアプリの開発",
+    "Core Development|no description given": "コア開発",
     "Administration|no description given": "データベース管理",
+    "Web applications|no description given": "Web アプリ",
+    "Mobile applications|no description given": "モバイルアプリ",
+    "Desktop applications|no description given": "デスクトップアプリ",
     "Help Translate|recruit community translators for your project": "翻訳を手伝う",
     "Edit this Doc|recruitment message asking to edit the doc source": "編集",
     "Translate this Doc|recruitment message asking to translate the docs": "翻訳"

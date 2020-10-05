@@ -198,4 +198,5 @@ A shallow copy only duplicates the structure of elements, and keeps the same int
 
 ## Stamp
 
+
 Used in "optimistic" locking technology. All entities have an internal counter, the stamp, which is incremented each time the entity is saved. By automatically comparing stamps between an entity being saved and its version stored on disk, 4D can prevent concurrent modifications on the same entities.
