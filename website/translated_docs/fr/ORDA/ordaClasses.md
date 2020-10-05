@@ -44,6 +44,7 @@ ORDA fournit des **classes génériques** exposées via le [class store](Concept
 
 Toutes les classes de modèle de données ORDA sont exposées en tant que propriétés du class store **`cs`**. Les classes ORDA suivantes sont disponibles :
 
+
 | Classe                      | Nom de l'exemple     | Instanciée par                                                                                                                                                                                                                                                                                                                                                                    |
 | --------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | cs.DataStore                | cs.DataStore         | Commande `ds`                                                                                                                                                                                                                                                                                                                                                                     |
@@ -254,6 +255,7 @@ Lors de la création ou de la modification de classes de modèles de données, v
 
 
 ## Prise en charge dans les projets 4D
+
 
 
 ### Fichiers de classe (class files)
