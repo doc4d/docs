@@ -103,7 +103,7 @@ For example, you create a new instance of an object of myClass using the `cs.myC
 
 ## Handling user classes
 
-### Class files
+### Fichiers de classe (class files)
 
 A user class in 4D is defined by a specific method file (.4dm), stored in the `/Project/Sources/Classes/` folder. The name of the file is the class name.
 
