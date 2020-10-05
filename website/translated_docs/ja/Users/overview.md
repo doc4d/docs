@@ -36,14 +36,14 @@ title: 概要
 
 ## プロジェクトアーキテクチャーにおけるユーザー＆グループ
 
-In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and client-server environments. However, access control is only effective with 4D Server. The following table lists the main users and groups features and their availability:
+In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and client-server environments. However, access control is only effective with 4D Server. 次の表は、主なユーザーとグループの機能と、それらが利用かどうかを一覧に示します:
 
 |                                                               | 4D (single-user)             | 4D Server |
 | ------------------------------------------------------------- | ---------------------------- | --------- |
-| Adding/editing users and groups                               | yes                          | yes       |
-| Assigning user/group access to servers                        | yes                          | yes       |
-| User identification                                           | no (all users are Designer)  | yes       |
-| Access control once the Designer has been assigned a password | no (all access are Designer) | yes       |
+| ユーザーとグループの追加/編集                                               | ◯                            | ◯         |
+| ユーザー/グループにサーバーアクセスを割り振る                                       | ◯                            | ◯         |
+| ユーザー認証                                                        | no (all users are Designer)  | ◯         |
+| Access control once the Designer has been assigned a password | no (all access are Designer) | ◯         |
 
 
 
