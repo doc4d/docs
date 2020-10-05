@@ -699,8 +699,8 @@
       }
     },
     "links": {
-      "v18 R4 BETA": "v18 R4 BETA",
-      "v18 R3": "v18 R3",
+      "v18 R5 BETA": "v18 R5 BETA",
+      "v18 R4": "v18 R4",
       "v18": "v18"
     },
     "categories": {
@@ -720,12 +720,7 @@
       "Form Objects": "フォームオブジェクト",
       "Form Object Properties": "フォームオブジェクトプロパティ",
       "Form Events": "Form Events",
-      "Menus": "Menus",
-      "MSC": "MSC",
-      "Backup and Restore": "Backup and Restore",
-      "Users and Groups": "ユーザー＆グループ",
-      "Web Server": "Web Server",
-      "REST Server": "REST Server"
+      "Menus": "Menus"
     }
   },
   "pages-strings": {
