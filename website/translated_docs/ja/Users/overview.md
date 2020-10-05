@@ -66,7 +66,7 @@ Users, groups, as well as their access rights are stored in a specific project f
 このフォルダーは次の場所に保存することができます:
 
 - in the user settings folder, i.e. in the "Settings" folder at the same level as the "Project" folder. These settings are used by default for the application.
-- in the data settings folder,  i.e. in the "Settings" folder in the "Data" folder. If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. This feature allows you to define custom/local Users and Groups configurations. The custom configuration will left untouched by an application upgrade.
+- データ設定フォルダー (つまり "Data" フォルダーの中の "Settings" フォルダー) 内。 If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. この機能により、カスタム/ローカルなユーザー＆グループ設定を定義することができます。 The custom configuration will left untouched by an application upgrade.
 
 > If users and groups management is not active, the **directory.json** is not created.
 
