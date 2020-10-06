@@ -349,9 +349,9 @@ local Function getYoungest
 
 #### 年齢の計算
 
-Given an entity with a *birthDate* attribute, we want to define an `age()` function that would be called in a list box. This function can be executed on the client, which avoids triggering a request to the server for each line of the list box.
+*birthDate* (生年月日) 属性を持つエンティティがある場合に、リストボックス内で呼び出すための `age()` 関数を定義します。 この関数をクライアントサイドで実行することで、リストボックスの各行がサーバーへのリクエストを生成するのを防ぎます。
 
-On the *StudentsEntity* class:
+*StudentsEntity* クラス:
 
 ```4d
 Class extends Entity
@@ -365,9 +365,9 @@ Else
 End if
 ```
 
-#### Checking attributes
+#### 属性のチェック
 
-We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server to save them.
+クライアントにロードされ、ユーザーによって更新されたエンティティの属性について、サーバーへ保存リクエストを出すまえに、それらの一貫性を検査します。
 
 On the *StudentsEntity* class, the local `checkData()` function checks the Student's age:
 
