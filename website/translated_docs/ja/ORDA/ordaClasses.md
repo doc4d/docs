@@ -276,11 +276,11 @@ End if
 exposed Function <functionName>   
 ```
 
-> The `exposed` keyword can only be used with Data model class functions. If used with a [regular user class](Concepts/classes.md) function, it is ignored and an error is returned by the compiler.
+> `exposed` キーワードは、データモデルクラス関数に対してのみ利用可能です。 [通常のユーザークラス](Concepts/classes.md) 関数に対して使った場合、キーワードは無視され、コンパイラーはエラーを返します。
 
 ### 例題
 
-You want an exposed function to use a private function in a dataclass class:
+公開された関数によって、DataClass クラスのプライベート関数を呼び出します:
 
 ```4d
 Class extends DataClass
@@ -330,7 +330,7 @@ local Function <functionName>
 
 With this keyword, the function will always be executed on the client side.
 
-> The `local` keyword can only be used with data model class functions. If used with a [regular user class](Concepts/classes.md) function, it is ignored and an error is returned by the compiler.
+> The `local` keyword can only be used with data model class functions. [通常のユーザークラス](Concepts/classes.md) 関数に対して使った場合、キーワードは無視され、コンパイラーはエラーを返します。
 
 Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. For example, consider the following function on the Students dataclass class:
 
