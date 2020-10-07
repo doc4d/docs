@@ -10,7 +10,7 @@ sidebar_label: 情報ページ
 
 このページにはアプリケーションならびにアクティブな 4Dフォルダーの名前、バージョンおよび場所を表示します (アクティブ4Dフォルダーについては *4Dランゲージリファレンス* の `Get 4D folder` コマンドを参照ください)。
 
-The central part of the window indicates the name and location of the project and data files as well as the log file (if any). The lower part of the window indicates the name of the 4D license holder, the type of license, and the name of the current 4D user.
+ウィンドウの中央部は、プロジェクトならびにデータファイルとログファイル (あれば) の名前および場所を表示します。 ウィンドウの下部は、4Dライセンスフォルダーの名前、ライセンスのタイプ、および、カレント 4Dユーザーの名前を表示します。
 
 - **パス名の表示と選択**: **プログラム** タブでは、ディスク上の一連の親フォルダーを表示するポップアップメニューの形でパス名が示されます:  
   ![](assets/en/MSC/MSC_popup.png) メニュー項目 (ディスクまたはフォルダー) を選択した場合、そのパスが新しいシステムウィンドウで開かれます。 **パスをコピー** コマンドは、システムのディレクトリ区切り文字を使用して、完全なパス名をクリップボードにテキストとしてコピーします。
@@ -31,8 +31,8 @@ The central part of the window indicates the name and location of the project an
 - **レコード**: テーブル内の総レコード数。 レコードが破損していたり読み込めなかった場合には、数字の代わりに *Error* が表示されます。 この場合、検証と修復ツールの使用を検討してください。
 - **フィールド**: テーブル内のフィールド数。 非表示のフィールドはカウントされますが、削除されたフィールドはカウントされません。
 - **インデックス**: テーブル内のあらゆるインデックスの数
-- **Encryptable**: If checked, the **Encryptable** attribute is selected for the table at the structure level (see "Encryptable" paragraph in the Design Reference Manual).
-- **暗号化済み**: チェックされていれば、テーブルのレコードはデータファイルにおいて暗号化されています。 ***Note**: Any inconstency between Encryptable and Encrypted options requires that you check the encryption status of the data file in the Encrypt page of the MSC.*
+- **暗号化可能**: チェックされていれば、ストラクチャーレベルにおいてこのテーブルは **暗号化可能** 属性が選択されています (デザインリファレンスマニュアルの [暗号化可能](https://doc.4d.com/4Dv18/4D/18/Table-properties.300-4575566.ja.html#4168557) の項目を参照ください)。
+- **暗号化済み**: チェックされていれば、テーブルのレコードはデータファイルにおいて暗号化されています。 ***注**: 暗号化可能と暗号化済みオプション間において整合性が取れていない場合、必ず MSC の 暗号化 ページにてデータファイルの暗号化状態を確認してください。*
 - **アドレステーブルサイズ**: 各テーブルのアドレステーブルのサイズ。 アドレステーブルとは、テーブル内で作成される各レコードにつき 1つの要素を保存する内部テーブルのことです。 これはレコードとその物理アドレスをつなげる働きをします。 パフォーマンス上の理由から、レコードが削除されてもリサイズはされず、そのためそのサイズはテーブル内のカレントレコード数とは異なる場合があります。 この差異が著しく大きい場合、"アドレステーブルを圧縮" オプションをチェックした状態でデータ圧縮を実行することで、アドレステーブルサイズを最適化することができます ([圧縮](compact.md) ページを参照してください)。 ***注**: アドレステーブルサイズとレコード数の差異は、キャッシュフラッシュの途中での事象によるものである可能性もあります。*
 
 
