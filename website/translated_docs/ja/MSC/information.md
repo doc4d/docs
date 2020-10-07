@@ -32,21 +32,21 @@ The central part of the window indicates the name and location of the project an
 - **フィールド**: テーブル内のフィールド数。 非表示のフィールドはカウントされますが、削除されたフィールドはカウントされません。
 - **インデックス**: テーブル内のあらゆるインデックスの数
 - **Encryptable**: If checked, the **Encryptable** attribute is selected for the table at the structure level (see "Encryptable" paragraph in the Design Reference Manual).
-- **Encrypted**: If checked, the records of the table are encrypted in the data file. ***Note**: Any inconstency between Encryptable and Encrypted options requires that you check the encryption status of the data file in the Encrypt page of the MSC.*
-- **Address Table Size**: Size of the address table for each table. The address table is an internal table which stores one element per record created in the table. It actually links records to their physical address. For performance reasons, it is not resized when records are deleted, thus its size can be different from the current number of records in the table. If this difference is significant, a data compacting operation with the "Compact address table" option checked can be executed to optimize the address table size (see [Compact](compact.md) page). ***Note:** Differences between address table size and record number can also result from an incident during the cache flush.*
+- **暗号化済み**: チェックされていれば、テーブルのレコードはデータファイルにおいて暗号化されています。 ***Note**: Any inconstency between Encryptable and Encrypted options requires that you check the encryption status of the data file in the Encrypt page of the MSC.*
+- **アドレステーブルサイズ**: 各テーブルのアドレステーブルのサイズ。 アドレステーブルとは、テーブル内で作成される各レコードにつき 1つの要素を保存する内部テーブルのことです。 これはレコードとその物理アドレスをつなげる働きをします。 パフォーマンス上の理由から、レコードが削除されてもリサイズはされず、そのためそのサイズはテーブル内のカレントレコード数とは異なる場合があります。 この差異が著しく大きい場合、"アドレステーブルを圧縮" オプションをチェックした状態でデータ圧縮を実行することで、アドレステーブルサイズを最適化することができます ([圧縮](compact.md) ページを参照してください)。 ***注**: アドレステーブルサイズとレコード数の差異は、キャッシュフラッシュの途中での事象によるものである可能性もあります。*
 
 
 
-## Data
+## データ
 
-The **Data** page provides information about the available and used storage space in the data file.
-> This page cannot be accessed in maintenance mode
+**データ** ページには、データファイルの空き/使用済み容量の情報が表示されます。
+> このページには、メンテナンスモードではアクセスできません。
 
-The information is provided in graph form:
+この情報はグラフ形式で提供されます:
 
 ![](assets/en/MSC/MSC_Data.png)
-> This page does not take into account any data that may be stored outside of the data file (see "External storage").
+> このページに表示される情報には、データファイル外に格納されたデータは反映されません ([データをデータファイル外に保存](https://doc.4d.com/4Dv18/4D/18/External-data-storage.300-4575564.ja.html) 参照)。
 
-Files that are too fragmented reduce disk, and thus, database performance. If the occupation rate is too low, 4D will indicate this by a warning icon (which is displayed on the Information button and on the tab of the corresponding file type) and specify that compacting is necessary:![](assets/en/MSC/MSC_infowarn.png)
+断片化があまりにも進んだファイルはディスク、そしてデータベースのパフォーマンスを低下させます。 If the occupation rate is too low, 4D will indicate this by a warning icon (which is displayed on the Information button and on the tab of the corresponding file type) and specify that compacting is necessary:![](assets/en/MSC/MSC_infowarn.png)
 
 A warning icon is also displayed on the button of the [Compact](compact.md) page: ![](assets/en/MSC/MSC_compactwarn.png)
