@@ -13,26 +13,26 @@ sidebar_label: ログ解析ページ
 
 この情報を使用して各操作のソースとコンテキストを識別できます:
 
-- **Operation**: Sequence number of operation in the log file.
-- **Action**: Type of operation performed on the data. This column can contain one of the following operations:
-    - Opening of Data File: Opening of a data file.
-    - Closing of Data File: Closing of an open data file.
-    - Creation of a Context: Creation of a process that specifies an execution context.
-    - Closing of a Context: Closing of process.
-    - Addition: Creation and storage of a record.
-    - Adding a BLOB: Storage of a BLOB in a BLOB field.
-    - Deletion: Deletion of a record.
-    - Modification: Modification of a record.
-    - Start of Transaction: Transaction started.
-    - Validation of Transaction: Transaction validated.
-    - Cancellation of Transaction: Transaction cancelled.
+- **操作**: ログファイル中での一連の操作番号
+- **アクション**: データに対しておこなわれた操作のタイプ。 この列には以下の操作のいずれかが記録されます:
+    - データファイルを開く: データファイルを開いた
+    - データファイルを閉じる: 開いたデータファイルを閉じた
+    - コンテキストの作成する: 実行コンテキストを指定するプロセスを作成した
+    - コンテキストを閉じる: プロセスを閉じた
+    - 追加: レコードを作成、格納した
+    - BLOB を追加: BLOBフィールドに BLOB を格納した
+    - 削除: レコードを削除した
+    - 更新: レコードを更新した
+    - トランザクションの開始: トランザクションを開始した
+    - トランザクションの受け入れ: トランザクションを受け入れた
+    - トランザクションのキャンセル: トランザクションをキャンセルした
     - Update context: Change in extra data (e.g. a call to `CHANGE CURRENT USER` or `SET USER ALIAS`).
 
-- **Table**: Table to which the added/deleted/modified record or BLOB belongs.
-- **Primary Key/BLOB**: contents of the primary key for each record (when the primary key consists of several fields, the values are separated by semi-colons) or sequence number of the BLOB involved in the operation.
-- **Process**: Internal number of process in which the operation was carried out. This internal number corresponds to the context of the operation.
-- **Size**: Size (in bytes) of data processed by the operation.
-- **Date and Hour**: Date and hour when the operation was performed.
+- **テーブル**: 追加/削除/更新されたレコードまたは BLOB の所属テーブル
+- **プライマリーキー/BLOB**: 各レコードのプライマリーキーのコンテンツ (プライマリーキーが複数のフィールドから構成されているときには、値はセミコロンで区切られています)、またはオペレーションに関連した BLOB のシーケンス番号
+- **プロセス**: 処理が実行された内部プロセス番号。 この内部番号は処理のコンテキストに対応します。
+- **サイズ**: 操作により処理されたデータのサイズ (バイト単位)
+- **日付と時刻**: 処理が実行された日付と時刻
 - **System User**: System name of the user that performed the operation. In client-server mode, the name of the client-side machine is displayed; in single-user mode, the session name of the user is displayed.
 - **4D User**: 4D user name of the user that performed the operation. If an alias is defined for the user, the alias is displayed instead of the 4D user name.
 - **Values**: Values of fields for the record in the case of addition or modification. The values are separated by “;”. Only values represented in alphanumeric form are displayed.  
