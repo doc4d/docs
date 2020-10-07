@@ -29,26 +29,26 @@ Regardless of the verification requested, 4D generates a log file in the `Logs` 
 When you click on the **Open log file** button, 4D displays the most recent log file in the default browser of the machine.
 
 
-## Details
+## 詳細
 
-The **Table list** button displays a detailed page that can be used to view and select the actual records and indexes to be checked:
+**テーブルリスト** ボタンは、検査するレコードおよびインデックスを選択するために使用する詳細ページを表示します:
 
 ![](assets/en/MSC/MSC_Verify.png)
 
 
-Specifying the items to be verified lets you save time during the verification procedure.
+検査する項目を指定することにより、検査処理にかかる時間を短縮できます。
 
-The main list displays all the tables of the database. For each table, you can limit the verification to the records and/or indexes. Expand the contents of a table or the indexed fields and select/deselect the checkboxes as desired. By default, everything is selected. You can also use the **Select all**, **Deselect all**, **All records** and **All indexes** shortcut buttons.
+リストには、データベースの全テーブルが表示されます。 各テーブルに対して、検査対象をレコードやインデックスに限定できます。 三角形のアイコンをクリックしてテーブルまたはインデックス付フィールドの内容を展開し、要求に応じてチェックボックスにチェックを入れたり解除したりします。 デフォルトでは、すべての項目にチェックが入っています。 **すべて選択**、**すべての選択をはずす**、**すべてのレコード** および **すべてのインデックス** のショートカットボタンも使用できます。
 
-For each row of the table, the "Action" column indicates the operations to be carried out. When the table is expanded, the "Records" and "Indexed fields" rows indicate the number of items concerned.
+テーブルの各行に対して、"アクション" カラムは実行する操作を表示します。 テーブルが展開されると、"レコード" および "インデックスフィールド" の行は関連する項目の数を表示します。
 
-The "Status" column displays the verification status of each item using symbols:
+"ステータス" カラムは、記号を使用して各項目の検証ステータスを表示します:
 
-| ![](assets/en/MSC/MSC_OK.png)  | Verification carried out with no problem       |
-| ------------------------------ | ---------------------------------------------- |
-| ![](assets/en/MSC/MSC_KO2.png) | Verification carried out, problems encountered |
-| ![](assets/en/MSC/MSC_KO3.png) | Verification partially carried out             |
-| ![](assets/en/MSC/MSC_KO.png)  | Verification not carried out                   |
+| ![](assets/en/MSC/MSC_OK.png)  | 検査の結果、問題はなかった                      |
+| ------------------------------ | ---------------------------------- |
+| ![](assets/en/MSC/MSC_KO2.png) | 検査の結果、問題が見つかった                     |
+| ![](assets/en/MSC/MSC_KO3.png) | Verification partially carried out |
+| ![](assets/en/MSC/MSC_KO.png)  | Verification not carried out       |
 
 Click on **Verify** to begin the verification or on **Standard** to go back to the standard page.
 
