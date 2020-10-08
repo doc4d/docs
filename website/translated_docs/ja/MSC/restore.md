@@ -1,7 +1,7 @@
 ---
 id: restore
-title: Restore Page
-sidebar_label: Restore Page
+title: 復元ページ
+sidebar_label: 復元ページ
 ---
 
 ## Restoring a backup
