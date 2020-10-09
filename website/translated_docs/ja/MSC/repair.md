@@ -35,7 +35,7 @@ sidebar_label: 修復ページ
 
 > If you have deselected the **Records definitively deleted** option in the properties of a table in the structure, performing a recovery by header markers may cause records that were previously deleted to reappear. 
 > 
-> Recovery by headers does not take integrity constraints into account. More specifically, after this operation you may get duplicated values with unique fields or NULL values with fields declared **Never Null**.
+> ヘッダーによる再生において、整合性の制約は考慮されません。 More specifically, after this operation you may get duplicated values with unique fields or NULL values with fields declared **Never Null**.
 
 When you click on **Scan and repair...**, 4D performs a complete scan of the data file. When the scan is complete, the results appear in the following window:
 
