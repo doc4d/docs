@@ -10,11 +10,11 @@ sidebar_label: 暗号化ページ
 > 暗号化は [メンテナンスモード](overview.md#メンテナンスモードでの表示) でのみ利用可能です。 If you attempt to carry out this operation in standard mode, a warning dialog will inform you that the application will be closed and restarted in maintenance mode
 
 **警告:**
-- Encrypting a data file is a lengthy operation. It displays a progress indicator (which could be interrupted by the user). Note also that an application encryption operation always includes a compacting step.
-- Each encryption operation produces a copy of the data file, which increases the size of the application folder. It is important to take this into account (especially in macOS where 4D applications appear as packages) so that the size of the application does not increase excessively. Manually moving or removing the copies of the original file inside the package can be useful in order to minimize the package size.
+- Encrypting a data file is a lengthy operation. 実行中は (ユーザーによって割り込み可能な) 進捗インジケーターが表示されます。 Note also that an application encryption operation always includes a compacting step.
+- 暗号化操作をおこなうたびに、その操作はデータファイルのコピーを作成し、その結果アプリケーションファイルのサイズは増大します。 アプリケーションのサイズが過剰に増加しな いよう、これを考慮することが大切です (とくに、4Dアプリケーションがパッケージとして表示される macOS の場合)。 パッケージのサイズを小さく保つには、パッケージ内オリジナルファイルのコピーを手動で削除/移動することも役立ちます。
 
-## Encrypting data for the first time
-Encrypting your data for the first time using the MSC requires the following steps:
+## データを初めて暗号化する場合
+MSC でデータファイルを初めて暗号化する場合、以下のような手順を踏む必要があります:
 
 1. In the Structure editor, check the **Encryptable** attribute for each table whose data you want to encrypt. See the "Table properties" section.
 2. Open the Encrypt page of the MSC. If you open the page without setting any tables as **Encryptable**, the following message is displayed in the page: ![](assets/en/MSC/MSC_encrypt1.png) Otherwise, the following message is displayed: ![](assets/en/MSC/MSC_encrypt2.png)<p> This means that the **Encryptable** status for at least one table has been modified and the data file still has not been encrypted. **Note: **The same message is displayed when the **Encryptable** status has been modified in an already encrypted data file or after the data file has been decrypted (see below).
