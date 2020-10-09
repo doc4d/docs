@@ -46,8 +46,8 @@ sidebar_label: 修復ページ
 
 - 左のリストには、データファイルスキャンの情報が表示されます。 各行には、データファイル中の再生可能なレコードのグループが表示されます:
     - **順番** の列には、レコードグループの再生順が表示されます。
-    - The **Count** column indicates the number of the records in the table.
-    - The **Destination table** column indicates the names of tables that were automatically assigned to the groups of identified records. The names of tables assigned automatically appear in green. Groups that were not assigned, i.e. tables that could not be associated with any records appear in red.
+    - **カウント** 列には、グループに含まれるレコード数が表示されます。
+    - **割当先テーブル** 列には、識別されたレコードのグループに割り当てられたテーブルの名前が表示されます。 割り当てられたテーブルの名前は自動で緑色で表示されます。 Groups that were not assigned, i.e. tables that could not be associated with any records appear in red.
     - The **Recover** column lets you indicate, for each group, whether you want to recover the records. By default, this option is checked for every group with records that can be associated with a table.
 
 - The second table lists the tables of the project file.
