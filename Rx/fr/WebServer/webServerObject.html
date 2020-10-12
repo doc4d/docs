@@ -79,7 +79,7 @@
 <blockquote>
 <p>Les <a href="https://doc.4d.com/4Dv18/4D/18/Web-Server.201-4504301.en.html">commandes WEB</a> héritées du langage 4D sont prises en charge mais ne peuvent pas sélectionner le serveur Web auquel elles s'appliquent (voir ci-dessous).</p>
 </blockquote>
-<p>Chaque serveur web (application hôte ou composant) peut être utilisé dans son propre contexte, notamment :</p>
+<p>Each web server (host application or component) can be used in its own separate context, including:</p>
 <ul>
 <li>les appels vers la méthode base <code>On Web Authentication</code> et <code>On Web Connection</code></li>
 <li>le traitement des balises 4D et les appels de méthodes,</li>
@@ -165,7 +165,7 @@ webServer.<span class="hljs-function">start</span>(<span class="hljs-variable">$
 <tr><td>maxRequestSize</td><td>number</td><td>Taille maximale (en octets) des requêtes HTTP entrantes (POST) que le serveur Web est autorisé à traiter. Passer la valeur maximale (2147483648) signifie qu'en pratique, aucune limite n'est définie. Cette limite est utilisée pour éviter la saturation du serveur Web en raison de requêtes entrantes trop volumineuses. Si une requête atteint cette limite, le serveur Web la rejette. <p><p>Valeurs possibles : 500000 - 2147483648</td></tr>
 <tr><td>maxSessions</td><td>number</td><td>Nombre maximum de sessions simultanées. Lorsque vous atteignez la limite, la session la plus ancienne est fermée (et la méthode base <code>On Web Close Process</code> est appelée) si le serveur Web doit en créer une nouvelle. Le nombre de sessions simultanées ne peut pas dépasser le nombre total de processus Web (propriété <code>maxConcurrentProcesses</code>, 100 par défaut)</td></tr>
 <tr><td>minTLSVersion</td><td>number</td><td>Version TLS minimale acceptée pour les connexions. Les tentatives de connexion de clients prenant en charge uniquement les versions inférieures au minimum seront rejetées. <p><p>Valeurs possibles :<li>1 = <code>TLSv1_0</code></li><li>2 = <code>TLSv1_1</code></li><li>3 = <code>TLSv1_2</code> (par défaut)</li><p><p>En cas de modification, le serveur doit être redémarré pour utiliser la nouvelle valeur.</td></tr>
-<tr><td><em>name</em></td><td>Texte</td><td>Nom de l'application du serveur Web</td></tr>
+<tr><td><em>name</em></td><td>Texte</td><td>Name of the web server application</td></tr>
 <tr><td><em>openSSLVersion</em></td><td>Texte</td><td>Version de la bibliothèque OpenSSL utilisée</td></tr>
 <tr><td><em>perfectForwardSecrecy</em></td><td>boolean</td><td>Disponibilité PFS sur le serveur</td></tr>
 <tr><td>rootFolder</td><td>Texte</td><td>Chemin du dossier racine du serveur Web. Format POSIX du chemin d'accès complet à l'aide de filesystem. Peut être passé comme objet <code>Folder</code> dans le paramètre <code>settings</code>.</td></tr>
