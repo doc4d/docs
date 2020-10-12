@@ -14,7 +14,7 @@ Vous aurez souvent besoin de fournir des valeurs à vos méthodes. Vous pouvez f
 ALERT("Bonjour")
 ```
 
-Les paramètres sont passés de la même manière aux méthodes. Par exemple, si la méthode DO SOMETHING accepte trois paramètres, l'appel à cette méthode pourrait être de la forme suivante :
+Les paramètres sont passés de la même manière aux méthodes. Par exemple, si la méthode FAIRE QUELQUE CHOSE accepte trois paramètres, l'appel à cette méthode pourrait être de la forme suivante :
 
 ```4d
 FAIRE QUELQUE CHOSE($WithThis;$AndThat;$ThisWay)
@@ -51,7 +51,7 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 Vous pouvez utiliser n'importe quelle [expression](Concepts/quick-tour.md#expression-types) comme paramètre, à l'exception des :
 
 - tables
-- tableaux
+- arrays
 
 Les expressions de tables ou de tableaux peuvent être passées uniquement [comme une référence utilisant un pointeur](Concepts/dt_pointer.md#pointers-as-parameters-to-methods).
 
