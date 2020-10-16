@@ -86,11 +86,11 @@ When an application is encrypted (see above), the Encrypt page provides several 
 - when the application is encrypted for the first time,
 - when the application is re-encrypted with a new passphrase.
 
-Successive encryption keys can be stored on the same device.
+連続した暗号化キーを同じデバイスに保存することが可能です。
 
 ## ログファイル
 After an encryption operation has been completed, 4D generates a file in the Logs folder of the application. It is created in XML format and named "*ApplicationName_Encrypt_Log_yyyy-mm-dd hh-mm-ss.xml*" or "*ApplicationName_Decrypt_Log_yyyy-mm-dd hh-mm-ss.xml*".
 
-An Open log file button is displayed on the MSC page each time a new log file has been generated.
+新しくログファイルが生成されるたび、MSCページに **ログファイルを開く** ボタンが表示されます。
 
 The log file lists all internal operations executed pertaining to the encryption/decryption process, as well as errors (if any).
