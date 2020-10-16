@@ -238,9 +238,9 @@ Vous pouvez également définir cette propriété à l'aide de la commande `LIST
 
 #### Grammaire JSON
 
-| Nom            | Type de données | Valeurs possibles                               |
-| -------------- | --------------- | ----------------------------------------------- |
-| rowStyleSource | string          | Style expression to evaluate for each row/cell. |
+| Nom            | Type de données | Valeurs possibles                                        |
+| -------------- | --------------- | -------------------------------------------------------- |
+| rowStyleSource | string          | Expression de style à évaluer pour chaque ligne/cellule. |
 
 #### Objets pris en charge
 
@@ -254,7 +254,7 @@ Vous pouvez également définir cette propriété à l'aide de la commande `LIST
 ---
 ## Alignement horizontal
 
-Horizontal location of text within the area that contains it.
+Emplacement horizontal du texte dans la zone où il apparait.
 
 #### Grammaire JSON
 
@@ -270,13 +270,13 @@ Horizontal location of text within the area that contains it.
 ---
 ## Alignement vertical
 
-Vertical location of text within the area that contains it.
+Emplacement vertical du texte dans la zone où il apparait.
 
-The **Default** option (`automatic` JSON value) sets the alignment according to the type of data found in each column:
-- `bottom` for all data (except pictures) and
-- `top` for picture type data.
+L'option **Default** (valeur JSON `automatique`) définit l'alignement en fonction du type de données identifiées dans chaque colonne :
+- `bas` pour toutes les données (sauf les images) et
+- `haut` pour les données de type image.
 
-This property can also be handled by the [OBJECT Get vertical alignment](https://doc.4d.com/4Dv18/4D/18/OBJECT-Get-vertical-alignment.301-4505442.en.html) and [OBJECT SET VERTICAL ALIGNMENT](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-VERTICAL-ALIGNMENT.301-4505430.en.html) commands.
+Cette propriété peut également être gérée par les commandes [OBJECT Get vertical alignment](https://doc.4d.com/4Dv18/4D/18/OBJECT-Get-vertical-alignment.301-4505442.en.html) et [OBJECT SET VERTICAL ALIGNMENT](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-VERTICAL-ALIGNMENT.301-4505430.en.html).
 
 
 #### Grammaire JSON
@@ -287,7 +287,7 @@ This property can also be handled by the [OBJECT Get vertical alignment](https:/
 
 #### Objets pris en charge
 
-[List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers)
+[List Box](listbox_overview.md) - [Colonne List Box](listbox_overview.md#list-box-columns) - [Pied List Box](listbox_overview.md#list-box-footers) - [En-tête List Box](listbox_overview.md#list-box-headers)
 
 
 
@@ -299,9 +299,9 @@ This property can also be handled by the [OBJECT Get vertical alignment](https:/
 
 ---
 ## Meta Info expression
-`Collection or entity selection type list boxes`
+`List box de type collection ou entity selection (sélection d'entité)`
 
-Specifies an expression or a variable which will be evaluated for each row displayed. It allows defining a whole set of row text attributes. You must pass an **object variable** or an **expression that returns an object**. The following properties are supported:
+Indique une expression ou une variable qui sera évaluée pour chaque ligne affichée. Elle permet de définir un ensemble d'attributs texte des lignes. You must pass an **object variable** or an **expression that returns an object**. The following properties are supported:
 
 | Nom de propriété    | Type    | Description                                                                                                                                                                                                                                                                                                                                                                |
 | ------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
