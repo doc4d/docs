@@ -102,7 +102,7 @@ Trois thèmes de polices sont disponibles :
 
 ![](assets/en/FormObjects/FontThemes.png)
 
-> Les thèmes de polices gèrent la police ainsi que sa taille et sa couleur. You can apply custom style properties (Bold, Italic or Underline) without altering its functioning.
+> Les thèmes de polices gèrent la police ainsi que sa taille et sa couleur. Vous pouvez appliquer des propriétés de style personnalisées (Gras, Italique ou Souligné) sans modifier son fonctionnement.
 
 
 
@@ -264,7 +264,7 @@ Emplacement horizontal du texte dans la zone où il apparait.
 
 #### Objets pris en charge
 
-[Group Box](groupBox.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Header](listbox_overview.md#list-box-headers) - [List Box Footer](listbox_overview.md#list-box-footers) - [Text Area](text.md)
+[Group Box](groupBox.md) - [List Box](listbox_overview.md#overview) - [Colonne List Box](listbox_overview.md#list-box-columns) - [En-tête List Box](listbox_overview.md#list-box-headers) - [Pied List Box](listbox_overview.md#list-box-footers) - [Zone de texte](text.md)
 
 
 ---
@@ -312,13 +312,13 @@ Indique une expression ou une variable qui sera évaluée pour chaque ligne affi
 | textDecoration      | string  | "normal","underline"                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | unselectable        | boolean | Désigne la ligne correspondante comme n'étant pas sélectionnable (c'est-à-dire que le surlignage n'est pas possible). Les zones saisissables ne sont plus saisissables si cette option est activée, à moins que l'option «Single-click Edit » ne soit également activée. Les contrôles tels que les cases à cocher et les listes restent fonctionnels. This setting is ignored if the list box selection mode is "None". Valeurs par défaut : False. |
 | disabled            | boolean | Désactive la ligne correspondante. Les zones saisissables ne sont plus saisissables si cette option est activée. Le texte et les contrôles (cases à cocher, listes, etc.) sont grisés. Valeurs par défaut : False.                                                                                                                                                                                                                                   |
-| cell.\<columnName> | object  | Permet d'appliquer la propriété à une seule colonne. Pass in \<columnName> the object name of the list box column. **Note**: "unselectable" and "disabled" properties can only be defined at row level. They are ignored if passed in the "cell" object                                                                                                                                                                                             |
+| cell.\<columnName> | object  | Permet d'appliquer la propriété à une seule colonne. Passez dans \<columnName> le nom d'objet de la colonne de list box. **Note** : les propriétés "unselectable" et "disabled" ne peuvent être définies qu'au niveau de la ligne. Elles sont ignorées si elles sont passées dans l'objet "cell"                                                                                                                                                    |
 
-> Style settings made with this property are ignored if other style settings are already defined through expressions (*i.e.*, [Style Expression](#style-expression), [Font Color Expression](#font-color-expression), [Background Color Expression](#background-color-expression)).
+> Les paramètres de style définis avec cette propriété sont ignorés si d'autres paramètres de style sont déjà définis via des expressions (par exemple, [Style Expression](#style-expression), [Font Color Expression](#font-color-expression), [Background Color Expression](#background-color-expression)).
 
-The following example uses the *Color* project method.
+L'exemple suivant utilise la méthode projet *Color*.
 
-In the form method, write the following code:
+Dans la méthode formulaire, écrivez le code suivant :
 
 ```4d
 //méthode formulaire
@@ -329,13 +329,13 @@ End case
 ```
 
 
-In the *Color* method, write the following code:
+Dans la méthode *Color*, entrez le code suivant :
 
 ```4d
-//Color method
-//Sets font color for certain rows and the background color for a specific column:
+//Méthode Color
+//Définit la couleur de police pour certaines lignes et la couleur de fond pour une colonne spécifique :
 C_OBJECT($0)
-If(This.ID>5) //ID is an attribute of collection objects/entities
+If(This.ID>5) //ID est un attribut d'objets/entités d'une collection
   Form.meta.stroke:="purple"
   Form.meta.cell:=New object("Column2";New object("fill";"black"))
 Else
@@ -343,7 +343,7 @@ Else
 End if
 $0:=Form.meta
 ```
-> See also the [This](https://doc.4d.com/4Dv17R6/4D/17-R6/This.301-4310806.en.html) command.
+> Voir également la commande [This](https://doc.4d.com/4Dv17R6/4D/17-R6/This.301-4310806.en.html).
 
 
 
