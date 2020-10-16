@@ -74,23 +74,23 @@ When an application is encrypted (see above), the Encrypt page provides several 
 1. **全データを復号化** をクリックします。
 2. カレントのデータ暗号化キーを入力します ([カレントの暗号化キーを入力する](#カレントの暗号化キーを入力する) 参照)。
 
-The data file is fully decrypted and a confirmation message is displayed: ![](assets/en/MSC/MSC_encrypt10.png)
-> Once the data file is decrypted, the encryption status of tables do not match their Encryptable attributes. To restore a matching status, you must deselect all **Encryptable** attributes at the database structure level.
+データは完全に復号化され、確認メッセージが表示されます: ![](assets/en/MSC/MSC_encrypt10.png)
+> データファイルが復号化されると、テーブルの暗号化ステータスは暗号化可能属性と合致しなくなります。 ステータスを合致させるためには、データベースのストラクチャーレベルにおいてすべての **暗号化可能** 属性を選択解除しなければなりません。
 
 ## 暗号化キーを保存する
 
-4D allows you to save the data encryption key in a dedicated file. Storing this file on an external device such a USB key will facilitate the use of an encrypted application, since the user would only need to connect the device to provide the key before opening the application in order to access encrypted data.
+4D ではデータ暗号化キーを専用ファイルに保存しておくことができます。 Storing this file on an external device such a USB key will facilitate the use of an encrypted application, since the user would only need to connect the device to provide the key before opening the application in order to access encrypted data.
 
-You can save the encryption key each time a new passphrase has been provided:
+新しいパスフレーズが提供されるたびに暗号化キーを保存することができます:
 
 - when the application is encrypted for the first time,
 - when the application is re-encrypted with a new passphrase.
 
-Successive encryption keys can be stored on the same device.
+連続した暗号化キーを同じデバイスに保存することが可能です。
 
 ## ログファイル
 After an encryption operation has been completed, 4D generates a file in the Logs folder of the application. It is created in XML format and named "*ApplicationName_Encrypt_Log_yyyy-mm-dd hh-mm-ss.xml*" or "*ApplicationName_Decrypt_Log_yyyy-mm-dd hh-mm-ss.xml*".
 
-An Open log file button is displayed on the MSC page each time a new log file has been generated.
+新しくログファイルが生成されるたび、MSCページに **ログファイルを開く** ボタンが表示されます。
 
 The log file lists all internal operations executed pertaining to the encryption/decryption process, as well as errors (if any).
