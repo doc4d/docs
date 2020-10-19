@@ -23,14 +23,14 @@ title: バックアップ
 
 The **Database properties...** button causes the Backup/Configuration page of the Structure Settings to be displayed.
 
- 2. Click **Backup** to start the backup using current parameters.
+ 2. **バックアップ** をクリックし、現在のパラメーターを用いてバックアップを開始します。
 
 
 ### 定期的な自動バックアップ
 
-Scheduled backups are started automatically. They are configured in the **Backup/Scheduler** page of the **Settings**.
+自動バックアップは指定されたスケジュールに基づいて自動的に実行されます。 They are configured in the **Backup/Scheduler** page of the **Settings**.
 
-Backups are automatically performed at the times defined on this page without any type of user intervention. For more information on using this dialog box, refer to [Scheduler in backup settings](settings.md#scheduler).
+ユーザーが一切操作しなくても、このページで指定された時間にバックアップが自動実行されます。 このダイアログボックスに関する詳細は、[バックアップ設定のスケジューラー](settings.md#スケジューラー) の項目を参照してください。
 
 
 ### BACKUP コマンド
