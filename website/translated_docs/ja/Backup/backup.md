@@ -56,7 +56,7 @@ During a backup, access to the application is restricted by 4D according to the 
 
 反対に、データだけがバックアップされているのであれば、ストラクチャーへのアクセスは許可されます。 In this case, the application access possibilities are as follows:
 
-- With the 4D single-user version, the application is locked for both read and write; all processes are frozen. No actions can be performed.
+- With the 4D single-user version, the application is locked for both read and write; all processes are frozen. 実行できるアクションはありません。
 - With 4D Server, the application is only write locked; client machines can view data. If a client machine sends an add, remove or change request to the server, a window appears asking the user to wait until the end of the backup. Once the application is saved, the window disappears and the action is performed. To cancel the request in process and not wait for the end of the backup, simply click the **Cancel operation** button. However, if the action waiting to be executed comes from a method launched prior to the backup, you should not cancel it because only operations remaining to be performed are cancelled. Also, a partially executed method can cause logical inconsistencies in the data. > When the action waiting to be executed comes from a method and the user clicks the **Cancel operation** button, 4D Server returns error -9976 (This command cannot be executed because the database backup is in progress).
 
 ### バックアップ中に問題が発生した場合
