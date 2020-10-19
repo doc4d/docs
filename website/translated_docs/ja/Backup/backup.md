@@ -61,7 +61,7 @@ During a backup, access to the application is restricted by 4D according to the 
 
 ### バックアップ中に問題が発生した場合
 
-バックアップが正常に実行されない場合もあります。 バックアップが不成功に終わる原因としては、ユーザーによる中断、同封ファイルが見つからない場合、保存先ディスクのトラブル、不完全なトランザクションなど、いくつか考えられます。4D は原因に応じて問題に対処します。
+バックアップが正常に実行されない場合もあります。 バックアップが不成功に終わる原因としては、ユーザーによる中断、添付ファイルが見つからない場合、保存先ディスクのトラブル、不完全なトランザクションなど、いくつか考えられます。4D は原因に応じて問題に対処します。
 
 In all cases, keep in mind that the status of the last backup (successful or failed) is stored in the Last Backup Information area of the [Backup page in the MSC](MSC/backup.md) or in the **Maintenance page** of 4D Server, as well as in the **Backup journal.txt**. displayed in the Last Backup Information area of the Backup page in the MSC or in `GRAPH SETTINGS` of 4D Server, as well as in the `Backup journal` of the application.
 
@@ -77,16 +77,16 @@ The backup journal is named "Backup Journal[001].txt" and is placed in the "Logs
 
 #### バックアップジャーナルのサイズ管理
 
-バックアップ方法によっては、バックアップジャーナルのサイズがすぐに大きくなってしまうことがあります (たとえば、同封ファイルが一緒にバックアップされる場合)。 このサイズを管理するには、2つの方法があります:
+バックアップ方法によっては、バックアップジャーナルのサイズがすぐに大きくなってしまうことがあります (たとえば、添付ファイルが一緒にバックアップされる場合)。 このサイズを管理するには、2つの方法があります:
 
 - **自動バックアップ**: 4D はバックアップを実行する前にカレントバックアップジャーナルファイルのサイズを確認します。 10MB よりも大きい場合、カレントファイルはアーカイブされ、[xxx] の番号がインクリメントされた新しいファイルを作成します (例: "Backup Journal[002].txt”)。 ファイル番号が 999 を超えると、ナンバリングは 1 に戻り、既存ファイルが置換されます。
-- **Possibility of reducing the amount of information recorded**: To do this, simply modify the value of the `VerboseMode` key in the *Backup.4DSettings* file of the project. By default, this key is set to True. If you change the value of this key to False, only the main information will be stored in the backup journal: date and time of start of operation and any errors encountered. The XML keys concerning backup configuration are described in the *4D XML Keys Backup* manual.
+- **Possibility of reducing the amount of information recorded**: To do this, simply modify the value of the `VerboseMode` key in the *Backup.4DSettings* file of the project. デフォルトでは、true の値が設定されています。 この値を false に変更すると、バックアップジャーナルには主要な情報のみが記録されます (スタート時の日付と時刻、そしてエラーの有無)。 バックアップ設定に使われる XMLキーについての説明は [バックアップ設定ファイル](https://doc.4d.com/4Dv18/4D/18/4D-XML-Keys-Backup.100-4673706.ja.html) マニュアルを参照ください。
 
 
 
 ## backupHistory.json
 
-All information regarding the latest backup and restore operations are stored in the application's **backupHistory.json** file. It logs the path of each saved file (including attachments) as well as number, date, time, duration, and status of each operation. To limit the size of the file, the number of logged operations is the same as the number of available backups ("Keep only the last X backup files") defined in the backup settings.
+All information regarding the latest backup and restore operations are stored in the application's **backupHistory.json** file. 記録されるのは、保存されたファイル (添付含む) のパスのほか、回数、日付、時刻、所要時間、各処理のステータスです。 To limit the size of the file, the number of logged operations is the same as the number of available backups ("Keep only the last X backup files") defined in the backup settings.
 
 The **backupHistory.json** file is created in the current backup destination folder. You can get the actual path for this file using the following statement:
 
