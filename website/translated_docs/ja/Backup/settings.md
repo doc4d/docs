@@ -13,7 +13,7 @@ Backup settings are defined through three pages in the Settings dialog box. 次�
 
 ## スケジューラー
 
-You can automate the backup of applications opened with 4D or 4D Server (even when no client machines are connected). This involves setting a backup frequency (in hours, days, weeks or months); for each session, 4D automatically starts a backup using the current backup settings.
+You can automate the backup of applications opened with 4D or 4D Server (even when no client machines are connected). これはバックアップ周期 (時間、日、週、月単位等) を設定することによりおこないます。現在のバックアップ設定に基づき、4D は自動でバックアップを実行します。
 
 If this application was not launched at the theoretical moment of the backup, the next time 4D is launched, it considers the backup as having failed and proceeds as set in the Settings (refer to [Handling backup issues](backup.md#handling-backup-issues)).
 
@@ -21,13 +21,13 @@ The scheduler backup settings are defined on the **Backup/Scheduler** page of th
 
 ![](assets/en/Backup/backup02.png)
 
-The options found on this tab let you set and configure scheduled automatic backups of the application. You can choose a standard quick configuration or you can completely customize it. Various options appear depending on the choice made in the **Automatic Backup** menu:
+The options found on this tab let you set and configure scheduled automatic backups of the application. 標準のクイック設定、または完全なカスタマイズを選択できます。 **自動バックアップ** メニューでの選択に基づき、さまざまなオプションが表示されます:
 
-- **Never**: The scheduled backup feature is disabled.
-- **Every Hour**: Programs an automatic backup every hour, starting with the next hour.
-- **Every Day**: Programs an automatic backup every day. You can then enter the time when the backup should start.
-- **Every Week**: Programs an automatic backup every week. Two additional entry areas let you indicate the day and time when the backup should start.
-- **Every Month**: Programs an automatic backup every month. Two additional entry areas let you indicate the day of the month and the time when the backup should start.
+- **しない**: スケジュールに基づくバックアップは無効となります。
+- **毎時**: 次の時間以降、毎時間ごとに自動バックアップをおこないます。
+- **毎日**: 日に一回自動バックアップをおこないます。 バックアップを何時に開始するかを設定します。
+- **毎週**: 週に一回自動バックアップをおこないます。 バックアップを開始する曜日と時刻を入力するエリアが表示されます。
+- **毎月**: 月に一回自動バックアップをおこないます。 Two additional entry areas let you indicate the day of the month and the time when the backup should start.
 - **Personalized**: Used to configure "tailormade" automatic backups. When you select this option, several additional entry areas appear:
     + **Every X hour(s)**: Allows programming backups on an hourly basis. You can enter a value between 1 and 24.
     - **Every X day(s) at x**: Allows programming backups on a daily basis. For example, enter 1 if you want to perform a daily backup. When this option is checked, you must enter the time when the backup should start.
