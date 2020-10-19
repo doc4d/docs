@@ -13,7 +13,7 @@ Backup settings are defined through three pages in the Settings dialog box. 次�
 
 ## スケジューラー
 
-You can automate the backup of applications opened with 4D or 4D Server (even when no client machines are connected). This involves setting a backup frequency (in hours, days, weeks or months); for each session, 4D automatically starts a backup using the current backup settings.
+You can automate the backup of applications opened with 4D or 4D Server (even when no client machines are connected). これはバックアップ周期 (時間、日、週、月単位等) を設定することによりおこないます。現在のバックアップ設定に基づき、4D は自動でバックアップを実行します。
 
 If this application was not launched at the theoretical moment of the backup, the next time 4D is launched, it considers the backup as having failed and proceeds as set in the Settings (refer to [Handling backup issues](backup.md#handling-backup-issues)).
 
@@ -21,7 +21,7 @@ The scheduler backup settings are defined on the **Backup/Scheduler** page of th
 
 ![](assets/en/Backup/backup02.png)
 
-The options found on this tab let you set and configure scheduled automatic backups of the application. You can choose a standard quick configuration or you can completely customize it. Various options appear depending on the choice made in the **Automatic Backup** menu:
+The options found on this tab let you set and configure scheduled automatic backups of the application. 標準のクイック設定、または完全なカスタマイズを選択できます。 Various options appear depending on the choice made in the **Automatic Backup** menu:
 
 - **Never**: The scheduled backup feature is disabled.
 - **Every Hour**: Programs an automatic backup every hour, starting with the next hour.
