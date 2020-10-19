@@ -69,7 +69,7 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/API/zipfileClass.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">ZIP Archive</h1></header><article><div><span><p>A 4D ZIP archive is a <code>File</code> or <code>Folder</code> object containing one or more files or folders, which are compressed to be smaller than their original size. These archives are created with a &quot;.zip&quot; extension and can be used to save disk space or transfer files via mediums which may have size limitations (e.g., email or network).</p>
 <ul>
 <li>You create a 4D ZIP archive with the <a href="https://doc.4d.com/4Dv18R4/4D/18-R4/ZIP-Create-archive.301-4982187.en.html">ZIP Create archive</a> command.</li>
-<li>4D ZIP file and folder instances are available through the <code>root</code> property (<code>ZIP Folder</code>) of the object returned by <a href="https://doc.4d.com/4Dv18R4/4D/18-R4/ZIP-Read-archive.301-4982192.en.html">ZIP Read archive</a> command.</li>
+<li>4D ZIP file and folder instances are available through the <code>root</code> property (<code>ZIP Folder</code>) of the object returned by <a href="#zip-read-archive">ZIP Read archive</a> command.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="beispiel"></a><a href="#beispiel" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h3>
 <p>To retrieve and view the contents of a ZIP file object:</p>
@@ -87,6 +87,76 @@ If</span>(<span class="hljs-variable">$zipFile</span>.extension=<span class="hlj
     <span class="hljs-variable">$txt</span>:=<span class="hljs-variable">$zipFile</span>.<span class="hljs-function">getText</span>()<span class="hljs-keyword">
 End if</span>
 </code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="zip-read-archive"></a><a href="#zip-read-archive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ZIP Read archive</h2>
+<p><details><summary>History</summary></p>
+<table>
+<thead>
+<tr><th>Version</th><th>Changes</th></tr>
+</thead>
+<tbody>
+<tr><td>v18</td><td>Added</td></tr>
+</tbody>
+</table>
+<p></details></p>
+<p><strong>ZIP Read archive</strong> ( <em>zipFile</em> : 4D.File { ; <em>password</em> : Text }) : 4D.ZipArchive</p>
+<table>
+<thead>
+<tr><th>Parameter</th><th>Typ</th><th style="text-align:center"></th><th>Beschreibung</th></tr>
+</thead>
+<tbody>
+<tr><td>zipFile</td><td>4D.File</td><td style="text-align:center">-&gt;</td><td>Zip archive file</td></tr>
+<tr><td>password</td><td>Text</td><td style="text-align:center">-&gt;</td><td>ZIP archive password if any</td></tr>
+<tr><td>Ergebnis</td><td>4D.ZipArchive</td><td style="text-align:center">&lt;-</td><td>Archive object</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="beschreibung"></a><a href="#beschreibung" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beschreibung</h4>
+<p>The <code>ZIP Read archive</code> command retrieves the contents of</p>
+<p><em>zipFile</em> and returns it as a <code>4D.ZipArchive</code> object.</p>
+<blockquote>
+<p>This command does not uncompress the ZIP archive, it only provides a view of its contents. To extract the contents of an archive, you need to use methods such as <a href="/docs/alpha/de/API/document.html#copyto">file.copyTo()</a> or <a href="/docs/alpha/de/API/directory.html#copyto">folder.copyTo()</a>.</p>
+</blockquote>
+<p>Pass a <code>4D.File</code> object referencing the compressed ZIP archive in the <em>zipFile</em> parameter. The target archive file will be opened until the <code>ZIP Read archive</code> has finished executing and all contents/references have been extracted/released, then it will be closed automatically.</p>
+<p>If the <em>zipFile</em> is password protected, you need to use the optional <em>password</em> parameter to provide a password. If a password is required but not passed when trying to read the contents of the archive, an error is generated.</p>
+<p><strong>Archive object</strong></p>
+<p>The returned <code>4D.ZipArchive</code> object contains a single <code>root</code> property whose value is a <code>4D.Folder</code> object. This folder describes the whole contents of the ZIP archive:</p>
+<table>
+<thead>
+<tr><th>Property</th><th>Typ</th><th>Beschreibung</th></tr>
+</thead>
+<tbody>
+<tr><td><code>root</code></td><td><code>4D.Folder</code></td><td>A virtual folder containing the contents of the ZIP archive.</td></tr>
+</tbody>
+</table>
+<p>The <code>root</code> folder and its contents can be manipulated with the <code>File</code> and <code>Folder</code> methods and properties.</p>
+<h4><a class="anchor" aria-hidden="true" id="beispiel-1"></a><a href="#beispiel-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>
+<p>To retrieve and view the contents of a ZIP file object:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$archive </span>: 4D.ZipArchive<span class="hljs-keyword">
+ var</span> <span class="hljs-variable">$path </span>: 4D.File
+
+ <span class="hljs-variable">$path</span>:=<span class="hljs-function">Folder</span>(fk desktop folder).<span class="hljs-function">file</span>(<span class="hljs-string">"MyDocs/Archive.zip"</span>)
+ <span class="hljs-variable">$archive</span>:=<span class="hljs-function">ZIP Read archive</span>(<span class="hljs-variable">$path</span>)
+</code></pre>
+<p>To retrieve the list of the files and folders in the archive:</p>
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$folders</span>:=<span class="hljs-variable">$archive</span>.root.<span class="hljs-function">folders</span>()
+ <span class="hljs-variable">$files</span>:=<span class="hljs-variable">$archive</span>.root.<span class="hljs-function">files</span>()
+</code></pre>
+<p>To read the contents of a file without extracting it from the root folder:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">
+ If</span>(<span class="hljs-variable">$files</span>[<span class="hljs-variable">$i</span>].extension=<span class="hljs-string">".txt"</span>)
+    <span class="hljs-variable">$txt</span>:=<span class="hljs-variable">$files</span>[<span class="hljs-variable">$i</span>].<span class="hljs-function">getText</span>()<span class="hljs-keyword">
+ Else</span>
+    <span class="hljs-variable">$blob</span>:=<span class="hljs-variable">$files</span>[<span class="hljs-variable">$i</span>].<span class="hljs-function">getContent</span>()<span class="hljs-keyword">
+ End if</span>
+</code></pre>
+<p>To extract from the root folder:</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//extract a file</span>
+ <span class="hljs-variable">$folderResult</span>:=<span class="hljs-variable">$files</span>[<span class="hljs-variable">$i</span>].<span class="hljs-function">copyTo</span>(<span class="hljs-function">Folder</span>(fk desktop folder).<span class="hljs-function">folder</span>(<span class="hljs-string">"MyDocs"</span>))
+
+  <span class="hljs-comment">//extract all files</span>
+ <span class="hljs-variable">$folderResult</span>:=<span class="hljs-variable">$archive</span>.root.<span class="hljs-function">copyTo</span>(<span class="hljs-function">Folder</span>(fk desktop folder).<span class="hljs-function">folder</span>(<span class="hljs-string">"MyDocs"</span>))
+</code></pre>
+<hr>
 <h2><a class="anchor" aria-hidden="true" id="zip-file-object"></a><a href="#zip-file-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Zip File object</h2>
 <p>The following properties and functions from the <a href="/docs/alpha/de/API/fileClass.html">File</a> class are available to 4D ZIP file objects:</p>
 <table>
@@ -149,7 +219,7 @@ End if</span>
 <tr><td><a href="/docs/alpha/de/API/folderClass.html#platformpath"><strong>.platformPath</strong> : Text</a></td><td></td></tr>
 </tbody>
 </table>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/de/API/folderClass.html"><span class="arrow-prev">← </span><span>Folder</span></a><a class="docs-next button" href="/docs/alpha/de/API/collectionClass.html"><span>Collections</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#zip-file-object">Zip File object</a></li><li><a href="#zip-folder-object">Zip Folder object</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/de/API/folderClass.html"><span class="arrow-prev">← </span><span>Folder</span></a><a class="docs-next button" href="/docs/alpha/de/API/collectionClass.html"><span>Collections</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#zip-read-archive">ZIP Read archive</a></li><li><a href="#zip-file-object">Zip File object</a></li><li><a href="#zip-folder-object">Zip Folder object</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
