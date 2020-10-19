@@ -79,8 +79,8 @@ The backup journal is named "Backup Journal[001].txt" and is placed in the "Logs
 
 バックアップ方法によっては、バックアップジャーナルのサイズがすぐに大きくなってしまうことがあります (たとえば、同封ファイルが一緒にバックアップされる場合)。 このサイズを管理するには、2つの方法があります:
 
-- **Automatic backup**: Before each backup, the application examines the size of the current backup journal file. If it is greater than 10 MB, the current file is archived and a new file is created with the [xxx] number incremented, for example "Backup Journal[002].txt”. Once file number 999 is reached, the numbering begins at 1 again and the existing files will be replaced.
-- **Possibility of reducing the amount of information recorded**: To do this, simply modify the value of the `VerboseMode` key in the *Backup.4DSettings* file of the project. By default, this key is set to True. If you change the value of this key to False, only the main information will be stored in the backup journal: date and time of start of operation and any errors encountered. The XML keys concerning backup configuration are described in the *4D XML Keys Backup* manual.
+- **自動バックアップ**: 4D はバックアップを実行する前にカレントバックアップジャーナルファイルのサイズを確認します。 10MB よりも大きい場合、カレントファイルはアーカイブされ、[xxx] の番号がインクリメントされた新しいファイルを作成します (例: "Backup Journal[002].txt”)。 ファイル番号が 999 を超えると、ナンバリングは 1 に戻り、既存ファイルが置換されます。
+- **Possibility of reducing the amount of information recorded**: To do this, simply modify the value of the `VerboseMode` key in the *Backup.4DSettings* file of the project. デフォルトでは、true の値が設定されています。 この値を false に変更すると、バックアップジャーナルには主要な情報のみが記録されます (スタート時の日付と時刻、そしてエラーの有無)。 バックアップ設定に使われる XMLキーについての説明は [バックアップ設定ファイル](https://doc.4d.com/4Dv18/4D/18/4D-XML-Keys-Backup.100-4673706.ja.html) マニュアルを参照ください。
 
 
 
