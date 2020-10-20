@@ -39,28 +39,28 @@ title: ログファイル (.journal)
 
 ## ログファイルの作成
 
-By default, any application project created with 4D uses a log file (option set in the **General** page of the Preferences). ログファイルには *data.journal* のように名前が付けられ、Data フォルダー内に置かれます。
+デフォルトでは、4D で作成されたすべてのアプリケーションでログファイルが使用されます (環境設定の **一般** ページ内でチェックされているオプションです)。 ログファイルには *data.journal* のように名前が付けられ、Data フォルダー内に置かれます。
 
-You can find out if your application uses a log file at any time: just check whether the **Use Log** option is selected on the **Backup/Configuration** page of the Settings. If you deselected this option, or if you use an application without a log file and wish to set up a backup strategy with a log file, you will have to create one.
+アプリケーションでログファイルが使用されているかどうかは、いつでも調べることができます。これには、ストラクチャー設定の **バックアップ/設定** ページで **ログを使用** オプションが選択されているか確認します。 このオプションの選択が解除されていた場合、またはログファイルなしでアプリケーションを使用している場合で、ログファイルを用いたバックアップ方法を導入するには、ログファイルを作成する必要があります。
 
 ログファイルを作成するには、次の手順に従ってください:
 
-1. On the **Backup/Configuration** page of the Structure Settings, check the **Use Log** option. 標準の "ファイルを開く/新規作成" ダイアログボックスが表示されます。 ログファイルにはデフォルトで *data.journal* という名前が付けられます。
+1. ストラクチャー設定の **バックアップ/設定** ページで、**ログを使用** オプションを選択します。 標準の "ファイルを開く/新規作成" ダイアログボックスが表示されます。 ログファイルにはデフォルトで *data.journal* という名前が付けられます。
 
-2. デフォルトの名前を使用するか、またはその名前を変更し、次にファイルの保管場所を選択します。 If you have at least two hard drives, it is recommended that you place the log file on a disk other than the one containing the application project. If the application hard drive is lost, you can still recall your log file.
+2. デフォルトの名前を使用するか、またはその名前を変更し、次にファイルの保管場所を選択します。 2つ以上のハードドライブが存在する場合は、アプリケーションプロジェクトが保管されているディスク以外の場所にログファイルを保存することをお勧めします。 これにより、アプリケーションが保管されているハードドライブが破損した場合でも、ログファイルを呼び出すことができます。
 
 3. **保存** をクリックします。 開いたログファイルのアクセスパスと名前がダイアログボックスの **ログを使用** エリアに表示されます。 このエリアをクリックすると、ポップアップメニューが表示され、ディスク上のフォルダーを確認できます。
 
-4. Validate the Settings dialog box.
+4. ストラクチャー設定ダイアログボックスを確定します。
 
-In order for you to be able to create a log file directly, the data must be in one of the following situations:
+ログファイルを作成するには、データが次の条件のいずれかを満たしていなくてはなりません:
 
 - データファイルが空である。
-- You just performed a backup and no changes have yet been made to the data.
+- バックアップを実行した直後であり、データへの変更がまだおこなわれていない。
 
-In all other cases, when you validate the Settings dialog box, an alert dialog box will appear to inform you that it is necessary to perform a backup. **OK** をクリックするとバックアップが開始され、その後にログファイルが作成されます。 If you click **Cancel**, the request is saved but the creation of the log file is postponed and it will actually be created only after the next backup of the application. This precaution is indispensable because, in order to restore an application after any incidents, you will need a copy of the application into which the operations recorded in the log file will be integrated.
+いずれの条件も満たしていない場合は、バックアップを実行する必要がある旨を知らせる警告ダイアログボックスが表示されます。 **OK** をクリックするとバックアップが開始され、その後にログファイルが作成されます。 **キャンセル** をクリックした場合には、ログファイル作成の要求は保存され、次回アプリケーションをバックアップする時までログファイルの作成は延期されます。 このような安全対策が不可欠な理由は、障害の発生後にアプリケーションを復元するために、ログファイルへ記録された処理を統合するアプリケーションのコピーが必要となるからです。
 
-Without having to do anything else, all operations performed on the data are logged in this file and it will be used in the future when the application is opened.
+これ以外に何もおこなわなくても、データ上で実行されたすべての処理がこのファイルに記録され、その後アプリケーションを開いたときにこのファイルが使用されます。
 
 新規データファイルを作成したら、別のログファイルを作成しなくてはなりません。 また、ログファイルに関連付けられていない (あるいはログファイルが見つからない) 別のデータファイルを開いた場合、他のログファイルを設定するか、作成しなくてはなりません。
 
@@ -68,13 +68,13 @@ Without having to do anything else, all operations performed on the data are log
 
 ## ログファイルを中止する
 
-If you would like to stop logging operations to the current log file, simply deselect the **Use Log** option on the **Backup/Configuration** page of the Settings.
+カレントログファイルへの操作記録を中止したい場合は、ストラクチャー設定の **バックアップ/設定** ページの **ログを使用** オプションを選択解除します。
 
 すると、4D は警告メッセージを表示して、この動作によりログファイルによるセキュリティが利用できなくなることを知らせます:
 
 ![](assets/en/Backup/backup06.png)
 
-If you click **Stop**, the current log file is immediately closed (the Settings dialog box does not need to be validated afterwards).
+**停止** をクリックすると、カレントログファイルが即座にクローズされます (この後にストラクチャー設定ダイアログボックスを確定する必要はありません)。
 
 カレントログファイルが大きすぎるため、それをクローズしたい場合は、データファイルのバックアップを実行してください。これにより、ログファイルのバックアップが作成されます。
 
