@@ -3,7 +3,7 @@ id: settings
 title: バックアップ設定
 ---
 
-Backup settings are defined through three pages in the Settings dialog box. 次の設定がおこなえます:
+バックアップ設定の定義は、ストラクチャー設定ダイアログボックス内で 3ページにわたっています。 次の設定がおこなえます:
 
 - 自動バックアップ用のスケジューラー設定
 - 各バックアップに含めるファイル
@@ -13,15 +13,15 @@ Backup settings are defined through three pages in the Settings dialog box. 次�
 
 ## スケジューラー
 
-You can automate the backup of applications opened with 4D or 4D Server (even when no client machines are connected). これはバックアップ周期 (時間、日、週、月単位等) を設定することによりおこないます。現在のバックアップ設定に基づき、4D は自動でバックアップを実行します。
+4D や 4D Server で開かれているアプリケーションのバックアップを自動化することができます (クライアントマシンが接続されている必要はありません)。 これはバックアップ周期 (時間、日、週、月単位等) を設定することによりおこないます。現在のバックアップ設定に基づき、4D は自動でバックアップを実行します。
 
-If this application was not launched at the theoretical moment of the backup, the next time 4D is launched, it considers the backup as having failed and proceeds as set in the Settings (refer to [Handling backup issues](backup.md#handling-backup-issues)).
+バックアップが実行されるべきときにアプリケーションが起動されていなかった場合には、次に起動されたとき 4D はバックアップが失敗したものと認識し、ストラクチャー設定の再試行設定を適用します ([バックアップ中に問題が発生した場合](backup.md#バックアップ中に問題が発生した場合) 参照)。
 
-The scheduler backup settings are defined on the **Backup/Scheduler** page of the Structure Settings:
+バックアップのスケジュール設定は、ストラクチャー設定の **バックアップ/スケジューラー** ページでおこないます:
 
 ![](assets/en/Backup/backup02.png)
 
-The options found on this tab let you set and configure scheduled automatic backups of the application. 標準のクイック設定、または完全なカスタマイズを選択できます。 **自動バックアップ** メニューでの選択に基づき、さまざまなオプションが表示されます:
+このページにあるオプションを使用して、アプリケーションの自動バックアップのスケジュールを設定できます。 標準のクイック設定、または完全なカスタマイズを選択できます。 **自動バックアップ** メニューでの選択に基づき、さまざまなオプションが表示されます:
 
 - **しない**: スケジュールに基づくバックアップは無効となります。
 - **毎時**: 次の時間以降、毎時間ごとに自動バックアップをおこないます。
@@ -36,7 +36,7 @@ The options found on this tab let you set and configure scheduled automatic back
 
 ## バックアップ設定
 
-The Backup/Configuration page of the Structure Settings lets you set the backup files and their location, as well as that of the log file. These parameters are specific to each application opened by 4D or 4D Server.
+ストラクチャー設定のバックアップ/設定ページではバックアップやログファイルの有効化/無効化、および保存先を設定できます。 これらのパラメーターは、4D や 4D Server で開かれる各アプリケーションごとに設定されます。
 
 ![](assets/en/Backup/backup03.png)
 
@@ -45,14 +45,14 @@ The Backup/Configuration page of the Structure Settings lets you set the backup 
 ### 内容
 このエリアでは、次回のバックアップ時にコピー対象とするファイルやフォルダーを指定します。
 
-- **Data**: Application data file. When this option is checked, the following elements are automatically backed up at the same time as the data:
-    - the current log file of the application (if it exists),
+- **データ**: アプリケーションのデータファイル。 When this option is checked, the following elements are automatically backed up at the same time as the data:
+    - データベースのカレントログファイル (あれば)
     - the full `Settings` folder located [next to the data file](Project/architecture.md#settings-folder) (if it exists), i.e. the *user settings for data*.
-- **Structure**: Application project folders and files. In cases where projects are compiled, this option allows you to backup the .4dz file. When this option is checked, the full `Settings` folder located [at the same level as the Project folder](Project/architecture.md#settings-folder-1), i.e. the *user settings*, is automatically backed up.
+- **ストラクチャー**: アプリケーションの Project フォルダーとファイル。 プロジェクトがコンパイルされている場合には、このオプションは .4dz ファイルをバックアップします。 When this option is checked, the full `Settings` folder located [at the same level as the Project folder](Project/architecture.md#settings-folder-1), i.e. the *user settings*, is automatically backed up.
 - **ユーザーストラクチャー(バイナリデータベースのみ)**: *廃止予定*
-- **Attachments**: This area allows you to specify a set of files and/or folders to be backed up at the same time as the application. ここではどのようなタイプのファイル (ドキュメントやプラグイン、テンプレート、ラベル、レポート、ピクチャーなど) でも指定できます。 個々のファイル、または丸ごとバックアップするフォルダーを個々に設定できます。 添付エリアには、設定されたファイルのパスが表示されます。
+- **添付**: このエリアでは、アプリケーションと同時にバックアップの対象とするファイルやフォルダーを指定します。 ここではどのようなタイプのファイル (ドキュメントやプラグイン、テンプレート、ラベル、レポート、ピクチャーなど) でも指定できます。 個々のファイル、または丸ごとバックアップするフォルダーを個々に設定できます。 添付エリアには、設定されたファイルのパスが表示されます。
     - **削除**: 選択したファイルを添付エリアから取り除きます。
-    - **フォルダー追加...**: バックアップに追加するフォルダーを選択するダイアログボックスを表示します。 復元の場合、フォルダーがその内容物とともに復元されます。 You can select any folder or volume connected to the machine, with the exception of the folder containing the application files.
+    - **フォルダー追加...**: バックアップに追加するフォルダーを選択するダイアログボックスを表示します。 復元の場合、フォルダーがその内容物とともに復元されます。 アプリケーションファイルを含むフォルダーを除き、すべてのフォルダーやマシンに接続されたボリュームを選択できます。
     - **ファイル追加...**: バックアップに追加するファイルを選択するダイアログボックスを表示します。
 
 
@@ -66,7 +66,7 @@ The Backup/Configuration page of the Structure Settings lets you set the backup 
 
 ### ログ管理
 
-The **Use Log** option, when checked, indicates that the application uses a log file. ログファイルの場所はオプションの下に表示されます。 When this option is checked, it is not possible to open the application without a log file.
+**ログを使用** オプションが選択されていると、アプリケーションはログファイルを使用します。 ログファイルの場所はオプションの下に表示されます。 このオプションが選択されている場合、ログファイルなしでアプリケーションを開くことはできません。
 
 By default, any project created with 4D uses a log file (option **Use Log File** checked in the **General Page** of the **Preferences**). The log file is named *data.journal* and is placed in the Data folder.
 
