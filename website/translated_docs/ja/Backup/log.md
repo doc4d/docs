@@ -45,37 +45,37 @@ You can find out if your application uses a log file at any time: just check whe
 
 ログファイルを作成するには、次の手順に従ってください:
 
-1. On the **Backup/Configuration** page of the Structure Settings, check the **Use Log** option. The program displays a standard open/new file dialog box. By default, the log file is named *data.journal*.
+1. On the **Backup/Configuration** page of the Structure Settings, check the **Use Log** option. 標準の "ファイルを開く/新規作成" ダイアログボックスが表示されます。 ログファイルにはデフォルトで *data.journal* という名前が付けられます。
 
-2. Keep the default name or rename it, and then select the file location. If you have at least two hard drives, it is recommended that you place the log file on a disk other than the one containing the application project. If the application hard drive is lost, you can still recall your log file.
+2. デフォルトの名前を使用するか、またはその名前を変更し、次にファイルの保管場所を選択します。 If you have at least two hard drives, it is recommended that you place the log file on a disk other than the one containing the application project. If the application hard drive is lost, you can still recall your log file.
 
-3. Click **Save**. The disk and the name of the open log file are now displayed in the **Use Log** area of the dialog box. You can click on this area in order to display a pop-up menu containing the log path on the disk.
+3. **保存** をクリックします。 開いたログファイルのアクセスパスと名前がダイアログボックスの **ログを使用** エリアに表示されます。 このエリアをクリックすると、ポップアップメニューが表示され、ディスク上のフォルダーを確認できます。
 
 4. Validate the Settings dialog box.
 
 In order for you to be able to create a log file directly, the data must be in one of the following situations:
 
-- The data file is blank,
+- データファイルが空である。
 - You just performed a backup and no changes have yet been made to the data.
 
-In all other cases, when you validate the Settings dialog box, an alert dialog box will appear to inform you that it is necessary to perform a backup. If you click **OK**, the backup begins immediately, then the log file is activated. If you click **Cancel**, the request is saved but the creation of the log file is postponed and it will actually be created only after the next backup of the application. This precaution is indispensable because, in order to restore an application after any incidents, you will need a copy of the application into which the operations recorded in the log file will be integrated.
+In all other cases, when you validate the Settings dialog box, an alert dialog box will appear to inform you that it is necessary to perform a backup. **OK** をクリックするとバックアップが開始され、その後にログファイルが作成されます。 If you click **Cancel**, the request is saved but the creation of the log file is postponed and it will actually be created only after the next backup of the application. This precaution is indispensable because, in order to restore an application after any incidents, you will need a copy of the application into which the operations recorded in the log file will be integrated.
 
 Without having to do anything else, all operations performed on the data are logged in this file and it will be used in the future when the application is opened.
 
-You must create another log file if you create a new data file. You must set or create another log file if you open another data file that is not linked to a log file (or if the log file is missing).
+新規データファイルを作成したら、別のログファイルを作成しなくてはなりません。 また、ログファイルに関連付けられていない (あるいはログファイルが見つからない) 別のデータファイルを開いた場合、他のログファイルを設定するか、作成しなくてはなりません。
 
 
 
-## Stopping a log file
+## ログファイルを中止する
 
 If you would like to stop logging operations to the current log file, simply deselect the **Use Log** option on the **Backup/Configuration** page of the Settings.
 
-4D then displays an alert message to remind you that this action prevents you from taking advantage of the security that the log file provides:
+すると、4D は警告メッセージを表示して、この動作によりログファイルによるセキュリティが利用できなくなることを知らせます:
 
 ![](assets/en/Backup/backup06.png)
 
 If you click **Stop**, the current log file is immediately closed (the Settings dialog box does not need to be validated afterwards).
 
-If you wish to close the current log file because it is too large, you might consider performing a data file backup, which will cause the log file to be backed up as well.
+カレントログファイルが大きすぎるため、それをクローズしたい場合は、データファイルのバックアップを実行してください。これにより、ログファイルのバックアップが作成されます。
 
 > **4D Server:** The `New log file` command automatically closes the current log file and starts a new one. If for some reason the log file becomes unavailable during a working session, error 1274 is generated and 4D Server does not allow users to write data anymore. When the log file is available again, it is necessary to do a backup.
