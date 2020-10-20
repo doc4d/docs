@@ -45,9 +45,9 @@ title: バックアップ設定
 ### 内容
 このエリアでは、次回のバックアップ時にコピー対象とするファイルやフォルダーを指定します。
 
-- **データ**: アプリケーションのデータファイル。 When this option is checked, the following elements are automatically backed up at the same time as the data:
+- **データ**: アプリケーションのデータファイル。 このオプションが選択されている場合、次のものがデータとともにバックアップされます:
     - データベースのカレントログファイル (あれば)
-    - the full `Settings` folder located [next to the data file](Project/architecture.md#settings-folder) (if it exists), i.e. the *user settings for data*.
+    - [データファイルの隣に置かれた](Project/architecture.md#settings-フォルダー) `Settings` フォルダー (あれば)。これは *データファイル用のユーザー設定* を格納しています。
 - **ストラクチャー**: アプリケーションの Project フォルダーとファイル。 プロジェクトがコンパイルされている場合には、このオプションは .4dz ファイルをバックアップします。 When this option is checked, the full `Settings` folder located [at the same level as the Project folder](Project/architecture.md#settings-folder-1), i.e. the *user settings*, is automatically backed up.
 - **ユーザーストラクチャー(バイナリデータベースのみ)**: *廃止予定*
 - **添付**: このエリアでは、アプリケーションと同時にバックアップの対象とするファイルやフォルダーを指定します。 ここではどのようなタイプのファイル (ドキュメントやプラグイン、テンプレート、ラベル、レポート、ピクチャーなど) でも指定できます。 個々のファイル、または丸ごとバックアップするフォルダーを個々に設定できます。 添付エリアには、設定されたファイルのパスが表示されます。
@@ -68,9 +68,9 @@ title: バックアップ設定
 
 **ログを使用** オプションが選択されていると、アプリケーションはログファイルを使用します。 ログファイルの場所はオプションの下に表示されます。 このオプションが選択されている場合、ログファイルなしでアプリケーションを開くことはできません。
 
-By default, any project created with 4D uses a log file (option **Use Log File** checked in the **General Page** of the **Preferences**). The log file is named *data.journal* and is placed in the Data folder.
+デフォルトでは、4D で作成されたすべてのプロジェクトでログファイルが使用されます (**環境設定** の **一般ページ** 内でチェックされている **ログを使用** オプションです)。 The log file is named *data.journal* and is placed in the Data folder.
 
-> Activating a new log file requires the data of the application to be backed up beforehand. このオプションをチェックすると、バックアップが必要である旨の警告メッセージが表示されます: The creation of the log file is postponed and it will actually be created only after the next backup of the application.
+> 新しいログファイルを有効にするには、その前にアプリケーションのデータをバックアップしなければなりません。 このオプションをチェックすると、バックアップが必要である旨の警告メッセージが表示されます: ログファイルの作成は延期され、実際には次のバックアップの後にログファイルが作成されます。
 
 
 ## バックアップ＆復旧
@@ -82,10 +82,10 @@ By default, any project created with 4D uses a log file (option **Use Log File**
 ### 一般設定
 
 - **最新のバックアップのみ保存 X バックアップファイル**: このパラメーターを有効にすると、指定された数の最新バックアップファイルだけが保持され、古いバックアップファイルは削除されます。 この機能は以下のように動作します: バックアップ処理が完了したら、アーカイブが作成されたのと同じ場所、同じ名前のもっとも古いアーカイブを削除します。ディスクスペースを確保するため、バックアップ前に削除するよう、削除のタイミングを変更することもできます。 たとえば、3世代のファイルを保持するよう設定している場合、最初の 3回のバックアップで MyBase-0001、MyBase-0002、MyBase-0003 が作成され、 4回目のバックアップで MyBase-0004 が作成されたのちに MyBase-0001 が削除されます。 この設定はデフォルトで有効になっており、4D は 3世代のバックアップを保持します。 このメカニズムを無効にするには、チェックボックスの選択を外します。
-> This parameter concerns both application and log file backups.
+> このパラメーターは、アプリケーションおよびログファイル両方のバックアップに影響します。
 
-- **Backup only if the data file has been modified**: When this option is checked, 4D starts scheduled backups only if data has been added, changed or deleted since the last backup. そうでない場合、定期的なバックアップはキャンセルされ、次回のスケジュールまで延期されます。 エラーは生成されませんが、バックアップジャーナルにはバックアップが延期された旨記録されます。 This option also allows saving machine time for the backup of applications principally used for viewing purposes. ストラクチャーや添付ファイルに対して変更がおこなわれていても、データファイルの更新としては扱われない旨注意してください。
-> This parameter concerns both application and log file backups.
+- **データファイルが更新された場合のみバックアップを行う**: このオプションが選択された場合、前回のバックアップ以降にデータが追加・変更・削除された場合のみ、4D は定期的なバックアップを開始します。 そうでない場合、定期的なバックアップはキャンセルされ、次回のスケジュールまで延期されます。 エラーは生成されませんが、バックアップジャーナルにはバックアップが延期された旨記録されます。 このオプションを使用すれば、主に参照目的で使用されているアプリケーションのバックアップに消費されるマシン時間を節約できます。 ストラクチャーや添付ファイルに対して変更がおこなわれていても、データファイルの更新としては扱われない旨注意してください。
+> このパラメーターは、アプリケーションおよびログファイル両方のバックアップに影響します。
 
 - **最も古いバックアップファイルを削除**: このオプションは "最新のバックアップのみ保存 X バックアップファイル" が有効になっている場合のみ使用されます。 このオプションを使用して、最も古いバックアップファイルを削除するタイミングを設定します。選択肢は **バックアップ前**、あるいは **バックアップ後** です。 このオプションが機能するには、バックアップファイルが名称変更されたり、移動されたりしていてはなりません。
 
@@ -94,12 +94,12 @@ By default, any project created with 4D uses a log file (option **Use Log File**
     - **指定時間経過後に再試行**: このオプションが選択されていると、設定された待ち時間経過後にバックアップを再試行します。 このメカニズムを使用すると、バックアップをブロックするような特定の状況に対応することが可能となります。 秒、分、あるいは時間単位で待ち時間を設定できます。 次のバックアップ試行にも失敗するとエラーが生成され、ステータスエリアに失敗状況が表示され、バックアップジャーナルにも記録されます。
     - **操作をキャンセル X 試行後**: このパラメーターを使用して、バックアップ試行の失敗最大数を設定できます。 この最大数に達してもバックアップが正しく実行できなかった場合、バックアップはキャンセルされ、エラー 1401 ("バックアップ試行の最大数に達しました。自動バックアップは無効になります") が生成されます。 この場合、データベースを再起動するか、手動バックアップが成功するまで自動バックアップはおこなわれません。 このパラメーターは、人による介入が必要となるような問題があり、バックアップ試行が自動的に繰り返されることにより全体的なパフォーマンスに影響するようなケースで使用できます。 デフォルトでこのオプションは選択されていません。
 
-> 4D considers a backup as failed if the application was not launched at the time when the scheduled automatic backup was set to be carried out.
+> 定期的なバックアップが実行される予定時刻にアプリケーションが起動されていなかった場合、4D はバックアップが失敗したものとして扱います。
 
 ### アーカイブ
 これらのオプションはメインのバックアップファイルとログバックアップファイルに適用されます。
 
-- **セグメントサイズ (MB)**: 4Dではアーカイブをセグメントに分割できます。 この振る舞いにより、たとえばバックアップファイルを複数の異なるディスク (DVDやUSBデバイス等) に格納できます。 復元時、4D はセグメントを自動的に統合します。 Each segment is called MyApplication[xxxx-yyyy].4BK, where xxxx is the backup number and yyyy is the segment number. For example, the three segments of the MyApplication backup are called MyApplication[0006-0001].4BK, MyApplication[0006-0002].4BK and MyApplication[0006-0003].4BK. **セグメントサイズ** はコンボボックスであり、各セグメントのサイズを MB単位で設定できます。 メニューから定義済み値を選択するか、0~2048 の値を入力できます。 0 を指定するとセグメント化はされません (**なし** を指定したのと同じ)。
+- **セグメントサイズ (MB)**: 4Dではアーカイブをセグメントに分割できます。 この振る舞いにより、たとえばバックアップファイルを複数の異なるディスク (DVDやUSBデバイス等) に格納できます。 復元時、4D はセグメントを自動的に統合します。 各セグメントには MyApplication[xxxx-yyyy].4BK といった名称がつけられます (xxxx はバックアップ番号、yyyy はセグメント番号)。 たとえば、MyApplication のバックアップが 3つのセグメントに分割されると、次のような名前になります: MyApplication[0006-0001].4BK、MyApplication[0006-0002].4BK、MyApplication[0006-0003].4BK **セグメントサイズ** はコンボボックスであり、各セグメントのサイズを MB単位で設定できます。 メニューから定義済み値を選択するか、0~2048 の値を入力できます。 0 を指定するとセグメント化はされません (**なし** を指定したのと同じ)。
 
 - **圧縮率**: デフォルトで 4D はバックアップファイルを圧縮し、ディスクスペースを節約します。 しかし大量のデータがある場合、ファイルの圧縮処理はバックアップにかかる時間を長くします。 **圧縮率** オプションを使用してファイルの圧縮モードを調整できます:
     - **なし**: ファイルの圧縮はおこなわれません。 バックアップは早くおこなわれますが、ファイルサイズは大きくなります。
@@ -113,11 +113,11 @@ By default, any project created with 4D uses a log file (option **Use Log File**
 
 ### 自動復元
 
-- **Restore last backup if database is damaged**: When this option is checked, the program automatically starts the restore of the data file of the last valid backup of the application, if an anomaly is detected (corrupted file, for example) during application launch. ユーザーによる介入は必要ありませんが、処理はバックアップジャーナルに記録されます。
+- **データベースが壊れていたら、最新のバックアップから復元する**: このオプションが選択されていると、ファイル破損などの異常が検知された場合、4D は起動時にアプリケーションの有効な最新のバックアップからのデータの復旧を自動で開始します。 ユーザーによる介入は必要ありませんが、処理はバックアップジャーナルに記録されます。
 
-- **Integrate last log file if database is incomplete**: When this option is checked, the program automatically integrates the log file when opening or restoring the application.
-    - When opening an application, the current log file is automatically integrated if 4D detects that there are operations stored in the log file that are not present in the data. このようなケースは、ディスクに書き込まれていないデータがまだキャッシュ中に存在する状態で、電力の切断が起きた場合に発生します。
-    - When restoring an application, if the current log file or a log backup file having the same number as the backup file is stored in the same folder, 4D examines its contents. そしてデータファイルに書き込まれていない処理が見つかれば、自動で統合処理がおこなわれます。
+- **データベースが完全でない場合、最新のログを統合する**: このオプションがチェックされると、プログラムはアプリケーションを開く際または復旧時に、自動でログファイルを統合します。
+    - アプリケーションを開く際に、データファイルに保存されていない処理がログファイル中に見つかった場合、4D は自動でカレントログファイルを統合します。 このようなケースは、ディスクに書き込まれていないデータがまだキャッシュ中に存在する状態で、電力の切断が起きた場合に発生します。
+    - アプリケーションの復元時、カレントログファイルや、バックアップファイルと同じ番号を持つログバックアップファイルが同じフォルダーに存在する場合、4D はその内容を検証します。 そしてデータファイルに書き込まれていない処理が見つかれば、自動で統合処理がおこなわれます。
 
 ユーザーにダイアログボックスが提示されることはありません。 処理は完全に自動です。 処理はバックアップジャーナルに記録されます。
 
