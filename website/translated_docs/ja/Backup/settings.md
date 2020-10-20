@@ -34,16 +34,16 @@ The options found on this tab let you set and configure scheduled automatic back
     - **X 週ごと**: 週単位でバックアップの間隔をスケジュールできます。 たとえば、毎週バックアップをおこなうには 1 と設定します。 このオプションを選択した場合、バックアップを開始する曜日と時刻を設定しなければなりません。 複数の曜日を選択することもできます。 たとえば、毎週水曜日と金曜日にバックアップをするようプログラムできます。
     - **X 月ごと**: 月単位でバックアップの間隔をスケジュールできます。 たとえば、毎月バックアップをおこなうには 1 と設定します。 このオプションを選択した場合、バックアップを開始する日付と時刻を設定しなければなりません。
 
-## Configuration
+## バックアップ設定
 
 The Backup/Configuration page of the Structure Settings lets you set the backup files and their location, as well as that of the log file. These parameters are specific to each application opened by 4D or 4D Server.
 
 ![](assets/en/Backup/backup03.png)
 
-> **4D Server:** These parameters can only be set from the 4D Server machine.
+> **4D Server**: これらのパラメーターは 4D Server マシン上でのみ設定できます。
 
-### Content
-This area allows you to set which files and/or folders to copy during the next backup.
+### 内容
+このエリアでは、次回のバックアップ時にコピー対象とするファイルやフォルダーを指定します。
 
 - **Data**: Application data file. When this option is checked, the following elements are automatically backed up at the same time as the data:
     - the current log file of the application (if it exists),
