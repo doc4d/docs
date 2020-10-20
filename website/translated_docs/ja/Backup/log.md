@@ -1,13 +1,13 @@
 ---
 id: log
-title: Log file (.journal)
+title: ログファイル (.journal)
 ---
 
-A continuously-used application is always recording changes, additions or deletions. Performing regular backups of data is important but does not allow (in case of incident) restoring data entered since the last backup. To respond to this need, 4D now offers a specific tool: the log file. This file allows ensuring permanent security of data.
+A continuously-used application is always recording changes, additions or deletions. 定期的にデータをバックアップすることは重要ですが、バックアップだけでは (予期しない障害の場合に)、前回のバックアップ以降に入力されたデータを回復することができません。 この必要性に対応するため、4D は専用ツールであるログファイルを提供しています。 This file allows ensuring permanent security of data.
 
-In addition, 4D works continuously with a data cache in memory. Any changes made to the application data are stored temporarily in the cache before being written to the hard disk. This accelerates the operation of applications; in fact, accessing memory is faster than accessing the hard disk. If an incident occurs in the application before the data stored in the cache could be written to the disk, you must include the current log file in order to restore the application entirely.
+また、4D は常にメモリー上のデータキャッシュを使用して作業をおこなっています。 Any changes made to the application data are stored temporarily in the cache before being written to the hard disk. これにより、アプリケーションの処理速度が向上します。実際、メモリーへのアクセスは、ハードディスクへのアクセスよりも高速です。 If an incident occurs in the application before the data stored in the cache could be written to the disk, you must include the current log file in order to restore the application entirely.
 
-Finally, 4D has functions that analyze the contents of the log file, making it possible to rollback the operations carried out on the application data. These functions area available in the MSC: refer to the [Activity analysis](MSC/analysis.md) page and the [Rollback](MSC/rollback.md) page.
+Finally, 4D has functions that analyze the contents of the log file, making it possible to rollback the operations carried out on the application data. これらの機能は MSC にて提供されています ([ログ解析](MSC/analysis.md) ページおよび [ロールバック](MSC/rollback.md) ページ参照)。
 
 ## How the log file works
 
@@ -39,7 +39,7 @@ The current log file is automatically saved with the current data file. This mec
 
 ## Creating the log file
 
-By default, any application project created with 4D uses a log file (option set in the **General** page of the Preferences). The log file is named *data.journal* and is placed in the Data folder.
+By default, any application project created with 4D uses a log file (option set in the **General** page of the Preferences). ログファイルには *data.journal* のように名前が付けられ、Data フォルダーに置かれます。
 
 You can find out if your application uses a log file at any time: just check whether the **Use Log** option is selected on the **Backup/Configuration** page of the Settings. If you deselected this option, or if you use an application without a log file and wish to set up a backup strategy with a log file, you will have to create one.
 
