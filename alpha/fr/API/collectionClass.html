@@ -107,11 +107,11 @@
 <p><em>value</em>, optionally from <em>startFrom</em> index to <em>end</em> index, and returns the resulting collection|
 | <a href="#filter"><strong>.filter</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Collection</a><p>    returns a new collection containing all elements of the original collection for which</p>
 <p><em>methodName</em> method result is <strong>true</strong>|
-| <a href="#find"><strong>.find</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) -&gt; value or undefined<br><strong>.find</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) -&gt; value or undefined</a><p>    returns the first value in the collection for which</p>
+| <a href="#find"><strong>.find</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any<br><strong>.find</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any</a><p>    returns the first value in the collection for which</p>
 <p><em>methodName</em>, applied on each element, returns <strong>true</strong>|
 | <a href="#find"><strong>.findIndex</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Integer<br><strong>.findIndex</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Integer</a><p>    returns the index, in the collection, of the first value for which</p>
 <p><em>methodName</em>, applied on each element, returns <strong>true</strong>|
-| <a href="#indexof"><strong>.indexOf</strong>(  <em>toSearch</em> : Expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the</p>
+| <a href="#indexof"><strong>.indexOf</strong>(  <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the</p>
 <p><em>toSearch</em> expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found|
 | <a href="#indices"><strong>.indices</strong>(  <em>queryString</em> : Text { ; <em>...value</em> : any } ) : Collection </a><p>    returns indexes, in the original collection, of object collection elements that match the</p>
 <p><em>queryString</em> search conditions|
@@ -119,15 +119,15 @@
 <p><em>element</em> at the specified <em>index</em> position in the collection instance and returns the edited collection|
 | <a href="#join"><strong>.join</strong>( <em>delimiter</em> : Text { ; <em>option</em> : Integer } ) : Text </a><p>    converts all elements of the collection to strings and concatenates them using the specified</p>
 <p><em>delimiter</em> string as separator|
-| <a href="#lastindexof"><strong>.lastIndexOf</strong>( <em>toSearch</em> : Expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the</p>
+| <a href="#lastindexof"><strong>.lastIndexOf</strong>( <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the</p>
 <p><em>toSearch</em> expression among collection elements and returns the index of the last occurrence|
 | <a href="#length"><strong>.length</strong> -&gt; Integer</a><p>    returns the number of elements in the collection|
 | <a href="#map"><strong>.map</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Collection </a><p>    creates a new collection based upon the result of the call of the</p>
 <p><em>methodName</em> method on each element of the original collection|
-| <a href="#max"><strong>.max</strong>( { <em>propertyPath</em> : Text } ) : Mixed </a><p>    returns the element with the highest value in the collection|
-| <a href="#min"><strong>.min</strong>( { <em>propertyPath</em> : Text } ) : Mixed </a><p>    returns the element with the smallest value in the collection|
+| <a href="#max"><strong>.max</strong>( { <em>propertyPath</em> : Text } ) : any </a><p>    returns the element with the highest value in the collection|
+| <a href="#min"><strong>.min</strong>( { <em>propertyPath</em> : Text } ) : any </a><p>    returns the element with the smallest value in the collection|
 | <a href="#orderby"><strong>.orderBy</strong>( ) : Collection<br><strong>.orderBy</strong>( <em>pathStrings</em> : Text ) : Collection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : Collection<br><strong>.orderBy</strong>( <em>ascOrDesc</em> : Integer ) : Collection </a><p>    returns a new collection containing all elements of the collection in the specified order|
-| <a href="#orderbymethod"><strong>.orderByMethod</strong>( <em>methodName</em> : Text { ; ...<em>extraParam</em> : Expression } ) : Collection </a><p>    returns a new collection containing all elements of the collection in the order defined through the</p>
+| <a href="#orderbymethod"><strong>.orderByMethod</strong>( <em>methodName</em> : Text { ; ...<em>extraParam</em> : expression } ) : Collection </a><p>    returns a new collection containing all elements of the collection in the order defined through the</p>
 <p><em>methodName</em> method|
 | <a href="#pop"><strong>.pop()</strong> : any </a><p>    removes the last element from the collection and returns it as the function result|
 | <a href="#push"><strong>.push</strong>( <em>element</em> : any { ;...<em>elementN</em> } ) : Collection </a><p>    appends one or more</p>
@@ -139,7 +139,7 @@
 <p><em>index</em> position in the collection and returns the edited collection|
 | <a href="#resize"><strong>.resize</strong>( <em>size</em> : Integer { ; <em>defaultValue</em> : any } ) : Collection </a><p>    sets the collection length to the specified new size and returns the resized collection|
 | <a href="#reverse"><strong>.reverse( )</strong> : Collection </a><p>    returns a deep copy of the collection with all its elements in reverse order|
-| <a href="#shift"><strong>.shift( )</strong> -&gt; any</a><p>    removes the first element of the collection and returns it as the function result|
+| <a href="#shift"><strong>.shift()</strong> : any</a><p>    removes the first element of the collection and returns it as the function result|
 | <a href="#slice"><strong>.slice</strong>( <em>startFrom</em> : Integer { ; <em>end</em> : Integer } ) : Collection</a><p>    returns a portion of a collection into a new collection|
 | <a href="#some"><strong>.some</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Boolean<br><strong>.some</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Boolean</a><p>    retourne true si au moins un élément de la collection a réussi un test|
 | <a href="#sort"><strong>.sort</strong>( <em>methodName</em> : Text { ; <em>...extraParam</em> : any } ) : Collection </a><p>    trie les éléments de la collection d'origine|
@@ -361,7 +361,7 @@
 <tbody>
 <tr><td>col2</td><td>Collection</td><td style="text-align:center">-&gt;</td><td>Collection to combine</td></tr>
 <tr><td>index</td><td>Entier long</td><td style="text-align:center">-&gt;</td><td>Position to which insert elements to combine in collection (default=length+1)</td></tr>
-<tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Original collection with all elements removed</td></tr>
+<tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Original collection containing combined element(s)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-4"></a><a href="#description-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
@@ -921,7 +921,7 @@ End if</span>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>methodname</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Name of the function to call to filter the collection</td></tr>
+<tr><td>methodName</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Name of the function to call to filter the collection</td></tr>
 <tr><td>param</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to <em>methodName</em></td></tr>
 <tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>New collection containing filtered elements (shallow copy)</td></tr>
 </tbody>
@@ -988,16 +988,16 @@ End if</span>
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.find</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) -&gt; value or undefined<br><strong>.find</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) -&gt; value or undefined</p>
+<p><strong>.find</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any<br><strong>.find</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>startFrom</td><td>Entier long</td><td style="text-align:center">-&gt;</td><td>Index to start the search at</td></tr>
-<tr><td>methodname</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Name of the function to call for the find</td></tr>
+<tr><td>methodName</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Name of the function to call for the find</td></tr>
 <tr><td>param</td><td>any</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to <em>methodName</em></td></tr>
-<tr><td>Résultat</td><td></td><td style="text-align:center">&lt;-</td><td>First value found, or Undefined if not found</td></tr>
+<tr><td>Résultat</td><td>any</td><td style="text-align:center">&lt;-</td><td>First value found, or Undefined if not found</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-15"></a><a href="#description-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
@@ -1072,7 +1072,7 @@ End if</span>
 </thead>
 <tbody>
 <tr><td>startFrom</td><td>Entier long</td><td style="text-align:center">-&gt;</td><td>Index to start the search at</td></tr>
-<tr><td>methodname</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Name of the function to call for the find</td></tr>
+<tr><td>methodName</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Name of the function to call for the find</td></tr>
 <tr><td>param</td><td>any</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to <em>methodName</em></td></tr>
 <tr><td>Résultat</td><td>Entier long</td><td style="text-align:center">&lt;-</td><td>Index of first value found, or -1 if not found</td></tr>
 </tbody>
@@ -1131,13 +1131,13 @@ End if</span>
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.indexOf</strong>(  <em>toSearch</em> : Expression { ; <em>startFrom</em> : Integer } ) : Integer</p>
+<p><strong>.indexOf</strong>(  <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>toSearch</td><td>Expression</td><td style="text-align:center">-&gt;</td><td>Expression to search in the collection</td></tr>
+<tr><td>toSearch</td><td>expression</td><td style="text-align:center">-&gt;</td><td>Expression to search in the collection</td></tr>
 <tr><td>startFrom</td><td>Entier long</td><td style="text-align:center">-&gt;</td><td>Index to start the search at</td></tr>
 <tr><td>Résultat</td><td>Entier long</td><td style="text-align:center">&lt;-</td><td>Index of the first occurrence of toSearch in the collection, -1 if not found</td></tr>
 </tbody>
@@ -1309,13 +1309,13 @@ End if</span>
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.lastIndexOf</strong>( <em>toSearch</em> : Expression { ; <em>startFrom</em> : Integer } ) : Integer</p>
+<p><strong>.lastIndexOf</strong>( <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>toSearch</td><td>Expression</td><td style="text-align:center">-&gt;</td><td>The element that is to be searched for within the collection</td></tr>
+<tr><td>toSearch</td><td>expression</td><td style="text-align:center">-&gt;</td><td>The element that is to be searched for within the collection</td></tr>
 <tr><td>startFrom</td><td>Entier long</td><td style="text-align:center">-&gt;</td><td>Index to start the search at</td></tr>
 <tr><td>Résultat</td><td>Entier long</td><td style="text-align:center">&lt;-</td><td>Index of last occurrence of toSearch in the collection, -1 if not found</td></tr>
 </tbody>
@@ -1436,7 +1436,7 @@ End if</span>
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.max</strong>( { <em>propertyPath</em> : Text } ) : Mixed</p>
+<p><strong>.max</strong>( { <em>propertyPath</em> : Text } ) : any</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
@@ -1477,7 +1477,7 @@ End if</span>
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.min</strong>( { <em>propertyPath</em> : Text } ) : Mixed</p>
+<p><strong>.min</strong>( { <em>propertyPath</em> : Text } ) : any</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
@@ -1540,12 +1540,10 @@ End if</span>
 <p>You can also pass a criteria parameter to define how the collection elements must be sorted. Three syntaxes are supported for this parameter:</p>
 <ul>
 <li><p><em>pathStrings</em> : Text (formula). <strong>Syntax</strong>: <code>propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...</code> (default order: asc). <em>pathStrings</em> contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. The order in which the properties are passed determines the sorting priority of the collection elements. By default, properties are sorted in ascending order. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass &quot;asc&quot; to sort in ascending order or &quot;desc&quot; in descending order.</p></li>
-<li><p><em>pathObjects</em> : Collection. Each element of the collection contains an object structured in the following way:</p></li>
+<li><p><em>pathObjects</em> : Collection. You can add as many objects in the <em>pathObjects</em> collection as necessary. By default, properties are sorted in ascending order (&quot;descending&quot; is false). Each element of the collection contains an object structured in the following way:</p></li>
 </ul>
 <pre><code class="hljs css language-4d">    {<span class="hljs-string">"*propertyPath*"</span>: string,
     <span class="hljs-string">"*descending*"</span>: boolean}  
-</code></pre>
-<pre><code class="hljs">By default, properties are sorted in ascending order (&quot;descending&quot; is false). You can add as many objects in the *pathObjects* collection as necessary.
 </code></pre>
 <ul>
 <li><p><em>ascOrDesc</em> : Integer. You pass one of the following constants from the <strong>Objects and collections</strong> theme:</p>
@@ -1630,14 +1628,14 @@ End if</span>
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.orderByMethod</strong>( <em>methodName</em> : Text { ; ...<em>extraParam</em> : Expression } ) : Collection</p>
+<p><strong>.orderByMethod</strong>( <em>methodName</em> : Text { ; ...<em>extraParam</em> : expression } ) : Collection</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>methodName</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Name of method used to specify the sorting order</td></tr>
-<tr><td>extraParam</td><td>Expression</td><td style="text-align:center">-&gt;</td><td>Parameter(s) for the method</td></tr>
+<tr><td>extraParam</td><td>expression</td><td style="text-align:center">-&gt;</td><td>Parameter(s) for the method</td></tr>
 <tr><td>Résultat</td><td>Collection</td><td style="text-align:center">&lt;-</td><td>Sorted copy of the collection (shallow copy)</td></tr>
 </tbody>
 </table>
@@ -2046,7 +2044,7 @@ End if</span>
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.shift( )</strong> -&gt; any</p>
+<p><strong>.shift()</strong> : any</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
@@ -2243,10 +2241,10 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="example-3-5"></a><a href="#example-3-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 3</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col</span>; <span class="hljs-variable">$col2</span>; <span class="hljs-variable">$col3 </span>: Collection
  <span class="hljs-variable">$col</span>:=<span class="hljs-function">New collection</span>(<span class="hljs-number">33</span>;<span class="hljs-number">4</span>;<span class="hljs-number">66</span>;<span class="hljs-number">1111</span>;<span class="hljs-number">222</span>)
- <span class="hljs-variable">$col2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">sort</span>() <span class="hljs-comment">//tri numérique : [4,33,66,222,1111]</span>
- <span class="hljs-variable">$col3</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">sort</span>(<span class="hljs-string">"numberOrder"</span>) <span class="hljs-comment">//tri alphabétique : [1111,222,33,4,66]</span>
+ <span class="hljs-variable">$col2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">sort</span>() <span class="hljs-comment">//numerical sort: [4,33,66,222,1111]</span>
+ <span class="hljs-variable">$col3</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">sort</span>(<span class="hljs-string">"numberOrder"</span>) <span class="hljs-comment">//alphabetical sort: [1111,222,33,4,66]</span>
 </code></pre>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//méthode projet numberOrder</span><span class="hljs-keyword">
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//numberOrder project method</span><span class="hljs-keyword">
  var</span> <span class="hljs-variable">$1 </span>: Object
  <span class="hljs-variable">$1</span>.result:=<span class="hljs-function">String</span>(<span class="hljs-variable">$1</span>.value)&lt;<span class="hljs-function">String</span>(<span class="hljs-variable">$1</span>.value2)
 </code></pre>

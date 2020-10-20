@@ -91,9 +91,9 @@
 | <a href="#exists"><strong>.exists</strong> : Boolean</a><p>    true if the file exists on disk|
 | <a href="#extension"><strong>.extension</strong> : Text</a><p>    the extension of the file name (if any)|
 | <a href="#fullname"><strong>.fullName</strong> : Text</a><p>    the full name of the file, including its extension (if any)|
-| <a href="#getcontent"><strong>.getContent( )</strong> : BLOB</a><p>returns a</p>
+| <a href="#getcontent"><strong>.getContent( )</strong> : Blob</a><p>returns a</p>
 <p><code>BLOB</code> containing the entire content of a file|
-| <a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : picture</a><p>    the icon of the file|
+| <a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    the icon of the file|
 | <a href="#gettext"><strong>.getText</strong>( { <em>charSetName</em> : Text } { ; } { <em>breakMode</em> : integer} ) : Text<br><strong>.getText</strong>( { <em>charSetNum</em> : integer } { ; } { <em>breakMode</em> : integer} ) : Text</a><p>    returns the contents of the file as text |
 | <a href="#hidden"><strong>.hidden</strong> : Boolean</a><p>    true if the file is set as &quot;hidden&quot; at the system level|
 | <a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    true if the file is an alias, a shortcut, or a symbolic link
@@ -129,7 +129,7 @@
 </tbody>
 </table>
 <p></details></p>
-<p><strong>File</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer } ) : 4D.File<br><strong>File</strong> ( <em>fileConstant</em> : Integer { ; <em>*</em> } ) : 4D.File</p>
+<p><strong>File</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; <em>*</em> } ) : 4D.File<br><strong>File</strong> ( <em>fileConstant</em> : Integer { ; <em>*</em> } ) : 4D.File</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
@@ -145,7 +145,7 @@
 <h4><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>The <code>File</code> command creates and returns a new object of the</p>
 <p><code>4D.File</code> type. The command accepts two syntaxes:</p>
-<p><strong>File ( path { ; pathType } )</strong></p>
+<p><strong>File ( path { ; pathType } { ; * })</strong></p>
 <p>In the <em>path</em> parameter, pass a file path string. You can use a custom string or a filesystem (e.g., &quot;/DATA/myfile.txt&quot;).</p>
 <blockquote>
 <p>Only absolute pathnames are supported with the <code>File</code> command.</p>
@@ -307,13 +307,13 @@
 <tr><th>Constant</th><th>Valeur</th><th>Commentaire</th></tr>
 </thead>
 <tbody>
-<tr><td><code>fk alias link</code></td><td>0</td><td>Alias link (macOS only)(default)</td></tr>
+<tr><td><code>fk alias link</code></td><td>0</td><td>Alias link (default)</td></tr>
 <tr><td><code>fk symbolic link</code></td><td>1</td><td>Symbolic link (macOS only)</td></tr>
 </tbody>
 </table>
 <p>On Windows, a shortcut (.lnk file) is always created (the <em>aliasType</em> parameter is ignored).</p>
 <p><strong>Returned object</strong></p>
-<p>A <code>File</code> object with the <code>isAlias</code> property set to <strong>true</strong>.</p>
+<p>A <code>4D.File</code> object with the <code>isAlias</code> property set to <strong>true</strong>.</p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-3"></a><a href="#exemple-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
 <p>You want to create an alias to a file in your database folder:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$myFile</span>:=<span class="hljs-function">Folder</span>(fk documents folder).<span class="hljs-function">file</span>(<span class="hljs-string">"Archives/ReadMe.txt"</span>)
@@ -442,13 +442,13 @@
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.getContent( )</strong> : BLOB</p>
+<p><strong>.getContent( )</strong> : Blob</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>Résultat</td><td>BLOB</td><td>&lt;-</td><td>File content</td></tr>
+<tr><td>Résultat</td><td>Blob</td><td>&lt;-</td><td>File content</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-10"></a><a href="#description-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
@@ -456,7 +456,7 @@
 <p><code>BLOB</code> containing the entire content of a file. For information on BLOBs, please refer to the</p>
 <p><a href="/docs/alpha/fr/Concepts/blob.html">BLOB</a> section.</p>
 <p><strong>Returned value</strong></p>
-<p>A <code>BLOB</code>.</p>
+<p>A <code>Blob</code>.</p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-5"></a><a href="#exemple-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
 <p>To save a document's contents in a <code>BLOB</code> field:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$vPath </span>: Text
@@ -477,7 +477,7 @@
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : picture</p>
+<p><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</p>
 <table>
 <thead>
 <tr><th>Paramètres</th><th>Type</th><th></th><th>Description</th></tr>
