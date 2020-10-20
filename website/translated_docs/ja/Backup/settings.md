@@ -87,7 +87,7 @@ By default, any project created with 4D uses a log file (option **Use Log File**
 - **Backup only if the data file has been modified**: When this option is checked, 4D starts scheduled backups only if data has been added, changed or deleted since the last backup. そうでない場合、定期的なバックアップはキャンセルされ、次回のスケジュールまで延期されます。 エラーは生成されませんが、バックアップジャーナルにはバックアップが延期された旨記録されます。 This option also allows saving machine time for the backup of applications principally used for viewing purposes. ストラクチャーや添付ファイルに対して変更がおこなわれていても、データファイルの更新としては扱われない旨注意してください。
 > This parameter concerns both application and log file backups.
 
-- **Delete oldest backup file before/after backup**: This option is only used if the "Keep only the last X backup files" option is checked. It specifies whether 4D should start by deleting the oldest archive before starting the backup (**before** option) or whether the deletion should take place once the backup is completed (**after** option). In order for this mechanism to work, the oldest archive must not have been renamed or moved.
+- **最も古いバックアップファイルを削除**: このオプションは "最新のバックアップのみ保存 X バックアップファイル" が有効になっている場合のみ使用されます。 このオプションを使用して、最も古いバックアップファイルを削除するタイミングを設定します。選択肢は **バックアップ前**、あるいは **バックアップ後** です。 このオプションが機能するには、バックアップファイルが名称変更されたり、移動されたりしていてはなりません。
 
 - **If backup fails**: This option allows setting the mechanism used to handle failed backups (backup impossible). When a backup cannot be performed, 4D lets you carry out a new attempt.
     -  **Retry at the next scheduled date and time**: This option only makes sense when working with scheduled automatic backups. It amounts to cancelling the failed backup. An error is generated.
