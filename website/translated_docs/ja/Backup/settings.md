@@ -66,14 +66,14 @@ The Backup/Configuration page of the Structure Settings lets you set the backup 
 
 ### ログ管理
 
-The **Use Log** option, when checked, indicates that the application uses a log file. Its pathname is specified below the option. When this option is checked, it is not possible to open the application without a log file.
+The **Use Log** option, when checked, indicates that the application uses a log file. ログファイルの場所はオプションの下に表示されます。 When this option is checked, it is not possible to open the application without a log file.
 
 By default, any project created with 4D uses a log file (option **Use Log File** checked in the **General Page** of the **Preferences**). The log file is named *data.journal* and is placed in the Data folder.
 
-> Activating a new log file requires the data of the application to be backed up beforehand. When you check this option, a warning message informs you that a backup is necessary. The creation of the log file is postponed and it will actually be created only after the next backup of the application.
+> Activating a new log file requires the data of the application to be backed up beforehand. このオプションをチェックすると、バックアップが必要である旨の警告メッセージが表示されます: The creation of the log file is postponed and it will actually be created only after the next backup of the application.
 
 
-## Backup & Restore
+## バックアップ＆復旧
 
 Modifying backup and restore options is optional. Their default values correspond to a standard use of the function.
 
