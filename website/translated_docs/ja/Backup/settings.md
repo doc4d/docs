@@ -45,9 +45,9 @@ title: バックアップ設定
 ### 内容
 このエリアでは、次回のバックアップ時にコピー対象とするファイルやフォルダーを指定します。
 
-- **データ**: アプリケーションのデータファイル。 When this option is checked, the following elements are automatically backed up at the same time as the data:
+- **データ**: アプリケーションのデータファイル。 このオプションが選択されている場合、次のものがデータとともにバックアップされます:
     - データベースのカレントログファイル (あれば)
-    - the full `Settings` folder located [next to the data file](Project/architecture.md#settings-folder) (if it exists), i.e. the *user settings for data*.
+    - [データファイルの隣に置かれた](Project/architecture.md#settings-フォルダー) `Settings` フォルダー (あれば)。これは *データファイル用のユーザー設定* を格納しています。
 - **ストラクチャー**: アプリケーションの Project フォルダーとファイル。 プロジェクトがコンパイルされている場合には、このオプションは .4dz ファイルをバックアップします。 When this option is checked, the full `Settings` folder located [at the same level as the Project folder](Project/architecture.md#settings-folder-1), i.e. the *user settings*, is automatically backed up.
 - **ユーザーストラクチャー(バイナリデータベースのみ)**: *廃止予定*
 - **添付**: このエリアでは、アプリケーションと同時にバックアップの対象とするファイルやフォルダーを指定します。 ここではどのようなタイプのファイル (ドキュメントやプラグイン、テンプレート、ラベル、レポート、ピクチャーなど) でも指定できます。 個々のファイル、または丸ごとバックアップするフォルダーを個々に設定できます。 添付エリアには、設定されたファイルのパスが表示されます。
@@ -113,11 +113,11 @@ title: バックアップ設定
 
 ### 自動復元
 
-- **Restore last backup if database is damaged**: When this option is checked, the program automatically starts the restore of the data file of the last valid backup of the application, if an anomaly is detected (corrupted file, for example) during application launch. ユーザーによる介入は必要ありませんが、処理はバックアップジャーナルに記録されます。
+- **データベースが壊れていたら、最新のバックアップから復元する**: このオプションが選択されていると、ファイル破損などの異常が検知された場合、4D は起動時にアプリケーションの有効な最新のバックアップからのデータの復旧を自動で開始します。 ユーザーによる介入は必要ありませんが、処理はバックアップジャーナルに記録されます。
 
-- **Integrate last log file if database is incomplete**: When this option is checked, the program automatically integrates the log file when opening or restoring the application.
-    - When opening an application, the current log file is automatically integrated if 4D detects that there are operations stored in the log file that are not present in the data. このようなケースは、ディスクに書き込まれていないデータがまだキャッシュ中に存在する状態で、電力の切断が起きた場合に発生します。
-    - When restoring an application, if the current log file or a log backup file having the same number as the backup file is stored in the same folder, 4D examines its contents. そしてデータファイルに書き込まれていない処理が見つかれば、自動で統合処理がおこなわれます。
+- **データベースが完全でない場合、最新のログを統合する**: このオプションがチェックされると、プログラムはアプリケーションを開く際または復旧時に、自動でログファイルを統合します。
+    - アプリケーションを開く際に、データファイルに保存されていない処理がログファイル中に見つかった場合、4D は自動でカレントログファイルを統合します。 このようなケースは、ディスクに書き込まれていないデータがまだキャッシュ中に存在する状態で、電力の切断が起きた場合に発生します。
+    - アプリケーションの復元時、カレントログファイルや、バックアップファイルと同じ番号を持つログバックアップファイルが同じフォルダーに存在する場合、4D はその内容を検証します。 そしてデータファイルに書き込まれていない処理が見つかれば、自動で統合処理がおこなわれます。
 
 ユーザーにダイアログボックスが提示されることはありません。 処理は完全に自動です。 処理はバックアップジャーナルに記録されます。
 
