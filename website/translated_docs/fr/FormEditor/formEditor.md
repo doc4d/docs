@@ -40,15 +40,15 @@ Le générateur de list box vous permet de créer et de remplir des list box de 
 
     Cette expression peut être modifiée si nécessaire.
 
-5.  Clicking on the **Copy** button will copy the expression for loading all records into memory:
+5.  En cliquant sur le bouton **Copier**, l'expression sera copiée pour charger tous les enregistrements en mémoire :
 
     ![](assets/en/FormEditor/listboxBuilderCode.png)
 
-6.  Click the the **Build widget** button to create the list box.
+6.  Cliquez sur le bouton **Créer un widget** pour créer la list box.
 
     ![](assets/en/FormEditor/listboxBuilderBuild.png)
 
-The final list box:
+La list box finale :
 
 ![](assets/en/FormEditor/listboxBuilderListbox.png)
 
@@ -142,28 +142,28 @@ Here are a few important things to know before you start working with views:
 
 
 
-### Managing views
+### Gestion des vues
 
-#### Creating views
+#### Créer des vues
 
-Any object created in a form is placed in the first view ("View 1") of the form. The first view is **always** the default view, indicated by (Default) after the name. The view's name can be changed (see [Renaming views](#renaming-views)), however it remains the default view.
+Tout objet créé dans un formulaire est placé dans la première vue ("Vue 1") du formulaire. La première vue 1 est **toujours** la vue par défaut, indiquée par (par défaut) après le nom. Le nom de la vue peut être modifié (voir [Renommer les vues](#renaming-views)), mais il demeure la vue par défaut.
 
 
 ![](assets/en/FormEditor/createView.png)
 
-There are two ways to add additional views:
+Il existe deux façons d'ajouter des vues supplémentaires :
 
-*   Click on the **Add a new view** button at the bottom of the View palette:
+*   Cliquez sur le bouton **Ajouter une nouvelle vue** en bas de la palette Vue :
 
 ![](assets/en/FormEditor/addView.png)
 
-*   Right-click on an existing view and select **Insert view**:
+*   Faites un clic droit sur une vue existante et sélectionnez **Insérer une vue** :
 
 ![](assets/en/FormEditor/addView2.png)
 
-There is no limitation on the number of views.
+Il n'y a pas de limitation du nombre de vues.
 
-#### Renaming views
+#### Renommer des vues
 
 By default views are named as "View" + the view number, however you can change these names to improve readability and better suit your needs.
 
