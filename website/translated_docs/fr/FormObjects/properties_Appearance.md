@@ -101,7 +101,7 @@ Available values:
 
 #### Objets pris en charge
 
-[Hierarchical List](list_overview.md#overview) - [Subform](subform_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Input](input_overview.md) - [4D Write Pro area](writeProArea_overview.md)
+[Liste hiérarchique](list_overview.md#overview) - [Sous-formulaire](subform_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Zone de saisie](input_overview.md) - [Zone 4D Write Pro](writeProArea_overview.md)
 
 #### Voir également
 [Barre de défilement verticale](#vertical-scroll-bar)
@@ -109,7 +109,7 @@ Available values:
 ---
 ## Resolution
 
-Sets the screen resolution for the 4D Write Pro area contents. By default, it is set to 72 dpi (macOS), which is the standard resolution for 4D forms on all platforms. Setting this property to 96 dpi will set a windows/web rendering on both macOS and Windows platforms. Setting this property to **automatic** means that document rendering will differ between macOS and Windows platforms.
+Définit la résolution d'écran pour le contenu de la zone 4D Write Pro. Par défaut, elle est définie sur 72 dpi (macOS), qui est la résolution standard des formulaires 4D sur toutes les plateformes. La définition de cette propriété sur 96 dpi définira un rendu Windows/Web sur les plateformes macOS et Windows. La définition de cette propriété sur **automatique** signifie que le rendu du document sera différent entre les plates-formes macOS et Windows.
 
 
 #### Grammaire JSON
@@ -121,14 +121,14 @@ Sets the screen resolution for the 4D Write Pro area contents. By default, it is
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
 
 ---
-## Show background
+## Afficher l'arrière-plan
 
-Displays/hides both background images and background color.
+Affiche/masque les images d'arrière-plan et la couleur d'arrière-plan.
 
 
 #### Grammaire JSON
@@ -136,16 +136,16 @@ Displays/hides both background images and background color.
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showBackground|boolean|true (default), false|
+ showBackground|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 ---
-## Show footers
+## Afficher les pieds de page
 
-Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
+Affiche/masque les pieds de page lorsque le [mode d'affichage de la page](#view-mode) est défini sur "Page".
 
 
 #### Grammaire JSON
@@ -153,19 +153,19 @@ Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showFooters|boolean|true (default), false|
+ showFooters|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
 ---
-## Show Formula Bar
+## Afficher la barre de formule
 
-When enabled, the formula bar is visible below the Toolbar interface in the 4D View Pro area. If not selected, the formula bar is hidden.
+Lorsqu'elle est activée, la barre de formule est visible sous l'interface de la barre d'outils dans la zone 4D View Pro. Si elle n'est pas sélectionnée, la barre de formule est masquée.
 
-> This property is available only for the [Toolbar](#user-interface) interface.
+> Cette propriété est disponible uniquement pour l'interface de la [barre d'outils](#user-interface).
 
 
 #### Grammaire JSON
@@ -173,16 +173,16 @@ When enabled, the formula bar is visible below the Toolbar interface in the 4D V
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- withFormulaBar|boolean|true (default), false|
+ withFormulaBar|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
-[4D View Pro area](viewProArea_overview.md)
+[Zone 4D View Pro](viewProArea_overview.md)
 
 ---
 ## Montrer les entêtes
 
-Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
+Affiche/masque les en-têtes de la page lorsque le [mode d'affichage de la page](#view-mode) est défini sur "Page".
 
 
 #### Grammaire JSON
@@ -190,11 +190,11 @@ Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHeaders|boolean|true (default), false|
+ showHeaders|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
 
@@ -209,17 +209,17 @@ Affiche/masque les caractères visibles
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHiddenChars|boolean|true (default), false|
+ showHiddenChars|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
 ---
 ## Montrer la règle horizontale
 
-Displays/hides the horizontal ruler when the document view is in [Page mode](#view-mode).
+Affiche/masque la règle horizontale lorsque la vue du document est en mode [Page](#view-mode).
 
 
 #### Grammaire JSON
@@ -227,11 +227,11 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHorizontalRuler|boolean|true (default), false|
+ showHorizontalRuler|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
 
@@ -240,7 +240,7 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 ---
 ## Montrer HTML WYSYWIG
 
-Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attributes which are not compliant with all browsers are removed.
+Active/désactive la vue HTML WYSIWYG, dans laquelle tous les attributs avancés de 4D Write Pro qui ne sont pas compatibles avec tous les navigateurs sont supprimés.
 
 
 #### Grammaire JSON
@@ -248,16 +248,16 @@ Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attri
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHTMLWysiwyg|boolean|true, false (default)|
+ showHTMLWysiwyg|booléen|true, false (par défaut)|
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 ---
 ## Afficher le cadre de la page
 
-Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page".
+Affiche/masque le cadre de la page lorsque le [mode d'affichage de la page](#view-mode) est défini sur "Page".
 
 
 #### Grammaire JSON
@@ -265,11 +265,11 @@ Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page"
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showPageFrames|boolean|true, false|
+ showPageFrames|booléen|true, false|
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
 
@@ -298,7 +298,7 @@ With the Show references property on, the reference is displayed:
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 ---
 ## Afficher règle verticale
@@ -315,7 +315,7 @@ Affiche/masque la règle verticale lorsque la vue du document est en mode [Page]
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
 ---
@@ -351,7 +351,7 @@ Vous pouvez ajouter une interface aux zones 4D View Pro pour permettre aux utili
 
 #### Objets pris en charge
 
-[4D View Pro area](viewProArea_overview.md)
+[Zone 4D View Pro](viewProArea_overview.md)
 
 
 #### Voir également
@@ -385,7 +385,7 @@ Available values:
 
 #### Objets pris en charge
 
-[Hierarchical List](list_overview.md#overview) - [Subform](subform_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Input](input_overview.md) - [4D Write Pro area](writeProArea_overview.md)
+[Liste hiérarchique](list_overview.md#overview) - [Sous-formulaire](subform_overview.md#overview) - [List Box](listbox_overview.md#overview) - [Zone de saisie](input_overview.md) - [Zone 4D Write Pro](writeProArea_overview.md)
 
 #### Voir également
 
@@ -413,7 +413,7 @@ Définit le mode d'affichage du document 4D Write Pro dans la zone de formulaire
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 ---
 ## Zoom
@@ -430,6 +430,6 @@ Définit le pourcentage de zoom pour l'affichage du contenu de la zone 4D Write 
 
 #### Objets pris en charge
 
-[4D Write Pro area](writeProArea_overview.md)
+[Zone 4D Write Pro](writeProArea_overview.md)
 
 
