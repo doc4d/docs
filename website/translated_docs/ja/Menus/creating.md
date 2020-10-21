@@ -1,11 +1,11 @@
 ---
 id: creating
-title: Creating menus and menu bars
+title: メニューとメニューバーの作成
 ---
 
-You can create menus and menu bars:
+メニューおよびメニューバーを作成するには次の 2つの方法があります:
 
-- using the Menus editor of the 4D Toolbox window. In this case, menus and menu bars are stored in the application's structure.
+- 4Dツールボックスウィンドウのメニューエディターを使用する。 この場合、メニューとメニューバーはアプリケーションのストラクチャーに保存されます。
 - dynamically, using the language commands from the "Menus" theme. In this case, menus and menu bars are not stored, they only exist in memory.
 
 You can combine both features and use menus created in structure as templates to define menus in memory.
