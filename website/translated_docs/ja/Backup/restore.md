@@ -20,16 +20,16 @@ title: 復元
 
 バックアップモジュールを使用して生成されたアーカイブの内容を、手動で復元することができます。 手動による復元は、たとえばアーカイブ全体 (ストラクチャーファイルや添付されたファイル) を再生成したい場合や、アーカイブの内容を見たい場合などに必要となります。 手動復元の際に、カレントログファイルを統合することもできます。
 
-バックアップの手動復元は、標準のファイルを開くダイアログボックス、あるいは Maintenance and Security Center (MSC) の [復元](MSC/restore) ページからおこなうことができます。 Restoring via the MSC provides more options and allows the archive contents to be previewed. On the other hand, only archives associated with the open application can be restored.
+バックアップの手動復元は、標準のファイルを開くダイアログボックス、あるいは Maintenance and Security Center (MSC) の [復元](MSC/restore) ページからおこなうことができます。 MSC を使用した復元では詳細なオプション設定をおこなったり、アーカイブの内容をプレビューしたりすることができます。 On the other hand, only archives associated with the open application can be restored.
 
 To restore an application manually via a standard dialog box:
 
-1. Choose **Restore...** in the 4D application **File** menu. It is not mandatory that an application project be open. OR Execute the `RESTORE` command from a 4D method. A standard Open file dialog box appears.
-2. Select a backup file (.4bk) or a log backup file (.4bl) to be restored and click **Open**. A dialog box appears, which allows you to specify the location where files will be restored. By default, 4D restores the files in a folder named *Archivename* (no extension) located next to the archive. You can display the path:
+1. 4Dアプリケーションを開始し、**ファイル** メニューから **復元...** を選択します。 It is not mandatory that an application project be open. OR Execute the `RESTORE` command from a 4D method. 標準のファイルを開くダイアログボックスが表示されます。
+2. 復元するバックアップファイル (.4bk) またはログバックアップファイル (.4bl) を選択し、**開く** をクリックします。 復元したファイルを配置する場所を指定するために、以下のダイアログボックスが表示されます: デフォルトで 4Dは アーカイブと同階層にアーカイブ名と同じ名前 (拡張子なし) のフォルダーを作成し、ファイルを復元します。 You can display the path:
 
 ![](assets/en/Backup/backup07.png)
 
-You can also click on the **[...]** button to specify a different location.
+**[...]** ボタンをクリックして異なる場所を指定することもできます。
 3. Click on the **Restore** button. 4D extracts all backup files from the specified location. If the current log file or a log backup file with the same number as the backup file is stored in the same folder, 4D examines its contents. If it contains operations not present in the data file, the program asks you if you want to integrate these operations. Integration is done automatically if the **Integrate last log file...** option is checked (see [Automatic Restore](settings.md#automatic-restore)).
 
 4.(Optional) Click **OK** to integrate the log file into the restored application. If the restore and integration were carried out correctly, 4D displays a dialog box indicating that the operation was successful.
