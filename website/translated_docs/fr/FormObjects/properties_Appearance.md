@@ -126,7 +126,7 @@ Sets the screen resolution for the 4D Write Pro area contents. By default, it is
 
 
 ---
-## Show background
+## Afficher l'arrière-plan
 
 Displays/hides both background images and background color.
 
@@ -136,16 +136,16 @@ Displays/hides both background images and background color.
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showBackground|boolean|true (default), false|
+ showBackground|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
 [4D Write Pro area](writeProArea_overview.md)
 
 ---
-## Show footers
+## Afficher les pieds de page
 
-Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
+Affiche/masque les pieds de page lorsque le [mode d'affichage de la page](#view-mode) est défini sur "Page".
 
 
 #### Grammaire JSON
@@ -153,7 +153,7 @@ Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showFooters|boolean|true (default), false|
+ showFooters|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
@@ -161,11 +161,11 @@ Displays/hides the footers when [Page view mode](#view-mode) is set to "Page".
 
 
 ---
-## Show Formula Bar
+## Afficher la barre de formule
 
-When enabled, the formula bar is visible below the Toolbar interface in the 4D View Pro area. If not selected, the formula bar is hidden.
+Lorsqu'elle est activée, la barre de formule est visible sous l'interface de la barre d'outils dans la zone 4D View Pro. Si elle n'est pas sélectionnée, la barre de formule est masquée.
 
-> This property is available only for the [Toolbar](#user-interface) interface.
+> Cette propriété est disponible uniquement pour l'interface de la [barre d'outils](#user-interface).
 
 
 #### Grammaire JSON
@@ -173,16 +173,16 @@ When enabled, the formula bar is visible below the Toolbar interface in the 4D V
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- withFormulaBar|boolean|true (default), false|
+ withFormulaBar|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
-[4D View Pro area](viewProArea_overview.md)
+[Zone 4D View Pro](viewProArea_overview.md)
 
 ---
 ## Montrer les entêtes
 
-Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
+Affiche/masque les en-têtes de la page lorsque le [mode d'affichage de la page](#view-mode) est défini sur "Page".
 
 
 #### Grammaire JSON
@@ -190,7 +190,7 @@ Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHeaders|boolean|true (default), false|
+ showHeaders|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
@@ -209,7 +209,7 @@ Affiche/masque les caractères visibles
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHiddenChars|boolean|true (default), false|
+ showHiddenChars|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
@@ -219,7 +219,7 @@ Affiche/masque les caractères visibles
 ---
 ## Montrer la règle horizontale
 
-Displays/hides the horizontal ruler when the document view is in [Page mode](#view-mode).
+Affiche/masque la règle horizontale lorsque la vue du document est en mode [Page](#view-mode).
 
 
 #### Grammaire JSON
@@ -227,7 +227,7 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHorizontalRuler|boolean|true (default), false|
+ showHorizontalRuler|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
@@ -240,7 +240,7 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 ---
 ## Montrer HTML WYSYWIG
 
-Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attributes which are not compliant with all browsers are removed.
+Active/désactive la vue HTML WYSIWYG, dans laquelle tous les attributs avancés de 4D Write Pro qui ne sont pas compatibles avec tous les navigateurs sont supprimés.
 
 
 #### Grammaire JSON
@@ -248,16 +248,16 @@ Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attri
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showHTMLWysiwyg|boolean|true, false (default)|
+ showHTMLWysiwyg|booléen|true, false (par défaut)|
 
 #### Objets pris en charge
 
 [4D Write Pro area](writeProArea_overview.md)
 
 ---
-## Show page frame
+## Afficher le cadre de la page
 
-Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page".
+Affiche/masque le cadre de la page lorsque le [mode d'affichage de la page](#view-mode) est défini sur "Page".
 
 
 #### Grammaire JSON
@@ -265,7 +265,7 @@ Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page"
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showPageFrames|boolean|true, false|
+ showPageFrames|booléen|true, false|
 
 #### Objets pris en charge
 
@@ -274,7 +274,7 @@ Displays/hides the page frame when [Page view mode](#view-mode) is set to "Page"
 
 
 ---
-## Show references
+## Afficher les références
 
 Displays all 4D expressions inserted in the 4D Write Pro document as *references*. When this option is disabled, 4D expressions are displayed as *values*. By default when you insert a 4D field or expression, 4D Write Pro computes and displays its current value. Select this property if you wish to know which field or expression is displayed. The field or expression references then appear in your document, with a gray background.
 
@@ -294,16 +294,16 @@ With the Show references property on, the reference is displayed:
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showReferences|boolean|true, false (default)|
+ showReferences|booléen|true, false (par défaut)|
 
 #### Objets pris en charge
 
 [4D Write Pro area](writeProArea_overview.md)
 
 ---
-## Show vertical ruler
+## Afficher règle verticale
 
-Displays/hides the vertical ruler when the document view is in [Page mode](#view-mode).
+Affiche/masque la règle verticale lorsque la vue du document est en mode [Page](#view-mode).
 
 
 #### Grammaire JSON
@@ -311,7 +311,7 @@ Displays/hides the vertical ruler when the document view is in [Page mode](#view
 | Nom | Type de données | Valeurs possibles |
 | --- | --------------- | ----------------- |
 |     |                 |                   |
- showVerticalRuler|boolean|true (default), false|
+ showVerticalRuler|booléen|true (par défaut), false|
 
 #### Objets pris en charge
 
@@ -323,7 +323,7 @@ Displays/hides the vertical ruler when the document view is in [Page mode](#view
 
 Vous pouvez définir la direction des onglets dans vos formulaires. Cette propriété est disponible sur toutes les plateformes mais ne peut être affichée que sous macOS. Vous pouvez choisir de placer les onglets en haut (standard) ou en bas.
 
-When tab controls with a custom direction are displayed under Windows, they automatically return to the standard direction (top).
+Lorsque des onglets sont affichés avec une direction personnalisée sous Windows, ils retournent automatiquement à la direction standard (en haut).
 
 #### Grammaire JSON
 
@@ -351,7 +351,7 @@ Vous pouvez ajouter une interface aux zones 4D View Pro pour permettre aux utili
 
 #### Objets pris en charge
 
-[4D View Pro area](viewProArea_overview.md)
+[Zone 4D View Pro](viewProArea_overview.md)
 
 
 #### Voir également
