@@ -96,20 +96,20 @@
 <tbody>
 <tr><td>__entityModel</td><td>Chaine</td><td>Nom de la classe du datastore.</td></tr>
 <tr><td>__COUNT</td><td>Nombre</td><td>Nombre d'entités dans la classe du datastore.</td></tr>
-<tr><td>__SENT</td><td>Nombre</td><td>Number of entities sent by the REST request. This number can be the total number of entities if it is less than the value defined by <code>$top/$limit</code>.</td></tr>
+<tr><td>__SENT</td><td>Nombre</td><td>Nombre d'entités envoyées par la requête REST. Ce nombre peut être le nombre total d'entités s'il est inférieur à la valeur définie par <code>$top/$limit</code>.</td></tr>
 <tr><td>__FIRST</td><td>Nombre</td><td>Numéro d'entité à partir duquel la sélection commence. Soit 0 par défaut soit la valeur définie par <code>$skip</code>.</td></tr>
 <tr><td>__ENTITIES</td><td>Collection</td><td>Cette collection d'objets contient un objet pour chaque entité avec tous ses attributs. Tous les attributs relationnels sont renvoyés en tant qu'objets avec un URI pour obtenir des informations concernant le parent.</td></tr>
 </tbody>
 </table>
-<p>Each entity contains the following properties:</p>
+<p>Chaque entité contient les propriétés suivantes :</p>
 <table>
 <thead>
 <tr><th>Propriété</th><th>Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>__KEY</td><td>Chaine</td><td>Value of the primary key defined for the datastore class.</td></tr>
-<tr><td>__TIMESTAMP</td><td>Date</td><td>Timestamp of the last modification of the entity</td></tr>
-<tr><td>__STAMP</td><td>Nombre</td><td>Internal stamp that is needed when you modify any of the values in the entity when using <code>$method=update</code>.</td></tr>
+<tr><td>__KEY</td><td>Chaine</td><td>Valeur de la clé primaire définie pour le datastore class.</td></tr>
+<tr><td>__TIMESTAMP</td><td>Date</td><td>Horodatage de la dernière modification de l'entité</td></tr>
+<tr><td>__STAMP</td><td>Nombre</td><td>Tampon interne qui est nécessaire lors de la modification des valeurs de l'entité lors de l'utilisation de <code>$method=update</code>.</td></tr>
 </tbody>
 </table>
 <p>Si vous souhaitez indiquer les attributs à retourner, définissez-les à l'aide de la syntaxe suivante <a href="/docs/Rx/fr/REST/manData.html##selecting-attributes-to-get">{attribut1, attribut2, ...}</a>. Par exemple:</p>
