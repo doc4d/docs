@@ -3,42 +3,42 @@ id: formEditor
 title: Éditeur de formulaire
 ---
 
-## List Box Builder
+## Création de list box
 
-You can create new entity selection list boxes quickly with the **List box builder**. The new list box can be used immediately or it can be edited via the Form Editor.
+Vous pouvez créer rapidement de nouvelles list box de type sélection d'entités avec le **générateur de list box**. La nouvelle list box peut être utilisée immédiatement ou elle peut être modifiée via l'éditeur de formulaires.
 
-The List box builder lets you create and fill entity selection list boxes in a few simple operations.
-
-
-
-### Using the List Box Builder
+Le générateur de list box vous permet de créer et de remplir des list box de type sélection d'entités en quelques opérations simples.
 
 
-1.  In the Form Editor toolbar, click on the List box builder icon:
+
+### Utilisation du générateur de list box
+
+
+1.  Dans la barre d'outils de l'éditeur de formulaire, cliquez sur l'icône du générateur de zone de liste :
 
     ![](assets/en/FormEditor/listboxBuilderIcon.png)
 
-    The List box builder is displayed:
+    Le générateur de list box s'affiche :
 
     ![](assets/en/FormEditor/listboxBuilder.png)
 
-2.  Select a table from the **Table** dropdown list:
+2.  Sélectionnez une table dans la liste déroulante **Table** :
 
     ![](assets/en/FormEditor/listboxBuilderTable.png)
 
-3.  Select the fields for the list box in the **Fields** area:
+3.  Sélectionnez les champs de la list box dans la zone **Champs** :
 
     ![](assets/en/FormEditor/listboxBuilderFields.png)
 
-    By default, all fields are selected. You can select or deselect fields individually or use **Ctrl+click** (Windows) or **Cmd+click** (macOS) to select or deselect them all at once.
+    Par défaut, tous les champs sont sélectionnés. Vous pouvez sélectionner ou désélectionner les champs individuellement ou utiliser **Ctrl+clic** (Windows) ou **Cmd+clic** (macOS) pour les sélectionner ou les désélectionner tous à la fois.
 
-    You can change the order of the fields by dragging them and dropping them.
+    Vous pouvez modifier l'ordre des champs via un glisser-déposer.
 
-4.  The expression to fill the list box's rows from the entity selection is prefilled:
+4.  L'expression qui permet de remplir les lignes de la list box à partir de la sélection d'entité est préremplie :
 
     ![](assets/en/FormEditor/listboxBuilderExpression.png)
 
-    This expression can be changed if necessary.
+    Cette expression peut être modifiée si nécessaire.
 
 5.  Clicking on the **Copy** button will copy the expression for loading all records into memory:
 
@@ -76,17 +76,17 @@ Pour ne pas afficher de badges, choisissez la ligne **Pas de badges** dans le me
 
 Voici la description de chaque type de badge :
 
-| Icône                                        | Nom               | Est affiché...                                                                                                                       |
-| -------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ![](assets/en/FormEditor/objectMethod.png)   | Méthode objet     | Pour les objets auxquels une méthode objet est associée                                                                              |
-| ![](assets/en/FormEditor/standardAction.png) | Action standard   | Pour les objets auxquels une action standard est associée                                                                            |
-| ![](assets/en/FormEditor/resizing.png)       | Redimensionnement | Pour les objets disposant d’au moins une propriété de redimensionnement, indique la combinaison de propriétés courante               |
-| ![](assets/en/FormEditor/entryOrder.png)     | Ordre de saisie   | Pour les objets saisissables, indique le numéro d’ordre de saisie                                                                    |
-| ![](assets/en/FormEditor/viewNumber.png)     | Current View      | For all objects in the current view                                                                                                  |
-| ![](assets/en/FormEditor/filter.png)         | Filter            | For enterable objects with an associated entry filter                                                                                |
-| ![](assets/en/FormEditor/helpTip.png)        | Message d'aide    | For objects with an associated tip                                                                                                   |
-| ![](assets/en/FormEditor/localized.png)      | Localized         | For objects whose label comes from a reference (label beginning with “:”). The reference can be of the resource (STR#) or XLIFF type |
-| ![](assets/en/FormEditor/noShields.png)      | No Shields        | No shields appear                                                                                                                    |
+| Icône                                        | Nom               | Est affiché...                                                                                                                                |
+| -------------------------------------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| ![](assets/en/FormEditor/objectMethod.png)   | Méthode objet     | Pour les objets auxquels une méthode objet est associée                                                                                       |
+| ![](assets/en/FormEditor/standardAction.png) | Action standard   | Pour les objets auxquels une action standard est associée                                                                                     |
+| ![](assets/en/FormEditor/resizing.png)       | Redimensionnement | Pour les objets disposant d’au moins une propriété de redimensionnement, indique la combinaison de propriétés courante                        |
+| ![](assets/en/FormEditor/entryOrder.png)     | Ordre de saisie   | Pour les objets saisissables, indique le numéro d’ordre de saisie                                                                             |
+| ![](assets/en/FormEditor/viewNumber.png)     | Vue courante      | Pour tous les objets de la vue courante                                                                                                       |
+| ![](assets/en/FormEditor/filter.png)         | Filtre            | Pour les objets saisissables auxquels un filtre de saisie est associé                                                                         |
+| ![](assets/en/FormEditor/helpTip.png)        | Infobulle         | Pour les objets auxquels une infobulle (message d’aide) est associée                                                                          |
+| ![](assets/en/FormEditor/localized.png)      | Localisé          | Pour les objets dont le libellé provient d’une référence (libellé débutant par “:”). La référence peut être de type ressource (STR#) ou XLIFF |
+| ![](assets/en/FormEditor/noShields.png)      | Pas de badge      | Aucun badge n’apparaît                                                                                                                        |
 
 ## Views
 
