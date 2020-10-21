@@ -37,7 +37,7 @@ This allows the user to access the Application environment as soon as the projec
 ### 4Dランゲージを使用する
 `Create menu` コマンドを使って、新規メニューバーまたはメニュー参照 (*MenuRef*) をメモリ上に作成します。
 
-メニューが *MenuRef* 参照を使用して処理される場合、メニューとメニューバーの間に違いはありません。 両方とも項目のリストから構成されます。 それらの利用方法のみが異なります。 In the case of a menu bar, each item corresponds to a menu which is itself composed of items.
+メニューが *MenuRef* 参照を使用して処理される場合、メニューとメニューバーの間に違いはありません。 両方とも項目のリストから構成されます。 それらの利用方法のみが異なります。 メニューバーの各項目は、それ自身が 1つのメニューであり、項目から構成されています。
 
 `Create menu` can create empty menus (to fill using `APPEND MENU ITEM` or `INSERT MENU ITEM`) or by menus built upon menus designed in the Menu editor.
 
