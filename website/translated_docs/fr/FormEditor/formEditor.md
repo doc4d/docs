@@ -53,35 +53,35 @@ The final list box:
 ![](assets/en/FormEditor/listboxBuilderListbox.png)
 
 
-## Shields
+## Badges
 
-The 4D Form Editor uses shields to make viewing object properties easier. You can find them on the form toolbar:
+L’éditeur de formulaires 4D permet d’utiliser des badges afin de faciliter la visualisation des propriétés des objets. You can find them on the form toolbar:
 
 ![](assets/en/FormEditor/shields.png)
 
 
-This function works as follows: Each shield is associated with a property (for example, **Views**, which means the object “is in the current view”). When you activate a shield, 4D displays a small icon (shield) in the upper left of each object of the form where the property is applied.
+Le principe de cette fonction est le suivant : chaque badge est associé à une propriété (par exemple **Vues**, signifiant que l'objet “est dans la vue courante”). Lorsque vous activez un badge, 4D affiche une petite icône (un badge) en haut à gauche de chaque objet du formulaire auquel s’applique la propriété.
 
 ![](assets/en/FormEditor/shield.png)
 
-### Using shields
+### Utilisation des badges
 
-To activate a shield, click the *Shield* icon from the toolbar until the desired shield is selected. You can also click on the right side of the button and select the type of shield to display directly in the associated menu:
+Pour activer un badge, cliquez sur l'icône *badge* jusqu’à ce que le badge souhaité soit sélectionné. Vous pouvez également cliquer sur la partie droite du bouton et sélectionner directement le type de badge à afficher dans le menu associé :
 
 
-If you don't want to display shields, select **No Shields** in the selection menu.
-> You can set which shields to display by default on the Forms Page of the application Preferences.
+Pour ne pas afficher de badges, choisissez la ligne **Pas de badges** dans le menu de sélection.
+> Vous pouvez définir les badges à afficher par défaut dans la Préférences de l’application.
 
-### Shield descriptions
+### Description du badge
 
-Here is a description of each type of shield:
+Voici la description de chaque type de badge :
 
-| Icon                                         | Nom               | Is displayed ...                                                                                                                     |
+| Icône                                        | Nom               | Est affiché...                                                                                                                       |
 | -------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ![](assets/en/FormEditor/objectMethod.png)   | Object Method     | For objects with an associated object method                                                                                         |
-| ![](assets/en/FormEditor/standardAction.png) | Standard Action   | For objects with an associated standard action                                                                                       |
-| ![](assets/en/FormEditor/resizing.png)       | Redimensionnement | For objects with at least one resizing property, indicates the combination of current properties                                     |
-| ![](assets/en/FormEditor/entryOrder.png)     | Entry Order       | For enterable objects, indicates the number of entry order                                                                           |
+| ![](assets/en/FormEditor/objectMethod.png)   | Méthode objet     | Pour les objets auxquels une méthode objet est associée                                                                              |
+| ![](assets/en/FormEditor/standardAction.png) | Action standard   | Pour les objets auxquels une action standard est associée                                                                            |
+| ![](assets/en/FormEditor/resizing.png)       | Redimensionnement | Pour les objets disposant d’au moins une propriété de redimensionnement, indique la combinaison de propriétés courante               |
+| ![](assets/en/FormEditor/entryOrder.png)     | Ordre de saisie   | Pour les objets saisissables, indique le numéro d’ordre de saisie                                                                    |
 | ![](assets/en/FormEditor/viewNumber.png)     | Current View      | For all objects in the current view                                                                                                  |
 | ![](assets/en/FormEditor/filter.png)         | Filter            | For enterable objects with an associated entry filter                                                                                |
 | ![](assets/en/FormEditor/helpTip.png)        | Message d'aide    | For objects with an associated tip                                                                                                   |
