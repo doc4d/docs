@@ -24,7 +24,7 @@ title: 復元
 
 To restore an application manually via a standard dialog box:
 
-1. 4Dアプリケーションを開始し、**ファイル** メニューから **復元...** を選択します。 It is not mandatory that an application project be open. OR Execute the `RESTORE` command from a 4D method. 標準のファイルを開くダイアログボックスが表示されます。
+1. 4Dアプリケーションを開始し、**ファイル** メニューから **復元...** を選択します。 It is not mandatory that an application project be open. または<br /> 4Dメソッドから `RESTORE` コマンドを実行します。 標準のファイルを開くダイアログボックスが表示されます。
 2. 復元するバックアップファイル (.4bk) またはログバックアップファイル (.4bl) を選択し、**開く** をクリックします。 復元したファイルを配置する場所を指定するために、以下のダイアログボックスが表示されます: デフォルトで 4Dは アーカイブと同階層にアーカイブ名と同じ名前 (拡張子なし) のフォルダーを作成し、ファイルを復元します。 場所が表示されているエリアをクリックして、パスを確認することができます:
 
 ![](assets/en/Backup/backup07.png)
@@ -35,22 +35,22 @@ To restore an application manually via a standard dialog box:
 4.(Optional) Click **OK** to integrate the log file into the restored application. 復元と統合が正しく実行されると、4D は処理が成功したことを通知するダイアログを表示します。
 5. **OK** をクリックします。
 
-保存先フォルダーが表示されます。 During the restore, 4D places all backup files in this folder, regardless of the position of the original files on the disk when the backup starts. This way your files will be easier to find.
+保存先フォルダーが表示されます。 バックアップ時のファイルの位置にかかわらず、4D はすべてのバックアップファイルをこのフォルダーに配置します。 これにより、ファイルを探す手間が省けます。
 
 > Any content related to the data file (files and `Settings` folder) are automatically restored in a `Data` subfolder within the destination folder.
 
 
-## Manually restoring a backup (MSC)
+## 手動でバックアップから復元する (MSC)
 
 You can manually restore an archive of the current application using the [Restore page](MSC/restore.md) of the Maintenance and Security Center (MSC).
 
 
-## Manually integrating the log
+## 手動でログを統合する
 
 If you have not checked the option for the automatic integration of the log file on the Restore page of the MSC (see [Successive integration of several log files](MSC/restore.md#successive-intergration-of-several-data-log-files)), a warning dialog box appears during the opening of the application when 4D notices that the log file contains more operations than have been carried out in the data file.
 
 ![](assets/en/Backup/backup08.png)
 
-> In order for this mechanism to work, 4D must be able to access the log file in its current location.
+> このメカニズムを機能させるために、4D はカレントの場所にあるログファイルにアクセスできなければなりません。
 
-You can choose whether or not to integrate the current log file. Not integrating the current log file allows you to avoid reproducing errors made in the data.
+カレントログファイルを統合するかしないかを選択することができます。 カレントログファイルを統合しないことにより、データ中に作成されたエラーを再生成しないようにすることもできます。
