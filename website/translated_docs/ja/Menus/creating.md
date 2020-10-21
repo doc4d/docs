@@ -13,9 +13,9 @@ title: メニューとメニューバーの作成
 
 ## デフォルトメニューバー
 
-カスタムアプリケーションには、少なくとも 1つのメニューを持つ 1つのメニューバーが必要です。 By default, when you create a new project, 4D automatically creates a default menu bar (Menu Bar #1) so that you can access the Application environment. このデフォルトメニューバーには、標準のメニューとデザインモードに入るためのコマンドが用意されています。
+カスタムアプリケーションには、少なくとも 1つのメニューを持つ 1つのメニューバーが必要です。 新規にプロジェクトを作成すると、4D は自動でデフォルトメニューバー (メニューバー#1) を作成します。 このデフォルトメニューバーには、標準のメニューとデザインモードに入るためのコマンドが用意されています。
 
-This allows the user to access the Application environment as soon as the project is created. **実行** メニューから **アプリケーションモード** コマンドを選択すると、自動でメニューバー#1 が呼び出されます。
+このメニューが用意されているため、ユーザーはプロジェクトを起動するとすぐにアプリケーションモードを使用できます。 **実行** メニューから **アプリケーションモード** コマンドを選択すると、自動でメニューバー#1 が呼び出されます。
 
 デフォルトメニューバーには 3つメニューがあります:
 
@@ -98,8 +98,8 @@ This allows the user to access the Application environment as soon as the projec
 
 メニューバーからメニューを、あるいはメニューからサブメニューを分離できます。 分離されたメニューは、メニューバーやメニューから利用できなくなります。しかしメニューリストには残されます。
 
-To detach a menu, right-click with the right button on the menu or sub-menu that you want to detach in the central list, then choose the **Detach the menu(...)** or **Detach the sub-menu(...)**
+メニューを分離するには、中央リスト内の分離したいメニュー上で右クリックし、**メニュー "メニュー名" をメニューバー "メニューバー名" から分離** または **項目 "項目名" のサブメニューを分離** を選択します。
 
 ### 4Dランゲージを使用する
 
-Since there is no difference between menus and menu bars in the 4D language, attaching menus or sub-menus is done in the same manner: use the *subMenu* parameter of the `APPEND MENU ITEM` command to attach a menu to a menu bar or an menu.  
+4Dランゲージにおいてはメニューとメニューバーの違いはないため、メニューおよびサブメニューの添付は同じ手順でおこないます: `APPEND MENU ITEM` コマンドの *subMenu* パラメーターを指定して、メニューやメニューバーにメニューを添付します。  
