@@ -76,8 +76,8 @@
 <tr><td><a href="#dataClass"><strong>{dataClass}</strong></a></td><td><code>/Employee</code></td><td>Renvoie toutes les données (par défaut les 100 premières entités) de la dataclass</td></tr>
 <tr><td><a href="#dataclasskey"><strong>{dataClass}({clé})</strong></a></td><td><code>/Employee(22)</code></td><td>Renvoie les données de l'entité spécifique définie par la clé primaire de la dataclass</td></tr>
 <tr><td><a href="#dataclassattributevalue"><strong>{dataClass}:{attribute}(value)</strong></a></td><td><code>/Employee:firstName(John)</code></td><td>Renvoie les données d'une entité dans laquelle la valeur de l'attribut est définie</td></tr>
-<tr><td><a href="#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}/{méthode}</strong></a></td><td><code>/Employee/getHighSalaries</code></td><td>Executes a project method and returns an object or a collection (the project method must be exposed)</td></tr>
-<tr><td><a href="#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}({key})/{method}</strong></a></td><td><code>/Employee(22)/getAge</code></td><td>Returns a value based on an entity method</td></tr>
+<tr><td><a href="#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}/{méthode}</strong></a></td><td><code>/Employee/getHighSalaries</code></td><td>Exécute une méthode projet et retourne un objet ou une collection (la méthode projet doit être exposée)</td></tr>
+<tr><td><a href="#dataclassmethod-and-dataclasskeymethod"><strong>{dataClass}({key})/{method}</strong></a></td><td><code>/Employee(22)/getAge</code></td><td>Renvoie une valeur basée sur une méthode d'entité</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="dataclass"></a><a href="#dataclass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>{dataClass}</h2>
@@ -92,20 +92,20 @@
 <tbody>
 <tr><td>__entityModel</td><td>Chaine</td><td>Nom de la classe du datastore.</td></tr>
 <tr><td>__COUNT</td><td>Nombre</td><td>Nombre d'entités dans la classe du datastore.</td></tr>
-<tr><td>__SENT</td><td>Nombre</td><td>Number of entities sent by the REST request. This number can be the total number of entities if it is less than the value defined by <code>$top/$limit</code>.</td></tr>
+<tr><td>__SENT</td><td>Nombre</td><td>Nombre d'entités envoyées par la requête REST. Ce nombre peut être le nombre total d'entités s'il est inférieur à la valeur définie par <code>$top/$limit</code>.</td></tr>
 <tr><td>__FIRST</td><td>Nombre</td><td>Numéro d'entité à partir duquel la sélection commence. Soit 0 par défaut soit la valeur définie par <code>$skip</code>.</td></tr>
 <tr><td>__ENTITIES</td><td>Collection</td><td>Cette collection d'objets contient un objet pour chaque entité avec tous ses attributs. Tous les attributs relationnels sont renvoyés en tant qu'objets avec un URI pour obtenir des informations concernant le parent.</td></tr>
 </tbody>
 </table>
-<p>Each entity contains the following properties:</p>
+<p>Chaque entité contient les propriétés suivantes :</p>
 <table>
 <thead>
 <tr><th>Propriété</th><th>Type</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>__KEY</td><td>Chaine</td><td>Value of the primary key defined for the datastore class.</td></tr>
-<tr><td>__TIMESTAMP</td><td>Date</td><td>Timestamp of the last modification of the entity</td></tr>
-<tr><td>__STAMP</td><td>Nombre</td><td>Internal stamp that is needed when you modify any of the values in the entity when using <code>$method=update</code>.</td></tr>
+<tr><td>__KEY</td><td>Chaine</td><td>Valeur de la clé primaire définie pour le datastore class.</td></tr>
+<tr><td>__TIMESTAMP</td><td>Date</td><td>Horodatage de la dernière modification de l'entité</td></tr>
+<tr><td>__STAMP</td><td>Nombre</td><td>Tampon interne qui est nécessaire lors de la modification des valeurs de l'entité lors de l'utilisation de <code>$method=update</code>.</td></tr>
 </tbody>
 </table>
 <p>Si vous souhaitez indiquer les attributs à retourner, définissez-les à l'aide de la syntaxe suivante <a href="/docs/18/fr/REST/manData.html##selecting-attributes-to-get">{attribut1, attribut2, ...}</a>. Par exemple:</p>
@@ -234,38 +234,38 @@
 <p>La requête suivante retourne toutes les données publiques de l'employé nommé &quot;Jones&quot;.</p>
 <p><code>GET /rest/Employee:lastname(Jones)</code></p>
 <h2><a class="anchor" aria-hidden="true" id="dataclassmethod-et-dataclasskeymethod"></a><a href="#dataclassmethod-et-dataclasskeymethod" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>{dataClass}/{method} et {dataClass}({key})/{method}</h2>
-<p>Returns an object or a collection based on a project method.</p>
+<p>Retourne un objet ou une collection basée sur une méthode projet.</p>
 <h3><a class="anchor" aria-hidden="true" id="description-3"></a><a href="#description-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h3>
-<p>Project methods are called through a dataclass (table) or an entity (record), and must return either an object or a collection.</p>
+<p>Les méthodes projet sont appelées via une dataclass (table) ou une entité (enregistrement) et doivent retourner un objet ou une collection.</p>
 <p><code>POST /rest/Employee/getHighSalaries</code></p>
 <p><code>POST /rest/Employee(52)/getFullName</code></p>
 <h3><a class="anchor" aria-hidden="true" id="configuration-4d"></a><a href="#configuration-4d" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration 4D</h3>
-<p>To be called in a REST request, a method must:</p>
+<p>Pour être appelée dans une requête REST, une méthode doit :</p>
 <ul>
-<li>have been declared as &quot;Available through REST server&quot; in 4D,</li>
-<li>have its master table and scope defined accordingly:
+<li>avoir été déclarée &quot;Disponible via le serveur REST&quot; dans 4D,</li>
+<li>avoir sa table principale et sa portée définies en conséquence :
 <ul>
-<li><strong>Table</strong>: 4D table (i.e. dataclass) on which the method is called. The table must be <a href="/docs/18/fr/REST/configuration.html#exposing-tables-and-fields">exposed to REST</a>.</li>
-<li><strong>Scope</strong>: This setting is useful when the method uses the 4D classic language and thus, needs to have a database context on the server side.
+<li><strong>Table</strong> : la table 4D (c'est-à-dire dataclass) sur laquelle la méthode est appelée. La table doit être <a href="/docs/18/fr/REST/configuration.html#exposing-tables-and-fields">exposée à REST</a>.</li>
+<li><strong>Portée</strong> : Ce paramètre est utile lorsque la méthode utilise le langage classique de 4D et doit donc avoir un contexte de base de données côté serveur.
 <ul>
-<li><strong>Table</strong> -for methods applied to the whole table (dataclass)</li>
-<li><strong>Current record</strong> -for methods applied to the current record (entity) using the <code>{dataClass}(key)/{method}</code> syntax.</li>
-<li><strong>Current selection</strong> -for methods applied to the current selection</li>
+<li>**Table ** - pour les méthodes appliquées à la table entière (dataclass)</li>
+<li><strong>Enregistrement courant</strong> - pour les méthodes appliquées à l'enregistrement courant (entité) à l'aide de la syntaxe <code>{dataClass} (clé)/{méthode}</code>.</li>
+<li><strong>Sélection courante</strong> - pour les méthodes appliquées à la sélection courante</li>
 </ul></li>
 </ul></li>
 </ul>
 <p><img src="/docs/18/assets/en/REST/MethodProp.png" alt="alt-text"></p>
 <h3><a class="anchor" aria-hidden="true" id="passer-des-paramètres-à-une-méthode"></a><a href="#passer-des-paramètres-à-une-méthode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Passer des paramètres à une méthode</h3>
-<p>You can also pass parameters to a method in a POST.</p>
+<p>Vous pouvez également passer des paramètres à une méthode dans un POST.</p>
 <p><code>POST /rest/Employee/addEmployee</code></p>
-<p>You can POST data in the body part of the request, for example:</p>
+<p>Vous pouvez POSTER des données dans le corps de la requête, par exemple :</p>
 <p>[&quot;John&quot;,&quot;Smith&quot;]</p>
 <h3><a class="anchor" aria-hidden="true" id="exemples"></a><a href="#exemples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemples</h3>
-<h4><a class="anchor" aria-hidden="true" id="table-scope"></a><a href="#table-scope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Table scope</h4>
-<p>Call of a <code>getAverage</code> method:</p>
+<h4><a class="anchor" aria-hidden="true" id="portée-de-la-table"></a><a href="#portée-de-la-table" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Portée de la table</h4>
+<p>Appel d'une méthode <code>getAverage</code> :</p>
 <ul>
-<li>on [Employee] table</li>
-<li>with <strong>Table</strong> scope</li>
+<li>sur la table [Employee]</li>
+<li>avec la portée <strong>Table</strong></li>
 </ul>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//getAverage  </span>
 <span class="hljs-function">ALL RECORDS</span>([Employee])
@@ -279,11 +279,11 @@
     }
 }
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="current-record-scope"></a><a href="#current-record-scope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current record scope</h4>
-<p>Call of a <code>getFullName</code> method:</p>
+<h4><a class="anchor" aria-hidden="true" id="portée-enregistrement-courant"></a><a href="#portée-enregistrement-courant" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Portée enregistrement courant</h4>
+<p>Appel d'une méthode <code>getFullName</code> :</p>
 <ul>
-<li>on [Employee] table</li>
-<li>with <strong>Current record</strong> scope</li>
+<li>sur la table [Employee]</li>
+<li>avec la portée de <strong>Enregistrement courant</strong></li>
 </ul>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//getFullName  </span>
 <span class="hljs-variable">$0</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"fullName"</span>;[Employee]firstname+<span class="hljs-string">" "</span>+[Employee]lastname)
@@ -296,11 +296,11 @@
     }
 }
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="current-selection-scope"></a><a href="#current-selection-scope" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current selection scope</h4>
-<p>Call of a <code>updateSalary</code> method:</p>
+<h4><a class="anchor" aria-hidden="true" id="portée-de-la-sélection-courante"></a><a href="#portée-de-la-sélection-courante" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Portée de la sélection courante</h4>
+<p>Appel d'une méthode <code>updateSalary</code> :</p>
 <ul>
-<li>on [Employee] table</li>
-<li>with <strong>Current selection</strong> scope</li>
+<li>sur la table [Employee]</li>
+<li>avec la portée de <strong>Sélection courante</strong></li>
 </ul>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//updateSalary  </span>
 <span class="hljs-function">C_REAL</span>(<span class="hljs-variable">$1</span>;<span class="hljs-variable">$vCount</span>)
@@ -317,7 +317,7 @@ End while</span>
 <span class="hljs-variable">$0</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"updates"</span>;<span class="hljs-variable">$vCount</span>)
 </code></pre>
 <p><code>POST /rest/Employee/updateSalary/?$filter=&quot;salary&lt;1500&quot;</code></p>
-<p>POST data (in the request body): [1.5]</p>
+<p>Données POST (dans le corps d'une requête) : [1.5]</p>
 <p>Résultat :</p>
 <pre><code class="hljs">{
     <span class="hljs-attr">"result"</span>: {

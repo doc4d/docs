@@ -240,8 +240,8 @@
 </thead>
 <tbody>
 <tr><td>name</td><td>Chaine</td><td>Nom de la dataclass</td></tr>
-<tr><td>collectionName</td><td>Chaine</td><td>Name of an entity selection on the dataclass</td></tr>
-<tr><td>tableNumber</td><td>Nombre</td><td>Table number in the 4D database</td></tr>
+<tr><td>collectionName</td><td>Chaine</td><td>Nom d'une entity selection dans la dataclass</td></tr>
+<tr><td>tableNumber</td><td>Nombre</td><td>Numéro de la table dans la base 4D</td></tr>
 <tr><td>scope</td><td>Chaine</td><td>Étendue de la dataclass (à noter que seules les classes du datastore dont <strong>l'étendue</strong> (scope) est publique sont affichées)</td></tr>
 <tr><td>dataURI</td><td>Chaine</td><td>Un URI aux données de la dataclass</td></tr>
 </tbody>
@@ -254,13 +254,13 @@
 </thead>
 <tbody>
 <tr><td>name</td><td>Chaine</td><td>Le nom de l’attribut.</td></tr>
-<tr><td>kind</td><td>Chaine</td><td>Attribute type (storage or relatedEntity).</td></tr>
-<tr><td>fieldPos</td><td>Nombre</td><td>Position of the field in the database table).</td></tr>
+<tr><td>kind</td><td>Chaine</td><td>Type d'attribut (stockage ou relatedEntity).</td></tr>
+<tr><td>fieldPos</td><td>Nombre</td><td>Position du champ dans la table de la base.</td></tr>
 <tr><td>scope</td><td>Chaine</td><td>Portée de l'attribut (seuls les attributs dont la portée est publique apparaîtront).</td></tr>
 <tr><td>indexed</td><td>Chaine</td><td>Si un <strong>type d'index</strong> a été sélectionné, cette propriété retournera true. Sinon, cette propriété n'apparaîtra pas.</td></tr>
 <tr><td>type</td><td>Chaine</td><td>Type d'attribut de chaîne (booléen, blob, octet, date, durée, image, long, long64, numérique, chaîne, uuid ou mot) ou la classe de datastore pour un attribut de relation N-&gt; 1.</td></tr>
-<tr><td>identifying</td><td>Booléen</td><td>This property returns True if the attribute is the primary key. Sinon, cette propriété n'apparaîtra pas.</td></tr>
-<tr><td>path</td><td>Chaine</td><td>Name of the relation for a relatedEntity or relateEntities attribute.</td></tr>
+<tr><td>identifying</td><td>Booléen</td><td>Cette propriété retourne True si l'attribut est la clé primaire. Sinon, cette propriété n'apparaîtra pas.</td></tr>
+<tr><td>path</td><td>Chaine</td><td>Nom du lien d'un attribut relatedEntity ou relateEntities.</td></tr>
 <tr><td>foreignKey</td><td>Chaine</td><td>Pour un attribut relatedEntity, nom de l'attribut associé.</td><td>inverseName</td><td>Chaine</td><td>Nom du lien opposé pour un attribut relatedEntity ou relateEntities.</td></tr>
 </tbody>
 </table>
