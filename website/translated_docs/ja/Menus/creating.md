@@ -49,33 +49,33 @@ This allows the user to access the Application environment as soon as the projec
 
 1. ソースメニューリスト中で、項目を追加するメニューを選択します。 メニューが既に項目を持っていれば、それが中央のリストに表示されます。 新しい項目を挿入するには、その上にくる項目を選択します。 ドラッグ＆ドロップ操作で、後から順番を変更することも可能です。
 2. メニューエディターのオプションメニュー、またはエディターのコンテキストメニュー (中央のリスト内で右クリック) から **メニューバー/メニュー "メニュー名" に項目を追加** を選択します。 または<br /> 中央のリストの下にある追加ボタン ![](assets/en/Menus/PlussNew.png) をクリックします。 項目が追加され、デフォルト名 "項目 X" が割り当てられます (X は項目の番号)。
-3. 項目名の上でダブルクリックすると、名前を編集できるモードになり、名前を変更することができます。 または<br /> ウィンドウ右の "タイトル" エリアに名前を入力します。 名前には 31文字までの文字列を指定できます。 You can enter the name as "hard coded" or enter a reference (see below).
+3. 項目名の上でダブルクリックすると、名前を編集できるモードになり、名前を変更することができます。 または<br /> ウィンドウ右の "タイトル" エリアに名前を入力します。 名前には 31文字までの文字列を指定できます。 メニューのタイトルには文字列リテラルのほかに、参照も使用できます (後述参照)。
 
 
 ### 4Dランゲージを使用する
 
-Use `INSERT MENU ITEM` or `APPEND MENU ITEM` to insert or to add menu items in existing menu references.
+既存のメニュー参照にメニュー項目を挿入するには `INSERT MENU ITEM` または `APPEND MENU ITEM` コマンドを使います。
 
 
-## Deleting menus and items
+## メニューや項目の削除
 
 ### メニューエディターを使用する
-You can delete a menu bar, a menu or a menu item in the Menu editor at any time. Note that each menu or menu bar has only one reference. When a menu is attached to different bars or different menus, any modification or deletion made to the menu is immediately carried out in all other occurrences of this menu. Deleting a menu will only delete a reference. When you delete the last reference of a menu, 4D displays an alert.
+メニューエディターを使って、メニューバー、メニュー、メニュー項目をいつでも削除できます。 各メニューやメニューバーは 1つの参照しか持たない点に留意してください。 あるメニューが、複数のメニューバーやメニューに添付されていた場合、そのメニューに対しておこわれた変更や削除はこのメニューのすべての他のオカレンスに対しても有効となります。 メニューを削除すると、参照だけが削除されます。 特定のメニューへの最後の参照を削除しようとすると、4Dはアラートを表示します。
 
-To delete a menu bar, menu or menu item:
+メニューバー、メニュー、メニューコマンドを削除するには:
 
-- Select the item to be deleted and click on the delete ![](assets/en/Menus/MinussNew.png) button located beneath the list.
-- or, use the appropriate **Delete...**  command from the context menu or the options menu of the editor.
+- 削除する項目を選択し、リストの下にある削除ボタン ![](assets/en/Menus/MinussNew.png) をクリックします。
+- コンテキストメニューまたはエディターのオプションメニューから **〜 を削除** コマンドを選択します。
 
-> It is not possible to delete Menu Bar #1.
+> メニューバー#1 を削除することはできません。
 
 
 ### 4Dランゲージを使用する
 
-Use `DELETE MENU ITEM` to remove an item from a menu reference. Use `RELEASE MENU` to unload the menu reference from the memory.
+`DELETE MENU ITEM` コマンドを使ってメニュー参照から項目を削除します。 メニュー参照をメモリからアンロードするには `RELEASE MENU` コマンドを使います。
 
 
-## Attaching menus
+## メニューの添付
 
 Once you have created a menu, you can attach it to one or several other menus (sub-menu) or menu bar(s).
 
