@@ -597,17 +597,17 @@ Tout objet créé dans un formulaire est placé dans la première vue ("Vue 1") 
 
 Il existe deux façons d'ajouter des vues supplémentaires :
 
-*   Click on the **Add a new view** button at the bottom of the View palette:
+*   Cliquez sur le bouton **Ajouter une nouvelle vue** en bas de la palette Vue :
 
 ![](assets/en/FormEditor/addView.png)
 
-*   Right-click on an existing view and select **Insert view**:
+*   Faites un clic droit sur une vue existante et sélectionnez **Insérer une vue** :
 
 ![](assets/en/FormEditor/addView2.png)
 
-There is no limitation on the number of views.
+Il n'y a pas de limitation du nombre de vues.
 
-#### Renaming views
+#### Renommer des vues
 
 By default views are named as "View" + the view number, however you can change these names to improve readability and better suit your needs.
 
