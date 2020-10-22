@@ -156,10 +156,10 @@ Cette propriété désigne la taille verticale d'un objet.
 ---
 ## Largeur
 
-This property designates an object's horizontal size.
+Cette propriété désigne la taille horizontale d'un objet.
 > * Certains objets peuvent avoir une hauteur prédéfinie qui ne peut pas être modifiée.
-> * If the [Resizable](properties_ResizingOptions.md#resizable) property is used for a [list box column](listbox_overview.md#list-box-columns), the user can also manually resize the column.
-> * When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
+> * Si la propriété [Resizable](properties_ResizingOptions.md#resizable) est utilisée pour une [colonne de list box](listbox_overview.md#list-box-columns), l'utilisateur peut également redimensionner manuellement la colonne.
+> * Lors du redimensionnement du formulaire, si la propriété de [dimensionnement horizontal "Agrandir"](properties_ResizingOptions.md#horizontal-sizing) a été affectée à la list box, la colonne la plus à droite sera agrandie, allant au-delà de sa largeur maximale, si nécessaire.
 
 
 #### Grammaire JSON
@@ -183,8 +183,8 @@ This property designates an object's horizontal size.
 ---
 ## Largeur maxi
 
-The maximum width of the column (in pixels). The width of the column cannot be increased beyond this value when resizing the column or form.
-> When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
+La largeur maximale de la colonne (en pixels). La largeur de la colonne ne peut pas être augmentée au-delà de cette valeur lors du redimensionnement de la colonne ou du formulaire.
+> Lors du redimensionnement du formulaire, si la propriété de [dimensionnement horizontal "Agrandir"](properties_ResizingOptions.md#horizontal-sizing) a été affectée à la list box, la colonne la plus à droite sera agrandie, allant au-delà de sa largeur maximale, si nécessaire.
 
 
 #### Grammaire JSON
@@ -201,8 +201,8 @@ The maximum width of the column (in pixels). The width of the column cannot be i
 ---
 ## Largeur mini
 
-The minimum width of the column (in pixels). The width of the column cannot be reduced below this value when resizing the column or form.
-> When resizing the form, if the ["Grow" horizontal sizing](properties_ResizingOptions.md#horizontal-sizing) property was assigned to the list box, the right-most column will be increased beyond its maximum width if necessary.
+La largeur minimale de la colonne (en pixels). La largeur de la colonne ne peut pas être réduite en dessous de cette valeur lors du redimensionnement de la colonne ou du formulaire.
+> Lors du redimensionnement du formulaire, si la propriété de [dimensionnement horizontal "Agrandir"](properties_ResizingOptions.md#horizontal-sizing) a été affectée à la list box, la colonne la plus à droite sera agrandie, allant au-delà de sa largeur maximale, si nécessaire.
 
 
 #### Grammaire JSON
@@ -226,7 +226,7 @@ The minimum width of the column (in pixels). The width of the column cannot be r
 ## Hauteur des lignes
 
 
-Sets the height of list box rows (excluding headers and footers). By default, the row height is set according to the platform and the font size.
+Définit la hauteur des lignes de list box (hors en-têtes et pieds de page). Par défaut, la hauteur de ligne est définie en fonction de la plate-forme et de la taille de la police.
 
 
 #### Grammaire JSON
