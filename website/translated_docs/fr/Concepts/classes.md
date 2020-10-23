@@ -66,7 +66,7 @@ Class constructor
   This.lastName:=$2
 ```
 
-In a method, creating a "Person":
+Dans une méthode, créons une "Personne" :
 
 ```
 C_OBJECT($o)
@@ -101,7 +101,7 @@ Available classes are accessible from their class stores. The following class st
 For example, you create a new instance of an object of myClass using the `cs.myClass.new()` statement (`cs` means *classtore*).
 
 
-## Handling user classes
+## Gestion des classes utilisateur
 
 ### Fichiers de classe (class files)
 
@@ -115,7 +115,7 @@ For example, if you want to define a class named "Polygon", you need to create t
             - Classes
                 + Polygon.4dm
 
-### Class names
+### Noms de classe
 
 When naming classes, you should keep in mind the following rules:
 
@@ -124,7 +124,7 @@ When naming classes, you should keep in mind the following rules:
 - Giving the same name to a class and a database table is not recommended, in order to prevent any conflict.
 
 
-### 4D Developer interface
+### Interface 4D Developer
 
 Class files are automatically stored at the appropriate location when created through the 4D Developer interface, either via the **File** menu or the Explorer.
 
@@ -173,12 +173,12 @@ Specific 4D keywords can be used in class definitions:
 - `Class extends <ClassName>` to define inheritance.
 
 
-### Class Function
+### Fonction de classe (class function)
 
 #### Syntaxe
 
 ```js
-Function <name>
+Fonction <name>
 // code
 ```
 
@@ -189,7 +189,7 @@ In the class definition file, function declarations use the `Function` keyword, 
 Within a class function, the `This` is used as the object instance. Par exemple:
 
 ```4d  
-Function getFullName
+Fonction getFullName
   C_TEXT($0)
   $0:=This.firstName+" "+Uppercase(This.lastName)
 
@@ -215,22 +215,22 @@ In the application code, class functions are called as member methods of the obj
 #### Example
 
 ```4d
-// Class: Rectangle
+// Classe : Rectangle
 Class Constructor
     C_LONGINT($1;$2)
     This.name:="Rectangle"
     This.height:=$1
     This.width:=$2
 
-// Function definition
-Function getArea
+// Définition de la fonction
+Fonction getArea
     C_LONGINT($0)
     $0:=(This.height)*(This.width)
 
 ```
 
 ```4d
-// In a project method
+// Dans une méthode projet
 C_OBJECT($o)  
 C_REAL($area)
 
@@ -241,10 +241,10 @@ $area:=$o.getArea(50;100) //5000
 
 ### Class constructor
 
-#### Syntax
+#### Syntaxe
 
 ```js
-// Class: MyClass
+// Classe : MyClass
 Class Constructor
 // code
 ```
@@ -259,16 +259,16 @@ For a class constructor function, the `Current method name` command returns: "*\
 #### Example:
 
 ```4d
-// Class: MyClass
-// Class constructor of MyClass
+// Classe : MyClass
+// Class constructor de MyClass
 Class Constructor
 C_TEXT($1)
 This.name:=$1
 ```
 
 ```4d
-// In a project method
-// You can instantiate an object
+// Dans une méthode projet
+// Vous pouvez instancier un objet
 C_OBJECT($o)
 $o:=cs.MyClass.new("HelloWorld")  
 // $o = {"name":"HelloWorld"}
@@ -279,10 +279,10 @@ $o:=cs.MyClass.new("HelloWorld")
 
 ### Class extends \<ClassName>
 
-#### Syntax
+#### Syntaxe
 
 ```js
-// Class: ChildClass
+// Classe : ChildClass
 Class extends <ParentClass>
 ```
 
