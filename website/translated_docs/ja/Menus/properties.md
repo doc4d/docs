@@ -52,7 +52,7 @@ Standard actions can be used to carry out various current operations linked to s
 
 求める結果の種類によって、標準アクションまたはプロジェクトメソッドのいずれを割り当てるかを選択します。 原則として、標準アクションは最適化された方法で実行される (コンテキストに応じたメニューの有効/無効の自動切り替え) ため、できるだけこちらを選ぶ方が良いでしょう。
 
-### Associating a project method or a standard action
+### プロジェクトメソッドまたは標準アクションの割り当て
 
 You can assign a project method and/or a standard action to a selected menu command in the Menu editor:
 - **Method Name**: Select an existing project method name in the combo box. If the project method does not exist, enter its name in the "Method Name" combo box then click on the [...] button. 4D displays a project method creation dialog that is used to access the Method editor.
