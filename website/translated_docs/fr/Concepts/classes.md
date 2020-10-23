@@ -200,19 +200,19 @@ Function getAge
 
 Pour une fonction de classe, la commande `Current method name` retourne: "*\<ClassName>.\<FunctionName>*", par exemple "MyClass.myMethod".
 
-Dans le code de l'application, les fonctions de classe sont appelées en tant que méthodes membres de l'instance d'objet et peuvent recevoir des paramètres le cas échéant. The following syntaxes are supported:
+Dans le code de l'application, les fonctions de classe sont appelées en tant que méthodes membres de l'instance d'objet et peuvent recevoir des paramètres le cas échéant. Les syntaxes suivantes sont prises en charge :
 
-- use of the `()` operator. For example `myObject.methodName("hello")`.
-- use of a "Function" class member methods
+- utilisation de l'opérateur `()`. Par exemple `myObject.methodName("hello")`.
+- utilisation des méthodes membres d'une classe "Function"
     - `apply()`
     - `call()`
 
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:  
-> - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **Avertissement lié au thread-safe :** Si une fonction de classe n'est pas thread-safe et est appelée par une méthode avec l'attribut "Peut être exécuté en mode préemptif" :  
+> - le compilateur ne génère aucune erreur (contrairement aux méthodes habituelles), - une erreur est générée par 4D uniquement à l'exécution.
 
 
-#### Example
+#### Exemple
 
 ```4d
 // Classe : Rectangle
@@ -249,14 +249,14 @@ Class Constructor
 // code
 ```
 
-A class constructor function, which can accept parameters, can be used to define a user class.
+Une fonction de class constructor, qui peut accepter des paramètres, peut être utilisée pour définir une classe utilisateurs.
 
-In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionally passed to the `new()` function.
+Dans ce cas, lorsque vous appelez la méthode membre `new()` de la classe, le class constructor est appelé avec les paramètres  passés initialement à la fonction `new()`.
 
-For a class constructor function, the `Current method name` command returns: "*\<ClassName>.constructor*", for example "MyClass.constructor".
+Pour une fonction de class constructor, la commande `Current method name` retourne : "*\<ClassName>.constructor*", par exemple "MyClass.constructor".
 
 
-#### Example:
+#### Exemple :
 
 ```4d
 // Classe : MyClass
@@ -286,7 +286,7 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. La classe enfant hérite de toutes les fonctions de la classe parente.
+Le mot-clé de `Class extends` est utilisé dans une déclaration de classe pour créer une classe utilisateur qui est l'enfant d'une autre classe utilisateur. La classe enfant hérite de toutes les fonctions de la classe parente.
 
 L'extension de classe doit respecter les règles suivantes :
 
