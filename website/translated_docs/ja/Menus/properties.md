@@ -21,14 +21,14 @@ title: メニュープロパティ
 
 メニュータイトルに制御文字 (メタ文字) を直接使用し、メニューのプロパティをいくつか設定することができます。 たとえば、メニュータイトルに "/G" という文字を入れると、キーボードショートカットである Ctrl+G (Windows) または Command+G (macOS) を割り当てることができます。
 
-制御文字は、表示されるメニューラベルには含まれません。 You should therefore avoid using them so as not to have any undesirable effects. The control characters are the following:
+制御文字は、表示されるメニューラベルには含まれません。 したがって、制御文字として利用しない場合は、これらの文字の並びをタイトルに使用しないことが推奨されます。 制御文字には次のようなものがあります:
 
-| Character   | 説明                          | Usage                                                         |
+| 文字          | 説明                          | 効果                                                            |
 | ----------- | --------------------------- | ------------------------------------------------------------- |
-| (           | open parenthese             | Disable item                                                  |
-| <B          | less than B                 | Bold font                                                     |
-| <I          | less than I                 | Italic font                                                   |
-| <U          | less than U                 | Underline font                                                |
+| (           | 開く括弧                        | 項目を使用不可にする                                                    |
+| <B          | 小なりB                        | 太字                                                            |
+| <I          | 小なりI                        | イタリック                                                         |
+| <U          | 小なりU                        | 下線                                                            |
 | !+character | exclamation point+character | Add character as check mark (macOS); add check mark (Windows) |
 | /+character | slash+character             | Add character as shortcut                                     |
 
