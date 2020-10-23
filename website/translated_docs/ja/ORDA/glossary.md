@@ -132,7 +132,7 @@ $myClass.query("name = smith")
 *   null
 *   boolean
 *   date
-*   オブジェクト
+*   object
 *   コレクション
 *   ピクチャー (\*)
 
