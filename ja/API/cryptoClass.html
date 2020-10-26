@@ -226,7 +226,7 @@
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>status</td><td></td><td>object</td><td>&lt;-</td><td>検証の結果</td></tr>
 <tr><td></td><td>success</td><td>boolean</td><td></td><td>署名がメッセージと合致すれば true</td></tr>
-<tr><td></td><td>errors</td><td>コレクション</td><td></td><td><code>success</code> が <code>false</code> の場合、エラーのコレクションが含まれている場合があります。</td></tr>
+<tr><td></td><td>errors</td><td>collection</td><td></td><td><code>success</code> が <code>false</code> の場合、エラーのコレクションが含まれている場合があります。</td></tr>
 </tbody>
 </table>
 <p>このメソッドは、<code>cryptoKey</code> オブジェクトキーおよび指定された <code>options</code> を使って、utf8 形式の <code>message</code> 文字列の署名を検証します。</p>
@@ -287,7 +287,7 @@
 <tr><td>status</td><td></td><td>object</td><td>&lt;-</td><td>戻り値</td></tr>
 <tr><td></td><td>success</td><td>boolean</td><td></td><td>メッセージの復号に成功した場合は true</td></tr>
 <tr><td></td><td>result</td><td>text</td><td></td><td>options.encodingDecrypted を使って復号およびデコードされたメッセージ</td></tr>
-<tr><td></td><td>errors</td><td>コレクション</td><td></td><td><code>success</code> が <code>false</code> の場合、エラーのコレクションが含まれている場合があります。</td></tr>
+<tr><td></td><td>errors</td><td>collection</td><td></td><td><code>success</code> が <code>false</code> の場合、エラーのコレクションが含まれている場合があります。</td></tr>
 </tbody>
 </table>
 <p>このメソッドは <strong>秘密</strong> 鍵を使って <code>message</code> を復号します。 使用されるアルゴリズムはキーの種類に依存します。</p>
