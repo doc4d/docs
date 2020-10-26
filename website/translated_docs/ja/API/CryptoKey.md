@@ -143,18 +143,18 @@ ASSERT($status.success)
 
 #### cryptoKey.verify(message;signature;options) -> status
 
-| 参照        | プロパティ    | タイプ     |    | 説明                                                                                                                              |
-| --------- | -------- | ------- | -- | ------------------------------------------------------------------------------------------------------------------------------- |
-| message   |          | text    | -> | 署名生成時に使われたメッセージ文字列                                                                                                              |
-| signature |          | text    | -> | 検証の対象である、"encoding" オプションに応じて Base64 または Base64URL 形式の署名                                                                        |
-| options   |          | object  | -> | 署名オプション                                                                                                                         |
-|           | hash     | text    |    | 使用する Digest アルゴリズム。 例: "HASH256", "HASH384", "HASH512"。 JWT の生成に使われた場合、ハッシュサイズは PS@, ES@, RS@, または PS@ のアルゴリズムサイズと同じでなくてはなりません。 |
-|           | pss      | boolean |    | 確率的署名スキーム (PSS) を使用する。 RSA キーでない場合は無視されます。 PS＠ アルゴリズム用の JWT を生成する場合は `true` を渡します。                                              |
-|           | encoding | text    |    | 署名のエンコード方式。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                                                    |
-|           |          |         |    |                                                                                                                                 |
-| status    |          | object  | <- | 検証の結果                                                                                                                           |
-|           | success  | boolean |    | 署名がメッセージと合致すれば true                                                                                                             |
-|           | errors   | コレクション  |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                                                               |
+| 参照        | プロパティ    | タイプ        |    | 説明                                                                                                                              |
+| --------- | -------- | ---------- | -- | ------------------------------------------------------------------------------------------------------------------------------- |
+| message   |          | text       | -> | 署名生成時に使われたメッセージ文字列                                                                                                              |
+| signature |          | text       | -> | 検証の対象である、"encoding" オプションに応じて Base64 または Base64URL 形式の署名                                                                        |
+| options   |          | object     | -> | 署名オプション                                                                                                                         |
+|           | hash     | text       |    | 使用する Digest アルゴリズム。 例: "HASH256", "HASH384", "HASH512"。 JWT の生成に使われた場合、ハッシュサイズは PS@, ES@, RS@, または PS@ のアルゴリズムサイズと同じでなくてはなりません。 |
+|           | pss      | boolean    |    | 確率的署名スキーム (PSS) を使用する。 RSA キーでない場合は無視されます。 PS＠ アルゴリズム用の JWT を生成する場合は `true` を渡します。                                              |
+|           | encoding | text       |    | 署名のエンコード方式。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"                                                                    |
+|           |          |            |    |                                                                                                                                 |
+| status    |          | object     | <- | 検証の結果                                                                                                                           |
+|           | success  | boolean    |    | 署名がメッセージと合致すれば true                                                                                                             |
+|           | errors   | collection |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                                                               |
 
 このメソッドは、`cryptoKey` オブジェクトキーおよび指定された `options` を使って、utf8 形式の `message` 文字列の署名を検証します。
 
@@ -202,18 +202,18 @@ ASSERT($status.success)
 
 #### cryptoKey.decrypt(message;options) -> status
 
-| 参照      | プロパティ             | タイプ     |    | 説明                                                                                         |
-| ------- | ----------------- | ------- | -- | ------------------------------------------------------------------------------------------ |
-| message |                   | text    | -> | options.encodingEncrypted を使ってデコードし復号するメッセージ文字列                                            |
-| options |                   | object  | -> | デコーディングオプション                                                                               |
-|         | hash              | text    |    | 使用する Digest アルゴリズム。 例: "HASH256", "HASH384", "HASH512"。                                    |
-|         | encodingEncrypted | text    |    | 復号するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"   |
-|         | encodingDecrypted | text    |    | バイナリの復号メッセージを文字列に変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
-|         |                   |         |    |                                                                                            |
-| status  |                   | object  | <- | 戻り値                                                                                        |
-|         | success           | boolean |    | メッセージの復号に成功した場合は true                                                                      |
-|         | result            | text    |    | options.encodingDecrypted を使って復号およびデコードされたメッセージ                                            |
-|         | errors            | コレクション  |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                          |
+| 参照      | プロパティ             | タイプ        |    | 説明                                                                                         |
+| ------- | ----------------- | ---------- | -- | ------------------------------------------------------------------------------------------ |
+| message |                   | text       | -> | options.encodingEncrypted を使ってデコードし復号するメッセージ文字列                                            |
+| options |                   | object     | -> | デコーディングオプション                                                                               |
+|         | hash              | text       |    | 使用する Digest アルゴリズム。 例: "HASH256", "HASH384", "HASH512"。                                    |
+|         | encodingEncrypted | text       |    | 復号するバイナリ形式に `message` を変換するためのエンコーディング。 可能な値: "Base64" または "Base64URL"。 デフォルト値: "Base64"   |
+|         | encodingDecrypted | text       |    | バイナリの復号メッセージを文字列に変換するためのエンコーディング。 可能な値: "UTF-8", "Base64" または "Base64URL"。 デフォルト値: "UTF-8" |
+|         |                   |            |    |                                                                                            |
+| status  |                   | object     | <- | 戻り値                                                                                        |
+|         | success           | boolean    |    | メッセージの復号に成功した場合は true                                                                      |
+|         | result            | text       |    | options.encodingDecrypted を使って復号およびデコードされたメッセージ                                            |
+|         | errors            | collection |    | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。                                          |
 
 このメソッドは **秘密** 鍵を使って `message` を復号します。 使用されるアルゴリズムはキーの種類に依存します。
 
