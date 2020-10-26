@@ -157,14 +157,14 @@ Si vous avez nommé votre application <em>Moncomposant</em>, 4D créera un dossi
 </ul>
 <p>Pour plus d'informations sur le mode de liaison des données, reportez-vous au paragraphe <a href="#last-data-file-opened">Dernier fichier de données ouvert</a>.</p>
 <h4><a class="anchor" aria-hidden="true" id="fichiers-générés"></a><a href="#fichiers-générés" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fichiers générés</h4>
-<p>Lorsque vous cliquez sur le bouton <strong>Construire</strong>, crée automatiquement un dossier <strong>Final Application</strong> dans le <strong>“Dossier de destination”</strong>. Inside the Final Application folder is a subfolder with the name of the specified application in it.</p>
-<p>If you have specified &quot;MyProject&quot; as the name of the application, you will find the following files in this subfolder (aka MyProject):</p>
+<p>Lorsque vous cliquez sur le bouton <strong>Construire</strong>, crée automatiquement un dossier <strong>Final Application</strong> dans le <strong>“Dossier de destination”</strong>. Dans le dossier Final Application, se trouve un sous-dossier portant le nom de l'application spécifiée.</p>
+<p>Si vous avez spécifié &quot;MyProject&quot; comme nom d'application, vous trouverez les fichiers suivants dans ce sous-dossier (MyProject) :</p>
 <ul>
 <li><p><em>Windows</em></p>
 <ul>
-<li>MyProject.exe  - Your executable and a MyProject.rsr (the application resources)</li>
-<li>4D Extensions folder, Resources folder, various libraries (DLL), Native Components folder, SASL Plugins folder - Files necessary for the operation of the application</li>
-<li>Database folder  - Includes a Resources folder and  MyProject.4DZ file. Ils constituent la structure compilée de la base et son dossier Resources. **Note ** : Ce dossier contient également le dossier <em>Default Data</em>, s'il a été défini (cf. <a href="#data-file-management-in-final-applicatons">Gestion du fichier de données dans les applications finales</a>).</li>
+<li>MyProject.exe - Votre exécutable et un MyProject.rsr (les ressources de l'application)</li>
+<li>Dossier 4D Extensions, dossier Resources, diverses bibliothèques (DLL), dossier Native Components, dossier SASL Plugins - Fichiers nécessaires au fonctionnement de l'application</li>
+<li>Dossier Database - Comprend un dossier Resources et un fichier MyProject.4DZ. Ils constituent la structure compilée de la base et son dossier Resources. **Note ** : Ce dossier contient également le dossier <em>Default Data</em>, s'il a été défini (cf. <a href="#data-file-management-in-final-applicatons">Gestion du fichier de données dans les applications finales</a>).</li>
 <li>(Facultatif) Un dossier Components et/ou un dossier Plugins contenant les fichiers des composants et/ou des plug-ins éventuellement inclus dans la base. Pour plus d’informations sur ce point, reportez-vous à la section Page <a href="#plugins-and-components">Plugins et composants</a>.</li>
 <li>Un dossier Licences contenant sous forme de fichier XML la liste des numéros de licence ayant été intégrés dans l’application. For more information about this, refer to the <a href="#licenses-and-certificate">Licenses &amp; Certificate</a> section.</li>
 <li>Additional items added to the 4D Volume Desktop folder, if any (see <a href="#customizing-4d-volume-desktop-folder">Customizing the 4D Volume Desktop folder</a>).</li>
