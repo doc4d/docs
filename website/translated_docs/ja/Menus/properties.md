@@ -153,7 +153,7 @@ This Menu editor option can be used to associate a system check mark with a menu
 
 Check marks are generally used for continuous action menu items and indicate that the action is currently underway.
 
-### Font styles
+### フォントスタイル
 
 4D lets you customize menus by applying different font styles to the menu commands. You can customize your menus with the Bold, Italic or Underline styles through options in the Menu editor, or using the `SET MENU ITEM STYLE` language command.
 
