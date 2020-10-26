@@ -78,7 +78,7 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
     <span class="hljs-literal">This</span>.firstName:=<span class="hljs-variable">$firstname</span>
     <span class="hljs-literal">This</span>.lastName:=<span class="hljs-variable">$lastname</span>
 </code></pre>
-<p>In a method, creating a &quot;Person&quot;:</p>
+<p>Dans une méthode, créons une &quot;Personne&quot; :</p>
 <pre><code class="hljs">var <span class="hljs-variable">$o</span> : cs.Person <span class="hljs-regexp">//</span>object of Person class
 <span class="hljs-variable">$o</span>:=cs.Person.new(<span class="hljs-string">"John"</span>;<span class="hljs-string">"Doe"</span>)
 <span class="hljs-regexp">//</span> <span class="hljs-variable">$o</span>:{firstName: <span class="hljs-string">"John"</span>; lastName: <span class="hljs-string">"Doe"</span> }
@@ -262,9 +262,9 @@ Function</span><span class="hljs-function"> getFullname</span>()-&gt;<span class
     <span class="hljs-variable">$fullname</span>:=<span class="hljs-literal">This</span>.firstName+<span class="hljs-string">" "</span>+<span class="hljs-function">Uppercase</span>(<span class="hljs-literal">This</span>.lastName)
 </code></pre>
 <p>For a class function, the <code>Current method name</code> command returns: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot;, for example &quot;MyClass.myMethod&quot;.</p>
-<p>In the application code, class functions are called as member methods of the object instance and can receive <a href="#class-function-parameters">parameters</a> if any. The following syntaxes are supported:</p>
+<p>In the application code, class functions are called as member methods of the object instance and can receive <a href="#class-function-parameters">parameters</a> if any. Les syntaxes suivantes sont prises en charge :</p>
 <ul>
-<li>use of the <code>()</code> operator. For example, <code>myObject.methodName(&quot;hello&quot;)</code></li>
+<li>utilisation de l'opérateur <code>()</code>. For example, <code>myObject.methodName(&quot;hello&quot;)</code></li>
 <li>use of a &quot;Function&quot; class member method:
 <ul>
 <li><code>apply()</code></li>
