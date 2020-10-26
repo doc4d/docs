@@ -112,42 +112,42 @@ Standard actions can be used to carry out various current operations linked to s
 
 > 標準アクションに割り当てられたデフォルトのキーボードショートカットは変更しないことをお勧めします。
 
-You can use any alphanumeric keys as a keyboard shortcut, except for the keys reserved by standard menu commands that appear in the **Edit** and **File** menus, and the keys reserved for 4D menu commands.
+**ファイル** や **編集** メニュー、および 4D のメニューコマンドに予約されている標準メニューのショートカットを除き、すべての英数字をキーボードショートカット文字として使用できます。
 
-These reserved key combinations are listed in the following table:
+予約されている組み合わせは以下の通りです:
 
-| Key (Windows)   | Key (macOS)        | 演算子         |
-| --------------- | ------------------ | ----------- |
-| Ctrl+C          | Command+C          | Copy        |
-| Ctrl+Q          | Command+Q          | Quit        |
-| Ctrl+V          | Command+V          | Paste       |
-| Ctrl+X          | Command+X          | Cut         |
-| Ctrl+Z          | Command+Z          | Undo        |
-| Ctrl+. (period) | Command+. (period) | Stop action |
+| キー (Windows)  | キー (macOS)       | 演算子  |
+| ------------- | ---------------- | ---- |
+| Ctrl+C        | Command+C        | コピー  |
+| Ctrl+Q        | Command+Q        | 終了   |
+| Ctrl+V        | Command+V        | ペースト |
+| Ctrl+X        | Command+X        | カット  |
+| Ctrl+Z        | Command+Z        | 取り消し |
+| Ctrl+. (ピリオド) | Command+. (ピリオド) | 実行停止 |
 
-To assign a keyboard shortcut in the Menu editor:
+メニューエディターでキーボードショートカットを割り当てるには:
 
-Select the menu item to which you want to assign a keyboard shortcut. Click on the [...] button to the right of the "Shortcut" entry area. The following window appears:
+キーボードショートカットを割り当てるメニュー項目を選択します。 "ショートカット" 入力エリアの [...] ボタンをクリックします。 以下のウィンドウが表示されます:
 
 ![](assets/en/Menus/Shortcut.png)
 
-Enter the character to use then (optional) click the **Shift** and/or **Alt** (**Option**) checkboxes according to the combination desired. You can also directly press the keys that make up the desired combination (do not press the **Ctrl/Command** key).
+文字を入力し、(必要であれば) **Shift** そして **Alt** (**Option**) チェックボックスを選択します。 指定する組み合わせのキーを押すと、押したキーがウィンドウに反映されます (このときには **Ctrl/Command** キーは押しません)。
 
-> You cannot deselect the Ctrl/Command key, which is mandatory for keyboard shortcuts for menus. To start over, click on **Clear**. Click **OK** to validate the changes. The shortcut defined is shown in the "Shortcut" entry area.
+> Ctrl/Command キーの選択を解除することはできません。このキーは必須です。 内容を消去するには **クリア** をクリックします。 **OK** をクリックすると、内容を確定してウィンドウを閉じます。 指定したショートカットが "ショーとカット" 入力エリアに表示されます:
 
-To assign a keyboard shortcut using the 4D language, use the `SET ITEM SHORTCUT` command.
+4Dランゲージでキーボードショートカットを割り当てるには、`SET ITEM SHORTCUT` コマンドを使います。
 
-> An active object can also have a keyboard shortcut. If the **Ctrl/Command** key assignments conflict, the active object takes precedence.
+> アクティブオブジェクトにも、キーボードショートカットを割り当てることができます。 **Ctrl/Command** キーの割り当てが衝突した場合、アクティブオブジェクトが優先されます。
 
 
-### Enabled item
+### 選択可
 
 In the Menu editor, you can specify whether a menu item will appear enabled or disabled. An enabled menu command can be chosen by the user; a disabled menu command is dimmed and cannot be chosen. When the **Enabled Item** check box is unchecked, the menu command appears dimmed, indicating that it cannot be chosen.
 
 Unless you specify otherwise, 4D automatically enables each menu item you add to a custom menu. You can disable an item in order, for example, to enable it only using programming with `ENABLE MENU ITEM` and `DISABLE MENU ITEM` commands.
 
 
-### Check mark
+### チェック
 
 This Menu editor option can be used to associate a system check mark with a menu item. You can then manage the display of the check mark using language commands (`SET MENU ITEM MARK` and `Get menu item mark`).
 
@@ -161,7 +161,7 @@ As a general rule, apply font styles sparingly to your menus — too many styles
 > You can also apply styles by inserting special characters in the menu title (see [Using control characters](properties.md#using-control-characters) above).
 
 
-### Item icon
+### 項目アイコン
 
 You can associate an icon with a menu item. It will displayed directly in the menu, next to the item:
 
