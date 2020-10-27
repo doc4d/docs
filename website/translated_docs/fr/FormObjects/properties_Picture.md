@@ -10,8 +10,8 @@ Chemin d'une image source statique pour un [bouton image](pictureButton_overview
 
 Deux emplacements principaux peuvent être utilisés pour le chemin d'image statique :
 
-- in the **Resources** folder of the project. Appropriate when you want to share static pictures between several forms in the project. In this case, the Pathname is "/RESOURCES/\<picture path\>".
-- in an image folder (e.g. named **Images**) within the form folder. Appropriate when the static pictures are used only in the form and/or you want to be able to move or duplicate the whole form within the project or different projects. In this case, the Pathname is "\<picture path\>" and is resolved from the root of the form folder.
+- in the **Resources** folder of the project. Appropriate when you want to share static pictures between several forms in the project. Dans ce cas, le chemin d'accès se trouve dans "/RESOURCES/\<picture path\>".
+- dans un dossier d'images (nommé **Images** par exemple) dans le dossier du formulaire. Convient lorsque les images statiques sont utilisées uniquement dans le formulaire et/ou lorsque vous souhaitez pouvoir déplacer ou dupliquer le formulaire entier dans un ou plusieurs projets. Dans ce cas, le chemin d'accès est "\<picture path\>" et est déterminé à la racine du dossier du formulaire.
 
 
 #### Grammaire JSON
