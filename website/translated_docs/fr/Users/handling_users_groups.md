@@ -77,7 +77,7 @@ Les utilisateurs supprimés n'apparaissent plus dans la liste de l'éditeur d'ut
 
 - Le champ **Type d’utilisateur** : le champ Type d’utilisateur contient "Super_Utilisateur", "Administrateur", ou (pour tous les autres utilisateurs) "Utilisateur".
 
-- **Startup Method**: Name of an associated method that will be automatically executed when the user opens the application (optional). Cette méthode peut être utilisée par exemple pour charger les préférences utilisateur.
+- **Méthodes de démarrage** : Nom d'une méthode associée qui sera automatiquement associée lorsque l'utilisateur ouvre l'application (facultatif). Cette méthode peut être utilisée par exemple pour charger les préférences utilisateur.
 
 
 ## Éditeur de groupes
@@ -92,7 +92,7 @@ Attention, une fois créé, un groupe ne peut pas être supprimé. Si vous souha
 
 Pour créer un groupe :
 
-1. Sélectionnez **Boîte à outils > Groupes** dans le menu **Développement** ou cliquez sur le bouton **Boîte outils** de la barre d’outils de 4D puis cliquez sur le bouton **Groupes**. 4D affiche la fenêtre d’édition des groupes. The list of groups displays all the groups of the application project.
+1. Sélectionnez **Boîte à outils > Groupes** dans le menu **Développement** ou cliquez sur le bouton **Boîte outils** de la barre d’outils de 4D puis cliquez sur le bouton **Groupes**. 4D affiche la fenêtre d’édition des groupes. La liste des groupes affiche tous les groupes du projet d'application.
 
 2. Cliquez sur le bouton ![](assets/en/Users/PlussNew.png) situé en-dessous de la liste des groupes.  
    OU  
@@ -121,7 +121,7 @@ Pour supprimer un utilisateur ou un groupe d’un autre groupe, il suffit de dé
 
 ### Affecter un groupe à un plug-in ou à un serveur
 
-You can assign a group privileges to any plug-ins installed in the project. Les plug-ins comprennent tous les plug-ins de 4D ainsi que tout plug-in développés par une société tierce.
+Vous pouvez affecter un groupe d’accès à tout plug-in 4D installé dans votre projet. Les plug-ins comprennent tous les plug-ins de 4D ainsi que tout plug-in développés par une société tierce.
 
 Répartir les accès aux plug-ins vous permet de contrôler l’utilisation des licences dont vous disposez pour ces plug-ins. Tout utilisateur n’appartenant pas au groupe d’accès à un plug-in ne pourra pas charger ce plug-in.
 
@@ -136,7 +136,7 @@ Les lignes **4D Client Web Server** et **4D Client SOAP Server** permettent cont
 
 ### Un schéma d’accès hiérarchique
 
-The best way to ensure the security of your application and provide users with different levels of access is to use an access hierarchy scheme. Les utilisateurs peuvent être affectés à différents groupes et les groupes peuvent être hiérarchisés pour créer des niveaux de droits d’accès. Cette section décrit différentes approches de ce thème.
+Le meilleur moyen d’assurer la sécurité de votre application et de proposer différents niveaux d’accès aux utilisateurs est d’utiliser un schéma hiérarchique des accès. Les utilisateurs peuvent être affectés à différents groupes et les groupes peuvent être hiérarchisés pour créer des niveaux de droits d’accès. Cette section décrit différentes approches de ce thème.
 
 Dans cet exemple, un utilisateur appartient à l’un des trois groupes définis suivant son niveau de responsabilité. Les utilisateurs du groupe Comptabilité sont responsables de la saisie de données. Les utilisateurs du groupe Dir. finance sont responsables de la mise à jour des données, comme la mise à jour d’enregistrements ou la suppression d’enregistrements obsolètes. Les utilisateurs du groupe Direction générale sont responsables de l’analyse de données, ce qui inclut la réalisation de recherches et l’impression d’états.
 
