@@ -7,8 +7,8 @@ title: Gestion des groupes et utilisateurs 4D
 
 4D fournit à certains utilisateurs des privilèges d’accès standard ainsi que des prérogatives spécifiques. Une fois qu’un système d’utilisateurs et de groupes a été créé, ces privilèges standard prennent effet.
 
-L’utilisateur le plus puissant est le **Super_Utilisateur**. No aspect of the application is closed to the Designer. Le Super_Utilisateur peut :
-- access all application servers without restriction,
+L’utilisateur le plus puissant est le **Super_Utilisateur**. Aucune partie de l'application n’est inaccessible au Super_Utilisateur. Le Super_Utilisateur peut :
+- accéder à tous les serveurs de l'application sans restrictions,
 - créer des utilisateurs et des groupes,
 - affecter des privilèges d’accès aux groupes,
 - utiliser le mode Développement. En monoposte, les droits d'accès du Super_Utilisateur sont toujours utilisés. En mode client/serveur, l'affectation d'un mot de passe au Super_Utilisateur affiche la boîte de dialogue de connexion.  L'accès au mode Développement est en lecture seule.
@@ -22,9 +22,9 @@ L'Administrateur peut :
 
 L'Administrateur ne peut pas :
 - modifier l'utilisateur Super_Utilisateur
-- by default, access to protected parts of the application. En particulier, l'Administrateur ne peut pas accéder au mode Développement s'il est restreint. The Administrator must be part of one or more groups to have access privileges in the application. Il est placé dans tous les nouveaux groupes, mais vous pouvez cependant l'exclure de ces groupes.
+- par défaut, accéder à des objets protégés de l'application. En particulier, l'Administrateur ne peut pas accéder au mode Développement s'il est restreint. L'Administrateur doit faire partie d'un ou plusieurs groupes pour avoir des privilèges d’accès dans l'application. Il est placé dans tous les nouveaux groupes, mais vous pouvez cependant l'exclure de ces groupes.
 
-Both the Designer and Administrator are available by default in all applications. Dans la [boîte de dialogue de gestion des utilisateurs](#users-and-groups-editor), les icônes du Super_Utilisateur et de l’Administrateur ont des icônes respectivement rouge et verte :
+Par défaut, le Super_Utilisateur et l'Administrateur se trouvent dans toutes les applications. Dans la [boîte de dialogue de gestion des utilisateurs](#users-and-groups-editor), les icônes du Super_Utilisateur et de l’Administrateur ont des icônes respectivement rouge et verte :
 
 - Icône du Super_Utilisateur : ![](assets/en/Users/IconDesigner.png)
 - Icône de l'Administrateur : ![](assets/en/Users/IconAdmin.png)
@@ -57,11 +57,11 @@ La liste des utilisateurs affiche tous les utilisateurs, y compris [le Super_Uti
 
 4D ajoute un nouvel utilisateur à la liste, nommé par défaut "Nouvel utilisateurN".
 
-3. Saisissez le nom du nouvel utilisateur. This name will be used by the user to open the application. Vous pouvez renommer un utilisateur à tout moment en utilisant la commande **Renommer** du menu contextuel, ou en utilisant la combinaison Alt+clic (Windows) ou Option+clic (macOS) ou en cliquant deux fois sur un nom.
+3. Saisissez le nom du nouvel utilisateur. Ce nom sera utilisé par l’utilisateur pour ouvrir l'application. Vous pouvez renommer un utilisateur à tout moment en utilisant la commande **Renommer** du menu contextuel, ou en utilisant la combinaison Alt+clic (Windows) ou Option+clic (macOS) ou en cliquant deux fois sur un nom.
 
 4. Pour saisir le mot de passe de l’utilisateur, cliquez sur le bouton **Modifier...** dans la zone des propriétés de l’utilisateur et saisissez deux fois le mot de passe dans la boite de dialogue. Vous pouvez saisir jusqu’à 15 caractères alphanumériques. L’éditeur de mots de passe tient compte de la casse des caractères (majuscules ou minuscules).
 
-> Users can change their password at any time according to the options in the "Security" page of the structure settings, or using the `CHANGE PASSWORD` command.
+> Les utilisateurs peuvent modifier leur mot de passe à tout moment en fonction des options de la page Sécurité des propriétés de la structure, ou à l'aide de la commande `CHANGE PASSWORD`.
 
 5. Définissez le ou les groupe(s) d’appartenance de l’utilisateur à l’aide du tableau “Membre des groupes”. Vous pouvez ajouter l’utilisateur sélectionné à un groupe en cochant l’option correspondante dans la colonne Membre.
 
