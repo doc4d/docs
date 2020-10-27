@@ -536,36 +536,36 @@ Voici la description de chaque type de badge :
 
 ## Vues
 
-The 4D Form Editor enables you to build complex forms by distributing form objects among separate views that can then be hidden or shown as needed.
+L'éditeur de formulaires 4D vous permet de créer des formulaires complexes en distribuant des objets de formulaire entre des vues séparées qui peuvent ensuite être masquées ou affichées selon les besoins.
 
-For example, you can distribute objects according to type (fields, variables, static objects, etc.). Any type of form object, including subforms and plug-in areas, can be included in views.
+Par exemple, vous pouvez répartir les objets par type (champs, variables, objets statiques, etc.). Tout type d'objet formulaire, y compris les sous-formulaires et les zones de plug-in, peut être inclus dans les vues.
 
-There is no limit on the number of views per form. You can create as many different views as you need. Additionally, each view can be displayed, hidden, and/or locked.
+Il n'y a pas de limite au nombre de vues par formulaire. Vous pouvez créer autant de vues différentes que nécessaire. De plus, chaque vue peut être affichée, masquée et/ou verrouillée.
 
 
-View management is handled via the View palette.
+Les vues sont gérées via à la palette de vues.
 
 ![](assets/en/FormEditor/viewEditor.png)
 
 
-### Accessing the View palette
+### Accéder à la palette de vues
 
-There are three ways to access the View palette:
+Il existe trois façons d'accéder à la palette de vues :
 
-*   **Toolbar**: Click on the Views icon in the Form Editor toolbar. (This icon appears gray when at least one object belongs to a view other than the default view.)
+*   **Barre d'outils** : cliquez sur l'icône de Vues dans la barre d'outils de l'éditeur de formulaires. (Cette icône apparaît en gris lorsqu'au moins un objet appartient à une vue autre que la vue par défaut.)
 
-    |                  Default view only                   |               With additional views                |
+    |              Vue par défaut uniquement               |           Avec des vues supplémentaires            |
     |:----------------------------------------------------:|:--------------------------------------------------:|
     | ![](assets/en/FormEditor/icon.png "No views in use") | ![](assets/en/FormEditor/icon2.png "Views in use") |
 
-*   **Context menu** (form or object): Right-click anywhere in the Form Editor or an object, and select **Current View**
+*   **Menu contextuel** (formulaire ou objet) : faites un clic droit n'importe où dans l'éditeur de formulaires ou sur un objet, puis sélectionnez **Vue courante**
 
     ![](assets/en/FormEditor/contextMenu.png)
 
-The current view is indicated with a check mark (*e.g.*, "Work Address" in the image above)
+La vue courante est indiquée par une coche (par exemple, "Adresse professionnelle" dans l'image ci-dessus)
 
 
-*   **Form menu**: Click on the **Form** menu and select **View List**
+*   **Menu Formulaire** : cliquez sur le menu **Formulaire** et sélectionnez **Afficher la liste**
 
 ![](assets/en/FormEditor/formMenu.png)
 
@@ -582,7 +582,7 @@ Voici quelques éléments importants à connaitre avant de commencer à travaill
 
 *   **Vues et groupes** : Seuls les objets appartenant à la vue courante peuvent être groupés.
 
-*   **Current and Default** views: The Default view is the first view of a form and cannot be deleted; the Current view is the view that is being edited and the name is displayed in bold text.
+*   **Vues courantes et par défaut** : la vue par défaut est la première vue d'un formulaire et ne peut pas être supprimée; la vue courante est la vue en cours de modification et le nom est affiché en gras.
 
 
 
@@ -609,15 +609,15 @@ Il n'y a pas de limitation du nombre de vues.
 
 #### Renommer des vues
 
-By default views are named as "View" + the view number, however you can change these names to improve readability and better suit your needs.
+Par défaut, les vues sont nommées "Vue" + le numéro de vue, mais vous pouvez modifier ces noms pour améliorer la lisibilité et mieux répondre à vos besoins.
 
-To rename a view, you can use either:
+Pour renommer une vue, vous pouvez soit :
 
 *   Double-cliquer directement sur le nom de la vue (dans ce cas, la vue est sélectionnée). Le nom devient alors éditable :
 
     ![](assets/en/FormEditor/rename.png)
 
-*   Clic droit sur le nom de la vue. Le nom devient alors éditable :
+*   Faire un clic droit sur le nom de la vue. Le nom devient alors éditable :
 
     ![](assets/en/FormEditor/rename2.png)
 
@@ -632,7 +632,7 @@ A noter que la vue par défaut ne change pas :
 
 #### Supprimer des vues
 
-To rename a view, you can use either:
+Pour renommer une vue, vous pouvez soit :
 
 *   Cliquer sur le bouton **Supprimer la vue sélectionnée** en bas de la palette des vues :
 
@@ -649,13 +649,13 @@ To rename a view, you can use either:
 
 ### Utilisation des vues
 
-Once views are created, you can use the View palette to:
+Une fois que les vues sont créées, vous pouvez utiliser la palette des vues pour :
 
-*   Add object to views,
-*   Move objects from one view to another,
-*   Select all objects of the same view in a single click,
-*   Display or hide objects for each view,
-*   Lock the objects of a view.
+*   Ajouter un objet aux vues,
+*   Déplacer des objets d'une vue à une autre,
+*   Sélectionner tous les objets d'une même vue en un seul clic,
+*   Afficher ou masquer des objets pour chaque vue,
+*   Verrouiller les objets d'une vue.
 
 #### Ajouter des objets aux vues
 
