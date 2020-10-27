@@ -661,13 +661,13 @@ Once views are created, you can use the View palette to:
 
 Un objet ne peut appartenir qu’à une seule vue.
 
-To create an object in another view, simply select the view in the View palette (prior to creating the object) by clicking its name (an Edit icon is displayed for the [Current view](#before-you-begin) and the name appears in bold text):
+Pour créer un objet dans une autre vue, sélectionnez simplement la vue dans la palette des vues (avant de créer l'objet) en cliquant sur son nom (une icône Modifier est affichée pour la [Vue courante](#before-you-begin) et le nom apparaît en gras) :
 
 ![](assets/en/FormEditor/addObject.png)
 
-#### Moving objects between views
+#### Déplacer des objets entre les vues
 
-It's also possible to move one or more objects from one view to another. In the form, select the object(s) whose view you wish to change. The view list indicates, using a symbol, the view to which the selection belongs:
+Il est également possible de déplacer un ou plusieurs objets d'une vue à une autre. Dans le formulaire, sélectionnez le ou les objets dont vous souhaitez modifier la vue. The view list indicates, using a symbol, the view to which the selection belongs:
 
 ![](assets/en/FormEditor/symbol.png)
 > The selection can contain several objects belonging to different views.
@@ -701,7 +701,7 @@ Pour cela, faites un clic droit sur la vue dans laquelle vous souhaitez sélecti
 
 ![](assets/en/FormEditor/selectAll.png)
 
-You can also use the button at the bottom of the View palette:
+Vous pouvez également utiliser le bouton situé en dessous de la palette des vues :
 
 
 ![](assets/en/FormEditor/selectAll2.png)
