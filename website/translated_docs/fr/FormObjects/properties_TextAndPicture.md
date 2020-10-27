@@ -146,13 +146,13 @@ Définit le chemin d'accès de l'image qui sera utilisée comme icône de l'obje
 
 Le chemin d'accès à saisir est identique à celui de [la propriété Chemin d'accès pour les images statiques](properties_Picture.md#pathname).
 
-> When used as icon for active objects, the picture must be designed to support a variable [number of states](#number-of-states).
+> Lorsqu'elle est utilisée comme icône pour les objets actifs, l'image doit être conçue pour prendre en charge [un nombre d'états](#number-of-states) variable.
 
 #### Grammaire JSON
 
-| Nom  | Type de données | Valeurs possibles                            |
-| ---- | --------------- | -------------------------------------------- |
-| icon | picture         | Relative or filesystem path in POSIX syntax. |
+| Nom  | Type de données | Valeurs possibles                              |
+| ---- | --------------- | ---------------------------------------------- |
+| icon | picture         | Chemin relatif ou filesystem en syntaxe POSIX. |
 
 #### Objets pris en charge
 
