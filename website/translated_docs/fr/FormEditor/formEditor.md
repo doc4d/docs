@@ -623,31 +623,31 @@ To rename a view, you can use either:
 
 #### Réordonner les vues
 
-You can change the display order of views by dragging/dropping them within the View palette.
+Vous pouvez modifier l'ordre d'affichage des vues en les faisant glisser/déposer dans la palette des vues.
 
-Note that the Default view does not change:
+A noter que la vue par défaut ne change pas :
 
 ![](assets/en/FormEditor/reorderView.png)
 
 
-#### Deleting views
+#### Supprimer des vues
 
 To rename a view, you can use either:
 
-*   Click on the **Delete the selected view** button at the bottom of the View palette:
+*   Cliquer sur le bouton **Supprimer la vue sélectionnée** en bas de la palette des vues :
 
     ![](assets/en/FormEditor/deleteView.png)
 
 
-*   Right-click on the view name, and select **Delete View**:
+*   Faire un clic droit sur le nom de la vue et sélectionner **Supprimer la vue** :
 
     ![](assets/en/FormEditor/deleteView2.png)
-> If a view is deleted, any objects in it are automatically moved to the Default view.
+> Si une vue est supprimée, tous les objets qu'elle contient sont automatiquement déplacés vers la vue par défaut.
 
 
 
 
-### Using views
+### Utilisation des vues
 
 Once views are created, you can use the View palette to:
 
