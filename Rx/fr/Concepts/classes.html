@@ -116,11 +116,11 @@ Class constructor</span>
 <span class="hljs-variable">$o</span>:=cs.Person.new(<span class="hljs-string">"John"</span>;<span class="hljs-string">"Doe"</span>)  
 <span class="hljs-regexp">//</span> <span class="hljs-variable">$o</span>: {firstName: <span class="hljs-string">"John"</span>;lastName: <span class="hljs-string">"Doe"</span> }
 </code></pre>
-<p>Note that you could create an empty class file, and instantiate empty objects. For example, if you create the following <code>Empty.4dm</code> class file:</p>
+<p>A noter que vous pouvez créer un fichier de classe vide et instancier des objets vides. Par exemple, si vous créez le fichier de classe <code>Empty.4dm suivant</code> :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Fichier classe Empty.4dm</span>
 <span class="hljs-comment">//Rien</span>
 </code></pre>
-<p>You could write in a method:</p>
+<p>Vous pouvez saisir dans une méthode :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>:=cs.Empty.<span class="hljs-function">new</span>()  
 <span class="hljs-comment">//$o : {}</span>
 <span class="hljs-variable">$cName</span>:=<span class="hljs-function">OB Class</span>(<span class="hljs-variable">$o</span>).name <span class="hljs-comment">//"Empty"</span>
