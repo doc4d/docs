@@ -207,11 +207,11 @@ Class constructor</span>(<span class="hljs-variable">$firstname </span>: Text; <
 <span class="hljs-variable">$person</span>:=cs.Person.<span class="hljs-function">new</span>() <span class="hljs-comment">//create the new instance  </span>
 <span class="hljs-comment">//$Person contains functions of the class</span>
 </code></pre>
-<p>Note that you can instantiate empty objects. For example, if you create the following <code>Empty.4dm</code> class file:</p>
+<p>Note that you can instantiate empty objects. Par exemple, si vous créez le fichier de classe <code>Empty.4dm suivant</code> :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//Fichier classe Empty.4dm</span>
 <span class="hljs-comment">//Rien</span>
 </code></pre>
-<p>You could write in a method:</p>
+<p>Vous pouvez saisir dans une méthode :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$o</span>:=cs.Empty.<span class="hljs-function">new</span>()  
 <span class="hljs-comment">//$o : {}</span>
 <span class="hljs-variable">$cName</span>:=<span class="hljs-function">OB Class</span>(<span class="hljs-variable">$o</span>).name <span class="hljs-comment">//"Empty"</span>
