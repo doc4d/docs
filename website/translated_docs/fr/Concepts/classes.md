@@ -74,14 +74,14 @@ $o:=cs.Person.new("John";"Doe")
 // $o: {firstName: "John";lastName: "Doe" }
 ```
 
-Note that you could create an empty class file, and instantiate empty objects. For example, if you create the following `Empty.4dm` class file:
+A noter que vous pouvez créer un fichier de classe vide et instancier des objets vides. Par exemple, si vous créez le fichier de classe `Empty.4dm suivant` :
 
 ```4d  
 //Fichier classe Empty.4dm
 //Rien
 ```
 
-You could write in a method:
+Vous pouvez saisir dans une méthode :
 
 
 ```4d

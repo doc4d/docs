@@ -502,7 +502,7 @@
         "title": "インストール"
       },
       "Menus/bars": {
-        "title": "Menu bar features"
+        "title": "メニューバーの管理"
       },
       "Menus/creating": {
         "title": "メニューとメニューバーの作成"
@@ -514,7 +514,7 @@
         "title": "メニュープロパティ"
       },
       "Menus/sdi": {
-        "title": "SDI mode on Windows"
+        "title": "Windows での SDIモード"
       },
       "MSC/analysis": {
         "title": "ログ解析ページ",
