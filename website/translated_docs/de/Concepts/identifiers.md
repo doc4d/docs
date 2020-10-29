@@ -74,7 +74,7 @@ $viNextValue:=aiBigArray{$vlSet}{Size of array(aiBigArray{$vlSet})}
 
 ## Klassen
 
-A class name must be compliant with standard [property naming rules](#additional-rules-for-object-property-and-orda-names). They are case sensitive. Giving the same name to a class and a [database table](#tables) is not recommended, in order to prevent any conflict.
+Ein Klassenname muss mit den [ Schreibregeln für Eigenschaftsnamen ](#additional-rules-for-object-property-and-orda-names) konform sein. Groß- und Kleinschreibung wird berücksichtigt. Um Konflikte zu vermeiden, sollten Sie für eine Klasse und eine [Tabelle](#tables) in derselben Anwendung unterschiedliche Namen verwenden.
 
 
 ## Felder
@@ -112,9 +112,9 @@ DIALOG([Storage];"Note box"+String($vlStage))
 
 ## Funktionen
 
-Function names must be compliant with standard [property naming rules](#additional-rules-for-object-property-and-orda-names).
+Funktionsnamen müssen mit den [ Schreibregeln für Eigenschaftsnamen](#additional-rules-for-object-property-and-orda-names) konform sein.
 
-> Tip: Starting the function name with an underscore character ("_") will exclude the function from the autocompletion features in the 4D code editor.
+> Tipp: Namen, die mit einem Unterstrich (_) beginnen, werden beim automatischen Vervollständigen (autocompletion) im 4D Code-Editor nicht berücksichtigt.
 
 
 ## Temporäre Auswahlen
