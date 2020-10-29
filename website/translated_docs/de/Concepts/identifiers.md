@@ -255,7 +255,7 @@ If(Records in set("$Selection"+String($i))>0) //Client set
 
 ## Tabellen
 
-You designate a table by placing its name between brackets: \[...]. Der Tabellenname kann max. 31 Zeichen lang sein. Giving the same name to a table and a [class](#classes) is not recommended, in order to prevent any conflict.
+Eine Tabelle kennzeichnen Sie durch eckige Klammern um den Tabellennamen: \ [...]. Der Tabellenname kann max. 31 Zeichen lang sein. Um Konflikte zu vermeiden, sollten Sie für eine [Klasse](#classes) und eine Tabelle in derselben Anwendung unterschiedliche Namen verwenden.
 
 Beispiele:
 ```4d
