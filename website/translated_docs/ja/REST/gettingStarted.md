@@ -7,11 +7,11 @@ title: はじめに
 
 The REST server is included in 4D and 4D Server, it is automatically available in your 4D applications [once it is configured](configuration.md).
 
-This section is intended to help familiarize you with REST functionality by means of a simple example. We are going to:
+この章では、簡単な例題を使用して REST機能を紹介します。 これから、実際に次のことをしてみましょう:
 - create and configure a basic 4D application project
 - access data from the 4D project through REST using a standard browser.
 
-To keep the example simple, we’re going to use 4D and a browser that are running on the same machine. Of course, you could also use a remote architecture.
+To keep the example simple, we’re going to use 4D and a browser that are running on the same machine. もちろん、リモートアーキテクチャーを使うことも可能です。
 
 
 
