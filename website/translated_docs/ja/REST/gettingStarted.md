@@ -3,21 +3,21 @@ id: gettingStarted
 title: はじめに
 ---
 
-4D provides you with a powerful REST server, that allows direct access to data stored in your 4D applications.
+4D は、4Dアプリケーションに格納されているデータへのダイレクトアクセスを可能にする強力な RESTサーバーを提供しています。
 
-The REST server is included in 4D and 4D Server, it is automatically available in your 4D applications [once it is configured](configuration.md).
+RESTサーバーは 4D および 4D Server に含まれており、[設定完了後は](configuration.md) 4Dアプリケーションにて自動的に利用可能となります。
 
 この章では、簡単な例題を使用して REST機能を紹介します。 これから、実際に次のことをしてみましょう:
-- create and configure a basic 4D application project
-- access data from the 4D project through REST using a standard browser.
+- 簡単な 4Dアプリケーションプロジェクトを作成し、設定します。
+- 標準のブラウザーを開き、REST を介して 4Dプロジェクトのデータにアクセスします。
 
-To keep the example simple, we’re going to use 4D and a browser that are running on the same machine. もちろん、リモートアーキテクチャーを使うことも可能です。
+例題が複雑にならないよう、ここでは 4D とブラウザーを同じマシン上で使用します。 もちろん、リモートアーキテクチャーを使うことも可能です。
 
 
 
-## Creating and configuring the 4D project
+## 4Dプロジェクトの作成と設定
 
-1. Launch your 4D or 4D Server application and create a new project. 名前は仮に "Emp4D" とします。
+1. 4D または 4D Server アプリケーションを起動し、新規プロジェクトを作成します。 名前は仮に "Emp4D" とします。
 
 2. ストラクチャーエディターを開き、[Employees] テーブルを作成して、次のフィールドを追加します:
     - Lastname (文字列)
@@ -32,7 +32,7 @@ To keep the example simple, we’re going to use 4D and a browser that are runni
 
 ![](assets/en/REST/getstarted2.png)
 
-4. Display the **Web/REST resource** page of the Settings dialog box and [check the Expose as REST server](configuration.md#starting-the-rest-server) option.
+4. ストラクチャー設定の **Web＞RESTリソース** ページを開き、[RESTサーバーとして公開](configuration.md#RESTサーバーを開始する) オプションを選択します。
 
 5. 上部の **実行** メニューから、必要に応じて **Webサーバー開始** を選択し、次に同メニューから **Webサーバーテスト** を選択します。
 
@@ -76,7 +76,7 @@ RESTサーバーの応答です:
 /rest/Employees
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 {
@@ -117,13 +117,13 @@ RESTサーバーの応答です:
 }
 ```
 
-取得するデータをフィルターする方法も多数あります。 たとえば、2番目のエンティティの "Lastname" 属性値のみを取得するには、次のように書きます:
+取得するデータを様々な条件でフィルターすることも可能です。 たとえば、2番目のエンティティの "Lastname" 属性値のみを取得するには、次のように書きます:
 
 ```
 /rest/Employees(2)/Lastname
 ```
 
-**Response:**
+**レスポンス:**
 
 ```
 {
@@ -135,4 +135,4 @@ RESTサーバーの応答です:
 }
 ```
 
-The 4D [REST API](REST_requests.md) provides various commands to interact with the 4D applications.  
+4D の [REST API](REST_requests.md) は、4Dアプリケーションを操作するためのコマンドを多数提供しています。  
