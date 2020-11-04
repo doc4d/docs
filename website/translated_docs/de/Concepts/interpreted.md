@@ -8,13 +8,13 @@ title: Interpreted and Compiled modes
 - in interpreted mode, statements are read and translated in machine language at the moment of their execution. You can add or modify the code whenever you need to, the application is automatically updated.
 - in compiled mode, all methods are read and translated once, at the compilation step. Afterwards, the application only contains assembly level instructions are available, it is no longer possible to edit the code.
 
-The advantages of the compilation are:
+Die Vorteile von Kompilieren sind:
 
 - **Speed**: Your application can run from 3 to 1,000 times faster.
-- **Code checking**: Your application is scanned for the consistency of code. Both logical and syntactical conflicts are detected.
+- **Code checking**: Your application is scanned for the consistency of code. 4D Compiler findet sowohl logische als auch Syntaxfehler.
 - **Protection**: Once your application is compiled, you can delete the interpreted code. Then, the compiled application is functionally identical to the original, except that the structure and methods cannot be viewed or modified, deliberately or inadvertently.
 - **Stand-alone double-clickable applications**: compiled applications can also be transformed into stand-alone applications (.EXE files) with their own icon.
-- **Preemptive mode**: only compiled code can be executed in preemptive processes.
+- **Preemptive Modus**: Nur kompilierter Code lässt sich in preemptive Prozessen ausführen.
 
 ## Differences between interpreted and compiled code
 Although application will work the same way in interpreted and compiled modes, there are some differences to know when you write code that will be compiled. The 4D interpreter is usually more flexible than the compiler.
