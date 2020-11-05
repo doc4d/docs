@@ -75,18 +75,15 @@
 <tbody>
 <tr><td><a href="#attributename"><strong><em>.attributeName</em></strong> : DataClassAttribute</a><p>    objects that are available directly as properties</td></tr>
 <tr><td><a href="#all"><strong>.all</strong> ( { <em>settings</em> : Object } ) : 4D.EntitySelection</a><p>    queries the datastore to find all the entities related to the dataclass and returns them as an entity selection</td></tr>
-<tr><td><a href="#fromcollection"><strong>.fromCollection</strong>( <em>objectCol</em> : Collection { ; <em>settings</em> : Object } ) : 4D.EntitySelection</a><p>    updates or creates entities in the dataclass according to the</td></tr>
+<tr><td><a href="#fromcollection"><strong>.fromCollection</strong>( <em>objectCol</em> : Collection { ; <em>settings</em> : Object } ) : 4D.EntitySelection</a><p>    updates or creates entities in the dataclass according to the <em>objectCol</em> collection of objects, and returns the corresponding entity selection</td></tr>
+<tr><td><a href="#get"><strong>.get</strong>( <em>primaryKey</em> : Integer { ; <em>settings</em> : Object } ) : 4D.Entity<br><strong>.get</strong>( <em>primaryKey</em> : Text { ; <em>settings</em> : Object } ) : 4D.Entity</a><p>    queries the dataclass to retrieve the entity matching the <em>primaryKey</em> parameter</td></tr>
+<tr><td><a href="#getdatastore"><strong>.getDataStore()</strong> : cs.DataStore</a><p>    returns the datastore for the specified dataclass</td></tr>
+<tr><td><a href="#getinfo"><strong>.getInfo()</strong> : Object </a><p>    returns an object providing information about the dataclass</td></tr>
+<tr><td><a href="#new"><strong>.new()</strong> : 4D.Entity </a><p>    creates in memory and returns a new blank entity related to the Dataclass</td></tr>
+<tr><td><a href="#newselection"><strong>.newSelection</strong>( { <em>keepOrder</em> : Integer } ) : 4D.EntitySelection </a><p>    creates a new, blank, , non-shareable entity selection, related to the dataclass, in memory</td></tr>
+<tr><td><a href="#query"><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : expression } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection </a><p>    searches for entities that meet the search criteria specified in <em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s)</td></tr>
 </tbody>
 </table>
-<p><em>objectCol</em> collection of objects, and returns the corresponding entity selection |
-| <a href="#get"><strong>.get</strong>( <em>primaryKey</em> : Integer { ; <em>settings</em> : Object } ) : 4D.Entity<br><strong>.get</strong>( <em>primaryKey</em> : Text { ; <em>settings</em> : Object } ) : 4D.Entity</a><p>    queries the dataclass to retrieve the entity matching the</p>
-<p><em>primaryKey</em> parameter |
-| <a href="#getdatastore"><strong>.getDataStore()</strong> : cs.DataStore</a><p>    returns the datastore for the specified dataclass |
-| <a href="#getinfo"><strong>.getInfo()</strong> : Object </a><p>    returns an object providing information about the dataclass |
-| <a href="#new"><strong>.new()</strong> : 4D.Entity </a><p>    creates in memory and returns a new blank entity related to the Dataclass |
-| <a href="#newselection"><strong>.newSelection</strong>( { <em>keepOrder</em> : Integer } ) : 4D.EntitySelection </a><p>    creates a new, blank, , non-shareable entity selection, related to the dataclass, in memory |
-| <a href="#query"><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : expression } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection </a><p>    searches for entities that meet the search criteria specified in</p>
-<p><em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s) |</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="attributename"></a><a href="#attributename" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.<em>attributeName</em></h2>
 <p><details><summary>Historique</summary></p>
@@ -204,8 +201,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-2"></a><a href="#description-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.fromCollection()</code> function updates or creates entities in the dataclass according to the</p>
-<p><em>objectCol</em> collection of objects, and returns the corresponding entity selection.</p>
+<p>The <code>.fromCollection()</code> function updates or creates entities in the dataclass according to the <em>objectCol</em> collection of objects, and returns the corresponding entity selection.</p>
 <p>In the <em>objectCol</em> parameter, pass a collection of objects to create new or update existing entities of the dataclass. The property names must be the same as attribute names in the dataclass. If a property name does not exist in the dataclass, it is ignored. If an attribute value is not defined in the collection, its value is null.</p>
 <p>The mapping between the objects of the collection and the entities is done on the <strong>attribute names</strong> and <strong>matching types</strong>. If an object's property has the same name as an entity's attribute but their types do not match, the entity's attribute is not filled.</p>
 <p><strong>Create or update mode</strong></p>
@@ -369,8 +365,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-3"></a><a href="#description-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.get()</code> function queries the dataclass to retrieve the entity matching the</p>
-<p><em>primaryKey</em> parameter.</p>
+<p>The <code>.get()</code> function queries the dataclass to retrieve the entity matching the <em>primaryKey</em> parameter.</p>
 <p>In <em>primaryKey</em>, pass the primary key value of the entity to retrieve. The value type must match the primary key type set in the datastore (Integer or Text). You can also make sure that the primary key value is always returned as Text by using the <a href="/docs/alpha/fr/API/entityClass.html#getkey"><code>.getKey()</code></a> function with the <code>dk key as string</code> parameter.</p>
 <p>If no entity is found with <em>primaryKey</em>, a <strong>Null</strong> entity is returned.</p>
 <p>Lazy loading is applied, which means that related data is loaded from disk only when it is required.</p>
@@ -606,9 +601,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-8"></a><a href="#description-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.query( )</code> function searches for entities that meet the search criteria specified in</p>
-<p><em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s), for all the entities in the dataclass, and returns a new object of type</p>
-<p><code>EntitySelection</code> containing all the entities that are found. Lazy loading is applied.</p>
+<p>The <code>.query( )</code> function searches for entities that meet the search criteria specified in <em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s), for all the entities in the dataclass, and returns a new object of type <code>EntitySelection</code> containing all the entities that are found. Lazy loading is applied.</p>
 <p>If no matching entities are found, an empty <code>EntitySelection</code> is returned.</p>
 <p><strong>queryString parameter</strong></p>
 <p>The <em>queryString</em> parameter uses the following syntax:</p>

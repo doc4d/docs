@@ -113,8 +113,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>ds</code> command returns a reference to the datastore matching the current 4D database or the database designated by</p>
-<p><em>localID</em>.</p>
+<p>The <code>ds</code> command returns a reference to the datastore matching the current 4D database or the database designated by <em>localID</em>.</p>
 <p>If you omit the <em>localID</em> parameter (or pass an empty string &quot;&quot;), the command returns a reference to the datastore matching the local 4D database (or the 4D Server database in case of opening a remote database on 4D Server). The datastore is opened automatically and available directly through <code>ds</code>.</p>
 <p>You can also get a reference on an open remote datastore by passing its local id in the <em>localID</em> parameter. The datastore must have been previously opened with the <a href="#open-datastore"><code>Open datastore</code></a> command by the current database (host or component). The local id is defined when using this command.</p>
 <blockquote>
@@ -175,9 +174,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-1"></a><a href="#description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>Open datastore</code> command connects the application to the 4D database identified by the</p>
-<p><em>connectionInfo</em> parameter and returns a matching</p>
-<p><code>cs.DataStore</code> object associated with the <em>localID</em> local alias.</p>
+<p>The <code>Open datastore</code> command connects the application to the 4D database identified by the <em>connectionInfo</em> parameter and returns a matching <code>cs.DataStore</code> object associated with the <em>localID</em> local alias.</p>
 <p>The <em>connectionInfo</em> 4D database must be available as a remote datastore, i.e.:</p>
 <ul>
 <li>its web server must be launched with http and/or https enabled,</li>
@@ -282,8 +279,7 @@
 | --------- | ---- |::| ------------------------------- |
 |           |      |  | Does not require any parameters |</p>
 <h4><a class="anchor" aria-hidden="true" id="description-3"></a><a href="#description-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.cancelTransaction()</code> function cancels the transaction opened by the</p>
-<p><a href="#starttransaction"><code>.startTransaction()</code></a> function at the corresponding level in the current process for the specified datastore.</p>
+<p>The <code>.cancelTransaction()</code> function cancels the transaction opened by the <a href="#starttransaction"><code>.startTransaction()</code></a> function at the corresponding level in the current process for the specified datastore.</p>
 <p>The <code>.cancelTransaction()</code> function cancels any changes made to the data during the transaction.</p>
 <p>You can nest several transactions (sub-transactions). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using the <a href="#validatetransactions"><code>.validateTransaction()</code></a> function.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-4"></a><a href="#example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
@@ -310,8 +306,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-4"></a><a href="#description-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.encryptionStatus()</code> function returns an object providing the encryption status for the current data file (i.e., the data file of the</p>
-<p><code>ds</code> datastore). The status for each table is also provided.</p>
+<p>The <code>.encryptionStatus()</code> function returns an object providing the encryption status for the current data file (i.e., the data file of the <code>ds</code> datastore). The status for each table is also provided.</p>
 <blockquote>
 <p>Use the <code>Data file encryption status</code> command to determine the encryption status of any other data file.</p>
 </blockquote>
@@ -441,8 +436,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-6"></a><a href="#description-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.getRequestLog()</code> function returns the ORDA requests logged in memory on the client side. The ORDA request logging must have previously been enabled using the</p>
-<p><a href="#startrequestlog"><code>.startRequestLog()</code></a> function.</p>
+<p>The <code>.getRequestLog()</code> function returns the ORDA requests logged in memory on the client side. The ORDA request logging must have previously been enabled using the <a href="#startrequestlog"><code>.startRequestLog()</code></a> function.</p>
 <p>This function must be called on a remote 4D, otherwise it returns an empty collection. It is designed for debugging purposes in client/server configurations.</p>
 <p><strong>Returned value</strong></p>
 <p>Collection of stacked request objects. The most recent request has index 0.</p>
@@ -673,8 +667,7 @@
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |</p>
 <h4><a class="anchor" aria-hidden="true" id="description-11"></a><a href="#description-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.validateTransaction()</code> function accepts the transaction that was started with</p>
-<p><a href="#starttransaction"><code>.startTransaction()</code></a> at the corresponding level on the specified datastore.</p>
+<p>The <code>.validateTransaction()</code> function accepts the transaction that was started with <a href="#starttransaction"><code>.startTransaction()</code></a> at the corresponding level on the specified datastore.</p>
 <p>The function saves the changes to the data on the datastore that occurred during the transaction.</p>
 <p>You can nest several transactions (sub-transactions). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using this function.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-10"></a><a href="#example-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>

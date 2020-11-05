@@ -89,23 +89,16 @@
 <tbody>
 <tr><td><a href="#4dcryptokeynew"><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) -&gt; <em>cryptoKey</em> : Object</a><p>    creates a new object encapsulating an encryption key pair</td></tr>
 <tr><td><a href="#curve"><strong>.curve</strong> : Text</a><p>    normalised curve name of the key.</td></tr>
-<tr><td><a href="#decrypt"><strong>.decrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Object</a><p>    decrypts the</td></tr>
+<tr><td><a href="#decrypt"><strong>.decrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Object</a><p>    decrypts the <em>message</em> parameter using the <strong>private</strong> key</td></tr>
+<tr><td><a href="#encrypt"><strong>.encrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Text</a><p>    encrypts the <em>message</em> parameter using the <strong>public</strong> key</td></tr>
+<tr><td><a href="#getprivatekey"><strong>.getPrivateKey()</strong> : Text</a><p>    returns the private key of the <code>cryptoKey</code> object</td></tr>
+<tr><td><a href="#getpublickey"><strong>.getPublicKey( )</strong> : Text</a><p>    returns the public key of the <code>cryptoKey</code> object</td></tr>
+<tr><td><a href="#sign">.<strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text</a><p>    signs the utf8 representation of a <em>message</em> string</td></tr>
+<tr><td><a href="#size"><strong>.size</strong> : Integer</a><p>    the size of the key in bits</td></tr>
+<tr><td><a href="#type"><strong>.type</strong> : Text</a><p>    Name of the key type</td></tr>
+<tr><td><a href="#verify"><strong>.verify</strong>( <em>message</em> : Text ; <em>signature</em> : Text ; <em>options</em> : Object) : object</a><p>    verifies the base64 signature against the utf8 representation of <em>message</em></td></tr>
 </tbody>
 </table>
-<p><em>message</em> parameter using the <strong>private</strong> key|
-| <a href="#encrypt"><strong>.encrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Text</a><p>    encrypts the</p>
-<p><em>message</em> parameter using the <strong>public</strong> key|
-| <a href="#getprivatekey"><strong>.getPrivateKey()</strong> : Text</a><p>    returns the private key of the</p>
-<p><code>cryptoKey</code> object|
-| <a href="#getpublickey"><strong>.getPublicKey( )</strong> : Text</a><p>    returns the public key of the</p>
-<p><code>cryptoKey</code> object|
-| [.</p>
-<p><strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text](#sign)<p>    signs the utf8 representation of a</p>
-<p><em>message</em> string |
-| <a href="#size"><strong>.size</strong> : Integer</a><p>    the size of the key in bits |
-| <a href="#type"><strong>.type</strong> : Text</a><p>    Name of the key type |
-| <a href="#verify"><strong>.verify</strong>( <em>message</em> : Text ; <em>signature</em> : Text ; <em>options</em> : Object) : object</a><p>    verifies the base64 signature against the utf8 representation of</p>
-<p><em>message</em>|</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="4dcryptokeynew-"></a><a href="#4dcryptokeynew-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D.CryptoKey.new( )</h2>
 <p><details><summary>History</summary></p>
@@ -128,8 +121,7 @@
 <tr><td>cryptoKey</td><td>Object</td><td>&lt;-</td><td>Object encapsulating an encryption key pair</td></tr>
 </tbody>
 </table>
-<p>The <code>4D.CryptoKey.new()</code> function creates a new object encapsulating an encryption key pair, based upon the</p>
-<p><em>settings</em> object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.</p>
+<p>The <code>4D.CryptoKey.new()</code> function creates a new object encapsulating an encryption key pair, based upon the <em>settings</em> object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.</p>
 <h4><a class="anchor" aria-hidden="true" id="settings"></a><a href="#settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>settings</em></h4>
 <table>
 <thead>
@@ -181,8 +173,7 @@
 <tr><td>Result</td><td>Object</td><td>&lt;-</td><td>Status</td></tr>
 </tbody>
 </table>
-<p>The <code>.decrypt()</code> function decrypts the</p>
-<p><em>message</em> parameter using the <strong>private</strong> key. The algorithm used depends on the type of the key.</p>
+<p>The <code>.decrypt()</code> function decrypts the <em>message</em> parameter using the <strong>private</strong> key. The algorithm used depends on the type of the key.</p>
 <p>The key must be a RSA key, the algorithm is RSA-OAEP (see <a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a>).</p>
 <h4><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
@@ -231,8 +222,7 @@
 <tr><td>Result</td><td>Text</td><td>&lt;-</td><td>Message encrypted and encoded using the <code>options.encodingEncrypted</code></td></tr>
 </tbody>
 </table>
-<p>The <code>.encrypt()</code> function encrypts the</p>
-<p><em>message</em> parameter using the <strong>public</strong> key. The algorithm used depends on the type of the key.</p>
+<p>The <code>.encrypt()</code> function encrypts the <em>message</em> parameter using the <strong>public</strong> key. The algorithm used depends on the type of the key.</p>
 <p>The key must be a RSA key, the algorithm is RSA-OAEP (see <a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a>).</p>
 <h5><a class="anchor" aria-hidden="true" id="options-1"></a><a href="#options-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h5>
 <table>
@@ -268,8 +258,7 @@
 <tr><td>Result</td><td>Text</td><td>&lt;-</td><td>Private key in PEM format</td></tr>
 </tbody>
 </table>
-<p>The <code>.getPrivateKey()</code> function  returns the private key of the</p>
-<p><code>cryptoKey</code> object in PEM format, or an empty string if none is available.</p>
+<p>The <code>.getPrivateKey()</code> function  returns the private key of the <code>cryptoKey</code> object in PEM format, or an empty string if none is available.</p>
 <h4><a class="anchor" aria-hidden="true" id="result-2"></a><a href="#result-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
 <p>The returned value is the private key.</p>
 <hr>
@@ -293,8 +282,7 @@
 <tr><td>Result</td><td>Text</td><td>&lt;-</td><td>Public key in PEM format</td></tr>
 </tbody>
 </table>
-<p>The <code>.getPublicKey()</code> function returns the public key of the</p>
-<p><code>cryptoKey</code> object in PEM format, or an empty string if none is available.</p>
+<p>The <code>.getPublicKey()</code> function returns the public key of the <code>cryptoKey</code> object in PEM format, or an empty string if none is available.</p>
 <h4><a class="anchor" aria-hidden="true" id="result-3"></a><a href="#result-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
 <p>The returned value is the public key.</p>
 <hr>
@@ -323,8 +311,7 @@
 </tbody>
 </table>
 <p></details></p>
-<p>.</p>
-<p><strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text</p>
+<p>.<strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text</p>
 <table>
 <thead>
 <tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
@@ -335,9 +322,7 @@
 <tr><td>Result</td><td>Text</td><td>&lt;-</td><td>Signature in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr>
 </tbody>
 </table>
-<p>The <code>.sign()</code> function signs the utf8 representation of a</p>
-<p><em>message</em> string using the</p>
-<p><code>cryptoKey</code> object keys and provided <em>options</em>. It returns its signature in base64 or base64URL format, depending on the value of the <code>options.encoding</code> attribute you passed.</p>
+<p>The <code>.sign()</code> function signs the utf8 representation of a <em>message</em> string using the <code>cryptoKey</code> object keys and provided <em>options</em>. It returns its signature in base64 or base64URL format, depending on the value of the <code>options.encoding</code> attribute you passed.</p>
 <p>The <code>cryptoKey</code> must contain a valid <strong>private</strong> key.</p>
 <h4><a class="anchor" aria-hidden="true" id="options-2"></a><a href="#options-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
@@ -405,9 +390,7 @@
 <tr><td>Result</td><td>Object</td><td>&lt;-</td><td>Status of the verification</td></tr>
 </tbody>
 </table>
-<p>The <code>.verify()</code> function verifies the base64 signature against the utf8 representation of</p>
-<p><em>message</em> using the</p>
-<p><code>cryptoKey</code> object keys and provided <em>options</em>.</p>
+<p>The <code>.verify()</code> function verifies the base64 signature against the utf8 representation of <em>message</em> using the <code>cryptoKey</code> object keys and provided <em>options</em>.</p>
 <p>The <code>cryptoKey</code> must contain a valid <strong>public</strong> key.</p>
 <h4><a class="anchor" aria-hidden="true" id="options-3"></a><a href="#options-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>

@@ -88,64 +88,45 @@
 <tbody>
 <tr><td><a href="#average"><strong>.average</strong>( {<em>propertyPath</em> : Text } ) : Real</a><p>    returns the arithmetic mean (average) of defined values in the collection instance</td></tr>
 <tr><td><a href="#clear"><strong>.clear()</strong> : Collection</a><p>    removes all elements from the collection instance and returns an empty collection</td></tr>
-<tr><td><a href="#combine"><strong>.combine</strong>( <em>col2</em> : Collection {; <em>index</em> : Integer } ) : Collection</a><p>    inserts</td></tr>
+<tr><td><a href="#combine"><strong>.combine</strong>( <em>col2</em> : Collection {; <em>index</em> : Integer } ) : Collection</a><p>    inserts <em>col2</em> elements at the end or at the specified <em>index</em> position in the collection instance and returns the edited collection</td></tr>
+<tr><td><a href="#concat"><strong>.concat</strong>( <em>value</em> : any { <em>;...valueN</em> } ) : Collection</a><p>    returns a new collection containing the elements of the original collection with all elements of the <em>value</em> parameter added to the end</td></tr>
+<tr><td><a href="#copy"><strong>.copy</strong>() : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithCol</em> : Collection ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithObj</em> : Object ) : Collection</a><p>     returns a deep copy of the collection instance</td></tr>
+<tr><td><a href="#count"><strong>.count</strong>( { <em>propertyPath</em> : Text } ) : Real</a><p>    returns the number of non-null elements in the collection</td></tr>
+<tr><td><a href="#countvalues"><strong>.countValues</strong>( <em>value</em> : any {; <em>propertyPath</em> : Text } ) : Real</a><p>    returns the number of times value is found in the collection</td></tr>
+<tr><td><a href="#distinct"><strong>.distinct</strong>( {<em>option</em> : Integer} ) : Collection<br><strong>.distinct</strong>( <em>propertyPath</em> : Text {; <em>option</em> : Integer } ) : Collection</a><p>    returns a collection containing only distinct (different) values from the original collection</td></tr>
+<tr><td><a href="#equal"><strong>.equal</strong>( <em>collection2</em> : Collection {; <em>option</em> : Integer } ) : Boolean</a><p>    compares the collection with collection2</td></tr>
+<tr><td><a href="#every"><strong>.every</strong>( <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean<br><strong>.every</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean</a><p>    returns <strong>true</strong> if all elements in the collection successfully passed a test implemented in the provided <em>methodName</em> method</td></tr>
+<tr><td><a href="#extract"><strong>.extract</strong>( <em>propertyPath</em> : Text { ; <em>option</em> : Integer } ) : Collection<br><strong>.extract</strong>( <em>propertyPath</em> : Text ;  <em>targetPath</em> : Text  { ;...<em>propertyPathN</em> : Text ;... <em>targetPathN</em> : Text } ) : Collection</a><p>    creates and returns a new collection containing <em>propertyPath</em> values extracted from the original collection of objects</td></tr>
+<tr><td><a href="#fill"><strong>.fill</strong>( <em>value</em> : any ) : Collection<br><strong>.fill</strong>( <em>value</em> : any ;  <em>startFrom</em>  : Integer { ; <em>end</em> : Integer } ) : Collection</a><p>    fills the collection with the specified <em>value</em>, optionally from <em>startFrom</em> index to <em>end</em> index, and returns the resulting collection</td></tr>
+<tr><td><a href="#filter"><strong>.filter</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Collection</a><p>    returns a new collection containing all elements of the original collection for which <em>methodName</em> method result is <strong>true</strong></td></tr>
+<tr><td><a href="#find"><strong>.find</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any<br><strong>.find</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any</a><p>    returns the first value in the collection for which <em>methodName</em>, applied on each element, returns <strong>true</strong></td></tr>
+<tr><td><a href="#find"><strong>.findIndex</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Integer<br><strong>.findIndex</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Integer</a><p>    returns the index, in the collection, of the first value for which <em>methodName</em>, applied on each element, returns <strong>true</strong></td></tr>
+<tr><td><a href="#indexof"><strong>.indexOf</strong>(  <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the <em>toSearch</em> expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found</td></tr>
+<tr><td><a href="#indices"><strong>.indices</strong>(  <em>queryString</em> : Text { ; <em>...value</em> : any } ) : Collection </a><p>    returns indexes, in the original collection, of object collection elements that match the <em>queryString</em> search conditions</td></tr>
+<tr><td><a href="#insert"><strong>.insert</strong>( <em>index</em> : Integer ; <em>element</em> : any ) : Collection </a><p>     inserts <em>element</em> at the specified <em>index</em> position in the collection instance and returns the edited collection</td></tr>
+<tr><td><a href="#join"><strong>.join</strong>( <em>delimiter</em> : Text { ; <em>option</em> : Integer } ) : Text </a><p>    converts all elements of the collection to strings and concatenates them using the specified <em>delimiter</em> string as separator</td></tr>
+<tr><td><a href="#lastindexof"><strong>.lastIndexOf</strong>( <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the <em>toSearch</em> expression among collection elements and returns the index of the last occurrence</td></tr>
+<tr><td><a href="#length"><strong>.length</strong> : Integer</a><p>    returns the number of elements in the collection</td></tr>
+<tr><td><a href="#map"><strong>.map</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Collection </a><p>    creates a new collection based upon the result of the call of the <em>methodName</em> method on each element of the original collection</td></tr>
+<tr><td><a href="#max"><strong>.max</strong>( { <em>propertyPath</em> : Text } ) : any </a><p>    returns the element with the highest value in the collection</td></tr>
+<tr><td><a href="#min"><strong>.min</strong>( { <em>propertyPath</em> : Text } ) : any </a><p>    returns the element with the smallest value in the collection</td></tr>
+<tr><td><a href="#orderby"><strong>.orderBy</strong>( ) : Collection<br><strong>.orderBy</strong>( <em>pathStrings</em> : Text ) : Collection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : Collection<br><strong>.orderBy</strong>( <em>ascOrDesc</em> : Integer ) : Collection </a><p>    returns a new collection containing all elements of the collection in the specified order</td></tr>
+<tr><td><a href="#orderbymethod"><strong>.orderByMethod</strong>( <em>methodName</em> : Text { ; ...<em>extraParam</em> : expression } ) : Collection </a><p>    returns a new collection containing all elements of the collection in the order defined through the <em>methodName</em> method</td></tr>
+<tr><td><a href="#pop"><strong>.pop()</strong> : any </a><p>    removes the last element from the collection and returns it as the function result</td></tr>
+<tr><td><a href="#push"><strong>.push</strong>( <em>element</em> : any { ;...<em>elementN</em> } ) : Collection </a><p>    appends one or more <em>element</em>(s) to the end of the collection instance and returns the edited collection</td></tr>
+<tr><td><a href="#query"><strong>.query</strong>( <em>queryString</em> : Text ; <em>...value</em> : any ) : Collection<br><strong>.query</strong>( <em>queryString</em> : Text ; <em>querySettings</em> : Object ) : Collection </a><p>    returns all elements of a collection of objects that match the search conditions</td></tr>
+<tr><td><a href="#reduce"><strong>.reduce</strong>( <em>methodName</em> : Text ) : any <br><strong>.reduce</strong>( <em>methodName</em> : Text ; <em>initValue</em> : any { ; <em>...param</em> : expression } ) : any </a><p>    applies the <em>methodName</em> callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value</td></tr>
+<tr><td><a href="#remove"><strong>.remove</strong>( <em>index</em> : Integer { ; <em>howMany</em> : Integer } ) : Collection </a><p>    removes one or more element(s) from the specified <em>index</em> position in the collection and returns the edited collection</td></tr>
+<tr><td><a href="#resize"><strong>.resize</strong>( <em>size</em> : Integer { ; <em>defaultValue</em> : any } ) : Collection </a><p>    sets the collection length to the specified new size and returns the resized collection</td></tr>
+<tr><td><a href="#reverse"><strong>.reverse( )</strong> : Collection </a><p>    returns a deep copy of the collection with all its elements in reverse order</td></tr>
+<tr><td><a href="#shift"><strong>.shift()</strong> : any</a><p>    removes the first element of the collection and returns it as the function result</td></tr>
+<tr><td><a href="#slice"><strong>.slice</strong>( <em>startFrom</em> : Integer { ; <em>end</em> : Integer } ) : Collection</a><p>    returns a portion of a collection into a new collection</td></tr>
+<tr><td><a href="#some"><strong>.some</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Boolean<br><strong>.some</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Boolean</a><p>    retourne true si au moins un élément de la collection a réussi un test</td></tr>
+<tr><td><a href="#sort"><strong>.sort</strong>( <em>methodName</em> : Text { ; <em>...extraParam</em> : any } ) : Collection </a><p>    trie les éléments de la collection d'origine</td></tr>
+<tr><td><a href="#sum"><strong>.sum</strong>( { <em>propertyPath</em> : Text } ) : Real</a><p>    retourne la somme de toutes les valeurs de l'instance de collection</td></tr>
+<tr><td><a href="#unshift"><strong>.unshift</strong>( <em>value</em> : any { ;...<em>valueN</em> : any } ) : Collection</a><p>    insère la ou les <em>valeur(s)</em> données au début de la collection</td></tr>
 </tbody>
 </table>
-<p><em>col2</em> elements at the end or at the specified <em>index</em> position in the collection instance and returns the edited collection |
-| <a href="#concat"><strong>.concat</strong>( <em>value</em> : any { <em>;...valueN</em> } ) : Collection</a><p>    returns a new collection containing the elements of the original collection with all elements of the</p>
-<p><em>value</em> parameter added to the end|
-| <a href="#copy"><strong>.copy</strong>() : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithCol</em> : Collection ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithObj</em> : Object ) : Collection</a><p>     returns a deep copy of the collection instance|
-| <a href="#count"><strong>.count</strong>( { <em>propertyPath</em> : Text } ) : Real</a><p>    returns the number of non-null elements in the collection|
-| <a href="#countvalues"><strong>.countValues</strong>( <em>value</em> : any {; <em>propertyPath</em> : Text } ) : Real</a><p>    returns the number of times value is found in the collection|
-| <a href="#distinct"><strong>.distinct</strong>( {<em>option</em> : Integer} ) : Collection<br><strong>.distinct</strong>( <em>propertyPath</em> : Text {; <em>option</em> : Integer } ) : Collection</a><p>    returns a collection containing only distinct (different) values from the original collection|
-| <a href="#equal"><strong>.equal</strong>( <em>collection2</em> : Collection {; <em>option</em> : Integer } ) : Boolean</a><p>    compares the collection with collection2 |
-| <a href="#every"><strong>.every</strong>( <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean<br><strong>.every</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean</a><p>    returns</p>
-<p><strong>true</strong> if all elements in the collection successfully passed a test implemented in the provided <em>methodName</em> method|
-| <a href="#extract"><strong>.extract</strong>( <em>propertyPath</em> : Text { ; <em>option</em> : Integer } ) : Collection<br><strong>.extract</strong>( <em>propertyPath</em> : Text ;  <em>targetPath</em> : Text  { ;...<em>propertyPathN</em> : Text ;... <em>targetPathN</em> : Text } ) : Collection</a><p>    creates and returns a new collection containing</p>
-<p><em>propertyPath</em> values extracted from the original collection of objects|
-| <a href="#fill"><strong>.fill</strong>( <em>value</em> : any ) : Collection<br><strong>.fill</strong>( <em>value</em> : any ;  <em>startFrom</em>  : Integer { ; <em>end</em> : Integer } ) : Collection</a><p>    fills the collection with the specified</p>
-<p><em>value</em>, optionally from <em>startFrom</em> index to <em>end</em> index, and returns the resulting collection|
-| <a href="#filter"><strong>.filter</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Collection</a><p>    returns a new collection containing all elements of the original collection for which</p>
-<p><em>methodName</em> method result is <strong>true</strong>|
-| <a href="#find"><strong>.find</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any<br><strong>.find</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : any</a><p>    returns the first value in the collection for which</p>
-<p><em>methodName</em>, applied on each element, returns <strong>true</strong>|
-| <a href="#find"><strong>.findIndex</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Integer<br><strong>.findIndex</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Integer</a><p>    returns the index, in the collection, of the first value for which</p>
-<p><em>methodName</em>, applied on each element, returns <strong>true</strong>|
-| <a href="#indexof"><strong>.indexOf</strong>(  <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the</p>
-<p><em>toSearch</em> expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found|
-| <a href="#indices"><strong>.indices</strong>(  <em>queryString</em> : Text { ; <em>...value</em> : any } ) : Collection </a><p>    returns indexes, in the original collection, of object collection elements that match the</p>
-<p><em>queryString</em> search conditions|
-| <a href="#insert"><strong>.insert</strong>( <em>index</em> : Integer ; <em>element</em> : any ) : Collection </a><p>     inserts</p>
-<p><em>element</em> at the specified <em>index</em> position in the collection instance and returns the edited collection|
-| <a href="#join"><strong>.join</strong>( <em>delimiter</em> : Text { ; <em>option</em> : Integer } ) : Text </a><p>    converts all elements of the collection to strings and concatenates them using the specified</p>
-<p><em>delimiter</em> string as separator|
-| <a href="#lastindexof"><strong>.lastIndexOf</strong>( <em>toSearch</em> : expression { ; <em>startFrom</em> : Integer } ) : Integer </a><p>    searches the</p>
-<p><em>toSearch</em> expression among collection elements and returns the index of the last occurrence|
-| <a href="#length"><strong>.length</strong> : Integer</a><p>    returns the number of elements in the collection|
-| <a href="#map"><strong>.map</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Collection </a><p>    creates a new collection based upon the result of the call of the</p>
-<p><em>methodName</em> method on each element of the original collection|
-| <a href="#max"><strong>.max</strong>( { <em>propertyPath</em> : Text } ) : any </a><p>    returns the element with the highest value in the collection|
-| <a href="#min"><strong>.min</strong>( { <em>propertyPath</em> : Text } ) : any </a><p>    returns the element with the smallest value in the collection|
-| <a href="#orderby"><strong>.orderBy</strong>( ) : Collection<br><strong>.orderBy</strong>( <em>pathStrings</em> : Text ) : Collection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : Collection<br><strong>.orderBy</strong>( <em>ascOrDesc</em> : Integer ) : Collection </a><p>    returns a new collection containing all elements of the collection in the specified order|
-| <a href="#orderbymethod"><strong>.orderByMethod</strong>( <em>methodName</em> : Text { ; ...<em>extraParam</em> : expression } ) : Collection </a><p>    returns a new collection containing all elements of the collection in the order defined through the</p>
-<p><em>methodName</em> method|
-| <a href="#pop"><strong>.pop()</strong> : any </a><p>    removes the last element from the collection and returns it as the function result|
-| <a href="#push"><strong>.push</strong>( <em>element</em> : any { ;...<em>elementN</em> } ) : Collection </a><p>    appends one or more</p>
-<p><em>element</em>(s) to the end of the collection instance and returns the edited collection|
-| <a href="#query"><strong>.query</strong>( <em>queryString</em> : Text ; <em>...value</em> : any ) : Collection<br><strong>.query</strong>( <em>queryString</em> : Text ; <em>querySettings</em> : Object ) : Collection </a><p>    returns all elements of a collection of objects that match the search conditions |
-| <a href="#reduce"><strong>.reduce</strong>( <em>methodName</em> : Text ) : any <br><strong>.reduce</strong>( <em>methodName</em> : Text ; <em>initValue</em> : any { ; <em>...param</em> : expression } ) : any </a><p>    applies the</p>
-<p><em>methodName</em> callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value|
-| <a href="#remove"><strong>.remove</strong>( <em>index</em> : Integer { ; <em>howMany</em> : Integer } ) : Collection </a><p>    removes one or more element(s) from the specified</p>
-<p><em>index</em> position in the collection and returns the edited collection|
-| <a href="#resize"><strong>.resize</strong>( <em>size</em> : Integer { ; <em>defaultValue</em> : any } ) : Collection </a><p>    sets the collection length to the specified new size and returns the resized collection|
-| <a href="#reverse"><strong>.reverse( )</strong> : Collection </a><p>    returns a deep copy of the collection with all its elements in reverse order|
-| <a href="#shift"><strong>.shift()</strong> : any</a><p>    removes the first element of the collection and returns it as the function result|
-| <a href="#slice"><strong>.slice</strong>( <em>startFrom</em> : Integer { ; <em>end</em> : Integer } ) : Collection</a><p>    returns a portion of a collection into a new collection|
-| <a href="#some"><strong>.some</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Boolean<br><strong>.some</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Boolean</a><p>    retourne true si au moins un élément de la collection a réussi un test|
-| <a href="#sort"><strong>.sort</strong>( <em>methodName</em> : Text { ; <em>...extraParam</em> : any } ) : Collection </a><p>    trie les éléments de la collection d'origine|
-| <a href="#sum"><strong>.sum</strong>( { <em>propertyPath</em> : Text } ) : Real</a><p>    retourne la somme de toutes les valeurs de l'instance de collection|
-| <a href="#unshift"><strong>.unshift</strong>( <em>value</em> : any { ;...<em>valueN</em> : any } ) : Collection</a><p>    insère la ou les</p>
-<p><em>valeur(s)</em> données au début de la collection |</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="new-collection"></a><a href="#new-collection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New collection</h2>
 <p><details><summary>Historique</summary></p>
@@ -365,9 +346,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-4"></a><a href="#description-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.combine()</code> function inserts</p>
-<p><em>col2</em> elements at the end or at the specified <em>index</em> position in the collection instance and returns the edited collection. Unlike the</p>
-<p><code>.insert()</code> function, <code>.combine()</code> adds each value of <em>col2</em> in the original collection, and not as a single collection element.</p>
+<p>The <code>.combine()</code> function inserts <em>col2</em> elements at the end or at the specified <em>index</em> position in the collection instance and returns the edited collection. Unlike the <code>.insert()</code> function, <code>.combine()</code> adds each value of <em>col2</em> in the original collection, and not as a single collection element.</p>
 <blockquote>
 <p>This function modifies the original collection.</p>
 </blockquote>
@@ -409,8 +388,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-5"></a><a href="#description-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.concat()</code> function returns a new collection containing the elements of the original collection with all elements of the</p>
-<p><em>value</em> parameter added to the end.</p>
+<p>The <code>.concat()</code> function returns a new collection containing the elements of the original collection with all elements of the <em>value</em> parameter added to the end.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -449,8 +427,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-6"></a><a href="#description-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.copy()</code> function  returns a deep copy of the collection instance.</p>
-<p><strong><em>Deep copy</em></strong> means that objects or collections within the original collection are duplicated and do not share any reference with the returned collection.</p>
+<p>The <code>.copy()</code> function  returns a deep copy of the collection instance.<strong><em>Deep copy</em></strong> means that objects or collections within the original collection are duplicated and do not share any reference with the returned collection.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -692,8 +669,7 @@ End use</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-10"></a><a href="#description-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.equal()</code> function compares the collection with collection2 and returns</p>
-<p><strong>true</strong> if they are identical (deep comparison).</p>
+<p>The <code>.equal()</code> function compares the collection with collection2 and returns <strong>true</strong> if they are identical (deep comparison).</p>
 <p>By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the <code>ck diacritical</code> constant in the option parameter.</p>
 <blockquote>
 <p>Elements with <strong>Null</strong> values are not equal to Undefined elements.</p>
@@ -743,8 +719,7 @@ End use</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-11"></a><a href="#description-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.every()</code> function returns</p>
-<p><strong>true</strong> if all elements in the collection successfully passed a test implemented in the provided <em>methodName</em> method.</p>
+<p>The <code>.every()</code> function returns <strong>true</strong> if all elements in the collection successfully passed a test implemented in the provided <em>methodName</em> method.</p>
 <p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any test, with or without the parameter(s). This method receives an <code>Object</code> in first parameter ($1) and must set <em>$1.result</em> to true for every element fulfilling the test.</p>
 <p><em>methodName</em> receives the following parameters:</p>
 <ul>
@@ -818,8 +793,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-12"></a><a href="#description-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.extract()</code> function creates and returns a new collection containing</p>
-<p><em>propertyPath</em> values extracted from the original collection of objects.</p>
+<p>The <code>.extract()</code> function creates and returns a new collection containing <em>propertyPath</em> values extracted from the original collection of objects.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -879,8 +853,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-13"></a><a href="#description-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.fill()</code> function fills the collection with the specified</p>
-<p><em>value</em>, optionally from <em>startFrom</em> index to <em>end</em> index, and returns the resulting collection.</p>
+<p>The <code>.fill()</code> function fills the collection with the specified <em>value</em>, optionally from <em>startFrom</em> index to <em>end</em> index, and returns the resulting collection.</p>
 <blockquote>
 <p>This function modifies the original collection.</p>
 </blockquote>
@@ -927,9 +900,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-14"></a><a href="#description-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.filter()</code> function returns a new collection containing all elements of the original collection for which</p>
-<p><em>methodName</em> method result is <strong>true</strong>. This function returns a</p>
-<p><strong><em>shallow copy</em></strong>, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
+<p>The <code>.filter()</code> function returns a new collection containing all elements of the original collection for which <em>methodName</em> method result is <strong>true</strong>. This function returns a <strong><em>shallow copy</em></strong>, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1001,8 +972,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-15"></a><a href="#description-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.find()</code> function returns the first value in the collection for which</p>
-<p><em>methodName</em>, applied on each element, returns <strong>true</strong>.</p>
+<p>The <code>.find()</code> function returns the first value in the collection for which <em>methodName</em>, applied on each element, returns <strong>true</strong>.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1078,8 +1048,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-16"></a><a href="#description-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.findIndex()</code> function returns the index, in the collection, of the first value for which</p>
-<p><em>methodName</em>, applied on each element, returns <strong>true</strong>.</p>
+<p>The <code>.findIndex()</code> function returns the index, in the collection, of the first value for which <em>methodName</em>, applied on each element, returns <strong>true</strong>.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1143,8 +1112,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-17"></a><a href="#description-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.indexOf()</code> function searches the</p>
-<p><em>toSearch</em> expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found.</p>
+<p>The <code>.indexOf()</code> function searches the <em>toSearch</em> expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1194,8 +1162,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-18"></a><a href="#description-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.indices()</code> function works exactly the same as the <a href="#query"><code>.query()</code></a> function but returns indexes, in the original collection, of object collection elements that match the</p>
-<p><em>queryString</em> search conditions, and not elements themselves. Indexes are returned in ascending order.</p>
+<p>The <code>.indices()</code> function works exactly the same as the <a href="#query"><code>.query()</code></a> function but returns indexes, in the original collection, of object collection elements that match the <em>queryString</em> search conditions, and not elements themselves. Indexes are returned in ascending order.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1239,8 +1206,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-19"></a><a href="#description-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.insert()</code> function  inserts</p>
-<p><em>element</em> at the specified <em>index</em> position in the collection instance and returns the edited collection.</p>
+<p>The <code>.insert()</code> function  inserts <em>element</em> at the specified <em>index</em> position in the collection instance and returns the edited collection.</p>
 <blockquote>
 <p>This function modifies the original collection.</p>
 </blockquote>
@@ -1285,8 +1251,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-20"></a><a href="#description-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.join()</code> function converts all elements of the collection to strings and concatenates them using the specified</p>
-<p><em>delimiter</em> string as separator.The function returns the resulting string.</p>
+<p>The <code>.join()</code> function converts all elements of the collection to strings and concatenates them using the specified <em>delimiter</em> string as separator.The function returns the resulting string.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1322,8 +1287,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-21"></a><a href="#description-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.lastIndexOf()</code> function searches the</p>
-<p><em>toSearch</em> expression among collection elements and returns the index of the last occurrence, or -1 if it was not found.</p>
+<p>The <code>.lastIndexOf()</code> function searches the <em>toSearch</em> expression among collection elements and returns the index of the last occurrence, or -1 if it was not found.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1396,9 +1360,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-23"></a><a href="#description-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.map()</code> function creates a new collection based upon the result of the call of the</p>
-<p><em>methodName</em> method on each element of the original collection. Optionally, you can pass parameters to</p>
-<p><em>methodName</em> using the <em>param</em> parameter(s). <code>.map()</code> always returns a collection with the same size as the original collection.</p>
+<p>The <code>.map()</code> function creates a new collection based upon the result of the call of the <em>methodName</em> method on each element of the original collection. Optionally, you can pass parameters to <em>methodName</em> using the <em>param</em> parameter(s). <code>.map()</code> always returns a collection with the same size as the original collection.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1448,8 +1410,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-24"></a><a href="#description-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.max()</code> function returns the element with the highest value in the collection (the last element of the collection as it would be sorted in ascending order using the</p>
-<p><a href="#sort"><code>.sort()</code></a> function).</p>
+<p>The <code>.max()</code> function returns the element with the highest value in the collection (the last element of the collection as it would be sorted in ascending order using the <a href="#sort"><code>.sort()</code></a> function).</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1489,8 +1450,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-25"></a><a href="#description-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.min()</code> function returns the element with the smallest value in the collection (the first element of the collection as it would be sorted in ascending order using the</p>
-<p><a href="#sort"><code>.sort()</code></a> function).</p>
+<p>The <code>.min()</code> function returns the element with the smallest value in the collection (the first element of the collection as it would be sorted in ascending order using the <a href="#sort"><code>.sort()</code></a> function).</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1642,8 +1602,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-27"></a><a href="#description-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.orderByMethod()</code> function returns a new collection containing all elements of the collection in the order defined through the</p>
-<p><em>methodName</em> method.</p>
+<p>The <code>.orderByMethod()</code> function returns a new collection containing all elements of the collection in the order defined through the <em>methodName</em> method.</p>
 <p>This function returns a <em>shallow copy</em>, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
@@ -1745,8 +1704,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-29"></a><a href="#description-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.push()</code> function appends one or more</p>
-<p><em>element</em>(s) to the end of the collection instance and returns the edited collection.</p>
+<p>The <code>.push()</code> function appends one or more <em>element</em>(s) to the end of the collection instance and returns the edited collection.</p>
 <blockquote>
 <p>This function modifies the original collection.</p>
 </blockquote>
@@ -1791,8 +1749,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-30"></a><a href="#description-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.query()</code> function returns all elements of a collection of objects that match the search conditions defined by</p>
-<p><em>queryString</em> and (optionally) <em>value</em> or <em>querySettings</em>. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
+<p>The <code>.query()</code> function returns all elements of a collection of objects that match the search conditions defined by <em>queryString</em> and (optionally) <em>value</em> or <em>querySettings</em>. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1864,8 +1821,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-31"></a><a href="#description-31" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.reduce()</code> function applies the</p>
-<p><em>methodName</em> callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value.</p>
+<p>The <code>.reduce()</code> function applies the <em>methodName</em> callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -1932,8 +1888,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-32"></a><a href="#description-32" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.remove()</code> function removes one or more element(s) from the specified</p>
-<p><em>index</em> position in the collection and returns the edited collection.</p>
+<p>The <code>.remove()</code> function removes one or more element(s) from the specified <em>index</em> position in the collection and returns the edited collection.</p>
 <blockquote>
 <p>This function modifies the original collection.</p>
 </blockquote>
@@ -2093,8 +2048,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-36"></a><a href="#description-36" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.slice()</code> function returns a portion of a collection into a new collection, selected from</p>
-<p><em>startFrom</em> index to <em>end</em> index (end not included). This function returns a <em>shallow copy</em> of the collection. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
+<p>The <code>.slice()</code> function returns a portion of a collection into a new collection, selected from <em>startFrom</em> index to <em>end</em> index (end not included). This function returns a <em>shallow copy</em> of the collection. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
 <p>This function does not modify the original collection.</p>
 </blockquote>
@@ -2138,8 +2092,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-37"></a><a href="#description-37" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>La fonction <code>.some()</code> retourne true si au moins un élément de la collection a réussi un test implémenté dans la méthode</p>
-<p><em>methodName</em> fournie.</p>
+<p>La fonction <code>.some()</code> retourne true si au moins un élément de la collection a réussi un test implémenté dans la méthode <em>methodName</em> fournie.</p>
 <p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any test, with or without the parameter(s). Cette méthode reçoit un <code>objet</code> comme premier paramètre ($1) et doit définir <em>$1.result</em> sur <strong>True</strong> pour chaque élément du test.</p>
 <p><em>methodName</em> receives the following parameters:</p>
 <ul>
@@ -2320,8 +2273,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-40"></a><a href="#description-40" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>La fonction <code>.unshift()</code> insère la ou les</p>
-<p><em>valeur(s)</em> données au début de la collection et retourne la collection modifiée.</p>
+<p>La fonction <code>.unshift()</code> insère la ou les <em>valeur(s)</em> données au début de la collection et retourne la collection modifiée.</p>
 <blockquote>
 <p>This function modifies the original collection.</p>
 </blockquote>

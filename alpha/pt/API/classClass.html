@@ -73,13 +73,11 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#name"><strong>.name</strong> : Text</a><p>    contains the name of the</td></tr>
+<tr><td><a href="#name"><strong>.name</strong> : Text</a><p>    contains the name of the <code>4D.Class</code> object</td></tr>
+<tr><td><a href="#new"><strong>.new()</strong> : 4D.Class</a><p>    creates and returns a <code>cs.className</code> object which is a new instance of the class on which it is called</td></tr>
+<tr><td><a href="#superclass"><strong>.superclass</strong> : 4D.Class</a><p>    returns the parent class of the class</td></tr>
 </tbody>
 </table>
-<p><code>4D.Class</code> object|
-| <a href="#new"><strong>.new()</strong> : 4D.Class</a><p>    creates and returns a</p>
-<p><code>cs.className</code> object which is a new instance of the class on which it is called |
-| <a href="#superclass"><strong>.superclass</strong> : 4D.Class</a><p>    returns the parent class of the class |</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="name"></a><a href="#name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.name</h2>
 <p><details><summary>History</summary></p>
@@ -94,8 +92,7 @@
 <p></details></p>
 <p><strong>.name</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.name</code> property contains the name of the</p>
-<p><code>4D.Class</code> object. Class names are case sensitive.</p>
+<p>The <code>.name</code> property contains the name of the <code>4D.Class</code> object. Class names are case sensitive.</p>
 <p>This property is <strong>read-only</strong>.</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="new"></a><a href="#new" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.new()</h2>
@@ -119,9 +116,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-1"></a><a href="#description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.new()</code> function creates and returns a</p>
-<p><code>cs.className</code> object which is a new instance of the class on which it is called. This function is automatically available on all classes from the</p>
-<p><a href="/docs/alpha/pt/Concepts/classes.html#cs"><code>cs</code> class store</a>.</p>
+<p>The <code>.new()</code> function creates and returns a <code>cs.className</code> object which is a new instance of the class on which it is called. This function is automatically available on all classes from the <a href="/docs/alpha/pt/Concepts/classes.html#cs"><code>cs</code> class store</a>.</p>
 <p>If it is called on a non-existing class, an error is returned.</p>
 <h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <p>To create a new instance of the Person class:</p>
@@ -143,8 +138,7 @@
 <p></details></p>
 <p><strong>.superclass</strong> : 4D.Class</p>
 <h4><a class="anchor" aria-hidden="true" id="description-2"></a><a href="#description-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.superclass</code> property returns the parent class of the class. A superclass can be a</p>
-<p><code>4D.Class</code> object, or a <code>cs.className</code> object. If the class does not have a parent class, the property returns <strong>null</strong>.</p>
+<p>The <code>.superclass</code> property returns the parent class of the class. A superclass can be a <code>4D.Class</code> object, or a <code>cs.className</code> object. If the class does not have a parent class, the property returns <strong>null</strong>.</p>
 <p>A superclass of a user class is declared in a class by using the <a href="/docs/alpha/pt/Concepts/classes.html#class-extends-classname"><code>Class extends &lt;superclass&gt;</code></a> keyword.</p>
 <p>This property is <strong>read-only</strong>.</p>
 <h4><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>

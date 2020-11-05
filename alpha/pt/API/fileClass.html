@@ -78,45 +78,38 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D.File</a><p>    copies the</td></tr>
+<tr><td><a href="#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D.File</a><p>    copies the <code>File</code> object into the specified <em>destinationFolder</em></td></tr>
+<tr><td><a href="#create"><strong>.create()</strong> : Boolean </a><p>    creates a file on disk according to the properties of the <code>File</code> object</td></tr>
+<tr><td><a href="#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><p>    creates an alias (macOS) or a shortcut (Windows)</td></tr>
+<tr><td><a href="#creationdate"><strong>.creationDate</strong> : Date</a><p>    the creation date of the file</td></tr>
+<tr><td><a href="#creationtime"><strong>.creationTime</strong> : Time</a><p>    the creation  time of the file</td></tr>
+<tr><td><a href="#delete"><strong>.delete( )</strong></a><p>    deletes the file</td></tr>
+<tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    true if the file exists on disk</td></tr>
+<tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    the extension of the file name (if any)</td></tr>
+<tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    the full name of the file, including its extension (if any)</td></tr>
+<tr><td><a href="#getcontent"><strong>.getContent( )</strong> : Blob</a><p>returns a <code>BLOB</code> containing the entire content of a file</td></tr>
+<tr><td><a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    the icon of the file</td></tr>
+<tr><td><a href="#gettext"><strong>.getText</strong>( { <em>charSetName</em> : Text } { ; } { <em>breakMode</em> : integer} ) : Text<br><strong>.getText</strong>( { <em>charSetNum</em> : integer } { ; } { <em>breakMode</em> : integer} ) : Text</a><p>    returns the contents of the file as text</td></tr>
+<tr><td><a href="#hidden"><strong>.hidden</strong> : Boolean</a><p>    true if the file is set as &quot;hidden&quot; at the system level</td></tr>
+<tr><td><a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    true if the file is an alias, a shortcut, or a symbolic link</td></tr>
+<tr><td></td></tr>
+<tr><td><a href="#isfile"><strong>.isFile</strong> : Boolean</a><p>    always true for a file</td></tr>
+<tr><td><a href="#isFolder"><strong>.isFolder</strong> : Boolean</a><p>    always false for a file</td></tr>
+<tr><td><a href="#iswritable"><strong>.isWritable</strong> : Boolean</a><p>    true if the file exists on disk and is writable</td></tr>
+<tr><td><a href="#modificationdate"><strong>.modificationDate</strong> : Date</a><p>    the date of the file's last modification</td></tr>
+<tr><td><a href="#modificationtime"><strong>.modificationTime</strong> : Time</a><p>    the time of the file's last modification</td></tr>
+<tr><td><a href="#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.File</a><p>    moves or renames the <code>File</code> object into the specified <em>destinationFolder</em></td></tr>
+<tr><td><a href="#name"><strong>.name</strong> : Text</a><p>    the name of the file without extension (if any)</td></tr>
+<tr><td><a href="#original"><strong>.original</strong> : 4D.File<br><strong>.original</strong> : 4D.Folder</a><p>    the target element for an alias, a shortcut, or a symbolic link file</td></tr>
+<tr><td><a href="#parent"><strong>.parent</strong> : 4D.Folder</a><p>    the parent folder object of the file</td></tr>
+<tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    the POSIX path of the file</td></tr>
+<tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    the path of the file expressed with the current platform syntax</td></tr>
+<tr><td><a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.File</a><p>    renames the file with the name you passed in <em>newName</em> and returns the renamed <code>File</code> object</td></tr>
+<tr><td><a href="#setcontent"><strong>.setContent</strong> ( <em>content</em> : Blob ) </a><p>    rewrites the entire content of the file using the data stored in the <em>content</em> BLOB</td></tr>
+<tr><td><a href="#settext"><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetName</em> : Text { ; <em>breakMode</em> : Integer } } )<br><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetNum</em> : Integer { ; <em>breakMode</em> : Integer } } ) </a><p>    writes <em>text</em> as the new contents of the file</td></tr>
+<tr><td><a href="#size"><strong>.size</strong> : Real</a><p>    the size of the file expressed in bytes</td></tr>
 </tbody>
 </table>
-<p><code>File</code> object into the specified <em>destinationFolder</em> |
-| <a href="#create"><strong>.create()</strong> : Boolean </a><p>    creates a file on disk according to the properties of the</p>
-<p><code>File</code> object|
-| <a href="#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><p>    creates an alias (macOS) or a shortcut (Windows)|
-| <a href="#creationdate"><strong>.creationDate</strong> : Date</a><p>    the creation date of the file|
-| <a href="#creationtime"><strong>.creationTime</strong> : Time</a><p>    the creation  time of the file|
-| <a href="#delete"><strong>.delete( )</strong></a><p>    deletes the file|
-| <a href="#exists"><strong>.exists</strong> : Boolean</a><p>    true if the file exists on disk|
-| <a href="#extension"><strong>.extension</strong> : Text</a><p>    the extension of the file name (if any)|
-| <a href="#fullname"><strong>.fullName</strong> : Text</a><p>    the full name of the file, including its extension (if any)|
-| <a href="#getcontent"><strong>.getContent( )</strong> : Blob</a><p>returns a</p>
-<p><code>BLOB</code> containing the entire content of a file|
-| <a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    the icon of the file|
-| <a href="#gettext"><strong>.getText</strong>( { <em>charSetName</em> : Text } { ; } { <em>breakMode</em> : integer} ) : Text<br><strong>.getText</strong>( { <em>charSetNum</em> : integer } { ; } { <em>breakMode</em> : integer} ) : Text</a><p>    returns the contents of the file as text |
-| <a href="#hidden"><strong>.hidden</strong> : Boolean</a><p>    true if the file is set as &quot;hidden&quot; at the system level|
-| <a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    true if the file is an alias, a shortcut, or a symbolic link
-|
-| <a href="#isfile"><strong>.isFile</strong> : Boolean</a><p>    always true for a file|
-| <a href="#isFolder"><strong>.isFolder</strong> : Boolean</a><p>    always false for a file|
-| <a href="#iswritable"><strong>.isWritable</strong> : Boolean</a><p>    true if the file exists on disk and is writable|
-| <a href="#modificationdate"><strong>.modificationDate</strong> : Date</a><p>    the date of the file's last modification|
-| <a href="#modificationtime"><strong>.modificationTime</strong> : Time</a><p>    the time of the file's last modification|
-| <a href="#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.File</a><p>    moves or renames the</p>
-<p><code>File</code> object into the specified <em>destinationFolder</em>|
-| <a href="#name"><strong>.name</strong> : Text</a><p>    the name of the file without extension (if any)|
-| <a href="#original"><strong>.original</strong> : 4D.File<br><strong>.original</strong> : 4D.Folder</a><p>    the target element for an alias, a shortcut, or a symbolic link file|
-| <a href="#parent"><strong>.parent</strong> : 4D.Folder</a><p>    the parent folder object of the file|
-| <a href="#path"><strong>.path</strong> : Text</a><p>    the POSIX path of the file|
-| <a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    the path of the file expressed with the current platform syntax|
-| <a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.File</a><p>    renames the file with the name you passed in</p>
-<p><em>newName</em> and returns the renamed <code>File</code> object|
-| <a href="#setcontent"><strong>.setContent</strong> ( <em>content</em> : Blob ) </a><p>    rewrites the entire content of the file using the data stored in the</p>
-<p><em>content</em> BLOB|
-| <a href="#settext"><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetName</em> : Text { ; <em>breakMode</em> : Integer } } )<br><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetNum</em> : Integer { ; <em>breakMode</em> : Integer } } ) </a><p>    writes</p>
-<p><em>text</em> as the new contents of the file|
-| <a href="#size"><strong>.size</strong> : Real</a><p>    the size of the file expressed in bytes|</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="file"></a><a href="#file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>File</h2>
 <p><details><summary>History</summary></p>
@@ -143,8 +136,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>File</code> command creates and returns a new object of the</p>
-<p><code>4D.File</code> type. The command accepts two syntaxes:</p>
+<p>The <code>File</code> command creates and returns a new object of the <code>4D.File</code> type. The command accepts two syntaxes:</p>
 <p><strong>File ( path { ; pathType } { ; * })</strong></p>
 <p>In the <em>path</em> parameter, pass a file path string. You can use a custom string or a filesystem (e.g., &quot;/DATA/myfile.txt&quot;).</p>
 <blockquote>
@@ -216,8 +208,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-1"></a><a href="#description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.copyTo()</code> function copies the</p>
-<p><code>File</code> object into the specified <em>destinationFolder</em> .</p>
+<p>The <code>.copyTo()</code> function copies the <code>File</code> object into the specified <em>destinationFolder</em> .</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
 <p>By default, the file is copied with the name of the original file. If you want to rename the copy, pass the new name in the <em>newName</em> parameter. The new name must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned.</p>
 <p>If a file with the same name already exists in the <em>destinationFolder</em>, by default 4D generates an error. You can pass the <code>fk overwrite</code> constant in the <em>overwrite</em> parameter to ignore and overwrite the existing file</p>
@@ -260,8 +251,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-2"></a><a href="#description-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.create()</code> function creates a file on disk according to the properties of the</p>
-<p><code>File</code> object.</p>
+<p>The <code>.create()</code> function creates a file on disk according to the properties of the <code>File</code> object.</p>
 <p>If necessary, the function creates the folder hierachy as described in the <a href="#platformpath">platformPath</a> or <a href="#path">path</a> properties. If the file already exists on disk, the function does nothing (no error is thrown) and returns false.</p>
 <p><strong>Returned value</strong></p>
 <ul>
@@ -298,8 +288,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-3"></a><a href="#description-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.createAlias()</code> function creates an alias (macOS) or a shortcut (Windows) to the file with the specified</p>
-<p><em>aliasName</em> name in the folder designated by the <em>destinationFolder</em> object.</p>
+<p>The <code>.createAlias()</code> function creates an alias (macOS) or a shortcut (Windows) to the file with the specified <em>aliasName</em> name in the folder designated by the <em>destinationFolder</em> object.</p>
 <p>Pass the name of the alias or shortcut to create in the <em>aliasName</em> parameter.</p>
 <p>By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the <em>aliasType</em> parameter. The following constants are available:</p>
 <table>
@@ -452,9 +441,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-10"></a><a href="#description-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.getContent()</code> function  returns a</p>
-<p><code>BLOB</code> containing the entire content of a file. For information on BLOBs, please refer to the</p>
-<p><a href="/docs/alpha/pt/Concepts/blob.html">BLOB</a> section.</p>
+<p>The <code>.getContent()</code> function  returns a <code>BLOB</code> containing the entire content of a file. For information on BLOBs, please refer to the <a href="/docs/alpha/pt/Concepts/blob.html">BLOB</a> section.</p>
 <p><strong>Returned value</strong></p>
 <p>A <code>Blob</code>.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-5"></a><a href="#example-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
@@ -704,8 +691,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-20"></a><a href="#description-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.moveTo()</code> function moves or renames the</p>
-<p><code>File</code> object into the specified <em>destinationFolder</em>.</p>
+<p>The <code>.moveTo()</code> function moves or renames the <code>File</code> object into the specified <em>destinationFolder</em>.</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
 <p>By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the <em>newName</em> parameter. The new name must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned.</p>
 <p><strong>Returned object</strong></p>
@@ -823,8 +809,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-26"></a><a href="#description-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.rename()</code> function renames the file with the name you passed in</p>
-<p><em>newName</em> and returns the renamed <code>File</code> object.</p>
+<p>The <code>.rename()</code> function renames the file with the name you passed in <em>newName</em> and returns the renamed <code>File</code> object.</p>
 <p>The <em>newName</em> parameter must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.</p>
 <p>Note that the function modifies the full name of the file, i.e. if you do not pass an extension in <em>newName</em>, the file will have a name without an extension.</p>
 <p><strong>Returned object</strong></p>
@@ -856,9 +841,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-27"></a><a href="#description-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.setContent( )</code> function rewrites the entire content of the file using the data stored in the</p>
-<p><em>content</em> BLOB. For information on BLOBs, please refer to the</p>
-<p><a href="/docs/alpha/pt/Concepts/blob.html">BLOB</a> section.</p>
+<p>The <code>.setContent( )</code> function rewrites the entire content of the file using the data stored in the <em>content</em> BLOB. For information on BLOBs, please refer to the <a href="/docs/alpha/pt/Concepts/blob.html">BLOB</a> section.</p>
 <h4><a class="anchor" aria-hidden="true" id="example-9"></a><a href="#example-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$myFile</span>:=<span class="hljs-function">Folder</span>(fk documents folder).<span class="hljs-function">file</span>(<span class="hljs-string">"Archives/data.txt"</span>)
  <span class="hljs-variable">$myFile</span>.<span class="hljs-function">setContent</span>([aTable]aBlobField)
@@ -889,8 +872,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-28"></a><a href="#description-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.setText()</code> function writes</p>
-<p><em>text</em> as the new contents of the file.</p>
+<p>The <code>.setText()</code> function writes <em>text</em> as the new contents of the file.</p>
 <p>If the file referenced in the <code>File</code> object does not exist on the disk, it is created by the function. When the file already exists on the disk, its prior contents are erased, except if it is already open, in which case, its contents are locked and an error is generated.</p>
 <p>In <em>text</em>, pass the text to write to the file. It can be a literal (&quot;my text&quot;), or a 4D text field or variable.</p>
 <p>Optionally, you can designate the character set to be used for writing the contents. You can pass either:</p>
