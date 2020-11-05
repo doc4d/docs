@@ -50,15 +50,15 @@ By default, the menu displays **\<Anyone>**, which means that REST accesses are 
 
 ## テーブルやフィールドの公開
 
-Once REST services are enabled in the 4D application, by default a REST session can access all tables and fields of the 4D database through the [datastore interface](ORDA/dsMapping.md#datastore). Thus, it can use their data. For example, if your database contains an [Employee] table, it is possible to write:
+Once REST services are enabled in the 4D application, by default a REST session can access all tables and fields of the 4D database through the [datastore interface](ORDA/dsMapping.md#datastore). Thus, it can use their data. たとえば、データベースに [Employee] テーブルが含まれている場合、次のように書くことができます:
 
 ```
 http://127.0.0.1:8044/rest/Employee/?$filter="salary>10000"
 
 ```
-This request will return all employees whose salary field is higher than 10000.
+このリクエストで、salary (給与) フィールドが 10000以上の社員データが取得されます。
 
-> 4D tables and/or fields that have the "Invisible" attribute are also exposed in REST by default.
+> "非表示" 属性を選択されたテーブルやフィールドも、デフォルトで REST に公開されています。
 
 If you want to customize the datastore objects accessible through REST, you must disable the exposure of each table and/or field that you want to hide. When a REST request attempts to access an unauthorized resource, 4D returns an error.
 
