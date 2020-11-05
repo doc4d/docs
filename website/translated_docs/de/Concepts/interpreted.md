@@ -42,7 +42,7 @@ Sie schreiben zum Beispiel:
 C_LONGINT(MyInt)
 ```
 
-und an anderer Stelle im Projekt schreiben Sie:
+und an anderer Stelle im Projekt:
 ```4d
 MyInt:=3.1416
 ```
