@@ -60,24 +60,24 @@ http://127.0.0.1:8044/rest/Employee/?$filter="salary>10000"
 
 > "非表示" 属性を選択されたテーブルやフィールドも、デフォルトで REST に公開されています。
 
-If you want to customize the datastore objects accessible through REST, you must disable the exposure of each table and/or field that you want to hide. When a REST request attempts to access an unauthorized resource, 4D returns an error.
+REST 経由でアクセス可能なデータストアオブジェクトを制限するには、アクセス不可にするテーブルやフィールドについて "RESTリソースとして公開" オプションを選択解除する必要があります。 許可されていないリソースへの RESTリクエストがあった場合、4Dはエラーを返します。
 
-### Exposing tables
+### テーブルの公開
 
-By default, all tables are exposed in REST.
+デフォルトでは、すべてのテーブルが REST に公開されています。
 
-For security reasons, you may want to only expose certain tables of your datastore to REST calls. For instance, if you created a [Users] table storing user names and passwords, it would be better not to expose it.
+セキュリティ上の理由から、データベースの一部のテーブルのみを公開したい状況もあるでしょう。 たとえば、[Users] テーブルを作成し、その中にユーザー名とパスワードが保存されている場合、そのテーブルは公開しない方が賢明でしょう。
 
-To remove the REST exposure for a table:
+テーブルを公開したくない場合は:
 
-1. Display the Table Inspector in the Structure editor and select the table you want to modify.
+1. ストラクチャーエディターにて対象となるテーブルを選択し、右クリックでコンテキストメニューを開いてテーブルプロパティを選択します。
 
-2. Uncheck the **Expose as REST resource** option: ![alt-text](assets/en/REST/table.png) Do this for each table whose exposure needs to be modified.
+2. **RESTリソースとして公開** オプションの選択を解除します: ![alt-text](assets/en/REST/table.png) 公開設定を変更する各テーブルに対して、この手順を繰り返します。
 
 
-### Exposing fields
+### フィールドの公開
 
-By default, all 4D database fields are exposed in REST.
+デフォルトでは、すべての 4Dデータベースフィールドが REST に公開されています。
 
 You may not want to expose certain fields of your tables to REST. For example, you may not want to expose the [Employees]Salary field.
 
