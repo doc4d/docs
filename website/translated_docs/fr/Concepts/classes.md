@@ -93,9 +93,9 @@ $cName:=OB Class($o).name //"Empty"
 
 ## Class stores
 
-Available classes are accessible from their class stores. The following class stores are available:
+Les classes disponibles sont accessibles depuis leurs class stores. Les class stores suivants sont disponibles :
 
-- a class store for built-in 4D classes. It is returned by the `4D` command.
+- un class store pour les classes 4D intégrées. Il est retourné par la commande `4D`.
 - a class store for each opened database or component. It is returned by the `cs` command. These are "user classes".
 
 For example, you create a new instance of an object of myClass using the `cs.myClass.new()` statement (`cs` means *classtore*).
