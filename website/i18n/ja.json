@@ -1,0 +1,823 @@
+{
+  "_comment": "このファイルは write-translations.js によって自動生成されています",
+  "localized-strings": {
+    "next": "次へ",
+    "previous": "前へ",
+    "tagline": " 4D 開発リファレンス",
+    "docs": {
+      "Admin/building": {
+        "title": "プロジェクトパッケージのビルド"
+      },
+      "Admin/licenses": {
+        "title": "4D ライセンスの管理"
+      },
+      "API/classClass": {
+        "title": "クラス"
+      },
+      "API/collectionClass": {
+        "title": "Collection"
+      },
+      "API/cryptoClass": {
+        "title": "CryptoKey"
+      },
+      "API/dataclassAttributeClass": {
+        "title": "DataClassAttribute"
+      },
+      "API/dataclassClass": {
+        "title": "データクラス"
+      },
+      "API/datastoreClass": {
+        "title": "DataStore"
+      },
+      "API/directory": {
+        "title": "Directory クラス"
+      },
+      "API/document": {
+        "title": "Document Class"
+      },
+      "API/emails": {
+        "title": "Email"
+      },
+      "API/entityClass": {
+        "title": "エンティティ"
+      },
+      "API/entitySelectionClass": {
+        "title": "Entity Selections"
+      },
+      "API/fileClass": {
+        "title": "File"
+      },
+      "API/folderClass": {
+        "title": "Folder"
+      },
+      "API/formulaClass": {
+        "title": "Formula"
+      },
+      "API/imapTransporterClass": {
+        "title": "IMAP Transporter"
+      },
+      "API/overview": {
+        "title": "Class API Overview"
+      },
+      "API/pop3TransporterClass": {
+        "title": "POP3 Transporter"
+      },
+      "API/signalClass": {
+        "title": "Signal"
+      },
+      "API/smtpTransporterClass": {
+        "title": "SMTP Transporter"
+      },
+      "API/transporter": {
+        "title": "Transporter クラス"
+      },
+      "API/zipClass": {
+        "title": "ZIP アーカイブ"
+      },
+      "Backup/backup": {
+        "title": "バックアップ"
+      },
+      "Backup/log": {
+        "title": "ログファイル (.journal)"
+      },
+      "Backup/overview": {
+        "title": "概要"
+      },
+      "Backup/restore": {
+        "title": "復元"
+      },
+      "Backup/settings": {
+        "title": "バックアップ設定"
+      },
+      "Concepts/about": {
+        "title": "4D ランゲージについて"
+      },
+      "Concepts/arrays": {
+        "title": "配列"
+      },
+      "Concepts/branching": {
+        "title": "分岐構造"
+      },
+      "Concepts/looping": {
+        "title": "ループ構造"
+      },
+      "Concepts/classes": {
+        "title": "Classes"
+      },
+      "Concepts/components": {
+        "title": "コンポーネント"
+      },
+      "Concepts/data-types": {
+        "title": "データタイプの概要"
+      },
+      "Concepts/blob": {
+        "title": "BLOB"
+      },
+      "Concepts/boolean": {
+        "title": "ブール"
+      },
+      "Concepts/collection": {
+        "title": "コレクション"
+      },
+      "Concepts/date": {
+        "title": "日付"
+      },
+      "Concepts/null-undefined": {
+        "title": "Null と 未定義"
+      },
+      "Concepts/number": {
+        "title": "数値 (実数、倍長整数、整数)"
+      },
+      "Concepts/object": {
+        "title": "オブジェクト"
+      },
+      "Concepts/picture": {
+        "title": "ピクチャー"
+      },
+      "Concepts/pointer": {
+        "title": "ポインター"
+      },
+      "Concepts/string": {
+        "title": "String"
+      },
+      "Concepts/time": {
+        "title": "時間"
+      },
+      "Concepts/variant": {
+        "title": "バリアント"
+      },
+      "Concepts/error-handling": {
+        "title": "エラー処理"
+      },
+      "Concepts/control-flow": {
+        "title": "制御フロー"
+      },
+      "Concepts/identifiers": {
+        "title": "識別子の命名規則"
+      },
+      "Concepts/interpreted-compiled": {
+        "title": "インタープリターモードとコンパイル済みモード"
+      },
+      "Concepts/methods": {
+        "title": "Methods"
+      },
+      "Concepts/parameters": {
+        "title": "引数"
+      },
+      "Concepts/plug-ins": {
+        "title": "プラグイン"
+      },
+      "Concepts/quick-tour": {
+        "title": "概要",
+        "sidebar_label": "概要"
+      },
+      "Concepts/shared": {
+        "title": "共有オブジェクトと共有コレクション"
+      },
+      "Concepts/variables": {
+        "title": "変数"
+      },
+      "Events/onActivate": {
+        "title": "On Activate"
+      },
+      "Events/onAfterEdit": {
+        "title": "On After Edit"
+      },
+      "Events/onAfterKeystroke": {
+        "title": "On After Keystroke"
+      },
+      "Events/onAfterSort": {
+        "title": "On After Sort"
+      },
+      "Events/onAlternativeClick": {
+        "title": "On Alternative Click"
+      },
+      "Events/onBeforeDataEntry": {
+        "title": "On Before Data Entry"
+      },
+      "Events/onBeforeKeystroke": {
+        "title": "On Before Keystroke"
+      },
+      "Events/onBeginDragOver": {
+        "title": "On Begin Drag Over"
+      },
+      "Events/onBeginUrlLoading": {
+        "title": "On Begin URL Loading"
+      },
+      "Events/onBoundVariableChange": {
+        "title": "On Bound Variable Change"
+      },
+      "Events/onClicked": {
+        "title": "On Clicked"
+      },
+      "Events/onCloseBox": {
+        "title": "On Close Box"
+      },
+      "Events/onCloseDetail": {
+        "title": "On Close Detail"
+      },
+      "Events/onCollapse": {
+        "title": "On Collapse"
+      },
+      "Events/onColumnMoved": {
+        "title": "On Column Moved"
+      },
+      "Events/onColumnResize": {
+        "title": "On Column Resize"
+      },
+      "Events/onDataChange": {
+        "title": "On Data Change"
+      },
+      "Events/onDeactivate": {
+        "title": "On Deactivate"
+      },
+      "Events/onDeleteAction": {
+        "title": "On Delete Action"
+      },
+      "Events/onDisplayDetail": {
+        "title": "On Display Detail"
+      },
+      "Events/onDoubleClicked": {
+        "title": "On Double Clicked"
+      },
+      "Events/onDragOver": {
+        "title": "On Drag Over"
+      },
+      "Events/onDrop": {
+        "title": "On Drop"
+      },
+      "Events/onEndUrlLoading": {
+        "title": "On End URL Loading"
+      },
+      "Events/onExpand": {
+        "title": "On Expand"
+      },
+      "Events/onFooterClick": {
+        "title": "On Footer Click"
+      },
+      "Events/onGettingFocus": {
+        "title": "On Getting focus"
+      },
+      "Events/onHeader": {
+        "title": "On Header"
+      },
+      "Events/onHeaderClick": {
+        "title": "On Header Click"
+      },
+      "Events/onLoad": {
+        "title": "On Load"
+      },
+      "Events/onLoadRecord": {
+        "title": "On Load Record"
+      },
+      "Events/onLongClick": {
+        "title": "On Long Click"
+      },
+      "Events/onLosingFocus": {
+        "title": "On Losing focus"
+      },
+      "Events/onMenuSelected": {
+        "title": "On Menu Selected"
+      },
+      "Events/onMouseEnter": {
+        "title": "On Mouse Enter"
+      },
+      "Events/onMouseLeave": {
+        "title": "On Mouse Leave"
+      },
+      "Events/onMouseMove": {
+        "title": "On Mouse Move"
+      },
+      "Events/onMouseUp": {
+        "title": "On Mouse Up"
+      },
+      "Events/onOpenDetail": {
+        "title": "On Open Detail"
+      },
+      "Events/onOpenExternalLink": {
+        "title": "On Open External Link"
+      },
+      "Events/onOutsideCall": {
+        "title": "On Outside Call"
+      },
+      "Events/onPageChange": {
+        "title": "On Page Change"
+      },
+      "Events/onPlugInArea": {
+        "title": "On Plug in Area"
+      },
+      "Events/onPrintingBreak": {
+        "title": "On Printing Break"
+      },
+      "Events/onPrintingDetail": {
+        "title": "On Printing Detail"
+      },
+      "Events/onPrintingFooter": {
+        "title": "On Printing Footer"
+      },
+      "Events/onResize": {
+        "title": "On Resize"
+      },
+      "Events/onRowMoved": {
+        "title": "On Row Moved"
+      },
+      "Events/onRowResize": {
+        "title": "On Row Resize"
+      },
+      "Events/onScroll": {
+        "title": "On Scroll"
+      },
+      "Events/onSelectionChange": {
+        "title": "On Selection Change"
+      },
+      "Events/onTimer": {
+        "title": "On Timer"
+      },
+      "Events/onUnload": {
+        "title": "On Unload"
+      },
+      "Events/onUrlFiltering": {
+        "title": "On URL Filtering"
+      },
+      "Events/onUrlLoadingError": {
+        "title": "On URL Loading Error"
+      },
+      "Events/onUrlResourceLoading": {
+        "title": "On URL Resource Loading"
+      },
+      "Events/onValidate": {
+        "title": "On Validate"
+      },
+      "Events/onVpRangeChanged": {
+        "title": "On VP Range Changed"
+      },
+      "Events/onVpReady": {
+        "title": "On VP Ready"
+      },
+      "Events/onWindowOpeningDenied": {
+        "title": "On Window Opening Denied"
+      },
+      "Events/overview": {
+        "title": "概要"
+      },
+      "FormEditor/stylesheets": {
+        "title": "スタイルシート"
+      },
+      "FormEditor/formEditor": {
+        "title": "フォームエディター"
+      },
+      "FormEditor/forms": {
+        "title": "About 4D Forms"
+      },
+      "FormEditor/macros": {
+        "title": "Form Editor Macros"
+      },
+      "FormEditor/objectLibrary": {
+        "title": "オブジェクトライブラリ"
+      },
+      "FormEditor/pictures": {
+        "title": "ピクチャー"
+      },
+      "FormEditor/action": {
+        "title": "動作"
+      },
+      "FormEditor/propertiesForm": {
+        "title": "Form Properties"
+      },
+      "FormEditor/formSize": {
+        "title": "Form Size"
+      },
+      "FormEditor/jsonReference": {
+        "title": "JSON プロパティリスト"
+      },
+      "FormEditor/markers": {
+        "title": "Markers"
+      },
+      "FormEditor/menu": {
+        "title": "メニュー"
+      },
+      "FormEditor/print": {
+        "title": "印刷"
+      },
+      "FormEditor/windowSize": {
+        "title": "Window Size"
+      },
+      "FormObjects/buttonOverview": {
+        "title": "ボタン"
+      },
+      "FormObjects/buttonGridOverview": {
+        "title": "ボタングリッド"
+      },
+      "FormObjects/checkboxOverview": {
+        "title": "チェックボックス"
+      },
+      "FormObjects/comboBoxOverview": {
+        "title": "コンボボックス"
+      },
+      "FormObjects/dropdownListOverview": {
+        "title": "ドロップダウンリスト"
+      },
+      "FormObjects/formObjectsOverview": {
+        "title": "4D フォームオブジェクトについて"
+      },
+      "FormObjects/groupBox": {
+        "title": "グループボックス"
+      },
+      "FormObjects/inputOverview": {
+        "title": "入力"
+      },
+      "FormObjects/listOverview": {
+        "title": "階層リスト"
+      },
+      "FormObjects/listboxOverview": {
+        "title": "リストボックス"
+      },
+      "FormObjects/pictureButtonOverview": {
+        "title": "ピクチャーボタン"
+      },
+      "FormObjects/picturePopupMenuOverview": {
+        "title": "ピクチャーポップアップメニュー"
+      },
+      "FormObjects/pluginAreaOverview": {
+        "title": "プラグインエリア"
+      },
+      "FormObjects/progressIndicator": {
+        "title": "進捗インジケーター"
+      },
+      "FormObjects/propertiesAction": {
+        "title": "動作"
+      },
+      "FormObjects/propertiesAnimation": {
+        "title": "アニメーション"
+      },
+      "FormObjects/propertiesAppearance": {
+        "title": "アピアランス"
+      },
+      "FormObjects/propertiesBackgroundAndBorder": {
+        "title": "背景色と境界線"
+      },
+      "FormObjects/propertiesCoordinatesAndSizing": {
+        "title": "座標とサイズ"
+      },
+      "FormObjects/propertiesCrop": {
+        "title": "行列数"
+      },
+      "FormObjects/propertiesDataSource": {
+        "title": "データソース"
+      },
+      "FormObjects/propertiesDisplay": {
+        "title": "表示フォーマット"
+      },
+      "FormObjects/propertiesEntry": {
+        "title": "入力"
+      },
+      "FormObjects/propertiesFooters": {
+        "title": "フッター"
+      },
+      "FormObjects/propertiesGridlines": {
+        "title": "グリッド線"
+      },
+      "FormObjects/propertiesHeaders": {
+        "title": "ヘッダー"
+      },
+      "FormObjects/propertiesHelp": {
+        "title": "ヘルプ"
+      },
+      "FormObjects/propertiesHierarchy": {
+        "title": "階層"
+      },
+      "FormObjects/propertiesListBox": {
+        "title": "リストボックス"
+      },
+      "FormObjects/propertiesObject": {
+        "title": "オブジェクト"
+      },
+      "FormObjects/propertiesPicture": {
+        "title": "ピクチャー"
+      },
+      "FormObjects/propertiesPlugIns": {
+        "title": "プラグイン"
+      },
+      "FormObjects/propertiesPrint": {
+        "title": "印刷"
+      },
+      "FormObjects/propertiesRangeOfValues": {
+        "title": "値の範囲"
+      },
+      "FormObjects/propertiesReference": {
+        "title": "JSON プロパティリスト"
+      },
+      "FormObjects/propertiesResizingOptions": {
+        "title": "リサイズオプション"
+      },
+      "FormObjects/propertiesScale": {
+        "title": "スケール"
+      },
+      "FormObjects/propertiesSubform": {
+        "title": "サブフォーム"
+      },
+      "FormObjects/propertiesText": {
+        "title": "テキスト"
+      },
+      "FormObjects/propertiesTextAndPicture": {
+        "title": "テキスト、ピクチャー"
+      },
+      "FormObjects/propertiesWebArea": {
+        "title": "Webエリア"
+      },
+      "FormObjects/radiobuttonOverview": {
+        "title": "ラジオボタン"
+      },
+      "FormObjects/ruler": {
+        "title": "ルーラー"
+      },
+      "FormObjects/shapesOverview": {
+        "title": "図形"
+      },
+      "FormObjects/spinner": {
+        "title": "スピナー"
+      },
+      "FormObjects/splitters": {
+        "title": "スプリッター"
+      },
+      "FormObjects/staticPicture": {
+        "title": "スタティックピクチャー"
+      },
+      "FormObjects/stepper": {
+        "title": "ステッパー"
+      },
+      "FormObjects/subformOverview": {
+        "title": "サブフォーム"
+      },
+      "FormObjects/tabControl": {
+        "title": "タブコントロール"
+      },
+      "FormObjects/text": {
+        "title": "テキスト"
+      },
+      "FormObjects/viewProAreaOverview": {
+        "title": "4D View Pro エリア"
+      },
+      "FormObjects/webAreaOverview": {
+        "title": "Webエリア"
+      },
+      "FormObjects/writeProAreaOverview": {
+        "title": "4D Write Pro エリア"
+      },
+      "GettingStarted/installation": {
+        "title": "インストール"
+      },
+      "Menus/bars": {
+        "title": "メニューバーの管理"
+      },
+      "Menus/creating": {
+        "title": "メニューとメニューバーの作成"
+      },
+      "Menus/overview": {
+        "title": "概要"
+      },
+      "Menus/properties": {
+        "title": "メニュープロパティ"
+      },
+      "Menus/sdi": {
+        "title": "Windows での SDIモード"
+      },
+      "MSC/analysis": {
+        "title": "ログ解析ページ",
+        "sidebar_label": "ログ解析ページ"
+      },
+      "MSC/backup": {
+        "title": "バックアップページ",
+        "sidebar_label": "バックアップページ"
+      },
+      "MSC/compact": {
+        "title": "圧縮ページ",
+        "sidebar_label": "圧縮ページ"
+      },
+      "MSC/encrypt": {
+        "title": "暗号化ページ",
+        "sidebar_label": "暗号化ページ"
+      },
+      "MSC/information": {
+        "title": "情報ページ",
+        "sidebar_label": "情報ページ"
+      },
+      "MSC/overview": {
+        "title": "概要",
+        "sidebar_label": "概要"
+      },
+      "MSC/repair": {
+        "title": "修復ページ",
+        "sidebar_label": "修復ページ"
+      },
+      "MSC/restore": {
+        "title": "復元ページ",
+        "sidebar_label": "復元ページ"
+      },
+      "MSC/rollback": {
+        "title": "ロールバックページ",
+        "sidebar_label": "ロールバックページ"
+      },
+      "MSC/verify": {
+        "title": "検査ページ",
+        "sidebar_label": "検査ページ"
+      },
+      "ORDA/dsmapping": {
+        "title": "データモデルオブジェクト"
+      },
+      "ORDA/entities": {
+        "title": "データ操作"
+      },
+      "ORDA/glossary": {
+        "title": "用語集"
+      },
+      "ORDA/ordaClasses": {
+        "title": "データモデルクラス"
+      },
+      "ORDA/overview": {
+        "title": "概要"
+      },
+      "ORDA/quickTour": {
+        "title": "A Quick Tour in ORDA"
+      },
+      "ORDA/datastores": {
+        "title": "リモートデータストアの利用"
+      },
+      "Project/architecture": {
+        "title": "プロジェクトのアーキテクチャー"
+      },
+      "Project/creating": {
+        "title": "プロジェクトの作成・開始"
+      },
+      "Project/developing": {
+        "title": "プロジェクトの開発"
+      },
+      "Project/documentation": {
+        "title": "ドキュメンテーション"
+      },
+      "Project/overview": {
+        "title": "概要"
+      },
+      "REST/{dataClass}": {
+        "title": "{dataClass}"
+      },
+      "REST/asArray": {
+        "title": "$asArray"
+      },
+      "REST/atomic_$atonce": {
+        "title": "$atomic/$atonce"
+      },
+      "REST/attributes": {
+        "title": "$attributes"
+      },
+      "REST/binary": {
+        "title": "$binary"
+      },
+      "REST/catalog": {
+        "title": "$catalog"
+      },
+      "REST/compute": {
+        "title": "$compute"
+      },
+      "REST/directory": {
+        "title": "$directory"
+      },
+      "REST/distinct": {
+        "title": "$distinct"
+      },
+      "REST/entityset": {
+        "title": "$entityset"
+      },
+      "REST/expand": {
+        "title": "$expand"
+      },
+      "REST/filter": {
+        "title": "$filter"
+      },
+      "REST/imageformat": {
+        "title": "$imageformat"
+      },
+      "REST/info": {
+        "title": "$info"
+      },
+      "REST/method": {
+        "title": "$method"
+      },
+      "REST/orderby": {
+        "title": "$orderby"
+      },
+      "REST/querypath": {
+        "title": "$querypath"
+      },
+      "REST/queryplan": {
+        "title": "$queryplan"
+      },
+      "REST/savedfilter": {
+        "title": "$savedfilter"
+      },
+      "REST/savedorderby": {
+        "title": "$savedorderby"
+      },
+      "REST/skip": {
+        "title": "$skip"
+      },
+      "REST/timeout": {
+        "title": "$timeout"
+      },
+      "REST/top_$limit": {
+        "title": "$top/$limit"
+      },
+      "REST/upload": {
+        "title": "$upload"
+      },
+      "REST/version": {
+        "title": "$version"
+      },
+      "REST/authUsers": {
+        "title": "ユーザーとセッション"
+      },
+      "REST/classFunctions": {
+        "title": "Calling ORDA class functions"
+      },
+      "REST/configuration": {
+        "title": "サーバー設定"
+      },
+      "REST/genInfo": {
+        "title": "Getting Server Information"
+      },
+      "REST/gettingStarted": {
+        "title": "はじめに"
+      },
+      "REST/manData": {
+        "title": "Manipulating Data"
+      },
+      "REST/REST_requests": {
+        "title": "About REST Requests"
+      },
+      "Users/editing": {
+        "title": "4Dユーザー＆グループの管理"
+      },
+      "Users/overview": {
+        "title": "概要"
+      },
+      "WebServer/webServerObject": {
+        "title": "Web Server object"
+      }
+    },
+    "links": {
+      "v18 R5 BETA": "v18 R5 BETA",
+      "v18 R4": "v18 R4",
+      "v18": "v18"
+    },
+    "categories": {
+      "Getting Started": "はじめに",
+      "Project Management": "プロジェクト管理",
+      "4D Language Concepts": "ランゲージのコンセプト",
+      "ORDA": "ORDA",
+      "Class API Reference": "クラス API リファレンス",
+      "Access Rights": "アクセス権限",
+      "Administration": "データベース管理",
+      "MSC": "MSC",
+      "Backup and Restore": "バックアップと復元",
+      "Web Server": "Web サーバー",
+      "REST Server": "REST サーバー",
+      "Forms": "Forms",
+      "Form Properties": "Form Properties",
+      "Form Objects": "フォームオブジェクト",
+      "Form Object Properties": "フォームオブジェクトプロパティ",
+      "Form Events": "フォームイベント",
+      "Menus": "メニュー"
+    }
+  },
+  "pages-strings": {
+    "Installation|in index page Getting started": "インストール",
+    "Starting 4D|in index page Getting started": "4D を始める",
+    "Language Concepts|in index page Getting started": "ランゲージのコンセプト",
+    "Project Management|in index page Getting started": "プロジェクト管理",
+    "Object Relational Data Access (ORDA)|in index page Getting started": "ORDA",
+    "Class API Reference|no description given": "クラス API リファレンス",
+    "Forms|no description given": "Forms",
+    "Form Properties|no description given": "Form Properties",
+    "Form Events|no description given": "フォームイベント",
+    "Form Objects|no description given": "フォームオブジェクト",
+    "Form Object Properties|no description given": "フォームオブジェクトプロパティ",
+    "Menus|no description given": "メニュー",
+    "Web Server|no description given": "Web サーバー",
+    "REST Server|no description given": "REST サーバー",
+    "Maintenance and Security Center|no description given": "メンテナンス＆セキュリティセンター",
+    "Backup and Restore|no description given": "バックアップと復元",
+    "License Management|no description given": "ライセンス管理",
+    "Build Application|no description given": "アプリケーションビルド",
+    "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
+    "Access Rights|no description given": "アクセス権限",
+    "Getting started|no description given": "はじめに",
+    "Core Development|no description given": "コア開発",
+    "Administration|no description given": "データベース管理",
+    "Web applications|no description given": "Web アプリ",
+    "Mobile applications|no description given": "モバイルアプリ",
+    "Desktop applications|no description given": "デスクトップアプリ",
+    "Help Translate|recruit community translators for your project": "翻訳を手伝う",
+    "Edit this Doc|recruitment message asking to edit the doc source": "編集",
+    "Translate this Doc|recruitment message asking to translate the docs": "翻訳"
+  }
+}
