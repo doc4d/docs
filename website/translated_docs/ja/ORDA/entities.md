@@ -184,18 +184,18 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 データクラスに対して、異なるエンティティセレクションを好きなだけ同時に作成し、使用することができます。 エンティティセレクションは、エンティティへの参照を格納しているに過ぎないという点に注意してください。 異なるエンティティセレクションが同じエンティティへの参照を格納することも可能です。
 
-### Shareable or non-shareable entity selections
+### 共有可能な/共有不可のエンティティセレクション
 
-An entity selection can be **shareable** (readable by multiple processes, but not modifiable after creation) or **non-shareable** (only usable by the current process, but modifiable afterwards):
+エンティティセレクションには 2種類あります: **共有可能** (複数のプロセスで読み込み可能、ただし編集不可) のものと、**共有不可** (カレントプロセスでのみ利用可能、ただし編集可能) のものです:
 
-- a **shareable** entity selection has the following characteristics:
-    - it can be stored in a shared object or shared collection, and can be shared between several processes or workers;
-    - it can be stored in several shared objects or collections, or in a shared object or collection which already belongs to a group (it does not have a *locking identifier*);
-    - it does not allow the addition of new entities. Trying to add an entity to a shareable entity selection will trigger an error (1637 - This entity selection cannot be altered). To add an entity to a shareable entity selection, you must first transform it into a non-shareable entity selection using the [`.copy()`](API/entitySelectionClass.md#copy) function, before calling [`.add()`](API/entitySelectionClass.md#add).
+- **共有可能** なエンティティセレクションは以下のような特徴を持ちます:
+    - 共有オブジェクトまたは共有コレクションに保存することが可能で、複数のプロセス間あるいはワーカー間で共有することができます。
+    - 複数の共有オブジェクトまたは共有コレクションに保存することが可能です。また、グループに属している共有オブジェクトまたは共有コレクションに保存することも可能です (つまり、*ロック識別子* を持っていないということです)。
+    - 新たにエンティティを追加することはできません。 共有可能なエンティティセレクションに対してエンティティを追加しようとした場合、エラーがトリガーされます (エラー1637 - このエンティティセレクションは編集不可です)。 共有可能なエンティティセレクションに対してエンティティを追加したい場合、[`.add( )`](API/entitySelectionClass.md#add) 関数を呼び出す前に、[`.copy( )`](API/entitySelectionClass.md#copy) 関数を使用して共有不可のエンティティセレクションへと変換する必要があります。
 
-- a **non-shareable** entity selection has the following characteristics:
-    + it cannot be shared between processes, nor be stored in a shared object or collection. Trying to store a non-shareable entity selection in a shared object or collection will trigger an error (-10721 - Not supported value type in a shared object or shared collection);
-    + it accepts the addition of new entities.
+- **共有不可** のエンティティセレクションは以下のような特徴を持ちます:
+    + プロセス間での共有はできません。また共有オブジェクト/コレクションへの保存もできません。 共有不可のエンティティセレクションを共有オブジェクト/コレクションに保存しようとした場合、エラーがトリガーされます (エラー -10721 - 共有オブジェクトまたはコレクションにおいてサポートされる値の型ではありません)。
+    + 新たにエンティティを追加することができます。
 
 In most cases, new entity selections are **shareable**, including:
 
