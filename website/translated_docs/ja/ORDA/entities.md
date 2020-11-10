@@ -211,7 +211,7 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 #### 例題
 
-You work with two entity selections that you want to pass to a worker process so that it can send mails to appropriate persons:
+二つのエンティティセレクションを使用し、それらをワーカープロセスに渡して適切な相手にメールを送信したい場合を考えます:
 
 ```4d
  If(Storage.info=Null)
@@ -221,13 +221,14 @@ You work with two entity selections that you want to pass to a worker process so
  End if
 
  Use(Storage.info)
-  //Put entity selections in a shared object
+  // エンティティセレクションを共有オブジェクトへと保存します
     Storage.info.paid:=ds.Invoices.query("status=:1";"Paid")
     Storage.info.unpaid:=ds.Invoices.query("status=:1";"Unpaid")
  End use
 
  CALL WORKER("mailing";"sendMails";Storage.info)
-The sendMails method:
+
+sendMails メソッド:
 
  var $info: ;$1Object
  var $paid;$unpaid : cs.InvoicesSelection
@@ -235,7 +236,7 @@ The sendMails method:
 
  var $server;$transporter;$email;$status : Object
 
-  //Prepare emails
+  // Eメールを準備します
  $server:=New object
  $server.host:="exchange.company.com"
  $server.user:="myName@company.com"
@@ -244,21 +245,21 @@ The sendMails method:
  $email:=New object
  $email.from:="myName@company.com"
 
-  //Get entity selections
+  // エンティティセレクションを取得します
  $info:=$1
  $paid:=$info.paid
  $unpaid:=$info.unpaid
 
-  //Loops on entity selections
+  //  エンティティセレクション内をループします
  For each($invoice;$paid)
-    $email.to:=$invoice.customer.address // email address of the customer
-    $email.subject:="Payment OK for invoice # "+String($invoice.number)
+    $email.to:=$invoice.customer.address // 顧客のメールアドレス
+    $email.subject:="請求書 # "+String($invoice.number)+” の入金を確認しました。”
     $status:=$transporter.send($email)
  End for each
 
  For each($invoice;$unpaid)
-    $email.to:=$invoice.customer.address // email address of the customer
-    $email.subject:="Please pay invoice # "+String($invoice.number)
+    $email.to:=$invoice.customer.address // 顧客のメールアドレス
+    $email.subject:="請求書 # "+String($invoice.number)+" が未入金となっています。"
     $status:=$transporter.send($email)
  End for each
 ```
