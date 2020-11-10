@@ -5,9 +5,9 @@ title: データ操作
 
 All [exposed dataclasses, attributes](configuration.md#exposing-tables-and-fields) and [functions](classFunctions.md) can be accessed through REST. Dataclass, attribute, and function names are case-sensitive; however, the data for queries is not.
 
-## Querying data
+## データのクエリ
 
-To query data directly, you can do so using the [`$filter`]($filter.md) function. For example, to find a person named "Smith", you could write:
+データを直接クエリするには [`$filter`]($filter.md) 関数を使います。 For example, to find a person named "Smith", you could write:
 
 `http://127.0.0.1:8081/rest/Person/?$filter="lastName=Smith"`
 
