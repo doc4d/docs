@@ -175,11 +175,11 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 以下の方法で、[エンティティセレクション](dsMapping.md#エンティティセレクション) 型のオブジェクトを作成することができます:
 
-*   Querying the entities [in a dataclass](API/dataclassClass.md#query) or in an [existing entity selection](API/entitySelectionClass.md#query);
-*   [`.all( )`](API/dataclassClass.md#all) DataClass クラス関数を使用して、データクラス内の全エンティティを選択する;
-*   `Create entity selection` コマンドあるいは [`.newSelection( )`](API/dataclassClass.md#newselection) DataClass クラス関数を使用して空のエンティティコレクションオブジェクトを作成する;
-*   Using the [`.copy()`](API/entitySelectionClass.md#copy) function to duplicate an existing entity selection;
-*   Using one of the various functions from the [Entity selection class](API/entitySelectionClass.md) that returns a new entity selection, such as [`.or()`](API/entitySelectionClass.md#or);
+*   [データクラス](API/dataclassClass.md#query) または [既存のエンティティセレクション](API/entitySelectionClass.md#query) のエンティティに対してクエリを実行する;
+*   [`.all( )`](API/dataclassClass.md#all) DataClass クラスの関数を使用して、データクラス内の全エンティティを選択する;
+*   `Create entity selection` コマンドあるいは [`.newSelection( )`](API/dataclassClass.md#newselection) DataClass クラスの関数を使用して空のエンティティコレクションオブジェクトを作成する;
+*   [`.copy( )`](API/entitySelectionClass.md#copy) DataClass クラスの関数を使用して、既存のエンティティセレクションを複製する;
+*   [EntitySelection クラス](API/entitySelectionClass.md) の様々な関数の中から、[`.or( )`](API/entitySelectionClass.md#or) のように新しいエンティティセレクションを返すものを使用する;
 *   "リレートエンティティズ" 型のリレーション属性を使用する (以下参照)
 
 データクラスに対して、異なるエンティティセレクションを好きなだけ同時に作成し、使用することができます。 エンティティセレクションは、エンティティへの参照を格納しているに過ぎないという点に注意してください。 異なるエンティティセレクションが同じエンティティへの参照を格納することも可能です。
