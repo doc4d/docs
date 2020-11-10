@@ -1,11 +1,11 @@
 ---
 id: genInfo
-title: Getting Server Information
+title: サーバー情報の取得
 ---
 
-You can get several information from the REST server:
+RESTサーバーの次の情報を取得することができます:
 
-- the exposed datastores and their attributes
+- 公開されているデータクラスとデータクラス属性
 - the REST server cache contents, including user sessions.
 
 ## Catalog
