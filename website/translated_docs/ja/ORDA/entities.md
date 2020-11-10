@@ -173,10 +173,10 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 ## エンティティセレクションの作成
 
-You can create an object of type [entity selection](dsMapping.md#entity-selection) as follows:
+以下の方法で、[エンティティセレクション](dsMapping.md#エンティティセレクション) 型のオブジェクトを作成することができます:
 
 *   Querying the entities [in a dataclass](API/dataclassClass.md#query) or in an [existing entity selection](API/entitySelectionClass.md#query);
-*   Using the [`.all()`](API/dataclassClass.md#all) dataclass function to select all the entities in a dataclass;
+*   [`.all( )`](API/dataclassClass.md#all) データクラス関数を使用して、データクラス内の全エンティティを選択する;
 *   Using the `Create entity selection` command or the [`.newSelection()`](API/dataclassClass.md#newselection) dataclass function to create a blank entity selection;
 *   Using the [`.copy()`](API/entitySelectionClass.md#copy) function to duplicate an existing entity selection;
 *   Using one of the various functions from the [Entity selection class](API/entitySelectionClass.md) that returns a new entity selection, such as [`.or()`](API/entitySelectionClass.md#or);
