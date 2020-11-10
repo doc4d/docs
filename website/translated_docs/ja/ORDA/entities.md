@@ -197,17 +197,17 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
     + プロセス間での共有はできません。また共有オブジェクト/コレクションへの保存もできません。 共有不可のエンティティセレクションを共有オブジェクト/コレクションに保存しようとした場合、エラーがトリガーされます (エラー -10721 - 共有オブジェクトまたはコレクションにおいてサポートされる値の型ではありません)。
     + 新たにエンティティを追加することができます。
 
-In most cases, new entity selections are **shareable**, including:
+多くの場合において、新規のエンティティセレクションは **共有可能** です。たとえば:
 
-- entity selections resulting from various ORDA class functions ([`.query()`](API/entitySelectionClass.md#query), [`.query()`](API/dataclassClass.md#query), etc.),
-- entity selections based upon relations (e.g. `company.employee`),
-- entity selections resulting from projections of values (e.g. `ds.Employee.all().employer`),
-- entity selections explicitely copied as shareable with [`.copy()`](API/entitySelectionClass.md#copy) or `OB Copy`.
+- 様々な ORDA クラス関数 ([`entitySelection.query( )`](API/entitySelectionClass.md#query)、[`dataClass.query( )`](API/dataclassClass.md#query) など) の結果として返されるエンティティセレクション。
+- リレーションに基づいたエンティティセレクション (例: `company.employee`)
+- 値の "投影" の結果のエンティティセレクション (例: `ds.Employee.all().employer`)
+- [`.copy( )`](API/entitySelectionClass.md#copy) または `OB Copy` を使用して、明示的に共有可能としてコピーされたエンティティセレクション
 
-New entity selections are **non-shareable** in the following cases:
+ただし、以下の場合には新規エンティティセレクションは **共有不可** となります:
 
-- blank entity selections created using the [`.newSelection()`](API/dataclassClass.md#newselection) function or `Create entity selection` command,
-- entity selections explicitely copied as non-shareable with [`.copy()`](API/entitySelectionClass.md#copy) or `OB Copy`.
+- [`.newSelection( )`](API/dataclassClass.md#newselection) 関数または`Create entity selection` コマンドを使用して作成された空のエンティティセレクション
+- [`.copy( )`](API/entitySelectionClass.md#copy) または `OB Copy` を使用して、明示的に共有不可としてコピーされたエンティティセレクション
 
 #### 例題
 
