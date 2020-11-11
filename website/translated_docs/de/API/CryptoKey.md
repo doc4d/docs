@@ -3,7 +3,7 @@ id: cryptoClass
 title: CryptoKey Class
 ---
 
-## Overview
+## Überblick
 
 The `CryptoKey` class in the 4D language encapsulates an asymetric encryption key pair.
 
