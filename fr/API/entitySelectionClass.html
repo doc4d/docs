@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="fr"><head><meta name="docsearch:version" content="18 R5 BETA"/><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Entity Selections · 4D Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="An entity selection is an object containing one or more reference(s) to [entities](/docs/fr/ORDA/dsmapping.html#entity) belonging to the same [Dataclass](/docs/fr/ORDA/dsmapping.html#dataclass). An entity selection can contain 0, 1 or X entities from the dataclass -- where X can represent the total number of entities contained in the dataclass."/><meta name="docsearch:language" content="fr"/><meta property="og:title" content="Entity Selections · 4D Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://doc4d.github.io/docs/index.html"/><meta property="og:description" content="An entity selection is an object containing one or more reference(s) to [entities](/docs/fr/ORDA/dsmapping.html#entity) belonging to the same [Dataclass](/docs/fr/ORDA/dsmapping.html#dataclass). An entity selection can contain 0, 1 or X entities from the dataclass -- where X can represent the total number of entities contained in the dataclass."/><meta property="og:image" content="https://doc4d.github.io/docs/img/logohome.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://doc4d.github.io/docs/img/logohome.png"/><link rel="shortcut icon" href="/docs/img/4d.gif"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/routeros.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/docs/js/code-blocks-buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/fr"><h2 class="headerTitle">4D Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a style="font-weight:bold" href="https://doc4d.github.io/docs" target="_self">v18 R5 BETA</a></li><li class=""><a href="https://doc4d.github.io/docs/Rx" target="_self">v18 R4</a></li><li class=""><a href="https://doc4d.github.io/docs/18" target="_self">v18</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docs/img/language.svg" alt="Languages icon"/>Français</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/API/entitySelectionClass.html">English</a></li><li><a href="/docs/ja/API/entitySelectionClass.html">日本語</a></li><li><a href="/docs/de/API/entitySelectionClass.html">Deutsch</a></li><li><a href="/docs/es/API/entitySelectionClass.html">Español</a></li><li><a href="/docs/pt/API/entitySelectionClass.html">Português</a></li></ul></div></li><script>
+<!DOCTYPE html><html lang="fr"><head><meta name="docsearch:version" content="18 R5 BETA"/><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Entity Selections · 4D Documentation</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;style&gt;h2 { background: #d9ebff;}&lt;/style&gt;"/><meta name="docsearch:language" content="fr"/><meta property="og:title" content="Entity Selections · 4D Documentation"/><meta property="og:type" content="website"/><meta property="og:url" content="https://doc4d.github.io/docs/index.html"/><meta property="og:description" content="&lt;style&gt;h2 { background: #d9ebff;}&lt;/style&gt;"/><meta property="og:image" content="https://doc4d.github.io/docs/img/logohome.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://doc4d.github.io/docs/img/logohome.png"/><link rel="shortcut icon" href="/docs/img/4d.gif"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/routeros.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/docs/js/code-blocks-buttons.js"></script><script src="/docs/js/scrollSpy.js"></script><link rel="stylesheet" href="/docs/css/main.css"/><script src="/docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docs/fr"><h2 class="headerTitle">4D Documentation</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a style="font-weight:bold" href="https://doc4d.github.io/docs" target="_self">v18 R5 BETA</a></li><li class=""><a href="https://doc4d.github.io/docs/Rx" target="_self">v18 R4</a></li><li class=""><a href="https://doc4d.github.io/docs/18" target="_self">v18</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docs/img/language.svg" alt="Languages icon"/>Français</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/API/entitySelectionClass.html">English</a></li><li><a href="/docs/ja/API/entitySelectionClass.html">日本語</a></li><li><a href="/docs/de/API/entitySelectionClass.html">Deutsch</a></li><li><a href="/docs/es/API/entitySelectionClass.html">Español</a></li><li><a href="/docs/pt/API/entitySelectionClass.html">Português</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -66,8 +66,9 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/master/docs/API/entitySelectionClass.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Entity Selections</h1></header><article><div><span><p>An entity selection is an object containing one or more reference(s) to <a href="/docs/fr/ORDA/dsmapping.html#entity">entities</a> belonging to the same <a href="/docs/fr/ORDA/dsmapping.html#dataclass">Dataclass</a>. An entity selection can contain 0, 1 or X entities from the dataclass -- where X can represent the total number of entities contained in the dataclass.</p>
-<h2><a class="anchor" aria-hidden="true" id="summary"></a><a href="#summary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h2>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/master/docs/API/entitySelectionClass.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Entity Selections</h1></header><article><div><span><style>h2 { background: #d9ebff;}</style>
+<p>An entity selection is an object containing one or more reference(s) to <a href="/docs/fr/ORDA/dsmapping.html#entity">entities</a> belonging to the same <a href="/docs/fr/ORDA/dsmapping.html#dataclass">Dataclass</a>. An entity selection can contain 0, 1 or X entities from the dataclass -- where X can represent the total number of entities contained in the dataclass.</p>
+<h3><a class="anchor" aria-hidden="true" id="summary"></a><a href="#summary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h3>
 <table>
 <thead>
 <tr><th></th></tr>
@@ -103,7 +104,6 @@
 <tr><td><a href="#tocollection"><strong>.toCollection</strong>( { <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer } } ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterString</em> : Text {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterCol</em> : Collection {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em></a><p>    creates and returns a collection where each element is an object containing a set of properties and values</td></tr>
 </tbody>
 </table>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="91index93"></a><a href="#91index93" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>[<em>index</em>]</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -143,7 +143,6 @@
  <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>)
  <span class="hljs-variable">$employee</span>:=<span class="hljs-variable">$employees</span>[<span class="hljs-number">2</span>]  <span class="hljs-comment">// The 3rd entity of the $employees entity selection is reloaded from the database</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="attributename"></a><a href="#attributename" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.<em>attributeName</em></h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -191,7 +190,6 @@
  <span class="hljs-variable">$es</span>:=ds.Employee.<span class="hljs-function">all</span>().directReports <span class="hljs-comment">// directReports is related to Employee dataclass</span>
 </code></pre>
 <p>The resulting object is an entity selection of Employee with duplications removed (if any).</p>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="add"></a><a href="#add" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.add()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -249,7 +247,6 @@
  <span class="hljs-variable">$sel</span>:=ds.Product.<span class="hljs-function">query</span>(<span class="hljs-string">"ID &gt; 50"</span>)
  <span class="hljs-variable">$sel</span>:=<span class="hljs-variable">$sel</span>.<span class="hljs-function">add</span>(<span class="hljs-variable">$p1</span>).<span class="hljs-function">add</span>(<span class="hljs-variable">$p2</span>).<span class="hljs-function">add</span>(<span class="hljs-variable">$p3</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="and"></a><a href="#and" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.and()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -302,7 +299,6 @@
  <span class="hljs-variable">$sel2</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"city=:1"</span>;<span class="hljs-string">"New York"</span>)
  <span class="hljs-variable">$sel3</span>:=<span class="hljs-variable">$sel1</span>.<span class="hljs-function">and</span>(<span class="hljs-variable">$sel2</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="average"></a><a href="#average" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.average()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -344,7 +340,6 @@
  <span class="hljs-variable">$averageSalary</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">average</span>(<span class="hljs-string">"salary"</span>)
  <span class="hljs-variable">$moreThanAv</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"salary &gt; :1"</span>;<span class="hljs-variable">$averageSalary</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="contains"></a><a href="#contains" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.contains()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -383,7 +378,6 @@
 <span class="hljs-function">    ALERT</span>(<span class="hljs-string">"The entity with primary key 610 does not have a last name beginning with H"</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="count"></a><a href="#count" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.count()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -423,7 +417,6 @@
  <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"employer = :1"</span>;<span class="hljs-string">"Acme, Inc"</span>)
  <span class="hljs-variable">$count</span>:=<span class="hljs-variable">$sel</span>.<span class="hljs-function">count</span>(<span class="hljs-string">"jobtitle"</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="copy"></a><a href="#copy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.copy()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -477,7 +470,6 @@
     End use</span><span class="hljs-keyword">
  End use</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="distinct"></a><a href="#distinct" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.distinct()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -521,7 +513,6 @@
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$countries </span>: Collection
  <span class="hljs-variable">$countries</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">distinct</span>(<span class="hljs-string">"address.country"</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="drop"></a><a href="#drop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.drop()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -570,7 +561,6 @@
 <span class="hljs-function">    ALERT</span>(<span class="hljs-string">"Problem during drop, try later"</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="extract"></a><a href="#extract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.extract()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -656,7 +646,6 @@
   //$teachers is a collection of entity selections</span>
  <span class="hljs-variable">$teachers</span>:=ds.Address.<span class="hljs-function">all</span>().<span class="hljs-function">extract</span>(<span class="hljs-string">"teachers"</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="first"></a><a href="#first" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.first()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -698,7 +687,6 @@
     <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySelection</span>.<span class="hljs-function">first</span>()<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="getdataclass"></a><a href="#getdataclass" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.getDataClass()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -739,7 +727,6 @@
     <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$duplicate</span>.<span class="hljs-function">save</span>()<span class="hljs-keyword">
  End for each</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="isordered"></a><a href="#isordered" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isOrdered()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -783,7 +770,6 @@
 <span class="hljs-function">    ALERT</span>(<span class="hljs-string">"The entity selection is ordered and contains "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$employees</span>.length)+<span class="hljs-string">" employees"</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="last"></a><a href="#last" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.last()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -818,7 +804,6 @@
     <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySelection</span>.<span class="hljs-function">last</span>()<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="length"></a><a href="#length" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.length</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -839,7 +824,6 @@
  <span class="hljs-variable">$vSize</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"gender = :1"</span>;<span class="hljs-string">"male"</span>).length
 <span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(vSize)+<span class="hljs-string">" male employees found."</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="max"></a><a href="#max" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.max()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -877,7 +861,6 @@
  <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"gender = :1"</span>;<span class="hljs-string">"female"</span>)
  <span class="hljs-variable">$maxSalary</span>:=<span class="hljs-variable">$sel</span>.<span class="hljs-function">max</span>(<span class="hljs-string">"salary"</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="min"></a><a href="#min" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.min()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -915,7 +898,6 @@
  <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"gender = :1"</span>;<span class="hljs-string">"female"</span>)
  <span class="hljs-variable">$minSalary</span>:=<span class="hljs-variable">$sel</span>.<span class="hljs-function">min</span>(<span class="hljs-string">"salary"</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="minus"></a><a href="#minus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.minus()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -969,7 +951,6 @@
  <span class="hljs-variable">$sel2</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"city=:1"</span>;<span class="hljs-string">"New York"</span>)
  <span class="hljs-variable">$sel3</span>:=<span class="hljs-variable">$sel1</span>.<span class="hljs-function">and</span>(<span class="hljs-variable">$sel2</span>).<span class="hljs-function">minus</span>(ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"gender='male'"</span>))
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="or"></a><a href="#or" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.or()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1019,7 +1000,6 @@
 
  <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$employees</span>.or(<span class="hljs-variable">$employee</span>) <span class="hljs-comment">//$result contains "Colin Hetrick", "Grady Harness", "Sherlock Holmes", "Mary Smith"</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="orderby"></a><a href="#orderby" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.orderBy()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1088,7 +1068,6 @@
  <span class="hljs-variable">$orderColl</span>.<span class="hljs-function">push</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"propertyPath"</span>;<span class="hljs-string">"salary"</span>))
  <span class="hljs-variable">$sortedEntitySelection</span>:=<span class="hljs-variable">$entitySelection</span>.<span class="hljs-function">orderBy</span>(<span class="hljs-variable">$orderColl</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="orderbyformula-"></a><a href="#orderbyformula-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.orderByFormula( )</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1194,7 +1173,6 @@
 
  <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$average</span>/<span class="hljs-variable">$sum</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="query"></a><a href="#query" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.query()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1239,7 +1217,6 @@
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="exemple-2-6"></a><a href="#exemple-2-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple 2</h4>
 <p>More examples of queries can be found in the DataClass <a href="/docs/fr/API/dataclassClass.html#query"><code>.query()</code></a> page.</p>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="querypath"></a><a href="#querypath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.queryPath</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1255,7 +1232,6 @@
 <h4><a class="anchor" aria-hidden="true" id="description-23"></a><a href="#description-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>The <code>.queryPath</code> property contains a detailed description of the query as it was actually performed by 4D. This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPath&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
 <p>For more information, refer to the <strong>querySettings parameter</strong> paragraph in the Dataclass<a href="dataclassClass.html#query"><code>.query()</code></a> page.</p>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="queryplan"></a><a href="#queryplan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.queryPlan</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1271,7 +1247,6 @@
 <h4><a class="anchor" aria-hidden="true" id="description-24"></a><a href="#description-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>The <code>.queryPlan</code> property  contains a detailed description of the query just before it is executed (i.e., the planned query). This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPlan&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
 <p>For more information, refer to the <strong>querySettings parameter</strong> paragraph in the Dataclass<a href="dataclassClass.html#query"><code>.query()</code></a> page.</p>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="refresh"></a><a href="#refresh" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.refresh()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1333,7 +1308,6 @@
  Form.students.<span class="hljs-function">refresh</span>() <span class="hljs-comment">// Invalidates the ORDA cache for the Form.students entity selection</span>
   <span class="hljs-comment">// The list box content is refreshed from the database with update made by client #2</span>
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="slice"></a><a href="#slice" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.slice()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1381,7 +1355,6 @@
 <span class="hljs-variable">$slice</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">slice</span>(<span class="hljs-number">-1</span>;<span class="hljs-number">-2</span>) <span class="hljs-comment">//tries to return entities from index 9 to 8, but since 9 &gt; 8, returns an empty entity selection</span>
 
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="sum-"></a><a href="#sum-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.sum( )</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1420,7 +1393,6 @@ var</span> <span class="hljs-variable">$sum </span>: Real
 <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"salary &lt; :1"</span>;<span class="hljs-number">20000</span>)
 <span class="hljs-variable">$sum</span>:=<span class="hljs-variable">$sel</span>.<span class="hljs-function">sum</span>(<span class="hljs-string">"salary"</span>)
 </code></pre>
-<hr>
 <h2><a class="anchor" aria-hidden="true" id="tocollection-"></a><a href="#tocollection-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.toCollection( )</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -1871,7 +1843,7 @@ var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
  }
 ]
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/fr/API/entityClass.html"><span class="arrow-prev">← </span><span>Entity</span></a><a class="docs-next button" href="/docs/fr/API/fileClass.html"><span>File</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#summary">Summary</a></li><li><a href="#91index93">[<em>index</em>]</a></li><li><a href="#attributename">.<em>attributeName</em></a></li><li><a href="#add">.add()</a></li><li><a href="#and">.and()</a></li><li><a href="#average">.average()</a></li><li><a href="#contains">.contains()</a></li><li><a href="#count">.count()</a></li><li><a href="#copy">.copy()</a></li><li><a href="#distinct">.distinct()</a></li><li><a href="#drop">.drop()</a></li><li><a href="#extract">.extract()</a></li><li><a href="#first">.first()</a></li><li><a href="#getdataclass">.getDataClass()</a></li><li><a href="#isordered">.isOrdered()</a></li><li><a href="#last">.last()</a></li><li><a href="#length">.length</a></li><li><a href="#max">.max()</a></li><li><a href="#min">.min()</a></li><li><a href="#minus">.minus()</a></li><li><a href="#or">.or()</a></li><li><a href="#orderby">.orderBy()</a></li><li><a href="#orderbyformula-">.orderByFormula( )</a></li><li><a href="#query">.query()</a></li><li><a href="#querypath">.queryPath</a></li><li><a href="#queryplan">.queryPlan</a></li><li><a href="#refresh">.refresh()</a></li><li><a href="#slice">.slice()</a></li><li><a href="#sum-">.sum( )</a></li><li><a href="#tocollection-">.toCollection( )</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/fr/API/entityClass.html"><span class="arrow-prev">← </span><span>Entity</span></a><a class="docs-next button" href="/docs/fr/API/fileClass.html"><span>File</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#91index93">[<em>index</em>]</a></li><li><a href="#attributename">.<em>attributeName</em></a></li><li><a href="#add">.add()</a></li><li><a href="#and">.and()</a></li><li><a href="#average">.average()</a></li><li><a href="#contains">.contains()</a></li><li><a href="#count">.count()</a></li><li><a href="#copy">.copy()</a></li><li><a href="#distinct">.distinct()</a></li><li><a href="#drop">.drop()</a></li><li><a href="#extract">.extract()</a></li><li><a href="#first">.first()</a></li><li><a href="#getdataclass">.getDataClass()</a></li><li><a href="#isordered">.isOrdered()</a></li><li><a href="#last">.last()</a></li><li><a href="#length">.length</a></li><li><a href="#max">.max()</a></li><li><a href="#min">.min()</a></li><li><a href="#minus">.minus()</a></li><li><a href="#or">.or()</a></li><li><a href="#orderby">.orderBy()</a></li><li><a href="#orderbyformula-">.orderByFormula( )</a></li><li><a href="#query">.query()</a></li><li><a href="#querypath">.queryPath</a></li><li><a href="#queryplan">.queryPlan</a></li><li><a href="#refresh">.refresh()</a></li><li><a href="#slice">.slice()</a></li><li><a href="#sum-">.sum( )</a></li><li><a href="#tocollection-">.toCollection( )</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
