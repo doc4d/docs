@@ -499,7 +499,7 @@ The `IMAPTransporter` class allows you to retrieve messages from a IMAP email se
 <li>in the <code>msgsIDs</code> parameter, a collection containing the unique IDs of the specific messages to delete, or</li>
 <li>in the <code>allMsgs</code> parameter, the <code>IMAP all</code> constant (integer) to delete all messages in the selected mailbox.</li>
 </ul>
-<p>Executing this function does not actually remove messages. Messages with the &quot;delete&quot; flag can still be found by the <a href="#searchmails">.searchMails()</a> function. Flagged messages will be deleted from the IMAP server only by selecting another mailbox or when the <a href="#imap-transporter-object">transporter object</a> (created with <a href="#imap-new-transporter">IMAP New transporter</a>) is destroyed.</p>
+<p>Executing this function does not actually remove messages. Messages with the &quot;delete&quot; flag can still be found by the <a href="#searchmails">.searchMails()</a> function. Flagged messages are deleted from the IMAP server with the <a href="#expunge"><code>.expunge()</code></a> function or by selecting another mailbox or when the <a href="#imap-transporter-object">transporter object</a> (created with <a href="#imap-new-transporter">IMAP New transporter</a>) is destroyed.</p>
 <p><strong>Returned object</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
