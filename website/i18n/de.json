@@ -11,8 +11,68 @@
       "Admin/licenses": {
         "title": "Managing 4D Licenses"
       },
+      "API/classClass": {
+        "title": "Class"
+      },
+      "API/collectionClass": {
+        "title": "Collections"
+      },
       "API/cryptoClass": {
-        "title": "CryptoKey Class"
+        "title": "CryptoKey"
+      },
+      "API/dataclassAttributeClass": {
+        "title": "DataClassAttribute"
+      },
+      "API/dataclassClass": {
+        "title": "Dataclass"
+      },
+      "API/datastoreClass": {
+        "title": "DataStore"
+      },
+      "API/directory": {
+        "title": "Directory Class"
+      },
+      "API/document": {
+        "title": "Document Class"
+      },
+      "API/emails": {
+        "title": "Emails"
+      },
+      "API/entityClass": {
+        "title": "Entity"
+      },
+      "API/entitySelectionClass": {
+        "title": "Entity Selections"
+      },
+      "API/fileClass": {
+        "title": "File"
+      },
+      "API/folderClass": {
+        "title": "Folder"
+      },
+      "API/formulaClass": {
+        "title": "Formulas"
+      },
+      "API/imapTransporterClass": {
+        "title": "IMAP Transporter"
+      },
+      "API/overview": {
+        "title": "Class API Overview"
+      },
+      "API/pop3TransporterClass": {
+        "title": "POP3 Transporter"
+      },
+      "API/signalClass": {
+        "title": "Signals"
+      },
+      "API/smtpTransporterClass": {
+        "title": "SMTP Transporter"
+      },
+      "API/transporter": {
+        "title": "Transporter Class"
+      },
+      "API/zipClass": {
+        "title": "ZIP Archive"
       },
       "Backup/backup": {
         "title": "Backup"
@@ -21,7 +81,7 @@
         "title": "Log file (.journal)"
       },
       "Backup/overview": {
-        "title": "Overview"
+        "title": "Überblick"
       },
       "Backup/restore": {
         "title": "Restore"
@@ -288,6 +348,9 @@
       "Events/onValidate": {
         "title": "On Validate"
       },
+      "Events/onVpRangeChanged": {
+        "title": "On VP Range Changed"
+      },
       "Events/onVpReady": {
         "title": "On VP Ready"
       },
@@ -295,7 +358,7 @@
         "title": "On Window Opening Denied"
       },
       "Events/overview": {
-        "title": "Overview"
+        "title": "Überblick"
       },
       "FormEditor/stylesheets": {
         "title": "Style sheets"
@@ -511,7 +574,7 @@
         "title": "Creating menus and menu bars"
       },
       "Menus/overview": {
-        "title": "Overview"
+        "title": "Überblick"
       },
       "Menus/properties": {
         "title": "Menu item properties"
@@ -540,8 +603,8 @@
         "sidebar_label": "Seite Information"
       },
       "MSC/overview": {
-        "title": "Overview",
-        "sidebar_label": "Overview"
+        "title": "Überblick",
+        "sidebar_label": "Überblick"
       },
       "MSC/repair": {
         "title": "Seite Reparieren",
@@ -572,7 +635,7 @@
         "title": "Data Model Classes"
       },
       "ORDA/overview": {
-        "title": "Overview"
+        "title": "Überblick"
       },
       "ORDA/quickTour": {
         "title": "A Quick Tour in ORDA"
@@ -593,7 +656,7 @@
         "title": "Documenting a project"
       },
       "Project/overview": {
-        "title": "Overview"
+        "title": "Überblick"
       },
       "REST/{dataClass}": {
         "title": "{dataClass}"
@@ -695,15 +758,15 @@
         "title": "Managing 4D users and groups"
       },
       "Users/overview": {
-        "title": "Overview"
+        "title": "Überblick"
       },
       "WebServer/webServerObject": {
         "title": "Web Server object"
       }
     },
     "links": {
-      "v18 R4 BETA": "v18 R4 BETA",
-      "v18 R3": "v18 R3",
+      "v18 R5 BETA": "v18 R5 BETA",
+      "v18 R4": "v18 R4",
       "v18": "v18"
     },
     "categories": {

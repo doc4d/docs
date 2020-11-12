@@ -1,6 +1,6 @@
 ---
 id: zipClass
-title: ZIP アーカイブ
+title: ZIP Archive
 ---
 
 

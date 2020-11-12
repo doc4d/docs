@@ -1,6 +1,6 @@
 ---
 id: classClass
-title: クラス
+title: Class
 ---
 
 When a user class is [defined](Concepts/classes.md#class-definition) in the project, it is loaded in the 4D language environment. A class is an object itself, of "Class" class, which has properties and a function.

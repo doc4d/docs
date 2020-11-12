@@ -173,45 +173,45 @@ ORDAアーキテクチャーでは、リレーション属性はエンティテ�
 
 ## エンティティセレクションの作成
 
-You can create an object of type [entity selection](dsMapping.md#entity-selection) as follows:
+以下の方法で、[エンティティセレクション](dsMapping.md#エンティティセレクション) 型のオブジェクトを作成することができます:
 
-*   Querying the entities [in a dataclass](API/dataclassClass.md#query) or in an [existing entity selection](API/entitySelectionClass.md#query);
-*   Using the [`.all()`](API/dataclassClass.md#all) dataclass function to select all the entities in a dataclass;
-*   Using the `Create entity selection` command or the [`.newSelection()`](API/dataclassClass.md#newselection) dataclass function to create a blank entity selection;
-*   Using the [`.copy()`](API/entitySelectionClass.md#copy) function to duplicate an existing entity selection;
-*   Using one of the various functions from the [Entity selection class](API/entitySelectionClass.md) that returns a new entity selection, such as [`.or()`](API/entitySelectionClass.md#or);
+*   [データクラス](API/dataclassClass.md#query) または [既存のエンティティセレクション](API/entitySelectionClass.md#query) のエンティティに対してクエリを実行する;
+*   [`.all( )`](API/dataclassClass.md#all) DataClassクラス関数を使用して、データクラス内の全エンティティを選択する;
+*   `Create entity selection` コマンドあるいは [`.newSelection( )`](API/dataclassClass.md#newselection) DataClassクラス関数を使用して空のエンティティコレクションオブジェクトを作成する;
+*   [`.copy( )`](API/entitySelectionClass.md#copy) EntitySelectionクラス関数を使用して、既存のエンティティセレクションを複製する;
+*   [EntitySelectionクラス](API/entitySelectionClass.md) の様々な関数の中から、[`.or( )`](API/entitySelectionClass.md#or) のように新しいエンティティセレクションを返すものを使用する;
 *   "リレートエンティティズ" 型のリレーション属性を使用する (以下参照)
 
 データクラスに対して、異なるエンティティセレクションを好きなだけ同時に作成し、使用することができます。 エンティティセレクションは、エンティティへの参照を格納しているに過ぎないという点に注意してください。 異なるエンティティセレクションが同じエンティティへの参照を格納することも可能です。
 
-### Shareable or non-shareable entity selections
+### 共有可能な/共有不可のエンティティセレクション
 
-An entity selection can be **shareable** (readable by multiple processes, but not modifiable after creation) or **non-shareable** (only usable by the current process, but modifiable afterwards):
+エンティティセレクションには 2種類あります: **共有可能** (複数のプロセスで読み込み可能、ただし編集不可) のものと、**共有不可** (カレントプロセスでのみ利用可能、ただし編集可能) のものです:
 
-- a **shareable** entity selection has the following characteristics:
-    - it can be stored in a shared object or shared collection, and can be shared between several processes or workers;
-    - it can be stored in several shared objects or collections, or in a shared object or collection which already belongs to a group (it does not have a *locking identifier*);
-    - it does not allow the addition of new entities. Trying to add an entity to a shareable entity selection will trigger an error (1637 - This entity selection cannot be altered). To add an entity to a shareable entity selection, you must first transform it into a non-shareable entity selection using the [`.copy()`](API/entitySelectionClass.md#copy) function, before calling [`.add()`](API/entitySelectionClass.md#add).
+- **共有可能** なエンティティセレクションは以下のような特徴を持ちます:
+    - 共有オブジェクトまたは共有コレクションに保存することが可能で、複数のプロセス間あるいはワーカー間で共有することができます。
+    - 複数の共有オブジェクトまたは共有コレクションに保存することが可能です。また、グループに属している共有オブジェクトまたは共有コレクションに保存することも可能です (つまり、*ロック識別子* を持っていないということです)。
+    - 新たにエンティティを追加することはできません。 共有可能なエンティティセレクションに対してエンティティを追加しようとした場合、エラーがトリガーされます (エラー1637 - このエンティティセレクションは編集不可です)。 共有可能なエンティティセレクションに対してエンティティを追加したい場合、[`.add( )`](API/entitySelectionClass.md#add) 関数を呼び出す前に、[`.copy( )`](API/entitySelectionClass.md#copy) 関数を使用して共有不可のエンティティセレクションへと変換する必要があります。
 
-- a **non-shareable** entity selection has the following characteristics:
-    + it cannot be shared between processes, nor be stored in a shared object or collection. Trying to store a non-shareable entity selection in a shared object or collection will trigger an error (-10721 - Not supported value type in a shared object or shared collection);
-    + it accepts the addition of new entities.
+- **共有不可** のエンティティセレクションは以下のような特徴を持ちます:
+    + プロセス間での共有はできません。また共有オブジェクト/コレクションへの保存もできません。 共有不可のエンティティセレクションを共有オブジェクト/コレクションに保存しようとした場合、エラーがトリガーされます (エラー -10721 - 共有オブジェクトまたはコレクションにおいてサポートされる値の型ではありません)。
+    + 新たにエンティティを追加することができます。
 
-In most cases, new entity selections are **shareable**, including:
+多くの場合において、新規のエンティティセレクションは **共有可能** です。たとえば:
 
-- entity selections resulting from various ORDA class functions ([`.query()`](API/entitySelectionClass.md#query), [`.query()`](API/dataclassClass.md#query), etc.),
-- entity selections based upon relations (e.g. `company.employee`),
-- entity selections resulting from projections of values (e.g. `ds.Employee.all().employer`),
-- entity selections explicitely copied as shareable with [`.copy()`](API/entitySelectionClass.md#copy) or `OB Copy`.
+- 様々な ORDA クラス関数 ([`entitySelection.query( )`](API/entitySelectionClass.md#query)、[`dataClass.query( )`](API/dataclassClass.md#query) など) の結果として返されるエンティティセレクション。
+- リレーションに基づいたエンティティセレクション (例: `company.employee`)
+- 値の "投影" の結果のエンティティセレクション (例: `ds.Employee.all().employer`)
+- [`.copy( )`](API/entitySelectionClass.md#copy) または `OB Copy` を使用して、明示的に共有可能としてコピーされたエンティティセレクション
 
-New entity selections are **non-shareable** in the following cases:
+ただし、以下の場合には新規エンティティセレクションは **共有不可** となります:
 
-- blank entity selections created using the [`.newSelection()`](API/dataclassClass.md#newselection) function or `Create entity selection` command,
-- entity selections explicitely copied as non-shareable with [`.copy()`](API/entitySelectionClass.md#copy) or `OB Copy`.
+- [`.newSelection( )`](API/dataclassClass.md#newselection) 関数または `Create entity selection` コマンドを使用して作成された空のエンティティセレクション
+- [`.copy( )`](API/entitySelectionClass.md#copy) または `OB Copy` を使用して、明示的に共有不可としてコピーされたエンティティセレクション
 
 #### 例題
 
-You work with two entity selections that you want to pass to a worker process so that it can send mails to appropriate persons:
+二つのエンティティセレクションを使用し、それらをワーカープロセスに渡して適切な相手にメールを送信したい場合を考えます:
 
 ```4d
  If(Storage.info=Null)
@@ -221,13 +221,14 @@ You work with two entity selections that you want to pass to a worker process so
  End if
 
  Use(Storage.info)
-  //Put entity selections in a shared object
+  // エンティティセレクションを共有オブジェクトへと保存します
     Storage.info.paid:=ds.Invoices.query("status=:1";"Paid")
     Storage.info.unpaid:=ds.Invoices.query("status=:1";"Unpaid")
  End use
 
  CALL WORKER("mailing";"sendMails";Storage.info)
-The sendMails method:
+
+sendMails メソッド:
 
  var $info: ;$1Object
  var $paid;$unpaid : cs.InvoicesSelection
@@ -235,7 +236,7 @@ The sendMails method:
 
  var $server;$transporter;$email;$status : Object
 
-  //Prepare emails
+  // Eメールを準備します
  $server:=New object
  $server.host:="exchange.company.com"
  $server.user:="myName@company.com"
@@ -244,21 +245,21 @@ The sendMails method:
  $email:=New object
  $email.from:="myName@company.com"
 
-  //Get entity selections
+  // エンティティセレクションを取得します
  $info:=$1
  $paid:=$info.paid
  $unpaid:=$info.unpaid
 
-  //Loops on entity selections
+  //  エンティティセレクション内をループします
  For each($invoice;$paid)
-    $email.to:=$invoice.customer.address // email address of the customer
-    $email.subject:="Payment OK for invoice # "+String($invoice.number)
+    $email.to:=$invoice.customer.address // 顧客のメールアドレス
+    $email.subject:="請求書 # "+String($invoice.number)+” の入金を確認しました。”
     $status:=$transporter.send($email)
  End for each
 
  For each($invoice;$unpaid)
-    $email.to:=$invoice.customer.address // email address of the customer
-    $email.subject:="Please pay invoice # "+String($invoice.number)
+    $email.to:=$invoice.customer.address // 顧客のメールアドレス
+    $email.subject:="請求書 # "+String($invoice.number)+" が未入金となっています。"
     $status:=$transporter.send($email)
  End for each
 ```

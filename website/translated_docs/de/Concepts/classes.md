@@ -4,7 +4,7 @@ title: Classes
 ---
 
 
-## Overview
+## Überblick
 
 Die 4D Programmiersprache unterstützt das Konzept **Klassen**. In der objektorientierten Programmierung definieren Sie in einer Klasse das Verhalten eines Objekts mit zugewiesenen Eigenschaften und Funktionen.
 
