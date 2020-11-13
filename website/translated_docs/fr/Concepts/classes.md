@@ -199,9 +199,9 @@ Function <name>({$parameterName : type; ...}){->$parameterName : type}
 // code
 ```
 
-Class functions are properties of the prototype object of the owner class. They are objects of the "Function" class.
+Les fonctions de classe sont des propriétés de l'objet prototype de la classe propriétaire. Ce sont des objets de la classe "Function".
 
-In the class definition file, function declarations use the `Function` keyword, and the name of the function. Le nom de la fonction doit être conforme aux [règles de nommage des propriétés](Concepts/dt_object.md#object-property-identifiers).
+Dans le fichier de définition de classe, les déclarations de fonction utilisent le mot-clé `Function`, et le nom de la fonction. Le nom de la fonction doit être conforme aux [règles de nommage des propriétés](Concepts/dt_object.md#object-property-identifiers).
 
 > **Astuce :** préfixer le nom de la fonction par un trait de soulignement ("_") exclura la fonction des fonctionnalités d'auto-complétion dans l'éditeur de code 4D. Par exemple, si vous déclarez `Function _myPrivateFunction` dans `MyClass`, elle ne sera pas proposée dans l'éditeur de code lorsque vous tapez `"cs.MyClass. "`.
 
