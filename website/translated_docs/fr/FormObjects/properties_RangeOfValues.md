@@ -48,9 +48,9 @@ Allows setting a list whose values cannot be entered in the object. Si une valeu
 
 #### Grammaire JSON
 
-| Nom          | Type de données | Valeurs possibles                |
-| ------------ | --------------- | -------------------------------- |
-| excludedList | liste           | A list of values to be excluded. |
+| Nom          | Type de données | Valeurs possibles               |
+| ------------ | --------------- | ------------------------------- |
+| excludedList | liste           | Une liste de valeurs à exclure. |
 
 #### Objets pris en charge
 
@@ -64,14 +64,14 @@ Allows setting a list whose values cannot be entered in the object. Si une valeu
 
 Limite les entrées valides aux éléments de la liste. Par exemple, si vous souhaitez utiliser une liste pour les titres de postes, afin que les entrées valides soient limitées aux titres qui ont été approuvés par la direction.
 
-La création d'une liste obligatoire n'affiche pas automatiquement la liste lorsque le champ est sélectionné. If you want to display the required list, assign the same list to the [Choice List](properties_DataSource.md#choice-list) property. However, unlike the [Choice List](properties_DataSource.md#choice-list) property, when a required list is defined, keyboard entry is no longer possible, only the selection of a list value using the pop-up menu is allowed. If different lists are defined using the [Choice List](properties_DataSource.md#choice-list) and Required List properties, the Required List property has priority.
+La création d'une liste obligatoire n'affiche pas automatiquement la liste lorsque le champ est sélectionné. Si vous souhaitez afficher la liste requise, assignez la même liste à la propriété [Choice List](properties_DataSource.md#choice-list). Cependant, contrairement à la propriété [Choice List](properties_DataSource.md#choice-list), lorsqu'une liste obligatoire est définie, la saisie au clavier n'est plus possible, seule la sélection d'une valeur de liste à l'aide du pop-up menu est autorisée. If different lists are defined using the [Choice List](properties_DataSource.md#choice-list) and Required List properties, the Required List property has priority.
 > If a specified list is hierarchical, only the items of the first level are taken into account.
 
 #### Grammaire JSON
 
-| Nom          | Type de données | Valeurs possibles           |
-| ------------ | --------------- | --------------------------- |
-| requiredList | liste           | A list of mandatory values. |
+| Nom          | Type de données | Valeurs possibles                  |
+| ------------ | --------------- | ---------------------------------- |
+| requiredList | liste           | Une liste de valeurs obligatoires. |
 
 #### Objets pris en charge
 
