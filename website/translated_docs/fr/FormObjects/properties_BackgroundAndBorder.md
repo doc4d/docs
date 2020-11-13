@@ -103,11 +103,11 @@ Describes dotted line type as a sequence of black and white points.
 ---
 ## Masquer lignes vides finales
 
-Controls the display of extra blank rows added at the bottom of a list box object. By default, 4D adds such extra rows to fill the empty area:
+Contrôle l'affichage des lignes vides supplémentaires ajoutées au bas d'un objet list box. Par défaut, 4D ajoute ces lignes supplémentaires pour remplir la zone vide :
 
 ![](assets/en/FormObjects/property_hideExtraBlankRows1.png)
 
-You can remove these empty rows by selecting this option. The bottom of the list box object is then left blank:
+Vous pouvez supprimer ces lignes vides en sélectionnant cette option. Le bas de l'objet list box est alors laissé vide :
 
 ![](assets/en/FormObjects/property_hideExtraBlankRows2.png)
 
@@ -127,21 +127,21 @@ You can remove these empty rows by selecting this option. The bottom of the list
 ---
 ## Line Color
 
-Designates the color of the object's lines. The color can be specified by:
+Désigne la couleur des lignes de l'objet. La couleur peut être spécifiée par :
 
-* a color name - like "red"
-* a HEX value - like "#ff0000"
-* an RGB value - like "rgb(255,0,0)"
+* un nom de couleur - comme "red"
+* une valeur HEX - comme "# ff0000"
+* une valeur RVB - comme "rgb (255,0,0)"
 
-You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-RGB-COLORS.301-4505456.en.html) command.
+Vous pouvez également définir cette propriété à l'aide de la commande [**OBJECT SET RGB COLORS**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-RGB-COLORS.301-4505456.en.html).
 
 #### Grammaire JSON
 
-| Nom    | Type de données | Valeurs possibles                         |
-| ------ | --------------- | ----------------------------------------- |
-| stroke | string          | any css value, "transparent", "automatic" |
+| Nom    | Type de données | Valeurs possibles                          |
+| ------ | --------------- | ------------------------------------------ |
+| stroke | string          | une valeur css; "transparent"; "automatic" |
 
-> This property is also available for text based objects, in which case it designates both the font color and the object's lines, see [Font color](properties_Text.md#font-color).
+> Cette propriété est également disponible pour les objets à base de texte, auquel cas elle désigne à la fois la couleur de la police et les lignes de l'objet, voir [Couleur de la police](properties_Text.md#font-color).
 
 #### Objets pris en charge
 
@@ -152,7 +152,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 ---
 ## Line Width
 
-Designates the thickness of a line.
+Désigne l'épaisseur d'une ligne.
 
 #### Grammaire JSON
 
@@ -175,11 +175,11 @@ Designates the thickness of a line.
 
 `List box de type tableau`
 
-The name of an array to apply a custom background color to each row of the list box or column.
+Le nom d'un tableau pour appliquer une couleur d'arrière-plan personnalisée à chaque ligne ou colonne de la list box.
 
-The name of a Longint array must be entered. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. You can use the constants of the [SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html) theme. If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
+Le nom d'un tableau Entier long doit être saisi. Chaque élément de ce tableau correspond à une ligne de la zone de list box (si elle est appliquée à la liste box) ou à une cellule de la colonne (si elle est appliquée à une colonne), le tableau doit donc avoir la même taille que le tableau associé à la colonne. Vous pouvez utiliser les constantes du thème [SET RGB COLORS](https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html). Si vous souhaitez que la cellule hérite de la couleur d'arrière-plan définie au niveau supérieur, passez la valeur -255 à l'élément de tableau correspondant.
 
-For example, given a list box where the rows have an alternating gray/light gray color, defined in the properties of the list box. A background color array has also been set for the list box in order to switch the color of rows where at least one value is negative to light orange:
+Par exemple, considérons une list box où les lignes ont une couleur alternée gris/gris clair, définie dans les propriétés de la list box. Un tableau de couleurs d'arrière-plan a également été défini pour la list box afin de changer en orange clair la couleur des lignes où au moins une valeur est négative :
 
 ```4d
  <>_BgndColors{$i}:=0x00FFD0B0 // orange
