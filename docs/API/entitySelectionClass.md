@@ -214,7 +214,7 @@ The `.add()` function <!-- REF #entitySelectionClass.add().Summary -->adds the s
 *	If the entity selection is ordered, *entity* is added at the end of the selection. If a reference to the same entity already belongs to the entity selection, it is duplicated and a new reference is added.
 *	If the entity selection is unordered, *entity* is added anywhere in the selection, with no specific order.
 
->For more information, please refer to the [Ordered or unordered entity selection](ORDA/dsmapping.md#ordered-or-unordered-entity-selection) section.
+>For more information, please refer to the [Ordered or unordered entity selection](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) section.
 
 The modified entity selection is returned by the function, so that function calls can be chained.
 
@@ -1283,6 +1283,7 @@ You can add as many objects in the criteria collection as necessary.
  $orderColl.push(New object("propertyPath";"salary"))
  $sortedEntitySelection:=$entitySelection.orderBy($orderColl)
 ```
+
 
 
 <!-- END REF -->
