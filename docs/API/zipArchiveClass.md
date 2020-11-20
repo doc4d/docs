@@ -29,10 +29,7 @@ If($zipFile.extension=".txt")
 End if
 ```
 
-<<<<<<< HEAD:docs/API/zipfileClass.md
----
-<!-- REF zipArchive.ZIP Create archive.Desc -->
-=======
+
 ### Summary
 
 ||
@@ -40,7 +37,6 @@ End if
 |[<!-- INCLUDE #zipArchiveClass.root.Syntax -->](#root)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #zipArchiveClass.root.Summary -->|
 
 
->>>>>>> 109a480c18 (fix/ziparchive):docs/API/zipArchiveClass.md
 ## ZIP Create archive
 
 <details><summary>History</summary>
