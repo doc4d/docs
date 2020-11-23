@@ -313,7 +313,7 @@ local<span class="hljs-keyword"> Function</span> &lt;functionName&gt;
 <blockquote>
 <p>The <code>local</code> keyword can only be used with data model class functions. If used with a <a href="/docs/en/Concepts/classes.html">regular user class</a> function, it is ignored and an error is returned by the compiler.</p>
 </blockquote>
-<p>Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. For example, consider the following function on the Students dataclass class:</p>
+<p>Note that the function will work even if it eventually requires to access the server (for example if the ORDA cache is expired). However, it is highly recommended to make sure that the local function does not access data on the server, otherwise the local execution could not bring any performance benefit. A local function that generates many requests to the server is less efficient than a function executed on the server that would only return the resulting values. For example, consider the following function on the Schools entity class:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Get the youngest students  </span>
 <span class="hljs-comment">// Unappropriate use of local keyword</span>
 local<span class="hljs-keyword"> Function</span> getYoungest<span class="hljs-keyword">
