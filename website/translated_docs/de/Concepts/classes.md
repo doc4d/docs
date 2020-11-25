@@ -84,7 +84,7 @@ Um eine neue Klasse zu erstellen:
 In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime-Explorer) wird Code für Klassen im allgemeinen wie eine Projektmethode mit einigen spezifischen Merkmalen verwaltet:
 
 - Im Code-Editor gilt folgendes:
-    - Es kann keine Klasse laufen
+    - a class cannot be run
     - Eine Klassenfunktion ist ein Code Block
     - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
     - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Objekt Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
@@ -139,9 +139,9 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 ## Klassen in Ihrem Code verwenden
 
 
-### Objekt Klasse
+### Objekt class
 
-Ist in einem Projekt eine Klasse [definiert](#eine-klasse-definieren), wird sie in die 4D Programmiersprache Umgebung geladen. Eine Klasse ist selbst ein Objekt der Klasse ["class"](API/classClass.md). Ein Objekt Klasse hat folgende Eigenschaften und Funktionen:
+Ist in einem Projekt eine Klasse [definiert](#eine-klasse-definieren), wird sie in die 4D Programmiersprache Umgebung geladen. Eine Klasse ist selbst ein Objekt der Klasse ["class"](API/classClass.md). Ein Objekt class hat folgende Eigenschaften und Funktionen:
 
 - String [`name`](API/classClass.md#name)
 - Objekt [`superclass`](API/classClass.md#superclass) (optional, null, wenn nicht vorhanden)
@@ -152,15 +152,15 @@ Zusätzlich kann ein Objekt Klasse verweisen auf:
 - Ein Objekt [`constructor`](#class-constructor) (optional),
 - Ein Objekt `prototype` mit Objektnamen [function](#function) (optional).
 
-Ein Objekt Klasse ist ein [shared object](shared.md), d. h. es lässt sich aus verschiedenen 4D Prozessen gleichzeitig darauf zugreifen.
+Ein Objekt class ist ein [shared object](shared.md), d. h. es lässt sich aus verschiedenen 4D Prozessen gleichzeitig darauf zugreifen.
 
 
 
 ### Nach Eigenschaft suchen und Prototyp
 
-Alle Objekte in 4D sind intern an ein Objekt Klasse gebunden. Findet 4D eine Eigenschaft nicht in einem Objekt, sucht es im Objekt Prototyp seiner Klasse; wird sie hier nicht gefunden, sucht 4D weiter im Objekt Prototyp seiner Superklasse, usw. bis es keine Superklasse mehr gibt.
+Alle Objekte in 4D sind intern an ein Objekt class gebunden. Findet 4D eine Eigenschaft nicht in einem Objekt, sucht es im Objekt Prototyp seiner Klasse; wird sie hier nicht gefunden, sucht 4D weiter im Objekt prototype seiner Superklasse, usw. bis es keine Superklasse mehr gibt.
 
-Alle Objekte erben vom Objekt Klasse als ihrer obersten Klasse im Vererbungsbaum.
+Alle Objekte erben vom Objekt class als ihrer obersten Klasse im Vererbungsbaum.
 
 ```4d
 //Class: Polygon
@@ -521,7 +521,7 @@ $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> Wird der Superclass Constructor in einem Constructor über das Schlüsselwort [Super](#super) aufgerufen, müssen Sie darauf achten, dass `This` nicht vor dem Superclass Constructor aufgerufen wird, sonst wird ein Fehler generiert. Siehe [dieses Beispiel](#example-1).
+> Wird der Superclass Constructor in einem Constructor über das Schlüsselwort [Super](#super) aufgerufen, müssen Sie darauf achten, dass `This` nicht vor dem Superclass Constructor aufgerufen wird, sonst wird ein Fehler generiert. Siehe [dieses Beispiel](#beispiel-1-1).
 
 
 In jedem Fall bezieht sich `This` auf das Objekt, in dem die Methode aufgerufen wurde, als ob die Methode im Objekt wäre.
