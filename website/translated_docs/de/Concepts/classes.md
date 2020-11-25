@@ -12,7 +12,7 @@ Ist eine Klasse definiert, können Sie Objekte dieser Klasse als **Instanz** üb
 
 Das Klassenmodell in 4D ist ähnlich zu Klassen in JavaScript und basiert auf einer Kette von Prototypen.
 
-### Objekt Klasse
+### Class object
 
 Die Klasse ist selbst ein Objekt vom Typ "Klasse". Ein Objekt Klasse hat folgende Eigenschaften und Methoden:
 
@@ -149,7 +149,7 @@ Um eine neue Klasse zu erstellen:
 In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime-Explorer) wird Code für Klassen im allgemeinen wie eine Projektmethode mit einigen spezifischen Merkmalen verwaltet:
 
 - Im Code-Editor gilt folgendes:
-    - Es kann keine Klasse laufen
+    - a class cannot be run
     - Eine Klassenfunktion ist ein Code Block
     - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
     - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Objekt Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
