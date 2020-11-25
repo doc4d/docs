@@ -1618,6 +1618,25 @@ End if</span>
 <p>Here is the code for <strong><em>WordLength</em></strong>:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$1</span>.result:=<span class="hljs-function">Length</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$1</span>.value))&gt;<span class="hljs-function">Length</span>(<span class="hljs-function">String</span>(<span class="hljs-variable">$1</span>.value2))
 </code></pre>
+<h4><a class="anchor" aria-hidden="true" id="example-3-4"></a><a href="#example-3-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 3</h4>
+<p>You want to sort a collection by character code or language:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$strings1</span>; <span class="hljs-variable">$strings2 </span>: Collection
+<span class="hljs-variable">$strings1</span>:=<span class="hljs-function">New collection</span>(<span class="hljs-string">"Alpha"</span>;<span class="hljs-string">"Charlie"</span>;<span class="hljs-string">"alpha"</span>;<span class="hljs-string">"bravo"</span>;<span class="hljs-string">"Bravo"</span>;<span class="hljs-string">"charlie"</span>)
+
+<span class="hljs-comment">//using the character code:</span>
+<span class="hljs-variable">$strings2</span>:=<span class="hljs-variable">$strings1</span>.<span class="hljs-function">orderByMethod</span>(<span class="hljs-string">"sortCollection"</span>;sk character codes)
+<span class="hljs-comment">// result : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]</span>
+
+<span class="hljs-comment">//using the language:</span>
+<span class="hljs-variable">$strings2</span>:=<span class="hljs-variable">$string1s</span>.<span class="hljs-function">orderByMethod</span>(<span class="hljs-string">"sortCollection"</span>;sk strict)
+<span class="hljs-comment">// result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]</span>
+</code></pre>
+<p>The <strong><em>sortCollection</em></strong> method:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span><span class="hljs-variable">$1Object</span><span class="hljs-keyword">
+var</span><span class="hljs-variable">$2Integer </span><span class="hljs-comment">// sort option</span>
+
+<span class="hljs-variable">$1</span>.result:=(<span class="hljs-function">Compare strings</span>(<span class="hljs-variable">$1</span>.value;<span class="hljs-variable">$1</span>.value2;<span class="hljs-variable">$2</span>)&lt;<span class="hljs-number">0</span>)
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="pop"></a><a href="#pop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.pop()</h2>
 <p><details><summary>History</summary></p>
 <table>
@@ -1766,7 +1785,7 @@ End if</span>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$col</span>:=<span class="hljs-variable">$c</span>.<span class="hljs-function">query</span>(<span class="hljs-string">"dateHired &lt; :1"</span>;(Current date<span class="hljs-number">-90</span>))
   <span class="hljs-comment">//$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-3-4"></a><a href="#example-3-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 3</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-3-5"></a><a href="#example-3-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 3</h4>
 <p>More examples of queries can be found in the <code>dataClass.query()</code> page.</p>
 <h2><a class="anchor" aria-hidden="true" id="reduce"></a><a href="#reduce" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.reduce()</h2>
 <p><details><summary>History</summary></p>
@@ -2157,7 +2176,7 @@ End if</span>
  <span class="hljs-variable">$col</span>:=<span class="hljs-function">New collection</span>(<span class="hljs-number">10</span>;<span class="hljs-number">20</span>)
  <span class="hljs-variable">$col2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">push</span>(<span class="hljs-number">5</span>;<span class="hljs-number">3</span>;<span class="hljs-number">1</span>;<span class="hljs-number">4</span>;<span class="hljs-number">6</span>;<span class="hljs-number">2</span>).<span class="hljs-function">sort</span>() <span class="hljs-comment">//$col2=[1,2,3,4,5,6,10,20]</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-3-5"></a><a href="#example-3-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 3</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-3-6"></a><a href="#example-3-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 3</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col</span>; <span class="hljs-variable">$col2</span>; <span class="hljs-variable">$col3 </span>: Collection
  <span class="hljs-variable">$col</span>:=<span class="hljs-function">New collection</span>(<span class="hljs-number">33</span>;<span class="hljs-number">4</span>;<span class="hljs-number">66</span>;<span class="hljs-number">1111</span>;<span class="hljs-number">222</span>)
  <span class="hljs-variable">$col2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">sort</span>() <span class="hljs-comment">//numerical sort: [4,33,66,222,1111]</span>
