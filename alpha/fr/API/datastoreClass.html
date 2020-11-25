@@ -377,7 +377,7 @@
 <tbody>
 <tr><td>type</td><td>string</td><td><li>&quot;4D&quot;: main datastore, available through ds </li><li>&quot;4D Server&quot;: remote datastore, open with Open datastore</li></td></tr>
 <tr><td>networked</td><td>boolean</td><td><li>True: the datastore is reached through a network connection.</li><li>False: the datastore is not reached through a network connection (local database)</li></td></tr>
-<tr><td>localId</td><td>Texte</td><td>ID of the datastore on the machine. Corresponds to the localId string given with the <code>Open datastore</code> command. Empty string (&quot;&quot;) for main datastore.</td></tr>
+<tr><td>localID</td><td>Texte</td><td>ID of the datastore on the machine. Corresponds to the localId string given with the <code>Open datastore</code> command. Empty string (&quot;&quot;) for main datastore.</td></tr>
 <tr><td>connection</td><td>object</td><td>Object describing the remote datastore connection (not returned for main datastore). Available properties:<p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>Texte</td><td>IP address or name of the remote datastore + &quot;:&quot; + port number</td></tr><tr><td>tls</td><td>boolean</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>Texte</td><td>User authenticated on the remote datastore</td></tr></table></td></tr>
 </tbody>
 </table>

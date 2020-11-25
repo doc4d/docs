@@ -94,7 +94,7 @@ var</span> <span class="hljs-variable">$myFile </span>: 4D.File  <span class="hl
 var</span> <span class="hljs-variable">$myVar </span><span class="hljs-comment">//a variant variable</span>
 </code></pre>
 <p><code>varName</code> ist der Variablenname, er muss mit den <a href="/docs/alpha/de/Concepts/identifiers.html">4D Regeln</a> für Identifier konform sein.<br>
-Diese Syntax unterstützt nur Deklarationen für <a href="#local-process-and-interprocess-variables">lokale und Prozessvariablen</a>, d. h. <a href="#interprocess-variables">Interprozessvariablen</a> und <a href="/docs/alpha/de/Concepts/arrays.html">Arrays</a> sind ausgeschlossen.</p>
+Diese Syntax unterstützt nur Deklarationen für <a href="#lokale-prozess--und-interprozess-variablen">lokale und Prozessvariablen</a>, d. h. <a href="#interprozessvariablen">Interprozessvariablen</a> und <a href="/docs/alpha/de/Concepts/arrays.html">Arrays</a> sind ausgeschlossen.</p>
 <p><code>varTyp</code> kann folgendes sein:</p>
 <ul>
 <li><a href="/docs/alpha/de/Concepts/data-types.html">Datentyp</a>, dann enthält die Variable einen Wert vom deklarierten Typ</li>
@@ -172,7 +172,7 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 </code></pre>
 <p>erstellt die Variable _ MyNumber_ und setzt die Zahl 3 ein. Existiert MyNumber bereits, wird einfach die Zahl 3 eingesetzt.</p>
 <blockquote>
-<p>In der Regel wird davon abgeraten, Variablen <a href="#creating-variables">ohne Deklarieren eines Typs</a> zu erstellen.</p>
+<p>In der Regel wird davon abgeraten, Variablen <a href="#variablen-erstellen">ohne Deklarieren eines Typs</a> zu erstellen.</p>
 </blockquote>
 <p>Natürlich wären Variablen nicht sehr hilfreich, wenn Sie keine Daten daraus erhalten könnten. Sie verwenden wieder den Zuweisungsoperator. Wollen Sie den Wert von MyNumber z.B. in ein Feld mit Namen [Products]Size setzen, schreiben Sie _ MyNumber_ auf die rechte Seite des Zuweisungsoperators:</p>
 <pre><code class="hljs css language-4d">[Products]Size:=MyNumber

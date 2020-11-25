@@ -305,7 +305,7 @@
 <blockquote>
 <p>Use the <code>Data file encryption status</code> command to determine the encryption status of any other data file.</p>
 </blockquote>
-<p><strong>Zurückgegebener Wert</strong></p>
+<p><strong>Rückgabewert</strong></p>
 <p>The returned object contains the following properties:</p>
 <table>
 <thead>
@@ -377,7 +377,7 @@
 <tbody>
 <tr><td>type</td><td>string</td><td><li>&quot;4D&quot;: main datastore, available through ds </li><li>&quot;4D Server&quot;: remote datastore, open with Open datastore</li></td></tr>
 <tr><td>networked</td><td>boolean</td><td><li>True: the datastore is reached through a network connection.</li><li>False: the datastore is not reached through a network connection (local database)</li></td></tr>
-<tr><td>localId</td><td>Text</td><td>ID of the datastore on the machine. Corresponds to the localId string given with the <code>Open datastore</code> command. Empty string (&quot;&quot;) for main datastore.</td></tr>
+<tr><td>localID</td><td>Text</td><td>ID of the datastore on the machine. Corresponds to the localId string given with the <code>Open datastore</code> command. Empty string (&quot;&quot;) for main datastore.</td></tr>
 <tr><td>connection</td><td>object</td><td>Object describing the remote datastore connection (not returned for main datastore). Available properties:<p><table><tr><th>Property</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>hostname</td><td>Text</td><td>IP address or name of the remote datastore + &quot;:&quot; + port number</td></tr><tr><td>tls</td><td>boolean</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>Text</td><td>User authenticated on the remote datastore</td></tr></table></td></tr>
 </tbody>
 </table>
@@ -431,7 +431,7 @@
 <h4><a class="anchor" aria-hidden="true" id="beschreibung-6"></a><a href="#beschreibung-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beschreibung</h4>
 <p>The <code>.getRequestLog()</code> function returns the ORDA requests logged in memory on the client side. The ORDA request logging must have previously been enabled using the <a href="#startrequestlog"><code>.startRequestLog()</code></a> function.</p>
 <p>This function must be called on a remote 4D, otherwise it returns an empty collection. It is designed for debugging purposes in client/server configurations.</p>
-<p><strong>Zurückgegebener Wert</strong></p>
+<p><strong>Rückgabewert</strong></p>
 <p>Collection of stacked request objects. The most recent request has index 0.</p>
 <p>For a description of the ORDA request log format, please refer to the <a href="https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373"><strong>ORDA client requests</strong></a> section.</p>
 <h4><a class="anchor" aria-hidden="true" id="beispiel-5"></a><a href="#beispiel-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beispiel</h4>

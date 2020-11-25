@@ -103,7 +103,7 @@ Form.comp.city:=<span class="hljs-variable">$cityManager</span>.City.<span class
 <p>ORDA データモデルユーザークラスのオブジェクトインスタンスは、それらの親クラスのプロパティや関数を使うことができます:</p>
 <ul>
 <li>Datastore クラスオブジェクトは、<a href="/docs/alpha/ja/API/datastoreClass.html">ORDA Datastore 汎用クラス</a> の関数を呼び出すことができます。</li>
-<li>Datastore クラスオブジェクトは、<a href="/docs/alpha/ja/API/datastoreClass.html">ORDA Datastore 汎用クラス</a> の関数を呼び出すことができます。</li>
+<li>Datastore クラスオブジェクトは、<a href="/docs/alpha/ja/API/dataclassClass.html">ORDA DataClass 汎用クラス</a> の関数を呼び出すことができます。</li>
 <li>EntitySelection クラスオブジェクトは <a href="/docs/alpha/ja/API/entitySelectionClass.html">ORDA EntitySelection 汎用クラス</a> の関数を呼び出すことができます。</li>
 <li>Entity クラスオブジェクトは <a href="/docs/alpha/ja/API/entityClass.html">ORDA Entity 汎用クラス</a> の関数を呼び出すことができます。</li>
 </ul>
@@ -313,16 +313,16 @@ local<span class="hljs-keyword"> Function</span> &lt;functionName&gt;
 <blockquote>
 <p><code>local</code> キーワードは、データモデルクラス関数に対してのみ利用可能です。 <a href="/docs/alpha/ja/Concepts/classes.html">通常のユーザークラス</a> 関数に対して使った場合、キーワードは無視され、コンパイラーはエラーを返します。</p>
 </blockquote>
-<p>最終的にサーバーへのアクセスが必要になっても (ORDAキャッシュが有効期限切れになった場合など) 関数は動作します。 もっとも、それではローカル実行によるパフォーマンスの向上は見込めないため、ローカル関数がサーバー上のデータにアクセスしないことを確認しておくことが推奨されます。 サーバーに対して複数のリクエストをおこなうローカル関数は、サーバー上で実行されて結果だけを返す関数よりも非効率的です。 たとえば、Schools DataClass クラスの次の関数を考えます:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// 2000年以降の生まれの生徒を検索します  </span>
-<span class="hljs-comment">// local キーワードを適切に使用していない例です</span>
+<p>最終的にサーバーへのアクセスが必要になっても (ORDAキャッシュが有効期限切れになった場合など) 関数は動作します。 もっとも、それではローカル実行によるパフォーマンスの向上は見込めないため、ローカル関数がサーバー上のデータにアクセスしないことを確認しておくことが推奨されます。 サーバーに対して複数のリクエストをおこなうローカル関数は、サーバー上で実行されて結果だけを返す関数よりも非効率的です。 For example, consider the following function on the Schools entity class:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Get the youngest students  </span>
+<span class="hljs-comment">// Inappropriate use of local keyword</span>
 local<span class="hljs-keyword"> Function</span> getYoungest<span class="hljs-keyword">
     var</span> <span class="hljs-variable">$0 </span>: Object
     <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.students.<span class="hljs-function">query</span>(<span class="hljs-string">"birthDate &gt;= :1"</span>; <span class="hljs-literal">!2000-01-01!</span>).<span class="hljs-function">orderBy</span>(<span class="hljs-string">"birthDate desc"</span>).<span class="hljs-function">slice</span>(<span class="hljs-number">0</span>; <span class="hljs-number">5</span>)
 </code></pre>
 <ul>
 <li><code>local</code> キーワードを <strong>使わない</strong> 場合、1つのリクエストで結果が得られます。</li>
-<li><code>local</code> キーワードを <strong>使う</strong> 場合、4つのリクエストが必要になります: Schools エンティティの students エンティティセレクションの取得、<code>query()</code> の実行、<code>orderBy()</code> の実行、<code>slice()</code> の実行。 この例では、<code>local</code> キーワードを使用するのは適切ではありません。</li>
+<li><code>local</code> キーワードを <strong>使う</strong> 場合、4つのリクエストが必要になります: Schools エンティティの students エンティティセレクションの取得、<code>query()</code> の実行、<code>orderBy()</code> の実行、<code>slice()</code> の実行。 In this example, using the <code>local</code> keyword is inappropriate.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="例題-5"></a><a href="#例題-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>
 <h4><a class="anchor" aria-hidden="true" id="年齢の計算"></a><a href="#年齢の計算" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>年齢の計算</h4>
@@ -365,8 +365,6 @@ If</span> (<span class="hljs-variable">$status</span>.success)
     <span class="hljs-variable">$status</span>:=Form.student.<span class="hljs-function">save</span>() <span class="hljs-comment">// サーバーを呼び出します</span><span class="hljs-keyword">
 End if</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="unappropriate-use-of-local-keyword"></a><a href="#unappropriate-use-of-local-keyword" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unappropriate use of local keyword</h4>
-<p>This example illustrates the fact that</p>
 <h2><a class="anchor" aria-hidden="true" id="データモデルクラスの管理"></a><a href="#データモデルクラスの管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>データモデルクラスの管理</h2>
 <h3><a class="anchor" aria-hidden="true" id="クラスファイル"></a><a href="#クラスファイル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>クラスファイル</h3>
 <p>ORDA データモデルユーザークラスは、クラスと同じ名称の .4dm ファイルを <a href="/docs/alpha/ja/Concepts/classes.html#クラスファイル">通常のクラスファイルと同じ場所</a> (つまり、Project フォルダー内の <code>/Sources/Classes</code> フォルダー) に追加することで定義されます。 たとえば、<code>Utilities</code> データクラスのエンティティクラスは、<code>UtilitiesEntity.4dm</code> ファイルによって定義されます。</p>
