@@ -153,7 +153,7 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
     - Eine Klassenfunktion ist ein Code Block
     - **Goto definition** auf ein Objekt Member sucht nach Deklarationen der Class Function; Beispiel: "$o.f()" findet "Function f".
     - **Search references** auf Deklarationen von Class Function sucht nach der Funktion, die als Objekt Member verwendet wird; Beispiel: "Function f" findet "$o.f()".
-- Im Runtime-Explorer und Debugger werden Class Functions mit dem Format \<ClassName> Constructor oder \.\ angezeigt.<ClassName> <FunctionName> format.
+- Im Runtime-Explorer und Debugger werden Class Functions mit dem <ClassName> Constructor<ClassName> Constructor oder <ClassName>.<FunctionName><ClassName> <FunctionName> Format angezeigt.
 
 
 ### Eine Klasse löschen
@@ -202,17 +202,17 @@ Der Befehl `Current method name` gibt für eine Class Function zurück: "*\<Clas
 
 Im Code der Anwendung werden Class Functions als Member Methods der Instanz des Objekts aufgerufen und können Parameter empfangen, falls vorhanden. Folgende Syntaxarten werden unterstützt
 
-- Verwendung des Operators `()` Zum Beispiel `myObject.methodName("hello")`.
-- Verwendung der Klasse "Function" als  Member Method
+- Verwendung des Operators `()` For example `myObject.methodName("hello")`.
+- use of a "Function" class member methods
     - `apply()`
     - `call()`
 
 
-> **Thread-safety Warnung:** Ist eine Class Function nicht thread-safe und wird von einer Methode mit der Option "Als preemptive Prozess starten" aufgerufen:  
-> - generiert der Compiler keinen Fehler (im Unterschied zu regulären Methoden),</br> - gibt 4D einen Fehler nur im laufenden Betrieb aus.
+> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:  
+> - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
 
 
-#### Beispiel
+#### Example
 
 ```4d
 // Class: Rectangle
@@ -234,12 +234,12 @@ Function getArea
 C_OBJECT($o)  
 C_REAL($area)
 
-$o:=cs.Rectangle.new()  
-$area:=$o.getArea(50;100) //5000
+$rect:=cs.Rectangle.new(50;100)  
+$area:=$rect.getArea() //5000
 ```
 
 
-### Class Constructor
+### Class constructor
 
 #### Syntax
 
@@ -249,14 +249,14 @@ Class Constructor
 // code
 ```
 
-Mit einer Function Class Constructor, die Parameter zulässt, lässt sich eine Benutzerklasse definieren.
+A class constructor function, which can accept parameters, can be used to define a user class.
 
-Dann wird beim Aufrufen der Member Method `new()` der Klasse der Class Constructor mit den optional in `new()` übergebenen Parametern aufgerufen.
+In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionally passed to the `new()` function.
 
-Für eine Function Class Constructor gibt der Befehl `Current method name` zurück: "*\<ClassName>.constructor*", zum Beispiel "MyClass.constructor".
+For a class constructor function, the `Current method name` command returns: "*\<ClassName>.constructor*", for example "MyClass.constructor".
 
 
-#### Beispiel:
+#### Example:
 
 ```4d
 // Class: MyClass
@@ -286,7 +286,7 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-Das Schlüsselwort `Class extends` dient beim Deklarieren der Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
+The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. Die Unterklasse erbt alle Funktionen von der übergeordneten Klasse.
 
 Für Erweiterungen einer Klasse gelten folgende Regeln:
 
