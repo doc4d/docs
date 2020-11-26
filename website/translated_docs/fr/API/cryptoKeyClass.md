@@ -256,7 +256,7 @@ The returned value is the public key.
 <!-- REF #cryptokey.pem.Syntax -->**.pem** : Text<!-- END REF -->
 
 
-<!-- REF #cryptokey.pem.Summary -->PEM definition of an encryption key to load<!-- END REF -->
+<!-- REF #cryptokey.pem.Summary -->Définition PEM d'une clé de chiffrement à charger<!-- END REF -->
 <!-- END REF -->
 
 
@@ -296,7 +296,7 @@ La `cryptoKey` doit contenir une clé **privée** valide.
 
 #### *Résultat*
 
-The utf8 representation of the *message* string.
+Représentation utf8 de la chaîne *message*.
 <!-- END REF -->
 
 
@@ -330,7 +330,7 @@ Defined only for RSA keys: <!-- REF #cryptokey.size.Summary -->the size of the k
 <!-- REF #cryptokey.type.Syntax -->**.type** : Texte<!-- END REF -->
 
 
-<!-- REF #cryptokey.type.Summary -->Name of the key type<!-- END REF --> - "RSA", "ECDSA", ou "PEM":
+<!-- REF #cryptokey.type.Summary -->Nom du type de clé<!-- END REF --> - "RSA", "ECDSA", ou "PEM":
 
 
 <!-- REF cryptokey.verify().Desc -->
@@ -345,15 +345,15 @@ Defined only for RSA keys: <!-- REF #cryptokey.size.Summary -->the size of the k
 <!-- REF #cryptokey.verify().Syntax -->**.verify**( *message* : Text ; *signature* : Text ; *options* : Object) : object<!-- END REF -->
 
 <!-- REF #cryptokey.verify().Params -->
-| Paramètres | Type  |    | Description                                                                                       |
-| ---------- | ----- | -- | ------------------------------------------------------------------------------------------------- |
-| message    | Texte | -> | Chaîne message utilisée pour générer la signature                                                 |
-| signature  | Texte | -> | Signature to verify, in Base64 or Base64URL representation, depending on `options.encoding` value |
-| options    | Objet | -> | Options de signature                                                                              |
-| Résultat   | Objet | <- | Status of the verification                                                                        |
+| Paramètres | Type  |    | Description                                                                                     |
+| ---------- | ----- | -- | ----------------------------------------------------------------------------------------------- |
+| message    | Texte | -> | Chaîne message utilisée pour générer la signature                                               |
+| signature  | Texte | -> | Signature à vérifier, en représentation Base64 ou Base64URL, selon la valeur `options.encoding` |
+| options    | Objet | -> | Options de signature                                                                            |
+| Résultat   | Objet | <- | Statut de la vérification                                                                       |
 <!-- END REF -->
 
-The `.verify()` function <!-- REF #cryptokey.verify().Summary -->verifies the base64 signature against the utf8 representation of *message*<!-- END REF --> using the `cryptoKey` object keys and provided *options*.
+La fonction `.verify()` <!-- REF #cryptokey.verify().Summary -->vérifie la signature base64 par rapport à la représentation utf8 du *message*<!-- END REF --> à l'aide des clés d'objet `cryptoKey` et des *options* fournies.
 
 La `cryptoKey` doit contenir une clé **publique** valide.
 
@@ -371,7 +371,7 @@ La `cryptoKey` doit contenir une clé **publique** valide.
 
 La fonction retourne un objet status avec la propriété `success` définie sur `true` si le `message` a pu être déchiffré avec succès (c'est-à-dire si la signature est correspondante).
 
-In case the signature couldn't be verified because it was not signed with the same *message*, key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
+Si la signature n'a pas pu être vérifiée car elle n'a pas été signée avec le même *message*, la clé ou l'algorithme, l'objet `status` retourné contient une collection d'erreurs dans `status.errors`.
 
 | Propriété | Type       | Description                                                                 |
 | --------- | ---------- | --------------------------------------------------------------------------- |
