@@ -55,13 +55,13 @@ Exemple :
 Vous pouvez créer deux types de collections :
 
 - standard (non partagées), à l'aide de la commande [`New collection`](API/collectionClass.md#new-collection). Ces collections peuvent être modifiées sans contrôle d'accès spécifique mais ne peuvent pas être partagées entre les process.
-- shared collections, using the [`New shared collection`](API/collectionClass.md#new-shared-collection) command. Le contenu de ces collections peut être partagé entre les process, y compris des process (thread) préemptifs. Access to these collections is controlled by [`Use...End use`](Concepts/shared.md#useend-use) structures.
+- partagées, à l'aide de la commande [`New shared collection`](API/collectionClass.md#new-shared-collection). Le contenu de ces collections peut être partagé entre les process, y compris des process (thread) préemptifs. L'accès à ces collections doit être contrôlé via des structures [`Use...End use`](Concepts/shared.md#useend-use).
 
 Pour plus d'informations, veuillez vous reporter à la page [Objets partagés et collections partagées](Concepts/shared.md).
 
-## Collection functions
+## Fonctions de collection
 
-4D collection references benefit from special class functions (sometimes named *member functions*). Collection functions are listed in the [Class API Reference](API/collectionClass.md) section.
+Les références de collections 4D bénéficient de fonctions de classe spécifiques (souvent appelées *fonctions méthodes*). Les fonctions de collection sont répertoriées dans la section [Class API Reference](API/collectionClass.md).
 
 Par exemple:
 
@@ -70,7 +70,7 @@ $newCol:=$col.copy() //copie de $col vers $newCol
  $col.push(10;100) //ajout de 10 et 100 à la collection
 ```
 
-Some functions return the original collection after modification, so that you can run the calls in a sequence:
+Certaines fonctions retournent la collection d'origine après modification, de manière à ce que vous puissiez enchaîner les appels dans une même séquence :
 
 ```4d
  $col:=New collection(5;20)
