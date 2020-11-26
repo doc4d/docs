@@ -237,18 +237,18 @@ Function</span><span class="hljs-function"> getFullname</span>()-&gt;<span class
 <p>Pour une fonction de classe, la commande <code>Current method name</code> retourne: &quot;<em>&lt;ClassName&gt;.&lt;FunctionName&gt;</em>&quot;, par exemple &quot;MyClass.myMethod&quot;.</p>
 <p>Dans le code de l'application, les fonctions de classe sont appelées en tant que méthodes membres de l'instance d'objet et peuvent recevoir des <a href="#class-function-parameters">paramètres</a> le cas échéant. Les syntaxes suivantes sont prises en charge :</p>
 <ul>
-<li>utilisation de l'opérateur <code>()</code>. For example, <code>myObject.methodName(&quot;hello&quot;)</code></li>
-<li>use of a &quot;Function&quot; class member method:
+<li>utilisation de l'opérateur <code>()</code>. Par exemple, <code>myObject.methodName(&quot;hello&quot;)</code></li>
+<li>utilisations d'une méthode membre de la classe &quot;Function&quot; :
 <ul>
 <li><code>apply()</code></li>
 <li><code>call()</code></li>
 </ul></li>
 </ul>
 <blockquote>
-<p><strong>Thread-safety warning:</strong> If a class function is not thread-safe and called by a method with the &quot;Can be run in preemptive process&quot; attribute: - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.</p>
+<p><strong>Avertissement de sécurité des threads :</strong> Si une fonction de classe n'est pas thread-safe et est appelée par une méthode avec l'attribut &quot;Peut être exécuté en processus préemptif&quot; : - le compilateur ne génère aucune erreur (ce qui est différent des méthodes classiques), - une erreur n'est générée par 4D qu'au moment de l'exécution.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="parameters"></a><a href="#parameters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameters</h4>
-<p>Function parameters are declared using the parameter name and the parameter type, separated by a colon. The parameter name must be compliant with <a href="/docs/alpha/fr/Concepts/object.html#object-property-identifiers">property naming rules</a>. Plusieurs paramètres (et types) sont séparés par des points-virgules (;).</p>
+<h4><a class="anchor" aria-hidden="true" id="paramètres"></a><a href="#paramètres" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Paramètres</h4>
+<p>Les paramètres de fonction sont déclarés à l'aide du nom et du type de paramètre, séparés par deux points. The parameter name must be compliant with <a href="/docs/alpha/fr/Concepts/object.html#object-property-identifiers">property naming rules</a>. Plusieurs paramètres (et types) sont séparés par des points-virgules (;).</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x</span>; <span class="hljs-variable">$y </span>: Variant; <span class="hljs-variable">$z </span>: Integer; <span class="hljs-variable">$xy </span>: Object)
 </code></pre>
 <blockquote>
