@@ -10,17 +10,17 @@ Cette classe est disponible depuis le "class store" de `4D`.
 
 ### Exemple
 
-The following sample code signs and verifies a message using a new ECDSA key pair, for example in order to make a ES256 JSON Web token.
+L'extrait de code suivant illustre la signature et la vérification d'un message à l'aide d'une nouvelle paire de clés ECDSA, afin de créer, par exemple, un token Web JSON ES256.
 
 ```4d
- // Generate a new ECDSA key pair
+ // Générer une nouvelle paire de clés ECDSA
 $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
-  // Get signature as base64
-$message:="hello world"
+  // Obtenir une signature en base64
+$message:="hello world" 
 $signature:=$key.sign($message;New object("hash";"SHA256"))
 
-  // Verify signature
+  // Vérifier la signature
 $status:=$key.verify($message;$signature;New object("hash";"SHA256"))
 ASSERT($status.success)
 ```
@@ -54,7 +54,7 @@ ASSERT($status.success)
 </details>
 
 
-<!-- REF #cryptokey.new().Syntax -->**4D.CryptoKey.new**( *settings* : Object ) -> *cryptoKey* : Object<!-- END REF -->
+<!-- REF #cryptokey.new().Syntax -->**4D.CryptoKey.new**( *settings* : Objet ) -> *cryptoKey* : Objet<!-- END REF -->
 
 <!-- REF #cryptokey.new().Params -->
 | Paramètres | Type  |    | Description                                          |
@@ -89,7 +89,7 @@ The returned `cryptoKey` object encapsulates an encryption key pair. It is a sha
 | v18 R4  | Ajoutées      |
 </details>
 
-<!-- REF #cryptokey.curve.Syntax -->**.curve** : Text<!-- END REF -->
+<!-- REF #cryptokey.curve.Syntax -->**.curve** : Texte<!-- END REF -->
 
 
 
