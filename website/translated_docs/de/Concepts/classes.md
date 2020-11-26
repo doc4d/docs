@@ -147,7 +147,7 @@ Ist in einem Projekt eine Klasse [definiert](#eine-klasse-definieren), wird sie 
 - Objekt [`superclass`](API/classClass.md#superclass) (optional, null, wenn nicht vorhanden)
 - Funktion [`new()`](API/classClass.md#new), um Instanzen der Objekte einer Klasse zu setzen.
 
-Zusätzlich kann ein Objekt Klasse verweisen auf:
+Zusätzlich kann ein Objekt class verweisen auf:
 
 - Ein Objekt [`constructor`](#class-constructor) (optional),
 - Ein Objekt `prototype` mit Objektnamen [function](#function) (optional).
