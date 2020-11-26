@@ -14,17 +14,17 @@ Par exemple, si vous avez un rapport récurrent avec une mise en forme spécifiq
 *   Ajouter / supprimer / modifier des formulaires, des objets de formulaire ainsi que leurs propriétés
 *   Modifier les fichiers de projet (mettre à jour, supprimer)
 
-Macros code supports [class functions](Concepts/classes.md) and [form object properties in JSON](FormObjects/properties_Reference.md) to let you define any custom feature in the Form editor.
+Le code des macros prend en charge les [class functions (fonctions de classe)](Concepts/classes.md) et les [propriétés d'objet de formulaire en JSON](FormObjects/properties_Reference.md) pour vous permettre de définir n'importe quelle fonctionnalité personnalisée dans l'éditeur de formulaire.
 
-Macros can been defined for the host project or for components within the project. Usually, you will create a macro and install it within the components you use for development.
+Des macros peuvent être définies pour le projet hôte ou pour les composants du projet. Habituellement, vous créez une macro et l'installez dans les composants que vous utilisez pour le développement.
 
-When called, a macro overrides any previously specified behaviors.
+Lorsqu'elle est appelée, une macro remplace tous les comportements précédemment spécifiés.
 
-## Hands-on example
+## Exemple pratique
 
-In this short example, you'll see how to create and call a macro that adds a "Hello World!" alert button in the top left corner of your form.
+Dans ce court exemple, vous verrez comment créer et appeler une macro qui ajoute un bouton d'alerte "Hello World!" dans le coin supérieur gauche de votre formulaire.
 
-1. In a `formMacros.json` file within the `Sources` folder of your project, you write:
+1. Dans un fichier `formMacros.json` dans le dossier `Sources` de votre projet, entrez le code suivant :
 
 ```
 {
@@ -36,9 +36,9 @@ In this short example, you'll see how to create and call a macro that adds a "He
 }
 ```
 
-2. Create a 4D class named `AddButton`.
+2. Créez une classe 4D nommée `AddButton`.
 
-3. Within the `AddButton` class, write the following function:
+3. Dans la classe `AddButton`, écrivez la fonction suivante :
 
 ```code4d
 Function onInvoke($editor : Object)->$result : Object
@@ -67,39 +67,39 @@ Function onInvoke($editor : Object)->$result : Object
         "currentPage"; $editor.editor.currentPage)
 ```
 
-You can then call the macro: ![](assets/en/FormEditor/macroex1.png) ![](assets/en/FormEditor/macroex2.png)
+Vous pouvez alors appeler la macro : ![](assets/en/FormEditor/macroex1.png) ![](assets/en/FormEditor/macroex2.png)
 
 
-## Calling macros in the Form editor
+## Appeler des macros dans l'éditeur de formulaires
 
-When macros are defined in your 4D project, you can call a macro using the contextual menu of the Form editor:
+Lorsque des macros sont définies dans votre projet 4D, vous pouvez appeler une macro à l'aide du menu contextuel de l'éditeur de formulaires :
 
 ![](assets/en/FormEditor/macroSelect.png)
 
-This menu is built upon the `formMacros.json` [macro definition file(s)](#location-of-macros). Macros items are sorted in the order macro objects are defined in the file.
+Ce menu est crée selon le(s) [fichier(s) de définition de macro](#location-of-macros) `formMacros.json`. Les éléments de macros sont triés dans l'ordre où les objets de macro sont définis dans le fichier.
 
-When macros exist at both the project and component levels, the following order is applied:
+Lorsque des macros existent au niveau du projet et du composant, l'ordre suivant est appliqué :
 
-1. project macros
-2. component macros
+1. macros de projet
+2. macros de composants
 
-This menu can be called in an empty area or a selection in the form. Selected object are passed to `$editor.currentSelection` or `$editor.target` in the [`onInvoke`](#oninvoke) function of the macro.
+Ce menu peut être appelé dans une zone vide ou une sélection dans le formulaire. Les objets sélectionnés sont passés à `$editor.currentSelection` ou `$editor.target` dans la fonction [`onInvoke`](#oninvoke) de la macro.
 
-A single macro can execute several operations. If selected, the **Undo** feature of the Form editor can be used to reverse macro operations globally.
+Une seule macro peut exécuter plusieurs opérations. Si elle est sélectionnée, la fonction **Annuler** de l'éditeur de formulaires peut être utilisée pour inverser les opérations de macro.
 
-## Location of macro file
+## Emplacement du fichier de macro
 
-All 4D Form Editor macros are defined within a single JSON file per project or component: `FormMacros.json`.
+Toutes les macros de l'éditeur de formulaire 4D sont définies dans un seul fichier JSON par projet ou composant : `FormMacros.json`.
 
-This file must be located in the host or component's **Project** > **Sources** folder:
+Ce fichier doit se trouver dans le dossier **Projet** >**Sources** de l'hôte ou du composant :
 
 ![](assets/en/FormEditor/macroStructure.png)
 
 
 
-## Declaring macros
+## Déclaration de macros
 
-The structure of the `formMacros.json` file is the following:
+La structure du fichier `formMacros.json` est la suivante :
 
 ```js
 {
@@ -112,7 +112,7 @@ The structure of the `formMacros.json` file is the following:
 }
 ```
 
-Here is the description of the JSON file contents:
+Voici la description du contenu du fichier JSON :
 
 <table spaces-before="0" line-breaks-before="2">
   <tr>
@@ -151,7 +151,7 @@ Here is the description of the JSON file contents:
     </td>
     
     <td>
-      list of defined macros
+      liste des macros définis
     </td>
   </tr>
   
@@ -171,7 +171,7 @@ Here is the description of the JSON file contents:
     </td>
     
     <td>
-      macro definition
+      définition de la macro
     </td>
   </tr>
   
@@ -191,7 +191,7 @@ Here is the description of the JSON file contents:
     </td>
     
     <td>
-      macro class name
+      nom de classe de la macro
     </td>
   </tr>
   
@@ -211,12 +211,12 @@ Here is the description of the JSON file contents:
     </td>
     
     <td>
-      (optional) custom value to retrieve in the constructor
+      (optionnel) valeur personnalisée à récupérer dans le constructeur
     </td>
   </tr>
 </table>
 
-Custom properties, when used, are passed to the [constructor](#class-constructor) function of the macro.
+Les propriétés personnalisées, lorsqu'elles sont utilisées, sont passées à la fonction [constructeur](#class-constructor) de la macro.
 
 ### Exemple
 
@@ -275,7 +275,7 @@ Les propriétés personnalisées ajoutées à la [déclaration macro](#declaring
 
 #### Exemple
 
-In the `formMacros.json` file:
+Dans le fichier `formMacros.json` :
 
 ```js
 {
@@ -304,7 +304,7 @@ Class constructor($macro : Object)
 
 | Paramètres | Type  | Description                                      |
 | ---------- | ----- | ------------------------------------------------ |
-| $editor    | Objet | Form properties                                  |
+| $editor    | Objet | Propriétés du formulaire                         |
 | $result    | Objet | Form properties modified by the macro (optional) |
 
 La fonction `onInvoke` est automatiquement exécutée à chaque fois que la macro est appelée.
