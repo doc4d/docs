@@ -4,15 +4,15 @@ title: Form Editor Macros
 ---
 
 
-The 4D Form editor supports macros. A macro is a set of instructions to perform an action or a sequence of actions. When called upon, the macro will execute its instructions and automatically perform the action(s).
+L'éditeur de formulaires 4D prend en charge les macros. Une macro est un ensemble d'instructions permettant de réaliser une action ou une séquence d'actions. Lorsqu'elle est appelée, la macro exécutera ses instructions et, automatiquement, les actions.
 
-For example if you have a recurring report with specific formatting (e.g., certain text must appear in red and certain text must appear in green), you can create a macro to automatically set the color. You can create macros for the 4D Form editor that can:
+Par exemple, si vous avez un rapport récurrent avec une mise en forme spécifique (par exemple, certains textes doivent apparaître en rouge et certains textes en vert), vous pouvez créer une macro pour définir automatiquement la couleur. Vous pouvez créer des macros pour l'éditeur de 4D Form qui peuvent :
 
-*   Create and execute 4D code
-*   Display dialogs
-*   Select form objects
-*   Add / delete / modify forms, form objects as well as their properties
-*   Modify project files (update, delete)
+*   Créer et exécuter du code 4D
+*   Afficher les boîtes de dialogue
+*   Sélectionnez des objets de formulaire
+*   Ajouter / supprimer / modifier des formulaires, des objets de formulaire ainsi que leurs propriétés
+*   Modifier les fichiers de projet (mettre à jour, supprimer)
 
 Macros code supports [class functions](Concepts/classes.md) and [form object properties in JSON](FormObjects/properties_Reference.md) to let you define any custom feature in the Form editor.
 
