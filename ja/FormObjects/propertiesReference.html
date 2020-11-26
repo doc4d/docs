@@ -134,7 +134,7 @@
 <tr><td><strong>g</strong></td><td></td><td></td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesScale.html#graduation-step">graduationStep</a></td><td>目盛の表示単位です。</td><td>最小値: 0<a name="h"></a></td></tr>
 <tr><td><strong>h</strong></td><td></td><td></td></tr>
-<tr><td><a href="/docs/ja/FormObjects/propertiesHeaders.html#header">header</a></td><td>リストボックス列のヘッダーを定義します。</td><td>&quot;text&quot;, &quot;name&quot;, &quot;icon&quot;, &quot;dataSource&quot;, &quot;fontWeight&quot;, &quot;fontStyle&quot;, &quot;tooltip&quot; のプロパティを格納するオブジェクト</td></tr>
+<tr><td><a href="/docs/ja/FormObjects/propertiesHeaders.html#headers">header</a></td><td>リストボックス列のヘッダーを定義します。</td><td>&quot;text&quot;, &quot;name&quot;, &quot;icon&quot;, &quot;dataSource&quot;, &quot;fontWeight&quot;, &quot;fontStyle&quot;, &quot;tooltip&quot; のプロパティを格納するオブジェクト</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesHeaders.html#高さ">headerHeight</a></td><td>フッターの高さを指定します。</td><td>パターン: ^(\\d+)(px|em)?$ (正の小数 + px/em )</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesCoordinatesAndSizing.html#高さ">height</a></td><td>オブジェクトの縦のサイズを指定します。</td><td>最小値: 0</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesBackgroundAndBorder.html#追加の空白の行を非表示">hideExtraBlankRows</a></td><td>追加の空白行を非表示にします。</td><td>true, false</td></tr>
@@ -206,7 +206,7 @@
 <tr><td><a href="/docs/ja/FormObjects/propertiesEntry.html#shortcut">shortcutControl</a></td><td>ショートカットに Controlキーを使用します (Windows)。</td><td>true, false</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesEntry.html#shortcut">shortcutKey</a></td><td>ショートカットに使用する、特別な意味を持つキーの文字あるいは名前</td><td>&quot;[F1]&quot; -&gt; &quot;[F15]&quot;, &quot;[Return]&quot;, &quot;[Enter]&quot;, &quot;[Backspace]&quot;, &quot;[Tab]&quot;, &quot;[Esc]&quot;, &quot;[Del]&quot;, &quot;[Home]&quot;, &quot;[End]&quot;, &quot;[Help]&quot;, &quot;[Page up]&quot;, &quot;[Page down]&quot;, &quot;[left arrow]&quot;, &quot;[right arrow]&quot;, &quot;[up arrow]&quot;, &quot;[down arrow]&quot;</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesEntry.html#shortcut">shortcutShift</a></td><td>ショートカットに Shiftキーを使用します。</td><td>true, false</td></tr>
-<tr><td><a href="/docs/ja/FormObjects/propertiesFooters.html#display-headers">showFooters</a></td><td>列のフッターを表示/非表示にします。</td><td>true, false</td></tr>
+<tr><td><a href="/docs/ja/FormObjects/propertiesHeaders.html#フッターを表示">showFooters</a></td><td>列のフッターを表示/非表示にします。</td><td>true, false</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesScale.html#display-graduation">showGraduations</a></td><td>ラベルの隣に目盛を表示、または非表示にします。</td><td>true, false</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesHeaders.html#ヘッダーを表示">showHeaders</a></td><td>列のヘッダーを表示/非表示にします。</td><td>true, false</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesAppearance.html#show-hidden-characters">showHiddenChars</a></td><td>非表示の文字を表示/非表示にします。</td><td>true, false</td></tr>
@@ -229,8 +229,8 @@
 <tr><td><a href="/docs/ja/FormObjects/propertiesText.html#フォントカラー">stroke</a> (text)<br> <a href="/docs/ja/FormObjects/propertiesBackgroundAndBorder.html#線カラー">stroke</a> (lines)<br> <a href="/docs/ja/FormObjects/propertiesText.html#フォントカラー">stroke</a> (list box)</td><td>オブジェクト内で使用されるフォントや線のカラーを指定します。</td><td>任意の css値; &quot;transparent&quot;; &quot;automatic&quot;</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesBackgroundAndBorder.html#dotted-line-type">strokeDashArray</a></td><td>点線のタイプを、点と白のパターンにより指定します。</td><td>数値配列または文字列</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesBackgroundAndBorder.html#line-width">strokeWidth</a></td><td>線の幅を指定します。</td><td>整数、または 0 (印刷されるフォームにおける最小幅)</td></tr>
-<tr><td><a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#multi-style">style</a></td><td>選択エリアでスタイルの利用を可能にするかどうかを指定します。</td><td>true, false</td></tr>
-<tr><td><a href="/docs/ja/FormObjects/propertiesText.html#style">styledText</a></td><td>ボタンの外観を設定します。 詳細についてはボタンスタイルを参照ください。</td><td>&quot;regular&quot;, &quot;flat&quot;, &quot;toolbar&quot;, &quot;bevel&quot;, &quot;roundedBevel&quot;, &quot;gradientBevel&quot;, &quot;texturedBevel&quot;, &quot;office&quot;, &quot;help&quot;, &quot;circular&quot;, &quot;disclosure&quot;, &quot;roundedDisclosure&quot;, &quot;custom&quot;</td></tr>
+<tr><td><a href="/docs/ja/FormObjects/propertiesTextAndPicture.html#multi-style">style</a></td><td>ボタンの外観を設定します。 詳細についてはボタンスタイルを参照ください。</td><td>&quot;regular&quot;, &quot;flat&quot;, &quot;toolbar&quot;, &quot;bevel&quot;, &quot;roundedBevel&quot;, &quot;gradientBevel&quot;, &quot;texturedBevel&quot;, &quot;office&quot;, &quot;help&quot;, &quot;circular&quot;, &quot;disclosure&quot;, &quot;roundedDisclosure&quot;, &quot;custom&quot;</td></tr>
+<tr><td><a href="/docs/ja/FormObjects/propertiesText.html#style">styledText</a></td><td>選択エリアでスタイルの利用を可能にするかどうかを指定します。</td><td>true, false</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesAnimation.html#マウスアップで戻る">switchBackWhenReleased</a></td><td>ユーザーがボタンをクリックしているとき以外は、一番目のピクチャーが常に表示されます。 ボタンがクリックされると、マウスボタンが放されるまで二番目のピクチャーが表示されます。</td><td>true, false</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesAnimation.html#マウス押下中は自動更新">switchContinuously</a></td><td>ユーザーがマウスボタンを押している間は、各ピクチャーが連続的に (アニメーションのように) 表示されます。</td><td>true, false</td></tr>
 <tr><td><a href="/docs/ja/FormObjects/propertiesAnimation.html#ロールオーバー効果">switchWhenRollover</a></td><td>マウスカーソルが通過すると、ピクチャーボタンの内容が変わります。 カーソルがボタンエリアを離れると、最初のピクチャーが再度表示されます。</td><td>true, false<a name="t"></a></td></tr>
