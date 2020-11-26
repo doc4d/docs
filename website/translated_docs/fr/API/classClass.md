@@ -63,9 +63,9 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.new()` function <!-- REF #classClass.new().Summary -->creates and returns a `cs.className` object which is a new instance of the class on which it is called<!-- END REF -->. This function is automatically available on all classes from the [`cs` class store](Concepts/classes.md#cs).
+La fonction `.new()` <!-- REF #classClass.new().Summary -->crée et returne un objet `cs.className` qui est une nouvelle instance de la classe sur laquelle il est appelé. Cette fonction est automatiquement disponible sur toutes les classes à partir du class store [`cs`](Concepts/classes.md#cs).
 
-If it is called on a non-existing class, an error is returned.
+S'il est appelé sur une classe inexistante, une erreur est retournée.
 
 
 #### Exemple
@@ -76,28 +76,16 @@ Pour créer une nouvelle instance de la classe Person :
 var $person : cs.Person  
 $person:=cs.Person.new() //créer la nouvelle instance  
 //$Person contient les fonctions de la classe
-```
-
-<!-- END REF -->
-
-
-
-<!-- REF classClass.superclass.Desc -->
-## .superclass
+```<!-- END REF --><!-- REF classClass.superclass.Desc -->## .superclass
 
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
 | v18 R3  | Ajoutées      |
 
-</details>
+</details><!-- REF #classClass.superclass.Syntax -->**.superclass** : 4D.Class<!-- END REF -->#### Description
 
-<!-- REF #classClass.superclass.Syntax -->
-**.superclass** : 4D.Class<!-- END REF -->
-
-#### Description
-
-La propriété `.superclass` <!-- REF #classClass.superclass.Summary -->retourne la classe parente de la classe<!-- END REF -->. Une superclasse peut être un objet `4D.Class`, ou un objet `cs.className`. Si la classe n'a pas de classe parente, la propriété renvoie **null**.
+La propriété `.superclass`<!-- REF #classClass.superclass.Summary -->retourne la classe parente de la classe<!-- END REF -->. Une superclasse peut être un objet `4D.Class`, ou un objet `cs.className`. Si la classe n'a pas de classe parente, la propriété renvoie **null**.
 
 Une superclasse de classe utilisateur est déclarée dans une classe à l'aide du mot-clé [`Class extend<superclass>`](Concepts/classes.md#class-extends-classname).
 
@@ -118,7 +106,4 @@ $sup:=cs.MyFile.superclass //File
 
 
 
-**Voir également :** [Super](Concepts/classes.md#super)
-<!-- END REF -->
-
-<style> h2 { background: #d9ebff;}</style>
+**Voir également :** [Super](Concepts/classes.md#super)<!-- END REF --><style> h2 { background: #d9ebff;}</style>
