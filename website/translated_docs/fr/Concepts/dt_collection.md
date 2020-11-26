@@ -5,7 +5,7 @@ title: Collection
 
 Les collections sont des listes ordonnées de valeurs de types similaires ou différents (texte, nombre, date, objet, booléen, collection ou null).
 
-Collection type variables are managed using object notation (see [Syntax basics](Concepts/dt_object.md#syntax-basics)).
+Pour manipuler les variables de type Collection, vous devez utiliser la notation objet (voir [Les bases de la syntaxe](Concepts/dt_object.md#syntax-basics)).
 
 Pour des informations complémentaires sur les collections 4D, passez le numéro (l'indice) de l'élément entre crochets :
 
@@ -13,7 +13,7 @@ Pour des informations complémentaires sur les collections 4D, passez le numéro
 collectionRef[expression]
 ```
 
-You can pass any valid 4D expression which returns a positive integer in *expression*. Voici quelques exemples :
+Vous pouvez passer toute expression 4D valide qui retourne un nombre entier positif dans *expression*. Voici quelques exemples :
 
 ```4d
  myCollection[5]  //accès au 6e élément de la collection
@@ -22,7 +22,7 @@ You can pass any valid 4D expression which returns a positive integer in *expres
 
 **Attention :** N'oubliez pas que la numérotation des éléments de collection débute à 0.
 
-You can assign a value to a collection element or get a collection element value:
+Vous pouvez assigner une valeur à un élément de collection ou lire une valeur d'élément de collection :
 
 ```4d
  myCol[10]:="Mon nouvel élément"
@@ -54,7 +54,7 @@ Exemple :
 
 Vous pouvez créer deux types de collections :
 
-- regular (non-shared) collections, using the [`New collection`](API/collectionClass.md#new-collection) command. Ces collections peuvent être modifiées sans contrôle d'accès spécifique mais ne peuvent pas être partagées entre les process.
+- standard (non partagées), à l'aide de la commande [`New collection`](API/collectionClass.md#new-collection). Ces collections peuvent être modifiées sans contrôle d'accès spécifique mais ne peuvent pas être partagées entre les process.
 - shared collections, using the [`New shared collection`](API/collectionClass.md#new-shared-collection) command. Le contenu de ces collections peut être partagé entre les process, y compris des process (thread) préemptifs. Access to these collections is controlled by [`Use...End use`](Concepts/shared.md#useend-use) structures.
 
 Pour plus d'informations, veuillez vous reporter à la page [Objets partagés et collections partagées](Concepts/shared.md).
