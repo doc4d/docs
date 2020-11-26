@@ -135,7 +135,7 @@ La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir [RFC 3447](http
 
 #### *Résultat*
 
-The function returns a status object with `success` property set to `true` if the *message* could be successfully decrypted.
+La fonction renvoie un objet "status" avec la propriété `success` définie sur `true` si le *message* a pu être déchiffré avec succès.
 
 | Propriété | Type       | Description                                                                 |
 | --------- | ---------- | --------------------------------------------------------------------------- |
@@ -143,7 +143,7 @@ The function returns a status object with `success` property set to `true` if th
 | result    | Texte      | Message déchiffré et décodé à l'aide de `options.encodingDecrypted`         |
 | errors    | collection | Si `success` est mis sur `false`, il peut contenir une collection d'erreurs |
 
-In case the *message* couldn't be decrypted because it was not encrypted with the same key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
+Si le *message* n'a pas pu être déchiffré car il n'a pas été chiffré avec la même clé ou le même algorithme, l'objet `status` retourné contient une collection d'erreurs dans `status.errors`.
 <!-- END REF -->
 
 
@@ -160,14 +160,14 @@ In case the *message* couldn't be decrypted because it was not encrypted with th
 <!-- REF #cryptokey.encrypt().Syntax -->**.encrypt**( *message* : Text ; *options* : Object ) : Text<!-- END REF -->
 
 <!-- REF #cryptokey.encrypt().Params -->
-| Paramètres | Type  |    | Description                                                                   |
-| ---------- | ----- | -- | ----------------------------------------------------------------------------- |
-| message    | Texte | -> | Message string to be encoded using `options.encodingDecrypted` and encrypted. |
-| options    | Objet | -> | Options de chiffrement                                                        |
-| Résultat   | Texte | <- | Message chiffré et encodé à l'aide de `options.encodingEncrypted`             |
+| Paramètres | Type  |    | Description                                                                     |
+| ---------- | ----- | -- | ------------------------------------------------------------------------------- |
+| message    | Texte | -> | Chaine message à chiffrer à l'aide de `options.encodingDecrypted` et encrypted. |
+| options    | Objet | -> | Options de chiffrement                                                          |
+| Résultat   | Texte | <- | Message chiffré et encodé à l'aide de `options.encodingEncrypted`               |
 <!-- END REF -->
 
-The `.encrypt()` function <!-- REF #cryptokey.encrypt().Summary -->encrypts the *message* parameter using the **public** key<!-- END REF -->. L'algorithme utilisé dépend du type de clé.
+La fonction `.encrypt()` <!-- REF #cryptokey.encrypt().Summary -->crypte le paramètre *message* à l'aide de la clé **publique**<!-- END REF -->. L'algorithme utilisé dépend du type de clé.
 
 La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
@@ -182,7 +182,7 @@ La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir [RFC 3447](http
 
 #### *Résultat*
 
-The returned value is an encrypted message.
+La valeur retournée est un message chiffré.
 <!-- END REF -->
 
 
@@ -207,11 +207,11 @@ The returned value is an encrypted message.
 | Résultat   | Texte | <- | Clé primaire au format PEM |
 <!-- END REF -->
 
-The `.getPrivateKey()` function  <!-- REF #cryptokey.getPrivateKey().Summary -->returns the private key of the `cryptoKey` object<!-- END REF --> in PEM format, or an empty string if none is available.
+La fonction `.getPrivateKey()`  <!-- REF #cryptokey.getPrivateKey().Summary -->retourne la clé privée de l'objet `cryptoKey`<!-- END REF --> au format PEM, ou une chaîne vide si aucune n'est disponible.
 
 #### *Résultat*
 
-The returned value is the private key.
+La valeur retournée est la clé privée.
 <!-- END REF -->
 
 
@@ -235,11 +235,11 @@ The returned value is the private key.
 <!-- END REF -->
 
 
-The `.getPublicKey()` function <!-- REF #cryptokey.getPublicKey().Summary -->returns the public key of the `cryptoKey` object<!-- END REF --> in PEM format, or an empty string if none is available.
+La fonction `.getPublicKey()` <!-- REF #cryptokey.getPublicKey().Summary -->retourne la clé publique de l'objet `cryptoKey`<!-- END REF --> au format PEM, ou une chaîne vide si aucune n'est disponible.
 
 #### *Résultat*
 
-The returned value is the public key.
+La valeur retournée est la clé publique.
 <!-- END REF -->
 
 ---
@@ -273,14 +273,14 @@ The returned value is the public key.
 <!-- REF #cryptokey.sign().Syntax -->.**sign** (*message* : Text ; *options* : Text) : Text<!-- END REF -->
 
 <!-- REF #cryptokey.sign().Params -->
-| Paramètres | Type  |    | Description                                                                     |
-| ---------- | ----- | -- | ------------------------------------------------------------------------------- |
-| message    | Texte | -> | Chaîne message à signer                                                         |
-| options    | Objet | -> | Options de signature                                                            |
-| Résultat   | Texte | <- | Signature in Base64 or Base64URL representation, depending on "encoding" option |
+| Paramètres | Type  |    | Description                                                                |
+| ---------- | ----- | -- | -------------------------------------------------------------------------- |
+| message    | Texte | -> | Chaîne message à signer                                                    |
+| options    | Objet | -> | Options de signature                                                       |
+| Résultat   | Texte | <- | Signature en représentation Base64 ou Base64URL, selon l'option "encoding" |
 <!-- END REF -->
 
-The `.sign()` function <!-- REF #cryptokey.sign().Summary -->signs the utf8 representation of a *message* string<!-- END REF --> using the `cryptoKey` object keys and provided *options*. Elle retourne sa signature au format base64 ou base64URL, selon la valeur de l'attribut `options.encoding` que vous avez passé.
+La fonction `.sign()` <!-- REF #cryptokey.sign().Summary -->signe la représentation utf8 de la chaîne *message*<!-- END REF --> à l'aide des clés d'objet `cryptoKey` et des *options* fournies. Elle retourne sa signature au format base64 ou base64URL, selon la valeur de l'attribut `options.encoding` que vous avez passé.
 
 La `cryptoKey` doit contenir une clé **privée** valide.
 
