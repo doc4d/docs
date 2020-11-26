@@ -12,7 +12,7 @@ The Form editor interface displays each JSON form in its own window, which has b
 
 ### Showing/hiding Form elements
 
-You can show or hide most interface elements in the Form editor. This feature allows you to show only the elements that you need to create or view in a form, or only the tools that you want to use. This option is always applied to the Form editor’s current window. For example, it is useful to show the output control lines when you are working on an output form.
+Vous pouvez choisir d’afficher ou de masquer les éléments de la fenêtre de l’éditeur. Cette fonctionnalité permet de n’afficher que les éléments nécessaires à la création ou à la visualisation du formulaire, ou de choisir les outils que vous souhaitez utiliser. This option is always applied to the Form editor’s current window. Par exemple, il est généralement inutile d’afficher les taquets et leurs libellés lorsque vous travaillez avec un formulaire entrée.
 
 To show or hide an element in the Form editor:
 
