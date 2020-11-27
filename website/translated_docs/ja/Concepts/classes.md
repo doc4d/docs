@@ -202,27 +202,28 @@ Function getAge
 
 アプリケーションのコード内では、クラスメソッドはオブジェクトインスタンスのメンバーメソッドとして呼び出され、引数を受け取ることができます。 次のシンタックスがサポートされています:
 
-- `()` 演算子の使用 For example `myObject.methodName("hello")`.
-- use of a "Function" class member methods
+- `()` 演算子の使用 例: `myObject.methodName("hello")`.
+- "Function" クラスメンバーメソッドの使用:
     - `apply()`
     - `call()`
 
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute:  
-> - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **スレッドセーフに関する警告:**クラス関数がスレッドセーフではないのに、"プリエンプティブプロセスで実行可能" なメソッドから呼び出された場合:  
+> - 普通のメソッドの場合とは異なり、コンパイラーはエラーを生成しません。  
+> - ランタイムにおいてのみ、4D はエラーを生成します。
 
 
-#### Example
+#### 例題
 
 ```4d
-// Class: Rectangle
+// クラス: Rectangle
 Class Constructor
     C_LONGINT($1;$2)
     This.name:="Rectangle"
     This.height:=$1
     This.width:=$2
 
-// Function definition
+// 関数定義
 Function getArea
     C_LONGINT($0)
     $0:=(This.height)*(This.width)
@@ -230,7 +231,7 @@ Function getArea
 ```
 
 ```4d
-// In a project method
+// プロジェクトメソッフォにて
 C_OBJECT($o)  
 C_REAL($area)
 
@@ -239,36 +240,36 @@ $area:=$rect.getArea() //5000
 ```
 
 
-### Class constructor
+### Class Constructor
 
-#### Syntax
+#### シンタックス
 
 ```js
-// Class: MyClass
+// クラス: MyClass
 Class Constructor
-// code
+// コード
 ```
 
-A class constructor function, which can accept parameters, can be used to define a user class.
+クラスコンストラクター関数を使って、ユーザークラスを定義することができます。このコンストラクターは 引数 を受け取ることができます。
 
-In that case, when you call the `new()` class member method, the class constructor is called with the parameters optionally passed to the `new()` function.
+クラスコンストラクターが定義されていると、`new()` クラスメンバーメソッドを呼び出したときに、当該コンストラクターが呼び出されます (引数を指定している場合は `new()` 関数に渡します)。
 
-For a class constructor function, the `Current method name` command returns: "*\<ClassName>.constructor*", for example "MyClass.constructor".
+クラスコンストラクターメソッドの場合には、`Current method name` コマンドは次を返します: "*\<ClassName>.constructor*" (例: "MyClass.constructor")。
 
 
-#### Example:
+#### 例題:
 
 ```4d
-// Class: MyClass
-// Class constructor of MyClass
+// クラス: MyClass
+// MyClass のクラスコンストラクター
 Class Constructor
 C_TEXT($1)
 This.name:=$1
 ```
 
 ```4d
-// In a project method
-// You can instantiate an object
+// プロジェクトメソッドにて
+// オブジェクトをインスタンス化します
 C_OBJECT($o)
 $o:=cs.MyClass.new("HelloWorld")  
 // $o = {"name":"HelloWorld"}
@@ -279,14 +280,14 @@ $o:=cs.MyClass.new("HelloWorld")
 
 ### Class extends \<ClassName>
 
-#### Syntax
+#### シンタックス
 
 ```js
-// Class: ChildClass
+// クラス: ChildClass
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. この子クラスは、親クラスのすべての機能を継承します。
+クラス宣言において `Class extends`  キーワードを使うと、別のユーザークラスの子ユーザークラスを作成することができます。 この子クラスは、親クラスのすべての機能を継承します。
 
 クラス継承は次のルールに沿っている必要があります:
 
