@@ -8,7 +8,7 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 *   [ds](#ds): a shortcut to the main datastore
 *   [Open datastore](#open-datastore): to open any remote datastore
 
-### Summary
+### Sommaire
 
 |                                                                                                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,7 +92,7 @@ Using the main datastore on the 4D database:
 ```
 
 ```4d
-  //getFirst method
+  //méthode getFirst
   //getFirst(localID;dataclass) -> entity
  #DECLARE( $localId : Text; $dataClassName : Text ) -> $entity : 4D.Entity
 
@@ -307,7 +307,7 @@ The `.encryptionStatus()` function <!-- REF #datastoreClass.encryptionStatus().S
 > Use the `Data file encryption status` command to determine the encryption status of any other data file.
 
 
-**Returned value**
+**Valeur retournée**
 
 The returned object contains the following properties:
 
@@ -384,7 +384,7 @@ The `.getInfo()` function <!-- REF #datastoreClass.getInfo().Summary -->returns 
 | ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D": main datastore, available through ds </li><li>"4D Server": remote datastore, open with Open datastore</li>                                                                                                             |
 | networked  | boolean | <li>True: the datastore is reached through a network connection.</li><li>False: the datastore is not reached through a network connection (local database)</li>                                                                                                             |
-| localId    | Texte   | ID of the datastore on the machine. Corresponds to the localId string given with the `Open datastore` command. Empty string ("") for main datastore.           |
+| localID    | Texte   | ID of the datastore on the machine. Corresponds to the localId string given with the `Open datastore` command. Empty string ("") for main datastore.           |
 | connection | object  | Object describing the remote datastore connection (not returned for main datastore). Available properties:<p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>Texte</td><td>IP address or name of the remote datastore + ":" + port number</td></tr><tr><td>tls</td><td>boolean</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>Texte</td><td>User authenticated on the remote datastore</td></tr></table> |
 
 *   If the `.getInfo()` function is executed on a 4D Server or 4D single-user, `networked` is False.
@@ -451,7 +451,7 @@ The `.getRequestLog()` function <!-- REF #datastoreClass.getRequestLog().Summary
 
 This function must be called on a remote 4D, otherwise it returns an empty collection. It is designed for debugging purposes in client/server configurations.
 
-**Returned value**
+**Valeur retournée**
 
 Collection of stacked request objects. The most recent request has index 0.
 
@@ -686,6 +686,7 @@ You can nest several transactions (sub-transactions). Each transaction or sub-tr
  
 
 <!-- END REF -->
+
 
 
 

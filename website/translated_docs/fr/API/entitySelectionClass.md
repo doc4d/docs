@@ -1,13 +1,13 @@
 ---
 id: entitySelectionClass
-title: Entity Selections
+title: EntitySelection
 ---
 
 
 An entity selection is an object containing one or more reference(s) to [entities](ORDA/dsMapping.md#entity) belonging to the same [Dataclass](ORDA/dsMapping.md#dataclass). An entity selection can contain 0, 1 or X entities from the dataclass -- where X can represent the total number of entities contained in the dataclass.
 
 
-### Summary
+### Sommaire
 
 |                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -131,6 +131,7 @@ If the attribute does not exist in the entity selection, an error is returned.
 #### Exemple 1
 
 Projection of storage values:
+
 
 ```4d
  var $firstNames : Collection
@@ -1034,7 +1035,7 @@ We want to find the highest salary among all the female employees:
 </details>
 
 <!-- REF #entitySelectionClass.min().Syntax -->
-**.min()** : any<!-- END REF -->
+**.min**( *attributePath* : Text ) : any<!-- END REF -->
 
 <!-- REF #entitySelectionClass.min().Params -->
 | Paramètres    | Type  |    | Description                                      |
