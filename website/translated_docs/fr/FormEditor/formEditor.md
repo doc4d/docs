@@ -10,9 +10,9 @@ title: Éditeur de formulaire
 
 The Form editor interface displays each JSON form in its own window, which has both an object and tool bar. You can have several forms open at the same time. The rulers on the side and bottom help you position objects in the form. You can change measurement units so that it displays inches, centimeters, or pixels.
 
-### Showing/hiding Form elements
+### Afficher/masquer des éléments du formulaire
 
-Vous pouvez choisir d’afficher ou de masquer les éléments de la fenêtre de l’éditeur. Cette fonctionnalité permet de n’afficher que les éléments nécessaires à la création ou à la visualisation du formulaire, ou de choisir les outils que vous souhaitez utiliser. This option is always applied to the Form editor’s current window. Par exemple, il est généralement inutile d’afficher les taquets et leurs libellés lorsque vous travaillez avec un formulaire entrée.
+Vous pouvez choisir d’afficher ou de masquer les éléments de la fenêtre de l’éditeur. Cette fonctionnalité permet de n’afficher que les éléments nécessaires à la création ou à la visualisation du formulaire, ou de choisir les outils que vous souhaitez utiliser. Cette option est toujours appliquée à la fenêtre courante de l’éditeur de formulaires. Par exemple, il est généralement inutile d’afficher les taquets et leurs libellés lorsque vous travaillez avec un formulaire entrée.
 
 Pour afficher ou masquer un élément de l’éditeur de formulaires :
 
