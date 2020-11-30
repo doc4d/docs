@@ -87,7 +87,7 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#4dcryptokeynew"><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) -&gt; <em>cryptoKey</em> : Object</a><p>    creates a new object encapsulating an encryption key pair</td></tr>
+<tr><td><a href="#4dcryptokeynew"></a><p>    </td></tr>
 <tr><td><a href="#curve"><strong>.curve</strong> : Text</a><p>    normalised curve name of the key.</td></tr>
 <tr><td><a href="#decrypt"><strong>.decrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Object</a><p>    decrypts the <em>message</em> parameter using the <strong>private</strong> key</td></tr>
 <tr><td><a href="#encrypt"><strong>.encrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Text</a><p>    encrypts the <em>message</em> parameter using the <strong>public</strong> key</td></tr>
@@ -95,11 +95,11 @@
 <tr><td><a href="#getpublickey"><strong>.getPublicKey( )</strong> : Text</a><p>    returns the public key of the <code>cryptoKey</code> object</td></tr>
 <tr><td><a href="#sign">.<strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text</a><p>    signs the utf8 representation of a <em>message</em> string</td></tr>
 <tr><td><a href="#size"><strong>.size</strong> : Integer</a><p>    the size of the key in bits</td></tr>
-<tr><td><a href="#type"><strong>.type</strong> : Text</a><p>    Name of the key type</td></tr>
+<tr><td><a href="#type"><strong>.type</strong> : Text</a><p>    Name of the key type - &quot;RSA&quot;, &quot;ECDSA&quot;, &quot;PEM&quot;</td></tr>
 <tr><td><a href="#verify"><strong>.verify</strong>( <em>message</em> : Text ; <em>signature</em> : Text ; <em>options</em> : Object) : object</a><p>    verifies the base64 signature against the utf8 representation of <em>message</em></td></tr>
 </tbody>
 </table>
-<h2><a class="anchor" aria-hidden="true" id="4dcryptokeynew-"></a><a href="#4dcryptokeynew-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D.CryptoKey.new( )</h2>
+<h2><a class="anchor" aria-hidden="true" id="4dcryptokeynew"></a><a href="#4dcryptokeynew" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D.CryptoKey.new()</h2>
 <p><details><summary>履歴</summary></p>
 <table>
 <thead>
@@ -110,27 +110,28 @@
 </tbody>
 </table>
 <p></details></p>
-<p><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) -&gt; <em>cryptoKey</em> : Object</p>
+<p><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) : 4D.CryptoKey</p>
 <table>
 <thead>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td>settings</td><td>オブジェクト</td><td>-&gt;</td><td>キーペアを生成・ロードするための設定</td></tr>
-<tr><td>cryptoKey</td><td>オブジェクト</td><td>&lt;-</td><td>暗号化キーペアをカプセル化したオブジェクト</td></tr>
+<tr><td>result</td><td>4D.CryptoKey</td><td>&lt;-</td><td>Object encapsulating an encryption key pair</td></tr>
 </tbody>
 </table>
-<p>The <code>4D.CryptoKey.new()</code> function creates a new object encapsulating an encryption key pair, based upon the <em>settings</em> object parameter. 新規の RSA または ECDSA キーを生成するほか、PEM 形式の既存のキーペアをロードすることができます。</p>
+<p>|</p>
+<p>The <code>4D.CryptoKey.new()</code> function creates a new <code>4D.CryptoKey</code> object encapsulating an encryption key pair, based upon the <em>settings</em> object parameter. 新規の RSA または ECDSA キーを生成するほか、PEM 形式の既存のキーペアをロードすることができます。</p>
 <h4><a class="anchor" aria-hidden="true" id="settings"></a><a href="#settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>settings</em></h4>
 <table>
 <thead>
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#type">type</a></td><td>text</td><td>Type of the key: &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot;:<li>&quot;RSA&quot;: generates an RSA key pair, using <code>settings.size</code> as <a href="#size">.size</a>.</li><li>&quot;ECDSA&quot;: generates an Elliptic Curve Digital Signature Algorithm key pair, using <code>settings.curve</code> as <a href="#curve">.curve</a>. ECDSA キーは署名だけに使用されるもので、暗号化には使用できないことに留意してください。</li><li>&quot;PEM&quot;: loads a key pair definition in PEM format, using <code>settings.pem</code> as <a href="#pem">.pem</a>.</li></td></tr>
-<tr><td><a href="#size">size</a></td><td>integer</td><td>RSA キーのサイズ (ビット単位)。 デフォルト値: 2048</td></tr>
-<tr><td><a href="#curve">curve</a></td><td>text</td><td>ECDSA 曲線名。 通常、ES256 (デフォルト) の場合は &quot;prime256v1&quot;, ES384 の場合は &quot;secp384r1&quot;, ES512 の場合は &quot;secp521r1&quot;</td></tr>
-<tr><td><a href="#pem">pem</a></td><td>text</td><td>ロードする PEM 形式の暗号化キー。 秘密鍵を渡した場合、RSA または ECDSA の公開鍵は秘密鍵から推定されます。</td></tr>
+<tr><td><a href="#curve">curve</a></td><td>text</td><td>Name of ECDSA curve</td></tr>
+<tr><td><a href="#pem">pem</a></td><td>text</td><td>PEM definition of an encryption key to load</td></tr>
+<tr><td><a href="#size">size</a></td><td>integer</td><td>Size of RSA key in bits</td></tr>
+<tr><td><a href="#type">type</a></td><td>text</td><td>Type of the key: &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot;</li></td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="cryptokey"></a><a href="#cryptokey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>cryptoKey</em></h4>
@@ -292,7 +293,7 @@
 </table>
 <p></details></p>
 <p><strong>.pem</strong> : Text</p>
-<p>PEM definition of an encryption key to load</p>
+<p>PEM definition of an encryption key to load. 秘密鍵を渡した場合、RSA または ECDSA の公開鍵は秘密鍵から推定されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="sign"></a><a href="#sign" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.sign()</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -356,7 +357,7 @@
 </table>
 <p></details></p>
 <p><strong>.type</strong> : Text</p>
-<p>Name of the key type - &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot;:</p>
+<p>Name of the key type - &quot;RSA&quot;, &quot;ECDSA&quot;, &quot;PEM&quot;<li>&quot;RSA&quot;: an RSA key pair, using <code>settings.size</code> as <a href="#size">.size</a>.</li><li>&quot;ECDSA&quot;: an Elliptic Curve Digital Signature Algorithm key pair, using <code>settings.curve</code> as <a href="#curve">.curve</a>. ECDSA キーは署名だけに使用されるもので、暗号化には使用できないことに留意してください。</li><li>&quot;PEM&quot;: a key pair definition in PEM format, using <code>settings.pem</code> as <a href="#pem">.pem</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="verify"></a><a href="#verify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.verify()</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -406,7 +407,7 @@
 </tbody>
 </table>
 <style> h2 { background: #d9ebff;}</style>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/API/collectionClass.html"><span class="arrow-prev">← </span><span>コレクション</span></a><a class="docs-next button" href="/docs/ja/API/dataclassClass.html"><span class="function-name-prevnext">DataClass</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#4dcryptokeynew-">4D.CryptoKey.new( )</a></li><li><a href="#curve">.curve</a></li><li><a href="#decrypt">.decrypt()</a></li><li><a href="#encrypt">.encrypt()</a></li><li><a href="#getprivatekey">.getPrivateKey()</a></li><li><a href="#getpublickey">.getPublicKey()</a></li><li><a href="#pem">.pem</a></li><li><a href="#sign">.sign()</a></li><li><a href="#size">.size</a></li><li><a href="#type">.type</a></li><li><a href="#verify">.verify()</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/API/collectionClass.html"><span class="arrow-prev">← </span><span>コレクション</span></a><a class="docs-next button" href="/docs/ja/API/dataclassClass.html"><span class="function-name-prevnext">DataClass</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#4dcryptokeynew">4D.CryptoKey.new()</a></li><li><a href="#curve">.curve</a></li><li><a href="#decrypt">.decrypt()</a></li><li><a href="#encrypt">.encrypt()</a></li><li><a href="#getprivatekey">.getPrivateKey()</a></li><li><a href="#getpublickey">.getPublicKey()</a></li><li><a href="#pem">.pem</a></li><li><a href="#sign">.sign()</a></li><li><a href="#size">.size</a></li><li><a href="#type">.type</a></li><li><a href="#verify">.verify()</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2020 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
