@@ -321,11 +321,11 @@ Pour modifier le plan d'un objet, sélectionnez-le et choisissez :
 ![](assets/en/FormEditor/level2.png)
 > When several objects are superimposed, the **Ctrl+Shift+click** / **Command+Shift+click** shortcut can be used to select each object successively by going down a layer with each click.
 
-When ordering different levels, 4D always goes from the background to the foreground. As a result, the previous level moves the selection of objects one level towards the background. The next level moves the selection one level towards the foreground of the form.
+Pour ordonner les différents plans, 4D va toujours de l’arrière-plan vers l’avant-plan. Par conséquent, le plan précédent fait reculer la sélection d’objets d’un plan vers l’arrière-plan du formulaire. Le plan suivant fait avancer la sélection d’objets d’un plan vers l’avant-plan du formulaire.
 
 ### Data entry order
 
-The data entry order is the order in which fields, subforms, and other active objects are selected as you hit the **Tab** or the **Carriage return** key in an input form. It is possible to move through the form in the opposite direction (reverse data entry order) by pressing the **Shift+Tab** or **Shift+Carriage** return keys.
+L’ordre de saisie est l’ordre dans lequel les champs, les sous-formulaires et les autres objets actifs sont sélectionnés lorsque vous appuyez sur la touche **Tabulation** ou **Retour chariot** dans un formulaire. Il est possible de parcourir le formulaire dans le sens inverse de l’ordre de saisie en appuyant sur les touches **Maj+Tabulation** ou **Maj+Retour chariot**.
 
 > You can change the entry order at runtime using the `FORM SET ENTRY ORDER` and `FORM GET ENTRY ORDER` commands.
 
