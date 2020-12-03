@@ -1028,20 +1028,35 @@
 </blockquote>
 <p><strong>Result</strong></p>
 <p>The object returned by <code>.save()</code> contains the following properties:</p>
-<p>| Property         |  | Type    | Description                                             |
-| ---------------- |  | ------- | ------------------------------------------------------- |
-| success          |  | boolean | True if the save action is successful, False otherwise. |
-|                  |  |         | <strong><em>Available only if <code>dk auto merge</code> option is used</em></strong>: |
-| autoMerged       |  | boolean | True if an auto merge was done, False otherwise.        |
-|                  |  |         | <strong><em>Available only in case of error</em></strong>:                  |
-| status(*)     |  | number  | Error code, see below                                   |
-| statusText(*) |  | text    | Description of the error, see below                     |
-|                  |  |         | <strong><em>Available only in case of pessimistic lock error</em></strong>: |
-| lockKindText     |  | text    | &quot;Locked by record&quot;                                      |
-| lockInfo         |  | object  | Information about the lock                              |
-origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on the machine| ||user4d_id|    text|   User name in the 4D database directory| ||host_name |text   |Machine name| ||task_name|    text|   Process name| ||client_version|   text||</p>
-<p>||||<strong><em>Available only in case of serious error</em></strong> (serious error - can be trying to duplicate a primary key, disk full...):| |errors ||  collection of objects|| ||message|  text    |Error message| ||componentSignature|   text|   Internal component signature (e.g. &quot;dmbg&quot; stands for the database component)| ||errCode|  number| Error code|</p>
-<p>(*) The following values can be returned in the status and statusText properties of Result object in case of error:</p>
+<table>
+<thead>
+<tr><th>Property</th><th></th><th>Type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>success</td><td></td><td>boolean</td><td>True if the save action is successful, False otherwise.</td></tr>
+<tr><td></td><td></td><td></td><td><strong><em>Available only if <code>dk auto merge</code> option is used</em></strong>:</td></tr>
+<tr><td>autoMerged</td><td></td><td>boolean</td><td>True if an auto merge was done, False otherwise.</td></tr>
+<tr><td></td><td></td><td></td><td><strong><em>Available only in case of error</em></strong>:</td></tr>
+<tr><td>status</td><td></td><td>number</td><td>Error code, <a href="#status-and-statustext">see below</a></td></tr>
+<tr><td>statusText</td><td></td><td>text</td><td>Description of the error, <a href="#status-and-statustext">see below</a></td></tr>
+<tr><td></td><td></td><td></td><td><strong><em>Available only in case of pessimistic lock error</em></strong>:</td></tr>
+<tr><td>lockKindText</td><td></td><td>text</td><td>&quot;Locked by record&quot;</td></tr>
+<tr><td>lockInfo</td><td></td><td>object</td><td>Information about the lock origin</td></tr>
+<tr><td></td><td>task_id</td><td>number</td><td>Process id</td></tr>
+<tr><td></td><td>user_name</td><td>text</td><td>Session user name on the machine</td></tr>
+<tr><td></td><td>user4d_id</td><td>text</td><td>User name in the 4D database directory</td></tr>
+<tr><td></td><td>host_name</td><td>text</td><td>Machine name</td></tr>
+<tr><td></td><td>task_name</td><td>text</td><td>Process name</td></tr>
+<tr><td></td><td>client_version</td><td>text</td><td></td></tr>
+<tr><td></td><td></td><td></td><td><strong><em>Available only in case of serious error</em></strong> (serious error - can be trying to duplicate a primary key, disk full...):</td></tr>
+<tr><td>errors</td><td></td><td>collection of objects</td><td></td></tr>
+<tr><td></td><td>message</td><td>text</td><td>Error message</td></tr>
+<tr><td></td><td>componentSignature</td><td>text</td><td>Internal component signature (e.g. &quot;dmbg&quot; stands for the database component)</td></tr>
+<tr><td></td><td>errCode</td><td>number</td><td>Error code</td></tr>
+</tbody>
+</table>
+<h5><a class="anchor" aria-hidden="true" id="status-and-statustext"></a><a href="#status-and-statustext" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>status and statusText</h5>
+<p>The following values can be returned in the <code>status</code> and <code>statusText</code> properties of Result object in case of error:</p>
 <table>
 <thead>
 <tr><th>Constant</th><th>Value</th><th>Comment</th></tr>

@@ -305,6 +305,7 @@
 <tr><th>Version</th><th>Modifications</th></tr>
 </thead>
 <tbody>
+<tr><td>v18 R6</td><td>Returns undefined if empty entity selection</td></tr>
 <tr><td>v17</td><td>Ajoutées</td></tr>
 </tbody>
 </table>
@@ -316,7 +317,7 @@
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texte</td><td style="text-align:center">-&gt;</td><td>Attribute path to be used for calculation</td></tr>
-<tr><td>Résultat</td><td>Réel</td><td style="text-align:center">&lt;-</td><td>Arithmetic mean (average) of entity attribute values (Null if empty entity selection)</td></tr>
+<tr><td>Résultat</td><td>Réel</td><td style="text-align:center">&lt;-</td><td>Arithmetic mean (average) of entity attribute values (Undefined if empty entity selection)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-4"></a><a href="#description-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
@@ -326,11 +327,11 @@
 <blockquote>
 <p>Date values are converted to numerical values (seconds) and used to calculate the average.</p>
 </blockquote>
-<p><code>.average()</code> returns null if the entity selection is empty.</p>
+<p><code>.average()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> does not contain numerical values.</p>
 <p>An error is returned if:</p>
 <ul>
-<li><em>attributePath</em> is a related attribute or does not contain numerical values,</li>
-<li><em>attributePath</em> is not found in the entity selection dataclass.</li>
+<li><em>attributePath</em> is a related attribute,</li>
+<li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="exemple-3"></a><a href="#exemple-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
 <p>We want to obtain a list of employees whose salary is higher than the average salary:</p>
@@ -831,6 +832,7 @@
 </thead>
 <tbody>
 <tr><td>v17</td><td>Ajoutées</td></tr>
+<tr><td>v18 R6</td><td>Returns undefined if empty entity selection</td></tr>
 </tbody>
 </table>
 <p></details></p>
@@ -846,12 +848,12 @@
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-16"></a><a href="#description-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>The <code>.max()</code> function returns the highest (or maximum) value among all the values of <em>attributePath</em> in the entity selection. It actually returns the value of the last entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function.</p>
-<p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.max()</code> function will return the maximum value within the first scalar type in the default 4D type list order (see <a href="/docs/alpha/fr/API/collectionClass.html#sort"><code>.sort()</code></a> description). In this case, if <em>attributePath</em> does not exist in the object, <code>.max()</code> returns <strong>null</strong>.</p>
-<p>If the entity selection is empty, <code>.max()</code> returns <strong>null</strong>.</p>
+<p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.max()</code> function will return the maximum value within the first scalar type in the default 4D type list order (see <a href="/docs/alpha/fr/API/collectionClass.html#sort"><code>.sort()</code></a> description).</p>
+<p><code>.max()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
 <p>An error is returned if:</p>
 <ul>
 <li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> is not found in the entity selection dataclass.</li>
+<li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="exemple-15"></a><a href="#exemple-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
 <p>We want to find the highest salary among all the female employees:</p>
@@ -868,6 +870,7 @@
 </thead>
 <tbody>
 <tr><td>v17</td><td>Ajoutées</td></tr>
+<tr><td>v18 R6</td><td>Returns undefined if empty entity selection</td></tr>
 </tbody>
 </table>
 <p></details></p>
@@ -882,13 +885,13 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-17"></a><a href="#description-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
-<p>The <code>.min()</code> function  returns the lowest (or minimum) value among all the values of attributePath in the entity selection.  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function.</p>
-<p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.min()</code> function will return the minimum value within the first scalar value type in the type list order (see <a href="/docs/alpha/fr/API/collectionClass.html#sort"><code>.sort()</code></a> description). In this case, if <em>attributePath</em> does not exist in the object, <code>.min()</code> returns <strong>null</strong>.</p>
-<p>If the entity selection is empty, <code>.min()</code> returns <strong>null</strong>.</p>
+<p>The <code>.min()</code> function  returns the lowest (or minimum) value among all the values of attributePath in the entity selection.  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function (excluding <strong>null</strong> values).</p>
+<p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.min()</code> function will return the minimum value within the first scalar value type in the type list order (see <a href="/docs/alpha/fr/API/collectionClass.html#sort"><code>.sort()</code></a> description).</p>
+<p><code>.min()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
 <p>An error is returned if:</p>
 <ul>
 <li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> is not found in the entity selection dataclass.</li>
+<li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="exemple-16"></a><a href="#exemple-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
 <p>In this example, we want to find the lowest salary among all the female employees:</p>
