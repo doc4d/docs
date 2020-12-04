@@ -238,26 +238,26 @@ Dans le code de l'application, les fonctions de classe sont appelées en tant qu
 
 #### Paramètres
 
-Les paramètres de fonction sont déclarés à l'aide du nom et du type de paramètre, séparés par deux points. The parameter name must be compliant with [property naming rules](Concepts/dt_object.md#object-property-identifiers). Plusieurs paramètres (et types) sont séparés par des points-virgules (;).
+Les paramètres de fonction sont déclarés à l'aide du nom et du type de paramètre, séparés par deux points. Le nom du paramètre doit être conforme aux [règles de nommage des propriétés](Concepts/dt_object.md#object-property-identifiers). Plusieurs paramètres (et types) sont séparés par des points-virgules (;).
 
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
 ```
-> If the type is not stated, the parameter will be defined as `Variant`.
+> Si le type n'est pas indiqué, le paramètre sera défini comme `Variant`.
 
-You declare the return parameter (optional) by adding an arrow (->) and the return parameter definition after the input parameter(s) list. For example:
-
-```4d
-Function add($x : Variant; $y : Integer)->$result : Integer
-```
-
-You can also declare the return parameter only by adding `: type`, in which case it will automatically be available through $0. For example:
+Déclarez le paramètre de retour (optionnel) en ajoutant une flèche (->) et la définition du paramètre de retour après la liste de paramètre(s) d'entrée. Par exemple :
 
 ```4d
-Function add($x : Variant; $y : Integer): Integer
-    $0:=$x+$y
+Function add ($x : Variant; $y : Integer)->$result : Integer
 ```
-> The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. Les deux syntaxes peuvent être mélangées. Par exemple :
+
+Vous pouvez également déclarer le paramètre de retour uniquement en ajoutant `: type`, auquel cas il sera automatiquement disponible via $0. Par exemple :
+
+```4d
+Function add ($x : Variant; $y : Integer): Integer
+     $0:=$x+$y
+```
+> La [syntaxe 4D classique](parameters.md#sequential-parameters) des paramètres de méthode peut être utilisée pour déclarer les paramètres des fonctions de classe. Les deux syntaxes peuvent être mélangées. Par exemple :
 > 
 > ```4d
 Function add($x : Integer)
