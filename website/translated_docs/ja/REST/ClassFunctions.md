@@ -20,7 +20,7 @@ $city:=ds.City.getCity("Aguada")
 ```
 
 
-## Function calls
+## 関数の呼び出し
 
 Functions must always be called using REST **POST** requests (a GET request will receive an error).
 
