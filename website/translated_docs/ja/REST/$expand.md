@@ -18,7 +18,7 @@ Expands an image stored in an Image attribute (*e.g.*, `Employee(1)/photo?$image
 
 画像形式についての詳細は [`$imageformat`]($imageformat.md) を参照ください。 version パラメーターについての詳細は [`$version`]($version.md) を参照ください。
 
-## Saving a BLOB attribute to disk
+## BLOB属性のディスク保存
 
 If you want to save a BLOB stored in your datastore class, you can write the following by also passing "true" to $binary:
 
