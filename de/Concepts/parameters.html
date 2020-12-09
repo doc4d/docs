@@ -149,7 +149,7 @@ Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-var
 <p>Sie deklarieren den Rückgabeparameter einer Funktion mit einem Pfeil (-&gt;) und der Definition des Parameters nach der Liste der Eingabeparameter. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer) -&gt; <span class="hljs-variable">$result </span>: Integer
 </code></pre>
-<p>Sie können den Rückgabeparameter auch nur mit <code>: type</code> deklarieren. Er ist dann automatisch über <code>$0</code> verfügbar (<a href="#zurückgegebener-wert-1">siehe unten sequentielle Syntax</a>). Beispiel:</p>
+<p>Sie können den Rückgabeparameter auch nur mit <code>: type</code> deklarieren. Er ist dann automatisch über <code>$0</code> verfügbar (<a href="#rückgabewert-1">siehe unten sequentielle Syntax</a>). Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer): Integer
     <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$x</span>+<span class="hljs-variable">$y</span>
 </code></pre>
