@@ -8,7 +8,7 @@ title: Classes
 
 Le langage 4D prend en charge le concept de **classes**. Dans un langage de programmation, l'utilisation d'une classe vous permet de définir le comportement d'un objet avec des propriétés et des fonctions associées.
 
-Une fois qu'une classe utilisateur (user class) est définie, vous pouvez **instancier** des objets de cette classe n'importe où dans votre code. Chaque objet est une instance de sa classe. Une classe peut [`s'étendre`](#class-extends-classname) à une autre classe, puis hériter de ses [fonctions](#function).
+Une fois qu'une classe utilisateur (user class) est définie, vous pouvez **instancier** des objets de cette classe n'importe où dans votre code. Chaque objet est une instance de sa classe. Une classe peut s'étendre à une autre classe avec le mot-clé [`extend`](#class-extends-classname), puis hériter de ses fonctions.
 
 > Les modèles de classe 4D et de classe JavaScript sont similaires, et sont basés sur une chaîne de prototypes.
 
@@ -141,7 +141,7 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 ### L'objet classe
 
-Lorsqu'une classe est [définie](#class-definition) dans le projet, elle est chargée dans l'environnement de langage 4D. Une classe est un objet lui-même de la [classe "Class"](API/classClass.md). Un objet de classe a les propriétés et fonctions suivantes :
+Lorsqu'une classe est [définie](#class-definition) dans le projet, elle est chargée dans l'environnement de langage 4D. Une classe est un objet lui-même de la [classe "Class"](API/classClass.md). Un objet class possède les propriétés et fonctions suivantes :
 
 - chaîne [`name`](API/classClass.md#name)
 - objet [`superclass`](API/classClass.md#superclass) (nul si aucun)
@@ -149,7 +149,7 @@ Lorsqu'une classe est [définie](#class-definition) dans le projet, elle est cha
 
 De plus, un objet de classe peut référencer :
 
-- un objet [`constructeur`](#class-constructor) (facultatif),
+- un objet [`constructor`](#class-constructor) (facultatif),
 - un objet `prototype`, contenant des objets de [fonction](#function) nommés (facultatif).
 
 Un objet de classe est un [objet partagé](shared.md) et est donc accessible simultanément à partir de différents processus 4D.
@@ -190,7 +190,7 @@ Des mots-clés 4D spécifiques peuvent être utilisés dans les définitions de 
 - `Class extends <ClassName>` pour définir l'héritage.
 
 
-### Fonction
+### Function
 
 #### Syntaxe
 
@@ -208,13 +208,13 @@ Dans le fichier de définition de classe, les déclarations de fonction utilisen
 Immédiatement après le nom de la fonction, les [paramètres](#parameters) de la fonction peuvent être déclarés avec un nom et un type de données affectés, y compris le paramètre de retour (facultatif). Par exemple:
 
 ```4d
-Fonction computeArea($width : Integer; $height : Integer)->$area : Integer
+Function computeArea($width : Integer; $height : Integer)->$area : Integer
 ```
 
 Dans une fonction de classe, la commande `This` est utilisée comme instance d'objet. Par exemple:
 
 ```4d  
-Fonction setFullname($firstname : Text; $lastname : Text)
+Function setFullname($firstname : Text; $lastname : Text)
     This.firstName:=$firstname
     This.lastName:=$lastname
 
