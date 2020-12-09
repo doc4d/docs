@@ -96,7 +96,7 @@
 <tr><td><a href="#inactivesessiontimeout"><strong>.inactiveSessionTimeout</strong> : Number</a><p>    life duration (in minutes) of inactive sessions (duration set in cookie)</td></tr>
 <tr><td><a href="#ipaddresstolisten"><strong>.IPAddressToListen</strong> : Text</a><p>    IP address on which the 4D Web Server will receive HTTP requests</td></tr>
 <tr><td><a href="#isrunning"><strong>.isRunning</strong> : Boolean</a><p>    web server running state</td></tr>
-<tr><td><a href="#keepsession"><strong>.keepSession</strong> : Boolean</a><p>    session management enabling status</td></tr>
+<tr><td><a href="#keepsession"><strong>.keepSession</strong> : Boolean</a><p>    True if legacy sessions are enabled in the web server, False otherwise</td></tr>
 <tr><td><a href="#logrecording"><strong>.logRecording</strong> : Number</a><p>    log requests (logweb.txt) recording value</td></tr>
 <tr><td><a href="#maxconcurrentprocesses"><strong>.maxConcurrentProcesses</strong> : Number</a><p>    maximum number of concurrent web processes supported by the web server</td></tr>
 <tr><td><a href="#maxrequestsize"><strong>.maxRequestSize</strong> : Number</a><p>    maximum size (in bytes) of incoming HTTP requests (POST) that the web server is allowed to process</td></tr>
@@ -106,14 +106,10 @@
 <tr><td><a href="#opensslversion"><strong>.openSSLVersion</strong> : Text</a><p>    version of the OpenSSL library used</td></tr>
 <tr><td><a href="#perfectforwardsecrecy"><strong>.perfectForwardSecrecy</strong> : Boolean</a><p>    PFS availability on the server</td></tr>
 <tr><td><a href="#rootfolder"><strong>.rootFolder</strong> : Text</a><p>    path of web server root folder</td></tr>
-<tr><td><a href="#scalableSession"><strong>.scalableSession</strong> : Boolean</a><p>    returns true if the web server is running a scalable session and false otherwise</td><td></td><td><a href="#sessioncookiedomain"><strong>.scalableSession</strong> : Boolean</a><p>    &quot;domain&quot; field of the session cookie</td></tr>
-<tr><td><a href="#sessioncookiename"><strong>.sessionCookieName</strong> : Text</a><p>    name of the cookie used for storing the session ID</td></tr>
-<tr><td><a href="#sessioncookiepath"><strong>.sessionCookiePath</strong> : Text</a><p>    &quot;path&quot; field of the session cookie</td></tr>
-<tr><td><a href="#sessionipaddressvalidation"><strong>.sessionIPAddressValidation</strong> : Boolean</a><p>    IP address validation for session cookies</td></tr>
-<tr><td><a href="#start"><strong>.start</strong>() : Object<br><strong>.start</strong>( <em>settings</em> : Object ) : Object</a><p>    starts the web server on which it is applied</td></tr>
-<tr><td><a href="#stop"><strong>.stop()</strong> </a><p>    stops the web server on which it is applied</td></tr>
+<tr><td><a href="#scalableSession"><strong>.scalableSession</strong> : Boolean</a><p>    True if scalable sessions are used in the web server, and False otherwise</td></tr>
 </tbody>
 </table>
+<p><a href="#sessioncookiedomain"><strong>.sessionCookieDomain</strong> : Text</a><p>    &quot;domain&quot; field of the session cookie| |<a href="#sessioncookiename"><strong>.sessionCookieName</strong> : Text</a><p>    name of the cookie used for storing the session ID| |<a href="#sessioncookiepath"><strong>.sessionCookiePath</strong> : Text</a><p>    &quot;path&quot; field of the session cookie| |<a href="#sessionipaddressvalidation"><strong>.sessionIPAddressValidation</strong> : Boolean</a><p>    IP address validation for session cookies| |<a href="#start"><strong>.start</strong>() : Object<br><strong>.start</strong>( <em>settings</em> : Object ) : Object</a><p>    starts the web server on which it is applied| |<a href="#stop"><strong>.stop()</strong> </a><p>    stops the web server on which it is applied|</p>
 <h2><a class="anchor" aria-hidden="true" id="web-server"></a><a href="#web-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WEB Server</h2>
 <p><details><summary>History</summary></p>
 <table>
@@ -135,7 +131,7 @@
 <tr><td>Ergebnis</td><td>4D.WebServer</td><td>&lt;-</td><td>Web server object</td></tr>
 </tbody>
 </table>
-<p>The <code>WEB Server</code> command returns the default Web server object, or the Web server object defined through the option parameter.</p>
+<p>The <code>WEB Server</code> command returns the default Web server object, or the Web server object defined through the <em>option</em> parameter.</p>
 <p>By default, if the <em>option</em> parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the <em>option</em> parameter:</p>
 <table>
 <thead>
@@ -313,8 +309,9 @@ The listening IP port number for HTTPS.</p>
 <p>The web server running state.</p>
 <h2><a class="anchor" aria-hidden="true" id="keepsession"></a><a href="#keepsession" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.keepSession</h2>
 <p><strong>.keepSession</strong> : Boolean</p>
-<p>The session management enabling status.</p>
-<p>Default = true</p>
+<p>True if legacy sessions are enabled in the web server, False otherwise.</p>
+<h5><a class="anchor" aria-hidden="true" id="see-also"></a><a href="#see-also" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>See also:</h5>
+<p><a href="#scalablesession">.scalableSession</a></p>
 <h2><a class="anchor" aria-hidden="true" id="logrecording"></a><a href="#logrecording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.logRecording</h2>
 <p><strong>.logRecording</strong> : Number</p>
 <p>The log requests (logweb.txt) recording value.</p>
@@ -364,7 +361,9 @@ The listening IP port number for HTTPS.</p>
 <p>The path of web server root folder. The path is formatted in POSIX full path using filesystems. When using this property in the <code>settings</code> parameter, it can be a <code>Folder</code> object.</p>
 <h2><a class="anchor" aria-hidden="true" id="scalablesession"></a><a href="#scalablesession" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.scalableSession</h2>
 <p><strong>.scalableSession</strong> : Boolean</p>
-<p>The returns true if the web server is running a scalable session and false otherwise.</p>
+<p>True if scalable sessions are used in the web server, and False otherwise.</p>
+<h5><a class="anchor" aria-hidden="true" id="see-also-1"></a><a href="#see-also-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>See also:</h5>
+<p><a href="#keepsession">.keepSession</a></p>
 <h2><a class="anchor" aria-hidden="true" id="sessioncookiedomain"></a><a href="#sessioncookiedomain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.sessionCookieDomain</h2>
 <p><strong>.sessionCookieDomain</strong> : Text</p>
 <p>The &quot;domain&quot; field of the session cookie. Used to control the scope of the session cookies. If you set, for example, the value &quot;/*.4d.fr&quot; for this selector, the client will only send a cookie when the request is addressed to the domain &quot;.4d.fr&quot;, which excludes servers hosting external static data.</p>
@@ -400,7 +399,8 @@ The listening IP port number for HTTPS.</p>
 </tbody>
 </table>
 <p>The <code>.start()</code> function starts the web server on which it is applied, using properties set in the optional <em>settings</em> object parameter.</p>
-<p>The web server starts with default settings defined in the settings file of the project or (host database only) using the <code>WEB SET OPTION</code> command. However, using the <em>settings</em> parameter, you can define customized properties for the web server session. All settings of <a href="#web-server-object">Web Server objects</a> can be customized, except read-only properties (<a href="#isrunning">.isRunning</a>, <a href="#name">.name</a>, <a href="#opensslversion">.openSSLVersion</a>, and <a href="#perfectforwardsecrecy">.perfectForwardSecrecy</a>).</p>
+<p>The web server starts with default settings defined in the settings file of the project or (host database only) using the <code>WEB SET OPTION</code> command. However, using the <em>settings</em> parameter, you can define customized properties for the web server session.</p>
+<p>All settings of <a href="#web-server-object">Web Server objects</a> can be customized, except read-only properties (<a href="#isrunning">.isRunning</a>, <a href="#name">.name</a>, <a href="#opensslversion">.openSSLVersion</a>, <a href="#perfectforwardsecrecy">.perfectForwardSecrecy</a>, and [.sessionCookieName(#sessioncookiename)]).</p>
 <p>Customized session settings will be reset when the <a href="#stop"><code>.stop()</code></a> function is called.</p>
 <h4><a class="anchor" aria-hidden="true" id="returned-object"></a><a href="#returned-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returned object</h4>
 <p>The function returns an object describing the Web server launch status. This object can contain the following properties:</p>
