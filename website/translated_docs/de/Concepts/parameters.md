@@ -122,7 +122,7 @@ Sie deklarieren den Rückgabeparameter einer Funktion mit einem Pfeil (->) und d
 Function add($x : Variant; $y : Integer) -> $result : Integer
 ```
 
-Sie können den Rückgabeparameter auch nur mit `: type` deklarieren. Er ist dann automatisch über `$0` verfügbar ([siehe unten sequentielle Syntax](#zurückgegebener-wert-1)). Beispiel:
+Sie können den Rückgabeparameter auch nur mit `: type` deklarieren. Er ist dann automatisch über `$0` verfügbar ([siehe unten sequentielle Syntax](#rückgabewert-1)). Beispiel:
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
