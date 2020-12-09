@@ -48,7 +48,7 @@ EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/10!)
 
 ### Unterstützte Ausdrücke
 
-Sie können jeden [Ausdruck](Concepts/quick-tour.md#expression-types) als Parameter verwenden, außer:
+Sie können jeden [Ausdruck](Concepts/quick-tour.md#ausdruckstypen) als Parameter verwenden, außer:
 
 - Tabellen
 - arrays
@@ -93,7 +93,7 @@ In diesem Beispiel wird `$0` zuerst der Wert von `$1` zugewiesen und dann als Pa
 
 ## Parameter deklarieren
 
-Auch wenn es im [interpretierten Modus](Concepts/interpreted.md) nicht zwingend ist, müssen Sie jeden Parameter in den aufgerufenen Methoden deklarieren, um Probleme zu vermeiden.
+Auch wenn es im [interpretierten Modus](Concepts/interpreted-compiled.md) nicht zwingend ist, müssen Sie jeden Parameter in den aufgerufenen Methoden deklarieren, um Probleme zu vermeiden.
 
 Im folgenden Beispiel deklariert die Projektmethode `OneMethodAmongOthers` drei Parameter:
 
