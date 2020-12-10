@@ -44,6 +44,46 @@ An entity selection is an object containing one or more reference(s) to [entitie
 
 
 
+<!-- REF #_command_.Create entity selection.Syntax -->
+**Create entity selection** ( *dsTable* : Table { ; *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
+
+<!-- REF #_command_.Create entity selection.Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|dsTable|Table|->|Table in the 4D database whose current selection will be used to build the entity selection|
+|settings|Object|->|Build option: context	|
+|Result|4D.EntitySelection|<-|Entity selection matching the dataclass related to the given table|
+<!-- END REF -->
+
+
+#### Description
+
+The `Create entity selection` command builds and returns a new, [alterable](ORDA/entities.md#shareable-or-alterable-entity-selections) entity selection related to the dataclass matching the given *dsTable*, according to the current selection of this table.
+
+If the current selection is sorted, an [ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) entity selection is created (the order of the current selection is kept). If the current selection is unsorted, an unordered entity selection is created.
+
+If the *dsTable* is not exposed in [`ds`](API/datastoreClass.md#ds), an error is returned. This command cannot be used with a Remote datastore.
+
+In the optional *settings* parameter, you can pass an object containing the following property:
+
+|Property|Type|Description|
+|---|---|---|
+|context|Text|Label for the [optimization context](ORDA/entities.md#clientserver-optimization) applied to the entity selection.|
+
+
+#### Example
+
+```4d
+var $employees : cs.EmployeeSelection
+ALL RECORDS([Employee])
+$employees:=Create entity selection([Employee])
+// The $employees entity selection now contains a set of reference
+// on all entities related to the Employee dataclass
+```
+
+#### See also
+
+[`dataClass.newSelection()`](dataclassClass.md#newselection)
 
 <!-- REF entitySelectionClass.index.Desc -->
 ## &#91;*index*&#93;
@@ -190,7 +230,7 @@ The resulting object is an entity selection of Employee with duplications remove
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
-|v18 R5|Only supports non-shareable entity selections|
+|v18 R5|Only supports alterable entity selections|
 |v17|Added|
 </details>
 
@@ -212,7 +252,7 @@ The `.add()` function <!-- REF #entitySelectionClass.add().Summary -->adds the s
 
 >This function modifies the original entity selection.
 
-**Warning:** The entity selection must be *non-shareable*, i.e. it has been created for example by [`.newSelection()`](dataclassClass.md#newselection) or `Create entity selection`, otherwise `.add()` will return an error. Shareable entity selections do not accept the addition of entities. For more information, please refer to the [Shareable vs Non-shareable entity selections](ORDA/entities.md#shareable-or-non-shareable-entity-selections) section.
+**Warning:** The entity selection must be *alterable*, i.e. it has been created for example by [`.newSelection()`](dataclassClass.md#newselection) or `Create entity selection`, otherwise `.add()` will return an error. Shareable entity selections do not accept the addition of entities. For more information, please refer to the [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
 
 
 *	If the entity selection is ordered, *entity* is added at the end of the selection. If a reference to the same entity already belongs to the entity selection, it is duplicated and a new reference is added.
@@ -494,9 +534,9 @@ The `.copy()` function <!-- REF #entitySelectionClass.copy().Summary -->returns 
 
 > This function does not modify the original entity selection.
 
-By default, if the *option* parameter is omitted, the function returns a new, non-shareable entity selection (even if the function is applied to a shareable entity selection). Pass the `ck shared` constant in the *option* parameter if you want to create a shareable entity selection.
+By default, if the *option* parameter is omitted, the function returns a new, alterable entity selection (even if the function is applied to a shareable entity selection). Pass the `ck shared` constant in the *option* parameter if you want to create a shareable entity selection.
 
-> For information on the shareable property of entity selections, please refer to the [Shareable vs Non-shareable entity selections](ORDA/entities.md#shareable-or-non-shareable-entity-selections) section.
+> For information on the shareable property of entity selections, please refer to the [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
 
 #### Example   
 
@@ -820,6 +860,7 @@ There is, however, a difference between both statements when the selection is em
 <!-- REF #entitySelectionClass.getDataClass().Syntax -->
 **.getDataClass()** : 4D.DataClass<!-- END REF -->
 
+
 <!-- REF #entitySelectionClass.getDataClass().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
@@ -873,14 +914,14 @@ The following generic code duplicates all entities of the entity selection:
 <!-- REF #entitySelectionClass.isAlterable().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|Result|Boolean|<-|True if the entity selection is alterable, False if it is shareable|
+|Result|Boolean|<-|True if the entity selection is alterable, False otherwise|
 <!-- END REF -->
 
 #### Description
 
-The `.isAlterable()` function <!-- REF #entitySelectionClass.isAlterable().Summary -->returns True if the entity selection is alterable<!-- END REF -->. It returns False if the entity selection is not alterable, i.e. if it is *shareable*.
+The `.isAlterable()` function <!-- REF #entitySelectionClass.isAlterable().Summary -->returns True if the entity selection is alterable<!-- END REF -->, and False if the entity selection is not alterable.
 
-For more information, please refer to [Shareable or non-shareable entity selections](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
+For more information, please refer to [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections).
 
 
 <!-- END REF -->
@@ -1031,6 +1072,7 @@ Entity selections always have a `.length` property.
 
 <!-- REF #entitySelectionClass.max().Syntax -->
 **.max**( *attributePath* : Text ) : any<!-- END REF -->
+
 
 <!-- REF #entitySelectionClass.max().Params -->
 |Parameter|Type||Description|
@@ -1950,6 +1992,7 @@ Returns:
         "lastName": "Durham"
     }
 ]
+
 ```
 
 #### Example 4  
