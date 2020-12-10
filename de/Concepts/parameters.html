@@ -121,7 +121,7 @@ Beispiele:
 <p>Es gelten folgende Regeln:</p>
 <ul>
 <li>Die Zeile zum Deklarieren muss die erste Zeile des Methoden- oder Function-Code sein, sonst erscheint ein Fehler (davor können nur Kommentare oder Zeilenumbrüche stehen).</li>
-<li>Parameternamen müssen mit einem <code>$</code> Zeichen beginnen und mit den <a href="Concepts/dt_object.md#identifier-für-objekteigenschaft">Schreibregeln für Eigenschaftsnamen</a> konform sein.</li>
+<li>Parameter names must start with a <code>$</code> character and be compliant with <a href="dt_object.md#object-property-identifiers">property naming rules</a>.</li>
 <li>Mehrere Parameter (und Typen) werden durch Strichpunkte (;) voneinander getrennt.</li>
 <li>Eine Syntax über mehrere Zeilen wird unterstützt (mit den Zeichen &quot;\&quot;).</li>
 </ul>
@@ -190,12 +190,12 @@ Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-var
 </code></pre>
 <p>In diesem Beispiel wird <code>$0</code> zuerst der Wert von <code>$1</code> zugewiesen und dann als Parameter für den Befehl<code>ALERT</code> verwendet. Innerhalb der Unterroutine können Sie <code>$0</code> auf dieselbe Weise wie jede andere lokale Variable verwenden. Es ist 4D, das den Wert von <code>$0</code> (genauso wenn die Unterroutine endet) an die aufgerufene Methode zurückgibt.</p>
 <h3><a class="anchor" aria-hidden="true" id="unterstützte-datentypen-1"></a><a href="#unterstützte-datentypen-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unterstützte Datentypen</h3>
-<p>Sie können jeden <a href="Concepts/quick-tour.md#ausdruckstypen">Ausdruck</a> als sequentiellen Parameter verwenden, außer:</p>
+<p>You can use any <a href="quick-tour.md#expression-types">expression</a> as sequential parameter, except:</p>
 <ul>
 <li>Tabellen</li>
 <li>arrays</li>
 </ul>
-<p>Tabellen oder Array Ausdrücke lassen sich nur <a href="Concepts/dt_pointer.md#zeiger-als-parameter-in-methoden">über einen Zeiger als Referenz übergeben</a>.</p>
+<p>Tables or array expressions can only be passed <a href="dt_pointer.md#pointers-as-parameters-to-methods">as reference using a pointer</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="parameter-indirektion"></a><a href="#parameter-indirektion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter Indirektion</h3>
 <p>4D Projektmethoden akzeptieren eine variable Anzahl von Parametern desselben Typs, beginnend von rechts. Dieses Prinzip wird <strong>Parameter Indirektion</strong> genannt. Mit dem Befehl <code>Count parameters</code> können Sie dann solche Parameter mit einer <code>For...End for</code>-Schleife und der Syntax Parameter Indirektion ansprechen.</p>
 <blockquote>
@@ -240,7 +240,7 @@ Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-var
 <p>Die Nummer in der Deklaration muss eine Konstante und keine Variable sein.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="parameter-für-kompilierten-modus-deklarieren"></a><a href="#parameter-für-kompilierten-modus-deklarieren" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parameter für kompilierten Modus deklarieren</h3>
-<p>Auch wenn es im <a href="Concepts/interpreted-compiled.md">interpretierten Modus</a> nicht zwingend ist, sollten Sie jeden Parameter in den aufgerufenen Methoden oder Functions deklarieren, um Probleme zu vermeiden.</p>
+<p>Even if it is not mandatory in <a href="interpreted.md">interpreted mode</a>, you must declare each parameter in the called methods or functions to prevent any trouble.</p>
 <p>Mit der Syntax <a href="#parameter-mit-namen">benannte Variable</a>, werden Parameter automatisch über das Schlüsselwort <code>#DECLARE</code> oder den Prototyp <code>Function</code> deklariert. Beispiel:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> add</span>(<span class="hljs-variable">$x </span>: Variant; <span class="hljs-variable">$y </span>: Integer)-&gt; <span class="hljs-variable">$result </span>: Integer
     <span class="hljs-comment">// all parameters are declared with their type</span>
@@ -273,7 +273,7 @@ Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-var
 <pre><code class="hljs css language-4d"> <span class="hljs-comment">// Compiler_method</span>
 <span class="hljs-function"> C_REAL</span>(OneMethodAmongOthers;<span class="hljs-variable">$1</span>) 
 </code></pre>
-<p>Weitere Informationen dazu finden Sie auf der Seite <a href="Concepts/interpreted-compiled.md">Interpretierter und kompilierter Modus</a>.</p>
+<p>See <a href="interpreted.md">Interpreted and compiled modes</a> page for more information.</p>
 <p>Deklarieren der Parameter ist auch in folgenden Kontexten zwingend (sie unterstützen nicht die Deklaration in einer &quot;Compiler&quot; Methode):</p>
 <ul>
 <li>Datenbankmethoden - Zum Beispiel erhält die <code>Datenbankmethode On Web Connection</code> die sechs Parameter $1 bis $6 vom Datentyp Text. Zu Beginn der Datenbankmethode müssen Sie schreiben (selbst wenn keiner der Parameter genutzt wird):</li>
@@ -414,7 +414,7 @@ End if</span>
 <p>Dieser zweite Weg (durch eine Unterroutine einen Wert zurückgeben) wird &quot;eine Funktion verwenden&quot; genannt. Weitere Informationen dazu finden Sie im Abschnitt <a href="#rückgabewert">Rückgabewerte</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="sonderfälle-objekte-und-collections"></a><a href="#sonderfälle-objekte-und-collections" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sonderfälle: Objekte und Collections</h3>
 <p>Daten vom Typ Objekt und Collection werden automatisch über eine Referenz verwaltet (wie ein interner <em>Zeiger</em>).</p>
-<p>Werden also solche Datentypen als Parameter verwendet, enthalten <code>$1, $2...</code> keine <em>Werte</em>, sondern <em>Referenzen</em>. Eine Änderung des Werts von Parameter <code>$1, $2...</code> in der Unterroutine wird überall, wo Quellobjekt oder Collection verwendet wird, weitergegeben. Das ist dasselbe Prinzip wie für <a href="Concepts/dt_pointer.md#zeiger-als-parameter-in-methoden">Zeiger</a>, außer dass die Parameter <code>$1, $2...</code> in der Unterroutine nicht dereferenziert werden müssen.</p>
+<p>Werden also solche Datentypen als Parameter verwendet, enthalten <code>$1, $2...</code> keine <em>Werte</em>, sondern <em>Referenzen</em>. Eine Änderung des Werts von Parameter <code>$1, $2...</code> in der Unterroutine wird überall, wo Quellobjekt oder Collection verwendet wird, weitergegeben. This is the same principle as for <a href="dt_pointer.md#pointers-as-parameters-to-methods">pointers</a>, except that <code>$1, $2...</code> parameters do not need to be dereferenced in the subroutine.</p>
 <p>Nehmen wir z. B. die Methode <code>CreatePerson</code>, die ein Objekt erstellt und es als Parameter sendet:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//CreatePerson</span><span class="hljs-keyword">
  var</span> <span class="hljs-variable">$person </span>: Object
