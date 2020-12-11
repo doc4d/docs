@@ -923,6 +923,18 @@ The `.isAlterable()` function <!-- REF #entitySelectionClass.isAlterable().Summa
 
 For more information, please refer to [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections).
 
+#### Example
+
+You are about to display `Form.products` in a [list box](FormObjects/listbox_overview.md) to allow the user to add new products. You want to make sure it is alterable so that the user can add new products without error:
+
+```4d
+If (Not(Form.products.isAlterable()))
+    Form.products:=Form.products.copy()
+End if
+...
+Form.products.add(Form.product)
+```
+
 
 <!-- END REF -->
 
