@@ -3,7 +3,7 @@ id: onDisplayDetail
 title: Sur affichage corps
 ---
 
-| Code | Can be called by                                   | Definition                                                                                        |
+| Code | Peut être appelé par                               | Définition                                                                                        |
 | ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | 8    | Form - [List Box](FormObjects/listbox_overview.md) | A record is about to be displayed in a list form or a row is about to be displayed in a list box. |
 
@@ -30,7 +30,7 @@ In this context, the following sequence of calls to methods and form events is t
 Calling a 4D command that displays a dialog box from the `On Display Detail` event is not allowed and will cause a syntax error to occur. More particularly, the commands concerned are: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, and `MODIFY SELECTION`.
 
 
-### Selection list box
+### Liste box sélection
 
 This event is generated when a row of a [**selection type**](FormObjects/listbox_overview.md#selection-list-boxes) list box is displayed.
 
