@@ -4,11 +4,11 @@ title: Class
 ---
 
 
-Lorsqu'une classe utilisateur est [définie](Concepts/classes.md#class-definition) dans le projet, elle est chargée dans l'environnement de langage 4D. Une classe est un objet lui-même, de la classe "Class", qui a des propriétés et une fonction.
+When a user class is [defined](Concepts/classes.md#class-definition) in the project, it is loaded in the 4D language environment. A class is an object itself, of "Class" class, which has properties and a function.
 
 
 
-### Sommaire
+### Summary
 
 
 |                                                                                                                                                                                    |
@@ -22,10 +22,10 @@ Lorsqu'une classe utilisateur est [définie](Concepts/classes.md#class-definitio
 <!-- REF classClass.name.Desc -->
 ## .name
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R3  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R3  | Added   |
 
 </details>
 
@@ -34,9 +34,9 @@ Lorsqu'une classe utilisateur est [définie](Concepts/classes.md#class-definitio
 
 #### Description
 
-La propriété `.name` <!-- REF #classClass.name.Summary -->contient le nom de l'objet `4D.Class`<!-- END REF -->. Les noms de classe sont sensibles à la casse.
+The `.name` property <!-- REF #classClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Class names are case sensitive.
 
-Cette propriété est en **lecture seule**. 
+This property is **read-only**. 
 
 <!-- END REF -->
 
@@ -45,65 +45,80 @@ Cette propriété est en **lecture seule**.
 <!-- REF classClass.new().Desc -->
 ## .new()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R3  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R3  | Added   |
 </details>
 
 <!-- REF #classClass.new().Syntax -->
 **.new()** : 4D.Class<!-- END REF -->
 
 <!-- REF #classClass.new().Params -->
-| Paramètres | Type     |    | Description               |
-| ---------- | -------- |:--:| ------------------------- |
-| Résultat   | 4D.Class | <- | Nouvel objet de la classe |
+| Parameter | Type     |    | Description             |
+| --------- | -------- |:--:| ----------------------- |
+| Result    | 4D.Class | <- | New object of the class |
 <!-- END REF -->
 
 
 #### Description
 
-La `.new()` function <!-- REF #classClass.new().Summary -->crée et returne un objet `cs.className` qui est une nouvelle instance de la classe sur laquelle il est appelé. Cette fonction est automatiquement disponible sur toutes les classes à partir du class store [`cs`](Concepts/classes.md#cs).
+The `.new()` function <!-- REF #classClass.new().Summary -->creates and returns a `cs.className` object which is a new instance of the class on which it is called<!-- END REF -->. This function is automatically available on all classes from the [`cs` class store](Concepts/classes.md#cs).
 
-S'il est appelé sur une classe inexistante, une erreur est retournée.
+If it is called on a non-existing class, an error is returned.
 
 
-#### Exemple
+#### Example
 
-Pour créer une nouvelle instance de la classe Person :
+To create a new instance of the Person class:
 
 ```4d
 var $person : cs.Person  
-$person:=cs.Person.new() //créer la nouvelle instance  
-//$Person contient les fonctions de la classe
-```<!-- END REF --><!-- REF classClass.superclass.Desc -->## .superclass
+$person:=cs.Person.new() //create the new instance  
+//$Person contains functions of the class
+```
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R3  | Ajoutées      |
+<!-- END REF -->
 
-</details><!-- REF #classClass.superclass.Syntax -->**.superclass** : 4D.Class<!-- END REF -->#### Description
 
-La propriété `.superclass`<!-- REF #classClass.superclass.Summary -->retourne la classe parente de la classe<!-- END REF -->. Une superclasse peut être un objet `4D.Class`, ou un objet `cs.className`. Si la classe n'a pas de classe parente, la propriété renvoie **null**.
 
-Une superclasse de classe utilisateur est déclarée dans une classe à l'aide du mot-clé [`Class extend<superclass>`](Concepts/classes.md#class-extends-classname).
+<!-- REF classClass.superclass.Desc -->
+## .superclass
 
-Cette propriété est en **lecture seule**.
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R3  | Added   |
 
-#### Exemples
+</details>
+
+<!-- REF #classClass.superclass.Syntax -->
+**.superclass** : 4D.Class<!-- END REF -->
+
+#### Description
+
+The `.superclass` property <!-- REF #classClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. A superclass can be a `4D.Class` object, or a `cs.className` object. If the class does not have a parent class, the property returns **null**.
+
+A superclass of a user class is declared in a class by using the [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) keyword.
+
+This property is **read-only**.
+
+#### Examples
 
 ```4d
 $sup:=4D.File.superclass //Document
 $sup:=4D.Document.superclass //Object
 $sup:=4D.Object.superclass //null
 
-// Si vous avez créé une classe MyFile 
-// avec `Class extends File`
+// If you created a MyFile class  
+// with `Class extends File`
 $sup:=cs.MyFile.superclass //File 
 
 ```
 
 
 
-**Voir également :** [Super](Concepts/classes.md#super)<!-- END REF --><style> h2 { background: #d9ebff;}</style>
+**See also:** [Super](Concepts/classes.md#super)
+<!-- END REF -->
+
+<style> h2 { background: #d9ebff;}</style>
