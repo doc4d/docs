@@ -3,9 +3,9 @@ id: onLoadRecord
 title: Sur chargement ligne
 ---
 
-| Code | Peut être appelé par | Définition                                                          |
-| ---- | -------------------- | ------------------------------------------------------------------- |
-| 40   | Formulaire           | During user entry in list, a record is loaded and a field is edited |
+| Code | Can be called by | Definition                                                          |
+| ---- | ---------------- | ------------------------------------------------------------------- |
+| 40   | Form             | During user entry in list, a record is loaded and a field is edited |
 
 
 ## Description
