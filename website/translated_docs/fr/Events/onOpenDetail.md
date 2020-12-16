@@ -3,7 +3,7 @@ id: onOpenDetail
 title: Sur ouverture corps
 ---
 
-| Code | Peut être appelé par                               | Définition                                                                                  |
+| Code | Can be called by                                   | Definition                                                                                  |
 | ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | 25   | Form - [List Box](FormObjects/listbox_overview.md) | The detail form associated with the output form or with the list box is about to be opened. |
 
