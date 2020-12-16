@@ -10,7 +10,7 @@ In application projects, you can document your methods as well as your forms, ta
 The following project elements accept documentation:
 
 - Methods (database methods, component methods, project methods, form methods, 4D Mobile methods, triggers, and classes)
-- Formulare
+- Forms
 - Tables and Fields
 
 Your documentation files are written in Markdown syntax (.md files) using any editor that supports Markdown. They are stored as independant files within your project folder.
@@ -43,10 +43,10 @@ The `Documentation` folder architecture is the following:
     + **DatabaseMethods**
         * onStartup.md
         * ...
-    + **Formulare**
+    + **Forms**
         * loginDial.md
         * ...
-    + **Methoden**
+    + **Methods**
         * myMethod.md
         * ...
     + **TableForms**
@@ -54,7 +54,7 @@ The `Documentation` folder architecture is the following:
             - input.md
             - ...
         * ...
-    + **Trigger**
+    + **Triggers**
         * table1.md
         * ...
 
@@ -124,7 +124,7 @@ New documentation files are created with the following default contents:
 
 ![](assets/en/Project/comments-explo4.png)
 
-| Line                                               | Beschreibung                                                                                                                                         |
+| Line                                               | Description                                                                                                                                          |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | "\<!-- Type your summary here -->"      | HTML comment. Used in priority as the method description in the [code editor tips](#viewing-documentation-in-the-code-editor)                        |
 | ## Description                                    | Heading level 2 in Markdown. The first sentence after this tag is used as the method description in the code editor tips if HTML comment is not used |
@@ -196,7 +196,7 @@ The [documentation](https://doc.4d.com) of the command ....
 
 
 
-## Beispiel
+## Example
 
 In the `WP SwitchToolbar.md` file, you can write:
 
