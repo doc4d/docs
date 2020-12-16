@@ -3,9 +3,9 @@ id: onOpenExternalLink
 title: On Open External Link
 ---
 
-| Code | Peut être appelé par                        | Définition                                     |
+| Code | Can be called by                            | Definition                                     |
 | ---- | ------------------------------------------- | ---------------------------------------------- |
-| 52   | [Zone Web](FormObjects/webArea_overview.md) | An external URL has been opened in the browser |
+| 52   | [Web Area](FormObjects/webArea_overview.md) | An external URL has been opened in the browser |
 
 
 ## Description
@@ -15,5 +15,5 @@ This event is generated when the loading of a URL was blocked by the Web area an
 You can find out the blocked URL using the `WA Get last filtered URL` command.
 
 
-### Voir également
+### See also
 [`On URL Filtering`](onUrlFiltering.md)
