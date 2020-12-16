@@ -87,7 +87,7 @@ An entity can be seen as an instance of the dataclass, like a record of the tabl
 
 For more information, see Entities.
 
-## Entity-Selection
+## Entity selection
 
 An entity selection is an object. When querying the datastore, an entity selection is returned. An entity selection is a set of references to entities related to the same dataclass.
 
@@ -125,16 +125,16 @@ $myClass.query("name = smith")
 
 ## Mixed data type
 
-In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. Das gilt für:
+In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. It includes:
 
 *   number
-*   Text
-*   Null
+*   text
+*   null
 *   boolean
 *   date
 *   object
 *   collection
-*   Bild (\*)
+*   picture(\*)
 
 *(\*) picture type is not supported by statistical methods such as* `entitySelection.max( )`.
 
