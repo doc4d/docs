@@ -3,7 +3,7 @@ id: onPlugInArea
 title: Sur appel zone du plug in
 ---
 
-| Code | Can be called by                                                   | Definition                                                    |
+| Code | Peut être appelé par                                               | Définition                                                    |
 | ---- | ------------------------------------------------------------------ | ------------------------------------------------------------- |
 | 19   | Form - [Plug-in Area](FormObjects/pluginArea_overview.md#overview) | An external object requested its object method to be executed |
 
