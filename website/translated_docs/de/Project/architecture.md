@@ -3,11 +3,11 @@ id: architecture
 title: Architecture of a project
 ---
 
-A 4D project is made of several folders and files, stored within a single parent application folder (package folder). Beispiel:
+A 4D project is made of several folders and files, stored within a single parent application folder (package folder). For example:
 
 - MyProject
-    - Komponenten
-    - Daten
+    - Components
+    - Data
         - Logs
         - Settings
     - Documentation
@@ -32,12 +32,12 @@ The Project folder typically contains the following hierarchy:
 - Sources
     + Classes
     + DatabaseMethods
-    + Methoden
-    + Formulare
+    + Methods
+    + Forms
     + TableForms
-    + Trigger
+    + Triggers
 - DerivedData
-- Trash (falls vorhanden)
+- Trash (if any)
 
 
 ### *applicationName*.4DProject file
@@ -52,7 +52,7 @@ Project development file, used to designate and launch the project. This file ca
 
 ### Sources folder
 
-| Inhalt                  | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                        | Format |
+| Contents                | Description                                                                                                                                                                                                                                                                                                                                                                                                         | Format |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | catalog.4DCatalog       | Table and field definitions                                                                                                                                                                                                                                                                                                                                                                                         | XML    |
 | folders.json            | Explorer folder definitions                                                                                                                                                                                                                                                                                                                                                                                         | JSON   |
@@ -68,50 +68,50 @@ Project development file, used to designate and launch the project. This file ca
 
 #### DatabaseMethods folder
 
-| Inhalt                   | Beschreibung                                                          | Format |
+| Contents                 | Description                                                           | Format |
 | ------------------------ | --------------------------------------------------------------------- | ------ |
-| *databaseMethodName*.4dm | Database methods defined in the project. One file per database method | Text   |
+| *databaseMethodName*.4dm | Database methods defined in the project. One file per database method | text   |
 
 #### Methods folder
 
-| Inhalt           | Beschreibung                                                | Format |
+| Contents         | Description                                                 | Format |
 | ---------------- | ----------------------------------------------------------- | ------ |
-| *methodName*.4dm | Project methods defined in the project. One file per method | Text   |
+| *methodName*.4dm | Project methods defined in the project. One file per method | text   |
 
 #### Classes folder
 
-| Inhalt          | Beschreibung                                                                                                                       | Format |
+| Contents        | Description                                                                                                                        | Format |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ------ |
-| *className*.4dm | User class definition method, allowing to instantiate specific objects. One file per class, the name of the file is the class name | Text   |
+| *className*.4dm | User class definition method, allowing to instantiate specific objects. One file per class, the name of the file is the class name | text   |
 
 
 #### Forms folder
 
-| Inhalt                                    | Beschreibung                               | Format  |
+| Contents                                  | Description                                | Format  |
 | ----------------------------------------- | ------------------------------------------ | ------- |
 | *formName*/form.4DForm                    | Project form description                   | json    |
-| *formName*/method.4dm                     | Project form method                        | Text    |
+| *formName*/method.4dm                     | Project form method                        | text    |
 | *formName*/Images/*pictureName*           | Project form static picture                | picture |
-| *formName*/ObjectMethods/*objectName*.4dm | Object methods. One file per object method | Text    |
+| *formName*/ObjectMethods/*objectName*.4dm | Object methods. One file per object method | text    |
 
 #### TableForms folder
 
-| Inhalt                                               | Beschreibung                                           | Format  |
+| Contents                                             | Description                                            | Format  |
 | ---------------------------------------------------- | ------------------------------------------------------ | ------- |
 | *n*/Input/*formName*/form.4DForm                     | Input table form description (n is the table number)   | json    |
 | *n*/Input/*formName*/Images/*pictureName*            | Input table form static pictures                       | picture |
-| *n*/Input/*formName*/method.4dm                      | Input table form method                                | Text    |
-| *n*/Input/*formName*/ObjectMethods/*objectName*.4dm  | Input form object methods. One file per object method  | Text    |
+| *n*/Input/*formName*/method.4dm                      | Input table form method                                | text    |
+| *n*/Input/*formName*/ObjectMethods/*objectName*.4dm  | Input form object methods. One file per object method  | text    |
 | *n*/Output/*formName*/form.4DForm                    | Output table form description (n is the table number)  | json    |
 | *n*/Output/*formName*/Images/*pictureName*           | Output table form static pictures                      | picture |
-| *n*/Output/*formName*/method.4dm                     | Output table form method                               | Text    |
-| *n*/Output/*formName*/ObjectMethods/*objectName*.4dm | Output form object methods. One file per object method | Text    |
+| *n*/Output/*formName*/method.4dm                     | Output table form method                               | text    |
+| *n*/Output/*formName*/ObjectMethods/*objectName*.4dm | Output form object methods. One file per object method | text    |
 
 #### Triggers folder
 
-| Inhalt        | Beschreibung                                                                               | Format |
+| Contents      | Description                                                                                | Format |
 | ------------- | ------------------------------------------------------------------------------------------ | ------ |
-| table_*n*.4dm | Trigger methods defined in the project. One trigger file per table (n is the table number) | Text   |
+| table_*n*.4dm | Trigger methods defined in the project. One trigger file per table (n is the table number) | text   |
 
 **Note:** The .4dm file extension is a text-based file format, containing the code of a 4D method. It is compliant with source control tools.
 
@@ -120,8 +120,8 @@ Project development file, used to designate and launch the project. This file ca
 
 The Trash folder contains methods and forms that were deleted from the project (if any). It can contain the following folders:
 
-- Methoden
-- Formulare
+- Methods
+- Forms
 - TableForms
 
 Within these folders, deleted element names are in parentheses, e.g. "(myMethod).4dm". The folder organization is identical to the [Sources](#sources) folder.
@@ -136,7 +136,7 @@ The DerivedData folder contains cached data used internally by 4D to optimize pr
 
 The Resources folder contains any custom project resource files and folders. In this folder, you can place all the files needed for the translation or customization of the application interface (picture files, text files, XLIFF files, etc.). 4D uses automatic mechanisms to work with the contents of this folder, in particular for the handling of XLIFF files and static pictures. For using in remote mode, the Resources folder lets you share files between the server machine and all the client machines. See the *4D Server Reference Manual*.
 
-| Inhalt                | Beschreibung                                                                                                                                          | Format  |
+| Contents              | Description                                                                                                                                           | Format  |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | *item*                | Project resource files and folders                                                                                                                    | various |
 | Images/Library/*item* | Pictures from the Picture Library as separate files(*). Names of these items become file names. If a duplicate exists, a number is added to the name. | picture |
@@ -148,7 +148,7 @@ The Resources folder contains any custom project resource files and folders. In 
 
 The data folder contains the data file and all files and folders relating to the data.
 
-| Inhalt       | Beschreibung                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | Format |
+| Contents     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Format |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | data.4dd(*)  | Data file containing data entered in the records and all the data belonging to the records. When you open a 4D project, the application opens the current data file by default. If you change the name or location of this file, the *Open data file* dialog box will then appear so that you can select the data file to use or create a new one                                                                                                                                                                                                                                                                                                                                                                                                    | binary |
 | data.journal | Created only when the database uses a log file. The log file is used to ensure the security of the data between backups. All operations carried out on the data are recorded sequentially in this file. Therefore, each operation on the data causes two simultaneous actions: the first on the data (the statement is executed normally) and the second in the log file (a description of the operation is recorded). The log file is constructed independently, without disturbing or slowing down the user’s work. A database can only work with a single log file at a time. The log file records operations such as additions, modifications or deletions of records, transactions, etc. It is generated by default when a database is created. | binary |
@@ -162,7 +162,7 @@ This folder contains **user settings files for data** used for application admin
 
 > These settings take priority over **[user settings files](#settings-folder-1)** and **[structure settings](#sources-folder)** files.
 
-| Inhalt              | Beschreibung                                                                                                                                                                                                        | Format |
+| Contents            | Description                                                                                                                                                                                                         | Format |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | directory.json      | Description of 4D groups, users, and their access rights when the application is run with this data file.                                                                                                           | JSON   |
 | Backup.4DSettings   | Database backup settings, used to set the [backup options](Backup/settings.md) when the database is run with this data file. Keys concerning backup configuration are described in the *4D XML Keys Backup* manual. | XML    |
@@ -187,7 +187,7 @@ This folder contains **user settings files** used for application administration
 
 > These settings take priority over **[structure settings](#sources-folder)** files. However, if a **[user settings file for data](#settings-folder)** exists, it takes priority over user settings file.
 
-| Inhalt              | Beschreibung                                                                                                                                                                                                                                                                                                                         | Format |
+| Contents            | Description                                                                                                                                                                                                                                                                                                                          | Format |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------ |
 | directory.json      | Description of 4D groups and users for the application, as well as their access rights                                                                                                                                                                                                                                               | JSON   |
 | Backup.4DSettings   | Database backup settings, used to set the [backup options](Backup/settings.md)) when each backup is launched. This file can also be used to read or set additional options, such as the amount of information stored in the *backup journal*. Keys concerning backup configuration are described in the *4D XML Keys Backup* manual. | XML    |
@@ -198,7 +198,7 @@ This folder contains **user settings files** used for application administration
 
 This folder contains files that memorize user configurations, e.g. break point positions. You can just ignore this folder. It contains for example:
 
-| Inhalt                       | Beschreibung                                           | Format |
+| Contents                     | Description                                            | Format |
 | ---------------------------- | ------------------------------------------------------ | ------ |
 | methodPreferences.json       | Current user method editor preferences                 | JSON   |
 | methodWindowPositions.json   | Current user window positions for methods              | JSON   |
