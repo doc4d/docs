@@ -29,7 +29,7 @@ ASSERT($status.success)
 ### Summary
 |                                                                                                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #cryptokey.new().Syntax -->](#4dcryptokeynew)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.new().Summary -->|
+| [<!-- INCLUDE #4D.CryptoKey.new().Syntax -->](#4dcryptokeynew)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.CryptoKey.new().Summary -->|
 | [<!-- INCLUDE #cryptokey.curve.Syntax -->](#curve)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.curve.Summary --> |
 | [<!-- INCLUDE #cryptokey.decrypt().Syntax -->](#decrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.decrypt().Summary -->|
 | [<!-- INCLUDE #cryptokey.encrypt().Syntax -->](#encrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.encrypt().Summary -->|
@@ -39,6 +39,8 @@ ASSERT($status.success)
 | [<!-- INCLUDE #cryptokey.size.Syntax -->](#size)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.size.Summary --> |
 | [<!-- INCLUDE #cryptokey.type.Syntax -->](#type)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.type.Summary --> |
 | [<!-- INCLUDE #cryptokey.verify().Syntax -->](#verify)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.verify().Summary -->|
+
+
 
 
 
@@ -57,7 +59,7 @@ ASSERT($status.success)
 
 <!-- REF #4D.CryptoKey.new().Syntax -->**4D.CryptoKey.new**( *settings* : Object ) : 4D.CryptoKey<!-- END REF -->
 
-<!-- REF #cryptokey.new().Params -->
+<!-- REF #4D.CryptoKey.new().Params -->
 | Parameter | Type         |    | Description                                                            |
 | --------- | ------------ | -- | ---------------------------------------------------------------------- |
 | settings  | Object       | -> | Settings to generate or load a key pair                                |
@@ -82,7 +84,7 @@ The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->create
 #### *cryptoKey*
 
 The returned `cryptoKey` object encapsulates an encryption key pair. It is a shared object and can therefore be used by multiple 4D processes simultaneously.
-<!-- END REF -->
+
 
 
 <!-- REF cryptokey.curve -->
@@ -131,11 +133,11 @@ The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://too
 
 #### *options*
 
-| Property          | Type | Description                                                                                                                                  |
-| ----------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | text | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                       |
-| encodingEncrypted | text | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Default is "Base64". |
-| encodingDecrypted | text | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8".  |
+| Property          | Type | Description                                                                                                                                      |
+| ----------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hash              | text | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                           |
+| encodingEncrypted | text | Encoding used to convert the `message` parameter into the binary representation to decrypt. Can be "Base64" or "Base64URL". Default is "Base64". |
+| encodingDecrypted | text | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8".      |
 
 
 #### *Result*
@@ -291,12 +293,12 @@ The `cryptoKey` must contain a valid **private** key.
 
 #### *options*
 
-| Property          | Type    | Description                                                                                                                         |
-| ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". "HASH256", "HASH384", or "HASH512".                          |
-| encodingEncrypted | text    | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Default is "Base64". |
-| pss               | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when producing a JWT for PS@ algorithm  |
-| encoding          | text    | ERepresentation to be used for result signature. Possible values are "Base64" or "Base64URL". Default is "Base64".                  |
+| Property          | Type    | Description                                                                                                                                                          |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash              | text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
+| encodingEncrypted | text    | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Default is "Base64".                                  |
+| pss               | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when producing a JWT for PS@ algorithm                                   |
+| encoding          | text    | ERepresentation to be used for result signature. Possible values: "Base64" or "Base64URL". Default is "Base64".                                                      |
 
 
 #### *Result*
@@ -365,11 +367,11 @@ The `cryptoKey` must contain a valid **public** key.
 
 #### *options*
 
-| Property | Type    | Description                                                                                                                                      |
-| -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| hash     | text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". "HASH256", "HASH384", or "HASH512".                                       |
-| pss      | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm               |
-| encoding | text    | Encoding used to convert the `message` parameter into the binary representation to decrypt. Can be "Base64" or "Base64URL". Default is "Base64". |
+| Property | Type    | Description                                                                                                                                                          |
+| -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash     | text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
+| pss      | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm                                   |
+| encoding | text    | Representation of provided signature. Possible values are "Base64" or "Base64URL". Default is "Base64".                                                              |
 
 
 #### *Result*
