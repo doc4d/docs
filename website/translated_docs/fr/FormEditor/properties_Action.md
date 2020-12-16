@@ -4,13 +4,13 @@ title: Action
 ---
 
 
-## Méthode
+## Method
 
-Reference of a method attached to the form. Vous pouvez utiliser une méthode formulaire pour gérer les données et les objets, mais il est généralement plus simple et plus efficace d'utiliser une méthode objet dans ces cas de figure. See [Specialized methods](Concepts/methods.md#specialized-methods).
+Reference of a method attached to the form. You can use a form method to manage data and objects, but it is generally simpler and more efficient to use an object method for these purposes. See [Specialized methods](Concepts/methods.md#specialized-methods).
 
 You do not call a form method—4D calls it automatically when an event involves the form to which the method is attached.
 
-Plusieurs types de références de méthode sont pris en charge :
+Several types of method references are supported:
 
 - a standard project method file path, i.e. that uses the following pattern:  
   `method.4dm`  
@@ -23,9 +23,9 @@ Plusieurs types de références de méthode sont pris en charge :
   `/RESOURCES/Forms/FormMethod.4dm` In this case, 4D does not provide automatic support for object operations.
 
 
-#### Grammaire JSON
+#### JSON Grammar
 
-| Nom    | Type de données | Valeurs possibles                                                |
-| ------ | --------------- | ---------------------------------------------------------------- |
-| method | Texte           | Form method standard or custom file path, or project method name |
+| Name   | Data Type | Possible Values                                                  |
+| ------ | --------- | ---------------------------------------------------------------- |
+| method | text      | Form method standard or custom file path, or project method name |
 
