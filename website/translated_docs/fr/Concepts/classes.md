@@ -6,32 +6,32 @@ title: Classes
 
 ## Aperçu
 
-Le langage 4D prend en charge le concept de **classes**. Dans un langage de programmation, l'utilisation d'une classe vous permet de définir le comportement d'un objet avec des propriétés et des fonctions associées.
+The 4D language supports the concept of **classes**. In a programming language, using a class allows you to define an object behaviour with associated properties and functions.
 
-Une fois qu'une classe est définie, vous pouvez **instancier** des objets de cette classe n'importe où dans votre code. Chaque objet est une instance de sa classe. Une classe peut `s'étendre` à une autre classe, puis hériter de ses fonctions.
+Once a class is defined, you can **instantiate** objects of this class anywhere in your code. Each object is an instance of its class. A class can `extend` another class, and then inherits from its functions.
 
-Les modèles de classe 4D et de classe JavaScript sont similaires, et sont basés sur une chaîne de prototypes.
+The class model in 4D is similar to classes in JavaScript, and based on a chain of prototypes.
 
-### L'objet classe
+### Class object
 
-Une classe est un objet de classe "Class". Un objet de classe a les propriétés et méthodes suivantes :
+A class is an object itself, of "Class" class. A class object has the following properties and methods:
 
-- `name` qui doit être conforme à ECMAScript
-- un objet `superclass` (facultatif, nul s'il n'y en a aucun)
-- une méthode `new()` permettant d'instancier des objets de classe.
+- `name` which must be ECMAScript compliant
+- `superclass` object (optional, null if none)
+- `new()` method, allowing to instantiate class objects.
 
-De plus, un objet de classe peut référencer :
-- un objet `constructeur` (facultatif)
-- un objet `prototype`, contenant des objets de fonction nommés (facultatif).
+In addition, a class object can reference:
+- a `constructor` object (optional)
+- a `prototype` object, containing named function objects (optional).
 
-Un objet de classe est un objet partagé et est donc accessible simultanément à partir de différents processus 4D.
+A class object is a shared object and can therefore be accessed from different 4D processes simultaneously.
 
 
-### Recherche et prototype des propriétés
+### Property lookup and prototype
 
-Tous les objets de 4D sont liés en interne à un objet de classe. Lorsque 4D ne trouve pas de propriété dans un objet, il effectue un recherche dans l'objet prototype de sa classe; s'il ne la trouve pas, 4D poursuit sa recherche dans l'objet prototype de sa classe mère (superclass), et ainsi de suite jusqu'à ce qu'il n'y ait plus de superclass.
+All objects in 4D are internally linked to a class object. When 4D does not find a property in an object, it searches in the prototype object of its class; if not found, 4D continues searching in the prototype object of its superclass, and so on until there is no more superclass.
 
-Tous les objets héritent de la classe "Object" comme classe supérieure d'arbre d'héritage.
+All objects inherit from the class "Object" as their inheritance tree top class.
 
 ```4d
   //Class: Polygon
@@ -49,13 +49,13 @@ $instance:=OB Instance of($poly;4D.Object)
  // true
 ```
 
-Lors de l'énumération des propriétés d'un objet, son prototype de classe n'est pas énuméré. Par conséquent, l'instruction `For each` et la commande `JSON Stringify` ne retournent pas les propriétés de l'objet du prototype de classe. La propriété d'objet prototype d'une classe est une propriété cachée interne.
+When enumerating properties of an object, its class prototype is not enumerated. As a consequence, `For each` statement and `JSON Stringify` command do not return properties of the class prototype object. The prototype object property of a class is an internal hidden property.
 
-### Définition d'une classe
+### Class definition
 
-Un fichier de classe utilisateur définit un modèle d'objet qui peut être instancié dans le code de la base de données en appelant la méthode membre de la classe `new()`. Vous utiliserez généralement des [mots-clés de classe](#class-keywords) et des [commandes de classe](#class-commands) spécifiques dans le fichier de classe.
+A user class file defines a model of object that can be instantiated in the database code by calling the `new()` class member method. You will usually use specific [class keywords](#class-keywords) and [class commands](#class-commands) in the class file.
 
-Par exemple :
+For example:
 
 ```4d  
 //Class: Person.4dm
@@ -66,7 +66,7 @@ Class constructor
   This.lastName:=$2
 ```
 
-Dans une méthode, créons une "Personne" :
+In a method, creating a "Person":
 
 ```
 C_OBJECT($o)
@@ -74,14 +74,14 @@ $o:=cs.Person.new("John";"Doe")
 // $o: {firstName: "John";lastName: "Doe" }
 ```
 
-A noter que vous pouvez créer un fichier de classe vide et instancier des objets vides. Par exemple, si vous créez le fichier de classe `Empty.4dm suivant` :
+Note that you could create an empty class file, and instantiate empty objects. For example, if you create the following `Empty.4dm` class file:
 
 ```4d  
-//Fichier classe Empty.4dm
-//Rien
+//Empty.4dm class file
+//Nothing
 ```
 
-Vous pouvez saisir dans une méthode :
+You could write in a method:
 
 
 ```4d
@@ -93,103 +93,103 @@ $cName:=OB Class($o).name //"Empty"
 
 ## Class stores
 
-Les classes disponibles sont accessibles depuis leurs class stores. Les class stores suivants sont disponibles :
+Available classes are accessible from their class stores. The following class stores are available:
 
-- un class store pour les classes 4D intégrées. Il est retourné par la commande `4D`.
-- un class store pour chaque base de données ou composant ouvert(e). Il est retourné par la commande `cs`. Ce sont des "classes d'utilisateurs" (user classes).
+- a class store for built-in 4D classes. It is returned by the `4D` command.
+- a class store for each opened database or component. It is returned by the `cs` command. These are "user classes".
 
-Par exemple, vous créez une nouvelle instance d'un objet de myClass à l'aide de l'instruction `cs.myClass.new()` (`cs` signifie *classtore*).
+For example, you create a new instance of an object of myClass using the `cs.myClass.new()` statement (`cs` means *classtore*).
 
 
-## Gestion des classes utilisateur
+## Handling user classes
 
-### Fichiers de classe (class files)
+### Class files
 
-Une classe utilisateur dans 4D est définie par un fichier de méthode spécifique (.4dm), stocké dans le dossier `/Project/Sources/Classes/`. Le nom du fichier est le nom de la classe.
+A user class in 4D is defined by a specific method file (.4dm), stored in the `/Project/Sources/Classes/` folder. The name of the file is the class name.
 
-Par exemple, si vous souhaitez définir une classe nommée "Polygon", vous devez créer le fichier suivant :
+For example, if you want to define a class named "Polygon", you need to create the following file:
 
-- Dossier Project
+- Project folder
     + Project
         * Sources
             - Classes
                 + Polygon.4dm
 
-### Noms de classe
+### Class names
 
-Lorsque vous nommez des classes, gardez à l'esprit les règles suivantes :
+When naming classes, you should keep in mind the following rules:
 
-- Un nom de classe doit être conforme à ECMAScript.
-- Les noms de classe sont sensibles à la casse.
-- Il n'est pas recommandé de donner le même nom à une classe et à une table de base de données, afin d'éviter tout conflit.
-
-
-### Interface 4D Developer
-
-Les fichiers de classe sont automatiquement stockés à l'emplacement approprié lorsqu'ils sont créés via l'interface de 4D Developer, soit via le menu **Fichier**, soit via l'Explorateur.
-
-#### Menu Fichier et barre d'outils
-
-Vous pouvez créer un nouveau fichier de classe pour le projet en sélectionnant **Nouveau> Classe...** dans le menu **Fichier** de 4D Developer ou dans la barre d'outils.
-
-Vous pouvez également utiliser le raccourci **Ctrl+Maj+Alt+k**.
-
-#### Explorateur
-
-Dans la page **Méthodes** de l'Explorateur, les classes sont regroupées dans la catégorie **Classes**.
-
-Pour créer une nouvelle classe, vous pouvez :
-
-- sélectionnez la catégorie **Classes** et cliquez sur le bouton ![](assets/en/Users/PlussNew.png).
-- sélectionnez **Nouvelle classe...** dans le menu d'actions en bas de la fenêtre de l'Explorateur ou dans le menu contextuel du groupe Classes. ![](assets/en/Concepts/newClass.png)
-- sélectionnez **Nouveau> Classe...** dans le menu contextuel de la page d'accueil de l'Explorateur.
-
-#### Prise en charge du code de classe
-
-Dans les différentes fenêtres de 4D Developer (éditeur de code, compilateur, débogueur, explorateur d'exécution), le code de classe est essentiellement géré comme une méthode projet avec quelques spécificités :
-
-- Dans l'éditeur de code :
-    - une classe ne peut pas être exécutée
-    - une fonction de classe est un bloc de code
-    - **Goto definition** sur un objet membre recherche des déclarations de fonction de classe; par exemple, "$o.f()" donnera comme résultat de recherche "Fonction f".
-    - **Search references** sur la déclaration de fonction de classe recherche la fonction utilisée comme membre d'objet; par exemple, "Fonction f" donnera comme résultat "$o.f()".
-- Dans l'explorateur d'exécution et le Débogueur, les fonctions de classe sont affichées avec le format \<ClassName> constructor ou \<ClassName>. \<FunctionName> .
+- A class name must be ECMAScript compliant.
+- Class names are case sensitive.
+- Giving the same name to a class and a database table is not recommended, in order to prevent any conflict.
 
 
-### Supprimer une classe
+### 4D Developer interface
 
-Pour supprimer une classe existante, vous pouvez :
+Class files are automatically stored at the appropriate location when created through the 4D Developer interface, either via the **File** menu or the Explorer.
 
-- sur votre disque, supprimer le fichier de classe .4dm du dossier "Classes",
-- dans l'Explorateur, sélectionner la classe et cliquer sur ![](assets/en/Users/MinussNew.png) ou choisir **Déplacer vers la corbeille** dans le menu contextuel.
+#### File menu and toolbar
+
+You can create a new class file for the project by selecting **New > Class...** in the 4D Developer **File** menu or from the toolbar.
+
+You can also use the **Ctrl+Shift+Alt+k** shortcut.
+
+#### Explorer
+
+In the **Methods** page of the Explorer, classes are grouped in the **Classes** category.
+
+To create a new class, you can:
+
+- select the **Classes** category and click on the ![](assets/en/Users/PlussNew.png) button.
+- select **New Class...** from the action menu at the bottom of the Explorer window, or from the contexual menu of the Classes group. ![](assets/en/Concepts/newClass.png)
+- select **New > Class...** from the contexual menu of the Explorer's Home page.
+
+#### Class code support
+
+In the various 4D Developer windows (code editor, compiler, debugger, runtime explorer), class code is basically handled like a project method with some specificities:
+
+- In the code editor:
+    - a class cannot be run
+    - a class function is a code block
+    - **Goto definition** on an object member searches for class Function declarations; for example, "$o.f()" will find "Function f".
+    - **Search references** on class function declaration searches for the function used as object member; for example, "Function f" will find "$o.f()".
+- In the Runtime explorer and Debugger, class functions are displayed with the \<ClassName> constructor or \<ClassName>.\<FunctionName> format.
 
 
-## Mots-clés de classe
+### Deleting a class
 
-Des mots-clés 4D spécifiques peuvent être utilisés dans les définitions de classe :
+To delete an existing class, you can:
 
-- `Fonction <Name>` pour définir les méthodes membres des objets.
-- `Class constructor` (constructeur de classe) pour définir les propriétés des objets (c'est-à-dire le prototype).
-- `Class extends <ClassName>` pour définir l'héritage.
+- on your disk, remove the .4dm class file from the "Classes" folder,
+- in the Explorer, select the class and click ![](assets/en/Users/MinussNew.png) or choose **Move to Trash** from the contextual menu.
 
 
-### Fonction de classe (class function)
+## Class keywords
 
-#### Syntaxe
+Specific 4D keywords can be used in class definitions:
+
+- `Function <Name>` to define member methods of the objects.
+- `Class constructor` to define the properties of the objects (i.e. the prototype).
+- `Class extends <ClassName>` to define inheritance.
+
+
+### Class Function
+
+#### Syntax
 
 ```js
-Fonction <name>
+Function <name>
 // code
 ```
 
-Les fonctions de classe sont des propriétés de l'objet prototype de la classe propriétaire. Ce sont des objets de la classe "Function".
+Class functions are properties of the prototype object of the owner class. They are objects of the "Function" class.
 
-Dans le fichier de définition de classe, les déclarations de fonction utilisent le mot-clé `Function`, et le nom de la fonction. Le nom de la fonction doit être conforme à ECMAScript.
+In the class definition file, function declarations use the `Function` keyword, and the name of the function. The function name must be ECMAScript compliant.
 
-Dans une fonction de classe, `This` est utilisé comme instance d'objet. Par exemple :
+Within a class function, the `This` is used as the object instance. For example:
 
 ```4d  
-Fonction getFullName
+Function getFullName
   C_TEXT($0)
   $0:=This.firstName+" "+Uppercase(This.lastName)
 
@@ -198,11 +198,11 @@ Function getAge
   $0:=(Current date-This.birthdate)/365.25
 ```
 
-Pour une fonction de classe, la commande `Current method name` retourne: "*\<ClassName>.\<FunctionName>*", par exemple "MyClass.myMethod".
+For a class function, the `Current method name` command returns: "*\<ClassName>.\<FunctionName>*", for example "MyClass.myMethod".
 
-Dans le code de l'application, les fonctions de classe sont appelées en tant que méthodes membres de l'instance d'objet et peuvent recevoir des paramètres le cas échéant. Les syntaxes suivantes sont prises en charge :
+In the application code, class functions are called as member methods of the object instance and can receive parameters if any. The following syntaxes are supported:
 
-- utilisation de l'opérateur `()`. For example `myObject.methodName("hello")`.
+- use of the `()` operator. For example `myObject.methodName("hello")`.
 - use of a "Function" class member methods
     - `apply()`
     - `call()`
@@ -286,58 +286,54 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. La classe enfant hérite de toutes les fonctions de la classe parente.
+The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
 
-L'extension de classe doit respecter les règles suivantes :
+Class extension must respect the following rules:
 
-- Une classe utilisateurs ne peut pas étendre une classe intégrée (sauf 4D.Object qui est étendu par défaut pour les classes d'utilisateurs)
-- Une classe utilisateurs ne peut pas étendre une classe utilisateurs à partir d'un autre projet ou composant.
-- Une classe utilisateurs ne peut pas s'étendre.
-- Il n'est pas possible d'étendre les classes de manière circulaire (c'est-à-dire "a" étend "b" qui étend "a").
+- A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
+- A user class cannot extend a user class from another project or component.
+- A user class cannot extend itself.
+- It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
 
-Briser cette règle n'est pas détecté par l'éditeur de code ou l'interpréteur, seuls le compilateur et la `syntaxe de contrôle` généreront une erreur dans ce cas.
+Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
 
-Une classe étendue peut appeler le constructeur de sa classe parente à l'aide de la commande [`Super`](#super).
+An extended class can call the constructor of its parent class using the [`Super`](#super) command.
 
-#### Exemple
+#### Example
 
-Cet exemple crée une classe appelée `Square` à partir d'une classe appelée `Polygon`.
+This example creates a class called `Square` from a class called `Polygon`.
 
 ```4d
- // Classe: Square
-  // chemin: Classes/Square.4dm
+  //Class: Square
+  //path: Classes/Square.4dm
 
- La classe étend Polygon
+ Class extends Polygon
 
  Class constructor
- C_LONGINT (1 $)
+ C_LONGINT($1)
 
-  // Il appelle le constructeur de la classe parente avec des longueurs
-  // fourni pour la largeur et la hauteur de Polygon
+  // It calls the parent class's constructor with lengths
+  // provided for the Polygon's width and height
 Super($1;$1)
-  // Dans les classes dérivées, Super doit être appelé avant que vous
-  // ne puissiez utiliser 'This'
- This.name:="Square "
+  // In derived classes, Super must be called before you
+  // can use 'This'
+ This.name:="Square"
 
-Fonction getArea
+Function getArea
 C_LONGINT($0)
 $0:=This.height*This.width
 ```
 
 ### Super
 
-#### Super {(param {; ...; paramN})} {-> Object}
+#### Super {( param{;...;paramN} )} {-> Object}
 
-| Paramètre | Type   |    | Description                                  |
-| --------- | ------ | -- | -------------------------------------------- |
-| param     | mixed  | -> | Paramètre(s) à passer au constructeur parent |
-| Résultat  | object | <  | Parent de l'objet                            |
+| Parameter | Type   |    | Description                                    |
+| --------- | ------ | -- | ---------------------------------------------- |
+| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
+| Result    | object | <- | Object's parent                                |
 
-Le mot-clé `Super` autorise les appels à la `superclasse`, c'est-à-dire la classe parente.
-
-`Super` a deux objectifs différents :
-
-- à l'intérieur d'un [code constructeur](#class-constructor), `Super` est une commande qui permet d'appeler le constructeur de la superclasse. the parent class.</p>
+The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
 `Super` serves two different purposes:
 
@@ -400,27 +396,6 @@ This example illustrates the use of `Super` in a class constructor. The command 
 
 #### Example 2
 
-This example illustrates the use of `Super` in a class member method. Function getArea C_LONGINT($0) $0:=This.height*This.width </code></pre>
-
-```4d
-  //Class: Square
-
- Class extends Rectangle
-
- Class constructor
- C_LONGINT($1)
-
-  // It calls the parent class's constructor with lengths
-  // provided for the Rectangle's width and height
- Super($1;$1)
-
-  // In derived classes, Super must be called before you
-  // can use 'This'
- This.name:="Square"
-```
-
-#### Example 2
-
 This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
 
 ```4d
@@ -460,70 +435,71 @@ Then you can write in a project method:
 | --------- | ------ | -- | -------------- |
 | Result    | object | <- | Current object |
 
-The `This` keyword returns a reference to the currently processed object. Il ne peut pas être défini par affectation lors de l'exécution, et il peut être différent à chaque fois que la fonction est appelée.
+The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-Lorsqu'une formule est appelée en tant que méthode membre d'un objet, son `This` est défini sur l'objet sur lequel la méthode est appelée. Par exemple :
+In most cases, the value of `This` is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called.
+
+When a formula is called as a member method of an object, its `This` is set to the object the method is called on. For example:
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
 $val:=$o.f() //42
 ```
 
-Lorsqu'une fonction de [class constructor](#class-constructor) est utilisée (avec le mot clé `new()`), son `This` est lié au nouvel objet en cours de construction..
+When a [class constructor](#class-constructor) function is used (with the `new()` keyword), its `This` is bound to the new object being constructed.
 
 ```4d
-  //Classe : ob
+  //Class: ob
 
 Class Constructor  
-    // Créer des propriétés sur This 
-    // en leur assignant
+    // Create properties on This as
+    // desired by assigning to them
     This.a:=42
 ```
 
 ```4d
-    // dans une méthode 4D  
+    // in a 4D method  
 $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> Lorsque vous appelez le superclass constructor dans un constructeur à l'aide du mot clé [Super](#super), gardez à l'esprit que `This` ne doit pas être appelé avant le superclass constructor, sinon une erreur est générée. For example:
-> 
-> ```4d
-> $o:=New object("prop";42;"f";Formula(This.prop))
-> $val:=$o.f() //42
-> ```
-> 
-> When a [class constructor](#class-constructor) function is used (with the `new()` keyword), its `This` is bound to the new object being constructed.
-> 
-> ```4d
->   //Class: ob
-> 
-> Class Constructor  
->     // Create properties on This as
->     // desired by assigning to them
->     This.a:=42 
-> ```
-> 
-> ```4d
->     // in a 4D method  
-> $o:=cs.ob.new()
-> $val:=$o.a //42
-> ```
-> 
-> > When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. Puisque *f* est appelée comme une méthode de $o, son `This` fait référence à $o.
-> > 
-> > ## Commandes de classe
-> > 
-> > Plusieurs commandes du langage 4D permettent de gérer les fonctionnalités de classe.
-> > 
-> > ### OB Class
-> > 
-> > #### OB Class (objet) -> Objet | Null
-> > 
-> > `OB Class` renvoie la classe de l'objet passé en paramètre.
-> > 
-> > ### OB Instance of
-> > 
-> > #### OB Instance of (objet; classe) -> Booléen
-> > 
-> > `OB Instance of` renvoie `true` si `object` appartient à `class` ou à l'une de ses classes héritées, et `false` dans le cas contraire
+> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. See [this example](#example-1).
+
+
+In any cases, `This` refers to the object the method was called on, as if the method were on the object.
+
+```4d
+  //Class: ob
+
+ Function f
+    $0:=This.a+This.b
+```
+
+Then you can write in a project method:
+
+```4d
+$o:=cs.ob.new()
+$o.a:=5
+$o.b:=3
+$val:=$o.f() //8
+```
+In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Since *f* is called as a method of $o, its `This` refers to $o.
+
+
+## Class commands
+
+Several commands of the 4D language allows you to handle class features.
+
+
+### OB Class
+
+#### OB Class ( object ) -> Object | Null
+
+`OB Class` returns the class of the object passed in parameter.
+
+
+### OB Instance of
+
+#### OB Instance of ( object ; class ) -> Boolean
+
+`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
