@@ -3,7 +3,7 @@ id: onVpReady
 title: On VP Ready
 ---
 
-| Code | Peut être appelé par                                    | Définition                                      |
+| Code | Can be called by                                        | Definition                                      |
 | ---- | ------------------------------------------------------- | ----------------------------------------------- |
 | 9    | [4D View Pro Area](FormObjects/viewProArea_overview.md) | The loading of the 4D View Pro area is complete |
 
