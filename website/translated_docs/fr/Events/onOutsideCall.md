@@ -3,9 +3,9 @@ id: onOutsideCall
 title: Sur appel extérieur
 ---
 
-| Code | Can be called by | Definition                                   |
-| ---- | ---------------- | -------------------------------------------- |
-| 10   | Form             | The form received a `POST OUTSIDE CALL` call |
+| Code | Peut être appelé par | Définition                                   |
+| ---- | -------------------- | -------------------------------------------- |
+| 10   | Formulaire           | The form received a `POST OUTSIDE CALL` call |
 
 
 ## Description
