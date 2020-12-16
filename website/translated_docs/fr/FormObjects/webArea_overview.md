@@ -1,6 +1,6 @@
 ---
 id: webAreaOverview
-title: Zone Web
+title: Web Area
 ---
 
 ## Aperçu
@@ -9,60 +9,60 @@ Web areas can display various types of web content within your forms: HTML pages
 
 It is possible to create several web areas in the same form. Note, however, that the use of web areas must follow [several rules](#web-areas-rules).
 
-Several dedicated [standard actions](#standard-actions), numerous [language commands](https://doc.4d.com/4Dv18/4D/18/Web-Area.201-4504309.en.html) as well as generic and specific [form events](#form-events) allow the developer to control the functioning of web areas. Des variables spécifiques permettent d’échanger des informations entre la zone et l’environnement 4D.
+Several dedicated [standard actions](#standard-actions), numerous [language commands](https://doc.4d.com/4Dv18/4D/18/Web-Area.201-4504309.en.html) as well as generic and specific [form events](#form-events) allow the developer to control the functioning of web areas. Specific variables can be used to exchange information between the area and the 4D environment.
 > The use of web plugins and Java applets is not recommended in web areas because they may lead to instability in the operation of 4D, particularly at the event management level.
 
 
-## Propriétés spécifiques
+## Specific properties
 
-### Variables associées
+### Associated variables
 
 Two specific variables can be associated with each web area:
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the web area.
 
-### Moteur de rendu Web
+### Web rendering engine
 
 You can choose between [two rendering engines](properties_WebArea.md#use-embedded-web-rendering-engine) for the web area, depending on the specifics of your application.
 
 Selecting the embedded web rendering engine allows you to call 4D methods from the web area.
 
-### Accéder aux méthodes 4D
+### Access 4D methods
 When the [Access 4D methods](properties_WebArea.md#access-4d-methods) property is selected, you can call 4D methods from a web area.
 
 > This property is only available if the web area [uses the embedded web rendering engine](#use-embedded-web-rendering-engine).
 
-### Objet $4d
+### $4d object
 
 
 
 
 The [4D embedded web rendering engine](#use-embedded-web-rendering-engine) supplies the area with a JavaScript object named $4d that you can associate with any 4D project method using the "." object notation.
 
-Par exemple, pour appeler la méthode 4D `HelloWorld`, vous devez simplement exécuter la déclaration suivante :
+For example, to call the `HelloWorld` 4D method, you just execute the following statement:
 
 ```codeJS
 $4d.HelloWorld();
 ```
-> JavaScript est sensible à la casse. Il est donc important de noter que l'objet est nommé $4d (avec un "d" minuscule).
+> JavaScript is case sensitive so it is important to note that the object is named $4d (with a lowercase "d").
 
-La syntaxe des appels aux méthodes 4D est la suivante :
+The syntax of calls to 4D methods is as follows:
 
 ```codeJS
 $4d.4DMethodName(param1,paramN,function(result){})
 ```
-- `param1...paramN` : Vous pouvez passer autant de paramètres que vous le souhaitez dans la méthode 4D. Ces paramètres peuvent être de n'importe quel type pris en charge par JavaScript (chaîne, numérique, tableau, objet).
+- `param1...paramN`: You can pass as many parameters as you need to the 4D method. These parameters can be of any type supported by JavaScript (string, number, array, object).
 
-- `function(result)` : Fonction à passer comme dernier argument. Cette fonction "callback" est appelée de manière sychronisée une fois que la méthode 4D a fini de s'exécuter. Elle reçoit le paramètre `result`.
+- `function(result)`: Function to pass as last argument. This "callback" function is called synchronously once the 4D method finishes executing. It receives the `result` parameter.
 
-- `result`: Résultat de l'exécution de la méthode 4D, retournée dans l'expression "$0". Ce résultat peut être de n'importe quel type pris en charge par JavaScript (chaîne, numérique, tableau, objet). Vous pouvez utiliser la commande `C_OBJECT` pour retourner les objets.
+- `result`: Execution result of the 4D method, returned in the "$0" expression. This result can be of any type supported by JavaScript (string, number, array, object). You can use the `C_OBJECT` command to return the objects.
 
-> Par défaut, 4D opère en UTF-8. Lorsque vous retournez du texte contenant des caractères étendus, tels que des caractères avec des accents, assurez-vous que l'encodage de la page affiché dans la zone Web est déclaré en UTF-8, sinon les caractères risquent de ne pas être retournés correctement. Dans ce cas, ajoutez la ligne suivante dans la page HTML pour déclarer l'encodage : `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
+> By default, 4D works in UTF-8. When you return text containing extended characters, for example characters with accents, make sure the encoding of the page displayed in the Web area is declared as UTF-8, otherwise the characters may be rendered incorrectly. In this case, add the following line in the HTML page to declare the encoding: `<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />`
 
-#### Exemple 1
-Considérons une méthode projet 4D nommée `today` qui ne reçoit pas de paramètres et qui retourne la date courante dans une chaîne.
+#### Example 1
+Given a 4D project method named `today` that does not receive parameters and returns the current date as a string.
 
-Code 4D de la méthode `today` :
+4D code of `today` method:
 
 ```4d
  C_TEXT($0)
@@ -75,9 +75,9 @@ In the web area, the 4D method can be called with the following syntax:
 $4d.today()
 ```
 
-La méthode 4D ne reçoit aucun paramètre mais elle retourne la valeur $0 à la fonction callback appelée par 4D après avoir exécuté la méthode. We want to display the date in the HTML page that is loaded by the web area.
+The 4D method does not receive any parameters but it does return the value of $0 to the callback function called by 4D after the execution of the method. We want to display the date in the HTML page that is loaded by the web area.
 
-Voici le code de la page HTML :
+Here is the code of the HTML page:
 
 ```html
 <html>
@@ -96,15 +96,15 @@ $4d.today(function(dollarZero)
 </html>
 ```
 
-#### Exemple 2
+#### Example 2
 
-La méthode projet 4D `calcSum` reçoit des paramètres (`$1...$n`) et retourne leur somme dans `$0` :
+The 4D project method `calcSum` receives parameters (`$1...$n`) and returns their sum in `$0`:
 
-Code 4D de la méthode `calcSum` :
+4D code of `calcSum` method:
 
 ```4d
- C_REAL(${1}) // reçoit n paramètres de type REEL
- C_REAL($0) // retourne un Réel
+ C_REAL(${1}) // receives n REAL type parameters
+ C_REAL($0) // returns a Real
  C_LONGINT($i;$n)
  $n:=Count parameters
  For($i;1;$n)
@@ -117,17 +117,17 @@ The JavaScript code run in the web area is:
 ```js
 $4d.calcSum(33, 45, 75, 102.5, 7, function(dollarZero)
     {
-        var result = dollarZero // le résultat est 262.5
+        var result = dollarZero // result is 262.5
     });
 ```
 
 
-## Actions standard
+## Standard actions
 
-Quatre actions standard sont disponibles pour gérer automatiquement les zones Web : `Open Back URL`, `Open Next URL`, `Refresh Current URL` and `Stop Loading URL`. These actions can be associated with buttons or menu commands and allow quick implementation of basic web interfaces. Ces actions sont décrites dans [Actions standard](https://doc.4d.com/4Dv17R6/4D/17-R6/Standard-actions.300-4354791.en.html).
+Four specific standard actions are available for managing web areas automatically: `Open Back URL`, `Open Next URL`, `Refresh Current URL` and `Stop Loading URL`. These actions can be associated with buttons or menu commands and allow quick implementation of basic web interfaces. These actions are described in [Standard actions](https://doc.4d.com/4Dv17R6/4D/17-R6/Standard-actions.300-4354791.en.html).
 
 
-## Evénements formulaire
+## Form events
 
 Specific form events are intended for programmed management of web areas, more particularly concerning the activation of links:
 
@@ -147,33 +147,33 @@ In addition, web areas support the following generic form events:
 - `On Losing Focus`
 
 
-## Notes d'utilisation des zones Web
+## Web area rules
 
-### Interface utilisateur
+### User interface
 
 When the form is executed, standard browser interface functions are available to the user in the web area, which permit interaction with other form areas:
 
 - **Edit menu commands**: When the web area has the focus, the **Edit** menu commands can be used to carry out actions such as copy, paste, select all, etc., according to the selection.
-- **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. L’affichage de ce menu peut également être contrôlé via la commande `WA SET PREFERENCE`.
+- **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. Display of the context menu can be controlled using the `WA SET PREFERENCE` command.
 - **Drag and drop**: The user can drag and drop text, pictures and documents within the web area or between a web area and the 4D form objects, according to the 4D object properties. For security reasons, changing the contents of a web area by means of dragging and dropping a file or URL is not allowed by default. In this case, the cursor displays a "forbidden" icon ![](assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE` command to explicitly allow the dropping of URLs or files in the web area.
 
-### Sous-formulaires
+### Subforms
 For reasons related to window redrawing mechanisms, the insertion of a web area into a subform is subject to the following constraints:
 
-- Le sous-formulaire ne doit pas pouvoir défiler,
+- The subform must not be able to scroll
 - The limits of the web area must not exceed the size of the subform
 
 > Superimposing a web area on top of or beneath other form objects is not supported.
 
 
-### Conflit Zone Web et serveur Web (Windows)
+### Web Area and Web server conflict (Windows)
 In Windows, it is not recommended to access, via a web area, the Web server of the 4D application containing the area because this configuration could lead to a conflict that freezes the application. Of course, a remote 4D can access the Web server of 4D Server, but not its own web server.
 
-### Plugins Web et applets Java
+### Web plugins and Java applets
 The use of web plugins and Java applets is not recommended in web areas because they may lead to instability in the operation of 4D, particularly at the event management level.
 
-### Insertion du protocole (macOS)
-The URLs handled by programming in web areas in macOS must begin with the protocol. Par exemple, vous devez passer la chaîne "http://www.monsite.fr" et non uniquement "www.monsite.fr".
+### Insertion of protocol (macOS)
+The URLs handled by programming in web areas in macOS must begin with the protocol. For example, you need to pass the string "http://www.mysite.com" and not just "www.mysite.com".
 
 
 ## Access to web inspector
@@ -196,16 +196,16 @@ To display the web inspector, you can either execute the `WA OPEN WEB INSPECTOR`
 For more information, refer to the description of the `WA SET PREFERENCE` command.
 
 ### Using the web inspector
-Lorsque les paramétrages décrits ci-dessus sont effectués, vous disposez de nouvelles options telles que **Inspect Element** dans le menu contextuel de la zone. When you select this option, the web inspector window is displayed.
+When you have done the settings as described above, you then have new options such as **Inspect Element** in the context menu of the area. When you select this option, the web inspector window is displayed.
 
 > The web inspector is included in the embedded web rendering engine. For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
 
 
 
 
-## Propriétés prises en charge
+## Supported Properties
 
-[Style de la bordure](properties_BackgroundAndBorder.md#border-line-style) - [Bas](properties_CoordinatesAndSizing.md#bottom) - [CSS Class](properties_Object.md#css-class) - [Menu contextuel](properties_Entry.md#context-menu) - [Hauteur](properties_CoordinatesAndSizing.md#height) - [Dim. horizontal](properties_ResizingOptions.md#horizontal-sizing) - [Gauche](properties_CoordinatesAndSizing.md#left) - [Méthode](properties_Action.md#method) - [Nom](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Droite](properties_CoordinatesAndSizing.md#right) - [Haut](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - URL<13> - [Utiliser le moteur de rendu Web intégré](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable ou expression](properties_Object.md#variable-or-expression) - [Dim. vertical](properties_ResizingOptions.md#vertical-sizing) - [Visibilité](properties_Display.md#visibility) - [Largeur](properties_CoordinatesAndSizing.md#width) </p> 
+[Border Line Style](properties_BackgroundAndBorder.md#border-line-style) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Class](properties_Object.md#css-class) - [Context Menu](properties_Entry.md#context-menu) - [Height](properties_CoordinatesAndSizing.md#height) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Left](properties_CoordinatesAndSizing.md#left) - [Method](properties_Action.md#method) - [Object Name](properties_Object.md#object-name) - [Progression](properties_WebArea.md#progression) - [Right](properties_CoordinatesAndSizing.md#right) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [URL](properties_WebArea.md#url) - [Use embedded Web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibilty](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width) 
 
 
 
