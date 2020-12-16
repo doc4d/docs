@@ -1,6 +1,6 @@
 ---
 id: transporter
-title: Classe Transporter
+title: Transporter Class
 ---
 
 ## Description
@@ -9,10 +9,10 @@ title: Classe Transporter
 <!-- REF transporter.acceptUnsecureConnection.Desc -->
 ## .acceptUnsecureConnection
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R4  | Added   |
 </details>
 
 <!-- REF #transporter.acceptUnsecureConnection.Syntax -->
@@ -45,10 +45,10 @@ Available secured ports are:
  <!-- REF transporter.authenticationMode.Desc -->
 ## .authenticationMode
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R4  | Added   |
 </details>
 
 <!-- REF #transporter.authenticationMode.Syntax -->
@@ -62,7 +62,7 @@ By default, the most secured mode supported by the server is used.
 
 Possible values are:
 
-| Valeur   | Constantes                                                                                     | Commentaire                                    |
+| Value    | Constants                                                                                      | Comment                                        |
 | -------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | APOP     | `POP3 authentication APOP`                                                                     | Authentication using APOP protocol (POP3 only) |
 | CRAM-MD5 | `SMTP authentication CRAM MD5`, `POP3 authentication CRAM-MD5`, `IMAP authentication CRAM MD5` | Authentication using CRAM-MD5 protocol         |
@@ -76,11 +76,11 @@ Possible values are:
 <!-- REF transporter.bodyCharset.Desc -->
 ## .bodyCharset
 
-<details><summary>Historique</summary>
-| Version | Modifications           |
+<details><summary>History</summary>
+| Version | Changes                 |
 | ------- | ----------------------- |
 | v18     | Support for UTF8 base64 |
-| v17 R5  | Ajoutées                |
+| v17 R5  | Added                   |
 </details>
 
 <!-- REF #transporter.bodyCharset.Syntax -->
@@ -95,9 +95,9 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 *   attachment filename(s),
 *   email name.
 
-**Valeurs possibles :**
+**Possible values:**
 
-| Constant                 | Valeur                         | Commentaire                                                                                                   |
+| Constant                 | Value                          | Comment                                                                                                       |
 | ------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>*headerCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>*bodyCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                     |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>*headerCharset*: ISO-8859-1 & Quoted-printable</li><li>*bodyCharset*: ISO-8859-1 & 8-bit</li></ul>                                                                                     |
@@ -112,10 +112,10 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 <!-- REF transporter.connectionTimeOut.Desc -->
 ## .connectionTimeOut
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R5  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R5  | Added   |
 </details>
 
 <!-- REF #transporter.connectionTimeOut.Syntax -->
@@ -135,10 +135,10 @@ The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeO
 <!-- REF transporter.headerCharset.Desc -->
 ## .headerCharset
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R5  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R5  | Added   |
 </details>
 
 <!-- REF #transporter.headerCharset.Syntax -->
@@ -153,9 +153,9 @@ The `.headerCharset` property contains <!-- REF #transporter.headerCharset.Summa
 *   attachment filename(s),
 *   email name.
 
-**Valeurs possibles :**
+**Possible values:**
 
-| Constant                 | Valeur                         | Commentaire                                                                                               |
+| Constant                 | Value                          | Comment                                                                                                   |
 | ------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>*headerCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>*bodyCharset*: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                 |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>*headerCharset*: ISO-8859-1 & Quoted-printable</li><li>*bodyCharset*: ISO-8859-1 & 8-bit</li></ul>                                                                                 |
@@ -170,10 +170,10 @@ The `.headerCharset` property contains <!-- REF #transporter.headerCharset.Summa
 <!-- REF transporter.host.Desc -->
 ## .host
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R5  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R5  | Added   |
 </details>
 
 <!-- REF #transporter.host.Syntax -->
@@ -191,10 +191,10 @@ The `.host` property contains <!-- REF #transporter.host.Summary -->the name or 
 <!-- REF transporter.logFile.Desc -->
 ## .logFile
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R5  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R5  | Added   |
 </details>
 
 <!-- REF #transporter.logFile.Syntax -->
@@ -222,10 +222,10 @@ Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), ext
 <!-- REF transporter.port.Desc -->
 ## .port
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R4  | Added   |
 </details>
 
 <!-- REF #transporter.port.Syntax -->
@@ -250,10 +250,10 @@ The `.port` property contains <!-- REF #transporter.port.Summary --> the port nu
 <!-- REF transporter.sendTimeOut.Desc -->
 ## .sendTimeOut
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R4  | Added   |
 </details>
 
 <!-- REF #transporter.sendTimeOut.Syntax -->
@@ -271,10 +271,10 @@ The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary -
 <!-- REF transporter.user.Desc -->
 ## .user
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R4  | Added   |
 </details>
 
 <!-- REF #transporter.user.Syntax -->
@@ -291,19 +291,19 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 <!-- REF transporter.checkConnection().Desc -->
 ## .checkConnection()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v17 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v17 R4  | Added   |
 </details>
 
 <!-- REF #transporter.checkConnection().Syntax -->
 **.checkConnection()** : Object<!-- END REF -->
 
 <!-- REF #transporter.checkConnection().Params -->
-| Paramètres | Type  |    | Description                                 |
-| ---------- | ----- |:--:| ------------------------------------------- |
-| Résultat   | Objet | <- | Status of the transporter object connection |
+| Parameter | Type  |    | Description                                 |
+| --------- | ----- |:--:| ------------------------------------------- |
+| Result    | Objet | <- | Status of the transporter object connection |
 <!-- END REF -->
 
 
@@ -316,15 +316,15 @@ The `.checkConnection()` function <!-- REF #transporter.checkConnection().Summar
 
 The function sends a request to the mail server and returns an object describing the mail status. This object can contain the following properties:
 
-| Propriété  |                          | Type       | Description                                                                                                  |
+| Property   |                          | Type       | Description                                                                                                  |
 | ---------- | ------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------ |
 | success    |                          | boolean    | True if the check is successful, False otherwise                                                             |
 | status     |                          | number     | (SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing) |
-| statusText |                          | Texte      | Status message returned by the mail server, or last error returned in the 4D error stack                     |
+| statusText |                          | text       | Status message returned by the mail server, or last error returned in the 4D error stack                     |
 | errors     |                          | collection | 4D error stack (not returned if a mail server response is received)                                          |
 |            | \[ ].errCode            | number     | 4D error code                                                                                                |
-|            | \[ ].message            | Texte      | Description of the 4D error                                                                                  |
-|            | \[ ].componentSignature | Texte      | Signature of the internal component which returned the error                                                 |
+|            | \[ ].message            | text       | Description of the 4D error                                                                                  |
+|            | \[ ].componentSignature | text       | Signature of the internal component which returned the error                                                 |
 
 
 
