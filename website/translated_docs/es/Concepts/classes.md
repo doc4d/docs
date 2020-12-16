@@ -396,6 +396,27 @@ This example illustrates the use of `Super` in a class constructor. The command 
 
 #### Example 2
 
+This example illustrates the use of `Super` in a class member method. Function getArea C_LONGINT($0) $0:=This.height*This.width </code></pre>
+
+```4d
+  //Class: Square
+
+ Class extends Rectangle
+
+ Class constructor
+ C_LONGINT($1)
+
+  // It calls the parent class's constructor with lengths
+  // provided for the Rectangle's width and height
+ Super($1;$1)
+
+  // In derived classes, Super must be called before you
+  // can use 'This'
+ This.name:="Square"
+```
+
+#### Example 2
+
 This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
 
 ```4d
