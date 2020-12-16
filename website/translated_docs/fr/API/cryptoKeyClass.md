@@ -4,32 +4,32 @@ title: CryptoKey
 ---
 
 
-La classe `CryptoKey` du langage 4D contient une paire de clés de chiffrement asymétrique.
+The `CryptoKey` class in the 4D language encapsulates an asymetric encryption key pair.
 
-Cette classe est disponible depuis le "class store" de `4D`.
+This class is available from the `4D` class store.
 
-### Exemple
+### Example
 
-L'extrait de code suivant illustre la signature et la vérification d'un message à l'aide d'une nouvelle paire de clés ECDSA, afin de créer, par exemple, un token Web JSON ES256.
+The following sample code signs and verifies a message using a new ECDSA key pair, for example in order to make a ES256 JSON Web token.
 
 ```4d
- // Générer une nouvelle paire de clés ECDSA
+ // Generate a new ECDSA key pair
 $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
-  // Obtenir une signature en base64
-$message:="hello world" 
+  // Get signature as base64
+$message:="hello world"
 $signature:=$key.sign($message;New object("hash";"SHA256"))
 
-  // Vérifier la signature
+  // Verify signature
 $status:=$key.verify($message;$signature;New object("hash";"SHA256"))
 ASSERT($status.success)
 ```
 
 
-### Sommaire
+### Summary
 |                                                                                                                                                                                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #cryptokey.new().Syntax -->](#4dcryptokeynew)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.new().Summary -->|
+| [<!-- INCLUDE #4D.CryptoKey.new().Syntax -->](#4dcryptokeynew)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.CryptoKey.new().Summary -->|
 | [<!-- INCLUDE #cryptokey.curve.Syntax -->](#curve)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.curve.Summary --> |
 | [<!-- INCLUDE #cryptokey.decrypt().Syntax -->](#decrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.decrypt().Summary -->|
 | [<!-- INCLUDE #cryptokey.encrypt().Syntax -->](#encrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #cryptokey.encrypt().Summary -->|
@@ -46,60 +46,62 @@ ASSERT($status.success)
 
 
 
+
+
 ## 4D.CryptoKey.new()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 
 <!-- REF #4D.CryptoKey.new().Syntax -->**4D.CryptoKey.new**( *settings* : Object ) : 4D.CryptoKey<!-- END REF -->
 
-<!-- REF #cryptokey.new().Params -->
-| Paramètres | Type         |    | Description                                                                 |
-| ---------- | ------------ | -- | --------------------------------------------------------------------------- |
-| settings   | Objet        | -> | Paramètres pour générer ou charger une paire de clés                        |
-| result     | 4D.CryptoKey | <- | Objet contenant une paire de clés de chiffrement|<!-- END REF -->
+<!-- REF #4D.CryptoKey.new().Params -->
+| Parameter | Type         |    | Description                                                            |
+| --------- | ------------ | -- | ---------------------------------------------------------------------- |
+| settings  | Objet        | -> | Settings to generate or load a key pair                                |
+| result    | 4D.CryptoKey | <- | Object encapsulating an encryption key pair|<!-- END REF -->
 
 
 |
 
 
-The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. Elle permet de générer une nouvelle clé RSA ou ECDSA, ou de charger une paire de clés existante à partir de la définition PEM.
+The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
 
 #### *settings*
 
-| Propriété       | Type    | Description                                       |
-| --------------- | ------- | ------------------------------------------------- |
-| [curve](#curve) | Texte   | Name of ECDSA curve                               |
-| [pem](#pem)     | Texte   | Définition PEM d'une clé de chiffrement à charger |
-| [size](#size)   | integer | Size of RSA key in bits                           |
-| [type](#type)   | Texte   | Type of the key: "RSA", "ECDSA", or "PEM"</li>    |
+| Property        | Type    | Description                                    |
+| --------------- | ------- | ---------------------------------------------- |
+| [curve](#curve) | text    | Name of ECDSA curve                            |
+| [pem](#pem)     | text    | PEM definition of an encryption key to load    |
+| [size](#size)   | integer | Size of RSA key in bits                        |
+| [type](#type)   | text    | Type of the key: "RSA", "ECDSA", or "PEM"</li> |
 
 
 #### *cryptoKey*
 
-L'objet `cryptoKey` retourné encapsule une paire de clés de chiffrement. C'est un objet partagé et peut être alors utilisé par de multiples traitements 4D simultanés.
-<!-- END REF -->
+The returned `cryptoKey` object encapsulates an encryption key pair. It is a shared object and can therefore be used by multiple 4D processes simultaneously.
+
 
 
 <!-- REF cryptokey.curve -->
 ## .curve
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
-<!-- REF #cryptokey.curve.Syntax -->**.curve** : Texte<!-- END REF -->
+<!-- REF #cryptokey.curve.Syntax -->**.curve** : Text<!-- END REF -->
 
 
 
 
-Défini uniquement pour les clés ECDSA : le <!-- REF #cryptokey.curve.Summary -->nom de la courbe normalisée de la clé. <!-- END REF -->
+Defined only for ECDSA keys: the <!-- REF #cryptokey.curve.Summary -->normalised curve name of the key. <!-- END REF -->
 Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for ES512.
 <!-- END REF -->
 
@@ -107,87 +109,87 @@ Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for
 <!-- REF cryptokey.decrypt().Desc -->
 ## .decrypt()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 
 <!-- REF #cryptokey.decrypt().Syntax -->**.decrypt**( *message* : Text ; *options* : Object ) : Object<!-- END REF -->
 
 <!-- REF #cryptokey.decrypt().Params -->
-| Paramètres | Type  |    | Description                                                                       |
-| ---------- | ----- | -- | --------------------------------------------------------------------------------- |
-| message    | Texte | -> | Chaine message à déchiffrer à l'aide de `options.encodingEncrypted` et decrypted. |
-| options    | Objet | -> | Options de décodage                                                               |
-| Résultat   | Objet | <- | Statut                                                                            |
+| Parameter | Type  |    | Description                                                                   |
+| --------- | ----- | -- | ----------------------------------------------------------------------------- |
+| message   | Text  | -> | Message string to be decoded using `options.encodingEncrypted` and decrypted. |
+| options   | Objet | -> | Decoding options                                                              |
+| Result    | Objet | <- | Status                                                                        |
 <!-- END REF -->
 
 
-La fonction `.encrypt()` <!-- REF #cryptokey.decrypt().Summary -->déchiffre le paramètre *message* à l'aide de la clé **private** key<!-- END REF -->. L'algorithme utilisé dépend du type de clé.
+The `.decrypt()` function <!-- REF #cryptokey.decrypt().Summary -->decrypts the *message* parameter using the **private** key<!-- END REF -->. The algorithm used depends on the type of the key.
 
-La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir [RFC 3447](https://tools.ietf.org/html/rfc3447)).
+The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
 #### *options*
 
-| Propriété         | Type  | Description                                                                                                                                                             |
-| ----------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | Texte | Algorithme de hachage à utiliser. For example: "SHA256", "SHA384", or "SHA512".                                                                                         |
-| encodingEncrypted | Texte | Chiffrement utilisé pour convertir le paramètre `message` en représentation binaire à déchiffrer. Peut être "Base64" ou "Base64URL". La valeur par défaut est "Base64". |
-| encodingDecrypted | Texte | Encodage utilisé pour convertir le message binaire déchiffré en chaîne de résultat. Peut être "UTF-8", "Base64" ou "Base64URL". La valeur par défaut est "UTF-8".       |
+| Property          | Type | Description                                                                                                                                      |
+| ----------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hash              | text | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                           |
+| encodingEncrypted | text | Encoding used to convert the `message` parameter into the binary representation to decrypt. Can be "Base64" or "Base64URL". Default is "Base64". |
+| encodingDecrypted | text | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8".      |
 
 
-#### *Résultat*
+#### *Result*
 
-La fonction renvoie un objet "status" avec la propriété `success` définie sur `true` si le *message* a pu être déchiffré avec succès.
+The function returns a status object with `success` property set to `true` if the *message* could be successfully decrypted.
 
-| Propriété | Type       | Description                                                                 |
-| --------- | ---------- | --------------------------------------------------------------------------- |
-| success   | boolean    | True si le message a été déchiffré avec succès                              |
-| result    | Texte      | Message déchiffré et décodé à l'aide de `options.encodingDecrypted`         |
-| errors    | collection | Si `success` est mis sur `false`, il peut contenir une collection d'erreurs |
+| Property | Type       | Description                                                         |
+| -------- | ---------- | ------------------------------------------------------------------- |
+| success  | boolean    | True if the message has been successfully decrypted                 |
+| result   | text       | Message decrypted and decoded using the `options.encodingDecrypted` |
+| errors   | collection | If `success` is `false`, may contain a collection of errors         |
 
-Si le *message* n'a pas pu être déchiffré car il n'a pas été chiffré avec la même clé ou le même algorithme, l'objet `status` retourné contient une collection d'erreurs dans `status.errors`.
+In case the *message* couldn't be decrypted because it was not encrypted with the same key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
 <!-- END REF -->
 
 
 <!-- REF cryptokey.encrypt().Desc -->
 ## .encrypt()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 
 <!-- REF #cryptokey.encrypt().Syntax -->**.encrypt**( *message* : Text ; *options* : Object ) : Text<!-- END REF -->
 
 <!-- REF #cryptokey.encrypt().Params -->
-| Paramètres | Type  |    | Description                                                                     |
-| ---------- | ----- | -- | ------------------------------------------------------------------------------- |
-| message    | Texte | -> | Chaine message à chiffrer à l'aide de `options.encodingDecrypted` et encrypted. |
-| options    | Objet | -> | Options de chiffrement                                                          |
-| Résultat   | Texte | <- | Message chiffré et encodé à l'aide de `options.encodingEncrypted`               |
+| Parameter | Type  |    | Description                                                                   |
+| --------- | ----- | -- | ----------------------------------------------------------------------------- |
+| message   | Text  | -> | Message string to be encoded using `options.encodingDecrypted` and encrypted. |
+| options   | Objet | -> | Encoding options                                                              |
+| Result    | Text  | <- | Message encrypted and encoded using the `options.encodingEncrypted`           |
 <!-- END REF -->
 
-La fonction `.encrypt()` <!-- REF #cryptokey.encrypt().Summary -->crypte le paramètre *message* à l'aide de la clé **publique**<!-- END REF -->. L'algorithme utilisé dépend du type de clé.
+The `.encrypt()` function <!-- REF #cryptokey.encrypt().Summary -->encrypts the *message* parameter using the **public** key<!-- END REF -->. The algorithm used depends on the type of the key.
 
-La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir [RFC 3447](https://tools.ietf.org/html/rfc3447)).
+The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
 ##### *options*
 
-| Propriété         | Type  | Description                                                                                                                                                                   |
-| ----------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | Texte | Algorithme de hachage à utiliser. For example: "SHA256", "SHA384", or "SHA512".                                                                                               |
-| encodingEncrypted | Texte | Chiffrement utilisé pour convertir le message chiffré binaire en chaîne de résultat. Peut être "Base64" ou "Base64URL". La valeur par défaut est "Base64".                    |
-| encodingDecrypted | Texte | Chiffrement utilisé pour convertir le paramètre `message` en représentation binaire à chiffrer. Peut être "UTF-8", "Base64" ou "Base64URL". La valeur par défaut est "UTF-8". |
+| Property          | Type | Description                                                                                                                                               |
+| ----------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash              | text | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                                    |
+| encodingEncrypted | text | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Default is "Base64".                       |
+| encodingDecrypted | text | Encoding used to convert the `message` parameter into the binary representation to encrypt. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8". |
 
 
-#### *Résultat*
+#### *Result*
 
-La valeur retournée est un message chiffré.
+The returned value is an encrypted message.
 <!-- END REF -->
 
 
@@ -196,10 +198,10 @@ La valeur retournée est un message chiffré.
 <!-- REF cryptokey.getPrivateKey().Desc -->
 ## .getPrivateKey()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 
@@ -207,16 +209,16 @@ La valeur retournée est un message chiffré.
 
 
 <!-- REF #cryptokey.getPrivateKey().Params -->
-| Paramètres | Type  |    | Description                |
-| ---------- | ----- | -- | -------------------------- |
-| Résultat   | Texte | <- | Clé primaire au format PEM |
+| Parameter | Type |    | Description               |
+| --------- | ---- | -- | ------------------------- |
+| Result    | Text | <- | Private key in PEM format |
 <!-- END REF -->
 
-La fonction `.getPrivateKey()`  <!-- REF #cryptokey.getPrivateKey().Summary -->retourne la clé privée de l'objet `cryptoKey`<!-- END REF --> au format PEM, ou une chaîne vide si aucune n'est disponible.
+The `.getPrivateKey()` function  <!-- REF #cryptokey.getPrivateKey().Summary -->returns the private key of the `cryptoKey` object<!-- END REF --> in PEM format, or an empty string if none is available.
 
-#### *Résultat*
+#### *Result*
 
-La valeur retournée est la clé privée.
+The returned value is the private key.
 <!-- END REF -->
 
 
@@ -224,44 +226,44 @@ La valeur retournée est la clé privée.
 <!-- REF cryptokey.getPublicKey().Desc -->
 ## .getPublicKey()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 
 <!-- REF #cryptokey.getPublicKey().Syntax -->**.getPublicKey( )** : Text<!-- END REF -->
 
 <!-- REF #cryptokey.getPublicKey().Params -->
-| Paramètres | Type  |    | Description                |
-| ---------- | ----- | -- | -------------------------- |
-| Résultat   | Texte | <- | Clé publique au format PEM |
+| Parameter | Type |    | Description              |
+| --------- | ---- | -- | ------------------------ |
+| Result    | Text | <- | Public key in PEM format |
 <!-- END REF -->
 
 
-La fonction `.getPublicKey()` <!-- REF #cryptokey.getPublicKey().Summary -->retourne la clé publique de l'objet `cryptoKey`<!-- END REF --> au format PEM, ou une chaîne vide si aucune n'est disponible.
+The `.getPublicKey()` function <!-- REF #cryptokey.getPublicKey().Summary -->returns the public key of the `cryptoKey` object<!-- END REF --> in PEM format, or an empty string if none is available.
 
-#### *Résultat*
+#### *Result*
 
-La valeur retournée est la clé publique.
+The returned value is the public key.
 <!-- END REF -->
 
 ---
 <!-- REF cryptokey.pem.Desc -->
 ## .pem
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 
 <!-- REF #cryptokey.pem.Syntax -->**.pem** : Text<!-- END REF -->
 
 
-<!-- REF #cryptokey.pem.Summary -->PEM definition of an encryption key to load<!-- END REF -->. Si la clé est une clé privée, la clé publique RSA ou ECDSA en sera déduite.
+<!-- REF #cryptokey.pem.Summary -->PEM definition of an encryption key to load<!-- END REF -->. If the key is a private key, the RSA or ECDSA public key will be deduced from it.
 <!-- END REF -->
 
 
@@ -269,39 +271,39 @@ La valeur retournée est la clé publique.
 <!-- REF cryptokey.sign().Desc -->
 ## .sign()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 <!-- REF #cryptokey.sign().Syntax -->.**sign** (*message* : Text ; *options* : Text) : Text<!-- END REF -->
 
 <!-- REF #cryptokey.sign().Params -->
-| Paramètres | Type  |    | Description                                                                |
-| ---------- | ----- | -- | -------------------------------------------------------------------------- |
-| message    | Texte | -> | Chaîne message à signer                                                    |
-| options    | Objet | -> | Options de signature                                                       |
-| Résultat   | Texte | <- | Signature en représentation Base64 ou Base64URL, selon l'option "encoding" |
+| Parameter | Type  |    | Description                                                                     |
+| --------- | ----- | -- | ------------------------------------------------------------------------------- |
+| message   | Text  | -> | Message string to sign                                                          |
+| options   | Objet | -> | Signing options                                                                 |
+| Result    | Text  | <- | Signature in Base64 or Base64URL representation, depending on "encoding" option |
 <!-- END REF -->
 
-La fonction `.sign()` <!-- REF #cryptokey.sign().Summary -->signe la représentation utf8 de la chaîne *message*<!-- END REF --> à l'aide des clés d'objet `cryptoKey` et des *options* fournies. Elle retourne sa signature au format base64 ou base64URL, selon la valeur de l'attribut `options.encoding` que vous avez passé.
+The `.sign()` function <!-- REF #cryptokey.sign().Summary -->signs the utf8 representation of a *message* string<!-- END REF --> using the `cryptoKey` object keys and provided *options*. It returns its signature in base64 or base64URL format, depending on the value of the `options.encoding` attribute you passed.
 
-La `cryptoKey` doit contenir une clé **privée** valide.
+The `cryptoKey` must contain a valid **private** key.
 
 #### *options*
 
-| Propriété         | Type    | Description                                                                                                                                                                                                            |
-| ----------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | Texte   | Algorithme de hachage à utiliser. For example: "SHA256", "SHA384", or "SHA512". Lorsqu'elle est utilisée pour produire un JWT, la taille du hachage doit correspondre à la taille de l'algorithme PS@, ES@, RS@ ou PS@ |
-| encodingEncrypted | Texte   | Chiffrement utilisé pour convertir le message chiffré binaire en chaîne de résultat. Peut être "Base64" ou "Base64URL". La valeur par défaut est "Base64".                                                             |
-| pss               | boolean | Utilise le Probabilistic Signature Scheme (PSS). Ignoré si la clé n'est pas une clé RSA. Passez `true` lors de la production d'un JWT pour l'algorithme PS@                                                            |
-| encoding          | Texte   | ERepresentation to be used for result signature. Valeurs possibles : "Base64" ou "Base64URL". La valeur par défaut est "Base64".                                                                                       |
+| Property          | Type    | Description                                                                                                                                                          |
+| ----------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash              | text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
+| encodingEncrypted | text    | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Default is "Base64".                                  |
+| pss               | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when producing a JWT for PS@ algorithm                                   |
+| encoding          | text    | ERepresentation to be used for result signature. Possible values: "Base64" or "Base64URL". Default is "Base64".                                                      |
 
 
-#### *Résultat*
+#### *Result*
 
-Représentation utf8 de la chaîne *message*.
+The utf8 representation of the *message* string.
 <!-- END REF -->
 
 
@@ -309,79 +311,79 @@ Représentation utf8 de la chaîne *message*.
 ## .size
 <!-- END REF -->
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 <!-- REF #cryptokey.size.Syntax -->**.size** : Integer<!-- END REF -->
 
 
-Défini uniquement pour les clés RSA : <!-- REF #cryptokey.size.Summary -->la taille de la clé en bits<!-- END REF -->. Habituellement 2048 (par défaut).
+Defined only for RSA keys: <!-- REF #cryptokey.size.Summary -->the size of the key in bits<!-- END REF -->. Typically 2048 (default).
 
 
 <!-- REF cryptokey.type -->
 ## .type
 <!-- END REF -->
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 
-<!-- REF #cryptokey.type.Syntax -->**.type** : Texte<!-- END REF -->
+<!-- REF #cryptokey.type.Syntax -->**.type** : Text<!-- END REF -->
 
 
-<!-- REF #cryptokey.type.Summary -->Name of the key type - "RSA", "ECDSA", "PEM"<!-- END REF --><li>"RSA": an RSA key pair, using `settings.size` as [.size](#size).</li><li>"ECDSA": an Elliptic Curve Digital Signature Algorithm key pair, using `settings.curve` as [.curve](#curve). A noter que les clés ECDSA ne peuvent pas être utilisées pour le chiffrement, mais uniquement pour la signature.</li><li>"PEM": a key pair definition in PEM format, using `settings.pem` as [.pem](#pem).
+<!-- REF #cryptokey.type.Summary -->Name of the key type - "RSA", "ECDSA", "PEM"<!-- END REF --><li>"RSA": an RSA key pair, using `settings.size` as [.size](#size).</li><li>"ECDSA": an Elliptic Curve Digital Signature Algorithm key pair, using `settings.curve` as [.curve](#curve). Note that ECDSA keys cannot be used for encryption but only for signature.</li><li>"PEM": a key pair definition in PEM format, using `settings.pem` as [.pem](#pem).
 
 
 <!-- REF cryptokey.verify().Desc -->
 ## .verify()
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v18 R4  | Ajoutées      |
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R4  | Added   |
 </details>
 
 <!-- REF #cryptokey.verify().Syntax -->**.verify**( *message* : Text ; *signature* : Text ; *options* : Object) : object<!-- END REF -->
 
 <!-- REF #cryptokey.verify().Params -->
-| Paramètres | Type  |    | Description                                                                                     |
-| ---------- | ----- | -- | ----------------------------------------------------------------------------------------------- |
-| message    | Texte | -> | Chaîne message utilisée pour générer la signature                                               |
-| signature  | Texte | -> | Signature à vérifier, en représentation Base64 ou Base64URL, selon la valeur `options.encoding` |
-| options    | Objet | -> | Options de signature                                                                            |
-| Résultat   | Objet | <- | Statut de la vérification                                                                       |
+| Parameter | Type  |    | Description                                                                                       |
+| --------- | ----- | -- | ------------------------------------------------------------------------------------------------- |
+| message   | Text  | -> | Message string that was used to produce the signature                                             |
+| signature | Text  | -> | Signature to verify, in Base64 or Base64URL representation, depending on `options.encoding` value |
+| options   | Objet | -> | Signing options                                                                                   |
+| Result    | Objet | <- | Status of the verification                                                                        |
 <!-- END REF -->
 
-La fonction `.verify()` <!-- REF #cryptokey.verify().Summary -->vérifie la signature base64 par rapport à la représentation utf8 du *message*<!-- END REF --> à l'aide des clés d'objet `cryptoKey` et des *options* fournies.
+The `.verify()` function <!-- REF #cryptokey.verify().Summary -->verifies the base64 signature against the utf8 representation of *message*<!-- END REF --> using the `cryptoKey` object keys and provided *options*.
 
-La `cryptoKey` doit contenir une clé **publique** valide.
+The `cryptoKey` must contain a valid **public** key.
 
 
 #### *options*
 
-| Propriété | Type    | Description                                                                                                                                                                                                            |
-| --------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash      | Texte   | Algorithme de hachage à utiliser. For example: "SHA256", "SHA384", or "SHA512". Lorsqu'elle est utilisée pour produire un JWT, la taille du hachage doit correspondre à la taille de l'algorithme PS@, ES@, RS@ ou PS@ |
-| pss       | boolean | Utilise le Probabilistic Signature Scheme (PSS). Ignoré si la clé n'est pas une clé RSA. Passez `true` lors de la vérification d'un JWT pour l'algorithme PS@                                                          |
-| encoding  | Texte   | Représentation de la signature fournie. Valeurs possibles : "Base64" ou "Base64URL". La valeur par défaut est "Base64".                                                                                                |
+| Property | Type    | Description                                                                                                                                                          |
+| -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash     | text    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size |
+| pss      | boolean | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm                                   |
+| encoding | text    | Representation of provided signature. Possible values are "Base64" or "Base64URL". Default is "Base64".                                                              |
 
 
-#### *Résultat*
+#### *Result*
 
-La fonction retourne un objet status avec la propriété `success` définie sur `true` si le `message` a pu être déchiffré avec succès (c'est-à-dire si la signature est correspondante).
+The function returns a status object with `success` property set to `true` if `message` could be successfully verified (i.e. the signature matches).
 
-Si la signature n'a pas pu être vérifiée car elle n'a pas été signée avec le même *message*, la clé ou l'algorithme, l'objet `status` retourné contient une collection d'erreurs dans `status.errors`.
+In case the signature couldn't be verified because it was not signed with the same *message*, key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
 
-| Propriété | Type       | Description                                                                 |
-| --------- | ---------- | --------------------------------------------------------------------------- |
-| success   | boolean    | True si la signature correspond au message                                  |
-| errors    | collection | Si `success` est mis sur `false`, il peut contenir une collection d'erreurs |
+| Property | Type       | Description                                                 |
+| -------- | ---------- | ----------------------------------------------------------- |
+| success  | boolean    | True if the signature matches the message                   |
+| errors   | collection | If `success` is `false`, may contain a collection of errors |
 <!-- END REF -->
 
 <style> h2 { background: #d9ebff;}</style>
