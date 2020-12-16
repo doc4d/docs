@@ -47,7 +47,7 @@ Email objects provide the following properties:
 
 All properties that contain email addresses ([`from`](#from), [`cc`](#cc), [`bcc`](#bcc), [`to`](#to), [`sender`](#sender), [`replyTo`](#replyto)) accept a value of text, object, or collection type.
 
-#### Texte
+#### Text
 
 - single email: "somebody@domain.com"
 - single display name+email: "Somebody <somebody@domain.com>"
@@ -57,10 +57,10 @@ All properties that contain email addresses ([`from`](#from), [`cc`](#cc), [`bcc
 
 An object with two properties:
 
-| Propriété | Type  | Description                |
-| --------- | ----- | -------------------------- |
-| name      | Texte | Display name (can be null) |
-| email     | Texte | Email address              |
+| Property | Type | Description                |
+| -------- | ---- | -------------------------- |
+| name     | Text | Display name (can be null) |
+| email    | Text | Email address              |
 
 #### Collection
 
@@ -145,15 +145,15 @@ The `.bodyStructure` property contains the <!-- REF #emailObjectClass.bodyStruct
 
 The `.bodyStructure` object contains the following properties:
 
-| Propriété   | Type                  | Valeur                                                                                                                                                  |
+| Property    | Type                  | Value                                                                                                                                                   |
 | ----------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| partID      | Texte                 | Identifies the part uniquely within the email                                                                                                           |
-| type        | Texte                 | (mandatory) Value of the Content-Type header field of the part                                                                                          |
-| charset     | Texte                 | Value of the charset parameter of the Content-Type header field                                                                                         |
-| encoding    | Texte                 | If `isEncodingProblem=true`, the Content-Transfer-Encoding value is added (by default undefined)                                                        |
-| disposition | Texte                 | Value of the Content-Disposition header field of the part                                                                                               |
+| partID      | Text                  | Identifies the part uniquely within the email                                                                                                           |
+| type        | Text                  | (mandatory) Value of the Content-Type header field of the part                                                                                          |
+| charset     | Text                  | Value of the charset parameter of the Content-Type header field                                                                                         |
+| encoding    | Text                  | If `isEncodingProblem=true`, the Content-Transfer-Encoding value is added (by default undefined)                                                        |
+| disposition | Text                  | Value of the Content-Disposition header field of the part                                                                                               |
 | language    | Collection of texts   | List of language tags, as defined in [RFC3282](https://tools.ietf.org/html/rfc3282), in the Content-Language header field of the part, if present.      |
-| location    | Texte                 | URI, as defined in [RFC2557](https://tools.ietf.org/html/rfc2557), in the Content-Location header field of the part, if present.                        |
+| location    | Text                  | URI, as defined in [RFC2557](https://tools.ietf.org/html/rfc2557), in the Content-Location header field of the part, if present.                        |
 | subParts    | Collection of objects | Body parts of each child (collection of *EmailBodyPart* objects)                                                                                        |
 | headers     | Collection of objects | List of all header fields in the part, in the order they appear in the message (collection of *EmailHeader* objects, see [headers](#headers-) property) |
 
@@ -172,9 +172,9 @@ The `.bodyValues` property contains the <!-- REF #emailObjectClass.bodyValues.Su
 
 The `.bodyValues` object contains the following properties:
 
-| Propriété                  | Type    | Valeur                                                                                                                                      |
+| Property                   | Type    | Value                                                                                                                                       |
 | -------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| *partID*.value             | Texte   | Value of the body part                                                                                                                      |
+| *partID*.value             | text    | Value of the body part                                                                                                                      |
 | *partID*.isEncodingProblem | boolean | True if malformed sections are found while decoding the charset, or unknown charset, or unknown content transfer-encoding. False by default |
 
 
@@ -247,10 +247,10 @@ The `.headers` property contains a <!-- REF #emailObjectClass.headers.Summary --
 
 Every object of the headers collection can contain the following properties:
 
-| Propriété | Type  | Valeur                                                                                                                                                               |
-| --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [].name   | Texte | (mandatory) Header field name as defined in [RFC#5322](https://tools.ietf.org/html/rfc5322). If null or undefined, the header field is not added to the MIME header. |
-| [].value  | Texte | Header field values as defined in [RFC#5322](https://tools.ietf.org/html/rfc5322)                                                                                    |
+| Property | Type | Value                                                                                                                                                                |
+| -------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [].name  | text | (mandatory) Header field name as defined in [RFC#5322](https://tools.ietf.org/html/rfc5322). If null or undefined, the header field is not added to the MIME header. |
+| [].value | text | Header field values as defined in [RFC#5322](https://tools.ietf.org/html/rfc5322)                                                                                    |
 
 
 
@@ -323,7 +323,7 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
 <table spaces-before="0" line-breaks-before="2">
   <tr>
     <th>
-      Propriété
+      Property
     </th>
     
     <th>
@@ -331,13 +331,13 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
     </th>
     
     <th>
-      Valeur
+      Value
     </th>
   </tr>
   
   <tr>
     <td>
-      . \<keyword\>
+      .\<keyword\>
     </td>
     
     <td>
@@ -350,7 +350,7 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
   </tr>
 </table>
 
-#### Exemple
+#### Example
 
 ```
  var $mail : Object
@@ -364,28 +364,28 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
 ## .messageId
 
 <!-- REF #emailObjectClass.messageId.Syntax -->
-**.messageId** : Texte<!-- END REF -->
+**.messageId** : Text<!-- END REF -->
 
 
 #### Description
 
-La propriété `.messageId` contient un <!-- REF #emailObjectClass.messageId.Summary -->en-tête d'identificateur de message ("message-id")<!-- END REF -->.
+The `.messageId` property contains a <!-- REF #emailObjectClass.messageId.Summary -->message identifier header ("message-id")<!-- END REF -->.
 
-Cet en-tête est généralement "desChiffresOuDesLettres@nomdededomaine", par exemple "abcdef.123456@4d.com". Cet identifiant unique est notamment utilisé sur les forums ou les listes de diffusion publiques. En général, les serveurs de messagerie ajoutent automatiquement cet en-tête aux messages qu'ils envoient.
+This header is usually "lettersOrNumbers@domainname", e.g. "abcdef.123456@4d.com". This unique ID is used in particular on forums or public mailing lists. In general, mail servers automatically add this header to the messages they send.
 
 
 
 ## .receivedAt 
 
 <!-- REF #emailObjectClass.receivedAt.Syntax -->
-**.receivedAt** : Texte<!-- END REF -->
+**.receivedAt** : Text<!-- END REF -->
 
 
 #### Description
 
 [IMAP transporter](imapTransporterClass.md) only.
 
-La propriété `.receivedAt` contient <!-- REF #emailObjectClass.receivedAt.Summary -->l'horodatage de l'arrivée de l'e-mail sur le serveur IMAP au format ISO 8601 UTC (ex : 2020-09-13T16:11:53Z)<!-- END REF -->.
+The `.receivedAt` property contains the <!-- REF #emailObjectClass.receivedAt.Summary -->timestamp of the email's arrival on the IMAP server in ISO 8601 UTC format (ex: 2020-09-13T16:11:53Z)<!-- END REF -->.
 
 
 
@@ -400,7 +400,7 @@ La propriété `.receivedAt` contient <!-- REF #emailObjectClass.receivedAt.Summ
 
 #### Description
 
-La propriété `.references` contient la <!-- REF #emailObjectClass.references.Summary -->collection de tous les identifiants de messages de la chaîne de réponses précédente<!-- END REF -->.
+The `.references` property contains the <!-- REF #emailObjectClass.references.Summary -->Collection of all message-ids of messages in the preceding reply chain<!-- END REF -->.
 
 For specific formatting requirements, please consult the [RFC#5322](https://tools.ietf.org/html/rfc5322).
 
@@ -410,7 +410,7 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
 ## .replyTo 
 
 <!-- REF #emailObjectClass.replyTo.Syntax -->
-**.replyTo** : Texte<br>**.replyTo** : Objet<br>**.replyTo** : Collection<!-- END REF -->
+**.replyTo** : Text<br>**.replyTo** : Object<br>**.replyTo** : Collection<!-- END REF -->
 
 
 #### Description
@@ -424,7 +424,7 @@ The `.replyTo` property contains the <!-- REF #emailObjectClass.replyTo.Summary 
 ## .sendAt
 
 <!-- REF #emailObjectClass.sendAt.Syntax -->
-**.sendAt** : Texte<!-- END REF -->
+**.sendAt** : Text<!-- END REF -->
 
 
 #### Description
@@ -437,7 +437,7 @@ The `.sendAt` property contains the <!-- REF #emailObjectClass.sendAt.Summary --
 ## .sender 
 
 <!-- REF #emailObjectClass.sender.Syntax -->
-**.sender** : Texte<br>**.sender** : Objet<br>**.sender** : Collection<!-- END REF -->
+**.sender** : Text<br>**.sender** : Object<br>**.sender** : Collection<!-- END REF -->
 
 
 #### Description
@@ -473,7 +473,7 @@ The `.size` property contains the <!-- REF #emailObjectClass.size.Summary -->siz
 ## .subject
 
 <!-- REF #emailObjectClass.subject.Syntax -->
-**.subject** : Texte<!-- END REF -->
+**.subject** : Text<!-- END REF -->
 
 
 #### Description
@@ -487,23 +487,23 @@ The `.subject` property contains the <!-- REF #emailObjectClass.subject.Summary 
 ## .textBody
 
 <!-- REF #emailObjectClass.textBody.Syntax -->
-**.textBody** : Texte<!-- END REF -->
+**.textBody** : Text<!-- END REF -->
 
 
 #### Description
 
-La propriété `.textBody` contient la <!-- REF #emailObjectClass.textBody.Summary -->représentation en texte brut du message électronique (le jeu de caractères par défaut est UTF-8) (facultatif, SMTP uniquement)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
+The `.textBody` property contains the <!-- REF #emailObjectClass.textBody.Summary -->Plain text representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
 
 
 
 ## .to 
 
 <!-- REF #emailObjectClass.to.Syntax -->
-**.to** : Texte<br>**.to** : Objet<br>**.to** : Collection<!-- END REF -->
+**.to** : Text<br>**.to** : Object<br>**.to** : Collection<!-- END REF -->
 
 
 #### Description
 
-La propriété `.to` contient <!-- REF #emailObjectClass.to.Summary -->le ou les [destinataires](#email-addresses) principaux de l'e-mail<!-- END REF -->. 
+The `.to` property contains the <!-- REF #emailObjectClass.to.Summary -->primary recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->. 
 
 <style> h2 { background: #d9ebff;}</style>
