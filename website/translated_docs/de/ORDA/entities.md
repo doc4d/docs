@@ -65,7 +65,7 @@ This is illustrated by the following graphic:
 
 Note however that entities refer to the same record. In all cases, if you call the `entity.save( )` method, the record will be updated (except in case of conflict, see [Entity locking](#entity-locking)).
 
-In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entity. It means that you can pass them directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. Beispiel:
+In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entity. It means that you can pass them directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. For example:
 
 ```4d
  For each($entity;$selection)
@@ -138,7 +138,7 @@ Let's look at the following (simplified) structure:
 In this example, an entity in the "Employee" dataclass contains an object of type Entity in the "employer" attribute (or a null value). An entity in the "Company" dataclass contains an object of type EntitySelection in the "staff" attribute (or a null value).
 > In ORDA, the Automatic or Manual property of relations has no effect.
 
-To assign a value directly to the "employer" attribute, you must pass an existing entity from the "Company" dataclass. Beispiel:
+To assign a value directly to the "employer" attribute, you must pass an existing entity from the "Company" dataclass. For example:
 
 ```4d
  $emp:=ds.Employee.new() // create an employee
@@ -147,7 +147,7 @@ To assign a value directly to the "employer" attribute, you must pass an existin
  $emp.save()
 ```
 
-4D provides an additional facility for entering a relation attribute for an N entity related to a "1" entity: you pass the primary key of the "1" entity directly when assigning a value to the relation attribute. For this to work, you pass data of type Number or Text (the primary key value) to the relation attribute. 4D then automatically takes care of searching for the corresponding entity in the dataclass. Beispiel:
+4D provides an additional facility for entering a relation attribute for an N entity related to a "1" entity: you pass the primary key of the "1" entity directly when assigning a value to the relation attribute. For this to work, you pass data of type Number or Text (the primary key value) to the relation attribute. 4D then automatically takes care of searching for the corresponding entity in the dataclass. For example:
 
 ```4d
  $emp:=ds.Employee.new()
@@ -184,70 +184,108 @@ You can create an object of type [entity selection](dsMapping.md#entity-selectio
 
 You can simultaneously create and use as many different entity selections as you want for a dataclass. Keep in mind that an entity selection only contains references to entities. Different entity selections can contain references to the same entities.
 
-### Shareable or non-shareable entity selections
+### Shareable or alterable entity selections
 
-An entity selection can be **shareable** (readable by multiple processes, but not modifiable after creation) or **non-shareable** (only usable by the current process, but modifiable afterwards):
+An entity selection can be **shareable** (readable by multiple processes, but not alterable after creation) or **alterable** (supports the [`.add()`](API/entitySelectionClass.md#add) function, but only usable by the current process).
 
-- a **shareable** entity selection has the following characteristics:
-    - it can be stored in a shared object or shared collection, and can be shared between several processes or workers;
-    - it can be stored in several shared objects or collections, or in a shared object or collection which already belongs to a group (it does not have a *locking identifier*);
-    - it does not allow the addition of new entities. Trying to add an entity to a shareable entity selection will trigger an error (1637 - This entity selection cannot be altered). To add an entity to a shareable entity selection, you must first transform it into a non-shareable entity selection using the [`.copy()`](API/entitySelectionClass.md#copy) function, before calling [`.add()`](API/entitySelectionClass.md#add).
+#### Properties
 
-- a **non-shareable** entity selection has the following characteristics:
-    + it cannot be shared between processes, nor be stored in a shared object or collection. Trying to store a non-shareable entity selection in a shared object or collection will trigger an error (-10721 - Not supported value type in a shared object or shared collection);
-    + it accepts the addition of new entities.
+A **shareable** entity selection has the following characteristics:
 
-In most cases, new entity selections are **shareable**, including:
+- it can be stored in a shared object or shared collection, and can be passed as parameter between several processes or workers;
+- it can be stored in several shared objects or collections, or in a shared object or collection which already belongs to a group (it does not have a *locking identifier*);
+- it does not allow the addition of new entities. Trying to add an entity to a shareable entity selection will trigger an error (1637 - This entity selection cannot be altered). To add an entity to a shareable entity selection, you must first transform it into a non-shareable entity selection using the [`.copy()`](API/entitySelectionClass.md#copy) function, before calling [`.add()`](API/entitySelectionClass.md#add).
 
-- entity selections resulting from various ORDA class functions ([`.query()`](API/entitySelectionClass.md#query), [`.query()`](API/dataclassClass.md#query), etc.),
-- entity selections based upon relations (e.g. `company.employee`),
-- entity selections resulting from projections of values (e.g. `ds.Employee.all().employer`),
-- entity selections explicitely copied as shareable with [`.copy()`](API/entitySelectionClass.md#copy) or `OB Copy`.
+> Most entity selection functions (such as [`.slice()`](API/entitySelectionClass.md#slice), [`.and()`](API/entitySelectionClass.md#and)...) support shareable entity selections since they do not need to alter the original entity selection (they return a new one).
 
-New entity selections are **non-shareable** in the following cases:
+An **alterable** entity selection has the following characteristics:
 
-- blank entity selections created using the [`.newSelection()`](API/dataclassClass.md#newselection) function or `Create entity selection` command,
-- entity selections explicitely copied as non-shareable with [`.copy()`](API/entitySelectionClass.md#copy) or `OB Copy`.
+- it cannot be shared between processes, nor be stored in a shared object or collection. Trying to store a non-shareable entity selection in a shared object or collection will trigger an error (-10721 - Not supported value type in a shared object or shared collection);
+- it accepts the addition of new entities, i.e. it is supports the [`.add()`](API/entitySelectionClass.md#add) function.
 
-#### Beispiel
+
+#### How are they defined?
+
+The **shareable** or **alterable** nature of an entity selection is defined when the entity selection is created (it cannot be modified afterwards). You can know the nature of an entity selection using the [.isAlterable()](API/entitySelectionClass.md#isalterable) function or the `OB Is shared` command.
+
+
+A new entity selection is **shareable** in the following cases:
+
+- the new entity selection results from an ORDA class function applied to a dataClass: [dataClass.all()](API/dataclassClass.md#all), [dataClass.fromCollection()](API/dataclassClass.md#fromcollection), [dataClass.query()](API/dataclassClass.md#query),
+- the new entity selection is based upon a relation [entity.*attributeName*](API/entityClass.md#attributename) (e.g. "company.employees") when *attributeName* is a one-to-many related attribute but the entity does not belong to an entity selection.
+- the new entity selection is explicitely copied as shareable with [entitySelection.copy()](API/entitySelectionClass.md#copy) or `OB Copy` (i.e. with the `ck shared` option).
+
+Example:
+```4d
+$myComp:=ds.Company.get(2) //$myComp does not belong to an entity selection
+$employees:=$myComp.employees //$employees is shareable
+```
+
+A new entity selection is **alterable** in the following cases:
+
+- the new entity selection created blank using the [dataClass.newSelection()](API/dataclassClass.md#newselection) function or `Create entity selection` command,
+- the new entity selection is explicitely copied as alterable with [entitySelection.copy()](API/entitySelectionClass.md#copy) or `OB Copy` (i.e. without the `ck shared` option).
+
+Example:
+```4d
+$toModify:=ds.Company.all().copy() //$toModify is alterable
+```
+
+
+A new entity selection **inherits** from the original entity selection nature in the following cases:
+
+- the new entity selection results from one of the various ORDA class functions applied to an existing entity selection ([.query()](API/entitySelectionClass.md#query), [.slice()](API/entitySelectionClass.md#slice), etc.) .
+- the new entity selection is based upon a relation:
+    - [entity.*attributeName*](API/entityClass.md#attributename) (e.g. "company.employees") when *attributeName* is a one-to-many related attribute and the entity belongs to an entity selection (same nature as [.getSelection()](API/entityClass.md#getselection) entity selection),
+    - [entitySelection.*attributeName*](API/entitySelectionClass.md#attributename) (e.g. "employees.employer") when *attributeName* is a related attribute (same nature as the entity selection),
+    - [.extract()](API/entitySelectionClass.md#extract) when the resulting collection contains entity selections (same nature as the entity selection).
+
+Examples:
+
+```4d
+$highSal:=ds.Employee.query("salary >= :1"; 1000000)   
+    //$highSal is shareable because of the query on dataClass
+$comp:=$highSal.employer //$comp is shareable because $highSal is shareable
+
+$lowSal:=ds.Employee.query("salary <= :1"; 10000).copy() 
+    //$lowSal is alterable because of the copy()
+$comp2:=$lowSal.employer //$comp2 is alterable because $lowSal is alterable
+```
+
+
+#### Sharing an entity selection between processes (example)
 
 You work with two entity selections that you want to pass to a worker process so that it can send mails to appropriate persons:
 
 ```4d
- If(Storage.info=Null)
-    Use(Storage)
-       Storage.info:=New shared object()
-    End use
- End if
 
- Use(Storage.info)
-  //Put entity selections in a shared object
-    Storage.info.paid:=ds.Invoices.query("status=:1";"Paid")
-    Storage.info.unpaid:=ds.Invoices.query("status=:1";"Unpaid")
- End use
+var $paid; $unpaid : cs.InvoicesSelection
+//We get entity selections for paid and unpaid invoices
+$paid:=ds.Invoices.query("status=:1"; "Paid")
+$unpaid:=ds.Invoices.query("status=:1"; "Unpaid")
 
- CALL WORKER("mailing";"sendMails";Storage.info)
-The sendMails method:
+//We pass entity selection references as parameters to the worker
+CALL WORKER("mailing"; "sendMails"; $paid; $unpaid)
 
- var $info: ;$1Object
- var $paid;$unpaid : cs.InvoicesSelection
+```
+
+The `sendMails` method:
+
+```4d 
+
+ #DECLARE ($paid : cs.InvoicesSelection; $unpaid : cs.InvoicesSelection)
  var $invoice : cs.InvoicesEntity
 
- var $server;$transporter;$email;$status : Object
+ var $server; $transporter; $email; $status : Object
 
   //Prepare emails
- $server:=New object
+ $server:=New object()
  $server.host:="exchange.company.com"
  $server.user:="myName@company.com"
  $server.password:="my!!password"
  $transporter:=SMTP New transporter($server)
- $email:=New object
+ $email:=New object()
  $email.from:="myName@company.com"
-
-  //Get entity selections
- $info:=$1
- $paid:=$info.paid
- $unpaid:=$info.unpaid
 
   //Loops on entity selections
  For each($invoice;$paid)
@@ -266,7 +304,7 @@ The sendMails method:
 
 ### Entity selections and Storage attributes
 
-All storage attributes (text, number, boolean, date) are available as properties of entity selections as well as entities. When used in conjunction with an entity selection, a scalar attribute returns a collection of scalar values. Beispiel:
+All storage attributes (text, number, boolean, date) are available as properties of entity selections as well as entities. When used in conjunction with an entity selection, a scalar attribute returns a collection of scalar values. For example:
 
 ```4d
  $locals:=ds.Person.query("city = :1";"San Jose") //entity selection of people
@@ -385,7 +423,8 @@ The following methods automatically associate the optimization context of the so
 *   `entitySelection.drop()`
 
 
-**Beispiel**
+
+**Example**
 
 Given the following code:
 
