@@ -12,7 +12,7 @@ New 4D application projects can be created from **4D** or **4D Server** (see [De
 To create a new project:
 
 1. Launch 4D or 4D Server.
-2. Select **New > Project...** from the **File** menu: <p>![](assets/en/getStart/projectCreate1.png)<p>ODER<p>(4D only) Select **Project...** from the **New** toolbar button:<p>![](assets/en/getStart/projectCreate2.png)<p>A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
+2. Select **New > Project...** from the **File** menu: <p>![](assets/en/getStart/projectCreate1.png)<p>OR<p>(4D only) Select **Project...** from the **New** toolbar button:<p>![](assets/en/getStart/projectCreate2.png)<p>A standard **Save** dialog appears so you can choose the name and location of the 4D project's main folder.
 
 3. Enter the name of your project folder and click **Save**.<p> This name will be used:
     - as the name of the entire project folder,
@@ -29,7 +29,7 @@ You can then start developing your project.
 
 To open an existing project locally from 4D:
 
-1. Select **Open a local application project** in the Welcome Wizard dialog, <p>ODER<p> Select **Open/Local Project...** from the **File** menu or the **Open** toolbar button.<p> The standard Open dialog appears.
+1. Select **Open a local application project** in the Welcome Wizard dialog, <p>OR<p> Select **Open/Local Project...** from the **File** menu or the **Open** toolbar button.<p> The standard Open dialog appears.
 
 2. Select the project's `.4dproject` file and click **Open**.<p> By default, the project is opened with its current data file. Other file types are suggested:
 
@@ -54,7 +54,7 @@ The first time you connect to a 4D Server project via a remote 4D, you will usua
 
 To connect remotely to a 4D Server project:
 
-1. Select **Connect to 4D Server** in the Welcome Wizard dialog, <p>ODER<p> Select **Open/Remote Project...** from the **File** menu or the **Open** toolbar button.
+1. Select **Connect to 4D Server** in the Welcome Wizard dialog, <p>OR<p> Select **Open/Remote Project...** from the **File** menu or the **Open** toolbar button.
 
 The 4D Server connection dialog appears. This dialog has three tabs: **Recent**, **Available**, and **Custom**.
 
