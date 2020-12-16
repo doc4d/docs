@@ -3,9 +3,9 @@ id: onLongClick
 title: Sur clic long
 ---
 
-| Code | Peut être appelé par                     | Définition                                                                           |
+| Code | Can be called by                         | Definition                                                                           |
 | ---- | ---------------------------------------- | ------------------------------------------------------------------------------------ |
-| 39   | [Bouton](FormObjects/button_overview.md) | A button is clicked and the mouse button remains pushed for a certain length of time |
+| 39   | [Button](FormObjects/button_overview.md) | A button is clicked and the mouse button remains pushed for a certain length of time |
 
 
 ## Description
@@ -14,17 +14,17 @@ This event is generated when a button receives a click and the mouse button is h
 
 This event can be generated for the following button styles:
 
-- [Barre d’outils](FormObjects/button_overview.md#toolbar)
+- [Toolbar](FormObjects/button_overview.md#toolbar)
 - [Bevel](FormObjects/button_overview.md#bevel)
-- [Bevel arrondi](FormObjects/button_overview.md#rounded-bevel)
+- [Rounded Bevel](FormObjects/button_overview.md#rounded-bevel)
 - [OS X Gradient](FormObjects/button_overview.md#os-x-gradient)
-- [OS X Texture](FormObjects/button_overview.md#os-x-textured)
+- [OS X Textured](FormObjects/button_overview.md#os-x-textured)
 - [Office XP](FormObjects/button_overview.md#office-xp)
-- [Aide](FormObjects/button_overview.md#help)
-- [Rond](FormObjects/button_overview.md#circle)
-- [Personnalisé](FormObjects/button_overview.md#custom)
+- [Help](FormObjects/button_overview.md#help)
+- [Circle](FormObjects/button_overview.md#circle)
+- [Custom](FormObjects/button_overview.md#custom)
 
 This event is generally used to display pop-up menus in case of long button clicks. The [`On Clicked`](onClicked.md) event, if enabled, is generated if the user releases the mouse button before the "long click" time limit.
 
-### Voir également
+### See also
 [`Sur clic alternatif`](onAlternativeClick.md)
