@@ -1,35 +1,35 @@
 ---
 id: collection
-title: コレクション
+title: Collection
 ---
 
-コレクションとは、類似または混在した型 (テキスト、数値、日付、オブジェクト、ブール、コレクション、null) の値が順番に並べられたリストです。
+Collections are ordered lists of values of similar or mixed types (text, number, date, object, boolean, collection, or null).
 
-コレクション型の変数を扱うには、オブジェクト記法を使用します ([オブジェクト記法の使用](Concepts/dt_object.md#オブジェクト記法の使用) 参照)。
+Collection type variables are managed using object notation (see [Syntax basics](Concepts/dt_object.md#syntax-basics)).
 
-コレクション要素にアクセスするには、大カッコ内に要素番号を渡します:
+To access a collection element, you need to pass the element number inside square brackets:
 
 ```4d
 collectionRef[expression]
 ```
 
-*expression* には正の整数を返す有効な 4D式であればどんなものでも渡すことができます。 例:
+You can pass any valid 4D expression which returns a positive integer in *expression*. Examples:
 
 ```4d
- myCollection[5]  // コレクションの6番目の要素にアクセス
+ myCollection[5]  //access to 6th element of the collection
  myCollection[$var]
 ```
 
-**注:** コレクション要素は0 番から始まるということに注意してください。
+**Warning:** Collection elements are numbered from 0.
 
-コレクションの要素に値を代入したり、コレクション要素の値を取得したりすることができます:
+You can assign a value to a collection element or get a collection element value:
 
 ```4d
  myCol[10]:="My new element"
  $myVar:=myCol[0]
 ```
 
-コレクションの最後の要素を超える要素番号 (インデックス) を指定した場合、コレクションは自動的にリサイズされ、途中のすべての値には null 値が割り当てられらます:
+If you assign an element's index that surpasses the last existing element of the collection, the collection is automatically resized and all new intermediary elements are assigned a null value:
 
 ```4d
  var myCol : Collection
@@ -40,56 +40,56 @@ collectionRef[expression]
   //myCol[4]=null
 ```
 
-## 初期化
+## Initialization
 
-`New collection` コマンドを使うなどして、コレクションはあらかじめ初期化しておく必要があります。初期化しない場合、要素の取得や変更はシンタックスエラーとなります。
+Collections must have been initialized, for example using the `New collection` command, otherwise trying to read or modify their elements will generate a syntax error.
 
-例:
+Example:
 
 ```4d
  var $colVar : Collection //creation of collection type 4D variable
  $colVar:=New collection //initialization of the collection and assignment to the 4D variable
 ```
 
-### 通常コレクションと共有コレクション
+### Regular or shared collection
 
-二種類のコレクションを作成することができます:
+You can create two types of collections:
 
-- [`New collection`](API/collectionClass.md#new-collection) コマンドを使用して作成する通常 (非共有) コレクション。 通常のコレクションは特別なアクセスコントロールをせずに編集可能ですが、プロセス間で共有することはできません。
-- [`New shared collection`](API/collectionClass.md#new-shared-collection) コマンドを使用して作成する共有コレクション。 共有コレクションはプロセス間 (プリエンティブ・スレッド含む) で共有可能なコレクションです。 共有コレクションへのアクセスは [`Use...End use`](Concepts/shared.md#useend-use) 構造によって管理されています。
+- regular (non-shared) collections, using the [`New collection`](API/collectionClass.md#new-collection) command. These collections can be edited without any specific access control but cannot be shared between processes.
+- shared collections, using the [`New shared collection`](API/collectionClass.md#new-shared-collection) command. These collections can be shared between processes, including preemptive threads. Access to these collections is controlled by [`Use...End use`](Concepts/shared.md#useend-use) structures.
 
-詳細な情報については、[共有オブジェクトと共有コレクション](Concepts/shared.md) を参照ください。
+For more information, refer to the [Shared objects and collections](Concepts/shared.md) section.
 
-## コレクション関数
+## Collection functions
 
-4D コレクションへの参照は、コレクションの *メンバー関数* と呼ばれる特別なクラス関数を利用することができます。 コレクション関数は [クラス API リファレンス](API/collectionClass.md) にまとめられています。
+4D collection references benefit from special class functions (sometimes named *member functions*). Collection functions are listed in the [Class API Reference](API/collectionClass.md) section.
 
-たとえば:
+For example:
 
 ```4d
-$newCol:=$col.copy() // $col を $newCol にディープ・コピー
-$col.push(10;100) // 10 と 100 をコレクションに追加
+$newCol:=$col.copy() //deep copy of $col to $newCol
+$col.push(10;100) //add 10 and 100 to the collection
 ```
 
-一部の関数は元のコレクションを変更して返すので、つぎのように連続して呼び出すことが可能です:
+Some functions return the original collection after modification, so that you can run the calls in a sequence:
 
 ```4d
  $col:=New collection(5;20)
- $col2:=$col.push(10;100).sort() // $col2=[5,10,20,100]
+ $col2:=$col.push(10;100).sort() //$col2=[5,10,20,100]
 ```
 
 
-### propertyPath 引数
+### propertyPath parameter
 
 
-いくつかのコレクション関数は引数として _propertyPath_ を受け入れます。 この引数は以下のように用いることができます:
+Several functions accept a _propertyPath_ as parameter. This parameter stands for:
 
-- オブジェクトプロパティ名、 例えば "lastName"
-- オブジェクトプロパティパス (ドット文字で繋げられたサブプロパティの階層シーケンスなど)。例: "employee.children.firstName"
+- either an object property name, for example "lastName"
+- or an object property path, i.e. a hierarchical sequence of sub-properties linked with dot characters, for example "employee.children.firstName".
 
-**警告:** 関数に propertyPath 引数を渡す場合、そのプロパティ名には "." (ドット)、"[ ]" (大カッコ)、あるいは " " (スペース) を使えません。これらを使用するとパスを正しく解析できなくなります:
+**Warning:** When using functions and propertyPath parameters, you cannot use ".", "[ ]", or spaces in property names since it will prevent 4D from correctly parsing the path:
 
 ```4d
- $vmin:=$col.min("My.special.property") // undefined
- $vmin:=$col.min(["My.special.property"]) // エラー
+ $vmin:=$col.min("My.special.property") //undefined
+ $vmin:=$col.min(["My.special.property"]) //error
 ```
