@@ -3,7 +3,7 @@ id: onSelectionChange
 title: Sur nouvelle sélection
 ---
 
-| Code | Can be called by                                                                                                                                                                                                                                                      | Definition                              |
+| Code | Peut être appelé par                                                                                                                                                                                                                                                  | Définition                              |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
 | 31   | [4D View Pro area](FormObjects/viewProArea_overview.md) - [4D Write Pro area](FormObjects/writeProArea_overview.md) - Form - [Hierarchical List](FormObjects/list_overview.md) - [Input](FormObjects/input_overview.md) - [List Box](FormObjects/listbox_overview.md) | The selection in the object is modified |
 
@@ -16,16 +16,16 @@ This event can be generated in different contexts.
 ### 4D View Pro
 The current selection of rows or columns is modified. In this context, the [event object](overview.md#event-object) returned by the `FORM Event` command contains:
 
-| Property      | Type    | Description                    |
-| ------------- | ------- | ------------------------------ |
-| code          | longint | 31                             |
-| description   | text    | "On Selection Change"          |
-| objectName    | text    | 4D View Pro area name          |
-| sheetName     | text    | Name of the sheet of the event |
-| oldSelections | object  | Cell range before change       |
-| newSelections | object  | Cell range after change        |
+| Propriété     | Type        | Description                    |
+| ------------- | ----------- | ------------------------------ |
+| code          | entier long | 31                             |
+| description   | Texte       | "On Selection Change"          |
+| objectName    | Texte       | 4D View Pro area name          |
+| sheetName     | Texte       | Name of the sheet of the event |
+| oldSelections | object      | Cell range before change       |
+| newSelections | object      | Cell range after change        |
 
-#### Example
+#### Exemple
 
 ```4d
  If(FORM Event.code=On Selection Change)
