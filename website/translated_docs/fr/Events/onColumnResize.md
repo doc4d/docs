@@ -3,7 +3,7 @@ id: onColumnResize
 title: Sur redimensionnement colonne
 ---
 
-| Code | Can be called by                                                                                                                                                            | Definition                                                                                     |
+| Code | Peut être appelé par                                                                                                                                                        | Définition                                                                                     |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | 33   | [4D View Pro Area](FormObjects/viewProArea_overview.md) - [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns) | The width of a column is modified directly by the user or consequently to a form window resize |
 
@@ -20,16 +20,16 @@ This event is generated when the width of a column in the list box is modified b
 
 This event is generated when the width of a column is modified by a user. On this context, the [event object](overview.md#event-object) returned by the `FORM Event` command contains:
 
-| Property    | Type    | Description                                                         |
-| ----------- | ------- | ------------------------------------------------------------------- |
-| code        | longint | Sur redimensionnement colonne                                       |
-| description | text    | "On Column Resize"                                                  |
-| objectName  | text    | 4D View Pro area name                                               |
-| sheetName   | text    | Name of the sheet of the event                                      |
-| range       | object  | Cell range of the columns whose widths have changed                 |
-| header      | boolean | True if the row header column (first column) is resized, else false |
+| Propriété   | Type        | Description                                                         |
+| ----------- | ----------- | ------------------------------------------------------------------- |
+| code        | entier long | Sur redimensionnement colonne                                       |
+| description | Texte       | "On Column Resize"                                                  |
+| objectName  | Texte       | 4D View Pro area name                                               |
+| sheetName   | Texte       | Name of the sheet of the event                                      |
+| range       | object      | Cell range of the columns whose widths have changed                 |
+| header      | boolean     | True if the row header column (first column) is resized, else false |
 
-#### Example
+#### Exemple
 
 ```4d
  If(FORM Event.code=On Column Resize)
