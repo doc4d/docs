@@ -3,7 +3,7 @@ id: onExpand
 title: Sur déployer
 ---
 
-| Code | Can be called by                                                                                         | Definition                                                                                                  |
+| Code | Peut être appelé par                                                                                     | Définition                                                                                                  |
 | ---- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | 44   | [Hierarchical List](FormObjects/list_overview.md#overview) - [List Box](FormObjects/listbox_overview.md) | An element of the hierarchical list or hierarchical list box has been expanded using a click or a keystroke |
 
@@ -14,5 +14,5 @@ title: Sur déployer
 - [Hierarchical list boxes](FormObjects/listbox_overview.md#hierarchical-list-boxes): This event is generated when a row of the hierarchical list box is expanded.
 
 
-### See also
+### Voir également
 [Sur contracter](onCollapse.md)
