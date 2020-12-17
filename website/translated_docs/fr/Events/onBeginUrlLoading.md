@@ -3,9 +3,9 @@ id: onBeginUrlLoading
 title: On Begin URL Loading
 ---
 
-| Code | Can be called by                            | Definition                          |
+| Code | Peut être appelé par                        | Définition                          |
 | ---- | ------------------------------------------- | ----------------------------------- |
-| 47   | [Web Area](FormObjects/webArea_overview.md) | A new URL is loaded in the Web area |
+| 47   | [Zone Web](FormObjects/webArea_overview.md) | A new URL is loaded in the Web area |
 
 
 ## Description
