@@ -3,7 +3,7 @@ id: onAlternativeClick
 title: Sur clic alternatif
 ---
 
-| Code | Can be called by                                                                                                                                             | Definition                                                                                                                                                                                                |
+| Code | Peut être appelé par                                                                                                                                         | Définition                                                                                                                                                                                                |
 | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 38   | [Button](FormObjects/button_overview.md) - [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns) | <li>Buttons: The "arrow" area of a button is clicked<li>List boxes: In a column of an object array, an ellipsis button ("alternateButton" attribute) is clicked |
 
