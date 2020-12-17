@@ -3,9 +3,9 @@ id: onUrlFiltering
 title: On URL Filtering
 ---
 
-| Code | Can be called by                            | Definition                        |
+| Code | Peut être appelé par                        | Définition                        |
 | ---- | ------------------------------------------- | --------------------------------- |
-| 51   | [Web Area](FormObjects/webArea_overview.md) | A URL was blocked by the Web area |
+| 51   | [Zone Web](FormObjects/webArea_overview.md) | A URL was blocked by the Web area |
 
 
 ## Description
@@ -14,5 +14,5 @@ This event is generated when the loading of a URL is blocked by the Web area bec
 
 You can find out the blocked URL using the `WA Get last filtered URL` command.
 
-### See also
+### Voir également
 [`On Open External Link`](onOpenExternalLink.md)
