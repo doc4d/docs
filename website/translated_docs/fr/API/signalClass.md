@@ -40,7 +40,7 @@ Once a signal has been released using a `signal.trigger()` call, it cannot be re
 
 Since a signal object is a [shared object](Concepts/shared.md), you can use it to return results from called workers/processes, provided that you do not forget to write values within a `Use...End use` structure (see example).
 
-### Example
+### Exemple
 
 ```4d
  var $signal : 4D.Signal
@@ -80,7 +80,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  $signal.trigger()
 ```
 
-### Summary
+### Sommaire
 
 
 |                                                                                                                                                                                         |
@@ -97,20 +97,20 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 ## New signal
 
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R4  | Ajoutées      |
 </details>
 
 <!-- REF #_command_.New signal.Syntax -->
 **New signal** { ( *description* : Text ) } : 4D.Signal<!-- END REF -->
 
 <!-- REF signalClass.New signal.Params -->
-| Parameter   | Type      |    | Description                            |
+| Paramètres  | Type      |    | Description                            |
 | ----------- | --------- |:--:| -------------------------------------- |
-| description | Text      | -> | Description for the signal             |
-| Result      | 4D.Signal | <- | Native object encapsulating the signal |
+| description | Texte     | -> | Description for the signal             |
+| Résultat    | 4D.Signal | <- | Native object encapsulating the signal |
 <!-- END REF -->
 
 
@@ -128,11 +128,11 @@ Optionally, in the *description* parameter you can pass a custom text describing
 Since the signal object is a shared object, it can also be used to maintain user properties, including the [`.description`](#description) property, by calling the `Use...End use` structure.
 
 
-**Returned value**
+**Valeur retournée**
 
 A new [`4D.Signal` object](#signal-object).
 
-#### Example
+#### Exemple
 
 Here is a typical example of a worker that sets a signal:
 
@@ -169,10 +169,10 @@ The ***doSomething*** method could be like:
 <!-- REF signalClass.description.Desc -->
 ## .description
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R4  | Ajoutées      |
 </details>
 
 <!-- REF #signalClass.description.Syntax -->
@@ -193,10 +193,10 @@ This property is **read-write**.
 <!-- REF signalClass.signaled.Desc -->
 ## .signaled
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R4  | Ajoutées      |
 
 </details>
 
@@ -207,7 +207,7 @@ This property is **read-write**.
 
 The `.signaled` property <!-- REF #signalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. When the signal is created, `.signaled` is **False**. It becomes **True** when the `.trigger( )` is called on the object.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -216,19 +216,19 @@ This property is **read-only**.
 <!-- REF signalClass.trigger().Desc -->
 ## .trigger()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R4  | Ajoutées      |
 </details>
 
 <!-- REF #signalClass.trigger().Syntax -->
 **.trigger( )**<!-- END REF -->
 
 <!-- REF #signalClass.trigger().Params -->
-| Parameter | Type |  | Description                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Paramètres | Type |  | Description                     |
+| ---------- | ---- |::| ------------------------------- |
+|            |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
@@ -245,20 +245,20 @@ If the signal is already in the signaled state (i.e., the `signaled` property is
 <!-- REF signalClass.wait().Desc -->
 ## .wait()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R4  | Ajoutées      |
 </details>
 
 <!-- REF #signalClass.wait().Syntax -->
 **.wait**( { *timeout* : Real } ) : Boolean <!-- END REF -->
 
 <!-- REF #signalClass.wait().Params -->
-| Parameter | Type    |    | Description                                    |
-| --------- | ------- | -- | ---------------------------------------------- |
-| timeout   | Real    | -> | Maximum waiting time for the signal in seconds |
-| Result    | Booléen | <- | State of the `.signaled` property              |
+| Paramètres | Type    |    | Description                                    |
+| ---------- | ------- | -- | ---------------------------------------------- |
+| timeout    | Réel    | -> | Maximum waiting time for the signal in seconds |
+| Résultat   | Booléen | <- | State of the `.signaled` property              |
 <!-- END REF -->
 
 
