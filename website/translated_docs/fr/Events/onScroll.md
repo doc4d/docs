@@ -3,7 +3,7 @@ id: onScroll
 title: Sur défilement
 ---
 
-| Code | Can be called by                                                                                                                                    | Definition                                                                                 |
+| Code | Peut être appelé par                                                                                                                                | Définition                                                                                 |
 | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
 | 59   | [Input](FormObjects/input_overview.md) of the `picture` [Type](FormObjects/properties_Object.md#type) - [List Box](FormObjects/listbox_overview.md) | The user scrolls the contents of a picture object or list box using the mouse or keyboard. |
 
