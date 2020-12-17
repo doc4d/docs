@@ -9,10 +9,10 @@ title: Document Class
 <!-- REF document.creationDate.Desc -->
 ## .creationDate
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.creationDate.Syntax -->
@@ -23,7 +23,7 @@ title: Document Class
 
 The `.creationDate` property returns <!-- REF #document.creationDate.Summary -->the creation date of the file<!-- END REF -->.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
  
@@ -31,10 +31,10 @@ This property is **read-only**.
  <!-- REF document.creationTime.Desc -->
 ## .creationTime
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.creationTime.Syntax -->
@@ -45,7 +45,7 @@ This property is **read-only**.
 
 The `.creationTime` property  returns <!-- REF #document.creationTime.Summary -->the creation  time of the file<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -55,10 +55,10 @@ This property is **read-only**.
 <!-- REF document.exists.Desc -->
 ## .exists
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.exists.Syntax -->
@@ -69,7 +69,7 @@ This property is **read-only**.
 
 The `.exists` property returns <!-- REF #document.exists.Summary -->true if the file exists on disk<!-- END REF -->, and false otherwise.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -81,10 +81,10 @@ This property is **read-only**.
 
 ## .extension
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.extension.Syntax -->
@@ -92,9 +92,9 @@ This property is **read-only**.
 
 #### Description
 
-The `.extension` property returns <!-- REF #document.extension.Summary -->the extension of the file name (if any)<!-- END REF -->. An extension always starts with ".". The property returns an empty string if the file name does not have an extension.
+The `.extension` property returns <!-- REF #document.extension.Summary -->the extension of the file name (if any)<!-- END REF -->. Une extension commence toujours par ".". The property returns an empty string if the file name does not have an extension.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -105,10 +105,10 @@ This property is **read-only**.
 <!-- REF document.fullName.Desc -->
 ## .fullName
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.fullName.Syntax -->
@@ -118,7 +118,7 @@ This property is **read-only**.
 
 The `.fullName` property returns <!-- REF #document.fullName.Summary -->the full name of the file, including its extension (if any)<!-- END REF -->.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -128,10 +128,10 @@ This property is **read-only**.
 <!-- REF document.hidden.Desc -->
 ## .hidden
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.hidden.Syntax -->
@@ -142,7 +142,7 @@ This property is **read-only**.
 
 The `.hidden` property returns <!-- REF #document.hidden.Summary -->true if the file is set as "hidden" at the system level<!-- END REF -->, and false otherwise.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -152,10 +152,10 @@ This property is **read-only**.
 <!-- REF document.isAlias.Desc -->
 ## .isAlias
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.isAlias.Syntax -->
@@ -166,7 +166,7 @@ This property is **read-only**.
 
 The `.isAlias` property returns <!-- REF #document.isAlias.Summary -->true if the file is an alias, a shortcut, or a symbolic link<!-- END REF -->, and false otherwise.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -175,10 +175,10 @@ This property is **read-only**.
 <!-- REF document.isFile.Desc -->
 ## .isFile
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.isFile.Syntax -->
@@ -189,7 +189,7 @@ This property is **read-only**.
 
 The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true for a file<!-- END REF -->.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -198,10 +198,10 @@ This property is **read-only**.
 <!-- REF document.isFolder.Desc -->
 ## .isFolder
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.isFolder.Syntax -->
@@ -212,7 +212,7 @@ This property is **read-only**.
 
 The `.isFolder` property returns <!-- REF #document.isFolder.Summary -->always false for a file<!-- END REF -->.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -222,10 +222,10 @@ This property is **read-only**.
 <!-- REF document.isWritable.Desc -->
 ## .isWritable
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.isWritable.Syntax -->
@@ -237,9 +237,9 @@ This property is **read-only**.
 The `.isWritable` property returns <!-- REF #document.isWritable.Summary -->true if the file exists on disk and is writable<!-- END REF -->.
 > The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the *writable* attribute of the file.
 
-This property is **read-only**.
+Cette propriété est en **lecture seule**.
 
-**Example**
+**Exemple**
 
 ```4d
  $myFile:=File("C:\\Documents\\Archives\\ReadMe.txt";fk platform path)
@@ -256,10 +256,10 @@ This property is **read-only**.
 <!-- REF document.modificationDate.Desc -->
 ## .modificationDate
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.modificationDate.Syntax -->
@@ -270,7 +270,7 @@ This property is **read-only**.
 
 The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->the date of the file's last modification<!-- END REF -->.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -280,10 +280,10 @@ This property is **read-only**.
 <!-- REF document.modificationTime.Desc -->
 ## .modificationTime
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.modificationTime.Syntax -->
@@ -294,7 +294,7 @@ This property is **read-only**.
 
 The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->the time of the file's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -303,10 +303,10 @@ This property is **read-only**.
 <!-- REF document.name.Desc -->
 ## .name
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.name.Syntax -->
@@ -317,7 +317,7 @@ This property is **read-only**.
 
 The `.name` property returns <!-- REF #document.name.Summary -->the name of the file without extension (if any)<!-- END REF -->.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -325,10 +325,10 @@ This property is **read-only**.
 <!-- REF document.original.Desc -->
 ## .original
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.original.Syntax -->
@@ -344,7 +344,7 @@ The `.original` property returns <!-- REF #document.original.Summary -->the targ
 
 For non-alias files, the property returns the same file object as the file.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -354,10 +354,10 @@ This property is **read-only**.
 <!-- REF document.parent.Desc -->
 ## .parent
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.parent.Syntax -->
@@ -368,7 +368,7 @@ This property is **read-only**.
 
 The `.parent` property returns <!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -378,10 +378,10 @@ This property is **read-only**.
 <!-- REF document.path.Desc -->
 ## .path
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.path.Syntax -->
@@ -392,7 +392,7 @@ This property is **read-only**.
 
 The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -401,10 +401,10 @@ This property is **read-only**.
 <!-- REF document.platformPath.Desc -->
 ## .platformPath
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.platformPath.Syntax -->
@@ -415,7 +415,7 @@ This property is **read-only**.
 
 The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -425,10 +425,10 @@ This property is **read-only**.
 <!-- REF document.size.Desc -->
 ## .size
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.size.Syntax -->
@@ -439,7 +439,7 @@ This property is **read-only**.
 
 The `.size` property returns <!-- REF #document.size.Summary -->the size of the file expressed in bytes<!-- END REF -->. If the file does not exist on disk, the size is 0.
 
-This property is **read-only**. 
+Cette propriété est en **lecture seule**. 
 
 <!-- END REF -->
 
@@ -455,22 +455,22 @@ This property is **read-only**.
 <!-- REF document.copyTo().Desc -->
 ## .copyTo()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.copyTo().Syntax -->
 **.copyTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } { ; *overwrite* : Integer } ) : 4D.File<!-- END REF -->
 
 <!-- REF #document.copyTo().Params -->
-| Parameter         | Type      |    | Description                                 |
-| ----------------- | --------- |:--:| ------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder                          |
-| newName           | Text      | -> | Name for the copy                           |
-| overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
-| Result            | 4D.File   | <- | Copied file                                 |
+| Paramètres        | Type        |    | Description                                 |
+| ----------------- | ----------- |:--:| ------------------------------------------- |
+| destinationFolder | 4D.Folder   | -> | Destination folder                          |
+| newName           | Texte       | -> | Name for the copy                           |
+| overwrite         | Entier long | -> | `fk overwrite` to replace existing elements |
+| Résultat          | 4D.File     | <- | Copied file                                 |
 <!-- END REF -->
 
 
@@ -484,16 +484,16 @@ By default, the file is copied with the name of the original file. If you want t
 
 If a file with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
 
-| Constant       | Value | Comment                             |
-| -------------- | ----- | ----------------------------------- |
-| `fk overwrite` | 4     | Overwrite existing elements, if any |
+| Constant       | Valeur | Commentaire                         |
+| -------------- | ------ | ----------------------------------- |
+| `fk overwrite` | 4      | Overwrite existing elements, if any |
 
 
-**Returned value**
+**Valeur retournée**
 
 The copied `File` object.
 
-#### Example
+#### Exemple
 
 You want to copy a picture *file* from the user's document folder to the application folder:
 
@@ -510,19 +510,19 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 <!-- REF document.getContent().Desc -->
 ## .getContent()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.getContent().Syntax -->
 **.getContent( )** : Blob<!-- END REF -->
 
 <!-- REF #document.getContent().Params -->
-| Parameter | Type |    | Description  |
-| --------- | ---- | -- | ------------ |
-| Result    | Blob | <- | File content |
+| Paramètres | Type |    | Description  |
+| ---------- | ---- | -- | ------------ |
+| Résultat   | Blob | <- | File content |
 <!-- END REF -->
 
 
@@ -530,11 +530,11 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `BLOB` containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
 
-**Returned value**
+**Valeur retournée**
 
 A `Blob`.
 
-#### Example
+#### Exemple
 
 To save a document's contents in a `BLOB` field:
 
@@ -553,20 +553,20 @@ To save a document's contents in a `BLOB` field:
 <!-- REF document.getIcon().Desc -->
 ## .getIcon()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.getIcon().Syntax -->
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #document.getIcon().Params -->
-| Parameter | Type    |    | Description                                   |
-| --------- | ------- | -- | --------------------------------------------- |
-| size      | Integer | -> | Side length for the returned picture (pixels) |
-| Result    | Image   | <- | Icon                                          |
+| Paramètres | Type        |    | Description                                   |
+| ---------- | ----------- | -- | --------------------------------------------- |
+| size       | Entier long | -> | Side length for the returned picture (pixels) |
+| Résultat   | Image       | <- | Icône                                         |
 <!-- END REF -->
 
 
@@ -578,7 +578,7 @@ The optional *size* parameter specifies the dimensions in pixels of the returned
 
 If the file does not exist on disk, a default blank icon is returned.
 
-**Returned value**
+**Valeur retournée**
 
 File icon [picture](../Concepts/picture.html).
 
@@ -591,10 +591,10 @@ File icon [picture](../Concepts/picture.html).
 <!-- REF document.getText().Desc -->
 ## .getText()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v17 R5  | Ajoutées      |
 </details>
 
 <!-- REF #document.getText().Syntax -->
@@ -602,12 +602,12 @@ File icon [picture](../Concepts/picture.html).
 
 
 <!-- REF #document.getText().Params -->
-| Parameter   | Type    |    | Description                     |
-| ----------- | ------- | -- | ------------------------------- |
-| charSetName | Text    | -> | Name of character set           |
-| charSetNum  | Integer | -> | Number of character set         |
-| breakMode   | Integer | -> | Processing mode for line breaks |
-| Result      | Text    | <- | Text from the document          |
+| Paramètres  | Type        |    | Description                     |
+| ----------- | ----------- | -- | ------------------------------- |
+| charSetName | Texte       | -> | Name of character set           |
+| charSetNum  | Entier long | -> | Number of character set         |
+| breakMode   | Entier long | -> | Processing mode for line breaks |
+| Résultat    | Texte       | <- | Text from the document          |
 <!-- END REF -->
 
 
@@ -625,21 +625,21 @@ If the document contains a Byte Order Mark (BOM), 4D uses the character set that
 
 In *breakMode*, you can pass a number indicating the processing to apply to end-of-line characters in the document. The following constants of the "System Documents" theme are available:
 
-| Constant                      | Value | Comment                                                                                                                                                             |
-| ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Document unchanged`          | 0     | No processing                                                                                                                                                       |
-| `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
-| `Document with CRLF`          | 2     | Line breaks are converted to Windows format: CRLF (carriage return + line feed)                                                                                     |
-| `Document with CR`            | 3     | Line breaks are converted to OS X format: CR (carriage return)                                                                                                      |
-| `Document with LF`            | 4     | Line breaks are converted to Unix format: LF (line feed)                                                                                                            |
+| Constant                      | Valeur | Commentaire                                                                                                                                                         |
+| ----------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Document unchanged`          | 0      | No processing                                                                                                                                                       |
+| `Document with native format` | 1      | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
+| `Document with CRLF`          | 2      | Line breaks are converted to Windows format: CRLF (carriage return + line feed)                                                                                     |
+| `Document with CR`            | 3      | Line breaks are converted to OS X format: CR (carriage return)                                                                                                      |
+| `Document with LF`            | 4      | Line breaks are converted to Unix format: LF (line feed)                                                                                                            |
 
 By default, when you omit the *breakMode* parameter, line breaks are processed in native mode (1).
 
-**Returned value**
+**Valeur retournée**
 
 Text of the file.
 
-#### Example
+#### Exemple
 
 Given the following text document (fields are separated by tabs):
 
