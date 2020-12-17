@@ -3,12 +3,12 @@ id: pop3TransporterClass
 title: POP3Transporter
 ---
 
-The `POP3Transporter` class allows you to retrieve messages from a POP3 email server.
+La classe `POP3Transporter` vous permet de récupérer des messages à partir d'un serveur de messagerie POP3.
 
 
-### POP3 Transporter object
+### Objet POP3 Transporter
 
-POP3 Transporter objects are instantiated with the [POP3 New transporter](#pop3-new-transporter) command. They provide the following properties and functions:
+Les objets Transporter POP3 sont instanciés avec la commande [POP3 New transporter](#pop3-new-transporter). They provide the following properties and functions:
 
 
 |                                                                                                                                                                                                                                |
@@ -34,57 +34,57 @@ POP3 Transporter objects are instantiated with the [POP3 New transporter](#pop3-
 <!-- REF pop3TransporterClass.POP3 New transporter.Desc -->
 ## POP3 New transporter
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R2  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R2  | Ajoutées      |
 </details>
 
 <!-- REF #_command_.POP3 New transporter.Syntax -->
 **POP3 New transporter**( *server* : Object ) : 4D.POP3Transporter<!-- END REF -->
 
 <!-- REF pop3TransporterClass.POP3 New transporter.Params -->
-| Parameter | Type               |    | Description                                         |
-| --------- | ------------------ |:--:| --------------------------------------------------- |
-| server    | object             | -> | Mail server information                             |
-| Result    | 4D.POP3Transporter | <- | [POP3 transporter object](#pop3-transporter-object) |
+| Paramètres | Type               |    | Description                                        |
+| ---------- | ------------------ |:--:| -------------------------------------------------- |
+| server     | object             | -> | Mail server information                            |
+| Résultat   | 4D.POP3Transporter | <- | [Objet POP3 transporter](#pop3-transporter-object) |
 <!-- END REF -->
 
 
 #### Description
 
-The `POP3 New transporter` command <!-- REF #_command_.POP3 New transporter.Summary -->configures a new POP3 connection<!-- END REF -->according to the *server* parameter and returns a new *[POP3 transporter](#pop3-transporter-object)* object. The returned transporter object will then usually be used to receive emails.
+La commande `POP3 New transporter` <!-- REF #_command_.POP3 New transporter.Summary -->configure une nouvelle connexion POP3<!-- END REF -->en fonction du paramètre *server* et retourne un nouvel objet *[POP3 transporter](#pop3-transporter-object)*. The returned transporter object will then usually be used to receive emails.
 
 In the *server* parameter, pass an object containing the following properties:
 
 
 | *server*                                                                                                                                                                                                                       | Default value (if omitted)                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                                               |
+| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| Faux                                                                |
 | [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->| the most secure authentication mode supported by the server is used |
 | [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->| 30                                                                  |
 | [<!-- INCLUDE #transporter.host.Syntax -->](#host)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *mandatory*                                                         |
 | [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| none                                                                |
-| **.password** : Text<p>User password for authentication on the server (not returned in *[SMTP transporter](#smtptransporterobject)* object)                                                             | none                                                                |
+| **.password** : Text<p>Mot de passe utilisateur pour l'authentification sur le serveur (non retourné dans l'objet *[SMTP transporter](#smtptransporterobject)*)                                         | none                                                                |
 | [<!-- INCLUDE #transporter.port.Syntax -->](#port)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 995                                                                 |
 | [<!-- INCLUDE #transporter.user.Syntax -->](#user)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| none                                                                |
 
 
-#### Result
+#### Résultat
 
-The function returns a [**POP3 transporter object**](#pop3-transporter-object). All returned properties are **read-only**.
-> The POP3 connection is automatically closed when the transporter object is destroyed.
+La fonction retourne un [**objet POP3 transporter**](#pop3-transporter-object). All returned properties are **read-only**.
+> La connexion POP3 est automatiquement fermée lorsque l'objet transporteur est détruit.
 
-#### Example
+#### Exemple
 
 ```4d
  var $server : Object
  $server:=New object
- $server.host:="pop.gmail.com" //Mandatory
+ $server.host:="pop.gmail.com" //Obligatoire
  $server.port:=995
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
- $server.logFile:="LogTest.txt" //log to save in the Logs folder
+ $server.logFile:="LogTest.txt" //log à enregistrer dans le dossier Logs
 
  var $transporter : 4D.POP3Transporter
  $transporter:=POP3 New transporter($server)
@@ -109,7 +109,7 @@ The function returns a [**POP3 transporter object**](#pop3-transporter-object). 
 
 <!-- INCLUDE transporter.checkConnection().Desc -->
 
-#### Example
+#### Exemple
 
 ```4d
  var $pw :  Text
@@ -142,19 +142,19 @@ The function returns a [**POP3 transporter object**](#pop3-transporter-object). 
 
 ## .delete()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R2  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R2  | Ajoutées      |
 </details>
 
 <!-- REF #pop3TransporterClass.delete().Syntax -->
 **.delete**( *msgNumber* : Integer )<!-- END REF -->
 
 <!-- REF #pop3TransporterClass.delete().Params -->
-| Parameter | Type    |    | Description                     |
-| --------- | ------- |:--:| ------------------------------- |
-| msgNumber | Integer | -> | Number of the message to delete |
+| Paramètres | Type        |    | Description                     |
+| ---------- | ----------- |:--:| ------------------------------- |
+| msgNumber  | Entier long | -> | Number of the message to delete |
 <!-- END REF -->
 
 
@@ -167,20 +167,20 @@ In the *msgNumber* parameter, pass the number of the email to delete. This numbe
 Executing this method does not actually remove any email. The flagged email will be deleted from the POP3 server only when the `POP3_transporter` object (created with `POP3 New transporter`) is destroyed. The flag could be also be removed using the `.undeleteAll()` method.
 > If the current session unexpectedly terminates and the connection is closed (e.g., timeout, network failure, etc.), an error message is generated and messages marked for deletion will remain on the POP3 server.
 
-##### Example
+##### Exemple
 
 ```4d
  $mailInfoList:=$POP3_transporter.getMailInfoList()
  For each($mailInfo;$mailInfoList)
-  // Mark your mail as "to be deleted at the end of the session"
+  // Marquer votre e-mail comme "à supprimer à la fin de la session"
     $POP3_transporter.delete($mailInfo.number)
  End for each
-  // Force the session closure to delete the mails marked for deletion
+  // Forcer la fermeture de la session pour supprimer les e-mails marqués pour suppression
  CONFIRM("Selected messages will be deleted.";"Delete";"Undo")
- If(OK=1) //deletion confirmed
+ If(OK=1) //suppression confirmée
     $POP3_transporter:=Null
  Else
-    $POP3_transporter.undeleteAll() //remove deletion flags
+    $POP3_transporter.undeleteAll() //supprimer les marqueurs de suppression
  End if
 ```
 
@@ -189,19 +189,19 @@ Executing this method does not actually remove any email. The flagged email will
 
 ## .getBoxInfo()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R2  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R2  | Ajoutées      |
 </details>
 
 <!-- REF #pop3TransporterClass.getBoxInfo().Syntax -->
 **.getBoxInfo()** : Object<!-- END REF -->
 
 <!-- REF #pop3TransporterClass.getBoxInfo().Params -->
-| Parameter | Type  |    | Description    |
-| --------- | ----- |:--:| -------------- |
-| Result    | Objet | <- | boxInfo object |
+| Paramètres | Type  |    | Description    |
+| ---------- | ----- |:--:| -------------- |
+| Résultat   | Objet | <- | boxInfo object |
 <!-- END REF -->
 
 
@@ -211,20 +211,20 @@ The `.getBoxInfo()` function <!-- REF #pop3TransporterClass.getBoxInfo().Summary
 
 The `boxInfo` object returned contains the following properties:
 
-| Property  | Type   | Description                       |
-| --------- | ------ | --------------------------------- |
-| mailCount | Number | Number of messages in the mailbox |
-| size      | Number | Message size in bytes             |
+| Propriété | Type   | Description                                            |
+| --------- | ------ | ------------------------------------------------------ |
+| mailCount | Nombre | Nombre de messages contenus dans la boîte de réception |
+| size      | Nombre | Taille du message en octets                            |
 
 
 
-##### Example
+##### Exemple
 
 ```4d
  var $server; $boxinfo : Object
 
  $server:=New object
- $server.host:="pop.gmail.com" //Mandatory
+ $server.host:="pop.gmail.com" //Obligatoire
  $server.port:=995
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
@@ -241,20 +241,20 @@ The `boxInfo` object returned contains the following properties:
 
 ## .getMail()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R2  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R2  | Ajoutées      |
 </details>
 
 <!-- REF #pop3TransporterClass.getMail().Syntax -->
 **.getMail**( *msgNumber* : Integer ) : Object<!-- END REF -->
 
 <!-- REF #pop3TransporterClass.getMail().Params -->
-| Parameter | Type    |    | Description                                      |
-| --------- | ------- |:--:| ------------------------------------------------ |
-| msgNumber | Integer | -> | Number of the message in the list                |
-| Result    | Objet   | <- | [Email object](emailObjectClass.md#email-object) |
+| Paramètres | Type        |    | Description                                      |
+| ---------- | ----------- |:--:| ------------------------------------------------ |
+| msgNumber  | Entier long | -> | Number of the message in the list                |
+| Résultat   | Objet       | <- | [Email object](emailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
@@ -266,8 +266,8 @@ Pass in *msgNumber* the number of the message to retrieve. This number is return
 
 The method returns Null if:
 
-*   *msgNumber* designates a non-existing message,
-*   the message was marked for deletion using `.delete( )`.
+*   *msgNumber* désigne un message inexistant,
+*   le message a été marqué pour suppression à l'aide de `.delete()`.
 
 
 **Returned object**
@@ -275,7 +275,7 @@ The method returns Null if:
 `.getMail()` returns an [`Email` object](emailObjectClass.md#email-object).
 
 
-##### Example
+##### Exemple
 
 You want to know the sender of the first mail of the mailbox:
 
@@ -285,7 +285,7 @@ You want to know the sender of the first mail of the mailbox:
  var $sender : Variant
 
  $server:=New object
- $server.host:="pop.gmail.com" //Mandatory
+ $server.host:="pop.gmail.com" //Obligatoire
  $server.port:=995
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
@@ -301,20 +301,20 @@ You want to know the sender of the first mail of the mailbox:
 
 ## .getMailInfo()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R2  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R2  | Ajoutées      |
 </details>
 
 <!-- REF #pop3TransporterClass.getMailInfo().Syntax -->
 **.getMailInfo**( *msgNumber* : Integer ) : Object<!-- END REF -->
 
 <!-- REF #pop3TransporterClass.getMailInfo().Params -->
-| Parameter | Type    |    | Description                       |
-| --------- | ------- |:--:| --------------------------------- |
-| msgNumber | Integer | -> | Number of the message in the list |
-| Result    | Objet   | <- | mailInfo object                   |
+| Paramètres | Type        |    | Description                       |
+| ---------- | ----------- |:--:| --------------------------------- |
+| msgNumber  | Entier long | -> | Number of the message in the list |
+| Résultat   | Objet       | <- | mailInfo object                   |
 <!-- END REF -->
 
 
@@ -326,25 +326,25 @@ In *msgNumber*, pass the number of the message to retrieve. This number is retur
 
 The `mailInfo` object returned contains the following properties:
 
-| Property | Type   | Description              |
-| -------- | ------ | ------------------------ |
-| size     | Number | Message size in bytes    |
-| id       | Text   | Unique ID of the message |
+| Propriété | Type   | Description                 |
+| --------- | ------ | --------------------------- |
+| size      | Nombre | Taille du message en octets |
+| id        | Texte  | ID unique du message        |
 
 The method returns **Null** if:
 
-*   *msgNumber* designates a non-existing message,
-*   the message was marked for deletion using `.delete( )`.
+*   *msgNumber* désigne un message inexistant,
+*   le message a été marqué pour suppression à l'aide de `.delete()`.
 
 
-##### Example
+##### Exemple
 
 
 ```4d
  var $server; $mailInfo : Object
  var $mailNumber : Integer
 
- $server.host:="pop.gmail.com" //Mandatory
+ $server.host:="pop.gmail.com" //Obligatoire
  $server.port:=995
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
@@ -353,7 +353,7 @@ The method returns **Null** if:
  $transporter:=POP3 New transporter($server)
 
   //message info
- $mailInfo:=$transporter.getMailInfo(1) //get the first mail
+ $mailInfo:=$transporter.getMailInfo(1) //obtenir le premier e-mail
  If($mailInfo #Null)
     ALERT("First mail size is:"+String($mailInfo.size)+" bytes.")
  End if
@@ -364,19 +364,19 @@ The method returns **Null** if:
 
 ## .getMailInfoList()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R2  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R2  | Ajoutées      |
 </details>
 
 <!-- REF #pop3TransporterClass.getMailInfoList().Syntax -->
 **.getMailInfoList()** : Collection<!-- END REF -->
 
 <!-- REF #pop3TransporterClass.getMailInfoList().Params -->
-| Parameter | Type       |    | Description                      |
-| --------- | ---------- |:--:| -------------------------------- |
-| Result    | Collection | <- | Collection of `mailInfo` objects |
+| Paramètres | Type       |    | Description                      |
+| ---------- | ---------- |:--:| -------------------------------- |
+| Résultat   | Collection | <- | Collection of `mailInfo` objects |
 <!-- END REF -->
 
 
@@ -386,11 +386,11 @@ The `.getMailInfoList()` function <!-- REF #pop3TransporterClass.getMailInfoList
 
 Each `mailInfo` object in the returned collection contains the following properties:
 
-| Property     | Type   | Description                                                        |
+| Propriété    | Type   | Description                                                        |
 | ------------ | ------ | ------------------------------------------------------------------ |
-| \[ ].size   | Number | Message size in bytes                                              |
-| \[ ].number | Number | Message number                                                     |
-| \[ ].id     | Text   | Unique ID of the message (useful if you store the message locally) |
+| \[ ].size   | Nombre | Taille du message en octets                                        |
+| \[ ].number | Nombre | Numéro du message                                                  |
+| \[ ].id     | Texte  | ID unique du message (utile si vous stockez le message localement) |
 
 If the mailbox does not contain a message, an empty collection is returned.
 
@@ -403,14 +403,14 @@ If the mailbox does not contain a message, an empty collection is returned.
 The *id* however is a unique number assigned to the message when it was received by the server. This number is calculated using the time and date that the message is received and is a value assigned by your POP3 server. Unfortunately, POP3 servers do not use the *id* as the primary reference to their messages. Throughout the POP3 sessions you will need to specify the *number* as the reference to messages on the server. Developers may need to take some care if developing solutions which bring references to messages into a database but leave the body of the message on the server.
 
 
-##### Example
+##### Exemple
 
 You want to know the total number and size of emails in the mailbox:
 
 ```4d
  var $server : Object
  $server:=New object
- $server.host:="pop.gmail.com" //Mandatory
+ $server.host:="pop.gmail.com" //Obligatoire
  $server.port:=995
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
@@ -433,20 +433,20 @@ You want to know the total number and size of emails in the mailbox:
 
 ## .getMIMEAsBlob()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R3  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R3  | Ajoutées      |
 </details>
 
 <!-- REF #pop3TransporterClass.getMIMEAsBlob().Syntax -->
 **.getMIMEAsBlob**( *msgNumber* : Integer ) : Blob<!-- END REF -->
 
 <!-- REF #pop3TransporterClass.getMIMEAsBlob().Params -->
-| Parameter | Type    |    | Description                                           |
-| --------- | ------- |:--:| ----------------------------------------------------- |
-| msgNumber | Integer | -> | Number of the message in the list                     |
-| Result    | Blob    | <- | Blob of the MIME string returned from the mail server |
+| Paramètres | Type        |    | Description                                           |
+| ---------- | ----------- |:--:| ----------------------------------------------------- |
+| msgNumber  | Entier long | -> | Number of the message in the list                     |
+| Résultat   | Blob        | <- | Blob of the MIME string returned from the mail server |
 <!-- END REF -->
 
 
@@ -458,8 +458,8 @@ In *msgNumber*, pass the number of the message to retrieve. This number is retur
 
 The method returns an empty BLOB if:
 
-*   *msgNumber* designates a non-existing message,
-*   the message was marked for deletion using `.delete()`.
+*   *msgNumber* désigne un message inexistant,
+*   le message a été marqué pour suppression à l'aide de `.delete()`.
 
 
 **Returned BLOB**
@@ -467,7 +467,7 @@ The method returns an empty BLOB if:
 `.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](emailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
 
 
-##### Example
+##### Exemple
 
 You want to know the total number and size of emails in the mailbox:
 
@@ -511,19 +511,19 @@ You want to know the total number and size of emails in the mailbox:
 <!-- REF pop3TransporterClass.undeleteAll().Desc -->
 ## .undeleteAll()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R2  | Added   |
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v18 R2  | Ajoutées      |
 </details>
 
 <!-- REF #pop3TransporterClass.undeleteAll().Syntax -->
 **.undeleteAll()**<!-- END REF -->
 
 <!-- REF #pop3TransporterClass.undeleteAll().Params -->
-| Parameter | Type |  | Description                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Paramètres | Type |  | Description                     |
+| ---------- | ---- |::| ------------------------------- |
+|            |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
