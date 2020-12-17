@@ -445,7 +445,7 @@
 <tr><th>Property</th><th></th><th>Typ</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td></td><td>boolean</td><td>True if the check is successful, False otherwise</td></tr>
+<tr><td>success</td><td></td><td>Boolean</td><td>True if the check is successful, False otherwise</td></tr>
 <tr><td>status</td><td></td><td>number</td><td>(SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing)</td></tr>
 <tr><td>statusText</td><td></td><td>Text</td><td>Status message returned by the mail server, or last error returned in the 4D error stack</td></tr>
 <tr><td>errors</td><td></td><td>collection</td><td>4D error stack (not returned if a mail server response is received)</td></tr>
@@ -794,9 +794,9 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </thead>
 <tbody>
 <tr><td>[].name</td><td>Text</td><td>Name of the mailbox</td></tr>
-<tr><td>[].selectable</td><td>boolean</td><td>Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul></td></tr>
-<tr><td>[].inferior</td><td>boolean</td><td>Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul></td></tr>
-<tr><td>[].interesting</td><td>boolean</td><td>Indicates if the mailbox has been marked &quot;interesting&quot; by the server: <ul><li>true - The mailbox has been marked &quot;interesting&quot; by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked &quot;interesting&quot; by the server.</li></ul></td></tr>
+<tr><td>[].selectable</td><td>Boolean</td><td>Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul></td></tr>
+<tr><td>[].inferior</td><td>Boolean</td><td>Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul></td></tr>
+<tr><td>[].interesting</td><td>Boolean</td><td>Indicates if the mailbox has been marked &quot;interesting&quot; by the server: <ul><li>true - The mailbox has been marked &quot;interesting&quot; by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked &quot;interesting&quot; by the server.</li></ul></td></tr>
 </tbody>
 </table>
 <p>If the account does not contain any mailboxes, an empty collection is returned.</p>
@@ -903,8 +903,8 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <tr><th>Property</th><th>Typ</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>updateSeen</td><td>boolean</td><td>If True, the message is marked as &quot;seen&quot; in the mailbox. If False, the message is not marked as &quot;seen&quot;. Default value: True</td></tr>
-<tr><td>withBody</td><td>boolean</td><td>Pass True to return the body of the message. If False, only the message header is returned. Default value: True</td></tr>
+<tr><td>updateSeen</td><td>Boolean</td><td>If True, the message is marked as &quot;seen&quot; in the mailbox. If False, the message is not marked as &quot;seen&quot;. Default value: True</td></tr>
+<tr><td>withBody</td><td>Boolean</td><td>Pass True to return the body of the message. If False, only the message header is returned. Default value: True</td></tr>
 </tbody>
 </table>
 <blockquote>
