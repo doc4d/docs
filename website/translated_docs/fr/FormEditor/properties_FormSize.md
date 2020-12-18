@@ -57,7 +57,7 @@ This value also determines the right-hand margins of forms used in the Label edi
 
 ---
 
-## Vert. Margin
+## Marge ver.
 Value to add (in pixels) to the bottom margin of the form when the [form size](#size-based-on) is **Automatic size** or **\<object name>**.
 
 This value also determines the top margins of forms used in the Label editor.
@@ -72,7 +72,7 @@ This value also determines the top margins of forms used in the Label editor.
 ---
 ## Largeur
 
-Width of the form (in pixels) when the [form size](#size-based-on) is **Set size**.
+Largeur du formulaire (en pixels) lorsque la [taille du formulaire](#size-based-on) est définie sur **Fixer taille**.
 
 
 #### Grammaire JSON
