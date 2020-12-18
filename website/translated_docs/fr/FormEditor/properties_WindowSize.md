@@ -45,10 +45,10 @@ Hauteur maximale et minimale (en pixels) d'une fenêtre de formulaire redimensio
 
 ##### Grammaire JSON
 
-| Nom             | Type de données | Valeurs possibles |
-| --------------- | --------------- | ----------------- |
-| windowMinHeight | number          | integer value     |
-| windowMaxHeight | number          | integer value     |
+| Nom             | Type de données | Valeurs possibles  |
+| --------------- | --------------- | ------------------ |
+| windowMinHeight | number          | valeur entier long |
+| windowMaxHeight | number          | valeur entier long |
 
 
 ## Largeur maxi, Largeur mini
@@ -58,8 +58,8 @@ Largeur maximale et minimale (en pixels) d'une fenêtre de formulaire redimensio
 
 #### Grammaire JSON
 
-| Nom            | Type de données | Valeurs possibles |
-| -------------- | --------------- | ----------------- |
-| windowMinWidth | number          | integer value     |
-| windowMaxWidth | number          | integer value     |
+| Nom            | Type de données | Valeurs possibles  |
+| -------------- | --------------- | ------------------ |
+| windowMinWidth | number          | valeur entier long |
+| windowMaxWidth | number          | valeur entier long |
 
