@@ -1549,6 +1549,10 @@ For detailed information on how to build a query using *queryString*, *value*, a
 
 More examples of queries can be found in the DataClass [`.query()`](dataclassClass.md#query) page.
 
+#### See also
+
+[`.query()`](dataclassClass.md#query) for dataclass
+
 <!-- END REF -->
 
 
@@ -1838,6 +1842,7 @@ If a filter is specified for an attribute of the `relatedEntities` kind:
 
 *	propertyPath = "relatedEntities.*" -> all the properties are extracted
 *	propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> only those properties are extracted
+
 
 
 In the *options* parameter, you can pass the `dk with primary key` and/or `dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
