@@ -95,7 +95,7 @@
 <tr><td><a href="#or"><strong>.or</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.or</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</a><p>    combines the entity selection with the <em>entity</em> or <em>entitySelection</em> parameter using the logical (not exclusive) OR operator</td></tr>
 <tr><td><a href="#orderby"><strong>.orderBy</strong>( <em>pathString</em> : Text ) : 4D.EntitySelection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : 4D.EntitySelection</a><p>    returns a new ordered entity selection containing all entities of the entity selection in the order specified by <em>pathString</em> or <em>pathObjects</em> criteria</td></tr>
 <tr><td><a href="#orderbyformula"><strong>.orderByFormula</strong>( <em>formulaString</em> : Text { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection<br><strong>.orderByFormula</strong>( <em>formulaObj</em> : Object { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection</a><p>    returns a new, ordered entity selection</td></tr>
-<tr><td><a href="#query"><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : expression } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</a><p>    searches for entities that meet the search criteria specified in <em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s) among all the entities in the entity selection</td></tr>
+<tr><td><a href="#query"><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : any } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</a><p>    searches for entities that meet the search criteria specified in <em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s) among all the entities in the entity selection</td></tr>
 <tr><td><a href="#querypath"><strong>.queryPath</strong> : Text</a><p>    contains a detailed description of the query as it was actually performed by 4D</td></tr>
 <tr><td><a href="#queryplan"><strong>.queryPlan</strong> : Text</a><p>     contains a detailed description of the query just before it is executed (i.e., the planned query)</td></tr>
 <tr><td><a href="#refresh"><strong>.refresh()</strong></a><p>    immediately &quot;invalidates&quot; the entity selection data in the local ORDA cache</td></tr>
@@ -1254,7 +1254,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <p></details></p>
-<p><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : expression } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</p>
+<p><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : any } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
 <tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
@@ -1262,7 +1262,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <tbody>
 <tr><td>queryString</td><td>Text</td><td style="text-align:center">-&gt;</td><td>Search criteria as string</td></tr>
 <tr><td>formula</td><td>Object</td><td style="text-align:center">-&gt;</td><td>Search criteria as formula object</td></tr>
-<tr><td>value</td><td>expression</td><td style="text-align:center">-&gt;</td><td>Value(s) to use for indexed placeholder(s)</td></tr>
+<tr><td>value</td><td>any</td><td style="text-align:center">-&gt;</td><td>Value(s) to use for indexed placeholder(s)</td></tr>
 <tr><td>querySettings</td><td>Object</td><td style="text-align:center">-&gt;</td><td>Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection made up of entities from entity selection meeting the search criteria specified in <em>queryString</em> or <em>formula</em></td></tr>
 </tbody>
