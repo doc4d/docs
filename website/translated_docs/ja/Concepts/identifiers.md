@@ -164,15 +164,15 @@ If(bValidate=1) // プロセス変数
 ```4d
 DIALOG([Storage];"Note box"+String($vlStage))
 OBJECT SET FONT(*;"Binfo";"Times")
-USE NAMED SELECTION([Customers];"Closed")//Process Named Selection
-USE NAMED SELECTION([Customers];"<>ByZipcode") //Interprocess Named Selection
-    //Starting the global process "Add Customers"
+USE NAMED SELECTION([Customers];"Closed")// プロセス命名セレクション
+USE NAMED SELECTION([Customers];"<>ByZipcode") // インタープロセス命名セレクション
+    // グローバルプロセス "Add Customers" の開始:
 $vlProcessID:=New process("P_ADD_CUSTOMERS";48*1024;"Add Customers")
-    //Starting the local process "$Follow Mouse Moves"
+    // ローカルプロセス "$Follow Mouse Moves" の開始:
 $vlProcessID:=New process("P_MOUSE_SNIFFER";16*1024;"$Follow Mouse Moves")
-CREATE SET([Customers];"Customer Orders")//Process set
-USE SET("<>Deleted Records") //Interprocess set
-If(Records in set("$Selection"+String($i))>0) //Client set
+CREATE SET([Customers];"Customer Orders")// プロセスセット
+USE SET("<>Deleted Records") // インタープロセスセット
+If(Records in set("$Selection"+String($i))>0) // クライアントセット
 
 ```
 
