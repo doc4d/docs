@@ -174,6 +174,7 @@ If the attribute does not exist in the entity selection, an error is returned.
 Projection of storage values:
 
 
+
 ```4d
  var $firstNames : Collection
  $entitySelection:=ds.Employee.all()
@@ -1012,7 +1013,6 @@ If the entity selection is empty, the function returns Null.
 
 #### 例題
 
-
 ```4d
  var $entitySelection : cs.EmpSelection
  var $entity : cs.EmpEntity
@@ -1492,14 +1492,14 @@ In this example, the "marks" object field in the **Students** dataClass contains
 </details>
 
 <!-- REF #entitySelectionClass.query().Syntax -->
-**.query**( *queryString* : Text { ; *...value* : expression } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection<!-- END REF -->
+**.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #entitySelectionClass.query().Params -->
 | 参照            | タイプ                |    | 説明                                                                                                                                                            |
 | ------------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | queryString   | テキスト               | -> | Search criteria as string                                                                                                                                     |
 | formula       | オブジェクト             | -> | Search criteria as formula object                                                                                                                             |
-| value         | expression         | -> | Value(s) to use for indexed placeholder(s)                                                                                                                    |
+| value         | any                | -> | Value(s) to use for indexed placeholder(s)                                                                                                                    |
 | querySettings | オブジェクト             | -> | Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                                     |
 | 戻り値           | 4D.EntitySelection | <- | New entity selection made up of entities from entity selection meeting the search criteria specified in *queryString* or *formula*|<!-- END REF -->
 
@@ -1528,6 +1528,10 @@ For detailed information on how to build a query using *queryString*, *value*, a
 #### 例題 2
 
 More examples of queries can be found in the DataClass [`.query()`](dataclassClass.md#query) page.
+
+#### 参照
+
+[`.query()`](dataclassClass.md#query) for dataclass
 
 <!-- END REF -->
 
@@ -1816,6 +1820,7 @@ If a filter is specified for an attribute of the `relatedEntities` kind:
 
 *   propertyPath = "relatedEntities.*" -> all the properties are extracted
 *   propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> only those properties are extracted
+
 
 
 In the *options* parameter, you can pass the `dk with primary key` and/or `dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
