@@ -129,7 +129,7 @@ var $entity : cs.EmployeeEntity
  C_COLLECTION($vCol) // ローカル変数 $vCol をコレクション型として宣言します
 ```
 
-**Note:** Arrays are a particular type of variables (an array is an ordered series of variables of the same type). Arrays are declared with specific commands, such as `ARRAY LONGINT(alAnArray;10)`. 詳細については [配列](Concepts/arrays.md) を参照ください。
+**注:** 配列とは変数の一種で、同じタイプの変数を番号付きで並べたものです。 配列は、配列宣言コマンド (例: `ARRAY LONGINT(alAnArray;10)`) を使用して作成します。 詳細については [配列](Concepts/arrays.md) を参照ください。
 
 
 ## 変数への代入
