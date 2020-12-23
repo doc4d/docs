@@ -274,17 +274,17 @@
 <li><strong>Privilèges lecture/écriture</strong> : sur la machine cliente, vérifiez que l’utilisateur courant dispose de droits d’accès en écriture pour l’application cliente mise à jour.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="fichiers-générés-1"></a><a href="#fichiers-générés-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fichiers générés</h3>
-<p>Once a client/server application is built, you will find a new folder in the destination folder named <strong>Client Server executable</strong>. This folder contains two subfolders, <em>&lt;ApplicationName&gt;Client</em> and <em>&lt;ApplicationName&gt;Server</em>.</p>
+<p>A l’issue du processus de génération d’une application client-serveur, vous devez trouver dans le dossier de destination un nouveau dossier nommé <strong>Client Server executable</strong>. Ce dossier contient deux sous-dossiers, <em>&lt;ApplicationName&gt;Client</em> et <em>&lt;ApplicationName&gt;Server</em>.</p>
 <blockquote>
-<p>These folders are not generated if an error occurs. In this case, open the <a href="#log-file">log file</a> in order to find out the cause of the error.</p>
+<p>Ces dossiers ne sont pas générés si une erreur est survenue. Dans ce cas, ouvrez le <a href="#log-file">fichier d’historique</a> pour connaître la cause de l’erreur.</p>
 </blockquote>
-<p>The <em>&lt;ApplicationName&gt;Client</em> folder contains the client portion of the application corresponding to the execution platform of the application builder. Ce dossier doit être installé sur chaque poste client. Le dossier <em>&lt;ApplicationName&gt;Server</em> contient la partie serveur de l'application.</p>
-<p>The contents of these folders vary depending on the current platform:</p>
+<p>Le dossier <em>&lt;ApplicationName&gt;Client</em> contient la partie cliente de l’application correspondant à la plate-forme d’exécution du générateur d’application. Ce dossier doit être installé sur chaque poste client. Le dossier <em>&lt;ApplicationName&gt;Server</em> contient la partie serveur de l'application.</p>
+<p>Le contenu de ces dossiers diffère en fonction de la plate-forme courante :</p>
 <ul>
-<li><p><em>Windows</em> - Each folder contains the application executable file, named <em>&lt;ApplicationName&gt;Client.exe</em> for the client part and <em>&lt;ApplicationName&gt;Server.exe</em> for the server part as well as the corresponding .rsr files. The folders also contain various files and folders necessary for the applications to work and customized items that may be in the original 4D Volume Desktop and 4D Server folders.</p></li>
-<li><p><em>macOS</em> - Each folder contains only the application package, named &lt;ApplicationName&gt; Client for the client part and &lt;ApplicationName&gt; Server for the server part. Chaque progiciel contient tous les éléments nécessaires à son fonctionnement. Under macOS, launch a package by double-clicking it.</p>
+<li><p><em>Sous Windows</em>, chaque dossier contient le fichier exécutable de l’application, nommé <em>&lt;ApplicationName&gt;Client.exe</em> pour la partie cliente et <em>&lt;ApplicationName&gt;Server.exe</em> pour la partie serveur, ainsi que les fichiers .rsr correspondants. Les dossiers contiennent également divers fichiers et dossiers nécessaires au fonctionnement des applications et les éléments personnalisés éventuellement placés dans les dossiers 4D Volume Desktop et 4D Server d’origine.</p></li>
+<li><p><em>Sous macOS</em>, chaque dossier contient uniquement le progiciel de l’application, nommé &lt;ApplicationName&gt; Client pour la partie cliente et &lt;ApplicationName&gt; Server pour la partie serveur. Chaque progiciel contient tous les éléments nécessaires à son fonctionnement. Sous macOS, un progiciel est lancé via un double-clic.</p>
 <blockquote>
-<p>The macOS packages built contain the same items as the Windows subfolders. You can display their contents (<strong>Control+click</strong> on the icon) in order to be able to modify them.</p>
+<p>Les progiciels macOS générés contiennent les mêmes éléments que les sous-dossiers Windows. You can display their contents (<strong>Control+click</strong> on the icon) in order to be able to modify them.</p>
 </blockquote></li>
 </ul>
 <p>If you checked the “Allow automatic update of client application” option, an additional subfolder called <em>Upgrade4DClient</em> is added in the <em>&lt;ApplicationName&gt;Server</em> folder/package. </blockquote></li> </ul></p>
@@ -297,7 +297,7 @@
 </ul>
 <p>Des éléments doivent être installée :</p>
 <ul>
-<li><p><strong>on Windows</strong></p>
+<li><p><strong>Sous Windows</strong></p>
 <ul>
 <li><strong>Server application</strong> - in the <em>Client Server executable\ &lt;ApplicationName&gt;Server\Server Database</em> subfolder.</li>
 <li><strong>Client application</strong> - in the <em>Client Server executable\ &lt;ApplicationName&gt;Client</em> subfolder.</li>
