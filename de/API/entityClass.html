@@ -370,7 +370,7 @@
 <tr><th>Property</th><th></th><th>Typ</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td></td><td>boolean</td><td>true if the drop action is successful, false otherwise.</td></tr>
+<tr><td>success</td><td></td><td>Boolean</td><td>true if the drop action is successful, false otherwise.</td></tr>
 <tr><td></td><td></td><td></td><td><strong><em>Available only in case of error:</em></strong></td></tr>
 <tr><td>status(*)</td><td></td><td>number</td><td>Error code, see below</td></tr>
 <tr><td>statusText(*)</td><td></td><td>Text</td><td>Description of the error, see below</td></tr>
@@ -812,9 +812,9 @@
 <tr><th>Property</th><th></th><th>Typ</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td></td><td>boolean</td><td>true if the lock action is successful (or if the entity is already locked in the current process), false otherwise.</td></tr>
+<tr><td>success</td><td></td><td>Boolean</td><td>true if the lock action is successful (or if the entity is already locked in the current process), false otherwise.</td></tr>
 <tr><td></td><td></td><td></td><td><strong><em>Available only if <code>dk reload if stamp changed</code> option is used:</em></strong></td></tr>
-<tr><td><strong>wasReloaded</strong></td><td></td><td>boolean</td><td>true if the entity was reloaded with success, false otherwise.</td></tr>
+<tr><td><strong>wasReloaded</strong></td><td></td><td>Boolean</td><td>true if the entity was reloaded with success, false otherwise.</td></tr>
 <tr><td></td><td></td><td></td><td><strong><em>Available only in case of error:</em></strong></td></tr>
 <tr><td>status(*)</td><td></td><td>number</td><td>Error code, see below</td></tr>
 <tr><td>statusText(*)</td><td></td><td>Text</td><td>Description of the error, see below</td></tr>
@@ -965,7 +965,7 @@
 <tr><th>Property</th><th>Typ</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td>boolean</td><td>True if the reload action is successful, False otherwise.<p><p><strong><em>Available only in case of error</em></strong>:</td></tr>
+<tr><td>success</td><td>Boolean</td><td>True if the reload action is successful, False otherwise.<p><p><strong><em>Available only in case of error</em></strong>:</td></tr>
 <tr><td>status(*)</td><td>number</td><td>Error code, see below</td></tr>
 <tr><td>statusText(*)</td><td>Text</td><td>Description of the error, see below</td></tr>
 </tbody>
@@ -1030,9 +1030,9 @@
 <p>The object returned by <code>.save()</code> contains the following properties:</p>
 <p>| Property         |  | Typ     | Beschreibung                                            |
 | ---------------- |  | ------- | ------------------------------------------------------- |
-| success          |  | boolean | True if the save action is successful, False otherwise. |
+| success          |  | Boolean | True if the save action is successful, False otherwise. |
 |                  |  |         | <strong><em>Available only if <code>dk auto merge</code> option is used</em></strong>: |
-| autoMerged       |  | boolean | True if an auto merge was done, False otherwise.        |
+| autoMerged       |  | Boolean | True if an auto merge was done, False otherwise.        |
 |                  |  |         | <strong><em>Available only in case of error</em></strong>:                  |
 | status(*)     |  | number  | Error code, see below                                   |
 | statusText(*) |  | Text    | Description of the error, see below                     |

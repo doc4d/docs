@@ -135,7 +135,7 @@
 <tr><td>Result</td><td>4D.WebServer</td><td>&lt;-</td><td>Web server object</td></tr>
 </tbody>
 </table>
-<p>The <code>WEB Server</code> command returns the default Web server object, or the Web server object defined through the option parameter.</p>
+<p>The <code>WEB Server</code> commandreturns the default Web server object, or the Web server object defined through the option parameter.</p>
 <p>By default, if the <em>option</em> parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the <em>option</em> parameter:</p>
 <table>
 <thead>
@@ -177,7 +177,7 @@
 <tr><td>Result</td><td>Collection</td><td>&lt;-</td><td>Collection of the available Web server objects</td></tr>
 </tbody>
 </table>
-<p>The <code>WEB Server list</code> command returns a collection of all Web server objects available in the 4D application.</p>
+<p>The <code>WEB Server list</code> commandreturns a collection of all Web server objects available in the 4D application.</p>
 <p>A 4D application can contain anywhere from one to several Web servers:</p>
 <ul>
 <li>one Web server for the host database (default Web server)</li>
@@ -336,7 +336,7 @@ The listening IP port number for HTTPS.</p>
 <p>Possible values: 500000 - 2147483648</p>
 <h2><a class="anchor" aria-hidden="true" id="maxsessions"></a><a href="#maxsessions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.maxSessions</h2>
 <p><strong>.maxSessions</strong> : Number</p>
-<p>The maximum number of simultaneous sessions. When you reach the limit, the oldest session is closed (and <code>On Web Close Process</code> database method is called) if the web server needs to create a new one. The number of simultaneous sessions cannot exceed the total number of web processes (maxConcurrentProcesses property, 100 by default)</p>
+<p>The maximum number of simultaneous sessions. When you reach the limit, the oldest session is closed (and <code>On Web Close Process</code> database method is called) if the web server needs to create a new one. When you reach the limit, the oldest session is closed (and <code>On Web Close Process</code> database method is called) if the web server needs to create a new one.</p>
 <h2><a class="anchor" aria-hidden="true" id="mintlsversion"></a><a href="#mintlsversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.minTLSVersion</h2>
 <p><strong>.minTLSVersion</strong> : Number</p>
 <p>The minimum TLS version accepted for connections. Connection attempts from clients supporting only versions below the minimum will be rejected.</p>

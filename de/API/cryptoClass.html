@@ -87,7 +87,7 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#4dcryptokeynew"></a><p>    </td></tr>
+<tr><td><a href="#4dcryptokeynew"><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) : 4D.CryptoKey</a><p>    creates a new <code>4D.CryptoKey</code> object encapsulating an encryption key pair</td></tr>
 <tr><td><a href="#curve"><strong>.curve</strong> : Text</a><p>    normalised curve name of the key.</td></tr>
 <tr><td><a href="#decrypt"><strong>.decrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Object</a><p>    decrypts the <em>message</em> parameter using the <strong>private</strong> key</td></tr>
 <tr><td><a href="#encrypt"><strong>.encrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Text</a><p>    encrypts the <em>message</em> parameter using the <strong>public</strong> key</td></tr>
@@ -191,7 +191,7 @@
 <tr><th>Property</th><th>Typ</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td>boolean</td><td>True if the message has been successfully decrypted</td></tr>
+<tr><td>success</td><td>Boolean</td><td>True if the message has been successfully decrypted</td></tr>
 <tr><td>result</td><td>Text</td><td>Message decrypted and decoded using the <code>options.encodingDecrypted</code></td></tr>
 <tr><td>errors</td><td>collection</td><td>If <code>success</code> is <code>false</code>, may contain a collection of errors</td></tr>
 </tbody>
@@ -326,7 +326,7 @@
 <tbody>
 <tr><td>hash</td><td>Text</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size</td></tr>
 <tr><td>encodingEncrypted</td><td>Text</td><td>Encoding used to convert the binary encrypted message into the result string. Can be &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
-<tr><td>pss</td><td>boolean</td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when producing a JWT for PS@ algorithm</td></tr>
+<tr><td>pss</td><td>Boolean</td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when producing a JWT for PS@ algorithm</td></tr>
 <tr><td>encoding</td><td>Text</td><td>ERepresentation to be used for result signature. Possible values: &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 </tbody>
 </table>
@@ -390,7 +390,7 @@
 </thead>
 <tbody>
 <tr><td>hash</td><td>Text</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size</td></tr>
-<tr><td>pss</td><td>boolean</td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when verifying a JWT for PS@ algorithm</td></tr>
+<tr><td>pss</td><td>Boolean</td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when verifying a JWT for PS@ algorithm</td></tr>
 <tr><td>encoding</td><td>Text</td><td>Representation of provided signature. Possible values are &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 </tbody>
 </table>
@@ -402,7 +402,7 @@
 <tr><th>Property</th><th>Typ</th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td>boolean</td><td>True if the signature matches the message</td></tr>
+<tr><td>success</td><td>Boolean</td><td>True if the signature matches the message</td></tr>
 <tr><td>errors</td><td>collection</td><td>If <code>success</code> is <code>false</code>, may contain a collection of errors</td></tr>
 </tbody>
 </table>
