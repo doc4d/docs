@@ -192,7 +192,7 @@
 <tr><td>message</td><td></td><td>Text</td><td>-&gt;</td><td>Message string to sign</td></tr>
 <tr><td>options</td><td></td><td>object</td><td>-&gt;</td><td>Signing options</td></tr>
 <tr><td></td><td>hash</td><td>Text</td><td></td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size</td></tr>
-<tr><td></td><td>pss</td><td>boolean</td><td></td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when producing a JWT for PS@ algorithm</td></tr>
+<tr><td></td><td>pss</td><td>Boolean</td><td></td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when producing a JWT for PS@ algorithm</td></tr>
 <tr><td></td><td>encoding</td><td>Text</td><td></td><td>Representation to be used for result signature. Possible values: &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>signature</td><td></td><td>Text</td><td>&lt;-</td><td>Resulting signature in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr>
@@ -221,11 +221,11 @@
 <tr><td>signature</td><td></td><td>Text</td><td>-&gt;</td><td>Signature to verify, in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr>
 <tr><td>options</td><td></td><td>object</td><td>-&gt;</td><td>Signing options</td></tr>
 <tr><td></td><td>hash</td><td>Text</td><td></td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. When used to produce a JWT, the hash size must match the PS@, ES@, RS@, or PS@ algorithm size</td></tr>
-<tr><td></td><td>pss</td><td>boolean</td><td></td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when verifying a JWT for PS@ algorithm</td></tr>
+<tr><td></td><td>pss</td><td>Boolean</td><td></td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when verifying a JWT for PS@ algorithm</td></tr>
 <tr><td></td><td>encoding</td><td>Text</td><td></td><td>Representation of provided signature. Possible values are &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>status</td><td></td><td>object</td><td>&lt;-</td><td>Result of the verification</td></tr>
-<tr><td></td><td>success</td><td>boolean</td><td></td><td>True if the signature matches the message</td></tr>
+<tr><td></td><td>success</td><td>Boolean</td><td></td><td>True if the signature matches the message</td></tr>
 <tr><td></td><td>errors</td><td>collection</td><td></td><td>If <code>success</code> is <code>false</code>, may contain a collection of errors</td></tr>
 </tbody>
 </table>
@@ -285,7 +285,7 @@
 <tr><td></td><td>encodingDecrypted</td><td>Text</td><td></td><td>Encoding used to convert the binary decrypted message into the result string. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;UTF-8&quot;.</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>status</td><td></td><td>object</td><td>&lt;-</td><td>Ergebnis</td></tr>
-<tr><td></td><td>success</td><td>boolean</td><td></td><td>True if the message has been successfully decrypted</td></tr>
+<tr><td></td><td>success</td><td>Boolean</td><td></td><td>True if the message has been successfully decrypted</td></tr>
 <tr><td></td><td>result</td><td>Text</td><td></td><td>Message decrypted and decoded using the <code>options.encodingDecrypted</code></td></tr>
 <tr><td></td><td>errors</td><td>collection</td><td></td><td>If <code>success</code> is <code>false</code>, may contain a collection of errors</td></tr>
 </tbody>
