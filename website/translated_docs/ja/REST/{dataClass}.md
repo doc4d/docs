@@ -219,7 +219,7 @@ RESTリクエストにこのパラメーターのみを渡すと、(
 
 ### 説明
 
-By passing the *dataClass* and an *attribute* along with a value, you can retrieve all the public information for that entity. The value is a unique value for attribute, but is not the primary key.
+*dataClass* に加えて *attribute (属性)* および *value (値)*を渡すことで、当該エンティティの公開データをすべて取得できます。 指定する値は、その属性において一意のものですが、主キーではありません。
 
 `GET  /rest/Company:companyCode(Acme001)`
 
@@ -227,7 +227,7 @@ By passing the *dataClass* and an *attribute* along with a value, you can retrie
 
 `GET  /rest/Company:companyCode(Acme001)/name,address`
 
-If you want to use a relation attribute using [$attributes]($attributes.md), you do so by specifying it as shown below:
+[$attributes]($attributes.md) を使ってリレーション属性を使用するには、次のように指示します:
 
 `GET  /rest/Company:companyCode(Acme001)?$attributes=name,address,staff.name`
 
@@ -235,7 +235,7 @@ If you want to use a relation attribute using [$attributes]($attributes.md), you
 
 ### 例題
 
-The following request returns all the public data of the employee named "Jones".
+次のリクエストは、名前が "Jones" である社員 (Employee) の公開データをすべて返します。
 
 `GET  /rest/Employee:lastname(Jones)`
 
