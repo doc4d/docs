@@ -235,7 +235,7 @@ RESTリクエストにこのパラメーターのみを渡すと、(
 
 ### 例題
 
-The following request returns all the public data of the employee named "Jones".
+次のリクエストは、名前が "Jones" である社員 (Employee) の公開データをすべて返します。
 
 `GET  /rest/Employee:lastname(Jones)`
 
