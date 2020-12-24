@@ -9,7 +9,7 @@ title:
 
 エンティティやセンティティセレクション、またはクラス関数を利用するにあたって、RESTリクエスト内にデータクラス名を直接使用することができます。
 
-## Available syntaxes
+## 使用可能なシンタックス
 
 | シンタックス                                                                             | 例題                                       | 説明                                       |
 | ---------------------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------- |
@@ -169,7 +169,7 @@ RESTリクエストにこのパラメーターのみを渡すと、(
 
 `GET  /rest/Company(1)/name,address`
 
-If you want to expand a relation attribute using `$expand`, you do so by specifying it as shown below:
+`$expand` を使ってリレーション属性を展開するには、次のように指示します:
 
 `GET  /rest/Company(1)/name,address,staff?$expand=staff`
 
@@ -177,7 +177,7 @@ If you want to expand a relation attribute using `$expand`, you do so by specify
 
 ### 例題
 
-The following request returns all the public data in the Company dataclass whose key is 1.
+次のリクエストは、Company データクラスで主キーが 1 であるエンティティの公開データをすべて返します。
 
 `GET  /rest/Company(1)`
 
