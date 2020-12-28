@@ -3,9 +3,9 @@ id: onDisplayDetail
 title: Sur affichage corps
 ---
 
-| Code | Peut être appelé par                               | Définition                                                                                        |
-| ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 8    | Form - [List Box](FormObjects/listbox_overview.md) | A record is about to be displayed in a list form or a row is about to be displayed in a list box. |
+| Code | Peut être appelé par                                     | Définition                                                                                        |
+| ---- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| 8    | Formulaire - [List Box](FormObjects/listbox_overview.md) | A record is about to be displayed in a list form or a row is about to be displayed in a list box. |
 
 
 ## Description
