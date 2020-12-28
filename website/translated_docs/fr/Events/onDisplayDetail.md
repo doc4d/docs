@@ -3,29 +3,29 @@ id: onDisplayDetail
 title: Sur affichage corps
 ---
 
-| Code | Peut être appelé par                                     | Définition                                                                                        |
-| ---- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| 8    | Formulaire - [List Box](FormObjects/listbox_overview.md) | A record is about to be displayed in a list form or a row is about to be displayed in a list box. |
+| Code | Peut être appelé par                                     | Définition                                                                                                                                       |
+| ---- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 8    | Formulaire - [List Box](FormObjects/listbox_overview.md) | Un enregistrement est sur le point d'être affiché dans un formulaire liste ou bien une ligne est sur le point d'être affichée dans une list box. |
 
 
 ## Description
 
-The `On Display Detail` event can be used in the following contexts:
+L'événement `On Display Detail` peut être utilisé dans les contextes suivants :
 
-### Output form
+### Formulaire de sortie
 
 A record is about to be displayed in a list form displayed via `DISPLAY SELECTION` and `MODIFY SELECTION`.
 
-> This event cannot be selected for project forms, it is only available with **table forms**.
+> Cet événement ne peut pas être sélectionné pour les formulaires projet, il est uniquement disponible avec les **formulaires table**.
 
-In this context, the following sequence of calls to methods and form events is triggered:
+Dans ce contexte, la séquence d'appels de méthodes et d'événements de formulaire suivante est déclenchée :
 
-- For each record:
-    - For each object in the detail area:
-        - Object method with `On Display Detail` event
-    - Form method with `On Display Detail` event
+- Pour chaque enregistrement :
+    - Pour chaque objet de la zone détaillée :
+        - Méthode objet avec l'événement `On Display Detail`
+    - Méthode formulaire avec l'événement `On Display Detail`
 
-> The header area is handled using the [`On Header`](onHeader.md) event.
+> La zone d'en-tête est gérée à l'aide de l'événement [`On Header`](onHeader.md).
 
 Calling a 4D command that displays a dialog box from the `On Display Detail` event is not allowed and will cause a syntax error to occur. More particularly, the commands concerned are: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, and `MODIFY SELECTION`.
 
