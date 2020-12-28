@@ -3,9 +3,9 @@ id: onCloseDetail
 title: Sur fermeture corps
 ---
 
-| Code | Peut être appelé par                               | Définition                                                     |
-| ---- | -------------------------------------------------- | -------------------------------------------------------------- |
-| 26   | Form - [List Box](FormObjects/listbox_overview.md) | You left the detail form and are going back to the output form |
+| Code | Peut être appelé par                                     | Définition                                                                        |
+| ---- | -------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| 26   | Formulaire - [List Box](FormObjects/listbox_overview.md) | Vous avez quitté le formulaire détaillé et vous retournez au formulaire de sortie |
 
 
 ## Description
