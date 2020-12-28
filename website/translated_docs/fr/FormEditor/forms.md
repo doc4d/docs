@@ -4,23 +4,23 @@ title: A propos des formulaires 4D
 ---
 
 
-Forms provide the interface through which information is entered, modified, and printed in a desktop application. Users interact with the data in a database using forms and print reports using forms. Forms can be used to create custom dialog boxes, palettes, or any featured custom window.
+Les formulaires fournissent l'interface par laquelle les informations sont saisies, modifiées et imprimées dans une application de bureau. A l'aide des formulaires, les utilisateurs peuvent interagir avec les données d'une base de données et imprimer des rapports. Les formulaires permettent de créer des boîtes de dialogue personnalisées, des palettes ou toute fenêtre personnalisée.
 
 ![](assets/en/FormObjects/form1.png)
 
-Forms can also contain other forms through the following features:
+Les formulaires peuvent également contenir d'autres formulaires grâce aux fonctionnalités suivantes :
 
-- [subform objects](FormObjects/subform_overview.md)
-- [inherited forms](properties_FormProperties.md#inherited-forms)
+- [les objets sous-formulaires](FormObjects/subform_overview.md)
+- [les formulaires hérités](properties_FormProperties.md#inherited-forms)
 
 
-## Creating forms
+## Création de formulaires
 
-You can add or modify 4D forms using the following elements:
+Vous pouvez ajouter ou modifier des formulaires 4D à l'aide des éléments suivants :
 
-- **4D Developer interface:** Create new forms from the **File** menu or the **Explorer** window.
-- **Form Editor**: Modify your forms using the **[Form Editor](FormEditor/formEditor.md)**.
-- **JSON code:** Create and design your forms using JSON and save the form files at the [appropriate location](Project/architecture.md#sources-folder). Exemple :
+- **L'interface 4D Developer :** Créez de nouveaux formulaires à partir du menu **Fichier** ou de la fenêtre de l' **Explorateur**.
+- **L'éditeur de formulaires **: Modifiez vos formulaires à l'aide de l'**[éditeur de formulaires](FormEditor/formEditor.md)**.
+- **Le code JSON :** Créez et concevez vos formulaires à l'aide de JSON et enregistrez les fichiers de formulaire à [l'emplacement approprié](Project/architecture.md#sources-folder). Exemple :
 
 ```
 {
@@ -70,16 +70,16 @@ You can add or modify 4D forms using the following elements:
 
 
 
-## Project form and Table form
+## Formulaire projet et formulaire table
 
 Il existe deux catégories de formulaires :
 
 *   **Les formulaires projet** - Formulaires indépendants qui ne sont rattachés à aucune table. Ils sont destinés plus particulièrement à la création de boîtes de dialogue d'interface et de composants. Les formulaires projet peuvent être utilisés pour créer des interfaces facilement conformes aux normes du système d'exploitation.
 
 
-*   **Table forms** - Attached to specific tables and thus benefit from automatic functions useful for developing applications based on databases. Typically, a table has separate input and output forms.
+*   **Les formulaires table** - Rattachés à des tables spécifiques et bénéficient ainsi de fonctions automatiques utiles pour développer des applications basées sur des bases de données. En règle générale, une table possède des formulaires d'entrée et de sortie séparés.
 
-Typically, you select the form category when you create the form, but you can change it afterwards.
+En règle générale, vous sélectionnez la catégorie de formulaire lorsque vous créez le formulaire, mais vous pouvez la modifier par la suite.
 
 
 ## Pages formulaire
