@@ -14,7 +14,7 @@ L'événement `On Display Detail` peut être utilisé dans les contextes suivant
 
 ### Formulaire de sortie
 
-A record is about to be displayed in a list form displayed via `DISPLAY SELECTION` and `MODIFY SELECTION`.
+Un enregistrement est sur le point d'être affiché sous forme de liste affichée via `DISPLAY SELECTION` et `MODIFY SELECTION`.
 
 > Cet événement ne peut pas être sélectionné pour les formulaires projet, il est uniquement disponible avec les **formulaires table**.
 
@@ -37,4 +37,4 @@ Cet événement est généré lorsqu'une ligne de list box [**de type sélection
 
 ### Numéro de ligne affiché
 
-The `Displayed line number` 4D command works with the `On Display Detail` form event. It returns the number of the row being processed while a list of records or list box rows is displayed on screen.
+La commande 4D `Displayed line number` fonctionne avec l'événement formulaire `On Display Detail`. Elle retourne le numéro de la ligne en cours de traitement tandis qu'une liste d'enregistrements ou de lignes de list box s'affiche à l'écran.
