@@ -14,7 +14,7 @@ L'événement `On Display Detail` peut être utilisé dans les contextes suivant
 
 ### Formulaire de sortie
 
-A record is about to be displayed in a list form displayed via `DISPLAY SELECTION` and `MODIFY SELECTION`.
+Un enregistrement est sur le point d'être affiché sous forme de liste affichée via `DISPLAY SELECTION` et `MODIFY SELECTION`.
 
 > Cet événement ne peut pas être sélectionné pour les formulaires projet, il est uniquement disponible avec les **formulaires table**.
 
@@ -27,14 +27,14 @@ Dans ce contexte, la séquence d'appels de méthodes et d'événements de formul
 
 > La zone d'en-tête est gérée à l'aide de l'événement [`On Header`](onHeader.md).
 
-Calling a 4D command that displays a dialog box from the `On Display Detail` event is not allowed and will cause a syntax error to occur. More particularly, the commands concerned are: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, and `MODIFY SELECTION`.
+L'appel d'une commande 4D qui affiche une boîte de dialogue à partir de l'événement `On Display Detail` n'est pas autorisé et générera une erreur de syntaxe. Plus particulièrement, les commandes concernées sont : `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, et `MODIFY SELECTION`.
 
 
 ### Liste box sélection
 
-This event is generated when a row of a [**selection type**](FormObjects/listbox_overview.md#selection-list-boxes) list box is displayed.
+Cet événement est généré lorsqu'une ligne de list box [**de type sélection**](FormObjects/listbox_overview.md#selection-list-boxes) est affichée.
 
 
-### Displayed line number
+### Numéro de ligne affiché
 
-The `Displayed line number` 4D command works with the `On Display Detail` form event. It returns the number of the row being processed while a list of records or list box rows is displayed on screen.
+La commande 4D `Displayed line number` fonctionne avec l'événement formulaire `On Display Detail`. Elle retourne le numéro de la ligne en cours de traitement tandis qu'une liste d'enregistrements ou de lignes de list box s'affiche à l'écran.
