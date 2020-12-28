@@ -22,4 +22,4 @@ Dans ce contexte, la séquence d'appels de méthodes et d'événements de formul
 
 > Printed records are handled using the [`On Display Detail`](onDisplayDetail.md) event.
 
-Calling a 4D command that displays a dialog box from the `On Header` event is not allowed and will cause a syntax error to occur. More particularly, the commands concerned are: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, and `MODIFY SELECTION`.
+Calling a 4D command that displays a dialog box from the `On Header` event is not allowed and will cause a syntax error to occur. Plus particulièrement, les commandes concernées sont : `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, et `MODIFY SELECTION`.
