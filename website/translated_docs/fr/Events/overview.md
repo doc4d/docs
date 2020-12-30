@@ -41,9 +41,9 @@ Lorsqu'un événement formulaire se produit, 4D effectue les actions suivantes :
 
 Ne supposez pas que les méthodes objet, le cas échéant, seront appelées dans un ordre particulier. La règle d'or est que les méthodes objet sont toujours appelées avant la méthode formulaire. Si un objet est un sous-formulaire, les méthodes objet du formulaire liste du sous-formulaire sont appelées, suivie de la méthode formulaire du formulaire liste. 4D continue alors d'appeler les méthodes objet du formulaire parent. En d'autres termes, lorsqu'un objet est un sous-formulaire, 4D utilise la même règle pour les méthodes objet et formulaire au sein de l'objet sous-formulaire.
 
-Except for the [On Load](onLoad.md) and [On Unload](onUnload.md) events (see below), if the form event property is not selected for a given event, this does not prevent calls to object methods for the objects whose same event property is selected. In other words, enabling or disabling an event at the form level has no effect on the object event properties.
+À l'exception des événements [On Load](onLoad.md) et [On Unload](onUnload.md) (voir ci-dessous), si la propriété d'événement formulaire n'est pas sélectionnée pour un événement donné, cela n'empêche pas les appels vers les méthodes objet pour les objets dont la même propriété d'événement est sélectionnée. En d'autres termes, l'activation ou la désactivation d'un événement au niveau du formulaire n'a aucun effet sur les propriétés d'événement de l'objet.
 
-The number of objects involved in an event depends on the nature of the event.
+Le nombre d'objets associés à un événement dépend de la nature de l'événement.
 
 ## Tableau des appels
 
