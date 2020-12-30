@@ -10,11 +10,11 @@ title: Sur défilement
 
 ## Description
 
-This event can be generated in the context of a picture input or a list box.
+Cet événement peut être généré dans le contexte d'une entrée d'image ou d'une list box.
 
-This event is triggered after any other user event related to the scrolling action ([On Clicked](onClicked.md), [On After Keystroke](onAfterKeystroke.md), etc.). The event is only generated in the object method (not in the form method).
+Il est déclenché après tout autre événement utilisateur lié à l'action de défilement ([On Clicked](onClicked.md), [On After Keystroke](onAfterKeystroke.md), etc.). L'événement est uniquement généré dans la méthode objet (pas dans la méthode formulaire).
 
-The event is triggered when the scroll is the result of a user action: using the scroll bars and/or cursors, using the mouse wheel or [the keyboard](FormObjects/properties_Appearance.md#vertical-scroll-bar). It is not generated when the object is scrolled due to the execution of the `OBJECT SET SCROLL POSITION` command.
+L'événement est déclenché lorsque le défilement est le résultat d'une action de l'utilisateur : à l'aide des barres de défilement et/ou des curseurs, à l'aide de la molette de la souris ou du [clavier](FormObjects/properties_Appearance.md#vertical-scroll-bar). It is not generated when the object is scrolled due to the execution of the `OBJECT SET SCROLL POSITION` command.
 
 
 ### Picture input
