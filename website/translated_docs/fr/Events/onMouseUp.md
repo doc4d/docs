@@ -14,6 +14,6 @@ L'événement `On Mouse Up` est généré lorsque l'utilisateur vient de relâch
 
 Lorsque l'événement `On Mouse Up` est généré, vous pouvez obtenir les coordonnées locales où le bouton de la souris a été relâché. Ces coordonnées sont retournées dans les variables système `MouseX` et `MouseY`. Les coordonnées sont exprimées en pixels par rapport à l'angle supérieur gauche de l'image (0,0).
 
-When using this event, you must also use the `Is waiting mouse up` command to handle cases where the "state manager" of the form is desynchronized, i.e. when the `On Mouse Up` event is not received after a click. This is the case for example when an alert dialog box is displayed above the form while the mouse button has not been released. For more information and an example of use of the `On Mouse Up` event, please refer to the description of the `Is waiting mouse up` command.
+Lorsque vous utilisez cet événement, vous devez également utiliser la commande `Is waiting mouse up` pour gérer les cas où le "gestionnaire d'état" du formulaire est désynchronisé, c'est-à-dire lorsque l'événement `On Mouse Up` n'est pas reçu après un clic. C'est le cas par exemple lorsqu'une boîte de dialogue d'alerte s'affiche au-dessus du formulaire alors que le bouton de la souris n'a pas été relâché. Pour plus d'informations et pour voir un exemple d'utilisation de l'événement `On Mouse Up`, veuillez vous référer à la description de la commande `Is waiting mouse up`.
 
-> If the [Draggable](FormObjects/properties_Action.md#draggable) option is enabled for the picture object, the `On Mouse Up` event is never generated. 
+> Si l'option [Draggable](FormObjects/properties_Action.md#draggable) est activée pour l'objet image, l'événement `On Mouse Up` n'est jamais généré. 
