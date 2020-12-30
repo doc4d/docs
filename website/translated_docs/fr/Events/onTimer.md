@@ -3,9 +3,9 @@ id: onTimer
 title: Sur minuteur
 ---
 
-| Code | Peut être appelé par | Définition                                                        |
-| ---- | -------------------- | ----------------------------------------------------------------- |
-| 27   | Formulaire           | The number of ticks defined by the `SET TIMER` command has passed |
+| Code | Peut être appelé par | Définition                                                            |
+| ---- | -------------------- | --------------------------------------------------------------------- |
+| 27   | Formulaire           | Le nombre de graduations défini par la commande `SET TIMER` est passé |
 
 
 ## Description
