@@ -226,15 +226,15 @@ En outre, l’application client/serveur est personnalisée et son maniement est
 
 ### Build server application
 
-Check this option to generate the server part of your application during the building phase. Vous devez désigner sur votre disque l’emplacement de l’application 4D Server à utiliser. Ce 4D Server doit correspondre à la plate-forme courante (qui sera également la plate-forme de l’application du serveur).
+Cochez cette option pour générer la partie serveur de votre application pendant la phase de génération. Vous devez désigner sur votre disque l’emplacement de l’application 4D Server à utiliser. Ce 4D Server doit correspondre à la plate-forme courante (qui sera également la plate-forme de l’application du serveur).
 
-#### 4D Server location
+#### Emplacement de 4D Server
 
-Click on the **[...]** button and use the *Browse for folder* dialog box to locate the 4D Server application. In macOS, you must select the 4D Server package directly.
+Cliquez sur le bouton **[...]** et utilisez la boîte de dialogue *Rechercher un dossier* pour localiser l'application 4D Server. Sous macOS, vous devez sélectionner directement le package 4D Server.
 
-#### Current version
+#### Version courante
 
-Used to indicate the current version number for the application generated. Vous pourrez par la suite accepter ou refuser les connexions des applications clientes en fonction de leur numéro de version. The interval of compatibility for client and server applications is set using specific [XML keys](#build-application-settings)).
+Utilisée pour indiquer le numéro de version de l'application générée. Vous pourrez par la suite accepter ou refuser les connexions des applications clientes en fonction de leur numéro de version. The interval of compatibility for client and server applications is set using specific [XML keys](#build-application-settings)).
 
 #### Data linking mode
 
