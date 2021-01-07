@@ -60,7 +60,7 @@ Un datastore fournit :
 
 La base peut être une base locale 4D (le datastore principal), ou une base 4D Server exposée en ressource REST (un datastore distant).
 
-Un datastore ne référence qu'une seule base de données. It is, however, possible to open several datastores to access several databases.
+Un datastore ne référence qu'une seule base de données. Il est toutefois possible d'ouvrir plusieurs datastores pour accéder à plusieurs bases.
 
 ## DataStore class
 
@@ -153,26 +153,26 @@ See [Attribute](#attribute).
 
 ## PropertyPath
 
-A propertyPath is the path to a property in a given object. If the property is nested in several levels, each level separated is by a dot (".").
+Un propertyPath est le chemin vers une propriété dans un objet donné. Si la propriété est imbriquée à plusieurs niveaux, chaque niveau est séparé par un point (".").
 
 ## Regular class
 
-User class not related to an ORDA object.
+Classe utilisateur non liée à un objet ORDA.
 
 ## Related dataclass
 
-These are dataclasses linked by relation attributes.
+Ce sont des dataclasses liées par des attributs de relation.
 
-## Relation attribute
+## Relation attribute (attribut de relation)
 
-Relation attributes are used to conceptualize relations between dataclasses (many-to-one and one-to-many).
+Les attributs de relation sont utilisés pour conceptualiser les relations entre les dataclasses (N vers 1 et 1 vers N).
 
-*   Many-to-one relation (dataclassA references an occurrence of dataclassB): a relation attribute is available in dataclassA and references one instance of dataclassB.
-*   One-to-many relation (an occurence of dataclassB references several occurrences of dataclassA): a relation attribute is available in dataclassB and references several instances of dataclassA.
+*   Relation N vers 1 (la dataclassA fait référence à une occurrence de la dataclassB) : un attribut de relation est disponible dans dataclassA et fait référence à une instance de dataclassB.
+*   Relation 1 vers N (une occurrence de dataclassB fait référence à plusieurs occurrences de dataclassA) : un attribut de relation est disponible dans la dataclassB et fait référence à plusieurs instances de la dataclassA.
 
-A dataclass can have recursive relation attributes.
+Une dataclass peut avoir des attributs de relation récursifs.
 
-In an entity, the value of a relation attribute can be an entity or an entity selection.
+Dans une entité, la valeur d'un attribut de relation peut être une entité ou une sélection d'entité.
 
 ## Related entities
 
