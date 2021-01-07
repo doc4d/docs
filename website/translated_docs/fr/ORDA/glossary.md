@@ -40,9 +40,9 @@ Fonction d'une classe de modèle de données ORDA.
 
 ## Dataclass
 
-A dataclass is an object model that describes the data. Tables in the database provided by the datastore are handled through dataclasses. Each table in the database provided by the datastore has a corresponding dataclass with the same name. Each field of the table is an attribute of the dataclass.
+Une dataclass est un objet qui décrit les données. Les tables de la base de données fournies par le datastore sont gérées via des dataclasses. Chaque table de la base de données fournie par le datastore possède une dataclass correspondante portant le même nom. Chaque champ de la table est un attribut de la dataclass.
 
-A dataclass is related to a single datastore.
+Une dataclass est reliée à un seul datastore.
 
 
 ## DataClass class
@@ -51,16 +51,16 @@ Class for specific dataclass objects, in which you can add custom functions.
 
 ## Datastore
 
-A datastore is the interface object provided by ORDA to reference a structure and access its data. The main database, returned by the `ds` command, is available as a datastore (the main datastore).
+Un datastore est l'objet d'interface fourni par ORDA pour référencer une structure et accéder à ses données. La base de données principale, retournée par la commande `ds`, est disponible en tant que datastore (le datastore principal).
 
-A datastore provides:
+Un datastore fournit :
 
 *   une connexion à la base de données 4D
 *   un ensemble de dataclasses pour travailler avec la base de données
 
-The database can be a 4D local database (the Main datastore), or a 4D Server database exposed as REST resource (a Remote datastore).
+La base peut être une base locale 4D (le datastore principal), ou une base 4D Server exposée en ressource REST (un datastore distant).
 
-A datastore references only a single database. It is, however, possible to open several datastores to access several databases.
+Un datastore ne référence qu'une seule base de données. It is, however, possible to open several datastores to access several databases.
 
 ## DataStore class
 
