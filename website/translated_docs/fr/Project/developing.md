@@ -16,8 +16,8 @@ Le développement multi-utilisateur est géré via des outils de contrôle de ve
 
 Les projets interprétés (*applicationName.4DProject*, voir [Architecture d'un project 4D](architecture.md)) peuvent être ouverts dans les configurations suivantes :
 
-- 4D opening **local project files** - in this case, all aspects of the project are available to the developer. Les fichiers projet peuvent être ouverts, modifiés, compilés, etc. The result of the development can be tested at any moment by using the **Test application** menu command from 4D or using the [integrated web server](WebServer/webServerObject.md).
-- 4D connection from the **same machine as 4D Server** - in this case, development is supported the same as local projects. Cette fonctionnalité vous permet de développer une application client/serveur dans le même contexte que le contexte de déploiement ([détaillé ci-dessous](#developing-projects-with-4d-server)).
+- 4D ouvrant **des fichiers de projet locaux** - dans ce cas, tous les éléments du projet sont à la disposition du développeur. Les fichiers projet peuvent être ouverts, modifiés, compilés, etc. Le résultat du développement peut être testé à tout moment à l'aide de la commande de menu 4D **Tester l'application** ou en utilisant le [serveur Web intégré](WebServer/webServerObject.md).
+- Connexion 4D depuis **la même machine que 4D Server** - dans ce cas, le développement est pris en charge de la même manière que les projets locaux. Cette fonctionnalité vous permet de développer une application client/serveur dans le même contexte que le contexte de déploiement ([détaillé ci-dessous](#developing-projects-with-4d-server)).
 - Connexion 4D depuis une **machine distante** - dans ce cas, 4D Server envoie une version .4dz du projet ([format compressé](Admin/building.md#build-compiled-structure)) à 4D. Par conséquent, tous les fichiers de structure sont en lecture seule. Cette fonctionnalité est utile à des fins de test.
 
 
@@ -27,15 +27,15 @@ Les projets interprétés (*applicationName.4DProject*, voir [Architecture d'un 
 
 Le développement d'un projet 4D Server repose sur les principes suivants :
 
-- You create, test, and modify the project features in a local version of the files using 4D. To work directly with 4D Server, you can [use 4D on the same machine as 4D Server](#using-4d-on-the-same-machine).
+- Vous créez, testez et modifiez les fonctionnalités du projet dans une version locale des fichiers à l'aide de 4D. Pour travailler directement avec 4D Server, vous pouvez [utiliser 4D sur la même machine que 4D Server](#using-4d-on-the-same-machine).
 
 > Il est recommandé d'utiliser un outil de gestion de version standard (par exemple Git) afin de travailler avec des branches, d'enregistrer des projets à différentes étapes et/ou d'annuler les modifications si nécessaire.
 
 - 4D Server peut exécuter le fichier projet *.4DProject* (non compressé) en mode interprété, afin que 4D distant puisse se connecter et tester les fonctionnalités. Pour cela, 4D Server crée et envoie automatiquement aux machines distantes une [version .4dz](Admin/building.md#build-compiled-structure) du projet.
 
 - Une version .4dz mise à jour du projet est automatiquement produite lorsque cela est nécessaire, c'est-à-dire lorsque le projet a été modifié et rechargé par 4D Server. Le projet est rechargé :
-    - automatically, when the 4D Server application window comes to the front of the OS or when the 4D application on the same machine saves a modification (see below).
-    - when the `RELOAD PROJECT` command is executed. Calling this command is necessary for example when you have pulled a new version of the project from the source control platform.
+    - automatiquement, lorsque la fenêtre de l'application 4D Server arrive à l'avant de l'OS ou lorsque l'application 4D sur la même machine enregistre une modification (voir ci-dessous).
+    - lorsque la commande `RELOAD PROJECT` est exécutée. L'appel de cette commande est nécessaire lorsque, par exemple, vous avez extrait une nouvelle version du projet depuis la plateforme de contrôle de version.
 
 
 ### Mettre à jour des fichiers de projet sur les machines distantes
