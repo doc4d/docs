@@ -217,16 +217,16 @@ These points are discussed below.
 L'objet sélection d'entités lui-même ne peut pas être copié en tant qu'objet :
 
 ```4d
- $myentitysel:=OB Copy(ds.Employee.all()) //returns null
+ $myentitysel:=OB Copy(ds.Employee.all()) //retourne null
 ```
 
-The entity selection properties are however enumerable:
+Les propriétés des sélections d'entités sont toutefois énumérables :
 
 ```4d
  ARRAY TEXT($prop;0)
  OB GET PROPERTY NAMES(ds.Employee.all();$prop)
-  //$prop contains the names of the entity selection properties
-  //("length", 00", "01"...)
+  //$prop contient les noms des propriétés des sélections d'entités
+  //("length", "00", "01"...)
 ```
 
 
