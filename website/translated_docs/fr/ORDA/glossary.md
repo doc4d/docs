@@ -69,11 +69,11 @@ Classe pour des objets datastore spécifiques, dans laquelle vous pouvez ajouter
 
 ## DataStoreImplementation
 
-Internal name of the generic DataStore class in the `4D` class store.
+Nom interne de la classe générique DataStore dans le class store `4D`.
 
 ## Copie profonde
 
-Une copie profonde (deep copy) duplique un objet et toutes les références qu'il contient. Après une deep copy, une collection copiée contient des éléments dupliqués et donc de nouvelles références de tous les éléments originaux. See also Shallow copy.
+Une copie profonde (deep copy) duplique un objet et toutes les références qu'il contient. Après une deep copy, une collection copiée contient des éléments dupliqués et donc de nouvelles références de tous les éléments originaux. Voir également Copie superficielle.
 
 ## ds
 
