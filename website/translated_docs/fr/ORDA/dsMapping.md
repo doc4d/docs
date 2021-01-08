@@ -203,11 +203,11 @@ An entity selection is an object containing one or more reference(s) to entities
 Exemple :
 
 ```4d
-var $e : cs.EmployeeSelection //declares a $e object variable of the EmployeeSelection class type
-$e:=ds.Employee.all() //assigns the resulting entity selection reference to the $e variable
+var $e : cs.EmployeeSelection //déclare une variable objet $e de type de classe EmployeeSelection
+$e:=ds.Employee.all() //assigne la référence de la sélection d'entité résultante à la variable $e
 ```
 
-Entity selections can be "ordered" or "unordered" (this point is discussed in below).
+Les sélections d'entités peuvent être "triées" ou "non triées" (ce point est détaillé plus bas).
 
 L'objet sélection d'entités lui-même ne peut pas être copié en tant qu'objet :
 
