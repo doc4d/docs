@@ -186,13 +186,13 @@
   <span class="hljs-comment">//l'entité associée est mise à jour</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="créer-une-sélection-dentité-entity-selection"></a><a href="#créer-une-sélection-dentité-entity-selection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Créer une sélection d'entité (entity selection)</h2>
-<p>You can create an object of type <a href="/docs/fr/ORDA/dsmapping.html#entity-selection">entity selection</a> as follows:</p>
+<p>Vous pouvez créer un objet de type <a href="/docs/fr/ORDA/dsmapping.html#entity-selection">entity selection</a> comme suit :</p>
 <ul>
-<li>Querying the entities <a href="/docs/fr/API/dataclassClass.html#query">in a dataclass</a> or in an <a href="/docs/fr/API/entitySelectionClass.html#query">existing entity selection</a>;</li>
-<li>Using the <a href="/docs/fr/API/dataclassClass.html#all"><code>.all()</code></a> dataclass function to select all the entities in a dataclass;</li>
-<li>Using the <code>Create entity selection</code> command or the <a href="/docs/fr/API/dataclassClass.html#newselection"><code>.newSelection()</code></a> dataclass function to create a blank entity selection;</li>
-<li>Using the <a href="/docs/fr/API/entitySelectionClass.html#copy"><code>.copy()</code></a> function to duplicate an existing entity selection;</li>
-<li>Using one of the various functions from the <a href="/docs/fr/API/entitySelectionClass.html">Entity selection class</a> that returns a new entity selection, such as <a href="/docs/fr/API/entitySelectionClass.html#or"><code>.or()</code></a>;</li>
+<li>Lancez une requête sur les entités <a href="/docs/fr/API/dataclassClass.html#query">dans une dataclass</a> ou dans une <a href="/docs/fr/API/entitySelectionClass.html#query">sélection d'entités existante</a>;</li>
+<li>Utilisez la fonction de dataclass <a href="/docs/fr/API/dataclassClass.html#all"><code>.all()</code></a> pour sélectionner toutes les entités d'une dataclass;</li>
+<li>Utilisez la commande <code>Create entity selection</code> ou la fonction de dataclass <a href="/docs/fr/API/dataclassClass.html#newselection"><code>.newSelection()</code></a> pour créer un objet de sélection d'entités (entity collection) vide;</li>
+<li>Utilisez la fonction <a href="/docs/fr/API/entitySelectionClass.html#copy"><code>.copy()</code></a> pour dupliquer une sélection d'entités existante;</li>
+<li>Utilisez l'une des diverses fonctions de <a href="/docs/fr/API/entitySelectionClass.html">Entity selection class</a> qui retourne une nouvelle sélection d'entité, telle que <a href="/docs/fr/API/entitySelectionClass.html#or"><code>entitySelection.or()</code></a>;</li>
 <li>Utilisez un attribut de relation de type &quot;related entities&quot; (&quot;entités liées&quot;) (voir ci-dessous).</li>
 </ul>
 <p>Vous pouvez créer et utiliser simultanément autant de sélections d'entités différentes que vous le souhaitez pour une dataclass. A noter qu'une sélection d'entité ne contient que des références à des entités. Différentes sélections d'entités peuvent contenir des références vers les mêmes entités.</p>
