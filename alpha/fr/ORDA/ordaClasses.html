@@ -313,9 +313,9 @@ local<span class="hljs-keyword"> Function</span> &lt;functionName&gt;
 <blockquote>
 <p>Le mot-clé <code>local</code> ne peut être utilisé qu'avec les fonctions de classe du modèle de données. S'il est utilisé avec une fonction de <a href="/docs/alpha/fr/Concepts/classes.html">classe utilisateur standard</a>, il est ignoré et une erreur est retournée par le compilateur.</p>
 </blockquote>
-<p>A noter que la fonction fonctionnera même si elle nécessite d'accéder au serveur (par exemple si le cache ORDA est expiré). Toutefois, il est fortement recommandé de s'assurer que la fonction locale n'accède pas aux données sur le serveur, sinon l'exécution locale pourrait n'apporter aucun avantage en termes de performances. Une fonction locale qui génère de nombreuses requêtes au serveur est moins efficace qu'une fonction exécutée sur le serveur qui ne retournerait que les valeurs résultantes. For example, consider the following function on the Schools entity class:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">// Get the youngest students  </span>
-<span class="hljs-comment">// Inappropriate use of local keyword</span>
+<p>A noter que la fonction fonctionnera même si elle nécessite d'accéder au serveur (par exemple si le cache ORDA est expiré). Toutefois, il est fortement recommandé de s'assurer que la fonction locale n'accède pas aux données sur le serveur, sinon l'exécution locale pourrait n'apporter aucun avantage en termes de performances. Une fonction locale qui génère de nombreuses requêtes au serveur est moins efficace qu'une fonction exécutée sur le serveur qui ne retournerait que les valeurs résultantes. Prenons l'exemple suivant, avec une fonction sur l'entité Schools :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Obtenir les élèves les plus jeunes  </span>
+<span class="hljs-comment">// Utilisation inappropriée du mot-clé local</span>
 local<span class="hljs-keyword"> Function</span> getYoungest<span class="hljs-keyword">
     var</span> <span class="hljs-variable">$0 </span>: Object
     <span class="hljs-variable">$0</span>:=<span class="hljs-literal">This</span>.students.<span class="hljs-function">query</span>(<span class="hljs-string">"birthDate &gt;= :1"</span>; <span class="hljs-literal">!2000-01-01!</span>).<span class="hljs-function">orderBy</span>(<span class="hljs-string">"birthDate desc"</span>).<span class="hljs-function">slice</span>(<span class="hljs-number">0</span>; <span class="hljs-number">5</span>)
