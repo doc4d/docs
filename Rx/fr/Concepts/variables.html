@@ -76,7 +76,7 @@
 <p>Vous créez des variables en les déclarant. Le langage 4D propose deux manières de déclarer des variables :</p>
 <ul>
 <li>à l'aide du mot-clé <code>var</code> (recommandé particulièrement si votre code utilise des objets et des classes),</li>
-<li>using one of the &quot;Compiler&quot; or &quot;Arrays&quot; theme 4D language commands (classic language only).</li>
+<li>à l'aide de l'une des commandes du langage 4D du thème &quot;Compilateur&quot; ou &quot;Tableaux&quot; (langage classique uniquement).</li>
 </ul>
 <p><strong>Note:</strong> Although it is usually not recommended, you can create basic variables simply by using them; you do not necessarily need to formally define them. For example, to declare a variable that will hold the current date plus 30 days, you can write:</p>
 <pre><code class="hljs css language-4d"> MyDate:=Current date+<span class="hljs-number">30</span> <span class="hljs-comment">//MyDate is created  </span>
@@ -150,7 +150,7 @@ var</span> <span class="hljs-variable">$entity </span>: cs.EmployeeEntity
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="using-a-c_-directive"></a><a href="#using-a-c_-directive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using a C_ directive</h3>
 <blockquote>
-<p><strong>Compatibility Note:</strong> This feature is not recommended to declare variables inside methods. It is recommended to use the <a href="#using-the-var-keyword">var</a> keyword.</p>
+<p><strong>Note de compatibilité :</strong> cette fonctionnalité n'est pas recommandée pour déclarer des variables dans des méthodes. Il est recommandé d'utiliser le mot-clé <a href="#using-the-var-keyword">var</a>.</p>
 </blockquote>
 <p>Directives from the &quot;Compiler&quot; theme commands allow you to declare variables of basic types.</p>
 <p>Par exemple, si vous souhaitez définir une variable de type texte, il suffira d'écrire :</p>
