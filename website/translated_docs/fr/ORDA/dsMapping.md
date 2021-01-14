@@ -96,7 +96,7 @@ Le datastore principal (par défaut) est toujours disponible via la commande `ds
 
 ### Dataclass
 
-A dataclass is the equivalent of a table. It is used as an object model and references all fields as attributes, including relational attributes (attributes built upon relations between dataclasses). Relational attributes can be used in queries like any other attribute.
+Une dataclasse est l'équivalent d'une table. Elle est utilisée comme modèle d'objet et référence tous les champs comme attributs, y compris les attributs relationnels (attributs construits à partir des relations entre les dataclasses). Les attributs relationnels peuvent être utilisés dans les requêtes comme tout autre attribut.
 
 Toutes les dataclasses d'un projet 4D sont disponibles en tant que propriété du datastore `ds`. Pour les datastores distants accédés via `Ouvrir datastore` ou les [requêtes REST](REST/gettingStarted.md), l'option **Exposer comme ressource REST** doit être sélectionnée au niveau de la structure 4D pour chaque table que vous souhaitez exposer en tant que dataclass du datastore.
 
@@ -104,11 +104,11 @@ Par exemple, considérons cette table dans la structure suivante :
 
 ![](assets/en/ORDA/companyTable.png)
 
-The `Company` table is automatically available as a dataclass in the `ds` datastore. Vous pouvez écrire :
+La table `Company` est automatiquement disponible en tant que dataclasse dans la banque de données `ds`. Vous pouvez écrire :
 
 ```4d 
-var $compClass : cs.Company //declares a $compClass object variable of the Company class
-$compClass:=ds.Company //assigns the Company dataclass reference to $compClass
+var $compClass : cs.Company //déclare une variable objet $compClass de la classe Company
+$compClass:=ds.Company //affecte la référence de dataclasse Company à $compClass
 ```
 
 Un objet dataclass peut contenir :
