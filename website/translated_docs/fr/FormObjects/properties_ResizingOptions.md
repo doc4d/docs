@@ -55,7 +55,7 @@ Trois options sont disponibles :
 | -------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Agrandir | "grow"      | Le même pourcentage est appliqué à la largeur de l'objet lorsque l'utilisateur redimensionne la largeur de la fenêtre,                                |
 | Déplacer | "move"      | L'objet est déplacé vers la gauche ou vers la droite selon l'augmentation de la largeur lorsque l'utilisateur redimensionne la largeur de la fenêtre, |
-| Aucun    | "fixed"     | The object remains stationary when the form is resized                                                                                                |
+| Aucun    | "fixed"     | L'objet reste stationnaire lorsque le formulaire est redimensionné                                                                                    |
 > Cette propriété fonctionne avec la propriété [Dimensionnement vertical](#vertical-sizing).
 
 #### Grammaire JSON
@@ -80,7 +80,7 @@ Trois options sont disponibles :
 | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Agrandir | "grow"      | Le même pourcentage est appliqué à la hauteur de l'objet lorsque l'utilisateur redimensionne la largeur de la fenêtre,                           |
 | Déplacer | "move"      | L'objet est déplacé vers le haut ou vers le bas selon l'augmentation de la hauteur lorsque l'utilisateur redimensionne la largeur de la fenêtre, |
-| Aucun    | "fixed"     | The object remains stationary when the form is resized                                                                                           |
+| Aucun    | "fixed"     | L'objet reste stationnaire lorsque le formulaire est redimensionné                                                                               |
 > Cette propriété fonctionne avec la propriété [Dimensionnement horizontal](#horizontal-sizing).
 
 #### Grammaire JSON
