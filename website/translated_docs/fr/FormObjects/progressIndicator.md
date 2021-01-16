@@ -19,7 +19,7 @@ La variable associée à l'indicateur contrôle l’affichage. Vous pouvez y pla
  vTherm:=[Employees]Salary
 ```
 
-This method assigns the value of the Salary field to the vTherm variable. Cette méthode est associée au champ Salaire.
+Cette méthode affecte à la variable vTherm la valeur du champ Salaire. Cette méthode est associée au champ Salaire.
 
 Réciproquement, vous pouvez utiliser un indicateur pour contrôler la valeur d’un champ. L’utilisateur se sert alors de l'indicateur pour saisir la valeur du champ. Dans ce cas la méthode devient :
 
@@ -48,7 +48,7 @@ Plusieurs options graphiques sont disponibles : valeurs minimales/maximales, gra
 
 ![](assets/en/FormObjects/indicator.gif)
 
-**Barber shop** is a variant of the default thermometer. Pour active cette variante, vous devez définir la propriété du [Barber shop](properties_Scale.md#barber-shop).
+**Le barber shop** est une variante du thermomètre par défaut. Pour active cette variante, vous devez définir la propriété du [Barber shop](properties_Scale.md#barber-shop).
 > En code JSON, supprimez simplement la propriété "max" de l'objet thermomètre par défaut pour activer le barber shop.
 
 Le barber shop affiche une animation continue, telle que le [spinner](spinner.md). Les thermomètres “Barber shop” sont généralement utilisés pour indiquer à l’utilisateur que le programme est en train d’effectuer une opération longue. Lorsque le thermomètre est sélectionné, le thème ["Graduations"](properties_Scale.md) de la liste des propriétés est masqué.
