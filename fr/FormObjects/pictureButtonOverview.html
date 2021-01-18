@@ -69,8 +69,8 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/master/docs/FormObjects/pictureButton_overview.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Bouton image</h1></header><article><div><span><p>Un bouton image est similaire à un <a href="/docs/fr/FormObjects/buttonOverview.html">bouton standard</a>. Cependant, contrairement à un bouton standard (qui accepte trois états : activé, désactivé et cliqué), un bouton image contient une image différente pour représenter chaque état.</p>
 <p>Les boutons image peuvent être utilisés de deux manières :</p>
 <ul>
-<li><p>Comme boutons de commande dans un formulaire. In this case, the picture button generally includes four different states: enabled, disabled, clicked and rolled over.<br>
-For example, a table of thumbnails that has one row of four columns, each thumbnail corresponds to the Default, Clicked, Roll over, and Disabled states.</p>
+<li><p>Comme boutons de commande dans un formulaire. Dans ce cas, le bouton image comprend généralement quatre états différents : activé, désactivé, cliqué et survolé.<br>
+Par exemple, un tableau de miniatures qui comporte une ligne de quatre colonnes, chaque miniature correspond aux états Par défaut, Cliqué, Survol et Désactivé.</p>
 <table>
 <thead>
 <tr><th>Propriété</th><th>Nom JSON</th><th>Valeur</th></tr>
@@ -84,8 +84,8 @@ For example, a table of thumbnails that has one row of four columns, each thumbn
 </tbody>
 </table>
 </li>
-<li><p>Comme bouton permettant à l’utilisateur de choisir entre plusieurs options. Dans ce cas, le bouton image peut être utilisé à la place d’un pop-up menu image. With <a href="/docs/fr/FormObjects/picturePopupMenuOverview.html">Picture Pop-up Menus</a>, all choices are displayed simultaneously (as the items in the pop-up menu), while the picture button displays the choices consecutively (as the user clicks the button).<br>
-Here is an example of a picture button. Vous souhaitez permettre aux utilisateurs de votre application de choisir la langue qui sera utilisée dans les menus, les boîtes de dialogue, etc. Vous pouvez implémenter cette option à l’aide d’un bouton image, placé dans une boîte de dialogue personnalisée de Propriétés :</p></li>
+<li><p>Comme bouton permettant à l’utilisateur de choisir entre plusieurs options. Dans ce cas, le bouton image peut être utilisé à la place d’un pop-up menu image. Avec les <a href="/docs/fr/FormObjects/picturePopupMenuOverview.html">Pop-up menus image</a>, tous les choix sont présentés simultanément (en tant que commandes du pop-up menu) ; avec un bouton image, les choix sont présentés consécutivement (à mesure que l’utilisateur clique sur le bouton).<br>
+Voici un exemple de bouton image. Vous souhaitez permettre aux utilisateurs de votre application de choisir la langue qui sera utilisée dans les menus, les boîtes de dialogue, etc. Vous pouvez implémenter cette option à l’aide d’un bouton image, placé dans une boîte de dialogue personnalisée de Propriétés :</p></li>
 </ul>
 <p><img src="/docs/assets/en/FormObjects/button_pictureButton.png" alt=""></p>
 <p>Chaque clic modifie l'état du bouton.</p>
@@ -104,7 +104,7 @@ Here is an example of a picture button. Vous souhaitez permettre aux utilisateur
 <h2><a class="anchor" aria-hidden="true" id="animation"></a><a href="#animation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Animation</h2>
 <p>Outre les paramètres de positionnement et d'apparence standard, vous pouvez définir certaines propriétés spécifiques pour les boutons image, en particulier la manière et le moment où les images sont affichées. Ces options de propriétés peuvent être combinées pour améliorer vos boutons d'image.</p>
 <ul>
-<li>By default (when no <a href="/docs/fr/FormObjects/propertiesAnimation.html">animation option</a> is selected), a picture button displays the next picture in the series when the user clicks; it displays the previous picture in the series when the user holds down the <strong>Shift</strong> key and clicks. La séquence d’images s’arrête lorsqu’on atteint la dernière image de la série. En d’autres termes, le bouton ne retourne pas à la première image de la série.</li>
+<li>Par défaut (<a href="/docs/fr/FormObjects/propertiesAnimation.html">aucune option cochée</a>), affiche l’image suivante de la série lorsque l’utilisateur clique sur le bouton; affiche l’image précédente de la série lorsque l’utilisateur effectue <strong>Majuscule</strong>+clic sur le bouton. La séquence d’images s’arrête lorsqu’on atteint la dernière image de la série. En d’autres termes, le bouton ne retourne pas à la première image de la série.</li>
 </ul>
 <p>Les autres modes disponibles sont les suivants :</p>
 <ul>
@@ -113,7 +113,7 @@ Here is an example of a picture button. Vous souhaitez permettre aux utilisateur
 <li><a href="/docs/fr/FormObjects/propertiesAnimation.html#switch-when-roll-over">Switch when Roll Over</a></li>
 <li><a href="/docs/fr/FormObjects/propertiesAnimation.html#switch-continuously-on-clicks">Défilement continu sur clic</a></li>
 <li><a href="/docs/fr/FormObjects/propertiesAnimation.html#use-last-frame-as-disabled">Use Last Frame as Disabled</a></li>
-<li><a href="/docs/fr/FormObjects/propertiesAnimation.html#use-last-frame-as-disabled">Use Last frame as disabled</a></li>
+<li><a href="/docs/fr/FormObjects/propertiesAnimation.html#use-last-frame-as-disabled">Dernière imagette si désactivé</a></li>
 </ul>
 <blockquote>
 <p>La <a href="/docs/fr/FormObjects/propertiesObject.html#variable-or-expression">variable associée</a> à un bouton image retourne le numéro d’indice, dans le tableau d’imagettes, de l’image actuellement affichée. La numérotation des images dans le tableau débute à 0.</p>
