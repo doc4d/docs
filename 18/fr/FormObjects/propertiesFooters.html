@@ -87,17 +87,17 @@
 <li><p><em>Pixel</em> - la valeur de hauteur est appliquée directement à la ligne concernée, quelle que soit la taille de la police contenue dans les colonnes. Si une police est trop grande, le texte est tronqué. De plus, les images sont tronquées ou redimensionnées selon leur format.</p></li>
 <li><p><em>Ligne</em> - la hauteur est calculée en tenant compte de la taille de police de la ligne concernée.</p>
 <ul>
-<li>If more than one size is set, 4D uses the biggest one. For example, if a row contains &quot;Verdana 18&quot;, &quot;Geneva 12&quot; and &quot;Arial 9&quot;, 4D uses &quot;Verdana 18&quot; to determine the row height (for instance, 25 pixels). This height is then multiplied by the number of rows defined.</li>
-<li>This calculation does not take into account the size of pictures nor any styles applied to the fonts.</li>
-<li>In macOS, the row height may be incorrect if the user enters characters that are not available in the selected font. When this occurs, a substitute font is used, which may cause variations in size.</li>
+<li>Si plus d'une taille est définie, 4D utilise la plus grande. Par exemple, si une ligne contient «Verdana 18», «Geneva 12» et «Arial 9», 4D utilise «Verdana 18» pour déterminer la hauteur de ligne (par exemple, 25 pixels). Cette hauteur est ensuite multipliée par le nombre de lignes définies.</li>
+<li>Ce calcul ne prend pas en compte la taille des images ni les styles appliqués aux polices.</li>
+<li>Sous macOS, la hauteur de ligne peut être incorrecte si l'utilisateur saisit des caractères qui ne sont pas disponibles dans la police sélectionnée. Lorsque cela se produit, une police de remplacement est utilisée, ce qui peut entraîner des variations de taille.</li>
 </ul></li>
 </ul>
 <blockquote>
-<p>This property can also be set dynamically using the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/List-box-footer-specific-properties.300-4354808.en.html">LISTBOX SET FOOTERS HEIGHT</a> command.</p>
+<p>Cette propriété peut être également définie dynamiquement à l'aide de la commande <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/List-box-footer-specific-properties.300-4354808.en.html">LISTBOX SET FOOTERS HEIGHT</a>.</p>
 </blockquote>
-<p>Conversion of units: When you switch from one unit to the other, 4D converts them automatically and displays the result in the Property List. For example, if the font used is &quot;Lucida grande 24&quot;, a height of &quot;1 line&quot; is converted to &quot;30 pixels&quot; and a height of &quot;60 pixels&quot; is converted to &quot;2 lines&quot;.</p>
-<p>Note that converting back and forth may lead to an end result that is different from the starting value due to the automatic calculations made by 4D. This is illustrated in the following sequences:</p>
-<p><em>(font Arial 18)</em>: 52 pixels -&gt; 2 lines -&gt; 40 pixels <em>(font Arial 12)</em>: 3 pixels -&gt; 0.4 line rounded up to 1 line -&gt; 19 pixels</p>
+<p>Conversion d'unités : lorsque vous passez d'une unité à l'autre, 4D les convertit automatiquement et affiche le résultat dans la liste des propriétés. Par exemple, si la police utilisée est &quot;Lucida grande 24&quot;, une hauteur de &quot;1 ligne&quot; est convertie en &quot;30 pixels&quot; et une hauteur de &quot;60 pixels&quot; est convertie en &quot;2 lignes&quot;.</p>
+<p>A noter que la conversion en va-et-vient peut conduire à un résultat final différent de la valeur de départ en raison des calculs automatiques effectués par 4D. Ceci est illustré dans les séquences suivantes :</p>
+<p><em>(police Arial 18)</em>: 52 pixels -&gt; 2 lignes -&gt; 40 pixels <em>(police Arial 12)</em>: 3 pixels -&gt; 0.4 ligne arrondie à 1 ligne -&gt; 19 pixels</p>
 <h4><a class="anchor" aria-hidden="true" id="exemple-json-"></a><a href="#exemple-json-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple JSON :</h4>
 <pre><code class="hljs">    <span class="hljs-string">"List Box"</span>: {
         <span class="hljs-string">"type"</span>: <span class="hljs-string">"listbox"</span>,
