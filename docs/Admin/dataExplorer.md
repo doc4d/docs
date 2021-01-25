@@ -8,6 +8,7 @@ The Data Explorer provides a web interface to view and query data in your projec
 
 ![alt-text](assets/en/Admin/dataExplorer1.png)
 
+> Remote datastores are not available from the Web Data Explorer. 
 
 ## Access Configuration
 
@@ -16,7 +17,7 @@ The Data Explorer relies on the [`WebAdmin`](webAdmin.md) web server component f
 - **configuration**: the Data Explorer configuration reuses the [`WebAdmin` web server settings](webAdmin.md#webadmin-settings),
 - **authentication**: access to the Data Explorer is granted when the [session user is authenticated](webAdmin.md#authentication-and-session) and if the user has the "WebAdmin" privilege. When the Data Explorer is accessed through the **Data Explorer** menu item (see below), an automatic authentication is provided. 
 
-> A browser can only be authenticated for one Data Explorer page at a time (because of the session cookie). If you want to work simultaneously with multiple 4D instances on different projects, you must open Data Explorer pages with different browsers or use private browsing. 
+> If data must not be available on the server, the Data Explorer access can be disabled using the [`.setAdminProtection()`](API/datastoreClass.md#setadminprotection) function. 
 
 
 ## Opening the Data Explorer
@@ -37,6 +38,7 @@ or
 
 [HTTPPort](webAdmin.md#http-port) and [HTTPSPort](webAdmin.md#https-port) values are configured in the `WebAdmin` settings. 
 
+> A browser can only be authenticated for one Data Explorer page at a time (because of the session cookie). If you want to work simultaneously with multiple 4D instances on different projects, you must open Data Explorer pages with different browsers or use private browsing. 
 
 
 
