@@ -4,7 +4,7 @@ title: Web Data Explorer
 ---
 
 
-The Data Explorer provides a web interface to view and query data in your datastore. Using this tool, you can easily browse among all your entities and search, order, or filter attribute values. It helps you to control data and quickly identify issues at any steps of the development process.
+The Data Explorer provides a web interface to view and query data in your project datastore. Using this tool, you can easily browse among all your entities and search, order, or filter attribute values. It helps you to control data and quickly identify issues at any steps of the development process.
 
 ![alt-text](assets/en/Admin/dataExplorer1.png)
 
@@ -54,7 +54,7 @@ The minimum resolution to use the Data Explorer is 1280x720 dpi. Recommended res
 
 ### Basics
 
-The Data Explorer provides an overall access to the ORDA data model with respect to the [ORDA mapping](ORDA/dsmapping.md#general-rules).
+The Data Explorer provides an overall access to the ORDA data model with respect to the [ORDA mapping rules](ORDA/dsMapping.md#general-rules).
 
 You can switch to the **dark mode** display theme using the selector at the bottom of the page:
 
@@ -64,20 +64,20 @@ You can switch to the **dark mode** display theme using the selector at the bott
 
 The page contains several areas:
 
-- On the **left area**, you can select the dataclasses and attributes to display. You can filter the list of proposed dataclass names and attribute names using the respective search areas. ![alt-text](assets/en/Admin/dataExplorer3.png)
+- On the left side are the **Dataclasses area** and **Attributes area**, allowing you can select the dataclasses and attributes to display. Attributes are ordered according to the underlying structure creation order. Primary key and indexed attributes have a specific icon. You can filter the list of proposed dataclass names and attribute names using the respective search areas. ![alt-text](assets/en/Admin/dataExplorer3.png)
 
-- The **central area** displays the *query area* and the list of entities of the selected dataclass.
-    - By default, all entities are displayed. You can filter the displayed entities using the query area. Two query modes are available: [Query on attributes](#query-on-attributes) (selected by default), and the [Advanced query with expression](#advanced-query-with-expression). You select the query mode by clicking on the corresponding button (the **X** button allows you to reset the query area and thus stop filtering): ![alt-text](assets/en/Admin/dataExplorer4b.png)
+- The central part contains the **Search area** and the **Data grid** (list of entities of the selected dataclass). Each column of the grid represents a datastore attribute.
+    - By default, all entities are displayed. You can filter the displayed entities using the search area. Two query modes are available: [Query on attributes](#query-on-attributes) (selected by default), and the [Advanced query with expression](#advanced-query-with-expression). You select the query mode by clicking on the corresponding button (the **X** button allows you to reset the query area and thus stop filtering): ![alt-text](assets/en/Admin/dataExplorer4b.png)
 
-    - The name of the selected dataclass is added as a tab above the list. Using these tabs, you can switch between dataclasses that have been already selected. You can remove a referenced dataclass by clicking the "remove" icon at the right of the dataclass name. Each column represents a datastore attribute.
-    - You can reduce the number of columns by unchecking attributes in the left side. You can also switch the columns in the table using drag and drop. You can click on a column header to [sort entities](#ordering-entities) according to its values (if possible).
-    - If the loading of dataclass entities requires a long time, a "Loading data" bar is displayed to inform you that this operation is in progress. You can stop the loading at any moment by clicking on the red button, only the loaded entities will be available then:
+    - The name of the selected dataclass is added as a tab above the data grid. Using these tabs, you can switch between dataclasses that have been already selected. You can remove a referenced dataclass by clicking the "remove" icon at the right of the dataclass name.
+    - You can reduce the number of columns by unchecking attributes in the left side. You can also switch the columns in the data grid using drag and drop. You can click on a column header to [sort entities](#ordering-entities) according to its values (when possible).
+    - If the loading of dataclass entities requires a long time, a "Loading data" bar is displayed. You can stop the loading at any moment by clicking on the red button, only the loaded entities will be available then:
 
 ![alt-text](assets/en/Admin/dataExplorer5.png)
 
 
 
-- The **right area** displays the attribute values of the currently selected entity. All attribute types are displayed, including pictures and objects (expressed in json). You can browse between the entities of the dataclass by clicking the **First** / **Previous** / **Next** / **Last** links at the bottom of the area.
+- On the right side is the **Details area**: it displays the attribute values of the currently selected entity. All attribute types are displayed, including pictures and objects (expressed in json). You can browse between the entities of the dataclass by clicking the **First** / **Previous** / **Next** / **Last** links at the bottom of the area.
 
 
 
@@ -102,6 +102,12 @@ You can reorder the displayed entity list according to attribute values. All typ
 In this mode, you can filter entities by entering values to find (or to exclude) in the areas above the attribute list. You can filter on one or several attributes. The entity list is automatically updated when you type in.
 
 ![alt-text](assets/en/Admin/dataExplorer6.png)
+
+If you enter several attributes, a AND is automatically applied. For example, the following filter displays entities with *firstname* attribute starting with "flo" AND *salary* attribute value > 50000:
+
+![alt-text](assets/en/Admin/dataExplorer9.png)
+
+The **X** button allows you to remove entered attributes and thus stop filtering.
 
 Different operators and query options are available, depending on the data type of the attribute.
 
@@ -132,16 +138,15 @@ When you click on a boolean attribute area, you can filter on **true**/**false**
 
 Text filters are not diacritic (a = A).
 
-By default, the filter is of the "starts with" type. For example, entering "Jim" will show "Jim" and "Jimmy" values.
+The filter is of the "starts with" type. For example, entering "Jim" will show "Jim" and "Jimmy" values.
 
-You can also use the wildcard character (@) to replace one or more characters in order to create different filters, such as "ends with". たとえば:
+You can also use the wildcard character (@) to replace one or more starting characters. たとえば:
 
-| A filter with | Finds                                                 |
-| ------------- | ----------------------------------------------------- |
-| Bel@          | All values beginning with “Bel” (equivalent to "Bel") |
-| @do           | All values ending with “do”                           |
-| Bel@do        | All values starting with “Bel” and ending with “do”   |
-| @elm@         | All values containing “elm”                           |
+| A filter with | Finds                                              |
+| ------------- | -------------------------------------------------- |
+| Bel           | All values beginning with “Bel”                    |
+| @do           | All values containing “do”                         |
+| Bel@do        | All values starting with “Bel” and containing “do” |
 
 If you want to create more specific queries, such as "is exactly", you may need to use the advanced queries feature.
 
@@ -158,8 +163,23 @@ You can enter advanced queries that are not available as attribute queries. For 
 firstname=="Jim"
 ```
 
-You can use any ORDA query expression as [documented with the `query()` function](API/dataclassClass.md#query), including placeholders and formulas. For example, with the Employee dataclass, you could write:
+You can use any ORDA query expression as [documented with the `query()` function](API/dataclassClass.md#query), with the following limitations:
+
+- for security, you cannot use `eval()` to execute formulas.
+- placeholders cannot be used; you have to write a *queryString* with values.
+
+For example, with the Employee dataclass, you can write:
 
 ```
-"lastName = :1 and manager.lastName = :2";"M@";"S@")
+firstname = "M@" or lastname = "@th"
 ```
+
+You can click on the `v` icon to display both [`queryPlan`](API/dataclassClass.md#queryplan) and [`queryPath`](API/dataclassClass.md#querypath):
+
+![alt-text](assets/en/Admin/dataExplorer10.png)
+
+Right-click in the query area to display the previous valid queries:
+
+![alt-text](assets/en/Admin/dataExplorer11.png)
+
+ 
