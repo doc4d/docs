@@ -638,13 +638,11 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 
 #### Description
 
-The `.setAdminProtection()` function <!-- REF #datastoreClass.setAdminProtection().Summary -->allows controlling the access to the [Data Explorer](Admin/dataExplorer.md) on the web admin port<!-- END REF -->. 
+The `.setAdminProtection()` function <!-- REF #datastoreClass.setAdminProtection().Summary -->allows controlling the access to the [Data Explorer](Admin/dataExplorer.md) on the [web admin port](Admin/webAdmin.md#http-port)<!-- END REF -->. 
 
-By default when the function is not called, access to the Data Explorer is always granted on the [web admin port](Admin/webAdmin.md#http-port) for the session with `WebAdmin` privilege. 
+By default when the function is not called, access to the Data Explorer is always granted on the administration port for a session with `WebAdmin` privilege. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings. 
 
-In some configurations, for example when the application is hosted on a third-party machine, you might want the administrator to access the server configuration, including the [access key](webAdmin.md#access-key) settings, but not to your data. 
-
-In this case, you can call this function to disable the webAdmin Data Explorer access. 
+In this case, you can call this function to disable the Data Explorer access on the web admin port. 
 
 > This has no impact on the Data Explorer published on the REST Server (/rest/$lib).
 
