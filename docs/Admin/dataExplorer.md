@@ -172,13 +172,13 @@ firstname=="Jim"
 
 You can use any ORDA query expression as [documented with the `query()` function](API/dataclassClass.md#query), with the following limitations:
 
-- for security, you cannot use `eval()` to execute formulas. 
+- for security, you cannot execute formulas using `eval()`, . 
 - placeholders cannot be used; you have to write a *queryString* with values.
 
 For example, with the Employee dataclass, you can write:
 
 ```
-firstname = "M@" or lastname = "@th"
+firstname = "M@" AND manager.lastname = "@th"
 ```
 
 You can click on the `v` icon to display both [`queryPlan`](API/dataclassClass.md#queryplan) and [`queryPath`](API/dataclassClass.md#querypath):
