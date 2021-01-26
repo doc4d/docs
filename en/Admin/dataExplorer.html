@@ -68,6 +68,9 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/master/docs/Admin/dataExplorer.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Web Data Explorer</h1></header><article><div><span><p>The Data Explorer provides a web interface to view and query data in your project datastore. Using this tool, you can easily browse among all your entities and search, order, or filter attribute values. It helps you to control data and quickly identify issues at any steps of the development process.</p>
 <p><img src="/docs/assets/en/Admin/dataExplorer1.png" alt="alt-text"></p>
+<blockquote>
+<p>Remote datastores are not available from the Web Data Explorer.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="access-configuration"></a><a href="#access-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Access Configuration</h2>
 <p>The Data Explorer relies on the <a href="/docs/en/Admin/webAdmin.html"><code>WebAdmin</code></a> web server component for the configuration and authentication settings.</p>
 <ul>
@@ -75,7 +78,7 @@
 <li><strong>authentication</strong>: access to the Data Explorer is granted when the <a href="/docs/en/Admin/webAdmin.html#authentication-and-session">session user is authenticated</a> and if the user has the &quot;WebAdmin&quot; privilege. When the Data Explorer is accessed through the <strong>Data Explorer</strong> menu item (see below), an automatic authentication is provided.</li>
 </ul>
 <blockquote>
-<p>A browser can only be authenticated for one Data Explorer page at a time (because of the session cookie). If you want to work simultaneously with multiple 4D instances on different projects, you must open Data Explorer pages with different browsers or use private browsing.</p>
+<p>If data must not be available on the server, the Data Explorer access can be disabled using the <a href="/docs/en/API/datastoreClass.html#setadminprotection"><code>.setAdminProtection()</code></a> function.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="opening-the-data-explorer"></a><a href="#opening-the-data-explorer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Opening the Data Explorer</h2>
 <p>The Data Explorer page is automatically available when <a href="/docs/en/Admin/webAdmin.html#starting-the-webadmin-web-server">the <code>WebAdmin</code> web server is started</a>.</p>
@@ -92,6 +95,9 @@ or
 <code>IPaddress:HTTPSPort/dataexplorer</code></p></li>
 </ul>
 <p><a href="/docs/en/Admin/webAdmin.html#http-port">HTTPPort</a> and <a href="/docs/en/Admin/webAdmin.html#https-port">HTTPSPort</a> values are configured in the <code>WebAdmin</code> settings.</p>
+<blockquote>
+<p>A browser can only be authenticated for one Data Explorer page at a time (because of the session cookie). If you want to work simultaneously with multiple 4D instances on different projects, you must open Data Explorer pages with different browsers or use private browsing.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="using-the-data-explorer"></a><a href="#using-the-data-explorer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the Data Explorer</h2>
 <p>In addition to a comprehensive and customizable view of your data, the Data Explorer allows you to query and order your data.</p>
 <h3><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements</h3>
