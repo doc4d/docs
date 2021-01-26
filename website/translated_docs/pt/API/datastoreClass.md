@@ -638,9 +638,7 @@ The `.setAdminProtection()` function <!-- REF #datastoreClass.setAdminProtection
 
 By default when the function is not called, access to the Data Explorer is always granted on the administration port for a session with `WebAdmin` privilege. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
 
-In this case, you can call this function to disable the Data Explorer access on the web admin port.
-
-> This has no impact on the Data Explorer published on the REST Server (/rest/$lib).
+In this case, you can call this function to disable the Data Explorer access on the web admin port of the machine.
 
 
 #### Example
