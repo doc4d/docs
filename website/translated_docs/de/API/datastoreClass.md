@@ -10,8 +10,8 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 
 ### Summary
 
-|                                                                                                                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #datastoreClass.cancelTransaction().Syntax -->](#canceltransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.cancelTransaction().Summary -->|
 | [<!-- INCLUDE datastoreClass.dataclassName.Syntax -->](#dataclassname)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE datastoreClass.dataclassName.Summary --> |
 | [<!-- INCLUDE #datastoreClass.encryptionStatus().Syntax -->](#encryptionstatus)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.encryptionStatus().Summary --> |
@@ -19,6 +19,7 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 | [<!-- INCLUDE #datastoreClass.getRequestLog().Syntax -->](#getrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.getRequestLog().Summary --> |
 | [<!-- INCLUDE #datastoreClass.makeSelectionsAlterable().Syntax -->](#makeselectionsalterable)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.makeSelectionsAlterable().Summary --> |
 | [<!-- INCLUDE #datastoreClass.provideDataKey().Syntax -->](#providedatakey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.provideDataKey().Summary --> |
+| [<!-- INCLUDE #datastoreClass.setAdminProtection().Syntax -->](#setAdminProtection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.setAdminProtection().Summary --> |
 | [<!-- INCLUDE #datastoreClass.startRequestLog().Syntax -->](#startrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.startRequestLog().Summary --> |
 | [<!-- INCLUDE #datastoreClass.startTransaction().Syntax -->](#starttransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.startTransaction().Summary --> |
 | [<!-- INCLUDE #datastoreClass.stopRequestLog().Syntax -->](#stoprequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #datastoreClass.stopRequestLog().Summary --> |
@@ -466,6 +467,40 @@ See Example 2 of [`.startRequestLog()`](#startrequestlog).
 <!-- END REF -->
 
 
+<!-- REF datastoreClass.isAdminProtected().Desc -->
+## .isAdminProtected()
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R6  | Added   |
+</details>
+
+<!-- REF #datastoreClass.isAdminProtected().Syntax -->
+**.isAdminProtected()** : Boolean<!-- END REF -->
+
+<!-- REF #datastoreClass.isAdminProtected().Params -->
+| Parameter | Typ     |    | Beschreibung                                                                   |
+| --------- | ------- |:--:| ------------------------------------------------------------------------------ |
+| Ergebnis  | Boolean | <- | True if the Data Explorer access is disabled, False if it is enabled (default) |
+<!-- END REF -->
+
+
+#### Beschreibung
+
+The `.isAdminProtected()` function <!-- REF #datastoreClass.isAdminProtected().Summary -->returns `True` if [Data Explorer](Admin/dataExplorer.md) access has been disabled for the working session<!-- END REF -->.
+
+By default, the Data Explorer access is granted for `webAdmin` sessions, but it can be disabled to prevent any data access from administrators (see the [`.setAdminProtection()`](#setadminprotection) function).
+
+#### See also
+
+[`.setAdminProtection()`](#setadminprotection)
+
+<!-- END REF -->
+
+
+
+
 <!-- REF datastoreClass.makeSelectionsAlterable().Desc -->
 ## .makeSelectionsAlterable()
 
@@ -577,6 +612,52 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 
 <!-- END REF -->
 
+
+<!-- REF datastoreClass.setAdminProtection().Desc -->
+## .setAdminProtection()
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v18 R6  | Added   |
+</details>
+
+<!-- REF #datastoreClass.setAdminProtection().Syntax -->**.setAdminProtection**( *status* : Boolean )<!-- END REF -->
+
+
+<!-- REF #datastoreClass.setAdminProtection().Params -->
+| Parameter | Typ     |    | Beschreibung                                                                                 |
+| --------- | ------- | -- | -------------------------------------------------------------------------------------------- |
+| status    | Boolean | -> | True to disallow Data Explorer access on the web admin port, False (default) to allow access |
+<!-- END REF -->
+
+
+#### Beschreibung
+
+The `.setAdminProtection()` function <!-- REF #datastoreClass.setAdminProtection().Summary -->allows controlling the access to the [Data Explorer](Admin/dataExplorer.md) on the [web admin port](Admin/webAdmin.md#http-port)<!-- END REF -->.
+
+By default when the function is not called, access to the Data Explorer is always granted on the administration port for a session with `WebAdmin` privilege. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
+
+In this case, you can call this function to disable the Data Explorer access on the web admin port of the machine.
+
+
+#### Beispiel
+
+In the `On Server startup` database method:
+
+```4d
+If(Application type=4D Server) //production
+    ds.setAdminProtection(True) //Disables the Data Explorer
+Else
+    ds.setAdminProtection(False) //Data Explorer granted for webAdmin sessions
+End if
+```
+
+#### See also
+
+[`.isAdminProtected()`](#isadminprotected)
+
+<!-- END REF -->
 
 
 <!-- REF datastoreClass.startRequestLog().Desc -->
