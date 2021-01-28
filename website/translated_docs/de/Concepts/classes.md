@@ -321,7 +321,7 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. Die Unterklasse erbt alle Functions der übergeordneten Klasse.
+Das Schlüsselwort `Class extends` dient beim Deklarieren einer Klasse zum Erstellen einer Benutzerklasse, die ein Kind einer anderen Benutzerklasse ist. Die Unterklasse erbt alle Functions der übergeordneten Klasse.
 
 Für Class Extension gelten folgende Regeln:
 
