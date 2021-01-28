@@ -68,7 +68,7 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/WebServer/gettingStarted.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Getting Started</h1></header><article><div><span><p>This &quot;Getting started&quot; section is geared at first-time users who want an overall overview on how to go from zero to a 4D website that handles data from the database. Let's start!</p>
 <h2><a class="anchor" aria-hidden="true" id="hello-world-example"></a><a href="#hello-world-example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hello World Example</h2>
-<p>Let's start by making the web server send &quot;Hello World&quot; to the browser. The most simple way to do this is to create a project, start the web server and call a project method that returns a text.</p>
+<p>Let's start by making the web server send &quot;Hello World&quot; to the browser. The most simple way to do this is to create a project, start the web server and write a small code that returns a text in the <code>On Web Connection</code> database method.</p>
 <h3><a class="anchor" aria-hidden="true" id="starting-the-web-server"></a><a href="#starting-the-web-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Starting the web server</h3>
 <p>To start the 4D web server:</p>
 <ol>
@@ -85,25 +85,28 @@
 <p><img src="/docs/alpha/assets/en/WebServer/defaultHomePage.png" alt=""></p>
 <h3><a class="anchor" aria-hidden="true" id="displaying-hello-world"></a><a href="#displaying-hello-world" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Displaying Hello World</h3>
 <ol>
-<li><p>Open the Explorer and create a project method named &quot;hello&quot;.</p></li>
-<li><p>Enter the following line of code:</p></li>
+<li><p>Open the Explorer, display the Database Methods list and double-click on <code>On Web Connection</code>.</p></li>
+<li><p>Enter the following code:</p></li>
 </ol>
-<pre><code class="hljs css language-4d"><span class="hljs-function">WEB SEND TEXT</span>(<span class="hljs-string">"Hello World!"</span>)
+<pre><code class="hljs css language-4d"><span class="hljs-keyword">Case of</span> 
+    : (<span class="hljs-variable">$1</span>=<span class="hljs-string">"/hello"</span>)
+<span class="hljs-function">        WEB SEND TEXT</span>(<span class="hljs-string">"Hello World!"</span>)<span class="hljs-keyword">
+    Else</span> 
+        <span class="hljs-comment">// Error 404 for example</span><span class="hljs-keyword">
+End case</span> 
 </code></pre>
-<p>This very simple line only sends the text passed as parameter to the browser.</p>
+<p>The <a href="/docs/alpha/en/WebServer/httpRequests.html#on-web-connection"><code>On Web Connection</code></a> database method is called for incoming requests and receives the target URL in the <code>$1</code> parameter. This very simple code only sends the text to the browser.</p>
 <ol start="3">
-<li>Display the method properties by clicking on the <strong>[i]</strong> button in the code editor, check the <code>4D tags and URLs (4DACTION...)</code> option then click <strong>OK</strong>.</li>
-</ol>
-<p><img src="/docs/alpha/assets/en/WebServer/hello0.png" alt=""></p>
-<ol start="4">
 <li>In your browser, enter the following URL:</li>
 </ol>
-<pre><code class="hljs">http:<span class="hljs-regexp">//</span>localhost<span class="hljs-regexp">/4daction/</span>hello
+<pre><code class="hljs"><span class="hljs-symbol">http:</span><span class="hljs-comment">//localhost/hello</span>
 </code></pre>
-<p>The web server handles the request and calls the <code>hello</code> method, which returns:</p>
+<p>The web server handles the request and returns:</p>
 <p><img src="/docs/alpha/assets/en/WebServer/hello.png" alt=""></p>
 <h2><a class="anchor" aria-hidden="true" id="getting-data-from-the-database"></a><a href="#getting-data-from-the-database" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting data from the database</h2>
-<p>Now we'll see how simple it is to get data from the database. First, we will create a table and fill it with some data. Thanks to the <a href="/docs/alpha/en/ORDA/overview.html">ORDA concept</a>, this table will be automatically available as a dataclass and available through <a href="/docs/alpha/en/REST/gettingStarted.html">REST</a>.</p>
+<p>Now we'll see how simple it is to get data from the database. , we will create a table and fill it with some data. First,</p>
+<p>As a fist  display the data</p>
+<p>Thanks to the <a href="/docs/alpha/en/ORDA/overview.html">ORDA concept</a>, this table will be automatically available as a dataclass and available through <a href="/docs/alpha/en/REST/gettingStarted.html">REST</a>.</p>
 <p>Create a simple database with, for example, a single table containing some records:</p>
 <p><img src="/docs/alpha/assets/en/WebServer/hello2.png" alt="">
 <img src="/docs/alpha/assets/en/WebServer/hello3.png" alt=""></p>
@@ -248,8 +251,11 @@ Else</span>
 End if</span> 
 </code></pre>
 <ol start="3">
-<li><p>Display the method properties by clicking on the <strong>[i]</strong> button in the code editor, check the <code>4D tags and URLs (4DACTION...)</code> option and click <strong>OK</strong>.</p></li>
-<li><p>In your browser, enter the following URL:</p></li>
+<li>Display the method properties by clicking on the <strong>[i]</strong> button in the code editor, check the <code>4D tags and URLs (4DACTION...)</code> option and click <strong>OK</strong>.</li>
+</ol>
+<p><img src="/docs/alpha/assets/en/WebServer/hello0.png" alt=""></p>
+<ol start="4">
+<li>In your browser, enter the following URL:</li>
 </ol>
 <pre><code class="hljs"><span class="hljs-symbol">http:</span>//localhost/<span class="hljs-number">4</span>DACTION/login/?userID=john<span class="hljs-subst">@4</span>d.com&amp;password=<span class="hljs-number">123</span>
 </code></pre>
