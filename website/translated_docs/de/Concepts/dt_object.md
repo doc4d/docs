@@ -5,7 +5,7 @@ title: Objekt
 
 Variablen, Felder oder Ausdrücke vom Typ Objekt können verschiedene Datentypen enthalten. Die Struktur von "native" 4D Objekten basiert auf dem klassischen Prinzip von "Eigenschaft/Wert" bzw. "Key/Value" Paaren. Die Syntax dieser Objekte basiert auf JSON Notation:
 
-- Ein Eigenschaftenname ist immer ein Text, z. B. "Name". It must follow [specific rules](identifiers.md#object-properties).
+- Ein Eigenschaftenname ist immer ein Text, z. B. "Name". Er muss [spezifische Regeln](identifiers.md#objekteigenschaften) einhalten.
 
 - Der Wert einer Eigenschaft kann einer der folgenden Typen sein:
     - numerisch (Zahl, Ganzzahl, etc.)
