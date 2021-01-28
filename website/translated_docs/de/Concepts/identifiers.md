@@ -14,7 +14,7 @@ Dieser Abschnitt beschreibt die Konventionen und Regeln zum Bezeichnen verschied
 Für Namen von Arrays gelten dieselben Regeln wie für [Variablen](#variablen).
 
 
-## Classes
+## Klassen
 
 Ein Klassenname kann bis zu 31 Zeichen enthalten.
 
@@ -103,7 +103,7 @@ ON EVENT CALL("HANDLE EVENTS")
 
 
 
-## Tables and Fields
+## Tabellen und Felder
 
 Eine Tabelle kennzeichnen Sie durch eckige Klammern um den Tabellennamen: \ [...]. Ein Feld kennzeichnen Sie durch Angabe der dazugehörigen Tabelle, gefolgt von dem Feldnamen.
 
@@ -132,12 +132,12 @@ QUERY([Clients];[Clients]Name="Smith")
 
 Ein Variablenname kann ohne das Symbol für Reichweite ($ oder <>) bis zu 31 Zeichen lang sein.
 
-- A variable name must begin with a letter, an underscore, or a dollar ("$") for [parameters](parameters.md) and [local variables](variables.md#local-variables), or "<>" for [interprocess variables](variables.md#interprocess-variables).
-- A digit as first character is allowed but not recommended, and is not supported by the [`var` declaration syntax](variables.md#using-the-var-keyword).
-- Thereafter, the name can include any letter or digit, and the underscore character ("_").
-- Space character is allowed but not recommended, and is not supported by the [`var` declaration syntax](variables.md#using-the-var-keyword).
+- Er muss für [Parameter](parameters.md) und [lokale Variablen](variables.md#lokale-variable) mit einem Buchstaben, Unterstrich oder Dollarzeichen ("$") beginnen, und für [Interprozessvariablen](variables.md#interprozessvariablen) mit "<>".
+- Eine Ziffer als erstes Zeichen ist erlaubt, wird aber nicht empfohlen, da die [Deklaration mit `var` ](variables.md#das-schlüsselwort-var-verwenden) dies nicht unterstützt.
+- Folglich kann der Name einen beliebigen Buchstaben, eine Ziffer und das Unterstrichzeichen ("_") enthalten.
+- Leerzeichen sind erlaubt, werden aber nicht empfohlen, da die [Deklaration mit `var` ](variables.md#using-the-var-keyword) dies nicht unterstützt.
 - Verwenden Sie keine reservierten Namen, wie 4D Befehlsnamen (`Date`, `Time`, etc), Schlüsselwörter (`If`, `For`, etc.), oder Konstantennamen (`Euro`, `Black`, `Friday`, etc.).
-- Variable names are case insensitive.
+- Es wird nicht zwischen Groß- und Kleinschreibung unterschieden.
 
 
 Beispiele:
@@ -150,14 +150,14 @@ If(bValidate=1) //process variable
 <>vlProcessID:=Current process() //interprocess variable
 ```
 
-## Other names
+## Andere Namen
 
-In the 4D language, several elements have their names handled as strings: **forms**, **form objects**, **named selections**, **processes**, **sets**, **menu bars**, etc.
+Die 4D Programmiersprache verwaltet die Namen einiger Elemente als String: **Formulare**, **Formularobjekte**, **temporäre Auswahlen**, **Prozesse**, **Mengen**, **Menüleisten**, etc.
 
-Such string names can contain up to 255 characters, not including the "$" or "<>" characters (if any).
+Solche String-Namen können bis zu 255 Zeichen enthalten, ohne die Zeichen "$" oder "<>" (falls vorhanden).
 
-- String names can contain any characters.
-- String names are case insensitive.
+- String-Namen können beliebige Zeichen enthalten.
+- Es wird nicht zwischen Groß- und Kleinschreibung unterschieden.
 
 Beispiele:
 
