@@ -3,12 +3,13 @@ id: dataExplorer
 title: Web Data Explorer
 ---
 
+> **Preview**: The Web Data Explorer is provided as a preview feature. Using this feature in a production purpose is not recommended; final implementation could be slightly different.
+
 
 The Data Explorer provides a web interface to view and query data in your project datastore. Using this tool, you can easily browse among all your entities and search, order, or filter attribute values. It helps you to control data and quickly identify issues at any steps of the development process. 
 
 ![alt-text](assets/en/Admin/dataExplorer1.png)
 
-> Remote datastores are not available from the Web Data Explorer. 
 
 ## Access Configuration
 
@@ -28,7 +29,7 @@ To connect to the Data Explorer web page:
 
 - if you use a 4D application with interface, select **Data Explorer...** command from:
 	- the **Records** menu (in 4D stand-alone) 
-	- the **Window** menu (in 4D Server)
+	- the **Window** menu (in 4D Server)  
 
 - whether you use a headless 4D application or not, you can open your web browser and enter the following address:
 
@@ -36,9 +37,11 @@ To connect to the Data Explorer web page:
 or
 	`IPaddress:HTTPSPort/dataexplorer`
 
-[HTTPPort](webAdmin.md#http-port) and [HTTPSPort](webAdmin.md#https-port) values are configured in the `WebAdmin` settings. 
+	In this context, you will be prompted to enter the [access key](webAdmin.md#access-key) to open a `WebAdmin` session on the server:
 
-> A browser can only be authenticated for one Data Explorer page at a time (because of the session cookie). If you want to work simultaneously with multiple 4D instances on different projects, you must open Data Explorer pages with different browsers or use private browsing. 
+![alt-text](assets/en/Admin/accessKeyEnter.png)
+
+> [HTTPPort](webAdmin.md#http-port) and [HTTPSPort](webAdmin.md#https-port) values are configured in the `WebAdmin` settings. 
 
 
 
@@ -53,8 +56,9 @@ The Data Explorer supports the following web browsers:
 - Chrome
 - Safari
 - Edge
+- FireFox
 
-The minimum resolution to use the Data Explorer is 1280x720 dpi. Recommended resolution is 1920x1080 dpi.
+The minimum resolution to use the Data Explorer is 1280x720. Recommended resolution is 1920x1080.
 
 ### Basics
 
@@ -77,7 +81,7 @@ The page contains several areas:
 
 	- The name of the selected dataclass is added as a tab above the data grid. Using these tabs, you can switch between dataclasses that have been already selected. You can remove a referenced dataclass by clicking the "remove" icon at the right of the dataclass name. 
 	- You can reduce the number of columns by unchecking attributes in the left side. You can also switch the columns in the data grid using drag and drop. You can click on a column header to [sort entities](#ordering-entities) according to its values (when possible). 
-	- If the loading of dataclass entities requires a long time, a "Loading data" bar is displayed. You can stop the loading at any moment by clicking on the red button, only the loaded entities will be available then:
+	- If an operation requires a long time, a progress bar is displayed. You can stop the running operation at any moment by clicking on the red button:
 
 ![alt-text](assets/en/Admin/dataExplorer5.png)
 
@@ -170,23 +174,22 @@ You can enter advanced queries that are not available as attribute queries. For 
 firstname=="Jim"
 ```
 
-You can use any ORDA query expression as [documented with the `query()` function](API/dataclassClass.md#query), with the following limitations:
+You can use any ORDA query expression as [documented with the `query()` function](API/dataclassClass.md#query), with the following limitations or differences:
 
-- for security, you cannot execute formulas using `eval()`, . 
-- placeholders cannot be used; you have to write a *queryString* with values.
+- For security, you cannot execute formulas using `eval()`. 
+- Placeholders cannot be used; you have to write a *queryString* with values.
+- String values containing space characters must be embedded in double quotes ("").
 
 For example, with the Employee dataclass, you can write:
 
 ```
-firstname = "M@" AND manager.lastname = "@th"
+firstname = "Marie Sophie" AND manager.lastname = "@th"
 ```
 
-You can click on the `v` icon to display both [`queryPlan`](API/dataclassClass.md#queryplan) and [`queryPath`](API/dataclassClass.md#querypath):
+You can click on the `v` icon to display both [`queryPlan`](API/dataclassClass.md#queryplan) and [`queryPath`](API/dataclassClass.md#querypath). In the area, you can hover over the subquery blocks to have detailed information per subquery:
 
-![alt-text](assets/en/Admin/dataExplorer10.png)
+![alt-text](assets/en/Admin/dataExplorer12.png)
 
 Right-click in the query area to display the previous valid queries:
 
 ![alt-text](assets/en/Admin/dataExplorer11.png)
-
- 
