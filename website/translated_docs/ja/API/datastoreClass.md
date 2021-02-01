@@ -626,31 +626,27 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 
 
 <!-- REF #datastoreClass.setAdminProtection().Params -->
-| 参照     | タイプ |    | 説明                                                                                                           |
-| ------ | --- | -- | ------------------------------------------------------------------------------------------------------------ |
-| status | ブール | -> | True to disallow Data Explorer access, False (default) to allow access to sessions with `WebAdmin` privilege |
+| 参照     | タイプ |    | 説明                                                                                                   |
+| ------ | --- | -- | ---------------------------------------------------------------------------------------------------- |
+| status | ブール | -> | True to disable Data Explorer access to data on the `webAdmin` port, False (default) to grant access |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.setAdminProtection()` function <!-- REF #datastoreClass.setAdminProtection().Summary -->allows disabling any access to the [Data Explorer](Admin/dataExplorer.md) on the [web admin port](Admin/webAdmin.md#http-port)<!-- END REF -->.
+The `.setAdminProtection()` function <!-- REF #datastoreClass.setAdminProtection().Summary -->allows disabling any data access on the [web admin port](Admin/webAdmin.md#http-port), including for the [Data Explorer](Admin/dataExplorer.md) in `WebAdmin` sessions<!-- END REF -->.
 
-By default when the function is not called, access to the Data Explorer is always granted on the administration port for a session with `WebAdmin` privilege. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
+By default when the function is not called, access to data is always granted on the web administration port for a session with `WebAdmin` privilege using the Data Explorer. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
 
-In this case, you can call this function to disable the Data Explorer access on the web admin port of the machine, even if the user session has the `WebAdmin` privilege.
+In this case, you can call this function to disable the data access from Data Explorer on the web admin port of the machine, even if the user session has the `WebAdmin` privilege. When this function is executed, the data file is immediately protected and the status is stored on disk: the data file will be protected even if the application is restarted.
 
 
 #### 例題
 
-In the `On Server startup` database method:
+You create a *protectDataFile* project method to call before deployments for example:
 
 ```4d
-If(Application type=4D Server) //production
-    ds.setAdminProtection(True) //Disables the Data Explorer
-Else
-    ds.setAdminProtection(False) //Data Explorer granted for webAdmin sessions
-End if
+ ds.setAdminProtection(True) //Disables the Data Explorer data access
 ```
 
 #### 参照
