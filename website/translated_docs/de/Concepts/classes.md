@@ -150,13 +150,13 @@ Ist in einem Projekt eine Klasse [definiert](#eine-klasse-definieren), wird sie 
 - Objekt [`superclass`](API/classClass.md#superclass) (optional, null, wenn nicht vorhanden)
 - Funktion [`new()`](API/classClass.md#new), um Instanzen der Objekte einer Klasse zu setzen.
 
-In addition, a class object can reference a [`constructor`](#class-constructor) object (optional).
+Ein Objekt class kann zusätzlich auf ein Objekt [`constructor`](#class-constructor) verweisen (optional).
 
 Ein Objekt class ist ein [shared object](shared.md), d. h. es lässt sich aus verschiedenen 4D Prozessen gleichzeitig darauf zugreifen.
 
-### Inheritance
+### Vererbung
 
-If a class inherits from another class (i.e. the [Class extends](classes.md#class-extends-classname) keyword is used in its definition), the parent class is its [`superclass`](API/classClass.md#superclass).
+Erbt eine Klasse von einer anderen Klasse (z.B.in der Definition wird das Schlüsselwort [Class extends](classes.md#class-extends-classname) verwendet), ist die übergeordnete Klasse deren [`superclass`](API/classClass.md#superclass).
 
 When 4D does not find a function or a property in a class, it searches it in its [`superclass`](API/classClass.md#superclass); if not found, 4D continues searching in the superclass of the superclass, and so on until there is no more superclass (all objects inherit from the "Object" superclass).
 
