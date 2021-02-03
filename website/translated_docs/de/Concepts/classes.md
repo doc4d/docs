@@ -44,7 +44,7 @@ Eine Benutzerklasse in 4D wird über eine spezifische Datei Methode (.4dm) defin
 
 Beim Benennen von Klassen müssen Sie folgende Regeln beachten:
 
-- A [class name](identifiers.md#classes) must be compliant with [property naming rules](identifiers.md#object-properties).
+- Der [Klassenname](identifiers.md#classes) muss mit den [Schreibregeln für Eigenschaftsnamen](identifiers.md#objekteigenschaften) konform sein.
 - Es wird zwischen Groß- und Kleinschreibung unterschieden.
 - Um Konflikte zu vermeiden, sollten Sie für eine Klasse und eine Tabelle in derselben Anwendung unterschiedliche Namen verwenden.
 
@@ -86,7 +86,7 @@ Um eine neue Klasse zu erstellen:
 
 #### Unterstützung von Code für Klassen
 
-In the various 4D windows (code editor, compiler, debugger, runtime explorer), class code is basically handled like a project method with some specificities:
+In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime-Explorer) wird Code für Klassen im allgemeinen wie eine Projektmethode mit einigen spezifischen Merkmalen verwaltet:
 
 - Im Code-Editor gilt folgendes:
     - Klassen können nicht direkt ausgeführt werden
