@@ -13,15 +13,15 @@ Die Seite enthält die Schaltflächen für Aktionen, über die Sie direkt auf di
 > Ist die Datenbank verschlüsselt, wird auch die Gültigkeit der verschlüsselten Datenkonsistenz überprüft. Ist noch kein gültiger Datenschlüssel angegeben, erscheint ein Dialogfenster, dass die Passphrase oder den Datenschlüssel anfordert.
 
 
-- **Verify the records and the indexes:** Starts the total data verification procedure.
-- **Verify the records only**: Starts the verification procedure for records only (indexes are not verified).
-- **Verify the indexes only**: Starts the verification procedure for indexes only (records are not verified).
+- **Datensätze und Indizes prüfen:** Startet den kompletten Prozess zum Überprüfen der Daten.
+- **Nur Datensätze prüfen**: Startet nur den Prozess zum Überprüfen der Datensätze, d. h. Indizes werden nicht geprüft.
+- **Nur Indizes prüfen**: Startet nur den Prozess zum Überprüfen der Indizes, d. h. Datensätze werden nicht geprüft.
 > Sie können Datensätze und Indizes auch im Detail Tabelle für Tabelle überprüfen. Weitere Informationen dazu finden Sie im unteren Abschnitt.
 
 
 ## Logbuch öffnen
 
-Regardless of the verification requested, 4D generates a log file in the `Logs` folder of the application. Hier erscheinen alle durchgeführten Überprüfungen und evtl. gefundene Fehler. Gibt es keine Fehler, wird das durch [OK] angezeigt. It is created in XML format and is named: *ApplicationName*_Verify_Log_*yyyy-mm-dd hh-mm-ss*.xml where:
+Bei allen Überprüfungsarten generiert 4D ein Logbuch im Ordner `Logs` der Anwendung. Hier erscheinen alle durchgeführten Überprüfungen und evtl. gefundene Fehler. Gibt es keine Fehler, wird das durch [OK] angezeigt. Das Logbuch wird im XML-Format angelegt und hat den Namen *ApplicationName*_Verify_Log_*yyyy-mm-dd hh-mm-ss*.xml:
 
 - *ApplicationName* ist der Name der Projektdatei ohne Endung, zum Beispiel "Rechnungen"
 - *yyyy-mm-dd hh-mm-ss* ist der Zeitstempel der Datei. Er basiert auf der lokalen Systemzeit, zur der die Wartungsoperation gestartet wurde, zum Beispiel "2019-02-11 15-20-45".
@@ -31,7 +31,7 @@ Klicken Sie auf die Schaltfläche **Logbuch öffnen**, zeigt 4D das neueste Logb
 
 ## Details
 
-The **Table list** button displays a detailed page that can be used to view and select the actual records and indexes to be checked:
+Die Schaltfläche **Tabellenliste** öffnet die Seite mit ausführlichen Angaben zur Überprüfung. Hier können Sie die aktuell zu prüfenden Datensätze und Indizes ansehen und auswählen:
 
 ![](assets/en/MSC/MSC_Verify.png)
 
