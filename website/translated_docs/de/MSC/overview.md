@@ -6,9 +6,9 @@ sidebar_label: Überblick
 
 Das Fenster Maintenance und Security Center (MSC) enthält alle Tools zum Prüfen, Analysieren, Warten, Sichern, Komprimieren und Verschlüsseln von Datendateien. Das MSC ist in allen 4D Programmen verfügbar, also 4D Developer, 4D Server oder 4D Desktop.
 
-**Note:** The MSC window is not available from a 4D remote connection.
+**Hinweis:** Das MSC Fenster ist in einer 4D remote Verbindung nicht verfügbar.
 
-Es gibt verschiedene Wege, das MSC-Fenster zu öffnen. The way it is accessed also determines the way the application project is opened: in “maintenance” mode or “standard” mode. In maintenance mode, the project is not opened by 4D, only its reference is provided to the MSC. In standard mode, the project is opened by 4D.
+Es gibt verschiedene Wege, das MSC-Fenster zu öffnen. Die Art des Zugriffs bestimmt auch die Art, wie das Anwendungsprojekt geöffnet wird: im Wartungs- oder im Standardmodus. Im Wartungsmodus wird das Projekt nicht durch 4D geöffnet, sondern nur ihre Referenz an das MSC geliefert. Im Standardmodus wird das Projekt von 4D geöffnet.
 
 
 ## Anzeige im Wartungsmodus
