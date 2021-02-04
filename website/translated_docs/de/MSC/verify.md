@@ -38,7 +38,7 @@ Die Schaltfläche **Tabellenliste** öffnet die Seite mit ausführlichen Angaben
 
 Sie können bestimmte Einträge zum Überprüfen angeben, um so Zeit bei der Überprüfung zu sparen.
 
-Die Hauptliste zeigt alle Tabellen der Datenbank. Sie können für jede Tabelle die Überprüfung auf Datensätze bzw. Indizes eingrenzen. Klicken Sie auf den Pfeil vor der Tabelle, um die Tabelle oder indizierte Datenfelder aufzuklappen und markieren Sie die Ankreuzfelder je nach gewünschter Aktion. Standardmäßig ist alles ausgewählt. You can also use the **Select all**, **Deselect all**, **All records** and **All indexes** shortcut buttons.
+Die Hauptliste zeigt alle Tabellen der Datenbank. Sie können für jede Tabelle die Überprüfung auf Datensätze bzw. Indizes eingrenzen. Klicken Sie auf den Pfeil vor der Tabelle, um die Tabelle oder indizierte Datenfelder aufzuklappen und markieren Sie die Ankreuzfelder je nach gewünschter Aktion. Standardmäßig ist alles ausgewählt. Sie können dafür auch am rechten Rand die Schaltflächen **Alles auswählen**, **Alles abwählen**, **Alle Datensätze** und **Alle Indizes** verwenden.
 
 Die Spalte “Aktion” gibt für jede Zeile die auszuführenden Operationen an. Bei aufgeklappter Tabelle zeigen die Zeilen “Datensätze” und “Indizierte Felder” die Anzahl der betroffenen Einträge an.
 
@@ -50,7 +50,7 @@ Die Spalte „Status“ zeigt den Überprüfungsstatus für jeden Eintrag mit de
 | ![](assets/en/MSC/MSC_KO3.png) | Überprüfung zum Teil ausgeführt           |
 | ![](assets/en/MSC/MSC_KO.png)  | Überprüfung nicht ausgeführt              |
 
-Click on **Verify** to begin the verification or on **Standard** to go back to the standard page.
+Klicken Sie am unteren Rand rechts auf die Schaltfläche **Prüfen**, um die Überprüfung zu starten oder links auf die Schaltfläche **Standard**, um zur Standardseite zurückzukehren.
 
-The **Open log file** button can be used to display the log file in the default browser of the machine (see [Open log file](#open-log-file) above).
+Klicken Sie auf die Schaltfläche **Logbuch anzeigen**, zeigt 4D das Logbuch im standardmäßigen Browser des Rechners (siehe oberen Abschnitt [Logbuch öffnen](#logbuch-öffnen)).
 > Die Standardseite berücksichtigt keine Änderungen, die auf der Detailseite gemacht wurden: Klicken Sie auf der Standardseite auf eine Schaltfläche zum Überprüfen, werden alle Einträge überprüft. Die auf der Detailseite definierten Einstellungen bleiben jedoch von einer Sitzung zur nächsten erhalten.
