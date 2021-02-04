@@ -4,7 +4,7 @@ title: Seite Verschlüsseln
 sidebar_label: Seite Verschlüsseln
 ---
 
-You can use this page to encrypt or *decrypt* (i.e. remove encryption from) the data file, according to the **Encryptable** attribute status defined for each table in the database. For detailed information about data encryption in 4D, please refer to the "Encrypting data" section in the *Design Reference* manual.
+Auf dieser Seite können Sie die Datendatei verschlüsseln oder *entschlüsseln* (z.B. die Verschlüsselung entfernen). Das richtet sich nach der Eigenschaft **Verschlüsselbar**, die für jede Tabelle in der Anwendung gesetzt werden kann. For detailed information about data encryption in 4D, please refer to the "Encrypting data" section in the *Design Reference* manual.
 
 Bei jeder Operation Verschlüsselung/Entschlüsselung wird ein neuer Ordner angelegt. It is named "Replaced Files (Encrypting) *yyyy-mm-dd hh-mm-ss*> or "Replaced Files (Decrypting) *yyyy-mm-dd hh-mm-ss*".
 > Verschlüsselung ist nur im [Wartungsmodus](overview.md#display-in-maintenance-mode) verfügbar. If you attempt to carry out this operation in standard mode, a warning dialog will inform you that the application will be closed and restarted in maintenance mode
