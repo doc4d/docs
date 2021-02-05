@@ -8,6 +8,7 @@ sidebar_label: Seite Wiederherstellen
 
 Über die Seite **Wiederherstellen** können Sie ein Archiv der aktuellen Anwendung manuell wiederherstellen. Hier können Sie auch verschiedene Optionen zum Steuern der Wiederherstellung festlegen:
 
+
 ![](assets/en/MSC/MSC_restore.png)
 
 > Das automatische Wiederherstellungssystem von 4D stellt Anwendungen wieder her und integriert bei Bedarf das Logbuch der Daten.

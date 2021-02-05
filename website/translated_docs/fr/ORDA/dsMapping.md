@@ -113,7 +113,7 @@ $compClass:=ds.Company //affecte la référence de dataclasse Company à $compCl
 
 Un objet dataclass peut contenir :
 
-*   des attributs
+*   attributes
 *   des attributs relationnels
 
 La dataclass offre une abstraction de la base de données physique et permet de gérer un modèle de données conceptuel. La dataclass est le seul moyen d'interroger le datastore. Une requête est effectuée à partir d'une seule dataclass. Les requêtes sont construites autour des attributs et des noms d'attributs relationnels des dataclasses. Les attributs relationnels sont ainsi les moyens d'impliquer plusieurs tables liées dans une requête.
@@ -207,7 +207,12 @@ var $e : cs.EmployeeSelection //déclare une variable objet $e de type de classe
 $e:=ds.Employee.all() //assigne la référence de la sélection d'entité résultante à la variable $e
 ```
 
-Les sélections d'entités peuvent être "triées" ou "non triées" (ce point est détaillé plus bas).
+Les sélections d'entités peuvent être :
+
+- "partageables" or "non partageables",
+- "triées" ou "non triées".
+
+Ces points sont décrits ci-dessous.
 
 L'objet sélection d'entités lui-même ne peut pas être copié en tant qu'objet :
 

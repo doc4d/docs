@@ -3,7 +3,6 @@ id: webAreaOverview
 title: Zone Web
 ---
 
-## Aperçu
 
 Les zones Web (Web Areas) peuvent afficher tout type de contenu Web à l’intérieur de vos formulaires : pages HTML au contenu statique ou dynamique, fichiers, images, JavaScript, etc. Le moteur de rendu de la zone web dépend de la plate-forme d’exécution de l’application et de [l'option de moteur de rendu](properties_WebArea.md#use-embedded-web-rendering-engine) sélectionnée.
 
@@ -33,6 +32,7 @@ Lorsque la propriété [Accès méthodes 4D](properties_WebArea.md#access-4d-met
 > Cette propriété n'est disponible que si la zone web [utilise le moteur de rendu web intégré](#use-embedded-web-rendering-engine).
 
 ### Objet $4d
+
 
 
 
@@ -124,7 +124,7 @@ $4d.calcSum(33, 45, 75, 102.5, 7, function(dollarZero)
 
 ## Actions standard
 
-Quatre actions standard sont disponibles pour gérer automatiquement les zones Web : `Open Back URL`, `Open Next URL`, `Refresh Current URL` and `Stop Loading URL`. Ces actions peuvent être associées à des boutons ou des commandes de menu et permettre une implémentation rapide d'interfaces Web basiques. Ces actions sont décrites dans [Actions standard](https://doc.4d.com/4Dv17R6/4D/17-R6/Standard-actions.300-4354791.en.html).
+Quatre actions standard sont disponibles pour gérer automatiquement les zones Web : `Open Back URL`, `Open Forward URL`, `Refresh Current URL` et `Stop Loading URL`. Ces actions peuvent être associées à des boutons ou des commandes de menu et permettre une implémentation rapide d'interfaces Web basiques. Ces actions sont décrites dans [Actions standard](https://doc.4d.com/4Dv17R6/4D/17-R6/Standard-actions.300-4354791.en.html).
 
 
 ## Evénements formulaire
