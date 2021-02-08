@@ -14,13 +14,13 @@ title: フォームエディターマクロ
 *   フォームやフォームオブジェクトおよびそれらのプロパティを追加・編集・削除する
 *   プロジェクトファイルを編集する (更新・削除)
 
-Macros code supports [class functions](Concepts/classes.md) and [form object properties in JSON](FormObjects/properties_Reference.md) to let you define any custom feature in the Form editor.
+フォームエディター用にカスタム機能を定義するため、マクロコードは [クラス関数](Concepts/classes.md) と [JSON のフォームオブジェクトプロパティ](FormObjects/properties_Reference.md) を使用できます。
 
-Macros can been defined for the host project or for components within the project. Usually, you will create a macro and install it within the components you use for development.
+ホストプロジェクトおよび、プロジェクト内のコンポーネントにてマクロを定義することができます。 通常は開発用のコンポーネントにマクロをインストールして使用します。
 
-When called, a macro overrides any previously specified behaviors.
+マクロが呼び出されると、指定されている既存の動作はマクロによってオーバーライドされます。
 
-## Hands-on example
+## 例題
 
 In this short example, you'll see how to create and call a macro that adds a "Hello World!" alert button in the top left corner of your form.
 
