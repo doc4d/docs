@@ -16,11 +16,11 @@ title: フォームエディターマクロ
 
 フォームエディター用にカスタム機能を定義するため、マクロコードは [クラス関数](Concepts/classes.md) と [JSON のフォームオブジェクトプロパティ](FormObjects/properties_Reference.md) を使用できます。
 
-ホストプロジェクトおよび、プロジェクト内のコンポーネントにてマクロを定義することができます。 Usually, you will create a macro and install it within the components you use for development.
+ホストプロジェクトおよび、プロジェクト内のコンポーネントにてマクロを定義することができます。 通常は開発用のコンポーネントにマクロをインストールして使用します。
 
-When called, a macro overrides any previously specified behaviors.
+マクロが呼び出されると、指定されている既存の動作はマクロによってオーバーライドされます。
 
-## Hands-on example
+## 例題
 
 In this short example, you'll see how to create and call a macro that adds a "Hello World!" alert button in the top left corner of your form.
 
