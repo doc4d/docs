@@ -4,10 +4,7 @@ title: Seite Wiederherstellen
 sidebar_label: Seite Wiederherstellen
 ---
 
-## Backup wiederherstellen
-
 Über die Seite **Wiederherstellen** können Sie ein Archiv der aktuellen Anwendung manuell wiederherstellen. Hier können Sie auch verschiedene Optionen zum Steuern der Wiederherstellung festlegen:
-
 
 ![](assets/en/MSC/MSC_restore.png)
 
