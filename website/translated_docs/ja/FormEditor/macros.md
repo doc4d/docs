@@ -404,14 +404,14 @@ Function onInvoke($editor : Object)->$result : Object
 
 マクロの実行時にエラーが発生した場合、`onError` 関数が実行されます。
 
-When executing a macro, if 4D encounters an error which prevents the macro from being cancelled, it does not execute the macro. It is the case for example if executing a macro would result in:
+マクロの実行時に発生したエラーが、マクロの取り消しを不可能にする内容の場合、マクロは実行されません。 たとえば次のような場合が該当します:
 
-- deleting or modifying a script whose file is read-only.
-- creating two objects with the same internal ID.
+- 読み取り専用ファイルのスクリプトを変更・削除しようとしたとき
+- 同じ内部ID を持つオブジェクトを複数作成しようとしたとき
 
 #### 例題
 
-In a macro class definition, you can write the following generic error code:
+マクロクラス定義に、次のような汎用的なエラーコードを書くことができます:
 
 ```4d
 Function onError($editor : Object; $resultMacro : Object; $error : Collection)
