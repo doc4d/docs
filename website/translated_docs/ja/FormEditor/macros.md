@@ -76,7 +76,7 @@ Function onInvoke($editor : Object)->$result : Object
 
 ![](assets/en/FormEditor/macroSelect.png)
 
-このメニューは `formMacros.json` [マクロ定義ファイル](#マクロファイルの場所) をもとに作成されています。 ファイル内で定義されている順にメニュー項目が表示されます。
+このメニューは `formMacros.json` [マクロ定義ファイル](#マクロファイルの場所) をもとに作成されています。 マクロメニュー項目はABC順に表示されます。
 
 プロジェクトとコンポーネントの両レベルでマクロが存在する場合、次の優先順位に従って表示されます:
 
