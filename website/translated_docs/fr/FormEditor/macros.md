@@ -238,7 +238,6 @@ Les propriétés personnalisées, lorsqu'elles sont utilisées, sont passées à
 }
 ```
 
-> Gardez à l'esprit que l'ordre des objets macros dans le fichier définit l'organisation du menu [**Macros**](#calling-macros-in-the-form-editor) dans l'éditeur de formulaires.
 
 
 ## Instancier des macros dans 4D
