@@ -225,23 +225,23 @@ Function getFullname()->$fullname : Text
 
 アプリケーションのコード内では、クラス関数はオブジェクトインスタンスのメンバーメソッドとして呼び出され、<a href="#クラス関数の引数>引数</a> を受け取ることができます。 次のシンタックスがサポートされています:
 
-- `()` 演算子の使用 For example, `myObject.methodName("hello")`
-- use of a "4D.Function" class member method: 
+- `()` 演算子の使用 例: `myObject.methodName("hello")`
+- "4D.Function" クラスメンバーメソッドの使用: 
       - [`apply()`](API/formulaClass.md#apply)
     - [`call()`](API/formulaClass.md#call)
 
 
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute: - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **スレッドセーフに関する警告: ** クラス関数がスレッドセーフではないのに、"プリエンプティブプロセスで実行可能" なメソッドから呼び出された場合: - 普通のメソッドの場合とは異なり、コンパイラーはエラーを生成しません。 - ランタイムにおいてのみ、4D はエラーを生成します。
 
 
 
 
 
 
-#### Parameters
+#### 引数
 
-Function parameters are declared using the parameter name and the parameter type, separated by a colon. パラメーター名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。 複数のパラメーター (およびその型) を宣言する場合は、それらをセミコロン (;) で区切ります。 
+関数の引数は、引数名とデータ型をコロンで区切って宣言します。 パラメーター名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。 複数のパラメーター (およびその型) を宣言する場合は、それらをセミコロン (;) で区切ります。 
 
 
 
