@@ -206,19 +206,19 @@ Pour une fonction de classe, la commande `Current method name` retourne: "*\<Cla
 
 Dans le code de l'application, les fonctions de classe sont appelées en tant que méthodes membres de l'instance d'objet et peuvent recevoir des [paramètres](#class-function-parameters) le cas échéant. Les syntaxes suivantes sont prises en charge :
 
-- utilisation de l'opérateur `()`. For example, `myObject.methodName("hello")`
-- use of a "4D.Function" class member method:
+- utilisation de l'opérateur `()`. Par exemple, `myObject.methodName("hello")`
+- utilisation d'une méthode membre de classe "4D.Function" :
     - [`apply()`](API/formulaClass.md#apply)
     - [`call()`](API/formulaClass.md#call)
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute: - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **Avertissement de sécurité des threads :** Si une fonction de classe n'est pas thread-safe et est appelée par une méthode avec l'attribut "Can be run in preemptive process" : - le compilateur ne génère aucune erreur (ce qui est différent des méthodes classiques), - une erreur n'est générée par 4D qu'au moment de l'exécution.
 
 
 
 
-#### Parameters
+#### Paramètres
 
-Function parameters are declared using the parameter name and the parameter type, separated by a colon. Le nom du paramètre doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties). Plusieurs paramètres (et types) sont séparés par des points-virgules (;).
+Les paramètres de fonction sont déclarés à l'aide du nom du paramètre et du type de paramètre, séparés par deux points. Le nom du paramètre doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties). Plusieurs paramètres (et types) sont séparés par des points-virgules (;).
 
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
@@ -419,28 +419,28 @@ Le mot-clé `Super` autorise les appels à la `superclasse`, c'est-à-dire la cl
 `Super` sert deux objectifs différents :
 
 - à l'intérieur d'un [code constructeur](#class-constructor), `Super` est une commande qui permet d'appeler le constructeur de la superclasse. Lorsqu'elle est utilisée dans un constructeur, la commande `Super` apparaît seule et doit être utilisée avant que le mot clé `This` ne soit utilisé.
-    - Si tous les constructeurs de classe de l'arborescence d'héritage ne sont pas appelés correctement, l'erreur -10748 est générée. It's 4D developer to make sure calls are valid.
-    - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
+    - Si tous les constructeurs de classe de l'arborescence d'héritage ne sont pas appelés correctement, l'erreur -10748 est générée. C'est au développeur 4D de s'assurer que les appels sont valides.
+    - Si la commande `This` est appelée sur un objet dont les superclasses n'ont pas été construites, l'erreur -10743 est générée.
 
-    - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
+    - Si `Super` est appelé hors de la portée d'un objet, ou sur un objet dont le superclass constructor a déjà été appelé, l'erreur -10746 est générée.
 
 ```4d
-// inside myClass constructor
+// à l'intérieur du constructor myClass
 var $text1; $text2 : Text
-Super($text1) //calls superclass constructor with a text param
-This.param:=$text2 // use second param
+Super($text1) // appelle le superclass constructor avec un paramètre texte
+This.param:=$text2 // utilise le second paramètre
 ```
 
-- inside a [class member function](#class-function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
+- à l'intérieur d'une [fonction membre de classe](#class-function), `Super` désigne le prototype de la superclasse et permet d'appeler une fonction de la hiérarchie de la superclasse.
 
 ```4d
-Super.doSomething(42) //calls "doSomething" function  
-//declared in superclasses
+Super.doSomething(42) // appelle la fonction "doSomething"  
+// déclaré dans les superclasses
 ```
 
-#### Example 1
+#### Exemple 1
 
-This example illustrates the use of `Super` in a class constructor. The command is called to avoid duplicating the constructor parts that are common between `Rectangle` and `Square` classes.
+Cet exemple illustre l'utilisation de `Super` dans un class constructor. La commande est appelée pour éviter de dupliquer les parties du constructeur qui sont communes aux classes `Rectangle` et `Square`.
 
 ```4d
 // Class: Rectangle
@@ -453,7 +453,7 @@ Class constructor($width : Integer; $height : Integer)
 Function sayName()
     ALERT("Hi, I am a "+This.name+".")
 
-// Function definition
+// Définition de la fonction 
 Function getArea()
     var $0 : Integer
     $0:=(This.height)*(This.width)
@@ -466,31 +466,31 @@ Class extends Rectangle
 
 Class constructor ($side : Integer)
 
-    // It calls the parent class's constructor with lengths
-    // provided for the Rectangle's width and height
+     // Il appelle le constructor de la classe parente avec des longueurs
+     // fourni pour la largeur et la hauteur du rectangle
     Super($side;$side)
-    // In derived classes, Super must be called before you
-    // can use 'This'
-    This.name:="Square"
+     // Dans les classes dérivées, Super doit être appelé avant 
+     // de pouvoir utiliser 'This'
+     This.name:="Square "
 
 Function getArea()
-    C_LONGINT($0)
+     C_LONGINT($0)
     $0:=This.height*This.width
 ```
 
 #### Example 2
 
-This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
+Cet exemple illustre l'utilisation de `Super` dans une méthode membre de classe. Vous avez créé la classe `Rectangle` avec une fonction :
 
 ```4d
-//Class: Rectangle
+// Class: Rectangle
 
-Function nbSides()
+Function nbSides ()
     var $0 : Text
-    $0:="I have 4 sides"
+    $0:="Je possède 4 côtés"
 ```
 
-You also created the `Square` class with a function calling the superclass function:
+Vous avez également créé la classe `Square` avec une fonction appelant la fonction superclass :
 
 ```4d
 //Class: Square
@@ -499,68 +499,30 @@ Class extends Rectangle
 
 Function description()
     var $0 : Text
-    $0:=Super.nbSides()+" which are all equal"
+    $0:=Super.nbSides()+"qui sont tous égaux"
 ```
 
-Then you can write in a project method:
+Ensuite, vous pouvez écrire dans une méthode projet :
 
-```4d
-var $square : Object
+<code class="4d" spaces="0" spaces-closing-marker="0" marker="```" spaces-after-opening-marker="0" line-breaks-before="2">var $square : Object
 var $message : Text
 $square:=cs.Square.new()
-$message:=$square.description() //I have 4 sides which are all equal
-```
+$message:=$square.description() //Je possède 4 côtés qui sont tous égaux
+</code></pre>
 
 ### This
 
 #### This -> Object
 
-| Parameter | Type   |    | Description    |
+| Paramètre | Type   |    | Description    |
 | --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
+| Résultat  | object | <- | Current object |
 
-The `This` keyword returns a reference to the currently processed object. You created the `Rectangle` class with a function:
+Le mot-clé `This` retourne une réfrence à l'objet en cours de traitement. Dans 4D, il peut être utilisé dans [différents contextes](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-```4d
-  //Class: Rectangle
+Dans la plupart des cas, la valeur de `This` est déterminée par la manière dont une fonction est appelée. Il ne peut pas être défini par affectation lors de l'exécution, et il peut être différent à chaque fois que la fonction est appelée.
 
- Function nbSides
- C_TEXT($0)
- $0:="I have 4 sides"
-```
-
-You also created the `Square` class with a function calling the superclass function:
-
-```4d
-  //Class: Square
-
- Class extends Rectangle
-
- Function description
- C_TEXT($0)
- $0:=Super.nbSides()+" which are all equal"
-```
-
-Then you can write in a project method:
-
-```4d
- C_OBJECT($square)
- C_TEXT($message)
- $square:=cs.Square.new()
- $message:=$square.description() //I have 4 sides which are all equal
-```
-
-### This
-
-#### This -> Object
-
-| Parameter | Type   |    | Description    |
-| --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
-
-The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
-
-In most cases, the value of `This` is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called. Par exemple :
+Lorsqu'une formule est appelée en tant que méthode membre d'un objet, son `This` est défini à l'objet sur lequel la méthode est appelée. Par exemple :
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
