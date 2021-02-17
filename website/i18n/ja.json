@@ -680,7 +680,7 @@
         "title": "概要"
       },
       "ReleaseNotes/whatsNew": {
-        "title": "What's New"
+        "title": "新着情報"
       },
       "REST/{dataClass}": {
         "title": "{dataClass}"
