@@ -190,7 +190,7 @@
         "title": "プロジェクトパッケージのビルド"
       },
       "Desktop/clientServer": {
-        "title": "Client/Server Management"
+        "title": "クライアント/サーバー管理"
       },
       "Events/onActivate": {
         "title": "On Activate"
@@ -793,14 +793,14 @@
       "Backup and Restore": "バックアップと復元",
       "Web Server": "Web サーバー",
       "REST Server": "REST サーバー",
-      "Client/Server": "Client/Server",
+      "Client/Server": "クライアント/サーバー",
       "Forms": "Forms",
       "Form Properties": "フォームプロパティ",
       "Form Objects": "フォームオブジェクト",
       "Form Object Properties": "フォームオブジェクトプロパティ",
       "Form Events": "フォームイベント",
       "Menus": "メニュー",
-      "Build application": "Build application"
+      "Build application": "アプリケーションビルド"
     }
   },
   "pages-strings": {
@@ -822,7 +822,7 @@
     "Backup and Restore|no description given": "バックアップと復元",
     "License Management|no description given": "ライセンス管理",
     "Build Application|no description given": "アプリケーションビルド",
-    "Client/Server|no description given": "Client/Server",
+    "Client/Server|no description given": "クライアント/サーバー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
     "Access Rights|no description given": "アクセス権限",
     "Getting started|no description given": "はじめに",
