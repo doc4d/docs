@@ -21,15 +21,15 @@ title: '$attributes'
     - `$attributes=relatedEntity.attributePath1, relatedEntity.attributePath2, ...`: リレートエンティティの指定された属性だけが返されます。
 
 
-- If `$attributes` is specified for **related entities** attributes:
-    - `$attributes=relatedEntities.*`: all the properties of all the related entities are returned
-    - `$attributes=relatedEntities.attributePath1, relatedEntities.attributePath2, ...`: only those attributes of the related entities are returned.
+- **リレートエンティティズ** 属性を対象に `$attributes` が指定された場合:
+    - `$attributes=relatedEntities.*`: リレートエンティティズの属性がすべて返されます。
+    - `$attributes=relatedEntities.attributePath1, relatedEntities.attributePath2, ...`: リレートエンティティズの指定された属性だけが返されます。
 
 
 
-## Example with related entities
+## リレートエンティティズの例
 
-If we pass the following REST request for our Company dataclass (which has a relation attribute "employees"):
+"employees" 1対Nリレーションを持つ Company データクラスに対して次の RESTリクエストをおこなうと:
 
  `GET  /rest/Company(1)/?$attributes=employees.lastname`
 
@@ -75,7 +75,7 @@ employees の属性をすべて取得するには:
 
 ## リレートエンティティの例
 
-If we pass the following REST request for our Employee dataclass (which has several relation attributes, including "employer"):
+"employer" N対1リレーションを持つ Employee データクラスに対して次の RESTリクエストをおこなうと:
 
 
  `GET  /rest/Employee(1)?$attributes=employer.name`
