@@ -3,7 +3,7 @@ id: building
 title: プロジェクトパッケージのビルド
 ---
 
-4D includes a final application builder to create a project package (final build). このビルダーを使用すれば、コンパイルされた 4D アプリケーションの展開を簡易化することができます。 OS ごとに異なる特定の処理を自動で処理し、クライアント/サーバーアプリケーションの展開が容易になります。
+4D にはプロジェクトパッケージ (ファイナルビルド) を作成するためのアプリケーションビルダーが統合されています。 このビルダーを使用すれば、コンパイルされた 4D アプリケーションの展開を簡易化することができます。 OS ごとに異なる特定の処理を自動で処理し、クライアント/サーバーアプリケーションの展開が容易になります。
 
 アプリケーションビルダーでは以下のことを行えます:
 
@@ -14,7 +14,7 @@ title: プロジェクトパッケージのビルド
 *   クライアントとサーバーの自動更新機能を備えたクライアント/サーバーアプリケーションのビルド
 *   ビルド設定の保存 (*設定保存* ボタン)
 
-> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible in compiled applications.
+> コンパイル済みアプリケーションは、**読み取り専用** である [.4dz files](#コンパイル済みストラクチャーをビルド) ファイルに基づきます。 Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible in compiled applications.
 
 
 ## アプリケーションのビルド
