@@ -14,7 +14,7 @@ title: プロジェクトパッケージのビルド
 *   クライアントとサーバーの自動更新機能を備えたクライアント/サーバーアプリケーションのビルド
 *   ビルド設定の保存 (*設定保存* ボタン)
 
-> コンパイル済みアプリケーションは、**読み取り専用** である [.4dz files](#コンパイル済みストラクチャーをビルド) ファイルに基づきます。 Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible in compiled applications.
+> コンパイル済みアプリケーションは、**読み取り専用** である [.4dz files](#コンパイル済みストラクチャーをビルド) ファイルに基づきます。 コンパイル済みアプリケーションの場合、ソースファイルを変更するコマンドや関数 (`CREATE INDEX` や `CREATE TABLE` (SQL)) は使用できないことに留意が必要です。
 
 
 ## アプリケーションのビルド
@@ -85,7 +85,7 @@ title: プロジェクトパッケージのビルド
 
 *\<destination\>/Compiled Database/MyProject/MyProject.4dz*
 
-> .4dz ファイルは ZIP 圧縮されたプロジェクトフォルダーです (**注:** バイナリデータベースの場合に生成される .4DC ファイルと同義ではないことに注意が必要です)。 .4dz files can be used by 4D Server, 4D Volume license (merged applications), and 4D. 圧縮・最適化された .4dz ファイルによってプロジェクトパッケージの展開が容易になります。
+> .4dz ファイルは ZIP 圧縮されたプロジェクトフォルダーです (**注:** バイナリデータベースの場合に生成される .4DC ファイルと同義ではないことに注意が必要です)。 .4dz ファイルを開けるのは 4D Server、4D Volume ライセンス (組み込みアプリケーション)、および 4D です。 圧縮・最適化された .4dz ファイルによってプロジェクトパッケージの展開が容易になります。
 
 
 #### 関連するフォルダーを含む
