@@ -3,7 +3,7 @@ id: info
 title: '$info'
 ---
 
-Returns information about the entity sets currently stored in 4D Server's cache as well as user sessions
+4D Server のキャッシュに保存されているエンティティセットおよびユーザーセッションの情報を返します。
 
 ## 説明
 When you call this request for your project, you retrieve information in the following properties:
