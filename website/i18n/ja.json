@@ -400,7 +400,7 @@
         "title": "フォームプロパティ"
       },
       "FormEditor/formSize": {
-        "title": "Form Size"
+        "title": "フォームサイズ"
       },
       "FormEditor/jsonReference": {
         "title": "JSON プロパティリスト"
@@ -653,7 +653,7 @@
         "title": "ORDAとは何か"
       },
       "ORDA/quickTour": {
-        "title": "A Quick Tour in ORDA"
+        "title": "ORDA の概要"
       },
       "ORDA/datastores": {
         "title": "リモートデータストアの利用"
@@ -794,7 +794,7 @@
       "Web Server": "Web サーバー",
       "REST Server": "REST サーバー",
       "Client/Server": "クライアント/サーバー",
-      "Forms": "Forms",
+      "Forms": "フォーム",
       "Form Properties": "フォームプロパティ",
       "Form Objects": "フォームオブジェクト",
       "Form Object Properties": "フォームオブジェクトプロパティ",
@@ -810,7 +810,7 @@
     "Project Management|in index page Getting started": "プロジェクト管理",
     "Object Relational Data Access (ORDA)|in index page Getting started": "ORDA",
     "Class API Reference|no description given": "クラス API リファレンス",
-    "Forms|no description given": "Forms",
+    "Forms|no description given": "フォーム",
     "Form Properties|no description given": "フォームプロパティ",
     "Form Events|no description given": "フォームイベント",
     "Form Objects|no description given": "フォームオブジェクト",
