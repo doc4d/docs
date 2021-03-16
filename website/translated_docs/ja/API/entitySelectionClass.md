@@ -7,7 +7,7 @@ title: EntitySelection
 An entity selection is an object containing one or more reference(s) to [entities](ORDA/dsMapping.md#entity) belonging to the same [Dataclass](ORDA/dsMapping.md#dataclass). エンティティセレクションは、データクラスから 0個、1個、あるいは X個のエンティティを格納することができます (X はデータクラスに格納されているエンティティの総数です)。
 
 
-### Summary
+### 概要
 
 |                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -203,7 +203,7 @@ Projection of related entity:
 
 The resulting object is an entity selection of Company with duplications removed (if any).
 
-#### Example 3
+#### 例題 3
 
 Projection of related entities:
 
@@ -1957,7 +1957,7 @@ Returns:
     }]
 ```
 
-#### Example 3
+#### 例題 3
 
 Example with slicing and filtering on properties:
 

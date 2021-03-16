@@ -1,12 +1,12 @@
 ---
 id: entityClass
-title: エンティティ
+title: Entity
 ---
 
 An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMapping.md#dataclass), like a record of the table matching the dataclass in its associated datastore. It contains the same attributes as the dataclass as well as the data values and specific properties and functions.
 
 
-### Summary
+### 概要
 
 |                                                                                                                                                                                                                |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1239,7 +1239,7 @@ Updating an entity without `dk auto merge` option:
  End case
 ```
 
-#### Example 3
+#### 例題 3
 
 Updating an entity with `dk auto merge` option:
 
@@ -1388,7 +1388,7 @@ Returns:
 }
 ```
 
-#### Example 3
+#### 例題 3
 
 Expanding all the properties of `relatedEntities`:
 
