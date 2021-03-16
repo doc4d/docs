@@ -4,11 +4,11 @@ title: Class
 ---
 
 
-When a user class is [defined](Concepts/classes.md#class-definition) in the project, it is loaded in the 4D language environment. A class is an object itself, of "Class" class, which has properties and a function.
+プロジェクトにおいてユーザークラスが [定義](Concepts/classes.md#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。 クラスとは、それ自身が "Class" クラスのオブジェクトであり、プロパティと関数を持ちます。
 
 
 
-### Summary
+### 概要
 
 
 |                                                                                                                                                                                    |
@@ -34,9 +34,9 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 
 #### 説明
 
-The `.name` property <!-- REF #classClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. 大文字と小文字が区別されること
+`.name` プロパティは <!-- REF #classClass.name.Summary -->contains the name of the `4D.Class` オブジェクトの名称を格納します<!-- END REF -->。 クラス名の大文字・小文字は区別されます。
 
-This property is **read-only**. 
+このプロパティは **読み込み専用** です。 
 
 <!-- END REF -->
 
@@ -55,10 +55,10 @@ This property is **read-only**.
 **.new**( *param* : any { *;...paramN* } ) : 4D.Class<!-- END REF -->
 
 <!-- REF #classClass.new().Params -->
-| 参照    | タイプ      |    | 説明                                               |
-| ----- | -------- |:--:| ------------------------------------------------ |
-| param | any      | -> | Parameter(s) to pass to the constructor function |
-| 戻り値   | 4D.Class | <- | New object of the class                          |
+| 参照    | タイプ      |    | 説明              |
+| ----- | -------- |:--:| --------------- |
+| param | any      | -> | コンストラクター関数に渡す引数 |
+| 戻り値   | 4D.Class | <- | クラスの新規オブジェクト    |
 <!-- END REF -->
 
 
@@ -123,7 +123,7 @@ The `.superclass` property <!-- REF #classClass.superclass.Summary -->returns th
 
 A superclass of a user class is declared in a class by using the [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) keyword.
 
-This property is **read-only**.
+このプロパティは **読み込み専用** です。
 
 #### 例題
 
