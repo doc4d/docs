@@ -34,7 +34,7 @@ title: Class
 
 #### 説明
 
-`.name` プロパティは <!-- REF #classClass.name.Summary -->contains the name of the `4D.Class` オブジェクトの名称を格納します<!-- END REF -->。 クラス名の大文字・小文字は区別されます。
+`.name` プロパティは、 <!-- REF #classClass.name.Summary -->`4D.Class` オブジェクトの名称を格納します<!-- END REF -->。 クラス名の大文字・小文字は区別されます。
 
 このプロパティは **読み込み専用** です。 
 
@@ -64,26 +64,26 @@ title: Class
 
 #### 説明
 
-The `.new()` function <!-- REF #classClass.new().Summary -->creates and returns a `cs.className` object which is a new instance of the class on which it is called<!-- END REF -->. This function is automatically available on all classes from the [`cs` class store](Concepts/classes.md#cs).
+`.new()` 関数は、 <!-- REF #classClass.new().Summary -->対象クラスの新規インスタンスである `cs.className` オブジェクトを作成して返します<!-- END REF -->。 この関数は、[`cs` クラスストア](Concepts/classes.md#cs) に属する全クラスで自動的に利用可能です。
 
-You can pass one or more optional *param* parameters, which will be passed to the [class constructor](Concepts/classes.md#class-constructor) function (if any) in the className class definition. Within the constructor function, the [`This`](Concepts/classes.md#this) is bound to the new object being constructed.
+任意の *param* パラメーターに渡した引数は、当該クラス定義内の [Class Constructor](Concepts/classes.md#class-constructor) 関数 (あれば) が受け取ります。 コンストラクター関数においては、[`This`](Concepts/classes.md#this) は新規に作成されるオブジェクトを指します。
 
-If `.new()` is called on a non-existing class, an error is returned.
+存在しないクラスを対象に `.new()` を呼び出した場合、エラーが返されます。
 
 #### 例題
 
 Person クラスの新規インスタンスを作成するには、次のように書きます:
 
 ```4d
-var $person : cs.Person  
-$person:=cs.Person.new() //create the new instance  
-//$person contains functions of the class
+var $person : cs.Person 
+$person:=cs.Person.new() // 新規インスタンスの作成  
+//$person はクラス関数を格納しています
 ```
 
-To create a new instance of the Person class with parameters:
+パラメーターを使って、Personクラスの新規インスタンスを作成するには、次のように書きます:
 
 ```4d
-//Class: Person.4dm
+// クラス: Person.4dm
 Class constructor($firstname : Text; $lastname : Text; $age : Integer)
     This.firstName:=$firstname
     This.lastName:=$lastname
@@ -91,12 +91,12 @@ Class constructor($firstname : Text; $lastname : Text; $age : Integer)
 ```
 
 ```4d
-//In a method
+// メソッド内の使用例
 var $person : cs.Person  
 $person:=cs.Person.new("John";"Doe";40)  
-//$person.firstName = "John"
-//$person.lastName = "Doe"
-//$person.age = 40
+// $person.firstName = "John"
+// $person.lastName = "Doe"
+// $person.age = 40
 ```
 
 
@@ -119,28 +119,28 @@ $person:=cs.Person.new("John";"Doe";40)
 
 #### 説明
 
-The `.superclass` property <!-- REF #classClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. A superclass can be a `4D.Class` object, or a `cs.className` object. If the class does not have a parent class, the property returns **null**.
+`.superclass` プロパティは、 <!-- REF #classClass.superclass.Summary -->対象クラスの親クラスを返します<!-- END REF -->。 スーパークラスは、`4D.Class` オブジェクト、あるいは `cs.className` オブジェクトのいずれかです。 親クラスが存在しない場合は、このプロパティは **null** を返します。
 
-A superclass of a user class is declared in a class by using the [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) keyword.
+ユーザークラスのスーパークラスは、[`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) キーワードを使ってクラス内で定義されます。
 
 このプロパティは **読み込み専用** です。
 
 #### 例題
 
 ```4d
-$sup:=4D.File.superclass //Document
-$sup:=4D.Document.superclass //Object
-$sup:=4D.Object.superclass //null
+$sup:=4D.File.superclass // Document
+$sup:=4D.Document.superclass // Object
+$sup:=4D.Object.superclass // null
 
-// If you created a MyFile class  
-// with `Class extends File`
-$sup:=cs.MyFile.superclass //File 
+// `Class extends File` を使って
+// MyFile クラスを作成した場合  
+$sup:=cs.MyFile.superclass // File 
 
 ```
 
 
 
-**See also:** [Super](Concepts/classes.md#super)
+**参照:** [Super](Concepts/classes.md#super)
 <!-- END REF -->
 
 <style> h2 { background: #d9ebff;}</style>
