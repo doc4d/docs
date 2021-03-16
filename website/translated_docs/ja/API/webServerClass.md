@@ -15,7 +15,7 @@ Web server objects are instantiated with the [`WEB Server`](#web-server) command
 They provide the following properties and functions:
 
 
-### Summary
+### 概要
 |                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [<!-- INCLUDE #webServerClass.certificateFolder.Syntax -->](#certificatefolder)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #webServerClass.certificateFolder.Summary -->|
