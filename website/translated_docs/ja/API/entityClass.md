@@ -1239,7 +1239,7 @@ Updating an entity without `dk auto merge` option:
  End case
 ```
 
-#### Example 3
+#### 例題 3
 
 Updating an entity with `dk auto merge` option:
 
@@ -1388,7 +1388,7 @@ Returns:
 }
 ```
 
-#### Example 3
+#### 例題 3
 
 Expanding all the properties of `relatedEntities`:
 
