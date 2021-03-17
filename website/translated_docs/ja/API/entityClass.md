@@ -1457,7 +1457,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 }
 ```
 
-#### Example 4
+#### 例題 4
 
 Extracting some properties of `relatedEntities`:
 
