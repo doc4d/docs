@@ -73,8 +73,8 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#new-collection"><strong>New collection</strong> {( <em>...value</em> : any )} : Collection</a><p>     空の、あるいは値の入った新しいコレクションを作成します</td></tr>
-<tr><td><a href="#new-shared-collection"><strong>New shared collection</strong> {( <em>...value</em> : any )} : Collection</a><p>     creates a new empty or prefilled shared collection</td></tr>
+<tr><td><a href="#new-collection"><strong>New collection</strong> {( <em>...value</em> : any )} : Collection</a><p>     空の、あるいは値の入った新規コレクションを作成し、その参照を返します</td></tr>
+<tr><td><a href="#new-shared-collection"><strong>New shared collection</strong> {( <em>...value</em> : any )} : Collection</a><p>     空の、あるいは値が入った新規コレクションを作成し、その参照を返します</td></tr>
 </tbody>
 </table>
 <h3><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>
@@ -87,16 +87,16 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#average"><strong>.average</strong>( {<em>propertyPath</em> : Text } ) : Real</a><p>    returns the arithmetic mean (average) of defined values in the collection instance</td></tr>
-<tr><td><a href="#clear"><strong>.clear()</strong> : Collection</a><p>    removes all elements from the collection instance and returns an empty collection</td></tr>
-<tr><td><a href="#combine"><strong>.combine</strong>( <em>col2</em> : Collection {; <em>index</em> : Integer } ) : Collection</a><p>    inserts <em>col2</em> elements at the end or at the specified <em>index</em> position in the collection instance and returns the edited collection</td></tr>
-<tr><td><a href="#concat"><strong>.concat</strong>( <em>value</em> : any { <em>;...valueN</em> } ) : Collection</a><p>    returns a new collection containing the elements of the original collection with all elements of the <em>value</em> parameter added to the end</td></tr>
-<tr><td><a href="#copy"><strong>.copy</strong>() : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithCol</em> : Collection ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithObj</em> : Object ) : Collection</a><p>     returns a deep copy of the collection instance</td></tr>
-<tr><td><a href="#count"><strong>.count</strong>( { <em>propertyPath</em> : Text } ) : Real</a><p>    returns the number of non-null elements in the collection</td></tr>
-<tr><td><a href="#countvalues"><strong>.countValues</strong>( <em>value</em> : any {; <em>propertyPath</em> : Text } ) : Real</a><p>    returns the number of times value is found in the collection</td></tr>
-<tr><td><a href="#distinct"><strong>.distinct</strong>( {<em>option</em> : Integer} ) : Collection<br><strong>.distinct</strong>( <em>propertyPath</em> : Text {; <em>option</em> : Integer } ) : Collection</a><p>    returns a collection containing only distinct (different) values from the original collection</td></tr>
-<tr><td><a href="#equal"><strong>.equal</strong>( <em>collection2</em> : Collection {; <em>option</em> : Integer } ) : Boolean</a><p>    compares the collection with collection2</td></tr>
-<tr><td><a href="#every"><strong>.every</strong>( <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean<br><strong>.every</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean</a><p>    returns <strong>true</strong> if all elements in the collection successfully passed a test implemented in the provided <em>methodName</em> method</td></tr>
+<tr><td><a href="#average"><strong>.average</strong>( {<em>propertyPath</em> : Text } ) : Real</a><p>    コレクションインスタンス内で定義されている値の算術平均を返します</td></tr>
+<tr><td><a href="#clear"><strong>.clear()</strong> : Collection</a><p>    コレクションインスタンス内の全要素を削除し、空のコレクションを返します</td></tr>
+<tr><td><a href="#combine"><strong>.combine</strong>( <em>col2</em> : Collection {; <em>index</em> : Integer } ) : Collection</a><p>    コレクションインスタンスの最後、あるいは <em>index</em> で指定した位置に <em>col2</em> の要素を挿入し、変更された元のコレクションを返します</td></tr>
+<tr><td><a href="#concat"><strong>.concat</strong>( <em>value</em> : any { <em>;...valueN</em> } ) : Collection</a><p>    <em>value</em> に指定した要素を元のコレクションの最後に追加した、新しいコレクションを返します</td></tr>
+<tr><td><a href="#copy"><strong>.copy</strong>() : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithCol</em> : Collection ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithObj</em> : Object ) : Collection</a><p>     コレクションインスタンスのディープ・コピーを返します</td></tr>
+<tr><td><a href="#count"><strong>.count</strong>( { <em>propertyPath</em> : Text } ) : Real</a><p>    コレクション内の、null ではない要素の個数を返します</td></tr>
+<tr><td><a href="#countvalues"><strong>.countValues</strong>( <em>value</em> : any {; <em>propertyPath</em> : Text } ) : Real</a><p>    <code>value</code> 引数に指定した値がコレクション内において見つかった回数を返します</td></tr>
+<tr><td><a href="#distinct"><strong>.distinct</strong>( {<em>option</em> : Integer} ) : Collection<br><strong>.distinct</strong>( <em>propertyPath</em> : Text {; <em>option</em> : Integer } ) : Collection</a><p>    元のコレクションから重複しない (異なる) 値のみを格納した新しいコレクションを返します</td></tr>
+<tr><td><a href="#equal"><strong>.equal</strong>( <em>collection2</em> : Collection {; <em>option</em> : Integer } ) : Boolean</a><p>    コレクションを <em>collection2</em> とディープ比較し、同一の場合には <strong>true</strong> を返します</td></tr>
+<tr><td><a href="#every"><strong>.every</strong>( <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean<br><strong>.every</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean</a><p>    コレクション内の全要素が、<em>methodName</em> に指定したメソッドで実装されたテストにパスした場合には <strong>true</strong> を返します</td></tr>
 <tr><td><a href="#extract"><strong>.extract</strong>( <em>propertyPath</em> : Text { ; <em>option</em> : Integer } ) : Collection<br><strong>.extract</strong>( <em>propertyPath</em> : Text ;  <em>targetPath</em> : Text  { ;...<em>propertyPathN</em> : Text ;... <em>targetPathN</em> : Text } ) : Collection</a><p>    creates and returns a new collection containing <em>propertyPath</em> values extracted from the original collection of objects</td></tr>
 <tr><td><a href="#fill"><strong>.fill</strong>( <em>value</em> : any ) : Collection<br><strong>.fill</strong>( <em>value</em> : any ;  <em>startFrom</em>  : Integer { ; <em>end</em> : Integer } ) : Collection</a><p>    fills the collection with the specified <em>value</em>, optionally from <em>startFrom</em> index to <em>end</em> index, and returns the resulting collection</td></tr>
 <tr><td><a href="#filter"><strong>.filter</strong>( <em>methodName</em> : Text { ; <em>...param</em> : any } ) : Collection</a><p>    returns a new collection containing all elements of the original collection for which <em>methodName</em> method result is <strong>true</strong></td></tr>
@@ -150,7 +150,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>New collection</code> コマンドは、  空の、あるいは値の入った新しいコレクションを作成します 。戻り値は、作成された新しいコレクションへの参照です。</p>
+<p><code>New collection</code> コマンドは、  空の、あるいは値の入った新規コレクションを作成し、その参照を返します 。</p>
 <p>引数を渡さなかった場合、<code>New collection</code> は空のコレクションを作成し、その参照を返します。</p>
 <p>返された参照は、コレクション型の 4D変数に代入する必要があります。</p>
 <blockquote>
@@ -189,7 +189,7 @@
  <span class="hljs-variable">$vcolSize</span>:=<span class="hljs-variable">$coll</span>.length <span class="hljs-comment">// 10</span>
   <span class="hljs-comment">// $coll=["a","b","c",null,null,null,null,null,null,"z"]</span>
 </code></pre>
-<h2><a class="anchor" aria-hidden="true" id="new-shared-collection"></a><a href="#new-shared-collection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New shared collection</h2>
+<h2><a class="anchor" aria-hidden="true" id="新規の共有コレクション"></a><a href="#新規の共有コレクション" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>新規の共有コレクション</h2>
 <p><details><summary>履歴</summary></p>
 <table>
 <thead>
@@ -206,38 +206,38 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>value</td><td>Number, Text, Date, Time, Boolean, Shared object, Shared collection</td><td style="text-align:center">-&gt;</td><td>Shared collection's value(s)</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>New shared collection</td></tr>
+<tr><td>value</td><td>数値、テキスト、日付、時間、ブール、共有オブジェクト、共有コレクション</td><td style="text-align:center">-&gt;</td><td>共有コレクションの値</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>新規の共有コレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>New shared collection</code> command  creates a new empty or prefilled shared collection and returns its reference.</p>
-<p>Adding an element to this collection must be surrounded by the <a href="/docs/Rx/ja/Concepts/shared.html#useend-use"><code>Use...End</code></a> use structure, otherwise an error is generated. Reading an element without a structure is, however, possible.</p>
+<p><code>New shared collection</code> コマンドは、  空の、あるいは値が入った新規コレクションを作成し、その参照を返します 。</p>
+<p>このコレクションに要素を追加する場合には <a href="/docs/Rx/ja/Concepts/shared.html#useend-use"><code>Use...End use</code></a> 構造でくくる必要があり、そうしない場合にはエラーが返されます。 ただし、属性の読み取りは <a href="/docs/Rx/ja/Concepts/shared.html#useend-use"><code>Use...End use</code></a> 構造の外側でも可能です。</p>
 <blockquote>
-<p>For more information on shared collections, please refer to the <a href="/docs/Rx/ja/Concepts/shared.html">Shared objects and collections</a> page.</p>
+<p>共有コレクションについての詳細は、<a href="/docs/Rx/ja/Concepts/shared.html">共有オブジェクトと共有コレクション</a> のページを参照してください。</p>
 </blockquote>
-<p>If you do not pass any parameters, <code>New shared collection</code> creates an empty shared collection and returns its reference.</p>
+<p>引数を渡さない場合、<code>New shared collection</code> は空のコレクションを作成し、その参照を返します。</p>
 <p>返された参照は、コレクション型の 4D変数に代入する必要があります。</p>
 <blockquote>
 <p><code>var : Collection</code> や <code>C_COLLECTION</code> ステートメントはコレクション型の変数を宣言しますが、コレクション自体は作成しないという点に注意してください。</p>
 </blockquote>
-<p>Optionally, you can prefill the new shared collection by passing one or several <em>value</em>(s) as parameter(s). Otherwise, you can add or modify elements subsequently through object notation assignment (see example).</p>
-<p>If the new element index is beyond the last existing element of the shared collection, the collection is automatically resized and all new intermediary elements are assigned a <strong>null</strong> value.</p>
-<p>You can pass any number of values of the following supported types:</p>
+<p>任意で、一つ以上の <em>value</em> 引数を渡すことで、あらかじめ値の入った新しい共有コレクションを作成することができます。 または、あとからオブジェクト記法による代入で要素を一つずつ追加・編集していくことができます (例題参照)。</p>
+<p>共有コレクションの最終要素を超える要素番号 (インデックス) を指定した場合、共有コレクションは自動的にリサイズされ、合い間の要素にはすべて null 値が割り当てられらます。</p>
+<p>以下のサポートされる型であれば、いくつでも値を渡すことができます:</p>
 <ul>
-<li>number (real, longint...). Number values are always stored as reals.</li>
+<li>数値 (実数、倍長整数...)。 数値は常に実数として保存されます。</li>
 <li>text</li>
 <li>boolean</li>
 <li>date</li>
-<li>time (stored as number of milliseconds - real)</li>
+<li>時間 (ミリ秒の数 (実数) として保存されます)。</li>
 <li>null</li>
-<li>shared object(*)</li>
-<li>shared collection(*)</li>
+<li>共有オブジェクト(*)</li>
+<li>共有コレクション(*)</li>
 </ul>
 <blockquote>
-<p>Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.</p>
+<p>標準のコレクション (非共有コレクション) とは異なり、共有コレクションはピクチャーやポインター、共有でないオブジェクトおよびコレクションはサポートしていません。</p>
 </blockquote>
-<p>(*)When a shared object or collection is added to a shared collection, they share the same <em>locking identifier</em>. For more information on this point, refer to the <strong>4D Developer</strong>'s guide.</p>
+<p><em>(</em>) 共有オブジェクトおよびコレクションが共有コレクションに追加された場合、それらは同じロック識別子を共有します<em>。 この点についてのより詳細は、</em><em>4Dランゲージリファレンス</em>* の <a href="https://doc.4d.com/4Dv18/4D/18.4/Shared-objects-and-shared-collections.300-5233766.ja.html#3648963">ロック識別子</a> の章を参照してください。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-4"></a><a href="#例題-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$mySharedCol</span>:=<span class="hljs-function">New shared collection</span>(<span class="hljs-string">"alpha"</span>;<span class="hljs-string">"omega"</span>)<span class="hljs-keyword">
  Use</span>(<span class="hljs-variable">$mySharedCol</span>)
@@ -261,19 +261,19 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Object property path to be used for calculation</td></tr>
-<tr><td>戻り値</td><td>Real, Undefined</td><td style="text-align:center">&lt;-</td><td>Arithmetic mean (average) of collection values</td></tr>
+<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>計算に使用するオブジェクトプロパティのパス</td></tr>
+<tr><td>戻り値</td><td>実数, Undefined</td><td style="text-align:center">&lt;-</td><td>コレクションの値の算術平均</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-2"></a><a href="#説明-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.average()</code> function returns the arithmetic mean (average) of defined values in the collection instance.</p>
-<p>Only numerical elements are taken into account for the calculation (other element types are ignored).</p>
-<p>If the collection contains objects, pass the <em>propertyPath</em> parameter to indicate the object property to take into account.</p>
-<p><code>.average()</code> returns <code>undefined</code> if:</p>
+<p><code>.average()</code> 関数は、 コレクションインスタンス内で定義されている値の算術平均を返します。</p>
+<p>計算の対象となるのは数値のみです (他の型の要素は無視されます)。</p>
+<p>コレクションがオブジェクトを格納している場合には、計算するオブジェクトプロパティのパスを <em>propertyPath</em> に渡します。</p>
+<p><code>.average()</code> は以下の場合には <code>undefined</code> を返します:</p>
 <ul>
-<li>the collection is empty,</li>
-<li>the collection does not contain numerical elements,</li>
-<li><em>propertyPath</em> is not found in the collection.</li>
+<li>コレクションが空の場合</li>
+<li>コレクションに数値が含まれていない場合</li>
+<li><em>propertyPath</em> 引数で指定したパスがコレクション内で見つからない場合</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-1"></a><a href="#例題-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col </span>: Collection
@@ -305,13 +305,13 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Original collection with all elements removed</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>全要素が削除された元のコレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.clear()</code> function removes all elements from the collection instance and returns an empty collection.</p>
+<p><code>.clear()</code> 関数は、 コレクションインスタンス内の全要素を削除し、空のコレクションを返します。</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-5"></a><a href="#例題-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$col </span>: Collection
@@ -336,24 +336,24 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>col2</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>Collection to combine</td></tr>
-<tr><td>index</td><td>整数</td><td style="text-align:center">-&gt;</td><td>Position to which insert elements to combine in collection (default=length+1)</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Original collection containing combined element(s)</td></tr>
+<tr><td>col2</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>追加するコレクション</td></tr>
+<tr><td>index</td><td>整数</td><td style="text-align:center">-&gt;</td><td>追加要素を挿入する位置 (デフォルトは length+1)</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>追加要素を格納した元のコレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.combine()</code> function inserts <em>col2</em> elements at the end or at the specified <em>index</em> position in the collection instance and returns the edited collection. Unlike the <code>.insert()</code> function, <code>.combine()</code> adds each value of <em>col2</em> in the original collection, and not as a single collection element.</p>
+<p><code>.combine()</code> 関数は、 コレクションインスタンスの最後、あるいは <em>index</em> で指定した位置に <em>col2</em> の要素を挿入し、変更された元のコレクションを返します。 <code>.insert()</code> 関数とは異なり、<code>.combine()</code> は <em>col2</em> の各要素を元のコレクション追加します (<em>col2</em> 自体を単一のコレクション要素としては挿入しません)。</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
-<p>By default, <em>col2</em> elements are added at the end of the orginal collection. You can pass in <em>index</em> the position where you want the <em>col2</em> elements to be inserted in the collection.</p>
+<p>デフォルトでは、<em>col2</em> の要素は元のコレクションの最後に追加されます。 <em>index</em> に引数を渡すことで、<em>col2</em> の要素を挿入する位置を指定することができます。</p>
 <blockquote>
-<p><strong>Warning</strong>: Keep in mind that collection elements are numbered from 0.</p>
+<p><strong>警告</strong>: コレクション要素は 0 起点である点に注意してください。</p>
 </blockquote>
 <ul>
-<li>If <em>index</em> &gt; the length of the collection, the actual starting <em>index</em> will be set to the length of the collection.</li>
-<li>If <em>index</em> &lt; 0, it is recalculated as <em>index:=index+length</em> (it is considered as the offset from the end of the collection).</li>
-<li>If the calculated value is negative, <em>index</em> is set to 0.</li>
+<li>指定した <em>index</em> がコレクションの length より大きい場合、実際の開始インデックスはコレクションの length に設定されます。</li>
+<li><em>index</em> &lt; 0 の場合、<em>index:=index+length</em> として再計算されます (コレクションの終端からのオフセットであるとみなされます)。</li>
+<li>計算結果も負の値である場合、<em>index</em> は 0 に設定されます。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-6"></a><a href="#例題-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$c</span>; <span class="hljs-variable">$fruits </span>: Collection
@@ -378,16 +378,16 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>value</td><td>Number, Text, Object, Collection, Date, Time, Boolean, Picture</td><td style="text-align:center">-&gt;</td><td>Value(s) to concatenate. If <em>value</em> is a collection, all collection elements are added to the original collection</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>New collection with value(s) added to the original collection</td></tr>
+<tr><td>value</td><td>数値、テキスト、日付、時間、ブール、オブジェクト、コレクション、ピクチャー</td><td style="text-align:center">-&gt;</td><td>連結する値。 <em>value</em> がコレクションの場合、コレクションの全要素が元のコレクションに追加されます。</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>元のコレクションに値が追加された新規コレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.concat()</code> function returns a new collection containing the elements of the original collection with all elements of the <em>value</em> parameter added to the end.</p>
+<p><code>.concat()</code> 関数は、 <em>value</em> に指定した要素を元のコレクションの最後に追加した、新しいコレクションを返します。</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
-<p>If <em>value</em> is a collection, all its elements are added as new elements at the end of the original collection. If <em>value</em> is not a collection, it is added itself as a new element.</p>
+<p><em>value</em> がコレクションの場合、その全要素が新しい要素として元のコレクションの最後に追加されます。 <em>value</em> がコレクションでない場合、それ自体が新しい要素として追加されます。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-7"></a><a href="#例題-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$c </span>: Collection
 <span class="hljs-variable">$c</span>:=<span class="hljs-function">New collection</span>(<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>;<span class="hljs-number">4</span>;<span class="hljs-number">5</span>)
@@ -403,7 +403,7 @@
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v18 R3</td><td>New <em>ck shared</em> option. New <em>groupWith</em> parameters</td></tr>
+<tr><td>v18 R3</td><td><em>ck shared</em> オプションの追加。 <em>groupWith</em> パラメーターの追加。</td></tr>
 <tr><td>v16 R6</td><td>追加</td></tr>
 </tbody>
 </table>
@@ -414,30 +414,30 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck resolve pointers</code>: resolve pointers before copying,<br><code>ck shared</code>: return a shared collection</td></tr>
-<tr><td>groupWithCol</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>Shared collection to be grouped with the resulting collection</td></tr>
-<tr><td>groupWithObj</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Shared object to be grouped with the resulting collection</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Deep copy of the original collection</td></tr>
+<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck resolve pointers</code>: コピー前にポインターを解決する<br><code>ck shared</code>: 共有コレクションを返す</td></tr>
+<tr><td>groupWithCol</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>結果のコレクションとグループする共有コレクション</td></tr>
+<tr><td>groupWithObj</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>結果のコレクションとグループする共有オブジェクト</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>元のコレクションのディープ・コピー</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-6"></a><a href="#説明-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.copy()</code> function  returns a deep copy of the collection instance.<strong><em>Deep copy</em></strong> means that objects or collections within the original collection are duplicated and do not share any reference with the returned collection.</p>
+<p><code>.copy()</code> 関数は、  コレクションインスタンスのディープ・コピーを返します。<strong><em>ディープ・コピー</em></strong> とは、元のコレクション内のオブジェクトやコレクションは複製されることを意味し、返されたコレクションと元のコレクションは参照を共有しないということを意味します。</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
-<p>If passed, the <em>option</em> parameter can contain one of the following constants (or both):</p>
+<p>任意の <em>option</em> パラメーターには、以下のどちらか (あるいは両方) の定数を渡すことができます:</p>
 <table>
 <thead>
 <tr><th>option</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td><code>ck resolve pointers</code></td><td>If the original collection contains pointer type values, by default the copy also contains the pointers. However, you can resolve pointers when copying by passing the ck resolve pointers. In this case, each pointer present in the collection is evaluated when copying and its dereferenced value is used.</td></tr>
-<tr><td><code>ck shared</code></td><td>By default, copy() returns a regular (not shared) collection, even if the command is applied to a shared collection. Pass the ck shared constant to create a shared collection. In this case, you can use the groupWith parameter to associate the shared collection with another collection or object (see below).</td></tr>
+<tr><td><code>ck resolve pointers</code></td><td>オリジナルのコレクションがポインター型の値を格納している場合、デフォルトではコピー先のオブジェクトもポインターを格納します。 しかしながら、<code>ck resolve pointers</code> 定数を渡すことで、コピー時にポインターを解決することができます。 この場合、コレクション内の各ポインターはコピー時に解決され、解決済みの値が使用されます。</td></tr>
+<tr><td><code>ck shared</code></td><td>共有コレクションに対して適用された場合でも、<code>copy()</code> はデフォルトで通常の (非共有の) コレクションを返します。 共有コレクションを作成するには、<code>ck shared</code> 定数を渡します。 この場合には、<code>groupWith</code> パラメーターに引数を渡して他の共有オブジェクトまたは共有コレクションに関連づけることもできます (以下参照)。</td></tr>
 </tbody>
 </table>
-<p>The <em>groupWithCol</em> or <em>groupWithObj</em> parameters allow you to designate a collection or an object with which the resulting collection should be associated.</p>
+<p><em>groupWithCol</em> または <em>groupWithObj</em> 引数を渡すと、結果のコレクションを関連づけるコレクションまたはオブジェクトを指定できます。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-2"></a><a href="#例題-1-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
-<p>We want to copy the <em>$lastnames</em> regular (non shared) collection into the <em>$sharedObject</em> shared object. To do this, we must create a shared copy of the collection (<em>$sharedLastnames</em>).</p>
+<p>通常の (非共有の) コレクション <em>$lastnames * を、共有オブジェクト <em>$sharedObject</em> 内にコピーします。 このためには、まず共有コレクション (</em>$sharedLastnames*) を作成する必要があります。</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$sharedObject </span>: Object<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$lastnames</span>;<span class="hljs-variable">$sharedLastnames </span>: Collection<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$text </span>: Text
@@ -445,44 +445,44 @@ var</span> <span class="hljs-variable">$text </span>: Text
 <span class="hljs-variable">$sharedObject</span>:=New shared object
 
 <span class="hljs-variable">$text</span>:=<span class="hljs-function">Document to text</span>(<span class="hljs-function">Get 4D folder</span>(Current resources folder)+<span class="hljs-string">"lastnames.txt"</span>)
-<span class="hljs-variable">$lastnames</span>:=<span class="hljs-function">JSON Parse</span>(<span class="hljs-variable">$text</span>) <span class="hljs-comment">//$lastnames is a regular collection</span>
+<span class="hljs-variable">$lastnames</span>:=<span class="hljs-function">JSON Parse</span>(<span class="hljs-variable">$text</span>) <span class="hljs-comment">// $lastnames は通常のコレクションです</span>
 
-<span class="hljs-variable">$sharedLastnames</span>:=<span class="hljs-variable">$lastnames</span>.<span class="hljs-function">copy</span>(ck shared) <span class="hljs-comment">//$sharedLastnames is a shared collection</span>
+<span class="hljs-variable">$sharedLastnames</span>:=<span class="hljs-variable">$lastnames</span>.<span class="hljs-function">copy</span>(ck shared) <span class="hljs-comment">// $sharedLastnames は共有コレクションです</span>
 
-<span class="hljs-comment">//Now we can put $sharedLastnames into $sharedObject</span><span class="hljs-keyword">
+<span class="hljs-comment">// $sharedLastnames は $sharedObject の中に入れられます</span><span class="hljs-keyword">
 Use</span>(<span class="hljs-variable">$sharedObject</span>)
     <span class="hljs-variable">$sharedObject</span>.lastnames:=<span class="hljs-variable">$sharedLastnames</span><span class="hljs-keyword">
 End use</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2-2"></a><a href="#例題-2-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
-<p>We want to combine <em>$sharedColl1</em> and <em>$sharedColl2</em>. Since they belong to different shared groups, a direct combination would result in an error. Therefore, we must make a shared copy of <em>$sharedColl1</em> and designate <em>$sharedColl2</em> as a shared group for the copy.</p>
+<p>どちらも共有コレクションである <em>$sharedColl1</em> と<em>$sharedColl2</em> を結合します。 これらは異なる共有グループに所属しているため、直接結合した場合にはエラーが生成されます。 そこで、 <em>$sharedColl1</em> のコピーを作成し、<em>$sharedColl2</em> をそのコピーの共有グループ先に指定します。</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$sharedColl1</span>;<span class="hljs-variable">$sharedColl2</span>;<span class="hljs-variable">$copyColl </span>: Collection
 
 <span class="hljs-variable">$sharedColl1</span>:=<span class="hljs-function">New shared collection</span>(<span class="hljs-function">New shared object</span>(<span class="hljs-string">"lastname"</span>;<span class="hljs-string">"Smith"</span>))
 <span class="hljs-variable">$sharedColl2</span>:=<span class="hljs-function">New shared collection</span>(<span class="hljs-function">New shared object</span>(<span class="hljs-string">"lastname"</span>;<span class="hljs-string">"Brown"</span>))
 
-<span class="hljs-comment">//$copyColl belongs to the same shared group as $sharedColl2</span>
+<span class="hljs-comment">// $copyColl を $sharedColl2  と同じ共有グループに所属させます</span>
  <span class="hljs-variable">$copyColl</span>:=<span class="hljs-variable">$sharedColl1</span>.<span class="hljs-function">copy</span>(ck shared;<span class="hljs-variable">$sharedColl2</span>)<span class="hljs-keyword">
  Use</span>(<span class="hljs-variable">$sharedColl2</span>)
     <span class="hljs-variable">$sharedColl2</span>.<span class="hljs-function">combine</span>(<span class="hljs-variable">$copyColl</span>)<span class="hljs-keyword">
  End use</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-3-1"></a><a href="#例題-3-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 3</h4>
-<p>We have a regular collection (<em>$lastnames</em>) and we want to put it in the <strong>Storage</strong> of the application. To do this, we must create a shared copy beforehand (<em>$sharedLastnames</em>).</p>
+<p>通常のコレクション (<em>$lastnames</em>) があり、それをアプリケーションの <strong>Storage</strong> に入れます。 これには、先に共有コレクション (<em>$sharedLastnames</em>) を作成しておく必要があります。</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$lastnames</span>;<span class="hljs-variable">$sharedLastnames </span>: Collection<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$text </span>: Text
 
 <span class="hljs-variable">$text</span>:=<span class="hljs-function">Document to text</span>(<span class="hljs-function">Get 4D folder</span>(Current resources folder)+<span class="hljs-string">"lastnames.txt"</span>)
-<span class="hljs-variable">$lastnames</span>:=<span class="hljs-function">JSON Parse</span>(<span class="hljs-variable">$text</span>) <span class="hljs-comment">//$lastnames is a regular collection</span>
+<span class="hljs-variable">$lastnames</span>:=<span class="hljs-function">JSON Parse</span>(<span class="hljs-variable">$text</span>) <span class="hljs-comment">// $lastnames は通常の (非共有) コレクションです</span>
 
-<span class="hljs-variable">$sharedLastnames</span>:=<span class="hljs-variable">$lastnames</span>.<span class="hljs-function">copy</span>(ck shared) <span class="hljs-comment">// shared copy</span><span class="hljs-keyword">
+<span class="hljs-variable">$sharedLastnames</span>:=<span class="hljs-variable">$lastnames</span>.<span class="hljs-function">copy</span>(ck shared) <span class="hljs-comment">// 共有コピー</span><span class="hljs-keyword">
 
 Use</span>(Storage)
     Storage.lastnames:=<span class="hljs-variable">$sharedLastnames</span><span class="hljs-keyword">
 End use</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-4"></a><a href="#example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 4</h4>
-<p>This example illustrates the use of the <code>ck resolve pointers</code> option:</p>
+<h4><a class="anchor" aria-hidden="true" id="例題-4-1"></a><a href="#例題-4-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 4</h4>
+<p><code>ck resolve pointers</code> オプションを使用した場合のふるまいです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col </span>: Collection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$p </span>: Pointer
  <span class="hljs-variable">$p</span>:=-&gt;<span class="hljs-variable">$what</span>
@@ -493,11 +493,11 @@ End use</span>
 
  <span class="hljs-variable">$col2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">copy</span>()
  <span class="hljs-variable">$col2</span>[<span class="hljs-number">1</span>].beta:=<span class="hljs-string">"World!"</span>
-<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$col</span>[<span class="hljs-number">0</span>].alpha+<span class="hljs-string">" "</span>+<span class="hljs-variable">$col2</span>[<span class="hljs-number">1</span>].beta) <span class="hljs-comment">//displays "Hello World!"</span>
+<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$col</span>[<span class="hljs-number">0</span>].alpha+<span class="hljs-string">" "</span>+<span class="hljs-variable">$col2</span>[<span class="hljs-number">1</span>].beta) <span class="hljs-comment">// "Hello world!" を表示します</span>
 
  <span class="hljs-variable">$what</span>:=<span class="hljs-string">"You!"</span>
  <span class="hljs-variable">$col3</span>:=<span class="hljs-variable">$col2</span>.<span class="hljs-function">copy</span>(ck resolve pointers)
-<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$col3</span>[<span class="hljs-number">0</span>].alpha+<span class="hljs-string">" "</span>+<span class="hljs-variable">$col3</span>[<span class="hljs-number">1</span>].what) <span class="hljs-comment">//displays "Hello You!"</span>
+<span class="hljs-function"> ALERT</span>(<span class="hljs-variable">$col3</span>[<span class="hljs-number">0</span>].alpha+<span class="hljs-string">" "</span>+<span class="hljs-variable">$col3</span>[<span class="hljs-number">1</span>].what) <span class="hljs-comment">// "Hello You!" を表示します</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="count"></a><a href="#count" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.count()</h2>
 <p><details><summary>履歴</summary></p>
@@ -516,13 +516,13 @@ End use</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Object property path to be used for calculation</td></tr>
-<tr><td>戻り値</td><td>実数</td><td style="text-align:center">&lt;-</td><td>Number of elements in the collection</td></tr>
+<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>計算に使用するオブジェクトプロパティのパス</td></tr>
+<tr><td>戻り値</td><td>実数</td><td style="text-align:center">&lt;-</td><td>コレクション内の要素の数</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.count()</code> function returns the number of non-null elements in the collection.</p>
-<p>If the collection contains objects, you can pass the <em>propertyPath</em> parameter. In this case, only elements that contain the <em>propertyPath</em> are taken into account.</p>
+<p><code>.count()</code> 関数は、 コレクション内の、null ではない要素の個数を返します。</p>
+<p>コレクションがオブジェクトを含んでいる場合、<em>propertyPath</em> 引数を渡すことができます。 この場合、<em>propertyPath</em> で指定したパスを含む要素のみがカウントされます。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-8"></a><a href="#例題-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col </span>: Collection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$count1</span>;<span class="hljs-variable">$count2 </span>: Real
@@ -531,8 +531,8 @@ End use</span>
  <span class="hljs-variable">$col</span>.<span class="hljs-function">push</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"name"</span>;<span class="hljs-string">"Wesson"</span>;<span class="hljs-string">"salary"</span>;<span class="hljs-number">50000</span>))
  <span class="hljs-variable">$col</span>.<span class="hljs-function">push</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"name"</span>;<span class="hljs-string">"Gross"</span>;<span class="hljs-string">"salary"</span>;<span class="hljs-number">10500</span>))
  <span class="hljs-variable">$col</span>.<span class="hljs-function">push</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"lastName"</span>;<span class="hljs-string">"Henry"</span>;<span class="hljs-string">"salary"</span>;<span class="hljs-number">12000</span>))
- <span class="hljs-variable">$count1</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">count</span>() <span class="hljs-comment">//$count1=7</span>
- <span class="hljs-variable">$count2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">count</span>(<span class="hljs-string">"name"</span>) <span class="hljs-comment">//$count2=3</span>
+ <span class="hljs-variable">$count1</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">count</span>() <span class="hljs-comment">// $count1=7</span>
+ <span class="hljs-variable">$count2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">count</span>(<span class="hljs-string">"name"</span>) <span class="hljs-comment">// $count2=3</span>
 
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="countvalues"></a><a href="#countvalues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.countValues()</h2>
@@ -552,22 +552,22 @@ End use</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>value</td><td>Text, Number, Boolean, Date, Object, Collection</td><td style="text-align:center">-&gt;</td><td>Value to count</td></tr>
-<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Object property path to be used for calculation</td></tr>
-<tr><td>戻り値</td><td>実数</td><td style="text-align:center">&lt;-</td><td>Number of occurrences of the value</td></tr>
+<tr><td>value</td><td>数値、テキスト、日付、ブール、オブジェクト、コレクション</td><td style="text-align:center">-&gt;</td><td>数える値</td></tr>
+<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>計算に使用するオブジェクトプロパティのパス</td></tr>
+<tr><td>戻り値</td><td>実数</td><td style="text-align:center">&lt;-</td><td>値の出現回数</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.countValues()</code> function returns the number of times value is found in the collection.</p>
-<p>You can pass in <em>value</em>:</p>
+<p><code>.countValues()</code> 関数は、 <code>value</code> 引数に指定した値がコレクション内において見つかった回数を返します。</p>
+<p><em>value</em> には、以下のいずれかを渡すことができます:</p>
 <ul>
-<li>a scalar value (text, number, boolean, date),</li>
-<li>an object or a collection reference.</li>
+<li>スカラー値 (テキスト、数値、ブール、日付)</li>
+<li>オブジェクトあるいはコレクションの参照</li>
 </ul>
-<p>For an element to be found, the type of <em>value</em> must be equivalent to the type of the element; the method uses the equality operator.</p>
-<p>The optional <em>propertyPath</em> parameter allows you to count values inside a collection of objects: pass in <em>propertyPath</em> the path of the property whose values you want to count.</p>
+<p>要素が検出されるためには、<em>value</em> 引数の型が要素の型と合致している必要があります。このファンクションは等号演算子を使用します。</p>
+<p>任意の <em>propertyPath</em> 引数を渡すと、オブジェクトのコレクションにおける値の個数を数えることができます。 <em>propertyPath</em> には値を検索するプロパティパスを渡します。</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-3"></a><a href="#例題-1-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col </span>: Collection<span class="hljs-keyword">
@@ -612,19 +612,19 @@ End use</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: diacritical evaluation (&quot;A&quot; # &quot;a&quot; for example)</td></tr>
-<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Path of attribute whose distinct values you want to get</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>New collection with only distinct values</td></tr>
+<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: アクセント等の発音区別符号を無視しない評価 (たとえば &quot;A&quot; # &quot;a&quot;)</td></tr>
+<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>重複しない値を取得する属性のパス</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>重複しない値のみを格納した新規コレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-9"></a><a href="#説明-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.distinct()</code> function returns a collection containing only distinct (different) values from the original collection.</p>
+<p><code>.distinct()</code> 関数は、 元のコレクションから重複しない (異なる) 値のみを格納した新しいコレクションを返します。</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
-<p>The returned collection is automatically sorted. <strong>Null</strong> values are not returned.</p>
-<p>By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the <code>ck diacritical</code> constant in the <em>option</em> parameter.</p>
-<p>If the collection contains objects, you can pass the <em>propertyPath</em> parameter to indicate the object property whose distinct values you want to get.</p>
+<p>返されたコレクションは自動的に並べ替えられています。 <strong>Null</strong> 値は返されません。</p>
+<p>デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 評価の際に文字の大小を区別したり、アクセント記号を区別したい場合には、<em>option</em> に <code>ck diacritical</code> 定数を渡します。</p>
+<p>コレクションがオブジェクトを格納している場合には、重複しない値を取得するオブジェクトプロパティのパスを <em>propertyPath</em> に渡します。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-9"></a><a href="#例題-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$c</span>; <span class="hljs-variable">$c2 </span>: Collection
  <span class="hljs-variable">$c</span>:=New collection
@@ -653,16 +653,16 @@ End use</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>collection2</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>Collection to compare</td></tr>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: diacritical evaluation (&quot;A&quot; # &quot;a&quot; for example)</td></tr>
-<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>True if collections are identical, false otherwise</td></tr>
+<tr><td>collection2</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>比較するコレクション</td></tr>
+<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: アクセント等の発音区別符号を無視しない評価 (たとえば &quot;A&quot; # &quot;a&quot;)</td></tr>
+<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>コレクションが同一の場合には true、それ以外は false</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.equal()</code> function compares the collection with collection2 and returns <strong>true</strong> if they are identical (deep comparison).</p>
-<p>By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the <code>ck diacritical</code> constant in the option parameter.</p>
+<p><code>.equal()</code> 関数は、 コレクションを <em>collection2</em> とディープ比較し、同一の場合には <strong>true</strong> を返します 。</p>
+<p>デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 評価の際に文字の大小を区別したり、アクセント記号を区別したい場合には、option に <code>ck diacritical</code> 定数を渡します。</p>
 <blockquote>
-<p>Elements with <strong>Null</strong> values are not equal to Undefined elements.</p>
+<p><strong>Null</strong>値の要素は undefined要素と同じとはみなされません。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-10"></a><a href="#例題-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$c</span>; <span class="hljs-variable">$c2 </span>: Collection<span class="hljs-keyword">
@@ -701,47 +701,47 @@ End use</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>startFrom</td><td>整数</td><td style="text-align:center">-&gt;</td><td>Index to start the test at</td></tr>
-<tr><td>methodName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Name of the method to call for the test</td></tr>
-<tr><td>param</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to methodName</td></tr>
-<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>True if all elements successfully passed the test</td></tr>
+<tr><td>startFrom</td><td>整数</td><td style="text-align:center">-&gt;</td><td>テストを開始するインデックス</td></tr>
+<tr><td>methodName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>テストに呼び出すメソッド名</td></tr>
+<tr><td>param</td><td>混合</td><td style="text-align:center">-&gt;</td><td>methodName に渡す引数</td></tr>
+<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>すべての要素がテストをパスすれば true</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.every()</code> function returns <strong>true</strong> if all elements in the collection successfully passed a test implemented in the provided <em>methodName</em> method.</p>
-<p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any test, with or without the parameter(s). This method receives an <code>Object</code> in first parameter ($1) and must set <em>$1.result</em> to true for every element fulfilling the test.</p>
-<p><em>methodName</em> receives the following parameters:</p>
+<p><code>.every()</code> 関数は、 コレクション内の全要素が、<em>methodName</em> に指定したメソッドで実装されたテストにパスした場合には <strong>true</strong> を返します。</p>
+<p><em>methodName</em> には、コレクション要素の評価に使用するメソッド名を渡します。<em>param</em> には、必要に応じて引数を渡します (任意)。 <em>methodName</em> で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 このメソッドは $1 にオブジェクトを受け取り、テストをパスした要素の <em>$1.result</em> を true に設定しなければなりません。</p>
+<p><em>methodName</em> で指定したメソッドは以下の引数を受け取ります:</p>
 <ul>
-<li>in <em>$1.value</em>: element value to be evaluated</li>
-<li>in <em>$2</em>: param</li>
-<li>in <em>$N...</em>: paramN...</li>
+<li><em>$1.value</em>: 評価する要素の値</li>
+<li><em>$2</em>: param</li>
+<li><em>$N...</em>: paramN...</li>
 </ul>
-<p><em>methodName</em> sets the following parameter(s):</p>
+<p><em>methodName</em> で指定したメソッドでは、以下の引数を設定します:</p>
 <ul>
-<li><em>$1.result</em> (Boolean): <strong>true</strong> if the element value evaluation is successful, <strong>false</strong> otherwise.</li>
-<li><em>$1.stop</em> (Boolean, optional): <strong>true</strong> to stop the method callback. The returned value is the last calculated.</li>
+<li><em>$1.result</em> (ブール): 要素の値の評価がすべて成功した場合には <strong>true</strong> 、それ以外は <strong>false</strong></li>
+<li><em>$1.stop</em> (ブール、任意): メソッドコールバックを止める場合には <strong>true</strong>。 返された値は最後に計算されたものです。</li>
 </ul>
-<p>In all cases, at the point when the <code>.every()</code> function encounters the first collection element returning <strong>false</strong> in <em>$1.result</em>, it stops calling <em>methodName</em> and returns <strong>false</strong>.</p>
-<p>By default, <code>.every()</code> tests the whole collection. Optionally, you can pass in <em>startFrom</em> the index of the element from which to start the test.</p>
+<p><code>.every()</code> 関数は、<em>$1.result</em> に <strong>false</strong> を返すコレクション要素を発見すると、<em>methodName</em> メソッドの呼び出しをやめて <strong>false</strong> を返します。</p>
+<p>デフォルトでは、<code>.every()</code> はコレクション全体をテストします。 任意で、<em>startFrom</em> にテストを開始する要素のインデックスを渡すこともできます。</p>
 <ul>
-<li>If <em>startFrom</em> &gt;= the collection's length, <strong>false</strong> is returned, which means the collection is not tested.</li>
-<li>If <em>startFrom</em> &lt; 0, it is considered as the offset from the end of the collection ( <em>startFrom:=startFrom+length</em>).</li>
-<li>If <em>startFrom</em> = 0, the whole collection is searched (default).</li>
+<li><em>startFrom</em> がコレクションの length 以上だった場合、<strong>false</strong> が返されます。これはコレクションがテストされていないことを意味します。</li>
+<li><em>startFrom</em> &lt; 0 の場合には、コレクションの終わりからのオフセットであるとみなされます(<em>startFrom:=startFrom+length</em>)。</li>
+<li><em>startFrom</em> = 0 の場合、コレクション全体がテストされます (デフォルト)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-4"></a><a href="#例題-1-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$c </span>: Collection<span class="hljs-keyword">  
 var</span> <span class="hljs-variable">$b </span>: Boolean
 <span class="hljs-variable">$c</span>:=New collection
 <span class="hljs-variable">$c</span>.<span class="hljs-function">push</span>(<span class="hljs-number">5</span>;<span class="hljs-number">3</span>;<span class="hljs-number">1</span>;<span class="hljs-number">4</span>;<span class="hljs-number">6</span>;<span class="hljs-number">2</span>)
-<span class="hljs-variable">$b</span>:=<span class="hljs-variable">$c</span>.<span class="hljs-function">every</span>(<span class="hljs-string">"NumberGreaterThan0"</span>) <span class="hljs-comment">//returns true</span>
+<span class="hljs-variable">$b</span>:=<span class="hljs-variable">$c</span>.<span class="hljs-function">every</span>(<span class="hljs-string">"NumberGreaterThan0"</span>) <span class="hljs-comment">// true を返します</span>
 <span class="hljs-variable">$c</span>.<span class="hljs-function">push</span>(<span class="hljs-number">-1</span>)
-<span class="hljs-variable">$b</span>:=<span class="hljs-variable">$c</span>.<span class="hljs-function">every</span>(<span class="hljs-string">"NumberGreaterThan0"</span>) <span class="hljs-comment">//returns false</span>
+<span class="hljs-variable">$b</span>:=<span class="hljs-variable">$c</span>.<span class="hljs-function">every</span>(<span class="hljs-string">"NumberGreaterThan0"</span>) <span class="hljs-comment">// false を返します</span>
 </code></pre>
-<p>With the following <strong><em>NumberGreaterThan0</em></strong> method:</p>
+<p><strong><em>NumberGreaterThan0</em></strong> メソッドの中身は以下のとおりです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$1</span>.result:=<span class="hljs-variable">$1</span>.value&gt;<span class="hljs-number">0</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2-4"></a><a href="#例題-2-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
-<p>This example tests that all elements of a collection are of the real type:</p>
+<p>コレクション要素がすべて実数型であるかをテストします:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$c </span>: Collection<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$b </span>: Boolean
 <span class="hljs-variable">$c</span>:=New collection
@@ -751,7 +751,7 @@ var</span> <span class="hljs-variable">$b </span>: Boolean
 <span class="hljs-variable">$c</span>:=<span class="hljs-variable">$c</span>.<span class="hljs-function">push</span>(<span class="hljs-function">New object</span>(<span class="hljs-string">"name"</span>;<span class="hljs-string">"Blountsville"</span>;<span class="hljs-string">"zc"</span>;<span class="hljs-number">35031</span>))
 <span class="hljs-variable">$b</span>:=<span class="hljs-variable">$c</span>.<span class="hljs-function">every</span>(<span class="hljs-string">"TypeLookUp"</span>;Is real) <span class="hljs-comment">//$b=false</span>
 </code></pre>
-<p>With the following <strong><em>TypeLookUp</em></strong> method:</p>
+<p><strong><em>TypeLookUp</em></strong> メソッドの中身は以下のとおりです:</p>
 <pre><code class="hljs css language-4d">#<span class="hljs-function">DECLARE </span>(<span class="hljs-variable">$toEval </span>: Object ; <span class="hljs-variable">$param </span>: Integer) <span class="hljs-comment">//$1; $2</span><span class="hljs-keyword">
 If</span>(<span class="hljs-function">Value type</span>(<span class="hljs-variable">$toEval</span>.value)=<span class="hljs-variable">$param</span>)
     <span class="hljs-variable">$toEval</span>.result:=<span class="hljs-literal">True</span><span class="hljs-keyword">
@@ -783,7 +783,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-12"></a><a href="#説明-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.extract()</code> function creates and returns a new collection containing <em>propertyPath</em> values extracted from the original collection of objects.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>The contents of the returned collection depends on the <em>targetPath</em> parameter:</p>
 <ul>
@@ -842,7 +842,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-13"></a><a href="#説明-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.fill()</code> function fills the collection with the specified <em>value</em>, optionally from <em>startFrom</em> index to <em>end</em> index, and returns the resulting collection.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <ul>
 <li>If the <em>startFrom</em> parameter is omitted, <em>value</em> is set to all collection elements (<em>startFrom</em>=0).</li>
@@ -881,26 +881,26 @@ End if</span>
 </thead>
 <tbody>
 <tr><td>methodName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Name of the function to call to filter the collection</td></tr>
-<tr><td>param</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to <em>methodName</em></td></tr>
+<tr><td>param</td><td>混合</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to <em>methodName</em></td></tr>
 <tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>New collection containing filtered elements (shallow copy)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-14"></a><a href="#説明-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.filter()</code> function returns a new collection containing all elements of the original collection for which <em>methodName</em> method result is <strong>true</strong>. This function returns a <strong><em>shallow copy</em></strong>, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
-<p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any test, with or without the parameter(s). This method receives an <code>Object</code> in first parameter ($1) and must set <em>$1.result</em> to <strong>true</strong> for each element fulfilling the condition and thus, to push to the new collection.</p>
-<p><em>methodName</em> receives the following parameters:</p>
+<p><em>methodName</em> には、コレクション要素の評価に使用するメソッド名を渡します。<em>param</em> には、必要に応じて引数を渡します (任意)。 <em>methodName</em> で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 This method receives an <code>Object</code> in first parameter ($1) and must set <em>$1.result</em> to <strong>true</strong> for each element fulfilling the condition and thus, to push to the new collection.</p>
+<p><em>methodName</em> で指定したメソッドは以下の引数を受け取ります:</p>
 <ul>
 <li>in <em>$1.value</em>: element value to be filtered</li>
 <li>in <em>$2</em>: <em>param</em></li>
 <li>in <em>$N...</em>: param2...paramN</li>
 </ul>
-<p><em>methodName</em> sets the following parameter(s):</p>
+<p><em>methodName</em> で指定したメソッドでは、以下の引数を設定します:</p>
 <ul>
 <li><em>$1.result</em> (boolean): <strong>true</strong> if the element value matches the filter condition and must be kept.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. The returned value is the last calculated.</li>
+<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. 返された値は最後に計算されたものです。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-6"></a><a href="#例題-1-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <p>You want to get the collection of text elements whose length is smaller than 6:</p>
@@ -960,25 +960,25 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-15"></a><a href="#説明-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.find()</code> function returns the first value in the collection for which <em>methodName</em>, applied on each element, returns <strong>true</strong>.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
-<p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any test, with or without the parameter(s). This method receives an <code>Object</code> in the first parameter ($1) and must set <em>$1.result</em> to <strong>true</strong> for the first element fulfilling the condition.</p>
-<p><em>methodName</em> receives the following parameters:</p>
+<p><em>methodName</em> には、コレクション要素の評価に使用するメソッド名を渡します。<em>param</em> には、必要に応じて引数を渡します (任意)。 <em>methodName</em> で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 This method receives an <code>Object</code> in the first parameter ($1) and must set <em>$1.result</em> to <strong>true</strong> for the first element fulfilling the condition.</p>
+<p><em>methodName</em> で指定したメソッドは以下の引数を受け取ります:</p>
 <ul>
 <li>in <em>$1.value:</em> element value to be evaluated</li>
 <li>in <em>$2: param</em></li>
 <li>in <em>$N...</em>: param2...paramN</li>
 </ul>
-<p><em>methodName</em> sets the following parameter(s):</p>
+<p><em>methodName</em> で指定したメソッドでは、以下の引数を設定します:</p>
 <ul>
 <li><em>$1.result</em> (boolean): <strong>true</strong> if the element value matches the search condition.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. The returned value is the last calculated.</li>
+<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. 返された値は最後に計算されたものです。</li>
 </ul>
 <p>By default, <code>.find()</code> searches in the whole collection. Optionally, you can pass in <em>startFrom</em> the index of element from which to start the search.</p>
 <ul>
 <li>If <em>startFrom</em> &gt;= the collection's length, -1 is returned, which means the collection is not searched.</li>
 <li>If <em>startFrom</em> &lt; 0, it is considered as the offset from the end of the collection (<em>startFrom:=startFrom+length</em>). <strong>Note</strong>: Even if <em>startFrom</em> is negative, the collection is still searched from left to right.</li>
-<li>If <em>startFrom</em> = 0, the whole collection is searched (default).</li>
+<li><em>startFrom</em> = 0 の場合、コレクション全体がテストされます (デフォルト)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-7"></a><a href="#例題-1-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <p>You want to get the first element with a length smaller than 5:</p>
@@ -1035,25 +1035,25 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-16"></a><a href="#説明-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.findIndex()</code> function returns the index, in the collection, of the first value for which <em>methodName</em>, applied on each element, returns <strong>true</strong>.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
-<p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any test, using or not the parameter(s). This method receives an <code>Object</code> as first parameter ($1) and must set <em>$1.result</em> to <strong>true</strong> for the first element fulfilling the condition.</p>
-<p><em>methodName</em> receives the following parameters:</p>
+<p><em>methodName</em> には、コレクション要素の評価に使用するメソッド名を渡します。<em>param</em> には、必要に応じて引数を渡します (任意)。 <em>methodName</em> can perform any test, using or not the parameter(s). This method receives an <code>Object</code> as first parameter ($1) and must set <em>$1.result</em> to <strong>true</strong> for the first element fulfilling the condition.</p>
+<p><em>methodName</em> で指定したメソッドは以下の引数を受け取ります:</p>
 <ul>
-<li>in <em>$1.value</em>: element value to be evaluated</li>
+<li><em>$1.value</em>: 評価する要素の値</li>
 <li>in <em>$2: param</em></li>
 <li>in <em>$N...</em>: param2...paramN</li>
 </ul>
-<p><em>methodName</em> sets the following parameter(s):</p>
+<p><em>methodName</em> で指定したメソッドでは、以下の引数を設定します:</p>
 <ul>
 <li><em>$1.result</em> (boolean): <strong>true</strong> if the element value matches the search condition.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. The returned value is the last calculated.</li>
+<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. 返された値は最後に計算されたものです。</li>
 </ul>
 <p>By default, <code>.findIndex()</code> searches in the whole collection. Optionally, you can pass in <em>startFrom</em> the index of element from which to start the search.</p>
 <ul>
 <li>If <em>startFrom</em> &gt;= the collection's length, -1 is returned, which means the collection is not searched.</li>
 <li>If <em>startFrom</em> &lt; 0, it is considered as the offset from the end of the collection (<em>startFrom:=startFrom+length</em>). <strong>Note</strong>: Even if <em>startFrom</em> is negative, the collection is still searched from left to right.</li>
-<li>If <em>startFrom</em> = 0, the whole collection is searched (default).</li>
+<li><em>startFrom</em> = 0 の場合、コレクション全体がテストされます (デフォルト)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-12"></a><a href="#例題-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>You want to find the position of the first city name within a collection:</p>
@@ -1098,20 +1098,20 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-17"></a><a href="#説明-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.indexOf()</code> function searches the <em>toSearch</em> expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>In <em>toSearch</em>, pass the expression to find in the collection. You can pass:</p>
 <ul>
-<li>a scalar value (text, number, boolean, date),</li>
+<li>スカラー値 (テキスト、数値、ブール、日付)</li>
 <li>the null value,</li>
-<li>an object or a collection reference.</li>
+<li>オブジェクトあるいはコレクションの参照</li>
 </ul>
 <p><em>toSearch</em> must match exactly the element to find (the same rules as for the equality operator of the data type are applied).</p>
 <p>Optionally, you can pass the index of collection from which to start the search in <em>startFrom</em>.</p>
 <ul>
 <li>If <em>startFrom</em> &gt;= the collection's length, -1 is returned, which means the collection is not searched.</li>
 <li>If <em>startFrom</em> &lt; 0, it is considered as the offset from the end of the collection (<em>startFrom:=startFrom+length</em>). <strong>Note</strong>: Even if <em>startFrom</em> is negative, the collection is still searched from left to right.</li>
-<li>If <em>startFrom</em> = 0, the whole collection is searched (default).</li>
+<li><em>startFrom</em> = 0 の場合、コレクション全体がテストされます (デフォルト)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-13"></a><a href="#例題-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col </span>: Collection<span class="hljs-keyword">
@@ -1147,7 +1147,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-18"></a><a href="#説明-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.indices()</code> function works exactly the same as the <a href="#query"><code>.query()</code></a> function but returns indexes, in the original collection, of object collection elements that match the <em>queryString</em> search conditions, and not elements themselves. Indexes are returned in ascending order.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>The <em>queryString</em> parameter uses the following syntax:</p>
 <pre><code class="hljs css language-4d">propertyPath comparator value {logicalOperator propertyPath comparator value}
@@ -1190,11 +1190,11 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-19"></a><a href="#説明-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.insert()</code> function  inserts <em>element</em> at the specified <em>index</em> position in the collection instance and returns the edited collection.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <p>In <em>index</em>, pass the position where you want the element to be inserted in the collection.</p>
 <blockquote>
-<p><strong>Warning</strong>: Keep in mind that collection elements are numbered from 0.</p>
+<p><strong>警告</strong>: コレクション要素は 0 起点である点に注意してください。</p>
 </blockquote>
 <ul>
 <li>If <em>index</em> &gt; the length of the collection, actual starting index will be set to the length of the collection.</li>
@@ -1234,7 +1234,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-20"></a><a href="#説明-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.join()</code> function converts all elements of the collection to strings and concatenates them using the specified <em>delimiter</em> string as separator.The function returns the resulting string.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>By default, null or empty elements of the collection are returned in the resulting string. Pass the <code>ck ignore null or empty</code> constant in the <em>option</em> parameter if you want to remove them from the resulting string.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-16"></a><a href="#例題-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -1269,13 +1269,13 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-21"></a><a href="#説明-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.lastIndexOf()</code> function searches the <em>toSearch</em> expression among collection elements and returns the index of the last occurrence, or -1 if it was not found.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>In <em>toSearch</em>, pass the expression to find in the collection. You can pass:</p>
 <ul>
-<li>a scalar value (text, number, boolean, date),</li>
+<li>スカラー値 (テキスト、数値、ブール、日付)</li>
 <li>the null value,</li>
-<li>an object or a collection reference.</li>
+<li>オブジェクトあるいはコレクションの参照</li>
 </ul>
 <p><em>toSearch</em> must match exactly the element to find (the same rules as for the equality operator are applied).</p>
 <p>Optionally, you can pass the index of collection from which to start a reverse search in <em>startFrom</em>.</p>
@@ -1340,19 +1340,19 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-23"></a><a href="#説明-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.map()</code> function creates a new collection based upon the result of the call of the <em>methodName</em> method on each element of the original collection. Optionally, you can pass parameters to <em>methodName</em> using the <em>param</em> parameter(s). <code>.map()</code> always returns a collection with the same size as the original collection.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
-<p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any operation, with or without the parameter(s).</p>
-<p><em>methodName</em> receives the following parameters:</p>
+<p><em>methodName</em> には、コレクション要素の評価に使用するメソッド名を渡します。<em>param</em> には、必要に応じて引数を渡します (任意)。 <em>methodName</em> can perform any operation, with or without the parameter(s).</p>
+<p><em>methodName</em> で指定したメソッドは以下の引数を受け取ります:</p>
 <ul>
 <li>in <em>$1.value</em> (any type): element value to be mapped</li>
 <li>in <em>$2</em> (any type): <em>param</em></li>
 <li>in <em>$N...</em> (any type): <em>paramN...</em></li>
 </ul>
-<p><em>methodName</em> sets the following parameter(s):</p>
+<p><em>methodName</em> で指定したメソッドでは、以下の引数を設定します:</p>
 <ul>
 <li><em>$1.result</em> (any type): new transformed value to add to the resulting collection</li>
-<li><em>$1.stop</em> (boolean): <strong>true</strong> to stop the method callback. The returned value is the last calculated.</li>
+<li><em>$1.stop</em> (boolean): <strong>true</strong> to stop the method callback. 返された値は最後に計算されたものです。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-19"></a><a href="#例題-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$c</span>; <span class="hljs-variable">$c2 </span>: Collection
@@ -1389,7 +1389,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-24"></a><a href="#説明-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.max()</code> function returns the element with the highest value in the collection (the last element of the collection as it would be sorted in ascending order using the <a href="#sort"><code>.sort()</code></a> function).</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>If the collection contains different types of values, the <code>.max()</code> function will return the maximum value within the last element type in the type list order (see <a href="#sort"><code>.sort()</code></a> description).</p>
 <p>If the collection contains objects, pass the <em>propertyPath</em> parameter to indicate the object property whose maximum value you want to get.</p>
@@ -1428,7 +1428,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-25"></a><a href="#説明-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.min()</code> function returns the element with the smallest value in the collection (the first element of the collection as it would be sorted in ascending order using the <a href="#sort"><code>.sort()</code></a> function).</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>If the collection contains different types of values, the <code>.min()</code> function will return the minimum value within the first element type in the type list order (see <a href="#sort"><code>.sort()</code></a> description).</p>
 <p>If the collection contains objects, pass the <em>propertyPath</em> parameter to indicate the object property whose minimum value you want to get.</p>
@@ -1470,7 +1470,7 @@ End if</span>
 <p>The <code>.orderBy()</code> function returns a new collection containing all elements of the collection in the specified order.</p>
 <p>This function returns a <em>shallow copy</em>, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>If you pass no parameter, the function orders scalar values in the collection in ascending order (other element types such as objects or collections are returned unordered). You can modify this automatic order by passing the <code>ck ascending</code> or <code>ck descending</code> constants in the <em>ascOrDesc</em> parameter (see below).</p>
 <p>You can also pass a criteria parameter to define how the collection elements must be sorted. Three syntaxes are supported for this parameter:</p>
@@ -1579,7 +1579,7 @@ End if</span>
 <p>The <code>.orderByMethod()</code> function returns a new collection containing all elements of the collection in the order defined through the <em>methodName</em> method.</p>
 <p>This function returns a <em>shallow copy</em>, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>In <em>methodName</em>, pass a comparison method that compares two values and returns <strong>true</strong> in <em>$1.result</em> if the first value is lower than the second value. You can provide additional parameters to <em>methodName</em> if necessary.</p>
 <ul>
@@ -1641,7 +1641,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-28"></a><a href="#説明-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.pop()</code> function removes the last element from the collection and returns it as the function result.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <p>When applied to an empty collection, <code>.pop()</code> returns <strong><em>undefined</em></strong>.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-22"></a><a href="#例題-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -1671,14 +1671,14 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>element</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Element(s) to add to the collection</td></tr>
+<tr><td>element</td><td>混合</td><td style="text-align:center">-&gt;</td><td>Element(s) to add to the collection</td></tr>
 <tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Original collection containing added elements</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-29"></a><a href="#説明-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.push()</code> function appends one or more <em>element</em>(s) to the end of the collection instance and returns the edited collection.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-10"></a><a href="#例題-1-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col </span>: Collection
@@ -1714,7 +1714,7 @@ End if</span>
 </thead>
 <tbody>
 <tr><td>queryString</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Search criteria</td></tr>
-<tr><td>value</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Value(s) to compare when using placeholder(s)</td></tr>
+<tr><td>value</td><td>混合</td><td style="text-align:center">-&gt;</td><td>Value(s) to compare when using placeholder(s)</td></tr>
 <tr><td>querySettings</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Query options: parameters, attributes</td></tr>
 <tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Element(s) matching queryString in the collection</td></tr>
 </tbody>
@@ -1722,7 +1722,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-30"></a><a href="#説明-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.query()</code> function returns all elements of a collection of objects that match the search conditions defined by <em>queryString</em> and (optionally) <em>value</em> or <em>querySettings</em>. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>The <em>queryString</em> parameter uses the following syntax:</p>
 <pre><code class="hljs css language-4d">propertyPath comparator value {logicalOperator propertyPath comparator value}
@@ -1794,20 +1794,20 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-31"></a><a href="#説明-31" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.reduce()</code> function applies the <em>methodName</em> callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in param (optional). <em>methodName</em> takes each collection element and performs any desired operation to accumulate the result into <em>$1.accumulator</em>, which is returned in <em>$1.value</em>.</p>
 <p>You can pass the value to initialize the accumulator in <em>initValue</em>. If omitted, <em>$1.accumulator</em> starts with <em>Undefined</em>.</p>
-<p><em>methodName</em> receives the following parameters:</p>
+<p><em>methodName</em> で指定したメソッドは以下の引数を受け取ります:</p>
 <ul>
 <li>in <em>$1.value</em>: element value to be processed</li>
 <li>in <em>$2: param</em></li>
 <li>in <em>$N...</em>: <em>paramN...</em></li>
 </ul>
-<p><em>methodName</em> sets the following parameter(s):</p>
+<p><em>methodName</em> で指定したメソッドでは、以下の引数を設定します:</p>
 <ul>
 <li><em>$1.accumulator</em>: value to be modified by the function and which is initialized by <em>initValue</em>.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. The returned value is the last calculated.</li>
+<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. 返された値は最後に計算されたものです。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-12"></a><a href="#例題-1-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_COLLECTION</span>(<span class="hljs-variable">$c</span>)
@@ -1860,14 +1860,14 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-32"></a><a href="#説明-32" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.remove()</code> function removes one or more element(s) from the specified <em>index</em> position in the collection and returns the edited collection.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <p>In <em>index</em>, pass the position where you want the element to be removed from the collection.</p>
 <blockquote>
-<p><strong>Warning</strong>: Keep in mind that collection elements are numbered from 0. If <em>index</em> is greater than the length of the collection, actual starting index will be set to the length of the collection.</p>
+<p><strong>警告</strong>: コレクション要素は 0 起点である点に注意してください。 If <em>index</em> is greater than the length of the collection, actual starting index will be set to the length of the collection.</p>
 </blockquote>
 <ul>
-<li>If <em>index</em> &lt; 0, it is recalculated as <em>index:=index+length</em> (it is considered as the offset from the end of the collection).</li>
+<li><em>index</em> &lt; 0 の場合、<em>index:=index+length</em> として再計算されます (コレクションの終端からのオフセットであるとみなされます)。</li>
 <li>If the calculated value &lt; 0, <em>index</em> is set to 0.</li>
 <li>If the calculated value &gt; the length of the collection, <em>index</em> is set to the length.</li>
 </ul>
@@ -1906,7 +1906,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-33"></a><a href="#説明-33" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.resize()</code> function sets the collection length to the specified new size and returns the resized collection.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <ul>
 <li>If <em>size</em> &lt; collection length, exceeding elements are removed from the collection.</li>
@@ -1950,7 +1950,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-34"></a><a href="#説明-34" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.reverse()</code> function returns a deep copy of the collection with all its elements in reverse order. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-26"></a><a href="#例題-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$c</span>; <span class="hljs-variable">$c2 </span>: Collection
@@ -1980,7 +1980,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-35"></a><a href="#説明-35" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.shift()</code> function removes the first element of the collection and returns it as the function result.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <p>If the collection is empty, this method does nothing.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-27"></a><a href="#例題-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -2016,7 +2016,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-36"></a><a href="#説明-36" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.slice()</code> function returns a portion of a collection into a new collection, selected from <em>startFrom</em> index to <em>end</em> index (end not included). This function returns a <em>shallow copy</em> of the collection. If the original collection is a shared collection, the returned collection is also a shared collection.</p>
 <blockquote>
-<p>This function does not modify the original collection.</p>
+<p>このコマンドは、元のコレクションを変更しません。</p>
 </blockquote>
 <p>The returned collection contains the element specified by <em>startFrom</em> and all subsequent elements up to, but not including, the element specified by <em>end</em>. If only the <em>startFrom</em> parameter is specified, the returned collection contains all elements from <em>startFrom</em> to the last element of the original collection.</p>
 <ul>
@@ -2050,32 +2050,32 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>startFrom</td><td>整数</td><td style="text-align:center">-&gt;</td><td>Index to start the test at</td></tr>
-<tr><td>methodName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Name of the method to call for the test</td></tr>
-<tr><td>param</td><td>Mixed</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to <em>methodName</em></td></tr>
+<tr><td>startFrom</td><td>整数</td><td style="text-align:center">-&gt;</td><td>テストを開始するインデックス</td></tr>
+<tr><td>methodName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>テストに呼び出すメソッド名</td></tr>
+<tr><td>param</td><td>混合</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to <em>methodName</em></td></tr>
 <tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>True if at least one element successfully passed the test</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-37"></a><a href="#説明-37" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.some()</code> function returns true if at least one element in the collection successfully passed a test implemented in the provided <em>methodName</em> method.</p>
-<p>In <em>methodName</em>, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in <em>param</em> (optional). <em>methodName</em> can perform any test, with or without the parameter(s). This method receives an <code>Object</code> as first parameter ($1) and must set <em>$1.result</em> to <strong>True</strong> for every element fulfilling the test.</p>
-<p><em>methodName</em> receives the following parameters:</p>
+<p><em>methodName</em> には、コレクション要素の評価に使用するメソッド名を渡します。<em>param</em> には、必要に応じて引数を渡します (任意)。 <em>methodName</em> で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 This method receives an <code>Object</code> as first parameter ($1) and must set <em>$1.result</em> to <strong>True</strong> for every element fulfilling the test.</p>
+<p><em>methodName</em> で指定したメソッドは以下の引数を受け取ります:</p>
 <ul>
-<li>in <em>$1.value</em>: element value to be evaluated</li>
-<li>in <em>$2</em>: param</li>
+<li><em>$1.value</em>: 評価する要素の値</li>
+<li><em>$2</em>: param</li>
 <li>in <em>$N...</em>: param2...paramN</li>
 </ul>
-<p><em>methodName</em> sets the following parameter(s):</p>
+<p><em>methodName</em> で指定したメソッドでは、以下の引数を設定します:</p>
 <ul>
 <li><em>$1.result</em> (boolean): <strong>true</strong> if the element value evaluation is successful, <strong>false</strong> otherwise.</li>
-<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. The returned value is the last calculated.</li>
+<li><em>$1.stop</em> (boolean, optional): <strong>true</strong> to stop the method callback. 返された値は最後に計算されたものです。</li>
 </ul>
 <p>In any case, at the point where <code>.some()</code> function encounters the first collection element returning true in <em>$1.result</em>, it stops calling <em>methodName</em> and returns <strong>true</strong>.</p>
 <p>By default, <code>.some()</code> tests the whole collection. Optionally, you can pass the index of an element from which to start the test in <em>startFrom</em>.</p>
 <ul>
 <li>If <em>startFrom</em> &gt;= the collection's length, <strong>False</strong> is returned, which means the collection is not tested.</li>
 <li>If <em>startFrom</em> &lt; 0, it is considered as the offset from the end of the collection.</li>
-<li>If <em>startFrom</em> = 0, the whole collection is searched (default).</li>
+<li><em>startFrom</em> = 0 の場合、コレクション全体がテストされます (デフォルト)。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-29"></a><a href="#例題-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$c </span>: Collection<span class="hljs-keyword">
@@ -2119,7 +2119,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-38"></a><a href="#説明-38" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.sort()</code> function sorts the elements of the original collection and also returns the sorted collection.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <p>If <code>.sort()</code> is called with no parameters, only scalar values (number, text, date, booleans) are sorted. Elements are sorted by default in ascending order, according to their type.</p>
 <p>If you want to sort the collection elements in some other order or sort any type of element, you must supply in <em>methodName</em> a comparison method that compares two values and returns <strong>true</strong> in <em>$1.result</em> if the first value is lower than the second value. You can provide additional parameters to <em>methodName</em> if necessary.</p>
@@ -2184,19 +2184,19 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Object property path to be used for calculation</td></tr>
+<tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>計算に使用するオブジェクトプロパティのパス</td></tr>
 <tr><td>戻り値</td><td>実数</td><td style="text-align:center">&lt;-</td><td>Sum of collection values</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-39"></a><a href="#説明-39" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.sum()</code> function returns the sum for all values in the collection instance.</p>
-<p>Only numerical elements are taken into account for the calculation (other element types are ignored).</p>
-<p>If the collection contains objects, pass the <em>propertyPath</em> parameter to indicate the object property to take into account.</p>
+<p>計算の対象となるのは数値のみです (他の型の要素は無視されます)。</p>
+<p>コレクションがオブジェクトを格納している場合には、計算するオブジェクトプロパティのパスを <em>propertyPath</em> に渡します。</p>
 <p><code>.sum()</code> returns 0 if:</p>
 <ul>
-<li>the collection is empty,</li>
-<li>the collection does not contain numerical elements,</li>
-<li><em>propertyPath</em> is not found in the collection.</li>
+<li>コレクションが空の場合</li>
+<li>コレクションに数値が含まれていない場合</li>
+<li><em>propertyPath</em> 引数で指定したパスがコレクション内で見つからない場合</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-14"></a><a href="#例題-1-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$col </span>: Collection<span class="hljs-keyword">
@@ -2237,7 +2237,7 @@ End if</span>
 <h4><a class="anchor" aria-hidden="true" id="説明-40"></a><a href="#説明-40" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.unshift()</code> function inserts the given <em>value</em>(s) at the beginning of the collection and returns the modified collection.</p>
 <blockquote>
-<p>This function modifies the original collection.</p>
+<p>このコマンドは、元のコレクションを変更します。</p>
 </blockquote>
 <p>If several values are passed, they are inserted all at once, which means that they appear in the resulting collection in the same order as in the argument list.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-30"></a><a href="#例題-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -2248,7 +2248,7 @@ End if</span>
  <span class="hljs-variable">$c</span>.<span class="hljs-function">unshift</span>(<span class="hljs-number">6</span>;<span class="hljs-number">7</span>) <span class="hljs-comment">// $c=[6,7,5,4,1,2]</span>
 </code></pre>
 <style> h2 { background: #d9ebff;}</style>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/Rx/ja/API/classClass.html"><span class="arrow-prev">← </span><span>クラス</span></a><a class="docs-next button" href="/docs/Rx/ja/API/cryptoClass.html"><span class="function-name-prevnext">CryptoKey</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#新しいコレクション">新しいコレクション</a></li><li><a href="#new-shared-collection">New shared collection</a></li><li><a href="#average">.average()</a></li><li><a href="#clear">.clear()</a></li><li><a href="#combine">.combine()</a></li><li><a href="#concat">.concat()</a></li><li><a href="#copy">.copy()</a></li><li><a href="#count">.count()</a></li><li><a href="#countvalues">.countValues()</a></li><li><a href="#distinct">.distinct()</a></li><li><a href="#equal">.equal()</a></li><li><a href="#every">.every()</a></li><li><a href="#extract">.extract()</a></li><li><a href="#fill">.fill()</a></li><li><a href="#filter">.filter()</a></li><li><a href="#find">.find()</a></li><li><a href="#findindex">.findIndex()</a></li><li><a href="#indexof">.indexOf()</a></li><li><a href="#indices">.indices()</a></li><li><a href="#insert">.insert()</a></li><li><a href="#join">.join()</a></li><li><a href="#lastindexof">.lastIndexOf()</a></li><li><a href="#length">.length</a></li><li><a href="#map">.map()</a></li><li><a href="#max">.max()</a></li><li><a href="#min">.min()</a></li><li><a href="#orderby">.orderBy()</a></li><li><a href="#orderbymethod">.orderByMethod()</a></li><li><a href="#pop">.pop()</a></li><li><a href="#push">.push()</a></li><li><a href="#query">.query()</a></li><li><a href="#reduce">.reduce()</a></li><li><a href="#remove">.remove()</a></li><li><a href="#resize">.resize()</a></li><li><a href="#reverse">.reverse()</a></li><li><a href="#shift">.shift()</a></li><li><a href="#slice">.slice()</a></li><li><a href="#some">.some()</a></li><li><a href="#sort">.sort()</a></li><li><a href="#sum">.sum()</a></li><li><a href="#unshift">.unshift()</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/Rx/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/Rx/ja/API/classClass.html"><span class="arrow-prev">← </span><span>クラス</span></a><a class="docs-next button" href="/docs/Rx/ja/API/cryptoClass.html"><span class="function-name-prevnext">CryptoKey</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#新しいコレクション">新しいコレクション</a></li><li><a href="#新規の共有コレクション">新規の共有コレクション</a></li><li><a href="#average">.average()</a></li><li><a href="#clear">.clear()</a></li><li><a href="#combine">.combine()</a></li><li><a href="#concat">.concat()</a></li><li><a href="#copy">.copy()</a></li><li><a href="#count">.count()</a></li><li><a href="#countvalues">.countValues()</a></li><li><a href="#distinct">.distinct()</a></li><li><a href="#equal">.equal()</a></li><li><a href="#every">.every()</a></li><li><a href="#extract">.extract()</a></li><li><a href="#fill">.fill()</a></li><li><a href="#filter">.filter()</a></li><li><a href="#find">.find()</a></li><li><a href="#findindex">.findIndex()</a></li><li><a href="#indexof">.indexOf()</a></li><li><a href="#indices">.indices()</a></li><li><a href="#insert">.insert()</a></li><li><a href="#join">.join()</a></li><li><a href="#lastindexof">.lastIndexOf()</a></li><li><a href="#length">.length</a></li><li><a href="#map">.map()</a></li><li><a href="#max">.max()</a></li><li><a href="#min">.min()</a></li><li><a href="#orderby">.orderBy()</a></li><li><a href="#orderbymethod">.orderByMethod()</a></li><li><a href="#pop">.pop()</a></li><li><a href="#push">.push()</a></li><li><a href="#query">.query()</a></li><li><a href="#reduce">.reduce()</a></li><li><a href="#remove">.remove()</a></li><li><a href="#resize">.resize()</a></li><li><a href="#reverse">.reverse()</a></li><li><a href="#shift">.shift()</a></li><li><a href="#slice">.slice()</a></li><li><a href="#some">.some()</a></li><li><a href="#sort">.sort()</a></li><li><a href="#sum">.sum()</a></li><li><a href="#unshift">.unshift()</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/Rx/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
