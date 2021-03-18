@@ -886,7 +886,7 @@ End if
 <!-- REF #collection.extract().Params -->
 | 参照           | タイプ    |    | 説明                                                                                                                                 |
 | ------------ | ------ |:--:| ---------------------------------------------------------------------------------------------------------------------------------- |
-| propertyPath | テキスト   | -> | Object property path whose values must be extracted to the new collection                                                          |
+| propertyPath | テキスト   | -> | 新しいコレクションに抽出する値のオブジェクトプロパティパス                                                                                                      |
 | targetpath   | テキスト   | -> | Target property path or property name                                                                                              |
 | option       | 整数     | -> | `ck keep null`: include null properties in the returned collection (ignored by default). Parameter ignored if *targetPath* passed. |
 | 戻り値          | コレクション | <- | New collection containing extracted values                                                                                         |
