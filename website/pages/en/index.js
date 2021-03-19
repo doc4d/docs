@@ -153,7 +153,7 @@ class Index extends React.Component {
           </Container>
  		<div className="doc-updates">
           <a
-            href={`${siteConfig.baseUrl}${language}/Notes/updates`}>
+            href={`${siteConfig.baseUrl}${language}/ReleaseNotes/whatsNew`}>
             <translate>Documentation updates</translate>
           </a></div>
        </div>
