@@ -201,33 +201,36 @@
 </ul>
 <p>Available media feature expressions:</p>
 <ul>
-<li><strong>light</strong><br>For using a light theme</li>
-<li><strong>dark</strong><br>For using a dark theme</li>
+<li><strong>light</strong><br>For using a light scheme</li>
+<li><strong>dark</strong><br>For using a dark scheme</li>
 </ul>
 <blockquote>
-<p>Media queries are case-insensitive.</p>
+<p>Color schemes are only supported on macOS.</p>
 </blockquote>
 <h5><a class="anchor" aria-hidden="true" id="exemple"></a><a href="#exemple" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h5>
-<pre><code class="hljs"> <span class="hljs-selector-class">.textTheme</span> {
-  <span class="hljs-attribute">fill</span>: white;
-  <span class="hljs-attribute">stroke</span>: black;
+<p>This CSS defines a color combination for text and text background in the light scheme (default) and another combination when the dark scheme is selected:</p>
+<pre><code class="hljs"><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-color-scheme:</span> light) {
+ <span class="hljs-selector-class">.textScheme</span> {
+   <span class="hljs-attribute">fill</span>: LightGrey;
+   <span class="hljs-attribute">stroke</span>: Black;
+  }
 }
 
 <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-color-scheme:</span> dark) {
-  <span class="hljs-selector-class">.textTheme</span> {
-    <span class="hljs-attribute">fill</span>: black;
-    <span class="hljs-attribute">stroke</span>: white;
+  <span class="hljs-selector-class">.textScheme</span> {
+    <span class="hljs-attribute">fill</span>: DarkSlateGray;
+    <span class="hljs-attribute">stroke</span>: LightGrey;
   }
 }
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="object-attributes"></a><a href="#object-attributes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Object Attributes</h3>
 <p>La majorité des attributs d'objet formulaire peuvent être définis dans une feuille de style, à l'exception des attributs suivants :
-- &quot;method&quot;
-- &quot;type&quot;
-- &quot;type&quot;
-- &quot;class&quot;
-- choiceList, excludedList, labels, list, requiredList (type liste)</p>
-<p>Les attributs d'objet formulaire peuvent être déclarés avec leur nom JSON en tant qu'attributs CSS (à l'exclusion des types d'objet, méthodes, événements et listes). Pour plus d'informations, voir la page <strong>Formulaires dynamiques</strong> dans le manuel du mode Développement.</p>
+- <code>method</code>
+- <code>type</code>
+- <code>class</code>
+- <code>event</code>
+- <code>choiceList</code>, <code>excludedList</code>, <code>labels</code>, <code>list</code>, <code>requiredList</code> (list type)</p>
+<p>Form object attributes can be declared with their <a href="FormObjets/properties_Reference.md">JSON name</a> as CSS attributes (not including object types, methods, events, and lists).</p>
 <h4><a class="anchor" aria-hidden="true" id="mappage-dattributs"></a><a href="#mappage-dattributs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mappage d'attributs</h4>
 <p>Les attributs répertoriés ci-dessous peuvent accepter le nom 4D ou le nom CSS.</p>
 <table>
@@ -235,20 +238,20 @@
 <tr><th>4D</th><th>CSS</th></tr>
 </thead>
 <tbody>
-<tr><td>borderStyle</td><td>border-style</td></tr>
-<tr><td>border-style</td><td>background-color</td></tr>
-<tr><td>fontFamily</td><td>font-family</td></tr>
-<tr><td>fontSize</td><td>font-size</td></tr>
-<tr><td>fontStyle</td><td>font-style</td></tr>
-<tr><td>fontWeight</td><td>font-weight</td></tr>
-<tr><td>stroke</td><td>color</td></tr>
-<tr><td>textAlign</td><td>text-align</td></tr>
-<tr><td>textDecoration</td><td>text-decoration</td></tr>
-<tr><td>verticalAlign</td><td>vertical-align</td></tr>
+<tr><td><code>borderStyle</code></td><td><code>border-style</code></td></tr>
+<tr><td><code>border-style</code></td><td><code>background-color</code></td></tr>
+<tr><td><code>fontFamily</code></td><td><code>font-family</code></td></tr>
+<tr><td><code>fontSize</code></td><td><code>font-size</code></td></tr>
+<tr><td><code>fontStyle</code></td><td><code>font-style</code></td></tr>
+<tr><td><code>fontWeight</code></td><td><code>font-weight</code></td></tr>
+<tr><td><code>stroke</code></td><td><code>color</code></td></tr>
+<tr><td><code>textAlign</code></td><td><code>text-align</code></td></tr>
+<tr><td><code>textDecoration</code></td><td><code>text-decoration</code></td></tr>
+<tr><td><code>verticalAlign</code></td><td><code>vertical-align</code></td></tr>
 </tbody>
 </table>
 <blockquote>
-<p>Les valeurs spécifiques à 4D (<em>ex :</em> &quot;enfoncées&quot;) ne sont pas prises en charge lors de l'utilisation de noms d'attribut CSS.</p>
+<p>4D-specific values (<em>e.g.</em>, <code>sunken</code>) are not supported when using CSS attribute names.</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="valeurs-dattributs-spécifiques"></a><a href="#valeurs-dattributs-spécifiques" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Valeurs d'attributs spécifiques</h4>
 <ul>
