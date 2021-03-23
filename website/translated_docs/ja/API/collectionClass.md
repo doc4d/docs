@@ -1848,10 +1848,10 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 #### 例題 3
 
-Ordering a collection of objects using a collection of criteria objects:
+オブジェクトのコレクションを、*pathObjects* コレクションを使用して並べ替えます:
 
 ```4d
- var $crit; $c; $c2 : COllection
+ var $crit; $c; $c2 : Collection
  $crit:=New collection
  $c:=New collection
  For($vCounter;1;10)
@@ -1862,7 +1862,7 @@ Ordering a collection of objects using a collection of criteria objects:
  $c2:=$c.orderBy($crit)
 ```
 
-Ordering with a property path:
+プロパティパスで並べ替えます:
 
 ```4d
  var $crit; $c; $c2 : Collection
