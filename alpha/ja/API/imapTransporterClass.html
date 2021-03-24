@@ -517,7 +517,7 @@ End if</span>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-9"></a><a href="#説明-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.copy()</code> function copies the messages defined by <em>msgsIDs</em> or <em>allMsgs</em> to the <em>destinationBox</em> on the IMAP server.</p>
-<p>You can pass:</p>
+<p>以下のものを渡すことができます:</p>
 <ul>
 <li>in the <em>msgsIDs</em> parameter, a collection containing the unique IDs of the specific messages to copy, or</li>
 <li>in the <em>allMsgs</em> parameter, the <code>IMAP all</code> constant (integer) to copy all messages in the selected mailbox.</li>
@@ -674,7 +674,7 @@ End if</span>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.delete()</code> function sets the &quot;deleted&quot; flag for the messages defined in <code>msgsIDs</code> or <code>allMsgs</code>.</p>
-<p>You can pass:</p>
+<p>以下のものを渡すことができます:</p>
 <ul>
 <li>in the <code>msgsIDs</code> parameter, a collection containing the unique IDs of the specific messages to delete, or</li>
 <li>in the <code>allMsgs</code> parameter, the <code>IMAP all</code> constant (integer) to delete all messages in the selected mailbox.</li>
@@ -937,7 +937,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-15"></a><a href="#説明-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.getBoxList()</code> function returns a collection of mailboxes describing all of the available mailboxes. This function allows you to locally manage the list of messages located on the IMAP mail server.</p>
-<p>In the optional <code>parameters</code> parameter, pass an object containing values to filter the returned mailboxes. You can pass:</p>
+<p>In the optional <code>parameters</code> parameter, pass an object containing values to filter the returned mailboxes. 以下のものを渡すことができます:</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
@@ -1217,7 +1217,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <li><em>msgNumber</em>, an <em>integer</em> value indicating the sequence number of the message to retrieve or</li>
 <li><em>msgID</em>, a <em>text</em> value indicating the unique ID of the message to retrieve.</li>
 </ul>
-<p>The optional <em>updateSeen</em> parameter allows you to specify if the message is marked as &quot;seen&quot; in the mailbox. You can pass:</p>
+<p>The optional <em>updateSeen</em> parameter allows you to specify if the message is marked as &quot;seen&quot; in the mailbox. 以下のものを渡すことができます:</p>
 <ul>
 <li><strong>True</strong> - to mark the message as &quot;seen&quot; (indicating the message has been read)</li>
 <li><strong>False</strong> - to leave the message's &quot;seen&quot; status untouched</li>
@@ -1311,7 +1311,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-22"></a><a href="#説明-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.move()</code> function moves the messages defined by <em>msgsIDs</em> or <em>allMsgs</em> to the <em>destinationBox</em> on the IMAP server.</p>
-<p>You can pass:</p>
+<p>以下のものを渡すことができます:</p>
 <ul>
 <li>in the <em>msgsIDs</em> parameter, a collection containing the unique IDs of the specific messages to move, or</li>
 <li>in the <em>allMsgs</em> parameter, the <code>IMAP all</code> constant (integer) to move all messages in the selected mailbox.</li>
@@ -1617,7 +1617,7 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>searchCriteria</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Search criteria</td></tr>
+<tr><td>searchCriteria</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>検索条件</td></tr>
 <tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Collection of message numbers</td></tr>
 </tbody>
 </table>
