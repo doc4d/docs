@@ -811,7 +811,7 @@ End use
 
 *methodName* で指定したメソッドでは、以下の引数を設定します:
 
-*   *$1.result* (ブール): 要素の値の評価がすべて成功した場合には **true** 、それ以外は **false**
+*   *$1.result* (ブール): 要素の値の評価が成功した場合には **true** 、それ以外は **false**
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
 `.every()` 関数は、*$1.result* に **false** を返すコレクション要素を発見すると、*methodName* メソッドの呼び出しをやめて **false** を返します。
@@ -2509,7 +2509,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 <!-- REF #collection.slice().Params -->
 | 参照        | タイプ    |    | 説明                           |
 | --------- | ------ |:--:| ---------------------------- |
-| startFrom | 整数     | -> | 開始インデックス (含む)                |
+| startFrom | 整数     | -> | 開始インデックス (含まれる)              |
 | end       | 整数     | -> | 終了インデックス (含まれない)             |
 | 戻り値       | コレクション | <- | 抜粋要素を格納した新しいコレクション(シャロウ・コピー) |
 <!-- END REF -->
@@ -2517,15 +2517,15 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 #### 説明
 
-The `.slice()` function <!-- REF #collection.slice().Summary -->returns a portion of a collection into a new collection<!-- END REF -->, selected from *startFrom* index to *end* index (end not included). This function returns a *shallow copy* of the collection. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+`.slice()` 関数は、*startFrom* の位置 (含まれる) から *end* の位置 (含まれない) までの <!-- REF #collection.slice().Summary -->コレクションの一部を、新しいコレクションの中に返します<!-- END REF -->。 この関数は *シャロウ・コピー* を返します。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 > このコマンドは、元のコレクションを変更しません。
 
-The returned collection contains the element specified by *startFrom* and all subsequent elements up to, but not including, the element specified by *end*. If only the *startFrom* parameter is specified, the returned collection contains all elements from *startFrom* to the last element of the original collection.
+戻り値のコレクションには、*startFrom* 引数で指定した要素 (含まれる) から、*end* 引数で指定した要素まで (含まれない) の全要素が格納されます。 *startFrom* 引数のみを渡した場合には、*startFrom* 引数で指定した要素から最後の要素までが戻り値のコレクションに格納されます。
 
 *   *startFrom* < 0 の場合、*startFrom:=startFrom+length* として再計算されます (コレクションの終端からのオフセットであるとみなされます)。
-*   If the calculated value < 0, *startFrom* is set to 0.
+*   再計算された値も負の値だった場合、*startFrom* は 0 に設定されます。
 *   *end* < 0 の場合、それは *end:=end+length* として再計算されます。
-*   If *end < startFrom* (passed or calculated values), the method does nothing.
+*   渡された値、あるいは再計算された値が *end* < *startFrom* の場合、関数はなにもしません。
 
 #### 例題
 
@@ -2559,21 +2559,21 @@ The returned collection contains the element specified by *startFrom* and all su
 
 
 <!-- REF #collection.some().Params -->
-| 参照         | タイプ  |    | 説明                                                        |
-| ---------- | ---- |:--:| --------------------------------------------------------- |
-| startFrom  | 整数   | -> | テストを開始するインデックス                                            |
-| methodName | テキスト | -> | テストに呼び出すメソッド名                                             |
-| param      | 混合   | -> | *methodName* に渡す引数                                        |
-| 戻り値        | ブール  | <- | True if at least one element successfully passed the test |
+| 参照         | タイプ  |    | 説明                        |
+| ---------- | ---- |:--:| ------------------------- |
+| startFrom  | 整数   | -> | テストを開始するインデックス            |
+| methodName | テキスト | -> | テストに呼び出すメソッド名             |
+| param      | 混合   | -> | *methodName* に渡す引数        |
+| 戻り値        | ブール  | <- | 少なくとも一つの要素がテストをパスすれば true |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.some()` function <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test<!-- END REF --> implemented in the provided *methodName* method.
+`.some()` 関数は、 <!-- REF #collection.some().Summary -->少なくとも一つのコレクション要素が、*methodName* に指定したメソッドで実装されたテストにパスした場合に **true** を返します<!-- END REF --> 。
 
 
-*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 This method receives an `Object` as first parameter ($1) and must set *$1.result* to **True** for every element fulfilling the test.
+*methodName* には、コレクション要素の評価に使用するメソッド名を渡します。*param* には、必要に応じて引数を渡します (任意)。 *methodName* で指定したメソッドはどんなテストでも実行でき、引数はあってもなくても構いません。 このメソッドは $1 にオブジェクトを受け取り、テストをパスした最初の要素の *$1.result* を **true** に設定しなければなりません。
 
 *methodName* で指定したメソッドは以下の引数を受け取ります:
 
@@ -2583,15 +2583,15 @@ The `.some()` function <!-- REF #collection.some().Summary -->returns true if at
 
 *methodName* で指定したメソッドでは、以下の引数を設定します:
 
-*   *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
+*   *$1.result* (ブール): 要素の値の評価が成功した場合には **true** 、それ以外は **false**
 *   *$1.stop* (ブール、任意): メソッドコールバックを止める場合には **true**。 返された値は最後に計算されたものです。
 
-In any case, at the point where `.some()` function encounters the first collection element returning true in *$1.result*, it stops calling *methodName* and returns **true**.
+`.some()` 関数は、*$1.result* に **true** を返す最初のコレクション要素を発見すると、*methodName* メソッドの呼び出しをやめて **true** を返します。
 
-By default, `.some()` tests the whole collection. Optionally, you can pass the index of an element from which to start the test in *startFrom*.
+デフォルトでは、`.some()` はコレクション全体をテストします。 オプションとして、*startFrom* 引数を渡すことで、テストを開始するコレクション要素のインデックスを指定することができます。
 
-*   If *startFrom* >= the collection's length, **False** is returned, which means the collection is not tested.
-*   If *startFrom* < 0, it is considered as the offset from the end of the collection.
+*   *startFrom* がコレクションの length 以上だった場合、**false** が返されます。これはコレクションがテストされていないことを意味します。
+*   *startFrom* < 0 の場合には、コレクションの終わりからのオフセットであるとみなされます。
 *   *startFrom* = 0 の場合、コレクション全体がテストされます (デフォルト)。
 
 
@@ -2603,9 +2603,9 @@ By default, `.some()` tests the whole collection. Optionally, you can pass the i
  var $b : Boolean
  $c:=New collection
  $c.push(-5;-3;-1;-4;-6;-2)
- $b:=$c.some("NumberGreaterThan0") // returns false
+ $b:=$c.some("NumberGreaterThan0") // 戻り値は false
  $c.push(1)
- $b:=$c.some("NumberGreaterThan0") // returns true
+ $b:=$c.some("NumberGreaterThan0") // 戻り値は true
 
  $c:=New collection
  $c.push(1;-5;-3;-1;-4;-6;-2)
@@ -2613,7 +2613,7 @@ By default, `.some()` tests the whole collection. Optionally, you can pass the i
  $b:=$c.some(1;"NumberGreaterThan0") //$b=false
 ```
 
-With the following *NumberGreaterThan0* method:
+*NumberGreaterThan0* メソッドのコードは以下のとおりです:
 
 ```4d
  $1.result:=$1.value>0
@@ -2640,22 +2640,22 @@ With the following *NumberGreaterThan0* method:
 
 
 <!-- REF #collection.sort().Params -->
-| 参照         | タイプ    |    | 説明                         |
-| ---------- | ------ |:--:| -------------------------- |
-| methodName | テキスト   | -> | 並べ替え順の指定に使用するメソッド名         |
-| extraParam | any    | -> | methodName に渡す引数           |
-| 戻り値        | コレクション | <- | Original collection sorted |
+| 参照         | タイプ    |    | 説明                 |
+| ---------- | ------ |:--:| ------------------ |
+| methodName | テキスト   | -> | 並べ替え順の指定に使用するメソッド名 |
+| extraParam | any    | -> | methodName に渡す引数   |
+| 戻り値        | コレクション | <- | 並べ替えられた元のコレクション    |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.sort()` function <!-- REF #collection.sort().Summary -->sorts the elements of the original collection<!-- END REF --> and also returns the sorted collection.
+`.sort()` 関数は、 <!-- REF #collection.sort().Summary -->コレクションの要素を並べ替えます<!-- END REF --> 。戻り値は並べ替えられた元のコレクションです。
 > このコマンドは、元のコレクションを変更します。
 
-If `.sort()` is called with no parameters, only scalar values (number, text, date, booleans) are sorted. Elements are sorted by default in ascending order, according to their type.
+引数もなしに呼び出された場合、`.sort()` はスカラー値 (数値、テキスト、日付、ブール) のみを並べ替えます。 デフォルトでは、要素はそれぞれの型に応じて昇順で並べ替えられます。
 
-If you want to sort the collection elements in some other order or sort any type of element, you must supply in *methodName* a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. 必要であれば *methodName* に追加の引数を渡すこともできます。
+カスタマイズされた順番や、型に関係なくコレクション要素を並べ替えたい場合には、二つの値を比較して、最初の値が二つ目の値より低い場合に *$1.result* に **true** を返す比較メソッドの名称を *methodName* に渡します。 必要であれば *methodName* に追加の引数を渡すこともできます。
 
 *   *methodName* で指定したメソッドは以下の引数を受け取ります:
     *   $1 (オブジェクト):
@@ -2699,12 +2699,12 @@ If you want to sort the collection elements in some other order or sort any type
 ```4d
  var $col; $col2; $col3 : Collection
  $col:=New collection(33;4;66;1111;222)
- $col2:=$col.sort() //numerical sort: [4,33,66,222,1111]
- $col3:=$col.sort("numberOrder") //alphabetical sort: [1111,222,33,4,66]
+ $col2:=$col.sort() // 数値順: [4,33,66,222,1111]
+ $col3:=$col.sort("numberOrder") // アルファベット順: [1111,222,33,4,66]
 ```
 
 ```4d
-  //numberOrder project method
+  // numberOrder プロジェクトメソッド
  var $1 : Object
  $1.result:=String($1.value)<String($1.value2)
 ``` 
@@ -2727,22 +2727,22 @@ If you want to sort the collection elements in some other order or sort any type
 **.sum**( { *propertyPath* : Text } ) : Real<!-- END REF -->
 
 <!-- REF #collection.sum().Params -->
-| 参照           | タイプ  |    | 説明                       |
-| ------------ | ---- |:--:| ------------------------ |
-| propertyPath | テキスト | -> | 計算に使用するオブジェクトプロパティのパス    |
-| 戻り値          | 実数   | <- | Sum of collection values |
+| 参照           | タイプ  |    | 説明                    |
+| ------------ | ---- |:--:| --------------------- |
+| propertyPath | テキスト | -> | 計算に使用するオブジェクトプロパティのパス |
+| 戻り値          | 実数   | <- | コレクション要素の値の合計         |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.sum()` function <!-- REF #collection.sum().Summary -->returns the sum for all values in the collection instance<!-- END REF -->.
+`.sum()` 関数は、 <!-- REF #collection.sum().Summary -->コレクションインスタンスの全要素の値を合計して返します<!-- END REF -->。
 
 計算の対象となるのは数値のみです (他の型の要素は無視されます)。
 
 コレクションがオブジェクトを格納している場合には、計算するオブジェクトプロパティのパスを *propertyPath* に渡します。
 
-`.sum()` returns 0 if:
+`.sum()` は以下の場合には 0 を返します:
 
 *   コレクションが空の場合
 *   コレクションに数値が含まれていない場合
@@ -2789,19 +2789,19 @@ The `.sum()` function <!-- REF #collection.sum().Summary -->returns the sum for 
 **.unshift**( *value* : any { ;...*valueN* : any } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.unshift().Params -->
-| 参照    | タイプ                                    |    | 説明                                                    |
-| ----- | -------------------------------------- |:--:| ----------------------------------------------------- |
-| value | Text, Number, Object, Collection, Date | -> | Value(s) to insert at the beginning of the collection |
-| 戻り値   | 実数                                     | <- | Collection containing added element(s)                |
+| 参照    | タイプ                      |    | 説明               |
+| ----- | ------------------------ |:--:| ---------------- |
+| value | 数値、テキスト、日付、オブジェクト、コレクション | -> | コレクションの先頭に挿入する値  |
+| 戻り値   | 実数                       | <- | 要素の追加された元のコレクション |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.unshift()` function <!-- REF #collection.unshift().Summary -->inserts the given *value*(s) at the beginning of the collection <!-- END REF -->and returns the modified collection.
+`.unshift()` 関数は、 <!-- REF #collection.unshift().Summary -->一つ以上の *value* 引数をコレクションインスタンスの先頭に挿入し、変更された元のコレクションを返します <!-- END REF -->。
 > このコマンドは、元のコレクションを変更します。
 
-If several values are passed, they are inserted all at once, which means that they appear in the resulting collection in the same order as in the argument list.
+複数の値が渡された場合、それらは一度に挿入されます。つまり、引数の順番と同じ順番で変更後のコレクションに格納されます。
 
 
 #### 例題
