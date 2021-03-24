@@ -414,7 +414,7 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 <details><summary>履歴</summary>
 | バージョン  | 内容                                           |
 | ------ | -------------------------------------------- |
-| v18 R3 | *ck shared* オプションの追加。 *groupWith* パラメーターの追加。 |
+| v18 R3 | *ck shared* オプションの追加。 *groupWith* パラメーターを追加。 |
 | v16 R6 | 追加                                           |
 </details>
 
@@ -1671,7 +1671,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 コレクションがオブジェクトを格納している場合には、最大値を取得するオブジェクトプロパティのパスを *propertyPath* に渡します。
 
-コレクションが空での場合、 `.max()` は *Undefined* を返します。
+コレクションが空の場合、 `.max()` は *Undefined* を返します。
 
 #### 例題
 
@@ -1721,7 +1721,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 コレクションがオブジェクトを格納している場合には、最小値を取得するオブジェクトプロパティのパスを *propertyPath* に渡します。
 
-コレクションが空での場合、 `.min()` は *Undefined* を返します。
+コレクションが空の場合、 `.min()` は *Undefined* を返します。
 
 #### 例題
 
@@ -1978,31 +1978,31 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.pop()** : any <!-- END REF -->
 
 <!-- REF #collection.pop().Params -->
-| 参照  | タイプ |    | 説明                         |
-| --- | --- |:--:| -------------------------- |
-| 戻り値 | any | <- | Last element of collection |
+| 参照  | タイプ |    | 説明           |
+| --- | --- |:--:| ------------ |
+| 戻り値 | any | <- | コレクションの最後の要素 |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.pop()` function <!-- REF #collection.pop().Summary -->removes the last element from the collection and returns it as the function result<!-- END REF -->.
+`.pop()` 関数は、 <!-- REF #collection.pop().Summary -->コレクションから最後の要素を取り除き、それを戻り値として返します<!-- END REF -->。
 > このコマンドは、元のコレクションを変更します。
 
-When applied to an empty collection, `.pop()` returns ***undefined***.
+空のコレクションに適用した場合、 `.pop()` は **Undefined* を返します。</p>
 
 #### 例題
 
-`.pop()`, used in conjunction with [`.push()`](#push), can be used to implement a first-in, last-out stack feature:
+`.pop()` を [`.push()`](#push) と組み合わせて使用すると、スタック (後入れ先出し構造) を実装することができます:
 
 ```4d
  var $stack : Collection
  $stack:=New collection //$stack=[]
  $stack.push(1;2) //$stack=[1,2]
- $stack.pop() //$stack=[1]  Returns 2
+ $stack.pop() //$stack=[1] 、戻り値は 2 です
  $stack.push(New collection(4;5)) //$stack=[[1,[4,5]]
- $stack.pop() //$stack=[1]  Returns [4,5]
- $stack.pop() //$stack=[]  Returns 1
+ $stack.pop() //$stack=[1] 、戻り値は [4,5] です
+ $stack.pop() //$stack=[] 、戻り値は 1 です
 ```
 
 
@@ -2025,16 +2025,16 @@ When applied to an empty collection, `.pop()` returns ***undefined***.
 **.push**( *element* : any { ;...*elementN* } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.push().Params -->
-| 参照      | タイプ    |    | 説明                                            |
-| ------- | ------ |:--:| --------------------------------------------- |
-| element | 混合     | -> | Element(s) to add to the collection           |
-| 戻り値     | コレクション | <- | Original collection containing added elements |
+| 参照      | タイプ    |    | 説明               |
+| ------- | ------ |:--:| ---------------- |
+| element | 混合     | -> | コレクションに追加する要素    |
+| 戻り値     | コレクション | <- | 要素の追加された元のコレクション |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.push()` function <!-- REF #collection.push().Summary -->appends one or more *element*(s) to the end of the collection instance and returns the edited collection<!-- END REF -->.
+`.push()` 関数は、 <!-- REF #collection.push().Summary -->一つ以上の *element* 引数をコレクションインスタンスの最後に追加し、変更された元のコレクションを返します<!-- END REF -->。
 > このコマンドは、元のコレクションを変更します。
 
 
@@ -2052,7 +2052,7 @@ The `.push()` function <!-- REF #collection.push().Summary -->appends one or mor
 
 #### 例題 2
 
-You want to sort the resutling collection:
+戻り値のコレクションを並び替えます:
 
 ```4d
  var $col; $sortedCol : Collection
@@ -2074,10 +2074,10 @@ You want to sort the resutling collection:
 ## .query()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                       |
-| ------ | ------------------------ |
-| v17 R5 | Support of querySettings |
-| v16 R6 | 追加                       |
+| バージョン  | 内容                      |
+| ------ | ----------------------- |
+| v17 R5 | querySettings パラメーターを追加 |
+| v16 R6 | 追加                      |
 </details>
 
 <!-- REF #collection.query().Syntax -->
@@ -2085,18 +2085,18 @@ You want to sort the resutling collection:
 
 
 <!-- REF #collection.query().Params -->
-| 参照            | タイプ    |    | 説明                                                |
-| ------------- | ------ |:--:| ------------------------------------------------- |
-| queryString   | テキスト   | -> | 検索条件                                              |
-| value         | 混合     | -> | プレースホルダー使用時: 比較する値                                |
-| querySettings | オブジェクト | -> | Query options: parameters, attributes             |
-| 戻り値           | コレクション | <- | Element(s) matching queryString in the collection |
+| 参照            | タイプ    |    | 説明                                 |
+| ------------- | ------ |:--:| ---------------------------------- |
+| queryString   | テキスト   | -> | 検索条件                               |
+| value         | 混合     | -> | プレースホルダー使用時: 比較する値                 |
+| querySettings | オブジェクト | -> | クエリオプション: parameters, attributes 他 |
+| 戻り値           | コレクション | <- | queryString に合致するコレクション要素          |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.query()` function <!-- REF #collection.query().Summary -->returns all elements of a collection of objects that match the search conditions <!-- END REF -->defined by *queryString* and (optionally) *value* or *querySettings*. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+`.query()` 関数は、*queryString* および、任意の *value* や *querySettings* パラメーターによって定義された <!-- REF #collection.query().Summary -->検索条件に合致するオブジェクトコレクションの要素をすべて返します <!-- END REF -->。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 > このコマンドは、元のコレクションを変更しません。
 
 *queryString* 引数には、以下のシンタックスを使用します:
@@ -2105,7 +2105,7 @@ The `.query()` function <!-- REF #collection.query().Summary -->returns all elem
 propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 値}
 ```
 
-For detailed information on how to build a query using , value and *querySettings* parameters, please refer to the **dataClass** `.query()` function description.
+*queryString* および *value* や *querySettings* パラメーターを使ってクエリをビルドする方法の詳細については、[`dataClass.query()`](dataclassClass.md#query) 関数を参照ください。
 
 
 
@@ -2138,7 +2138,7 @@ For detailed information on how to build a query using , value and *querySetting
  $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
-This example returns persons whose name contains "in":
+上記のオブジェクトに対し、以下のクエリは名前に "in" が含まれている人物を返します:
 
 ```4d
  $col:=$c.query("name = :1";"@in@")
