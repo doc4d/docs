@@ -2368,23 +2368,23 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 **.resize**( *size* : Integer { ; *defaultValue* : any } ) : Collection <!-- END REF -->
 
 <!-- REF #collection.resize().Params -->
-| 参照           | タイプ                          |    | 説明                                 |
-| ------------ | ---------------------------- |:--:| ---------------------------------- |
-| size         | 整数                           | -> | New size of the collection         |
-| defaultValue | 数値、テキスト、日付、ブール、オブジェクト、コレクション | -> | Default value to fill new elements |
-| 戻り値          | コレクション                       | <- | Resized original collection        |
+| 参照           | タイプ                          |    | 説明              |
+| ------------ | ---------------------------- |:--:| --------------- |
+| size         | 整数                           | -> | コレクションの新しいサイズ   |
+| defaultValue | 数値、テキスト、日付、ブール、オブジェクト、コレクション | -> | 新規要素のデフォルト値     |
+| 戻り値          | コレクション                       | <- | リサイズされた元のコレクション |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.resize()` function <!-- REF #collection.resize().Summary -->sets the collection length to the specified new size and returns the resized collection<!-- END REF -->.
+`.resize()` 関数は、 <!-- REF #collection.resize().Summary -->コレクションの length を引数で指定されたサイズに設定し、変更された元のコレクションを返します<!-- END REF -->。
 > このコマンドは、元のコレクションを変更します。
 
-*   If *size* < collection length, exceeding elements are removed from the collection.
-*   If *size* > collection length, the collection length is increased to size.
+*   *size* < lengthの場合、余分な要素はコレクションから削除されます。
+*   *size* > lengthの場合、不足分の要素がコレクションに追加されます。
 
-By default, new elements are filled will **null** values. You can specify the value to fill in added elements using the *defaultValue* parameter.
+デフォルトで、新規要素には **null** 値が格納されます。 *defaultValue* に引数を渡すことで、新規要素の値を指定することができます。
 
 #### 例題
 
@@ -2424,15 +2424,15 @@ By default, new elements are filled will **null** values. You can specify the va
 **.reverse( )** : Collection <!-- END REF -->
 
 <!-- REF #collection.reverse().Params -->
-| 参照  | タイプ    |    | 説明                              |
-| --- | ------ |:--:| ------------------------------- |
-| 戻り値 | コレクション | <- | Inverted copy of the collection |
+| 参照  | タイプ    |    | 説明                  |
+| --- | ------ |:--:| ------------------- |
+| 戻り値 | コレクション | <- | 逆順に要素を格納した新しいコレクション |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a deep copy of the collection with all its elements in reverse order<!-- END REF -->. また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
+`.reverse()` 関数は、 <!-- REF #collection.reverse().Summary -->全要素が逆順になった、コレクションのディープ・コピーを返します<!-- END REF -->。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。
 > このコマンドは、元のコレクションを変更しません。
 
 #### 例題
@@ -2463,18 +2463,18 @@ The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a de
 **.shift()** : any<!-- END REF -->
 
 <!-- REF #collection.shift().Params -->
-| 参照  | タイプ |    | 説明                          |
-| --- | --- |:--:| --------------------------- |
-| 戻り値 | any | <- | First element of collection |
+| 参照  | タイプ |    | 説明          |
+| --- | --- |:--:| ----------- |
+| 戻り値 | any | <- | コレクションの先頭要素 |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.shift()` function <!-- REF #collection.shift().Summary -->removes the first element of the collection and returns it as the function result<!-- END REF -->.
+`.shift()` 関数は、 <!-- REF #collection.shift().Summary -->コレクションの先頭要素を取り除き、それを戻り値として返します<!-- END REF -->。
 > このコマンドは、元のコレクションを変更します。
 
-If the collection is empty, this method does nothing.
+コレクションが空の場合、 関数はなにもしません。
 
 #### 例題
 
@@ -2507,11 +2507,11 @@ If the collection is empty, this method does nothing.
 **.slice**( *startFrom* : Integer { ; *end* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.slice().Params -->
-| 参照        | タイプ    |    | 説明                                                       |
-| --------- | ------ |:--:| -------------------------------------------------------- |
-| startFrom | 整数     | -> | Index to start the search at (included)                  |
-| end       | 整数     | -> | 終了インデックス (含まれない)                                         |
-| 戻り値       | コレクション | <- | New collection containing sliced elements (shallow copy) |
+| 参照        | タイプ    |    | 説明                           |
+| --------- | ------ |:--:| ---------------------------- |
+| startFrom | 整数     | -> | 開始インデックス (含む)                |
+| end       | 整数     | -> | 終了インデックス (含まれない)             |
+| 戻り値       | コレクション | <- | 抜粋要素を格納した新しいコレクション(シャロウ・コピー) |
 <!-- END REF -->
 
 
