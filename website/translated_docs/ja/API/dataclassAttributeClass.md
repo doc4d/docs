@@ -3,14 +3,14 @@ id: dataclassAttributeClass
 title: DataClassAttribute
 ---
 
-Dataclass attributes are available as properties of their respective classes. たとえば:
+データクラス属性は、それぞれのクラスのプロパティとして利用可能です。 たとえば:
 
 ```4d
- nameAttribute:=ds.Company.name //reference to class attribute
- revenuesAttribute:=ds.Company["revenues"] //alternate way
+ nameAttribute:=ds.Company.name // クラス属性への参照
+ revenuesAttribute:=ds.Company["revenues"] // 別の書き方
 ```
 
-This code assigns to *nameAttribute* and *revenuesAttribute* references to the name and revenues attributes of the Company class. このシンタックスは属性内に保管されている値を返すのではありません。その代わりに、属性自身への参照を返します。 To handle values, you need to go through [**Entities**](entityClass.md).
+このコードは、*nameAttribute* および *revenuesAttribute* 変数に、`Company` クラスの name および revenues 属性の参照をそれぞれ代入します。 このシンタックスは属性内に保管されている値を返すのではありません。その代わりに、属性自身への参照を返します。 値を管理するには、[**エンティティ**](entityClass.md) を使用する必要があります。
 
 `DataClassAttribute` objects have properties that you can read to get information about your dataclass attributes.
 
