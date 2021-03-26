@@ -173,7 +173,7 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 > * The interpretation of keyword flags may vary per mail client.
 
 
-**Returned object**
+**返されるオブジェクト**
 
 The function returns an object describing the IMAP status:
 
@@ -260,7 +260,7 @@ Possible charsets:
 | mail mode UTF8 in base64 | US-ASCII_UTF8_B64            | headerCharset & bodyCharset: US-ASCII if possible, otherwise UTF-8 & base64                               |
 
 
-**Returned object**
+**返されるオブジェクト**
 
 The function returns an object describing the IMAP status:
 
@@ -373,7 +373,7 @@ The `.copy()` function <!-- REF #imapTransporterClass.copy().Summary -->copies t
 The *destinationBox* parameter allows you to pass a text value with the name of the mailbox where the copies of messages will be placed.
 
 
-**Returned object**
+**返されるオブジェクト**
 
 The function returns an object describing the IMAP status:
 
@@ -478,7 +478,7 @@ The `.delete()` function <!-- REF #imapTransporterClass.delete().Summary -->sets
 Executing this function does not actually remove messages. Messages with the "delete" flag can still be found by the [.searchMails()](#searchmails) function. Flagged messages are deleted from the IMAP server with the [`.expunge()`](#expunge) function or by selecting another mailbox or when the [transporter object](#imap-transporter-object) (created with [IMAP New transporter](#imap-new-transporter)) is destroyed.
 
 
-**Returned object**
+**返されるオブジェクト**
 
 The function returns an object describing the IMAP status:
 
@@ -571,7 +571,7 @@ To delete all messages in the current mailbox:
 
 The `.expunge()` function <!-- REF #imapTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
 
-**Returned object**
+**返されるオブジェクト**
 
 The function returns an object describing the IMAP status:
 
@@ -642,7 +642,7 @@ The `.getBoxInfo()` function <!-- REF #imapTransporterClass.getBoxInfo().Summary
 In the optional *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
 
 
-**Returned object**
+**返されるオブジェクト**
 
 The `boxInfo` object returned contains the following properties:
 
@@ -1088,7 +1088,7 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 > This function is only supported by IMAP servers compliant with RFC [8474](https://tools.ietf.org/html/rfc8474).
 
 
-**Returned object**
+**返されるオブジェクト**
 
 The function returns an object describing the IMAP status:
 
@@ -1270,7 +1270,7 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 Note that False values are ignored.
 
 
-**Returned object**
+**返されるオブジェクト**
 
 The function returns an object describing the IMAP status:
 
@@ -1484,7 +1484,7 @@ The optional *state* parameter defines the type of access to the mailbox. The po
 > * If there is no open connection, `.selectBox()` will open a connection.
 > * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the [`.checkConnection()`](#checkconnection) function is automatically called.
 
-**Returned object**
+**返されるオブジェクト**
 
 The `boxInfo` object returned contains the following properties:
 
