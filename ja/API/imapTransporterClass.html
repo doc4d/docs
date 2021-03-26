@@ -179,9 +179,6 @@
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>4D.IMAPTransporter.new()</code> function creates and returns a new object of the <code>4D.IMAPTransporter</code> type. It is identical to the <a href="#imap-new-transporter"><code>IMAP New transporter</code></a> command (shortcut).</p>
-<blockquote>
-<p>It is recommended to use the <a href="#imap-new-transporter"><code>IMAP New transporter</code></a> shortcut command instead of <code>4D.IMAPTransporter.new()</code>.</p>
-</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="acceptunsecureconnection"></a><a href="#acceptunsecureconnection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.acceptUnsecureConnection</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -273,7 +270,7 @@
 <li>The interpretation of keyword flags may vary per mail client.</li>
 </ul>
 </blockquote>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
 <thead>
@@ -357,7 +354,7 @@
 <tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td>headerCharset &amp; bodyCharset: US-ASCII if possible, otherwise UTF-8 &amp; base64</td></tr>
 </tbody>
 </table>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
 <thead>
@@ -439,7 +436,7 @@
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-6"></a><a href="#説明-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.checkConnection()</code> function  checks the connection using information stored in the transporter object, recreates the connection if necessary, and returns the status. This function allows you to verify that the values provided by the user are valid and consistent.</p>
-<h4><a class="anchor" aria-hidden="true" id="returned-object"></a><a href="#returned-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Returned object</h4>
+<h4><a class="anchor" aria-hidden="true" id="返されるオブジェクト"></a><a href="#返されるオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>返されるオブジェクト</h4>
 <p>The function sends a request to the mail server and returns an object describing the mail status. This object can contain the following properties:</p>
 <table>
 <thead>
@@ -517,7 +514,7 @@
 <li>in the <em>allMsgs</em> parameter, the <code>IMAP all</code> constant (integer) to copy all messages in the selected mailbox.</li>
 </ul>
 <p>The <em>destinationBox</em> parameter allows you to pass a text value with the name of the mailbox where the copies of messages will be placed.</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
 <thead>
@@ -604,7 +601,7 @@
 <li>in the <code>allMsgs</code> parameter, the <code>IMAP all</code> constant (integer) to delete all messages in the selected mailbox.</li>
 </ul>
 <p>Executing this function does not actually remove messages. Messages with the &quot;delete&quot; flag can still be found by the <a href="#searchmails">.searchMails()</a> function. Flagged messages are deleted from the IMAP server with the <a href="#expunge"><code>.expunge()</code></a> function or by selecting another mailbox or when the <a href="#imap-transporter-object">transporter object</a> (created with <a href="#imap-new-transporter">IMAP New transporter</a>) is destroyed.</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
 <thead>
@@ -683,7 +680,7 @@
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.expunge()</code> function removes all messages with the &quot;deleted&quot; flag from the IMAP mail server. The &quot;deleted&quot; flag can be set with the <a href="#delete"><code>.delete()</code></a> or <a href="#addflags"><code>.addFlags()</code></a> methods.</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
 <thead>
@@ -746,7 +743,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <h4><a class="anchor" aria-hidden="true" id="説明-12"></a><a href="#説明-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.getBoxInfo()</code> function returns a <code>boxInfo</code> object corresponding to the mailbox <em>name</em>. This function returns the same information as <a href="#selectbox"><code>.selectBox()</code></a> without changing the current mailbox.</p>
 <p>In the optional <em>name</em> parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the <a href="#getdelimiter"><code>.getDelimiter()</code></a> function.</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The <code>boxInfo</code> object returned contains the following properties:</p>
 <table>
 <thead>
@@ -1161,7 +1158,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <blockquote>
 <p>This function is only supported by IMAP servers compliant with RFC <a href="https://tools.ietf.org/html/rfc8474">8474</a>.</p>
 </blockquote>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
 <thead>
@@ -1321,7 +1318,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </tbody>
 </table>
 <p>Note that False values are ignored.</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The function returns an object describing the IMAP status:</p>
 <table>
 <thead>
@@ -1528,7 +1525,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <li>If the connection has not been used since the designated connection delay (see <code>IMAP New transporter</code>), the <a href="#checkconnection"><code>.checkConnection()</code></a> function is automatically called.</li>
 </ul>
 </blockquote>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The <code>boxInfo</code> object returned contains the following properties:</p>
 <table>
 <thead>

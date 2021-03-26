@@ -172,6 +172,7 @@
 <tr><td>HTTP debug log file</td><td>9</td><td>Log file created by the <code>WEB SET OPTION(Web debug log)</code> command. Stored in the Logs folder.</td></tr>
 <tr><td>HTTP log file</td><td>8</td><td>Log file created by the <code>WEB SET OPTION(Web log recording)</code> command. Stored in Logs folder.</td></tr>
 <tr><td>Last backup file</td><td>2</td><td>Last backup file, named &lt;applicationName&gt;[bkpNum].4BK, stored at a custom location.</td></tr>
+<tr><td>Last journal integration log file</td><td>22</td><td>Full pathname of the last journal integration log file (stored in the Logs folder of the restored application), if any. This file is created, in auto-repair mode, as soon as a log file integration occurred</td></tr>
 <tr><td>Repair log file</td><td>7</td><td>Log file of database repairs made on the database in the Maintenance and Security Center (MSC). Stored in the Logs folder.</td></tr>
 <tr><td>Request log file</td><td>10</td><td>Standard client/server request log file (excluding Web requests) created by the <code>SET DATABASE PARAMETER(4D Server log recording)</code> or <code>SET DATABASE PARAMETER(Client log recording)</code> commands. If executed on the server, the server log file is returned (stored in the Logs folder on the server). If executed on the client, the client log file is returned (stored in the client local Logs folder).</td></tr>
 <tr><td>SMTP log file</td><td>15</td><td>Log file created by the <code>SET DATABASE PARAMETER(SMTP Log)</code> command. Stored in the Logs folder.</td></tr>
@@ -314,7 +315,7 @@
 </tbody>
 </table>
 <p>On Windows, a shortcut (.lnk file) is always created (the <em>aliasType</em> parameter is ignored).</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>A <code>4D.File</code> object with the <code>isAlias</code> property set to <strong>true</strong>.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>You want to create an alias to a file in your database folder:</p>
@@ -690,7 +691,7 @@
 <p>The <code>.moveTo()</code> function moves or renames the <code>File</code> object into the specified <em>destinationFolder</em>.</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
 <p>By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the <em>newName</em> parameter. The new name must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned.</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The moved <code>File</code> object.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-7"></a><a href="#例題-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$DocFolder</span>:=<span class="hljs-function">Folder</span>(fk documents folder)
@@ -802,7 +803,7 @@
 <p>The <code>.rename()</code> function renames the file with the name you passed in <em>newName</em> and returns the renamed <code>File</code> object.</p>
 <p>The <em>newName</em> parameter must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.</p>
 <p>Note that the function modifies the full name of the file, i.e. if you do not pass an extension in <em>newName</em>, the file will have a name without an extension.</p>
-<p><strong>Returned object</strong></p>
+<p><strong>返されるオブジェクト</strong></p>
 <p>The renamed <code>File</code> object.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-8"></a><a href="#例題-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>You want to rename &quot;ReadMe.txt&quot; in &quot;ReadMe_new.txt&quot;:</p>
