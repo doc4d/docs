@@ -737,7 +737,7 @@ The web server starts with default settings defined in the settings file of the 
 Customized session settings will be reset when the [`.stop()`](#stop) function is called.
 
 
-#### Returned object
+#### 返されるオブジェクト
 
 The function returns an object describing the Web server launch status. This object can contain the following properties:
 
