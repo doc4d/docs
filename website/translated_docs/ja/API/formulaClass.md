@@ -208,7 +208,7 @@ A formula using a project method with parameters:
 ```
 
 
-#### Example 5
+#### 例題 5
 
 Using `This`:
 
@@ -219,7 +219,7 @@ Using `This`:
  $result:=$o.fullName() //returns "John Smith"
 ```
 
-#### Example 6
+#### 例題 6
 
 Calling a formula using object notation:
 
