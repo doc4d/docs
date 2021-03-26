@@ -284,7 +284,7 @@ title: DataClassAttribute
 
 #### 説明
 
-The `.name` property <!-- REF dataclassAttributeClass.name.Summary -->returns the name of the `dataClassAttribute` object as string<!-- END REF -->.
+`.name` プロパティは、 <!-- REF dataclassAttributeClass.name.Summary -->`dataClassAttribute` オブジェクトの名称<!-- END REF -->を文字列として返します。
 
 #### 例題
 
@@ -313,13 +313,13 @@ The `.name` property <!-- REF dataclassAttributeClass.name.Summary -->returns th
 
 
 #### 説明
-> This property is only available with attributes of the "relatedEntity" or "relatedEntities" [`.kind`](#kind) property.
+> このプロパティは、[`.kind`](#kind) プロパティ値が "relatedEntity" または "relatedEntities" である属性においてのみ利用可能です。
 
-The `.relatedDataClass` property <!-- REF dataclassAttributeClass.relatedDataClass.Summary -->returns the name of the dataclass related to the attribute<!-- END REF -->.
+`.relatedDataClass` プロパティ、 <!-- REF dataclassAttributeClass.relatedDataClass.Summary -->属性にリレートされているデータクラスの名称<!-- END REF -->を返します。
 
 #### 例題
 
-Given the following tables and relations:
+以下のテーブルとリレーションを前提とします:
 
 
 ![](assets/en/API/dataclassAttribute4.png)
@@ -350,9 +350,9 @@ Given the following tables and relations:
 
 #### 説明
 
-The `.type` property <!-- REF dataclassAttributeClass.type.Summary -->contains the conceptual value type of the attribute<!-- END REF -->, useful for generic programming.
+`.type` プロパティは、 <!-- REF dataclassAttributeClass.type.Summary -->属性の概念的な値タイプ<!-- END REF -->が格納されており、汎用的なプログラミングに有用です。
 
-The conceptual value type depends on the attribute [`.kind`](#kind).
+この概念的な値タイプは属性の種類 ([`.kind`](#kind)) によります。
 
 **とりうる値:**
 
