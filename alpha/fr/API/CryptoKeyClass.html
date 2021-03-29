@@ -87,16 +87,16 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#4dcryptokeynew"><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) : 4D.CryptoKey</a><p>    creates a new <code>4D.CryptoKey</code> object encapsulating an encryption key pair</td></tr>
-<tr><td><a href="#curve"><strong>.curve</strong> : Texte</a><p>    nom de la courbe normalisée de la clé.</td></tr>
-<tr><td><a href="#decrypt"><strong>.decrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Object</a><p>    déchiffre le paramètre <em>message</em> à l'aide de la clé <strong>private</strong> key</td></tr>
-<tr><td><a href="#encrypt"><strong>.encrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Text</a><p>    crypte le paramètre <em>message</em> à l'aide de la clé <strong>publique</strong></td></tr>
-<tr><td><a href="#getprivatekey"><strong>.getPrivateKey()</strong> : Text</a><p>    retourne la clé privée de l'objet <code>cryptoKey</code></td></tr>
-<tr><td><a href="#getpublickey"><strong>.getPublicKey( )</strong> : Text</a><p>    retourne la clé publique de l'objet <code>cryptoKey</code></td></tr>
-<tr><td><a href="#sign">.<strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text</a><p>    signe la représentation utf8 de la chaîne <em>message</em></td></tr>
-<tr><td><a href="#size"><strong>.size</strong> : Integer</a><p>    la taille de la clé en bits</td></tr>
+<tr><td><a href="#4dCryptoKeynew"><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) : 4D.CryptoKey</a><p>    creates a new <code>4D.CryptoKey</code> object encapsulating an encryption key pair</td></tr>
+<tr><td><a href="#curve"><strong>.curve</strong> : Texte</a><p>    normalised curve name of the key.</td></tr>
+<tr><td><a href="#decrypt"><strong>.decrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Object</a><p>    decrypts the <em>message</em> parameter using the <strong>private</strong> key</td></tr>
+<tr><td><a href="#encrypt"><strong>.encrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Text</a><p>    encrypts the <em>message</em> parameter using the <strong>public</strong> key</td></tr>
+<tr><td><a href="#getprivatekey"><strong>.getPrivateKey()</strong> : Text</a><p>    returns the private key of the <code>CryptoKey</code> object</td></tr>
+<tr><td><a href="#getpublickey"><strong>.getPublicKey( )</strong> : Text</a><p>    returns the public key of the <code>CryptoKey</code> object</td></tr>
+<tr><td><a href="#sign">.<strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text</a><p>    signs the utf8 representation of a <em>message</em> string</td></tr>
+<tr><td><a href="#size"><strong>.size</strong> : Integer</a><p>    the size of the key in bits</td></tr>
 <tr><td><a href="#type"><strong>.type</strong> : Texte</a><p>    Name of the key type - &quot;RSA&quot;, &quot;ECDSA&quot;, &quot;PEM&quot;</td></tr>
-<tr><td><a href="#verify"><strong>.verify</strong>( <em>message</em> : Text ; <em>signature</em> : Text ; <em>options</em> : Object) : object</a><p>    vérifie la signature base64 par rapport à la représentation utf8 du <em>message</em></td></tr>
+<tr><td><a href="#verify"><strong>.verify</strong>( <em>message</em> : Text ; <em>signature</em> : Text ; <em>options</em> : Object) : object</a><p>    verifies the base64 signature against the utf8 representation of <em>message</em></td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="4dcryptokeynew"></a><a href="#4dcryptokeynew" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D.CryptoKey.new()</h2>
@@ -134,8 +134,8 @@
 <tr><td><a href="#type">type</a></td><td>Texte</td><td>Type of the key: &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot;</li></td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="cryptokey"></a><a href="#cryptokey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>cryptoKey</em></h4>
-<p>L'objet <code>cryptoKey</code> retourné encapsule une paire de clés de chiffrement. C'est un objet partagé et peut être alors utilisé par de multiples traitements 4D simultanés.</p>
+<h4><a class="anchor" aria-hidden="true" id="cryptokey"></a><a href="#cryptokey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>CryptoKey</em></h4>
+<p>The returned <code>CryptoKey</code> object encapsulates an encryption key pair. C'est un objet partagé et peut être alors utilisé par de multiples traitements 4D simultanés.</p>
 <h2><a class="anchor" aria-hidden="true" id="curve"></a><a href="#curve" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.curve</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -148,7 +148,7 @@
 </table>
 <p></details></p>
 <p><strong>.curve</strong> : Texte</p>
-<p>Défini uniquement pour les clés ECDSA : le nom de la courbe normalisée de la clé. Usually &quot;prime256v1&quot; for ES256 (default), &quot;secp384r1&quot; for ES384, &quot;secp521r1&quot; for ES512.</p>
+<p>Defined only for ECDSA keys: the normalised curve name of the key. Usually &quot;prime256v1&quot; for ES256 (default), &quot;secp384r1&quot; for ES384, &quot;secp521r1&quot; for ES512.</p>
 <h2><a class="anchor" aria-hidden="true" id="decrypt"></a><a href="#decrypt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.decrypt()</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -171,7 +171,7 @@
 <tr><td>Résultat</td><td>Objet</td><td>&lt;-</td><td>Statut</td></tr>
 </tbody>
 </table>
-<p>La fonction <code>.encrypt()</code> déchiffre le paramètre <em>message</em> à l'aide de la clé <strong>private</strong> key. L'algorithme utilisé dépend du type de clé.</p>
+<p>The <code>.decrypt()</code> function decrypts the <em>message</em> parameter using the <strong>private</strong> key. L'algorithme utilisé dépend du type de clé.</p>
 <p>La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir <a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a>).</p>
 <h4><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
@@ -219,7 +219,7 @@
 <tr><td>Résultat</td><td>Texte</td><td>&lt;-</td><td>Message chiffré et encodé à l'aide de <code>options.encodingEncrypted</code></td></tr>
 </tbody>
 </table>
-<p>La fonction <code>.encrypt()</code> crypte le paramètre <em>message</em> à l'aide de la clé <strong>publique</strong>. L'algorithme utilisé dépend du type de clé.</p>
+<p>The <code>.encrypt()</code> function encrypts the <em>message</em> parameter using the <strong>public</strong> key. L'algorithme utilisé dépend du type de clé.</p>
 <p>La clé doit être une clé RSA, l'algorithme est RSA-OAEP (voir <a href="https://tools.ietf.org/html/rfc3447">RFC 3447</a>).</p>
 <h5><a class="anchor" aria-hidden="true" id="options-1"></a><a href="#options-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h5>
 <table>
@@ -254,7 +254,7 @@
 <tr><td>Résultat</td><td>Texte</td><td>&lt;-</td><td>Clé primaire au format PEM</td></tr>
 </tbody>
 </table>
-<p>La fonction <code>.getPrivateKey()</code>  retourne la clé privée de l'objet <code>cryptoKey</code> au format PEM, ou une chaîne vide si aucune n'est disponible.</p>
+<p>The <code>.getPrivateKey()</code> function  returns the private key of the <code>CryptoKey</code> object in PEM format, or an empty string if none is available.</p>
 <h4><a class="anchor" aria-hidden="true" id="résultat-2"></a><a href="#résultat-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Résultat</em></h4>
 <p>La valeur retournée est la clé privée.</p>
 <h2><a class="anchor" aria-hidden="true" id="getpublickey"></a><a href="#getpublickey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.getPublicKey()</h2>
@@ -277,7 +277,7 @@
 <tr><td>Résultat</td><td>Texte</td><td>&lt;-</td><td>Clé publique au format PEM</td></tr>
 </tbody>
 </table>
-<p>La fonction <code>.getPublicKey()</code> retourne la clé publique de l'objet <code>cryptoKey</code> au format PEM, ou une chaîne vide si aucune n'est disponible.</p>
+<p>The <code>.getPublicKey()</code> function returns the public key of the <code>CryptoKey</code> object in PEM format, or an empty string if none is available.</p>
 <h4><a class="anchor" aria-hidden="true" id="résultat-3"></a><a href="#résultat-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Résultat</em></h4>
 <p>La valeur retournée est la clé publique.</p>
 <hr>
@@ -316,8 +316,8 @@
 <tr><td>Résultat</td><td>Texte</td><td>&lt;-</td><td>Signature en représentation Base64 ou Base64URL, selon l'option &quot;encoding&quot;</td></tr>
 </tbody>
 </table>
-<p>La fonction <code>.sign()</code> signe la représentation utf8 de la chaîne <em>message</em> à l'aide des clés d'objet <code>cryptoKey</code> et des <em>options</em> fournies. Elle retourne sa signature au format base64 ou base64URL, selon la valeur de l'attribut <code>options.encoding</code> que vous avez passé.</p>
-<p>La <code>cryptoKey</code> doit contenir une clé <strong>privée</strong> valide.</p>
+<p>The <code>.sign()</code> function signs the utf8 representation of a <em>message</em> string using the <code>CryptoKey</code> object keys and provided <em>options</em>. Elle retourne sa signature au format base64 ou base64URL, selon la valeur de l'attribut <code>options.encoding</code> que vous avez passé.</p>
+<p>The <code>CryptoKey</code> must contain a valid <strong>private</strong> key.</p>
 <h4><a class="anchor" aria-hidden="true" id="options-2"></a><a href="#options-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
 <thead>
@@ -344,7 +344,7 @@
 </table>
 <p></details></p>
 <p><strong>.size</strong> : Integer</p>
-<p>Défini uniquement pour les clés RSA : la taille de la clé en bits. Habituellement 2048 (par défaut).</p>
+<p>Defined only for RSA keys: the size of the key in bits. Habituellement 2048 (par défaut).</p>
 <h2><a class="anchor" aria-hidden="true" id="type"></a><a href="#type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.type</h2>
 <p><details><summary>Historique</summary></p>
 <table>
@@ -381,8 +381,8 @@
 <tr><td>Résultat</td><td>Objet</td><td>&lt;-</td><td>Statut de la vérification</td></tr>
 </tbody>
 </table>
-<p>La fonction <code>.verify()</code> vérifie la signature base64 par rapport à la représentation utf8 du <em>message</em> à l'aide des clés d'objet <code>cryptoKey</code> et des <em>options</em> fournies.</p>
-<p>La <code>cryptoKey</code> doit contenir une clé <strong>publique</strong> valide.</p>
+<p>The <code>.verify()</code> function verifies the base64 signature against the utf8 representation of <em>message</em> using the <code>CryptoKey</code> object keys and provided <em>options</em>.</p>
+<p>The <code>CryptoKey</code> must contain a valid <strong>public</strong> key.</p>
 <h4><a class="anchor" aria-hidden="true" id="options-3"></a><a href="#options-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
 <thead>
