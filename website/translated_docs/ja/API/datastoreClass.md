@@ -501,16 +501,16 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 **戻り値**
 
-スタックされたリクエストオブジェクトのコレクションが返されます。 The most recent request has index 0.
+スタックされたリクエストオブジェクトのコレクションが返されます。 直近のリクエストにはインデックス 0 が振られています。
 
-For a description of the ORDA request log format, please refer to the [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373) section.
+ORDAリクエストログのフォーマットの詳細は、[**ORDAクライアントリクエスト**](https://doc.4d.com/4Dv18R6/4D/18-R6/Description-of-log-files.300-5217819.ja.html#4385373) の章を参照ください。
 
 
 
 
 #### 例題
 
-See Example 2 of [`.startRequestLog()`](#startrequestlog).
+[`.startRequestLog()`](#startrequestlog) の例題2を参照ください。
 
 <!-- END REF -->
 
@@ -676,7 +676,7 @@ The ORDA request log can be sent to a file or to memory, depending on the parame
 
 *   If you did not pass any parameter, the log is started in memory. If `.startRequestLog()` was previously called with a *reqNum* (before a `.stopRequestLog()`), the log data is stacked in memory until the next time the log is emptied or `.stopRequestLog()` is called.
 
-For a description of the ORDA request log format, please refer to the [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373) section.
+ORDAリクエストログのフォーマットの詳細は、[**ORDAクライアントリクエスト**](https://doc.4d.com/4Dv18R6/4D/18-R6/Description-of-log-files.300-5217819.ja.html#4385373) の章を参照ください。
 
 
 
