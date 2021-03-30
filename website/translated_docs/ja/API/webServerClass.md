@@ -70,10 +70,10 @@ They provide the following properties and functions:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| 参照     | タイプ          |    | 説明                                                             |
-| ------ | ------------ | -- | -------------------------------------------------------------- |
-| option | 整数           | -> | Web server to get (default if omitted = `Web server database`) |
-| 戻り値    | 4D.WebServer | <- | Web server object                                              |
+| 参照    | タイプ          |    | 説明                                                             |
+| ----- | ------------ | -- | -------------------------------------------------------------- |
+| オプション | 整数           | -> | Web server to get (default if omitted = `Web server database`) |
+| 戻り値   | 4D.WebServer | <- | Web server object                                              |
 
 <!-- END REF -->
 
