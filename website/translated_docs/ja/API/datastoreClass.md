@@ -419,16 +419,16 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 **返されるオブジェクト**
 
-| プロパティ      | タイプ     | 説明                                                                                                                                                              |
-| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type       | string  | <li>"4D": ds で利用可能なメインデータストア </li><li>"4D Server": remote datastore, open with Open datastore</li>                                                                                                              |
-| networked  | boolean | <li>True: the datastore is reached through a network connection.</li><li>False: the datastore is not reached through a network connection (local database)</li>                                                                                                              |
-| localID    | text    | ID of the datastore on the machine. Corresponds to the localId string given with the `Open datastore` command. Empty string ("") for main datastore.            |
-| connection | object  | Object describing the remote datastore connection (not returned for main datastore). Available properties:<p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>hostname</td><td>text</td><td>IP address or name of the remote datastore + ":" + port number</td></tr><tr><td>tls</td><td>boolean</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>text</td><td>User authenticated on the remote datastore</td></tr></table> |
+| プロパティ      | タイプ     | 説明                                                                                                                   |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
+| type       | string  | <li>"4D": ds で利用可能なメインデータストア </li><li>"4D Server": Open datastore で開かれたリモートデータストア</li>                                                                   |
+| networked  | boolean | <li>true: ネットワーク接続を介してアクセスされたデータストア</li><li>false: ネットワーク接続を介さずにアクセスしているデータストア (ローカルデータベース)</li>                                                                   |
+| localID    | text    | マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。                             |
+| connection | object  | リモートデータストア接続の情報を格納したオブジェクト (メインデータストアの場合は返されません)。 次のプロパティを含みます:<p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>hostname</td><td>text</td><td>リモートデータストアの IPアドレスまたは名称 + ":" + ポート番号</td></tr><tr><td>tls</td><td>boolean</td><td>リモートデータストアとセキュア接続を利用している場合は true</td></tr><tr><td>idleTimeout</td><td>number</td><td>セッション非アクティブタイムアウト (分単位)。</td></tr><tr><td>user</td><td>text</td><td>リモートデータストアにて認証されたユーザー</td></tr></table> |
 
 
-*   If the `.getInfo()` function is executed on a 4D Server or 4D single-user, `networked` is False.
-*   If the `.getInfo()` function is executed on a remote 4D, `networked` is True
+*   `.getInfo()` 関数が、4D Server またはシングルユーザー版 4D 上で実行された場合、`networked` は false となります。
+*   `.getInfo()` 関数が、リモート版 4D 上で実行された場合、`networked` は true となります。
 
 
 
@@ -440,10 +440,10 @@ user / password / timeout / tls を指定してリモートデータストアに
 ```4d
  var $info : Object
 
- $info:=ds.getInfo() //Executed on 4D Server or 4D
+ $info:=ds.getInfo() // 4D Server または 4D 上で実行した場合
   //{"type":"4D","networked":false,"localID":""}
 
- $info:=ds.getInfo() // Executed on 4D remote
+ $info:=ds.getInfo() // リモート版4D 上で実行した場合
   //{"type":"4D","networked":true,"localID":""}
 ```
 
@@ -452,7 +452,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 #### 例題 2
 
-On a remote datastore:
+リモートデータストアの場合:
 
 
 
