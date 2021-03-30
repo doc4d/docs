@@ -734,7 +734,7 @@
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$vSingles</span>:=ds.Person.<span class="hljs-function">query</span>(<span class="hljs-string">"spouse = null"</span>) <span class="hljs-comment">// 正しいシンタックス</span>
 </code></pre>
 <p><strong>コレクション要素とクエリ条件のリンク</strong></p>
-<p>属性を複数持つオブジェクト要素からなりたっているコレクションが、さらに親オブジェクトの属性値である場合に、当該コレクションに特定要素が存在するかを条件に親オブジェクトを検出したいケースを考えます。AND 演算子で結合された複数のクエリ条件を使用して検索するだけでは、異なるコレクション要素がそれぞれ検索条件に合致する属性値を持つ場合にも当該親オブジェクトが検出されてしまいます。 これを避けるには、すべての条件に合致するコレクション要素のみが検出されるよう、クエリ条件をコレクション要素にリンクする必要があります。</p>
+<p>プロパティを複数持つオブジェクト要素からなりたっているコレクションが、さらに親オブジェクトの属性値である場合に、当該コレクションに特定要素が存在するかを条件に親オブジェクトを検出したいケースを考えます。AND 演算子で結合された複数のクエリ条件を使用して検索するだけでは、異なるコレクション要素がそれぞれ検索条件に合致するプロパティ値を持つ場合にも当該親オブジェクトが検出されてしまいます。 これを避けるには、すべての条件に合致するコレクション要素のみが検出されるよう、クエリ条件をコレクション要素にリンクする必要があります。</p>
 <p>たとえば、以下のような 2件のエンティティがあるとき:</p>
 <pre><code class="hljs">Entity <span class="hljs-number">1</span>:
 ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-class">.name</span>: <span class="hljs-string">"martin"</span>
@@ -799,16 +799,16 @@ ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-cla
 </thead>
 <tbody>
 <tr><td>parameters</td><td>オブジェクト</td><td><em>queryString</em> または <em>formula</em> に <strong>値の命名プレースホルダー</strong> を使用した場合に渡すオブジェクト。 値は、プロパティ/値のペアで表現されます。プロパティは、<em>queryString</em> または <em>formula</em> に値の代わりに挿入されたプレースホルダー名 (&quot;:placeholder&quot;など) で、値は、実際に比較される値です。 インデックスプレースホルダー (value引数として値を直接渡す方法) と命名プレースホルダーは、同じクエリ内で同時に使用することができます。</td></tr>
-<tr><td>attributes</td><td>オブジェクト</td><td><em>queryString</em> または <em>formula</em> に <strong>属性パスの命名プレースホルダー</strong> を使用した場合に渡すオブジェクト。 属性パスは、プロパティ/値のペアで表現されます。プロパティは、<em>queryString</em> または <em>formula</em> に属性パスの代わりに挿入されたプレースホルダー名 (&quot;:placeholder&quot;など) で、値は、属性パスを表す文字列または文字列のコレクションです。 Each value is a path that can designate either a scalar or a related attribute of the dataclass or a property in an object field of the dataclass<p><table><tr><th>タイプ</th><th>説明</th></tr><tr><td>文字列</td><td>attributePath expressed using the dot notation, e.g. &quot;name&quot; or &quot;user.address.zipCode&quot;</td></tr><tr><td>Collection of strings</td><td>Each string of the collection represents a level of attributePath, e.g. [&quot;name&quot;] or [&quot;user&quot;,&quot;address&quot;,&quot;zipCode&quot;]. Using a collection allows querying on attributes with names that are not compliant with dot notation, e.g. [&quot;4Dv17.1&quot;,&quot;en/fr&quot;]</td></tr></table>You can mix indexed placeholders (values directly passed in <em>value</em> parameters) and named placeholder values in the same query.</td></tr>
-<tr><td>args</td><td>オブジェクト</td><td>Parameter(s) to pass to formulas, if any. The <strong>args</strong> object will be received in $1 within formulas and thus its values will be available through <em>$1.property</em> (see example 3).</td></tr>
-<tr><td>allowFormulas</td><td>ブール</td><td>True to allow the formula calls in the query (default). Pass false to disallow formula execution. If set to false and <code>query()</code> is given a formula, an error is sent (1278 - Formula not allowed in this member method).</td></tr>
-<tr><td>context</td><td>テキスト</td><td>Label for the automatic optimization context applied to the entity selection. エンティティセレクションを扱うコードはこのコンテキストを使うことで最適化の恩恵を受けます。 This feature is designed for client/server processing; for more information, please refer to the <strong>Client/server optimization</strong> section.</td></tr>
-<tr><td>queryPlan</td><td>ブール</td><td>In the resulting entity selection, returns or does not return the detailed description of the query just before it is executed, i.e. the planned query. The returned property is an object that includes each planned query and subquery (in the case of a complex query). This option is useful during the development phase of an application. It is usually used in conjunction with queryPath. Default if omitted: false. <strong>Note</strong>: This property is supported only by the <code>entitySelection.query( )</code> and <code>dataClass.query( )</code> functions.</td></tr>
-<tr><td>queryPath</td><td>ブール</td><td>In the resulting entity selection, returns or does not return the detailed description of the query as it is actually performed. The returned property is an object that contains the actual path used for the query (usually identical to that of the queryPlan, but may differ if the engine manages to optimize the query), as well as the processing time and the number of records found. This option is useful during the development phase of an application. Default if omitted: false. <strong>Note</strong>: This property is supported only by the <code>entitySelection.query( )</code> and <code>dataClass.query( )</code> functions.</td></tr>
+<tr><td>attributes</td><td>オブジェクト</td><td><em>queryString</em> または <em>formula</em> に <strong>属性パスの命名プレースホルダー</strong> を使用した場合に渡すオブジェクト。 属性パスは、プロパティ/値のペアで表現されます。プロパティは、<em>queryString</em> または <em>formula</em> に属性パスの代わりに挿入されたプレースホルダー名 (&quot;:placeholder&quot;など) で、値は、属性パスを表す文字列または文字列のコレクションです。 値には、データクラスのスカラー属性・リレート属性・オブジェクトフィールド内のプロパティへの属性パスを指定することができます。<p><table><tr><th>タイプ</th><th>説明</th></tr><tr><td>文字列</td><td>ドット記法を使用して表現された attributePath (例: &quot;name&quot; または &quot;user.address.zipCode&quot;)</td></tr><tr><td>文字列のコレクション</td><td>コレクションの各要素が attributePath の階層を表します (例: [&quot;name&quot;] または [&quot;user&quot;,&quot;address&quot;,&quot;zipCode&quot;])。 コレクションを使用することで、ドット記法に準じていない名前の属性に対してもクエリすることができます (例: [&quot;4Dv17.1&quot;,&quot;en/fr&quot;])。</td></tr></table>インデックスプレースホルダー (<em>value</em> 引数として値を直接渡す方法) と命名プレースホルダーは、同じクエリ内で同時に使用することができます。</td></tr>
+<tr><td>args</td><td>オブジェクト</td><td>フォーミュラに渡す引数。 <strong>args</strong> オブジェクトは、フォーミュラ内の $1 が受け取るので、その値は <em>$1.property</em> という形で利用可能です (例題3 参照)。</td></tr>
+<tr><td>allowFormulas</td><td>ブール</td><td>クエリ内でフォーミュラの呼び出しを許可するには true (デフォルト)。 フォーミュラ実行を禁止するには false を渡します。 false に設定されているときに、フォーミュラが <code>query()</code> に渡された場合、エラーが発生します (1278 - フォーミュラはこのメンバーメソッドでは許可されていません)。</td></tr>
+<tr><td>context</td><td>テキスト</td><td>エンティティセレクションに適用されている自動の最適化コンテキストのラベル。 エンティティセレクションを扱うコードはこのコンテキストを使うことで最適化の恩恵を受けます。 この機能はクライアント/サーバー処理を想定して設計されています。詳細な情報については、<a href="entities.md#クライアントサーバーの最適化"><strong>クライアント/サーバーの最適化</strong></a> の章を参照ください。</td></tr>
+<tr><td>queryPlan</td><td>ブール</td><td>戻り値のエンティティコレクションに、実行する直前のクエリの詳細 (クエリプラン) を含めるかどうかを指定します。 返されるプロパティは、クエリプラン あるいはサブクエリ (複合クエリの場合) を格納したオブジェクトです。 このオプションはアプリケーションの開発フェーズにおいて有用です。 このオプションは通常 queryPath と組み合わせて使用されます。 省略時のデフォルト: false。 <strong>注:</strong> このプロパティは <code>entitySelection.query( )</code> および <code>dataClass.query( )</code> 関数においてのみサポートされます。</td></tr>
+<tr><td>queryPath</td><td>ブール</td><td>戻り値のエンティティコレクションに、実際に実行されたクエリの詳細を含めるかどうかを指定します。 返されたプロパティは、クエリで実際に使用されたパス (通常は queryPlan と同一ですが、エンジンがクエリを最適化した場合には異なる場合があります)、処理時間と検出レコード数を格納したオブジェクトです。 このオプションはアプリケーションの開発フェーズにおいて有用です。 省略時のデフォルト: false。 <strong>注:</strong> このプロパティは <code>entitySelection.query( )</code> および <code>dataClass.query( )</code> 関数においてのみサポートされます。</td></tr>
 </tbody>
 </table>
-<p><strong>About queryPlan and queryPath</strong></p>
-<p>The information recorded in <code>queryPlan</code>/<code>queryPath</code> include the query type (indexed and sequential) and each necessary subquery along with conjunction operators. クエリパスには、見つかったエンティティの数と各検索条件を実行するににかかった時間も含まれます。 You may find it useful to analyze this information while developing your application(s). 一般的には、クエリプランとクエリパスの詳細は同一になるはずですが、4D はパフォーマンスの向上のために、動的な最適化をクエリ実行時に実装することがあるからです。 たとえば、その方が早いと判断した場合には、4Dエンジンはインデックス付きクエリをシーケンシャルなものへと動的に変換することがあります。 これは検索されているエンティティの数が少ないときに起こりえます。</p>
+<p><strong>queryPlan と queryPath について</strong></p>
+<p><code>queryPlan</code>/<code>queryPath</code> に格納される情報には、クエリの種類 (インデックスあるいはシーケンシャル)、必要なサブクエリおよびその連結演算子が含まれます。 クエリパスには、見つかったエンティティの数と各検索条件を実行するににかかった時間も含まれます。 この情報は、アプリケーションの開発中に解析することで有効に活用できます。 一般的には、クエリプランとクエリパスの詳細は同一になるはずですが、4D はパフォーマンスの向上のために、動的な最適化をクエリ実行時に実装することがあるからです。 たとえば、その方が早いと判断した場合には、4Dエンジンはインデックス付きクエリをシーケンシャルなものへと動的に変換することがあります。 これは検索されているエンティティの数が少ないときに起こりえます。</p>
 <p>たとえば、以下のクエリを実行した場合:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"salary &lt; :1 and employer.name = :2 or employer.revenues &gt; :3"</span>;\  
  <span class="hljs-number">50000</span>;<span class="hljs-string">"Lima West Kilo"</span>;<span class="hljs-number">10000000</span>;<span class="hljs-function">New object</span>(<span class="hljs-string">"queryPath"</span>;<span class="hljs-literal">True</span>;<span class="hljs-string">"queryPlan"</span>;<span class="hljs-literal">True</span>))
@@ -828,89 +828,89 @@ ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-cla
     steps:[{steps:[{description:[index : Company.revenues ] &gt; <span class="hljs-number">10000000</span>,time:<span class="hljs-number">0</span>,recordsfounds:<span class="hljs-number">933</span>}]}]}]}]}
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-4"></a><a href="#例題-1-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
-<p>This section provides various examples of queries.</p>
-<p>Query on a string:</p>
+<p>この例題では、様々なクエリの例を紹介します。</p>
+<p>文字列のクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Customer.<span class="hljs-function">query</span>(<span class="hljs-string">"firstName = 'S@'"</span>)
 </code></pre>
-<p>Query with a NOT statement:</p>
+<p>NOT節を用いたクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"not(firstName=Kim)"</span>)
 </code></pre>
-<p>Queries with dates:</p>
+<p>日付のクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"birthDate &gt; :1"</span>;<span class="hljs-string">"1970-01-01"</span>)
 <span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"birthDate &lt;= :1"</span>;Current date<span class="hljs-number">-10950</span>)
 </code></pre>
-<p>Query with indexed placeholders for values:</p>
+<p>値のインデックスプレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Customer.<span class="hljs-function">query</span>(<span class="hljs-string">"(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)"</span>;<span class="hljs-string">"D@"</span>;<span class="hljs-string">"R@"</span>;<span class="hljs-string">"S@"</span>;<span class="hljs-string">"K@"</span>)
 </code></pre>
-<p>Query with indexed placeholders for values on a related dataclass:</p>
+<p>リレートデータクラス対して値のインデックスプレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1 and manager.lastName = :2"</span>;<span class="hljs-string">"M@"</span>;<span class="hljs-string">"S@"</span>)
 </code></pre>
-<p>Query with indexed placeholder including a descending order by statement:</p>
+<p>降順の order by ステートメントを含んだ、インデックスプレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Student.<span class="hljs-function">query</span>(<span class="hljs-string">"nationality = :1 order by campus.name desc, lastname"</span>;<span class="hljs-string">"French"</span>)
 </code></pre>
-<p>Query with named placeholders for values:</p>
+<p>値の命名プレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$querySettings </span>: Object<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$managedCustomers </span>: cs.CustomerSelection
 <span class="hljs-variable">$querySettings</span>:=New object
 <span class="hljs-variable">$querySettings</span>.parameters:=<span class="hljs-function">New object</span>(<span class="hljs-string">"userId"</span>;<span class="hljs-number">1234</span>;<span class="hljs-string">"extraInfo"</span>;<span class="hljs-function">New object</span>(<span class="hljs-string">"name"</span>;<span class="hljs-string">"Smith"</span>))
 <span class="hljs-variable">$managedCustomers</span>:=ds.Customer.<span class="hljs-function">query</span>(<span class="hljs-string">"salesperson.userId = :userId and name = :extraInfo.name"</span>;<span class="hljs-variable">$querySettings</span>)
 </code></pre>
-<p>Query that uses both named and indexed placeholders for values:</p>
+<p>値の命名プレースホルダーと、値のインデックスプレースホルダーの両方を使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$querySettings </span>: Object<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$managedCustomers </span>: cs.CustomerSelection
 <span class="hljs-variable">$querySettings</span>.parameters:=<span class="hljs-function">New object</span>(<span class="hljs-string">"userId"</span>;<span class="hljs-number">1234</span>)
 <span class="hljs-variable">$managedCustomers</span>:=ds.Customer.<span class="hljs-function">query</span>(<span class="hljs-string">"salesperson.userId = :userId and name=:1"</span>;<span class="hljs-string">"Smith"</span>;<span class="hljs-variable">$querySettings</span>)
 </code></pre>
-<p>Query with queryPlan and queryPath objects:</p>
+<p>queryPlan および queryPath オブジェクトを返すクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)"</span>;<span class="hljs-string">"D@"</span>;<span class="hljs-string">"R@"</span>;<span class="hljs-string">"S@"</span>;<span class="hljs-string">"K@"</span>;<span class="hljs-function">New object</span>(<span class="hljs-string">"queryPlan"</span>;<span class="hljs-literal">True</span>;<span class="hljs-string">"queryPath"</span>;<span class="hljs-literal">True</span>))
 
-  <span class="hljs-comment">//you can then get these properties in the resulting entity selection</span><span class="hljs-keyword">
+  <span class="hljs-comment">// 戻り値のエンティティセレクションから以下のプロパティを取得できます</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$queryPlan</span>; <span class="hljs-variable">$queryPath </span>: Object
 <span class="hljs-variable">$queryPlan</span>:=<span class="hljs-variable">$entitySelection</span>.queryPlan
 <span class="hljs-variable">$queryPath</span>:=<span class="hljs-variable">$entitySelection</span>.queryPath
 </code></pre>
-<p>Query with an attribute path of Collection type:</p>
+<p>コレクション型の属性パスを用いたクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"extraInfo.hobbies[].name = :1"</span>;<span class="hljs-string">"horsebackriding"</span>)
 </code></pre>
-<p>Query with an attribute path of Collection type and linked attributes:</p>
+<p>コレクション型の属性パスとクエリ条件をリンクしたクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"extraInfo.hobbies[a].name = :1 and extraInfo.hobbies[a].level=:2"</span>;<span class="hljs-string">"horsebackriding"</span>;<span class="hljs-number">2</span>)
 </code></pre>
-<p>Query with an attribute path of Collection type and multiple linked attributes:</p>
+<p>コレクション型の属性パスとクエリ条件を、複数リンクしたクエリ:</p>
 <pre><code class="hljs css language-4d">$entitySelection:=ds.Employee.query("extraInfo.hobbies[a].name = :1 and
     extraInfo.hobbies[a].level = :2 and extraInfo.hobbies[b].name = :3 and
     extraInfo.hobbies[b].level = :4";"horsebackriding";2;"Tennis";5)
 </code></pre>
-<p>Query with an attribute path of Object type:</p>
+<p>オブジェクト型の属性パスを用いたクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"extra.eyeColor = :1"</span>;<span class="hljs-string">"blue"</span>)
 </code></pre>
-<p>Query with an IN statement:</p>
+<p>IN節を用いたクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"firstName in :1"</span>;<span class="hljs-function">New collection</span>(<span class="hljs-string">"Kim"</span>;<span class="hljs-string">"Dixie"</span>))
 </code></pre>
-<p>Query with a NOT (IN) statement:</p>
+<p>NOT (IN) 節を用いたクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"not (firstName in :1)"</span>;<span class="hljs-function">New collection</span>(<span class="hljs-string">"John"</span>;<span class="hljs-string">"Jane"</span>))
 </code></pre>
-<p>Query with indexed placeholders for attributes:</p>
+<p>属性パスのインデックスプレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$es </span>: cs.EmployeeSelection
 <span class="hljs-variable">$es</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">":1 = 1234 and :2 = 'Smith'"</span>;<span class="hljs-string">"salesperson.userId"</span>;<span class="hljs-string">"name"</span>)
-  <span class="hljs-comment">//salesperson is a related entity</span>
+  <span class="hljs-comment">// salesperson はリレートエンティティです</span>
 </code></pre>
-<p>Query with indexed placeholders for attributes and named placeholders for values:</p>
+<p>属性パスのインデックスプレースホルダーを、値の命名プレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$es </span>: cs.EmployeeSelection<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$querySettings </span>: Object
 <span class="hljs-variable">$querySettings</span>:=New object
 <span class="hljs-variable">$querySettings</span>.parameters:=<span class="hljs-function">New object</span>(<span class="hljs-string">"customerName"</span>;<span class="hljs-string">"Smith"</span>)
 <span class="hljs-variable">$es</span>:=ds.Customer.<span class="hljs-function">query</span>(<span class="hljs-string">":1 = 1234 and :2 = :customerName"</span>;<span class="hljs-string">"salesperson.userId"</span>;<span class="hljs-string">"name"</span>;<span class="hljs-variable">$querySettings</span>)
-  <span class="hljs-comment">//salesperson is a related entity</span>
+  <span class="hljs-comment">// salesperson はリレートエンティティです</span>
 </code></pre>
-<p>Query with indexed placeholders for attributes and values:</p>
+<p>属性パスと値のインデックスプレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$es </span>: cs.EmployeeSelection
 <span class="hljs-variable">$es</span>:=ds.Clients.<span class="hljs-function">query</span>(<span class="hljs-string">":1 = 1234 and :2 = :3"</span>;<span class="hljs-string">"salesperson.userId"</span>;<span class="hljs-string">"name"</span>;<span class="hljs-string">"Smith"</span>)
-  <span class="hljs-comment">//salesperson is a related entity</span>
+  <span class="hljs-comment">// salesperson はリレートエンティティです</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2-4"></a><a href="#例題-2-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
-<p>This section illustrates queries with named placeholders for attributes.</p>
-<p>Given an Employee dataclass with 2 entities:</p>
-<p>Entity 1:</p>
+<p>この例題では、属性パスの命名プレースホルダーを使用するクエリを紹介します。</p>
+<p>2件のエンティティをもつ Employee データクラスを前提に考えます:</p>
+<p>エンティティ1:</p>
 <pre><code class="hljs css language-4d">name: <span class="hljs-string">"Marie"</span>
 number: <span class="hljs-number">46</span>
 softwares:{
@@ -919,7 +919,7 @@ softwares:{
 <span class="hljs-string">"Powerpoint 12.4"</span>: <span class="hljs-string">"Not installed"</span>
 }
 </code></pre>
-<p>Entity 2:</p>
+<p>エンティティ2:</p>
 <pre><code class="hljs css language-4d">name: <span class="hljs-string">"Sophie"</span>
 number: <span class="hljs-number">47</span>
 softwares:{
@@ -928,7 +928,7 @@ softwares:{
 <span class="hljs-string">"Powerpoint 12.4"</span>: <span class="hljs-string">"Not installed"</span>
 }
 </code></pre>
-<p>Query with named placeholders for attributes:</p>
+<p>属性パスの命名プレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$querySettings </span>: Object<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$es </span>: cs.EmployeeSelection
  <span class="hljs-variable">$querySettings</span>:=New object
@@ -936,80 +936,80 @@ softwares:{
  <span class="hljs-variable">$es</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">":attName = 'Marie' and :attWord = 'Installed'"</span>;<span class="hljs-variable">$querySettings</span>)
   <span class="hljs-comment">//$es.length=1 (Employee Marie)</span>
 </code></pre>
-<p>Query with named placeholders for attributes and values:</p>
+<p>属性パスと値の命名プレースホルダーを使用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$querySettings </span>: Object<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$es </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$name </span>: Text
  <span class="hljs-variable">$querySettings</span>:=New object
-  <span class="hljs-comment">//Named placeholders for values</span>
-  <span class="hljs-comment">//The user is asked for a name</span>
- <span class="hljs-variable">$name</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Please enter the name to search:"</span>)<span class="hljs-keyword">
+  <span class="hljs-comment">// 値の命名プレースホルダー</span>
+  <span class="hljs-comment">// ユーザーに検索する名前を入力してもらいます</span>
+ <span class="hljs-variable">$name</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"検索する名前を入力してください:"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
     <span class="hljs-variable">$querySettings</span>.parameters:=<span class="hljs-function">New object</span>(<span class="hljs-string">"givenName"</span>;<span class="hljs-variable">$name</span>)
-  <span class="hljs-comment">//Named placeholders for attribute paths</span>
+  <span class="hljs-comment">// 属性パスの命名プレースホルダー</span>
     <span class="hljs-variable">$querySettings</span>.attributes:=<span class="hljs-function">New object</span>(<span class="hljs-string">"attName"</span>;<span class="hljs-string">"name"</span>)
     <span class="hljs-variable">$es</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">":attName= :givenName"</span>;<span class="hljs-variable">$querySettings</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-3-3"></a><a href="#例題-3-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 3</h4>
-<p>These examples illustrate the various ways to use formulas with or without parameters in your queries.</p>
-<p>The formula is given as text with <code>eval()</code> in the <em>queryString</em> parameter:</p>
+<p>この例題では、クエリにおいて、引数あり・引数なしでフォーミュラを使用する様々な方法を紹介します。</p>
+<p><code>eval()</code> を使い、テキストとしてフォーミュラを <em>queryString</em> パラメーターに渡すクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$es </span>: cs.StudentsSelection
  <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-string">"eval(length(This.lastname) &gt;=30) and nationality='French'"</span>)
 </code></pre>
-<p>The formula is given as a <code>Formula</code> object through a placeholder:</p>
+<p>プレースホルダーを使い、<code>Formula</code>オブジェクトとしてフォーミュラを渡すクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$es </span>: cs.StudentsSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$formula </span>: Object
  <span class="hljs-variable">$formula</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-function">Length</span>(<span class="hljs-literal">This</span>.lastname)&gt;=<span class="hljs-number">30</span>)
  <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-string">":1 and nationality='French'"</span>;<span class="hljs-variable">$formula</span>)
 </code></pre>
-<p>Only a <code>Formula</code> object is given as criteria:</p>
+<p><code>Formula</code> オブジェクトのみを検索条件として渡したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$es </span>: cs.StudentsSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$formula </span>: Object
  <span class="hljs-variable">$formula</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-function">Length</span>(<span class="hljs-literal">This</span>.lastname)&gt;=<span class="hljs-number">30</span>)
  <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-variable">$formula</span>)
 </code></pre>
-<p>Several formulas can be applied:</p>
+<p>フォーミュラを複数適用したクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$formula1</span>; <span class="hljs-variable">$1</span>; <span class="hljs-variable">$formula2 </span>;<span class="hljs-variable">$0 </span>: Object
  <span class="hljs-variable">$formula1</span>:=<span class="hljs-variable">$1</span>
  <span class="hljs-variable">$formula2</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-function">Length</span>(<span class="hljs-literal">This</span>.firstname)&gt;=<span class="hljs-number">30</span>)
  <span class="hljs-variable">$0</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-string">":1 and :2 and nationality='French'"</span>;<span class="hljs-variable">$formula1</span>;<span class="hljs-variable">$formula2</span>)
 </code></pre>
-<p>A text formula in <em>queryString</em> receives a parameter:</p>
+<p><em>queryString</em> のテキストフォーミュラが引数を受け取るクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$es </span>: cs.StudentsSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$settings </span>: Object
  <span class="hljs-variable">$settings</span>:=<span class="hljs-function">New object</span>()
  <span class="hljs-variable">$settings</span>.args:=<span class="hljs-function">New object</span>(<span class="hljs-string">"filter"</span>;<span class="hljs-string">"-"</span>)
  <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-string">"eval(checkName($1.filter)) and nationality=:1"</span>;<span class="hljs-string">"French"</span>;<span class="hljs-variable">$settings</span>)
 </code></pre>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//checkName method</span>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">// checkName メソッド</span>
  #<span class="hljs-function">DECLARE</span>(<span class="hljs-variable">$exclude </span>: Text) -&gt; <span class="hljs-variable">$result </span>: Boolean
  <span class="hljs-variable">$result</span>:=(<span class="hljs-function">Position</span>(<span class="hljs-variable">$exclude</span>;<span class="hljs-literal">This</span>.lastname)=<span class="hljs-number">0</span>)
 </code></pre>
-<p>Using the same <strong><em>checkName</em></strong> method, a <code>Formula</code> object as placeholder receives a parameter:</p>
+<p>同じ <strong><em>checkName</em></strong> メソッドを <code>Formula</code> オブジェクトに格納してプレースホルダーで渡し、引数を受け取るクエリ:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$es </span>: cs.StudentsSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$settings</span>; <span class="hljs-variable">$formula </span>: Object
  <span class="hljs-variable">$formula</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-function">checkName</span>(<span class="hljs-variable">$1</span>.filter))
  <span class="hljs-variable">$settings</span>:=<span class="hljs-function">New object</span>()
  <span class="hljs-variable">$settings</span>.args:=<span class="hljs-function">New object</span>(<span class="hljs-string">"filter"</span>;<span class="hljs-string">"-"</span>)
  <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-string">":1 and nationality=:2"</span>;<span class="hljs-variable">$formula</span>;<span class="hljs-string">"French"</span>;<span class="hljs-variable">$settings</span>)
- <span class="hljs-variable">$settings</span>.args.filter:=<span class="hljs-string">"*"</span> <span class="hljs-comment">// change the parameters without updating the $formula object</span>
+ <span class="hljs-variable">$settings</span>.args.filter:=<span class="hljs-string">"*"</span> <span class="hljs-comment">// $formula オブジェクトは更新せずに引数を変更します</span>
  <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-string">":1 and nationality=:2"</span>;<span class="hljs-variable">$formula</span>;<span class="hljs-string">"French"</span>;<span class="hljs-variable">$settings</span>)
 </code></pre>
-<p>We want to disallow formulas, for example when the user enters their query:</p>
+<p>ユーザーがクエリを入力する場合などに、フォーミュラを禁止する場合:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$es </span>: cs.StudentsSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$settings </span>: Object<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$queryString </span>: Text
  <span class="hljs-variable">$queryString</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Enter your query:"</span>)
 <span class="hljs-function"> if</span>(OK=<span class="hljs-number">1</span>)
     <span class="hljs-variable">$settings</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"allowFormulas"</span>;<span class="hljs-literal">False</span>)
-    <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-variable">$queryString</span>;<span class="hljs-variable">$settings</span>) <span class="hljs-comment">//An error is raised if $queryString contains a formula</span><span class="hljs-keyword">
+    <span class="hljs-variable">$es</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-variable">$queryString</span>;<span class="hljs-variable">$settings</span>) <span class="hljs-comment">// $queryString にフォーミュラが格納されていた場合にはエラーが生成されます</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="参照-1"></a><a href="#参照-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参照</h4>
-<p><a href="/docs/alpha/ja/API/entitySelectionClass.html#query"><code>.query()</code></a> for entity selections</p>
+<p>エンティティセレクションの <a href="/docs/alpha/ja/API/entitySelectionClass.html#query"><code>.query()</code></a></p>
 <style> h2 { background: #d9ebff;}</style>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/ja/API/CryptoKeyClass.html"><span class="arrow-prev">← </span><span>前へ</span></a><a class="docs-next button" href="/docs/alpha/ja/API/dataclassAttributeClass.html"><span class="function-name-prevnext">DataClassAttribute</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#attributename">.<em>attributeName</em></a></li><li><a href="#all">.all()</a></li><li><a href="#fromcollection">.fromCollection()</a></li><li><a href="#get">.get()</a></li><li><a href="#getdatastore">.getDataStore()</a></li><li><a href="#getinfo">.getInfo()</a></li><li><a href="#new">.new()</a></li><li><a href="#newselection">.newSelection()</a></li><li><a href="#query">.query()</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/ja/API/CryptoKeyClass.html"><span class="arrow-prev">← </span><span class="function-name-prevnext">CryptoKey</span></a><a class="docs-next button" href="/docs/alpha/ja/API/dataclassAttributeClass.html"><span class="function-name-prevnext">DataClassAttribute</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#attributename">.<em>attributeName</em></a></li><li><a href="#all">.all()</a></li><li><a href="#fromcollection">.fromCollection()</a></li><li><a href="#get">.get()</a></li><li><a href="#getdatastore">.getDataStore()</a></li><li><a href="#getinfo">.getInfo()</a></li><li><a href="#new">.new()</a></li><li><a href="#newselection">.newSelection()</a></li><li><a href="#query">.query()</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

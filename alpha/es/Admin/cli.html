@@ -100,11 +100,11 @@
 <tr><td><code>--opening-mode</code></td><td>interpreted | compiled</td><td>Requests database to open in interpreted or compiled mode. No error is thrown if the requested mode is unavailable.</td></tr>
 <tr><td><code>--create-data</code></td><td></td><td>Automatically creates a new data file if no valid data file is found. No dialog box appears. 4D uses the file name passed in the &quot;--data&quot; argument if any (generates an error if a file with the same name already exists).</td></tr>
 <tr><td><code>--user-param</code></td><td>Custom user string</td><td>A string that will be available within the 4D application through the Get database parameter command (the string must not start with a &quot;-&quot; character, which is reserved).</td></tr>
-<tr><td><code>--headless</code></td><td></td><td>Launches the 4D, 4D Server or merged application without interface (headless mode). In this mode:<li> The Design mode is not available, database starts in Application mode</li><li> No toolbar, menu bar, MDI window or splash screen is displayed</li><li>No icon is displayed in the dock or task bar</li><li>The opened database is not registered in the &quot;Recent databases&quot; menu</li><li>The diagnostic log is automatically started (see <a href="https://doc.4d.com/4dv18/help/command/en/page642.html">SET DATABASE PARAMETER</a>, selector 79)</li><li>Every call to a dialog box is intercepted and an automatic response it provided (e.g. OK for the <a href="https://doc.4d.com/4dv18/help/command/en/page41.html">ALERT</a> command, Abort for an error dialog...). All intercepted commands(*) are logged in the diagnostic log.</li><br/>For maintenance needs, you can send any text to standard output streams using the <a href="https://doc.4d.com/4dv18/help/command/en/page667.html">LOG EVENT</a> command. Note that headless 4D applications can only be closed by a call to <a href="https://doc.4d.com/4dv18/help/command/en/page291.html">QUIT 4D</a> or using the OS task manager.</td></tr>
-<tr><td><code>--webadmin-settings-file</code></td><td>File path</td><td>Path of the custom WebAdmin <code>.4DSettings</code> file for the WebAdmin web server</td></tr>
-<tr><td><code>--webadmin-access-key</code></td><td>String</td><td>Access key for the WebAdmin web server</td></tr>
-<tr><td><code>--webadmin-auto-start</code></td><td>Boolean</td><td>Status of the automatic startup for the WebAdmin web server</td></tr>
-<tr><td><code>--webadmin-store-settings</code></td><td></td><td>Store the access key and automatic starting parameters in the currently used settings file (i.e. the default <code>WebAdmin.4DSettings</code> file or a custom file designated with the <code>--webadmin-settings-path</code> parameter). Use the <code>--webadmin-store-settings</code> argument to save these settings if necessary</td></tr>
+<tr><td><code>--headless</code></td><td></td><td>Launches the 4D, 4D Server or merged application without interface (headless mode). In this mode:<li> The Design mode is not available, database starts in Application mode</li><li> No toolbar, menu bar, MDI window or splash screen is displayed</li><li>No icon is displayed in the dock or task bar</li><li>The opened database is not registered in the &quot;Recent databases&quot; menu</li><li>The diagnostic log is automatically started (see <a href="https://doc.4d.com/4dv19/help/command/en/page642.html">SET DATABASE PARAMETER</a>, selector 79)</li><li>Every call to a dialog box is intercepted and an automatic response it provided (e.g. OK for the <a href="https://doc.4d.com/4dv19/help/command/en/page41.html">ALERT</a> command, Abort for an error dialog...). All intercepted commands(*) are logged in the diagnostic log.</li><br/>For maintenance needs, you can send any text to standard output streams using the <a href="https://doc.4d.com/4dv19/help/command/en/page667.html">LOG EVENT</a> command. Note that headless 4D applications can only be closed by a call to <a href="https://doc.4d.com/4dv19/help/command/en/page291.html">QUIT 4D</a> or using the OS task manager.</td></tr>
+<tr><td><code>--webadmin-settings-file</code></td><td>File path</td><td>Path of the custom WebAdmin <code>.4DSettings</code> file for the <a href="/docs/alpha/es/Admin/webAdmin.html">WebAdmin web server</a></td></tr>
+<tr><td><code>--webadmin-access-key</code></td><td>String</td><td>Access key for the <a href="/docs/alpha/es/Admin/webAdmin.html">WebAdmin web server</a></td></tr>
+<tr><td><code>--webadmin-auto-start</code></td><td>Boolean</td><td>Status of the automatic startup for the <a href="/docs/alpha/es/Admin/webAdmin.html">WebAdmin web server</a></td></tr>
+<tr><td><code>--webadmin-store-settings</code></td><td></td><td>Store the access key and automatic starting parameters in the currently used settings file (i.e. the default <a href="/docs/alpha/es/Admin/webAdmin.html#webadmin-settings"><code>WebAdmin.4DSettings</code></a> file or a custom file designated with the <code>--webadmin-settings-path</code> parameter). Use the <code>--webadmin-store-settings</code> argument to save these settings if necessary</td></tr>
 </tbody>
 </table>
 <p>(*) Some dialogs are displayed before the database is opened, so that it's impossible to write into the Diagnostic log file (licence alert, conversion dialog, database selection, data file selection). In such case, an error message is thrown both in the stderr stream and the system event log, and then the application quits.</p>
@@ -117,90 +117,90 @@
 <ul>
 <li>macOS:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-keyword">open</span> ~/Desktop/4D.<span class="hljs-keyword">app</span>
+<pre><code class="hljs css language-bash">open ~/Desktop/4D.app
 </code></pre>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\4</span>D.exe
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D\4D.exe
 </code></pre>
 <p>Launch application with a package file on macOS:</p>
-<pre><code class="hljs">open ~<span class="hljs-string">/Desktop/4D.app</span> <span class="hljs-params">--args</span> ~<span class="hljs-string">/Documents/myDB.4dbase</span>
+<pre><code class="hljs css language-bash">yarn open ~/Desktop/4D.app --args ~/Documents/myDB.4dbase
 </code></pre>
 <p>Launch application with a project file:</p>
 <ul>
 <li>macOS:</li>
 </ul>
-<pre><code class="hljs">open ~<span class="hljs-regexp">/Desktop/</span><span class="hljs-number">4</span>D.app --args ~<span class="hljs-regexp">/Documents/my</span>Proj<span class="hljs-regexp">/Project/my</span>Proj.<span class="hljs-number">4</span>DProject
+<pre><code class="hljs css language-bash">yarn open ~/Desktop/4D.app --args ~/Documents/myProj/Project/myProj.4DProject
 </code></pre>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\4</span>D.exe <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\m</span>yProj<span class="hljs-symbol">\P</span>roject<span class="hljs-symbol">\m</span>yProj.4DProject
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D\4D.exe %HOMEPATH%\Documents\myProj\Project\myProj.4DProject
 </code></pre>
 <p>Launch application with a project file and a data file:</p>
 <ul>
 <li>macOS:</li>
 </ul>
-<pre><code class="hljs">open ~<span class="hljs-string">/Desktop/4D.app</span> <span class="hljs-params">--args</span> <span class="hljs-params">--project</span> ~<span class="hljs-string">/Documents/myProj/Project/myProj.4DProject</span> <span class="hljs-params">--data</span> ~<span class="hljs-string">/Documents/data/myData.4DD</span>
+<pre><code class="hljs css language-bash">open ~/Desktop/4D.app --args --project ~/Documents/myProj/Project/myProj.4DProject --data ~/Documents/data/myData.4DD
 </code></pre>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\4</span>D.exe --project <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\m</span>yProj<span class="hljs-symbol">\P</span>roject<span class="hljs-symbol">\m</span>yProj.4DProject --data <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\d</span>ata<span class="hljs-symbol">\m</span>yData.4DD
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D\4D.exe --project %HOMEPATH%\Documents\myProj\Project\myProj.4DProject --data %HOMEPATH%\Documents\data\myData.4DD
 or:
-<span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\4</span>D.exe /project <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\m</span>yProj<span class="hljs-symbol">\P</span>roject<span class="hljs-symbol">\m</span>yProj.4DProject /data <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\d</span>ata<span class="hljs-symbol">\m</span>yData.4DD
+%HOMEPATH%\Desktop\4D\4D.exe /project %HOMEPATH%\Documents\myProj\Project\myProj.4DProject /data %HOMEPATH%\Documents\data\myData.4DD
 </code></pre>
 <p>Launch application with a .4DLink file:</p>
 <ul>
 <li>macOS:</li>
 </ul>
-<pre><code class="hljs">open ~/Desktop/<span class="hljs-number">4</span>D.app MyDatabase<span class="hljs-number">.4</span>DLink
+<pre><code class="hljs css language-bash">open ~/Desktop/4D.app MyDatabase.4DLink
 </code></pre>
-<pre><code class="hljs"><span class="hljs-built_in">open</span> <span class="hljs-string">"~/Desktop/4D Server.app"</span> MyDatabase<span class="hljs-number">.4</span>DLink
+<pre><code class="hljs css language-bash">open <span class="hljs-string">"~/Desktop/4D Server.app"</span> MyDatabase.4DLink
 </code></pre>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D.exe MyDatabase.4DLink
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D.exe MyDatabase.4DLink
 </code></pre>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D Server.exe" MyDatabase.4DLink
-</code></pre>
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D Server.exe<span class="hljs-string">" MyDatabase.4DLink
+</span></code></pre>
 <p>Launch application in compiled mode and create a data file if not available:</p>
 <ul>
 <li>macOS:</li>
 </ul>
-<pre><code class="hljs">open ~<span class="hljs-string">/Desktop/4D.app</span> ~<span class="hljs-string">/Documents/myBase.4dbase</span> <span class="hljs-params">--args</span> <span class="hljs-params">--opening-mode</span> compiled <span class="hljs-params">--create-data</span> <span class="hljs-literal">true</span>
+<pre><code class="hljs css language-bash">open ~/Desktop/4D.app ~/Documents/myBase.4dbase --args --opening-mode compiled --create-data <span class="hljs-literal">true</span>
 </code></pre>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\4</span>D.exe <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\m</span>yBase.4dbase<span class="hljs-symbol">\m</span>yDB.4db --opening-mode compiled --create-data true
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D\4D.exe %HOMEPATH%\Documents\myBase.4dbase\myDB.4db --opening-mode compiled --create-data <span class="hljs-literal">true</span>
 </code></pre>
 <p>Launch application with a project file and a data file and pass a string as a user parameter:</p>
 <ul>
 <li>macOS:</li>
 </ul>
-<pre><code class="hljs">open ~<span class="hljs-string">/Desktop/4D.app</span> <span class="hljs-params">--args</span> <span class="hljs-params">--project</span> ~<span class="hljs-string">/Documents/myProj/Project/myProj.4DProject</span> <span class="hljs-params">--data</span> ~<span class="hljs-string">/Documents/data/myData.4DD</span> <span class="hljs-params">--user-param</span> <span class="hljs-string">"Hello world"</span>
+<pre><code class="hljs css language-bash">open ~/Desktop/4D.app --args --project ~/Documents/myProj/Project/myProj.4DProject --data ~/Documents/data/myData.4DD --user-param <span class="hljs-string">"Hello world"</span>
 </code></pre>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\4</span>D.exe --project <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\m</span>yProj<span class="hljs-symbol">\P</span>roject<span class="hljs-symbol">\m</span>yProj.4DProject --data <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\d</span>ata<span class="hljs-symbol">\m</span>yData.4DD --user-param "Hello world"
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D\4D.exe --project %HOMEPATH%\Documents\myProj\Project\myProj.4DProject --data %HOMEPATH%\Documents\data\myData.4DD --user-param <span class="hljs-string">"Hello world"</span>
 </code></pre>
 <p>Launch application without interface (headless mode):</p>
 <ul>
 <li>macOS:</li>
 </ul>
-<pre><code class="hljs">open ~<span class="hljs-string">/Desktop/4D.app</span> <span class="hljs-params">--args</span> <span class="hljs-params">--project</span> ~<span class="hljs-string">/Documents/myProj/Project/myProj.4DProject</span> <span class="hljs-params">--data</span> ~<span class="hljs-string">/Documents/data/myData.4DD</span> <span class="hljs-params">--headless</span>
+<pre><code class="hljs css language-bash">open ~/Desktop/4D.app --args --project ~/Documents/myProj/Project/myProj.4DProject --data ~/Documents/data/myData.4DD --headless
 </code></pre>
-<pre><code class="hljs">open ~<span class="hljs-regexp">/Desktop/</span>MyBuiltRemoteApp −−headless
+<pre><code class="hljs css language-bash">open ~/Desktop/MyBuiltRemoteApp −−headless
 </code></pre>
 <ul>
 <li>Windows:</li>
 </ul>
-<pre><code class="hljs"><span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\4</span>D.exe --project <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\m</span>yProj<span class="hljs-symbol">\P</span>roject<span class="hljs-symbol">\m</span>yProj.4DProject --data <span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>ocuments<span class="hljs-symbol">\d</span>ata<span class="hljs-symbol">\m</span>yData.4DD --headless
-<span class="hljs-variable">%HOMEPATH%</span><span class="hljs-symbol">\D</span>esktop<span class="hljs-symbol">\4</span>D<span class="hljs-symbol">\M</span>yBuiltRemoteApp.exe --headless
+<pre><code class="hljs css language-bash">%HOMEPATH%\Desktop\4D\4D.exe --project %HOMEPATH%\Documents\myProj\Project\myProj.4DProject --data %HOMEPATH%\Documents\data\myData.4DD --headless
+%HOMEPATH%\Desktop\4D\MyBuiltRemoteApp.exe --headless
 </code></pre>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/es/Admin/debugLogFiles.html"><span class="arrow-prev">← </span><span>Description of log files</span></a><a class="docs-next button" href="/docs/alpha/es/MSC/overview.html"><span>Overview</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#basic-information">Basic information</a></li><li><a href="#launch-a-4d-application">Launch a 4D application</a><ul class="toc-headings"><li><a href="#examples">Examples</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
