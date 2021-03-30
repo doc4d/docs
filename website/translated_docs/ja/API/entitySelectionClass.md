@@ -514,10 +514,10 @@ We want to find out the total number of employees for a company without counting
 **.copy**( { *option* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #entitySelectionClass.copy().Params -->
-| 参照     | タイプ                |    | 説明                                               |
-| ------ | ------------------ |:--:| ------------------------------------------------ |
-| option | 整数                 | -> | `ck shared`: return a shareable entity selection |
-| 戻り値    | 4D.EntitySelection | <- | Copy of the entity selection                     |
+| 参照    | タイプ                |    | 説明                                               |
+| ----- | ------------------ |:--:| ------------------------------------------------ |
+| オプション | 整数                 | -> | `ck shared`: return a shareable entity selection |
+| 戻り値   | 4D.EntitySelection | <- | Copy of the entity selection                     |
 <!-- END REF -->
 
 #### 説明
@@ -580,7 +580,7 @@ Then this entity selection is updated with products and you want to share the pr
 | 参照            | タイプ    |    | 説明                                                               |
 | ------------- | ------ |:--:| ---------------------------------------------------------------- |
 | attributePath | テキスト   | -> | 重複しない値を取得する属性のパス                                                 |
-| option        | 整数     | -> | `dk diacritical`: diacritical evaluation ("A" # "a" for example) |
+| オプション         | 整数     | -> | `dk diacritical`: diacritical evaluation ("A" # "a" for example) |
 | 戻り値           | コレクション | <- | Collection with only distinct values                             |
 <!-- END REF -->
 
@@ -696,7 +696,7 @@ Example with the `dk stop dropping on first error` option:
 | ------------- | ------ |:--:| --------------------------------------------------------------------------------------- |
 | attributePath | テキスト   | -> | Attribute path whose values must be extracted to the new collection                     |
 | targetPath    | テキスト   | -> | Target attribute path or attribute name                                                 |
-| option        | 整数     | -> | `ck keep null`: include null attributes in the returned collection (ignored by default) |
+| オプション         | 整数     | -> | `ck keep null`: include null attributes in the returned collection (ignored by default) |
 | 戻り値           | コレクション | <- | Collection containing extracted values                                                  |
 <!-- END REF -->
 
