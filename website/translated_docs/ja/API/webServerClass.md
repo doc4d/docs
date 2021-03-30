@@ -789,9 +789,9 @@ The function returns an object describing the Web server launch status. This obj
 
 <!-- REF #webServerClass.stop().Params -->
 
-| 参照 | タイプ |  | 説明                              |
-| -- | --- |  | ------------------------------- |
-|    |     |  | Does not require any parameters |
+| 参照 | タイプ |  | 説明                |
+| -- | --- |  | ----------------- |
+|    |     |  | このコマンドは引数を必要としません |
 
  <!-- END REF -->
 
