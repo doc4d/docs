@@ -488,30 +488,30 @@ user / password / timeout / tls を指定してリモートデータストアに
 **.getRequestLog()** : Collection<!-- END REF -->
 
 <!-- REF #datastoreClass.getRequestLog().Params -->
-| 参照  | タイプ    |    | 説明                                                           |
-| --- | ------ |:--:| ------------------------------------------------------------ |
-| 戻り値 | コレクション | <- | Collection of objects, where each object describes a request |
+| 参照  | タイプ    |    | 説明                                 |
+| --- | ------ |:--:| ---------------------------------- |
+| 戻り値 | コレクション | <- | オブジェクトのコレクション (要素毎に一つのリクエストを記述します) |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getRequestLog()` function <!-- REF #datastoreClass.getRequestLog().Summary -->returns the ORDA requests logged in memory on the client side<!-- END REF -->. The ORDA request logging must have previously been enabled using the [`.startRequestLog()`](#startrequestlog) function. 
+`.getRequestLog()` 関数は、 <!-- REF #datastoreClass.getRequestLog().Summary -->クライアント側のメモリに記録されている ORDAリクエストを返します<!-- END REF -->。 ORDAリクエストのログが、[`.startRequestLog()`](#startrequestlog) 関数によって事前に有効化されている必要があります。 
 
-This function must be called on a remote 4D, otherwise it returns an empty collection. It is designed for debugging purposes in client/server configurations.
+このメソッドはリモートの 4D で呼び出す必要があり、そうでない場合には空のコレクションを返します。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
 **戻り値**
 
-Collection of stacked request objects. The most recent request has index 0. 
+スタックされたリクエストオブジェクトのコレクションが返されます。 直近のリクエストにはインデックス 0 が振られています。 
 
-For a description of the ORDA request log format, please refer to the [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373) section.
+ORDAリクエストログのフォーマットの詳細は、[**ORDAクライアントリクエスト**](https://doc.4d.com/4Dv18R6/4D/18-R6/Description-of-log-files.300-5217819.ja.html#4385373) の章を参照ください。
 
 
 
 
 #### 例題
 
-See Example 2 of [`.startRequestLog()`](#startrequestlog).
+[`.startRequestLog()`](#startrequestlog) の例題2を参照ください。
 
 <!-- END REF -->
 
@@ -749,7 +749,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 
 The `.startRequestLog()` function <!-- REF #datastoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side<!-- END REF -->. 
 
-This function must be called on a remote 4D, otherwise it does nothing. It is designed for debugging purposes in client/server configurations.
+This function must be called on a remote 4D, otherwise it does nothing. これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
 The ORDA request log can be sent to a file or to memory, depending on the parameter type: 
 
@@ -762,7 +762,7 @@ The ORDA request log can be sent to a file or to memory, depending on the parame
 
 *   If you did not pass any parameter, the log is started in memory. If `.startRequestLog()` was previously called with a *reqNum* (before a `.stopRequestLog()`), the log data is stacked in memory until the next time the log is emptied or `.stopRequestLog()` is called.
 
-For a description of the ORDA request log format, please refer to the [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373) section.
+ORDAリクエストログのフォーマットの詳細は、[**ORDAクライアントリクエスト**](https://doc.4d.com/4Dv18R6/4D/18-R6/Description-of-log-files.300-5217819.ja.html#4385373) の章を参照ください。
 
 
 
@@ -910,7 +910,7 @@ The `.startTransaction()` function <!-- REF #datastoreClass.startTransaction().S
 
 The `.stopRequestLog()` function <!-- REF #datastoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk. 
 
-This function must be called on a remote 4D, otherwise it does nothing. It is designed for debugging purposes in client/server configurations.
+This function must be called on a remote 4D, otherwise it does nothing. これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
 
 
