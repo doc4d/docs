@@ -736,7 +736,7 @@
 <p><strong>コレクション要素とクエリ条件のリンク</strong></p>
 <p>プロパティを複数持つオブジェクト要素からなりたっているコレクションが、さらに親オブジェクトの属性値である場合に、当該コレクションに特定要素が存在するかを条件に親オブジェクトを検出したいケースを考えます。AND 演算子で結合された複数のクエリ条件を使用して検索するだけでは、異なるコレクション要素がそれぞれ検索条件に合致するプロパティ値を持つ場合にも当該親オブジェクトが検出されてしまいます。 これを避けるには、すべての条件に合致するコレクション要素のみが検出されるよう、クエリ条件をコレクション要素にリンクする必要があります。</p>
 <p>たとえば、以下のような 2件のエンティティがあるとき:</p>
-<pre><code class="hljs">Entity <span class="hljs-number">1</span>:
+<pre><code class="hljs">エンティティ<span class="hljs-number">1</span>:
 ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-class">.name</span>: <span class="hljs-string">"martin"</span>
 ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-class">.places</span>: 
     { <span class="hljs-string">"locations"</span> : [ {
@@ -744,7 +744,7 @@ ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-cla
                 <span class="hljs-string">"city"</span>:<span class="hljs-string">"paris"</span> 
             } ] }
 
-Entity <span class="hljs-number">2</span>:
+エンティティ<span class="hljs-number">2</span>:
 ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-class">.name</span>: <span class="hljs-string">"smith"</span>
 ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-class">.places</span>: 
     { <span class="hljs-string">"locations"</span> : [ {
