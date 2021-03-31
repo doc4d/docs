@@ -414,7 +414,7 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck resolve pointers</code>: コピー前にポインターを解決する<br><code>ck shared</code>: 共有コレクションを返す</td></tr>
+<tr><td>オプション</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck resolve pointers</code>: コピー前にポインターを解決する<br><code>ck shared</code>: 共有コレクションを返す</td></tr>
 <tr><td>groupWithCol</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>結果のコレクションとグループする共有コレクション</td></tr>
 <tr><td>groupWithObj</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>結果のコレクションとグループする共有オブジェクト</td></tr>
 <tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>元のコレクションのディープ・コピー</td></tr>
@@ -428,7 +428,7 @@
 <p>任意の <em>option</em> パラメーターには、以下のどちらか (あるいは両方) の定数を渡すことができます:</p>
 <table>
 <thead>
-<tr><th>option</th><th>説明</th></tr>
+<tr><th>オプション</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>ck resolve pointers</code></td><td>オリジナルのコレクションがポインター型の値を格納している場合、デフォルトではコピー先のオブジェクトもポインターを格納します。 しかしながら、<code>ck resolve pointers</code> 定数を渡すことで、コピー時にポインターを解決することができます。 この場合、コレクション内の各ポインターはコピー時に解決され、解決済みの値が使用されます。</td></tr>
@@ -612,7 +612,7 @@ End use</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: アクセント等の発音区別符号を無視しない評価 (たとえば &quot;A&quot; # &quot;a&quot;)</td></tr>
+<tr><td>オプション</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: アクセント等の発音区別符号を無視しない評価 (たとえば &quot;A&quot; # &quot;a&quot;)</td></tr>
 <tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>重複しない値を取得する属性のパス</td></tr>
 <tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>重複しない値のみを格納した新規コレクション</td></tr>
 </tbody>
@@ -654,7 +654,7 @@ End use</span>
 </thead>
 <tbody>
 <tr><td>collection2</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>比較するコレクション</td></tr>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: アクセント等の発音区別符号を無視しない評価 (たとえば &quot;A&quot; # &quot;a&quot;)</td></tr>
+<tr><td>オプション</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck diacritical</code>: アクセント等の発音区別符号を無視しない評価 (たとえば &quot;A&quot; # &quot;a&quot;)</td></tr>
 <tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>コレクションが同一の場合には true、それ以外は false</td></tr>
 </tbody>
 </table>
@@ -776,7 +776,7 @@ End if</span>
 <tbody>
 <tr><td>propertyPath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>新しいコレクションに抽出する値のオブジェクトプロパティパス</td></tr>
 <tr><td>targetpath</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>抽出先のプロパティパスあるいはプロパティ名</td></tr>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck keep null</code>: 返されるコレクションに null プロパティを含めます (デフォルトでは無視されます)。 <em>targetPath</em> を渡した場合には、この引数は無視されます。</td></tr>
+<tr><td>オプション</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck keep null</code>: 返されるコレクションに null プロパティを含めます (デフォルトでは無視されます)。 <em>targetPath</em> を渡した場合には、この引数は無視されます。</td></tr>
 <tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>抽出した値を格納した新しいコレクション</td></tr>
 </tbody>
 </table>
@@ -1227,7 +1227,7 @@ End if</span>
 </thead>
 <tbody>
 <tr><td>delimiter</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>要素間に用いる区切り文字</td></tr>
-<tr><td>option</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck ignore null or empty</code>: 戻り値に null と空の文字列を含めない</td></tr>
+<tr><td>オプション</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck ignore null or empty</code>: 戻り値に null と空の文字列を含めない</td></tr>
 <tr><td>戻り値</td><td>テキスト</td><td style="text-align:center">&lt;-</td><td>区切り文字を使ってコレクションの全要素をつなげた文字列</td></tr>
 </tbody>
 </table>

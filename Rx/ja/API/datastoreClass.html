@@ -82,8 +82,8 @@
 <tr><td><a href="#encryptionstatus"><strong>.encryptionStatus()</strong>: Object</a><p>    カレントデータファイルの暗号化状態を示すオブジェクトを返します</td></tr>
 <tr><td><a href="#getinfo"><strong>.getInfo()</strong>: Object</a><p>    データストアの情報を提供するオブジェクトを返します</td></tr>
 <tr><td><a href="#getrequestlog"><strong>.getRequestLog()</strong> : Collection</a><p>    クライアント側のメモリに記録されている ORDAリクエストを返します</td></tr>
-<tr><td><a href="#makeSelectionsAlterable"><strong>.makeSelectionsAlterable()</strong></a><p>    sets all entity selections as alterable by default in all the current application datastores</td></tr>
-<tr><td><a href="#providedatakey"><strong>.provideDataKey</strong>( <em>curPassPhrase</em> : Text ) : Object <br><strong>.provideDataKey</strong>( <em>curDataKey</em> : Object ) : Object </a><p>    allows providing a data encryption key for the current data file of the datastore and detects if the key matches the encrypted data</td></tr>
+<tr><td><a href="#makeSelectionsAlterable"><strong>.makeSelectionsAlterable()</strong></a><p>    カレントアプリケーションのデータストアにおいて、すべての新規エンティティセレクションをデフォルトで追加可能に設定します</td></tr>
+<tr><td><a href="#providedatakey"><strong>.provideDataKey</strong>( <em>curPassPhrase</em> : Text ) : Object <br><strong>.provideDataKey</strong>( <em>curDataKey</em> : Object ) : Object </a><p>    データストアのカレントデータファイルのデータ暗号化キーを受け取り、暗号化されたデータと合致するかどうかチェックします</td></tr>
 <tr><td><a href="#startrequestlog"><strong>.startRequestLog</strong>()<br><strong>.startRequestLog</strong>( <em>file</em> : 4D.File )<br><strong>.startRequestLog</strong>( <em>reqNum</em> : Integer )</a><p>    starts the logging of ORDA requests on the client side</td></tr>
 <tr><td><a href="#starttransaction"><strong>.startTransaction()</strong></a><p>    starts a transaction in the current process on the database matching the datastore to which it applies</td></tr>
 <tr><td><a href="#stoprequestlog"><strong>.stopRequestLog()</strong>  </a><p>    stops any logging of ORDA requests on the client side</td></tr>
@@ -220,23 +220,23 @@
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2-1"></a><a href="#例題-2-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
 <p>user / password / timeout / tls を指定してリモートデータストアに接続します:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$connectTo </span>: Object<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$connectTo </span>: Object<span class="hljs-keyword"> 
  var</span> <span class="hljs-variable">$remoteDS </span>: cs.DataStore
  <span class="hljs-variable">$connectTo</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"type"</span>;<span class="hljs-string">"4D Server"</span>;<span class="hljs-string">"hostname"</span>;\<span class="hljs-string">"192.168.18.11:4443"</span>;\  
     <span class="hljs-string">"user"</span>;<span class="hljs-string">"marie"</span>;<span class="hljs-string">"password"</span>;<span class="hljs-variable">$pwd</span>;<span class="hljs-string">"idleTimeout"</span>;<span class="hljs-number">70</span>;<span class="hljs-string">"tls"</span>;<span class="hljs-literal">True</span>)
  <span class="hljs-variable">$remoteDS</span>:=<span class="hljs-function">Open datastore</span>(<span class="hljs-variable">$connectTo</span>;<span class="hljs-string">"students"</span>)
-<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"This remote datastore contains "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$remoteDS</span>.Students.<span class="hljs-function">all</span>().length)+<span class="hljs-string">" students"</span>)
+<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"このリモートデータストアには "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$remoteDS</span>.Students.<span class="hljs-function">all</span>().length)+<span class="hljs-string">" 名の生徒が登録されています"</span>)
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 3</h4>
 <p>複数のリモートデータストアと接続します:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$connectTo </span>: Object<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$connectTo </span>: Object<span class="hljs-keyword"> 
  var</span> <span class="hljs-variable">$frenchStudents</span>; <span class="hljs-variable">$foreignStudents </span>: cs.DataStore
  <span class="hljs-variable">$connectTo</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"hostname"</span>;<span class="hljs-string">"192.168.18.11:8044"</span>)
  <span class="hljs-variable">$frenchStudents</span>:=<span class="hljs-function">Open datastore</span>(<span class="hljs-variable">$connectTo</span>;<span class="hljs-string">"french"</span>)
  <span class="hljs-variable">$connectTo</span>.hostname:=<span class="hljs-string">"192.168.18.11:8050"</span>
  <span class="hljs-variable">$foreignStudents</span>:=<span class="hljs-function">Open datastore</span>(<span class="hljs-variable">$connectTo</span>;<span class="hljs-string">"foreign"</span>)
-<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"They are "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$frenchStudents</span>.Students.<span class="hljs-function">all</span>().length)+<span class="hljs-string">" French students"</span>)
-<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"They are "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$foreignStudents</span>.Students.<span class="hljs-function">all</span>().length)+<span class="hljs-string">" foreign students"</span>)
+<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"フランスの生徒は "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$frenchStudents</span>.Students.<span class="hljs-function">all</span>().length)+<span class="hljs-string">" 名です"</span>)
+<span class="hljs-function"> ALERT</span>(<span class="hljs-string">"外国の生徒は "</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$foreignStudents</span>.Students.<span class="hljs-function">all</span>().length)+<span class="hljs-string">" 名です"</span>)
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="エラー管理"></a><a href="#エラー管理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>エラー管理</h4>
 <p>エラーが起きた場合、コマンドは <strong>Null</strong> を返します。 リモートデータベースにアクセスできなかった場合 (アドレス違い、Webサーバーが開始されていない、http/https が有効化されていない、等)、エラー1610 &quot;ホスト XXX へのリモートリクエストに失敗しました&quot; が生成されます。 このエラーは <code>ON ERR CALL</code> で実装されたメソッドで割り込み可能です。</p>
@@ -456,13 +456,13 @@
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.makeSelectionsAlterable()</code> function sets all entity selections as alterable by default in all the current application datastores (including <a href="/docs/Rx/ja/ORDA/datastores.html">remote datastores</a>). It is intended to be used once, for example in the <code>On Startup</code> database method.</p>
-<p>When this function is not called, new entity selections can be shareable, depending on the nature of their &quot;parent&quot;, or <a href="/docs/Rx/ja/ORDA/entities.html#shareable-or-non-shareable-entity-selections">how they are created</a>.</p>
+<p><code>.makeSelectionsAlterable()</code> 関数は、 カレントアプリケーションのデータストアにおいて、すべての新規エンティティセレクションをデフォルトで追加可能に設定します (<a href="/docs/Rx/ja/ORDA/datastores.html">リモートデータストア</a> を含む)。 これはたとえば <code>On Startup</code> データベースメソッドなどで、一度だけ使用することが想定されています。</p>
+<p>このメソッドが呼ばれてない場合、新規エンティティセレクションはそれぞれの &quot;親&quot; の性質や作成方法に応じて、共有可能に設定される場合もあります (<a href="/docs/Rx/ja/ORDA/entities.html#共有可能追加可能なエンティティセレクション">共有可能/追加可能なエンティティセレクション</a> 参照)。</p>
 <blockquote>
-<p>This function does not modify entity selections created by <a href="#copy"><code>.copy()</code></a> or <code>OB Copy</code> when the explicit <code>ck shared</code> option is used.</p>
+<p>この関数は、<code>OB Copy</code> または <a href="#copy"><code>.copy()</code></a> に <code>ck shared</code> オプションを明示的に使用して作成されたエンティティセレクションには適用されません。</p>
 </blockquote>
 <blockquote>
-<p><strong>Compatibility</strong>: This function must only be used in projects converted from 4D versions prior to 4D v18 R5 and containing <a href="/docs/Rx/ja/API/entitySelectionClass.html#add">.add()</a> calls. In this context, using <code>.makeSelectionsAlterable()</code> can save time by restoring instantaneously the previous 4D behavior in existing projects. On the other hand, using this method in new projects created in 4D v18 R5 and higher <strong>is not recommended</strong>, since it prevents entity selections to be shared, which provides greater performance and scalabitlity.</p>
+<p><strong>互換性に関する注記</strong>: このメソッドは 4D v18 R5 より前のバージョンから変換されたプロジェクトで、<a href="/docs/Rx/ja/API/entitySelectionClass.html#add">.add()</a> の呼び出しを使用しているものにおいてのみ使用してください。 このコンテキストにおいては、<code>.makeSelectionsAlterable()</code> を使用することで、既存プロジェクト内で以前の 4D のふるまいを再現し、時間を節約できます。 逆に、4D v18 R5 以降のバージョンで作成された新規プロジェクトにおいては、この関数の使用は <strong>推奨されていません</strong>。エンティティセレクションを共有可能にできないため、パフォーマンスとスケーラビリティの観点で妨げになるからです。</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="providedatakey"></a><a href="#providedatakey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.provideDataKey()</h2>
 <p><details><summary>履歴</summary></p>
@@ -481,13 +481,13 @@
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>curPassPhrase</td><td>テキスト</td><td>-&gt;</td><td>Current encryption passphrase</td></tr>
-<tr><td>curDataKey</td><td>オブジェクト</td><td>-&gt;</td><td>Current data encryption key</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td>&lt;-</td><td>Result of the encryption key matching</td></tr>
+<tr><td>curPassPhrase</td><td>テキスト</td><td>-&gt;</td><td>カレントのパスフレーズ</td></tr>
+<tr><td>curDataKey</td><td>オブジェクト</td><td>-&gt;</td><td>カレントのデータ暗号化キー</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td>&lt;-</td><td>暗号化キーのチェックの結果</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.provideDataKey()</code> function allows providing a data encryption key for the current data file of the datastore and detects if the key matches the encrypted data. This function can be used when opening an encrypted database, or when executing any encryption operation that requires the encryption key, such as re-encrypting the data file.</p>
+<p><code>.provideDataKey()</code> 関数は、 データストアのカレントデータファイルのデータ暗号化キーを受け取り、暗号化されたデータと合致するかどうかチェックします。 この関数は、暗号化されたデータベースを開くときや、データファイルの再暗号化など暗号化キーが必要となる暗号化オペレーションを実行する際に使用します。</p>
 <blockquote>
 <ul>
 <li>The <code>.provideDataKey()</code> function must be called in an encrypted database. If it is called in a non-encrypted database, the error 2003 (the encryption key does not match the data.) is returned. Use the <code>Data file encryption status</code> command to determine if the database is encrypted.</li>
