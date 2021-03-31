@@ -195,12 +195,12 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 
 ```4d
- var $connectTo : Object
+ var $connectTo : Object 
  var $remoteDS : cs.DataStore
  $connectTo:=New object("type";"4D Server";"hostname";\"192.168.18.11:4443";\  
     "user";"marie";"password";$pwd;"idleTimeout";70;"tls";True)
  $remoteDS:=Open datastore($connectTo;"students")
- ALERT("This remote datastore contains "+String($remoteDS.Students.all().length)+" students")
+ ALERT("このリモートデータストアには "+String($remoteDS.Students.all().length)+" 名の生徒が登録されています")
 ```
 
 
@@ -213,14 +213,14 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 
 ```4d
- var $connectTo : Object
+ var $connectTo : Object 
  var $frenchStudents; $foreignStudents : cs.DataStore
  $connectTo:=New object("hostname";"192.168.18.11:8044")
  $frenchStudents:=Open datastore($connectTo;"french")
  $connectTo.hostname:="192.168.18.11:8050"
  $foreignStudents:=Open datastore($connectTo;"foreign")
- ALERT("They are "+String($frenchStudents.Students.all().length)+" French students")
- ALERT("They are "+String($foreignStudents.Students.all().length)+" foreign students")
+ ALERT("フランスの生徒は "+String($frenchStudents.Students.all().length)+" 名です")
+ ALERT("外国の生徒は "+String($foreignStudents.Students.all().length)+" 名です")
 ```
 
 
@@ -536,9 +536,9 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 #### 説明
 
-The `.makeSelectionsAlterable()` function <!-- REF #datastoreClass.makeSelectionsAlterable().Summary -->sets all entity selections as alterable by default in all the current application datastores<!-- END REF --> (including [remote datastores](ORDA/remoteDatastores.md)). It is intended to be used once, for example in the `On Startup` database method.
+`.makeSelectionsAlterable()` 関数は、 <!-- REF #datastoreClass.makeSelectionsAlterable().Summary -->カレントアプリケーションのデータストアにおいて、すべての新規エンティティセレクションをデフォルトで追加可能に設定します<!-- END REF --> ([リモートデータストア](ORDA/remoteDatastores.md) を含む)。 これはたとえば `On Startup` データベースメソッドなどで、一度だけ使用することが想定されています。
 
-When this function is not called, new entity selections can be shareable, depending on the nature of their "parent", or [how they are created](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
+このメソッドが呼ばれてない場合、新規エンティティセレクションはそれぞれの "親" の性質や作成方法に応じて、共有可能に設定される場合もあります ([共有可能/追加可能なエンティティセレクション](ORDA/entities.md#共有可能追加可能なエンティティセレクション) 参照)。
 
 
 
