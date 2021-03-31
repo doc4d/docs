@@ -183,7 +183,7 @@
 <p>You can enter advanced queries that are not available as attribute queries. For example, if you want to find entities with <em>firstname</em> attribute containing &quot;Jim&quot; but not &quot;Jimmy&quot;, you can write:</p>
 <pre><code class="hljs"><span class="hljs-attr">firstname</span>==<span class="hljs-string">"Jim"</span>
 </code></pre>
-<p>You can use any ORDA query expression as <a href="/docs/alpha/de/API/DataClassClass.html#query">documented with the <code>query()</code> function</a>, with the following limitations or differences:</p>
+<p>You can use any ORDA query expression as <a href="API/DataClassClass.md#query">documented with the <code>query()</code> function</a>, with the following limitations or differences:</p>
 <ul>
 <li>For security, you cannot execute formulas using <code>eval()</code>.</li>
 <li>Placeholders cannot be used; you have to write a <em>queryString</em> with values.</li>
@@ -192,7 +192,7 @@
 <p>For example, with the Employee dataclass, you can write:</p>
 <pre><code class="hljs"><span class="hljs-attr">firstname</span> = <span class="hljs-string">"Marie Sophie"</span> AND manager.lastname = <span class="hljs-string">"@th"</span>
 </code></pre>
-<p>You can click on the <code>v</code> icon to display both <a href="/docs/alpha/de/API/DataClassClass.html#queryplan"><code>queryPlan</code></a> and <a href="/docs/alpha/de/API/DataClassClass.html#querypath"><code>queryPath</code></a>. In the area, you can hover over the subquery blocks to have detailed information per subquery:</p>
+<p>You can click on the <code>v</code> icon to display both <a href="API/DataClassClass.md#queryplan"><code>queryPlan</code></a> and <a href="API/DataClassClass.md#querypath"><code>queryPath</code></a>. In the area, you can hover over the subquery blocks to have detailed information per subquery:</p>
 <p><img src="/docs/alpha/assets/en/Admin/dataExplorer12.png" alt="alt-text"></p>
 <p>Right-click in the query area to display the previous valid queries:</p>
 <p><img src="/docs/alpha/assets/en/Admin/dataExplorer11.png" alt="alt-text"></p>
