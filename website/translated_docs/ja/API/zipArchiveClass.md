@@ -113,7 +113,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
       
       <tr>
         <td>
-          option
+          オプション
         </td>
         
         <td>

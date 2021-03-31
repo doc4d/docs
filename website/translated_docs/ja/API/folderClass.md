@@ -270,9 +270,9 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!-- REF #folderClass.delete().Params -->
-| 参照     | タイプ |    | 説明                     |
-| ------ | --- | -- | ---------------------- |
-| option | 整数  | -> | Folder deletion option |
+| 参照    | タイプ |    | 説明                     |
+| ----- | --- | -- | ---------------------- |
+| オプション | 整数  | -> | Folder deletion option |
 <!-- END REF -->
 
 
