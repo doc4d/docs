@@ -490,21 +490,21 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 **.file**( *path* : Text ) : 4D.File<!-- END REF -->
 
 <!-- REF #directory.file().Params -->
-| 参照   | タイプ     |    | 説明                                   |
-| ---- | ------- | -- | ------------------------------------ |
-| path | テキスト    | -> | Relative POSIX file pathname         |
-| 戻り値  | 4D.File | <- | `File` object (null if invalid path) |
+| 参照   | タイプ     |    | 説明                              |
+| ---- | ------- | -- | ------------------------------- |
+| path | テキスト    | -> | ファイルのPOSIX相対パス名                 |
+| 戻り値  | 4D.File | <- | `File` オブジェクト (無効なパスの場合には null) |
 <!-- END REF -->
 
 #### 説明
 
-The `.file()` function creates <!-- REF #directory.file().Summary -->a `File` object inside the `Folder` object and returns its reference<!-- END REF -->.
+`.file()` 関数は、 <!-- REF #directory.file().Summary -->`Folder` オブジェクト内に `File` オブジェクトを作成し、その参照を返します<!-- END REF -->。
 
 In *path*, pass a relative POSIX path to designate the file to return. The path will be evaluated from the parent folder as root.
 
 **戻り値**
 
-A `File` object or null if *path* is invalid.
+`File` オブジェクト (無効な *path* の場合には null)。
 
 #### 例題
 
@@ -530,27 +530,27 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 **.files**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.files().Params -->
-| 参照      | タイプ    |    | 説明                                  |
-| ------- | ------ | -- | ----------------------------------- |
-| options | 整数     | -> | File list options                   |
-| 戻り値     | コレクション | <- | Collection of children file objects |
+| 参照      | タイプ    |    | 説明                 |
+| ------- | ------ | -- | ------------------ |
+| options | 整数     | -> | ファイルリストのオプション      |
+| 戻り値     | コレクション | <- | 子ファイルオブジェクトのコレクション |
 <!-- END REF -->
 
 #### 説明
 
-The `.files()` function returns <!-- REF #directory.files().Summary -->a collection of `File` objects contained in the folder<!-- END REF -->.
+`.files()` 関数は、 <!-- REF #directory.files().Summary -->フォルダーに格納されている `File` オブジェクトのコレクションを返します<!-- END REF -->。
 > Aliases or symbolic links are not resolved.
 
 By default, if you omit the *options* parameter, only the files at the first level of the folder are returned in the collection, as well as invisible files or folders. You can modify this by passing, in the *options* parameter, one or more of the following constants:
 
-| 定数                    | 結果 | 説明                                                                                  |
-| --------------------- | -- | ----------------------------------------------------------------------------------- |
-| `fk recursive`        | 1  | The collection contains files or folders of the specified folder and its subfolders |
-| `fk ignore invisible` | 8  | Invisible files or folders are not listed                                           |
+| 定数                    | 結果 | 説明                                          |
+| --------------------- | -- | ------------------------------------------- |
+| `fk recursive`        | 1  | コレクションには、指定フォルダーとそのサブフォルダーのファイル/フォルダーが含まれます |
+| `fk ignore invisible` | 8  | 非表示設定のファイルやフォルダーは表示されません                    |
 
 **戻り値**
 
-Collection of `File` objects.
+`File` オブジェクトのコレクション。
 
 #### 例題 1
 
@@ -593,7 +593,7 @@ You want to get all files that are not invisible in the Documents folder:
 <!-- REF #directory.folder().Params -->
 | 参照   | タイプ       |    | 説明                                             |
 | ---- | --------- | -- | ---------------------------------------------- |
-| path | テキスト      | -> | Relative POSIX file pathname                   |
+| path | テキスト      | -> | ファイルのPOSIX相対パス名                                |
 | 戻り値  | 4D.Folder | <- | Created folder object (null if invalid *path*) |
 <!-- END REF -->
 
@@ -643,10 +643,10 @@ The `.folders()` function <!-- REF #directory.folders().Summary -->returns a col
 
 By default, if you omit the *options* parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the *options* parameter, one or more of the following constants:
 
-| 定数                    | 結果 | 説明                                                                                  |
-| --------------------- | -- | ----------------------------------------------------------------------------------- |
-| `fk recursive`        | 1  | The collection contains files or folders of the specified folder and its subfolders |
-| `fk ignore invisible` | 8  | Invisible files or folders are not listed                                           |
+| 定数                    | 結果 | 説明                                          |
+| --------------------- | -- | ------------------------------------------- |
+| `fk recursive`        | 1  | コレクションには、指定フォルダーとそのサブフォルダーのファイル/フォルダーが含まれます |
+| `fk ignore invisible` | 8  | 非表示設定のファイルやフォルダーは表示されません                    |
 
 **戻り値**
 
