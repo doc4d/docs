@@ -563,10 +563,10 @@ To save a document's contents in a `BLOB` field:
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #document.getIcon().Params -->
-| 参照   | タイプ   |    | 説明                                            |
-| ---- | ----- | -- | --------------------------------------------- |
-| size | 整数    | -> | Side length for the returned picture (pixels) |
-| 戻り値  | ピクチャー | <- | Icon                                          |
+| 参照   | タイプ   |    | 説明                       |
+| ---- | ----- | -- | ------------------------ |
+| size | 整数    | -> | 取得するピクチャーの一辺の長さ (ピクセル単位) |
+| 戻り値  | ピクチャー | <- | Icon                     |
 <!-- END REF -->
 
 
