@@ -2099,10 +2099,10 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 ## .query()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                      |
-| ------ | ----------------------- |
-| v17 R5 | querySettings パラメーターを追加 |
-| v16 R6 | 追加                      |
+| バージョン  | 内容                  |
+| ------ | ------------------- |
+| v17 R5 | querySettings をサポート |
+| v16 R6 | 追加                  |
 </details>
 
 <!-- REF #collection.query().Syntax -->
