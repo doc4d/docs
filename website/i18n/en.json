@@ -204,6 +204,15 @@
       "Concepts/variables": {
         "title": "Variables"
       },
+      "Debugging/debugger": {
+        "title": "Debugger"
+      },
+      "Debugging/syntaxErrorWindow": {
+        "title": "Syntax Error Window"
+      },
+      "Debugging/whyDebugger": {
+        "title": "Why a Debugger?"
+      },
       "Desktop/building": {
         "title": "Building a project package"
       },
