@@ -400,7 +400,7 @@ This header is usually "lettersOrNumbers@domainname", e.g. "abcdef.123456@4d.com
 
 #### 説明
 
-The `.references` property contains the <!-- REF #emailObjectClass.references.Summary -->Collection of all message-ids of messages in the preceding reply chain<!-- END REF -->.
+`.references` プロパティは、 <!-- REF #emailObjectClass.references.Summary -->返信チェーン内メッセージの、全メッセージID のコレクション<!-- END REF -->を格納します。
 
 For specific formatting requirements, please consult the [RFC#5322](https://tools.ietf.org/html/rfc5322).
 
@@ -415,7 +415,7 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
 
 #### 説明
 
-The `.replyTo` property contains the <!-- REF #emailObjectClass.replyTo.Summary -->[addresse(s)](#email-addresses) for responses<!-- END REF -->.
+`.replyTo` プロパティは、 <!-- REF #emailObjectClass.replyTo.Summary -->返信用 [アドレス](#email-addresses)<!-- END REF -->を格納します。
 
 
 
@@ -429,7 +429,7 @@ The `.replyTo` property contains the <!-- REF #emailObjectClass.replyTo.Summary 
 
 #### 説明
 
-The `.sendAt` property contains the <!-- REF #emailObjectClass.sendAt.Summary -->Email timestamp in ISO 8601 UTC format<!-- END REF -->.
+`.sendAt` プロパティは、 <!-- REF #emailObjectClass.sendAt.Summary -->メールのタイムスタンプ (ISO 8601 UTCフォーマット)<!-- END REF -->を格納します。
 
 
 
@@ -442,7 +442,7 @@ The `.sendAt` property contains the <!-- REF #emailObjectClass.sendAt.Summary --
 
 #### 説明
 
-The `.sender` property contains the <!-- REF #emailObjectClass.sender.Summary -->email source [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+`.sender` プロパティは、 <!-- REF #emailObjectClass.sender.Summary -->メールのソース [アドレス](#email-addresses)<!-- END REF -->を格納します。
 
 
 Each email you send out has both the **sender** and **[from](#from)** addresses:
@@ -465,7 +465,7 @@ For better deliverability, it is recommended to use the same from and sender add
 
 [IMAP transporter](imapTransporterClass.md) only.
 
-The `.size` property contains the <!-- REF #emailObjectClass.size.Summary -->size (expressed in bytes) of the Email object returned by the IMAP server<!-- END REF -->.
+`.size` プロパティは、 <!-- REF #emailObjectClass.size.Summary -->IMAPサーバーから返された Email オブジェクトのサイズ (バイト単位)<!-- END REF -->を格納します。
 
 
 
@@ -478,7 +478,7 @@ The `.size` property contains the <!-- REF #emailObjectClass.size.Summary -->siz
 
 #### 説明
 
-The `.subject` property contains the <!-- REF #emailObjectClass.subject.Summary -->description of topic<!-- END REF -->.
+`.subject` プロパティは、 <!-- REF #emailObjectClass.subject.Summary -->メールの件名<!-- END REF -->を格納します。
 
 
 
@@ -492,7 +492,7 @@ The `.subject` property contains the <!-- REF #emailObjectClass.subject.Summary 
 
 #### 説明
 
-The `.textBody` property contains the <!-- REF #emailObjectClass.textBody.Summary -->Plain text representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
+`.textBody` プロパティは、 <!-- REF #emailObjectClass.textBody.Summary -->(任意、SMTPのみ) 標準テキスト形式のメールメッセージ (デフォルトの文字セットは UTF-8)<!-- END REF -->を格納します。 See [Handling body part](#handling-body-part) section.
 
 
 
@@ -504,6 +504,6 @@ The `.textBody` property contains the <!-- REF #emailObjectClass.textBody.Summar
 
 #### 説明
 
-The `.to` property contains the <!-- REF #emailObjectClass.to.Summary -->primary recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->. 
+`.to` プロパティは、 <!-- REF #emailObjectClass.to.Summary -->メールのメインの受信者 [アドレス](#email-addresses)<!-- END REF -->を格納します。 
 
 <style> h2 { background: #d9ebff;}</style>
