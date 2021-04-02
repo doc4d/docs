@@ -41,6 +41,7 @@ This theme displays the values of the objects or expressions that are:
 * used in the previous line of code.
 
 Since the previous line of code is the one that was just executed before, the Line Objects theme therefore shows the objects or expressions of the current line before and after that the line was executed. Let's say you execute the following method:
+
 ```4d
 TRACE
  a:=1

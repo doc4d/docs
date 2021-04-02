@@ -210,6 +210,9 @@
       "Debugging/debugger": {
         "title": "Debugger"
       },
+      "Debugging/sourceCodePane": {
+        "title": "Source Code Pane"
+      },
       "Debugging/syntaxErrorWindow": {
         "title": "Syntax Error Window"
       },
