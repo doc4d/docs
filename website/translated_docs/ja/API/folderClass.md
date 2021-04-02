@@ -62,17 +62,17 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 <!-- REF folderClass.Folder.Params -->
 | 参照             | タイプ       |    | 説明                                              |
 | -------------- | --------- |:--:| ----------------------------------------------- |
-| path           | テキスト      | -> | Folder path                                     |
-| folderConstant | 整数        | -> | 4D folder constant                              |
+| path           | テキスト      | -> | フォルダーパス                                         |
+| folderConstant | 整数        | -> | 4Dフォルダー定数                                       |
 | pathType       | 整数        | -> | `fk posix path` (default) or `fk platform path` |
-| *              |           | -> | * to return folder of host database             |
-| 戻り値            | 4D.Folder | <- | New folder object                               |
+| *              |           | -> | ホストデータベースのフォルダーを返すには * を渡します                    |
+| 戻り値            | 4D.Folder | <- | 新規フォルダーオブジェクト                                   |
 <!-- END REF -->
 
 
 #### 説明
 
-The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. The command accepts two syntaxes:
+`Folder` コマンドは、 <!-- REF #_command_.Folder.Summary -->`4D.Folder` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 The command accepts two syntaxes:
 
 **Folder ( path { ; pathType } { ; \* } )**
 
@@ -123,7 +123,7 @@ If the command is called from a component, pass the optional * parameter to get 
 
 #### 説明
 
-The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. It is identical to the [`Folder`](#folder) command (shortcut).
+`4D.Folder.new()` 関数は、 <!-- REF #4D.Folder.new().Summary -->`4D.Folder` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 It is identical to the [`Folder`](#folder) command (shortcut).
 
 > It is recommended to use the [`Folder`](#folder) shortcut command instead of `4D.Folder.new()`. 
 
@@ -147,16 +147,16 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 **.create()** : Boolean<!-- END REF -->
 
 <!--REF #folderClass.create().Params -->
-| 参照  | タイプ |    | 説明                                                           |
-| --- | --- | -- | ------------------------------------------------------------ |
-| 戻り値 | ブール | <- | True if the folder was created successfully, false otherwise |
+| 参照  | タイプ |    | 説明                                     |
+| --- | --- | -- | -------------------------------------- |
+| 戻り値 | ブール | <- | フォルダーが正常に作成された場合には true、それ以外の場合は false |
 <!-- END REF -->
 
 
 
 #### 説明
 
-The `.create()` function <!-- REF #folderClass.create().Summary -->creates a folder on disk according to the properties of the `Folder` object<!-- END REF -->.
+`.create()` 関数は、 <!-- REF #folderClass.create().Summary -->`Folder` オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します<!-- END REF -->。
 
 If necessary, the function creates the folder hierachy as described in the [platformPath](#platformpath) or [path](#path) properties. If the folder already exists on disk, the function does nothing (no error is thrown) and returns false.
 
