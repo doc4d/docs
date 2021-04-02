@@ -18,7 +18,7 @@ The Details button can be used to expand the lower part of the window displaying
 
 ![syntax-error-window-details](assets/en/Debugging/syntaxErrorWindowDetails.png)
 
-## Remote debugging
+## Remote Debugging
 
 In remote debugging mode, server errors are diplayed on the remote 4D machine attached to the debugger. Here is a remote Syntax Error window:
 
@@ -29,7 +29,7 @@ You can see that it is a remote debugger syntax error window with the following 
 *   the error sign contains a 4D Server icon
 *   the background of the code display area is blue.
 
-## Syntax error window buttons
+## Syntax Error Window Buttons
 
 There are five option buttons at the bottom of the window: Abort, Trace, Continue, Edit and (if the window is expanded) Copy.
 

@@ -118,7 +118,7 @@ Here are the possible reasons for the debugger to appear and for the message (di
 * **Caught a call to: Name of the command**: A call to a 4D command to be caught is on the point of being performed.
 * **Stepping into a new process**: You used the Step Into Process button and this message is displayed by the Debugger window opened for the newly created process.
 
-## The Debugger Window’s Panes  
+## Debugger Window Panes
 
 The Debugger window consists of the previously described Execution Control Tool Bar and four resizable panes:
 
@@ -127,4 +127,4 @@ The Debugger window consists of the previously described Execution Control Tool 
 * Custom Watch Pane
 * Source Code Pane
 
-The first three panes use easy-to-navigate hierarchical lists to display pertinent debugging information. The fourth one, Source Code Pane, displays the source code of the method being traced. Each pane has its own function to assist you in your debugging efforts. You can use the mouse to vertically and horizontally resize the debugger window and also each pane. In addition, the first three panes include a dotted separation line between the two columns they display. Using the mouse, you can move this dotted line to horizontally resize the columns, at your convenience.
+The first three panes use easy-to-navigate hierarchical lists to display relevant debugging information. The fourth one, Source Code Pane, displays the source code of the method being traced. Each pane has its own function to assist you in your debugging efforts. You can use the mouse to vertically and horizontally resize the debugger window and also each pane. In addition, the first three panes include a dotted separation line between the two columns they display. Using the mouse, you can move this dotted line to horizontally resize the columns, at your convenience.

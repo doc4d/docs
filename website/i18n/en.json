@@ -204,11 +204,17 @@
       "Concepts/variables": {
         "title": "Variables"
       },
+      "Debugging/callChainPane": {
+        "title": "Call Chain Pane"
+      },
       "Debugging/debugger": {
         "title": "Debugger"
       },
       "Debugging/syntaxErrorWindow": {
         "title": "Syntax Error Window"
+      },
+      "Debugging/watchPane": {
+        "title": "Watch Pane"
       },
       "Debugging/whyDebugger": {
         "title": "Why a Debugger?"
