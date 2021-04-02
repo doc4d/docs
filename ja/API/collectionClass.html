@@ -93,7 +93,7 @@
 <tr><td><a href="#concat"><strong>.concat</strong>( <em>value</em> : any { <em>;...valueN</em> } ) : Collection</a><p>    <em>value</em> に指定した要素を元のコレクションの最後に追加した、新しいコレクションを返します</td></tr>
 <tr><td><a href="#copy"><strong>.copy</strong>() : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithCol</em> : Collection ) : Collection<br><strong>.copy</strong>( <em>option</em> : Integer ; <em>groupWithObj</em> : Object ) : Collection</a><p>     コレクションインスタンスのディープ・コピーを返します</td></tr>
 <tr><td><a href="#count"><strong>.count</strong>( { <em>propertyPath</em> : Text } ) : Real</a><p>    コレクション内の、null ではない要素の個数を返します</td></tr>
-<tr><td><a href="#countvalues"><strong>.countValues</strong>( <em>value</em> : any {; <em>propertyPath</em> : Text } ) : Real</a><p>    <code>value</code> 引数に指定した値がコレクション内において見つかった回数を返します</td></tr>
+<tr><td><a href="#countvalues"><strong>.countValues</strong>( <em>value</em> : any {; <em>propertyPath</em> : Text } ) : Real</a><p>    <em>value</em> 引数に指定した値がコレクション内において見つかった回数を返します</td></tr>
 <tr><td><a href="#distinct"><strong>.distinct</strong>( {<em>option</em> : Integer} ) : Collection<br><strong>.distinct</strong>( <em>propertyPath</em> : Text {; <em>option</em> : Integer } ) : Collection</a><p>    元のコレクションから重複しない (異なる) 値のみを格納した新しいコレクションを返します</td></tr>
 <tr><td><a href="#equal"><strong>.equal</strong>( <em>collection2</em> : Collection {; <em>option</em> : Integer } ) : Boolean</a><p>    コレクションを <em>collection2</em> とディープ比較し、同一の場合には <strong>true</strong> を返します</td></tr>
 <tr><td><a href="#every"><strong>.every</strong>( <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean<br><strong>.every</strong>( <em>startFrom</em> : Integer ; <em>methodName</em> : Text { ;<em>...param</em> : any } ) : Boolean</a><p>    コレクション内の全要素が、<em>methodName</em> に指定したメソッドで実装されたテストにパスした場合には <strong>true</strong> を返します</td></tr>
@@ -558,7 +558,7 @@ End use</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.countValues()</code> 関数は、 <code>value</code> 引数に指定した値がコレクション内において見つかった回数を返します。</p>
+<p><code>.countValues()</code> 関数は、 <em>value</em> 引数に指定した値がコレクション内において見つかった回数を返します。</p>
 <p><em>value</em> には、以下のいずれかを渡すことができます:</p>
 <ul>
 <li>スカラー値 (テキスト、数値、ブール、日付)</li>
@@ -1721,7 +1721,7 @@ var</span><span class="hljs-variable">$2Integer </span><span class="hljs-comment
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v17 R5</td><td>querySettings パラメーターを追加</td></tr>
+<tr><td>v17 R5</td><td>querySettings をサポート</td></tr>
 <tr><td>v16 R6</td><td>追加</td></tr>
 </tbody>
 </table>
