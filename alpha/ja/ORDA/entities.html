@@ -235,7 +235,7 @@
 </code></pre>
 <p>新規のエンティティセレクションは次の場合に、元となるエンティティセレクションの特性を <strong>継承</strong> します:</p>
 <ul>
-<li>既存のエンティティセレクションに対して呼び出された ORDAクラス関数 (<a href="/docs/alpha/ja/API/EntitySelectionClass.html#query">.query()</a>, <a href="/docs/alpha/ja/API/EntitySelectionClass.html#slice">.slice()</a>, 等) によって生成された場合 。</li>
+<li>既存のエンティティセレクションに対して呼び出された ORDAクラス関数 (<a href="/docs/alpha/ja/API/EntitySelectionClass.html#query">.query()</a>, <a href="/docs/alpha/ja/API/EntitySelectionClass.html#slice">.slice()</a>, 等) によって生成された場合 .</li>
 <li>リレーションに基づいて生成された場合:
 <ul>
 <li><a href="/docs/alpha/ja/API/EntityClass.html#attributename">entity.<em>attributeName</em></a> (例: &quot;company.employees&quot;) の <em>attributeName</em> が 1対Nリレーション属性で、かつ entity 自身がエンティティセレクションに属している場合 (<a href="/docs/alpha/ja/API/EntityClass.html#getselection">entity.getSelection()</a> エンティティセレクションと同じ特性になります)。</li>

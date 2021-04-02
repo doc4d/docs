@@ -129,15 +129,15 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>File path</td></tr>
-<tr><td>fileConstant</td><td>整数</td><td style="text-align:center">-&gt;</td><td>4D file constant</td></tr>
-<tr><td>pathType</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (default) or <code>fk platform path</code></td></tr>
-<tr><td>*</td><td></td><td style="text-align:center">-&gt;</td><td>* to return file of host database</td></tr>
-<tr><td>戻り値</td><td>4D.File</td><td style="text-align:center">&lt;-</td><td>New file object</td></tr>
+<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>ファイルパス</td></tr>
+<tr><td>fileConstant</td><td>整数</td><td style="text-align:center">-&gt;</td><td>4Dファイル定数</td></tr>
+<tr><td>pathType</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (デフォルト) または <code>fk platform path</code></td></tr>
+<tr><td>*</td><td></td><td style="text-align:center">-&gt;</td><td>ホストデータベースのファイルを返すには * を渡します</td></tr>
+<tr><td>戻り値</td><td>4D.File</td><td style="text-align:center">&lt;-</td><td>新規ファイルオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>File</code> command creates and returns a new object of the <code>4D.File</code> type. The command accepts two syntaxes:</p>
+<p><code>File</code> コマンドは、 <code>4D.File</code> 型の新しいオブジェクトを作成して返します。 The command accepts two syntaxes:</p>
 <p><strong>File ( path { ; pathType } { ; * })</strong></p>
 <p>In the <em>path</em> parameter, pass a file path string. You can use a custom string or a filesystem (e.g., &quot;/DATA/myfile.txt&quot;).</p>
 <blockquote>
@@ -199,7 +199,7 @@
 <p></details></p>
 <p><strong>4D.File.new</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; <em>*</em> } ) : 4D.File<br><strong>4D.File.new</strong> ( <em>fileConstant</em> : Integer { ; <em>*</em> } ) : 4D.File</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>4D.File.new()</code> function creates and returns a new object of the <code>4D.File</code> type. It is identical to the <a href="#file"><code>File</code></a> command (shortcut).</p>
+<p><code>4D.File.new()</code> 関数は、 <code>4D.File</code> 型の新しいオブジェクトを作成して返します。 It is identical to the <a href="#file"><code>File</code></a> command (shortcut).</p>
 <blockquote>
 <p>It is recommended to use the <a href="#file"><code>File</code></a> shortcut command instead of <code>4D.File.new()</code>.</p>
 </blockquote>
@@ -220,9 +220,9 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>Destination folder</td></tr>
-<tr><td>newName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Name for the copy</td></tr>
-<tr><td>overwrite</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr>
+<tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>宛先フォルダー</td></tr>
+<tr><td>newName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>コピー先フォルダーの名前</td></tr>
+<tr><td>overwrite</td><td>整数</td><td style="text-align:center">-&gt;</td><td>既存要素を上書きするには <code>fk overwrite</code> を渡します</td></tr>
 <tr><td>戻り値</td><td>4D.File</td><td style="text-align:center">&lt;-</td><td>Copied file</td></tr>
 </tbody>
 </table>
@@ -236,7 +236,7 @@
 <tr><th>定数</th><th>結果</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td><code>fk overwrite</code></td><td>4</td><td>Overwrite existing elements, if any</td></tr>
+<tr><td><code>fk overwrite</code></td><td>4</td><td>既存要素があれば、それを上書きします</td></tr>
 </tbody>
 </table>
 <p><strong>戻り値</strong></p>
@@ -265,7 +265,7 @@
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>ブール</td><td>&lt;-</td><td>True if the file was created successfully, false otherwise</td></tr>
+<tr><td>戻り値</td><td>ブール</td><td>&lt;-</td><td>ファイルが正常に作成された場合に true、それ以外の場合は false</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -298,10 +298,10 @@
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>Destination folder for the alias or shortcut</td></tr>
-<tr><td>aliasName</td><td>テキスト</td><td>-&gt;</td><td>Name of the alias or shortcut</td></tr>
-<tr><td>aliasType</td><td>整数</td><td>-&gt;</td><td>Type of the alias link</td></tr>
-<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>Alias or shortcut file reference</td></tr>
+<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>エイリアスまたはショートカットの作成先フォルダー</td></tr>
+<tr><td>aliasName</td><td>テキスト</td><td>-&gt;</td><td>エイリアスまたはショートカットの名称</td></tr>
+<tr><td>aliasType</td><td>整数</td><td>-&gt;</td><td>エイリアスリンクのタイプ</td></tr>
+<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>エイリアスまたはショートカットのファイル参照</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -544,7 +544,7 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>size</td><td>整数</td><td>-&gt;</td><td>Side length for the returned picture (pixels)</td></tr>
+<tr><td>size</td><td>整数</td><td>-&gt;</td><td>取得するピクチャーの一辺の長さ (ピクセル単位)</td></tr>
 <tr><td>戻り値</td><td>ピクチャー</td><td>&lt;-</td><td>Icon</td></tr>
 </tbody>
 </table>
@@ -750,9 +750,9 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>Destination folder</td></tr>
-<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>Full name for the moved file</td></tr>
-<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>Moved file</td></tr>
+<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>宛先フォルダー</td></tr>
+<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>移動先でのファイルの完全な名称</td></tr>
+<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>移動したファイル</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-22"></a><a href="#説明-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -760,7 +760,7 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
 <p>By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the <em>newName</em> parameter. The new name must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned.</p>
 <p><strong>返されるオブジェクト</strong></p>
-<p>The moved <code>File</code> object.</p>
+<p>移動後の <code>File</code> オブジェクト。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-8"></a><a href="#例題-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$DocFolder</span>:=<span class="hljs-function">Folder</span>(fk documents folder)
 <span class="hljs-variable">$myFile</span>:=<span class="hljs-variable">$DocFolder</span>.<span class="hljs-function">file</span>(<span class="hljs-string">"Current/Infos.txt"</span>)
@@ -863,8 +863,8 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>New full name for the file</td></tr>
-<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>Renamed file</td></tr>
+<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>ファイルの新しい完全な名称</td></tr>
+<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>名称変更されたファイル</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-28"></a><a href="#説明-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -872,7 +872,7 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <p>The <em>newName</em> parameter must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.</p>
 <p>Note that the function modifies the full name of the file, i.e. if you do not pass an extension in <em>newName</em>, the file will have a name without an extension.</p>
 <p><strong>返されるオブジェクト</strong></p>
-<p>The renamed <code>File</code> object.</p>
+<p>名称変更された <code>File</code> オブジェクト。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-9"></a><a href="#例題-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>You want to rename &quot;ReadMe.txt&quot; in &quot;ReadMe_new.txt&quot;:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$toRename</span>:=<span class="hljs-function">File</span>(<span class="hljs-string">"C:\\Documents\\Archives\\ReadMe.txt"</span>;fk platform path)
@@ -970,7 +970,7 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>content</td><td>BLOB</td><td>-&gt;</td><td>New contents for the file</td></tr>
+<tr><td>content</td><td>BLOB</td><td>-&gt;</td><td>ファイルの新しいコンテンツ</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-30"></a><a href="#説明-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -996,10 +996,10 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>text</td><td>テキスト</td><td>-&gt;</td><td>Text to store in the file</td></tr>
+<tr><td>text</td><td>テキスト</td><td>-&gt;</td><td>ファイルに保存するテキスト</td></tr>
 <tr><td>charSetName</td><td>テキスト</td><td>-&gt;</td><td>Name of character set</td></tr>
 <tr><td>charSetNum</td><td>整数</td><td>-&gt;</td><td>Number of character set</td></tr>
-<tr><td>breakMode</td><td>整数</td><td>-&gt;</td><td>Processing mode for line breaks</td></tr>
+<tr><td>breakMode</td><td>整数</td><td>-&gt;</td><td>改行の処理モード</td></tr>
 <tr><td></td></tr>
 </tbody>
 </table>

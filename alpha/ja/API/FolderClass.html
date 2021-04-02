@@ -78,28 +78,28 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D Folder</a><p>    copies the <code>Folder</code> object into the specified <em>destinationFolder</em></td></tr>
+<tr><td><a href="#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D Folder</a><p>    <code>Folder</code> オブジェクトを、<em>destinationFolder</em> 引数で指定したフォルダーへとコピーします</td></tr>
 <tr><td><a href="#create"><strong>.create()</strong> : Boolean</a><p>    creates a folder on disk according to the properties of the <code>Folder</code> object</td></tr>
 <tr><td><a href="#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><p>    creates an alias (macOS) or a shortcut (Windows)</td></tr>
-<tr><td><a href="#creationdate"><strong>.creationDate</strong> : Date</a><p>    the creation date of the folder</td></tr>
-<tr><td><a href="#creationtime"><strong>.creationTime</strong> : Time</a><p>    the creation time of the folder</td></tr>
+<tr><td><a href="#creationdate"><strong>.creationDate</strong> : Date</a><p>    フォルダーの作成日を返します</td></tr>
+<tr><td><a href="#creationtime"><strong>.creationTime</strong> : Time</a><p>    フォルダーの作成時刻を返します</td></tr>
 <tr><td><a href="#delete"><strong>.delete</strong>( { <em>option</em> : Integer } )</a><p>    deletes the folder</td></tr>
-<tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    true if the folder exists on disk</td></tr>
-<tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    returns the extension of the folder name (if any)</td></tr>
-<tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    returns the full name of the folder, including its extension (if any)</td></tr>
-<tr><td><a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    returns the icon of the folder</td></tr>
-<tr><td><a href="#hidden"><strong>.hidden</strong> : Boolean</a><p>     true if the folder is set as &quot;hidden&quot; at the system level</td></tr>
-<tr><td><a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    always <strong>false</strong> for a <code>Folder</code> object</td></tr>
-<tr><td><a href="#isfile"><strong>.isFile</strong> : Boolean</a><p>    always <strong>false</strong> for a folder</td></tr>
-<tr><td><a href="#isfolder"><strong>.isFolder</strong> : Boolean</a><p>    always <strong>true</strong> for a folder</td></tr>
-<tr><td><a href="#ispackage"><strong>.isPackage</strong> : Boolean</a><p>    true if the folder is a package on macOS  (and exists on disk)</td></tr>
-<tr><td><a href="#modificationdate"><strong>.modificationDate</strong> : Date</a><p>     the date of the folder's last modification</td></tr>
-<tr><td><a href="#modificationtime"><strong>.modificationTime</strong> : Time</a><p>    the time of the folder's last modification</td></tr>
-<tr><td><a href="#name"><strong>.name</strong> : Text</a><p>     the name of the folder, without extension (if any)</td></tr>
-<tr><td><a href="#original"><strong>.original</strong> : 4D.Folder</a><p>    the same Folder object as the folder</td></tr>
-<tr><td><a href="#parent"><strong>.parent</strong> : 4D.Folder</a><p>    the parent folder object of the folder</td></tr>
-<tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    the POSIX path of the folder</td></tr>
-<tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    the path of the folder expressed with the current platform syntax</td></tr>
+<tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    ディスク上にフォルダーが存在する場合は true を返します</td></tr>
+<tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    フォルダー名の拡張子を返します (あれば)</td></tr>
+<tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    拡張子 (あれば) を含めたフォルダーの完全な名称を返します</td></tr>
+<tr><td><a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    フォルダーのアイコンを返します</td></tr>
+<tr><td><a href="#hidden"><strong>.hidden</strong> : Boolean</a><p>     フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば true を返します</td></tr>
+<tr><td><a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    <code>Folder</code> オブジェクトに対しては常に <strong>false</strong> を返します</td></tr>
+<tr><td><a href="#isfile"><strong>.isFile</strong> : Boolean</a><p>    フォルダーに対しては常に <strong>false</strong> を返します</td></tr>
+<tr><td><a href="#isfolder"><strong>.isFolder</strong> : Boolean</a><p>    フォルダーに対しては常に <strong>true</strong> を返します</td></tr>
+<tr><td><a href="#ispackage"><strong>.isPackage</strong> : Boolean</a><p>    フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に true を返します</td></tr>
+<tr><td><a href="#modificationdate"><strong>.modificationDate</strong> : Date</a><p>     フォルダーの最終変更日を返します</td></tr>
+<tr><td><a href="#modificationtime"><strong>.modificationTime</strong> : Time</a><p>    フォルダーの最終変更時刻を返します</td></tr>
+<tr><td><a href="#name"><strong>.name</strong> : Text</a><p>     フォルダーの名前を、拡張子 (あれば) を含まずに返します</td></tr>
+<tr><td><a href="#original"><strong>.original</strong> : 4D.Folder</a><p>    対象フォルダーと同じフォルダーオブジェクトを返します</td></tr>
+<tr><td><a href="#parent"><strong>.parent</strong> : 4D.Folder</a><p>    対象フォルダーの親フォルダーオブジェクトを返します</td></tr>
+<tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    フォルダのPOSIXパスを返します</td></tr>
+<tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    カレントプラットフォームのシンタックスで表現されたフォルダーのパスを返します</td></tr>
 <tr><td><a href="#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.Folder</a><p>    moves or renames the <code>Folder</code> object (source folder) into the specified <em>destinationFolder</em></td></tr>
 <tr><td><a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.Folder</a><p>    renames the folder with the name you passed in <em>newName</em> and returns the renamed <code>Folder</code> object</td></tr>
 </tbody>
@@ -121,15 +121,15 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Folder path</td></tr>
-<tr><td>folderConstant</td><td>整数</td><td style="text-align:center">-&gt;</td><td>4D folder constant</td></tr>
-<tr><td>pathType</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (default) or <code>fk platform path</code></td></tr>
-<tr><td>*</td><td></td><td style="text-align:center">-&gt;</td><td>* to return folder of host database</td></tr>
-<tr><td>戻り値</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>New folder object</td></tr>
+<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>フォルダーパス</td></tr>
+<tr><td>folderConstant</td><td>整数</td><td style="text-align:center">-&gt;</td><td>4Dフォルダー定数</td></tr>
+<tr><td>pathType</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (デフォルト) または <code>fk platform path</code></td></tr>
+<tr><td>*</td><td></td><td style="text-align:center">-&gt;</td><td>ホストデータベースのフォルダーを返すには * を渡します</td></tr>
+<tr><td>戻り値</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>新規フォルダーオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>Folder</code> command creates and returns a new object of the <code>4D.Folder</code> type. The command accepts two syntaxes:</p>
+<p><code>Folder</code> コマンドは、 <code>4D.Folder</code> 型の新しいオブジェクトを作成して返します。 The command accepts two syntaxes:</p>
 <p><strong>Folder ( path { ; pathType } { ; * } )</strong></p>
 <p>In the <em>path</em> parameter, pass a folder path string. You can use a custom string or a filesystem (e.g., &quot;/DATA&quot;).</p>
 <blockquote>
@@ -181,7 +181,7 @@
 <p></details></p>
 <p><strong>4D.Folder.new</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; <em>*</em> } ) : 4D.Folder<br><strong>4D.Folder.new</strong> ( <em>folderConstant</em> : Integer { ; <em>*</em> } ) : 4D.Folder</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>4D.Folder.new()</code> function creates and returns a new object of the <code>4D.Folder</code> type. It is identical to the <a href="#folder"><code>Folder</code></a> command (shortcut).</p>
+<p><code>4D.Folder.new()</code> 関数は、 <code>4D.Folder</code> 型の新しいオブジェクトを作成して返します。 It is identical to the <a href="#folder"><code>Folder</code></a> command (shortcut).</p>
 <blockquote>
 <p>It is recommended to use the <a href="#folder"><code>Folder</code></a> shortcut command instead of <code>4D.Folder.new()</code>.</p>
 </blockquote>
@@ -202,14 +202,14 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>Destination folder</td></tr>
-<tr><td>newName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Name for the copy</td></tr>
-<tr><td>overwrite</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr>
-<tr><td>戻り値</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>Copied file or folder</td></tr>
+<tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>宛先フォルダー</td></tr>
+<tr><td>newName</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>コピー先フォルダーの名前</td></tr>
+<tr><td>overwrite</td><td>整数</td><td style="text-align:center">-&gt;</td><td>既存要素を上書きするには <code>fk overwrite</code> を渡します</td></tr>
+<tr><td>戻り値</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>コピーされたフォルダー</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-2"></a><a href="#説明-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.copyTo()</code> function copies the <code>Folder</code> object into the specified <em>destinationFolder</em>.</p>
+<p><code>.copyTo()</code> 関数は、 <code>Folder</code> オブジェクトを、<em>destinationFolder</em> 引数で指定したフォルダーへとコピーします。</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
 <p>By default, the folder is copied with the name of the original folder. If you want to rename the copy, pass the new name in the <em>newName</em> parameter. The new name must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned.</p>
 <p>If a folder with the same name already exists in the <em>destinationFolder</em>, by default 4D generates an error. You can pass the <code>fk overwrite</code> constant in the <em>overwrite</em> parameter to ignore and overwrite the existing file</p>
@@ -218,11 +218,11 @@
 <tr><th>定数</th><th>結果</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td><code>fk overwrite</code></td><td>4</td><td>Overwrite existing elements, if any</td></tr>
+<tr><td><code>fk overwrite</code></td><td>4</td><td>既存要素があれば、それを上書きします</td></tr>
 </tbody>
 </table>
 <p><strong>戻り値</strong></p>
-<p>The copied <code>Folder</code> object.</p>
+<p>コピーされた <code>Folder</code> オブジェクト。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>You want to copy a Pictures <em>folder</em> from the user's Document folder to the Database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$userImages</span>; <span class="hljs-variable">$copiedImages </span>: 4D.Folder
@@ -246,7 +246,7 @@
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>ブール</td><td>&lt;-</td><td>True if the folder was created successfully, false otherwise</td></tr>
+<tr><td>戻り値</td><td>ブール</td><td>&lt;-</td><td>フォルダーが正常に作成された場合には true、それ以外の場合は false</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -288,10 +288,10 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>Destination folder for the alias or shortcut</td></tr>
-<tr><td>aliasName</td><td>テキスト</td><td>-&gt;</td><td>Name of the alias or shortcut</td></tr>
-<tr><td>aliasType</td><td>整数</td><td>-&gt;</td><td>Type of the alias link</td></tr>
-<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>Alias or shortcut reference</td></tr>
+<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>エイリアスまたはショートカットの作成先フォルダー</td></tr>
+<tr><td>aliasName</td><td>テキスト</td><td>-&gt;</td><td>エイリアスまたはショートカットの名称</td></tr>
+<tr><td>aliasType</td><td>整数</td><td>-&gt;</td><td>エイリアスリンクのタイプ</td></tr>
+<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td>エイリアスまたはショートカットのフォルダー参照</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -328,7 +328,7 @@ End if</span>
 <p></details></p>
 <p><strong>.creationDate</strong> : Date</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.creationDate</code> property returns the creation date of the folder.</p>
+<p><code>.creationDate</code> プロパティは、 フォルダーの作成日を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="creationtime"></a><a href="#creationtime" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.creationTime</h2>
 <p><details><summary>履歴</summary></p>
@@ -343,7 +343,7 @@ End if</span>
 <p></details></p>
 <p><strong>.creationTime</strong> : Time</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-6"></a><a href="#説明-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.creationTime</code> property returns the creation time of the folder (expressed as a number of seconds beginning at 00:00).</p>
+<p><code>.creationTime</code> プロパティは、 フォルダーの作成時刻を返します (00:00 からの経過秒数の形式)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="delete"></a><a href="#delete" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.delete()</h2>
 <p><details><summary>履歴</summary></p>
@@ -362,7 +362,7 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>整数</td><td>-&gt;</td><td>Folder deletion option</td></tr>
+<tr><td>オプション</td><td>整数</td><td>-&gt;</td><td>フォルダー削除のオプション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -373,8 +373,8 @@ End if</span>
 <tr><th>定数</th><th>結果</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td><code>Delete only if empty</code></td><td>0</td><td>Deletes folder only when it is empty</td></tr>
-<tr><td><code>Delete with contents</code></td><td>1</td><td>Deletes folder along with everything it contains</td></tr>
+<tr><td><code>Delete only if empty</code></td><td>0</td><td>フォルダーが空の場合のみ削除します</td></tr>
+<tr><td><code>Delete with contents</code></td><td>1</td><td>フォルダーを中身ごと削除します</td></tr>
 </tbody>
 </table>
 <p>When <code>Delete only if empty</code> is passed or if you omit the option parameter:</p>
@@ -401,7 +401,7 @@ End if</span>
 <p></details></p>
 <p><strong>.exists</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.exists</code> property returns true if the folder exists on disk, and false otherwise.</p>
+<p><code>.exists</code> プロパティは、 ディスク上にフォルダーが存在する場合は true を返します(それ以外の場合は false)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="extension"></a><a href="#extension" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.extension</h2>
 <p><details><summary>履歴</summary></p>
@@ -416,7 +416,7 @@ End if</span>
 <p></details></p>
 <p><strong>.extension</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-9"></a><a href="#説明-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.extension</code> property returns the extension of the folder name (if any). An extension always starts with &quot;.&quot;. The property returns an empty string if the folder name does not have an extension.</p>
+<p><code>.extension</code> プロパティは、 フォルダー名の拡張子を返します (あれば)。 An extension always starts with &quot;.&quot;. The property returns an empty string if the folder name does not have an extension.</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="file"></a><a href="#file" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.file()</h2>
 <p><details><summary>履歴</summary></p>
@@ -435,15 +435,15 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>path</td><td>テキスト</td><td>-&gt;</td><td>Relative POSIX file pathname</td></tr>
-<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td><code>File</code> object (null if invalid path)</td></tr>
+<tr><td>path</td><td>テキスト</td><td>-&gt;</td><td>ファイルのPOSIX相対パス名</td></tr>
+<tr><td>戻り値</td><td>4D.File</td><td>&lt;-</td><td><code>File</code> オブジェクト (無効なパスの場合には null)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.file()</code> function creates a <code>File</code> object inside the <code>Folder</code> object and returns its reference.</p>
+<p><code>.file()</code> 関数は、 <code>Folder</code> オブジェクト内に <code>File</code> オブジェクトを作成し、その参照を返します。</p>
 <p>In <em>path</em>, pass a relative POSIX path to designate the file to return. The path will be evaluated from the parent folder as root.</p>
 <p><strong>戻り値</strong></p>
-<p>A <code>File</code> object or null if <em>path</em> is invalid.</p>
+<p><code>File</code> オブジェクト (無効な <em>path</em> の場合には null)。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-4"></a><a href="#例題-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myPDF </span>: 4D.File
 <span class="hljs-variable">$myPDF</span>:=<span class="hljs-function">Folder</span>(fk documents folder).<span class="hljs-function">file</span>(<span class="hljs-string">"Pictures/info.pdf"</span>)
@@ -465,12 +465,12 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>options</td><td>整数</td><td>-&gt;</td><td>File list options</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td>&lt;-</td><td>Collection of children file objects</td></tr>
+<tr><td>options</td><td>整数</td><td>-&gt;</td><td>ファイルリストのオプション</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td>&lt;-</td><td>子ファイルオブジェクトのコレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.files()</code> function returns a collection of <code>File</code> objects contained in the folder.</p>
+<p><code>.files()</code> 関数は、 フォルダーに格納されている <code>File</code> オブジェクトのコレクションを返します。</p>
 <blockquote>
 <p>Aliases or symbolic links are not resolved.</p>
 </blockquote>
@@ -480,12 +480,12 @@ End if</span>
 <tr><th>定数</th><th>結果</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td><code>fk recursive</code></td><td>1</td><td>The collection contains files or folders of the specified folder and its subfolders</td></tr>
-<tr><td><code>fk ignore invisible</code></td><td>8</td><td>Invisible files or folders are not listed</td></tr>
+<tr><td><code>fk recursive</code></td><td>1</td><td>コレクションには、指定フォルダーとそのサブフォルダーのファイル/フォルダーが含まれます</td></tr>
+<tr><td><code>fk ignore invisible</code></td><td>8</td><td>非表示設定のファイルやフォルダーは表示されません</td></tr>
 </tbody>
 </table>
 <p><strong>戻り値</strong></p>
-<p>Collection of <code>File</code> objects.</p>
+<p><code>File</code> オブジェクトのコレクション。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-2"></a><a href="#例題-1-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <p>You want to know if there are invisible files in the Database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$all</span>; <span class="hljs-variable">$noInvisible </span>: Collection
@@ -517,15 +517,15 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>path</td><td>テキスト</td><td>-&gt;</td><td>Relative POSIX file pathname</td></tr>
-<tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>Created folder object (null if invalid <em>path</em>)</td></tr>
+<tr><td>path</td><td>テキスト</td><td>-&gt;</td><td>ファイルのPOSIX相対パス名</td></tr>
+<tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>作成された <code>Folder</code> オブジェクト (無効な <em>path</em> の場合には null)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-12"></a><a href="#説明-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.folder()</code> function creates a <code>Folder</code> object inside the parent <code>Folder</code> object and returns its reference.</p>
+<p><code>.folder()</code> 関数は、 親の <code>Folder</code> オブジェクト内に新しい <code>Folder</code> オブジェクトを作成し、その参照を返します。</p>
 <p>In <em>path</em>, pass a relative POSIX path to designate the folder to return. The path will be evaluated from the parent folder as root.</p>
 <p><strong>戻り値</strong></p>
-<p>A <code>Folder</code> object or null if <em>path</em> is invalid.</p>
+<p><code>Folder</code> オブジェクト (無効な <em>path</em> の場合には null)。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-5"></a><a href="#例題-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$mypicts </span>: 4D.Folder
  <span class="hljs-variable">$mypicts</span>:=<span class="hljs-function">Folder</span>(fk documents folder).<span class="hljs-function">folder</span>(<span class="hljs-string">"Pictures"</span>)
@@ -547,24 +547,24 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>options</td><td>整数</td><td>-&gt;</td><td>Folder list options</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td>&lt;-</td><td>Collection of children folder objects</td></tr>
+<tr><td>options</td><td>整数</td><td>-&gt;</td><td>フォルダーリストのオプション</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td>&lt;-</td><td>子フォルダーオブジェクトのコレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-13"></a><a href="#説明-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.folders()</code> function returns a collection of <code>Folder</code> objects contained in the parent folder.</p>
+<p><code>.folders()</code> 関数は、 親フォルダーに格納されている <code>Folder</code> オブジェクトのコレクションを返します。</p>
 <p>By default, if you omit the <em>options</em> parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the <em>options</em> parameter, one or more of the following constants:</p>
 <table>
 <thead>
 <tr><th>定数</th><th>結果</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td><code>fk recursive</code></td><td>1</td><td>The collection contains files or folders of the specified folder and its subfolders</td></tr>
-<tr><td><code>fk ignore invisible</code></td><td>8</td><td>Invisible files or folders are not listed</td></tr>
+<tr><td><code>fk recursive</code></td><td>1</td><td>コレクションには、指定フォルダーとそのサブフォルダーのファイル/フォルダーが含まれます</td></tr>
+<tr><td><code>fk ignore invisible</code></td><td>8</td><td>非表示設定のファイルやフォルダーは表示されません</td></tr>
 </tbody>
 </table>
 <p><strong>戻り値</strong></p>
-<p>Collection of <code>Folder</code> objects.</p>
+<p><code>Folder</code> オブジェクトのコレクション。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-6"></a><a href="#例題-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>You want the collection of all folders and subfolders of the database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$allFolders </span>: Collection
@@ -583,7 +583,7 @@ End if</span>
 <p></details></p>
 <p><strong>.fullName</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-14"></a><a href="#説明-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.fullName</code> property returns the full name of the folder, including its extension (if any).</p>
+<p><code>.fullName</code> プロパティは、 拡張子 (あれば) を含めたフォルダーの完全な名称を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="geticon"></a><a href="#geticon" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.getIcon()</h2>
 <p><details><summary>履歴</summary></p>
@@ -602,16 +602,16 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>size</td><td>整数</td><td>-&gt;</td><td>Side length for the returned picture (pixels)</td></tr>
+<tr><td>size</td><td>整数</td><td>-&gt;</td><td>取得するピクチャーの一辺の長さ (ピクセル単位)</td></tr>
 <tr><td>戻り値</td><td>ピクチャー</td><td>&lt;-</td><td>Icon</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-15"></a><a href="#説明-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.getIcon()</code> function returns the icon of the folder.</p>
+<p><code>.getIcon()</code> 関数は、 フォルダーのアイコンを返します。</p>
 <p>The optional <em>size</em> parameter specifies the dimensions in pixels of the returned icon. This value actually represents the length of the side of the square containing the icon. Icons are usually defined in 32x32 pixels (&quot;large icons&quot;) or 16x16 pixels (&quot;small icons&quot;). If you pass 0 or omit this parameter, the &quot;large icon&quot; version is returned.</p>
 <p>If the folder does not exist on disk, a default blank icon is returned.</p>
 <p><strong>戻り値</strong></p>
-<p>Folder icon <a href="/docs/alpha/ja/Concepts/picture.html">picture</a>.</p>
+<p>フォルダーアイコンの <a href="/docs/alpha/ja/Concepts/picture.html">ピクチャー</a>。</p>
 <h2><a class="anchor" aria-hidden="true" id="hidden"></a><a href="#hidden" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.hidden</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -625,7 +625,7 @@ End if</span>
 <p></details></p>
 <p><strong>.hidden</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-16"></a><a href="#説明-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.hidden</code> property returns  true if the folder is set as &quot;hidden&quot; at the system level, and false otherwise.</p>
+<p><code>.hidden</code> プロパティは、  フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば true を返します(それ以外の場合は false)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="isalias"></a><a href="#isalias" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isAlias</h2>
 <p><details><summary>履歴</summary></p>
@@ -640,7 +640,7 @@ End if</span>
 <p></details></p>
 <p><strong>.isAlias</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-17"></a><a href="#説明-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.isAlias</code> property returns always <strong>false</strong> for a <code>Folder</code> object.</p>
+<p><code>.isAlias</code> プロパティは、 <code>Folder</code> オブジェクトに対しては常に <strong>false</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="isfile"></a><a href="#isfile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isFile</h2>
 <p><details><summary>履歴</summary></p>
@@ -655,7 +655,7 @@ End if</span>
 <p></details></p>
 <p><strong>.isFile</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-18"></a><a href="#説明-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.isFile</code> property returns always <strong>false</strong> for a folder.</p>
+<p><code>.isFile</code> プロパティは、 フォルダーに対しては常に <strong>false</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="isfolder"></a><a href="#isfolder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isFolder</h2>
 <p><details><summary>履歴</summary></p>
@@ -670,7 +670,7 @@ End if</span>
 <p></details></p>
 <p><strong>.isFolder</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-19"></a><a href="#説明-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.isFolder</code> property returns always <strong>true</strong> for a folder.</p>
+<p><code>.isFolder</code> プロパティは、 フォルダーに対しては常に <strong>true</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="ispackage"></a><a href="#ispackage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isPackage</h2>
 <p><details><summary>履歴</summary></p>
@@ -685,8 +685,8 @@ End if</span>
 <p></details></p>
 <p><strong>.isPackage</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-20"></a><a href="#説明-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.isPackage</code> property returns true if the folder is a package on macOS  (and exists on disk). それ以外の場合は false を返します。</p>
-<p>On Windows, <code>.isPackage</code> always returns <strong>false</strong>.</p>
+<p><code>.isPackage</code> プロパティは、 フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に true を返します。 それ以外の場合は false を返します。</p>
+<p>Windows 上においては、<code>.isPackage</code> は常に <strong>false</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="modificationdate"></a><a href="#modificationdate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.modificationDate</h2>
 <p><details><summary>履歴</summary></p>
@@ -701,7 +701,7 @@ End if</span>
 <p></details></p>
 <p><strong>.modificationDate</strong> : Date</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-21"></a><a href="#説明-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.modificationDate</code> property returns  the date of the folder's last modification.</p>
+<p><code>.modificationDate</code> プロパティは。  フォルダーの最終変更日を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="modificationtime"></a><a href="#modificationtime" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.modificationTime</h2>
 <p><details><summary>履歴</summary></p>
@@ -716,7 +716,7 @@ End if</span>
 <p></details></p>
 <p><strong>.modificationTime</strong> : Time</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-22"></a><a href="#説明-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.modificationTime</code> property returns the time of the folder's last modification (expressed as a number of seconds beginning at 00:00).</p>
+<p><code>.modificationTime</code> プロパティは、 フォルダーの最終変更時刻を返します (00:00 からの経過秒数の形式)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="moveto"></a><a href="#moveto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.moveTo()</h2>
 <p><details><summary>履歴</summary></p>
@@ -735,9 +735,9 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>Destination folder</td></tr>
-<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>Full name for the moved folder</td></tr>
-<tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>Moved folder</td></tr>
+<tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>宛先フォルダー</td></tr>
+<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>移動先でのフォルダーの完全な名称</td></tr>
+<tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>移動したフォルダー</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-23"></a><a href="#説明-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -766,7 +766,7 @@ End if</span>
 <p></details></p>
 <p><strong>.name</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-24"></a><a href="#説明-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.name</code> property returns  the name of the folder, without extension (if any).</p>
+<p><code>.name</code> プロパティは、  フォルダーの名前を、拡張子 (あれば) を含まずに返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="original"></a><a href="#original" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.original</h2>
 <p><details><summary>履歴</summary></p>
@@ -781,7 +781,7 @@ End if</span>
 <p></details></p>
 <p><strong>.original</strong> : 4D.Folder</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-25"></a><a href="#説明-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.original</code> property returns the same Folder object as the folder.</p>
+<p><code>.original</code> プロパティは、 対象フォルダーと同じフォルダーオブジェクトを返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <blockquote>
 <p>This property is available on folders to allow generic code to process folders or files.</p>
@@ -799,7 +799,7 @@ End if</span>
 <p></details></p>
 <p><strong>.parent</strong> : 4D.Folder</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-26"></a><a href="#説明-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.parent</code> property returns the parent folder object of the folder. If the path represents a system path (e.g., &quot;/DATA/&quot;), the system path is returned.</p>
+<p><code>.parent</code> プロパティは、 対象フォルダーの親フォルダーオブジェクトを返します。 If the path represents a system path (e.g., &quot;/DATA/&quot;), the system path is returned.</p>
 <p>If the folder does not have a parent (root), the null value is returned.</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="path"></a><a href="#path" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.path</h2>
@@ -815,7 +815,7 @@ End if</span>
 <p></details></p>
 <p><strong>.path</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-27"></a><a href="#説明-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.path</code> property returns the POSIX path of the folder. If the path represents a filesystem (e.g., &quot;/DATA/&quot;), the filesystem is returned.</p>
+<p><code>.path</code> プロパティは、 フォルダのPOSIXパスを返します。 If the path represents a filesystem (e.g., &quot;/DATA/&quot;), the filesystem is returned.</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="platformpath"></a><a href="#platformpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.platformPath</h2>
 <p><details><summary>履歴</summary></p>
@@ -830,7 +830,7 @@ End if</span>
 <p></details></p>
 <p><strong>.platformPath</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-28"></a><a href="#説明-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.platformPath</code> property returns the path of the folder expressed with the current platform syntax.</p>
+<p><code>.platformPath</code> プロパティは、 カレントプラットフォームのシンタックスで表現されたフォルダーのパスを返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="rename"></a><a href="#rename" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.rename()</h2>
 <p><details><summary>履歴</summary></p>
@@ -849,15 +849,15 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>New full name for the folder</td></tr>
-<tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>Renamed folder</td></tr>
+<tr><td>newName</td><td>テキスト</td><td>-&gt;</td><td>フォルダーの新しい完全な名称</td></tr>
+<tr><td>戻り値</td><td>4D.Folder</td><td>&lt;-</td><td>名称変更されたフォルダー</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-29"></a><a href="#説明-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p>The <code>.rename()</code> function renames the folder with the name you passed in <em>newName</em> and returns the renamed <code>Folder</code> object.</p>
 <p>The <em>newName</em> parameter must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.</p>
 <p><strong>返されるオブジェクト</strong></p>
-<p>The renamed <code>Folder</code> object.</p>
+<p>名称変更された <code>Folder</code> オブジェクト。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-8"></a><a href="#例題-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$toRename </span>: 4D.Folder
  <span class="hljs-variable">$toRename</span>:=<span class="hljs-function">Folder</span>(<span class="hljs-string">"/RESOURCES/Pictures"</span>).<span class="hljs-function">rename</span>(<span class="hljs-string">"Images"</span>)
