@@ -380,7 +380,7 @@ You want to delete a specific file in the database folder:
 <!--REF #fileClass.moveTo().Params -->
 | 参照                | タイプ       |    | 説明                           |
 | ----------------- | --------- | -- | ---------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder           |
+| destinationFolder | 4D.Folder | -> | コピー先フォルダー                    |
 | newName           | テキスト      | -> | Full name for the moved file |
 | 戻り値               | 4D.File   | <- | Moved file                   |
 <!-- END REF -->
