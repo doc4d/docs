@@ -31,10 +31,10 @@ title: DataStore
 ## ds
 
 <details><summary>履歴</summary>
-| バージョン | 内容                |
-| ----- | ----------------- |
-| v18   | localID パラメーターを追加 |
-| v17   | 追加                |
+| バージョン | 内容                  |
+| ----- | ------------------- |
+| v18   | localID パラメーターをサポート |
+| v17   | 追加                  |
 </details>
 
 <!-- REF #_command_.ds.Syntax -->
@@ -652,16 +652,16 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 
 
 <!-- REF #datastoreClass.startRequestLog().Params -->
-| 参照     | タイプ     |    | 説明                                   |
-| ------ | ------- | -- | ------------------------------------ |
-| file   | 4D.File | -> | File object                          |
-| reqNum | 整数      | -> | Number of requests to keep in memory |
+| 参照     | タイプ     |    | 説明               |
+| ------ | ------- | -- | ---------------- |
+| file   | 4D.File | -> | File object      |
+| reqNum | 整数      | -> | メモリ内に保管するリクエストの数 |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.startRequestLog()` function <!-- REF #datastoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side<!-- END REF -->.
+`.startRequestLog()` 関数は、 <!-- REF #datastoreClass.startRequestLog().Summary -->クライアント側で ORDAリクエストのログを開始します<!-- END REF -->。
 
 This function must be called on a remote 4D, otherwise it does nothing. これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
@@ -748,7 +748,7 @@ You want to log ORDA client requests in memory:
 
 #### 説明
 
-The `.startTransaction()` function <!-- REF #datastoreClass.startTransaction().Summary -->starts a transaction in the current process on the database matching the datastore to which it applies<!-- END REF -->. Any changes made to the datastore's entities in the transaction's process are temporarily stored until the transaction is either validated or cancelled.
+`.startTransaction()` 関数は、 <!-- REF #datastoreClass.startTransaction().Summary -->対象データストアに対応するデータベース上で、カレントプロセス内のトランザクションを開始します<!-- END REF -->。 Any changes made to the datastore's entities in the transaction's process are temporarily stored until the transaction is either validated or cancelled.
 
 
 > If this method is called on the main datastore (i.e. the datastore returned by the `ds` command), the transaction is applied to all operations performed on the main datastore and on the underlying database, thus including ORDA and classic languages.
@@ -822,7 +822,7 @@ The `.startTransaction()` function <!-- REF #datastoreClass.startTransaction().S
 
 #### 説明
 
-The `.stopRequestLog()` function <!-- REF #datastoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk.
+`.stopRequestLog()` 関数は、 <!-- REF #datastoreClass.stopRequestLog().Summary -->クライアント側の ORDAリクエストのログをすべて停止します<!-- END REF --> (ファイル・メモリとも)。 It is particularly useful when logging in a file, since it actually closes the opened document on disk.
 
 This function must be called on a remote 4D, otherwise it does nothing. これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
@@ -831,7 +831,7 @@ This function must be called on a remote 4D, otherwise it does nothing. これ�
 
 #### 例題
 
-See examples for [`.startRequestLog()`](#startrequestlog).
+[`.startRequestLog()`](#startrequestlog) の例題を参照ください。
 
 <!-- END REF -->
 
@@ -859,7 +859,7 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 
 #### 説明
 
-The `.validateTransaction()` function <!-- REF #datastoreClass.validateTransaction().Summary -->accepts the transaction <!-- END REF -->that was started with [`.startTransaction()`](#starttransaction) at the corresponding level on the specified datastore.
+`.validateTransaction()` 関数は、対象データストアの対応するレベルで [`.startTransaction()`](#starttransaction) で開始された <!-- REF #datastoreClass.validateTransaction().Summary -->トランザクションを受け入れます <!-- END REF -->。
 
 The function saves the changes to the data on the datastore that occurred during the transaction.
 
@@ -870,7 +870,7 @@ The function saves the changes to the data on the datastore that occurred during
 
 #### 例題
 
-See example for [`.startTransaction()`](#starttransaction).
+[`.startTransaction()`](#starttransaction) の例題を参照ください。
 
 <!-- END REF -->
 

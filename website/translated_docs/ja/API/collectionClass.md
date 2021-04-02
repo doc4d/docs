@@ -606,7 +606,7 @@ End use
 
 #### 説明
 
-`.countValues()` 関数は、 <!-- REF #collection.countValues().Summary -->`value` 引数に指定した値がコレクション内において見つかった回数を返します<!-- END REF -->。
+`.countValues()` 関数は、 <!-- REF #collection.countValues().Summary -->*value* 引数に指定した値がコレクション内において見つかった回数を返します<!-- END REF -->。
 
 *value* には、以下のいずれかを渡すことができます:
 
@@ -2074,10 +2074,10 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 ## .query()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                      |
-| ------ | ----------------------- |
-| v17 R5 | querySettings パラメーターを追加 |
-| v16 R6 | 追加                      |
+| バージョン  | 内容                  |
+| ------ | ------------------- |
+| v17 R5 | querySettings をサポート |
+| v16 R6 | 追加                  |
 </details>
 
 <!-- REF #collection.query().Syntax -->
