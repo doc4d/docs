@@ -529,15 +529,15 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 **.isAdminProtected()** : Boolean<!-- END REF -->
 
 <!-- REF #datastoreClass.isAdminProtected().Params -->
-| 参照  | タイプ |    | 説明                                                                             |
-| --- | --- |:--:| ------------------------------------------------------------------------------ |
-| 戻り値 | ブール | <- | True if the Data Explorer access is disabled, False if it is enabled (default) |
+| 参照  | タイプ |    | 説明                                                         |
+| --- | --- |:--:| ---------------------------------------------------------- |
+| 戻り値 | ブール | <- | データエクスプローラーへのアクセスが無効に設定されているの場合は true、有効の場合は false (デフォルト) |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.isAdminProtected()` function <!-- REF #datastoreClass.isAdminProtected().Summary -->returns `True` if [Data Explorer](Admin/dataExplorer.md) access has been disabled for the working session<!-- END REF -->. 
+`.isAdminProtected()` 関数は、 <!-- REF #datastoreClass.isAdminProtected().Summary -->現在のセッションにおいて [データエクスプローラー](Admin/dataExplorer.md) へのアクセスが無効に設定されているの場合は `true`を返します<!-- END REF -->。 
 
 By default, the Data Explorer access is granted for `webAdmin` sessions, but it can be disabled to prevent any data access from administrators (see the [`.setAdminProtection()`](#setadminprotection) function). 
 
