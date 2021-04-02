@@ -606,7 +606,7 @@ End use
 
 #### 説明
 
-`.countValues()` 関数は、 <!-- REF #collection.countValues().Summary -->`value` 引数に指定した値がコレクション内において見つかった回数を返します<!-- END REF -->。
+`.countValues()` 関数は、 <!-- REF #collection.countValues().Summary -->*value* 引数に指定した値がコレクション内において見つかった回数を返します<!-- END REF -->。
 
 *value* には、以下のいずれかを渡すことができます:
 
