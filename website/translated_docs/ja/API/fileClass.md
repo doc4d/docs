@@ -64,19 +64,19 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 
 <!-- REF #_command_.File.Params -->
-| 参照           | タイプ     |    | 説明                                              |
-| ------------ | ------- |:--:| ----------------------------------------------- |
-| path         | テキスト    | -> | File path                                       |
-| fileConstant | 整数      | -> | 4D file constant                                |
-| pathType     | 整数      | -> | `fk posix path` (default) or `fk platform path` |
-| *            |         | -> | * to return file of host database               |
-| 戻り値          | 4D.File | <- | New file object                                 |
+| 参照           | タイプ     |    | 説明                                             |
+| ------------ | ------- |:--:| ---------------------------------------------- |
+| path         | テキスト    | -> | ファイルパス                                         |
+| fileConstant | 整数      | -> | 4Dファイル定数                                       |
+| pathType     | 整数      | -> | `fk posix path` (デフォルト) または `fk platform path` |
+| *            |         | -> | ホストデータベースのファイルを返すには * を渡します                    |
+| 戻り値          | 4D.File | <- | 新規ファイルオブジェクト                                   |
 <!-- END REF -->
 
 
 #### 説明
 
-The `File` command <!-- REF #_command_.File.Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. The command accepts two syntaxes:
+`File` コマンドは、 <!-- REF #_command_.File.Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 The command accepts two syntaxes:
 
 **File ( path { ; pathType } { ; \* })**
 
@@ -137,7 +137,7 @@ If the command is called from a component, pass the optional * parameter to get 
 
 #### 説明
 
-The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and returns a new object of the `4D.File` type<!-- END REF -->. It is identical to the [`File`](#file) command (shortcut).
+`4D.File.new()` 関数は、 <!-- REF #4D.File.new().Summary -->`4D.File` 型の新しいオブジェクトを作成して返します<!-- END REF -->。 It is identical to the [`File`](#file) command (shortcut).
 
 > It is recommended to use the [`File`](#file) shortcut command instead of `4D.File.new()`. 
 
@@ -163,14 +163,14 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 **.create()** : Boolean <!-- END REF -->
 
 <!--REF #fileClass.create().Params -->
-| 参照  | タイプ |    | 説明                                                         |
-| --- | --- | -- | ---------------------------------------------------------- |
-| 戻り値 | ブール | <- | True if the file was created successfully, false otherwise |
+| 参照  | タイプ |    | 説明                                   |
+| --- | --- | -- | ------------------------------------ |
+| 戻り値 | ブール | <- | ファイルが正常に作成された場合に true、それ以外の場合は false |
 <!-- END REF -->
 
 #### 説明
 
-The `.create()` function <!-- REF #fileClass.create().Summary -->creates a file on disk according to the properties of the `File` object<!-- END REF -->.
+`.create()` 関数は、 <!-- REF #fileClass.create().Summary -->`File` オブジェクトのプロパティに基づいてディスク上にファイルを作成します<!-- END REF -->。
 
 If necessary, the function creates the folder hierachy as described in the [platformPath](#platformpath) or [path](#path) properties. If the file already exists on disk, the function does nothing (no error is thrown) and returns false.
 
@@ -206,18 +206,18 @@ Creation of a preferences file in the database folder:
 **.createAlias**( *destinationFolder* : 4D.Folder ; *aliasName* : Text { ; *aliasType* : Integer } ) : 4D.File<!-- END REF -->
 
 <!--REF #fileClass.createAlias().Params -->
-| 参照                | タイプ       |    | 説明                                           |
-| ----------------- | --------- | -- | -------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | テキスト      | -> | Name of the alias or shortcut                |
-| aliasType         | 整数        | -> | Type of the alias link                       |
-| 戻り値               | 4D.File   | <- | Alias or shortcut file reference             |
+| 参照                | タイプ       |    | 説明                       |
+| ----------------- | --------- | -- | ------------------------ |
+| destinationFolder | 4D.Folder | -> | エイリアスまたはショートカットの作成先フォルダー |
+| aliasName         | テキスト      | -> | エイリアスまたはショートカットの名称       |
+| aliasType         | 整数        | -> | エイリアスリンクのタイプ             |
+| 戻り値               | 4D.File   | <- | エイリアスまたはショートカットのファイル参照   |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.createAlias()` function <!-- REF #fileClass.createAlias().Summary -->creates an alias (macOS) or a shortcut (Windows)<!-- END REF --> to the file with the specified *aliasName* name in the folder designated by the *destinationFolder* object.
+`.createAlias()` 関数は、*destinationFolder* オブジェクトで指定されたフォルダー内に、*aliasName* が指定する名称で、対象ファイルへの <!-- REF #fileClass.createAlias().Summary -->エイリアス (macOS) またはショートカット (Windows) を作成します<!-- END REF --> 。
 
 Pass the name of the alias or shortcut to create in the *aliasName* parameter.
 
@@ -280,7 +280,7 @@ You want to create an alias to a file in your database folder:
 
 #### 説明
 
-The `.delete()` function <!-- REF #fileClass.delete().Summary -->deletes the file<!-- END REF -->.
+`.delete()` 関数は、 <!-- REF #fileClass.delete().Summary -->ファイルを削除します<!-- END REF -->。
 
 If the file is currently open, an error is generated.
 
@@ -378,17 +378,17 @@ You want to delete a specific file in the database folder:
 **.moveTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } ) : 4D.File<!-- END REF -->
 
 <!--REF #fileClass.moveTo().Params -->
-| 参照                | タイプ       |    | 説明                           |
-| ----------------- | --------- | -- | ---------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder           |
-| newName           | テキスト      | -> | Full name for the moved file |
-| 戻り値               | 4D.File   | <- | Moved file                   |
+| 参照                | タイプ       |    | 説明              |
+| ----------------- | --------- | -- | --------------- |
+| destinationFolder | 4D.Folder | -> | 宛先フォルダー         |
+| newName           | テキスト      | -> | 移動先でのファイルの完全な名称 |
+| 戻り値               | 4D.File   | <- | 移動したファイル        |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.moveTo()` function <!-- REF #fileClass.moveTo().Summary -->moves or renames the `File` object into the specified *destinationFolder*<!-- END REF -->.
+`.moveTo()` 関数は、 <!-- REF #fileClass.moveTo().Summary -->`File` オブジェクトを *destinationFolder* が指定する移行先へと移動すると同時に、*newName* を指定した場合は名称も変更します<!-- END REF -->。
 
 The *destinationFolder* must exist on disk, otherwise an error is generated.
 
@@ -397,7 +397,7 @@ By default, the file retains its name when moved. If you want to rename the move
 
 **返されるオブジェクト**
 
-The moved `File` object.
+移動後の `File` オブジェクト。
 
 #### 例題
 
@@ -446,15 +446,15 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 **.rename**( *newName* : Text ) : 4D.File<!-- END REF -->
 
 <!--REF #fileClass.rename().Params -->
-| 参照      | タイプ     |    | 説明                         |
-| ------- | ------- | -- | -------------------------- |
-| newName | テキスト    | -> | New full name for the file |
-| 戻り値     | 4D.File | <- | Renamed file               |
+| 参照      | タイプ     |    | 説明            |
+| ------- | ------- | -- | ------------- |
+| newName | テキスト    | -> | ファイルの新しい完全な名称 |
+| 戻り値     | 4D.File | <- | 名称変更されたファイル   |
 <!-- END REF -->
 
 #### 説明
 
-The `.rename()` function <!-- REF #fileClass.rename().Summary -->renames the file with the name you passed in *newName* and returns the renamed `File` object<!-- END REF -->.
+`.rename()` 関数は、 <!-- REF #fileClass.rename().Summary -->ファイル名を *newName* に指定した名称に変更し、名称変更後の `File` オブジェクトを返します<!-- END REF -->。
 
 The *newName* parameter must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.
 
@@ -463,7 +463,7 @@ Note that the function modifies the full name of the file, i.e. if you do not pa
 
 **返されるオブジェクト**
 
-The renamed `File` object.
+名称変更された `File` オブジェクト。
 
 #### 例題
 
@@ -491,15 +491,15 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 **.setContent** ( *content* : Blob ) <!-- END REF -->
 
 <!--REF #fileClass.setContent().Params -->
-| 参照      | タイプ  |    | 説明                        |
-| ------- | ---- | -- | ------------------------- |
-| content | BLOB | -> | New contents for the file |
+| 参照      | タイプ  |    | 説明            |
+| ------- | ---- | -- | ------------- |
+| content | BLOB | -> | ファイルの新しいコンテンツ |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.setContent( )` function <!-- REF #fileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the *content* BLOB<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+`.setContent( )` 関数は、 <!-- REF #fileClass.setContent().Summary -->*content* 引数の BLOB に保存されているデータを使用して、ファイルの全コンテンツを上書きします<!-- END REF -->。 For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
 
 
 #### 例題
@@ -530,18 +530,18 @@ The `.setContent( )` function <!-- REF #fileClass.setContent().Summary -->rewrit
 
 
 <!--REF #fileClass.setText().Params -->
-| 参照          | タイプ  |    | 説明                                                         |
-| ----------- | ---- | -- | ---------------------------------------------------------- |
-| text        | テキスト | -> | Text to store in the file                                  |
-| charSetName | テキスト | -> | Name of character set                                      |
-| charSetNum  | 整数   | -> | Number of character set                                    |
-| breakMode   | 整数   | -> | Processing mode for line breaks|<!-- END REF -->
+| 参照          | タイプ  |    | 説明                                 |
+| ----------- | ---- | -- | ---------------------------------- |
+| text        | テキスト | -> | ファイルに保存するテキスト                      |
+| charSetName | テキスト | -> | Name of character set              |
+| charSetNum  | 整数   | -> | Number of character set            |
+| breakMode   | 整数   | -> | 改行の処理モード<!-- END REF -->
 
 |
 
 #### 説明
 
-The `.setText()` function <!-- REF #fileClass.setText().Summary -->writes *text* as the new contents of the file<!-- END REF -->.
+`.setText()` 関数は、 <!-- REF #fileClass.setText().Summary -->*text* に渡されたテキストをファイルの新しいコンテンツとして書き込みます<!-- END REF -->。
 
 If the file referenced in the `File` object does not exist on the disk, it is created by the function. When the file already exists on the disk, its prior contents are erased, except if it is already open, in which case, its contents are locked and an error is generated.
 
