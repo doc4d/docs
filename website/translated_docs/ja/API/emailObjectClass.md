@@ -113,7 +113,7 @@ The [`textBody`](#textbody) and [`htmlBody`](#htmlbody) properties are only used
 
 
 
-The `.attachments` property contains a <!-- REF #emailObjectClass.attachments.Summary -->collection of *attachment* object(s)<!-- END REF -->.
+`.attachments` プロパティは、 <!-- REF #emailObjectClass.attachments.Summary -->*attachment* オブジェクトのコレクション<!-- END REF -->を格納します。
 
 Attachment objects are defined through the `MAIL New attachment` command.
 
@@ -128,7 +128,7 @@ Attachment objects are defined through the `MAIL New attachment` command.
 
 #### 説明
 
-The `.bcc` property contains the <!-- REF #emailObjectClass.bcc.Summary -->Blind Carbon Copy (BCC) hidden email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+`.bcc` プロパティは、 <!-- REF #emailObjectClass.bcc.Summary -->非表示 (BCC: Blind Carbon Copy) のメール受信者 [アドレス](#email-addresses)<!-- END REF -->を格納します。
 
 
 
@@ -141,9 +141,9 @@ The `.bcc` property contains the <!-- REF #emailObjectClass.bcc.Summary -->Blind
 
 #### 説明
 
-The `.bodyStructure` property contains the <!-- REF #emailObjectClass.bodyStructure.Summary -->*EmailBodyPart* object, i.e. the full MIME structure of the message body (optional)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
+`.bodyStructure` プロパティは、 <!-- REF #emailObjectClass.bodyStructure.Summary -->(任意) メッセージ本文の完全なMIME ストラクチャーである *EmailBodyPart* オブジェクト<!-- END REF -->を格納します。 See [Handling body part](#handling-body-part) section.
 
-The `.bodyStructure` object contains the following properties:
+`.bodyStructure` オブジェクトには、次のプロパティが格納されています:
 
 | プロパティ       | タイプ                   | 結果                                                                                                                                                      |
 | ----------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -168,9 +168,9 @@ The `.bodyStructure` object contains the following properties:
 
 #### 説明
 
-The `.bodyValues` property contains the <!-- REF #emailObjectClass.bodyValues.Summary -->*EmailBodyValue* object, containing an object for each \<partID\> of `bodyStructure` (optional)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
+`.bodyValues` プロパティは、 <!-- REF #emailObjectClass.bodyValues.Summary -->(任意) `bodyStructure` の \<partID\> 毎にオブジェクトを格納している *EmailBodyValue* オブジェクト<!-- END REF -->を格納します。 See [Handling body part](#handling-body-part) section.
 
-The `.bodyValues` object contains the following properties:
+`.bodyValues` オブジェクトには、次のプロパティが格納されています:
 
 | プロパティ                      | タイプ     | 結果                                                                                                                                          |
 | -------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -188,7 +188,7 @@ The `.bodyValues` object contains the following properties:
 
 #### 説明
 
-The `.cc` property contains the <!-- REF #emailObjectClass.cc.Summary -->Carbon Copy (CC) additional email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+`.cc` プロパティは、 <!-- REF #emailObjectClass.cc.Summary -->追加 (CC: Carbon Copy) のメール受信者 [アドレス](#email-addresses)<!-- END REF -->を格納します。
 
 
 
@@ -203,7 +203,7 @@ The `.cc` property contains the <!-- REF #emailObjectClass.cc.Summary -->Carbon 
 
 #### 説明
 
-The `.comments` property contains an <!-- REF #emailObjectClass.comments.Summary -->additional comments header<!-- END REF -->.
+`.comments` プロパティは、 <!-- REF #emailObjectClass.comments.Summary -->追加のコメントのヘッダー<!-- END REF -->を格納します。
 
 Comments only appear within the header section of the message (keeping the message's body untouched).
 
@@ -220,7 +220,7 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
 
 #### 説明
 
-The `.from` property contains the <!-- REF #emailObjectClass.from.Summary -->Originating [address(es)](#email-addresses) of the email<!-- END REF -->.
+`.from` プロパティは、 <!-- REF #emailObjectClass.from.Summary -->メールの送信元 [アドレス](#email-addresses)<!-- END REF -->を格納します。
 
 
 Each email you send out has both the [sender](#sender) and **from** addresses:
@@ -241,7 +241,7 @@ For better deliverability, it is recommended to use the same from and sender add
 
 #### 説明
 
-The `.headers` property contains a <!-- REF #emailObjectClass.headers.Summary -->collection of `EmailHeader` objects, in the order they appear in the message<!-- END REF -->. This property allows users to add extended (registered) headers or user-defined (not registered, starting with "X") headers.
+`.headers` プロパティは、 <!-- REF #emailObjectClass.headers.Summary -->メッセージ内で現れる順番どおりの `EmailHeader` オブジェクトのコレクション<!-- END REF -->を格納します。 This property allows users to add extended (registered) headers or user-defined (not registered, starting with "X") headers.
 
 > If an `EmailHeader` object property defines a header such as "from" or "cc" which is already set as a property at the mail level, the `EmailHeader` property is ignored.
 
@@ -266,7 +266,7 @@ Every object of the headers collection can contain the following properties:
 
 #### 説明
 
-The `.htmlBody` property contains the <!-- REF #emailObjectClass.htmlBody.Summary -->HTML representation of the email message (default charset is UTF-8) (optional, SMTP only)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
+`.htmlBody` プロパティは、 <!-- REF #emailObjectClass.htmlBody.Summary -->(任意、SMTPのみ) HTML形式のメールメッセージ (デフォルトの文字セットは UTF-8)<!-- END REF -->を格納します。 See [Handling body part](#handling-body-part) section.
 
 
 
@@ -284,7 +284,7 @@ The `.htmlBody` property contains the <!-- REF #emailObjectClass.htmlBody.Summar
 
 [IMAP transporter](imapTransporterClass.md) only.
 
-The `.id` property contains the <!-- REF #emailObjectClass.id.Summary -->unique ID from the IMAP server<!-- END REF -->.
+`.id` プロパティは、 <!-- REF #emailObjectClass.id.Summary -->IMAP サーバーからの固有ID<!-- END REF -->を格納します。
 
 
 
@@ -299,7 +299,7 @@ The `.id` property contains the <!-- REF #emailObjectClass.id.Summary -->unique 
 
 #### 説明
 
-The `.inReplyTo` property contains the <!-- REF #emailObjectClass.inReplyTo.Summary -->message identifier(s) of the original message(s) to which the current message is a reply<!-- END REF -->.
+`.inReplyTo` プロパティは、 <!-- REF #emailObjectClass.inReplyTo.Summary -->カレントメッセージが返信している、元のメッセージのメッセージID<!-- END REF -->を格納します。
 
 For specific formatting requirements, please consult the [RFC#5322](https://tools.ietf.org/html/rfc5322).
 
@@ -316,9 +316,9 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
 
 #### 説明
 
-The `.keywords` property contains a <!-- REF #emailObjectClass.keywords.Summary -->set of keywords as an object, where each property name is a keyword and each value is true<!-- END REF -->.
+`.keywords` プロパティは、 <!-- REF #emailObjectClass.keywords.Summary -->各プロパティ名がキーワードであり、各値が true であるキーワードセットのオブジェクト<!-- END REF -->を格納します。
 
-This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/html/rfc4021)).
+このプロパティは "keywords" ヘッダーです ([RFC#4021](https://tools.ietf.org/html/rfc4021) 参照)。
 
 <table spaces-before="0">
   <tr>
@@ -369,7 +369,7 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
 
 #### 説明
 
-The `.messageId` property contains a <!-- REF #emailObjectClass.messageId.Summary -->message identifier header ("message-id")<!-- END REF -->.
+`.messageId` プロパティは、 <!-- REF #emailObjectClass.messageId.Summary -->メッセージ識別ヘッダー ("message-id")<!-- END REF -->を格納します。
 
 This header is usually "lettersOrNumbers@domainname", e.g. "abcdef.123456@4d.com". This unique ID is used in particular on forums or public mailing lists. In general, mail servers automatically add this header to the messages they send.
 
@@ -385,7 +385,7 @@ This header is usually "lettersOrNumbers@domainname", e.g. "abcdef.123456@4d.com
 
 [IMAP transporter](imapTransporterClass.md) only.
 
-The `.receivedAt` property contains the <!-- REF #emailObjectClass.receivedAt.Summary -->timestamp of the email's arrival on the IMAP server in ISO 8601 UTC format (ex: 2020-09-13T16:11:53Z)<!-- END REF -->.
+`.receivedAt` プロパティは、 <!-- REF #emailObjectClass.receivedAt.Summary -->IMAPサーバーにメールが到着した時間の、ISO 8601 UTC フォーマットでのタイムスタンプ (例: 2020-09-13T16:11:53Z)<!-- END REF -->を格納します。
 
 
 
