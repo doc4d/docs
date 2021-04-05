@@ -1611,7 +1611,7 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 
 > このメソッドはリモートデータストア (クライアント/サーバーモード、または`Open datastore` 接続) においてのみ動作します。
 
-The `.refresh()` function <!-- REF #entitySelectionClass.refresh().Summary -->immediately "invalidates" the entity selection data in the local ORDA cache<!-- END REF --> so that the next time 4D requires the entity selection, it will be reloaded from the database.
+`.refresh()` 関数は、 <!-- REF #entitySelectionClass.refresh().Summary -->ローカルの ORDAキャッシュにあるエンティティセレクションデータを即座に "無効化" します<!-- END REF --> 。そのため、次に 4Dがエンティティセレクションを必要としたときにはそれがデータベースからリロードされます。
 
 By default, the local ORDA cache is invalidated after 30 seconds. In the context of client / server applications using both ORDA and the classic language, this method allows you to make sure a remote application will always work with the latest data.
 
@@ -1693,16 +1693,16 @@ A list box displays the Form.students entity selection and several clients work 
 **.slice**( *startFrom* : Integer { ; *end* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #entitySelectionClass.slice().Params -->
-| 参照        | タイプ                |    | 説明                                                             |
-| --------- | ------------------ |:--:| -------------------------------------------------------------- |
-| startFrom | 整数                 | -> | Index to start the operation at (included)                     |
-| end       | 整数                 | -> | 終了インデックス (含まれない)                                               |
-| 戻り値       | 4D.EntitySelection | <- | New entity selection containing sliced entities (shallow copy) |
+| 参照        | タイプ                |    | 説明                                      |
+| --------- | ------------------ |:--:| --------------------------------------- |
+| startFrom | 整数                 | -> | 処理を開始するインデックス)                          |
+| end       | 整数                 | -> | 終了インデックス (含まれない)                        |
+| 戻り値       | 4D.EntitySelection | <- | 抜粋エンティティを格納した新しいエンティティセレクション (シャロウ・コピー) |
 <!-- END REF -->
 
 #### 説明
 
-The `.slice()` function <!-- REF #entitySelectionClass.slice().Summary -->returns a portion of an entity selection into a new entity selection<!-- END REF -->, selected from the *startFrom* index to the *end* index (*end* is not included) or to the last entity of the entity selection. This method returns a shallow copy of the entity selection (it uses the same entity references).
+`.slice()` 関数は、*startFrom* の位置 (含まれる) から *end* の位置 (含まれない) または終わりまでの <!-- REF #entitySelectionClass.slice().Summary -->エンティティセレクションの一部を、新規エンティティセレクションとして返します<!-- END REF -->。 This method returns a shallow copy of the entity selection (it uses the same entity references).
 
 
 > This function does not modify the original entity selection.
@@ -1764,17 +1764,17 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 **.sum**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #entitySelectionClass.sum().Params -->
-| 参照            | タイプ  |    | 説明                             |
-| ------------- | ---- |:--:| ------------------------------ |
-| attributePath | テキスト | -> | 計算に使用する属性パス                    |
-| 戻り値           | 実数   | <- | Sum of entity selection values |
+| 参照            | タイプ  |    | 説明                |
+| ------------- | ---- |:--:| ----------------- |
+| attributePath | テキスト | -> | 計算に使用する属性パス       |
+| 戻り値           | 実数   | <- | エンティティセレクションの値の合計 |
 <!-- END REF -->
 
 #### 説明
 
-The `.sum()` function <!-- REF #entitySelectionClass.sum().Summary -->returns the sum for all *attributePath* values in the entity selection<!-- END REF -->.
+`.sum()` 関数は、 <!-- REF #entitySelectionClass.sum().Summary -->*attributePath* に指定したエンティティセレクションの属性値の総和を返します<!-- END REF -->。
 
-`.sum()` returns 0 if the entity selection is empty.
+エンティティセレクションが空の場合、`.sum()` は 0 を返します。
 
 The sum can only be done on values of number type. If the *attributePath* type is object, only numerical values are taken into account for the calculation (other value types are ignored). In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
 
@@ -1818,19 +1818,19 @@ $sum:=$sel.sum("salary")
 **.toCollection**( { *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer } } ) : *Collection*<br>**.toCollection**( *filterString* : Text {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<br>**.toCollection**( *filterCol* : Collection {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<!-- END REF -->
 
 <!-- REF #entitySelectionClass.toCollection().Params -->
-| 参照           | タイプ    |    | 説明                                                                                   |
-| ------------ | ------ |:--:| ------------------------------------------------------------------------------------ |
-| filterString | テキスト   | -> | String with entity attribute path(s) to extract                                      |
-| filterCol    | コレクション | -> | Collection of entity attribute path(s) to extract                                    |
-| options      | 整数     | -> | `dk with primary key`: adds the primary key<br>`dk with stamp`: adds the stamp |
-| begin        | 整数     | -> | Designates the starting index                                                        |
-| howMany      | 整数     | -> | Number of entities to extract                                                        |
-| 戻り値          | コレクション | <- | Collection of objects containing attributes and values of entity selection           |
+| 参照           | タイプ    |    | 説明                                                                   |
+| ------------ | ------ |:--:| -------------------------------------------------------------------- |
+| filterString | テキスト   | -> | 抽出するエンティティの属性パスの文字列                                                  |
+| filterCol    | コレクション | -> | 抽出するエンティティの属性パスのコレクション                                               |
+| options      | 整数     | -> | `dk with primary key`: プライマリーキーを追加<br>`dk with stamp`: スタンプを追加 |
+| begin        | 整数     | -> | 開始インデックス                                                             |
+| howMany      | 整数     | -> | 抽出するエンティティ数                                                          |
+| 戻り値          | コレクション | <- | エンティティセレクションの属性と値を格納したオブジェクトのコレクション                                  |
 <!-- END REF -->
 
 #### 説明
 
-The `.toCollection()` function <!-- REF #entitySelectionClass.toCollection().Summary -->creates and returns a collection where each element is an object containing a set of properties and values <!-- END REF -->corresponding to the attribute names and values for the entity selection.
+`.toCollection()` 関数は、エンティティセレクションの各エンティティの属性名と値に対応する <!-- REF #entitySelectionClass.toCollection().Summary -->プロパティと値のセットを持つオブジェクト要素を格納するコレクションを作成し、返します <!-- END REF -->。
 
 If no filter parameter is passed or the first parameter contains an empty string or "*", all the attributes are extracted. Attributes with [kind](dataclassAttributeClass.md#kind) property as "relatedEntity" are extracted with the simple form: an object with property \_\_KEY (primary key). Attributes with kind property as "relatedEntities" are not extracted.
 
@@ -2055,7 +2055,7 @@ $employeesCollection:=$employees.toCollection("firstName,lastName,employer")
 ```
 
 
-returns:
+戻り値:
 
 
 
@@ -2228,7 +2228,7 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, employer.nam
 
 
 
-#### Example 8
+#### 例題 8
 
 Example with extraction of some properties of `relatedEntities`:
 
@@ -2288,7 +2288,7 @@ Returns:
 
 
 
-#### Example 9
+#### 例題 9
 
 Example with extraction of all properties of `relatedEntities`:
 
