@@ -53,7 +53,7 @@ An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMap
 
 #### 説明
 
-Any dataclass attribute is available as a property of an entity, which <!-- REF entityClass.attributeName.Summary -->stores the attribute value for the entity<!-- END REF -->.
+データクラス属性はすべてエンティティのプロパティとして利用可能です。各エンティティのプロパティは、当該 <!-- REF entityClass.attributeName.Summary -->エンティティの属性値を格納します<!-- END REF -->。
 > Dataclass attributes can also be reached using the alternate syntax with \[ ].
 
 The attribute value type depends on the attribute [kind](dataclassAttributeClass.md#kind) (relation or storage):
@@ -92,15 +92,15 @@ The attribute value type depends on the attribute [kind](dataclassAttributeClass
 **.clone()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #entityClass.clone().Params -->
-| 参照  | タイプ       |    | 説明                                |
-| --- | --------- |:--:| --------------------------------- |
-| 戻り値 | 4D.Entity | <- | New entity referencing the record |
+| 参照  | タイプ       |    | 説明                  |
+| --- | --------- |:--:| ------------------- |
+| 戻り値 | 4D.Entity | <- | 同レコードを参照する新しいエンティティ |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.clone()` function <!-- REF #entityClass.clone().Summary -->creates in memory a new entity referencing the same record as the original entity<!-- END REF -->. This function allows you to update entities separately.
+`.clone()` 関数は、 <!-- REF #entityClass.clone().Summary -->対象エンティティと同じレコードを参照する新規エンティティをメモリ内に作成します<!-- END REF -->。 This function allows you to update entities separately.
 > Keep in mind that any modifications done to entities will be saved in the referenced record only when the [`.save( )`](#save) function is executed.
 
 This function can only be used with entities already saved in the database. It cannot be called on a newly created entity (for which [`.isNew()`](#isnew) returns **True**).
@@ -137,17 +137,17 @@ This function can only be used with entities already saved in the database. It c
 
 
 <!-- REF #entityClass.diff().Params -->
-| 参照                  | タイプ       |    | 説明                                             |
-| ------------------- | --------- |:--:| ---------------------------------------------- |
-| entityToCompare     | 4D.Entity | -> | Entity to be compared with the original entity |
-| attributesToCompare | コレクション    | -> | Name of attributes to be compared              |
-| 戻り値                 | コレクション    | <- | Differences between the entities               |
+| 参照                  | タイプ       |    | 説明                  |
+| ------------------- | --------- |:--:| ------------------- |
+| entityToCompare     | 4D.Entity | -> | 対象エンティティと比較するエンティティ |
+| attributesToCompare | コレクション    | -> | 比較する属性の名称           |
+| 戻り値                 | コレクション    | <- | エンティティ間の差異          |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.diff()` function <!-- REF #entityClass.diff().Summary -->compares the contents of two entities and returns their differences<!-- END REF -->.
+`.diff()` 関数は、 <!-- REF #entityClass.diff().Summary -->二つのエンティティの中身を比較し、その差異を返します<!-- END REF -->。
 
 In *entityToCompare*, pass the entity to be compared to the original entity.
 
