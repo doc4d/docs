@@ -1055,7 +1055,7 @@ If there is no valid next entity in the entity selection (i.e. you are on the la
 
 #### 説明
 
-The `.previous()` function <!-- REF #entityClass.previous().Summary --> returns a reference to the previous entity in the entity selection which the entity belongs to<!-- END REF -->.
+`.previous()` 関数は、 <!-- REF #entityClass.previous().Summary --> エンティティが所属するエンティティセレクションの前のエンティティへの参照を返します<!-- END REF -->。
 
 If the entity does not belong to any existing entity selection (i.e. [.getSelection()](#getselection) returns Null), the function returns a Null value.
 
@@ -1090,14 +1090,14 @@ If there is no valid previous entity in the entity selection (i.e. you are on th
 **.reload()** : Object<!-- END REF -->
 
 <!-- REF #entityClass.reload().Params -->
-| 参照  | タイプ    |    | 説明            |
-| --- | ------ |:--:| ------------- |
-| 戻り値 | オブジェクト | <- | Status object |
+| 参照  | タイプ    |    | 説明          |
+| --- | ------ |:--:| ----------- |
+| 戻り値 | オブジェクト | <- | ステータスオブジェクト |
 <!-- END REF -->
 
 #### 説明
 
-The `.reload()` function <!-- REF #entityClass.reload().Summary -->reloads the content of the entity in memory<!-- END REF -->, according to information stored in the table related to the dataclass in the datastore. The reload is done only if the entity still exists with the same primary key.
+`.reload()` 関数は、データストアのデータクラスに対応するテーブルに保存されている情報に応じて、 <!-- REF #entityClass.reload().Summary -->エンティティの中身をメモリ内にリロードします<!-- END REF -->。 The reload is done only if the entity still exists with the same primary key.
 
 **戻り値**
 
@@ -1153,15 +1153,15 @@ The object returned by `.reload( )` contains the following properties:
 **.save**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #entityClass.save().Params -->
-| 参照   | タイプ    |    | 説明                                                |
-| ---- | ------ |:--:| ------------------------------------------------- |
-| mode | 整数     | -> | `dk auto merge`: Enables the automatic merge mode |
-| 戻り値  | オブジェクト | <- | Result of save operation                          |
+| 参照   | タイプ    |    | 説明                               |
+| ---- | ------ |:--:| -------------------------------- |
+| mode | 整数     | -> | `dk auto merge`: 自動マージモードを有効化します |
+| 戻り値  | オブジェクト | <- | 保存の結果                            |
 <!-- END REF -->
 
 #### 説明
 
-The `.save()` function <!-- REF #entityClass.save().Summary -->saves the changes made to the entity<!-- END REF --> in the table related to its dataClass. You must call this method after creating or modifying an entity if you want to save the changes made to it.
+`.save()` 関数は、データクラスに対応するテーブル内に、 <!-- REF #entityClass.save().Summary -->エンティティの変更内容を保存します<!-- END REF --> 。 You must call this method after creating or modifying an entity if you want to save the changes made to it.
 
 The save operation is executed only if at least one entity attribute has been "touched" (see the [`.touched()`](#touched) and [`.touchedAttributes()`](#touchedattributes) functions). Otherwise, the function does nothing (the trigger is not called).
 
@@ -1288,17 +1288,17 @@ Updating an entity with `dk auto merge` option:
 **.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #entityClass.toObject().Params -->
-| 参照           | タイプ    |    | 説明                                                                                                      |
-| ------------ | ------ |:--:| ------------------------------------------------------------------------------------------------------- |
-| filterString | テキスト   | -> | Attribute(s) to extract (comma-separated string)                                                        |
-| filterCol    | コレクション | -> | Collection of attribute(s) to extract                                                                   |
-| options      | 整数     | -> | `dk with primary key`: adds the \_KEY property;<br>`dk with stamp`: adds the \_STAMP property |
-| 戻り値          | オブジェクト | <- | Object built from the entity                                                                            |
+| 参照           | タイプ    |    | 説明                                                                                            |
+| ------------ | ------ |:--:| --------------------------------------------------------------------------------------------- |
+| filterString | テキスト   | -> | 取得する属性 (カンマ区切り)                                                                               |
+| filterCol    | コレクション | -> | 取得する属性のコレクション                                                                                 |
+| options      | 整数     | -> | `dk with primary key`: \_\_KEY プロパティを追加;<br>`dk with stamp`: \_\_STAMP プロパティを追加 |
+| 戻り値          | オブジェクト | <- | エンティティを元にビルドされたオブジェクト                                                                         |
 <!-- END REF -->
 
 #### 説明
 
-The `.toObject()` function <!-- REF #entityClass.toObject().Summary -->returns an object which has been built from the entity<!-- END REF -->. Property names in the object match attribute names of the entity.
+`.toObject()` 関数は、 <!-- REF #entityClass.toObject().Summary -->エンティティからビルトされたオブジェクトを返します<!-- END REF -->。 Property names in the object match attribute names of the entity.
 
 If no filter is specified, or if the *filterString* parameter contains an empty string or "*", the returned object will contain:
 
@@ -1535,7 +1535,7 @@ Returns:
 }
 ```
 
-#### Example 7
+#### 例題 7
 
 Extracting some properties of a `relatedEntity`:
 
@@ -1575,14 +1575,14 @@ Returns:
 **.touched()** : Boolean<!-- END REF -->
 
 <!-- REF #entityClass.touched().Params -->
-| 参照  | タイプ |    | 説明                                                                                    |
-| --- | --- |:--:| ------------------------------------------------------------------------------------- |
-| 戻り値 | ブール | <- | True if at least one entity attribute has been modified and not yet saved, else False |
+| 参照  | タイプ |    | 説明                                                   |
+| --- | --- |:--:| ---------------------------------------------------- |
+| 戻り値 | ブール | <- | 少なくとも一つのエンティティ属性が編集されていて未保存の場合に true、それ以外の場合には false |
 <!-- END REF -->
 
 #### 説明
 
-The `.touched()` function <!-- REF #entityClass.touched().Summary -->tests whether or not an entity attribute has been modified since the entity was loaded into memory or saved<!-- END REF -->.
+`.touched()` 関数は、 <!-- REF #entityClass.touched().Summary -->エンティティがメモリに読み込まれてから、あるいは保存されてから、エンティティ属性が変更されたかどうかをテストします<!-- END REF -->。
 
 If an attribute has been modified or calculated, the function returns True, else it returns False. You can use this function to determine if you need to save the entity.
 
@@ -1619,14 +1619,14 @@ In this example, we check to see if it is necessary to save the entity:
 **.touchedAttributes()** : Collection<!-- END REF -->
 
 <!-- REF #entityClass.touchedAttributes().Params -->
-| 参照  | タイプ    |    | 説明                                               |
-| --- | ------ |:--:| ------------------------------------------------ |
-| 戻り値 | コレクション | <- | Names of touched attributes, or empty collection |
+| 参照  | タイプ    |    | 説明                      |
+| --- | ------ |:--:| ----------------------- |
+| 戻り値 | コレクション | <- | 変更された属性の名前、あるいは空のコレクション |
 <!-- END REF -->
 
 #### 説明
 
-The `.touchedAttributes()` function <!-- REF #entityClass.touchedAttributes().Summary -->returns the names of the attributes that have been modified since the entity was loaded into memory<!-- END REF -->.
+`.touchedAttributes()` 関数は、 <!-- REF #entityClass.touchedAttributes().Summary -->メモリに読み込み後に変更されたエンティティの属性名を返します<!-- END REF -->。
 
 This applies for attributes of the [kind](dataclassAttributeClass.md#kind) `storage` or `relatedEntity`.
 
@@ -1669,7 +1669,7 @@ If no entity attribute has been touched, the method returns an empty collection.
 
  $touchedAttributes:=$emp.touchedAttributes()
 
-  //collection $touchedAttributes: ["firstName","lastName","employer","employerID"]
+  // $touchedAttributes コレクション: ["firstName","lastName","employer","employerID"]
 ```
 
 In this case:
@@ -1695,14 +1695,14 @@ In this case:
 **.unlock()** : Object<!-- END REF -->
 
 <!-- REF #entityClass.unlock().Params -->
-| 参照  | タイプ    |    | 説明            |
-| --- | ------ |:--:| ------------- |
-| 戻り値 | オブジェクト | <- | Status object |
+| 参照  | タイプ    |    | 説明          |
+| --- | ------ |:--:| ----------- |
+| 戻り値 | オブジェクト | <- | ステータスオブジェクト |
 <!-- END REF -->
 
 #### 説明
 
-The `.unlock()` function <!-- REF #entityClass.unlock().Summary -->removes the pessimistic lock on the record matching the entity<!-- END REF --> in the datastore and table related to its dataclass.
+`.unlock()` 関数は、データストアおよび、データクラスに対応するテーブル内の、 <!-- REF #entityClass.unlock().Summary -->対象エンティティが参照するレコードのペシミスティック・ロックを解除します<!-- END REF --> 。
 
 > For more information, please refer to [Entity locking](ORDA/entities.md#entity-locking) section.
 
@@ -1733,10 +1733,10 @@ The object returned by `.unlock()` contains the following property:
 
  $employee:=ds.Employee.get(725)
  $status:=$employee.lock()
- ... //processing
+ ... // 処理
  $status:=$employee.unlock()
  If($status.success)
-    ALERT("The entity is now unlocked")
+    ALERT("エンティティのロックは解除されました。")
  End if
 ```
 
