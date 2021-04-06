@@ -499,7 +499,7 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 
 #### 説明
 
-`.setContent( )` 関数は、 <!-- REF #fileClass.setContent().Summary -->*content* 引数の BLOB に保存されているデータを使用して、ファイルの全コンテンツを上書きします<!-- END REF -->。 For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+`.setContent( )` 関数は、 <!-- REF #fileClass.setContent().Summary -->*content* 引数の BLOB に保存されているデータを使用して、ファイルの全コンテンツを上書きします<!-- END REF -->。 BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
 
 
 #### 例題
