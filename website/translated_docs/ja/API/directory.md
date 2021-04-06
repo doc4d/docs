@@ -385,7 +385,7 @@ If the folder does not have a parent (root), the null value is returned.
 
 #### 説明
 
-`.path` プロパティは、 <!-- REF #directory.path.Summary -->フォルダのPOSIXパス<!-- END REF -->を返します。 If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
+`.path` プロパティは、 <!-- REF #directory.path.Summary -->フォルダーの POSIXパス<!-- END REF -->を返します。 If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
 
 このプロパティは **読み取り専用** です。 
 
