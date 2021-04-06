@@ -220,10 +220,10 @@ End if
 
 ```4d
 If (Session.isGuest())
-        // A Guest session will close after 60 minutes of inactivity
+        // ゲストセッションは、60分の非アクティブ時間経過後に終了します
     Session.idleTimeout:=60
 Else
-        // Other sessions will close after 120 minutes of inactivity
+        // その他のセッションは、120分の非アクティブ時間経過後に終了します
     Session.idleTimeout:=120
 End if
 
@@ -246,9 +246,9 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #sessionClass.isGuest().Params -->
-| 参照  | タイプ |    | 説明                                              |
-| --- | --- |:--:| ----------------------------------------------- |
-| 戻り値 | ブール | <- | True if session is a Guest one, False otherwise |
+| 参照  | タイプ |    | 説明                            |
+| --- | --- |:--:| ----------------------------- |
+| 戻り値 | ブール | <- | ゲストセッションの場合は true、それ以外は false |
 <!-- END REF -->
 
 #### 説明
