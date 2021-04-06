@@ -100,21 +100,21 @@ Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドに
 
 `WEB Server list` コマンドは、 <!-- REF #_command_.WEB Server list.Summary -->4Dアプリケーション内で利用可能な Webサーバーオブジェクトのコレクションを返します<!-- END REF -->。
 
-A 4D application can contain anywhere from one to several Web servers:
+4Dアプリケーションは一つ以上の Webサーバーを持つことが可能です:
 
-- one Web server for the host database (default Web server)
-- one Web server for each component.
+- ホストデータベースの Webサーバーを1つ (デフォルトWebサーバー)
+- コンポーネント毎の Webサーバー各1つ
 
-All available Web servers are returned by the `WEB Server list` command, whether they are actually running or not.
+サーバーが実際に実行中か否かに関わらず、`WEB Server list` コマンドは利用可能な Webサーバーをすべて返します。
 
-> The default Web server object is automatically loaded by 4D at startup. On the other hand, each component Web server that you want to use must be instantiated using the [`WEB Server`](#web-server) command.
+> デフォルトの Webサーバーオブジェクトは、4D 起動時に自動的にロードされます。 その一方で、コンポーネントの Webサーバーは、[`WEB Server`](#web-server) コマンドによってそれぞれインスタンス化しなくてはなりません。
 
-You can use the [.name](#name) property of the Web server object to identify the project or component to which each Web server object in the list is attached.
+Webサーバオブジェクトの [.name](#name) プロパティを使用することで、リスト内の各 Webサーバーオブジェクトが関連づけられているデータベースまたはコンポーネントを識別することができます。
 
 
 #### 例題
 
-We want to know how many running web servers are available:
+利用可能な Webサーバーのうちいくつが実行中かを調べます:
 
 ```4d
  var $wSList : Collection
@@ -122,7 +122,7 @@ We want to know how many running web servers are available:
 
  $wSList:=WEB Server list
  $vRun:=$wSList.countValues(True;"isRunning")
- ALERT(String($vRun)+" web server(s) running on "+String($wSList.length)+" available.")
+ ALERT("利用可能 Webサーバー "+String($wSList.length)+" つ中、"+String($vRun)+" つの Webサーバーが実行中です。")
 
 ```
 
@@ -136,7 +136,7 @@ We want to know how many running web servers are available:
 **.accessKeyDefined** : Boolean<!-- END REF -->
 
 
-The **.accessKeyDefined** property contains <!-- REF #webServerClass.accessKeyDefined.Summary -->true if an access key is defined in the settings of the web server<!-- END REF -->. This property is used by the WebAdmin web server to validate the security configuration of the administration interface.
+**.accessKeyDefined** プロパティは、 <!-- REF #webServerClass.accessKeyDefined.Summary -->Webサーバーの設定にアクセスキーが定義されていれば true<!-- END REF -->を格納します。 このプロパティは WebAdmin Webサーバーによって、管理インターフェースのセキュリティ設定を有効化するのに使用されます。
 
 
 <!-- REF webServerClass.certificateFolder.Desc -->
@@ -148,7 +148,7 @@ The **.accessKeyDefined** property contains <!-- REF #webServerClass.accessKeyDe
 **.certificateFolder** : Text<!-- END REF -->
 
 
-Path of the <!-- REF #webServerClass.certificateFolder.Summary -->folder where the certificate files are located<!-- END REF -->. The path is formatted in POSIX full path using filesystems. When using this property in the `settings` parameter of the [`.start()`](#start) function, it can be a [`Folder` object](folderClass.md).
+ <!-- REF #webServerClass.certificateFolder.Summary -->認証ファイルが保存されているフォルダー<!-- END REF -->のパス。 パスは、ファイルシステムを使用した POSIXフルパスの形式です。 [`.start()`](#start) 関数に渡す `settings` 引数内でこのプロパティを使用する場合、`Folder` オブジェクトも使用可能です。</p>
 
 <!-- END REF -->
 
@@ -162,7 +162,7 @@ Path of the <!-- REF #webServerClass.certificateFolder.Summary -->folder where t
 **.characterSet** : Number<br>**.characterSet** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.characterSet.Summary -->character set that the 4D Web Server should use to communicate with browsers connecting to the application<!-- END REF -->. The default value actually depends on the language of the OS. Can be a MIBEnum integer or a Name string, identifiers [defined by IANA](http://www.iana.org/assignments/character-sets/character-sets.xhtml). Here is the list of identifiers corresponding to the character sets supported by the 4D Web Server:
+ <!-- REF #webServerClass.characterSet.Summary -->アプリケーションに接続してくるブラウザーとの通信に 4D Webサーバーが使用すべき文字セット<!-- END REF -->。 デフォルト値は OS の言語に依存します。 値には、MIBenum 整数や名称の文字列、[IANA](http://www.iana.org/assignments/character-sets/character-sets.xhtml) が定義する識別子を使用できます。 以下は、4D Webサーバーがサポートしている文字セットに対応する識別子のリストです:
 
 *   4 = ISO-8859-1
 *   12 = ISO-8859-9
@@ -190,7 +190,7 @@ The <!-- REF #webServerClass.characterSet.Summary -->character set that the 4D W
 **.cipherSuite** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.cipherSuite.Summary -->cipher list used for the secure protocol<!-- END REF -->. Sets the priority of ciphering algorithms implemented by the 4D web server. Can be a sequence of strings separated by colons (for example "ECDHE-RSA-AES128-..."). See the [ciphers page](https://www.openssl.org/docs/manmaster/man1/ciphers.html) on the OpenSSL site.
+ <!-- REF #webServerClass.cipherSuite.Summary -->保護されたプロトコルのために使用される暗号スイートリスト<!-- END REF -->。 これは、4D Webサーバーが実装する暗号化アルゴリズムの優先順位を設定します。 Can be a sequence of strings separated by colons (for example "ECDHE-RSA-AES128-..."). See the [ciphers page](https://www.openssl.org/docs/manmaster/man1/ciphers.html) on the OpenSSL site.
 
 <!-- END REF -->
 
@@ -225,7 +225,8 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 A <!-- REF #webServerClass.CORSSettings.Summary -->list of allowed hosts and methods for the CORS service<!-- END REF --> (see [`CORSEnabled`](#corsenabled) property). Each object must contain a **host** property and, optionally, a **methods** property:
 
 *   **host** (text, mandatory): Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. If *host* is not present or empty, the object is ignored. Several syntaxes are supported:
-    -   192.168.5.17:8081
+  
+      -   192.168.5.17:8081
     -   192.168.5.17
     -   192.168.*
     -   192.168.*:8081
@@ -235,7 +236,6 @@ A <!-- REF #webServerClass.CORSSettings.Summary -->list of allowed hosts and met
     -   *.myDomain.com
     -   myProject.myDomain.com
     -   \*
-
 *   **methods** (text, optional): Accepted HTTP method(s) for the corresponding CORS host. Separate each method with a ";" (e,g,: "post;get"). If *methods* is empty, null, or undefined, all methods are enabled.
 
 <!-- END REF -->
@@ -483,7 +483,10 @@ The <!-- REF #webServerClass.isRunning.Summary -->web server running state<!-- E
 
 <!-- REF #webServerClass.keepSession.Summary -->True if legacy sessions are enabled in the web server, False otherwise<!-- END REF -->.
 
+
+
 ##### See also:
+
 [.scalableSession](#scalablesession)
 
 <!-- END REF -->
@@ -634,7 +637,7 @@ The <!-- REF #webServerClass.perfectForwardSecrecy.Summary -->PFS availability o
 **.rootFolder** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.rootFolder.Summary -->path of web server root folder<!-- END REF -->. The path is formatted in POSIX full path using filesystems. When using this property in the `settings` parameter, it can be a `Folder` object.
+The <!-- REF #webServerClass.rootFolder.Summary -->path of web server root folder<!-- END REF -->. パスは、ファイルシステムを使用した POSIXフルパスの形式です。 When using this property in the `settings` parameter, it can be a `Folder` object.
 
 <!-- END REF -->
 
@@ -648,7 +651,10 @@ The <!-- REF #webServerClass.rootFolder.Summary -->path of web server root folde
 
 <!-- REF #webServerClass.scalableSession.Summary -->True if scalable sessions are used in the web server, and False otherwise<!-- END REF -->.
 
+
+
 ##### See also:
+
 [.keepSession](#keepsession)
 <!-- END REF -->
 
@@ -743,6 +749,8 @@ All settings of [Web Server objects](#web-server-object) can be customized, exce
 Customized session settings will be reset when the [`.stop()`](#stop) function is called.
 
 
+
+
 #### 返されるオブジェクト
 
 The function returns an object describing the Web server launch status. This object can contain the following properties:
@@ -754,9 +762,16 @@ The function returns an object describing the Web server launch status. This obj
 |         | \[].errCode            | 数値     | 4D error code                                                        |
 |         | \[].message            | テキスト   | Description of the 4D error                                          |
 |         | \[].componentSignature | テキスト   | Signature of the internal component which returned the error         |
+
+
+
 > If the Web server was already launched, an error is returned.
 
+
+
 #### 例題
+
+
 
 ```4d
  var $settings;$result : Object
@@ -798,12 +813,18 @@ The function returns an object describing the Web server launch status. This obj
 The `.stop()` function <!-- REF #webServerClass.stop().Summary -->stops the web server on which it is applied<!-- END REF -->.
 
 If the web server was started, all web connections and web processes are closed, once the currently handled requests are finished. If the web server was not started, the method does nothing.
+
+
 > This function resets the customized web settings defined for the session using the *settings* parameter of the [`.start()`](#start) function, if any.
+
+
 
 
 #### 例題
 
 To stop the database Web server:
+
+
 
 ```4d
  var $webServer : 4D.WebServer
