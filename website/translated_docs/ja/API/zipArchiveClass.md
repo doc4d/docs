@@ -50,14 +50,14 @@ End if
 **ZIP Create archive** ( *fileToZip* : 4D.File ; *destinationFile* : 4D.File ) : Object<br>**ZIP Create archive** ( *folderToZip* : 4D.Folder ; *destinationFile* : 4D.File { ; *options* : Integer }) : Object<br>**ZIP Create archive** ( *zipStructure* : Object ; *destinationFile* : 4D.File ) : Object<!-- END REF -->
 
 <!-- REF zipArchive.ZIP Create archive.Params -->
-| 参照              | タイプ       |    | 説明                                                   |
-| --------------- | --------- |:--:| ---------------------------------------------------- |
-| fileToZip       | 4D.File   | -> | File or Folder object to compress                    |
-| folderToZip     | 4D.Folder | -> | File or Folder object to compress                    |
-| zipStructure    | オブジェクト    | -> | File or Folder object to compress                    |
-| destinationFile | 4D.File   | -> | Destination file for the archive                     |
-| options         | 整数        | -> | *folderToZip* option: `ZIP Without enclosing folder` |
-| 戻り値             | オブジェクト    | <- | Status object                                        |
+| 参照              | タイプ       |    | 説明                                                                             |
+| --------------- | --------- |:--:| ------------------------------------------------------------------------------ |
+| fileToZip       | 4D.File   | -> | 圧縮する File または Folder オブジェクト                                                    |
+| folderToZip     | 4D.Folder | -> | 圧縮する File または Folder オブジェクト                                                    |
+| zipStructure    | オブジェクト    | -> | 圧縮する File または Folder オブジェクト                                                    |
+| destinationFile | 4D.File   | -> | アーカイブの保存先ファイル                                                                  |
+| options         | 整数        | -> | *folderToZip* オプション: `ZIP Without enclosing folder` (外側のフォルダーを除外して ZIP圧縮をおこなう) |
+| 戻り値             | オブジェクト    | <- | ステータスオブジェクト                                                                    |
 <!-- END REF -->
 
 
@@ -147,7 +147,7 @@ In the *destinationFile* parameter, pass a `4D.File` object describing the ZIP a
 
 Once an archive is created, you can use the [ZIP Read archive](#zip-read-archive) command to access it.
 
-**Status object**
+**ステータスオブジェクト**
 
 The returned status object contains the following properties:
 
@@ -275,11 +275,11 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 **ZIP Read archive** ( *zipFile* : 4D.File { ; *password* : Text }) : 4D.ZipArchive<!-- END REF -->
 
 <!-- REF zipArchive.ZIP Read archive.Params -->
-| 参照       | タイプ           |    | 説明                          |
-| -------- | ------------- |:--:| --------------------------- |
-| zipFile  | 4D.File       | -> | Zip archive file            |
-| password | テキスト          | -> | ZIP archive password if any |
-| 戻り値      | 4D.ZipArchive | <- | Archive object              |
+| 参照       | タイプ           |    | 説明                      |
+| -------- | ------------- |:--:| ----------------------- |
+| zipFile  | 4D.File       | -> | ZIPアーカイブファイル            |
+| password | テキスト          | -> | ZIPアーカイブのパスワード (必要であれば) |
+| 戻り値      | 4D.ZipArchive | <- | アーカイブオブジェクト             |
 <!-- END REF -->
 
 
@@ -295,7 +295,7 @@ Pass a `4D.File` object referencing the compressed ZIP archive in the *zipFile* 
 
 If the *zipFile* is password protected, you need to use the optional *password* parameter to provide a password. If a password is required but not passed when trying to read the contents of the archive, an error is generated.
 
-**Archive object**
+**アーカイブオブジェクト**
 
 The returned `4D.ZipArchive` object contains a single [`root`](#root) property whose value is a `4D.ZipFolder` object. This folder describes the whole contents of the ZIP archive. 
 
@@ -367,7 +367,7 @@ To extract from the root folder:
 
 #### 説明
 
-The `.root` property contains <!-- REF #zipArchiveClass.root.Summary -->a virtual folder providing access to the contents of the ZIP archive<!-- END REF -->.
+`.root` プロパティは、 <!-- REF #zipArchiveClass.root.Summary -->ZIPアーカイブのコンテンツにアクセスするためのバーチャルフォルダー<!-- END REF -->を格納します。
 
 The `root` folder and its contents can be manipulated with the [ZipFile](zipFileClass.md) and [ZipFolder](zipFolderClass.md) functions and properties.
 

@@ -111,20 +111,20 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 ## Formula
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                               |
-| ------ | -------------------------------- |
-| v17 R6 | Renamed (New formula -> Formula) |
-| v17 R3 | 追加                               |
+| バージョン  | 内容                            |
+| ------ | ----------------------------- |
+| v17 R6 | 名称変更 (New formula -> Formula) |
+| v17 R3 | 追加                            |
 </details>
 
 <!-- REF formulaClass.Formula.Syntax -->
 **Formula** ( *formulaExp* : Expression ) : 4D.Function<!-- END REF -->
 
 <!-- REF formulaClass.Formula.Params -->
-| 参照         | タイプ         |    | 説明                                        |
-| ---------- | ----------- |:--:| ----------------------------------------- |
-| formulaExp | 式           | -> | Formula to be returned as object          |
-| 戻り値        | 4D.Function | <- | Native function encapsulating the formula |
+| 参照         | タイプ         |    | 説明                                  |
+| ---------- | ----------- |:--:| ----------------------------------- |
+| formulaExp | 式           | -> | オブジェクトとして返されるフォーミュラ                 |
+| 戻り値        | 4D.Function | <- | フォーミュラを格納しているネイティブな Function オブジェクト |
 <!-- END REF -->
 
 
@@ -144,10 +144,10 @@ The returned formula can be called with:
  $f:=Formula(1+2)
  $o:=New object("myFormula";$f)
 
-  //three different ways to call the formula
- $f.call($o) //returns 3
- $f.apply($o) //returns 3
- $o.myFormula() //returns 3
+  // フォーミュラを呼び出す 3つの方法
+ $f.call($o) // 3 を返します
+ $f.apply($o) // 3 を返します
+ $o.myFormula() // 3 を返します
 ```
 
 You can pass [parameters](#passing-parameters) to the `Formula`, as seen below in [example 4](#example-4).
@@ -170,7 +170,7 @@ A simple formula:
  var $o : Object
  $o:=New object("f";$f)
 
- $result:=$o.f() // returns 3
+ $result:=$o.f() // 3 を返します
 ```
 
 #### 例題 2
@@ -184,7 +184,7 @@ A formula using local variables:
  $o:=New object("f";Formula($value))
  $value:=20
 
- $result:=$o.f() // returns 10
+ $result:=$o.f() // 10 を返します
 ```
 
 
@@ -194,7 +194,7 @@ A simple formula using parameters:
 
 ```4d
  $o:=New object("f";Formula($1+$2))
- $result:=$o.f(10;20) //returns 30
+ $result:=$o.f(10;20) // 30 を返します
 ```
 
 
@@ -249,20 +249,20 @@ Calling a formula using object notation:
 ## Formula from string
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                                                     |
-| ------ | ------------------------------------------------------ |
-| v17 R6 | Renamed New formula from string -> Formula from string |
-| v17 R3 | 追加                                                     |
+| バージョン  | 内容                                                    |
+| ------ | ----------------------------------------------------- |
+| v17 R6 | 名称変更 (New formula from string -> Formula from string) |
+| v17 R3 | 追加                                                    |
 </details>
 
 <!-- REF formulaClass.Formula from string.Syntax -->
 **Formula from string**( *formulaString* : Text ) : 4D.Function<!-- END REF -->
 
 <!-- REF formulaClass.Formula from string.Params -->
-| 参照            | タイプ         |    | 説明                                      |
-| ------------- | ----------- |:--:| --------------------------------------- |
-| formulaString | テキスト        | -> | Text formula to be returned as object   |
-| 戻り値           | 4D.Function | <- | Native object encapsulating the formula |
+| 参照            | タイプ         |    | 説明                        |
+| ------------- | ----------- |:--:| ------------------------- |
+| formulaString | テキスト        | -> | オブジェクトとして返されるフォーミュラ文字列    |
+| 戻り値           | 4D.Function | <- | フォーミュラを格納しているネイティブなオブジェクト |
 <!-- END REF -->
 
 
@@ -315,24 +315,24 @@ The following code will create a dialog accepting a formula in text format:
 **.apply**() : any<br>**.apply**( *thisObj* : Object { ; *formulaParams* : Collection } ) : any<!-- END REF -->
 
 <!-- REF #formulaClass.apply().Params -->
-| 参照            | タイプ    |    | 説明                                                                      |
-| ------------- | ------ |:--:| ----------------------------------------------------------------------- |
-| thisObj       | オブジェクト | -> | Object to be returned by the This command in the formula                |
-| formulaParams | コレクション | -> | Collection of values to be passed as $1...$n when `formula` is executed |
-| 戻り値           | any    | <- | Value from formula execution                                            |
+| 参照            | タイプ    |    | 説明                                     |
+| ------------- | ------ |:--:| -------------------------------------- |
+| thisObj       | オブジェクト | -> | フォーミュラ内で This コマンドによって返されるオブジェクト       |
+| formulaParams | コレクション | -> | フォーミュラが実行される際に $1...$n として渡される値のコレクション |
+| 戻り値           | any    | <- | フォーミュラの実行結果                            |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.apply()` function <!-- REF #formulaClass.apply().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. The formula object can be created using the `Formula` or `Formula from string` commands.
+`.apply()` 関数は、 <!-- REF #formulaClass.apply().Summary -->対象の `Formula` オブジェクトを実行し、その結果の値を返します<!-- END REF -->。 The formula object can be created using the `Formula` or `Formula from string` commands.
 
 
 In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the formula.
 
 You can also pass a collection to be used as $1...$n parameters in the formula using the optional *formulaParams* parameter.
 
-Note that `.apply()` is similar to [`.call()`](#call) except that parameters are passed as a collection. This can be useful for passing calculated results.
+`.apply()` は [`.call()`](#call) と似ていますが、引数をコレクションとして渡す点が異なります。 This can be useful for passing calculated results.
 
 
 #### 例題 1
@@ -342,7 +342,7 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
  $f:=Formula($1+$2+$3)
 
  $c:=New collection(10;20;30)
- $result:=$f.apply(Null;$c) // returns 60
+ $result:=$f.apply(Null;$c) // 60 を返します
 ```
 
 
@@ -376,30 +376,30 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 **.call**() : any<br>**.call**( *thisObj* : Object { ; ...*params* : any } ) : any<!-- END REF -->
 
 <!-- REF #formulaClass.call().Params -->
-| 参照      | タイプ    |    | 説明                                                        |
-| ------- | ------ | -- | --------------------------------------------------------- |
-| thisObj | オブジェクト | -> | Object to be returned by the This command in the formula  |
-| params  | any    | -> | Value(s) to be passed as $1...$n when formula is executed |
-| 戻り値     | any    | <- | Value from formula execution                              |
+| 参照      | タイプ    |    | 説明                               |
+| ------- | ------ | -- | -------------------------------- |
+| thisObj | オブジェクト | -> | フォーミュラ内で This コマンドによって返されるオブジェクト |
+| params  | any    | -> | フォーミュラが実行される際に $1...$n として渡される値  |
+| 戻り値     | any    | <- | フォーミュラの実行結果                      |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.call()` function <!-- REF #formulaClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. The formula object can be created using the `Formula` or `Formula from string` commands.
+`.call()` 関数は、 <!-- REF #formulaClass.call().Summary -->対象の `Formula` オブジェクトを実行し、その結果の値を返します<!-- END REF -->。 The formula object can be created using the `Formula` or `Formula from string` commands.
 
 In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the formula.
 
 You can also pass values to be used as *$1...$n* parameters in the formula using the optional *params* parameter(s).
 
-Note that `.call()` is similar to [`.apply()`](#apply) except that parameters are passed directly.
+`.call()` は [`.apply()`](#apply) と似ていますが、引数を直接渡す点が異なります。
 
 #### 例題 1
 
 ```4d
  var $f : 4D.Function
  $f:=Formula(Uppercase($1))
- $result:=$f.call(Null;"hello") // returns "HELLO"
+ $result:=$f.call(Null;"hello") // "HELLO" を返します
 ```
 
 #### 例題 2
@@ -407,7 +407,7 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 ```4d
  $o:=New object("value";50)
  $f:=Formula(This.value*2)
- $result:=$f.call($o) // returns 100
+ $result:=$f.call($o) // 100 を返します
 ``` 
 
 <!-- END REF -->
@@ -429,7 +429,7 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 
 #### 説明
 
-The `.source` property <!-- REF #formulaClass.source.Summary -->contains the source expression of the `formula` as text<!-- END REF -->.
+`.source` プロパティは、 <!-- REF #formulaClass.source.Summary -->対象フォーミュラのテキスト型のソース式<!-- END REF -->を格納します。
 
 このプロパティは **読み取り専用** です。
 
