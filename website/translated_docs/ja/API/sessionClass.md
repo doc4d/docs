@@ -23,7 +23,7 @@ For detailed information about the session implementation, please refer to the [
 
 
 
-## セッション
+## Session
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -38,13 +38,13 @@ For detailed information about the session implementation, please refer to the [
 <!-- REF #_command_.Session.Params -->
 | 参照  | タイプ        |    | 説明             |
 | --- | ---------- |:--:| -------------- |
-| 戻り値 | 4D.Session | <- | Session object |
+| 戻り値 | 4D.Session | <- | Session オブジェクト |
 <!-- END REF -->
 
 
 #### 説明
 
-The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current scalable user web session<!-- END REF -->.
+`Session` コマンドは、 <!-- REF #_command_.Session.Summary -->カレントのスケーラブルユーザーWebセッションに対応する `Session` オブジェクトを返します<!-- END REF -->。
 
 This command only works when [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions). It returns *Null* when sessions are disabled or when legacy sessions are used.
 
@@ -102,17 +102,17 @@ IP:port/4DACTION/action_Session
 
 #### 説明
 
-The `.clearPrivileges()` function <!-- REF #sessionClass.clearPrivileges().Summary -->removes all the privileges associated to the session<!-- END REF -->. As a result, the session automatically becomes a Guest session.
+`.clearPrivileges()` 関数は、 <!-- REF #sessionClass.clearPrivileges().Summary -->対象セッションに紐づいているアクセス権をすべて削除します<!-- END REF -->。 結果的に、当該セッションは自動的にゲストセッションになります。
 
 
 #### 例題
 
 ```4d
-//Invalidate a session
+// セッションを無効にします
 var $isGuest : Boolean  
 
 Session.clearPrivileges()
-$isGuest:=Session.isGuest() //$isGuest is True
+$isGuest:=Session.isGuest() //$isGuest は true
 ```
 
 <!-- END REF -->
@@ -134,15 +134,15 @@ $isGuest:=Session.isGuest() //$isGuest is True
 
 #### 説明
 
-The `.expirationDate` property contains <!-- REF #sessionClass.expirationDate.Summary -->the expiration date and time of the session cookie<!-- END REF -->. The value is expressed as text in the ISO 8601 format: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
+`.expirationDate` プロパティは、 <!-- REF #sessionClass.expirationDate.Summary -->セッションcookie の有効期限<!-- END REF -->を返します。 値は ISO 8601標準に従って文字列で表現されます: `YYYY-MM-DDTHH:MM:SS.mmmZ`.
 
-このプロパティは **読み取り専用** です。 It is automatically recomputed if the [`.idleTimeout`](#idletimeout) property value is modified.
+このプロパティは **読み取り専用** です。 [`.idleTimeout`](#idletimeout) プロパティ値が変更された場合、有効期限は自動的に再計算されます。
 
 #### 例題
 
 ```4d
 var $expiration : Text
-$expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
+$expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 ```
 
 <!-- END REF -->
@@ -163,27 +163,27 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 **.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
 <!-- REF #sessionClass.hasPrivilege().Params -->
-| 参照        | タイプ  |    | 説明                                               |
-| --------- | ---- |:--:| ------------------------------------------------ |
-| privilege | テキスト | <- | Name of the privilege to verify                  |
-| 戻り値       | ブール  | <- | True if session has *privilege*, False otherwise |
+| 参照        | タイプ  |    | 説明                                                |
+| --------- | ---- |:--:| ------------------------------------------------- |
+| privilege | テキスト | <- | 確認するアクセス権の名称                                      |
+| 戻り値       | ブール  | <- | セッションが *privilege* のアクセス権を持っていれば true、それ以外は false |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.hasPrivilege()` function <!-- REF #sessionClass.hasPrivilege().Summary -->returns True if the privilege is associated to the session, and False otherwise<!-- END REF -->.
+`.hasPrivilege()` 関数は、 <!-- REF #sessionClass.hasPrivilege().Summary -->対象セッションに *privilege* のアクセス権が紐づいていれば true、でなければ false を返します<!-- END REF -->。
 
 
 #### 例題
 
-You want to check if the "WebAdmin" privilege is associated to the session:
+"WebAdmin" アクセス権がセッションに紐づいているかを確認します:
 
 ```4d
 If (Session.hasPrivilege("WebAdmin"))
-    //Access is granted, do nothing
+    // アクセス権が付与されているので、何もしません
 Else
-    //Display an authentication page
+    // 認証ページを表示します
 
 End if
 ```
@@ -205,16 +205,16 @@ End if
 
 #### 説明
 
-The `.idleTimeout` property contains <!-- REF #sessionClass.idleTimeout.Summary -->the inactivity session timeout (in minutes), after which the session is automatically closed by 4D<!-- END REF -->.
+`.idleTimeout` プロパティは、 <!-- REF #sessionClass.idleTimeout.Summary -->対象セッションが 4D によって終了されるまでの、非アクティブタイムアウト時間 (分単位)<!-- END REF -->を格納します。
 
-If this property is not set, the default value is 60 (1h).
+プロパティ未設定時のデフォルト値は 60 (1時間) です。
 
-When this property is set, the [`.expirationDate`](#expirationdate) property is updated accordingly.
+このプロパティが設定されると、それに応じて [`.expirationDate`](#expirationdate) プロパティも更新されます。
 
-> The value cannot be less than 60: if a lower value is set, the timeout is raised up to 60.
+> 60 (分) 未満の値を指定することはできません (60 未満の値を設定した場合、タイムアウトは 60 (分) に設定されます)。
 
 
-This property is **read write**.
+このプロパティは **読み書き可能** です。
 
 #### 例題
 
