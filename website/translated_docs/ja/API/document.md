@@ -520,19 +520,19 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 **.getContent( )** : Blob<!-- END REF -->
 
 <!-- REF #document.getContent().Params -->
-| 参照  | タイプ  |    | 説明           |
-| --- | ---- | -- | ------------ |
-| 戻り値 | BLOB | <- | File content |
+| 参照  | タイプ  |    | 説明         |
+| --- | ---- | -- | ---------- |
+| 戻り値 | BLOB | <- | ファイルのコンテンツ |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `BLOB` containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+`.getContent()` 関数は、  <!-- REF #document.getContent().Summary -->ファイルの全コンテンツを格納した BLOB を返します<!-- END REF -->。 BLOB についての詳細は、[BLOB](Concepts/dt_blob.md) の章を参照してください。
 
 **戻り値**
 
-A `Blob`.
+`Blob`。
 
 #### 例題
 
@@ -572,7 +572,7 @@ To save a document's contents in a `BLOB` field:
 
 #### 説明
 
-The `.getIcon()` function returns <!-- REF #document.getIcon().Summary -->the icon of the file<!-- END REF -->.
+`.getIcon()` 関数は、 <!-- REF #document.getIcon().Summary -->ファイルのアイコンを返します<!-- END REF -->。
 
 The optional *size* parameter specifies the dimensions in pixels of the returned icon. This value actually represents the length of the side of the square containing the icon. Icons are usually defined in 32x32 pixels (“large icons”) or 16x16 pixels (“small icons”). If you pass 0 or omit this parameter, the "large icon" version is returned.
 
@@ -580,7 +580,7 @@ If the file does not exist on disk, a default blank icon is returned.
 
 **戻り値**
 
-File icon [picture](../Concepts/picture.html).
+ファイルアイコンの [ピクチャー](../Concepts/picture.html)。
 
 
 
@@ -612,7 +612,7 @@ File icon [picture](../Concepts/picture.html).
 
 
 #### 説明
-The `.getText()` function <!-- REF #document.getText().Summary -->returns the contents of the file as text <!-- END REF -->.
+`.getText()` 関数は、 <!-- REF #document.getText().Summary -->ファイルのコンテンツをテキストとして返します <!-- END REF -->。
 
 Optionally, you can designate the character set to be used for reading the contents. You can pass either:
 
@@ -637,7 +637,7 @@ By default, when you omit the *breakMode* parameter, line breaks are processed i
 
 **戻り値**
 
-Text of the file.
+ファイルのテキスト。
 
 #### 例題
 
