@@ -56,7 +56,7 @@ With 4D in remote mode, these files must be located in the local resources folde
 | `WEB SET OPTION`    | `Web character set`            | MIBEnum integer or Name string |
 | Settings dialog box | Options (II) page/Standard Set | Pop up menu                    |
 
-Defines the set of characters to be used by the 4D web server. The default value actually depends on the language of the OS.
+Defines the set of characters to be used by the 4D web server. デフォルト値は OS の言語に依存します。
 > This setting is also used for generating Quick Reports in HTML format .
 
 
