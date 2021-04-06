@@ -4,15 +4,15 @@ title: WebServer
 ---
 
 
-The `WebServer` class API allows you to start and monitor a web server for the main (host) application as well as each hosted component (see the [Web Server object](WebServer/webServerObject.md) overview). このクラスは `4D` クラスストアより提供されます。
+`WebServer` クラス API を使って、メイン (ホスト) アプリケーションおよび、各コンポーネントの Webサーバーを開始・モニターすることができます ([Webサーバーオブジェクト](WebServer/webServerObject.md) 参照)。 このクラスは `4D` クラスストアより提供されます。
 
 
 
 ### Webサーバーオブジェクト
 
-Web server objects are instantiated with the [`WEB Server`](#web-server) command.
+Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドによってインスタンス化されます。
 
-They provide the following properties and functions:
+これらは、次のプロパティや関数を持ちます:
 
 
 ### 概要
@@ -46,31 +46,31 @@ They provide the following properties and functions:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| 参照    | タイプ          |    | 説明                                                             |
-| ----- | ------------ | -- | -------------------------------------------------------------- |
-| オプション | 整数           | -> | Web server to get (default if omitted = `Web server database`) |
-| 戻り値   | 4D.WebServer | <- | Web server object                                              |
+| 参照     | タイプ          |    | 説明                                               |
+| ------ | ------------ | -- | ------------------------------------------------ |
+| option | 整数           | -> | 取得する Webサーバー (省略時のデフォルト = `Web server database`) |
+| 戻り値    | 4D.WebServer | <- | WebServer オブジェクト                                 |
 
 <!-- END REF -->
 
-The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the default Web server object, or the Web server object defined through the *option* parameter<!-- END REF -->.
+`WEB Server` コマンドは、 <!-- REF #_command_.WEB Server.Summary -->デフォルトの Webサーバーオブジェクト、または *option* 引数で指定された Webサーバーオブジェクトを返します<!-- END REF -->。
 
-By default, if the *option* parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the *option* parameter:
+*option*が省略された場合のデフォルトでは、このコマンドはデータベースの Webサーバー (デフォルトWebサーバー) への参照を返します。 取得する Webサーバーを指定するには、*option* に以下の定数のいずれか一つを渡してください:
 
-| 定数                             | 結果 | 説明                                                       |
-| ------------------------------ | -- | -------------------------------------------------------- |
-| `Web server database`          | 1  | Current database Web server (default if omitted)         |
-| `Web server host database`     | 2  | Web server of the host database of a component           |
-| `Web server receiving request` | 3  | Web server that received the request (target Web server) |
+| 定数                             | 結果 | 説明                                 |
+| ------------------------------ | -- | ---------------------------------- |
+| `Web server database`          | 1  | カレントデータベースの Webサーバー( 省略時のデフォルト)    |
+| `Web server host database`     | 2  | コンポーネントのホストデータベースの Webサーバー         |
+| `Web server receiving request` | 3  | リクエストを受け取った Webサーバー (ターゲットWebサーバー) |
 
-The returned Web server object contains the current values of the Web server properties.
+返される Webサーバーオブジェクトには、Webサーバープロパティのカレント値が格納されています。
 
 #### 例題
 
-From your component, you want to know if the Web server of the host database is started:
+コンポーネント内から、ホストデータベースの Webサーバーが開始されているかどうかを確認します:
 
 ```4d
-  // Method of a component
+  // コンポーネントのメソッド
  var $hostWS : 4D.WebServer
  $hostWS:=WEB Server(Web server host database)
  If($hostWS.isRunning)
@@ -92,29 +92,29 @@ From your component, you want to know if the Web server of the host database is 
 
 <!-- REF #_command_.WEB Server list.Params -->
 
-| 参照  | タイプ    |    | 説明                                             |
-| --- | ------ | -- | ---------------------------------------------- |
-| 戻り値 | コレクション | <- | Collection of the available Web server objects |
+| 参照  | タイプ    |    | 説明                         |
+| --- | ------ | -- | -------------------------- |
+| 戻り値 | コレクション | <- | 利用可能な Webサーバーオブジェクトのコレクション |
 
 <!-- END REF -->
 
-The `WEB Server list` command <!-- REF #_command_.WEB Server list.Summary -->returns a collection of all Web server objects available in the 4D application<!-- END REF -->.
+`WEB Server list` コマンドは、 <!-- REF #_command_.WEB Server list.Summary -->4Dアプリケーション内で利用可能な Webサーバーオブジェクトのコレクションを返します<!-- END REF -->。
 
-A 4D application can contain anywhere from one to several Web servers:
+4Dアプリケーションは一つ以上の Webサーバーを持つことが可能です:
 
-- one Web server for the host database (default Web server)
-- one Web server for each component.
+- ホストデータベースの Webサーバーを1つ (デフォルトWebサーバー)
+- コンポーネント毎の Webサーバー各1つ
 
-All available Web servers are returned by the `WEB Server list` command, whether they are actually running or not.
+サーバーが実際に実行中か否かに関わらず、`WEB Server list` コマンドは利用可能な Webサーバーをすべて返します。
 
-> The default Web server object is automatically loaded by 4D at startup. On the other hand, each component Web server that you want to use must be instantiated using the [`WEB Server`](#web-server) command.
+> デフォルトの Webサーバーオブジェクトは、4D 起動時に自動的にロードされます。 その一方で、コンポーネントの Webサーバーは、[`WEB Server`](#web-server) コマンドによってそれぞれインスタンス化しなくてはなりません。
 
-You can use the [.name](#name) property of the Web server object to identify the project or component to which each Web server object in the list is attached.
+Webサーバオブジェクトの [.name](#name) プロパティを使用することで、リスト内の各 Webサーバーオブジェクトが関連づけられているデータベースまたはコンポーネントを識別することができます。
 
 
 #### 例題
 
-We want to know how many running web servers are available:
+利用可能な Webサーバーのうちいくつが実行中かを調べます:
 
 ```4d
  var $wSList : Collection
@@ -122,7 +122,7 @@ We want to know how many running web servers are available:
 
  $wSList:=WEB Server list
  $vRun:=$wSList.countValues(True;"isRunning")
- ALERT(String($vRun)+" web server(s) running on "+String($wSList.length)+" available.")
+ ALERT("利用可能 Webサーバー "+String($wSList.length)+" つ中、"+String($vRun)+" つの Webサーバーが実行中です。")
 
 ```
 
@@ -136,7 +136,7 @@ We want to know how many running web servers are available:
 **.accessKeyDefined** : Boolean<!-- END REF -->
 
 
-The **.accessKeyDefined** property contains <!-- REF #webServerClass.accessKeyDefined.Summary -->true if an access key is defined in the settings of the web server<!-- END REF -->. This property is used by the WebAdmin web server to validate the security configuration of the administration interface.
+**.accessKeyDefined** プロパティは、 <!-- REF #webServerClass.accessKeyDefined.Summary -->Webサーバーの設定にアクセスキーが定義されていれば true<!-- END REF -->を格納します。 このプロパティは WebAdmin Webサーバーによって、管理インターフェースのセキュリティ設定を有効化するのに使用されます。
 
 
 <!-- REF webServerClass.certificateFolder.Desc -->
@@ -148,7 +148,7 @@ The **.accessKeyDefined** property contains <!-- REF #webServerClass.accessKeyDe
 **.certificateFolder** : Text<!-- END REF -->
 
 
-Path of the <!-- REF #webServerClass.certificateFolder.Summary -->folder where the certificate files are located<!-- END REF -->. The path is formatted in POSIX full path using filesystems. When using this property in the `settings` parameter of the [`.start()`](#start) function, it can be a [`Folder` object](folderClass.md).
+ <!-- REF #webServerClass.certificateFolder.Summary -->認証ファイルが保存されているフォルダー<!-- END REF -->のパス。 パスは、ファイルシステムを使用した POSIXフルパスの形式です。 [`.start()`](#start) 関数に渡す `settings` 引数内でこのプロパティを使用する場合、`Folder` オブジェクトも使用可能です。</p>
 
 <!-- END REF -->
 
@@ -162,7 +162,7 @@ Path of the <!-- REF #webServerClass.certificateFolder.Summary -->folder where t
 **.characterSet** : Number<br>**.characterSet** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.characterSet.Summary -->character set that the 4D Web Server should use to communicate with browsers connecting to the application<!-- END REF -->. The default value actually depends on the language of the OS. Can be a MIBEnum integer or a Name string, identifiers [defined by IANA](http://www.iana.org/assignments/character-sets/character-sets.xhtml). Here is the list of identifiers corresponding to the character sets supported by the 4D Web Server:
+ <!-- REF #webServerClass.characterSet.Summary -->アプリケーションに接続してくるブラウザーとの通信に 4D Webサーバーが使用すべき文字セット<!-- END REF -->。 デフォルト値は OS の言語に依存します。 値には、MIBenum 整数や名称の文字列、[IANA](http://www.iana.org/assignments/character-sets/character-sets.xhtml) が定義する識別子を使用できます。 以下は、4D Webサーバーがサポートしている文字セットに対応する識別子のリストです:
 
 *   4 = ISO-8859-1
 *   12 = ISO-8859-9
@@ -190,7 +190,7 @@ The <!-- REF #webServerClass.characterSet.Summary -->character set that the 4D W
 **.cipherSuite** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.cipherSuite.Summary -->cipher list used for the secure protocol<!-- END REF -->. Sets the priority of ciphering algorithms implemented by the 4D web server. Can be a sequence of strings separated by colons (for example "ECDHE-RSA-AES128-..."). See the [ciphers page](https://www.openssl.org/docs/manmaster/man1/ciphers.html) on the OpenSSL site.
+ <!-- REF #webServerClass.cipherSuite.Summary -->保護されたプロトコルのために使用される暗号スイートリスト<!-- END REF -->。 これは、4D Webサーバーが実装する暗号化アルゴリズムの優先順位を設定します。 コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
 <!-- END REF -->
 
@@ -204,11 +204,11 @@ The <!-- REF #webServerClass.cipherSuite.Summary -->cipher list used for the sec
 **.CORSEnabled** : Boolean<!-- END REF -->
 
 
-The <!-- REF #webServerClass.CORSEnabled.Summary -->CORS (*Cross-origin resource sharing*) service status for the web server<!-- END REF -->. For security reasons, "cross-domain" requests are forbidden at the browser level by default. When enabled (True), XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see `CORSSettings` below). When disabled (False, default), all cross site requests sent with CORS are ignored. When enabled (True) and a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
+ <!-- REF #webServerClass.CORSEnabled.Summary -->Web サーバーの CORS (*Cross-origin resource sharing*、オリジン間リソース共有) サービス状態<!-- END REF -->。 セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。 有効化されている場合 (true)、ドメイン外 Webページからの XHRコール (RESTリクエストなど) をアプリケーションにおいて許可することができます (CORSドメインリストに許可されたアドレスのリストを定義する必要があります。後述の `CORSSettings` 参照)。 無効化されている場合 (false、デフォルト) には、CORS で送信されたサイト間リクエストはすべて無視されます。 有効時 (true) に、許可されていないドメインやメソッドがサイト間リクエストを送信した場合、"403 - forbidden" エラーレスポンスによって拒否されます。
 
-Default: False (disabled)
+デフォルト: false (無効)
 
-For more information about CORS, please refer to the [Cross-origin resource sharing page](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) on Wikipedia.
+CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) ページを参照ください。
 
 <!-- END REF -->
 
@@ -222,10 +222,11 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 **.CORSSettings** : Collection<!-- END REF -->
 
 
-A <!-- REF #webServerClass.CORSSettings.Summary -->list of allowed hosts and methods for the CORS service<!-- END REF --> (see [`CORSEnabled`](#corsenabled) property). Each object must contain a **host** property and, optionally, a **methods** property:
+ <!-- REF #webServerClass.CORSSettings.Summary -->CORSサービスに許可されたホストとメソッドの一覧<!-- END REF --> ([`CORSEnabled`](#corsenabled) プロパティ参照)。 各オブジェクトは必ず **host** プロパティを格納していなくてはなりません。**methods** プロパティは任意です。
 
-*   **host** (text, mandatory): Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. If *host* is not present or empty, the object is ignored. Several syntaxes are supported:
-    -   192.168.5.17:8081
+*   **host** (テキスト、必須): CORS を介したサーバーへのデータリクエスト送信が許可されている外部ページのドメイン名または IPアドレス。 複数のドメインを追加してホワイトリストを作成することができます。 *host* が存在しない、または空の場合、当該オブジェクトは無視されます。 複数のシンタックスがサポートされています:
+  
+      -   192.168.5.17:8081
     -   192.168.5.17
     -   192.168.*
     -   192.168.*:8081
@@ -235,8 +236,7 @@ A <!-- REF #webServerClass.CORSSettings.Summary -->list of allowed hosts and met
     -   *.myDomain.com
     -   myProject.myDomain.com
     -   \*
-
-*   **methods** (text, optional): Accepted HTTP method(s) for the corresponding CORS host. Separate each method with a ";" (e,g,: "post;get"). If *methods* is empty, null, or undefined, all methods are enabled.
+*   **methods** (テキスト、任意): 対応する CORSホストに対して許可する HTTPメソッド。 メソッド名はセミコロン区切りで指定します(例: "post;get")。 *methods* が空、null、あるいは undefined の場合、すべてのメソッドが許可されます。
 
 <!-- END REF -->
 
@@ -250,13 +250,13 @@ A <!-- REF #webServerClass.CORSSettings.Summary -->list of allowed hosts and met
 **.debugLog** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.debugLog.Summary -->status of the HTTP request log file<!-- END REF --> (HTTPDebugLog_nn.txt, stored in the "Logs" folder of the application -- nn is the file number).
+ <!-- REF #webServerClass.debugLog.Summary -->HTTPリクエストログファイルの状態<!-- END REF --> (アプリケーションの"Logs" フォルダーに格納されている HTTPDebugLog_nn.txt ファイル (nn はファイル番号))。
 
-*   0 = disabled
-*   1 = enabled without body parts (body size is provided in this case)
-*   3 = enabled with body parts in response only
-*   5 = enabled with body parts in request only
-*   7 = enabled with body parts in response and request
+*   0 = 無効
+*   1 = 有効、リクエスト本文なし (本文サイズあり)
+*   3 = 有効、レスポンスの本文のみ
+*   5 = 有効、リクエストの本文のみ
+*   7 = 有効、リクエストおよびレスポンスの本文あり
 
 <!-- END REF -->
 
@@ -270,7 +270,7 @@ The <!-- REF #webServerClass.debugLog.Summary -->status of the HTTP request log 
 **.defaultHomepage** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.defaultHomepage.Summary -->name of the default home page<!-- END REF --> or "" to not send the custom home page.
+ <!-- REF #webServerClass.defaultHomepage.Summary -->デフォルトのホームページの名称<!-- END REF --> または、カスタムのホームページを送信しない場合は ""。
 
 <!-- END REF -->
 
@@ -283,7 +283,7 @@ The <!-- REF #webServerClass.defaultHomepage.Summary -->name of the default home
 **.HSTSEnabled** : Boolean<!-- END REF -->
 
 
-The <!-- REF #webServerClass.HSTSEnabled.Summary -->HTTP Strict Transport Security (HSTS) status<!-- END REF -->. HSTS allows the Web server to declare that browsers should only interact with it via secure HTTPS connections. Browsers will record the HSTS information the first time they receive a response from the web server, then any future HTTP requests will automatically be transformed into HTTPS requests. The length of time this information is stored by the browser is specified with the `HSTSMaxAge` property. HSTS requires that HTTPS is enabled on the server. HTTP must also be enabled to allow initial client connections.
+ <!-- REF #webServerClass.HSTSEnabled.Summary -->HTTP Strict Transport Security (HSTS) 状態<!-- END REF -->。 HSTS によって、Webサーバーはブラウザーに対し、セキュアな HTTPS接続のみを許可すると宣言できます。 Webサーバーからの初回レスポンスを受け取った際にブラウザーは HSTS情報を記録し、以降の HTTPリクエストは自動的に HTTPSリクエストに変換されます。 ブラウザー側でこの情報が保存される時間は `HSTSMaxAge` プロパティによって指定されます。 HSTS のためには、サーバー上で HTTPS が有効になっていなくてはなりません。 また、初回のクライアント接続を許可するために、HTTP も有効でなくてはなりません。
 
 <!-- END REF -->
 
@@ -296,9 +296,9 @@ The <!-- REF #webServerClass.HSTSEnabled.Summary -->HTTP Strict Transport Securi
 **.HSTSMaxAge** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.HSTSMaxAge.Summary -->maximum length of time (in seconds) that HSTS is active for each new client connection<!-- END REF -->. This information is stored on the client side for the specified duration.
+ <!-- REF #webServerClass.HSTSMaxAge.Summary -->新規クライアント接続ごとに HSTS がアクティブな最長時間 (秒単位)<!-- END REF -->。 この情報はクライアント側で指定された時間のあいだ保存されます。
 
-Default value: 63072000 (2 years).
+デフォルト値: 63072000 (2年)。
 
 <!-- END REF -->
 
@@ -311,14 +311,14 @@ Default value: 63072000 (2 years).
 **.HTTPCompressionLevel** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.HTTPCompressionLevel.Summary -->compression level for all compressed HTTP exchanges for the 4D HTTP server (client requests or server replies)<!-- END REF -->. This selector lets you optimize exchanges by either prioritizing speed of execution (less compression) or the amount of compression (less speed).
+ <!-- REF #webServerClass.HTTPCompressionLevel.Summary -->4D HTTPサーバーの HTTP圧縮通信 (クライアントリクエストまたはサーバーレスポンス) における圧縮レベル<!-- END REF -->。 このセレクターを使って、実行速度を優先するか (圧縮少)、それとも圧縮レベルを優先するか (速度減) を指定し、通信を最適化することができます。
 
 とりうる値:
 
-*   1 to 9 (where 1 is the fastest compression and 9 the highest).
-*   -1 = set a compromise between speed and rate of compression.
+*   1 から 9 (1 が低圧縮、9 が高圧縮)。
+*   -1 = 圧縮速度と圧縮率の妥協点を設定する
 
-Default = 1 (faster compression).
+デフォルト = 1 (低圧縮)。
 
 <!-- END REF -->
 
@@ -483,7 +483,10 @@ The <!-- REF #webServerClass.isRunning.Summary -->web server running state<!-- E
 
 <!-- REF #webServerClass.keepSession.Summary -->True if legacy sessions are enabled in the web server, False otherwise<!-- END REF -->.
 
+
+
 ##### See also:
+
 [.scalableSession](#scalablesession)
 
 <!-- END REF -->
@@ -634,7 +637,7 @@ The <!-- REF #webServerClass.perfectForwardSecrecy.Summary -->PFS availability o
 **.rootFolder** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.rootFolder.Summary -->path of web server root folder<!-- END REF -->. The path is formatted in POSIX full path using filesystems. When using this property in the `settings` parameter, it can be a `Folder` object.
+The <!-- REF #webServerClass.rootFolder.Summary -->path of web server root folder<!-- END REF -->. パスは、ファイルシステムを使用した POSIXフルパスの形式です。 When using this property in the `settings` parameter, it can be a `Folder` object.
 
 <!-- END REF -->
 
@@ -648,7 +651,10 @@ The <!-- REF #webServerClass.rootFolder.Summary -->path of web server root folde
 
 <!-- REF #webServerClass.scalableSession.Summary -->True if scalable sessions are used in the web server, and False otherwise<!-- END REF -->.
 
+
+
 ##### See also:
+
 [.keepSession](#keepsession)
 <!-- END REF -->
 
@@ -743,6 +749,8 @@ All settings of [Web Server objects](#web-server-object) can be customized, exce
 Customized session settings will be reset when the [`.stop()`](#stop) function is called.
 
 
+
+
 #### 返されるオブジェクト
 
 The function returns an object describing the Web server launch status. This object can contain the following properties:
@@ -754,9 +762,16 @@ The function returns an object describing the Web server launch status. This obj
 |         | \[].errCode            | 数値     | 4D error code                                                        |
 |         | \[].message            | テキスト   | Description of the 4D error                                          |
 |         | \[].componentSignature | テキスト   | Signature of the internal component which returned the error         |
+
+
+
 > If the Web server was already launched, an error is returned.
 
+
+
 #### 例題
+
+
 
 ```4d
  var $settings;$result : Object
@@ -798,12 +813,18 @@ The function returns an object describing the Web server launch status. This obj
 The `.stop()` function <!-- REF #webServerClass.stop().Summary -->stops the web server on which it is applied<!-- END REF -->.
 
 If the web server was started, all web connections and web processes are closed, once the currently handled requests are finished. If the web server was not started, the method does nothing.
+
+
 > This function resets the customized web settings defined for the session using the *settings* parameter of the [`.start()`](#start) function, if any.
+
+
 
 
 #### 例題
 
 To stop the database Web server:
+
+
 
 ```4d
  var $webServer : 4D.WebServer
