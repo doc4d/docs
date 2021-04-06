@@ -66,7 +66,7 @@ Defines the set of characters to be used by the 4D web server. デフォルト�
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer object | [`cipherSuite`](API/webServerClass.md#ciphersuite) | テキスト |
 
-Cipher list used for the secure protocol; sets the priority of ciphering algorithms implemented by the web server. Can be a sequence of strings separated by colons (for example "ECDHE-RSA-AES128-..."). See the [ciphers page](https://www.openssl.org/docs/manmaster/man1/ciphers.html) on the OpenSSL site.
+Cipher list used for the secure protocol; sets the priority of ciphering algorithms implemented by the web server. コロン区切りの文字列として設定できます (例: "ECDHE-RSA-AES128-...")。 詳細は Open SSL サイトの [ciphers ページ](https://www.openssl.org/docs/manmaster/man1/ciphers.html) を参照ください。
 
 > The default cipher list used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server, client/server connections, as well as the HTTP client and all the 4D commands that make use of the secure protocol.
 
@@ -82,7 +82,7 @@ List of allowed hosts and methods for the CORS service.
 
 #### Domain names (host property)
 
-Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. Several syntaxes are supported:
+Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. 複数のドメインを追加してホワイトリストを作成することができます。 複数のシンタックスがサポートされています:
 
 - 192.168.5.17:8081
 - 192.168.5.17
@@ -109,7 +109,7 @@ Accepted HTTP method(s) for the corresponding CORS host. The following HTTP meth
 - TRACE
 - PATCH
 
-Separate each method with a ";" (e,g,: "post;get"). If methods is empty, null, or undefined, all methods are enabled.
+メソッド名はセミコロン区切りで指定します(例: "post;get")。 If methods is empty, null, or undefined, all methods are enabled.
 
 #### 参照
 
@@ -165,7 +165,7 @@ If you do not specify any default home page, the `On Web Connection` database me
 | `WEB SET OPTION`    | `Web CORS enabled`                                 | 0 (disabled, default) or 1 (enabled)                |
 | Settings dialog box | Options (II) page/Enable CORS                      | Unchecked by default                                |
 
-The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. For security reasons, "cross-domain" requests are forbidden at the browser level by default. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
+The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。 When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
 
 When disabled (default), all cross site requests sent with CORS are ignored.
 
@@ -221,7 +221,7 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 | webServer object | [`HSTSMaxAge`](API/webServerClass.md#hstsmaxage) | number in seconds |
 | `WEB SET OPTION` | `Web HSTS max age`                               | number in seconds |
 
-Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. This information is stored on the client side for the specified duration. Default value is 63072000 (2 years)
+Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. この情報はクライアント側で指定された時間のあいだ保存されます。 Default value is 63072000 (2 years)
 
 > **Warning:** Once HSTS is enabled, client connections will continue to use this mechanism for the specified duration. When you are testing your applications, it is recommended to set a short duration to be able to switch between secured and non-secured connection modes if necessary.
 
