@@ -124,7 +124,7 @@
 <tr><td>Settings dialog box</td><td>Options (II) page/Standard Set</td><td>Pop up menu</td></tr>
 </tbody>
 </table>
-<p>Defines the set of characters to be used by the 4D web server. The default value actually depends on the language of the OS.</p>
+<p>Defines the set of characters to be used by the 4D web server. デフォルト値は OS の言語に依存します。</p>
 <blockquote>
 <p>This setting is also used for generating Quick Reports in HTML format .</p>
 </blockquote>
@@ -137,7 +137,7 @@
 <tr><td>webServer object</td><td><a href="/docs/alpha/ja/API/WebServerClass.html#ciphersuite"><code>cipherSuite</code></a></td><td>テキスト</td></tr>
 </tbody>
 </table>
-<p>Cipher list used for the secure protocol; sets the priority of ciphering algorithms implemented by the web server. Can be a sequence of strings separated by colons (for example &quot;ECDHE-RSA-AES128-...&quot;). See the <a href="https://www.openssl.org/docs/manmaster/man1/ciphers.html">ciphers page</a> on the OpenSSL site.</p>
+<p>Cipher list used for the secure protocol; sets the priority of ciphering algorithms implemented by the web server. コロン区切りの文字列として設定できます (例: &quot;ECDHE-RSA-AES128-...&quot;)。 詳細は Open SSL サイトの <a href="https://www.openssl.org/docs/manmaster/man1/ciphers.html">ciphers ページ</a> を参照ください。</p>
 <blockquote>
 <p>The default cipher list used by 4D can be modified for the session using the <code>SET DATABASE PARAMETER</code> command, in which case the modification applies to the entire 4D application, including the web server, SQL server, client/server connections, as well as the HTTP client and all the 4D commands that make use of the secure protocol.</p>
 </blockquote>
@@ -235,7 +235,7 @@
 <tr><td>Settings dialog box</td><td>Options (II) page/Enable CORS</td><td>Unchecked by default</td></tr>
 </tbody>
 </table>
-<p>The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. For security reasons, &quot;cross-domain&quot; requests are forbidden at the browser level by default. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a &quot;403 - forbidden&quot; error response.</p>
+<p>The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. セキュリティ上の理由により、&quot;ドメイン間&quot; のリクエストはブラウザーレベルでデフォルトで禁止されています。 When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a &quot;403 - forbidden&quot; error response.</p>
 <p>When disabled (default), all cross site requests sent with CORS are ignored.</p>
 <p>For more information about CORS, please refer to the <a href="http://en.wikipedia.org/wiki/Cross-origin_resource_sharing">Cross-origin resource sharing page</a> on Wikipedia.</p>
 <h4><a class="anchor" aria-hidden="true" id="参照-1"></a><a href="#参照-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参照</h4>

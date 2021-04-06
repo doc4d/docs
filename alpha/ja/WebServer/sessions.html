@@ -132,7 +132,7 @@
 <p>Privileges can be associated to sessions. On the web server, you can provide specific access or features depending on the privileges of the session.</p>
 <p>You can assign privileges usign the <a href="/docs/alpha/ja/API/SessionClass.html#setprivileges"><code>.setPrivileges()</code></a> function. In your code, you can check the session's privileges to allow or deny access using the <a href="/docs/alpha/ja/API/SessionClass.html#hasprivilege"><code>.hasPrivilege()</code></a> function. By default, new sessions do not have any privilege: they are <strong>guest</strong> sessions (<a href="/docs/alpha/ja/API/SessionClass.html#isguest"><code>.isGuest()</code></a> function returns true).</p>
 <blockquote>
-<p>In the current implementation (v18 R6), only the &quot;WebAdmin&quot; privilege is available.</p>
+<p>現在の実装では (v18 R6)、&quot;WebAdmin&quot; アクセス権のみ利用可能です。</p>
 </blockquote>
 <p>例:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">If</span> (Session.<span class="hljs-function">hasPrivilege</span>(<span class="hljs-string">"WebAdmin"</span>))
