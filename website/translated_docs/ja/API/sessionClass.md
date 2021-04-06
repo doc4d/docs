@@ -253,16 +253,16 @@ End if
 
 #### 説明
 
-The `.isGuest()` function <!-- REF #sessionClass.isGuest().Summary -->returns True if the session is a Guest session (i.e. it has no privileges)<!-- END REF -->.
+`.isGuest()` 関数は、 <!-- REF #sessionClass.isGuest().Summary -->アクセス権のないゲストセッションの場合は true を返します<!-- END REF -->。
 
 
 #### 例題
 
-In the `On Web Connection` database method:
+`On Web Connection` データベースメソッドにて:
 
 ```4d
 If (Session.isGuest())
-    //Do something for Guest user
+    // ゲストユーザー用の処理
 End if
 ```
 
@@ -284,35 +284,35 @@ End if
 **.setPrivileges**( *privilege* : Text )<br>**.setPrivileges**( *privileges* : Collection )<br>**.setPrivileges**( *settings* : Object )<!-- END REF -->
 
 <!-- REF #sessionClass.setPrivileges().Params -->
-| 参照         | タイプ    |    | 説明                                                         |
-| ---------- | ------ |:--:| ---------------------------------------------------------- |
-| privilege  | テキスト   | -> | Privilege name                                             |
-| privileges | コレクション | -> | Collection of privilege names                              |
-| settings   | オブジェクト | -> | Object with a "privileges" property (string or collection) |
+| 参照         | タイプ    |    | 説明                                          |
+| ---------- | ------ |:--:| ------------------------------------------- |
+| privilege  | テキスト   | -> | アクセス権の名称                                    |
+| privileges | コレクション | -> | アクセス権の名称のコレクション                             |
+| settings   | オブジェクト | -> | "privileges" プロパティ (文字列またはコレクション) を持つオブジェクト |
 <!-- END REF -->
 
 #### 説明
 
-The `.setPrivileges()` function <!-- REF #sessionClass.setPrivileges().Summary -->associates the privilege(s) defined in the parameter to the session<!-- END REF -->.
+`.setPrivileges()` 関数は、 <!-- REF #sessionClass.setPrivileges().Summary -->引数として渡したアクセス権をセッションと紐づけます<!-- END REF -->。
 
-- In the *privilege* parameter, pass a string containing a privilege name (or several comma-separated privilege names).
+- *privilege* には、アクセス権の名称を文字列として渡します (複数の場合はカンマ区切り)。
 
-- In the *privileges* parameter, pass a collection of strings containing privilege names.
+- *privileges* には、アクセス権の名称を文字列のコレクションとして渡します。
 
-- In the *settings* parameter, pass an object containing the following properties:
+- *settings* には、以下のプロパティを持つオブジェクトを渡します:
 
-| プロパティ      | タイプ                | 説明                                                 |
-| ---------- | ------------------ | -------------------------------------------------- |
-| privileges | Text or Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
-| userName   | テキスト               | User name to associate to the session (optional)   |
+| プロパティ      | タイプ           | 説明                                                 |
+| ---------- | ------------- | -------------------------------------------------- |
+| privileges | テキストまたはコレクション | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li> |
+| userName   | テキスト          | (任意) セッションと紐づけるユーザー名                               |
 
-If the `privileges` property contains an invalid privilege name, it is ignored.
+無効なアクセス権名を含む場合、`privileges` プロパティは無視されます。
 
-> In the current implementation (v18 R6), only the "WebAdmin" privilege is available.
+> 現在の実装では (v18 R6)、"WebAdmin" アクセス権のみ利用可能です。
 
-By default when no privilege is associated to the session, the session is a [Guest session](#isguest).
+セッションにアクセス権が紐づいていない場合、そのセッションはデフォルトで [ゲストセッション](#isguest) です。
 
-The [`userName`](#username) property is available at session object level (read-only).
+[`userName`](#username) プロパティは Session オブジェクトレベルで利用可能です (読み取り専用)。
 
 #### 例題
 
