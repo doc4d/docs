@@ -129,9 +129,9 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#apply"><strong>.apply</strong>() : any<br><strong>.apply</strong>( <em>thisObj</em> : Object { ; <em>formulaParams</em> : Collection } ) : any</a><p>    executes the <code>formula</code> object to which it is applied and returns the resulting value</td></tr>
-<tr><td><a href="#call"><strong>.call</strong>() : any<br><strong>.call</strong>( <em>thisObj</em> : Object { ; ...<em>params</em> : any } ) : any</a><p>    executes the <code>formula</code> object to which it is applied and returns the resulting value</td></tr>
-<tr><td><a href="#source"><strong>.source</strong> : Text </a><p>    contains the source expression of the <code>formula</code> as text</td></tr>
+<tr><td><a href="#apply"><strong>.apply</strong>() : any<br><strong>.apply</strong>( <em>thisObj</em> : Object { ; <em>formulaParams</em> : Collection } ) : any</a><p>    対象の <code>Formula</code> オブジェクトを実行し、その結果の値を返します</td></tr>
+<tr><td><a href="#call"><strong>.call</strong>() : any<br><strong>.call</strong>( <em>thisObj</em> : Object { ; ...<em>params</em> : any } ) : any</a><p>    対象の <code>Formula</code> オブジェクトを実行し、その結果の値を返します</td></tr>
+<tr><td><a href="#source"><strong>.source</strong> : Text </a><p>    対象フォーミュラのテキスト型のソース式</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="formula"></a><a href="#formula" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Formula</h2>
@@ -141,7 +141,7 @@
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v17 R6</td><td>Renamed (New formula -&gt; Formula)</td></tr>
+<tr><td>v17 R6</td><td>名称変更 (New formula -&gt; Formula)</td></tr>
 <tr><td>v17 R3</td><td>追加</td></tr>
 </tbody>
 </table>
@@ -152,8 +152,8 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>formulaExp</td><td>式</td><td style="text-align:center">-&gt;</td><td>Formula to be returned as object</td></tr>
-<tr><td>戻り値</td><td>4D.Function</td><td style="text-align:center">&lt;-</td><td>Native function encapsulating the formula</td></tr>
+<tr><td>formulaExp</td><td>式</td><td style="text-align:center">-&gt;</td><td>オブジェクトとして返されるフォーミュラ</td></tr>
+<tr><td>戻り値</td><td>4D.Function</td><td style="text-align:center">&lt;-</td><td>フォーミュラを格納しているネイティブな Function オブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -168,10 +168,10 @@
  <span class="hljs-variable">$f</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-number">1</span>+<span class="hljs-number">2</span>)
  <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"myFormula"</span>;<span class="hljs-variable">$f</span>)
 
-  <span class="hljs-comment">//three different ways to call the formula</span>
- <span class="hljs-variable">$f</span>.<span class="hljs-function">call</span>(<span class="hljs-variable">$o</span>) <span class="hljs-comment">//returns 3</span>
- <span class="hljs-variable">$f</span>.<span class="hljs-function">apply</span>(<span class="hljs-variable">$o</span>) <span class="hljs-comment">//returns 3</span>
- <span class="hljs-variable">$o</span>.<span class="hljs-function">myFormula</span>() <span class="hljs-comment">//returns 3</span>
+  <span class="hljs-comment">// フォーミュラを呼び出す 3つの方法</span>
+ <span class="hljs-variable">$f</span>.<span class="hljs-function">call</span>(<span class="hljs-variable">$o</span>) <span class="hljs-comment">// 3 を返します</span>
+ <span class="hljs-variable">$f</span>.<span class="hljs-function">apply</span>(<span class="hljs-variable">$o</span>) <span class="hljs-comment">// 3 を返します</span>
+ <span class="hljs-variable">$o</span>.<span class="hljs-function">myFormula</span>() <span class="hljs-comment">// 3 を返します</span>
 </code></pre>
 <p>You can pass <a href="#passing-parameters">parameters</a> to the <code>Formula</code>, as seen below in <a href="#example-4">example 4</a>.</p>
 <p>You can specify the object on which the formula is executed, as seen in <a href="#example-5">example 5</a>. The properties of the object can then be accessed via the <code>This</code> command.</p>
@@ -185,7 +185,7 @@
  var</span> <span class="hljs-variable">$o </span>: Object
  <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"f"</span>;<span class="hljs-variable">$f</span>)
 
- <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">// returns 3</span>
+ <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">// 3 を返します</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
 <p>A formula using local variables:</p>
@@ -195,12 +195,12 @@
  <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"f"</span>;<span class="hljs-function">Formula</span>(<span class="hljs-variable">$value</span>))
  <span class="hljs-variable">$value</span>:=<span class="hljs-number">20</span>
 
- <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">// returns 10</span>
+ <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.f() <span class="hljs-comment">// 10 を返します</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 3</h4>
 <p>A simple formula using parameters:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"f"</span>;<span class="hljs-function">Formula</span>(<span class="hljs-variable">$1</span>+<span class="hljs-variable">$2</span>))
- <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.f(<span class="hljs-number">10</span>;<span class="hljs-number">20</span>) <span class="hljs-comment">//returns 30</span>
+ <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$o</span>.f(<span class="hljs-number">10</span>;<span class="hljs-number">20</span>) <span class="hljs-comment">// 30 を返します</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-4"></a><a href="#例題-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 4</h4>
 <p>A formula using a project method with parameters:</p>
@@ -238,7 +238,7 @@
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v17 R6</td><td>Renamed New formula from string -&gt; Formula from string</td></tr>
+<tr><td>v17 R6</td><td>名称変更 (New formula from string -&gt; Formula from string)</td></tr>
 <tr><td>v17 R3</td><td>追加</td></tr>
 </tbody>
 </table>
@@ -249,8 +249,8 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>formulaString</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Text formula to be returned as object</td></tr>
-<tr><td>戻り値</td><td>4D.Function</td><td style="text-align:center">&lt;-</td><td>Native object encapsulating the formula</td></tr>
+<tr><td>formulaString</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>オブジェクトとして返されるフォーミュラ文字列</td></tr>
+<tr><td>戻り値</td><td>4D.Function</td><td style="text-align:center">&lt;-</td><td>フォーミュラを格納しているネイティブなオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -289,22 +289,22 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>thisObj</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Object to be returned by the This command in the formula</td></tr>
-<tr><td>formulaParams</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>Collection of values to be passed as $1...$n when <code>formula</code> is executed</td></tr>
-<tr><td>戻り値</td><td>any</td><td style="text-align:center">&lt;-</td><td>Value from formula execution</td></tr>
+<tr><td>thisObj</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>フォーミュラ内で This コマンドによって返されるオブジェクト</td></tr>
+<tr><td>formulaParams</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>フォーミュラが実行される際に $1...$n として渡される値のコレクション</td></tr>
+<tr><td>戻り値</td><td>any</td><td style="text-align:center">&lt;-</td><td>フォーミュラの実行結果</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-2"></a><a href="#説明-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.apply()</code> function executes the <code>formula</code> object to which it is applied and returns the resulting value. The formula object can be created using the <code>Formula</code> or <code>Formula from string</code> commands.</p>
+<p><code>.apply()</code> 関数は、 対象の <code>Formula</code> オブジェクトを実行し、その結果の値を返します。 The formula object can be created using the <code>Formula</code> or <code>Formula from string</code> commands.</p>
 <p>In the <em>thisObj</em> parameter, you can pass a reference to the object to be used as <code>This</code> within the formula.</p>
 <p>You can also pass a collection to be used as $1...$n parameters in the formula using the optional <em>formulaParams</em> parameter.</p>
-<p>Note that <code>.apply()</code> is similar to <a href="#call"><code>.call()</code></a> except that parameters are passed as a collection. This can be useful for passing calculated results.</p>
+<p><code>.apply()</code> は <a href="#call"><code>.call()</code></a> と似ていますが、引数をコレクションとして渡す点が異なります。 This can be useful for passing calculated results.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-1"></a><a href="#例題-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$f </span>: 4D.<span class="hljs-keyword">Function</span>
  <span class="hljs-variable">$f</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-variable">$1</span>+<span class="hljs-variable">$2</span>+<span class="hljs-variable">$3</span>)
 
  <span class="hljs-variable">$c</span>:=<span class="hljs-function">New collection</span>(<span class="hljs-number">10</span>;<span class="hljs-number">20</span>;<span class="hljs-number">30</span>)
- <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$f</span>.<span class="hljs-function">apply</span>(<span class="hljs-literal">Null</span>;<span class="hljs-variable">$c</span>) <span class="hljs-comment">// returns 60</span>
+ <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$f</span>.<span class="hljs-function">apply</span>(<span class="hljs-literal">Null</span>;<span class="hljs-variable">$c</span>) <span class="hljs-comment">// 60 を返します</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2-1"></a><a href="#例題-2-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$calc </span>: 4D.<span class="hljs-keyword">Function</span><span class="hljs-keyword">
@@ -334,25 +334,25 @@
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>thisObj</td><td>オブジェクト</td><td>-&gt;</td><td>Object to be returned by the This command in the formula</td></tr>
-<tr><td>params</td><td>any</td><td>-&gt;</td><td>Value(s) to be passed as $1...$n when formula is executed</td></tr>
-<tr><td>戻り値</td><td>any</td><td>&lt;-</td><td>Value from formula execution</td></tr>
+<tr><td>thisObj</td><td>オブジェクト</td><td>-&gt;</td><td>フォーミュラ内で This コマンドによって返されるオブジェクト</td></tr>
+<tr><td>params</td><td>any</td><td>-&gt;</td><td>フォーミュラが実行される際に $1...$n として渡される値</td></tr>
+<tr><td>戻り値</td><td>any</td><td>&lt;-</td><td>フォーミュラの実行結果</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.call()</code> function executes the <code>formula</code> object to which it is applied and returns the resulting value. The formula object can be created using the <code>Formula</code> or <code>Formula from string</code> commands.</p>
+<p><code>.call()</code> 関数は、 対象の <code>Formula</code> オブジェクトを実行し、その結果の値を返します。 The formula object can be created using the <code>Formula</code> or <code>Formula from string</code> commands.</p>
 <p>In the <em>thisObj</em> parameter, you can pass a reference to the object to be used as <code>This</code> within the formula.</p>
 <p>You can also pass values to be used as <em>$1...$n</em> parameters in the formula using the optional <em>params</em> parameter(s).</p>
-<p>Note that <code>.call()</code> is similar to <a href="#apply"><code>.apply()</code></a> except that parameters are passed directly.</p>
+<p><code>.call()</code> は <a href="#apply"><code>.apply()</code></a> と似ていますが、引数を直接渡す点が異なります。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-2"></a><a href="#例題-1-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$f </span>: 4D.<span class="hljs-keyword">Function</span>
  <span class="hljs-variable">$f</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-function">Uppercase</span>(<span class="hljs-variable">$1</span>))
- <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$f</span>.<span class="hljs-function">call</span>(<span class="hljs-literal">Null</span>;<span class="hljs-string">"hello"</span>) <span class="hljs-comment">// returns "HELLO"</span>
+ <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$f</span>.<span class="hljs-function">call</span>(<span class="hljs-literal">Null</span>;<span class="hljs-string">"hello"</span>) <span class="hljs-comment">// "HELLO" を返します</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2-2"></a><a href="#例題-2-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$o</span>:=<span class="hljs-function">New object</span>(<span class="hljs-string">"value"</span>;<span class="hljs-number">50</span>)
  <span class="hljs-variable">$f</span>:=<span class="hljs-function">Formula</span>(<span class="hljs-literal">This</span>.value*<span class="hljs-number">2</span>)
- <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$f</span>.<span class="hljs-function">call</span>(<span class="hljs-variable">$o</span>) <span class="hljs-comment">// returns 100</span>
+ <span class="hljs-variable">$result</span>:=<span class="hljs-variable">$f</span>.<span class="hljs-function">call</span>(<span class="hljs-variable">$o</span>) <span class="hljs-comment">// 100 を返します</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="source"></a><a href="#source" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.source</h2>
 <p><details><summary>履歴</summary></p>
@@ -367,7 +367,7 @@
 <p></details></p>
 <p><strong>.source</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.source</code> property contains the source expression of the <code>formula</code> as text.</p>
+<p><code>.source</code> プロパティは、 対象フォーミュラのテキスト型のソース式を格納します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-7"></a><a href="#例題-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$of </span>: 4D.<span class="hljs-keyword">Function</span><span class="hljs-keyword">

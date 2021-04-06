@@ -73,28 +73,28 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#attributename"><strong><em>.attributeName</em></strong> : any</a><p>    stores the attribute value for the entity</td></tr>
-<tr><td><a href="#clone"><strong>.clone()</strong> : 4D.Entity</a><p>    creates in memory a new entity referencing the same record as the original entity</td></tr>
-<tr><td><a href="#diff"><strong>.diff</strong>( <em>entityToCompare</em> : 4D.Entity { ; <em>attributesToCompare</em> : Collection } ) : Collection</a><p>    compares the contents of two entities and returns their differences</td></tr>
-<tr><td><a href="#drop"><strong>.drop</strong>( {<em>mode</em> : Integer} ) : Object</a><p>    deletes the data contained in the entity from the datastore</td></tr>
-<tr><td><a href="#first"><strong>.first()</strong>: 4D.Entity</a><p>    returns a reference to the entity in first position of the entity selection which the entity belongs to</td></tr>
-<tr><td><a href="#fromobject"><strong>.fromObject</strong>( <em>filler</em> : Object )</a><p>    fills an entity with the <em>filler</em> content</td></tr>
-<tr><td><a href="#getdataclass"><strong>.getDataClass()</strong> : 4D.DataClass</a><p>    returns the dataclass of the entity</td></tr>
-<tr><td><a href="#getkey"><strong>.getKey</strong>( { <em>mode</em> : Integer } ) : Text<br><strong>.getKey</strong>( { <em>mode</em> : Integer } ) : Integer</a><p>    returns the primary key value of the entity</td></tr>
-<tr><td><a href="#getselection"><strong>.getSelection()</strong>: 4D.EntitySelection</a><p>    returns the entity selection which the entity belongs to</td></tr>
-<tr><td><a href="#getstamp"><strong>.getStamp()</strong> : Integer</a><p>     returns the current value of the stamp of the entity</td></tr>
-<tr><td><a href="#indexof"><strong>.indexOf</strong>( { <em>entitySelection</em> : 4D.EntitySelection } ) : Integer</a><p>    returns the position of the entity in an entity selection</td></tr>
-<tr><td><a href="#isnew"><strong>.isNew()</strong> : Boolean</a><p>     returns True if the entity to which it is applied has just been created and has not yet been saved in the datastore</td></tr>
-<tr><td><a href="#last"><strong>.last()</strong> : 4D.Entity</a><p>    returns a reference to the entity in last position of the entity selection which the entity belongs to</td></tr>
-<tr><td><a href="#lock"><strong>.lock</strong>( { <em>mode</em> : Integer } ) : Object</a><p>    puts a pessimistic lock on the record referenced by the entity</td></tr>
-<tr><td><a href="#next"><strong>.next()</strong> : 4D.Entity</a><p>    returns a reference to the next entity in the entity selection which the entity belongs to</td></tr>
-<tr><td><a href="#previous"><strong>.previous()</strong>  : 4D.Entity</a><p>     returns a reference to the previous entity in the entity selection which the entity belongs to</td></tr>
-<tr><td><a href="#reload"><strong>.reload()</strong> : Object</a><p>    reloads the content of the entity in memory</td></tr>
-<tr><td><a href="#save"><strong>.save</strong>( { <em>mode</em> : Integer } ) : Object</a><p>    saves the changes made to the entity</td></tr>
-<tr><td><a href="#toobject"><strong>.toObject</strong>() : Object<br><strong>.toObject</strong>( <em>filterString</em> : Text { ; <em>options</em> : Integer}  ) : Object<br><strong>.toObject</strong>( <em>filterCol</em> : Collection { ; <em>options</em> : Integer } ) : Object</a><p>    returns an object which has been built from the entity</td></tr>
-<tr><td><a href="#touched"><strong>.touched()</strong> : Boolean</a><p>    tests whether or not an entity attribute has been modified since the entity was loaded into memory or saved</td></tr>
-<tr><td><a href="#touchedattributes"><strong>.touchedAttributes()</strong> : Collection</a><p>    returns the names of the attributes that have been modified since the entity was loaded into memory</td></tr>
-<tr><td><a href="#unlock"><strong>.unlock()</strong> : Object</a><p>    removes the pessimistic lock on the record matching the entity</td></tr>
+<tr><td><a href="#attributename"><strong><em>.attributeName</em></strong> : any</a><p>    エンティティの属性値を格納します</td></tr>
+<tr><td><a href="#clone"><strong>.clone()</strong> : 4D.Entity</a><p>    対象エンティティと同じレコードを参照する新規エンティティをメモリ内に作成します</td></tr>
+<tr><td><a href="#diff"><strong>.diff</strong>( <em>entityToCompare</em> : 4D.Entity { ; <em>attributesToCompare</em> : Collection } ) : Collection</a><p>    二つのエンティティの中身を比較し、その差異を返します</td></tr>
+<tr><td><a href="#drop"><strong>.drop</strong>( {<em>mode</em> : Integer} ) : Object</a><p>    データストアのエンティティに格納されているデータを削除します</td></tr>
+<tr><td><a href="#first"><strong>.first()</strong>: 4D.Entity</a><p>    対象エンティティが所属するエンティティセレクションの先頭エンティティへの参照を返します</td></tr>
+<tr><td><a href="#fromobject"><strong>.fromObject</strong>( <em>filler</em> : Object )</a><p>    <em>filler</em> に指定した内容でエンティティの属性値を設定します</td></tr>
+<tr><td><a href="#getdataclass"><strong>.getDataClass()</strong> : 4D.DataClass</a><p>    エンティティのデータクラスを返します</td></tr>
+<tr><td><a href="#getkey"><strong>.getKey</strong>( { <em>mode</em> : Integer } ) : Text<br><strong>.getKey</strong>( { <em>mode</em> : Integer } ) : Integer</a><p>    エンティティのプライマリーキー値を返します</td></tr>
+<tr><td><a href="#getselection"><strong>.getSelection()</strong>: 4D.EntitySelection</a><p>    エンティティが所属するエンティティセレクションを返します</td></tr>
+<tr><td><a href="#getstamp"><strong>.getStamp()</strong> : Integer</a><p>     エンティティのスタンプの値を返します</td></tr>
+<tr><td><a href="#indexof"><strong>.indexOf</strong>( { <em>entitySelection</em> : 4D.EntitySelection } ) : Integer</a><p>    エンティティセレクション内におけるエンティティの位置を返します</td></tr>
+<tr><td><a href="#isnew"><strong>.isNew()</strong> : Boolean</a><p>     対象エンティティが作成されたばかりで、まだデータストアに保存されていない場合に true を返します</td></tr>
+<tr><td><a href="#last"><strong>.last()</strong> : 4D.Entity</a><p>    対象エンティティが所属するエンティティセレクションの最終エンティティへの参照を返します</td></tr>
+<tr><td><a href="#lock"><strong>.lock</strong>( { <em>mode</em> : Integer } ) : Object</a><p>    対象エンティティが参照するレコードにペシミスティック・ロックをかけます</td></tr>
+<tr><td><a href="#next"><strong>.next()</strong> : 4D.Entity</a><p>    エンティティが所属するエンティティセレクションの次のエンティティへの参照を返します</td></tr>
+<tr><td><a href="#previous"><strong>.previous()</strong>  : 4D.Entity</a><p>     エンティティが所属するエンティティセレクションの前のエンティティへの参照を返します</td></tr>
+<tr><td><a href="#reload"><strong>.reload()</strong> : Object</a><p>    エンティティの中身をメモリ内にリロードします</td></tr>
+<tr><td><a href="#save"><strong>.save</strong>( { <em>mode</em> : Integer } ) : Object</a><p>    エンティティの変更内容を保存します</td></tr>
+<tr><td><a href="#toobject"><strong>.toObject</strong>() : Object<br><strong>.toObject</strong>( <em>filterString</em> : Text { ; <em>options</em> : Integer}  ) : Object<br><strong>.toObject</strong>( <em>filterCol</em> : Collection { ; <em>options</em> : Integer } ) : Object</a><p>    エンティティからビルトされたオブジェクトを返します</td></tr>
+<tr><td><a href="#touched"><strong>.touched()</strong> : Boolean</a><p>    エンティティがメモリに読み込まれてから、あるいは保存されてから、エンティティ属性が変更されたかどうかをテストします</td></tr>
+<tr><td><a href="#touchedattributes"><strong>.touchedAttributes()</strong> : Collection</a><p>    メモリに読み込み後に変更されたエンティティの属性名を返します</td></tr>
+<tr><td><a href="#unlock"><strong>.unlock()</strong> : Object</a><p>    対象エンティティが参照するレコードのペシミスティック・ロックを解除します</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="attributename"></a><a href="#attributename" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.<em>attributeName</em></h2>
@@ -110,7 +110,7 @@
 <p></details></p>
 <p><strong><em>.attributeName</em></strong> : any</p>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>Any dataclass attribute is available as a property of an entity, which stores the attribute value for the entity.</p>
+<p>データクラス属性はすべてエンティティのプロパティとして利用可能です。各エンティティのプロパティは、当該 エンティティの属性値を格納します。</p>
 <blockquote>
 <p>Dataclass attributes can also be reached using the alternate syntax with [ ].</p>
 </blockquote>
@@ -144,11 +144,11 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>New entity referencing the record</td></tr>
+<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>同レコードを参照する新しいエンティティ</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.clone()</code> function creates in memory a new entity referencing the same record as the original entity. This function allows you to update entities separately.</p>
+<p><code>.clone()</code> 関数は、 対象エンティティと同じレコードを参照する新規エンティティをメモリ内に作成します。 This function allows you to update entities separately.</p>
 <blockquote>
 <p>Keep in mind that any modifications done to entities will be saved in the referenced record only when the <a href="#save"><code>.save( )</code></a> function is executed.</p>
 </blockquote>
@@ -178,13 +178,13 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>entityToCompare</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to be compared with the original entity</td></tr>
-<tr><td>attributesToCompare</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>Name of attributes to be compared</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Differences between the entities</td></tr>
+<tr><td>entityToCompare</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>対象エンティティと比較するエンティティ</td></tr>
+<tr><td>attributesToCompare</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>比較する属性の名称</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>エンティティ間の差異</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-2"></a><a href="#説明-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.diff()</code> function compares the contents of two entities and returns their differences.</p>
+<p><code>.diff()</code> 関数は、 二つのエンティティの中身を比較し、その差異を返します。</p>
 <p>In <em>entityToCompare</em>, pass the entity to be compared to the original entity.</p>
 <p>In <em>attributesToCompare</em>, you can designate specific attributes to compare. If provided, the comparison is done only on the specified attributes. If not provided, all differences between the entities are returned.</p>
 <p>The differences are returned as a collection of objects whose properties are:</p>
@@ -293,8 +293,8 @@
     },
   {
         <span class="hljs-string">"attributeName"</span>: <span class="hljs-string">"employer"</span>,
-        <span class="hljs-string">"value"</span>: <span class="hljs-string">"[object Entity]"</span>,<span class="hljs-comment">// Entity 117 from Company</span>
-        <span class="hljs-string">"otherValue"</span>: <span class="hljs-string">"[object Entity]"</span><span class="hljs-comment">// Entity 118 from Company</span>
+        <span class="hljs-string">"value"</span>: <span class="hljs-string">"[object Entity]"</span>,<span class="hljs-comment">// Company のエンティティ 117</span>
+        <span class="hljs-string">"otherValue"</span>: <span class="hljs-string">"[object Entity]"</span><span class="hljs-comment">// Company のエンティティ 118</span>
     }
 ]
 </code></pre>
@@ -331,8 +331,8 @@
     },
      {
         <span class="hljs-string">"attributeName"</span>: <span class="hljs-string">"employer"</span>,
-        <span class="hljs-string">"value"</span>: <span class="hljs-string">"[object Entity]"</span>,<span class="hljs-comment">// Entity 117 from Company</span>
-        <span class="hljs-string">"otherValue"</span>: <span class="hljs-string">"[object Entity]"</span><span class="hljs-comment">// Entity 118 from Company</span>
+        <span class="hljs-string">"value"</span>: <span class="hljs-string">"[object Entity]"</span>,<span class="hljs-comment">// Company のエンティティ 117</span>
+        <span class="hljs-string">"otherValue"</span>: <span class="hljs-string">"[object Entity]"</span><span class="hljs-comment">// Company のエンティティ 118</span>
 
     }
 ]
@@ -354,12 +354,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk force drop if stamp changed</code>: Forces the drop even if the stamp has changed</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Result of drop operation</td></tr>
+<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk force drop if stamp changed</code>: スタンプが変更されていた場合でも強制的にドロップする</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>ドロップの結果</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.drop()</code> function deletes the data contained in the entity from the datastore, from the table related to its Dataclass. Note that the entity remains in memory.</p>
+<p><code>.drop()</code> 関数は、データクラスに対応するテーブルにおいて、 データストアのエンティティに格納されているデータを削除します。 エンティティそのものはメモリ内に残るという点に注意してください。</p>
 <p>In a multi-user or multi-process application, the <code>.drop()</code> function is executed under an <a href="/docs/Rx/ja/ORDA/entities.html#entity-locking">&quot;optimistic lock&quot;</a> mechanism, wherein an internal locking stamp is automatically incremented each time the record is saved.</p>
 <p>By default, if the <em>mode</em> parameter is omitted, the function will return an error (see below) if the same entity was modified (i.e. the stamp has changed) by another process or user in the meantime.</p>
 <p>Otherwise, you can pass the <code>dk force drop if stamp changed</code> option in the <em>mode</em> parameter: in this case, the entity is dropped even if the stamp has changed (and the primary key is still the same).</p>
@@ -449,18 +449,18 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to first entity of an entity selection (Null if not found)</td></tr>
+<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>エンティティセレクションの先頭エンティティへの参照 (見つからなければ null)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.first()</code> function returns a reference to the entity in first position of the entity selection which the entity belongs to.</p>
-<p>If the entity does not belong to any existing entity selection (i.e. <a href="#getselection">.getSelection( )</a> returns Null), the function returns a Null value.</p>
+<p><code>.first()</code> 関数は、 対象エンティティが所属するエンティティセレクションの先頭エンティティへの参照を返します。</p>
+<p>対象エンティティが所属する既存エンティティセレクションが存在しない場合 (つまり <a href="#getselection">entity.getSelection( )</a> が Null を返す場合)、関数は Null値を返します。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee</span>; <span class="hljs-variable">$firstEmployee </span>: cs.EmployeeEntity
- <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>) <span class="hljs-comment">//This entity selection contains 3 entities</span>
+ <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>) <span class="hljs-comment">// このエンティティセレクションは 3件のエンティティを持ちます</span>
  <span class="hljs-variable">$employee</span>:=<span class="hljs-variable">$employees</span>[<span class="hljs-number">2</span>]
- <span class="hljs-variable">$firstEmployee</span>:=<span class="hljs-variable">$employee</span>.<span class="hljs-function">first</span>() <span class="hljs-comment">//$firstEmployee is the first entity of the $employees entity selection</span>
+ <span class="hljs-variable">$firstEmployee</span>:=<span class="hljs-variable">$employee</span>.<span class="hljs-function">first</span>() <span class="hljs-comment">// $firstEmployee は、$employees エンティティセレクションの先頭エンティティです</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="fromobject"></a><a href="#fromobject" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.fromObject()</h2>
 <p><details><summary>履歴</summary></p>
@@ -479,11 +479,11 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>filler</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Object from which to fill the entity</td></tr>
+<tr><td>filler</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>エンティティの属性値を設定するオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.fromObject()</code> function fills an entity with the <em>filler</em> content.</p>
+<p><code>.fromObject()</code> 関数は、 <em>filler</em> に指定した内容でエンティティの属性値を設定します。</p>
 <blockquote>
 <p>This function modifies the original entity.</p>
 </blockquote>
@@ -506,8 +506,8 @@
     <span class="hljs-string">"salary"</span>: <span class="hljs-number">36500</span>,
     <span class="hljs-string">"birthDate"</span>: <span class="hljs-string">"1958-10-27T00:00:00.000Z"</span>,
     <span class="hljs-string">"woman"</span>: true,
-    <span class="hljs-string">"managerID"</span>: <span class="hljs-number">411</span>,<span class="hljs-comment">// relatedEntity given with PK</span>
-    <span class="hljs-string">"employerID"</span>: <span class="hljs-number">20</span> <span class="hljs-comment">// relatedEntity given with PK</span>
+    <span class="hljs-string">"managerID"</span>: <span class="hljs-number">411</span>,<span class="hljs-comment">// リレートエンティティを主キー属性値で指定します</span>
+    <span class="hljs-string">"employerID"</span>: <span class="hljs-number">20</span> <span class="hljs-comment">// リレートエンティティを主キー属性値で指定します</span>
 }
 </code></pre>
 <p>The following code will create an entity with manager and employer related entities.</p>
@@ -525,10 +525,10 @@
     <span class="hljs-string">"salary"</span>: <span class="hljs-number">68400</span>,
     <span class="hljs-string">"birthDate"</span>: <span class="hljs-string">"1971-09-03T00:00:00.000Z"</span>,
     <span class="hljs-string">"woman"</span>: false,
-    <span class="hljs-string">"employer"</span>: {<span class="hljs-comment">// relatedEntity given as an object</span>
+    <span class="hljs-string">"employer"</span>: {<span class="hljs-comment">// リレートエンティティをオブジェクトで指定します</span>
         <span class="hljs-string">"__KEY"</span>: <span class="hljs-string">"21"</span>
     },
-    <span class="hljs-string">"manager"</span>: {<span class="hljs-comment">// relatedEntity given as an object</span>
+    <span class="hljs-string">"manager"</span>: {<span class="hljs-comment">//  リレートエンティティをオブジェクトで指定します</span>
         <span class="hljs-string">"__KEY"</span>: <span class="hljs-string">"411"</span>
     }
 }
@@ -550,11 +550,11 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>4D.DataClass</td><td style="text-align:center">&lt;-</td><td>DataClass object to which the entity belongs</td></tr>
+<tr><td>戻り値</td><td>4D.DataClass</td><td style="text-align:center">&lt;-</td><td>エンティティが所属している DataClass オブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-6"></a><a href="#説明-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.getDataClass()</code> function returns the dataclass of the entity. This function is useful when writing generic code.</p>
+<p><code>.getDataClass()</code> 関数は、 エンティティのデータクラスを返します。 この関数は汎用的なコードを書くのに有用です。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-5"></a><a href="#例題-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>The following generic code duplicates any entity:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//duplicate_entity method </span>
@@ -586,13 +586,13 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk key as string</code>: primary key is returned as a string, no matter the primary key type</td></tr>
-<tr><td>戻り値</td><td>テキスト</td><td style="text-align:center">&lt;-</td><td>Value of the text primary key of the entity</td></tr>
-<tr><td>戻り値</td><td>整数</td><td style="text-align:center">&lt;-</td><td>Value of the numeric primary key of the entity</td></tr>
+<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk key as string</code>: プライマリーキーの型にかかわらず、プライマリーキーを文字列として返します</td></tr>
+<tr><td>戻り値</td><td>テキスト</td><td style="text-align:center">&lt;-</td><td>エンティティのテキスト型プライマリーキーの値</td></tr>
+<tr><td>戻り値</td><td>整数</td><td style="text-align:center">&lt;-</td><td>エンティティの数値型プライマリーキーの値</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.getKey()</code> function returns the primary key value of the entity.</p>
+<p><code>.getKey()</code> 関数は、 エンティティのプライマリーキー値を返します。</p>
 <p>Primary keys can be numbers (Integer) or strings. You can &quot;force&quot; the returned primary key value to be a string, no matter the actual primary key type, by passing the <code>dk key as string</code> option in the <em>mode</em> parameter.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-6"></a><a href="#例題-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection<span class="hljs-keyword">
@@ -618,12 +618,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Entity selection to which the entity belongs (Null if not found)</td></tr>
+<tr><td>戻り値</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>エンティティが所属するエンティティセレクション (見つからなければ null)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.getSelection()</code> function returns the entity selection which the entity belongs to.</p>
-<p>If the entity does not belong to an entity selection, the function returns Null.</p>
+<p><code>.getSelection()</code> 関数は、 エンティティが所属するエンティティセレクションを返します。</p>
+<p>対象エンティティがエンティティセレクションに所属していない場合、関数は Null値を返します。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-7"></a><a href="#例題-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$emp </span>: cs.EmployeeEntity<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employees</span>; <span class="hljs-variable">$employees2 </span>: cs.EmployeeSelection
@@ -652,11 +652,11 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>整数</td><td style="text-align:center">&lt;-</td><td>Stamp of the entity (0 if entity has just been created)</td></tr>
+<tr><td>戻り値</td><td>整数</td><td style="text-align:center">&lt;-</td><td>エンティティのスタンプ (エンティティが作成されたばかりの場合には 0)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-9"></a><a href="#説明-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.getStamp()</code> function  returns the current value of the stamp of the entity.</p>
+<p><code>.getStamp()</code> 関数は、  エンティティのスタンプの値を返します。</p>
 <p>The internal stamp is automatically incremented by 4D each time the entity is saved. It manages concurrent user access and modifications to the same entities (see <a href="/docs/Rx/ja/ORDA/entities.html#entity-locking"><strong>Entity locking</strong></a>).</p>
 <blockquote>
 <p>For a new entity (never saved), the function returns 0. To know if an entity has just been created, it is recommended to use <a href="#isnew">.isNew()</a>.</p>
@@ -691,12 +691,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>entitySelection</td><td>4D.EntitySelection</td><td style="text-align:center">-&gt;</td><td>Position of the entity is given according to this entity selection</td></tr>
-<tr><td>戻り値</td><td>整数</td><td style="text-align:center">&lt;-</td><td>Position of the entity in an entity selection</td></tr>
+<tr><td>entitySelection</td><td>4D.EntitySelection</td><td style="text-align:center">-&gt;</td><td>エンティティの位置を取得する対象のエンティティセレクション</td></tr>
+<tr><td>戻り値</td><td>整数</td><td style="text-align:center">&lt;-</td><td>エンティティセレクション内でのエンティティの位置</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.indexOf()</code> function returns the position of the entity in an entity selection.</p>
+<p><code>.indexOf()</code> 関数は、 エンティティセレクション内におけるエンティティの位置を返します。</p>
 <p>By default if the <em>entitySelection</em> parameter is omitted, the function returns the entity's position within its own entity selection. Otherwise, it returns the position of the entity within the specified <em>entitySelection</em>.</p>
 <p>The resulting value is included between 0 and the length of the entity selection -1.</p>
 <ul>
@@ -730,18 +730,18 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>True if entity has just been created and not yet saved. Otherwise, False.</td></tr>
+<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>エンティティが作成されたばかりで未保存の場合は true。 それ以外は false。</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.isNew()</code> function  returns True if the entity to which it is applied has just been created and has not yet been saved in the datastore. Otherwise, it returns False.</p>
+<p><code>.isNew()</code> 関数は、  対象エンティティが作成されたばかりで、まだデータストアに保存されていない場合に true を返します。 そうでない場合には、false を返します。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-10"></a><a href="#例題-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$emp </span>: cs.EmployeeEntity
 
  <span class="hljs-variable">$emp</span>:=ds.Employee.<span class="hljs-function">new</span>()<span class="hljs-keyword">
 
  If</span>(<span class="hljs-variable">$emp</span>.<span class="hljs-function">isNew</span>())
-<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"This is a new entity"</span>)<span class="hljs-keyword">
+<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"新規エンティティです。"</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="last"></a><a href="#last" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.last()</h2>
@@ -761,18 +761,18 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to last entity of an entity selection (Null if not found)</td></tr>
+<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>エンティティセレクションの最終エンティティへの参照 (見つからなければ null)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-12"></a><a href="#説明-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.last()</code> function returns a reference to the entity in last position of the entity selection which the entity belongs to.</p>
-<p>If the entity does not belong to any existing entity selection (i.e. <a href="#getselection">.getSelection( )</a> returns Null), the function returns a Null value.</p>
+<p><code>.last()</code> 関数は、 対象エンティティが所属するエンティティセレクションの最終エンティティへの参照を返します。</p>
+<p>対象エンティティが所属する既存エンティティセレクションが存在しない場合 (つまり <a href="#getselection">entity.getSelection( )</a> が Null を返す場合)、関数は Null値を返します。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-11"></a><a href="#例題-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee</span>; <span class="hljs-variable">$lastEmployee </span>: cs.EmployeeEntity
- <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>) <span class="hljs-comment">//This entity selection contains 3 entities</span>
+ <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>) <span class="hljs-comment">// このエンティティセレクションは 3件のエンティティを持ちます</span>
  <span class="hljs-variable">$employee</span>:=<span class="hljs-variable">$employees</span>[<span class="hljs-number">0</span>]
- <span class="hljs-variable">$lastEmployee</span>:=<span class="hljs-variable">$employee</span>.<span class="hljs-function">last</span>() <span class="hljs-comment">//$lastEmployee is the last entity of the $employees entity selection</span>
+ <span class="hljs-variable">$lastEmployee</span>:=<span class="hljs-variable">$employee</span>.<span class="hljs-function">last</span>() <span class="hljs-comment">// $lastEmployee は、$employees エンティティセレクションの最終エンティティです</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="lock"></a><a href="#lock" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.lock()</h2>
 <p><details><summary>履歴</summary></p>
@@ -791,12 +791,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk reload if stamp changed</code>: Reload before locking if stamp changed</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Result of lock operation</td></tr>
+<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk reload if stamp changed</code>: スタンプが変更されてる場合はロック前にリロードします</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>ロックの結果</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-13"></a><a href="#説明-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.lock()</code> function puts a pessimistic lock on the record referenced by the entity. The <a href="/docs/Rx/ja/ORDA/entities.html#entity-locking">lock is set</a> for a record and all the references of the entity in the current process.</p>
+<p><code>.lock()</code> 関数は、 対象エンティティが参照するレコードにペシミスティック・ロックをかけます。 The <a href="/docs/Rx/ja/ORDA/entities.html#entity-locking">lock is set</a> for a record and all the references of the entity in the current process.</p>
 <p>Other processes will see this record as locked (the <code>result.success</code> property will contain False if they try to lock the same entity using this function). Only functions executed in the &quot;locking&quot; session are allowed to edit and save the attributes of the entity. The entity can be loaded as read-only by other sessions, but they will not be able to enter and save values.</p>
 <p>A locked record is unlocked:</p>
 <ul>
@@ -890,11 +890,11 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to next entity in the entity selection (Null if not found)</td></tr>
+<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>エンティティセレクション内の次のエンティティへの参照 (見つからなければ null)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-14"></a><a href="#説明-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.next()</code> function returns a reference to the next entity in the entity selection which the entity belongs to.</p>
+<p><code>.next()</code> 関数は、 エンティティが所属するエンティティセレクションの次のエンティティへの参照を返します。</p>
 <p>If the entity does not belong to any existing entity selection (i.e. <a href="#getselection">.getSelection()</a> returns Null), the function returns a Null value.</p>
 <p>If there is no valid next entity in the entity selection (i.e. you are on the last entity of the selection), the function returns Null. If the next entity has been dropped, the function returns the next valid entity (and eventually Null).</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-12"></a><a href="#例題-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -922,11 +922,11 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to previous entity in the entity selection (Null if not found)</td></tr>
+<tr><td>戻り値</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>エンティティセレクション内の前のエンティティへの参照 (見つからなければ null)</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-15"></a><a href="#説明-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.previous()</code> function  returns a reference to the previous entity in the entity selection which the entity belongs to.</p>
+<p><code>.previous()</code> 関数は、  エンティティが所属するエンティティセレクションの前のエンティティへの参照を返します。</p>
 <p>If the entity does not belong to any existing entity selection (i.e. <a href="#getselection">.getSelection()</a> returns Null), the function returns a Null value.</p>
 <p>If there is no valid previous entity in the entity selection (i.e. you are on the first entity of the selection), the function returns Null. If the previous entity has been dropped, the function returns the previous valid entity (and eventually Null).</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-13"></a><a href="#例題-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -953,11 +953,11 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Status object</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>ステータスオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-16"></a><a href="#説明-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.reload()</code> function reloads the content of the entity in memory, according to information stored in the table related to the dataclass in the datastore. The reload is done only if the entity still exists with the same primary key.</p>
+<p><code>.reload()</code> 関数は、データストアのデータクラスに対応するテーブルに保存されている情報に応じて、 エンティティの中身をメモリ内にリロードします。 The reload is done only if the entity still exists with the same primary key.</p>
 <p><strong>戻り値</strong></p>
 <p>The object returned by <code>.reload( )</code> contains the following properties:</p>
 <table>
@@ -1013,12 +1013,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk auto merge</code>: Enables the automatic merge mode</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Result of save operation</td></tr>
+<tr><td>mode</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk auto merge</code>: 自動マージモードを有効化します</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>保存の結果</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-17"></a><a href="#説明-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.save()</code> function saves the changes made to the entity in the table related to its dataClass. You must call this method after creating or modifying an entity if you want to save the changes made to it.</p>
+<p><code>.save()</code> 関数は、データクラスに対応するテーブル内に、 エンティティの変更内容を保存します 。 You must call this method after creating or modifying an entity if you want to save the changes made to it.</p>
 <p>The save operation is executed only if at least one entity attribute has been &quot;touched&quot; (see the <a href="#touched"><code>.touched()</code></a> and <a href="#touchedattributes"><code>.touchedAttributes()</code></a> functions). Otherwise, the function does nothing (the trigger is not called).</p>
 <p>In a multi-user or multi-process application, the <code>.save()</code> function is executed under an <a href="/docs/Rx/ja/ORDA/entities.html#entity-locking">&quot;optimistic lock&quot;</a> mechanism, wherein an internal locking stamp is automatically incremented each time the record is saved.</p>
 <p>By default, if the <em>mode</em> parameter is omitted, the method will return an error (see below) whenever the same entity has been modified by another process or user in the meantime, no matter the modified attribute(s).</p>
@@ -1117,14 +1117,14 @@ origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>filterString</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Attribute(s) to extract (comma-separated string)</td></tr>
-<tr><td>filterCol</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>Collection of attribute(s) to extract</td></tr>
-<tr><td>options</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk with primary key</code>: adds the _KEY property;<br><code>dk with stamp</code>: adds the _STAMP property</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Object built from the entity</td></tr>
+<tr><td>filterString</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>取得する属性 (カンマ区切り)</td></tr>
+<tr><td>filterCol</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>取得する属性のコレクション</td></tr>
+<tr><td>options</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>dk with primary key</code>: __KEY プロパティを追加;<br><code>dk with stamp</code>: __STAMP プロパティを追加</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>エンティティを元にビルドされたオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-18"></a><a href="#説明-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.toObject()</code> function returns an object which has been built from the entity. Property names in the object match attribute names of the entity.</p>
+<p><code>.toObject()</code> 関数は、 エンティティからビルトされたオブジェクトを返します。 Property names in the object match attribute names of the entity.</p>
 <p>If no filter is specified, or if the <em>filterString</em> parameter contains an empty string or &quot;*&quot;, the returned object will contain:</p>
 <ul>
 <li>all storage entity attributes</li>
@@ -1311,7 +1311,7 @@ origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on
     }
 }
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-7"></a><a href="#example-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 7</h4>
+<h4><a class="anchor" aria-hidden="true" id="例題-7-1"></a><a href="#例題-7-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 7</h4>
 <p>Extracting some properties of a <code>relatedEntity</code>:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$col</span>:=New collection
  <span class="hljs-variable">$col</span>.<span class="hljs-function">push</span>(<span class="hljs-string">"employer.name"</span>)
@@ -1343,11 +1343,11 @@ origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>True if at least one entity attribute has been modified and not yet saved, else False</td></tr>
+<tr><td>戻り値</td><td>ブール</td><td style="text-align:center">&lt;-</td><td>少なくとも一つのエンティティ属性が編集されていて未保存の場合に true、それ以外の場合には false</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-19"></a><a href="#説明-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.touched()</code> function tests whether or not an entity attribute has been modified since the entity was loaded into memory or saved.</p>
+<p><code>.touched()</code> 関数は、 エンティティがメモリに読み込まれてから、あるいは保存されてから、エンティティ属性が変更されたかどうかをテストします。</p>
 <p>If an attribute has been modified or calculated, the function returns True, else it returns False. You can use this function to determine if you need to save the entity.</p>
 <p>This function returns False for a new entity that has just been created (with <a href="/docs/Rx/ja/API/dataclassClass.html#new"><code>.new( )</code></a>). Note however that if you use a function which calculates an attribute of the entity, the <code>.touched()</code> function will then return True. For example, if you call <a href="#getkey"><code>.getKey()</code></a> to calculate the primary key, <code>.touched()</code> returns True.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-15"></a><a href="#例題-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -1377,11 +1377,11 @@ origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>Names of touched attributes, or empty collection</td></tr>
+<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>変更された属性の名前、あるいは空のコレクション</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-20"></a><a href="#説明-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.touchedAttributes()</code> function returns the names of the attributes that have been modified since the entity was loaded into memory.</p>
+<p><code>.touchedAttributes()</code> 関数は、 メモリに読み込み後に変更されたエンティティの属性名を返します。</p>
 <p>This applies for attributes of the <a href="/docs/Rx/ja/API/dataclassAttributeClass.html#kind">kind</a> <code>storage</code> or <code>relatedEntity</code>.</p>
 <p>In the case of a related entity having been touched (i.e., the foreign key), the name of the related entity and its primary key's name are returned.</p>
 <p>If no entity attribute has been touched, the method returns an empty collection.</p>
@@ -1412,7 +1412,7 @@ origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on
 
  <span class="hljs-variable">$touchedAttributes</span>:=<span class="hljs-variable">$emp</span>.<span class="hljs-function">touchedAttributes</span>()
 
-  <span class="hljs-comment">//collection $touchedAttributes: ["firstName","lastName","employer","employerID"]</span>
+  <span class="hljs-comment">// $touchedAttributes コレクション: ["firstName","lastName","employer","employerID"]</span>
 </code></pre>
 <p>In this case:</p>
 <ul>
@@ -1437,11 +1437,11 @@ origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Status object</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>ステータスオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-21"></a><a href="#説明-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.unlock()</code> function removes the pessimistic lock on the record matching the entity in the datastore and table related to its dataclass.</p>
+<p><code>.unlock()</code> 関数は、データストアおよび、データクラスに対応するテーブル内の、 対象エンティティが参照するレコードのペシミスティック・ロックを解除します 。</p>
 <blockquote>
 <p>For more information, please refer to <a href="/docs/Rx/ja/ORDA/entities.html#entity-locking">Entity locking</a> section.</p>
 </blockquote>
@@ -1471,10 +1471,10 @@ origin| ||task_id|  number| Process id| ||user_name |text|  Session user name on
 
  <span class="hljs-variable">$employee</span>:=ds.Employee.<span class="hljs-function">get</span>(<span class="hljs-number">725</span>)
  <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$employee</span>.<span class="hljs-function">lock</span>()
- ... <span class="hljs-comment">//processing</span>
+ ... <span class="hljs-comment">// 処理</span>
  <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$employee</span>.<span class="hljs-function">unlock</span>()<span class="hljs-keyword">
  If</span>(<span class="hljs-variable">$status</span>.success)
-<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"The entity is now unlocked"</span>)<span class="hljs-keyword">
+<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"エンティティのロックは解除されました。"</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
 <style> h2 { background: #d9ebff;}</style>
