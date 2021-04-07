@@ -331,7 +331,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.HTTPCompressionThreshold** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.HTTPCompressionThreshold.Summary -->size threshold (bytes) for requests below which exchanges should not be compressed<!-- END REF -->. This setting is useful in order to avoid losing machine time by compressing small exchanges.
+ <!-- REF #webServerClass.HTTPCompressionThreshold.Summary -->HTTP圧縮のしきい値 (バイト単位)。このサイズ未満のリクエストについては、通信が圧縮されません<!-- END REF -->。 This setting is useful in order to avoid losing machine time by compressing small exchanges.
 
 Default compression threshold = 1024 bytes
 
