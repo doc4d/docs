@@ -475,11 +475,11 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.keepSession** : Boolean<!-- END REF -->
 
 
-<!-- REF #webServerClass.keepSession.Summary -->True if legacy sessions are enabled in the web server, False otherwise<!-- END REF -->.
+<!-- REF #webServerClass.keepSession.Summary -->Webサーバーで旧式セッションが有効されている場合に true、それ以外は false<!-- END REF -->。
 
 
 
-##### See also:
+##### 参照:
 
 [.scalableSession](#scalablesession)
 
@@ -647,7 +647,7 @@ The <!-- REF #webServerClass.rootFolder.Summary -->path of web server root folde
 
 
 
-##### See also:
+##### 参照:
 
 [.keepSession](#keepsession)
 <!-- END REF -->
