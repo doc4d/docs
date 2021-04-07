@@ -86,7 +86,7 @@
 <tr><td><a href="#defaulthomepage"><strong>.defaultHomepage</strong> : Text</a><p>    デフォルトのホームページの名称</td></tr>
 <tr><td><a href="#hstsenabled"><strong>.HSTSEnabled</strong> : Boolean</a><p>    HTTP Strict Transport Security (HSTS) 状態</td></tr>
 <tr><td><a href="#hstsmaxage"><strong>.HSTSMaxAge</strong> : Number</a><p>    新規クライアント接続ごとに HSTS がアクティブな最長時間 (秒単位)</td></tr>
-<tr><td><a href="#httpcompressionlevel"><strong>.HTTPCompressionLevel</strong> : Number</a><p>    4D HTTPサーバーの HTTP圧縮通信 (クライアントリクエストまたはサーバーレスポンス) における圧縮レベル</td><td></td><td><a href="#httpcompressionthreshold"><strong>.HTTPCompressionThreshold</strong> : Number</a><p>    size threshold (bytes) for requests below which exchanges should not be compressed</td><td></td><td><a href="#httpenabled"><strong>.HTTPEnabled</strong> : Boolean</a><p>    HTTP protocol state</td><td></td><td><a href="#httpport"><strong>.HTTPPort</strong> : Number</a><p>    listening IP port number for HTTP</td><td></td><td><a href="#httptrace"><strong>.HTTPTrace</strong> : Boolean</a><p>    activation of <code>HTTP TRACE</code></td><td></td><td><a href="#httpsenabled"><strong>.HTTPSEnabled</strong> : Boolean</a><p>    HTTPS protocol state</td><td></td><td><a href="#httpsport"><strong>.HTTPSPort</strong> : Number</a><p>    listening IP port number for HTTPS</td><td></td><td><a href="#inactiveprocesstimeout"><strong>.inactiveProcessTimeout</strong> : Number</a><p>    life duration (in minutes) of the inactive legacy session processes</td><td></td><td><a href="#inactivesessiontimeout"><strong>.inactiveSessionTimeout</strong> : Number</a><p>    life duration (in minutes) of inactive legacy sessions (duration set in cookie)</td><td></td><td><a href="#ipaddresstolisten"><strong>.IPAddressToListen</strong> : Text</a><p>    IP address on which the 4D Web Server will receive HTTP requests</td><td></td><td><a href="#isrunning"><strong>.isRunning</strong> : Boolean</a><p>    web server running state</td><td></td><td><a href="#keepsession"><strong>.keepSession</strong> : Boolean</a><p>    True if legacy sessions are enabled in the web server, False otherwise</td><td></td><td><a href="#logrecording"><strong>.logRecording</strong> : Number</a><p>    log requests (logweb.txt) recording value</td><td></td><td><a href="#maxconcurrentprocesses"><strong>.maxConcurrentProcesses</strong> : Number</a><p>    maximum number of concurrent web processes supported by the web server</td><td></td><td><a href="#maxrequestsize"><strong>.maxRequestSize</strong> : Number</a><p>    maximum size (in bytes) of incoming HTTP requests (POST) that the web server is allowed to process</td><td></td><td><a href="#maxsessions"><strong>.maxSessions</strong> : Number</a><p>    maximum number of simultaneous legacy sessions</td><td></td><td><a href="#mintlsversion"><strong>.minTLSVersion</strong> : Number</a><p>    minimum TLS version accepted for connections</td><td></td><td><a href="#name"><strong>.name</strong> : Text</a><p>    name of the web server application</td><td></td><td><a href="#opensslversion"><strong>.openSSLVersion</strong> : Text</a><p>    version of the OpenSSL library used</td><td></td><td><a href="#perfectforwardsecrecy"><strong>.perfectForwardSecrecy</strong> : Boolean</a><p>    PFS availability on the server</td><td></td><td><a href="#rootfolder"><strong>.rootFolder</strong> : Text</a><p>    path of web server root folder</td><td></td><td><a href="#scalableSession"><strong>.scalableSession</strong> : Boolean</a><p>    True if scalable sessions are used in the web server, and False otherwise</td><td><a href="#sessioncookiedomain"><strong>.sessionCookieDomain</strong> : Text</a><p>    &quot;domain&quot; field of the session cookie</td><td></td><td><a href="#sessioncookiename"><strong>.sessionCookieName</strong> : Text</a><p>    name of the cookie used for storing the session ID</td><td></td><td><a href="#sessioncookiepath"><strong>.sessionCookiePath</strong> : Text</a><p>    &quot;path&quot; field of the session cookie</td><td></td><td><a href="#sessionipaddressvalidation"><strong>.sessionIPAddressValidation</strong> : Boolean</a><p>    IP address validation for session cookies</td><td></td><td><a href="#start"><strong>.start</strong>() : Object<br><strong>.start</strong>( <em>settings</em> : Object ) : Object</a><p>    starts the web server on which it is applied</td><td></td><td><a href="#stop"><strong>.stop()</strong> </a><p>    stops the web server on which it is applied</td></tr>
+<tr><td><a href="#httpcompressionlevel"><strong>.HTTPCompressionLevel</strong> : Number</a><p>    4D HTTPサーバーの HTTP圧縮通信 (クライアントリクエストまたはサーバーレスポンス) における圧縮レベル</td><td></td><td><a href="#httpcompressionthreshold"><strong>.HTTPCompressionThreshold</strong> : Number</a><p>    HTTP圧縮のしきい値 (バイト単位)。このサイズ未満のリクエストについては、通信が圧縮されません</td><td></td><td><a href="#httpenabled"><strong>.HTTPEnabled</strong> : Boolean</a><p>    HTTPプロトコルの状態</td><td></td><td><a href="#httpport"><strong>.HTTPPort</strong> : Number</a><p>    HTTP のリッスンIPポート番号</td><td></td><td><a href="#httptrace"><strong>.HTTPTrace</strong> : Boolean</a><p>    <code>HTTP TRACE</code> の有効化状態</td><td></td><td><a href="#httpsenabled"><strong>.HTTPSEnabled</strong> : Boolean</a><p>    HTTPSプロトコル状態</td><td></td><td><a href="#httpsport"><strong>.HTTPSPort</strong> : Number</a><p>    HTTPS のリッスンIPポート番号</td><td></td><td><a href="#inactiveprocesstimeout"><strong>.inactiveProcessTimeout</strong> : Number</a><p>    旧式セッションプロセスの非アクティブタイムアウト時間 (分単位)</td><td></td><td><a href="#inactivesessiontimeout"><strong>.inactiveSessionTimeout</strong> : Number</a><p>    旧式セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)</td><td></td><td><a href="#ipaddresstolisten"><strong>.IPAddressToListen</strong> : Text</a><p>    4D Webサーバーが HTTPリクエストを受信する IPアドレス</td><td></td><td><a href="#isrunning"><strong>.isRunning</strong> : Boolean</a><p>    Webサーバーの実行状態</td><td></td><td><a href="#keepsession"><strong>.keepSession</strong> : Boolean</a><p>    Webサーバーで旧式セッションが有効されている場合に true、それ以外は false</td><td></td><td><a href="#logrecording"><strong>.logRecording</strong> : Number</a><p>    リクエストログ (logweb.txt) の記録オプション値</td><td></td><td><a href="#maxconcurrentprocesses"><strong>.maxConcurrentProcesses</strong> : Number</a><p>    Webサーバーにてサポートする最大同時Webプロセス数</td><td></td><td><a href="#maxrequestsize"><strong>.maxRequestSize</strong> : Number</a><p>    Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイズ (バイト単位)</td><td></td><td><a href="#maxsessions"><strong>.maxSessions</strong> : Number</a><p>    旧式セッションにおける同時セッションの最大数</td><td></td><td><a href="#mintlsversion"><strong>.minTLSVersion</strong> : Number</a><p>    接続に必要な最低TLSバージョン</td><td></td><td><a href="#name"><strong>.name</strong> : Text</a><p>    Webサーバーアプリケーションの名称</td><td></td><td><a href="#opensslversion"><strong>.openSSLVersion</strong> : Text</a><p>    使用されている OpenSSLライブラリのバージョン</td><td></td><td><a href="#perfectforwardsecrecy"><strong>.perfectForwardSecrecy</strong> : Boolean</a><p>    サーバーの PFS利用可否状況</td><td></td><td><a href="#rootfolder"><strong>.rootFolder</strong> : Text</a><p>    Webサーバーのルートフォルダーのパス</td><td></td><td><a href="#scalableSession"><strong>.scalableSession</strong> : Boolean</a><p>    Webサーバーがスケーラブルセッションを使用している場合に true、それ以外は false</td><td><a href="#sessioncookiedomain"><strong>.sessionCookieDomain</strong> : Text</a><p>    セッションcookie の &quot;domain&quot; フィールド</td><td></td><td><a href="#sessioncookiename"><strong>.sessionCookieName</strong> : Text</a><p>    セッションID の保存に使用されるセッションcookie の名称</td><td></td><td><a href="#sessioncookiepath"><strong>.sessionCookiePath</strong> : Text</a><p>    セッションcookie の &quot;path&quot; フィールド</td><td></td><td><a href="#sessionipaddressvalidation"><strong>.sessionIPAddressValidation</strong> : Boolean</a><p>    セッションcookie の IP アドレス検証</td><td></td><td><a href="#start"><strong>.start</strong>() : Object<br><strong>.start</strong>( <em>settings</em> : Object ) : Object</a><p>    対象の Webサーバーを開始させます</td><td></td><td><a href="#stop"><strong>.stop()</strong> </a><p>    対象の Webサーバーを停止します</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="web-server"></a><a href="#web-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WEB Server</h2>
@@ -255,119 +255,112 @@
 <p>デフォルト = 1 (低圧縮)。</p>
 <h2><a class="anchor" aria-hidden="true" id="httpcompressionthreshold"></a><a href="#httpcompressionthreshold" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.HTTPCompressionThreshold</h2>
 <p><strong>.HTTPCompressionThreshold</strong> : Number</p>
-<p>The size threshold (bytes) for requests below which exchanges should not be compressed. This setting is useful in order to avoid losing machine time by compressing small exchanges.</p>
-<p>Default compression threshold = 1024 bytes</p>
+<p>HTTP圧縮のしきい値 (バイト単位)。このサイズ未満のリクエストについては、通信が圧縮されません。 この設定は、通信サイズが小さい場合、圧縮に処理時間が費やされるのを避けるのに有用です。</p>
+<p>デフォルトのしきい値 = 1024 バイト</p>
 <h2><a class="anchor" aria-hidden="true" id="httpenabled"></a><a href="#httpenabled" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.HTTPEnabled</h2>
 <p><strong>.HTTPEnabled</strong> : Boolean</p>
-<p>The HTTP protocol state.</p>
+<p>HTTPプロトコルの状態。</p>
 <h2><a class="anchor" aria-hidden="true" id="httpport"></a><a href="#httpport" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.HTTPPort</h2>
 <p><strong>.HTTPPort</strong> : Number</p>
-<p>The listening IP port number for HTTP.</p>
-<p>Default = 80</p>
+<p>HTTP のリッスンIPポート番号。</p>
+<p>デフォルト = 80</p>
 <h2><a class="anchor" aria-hidden="true" id="httptrace"></a><a href="#httptrace" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.HTTPTrace</h2>
 <p><strong>.HTTPTrace</strong> : Boolean</p>
-<p>The activation of <code>HTTP TRACE</code>. For security reasons, by default the Web server rejects <code>HTTP TRACE</code> requests with an error 405. When enabled, the web server replies to <code>HTTP TRACE</code> requests with the request line, header, and body.</p>
+<p><code>HTTP TRACE</code> の有効化状態。 セキュリティ上の理由により、Webサーバーはデフォルトで <code>HTTP TRACE</code> リクエストをエラー405 で拒否します。 有効化されている場合、<code>HTTP TRACE</code> リクエストに対して Webサーバーは、リクエスト行、ヘッダー、および本文を返します。</p>
 <h2><a class="anchor" aria-hidden="true" id="httpsenabled"></a><a href="#httpsenabled" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.HTTPSEnabled</h2>
 <p><strong>.HTTPSEnabled</strong> : Boolean
-The HTTPS protocol state.</p>
+HTTPSプロトコル状態。</p>
 <h2><a class="anchor" aria-hidden="true" id="httpsport"></a><a href="#httpsport" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.HTTPSPort</h2>
 <p><strong>.HTTPSPort</strong> : Number
-The listening IP port number for HTTPS.</p>
-<p>Default = 443</p>
+HTTPS のリッスンIPポート番号。</p>
+<p>デフォルト = 443</p>
 <h2><a class="anchor" aria-hidden="true" id="inactiveprocesstimeout"></a><a href="#inactiveprocesstimeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.inactiveProcessTimeout</h2>
 <p><strong>.inactiveProcessTimeout</strong> : Number</p>
 <blockquote>
-<p>This property is not returned in <a href="#scalablesession">scalable sessions mode</a>.</p>
+<p><a href="#scalablesession">スケーラブルセッションモード</a> の場合には、このプロパティは返されません。 旧式セッションプロセスの非アクティブタイムアウト時間 (分単位)。 タイムアウト時間が経過すると、サーバーはプロセスを終了します。すると、<code>On Web Legacy Close Session</code> データベースメソッドが呼び出され、旧式セッションのコンテキストは削除されます。</p>
 </blockquote>
-<p>The life duration (in minutes) of the inactive legacy session processes. At the end of the timeout, the process is killed on the server, the <code>On Web Legacy Close Session</code> database method is called, then the legacy session context is destroyed.</p>
-<p>Default = 480 minutes</p>
+<p>デフォルト = 480 分</p>
 <h2><a class="anchor" aria-hidden="true" id="inactivesessiontimeout"></a><a href="#inactivesessiontimeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.inactiveSessionTimeout</h2>
 <p><strong>.inactiveSessionTimeout</strong> : Number</p>
 <blockquote>
-<p>This property is not returned in <a href="#scalablesession">scalable sessions mode</a>.</p>
+<p><a href="#scalablesession">スケーラブルセッションモード</a> の場合には、このプロパティは返されません。 旧式セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)。 タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。</p>
 </blockquote>
-<p>The life duration (in minutes) of inactive legacy sessions (duration set in cookie). At the end of this period, the session cookie expires and is no longer sent by the HTTP client.</p>
-<p>Default = 480 minutes</p>
+<p>デフォルト = 480 分</p>
 <h2><a class="anchor" aria-hidden="true" id="ipaddresstolisten"></a><a href="#ipaddresstolisten" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.IPAddressToListen</h2>
 <p><strong>.IPAddressToListen</strong> : Text</p>
-<p>The IP address on which the 4D Web Server will receive HTTP requests. By default, no specific address is defined. Both IPv6 string formats and IPv4 string formats are supported.</p>
+<p>4D Webサーバーが HTTPリクエストを受信する IPアドレス。 デフォルトでは、特定のアドレスは定義されていません。 IPv6 および IPv4 文字列形式の両方がサポートされています。</p>
 <h2><a class="anchor" aria-hidden="true" id="isrunning"></a><a href="#isrunning" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isRunning</h2>
 <p><strong>.isRunning</strong> : Boolean</p>
-<p><em>Read-only property</em></p>
-<p>The web server running state.</p>
+<p><em>読み取り専用プロパティ</em> Webサーバーの実行状態。</p>
 <h2><a class="anchor" aria-hidden="true" id="keepsession"></a><a href="#keepsession" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.keepSession</h2>
 <p><strong>.keepSession</strong> : Boolean</p>
-<p>True if legacy sessions are enabled in the web server, False otherwise.</p>
-<h5><a class="anchor" aria-hidden="true" id="see-also"></a><a href="#see-also" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>See also:</h5>
+<p>Webサーバーで旧式セッションが有効されている場合に true、それ以外は false。</p>
+<h5><a class="anchor" aria-hidden="true" id="参照"></a><a href="#参照" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参照:</h5>
 <p><a href="#scalablesession">.scalableSession</a></p>
 <h2><a class="anchor" aria-hidden="true" id="logrecording"></a><a href="#logrecording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.logRecording</h2>
 <p><strong>.logRecording</strong> : Number</p>
-<p>The log requests (logweb.txt) recording value.</p>
+<p>リクエストログ (logweb.txt) の記録オプション値。</p>
 <ul>
-<li>0 = Do not record (default)</li>
-<li>1 = Record in CLF format</li>
-<li>2 = Record in DLF format</li>
-<li>3 = Record in ELF format</li>
-<li>4 = Record in WLF format</li>
+<li>0 = 記録しない (デフォルト)</li>
+<li>1 = CLF形式で記録する</li>
+<li>2 = DLF形式で記録する</li>
+<li>3 = ELF形式で記録する</li>
+<li>4 = WLF形式で記録する</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="maxconcurrentprocesses"></a><a href="#maxconcurrentprocesses" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.maxConcurrentProcesses</h2>
 <p><strong>.maxConcurrentProcesses</strong> : Number</p>
-<p>The maximum number of concurrent web processes supported by the web server. When this number (minus one) is reached, 4D will not create any other processes and returns the HTTP status 503 - Service Unavailable to all new requests.</p>
-<p>Possible values: 10 - 32000</p>
-<p>Default = 100</p>
+<p>Webサーバーにてサポートする最大同時Webプロセス数。 この数値 (マイナス1) に達すると、4D はプロセスを作成しなくなり、新規リクエストに対して HTTPステータス 503 - Service Unavailable を返します。</p>
+<p>とりうる値: 10 - 32000</p>
+<p>デフォルト = 100</p>
 <h2><a class="anchor" aria-hidden="true" id="maxrequestsize"></a><a href="#maxrequestsize" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.maxRequestSize</h2>
 <p><strong>.maxRequestSize</strong> : Number</p>
-<p>The maximum size (in bytes) of incoming HTTP requests (POST) that the web server is allowed to process. Passing the maximum value (2147483648) means that, in practice, no limit is set. This limit is used to avoid web server saturation due to incoming requests that are too large. If a request reaches this limit, the web server rejects it.</p>
-<p>Possible values: 500000 - 2147483648</p>
+<p>Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイズ (バイト単位)。 最大値 (2147483648) に設定した場合、実際には制限無しということになります。 制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 リクエストのサイズが制限に達していると、Webサーバーによって拒否されます。</p>
+<p>とりうる値: 500000 - 2147483648</p>
 <h2><a class="anchor" aria-hidden="true" id="maxsessions"></a><a href="#maxsessions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.maxSessions</h2>
 <p><strong>.maxSessions</strong> : Number</p>
 <blockquote>
-<p>This property is not returned in <a href="#scalablesession">scalable sessions mode</a>.</p>
+<p><a href="#scalablesession">スケーラブルセッションモード</a> の場合には、このプロパティは返されません。 旧式セッションにおける同時セッションの最大数。 制限に達すると、Webサーバーが新規セッションを作成するときに、一番古い旧式セッションが閉じられます (<code>On Web Legacy Close Session</code> データベースメソッドが呼び出されます)。 旧式セッションの同時セッション数は、Webプロセスの合計値を超えることはできません (<code>maxConcurrentProcesses</code> プロパティ、デフォルト値は 100)。</p>
 </blockquote>
-<p>The maximum number of simultaneous legacy sessions. When you reach the limit, the oldest legacy session is closed (and <code>On Web Legacy Close Session</code> database method is called) if the web server needs to create a new one. The number of simultaneous legacy sessions cannot exceed the total number of web processes (<code>maxConcurrentProcesses</code> property, 100 by default)</p>
 <h2><a class="anchor" aria-hidden="true" id="mintlsversion"></a><a href="#mintlsversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.minTLSVersion</h2>
 <p><strong>.minTLSVersion</strong> : Number</p>
-<p>The minimum TLS version accepted for connections. Connection attempts from clients supporting only versions below the minimum will be rejected.</p>
+<p>接続に必要な最低TLSバージョン。 これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。</p>
 <p>とりうる値:</p>
 <ul>
 <li>1 = TLSv1_0</li>
 <li>2 = TLSv1_1</li>
-<li>3 = TLSv1_2 (default)</li>
+<li>3 = TLSv1_2 (デフォルト)</li>
 </ul>
-<p>If modified, the server must be restarted to use the new value.</p>
+<p>変更した場合、設定を反映するには Webサーバーを再起動する必要があります。</p>
 <h2><a class="anchor" aria-hidden="true" id="name"></a><a href="#name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.name</h2>
 <p><strong>.name</strong> : Text</p>
-<p><em>Read-only property</em></p>
-<p>The name of the web server application.</p>
+<p><em>読み取り専用プロパティ</em> Webサーバーアプリケーションの名称。</p>
 <h2><a class="anchor" aria-hidden="true" id="opensslversion"></a><a href="#opensslversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.openSSLVersion</h2>
 <p><strong>.openSSLVersion</strong> : Text</p>
-<p><em>Read-only property</em></p>
-<p>The version of the OpenSSL library used.</p>
+<p><em>読み取り専用プロパティ</em> 使用されている OpenSSLライブラリのバージョン。</p>
 <h2><a class="anchor" aria-hidden="true" id="perfectforwardsecrecy"></a><a href="#perfectforwardsecrecy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.perfectForwardSecrecy</h2>
 <p><strong>.perfectForwardSecrecy</strong> : Boolean</p>
-<p><em>Read-only property</em></p>
-<p>The PFS availability on the server.</p>
+<p><em>読み取り専用プロパティ</em> サーバーの PFS利用可否状況。</p>
 <h2><a class="anchor" aria-hidden="true" id="rootfolder"></a><a href="#rootfolder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.rootFolder</h2>
 <p><strong>.rootFolder</strong> : Text</p>
-<p>The path of web server root folder. パスは、ファイルシステムを使用した POSIXフルパスの形式です。 When using this property in the <code>settings</code> parameter, it can be a <code>Folder</code> object.</p>
+<p>Webサーバーのルートフォルダーのパス。 パスは、ファイルシステムを使用した POSIXフルパスの形式です。 <code>settings</code> 引数内でこのプロパティを使用する場合、</code>Folder</code> オブジェクトも使用可能です。</p>
 <h2><a class="anchor" aria-hidden="true" id="scalablesession"></a><a href="#scalablesession" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.scalableSession</h2>
 <p><strong>.scalableSession</strong> : Boolean</p>
-<p>True if scalable sessions are used in the web server, and False otherwise.</p>
-<h5><a class="anchor" aria-hidden="true" id="see-also-1"></a><a href="#see-also-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>See also:</h5>
+<p>Webサーバーがスケーラブルセッションを使用している場合に true、それ以外は false。</p>
+<h5><a class="anchor" aria-hidden="true" id="参照-1"></a><a href="#参照-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参照:</h5>
 <p><a href="#keepsession">.keepSession</a></p>
 <h2><a class="anchor" aria-hidden="true" id="sessioncookiedomain"></a><a href="#sessioncookiedomain" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.sessionCookieDomain</h2>
 <p><strong>.sessionCookieDomain</strong> : Text</p>
-<p>The &quot;domain&quot; field of the session cookie. Used to control the scope of the session cookies. If you set, for example, the value &quot;/*.4d.fr&quot; for this selector, the client will only send a cookie when the request is addressed to the domain &quot;.4d.fr&quot;, which excludes servers hosting external static data.</p>
+<p>セッションcookie の &quot;domain&quot; フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに &quot;/*.4d.fr&quot; の値を設定した場合、リクエストの宛先が &quot;.4d.fr&quot; のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="sessioncookiename"></a><a href="#sessioncookiename" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.sessionCookieName</h2>
 <p><strong>.sessionCookieName</strong> : Text</p>
-<p>The name of the cookie used for storing the session ID.</p>
-<p><em>Read-only property</em></p>
+<p>セッションID の保存に使用されるセッションcookie の名称。</p>
+<p><em>読み取り専用プロパティ</em></p>
 <h2><a class="anchor" aria-hidden="true" id="sessioncookiepath"></a><a href="#sessioncookiepath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.sessionCookiePath</h2>
 <p><strong>.sessionCookiePath</strong> : Text</p>
-<p>The &quot;path&quot; field of the session cookie. Used to control the scope of the session cookies. If you set, for example, the value &quot;/4DACTION&quot; for this selector, the client will only send a cookie for dynamic requests beginning with 4DACTION, and not for pictures, static pages, etc.</p>
+<p>セッションcookie の &quot;path&quot; フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに &quot;/4DACTION&quot; という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="sessionipaddressvalidation"></a><a href="#sessionipaddressvalidation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.sessionIPAddressValidation</h2>
 <p><strong>.sessionIPAddressValidation</strong> : Boolean</p>
-<p>The IP address validation for session cookies. For security reasons, by default the web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between WiFi and 3G/4G networks, their IP address will change. In this case, you can allow clients to be able to continue using their web sessions even when the IP addresses change (this setting lowers the security level of your application).</p>
+<p>セッションcookie の IP アドレス検証。 セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。このアドレスが、cookie作成時の IPアドレスと合致しない場合、リクエストは拒否されます。 アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。 このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。</p>
 <h2><a class="anchor" aria-hidden="true" id="start"></a><a href="#start" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.start()</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -385,30 +378,30 @@ The listening IP port number for HTTPS.</p>
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>settings</td><td>オブジェクト</td><td>-&gt;</td><td>Web server settings to set at startup</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td>&lt;-</td><td>Status of the web server startup</td></tr>
+<tr><td>settings</td><td>オブジェクト</td><td>-&gt;</td><td>開始時の Webサーバー設定</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td>&lt;-</td><td>Webサーバー開始のステータス</td></tr>
 </tbody>
 </table>
-<p>The <code>.start()</code> function starts the web server on which it is applied, using properties set in the optional <em>settings</em> object parameter.</p>
-<p>The web server starts with default settings defined in the settings file of the project or (host database only) using the <code>WEB SET OPTION</code> command. However, using the <em>settings</em> parameter, you can define customized properties for the web server session.</p>
-<p>All settings of <a href="#web-server-object">Web Server objects</a> can be customized, except read-only properties (<a href="#isrunning">.isRunning</a>, <a href="#name">.name</a>, <a href="#opensslversion">.openSSLVersion</a>, <a href="#perfectforwardsecrecy">.perfectForwardSecrecy</a>, and [.sessionCookieName(#sessioncookiename)]).</p>
-<p>Customized session settings will be reset when the <a href="#stop"><code>.stop()</code></a> function is called.</p>
+<p><code>.start()</code> 関数は、任意の <em>settings</em> オブジェクト引数に設定したプロパティを使用して、 対象の Webサーバーを開始させます。</p>
+<p>プロジェクトの設定ファイルに定義されているデフォルトの設定、または <code>WEB SET OPTION</code> コマンドで定義された設定 (ホストデータベースのみ) を使用して、Webサーバーは開始されます。 しかし、<em>settings</em> 引数を渡せば、Webサーバーセッションにおいてカスタマイズされた設定を定義することができます。</p>
+<p><a href="#webサーバーオブジェクト">Web Server オブジェクト</a> の設定は、読み取り専用プロパティ (<a href="#isrunning">.isRunning</a>、<a href="#name">.name</a>、<a href="#opensslversion">.openSSLVersion</a>、<a href="#perfectforwardsecrecy">.perfectForwardSecrecy</a>、[.sessionCookieName(#sessioncookiename)]) を除いて、すべてカスタマイズ可能です。</p>
+<p>カスタマイズされた設定は <a href="#stop"><code>.stop()</code></a> が呼び出されたときにリセットされます。</p>
 <h4><a class="anchor" aria-hidden="true" id="返されるオブジェクト"></a><a href="#返されるオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>返されるオブジェクト</h4>
-<p>The function returns an object describing the Web server launch status. This object can contain the following properties:</p>
+<p>関数は Webサーバーの開始ステータスを表すオブジェクトを返します。 このオブジェクトには、次のプロパティが格納されることがあります:</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th></th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td></td><td>ブール</td><td>True if the web server was correctly started, False otherwise</td></tr>
-<tr><td>errors</td><td></td><td>コレクション</td><td>4D error stack (not returned if the web server started successfully)</td></tr>
-<tr><td></td><td>[].errCode</td><td>数値</td><td>4D error code</td></tr>
-<tr><td></td><td>[].message</td><td>テキスト</td><td>Description of the 4D error</td></tr>
-<tr><td></td><td>[].componentSignature</td><td>テキスト</td><td>Signature of the internal component which returned the error</td></tr>
+<tr><td>success</td><td></td><td>ブール</td><td>Webサーバーが正常に開始された場合には true、それ以外は false</td></tr>
+<tr><td>errors</td><td></td><td>コレクション</td><td>エラースタック (Webサーバーが正常に開始された場合には返されません)</td></tr>
+<tr><td></td><td>[].errCode</td><td>数値</td><td>4Dエラーコード</td></tr>
+<tr><td></td><td>[].message</td><td>テキスト</td><td>4Dエラーの詳細</td></tr>
+<tr><td></td><td>[].componentSignature</td><td>テキスト</td><td>エラーを返した内部コンポーネントの署名</td></tr>
 </tbody>
 </table>
 <blockquote>
-<p>If the Web server was already launched, an error is returned.</p>
+<p>Webサーバーが既に起動していた場合、エラーが返されます。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$settings</span>;<span class="hljs-variable">$result </span>: Object<span class="hljs-keyword">
@@ -437,13 +430,13 @@ The listening IP port number for HTTPS.</p>
 <p>| 参照 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |</p>
-<p>The <code>.stop()</code> function stops the web server on which it is applied.</p>
-<p>If the web server was started, all web connections and web processes are closed, once the currently handled requests are finished. If the web server was not started, the method does nothing.</p>
+<p><code>.stop()</code> 関数は、 対象の Webサーバーを停止します。</p>
+<p>Webサーバーが開始されている場合は、処理中のリクエストが完了次第、すべての Web接続と Webプロセスが閉じられます。 Webサーバーが開始されていなかった場合、関数はなにもしません。</p>
 <blockquote>
-<p>This function resets the customized web settings defined for the session using the <em>settings</em> parameter of the <a href="#start"><code>.start()</code></a> function, if any.</p>
+<p>この関数は、<a href="#start"><code>.start()</code></a> 関数の <em>settings</em> 引数を使用してセッションに対して定義したカスタマイズされた Web設定があった場合、それらをリセットします。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p>To stop the database Web server:</p>
+<p>データベースWebサーバーを停止します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$webServer </span>: 4D.WebServer
 
  <span class="hljs-variable">$webServer</span>:=<span class="hljs-function">WEB Server</span>(Web server database)
