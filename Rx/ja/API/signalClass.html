@@ -131,10 +131,10 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#description"><strong>.description</strong> : Text</a><p>    contains a custom description for the <code>Signal</code> object.</td></tr>
-<tr><td><a href="#signaled"><strong>.signaled</strong> : Boolean</a><p>    contains the current state of the <code>Signal</code> object</td></tr>
-<tr><td><a href="#trigger"><strong>.trigger( )</strong></a><p>    sets the <code>signaled</code> property of the signal object to <strong>true</strong></td></tr>
-<tr><td><a href="#wait"><strong>.wait</strong>( { <em>timeout</em> : Real } ) : Boolean </a><p>    makes the current process wait until the <code>.signaled</code> property of the signal object to become <strong>true</strong> or the optional <em>timeout</em> to expire</td></tr>
+<tr><td><a href="#description"><strong>.description</strong> : Text</a><p>    <code>Signal</code> オブジェクトのカスタムな詳細</td></tr>
+<tr><td><a href="#signaled"><strong>.signaled</strong> : Boolean</a><p>    <code>Signal</code> オブジェクトの現在の状態</td></tr>
+<tr><td><a href="#trigger"><strong>.trigger( )</strong></a><p>    シグナルオブジェクトの <code>signaled</code> プロパティを <strong>true</strong> に設定します</td></tr>
+<tr><td><a href="#wait"><strong>.wait</strong>( { <em>timeout</em> : Real } ) : Boolean </a><p>    シグナルオブジェクトの <code>.signaled</code> プロパティが <strong>true</strong> になるか、任意の <em>timeout</em> に指定したタイムアウト時間が経過するまで、カレントプロセスを待機させます</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="new-signal"></a><a href="#new-signal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New signal</h2>
@@ -154,12 +154,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>description</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Description for the signal</td></tr>
-<tr><td>戻り値</td><td>4D.Signal</td><td style="text-align:center">&lt;-</td><td>Native object encapsulating the signal</td></tr>
+<tr><td>description</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>シグナルの詳細</td></tr>
+<tr><td>戻り値</td><td>4D.Signal</td><td style="text-align:center">&lt;-</td><td>シグナルを格納するネイティブオブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>New signal</code> command creates a <code>4D.Signal</code> object.</p>
+<p><code>New signal</code> コマンドは、 <code>4D.Signal</code> オブジェクトを作成します。</p>
 <p>A signal is a shared object which can be passed as parameter from a worker or process to another worker or process, so that:</p>
 <ul>
 <li>the called worker/process can update the signal object after specific processing has completed</li>
@@ -168,7 +168,7 @@
 <p>Optionally, in the <em>description</em> parameter you can pass a custom text describing the signal. This text can also be defined after signal creation.</p>
 <p>Since the signal object is a shared object, it can also be used to maintain user properties, including the <a href="#description"><code>.description</code></a> property, by calling the <code>Use...End use</code> structure.</p>
 <p><strong>戻り値</strong></p>
-<p>A new <a href="#signal-object"><code>4D.Signal</code> object</a>.</p>
+<p>新規の <a href="#signal-object"><code>4D.Signal</code> オブジェクト</a>。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>Here is a typical example of a worker that sets a signal:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$signal </span>: 4D.Signal
@@ -205,7 +205,7 @@
 <p></details></p>
 <p><strong>.description</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.description</code> property contains a custom description for the <code>Signal</code> object..</p>
+<p><code>.description</code> プロパティは、 <code>Signal</code> オブジェクトのカスタムな詳細を格納します。</p>
 <p><code>.description</code> can be set at the creation of the signal object or at any moment. Note that since the <code>Signal</code> object is a shared object, any write-mode access to the <code>.description</code> property must be surrounded by a <code>Use...End use</code> structure.</p>
 <p>This property is <strong>read-write</strong>.</p>
 <h2><a class="anchor" aria-hidden="true" id="signaled"></a><a href="#signaled" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.signaled</h2>
@@ -221,7 +221,7 @@
 <p></details></p>
 <p><strong>.signaled</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-2"></a><a href="#説明-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.signaled</code> property contains the current state of the <code>Signal</code> object. When the signal is created, <code>.signaled</code> is <strong>False</strong>. It becomes <strong>True</strong> when the <code>.trigger( )</code> is called on the object.</p>
+<p><code>.signaled</code> プロパティは、 <code>Signal</code> オブジェクトの現在の状態を格納します。 When the signal is created, <code>.signaled</code> is <strong>False</strong>. It becomes <strong>True</strong> when the <code>.trigger( )</code> is called on the object.</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="trigger"></a><a href="#trigger" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.trigger()</h2>
 <p><details><summary>履歴</summary></p>
@@ -239,7 +239,7 @@
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.trigger( )</code> function sets the <code>signaled</code> property of the signal object to <strong>true</strong> and awakens all workers or processes waiting for this signal.</p>
+<p><code>.trigger( )</code> 関数は、 シグナルオブジェクトの <code>signaled</code> プロパティを <strong>true</strong> に設定します 。すると、このシグナルを待機していたワーカーやプロセスが開始されます。</p>
 <p>If the signal is already in the signaled state (i.e., the <code>signaled</code> property is already <strong>true</strong>), the function does nothing.</p>
 <h2><a class="anchor" aria-hidden="true" id="wait"></a><a href="#wait" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.wait()</h2>
 <p><details><summary>履歴</summary></p>
@@ -258,12 +258,12 @@
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>timeout</td><td>実数</td><td>-&gt;</td><td>Maximum waiting time for the signal in seconds</td></tr>
-<tr><td>戻り値</td><td>ブール</td><td>&lt;-</td><td>State of the <code>.signaled</code> property</td></tr>
+<tr><td>timeout</td><td>実数</td><td>-&gt;</td><td>シグナルの最大待機時間 (秒単位)</td></tr>
+<tr><td>戻り値</td><td>ブール</td><td>&lt;-</td><td><code>.signaled</code> プロパティの状態</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.wait( )</code> function makes the current process wait until the <code>.signaled</code> property of the signal object to become <strong>true</strong> or the optional <em>timeout</em> to expire.</p>
+<p><code>.wait( )</code> 関数は、 シグナルオブジェクトの <code>.signaled</code> プロパティが <strong>true</strong> になるか、任意の <em>timeout</em> に指定したタイムアウト時間が経過するまで、カレントプロセスを待機させます。</p>
 <p>To prevent blocking code, you can pass a maximum waiting time in seconds in the <em>timeout</em> parameter (decimals are accepted).</p>
 <blockquote>
 <p><strong>Warning</strong>: Calling <code>.wait( )</code> without a <em>timeout</em> in the 4D main process is not recommended because it could freeze the whole 4D application.</p>
