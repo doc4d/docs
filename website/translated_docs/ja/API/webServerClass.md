@@ -697,7 +697,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.sessionIPAddressValidation** : Boolean<!-- END REF -->
 
 
- <!-- REF #webServerClass.sessionIPAddressValidation.Summary -->セッションcookie の IP アドレ検証<!-- END REF -->。 For security reasons, by default the web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between WiFi and 3G/4G networks, their IP address will change. In this case, you can allow clients to be able to continue using their web sessions even when the IP addresses change (this setting lowers the security level of your application).
+ <!-- REF #webServerClass.sessionIPAddressValidation.Summary -->セッションcookie の IP アドレ検証<!-- END REF -->。 セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。このアドレスが、cookie作成時の IPアドレスと合致しない場合、リクエストは拒否されます。 アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。 このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。
 
 <!-- END REF -->
 
@@ -719,39 +719,39 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 <!-- REF #webServerClass.start().Params -->
 
-| 参照       | タイプ    |    | 説明                                    |
-| -------- | ------ | -- | ------------------------------------- |
-| settings | オブジェクト | -> | Web server settings to set at startup |
-| 戻り値      | オブジェクト | <- | Status of the web server startup      |
+| 参照       | タイプ    |    | 説明              |
+| -------- | ------ | -- | --------------- |
+| settings | オブジェクト | -> | 開始時の Webサーバー設定  |
+| 戻り値      | オブジェクト | <- | Webサーバー開始のステータス |
 
 <!-- END REF -->
 
-The `.start()` function <!-- REF #webServerClass.start().Summary -->starts the web server on which it is applied<!-- END REF -->, using properties set in the optional *settings* object parameter.
+`.start()` 関数は、任意の *settings* オブジェクト引数に設定したプロパティを使用して、 <!-- REF #webServerClass.start().Summary -->対象の Webサーバーを開始させます<!-- END REF -->。
 
-The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
+プロジェクトの設定ファイルに定義されているデフォルトの設定、または `WEB SET OPTION` コマンドで定義された設定 (ホストデータベースのみ) を使用して、Webサーバーは開始されます。 しかし、*settings* 引数を渡せば、Webサーバーセッションにおいてカスタマイズされた設定を定義することができます。
 
-All settings of [Web Server objects](#web-server-object) can be customized, except read-only properties ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), and [.sessionCookieName(#sessioncookiename)]).
+[Web Server オブジェクト](#webサーバーオブジェクト) の設定は、読み取り専用プロパティ ([.isRunning](#isrunning)、[.name](#name)、[.openSSLVersion](#opensslversion)、[.perfectForwardSecrecy](#perfectforwardsecrecy)、[.sessionCookieName(#sessioncookiename)]) を除いて、すべてカスタマイズ可能です。
 
-Customized session settings will be reset when the [`.stop()`](#stop) function is called.
+カスタマイズされた設定は [`.stop()`](#stop) が呼び出されたときにリセットされます。
 
 
 
 
 #### 返されるオブジェクト
 
-The function returns an object describing the Web server launch status. This object can contain the following properties:
+関数は Webサーバーの開始ステータスを表すオブジェクトを返します。 This object can contain the following properties:
 
-| プロパティ   |                         | タイプ    | 説明                                                                   |
-| ------- | ----------------------- | ------ | -------------------------------------------------------------------- |
-| success |                         | ブール    | True if the web server was correctly started, False otherwise        |
-| errors  |                         | コレクション | 4D error stack (not returned if the web server started successfully) |
-|         | \[].errCode            | 数値     | 4D error code                                                        |
-|         | \[].message            | テキスト   | Description of the 4D error                                          |
-|         | \[].componentSignature | テキスト   | Signature of the internal component which returned the error         |
+| プロパティ   |                         | タイプ    | 説明                                                           |
+| ------- | ----------------------- | ------ | ------------------------------------------------------------ |
+| success |                         | ブール    | Webサーバーが正常に開始された場合には true、それ以外は false                        |
+| errors  |                         | コレクション | エラースタック (Webサーバーが正常に開始された場合には返されません)                         |
+|         | \[].errCode            | 数値     | 4D error code                                                |
+|         | \[].message            | テキスト   | Description of the 4D error                                  |
+|         | \[].componentSignature | テキスト   | Signature of the internal component which returned the error |
 
 
 
-> If the Web server was already launched, an error is returned.
+> Webサーバーが既に起動していた場合、エラーが返されます。
 
 
 
@@ -796,9 +796,9 @@ The function returns an object describing the Web server launch status. This obj
 
  <!-- END REF -->
 
-The `.stop()` function <!-- REF #webServerClass.stop().Summary -->stops the web server on which it is applied<!-- END REF -->.
+`.stop()` 関数は、 <!-- REF #webServerClass.stop().Summary -->対象の Webサーバーを停止します<!-- END REF -->。
 
-If the web server was started, all web connections and web processes are closed, once the currently handled requests are finished. If the web server was not started, the method does nothing.
+Webサーバーが開始されている場合は、処理中のリクエストが完了次第、すべての Web接続と Webプロセスが閉じられます。 Webサーバーが開始されていなかった場合、関数はなにもしません。
 
 
 > This function resets the customized web settings defined for the session using the *settings* parameter of the [`.start()`](#start) function, if any.
