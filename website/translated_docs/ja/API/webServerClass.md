@@ -697,7 +697,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.sessionIPAddressValidation** : Boolean<!-- END REF -->
 
 
- <!-- REF #webServerClass.sessionIPAddressValidation.Summary -->セッションcookie の IP アドレ検証<!-- END REF -->。 セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。このアドレスが、cookie作成時の IPアドレスと合致しない場合、リクエストは拒否されます。 アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。 このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。
+ <!-- REF #webServerClass.sessionIPAddressValidation.Summary -->セッションcookie の IP アドレス検証<!-- END REF -->。 セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して Webサーバーはデフォルトで IPアドレスを検証します。このアドレスが、cookie作成時の IPアドレスと合致しない場合、リクエストは拒否されます。 アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 たとえば、モバイルデバイスが WiFi と 3G/4G ネットワークを切り替えた場合、IPアドレスが変更されます。 このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可できます (アプリケーションのセキュリティレベルは下がります)。
 
 <!-- END REF -->
 
@@ -739,15 +739,15 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 #### 返されるオブジェクト
 
-関数は Webサーバーの開始ステータスを表すオブジェクトを返します。 This object can contain the following properties:
+関数は Webサーバーの開始ステータスを表すオブジェクトを返します。 このオブジェクトには、次のプロパティが格納されることがあります:
 
-| プロパティ   |                         | タイプ    | 説明                                                           |
-| ------- | ----------------------- | ------ | ------------------------------------------------------------ |
-| success |                         | ブール    | Webサーバーが正常に開始された場合には true、それ以外は false                        |
-| errors  |                         | コレクション | エラースタック (Webサーバーが正常に開始された場合には返されません)                         |
-|         | \[].errCode            | 数値     | 4D error code                                                |
-|         | \[].message            | テキスト   | Description of the 4D error                                  |
-|         | \[].componentSignature | テキスト   | Signature of the internal component which returned the error |
+| プロパティ   |                         | タイプ    | 説明                                    |
+| ------- | ----------------------- | ------ | ------------------------------------- |
+| success |                         | ブール    | Webサーバーが正常に開始された場合には true、それ以外は false |
+| errors  |                         | コレクション | エラースタック (Webサーバーが正常に開始された場合には返されません)  |
+|         | \[].errCode            | 数値     | 4Dエラーコード                              |
+|         | \[].message            | テキスト   | 4Dエラーの詳細                              |
+|         | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                   |
 
 
 
@@ -801,14 +801,14 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 Webサーバーが開始されている場合は、処理中のリクエストが完了次第、すべての Web接続と Webプロセスが閉じられます。 Webサーバーが開始されていなかった場合、関数はなにもしません。
 
 
-> This function resets the customized web settings defined for the session using the *settings* parameter of the [`.start()`](#start) function, if any.
+> この関数は、[`.start()`](#start) 関数の *settings* 引数を使用してセッションに対して定義したカスタマイズされた Web設定があった場合、それらをリセットします。
 
 
 
 
 #### 例題
 
-To stop the database Web server:
+データベースWebサーバーを停止します:
 
 
 
