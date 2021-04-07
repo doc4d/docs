@@ -331,9 +331,9 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.HTTPCompressionThreshold** : Number<!-- END REF -->
 
 
- <!-- REF #webServerClass.HTTPCompressionThreshold.Summary -->HTTP圧縮のしきい値 (バイト単位)。このサイズ未満のリクエストについては、通信が圧縮されません<!-- END REF -->。 This setting is useful in order to avoid losing machine time by compressing small exchanges.
+ <!-- REF #webServerClass.HTTPCompressionThreshold.Summary -->HTTP圧縮のしきい値 (バイト単位)。このサイズ未満のリクエストについては、通信が圧縮されません<!-- END REF -->。 この設定は、通信サイズが小さい場合、圧縮に処理時間が費やされるのを避けるのに有用です。
 
-Default compression threshold = 1024 bytes
+デフォルトのしきい値 = 1024 バイト
 
 <!-- END REF -->
 
@@ -347,7 +347,7 @@ Default compression threshold = 1024 bytes
 **.HTTPEnabled** : Boolean<!-- END REF -->
 
 
-The <!-- REF #webServerClass.HTTPEnabled.Summary -->HTTP protocol state<!-- END REF -->.
+ <!-- REF #webServerClass.HTTPEnabled.Summary -->HTTPプロトコルの状態<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -362,9 +362,9 @@ The <!-- REF #webServerClass.HTTPEnabled.Summary -->HTTP protocol state<!-- END 
 **.HTTPPort** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.HTTPPort.Summary -->listening IP port number for HTTP<!-- END REF -->.
+ <!-- REF #webServerClass.HTTPPort.Summary -->HTTP のリッスンIPポート番号<!-- END REF -->。
 
-Default = 80
+デフォルト = 80
 
 <!-- END REF -->
 
@@ -377,7 +377,7 @@ Default = 80
 **.HTTPTrace** : Boolean<!-- END REF -->
 
 
-The <!-- REF #webServerClass.HTTPTrace.Summary -->activation of `HTTP TRACE`<!-- END REF -->. For security reasons, by default the Web server rejects `HTTP TRACE` requests with an error 405. When enabled, the web server replies to `HTTP TRACE` requests with the request line, header, and body.
+ <!-- REF #webServerClass.HTTPTrace.Summary -->`HTTP TRACE` の有効化状態<!-- END REF -->。 セキュリティ上の理由により、Webサーバーはデフォルトで `HTTP TRACE` リクエストをエラー405 で拒否します。 有効化されている場合、`HTTP TRACE` リクエストに対して Webサーバーは、リクエスト行、ヘッダー、および本文を返します。
 
 <!-- END REF -->
 
@@ -390,7 +390,7 @@ The <!-- REF #webServerClass.HTTPTrace.Summary -->activation of `HTTP TRACE`<!--
 <!-- REF #webServerClass.HTTPSEnabled.Syntax -->
 **.HTTPSEnabled** : Boolean<!-- END REF -->
 
-The <!-- REF #webServerClass.HTTPSEnabled.Summary -->HTTPS protocol state<!-- END REF -->.
+ <!-- REF #webServerClass.HTTPSEnabled.Summary -->HTTPSプロトコル状態<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -403,9 +403,9 @@ The <!-- REF #webServerClass.HTTPSEnabled.Summary -->HTTPS protocol state<!-- EN
 <!-- REF #webServerClass.HTTPSPort.Syntax -->
 **.HTTPSPort** : Number<!-- END REF -->
 
-The <!-- REF #webServerClass.HTTPSPort.Summary -->listening IP port number for HTTPS<!-- END REF -->.
+ <!-- REF #webServerClass.HTTPSPort.Summary -->HTTPS のリッスンIPポート番号<!-- END REF -->。
 
-Default = 443
+デフォルト = 443
 
 <!-- END REF -->
 
@@ -417,11 +417,9 @@ Default = 443
 <!-- REF #webServerClass.inactiveProcessTimeout.Syntax -->
 **.inactiveProcessTimeout** : Number<!-- END REF -->
 
-> This property is not returned in [scalable sessions mode](#scalablesession).
+> [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは返されません。 <!-- REF #webServerClass.inactiveProcessTimeout.Summary -->旧式セッションプロセスの非アクティブタイムアウト時間 (分単位)<!-- END REF -->。 タイムアウト時間が経過すると、サーバーはプロセスを終了します。すると、`On Web Legacy Close Session` データベースメソッドが呼び出され、旧式セッションのコンテキストは削除されます。
 
-The <!-- REF #webServerClass.inactiveProcessTimeout.Summary -->life duration (in minutes) of the inactive legacy session processes<!-- END REF -->. At the end of the timeout, the process is killed on the server, the `On Web Legacy Close Session` database method is called, then the legacy session context is destroyed.
-
-Default = 480 minutes
+デフォルト = 480 分
 
 <!-- END REF -->
 
@@ -433,11 +431,9 @@ Default = 480 minutes
 <!-- REF #webServerClass.inactiveSessionTimeout.Syntax -->
 **.inactiveSessionTimeout** : Number<!-- END REF -->
 
-> This property is not returned in [scalable sessions mode](#scalablesession).
+> [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは返されません。 <!-- REF #webServerClass.inactiveSessionTimeout.Summary -->旧式セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)<!-- END REF -->。 タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。
 
-The <!-- REF #webServerClass.inactiveSessionTimeout.Summary -->life duration (in minutes) of inactive legacy sessions (duration set in cookie)<!-- END REF -->. At the end of this period, the session cookie expires and is no longer sent by the HTTP client.
-
-Default = 480 minutes
+デフォルト = 480 分
 
 <!-- END REF -->
 
@@ -451,7 +447,7 @@ Default = 480 minutes
 **.IPAddressToListen** : Text<!-- END REF -->
 
 
-The <!-- REF #webServerClass.IPAddressToListen.Summary -->IP address on which the 4D Web Server will receive HTTP requests<!-- END REF -->. By default, no specific address is defined. Both IPv6 string formats and IPv4 string formats are supported.
+ <!-- REF #webServerClass.IPAddressToListen.Summary -->4D Webサーバーが HTTPリクエストを受信する IPアドレス<!-- END REF -->。 デフォルトでは、特定のアドレスは定義されていません。 IPv6 および IPv4 文字列形式の両方がサポートされています。
 
 <!-- END REF -->
 
@@ -466,9 +462,7 @@ The <!-- REF #webServerClass.IPAddressToListen.Summary -->IP address on which th
 **.isRunning** : Boolean<!-- END REF -->
 
 
-*Read-only property*
-
-The <!-- REF #webServerClass.isRunning.Summary -->web server running state<!-- END REF -->.
+*読み取り専用プロパティ* <!-- REF #webServerClass.isRunning.Summary -->Webサーバーの実行状態<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -553,7 +547,7 @@ Possible values: 500000 - 2147483648
 <!-- REF #webServerClass.maxSessions.Syntax -->
 **.maxSessions** : Number<!-- END REF -->
 
-> This property is not returned in [scalable sessions mode](#scalablesession).
+> [スケーラブルセッションモード](#scalablesession) の場合には、このプロパティは返されません。
 
 The <!-- REF #webServerClass.maxSessions.Summary -->maximum number of simultaneous legacy sessions<!-- END REF -->. When you reach the limit, the oldest legacy session is closed (and `On Web Legacy Close Session` database method is called) if the web server needs to create a new one. The number of simultaneous legacy sessions cannot exceed the total number of web processes (`maxConcurrentProcesses` property, 100 by default)
 
@@ -590,7 +584,7 @@ If modified, the server must be restarted to use the new value.
 **.name** : Text<!-- END REF -->
 
 
-*Read-only property*
+*読み取り専用プロパティ*
 
 The <!-- REF #webServerClass.name.Summary -->name of the web server application<!-- END REF -->.
 
@@ -606,7 +600,7 @@ The <!-- REF #webServerClass.name.Summary -->name of the web server application<
 **.openSSLVersion** : Text<!-- END REF -->
 
 
-*Read-only property*
+*読み取り専用プロパティ*
 
 The <!-- REF #webServerClass.openSSLVersion.Summary -->version of the OpenSSL library used<!-- END REF -->.
 
@@ -622,7 +616,7 @@ The <!-- REF #webServerClass.openSSLVersion.Summary -->version of the OpenSSL li
 **.perfectForwardSecrecy** : Boolean<!-- END REF -->
 
 
-*Read-only property*
+*読み取り専用プロパティ*
 
 The <!-- REF #webServerClass.perfectForwardSecrecy.Summary -->PFS availability on the server<!-- END REF -->.
 
@@ -683,7 +677,7 @@ The <!-- REF #webServerClass.sessionCookieDomain.Summary -->"domain" field of th
 
 The <!-- REF #webServerClass.sessionCookieName.Summary -->name of the cookie used for storing the session ID<!-- END REF -->.
 
-*Read-only property*
+*読み取り専用プロパティ*
 
 <!-- END REF -->
 
