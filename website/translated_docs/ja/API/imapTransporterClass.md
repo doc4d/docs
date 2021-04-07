@@ -182,9 +182,9 @@ The function returns an object describing the IMAP status:
 | success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
 | statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | 数値     | 4D error code                                                                            |
-|            | \[].message            | テキスト   | Description of the 4D error                                                              |
-|            | \[].componentSignature | テキスト   | Signature of the internal component which returned the error                             |
+|            | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
+|            | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
+|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
 
 
 #### 例題
@@ -269,9 +269,9 @@ The function returns an object describing the IMAP status:
 | success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
 | statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | 数値     | 4D error code                                                                            |
-|            | \[].message            | テキスト   | Description of the 4D error                                                              |
-|            | \[].componentSignature | テキスト   | Signature of the internal component which returned the error                             |
+|            | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
+|            | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
+|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
 
 
 #### 例題
@@ -382,9 +382,9 @@ The function returns an object describing the IMAP status:
 | success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
 | statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | 数値     | 4D error code                                                                            |
-|            | \[].message            | テキスト   | Description of the 4D error                                                              |
-|            | \[].componentSignature | テキスト   | Signature of the internal component which returned the error                             |
+|            | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
+|            | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
+|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
 
 
 
@@ -487,9 +487,9 @@ The function returns an object describing the IMAP status:
 | success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
 | statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | 数値     | 4D error code                                                                            |
-|            | \[].message            | テキスト   | Description of the 4D error                                                              |
-|            | \[].componentSignature | テキスト   | Signature of the internal component which returned the error                             |
+|            | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
+|            | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
+|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
 
 
 
@@ -580,9 +580,9 @@ The function returns an object describing the IMAP status:
 | success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
 | statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | 数値     | 4D error code                                                                            |
-|            | \[].message            | テキスト   | Description of the 4D error                                                              |
-|            | \[].componentSignature | テキスト   | Signature of the internal component which returned the error                             |
+|            | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
+|            | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
+|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
 
 
 #### 例題
@@ -1097,9 +1097,9 @@ The function returns an object describing the IMAP status:
 | success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
 | statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | 数値     | 4D error code                                                                            |
-|            | \[].message            | テキスト   | Description of the 4D error                                                              |
-|            | \[].componentSignature | テキスト   | Signature of the internal component which returned the error                             |
+|            | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
+|            | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
+|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
 
 
 
@@ -1279,9 +1279,9 @@ The function returns an object describing the IMAP status:
 | success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
 | statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
 | errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | 数値     | 4D error code                                                                            |
-|            | \[].message            | テキスト   | Description of the 4D error                                                              |
-|            | \[].componentSignature | テキスト   | Signature of the internal component which returned the error                             |
+|            | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
+|            | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
+|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
 
 
 #### 例題
