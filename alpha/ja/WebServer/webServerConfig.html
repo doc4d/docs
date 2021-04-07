@@ -154,7 +154,7 @@
 </table>
 <p>List of allowed hosts and methods for the CORS service.</p>
 <h4><a class="anchor" aria-hidden="true" id="domain-names-host-property"></a><a href="#domain-names-host-property" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Domain names (host property)</h4>
-<p>Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. Several syntaxes are supported:</p>
+<p>Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. 複数のドメインを追加してホワイトリストを作成することができます。 複数のシンタックスがサポートされています:</p>
 <ul>
 <li>192.168.5.17:8081</li>
 <li>192.168.5.17</li>
@@ -179,7 +179,7 @@
 <li>TRACE</li>
 <li>PATCH</li>
 </ul>
-<p>Separate each method with a &quot;;&quot; (e,g,: &quot;post;get&quot;). If methods is empty, null, or undefined, all methods are enabled.</p>
+<p>メソッド名はセミコロン区切りで指定します(例: &quot;post;get&quot;)。 If methods is empty, null, or undefined, all methods are enabled.</p>
 <h4><a class="anchor" aria-hidden="true" id="参照"></a><a href="#参照" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参照</h4>
 <p><a href="#enable-cors-service">Enable CORS Service</a></p>
 <h2><a class="anchor" aria-hidden="true" id="debug-log"></a><a href="#debug-log" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Debug log</h2>
@@ -293,7 +293,7 @@
 <tr><td><code>WEB SET OPTION</code></td><td><code>Web HSTS max age</code></td><td>number in seconds</td></tr>
 </tbody>
 </table>
-<p>Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. This information is stored on the client side for the specified duration. Default value is 63072000 (2 years)</p>
+<p>Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. この情報はクライアント側で指定された時間のあいだ保存されます。 Default value is 63072000 (2 years)</p>
 <blockquote>
 <p><strong>Warning:</strong> Once HSTS is enabled, client connections will continue to use this mechanism for the specified duration. When you are testing your applications, it is recommended to set a short duration to be able to switch between secured and non-secured connection modes if necessary.</p>
 </blockquote>
@@ -319,7 +319,7 @@
 <tr><td><code>WEB SET OPTION</code></td><td><code>Web HTTP compression threshold</code></td><td></td></tr>
 </tbody>
 </table>
-<p>In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. This setting is useful in order to avoid losing machine time by compressing small exchanges.</p>
+<p>In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. この設定は、通信サイズが小さい場合、圧縮に処理時間が費やされるのを避けるのに有用です。</p>
 <p>Pass the size expressed in bytes as value. By default, the compression threshold is set to 1024 bytes.</p>
 <h2><a class="anchor" aria-hidden="true" id="http-port"></a><a href="#http-port" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTP Port</h2>
 <table>
@@ -387,7 +387,7 @@
 <tr><td><code>WEB SET OPTION</code></td><td><code>Web inactive session timeout</code></td><td></td></tr>
 </tbody>
 </table>
-<p>Life duration (in minutes) of inactive sessions (duration set in cookie). At the end of this period, the session cookie expires and is no longer sent by the HTTP client.</p>
+<p>Life duration (in minutes) of inactive sessions (duration set in cookie). タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。</p>
 <p>Default: 480 minutes (pass 0 to restore the default value)</p>
 <h2><a class="anchor" aria-hidden="true" id="ip-address-to-listen"></a><a href="#ip-address-to-listen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>IP Address to listen</h2>
 <table>
@@ -483,7 +483,7 @@
 </tbody>
 </table>
 <p>Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is authorized to process. By default, the value is 2 000 000, i.e. a little less than 2 MB. Passing the maximum value (2 147 483 648) means that, in practice, no limit is set.</p>
-<p>This limit is used to avoid web server saturation due to incoming requests that are too large. When a request reaches this limit, the 4D web server rejects it.</p>
+<p>制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 When a request reaches this limit, the 4D web server rejects it.</p>
 <p>Possible values: 500 000 to 2 147 483 648.</p>
 <h2><a class="anchor" aria-hidden="true" id="maximum-session-number"></a><a href="#maximum-session-number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Maximum Session Number</h2>
 <table>
@@ -506,15 +506,15 @@
 <tr><td>webServer object</td><td><a href="/docs/alpha/ja/API/WebServerClass.html#mintlsversion"><code>minTLSVersion</code></a></td><td>number</td></tr>
 </tbody>
 </table>
-<p>Minimum TLS version accepted for connections. Connection attempts from clients supporting only versions below the minimum will be rejected.</p>
+<p>Minimum TLS version accepted for connections. これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。</p>
 <p>とりうる値:</p>
 <ul>
 <li>1 = TLSv1_0</li>
 <li>2 = TLSv1_1</li>
-<li>3 = TLSv1_2 (default)</li>
+<li>3 = TLSv1_2 (デフォルト)</li>
 <li>4 = TLSv1_3</li>
 </ul>
-<p>If modified, the server must be restarted to use the new value.</p>
+<p>変更した場合、設定を反映するには Webサーバーを再起動する必要があります。</p>
 <blockquote>
 <p>The minimum TLS version used by 4D can be modified for the session using the <code>SET DATABASE PARAMETER</code> command, in which case the modification applies to the entire 4D application, including the web server, SQL server and client/server connections.</p>
 </blockquote>
@@ -610,7 +610,7 @@
 <tr><td><code>WEB SET OPTION</code></td><td><code>Web session cookie domain</code></td><td></td></tr>
 </tbody>
 </table>
-<p>Value of the &quot;domain&quot; field of the session cookie. Useful for controlling the scope of the session cookies. If you set, for example, the value &quot;/*.4d.fr&quot; for this selector, the client will only send a cookie when the request is addressed to the domain &quot;.4d.fr&quot;, which excludes servers hosting external static data.</p>
+<p>Value of the &quot;domain&quot; field of the session cookie. Useful for controlling the scope of the session cookies. たとえば、このセレクターに &quot;/*.4d.fr&quot; の値を設定した場合、リクエストの宛先が &quot;.4d.fr&quot; のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="session-cookie-name"></a><a href="#session-cookie-name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Session Cookie Name</h2>
 <table>
 <thead>
@@ -632,7 +632,7 @@
 <tr><td><code>WEB SET OPTION</code></td><td><code>Web session cookie path</code></td><td></td></tr>
 </tbody>
 </table>
-<p>&quot;path&quot; field of the session cookie. Used to control the scope of the session cookies. If you set, for example, the value &quot;/4DACTION&quot; for this selector, the client will only send a cookie for dynamic requests beginning with 4DACTION, and not for pictures, static pages, etc.</p>
+<p>&quot;path&quot; field of the session cookie. セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに &quot;/4DACTION&quot; という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="session-cookie-samesite"></a><a href="#session-cookie-samesite" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Session Cookie SameSite</h2>
 <table>
 <thead>
@@ -658,7 +658,7 @@
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="session-ip-address-validation"></a><a href="#session-ip-address-validation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Session IP Address Validation</h2>
 <p>Can be set with|Name|Comments| |---|---|---| |webServer object|<a href="/docs/alpha/ja/API/WebServerClass.html#sessionipaddressvalidation"><code>sessionIPAddressValidation</code></a>|| |<code>WEB SET OPTION</code>|<code>Web session enable IP address validation</code>||</p>
-<p>IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application.</p>
+<p>IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application.</p>
 <p>When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).</p>
 <p>Possible values: 0 (disabled) or 1 (enabled, default).</p>
 <h2><a class="anchor" aria-hidden="true" id="deprecated-settings"></a><a href="#deprecated-settings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Deprecated Settings</h2>
