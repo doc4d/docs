@@ -204,8 +204,20 @@
       "Concepts/variables": {
         "title": "Variables"
       },
+      "Debugging/breakList": {
+        "title": "Break List"
+      },
+      "Debugging/breakPoints": {
+        "title": "Break Points"
+      },
       "Debugging/callChainPane": {
         "title": "Call Chain Pane"
+      },
+      "Debugging/catchingCommands": {
+        "title": "Catching Commands"
+      },
+      "Debugging/customWatchPane": {
+        "title": "Custom Watch Pane"
       },
       "Debugging/debugger": {
         "title": "Debugger"
