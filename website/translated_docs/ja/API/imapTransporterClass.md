@@ -55,7 +55,7 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 | 参照     | タイプ                |    | 説明                                                  |
 | ------ | ------------------ |:--:| --------------------------------------------------- |
 | server | オブジェクト             | -> | メールサーバー情報                                           |
-| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter オブジェクト](#imap-transporter-object) |
+| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter オブジェクト](#imap-transporter-オブジェクト) |
 <!-- END REF -->
 
 
@@ -115,7 +115,7 @@ The function returns an [**IMAP transporter object**](#imap-transporter-object).
 | 参照     | タイプ                |    | 説明                                                  |
 | ------ | ------------------ |:--:| --------------------------------------------------- |
 | server | オブジェクト             | -> | メールサーバー情報                                           |
-| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter オブジェクト](#imap-transporter-object) |
+| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter オブジェクト](#imap-transporter-オブジェクト) |
 <!-- END REF -->
 
 #### 説明
@@ -496,7 +496,7 @@ Executing this function does not actually remove messages. Messages with the "de
 
 #### 例題 1
 
-選択された複数のメッセージを削除します:
+選択されたメッセージを削除します:
 
 
 ```4d
@@ -1127,13 +1127,13 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
   // メッセージの固有IDのコレクションを取得します
  $mailIds:=$transporter.searchMails("subject \"4D new feature:\"")
 
-  // カレントメールボックス内で見つかったメッセージを "documents" メールボックスへ移動します
+  // カレントメールボックス内で見つかったメッセージを "documents" メールボックスに移動します
  $status:=$transporter.move($mailIds;"documents")
 ```
 
 #### 例題 2
 
-To move all messages in the current mailbox:
+カレントメールボックスの全メッセージを移動します:
 
 
 ```4d
@@ -1141,17 +1141,17 @@ To move all messages in the current mailbox:
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  // メールボックスを選択します
  $boxInfo:=$transporter.selectBox("inbox")
 
-  // move all messages in the current mailbox to the "documents" mailbox
+  // カレントメールボックスの全メッセージを "documents" メールボックスに移動します
  $status:=$transporter.move(IMAP all;"documents")
 ```
 
@@ -1172,17 +1172,17 @@ To move all messages in the current mailbox:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #imapTransporterClass.numToID().Params -->
-| 参照       | タイプ    |    | 説明                       |
-| -------- | ------ |:--:| ------------------------ |
-| startMsg | 整数     | -> | 先頭メッセージのシーケンス番号          |
-| endMsg   | 整数     | -> | 最後のメッセージのシーケンス番号         |
-| 戻り値      | コレクション | <- | Collection of unique IDs |
+| 参照       | タイプ    |    | 説明               |
+| -------- | ------ |:--:| ---------------- |
+| startMsg | 整数     | -> | 先頭メッセージのシーケンス番号  |
+| endMsg   | 整数     | -> | 最後のメッセージのシーケンス番号 |
+| 戻り値      | コレクション | <- | 固有ID のコレクション     |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.numToID()` function <!-- REF #imapTransporterClass.numToID().Summary -->converts the sequence numbers to IMAP unique IDs for the messages in the sequential range designated by *startMsg* and *endMsg*<!-- END REF --> in the currently selected mailbox.
+`.numToID()` 関数は、現在選択されているメールボックスにおいて、 <!-- REF #imapTransporterClass.numToID().Summary -->*startMsg* および *endMsg* で指定された連続した範囲のメッセージのシーケンス番号を IMAP固有IDへと変換します<!-- END REF --> 。
 
 In the *startMsg* parameter, pass an integer value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
 
@@ -1191,7 +1191,7 @@ In the *endMsg* parameter, pass an integer value corresponding to the number of 
 
 #### 戻り値
 
-The function returns a collection of strings (unique IDs).
+メソッドは文字列 (固有ID) のコレクションを返します。
 
 #### 例題
 
@@ -1202,20 +1202,20 @@ The function returns a collection of strings (unique IDs).
  var $mailIds : Collection
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  // メールボックスを選択します
  $boxInfo:=$transporter.selectBox("inbox")
 
-  //get IDs for 5 last messages received
+  // 最も古い 5通のメッセージID を取得します
  $mailIds:=$transporter.numToID(($boxInfo.mailCount-5);$boxInfo.mailCount)
 
-  //delete the messages from the current mailbox
+  // カレントメールボックスからメッセージを削除します
  $status:=$transporter.delete($mailIds)
 ```
 
@@ -1238,14 +1238,14 @@ The function returns a collection of strings (unique IDs).
 | 参照       | タイプ    |    | 説明                                                                                                        |
 | -------- | ------ |:--:| --------------------------------------------------------------------------------------------------------- |
 | msgIDs   | コレクション | -> | 文字列のコレクション: メッセージの固有ID (テキスト型)<br> テキスト: メッセージの固有ID<br> 倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
-| keywords | オブジェクト | -> | Keyword flags to remove                                                                                   |
-| 戻り値      | オブジェクト | <- | Status of the removeFlags operation                                                                       |
+| keywords | オブジェクト | -> | 削除するキーワードフラグ                                                                                              |
+| 戻り値      | オブジェクト | <- | removeFlags処理のステータス                                                                                       |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.removeFlags()` function <!-- REF #imapTransporterClass.removeFlags().Summary -->removes flags from the `msgIDs` for the specified `keywords`<!-- END REF -->.
+`.removeFlags()` 関数は、 <!-- REF #imapTransporterClass.removeFlags().Summary -->`msgIDs` のメッセージに対して、`keywords` で指定したフラグを削除します<!-- END REF -->。
 
 In the `msgIDs` parameter, you can pass either:
 
@@ -1259,15 +1259,15 @@ In the `msgIDs` parameter, you can pass either:
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. You can pass any of the following keywords:
 
-| 参照        | タイプ | 説明                                                  |
-| --------- | --- | --------------------------------------------------- |
-| $draft    | ブール | True to remove the "draft" flag from the message    |
-| $seen     | ブール | True to remove the "seen" flag from the message     |
-| $flagged  | ブール | True to remove the "flagged" flag from the message  |
-| $answered | ブール | True to remove the "answered" flag from the message |
-| $deleted  | ブール | True to remove the "deleted" flag from the message  |
+| 参照        | タイプ | 説明                                |
+| --------- | --- | --------------------------------- |
+| $draft    | ブール | メッセージの "draft" フラグを削除するには true    |
+| $seen     | ブール | メッセージの "seen" フラグを削除するには true     |
+| $flagged  | ブール | メッセージの "flagged" フラグを削除するには true  |
+| $answered | ブール | メッセージの "answered" フラグを削除するには true |
+| $deleted  | ブール | メッセージの "deleted" フラグを削除するには true  |
 
-Note that False values are ignored.
+false値は無視されます。
 
 
 **返されるオブジェクト**
@@ -1295,13 +1295,13 @@ $options.port:=993
 $options.user:="4d@gmail.com"
 $options.password:="xxxxx"
 
-// Create transporter
+// transporter を作成します
 $transporter:=IMAP New transporter($options)
 
-// Select mailbox
+// メールボックスを選択します
 $boxInfo:=$transporter.selectBox("INBOX")
 
-// Mark all messages from INBOX as unseen
+// INBOX の全メッセージを未読にします
 $flags:=New object
 $flags["$seen"]:=True
 $status:=$transporter.removeFlags(IMAP all;$flags)
@@ -1327,10 +1327,10 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 **.searchMails**( *searchCriteria* : Text ) : Collection<!-- END REF -->
 
 <!-- REF #imapTransporterClass.searchMails().Params -->
-| 参照             | タイプ    |    | 説明                            |
-| -------------- | ------ |:--:| ----------------------------- |
-| searchCriteria | テキスト   | -> | 検索条件                          |
-| 戻り値            | コレクション | <- | Collection of message numbers |
+| 参照             | タイプ    |    | 説明             |
+| -------------- | ------ |:--:| -------------- |
+| searchCriteria | テキスト   | -> | 検索条件           |
+| 戻り値            | コレクション | <- | メッセージ番号のコレクション |
 <!-- END REF -->
 
 
@@ -1338,7 +1338,7 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 
 > This function is based upon the specification for the [IMAP protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
 
-The `.searchMails()` function <!-- REF #imapTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. *searchCriteria* consists of one or more search keys.
+`.searchMails()` 関数は、 <!-- REF #imapTransporterClass.searchMails().Summary -->カレントメールボックスにおいて *searchCriteria* の検索条件に合致するメッセージを検索します<!-- END REF -->。 *searchCriteria* consists of one or more search keys.
 
 *searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. たとえば:
 
@@ -1459,17 +1459,17 @@ Search-keys may request the value to search for:
 **.selectBox**( *name* : Text { ; *state* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #imapTransporterClass.selectBox().Params -->
-| 参照    | タイプ    |    | 説明                    |
-| ----- | ------ |:--:| --------------------- |
-| name  | テキスト   | -> | メールボックスの名称            |
-| state | 整数     | -> | Mailbox access status |
-| 戻り値   | オブジェクト | <- | boxInfo オブジェクト        |
+| 参照    | タイプ    |    | 説明             |
+| ----- | ------ |:--:| -------------- |
+| name  | テキスト   | -> | メールボックスの名称     |
+| state | 整数     | -> | メールボックスのアクセス状態 |
+| 戻り値   | オブジェクト | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.selectBox()` function <!-- REF #imapTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+`.selectBox()` 関数は、 <!-- REF #imapTransporterClass.selectBox().Summary -->*name* に指定したメールボックスをカレントメールボックスとして選択します<!-- END REF -->。 This function allows you to retrieve information about the mailbox.
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
 In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
@@ -1501,7 +1501,7 @@ The `boxInfo` object returned contains the following properties:
 ```4d
  var $server; $boxinfo : Object
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
