@@ -201,7 +201,7 @@ Executing this method does not actually remove any email. The flagged email will
 <!-- REF #pop3TransporterClass.getBoxInfo().Params -->
 | 参照  | タイプ    |    | 説明             |
 | --- | ------ |:--:| -------------- |
-| 戻り値 | オブジェクト | <- | boxInfo object |
+| 戻り値 | オブジェクト | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
