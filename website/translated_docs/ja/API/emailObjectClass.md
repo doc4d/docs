@@ -11,7 +11,7 @@ Creating, sending or receiving emails in 4D is done by handling an `Email` objec
 - `MAIL Convert from MIME` and `MAIL Convert to MIME` commands to convert emails
 
 
-### Email Object
+### Email オブジェクト
 
 Email objects provide the following properties:
 
