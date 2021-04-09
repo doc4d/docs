@@ -173,16 +173,16 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 **返されるオブジェクト**
 
-The function returns an object describing the IMAP status:
+この関数は、IMAP ステータスを表すオブジェクトを返します:
 
-| プロパティ      |                         | タイプ    | 説明                                                                                       |
-| ---------- | ----------------------- | ------ | ---------------------------------------------------------------------------------------- |
-| success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
-| statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-| errors     | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
-| errors     | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
-| errors     | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
+| プロパティ      |                         | タイプ    | 説明                                                 |
+| ---------- | ----------------------- | ------ | -------------------------------------------------- |
+| success    |                         | ブール    | 処理が正常に終わった場合には true、それ以外は false                    |
+| statusText |                         | テキスト   | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
+| errors     |                         | コレクション | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
+| errors     | \[].errcode            | 数値     | 4Dエラーコード                                           |
+| errors     | \[].message            | テキスト   | 4Dエラーの詳細                                           |
+| errors     | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                |
 
 
 
@@ -260,7 +260,7 @@ To copy all messages in the current mailbox:
 | ------- | ------ |:--:| ------------------------------------------------ |
 | msgsIDs | コレクション | -> | Collection of message unique IDs (strings)       |
 | allMsgs | 整数     | -> | `IMAP all`: All messages in the selected mailbox |
-| 戻り値     | オブジェクト | <- | Status of the delete operation                   |
+| 戻り値     | オブジェクト | <- | delete処理のステータス                                   |
 <!-- END REF -->
 
 
@@ -278,16 +278,16 @@ Executing this function does not actually remove messages. Messages with the "de
 
 **返されるオブジェクト**
 
-The function returns an object describing the IMAP status:
+この関数は、IMAP ステータスを表すオブジェクトを返します:
 
-| プロパティ      |                         | タイプ    | 説明                                                                                       |
-| ---------- | ----------------------- | ------ | ---------------------------------------------------------------------------------------- |
-| success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
-| statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-| errors     | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
-| errors     | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
-| errors     | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
+| プロパティ      |                         | タイプ    | 説明                                                 |
+| ---------- | ----------------------- | ------ | -------------------------------------------------- |
+| success    |                         | ブール    | 処理が正常に終わった場合には true、それ以外は false                    |
+| statusText |                         | テキスト   | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
+| errors     |                         | コレクション | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
+| errors     | \[].errcode            | 数値     | 4Dエラーコード                                           |
+| errors     | \[].message            | テキスト   | 4Dエラーの詳細                                           |
+| errors     | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                |
 
 
 
@@ -540,7 +540,7 @@ Mailbox name delimiter character.
 | msgNumber | 整数     | -> | Sequence number of the message                   |
 | msgID     | テキスト   | -> | Unique ID of the message                         |
 | options   | オブジェクト | -> | Message handling instructions                    |
-| 戻り値       | オブジェクト | <- | [Email object](emailObjectClass.md#email-オブジェクト) |
+| 戻り値       | オブジェクト | <- | [Email オブジェクト](emailObjectClass.md#email-オブジェクト) |
 <!-- END REF -->
 
 
@@ -823,16 +823,16 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 **返されるオブジェクト**
 
-The function returns an object describing the IMAP status:
+この関数は、IMAP ステータスを表すオブジェクトを返します:
 
-| プロパティ      |                         | タイプ    | 説明                                                                                       |
-| ---------- | ----------------------- | ------ | ---------------------------------------------------------------------------------------- |
-| success    |                         | ブール    | True if the operation is successful, False otherwise                                     |
-| statusText |                         | テキスト   | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | コレクション | 4D error stack (not returned if a IMAP server response is received)                      |
-| errors     | \[].errcode            | 数値     | 4Dエラーコード                                                                                 |
-| errors     | \[].message            | テキスト   | 4Dエラーの詳細                                                                                 |
-| errors     | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                                                      |
+| プロパティ      |                         | タイプ    | 説明                                                 |
+| ---------- | ----------------------- | ------ | -------------------------------------------------- |
+| success    |                         | ブール    | 処理が正常に終わった場合には true、それ以外は false                    |
+| statusText |                         | テキスト   | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
+| errors     |                         | コレクション | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
+| errors     | \[].errcode            | 数値     | 4Dエラーコード                                           |
+| errors     | \[].message            | テキスト   | 4Dエラーの詳細                                           |
+| errors     | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                |
 
 
 
