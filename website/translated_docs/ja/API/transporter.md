@@ -245,7 +245,7 @@ Possible values are:
 
 #### 説明
 
-The `.host` property contains <!-- REF #transporter.host.Summary -->the name or the IP address of the host server<!-- END REF -->. Used for mail transactions (SMTP, POP3, IMAP).
+`.host` プロパティは、 <!-- REF #transporter.host.Summary -->ホストサーバーの名前または IPアドレス<!-- END REF -->を格納します。 この情報はメール通信 (SMTP、POP3、IMAP) に使用されます。
 
 <!-- END REF -->
 
@@ -266,7 +266,7 @@ The `.host` property contains <!-- REF #transporter.host.Summary -->the name or 
 
 #### 説明
 
-The `.logFile` property contains <!-- REF #transporter.logFile.Summary -->the path of the extended log file defined (if any) for the mail connection<!-- END REF -->. It can be relative (to the current Logs folder) or absolute.
+`.logFile` プロパティは、 <!-- REF #transporter.logFile.Summary -->メール接続に対して定義された拡張ログファイル (あれば) へのフルパス<!-- END REF -->を格納します。 It can be relative (to the current Logs folder) or absolute.
 
 Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), extended log files store MIME contents of all sent mails and do not have any size limit. For more information about extended log files, refer to:
 
@@ -297,7 +297,7 @@ Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), ext
 
 #### 説明
 
-The `.port` property contains <!-- REF #transporter.port.Summary --> the port number used for mail transactions<!-- END REF -->. By default, if the *port* property has not been set in the *server* object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, `IMAP New transporter`), the port used is:
+`.port` プロパティは、 <!-- REF #transporter.port.Summary --> メール通信に使用されるポート番号<!-- END REF -->を格納します。 By default, if the *port* property has not been set in the *server* object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, `IMAP New transporter`), the port used is:
 
 *   **SMTP** - 587
 *   **POP3** - 995
@@ -324,7 +324,7 @@ The `.port` property contains <!-- REF #transporter.port.Summary --> the port nu
 
 
 #### 説明
-The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary --> the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs<!-- END REF -->. By default, if the `.sendTimeOut` property has not been set in the `server` object, the value 100 is used.
+`.sendTimeOut` プロパティは、 <!-- REF #transporter.sendTimeOut.Summary --> `.send( )` 呼び出し時のタイムアウト時間 (秒単位)<!-- END REF -->を格納します。 `.sendTimeOut` プロパティが `server` オブジェクトによって設定されていない場合は、デフォルトで 100 という値が使用されます。
 
 <!-- END REF -->
 
@@ -345,7 +345,7 @@ The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary -
 
 
 #### 説明
-The `.user` property contains <!-- REF #transporter.user.Summary --> the user name used for authentication on the mail server<!-- END REF -->. 
+`.user` プロパティは、 <!-- REF #transporter.user.Summary --> メールサーバーでの認証に使用されたユーザー名<!-- END REF -->を格納します。 
 
 <!-- END REF -->
 
@@ -364,20 +364,20 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 **.checkConnection()** : Object<!-- END REF -->
 
 <!-- REF #transporter.checkConnection().Params -->
-| 参照  | タイプ    |    | 説明                                          |
-| --- | ------ |:--:| ------------------------------------------- |
-| 戻り値 | オブジェクト | <- | Status of the transporter object connection |
+| 参照  | タイプ    |    | 説明                         |
+| --- | ------ |:--:| -------------------------- |
+| 戻り値 | オブジェクト | <- | transporter オブジェクト接続のステータス |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.checkConnection()` function <!-- REF #transporter.checkConnection().Summary --> checks the connection using information stored in the transporter object<!-- END REF -->, recreates the connection if necessary, and returns the status. This function allows you to verify that the values provided by the user are valid and consistent.
+`.checkConnection()` 関数は、 <!-- REF #transporter.checkConnection().Summary --> transporter オブジェクトが保存する情報を使用して接続をチェックします<!-- END REF -->。必要なら再接続をし、そのステータスを返します。 この関数を使用して、ユーザーから提供された値が有効かどうかを検証することができます。
 
 
 #### 返されるオブジェクト
 
-The function sends a request to the mail server and returns an object describing the mail status. このオブジェクトには、次のプロパティが格納されることがあります:
+この関数はメールサーバーにリクエストを送信し、メールステータスを表すオブジェクトを返します。 このオブジェクトには、次のプロパティが格納されることがあります:
 
 | プロパティ      |                          | タイプ        | 説明                                                                                                           |
 | ---------- | ------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------ |
