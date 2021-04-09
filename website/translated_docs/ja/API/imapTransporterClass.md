@@ -51,7 +51,7 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 | 参照     | タイプ                |    | 説明                                                  |
 | ------ | ------------------ |:--:| --------------------------------------------------- |
 | server | オブジェクト             | -> | メールサーバー情報                                           |
-| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter オブジェクト](#imap-transporter-object) |
+| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter オブジェクト](#imap-transporter-オブジェクト) |
 <!-- END REF -->
 
 
@@ -915,7 +915,7 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 #### 説明
 
-The `.numToID()` function <!-- REF #imapTransporterClass.numToID().Summary -->converts the sequence numbers to IMAP unique IDs for the messages in the sequential range designated by *startMsg* and *endMsg*<!-- END REF --> in the currently selected mailbox.
+`.numToID()` 関数は、現在選択されているメールボックスにおいて、 <!-- REF #imapTransporterClass.numToID().Summary -->*startMsg* および *endMsg* で指定された連続した範囲のメッセージのシーケンス番号を IMAP固有IDへと変換します<!-- END REF --> 。
 
 In the *startMsg* parameter, pass an integer value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
 
@@ -924,7 +924,7 @@ In the *endMsg* parameter, pass an integer value corresponding to the number of 
 
 #### 戻り値
 
-The function returns a collection of strings (unique IDs).
+メソッドは文字列 (固有ID) のコレクションを返します。
 
 #### 例題
 
@@ -935,20 +935,20 @@ The function returns a collection of strings (unique IDs).
  var $mailIds : Collection
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  // メールボックスを選択します
  $boxInfo:=$transporter.selectBox("inbox")
 
-  //get IDs for 5 last messages received
+  // 最も古い 5通のメッセージID を取得します
  $mailIds:=$transporter.numToID(($boxInfo.mailCount-5);$boxInfo.mailCount)
 
-  //delete the messages from the current mailbox
+  // カレントメールボックスからメッセージを削除します
  $status:=$transporter.delete($mailIds)
 ```
 
@@ -972,10 +972,10 @@ The function returns a collection of strings (unique IDs).
 **.searchMails**( *searchCriteria* : Text ) : Collection<!-- END REF -->
 
 <!-- REF #imapTransporterClass.searchMails().Params -->
-| 参照             | タイプ    |    | 説明                            |
-| -------------- | ------ |:--:| ----------------------------- |
-| searchCriteria | テキスト   | -> | 検索条件                          |
-| 戻り値            | コレクション | <- | Collection of message numbers |
+| 参照             | タイプ    |    | 説明             |
+| -------------- | ------ |:--:| -------------- |
+| searchCriteria | テキスト   | -> | 検索条件           |
+| 戻り値            | コレクション | <- | メッセージ番号のコレクション |
 <!-- END REF -->
 
 
@@ -983,7 +983,7 @@ The function returns a collection of strings (unique IDs).
 
 > This function is based upon the specification for the [IMAP protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
 
-The `.searchMails()` function <!-- REF #imapTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. *searchCriteria* consists of one or more search keys.
+`.searchMails()` 関数は、 <!-- REF #imapTransporterClass.searchMails().Summary -->カレントメールボックスにおいて *searchCriteria* の検索条件に合致するメッセージを検索します<!-- END REF -->。 *searchCriteria* consists of one or more search keys.
 
 *searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. たとえば:
 
@@ -1104,17 +1104,17 @@ Search-keys may request the value to search for:
 **.selectBox**( *name* : Text { ; *state* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #imapTransporterClass.selectBox().Params -->
-| 参照    | タイプ    |    | 説明                    |
-| ----- | ------ |:--:| --------------------- |
-| name  | テキスト   | -> | メールボックスの名称            |
-| state | 整数     | -> | Mailbox access status |
-| 戻り値   | オブジェクト | <- | boxInfo オブジェクト        |
+| 参照    | タイプ    |    | 説明             |
+| ----- | ------ |:--:| -------------- |
+| name  | テキスト   | -> | メールボックスの名称     |
+| state | 整数     | -> | メールボックスのアクセス状態 |
+| 戻り値   | オブジェクト | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.selectBox()` function <!-- REF #imapTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+`.selectBox()` 関数は、 <!-- REF #imapTransporterClass.selectBox().Summary -->*name* に指定したメールボックスをカレントメールボックスとして選択します<!-- END REF -->。 This function allows you to retrieve information about the mailbox.
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
 In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
@@ -1146,7 +1146,7 @@ The `boxInfo` object returned contains the following properties:
 ```4d
  var $server; $boxinfo : Object
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
