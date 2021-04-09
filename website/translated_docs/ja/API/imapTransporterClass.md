@@ -569,7 +569,7 @@ Executing this function does not actually remove messages. Messages with the "de
 
 #### 説明
 
-The `.expunge()` function <!-- REF #imapTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
+`.expunge()` 関数は、 <!-- REF #imapTransporterClass.expunge().Summary -->"deleted" フラグがつけられたメッセージをすべてIMAP メールサーバーから削除します<!-- END REF --> 。"deleted" フラグは [`.delete()`](#delete) または [`.addFlags()`](#addflags) 関数によって設定可能です。
 
 **返されるオブジェクト**
 
@@ -597,17 +597,17 @@ $options.port:=993
 $options.user:="4d@gmail.com"
 $options.password:="xxxxx"
 
-// Create transporter
+// transporter を作成します
 $transporter:=IMAP New transporter($options)
 
-// Select mailbox
+// メールボックスを選択します
 $boxInfo:=$transporter.selectBox("INBOX")
 
-// Find and delete all seen messages in INBOX
+// INBOX の既読メッセージに削除フラグを立てます
 $ids:=$transporter.searchMails("SEEN")
 $status:=$transporter.delete($ids)
 
-// Purge all messages flagged as deleted
+// "deleted" フラグがついたメッセージをすべて消去します
 $status:=$transporter.expunge()
 ```
 
@@ -618,26 +618,26 @@ $status:=$transporter.expunge()
 ## .getBoxInfo()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容               |
-| ------ | ---------------- |
-| v18 R5 | name is optional |
-| v18 R4 | 追加               |
+| バージョン  | 内容        |
+| ------ | --------- |
+| v18 R5 | name が任意に |
+| v18 R4 | 追加        |
 </details>
 
 <!-- REF #imapTransporterClass.getBoxInfo().Syntax -->
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
 
 <!-- REF #imapTransporterClass.getBoxInfo().Params -->
-| 参照   | タイプ    |    | 説明                  |
-| ---- | ------ |:--:| ------------------- |
-| name | テキスト   | -> | Name of the mailbox |
-| 戻り値  | オブジェクト | <- | boxInfo object      |
+| 参照   | タイプ    |    | 説明             |
+| ---- | ------ |:--:| -------------- |
+| name | テキスト   | -> | メールボックスの名称     |
+| 戻り値  | オブジェクト | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getBoxInfo()` function <!-- REF #imapTransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the mailbox *name*<!-- END REF -->. This function returns the same information as [`.selectBox()`](#selectbox) without changing the current mailbox.
+`.getBoxInfo()` 関数は、 <!-- REF #imapTransporterClass.getBoxInfo().Summary -->*name* が指定するメールボックスに対応する `boxInfo` オブジェクトを返します<!-- END REF -->。 This function returns the same information as [`.selectBox()`](#selectbox) without changing the current mailbox.
 
 In the optional *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
 
@@ -648,7 +648,7 @@ The `boxInfo` object returned contains the following properties:
 
 | プロパティ      | タイプ    | 説明                                                                  |
 | ---------- | ------ | ------------------------------------------------------------------- |
-| name       | text   | Name of the mailbox                                                 |
+| name       | text   | メールボックスの名称                                                          |
 | mailCount  | number | Number of messages in the mailbox                                   |
 | mailRecent | number | Number of messages with the "recent" flag (indicating new messages) |
 
@@ -661,7 +661,7 @@ The `boxInfo` object returned contains the following properties:
  $transporter:=IMAP New transporter($server)
 
  $info:=$transporter.getBoxInfo("INBOX")
- ALERT("INBOX contains "+String($info.mailRecent)+" recent emails.")
+ ALERT("INBOX には "+String($info.mailRecent)+" 件の最近のメールがあります。")
 ```
 
 <!-- END REF -->
@@ -682,15 +682,15 @@ The `boxInfo` object returned contains the following properties:
 **.getBoxList()** : Collection<!-- END REF -->
 
 <!-- REF #imapTransporterClass.getBoxList().Params -->
-| 参照  | タイプ    |    | 説明                            |
-| --- | ------ |:--:| ----------------------------- |
-| 戻り値 | コレクション | <- | Collection of mailbox objects |
+| 参照  | タイプ    |    | 説明                    |
+| --- | ------ |:--:| --------------------- |
+| 戻り値 | コレクション | <- | mailbox オブジェクトのコレクション |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getBoxList()` function <!-- REF #imapTransporterClass.getBoxList().Summary -->returns a collection of mailboxes describing all of the available mailboxes<!-- END REF -->. This function allows you to locally manage the list of messages located on the IMAP mail server.
+`.getBoxList()` 関数は、 <!-- REF #imapTransporterClass.getBoxList().Summary -->利用可能なメールボックスの情報を mailbox オブジェクトのコレクションとしてを返します<!-- END REF -->。 This function allows you to locally manage the list of messages located on the IMAP mail server.
 
 #### 戻り値
 
@@ -698,7 +698,7 @@ Each object of the returned collection contains the following properties:
 
 | プロパティ            | タイプ     | 説明                                                                                                                   |
 | ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| \[].name        | text    | Name of the mailbox                                                                                                  |
+| \[].name        | text    | メールボックスの名称                                                                                                           |
 | \[].selectable  | boolean | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
 | \[].inferior    | boolean | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
 | \[].interesting | boolean | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
@@ -721,7 +721,7 @@ If the account does not contain any mailboxes, an empty collection is returned.
  For each($box;$boxList)
     If($box.interesting)
        $split:=Split string($box.name;$transporter.getDelimiter())
-       ALERT("New emails are available in the box: "+$split[$split.length-1])
+       ALERT("新規メールが届いています: "+$split[$split.length-1])
     End if
  End for each
 ```
@@ -743,25 +743,25 @@ If the account does not contain any mailboxes, an empty collection is returned.
 **.getDelimiter()** : Text<!-- END REF -->
 
 <!-- REF #imapTransporterClass.getDelimiter().Params -->
-| 参照  | タイプ  |    | 説明                            |
-| --- | ---- |:--:| ----------------------------- |
-| 戻り値 | テキスト | <- | Hierarchy delimiter character |
+| 参照  | タイプ  |    | 説明      |
+| --- | ---- |:--:| ------- |
+| 戻り値 | テキスト | <- | 階層区切り文字 |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getDelimiter()` function <!-- REF #imapTransporterClass.getDelimiter().Summary -->returns the character used to delimit levels of hierarchy in the mailbox name<!-- END REF -->.
+`.getDelimiter()` 関数は、 <!-- REF #imapTransporterClass.getDelimiter().Summary -->メールボックス名で階層レベルを区切るのに使用される文字を返します<!-- END REF -->。
 
-The delimiter is a character which can be used to:
+この区切り文字は以下のように使用することができます:
 
-*   create lower level (inferior) mailboxes
-*   search higher or lower within the mailbox hierarchy
+*   下層レベルのメールボックスを作成する
+*   メールボックスの階層内での上層・下層レベルを検索する
 
 
 #### 戻り値
 
-Mailbox name delimiter character.
+メールボックス名の区切り文字
 > * If there is no open connection, `.getDelimiter()` will open a connection.
 > * If the connection has not been used since the [designated connection delay](#checkconnectiondelay), the [`.checkConnection()`](#checkconnection) function is automatically called.
 
@@ -779,7 +779,7 @@ Mailbox name delimiter character.
  For each($box;$boxList)
     If($box.interesting)
        $split:=Split string($box.name;$transporter.getDelimiter())
-       ALERT("New emails are available in the box: "+$split[$split.length-1])
+       ALERT("新規メールが届いています: "+$split[$split.length-1])
     End if
  End for each
 ```
@@ -803,16 +803,16 @@ Mailbox name delimiter character.
 <!-- REF #imapTransporterClass.getMail().Params -->
 | 参照        | タイプ    |    | 説明                                               |
 | --------- | ------ |:--:| ------------------------------------------------ |
-| msgNumber | 整数     | -> | Sequence number of the message                   |
+| msgNumber | 整数     | -> | メッセージのシーケンス番号                                    |
 | msgID     | テキスト   | -> | Unique ID of the message                         |
-| options   | オブジェクト | -> | Message handling instructions                    |
+| options   | オブジェクト | -> | メッセージ管理オプション                                     |
 | 戻り値       | オブジェクト | <- | [Email オブジェクト](emailObjectClass.md#email-オブジェクト) |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getMail()` function <!-- REF #imapTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. This function allows you to locally handle the email contents.
+`.getMail()` 関数は、 <!-- REF #imapTransporterClass.getMail().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメールを `Email` オブジェクトとして返します<!-- END REF -->。 This function allows you to locally handle the email contents.
 
 In the first parameter, you can pass either:
 
@@ -836,7 +836,7 @@ The optional *options* parameter allows you pass an object defining additional i
 
 #### 例題
 
-You want to get the message with ID = 1:
+ID = 1のメッセージを取得します:
 
 ```4d
  var $server : Object
@@ -844,18 +844,18 @@ You want to get the message with ID = 1:
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
-  //create transporter
+  // transporter を作成します
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  //メールボックスを選択します
  $boxInfo:=$transporter.selectBox("Inbox")
 
-  //get Email object with ID 1
+  // ID = 1 の Emailオブジェクトを取得します
  $mail:=$transporter.getMail(1)
 ```
 
@@ -876,21 +876,21 @@ You want to get the message with ID = 1:
 **.getMails**( *ids* : Collection { ; *options* : Object } ) : Object<br>**.getMails**( *startMsg* : Integer ; *endMsg* : Integer { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #imapTransporterClass.getMails().Params -->
-| 参照       | タイプ    |    | 説明                                                     |
-| -------- | ------ |:--:| ------------------------------------------------------ |
-| ids      | コレクション | -> | Collection of message ID                               |
-| startMsg | 整数     | -> | Sequence number of the first message                   |
-| endMsg   | 整数     | -> | Sequence number of the last message                    |
-| options  | オブジェクト | -> | Message handling instructions                          |
-| 戻り値      | オブジェクト | <- | Object containing:<br><ul><li>a collection of [Email objects](emailObjectClass.md#email-object) and</li><li>a collection of IDs or numbers for missing messages, if any</li></ul> |
+| 参照       | タイプ    |    | 説明                                                       |
+| -------- | ------ |:--:| -------------------------------------------------------- |
+| ids      | コレクション | -> | メッセージID のコレクション                                          |
+| startMsg | 整数     | -> | 先頭メッセージのシーケンス番号                                          |
+| endMsg   | 整数     | -> | 最後のメッセージのシーケンス番号                                         |
+| options  | オブジェクト | -> | メッセージ管理オプション                                             |
+| 戻り値      | オブジェクト | <- | 次のコレクションを格納したオブジェクト:<br><ul><li>[Email オブジェクト](emailObjectClass.md#email-オブジェクト) のコレクション</li><li>見つからなかったメッセージの ID または番号のコレクション</li></ul> |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getMails()` function <!-- REF #imapTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
+`.getMails()` 関数は、 <!-- REF #imapTransporterClass.getMails().Summary -->`Email` オブジェクトのコレクションを格納したオブジェクトを返します<!-- END REF -->。
 
-**First Syntax:**
+**第一シンタックス:**
 
 ***.getMails( ids { ; options } ) -> result***
 
@@ -900,7 +900,7 @@ In the *ids* parameter, pass a collection of IDs for the messages to return. You
 
 The optional *options* parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
 
-**Second syntax:**
+**第二シンタックス:**
 
  ***.getMails( startMsg ; endMsg { ; options } ) -> result***
 
@@ -942,7 +942,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
  var $transporter : 4D.IMAPTransporter 
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
@@ -950,11 +950,11 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
   //create transporter
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  // メールボックスを選択します
  $boxInfo:=$transporter.selectBox("INBOX")
 
   If($boxInfo.mailCount>0)
-        // retrieve the headers of the last 20 messages without marking them as read
+        // 直近20件のメッセージのヘッダーを、"既読" にせずに取得します
     $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
         New object("withBody";False;"updateSeen";False))
     For each($mail;$result.list)
@@ -981,19 +981,19 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 
 <!-- REF #imapTransporterClass.getMIMEAsBlob().Params -->
-| 参照         | タイプ  |    | 説明                                                                                            |
-| ---------- | ---- |:--:| --------------------------------------------------------------------------------------------- |
-| msgNumber  | 整数   | -> | Sequence number of the message                                                                |
-| msgID      | テキスト | -> | Unique ID of the message                                                                      |
-| updateSeen | ブール  | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
-| 戻り値        | BLOB | <- | Blob of the MIME string returned from the mail server                                         |
+| 参照         | タイプ  |    | 説明                                                            |
+| ---------- | ---- |:--:| ------------------------------------------------------------- |
+| msgNumber  | 整数   | -> | メッセージのシーケンス番号                                                 |
+| msgID      | テキスト | -> | Unique ID of the message                                      |
+| updateSeen | ブール  | -> | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 |
+| 戻り値        | BLOB | <- | メールサーバーから返された MIME文字列の BLOB                                   |
 <!-- END REF -->
 
 
 
 #### 説明
 
-The `.getMIMEAsBlob()` function <!-- REF #imapTransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
+`.getMIMEAsBlob()` 関数は、 <!-- REF #imapTransporterClass.getMIMEAsBlob().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメッセージの MIMEコンテンツを格納した BLOB を返します<!-- END REF -->。
 
 In the first parameter, you can pass either:
 
@@ -1029,13 +1029,13 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
-  //create transporter
+  // transporter を作成します
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  // メールボックスを選択します
  $boxInfo:=$transporter.selectBox("Inbox")
 
-  //get BLOB
+  // BLOB を取得します
  $blob:=$transporter.getMIMEAsBlob(1)
 ```
 
@@ -1065,18 +1065,18 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 **.move**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.move**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #imapTransporterClass.move().Params -->
-| 参照             | タイプ    |    | 説明                                |
-| -------------- | ------ |:--:| --------------------------------- |
-| msgsIDs        | コレクション | -> | メッセージの固有ID のコレクション (テキスト)         |
-| allMsgs        | 整数     | -> | `IMAP all`: 選択されたメールボックスの全メッセージ   |
-| destinationBox | テキスト   | -> | Mailbox to receive moved messages |
-| 戻り値            | オブジェクト | <- | Status of the move operation      |
+| 参照             | タイプ    |    | 説明                              |
+| -------------- | ------ |:--:| ------------------------------- |
+| msgsIDs        | コレクション | -> | メッセージの固有ID のコレクション (テキスト)       |
+| allMsgs        | 整数     | -> | `IMAP all`: 選択されたメールボックスの全メッセージ |
+| destinationBox | テキスト   | -> | メッセージの移動先のメールボックス               |
+| 戻り値            | オブジェクト | <- | move処理のステータス                    |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.move()` function <!-- REF #imapTransporterClass.move().Summary -->moves the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
+`.move()` 関数は、 <!-- REF #imapTransporterClass.move().Summary -->*msgsIDs* または *allMsgs* で定義されたメッセージを IMAP サーバーの *destinationBox* へと移動します<!-- END REF -->。
 
 以下のものを渡すことができます:
 
@@ -1106,7 +1106,7 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 #### 例題 1
 
-To move a selection of messages:
+選択されたメッセージを移動します:
 
 ```4d
  var $server;$boxInfo;$status : Object
@@ -1114,20 +1114,20 @@ To move a selection of messages:
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  // メールボックスを選択します
  $boxInfo:=$transporter.selectBox("inbox")
 
-  //get collection of message unique IDs
+  // メッセージの固有IDのコレクションを取得します
  $mailIds:=$transporter.searchMails("subject \"4D new feature:\"")
 
-  // Move found messages from the current mailbox to the "documents" mailbox
+  // カレントメールボックス内で見つかったメッセージを "documents" メールボックスへ移動します
  $status:=$transporter.move($mailIds;"documents")
 ```
 
@@ -1172,11 +1172,11 @@ To move all messages in the current mailbox:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #imapTransporterClass.numToID().Params -->
-| 参照       | タイプ    |    | 説明                                   |
-| -------- | ------ |:--:| ------------------------------------ |
-| startMsg | 整数     | -> | Sequence number of the first message |
-| endMsg   | 整数     | -> | Sequence number of the last message  |
-| 戻り値      | コレクション | <- | Collection of unique IDs             |
+| 参照       | タイプ    |    | 説明                       |
+| -------- | ------ |:--:| ------------------------ |
+| startMsg | 整数     | -> | 先頭メッセージのシーケンス番号          |
+| endMsg   | 整数     | -> | 最後のメッセージのシーケンス番号         |
+| 戻り値      | コレクション | <- | Collection of unique IDs |
 <!-- END REF -->
 
 
@@ -1461,9 +1461,9 @@ Search-keys may request the value to search for:
 <!-- REF #imapTransporterClass.selectBox().Params -->
 | 参照    | タイプ    |    | 説明                    |
 | ----- | ------ |:--:| --------------------- |
-| name  | テキスト   | -> | Name of the mailbox   |
+| name  | テキスト   | -> | メールボックスの名称            |
 | state | 整数     | -> | Mailbox access status |
-| 戻り値   | オブジェクト | <- | boxInfo object        |
+| 戻り値   | オブジェクト | <- | boxInfo オブジェクト        |
 <!-- END REF -->
 
 
@@ -1490,7 +1490,7 @@ The `boxInfo` object returned contains the following properties:
 
 | プロパティ      | タイプ    | 説明                                        |
 | ---------- | ------ | ----------------------------------------- |
-| name       | テキスト   | Name of the mailbox                       |
+| name       | テキスト   | メールボックスの名称                                |
 | mailCount  | number | Number of messages in the mailbox         |
 | mailRecent | number | Number of messages with the "recent" flag |
 
