@@ -80,14 +80,14 @@
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v18</td><td>Support for UTF8 base64</td></tr>
+<tr><td>v18</td><td>UTF8 base64 をサポート</td></tr>
 <tr><td>v17 R5</td><td>追加</td></tr>
 </tbody>
 </table>
 <p></details></p>
 <p><strong>.bodyCharset</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.bodyCharset</code> property contains   the charset and encoding used for the body part of the email.</p>
+<p><code>.bodyCharset</code> プロパティは、   メール本文で使用される文字セットとエンコーディングを格納します。</p>
 <ul>
 <li>subject,</li>
 <li>attachment filename(s),</li>
@@ -119,7 +119,7 @@
 <p></details></p>
 <p><strong>.connectionTimeOut</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.connectionTimeOut</code> property contains the maximum wait time (in seconds) allowed to establish a connection to the server. By default, if the property has not been set in the server object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, or <code>IMAP New transporter</code>), the value is 30.</p>
+<p><code>.connectionTimeOut</code> プロパティは、 サーバー接続の確立までに待機する最長時間 (秒単位)を格納します。 By default, if the property has not been set in the server object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, or <code>IMAP New transporter</code>), the value is 30.</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="headercharset"></a><a href="#headercharset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.headerCharset</h2>
 <p><details><summary>履歴</summary></p>
@@ -134,7 +134,7 @@
 <p></details></p>
 <p><strong>.headerCharset</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.headerCharset</code> property contains  the charset and encoding used for the email header. The header includes the following parts of the email:</p>
+<p><code>.headerCharset</code> プロパティは、  メールヘッダーで使用される文字セットとエンコーディングを格納します。 The header includes the following parts of the email:</p>
 <ul>
 <li>subject,</li>
 <li>attachment filename(s),</li>
@@ -166,7 +166,7 @@
 <p></details></p>
 <p><strong>.host</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-6"></a><a href="#説明-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.host</code> property contains the name or the IP address of the host server. Used for mail transactions (SMTP, POP3, IMAP).</p>
+<p><code>.host</code> プロパティは、 ホストサーバーの名前または IPアドレスを格納します。 この情報はメール通信 (SMTP、POP3、IMAP) に使用されます。</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="logfile"></a><a href="#logfile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.logFile</h2>
 <p><details><summary>履歴</summary></p>
@@ -181,7 +181,7 @@
 <p></details></p>
 <p><strong>.logFile</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.logFile</code> property contains the path of the extended log file defined (if any) for the mail connection. It can be relative (to the current Logs folder) or absolute.</p>
+<p><code>.logFile</code> プロパティは、 メール接続に対して定義された拡張ログファイル (あれば) へのフルパスを格納します。 It can be relative (to the current Logs folder) or absolute.</p>
 <p>Unlike regular log files (enabled via the <code>SET DATABASE PARAMETER</code> command), extended log files store MIME contents of all sent mails and do not have any size limit. For more information about extended log files, refer to:</p>
 <ul>
 <li><strong>SMTP connections</strong> - <a href="https://doc.4d.com/4Dv18R4/4D/18-R4/Description-of-log-files.300-5005934.en.html#4165231">4DSMTPLog.txt</a></li>
@@ -202,7 +202,7 @@
 <p></details></p>
 <p><strong>.port</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.port</code> property contains  the port number used for mail transactions. By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
+<p><code>.port</code> プロパティは、  メール通信に使用されるポート番号を格納します。 By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
 <ul>
 <li><strong>SMTP</strong> - 587</li>
 <li><strong>POP3</strong> - 995</li>
@@ -222,7 +222,7 @@
 <p></details></p>
 <p><strong>.sendTimeOut</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-9"></a><a href="#説明-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.sendTimeOut</code> property contains  the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs. By default, if the <code>.sendTimeOut</code> property has not been set in the <code>server</code> object, the value 100 is used.</p>
+<p><code>.sendTimeOut</code> プロパティは、  <code>.send( )</code> 呼び出し時のタイムアウト時間 (秒単位)を格納します。 <code>.sendTimeOut</code> プロパティが <code>server</code> オブジェクトによって設定されていない場合は、デフォルトで 100 という値が使用されます。</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="user"></a><a href="#user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.user</h2>
 <p><details><summary>履歴</summary></p>
@@ -237,7 +237,7 @@
 <p></details></p>
 <p><strong>.user</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.user</code> property contains  the user name used for authentication on the mail server.</p>
+<p><code>.user</code> プロパティは、  メールサーバーでの認証に使用されたユーザー名を格納します。</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="checkconnection"></a><a href="#checkconnection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.checkConnection()</h2>
 <p><details><summary>履歴</summary></p>
@@ -256,13 +256,13 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Status of the transporter object connection</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>transporter オブジェクト接続のステータス</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.checkConnection()</code> function  checks the connection using information stored in the transporter object, recreates the connection if necessary, and returns the status. This function allows you to verify that the values provided by the user are valid and consistent.</p>
+<p><code>.checkConnection()</code> 関数は、  transporter オブジェクトが保存する情報を使用して接続をチェックします。必要なら再接続をし、そのステータスを返します。 この関数を使用して、ユーザーから提供された値が有効かどうかを検証することができます。</p>
 <h4><a class="anchor" aria-hidden="true" id="返されるオブジェクト"></a><a href="#返されるオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>返されるオブジェクト</h4>
-<p>The function sends a request to the mail server and returns an object describing the mail status. このオブジェクトには、次のプロパティが格納されることがあります:</p>
+<p>この関数はメールサーバーにリクエストを送信し、メールステータスを表すオブジェクトを返します。 このオブジェクトには、次のプロパティが格納されることがあります:</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th></th><th>タイプ</th><th>説明</th></tr>
