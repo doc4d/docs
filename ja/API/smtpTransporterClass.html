@@ -76,17 +76,17 @@
 <tbody>
 <tr><td><a href="#acceptunsecureconnection"><strong>.acceptUnsecureConnection</strong> : Boolean</a><p>    暗号化されていない接続の確立が許可されてれば <strong>true</strong></td></tr>
 <tr><td><a href="#authenticationmode"><strong>.authenticationMode</strong> : Text</a><p>    メールサーバーのセッションを開くのに使用される認証モード</td></tr>
-<tr><td><a href="#bodycharset"><strong>.bodyCharset</strong> : Text</a><p>      the charset and encoding used for the body part of the email</td></tr>
-<tr><td><a href="#checkconnection"><strong>.checkConnection()</strong> : Object</a><p>     checks the connection using information stored in the transporter object</td></tr>
-<tr><td><a href="#connectiontimeout"><strong>.connectionTimeOut</strong> : Integer</a><p>    the maximum wait time (in seconds) allowed to establish a connection to the server</td></tr>
-<tr><td><a href="#headercharset"><strong>.headerCharset</strong> : Text</a><p>     the charset and encoding used for the email header</td></tr>
-<tr><td><a href="#host"><strong>.host</strong> : Text</a><p>    the name or the IP address of the host server</td></tr>
-<tr><td><a href="#keepalive"><strong>.keepAlive</strong> : Boolean</a><p>    <strong>True</strong> if the SMTP connection must be kept alive until the <code>transporter</code> object is destroyed</td></tr>
-<tr><td><a href="#logfile"><strong>.logFile</strong> : Text</a><p>    the path of the extended log file defined (if any) for the mail connection</td></tr>
-<tr><td><a href="#port"><strong>.port</strong> : Integer</a><p>     the port number used for mail transactions</td></tr>
-<tr><td><a href="#send"><strong>.send</strong>( <em>mail</em> : Object ) : Object</a><p>    sends the <a href="/docs/ja/API/emails.html#email-object"><em>mail</em> object</a> to the SMTP server defined in the <code>transporter</code> object and returns a status object</td></tr>
-<tr><td><a href="#sendtimeout"><strong>.sendTimeOut</strong> : Integer</a><p>     the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs</td></tr>
-<tr><td><a href="#user"><strong>.user</strong> : Text</a><p>     the user name used for authentication on the mail server</td></tr>
+<tr><td><a href="#bodycharset"><strong>.bodyCharset</strong> : Text</a><p>      メール本文で使用される文字セットとエンコーディング</td></tr>
+<tr><td><a href="#checkconnection"><strong>.checkConnection()</strong> : Object</a><p>     transporter オブジェクトが保存する情報を使用して接続をチェックします</td></tr>
+<tr><td><a href="#connectiontimeout"><strong>.connectionTimeOut</strong> : Integer</a><p>    サーバー接続の確立までに待機する最長時間 (秒単位)</td></tr>
+<tr><td><a href="#headercharset"><strong>.headerCharset</strong> : Text</a><p>     メールヘッダーで使用される文字セットとエンコーディング</td></tr>
+<tr><td><a href="#host"><strong>.host</strong> : Text</a><p>    ホストサーバーの名前または IPアドレス</td></tr>
+<tr><td><a href="#keepalive"><strong>.keepAlive</strong> : Boolean</a><p>    <code>transporter</code> オブジェクトが抹消されるまで、SMTP接続が維持されなければならない場合に <strong>true</strong></td></tr>
+<tr><td><a href="#logfile"><strong>.logFile</strong> : Text</a><p>    メール接続に対して定義された拡張ログファイル (あれば) へのフルパス</td></tr>
+<tr><td><a href="#port"><strong>.port</strong> : Integer</a><p>     メール通信に使用されるポート番号</td></tr>
+<tr><td><a href="#send"><strong>.send</strong>( <em>mail</em> : Object ) : Object</a><p>    <a href="/docs/ja/API/emails.html#email-オブジェクト"><em>mail</em></a> 引数が指定するメールメッセージを、<code>transporter</code> オブジェクトが定義する SMTPサーバーへと送信し、ステータスオブジェクトを返します</td></tr>
+<tr><td><a href="#sendtimeout"><strong>.sendTimeOut</strong> : Integer</a><p>     <code>.send( )</code> 呼び出し時のタイムアウト時間 (秒単位)</td></tr>
+<tr><td><a href="#user"><strong>.user</strong> : Text</a><p>     メールサーバーでの認証に使用されたユーザー名</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="smtp-new-transporter"></a><a href="#smtp-new-transporter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SMTP New transporter</h2>
@@ -96,8 +96,8 @@
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v18</td><td>New logFile property</td></tr>
-<tr><td>v17 R5</td><td>New bodyCharset and headerCharset properties</td></tr>
+<tr><td>v18</td><td>logFile プロパティを追加</td></tr>
+<tr><td>v17 R5</td><td>bodyCharset と headerCharset プロパティを追加</td></tr>
 <tr><td>v17 R4</td><td>追加</td></tr>
 </tbody>
 </table>
@@ -108,12 +108,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>server</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Mail server information</td></tr>
-<tr><td>戻り値</td><td>4D.SMTPTransporter</td><td style="text-align:center">&lt;-</td><td><a href="#smtp-transporter-object">SMTP transporter object</a></td></tr>
+<tr><td>server</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>メールサーバー情報</td></tr>
+<tr><td>戻り値</td><td>4D.SMTPTransporter</td><td style="text-align:center">&lt;-</td><td><a href="#smtp-transporter-object">SMTP transporter オブジェクト</a></td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>SMTP New transporter</code> command configures a new SMTP connection according to the <em>server</em> parameter and returns a new <em><a href="#smtp-transporter-object">SMTP transporter</a></em> object. The returned transporter object will then usually be used to send emails.</p>
+<p><code>SMTP New transporter</code> コマンドは、<em>server</em> 引数の指定に応じて 新規の SMTP接続を設定します 。戻り値は、新しい <em><a href="#smtp-transporter-object">SMTP transporter</a></em> オブジェクトです。 The returned transporter object will then usually be used to send emails.</p>
 <blockquote>
 <p>This command does not open any connection to the SMTP server. The SMTP connection is actually opened when the <a href="#send"><code>.send()</code></a> function is executed.</p>
 <p>The SMTP connection is automatically closed: * when the transporter object is destroyed if the <a href="#keepalive"><code>keepAlive</code></a> property is true (default), * after each  <a href="#send"><code>.send( )</code></a> function execution if the <a href="#keepalive"><code>keepAlive</code></a> property is set to false.</p>
@@ -127,20 +127,20 @@
 <tr><td><a href="#acceptunsecureconnection"><strong>.acceptUnsecureConnection</strong> : Boolean</a><p>    暗号化されていない接続の確立が許可されてれば <strong>true</strong></td><td>False</td></tr>
 <tr><td>.<strong>accessTokenOAuth2</strong>: Text<p>Text string representing OAuth 2 authorization credentials. Used only with OAUTH2 <code>authenticationMode</code>. If <code>accessTokenOAuth2</code> is used but <code>authenticationMode</code> is omitted, the OAuth 2 protocol is used (if allowed by the server). Not returned in <em><a href="#smtp-transporter-object">SMTP transporter</a></em> object.</td><td>none</td></tr>
 <tr><td><a href="#authenticationmode"><strong>.authenticationMode</strong> : Text</a><p>    メールサーバーのセッションを開くのに使用される認証モード</td><td>the most secure authentication mode supported by the server is used</td></tr>
-<tr><td><a href="#bodycharset"><strong>.bodyCharset</strong> : Text</a><p>      the charset and encoding used for the body part of the email</td><td><code>mail mode UTF8</code> (US-ASCII_UTF8_QP)</td></tr>
-<tr><td><a href="#connectiontimeout"><strong>.connectionTimeOut</strong> : Integer</a><p>    the maximum wait time (in seconds) allowed to establish a connection to the server</td><td>30</td></tr>
-<tr><td><a href="#headercharset"><strong>.headerCharset</strong> : Text</a><p>     the charset and encoding used for the email header</td><td><code>mail mode UTF8</code> (US-ASCII_UTF8_QP)</td></tr>
-<tr><td><a href="#host"><strong>.host</strong> : Text</a><p>    the name or the IP address of the host server</td><td><em>mandatory</em></td></tr>
-<tr><td><a href="#keepalive"><strong>.keepAlive</strong> : Boolean</a><p>    <strong>True</strong> if the SMTP connection must be kept alive until the <code>transporter</code> object is destroyed</td><td>True</td></tr>
-<tr><td><a href="#logfile"><strong>.logFile</strong> : Text</a><p>    the path of the extended log file defined (if any) for the mail connection</td><td>none</td></tr>
+<tr><td><a href="#bodycharset"><strong>.bodyCharset</strong> : Text</a><p>      メール本文で使用される文字セットとエンコーディング</td><td><code>mail mode UTF8</code> (US-ASCII_UTF8_QP)</td></tr>
+<tr><td><a href="#connectiontimeout"><strong>.connectionTimeOut</strong> : Integer</a><p>    サーバー接続の確立までに待機する最長時間 (秒単位)</td><td>30</td></tr>
+<tr><td><a href="#headercharset"><strong>.headerCharset</strong> : Text</a><p>     メールヘッダーで使用される文字セットとエンコーディング</td><td><code>mail mode UTF8</code> (US-ASCII_UTF8_QP)</td></tr>
+<tr><td><a href="#host"><strong>.host</strong> : Text</a><p>    ホストサーバーの名前または IPアドレス</td><td><em>mandatory</em></td></tr>
+<tr><td><a href="#keepalive"><strong>.keepAlive</strong> : Boolean</a><p>    <code>transporter</code> オブジェクトが抹消されるまで、SMTP接続が維持されなければならない場合に <strong>true</strong></td><td>True</td></tr>
+<tr><td><a href="#logfile"><strong>.logFile</strong> : Text</a><p>    メール接続に対して定義された拡張ログファイル (あれば) へのフルパス</td><td>none</td></tr>
 <tr><td><strong>password</strong> : Text<p>User password for authentication on the server. Not returned in <em><a href="#smtp-transporter-object">SMTP transporter</a></em> object.</td><td>none</td></tr>
-<tr><td><a href="#port"><strong>.port</strong> : Integer</a><p>     the port number used for mail transactions</td><td>587</td></tr>
-<tr><td><a href="#sendtimeout"><strong>.sendTimeOut</strong> : Integer</a><p>     the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs</td><td>100</td></tr>
-<tr><td><a href="#user"><strong>.user</strong> : Text</a><p>     the user name used for authentication on the mail server</td><td>none</td></tr>
+<tr><td><a href="#port"><strong>.port</strong> : Integer</a><p>     メール通信に使用されるポート番号</td><td>587</td></tr>
+<tr><td><a href="#sendtimeout"><strong>.sendTimeOut</strong> : Integer</a><p>     <code>.send( )</code> 呼び出し時のタイムアウト時間 (秒単位)</td><td>100</td></tr>
+<tr><td><a href="#user"><strong>.user</strong> : Text</a><p>     メールサーバーでの認証に使用されたユーザー名</td><td>none</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="戻り値"></a><a href="#戻り値" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>戻り値</h4>
-<p>The function returns a <a href="#smtp-transporter-object"><strong>SMTP transporter object</strong></a>. All returned properties are <strong>read-only</strong>.</p>
+<p>この関数は、<a href="#smtp-transporter-object"><strong>SMTP transporter オブジェクト</strong></a> を返します。 All returned properties are <strong>read-only</strong>.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$server</span>:=New object
  <span class="hljs-variable">$server</span>.host:=<span class="hljs-string">"smtp.gmail.com"</span> <span class="hljs-comment">//Mandatory</span>
@@ -173,12 +173,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>server</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Mail server information</td></tr>
-<tr><td>戻り値</td><td>4D.SMTPTransporter</td><td style="text-align:center">&lt;-</td><td><a href="#smtp-transporter-object">SMTP transporter object</a></td></tr>
+<tr><td>server</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>メールサーバー情報</td></tr>
+<tr><td>戻り値</td><td>4D.SMTPTransporter</td><td style="text-align:center">&lt;-</td><td><a href="#smtp-transporter-object">SMTP transporter オブジェクト</a></td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>4D.SMTPTransporter.new()</code> function creates and returns a new object of the <code>4D.SMTPTransporter</code> type. It is identical to the <a href="#smtp-new-transporter"><code>SMTP New transporter</code></a> command (shortcut).</p>
+<p><code>4D.SMTPTransporter.new()</code> 関数は、 新規の <code>4D.SMTPTransporter</code>型オブジェクトを作成して返します。 この関数の機能は、<a href="#smtp-new-transporter"><code>SMTP New transporter</code></a> コマンドと同一です。</p>
 <h2><a class="anchor" aria-hidden="true" id="acceptunsecureconnection"></a><a href="#acceptunsecureconnection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.acceptUnsecureConnection</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -246,14 +246,14 @@
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v18</td><td>Support for UTF8 base64</td></tr>
+<tr><td>v18</td><td>UTF8 base64 をサポート</td></tr>
 <tr><td>v17 R5</td><td>追加</td></tr>
 </tbody>
 </table>
 <p></details></p>
 <p><strong>.bodyCharset</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.bodyCharset</code> property contains   the charset and encoding used for the body part of the email.</p>
+<p><code>.bodyCharset</code> プロパティは、   メール本文で使用される文字セットとエンコーディングを格納します。</p>
 <ul>
 <li>subject,</li>
 <li>attachment filename(s),</li>
@@ -288,13 +288,13 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Status of the transporter object connection</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>transporter オブジェクト接続のステータス</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.checkConnection()</code> function  checks the connection using information stored in the transporter object, recreates the connection if necessary, and returns the status. This function allows you to verify that the values provided by the user are valid and consistent.</p>
+<p><code>.checkConnection()</code> 関数は、  transporter オブジェクトが保存する情報を使用して接続をチェックします。必要なら再接続をし、そのステータスを返します。 この関数を使用して、ユーザーから提供された値が有効かどうかを検証することができます。</p>
 <h4><a class="anchor" aria-hidden="true" id="返されるオブジェクト"></a><a href="#返されるオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>返されるオブジェクト</h4>
-<p>The function sends a request to the mail server and returns an object describing the mail status. このオブジェクトには、次のプロパティが格納されることがあります:</p>
+<p>この関数はメールサーバーにリクエストを送信し、メールステータスを表すオブジェクトを返します。 このオブジェクトには、次のプロパティが格納されることがあります:</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th></th><th>タイプ</th><th>説明</th></tr>
@@ -344,7 +344,7 @@
 <p></details></p>
 <p><strong>.connectionTimeOut</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-6"></a><a href="#説明-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.connectionTimeOut</code> property contains the maximum wait time (in seconds) allowed to establish a connection to the server. By default, if the property has not been set in the server object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, or <code>IMAP New transporter</code>), the value is 30.</p>
+<p><code>.connectionTimeOut</code> プロパティは、 サーバー接続の確立までに待機する最長時間 (秒単位)を格納します。 By default, if the property has not been set in the server object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, or <code>IMAP New transporter</code>), the value is 30.</p>
 <h2><a class="anchor" aria-hidden="true" id="headercharset"></a><a href="#headercharset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.headerCharset</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -358,7 +358,7 @@
 <p></details></p>
 <p><strong>.headerCharset</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.headerCharset</code> property contains  the charset and encoding used for the email header. The header includes the following parts of the email:</p>
+<p><code>.headerCharset</code> プロパティは、  メールヘッダーで使用される文字セットとエンコーディングを格納します。 The header includes the following parts of the email:</p>
 <ul>
 <li>subject,</li>
 <li>attachment filename(s),</li>
@@ -389,7 +389,7 @@
 <p></details></p>
 <p><strong>.host</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.host</code> property contains the name or the IP address of the host server. Used for mail transactions (SMTP, POP3, IMAP).</p>
+<p><code>.host</code> プロパティは、 ホストサーバーの名前または IPアドレスを格納します。 この情報はメール通信 (SMTP、POP3、IMAP) に使用されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="keepalive"></a><a href="#keepalive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.keepAlive</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -403,7 +403,7 @@
 <p></details></p>
 <p><strong>.keepAlive</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-9"></a><a href="#説明-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.keepAlive</code> property contains <strong>True</strong> if the SMTP connection must be kept alive until the <code>transporter</code> object is destroyed, and <strong>False</strong> otherwise. By default, if the <code>keepAlive</code> property has not been set in the <code>server</code> object (used to create the <code>transporter</code> object with <code>SMTP New transporter</code>), it is <strong>True</strong>.</p>
+<p><code>.keepAlive</code> プロパティは、 <code>transporter</code> オブジェクトが抹消されるまで、SMTP接続が維持されなければならない場合に <strong>true</strong>、それ以外は <strong>False</strong> を格納します。 By default, if the <code>keepAlive</code> property has not been set in the <code>server</code> object (used to create the <code>transporter</code> object with <code>SMTP New transporter</code>), it is <strong>True</strong>.</p>
 <p>The SMTP connection is automatically closed:</p>
 <ul>
 <li>when the <code>transporter</code> object is destroyed if the <code>.keepAlive</code> property is true,</li>
@@ -422,7 +422,7 @@
 <p></details></p>
 <p><strong>.logFile</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.logFile</code> property contains the path of the extended log file defined (if any) for the mail connection. It can be relative (to the current Logs folder) or absolute.</p>
+<p><code>.logFile</code> プロパティは、 メール接続に対して定義された拡張ログファイル (あれば) へのフルパスを格納します。 It can be relative (to the current Logs folder) or absolute.</p>
 <p>Unlike regular log files (enabled via the <code>SET DATABASE PARAMETER</code> command), extended log files store MIME contents of all sent mails and do not have any size limit. For more information about extended log files, refer to:</p>
 <ul>
 <li><strong>SMTP connections</strong> - <a href="https://doc.4d.com/4Dv18R4/4D/18-R4/Description-of-log-files.300-5005934.en.html#4165231">4DSMTPLog.txt</a></li>
@@ -442,7 +442,7 @@
 <p></details></p>
 <p><strong>.port</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.port</code> property contains  the port number used for mail transactions. By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
+<p><code>.port</code> プロパティは、  メール通信に使用されるポート番号を格納します。 By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
 <ul>
 <li><strong>SMTP</strong> - 587</li>
 <li><strong>POP3</strong> - 995</li>
@@ -455,7 +455,7 @@
 <tr><th>バージョン</th><th>内容</th></tr>
 </thead>
 <tbody>
-<tr><td>v17 R5</td><td>Support of mime contents</td></tr>
+<tr><td>v17 R5</td><td>MIMEコンテンツをサポート</td></tr>
 <tr><td>v17 R4</td><td>追加</td></tr>
 </tbody>
 </table>
@@ -466,12 +466,12 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>mail</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td><a href="/docs/ja/API/emails.html#email-object">Email</a> to send</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>SMTP status</td></tr>
+<tr><td>mail</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>送信する <a href="/docs/ja/API/emails.html#email-オブジェクト">メール</a></td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>SMTP ステータス</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-12"></a><a href="#説明-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.send()</code> function sends the <a href="/docs/ja/API/emails.html#email-object"><em>mail</em> object</a> to the SMTP server defined in the <code>transporter</code> object and returns a status object.</p>
+<p><code>.send()</code> 関数は、 <a href="/docs/ja/API/emails.html#email-オブジェクト"><em>mail</em></a> 引数が指定するメールメッセージを、<code>transporter</code> オブジェクトが定義する SMTPサーバーへと送信し、ステータスオブジェクトを返します。</p>
 <blockquote>
 <p>The <code>transporter</code> object must have already been created using the <code>SMTP New transporter</code> command.</p>
 </blockquote>
@@ -490,7 +490,7 @@
 <p></details></p>
 <p><strong>.sendTimeOut</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-13"></a><a href="#説明-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.sendTimeOut</code> property contains  the maximum wait time (in seconds) of a call to <code>.send( )</code> before a timeout occurs. By default, if the <code>.sendTimeOut</code> property has not been set in the <code>server</code> object, the value 100 is used.</p>
+<p><code>.sendTimeOut</code> プロパティは、  <code>.send( )</code> 呼び出し時のタイムアウト時間 (秒単位)を格納します。 <code>.sendTimeOut</code> プロパティが <code>server</code> オブジェクトによって設定されていない場合は、デフォルトで 100 という値が使用されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="user"></a><a href="#user" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.user</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -504,7 +504,7 @@
 <p></details></p>
 <p><strong>.user</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-14"></a><a href="#説明-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.user</code> property contains  the user name used for authentication on the mail server.</p>
+<p><code>.user</code> プロパティは、  メールサーバーでの認証に使用されたユーザー名を格納します。</p>
 <style> h2 { background: #d9ebff;}</style>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/API/signalClass.html"><span class="arrow-prev">← </span><span>Signal</span></a><a class="docs-next button" href="/docs/ja/API/webServerClass.html"><span class="function-name-prevnext">WebServer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#smtp-new-transporter">SMTP New transporter</a></li><li><a href="#4dsmtptransporternew">4D.SMTPTransporter.new()</a></li><li><a href="#acceptunsecureconnection">.acceptUnsecureConnection</a></li><li><a href="#authenticationmode">.authenticationMode</a></li><li><a href="#bodycharset">.bodyCharset</a></li><li><a href="#checkconnection">.checkConnection()</a></li><li><a href="#connectiontimeout">.connectionTimeOut</a></li><li><a href="#headercharset">.headerCharset</a></li><li><a href="#host">.host</a></li><li><a href="#keepalive">.keepAlive</a></li><li><a href="#logfile">.logFile</a></li><li><a href="#port">.port</a></li><li><a href="#send">.send()</a></li><li><a href="#sendtimeout">.sendTimeOut</a></li><li><a href="#user">.user</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
