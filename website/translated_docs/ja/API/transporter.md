@@ -140,10 +140,10 @@ Possible values are:
 ## .bodyCharset
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                      |
-| ------ | ----------------------- |
-| v18    | Support for UTF8 base64 |
-| v17 R5 | 追加                      |
+| バージョン  | 内容                |
+| ------ | ----------------- |
+| v18    | UTF8 base64 をサポート |
+| v17 R5 | 追加                |
 </details>
 
 <!-- REF #transporter.bodyCharset.Syntax -->
@@ -152,7 +152,7 @@ Possible values are:
 
 #### 説明
 
-The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -->  the charset and encoding used for the body part of the email<!-- END REF -->.
+`.bodyCharset` プロパティは、 <!-- REF #transporter.bodyCharset.Summary -->  メール本文で使用される文字セットとエンコーディング<!-- END REF -->を格納します。
 
 *   subject,
 *   attachment filename(s),
@@ -188,7 +188,7 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 
 #### 説明
 
-The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeOut.Summary -->the maximum wait time (in seconds) allowed to establish a connection to the server<!-- END REF -->. By default, if the property has not been set in the server object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, or `IMAP New transporter`), the value is 30.
+`.connectionTimeOut` プロパティは、 <!-- REF #transporter.connectionTimeOut.Summary -->サーバー接続の確立までに待機する最長時間 (秒単位)<!-- END REF -->を格納します。 By default, if the property has not been set in the server object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, or `IMAP New transporter`), the value is 30.
 
 <!-- END REF -->
 
@@ -210,7 +210,7 @@ The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeO
 
 #### 説明
 
-The `.headerCharset` property contains <!-- REF #transporter.headerCharset.Summary --> the charset and encoding used for the email header<!-- END REF -->. The header includes the following parts of the email:
+`.headerCharset` プロパティは、 <!-- REF #transporter.headerCharset.Summary --> メールヘッダーで使用される文字セットとエンコーディング<!-- END REF -->を格納します。 The header includes the following parts of the email:
 
 *   subject,
 *   attachment filename(s),
