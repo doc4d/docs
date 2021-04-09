@@ -6,7 +6,7 @@ title: IMAPTransporter
 The `IMAPTransporter` class allows you to retrieve messages from a IMAP email server.
 
 
-### IMAP Transporter object
+### IMAP Transporter オブジェクト
 
 IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-new-transporter) command. これらは、次のプロパティや関数を持ちます:
 
@@ -50,14 +50,14 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 <!-- REF imapTransporterClass.IMAP New transporter.Params -->
 | 参照     | タイプ                |    | 説明                                                  |
 | ------ | ------------------ |:--:| --------------------------------------------------- |
-| server | オブジェクト             | -> | Mail server information                             |
-| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object) |
+| server | オブジェクト             | -> | メールサーバー情報                                           |
+| 戻り値    | 4D.IMAPTransporter | <- | [IMAP transporter オブジェクト](#imap-transporter-object) |
 <!-- END REF -->
 
 
 #### 説明
 
-The `IMAP New transporter` command <!-- REF #_command_.IMAP New transporter.Summary -->configures a new IMAP connection<!-- END REF --> according to the *server* parameter and returns a new *transporter* object. The returned transporter object will then usually be used to receive emails.
+`IMAP New transporter` コマンドは、*server* 引数の指定に応じて <!-- REF #_command_.IMAP New transporter.Summary -->新規の IMAP接続を設定します<!-- END REF --> 。戻り値は、新しい *IMAP transporter* オブジェクトです。 The returned transporter object will then usually be used to receive emails.
 
 In the *server* parameter, pass an object containing the following properties:
 
@@ -84,18 +84,18 @@ The function returns an [**IMAP transporter object**](#imap-transporter-object).
 
 ```4d
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
- $server.logFile:="LogTest.txt" //log to save in the Logs folder
+ $server.logFile:="LogTest.txt" // Logsフォルダーに保存するログファイル
 
  var $transporter : 4D.IMAPTransporter
  $transporter:=IMAP New transporter($server)
 
  $status:=$transporter.checkConnection()
  If(Not($status.success))
-    ALERT("An error occurred: "+$status.statusText)
+    ALERT("エラーが発生しました: "+$status.statusText)
  End if
 ```
 
@@ -540,7 +540,7 @@ Mailbox name delimiter character.
 | msgNumber | 整数     | -> | Sequence number of the message                   |
 | msgID     | テキスト   | -> | Unique ID of the message                         |
 | options   | オブジェクト | -> | Message handling instructions                    |
-| 戻り値       | オブジェクト | <- | [Email object](emailObjectClass.md#email-object) |
+| 戻り値       | オブジェクト | <- | [Email object](emailObjectClass.md#email-オブジェクト) |
 <!-- END REF -->
 
 
