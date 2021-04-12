@@ -74,12 +74,12 @@
 <tr><th></th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#cid"><strong>.cid</strong> : Text</a><p>     the ID of the attachment</td></tr>
-<tr><td><a href="#disposition"><strong>.disposition</strong> : Text</a><p>    the value of the <code>Content-Disposition</code> header</td></tr>
-<tr><td><a href="#getcontent"><strong>.getContent()</strong> : Blob</a><p>    returns the contents of the attachment object in a BLOB</td></tr>
-<tr><td><a href="#cid"><strong>.name</strong> : Text</a><p>    the name and extension of the attachment</td></tr>
-<tr><td><a href="#cid"><strong>.path</strong> : Text</a><p>    the full path of the attachment, if it exists</td></tr>
-<tr><td><a href="#cid"><strong>.type</strong> : Text</a><p>    the <code>content-type</code> of the attachment file</td></tr>
+<tr><td><a href="#cid"><strong>.cid</strong> : Text</a><p>     添付ファイルの ID</td></tr>
+<tr><td><a href="#disposition"><strong>.disposition</strong> : Text</a><p>    <code>Content-Disposition</code> ヘッダーの値</td></tr>
+<tr><td><a href="#getcontent"><strong>.getContent()</strong> : Blob</a><p>    添付オブジェクトの中身を BLOB として返します</td></tr>
+<tr><td><a href="#cid"><strong>.name</strong> : Text</a><p>    添付ファイルの名前と拡張子</td></tr>
+<tr><td><a href="#cid"><strong>.path</strong> : Text</a><p>    添付ファイルのフルパス</td></tr>
+<tr><td><a href="#cid"><strong>.type</strong> : Text</a><p>    添付ファイルの <code>content-type</code></td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="mail-new-attachment"></a><a href="#mail-new-attachment" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>MAIL New attachment</h2>
@@ -89,17 +89,17 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Path of the attachment file</td></tr>
-<tr><td>blob</td><td>BLOB</td><td style="text-align:center">-&gt;</td><td>BLOB containing the attachment</td></tr>
-<tr><td>name</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Name + extension used by the mail client to designate the attachment</td></tr>
-<tr><td>cid</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>ID of attachment (HTML messages only), or &quot; &quot; if no cid is required</td></tr>
-<tr><td>type</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Value of the content-type header</td></tr>
-<tr><td>disposition</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Value of the content-disposition header: &quot;inline&quot; or &quot;attachment&quot;.</td></tr>
-<tr><td>戻り値</td><td>4D.MailAttachment</td><td style="text-align:center">&lt;-</td><td>Attachment object</td></tr>
+<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>添付ファイルのパス</td></tr>
+<tr><td>blob</td><td>BLOB</td><td style="text-align:center">-&gt;</td><td>添付を格納した BLOB</td></tr>
+<tr><td>name</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>メールクライアントが添付を指定するのに使用する名前 + 拡張子</td></tr>
+<tr><td>cid</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は &quot;&quot; (空の文字列)</td></tr>
+<tr><td>type</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>content-type ヘッダーの値</td></tr>
+<tr><td>disposition</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>content-disposition ヘッダーの値: &quot;inline&quot; あるいは &quot;attachment&quot;</td></tr>
+<tr><td>戻り値</td><td>4D.MailAttachment</td><td style="text-align:center">&lt;-</td><td>Attachment オブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>MAIL New attachment</code> command allows you to create an attachment object that you can add to an <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-object">Email object</a>.</p>
+<p><code>MAIL New attachment</code> コマンドは、 <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-オブジェクト">Email オブジェクト</a> に追加することができる添付オブジェクトを作成します。</p>
 <p>You can pass either a path or a Blob to define the attachment.</p>
 <ul>
 <li><p>If you use a <em>path</em>, pass a <strong>text</strong> value containing the path of the attachment file, expressed with the system syntax. You can pass a full path name or a simple file name (in which case 4D will search for the file in the same directory as the project file).</p></li>
@@ -115,7 +115,7 @@
 <p>By default, if the <em>type</em> parameter is omitted or contains an empty string, the <code>content-type</code> of the attachment file is based on its extension. The following rules are applied for the main MIME types:</p>
 <table>
 <thead>
-<tr><th>Extension</th><th>Content Type</th></tr>
+<tr><th>拡張子</th><th>Content-Type</th></tr>
 </thead>
 <tbody>
 <tr><td>jpg, jpeg</td><td>image/jpeg</td></tr>
@@ -133,7 +133,7 @@
 <tr><td>xml</td><td>application/xml</td></tr>
 <tr><td>htm, html</td><td>text/html</td></tr>
 <tr><td>mp3</td><td>audio/mpeg</td></tr>
-<tr><td><em>other</em></td><td>application/octet-stream</td></tr>
+<tr><td><em>その他</em></td><td>application/octet-stream</td></tr>
 </tbody>
 </table>
 <p>The optional <em>disposition</em> parameter lets you pass the <code>content-disposition</code> header of the attachment. You can pass one of the following constants from the &quot;Mail&quot; constant theme:</p>
@@ -143,7 +143,7 @@
 </thead>
 <tbody>
 <tr><td>mail disposition attachment</td><td>&quot;attachment&quot;</td><td>Set the Content-disposition header value to &quot;attachment&quot;, which means that the attachment file must be provided as a link in the message.</td></tr>
-<tr><td>mail disposition inline</td><td>&quot;inline&quot;</td><td>Set the Content-disposition header value to &quot;inline&quot;, which means that the attachment must be rendered within the message contents, at the &quot;cid&quot; location. The rendering depends on the mail client.</td></tr>
+<tr><td>mail disposition inline</td><td>&quot;inline&quot;</td><td>Set the Content-disposition header value to &quot;inline&quot;, which means that the attachment must be rendered within the message contents, at the &quot;cid&quot; location. レンダリングの結果はメールクライアントによって異なります。</td></tr>
 </tbody>
 </table>
 <p>By default, if the <em>disposition</em> parameter is omitted:</p>
@@ -152,9 +152,9 @@
 <li>if the <em>cid</em> parameter is not passed or empty, the <code>Content-disposition</code> header is set to &quot;attachment&quot;.</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
-<p>You want to send an email with a user-selected file as an attachment and an image embedded in the HTML body:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-variable">$doc</span>:=<span class="hljs-function">Select document</span>(<span class="hljs-string">""</span>;<span class="hljs-string">"*"</span>;<span class="hljs-string">"Please select a file to attach"</span>;<span class="hljs-number">0</span>)<span class="hljs-keyword">
-If</span> (OK=<span class="hljs-number">1</span>) <span class="hljs-comment">//If a document was selected</span>
+<p>ユーザーが選択したファイルを添付し、HTML 本文に画像を埋め込んだメールを送信します:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$doc</span>:=<span class="hljs-function">Select document</span>(<span class="hljs-string">""</span>;<span class="hljs-string">"*"</span>;<span class="hljs-string">"添付するファイルを選択したください"</span>;<span class="hljs-number">0</span>)<span class="hljs-keyword">
+If</span> (OK=<span class="hljs-number">1</span>) <span class="hljs-comment">// もしドキュメントが選択されていれば</span>
 
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$email</span>;<span class="hljs-variable">$server</span>;<span class="hljs-variable">$transporter</span>)
 
@@ -167,11 +167,11 @@ If</span> (OK=<span class="hljs-number">1</span>) <span class="hljs-comment">//I
 <span class="hljs-variable">$email</span>:=New object
 <span class="hljs-variable">$email</span>.from:=<span class="hljs-string">"test_user@mail.com"</span>
 <span class="hljs-variable">$email</span>.to:=<span class="hljs-string">"test_user@mail.com"</span>
-<span class="hljs-variable">$email</span>.subject:=<span class="hljs-string">"This is a test message with attachments"</span>
+<span class="hljs-variable">$email</span>.subject:=<span class="hljs-string">"添付の付いたテストメッセージです"</span>
 
-<span class="hljs-comment">//add a link to download file</span>
+<span class="hljs-comment">// ファイルをダウンロードするリンクを追加します</span>
 <span class="hljs-variable">$email</span>.attachments:=<span class="hljs-function">New collection</span>(<span class="hljs-function">MAIL New attachment</span>(Document))
-<span class="hljs-comment">//insert an inline picture (use a cid)</span>
+<span class="hljs-comment">// インラインピクチャーを挿入します (cid を使用)</span>
 <span class="hljs-variable">$email</span>.attachments[<span class="hljs-number">1</span>]:=<span class="hljs-function">MAIL New attachment</span>(<span class="hljs-string">"c:\\Pictures\\4D.jpg"</span>;<span class="hljs-string">""</span>;<span class="hljs-string">"4D"</span>)
 
 <span class="hljs-variable">$email</span>.htmlBody:=<span class="hljs-string">"&lt;html&gt;"</span>+\
@@ -181,12 +181,12 @@ If</span> (OK=<span class="hljs-number">1</span>) <span class="hljs-comment">//I
 <span class="hljs-string">"&lt;/head&gt;"</span>+\
 <span class="hljs-string">"&lt;/html&gt;"</span>
 
-<span class="hljs-variable">$transporter</span>.<span class="hljs-function">send</span>(<span class="hljs-variable">$email</span>) <span class="hljs-comment">//send mail</span><span class="hljs-keyword">
+<span class="hljs-variable">$transporter</span>.<span class="hljs-function">send</span>(<span class="hljs-variable">$email</span>) <span class="hljs-comment">// メールを送信します</span><span class="hljs-keyword">
 
 End if</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
-<p>You want to send an email with a 4D Write Pro area as an attachment:</p>
+<p>4D Write Pro エリアを添付したメールを送信します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_BLOB</span>(<span class="hljs-variable">$blob</span>)
 <span class="hljs-function">WP EXPORT VARIABLE</span>(WPArea;<span class="hljs-variable">$blob</span>;wk docx)
 
@@ -201,8 +201,8 @@ End if</span>
 <span class="hljs-variable">$email</span>:=New object
 <span class="hljs-variable">$email</span>.from:=<span class="hljs-string">"user@mail.com"</span>
 <span class="hljs-variable">$email</span>.to:=<span class="hljs-string">"customer@mail.com"</span>
-<span class="hljs-variable">$email</span>.subject:=<span class="hljs-string">"New annual report"</span>
-<span class="hljs-variable">$email</span>.textBody:=<span class="hljs-string">"Please find enclosed our latest annual report."</span>
+<span class="hljs-variable">$email</span>.subject:=<span class="hljs-string">"新規年次レポート"</span>
+<span class="hljs-variable">$email</span>.textBody:=<span class="hljs-string">"添付のとおり、新しい年次レポートをご連絡します。"</span>
 <span class="hljs-variable">$email</span>.attachments:=<span class="hljs-function">New collection</span>(<span class="hljs-function">MAIL New attachment</span>(<span class="hljs-variable">$blob</span>;<span class="hljs-string">"Annual report.docx"</span>))
 
 <span class="hljs-variable">$transporter</span>.<span class="hljs-function">send</span>(<span class="hljs-variable">$email</span>)
@@ -214,28 +214,28 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Path of the attachment file</td></tr>
-<tr><td>blob</td><td>BLOB</td><td style="text-align:center">-&gt;</td><td>BLOB containing the attachment</td></tr>
-<tr><td>name</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Name + extension used by the mail client to designate the attachment</td></tr>
-<tr><td>cid</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>ID of attachment (HTML messages only), or &quot; &quot; if no cid is required</td></tr>
-<tr><td>type</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Value of the content-type header</td></tr>
-<tr><td>disposition</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>Value of the content-disposition header: &quot;inline&quot; or &quot;attachment&quot;.</td></tr>
-<tr><td>戻り値</td><td>4D.MailAttachment</td><td style="text-align:center">&lt;-</td><td>Attachment object</td></tr>
+<tr><td>path</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>添付ファイルのパス</td></tr>
+<tr><td>blob</td><td>BLOB</td><td style="text-align:center">-&gt;</td><td>添付を格納した BLOB</td></tr>
+<tr><td>name</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>メールクライアントが添付を指定するのに使用する名前 + 拡張子</td></tr>
+<tr><td>cid</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>添付の ID (HTMLメッセージのみ)、あるいは cid が不要な場合は &quot;&quot; (空の文字列)</td></tr>
+<tr><td>type</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>content-type ヘッダーの値</td></tr>
+<tr><td>disposition</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>content-disposition ヘッダーの値: &quot;inline&quot; あるいは &quot;attachment&quot;</td></tr>
+<tr><td>戻り値</td><td>4D.MailAttachment</td><td style="text-align:center">&lt;-</td><td>Attachment オブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>4D.MailAttachment.new()</code> function creates and returns a new object of the <code>4D.MailAttachment</code> type. It is identical to the <a href="#mail-new-attachment"><code>MAIL New attachment</code></a> command (shortcut).</p>
+<p><code>4D.MailAttachment.new()</code> 関数は、 <code>4D.MailAttachment</code> 型の新規オブジェクト作成して返します。 この関数の機能は、<a href="#mail-new-attachment"><code>MAIL New attachment</code></a> コマンドと同一です。</p>
 <h2><a class="anchor" aria-hidden="true" id="cid"></a><a href="#cid" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.cid</h2>
 <p><strong>.cid</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-2"></a><a href="#説明-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.cid</code> property contains  the ID of the attachment. This property is used in HTML messages only. If this property is missing, the file is handled as a simple attachment (link).</p>
+<p><code>.cid</code> プロパティは、  添付ファイルの IDを格納します。 このプロパティは HTMLメッセージでのみ使用されます。 このプロパティがない場合、ファイルは単なる添付 (リンク) として管理されます。</p>
 <h2><a class="anchor" aria-hidden="true" id="disposition"></a><a href="#disposition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.disposition</h2>
 <p><strong>.disposition</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.disposition</code> property contains the value of the <code>Content-Disposition</code> header. Two values are available:</p>
+<p><code>.disposition</code> プロパティは、 <code>Content-Disposition</code> ヘッダーの値を格納します。 二つの値が利用可能です:</p>
 <ul>
-<li>&quot;inline&quot;: the attachment is rendered within the message contents, at the &quot;cid&quot; location. The rendering depends on the mail client.</li>
-<li>&quot;attachment&quot;: the attachment is provided as a link in the message.</li>
+<li>&quot;inline&quot;: 添付ファイルはメッセージコンテンツ内に、&quot;cid&quot;の場所にレンダリングされます。 レンダリングの結果はメールクライアントによって異なります。</li>
+<li>&quot;attachment&quot;: 添付ファイルはメッセージ内でリンクとして提供されます。</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="getcontent"></a><a href="#getcontent" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.getContent()</h2>
 <p><strong>.getContent()</strong> : Blob</p>
@@ -244,23 +244,23 @@ End if</span>
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>BLOB</td><td style="text-align:center">&lt;-</td><td>Content of the attachment</td></tr>
+<tr><td>戻り値</td><td>BLOB</td><td style="text-align:center">&lt;-</td><td>添付の中身</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.getContent()</code> function returns the contents of the attachment object in a BLOB. You can use this method with attachment objects received by the <a href="#mail-convert-from-mime"><code>MAIL Convert from MIME</code></a> command.</p>
+<p><code>.getContent()</code> 関数は、 添付オブジェクトの中身を BLOB として返します。 <a href="#mail-convert-from-mime"><code>MAIL Convert from MIME</code></a> コマンドによって取得した添付オブジェクトに対して、この関数を使用することができます。</p>
 <h2><a class="anchor" aria-hidden="true" id="name"></a><a href="#name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.name</h2>
 <p><strong>.name</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.name</code> property contains the name and extension of the attachment.  By default, it is the name of the file, unless another name was specified in the <a href="#mail-new-attachment"><code>MAIL New attachment</code></a> command.</p>
+<p><code>.name</code> プロパティは、 添付ファイルの名前と拡張子を格納します。  <a href="#mail-new-attachment"><code>MAIL New attachment</code></a> コマンドで別の名称を指定しなかった場合のデフォルトは、ファイルの名称です。</p>
 <h2><a class="anchor" aria-hidden="true" id="path"></a><a href="#path" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.path</h2>
 <p><strong>.path</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-6"></a><a href="#説明-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.path</code> property contains the full path of the attachment, if it exists.</p>
+<p><code>.path</code> プロパティは、 添付ファイルのフルパス(存在すれば) を格納します。</p>
 <h2><a class="anchor" aria-hidden="true" id="type"></a><a href="#type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.type</h2>
 <p><strong>.type</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.type</code> property contains the <code>content-type</code> of the attachment file. If this type is not explicitly passed to the <a href="#mail-new-attachment"><code>MAIL New attachment</code></a> command, the <code>content-type</code> is based on its file extension.</p>
+<p><code>.type</code> プロパティは、 添付ファイルの <code>content-type</code>を格納します。 <a href="#mail-new-attachment"><code>MAIL New attachment</code></a> コマンドにて、このタイプが明示的に渡されていない場合、<code>content-type</code> はファイルの拡張子に基づきます。</p>
 <style> h2 { background: #d9ebff;}</style>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/ja/API/IMAPTransporterClass.html"><span class="arrow-prev">← </span><span>IMAPTransporter</span></a><a class="docs-next button" href="/docs/alpha/ja/API/POP3TransporterClass.html"><span>POP3Transporter</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#mail-new-attachment">MAIL New attachment</a></li><li><a href="#4dmailattachmentnew">4D.MailAttachment.new()</a></li><li><a href="#cid">.cid</a></li><li><a href="#disposition">.disposition</a></li><li><a href="#getcontent">.getContent()</a></li><li><a href="#name">.name</a></li><li><a href="#path">.path</a></li><li><a href="#type">.type</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {

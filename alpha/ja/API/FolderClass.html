@@ -79,11 +79,11 @@
 </thead>
 <tbody>
 <tr><td><a href="#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D Folder</a><p>    <code>Folder</code> オブジェクトを、<em>destinationFolder</em> 引数で指定したフォルダーへとコピーします</td></tr>
-<tr><td><a href="#create"><strong>.create()</strong> : Boolean</a><p>    creates a folder on disk according to the properties of the <code>Folder</code> object</td></tr>
-<tr><td><a href="#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><p>    creates an alias (macOS) or a shortcut (Windows)</td></tr>
+<tr><td><a href="#create"><strong>.create()</strong> : Boolean</a><p>    <code>Folder</code> オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します</td></tr>
+<tr><td><a href="#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><p>    エイリアス (macOS) またはショートカット (Windows) を作成します</td></tr>
 <tr><td><a href="#creationdate"><strong>.creationDate</strong> : Date</a><p>    フォルダーの作成日を返します</td></tr>
 <tr><td><a href="#creationtime"><strong>.creationTime</strong> : Time</a><p>    フォルダーの作成時刻を返します</td></tr>
-<tr><td><a href="#delete"><strong>.delete</strong>( { <em>option</em> : Integer } )</a><p>    deletes the folder</td></tr>
+<tr><td><a href="#delete"><strong>.delete</strong>( { <em>option</em> : Integer } )</a><p>    フォルダーを削除します</td></tr>
 <tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    ディスク上にフォルダーが存在する場合は true を返します</td></tr>
 <tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    フォルダー名の拡張子を返します (あれば)</td></tr>
 <tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    拡張子 (あれば) を含めたフォルダーの完全な名称を返します</td></tr>
@@ -100,8 +100,8 @@
 <tr><td><a href="#parent"><strong>.parent</strong> : 4D.Folder</a><p>    対象フォルダーの親フォルダーオブジェクトを返します</td></tr>
 <tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    フォルダのPOSIXパスを返します</td></tr>
 <tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    カレントプラットフォームのシンタックスで表現されたフォルダーのパスを返します</td></tr>
-<tr><td><a href="#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.Folder</a><p>    moves or renames the <code>Folder</code> object (source folder) into the specified <em>destinationFolder</em></td></tr>
-<tr><td><a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.Folder</a><p>    renames the folder with the name you passed in <em>newName</em> and returns the renamed <code>Folder</code> object</td></tr>
+<tr><td><a href="#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.Folder</a><p>    <code>Folder</code> オブジェクト (ソースフォルダー) を <em>destinationFolder</em> が指定する移行先へと移動すると同時に、<em>newName</em> を指定した場合は名称も変更します</td></tr>
+<tr><td><a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.Folder</a><p>    フォルダー名を <em>newName</em> に指定した名称に変更し、名称変更後の <code>Folder</code> オブジェクトを返します</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="folder"></a><a href="#folder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Folder</h2>
@@ -250,7 +250,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-3"></a><a href="#説明-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.create()</code> function creates a folder on disk according to the properties of the <code>Folder</code> object.</p>
+<p><code>.create()</code> 関数は、 <code>Folder</code> オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します。</p>
 <p>If necessary, the function creates the folder hierachy as described in the <a href="#platformpath">platformPath</a> or <a href="#path">path</a> properties. If the folder already exists on disk, the function does nothing (no error is thrown) and returns false.</p>
 <p><strong>戻り値</strong></p>
 <ul>
@@ -295,7 +295,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.createAlias()</code> function creates an alias (macOS) or a shortcut (Windows) to the folder with the specified <em>aliasName</em> name in the folder designated by the <em>destinationFolder</em> object.</p>
+<p><code>.createAlias()</code> 関数は、<em>destinationFolder</em> オブジェクトで指定されたフォルダー内に、<em>aliasName</em> が指定する名称で、対象フォルダーへの エイリアス (macOS) またはショートカット (Windows) を作成します 。</p>
 <p>Pass the name of the alias or shortcut to create in the <em>aliasName</em> parameter.</p>
 <p>By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the <em>aliasType</em> parameter. The following constants are available:</p>
 <table>
@@ -366,7 +366,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.delete()</code> function deletes the folder.</p>
+<p><code>.delete()</code> 関数は、 フォルダーを削除します。</p>
 <p>By default, for security reasons, if you omit the option parameter, <code>.delete( )</code> only allows empty folders to be deleted. If you want the command to be able to delete folders that are not empty, you must use the option parameter with one of the following constants:</p>
 <table>
 <thead>
@@ -741,7 +741,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-23"></a><a href="#説明-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.moveTo( )</code> function moves or renames the <code>Folder</code> object (source folder) into the specified <em>destinationFolder</em>.</p>
+<p><code>.moveTo( )</code> 関数は、 <code>Folder</code> オブジェクト (ソースフォルダー) を <em>destinationFolder</em> が指定する移行先へと移動すると同時に、<em>newName</em> を指定した場合は名称も変更します。</p>
 <p>The <em>destinationFolder</em> must exist on disk, otherwise an error is generated.</p>
 <p>By default, the folder retains its name when moved. If you want to rename the moved folder, pass the new full name in the <em>newName</em> parameter. The new name must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned.</p>
 <p><strong>返されるオブジェクト</strong></p>
@@ -854,7 +854,7 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-29"></a><a href="#説明-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.rename()</code> function renames the folder with the name you passed in <em>newName</em> and returns the renamed <code>Folder</code> object.</p>
+<p><code>.rename()</code> 関数は、 フォルダー名を <em>newName</em> に指定した名称に変更し、名称変更後の <code>Folder</code> オブジェクトを返します。</p>
 <p>The <em>newName</em> parameter must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.</p>
 <p><strong>返されるオブジェクト</strong></p>
 <p>名称変更された <code>Folder</code> オブジェクト。</p>

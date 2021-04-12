@@ -77,7 +77,7 @@
 </blockquote>
 <p>You send <code>Email</code> objects using the SMTP <a href="/docs/alpha/ja/API/SMTPTransporterClass.html#send"><code>.send()</code></a> function.</p>
 <p><a href="#mail-convert-from-mime"><code>MAIL Convert from MIME</code></a> and <a href="#mail-convert-to-mime"><code>MAIL Convert to MIME</code></a> commands can be used to convert <code>Email</code> objects to and from MIME contents.</p>
-<h3><a class="anchor" aria-hidden="true" id="email-object"></a><a href="#email-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Email Object</h3>
+<h3><a class="anchor" aria-hidden="true" id="email-オブジェクト"></a><a href="#email-オブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Email オブジェクト</h3>
 <p>Email objects provide the following properties:</p>
 <blockquote>
 <p>4D follows the <a href="https://jmap.io/spec-mail.html">JMAP specification</a> to format the Email object.</p>
@@ -346,7 +346,7 @@
 </thead>
 <tbody>
 <tr><td>mime</td><td>BLOB、テキスト</td><td style="text-align:center">-&gt;</td><td>MIME形式のメール</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Email object</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>Email オブジェクト</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-22"></a><a href="#説明-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -420,7 +420,7 @@
 <tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>mail</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Email object</td></tr>
+<tr><td>mail</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>Email オブジェクト</td></tr>
 <tr><td>options</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>文字セットとエンコーディングのメールオプション</td></tr>
 <tr><td>戻り値</td><td>テキスト</td><td style="text-align:center">&lt;-</td><td>MIME に変換された Emailオブジェクト</td></tr>
 </tbody>
@@ -437,8 +437,8 @@
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>headerCharset</td><td>テキスト</td><td>Charset and encoding used for the following parts of the email: subject, attachment filenames, and email name attribute(s). とりうる値:<p><p><table><tr><th>定数</th><th>結果</th><th>説明</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><i>bodyCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 &amp; Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 &amp; Quoted-printable (<strong>default value</strong>)</tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 &amp; base64</td></tr></table></td></tr>
-<tr><td>bodyCharset</td><td>テキスト</td><td>Charset and encoding used for the html and text body contents of the email. Possible values: Same as for headerCharset (see above)</td></tr>
+<tr><td>headerCharset</td><td>テキスト</td><td>メールの以下の部分で使用される文字セットとエンコーディング: 件名、添付ファイル名、メール名の属性。 とりうる値:<p><p><table><tr><th>定数</th><th>結果</th><th>説明</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><i>bodyCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 &amp; Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 &amp; Quoted-printable (<strong>default value</strong>)</tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 &amp; base64</td></tr></table></td></tr>
+<tr><td>bodyCharset</td><td>テキスト</td><td>メールの HTML およびテキスト本文コンテンツで使用される文字セットとエンコーディング。 Possible values: Same as for headerCharset (see above)</td></tr>
 </tbody>
 </table>
 <p>If the <em>options</em> parameter is omitted, the mail mode UTF8 configuration is used for header and body parts.</p>
