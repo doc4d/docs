@@ -77,7 +77,7 @@ In the *server* parameter, pass an object containing the following properties:
 
 #### 戻り値
 
-The function returns an [**IMAP transporter object**](#imap-transporter-object). All returned properties are **read-only**.
+The function returns an [**IMAP transporter object**](#imap-transporter-object). 返されるプロパティはすべて **読み取り専用** です。
 > The IMAP connection is automatically closed when the transporter object is destroyed.
 
 #### 例題
@@ -378,12 +378,12 @@ In the optional *name* parameter, pass the name of the mailbox to access. The na
 
 **返されるオブジェクト**
 
-The `boxInfo` object returned contains the following properties:
+返される `boxInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ      | タイプ    | 説明                                                                  |
 | ---------- | ------ | ------------------------------------------------------------------- |
 | name       | text   | メールボックスの名称                                                          |
-| mailCount  | number | Number of messages in the mailbox                                   |
+| mailCount  | number | メールボックス内のメッセージの数                                                    |
 | mailRecent | number | Number of messages with the "recent" flag (indicating new messages) |
 
 
@@ -538,7 +538,7 @@ The `.getDelimiter( )` function <!-- REF #imapTransporterClass.getDelimiter().Su
 | 参照        | タイプ    |    | 説明                                               |
 | --------- | ------ |:--:| ------------------------------------------------ |
 | msgNumber | 整数     | -> | メッセージのシーケンス番号                                    |
-| msgID     | テキスト   | -> | Unique ID of the message                         |
+| msgID     | テキスト   | -> | メッセージの固有ID                                       |
 | options   | オブジェクト | -> | メッセージ管理オプション                                     |
 | 戻り値       | オブジェクト | <- | [Email オブジェクト](emailObjectClass.md#email-オブジェクト) |
 <!-- END REF -->
@@ -546,7 +546,7 @@ The `.getDelimiter( )` function <!-- REF #imapTransporterClass.getDelimiter().Su
 
 #### 説明
 
-`.getMail()` 関数は、 <!-- REF #imapTransporterClass.getMail().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメールを `Email` オブジェクトとして返します<!-- END REF -->。 This function allows you to locally handle the email contents.
+`.getMail()` 関数は、 <!-- REF #imapTransporterClass.getMail().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメールを `Email` オブジェクトとして返します<!-- END REF -->。 この関すを使用すると、メールのコンテンツをローカルで管理できるようになります。
 
 In the first parameter, you can pass either:
 
@@ -718,7 +718,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 | 参照         | タイプ  |    | 説明                                                            |
 | ---------- | ---- |:--:| ------------------------------------------------------------- |
 | msgNumber  | 整数   | -> | メッセージのシーケンス番号                                                 |
-| msgID      | テキスト | -> | Unique ID of the message                                      |
+| msgID      | テキスト | -> | メッセージの固有ID                                                    |
 | updateSeen | ブール  | -> | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 |
 | 戻り値        | BLOB | <- | メールサーバーから返された MIME文字列の BLOB                                   |
 <!-- END REF -->
@@ -744,7 +744,7 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 
 #### 戻り値
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](emailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` は `BLOB` を返します。この BLOB はデータベースにアーカイブしたり、`MAIL Convert from MIME` コマンドを使用して [`Email` オブジェクト](emailObjectClass.md#email-object) へと変換したりすることができます。
 
 
 #### 例題
@@ -1114,7 +1114,7 @@ Search-keys may request the value to search for:
 
 #### 説明
 
-`.selectBox()` 関数は、 <!-- REF #imapTransporterClass.selectBox().Summary -->*name* に指定したメールボックスをカレントメールボックスとして選択します<!-- END REF -->。 This function allows you to retrieve information about the mailbox.
+`.selectBox()` 関数は、 <!-- REF #imapTransporterClass.selectBox().Summary -->*name* に指定したメールボックスをカレントメールボックスとして選択します<!-- END REF -->。 この関数を使用するとメールボックスに関する情報を取得することができます。
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
 In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
@@ -1131,12 +1131,12 @@ The optional *state* parameter defines the type of access to the mailbox. The po
 
 **返されるオブジェクト**
 
-The `boxInfo` object returned contains the following properties:
+返される `boxInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ      | タイプ    | 説明                                        |
 | ---------- | ------ | ----------------------------------------- |
 | name       | テキスト   | メールボックスの名称                                |
-| mailCount  | number | Number of messages in the mailbox         |
+| mailCount  | number | メールボックス内のメッセージの数                          |
 | mailRecent | number | Number of messages with the "recent" flag |
 
 
