@@ -3,12 +3,12 @@ id: imapTransporterClass
 title: IMAPTransporter
 ---
 
-The `IMAPTransporter` class allows you to retrieve messages from a IMAP email server.
+`IMAPTransporter` クラスを使って、IMAP メールサーバーからメッセージを取得することができます。
 
 
 ### IMAP Transporter オブジェクト
 
-IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-new-transporter) command. これらは、次のプロパティや関数を持ちます:
+IMAP Transporter オブジェクトは [IMP New transporter](#imap-new-transporter) コマンドによってインスタンス化されます。 これらは、次のプロパティや関数を持ちます:
 
 |                                                                                                                                                                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -57,28 +57,28 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 
 #### 説明
 
-`IMAP New transporter` コマンドは、*server* 引数の指定に応じて <!-- REF #_command_.IMAP New transporter.Summary -->新規の IMAP接続を設定します<!-- END REF --> 。戻り値は、新しい *IMAP transporter* オブジェクトです。 The returned transporter object will then usually be used to receive emails.
+`IMAP New transporter` コマンドは、*server* 引数の指定に応じて <!-- REF #_command_.IMAP New transporter.Summary -->新規の IMAP接続を設定します<!-- END REF --> 。戻り値は、新しい *IMAP transporter* オブジェクトです。 返された transporter オブジェクトは、通常メールの受信に使用されます。
 
-In the *server* parameter, pass an object containing the following properties:
+*server* 引数として、以下のプロパティを持つオブジェクトを渡します:
 
-| *server*                                                                                                                                                                                                                              | Default value (if omitted)                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                                               |
-| [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->| the most secure authentication mode supported by the server is used |
-| [<!-- INCLUDE #imapTransporterClass.checkConnectionDelay.Syntax -->](#checkconnectiondelay)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #imapTransporterClass.checkConnectionDelay.Summary -->| 300                                                                 |
-| [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->| 30                                                                  |
-| [<!-- INCLUDE #transporter.host.Syntax -->](#host)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *mandatory*                                                         |
-| [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| none                                                                |
-| **password** : Text<p>User password for authentication on the server (not returned in *[IMAP transporter](#imap-transporter-object)* object)                                                                  | none                                                                |
-| [<!-- INCLUDE #transporter.port.Syntax -->](#port)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 993                                                                 |
-| [<!-- INCLUDE #transporter.user.Syntax -->](#user)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| none                                                                |
-> **Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
+| *server*                                                                                                                                                                                                                              | デフォルト値 (省略時)                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                            |
+| [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->| サーバーがサポートするもっともセキュアな認証モードが使用されます |
+| [<!-- INCLUDE #imapTransporterClass.checkConnectionDelay.Syntax -->](#checkconnectiondelay)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #imapTransporterClass.checkConnectionDelay.Summary -->| 300                              |
+| [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->| 30                               |
+| [<!-- INCLUDE #transporter.host.Syntax -->](#host)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *必須*                             |
+| [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| なし                               |
+| **password** : Text<p>User password for authentication on the server (not returned in *[IMAP transporter](#imap-transporter-object)* object)                                                                  | なし                               |
+| [<!-- INCLUDE #transporter.port.Syntax -->](#port)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 993                              |
+| [<!-- INCLUDE #transporter.user.Syntax -->](#user)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| なし                               |
+> **警告**: 定義されたタイムアウトが、サーバータイムアウトより短いようにしてください。そうでない場合、クライアントタイムアウトは無意味になります。
 
 
 #### 戻り値
 
-The function returns an [**IMAP transporter object**](#imap-transporter-object). All returned properties are **read-only**.
-> The IMAP connection is automatically closed when the transporter object is destroyed.
+この関数は、[**IMAP transporter オブジェクト**](#imap-transporter-オブジェクト) を返します。 返されるプロパティはすべて **読み取り専用** です。
+> IMAP接続は、transporter オブジェクトが消去された時点で自動的に閉じられます。
 
 #### 例題
 
@@ -129,8 +129,8 @@ The function returns an [**IMAP transporter object**](#imap-transporter-object).
 
 #### 説明
 
-`.checkConnectionDelay` 関数は、 <!-- REF #imapTransporterClass.checkConnectionDelay.Summary -->サーバー接続をチェックするまでの最長時間 (秒単位)<!-- END REF -->を格納します。  If this time is exceeded between two method calls, the connection to the server will be checked. By default, if the property has not been set in the *server* object, the value is 300.
-> **Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless. 
+`.checkConnectionDelay` 関数は、 <!-- REF #imapTransporterClass.checkConnectionDelay.Summary -->サーバー接続をチェックするまでの最長時間 (秒単位)<!-- END REF -->を格納します。  関数呼び出しの間隔がこの時間を超過する場合、サーバー接続が確認されます。 プロパティが *server* オブジェクトによって設定されていない場合は、デフォルトで 300 という値が使用されます。
+> **警告**: 定義されたタイムアウトが、サーバータイムアウトより短いようにしてください。そうでない場合、クライアントタイムアウトは無意味になります。 
 
 
 
@@ -165,10 +165,10 @@ The function returns an [**IMAP transporter object**](#imap-transporter-object).
 
 以下のものを渡すことができます:
 
-- in the *msgsIDs* parameter, a collection containing the unique IDs of the specific messages to copy, or
-- in the *allMsgs* parameter, the `IMAP all` constant (integer) to copy all messages in the selected mailbox.
+- *msgsIDs* には、コピーするメッセージの固有ID を格納したコレクション
+- *allMsgs* には、選択されているメールボックスの全メッセージをコピーするための定数 (倍長整数型):
 
-The *destinationBox* parameter allows you to pass a text value with the name of the mailbox where the copies of messages will be placed.
+*destinationBox* には、メッセージのコピー先メールボックスの名称をテキスト値で渡すことができます。
 
 
 **返されるオブジェクト**
@@ -270,10 +270,10 @@ The `.delete()` function <!-- REF #imapTransporterClass.delete().Summary -->sets
 
 以下のものを渡すことができます:
 
-- in the `msgsIDs` parameter, a collection containing the unique IDs of the specific messages to delete, or
-- in the `allMsgs` parameter, the `IMAP all` constant (integer) to delete all messages in the selected mailbox.
+- `msgsIDs` には、削除するメッセージの固有ID を格納したコレクション
+- `allMsgs` には、選択されているメールボックスの全メッセージを削除するための定数 (倍長整数型):
 
-Executing this function does not actually remove messages. Messages with the "delete" flag can still be found by the [.searchMails()](#searchmails) function. Flagged messages will be deleted from the IMAP server only by selecting another mailbox or when the [transporter object](#imap-transporter-object) (created with [IMAP New transporter](#imap-new-transporter)) is destroyed.
+この関数を実行しても、メールが実際に削除される訳ではありません。 "削除済み" フラグがつけられたメッセージも引き続き [.searchMails()](#searchmails) 関数によって検索可能です。 Flagged messages will be deleted from the IMAP server only by selecting another mailbox or when the [transporter object](#imap-transporter-object) (created with [IMAP New transporter](#imap-new-transporter)) is destroyed.
 
 
 **返されるオブジェクト**
@@ -371,20 +371,20 @@ Executing this function does not actually remove messages. Messages with the "de
 
 #### 説明
 
-`.getBoxInfo()` 関数は、 <!-- REF #imapTransporterClass.getBoxInfo().Summary -->*name* が指定するメールボックスに対応する `boxInfo` オブジェクトを返します<!-- END REF -->。 This function returns the same information as [`.selectBox()`](#selectbox) without changing the current mailbox.
+`.getBoxInfo()` 関数は、 <!-- REF #imapTransporterClass.getBoxInfo().Summary -->*name* が指定するメールボックスに対応する `boxInfo` オブジェクトを返します<!-- END REF -->。 この関数は、[`.selectBox()`](#selectbox) と同じ情報を返しますが、カレントメールボックスは変えません。
 
-In the optional *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+任意の *name* パラメーターには、アクセスするメールボックスの名称を渡します。 この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は [`.getDelimiter()`](#getdelimiter) 関数で調べることができます。
 
 
 **返されるオブジェクト**
 
-The `boxInfo` object returned contains the following properties:
+返される `boxInfo` オブジェクトには、以下のプロパティが格納されています:
 
-| プロパティ      | タイプ    | 説明                                                                  |
-| ---------- | ------ | ------------------------------------------------------------------- |
-| name       | text   | メールボックスの名称                                                          |
-| mailCount  | number | Number of messages in the mailbox                                   |
-| mailRecent | number | Number of messages with the "recent" flag (indicating new messages) |
+| プロパティ      | タイプ    | 説明                                         |
+| ---------- | ------ | ------------------------------------------ |
+| name       | text   | メールボックスの名称                                 |
+| mailCount  | number | メールボックス内のメッセージの数                           |
+| mailRecent | number | (新しいメッセージであることを表す) "recent" フラグがついたメッセージの数 |
 
 
 
@@ -424,23 +424,23 @@ The `boxInfo` object returned contains the following properties:
 
 #### 説明
 
-`.getBoxList()` 関数は、 <!-- REF #imapTransporterClass.getBoxList().Summary -->利用可能なメールボックスの情報を mailbox オブジェクトのコレクションとしてを返します<!-- END REF -->。 This function allows you to locally manage the list of messages located on the IMAP mail server.
+`.getBoxList()` 関数は、 <!-- REF #imapTransporterClass.getBoxList().Summary -->利用可能なメールボックスの情報を mailbox オブジェクトのコレクションとしてを返します<!-- END REF -->。 この関数を使用すると、IMAPメールサーバー上にあるメッセージの一覧をローカルで管理することができるようになります。
 
 #### 戻り値
 
-Each object of the returned collection contains the following properties:
+返されるコレクションの各オブジェクトには、以下のプロパティが格納されています:
 
-| プロパティ            | タイプ     | 説明                                                                                                                  |
-| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------- |
-| \[].name        | text    | メールボックスの名称                                                                                                          |
-| \[].selectable  | boolean | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
-| \[].inferior    | boolean | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
-| \[].interesting | boolean | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
+| プロパティ            | タイプ     | 説明                                                                         |
+| ---------------- | ------- | -------------------------------------------------------------------------- |
+| \[].name        | text    | メールボックスの名称                                                                 |
+| \[].selectable  | boolean | アクセス権でメールボックスを選択できるかどうかを表します: <ul><li>true - メールボックスは選択可能</li><li>false - メールボックスは選択不可能</li></ul>                     |
+| \[].inferior    | boolean | アクセス権でメールボックス内に下の階層レベルを作成できるかどうかを表します: <ul><li>true - 下の階層レベルは作成可能</li><li>false - 下の階層レベルは作成不可能</li></ul>            |
+| \[].interesting | boolean | サーバーがメールボックスに “interesting” のマーク付けをしているかどうかを表します: <ul><li>true - メールボックスはサーバーから "interesting" のマーク付けをされています。 たとえば、メールボックスには新着メッセージが入っている場合が考えられます。</li><li>false - メールボックスはサーバーから "interesting" のマーク付けをされていません。</li></ul> |
 
 
-If the account does not contain any mailboxes, an empty collection is returned.
-> * If there is no open connection, `.getBoxList()` will open a connection.
-> * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the `.checkConnection( )` function is automatically called.
+アカウントにメールボックスが一つもない場合、空のコレクションが返されます。
+> * 開いている接続がない場合、`.getBoxList()` は接続を開きます。
+> * 接続が指定された時間 (`IMAP New transporter` 参照) 以上に使用されなかった場合には、`.checkConnection( )` 関数が自動的に呼び出されます。
 
 
 #### 例題
@@ -538,7 +538,7 @@ The `.getDelimiter( )` function <!-- REF #imapTransporterClass.getDelimiter().Su
 | 参照        | タイプ    |    | 説明                                               |
 | --------- | ------ |:--:| ------------------------------------------------ |
 | msgNumber | 整数     | -> | メッセージのシーケンス番号                                    |
-| msgID     | テキスト   | -> | Unique ID of the message                         |
+| msgID     | テキスト   | -> | メッセージの固有ID                                       |
 | options   | オブジェクト | -> | メッセージ管理オプション                                     |
 | 戻り値       | オブジェクト | <- | [Email オブジェクト](emailObjectClass.md#email-オブジェクト) |
 <!-- END REF -->
@@ -546,7 +546,7 @@ The `.getDelimiter( )` function <!-- REF #imapTransporterClass.getDelimiter().Su
 
 #### 説明
 
-`.getMail()` 関数は、 <!-- REF #imapTransporterClass.getMail().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメールを `Email` オブジェクトとして返します<!-- END REF -->。 This function allows you to locally handle the email contents.
+`.getMail()` 関数は、 <!-- REF #imapTransporterClass.getMail().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメールを `Email` オブジェクトとして返します<!-- END REF -->。 この関すを使用すると、メールのコンテンツをローカルで管理できるようになります。
 
 In the first parameter, you can pass either:
 
@@ -718,7 +718,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 | 参照         | タイプ  |    | 説明                                                            |
 | ---------- | ---- |:--:| ------------------------------------------------------------- |
 | msgNumber  | 整数   | -> | メッセージのシーケンス番号                                                 |
-| msgID      | テキスト | -> | Unique ID of the message                                      |
+| msgID      | テキスト | -> | メッセージの固有ID                                                    |
 | updateSeen | ブール  | -> | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 |
 | 戻り値        | BLOB | <- | メールサーバーから返された MIME文字列の BLOB                                   |
 <!-- END REF -->
@@ -744,7 +744,7 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 
 #### 戻り値
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](emailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` は `BLOB` を返します。この BLOB はデータベースにアーカイブしたり、`MAIL Convert from MIME` コマンドを使用して [`Email` オブジェクト](emailObjectClass.md#email-object) へと変換したりすることができます。
 
 
 #### 例題
@@ -1114,10 +1114,10 @@ Search-keys may request the value to search for:
 
 #### 説明
 
-`.selectBox()` 関数は、 <!-- REF #imapTransporterClass.selectBox().Summary -->*name* に指定したメールボックスをカレントメールボックスとして選択します<!-- END REF -->。 This function allows you to retrieve information about the mailbox.
+`.selectBox()` 関数は、 <!-- REF #imapTransporterClass.selectBox().Summary -->*name* に指定したメールボックスをカレントメールボックスとして選択します<!-- END REF -->。 この関数を使用するとメールボックスに関する情報を取得することができます。
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
-In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+In the *name* parameter, pass the name of the mailbox to access. この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は [`.getDelimiter()`](#getdelimiter) 関数で調べることができます。
 
 The optional *state* parameter defines the type of access to the mailbox. The possible values are:
 
@@ -1131,12 +1131,12 @@ The optional *state* parameter defines the type of access to the mailbox. The po
 
 **返されるオブジェクト**
 
-The `boxInfo` object returned contains the following properties:
+返される `boxInfo` オブジェクトには、以下のプロパティが格納されています:
 
 | プロパティ      | タイプ    | 説明                                        |
 | ---------- | ------ | ----------------------------------------- |
 | name       | テキスト   | メールボックスの名称                                |
-| mailCount  | number | Number of messages in the mailbox         |
+| mailCount  | number | メールボックス内のメッセージの数                          |
 | mailRecent | number | Number of messages with the "recent" flag |
 
 
