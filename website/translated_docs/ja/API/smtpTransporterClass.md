@@ -3,13 +3,13 @@ id: smtpTransporterClass
 title: SMTPTransporter
 ---
 
-The `SMTPTransporter` class allows you to configure SMTP connections and send emails through *SMTP transporter* objects.
+`SMTPTransporter` クラスを使って、SMTP接続の設定や、*SMTP transporter* オブジェクトを介したメールの送信をおこなうことができます。
 
 
 
-### SMTP Transporter object
+### SMTP Transporter オブジェクト
 
-SMTP Transporter objects are instantiated with the [SMTP New transporter](#smtp-new-transporter) command. これらは、次のプロパティや関数を持ちます:
+SMTP Transporter オブジェクトは [SMTP New transporter](#smtp-new-transporter) コマンドによってインスタンス化されます。 これらは、次のプロパティや関数を持ちます:
 
 
 |                                                                                                                                                                                                                                |
@@ -45,20 +45,20 @@ SMTP Transporter objects are instantiated with the [SMTP New transporter](#smtp-
 **SMTP New transporter**( *server* : Object ) : 4D.SMTPTransporter<!-- END REF -->
 
 <!-- REF smtpTransporterClass.SMTP New transporter.Params -->
-| 参照     | タイプ                |    | 説明                                                  |
-| ------ | ------------------ |:--:| --------------------------------------------------- |
-| server | オブジェクト             | -> | メールサーバー情報                                           |
-| 戻り値    | 4D.SMTPTransporter | <- | [SMTP transporter オブジェクト](#smtp-transporter-object) |
+| 参照     | タイプ                |    | 説明                                                   |
+| ------ | ------------------ |:--:| ---------------------------------------------------- |
+| server | オブジェクト             | -> | メールサーバー情報                                            |
+| 戻り値    | 4D.SMTPTransporter | <- | [SMTP transporter オブジェクト](#smtp-transporter-オブエジェクト) |
 <!-- END REF -->
 
 
 #### 説明
 
-`SMTP New transporter` コマンドは、*server* 引数の指定に応じて <!-- REF #_command_.SMTP New transporter.Summary -->新規の SMTP接続を設定します<!-- END REF --> 。戻り値は、新しい *[SMTP transporter](#smtp-transporter-object)* オブジェクトです。 The returned transporter object will then usually be used to send emails.
+`SMTP New transporter` コマンドは、*server* 引数の指定に応じて <!-- REF #_command_.SMTP New transporter.Summary -->新規の SMTP接続を設定します<!-- END REF --> 。戻り値は、新しい *[SMTP transporter](#smtp-transporter-object)* オブジェクトです。 返された transporter オブジェクトは、通常メールの送信に使用されます。
 
-> This command does not open any connection to the SMTP server. The SMTP connection is actually opened when the [`.send()`](#send) function is executed.  
+> このコマンドは SMTPサーバーとの接続を開始しません。 SMTP接続は、実際には [`.send()`](#send) 関数が実行された時に開かれます。  
 > 
-> The SMTP connection is automatically closed: * when the transporter object is destroyed if the [`keepAlive`](#keepalive) property is true (default), * after each  [`.send( )`](#send) function execution if the [`keepAlive`](#keepalive) property is set to false.
+> SMTP接続は、以下の場合に自動的に閉じられます:<br /> * [`keepAlive`](#keepalive) プロパティが true (デフォルト) の場合には、transporter オブジェクトが消去された時。 * [`keepAlive`](#keepalive) プロパティが false の場合には、各 [`.send( )`](#send) 関数が実行された後。
 
 
 
