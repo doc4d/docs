@@ -6,6 +6,7 @@ title: EntitySelection
 
 An entity selection is an object containing one or more reference(s) to [entities](ORDA/dsMapping.md#entity) belonging to the same [Dataclass](ORDA/dsMapping.md#dataclass). エンティティセレクションは、データクラスから 0個、1個、あるいは X個のエンティティを格納することができます (X はデータクラスに格納されているエンティティの総数です)。
 
+Entity selections can be created from existing selections using various functions of the [`DataClass` class](dataclassClass.md) such as [`.all()`](dataclassClass.md#all) or [`.query()`](dataclassClass.md#query), or functions of the `EntityClass` class itself, such as [`.and()`](#and) or [`orderBy()`](#orderby). You can also create blank entity selections using the [`dataClass.newSelection()`](dataclassClass.md#newselection) function or the [`Create new selection`](#create-new-selection) command.
 
 ### 概要
 
@@ -43,6 +44,7 @@ An entity selection is an object containing one or more reference(s) to [entitie
 
 
 
+## Create entity selection
 
 <!-- REF #_command_.Create entity selection.Syntax -->
 **Create entity selection** ( *dsTable* : Table { ; *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
@@ -76,7 +78,7 @@ In the optional *settings* parameter, you can pass an object containing the foll
 ```4d
 var $employees : cs.EmployeeSelection
 ALL RECORDS([Employee])
-$employees:=Create entity selection([Employee])
+$employees:=Create entity selection([Employee]) 
 // The $employees entity selection now contains a set of reference
 // on all entities related to the Employee dataclass
 ```
@@ -172,7 +174,6 @@ If the attribute does not exist in the entity selection, an error is returned.
 #### 例題 1
 
 Projection of storage values:
-
 
 
 ```4d
@@ -357,9 +358,10 @@ We want to have a selection of employees named "Jones" who live in New York:
 ## .average()
 
 <details><summary>履歴</summary>
-| バージョン | 内容 |
-| ----- | -- |
-| v17   | 追加 |
+| バージョン  | 内容                                  |
+| ------ | ----------------------------------- |
+| v18 R6 | エンティティセレクションが空の場合には undefined を返します |
+| v17    | 追加                                  |
 
 </details>
 
@@ -367,10 +369,10 @@ We want to have a selection of employees named "Jones" who live in New York:
 **.average**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #entitySelectionClass.average().Params -->
-| 参照            | タイプ  |    | 説明                                                                                    |
-| ------------- | ---- |:--:| ------------------------------------------------------------------------------------- |
-| attributePath | テキスト | -> | 計算に使用する属性パス                                                                           |
-| 戻り値           | 実数   | <- | Arithmetic mean (average) of entity attribute values (Null if empty entity selection) |
+| 参照            | タイプ  |    | 説明                                                            |
+| ------------- | ---- |:--:| ------------------------------------------------------------- |
+| attributePath | テキスト | -> | 計算に使用する属性パス                                                   |
+| 戻り値           | 実数   | <- | エンティティの属性値の算術平均 (相加平均) (エンティティセレクションがからの場合には undefined を返します) |
 <!-- END REF -->
 
 #### 説明
@@ -382,12 +384,12 @@ Pass in the *attributePath* parameter the attribute path to evaluate.
 Only numerical values are taken into account for the calculation. Note however that, if the *attributePath* of the entity selection contains mixed value types, `.average()` takes all scalar elements into account to calculate the average value.
 > Date values are converted to numerical values (seconds) and used to calculate the average.
 
-`.average()` returns null if the entity selection is empty.
+`.average()` returns **undefined** if the entity selection is empty or *attributePath* does not contain numerical values.
 
 An error is returned if:
 
-*   *attributePath* is a related attribute or does not contain numerical values,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* is a related attribute,
+*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
 
 
 #### 例題
@@ -755,14 +757,14 @@ If several *attributePath* are given, a *targetPath* must be given for each. Onl
   //
   //
   //$mailing is a collection of objects with properties "who" and "to"
-  //"who" property content is String type
+  //"who" property content is String type 
   //"to" property content is entity type (Address dataclass)
  $mailing:=ds.Teachers.all().extract("lastname";"who";"address";"to")
   //
   //
   //$mailing is a collection of objects with properties "who" and "city"
-  //"who" property content is String type
-  //"city" property content is String type
+  //"who" property content is String type 
+  //"city" property content is String type 
  $mailing:=ds.Teachers.all().extract("lastname";"who";"address.city";"city")
   //
   //$teachers is a collection of objects with properties "where" and "who"
@@ -976,6 +978,8 @@ Form.products.add(Form.product)
  End if
 ```
 
+
+
 <!-- END REF -->
 
 
@@ -1012,6 +1016,7 @@ The result of this function is similar to:
 
 
 #### 例題
+
 
 ```4d
  var $entitySelection : cs.EmpSelection
@@ -1062,9 +1067,10 @@ The result of this function is similar to:
 ## .max()
 
 <details><summary>履歴</summary>
-| バージョン | 内容 |
-| ----- | -- |
-| v17   | 追加 |
+| バージョン  | 内容                                  |
+| ------ | ----------------------------------- |
+| v17    | 追加                                  |
+| v18 R6 | エンティティセレクションが空の場合には undefined を返します |
 
 </details>
 
@@ -1083,14 +1089,15 @@ The result of this function is similar to:
 
 `.max()` 関数は、 <!-- REF #entitySelectionClass.max().Summary -->*attributePath* に指定したエンティティセレクションの属性値のうち最高の (あるいは最大の) 値を返します<!-- END REF -->。 It actually returns the value of the last entity of the entity selection as it would be sorted in ascending order using the [`.orderBy()`](#orderby) function.
 
-If you pass in *attributePath* a path to an object attribute containing different types of values, the `.max()` function will return the maximum value within the first scalar type in the default 4D type list order (see [`.sort()`](collectionClass.md#sort) description). In this case, if *attributePath* does not exist in the object, `.max()` returns **null**.
+If you pass in *attributePath* a path to an object attribute containing different types of values, the `.max()` function will return the maximum value within the first scalar type in the default 4D type list order (see [`.sort()`](collectionClass.md#sort) description).
 
-If the entity selection is empty, `.max()` returns **null**.
+`.max()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
+
 
 An error is returned if:
 
 *   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
 
 
 
@@ -1112,9 +1119,11 @@ We want to find the highest salary among all the female employees:
 ## .min()
 
 <details><summary>履歴</summary>
-| バージョン | 内容 |
-| ----- | -- |
-| v17   | 追加 |
+| バージョン  | 内容                                  |
+| ------ | ----------------------------------- |
+| v17    | 追加                                  |
+| v18 R6 | エンティティセレクションが空の場合には undefined を返します |
+
 
 </details>
 
@@ -1130,16 +1139,16 @@ We want to find the highest salary among all the female employees:
 
 #### 説明
 
-`.min()` 関数は、 <!-- REF #entitySelectionClass.min().Summary --> *attributePath* に指定したエンティティセレクションの属性値のうち最低の (あるいは最小の) 値を返します<!-- END REF -->。  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the [`.orderBy()`](#orderby) function.
+`.min()` 関数は、 <!-- REF #entitySelectionClass.min().Summary --> *attributePath* に指定したエンティティセレクションの属性値のうち最低の (あるいは最小の) 値を返します<!-- END REF -->。  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the [`.orderBy()`](#orderby) function (excluding **null** values).
 
-If you pass in *attributePath* a path to an object attribute containing different types of values, the `.min()` function will return the minimum value within the first scalar value type in the type list order (see [`.sort()`](collectionClass.md#sort) description). In this case, if *attributePath* does not exist in the object, `.min()` returns **null**.
+If you pass in *attributePath* a path to an object attribute containing different types of values, the `.min()` function will return the minimum value within the first scalar value type in the type list order (see [`.sort()`](collectionClass.md#sort) description).
 
-If the entity selection is empty, `.min()` returns **null**.
+`.min()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
 
 An error is returned if:
 
 *   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
 
 
 #### 例題
@@ -1198,7 +1207,7 @@ If the original entity selection and the parameter are not related to the same d
  var $employees; $result : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
 
- $employees:=ds.Employee.query("lastName = :1";"H@")
+ $employees:=ds.Employee.query("lastName = :1";"H@") 
   // The $employees entity selection contains the entity with primary key 710 and other entities
   // for ex. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (primary key 710)
 
@@ -1352,7 +1361,6 @@ You can add as many objects in the criteria collection as necessary.
  $orderColl.push(New object("propertyPath";"salary"))
  $sortedEntitySelection:=$entitySelection.orderBy($orderColl)
 ```
-
 
 
 <!-- END REF -->
@@ -1527,7 +1535,7 @@ For detailed information on how to build a query using *queryString*, *value*, a
 
 #### 例題 2
 
-追加のクエリ例については、[DataClass.query()`</a> を参照してください。</p>
+追加のクエリ例については、[DataClass.query()`</a> を参照してください。 </p>
 
 <h4 spaces-before="0">参照</h4>
 
@@ -1556,7 +1564,7 @@ For detailed information on how to build a query using *queryString*, *value*, a
 
 `.queryPath` プロパティは、 <!-- REF #entitySelectionClass.queryPath.Summary -->実際に 4Dで実行されたクエリの詳細な情報<!-- END REF -->を格納します。 This property is available for `EntitySelection` objects generated through queries if the `"queryPath":true` property was passed in the *querySettings* parameter of the [`.query()`](#query) function.
 
-For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](dataclassClass.html#query) page.
+For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](dataclassClass.html#query) page. 
 
 <!-- END REF -->
 
@@ -1581,7 +1589,7 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 
 `.queryPlan` プロパティは、 <!-- REF #entitySelectionClass.queryPlan.Summary --> 実行前のクエリの詳細な情報 (クエリプラン) を格納します<!-- END REF -->。 This property is available for `EntitySelection` objects generated through queries if the `"queryPlan":true` property was passed in the *querySettings* parameter of the [`.query()`](#query) function.
 
-For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](dataclassClass.html#query) page.
+For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](dataclassClass.html#query) page. 
 
 <!-- END REF -->
 
@@ -1652,7 +1660,7 @@ In this example, classic and ORDA code modify the same data simultaneously:
 
 #### 例題 2
 
-A list box displays the Form.students entity selection and several clients work on it.
+A list box displays the Form.students entity selection and several clients work on it. 
 
 
 
@@ -1714,7 +1722,7 @@ The returned entity selection contains the entities specified by *startFrom* and
 *   If *end* < 0, it is recalculated as *end:=end+length*.
 *   渡された値、あるいは再計算された値が *end* < *startFrom* の場合、関数はなにもしません。
 
-If the entity selection contains entities that were dropped in the meantime, they are also returned.
+If the entity selection contains entities that were dropped in the meantime, they are also returned. 
 
 
 
@@ -2042,9 +2050,11 @@ Returns:
 
 
 
+
 #### 例題 4
 
 Example with `relatedEntity` type with simple form:
+
 
 
 
@@ -2298,6 +2308,7 @@ Example with extraction of all properties of `relatedEntities`:
 var $employeesCollection : Collection
 $employeesCollection:=New collection
 $employeesCollection:=$employees.toCollection("firstName, lastName, directReports.*")
+
 ```
 
 
@@ -2363,6 +2374,7 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, directReport
                 "salary": 71600,
                 "birthDate": "1968-08-09T00:00:00.000Z",
                 "woman": false,
+
                 "managerID": 425,
                 "employerID": 21,
                 "photo": "[object Picture]",
