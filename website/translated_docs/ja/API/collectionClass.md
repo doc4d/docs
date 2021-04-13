@@ -1955,8 +1955,33 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 ```4d
  $1.result:=Length(String($1.value))>Length(String($1.value2))
-``` 
+```
 
+#### 例題 3
+
+文字コード順またはアルファベット順にコレクション要素を並べ替えます:
+
+```4d
+var $strings1; $strings2 : Collection
+$strings1:=New collection("Alpha";"Charlie";"alpha";"bravo";"Bravo";"charlie")
+
+// 文字コード順:
+$strings2:=$strings1.orderByMethod("sortCollection";sk character codes)
+// 結果 : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
+
+// アルファベット順:
+$strings2:=$string1s.orderByMethod("sortCollection";sk strict)
+// 結果 : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
+```
+
+***sortCollection*** メソッドのコードは以下のとおりです:
+
+```4d
+var$1Object
+var$2Integer // 並べ替えオプション
+
+$1.result:=(Compare strings($1.value;$1.value2;$2)<0)
+``` 
 
 <!-- END REF -->
 
