@@ -130,7 +130,7 @@
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="変数あるいは式"></a><a href="#変数あるいは式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数あるいは式</h2>
 <blockquote>
-<p>セレクションおよびコレクション型のリストボックス列に関しては <strong><a href="properties_DataSource#式">式</a></strong> の章も参照ください。</p>
+<p>See also <strong><a href="/docs/alpha/ja/FormObjects/propertiesDataSource.html#expression">Expression</a></strong> for Selection and collection type list box columns.</p>
 </blockquote>
 <p>このプロパティは、データのソースを指定します。 各アクティブフォームオブジェクトにはオブジェクト名と変数名が関連付けられています。 変数名とオブジェクト名は違っていてもかまいません。 同じフォーム内で複数のアクティブオブジェクトに同じ変数名を割り当てることができますが、<a href="#オブジェクト名">オブジェクト名</a> はそれぞれユニークでなければなりません。</p>
 <blockquote>
@@ -138,8 +138,17 @@
 </blockquote>
 <p>フォームオブジェクト変数を使って、オブジェクトを監視・コントロールすることができます。 たとえば、ボタンがクリックされると、その変数の値は 1 に設定されます。それ以外の場合は 0 です。 進捗インジケーターに関連づけられた式は、現設定の取得・変更を可能にします。</p>
 <p>代入可・代入不可の変数および式が使用でき、取得できるデータ型はテキスト、整数、数値、日付、時間、ピクチャー、ブール、そしてオブジェクトです。</p>
+<h4><a class="anchor" aria-hidden="true" id="json-文法-3"></a><a href="#json-文法-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
+<table>
+<thead>
+<tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
+</thead>
+<tbody>
+<tr><td>dataSource</td><td>文字列、または文字列のコレクション</td><td><li>4D variable, field name, or any expression. <li><a href="#ダイナミック変数">ダイナミック変数</a> の場合は、空の文字列 <li><a href="/docs/alpha/ja/FormObjects/listboxOverview.html#階層リストボックス">階層リストボックス</a> 列の場合に、文字列 (配列名) のコレクション</td></tr>
+</tbody>
+</table>
 <h3><a class="anchor" aria-hidden="true" id="式"></a><a href="#式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>式</h3>
-<p>オブジェクトのデータソースとして式を指定することができます。 有効な 4D式であれば何でも受け入れられます。シンプルな式、フォーミュラ、4D関数、プロジェクトメソッド名、標準の <code>[Table]Field</code> シンタックスを使用したフィールド名を使用できます。 式はフォームが実行されたときに評価され、フォームイベント毎に再評価されます。 式には、<a href="/docs/alpha/ja/Concepts/quick-tour.html#式">代入可および代入不可の式</a> があることに注意が必要です。</p>
+<p>You can use an <a href="/docs/alpha/ja/Concepts/quick-tour.html#expressions">expression</a> as data source for an object. Any valid 4D expression is allowed: simple expression, object property, formula, 4D function, project method name or field using the standard <code>[Table]Field</code> syntax. 式はフォームが実行されたときに評価され、フォームイベント毎に再評価されます。 式には、<a href="/docs/alpha/ja/Concepts/quick-tour.html#式">代入可および代入不可の式</a> があることに注意が必要です。</p>
 <blockquote>
 <p>入力された式が、変数名とメソッド名の両方で使用されている場合、4Dはメソッド名が指定されたものと判断します。</p>
 </blockquote>
@@ -169,23 +178,14 @@
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="配列リストボックス"></a><a href="#配列リストボックス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配列リストボックス</h3>
 <p>配列型リストボックスの場合、リストボックスおよびリストボックス各列の <strong>変数あるいは式</strong> プロパティには、それぞれに関連付ける配列変数の名前を指定します。 ただし、リストボックスの JSON定義においては、列の <em>dataSource</em> 値として、配列名 (文字列) のコレクションを指定すると <a href="/docs/alpha/ja/FormObjects/listboxOverview.html#階層リストボックス">階層リストボックス</a> が定義されます。</p>
-<h4><a class="anchor" aria-hidden="true" id="json-文法-3"></a><a href="#json-文法-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON 文法</h4>
-<table>
-<thead>
-<tr><th>名</th><th>データタイプ</th><th>とりうる値</th></tr>
-</thead>
-<tbody>
-<tr><td>dataSource</td><td>文字列、または文字列のコレクション</td><td><li>4D変数、フィールド名、あるいは任意のランゲージ式 <li><a href="#ダイナミック変数">ダイナミック変数</a> の場合は、空の文字列 <li><a href="/docs/alpha/ja/FormObjects/listboxOverview.html#階層リストボックス">階層リストボックス</a> 列の場合に、文字列 (配列名) のコレクション</td></tr>
-</tbody>
-</table>
 <h4><a class="anchor" aria-hidden="true" id="対象オブジェクト-3"></a><a href="#対象オブジェクト-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>対象オブジェクト</h4>
 <p><a href="/docs/alpha/ja/FormObjects/viewProAreaOverview.html">4D View Pro エリア</a> - <a href="/docs/alpha/ja/FormObjects/writeProAreaOverview.html">4D Write Pro エリア</a> - <a href="/docs/alpha/ja/FormObjects/buttonOverview.html">ボタン</a> - <a href="/docs/alpha/ja/FormObjects/buttonGridOverview.html">ボタングリッド</a> - <a href="/docs/alpha/ja/FormObjects/checkboxOverview.html">チェックボックス</a> - <a href="/docs/alpha/ja/FormObjects/comboBoxOverview.html">コンボボックス</a> - <a href="/docs/alpha/ja/FormObjects/dropdownListOverview.html">ドロップダウンリスト</a> - <a href="/docs/alpha/ja/FormObjects/listOverview.html">階層リスト</a> - <a href="/docs/alpha/ja/FormObjects/listboxOverview.html">リストボックス</a> - <a href="/docs/alpha/ja/FormObjects/listboxOverview.html#リストボックス列">リストボックス列</a> - <a href="/docs/alpha/ja/FormObjects/listboxOverview.html#リストボックスヘッダー">リストボックスヘッダー</a> - <a href="/docs/alpha/ja/FormObjects/listboxOverview.html#リストボックスフッター">リストボックスフッター</a> - <a href="/docs/alpha/ja/FormObjects/picturePopupMenuOverview.html">ピクチャーポップアップメニュー</a> - <a href="/docs/alpha/ja/FormObjects/pluginAreaOverview.html">プラグインエリア</a> - <a href="/docs/alpha/ja/FormObjects/progressIndicator.html">進捗インジケーター</a> - <a href="/docs/alpha/ja/FormObjects/spinner.html">スピナー</a> - <a href="/docs/alpha/ja/FormObjects/splitters.html">スプリッター</a> - <a href="/docs/alpha/ja/FormObjects/stepper.html">ステッパー</a> - <a href="/docs/alpha/ja/FormObjects/tabControl.html">タブコントロール</a> - <a href="/docs/alpha/ja/FormObjects/subformOverview.html">サブフォーム</a> - <a href="/docs/alpha/ja/FormObjects/radiobuttonOverview.html">ラジオボタン</a> - <a href="/docs/alpha/ja/FormObjects/webAreaOverview.html">Web エリア</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="式の型式タイプ"></a><a href="#式の型式タイプ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>式の型/式タイプ</h2>
 <blockquote>
-<p>セレクションおよびコレクション型のリストボックス列において、このプロパティは <strong>データタイプ</strong> と呼ばれています。</p>
+<p>This property is called <a href="/docs/alpha/ja/FormObjects/propertiesDataSource.html#data-type-expression-type"><strong>Data Type</strong></a> in the Property List for <a href="/docs/alpha/ja/FormObjects/listboxOverview.html#selection-list-boxes">selection</a> and <a href="/docs/alpha/ja/FormObjects/listboxOverview.html#collection-or-entity-selection-list-boxes">collection</a> type list box columns and for <a href="/docs/alpha/ja/FormObjects/dropdownListOverview.html">Drop-down Lists</a> associated to an <a href="/docs/alpha/ja/FormObjects/dropdownListOverview.html#using-an-object">object</a> or an <a href="/docs/alpha/ja/FormObjects/dropdownListOverview.html#using-an-array">array</a>.</p>
 </blockquote>
-<p>オブジェクトに関連付けられた式または変数のデータ型を指定します。 この設定の主な目的は、プロパティリスト内で提供されるテーマとオプションが、データの型と対応するようにするためです。 つまり、実際に変数の型そのものを決めるわけではありません。 プロジェクトをコンパイルするためには、<code>コンパイラー</code> テーマの 4Dランゲージコマンドを別途使う必要があります。</p>
+<p>オブジェクトに関連付けられた式または変数のデータ型を指定します。 この設定の主な目的は、プロパティリスト内で提供されるテーマとオプションが、データの型と対応するようにするためです。 つまり、実際に変数の型そのものを決めるわけではありません。 In view of project compilation, you must <a href="/docs/alpha/ja/Concepts/variables.html#declaring-variables">declare the variable</a>.</p>
 <p>ただし、次の特定の場合には、このプロパティは型宣言の機能を持ちえます:</p>
 <ul>
 <li><strong><a href="#ダイナミック変数">ダイナミック変数</a></strong>: このプロパティを使って、ダイナミック変数の型を宣言することができます。</li>
