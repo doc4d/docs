@@ -3,19 +3,19 @@ id: emails
 title: Email
 ---
 
-Creating, sending or receiving emails in 4D is done by handling an `Email` object. This object is used by the following commands and methods:
+4Dにおけるメールの作成・送信・受信は `Email` オブジェクトの操作よっておこなわれます。 このオブジェクトは以下のコマンドと関数によって使用されます:
 
-- SMTP - [`.send()`](smtpTransporterClass.md#send) function to send an email through SMTP
-- POP3 - [`.getMail()`](pop3TransporterClass.md#getmail) function to get an email from a POP3 server
-- IMAP - [`.getMail()`](imapTransporterClass.md#getmail) and [`.getMails()`](imapTransporterClass.md#getmails) functions to get emails from an IMAP server.
-- `MAIL Convert from MIME` and `MAIL Convert to MIME` commands to convert emails
+- SMTP - [`.send()`](smtpTransporterClass.md#send) 関数は SMTP 経由でメールを送信します。
+- POP3 - [`.getMail()`](pop3TransporterClass.md#getmail) 関数は POP3サーバーからメールを受信します。
+- IMAP - [`.getMail()`](imapTransporterClass.md#getmail) および [`.getMails()`](imapTransporterClass.md#getmails) 関数は IMAPサーバーからメールを受信します。
+- `MAIL Convert from MIME` および `MAIL Convert to MIME` コマンドでメールを変換します。
 
 
 ### Email オブジェクト
 
-Email objects provide the following properties:
+Email オブジェクトは次のプロパティを提供します:
 
-> 4D follows the [JMAP specification](https://jmap.io/spec-mail.html) to format the Email object.
+> 4D は Email オブジェクトのフォーマットは [JMAP specification](https://jmap.io/spec-mail.html) に準拠します。
 
 |                                                                                                                                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
