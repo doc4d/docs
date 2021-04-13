@@ -77,7 +77,7 @@ Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドに
 
 <!-- END REF -->
 
-The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the default Web server object, or the Web server object defined through the option parameter<!-- END REF -->.
+`WEB Server` コマンドは、 <!-- REF #_command_.WEB Server.Summary -->デフォルトの Webサーバーオブジェクト、または option 引数で指定された Webサーバーオブジェクトを返します<!-- END REF -->。
 
 *option*が省略された場合のデフォルトでは、このコマンドはデータベースの Webサーバー (デフォルトWebサーバー) への参照を返します。 取得する Webサーバーを指定するには、*option* に以下の定数のいずれか一つを渡してください:
 
@@ -434,7 +434,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.inactiveProcessTimeout** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.inactiveProcessTimeout.Summary -->life duration (in minutes) of the inactive session processes<!-- END REF -->. At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
+ <!-- REF #webServerClass.inactiveProcessTimeout.Summary -->セッションプロセスの非アクティブタイムアウト時間 (分単位)<!-- END REF -->。 At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
 
 デフォルト = 480 分
 
@@ -449,7 +449,7 @@ The <!-- REF #webServerClass.inactiveProcessTimeout.Summary -->life duration (in
 **.inactiveSessionTimeout** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.inactiveSessionTimeout.Summary -->life duration (in minutes) of inactive sessions (duration set in cookie)<!-- END REF -->. タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。
+ <!-- REF #webServerClass.inactiveSessionTimeout.Summary -->セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)<!-- END REF -->。 タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。
 
 デフォルト = 480 分
 
@@ -493,7 +493,7 @@ The <!-- REF #webServerClass.inactiveSessionTimeout.Summary -->life duration (in
 **.keepSession** : Boolean<!-- END REF -->
 
 
-The <!-- REF #webServerClass.keepSession.Summary -->session management enabling status<!-- END REF -->. 
+ <!-- REF #webServerClass.keepSession.Summary -->セッション管理の有効化ステータス<!-- END REF -->。 
 
 Default = true
 
@@ -562,7 +562,7 @@ Default = true
 **.maxSessions** : Number<!-- END REF -->
 
 
-The <!-- REF #webServerClass.maxSessions.Summary -->maximum number of simultaneous sessions<!-- END REF -->. When you reach the limit, the oldest session is closed (and `On Web Close Process` database method is called) if the web server needs to create a new one. The number of simultaneous sessions cannot exceed the total number of web processes (maxConcurrentProcesses property, 100 by default)
+ <!-- REF #webServerClass.maxSessions.Summary -->セッションにおける同時セッションの最大数<!-- END REF -->。 When you reach the limit, the oldest session is closed (and `On Web Close Process` database method is called) if the web server needs to create a new one. The number of simultaneous sessions cannot exceed the total number of web processes (maxConcurrentProcesses property, 100 by default)
 
 <!-- END REF -->
 

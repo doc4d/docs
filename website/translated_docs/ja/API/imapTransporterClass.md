@@ -266,7 +266,7 @@ IMAP Transporter オブジェクトは [IMP New transporter](#imap-new-transport
 
 #### 説明
 
-The `.delete()` function <!-- REF #imapTransporterClass.delete().Summary -->sets the "delete" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
+`.delete()` 関数は、 <!-- REF #imapTransporterClass.delete().Summary -->`msgsIDs` または `allMsgs` が指定するメッセージに対して "削除" フラグを設定します<!-- END REF -->。
 
 以下のものを渡すことができます:
 
@@ -485,7 +485,7 @@ The `.delete()` function <!-- REF #imapTransporterClass.delete().Summary -->sets
 
 #### 説明
 
-The `.getDelimiter( )` function <!-- REF #imapTransporterClass.getDelimiter().Summary -->returns the character used to delimit levels of hierarchy in the mailbox name<!-- END REF -->.
+`.getDelimiter( )` 関数は、 <!-- REF #imapTransporterClass.getDelimiter().Summary -->メールボックス名で階層レベルを区切るのに使用される文字を返します<!-- END REF -->。
 
 この区切り文字は以下のように使用することができます:
 
@@ -632,7 +632,7 @@ ID = 1のメッセージを取得します:
 
 *ids* 引数として、取得するメッセージID のコレクションを渡します。 これらの ID は [`.getMail()`](#getmail) で取得することができます。
 
-任意の *options* 引数を渡すと、返されるメッセージのパーツを定義することができます。 利用可能なプロパティについては、以下の **オプション** の表を参照ください。
+任意の *options* 引数を渡すと、返されるメッセージのパートを定義することができます。 利用可能なプロパティについては、以下の **オプション** の表を参照ください。
 
 **第二シンタックス:**
 
@@ -644,7 +644,7 @@ ID = 1のメッセージを取得します:
 
 *endMsg* には、連続レンジに含める最後のメッセージの番号に対応する *倍長整数* の値を渡します。 負の値 (*startMsg* <= 0) を渡した場合、メールボックスの最後のメッセージが連続レンジの最終メッセージとして扱われます。
 
-任意の *options* 引数を渡すと、返されるメッセージのパーツを定義することができます。
+任意の *options* 引数を渡すと、返されるメッセージのパートを定義することができます。
 
 **オプション**
 
