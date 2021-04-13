@@ -73,10 +73,10 @@
 <li>POP3 - <a href="/docs/alpha/ja/API/POP3TransporterClass.html#getmail"><code>.getMail()</code></a> 関数は POP3サーバーからメールを受信します。</li>
 </ul>
 <blockquote>
-<p>You can also create a new, blank <code>Email</code> object by calling the <a href="https://doc.4d.com/4dv18/help/command/en/page1471.html"><code>New object</code></a> 4D command, and then fill it with <a href="#email-object">Email object properties</a>.</p>
+<p>また、<a href="https://doc.4d.com/4dv18/help/command/en/page1471.html"><code>New object</code></a> 4Dコマンドを使って新規かつ空の <code>Email</code> オブジェクトを作成してから、<a href="#email-オブジェクト">Email オブジェクトプロパティ</a> を設定していくことも可能です。</p>
 </blockquote>
-<p>You send <code>Email</code> objects using the SMTP <a href="/docs/alpha/ja/API/SMTPTransporterClass.html#send"><code>.send()</code></a> function.</p>
-<p><a href="#mail-convert-from-mime"><code>MAIL Convert from MIME</code></a> and <a href="#mail-convert-to-mime"><code>MAIL Convert to MIME</code></a> commands can be used to convert <code>Email</code> objects to and from MIME contents.</p>
+<p><code>Email</code> オブジェクトは SMTP <a href="/docs/alpha/ja/API/SMTPTransporterClass.html#send"><code>.send()</code></a> 関数を使って送信します。</p>
+<p><a href="#mail-convert-from-mime"><code>MAIL Convert from MIME</code></a> および <a href="#mail-convert-to-mime"><code>MAIL Convert to MIME</code></a> コマンドは、MIME コンテンツから <code>Email</code> オブジェクトに、またはその逆の変換をおこなうのに使用できます。</p>
 <h3><a class="anchor" aria-hidden="true" id="email-オブジェクト"></a><a href="#email-オブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Email オブジェクト</h3>
 <p>Email オブジェクトは次のプロパティを提供します:</p>
 <blockquote>
@@ -162,7 +162,7 @@
 <p><strong>.attachments</strong> : Collection</p>
 <h4><a class="anchor" aria-hidden="true" id="説明"></a><a href="#説明" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.attachments</code> プロパティは、 <code>4D.MailAttachment</code> オブジェクトのコレクションを格納します。</p>
-<p>Attachment objects are defined through the <a href="/docs/alpha/ja/API/MailAttachmentClass.html#mail-new-attachment"><code>MAIL New attachment</code></a> command. Attachment objects have specific <a href="/docs/alpha/ja/API/MailAttachmentClass.html">properties and functions</a>.</p>
+<p>MailAttachment オブジェクトは <a href="/docs/alpha/ja/API/MailAttachmentClass.html#mail-new-attachment"><code>MAIL New attachment</code></a> コマンドによって定義されます。 MailAttachment オブジェクトは特有の <a href="/docs/alpha/ja/API/MailAttachmentClass.html">プロパティや関数</a> を持ちます。</p>
 <h2><a class="anchor" aria-hidden="true" id="bcc"></a><a href="#bcc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.bcc</h2>
 <p><strong>.bcc</strong> : Text<br><strong>.bcc</strong> : Object<br><strong>.bcc</strong> : Collection</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-1"></a><a href="#説明-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -354,11 +354,11 @@
 <blockquote>
 <p>戻り値の Email オブジェクトのフォーマットは <a href="https://jmap.io/spec-mail.html">JMAP specification</a> に準拠します。</p>
 </blockquote>
-<p>Pass in <em>mime</em> a valid MIME document to convert. It can be provided by any mail server or application. You can pass a BLOB or a text <em>mime</em> parameter. If the MIME comes from a file, it is recommended to use a BLOB parameter to avoid issues related to charset and line break conversions.</p>
+<p><em>mime</em> には、変換する有効な MIME ドキュメントを渡します。 これはどのメールサーバーまたはアプリケーションから提供されたものでも可能です。 <em>mime</em> 引数として、BLOB またはテキストを渡すことができます。 MIME がファイルから渡された場合、文字セットと改行コード変換に関する問題を避けるため、BLOB型の引数を使用することが推奨されます。</p>
 <h4><a class="anchor" aria-hidden="true" id="返されるオブジェクト"></a><a href="#返されるオブジェクト" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>返されるオブジェクト</h4>
 <p>Email オブジェクト。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1"></a><a href="#例題-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
-<p>You want to load a mail template saved as MIME in a text document and send an email:</p>
+<p>テキストドキュメントとして保存された MIME のメールのテンプレートを読み込み、メールを送信します。</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_BLOB</span>(<span class="hljs-variable">$mime</span>)
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$mail</span>;<span class="hljs-variable">$server</span>;<span class="hljs-variable">$transporter</span>;<span class="hljs-variable">$status</span>)
 
@@ -378,17 +378,17 @@
 <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$transporter</span>.<span class="hljs-function">send</span>(<span class="hljs-variable">$mail</span>)
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2"></a><a href="#例題-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
-<p>In this example, you send directly a 4D Write Pro document containing pictures:</p>
+<p>この例題では、ピクチャーが含まれた 4D Write Pro ドキュメントを直接送信します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$mime</span>)
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$email</span>;<span class="hljs-variable">$server</span>;<span class="hljs-variable">$transporter</span>;<span class="hljs-variable">$status</span>)
 
-<span class="hljs-comment">// Mime export of the 4D Write Pro document</span>
+<span class="hljs-comment">// 4D Write Pro ドキュメントを MIME に書き出します</span>
 <span class="hljs-function">WP EXPORT VARIABLE</span>(WParea;<span class="hljs-variable">$mime</span>;wk mime html)
 
-<span class="hljs-comment">// convert 4D Write Pro Mime variable in mail object</span>
+<span class="hljs-comment">// 4D Write Pro MIME 変数をメールオブジェクトに変換します</span>
 <span class="hljs-variable">$email</span>:=<span class="hljs-function">MAIL Convert from MIME</span>(<span class="hljs-variable">$mime</span>)
 
-<span class="hljs-comment">// Fill your mail object headers</span>
+<span class="hljs-comment">// Email オブジェクトのヘッダーを設定します</span>
 <span class="hljs-variable">$email</span>.subject:=<span class="hljs-string">"4D Write Pro HTML body"</span>
 <span class="hljs-variable">$email</span>.from:=<span class="hljs-string">"YourEmail@gmail.com"</span>
 <span class="hljs-variable">$email</span>.to:=<span class="hljs-string">"RecipientEmail@mail.com"</span>
@@ -426,12 +426,12 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-23"></a><a href="#説明-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>MAIL Convert to MIME</code> コマンドは、 Emailオブジェクトを MIMEテキストへと変換します。 This command is called internally by <a href="/docs/alpha/ja/API/SMTPTransporterClass.html#send">SMTP_transporter.send( )</a> to format the email object before sending it. It can be used to analyze the MIME format of the object.</p>
-<p>In <em>mail</em>, pass the content and the structure details of the email to convert. This includes information such as the email addresses (sender and recipient(s)), the message itself, and the type of display for the message.</p>
+<p><code>MAIL Convert to MIME</code> コマンドは、 Emailオブジェクトを MIMEテキストへと変換します。 このコマンドは、Email オブジェクトを送信する前に整形する目的で<a href="/docs/alpha/ja/API/SMTPTransporterClass.html#send">SMTP_transporter.send()</a> コマンドによって内部的に呼び出されます。 また、オブジェクトの MIME フォーマットを解析するためにも使用されます。</p>
+<p><em>mail</em> には、変換するメールのコンテンツとストラクチャーの詳細を渡します。 この情報には、メールアドレス (送信者と受信者)、メッセージそのもの、メッセージの表示タイプなどが含まれます。</p>
 <blockquote>
-<p>4D follows the <a href="https://jmap.io/spec-mail.html">JMAP specification</a> to format the email object.</p>
+<p>Email オブジェクトのフォーマットは <a href="https://jmap.io/spec-mail.html">JMAP specification</a> に準拠します。</p>
 </blockquote>
-<p>In <em>options</em>, you can set a specific charset and encoding configuration for the mail. 次のプロパティを利用することができます:</p>
+<p><em>options</em> 引数を渡すと、メールに対して特定の文字セットとエンコーディング設定を指定することができます。 次のプロパティを利用することができます:</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
