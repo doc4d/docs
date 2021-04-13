@@ -1,6 +1,6 @@
 ---
 id: classes
-title: Classes
+title: Klassen
 ---
 
 
@@ -288,7 +288,7 @@ Eine Function Class Constructor, die [Parameter](#parameter) zulässt, lässt si
 
 Rufen Sie die Function [`new()`](API/classClass.md#new) auf, wird der Class Constructor mit den Parametern aufgerufen, die optional in `new()` übergeben wurden.
 
-Für eine Function Class Constructor gibt der Befehl `Current method name`  "*\<ClassName>.constructor*" zurück, zum Beispiel "MyClass.constructor".
+Für eine Function Class Constructor gibt der Befehl `Current method name` "*\<ClassName>:constructor*" zurück, z.B. "MyClass:constructor".
 
 
 

@@ -115,7 +115,7 @@ Email オブジェクトは次のプロパティを提供します:
 
 `.attachments` プロパティは、 <!-- REF #emailObjectClass.attachments.Summary -->*attachment* オブジェクトのコレクション<!-- END REF -->を格納します。
 
-Attachment objects are defined through the `MAIL New attachment` command.
+attachment オブジェクトは [`MAIL New attachment`](https://doc.4d.com/4dv18/help/command/ja/page1644.html) コマンドによって定義されます。
 
 
 
@@ -349,6 +349,13 @@ Attachment objects are defined through the `MAIL New attachment` command.
     </td>
   </tr>
 </table>
+
+予約されたキーワード:
+* $draft - メッセージが下書きであることを表します
+* $seen - メッセージが読まれたことを表します
+* $flagged - メッセージが注視されるべきであることを表します (例: 至急のメール)
+* $answered - メッセージに返信がされたことを表します
+* $deleted - メッセージが消去されることを表します
 
 #### 例題
 

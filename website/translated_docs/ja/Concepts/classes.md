@@ -339,7 +339,7 @@ Class Constructor({$parameterName : type; ...})
 
 クラスコンストラクターが定義されていると、 [`new()`](API/classClass.md#new) 関数を呼び出したときに、当該コンストラクターが呼び出されます (引数を指定している場合は `new()` 関数に渡します)。
 
-クラスコンストラクター関数の場合には、 `Current method name` コマンドは次を返します: "*\<ClassName>.constructor*" (例:  "MyClass.constructor")。
+クラスコンストラクター関数の場合には、 `Current method name` コマンドは次を返します: "*\<ClassName>:constructor*" (例:  "MyClass:constructor")。
 
 
 

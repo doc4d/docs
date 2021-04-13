@@ -1,6 +1,6 @@
 ---
 id: dataclassClass
-title: データクラス
+title: DataClass
 ---
 
 
@@ -287,6 +287,10 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
  $emp.__NEW:=True
  $empsCollection.push($emp)
  $employees:=ds.Employee.fromCollection($empsCollection)
+
+
+
+
 ```
 
 #### 例題 5
@@ -415,8 +419,8 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
  $e4:=ds.Employee.get(4;$settings2)
  completeSummary($e4) // completeSummary メソッドには、"summary" コンテキストに付随する最適化が適用されます
-```
-
+``` 
+ 
 
 <!-- END REF -->
 
@@ -510,7 +514,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 #### 例題 1
 
-```4d
+```4d 
  #DECLARE ($entity : Object)  
  var $status : Object
 
@@ -536,7 +540,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 #### 例題 3
 
-```4d
+```4d 
  var $pk : Text
  var $dataClassAttribute : Object
 
@@ -579,13 +583,13 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 以下のコードは "Log" データクラスに新しいエンティティを作成し、"info" 属性に情報を記録します:
 
-```4d
+```4d 
  var $entity : cs.LogEntity
  $entity:=ds.Log.new() // 参照を作成します
  $entity.info:="New entry" // 情報を格納します
  $entity.save() // エンティティを保存します
 ```
-
+ 
 <!-- END REF -->
 
 
@@ -626,12 +630,12 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 #### 例題
 
 
-```4d
+```4d 
  var $USelection; $OSelection : cs.EmployeeSelection
  $USelection:=ds.Employee.newSelection() // 順列なしの空のエンティティセレクションを作成します
  $OSelection:=ds.Employee.newSelection(dk keep ordered) // 順列ありの空のエンティティセレクションを作成します
 ```
-
+ 
 
 <!-- END REF -->
 
@@ -813,21 +817,21 @@ $vSingles:=ds.Person.query("spouse = :1";Null) // 機能しません
 ```
 エンティティ1:
 ds.People.name: "martin"
-ds.People.places:
+ds.People.places: 
     { "locations" : [ {
                 "kind":"home",
-                "city":"paris"
+                "city":"paris" 
             } ] }
 
 エンティティ2:
 ds.People.name: "smith"
-ds.People.places:
+ds.People.places: 
     { "locations" : [ {
                 "kind":"home",
-                "city":"lyon"
+                "city":"lyon" 
             } , {
                 "kind":"office",
-                "city":"paris"
+                "city":"paris" 
             } ] }
 ```
 

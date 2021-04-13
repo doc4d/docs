@@ -44,7 +44,7 @@ SMTP Transporter オブジェクトは [SMTP New transporter](#smtp-new-transpor
 <!-- REF #_command_.SMTP New transporter.Syntax -->
 **SMTP New transporter**( *server* : Object ) : 4D.SMTPTransporter<!-- END REF -->
 
-<!-- REF smtpTransporterClass.SMTP New transporter.Params -->
+<!-- REF #_command_.SMTP New transporter.Params -->
 | 参照     | タイプ                |    | 説明                                                   |
 | ------ | ------------------ |:--:| ---------------------------------------------------- |
 | server | オブジェクト             | -> | メールサーバー情報                                            |
@@ -65,10 +65,21 @@ SMTP Transporter オブジェクトは [SMTP New transporter](#smtp-new-transpor
 
 *server* 引数として、以下のプロパティを持つオブジェクトを渡します:
 
-| *server*                                                                                                                                                                                                                       | デフォルト値 (省略時) |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ |
-| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False        |
-|[<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->|the most secure authentication mode supported by the server is used| |[<!-- INCLUDE #transporter.bodyCharset.Syntax -->](#bodycharset)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.bodyCharset.Summary -->|`mail mode UTF8` (US-ASCII_UTF8_QP)| |[<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->|30| |[<!-- INCLUDE #transporter.headerCharset.Syntax -->](#headercharset)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.headerCharset.Summary -->|`mail mode UTF8` (US-ASCII_UTF8_QP)| |[<!-- INCLUDE #transporter.host.Syntax -->](#host)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->|*mandatory* |[<!-- INCLUDE #smtpTransporterClass.keepAlive.Syntax -->](#keepalive)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #smtpTransporterClass.keepAlive.Summary -->|True| |[<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->|none| |**password** : Text<p>User password for authentication on the server (not returned in *[SMTP transporter](#smtp-transporter-object)* object)|none| |[<!-- INCLUDE #transporter.port.Syntax -->](#port)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->|587| |[<!-- INCLUDE #transporter.sendTimeOut.Syntax -->](#sendtimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.sendTimeOut.Summary -->|100| |[<!-- INCLUDE #transporter.user.Syntax -->](#user)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->|none|
+| *server*                                                                                                                                                                                                                                                                                      | デフォルト値 (省略時)                          |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                 |
+| .**accessTokenOAuth2**: Text<p>OAuth 2 認証の資格情報を表すテキスト文字列。 `authenticationMode` が OAUTH2 の場合のみ使用されます。 `accessTokenOAuth2` が使用されているが `authenticationMode` が省略されていた場合、OAuth2 プロトコルが使用されます (サーバーで許可されていれば)。 *[SMTP transporter](#smtp-transporter-オブジェクト)* オブジェクトには返されません。 | なし                                    |
+| [<!-- INCLUDE #transporter.authenticationMode.Syntax -->](#authenticationmode)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.authenticationMode.Summary -->| サーバーがサポートするもっともセキュアな認証モードが使用されます      |
+| [<!-- INCLUDE #transporter.bodyCharset.Syntax -->](#bodycharset)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.bodyCharset.Summary -->| `mail mode UTF8` (US-ASCII_UTF8_QP) |
+| [<!-- INCLUDE #transporter.connectionTimeOut.Syntax -->](#connectiontimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.connectionTimeOut.Summary -->| 30                                    |
+| [<!-- INCLUDE #transporter.headerCharset.Syntax -->](#headercharset)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.headerCharset.Summary -->| `mail mode UTF8` (US-ASCII_UTF8_QP) |
+| [<!-- INCLUDE #transporter.host.Syntax -->](#host)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *必須*                                  |
+| [<!-- INCLUDE #smtpTransporterClass.keepAlive.Syntax -->](#keepalive)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #smtpTransporterClass.keepAlive.Summary -->| True                                  |
+| [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| なし                                    |
+| **password** : Text<p>サーバーとの認証のためのユーザーパスワード *[SMTP transporter](#smtp-transporter-オブジェクト)* オブジェクトには返されません。                                                                                                                                                             | なし                                    |
+| [<!-- INCLUDE #transporter.port.Syntax -->](#port)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 587                                   |
+| [<!-- INCLUDE #transporter.sendTimeOut.Syntax -->](#sendtimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.sendTimeOut.Summary -->| 100                                   |
+| [<!-- INCLUDE #transporter.user.Syntax -->](#user)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| なし                                    |
 
 
 
@@ -107,6 +118,22 @@ SMTP Transporter オブジェクトは [SMTP New transporter](#smtp-new-transpor
 
 <!-- END REF -->
 
+## 4D.SMTPTransporter.new()
+
+
+<!-- REF #4D.SMTPTransporter.new().Syntax -->
+**4D.SMTPTransporter.new**( *server* : Object ) : 4D.SMTPTransporter<!-- END REF -->
+
+<!-- REF #4D.SMTPTransporter.new().Params -->
+| 参照     | タイプ                |    | 説明                                                   |
+| ------ | ------------------ |:--:| ---------------------------------------------------- |
+| server | オブジェクト             | -> | メールサーバー情報                                            |
+| 戻り値    | 4D.SMTPTransporter | <- | [SMTP transporter オブジェクト](#smtp-transporter-オブエジェクト) |
+<!-- END REF -->
+
+#### 説明
+
+`4D.SMTPTransporter.new()` 関数は、 <!-- REF #4D.SMTPTransporter.new().Summary -->新規の `4D.SMTPTransporter`型オブジェクトを作成して返します<!-- END REF -->。 この関数の機能は、[`SMTP New transporter`](#smtp-new-transporter) コマンドと同一です。
 
 
 
@@ -114,7 +141,7 @@ SMTP Transporter オブジェクトは [SMTP New transporter](#smtp-new-transpor
 
 
 
-<!-- INCLUDE transporter.authenticationMode.Desc -->
+<!-- INCLUDE transporter.authenticationModeSMTP.Desc -->
 
 
 

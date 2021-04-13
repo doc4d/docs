@@ -8,6 +8,7 @@ lib/core/MetadataBlog.js
 docsPostProcessed
 
 website/siteConfig.js
+
 website/build/
 website/yarn.lock
 website/node_modules
