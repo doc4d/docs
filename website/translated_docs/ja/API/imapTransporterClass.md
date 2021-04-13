@@ -548,17 +548,17 @@ The `.getDelimiter( )` function <!-- REF #imapTransporterClass.getDelimiter().Su
 
 `.getMail()` 関数は、 <!-- REF #imapTransporterClass.getMail().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメールを `Email` オブジェクトとして返します<!-- END REF -->。 この関すを使用すると、メールのコンテンツをローカルで管理できるようになります。
 
-In the first parameter, you can pass either:
+最初の引数として、次のいずれかを渡すことができます:
 
-*   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
-*   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
+*   *msgNumber* に、取得するメッセージのシーケンス番号 (*倍長整数*) を渡します。
+*   *msgID*に、取得するメッセージの固有ID (*テキスト*) を渡します。
 
-The optional *options* parameter allows you pass an object defining additional instructions for handling the message. The following properties are available:
+任意の *options* 引数として、メッセージの扱い方を定義する追加のオブジェクトを渡すことができます。 次のプロパティを利用することができます:
 
-| プロパティ      | タイプ     | 説明                                                                                                                          |
-| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | boolean | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Default value: True |
-| withBody   | boolean | Pass True to return the body of the message. If False, only the message header is returned. Default value: True             |
+| プロパティ      | タイプ     | 説明                                                                         |
+| ---------- | ------- | -------------------------------------------------------------------------- |
+| updateSeen | boolean | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 デフォルト値: true |
+| withBody   | boolean | true を渡すとメッセージ本文を返します。 false 時には、メッセージヘッダーのみが返されます。 デフォルト値: true           |
 > * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
 > * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
@@ -566,7 +566,7 @@ The optional *options* parameter allows you pass an object defining additional i
 
 #### 戻り値
 
-`.getMail()` returns an [`Email` object](emailObjectClass.md#email-object) with the following specific IMAP properties: *id*, *receivedAt*, and *size*.
+`.getMail()` は、以下の IMAP特有のプロパティを持つ [`Email` オブジェクト](emailObjectClass.md#email-オブジェクト)を返します: *id*、*receivedAt*、および *size*。
 
 #### 例題
 
@@ -628,48 +628,48 @@ ID = 1のメッセージを取得します:
 
 ***.getMails( ids { ; options } ) -> result***
 
-The first syntax allows you to retrieve messages based on their IDs.
+第一シンタックスを使用すると、メッセージID に基づいてメッセージを取得することができます。
 
-In the *ids* parameter, pass a collection of IDs for the messages to return. You can get the IDs with [`.getMail()`](#getmail).
+*ids* 引数として、取得するメッセージID のコレクションを渡します。 これらの ID は [`.getMail()`](#getmail) で取得することができます。
 
-The optional *options* parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
+任意の *options* 引数を渡すと、返されるメッセージのパーツを定義することができます。 利用可能なプロパティについては、以下の **オプション** の表を参照ください。
 
 **第二シンタックス:**
 
  ***.getMails( startMsg ; endMsg { ; options } ) -> result***
 
-The second syntax allows you to retrieve messages based on a sequential range. The values passed represent the position of the messages in the mailbox.
+第二シンタックスを使用すると、連続したレンジに基づいてメッセージを取得することができます。 渡される値はメールボックス内でのメッセージの位置を表します。
 
-In the *startMsg* parameter, pass an *integer* value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+*startMsg* には、連続したレンジの最初のメッセージの番号に対応する *倍長整数* の値を渡します。 負の値 (*startMsg* <= 0) を渡した場合、メールボックスの最初のメッセージが連続レンジの先頭メッセージとして扱われます。
 
-In the *endMsg* parameter, pass an *integer* value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (*endMsg* <= 0), the last message of the mailbox will be used as the end of the sequence.
+*endMsg* には、連続レンジに含める最後のメッセージの番号に対応する *倍長整数* の値を渡します。 負の値 (*startMsg* <= 0) を渡した場合、メールボックスの最後のメッセージが連続レンジの最終メッセージとして扱われます。
 
-The optional *options* parameter allows you to define the parts of the messages to be returned.
+任意の *options* 引数を渡すと、返されるメッセージのパーツを定義することができます。
 
 **オプション**
 
-| プロパティ      | タイプ | 説明                                                                                                                                        |
-| ---------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | ブール | If True, the specified messages are marked as "seen" in the mailbox. If False, the messages are not marked as "seen". Default value: True |
-| withBody   | ブール | Pass True to return the body of the specified messages. If False, only the message headers are returned. Default value: True              |
+| プロパティ      | タイプ | 説明                                                                     |
+| ---------- | --- | ---------------------------------------------------------------------- |
+| updateSeen | ブール | true 時には、指定されたメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 デフォルト値: true |
+| withBody   | ブール | true を渡すと指定されたメッセージの本文を返します。 false 時には、メッセージヘッダーのみが返されます。 デフォルト値: true |
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated.
 > * If there is no open connection, `.getMails()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox).
 
 
 #### 戻り値
 
-`.getMails()` returns an object containing the following collections:
+`.getMails()` は、以下のコレクションを格納したオブジェクトを返します。
 
 
-| プロパティ    | タイプ    | 説明                                                                                                                                 |
-| -------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| list     | コレクション | Collection of [`Email` objects](emailObjectClass.md#email-object). If no Email objects are found, an empty collection is returned. |
-| notFound | コレクション | Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.                       |
+| プロパティ    | タイプ    | 説明                                                                                                 |
+| -------- | ------ | -------------------------------------------------------------------------------------------------- |
+| list     | コレクション | [`Email`](emailObjectClass.md#email-オブジェクト) オブジェクトのコレクション。 Email オブジェクトが見つからない場合、空のコレクションが返されます。   |
+| notFound | コレクション | 使用したシンタックスによって返されるものが異なります:<br><ul><li>第一シンタックス - 指定した ID のうち、存在しなかったメッセージの ID</li><li>第二シンタックス - startMsg と endMsg の間の番号のうち、存在しなかったメッセージの番号</li></ul>すべてのメッセージが見つかった場合には、空のコレクションが返されます。 |
 
 
 #### 例題
 
-You want to retrieve the 20 most recent emails without changing their "seen" status:
+直近の 20件のメールを、"既読" ステータスを変更せずに取得します:
 
 ```4d
  var $server,$boxInfo,$result : Object
@@ -728,15 +728,15 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 `.getMIMEAsBlob()` 関数は、 <!-- REF #imapTransporterClass.getMIMEAsBlob().Summary -->`IMAP_transporter` が指定するメールボックス内の、*msgNumber* または *msgID* に対応するメッセージの MIMEコンテンツを格納した BLOB を返します<!-- END REF -->。
 
-In the first parameter, you can pass either:
+最初の引数として、次のいずれかを渡すことができます:
 
-*   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
-*   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
+*   *msgNumber* に、取得するメッセージのシーケンス番号 (*倍長整数*) を渡します。
+*   *msgID*に、取得するメッセージの固有ID (*テキスト*) を渡します。
 
-The optional *updateSeen* parameter allows you to specify if the message is marked as "seen" in the mailbox. 以下のものを渡すことができます:
+任意の *updateSeen* 引数を渡すと、メールボックス内でメッセージが "既読" とマークされるかどうかを指定します。 以下のものを渡すことができます:
 
-*   **True** - to mark the message as "seen" (indicating the message has been read)
-*   **False** - to leave the message's "seen" status untouched
+*   **True** - メッセージは "既読" とマークされます (このメッセージが読まれたことを表します)
+*   **False** - メッセージの "既読" ステータスは変化しません。
 > * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message,
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated,
 > * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox( )`.
@@ -813,10 +813,10 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 
 以下のものを渡すことができます:
 
-- in the *msgsIDs* parameter, a collection containing the unique IDs of the specific messages to move, or
-- in the *allMsgs* parameter, the `IMAP all` constant (integer) to move all messages in the selected mailbox.
+- *msgsIDs* には、移動するメッセージの固有ID を格納したコレクション
+- *allMsgs* には、選択されているメールボックスの全メッセージを移動するための定数 (倍長整数型):
 
-The *destinationBox* parameter allows you to pass a text value with the name of the mailbox where the messages will be moved.
+*destinationBox* には、メッセージの移動先メールボックスの名称をテキスト値で渡すことができます。
 
 > This function is only supported by IMAP servers compliant with RFC [8474](https://tools.ietf.org/html/rfc8474).
 
@@ -917,9 +917,9 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 `.numToID()` 関数は、現在選択されているメールボックスにおいて、 <!-- REF #imapTransporterClass.numToID().Summary -->*startMsg* および *endMsg* で指定された連続した範囲のメッセージのシーケンス番号を IMAP固有IDへと変換します<!-- END REF --> 。
 
-In the *startMsg* parameter, pass an integer value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+*startMsg* には、連続したレンジの最初のメッセージの番号に対応する *倍長整数* の値を渡します。 負の値 (*startMsg* <= 0) を渡した場合、メールボックスの最初のメッセージが連続レンジの先頭メッセージとして扱われます。
 
-In the *endMsg* parameter, pass an integer value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (*endMsg* <= 0), the last message of the mailbox will be used as the end of the sequence.
+*endMsg* には、連続レンジに含める最後のメッセージの番号に対応する *倍長整数* の値を渡します。 負の値 (*startMsg* <= 0) を渡した場合、メールボックスの最後のメッセージが連続レンジの最終メッセージとして扱われます。
 
 
 #### 戻り値
@@ -983,9 +983,9 @@ In the *endMsg* parameter, pass an integer value corresponding to the number of 
 
 > This function is based upon the specification for the [IMAP protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
 
-`.searchMails()` 関数は、 <!-- REF #imapTransporterClass.searchMails().Summary -->カレントメールボックスにおいて *searchCriteria* の検索条件に合致するメッセージを検索します<!-- END REF -->。 *searchCriteria* consists of one or more search keys.
+`.searchMails()` 関数は、 <!-- REF #imapTransporterClass.searchMails().Summary -->カレントメールボックスにおいて *searchCriteria* の検索条件に合致するメッセージを検索します<!-- END REF -->。 *searchCriteria* 引数には、一つ以上の検索キーを格納します。
 
-*searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. たとえば:
+*searchCriteria* はテキスト型の引数で、一つ以上の検索キー (詳細は後述の [利用可能な検索キー](#利用可能な検索キー) 参照) を格納し、検索する値を渡します (渡さない場合もあります)。 検索キーは単一または複数の項目からなります。 たとえば:
 
 ```
 SearchKey1 = FLAGGED
@@ -993,9 +993,9 @@ SearchKey2 = NOT FLAGGED
 SearchKey3 = FLAGGED DRAFT
 ```
 
-> Matching is usually not case-sensitive
+> 文字の大小は通常区別されません。
 
-- If the *searchCriteria* is a null string, the search will be equivalent to a “select all”.
+- *searchCriteria* 引数が null 文字列の場合、検索は "すべてを選択" と同等です。
 - If the *searchCriteria* includes multiple search keys, the result is the intersection (AND function) of all the messages that match those keys.
 
 ```
