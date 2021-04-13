@@ -30,7 +30,6 @@ If($zipFile.extension=".txt")
 End if
 ```
 
-
 ### 概要
 
 |                                                                                                                                                                            |
@@ -46,10 +45,10 @@ End if
 | v18   | 追加 |
 </details>
 
-<!-- REF zipArchive.ZIP Create archive.Syntax -->
+<!-- REF #_command_.ZIP Create archive.Syntax -->
 **ZIP Create archive** ( *fileToZip* : 4D.File ; *destinationFile* : 4D.File ) : Object<br>**ZIP Create archive** ( *folderToZip* : 4D.Folder ; *destinationFile* : 4D.File { ; *options* : Integer }) : Object<br>**ZIP Create archive** ( *zipStructure* : Object ; *destinationFile* : 4D.File ) : Object<!-- END REF -->
 
-<!-- REF zipArchive.ZIP Create archive.Params -->
+<!-- REF #_command_.ZIP Create archive.Params -->
 | 参照              | タイプ       |    | 説明                                                                             |
 | --------------- | --------- |:--:| ------------------------------------------------------------------------------ |
 | fileToZip       | 4D.File   | -> | 圧縮する File または Folder オブジェクト                                                    |
@@ -63,7 +62,7 @@ End if
 
 #### 説明
 
-`ZIP Create archive` コマンドは、 <!-- REF zipArchive.ZIP Create archive.Summary -->圧縮された ZIPアーカイブオブジェクトを作成し、その処理のステータスを返します<!-- END REF -->。
+`ZIP Create archive` コマンドは、 <!-- REF #_command_.ZIP Create archive.Summary -->圧縮された ZIPアーカイブオブジェクトを作成し、その処理のステータスを返します<!-- END REF -->。
 
 You can pass a 4D.File, a 4D.Folder, or a zip structure object as first parameter:
 
@@ -258,11 +257,13 @@ You want to pass a collection of folders and files to compress to the *zipStruct
  $destination:=Folder(fk desktop folder).file("file.zip")
  $err:=ZIP Create archive($zip;$destination)
 ```
- 
 
 
 
-<!-- REF zipArchive.ZIP Read archive.Desc -->
+
+
+
+
 ## ZIP Read archive
 
 <details><summary>履歴</summary>
@@ -271,10 +272,10 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 | v18   | 追加 |
 </details>
 
-<!-- REF zipArchive.ZIP Read archive.Syntax -->
+<!-- REF #_command_.ZIP Read archive.Syntax -->
 **ZIP Read archive** ( *zipFile* : 4D.File { ; *password* : Text }) : 4D.ZipArchive<!-- END REF -->
 
-<!-- REF zipArchive.ZIP Read archive.Params -->
+<!-- REF #_command_.ZIP Read archive.Params -->
 | 参照       | タイプ           |    | 説明                      |
 | -------- | ------------- |:--:| ----------------------- |
 | zipFile  | 4D.File       | -> | ZIPアーカイブファイル            |
@@ -285,7 +286,7 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 
 #### 説明
 
-`ZIP Read archive` コマンドは、 <!-- REF zipArchive.ZIP Read archive.Summary -->*zipFile* のコンテンツを取得し、`4D.ZipArchive` オブジェクト形式で返します<!-- END REF -->。
+`ZIP Read archive` コマンドは、 <!-- REF #_command_.ZIP Read archive.Summary -->*zipFile* のコンテンツを取得し、`4D.ZipArchive` オブジェクト形式で返します<!-- END REF -->。
 
 
 
