@@ -1,6 +1,6 @@
 ---
-id: collectionClass
-title: Collection
+id: CollectionClass
+title: コレクション
 ---
 
 
@@ -71,11 +71,6 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 ## 新しいコレクション
 
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v16 R4 | 追加 |
-</details>
 
 <!-- REF #_command_.New collection.Syntax -->
 **New collection** {( *...value* : any )} : Collection<!-- END REF -->
@@ -1084,6 +1079,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
  C_OBJECT($1)
  C_LONGINT($2)
  If(OB Get type($1;"value")=$2)
+
 
     $1.result:=True
  End if

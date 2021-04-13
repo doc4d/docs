@@ -6,8 +6,8 @@ title: プロジェクトのアーキテクチャー
 4D プロジェクトは、一つの親アプリケーションフォルダー (パッケージフォルダー) に格納された、複数のファイルやフォルダーから構成されています。 たとえば:
 
 - MyProject
-    - Components
-    - Data
+    - コンポーネント
+    - データ
         - Logs
         - Settings
     - Documentation
@@ -30,9 +30,9 @@ title: プロジェクトのアーキテクチャー
 
 - *applicationName*.4DProject ファイル
 - Sources
-    + Classes
+    + クラス
     + DatabaseMethods
-    + Methods
+    + メソッド
     + フォーム
     + TableForms
     + Triggers
@@ -120,7 +120,7 @@ title: プロジェクトのアーキテクチャー
 
 プロジェクトから削除されたメソッドやフォームがあれば、Trash フォルダーにはそれらが格納されます。 たとえば、つぎのフォルダーが格納されている場合があります:
 
-- Methods
+- メソッド
 - フォーム
 - TableForms
 
@@ -131,6 +131,11 @@ title: プロジェクトのアーキテクチャー
 
 DerivedData フォルダーには、処理を最適化するため 4D が内部的に使用するキャッシュデーターが格納されます。 これらは必要に応じて自動的に生成・再生成されます。 このフォルダーは無視してかまいません。
 
+## Libraries フォルダー
+
+> このフォルダーは macOS でのみ使用されます。
+
+Libraries フォルダーには、macOS 上で [Apple Silicon用にコンパイル](compiler.md#siliconコンパイラ) された結果のファイルが格納されます。
 
 ## Resources フォルダー
 
@@ -198,15 +203,16 @@ Settings フォルダーには、アプリケーションの管理に使用さ�
 
 ブレークポイントやウィンドウの位置など、ユーザーの環境設定を定義するファイルを格納するフォルダーです。 このフォルダーは無視してかまいません。 格納されるファイルの例です:
 
-| 内容                         | 説明                                 | 形式   |
-| -------------------------- | ---------------------------------- | ---- |
-| methodPreferences.json     | カレントユーザーのメソッドエディター環境設定             | JSON |
-| methodWindowPositions.json | カレントユーザーのメソッドのウィンドウポジション           | JSON |
-| formWindowPositions.json   | カレントユーザーのフォームのウィンドウポジション           | JSON |
-| workspace.json             | 開かれているウィンドウのリスト；macOS ではタブウィンドウの順序 | JSON |
-| debuggerCatches.json       | キャッチコマンドリスト                        | JSON |
-| recentTables.json          | 最近開かれたテーブルのリスト                     | JSON |
-| preferences.4DPreferences  | カレントデータパスおよび主なウィンドウの位置             | XML  |
+| 内容                         | 説明                                  | 形式     |
+| -------------------------- | ----------------------------------- | ------ |
+| methodPreferences.json     | カレントユーザーのメソッドエディター環境設定              | JSON   |
+| methodWindowPositions.json | カレントユーザーのメソッドのウィンドウポジション            | JSON   |
+| formWindowPositions.json   | カレントユーザーのフォームのウィンドウポジション            | JSON   |
+| workspace.json             | 開かれているウィンドウのリスト；macOS ではタブウィンドウの順序  | JSON   |
+| debuggerCatches.json       | キャッチコマンドリスト                         | JSON   |
+| recentTables.json          | 最近開かれたテーブルのリスト                      | JSON   |
+| preferences.4DPreferences  | カレントデータパスおよび主なウィンドウの位置              | XML    |
+| CompilerIntermediateFiles  | Apple Silicon用にコンパイルした結果生成される中間ファイル | Folder |
 
 
 ## Components フォルダー
