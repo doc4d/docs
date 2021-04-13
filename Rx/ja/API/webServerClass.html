@@ -92,15 +92,15 @@
 <tr><td><a href="#httptrace"><strong>.HTTPTrace</strong> : Boolean</a><p>    <code>HTTP TRACE</code> の有効化状態</td></tr>
 <tr><td><a href="#httpsenabled"><strong>.HTTPSEnabled</strong> : Boolean</a><p>    HTTPSプロトコル状態</td></tr>
 <tr><td><a href="#httpsport"><strong>.HTTPSPort</strong> : Number</a><p>    HTTPS のリッスンIPポート番号</td></tr>
-<tr><td><a href="#inactiveprocesstimeout"><strong>.inactiveProcessTimeout</strong> : Number</a><p>    life duration (in minutes) of the inactive session processes</td></tr>
-<tr><td><a href="#inactivesessiontimeout"><strong>.inactiveSessionTimeout</strong> : Number</a><p>    life duration (in minutes) of inactive sessions (duration set in cookie)</td></tr>
+<tr><td><a href="#inactiveprocesstimeout"><strong>.inactiveProcessTimeout</strong> : Number</a><p>    セッションプロセスの非アクティブタイムアウト時間 (分単位)</td></tr>
+<tr><td><a href="#inactivesessiontimeout"><strong>.inactiveSessionTimeout</strong> : Number</a><p>    セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)</td></tr>
 <tr><td><a href="#ipaddresstolisten"><strong>.IPAddressToListen</strong> : Text</a><p>    4D Webサーバーが HTTPリクエストを受信する IPアドレス</td></tr>
 <tr><td><a href="#isrunning"><strong>.isRunning</strong> : Boolean</a><p>    Webサーバーの実行状態</td></tr>
-<tr><td><a href="#keepsession"><strong>.keepSession</strong> : Boolean</a><p>    session management enabling status</td></tr>
+<tr><td><a href="#keepsession"><strong>.keepSession</strong> : Boolean</a><p>    セッション管理の有効化ステータス</td></tr>
 <tr><td><a href="#logrecording"><strong>.logRecording</strong> : Number</a><p>    リクエストログ (logweb.txt) の記録オプション値</td></tr>
 <tr><td><a href="#maxconcurrentprocesses"><strong>.maxConcurrentProcesses</strong> : Number</a><p>    Webサーバーにてサポートする最大同時Webプロセス数</td></tr>
 <tr><td><a href="#maxrequestsize"><strong>.maxRequestSize</strong> : Number</a><p>    Webサーバーが処理してよい HTTPリクエスト (POST) の最大サイズ (バイト単位)</td></tr>
-<tr><td><a href="#maxsessions"><strong>.maxSessions</strong> : Number</a><p>    maximum number of simultaneous sessions</td></tr>
+<tr><td><a href="#maxsessions"><strong>.maxSessions</strong> : Number</a><p>    セッションにおける同時セッションの最大数</td></tr>
 <tr><td><a href="#mintlsversion"><strong>.minTLSVersion</strong> : Number</a><p>    接続に必要な最低TLSバージョン</td></tr>
 <tr><td><a href="#name"><strong>.name</strong> : Text</a><p>    Webサーバーアプリケーションの名称</td></tr>
 <tr><td><a href="#opensslversion"><strong>.openSSLVersion</strong> : Text</a><p>    使用されている OpenSSLライブラリのバージョン</td></tr>
@@ -135,7 +135,7 @@
 <tr><td>戻り値</td><td>4D.WebServer</td><td>&lt;-</td><td>WebServer オブジェクト</td></tr>
 </tbody>
 </table>
-<p>The <code>WEB Server</code> command returns the default Web server object, or the Web server object defined through the option parameter.</p>
+<p><code>WEB Server</code> コマンドは、 デフォルトの Webサーバーオブジェクト、または option 引数で指定された Webサーバーオブジェクトを返します。</p>
 <p><em>option</em>が省略された場合のデフォルトでは、このコマンドはデータベースの Webサーバー (デフォルトWebサーバー) への参照を返します。 取得する Webサーバーを指定するには、<em>option</em> に以下の定数のいずれか一つを渡してください:</p>
 <table>
 <thead>
@@ -299,11 +299,11 @@ HTTPS のリッスンIPポート番号。</p>
 <p>デフォルト = 443</p>
 <h2><a class="anchor" aria-hidden="true" id="inactiveprocesstimeout"></a><a href="#inactiveprocesstimeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.inactiveProcessTimeout</h2>
 <p><strong>.inactiveProcessTimeout</strong> : Number</p>
-<p>The life duration (in minutes) of the inactive session processes. At the end of the timeout, the process is killed on the server, the <code>On Web Close Process</code> database method is called, then the session context is destroyed.</p>
+<p>セッションプロセスの非アクティブタイムアウト時間 (分単位)。 At the end of the timeout, the process is killed on the server, the <code>On Web Close Process</code> database method is called, then the session context is destroyed.</p>
 <p>デフォルト = 480 分</p>
 <h2><a class="anchor" aria-hidden="true" id="inactivesessiontimeout"></a><a href="#inactivesessiontimeout" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.inactiveSessionTimeout</h2>
 <p><strong>.inactiveSessionTimeout</strong> : Number</p>
-<p>The life duration (in minutes) of inactive sessions (duration set in cookie). タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。</p>
+<p>セッションの非アクティブタイムアウト時間 (分単位; cookie にて設定)。 タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。</p>
 <p>デフォルト = 480 分</p>
 <h2><a class="anchor" aria-hidden="true" id="ipaddresstolisten"></a><a href="#ipaddresstolisten" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.IPAddressToListen</h2>
 <p><strong>.IPAddressToListen</strong> : Text</p>
@@ -313,7 +313,7 @@ HTTPS のリッスンIPポート番号。</p>
 <p><em>読み取り専用プロパティ</em> Webサーバーの実行状態。</p>
 <h2><a class="anchor" aria-hidden="true" id="keepsession"></a><a href="#keepsession" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.keepSession</h2>
 <p><strong>.keepSession</strong> : Boolean</p>
-<p>The session management enabling status.</p>
+<p>セッション管理の有効化ステータス。</p>
 <p>Default = true</p>
 <h2><a class="anchor" aria-hidden="true" id="logrecording"></a><a href="#logrecording" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.logRecording</h2>
 <p><strong>.logRecording</strong> : Number</p>
@@ -336,7 +336,7 @@ HTTPS のリッスンIPポート番号。</p>
 <p>とりうる値: 500000 - 2147483648</p>
 <h2><a class="anchor" aria-hidden="true" id="maxsessions"></a><a href="#maxsessions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.maxSessions</h2>
 <p><strong>.maxSessions</strong> : Number</p>
-<p>The maximum number of simultaneous sessions. When you reach the limit, the oldest session is closed (and <code>On Web Close Process</code> database method is called) if the web server needs to create a new one. The number of simultaneous sessions cannot exceed the total number of web processes (maxConcurrentProcesses property, 100 by default)</p>
+<p>セッションにおける同時セッションの最大数。 When you reach the limit, the oldest session is closed (and <code>On Web Close Process</code> database method is called) if the web server needs to create a new one. The number of simultaneous sessions cannot exceed the total number of web processes (maxConcurrentProcesses property, 100 by default)</p>
 <h2><a class="anchor" aria-hidden="true" id="mintlsversion"></a><a href="#mintlsversion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.minTLSVersion</h2>
 <p><strong>.minTLSVersion</strong> : Number</p>
 <p>接続に必要な最低TLSバージョン。 これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。</p>

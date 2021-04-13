@@ -81,25 +81,25 @@
 <tr><td><a href="#copyto"><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D Folder</a><p>    <code>Folder</code> オブジェクトを、<em>destinationFolder</em> 引数で指定したフォルダーへとコピーします</td></tr>
 <tr><td><a href="#create"><strong>.create()</strong> : Boolean</a><p>    <code>Folder</code> オブジェクトのプロパティに基づいてディスク上にフォルダーを作成します</td></tr>
 <tr><td><a href="#createalias"><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</a><p>    エイリアス (macOS) またはショートカット (Windows) を作成します</td></tr>
-<tr><td><a href="#creationdate"><strong>.creationDate</strong> : Date</a><p>    フォルダーの作成日を返します</td></tr>
-<tr><td><a href="#creationtime"><strong>.creationTime</strong> : Time</a><p>    フォルダーの作成時刻を返します</td></tr>
+<tr><td><a href="#creationdate"><strong>.creationDate</strong> : Date</a><p>    フォルダーの作成日</td></tr>
+<tr><td><a href="#creationtime"><strong>.creationTime</strong> : Time</a><p>    フォルダーの作成時刻</td></tr>
 <tr><td><a href="#delete"><strong>.delete</strong>( { <em>option</em> : Integer } )</a><p>    フォルダーを削除します</td></tr>
-<tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    ディスク上にフォルダーが存在する場合は true を返します</td></tr>
-<tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    フォルダー名の拡張子を返します (あれば)</td></tr>
-<tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    拡張子 (あれば) を含めたフォルダーの完全な名称を返します</td></tr>
+<tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    ディスク上にフォルダーが存在する場合は true</td></tr>
+<tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    フォルダー名の拡張子</td></tr>
+<tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    拡張子 (あれば) を含めたフォルダーの完全な名称</td></tr>
 <tr><td><a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    フォルダーのアイコンを返します</td></tr>
-<tr><td><a href="#hidden"><strong>.hidden</strong> : Boolean</a><p>     フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば true を返します</td></tr>
-<tr><td><a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    <code>Folder</code> オブジェクトに対しては常に <strong>false</strong> を返します</td></tr>
-<tr><td><a href="#isfile"><strong>.isFile</strong> : Boolean</a><p>    フォルダーに対しては常に <strong>false</strong> を返します</td></tr>
-<tr><td><a href="#isfolder"><strong>.isFolder</strong> : Boolean</a><p>    フォルダーに対しては常に <strong>true</strong> を返します</td></tr>
-<tr><td><a href="#ispackage"><strong>.isPackage</strong> : Boolean</a><p>    フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に true を返します</td></tr>
-<tr><td><a href="#modificationdate"><strong>.modificationDate</strong> : Date</a><p>     フォルダーの最終変更日を返します</td></tr>
-<tr><td><a href="#modificationtime"><strong>.modificationTime</strong> : Time</a><p>    フォルダーの最終変更時刻を返します</td></tr>
-<tr><td><a href="#name"><strong>.name</strong> : Text</a><p>     フォルダーの名前を、拡張子 (あれば) を含まずに返します</td></tr>
-<tr><td><a href="#original"><strong>.original</strong> : 4D.Folder</a><p>    対象フォルダーと同じフォルダーオブジェクトを返します</td></tr>
-<tr><td><a href="#parent"><strong>.parent</strong> : 4D.Folder</a><p>    対象フォルダーの親フォルダーオブジェクトを返します</td></tr>
-<tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    フォルダのPOSIXパスを返します</td></tr>
-<tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    カレントプラットフォームのシンタックスで表現されたフォルダーのパスを返します</td></tr>
+<tr><td><a href="#hidden"><strong>.hidden</strong> : Boolean</a><p>     フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば true</td></tr>
+<tr><td><a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    <code>Folder</code> オブジェクトに対しては常に <strong>false</strong></td></tr>
+<tr><td><a href="#isfile"><strong>.isFile</strong> : Boolean</a><p>    フォルダーに対しては常に <strong>false</strong></td></tr>
+<tr><td><a href="#isfolder"><strong>.isFolder</strong> : Boolean</a><p>    フォルダーに対しては常に <strong>true</strong></td></tr>
+<tr><td><a href="#ispackage"><strong>.isPackage</strong> : Boolean</a><p>    フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に true</td></tr>
+<tr><td><a href="#modificationdate"><strong>.modificationDate</strong> : Date</a><p>     フォルダーの最終変更日</td></tr>
+<tr><td><a href="#modificationtime"><strong>.modificationTime</strong> : Time</a><p>    フォルダーの最終変更時刻</td></tr>
+<tr><td><a href="#name"><strong>.name</strong> : Text</a><p>     拡張子 (あれば) を含まないフォルダー名</td></tr>
+<tr><td><a href="#original"><strong>.original</strong> : 4D.Folder</a><p>    対象フォルダーと同じフォルダーオブジェクト</td></tr>
+<tr><td><a href="#parent"><strong>.parent</strong> : 4D.Folder</a><p>    対象フォルダーの親フォルダーオブジェクト</td></tr>
+<tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    フォルダーの POSIXパス</td></tr>
+<tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    カレントプラットフォームのシンタックスで表現されたフォルダーのパス</td></tr>
 <tr><td><a href="#moveto"><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.Folder</a><p>    <code>Folder</code> オブジェクト (ソースフォルダー) を <em>destinationFolder</em> が指定する移行先へと移動すると同時に、<em>newName</em> を指定した場合は名称も変更します</td></tr>
 <tr><td><a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.Folder</a><p>    フォルダー名を <em>newName</em> に指定した名称に変更し、名称変更後の <code>Folder</code> オブジェクトを返します</td></tr>
 </tbody>
@@ -326,7 +326,7 @@ End if</span>
 <p></details></p>
 <p><strong>.creationTime</strong> : Time</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.creationTime</code> プロパティは、 フォルダーの作成時刻を返します (00:00 からの経過秒数の形式)。</p>
+<p><code>.creationTime</code> プロパティは、 フォルダーの作成時刻 を返します (00:00 からの経過秒数の形式)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="delete"></a><a href="#delete" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.delete()</h2>
 <p><details><summary>履歴</summary></p>
@@ -384,7 +384,7 @@ End if</span>
 <p></details></p>
 <p><strong>.exists</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.exists</code> プロパティは、 ディスク上にフォルダーが存在する場合は true を返します(それ以外の場合は false)。</p>
+<p><code>.exists</code> プロパティは、 ディスク上にフォルダーが存在する場合は trueを返します (それ以外の場合は false)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="extension"></a><a href="#extension" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.extension</h2>
 <p><details><summary>履歴</summary></p>
@@ -608,7 +608,7 @@ End if</span>
 <p></details></p>
 <p><strong>.hidden</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-15"></a><a href="#説明-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.hidden</code> プロパティは、  フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば true を返します(それ以外の場合は false)。</p>
+<p><code>.hidden</code> プロパティは、  フォルダーがシステムレベルで &quot;非表示&quot; に設定されていれば trueを返します (それ以外の場合は false)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="isalias"></a><a href="#isalias" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isAlias</h2>
 <p><details><summary>履歴</summary></p>
@@ -623,7 +623,7 @@ End if</span>
 <p></details></p>
 <p><strong>.isAlias</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-16"></a><a href="#説明-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.isAlias</code> プロパティは、 <code>Folder</code> オブジェクトに対しては常に <strong>false</strong> を返します。</p>
+<p><code>.isAlias</code> プロパティは、 <code>Folder</code> オブジェクトに対しては常に <strong>false</strong>を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="isfile"></a><a href="#isfile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isFile</h2>
 <p><details><summary>履歴</summary></p>
@@ -638,7 +638,7 @@ End if</span>
 <p></details></p>
 <p><strong>.isFile</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-17"></a><a href="#説明-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.isFile</code> プロパティは、 フォルダーに対しては常に <strong>false</strong> を返します。</p>
+<p><code>.isFile</code> プロパティは、 フォルダーに対しては常に <strong>false</strong>を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="isfolder"></a><a href="#isfolder" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isFolder</h2>
 <p><details><summary>履歴</summary></p>
@@ -653,7 +653,7 @@ End if</span>
 <p></details></p>
 <p><strong>.isFolder</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-18"></a><a href="#説明-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.isFolder</code> プロパティは、 フォルダーに対しては常に <strong>true</strong> を返します。</p>
+<p><code>.isFolder</code> プロパティは、 フォルダーに対しては常に <strong>true</strong>を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="ispackage"></a><a href="#ispackage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.isPackage</h2>
 <p><details><summary>履歴</summary></p>
@@ -668,7 +668,7 @@ End if</span>
 <p></details></p>
 <p><strong>.isPackage</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-19"></a><a href="#説明-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.isPackage</code> プロパティは、 フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に true を返します。 それ以外の場合は false を返します。</p>
+<p><code>.isPackage</code> プロパティは、 フォルダーが macOS上のパッケージである (かつディスク上に存在している) 場合に trueを返します。 それ以外の場合は false を返します。</p>
 <p>Windows 上においては、<code>.isPackage</code> は常に <strong>false</strong> を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="modificationdate"></a><a href="#modificationdate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.modificationDate</h2>
@@ -684,7 +684,7 @@ End if</span>
 <p></details></p>
 <p><strong>.modificationDate</strong> : Date</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-20"></a><a href="#説明-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.modificationDate</code> プロパティは。  フォルダーの最終変更日を返します。</p>
+<p><code>.modificationDate</code> プロパティは、  フォルダーの最終変更日を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="modificationtime"></a><a href="#modificationtime" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.modificationTime</h2>
 <p><details><summary>履歴</summary></p>
@@ -699,7 +699,7 @@ End if</span>
 <p></details></p>
 <p><strong>.modificationTime</strong> : Time</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-21"></a><a href="#説明-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.modificationTime</code> プロパティは、 フォルダーの最終変更時刻を返します (00:00 からの経過秒数の形式)。</p>
+<p><code>.modificationTime</code> プロパティは、 フォルダーの最終変更時刻 を返します (00:00 からの経過秒数の形式)。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="moveto"></a><a href="#moveto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.moveTo()</h2>
 <p><details><summary>履歴</summary></p>
@@ -749,7 +749,7 @@ End if</span>
 <p></details></p>
 <p><strong>.name</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-23"></a><a href="#説明-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.name</code> プロパティは、  フォルダーの名前を、拡張子 (あれば) を含まずに返します。</p>
+<p><code>.name</code> プロパティは、  拡張子 (あれば) を含まないフォルダー名を返します。</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="original"></a><a href="#original" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.original</h2>
 <p><details><summary>履歴</summary></p>
@@ -798,7 +798,7 @@ End if</span>
 <p></details></p>
 <p><strong>.path</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-26"></a><a href="#説明-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.path</code> プロパティは、 フォルダのPOSIXパスを返します。 If the path represents a filesystem (e.g., &quot;/DATA/&quot;), the filesystem is returned.</p>
+<p><code>.path</code> プロパティは、 フォルダーの POSIXパスを返します。 If the path represents a filesystem (e.g., &quot;/DATA/&quot;), the filesystem is returned.</p>
 <p>このプロパティは <strong>読み取り専用</strong> です。</p>
 <h2><a class="anchor" aria-hidden="true" id="platformpath"></a><a href="#platformpath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.platformPath</h2>
 <p><details><summary>履歴</summary></p>
