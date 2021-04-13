@@ -145,17 +145,17 @@ attachment オブジェクトは [`MAIL New attachment`](https://doc.4d.com/4dv1
 
 `.bodyStructure` オブジェクトには、次のプロパティが格納されています:
 
-| プロパティ       | タイプ            | 結果                                                                                                                                                      |
-| ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| partID      | テキスト           | メールのパートを固有に識別する ID                                                                                                                                      |
-| type        | テキスト           | (必須) パートの Content-Type ヘッダーフィールドの値                                                                                                                      |
-| charset     | テキスト           | Content-Type ヘッダーフィールドの Charset の値                                                                                                                      |
-| encoding    | テキスト           | `isEncodingProblem=true` の場合、Content-Transfer-Encoding の値が追加されます (デフォルトでは未定義)                                                                           |
-| disposition | テキスト           | パートの Content-Disposition ヘッダーフィールドの値                                                                                                                    |
-| language    | テキストのコレクション    | パートの Content-Language ヘッダーフィールドの、[RFC3282](https://tools.ietf.org/html/rfc3282) で定義されている言語タグの一覧 (あれば)                                                   |
-| location    | テキスト           | パートの Content-Location ヘッダーフィールドの、[RFC2557](https://tools.ietf.org/html/rfc2557) で定義されている URI (あれば)                                                      |
-| subParts    | オブジェクトのコレクション。 | それぞれの子の本文パート (*EmailBodyPart* オブジェクトのコレクション)                                                                                                            |
-| headers     | オブジェクトのコレクション。 | List of all header fields in the part, in the order they appear in the message (collection of *EmailHeader* objects, see [headers](#headers-) property) |
+| プロパティ       | タイプ            | 結果                                                                                                    |
+| ----------- | -------------- | ----------------------------------------------------------------------------------------------------- |
+| partID      | テキスト           | メールのパートを固有に識別する ID                                                                                    |
+| type        | テキスト           | (必須) パートの Content-Type ヘッダーフィールドの値                                                                    |
+| charset     | テキスト           | Content-Type ヘッダーフィールドの Charset の値                                                                    |
+| encoding    | テキスト           | `isEncodingProblem=true` の場合、Content-Transfer-Encoding の値が追加されます (デフォルトでは未定義)                         |
+| disposition | テキスト           | パートの Content-Disposition ヘッダーフィールドの値                                                                  |
+| language    | テキストのコレクション    | パートの Content-Language ヘッダーフィールドの、[RFC3282](https://tools.ietf.org/html/rfc3282) で定義されている言語タグの一覧 (あれば) |
+| location    | テキスト           | パートの Content-Location ヘッダーフィールドの、[RFC2557](https://tools.ietf.org/html/rfc2557) で定義されている URI (あれば)    |
+| subParts    | オブジェクトのコレクション。 | それぞれの子の本文パート (*EmailBodyPart* オブジェクトのコレクション)                                                          |
+| headers     | オブジェクトのコレクション。 | パート内の全ヘッダーフィールドの、メッセージ内で出現する順の一覧 (*EmailHeader* オブジェクトのコレクション。[headers](#headers) プロパティ参照)            |
 
 
 
@@ -172,10 +172,10 @@ attachment オブジェクトは [`MAIL New attachment`](https://doc.4d.com/4dv1
 
 `.bodyValues` オブジェクトには、次のプロパティが格納されています:
 
-| プロパティ                      | タイプ     | 結果                                                                                                                                          |
-| -------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| *partID*.value             | text    | Value of the body part                                                                                                                      |
-| *partID*.isEncodingProblem | boolean | True if malformed sections are found while decoding the charset, or unknown charset, or unknown content transfer-encoding. False by default |
+| プロパティ                      | タイプ     | 結果                                                                                                        |
+| -------------------------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| *partID*.value             | text    | 本文パートの値                                                                                                   |
+| *partID*.isEncodingProblem | boolean | 文字セットをデコーディング中に、不正なフォーマットのセクション、未知の文字セット、あるいは未知の content-transfer-encoding が見つかった場合には true。 デフォルトは false。 |
 
 
 
@@ -205,9 +205,9 @@ attachment オブジェクトは [`MAIL New attachment`](https://doc.4d.com/4dv1
 
 `.comments` プロパティは、 <!-- REF #emailObjectClass.comments.Summary -->追加のコメントのヘッダー<!-- END REF -->を格納します。
 
-Comments only appear within the header section of the message (keeping the message's body untouched).
+コメントはメッセージのヘッダーセクション内にのみ表示されます (つまり本文部分には触れないということです)。
 
-For specific formatting requirements, please consult the [RFC#5322](https://tools.ietf.org/html/rfc5322).
+特定のフォーマット条件についての詳細は、[RFC#5322](https://tools.ietf.org/html/rfc5322) を参照ください。
 
 
 
@@ -223,12 +223,12 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
 `.from` プロパティは、 <!-- REF #emailObjectClass.from.Summary -->メールの送信元 [アドレス](#email-addresses)<!-- END REF -->を格納します。
 
 
-Each email you send out has both the [sender](#sender) and **from** addresses:
+送信されるメールには、それぞれ [sender](#sender) および **from** アドレスの両方がついています:
 
-- the sender domain is what the receiving email server gets when opening the session,
-- the from address is what the recipient(s) will see.
+- sender ドメインは、受信側のメールサーバーがセッションを開いたときに受け取るドメインです。
+- from アドレスは、受信者から見えるアドレスです。
 
-For better deliverability, it is recommended to use the same from and sender addresses.
+混乱を避けるため、sender および from アドレスには同じアドレスを使用することが推奨されます。
 
 
 
@@ -241,16 +241,16 @@ For better deliverability, it is recommended to use the same from and sender add
 
 #### 説明
 
-`.headers` プロパティは、 <!-- REF #emailObjectClass.headers.Summary -->メッセージ内で現れる順番どおりの `EmailHeader` オブジェクトのコレクション<!-- END REF -->を格納します。 This property allows users to add extended (registered) headers or user-defined (not registered, starting with "X") headers.
+`.headers` プロパティは、 <!-- REF #emailObjectClass.headers.Summary -->メッセージ内で現れる順番どおりの `EmailHeader` オブジェクトのコレクション<!-- END REF -->を格納します。 これによってユーザーは拡張された (登録された) ヘッダーや、ユーザー定義された (登録されていない、"X" で始まる) ヘッダーを追加することができます。
 
-> If an `EmailHeader` object property defines a header such as "from" or "cc" which is already set as a property at the mail level, the `EmailHeader` property is ignored.
+> メールレベルですでにプロパティとして設定されている "from" または "cc" などのヘッダーを `EmailHeader` オブジェクトプロパティが定義している場合、`EmailHeader` プロパティは無視されます。
 
-Every object of the headers collection can contain the following properties:
+ヘッダーコレクションの各オブジェクトには、次のプロパティが格納されることがあります:
 
-| プロパティ    | タイプ  | 結果                                                                                                                                                                   |
-| -------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [].name  | text | (mandatory) Header field name as defined in [RFC#5322](https://tools.ietf.org/html/rfc5322). If null or undefined, the header field is not added to the MIME header. |
-| [].value | text | Header field values as defined in [RFC#5322](https://tools.ietf.org/html/rfc5322)                                                                                    |
+| プロパティ    | タイプ  | 結果                                                                                                                      |
+| -------- | ---- | ----------------------------------------------------------------------------------------------------------------------- |
+| [].name  | text | (必須) [RFC#5322](https://tools.ietf.org/html/rfc5322) で定義されているヘッダーフィールド名。 null または未定義の場合には、ヘッダーフィールドは MIME ヘッダーに追加されません。 |
+| [].value | text | [RFC#5322](https://tools.ietf.org/html/rfc5322) で定義されているヘッダーフィールド値。                                                     |
 
 
 
@@ -282,7 +282,7 @@ Every object of the headers collection can contain the following properties:
 
 #### 説明
 
-[IMAP transporter](imapTransporterClass.md) only.
+[IMAP transporter](imapTransporterClass.md) のみ。
 
 `.id` プロパティは、 <!-- REF #emailObjectClass.id.Summary -->IMAP サーバーからの固有ID<!-- END REF -->を格納します。
 
@@ -301,7 +301,7 @@ Every object of the headers collection can contain the following properties:
 
 `.inReplyTo` プロパティは、 <!-- REF #emailObjectClass.inReplyTo.Summary -->カレントメッセージが返信している、元のメッセージのメッセージID<!-- END REF -->を格納します。
 
-For specific formatting requirements, please consult the [RFC#5322](https://tools.ietf.org/html/rfc5322).
+特定のフォーマット条件についての詳細は、[RFC#5322](https://tools.ietf.org/html/rfc5322) を参照ください。
 
 
 
@@ -345,17 +345,17 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
     </td>
     
     <td>
-      Keyword to set (value must be true)
+      設定するキーワード (値は true でなければなりません)。
     </td>
   </tr>
 </table>
 
-Reserved keywords:
-* $draft - Indicates a message is a draft
-* $seen - Indicates a message has been read
-* $flagged - Indicates a message needs special attention (e.g., Urgent)
-* $answered - Indicates a message has been replied to
-* $deleted - Indicates a message to delete
+予約されたキーワード:
+* $draft - メッセージが下書きであることを表します
+* $seen - メッセージが読まれたことを表します
+* $flagged - メッセージが注視されるべきであることを表します (例: 至急のメール)
+* $answered - メッセージに返信がされたことを表します
+* $deleted - メッセージが消去されることを表します
 
 #### 例題
 
@@ -378,7 +378,7 @@ Reserved keywords:
 
 `.messageId` プロパティは、 <!-- REF #emailObjectClass.messageId.Summary -->メッセージ識別ヘッダー ("message-id")<!-- END REF -->を格納します。
 
-This header is usually "lettersOrNumbers@domainname", e.g. "abcdef.123456@4d.com". This unique ID is used in particular on forums or public mailing lists. In general, mail servers automatically add this header to the messages they send.
+通常は、"lettersOrNumbers@domainname" の形式、たとえば "abcdef.123456@4d.com" などです。 この固有ID は特にフォーラムや公開メーリングリストで使用されています。 一般的に、メールサーバーは送信するメッセージにこのヘッダーを自動的に追加します。
 
 
 
@@ -390,7 +390,7 @@ This header is usually "lettersOrNumbers@domainname", e.g. "abcdef.123456@4d.com
 
 #### 説明
 
-[IMAP transporter](imapTransporterClass.md) only.
+[IMAP transporter](imapTransporterClass.md) のみ。
 
 `.receivedAt` プロパティは、 <!-- REF #emailObjectClass.receivedAt.Summary -->IMAPサーバーにメールが到着した時間の、ISO 8601 UTC フォーマットでのタイムスタンプ (例: 2020-09-13T16:11:53Z)<!-- END REF -->を格納します。
 
@@ -409,7 +409,7 @@ This header is usually "lettersOrNumbers@domainname", e.g. "abcdef.123456@4d.com
 
 `.references` プロパティは、 <!-- REF #emailObjectClass.references.Summary -->返信チェーン内メッセージの、全メッセージID のコレクション<!-- END REF -->を格納します。
 
-For specific formatting requirements, please consult the [RFC#5322](https://tools.ietf.org/html/rfc5322).
+特定のフォーマット条件についての詳細は、[RFC#5322](https://tools.ietf.org/html/rfc5322) を参照ください。
 
 
 
@@ -452,12 +452,12 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
 `.sender` プロパティは、 <!-- REF #emailObjectClass.sender.Summary -->メールのソース [アドレス](#email-addresses)<!-- END REF -->を格納します。
 
 
-Each email you send out has both the **sender** and **[from](#from)** addresses:
+送信されるメールには、それぞれ **sender** および **[from](#from)** アドレスの両方がついています:
 
-- the sender domain is what the receiving email server gets when opening the session,
-- the from address is what the recipient(s) will see.
+- sender ドメインは、受信側のメールサーバーがセッションを開いたときに受け取るドメインです。
+- from アドレスは、受信者から見えるアドレスです。
 
-For better deliverability, it is recommended to use the same from and sender addresses.
+混乱を避けるため、sender および from アドレスには同じアドレスを使用することが推奨されます。
 
 
 
@@ -470,7 +470,7 @@ For better deliverability, it is recommended to use the same from and sender add
 
 #### 説明
 
-[IMAP transporter](imapTransporterClass.md) only.
+[IMAP transporter](imapTransporterClass.md) のみ。
 
 `.size` プロパティは、 <!-- REF #emailObjectClass.size.Summary -->IMAPサーバーから返された Email オブジェクトのサイズ (バイト単位)<!-- END REF -->を格納します。
 
@@ -511,6 +511,6 @@ For better deliverability, it is recommended to use the same from and sender add
 
 #### 説明
 
-`.to` プロパティは、 <!-- REF #emailObjectClass.to.Summary -->メールのメインの受信者 [アドレス](#email-addresses)<!-- END REF -->を格納します。 
+`.to` プロパティは、 <!-- REF #emailObjectClass.to.Summary -->メールのメインの受信者 [アドレス](#メールアドレス)<!-- END REF -->を格納します。 
 
 <style> h2 { background: #d9ebff;}</style>
