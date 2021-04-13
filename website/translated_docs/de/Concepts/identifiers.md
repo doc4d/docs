@@ -14,7 +14,7 @@ Dieser Abschnitt beschreibt die Konventionen und Regeln zum Bezeichnen verschied
 Für Namen von Arrays gelten dieselben Regeln wie für [Variablen](#variablen).
 
 
-## Classes
+## Klassen
 
 Ein Klassenname kann bis zu 31 Zeichen enthalten.
 
@@ -103,7 +103,7 @@ ON EVENT CALL("HANDLE EVENTS")
 
 
 
-## Tables and Fields
+## Tabellen und Felder
 
 Eine Tabelle kennzeichnen Sie durch eckige Klammern um den Tabellennamen: \ [...]. Ein Feld kennzeichnen Sie durch Angabe der dazugehörigen Tabelle, gefolgt von dem Feldnamen.
 
