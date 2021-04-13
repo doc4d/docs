@@ -372,7 +372,6 @@ The `.root` property contains <!-- REF #ZipArchiveClass.root.Summary -->a virtua
 
 The `root` folder and its contents can be manipulated with the [ZipFile](ZipFileClass.md) and [ZipFolder](ZipFolderClass.md) functions and properties.
 
-Cette propriété est en **lecture seule**.
-
+Cette propriété est en **lecture seule**. 
 
 <style> h2 { background: #d9ebff;}</style>
