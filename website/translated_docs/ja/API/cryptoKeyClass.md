@@ -46,8 +46,6 @@ ASSERT($status.success)
 
 
 
-
-
 ## 4D.CryptoKey.new()
 
 <details><summary>履歴</summary>
@@ -149,6 +147,7 @@ ECDSA キーのみ: <!-- REF #cryptokey.curve.Summary -->キーの楕円曲線�
 | success | boolean    | メッセージの復号に成功した場合は true                             |
 | result  | text       | options.encodingDecrypted を使って復号およびデコードされたメッセージ   |
 | errors  | collection | `success` が `false` の場合、エラーのコレクションが含まれている場合があります。 |
+
 
 キーまたはアルゴリズムが合致しないなどの理由で *message* の復号に成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
 <!-- END REF -->
