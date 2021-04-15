@@ -82,27 +82,27 @@
 <tr><td><a href="#contains"><strong>.contains</strong>( <em>entity</em> : 4D.Entity ) : Boolean</a><p>    エンティティ参照がエンティティセレクションに属している場合には true を返します</td></tr>
 <tr><td><a href="#count"><strong>.count</strong>( <em>attributePath</em> : Text ) : Real</a><p>    エンティティセレクション内で <em>attributePath</em> に指定したパスの値が null でないエンティティの数を返します</td></tr>
 <tr><td><a href="#distinct"><strong>.distinct</strong>( <em>attributePath</em> : Text { ; <em>option</em> : Integer } ) : Collection</a><p>    <em>attributePath</em> に指定した、エンティティセレクション内の重複しない (異なる) 値のみを格納したコレクションを返します</td></tr>
-<tr><td><a href="#drop"><strong>.drop</strong>( { <em>mode</em> : Integer } ) : 4D.EntitySelection</a><p>    データストアのデータクラスに対応するテーブルから、エンティティセレクションに所属しているエンティティを削除します</td></tr>
-<tr><td><a href="#extract"><strong>.extract</strong>( <em>attributePath</em> : Text { ; <em>option</em> : Integer } ) : Collection<br><strong>.extract</strong>( <em>attributePath</em> { ; <em>targetPath</em> } { ; <em>...attributePathN</em> : Text ; <em>targetPathN</em> : Text } ) : Collection</a><p>    <em>attributePath</em> で指定した値をエンティティセレクションから抽出し、コレクションに格納して返します</td></tr>
-<tr><td><a href="#first"><strong>.first()</strong> : 4D.Entity</a><p>    エンティティセレクションの先頭エンティティへの参照を返します</td></tr>
-<tr><td><a href="#getdataclass"><strong>.getDataClass()</strong> : 4D.DataClass</a><p>    エンティティセレクションのデータクラスを返します</td></tr>
-<tr><td><a href="#isalterable"><strong>.isAlterable()</strong> : Boolean</a><p>    エンティティセレクションが追加可能の場合には true を返します</td></tr>
-<tr><td><a href="#isordered"><strong>.isOrdered()</strong> : Boolean</a><p>    エンティティセレクションが順列ありであれば true を返します</td></tr>
-<tr><td><a href="#last"><strong>.last()</strong> : 4D.Entity</a><p>    エンティティセレクションの最終エンティティへの参照を返します</td></tr>
-<tr><td><a href="#length"><strong>.length</strong> : Integer</a><p>    エンティティセレクション内のエンティティの数を返します</td></tr>
-<tr><td><a href="#max"><strong>.max</strong>( <em>attributePath</em> : Text ) : any</a><p>    <em>attributePath</em> に指定したエンティティセレクションの属性値のうち最高の (あるいは最大の) 値を返します</td></tr>
-<tr><td><a href="#min"><strong>.min</strong>( <em>attributePath</em> : Text ) : any</a><p>     <em>attributePath</em> に指定したエンティティセレクションの属性値のうち最低の (あるいは最小の) 値を返します</td></tr>
-<tr><td><a href="#minus"><strong>.minus</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.minus</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</a><p>    対象のエンティティセレクションから、<em>entity</em> 引数のエンティティ、あるいは<em>entitySelection</em> 引数のエンティティセレクションに含まれるエンティティを除外し、結果のエンティティセレクションを返します</td></tr>
-<tr><td><a href="#or"><strong>.or</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.or</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</a><p>    OR論理演算子を使用して、<em>entity</em> または <em>entitySelection</em> のエンティティと対象エンティティセレクションを組み合わせます</td></tr>
-<tr><td><a href="#orderby"><strong>.orderBy</strong>( <em>pathString</em> : Text ) : 4D.EntitySelection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : 4D.EntitySelection</a><p>    エンティティセレクションの全エンティティが <em>pathString</em> または <em>pathObjects</em> が指定する順番に並べ替えられた、新規の順列ありのエンティティセレクションを返します</td></tr>
-<tr><td><a href="#orderbyformula"><strong>.orderByFormula</strong>( <em>formulaString</em> : Text { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection<br><strong>.orderByFormula</strong>( <em>formulaObj</em> : Object { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection</a><p>    順列ありの新規エンティティセレクションを返します</td></tr>
-<tr><td><a href="#query"><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : any } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</a><p>    エンティティセレクションの全エンティティから、<em>queryString</em> または <em>formula</em> と任意の <em>value</em> 引数で指定した検索条件に合致するエンティティを検索します</td></tr>
-<tr><td><a href="#querypath"><strong>.queryPath</strong> : Text</a><p>    実際に 4Dで実行されたクエリの詳細な情報</td></tr>
-<tr><td><a href="#queryplan"><strong>.queryPlan</strong> : Text</a><p>     実行前のクエリの詳細な情報 (クエリプラン) を格納します</td></tr>
-<tr><td><a href="#refresh"><strong>.refresh()</strong></a><p>    ローカルの ORDAキャッシュにあるエンティティセレクションデータを即座に &quot;無効化&quot; します</td></tr>
-<tr><td><a href="#slice"><strong>.slice</strong>( <em>startFrom</em> : Integer { ; <em>end</em> : Integer } ) : 4D.EntitySelection</a><p>    エンティティセレクションの一部を、新規エンティティセレクションとして返します</td></tr>
-<tr><td><a href="#sum"><strong>.sum</strong>( <em>attributePath</em> : Text ) : Real</a><p>    <em>attributePath</em> に指定したエンティティセレクションの属性値の総和を返します</td></tr>
-<tr><td><a href="#tocollection"><strong>.toCollection</strong>( { <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer } } ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterString</em> : Text {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterCol</em> : Collection {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em></a><p>    プロパティと値のセットを持つオブジェクト要素を格納するコレクションを作成し、返します</td></tr>
+<tr><td><a href="#drop"><strong>.drop</strong>( { <em>mode</em> : Integer } ) : 4D.EntitySelection</a><p>    removes the entities belonging to the entity selection from the table related to its dataclass within the datastore</td></tr>
+<tr><td><a href="#extract"><strong>.extract</strong>( <em>attributePath</em> : Text { ; <em>option</em> : Integer } ) : Collection<br><strong>.extract</strong>( <em>attributePath</em> { ; <em>targetPath</em> } { ; <em>...attributePathN</em> : Text ; <em>targetPathN</em> : Text } ) : Collection</a><p>    returns a collection containing <em>attributePath</em> values extracted from the entity selection</td></tr>
+<tr><td><a href="#first"><strong>.first()</strong> : 4D.Entity</a><p>    returns a reference to the entity in the first position of the entity selection</td></tr>
+<tr><td><a href="#getdataclass"><strong>.getDataClass()</strong> : 4D.DataClass</a><p>    returns the dataclass of the entity selection</td></tr>
+<tr><td><a href="#isalterable"><strong>.isAlterable()</strong> : Boolean</a><p>    returns True if the entity selection is alterable</td></tr>
+<tr><td><a href="#isordered"><strong>.isOrdered()</strong> : Boolean</a><p>    returns True if the entity selection is ordered</td></tr>
+<tr><td><a href="#last"><strong>.last()</strong> : 4D.Entity</a><p>    returns a reference to the entity in last position of the entity selection</td></tr>
+<tr><td><a href="#length"><strong>.length</strong> : Integer</a><p>    returns the number of entities in the entity selection</td></tr>
+<tr><td><a href="#max"><strong>.max</strong>( <em>attributePath</em> : Text ) : any</a><p>    returns the highest (or maximum) value among all the values of <em>attributePath</em> in the entity selection</td></tr>
+<tr><td><a href="#min"><strong>.min</strong>( <em>attributePath</em> : Text ) : any</a><p>     returns the lowest (or minimum) value among all the values of attributePath in the entity selection</td></tr>
+<tr><td><a href="#minus"><strong>.minus</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.minus</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</a><p>    excludes from the entity selection to which it is applied the <em>entity</em> or the entities of <em>entitySelection</em> and returns the resulting entity selection</td></tr>
+<tr><td><a href="#or"><strong>.or</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.or</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</a><p>    combines the entity selection with the <em>entity</em> or <em>entitySelection</em> parameter using the logical (not exclusive) OR operator</td></tr>
+<tr><td><a href="#orderby"><strong>.orderBy</strong>( <em>pathString</em> : Text ) : 4D.EntitySelection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : 4D.EntitySelection</a><p>    returns a new ordered entity selection containing all entities of the entity selection in the order specified by <em>pathString</em> or <em>pathObjects</em> criteria</td></tr>
+<tr><td><a href="#orderbyformula"><strong>.orderByFormula</strong>( <em>formulaString</em> : Text { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection<br><strong>.orderByFormula</strong>( <em>formulaObj</em> : Object { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection</a><p>    returns a new, ordered entity selection</td></tr>
+<tr><td><a href="#query"><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : any } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</a><p>    searches for entities that meet the search criteria specified in <em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s) among all the entities in the entity selection</td></tr>
+<tr><td><a href="#querypath"><strong>.queryPath</strong> : Text</a><p>    contains a detailed description of the query as it was actually performed by 4D</td></tr>
+<tr><td><a href="#queryplan"><strong>.queryPlan</strong> : Text</a><p>     contains a detailed description of the query just before it is executed (i.e., the planned query)</td></tr>
+<tr><td><a href="#refresh"><strong>.refresh()</strong></a><p>    immediately &quot;invalidates&quot; the entity selection data in the local ORDA cache</td></tr>
+<tr><td><a href="#slice"><strong>.slice</strong>( <em>startFrom</em> : Integer { ; <em>end</em> : Integer } ) : 4D.EntitySelection</a><p>    returns a portion of an entity selection into a new entity selection</td></tr>
+<tr><td><a href="#sum"><strong>.sum</strong>( <em>attributePath</em> : Text ) : Real</a><p>    returns the sum for all <em>attributePath</em> values in the entity selection</td></tr>
+<tr><td><a href="#tocollection"><strong>.toCollection</strong>( { <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer } } ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterString</em> : Text {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterCol</em> : Collection {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em></a><p>    creates and returns a collection where each element is an object containing a set of properties and values</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="create-entity-selection"></a><a href="#create-entity-selection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create entity selection</h2>
@@ -538,6 +538,7 @@
 <li>数値</li>
 <li>日付</li>
 </ol>
+<p>You can use the <code>[]</code> notation to designate a collection when <em>attributePath</em> is a path within an object (see examples).</p>
 <p>デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 If you want the evaluation to be case sensitive or to differentiate accented characters, pass the <code>dk diacritical</code> constant in the <em>option</em> parameter.</p>
 <p>An error is returned if:</p>
 <ul>
@@ -548,6 +549,9 @@
 <p>You want to get a collection containing a single element per country name:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$countries </span>: Collection
  <span class="hljs-variable">$countries</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">distinct</span>(<span class="hljs-string">"address.country"</span>)
+</code></pre>
+<p><code>nicknames</code> is a collection and <code>extra</code> is an object attribute:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-variable">$values</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">distinct</span>(<span class="hljs-string">"extra.nicknames[].first"</span>)
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="drop"></a><a href="#drop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.drop()</h2>
 <p><details><summary>履歴</summary></p>
@@ -571,7 +575,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.drop()</code> 関数は、 データストアのデータクラスに対応するテーブルから、エンティティセレクションに所属しているエンティティを削除します。 エンティティセレクションはメモリ内に残ります。</p>
+<p>The <code>.drop()</code> function removes the entities belonging to the entity selection from the table related to its dataclass within the datastore. エンティティセレクションはメモリ内に残ります。</p>
 <blockquote>
 <p>Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.</p>
 </blockquote>
@@ -621,7 +625,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.extract()</code> 関数は、 <em>attributePath</em> で指定した値をエンティティセレクションから抽出し、コレクションに格納して返します。</p>
+<p>The <code>.extract()</code> function returns a collection containing <em>attributePath</em> values extracted from the entity selection.</p>
 <p><em>attributePath</em> can refer to:</p>
 <ul>
 <li>a scalar dataclass attribute,</li>
@@ -703,7 +707,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-12"></a><a href="#説明-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.first()</code> 関数は、 エンティティセレクションの先頭エンティティへの参照を返します。</p>
+<p>The <code>.first()</code> function returns a reference to the entity in the first position of the entity selection.</p>
 <p>The result of this function is similar to:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySel</span>[<span class="hljs-number">0</span>]
 </code></pre>
@@ -744,7 +748,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-13"></a><a href="#説明-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.getDataClass()</code> 関数は、 エンティティセレクションのデータクラスを返します。</p>
+<p>The <code>.getDataClass()</code> function returns the dataclass of the entity selection.</p>
 <p>This function is mainly useful in the context of generic code.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-12"></a><a href="#例題-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>The following generic code duplicates all entities of the entity selection:</p>
@@ -784,7 +788,7 @@
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-14"></a><a href="#説明-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.isAlterable()</code> 関数は、 エンティティセレクションが追加可能の場合には true を返します。それ以外の場合には false を返します。</p>
+<p>The <code>.isAlterable()</code> function returns True if the entity selection is alterable, and False if the entity selection is not alterable.</p>
 <p>詳細については <a href="/docs/Rx/ja/ORDA/entities.html#共有可能追加可能なエンティティセレクション">共有可能/追加可能なエンティティセレクション</a> を参照ください。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-13"></a><a href="#例題-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>You are about to display <code>Form.products</code> in a <a href="/docs/Rx/ja/FormObjects/listboxOverview.html">list box</a> to allow the user to add new products. You want to make sure it is alterable so that the user can add new products without error:</p>
@@ -815,7 +819,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-15"></a><a href="#説明-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.isOrdered()</code> 関数は、 エンティティセレクションが順列ありであれば true を返します。順列なしであれば false を返します。</p>
+<p>The <code>.isOrdered()</code> function returns True if the entity selection is ordered, and False if it is unordered.</p>
 <blockquote>
 <p>This function always returns True when the entity selection comes from a remote datastore.</p>
 </blockquote>
@@ -858,7 +862,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-16"></a><a href="#説明-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.last()</code> 関数は、 エンティティセレクションの最終エンティティへの参照を返します。</p>
+<p>The <code>.last()</code> function returns a reference to the entity in last position of the entity selection.</p>
 <p>The result of this function is similar to:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySel</span>[length<span class="hljs-number">-1</span>]
 </code></pre>
@@ -884,7 +888,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p></details></p>
 <p><strong>.length</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-17"></a><a href="#説明-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.length</code> プロパティは、 エンティティセレクション内のエンティティの数を返します。 エンティティセレクションが空の場合、関数は 0 を返します。</p>
+<p>The <code>.length</code> property returns the number of entities in the entity selection. エンティティセレクションが空の場合、関数は 0 を返します。</p>
 <p>エンティティセレクションは、常に <code>.length</code> プロパティを持っています。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-16"></a><a href="#例題-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$vSize </span>: Integer
@@ -914,7 +918,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-18"></a><a href="#説明-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.max()</code> 関数は、 <em>attributePath</em> に指定したエンティティセレクションの属性値のうち最高の (あるいは最大の) 値を返します。 It actually returns the value of the last entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function.</p>
+<p>The <code>.max()</code> function returns the highest (or maximum) value among all the values of <em>attributePath</em> in the entity selection. It actually returns the value of the last entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function.</p>
 <p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.max()</code> function will return the maximum value within the first scalar type in the default 4D type list order (see <a href="/docs/Rx/ja/API/collectionClass.html#sort"><code>.sort()</code></a> description).</p>
 <p><code>.max()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
 <p>An error is returned if:</p>
@@ -952,7 +956,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-19"></a><a href="#説明-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.min()</code> 関数は、  <em>attributePath</em> に指定したエンティティセレクションの属性値のうち最低の (あるいは最小の) 値を返します。  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function (excluding <strong>null</strong> values).</p>
+<p>The <code>.min()</code> function  returns the lowest (or minimum) value among all the values of attributePath in the entity selection.  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function (excluding <strong>null</strong> values).</p>
 <p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.min()</code> function will return the minimum value within the first scalar value type in the type list order (see <a href="/docs/Rx/ja/API/collectionClass.html#sort"><code>.sort()</code></a> description).</p>
 <p><code>.min()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
 <p>An error is returned if:</p>
@@ -990,7 +994,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-20"></a><a href="#説明-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.minus()</code> 関数は、 対象のエンティティセレクションから、<em>entity</em> 引数のエンティティ、あるいは<em>entitySelection</em> 引数のエンティティセレクションに含まれるエンティティを除外し、結果のエンティティセレクションを返します。</p>
+<p>The <code>.minus()</code> function excludes from the entity selection to which it is applied the <em>entity</em> or the entities of <em>entitySelection</em> and returns the resulting entity selection.</p>
 <ul>
 <li>If you pass <em>entity</em> as parameter, the function creates a new entity selection without <em>entity</em> (if <em>entity</em> belongs to the entity selection). If <em>entity</em> was not included in the original entity selection, a new reference to the entity selection is returned.</li>
 <li>If you pass <em>entitySelection</em> as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to <em>entitySelection</em>.</li>
@@ -1043,7 +1047,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-21"></a><a href="#説明-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.or()</code> 関数は、 OR論理演算子を使用して、<em>entity</em> または <em>entitySelection</em> のエンティティと対象エンティティセレクションを組み合わせます。戻り値は、渡した引数とエンティティセレクションの全エンティティを格納する順列なしの新規エンティティセレクションです。</p>
+<p>The <code>.or()</code> function combines the entity selection with the <em>entity</em> or <em>entitySelection</em> parameter using the logical (not exclusive) OR operator; it returns a new, unordered entity selection that contains all the entities from the entity selection and the parameter.</p>
 <ul>
 <li>If you pass <em>entity</em> as parameter, you compare this entity with the entity selection. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.</li>
 <li>If you pass <em>entitySelection</em> as parameter, you compare entity selections. A new entity selection containing the entities belonging to the original entity selection or <em>entitySelection</em> is returned (or is not exclusive, entities referenced in both selections are not duplicated in the resulting selection).</li>
@@ -1092,7 +1096,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-22"></a><a href="#説明-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.orderBy()</code> 関数は、 エンティティセレクションの全エンティティが <em>pathString</em> または <em>pathObjects</em> が指定する順番に並べ替えられた、新規の順列ありのエンティティセレクションを返します。</p>
+<p>The <code>.orderBy()</code> function returns a new ordered entity selection containing all entities of the entity selection in the order specified by <em>pathString</em> or <em>pathObjects</em> criteria.</p>
 <blockquote>
 <ul>
 <li>この関数は、エンティティセレクションを変更しません。</li>
@@ -1162,7 +1166,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-23"></a><a href="#説明-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.orderByFormula()</code> 関数は、 エンティティセレクションの全エンティティが <em>formulaString</em> または <em>formulaObj</em>、および (任意の) <em>sortOrder</em> や <em>settings</em> 引数が指定する順番に並べられた、 順列ありの新規エンティティセレクションを返します 。</p>
+<p>The <code>.orderByFormula()</code> function returns a new, ordered entity selection containing all entities of the entity selection in the order defined through the <em>formulaString</em> or <em>formulaObj</em> and, optionally, <em>sortOrder</em> and <em>settings</em> parameters.</p>
 <blockquote>
 <p>This function does not modify the original entity selection.</p>
 </blockquote>
@@ -1270,7 +1274,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-24"></a><a href="#説明-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.query()</code> 関数は、 エンティティセレクションの全エンティティから、<em>queryString</em> または <em>formula</em> と任意の <em>value</em> 引数で指定した検索条件に合致するエンティティを検索します。戻り値は、見つかったエンティティをすべて格納する <code>EntitySelection</code> 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。</p>
+<p>The <code>.query()</code> function searches for entities that meet the search criteria specified in <em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s) among all the entities in the entity selection, and returns a new object of type <code>EntitySelection</code> containing all the entities that are found. この関数には、レイジーローディングが適用されます。</p>
 <blockquote>
 <p>This function does not modify the original entity selection.</p>
 </blockquote>
@@ -1285,9 +1289,9 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
  Form.emps:=<span class="hljs-variable">$entitySelectionTemp</span>.<span class="hljs-function">query</span>(<span class="hljs-string">"manager.lastName = :1"</span>;<span class="hljs-string">"S@"</span>)
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-2-6"></a><a href="#例題-2-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 2</h4>
-<p>追加のクエリ例については、[DataClass.query()`</a> を参照してください。 </p></p>
-<p><h4 spaces-before="0">参照</h4></p>
-<p spaces-before="0">データクラスの <a href="/docs/Rx/ja/API/dataclassClass.html#query"><code>.query()`](dataclassClass.md#query)</p>
+<p>More examples of queries can be found in the DataClass <a href="/docs/Rx/ja/API/dataclassClass.html#query"><code>.query()</code></a> page.</p>
+<h4><a class="anchor" aria-hidden="true" id="参照-1"></a><a href="#参照-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>参照</h4>
+<p><a href="/docs/Rx/ja/API/dataclassClass.html#query"><code>.query()</code></a> for dataclass</p>
 <h2><a class="anchor" aria-hidden="true" id="querypath"></a><a href="#querypath" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.queryPath</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -1301,7 +1305,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p></details></p>
 <p><strong>.queryPath</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-25"></a><a href="#説明-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.queryPath</code> プロパティは、 実際に 4Dで実行されたクエリの詳細な情報を格納します。 This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPath&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
+<p>The <code>.queryPath</code> property contains a detailed description of the query as it was actually performed by 4D. This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPath&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
 <p>For more information, refer to the <strong>querySettings parameter</strong> paragraph in the Dataclass<a href="dataclassClass.html#query"><code>.query()</code></a> page.</p>
 <h2><a class="anchor" aria-hidden="true" id="queryplan"></a><a href="#queryplan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.queryPlan</h2>
 <p><details><summary>履歴</summary></p>
@@ -1316,7 +1320,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p></details></p>
 <p><strong>.queryPlan</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-26"></a><a href="#説明-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.queryPlan</code> プロパティは、  実行前のクエリの詳細な情報 (クエリプラン) を格納します。 This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPlan&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
+<p>The <code>.queryPlan</code> property  contains a detailed description of the query just before it is executed (i.e., the planned query). This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPlan&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
 <p>For more information, refer to the <strong>querySettings parameter</strong> paragraph in the Dataclass<a href="dataclassClass.html#query"><code>.query()</code></a> page.</p>
 <h2><a class="anchor" aria-hidden="true" id="refresh"></a><a href="#refresh" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.refresh()</h2>
 <p><details><summary>履歴</summary></p>
@@ -1337,7 +1341,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <blockquote>
 <p>このメソッドはリモートデータストア (クライアント/サーバーモード、または<code>Open datastore</code> 接続) においてのみ動作します。</p>
 </blockquote>
-<p><code>.refresh()</code> 関数は、 ローカルの ORDAキャッシュにあるエンティティセレクションデータを即座に &quot;無効化&quot; します 。そのため、次に 4Dがエンティティセレクションを必要としたときにはそれがデータベースからリロードされます。</p>
+<p>The <code>.refresh()</code> function immediately &quot;invalidates&quot; the entity selection data in the local ORDA cache so that the next time 4D requires the entity selection, it will be reloaded from the database.</p>
 <p>By default, the local ORDA cache is invalidated after 30 seconds. In the context of client / server applications using both ORDA and the classic language, this method allows you to make sure a remote application will always work with the latest data.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-1-8"></a><a href="#例題-1-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題 1</h4>
 <p>In this example, classic and ORDA code modify the same data simultaneously:</p>
@@ -1402,7 +1406,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-28"></a><a href="#説明-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.slice()</code> 関数は、<em>startFrom</em> の位置 (含まれる) から <em>end</em> の位置 (含まれない) または終わりまでの エンティティセレクションの一部を、新規エンティティセレクションとして返します。 This method returns a shallow copy of the entity selection (it uses the same entity references).</p>
+<p>The <code>.slice()</code> function returns a portion of an entity selection into a new entity selection, selected from the <em>startFrom</em> index to the <em>end</em> index (<em>end</em> is not included) or to the last entity of the entity selection. This method returns a shallow copy of the entity selection (it uses the same entity references).</p>
 <blockquote>
 <p>This function does not modify the original entity selection.</p>
 </blockquote>
@@ -1448,7 +1452,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-29"></a><a href="#説明-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.sum()</code> 関数は、 <em>attributePath</em> に指定したエンティティセレクションの属性値の総和を返します。</p>
+<p>The <code>.sum()</code> function returns the sum for all <em>attributePath</em> values in the entity selection.</p>
 <p>エンティティセレクションが空の場合、<code>.sum()</code> は 0 を返します。</p>
 <p>The sum can only be done on values of number type. If the <em>attributePath</em> type is object, only numerical values are taken into account for the calculation (other value types are ignored). In this case, if <em>attributePath</em> leads to a property that does not exist in the object or does not contain any numeric values, <code>.sum()</code> returns 0.</p>
 <p>An error is returned if:</p>
@@ -1490,7 +1494,7 @@ var</span> <span class="hljs-variable">$sum </span>: Real
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-30"></a><a href="#説明-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.toCollection()</code> 関数は、エンティティセレクションの各エンティティの属性名と値に対応する プロパティと値のセットを持つオブジェクト要素を格納するコレクションを作成し、返します 。</p>
+<p>The <code>.toCollection()</code> function creates and returns a collection where each element is an object containing a set of properties and values corresponding to the attribute names and values for the entity selection.</p>
 <p>If no filter parameter is passed or the first parameter contains an empty string or &quot;*&quot;, all the attributes are extracted. Attributes with <a href="/docs/Rx/ja/API/dataclassAttributeClass.html#kind">kind</a> property as &quot;relatedEntity&quot; are extracted with the simple form: an object with property __KEY (primary key). Attributes with kind property as &quot;relatedEntities&quot; are not extracted.</p>
 <p>Or, you can designate the entity attributes to extract using a filter parameter. You can use one of these two filters:</p>
 <ul>
