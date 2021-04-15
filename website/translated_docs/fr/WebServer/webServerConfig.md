@@ -35,9 +35,9 @@ You can modify the size of the cache in the **Pages Cache Size** area. The value
 
 ## Certificate folder
 
-| Can be set with  | Nom                 | Commentaires                                                                                                                           |
-| ---------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| webServer object | `certificateFolder` | Text property but can be a [`4D.Folder`](API/folderClass.md) object when used with the *settings* parameter of the `start()` function. |
+| Can be set with  | Nom                 | Commentaires                                                                                                                                                     |
+| ---------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| webServer object | `certificateFolder` | Propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()`. |
 
 Folder where the TLS certificate files for the web server are located.
 
@@ -512,11 +512,11 @@ In this case, robots are not allowed to access the entire site.
 
 ## Root Folder
 
-| Can be set with       | Nom                                              | Commentaires                                                                                                                          |
-| --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| webServer object      | [`rootFolder`](API/webServerClass.md#rootfolder) | Text property but can be a [`4D.Folder`](API/folderClass.md) object when used with the *settings* parameter of the `start()` function |
-| `WEB SET ROOT FOLDER` |                                                  |                                                                                                                                       |
-| Settings dialog box   | Configuration page/Default HTML Root             |                                                                                                                                       |
+| Can be set with       | Nom                                              | Commentaires                                                                                                                                                 |
+| --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| webServer object      | [`rootFolder`](API/webServerClass.md#rootfolder) | Propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()` |
+| `WEB SET ROOT FOLDER` |                                                  |                                                                                                                                                              |
+| Settings dialog box   | Configuration page/Default HTML Root             |                                                                                                                                                              |
 
 Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. The path is formatted in POSIX full path. The web server will need to be restarted in order for the new root folder to be taken into account.
 
@@ -571,7 +571,7 @@ Champ "path" du cookie de session. Utilisé pour contrôler la portée des cooki
 
 ## Session IP Address Validation
 
-Can be set with|Name|Comments| |---|---|---| |webServer object|[`sessionIPAddressValidation`](API/webServerClass.md#sessionipaddressvalidation)|| |`WEB SET OPTION`|`Web session enable IP address validation`||
+Peut être défini avec|Nom|Commentaires| |---|---|---| |objet webServer|[`sessionIPAddressValidation`](API/webServerClass.md#sessionipaddressvalidation)|| |`WEB SET OPTION`|`La session Web active la validation d'adresse IP`||
 
 IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application.
 
@@ -599,7 +599,7 @@ When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maint
 
 In return, you must make sure in this case to systematically initialize the variables used in 4D methods in order to avoid getting incorrect results. Similarly, it is necessary to erase any current selections or records defined during the previous request.
 > * This option is checked (and locked) automatically when the **Automatic Session Management** option is checked. In fact, the session management mechanism is actually based on the principle of recycling web processes: each session uses the same process that is maintained during the lifespan of the session. However, note that session processes cannot be "shared" between different sessions: once the session is over, the process is automatically killed (and not reused). It is therefore unnecessary to reset the selections or variables in this case.
-> 
+>
 > * This option only has an effect with a 4D web server in remote mode. With a 4D in local mode, all web processes (other than session processes) are killed after their use.
 
 
@@ -624,4 +624,3 @@ Two options allow you to set how the keep-alive connections work:
 *   **Number of requests by connection**: Allows you to set the maximum number of requests and responses able to travel over a connection keep alive. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).<p> The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web Server.
 
 *   **Timeout**: This value defines the maximum wait period (in seconds) during which the web server maintains an open TCP connection without receiving any requests from the web browser. Once this period is over, the server closes the connection.<p> If the web browser sends a request after the connection is closed, a new TCP connection is automatically created. This operation is not visible for the user.
-

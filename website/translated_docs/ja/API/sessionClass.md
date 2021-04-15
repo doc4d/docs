@@ -23,7 +23,7 @@ title: セッション
 
 
 
-## Session
+## セッション
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
