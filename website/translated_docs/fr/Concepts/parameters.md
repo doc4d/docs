@@ -347,16 +347,16 @@ C_TEXT($1;$2;$3;$4;$5;$6)
     End if
     ...
  End if
-````
+```
 
 
 
 
-## Using object properties as named parameters 
+## Utilisation des propriétés d'objet comme paramètres nommés
 
-Using objects as parameters allow you to handle **named parameters**. Ce style de programmation est simple, souple et facile à lire. 
+L'utilisation d'objets en tant que paramètres vous permet de gérer des **paramètres nommés**. Ce style de programmation est simple, souple et facile à lire.
 
-For example, using the `CreatePerson` method:
+Par exemple, si vous utilisez la méthode `CreatePerson` :
 
 ```4d
   //CreatePerson
