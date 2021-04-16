@@ -825,9 +825,9 @@ $status:=$transporter.expunge()
 | ---------- | ------- | -------------------------------------------------------------------------- |
 | updateSeen | boolean | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 デフォルト値: true |
 | withBody   | boolean | true を渡すとメッセージ本文を返します。 false 時には、メッセージヘッダーのみが返されます。 デフォルト値: true           |
-> * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
-> * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
+> * *msgID* 引数が存在しないメッセージを指定した場合、関数はエラーを生成し **Null** を返します。
+> * [`.selectBox()`](#selectbox) によって選択されたメールボックスがない場合、エラーが生成されます。
+> * 開いている接続がない場合、`.getMail()` は [`.selectBox()`](#selectbox) で最後に指定されたメールボックスへの接続を開きます。
 
 
 #### 戻り値
@@ -918,8 +918,8 @@ ID = 1のメッセージを取得します:
 | ---------- | --- | ---------------------------------------------------------------------- |
 | updateSeen | ブール | true 時には、指定されたメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 デフォルト値: true |
 | withBody   | ブール | true を渡すと指定されたメッセージの本文を返します。 false 時には、メッセージヘッダーのみが返されます。 デフォルト値: true |
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated.
-> * If there is no open connection, `.getMails()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox).
+> * [`.selectBox()`](#selectbox) によって選択されたメールボックスがない場合、エラーが生成されます。
+> * 開いている接続がない場合、`.getMails()` は [`.selectBox()`](#selectbox) で最後に指定されたメールボックスへの接続を開きます。
 
 
 #### 戻り値
@@ -1004,8 +1004,8 @@ ID = 1のメッセージを取得します:
 
 *   **True** - メッセージは "既読" とマークされます (このメッセージが読まれたことを表します)
 *   **False** - メッセージの "既読" ステータスは変化しません。
-> * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message,
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated,
+> * *msgNumber* または *msgID* 引数が存在しないメッセージを指定した場合、関数は空の BLOB を返します。
+> * [`.selectBox()`](#selectbox) によって選択されたメールボックスがない場合、エラーが生成されます。
 > * 開いている接続がない場合、`.getMIMEAsBlob()` は `.selectBox()` で最後に指定されたメールボックスへの接続を開きます。
 
 
@@ -1085,7 +1085,7 @@ ID = 1のメッセージを取得します:
 
 *destinationBox* には、メッセージの移動先メールボックスの名称をテキスト値で渡すことができます。
 
-> This function is only supported by IMAP servers compliant with RFC [8474](https://tools.ietf.org/html/rfc8474).
+> RFC [8474](https://tools.ietf.org/html/rfc8474) に準拠している IMAPサーバーでのみ、この関数はサポートされます。
 
 
 **返されるオブジェクト**
@@ -1336,7 +1336,7 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 
 #### 説明
 
-> This function is based upon the specification for the [IMAP protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
+> この関数は、[IMAP プロトコル](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol) の仕様に基づいています。
 
 `.searchMails()` 関数は、 <!-- REF #imapTransporterClass.searchMails().Summary -->カレントメールボックスにおいて *searchCriteria* の検索条件に合致するメッセージを検索します<!-- END REF -->。 *searchCriteria* 引数には、一つ以上の検索キーを格納します。
 
