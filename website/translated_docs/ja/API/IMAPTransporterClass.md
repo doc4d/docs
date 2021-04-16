@@ -1804,7 +1804,7 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 `.subscribe()` 関数は、 <!-- REF #IMAPTransporterClass.subscribe().Summary -->IMAPサーバーの購読メールボックスとして任意のメールボックスを追加・削除します<!-- END REF -->。 利用可能なメールボックスが大量にある場合、すべてを取得するのを避けるため、確認したいメールボックスだけを購読することができます。
 
-In the `name` parameter, pass the name of the mailbox to add (subscribe) to your "subscribed" mailboxes.
+`name` には、購読するメールボックスの名前を渡します。
 
 **返されるオブジェクト**
 
@@ -1823,7 +1823,7 @@ In the `name` parameter, pass the name of the mailbox to add (subscribe) to your
 
 #### 例題
 
-To subscribe to the "Atlas Corp” mailbox in the "Bills" hierarchy:
+"Bills" 階層下の "Atlas Corp” メールボックスを購読します:
 
 ```4d
 var $pw; $name : text
@@ -1831,7 +1831,7 @@ var $options; $transporter; $status : object
 
 $options:=New object
 
-$pw:=Request("Please enter your password:")
+$pw:=Request("パスワードを入力してください:")
 
 If(OK=1) $options.host:="imap.gmail.com"
 $options.user:="test@gmail.com"
@@ -1843,9 +1843,9 @@ $name:="Bills"+$transporter.getDelimiter()+"Atlas Corp"
 $status:=$transporter.subscribe($name)
 
 If ($status.success)
-   ALERT("Mailbox subscription successful!")
+   ALERT("メールボックスの購読に成功しました。")
    Else
-   ALERT("Error: "+$status.statusText)
+   ALERT("エラー: "+$status.statusText)
    End if
 End if
 ```
@@ -1875,9 +1875,9 @@ End if
 
 #### 説明
 
-`.unsubscribe()` 関数は、 <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->指定したメールボックスを購読メールボックスから削除します<!-- END REF -->。 This allows you reduce the number of mailboxes you usually see.
+`.unsubscribe()` 関数は、 <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->指定したメールボックスを購読メールボックスから削除します<!-- END REF -->。 これにより、確認するメールボックスの数を減らせます。
 
-In the `name` parameter, pass the name of the mailbox to remove (unsubscribe) from your active mailboxes.
+`name` には、購読を解除するメールボックスの名前を渡します。
 
 **返されるオブジェクト**
 
@@ -1896,7 +1896,7 @@ In the `name` parameter, pass the name of the mailbox to remove (unsubscribe) fr
 
 #### 例題
 
-To unsubscribe from the "Atlas Corp” mailbox in the "Bills" hierarchy:
+"Bills" 階層下の "Atlas Corp” メールボックスの購読を解除します:
 
 ```4d
 var $pw; $name : text
@@ -1904,7 +1904,7 @@ var $options; $transporter; $status : object
 
 $options:=New object
 
-$pw:=Request("Please enter your password:")
+$pw:=Request("パスワードを入力してください:")
 
 If(OK=1) $options.host:="imap.gmail.com"
 $options.user:="test@gmail.com"
@@ -1916,9 +1916,9 @@ $name:="Bills"+$transporter.getDelimiter()+"Atlas Corp"
 $status:=$transporter.unsubscribe($name)
 
 If ($status.success)
-   ALERT("Mailbox unsubscription successful!")
+   ALERT("メールボックスの購読を解除しました。")
    Else
-   ALERT("Error: "+$status.statusText)
+   ALERT("エラー: "+$status.statusText)
    End if
 End if
 ```
