@@ -1,6 +1,6 @@
 ---
 id: classClass
-title: クラス
+title: Class
 ---
 
 
