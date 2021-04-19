@@ -18,7 +18,7 @@ The Data Explorer relies on the [`WebAdmin`](webAdmin.md) web server component f
 - **configuration**: the Data Explorer configuration reuses the [`WebAdmin` web server settings](webAdmin.md#webadmin-settings),
 - **authentication**: access to the Data Explorer is granted when the [session user is authenticated](webAdmin.md#authentication-and-session) and has the "WebAdmin" privilege. When the Data Explorer is accessed through the **Data Explorer** menu item (see below), an automatic authentication is provided.
 
-> The Data Explorer access can be disabled using the [`.setAdminProtection()`](API/datastoreClass.md#setadminprotection) function.
+> データエクスプローラーへのアクセスは、[`.setAdminProtection()`](API/datastoreClass.md#setadminprotection) 関数を使って無効化できます。
 
 
 ## Opening the Data Explorer
@@ -169,7 +169,7 @@ You can enter advanced queries that are not available as attribute queries. For 
 firstname=="Jim"
 ```
 
-You can use any ORDA query expression as [documented with the `query()` function](API/dataclassClass.md#query), with the following limitations or differences:
+[`query()` 関数の説明](API/dataclassClass.md#query) にある ORDA クエリ式を利用することができますが、次の制限および相違点があります:
 
 - For security, you cannot execute formulas using `eval()`.
 - Placeholders cannot be used; you have to write a *queryString* with values.
@@ -181,7 +181,7 @@ For example, with the Employee dataclass, you can write:
 firstname = "Marie Sophie" AND manager.lastname = "@th"
 ```
 
-You can click on the `v` icon to display both [`queryPlan`](API/dataclassClass.md#queryplan) and [`queryPath`](API/dataclassClass.md#querypath). In the area, you can hover over the subquery blocks to have detailed information per subquery:
+[`queryPlan`](API/dataclassClass.md#queryplan) と [`queryPath`](API/dataclassClass.md#querypath) を両方表示するには `v` アイコンをクリックします。 In the area, you can hover over the subquery blocks to have detailed information per subquery:
 
 ![alt-text](assets/en/Admin/dataExplorer12.png)
 
