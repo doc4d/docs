@@ -163,7 +163,7 @@ The differences are returned as a collection of objects whose properties are:
 
 Only attributes with different values are included in the collection. If no differences are found, `.diff()` returns an empty collection.
 
-The function applies for properties whose [kind](dataclassAttributeClass.md#kind) is **storage** or **relatedEntity**. In case a related entity has been updated (meaning the foreign key), the name of the related entity and its primary key name are returned as *attributeName* properties (*value* and *otherValue* are empty for the related entity name).
+この関数は、種類 ([kind](dataclassAttributeClass.md#kind)) が **storage** あるいは **relatedEntity** であるプロパティに適用されます。 In case a related entity has been updated (meaning the foreign key), the name of the related entity and its primary key name are returned as *attributeName* properties (*value* and *otherValue* are empty for the related entity name).
 
 If one of the compared entities is **Null**, an error is raised.
 
@@ -1303,8 +1303,8 @@ Updating an entity with `dk auto merge` option:
 If no filter is specified, or if the *filterString* parameter contains an empty string or "*", the returned object will contain:
 
 *   all storage entity attributes
-*   attributes of the `relatedEntity` [kind](dataclassAttributeClass.md#kind): you get a property with the same name as the related entity (name of the many-to-one link). Attribute is extracted with the simple form.
-*   attributes of the `relatedEntities` [kind](dataclassAttributeClass.md#kind): attribute is not returned.
+*   リレートエンティティ型の属性 ([kind](dataclassAttributeClass.md#kind) が `relatedEntity`) : リレートエンティティと同じ名前 (N対1リレーション名) のプロパティ。 属性は単純な形式で取得されます。
+*   リレートエンティティズ型の属性 ([kind](dataclassAttributeClass.md#kind) が `relatedEntities`): 属性は返されません。
 
 
 In the first parameter, you pass the entity attribute(s) to extract. 以下のものを渡すことができます:
@@ -1312,13 +1312,13 @@ In the first parameter, you pass the entity attribute(s) to extract. 以下の�
 *   *filterString*: a string with property paths separated with commas: "propertyPath1, propertyPath2, ...", or
 *   *filterCol*: a collection of strings: \["propertyPath1","propertyPath2";...]
 
-If a filter is specified for attributes of the relatedEntity [kind](dataclassAttributeClass.md#kind):
+filter 引数がリレートエンティティ型の属性を指定する場合:
 
 *   propertyPath = "relatedEntity" -> it is extracted with simple form: an object with property \_\_KEY (primary key).
 *   propertyPath = "relatedEntity.*" -> all the properties are extracted
 *   propertyPath = "relatedEntity.propertyName1; relatedEntity.propertyName2; ..." -> only those properties are extracted
 
-If a filter is specified for attributes of the relatedEntities [kind](dataclassAttributeClass.md#kind):
+filter 引数がリレートエンティティズ型の属性を指定する場合:
 
 *   propertyPath = "relatedEntities.*" -> all the properties are extracted
 *   propertyPath = "relatedEntities.propertyName1; relatedEntities.propertyName2; ..." -> only those properties are extracted
@@ -1586,7 +1586,7 @@ Returns:
 
 If an attribute has been modified or calculated, the function returns True, else it returns False. You can use this function to determine if you need to save the entity.
 
-This function returns False for a new entity that has just been created (with [`.new( )`](dataclassClass.md#new)). Note however that if you use a function which calculates an attribute of the entity, the `.touched()` function will then return True. For example, if you call [`.getKey()`](#getkey) to calculate the primary key, `.touched()` returns True.
+この関数は、([`.new( )`](dataclassClass.md#new) で作成された) 新規エンティティに対しては常に false を返します。 Note however that if you use a function which calculates an attribute of the entity, the `.touched()` function will then return True. For example, if you call [`.getKey()`](#getkey) to calculate the primary key, `.touched()` returns True.
 
 #### 例題
 
@@ -1628,7 +1628,7 @@ In this example, we check to see if it is necessary to save the entity:
 
 `.touchedAttributes()` 関数は、 <!-- REF #entityClass.touchedAttributes().Summary -->メモリに読み込み後に変更されたエンティティの属性名を返します<!-- END REF -->。
 
-This applies for attributes of the [kind](dataclassAttributeClass.md#kind) `storage` or `relatedEntity`.
+この関数は、種類 ([kind](dataclassAttributeClass.md#kind)) が `storage` あるいは `relatedEntity` である属性に適用されます。
 
 In the case of a related entity having been touched (i.e., the foreign key), the name of the related entity and its primary key's name are returned.
 
