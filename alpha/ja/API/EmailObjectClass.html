@@ -91,7 +91,7 @@
 <tr><td><a href="#bcc"><strong>.bcc</strong> : Text<br><strong>.bcc</strong> : Object<br><strong>.bcc</strong> : Collection</a><p>    非表示 (BCC: Blind Carbon Copy) のメール受信者 <a href="#email-addresses">アドレス</a></td></tr>
 <tr><td><a href="#bodyStructure"><strong>.bodyStructure</strong> : Object</a><p>    (任意) メッセージ本文の完全なMIME ストラクチャーである <em>EmailBodyPart</em> オブジェクト</td></tr>
 <tr><td><a href="#bodyValues"><strong>.bodyValues</strong> : Object</a><p>    (任意) <code>bodyStructure</code> の &lt;partID&gt; 毎にオブジェクトを格納している <em>EmailBodyValue</em> オブジェクト</td></tr>
-<tr><td><a href="#cc"><strong>.cc</strong> : Text<br><strong>.cc</strong> : Object<br><strong>.cc</strong> : Collection</a><p>    Carbon Copy (CC) additional email recipient <a href="#email-addresses">addresse(s)</a> of the email</td></tr>
+<tr><td><a href="#cc"><strong>.cc</strong> : Text<br><strong>.cc</strong> : Object<br><strong>.cc</strong> : Collection</a><p>    追加 (CC: Carbon Copy) のメール受信者 <a href="#email-addresses">アドレス</a></td></tr>
 <tr><td><a href="#comments"><strong>.comments</strong> : Text</a><p>    追加のコメントのヘッダー</td></tr>
 <tr><td><a href="#from"><strong>.from</strong> : Text<br><strong>.from</strong> : Object<br><strong>.from</strong> : Collection</a><p>    メールの送信元 <a href="#email-addresses">アドレス</a></td></tr>
 <tr><td><a href="#headers"><strong>.headers</strong> : Collection</a><p>    メッセージ内で現れる順番どおりの <code>EmailHeader</code> オブジェクトのコレクション</td></tr>
@@ -205,7 +205,7 @@
 <h2><a class="anchor" aria-hidden="true" id="cc"></a><a href="#cc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.cc</h2>
 <p><strong>.cc</strong> : Text<br><strong>.cc</strong> : Object<br><strong>.cc</strong> : Collection</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-4"></a><a href="#説明-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p>The <code>.cc</code> property contains the Carbon Copy (CC) additional email recipient <a href="#email-addresses">addresse(s)</a> of the email.</p>
+<p><code>.cc</code> プロパティは、 追加 (CC: Carbon Copy) のメール受信者 <a href="#email-addresses">アドレス</a>を格納します。</p>
 <h2><a class="anchor" aria-hidden="true" id="comments"></a><a href="#comments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.comments</h2>
 <p><strong>.comments</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -437,17 +437,17 @@
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>headerCharset</td><td>テキスト</td><td>メールの以下の部分で使用される文字セットとエンコーディング: 件名、添付ファイル名、メール名の属性。 とりうる値:<p><p><table><tr><th>定数</th><th>結果</th><th>説明</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><i>bodyCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 &amp; Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能なら US-ASCII、それが不可なら UTF-8 &amp; Quoted-printable (<strong>デフォルト値</strong>)</tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能な場合は US-ASCII、それ以外は UTF-8 &amp; base64</td></tr></table></td></tr>
-<tr><td>bodyCharset</td><td>テキスト</td><td>メールの HTML およびテキスト本文コンテンツで使用される文字セットとエンコーディング。 Possible values: Same as for headerCharset (see above)</td></tr>
+<tr><td>headerCharset</td><td>テキスト</td><td>メールの以下の部分で使用される文字セットとエンコーディング: 件名、添付ファイル名、メール名の属性。 とりうる値:<p><p><table><tr><th>定数</th><th>結果</th><th>説明</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: 可能なら US-ASCII 、次に可能なら Japanese (ISO-2022-JP) &amp; Quoted-printable 、それも不可なら UTF-8 &amp; Quoted-printable</li><li><i>bodyCharset</i>: 可能なら US-ASCII、次に可能なら Japanese (ISO-2022-JP) &amp; 7-bit、それも不可なら UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 &amp; Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能なら US-ASCII、それが不可なら UTF-8 &amp; Quoted-printable (<strong>デフォルト値</strong>)</tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能な場合は US-ASCII、それ以外は UTF-8 &amp; base64</td></tr></table></td></tr>
+<tr><td>bodyCharset</td><td>テキスト</td><td>メールの HTML およびテキスト本文コンテンツで使用される文字セットとエンコーディング。 取りうる値: headerCharset と同じ(上記参照)</td></tr>
 </tbody>
 </table>
-<p>If the <em>options</em> parameter is omitted, the mail mode UTF8 configuration is used for header and body parts.</p>
+<p><em>options</em> 引数が省略された場合、ヘッダーおよび本文においては mail mode UTF8 設定が使用されます。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-3"></a><a href="#例題-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$mail</span>)
 <span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$mime</span>)
 <span class="hljs-variable">$mail</span>:=New object
 
-<span class="hljs-comment">// Creation of a mail</span>
+<span class="hljs-comment">// メール作成</span>
 <span class="hljs-variable">$mail</span>.from:=<span class="hljs-string">"tsales@massmarket.com"</span>
 <span class="hljs-variable">$mail</span>.subject:=<span class="hljs-string">"Terrific Sale! This week only!"</span>
 <span class="hljs-variable">$mail</span>.textBody:=<span class="hljs-string">"Text format email"</span>
@@ -456,10 +456,10 @@
 <span class="hljs-variable">$mail</span>.to.<span class="hljs-function">push</span>(<span class="hljs-function">New object </span>(<span class="hljs-string">"email"</span>;<span class="hljs-string">"noreply@4d.com"</span>))
 <span class="hljs-variable">$mail</span>.to.<span class="hljs-function">push</span>(<span class="hljs-function">New object </span>(<span class="hljs-string">"email"</span>;<span class="hljs-string">"test@4d.com"</span>))
 
-<span class="hljs-comment">// transform the mail object in MIME</span>
+<span class="hljs-comment">// Email オブジェクトを MIME に変換します</span>
 <span class="hljs-variable">$mime</span>:=[#current_title_incode](<span class="hljs-variable">$mail</span>)
 
-<span class="hljs-comment">// Contents of $mime:</span>
+<span class="hljs-comment">// $mime の中身:</span>
 <span class="hljs-comment">// MIME-Version: 1.0</span>
 <span class="hljs-comment">// Date: Thu, 11 Oct 2018 15:42:25 GMT</span>
 <span class="hljs-comment">// Message-ID: &lt;7CA5D25B2B5E0047A36F2E8CB30362E2&gt;</span>

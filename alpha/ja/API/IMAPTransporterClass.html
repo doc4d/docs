@@ -199,23 +199,23 @@ End if</span>
 <p><strong>.acceptUnsecureConnection</strong> : Boolean</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-2"></a><a href="#説明-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.acceptUnsecureConnection</code> プロパティは、暗号化された接続が不可能な場合に、 暗号化されていない接続の確立が許可されてれば <strong>true</strong> を格納します。</p>
-<p>It contains <strong>False</strong> if unencrypted connections are unallowed, in which case an error in returned when encrypted connection is not possible.</p>
-<p>Available secured ports are:</p>
+<p>暗号化されていない接続が許可されていない場合には <strong>false</strong> が格納されており、その場合に暗号化された接続が不可能な場合にはエラーが返されます。</p>
+<p>使用可能なセキュアなポートは次のとおりです:</p>
 <ul>
 <li><p>SMTP</p>
 <ul>
 <li>465: SMTPS</li>
-<li>587 or 25: SMTP with STARTTLS upgrade if supported by the server.</li>
+<li>587 または 25: STARTTLS アップグレードがされた SMTP (サーバーがサポートしていれば)</li>
 </ul></li>
 <li><p>IMAP</p>
 <ul>
-<li>143: IMAP non-encrypted port</li>
-<li>993: IMAP with STARTTLS upgrade if supported by the server</li>
+<li>143: IMAP 非暗号化ポート</li>
+<li>993: STARTTLS アップグレードがされた IMAP (サーバーがサポートしていれば)</li>
 </ul></li>
 <li><p>POP3</p>
 <ul>
-<li>110: POP3 non-encrypted port</li>
-<li>995: POP3 with STARTTLS upgrade if supported by the server.</li>
+<li>110: POP3 非暗号化ポート</li>
+<li>995: STARTTLS アップグレードがされた POP3 (サーバーがサポートしていれば)</li>
 </ul></li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="addflags"></a><a href="#addflags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.addFlags()</h2>
@@ -407,17 +407,17 @@ End if</span>
 <p><strong>.authenticationMode</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-5"></a><a href="#説明-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.authenticationMode</code> プロパティは、 メールサーバーのセッションを開くのに使用される認証モードを格納します。</p>
-<p>By default, the most secured mode supported by the server is used.</p>
-<p>Possible values are:</p>
+<p>デフォルトでは、サーバーによってサポートされている最も安全なモードが使用されます。</p>
+<p>とりうる値:</p>
 <table>
 <thead>
 <tr><th>結果</th><th>定数</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>CRAM-MD5</td><td><code>IMAP authentication CRAM MD5</code></td><td>Authentication using CRAM-MD5 protocol</td></tr>
-<tr><td>LOGIN</td><td><code>IMAP authentication login</code></td><td>Authentication using LOGIN protocol</td></tr>
-<tr><td>OAUTH2</td><td><code>IMAP authentication OAUTH2</code></td><td>Authentication using OAuth2 protocol</td></tr>
-<tr><td>PLAIN</td><td><code>IMAP authentication plain</code></td><td>Authentication using PLAIN protocol</td></tr>
+<tr><td>CRAM-MD5</td><td><code>IMAP authentication CRAM MD5</code></td><td>CRAM-MD5 プロトコルを使用した認証</td></tr>
+<tr><td>LOGIN</td><td><code>IMAP authentication login</code></td><td>LOGIN プロトコルを使用した認証</td></tr>
+<tr><td>OAUTH2</td><td><code>IMAP authentication OAUTH2</code></td><td>OAuth2 プロトコルを使用した認証</td></tr>
+<tr><td>PLAIN</td><td><code>IMAP authentication plain</code></td><td>PLAIN プロトコルを使用した認証</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="checkconnection"></a><a href="#checkconnection" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.checkConnection()</h2>
@@ -449,10 +449,10 @@ End if</span>
 <tr><th>プロパティ</th><th></th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td></td><td>boolean</td><td>True if the check is successful, False otherwise</td></tr>
-<tr><td>status</td><td></td><td>number</td><td>(SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing)</td></tr>
-<tr><td>statusText</td><td></td><td>text</td><td>Status message returned by the mail server, or last error returned in the 4D error stack</td></tr>
-<tr><td>errors</td><td></td><td>collection</td><td>4D error stack (not returned if a mail server response is received)</td></tr>
+<tr><td>success</td><td></td><td>boolean</td><td>チェックが成功した場合には true、それ以外は false</td></tr>
+<tr><td>status</td><td></td><td>number</td><td>(SMTPのみ) メールサーバーから返されたコード (メール処理に関係ない問題の場合には 0)</td></tr>
+<tr><td>statusText</td><td></td><td>text</td><td>メールサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー</td></tr>
+<tr><td>errors</td><td></td><td>collection</td><td>4Dエラースタック (メールサーバーレスポンスが受信できた場合には返されません)</td></tr>
 <tr><td></td><td>[ ].errCode</td><td>number</td><td>4Dエラーコード</td></tr>
 <tr><td></td><td>[ ].message</td><td>text</td><td>4Dエラーの詳細</td></tr>
 <tr><td></td><td>[ ].componentSignature</td><td>text</td><td>エラーを返した内部コンポーネントの署名</td></tr>
@@ -488,7 +488,7 @@ End if</span>
 <p></details></p>
 <p><strong>.connectionTimeOut</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.connectionTimeOut</code> プロパティは、 サーバー接続の確立までに待機する最長時間 (秒単位)を格納します。 By default, if the property has not been set in the server object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, or <code>IMAP New transporter</code>), the value is 30.</p>
+<p><code>.connectionTimeOut</code> プロパティは、 サーバー接続の確立までに待機する最長時間 (秒単位)を格納します。 <code>SMTP New transporter</code> や <code>POP3 New transporter</code>、 <code>IMAP New transporter</code> のコマンドで <code>transporter</code> オブジェクトを作成する際に使用される <code>server</code> オブジェクトにおいて、 このプロパティが指定されなかった場合のデフォルトは 30 です。</p>
 <h2><a class="anchor" aria-hidden="true" id="copy"></a><a href="#copy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.copy()</h2>
 <p><details><summary>履歴</summary></p>
 <table>
@@ -599,14 +599,14 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.createBox()</code> 関数は、 <code>name</code> に指定した名称の新規メールボックスを作成します。 If the IMAP server’s hierarchy separator character appears elsewhere in the mailbox name, the IMAP server will create any parent names needed to create the given mailbox.</p>
-<p>In other words, an attempt to create &quot;Projects/IMAP/Doc&quot; on a server in which &quot;/&quot; is the hierarchy separator character will create:</p>
+<p><code>.createBox()</code> 関数は、 <code>name</code> に指定した名称の新規メールボックスを作成します。 IMAPサーバーの階層区切り文字がメールボックス名内に含まれる場合、IMAPサーバーは指定のメールボックスを作成するのに必要な親階層を作成します。</p>
+<p>たとえば、&quot;/&quot; が階層区切り文字として使われるサーバーにおいて、&quot;Projects/IMAP/Doc&quot; を作成しようとした場合:</p>
 <ul>
-<li>Only the &quot;Doc&quot; mailbox if &quot;Projects&quot; &amp; &quot;IMAP&quot; already exist.</li>
-<li>&quot;IMAP&quot; &amp; &quot;Doc&quot; mailboxes if only “Projects” already exists.</li>
-<li>&quot;Projects&quot; &amp; “IMAP” &amp; &quot;Doc&quot; mailboxes, if they do not already exist.</li>
+<li>&quot;Projects&quot; &amp; &quot;IMAP&quot; がすでに存在する場合は &quot;Doc&quot; メールボックスのみを作成します。</li>
+<li>“Projects” のみが存在する場合は、&quot;IMAP&quot; &amp; &quot;Doc&quot; メールボックスを作成します。</li>
+<li>いずれも存在しない場合には、&quot;Projects&quot; &amp; “IMAP” &amp; &quot;Doc&quot; メールボックスをそれぞれ作成します。</li>
 </ul>
-<p>In the <code>name</code> parameter, pass the name of the new mailbox.</p>
+<p><code>name</code> には、新しいメールボックスの名前を渡します。</p>
 <p><strong>返されるオブジェクト</strong></p>
 <p>この関数は、IMAP ステータスを表すオブジェクトを返します:</p>
 <table>
@@ -755,13 +755,13 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-12"></a><a href="#説明-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.deleteBox()</code> 関数は、 <code>name</code> に指定した名称のメールボックスを IMAPサーバーから完全に削除します。 Attempting to delete an INBOX or a mailbox that does not exist will generate an error.</p>
-<p>In the <code>name</code> parameter, pass the name of the mailbox to delete.</p>
+<p><code>.deleteBox()</code> 関数は、 <code>name</code> に指定した名称のメールボックスを IMAPサーバーから完全に削除します。 存在しないメールボックス、または INBOX を削除しようとして場合には、エラーが生成されます。</p>
+<p><code>name</code> には、削除するメールボックスの名前を渡します。</p>
 <blockquote>
 <ul>
-<li>The function cannot delete a mailbox that has child mailboxes if the parent mailbox has the &quot;\Noselect&quot; attribute.</li>
-<li>All messages in the deleted mailbox will also be deleted.</li>
-<li>The ability to delete a mailbox depends on the mail server.</li>
+<li>子メールボックスを持つ親メールボックスが &quot;\Noselect&quot; 属性を持っている場合、そのメールボックスは削除できません。</li>
+<li>削除されるメールボックス内のメッセージもすべて削除されます。</li>
+<li>メールボックス削除の可否はメールサーバーに依存します。</li>
 </ul>
 </blockquote>
 <p><strong>返されるオブジェクト</strong></p>
@@ -933,13 +933,13 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-15"></a><a href="#説明-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.getBoxList()</code> 関数は、 利用可能なメールボックスの情報を mailbox オブジェクトのコレクションとしてを返します。 この関数を使用すると、IMAPメールサーバー上にあるメッセージの一覧をローカルで管理することができるようになります。</p>
-<p>In the optional <code>parameters</code> parameter, pass an object containing values to filter the returned mailboxes. 以下のものを渡すことができます:</p>
+<p>任意の <code>parameters</code> パラメーターには、返されるメールボックスをフィルターするための値を格納したオブジェクトを渡すことができます。 以下のものを渡すことができます:</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>isSubscribed</td><td>ブール</td><td><li><strong>True</strong> to return only subscribed mailboxes</li><li> <strong>False</strong> to return all available mailboxes</li></td></tr>
+<tr><td>isSubscribed</td><td>ブール</td><td><li><strong>True</strong>: 購読しているメールボックスのみを返します。</li><li> <strong>False</strong>: すべての利用可能なメールボックスを返します</li></td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="戻り値-1"></a><a href="#戻り値-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>戻り値</h4>
@@ -1065,13 +1065,13 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </table>
 <blockquote>
 <ul>
-<li>The function generates an error and returns <strong>Null</strong> if <em>msgID</em> designates a non-existing message,</li>
-<li>If no mailbox is selected with the <a href="#selectbox"><code>.selectBox()</code></a> function, an error is generated,</li>
-<li>If there is no open connection, <code>.getMail()</code> will open a connection the last mailbox specified with <a href="#selectbox"><code>.selectBox()</code></a>`.</li>
+<li><em>msgID</em> 引数が存在しないメッセージを指定した場合、関数はエラーを生成し <strong>Null</strong> を返します。</li>
+<li><a href="#selectbox"><code>.selectBox()</code></a> によって選択されたメールボックスがない場合、エラーが生成されます。</li>
+<li>開いている接続がない場合、<code>.getMail()</code> は <a href="#selectbox"><code>.selectBox()</code></a> で最後に指定されたメールボックスへの接続を開きます。</li>
 </ul>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="戻り値-3"></a><a href="#戻り値-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>戻り値</h4>
-<p><code>.getMail()</code> returns an <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-object"><code>Email</code> object</a> with the following specific IMAP properties: <em>id</em>, <em>receivedAt</em>, and <em>size</em>.</p>
+<p><code>.getMail()</code> は、以下の IMAP特有のプロパティを持つ <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-オブジェクト"><code>Email</code> オブジェクト</a>を返します: <em>id</em>、<em>receivedAt</em>、および <em>size</em>。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-9"></a><a href="#例題-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>ID = 1のメッセージを取得します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$server </span>: Object<span class="hljs-keyword">
@@ -1114,7 +1114,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <tr><td>startMsg</td><td>整数</td><td style="text-align:center">-&gt;</td><td>先頭メッセージのシーケンス番号</td></tr>
 <tr><td>endMsg</td><td>整数</td><td style="text-align:center">-&gt;</td><td>最後のメッセージのシーケンス番号</td></tr>
 <tr><td>options</td><td>オブジェクト</td><td style="text-align:center">-&gt;</td><td>メッセージ管理オプション</td></tr>
-<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>次のコレクションを格納したオブジェクト:<br><ul><li>a collection of <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-object">Email objects</a> and</li><li>見つからなかったメッセージの ID または番号のコレクション</li></ul></td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td style="text-align:center">&lt;-</td><td>次のコレクションを格納したオブジェクト:<br><ul><li><a href="/docs/alpha/ja/API/EmailObjectClass.html#email-オブジェクト">Email オブジェクト</a> のコレクション</li><li>見つからなかったメッセージの ID または番号のコレクション</li></ul></td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-18"></a><a href="#説明-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
@@ -1123,13 +1123,13 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <p><strong><em>.getMails( ids { ; options } ) -&gt; result</em></strong></p>
 <p>第一シンタックスを使用すると、メッセージID に基づいてメッセージを取得することができます。</p>
 <p><em>ids</em> 引数として、取得するメッセージID のコレクションを渡します。 これらの ID は <a href="#getmail"><code>.getMail()</code></a> で取得することができます。</p>
-<p>任意の <em>options</em> 引数を渡すと、返されるメッセージのパーツを定義することができます。 利用可能なプロパティについては、以下の <strong>オプション</strong> の表を参照ください。</p>
+<p>任意の <em>options</em> 引数を渡すと、返されるメッセージのパートを定義することができます。 利用可能なプロパティについては、以下の <strong>オプション</strong> の表を参照ください。</p>
 <p><strong>第二シンタックス:</strong></p>
 <p><strong><em>.getMails( startMsg ; endMsg { ; options } ) -&gt; result</em></strong></p>
 <p>第二シンタックスを使用すると、連続したレンジに基づいてメッセージを取得することができます。 渡される値はメールボックス内でのメッセージの位置を表します。</p>
 <p><em>startMsg</em> には、連続したレンジの最初のメッセージの番号に対応する <em>倍長整数</em> の値を渡します。 負の値 (<em>startMsg</em> &lt;= 0) を渡した場合、メールボックスの最初のメッセージが連続レンジの先頭メッセージとして扱われます。</p>
 <p><em>endMsg</em> には、連続レンジに含める最後のメッセージの番号に対応する <em>倍長整数</em> の値を渡します。 負の値 (<em>startMsg</em> &lt;= 0) を渡した場合、メールボックスの最後のメッセージが連続レンジの最終メッセージとして扱われます。</p>
-<p>任意の <em>options</em> 引数を渡すと、返されるメッセージのパーツを定義することができます。</p>
+<p>任意の <em>options</em> 引数を渡すと、返されるメッセージのパートを定義することができます。</p>
 <p><strong>オプション</strong></p>
 <table>
 <thead>
@@ -1142,8 +1142,8 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </table>
 <blockquote>
 <ul>
-<li>If no mailbox is selected with the <a href="#selectbox"><code>.selectBox()</code></a> command, an error is generated.</li>
-<li>If there is no open connection, <code>.getMails()</code> will open a connection the last mailbox specified with <a href="#selectbox"><code>.selectBox()</code></a>.</li>
+<li><a href="#selectbox"><code>.selectBox()</code></a> によって選択されたメールボックスがない場合、エラーが生成されます。</li>
+<li>開いている接続がない場合、<code>.getMails()</code> は <a href="#selectbox"><code>.selectBox()</code></a> で最後に指定されたメールボックスへの接続を開きます。</li>
 </ul>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="戻り値-4"></a><a href="#戻り値-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>戻り値</h4>
@@ -1153,10 +1153,10 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>list</td><td>コレクション</td><td>Collection of <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-object"><code>Email</code> objects</a>. Email オブジェクトが見つからない場合、空のコレクションが返されます。</td></tr>
+<tr><td>list</td><td>コレクション</td><td><a href="/docs/alpha/ja/API/EmailObjectClass.html#email-オブジェクト"><code>Email</code></a> オブジェクトのコレクション。 Email オブジェクトが見つからない場合、空のコレクションが返されます。</td></tr>
 </tbody>
 </table>
-<p>|notFound |Collection| Collection of:<br><ul><li>第一シンタックス - 指定した ID のうち、存在しなかったメッセージの ID</li><li>第二シンタックス - startMsg と endMsg の間の番号のうち、存在しなかったメッセージの番号</li></ul>An empty collection is returned if all messages are found.|</p>
+<p>|notFound |コレクション| 次の要素のコレクション:<br><ul><li>第一シンタックス - 指定した ID のうち、存在しなかったメッセージの ID</li><li>第二シンタックス - startMsg と endMsg の間の番号のうち、存在しなかったメッセージの番号</li></ul>すべてのメッセージが見つかった場合には、空のコレクションが返されます。|</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-10"></a><a href="#例題-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>直近の 20件のメールを、&quot;既読&quot; ステータスを変更せずに取得します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$server</span>,<span class="hljs-variable">$boxInfo</span>,<span class="hljs-variable">$result </span>: Object<span class="hljs-keyword">
@@ -1220,13 +1220,13 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </ul>
 <blockquote>
 <ul>
-<li>The function returns an empty BLOB if <em>msgNumber</em> or msgID* designates a non-existing message,</li>
-<li>If no mailbox is selected with the <a href="#selectbox"><code>.selectBox()</code></a> command, an error is generated,</li>
+<li><em>msgNumber</em> または <em>msgID</em> 引数が存在しないメッセージを指定した場合、関数は空の BLOB を返します。</li>
+<li><a href="#selectbox"><code>.selectBox()</code></a> によって選択されたメールボックスがない場合、エラーが生成されます。</li>
 <li>開いている接続がない場合、<code>.getMIMEAsBlob()</code> は <code>.selectBox()</code> で最後に指定されたメールボックスへの接続を開きます。</li>
 </ul>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="戻り値-5"></a><a href="#戻り値-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>戻り値</h4>
-<p><code>.getMIMEAsBlob()</code> returns a <code>BLOB</code> which can be archived in a database or converted to an <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-object"><code>Email</code> object</a> with the <code>MAIL Convert from MIME</code> command.</p>
+<p><code>.getMIMEAsBlob()</code> は <code>BLOB</code> を返します。この BLOB はデータベースにアーカイブしたり、<code>MAIL Convert from MIME</code> コマンドを使用して <a href="/docs/alpha/ja/API/EmailObjectClass.html#email-object"><code>Email</code> オブジェクト</a> へと変換したりすることができます。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-11"></a><a href="#例題-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$server </span>: Object<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$boxInfo </span>: Variant<span class="hljs-keyword">
@@ -1275,8 +1275,8 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <p></details></p>
 <p><strong>.logFile</strong> : Text</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-21"></a><a href="#説明-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.logFile</code> プロパティは、 メール接続に対して定義された拡張ログファイル (あれば) へのフルパスを格納します。 It can be relative (to the current Logs folder) or absolute.</p>
-<p>Unlike regular log files (enabled via the <code>SET DATABASE PARAMETER</code> command), extended log files store MIME contents of all sent mails and do not have any size limit. For more information about extended log files, refer to:</p>
+<p><code>.logFile</code> プロパティは、 メール接続に対して定義された拡張ログファイル (あれば) へのフルパスを格納します。 パスは、カレント Logs フォルダーを基準とした相対パス、あるいは絶対パスを指定できます。</p>
+<p><code>SET DATABASE PARAMETER</code> コマンドで有効化される通常のログファイルとは異なり、拡張ログファイルはすべての送信されたメールの MIMEコンテンツを保存し、サイズ制限がありません。 拡張ログファイルの詳細については、以下の章をそれぞれ参照ください:</p>
 <ul>
 <li><strong>SMTP 接続</strong> - <a href="/docs/alpha/ja/Admin/debugLogFiles.html#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt">4DSMTPLog.txt</a></li>
 <li><strong>POP3 接続</strong> - <a href="/docs/alpha/ja/Admin/debugLogFiles.html#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt">4DPOP3Log.txt</a></li>
@@ -1314,7 +1314,7 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </ul>
 <p><em>destinationBox</em> には、メッセージの移動先メールボックスの名称をテキスト値で渡すことができます。</p>
 <blockquote>
-<p>This function is only supported by IMAP servers compliant with RFC <a href="https://tools.ietf.org/html/rfc8474">8474</a>.</p>
+<p>RFC <a href="https://tools.ietf.org/html/rfc8474">8474</a> に準拠している IMAPサーバーでのみ、この関数はサポートされます。</p>
 </blockquote>
 <p><strong>返されるオブジェクト</strong></p>
 <p>この関数は、IMAP ステータスを表すオブジェクトを返します:</p>
@@ -1534,9 +1534,9 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-25"></a><a href="#説明-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.renameBox()</code> 関数は、 IMAPサーバー上でメールボックスの名称を変更します。 Attempting to rename a mailbox from a mailbox name that does not exist or to a mailbox name that already exists will generate an error.</p>
-<p>In the <code>currentName</code> parameter, pass the name of the mailbox to be renamed.</p>
-<p>Pass the new name for the mailbox in the <code>newName</code> parameter.</p>
+<p><code>.renameBox()</code> 関数は、 IMAPサーバー上でメールボックスの名称を変更します。 存在しないメールボックスの名称を変更しようとしたり、すでに使われているメールボックス名に変更しようとしたりすると、エラーが生成されます。</p>
+<p><code>currentName</code> には、名称変更するメールボックスの名前を渡します。</p>
+<p>メールボックスの新しい名称は <code>newName</code> に渡します。</p>
 <p><strong>返されるオブジェクト</strong></p>
 <p>この関数は、IMAP ステータスを表すオブジェクトを返します:</p>
 <table>
@@ -1553,13 +1553,13 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="例題-14"></a><a href="#例題-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p>To to rename your “Invoices” mailbox to “Bills”:</p>
+<p>“Invoices” メールボックスを “Bills” に名称変更します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$pw </span>: text<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$options</span>; <span class="hljs-variable">$transporter</span>; <span class="hljs-variable">$status </span>: object
 
 <span class="hljs-variable">$options</span>:=New object
 
-<span class="hljs-variable">$pw</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Please enter your password:"</span>)<span class="hljs-keyword">
+<span class="hljs-variable">$pw</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"パスワードを入力してください:"</span>)<span class="hljs-keyword">
 
 If</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-variable">$options</span>.host:=<span class="hljs-string">"imap.gmail.com"</span>
 <span class="hljs-variable">$options</span>.user:=<span class="hljs-string">"test@gmail.com"</span>
@@ -1567,13 +1567,13 @@ If</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-variable">$op
 
 <span class="hljs-variable">$transporter</span>:=<span class="hljs-function">IMAP New transporter</span>(<span class="hljs-variable">$options</span>)
 
-<span class="hljs-comment">// rename mailbox</span>
+<span class="hljs-comment">// メールボックスの名称変更</span>
 <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$transporter</span>.<span class="hljs-function">renameBox</span>(<span class="hljs-string">"Invoices"</span>; <span class="hljs-string">"Bills"</span>)<span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$status</span>.success)
-<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"Mailbox renaming successful!"</span>)<span class="hljs-keyword">
+<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"メールボックスの名称が変更されました。"</span>)<span class="hljs-keyword">
    Else</span>
-<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"Error: "</span>+<span class="hljs-variable">$status</span>.statusText)<span class="hljs-keyword">
+<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"エラー: "</span>+<span class="hljs-variable">$status</span>.statusText)<span class="hljs-keyword">
  End if</span><span class="hljs-keyword">
 End if</span>
 </code></pre>
@@ -1590,7 +1590,7 @@ End if</span>
 <p></details></p>
 <p><strong>.port</strong> : Integer</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-26"></a><a href="#説明-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.port</code> プロパティは、  メール通信に使用されるポート番号を格納します。 By default, if the <em>port</em> property has not been set in the <em>server</em> object (used to create the transporter object with <code>SMTP New transporter</code>, <code>POP3 New transporter</code>, <code>IMAP New transporter</code>), the port used is:</p>
+<p><code>.port</code> プロパティは、  メール通信に使用されるポート番号を格納します。 <code>SMTP New transporter</code> や <code>POP3 New transporter</code>、 <code>IMAP New transporter</code> のコマンドで <code>transporter</code> オブジェクトを作成する際に使用される <em>server</em> オブジェクトにおいて、 このプロパティが指定されなかった場合に使用されるポートは次のとおりです:</p>
 <ul>
 <li><strong>SMTP</strong> - 587</li>
 <li><strong>POP3</strong> - 995</li>
@@ -1619,7 +1619,7 @@ End if</span>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-27"></a><a href="#説明-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <blockquote>
-<p>This function is based upon the specification for the <a href="https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol">IMAP protocol</a>.</p>
+<p>この関数は、<a href="https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol">IMAP プロトコル</a> の仕様に基づいています。</p>
 </blockquote>
 <p><code>.searchMails()</code> 関数は、 カレントメールボックスにおいて <em>searchCriteria</em> の検索条件に合致するメッセージを検索します。 <em>searchCriteria</em> 引数には、一つ以上の検索キーを格納します。</p>
 <p><em>searchCriteria</em> はテキスト型の引数で、一つ以上の検索キー (詳細は後述の <a href="#利用可能な検索キー">利用可能な検索キー</a> 参照) を格納し、検索する値を渡します (渡さない場合もあります)。 検索キーは単一または複数の項目からなります。 たとえば:</p>
@@ -1731,8 +1731,8 @@ End if</span>
 <blockquote>
 <p>カレントメールボックスを変更せずに、メールボックスから情報を取得するには、<a href="#getboxinfo"><code>.getBoxInfo()</code></a> を使用します。</p>
 </blockquote>
-<p>In the <code>name</code> parameter, pass the name of the mailbox to access. この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は <a href="#getdelimiter"><code>.getDelimiter()</code></a> 関数で調べることができます。</p>
-<p>The optional <code>state</code> parameter defines the type of access to the mailbox. 取りうる値は以下の通りです:</p>
+<p><code>name</code> には、アクセスするメールボックスの名前を渡します。 この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は <a href="#getdelimiter"><code>.getDelimiter()</code></a> 関数で調べることができます。</p>
+<p>任意の <code>state</code> 引数を渡すと、メールボックスへのアクセスタイプを定義できます。 取りうる値は以下の通りです:</p>
 <table>
 <thead>
 <tr><th>定数</th><th>結果</th><th>説明</th></tr>
@@ -1794,8 +1794,8 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-29"></a><a href="#説明-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.subscribe()</code> 関数は、 IMAPサーバーの購読メールボックスとして任意のメールボックスを追加・削除します。 As such, you can choose to narrow down a large list of available mailboxes by subscribing to those you usually want to see.</p>
-<p>In the <code>name</code> parameter, pass the name of the mailbox to add (subscribe) to your &quot;subscribed&quot; mailboxes.</p>
+<p><code>.subscribe()</code> 関数は、 IMAPサーバーの購読メールボックスとして任意のメールボックスを追加・削除します。 利用可能なメールボックスが大量にある場合、すべてを取得するのを避けるため、確認したいメールボックスだけを購読することができます。</p>
+<p><code>name</code> には、購読するメールボックスの名前を渡します。</p>
 <p><strong>返されるオブジェクト</strong></p>
 <p>この関数は、IMAP ステータスを表すオブジェクトを返します:</p>
 <table>
@@ -1812,13 +1812,13 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="例題-16"></a><a href="#例題-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p>To subscribe to the &quot;Atlas Corp” mailbox in the &quot;Bills&quot; hierarchy:</p>
+<p>&quot;Bills&quot; 階層下の &quot;Atlas Corp” メールボックスを購読します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$pw</span>; <span class="hljs-variable">$name </span>: text<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$options</span>; <span class="hljs-variable">$transporter</span>; <span class="hljs-variable">$status </span>: object
 
 <span class="hljs-variable">$options</span>:=New object
 
-<span class="hljs-variable">$pw</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Please enter your password:"</span>)<span class="hljs-keyword">
+<span class="hljs-variable">$pw</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"パスワードを入力してください:"</span>)<span class="hljs-keyword">
 
 If</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-variable">$options</span>.host:=<span class="hljs-string">"imap.gmail.com"</span>
 <span class="hljs-variable">$options</span>.user:=<span class="hljs-string">"test@gmail.com"</span>
@@ -1830,9 +1830,9 @@ If</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-variable">$op
 <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$transporter</span>.<span class="hljs-function">subscribe</span>(<span class="hljs-variable">$name</span>)<span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$status</span>.success)
-<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"Mailbox subscription successful!"</span>)<span class="hljs-keyword">
+<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"メールボックスの購読に成功しました。"</span>)<span class="hljs-keyword">
    Else</span>
-<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"Error: "</span>+<span class="hljs-variable">$status</span>.statusText)<span class="hljs-keyword">
+<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"エラー: "</span>+<span class="hljs-variable">$status</span>.statusText)<span class="hljs-keyword">
    End if</span><span class="hljs-keyword">
 End if</span>
 </code></pre>
@@ -1858,8 +1858,8 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-30"></a><a href="#説明-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.unsubscribe()</code> 関数は、 指定したメールボックスを購読メールボックスから削除します。 This allows you reduce the number of mailboxes you usually see.</p>
-<p>In the <code>name</code> parameter, pass the name of the mailbox to remove (unsubscribe) from your active mailboxes.</p>
+<p><code>.unsubscribe()</code> 関数は、 指定したメールボックスを購読メールボックスから削除します。 これにより、確認するメールボックスの数を減らせます。</p>
+<p><code>name</code> には、購読を解除するメールボックスの名前を渡します。</p>
 <p><strong>返されるオブジェクト</strong></p>
 <p>この関数は、IMAP ステータスを表すオブジェクトを返します:</p>
 <table>
@@ -1876,13 +1876,13 @@ End if</span>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="例題-17"></a><a href="#例題-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p>To unsubscribe from the &quot;Atlas Corp” mailbox in the &quot;Bills&quot; hierarchy:</p>
+<p>&quot;Bills&quot; 階層下の &quot;Atlas Corp” メールボックスの購読を解除します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$pw</span>; <span class="hljs-variable">$name </span>: text<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$options</span>; <span class="hljs-variable">$transporter</span>; <span class="hljs-variable">$status </span>: object
 
 <span class="hljs-variable">$options</span>:=New object
 
-<span class="hljs-variable">$pw</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Please enter your password:"</span>)<span class="hljs-keyword">
+<span class="hljs-variable">$pw</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"パスワードを入力してください:"</span>)<span class="hljs-keyword">
 
 If</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-variable">$options</span>.host:=<span class="hljs-string">"imap.gmail.com"</span>
 <span class="hljs-variable">$options</span>.user:=<span class="hljs-string">"test@gmail.com"</span>
@@ -1894,9 +1894,9 @@ If</span>(OK=<span class="hljs-number">1</span>) <span class="hljs-variable">$op
 <span class="hljs-variable">$status</span>:=<span class="hljs-variable">$transporter</span>.<span class="hljs-function">unsubscribe</span>(<span class="hljs-variable">$name</span>)<span class="hljs-keyword">
 
 If</span> (<span class="hljs-variable">$status</span>.success)
-<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"Mailbox unsubscription successful!"</span>)<span class="hljs-keyword">
+<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"メールボックスの購読を解除しました。"</span>)<span class="hljs-keyword">
    Else</span>
-<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"Error: "</span>+<span class="hljs-variable">$status</span>.statusText)<span class="hljs-keyword">
+<span class="hljs-function">   ALERT</span>(<span class="hljs-string">"エラー: "</span>+<span class="hljs-variable">$status</span>.statusText)<span class="hljs-keyword">
    End if</span><span class="hljs-keyword">
 End if</span>
 </code></pre>
