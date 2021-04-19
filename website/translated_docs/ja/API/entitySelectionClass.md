@@ -6,7 +6,7 @@ title: EntitySelection
 
 An entity selection is an object containing one or more reference(s) to [entities](ORDA/dsMapping.md#entity) belonging to the same [Dataclass](ORDA/dsMapping.md#dataclass). エンティティセレクションは、データクラスから 0個、1個、あるいは X個のエンティティを格納することができます (X はデータクラスに格納されているエンティティの総数です)。
 
-Entity selections can be created from existing selections using various functions of the [`DataClass` class](dataclassClass.md) such as [`.all()`](dataclassClass.md#all) or [`.query()`](dataclassClass.md#query), or functions of the `EntityClass` class itself, such as [`.and()`](#and) or [`orderBy()`](#orderby). You can also create blank entity selections using the [`dataClass.newSelection()`](dataclassClass.md#newselection) function or the [`Create new selection`](#create-new-selection) command.
+[`.all()`](dataclassClass.md#all)、[`.query()`](dataclassClass.md#query) などの [`DataClass` クラス](dataclassClass.md) の関数や、[`.and()`](#and)、[`orderBy()`](#orderby) など `EntitySelectionClass` クラス自身の関数を用いて、既存のセレクションからエンティティセレクションを作成することができます 。 また、[`dataClass.newSelection()`](dataclassClass.md#newselection) 関数または [`Create entity selection`](#create-new-selection) コマンドを使用して、空のエンティティセレクションを作成することもできます。
 
 ### 概要
 
@@ -64,7 +64,7 @@ Entity selections can be created from existing selections using various function
 
 If the current selection is sorted, an [ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) entity selection is created (the order of the current selection is kept). If the current selection is unsorted, an unordered entity selection is created.
 
-If the *dsTable* is not exposed in [`ds`](API/datastoreClass.md#ds), an error is returned. This command cannot be used with a Remote datastore.
+[`ds`](API/datastoreClass.md#ds) において *dsTable* が公開されていない場合には、エラーが返されます。 This command cannot be used with a Remote datastore.
 
 In the optional *settings* parameter, you can pass an object containing the following property:
 
@@ -111,7 +111,7 @@ Note that the corresponding entity is reloaded from the datastore.
 
 *   If *index* is out of range, an error is returned.
 *   If *index* corresponds to a dropped entity, a Null value is returned.
-> **Warning**: `EntitySelection[index]` is a non assignable expression, which means that it cannot be used as en editable entity reference with methods like [`.lock()`](entityClass.md#lock) or [`.save()`](entityClass.md#save). To work with the corresponding entity, you need to assign the returned expression to an assignable expression, such as a variable. 例:
+> **警告**: `EntitySelection[index]` は代入不可の式です。これは、[`.lock()`](entityClass.md#lock) や [`.save()`](entityClass.md#save) などの関数において、編集可能なエンティティ参照として使用することはできない、ということを意味します。 To work with the corresponding entity, you need to assign the returned expression to an assignable expression, such as a variable. 例:
 
 ```4d
  $sel:=ds.Employee.all() //create the entity selection
@@ -155,7 +155,7 @@ Note that the corresponding entity is reloaded from the datastore.
 
 #### 説明
 
-データクラス属性はすべてエンティティセレクションのプロパティとして利用可能で、 <!-- REF entitySelectionClass.attributeName.Summary -->エンティティセレクション内の属性値の "投影" を返します<!-- END REF -->。 Projected values can be a collection or a new entity selection, depending on the [kind](dataclassAttributeClass.md#kind) (`storage` or `relation`) of the attribute.
+データクラス属性はすべてエンティティセレクションのプロパティとして利用可能で、 <!-- REF entitySelectionClass.attributeName.Summary -->エンティティセレクション内の属性値の "投影" を返します<!-- END REF -->。 戻り値は、属性の種類 ([kind](dataclassAttributeClass.md#kind) が `storage` あるいは `relation`) によって、コレクションあるいは新しいエンティティセレクションのどちらかになります。
 
 *   If *attributeName* kind is `storage`: `.attributeName` returns a collection of values of the same type as *attributeName*.
 *   If *attributeName* kind is `relatedEntity`: `.attributeName` returns a new entity selection of related values of the same type as *attributeName*. Duplications are removed (an unordered entity selection is returned).
@@ -247,7 +247,7 @@ The resulting object is an entity selection of Employee with duplications remove
 `.add()` 関数は、 <!-- REF #entitySelectionClass.add().Summary -->*entity* に渡したエンティティをエンティティセレクションに追加し、編集されたエンティティセレクションを返します<!-- END REF -->。
 > This function modifies the original entity selection.
 
-**Warning:** The entity selection must be *alterable*, i.e. it has been created for example by [`.newSelection()`](dataclassClass.md#newselection) or `Create entity selection`, otherwise `.add()` will return an error. Shareable entity selections do not accept the addition of entities. For more information, please refer to the [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
+**警告:** エンティティセレクションは *追加可能* のものでなければなりません。つまり [`.newSelection()`](dataclassClass.md#newselection) あるいは `Create entity selection` などで作成されたものでなければならないということです。そうでない場合、`.add()` はエラーを返します。 Shareable entity selections do not accept the addition of entities. For more information, please refer to the [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
 
 
 *   If the entity selection is ordered, *entity* is added at the end of the selection. If a reference to the same entity already belongs to the entity selection, it is duplicated and a new reference is added.
@@ -728,8 +728,8 @@ With this syntax, `.extract()` populates the returned collection with the *attri
 
 By default, entities for which *attributePath* is *null* or undefined are ignored in the resulting collection. You can pass the `ck keep null` constant in the *option* parameter to include these values as **null** elements in the returned collection.
 
-*   Dataclass attributes with [.kind](dataclassAttributeClass.md#kind) = "relatedEntity" are extracted as a collection of entities (duplications are kept).
-*   Dataclass attributes with [.kind](dataclassAttributeClass.md#kind) = "relatedEntities" are extracted as a collection of entity selections.
+*   [.kind](dataclassAttributeClass.md#kind) = "relatedEntity" であるデータクラス属性は、エンティティのコレクションとして取得されます (重複したものも保持されます)。
+*   [.kind](dataclassAttributeClass.md#kind) = "relatedEntities" であるデータクラス属性は、エンティティセレクションのコレクションとして取得されます。
 
 
 **.extract ( attributePath ; targetPath { ; ...attributePathN ; ... targetPathN}) : Collection**
@@ -738,8 +738,8 @@ With this syntax, `.extract()` populates the returned collection with the *attri
 
 If several *attributePath* are given, a *targetPath* must be given for each. Only valid pairs \[*attributePath*, *targetPath*] are extracted.
 
-*   Dataclass attributes with [.kind](dataclassAttributeClass.md#kind) = "relatedEntity" are extracted as an entity.
-*   Dataclass attributes with [.kind](dataclassAttributeClass.md#kind) = "relatedEntities" are extracted as an entity selection.
+*   [.kind](dataclassAttributeClass.md#kind) = "relatedEntity" であるデータクラス属性は、エンティティとして取得されます。
+*   [.kind](dataclassAttributeClass.md#kind) = "relatedEntities" であるデータクラス属性は、エンティティセレクションとして取得されます。
 
 > Entities of a collection of entities accessed by \[ ] are not reloaded from the database.
 
@@ -1097,7 +1097,7 @@ The result of this function is similar to:
 
 `.max()` 関数は、 <!-- REF #entitySelectionClass.max().Summary -->*attributePath* に指定したエンティティセレクションの属性値のうち最高の (あるいは最大の) 値を返します<!-- END REF -->。 It actually returns the value of the last entity of the entity selection as it would be sorted in ascending order using the [`.orderBy()`](#orderby) function.
 
-If you pass in *attributePath* a path to an object attribute containing different types of values, the `.max()` function will return the maximum value within the first scalar type in the default 4D type list order (see [`.sort()`](collectionClass.md#sort) description).
+*attributePath* に、異なる型の値を格納しているオブジェクト属性を渡した場合、`.max()` メソッドは型のリスト順の中で最初のスカラー型の値の中の最大値を返します([`.sort()`](collectionClass.md#sort) の詳細を参照してください)。
 
 `.max()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
 
@@ -1149,7 +1149,7 @@ We want to find the highest salary among all the female employees:
 
 `.min()` 関数は、 <!-- REF #entitySelectionClass.min().Summary --> *attributePath* に指定したエンティティセレクションの属性値のうち最低の (あるいは最小の) 値を返します<!-- END REF -->。  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the [`.orderBy()`](#orderby) function (excluding **null** values).
 
-If you pass in *attributePath* a path to an object attribute containing different types of values, the `.min()` function will return the minimum value within the first scalar value type in the type list order (see [`.sort()`](collectionClass.md#sort) description).
+*attributePath* に、異なる型の値を格納しているオブジェクト属性を渡した場合、`.min()` メソッドは型のリスト順の中で最初のスカラー型の値の中の最小値を返します([`.sort()`](collectionClass.md#sort) の詳細を参照してください)。
 
 `.min()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
 
@@ -1322,7 +1322,7 @@ If the original entity selection and the parameter are not related to the same d
 
 #### 説明
 
-The `.orderBy()` function <!-- REF #entitySelectionClass.orderBy().Summary -->returns a new ordered entity selection containing all entities of the entity selection in the order specified by *pathString* or *pathObjects* criteria<!-- END REF -->.
+`.orderBy()` 関数は、 <!-- REF #entitySelectionClass.orderBy().Summary -->エンティティセレクションの全エンティティが *pathString* または *pathObjects* が指定する順番に並べ替えられた、新規の順列ありのエンティティセレクションを返します<!-- END REF -->。
 > * この関数は、エンティティセレクションを変更しません。
 *   詳細については、[エンティティセレクションの順列あり/順列なし](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) を参照ください。
 
@@ -1528,7 +1528,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 
 エンティティが見つからない場合、空のエンティティセレクションが返されます。
 
-For detailed information on how to build a query using *queryString*, *value*, and *querySettings* parameters, please refer to the DataClass [`.query()`](dataclassClass.md#query) function description.
+*queryString* および *value* や *querySettings* パラメーターを使ってクエリをビルドする方法の詳細については、DataClass[`.query()`](dataclassClass.md#query) 関数を参照ください。
 > By default if you omit the **order by** statement in the *queryString*, the returned entity selection is [not ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). Note however that, in Client/Server mode, it behaves like an ordered entity selection (entities are added at the end of the selection).
 
 #### 例題 1
@@ -1571,7 +1571,7 @@ For detailed information on how to build a query using *queryString*, *value*, a
 
 `.queryPath` プロパティは、 <!-- REF #entitySelectionClass.queryPath.Summary -->実際に 4Dで実行されたクエリの詳細な情報<!-- END REF -->を格納します。 This property is available for `EntitySelection` objects generated through queries if the `"queryPath":true` property was passed in the *querySettings* parameter of the [`.query()`](#query) function.
 
-For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](dataclassClass.html#query) page. 
+詳細については、DataClass[`.query()`](dataclassClass.html#query) の **querySettings** の説明を参照ください。 
 
 <!-- END REF -->
 
@@ -1595,7 +1595,7 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 
 `.queryPlan` プロパティは、 <!-- REF #entitySelectionClass.queryPlan.Summary --> 実行前のクエリの詳細な情報 (クエリプラン) を格納します<!-- END REF -->。 This property is available for `EntitySelection` objects generated through queries if the `"queryPlan":true` property was passed in the *querySettings* parameter of the [`.query()`](#query) function.
 
-For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](dataclassClass.html#query) page. 
+詳細については、DataClass[`.query()`](dataclassClass.html#query) の **querySettings** の説明を参照ください。 
 
 <!-- END REF -->
 
@@ -1818,7 +1818,7 @@ $sum:=$sel.sum("salary")
 
 `.toCollection()` 関数は、エンティティセレクションの各エンティティの属性名と値に対応する <!-- REF #entitySelectionClass.toCollection().Summary -->プロパティと値のセットを持つオブジェクト要素を格納するコレクションを作成し、返します <!-- END REF -->。
 
-If no filter parameter is passed or the first parameter contains an empty string or "*", all the attributes are extracted. Attributes with [kind](dataclassAttributeClass.md#kind) property as "relatedEntity" are extracted with the simple form: an object with property \_\_KEY (primary key). Attributes with kind property as "relatedEntities" are not extracted.
+If no filter parameter is passed or the first parameter contains an empty string or "*", all the attributes are extracted. "[kind](dataclassAttributeClass.md#kind)" プロパティが "relatedEntity" の属性は単純な形式で取得されます: \_\_KEY プロパティ (プライマリーキー) を持ったオブジェクト。 Attributes with kind property as "relatedEntities" are not extracted.
 
 Or, you can designate the entity attributes to extract using a filter parameter. You can use one of these two filters:
 
