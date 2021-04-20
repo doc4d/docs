@@ -721,8 +721,8 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 `.getStamp()` 関数は、 <!-- REF #entityClass.getStamp().Summary --> エンティティのスタンプの値を返します<!-- END REF -->。
 
-The internal stamp is automatically incremented by 4D each time the entity is saved. It manages concurrent user access and modifications to the same entities (see [**Entity locking**](ORDA/entities.md#entity-locking)).
-> For a new entity (never saved), the function returns 0. To know if an entity has just been created, it is recommended to use [.isNew()](#isnew).
+内部スタンプは、エンティティが保存されるたびに 4D によって自動的にインクリメントされます。 これは同じエンティティに対する複数のユーザーの同時アクセス・編集を管理します。この機構の詳細については、[**エンティティロッキング**](ORDA/entities.md#エンティティロッキング) を参照ください。
+> (一度も保存されていない) 新規エンティティに対しては、このメソッドは 0 を返します。 しかしながら、エンティティがまだ作成されたばかりかどうかを調べるには、[isNew()](#isnew) の使用が推奨されます。
 
 
 #### 例題
@@ -771,12 +771,12 @@ The internal stamp is automatically incremented by 4D each time the entity is sa
 
 `.indexOf()` 関数は、 <!-- REF #entityClass.indexOf().Summary -->エンティティセレクション内におけるエンティティの位置を返します<!-- END REF -->。
 
-By default if the *entitySelection* parameter is omitted, the function returns the entity's position within its own entity selection. Otherwise, it returns the position of the entity within the specified *entitySelection*.
+*entitySelection* 引数が渡されなかった場合はデフォルトで、所属エンティティセレクション内でのエンティティの位置が返されます。 *entitySelection* 引数を渡した場合は、指定されたエンティティセレクション内でのエンティティの位置を返します。
 
-The resulting value is included between 0 and the length of the entity selection -1.
+戻り値は、0 と、エンティティセレクションの length より 1 を引いた値の範囲内の数値です。
 
-*   If the entity does not have an entity selection or does not belong to *entitySelection*, the function returns -1.
-*   If *entitySelection* is Null or does not belong to the same dataclass as the entity, an error is raised.
+*   エンティティがエンティティセレクションを持たない場合、あるいは *entitySelection* 引数で指定したエンティティセレクションに含まれていない場合には、-1 が返されます。
+*   *entitySelection* 引数で指定したエンティティセレククションが Null である、あるいはエンティティと同じデータクラスのものでない場合には、エラーが生成されます。
 
 #### 例題
 
@@ -784,11 +784,11 @@ The resulting value is included between 0 and the length of the entity selection
 ```4d
  var $employees : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
- $employees:=ds.Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
- $employee:=$employees[1] //This entity belongs to an entity selection
- ALERT("The index of the entity in its own entity selection is "+String($employee.indexOf())) //1
+ $employees:=ds.Employee.query("lastName = :1";"H@") // このエンティティセレクションには 3件のエンティティが格納されています
+ $employee:=$employees[1] // このエンティティはエンティティセレクションに所属しています
+ ALERT("The index of the entity in its own entity selection is "+String($employee.indexOf())) // 1
 
- $employee:=ds.Employee.get(725) //This entity does not belong to an entity selection
+ $employee:=ds.Employee.get(725) // エンティティセレクションに所属していないエンティティです
  ALERT("The index of the entity is "+String($employee.indexOf())) // -1
 ```
 
@@ -901,22 +901,22 @@ The resulting value is included between 0 and the length of the entity selection
 
 #### 説明
 
-`.lock()` 関数は、 <!-- REF #entityClass.lock().Summary -->対象エンティティが参照するレコードにペシミスティック・ロックをかけます<!-- END REF -->。 The [lock is set](ORDA/entities.md#entity-locking) for a record and all the references of the entity in the current process.
+`.lock()` 関数は、 <!-- REF #entityClass.lock().Summary -->対象エンティティが参照するレコードにペシミスティック・ロックをかけます<!-- END REF -->。 [ロック](ORDA/entities.md#エンティティロッキング)はレコードと、カレントプロセス内の当該エンティティの参照すべてに対してかけられます。
 
-Other processes will see this record as locked (the `result.success` property will contain False if they try to lock the same entity using this function). Only functions executed in the "locking" session are allowed to edit and save the attributes of the entity. The entity can be loaded as read-only by other sessions, but they will not be able to enter and save values.
+他のプロセスからはこのレコードがロックされて見えます (この関数を使って同エンティティをロックしようとした場合、`result.success` プロパティには false が返されます)。 ロックをおこなったセッション内で実行される関数のみが、当該エンティティの属性を編集・保存できます。 他のセッションは同エンティティを読み取り専用にロードできますが、値の入力・保存はできません。
 
-A locked record is unlocked:
+レコードのロックは、以下の場合に解除されます:
 
-*   when the [`unlock()`](#unlock) function is called on a matching entity in the same process
-*   automatically, when it is no longer referenced by any entities in memory. For example, if the lock is put only on one local reference of an entity, the entity is unlocked when the function ends. As long as there are references to the entity in memory, the record remains locked.
+*   同プロセス内で合致するエンティティに対して [`.unlock()`](#unlock) 関数が呼び出された場合
+*   メモリ内のどのエンティティからも参照されなくなった場合、自動的にロックが解除されます。 たとえば、エンティティのローカル参照に対してのみロックがかかっていた場合、関数の実行が終了すればロックは解除されます。 メモリ内にエンティティへの参照がある限り、レコードはロックされたままです。
 
 *mode* 引数を渡さなかった場合のデフォルトでは、同エンティティが他のプロセスまたはユーザーによって変更されていた場合 (つまり、スタンプが変更されていた場合) にエラーを返します (以下参照)。
 
-Otherwise, you can pass the `dk reload if stamp changed` option in the *mode* parameter: in this case, no error is returned and the entity is reloaded when the stamp has changed (if the entity still exists and the primary key is still the same).
+*mode* に `dk reload if stamp changed` オプションを渡すと、スタンプが変更されていてもエラーは返されず、エンティティは再読み込みされます (エンティティが引き続き存在し、プライマリーキーも変わらない場合)。
 
 **戻り値**
 
-The object returned by `.lock( )` contains the following properties:
+`.lock( )` によって返されるオブジェクトには以下のプロパティが格納されます:
 
 | プロパティ            |                     | タイプ           | 説明                                                                                                                  |
 | ---------------- | ------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
