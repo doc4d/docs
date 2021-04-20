@@ -1205,8 +1205,8 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 | 定数                                        | 結果 | 説明                                                                                                                                                                                                       |
 | ----------------------------------------- | -- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status automerge failed`              | 6  | (`dk auto merge` オプションが使用されたときのみ) エンティティを保存するときに自動マージオプションが失敗しました。<p><p>**Associated statusText**: "Auto merge failed"                                   |
-| `dk status entity does not exist anymore` | 5  | エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<br><li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 entity.drop( ) を使用するとき、このエラーは dk force drop if stamp changed オプションを使用した場合に返されることがあります。 entity.lock( ) を使用するとき、このエラーは dk reload drop if stamp changed オプションを使用した場合に返されることがあります。</li><br>**Associated statusText**: "Entity doesnot exist anymore"                           |
+| `dk status automerge failed`              | 6  | (`dk auto merge` オプションが使用されたときのみ) エンティティを保存するときに自動マージオプションが失敗しました。<p><p>**割り当てられた statusText**: "自動マージ失敗"                                                |
+| `dk status entity does not exist anymore` | 5  | エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<br><li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 entity.drop( ) を使用するとき、このエラーは dk force drop if stamp changed オプションを使用した場合に返されることがあります。 entity.lock( ) を使用するとき、このエラーは dk reload drop if stamp changed オプションを使用した場合に返されることがあります。</li><br>**割り当てられた statusText**: "エンティティはもう存在しません"                                           |
 | `dk status locked`                        | 3  | エンティティはペシミスティック・ロックでロックされています。<p><p>**割り当てられた statusText**: "既にロックされています"                                                                                |
 | `dk status serious error`                 | 4  | 深刻なエラーとは、低レベルのデータベースエラー (例: 重複キー)、ハードウェアエラーなどです。<p><p>**割り当てられた statusText**: "その他のエラー"                                                                  |
 | `dk status stamp has changed`             | 2  | エンティティの内部的なスタンプ値がデータ内に保存されているエンティティのものと合致しません (オプティミスティック・ロック)。<br><li>entity.save( ) の場合: dk auto merge オプションが使用されていない場合に限りエラー</li><li>entity.drop( ) の場合: dk force drop if stamp changed オプションが使用されていない場合に限りエラー</li><li>entity.lock( ) の場合: dk reload if stamp changed オプションが使用されていない場合に限りエラー</li><br>**割り当てられた statusText**: "スタンプが変更されています" |
@@ -1214,7 +1214,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 #### 例題 1
 
-Creating a new entity:
+新しいエンティティを作成します:
 
 ```4d
  var $status : Object
@@ -1224,13 +1224,13 @@ Creating a new entity:
  $employee.lastName:="Smith"
  $status:=$employee.save()
  If($status.success)
-    ALERT("Employee created")
+    ALERT("Employee が作成されました")
  End if
 ```
 
 #### 例題 2
 
-Updating an entity without `dk auto merge` option:
+`dk auto merge` オプションを使わずにエンティティを更新します:
 
 ```4d
  var $status : Object
@@ -1242,7 +1242,7 @@ Updating an entity without `dk auto merge` option:
  $status:=$employee.save()
  Case of
     :($status.success)
-       ALERT("Employee updated")
+       ALERT("Employee が更新されました")
     :($status.status=dk status stamp has changed)
        ALERT($status.statusText)
  End case
@@ -1250,7 +1250,7 @@ Updating an entity without `dk auto merge` option:
 
 #### 例題 3
 
-Updating an entity with `dk auto merge` option:
+`dk auto merge` オプションを使ってエンティティを更新します:
 
 ```4d
  var $status : Object
@@ -1264,7 +1264,7 @@ Updating an entity with `dk auto merge` option:
  $status:=$employee.save(dk auto merge)
  Case of
     :($status.success)
-       ALERT("Employee updated")
+       ALERT("Employee を更新しました")
     :($status.status=dk status automerge failed)
        ALERT($status.statusText)
  End case
@@ -1298,48 +1298,48 @@ Updating an entity with `dk auto merge` option:
 
 #### 説明
 
-`.toObject()` 関数は、 <!-- REF #entityClass.toObject().Summary -->エンティティからビルトされたオブジェクトを返します<!-- END REF -->。 Property names in the object match attribute names of the entity.
+`.toObject()` 関数は、 <!-- REF #entityClass.toObject().Summary -->エンティティからビルトされたオブジェクトを返します<!-- END REF -->。 オブジェクト内部のプロパティ名はエンティティの属性名と合致します。
 
-If no filter is specified, or if the *filterString* parameter contains an empty string or "*", the returned object will contain:
+*filterString* 引数が空の文字列、あるいは "*" の場合、以下のいずれかが返されます:
 
-*   all storage entity attributes
+*   すべてのストレージエンティティ属性
 *   リレートエンティティ型の属性 ([kind](dataclassAttributeClass.md#kind) が `relatedEntity`) : リレートエンティティと同じ名前 (N対1リレーション名) のプロパティ。 属性は単純な形式で取得されます。
 *   リレートエンティティズ型の属性 ([kind](dataclassAttributeClass.md#kind) が `relatedEntities`): 属性は返されません。
 
 
-In the first parameter, you pass the entity attribute(s) to extract. 以下のものを渡すことができます:
+最初の引数として、取得するエンティティ属性を渡します。 以下のものを渡すことができます:
 
-*   *filterString*: a string with property paths separated with commas: "propertyPath1, propertyPath2, ...", or
-*   *filterCol*: a collection of strings: \["propertyPath1","propertyPath2";...]
+*   *filterString*: プロパティパスをカンマで区切った文字列: "propertyPath1, propertyPath2, ..." または
+*   *filterCol*: 文字列のコレクション: \["propertyPath1","propertyPath2";...]
 
 filter 引数がリレートエンティティ型の属性を指定する場合:
 
-*   propertyPath = "relatedEntity" -> it is extracted with simple form: an object with property \_\_KEY (primary key).
-*   propertyPath = "relatedEntity.*" -> all the properties are extracted
-*   propertyPath = "relatedEntity.propertyName1; relatedEntity.propertyName2; ..." -> only those properties are extracted
+*   propertyPath = "relatedEntity" -> 単純な形式で取得されます: \_\_KEY プロパティ(プライマリーキー) を持つオブジェクト
+*   propertyPath = "relatedEntity.*" -> 全プロパティが取得されます
+*   propertyPath = "relatedEntity.propertyName1; relatedEntity.propertyName2; ..." -> 指定されたプロパティのみが取得されます
 
 filter 引数がリレートエンティティズ型の属性を指定する場合:
 
-*   propertyPath = "relatedEntities.*" -> all the properties are extracted
-*   propertyPath = "relatedEntities.propertyName1; relatedEntities.propertyName2; ..." -> only those properties are extracted
+*   propertyPath = "relatedEntities.*" -> 全プロパティが取得されます
+*   propertyPath = "relatedEntities.propertyName1; relatedEntities.propertyName2; ..." -> 指定されたプロパティのみが取得されます
 
-In the *options* parameter, you can pass the `dk with primary key` and/or`dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
+*options* に `dk with primary key` または `dk with stamp` セレクターを渡すことで、エンティティのプライマリーキー/スタンプを、取得するオブジェクトに追加するかどうかを指定できます。
 
 
 #### 例題 1
 
-The following structure will be used throughout all examples of this section:
+このセクションの例題では、以下のストラクチャーを使います:
 
 ![](assets/en/API/dataclassAttribute4.png)
 
 
-Without filter parameter:
+filter 引数を渡さない場合:
 
 ```4d
 employeeObject:=employeeSelected.toObject()
 ```
 
-Returns:
+戻り値:
 
 ```4d
 {
@@ -1353,7 +1353,7 @@ Returns:
     "employerID": 20,
     "photo": "[object Picture]",
     "extra": null,
-    "employer": { // relatedEntity extracted with simple form
+    "employer": { // 単純な形式で取得されたリレートエンティティ
         "__KEY": 20
     },
     "manager": {
@@ -1366,13 +1366,13 @@ Returns:
 
 #### 例題 2
 
-Extracting the primary key and the stamp:
+プライマリーキーとスタンプを取得します:
 
 ```4d
 employeeObject:=employeeSelected.toObject("";dk with primary key+dk with stamp)
 ```
 
-Returns:
+戻り値:
 
 ```4d
 {
@@ -1399,7 +1399,7 @@ Returns:
 
 #### 例題 3
 
-Expanding all the properties of `relatedEntities`:
+リレートエンティティズのプロパティをすべて展開します:
 
 ```4d
 employeeObject:=employeeSelected.toObject("directReports.*")
@@ -1468,13 +1468,13 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 
 #### 例題 4
 
-Extracting some properties of `relatedEntities`:
+リレートエンティティズの一部のプロパティを取得します:
 
 ```4d
  employeeObject:=employeeSelected.toObject("firstName, directReports.lastName")
 ```
 
-Returns:
+戻り値:
 
 ```4d
 {
@@ -1495,14 +1495,14 @@ Returns:
 
 #### 例題 5
 
-Extracting a `relatedEntity` with simple form:
+リレートエンティティを単純な形式で取得します:
 
 ```4d
  $coll:=New collection("firstName";"employer")
  employeeObject:=employeeSelected.toObject($coll)
 ```
 
-Returns:
+戻り値:
 
 ```4d
 {
@@ -1515,13 +1515,13 @@ Returns:
 
 #### 例題 6
 
-Extracting all the properties of a `relatedEntity`:
+リレートエンティティの全プロパティを取得します:
 
 ```4d
  employeeObject:=employeeSelected.toObject("employer.*")
 ```
 
-Returns:
+戻り値:
 
 ```4d
 {
@@ -1537,7 +1537,7 @@ Returns:
 
 #### 例題 7
 
-Extracting some properties of a `relatedEntity`:
+リレートエンティティの一部のプロパティを取得します:
 
 ```4d
  $col:=New collection
@@ -1546,7 +1546,7 @@ Extracting some properties of a `relatedEntity`:
  employeeObject:=employeeSelected.toObject($col)
 ```
 
-Returns:
+戻り値:
 
 ```4d
 {
@@ -1584,22 +1584,22 @@ Returns:
 
 `.touched()` 関数は、 <!-- REF #entityClass.touched().Summary -->エンティティがメモリに読み込まれてから、あるいは保存されてから、エンティティ属性が変更されたかどうかをテストします<!-- END REF -->。
 
-If an attribute has been modified or calculated, the function returns True, else it returns False. You can use this function to determine if you need to save the entity.
+属性が更新あるいは計算されていた場合、関数は true を返し、それ以外は false を返します。 この関数を使用することで、エンティティを保存する必要があるかどうかを確認することができます。
 
-この関数は、([`.new( )`](dataclassClass.md#new) で作成された) 新規エンティティに対しては常に false を返します。 Note however that if you use a function which calculates an attribute of the entity, the `.touched()` function will then return True. For example, if you call [`.getKey()`](#getkey) to calculate the primary key, `.touched()` returns True.
+この関数は、([`.new( )`](dataclassClass.md#new) で作成された) 新規エンティティに対しては常に false を返します。 ただし、エンティティの属性を計算する関数を使用した場合には、`.touched()` 関数は true を返します。 たとえば、プライマリーキーを計算するために [`.getKey()`](#getkey) を呼び出した場合、`.touched()` メソッドは true を返します。
 
 #### 例題
 
-In this example, we check to see if it is necessary to save the entity:
+エンティティを保存する必要があるかどうかをチェックします:
 
 ```4d
  var $emp : cs.EmployeeEntity
  $emp:=ds.Employee.get(672)
- $emp.firstName:=$emp.firstName //Even if updated with the same value, the attribute is marked as touched
+ $emp.firstName:=$emp.firstName // 同じ値で更新されても、属性は変更されたと判定されます
 
- If($emp.touched()) //if at least one of the attributes has been changed
+ If($emp.touched()) // 一つ以上の属性が変更されていた場合
     $emp.save()
- End if // otherwise, no need to save the entity
+ End if // そうでない場合はエンティティを保存する必要はありません
 ```
 
 <!-- END REF -->
@@ -1630,9 +1630,9 @@ In this example, we check to see if it is necessary to save the entity:
 
 この関数は、種類 ([kind](dataclassAttributeClass.md#kind)) が `storage` あるいは `relatedEntity` である属性に適用されます。
 
-In the case of a related entity having been touched (i.e., the foreign key), the name of the related entity and its primary key's name are returned.
+リレート先のエンティティそのものが更新されていた場合 (外部キーの変更)、リレートエンティティの名称とそのプライマリーキー名が返されます。
 
-If no entity attribute has been touched, the method returns an empty collection.
+エンティティ属性がいずれも更新されていなかった場合、関数は空のコレクションを返します。
 
 #### 例題 1
 
@@ -1643,7 +1643,7 @@ If no entity attribute has been touched, the method returns an empty collection.
 
  $touchedAttributes:=New collection
  $emp:=ds.Employee.get(725)
- $emp.firstName:=$emp.firstName //Even if updated with the same value, the attribute is marked as touched
+ $emp.firstName:=$emp.firstName // 同じで値で更新されていても、属性は変更されたと判定されます
  $emp.lastName:="Martin"
  $touchedAttributes:=$emp.touchedAttributes()
   //$touchedAttributes: ["firstName","lastName"]
@@ -1672,11 +1672,11 @@ If no entity attribute has been touched, the method returns an empty collection.
   // $touchedAttributes コレクション: ["firstName","lastName","employer","employerID"]
 ```
 
-In this case:
+この場合において:
 
-*   firstName and lastName have a `storage` kind
-*   employer has a `relatedEntity` kind
-*   employerID is the foreign key of the employer related entity
+*   firstName および lastName はストレージ (`storage`) 型です
+*   employer はリレートエンティティ (`relatedEntity`) 型です
+*   employerID は、employer リレートエンティティの外部キーです
 
 <!-- END REF -->
 
@@ -1704,10 +1704,10 @@ In this case:
 
 `.unlock()` 関数は、データストアおよび、データクラスに対応するテーブル内の、 <!-- REF #entityClass.unlock().Summary -->対象エンティティが参照するレコードのペシミスティック・ロックを解除します<!-- END REF --> 。
 
-> For more information, please refer to [Entity locking](ORDA/entities.md#entity-locking) section.
+> 詳細については [エンティティロッキング](ORDA/entities.md#エンティティロッキング) を参照ください。
 
-A record is automatically unlocked when it is no longer referenced by any entities in the locking process (for example: if the lock is put only on one local reference of an entity, the entity and thus the record is unlocked when the process ends).
-> When a record is locked, it must be unlocked from the locking process and on the entity reference which put the lock. たとえば:
+ロックしているプロセス内のどのエンティティからもレコードが参照されなくなった場合、自動的にレコードロックが解除されます (たとえば、エンティティのローカル参照に対してのみロックがかかっていた場合、プロセスが終了すればエンティティおよびレコードのロックは解除されます)。
+> レコードがロックされている場合、ロックしているプロセスから、ロックされたエンティティ参照に対してロックを解除する必要があります: たとえば:
 
 ```4d
  $e1:=ds.Emp.all()[0]
@@ -1719,11 +1719,11 @@ A record is automatically unlocked when it is no longer referenced by any entiti
 
 **戻り値**
 
-The object returned by `.unlock()` contains the following property:
+`.unlock()` によって返されるオブジェクトには以下のプロパティが格納されます:
 
-| プロパティ   | タイプ | 説明                                                                                                                                                                                                 |
-| ------- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success | ブール | True if the unlock action is successful, False otherwise. If the unlock is done on a dropped entity, on a non locked record, or on a record locked by another process or entity, success is False. |
+| プロパティ   | タイプ | 説明                                                                                                                                     |
+| ------- | --- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| success | ブール | ロック解除が成功した場合には true、それ以外は false ドロップされたエンティティや、ロックされてないレコード、あるいは他のプロセスや他のエンティティによってロックされたレコードに対してロック解除を実行した場合、success には false が返されます。 |
 
 #### 例題
 
