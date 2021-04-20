@@ -267,7 +267,7 @@ $result:=$sel[0].lock() //動作しません
  $employee:=ds.Employee.new()
  $employee.lastName:="Smith"
  $employee.save()
-$employees:=$employees.copy() // 追加可能なエンティティセレクションを取得します
+ $employees:=$employees.copy() // 追加可能なエンティティセレクションを取得します
  $employees.add($employee) // $employee エンティティが $employees エンティティセレクションへと追加されます
 ```
 
@@ -316,13 +316,13 @@ $employees:=$employees.copy() // 追加可能なエンティティセレクシ�
 
 `.and()` 関数は、 <!-- REF #EntitySelectionClass.and().Summary -->エンティティセレクションと *entity* あるいは *entitySelection* 引数をAND論理演算子を使用して結合します<!-- END REF -->。戻り値は、エンティティセレクションと引数の両方から参照されているエンティティのみを格納した、順列なしの新規エンティティセレクションです。
 
-*   If you pass *entity* as parameter, you combine this entity with the entity selection. If the entity belongs to the entity selection, a new entity selection containing only the entity is returned. Otherwise, an empty entity selection is returned.
-*   If you pass *entitySelection* as parameter, you combine both entity selections. A new entity selection that contains only the entities that are referenced in both selections is returned. If there is no intersecting entity, an empty entity selection is returned.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+*   *entity* 引数を渡した場合、引数のエンティティをエンティティセレクションと結合させることになります。 エンティティがエンティティセレクションに属している場合、そのエンティティのみを格納する新しいエンティティセレクションが返されます。 そうでない場合、空のエンティティセレクションが返されます。
+*   *entitySelection* 引数を渡した場合、二つのエンティティセレクションを結合させることになります。 両方のセレクションから参照されているエンティティのみを格納する新しいエンティティセレクションが返されます。 重複するエンティティがなかった場合、空のエンティティセレクションが返されます。
+> [順列ありと順列なしのエンティティセレクション](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) を比較することができます。 返されるセレクションは常に順列なしのものになります。
 
-If the original entity selection or the *entitySelection* parameter is empty, or if the *entity* is Null, an empty entity selection is returned.
+元のエンティティセレクションあるいは *entitySelection* 引数が空であった場合、あるいは*entity* 引数が Null であった場合、空のエンティティセレクションが返されます。
 
-If the original entity selection and the parameter are not related to the same dataclass, an error is raised.
+元のエンティティセレクションおよび引数が同じデータクラスのものでない場合、エラーが返されます。
 
 
 #### 例題 1
@@ -332,19 +332,19 @@ If the original entity selection and the parameter are not related to the same d
  var $employees; $result : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
  $employees:=ds.Employee.query("lastName = :1";"H@")   
-  //The $employees entity selection contains the entity
-  //with primary key 710 and other entities
-  //for ex. "Colin Hetrick" / "Grady Harness" / "Sherlock Holmes" (primary key 710)
- $employee:=ds.Employee.get(710) // Returns "Sherlock Holmes"
+  // $employees エンティティセレクションには、主キー710のエンティティと
+  // その他のエンティティが含まれます
+  // 例: "Colin Hetrick" / "Grady Harness" / "Sherlock Holmes" (主キー710)
+ $employee:=ds.Employee.get(710) // "Sherlock Holmes" を返します
 
- $result:=$employees.and($employee) //$result is an entity selection containing   
-  //only the entity with primary key 710 ("Sherlock Holmes")
+ $result:=$employees.and($employee) // $result は主キー710 ("Sherlock Holmes") の
+  // エンティティのみを格納するエンティティセレクション。
 ```
 
 
 #### 例題 2
 
-We want to have a selection of employees named "Jones" who live in New York:
+"Jones" という名前で、New York に住んでいる従業員のセレクションを取得します:
 
 ```4d
  var $sel1; $sel2; $sel3 : cs.EmployeeSelection
@@ -381,22 +381,22 @@ We want to have a selection of employees named "Jones" who live in New York:
 
 `.average()` 関数は、 <!-- REF #EntitySelectionClass.average().Summary -->*attributePath* に指定した、エンティティセレクション内の null でない値の算術平均 (相加平均) を返します<!-- END REF -->。
 
-Pass in the *attributePath* parameter the attribute path to evaluate.
+*attributePath* 引数として、評価する属性パスを渡します。
 
-Only numerical values are taken into account for the calculation. Note however that, if the *attributePath* of the entity selection contains mixed value types, `.average()` takes all scalar elements into account to calculate the average value.
-> Date values are converted to numerical values (seconds) and used to calculate the average.
+計算の対象となるのは数値のみです。 ただし、エンティティセレクションの *attributePath* 引数で指定したパスに異なる型の値が混在している場合、`.average()` はすべてのスカラー要素を対象として平均値を算出します。
+> 日付値は数値 (秒数) に変換され、平均を計算するのに使用されます。
 
-`.average()` returns **undefined** if the entity selection is empty or *attributePath* does not contain numerical values.
+エンティティセレクションが空の場合、または *attributePath* 引数に数値型の値が含まれていない場合には、`.average()` は **undefined** を返します。
 
-An error is returned if:
+以下の場合には、エラーが返されます:
 
 *   *attributePath* is a related attribute,
-*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
+*   *attributePath* がエンティティセレクションデータクラス内に存在しない属性を指定している場合。
 
 
 #### 例題
 
-We want to obtain a list of employees whose salary is higher than the average salary:
+給与が平均より高い従業員の一覧を取得します:
 
 ```4d
  var $averageSalary : Real
@@ -433,9 +433,9 @@ We want to obtain a list of employees whose salary is higher than the average sa
 
 `.contains()` 関数は、 <!-- REF #EntitySelectionClass.contains().Summary -->エンティティ参照がエンティティセレクションに属している場合には true を返します<!-- END REF -->。そうでない場合には false を返します。
 
-In *entity*, specify the entity to search for in the entity selection. If entity is Null, the function will return false.
+*entity* 引数として、エンティティセレクション内で検索するエンティティを渡します。 エンティティが Null の場合、関数は false を返します。
 
-If *entity* and the entity selection do not belong to the same dataclass, an error is raised.
+*entity* 引数とエンティティセレクションが同じデータクラスのものでない場合、エラーが生成されます。
 
 #### 例題
 
@@ -482,7 +482,7 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
 `.count()` 関数は、 <!-- REF #EntitySelectionClass.count().Summary -->エンティティセレクション内で *attributePath* に指定したパスの値が null でないエンティティの数を返します<!-- END REF -->。
 > Only scalar values are taken into account. Object or collection type values are considered as null values.
 
-An error is returned if:
+以下の場合には、エラーが返されます:
 
 *   *attributePath* is a related attribute,
 *   *attributePath* is not found in the entity selection dataclass.
@@ -603,7 +603,7 @@ You can use the `[]` notation to designate a collection when *attributePath* is 
 
 デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
 
-An error is returned if:
+以下の場合には、エラーが返されます:
 
 *   *attributePath* is a related attribute,
 *   *attributePath* is not found in the entity selection dataclass.
@@ -1104,10 +1104,10 @@ If you pass in *attributePath* a path to an object attribute containing differen
 `.max()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
 
 
-An error is returned if:
+以下の場合には、エラーが返されます:
 
 *   *attributePath* is a related attribute,
-*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
+*   *attributePath* がエンティティセレクションデータクラス内に存在しない属性を指定している場合。
 
 
 
@@ -1155,10 +1155,10 @@ If you pass in *attributePath* a path to an object attribute containing differen
 
 `.min()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
 
-An error is returned if:
+以下の場合には、エラーが返されます:
 
 *   *attributePath* is a related attribute,
-*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
+*   *attributePath* がエンティティセレクションデータクラス内に存在しない属性を指定している場合。
 
 
 #### 例題
@@ -1202,13 +1202,13 @@ In this example, we want to find the lowest salary among all the female employee
 
 *   If you pass *entity* as parameter, the function creates a new entity selection without *entity* (if *entity* belongs to the entity selection). If *entity* was not included in the original entity selection, a new reference to the entity selection is returned.
 *   If you pass *entitySelection* as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to *entitySelection*.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> [順列ありと順列なしのエンティティセレクション](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) を比較することができます。 返されるセレクションは常に順列なしのものになります。
 
 If the original entity selection or both the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned.
 
 If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
 
-If the original entity selection and the parameter are not related to the same dataclass, an error is raised.
+元のエンティティセレクションおよび引数が同じデータクラスのものでない場合、エラーが返されます。
 
 
 #### 例題 1
@@ -1268,13 +1268,13 @@ We want to have a selection of female employees named "Jones" who live in New Yo
 
 *   If you pass *entity* as parameter, you compare this entity with the entity selection. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.
 *   If you pass *entitySelection* as parameter, you compare entity selections. A new entity selection containing the entities belonging to the original entity selection or *entitySelection* is returned (or is not exclusive, entities referenced in both selections are not duplicated in the resulting selection).
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+> [順列ありと順列なしのエンティティセレクション](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし) を比較することができます。 返されるセレクションは常に順列なしのものになります。
 
 If the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to *entitySelection* or an entity selection containing only *entity* is returned.
 
 If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
 
-If the original entity selection and the parameter are not related to the same dataclass, an error is raised.
+元のエンティティセレクションおよび引数が同じデータクラスのものでない場合、エラーが返されます。
 
 
 #### 例題 1
@@ -1771,7 +1771,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 
 The sum can only be done on values of number type. If the *attributePath* type is object, only numerical values are taken into account for the calculation (other value types are ignored). In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
 
-An error is returned if:
+以下の場合には、エラーが返されます:
 
 *   *attributePath* is not a numerical or an object attribute,
 *   *attributePath* is a related attribute,
