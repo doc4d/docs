@@ -390,7 +390,7 @@ $result:=$sel[0].lock() //動作しません
 
 以下の場合には、エラーが返されます:
 
-*   *attributePath* is a related attribute,
+*   *attributePath* はリレート属性である
 *   *attributePath* がエンティティセレクションデータクラス内に存在しない属性を指定している場合。
 
 
@@ -447,9 +447,9 @@ $result:=$sel[0].lock() //動作しません
  $employee:=ds.Employee.get(610)
 
  If($employees.contains($employee))
-    ALERT("The entity with primary key 610 has a last name beginning with H")
+    ALERT("主キー610のエンティティのラストネームは H で始まります。")
  Else
-    ALERT("The entity with primary key 610 does not have a last name beginning with H")
+    ALERT("主キー610のエンティティのラストネームは H で始まりません。")
  End if
 ```
 
@@ -480,16 +480,16 @@ $result:=$sel[0].lock() //動作しません
 #### 説明
 
 `.count()` 関数は、 <!-- REF #EntitySelectionClass.count().Summary -->エンティティセレクション内で *attributePath* に指定したパスの値が null でないエンティティの数を返します<!-- END REF -->。
-> Only scalar values are taken into account. Object or collection type values are considered as null values.
+> 対象となるのはスカラー値のみです。 オブジェクトあるいはコレクション型の値は Null値とみなされます。
 
 以下の場合には、エラーが返されます:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* はリレート属性である
+*   *attributePath* がエンティティセレクションデータクラス内に存在しない場合。
 
 #### 例題
 
-We want to find out the total number of employees for a company without counting any whose job title has not been specified:
+ある会社の全従業員のうち、役職のない者を除いた人数を確認します:
 
 ```4d
  var $sel : cs.EmployeeSelection
@@ -526,15 +526,15 @@ We want to find out the total number of employees for a company without counting
 
 `.copy()` 関数は、 <!-- REF #EntitySelectionClass.copy().Summary -->元のエンティティセレクションのコピーを返します<!-- END REF -->。
 
-> This function does not modify the original entity selection.
+> この関数は、元のエンティティセレクションを変更しません。
 
-By default, if the *option* parameter is omitted, the function returns a new, alterable entity selection (even if the function is applied to a shareable entity selection). Pass the `ck shared` constant in the *option* parameter if you want to create a shareable entity selection.
+*option* パラメーターが省略された場合はデフォルトで、たとえコピー元が共有可能なエンティティセレクションであったとしても、関数はデフォルトで追加可能な (共有不可の) 新規エンティティセレクションを返します。 共有可能なエンティティセレクションを取得するには、*option* に `ck shared` 定数を渡します。
 
-> For information on the shareable property of entity selections, please refer to the [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
+> 詳細については [共有可能/追加可能なエンティティセレクション](ORDA/entities.md#共有可能追加可能なエンティティセレクション) を参照ください。
 
 #### 例題
 
-You create a new, empty entity selection of products when the form is loaded:
+フォームロード時に、商品データを格納するための新規の空エンティティセレクションを作成します:
 
 ```4d
  Case of
@@ -544,11 +544,11 @@ You create a new, empty entity selection of products when the form is loaded:
 
 ```
 
-Then this entity selection is updated with products and you want to share the products between several processes. You copy the Form.products entity selection as a shareable one:
+このエンティティセレクションに商品を登録したのちに、複数のプロセスでこの商品データを共有するには、 Form.products を共有可能なエンティティセレクションとしてコピーします:
 
 ```4d
  ...
-  // The Form.products entity selection is updated
+  // Form.products エンティティセレクションに商品データを登録します
  Form.products.add(Form.selectedProduct)
 
  Use(Storage)
@@ -592,32 +592,32 @@ Then this entity selection is updated with products and you want to share the pr
 
 返されたコレクションは自動的に並べ替えられています。 **Null** 値は返されません。
 
-In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* is an object attribute that contains values of different types, they are first grouped by type and sorted afterwards. 型は以下の順番で返されます:
+*attributePath* 引数として、固有の値を取得したいエンティティ属性を渡します。 スカラー値 (テキスト、数値、ブール、あるいは日付) のみが可能です。 *attributePath* のパスが異なる型の値を格納しているオブジェクト属性であった場合、まず最初に型ごとにグループ分けされ、そのあとで並べ替えされます。 型は以下の順番で返されます:
 
 1.  ブール
 2.  文字列
 3.  数値
 4.  日付
 
-You can use the `[]` notation to designate a collection when *attributePath* is a path within an object (see examples).
+*attributePath* がオブジェクト内のパスの場合、`[]` を使ってコレクションを指定できます (例題参照)。
 
-デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
+デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 評価の際に文字の大小を区別したり、アクセント記号を区別したい場合には、*option* に `dk diacritical` 定数を渡します。
 
 以下の場合には、エラーが返されます:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* はリレート属性である
+*   *attributePath* がエンティティセレクションデータクラス内に存在しない場合。
 
 #### 例題
 
-You want to get a collection containing a single element per country name:
+国名ごとに重複しない要素を格納するコレクションを取得します:
 
 ```4d
  var $countries : Collection
  $countries:=ds.Employee.all().distinct("address.country")
 ```
 
-`nicknames` is a collection and `extra` is an object attribute:
+`extra` がオブジェクト属性で、`nicknames` がコレクションの場合:
 
 ```4d
 $values:=ds.Employee.all().distinct("extra.nicknames[].first")
@@ -650,7 +650,7 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 #### 説明
 
 `.drop()` 関数は、 <!-- REF #EntitySelectionClass.drop().Summary -->データストアのデータクラスに対応するテーブルから、エンティティセレクションに所属しているエンティティを削除します<!-- END REF -->。 エンティティセレクションはメモリ内に残ります。
-> Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.
+> エンティティの削除は恒久的なものであり、取り消しはできません。 It is recommended to call this action in a transaction in order to have a rollback option.
 
 If a locked entity is encountered during the execution of `.drop()`, it is not removed. By default, the method processes all entities of the entity selection and returns non-droppable entities in the entity selection. If you want the method to stop execution at the first encountered non-droppable entity, pass the `dk stop dropping on first error` constant in the *mode* parameter.
 
@@ -1106,7 +1106,7 @@ If you pass in *attributePath* a path to an object attribute containing differen
 
 以下の場合には、エラーが返されます:
 
-*   *attributePath* is a related attribute,
+*   *attributePath* はリレート属性である
 *   *attributePath* がエンティティセレクションデータクラス内に存在しない属性を指定している場合。
 
 
@@ -1157,7 +1157,7 @@ If you pass in *attributePath* a path to an object attribute containing differen
 
 以下の場合には、エラーが返されます:
 
-*   *attributePath* is a related attribute,
+*   *attributePath* はリレート属性である
 *   *attributePath* がエンティティセレクションデータクラス内に存在しない属性を指定している場合。
 
 
@@ -1402,7 +1402,7 @@ You can add as many objects in the criteria collection as necessary.
 #### 説明
 
 `.orderByFormula()` 関数は、 エンティティセレクションの全エンティティが *formulaString* または *formulaObj*、および (任意の) *sortOrder* や *settings* 引数が指定する順番に並べられた、 <!-- REF #EntitySelectionClass.orderByFormula().Summary -->順列ありの新規エンティティセレクションを返します<!-- END REF --> 。
-> This function does not modify the original entity selection.
+> この関数は、元のエンティティセレクションを変更しません。
 
 You can use either a *formulaString* or a *formulaObj* parameter:
 
@@ -1526,7 +1526,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 #### 説明
 
 `.query()` 関数は、 <!-- REF #EntitySelectionClass.query().Summary -->エンティティセレクションの全エンティティから、*queryString* または *formula* と任意の *value* 引数で指定した検索条件に合致するエンティティを検索します<!-- END REF -->。戻り値は、見つかったエンティティをすべて格納する `EntitySelection` 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。
-> This function does not modify the original entity selection.
+> この関数は、元のエンティティセレクションを変更しません。
 
 エンティティが見つからない場合、空のエンティティセレクションが返されます。
 
@@ -1706,7 +1706,7 @@ A list box displays the Form.students entity selection and several clients work 
 #### 説明
 
 `.slice()` 関数は、*startFrom* の位置 (含まれる) から *end* の位置 (含まれない) または終わりまでの <!-- REF #EntitySelectionClass.slice().Summary -->エンティティセレクションの一部を、新規エンティティセレクションとして返します<!-- END REF -->。 This method returns a shallow copy of the entity selection (it uses the same entity references).
-> This function does not modify the original entity selection.
+> この関数は、元のエンティティセレクションを変更しません。
 
 The returned entity selection contains the entities specified by *startFrom* and all subsequent entities up to, but not including, the entity specified by *end*. If only the *startFrom* parameter is specified, the returned entity selection contains all entities from *startFrom* to the last entity of the original entity selection.
 
@@ -1774,8 +1774,8 @@ The sum can only be done on values of number type. If the *attributePath* type i
 以下の場合には、エラーが返されます:
 
 *   *attributePath* is not a numerical or an object attribute,
-*   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* はリレート属性である
+*   *attributePath* がエンティティセレクションデータクラス内に存在しない場合。
 
 
 
