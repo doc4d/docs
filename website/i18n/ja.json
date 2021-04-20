@@ -39,7 +39,7 @@
         "title": "Email"
       },
       "API/entityClass": {
-        "title": "エンティティ"
+        "title": "Entity"
       },
       "API/entitySelectionClass": {
         "title": "EntitySelection"
