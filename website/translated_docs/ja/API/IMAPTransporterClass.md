@@ -1126,7 +1126,7 @@ ID = 1のメッセージを取得します:
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" // 必須
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
@@ -1134,11 +1134,11 @@ ID = 1のメッセージを取得します:
   //create transporter
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  // メールボックスを選択します
  $boxInfo:=$transporter.selectBox("INBOX")
 
   If($boxInfo.mailCount>0)
-        // retrieve the headers of the last 20 messages without marking them as read
+        // 直近20件のメッセージのヘッダーを、"既読" にせずに取得します
     $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
         New object("withBody";False;"updateSeen";False))
     For each($mail;$result.list)
