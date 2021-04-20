@@ -95,7 +95,7 @@
 <tr><td><a href="#isalias"><strong>.isAlias</strong> : Boolean</a><p>    ファイルがエイリアス、ショートカット、シンボリックリンクのいずれかである場合には true</td></tr>
 <tr><td></td></tr>
 <tr><td><a href="#isfile"><strong>.isFile</strong> : Boolean</a><p>    ファイルに対しては常に true</td></tr>
-<tr><td><a href="#isFolder"><strong>.isFolder</strong> : Boolean</a><p>    ファイルに対しては常に false</td></tr>
+<tr><td><a href="#isfolder"><strong>.isFolder</strong> : Boolean</a><p>    ファイルに対しては常に false</td></tr>
 <tr><td><a href="#iswritable"><strong>.isWritable</strong> : Boolean</a><p>    ファイルがディスク上に存在し、書き込み可能な場合に true</td></tr>
 <tr><td><a href="#modificationdate"><strong>.modificationDate</strong> : Date</a><p>    ファイルの最終変更日</td></tr>
 <tr><td><a href="#modificationtime"><strong>.modificationTime</strong> : Time</a><p>    ファイルの最終変更時刻</td></tr>
@@ -937,8 +937,8 @@ var</span> <span class="hljs-variable">$exeFile </span>: 4D.File<span class="hlj
 var</span> <span class="hljs-variable">$info </span>: Object
 <span class="hljs-variable">$exeFile</span>:=<span class="hljs-function">File</span>(Application file; fk platform path)
 <span class="hljs-variable">$info</span>:=New object
-<span class="hljs-variable">$info</span>.LegalCopyright:=<span class="hljs-string">"Copyright 4D 2021"</span> 
-<span class="hljs-variable">$info</span>.ProductVersion:=<span class="hljs-string">"1.0.0"</span> 
+<span class="hljs-variable">$info</span>.LegalCopyright:=<span class="hljs-string">"Copyright 4D 2021"</span>
+<span class="hljs-variable">$info</span>.ProductVersion:=<span class="hljs-string">"1.0.0"</span>
 <span class="hljs-variable">$exeFile</span>.<span class="hljs-function">setAppInfo</span>(<span class="hljs-variable">$info</span>)
 </code></pre>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// set some keys in an info.plist file (all platforms)</span><span class="hljs-keyword">
