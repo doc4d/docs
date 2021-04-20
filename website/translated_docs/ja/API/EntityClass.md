@@ -149,21 +149,21 @@ title: Entity
 
 `.diff()` 関数は、 <!-- REF #EntityClass.diff().Summary -->二つのエンティティの中身を比較し、その差異を返します<!-- END REF -->。
 
-In *entityToCompare*, pass the entity to be compared to the original entity.
+*entityToCompare* には、オリジナルのエンティティと比較をするエンティティを渡します。
 
-In *attributesToCompare*, you can designate specific attributes to compare. If provided, the comparison is done only on the specified attributes. If not provided, all differences between the entities are returned.
+*attributesToCompare* 引数で、比較する属性を指定することができます。 これを渡した場合、指定された属性に対してのみ比較がおこなわれます。 省略時には、エンティティ間の差異がすべて返されます。
 
-The differences are returned as a collection of objects whose properties are:
+エンティティの差異は、以下のプロパティを持つオブジェクトのコレクションとして返されます:
 
-| プロパティ名        | タイプ                             | 説明                                          |
-| ------------- | ------------------------------- | ------------------------------------------- |
-| attributeName | 文字列                             | Name of the attribute                       |
-| value         | any - Depends on attribute type | Value of the attribute in the entity        |
-| otherValue    | any - Depends on attribute type | Value of the attribute in *entityToCompare* |
+| プロパティ名        | タイプ     | 説明                     |
+| ------------- | ------- | ---------------------- |
+| attributeName | 文字列     | 属性名                    |
+| value         | 属性の型による | オリジナルエンティティの属性値        |
+| otherValue    | 属性の型による | *entityToCompare* の属性値 |
 
-Only attributes with different values are included in the collection. If no differences are found, `.diff()` returns an empty collection.
+コレクションに含まれるのは異なる値を持っていた属性のみです。 差異が見つからない場合、`diff()` は空のコレクションを返します。
 
-The function applies for properties whose [kind](DataClassAttributeClass.md#kind) is **storage** or **relatedEntity**. In case a related entity has been updated (meaning the foreign key), the name of the related entity and its primary key name are returned as *attributeName* properties (*value* and *otherValue* are empty for the related entity name).
+この関数は、種類 ([kind](DataClassAttributeClass.md#kind)) が **storage** あるいは **relatedEntity** であるプロパティに適用されます。 In case a related entity has been updated (meaning the foreign key), the name of the related entity and its primary key name are returned as *attributeName* properties (*value* and *otherValue* are empty for the related entity name).
 
 If one of the compared entities is **Null**, an error is raised.
 
