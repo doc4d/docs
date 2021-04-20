@@ -149,23 +149,23 @@ title: Entity
 
 `.diff()` 関数は、 <!-- REF #entityClass.diff().Summary -->二つのエンティティの中身を比較し、その差異を返します<!-- END REF -->。
 
-In *entityToCompare*, pass the entity to be compared to the original entity.
+*entityToCompare* には、オリジナルのエンティティと比較をするエンティティを渡します。
 
-In *attributesToCompare*, you can designate specific attributes to compare. If provided, the comparison is done only on the specified attributes. If not provided, all differences between the entities are returned.
+*attributesToCompare* 引数で、比較する属性を指定することができます。 これを渡した場合、指定された属性に対してのみ比較がおこなわれます。 省略時には、エンティティ間の差異がすべて返されます。
 
-The differences are returned as a collection of objects whose properties are:
+エンティティの差異は、以下のプロパティを持つオブジェクトのコレクションとして返されます:
 
-| プロパティ名        | タイプ                             | 説明                                          |
-| ------------- | ------------------------------- | ------------------------------------------- |
-| attributeName | 文字列                             | Name of the attribute                       |
-| value         | any - Depends on attribute type | Value of the attribute in the entity        |
-| otherValue    | any - Depends on attribute type | Value of the attribute in *entityToCompare* |
+| プロパティ名        | タイプ     | 説明                     |
+| ------------- | ------- | ---------------------- |
+| attributeName | 文字列     | 属性名                    |
+| value         | 属性の型による | オリジナルエンティティの属性値        |
+| otherValue    | 属性の型による | *entityToCompare* の属性値 |
 
-Only attributes with different values are included in the collection. If no differences are found, `.diff()` returns an empty collection.
+コレクションに含まれるのは異なる値を持っていた属性のみです。 差異が見つからない場合、`diff()` は空のコレクションを返します。
 
-この関数は、種類 ([kind](dataclassAttributeClass.md#kind)) が **storage** あるいは **relatedEntity** であるプロパティに適用されます。 In case a related entity has been updated (meaning the foreign key), the name of the related entity and its primary key name are returned as *attributeName* properties (*value* and *otherValue* are empty for the related entity name).
+この関数は、種類 ([kind](dataclassAttributeClass.md#kind)) が **storage** あるいは **relatedEntity** であるプロパティに適用されます。 リレート先のエンティティそのものが変更された場合 (外部キーの変更)、リレーションの名称とそのプライマリーキー名が *attributeName* プロパティに返されます (リレーション名についての *value* および *otherValue* は空になります)。
 
-If one of the compared entities is **Null**, an error is raised.
+比較するどちらかのエンティティが **Null** である場合、エラーが生成されます。
 
 #### 例題 1
 
@@ -177,9 +177,9 @@ If one of the compared entities is **Null**, an error is raised.
  employee.firstName:="MARIE"
  employee.lastName:="SOPHIE"
  employee.salary:=500
- $diff1:=$clone.diff(employee) // All differences are returned
+ $diff1:=$clone.diff(employee) // すべての差異が返されます
  $diff2:=$clone.diff(employee;New collection"firstName";"lastName"))
-  // Only differences on firstName and lastName are returned
+  // firstName と lastName についての差異のみが返されます
 ```
 
 $diff1:
@@ -245,7 +245,7 @@ $diff2:
  vCompareResult3:=$e1.diff($e2;$e1.touchedAttributes())
 ```
 
-vCompareResult1 (all differences are returned):
+vCompareResult1 (すべての差異が返されています):
 
 ```4d
 [
@@ -265,19 +265,19 @@ vCompareResult1 (all differences are returned):
         "otherValue": 100
     },
     {
-        "attributeName": "employerID",
+        "attributeName": "employerID", // プライマリーキー名
         "value": 117,
         "otherValue": 118
     },
   {
-        "attributeName": "employer",
+        "attributeName": "employer", // リレーション名
         "value": "[object Entity]",// Company のエンティティ 117
         "otherValue": "[object Entity]"// Company のエンティティ 118
     }
 ]
 ```
 
-vCompareResult2 (only differences on $attributesToInspect are returned)
+vCompareResult2 ($attributesToInspect についての差異のみ返されます)
 
 ```4d
 [
@@ -294,7 +294,7 @@ vCompareResult2 (only differences on $attributesToInspect are returned)
 ]
 ```
 
-vCompareResult3 (only differences on $e1 touched attributes are returned)
+vCompareResult3 ($e1 において更新された (touch された) 属性のみが返されます)
 
 ```4d
 [
@@ -309,12 +309,12 @@ vCompareResult3 (only differences on $e1 touched attributes are returned)
         "otherValue": "Marrero"
     },
     {
-        "attributeName": "employerID",
+        "attributeName": "employerID", // プライマリーキー名
         "value": 117,
         "otherValue": 118
     },
      {
-        "attributeName": "employer",
+        "attributeName": "employer", // リレーション名
         "value": "[object Entity]",// Company のエンティティ 117
         "otherValue": "[object Entity]"// Company のエンティティ 118
 
@@ -351,23 +351,23 @@ vCompareResult3 (only differences on $e1 touched attributes are returned)
 
 `.drop()` 関数は、データクラスに対応するテーブルにおいて、 <!-- REF #entityClass.drop().Summary -->データストアのエンティティに格納されているデータを削除します<!-- END REF -->。 エンティティそのものはメモリ内に残るという点に注意してください。
 
-In a multi-user or multi-process application, the `.drop()` function is executed under an ["optimistic lock"](ORDA/entities.md#entity-locking) mechanism, wherein an internal locking stamp is automatically incremented each time the record is saved.
+マルチユーザー、あるいはマルチプロセスアプリケーションにおいて、`.drop()` 関数は ["オプティミスティック・ロック"](ORDA/entities.md#entity-locking) 機構のもとで実行されます。これはレコードが保存されるたびに内部的なロックスタンプが自動的に増分していくという機構です。
 
-By default, if the *mode* parameter is omitted, the function will return an error (see below) if the same entity was modified (i.e. the stamp has changed) by another process or user in the meantime.
+*mode* 引数を渡さなかった場合のデフォルトでは、同エンティティが他のプロセスまたはユーザーによって変更されていた場合 (つまり、スタンプが変更されていた場合) にエラーを返します (以下参照)。
 
-Otherwise, you can pass the `dk force drop if stamp changed` option in the *mode* parameter: in this case, the entity is dropped even if the stamp has changed (and the primary key is still the same).
+*mode* に `dk force drop if stamp changed` オプションを渡すと、スタンプが変更されていてもエンティティはドロップされます (プライマリーキーは変わらない場合)。
 
 **戻り値**
 
-The object returned by `.drop( )` contains the following properties:
+`.drop( )` によって返されるオブジェクトには以下のプロパティが格納されます:
 
 | プロパティ         |                     | タイプ                   | 説明                                                                                                                    |
 | ------------- | ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| success       |                     | boolean               | true if the drop action is successful, false otherwise.                                                               |
-|               |                     |                       | ***Available only in case of error:***                                                                                |
-| status(*)     |                     | number                | Error code, see below                                                                                                 |
-| statusText(*) |                     | text                  | Description of the error, see below                                                                                   |
-|               |                     |                       | ***Available only in case of pessimistic lock error:***                                                               |
+| success       |                     | boolean               | ドロップが成功した場合には true、それ以外は false                                                                                        |
+|               |                     |                       | ***エラーの場合にのみ利用可能:***                                                                                                  |
+| status(*)     |                     | number                | エラーコード、以下参照                                                                                                           |
+| statusText(*) |                     | text                  | エラーの詳細、以下参照                                                                                                           |
+|               |                     |                       | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                                                                      |
 | LockKindText  |                     | text                  | "Locked by record"                                                                                                    |
 | lockInfo      |                     | object                | Information about the lock origin                                                                                     |
 |               | task_id             | number                | Process id                                                                                                            |
@@ -910,7 +910,7 @@ A locked record is unlocked:
 *   when the [`unlock()`](#unlock) function is called on a matching entity in the same process
 *   automatically, when it is no longer referenced by any entities in memory. For example, if the lock is put only on one local reference of an entity, the entity is unlocked when the function ends. As long as there are references to the entity in memory, the record remains locked.
 
-By default, if the *mode* parameter is omitted, the function will return an error (see below) if the same entity was modified (i.e. the stamp has changed) by another process or user in the meantime.
+*mode* 引数を渡さなかった場合のデフォルトでは、同エンティティが他のプロセスまたはユーザーによって変更されていた場合 (つまり、スタンプが変更されていた場合) にエラーを返します (以下参照)。
 
 Otherwise, you can pass the `dk reload if stamp changed` option in the *mode* parameter: in this case, no error is returned and the entity is reloaded when the stamp has changed (if the entity still exists and the primary key is still the same).
 
@@ -923,10 +923,10 @@ The object returned by `.lock( )` contains the following properties:
 | success          |                     | boolean               | true if the lock action is successful (or if the entity is already locked in the current process), false otherwise. |
 |                  |                     |                       | ***Available only if `dk reload if stamp changed` option is used:***                                                |
 | **wasReloaded**  |                     | boolean               | true if the entity was reloaded with success, false otherwise.                                                      |
-|                  |                     |                       | ***Available only in case of error:***                                                                              |
-| status(\*)     |                     | number                | Error code, see below                                                                                               |
-| statusText(\*) |                     | text                  | Description of the error, see below                                                                                 |
-|                  |                     |                       | ***Available only in case of pessimistic lock error:***                                                             |
+|                  |                     |                       | ***エラーの場合にのみ利用可能:***                                                                                                |
+| status(\*)     |                     | number                | エラーコード、以下参照                                                                                                         |
+| statusText(\*) |                     | text                  | エラーの詳細、以下参照                                                                                                         |
+|                  |                     |                       | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                                                                    |
 | lockKindText     |                     | text                  | "Locked by record"                                                                                                  |
 | lockInfo         |                     | object                | Information about the lock origin                                                                                   |
 |                  | task_id             | number                | Process ID                                                                                                          |
@@ -1106,8 +1106,8 @@ The object returned by `.reload( )` contains the following properties:
 | プロパティ            | タイプ     | 説明                                                                                                                                                    |
 | ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | success          | boolean | True if the reload action is successful, False otherwise.<p><p>***Available only in case of error***: |
-| status(\*)     | number  | Error code, see below                                                                                                                                 |
-| statusText(\*) | text    | Description of the error, see below                                                                                                                   |
+| status(\*)     | number  | エラーコード、以下参照                                                                                                                                           |
+| statusText(\*) | text    | エラーの詳細、以下参照                                                                                                                                           |
 
 (\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
 
