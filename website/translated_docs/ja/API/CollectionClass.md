@@ -69,7 +69,7 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## New collection
+## 新しいコレクション
 
 
 <!-- REF #_command_.New collection.Syntax -->
@@ -148,7 +148,7 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## New shared collection
+## 新規の共有コレクション
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |

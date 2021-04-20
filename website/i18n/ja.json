@@ -51,7 +51,7 @@
         "title": "Email"
       },
       "API/EntityClass": {
-        "title": "Entity"
+        "title": "エンティティ"
       },
       "API/EntitySelectionClass": {
         "title": "EntitySelection"
@@ -78,7 +78,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "Session"
+        "title": "セッション"
       },
       "API/SignalClass": {
         "title": "Signal"
