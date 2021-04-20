@@ -680,7 +680,7 @@
         "title": "Aperçu"
       },
       "ReleaseNotes/whatsNew": {
-        "title": "What's New"
+        "title": "Les nouveautés"
       },
       "REST/{dataClass}": {
         "title": "{dataClass}"
@@ -822,7 +822,7 @@
       }
     },
     "links": {
-      "What's New": "What's New",
+      "What's New": "Les nouveautés",
       "v18 R6 BETA": "v18 R6 BETA",
       "v18 R5": "v18 R5",
       "v18": "v18"
