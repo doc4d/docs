@@ -505,13 +505,13 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 *filler* 引数のオブジェクトは、以下の条件のいずれかを満たしている場合にはリレートエンティティを扱うことができます:
 
-*   *filler* contains the foreign key itself, or
-*   *filler* contains a property object with the same name as the related entity, containing a single property named "\_\_KEY".
-*   if the related entity does not exist, it is ignored.
+*   *filler* が外部キーを格納している
+*   *filler* が、リレートエンティティ名と同じ名称のプロパティを格納しており、その値であるオブジェクトは "\_\_KEY" という名称の単一のプロパティを格納している
+*   リレートエンティティが存在しない場合、無視されます。
 
 #### 例題
 
-With the following $o object:
+以下のような $o オブジェクトがある場合:
 
 ```4d
 {
@@ -526,7 +526,7 @@ With the following $o object:
 ```
 
 
-The following code will create an entity with manager and employer related entities.
+以下のコードを実行すると、manager および employerというリレートエンティティを持つエンティティを作成します。
 
 
 ```4d
@@ -538,7 +538,7 @@ The following code will create an entity with manager and employer related entit
 ```
 
 
-You could also use a related entity given as an object:
+また、オブジェクトとして提供されたリレートエンティティを使用することもできます:
 
 ```4d
 
@@ -589,20 +589,20 @@ You could also use a related entity given as an object:
 
 #### 例題
 
-The following generic code duplicates any entity:
+以下の汎用的なコードは、あらゆるエンティティを複製します:
 
 ```4d
-  //duplicate_entity method 
-  //duplicate_entity($entity) 
+  // duplicate_entity メソッド 
+  // duplicate_entity($entity) 
 
  #DECLARE($entity : 4D.Entity)  
  var $entityNew : 4D.Entity
  var $status : Object
 
- $entityNew:=$entity.getDataClass().new() //create a new entity in the parent dataclass
- $entityNew.fromObject($entity.toObject()) //get all attributes
- $entityNew[$entity.getDataClass().getInfo().primaryKey]:=Null //reset the primary key
- $status:=$entityNew.save() //save the duplicated entity
+ $entityNew:=$entity.getDataClass().new() // 親データクラスに新しいエンティティを作成します
+ $entityNew.fromObject($entity.toObject()) // 全属性を取得します
+ $entityNew[$entity.getDataClass().getInfo().primaryKey]:=Null // プライマリーキーをリセットします
+ $status:=$entityNew.save() // 複製したエンティティを保存します
 ```
 
 <!-- END REF -->
@@ -636,7 +636,7 @@ The following generic code duplicates any entity:
 
 `.getKey()` 関数は、 <!-- REF #EntityClass.getKey().Summary -->エンティティのプライマリーキー値を返します<!-- END REF -->。
 
-Primary keys can be numbers (Integer) or strings. You can "force" the returned primary key value to be a string, no matter the actual primary key type, by passing the `dk key as string` option in the *mode* parameter.
+プライマリーキーは数値 (倍長整数) あるいは文字列です。 *mode* 引数として `dk key as string` オプションを渡すことで、実際のプライマリーキーの型に関係なく、返されるプライマリーキー値の型を文字列に "強制" することができます。
 
 #### 例題
 
@@ -646,7 +646,7 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
  var $employee : cs.EmployeeEntity
  $employees:=ds.Employee.query("lastName=:1";"Smith")
  $employee:=$employees[0]
- ALERT("The primary key is "+$employee.getKey(dk key as string))
+ ALERT("プライマリーキー: "+$employee.getKey(dk key as string))
 ```
 
 <!-- END REF -->
@@ -685,13 +685,13 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 ```4d
  var $emp : cs.EmployeeEntity
  var $employees; $employees2 : cs.EmployeeSelection
- $emp:=ds.Employee.get(672) // This entity does not belong to any entity selection
- $employees:=$emp.getSelection() // $employees is Null
+ $emp:=ds.Employee.get(672) // エンティティセレクションに属していないエンティティです
+ $employees:=$emp.getSelection() // $employees は Null です
 
- $employees2:=ds.Employee.query("lastName=:1";"Smith") //This entity selection contains 6 entities
- $emp:=$employees2[0]  // This entity belongs to an entity selection
+ $employees2:=ds.Employee.query("lastName=:1";"Smith") // このエンティティセレクションは 6件のエンティティを格納しています
+ $emp:=$employees2[0]  // エンティティセレクションに所属しているエンティティです
 
- ALERT("The entity selection contains "+String($emp.getSelection().length)+" entities")
+ ALERT("エンティティセレクションには "+String($emp.getSelection().length)+" 件のエンティティが含まれています")
 ```
 
 <!-- END REF -->
@@ -721,8 +721,8 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 
 `.getStamp()` 関数は、 <!-- REF #EntityClass.getStamp().Summary --> エンティティのスタンプの値を返します<!-- END REF -->。
 
-The internal stamp is automatically incremented by 4D each time the entity is saved. It manages concurrent user access and modifications to the same entities (see [**Entity locking**](ORDA/entities.md#entity-locking)).
-> For a new entity (never saved), the function returns 0. To know if an entity has just been created, it is recommended to use [.isNew()](#isnew).
+内部スタンプは、エンティティが保存されるたびに 4D によって自動的にインクリメントされます。 これは同じエンティティに対する複数のユーザーの同時アクセス・編集を管理します。この機構の詳細については、[**エンティティロッキング**](ORDA/entities.md#エンティティロッキング) を参照ください。
+> (一度も保存されていない) 新規エンティティに対しては、このメソッドは 0 を返します。 しかしながら、エンティティがまだ作成されたばかりかどうかを調べるには、[isNew()](#isnew) の使用が推奨されます。
 
 
 #### 例題
@@ -771,12 +771,12 @@ The internal stamp is automatically incremented by 4D each time the entity is sa
 
 `.indexOf()` 関数は、 <!-- REF #EntityClass.indexOf().Summary -->エンティティセレクション内におけるエンティティの位置を返します<!-- END REF -->。
 
-By default if the *entitySelection* parameter is omitted, the function returns the entity's position within its own entity selection. Otherwise, it returns the position of the entity within the specified *entitySelection*.
+*entitySelection* 引数が渡されなかった場合はデフォルトで、所属エンティティセレクション内でのエンティティの位置が返されます。 *entitySelection* 引数を渡した場合は、指定されたエンティティセレクション内でのエンティティの位置を返します。
 
-The resulting value is included between 0 and the length of the entity selection -1.
+戻り値は、0 と、エンティティセレクションの length より 1 を引いた値の範囲内の数値です。
 
-*   If the entity does not have an entity selection or does not belong to *entitySelection*, the function returns -1.
-*   If *entitySelection* is Null or does not belong to the same dataclass as the entity, an error is raised.
+*   エンティティがエンティティセレクションを持たない場合、あるいは *entitySelection* 引数で指定したエンティティセレクションに含まれていない場合には、-1 が返されます。
+*   *entitySelection* 引数で指定したエンティティセレククションが Null である、あるいはエンティティと同じデータクラスのものでない場合には、エラーが生成されます。
 
 #### 例題
 
@@ -784,11 +784,11 @@ The resulting value is included between 0 and the length of the entity selection
 ```4d
  var $employees : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
- $employees:=ds.Employee.query("lastName = :1";"H@") //This entity selection contains 3 entities
- $employee:=$employees[1] //This entity belongs to an entity selection
- ALERT("The index of the entity in its own entity selection is "+String($employee.indexOf())) //1
+ $employees:=ds.Employee.query("lastName = :1";"H@") // このエンティティセレクションには 3件のエンティティが格納されています
+ $employee:=$employees[1] // このエンティティはエンティティセレクションに所属しています
+ ALERT("The index of the entity in its own entity selection is "+String($employee.indexOf())) // 1
 
- $employee:=ds.Employee.get(725) //This entity does not belong to an entity selection
+ $employee:=ds.Employee.get(725) // エンティティセレクションに所属していないエンティティです
  ALERT("The index of the entity is "+String($employee.indexOf())) // -1
 ```
 
