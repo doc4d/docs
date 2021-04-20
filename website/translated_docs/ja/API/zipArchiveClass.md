@@ -7,7 +7,7 @@ title: ZIPArchive
 A 4D ZIP archive is a `File` or `Folder` object containing one or more files or folders, which are compressed to be smaller than their original size. These archives are created with a ".zip" extension and can be used to save disk space or transfer files via mediums which may have size limitations (e.g., email or network).
 
 - You create a 4D ZIP archive with the [ZIP Create archive](#zip-create-archive) command.
-- 4D [`ZIPFile`](zipFileClass.md) and [`ZIPFolder`](zipFolderClass.md) instances are available through the [`root`](#root) property (`ZIPFolder`) of the object returned by [ZIP Read archive](#zip-read-archive) command.
+- 4D [`ZIPFile`](zipFileClass.md) および [`ZIPFolder`](zipFolderClass.md) インスタンスは、[ZIP Read archive](#zip-read-archive) コマンドによって返されるオブジェクトの [`root`](#root) プロパティ (`ZIPFolder`) を通して利用可能です。
 
 
 ### 例題
@@ -290,7 +290,7 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 
 
 
-> This command does not uncompress the ZIP archive, it only provides a view of its contents. To extract the contents of an archive, you need to use methods such as [file.copyTo()](document.md#copyto) or [folder.copyTo()](directory.md#copyto).
+> This command does not uncompress the ZIP archive, it only provides a view of its contents. アーカイブのコンテンツを取り出すには、[file.copyTo()](document.md#copyto) あるいは [folder.copyTo()](directory.md#copyto) などの関数を使用します。
 
 Pass a `4D.File` object referencing the compressed ZIP archive in the *zipFile* parameter. The target archive file will be opened until the `ZIP Read archive` has finished executing and all contents/references have been extracted/released, then it will be closed automatically. 
 
@@ -370,7 +370,7 @@ To extract from the root folder:
 
 `.root` プロパティは、 <!-- REF #zipArchiveClass.root.Summary -->ZIPアーカイブのコンテンツにアクセスするためのバーチャルフォルダー<!-- END REF -->を格納します。
 
-The `root` folder and its contents can be manipulated with the [ZipFile](zipFileClass.md) and [ZipFolder](zipFolderClass.md) functions and properties.
+`root` フォルダーとそのコンテンツは、[ZipFile](zipFileClass.md) および [ZipFolder](zipFolderClass.md) の関数とプロパティを使用することで操作可能です。
 
 このプロパティは **読み取り専用** です。 
 
