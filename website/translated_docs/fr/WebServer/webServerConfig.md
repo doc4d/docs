@@ -37,7 +37,7 @@ You can modify the size of the cache in the **Pages Cache Size** area. The value
 
 | Can be set with  | Nom                 | Commentaires                                                                                                                                                     |
 | ---------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| webServer object | `certificateFolder` | La propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()`. |
+| webServer object | `certificateFolder` | Propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()`. |
 
 Folder where the TLS certificate files for the web server are located.
 
@@ -599,7 +599,7 @@ When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maint
 
 In return, you must make sure in this case to systematically initialize the variables used in 4D methods in order to avoid getting incorrect results. Similarly, it is necessary to erase any current selections or records defined during the previous request.
 > * This option is checked (and locked) automatically when the **Automatic Session Management** option is checked. In fact, the session management mechanism is actually based on the principle of recycling web processes: each session uses the same process that is maintained during the lifespan of the session. However, note that session processes cannot be "shared" between different sessions: once the session is over, the process is automatically killed (and not reused). It is therefore unnecessary to reset the selections or variables in this case.
-> 
+>
 > * This option only has an effect with a 4D web server in remote mode. With a 4D in local mode, all web processes (other than session processes) are killed after their use.
 
 
@@ -624,4 +624,3 @@ Two options allow you to set how the keep-alive connections work:
 *   **Number of requests by connection**: Allows you to set the maximum number of requests and responses able to travel over a connection keep alive. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).<p> The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web Server.
 
 *   **Timeout**: This value defines the maximum wait period (in seconds) during which the web server maintains an open TCP connection without receiving any requests from the web browser. Once this period is over, the server closes the connection.<p> If the web browser sends a request after the connection is closed, a new TCP connection is automatically created. This operation is not visible for the user.
-
