@@ -361,40 +361,40 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 `.drop( )` によって返されるオブジェクトには以下のプロパティが格納されます:
 
-| プロパティ         |                     | タイプ                   | 説明                                                                                                                    |
-| ------------- | ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| success       |                     | boolean               | ドロップが成功した場合には true、それ以外は false                                                                                        |
-|               |                     |                       | ***エラーの場合にのみ利用可能:***                                                                                                  |
-| status(*)     |                     | number                | エラーコード、以下参照                                                                                                           |
-| statusText(*) |                     | text                  | エラーの詳細、以下参照                                                                                                           |
-|               |                     |                       | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                                                                      |
-| LockKindText  |                     | text                  | "Locked by record"                                                                                                    |
-| lockInfo      |                     | object                | Information about the lock origin                                                                                     |
-|               | task_id             | number                | Process id                                                                                                            |
-|               | user_name           | text                  | Session user name on the machine                                                                                      |
-|               | user4d_id           | text                  | User name in the 4D database directory                                                                                |
-|               | host_name           | text                  | Machine name                                                                                                          |
-|               | task_name           | text                  | Process name                                                                                                          |
-|               | client_version      | text                  |                                                                                                                       |
-|               |                     |                       | ***Available only in case of serious error (serious error can be trying to duplicate a primary key, disk full...):*** |
-| errors        |                     | collection of objects |                                                                                                                       |
-|               | message             | text                  | エラーメッセージ                                                                                                              |
-|               | component signature | text                  | internal component signature (e.g. "dmbg" stands for the database component)                                          |
-|               | errCode             | number                | エラーコード                                                                                                                |
+| プロパティ         |                     | タイプ           | 説明                                                                       |
+| ------------- | ------------------- | ------------- | ------------------------------------------------------------------------ |
+| success       |                     | boolean       | ドロップが成功した場合には true、それ以外は false                                           |
+|               |                     |               | ***エラーの場合にのみ利用可能:***                                                     |
+| status(*)     |                     | number        | エラーコード、以下参照                                                              |
+| statusText(*) |                     | text          | エラーの詳細、以下参照                                                              |
+|               |                     |               | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                         |
+| LockKindText  |                     | text          | "Locked by record"                                                       |
+| lockInfo      |                     | object        | ロック元についての情報                                                              |
+|               | task_id             | number        | プロセスID                                                                   |
+|               | user_name           | text          | マシン上でのセッションユーザー名                                                         |
+|               | user4d_id           | text          | 4Dデータベースディレクトリでのユーザー名                                                    |
+|               | host_name           | text          | マシン名                                                                     |
+|               | task_name           | text          | プロセス名                                                                    |
+|               | client_version      | text          |                                                                          |
+|               |                     |               | ***深刻なエラーの場合にのみ利用可能 (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです):*** |
+| errors        |                     | オブジェクトのコレクション |                                                                          |
+|               | message             | text          | エラーメッセージ                                                                 |
+|               | component signature | text          | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                               |
+|               | errCode             | number        | エラーコード                                                                   |
 
-(\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
+(\*) エラー時には *Result* オブジェクトの *status* あるいは *statusText* プロパティに以下のいずれかの値が返されます:
 
-| 定数                                        | 結果 | 説明                                                                                                                                                                                                                                     |
-| ----------------------------------------- | -- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5  | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using entity.drop( ), this error can be returned when dk force drop if stamp changed option is used. When using entity.lock( ), this error can be returned when dk reload if stamp changed option is used</li><p>**Associated statusText**: "Entity does not exist anymore" |
-| `dk status locked`                        | 3  | The entity is locked by a pessimistic lock.<br>**Associated statusText**: "Already locked"                                                                                                                                       |
-| `dk status serious error`                 | 4  | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>**Associated statusText**: "Other error"                                                                                          |
-| `dk status stamp has changed`             | 2  | The internal stamp value of the entity does not match the one of the entity stored in the data (optimistic lock).<br><li>with `.save( )`: error only if the `dk auto merge` option is not used</li><li>with `.drop( )`: error only if the `dk force drop if stamp changed` option is not used</li><li>with `.lock( )`: error only if the `dk reload if stamp changed` option is not used</li><li>**Associated statusText**: "Stamp has changed"</li>        |
+| 定数                                        | 結果 | 説明                                                                                                                                                                            |
+| ----------------------------------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status entity does not exist anymore` | 5  | エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<br><li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 entity.drop( ) を使用するとき、このエラーは dk force drop if stamp changed オプションを使用した場合に返されることがあります。 entity.lock( ) を使用するとき、このエラーは dk reload drop if stamp changed オプションを使用した場合に返されることがあります。</li><p>**割り当てられた statusText**: "エンティティはもう存在しません" |
+| `dk status locked`                        | 3  | エンティティはペシミスティック・ロックでロックされています。<br>**割り当てられた statusText**: "既にロックされています"                                                                                                 |
+| `dk status serious error`                 | 4  | 深刻なエラーとは、低レベルのデータベースエラー (例: 重複キー)、ハードウェアエラーなどです。<br>**割り当てられた statusText**: "その他のエラー"                                                                                   |
+| `dk status stamp has changed`             | 2  | エンティティの内部的なスタンプ値がデータ内に保存されているエンティティのものと合致しません (オプティミスティック・ロック)。<br><li>entity.save( ) の場合: dk auto merge オプションが使用されていない場合に限りエラー</li><li>entity.drop( ) の場合: dk force drop if stamp changed オプションが使用されていない場合に限りエラー</li><li>entity.lock( ) の場合: dk reload if stamp changed オプションが使用されていない場合に限りエラー</li><li>**割り当てられた statusText**: "スタンプが変更されています"</li> |
 
 
 #### 例題 1
 
-Example without `dk force drop if stamp changed` option:
+`dk force drop if stamp changed` オプションを使用しない例:
 
 ```4d
  var $employees : cs.EmployeeSelection
@@ -405,7 +405,7 @@ Example without `dk force drop if stamp changed` option:
  $status:=$employee.drop()
  Case of
     :($status.success)
-       ALERT("You have dropped "+$employee.firstName+" "+$employee.lastName) //The dropped entity remains in memory
+       ALERT($employee.firstName+" "+$employee.lastName+" をドロップしました。") // ドロップされたエンティティはメモリ内に残ります
     :($status.status=dk status stamp has changed)
        ALERT($status.statusText)
  End case
@@ -413,7 +413,7 @@ Example without `dk force drop if stamp changed` option:
 
 #### 例題 2
 
-Example with `dk force drop if stamp changed` option:
+`dk force drop if stamp changed` オプションを使用する例:
 
 ```4d
  var $employees : cs.EmployeeSelection
@@ -424,7 +424,7 @@ Example with `dk force drop if stamp changed` option:
  $status:=$employee.drop(dk force drop if stamp changed)
  Case of
     :($status.success)
-       ALERT("You have dropped "+$employee.firstName+" "+$employee.lastName) //The dropped entity remains in memory
+       ALERT($employee.firstName+" "+$employee.lastName+" をドロップしました。") // ドロップされたエンティティはメモリ内に残ります
     :($status.status=dk status entity does not exist anymore)
        ALERT($status.statusText)
  End case
@@ -496,22 +496,22 @@ Example with `dk force drop if stamp changed` option:
 #### 説明
 
 `.fromObject()` 関数は、 <!-- REF #entityClass.fromObject().Summary -->*filler* に指定した内容でエンティティの属性値を設定します<!-- END REF -->。
-> This function modifies the original entity.
+> このコマンドは、元のエンティティを変更します。
 
-The mapping between the object and the entity is done on the attribute names:
+オブジェクトとエンティティ間のマッピングは属性名でおこなわれます:
 
-*   If a property of the object does not exist in the dataclass, it is ignored.
-*   Data types must be equivalent. If there is a type mismatch between the object and dataclass, 4D tries to convert the data whenever possible (see [`Converting data types`](Concepts/data-types.md#converting-data-types)), otherwise the attribute is left untouched.
+*   オブジェクトのプロパティがデータクラスに存在しない場合、それは無視されます。
+*   データタイプは同じである必要があります。 オブジェクトとデータクラス間で型が合致しない場合、4D は可能であればデータを変換しようとし ([`データタイプの変換`](Concepts/data-types.md#データタイプの変換)) 参照)、それ以外の場合にはその属性は更新されません。
 
-*filler* can handle a related entity under the following conditions:
+*filler* 引数のオブジェクトは、以下の条件のいずれかを満たしている場合にはリレートエンティティを扱うことができます:
 
-*   *filler* contains the foreign key itself, or
-*   *filler* contains a property object with the same name as the related entity, containing a single property named "\_\_KEY".
-*   if the related entity does not exist, it is ignored.
+*   *filler* が外部キーを格納している
+*   *filler* が、リレートエンティティ名と同じ名称のプロパティを格納しており、その値であるオブジェクトは "\_\_KEY" という名称の単一のプロパティを格納している
+*   リレートエンティティが存在しない場合、無視されます。
 
 #### 例題
 
-With the following $o object:
+以下のような $o オブジェクトがある場合:
 
 ```4d
 {
@@ -526,7 +526,7 @@ With the following $o object:
 ```
 
 
-The following code will create an entity with manager and employer related entities.
+以下のコードを実行すると、manager および employerというリレートエンティティを持つエンティティを作成します。
 
 
 ```4d
@@ -538,7 +538,7 @@ The following code will create an entity with manager and employer related entit
 ```
 
 
-You could also use a related entity given as an object:
+また、オブジェクトとして提供されたリレートエンティティを使用することもできます:
 
 ```4d
 
@@ -589,20 +589,20 @@ You could also use a related entity given as an object:
 
 #### 例題
 
-The following generic code duplicates any entity:
+以下の汎用的なコードは、あらゆるエンティティを複製します:
 
 ```4d
-  //duplicate_entity method 
-  //duplicate_entity($entity) 
+  // duplicate_entity メソッド 
+  // duplicate_entity($entity) 
 
  #DECLARE($entity : 4D.Entity)  
  var $entityNew : 4D.Entity
  var $status : Object
 
- $entityNew:=$entity.getDataClass().new() //create a new entity in the parent dataclass
- $entityNew.fromObject($entity.toObject()) //get all attributes
- $entityNew[$entity.getDataClass().getInfo().primaryKey]:=Null //reset the primary key
- $status:=$entityNew.save() //save the duplicated entity
+ $entityNew:=$entity.getDataClass().new() // 親データクラスに新しいエンティティを作成します
+ $entityNew.fromObject($entity.toObject()) // 全属性を取得します
+ $entityNew[$entity.getDataClass().getInfo().primaryKey]:=Null // プライマリーキーをリセットします
+ $status:=$entityNew.save() // 複製したエンティティを保存します
 ```
 
 <!-- END REF -->
@@ -636,7 +636,7 @@ The following generic code duplicates any entity:
 
 `.getKey()` 関数は、 <!-- REF #entityClass.getKey().Summary -->エンティティのプライマリーキー値を返します<!-- END REF -->。
 
-Primary keys can be numbers (Integer) or strings. You can "force" the returned primary key value to be a string, no matter the actual primary key type, by passing the `dk key as string` option in the *mode* parameter.
+プライマリーキーは数値 (倍長整数) あるいは文字列です。 *mode* 引数として `dk key as string` オプションを渡すことで、実際のプライマリーキーの型に関係なく、返されるプライマリーキー値の型を文字列に "強制" することができます。
 
 #### 例題
 
@@ -646,7 +646,7 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
  var $employee : cs.EmployeeEntity
  $employees:=ds.Employee.query("lastName=:1";"Smith")
  $employee:=$employees[0]
- ALERT("The primary key is "+$employee.getKey(dk key as string))
+ ALERT("プライマリーキー: "+$employee.getKey(dk key as string))
 ```
 
 <!-- END REF -->
@@ -685,13 +685,13 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 ```4d
  var $emp : cs.EmployeeEntity
  var $employees; $employees2 : cs.EmployeeSelection
- $emp:=ds.Employee.get(672) // This entity does not belong to any entity selection
- $employees:=$emp.getSelection() // $employees is Null
+ $emp:=ds.Employee.get(672) // エンティティセレクションに属していないエンティティです
+ $employees:=$emp.getSelection() // $employees は Null です
 
- $employees2:=ds.Employee.query("lastName=:1";"Smith") //This entity selection contains 6 entities
- $emp:=$employees2[0]  // This entity belongs to an entity selection
+ $employees2:=ds.Employee.query("lastName=:1";"Smith") // このエンティティセレクションは 6件のエンティティを格納しています
+ $emp:=$employees2[0]  // エンティティセレクションに所属しているエンティティです
 
- ALERT("The entity selection contains "+String($emp.getSelection().length)+" entities")
+ ALERT("エンティティセレクションには "+String($emp.getSelection().length)+" 件のエンティティが含まれています")
 ```
 
 <!-- END REF -->
@@ -918,39 +918,39 @@ Otherwise, you can pass the `dk reload if stamp changed` option in the *mode* pa
 
 The object returned by `.lock( )` contains the following properties:
 
-| プロパティ            |                     | タイプ                   | 説明                                                                                                                  |
-| ---------------- | ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| success          |                     | boolean               | true if the lock action is successful (or if the entity is already locked in the current process), false otherwise. |
-|                  |                     |                       | ***Available only if `dk reload if stamp changed` option is used:***                                                |
-| **wasReloaded**  |                     | boolean               | true if the entity was reloaded with success, false otherwise.                                                      |
-|                  |                     |                       | ***エラーの場合にのみ利用可能:***                                                                                                |
-| status(\*)     |                     | number                | エラーコード、以下参照                                                                                                         |
-| statusText(\*) |                     | text                  | エラーの詳細、以下参照                                                                                                         |
-|                  |                     |                       | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                                                                    |
-| lockKindText     |                     | text                  | "Locked by record"                                                                                                  |
-| lockInfo         |                     | object                | Information about the lock origin                                                                                   |
-|                  | task_id             | number                | Process ID                                                                                                          |
-|                  | user_name           | text                  | Session user name on the machine                                                                                    |
-|                  | user4d_alias        | text                  | Name or alias of the 4D user                                                                                        |
-|                  | user4d_id           | number                | User id in the 4D database directory                                                                                |
-|                  | host_name           | text                  | Machine name                                                                                                        |
-|                  | task_name           | text                  | Process name                                                                                                        |
-|                  | client_version      | text                  |                                                                                                                     |
-|                  |                     |                       | ***Available only in case of serious error*** (primary key already exists, disk full...):                           |
-| errors           |                     | collection of objects |                                                                                                                     |
-|                  | message             | text                  | エラーメッセージ                                                                                                            |
-|                  | component signature | text                  | internal component signature (e.g. "dmbg" stands for the database component)                                        |
-|                  | errCode             | number                | エラーコード                                                                                                              |
+| プロパティ            |                     | タイプ           | 説明                                                                                                                  |
+| ---------------- | ------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| success          |                     | boolean       | true if the lock action is successful (or if the entity is already locked in the current process), false otherwise. |
+|                  |                     |               | ***Available only if `dk reload if stamp changed` option is used:***                                                |
+| **wasReloaded**  |                     | boolean       | true if the entity was reloaded with success, false otherwise.                                                      |
+|                  |                     |               | ***エラーの場合にのみ利用可能:***                                                                                                |
+| status(\*)     |                     | number        | エラーコード、以下参照                                                                                                         |
+| statusText(\*) |                     | text          | エラーの詳細、以下参照                                                                                                         |
+|                  |                     |               | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                                                                    |
+| lockKindText     |                     | text          | "Locked by record"                                                                                                  |
+| lockInfo         |                     | object        | ロック元についての情報                                                                                                         |
+|                  | task_id             | number        | Process ID                                                                                                          |
+|                  | user_name           | text          | マシン上でのセッションユーザー名                                                                                                    |
+|                  | user4d_alias        | text          | Name or alias of the 4D user                                                                                        |
+|                  | user4d_id           | number        | User id in the 4D database directory                                                                                |
+|                  | host_name           | text          | マシン名                                                                                                                |
+|                  | task_name           | text          | プロセス名                                                                                                               |
+|                  | client_version      | text          |                                                                                                                     |
+|                  |                     |               | ***Available only in case of serious error*** (primary key already exists, disk full...):                           |
+| errors           |                     | オブジェクトのコレクション |                                                                                                                     |
+|                  | message             | text          | エラーメッセージ                                                                                                            |
+|                  | component signature | text          | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                                                                          |
+|                  | errCode             | number        | エラーコード                                                                                                              |
 
 
 (\*) The following values can be returned in the *status* and *statusText* properties of the *Result* object in case of error:
 
-| 定数                                        | 結果 | 説明                                                                                                                                                                                                                                                      |
-| ----------------------------------------- | -- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5  | The entity no longer exists in the data. This error can occur in the following cases:<li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.drop( )`, this error can be returned when dk force drop if stamp changed option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity does not exist anymore"                                           |
-| `dk status locked`                        | 3  | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                                                                            |
-| `dk status serious error`                 | 4  | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<p><p>**Associated statusText**: "Other error"                                                               |
-| `dk status stamp has changed`             | 2  | The internal stamp value of the entity does not match the one of the entity stored in the data (optimistic lock).<li>with `.save( )`: error only if the `dk auto merge` option is not used</li><li>with `.drop( )`: error only if the `dk force drop if stamp changed` option is not used</li><li>with `.lock( )`: error only if the `dk reload if stamp changed` option is not used</li><br>**Associated statusText**: "Stamp has changed" |
+| 定数                                        | 結果 | 説明                                                                                                                                                                                                    |
+| ----------------------------------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status entity does not exist anymore` | 5  | エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 When using `.drop( )`, this error can be returned when dk force drop if stamp changed option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**割り当てられた statusText**: "エンティティはもう存在しません"                                                  |
+| `dk status locked`                        | 3  | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                          |
+| `dk status serious error`                 | 4  | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<p><p>**Associated statusText**: "Other error"             |
+| `dk status stamp has changed`             | 2  | エンティティの内部的なスタンプ値がデータ内に保存されているエンティティのものと合致しません (オプティミスティック・ロック)。<li>entity.save( ) の場合: dk auto merge オプションが使用されていない場合に限りエラー</li><li>entity.drop( ) の場合: dk force drop if stamp changed オプションが使用されていない場合に限りエラー</li><li>entity.lock( ) の場合: dk reload if stamp changed オプションが使用されていない場合に限りエラー</li><br>**Associated statusText**: "Stamp has changed" |
 
 
 #### 例題 1
@@ -1109,12 +1109,12 @@ The object returned by `.reload( )` contains the following properties:
 | status(\*)     | number  | エラーコード、以下参照                                                                                                                                           |
 | statusText(\*) | text    | エラーの詳細、以下参照                                                                                                                                           |
 
-(\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
+(\*) エラー時には *Result* オブジェクトの *status* あるいは *statusText* プロパティに以下のいずれかの値が返されます:
 
-| 定数                                        | 結果 | 説明                                                                                                                                                                                                                        |
-| ----------------------------------------- | -- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5  | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>***Associated statusText***: "Entity does not exist anymore" |
-| `dk status serious error`                 | 4  | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                           |
+| 定数                                        | 結果 | 説明                                                                                                                                                                                |
+| ----------------------------------------- | -- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status entity does not exist anymore` | 5  | エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<br><li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>***Associated statusText***: "Entity does not exist anymore" |
+| `dk status serious error`                 | 4  | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                   |
 
 
 #### 例題
@@ -1176,40 +1176,40 @@ Otherwise, you can pass the `dk auto merge` option in the *mode* parameter: when
 
 The object returned by `.save()` contains the following properties:
 
-| プロパティ        |                    | タイプ                   | 説明                                                                                                                      |
-| ------------ | ------------------ | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| success      |                    | boolean               | True if the save action is successful, False otherwise.                                                                 |
-|              |                    |                       | ***Available only if `dk auto merge` option is used***:                                                                 |
-| autoMerged   |                    | boolean               | True if an auto merge was done, False otherwise.                                                                        |
-|              |                    |                       | ***Available only in case of error***:                                                                                  |
-| status       |                    | number                | Error code, [see below](#status-and-statustext)                                                                         |
-| statusText   |                    | text                  | Description of the error, [see below](#status-and-statustext)                                                           |
-|              |                    |                       | ***Available only in case of pessimistic lock error***:                                                                 |
-| lockKindText |                    | text                  | "Locked by record"                                                                                                      |
-| lockInfo     |                    | object                | Information about the lock origin                                                                                       |
-|              | task_id            | number                | Process id                                                                                                              |
-|              | user_name          | text                  | Session user name on the machine                                                                                        |
-|              | user4d_id          | text                  | User name in the 4D database directory                                                                                  |
-|              | host_name          | text                  | Machine name                                                                                                            |
-|              | task_name          | text                  | Process name                                                                                                            |
-|              | client_version     | text                  |                                                                                                                         |
-|              |                    |                       | ***Available only in case of serious error*** (serious error - can be trying to duplicate a primary key, disk full...): |
-| errors       |                    | collection of objects |                                                                                                                         |
-|              | message            | text                  | エラーメッセージ                                                                                                                |
-|              | componentSignature | text                  | Internal component signature (e.g. "dmbg" stands for the database component)                                            |
-|              | errCode            | number                | エラーコード                                                                                                                  |
+| プロパティ        |                    | タイプ           | 説明                                                                                                                      |
+| ------------ | ------------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| success      |                    | boolean       | True if the save action is successful, False otherwise.                                                                 |
+|              |                    |               | ***Available only if `dk auto merge` option is used***:                                                                 |
+| autoMerged   |                    | boolean       | True if an auto merge was done, False otherwise.                                                                        |
+|              |                    |               | ***Available only in case of error***:                                                                                  |
+| status       |                    | number        | Error code, [see below](#status-and-statustext)                                                                         |
+| statusText   |                    | text          | Description of the error, [see below](#status-and-statustext)                                                           |
+|              |                    |               | ***Available only in case of pessimistic lock error***:                                                                 |
+| lockKindText |                    | text          | "Locked by record"                                                                                                      |
+| lockInfo     |                    | object        | ロック元についての情報                                                                                                             |
+|              | task_id            | number        | プロセスID                                                                                                                  |
+|              | user_name          | text          | マシン上でのセッションユーザー名                                                                                                        |
+|              | user4d_id          | text          | 4Dデータベースディレクトリでのユーザー名                                                                                                   |
+|              | host_name          | text          | マシン名                                                                                                                    |
+|              | task_name          | text          | プロセス名                                                                                                                   |
+|              | client_version     | text          |                                                                                                                         |
+|              |                    |               | ***Available only in case of serious error*** (serious error - can be trying to duplicate a primary key, disk full...): |
+| errors       |                    | オブジェクトのコレクション |                                                                                                                         |
+|              | message            | text          | エラーメッセージ                                                                                                                |
+|              | componentSignature | text          | Internal component signature (e.g. "dmbg" stands for the database component)                                            |
+|              | errCode            | number        | エラーコード                                                                                                                  |
 
 ##### status and statusText
 
 The following values can be returned in the `status` and `statusText` properties of Result object in case of error:
 
-| 定数                                        | 結果 | 説明                                                                                                                                                                                                                                                                |
-| ----------------------------------------- | -- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status automerge failed`              | 6  | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"                                                        |
-| `dk status entity does not exist anymore` | 5  | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                            |
-| `dk status locked`                        | 3  | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                                                                                      |
-| `dk status serious error`                 | 4  | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<p><p>**Associated statusText**: "Other error"                                                                         |
-| `dk status stamp has changed`             | 2  | The internal stamp value of the entity does not match the one of the entity stored in the data (optimistic lock).<br><li>with `.save( )`: error only if the `dk auto merge` option is not used</li><li>with `.drop( )`: error only if the `dk force drop if stamp changed` option is not used</li><li>with `.lock( )`: error only if the `dk reload if stamp changed` option is not used</li><br>**Associated statusText**: "Stamp has changed" |
+| 定数                                        | 結果 | 説明                                                                                                                                                                                                              |
+| ----------------------------------------- | -- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status automerge failed`              | 6  | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"      |
+| `dk status entity does not exist anymore` | 5  | エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<br><li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                  |
+| `dk status locked`                        | 3  | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                                    |
+| `dk status serious error`                 | 4  | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<p><p>**Associated statusText**: "Other error"                       |
+| `dk status stamp has changed`             | 2  | エンティティの内部的なスタンプ値がデータ内に保存されているエンティティのものと合致しません (オプティミスティック・ロック)。<br><li>entity.save( ) の場合: dk auto merge オプションが使用されていない場合に限りエラー</li><li>entity.drop( ) の場合: dk force drop if stamp changed オプションが使用されていない場合に限りエラー</li><li>entity.lock( ) の場合: dk reload if stamp changed オプションが使用されていない場合に限りエラー</li><br>**Associated statusText**: "Stamp has changed" |
 
 
 #### 例題 1
