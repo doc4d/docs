@@ -366,8 +366,8 @@
 <p><code>.average()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> does not contain numerical values.</p>
 <p>An error is returned if:</p>
 <ul>
-<li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
+<li><em>attributePath</em> はリレート属性である</li>
+<li><em>attributePath</em> がエンティティセレクションデータクラス内に存在しない属性を指定している場合。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-4"></a><a href="#例題-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>We want to obtain a list of employees whose salary is higher than the average salary:</p>
@@ -409,9 +409,9 @@
  <span class="hljs-variable">$employee</span>:=ds.Employee.<span class="hljs-function">get</span>(<span class="hljs-number">610</span>)<span class="hljs-keyword">
 
  If</span>(<span class="hljs-variable">$employees</span>.<span class="hljs-function">contains</span>(<span class="hljs-variable">$employee</span>))
-<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"The entity with primary key 610 has a last name beginning with H"</span>)<span class="hljs-keyword">
+<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"主キー610のエンティティのラストネームは H で始まります。"</span>)<span class="hljs-keyword">
  Else</span>
-<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"The entity with primary key 610 does not have a last name beginning with H"</span>)<span class="hljs-keyword">
+<span class="hljs-function">    ALERT</span>(<span class="hljs-string">"主キー610のエンティティのラストネームは H で始まりません。"</span>)<span class="hljs-keyword">
  End if</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="count"></a><a href="#count" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.count()</h2>
@@ -438,15 +438,15 @@
 <h4><a class="anchor" aria-hidden="true" id="説明-7"></a><a href="#説明-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.count()</code> 関数は、 エンティティセレクション内で <em>attributePath</em> に指定したパスの値が null でないエンティティの数を返します。</p>
 <blockquote>
-<p>Only scalar values are taken into account. Object or collection type values are considered as null values.</p>
+<p>対象となるのはスカラー値のみです。 オブジェクトあるいはコレクション型の値は Null値とみなされます。</p>
 </blockquote>
 <p>An error is returned if:</p>
 <ul>
-<li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> is not found in the entity selection dataclass.</li>
+<li><em>attributePath</em> はリレート属性である</li>
+<li><em>attributePath</em> がエンティティセレクションデータクラス内に存在しない場合。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-6"></a><a href="#例題-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p>We want to find out the total number of employees for a company without counting any whose job title has not been specified:</p>
+<p>ある会社の全従業員のうち、役職のない者を除いた人数を確認します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$sel </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$count </span>: Real
 
@@ -477,23 +477,23 @@
 <h4><a class="anchor" aria-hidden="true" id="説明-8"></a><a href="#説明-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.copy()</code> 関数は、 元のエンティティセレクションのコピーを返します。</p>
 <blockquote>
-<p>This function does not modify the original entity selection.</p>
+<p>この関数は、元のエンティティセレクションを変更しません。</p>
 </blockquote>
-<p>By default, if the <em>option</em> parameter is omitted, the function returns a new, alterable entity selection (even if the function is applied to a shareable entity selection). Pass the <code>ck shared</code> constant in the <em>option</em> parameter if you want to create a shareable entity selection.</p>
+<p><em>option</em> パラメーターが省略された場合はデフォルトで、たとえコピー元が共有可能なエンティティセレクションであったとしても、関数はデフォルトで追加可能な (共有不可の) 新規エンティティセレクションを返します。 共有可能なエンティティセレクションを取得するには、<em>option</em> に <code>ck shared</code> 定数を渡します。</p>
 <blockquote>
-<p>For information on the shareable property of entity selections, please refer to the <a href="/docs/ja/ORDA/entities.html#shareable-or-alterable-entity-selections">Shareable or alterable entity selections</a> section.</p>
+<p>詳細については <a href="/docs/ja/ORDA/entities.html#共有可能追加可能なエンティティセレクション">共有可能/追加可能なエンティティセレクション</a> を参照ください。</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="例題-7"></a><a href="#例題-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p>You create a new, empty entity selection of products when the form is loaded:</p>
+<p>フォームロード時に、商品データを格納するための新規の空エンティティセレクションを作成します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(Form event code=On Load)
        Form.products:=ds.Products.<span class="hljs-function">newSelection</span>()<span class="hljs-keyword">
  End case</span>
 
 </code></pre>
-<p>Then this entity selection is updated with products and you want to share the products between several processes. You copy the Form.products entity selection as a shareable one:</p>
+<p>このエンティティセレクションに商品を登録したのちに、複数のプロセスでこの商品データを共有するには、 Form.products を共有可能なエンティティセレクションとしてコピーします:</p>
 <pre><code class="hljs css language-4d"> ...
-  <span class="hljs-comment">// The Form.products entity selection is updated</span>
+  <span class="hljs-comment">// Form.products エンティティセレクションに商品データを登録します</span>
  Form.products.<span class="hljs-function">add</span>(Form.selectedProduct)<span class="hljs-keyword">
 
  Use</span>(Storage)<span class="hljs-keyword">
@@ -531,26 +531,26 @@
 <h4><a class="anchor" aria-hidden="true" id="説明-9"></a><a href="#説明-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.distinct()</code> 関数は、 <em>attributePath</em> に指定した、エンティティセレクション内の重複しない (異なる) 値のみを格納したコレクションを返します。</p>
 <p>返されたコレクションは自動的に並べ替えられています。 <strong>Null</strong> 値は返されません。</p>
-<p>In the <em>attributePath</em> parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the <em>attributePath</em> is an object attribute that contains values of different types, they are first grouped by type and sorted afterwards. 型は以下の順番で返されます:</p>
+<p><em>attributePath</em> 引数として、固有の値を取得したいエンティティ属性を渡します。 スカラー値 (テキスト、数値、ブール、あるいは日付) のみが可能です。 <em>attributePath</em> のパスが異なる型の値を格納しているオブジェクト属性であった場合、まず最初に型ごとにグループ分けされ、そのあとで並べ替えされます。 型は以下の順番で返されます:</p>
 <ol>
 <li>ブール</li>
 <li>文字列</li>
 <li>数値</li>
 <li>日付</li>
 </ol>
-<p>You can use the <code>[]</code> notation to designate a collection when <em>attributePath</em> is a path within an object (see examples).</p>
-<p>デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 If you want the evaluation to be case sensitive or to differentiate accented characters, pass the <code>dk diacritical</code> constant in the <em>option</em> parameter.</p>
+<p><em>attributePath</em> がオブジェクト内のパスの場合、<code>[]</code> を使ってコレクションを指定できます (例題参照)。</p>
+<p>デフォルトでは、アクセント等の発音区別符号を無視した評価が実行されます。 評価の際に文字の大小を区別したり、アクセント記号を区別したい場合には、<em>option</em> に <code>dk diacritical</code> 定数を渡します。</p>
 <p>An error is returned if:</p>
 <ul>
-<li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> is not found in the entity selection dataclass.</li>
+<li><em>attributePath</em> はリレート属性である</li>
+<li><em>attributePath</em> がエンティティセレクションデータクラス内に存在しない場合。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-8"></a><a href="#例題-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
-<p>You want to get a collection containing a single element per country name:</p>
+<p>国名ごとに重複しない要素を格納するコレクションを取得します:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$countries </span>: Collection
  <span class="hljs-variable">$countries</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">distinct</span>(<span class="hljs-string">"address.country"</span>)
 </code></pre>
-<p><code>nicknames</code> is a collection and <code>extra</code> is an object attribute:</p>
+<p><code>extra</code> がオブジェクト属性で、<code>nicknames</code> がコレクションの場合:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$values</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">distinct</span>(<span class="hljs-string">"extra.nicknames[].first"</span>)
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="drop"></a><a href="#drop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.drop()</h2>
@@ -577,7 +577,7 @@
 <h4><a class="anchor" aria-hidden="true" id="説明-10"></a><a href="#説明-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.drop()</code> 関数は、 データストアのデータクラスに対応するテーブルから、エンティティセレクションに所属しているエンティティを削除します。 エンティティセレクションはメモリ内に残ります。</p>
 <blockquote>
-<p>Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.</p>
+<p>エンティティの削除は恒久的なものであり、取り消しはできません。 ロールバックで戻すことができるように、この関数はトランザクション内で呼び出すことが推奨されています。</p>
 </blockquote>
 <p>If a locked entity is encountered during the execution of <code>.drop()</code>, it is not removed. By default, the method processes all entities of the entity selection and returns non-droppable entities in the entity selection. If you want the method to stop execution at the first encountered non-droppable entity, pass the <code>dk stop dropping on first error</code> constant in the <em>mode</em> parameter.</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-9"></a><a href="#例題-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
@@ -923,8 +923,8 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><code>.max()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
 <p>An error is returned if:</p>
 <ul>
-<li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
+<li><em>attributePath</em> はリレート属性である</li>
+<li><em>attributePath</em> がエンティティセレクションデータクラス内に存在しない属性を指定している場合。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-17"></a><a href="#例題-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>We want to find the highest salary among all the female employees:</p>
@@ -961,8 +961,8 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><code>.min()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
 <p>An error is returned if:</p>
 <ul>
-<li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
+<li><em>attributePath</em> はリレート属性である</li>
+<li><em>attributePath</em> がエンティティセレクションデータクラス内に存在しない属性を指定している場合。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-18"></a><a href="#例題-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <p>In this example, we want to find the lowest salary among all the female employees:</p>
@@ -1168,7 +1168,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <h4><a class="anchor" aria-hidden="true" id="説明-23"></a><a href="#説明-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.orderByFormula()</code> 関数は、 エンティティセレクションの全エンティティが <em>formulaString</em> または <em>formulaObj</em>、および (任意の) <em>sortOrder</em> や <em>settings</em> 引数が指定する順番に並べられた、 順列ありの新規エンティティセレクションを返します 。</p>
 <blockquote>
-<p>This function does not modify the original entity selection.</p>
+<p>この関数は、元のエンティティセレクションを変更しません。</p>
 </blockquote>
 <p>You can use either a <em>formulaString</em> or a <em>formulaObj</em> parameter:</p>
 <ul>
@@ -1276,7 +1276,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <h4><a class="anchor" aria-hidden="true" id="説明-24"></a><a href="#説明-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.query()</code> 関数は、 エンティティセレクションの全エンティティから、<em>queryString</em> または <em>formula</em> と任意の <em>value</em> 引数で指定した検索条件に合致するエンティティを検索します。戻り値は、見つかったエンティティをすべて格納する <code>EntitySelection</code> 型の新しいオブジェクトです。 この関数には、レイジーローディングが適用されます。</p>
 <blockquote>
-<p>This function does not modify the original entity selection.</p>
+<p>この関数は、元のエンティティセレクションを変更しません。</p>
 </blockquote>
 <p>エンティティが見つからない場合、空のエンティティセレクションが返されます。</p>
 <p>For detailed information on how to build a query using <em>queryString</em>, <em>value</em>, and <em>querySettings</em> parameters, please refer to the DataClass <a href="DataClassClass.md#query"><code>.query()</code></a> function description.</p>
@@ -1408,7 +1408,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <h4><a class="anchor" aria-hidden="true" id="説明-28"></a><a href="#説明-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.slice()</code> 関数は、<em>startFrom</em> の位置 (含まれる) から <em>end</em> の位置 (含まれない) または終わりまでの エンティティセレクションの一部を、新規エンティティセレクションとして返します。 This method returns a shallow copy of the entity selection (it uses the same entity references).</p>
 <blockquote>
-<p>This function does not modify the original entity selection.</p>
+<p>この関数は、元のエンティティセレクションを変更しません。</p>
 </blockquote>
 <p>The returned entity selection contains the entities specified by <em>startFrom</em> and all subsequent entities up to, but not including, the entity specified by <em>end</em>. If only the <em>startFrom</em> parameter is specified, the returned entity selection contains all entities from <em>startFrom</em> to the last entity of the original entity selection.</p>
 <ul>
@@ -1458,8 +1458,8 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p>An error is returned if:</p>
 <ul>
 <li><em>attributePath</em> is not a numerical or an object attribute,</li>
-<li><em>attributePath</em> is a related attribute,</li>
-<li><em>attributePath</em> is not found in the entity selection dataclass.</li>
+<li><em>attributePath</em> はリレート属性である</li>
+<li><em>attributePath</em> がエンティティセレクションデータクラス内に存在しない場合。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="例題-20"></a><a href="#例題-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$sel </span>: cs.EmployeeSelection<span class="hljs-keyword">
