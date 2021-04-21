@@ -53,7 +53,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
 - Project フォルダー
     + Project
         * Sources
-            - Classes
+            - クラス
                 + Polygon.4dm
 
 ### クラスの削除
