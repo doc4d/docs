@@ -45,7 +45,7 @@
         "title": "Email"
       },
       "API/entityClass": {
-        "title": "Entity"
+        "title": "エンティティ"
       },
       "API/entitySelectionClass": {
         "title": "EntitySelection"
@@ -123,7 +123,7 @@
         "title": "クラス"
       },
       "Concepts/components": {
-        "title": "コンポーネント"
+        "title": "Components"
       },
       "Concepts/data-types": {
         "title": "データタイプの概要"
