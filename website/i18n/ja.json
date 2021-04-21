@@ -24,10 +24,10 @@
         "title": "Web Administration"
       },
       "API/ClassClass": {
-        "title": "クラス"
+        "title": "Class"
       },
       "API/CollectionClass": {
-        "title": "コレクション"
+        "title": "Collection"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -36,7 +36,7 @@
         "title": "DataClassAttribute"
       },
       "API/DataClassClass": {
-        "title": "データクラス"
+        "title": "DataClass"
       },
       "API/DataStoreClass": {
         "title": "DataStore"
@@ -132,7 +132,7 @@
         "title": "クラス"
       },
       "Concepts/components": {
-        "title": "コンポーネント"
+        "title": "Components"
       },
       "Concepts/data-types": {
         "title": "データタイプの概要"
