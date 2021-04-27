@@ -817,6 +817,33 @@
       "Users/overview": {
         "title": "Overview"
       },
+      "ViewPro/configuring": {
+        "title": "Configuring a 4D View Pro area"
+      },
+      "ViewPro/constantReference": {
+        "title": "Constant Reference"
+      },
+      "ViewPro/databaseReferences": {
+        "title": "Database References"
+      },
+      "ViewPro/formulas": {
+        "title": "Formulas"
+      },
+      "ViewPro/fundamentals": {
+        "title": "Fundamentals"
+      },
+      "ViewPro/languageOverview": {
+        "title": "Using the 4D View Pro Language"
+      },
+      "ViewPro/languageReference": {
+        "title": "Language Reference"
+      },
+      "ViewPro/overview": {
+        "title": "Overview"
+      },
+      "ViewPro/usingArea": {
+        "title": "Using a 4D View Pro area"
+      },
       "WebServer/allowProject": {
         "title": "Allowing project methods"
       },
@@ -855,8 +882,8 @@
       }
     },
     "links": {
-      "v18 R6 BETA": "v18 R6 BETA",
-      "v18 R5": "v18 R5",
+      "v19 BETA": "v19 BETA",
+      "v18 R6": "v18 R6",
       "v18": "v18"
     },
     "categories": {
@@ -880,7 +907,8 @@
       "Form Object Properties": "Form Object Properties",
       "Form Events": "Form Events",
       "Menus": "Menus",
-      "Build application": "Build application"
+      "Build application": "Build application",
+      "4D View Pro": "4D View Pro"
     }
   },
   "pages-strings": {

@@ -208,7 +208,8 @@
 			"Events/onVpReady",
 			"Events/onWindowOpeningDenied"],
   "Menus":["Menus/overview","Menus/creating","Menus/properties","Menus/bars","Menus/sdi"],
-   "Build application":["Desktop/building"]
+   "Build application":["Desktop/building"],
+   "4D View Pro":["ViewPro/overview","ViewPro/fundamentals","ViewPro/configuring","ViewPro/usingArea","ViewPro/databaseReferences","ViewPro/constantReference","ViewPro/formulas","ViewPro/languageOverview","ViewPro/languageReference"]
 
 
   }
