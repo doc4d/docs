@@ -55,7 +55,7 @@ In addition to standard system options, the *Open* dialog in 4D provides two men
 
 ## Project opening shortcuts 
 
-4D offers several ways to let you open projects directly and bypass the Open dialog:
+4D offers several ways to open projects directly and bypass the Open dialog:
 
 - via menu options:
 	-	*Menu bar* - **File** > **Open Recent Projects / {project name}** 
