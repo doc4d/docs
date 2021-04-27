@@ -3,7 +3,6 @@ id: fundamentals
 title: Fundamentals
 ---
 
-
 ## Defining a 4D View Pro area     
 
 4D View Pro allows you to insert and display a spreadsheet area in your 4D forms. A spreadsheet is an application containing a grid of cells into which you can enter information, execute calculations, or display pictures.
@@ -16,21 +15,21 @@ Once you use 4D View Pro areas in your forms, you can import and export spreadsh
 
 ![](assets/en/ViewPro/vpArea.PNG)
 
-A 4D View Pro form area is configured by means of standard properties found in the Property List, such as **Object Name** and **Variable or Expression**, **Coordinates**, **Display**, **Action**, and **Events**. 
+A 4D View Pro form area is configured by means of standard properties found in the Property List, such as **Object Name** and **Variable or Expression**, **Coordinates**, **Display**, **Action**, and **Events**.
 
 ![](assets/en/ViewPro/vpPropertyList.PNG)
 
 *	**Object Name**: name of the 4D form area that contains and displays the 4D View Pro document.
 *	**Variable or Expression**: name of the 4D View Pro form area variable.
 
-When the form is executed, the 4D View Pro area displays a spreadsheet by default:
+When the form is executed, the 4D View Pro area displays a spreadsheet with a Ribbon by default:
 
 ![](assets/en/ViewPro/vpSpreadsheet.PNG)
 
 
 ### User Interfaces  
 
-You can add an interface to 4D View Pro areas to allow end users to perform basic modifications and data manipulations. 4D offers two optional interfaces to choose from, Ribbon and Toolbar. These interfaces can be enabled or disabled from either the Property List or dynamically with code:
+Interfaces can be added to 4D View Pro areas. They allow for basic modifications and data manipulation. 4D offers two optional interfaces to choose from, Ribbon and Toolbar. The Ribbon is set by default in the property list. These interfaces can be enabled or disabled from either the Property List or dynamically with code:
 
 *	**Property List**: In the Appearance section:  
 	![](assets/en/ViewPro/vpUserInterface.PNG)
@@ -68,18 +67,9 @@ Enabling the Toolbar interface displays the Show Formula Bar option. When select
 
 With visible formula bar:
 
-![](assets/en/ViewPro/vpToolbar1.PNG)
-
-With formula bar hidden:
-
-![](assets/en/ViewPro/vpToolbar2.PNG)
-
-
-
-
+![](assets/en/ViewPro/vpToolbar.PNG)
 
 ## Form Events
-
 
 The following form events are available in the Property List for 4D View Pro areas.
 
