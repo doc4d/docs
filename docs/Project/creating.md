@@ -64,7 +64,7 @@ In addition to standard system options, the *Open* dialog in 4D provides two men
 - via preferences:
 	-	Set the **At startup** general preference to **Open last used project**. 
 
-- using a `.4DLink` file (see [Opening a Project with a .4DLink file](#opening-a-project-with-a-4dlink-file))
+- using a `.4DLink` file (see [Opening a Project with a .4DLink file](#opening-a-project-with-a-4dlink-file)).
 
 ### About 4DLink Files
 
@@ -72,31 +72,31 @@ Files with the `.4DLink` extension are XML files that contain parameters intende
 
 `.4DLink` files can save the address of a 4D project as well as its connection identifiers and opening mode, saving you time when opening projects.
 
-4D automatically generates a `.4DLink` file when a local project is opened for the first time or when connecting to a server for the first time, and stores it in the local preferences folder at the following location:
+4D automatically generates a `.4DLink` file when a local project is opened for the first time or when connecting to a server for the first time. The file is stored in the local preferences folder at the following location:
 
 - Windows 7 and higher: C:\Users\UserName\AppData\Roaming\4D\Favorites vXX\
 - OS X: Users/UserName/Library/Application Support/4D/Favorites vXX/
 
 XX represents the version number of the application. For example, "Favorites v19" for 4D v19.
 
-The Favorites vXX folder contains two subfolders: 
+That folder is divided into two subfolders: 
 - the **Local** folder contains the `.4DLink` files that can be used to open local projects
-- the **Remote** folder contains the `.4DLink` files of recent remote projects.
+- the **Remote** folder contains the `.4DLink` files of recent remote projects
 
-The `.4DLink` files can also be created with an XML editor. 
+`.4DLink` files can also be created with an XML editor. 
 
 4D provides a DTD describing the XML keys that can be used to build a `.4DLink` file. This DTD is named database_link.dtd and is found in the \Resources\DTD\ subfolder of the 4D application.
 
 ### Opening a Project with a 4DLink file
 
-A `.4DLink` access file can be used to launch the 4D application and open the target 4D project. There are two ways to do this:
+You can use a `.4DLink` file to launch the 4D application and open the target 4D project. There are two ways to do this:
 
 - double-click or drag and drop the `.4DLink` file onto the 4D application
 - go to **File** > **Open Recent Projects** and select a project
 
 ![open-recent-projects](assets/en/Project/4DLinkfiles.png)
 
-A .4DLink file of the "remote project" type can be copied and used on several machines.
+A .4DLink file of "remote project" type can be copied and used on several machines.
 
 >It's also possible to select a 4DLink file in the 4D and 4D Server opening dialog box (opening local project only).
 	
