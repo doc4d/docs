@@ -22,7 +22,7 @@ A 4D View Pro form area is configured by means of standard properties found in t
 *	**Object Name**: name of the 4D form area that contains and displays the 4D View Pro document.
 *	**Variable or Expression**: name of the 4D View Pro form area variable.
 
-When the form is executed, the 4D View Pro area displays a spreadsheet with a Ribbon by default:
+By default, when the form is executed, the 4D View Pro area displays a spreadsheet with a Ribbon:
 
 ![](assets/en/ViewPro/vpSpreadsheet.PNG)
 
@@ -34,9 +34,9 @@ Interfaces can be added to 4D View Pro areas. They allow for basic modifications
 *	**Property List**: In the Appearance section:  
 	![](assets/en/ViewPro/vpUserInterface.PNG)
 	
-*	**Dynamically**: Via a JSON file (see Dynamic Forms)
-	*	"userInterface": Default value is "none". To enable a toolbar, it can be set to "ribbon" or "toolbar".
-	*	"withFormulaBar": Default value is "false". To enable the formular bar, it can be set to "true" . **Note**: Available only for the "toolbar" interface. 
+*	**Dynamically**: Via a JSON file. See  [Dynamic forms](../FormObjects/formObjects_overview.md).
+	*	"userInterface": Default value is "none". To enable a toolbar, it can be set to "Ribbon" or "Toolbar".
+	*	"withFormulaBar": Default value is "false". To enable the formular bar, it can be set to "true" . **Note**: Available only for the "Toolbar" interface. 
 
 Both the Ribbon and the Toolbar interfaces group related actions into the following tabs: 	
 
