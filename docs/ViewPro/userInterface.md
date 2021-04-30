@@ -27,13 +27,13 @@ Both the Ribbon and the Toolbar interfaces group related actions into the follow
 
 User-defined modifications are saved in the 4D View Pro object when the user saves the document.
 
-## Ribbon  
+## Adding a ribbon
 
 The Ribbon interface allows end users to perform comprehensive modifications and data manipulations:
 
 ![](assets/en/ViewPro/vpRibbon.PNG)
 
-## Toolbar  
+## Adding a toolbar  
 
 The Toolbar interface allows end users to perform basic modifications and data manipulations. 
 

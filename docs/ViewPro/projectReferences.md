@@ -1,6 +1,6 @@
 ---
 id: projectReferences
-title: Calling project methods and fields in 4D View Pro formulas
+title: Calling Project Methods and Fields in 4D View Pro Formulas
 ---
 
 ## Project method references
