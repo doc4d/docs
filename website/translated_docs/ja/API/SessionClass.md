@@ -350,7 +350,7 @@ End if
 
 #### 説明
 
-`.storage` プロパティは、 <!-- REF #SessionClass.storage.Summary -->Webクライアントのリクエストに対して提供されうる情報を保存するのに使用可能な共有オブジェクト<!-- END REF -->を格納します。
+`.storage` プロパティは、 <!-- REF #SessionClass.storage.Summary -->Webクライアントのリクエストに対応するために情報を保存しておける共有オブジェクト<!-- END REF -->を格納します。
 
 `Session` オブジェクトの作成時には、`.storage` プロパティは空です。 共有オブジェクトのため、このプロパティはサーバー上の `Storage` オブジェクトにおいて利用可能です。
 
