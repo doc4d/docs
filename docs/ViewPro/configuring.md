@@ -1,6 +1,6 @@
 ---
 id: configuring
-title: Configuring and Customizing a 4D View Pro area
+title: Configuring and Customizing 4D View Pro areas
 ---
 
 Using 4D commands and attributes, you can set the behavior and appearance of your 4D View Pro areas.

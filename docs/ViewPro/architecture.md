@@ -1,6 +1,6 @@
 ---
 id: architecture
-title: Understanding the architecture of 4D View Pro Areas
+title: Understanding the Architecture of 4D View Pro Areas
 ---
 
 When working with 4D View Pro areas in your forms, you need to handle several elements:
@@ -14,7 +14,7 @@ When working with 4D View Pro areas in your forms, you need to handle several el
 
 When loading a 4D View Pro object in a form area, 4D generates the [On VP Ready](../Events/onVpReady.md) form event once the whole area is loaded. You must execute any 4D View Pro code handling the area in this event, otherwise an error is returned.
 
-### Automatic handling of the 4D View Pro object
+## Automatic handling of the 4D View Pro object
 
 The 4D View Pro object describes the document and is automatically handled by the 4D View Pro commands. It contains the following properties:
 
@@ -27,7 +27,7 @@ The 4D View Pro object describes the document and is automatically handled by th
 |spreadJS|Object|Reserved for the 4D View Pro component|
 
 
-### About the 4D View Pro form object variable  
+## About the 4D View Pro form object variable  
 
 The 4D View Pro form object variable manages information used by the 4D View Pro object. It contains the following variables:
 

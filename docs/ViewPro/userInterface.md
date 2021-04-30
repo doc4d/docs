@@ -3,7 +3,7 @@ id: userInterface
 title: Adding a User Interface
 ---
 
-Interfaces can be added to 4D View Pro areas. They allow for basic modifications and data manipulation. 4D offers two optional interfaces to choose from, Ribbon and Toolbar. The Ribbon is set by default in the property list. These interfaces can be enabled or disabled from either the Property List or dynamically with code:
+You can add interfaces to 4D View Pro areas. They allow for basic modifications and data manipulation. 4D offers two optional interfaces to choose from, Ribbon and Toolbar. The Ribbon is set by default in the property list. These interfaces can be enabled or disabled from either the Property List or dynamically with code:
 
 *	**Property List**: In the Appearance section:  
 	![](assets/en/ViewPro/vpUserInterface.PNG)
