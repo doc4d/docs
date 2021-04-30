@@ -1,6 +1,6 @@
 ---
-id: usingArea
-title: Using a 4D View Pro area
+id: spreadsheetFeatures
+title: Basic Spreadsheet Features
 ---
    
 When executed in forms, 4D View Pro areas provide basic spreadsheet features including cell editing and formula entry. More advanced features are available through the 4D View Pro language.
@@ -9,7 +9,7 @@ When executed in forms, 4D View Pro areas provide basic spreadsheet features inc
 
 Spreadsheets are composed of rows and columns. A number is associated with each row. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
 
-### Selection  
+### Selecting cells, columns and rows
 
 *	To select a cell, simply click on it or use the direction arrows on the keyboard. Its content (or formula) is displayed within the cell.
 
@@ -26,7 +26,7 @@ Spreadsheets are composed of rows and columns. A number is associated with each 
 
 *	To deselect cells, simply click anywhere within the spreadsheet.
 
-### Input and navigation  
+### Entering data
 
 Double-clicking on a cell allows passing into input mode in the relevant cell. If the cell is not empty, the insertion cursor is placed after the content of the cell.
 
@@ -57,7 +57,7 @@ To enter a formula or a function in a 4D View Pro area:
 	![](assets/en/ViewPro/vpFormula2.PNG)
 	
 	
-## Context Menu  
+## Using the Context Menu  
 
 4D View Pro areas benefit from an automatic context menu that provides users with standard editing features such as copy and paste, but also with basic spreadsheet features:
 

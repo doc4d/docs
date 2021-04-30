@@ -1,18 +1,7 @@
 ---
-id: languageOverview
-title: Using the 4D View Pro Language
+id: architecture
+title: Understanding the architecture of 4D View Pro Areas
 ---
-
-The 4D View Pro spreadsheet feature is a built-in 4D component. Thus, the 4D ViewPro element appears on the Methods page of the database Explorer, in the "Component Methods" section:
-
-![](assets/en/ViewPro/lang_overview.PNG)
-
-You can expand this element in order to view all the component commands. These commands can be used in the 4D Method editor just like 4D language commands.
-
-
-## Handling 4D View Pro areas
-
-### Architecture  
 
 When working with 4D View Pro areas in your forms, you need to handle several elements:
 
@@ -25,7 +14,7 @@ When working with 4D View Pro areas in your forms, you need to handle several el
 
 When loading a 4D View Pro object in a form area, 4D generates the [On VP Ready](../Events/onVpReady.md) form event once the whole area is loaded. You must execute any 4D View Pro code handling the area in this event, otherwise an error is returned.
 
-### 4D View Pro object
+### Automatic handling of the 4D View Pro object
 
 The 4D View Pro object describes the document and is automatically handled by the 4D View Pro commands. It contains the following properties:
 
@@ -38,7 +27,7 @@ The 4D View Pro object describes the document and is automatically handled by th
 |spreadJS|Object|Reserved for the 4D View Pro component|
 
 
-### 4D View Pro form object variable  
+### About the 4D View Pro form object variable  
 
 The 4D View Pro form object variable manages information used by the 4D View Pro object. It contains the following variables:
 

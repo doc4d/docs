@@ -1,6 +1,6 @@
 ---
-id: databaseReferences
-title: Database References
+id: projectReferences
+title: Calling project methods and fields in 4D View Pro formulas
 ---
 
 ## Project method references

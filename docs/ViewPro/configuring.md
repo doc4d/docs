@@ -1,12 +1,13 @@
 ---
 id: configuring
-title: Configuring a 4D View Pro area
+title: Configuring and Customizing a 4D View Pro area
 ---
+
+Using 4D commands and attributes, you can set the behavior and appearance of your 4D View Pro areas.
 
 ## Sheet Options
 
-
-4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
+The 4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
 
 *	[VP SET SHEET OPTIONS](languageReference.md#vp-set-sheet-options)
 *	[VP Get sheet options](languageReference.md#vp-get-sheet-options) 
