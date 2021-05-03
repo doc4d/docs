@@ -1,6 +1,6 @@
 ---
 id: usingMethods
-title: Accessing and Using 4D View Pro Methods
+title: Using 4D View Pro Methods
 ---
 
 The 4D View Pro spreadsheet feature is a built-in 4D component. Thus, the 4D ViewPro element appears on the Methods page of the database Explorer, in the "Component Methods" section:

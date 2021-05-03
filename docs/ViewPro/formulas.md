@@ -1,6 +1,6 @@
 ---
 id: formulas
-title: Formulas
+title: Using Formulas
 ---
 
 ## Overview 

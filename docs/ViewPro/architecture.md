@@ -1,6 +1,6 @@
 ---
 id: architecture
-title: Understanding the Architecture of 4D View Pro Areas
+title: Area Architecture
 ---
 
 When working with 4D View Pro areas in your forms, you need to handle several elements:

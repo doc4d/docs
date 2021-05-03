@@ -816,7 +816,7 @@ In the *option* parameter, you can pass the following export option, if required
 |---|---|---
 |includeFormatInfo|	boolean|True to include formatting information, false otherwise (default is **true**). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.	|
 
-For more information on 4D View Pro objects, please refer to the [4D View Pro object](languageOverview.md#4d-view-pro-object) paragraph.
+For more information on 4D View Pro objects, please refer to the [4D View Pro object](architecture.md#automatic-handling-of-the-4d-view-pro-object) paragraph.
 
 
 #### Example 1 

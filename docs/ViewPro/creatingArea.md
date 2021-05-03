@@ -1,6 +1,6 @@
 ---
 id: creatingArea
-title: Creating a 4D View Pro Area
+title: Creating an Area
 ---
 
 4D View Pro allows you to insert spreadsheet areas in your 4D forms.
