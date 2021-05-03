@@ -1,5 +1,5 @@
 ---
-id: creatingArea
+id: creating-area
 title: Creating an Area
 ---
 

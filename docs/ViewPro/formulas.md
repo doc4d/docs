@@ -12,8 +12,8 @@ title: Using Formulas
 	*	values,
 	*	references to other cells (relatives, absolutes, mixed or by name), 
 	*	4D variables, fields and functions,
-	*	4D methods (registered by [VP SET ALLOWED METHODS](languageReference.md#vp-set-allowed-methods)), 
-	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](languageReference.md#vp-set-custom-functions)),
+	*	4D methods (registered by [VP SET ALLOWED METHODS](language-reference.md#vp-set-allowed-methods)), 
+	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](language-reference.md#vp-set-custom-functions)),
 	*	4D View Pro functions.
 
 To enter a formula:
@@ -22,7 +22,7 @@ To enter a formula:
 2.	Enter = (the equal sign).
 3.	Type in the formula then hit the Enter key
 
->You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](languageReference.md#vp-add-formula-name) command.
+>You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](language-reference.md#vp-add-formula-name) command.
 
 A large number of functions are available in 4D View Pro. This section describes a subset of essential functions. The complete list of functions supported by 4D View Pro can be found in the [Spreadsheets documentation](http://help.grapecity.com/spread/SpreadSheets11/webframe.html#FormulaFunctions.html).
 

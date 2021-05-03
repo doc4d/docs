@@ -1,5 +1,5 @@
 ---
-id: languageReference
+id: language-reference
 title: Language Reference
 ---
 
@@ -57,7 +57,7 @@ You can pass an object with additional properties for the named formula in *opti
  
 |Property	|Type|Description|
 |---|---|---|
-|scope|	Number|	Scope for the formula. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>[`vk current sheet`](constantReference.md#vk-current-sheet)</li><li>[`vk workbook`](constantReference.md#vk-workbook)</li><p><p>**Note**: The scope determines whether a formula name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`).|
+|scope|	Number|	Scope for the formula. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>[`vk current sheet`](constant-reference.md#vk-current-sheet)</li><li>[`vk workbook`](constant-reference.md#vk-workbook)</li><p><p>**Note**: The scope determines whether a formula name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`).|
 |comment|Text|Comment associated to named formula
 
 
@@ -97,7 +97,7 @@ You can pass an object with additional properties for the named range in *option
  
 |Property	|Type|Description|
 |---|---|---|
-|scope|	Number|	Scope for the range. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>[`vk current sheet`](constantReference.md#vk-current-sheet)</li><li>[`vk workbook`](constantReference.md#vk-workbook)</li><p><p>**Note**: The scope determines whether a range name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`).|
+|scope|	Number|	Scope for the range. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>[`vk current sheet`](constant-reference.md#vk-current-sheet)</li><li>[`vk workbook`](constant-reference.md#vk-workbook)</li><p><p>**Note**: The scope determines whether a range name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`).|
 |comment|Text|Comment associated to named range|
 
 >*	A named range is actually a named formula containing coordinates. `VP ADD RANGE NAM`E facilitates the creation of named ranges, but you can also use the [VP ADD FORMULA NAME](#vp-add-formula-name) command to create named ranges.
@@ -182,8 +182,8 @@ Within the *styleObj*, designate the settings for the style sheet (e.g., font, t
 
 You can designate where to define the style sheet in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)
  
 If a *styleName* style sheet is defined at the workbook level and at a sheet level, the sheet level has priority over the workbook level when the style sheet is set. 
 
@@ -248,7 +248,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 
 #### Example  
@@ -288,7 +288,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 
 #### Example  
@@ -341,7 +341,7 @@ The *rowCount* parameter allows you to define the total number of rows the range
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 
 #### Example  
@@ -386,7 +386,7 @@ The optional *columnCount* parameter allows you to define the total number of co
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 
 #### Example  
@@ -690,7 +690,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
  
 |Property|	Type|	Description|
 |---|---|---
-|format|	text|	(optional) When present, designates the exported file format: ".4vp" (default), ".xlsx", or ".pdf". You can pass a constant from the 4D View Pro Constants theme in the format parameter. In this case, 4D adds the appropriate extension to the file name if needed.<p>The following formats are supported:<p><table><tr><td>[`vk 4D View_Pro format`](constantReference.md#vk-4d-view-pro-format)</td></tr><tr><td>[`vk MS Excel format`](constantReference.md#vk-ms-excel-format)</td></tr><tr><td>[`vk pdf format`](constantReference.md#vk-pdf-format)</td></tr></table><br><p>If the format specified doesn't correspond with the extension in *filePath*, it will be added to the end of *filePath*. If a format is not specified and no extension is provided in *filePath*, the default file format is used.|
+|format|	text|	(optional) When present, designates the exported file format: ".4vp" (default), ".xlsx", or ".pdf". You can pass a constant from the 4D View Pro Constants theme in the format parameter. In this case, 4D adds the appropriate extension to the file name if needed.<p>The following formats are supported:<p><table><tr><td>[`vk 4D View_Pro format`](constant-reference.md#vk-4d-view-pro-format)</td></tr><tr><td>[`vk MS Excel format`](constant-reference.md#vk-ms-excel-format)</td></tr><tr><td>[`vk pdf format`](constant-reference.md#vk-pdf-format)</td></tr></table><br><p>If the format specified doesn't correspond with the extension in *filePath*, it will be added to the end of *filePath*. If a format is not specified and no extension is provided in *filePath*, the default file format is used.|
 |password|	text|	Microsoft Excel only (optional) - Password used to protect the MS Excel document|
 |formula|	object	|Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the `Formula` command (see below for more information).|
 |valuesOnly|	boolean|	Specifies that only the values from formulas (if any) will be exported.|
@@ -876,9 +876,9 @@ You can pass the optional *searchCondition* parameter to specify how the search 
 |afterColumn|Longint|The number of the column just before the starting column of the search. If the *rangeObj* is a combined range, the column number given must be from the first range. Default value: -1 (beginning of the *rangeObj*)|
 |afterRow|Longint|The number of the row just before the starting row of the search. If the *rangeObj* is a combined range, the row number given must be from the first range. Default value: -1 (beginning of the *rangeObj*) |
 |all|Boolean |<li>True - All cells in *rangeObj* corresponding to *searchValue* are returned</li><li>False - (default value) Only the first cell in *rangeObj* corresponding to *searchValue* is returned</li>|
-|flags|	Longint|<table><tr><td>[`vk find flag exact match`](constantReference.md#vk-find-flag-exact-match)</td></tr><tr><td>[`vk find flag ignore case`](constantReference.md#vk-find-flag-ignore-case)</td></tr><tr><td>[`vk find flag none`](constantReference.md#vk-find-flag-none)</td></tr><tr><td>[`vk find flag use wild cards`](constantReference.md#vk-find-flag-use-wild-cards)</td></tr></table><p>These flags can be combined. For example:<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code>|
-|order|	Longint |<table><tr><td>[`vk find order by columns`](constantReference.md#vk-find-order-by-columns)</td></tr><tr><td>[`vk find order by rows`](constantReference.md#vk-find-order-by-rows)</td></tr></table> |
-|target|Longint|<table><tr><td>[`vk find target formula`](constantReference.md#vk-find-target-formula)</td></tr><tr><td>[`vk find target tag`](constantReference.md#vk-find-target-tag)</td></tr><tr><td>[`vk find target text`](constantReference.md#vk-find-target-text)</td></tr></table><p>These flags can be combined. For example:<p> <code>$search.target:=vk find target formula+vk find target text</code>|
+|flags|	Longint|<table><tr><td>[`vk find flag exact match`](constant-reference.md#vk-find-flag-exact-match)</td></tr><tr><td>[`vk find flag ignore case`](constant-reference.md#vk-find-flag-ignore-case)</td></tr><tr><td>[`vk find flag none`](constant-reference.md#vk-find-flag-none)</td></tr><tr><td>[`vk find flag use wild cards`](constant-reference.md#vk-find-flag-use-wild-cards)</td></tr></table><p>These flags can be combined. For example:<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code>|
+|order|	Longint |<table><tr><td>[`vk find order by columns`](constant-reference.md#vk-find-order-by-columns)</td></tr><tr><td>[`vk find order by rows`](constant-reference.md#vk-find-order-by-rows)</td></tr></table> |
+|target|Longint|<table><tr><td>[`vk find target formula`](constant-reference.md#vk-find-target-formula)</td></tr><tr><td>[`vk find target tag`](constant-reference.md#vk-find-target-tag)</td></tr><tr><td>[`vk find target text`](constant-reference.md#vk-find-target-text)</td></tr></table><p>These flags can be combined. For example:<p> <code>$search.target:=vk find target formula+vk find target text</code>|
 
 In the optional *replaceValue* parameter, you can pass text to take the place of any instance of the text in *searchValue* found in the *rangeObj*.
 
@@ -1028,7 +1028,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 
 #### Example 
@@ -1166,7 +1166,7 @@ In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a n
 You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
  
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 #### Example 
 
@@ -1201,7 +1201,7 @@ In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a n
 You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
  
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 #### Example 
 
@@ -1281,8 +1281,8 @@ Pass the named range or named formula that you want to get in *name*. Note that 
 
 You can define where to get the formula in *scope* using either the sheet index (counting begins at 0) or the following constants:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet) 
-*	[`vk workbook`](constantReference.md#vk-workbook)  
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet) 
+*	[`vk workbook`](constant-reference.md#vk-workbook)  
  
  
 ##### Returned Object
@@ -1370,7 +1370,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 ##### Returned object
 
@@ -1420,8 +1420,8 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 You can define where to get the names in *scope* using either the sheet index (counting begins at 0) or the following constants:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)
 
 ##### Returned collection
 
@@ -1466,7 +1466,7 @@ Pass the the name of the 4D View Pro area in *vpAreaName*. If you pass a name th
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0) whose printing attributes you want returned. If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
  
 #### Example 
@@ -1586,7 +1586,7 @@ In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a n
 
 You can define where to get the row count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
  
 #### Example 
@@ -1621,7 +1621,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
  
 #### Example 
@@ -1665,7 +1665,7 @@ Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that d
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant: 
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
 ##### Returned object
 
@@ -1746,8 +1746,8 @@ In *styleName*, pass the name of the style sheet to get.
 
 You can define where to get the style sheet in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)  
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)  
  
 #### Example 
 
@@ -1792,8 +1792,8 @@ In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a n
 
 You can define where to get the style sheets in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)  
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)  
  
 #### Example 
 
@@ -2111,8 +2111,8 @@ The *rangeName* parameter specifies an existing named cell range.
 
 In the optional *scope* parameter, you can designate a specific spreadsheet where *rangeName* is defined. If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet or the entire workbook with the following constants:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)  
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)  
  
  
 #### Example
@@ -2181,10 +2181,10 @@ In *fontObj*, pass an object containing the font properties. The following prope
 |Property|Type|Description|Possible values|	Mandatory|
 |---|---|---|---|---|
 |family	|text|	Specifies the font.| any standard or generic font family. Ex. "Arial", "Helvetica", "serif", "arial,sans-serif"	|Yes|
-|size	|text|	Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt"	|a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>[`vk font size large`](constantReference.md#vk-font-size-large)</li><li>[`vk font size larger`](constantReference.md#vk-font-size-larger)</li><li>[`vk font size x large`](constantReference.md#vk-font-size-x-large)</li><li>[`vk font size xx large`](constantReference.md#vk-font-size-xx-large)</li><li>[`vk font size small`](constantReference.md#vk-font-size-small)</li><li>[`vk font size smaller`](constantReference.md#vk-font-size-smaller)</li><li>[`vk font size x small`](constantReference.md#vk-font-size-x-small)</li><li>[`vk font size xx small`](constantReference.md#vk-font-size-xx-small)</li>|	Yes|
-|style	|text	|The style of the font. |<li>[`vk font style italic`](constantReference.md#vk-font-style-italic)</li><li>[`vk font style oblique`](constantReference.md#vk-font-style-oblique)</li>|	No|
-|variant	|text	|Specifies font in small capital letters.	|<li>[`vk font variant small caps`](constantReference.md#vk-font-variant-small-caps)</li>|	No|
-|weight	|text|	Defines the thickness of the font.|<li>[`vk font weight 100`](constantReference.md#vk-font-weight-100)</li><li>[`vk font weight 200`](constantReference.md#vk-font-weight-200)</li><li>[`vk font weight 300`](constantReference.md#vk-font-weight-300)</li><li>[`vk font weight 400`](constantReference.md#vk-font-weight-400)</li><li>[`vk font weight 500`](constantReference.md#vk-font-weight-500)</li><li>[`vk font weight 600`](constantReference.md#vk-font-weight-600)</li><li>[`vk font weight 700`](constantReference.md#vk-font-weight-700)</li><li>[`vk font weight 800`](constantReference.md#vk-font-weight-800)</li><li>[`vk font weight 900`](constantReference.md#vk-font-weight-900)</li><li>[`vk font weight bold`](constantReference.md#vk-font-weight-bold)</li><li>[`vk font weight bolder`](constantReference.md#vk-font-weight-bolder)</li><li>[`vk font weight lighter`](constantReference.md#vk-font-weight-lighter)</li>|	No|
+|size	|text|	Defines the size of the font.<p><p>The line-height can be added to the font-size: font-size/line-height: Ex: "15pt/20pt"	|a number with one of the following units: <li>"em", "ex", "%", "px", "cm", "mm", "in", "pt", "pc", "ch", "rem", "vh", "vw", "vmin", "vmax"</li><p><p>or one of the following:<li>[`vk font size large`](constant-reference.md#vk-font-size-large)</li><li>[`vk font size larger`](constant-reference.md#vk-font-size-larger)</li><li>[`vk font size x large`](constant-reference.md#vk-font-size-x-large)</li><li>[`vk font size xx large`](constant-reference.md#vk-font-size-xx-large)</li><li>[`vk font size small`](constant-reference.md#vk-font-size-small)</li><li>[`vk font size smaller`](constant-reference.md#vk-font-size-smaller)</li><li>[`vk font size x small`](constant-reference.md#vk-font-size-x-small)</li><li>[`vk font size xx small`](constant-reference.md#vk-font-size-xx-small)</li>|	Yes|
+|style	|text	|The style of the font. |<li>[`vk font style italic`](constant-reference.md#vk-font-style-italic)</li><li>[`vk font style oblique`](constant-reference.md#vk-font-style-oblique)</li>|	No|
+|variant	|text	|Specifies font in small capital letters.	|<li>[`vk font variant small caps`](constant-reference.md#vk-font-variant-small-caps)</li>|	No|
+|weight	|text|	Defines the thickness of the font.|<li>[`vk font weight 100`](constant-reference.md#vk-font-weight-100)</li><li>[`vk font weight 200`](constant-reference.md#vk-font-weight-200)</li><li>[`vk font weight 300`](constant-reference.md#vk-font-weight-300)</li><li>[`vk font weight 400`](constant-reference.md#vk-font-weight-400)</li><li>[`vk font weight 500`](constant-reference.md#vk-font-weight-500)</li><li>[`vk font weight 600`](constant-reference.md#vk-font-weight-600)</li><li>[`vk font weight 700`](constant-reference.md#vk-font-weight-700)</li><li>[`vk font weight 800`](constant-reference.md#vk-font-weight-800)</li><li>[`vk font weight 900`](constant-reference.md#vk-font-weight-900)</li><li>[`vk font weight bold`](constant-reference.md#vk-font-weight-bold)</li><li>[`vk font weight bolder`](constant-reference.md#vk-font-weight-bolder)</li><li>[`vk font weight lighter`](constant-reference.md#vk-font-weight-lighter)</li>|	No|
  
 
 This object can be created with the [VP Font to object](#vp-font-to-object) command. 
@@ -2234,8 +2234,8 @@ Pass the 4D View Pro area to be printed in *vpAreaName*. The command will open t
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). If omitted, the current sheet is used by default. You can explicitly select the current spreadsheet or entire workbook with the following constants: 
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)  
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)  
  
 
 >*	4D View Pro areas can only be printed with the `VP PRINT` command. 
@@ -2315,8 +2315,8 @@ Pass the named range or named formula that you want to remove in *name*.
 
 You can define where to remove the name in *scope* using either the sheet index (counting begins at 0) or the following constants:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)  
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)  
  
  
 #### Example
@@ -2399,8 +2399,8 @@ Pass the style sheet to remove in the *styleName* parameter.
 
 You can define where to remove the style in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
  
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
-*	[`vk workbook`](constantReference.md#vk-workbook)   
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
+*	[`vk workbook`](constant-reference.md#vk-workbook)   
  
 #### Example
 
@@ -2435,7 +2435,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
  
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
   
  
 #### Example
@@ -2506,7 +2506,7 @@ The optional *rowCount* parameter allows you to define the total number of rows 
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If not specified, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
  
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
   
  
 #### Example
@@ -2857,7 +2857,7 @@ The *borderStyleObj* parameter allows you to define the style for the lines of t
 |Property|	Type|	Description	|Possible values|
 |---|---|---|---|
 |color|	text|	Defines the color of the border. Default = black.|	CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)|
-|style|	longint|	Defines the style of the border. Default = empty.|<li>[`vk line style dash dot`](constantReference.md#vk-line-style-dash-dot)</li><li>[`vk line style dash dot dot`](constantReference.md#vk-line-style-dash-dot-dot)</li><li>[`vk line style dashed`](constantReference.md#vk-line-style-dashed)</li> <li>[`vk line style dotted`](constantReference.md#vk-line-style-dotted)</li><li>[`vk line style double`](constantReference.md#vk-line-style-double)</li><li>[`vk line style empty`](constantReference.md#vk-line-style-empty)</li><li>[`vk line style hair`](constantReference.md#vk-line-style-hair)</li> <li>[`vk line style medium`](constantReference.md#vk-line-style-medium)</li><li>[`vk line style medium dash dot`](constantReference.md#vk-line-style-medium-dash-dot)</li><li>[`vk line style medium dash dot dot`](constantReference.md#vk-line-style-medium-dash-dot-dot)</li><li>[`vk line style medium dashed`](constantReference.md#vk-line-style-medium-dashed)</li><li>[`vk line style slanted dash dot`](constantReference.md#vk-line-style-slanted-dash-dot)</li><li>[`vk line style thick`](constantReference.md#vk-line-style-thick)</li><li>[`vk line style thin`](constantReference.md#vk-line-style-thin)</li>|
+|style|	longint|	Defines the style of the border. Default = empty.|<li>[`vk line style dash dot`](constant-reference.md#vk-line-style-dash-dot)</li><li>[`vk line style dash dot dot`](constant-reference.md#vk-line-style-dash-dot-dot)</li><li>[`vk line style dashed`](constant-reference.md#vk-line-style-dashed)</li> <li>[`vk line style dotted`](constant-reference.md#vk-line-style-dotted)</li><li>[`vk line style double`](constant-reference.md#vk-line-style-double)</li><li>[`vk line style empty`](constant-reference.md#vk-line-style-empty)</li><li>[`vk line style hair`](constant-reference.md#vk-line-style-hair)</li> <li>[`vk line style medium`](constant-reference.md#vk-line-style-medium)</li><li>[`vk line style medium dash dot`](constant-reference.md#vk-line-style-medium-dash-dot)</li><li>[`vk line style medium dash dot dot`](constant-reference.md#vk-line-style-medium-dash-dot-dot)</li><li>[`vk line style medium dashed`](constant-reference.md#vk-line-style-medium-dashed)</li><li>[`vk line style slanted dash dot`](constant-reference.md#vk-line-style-slanted-dash-dot)</li><li>[`vk line style thick`](constant-reference.md#vk-line-style-thick)</li><li>[`vk line style thin`](constant-reference.md#vk-line-style-thin)</li>|
  
 
 You can define the position of the *borderStyleObj* (i.e., where the line is applied) with the *borderPosObj*:
@@ -3039,7 +3039,7 @@ Pass the total number of columns in the *columnCount* parameter. *columnCount* m
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the *columnCount* will be applied (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
  
 #### Example
 
@@ -3087,7 +3087,7 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 | |	formula	| |Object|4D formula object (mandatory). See the `Formula` command.|
 | |parameters| 	|Collection of objects	|Collection of parameters (in the order they are defined in the formula)|
  | |	| 	\[ ].name|	Text|	Name of parameter to display in 4D View Pro|
- | | 	|	\[ ].type|	Number|	Type of the parameter. Supported types:<p><p><table><tr><th>Constant</th></tr><tr><td>`Is Boolean`</td></tr><tr><td>`Is date`</td></tr><tr><td>`Is longint`</td></tr><tr><td>`Is object`</td></tr><tr><td>`Is real`</td></tr><tr><td>`Is text`</td></tr><tr><td>`Is time`</td></tr></table><p><p>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](projectReferences.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value).|
+ | | 	|	\[ ].type|	Number|	Type of the parameter. Supported types:<p><p><table><tr><th>Constant</th></tr><tr><td>`Is Boolean`</td></tr><tr><td>`Is date`</td></tr><tr><td>`Is longint`</td></tr><tr><td>`Is object`</td></tr><tr><td>`Is real`</td></tr><tr><td>`Is text`</td></tr><tr><td>`Is time`</td></tr></table><p><p>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](project-references.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value).|
 | | 	summary |	 	|Text |	Formula description to display in 4D View Pro|
 | | 	minParams|	 	|Number| 	Minimum number of parameters |
 | | 	maxParams |	 	|Number |	Maximum number of parameters. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type |
@@ -3205,10 +3205,10 @@ The *dateValue* parameter specifies a date value to be assigned to the *rangeObj
 
 The optional *formatPattern* defines a pattern for the *dateValue* parameter. Pass any custom format or you can use one of the following constants:
 
-*	[`vk pattern long date`](constantReference.md#vk-pattern-long-date)	
-*	[`vk pattern month day`](constantReference.md#vk-pattern-month-day)
-*	[`vk pattern short date`](constantReference.md#vk-pattern-short-date)
-*	[`vk pattern year month`](constantReference.md#vk-pattern-year-month)
+*	[`vk pattern long date`](constant-reference.md#vk-pattern-long-date)	
+*	[`vk pattern month day`](constant-reference.md#vk-pattern-month-day)
+*	[`vk pattern short date`](constant-reference.md#vk-pattern-short-date)
+*	[`vk pattern year month`](constant-reference.md#vk-pattern-year-month)
 
 For information on patterns and formatting characters, please refer to the [4D View Pro Cell Format](configuring.md#cell-format) section.
 
@@ -3251,7 +3251,7 @@ The *styleObj* lets you pass an object containing style settings. You can use an
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
  
 #### Example
 
@@ -3292,7 +3292,7 @@ The `VP SET FIELD` command <!-- REF _command_.VP_SET_FIELD.Summary -->assigns a 
 
 In *rangeObj*, pass a range of the cell(s) whose value you want to specify. If *rangeObj* includes multiple cells, the specified field will be linked in each cell.
 
-The *field* parameter specifies a 4D database field to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. For information about the supported field types and the virtual structure, see [Field references](projectReferences.md#field-references). If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
+The *field* parameter specifies a 4D database field to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. For information about the supported field types and the virtual structure, see [Field references](project-references.md#field-references). If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
 
 The optional *formatPattern* defines a pattern for the field parameter. Pass any custom format (for information on patterns and formatting characters, please refer to the [4D View Pro Cell Format](configuring.md#cell-format) section).
  
@@ -3369,7 +3369,7 @@ The *formulasCol* is a two-dimensional collection:
 
 *	The first-level collection contains subcollections of formulas. Each subcollection defines a row.
 *	Each subcollection defines cell values for the row. Values must be text elements containing the formulas to assign to the cells. 
-	>If a 4D method is used, it must be allowed with the `SET ALLOWED METHODS` command (see [Project method references](projectReferences.md#project-method-references). 
+	>If a 4D method is used, it must be allowed with the `SET ALLOWED METHODS` command (see [Project method references](project-references.md#project-method-references). 
 
 >You can remove the formulas in *rangeObj* by replacing them with an empty string ("").
  
@@ -3445,7 +3445,7 @@ You can pass an object defining the columns and rows to freeze in the *paneObj* 
  
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
  
 #### Example 
 
@@ -3534,7 +3534,7 @@ You can pass an object containing definitions for various printing attributes in
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant: 
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
  
 #### Example 
 
@@ -3654,7 +3654,7 @@ Pass the total number of rows in the *rowCount* parameter. *rowsCount* must be g
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the *rowCount* will be applied (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
  
  
 #### Example 
@@ -3728,7 +3728,7 @@ Pass an object containing definitions for the options to set in the *sheetOption
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant: 
 
-*	[`vk current sheet`](constantReference.md#vk-current-sheet)
+*	[`vk current sheet`](constant-reference.md#vk-current-sheet)
 
  
 #### Example 1
@@ -4030,18 +4030,18 @@ In *rangeObj*, pass a range of cells as an object to designate the cells to be v
 
 The *vPos* parameter defines the desired vertical position to display the *rangeObj*. The following selectors are available:
 
-*	[`vk position top`](constantReference.md#vk-position-top)
-*	[`vk position bottom`](constantReference.md#vk-position-bottom)
+*	[`vk position top`](constant-reference.md#vk-position-top)
+*	[`vk position bottom`](constant-reference.md#vk-position-bottom)
 
 The *hPos* parameter defines the desired horizontal position to display the *rangeObj*. The following selectors are available:
 
-*	[`vk position left`](constantReference.md#vk-position-left)
-*	[`vk position right`](constantReference.md#vk-position-right)
+*	[`vk position left`](constant-reference.md#vk-position-left)
+*	[`vk position right`](constant-reference.md#vk-position-right)
 
 Both *vPos* and *hPos* accept the following selectors:
 
-*	[`vk position center`](constantReference.md#vk-position-center)
-*	[`vk position nearest`](constantReference.md#vk-position-nearest)
+*	[`vk position center`](constant-reference.md#vk-position-center)
+*	[`vk position nearest`](constant-reference.md#vk-position-nearest)
 
 >This command is only effective if repositioning the view is possible. For example, if the *rangeObj* is in cell A1 (the first column and the first row) of the current sheet, repositioning the view will make no difference because the vertical and horizontal limits have already been reached (i.e., it is not possible to scroll any higher or any more to the left). The same is true if *rangeObj* is in cell C3 and the view is repositioned to the center or the bottom right. The view remains unaltered. 
  

@@ -1,5 +1,5 @@
 ---
-id: usingMethods
+id: methods
 title: Using 4D View Pro Methods
 ---
 

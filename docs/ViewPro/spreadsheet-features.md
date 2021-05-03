@@ -1,5 +1,5 @@
 ---
-id: spreadsheetFeatures
+id: spreadsheet-features
 title: Basic Spreadsheet Features
 ---
    

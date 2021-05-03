@@ -1,5 +1,5 @@
 ---
-id: userInterface
+id: user-interface
 title: User Interfaces
 ---
 
