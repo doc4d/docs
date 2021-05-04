@@ -64,9 +64,22 @@ In addition to standard system options, the *Open* dialog in 4D provides two men
 - via preferences:
 	-	Set the **At startup** general preference to **Open last used project**. 
 
-- using a `.4DLink` file (see [Opening a Project with a .4DLink file](#opening-a-project-with-a-4dlink-file)).
+- using a `.4DLink` file.
 
-### About 4DLink Files
+### Opening a Project with a 4DLink file
+
+You can use a [`.4DLink` file](#about-4DLink-files) to launch the 4D application and open the target 4D project. There are two ways to do this:
+
+- double-click or drag and drop the `.4DLink` file onto the 4D application
+- go to **File** > **Open Recent Projects** and select a project
+
+![open-recent-projects](assets/en/Project/4DLinkfiles.png)
+
+A .4DLink file of "remote project" type can be copied and used on several machines.
+
+>It's also possible to select a 4DLink file in the 4D and 4D Server opening dialog box (opening local project only).
+
+## About 4DLink Files
 
 Files with the `.4DLink` extension are XML files that contain parameters intended to automate and simplify opening local or remote 4D projects.
 
@@ -86,19 +99,6 @@ That folder is divided into two subfolders:
 `.4DLink` files can also be created with an XML editor. 
 
 4D provides a DTD describing the XML keys that can be used to build a `.4DLink` file. This DTD is named database_link.dtd and is found in the \Resources\DTD\ subfolder of the 4D application.
-
-### Opening a Project with a 4DLink file
-
-You can use a `.4DLink` file to launch the 4D application and open the target 4D project. There are two ways to do this:
-
-- double-click or drag and drop the `.4DLink` file onto the 4D application
-- go to **File** > **Open Recent Projects** and select a project
-
-![open-recent-projects](assets/en/Project/4DLinkfiles.png)
-
-A .4DLink file of "remote project" type can be copied and used on several machines.
-
->It's also possible to select a 4DLink file in the 4D and 4D Server opening dialog box (opening local project only).
 	
 
 ## File saving
