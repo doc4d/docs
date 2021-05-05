@@ -171,7 +171,7 @@ En consecuencia, cuando quiera implementar pruebas jerárquicas, debe asegurarse
  End case
 ```
 
-En el código anterior, la presencia de la segunda condición no se detecta, ya que la prueba "vResult=1" ramifica el código antes de cualquier otra prueba. For the code to operate properly, you can write it as follows:
+En el código anterior, la presencia de la segunda condición no se detecta, ya que la prueba "vResult=1" ramifica el código antes de cualquier otra prueba. Para que el código funcione correctamente, puedes escribirlo así:
 
 ```4d
  Case of
@@ -182,9 +182,9 @@ En el código anterior, la presencia de la segunda condición no se detecta, ya 
  End case
 ```
 
-Also, if you want to implement hierarchical testing, you may consider using hierarchical code.
+Además, si quiere implementar pruebas jerárquicas, puede considerar el uso de código jerárquico.
 
-**Tip:** Branching can be performed without statements to be executed in one case or another. Al desarrollar un algoritmo o una aplicación especializada, nada le impide escribir:
+**Consejo:** la ramificación puede realizarse sin que las instrucciones se ejecuten en un caso u otro. Al desarrollar un algoritmo o una aplicación especializada, nada le impide escribir:
 ```4d
  Case of
     :(Boolean_Expression)
