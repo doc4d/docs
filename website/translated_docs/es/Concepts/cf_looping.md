@@ -399,7 +399,7 @@ Puede definir los límites de la iteración utilizando los parámetros opcionale
 - In the *begin* parameter, pass the element position in *Expression* at which to start the iteration (*begin* is included).
 - In the *end* parameter, you can also pass the element position in *Expression* at which to stop the iteration (*end* is excluded).
 
-Si se omite *fin* o si es mayor que el número de elementos de <em x-id="3" <Expression</em>, se iteran los elementos desde *inicio* hasta el último (incluido). Si los parámetros *inicio* y *fin* son valores positivos, representan posiciones reales de elementos en *Expression*. Si *comienzo* es un valor negativo, se recalcula como `comienzo:=comienzo+tamaño de la expresión` (se considera como el desplazamiento desde el final de *Expression*). If the calculated value is negative, *begin* is set to 0. **Note:** Even if begin is negative, the iteration is still performed in the standard order. If *end* is a negative value, it is recalculed as `end:=end+Expression size`
+Si se omite *fin* o si es mayor que el número de elementos de <em x-id="3" <Expression</em>, se iteran los elementos desde *inicio* hasta el último (incluido). Si los parámetros *inicio* y *fin* son valores positivos, representan posiciones reales de elementos en *Expression*. Si *comienzo* es un valor negativo, se recalcula como `comienzo:=comienzo+tamaño de la expresión` (se considera como el desplazamiento desde el final de *Expression*). Si el valor calculado es negativo, *inicio* toma el valor 0. **Nota:** aunque inicio sea negativo, la iteración se sigue realizando en el orden estándar. Si *fin* es un valor negativo, se recalcula como `fin:=fin+tamaño de la expresión`
 
 For example:
 - a collection contains 10 elements (numbered from 0 to 9)
@@ -425,9 +425,9 @@ For example:
 
 ### Until and While conditions
 
-You can control the `For each...End for each` execution by adding an `Until` or a `While` condition to the loop. When an `Until(condition)` statement is associated to the loop, the iteration will stop as soon as the condition is evaluated to `True`, whereas when is case of a `While(condition)` statement, the iteration will stop when the condition is first evaluated to `False`.
+Puede controlar la ejecución de `For each...End for each` añadiendo una condición `Until` o una condición `While` al bucle. Cuando una instrucción `Until(condición)` está asociada al bucle, la iteración se detendrá tan pronto como la condición se evalúe como `True`, mientras que cuando se trata de una instrucción `While(condición)`, la iteración se detendrá cuando la condición se evalúe por primera vez como `False`.
 
-You can pass either keyword depending on your needs:
+Puede pasar cualquiera de las dos palabras clave en función de sus necesidades:
 
 - The `Until` condition is tested at the end of each iteration, so if the *Expression* is not empty or null, the loop will be executed at least once.
 - The `While` condition is tested at the beginning of each iteration, so according to the condition result, the loop may not be executed at all.
