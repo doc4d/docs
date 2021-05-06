@@ -209,7 +209,7 @@
 			"Events/onWindowOpeningDenied"],
   "Menus":["Menus/overview","Menus/creating","Menus/properties","Menus/bars","Menus/sdi"],
    "Build application":["Desktop/building"],
-   "4D View Pro":["ViewPro/overview","ViewPro/creating-area","ViewPro/user-interface","ViewPro/spreadsheet-features","ViewPro/formulas-and-functions","ViewPro/methods","ViewPro/architecture","ViewPro/configuring","ViewPro/form-events","ViewPro/project-references","ViewPro/language-reference","ViewPro/constant-reference","ViewPro/function-reference"]
+   "4D View Pro":["ViewPro/overview","ViewPro/creating-area","ViewPro/user-interface","ViewPro/spreadsheet-features","ViewPro/formulas-and-functions","ViewPro/methods","ViewPro/architecture","ViewPro/configuring","ViewPro/form-events","ViewPro/project-references","ViewPro/method-reference","ViewPro/constant-reference","ViewPro/function-reference"]
 
 
   }
