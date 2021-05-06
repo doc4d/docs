@@ -1,5 +1,5 @@
 ---
-id: Method reference
+id: method-reference
 title: Method Reference
 ---
 
@@ -43,7 +43,7 @@ The `VP ADD FORMULA NAME` command <!-- REF _command_.VP_ADD_FORMULA_NAME.Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-Pass the 4D View Pro formula that you want to name in *vpFormula*. For detailed information about formula syntax, please refer to the [4D View Pro Formulas](formulas.md) section.
+Pass the 4D View Pro formula that you want to name in *vpFormula*. For detailed information about formula syntax, please refer to the [4D View Pro Formulas](formulas-and-functions.md) section.
 
 Pass the new name for the formula in *name*. If the name is already used within the same scope, the new named formula replaces the existing one. Note that you can use the same name for different scopes (see below).
 

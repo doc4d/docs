@@ -9,8 +9,8 @@ Using 4D commands and attributes, you can set the behavior and appearance of you
 
 The 4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
 
-*	[VP SET SHEET OPTIONS](language-reference.md#vp-set-sheet-options)
-*	[VP Get sheet options](language-reference.md#vp-get-sheet-options) 
+*	[VP SET SHEET OPTIONS](method-reference.md#vp-set-sheet-options)
+*	[VP Get sheet options](method-reference.md#vp-get-sheet-options) 
 
 ### Sheet appearance  
 
@@ -89,7 +89,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 
 Defining a format pattern ensures that the content of your 4D View Pro documents is displayed the way you intended. 4D View Pro has built-in formats for numbers, dates, times, and text, but you can also create your own patterns to format the contents of cells using special characters and codes.
 
-For example, when using the [VP SET VALUE](language-reference.md#vp-set-value) or [VP SET NUM VALUE](language-reference.md#vp-set-num-value) commands to enter amounts in an invoice, you may want the currency symbols ($, €, ¥, etc.) to be aligned regardless of the space required by the number (i.e., whether the amount is $5.00 or $5,000.00). You could use formatting characters and spectify the pattern _($* #,##0.00_) which would display amounts as shown:
+For example, when using the [VP SET VALUE](method-reference.md#vp-set-value) or [VP SET NUM VALUE](method-reference.md#vp-set-num-value) commands to enter amounts in an invoice, you may want the currency symbols ($, €, ¥, etc.) to be aligned regardless of the space required by the number (i.e., whether the amount is $5.00 or $5,000.00). You could use formatting characters and spectify the pattern _($* #,##0.00_) which would display amounts as shown:
 
 ![](assets/en/ViewPro/apx_vpCellFormat1.PNG)
 
@@ -215,9 +215,9 @@ In addition to the special characters and codes described in the previous sectio
 
 4D View Pro print attributes allow you to control all aspects of printing 4D View Pro areas. These attributes are handled by the following commands:
 
-*	[VP SET PRINT INFO](language-reference.md#vp-set-print-info) 
-*	[VP Get print info](language-reference.md#vp-get-print-info) 
-*	[VP PRINT](language-reference.md#vp-print)
+*	[VP SET PRINT INFO](method-reference.md#vp-set-print-info) 
+*	[VP Get print info](method-reference.md#vp-get-print-info) 
+*	[VP PRINT](method-reference.md#vp-print)
 
 ### Columns / Rows  
 
@@ -253,7 +253,7 @@ Header and footer attributes are used to specify text or images in the left, rig
 |headerRight|	text	|The text and format of the right header on printed pages.|
 |headerRightImage|	picture &#124; text*|	The image for the right section of the header.|
 
-\* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](language-reference.md#vp-get-print-info)
+\* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-reference.md#vp-get-print-info)
 .
 
 ### Special Characters  
@@ -360,7 +360,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 |watermark|	collection	|Collection of watermark settings.<p><p>Default value: undefined|
 |||<table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td> \[ ].height</td><td>longint</td><td>The height of the watermark text / image.</td></tr> <tr><td>\[ ].imageSrc</td><td>picture &#124; text*</td><td>The watermark text / image.</td></tr><tr><td> \[ ].page</td><td>text</td><td>The page(s) where the watermark is printed.<p><p>For all pages: "all"<p><p>For specific pages: page numbers or page ranges separated by commas. Ex.: "1,3,5-12"</td></tr><tr><td> \[ ].width</td><td>longint</td><td>The width of the watermark text / image.</td></tr><tr><td> \[ ].x</td><td>longint</td><td>The horizontal coordinate of the top left point of the watermark text / image.</td></tr>
 <tr><td> \[ ].y</td><td>longint</td><td>The vertical coordinate of the top left point of the watermark text / image.</td></tr></table>|
-||| 		* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](language-reference.md#vp-get-print-info).|
+||| 		* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-reference.md#vp-get-print-info).|
 
 
 
@@ -373,7 +373,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 
 Style objects contain the style property settings. They can be used either in a style sheet or on their own. Style objects can also be used in addition to a style sheet so that different settings can be specified for individual cell ranges without affecting the rest of the document. 
 
-You can use style objects directly with the [VP SET CELL STYLE](language-reference.md#vp-set-cell-style)) and [VP SET DEFAULT STYLE](language-reference.md#vp-set-default-style) commands.
+You can use style objects directly with the [VP SET CELL STYLE](method-reference.md#vp-set-cell-style)) and [VP SET DEFAULT STYLE](method-reference.md#vp-set-default-style) commands.
 
 ### Style sheets 
 
@@ -381,9 +381,9 @@ A style sheet groups together a combination of properties in a style object (see
 
 When created, a 4D View Pro style sheet is given a name which is saved within the style sheet in the "name" property. This allows a style sheet to be easily used and, if thoughtfully selected, can facilitate its identification and purpose (e.g., Letterhead\_internal, Letterhead_external).
 
-Style sheets are created with the [VP ADD STYLESHEET](language-reference.md#vp-add-stylesheet) command and applied with the the [VP SET DEFAULT STYLE](language-reference.md#vp-set-default-style) or [VP SET CELL STYLE](language-reference.md#vp-set-cell-style) commands. You can  remove a style sheet with the [VP REMOVE STYLESHEET](language-reference.md#vp-remove-stylesheet) command.
+Style sheets are created with the [VP ADD STYLESHEET](method-reference.md#vp-add-stylesheet) command and applied with the the [VP SET DEFAULT STYLE](method-reference.md#vp-set-default-style) or [VP SET CELL STYLE](method-reference.md#vp-set-cell-style) commands. You can  remove a style sheet with the [VP REMOVE STYLESHEET](method-reference.md#vp-remove-stylesheet) command.
 
-The [VP Get stylesheet](language-reference.md#vp-get-stylesheet) command can be used to return the style object of a single style sheet or you can use the [VP Get stylesheets](language-reference.md#vp-get-stylesheets) command to retrieve a collection of style objects for multiple style sheets.
+The [VP Get stylesheet](method-reference.md#vp-get-stylesheet) command can be used to return the style object of a single style sheet or you can use the [VP Get stylesheets](method-reference.md#vp-get-stylesheets) command to retrieve a collection of style objects for multiple style sheets.
 
 ### Style properties
 
@@ -411,7 +411,7 @@ You can find detailed descriptions of the possible values below on the [4D View 
 
 |Property|Subproperty|	Type|	Description|	Possible values|
 |---|---|---|---|---|
-|font|		|text|	Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes.|	A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](language-reference.md#vp-font-to-object) and [`VP Object to font`](language-reference.md#vp-object-to-font)|
+|font|		|text|	Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes.|	A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](method-reference.md#vp-font-to-object) and [`VP Object to font`](method-reference.md#vp-object-to-font)|
 |formatter|		|text|Pattern for value/time property.|Number/text/date/time formats, special characters. See [4D View Pro Cell Format](configuring.md#cell-format) section.|
 |isVerticalText|		|boolean|Specifies text direction.|True = vertical text, False = horizontal text.|
 |labelOptions|		|object|	Defines cell label options (watermark options).| |	
