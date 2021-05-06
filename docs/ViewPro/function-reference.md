@@ -1,139 +1,9 @@
 ---
-id: formulas
-title: Using Formulas
+id: function-reference
+title: Function Reference
 ---
 
-## Overview 
-
-4D View Pro functions are used in formulas. Every 4D View Pro formula is an expression that returns a value. All expressions are comprised of operands and operators:
-
-*	**Operators**: see [Operators and values](#operators-and-values)
-*	**Operands** are divided into several categories:
-	*	values,
-	*	references to other cells (relatives, absolutes, mixed or by name), 
-	*	4D variables, fields and functions,
-	*	4D methods (registered by [VP SET ALLOWED METHODS](language-reference.md#vp-set-allowed-methods)), 
-	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](language-reference.md#vp-set-custom-functions)),
-	*	4D View Pro functions.
-
-To enter a formula:
-
-1.	Select the cell into which you will enter the formula or function.
-2.	Enter = (the equal sign).
-3.	Type in the formula then hit the Enter key
-
->You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](language-reference.md#vp-add-formula-name) command.
-
-A large number of functions are available in 4D View Pro. This section describes a subset of essential functions. The complete list of functions supported by 4D View Pro can be found in the [Spreadsheets documentation](http://help.grapecity.com/spread/SpreadSheets11/webframe.html#FormulaFunctions.html).
-
->If a 4D project method in a formula has the same name as a SpreadJS function, 4D View Pro will use the function and the project method will not be called.  
- 
-
-## Operators and values  
- 
-### Operators by data types  
-
-4D View Pro supports five types of data. For each data type, specific literal values and operators are supported.
-
-|Data types	|Values|	Operators|
-|---|---|---|
-|[Number](Concepts/dt_number.md)	|1.2<br>1.2 E3<br>1.2E-3<br>10.3x|+ (addition)<br>- (subtraction)<br>* (multiplication)<br>/ (division)<br>^ (exponent, the number of times to multiply a number by itself)<br>% (percentage -- divide the number before the operator by one hundred)|
-|[Date](Concepts/dt_date.md)|	10/24/2017	|+ (date + number of days -> date)<br>+ (date + time -> date + time of day)<br>- (date - number of days -> date)<br>- (date - date -> number of days between the two)|
-|[Time](Concepts/dt_time.md)|	10:12:10	|Duration operators:<p>+ (addition)<br>- (subtraction)<br>* (duration * number -> duration)<br>/ (duration / number -> duration)|
-|[String](Concepts/dt_string.md)|	'Sophie' or "Sophie"	|& (concatenation)|
-|[Boolean](Concepts/dt_boolean.md)|	TRUE or FALSE|	-|
-
-
-### Comparison operators 
- 
-The following operators can be used with two operands of the same type:
-
-|Operator	|Comparison|
-|---|---|
-|=	|equal to|
-|<>	|different than|
-|>	|greater than|
-|<	|less than|
-|>=	|greater than or equal to|
-|<=	|less than or equal to|
-
-
-### Operator precedence  
-
-List of operators from most to least important:
-
-|Operator|	Description|
-|---|---|
-|()|	Parenthesis (for grouping)|
-|-	|Negate|
-|+	|Plus|
-|%|	Percent|
-|^	|Exponent|
-|* and /|	Multiply and divide|
-|+ and -|	Add and Subtract|
-|&|	Concatenate
-|=  > < >= <= <>|	Compare|
-
-
-
-### Operand precedence in formulas  
-
-When two or more different operands have the same name, 4D View Pro determines the type of each element according to the following order:
-
-|Priority|	Element type|
-|---|---|
-|1|	Cell reference|
-|2|	Cell name|
-|3|	4D View Pro function|
-|4|	Project method|
-|5|	4D command|
-|6|	Variable|
-
-
-
-
-## Cell references 
- 
- Formulas often refer to other cells by cell addresses. You can copy these formulas into other cells. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
-= C6 + C7
-
-This formula refers to cells C6 and C7. That is, 4D View Pro is instructed to refer to these other cells for values to use in the formula.
-
-When you copy or move these formulas to new locations, each cell address in that formula will either change or stay the same, depending on how it is typed.
-
-*	A reference that changes is called a relative reference, and refers to a cell by how far left/right and up/down it is from the cell with the formula.
-
-*	A reference that always points to a particular cell is called an absolute reference.
-
-*	You can also create a mixed reference which always points to a fixed row or column.
-
-
-
-### Reference Notation  
-
-If you use only cell coordinates, for example, C5, 4D View Pro interprets the reference as relative. You may make the reference an absolute reference by putting a dollar sign in front of the letter and the number, as in $C$5.
-
-You can mix absolute and relative references by inserting a dollar sign in front of the letter or the number alone, for example, $C5 or C$5. A mixed reference allows you to specify either the row or the column as absolute, while allowing the other portion of the address to refer relatively.
-
-A convenient, fast and accurate way to specify an absolute reference is to name the cell and use that name in place of the cell address. A reference to a named cell is always absolute. You can create or modify named cells or named cell ranges using the `VP ADD RANGE NAME` command.
-
-The following table shows the effect of the different notations:
-
-|Example	|Type of reference	|Description|
-|---|---|---|
-|C5	|Relative	|Reference is to the relative location of cell C5, depending on the location of the cell in which the reference is first used
-|$C$5	|Absolute	|Reference is absolute. Will always refer to cell C5 no matter where it is used.|
-|$C5	|Mixed	|Reference is always to column C, but the row reference is relative to the location of the cell in which the reference is first used.|
-|C$5	|Mixed	|Reference is always to row 5, but the column reference is relative to the location of the cell in which the reference is first used|
-|Cell name	|Absolute	|Reference is absolute. Will always refer to the named cell no matter where the reference is used.|
-
-
-
-
-## 4D View Pro Functions
-
-
-### ABS
+## ABS
 
 **ABS**( *value* : Real )<br>**ABS**( *value* : Expression )
 
@@ -144,7 +14,7 @@ The following table shows the effect of the different notations:
 
 The `ABS` function calculates the absolute value(s) of the specified *value*. If *value* is negative, a positive value will be returned. It accepts numeric data as values or expressions and returns numeric data.
 
-#### Example 
+**Example**
 
 ```4d
 ABS(-6) //result:= 6
@@ -158,7 +28,7 @@ ABS(6) //result:= 6
 ---
 
 
-### ACOS
+## ACOS
 
 **ACOS**( *value* : Real )
 
@@ -171,7 +41,7 @@ The `ACOS` function calculates the angle of the arccosine specified in *value*. 
 
 The returned angle is in radians between 0 and PI . To convert the result to degrees, multiply the result by 180/PI.
 
-#### Example 
+**Example** 
 
 ```4d
 ACOS(0.5) //result:= 1.0471975512
@@ -181,7 +51,7 @@ ACOS(0.5) //result:= 1.0471975512
 ---
 
 
-### AND
+## AND
 
 **AND**( *logicalValue* : Boolean {, *logicalValue* : Boolean , ... , *logicalValueN* : Boolean } )<br>**AND**( *logicalValue* : Number {, *logicalValue* : Number , ... , *logicalValueN* : Number } )<br>**AND**( *logicalValue* : Expression {, *logicalValue* : Expression , ... , *logicalValueN* : Expression } )
 
@@ -195,7 +65,7 @@ The `AND` function returns **TRUE** if all arguments are true; otherwise, it ret
 It accepts boolean values as numeric (0 or 1) or logical expressions (**TRUE** or **FALSE**) for up to 255 arguments. You can also specify a single array instead of listing the values separately, or up to 255 arrays. You can also specify the *logicalValue* as an expression.
 
 
-#### Example 
+**Example** 
 
 ```4d
 AND(D12,E12)  //True if D12 and E12 cell values are true or 1, False otherwise
@@ -211,7 +81,7 @@ AND(1,TRUE) //TRUE
 ---
 
 
-### ASIN
+## ASIN
 
 **ASIN**( *value* : Real )
 
@@ -227,7 +97,7 @@ In *value*, specify the sine of the angle. The sine must be a value between -1 a
 The angle is returned in radians between -PI/2 and PI/2. To convert the result to degrees, multiply it by 180/PI.
 
 
-#### Example 
+**Example** 
 
 ```4d
 ASIN(0.5) //0.5235987756
@@ -237,7 +107,7 @@ ASIN(0.5) //0.5235987756
 ---
 
 
-### ATAN
+## ATAN
 
 **ATAN**( *value* : Real )
 
@@ -253,7 +123,7 @@ In *value*, specify the tangent of the angle to return. It must be between -1 an
 The angle is returned in radians between -PI/2 and PI/2. To convert the result to degrees, multiply the result by 180/PI.
 
 
-#### Example 
+**Example** 
 
 ```4d
 ATAN(1) //result:= 0.7853981634
@@ -263,7 +133,7 @@ ATAN(1) //result:= 0.7853981634
 ---
    
 
-### AVERAGE
+## AVERAGE
 
 **AVERAGE**( *value* : Real )<br>**AVERAGE**( *value* : Array )
 
@@ -282,7 +152,7 @@ In *value*, you can pass:
 Up to 255 arguments may be included.
 
 
-#### Example 
+**Example** 
 
 ```4d
 ATAN(1) //result:= 0.7853981634
@@ -292,7 +162,7 @@ ATAN(1) //result:= 0.7853981634
 ---
 
    
-### COLUMNLETTER
+## COLUMNLETTER
 
 **COLUMNLETTER**( *reference* : CellRef )
 
@@ -306,7 +176,7 @@ The `COLUMNLETTER` function returns the column letter of *reference*.
 *reference* can be a cell or a range of cells. If the *reference* argument is omitted, the default argument is the reference of the cell in which the `COLUMNLETTER` function is placed.
 
 
-#### Example 
+**Example** 
 
 ```4d
 ATAN(1) //result:= 0.7853981634
@@ -315,7 +185,7 @@ ATAN(1) //result:= 0.7853981634
    
 ---
 
-### COS
+## COS
 
 **COS**( *value* : Real  )
 
@@ -329,7 +199,7 @@ The `COS` function returns the cosine of the angle specified in *value*. It acce
 In *value*, pass any real number (an angle) for which to return the cosine. It must be expressed in radians. If the angle is in degrees, multiply it by PI/180 to convert it to radians.
 
 
-#### Example 
+**Example** 
 
 ```4d
 COS(45*PI()/180) //0.7071067812
@@ -338,7 +208,7 @@ COS(45*PI()/180) //0.7071067812
    
 ---
 
-### COUNTA
+## COUNTA
 
 **COUNTA**( *value* : Real {, *value2* : Real , ... , *valueN* : Real} )<br>**COUNTA**( *value* : Array {, *value2* : Array , ... , *valueN* : Array} )
 
@@ -352,7 +222,7 @@ The `COUNTA` function counts the number of cells specified in *value* that are n
 In *value*, you can pass up to 255 separate cells or a single array of values.
 
 
-#### Example 
+**Example** 
 
 ```4d
 COUNTA(B2,D2,E4,E5,E6)
@@ -363,7 +233,7 @@ COUNTA(A1:G5)
 
 ---
 
-### EXP
+## EXP
 
 **EXP**( *value* : Number )
 
@@ -376,7 +246,7 @@ The `EXP` function returns the natural log base (e = 2.71828...) raised to the p
 This function is the inverse of [LN](#ln), so EXP(LN(x)) results in x.
 
 
-#### Example 
+**Example** 
 
 ```4d
 EXP(B3)
@@ -387,7 +257,7 @@ EXP(1)  //2.17828...
 
 ---
 
-### FALSE
+## FALSE
 
 **FALSE()**
 
@@ -398,7 +268,7 @@ EXP(1)  //2.17828...
 The `FALSE` function returns the logical **FALSE** value (0).
 
 
-#### Example 
+**Example** 
 
 ```4d
 NOT(FALSE) //TRUE
@@ -407,7 +277,7 @@ NOT(FALSE) //TRUE
    
 ---
 
-### FINDCELL
+## FINDCELL
 
 **FINDCELL**(*toFind* : CellRef, *searchRange* : CellRef)
 
@@ -422,7 +292,7 @@ The `FINDCELL` function searches for the *toFind* value in the *searchRange* ran
 *toFind* must contain the reference of a cell that actually contains the value to find.
 
 
-#### Example 
+**Example** 
 
 Assuming cell C3 contains 10:
 
@@ -433,7 +303,7 @@ FINDCELL(C3,A1:B9) //returns 10 if the value is actually found in the A1:B9 cell
 
 ---
 
-### FV
+## FV
 
 **FINDCELL**(*i* : Number , *n* : Number , *m* : Number {, *f* : Number} )
 
@@ -458,7 +328,7 @@ To calculate the final value of a sum using single interest, pass the f paramete
 ![](assets/en/ViewPro/func_FV2.PNG)
 
 
-#### Example 1
+**Example 1**
 
 Compound interest: you plan on depositing €1,000 each month in a savings account, which earns you 12% annual interest, for 35 months.
 
@@ -466,7 +336,7 @@ Compound interest: you plan on depositing €1,000 each month in a savings accou
 FV(1%,35,-1000) //41660.275603126
 ```        
 
-#### Example 2
+**Example 2**
 
 Single interest rates: same type of scenario as above.
 
@@ -477,7 +347,7 @@ FV(12%,35,,-35*1000) //1847986.69
 
 ---
 
-### IF
+## IF
 
 **IF**(*valueTest* : Expression , *valueTrue* : Expression , *valueFalse* : Expression )
 
@@ -495,7 +365,7 @@ The value of *valueTest* is evaluated. It must be or evaluate to numeric data, w
 *	zero (FALSE), then *valueFalse* is returned.
 
 
-#### Example 
+**Example** 
 
 You want to evaluate B1, giving the value of sales. 
 
@@ -506,7 +376,7 @@ IF(B1<200,"Declining result","Good result") //"Good result" is written if B1>200
 
 ---
 
-### INDIRECT
+## INDIRECT
 
 **INDIRECT**(*cell* : CellRef )<br>**INDIRECT**(*cellRange* : CellRef )
 
@@ -519,7 +389,7 @@ The `INDIRECT` function returns the contents of *cell*. The *cell* parameter (ma
 The `INDIRECT` function can also return the internal reference of a range of cells (reference cannot be displayed but can be used by other 4D View Pro functions).
 
 
-#### Example 
+**Example** 
 
 ```4d
 INDIRECT("A1") //returns the contents of cell A1
@@ -534,7 +404,7 @@ ROW(INDIRECT("A1:F1")) //row 1
    
 ---
 
-### ISBLANK
+## ISBLANK
 
 **ISBLANK**(*value* : CellRef )<br>**ISBLANK**(*value* : Expression )<br>**ISBLANK**(*value* : Number )<br>**ISBLANK**(*value* : Text )
 
@@ -548,7 +418,7 @@ The `ISBLANK` function tests if the contents of a cell, a number, a text, or any
 >Cells containing an empty string ("") are considered as blank.
 
 
-#### Example 
+**Example** 
 
 ```4d
 IF(ISBLANK(A1);”Error”;0) //"Error" if cell A1 is empty
@@ -563,7 +433,7 @@ ISBLANK(4) //FALSE
 
 ---
 
-### LEN
+## LEN
 
 **LEN**(*value* : Text )<br>**LEN**(*value* : CellRef )
 
@@ -579,7 +449,7 @@ In *value*, pass the text whose length you want to find. It must be a string or 
 >Spaces count as characters.
 
 
-#### Example 
+**Example** 
 
 ```4d
 LEN("4D, Inc.") //8
@@ -588,7 +458,7 @@ LEN("4D, Inc.") //8
    
 ---
 
-### LN
+## LN
 
 **LN**(*value* : Number )
 
@@ -604,7 +474,7 @@ In *value*, pass a positive number (greater than zero).
 >`LN` is the inverse of `EXP`, so LN(EXP(x)) is x.
 
 
-#### Example 
+**Example** 
 
 ```4d
 LN(10) //2.30258509...
@@ -615,7 +485,7 @@ LN(EXP(1)) //1
 
 ---
 
-### LOOKUP
+## LOOKUP
 
 **LOOKUP**(*toFind* : CellRef ,*intervalToSearch* : CellRef, *returnInterval* : CellRef )<br>**LOOKUP**(*toFind* : Text ,*intervalToSearch* : CellRef, *returnInterval* : CellRef )<br>**LOOKUP**(*toFind* : Number ,*intervalToSearch* : CellRef, *returnInterval* : CellRef )<br>**LOOKUP**(*toFind* : Boolean ,*intervalToSearch* : CellRef, *returnInterval* : CellRef )
 
@@ -635,7 +505,7 @@ The `LOOKUP` function searches for the value *toFind* in the *intervalToSearch* 
 If *toFind* cannot be found, it matches the largest value in *intervalToSearch* that is less than or equal to *toFind*.
 
 
-#### Example 
+**Example** 
 
 ![](assets/en/ViewPro/func_lookup.PNG)
 
@@ -645,7 +515,7 @@ If *toFind* cannot be found, it matches the largest value in *intervalToSearch* 
 
 ---
 
-### MAX
+## MAX
 
 **MAX**(*value* : Real {, *value2* : Real, ... , *valueN* : Real} )<br>**MAX**(*value* : Array {, *value2* : Array, ... , *valueN* : Array} )
 
@@ -661,7 +531,7 @@ In *value*, pass the values to evaluate. Each argument can be a number or an arr
 If an array or reference contains text, logical values, or empty cells, `MAX` ignores those values; however, cells with the value zero are included in calculations.
 
 
-#### Example 
+**Example** 
 
 ```4d
 MAX(A1,B2,C3,D4,E5)
@@ -674,7 +544,7 @@ MAX(2,15,12,3,7,19,4) //19
 
 ---
 
-### MID
+## MID
 
 **MID**(*value* : Text , *startFrom*  : Number {, *numChars* : Number } )<br>**MID**(*value* : CellRef , *startFrom*  : Number {, *numChars* : Number } )<br>**MID**(*value* : Expression , *startFrom*  : Number {, *numChars* : Number } )
 
@@ -697,7 +567,7 @@ In *startFrom*, pass a number representing the first character you want to extra
 In *numChars*, pass the number of characters to return from *value*; if an integer is not specified, the number is truncated.
 
 
-#### Example 
+**Example** 
 
 ```4d
 MID(B17,5,8)
@@ -708,7 +578,7 @@ MID("hello world",7,20) //"world"
 
 ---
 
-### MIN
+## MIN
 
 **MIN**(*value* : Real {, *value2* : Real  , ... , *valueN* : Real } )<br>**MIN**(*value* : Array {, *value2* : Real  , ... , *valueN* : Real } )
 
@@ -723,7 +593,7 @@ In *value*, pass the values to evaluate. Each argument can be a number, or an ar
 
 If an array or reference contains text, logical values, or empty cells, `MIN` ignores those values; however, cells with the value zero are included in calculations.
 
-#### Example 
+**Example** 
 
 ```4d
 MIN(2,15,12,3,7,19,4) //2
@@ -732,7 +602,7 @@ MIN(2,15,12,3,7,19,4) //2
    
 ---
 
-### NOT
+## NOT
 
 **NOT**(*logicalValue* : Boolean )<br>**NOT**(*logicalValue* : Number )<br>**NOT**(*logicalValue* : Expression )
 
@@ -745,7 +615,7 @@ The `NOT` function reverses the logical value of its parameter.
 
 *logicalValue* can be a boolean or a number. If its value is zero, then the function returns **TRUE**. If it is a value other than zero, then the function returns **FALSE**.
 
-#### Example 
+**Example** 
 
 ```4d
 NOT(A3)
@@ -762,7 +632,7 @@ NOT(12) //FALSE
 
 ---
 
-### NOW
+## NOW
 
 **NOW()**
 
@@ -775,7 +645,7 @@ The `NOW` function returns the time of the current date. It returns a `DateTime`
 
 This function is updated when the spreadsheet or cell containing the function is recalculated.
 
-#### Example 
+**Example** 
 
 If today is Monday 8 January 2018 at 11:25:42:
 
@@ -786,7 +656,7 @@ NOW() //1/8/2018 11:25:42
 
 ---
 
-### NPER
+## NPER
 
 **NPER**( *i* : Number, *m* : Number, *p* : Number {, *f* : Number } )
 
@@ -808,7 +678,7 @@ The `NPER` function returns the number of periods needed to reimburse a loan. Tw
 
 ![](assets/en/ViewPro/func_NPER2.PNG)
 
-#### Example 1
+**Example 1**
 
 You borrowed 6,500 euros with 10.5% annual interest and you reimburse 166.42 euros per month:
 
@@ -816,7 +686,7 @@ You borrowed 6,500 euros with 10.5% annual interest and you reimburse 166.42 eur
 NPER(10.5%/12,-166.42,6500) //48
 ```        
 
-#### Example 2
+**Example  2**
 
 You borrowed 3,000 euros with 10.5% annual interest and you know that the total monthly payments will be 5,000 euros:
 
@@ -827,7 +697,7 @@ NPER(10.5%/12,,3000,-5000) //58
 
 ---
 
-### OR
+## OR
 
 **OR**(*logicalValue* : Boolean {, *logicalValue2* : Boolean , ... , *logicalValueN* : Boolean } )<br>**OR**(*logicalValue* : Array {, *logicalValue2* : Array , ... , *logicalValueN* : Array } )<br>**OR**(*logicalValue* : Expression {, *logicalValue2* : Expression , ... , *logicalValueN* : Expression } )
 
@@ -840,7 +710,7 @@ The `OR` function returns **False** if the evaluation of all parameters is false
 
 The function accepts boolean values as numeric (0 or 1) or logical expressions (**TRUE** or **FALSE**) for up to 255 arguments. You can also specify a single array instead of listing the values separately, or up to 255 arrays. You can also specify the *logicalValue* as an expression.
 
-#### Example 
+**Example** 
 
 ```4d
 OR(B3,B6,B9)
@@ -861,7 +731,7 @@ OR(5+3=8,5+4=12) //TRUE
 
 ---
 
-### PI
+## PI
 
 **PI()**
 
@@ -875,7 +745,7 @@ The `PI` function returns the value of Pi as 3.1415926536.
 
 ---
 
-### PMT
+## PMT
 
 **PMT**(*i* : Number , *n* : Number , *p* : Number )
 
@@ -893,7 +763,7 @@ Here is the formula for PMT:
 
 ![](assets/en/ViewPro/func_PMT.PNG)
 
-#### Example 
+**Example** 
 
 You borrowed 6,500 euros over 48 months with 10.5% interest:
 
@@ -904,7 +774,7 @@ PMT(10.5%/12,48,-6500) //166.42
 
 ---
 
-### PV
+## PV
 
 **PV**(*i* : Number , *n* : Number , *m* : Number  {, *f* : Number }  )
 
@@ -929,7 +799,7 @@ To calculate the current value of a sum using single interest rates, pass the *f
 
 ![](assets/en/ViewPro/func_PV2.PNG)
 
-#### Example 1
+**Example 1**
 
 **Compound interest**: you have a loan with an 12% annual interest rate (thus 1% per month) over 5 months with a monthly payment of €1,000.
 
@@ -937,7 +807,7 @@ To calculate the current value of a sum using single interest rates, pass the *f
 PV(1%,5,-1000) //4853,4312393251
 ```           
 
-#### Example 2
+**Example 2**
 
 **Single interest rates**: you have a loan with an 12% annual interest rate (thus 1% per month) over 5 months with a monthly payment of €1,000.
 
@@ -950,7 +820,7 @@ PV(1%,5,,-5*1000) //4757,328438033744
    
 ---
 
-### RAND
+## RAND
 
 **RAND()**
 
@@ -962,7 +832,7 @@ PV(1%,5,,-5*1000) //4757,328438033744
 
 The `RAND` function returns a random number between 0 and 0,9999999...
 
-#### Example
+**Example**
 
 ```4d
 RAND()
@@ -974,7 +844,7 @@ INT(RAND()*100)
 
 ---
 
-### RATE
+## RATE
 
 **RATE**(*n* : Number , *m* : Number , *p* : Number  {, *f* : Number }  )
 
@@ -997,7 +867,7 @@ The `RATE` function returns the interest rate corresponding to the values passed
 ![](assets/en/ViewPro/func_RATE2.PNG)
 
 
-#### Example 1
+**Example 1**
 
 You borrowed 3,000 euros and your monthly payments are 1,000 euros over 5 months:
 
@@ -1005,7 +875,7 @@ You borrowed 3,000 euros and your monthly payments are 1,000 euros over 5 months
 RATE(5,-1000,3000) //0.19
 ```           
 
-#### Example 2
+**Example 2**
 
 You borrowed 2,800 euros and the total paid value is 6,000 euros over 5 months:
 
@@ -1016,7 +886,7 @@ RATE(5,,2800,-6000) //0.16
 
 ---
 
-### ROUND
+## ROUND
 
 **ROUND**(*value* : Number , *places* : Number )
 
@@ -1039,7 +909,7 @@ Use the *places* parameter to specify the number of decimal places. The places a
 *	Set places to a value <0 to round the value left of the decimal to the nearest ten, hundred, etc.
 
 
-#### Example 
+**Example** 
 
 ```4d
 ROUND(A3,-2)
@@ -1056,7 +926,7 @@ ROUND(-1.963,0) //-2
 
 ---
 
-### ROW
+## ROW
 
 **ROW**( { *reference* : CellRef } )
 
@@ -1070,7 +940,7 @@ The `ROW` function returns the row number of *reference*.
 *reference* can be a cell or a range of cells. If the *reference* argument is omitted, the default argument is the reference of the cell in which the `ROW` function is placed.
 
 
-#### Example 
+**Example** 
 
 ```4d
 ROW(B2) // 2
@@ -1082,7 +952,7 @@ ROW(B1:B5) //1
 
 ---
 
-### RUNTIME\_CURRENT\_TIME 
+## RUNTIME\_CURRENT\_TIME 
 
 **RUNTIME\_CURRENT\_TIME**
 
@@ -1098,7 +968,7 @@ The `RUNTIME_CURRENT_TIME` function returns the current time from the system clo
 
 ---
 
-### RUNTIME\_DATE
+## RUNTIME\_DATE
 
 **RUNTIME\_DATE**( *dateString*  : Text )
 
@@ -1117,7 +987,7 @@ The `RUNTIME_DATE` function returns *dateString* as a standard js datetime objec
    
 ---
 
-### RUNTIME\_STRING
+## RUNTIME\_STRING
 
 **RUNTIME\_STRING**( *expression* : Expression; *format* : Text )<br>**RUNTIME\_STRING**( *expression* : Expression; *format* : Number )
 
@@ -1135,7 +1005,7 @@ The `RUNTIME_STRING` function returns *expression* as a string with the defined 
 
 ---
 
-### RUNTIME\_TIME
+## RUNTIME\_TIME
 
 **RUNTIME\_TIME**( *timeString*  : Text )
 
@@ -1153,7 +1023,7 @@ The `RUNTIME_TIME` function returns *timeString* as a standard js datetime objec
    
 ---
 
-### RUNTIME\_VIEW\_STRING
+## RUNTIME\_VIEW\_STRING
 
 **RUNTIME\_VIEW\_STRING**( *value*  : Number; *format* : Number )<br>**RUNTIME\_VIEW\_STRING**( *value*  : Date; *format* : Number )<br>**RUNTIME\_VIEW\_STRING**( *value*  : Time; *format* : Number )
 
@@ -1174,18 +1044,18 @@ Here are the values for the format parameter:
 	
 	|format number|	Format|
 	|---|---|
-	|1|	###0|
-	|2|	#####0|
-	|3|	### ##0,00|
-	|4|	### ##0,00 €|
-	|5|	### ### ##0,00 €|
-	|6|	### ### ##0|
+	|1|	##0|
+	|2|	####0|
+	|3|	## ##0,00|
+	|4|	## ##0,00 €|
+	|5|	## ## ##0,00 €|
+	|6|	## ## ##0|
 	|7|	##0,00 %|
 	|8|	0000|
 	|9|	00000000|
 	|10| 00 00 00 00|
-	|11| ### ##0;(### ##0)|
-	|12| ### ##0,00 €;(### ##0,00) €|
+	|11| ## ##0;(## ##0)|
+	|12| ## ##0,00 €;(## ##0,00) €|
 	|13| \^\^ \^\^0,00|
 	|14| \^\^ \^0,00 €|
 	|15| \^\^\^\^\^\^\^0|
@@ -1227,7 +1097,7 @@ Here are the values for the format parameter:
 
 ---
 
-### SIN
+## SIN
 
 **SIN**( *value* : Real )
 
@@ -1241,7 +1111,7 @@ The `SIN` function returns the sine of the angle specified in *value*. It accept
 In *value*, pass any real number (an angle) for which to return the sine. It must be expressed in radians. If the angle is in degrees, multiply it by PI/180 to convert it to radians.
 
 
-#### Example 
+**Example** 
 
 ```4d
 SIN(B4)
@@ -1252,7 +1122,7 @@ SIN(30*PI()/180) //0.5
 
 ---
 
-### SQRT
+## SQRT
 
 **SQRT**( *value* : Number )
 
@@ -1266,7 +1136,7 @@ The `SQRT` function returns the positive square root of the specified *value*.
 *value* must be a positive number (or 0), otherwise an error is returned.
 
 
-#### Example 
+**Example** 
 
 ```4d
 SQRT(B4)
@@ -1277,7 +1147,7 @@ SQRT(256) //16
    
 ---
 
-### STDEV.P
+## STDEV.P
 
 **STDEV.P**( *value* : Number {, *value2*  : Number, ... , *valueN*  : Number} )<br>**STDEV.P**( *value* : CellRef {, *value2*  : CellRef, ... , *valueN*  : CellRef} )
 
@@ -1297,7 +1167,7 @@ The `STDEV.P` is calculated using the "biased" or "n" method. The `STDEV.P` func
 ![](assets/en/ViewPro/func_STDEVP.PNG)
 
 
-#### Example 
+**Example** 
 
 ```4d
 STDEV.P(A1,B2,C3,D4,E5,F6)
@@ -1310,7 +1180,7 @@ STDEV.P(95,89,73,87,85,76,100,96,96) gives the result 8.8079649700473
 
 ---
 
-### SUBSTITUTE
+## SUBSTITUTE
 
 **SUBSTITUTE**( *str* : CellRef ; *toReplace* : Text, *replacement* : Text {; *instance* : Number}  )
 
@@ -1330,7 +1200,7 @@ By default, `SUBSTITUTE` replaces the first occurrence of *toReplace*. Pass *ins
 If no occurrence of *toReplace* is found, `SUBSTITUTE` returns *str*.
 
 
-#### Example 
+**Example** 
 
 ```4d
 SUBSTITUTE("Hello You","You","World") //Hello World
@@ -1339,7 +1209,7 @@ SUBSTITUTE("Hello You","You","World") //Hello World
    
 ---
 
-### SUM
+## SUM
 
 **SUM**( *value* : Number {, *value2*  : Number, ... , *valueN*  : Number} )<br>**SUM**( *value* : CellRef {, *value2*  : CellRef, ... , *valueN*  : CellRef} )
 
@@ -1355,7 +1225,7 @@ In *value*, pass the values to evaluate. Each argument can be a number, or an ar
 >The + operator provides an auto-conversion for non-numeric values passed by constant and for non-numeric values passed by reference. The `SUM` function provides an auto-conversion for non-numeric values passed by constant but, ignores non-numeric values passed by reference.
 
 
-#### Example 
+**Example** 
 
 ```4d
 SUM(A1,B7,C11)
@@ -1370,7 +1240,7 @@ SUM(95,89,73,87,85,76,100,96,96) //797
 
 ---
 
-### TAN
+## TAN
 
 **TAN**( *value* : Real )
 
@@ -1384,7 +1254,7 @@ The `TAN` function returns the tangent of the angle specified in value. It accep
 In *value*, pass any real number (an angle) for which to return the tangent. It must be expressed in radians. If the angle is in degrees, multiply it by PI/180 to convert it to radians.
 
 
-#### Example 
+**Example** 
 
 ```4d
 TAN(B3)
@@ -1395,7 +1265,7 @@ TAN(45*PI()/180) //1
 
 ---
 
-### TEXT
+## TEXT
 
 **TEXT**( *value* : Number; *format* : Text )<br>**TEXT**( *value* : CellRef; *format* : Text )
 
@@ -1410,7 +1280,7 @@ The `TEXT` function returns a string composed of *value* number formatted accord
 Pass a numeric data or a reference to a cell that contains numeric data in value and a text argument in *format*.
 
 
-#### Example 
+**Example** 
 
 ```4d
 TEXT(A1,"$0.00") //$10.00 if A1 contains 10
@@ -1421,7 +1291,7 @@ TEXT(100,"0.00€") //100.00€
 
 ---
 
-### TODAY
+## TODAY
 
 **TODAY()**
 
@@ -1435,7 +1305,7 @@ The `TODAY` function  returns the date and time of the current date. It returns 
 This function is updated when the spreadsheet or cell containing the function is recalculated.
 
 
-#### Example 
+**Example** 
 
 If the current day is Monday 8 January 2018:
 
@@ -1446,7 +1316,7 @@ TODAY() //1/8/2018 0:00:00
 
 ---
 
-### TRUE
+## TRUE
 
 **TRUE()**
 
@@ -1457,7 +1327,7 @@ TODAY() //1/8/2018 0:00:00
 The `TRUE` function returns the logical TRUE value (1).
 
 
-#### Example 
+**Example** 
 
 
 ```4d
@@ -1467,7 +1337,7 @@ TRUE() //TRUE
 
 ---
 
-### TYPE
+## TYPE
 
 **TYPE**( *value* )
 
@@ -1492,7 +1362,7 @@ TimeSpan object|	1|
 Use the `TYPE` function when the execution of another function depends on the type of value contained in a specific cell. The `TYPE` function is particularly useful when calling functions that accept different types of data.
 
 
-#### Example 
+**Example** 
 
 
 ```4d
@@ -1508,7 +1378,7 @@ TYPE(TRUE) //4
    
 ---
 
-### VAR.P
+## VAR.P
 
 **VAR.P**( *value* : Number {; value2 : Number; ... ; valueN : Number } )<br>**VAR.P**( *value* : Array {; value2 : Array; ... ; valueN : Array } )
 
@@ -1522,7 +1392,7 @@ In *value*, pass the values to evaluate. Each argument can be a number, or an ar
 
 >This function assumes that its arguments are the entire population. If your data represents only a sample of the population, then compute the variance using the [VAR.S](http://help.grapecity.com/spread/SpreadJSWeb/VAR.html) function.
 
-#### Example 
+**Example** 
 
 
 ```4d

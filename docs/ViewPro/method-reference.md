@@ -1,10 +1,7 @@
 ---
-id: language-reference
-title: Language Reference
+id: Method reference
+title: Method Reference
 ---
-
-4D View Pro commands can be used in the 4D Method editor just like 4D language commands.
-
 
 [A](#a) - 
 [C](#c) - 
@@ -18,8 +15,6 @@ title: Language Reference
 [P](#p) - 
 [R](#r) - 
 [S](#s) 
-
-
 
 ## A
 
