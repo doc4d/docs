@@ -11,7 +11,7 @@ These interfaces can be enabled or disabled either:
 	![](assets/en/ViewPro/vpUserInterface.PNG)
 	
 *	using a **JSON file** (see  [Dynamic Forms](https://doc.4d.com/4Dv19/4D/19/Dynamic-Forms.300-5416668.en.html)) with the following properties:
-	*	"userInterface": Default value is "none". To enable a toolbar, set it to "Ribbon" or "Toolbar".
+	*	"userInterface": Default value is "none". To add an interface, set it to "Ribbon" or "Toolbar".
 	*	"withFormulaBar": Default value is "false". To enable the formula bar, set it to "true" . **Note**: Available only for the "Toolbar" interface. 
 
 Both the Ribbon and the Toolbar interfaces group related actions into the following tabs: 	
