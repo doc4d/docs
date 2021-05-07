@@ -7,13 +7,13 @@ title: Creating an Area
 
 ## Creating the area  
 
-4D View Pro documents are displayed and edited manually in a 4D form object named 4D View Pro. This object is available as part of the last tool (Plug-in Area, Web Area, etc.) found in the object bar:
+4D View Pro documents are displayed and edited manually in a  [4D form object](FormObjects/formObjects_overview.md) named 4D View Pro. To access this object, click on the last tool in the object bar:
 
 ![](assets/en/ViewPro/vpArea.PNG)
 
 ## Setting standard area properties
 
-A 4D View Pro form area is configured by means of standard properties found in the Property List, such as **Object Name** and **Variable or Expression**, **Coordinates**, **Display**, **Action**, and **Events**.
+Using the area's property list, you can set standard properties such as **Object Name**, **Variable or Expression**, **Appearance**, **Action**, and **Events**.
 
 ![](assets/en/ViewPro/vpPropertyList.PNG)
 

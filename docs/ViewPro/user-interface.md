@@ -3,14 +3,16 @@ id: user-interface
 title: User Interfaces
 ---
 
-You can add interfaces to 4D View Pro areas. They allow for basic modifications and data manipulation. 4D offers two optional interfaces to choose from, Ribbon and Toolbar. The Ribbon is set by default in the property list. These interfaces can be enabled or disabled from either the Property List or dynamically with code:
+You can add interfaces to 4D View Pro areas. They allow for basic modifications and data manipulation. The Ribbon is set by default in the property list. 
 
-*	**Property List**: In the Appearance section:  
+These interfaces can be enabled or disabled either:
+
+*	in the **Property List**, under **Appearance**:  
 	![](assets/en/ViewPro/vpUserInterface.PNG)
 	
-*	**Dynamically**: Via a JSON file. See  [Dynamic forms](../FormObjects/formObjects_overview.md).
-	*	"userInterface": Default value is "none". To enable a toolbar, it can be set to "Ribbon" or "Toolbar".
-	*	"withFormulaBar": Default value is "false". To enable the formular bar, it can be set to "true" . **Note**: Available only for the "Toolbar" interface. 
+*	using a **JSON file** (see  [Dynamic Forms](https://doc.4d.com/4Dv19/4D/19/Dynamic-Forms.300-5416668.en.html)) with the following properties:
+	*	"userInterface": Default value is "none". To enable a toolbar, set it to "Ribbon" or "Toolbar".
+	*	"withFormulaBar": Default value is "false". To enable the formula bar, set it to "true" . **Note**: Available only for the "Toolbar" interface. 
 
 Both the Ribbon and the Toolbar interfaces group related actions into the following tabs: 	
 
