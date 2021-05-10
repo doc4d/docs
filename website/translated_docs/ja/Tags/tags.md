@@ -44,18 +44,18 @@ title: 変換タグ
 この強力な原則は、テキスト変換に関連するほとんどの需要を満たすことができます。 しかしながら、Webコンテキストにおいて、これは場合によって悪意のあるコードの侵入を許す可能性があるという点に注意が必要です。これを防ぐ方法については [悪意あるコードの侵入を防止](WebServer/templates.md#悪意あるコードの侵入を防止) を参照ください。
 
 
-### Identifiers with tokens
+### トークンを使用した識別子
 
-To ensure the correct evaluation of expressions processed via tags, regardless of the language or 4D version, it's recommended to use the tokenized syntax for elements whose name may vary over versions (commands, tables, fields, constants). For example, to insert the `Current time` command, enter `Current time:C178`.
+4D のバージョンや言語設定に左右されずに、タグ経由の式の評価が正しくおこなわれることを確実にするため、バージョン間で名前が変わりうる要素 (コマンド、テーブル、フィールド、定数) については、トークンシンタックスを使用することが推奨されます。 たとえば、`Current time` コマンドを挿入するには、"`Current time:C178`"と入力します。
 
-### Using the "." as decimal separator
+### "." を小数点として使用
 
-4D always uses the period character (.) as a decimal separator when evaluating a numerical expression using a 4D tag `4DTEXT`, `4DHTML`, and `4DEVAL`. Regional settings are ignored. This feature facilitates code maintenance and compatibility between 4D languages and versions.
+`4DTEXT`、`4DHTML`、および `4DEVAL` の 4Dタグで数値表現を評価する際、4D は常にピリオド文字 (.) を小数点として使用します。 リージョン設定は無視されます。 この機能により、4Dの言語設定とバージョンが異なっていてもメンテナンスが容易となり互換性が保たれます。
 
 
 ## 4DBASE
 
-#### Syntax: `<!--#4DBASE folderPath-->`
+#### シンタックス: `<!--#4DBASE folderPath-->`
 
 The `<!--#4DBASE -->` tag designates the working directory to be used by the `<!--#4DINCLUDE-->` tag.
 
