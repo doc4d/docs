@@ -57,49 +57,49 @@ title: 変換タグ
 
 #### シンタックス: `<!--#4DBASE folderPath-->`
 
-The `<!--#4DBASE -->` tag designates the working directory to be used by the `<!--#4DINCLUDE-->` tag.
+`<!--#4DBASE -->` タグは `<!--#4DINCLUDE-->` タグで使用されるワーキングディレクトリを指定します。
 
-When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--#4DBASE -->, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
+Webページ内で呼び出されると、`<!--#4DBASE -->` タグは同ページ内であとに続くすべての `<!--#4DINCLUDE-->` 呼び出しのディレクトリを変更します (次の `<!--#4DBASE -->` があるまで)。 組み込まれたファイル内で `<!--#4DBASE -->`フォルダーが変更されると、親のファイルから元となる値を取得します。
 
-The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (/). The designated folder must be located inside the Web folder.
+*folderPath* 引数には現在のページに対する相対パスを指定し、パスは "/" で終わっていなければなりません。 また、指定フォルダーは Webフォルダー内になければなりません。
 
-Pass the "WEBFOLDER" keyword to restore the default path (relative to the page).
+"WEBFOLDER" キーワードを渡すと、(そのページに対して相対の) デフォルトパスに戻されます。
 
-The following code, which must specify a relative path for each call:
+以下のように、各呼び出しごとに相対パスを指定したコードは:
 
 ```html<!--#4DINCLUDE subpage.html--><!--#4DINCLUDE folder/subpage1.html--><!--#4DINCLUDE folder/subpage2.html--><!--#4DINCLUDE folder/subpage3.html--><!--#4DINCLUDE ../folder/subpage.html-->```
-... is equivalent to:
+以下のコードと同一です:
 
 ```html<!--#4DINCLUDE subpage.html--><!--#4DBASE folder/--><!--#4DINCLUDE subpage1.html--><!--#4DINCLUDE subpage2.html--><!--#4DINCLUDE subpage3.html--><!--#4DBASE ../folder/--><!--#4DINCLUDE subpage.html--><!--#4DBASE WEBFOLDER-->```
 
-For example, to set a directory for the home page:
+たとえば、ホームページのディレクトリを設定する場合:
 
 ```html
 /* Index.html */<!--#4DIF LangFR=True--><!--#4DBASE FR/--><!--#4DELSE--><!--#4DBASE US/--><!--#4DENDIF--><!--#4DINCLUDE head.html--><!--#4DINCLUDE body.html--><!--#4DINCLUDE footer.html-->```
 
-In the "head.html" file, the current folder is modified through `<!--#4DBASE -->`, without this changing its value in "Index.html":
+上で組み込まれる "head.html" ファイル内でカレントフォルダーが `<!--#4DBASE -->` を使用して変更されても、"index.html" 内では変更されません:
 
 ```html
 /* Head.htm */
-/* the working directory here is relative to the included file (FR/ or US/) */<!--#4DBASE Styles/--><!--#4DINCLUDE main.css--><!--#4DINCLUDE product.css--><!--#4DBASE Scripts/--><!--#4DINCLUDE main.js--><!--#4DINCLUDE product.js-->```
+/* ここでのワーキングディレクトリはインクルードされるファイルに対して相対的 (FR/ または US/) */<!--#4DBASE Styles/--><!--#4DINCLUDE main.css--><!--#4DINCLUDE product.css--><!--#4DBASE Scripts/--><!--#4DINCLUDE main.js--><!--#4DINCLUDE product.js-->```
 
 
 ## 4DCODE
 
-#### Syntax: `<!--#4DCODE codeLines-->`
+#### シンタックス: `<!--#4DCODE codeLines-->`
 
-The `4DCODE` tag allows you to insert a multi-line 4D code block in a template.
+`4DCODE` タグを使用すると、複数行の4Dコードのブロックをテンプレートに挿入できます。
 
-When a `<!--#4DCODE` sequence is detected that is followed by a space, a CR or a LF character, 4D interprets all the lines of code up to the next `-->` sequence. The code block itself can contain carriage returns, line feeds, or both; it will be interpreted sequentially by 4D.
+"`<!--#4DCODE`" シークエンスとそれに続くスペース、CRまたはLF文字が検知されると、4D は次の "`-->`"シークエンスまでのコードを解釈します。 コードブロック自体はキャリッジリターンもラインフィードも、あるいはその両方も含むことができ、4D によってシーケンシャルに解釈されます。
 
-For example, you can write in a template:
+たとえば、以下のようにテンプレートに書くことができます:
 
 ```html<!--#4DCODE
-//PARAMETERS initialization
+// パラメーターの初期化
 C_OBJECT:C1216($graphParameters)
 OB SET:C1220($graphParameters;"graphType";1)
 $graphType:=1
-//...your code here
+//...ここにコードを書きます
 If(OB Is defined:C1231($graphParameters;"graphType"))
     $graphType:=OB GET:C1224($graphParameters;"graphType")
     If($graphType=7)
@@ -113,7 +113,7 @@ End if
 -->```
 
 
-Here are the 4DCODE tag features:
+4DCODE タグの機能は以下の通りです:
 
 - The `TRACE` command is supported and activates the 4D debugger, thus allowing you to debug your template code.
 - Any error will display the standard error dialog that lets the user stop code execution or enter debugging mode.
