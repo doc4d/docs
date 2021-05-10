@@ -97,6 +97,9 @@
 <li><strong>Every X month(s), Xth Day at x</strong>: Allows programming backups on a monthly basis. Enter 1 if you want to perform a monthly backup. When this option is checked, you must indicate the day of the month and the time when the backup should start.</li>
 </ul></li>
 </ul>
+<blockquote>
+<p>Switches back and forth from Standard time to Daylight saving time could temporarily affect the automatic scheduler and trigger the next backup with a one-hour time shift. This happens only once and subsequent backups are run at the expected scheduled time.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h2>
 <p>La página Copia de seguridad/Configuración de las Propiedades de la base permite designar los archivos de copia de seguridad y su ubicación, así como la del archivo de historial. Estos parámetros son específicos de cada base de datos abierta por la aplicación 4D.</p>
 <p><img src="/docs/18/assets/en/Backup/backup03.png" alt=""></p>
@@ -124,7 +127,7 @@
 <p>La opción <strong>Utilizar el archivo de historial</strong>, cuando está marcada, indica que la base utiliza un archivo de historial. Its pathname is specified below the option. Cuando esta opción está marcada, no es posible abrir la base sin un archivo de historial.</p>
 <p>Por defecto, toda base creada con 4D utiliza un archivo de historial (opción seleccionada en la <strong>página General</strong> de las <strong>Preferencias</strong>). The log file is named <em>data.journal</em> and is placed in the Data folder.</p>
 <blockquote>
-<p>La activación de un nuevo archivo de historial requiere una copia de seguridad previa de los datos de la base. When you check this option, a warning message informs you that a backup is necessary. La creación del archivo de historial se pospone y se creará realmente sólo después de la siguiente copia de seguridad de la base.</p>
+<p>Activating a new log file requires the data of the database to be backed up beforehand. When you check this option, a warning message informs you that a backup is necessary. The creation of the log file is postponed and it will actually be created only after the next backup of the database.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="backup--restore"></a><a href="#backup--restore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Backup &amp; Restore</h2>
 <p>Modifying backup and restore options is optional. Their default values correspond to a standard use of the function.</p>
@@ -152,7 +155,7 @@
 </ul></li>
 </ul>
 <blockquote>
-<p>4D considera que una copia de seguridad ha fallado si la base no se ha puesto en marcha en el momento en que la copia de seguridad automática programada debía llevarse a cabo.</p>
+<p>4D considers a backup as failed if the database was not launched at the time when the scheduled automatic backup was set to be carried out.</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="archive"></a><a href="#archive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Archive</h3>
 <p>These options apply to main backup files and to log backup files.</p>
