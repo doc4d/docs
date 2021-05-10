@@ -115,9 +115,9 @@ End if
 
 4DCODE タグの機能は以下の通りです:
 
-- The `TRACE` command is supported and activates the 4D debugger, thus allowing you to debug your template code.
-- Any error will display the standard error dialog that lets the user stop code execution or enter debugging mode.
-- The text in between `<!--#4DCODE` and `-->` is split into lines accepting any line-ending convention (cr, lf, or crlf).
+- `TRACE` コマンドがサポートされています。これは 4Dデバッガーを起動するので、テンプレートコードをデバッグすることができます。
+- エラーは標準のエラーダイアログを表示します。これを使って、ユーザーはコードの実行を中止したりデバッグモードに入ったりすることができます。
+- `<!--#4DCODE` と `-->` の間のテキストは改行され、どのような改行コードでも受け取ります (cr、lf、または crlf)。
 - The text is tokenized within the context of the database that called `PROCESS 4D TAGS`. This is important for recognition of project methods for example. The [Available through tags and 4D URLs (4DACTION ...)](WebServer/allowProject.md) method property is not taken into account.
 - Even if the text always uses English-US, it is recommended to use the token syntax (:Cxxx) for command and constant names to protect against potential problems due to commands or constants being renamed from one version of 4D to another.
 
