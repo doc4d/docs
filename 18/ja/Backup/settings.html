@@ -127,7 +127,7 @@
 <p><strong>ログを使用</strong> オプションが選択されていると、データベースはログファイルを使用します。 ログファイルの場所はオプションの下に表示されます。 このオプションが選択されている場合、ログファイルなしでデータベースを開くことはできません。</p>
 <p>デフォルトでは、4D で作成されたすべてのデータベースでログファイルが使用されます (<strong>環境設定</strong> の <strong>一般ページ</strong> 内でチェックされているオプションです)。 ログファイルには <em>data.journal</em> のように名前が付けられ、Data フォルダー内に置かれます。</p>
 <blockquote>
-<p>Activating a new log file requires the data of the database to be backed up beforehand. このオプションをチェックすると、バックアップが必要である旨の警告メッセージが表示されます: The creation of the log file is postponed and it will actually be created only after the next backup of the database.</p>
+<p>新しいログファイルを有効にするには、その前にデータベースのデータをバックアップしなければなりません。 このオプションをチェックすると、バックアップが必要である旨の警告メッセージが表示されます: ログファイルの作成は延期され、実際には次のバックアップの後にログファイルが作成されます。</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="バックアップ＆復旧"></a><a href="#バックアップ＆復旧" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>バックアップ＆復旧</h2>
 <p>バックアップ＆復旧の設定は必要に応じて変更します。 デフォルトの設定は、標準的なバックアップ動作をおこないます。</p>
@@ -155,7 +155,7 @@
 </ul></li>
 </ul>
 <blockquote>
-<p>4D considers a backup as failed if the database was not launched at the time when the scheduled automatic backup was set to be carried out.</p>
+<p>定期的なバックアップが実行される予定時刻にデータベースが起動されていなかった場合、4D はバックアップが失敗したものとして扱います。</p>
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="アーカイブ"></a><a href="#アーカイブ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>アーカイブ</h3>
 <p>これらのオプションはメインのバックアップファイルとログバックアップファイルに適用されます。</p>
