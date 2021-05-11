@@ -304,23 +304,23 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <blockquote>
 <p><code>4DINCLUDE</code> タグで使用されるデフォルトフォルダーは <a href="#4dbase"><code>&lt;!--#4DBASE --&gt;</code></a> タグを使って変更できます。</p>
 </blockquote>
-<p>ページ内で使用できる <code>&lt;!--#4DINCLUDE path--&gt;</code> 数に制限はありません。 しかし <code>&lt;!--#4DINCLUDE path--&gt;</code> の呼び出しは 1レベルのみ有効です。 This means that, for example, you cannot insert <code>&lt;!--#4DINCLUDE mydoc3.html--&gt;</code> in the <em>mydoc2.html</em> body page, which is called by <code>&lt;!--#4DINCLUDE mydoc2--&gt;</code> inserted in <em>mydoc1.html</em>. Furthermore, 4D verifies that inclusions are not recursive.</p>
-<p>In case of error, the inserted text is &quot;<code>&lt;!--#4DINCLUDE path--&gt;</code> :The document cannot be opened&quot;.</p>
+<p>ページ内で使用できる <code>&lt;!--#4DINCLUDE path--&gt;</code> 数に制限はありません。 しかし <code>&lt;!--#4DINCLUDE path--&gt;</code> の呼び出しは 1レベルのみ有効です。 つまり、たとえば <em>mydoc1.html</em> ページに <code>&lt;!--#4DINCLUDE mydoc2.html--&gt;</code> によって挿入される <em>mydoc2.html</em> がある場合、そのボディ内でさらに <code>&lt;!--#4DINCLUDE mydoc3.html--&gt;</code> を使うことはできません。 さらに、4Dはインクルードが再帰的かどうかを確認します。</p>
+<p>エラーの場合、&quot;<code>&lt;!--#4DINCLUDE path--&gt;</code> : ドキュメントを開けません&quot; というテキストが挿入されます。</p>
 <p>例:</p>
 <p><code>html&lt;!--#4DINCLUDE subpage.html--&gt;&lt;!--#4DINCLUDE folder/subpage.html--&gt;&lt;!--#4DINCLUDE ../folder/subpage.html--&gt;</code></p>
-<h2><a class="anchor" aria-hidden="true" id="4dloop-and-4dendloop"></a><a href="#4dloop-and-4dendloop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DLOOP and 4DENDLOOP</h2>
-<h4><a class="anchor" aria-hidden="true" id="syntax---4dloop-condition-----4dendloop--"></a><a href="#syntax---4dloop-condition-----4dendloop--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax: <code>&lt;!--#4DLOOP condition--&gt;</code> <code>&lt;!--#4DENDLOOP--&gt;</code></h4>
-<p>This comment allows repetition of a portion of code as long as the condition is fulfilled. The portion is delimited by <code>&lt;!--#4DLOOP--&gt;</code> and <code>&lt;!--#4DENDLOOP--&gt;</code>.</p>
-<p>The <code>&lt;!--#4DLOOP condition--&gt;</code> ... <code>&lt;!--#4DENDLOOP--&gt;</code> blocks can be nested. Like in 4D, each <code>&lt;!--#4DLOOP condition--&gt;</code> must match a <code>&lt;!--#4DENDLOOP--&gt;</code>.</p>
-<p>There are five kinds of conditions:</p>
+<h2><a class="anchor" aria-hidden="true" id="4dloop-と-4dendloop"></a><a href="#4dloop-と-4dendloop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DLOOP と 4DENDLOOP</h2>
+<h4><a class="anchor" aria-hidden="true" id="シンタックス---4dloop-condition-----4dendloop--"></a><a href="#シンタックス---4dloop-condition-----4dendloop--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス: <code>&lt;!--#4DLOOP condition--&gt;</code> <code>&lt;!--#4DENDLOOP--&gt;</code></h4>
+<p>このコメントを使用して、条件を満たす間、コードの一部を繰り返すことができます。 繰り返し部のコードは <code>&lt;!--#4DLOOP--&gt;</code> と <code>&lt;!--#4DENDLOOP--&gt;</code> で挟まれます。</p>
+<p><code>&lt;!--#4DLOOP condition--&gt;</code> ... <code>&lt;!--#4DENDLOOP--&gt;</code> ブロックはネストできます。 4Dと同じく、それぞれの <code>&lt;!--#4DLOOP condition--&gt;</code> には対応する <code>&lt;!--#4DENDLOOP--&gt;</code> がなければなりません。</p>
+<p>5種類の条件を使用できます:</p>
 <h3><a class="anchor" aria-hidden="true" id="--4dloop-table--"></a><a href="#--4dloop-table--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DLOOP [table]--&gt;</code></h3>
-<p>This syntax makes a loop for each record from the table current selection in the current process. The code portion located between the two comments is repeated for each current selection record.</p>
+<p>このシンタックスは、カレントプロセスのカレントセレクションに基づき、指定したテーブルのレコード毎にループします。 カレントセレクションレコード毎に、2つのコメントの間のコードは繰り返されます。</p>
 <blockquote>
-<p>When the <code>4DLOOP</code> tag is used with a table, records are loaded in &quot;Read only&quot; mode.</p>
+<p>テーブルを条件として <code>4DLOOP</code> タグが使用されると、レコードが &quot;読み取り専用&quot; モードでロードされます。</p>
 </blockquote>
-<p>The following code:</p>
+<p>以下のコードは:</p>
 <p><code>html&lt;!--#4DLOOP [People]--&gt;&lt;!--#4DTEXT [People]Name--&gt;&lt;!--#4DTEXT [People]Surname--&gt;&lt;BR&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
-<p>... could be expressed in 4D language in the following way:</p>
+<p>4Dランゲージで表すと以下のとおりです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> FIRST RECORD</span>([People])<span class="hljs-keyword">
  While</span>(<span class="hljs-function">Not</span>(<span class="hljs-function">End selec tion</span>([People])))
     ...
@@ -328,25 +328,25 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
  End while</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="--4dloop-array--"></a><a href="#--4dloop-array--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DLOOP array--&gt;</code></h3>
-<p>This syntax makes a loop for each array item. The array current item is increased when each code portion is repeated.</p>
+<p>このシンタックスは、配列項目ごとにループします。 2つのコメントの間のコードが繰り返されるたびに、配列のカレント項目がインクリメントされます。</p>
 <blockquote>
-<p>This syntax cannot be used with two dimension arrays. In this case, it is better to combine a method with nested loops.</p>
+<p>このシンタックスで二次元配列を使用することはできません。 この場合には、代わりにメソッドを条件としたループをネストして使用します。</p>
 </blockquote>
-<p>The following code example:</p>
+<p>以下のコードは:</p>
 <p><code>html&lt;!--#4DLOOP arr_names--&gt;&lt;!--#4DTEXT arr_names{arr_names}--&gt;&lt;BR&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
-<p>... could be expressed in 4D language in the following way:</p>
+<p>4Dランゲージで表すと以下のとおりです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> For</span>(<span class="hljs-variable">$Elem</span>;<span class="hljs-number">1</span>;<span class="hljs-function">Size of array</span>(arr_names))
     arr_names:=<span class="hljs-variable">$Elem</span>
     ...<span class="hljs-keyword">
  End for</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="--4dloop-method--"></a><a href="#--4dloop-method--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DLOOP method--&gt;</code></h3>
-<p>This syntax makes a loop as long as the method returns <code>True</code>. The method takes a Long Integer parameter type. First it is called with the value 0 to allow an initialization stage (if necessary); it is then called with the values 1 ,then 2, then 3 and so on, as long as it returns <code>True</code>.</p>
-<p>For security reasons, within a Web process, the <code>On Web Authentication</code> database method can be called once just before the initialization stage (method execution with 0 as parameter). If the authentication is OK, the initialization stage will proceed.</p>
-<p><code>C_BOOLEAN($0)</code> and <code>C_LONGINT($1)</code> MUST be declared within the method for compilation purposes.</p>
-<p>The following code example:</p>
+<p>このシンタックスでは、メソッドが <code>true</code> を返す間ループがおこなわれます。 メソッドは、倍長整数タイプの引数を受け取ります。 まずメソッドは引数 0 を渡されます。これは (必要に応じて) 初期化ステージとして使用できます。その後、<code>true</code> が返されるまで 1, 2, 3 と渡される引数値がインクリメントされます。</p>
+<p>セキュリティのため、Webプロセス内では、<code>On Web Authentication</code> データベースメソッドが初期化ステージ (引数に0が渡されて実行される) の前に一度呼び出されます。 認証に成功すると、初期化に進みます。</p>
+<p>コンパイルのため、<code>C_BOOLEAN($0)</code> と <code>C_LONGINT($1)</code> が必ず宣言されていなければなりません。</p>
+<p>以下のコードは:</p>
 <p><code>html&lt;!--#4DLOOP my_method--&gt;&lt;!--#4DTEXT var--&gt;&lt;BR&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
-<p>... could be expressed in 4D language in the following way:</p>
+<p>4Dランゲージで表すと以下のとおりです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(AuthenticationWebOK)<span class="hljs-keyword">
     If</span>(<span class="hljs-function">my_method</span>(<span class="hljs-number">0</span>))
        <span class="hljs-variable">$counter</span>:=<span class="hljs-number">1</span><span class="hljs-keyword">
@@ -357,7 +357,7 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
     End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>The <code>my_method</code> method can be as follows:</p>
+<p><code>my_method</code> は以下のようになります:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> C_LONGINT</span>(<span class="hljs-variable">$1</span>)
 <span class="hljs-function"> C_BOOLEAN</span>(<span class="hljs-variable">$0</span>)<span class="hljs-keyword">
  If</span>(<span class="hljs-variable">$1</span>=<span class="hljs-number">0</span>) <span class="hljs-comment">`Initialisation</span>
@@ -373,18 +373,18 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
  End if</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="--4dloop-expression--"></a><a href="#--4dloop-expression--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DLOOP expression--&gt;</code></h3>
-<p>With this syntax, the <code>4DLOOP</code> tag makes a loop as long as the <em>expression</em> returns <code>True</code>. The expression can be any valid Boolean expression and must contain a variable part to be evaluated in each loop to avoid infinite loops.</p>
-<p>For example, the following code:</p>
+<p>このシンタックスでは、<code>4DLOOP</code> タグは <em>expression</em> に指定した式が <code>true</code> を返す間ループがおこなわれます。 式は有効なブール式であればよく、無限ループを防ぐために、ループごとに評価される変数部分を含んでいる必要があります。</p>
+<p>たとえば、以下のコードは:</p>
 <p><code>html&lt;!--#4DEVAL $i:=0--&gt;&lt;!--#4DLOOP ($i&lt;4)--&gt;&lt;!--#4DEVAL $i--&gt;&lt;!--#4DEVAL $i:=$i+1--&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
-<p>...produces the following result:</p>
+<p>以下の結果を生成します:</p>
 <pre><code class="hljs"><span class="hljs-number">0</span>
 <span class="hljs-number">1</span>
 <span class="hljs-number">2</span>
 <span class="hljs-number">3</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="--4dloop-pointerarray--"></a><a href="#--4dloop-pointerarray--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DLOOP pointerArray--&gt;</code></h3>
-<p>In this case, the <code>4DLOOP</code> tag works like it does with an array: it makes a loop for each element of the array referenced by the pointer. The current array element is increased each time the portion of code is repeated.</p>
-<p>This syntax is useful when you pass an array pointer as a parameter to the <code>PROCESS 4D TAGS</code> command.</p>
+<p>この場合、<code>4DLOOP</code> タグは配列のときと同じように振るまいます: ポインターによって参照された配列の要素ごとにループを繰り返します。 カレントの配列要素は、コードが繰り返される度に増加していきます。</p>
+<p>このシンタックスは <code>PROCESS 4D TAGS</code> コマンドに対して配列ポインターを渡した場合に有用です。</p>
 <p>例:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> ARRAY TEXT</span>(<span class="hljs-variable">$array</span>;<span class="hljs-number">2</span>)
  <span class="hljs-variable">$array{1}</span>:=<span class="hljs-string">"hello"</span>
@@ -396,16 +396,16 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <span class="hljs-function"> PROCESS 4D TAGS</span>(<span class="hljs-variable">$input</span>;<span class="hljs-variable">$output</span>;<span class="hljs-string">"elements = "</span>;-&gt;<span class="hljs-variable">$array</span>)
   <span class="hljs-comment">// $output = "elements = hello world "</span>
 </code></pre>
-<p>In case of an interpretation error, the text &quot;<code>&lt;!--#4DLOOP expression--&gt;</code>: description&quot; is inserted instead of the contents located between <code>&lt;!--#4DLOOP --&gt;</code> and <code>&lt;!--#4DENDLOOP--&gt;</code>.</p>
-<p>The following messages can be displayed:</p>
+<p>解釈エラーの場合、<code>&lt;!--#4DLOOP --&gt;</code> と <code>&lt;!--#4DENDLOOP--&gt;</code> の間のコンテンツの代わりに &quot;<code>&lt;!--#4DLOOP expression--&gt;</code>: エラーの説明” というテキストが挿入されます。</p>
+<p>以下のメッセージが表示されます:</p>
 <ul>
-<li>Unexpected expression type (standard error);</li>
-<li>Incorrect table name (error on the table name);</li>
-<li>An array was expected (the variable is not an array or is a two dimension array);</li>
-<li>The method does not exist;</li>
-<li>Syntax error (when the method is executing);</li>
-<li>Access error (you do not have the appropriate access privileges to access the table or the method).</li>
-<li>4DENDLOOP expected (the <code>&lt;!--#4DENDLOOP--&gt;</code> number does not match the <code>&lt;!--#4DLOOP --&gt;</code>).</li>
+<li>予期しない式のタイプ (標準のエラー);</li>
+<li>テーブル名が正しくありません (テーブル名のエラー);</li>
+<li>配列が必要です (変数が配列でないか、二次元配列が指定された);</li>
+<li>メソッドが存在しません;</li>
+<li>シンタックスエラー (メソッド実行時);</li>
+<li>アクセス権エラー (テーブルやメソッドにアクセスする権限がない);</li>
+<li>4DENDLOOP が必要です (<code>&lt;!--#4DLOOP --&gt;</code> が対応する <code>&lt;!--#4DENDLOOP--&gt;</code> で閉じられていない)。</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="4dscript"></a><a href="#4dscript" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DSCRIPT/</h2>
 <h4><a class="anchor" aria-hidden="true" id="syntax---4dscriptmethodnamemyparam--"></a><a href="#syntax---4dscriptmethodnamemyparam--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Syntax: <code>&lt;!--#4DSCRIPT/MethodName/MyParam--&gt;</code></h4>
@@ -495,7 +495,7 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <span class="hljs-function"> PROCESS 4D TAGS</span>(input;output)
  --&gt;output is <span class="hljs-number">1</span><span class="hljs-string">"(hello)"</span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/looping.html"><span class="arrow-prev">← </span><span>ループ構造</span></a><a class="docs-next button" href="/docs/ja/Concepts/error-handling.html"><span>エラー処理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#タグ利用の原則">タグ利用の原則</a><ul class="toc-headings"><li><a href="#解析">解析</a></li><li><a href="#再起的処理">再起的処理</a></li><li><a href="#トークンを使用した識別子">トークンを使用した識別子</a></li><li><a href="#-を小数点として使用">&quot;.&quot; を小数点として使用</a></li></ul></li><li><a href="#4dbase">4DBASE</a><ul class="toc-headings"><li><a href="#--4deach-entity-in-entityselection--"><code>&lt;!--#4DEACH entity in entitySelection--&gt;</code></a></li><li><a href="#--4deach-property-in-object--"><code>&lt;!--#4DEACH property in object--&gt;</code></a></li></ul></li><li><a href="#4deval">4DEVAL</a></li><li><a href="#4dhtml">4DHTML</a></li><li><a href="#4dif-4delse-4delseif-と-4dendif">4DIF, 4DELSE, 4DELSEIF と 4DENDIF</a></li><li><a href="#4dinclude">4DINCLUDE</a></li><li><a href="#4dloop-and-4dendloop">4DLOOP and 4DENDLOOP</a><ul class="toc-headings"><li><a href="#--4dloop-table--"><code>&lt;!--#4DLOOP [table]--&gt;</code></a></li><li><a href="#--4dloop-array--"><code>&lt;!--#4DLOOP array--&gt;</code></a></li><li><a href="#--4dloop-method--"><code>&lt;!--#4DLOOP method--&gt;</code></a></li><li><a href="#--4dloop-expression--"><code>&lt;!--#4DLOOP expression--&gt;</code></a></li><li><a href="#--4dloop-pointerarray--"><code>&lt;!--#4DLOOP pointerArray--&gt;</code></a></li></ul></li><li><a href="#4dscript">4DSCRIPT/</a></li><li><a href="#4dtext">4DTEXT</a></li><li><a href="#4dtext-4dhtml-4deval-の代替シンタックス">4dtext, 4dhtml, 4deval の代替シンタックス</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/looping.html"><span class="arrow-prev">← </span><span>ループ構造</span></a><a class="docs-next button" href="/docs/ja/Concepts/error-handling.html"><span>エラー処理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#タグ利用の原則">タグ利用の原則</a><ul class="toc-headings"><li><a href="#解析">解析</a></li><li><a href="#再起的処理">再起的処理</a></li><li><a href="#トークンを使用した識別子">トークンを使用した識別子</a></li><li><a href="#-を小数点として使用">&quot;.&quot; を小数点として使用</a></li></ul></li><li><a href="#4dbase">4DBASE</a><ul class="toc-headings"><li><a href="#--4deach-entity-in-entityselection--"><code>&lt;!--#4DEACH entity in entitySelection--&gt;</code></a></li><li><a href="#--4deach-property-in-object--"><code>&lt;!--#4DEACH property in object--&gt;</code></a></li></ul></li><li><a href="#4deval">4DEVAL</a></li><li><a href="#4dhtml">4DHTML</a></li><li><a href="#4dif-4delse-4delseif-と-4dendif">4DIF, 4DELSE, 4DELSEIF と 4DENDIF</a></li><li><a href="#4dinclude">4DINCLUDE</a></li><li><a href="#4dloop-と-4dendloop">4DLOOP と 4DENDLOOP</a><ul class="toc-headings"><li><a href="#--4dloop-table--"><code>&lt;!--#4DLOOP [table]--&gt;</code></a></li><li><a href="#--4dloop-array--"><code>&lt;!--#4DLOOP array--&gt;</code></a></li><li><a href="#--4dloop-method--"><code>&lt;!--#4DLOOP method--&gt;</code></a></li><li><a href="#--4dloop-expression--"><code>&lt;!--#4DLOOP expression--&gt;</code></a></li><li><a href="#--4dloop-pointerarray--"><code>&lt;!--#4DLOOP pointerArray--&gt;</code></a></li></ul></li><li><a href="#4dscript">4DSCRIPT/</a></li><li><a href="#4dtext">4DTEXT</a></li><li><a href="#4dtext-4dhtml-4deval-の代替シンタックス">4dtext, 4dhtml, 4deval の代替シンタックス</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
