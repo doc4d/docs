@@ -1,6 +1,6 @@
 ---
-id: function-reference
-title: Function Reference
+id: spreadsheet-function-reference
+title: Spreadsheet Function Reference
 ---
 
 ## ABS

@@ -13,7 +13,7 @@ title: Formulas and Functions
 	*	references to other cells (relatives, absolutes, mixed or by name), 
 	*	4D variables, fields and functions,
 	*	4D methods (registered by [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods)), 
-	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](function-reference.md#vp-set-custom-functions)),
+	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](method-reference.md#vp-set-custom-functions)),
 	*	4D View Pro functions.
 
 To enter a formula:
@@ -131,4 +131,4 @@ The following table shows the effect of the different notations:
 
 Functions are...
 
-See [function reference](function-reference.md) for more details and examples.
+See [spreadsheet function reference](spreadsheet-function-reference.md) for more details and examples.

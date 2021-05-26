@@ -65,7 +65,7 @@ To enter a formula or a function in a 4D View Pro area:
 
 >The Copy/Cut and Paste features of the context menu only work within the spreadsheet area, they do not have access to the system pasteboard. System shortcuts such as **Ctrl+c/Ctrl+v** works however and can be used to exchange data between the area and other applications.
 
-This menu proposes additional features depending on the clicked area:
+ Depending on the clicked area, the following options are also available:
 
 *	click on a column or row header: **Insert**, **Delete**, **Hide**, or **Unhide** the contents
 *	click on a cell or a cell range:
