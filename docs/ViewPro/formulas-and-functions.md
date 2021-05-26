@@ -5,7 +5,7 @@ title: Formulas and Functions
 
 ## Overview 
 
-4D View Pro functions are used in formulas. Every 4D View Pro formula is an expression that returns a value. All expressions are comprised of operands and operators:
+Every 4D View Pro formula is an expression that returns a value. All expressions are comprised of operands and operators:
 
 *	**Operators**: see [Operators and values](#operators-and-values)
 *	**Operands** are divided into several categories:
@@ -14,7 +14,7 @@ title: Formulas and Functions
 	*	4D variables, fields and functions,
 	*	4D methods (registered by [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods)), 
 	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](method-reference.md#vp-set-custom-functions)),
-	*	4D View Pro functions.
+	*	Spreadsheet functions.
 
 To enter a formula:
 
@@ -129,6 +129,4 @@ The following table shows the effect of the different notations:
 
 ## Spreadsheet Functions
 
-Functions are...
-
-See [spreadsheet function reference](spreadsheet-function-reference.md) for more details and examples.
+Spreadsheet functions are used in formulas. See the [list of spreadsheet functions](spreadsheet-function-reference.md) for more details and examples.

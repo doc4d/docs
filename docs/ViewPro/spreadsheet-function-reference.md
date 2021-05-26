@@ -287,7 +287,7 @@ NOT(FALSE) //TRUE
 |searchRange   |CellRef |->|Cells to search|  
  
 
-The `FINDCELL` function searches for the *toFind* value in the *searchRange* range of cells and returns the reference of the cell in which it was found. This reference cannot be displayed, but can be used by other 4D View Pro functions that accept a cell reference (*CellRef*) as parameter. 
+The `FINDCELL` function searches for the *toFind* value in the *searchRange* range of cells and returns the reference of the cell in which it was found. This reference cannot be displayed, but can be used by other spreadsheet functions that accept a cell reference (*CellRef*) as parameter. 
 
 *toFind* must contain the reference of a cell that actually contains the value to find.
 
@@ -386,7 +386,7 @@ IF(B1<200,"Declining result","Good result") //"Good result" is written if B1>200
 
 The `INDIRECT` function returns the contents of *cell*. The *cell* parameter (mandatory) can be any cell reference, including absolute reference such as $A$1 or a character string. Use `INDIRECT` when you want to change the reference to a cell within a formula without changing the formula itself.
 
-The `INDIRECT` function can also return the internal reference of a range of cells (reference cannot be displayed but can be used by other 4D View Pro functions).
+The `INDIRECT` function can also return the internal reference of a range of cells (reference cannot be displayed but can be used by other spreadsheet functions).
 
 
 **Example** 
