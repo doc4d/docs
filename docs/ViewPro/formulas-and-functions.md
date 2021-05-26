@@ -5,29 +5,24 @@ title: Formulas and Functions
 
 ## Overview 
 
-Every 4D View Pro formula is an expression that returns a value. All expressions are comprised of operands and operators:
+A spreadsheet formula is an expression that calculates the value of a cell. All formulas are comprised of operands and operators:
 
 *	**Operators**: see [Operators and values](#operators-and-values)
 *	**Operands** are divided into several categories:
-	*	values,
-	*	references to other cells (relatives, absolutes, mixed or by name), 
-	*	4D variables, fields and functions,
-	*	4D methods (registered by [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods)), 
-	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](method-reference.md#vp-set-custom-functions)),
-	*	Spreadsheet functions.
+	*	values
+	*	references to other cells (relatives, absolutes, mixed or by name)
+	*	4D variables, fields and functions
+	*	4D methods (registered by [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods)) 
+	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](method-reference.md#vp-set-custom-functions))
+	*	Spreadsheet functions
 
 To enter a formula:
 
-1.	Select the cell into which you will enter the formula or function.
+1.	Select a cell.
 2.	Enter = (the equal sign).
-3.	Type in the formula then hit the Enter key
+3.	Type in the formula and hit the **Enter** key
 
->You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](method-reference.md#vp-add-formula-name) command.
-
-A large number of functions are available in 4D View Pro. This section describes a subset of essential functions. The complete list of functions supported by 4D View Pro can be found in the [Spreadsheets documentation](http://help.grapecity.com/spread/SpreadSheets11/webframe.html#FormulaFunctions.html).
-
->If a 4D project method in a formula has the same name as a SpreadJS function, 4D View Pro will use the function and the project method will not be called.  
- 
+>You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](method-reference.md#vp-add-formula-name) command. 
 
 ## Operators and values  
  

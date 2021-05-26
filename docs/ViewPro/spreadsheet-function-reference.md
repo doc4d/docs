@@ -3,6 +3,10 @@ id: spreadsheet-function-reference
 title: Spreadsheet Function Reference
 ---
 
+A large number of functions are available in 4D View Pro. This section describes a subset of essential functions. The complete list of functions supported by 4D View Pro can be found in the [Spreadsheets documentation](http://help.grapecity.com/spread/SpreadSheets11/webframe.html#FormulaFunctions.html).
+
+>If a 4D project method in a formula has the same name as a SpreadJS function, 4D View Pro will use the function and the project method will not be called.  
+
 ## ABS
 
 **ABS**( *value* : Real )<br>**ABS**( *value* : Expression )
