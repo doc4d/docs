@@ -13,7 +13,7 @@ To be called in a 4D View Pro formula, a project method must be:
 
 *	**Allowed**: it was explicitly declared using the [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods) command.
 
-*	**Runnable**: it belongs to the host database or a loaded component with the "Shared by components and host database" option enabled (see *Sharing of project methods*).
+*	**Runnable**: it belongs to the host project or a loaded component with the "Shared by components and host project" option enabled (see [Sharing of project methods](../Concepts/components.md#sharing-of-project-methods)).
 
 *	**Not in conflict** with an existing 4D View Pro function: if you call a project method with the same name as a 4D View Pro built-in function, the function is called.
 
