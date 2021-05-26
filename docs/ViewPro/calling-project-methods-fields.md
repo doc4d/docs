@@ -15,7 +15,7 @@ To be called in a 4D View Pro formula, a project method must be:
 
 *	**Runnable**: it belongs to the host project or a loaded component with the "Shared by components and host project" option enabled (see [Sharing of project methods](../Concepts/components.md#sharing-of-project-methods)).
 
-*	**Not in conflict** with an existing 4D View Pro function: if you call a project method with the same name as a 4D View Pro built-in function, the function is called.
+*	**Not in conflict** with an existing 4D View Pro spreadsheet function: if you call a project method with the same name as a 4D View Pro built-in function, the function is called.
 
 >If the [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods) command has never been executed during the session, 4D View Pro custom functions rely on allowed methods defined by 4D's generic `SET ALLOWED METHODS` command. In this case, the project method names must comply with JavaScript Identifier Grammar (see [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)). The global filtering option in the Settings dialog box (see *Data Access*) is ignored in all cases.
 
