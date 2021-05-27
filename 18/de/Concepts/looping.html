@@ -281,7 +281,7 @@
 <span class="hljs-function">    statement</span>(s)<span class="hljs-keyword">
  End for each</span>
 </code></pre>
-<p>Die Struktur <code>For each...End for each</code> durchläuft den angegebenen Eintrag <em>Current_item</em> für alle Werte von <em>Expression</em>. Der Typ <em>Current_item</em> richtet sich nach der Art von <em>Expression</em>. Die Schleife <code>For each...End for each</code> kann drei Arten durchlaufen:</p>
+<p>Die Struktur <code>For each...End for each</code> durchläuft den angegebenen Eintrag <em>Current_item</em> für alle Werte von <em>Expression</em>. Der Typ <em>Current_item</em> richtet sich nach der Art von <em>Expression</em>. Die Schleife <code>For each...End for each</code> kann drei Arten von <em>Ausdrücken</em> durchlaufen:</p>
 <ul>
 <li>Collections: Schleife durch jedes Element der Collection</li>
 <li>Entity-Selections: Schleife durch jede Entity</li>
@@ -305,7 +305,7 @@
 <li>Über die optionalen Parameter <em>begin</em> und <em>end</em> lassen sich in Collections und Entity-Selections Grenzen für die Schleife definieren.</li>
 <li>Die Schleife <code>For each...End for each</code> lässt sich für eine <strong>shared collection</strong> oder ein <strong>shared object</strong> verwenden. Muss Ihr Code ein oder mehrere Elemente der Collection oder Objekteigenschaften ändern, müssen Sie <code>Use...End use</code> verwenden. Sie können <code>Use...End use</code> je nach Bedarf wie folgt aufrufen:
 <ul>
-<li>Vor Eintreten in die Schleife, wenn Einträge zur Wahrung der Integrität gemeinsman geändert werden sollen, oder</li>
+<li>Vor Eintreten in die Schleife, wenn Einträge zur Wahrung der Integrität gemeinsam geändert werden sollen, oder</li>
 <li>Innerhalb der Schleife, wenn nur ein paar Elemente/Eigenschaften geändert werden müssen und kein Verwalten der Integrität erforderlich ist.</li>
 </ul></li>
 </ul>

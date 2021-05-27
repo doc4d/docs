@@ -175,16 +175,16 @@
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="automatic-restore"></a><a href="#automatic-restore" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Automatic Restore</h3>
 <ul>
-<li><strong>Restore last backup if database is damaged</strong>: When this option is checked, the program automatically starts the restore of the data file of the last valid backup of the database, if an anomaly is detected (corrupted file, for example) during database launch. No intervention is required on the part of the user; however, the operation is logged in the backup journal.</li>
+<li><strong>Restaura a última cópia de segurança se o banco de dados for danificado</strong>: Quando essa opção for marcada, o programa inicia automaticamente a restauração do arquivo de dados do último backup válido do banco, se uma anomalia for detectada (arquivo corrupto por exemplo) durante a o lançamento do banco de dados. No intervention is required on the part of the user; however, the operation is logged in the backup journal.</li>
 </ul>
 <blockquote>
-<p>In the case of an automatic restore, only the data file is restored. If you wish to get the attached files or the project files, you must perform a manual restore.</p>
+<p>No caso de uma restauração automatica, só os arquivos de dados são restaurados. Se quiser os arquivos anexados ou os arquivos de projeto, precisa fazer uma restauração  manual</p>
 </blockquote>
 <ul>
-<li><strong>Integrate last log file if database is incomplete</strong>: When this option is checked, the program automatically integrates the log file when opening or restoring the database.
+<li><strong>Integrar o último arquivo de histórico se o banco de dados estiver incompleto</strong>: Quando essa opção for marcada, o programa integra automaticamente o arquivo de histórico quando abrir ou restaurar o banco de dados.
 <ul>
-<li>When opening a database, the current log file is automatically integrated if 4D detects that there are operations stored in the log file that are not present in the data. This situation arises, for example, if a power outage occurs when there are operations in the data cache that have not yet been written to the disk.</li>
-<li>When restoring a database, if the current log file or a log backup file having the same number as the backup file is stored in the same folder, 4D examines its contents. If it contains operations not found in the data file, the program automatically integrates it.</li>
+<li>Quando abrir um banco de dados, o arquivo de histórico atual é integrado automaticamente se 4D detectar que há operações armazenadas no arquivo de log que não estejam presentes nos dados. This situation arises, for example, if a power outage occurs when there are operations in the data cache that have not yet been written to the disk.</li>
+<li>Quando restaurar um banco de dados, se o arquivo atual de hsitórico, ou se um arquivo de backup de histórico tiverem o mesmo número que um arquivo de backup e estiverem armazenados na mesma pasta, 4D vai examinar seu conteúdo. If it contains operations not found in the data file, the program automatically integrates it.</li>
 </ul></li>
 </ul>
 <p>The user does not see any dialog box; the operation is completely automatic. The goal is to make use as easy as possible. The operation is logged in the backup journal.</p>
