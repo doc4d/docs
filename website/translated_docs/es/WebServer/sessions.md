@@ -84,7 +84,7 @@ You can assign privileges usign the [`.setPrivileges()`](API/sessionClass.md#set
 
 > In the current implementation (v18 R6), only the "WebAdmin" privilege is available.
 
-Example:
+Ejemplo:
 
 ```4d
 If (Session.hasPrivilege("WebAdmin"))

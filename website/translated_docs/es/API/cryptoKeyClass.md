@@ -119,7 +119,7 @@ Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for
 <!-- REF #cryptokey.decrypt().Params -->
 | Parameter | Type   |    | Description                                                                   |
 | --------- | ------ | -- | ----------------------------------------------------------------------------- |
-| message   | Text   | -> | Message string to be decoded using `options.encodingEncrypted` and decrypted. |
+| message   | Texto  | -> | Message string to be decoded using `options.encodingEncrypted` and decrypted. |
 | options   | Objeto | -> | Decoding options                                                              |
 | Result    | Objeto | <- | Status                                                                        |
 <!-- END REF -->
@@ -168,9 +168,9 @@ In case the *message* couldn't be decrypted because it was not encrypted with th
 <!-- REF #cryptokey.encrypt().Params -->
 | Parameter | Type   |    | Description                                                                   |
 | --------- | ------ | -- | ----------------------------------------------------------------------------- |
-| message   | Text   | -> | Message string to be encoded using `options.encodingDecrypted` and encrypted. |
+| message   | Texto  | -> | Message string to be encoded using `options.encodingDecrypted` and encrypted. |
 | options   | Objeto | -> | Encoding options                                                              |
-| Result    | Text   | <- | Message encrypted and encoded using the `options.encodingEncrypted`           |
+| Result    | Texto  | <- | Message encrypted and encoded using the `options.encodingEncrypted`           |
 <!-- END REF -->
 
 The `.encrypt()` function <!-- REF #cryptokey.encrypt().Summary -->encrypts the *message* parameter using the **public** key<!-- END REF -->. The algorithm used depends on the type of the key.
@@ -208,9 +208,9 @@ The returned value is an encrypted message.
 
 
 <!-- REF #cryptokey.getPrivateKey().Params -->
-| Parameter | Type |    | Description               |
-| --------- | ---- | -- | ------------------------- |
-| Result    | Text | <- | Private key in PEM format |
+| Parameter | Type  |    | Description               |
+| --------- | ----- | -- | ------------------------- |
+| Result    | Texto | <- | Private key in PEM format |
 <!-- END REF -->
 
 The `.getPrivateKey()` function  <!-- REF #cryptokey.getPrivateKey().Summary -->returns the private key of the `cryptoKey` object<!-- END REF --> in PEM format, or an empty string if none is available.
@@ -235,9 +235,9 @@ The returned value is the private key.
 <!-- REF #cryptokey.getPublicKey().Syntax -->**.getPublicKey( )** : Text<!-- END REF -->
 
 <!-- REF #cryptokey.getPublicKey().Params -->
-| Parameter | Type |    | Description              |
-| --------- | ---- | -- | ------------------------ |
-| Result    | Text | <- | Public key in PEM format |
+| Parameter | Type  |    | Description              |
+| --------- | ----- | -- | ------------------------ |
+| Result    | Texto | <- | Public key in PEM format |
 <!-- END REF -->
 
 
@@ -281,9 +281,9 @@ The returned value is the public key.
 <!-- REF #cryptokey.sign().Params -->
 | Parameter | Type   |    | Description                                                                     |
 | --------- | ------ | -- | ------------------------------------------------------------------------------- |
-| message   | Text   | -> | Message string to sign                                                          |
+| message   | Texto  | -> | Message string to sign                                                          |
 | options   | Objeto | -> | Signing options                                                                 |
-| Result    | Text   | <- | Signature in Base64 or Base64URL representation, depending on "encoding" option |
+| Result    | Texto  | <- | Signature in Base64 or Base64URL representation, depending on "encoding" option |
 <!-- END REF -->
 
 The `.sign()` function <!-- REF #cryptokey.sign().Summary -->signs the utf8 representation of a *message* string<!-- END REF --> using the `cryptoKey` object keys and provided *options*. It returns its signature in base64 or base64URL format, depending on the value of the `options.encoding` attribute you passed.
@@ -353,8 +353,8 @@ Defined only for RSA keys: <!-- REF #cryptokey.size.Summary -->the size of the k
 <!-- REF #cryptokey.verify().Params -->
 | Parameter | Type   |    | Description                                                                                       |
 | --------- | ------ | -- | ------------------------------------------------------------------------------------------------- |
-| message   | Text   | -> | Message string that was used to produce the signature                                             |
-| signature | Text   | -> | Signature to verify, in Base64 or Base64URL representation, depending on `options.encoding` value |
+| message   | Texto  | -> | Message string that was used to produce the signature                                             |
+| signature | Texto  | -> | Signature to verify, in Base64 or Base64URL representation, depending on `options.encoding` value |
 | options   | Objeto | -> | Signing options                                                                                   |
 | Result    | Objeto | <- | Status of the verification                                                                        |
 <!-- END REF -->
