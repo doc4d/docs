@@ -1,6 +1,6 @@
 ---
 id: propertiesPicture
-title: Picture
+title: Imagen
 ---
 
 ---
@@ -27,7 +27,7 @@ Two main locations can be used for static picture path:
 
 
 ---
-## Display
+## Visualización
 
 
 ### Scaled to fit
