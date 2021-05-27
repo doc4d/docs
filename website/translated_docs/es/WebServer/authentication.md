@@ -1,6 +1,6 @@
 ---
 id: authentication
-title: Authentication
+title: Autenticación
 ---
 
 Authenticating users is necessary when you want to provide specific access rights to web users. Authentication designates the way the information concerning the user credentials (usually name and password) are collected and processed.
@@ -14,7 +14,7 @@ The 4D web server proposes three authentication modes, that you can select in th
 
 > Using a **custom** authentication is recommended.
 
-### Overview
+### Generalidades
 
 The operation of the 4D web server's access system is summarized in the following diagram:
 
@@ -94,15 +94,15 @@ The `On Web Authentication` database method is NOT called:
 
 **On Web Authentication**( *$1* : Text ; *$2* : Text ; *$3* : Text ; *$4* : Text ; *$5* : Text ; *$6* : Text ) -> $0 : Boolean
 
-| Parameters | Type    |    | Description                                       |
-| ---------- | ------- |:--:| ------------------------------------------------- |
-| $1         | Text    | <- | URL                                               |
-| $2         | Text    | <- | HTTP headers + HTTP body (up to 32 kb limit)      |
-| $3         | Text    | <- | IP address of the web client (browser)            |
-| $4         | Text    | <- | IP address of the server                          |
-| $5         | Text    | <- | User name                                         |
-| $6         | Text    | <- | Password                                          |
-| $0         | Boolean | -> | True = request accepted, False = request rejected |
+| Parámetros | Type     |    | Description                                       |
+| ---------- | -------- |:--:| ------------------------------------------------- |
+| $1         | Texto    | <- | URL                                               |
+| $2         | Texto    | <- | HTTP headers + HTTP body (up to 32 kb limit)      |
+| $3         | Texto    | <- | IP address of the web client (browser)            |
+| $4         | Texto    | <- | IP address of the server                          |
+| $5         | Texto    | <- | User name                                         |
+| $6         | Texto    | <- | Password                                          |
+| $0         | Booleano | -> | True = request accepted, False = request rejected |
 
 You must declare these parameters as follows:
 
