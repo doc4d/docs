@@ -1,5 +1,5 @@
 ---
-id: CollectionClass
+id: collectionClass
 title: Collection
 ---
 
@@ -1336,6 +1336,7 @@ Optionally, you can pass the index of collection from which to start the search 
 
 
 
+
 ```4d
  var $col : Collection
  var $i : Integer
@@ -1788,6 +1789,7 @@ If the collection is empty, `.min()` returns *Undefined*.
 <!-- REF #collection.orderBy().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
+
 |pathStrings|Text|->|Property path(s) on which to order the collection|
 |pathObjects|Collection|->|Collection of criteria objects|
 |ascOrDesc|Integer|->|`ck ascending` or `ck descending` (scalar values)|
