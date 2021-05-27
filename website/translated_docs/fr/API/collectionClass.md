@@ -68,13 +68,8 @@ Une collection est initialisée avec :
 
 
 
-## Nouvelle collection
+## `Nouvelle collection`
 
-<details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v16 R4  | Ajoutées      |
-</details>
 
 <!-- REF #_command_.New collection.Syntax -->
 **New collection** {( *...value* : any )} : Collection<!-- END REF -->
@@ -152,7 +147,7 @@ You create a new collection and then add a new element:
 
 
 
-## Nouvelle collection partagée
+## `Nouvelle collection partagée`
 
 <details><summary>Historique</summary>
 | Version | Modifications |
@@ -1084,6 +1079,7 @@ The code for ***TypeLookUp*** is:
  C_LONGINT($2)
  If(OB Get type($1;"value")=$2)
 
+
     $1.result:=True
  End if
 ``` 
@@ -1313,6 +1309,7 @@ Optionally, you can pass the index of collection from which to start the search 
 *   If *startFrom* = 0, the whole collection is searched (default).
 
 #### Exemple
+
 
 
 ```4d
@@ -1563,6 +1560,7 @@ The `.length` property is initialized when the collection is created. Adding or 
 
 #### Exemple
 
+
 ```4d
  var $col : Collection //$col.length initialized to 0
  $col:=New collection("one";"two";"three") //$col.length updated to 3
@@ -1755,12 +1753,11 @@ If the collection is empty, `.min()` returns *Undefined*.
 
 
 <!-- REF #collection.orderBy().Params -->
-| Paramètres  | Type        |    | Description                                       |
-| ----------- | ----------- |:--:| ------------------------------------------------- |
-| pathStrings | Texte       | -> | Property path(s) on which to order the collection |
-| pathObjects | Collection  | -> | Collection of criteria objects                    |
-| ascOrDesc   | Entier long | -> | `ck ascending` or `ck descending` (scalar values) |
-| Résultat    | Collection  | <- | Ordered copy of the collection (shallow copy)     |
+| Paramètres | Type |  | Description |
+| ---------- | ---- |::| ----------- |
+|            |      |  |             |
+
+|pathStrings|Text|->|Property path(s) on which to order the collection| |pathObjects|Collection|->|Collection of criteria objects| |ascOrDesc|Integer|->|`ck ascending` or `ck descending` (scalar values)| |Result|Collection |<-|Ordered copy of the collection (shallow copy)|
 <!-- END REF -->
 
 
@@ -2129,9 +2126,9 @@ The *queryString* parameter uses the following syntax:
 propertyPath comparator value {logicalOperator propertyPath comparator value}
 ```
 
-Pour obtenir des informations détaillées sur la création d'une requête à l'aide des paramètres value et *querySettings*, reportez-vous à la description de la fonction **dataClass** `.query()`.
+For detailed information on how to build a query using *queryString*, *value* and *querySettings* parameters, please refer to the [`dataClass.query()`](DataClassClass.md#query) function description.
 
-
+> Formulas are not supported by the `collection.query()` function, neither in the *queryString* parameter nor as *formula* object parameter.
 
 #### Exemple 1
 
@@ -2333,6 +2330,7 @@ Dans *index*, passez la position où vous souhaitez supprimer l'élément de la 
 Dans *howMany*, passez le nombre d'éléments à supprimer de l'*index*. Si *howMany* n'est pas spécifié, un élément est supprimé.
 
 
+
 Si vous essayez de supprimer un élément d'une collection vide, la méthode ne fait rien (aucune erreur n'est générée).
 
 
@@ -2405,6 +2403,7 @@ Par défaut, les nouveaux éléments sont remplis par des valeurs **null**. Vous
 
  $c:=New collection(1;2;3;4;5)
  $c.resize(2) //$c=[1,2]
+
 ```
 
 <!-- END REF -->
