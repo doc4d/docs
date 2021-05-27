@@ -1,6 +1,6 @@
 ---
-id: constant-reference
-title: Constant Reference
+id: constant-list
+title: Constant List
 ---
 
 [C](#c) - 
@@ -31,7 +31,7 @@ title: Constant Reference
 
 #### Used by
 
-[VP EXPORT DOCUMENT](method-reference.md#vp-export-document)
+[VP EXPORT DOCUMENT](command-list.md#vp-export-document)
 
 
 ## C
@@ -134,7 +134,7 @@ Designates current sheet of the 4D View Pro area (default)
 
 #### Used by
 
-[VP ADD FORMULA NAME](method-reference.md#vp-add-formula-name) - [VP ADD RANGE NAME](method-reference.md#vp-add-range-name) - [VP ADD STYLESHEET](method-reference.md#vp-add-stylesheet) - [VP ALL](method-reference.md#vp-all) - [VP Cell](method-reference.md#vp-cell) - [VP Cells](method-reference.md#vp-cells) - [VP Column](method-reference.md#vp-column) - [VP Get active cell](method-reference.md#vp-get-active-cell) - [VP Get column count](method-reference.md#vp-get-column-count) - [VP Get default style](method-reference.md#vp-get-default-style) - [VP Get formula by name](method-reference.md#vp-get-formula-by-name) - [VP Get frozen panes](method-reference.md#vp-get-frozen-panes) - [VP Get names](method-reference.md#vp-get-names) - [VP Get print info](method-reference.md#vp-get-print-info) - [VP Get row count](method-reference.md#vp-get-row-count) - [VP Get selection](method-reference.md#vp-get-selection) - [VP Get sheet options](method-reference.md#vp-get-sheet-options) - [VP Get stylesheet](method-reference.md#vp-get-stylesheet) - [VP Get stylesheets](method-reference.md#vp-get-stylesheets) - [VP Name](method-reference.md#vp-name) - [VP REMOVE NAME](method-reference.md#vp-remove-name) - [VP REMOVE STYLESHEET](method-reference.md#vp-remove-stylesheet) - [VP RESET SELECTION](method-reference.md#vp-reset-selection) - [VP Row](method-reference.md#vp-row) - [VP SET COLUMN COUNT](method-reference.md#vp-set-column-count) - [VP SET DEFAULT STYLE](method-reference.md#vp-set-default-style) - [VP SET FROZEN PANES](method-reference.md#vp-set-frozen-panes) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info) - [VP SET ROW COUNT](method-reference.md#vp-set-row-count) - [VP SET SHEET OPTIONS](method-reference.md#vp-set-sheet-options)
+[VP ADD FORMULA NAME](command-list.md#vp-add-formula-name) - [VP ADD RANGE NAME](command-list.md#vp-add-range-name) - [VP ADD STYLESHEET](command-list.md#vp-add-stylesheet) - [VP ALL](command-list.md#vp-all) - [VP Cell](command-list.md#vp-cell) - [VP Cells](command-list.md#vp-cells) - [VP Column](command-list.md#vp-column) - [VP Get active cell](command-list.md#vp-get-active-cell) - [VP Get column count](command-list.md#vp-get-column-count) - [VP Get default style](command-list.md#vp-get-default-style) - [VP Get formula by name](command-list.md#vp-get-formula-by-name) - [VP Get frozen panes](command-list.md#vp-get-frozen-panes) - [VP Get names](command-list.md#vp-get-names) - [VP Get print info](command-list.md#vp-get-print-info) - [VP Get row count](command-list.md#vp-get-row-count) - [VP Get selection](command-list.md#vp-get-selection) - [VP Get sheet options](command-list.md#vp-get-sheet-options) - [VP Get stylesheet](command-list.md#vp-get-stylesheet) - [VP Get stylesheets](command-list.md#vp-get-stylesheets) - [VP Name](command-list.md#vp-name) - [VP REMOVE NAME](command-list.md#vp-remove-name) - [VP REMOVE STYLESHEET](command-list.md#vp-remove-stylesheet) - [VP RESET SELECTION](command-list.md#vp-reset-selection) - [VP Row](command-list.md#vp-row) - [VP SET COLUMN COUNT](command-list.md#vp-set-column-count) - [VP SET DEFAULT STYLE](command-list.md#vp-set-default-style) - [VP SET FROZEN PANES](command-list.md#vp-set-frozen-panes) - [VP SET PRINT INFO](command-list.md#vp-set-print-info) - [VP SET ROW COUNT](command-list.md#vp-set-row-count) - [VP SET SHEET OPTIONS](command-list.md#vp-set-sheet-options)
 
 
 ## F
@@ -154,7 +154,7 @@ Specifies that the entire content of the cell must completely match the search v
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -172,7 +172,7 @@ Specifies that capital and lower-case letters are considered the same. Ex: "a" i
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -190,7 +190,7 @@ Specifies that no search flags are considered. (default)
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -210,7 +210,7 @@ Specifies that wildcard characters (\*,?) can be used in the search string. Wild
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -228,7 +228,7 @@ Specifies that the search is performed by columns. Each row of a column is searc
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -246,7 +246,7 @@ Specifies that the search is performed by rows. Each column of a row is searched
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -264,7 +264,7 @@ Specifies that the search is performed in the cell formula.
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -282,7 +282,7 @@ Specifies that the search is performed in the cell tag.
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -300,7 +300,7 @@ Specifies that the search is performed in the cell text. (default)
 
 #### Used by
 
-[VP Find](method-reference.md#vp-find)
+[VP Find](command-list.md#vp-find)
 
 
 
@@ -318,7 +318,7 @@ Large text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -336,7 +336,7 @@ Larger text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -368,7 +368,7 @@ Small text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -386,7 +386,7 @@ Smaller text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -404,7 +404,7 @@ Extra large sized text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -422,7 +422,7 @@ Extra small sized text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 ### vk font size xx small
@@ -439,7 +439,7 @@ Extra small sized text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -457,7 +457,7 @@ Extra extra large sized text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -475,7 +475,7 @@ Extra extra small sized text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -493,7 +493,7 @@ Italic text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -511,7 +511,7 @@ Oblique text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -529,7 +529,7 @@ Text displayed in small capital letters.
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -547,7 +547,7 @@ Thin text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -565,7 +565,7 @@ Extra light text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -583,7 +583,7 @@ Light text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -601,7 +601,7 @@ Normal weight text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -619,7 +619,7 @@ Medium weight text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -637,7 +637,7 @@ Semi-bold text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -655,7 +655,7 @@ Bold text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -673,7 +673,7 @@ Extra bold text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -691,7 +691,7 @@ Ultra bold text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -709,7 +709,7 @@ Bold text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -727,7 +727,7 @@ Heavier bold text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 
 
@@ -745,7 +745,7 @@ Lighter text
 
 #### Used by
 
-[VP Object to font](method-reference.md#vp-object-to-font)
+[VP Object to font](command-list.md#vp-object-to-font)
 
 ## H
 
@@ -1027,7 +1027,7 @@ Line made from a single dash and a single dot.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1045,7 +1045,7 @@ Line made from a single dash and two dots.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1063,7 +1063,7 @@ Line made from dashes.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1081,7 +1081,7 @@ Line made from dots.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1099,7 +1099,7 @@ Line made from two lines.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1117,7 +1117,7 @@ A simple, un-styled line.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1135,7 +1135,7 @@ Line made from dots.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1153,7 +1153,7 @@ Solid, medium-weight line.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1171,7 +1171,7 @@ Medium-weight line made from a single dash and a single dot.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1189,7 +1189,7 @@ Medium-weight line made from a single dash and two dots.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1207,7 +1207,7 @@ Medium-weight line mad from dashes.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1225,7 +1225,7 @@ Line made from a slanted dash and a slanted dot.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1243,7 +1243,7 @@ Heavy-weight solid line.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 
 
@@ -1261,7 +1261,7 @@ Light-weight solid line.
 
 #### Used by
 
-[VP SET BORDER](method-reference.md#vp-set-border)
+[VP SET BORDER](command-list.md#vp-set-border)
 
 ## M
 
@@ -1278,7 +1278,7 @@ Light-weight solid line.
 Microsoft Excel format.
 
 #### Used by
-[VP EXPORT DOCUMENT](method-reference.md#vp-export-document)
+[VP EXPORT DOCUMENT](command-list.md#vp-export-document)
 
 ## P
 
@@ -1299,7 +1299,7 @@ USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value)
 
 
 
@@ -1319,7 +1319,7 @@ USA default pattern: "dddd, dd MMMM yyyy"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value) - [VP SET DATE VALUE](method-reference.md#vp-set-date-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value) - [VP SET DATE VALUE](command-list.md#vp-set-date-value)
 
 
 
@@ -1339,7 +1339,7 @@ USA default pattern: "HH:mm:ss"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value) 
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value) 
 
 
 
@@ -1359,7 +1359,7 @@ USA default pattern: "MMMM dd"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value) - [VP SET DATE VALUE](method-reference.md#vp-set-date-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value) - [VP SET DATE VALUE](command-list.md#vp-set-date-value)
 
 
 
@@ -1379,7 +1379,7 @@ USA default pattern: "MM/dd/yyyy"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value) - [VP SET DATE VALUE](method-reference.md#vp-set-date-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value) - [VP SET DATE VALUE](command-list.md#vp-set-date-value)
 
 
 
@@ -1399,7 +1399,7 @@ USA default pattern: "HH:mm"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value)
 
 
 
@@ -1419,7 +1419,7 @@ USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value)
 
 
 
@@ -1439,7 +1439,7 @@ USA default pattern: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value)
 
 
 
@@ -1459,7 +1459,7 @@ USA default pattern: "yyyy MMMM"
 
 #### Used by
 
-[VP SET DATE TIME VALUE](method-reference.md#vp-set-date-time-value) - [VP SET DATE VALUE](method-reference.md#vp-set-date-value)
+[VP SET DATE TIME VALUE](command-list.md#vp-set-date-time-value) - [VP SET DATE VALUE](command-list.md#vp-set-date-value)
 
 
 
@@ -1477,7 +1477,7 @@ PDF format.
 
 #### Used by
 
-[VP EXPORT DOCUMENT](method-reference.md#vp-export-document)
+[VP EXPORT DOCUMENT](command-list.md#vp-export-document)
 
 
 
@@ -1495,7 +1495,7 @@ Vertical alignment to the bottom of cell or row.
 
 #### Used by
 
-[VP SHOW CELL](method-reference.md#vp-show-cell)
+[VP SHOW CELL](command-list.md#vp-show-cell)
 
 
 
@@ -1517,7 +1517,7 @@ Alignment to the center. The alignment will be to the cell, row, or column limit
 
 #### Used by
 
-[VP SHOW CELL](method-reference.md#vp-show-cell)
+[VP SHOW CELL](command-list.md#vp-show-cell)
 
 
 
@@ -1535,7 +1535,7 @@ Horizontal alignment to the left of the cell or column.
 
 #### Used by
 
-[VP SHOW CELL](method-reference.md#vp-show-cell)
+[VP SHOW CELL](command-list.md#vp-show-cell)
  
 
 
@@ -1556,7 +1556,7 @@ Alignment to the closest limit (top, bottom, left, right, center). The alignment
 
 #### Used by
 
-[VP SHOW CELL](method-reference.md#vp-show-cell)
+[VP SHOW CELL](command-list.md#vp-show-cell)
 
 
 
@@ -1574,7 +1574,7 @@ Horizontal alignment to the right of the cell or column.
 
 #### Used by
 
-[VP SHOW CELL](method-reference.md#vp-show-cell)
+[VP SHOW CELL](command-list.md#vp-show-cell)
 
 
 
@@ -1592,7 +1592,7 @@ Vertical alignment to the top of cell or row.
 
 #### Used by
 
-[VP SHOW CELL](method-reference.md#vp-show-cell)
+[VP SHOW CELL](command-list.md#vp-show-cell)
 
 
 
@@ -1610,7 +1610,7 @@ Printing is centered both horizontally and vertically on the page.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1629,7 +1629,7 @@ Printing is centered horizontally on the page.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1648,7 +1648,7 @@ Printing is not centered. (default)
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1666,7 +1666,7 @@ Printing is centered vertically on the page.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1684,7 +1684,7 @@ Printing order is determined automatically. (default)
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1702,7 +1702,7 @@ Pages are printed in descending order, then across.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1720,7 +1720,7 @@ Pages are printed across, then descending order.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1738,7 +1738,7 @@ Landscape orientation.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1756,7 +1756,7 @@ Portrait orientation. (default)
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1774,7 +1774,7 @@ The header is not visible.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1792,7 +1792,7 @@ Inherits the settings from the sheet (default)
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1810,7 +1810,7 @@ The header is visible on every page.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 
 
@@ -1828,7 +1828,7 @@ The header is visible once.
 
 #### Used by
 
-[VP Get print info](method-reference.md#vp-get-print-info) - [VP PRINT](method-reference.md#vp-print) - [VP SET PRINT INFO](method-reference.md#vp-set-print-info)
+[VP Get print info](command-list.md#vp-get-print-info) - [VP PRINT](command-list.md#vp-print) - [VP SET PRINT INFO](command-list.md#vp-set-print-info)
 
 ## T
 
@@ -1957,7 +1957,7 @@ Cell contents are vertically aligned to the top.
 Designates the entire workbook of the 4D View Pro area.
 
 #### Used by
-[VP ADD FORMULA NAME](method-reference.md#vp-add-formula-name) - [VP ADD RANGE NAME](method-reference.md#vp-add-range-name) - [VP ADD STYLESHEET](method-reference.md#vp-add-stylesheet) - [VP Get formula by name](method-reference.md#vp-get-formula-by-name) - [VP Get names](method-reference.md#vp-get-names) - [VP Get stylesheet](method-reference.md#vp-get-stylesheet) - [VP Get stylesheets](method-reference.md#vp-get-stylesheets) - [VP Name](method-reference.md#vp-name) - [VP REMOVE NAME](method-reference.md#vp-remove-name) - [VP REMOVE STYLESHEET](method-reference.md#vp-remove-stylesheet)
+[VP ADD FORMULA NAME](command-list.md#vp-add-formula-name) - [VP ADD RANGE NAME](command-list.md#vp-add-range-name) - [VP ADD STYLESHEET](command-list.md#vp-add-stylesheet) - [VP Get formula by name](command-list.md#vp-get-formula-by-name) - [VP Get names](command-list.md#vp-get-names) - [VP Get stylesheet](command-list.md#vp-get-stylesheet) - [VP Get stylesheets](command-list.md#vp-get-stylesheets) - [VP Name](command-list.md#vp-name) - [VP REMOVE NAME](command-list.md#vp-remove-name) - [VP REMOVE STYLESHEET](command-list.md#vp-remove-stylesheet)
 
 
 

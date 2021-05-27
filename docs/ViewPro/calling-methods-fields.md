@@ -1,6 +1,6 @@
 ---
-id: calling-project-methods-fields
-title: Calling Project Methods and Fields in Formulas
+id: calling-methods-fields
+title: Calling Methods and Fields in Formulas
 ---
 
 ## Project method references
@@ -11,13 +11,13 @@ title: Calling Project Methods and Fields in Formulas
 
 To be called in a 4D View Pro formula, a project method must be:
 
-*	**Allowed**: it was explicitly declared using the [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods) command.
+*	**Allowed**: it was explicitly declared using the [VP SET ALLOWED METHODS](command-list.md#vp-set-allowed-methods) command.
 
 *	**Runnable**: it belongs to the host project or a loaded component with the "Shared by components and host project" option enabled (see [Sharing of project methods](../Concepts/components.md#sharing-of-project-methods)).
 
 *	**Not in conflict** with an existing 4D View Pro spreadsheet function: if you call a project method with the same name as a 4D View Pro built-in function, the function is called.
 
->If the [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods) command has never been executed during the session, 4D View Pro custom functions rely on allowed methods defined by 4D's generic `SET ALLOWED METHODS` command. In this case, the project method names must comply with JavaScript Identifier Grammar (see [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)). The global filtering option in the Settings dialog box (see *Data Access*) is ignored in all cases.
+>If the [VP SET ALLOWED METHODS](command-list.md#vp-set-allowed-methods) command has never been executed during the session, 4D View Pro custom functions rely on allowed methods defined by 4D's generic `SET ALLOWED METHODS` command. In this case, the project method names must comply with JavaScript Identifier Grammar (see [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)). The global filtering option in the Settings dialog box (see *Data Access*) is ignored in all cases.
 
 
 ### Hello World example  
@@ -69,7 +69,7 @@ Note that the ( ) are mandatory, even if no parameters are passed:
 =METHODWITHOUTNAME()
 ```
 
-You can declare the name, type, and number of parameters through the parameters collection of the function you declared using the [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods) command. Optionally, you can control the number of parameters passed by the user through *minParams* and *maxParams* properties. Example:
+You can declare the name, type, and number of parameters through the parameters collection of the function you declared using the [VP SET ALLOWED METHODS](command-list.md#vp-set-allowed-methods) command. Optionally, you can control the number of parameters passed by the user through *minParams* and *maxParams* properties. Example:
 
 ```4d
 C_OBJECT($allowed)
@@ -91,7 +91,7 @@ $allowed.VPMethod.maxParams:=3 //the function gets 3 mandatory parameters
 VP SET ALLOWED METHODS($allowed)
 ```
 
-For more information on supported incoming parameter types, please refer to the [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods) command description. 
+For more information on supported incoming parameter types, please refer to the [VP SET ALLOWED METHODS](command-list.md#vp-set-allowed-methods) command description. 
 
 >If you do not declare parameters, values can be sequentially passed to methods (they will be received in $1, $2...) and their type will be automatically converted. Dates in *jstype* will be passed as [C_OBJECT](Concepts/dt_object.md) in 4D methods with two properties:
 

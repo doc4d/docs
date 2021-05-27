@@ -3,14 +3,32 @@ id: configuring
 title: Configuring an Area
 ---
 
-Using 4D commands and attributes, you can set the behavior and appearance of your 4D View Pro areas.
+Using 4D events, commands, and attributes, you can set the behavior and appearance of your 4D View Pro areas.
+
+## 4D View Pro Form Events
+
+The following form events are available in the Property List for 4D View Pro areas.
+
+Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. The specific 4D View Pro form events provide additional information in the object returned by the `FORM Event` command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific 4D View Pro form events:
+
+|Standard 4D events (see `Form event code`)	|Specific 4D View Pro events|
+|---|---|
+|[On Load](../Events/onLoad.md) 	|[On VP Ready](../Events/onVpReady.md)|
+|[On Getting Focus](../Events/onGettingFocus.md)	|[On Clicked](../Events/onClicked.md)|
+|[On Losing Focus](../Events/onLosingFocus.md) 	|[On Double Clicked](../Events/onDoubleClicked.md)|
+|[On Unload](../Events/onUnload.md) 	|[On Header Click](../Events/onHeaderClick.md)|
+| 	|[On After Edit](../Events/onAfterEdit.md)|
+| 	|[On Selection Change](../Events/onSelectionChange.md)|
+| 	|[On Column Resize](../Events/onColumnResize.md)|
+| 	|[On Row Resize](../Events/onRowResize.md)|
+| 	|[On VP Range Changed](../Events/onVpRangeChanged.md)|
 
 ## Sheet Options
 
 The 4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
 
-*	[VP SET SHEET OPTIONS](method-reference.md#vp-set-sheet-options)
-*	[VP Get sheet options](method-reference.md#vp-get-sheet-options) 
+*	[VP SET SHEET OPTIONS](command-list.md#vp-set-sheet-options)
+*	[VP Get sheet options](command-list.md#vp-get-sheet-options) 
 
 ### Sheet appearance  
 
@@ -19,15 +37,15 @@ The 4D View Pro sheet options object allows you to control various options of yo
 |allowCellOverflow|	|	boolean|	Specifies whether data can overflow into adjacent empty cells.|
 |sheetTabColor|	|	string|	A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.|
 |frozenlineColor|	|	string|	A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.|
-|clipBoardOptions|	|	longint|	The clipboard option.<p><table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk clipboard paste options all`](constant-reference.md#vk-clipboard-paste-options-all)</td><td>0</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>[`vk clipboard paste options formatting`](constant-reference.md#vk-clipboard-paste-options-formatting)</td><td>2</td><td>Pastes only formatting.</td></tr><tr><td>[`vk clipboard paste options formulas`](constant-reference.md#vk-clipboard-paste-options-formulas)</td><td>3</td><td>Pastes only formulas.</td></tr><tr><td>[`vk clipboard paste options formulas and formatting`](constant-reference.md#vk-clipboard-paste-options-formulas-and-formatting)</td><td>5</td><td>Pastes formulas and formatting.</td></tr><tr><td>[`vk clipboard paste options values`](constant-reference.md#vk-clipboard-paste-options-values)</td><td>1</td><td>Pastes only values.</td></tr><tr><td>[`vk clipboard paste options values and formatting`](constant-reference.md#vk-clipboard-paste-options-values-and-formatting)</td><td>4</td><td>Pastes values and formatting.</td></tr></table>|
+|clipBoardOptions|	|	longint|	The clipboard option.<p><table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk clipboard paste options all`](constant-list.md#vk-clipboard-paste-options-all)</td><td>0</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>[`vk clipboard paste options formatting`](constant-list.md#vk-clipboard-paste-options-formatting)</td><td>2</td><td>Pastes only formatting.</td></tr><tr><td>[`vk clipboard paste options formulas`](constant-list.md#vk-clipboard-paste-options-formulas)</td><td>3</td><td>Pastes only formulas.</td></tr><tr><td>[`vk clipboard paste options formulas and formatting`](constant-list.md#vk-clipboard-paste-options-formulas-and-formatting)</td><td>5</td><td>Pastes formulas and formatting.</td></tr><tr><td>[`vk clipboard paste options values`](constant-list.md#vk-clipboard-paste-options-values)</td><td>1</td><td>Pastes only values.</td></tr><tr><td>[`vk clipboard paste options values and formatting`](constant-list.md#vk-clipboard-paste-options-values-and-formatting)</td><td>4</td><td>Pastes values and formatting.</td></tr></table>|
 |gridline|	|	object|	The grid line's options.|
 ||color|	string|	A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.|
 ||showVerticalGridline|	boolean|	Specifies whether to show the vertical grid line.
 ||showHorizontalGridline|	boolean|	Specifies whether to show the horizontal grid line.|
 |rowHeaderVisible|	|	boolean|	Specifies whether the row header is visible.|
 |colHeaderVisible|	|	boolean|	Specifies whether the column header is visible.|
-|rowHeaderAutoText|		|longint|	Specifies whether the row header displays letters or numbers or is blank.<p><table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk header auto text blank`](constant-reference.md#vk-header-auto-text-blank)</td><td>0</td><td>Displays blanks in the headers.</td></tr><tr><td>[`vk header auto text letters`](constant-reference.md#vk-header-auto-text-letters)</td><td>2</td><td>Displays letters in the headers.</td></tr><tr><td>[`vk header auto text numbers`](constant-reference.md#vk-header-auto-text-numbers)</td><td>1</td><td>Displays numbers in the headers.</td></tr></table>|
-|colHeaderAutoText|		|longint|	Specifies whether the column header displays letters or numbers or is blank.<p><table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk header auto text blank`](constant-reference.md#vk-header-auto-text-blank)</td><td>0</td><td>Displays blanks in the headers.</td></tr><tr><td>[`vk header auto text letters`](constant-reference.md#vk-header-auto-text-letters)</td><td>2</td><td>Displays letters in the headers.</td></tr><tr><td>[`vk header auto text numbers`](constant-reference.md#vk-header-auto-text-numbers)</td><td>1</td><td>Displays numbers in the headers.</td></tr></table>|
+|rowHeaderAutoText|		|longint|	Specifies whether the row header displays letters or numbers or is blank.<p><table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk header auto text blank`](constant-list.md#vk-header-auto-text-blank)</td><td>0</td><td>Displays blanks in the headers.</td></tr><tr><td>[`vk header auto text letters`](constant-list.md#vk-header-auto-text-letters)</td><td>2</td><td>Displays letters in the headers.</td></tr><tr><td>[`vk header auto text numbers`](constant-list.md#vk-header-auto-text-numbers)</td><td>1</td><td>Displays numbers in the headers.</td></tr></table>|
+|colHeaderAutoText|		|longint|	Specifies whether the column header displays letters or numbers or is blank.<p><table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk header auto text blank`](constant-list.md#vk-header-auto-text-blank)</td><td>0</td><td>Displays blanks in the headers.</td></tr><tr><td>[`vk header auto text letters`](constant-list.md#vk-header-auto-text-letters)</td><td>2</td><td>Displays letters in the headers.</td></tr><tr><td>[`vk header auto text numbers`](constant-list.md#vk-header-auto-text-numbers)</td><td>1</td><td>Displays numbers in the headers.</td></tr></table>|
 |selectionBackColor|	|	string|	The selection's background color for the sheet. (preferred RGBA format)
 |selectionBorderColor|		|string|	The selection's border color for the sheet.|
 |sheetAreaOffset|		|object|	The sheetAreaOffset's options.|
@@ -89,7 +107,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 
 Defining a format pattern ensures that the content of your 4D View Pro documents is displayed the way you intended. 4D View Pro has built-in formats for numbers, dates, times, and text, but you can also create your own patterns to format the contents of cells using special characters and codes.
 
-For example, when using the [VP SET VALUE](method-reference.md#vp-set-value) or [VP SET NUM VALUE](method-reference.md#vp-set-num-value) commands to enter amounts in an invoice, you may want the currency symbols ($, €, ¥, etc.) to be aligned regardless of the space required by the number (i.e., whether the amount is $5.00 or $5,000.00). You could use formatting characters and spectify the pattern _($* #,##0.00_) which would display amounts as shown:
+For example, when using the [VP SET VALUE](command-list.md#vp-set-value) or [VP SET NUM VALUE](command-list.md#vp-set-num-value) commands to enter amounts in an invoice, you may want the currency symbols ($, €, ¥, etc.) to be aligned regardless of the space required by the number (i.e., whether the amount is $5.00 or $5,000.00). You could use formatting characters and spectify the pattern _($* #,##0.00_) which would display amounts as shown:
 
 ![](assets/en/ViewPro/apx_vpCellFormat1.PNG)
 
@@ -133,15 +151,15 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 |Constant|	Value|	Comment|
 |---|---|---|
-|[`vk pattern full date time`](constant-reference.md#vk-pattern-full-date-time)|	"_fullDateTimePattern_"	|ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"|
-|[`vk pattern long date`](constant-reference.md#vk-pattern-long-date)|	"_longDatePattern_"	|ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"|
-|[`vk pattern long time`](constant-reference.md#vk-pattern-long-time)|	"_longTimePattern_"	|ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"|
-|[`vk pattern month day`](constant-reference.md#vk-pattern-month-day)|	"_monthDayPattern_"	|ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"|
-|[`vk pattern short date`](constant-reference.md#vk-pattern-short-date)|	"_shortDatePattern_"	|Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"|
-|[`vk pattern short time`](constant-reference.md#vk-pattern-short-time)|	"_shortTimePattern_"|	Abbreviated ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm"|
-|[`vk pattern sortable date time`](constant-reference.md#vk-pattern-sortable-date-time)|	"_sortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"|
-|[`vk pattern universal sortable date time`](constant-reference.md#vk-pattern-universal-sortable-date-time)|	"_universalSortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization using UTC which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'"|
-|[`vk pattern year month`](constant-reference.md#vk-pattern-year-month)	|"_yearMonthPattern_"|	ISO 8601 format for the month and year in current localization.<p><p>USA default pattern: "yyyy MMMM"|
+|[`vk pattern full date time`](constant-list.md#vk-pattern-full-date-time)|	"_fullDateTimePattern_"	|ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"|
+|[`vk pattern long date`](constant-list.md#vk-pattern-long-date)|	"_longDatePattern_"	|ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"|
+|[`vk pattern long time`](constant-list.md#vk-pattern-long-time)|	"_longTimePattern_"	|ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"|
+|[`vk pattern month day`](constant-list.md#vk-pattern-month-day)|	"_monthDayPattern_"	|ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"|
+|[`vk pattern short date`](constant-list.md#vk-pattern-short-date)|	"_shortDatePattern_"	|Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"|
+|[`vk pattern short time`](constant-list.md#vk-pattern-short-time)|	"_shortTimePattern_"|	Abbreviated ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm"|
+|[`vk pattern sortable date time`](constant-list.md#vk-pattern-sortable-date-time)|	"_sortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"|
+|[`vk pattern universal sortable date time`](constant-list.md#vk-pattern-universal-sortable-date-time)|	"_universalSortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization using UTC which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'"|
+|[`vk pattern year month`](constant-list.md#vk-pattern-year-month)	|"_yearMonthPattern_"|	ISO 8601 format for the month and year in current localization.<p><p>USA default pattern: "yyyy MMMM"|
 
 
 #### Example  
@@ -215,9 +233,9 @@ In addition to the special characters and codes described in the previous sectio
 
 4D View Pro print attributes allow you to control all aspects of printing 4D View Pro areas. These attributes are handled by the following commands:
 
-*	[VP SET PRINT INFO](method-reference.md#vp-set-print-info) 
-*	[VP Get print info](method-reference.md#vp-get-print-info) 
-*	[VP PRINT](method-reference.md#vp-print)
+*	[VP SET PRINT INFO](command-list.md#vp-set-print-info) 
+*	[VP Get print info](command-list.md#vp-get-print-info) 
+*	[VP PRINT](command-list.md#vp-print)
 
 ### Columns / Rows  
 
@@ -253,7 +271,7 @@ Header and footer attributes are used to specify text or images in the left, rig
 |headerRight|	text	|The text and format of the right header on printed pages.|
 |headerRightImage|	picture &#124; text*|	The image for the right section of the header.|
 
-\* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-reference.md#vp-get-print-info)
+\* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](command-list.md#vp-get-print-info)
 .
 
 ### Special Characters  
@@ -296,7 +314,7 @@ Orientation attributes are used to specify the direction the printed page layout
 |Property|	Type|	Description|
 |---|---|---|
 |orientation|	longint|	Page orientation |
-|||<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk print page orientation landscape`](constant-reference.md#vk-print-page-orientation-landscape)</td><td>2</td><td>Landscape orientation</td></tr><tr><td>[`vk print page orientation portrait`](constant-reference.md#vk-print-page-orientation-portrait)</td><td>1</td><td>Portrait orientation. (default)</td></tr></table>|
+|||<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk print page orientation landscape`](constant-list.md#vk-print-page-orientation-landscape)</td><td>2</td><td>Landscape orientation</td></tr><tr><td>[`vk print page orientation portrait`](constant-list.md#vk-print-page-orientation-portrait)</td><td>1</td><td>Portrait orientation. (default)</td></tr></table>|
 
 ### Page  
 
@@ -306,10 +324,10 @@ Page attributes are used to specify general document print settings.
 |---|---|---|
 |blackAndWhite|	boolean	|Printing in black and white only.<p><p>**Note**: PDFs are not affected by this attribute. Colors in PDFs remain.<p><p>Default value = "false"|
 |centering|	longint|	How the contents are centered on the printed page:|
-| 	|	|<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk print centering both`](constant-reference.md#vk-print-centering-both)</td><td>3</td><td>Printing is centered both horizontally and vertically on the page</td></tr><tr><td>[`vk print centering horizontal`](constant-reference.md#vk-print-centering-horizontal)</td><td>1</td><td>Printing is centered horizontally on the page.</td></tr><tr><td>[`vk print centering none`](constant-reference.md#vk-print-centering-none)</td><td>0</td><td>Printing is not centered. (default)</td></tr><tr><td>[`vk print centering vertical`](constant-reference.md#vk-print-centering-vertical)</td><td>2</td><td>Printing is centered vertically on the page.</td></tr></table>|
+| 	|	|<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk print centering both`](constant-list.md#vk-print-centering-both)</td><td>3</td><td>Printing is centered both horizontally and vertically on the page</td></tr><tr><td>[`vk print centering horizontal`](constant-list.md#vk-print-centering-horizontal)</td><td>1</td><td>Printing is centered horizontally on the page.</td></tr><tr><td>[`vk print centering none`](constant-list.md#vk-print-centering-none)</td><td>0</td><td>Printing is not centered. (default)</td></tr><tr><td>[`vk print centering vertical`](constant-list.md#vk-print-centering-vertical)</td><td>2</td><td>Printing is centered vertically on the page.</td></tr></table>|
 |firstPageNumber|longint|The page number to print on the first page.<p><p>Default value = 1|
 |pageOrder|	longint	|The order pages are printed:|
-| |		|<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk print page order auto`](constant-reference.md#vk-print-page-order-auto)</td><td>0</td><td>Printing order is determined automatically. (default)</td></tr><tr><td>[`vk print page order down then over`](constant-reference.md#vk-print-page-order-down-then-over)</td><td>1</td><td>Pages are printed in descending order, then across.</td></tr><tr><td>[`vk print page order over then down`](constant-reference.md#vk-print-page-order-over-then-down)</td><td>2</td><td>Pages are printed across, then descending order.</td></tr></table>|
+| |		|<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td>[`vk print page order auto`](constant-list.md#vk-print-page-order-auto)</td><td>0</td><td>Printing order is determined automatically. (default)</td></tr><tr><td>[`vk print page order down then over`](constant-list.md#vk-print-page-order-down-then-over)</td><td>1</td><td>Pages are printed in descending order, then across.</td></tr><tr><td>[`vk print page order over then down`](constant-list.md#vk-print-page-order-over-then-down)</td><td>2</td><td>Pages are printed across, then descending order.</td></tr></table>|
 |pageRange	|text|	The range of pages for printing|
 |qualityFactor	|longint|	The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p><p>Default value = 2|
 |useMax	|boolean|	Only columns and rows with data are printed.<p><p>Default value = "true"|
@@ -346,10 +364,10 @@ Show / Hide attributes are used to specify the visibility (printing) of 4D View 
 |---|---|---|
 |showBorder|	boolean	|Prints the outline border.<p><p>Default value = "true"|
 |showColumnHeader	|longint	|Column header print settings|
-| |	|	<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td><tr><td>[`vk print visibility hide`](constant-reference.md#vk-print-visibility-hide)</td><td>1</td><td>The header is not visible.</td></tr><tr><td>[`vk print visibility inherit`](constant-reference.md#vk-print-visibility-inherit)</td><td>0</td><td>Inherits the settings from the sheet (default)</td></tr><tr><td>[`vk print visibility show`](constant-reference.md#vk-print-visibility-show)</td><td>2</td><td>The header is visible on every page.</td></tr><tr><td>[`vk print visibility show once`](constant-reference.md#vk-print-visibility-show-once)</td><td>3</td><td>	The header is visible once.</td></tr></table>|
+| |	|	<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td><tr><td>[`vk print visibility hide`](constant-list.md#vk-print-visibility-hide)</td><td>1</td><td>The header is not visible.</td></tr><tr><td>[`vk print visibility inherit`](constant-list.md#vk-print-visibility-inherit)</td><td>0</td><td>Inherits the settings from the sheet (default)</td></tr><tr><td>[`vk print visibility show`](constant-list.md#vk-print-visibility-show)</td><td>2</td><td>The header is visible on every page.</td></tr><tr><td>[`vk print visibility show once`](constant-list.md#vk-print-visibility-show-once)</td><td>3</td><td>	The header is visible once.</td></tr></table>|
 |showGridLine|	boolean	|Prints the gridlines.<p><p>Default value = "false"|
 |showRowHeader	|longint	|Row headers print settings|
-| 	|	|<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td><tr><td>[`vk print visibility hide`](constant-reference.md#vk-print-visibility-hide)</td><td>1</td><td>The header is not visible.</td></tr><tr><td>[`vk print visibility inherit`](constant-reference.md#vk-print-visibility-inherit)</td><td>0</td><td>Inherits the settings from the sheet (default)</td></tr><tr><td>[`vk print visibility show`](constant-reference.md#vk-print-visibility-show)</td><td>2</td><td>The header is visible on every page.</td></tr><tr><td>[`vk print visibility show once`](constant-reference.md#vk-print-visibility-show-once)</td><td>3</td><td>	The header is visible once.</td></tr></table>|
+| 	|	|<table><tr><th>Constant</th><th>Value</th><th>Comment</th></tr><tr><td><tr><td>[`vk print visibility hide`](constant-list.md#vk-print-visibility-hide)</td><td>1</td><td>The header is not visible.</td></tr><tr><td>[`vk print visibility inherit`](constant-list.md#vk-print-visibility-inherit)</td><td>0</td><td>Inherits the settings from the sheet (default)</td></tr><tr><td>[`vk print visibility show`](constant-list.md#vk-print-visibility-show)</td><td>2</td><td>The header is visible on every page.</td></tr><tr><td>[`vk print visibility show once`](constant-list.md#vk-print-visibility-show-once)</td><td>3</td><td>	The header is visible once.</td></tr></table>|
 
 ### Watermark  
 
@@ -360,7 +378,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 |watermark|	collection	|Collection of watermark settings.<p><p>Default value: undefined|
 |||<table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td> \[ ].height</td><td>longint</td><td>The height of the watermark text / image.</td></tr> <tr><td>\[ ].imageSrc</td><td>picture &#124; text*</td><td>The watermark text / image.</td></tr><tr><td> \[ ].page</td><td>text</td><td>The page(s) where the watermark is printed.<p><p>For all pages: "all"<p><p>For specific pages: page numbers or page ranges separated by commas. Ex.: "1,3,5-12"</td></tr><tr><td> \[ ].width</td><td>longint</td><td>The width of the watermark text / image.</td></tr><tr><td> \[ ].x</td><td>longint</td><td>The horizontal coordinate of the top left point of the watermark text / image.</td></tr>
 <tr><td> \[ ].y</td><td>longint</td><td>The vertical coordinate of the top left point of the watermark text / image.</td></tr></table>|
-||| 		* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-reference.md#vp-get-print-info).|
+||| 		* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](command-list.md#vp-get-print-info).|
 
 
 
@@ -373,7 +391,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 
 Style objects contain the style property settings. They can be used either in a style sheet or on their own. Style objects can also be used in addition to a style sheet so that different settings can be specified for individual cell ranges without affecting the rest of the document. 
 
-You can use style objects directly with the [VP SET CELL STYLE](method-reference.md#vp-set-cell-style)) and [VP SET DEFAULT STYLE](method-reference.md#vp-set-default-style) commands.
+You can use style objects directly with the [VP SET CELL STYLE](command-list.md#vp-set-cell-style)) and [VP SET DEFAULT STYLE](command-list.md#vp-set-default-style) commands.
 
 ### Style sheets 
 
@@ -381,14 +399,14 @@ A style sheet groups together a combination of properties in a style object (see
 
 When created, a 4D View Pro style sheet is given a name which is saved within the style sheet in the "name" property. This allows a style sheet to be easily used and, if thoughtfully selected, can facilitate its identification and purpose (e.g., Letterhead\_internal, Letterhead_external).
 
-Style sheets are created with the [VP ADD STYLESHEET](method-reference.md#vp-add-stylesheet) command and applied with the the [VP SET DEFAULT STYLE](method-reference.md#vp-set-default-style) or [VP SET CELL STYLE](method-reference.md#vp-set-cell-style) commands. You can  remove a style sheet with the [VP REMOVE STYLESHEET](method-reference.md#vp-remove-stylesheet) command.
+Style sheets are created with the [VP ADD STYLESHEET](command-list.md#vp-add-stylesheet) command and applied with the the [VP SET DEFAULT STYLE](command-list.md#vp-set-default-style) or [VP SET CELL STYLE](command-list.md#vp-set-cell-style) commands. You can  remove a style sheet with the [VP REMOVE STYLESHEET](command-list.md#vp-remove-stylesheet) command.
 
-The [VP Get stylesheet](method-reference.md#vp-get-stylesheet) command can be used to return the style object of a single style sheet or you can use the [VP Get stylesheets](method-reference.md#vp-get-stylesheets) command to retrieve a collection of style objects for multiple style sheets.
+The [VP Get stylesheet](command-list.md#vp-get-stylesheet) command can be used to return the style object of a single style sheet or you can use the [VP Get stylesheets](command-list.md#vp-get-stylesheets) command to retrieve a collection of style objects for multiple style sheets.
 
 ### Style properties
 
  
-You can find detailed descriptions of the possible values below on the [4D View Pro Constants](constant-reference.md) page.
+You can find detailed descriptions of the possible values below on the [4D View Pro Constants](constant-list.md) page.
 
 #### Background & Foreground  
 
@@ -411,7 +429,7 @@ You can find detailed descriptions of the possible values below on the [4D View 
 
 |Property|Subproperty|	Type|	Description|	Possible values|
 |---|---|---|---|---|
-|font|		|text|	Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes.|	A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](method-reference.md#vp-font-to-object) and [`VP Object to font`](method-reference.md#vp-object-to-font)|
+|font|		|text|	Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes.|	A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](command-list.md#vp-font-to-object) and [`VP Object to font`](command-list.md#vp-object-to-font)|
 |formatter|		|text|Pattern for value/time property.|Number/text/date/time formats, special characters. See [4D View Pro Cell Format](configuring.md#cell-format) section.|
 |isVerticalText|		|boolean|Specifies text direction.|True = vertical text, False = horizontal text.|
 |labelOptions|		|object|	Defines cell label options (watermark options).| |	

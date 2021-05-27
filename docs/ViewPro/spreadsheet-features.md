@@ -56,7 +56,7 @@ When typing a formula, click on a cell to enter that cell's reference in the for
 
 ![](assets/en/ViewPro/vpFormula1.PNG) 
 
-You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](method-reference.md#vp-add-formula-name) command. 
+You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](command-list.md#vp-add-formula-name) command. 
 
 ### Operators and Operands
 All formulas have operands and operators:
@@ -66,8 +66,8 @@ All formulas have operands and operators:
 	*	values
 	*	references to other cells (relatives, absolutes, mixed or by name)
 	*	4D variables, fields and functions
-	*	4D methods (registered by [VP SET ALLOWED METHODS](method-reference.md#vp-set-allowed-methods)) 
-	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](method-reference.md#vp-set-custom-functions))
+	*	4D methods (registered by [VP SET ALLOWED METHODS](command-list.md#vp-set-allowed-methods)) 
+	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](command-list.md#vp-set-custom-functions))
 	*	Spreadsheet functions 
  
 ### Operators by data types  
@@ -177,7 +177,7 @@ Spreadsheet functions are pre-defined formulas. To enter a function in a formula
 
 ![](assets/en/ViewPro/vpFormula2.PNG)
 
- See the [list of spreadsheet functions](spreadsheet-function-reference.md) for details and examples.
+ See [SpreadJS's list of functions](http://help.grapecity.com/spread/SpreadSheets11/webframe.html#FormulaFunctions.html) for details and examples.
 	
 ## Using the Context Menu  
 
