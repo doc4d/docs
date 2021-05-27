@@ -1,6 +1,6 @@
 ---
 id: manData
-title: Manipulating Data
+title: Manipulación de datos
 ---
 
 All [exposed dataclasses, attributes](configuration.md#exposing-tables-and-fields) and [functions](classFunctions.md) can be accessed through REST. Dataclass, attribute, and function names are case-sensitive; however, the data for queries is not.
@@ -87,7 +87,7 @@ You can always define which attributes to return in the REST response after an i
 
 You can apply this filter in the following ways:
 
-| Object                 | Syntax                                              | Example                                                       |
+| Objeto                 | Syntax                                              | Example                                                       |
 | ---------------------- | --------------------------------------------------- | ------------------------------------------------------------- |
 | Dataclass              | {dataClass}/{att1,att2...}                          | /People/firstName,lastName                                    |
 | Collection of entities | {dataClass}/{att1,att2...}/?$filter="{filter}"      | /People/firstName,lastName/?$filter="lastName='a@'"           |
