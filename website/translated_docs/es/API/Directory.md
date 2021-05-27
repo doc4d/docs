@@ -437,7 +437,7 @@ This property is **read-only**.
 | Parameter         | Type      |    | Description                                 |
 | ----------------- | --------- |:--:| ------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder                          |
-| newName           | Text      | -> | Name for the copy                           |
+| newName           | Texto     | -> | Name for the copy                           |
 | overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
 | Result            | 4D.Folder | <- | Copied file or folder                       |
 <!-- END REF -->
@@ -492,7 +492,7 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 <!-- REF #directory.file().Params -->
 | Parameter | Type    |    | Description                          |
 | --------- | ------- | -- | ------------------------------------ |
-| path      | Text    | -> | Relative POSIX file pathname         |
+| path      | Texto   | -> | Relative POSIX file pathname         |
 | Result    | 4D.File | <- | `File` object (null if invalid path) |
 <!-- END REF -->
 
@@ -530,10 +530,10 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 **.files**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.files().Params -->
-| Parameter | Type       |    | Description                         |
-| --------- | ---------- | -- | ----------------------------------- |
-| options   | Integer    | -> | File list options                   |
-| Result    | Collection | <- | Collection of children file objects |
+| Parameter | Type      |    | Description                         |
+| --------- | --------- | -- | ----------------------------------- |
+| options   | Integer   | -> | File list options                   |
+| Result    | Colección | <- | Collection of children file objects |
 <!-- END REF -->
 
 #### Description
@@ -593,7 +593,7 @@ You want to get all files that are not invisible in the Documents folder:
 <!-- REF #directory.folder().Params -->
 | Parameter | Type      |    | Description                                    |
 | --------- | --------- | -- | ---------------------------------------------- |
-| path      | Text      | -> | Relative POSIX file pathname                   |
+| path      | Texto     | -> | Relative POSIX file pathname                   |
 | Result    | 4D.Folder | <- | Created folder object (null if invalid *path*) |
 <!-- END REF -->
 
@@ -631,10 +631,10 @@ A `Folder` object or null if *path* is invalid.
 **.folders**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.folders().Params -->
-| Parameter | Type       |    | Description                           |
-| --------- | ---------- | -- | ------------------------------------- |
-| options   | Integer    | -> | Folder list options                   |
-| Result    | Collection | <- | Collection of children folder objects |
+| Parameter | Type      |    | Description                           |
+| --------- | --------- | -- | ------------------------------------- |
+| options   | Integer   | -> | Folder list options                   |
+| Result    | Colección | <- | Collection of children folder objects |
 <!-- END REF -->
 
 #### Description
@@ -681,7 +681,7 @@ You want the collection of all folders and subfolders of the database folder:
 | Parameter | Type    |    | Description                                   |
 | --------- | ------- | -- | --------------------------------------------- |
 | size      | Integer | -> | Side length for the returned picture (pixels) |
-| Result    | Picture | <- | Icon                                          |
+| Result    | Imagen  | <- | Icon                                          |
 <!-- END REF -->
 
 
