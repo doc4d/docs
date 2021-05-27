@@ -47,7 +47,7 @@ Email objects provide the following properties:
 
 All properties that contain email addresses ([`from`](#from), [`cc`](#cc), [`bcc`](#bcc), [`to`](#to), [`sender`](#sender), [`replyTo`](#replyto)) accept a value of text, object, or collection type.
 
-#### Text
+#### Texto
 
 - single email: "somebody@domain.com"
 - single display name+email: "Somebody <somebody@domain.com>"
@@ -57,10 +57,10 @@ All properties that contain email addresses ([`from`](#from), [`cc`](#cc), [`bcc
 
 An object with two properties:
 
-| Property | Type | Description                |
-| -------- | ---- | -------------------------- |
-| name     | Text | Display name (can be null) |
-| email    | Text | Email address              |
+| Property | Type  | Description                |
+| -------- | ----- | -------------------------- |
+| name     | Texto | Display name (can be null) |
+| email    | Texto | Email address              |
 
 #### Colección
 
@@ -147,13 +147,13 @@ The `.bodyStructure` object contains the following properties:
 
 | Property    | Type                  | Value                                                                                                                                                   |
 | ----------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| partID      | Text                  | Identifies the part uniquely within the email                                                                                                           |
-| type        | Text                  | (mandatory) Value of the Content-Type header field of the part                                                                                          |
-| charset     | Text                  | Value of the charset parameter of the Content-Type header field                                                                                         |
-| encoding    | Text                  | If `isEncodingProblem=true`, the Content-Transfer-Encoding value is added (by default undefined)                                                        |
-| disposition | Text                  | Value of the Content-Disposition header field of the part                                                                                               |
+| partID      | Texto                 | Identifies the part uniquely within the email                                                                                                           |
+| type        | Texto                 | (mandatory) Value of the Content-Type header field of the part                                                                                          |
+| charset     | Texto                 | Value of the charset parameter of the Content-Type header field                                                                                         |
+| encoding    | Texto                 | If `isEncodingProblem=true`, the Content-Transfer-Encoding value is added (by default undefined)                                                        |
+| disposition | Texto                 | Value of the Content-Disposition header field of the part                                                                                               |
 | language    | Collection of texts   | List of language tags, as defined in [RFC3282](https://tools.ietf.org/html/rfc3282), in the Content-Language header field of the part, if present.      |
-| location    | Text                  | URI, as defined in [RFC2557](https://tools.ietf.org/html/rfc2557), in the Content-Location header field of the part, if present.                        |
+| location    | Texto                 | URI, as defined in [RFC2557](https://tools.ietf.org/html/rfc2557), in the Content-Location header field of the part, if present.                        |
 | subParts    | Collection of objects | Body parts of each child (collection of *EmailBodyPart* objects)                                                                                        |
 | headers     | Collection of objects | List of all header fields in the part, in the order they appear in the message (collection of *EmailHeader* objects, see [headers](#headers-) property) |
 
