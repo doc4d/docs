@@ -69,7 +69,7 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## New collection
+## `New collection`
 
 
 <!-- REF #_command_.New collection.Syntax -->
@@ -148,7 +148,7 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## New shared collection
+## `New shared collection`
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -1560,6 +1560,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 #### 例題
 
+
 ```4d
  var $col : Collection // $col.length が 0 に初期化されます
  $col:=New collection("one";"two";"three") // $col.length が 3 に更新されます
@@ -2126,9 +2127,9 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 値}
 ```
 
-*queryString* および *value* や *querySettings* パラメーターを使ってクエリをビルドする方法の詳細については、[`dataClass.query()`](dataclassClass.md#query) 関数を参照ください。
+*queryString* および *value* や *querySettings* パラメーターを使ってクエリをビルドする方法の詳細については、[`DataClass.query()`](DataClassClass.md#query) 関数を参照ください。
 
-
+> *queryString* 引数および *formula* オブジェクト引数の使用に関わらず、フォーミュラは `collection.query()` 関数でサポートされていません。
 
 #### 例題 1
 
@@ -2326,6 +2327,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 *howMany* には、*index* の位置から削除する要素の数を渡します。 *howMany* が省略された場合、1つの要素のみが削除されます。
 
 
+
 空のコレクションから要素を削除しようとした場合、関数は何もしません (エラーは生成されません)。
 
 
@@ -2398,6 +2400,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
  $c:=New collection(1;2;3;4;5)
  $c.resize(2) //$c=[1,2]
+
 ```
 
 <!-- END REF -->
