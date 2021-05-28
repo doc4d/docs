@@ -172,10 +172,10 @@ The `.bodyValues` property contains the <!-- REF #emailObjectClass.bodyValues.Su
 
 The `.bodyValues` object contains the following properties:
 
-| Property                   | Type    | Value                                                                                                                                       |
-| -------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| *partID*.value             | text    | Value of the body part                                                                                                                      |
-| *partID*.isEncodingProblem | boolean | True if malformed sections are found while decoding the charset, or unknown charset, or unknown content transfer-encoding. False by default |
+| Property                   | Type     | Value                                                                                                                                       |
+| -------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| *partID*.value             | text     | Value of the body part                                                                                                                      |
+| *partID*.isEncodingProblem | booleano | True if malformed sections are found while decoding the charset, or unknown charset, or unknown content transfer-encoding. False by default |
 
 
 
@@ -341,7 +341,7 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
     </td>
     
     <td>
-      boolean
+      booleano
     </td>
     
     <td>
@@ -357,7 +357,7 @@ Reserved keywords:
 * $answered - Indicates a message has been replied to
 * $deleted - Indicates a message to delete
 
-#### Example
+#### Ejemplo
 
 ```
  var $mail : Object
