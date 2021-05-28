@@ -1736,7 +1736,10 @@ var</span><span class="hljs-variable">$2Integer </span><span class="hljs-comment
 <p>The <em>queryString</em> parameter uses the following syntax:</p>
 <pre><code class="hljs css language-4d">propertyPath comparator value {logicalOperator propertyPath comparator value}
 </code></pre>
-<p>Pour obtenir des informations détaillées sur la création d'une requête à l'aide des paramètres value et <em>querySettings</em>, reportez-vous à la description de la fonction <strong>dataClass</strong> <code>.query()</code>.</p>
+<p>For detailed information on how to build a query using <em>queryString</em>, <em>value</em> and <em>querySettings</em> parameters, please refer to the <a href="/docs/alpha/fr/API/DataClassClass.html#query"><code>dataClass.query()</code></a> function description.</p>
+<blockquote>
+<p>Formulas are not supported by the <code>collection.query()</code> function, neither in the <em>queryString</em> parameter nor as <em>formula</em> object parameter.</p>
+</blockquote>
 <h4><a class="anchor" aria-hidden="true" id="exemple-1-11"></a><a href="#exemple-1-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$c</span>; <span class="hljs-variable">$c2</span>; <span class="hljs-variable">$c3 </span>: Collection
  <span class="hljs-variable">$c</span>:=New collection
@@ -1807,7 +1810,7 @@ var</span><span class="hljs-variable">$2Integer </span><span class="hljs-comment
 <h4><a class="anchor" aria-hidden="true" id="description-31"></a><a href="#description-31" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>La fonction <code>.reduce()</code> applique la méthode callback <em>methodName</em> à un accumulateur et à chaque élément de la collection (de gauche à droite) pour le réduire à une valeur unique.</p>
 <blockquote>
-<p>Cette fonction ne modifie pas la collection d'origine.</p>
+<p>This function does not modify the original collection.</p>
 </blockquote>
 <p>Dans <em>methodName</em>, passez le nom de la méthode à utiliser pour évaluer les éléments de la collection, ainsi que son ou ses paramètres dans param (facultatif). <em>methodName</em> prend chaque élément de la collection et effectue toutes les opérations souhaitées pour accumuler le résultat dans <em>$1.accumulator</em>, qui est retourné dans <em>$1.value</em>.</p>
 <p>Vous pouvez passer la valeur pour initialiser l'accumulateur dans <em>initValue</em>. S'il est omis, <em>$1.accumulator</em> commence par <em>Undefined</em>.</p>
@@ -1873,7 +1876,7 @@ var</span><span class="hljs-variable">$2Integer </span><span class="hljs-comment
 <h4><a class="anchor" aria-hidden="true" id="description-32"></a><a href="#description-32" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>La fonction <code>.remove()</code> supprime un ou plusieurs élément(s) de la position d'<em>index</em> spécifiée dans la collection et retourne la collection modifiée.</p>
 <blockquote>
-<p>Cette fonction modifie la collection d'origine.</p>
+<p>This function modifies the original collection.</p>
 </blockquote>
 <p>Dans <em>index</em>, passez la position où vous souhaitez supprimer l'élément de la collection.</p>
 <blockquote>
@@ -1939,6 +1942,7 @@ var</span><span class="hljs-variable">$2Integer </span><span class="hljs-comment
 
  <span class="hljs-variable">$c</span>:=<span class="hljs-function">New collection</span>(<span class="hljs-number">1</span>;<span class="hljs-number">2</span>;<span class="hljs-number">3</span>;<span class="hljs-number">4</span>;<span class="hljs-number">5</span>)
  <span class="hljs-variable">$c</span>.<span class="hljs-function">resize</span>(<span class="hljs-number">2</span>) <span class="hljs-comment">//$c=[1,2]</span>
+
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="reverse"></a><a href="#reverse" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.reverse()</h2>
 <p><details><summary>Historique</summary></p>
