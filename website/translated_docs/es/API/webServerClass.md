@@ -48,7 +48,7 @@ They provide the following properties and functions:
 
 | Parameter | Type         |    | Description                                                    |
 | --------- | ------------ | -- | -------------------------------------------------------------- |
-| option    | Integer      | -> | Web server to get (default if omitted = `Web server database`) |
+| option    | Entero       | -> | Web server to get (default if omitted = `Web server database`) |
 | Result    | 4D.WebServer | <- | Web server object                                              |
 
 <!-- END REF -->
@@ -65,7 +65,7 @@ By default, if the *option* parameter is omitted, the command returns a referenc
 
 The returned Web server object contains the current values of the Web server properties.
 
-#### Example
+#### Ejemplo
 
 From your component, you want to know if the Web server of the host database is started:
 
@@ -112,7 +112,7 @@ All available Web servers are returned by the `WEB Server list` command, whether
 You can use the [.name](#name) property of the Web server object to identify the project or component to which each Web server object in the list is attached.
 
 
-#### Example
+#### Ejemplo
 
 We want to know how many running web servers are available:
 
@@ -727,10 +727,10 @@ The <!-- REF #webServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 <!-- REF #webServerClass.start().Params -->
 
-| Parameter | Type   |    | Description                           |
-| --------- | ------ | -- | ------------------------------------- |
-| settings  | Objeto | -> | Web server settings to set at startup |
-| Result    | Objeto | <- | Status of the web server startup      |
+| Parameter  | Type   |    | Description                           |
+| ---------- | ------ | -- | ------------------------------------- |
+| parámetros | Objeto | -> | Web server settings to set at startup |
+| Result     | Objeto | <- | Status of the web server startup      |
 
 <!-- END REF -->
 
@@ -756,7 +756,7 @@ The function returns an object describing the Web server launch status. This obj
 |          | \[].componentSignature | Texto     | Signature of the internal component which returned the error         |
 > If the Web server was already launched, an error is returned.
 
-#### Example
+#### Ejemplo
 
 ```4d
  var $settings;$result : Object
@@ -801,7 +801,7 @@ If the web server was started, all web connections and web processes are closed,
 > This function resets the customized web settings defined for the session using the *settings* parameter of the [`.start()`](#start) function, if any.
 
 
-#### Example
+#### Ejemplo
 
 To stop the database Web server:
 
