@@ -1758,7 +1758,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 | -- | --- |::| -- |
 |    |     |  |    |
 
-|pathStrings|Text|->|Property path(s) on which to order the collection| |pathObjects|Collection|->|Collection of criteria objects| |ascOrDesc|Integer|->|`ck ascending` or `ck descending` (scalar values)| |Result|Collection |<-|Ordered copy of the collection (shallow copy)|
+|pathStrings|テキスト|->|コレクションの並べ替え基準とするプロパティパス| |pathObjects|コレクション|->|条件オブジェクトのコレクション| |ascOrDesc|整数|->|`ck ascending` または `ck descending` (スカラー値)| |戻り値|コレクション |<-|並べ替えられたコレクションのコピー (シャロウ・コピー)|
 <!-- END REF -->
 
 
@@ -2127,9 +2127,9 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 値}
 ```
 
-For detailed information on how to build a query using *queryString*, *value* and *querySettings* parameters, please refer to the [`dataClass.query()`](DataClassClass.md#query) function description.
+*queryString* および *value* や *querySettings* パラメーターを使ってクエリをビルドする方法の詳細については、[`DataClass.query()`](DataClassClass.md#query) 関数を参照ください。
 
-> Formulas are not supported by the `collection.query()` function, neither in the *queryString* parameter nor as *formula* object parameter.
+> *queryString* 引数および *formula* オブジェクト引数の使用に関わらず、フォーミュラは `collection.query()` 関数でサポートされていません。
 
 #### 例題 1
 
