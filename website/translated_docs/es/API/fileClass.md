@@ -5,7 +5,7 @@ title: File
 
 `File` objects are created with the [`File`](#file) command. They contain references to disk files that may or may not actually exist on disk. For example, when you execute the `File` command to create a new file, a valid `File` object is created but nothing is actually stored on disk until you call the [`file.create( )`](#create) function.
 
-### Example
+### Ejemplo
 
 The following example creates a preferences file in the project folder:
 
@@ -67,8 +67,8 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 | Parameter    | Type    |    | Description                                     |
 | ------------ | ------- |:--:| ----------------------------------------------- |
 | path         | Texto   | -> | File path                                       |
-| fileConstant | Integer | -> | 4D file constant                                |
-| pathType     | Integer | -> | `fk posix path` (default) or `fk platform path` |
+| fileConstant | Entero  | -> | 4D file constant                                |
+| pathType     | Entero  | -> | `fk posix path` (default) or `fk platform path` |
 | *            |         | -> | * to return file of host database               |
 | Result       | 4D.File | <- | New file object                                 |
 <!-- END REF -->
@@ -179,7 +179,7 @@ If necessary, the function creates the folder hierachy as described in the [plat
 *   **True** if the file is created successfully;
 *   **False** if a file with the same name already exists or if an error occured.
 
-#### Example
+#### Ejemplo
 
 Creation of a preferences file in the database folder:
 
@@ -210,7 +210,7 @@ Creation of a preferences file in the database folder:
 | ----------------- | --------- | -- | -------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
 | aliasName         | Texto     | -> | Name of the alias or shortcut                |
-| aliasType         | Integer   | -> | Type of the alias link                       |
+| aliasType         | Entero    | -> | Type of the alias link                       |
 | Result            | 4D.File   | <- | Alias or shortcut file reference             |
 <!-- END REF -->
 
@@ -235,7 +235,7 @@ On Windows, a shortcut (.lnk file) is always created (the *aliasType* parameter 
 
 A `4D.File` object with the `isAlias` property set to **true**.
 
-#### Example
+#### Ejemplo
 
 You want to create an alias to a file in your database folder:
 
@@ -287,7 +287,7 @@ If the file is currently open, an error is generated.
 If the file does not exist on disk, the function does nothing (no error is generated).
 > **WARNING**: `.delete( )` can delete any file on a disk. This includes documents created with other applications, as well as the applications themselves. `.delete( )` should be used with extreme caution. Deleting a file is a permanent operation and cannot be undone.
 
-#### Example
+#### Ejemplo
 
 You want to delete a specific file in the database folder:
 
@@ -399,7 +399,7 @@ By default, the file retains its name when moved. If you want to rename the move
 
 The moved `File` object.
 
-#### Example
+#### Ejemplo
 
 
 ```4d
@@ -465,7 +465,7 @@ Note that the function modifies the full name of the file, i.e. if you do not pa
 
 The renamed `File` object.
 
-#### Example
+#### Ejemplo
 
 You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 
@@ -502,7 +502,7 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 The `.setContent( )` function <!-- REF #fileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the *content* BLOB<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
 
 
-#### Example
+#### Ejemplo
 
 ```4d
  $myFile:=Folder(fk documents folder).file("Archives/data.txt")
@@ -530,12 +530,12 @@ The `.setContent( )` function <!-- REF #fileClass.setContent().Summary -->rewrit
 
 
 <!--REF #fileClass.setText().Params -->
-| Parameter   | Type    |    | Description                                                |
-| ----------- | ------- | -- | ---------------------------------------------------------- |
-| text        | Texto   | -> | Text to store in the file                                  |
-| charSetName | Texto   | -> | Name of character set                                      |
-| charSetNum  | Integer | -> | Number of character set                                    |
-| breakMode   | Integer | -> | Processing mode for line breaks|<!-- END REF -->
+| Parameter   | Type   |    | Description                                                |
+| ----------- | ------ | -- | ---------------------------------------------------------- |
+| text        | Texto  | -> | Text to store in the file                                  |
+| charSetName | Texto  | -> | Name of character set                                      |
+| charSetNum  | Entero | -> | Number of character set                                    |
+| breakMode   | Entero | -> | Processing mode for line breaks|<!-- END REF -->
 
 |
 
@@ -570,7 +570,7 @@ By default, when you omit the *breakMode* parameter, line breaks are processed i
 
 
 
-#### Example
+#### Ejemplo
 
 ```4d
 $myFile:=File("C:\\Documents\\Hello.txt";fk platform path)
