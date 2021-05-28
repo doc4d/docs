@@ -43,7 +43,7 @@ The `VP ADD FORMULA NAME` command <!-- REF _command_.VP_ADD_FORMULA_NAME.Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-Pass the 4D View Pro formula that you want to name in *vpFormula*. For detailed information about formula syntax, please refer to the [4D View Pro Formulas](formulas-and-functions.md) section.
+Pass the 4D View Pro formula that you want to name in *vpFormula*. For detailed information about formula syntax, see [Using Formulas](spreadsheet-features.md#using-formulas).
 
 Pass the new name for the formula in *name*. If the name is already used within the same scope, the new named formula replaces the existing one. Note that you can use the same name for different scopes (see below).
 
@@ -811,7 +811,7 @@ In the *option* parameter, you can pass the following export option, if required
 |---|---|---
 |includeFormatInfo|	boolean|True to include formatting information, false otherwise (default is **true**). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.	|
 
-For more information on 4D View Pro objects, please refer to the [4D View Pro object](architecture.md#automatic-handling-of-the-4d-view-pro-object) paragraph.
+For more information on 4D View Pro objects, please refer to the [4D View Pro object](overview.md#automatic-handling-of-the-4d-view-pro-object) paragraph.
 
 
 #### Example 1 
@@ -3082,7 +3082,7 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 | |	formula	| |Object|4D formula object (mandatory). See the `Formula` command.|
 | |parameters| 	|Collection of objects	|Collection of parameters (in the order they are defined in the formula)|
  | |	| 	\[ ].name|	Text|	Name of parameter to display in 4D View Pro|
- | | 	|	\[ ].type|	Number|	Type of the parameter. Supported types:<p><p><table><tr><th>Constant</th></tr><tr><td>`Is Boolean`</td></tr><tr><td>`Is date`</td></tr><tr><td>`Is longint`</td></tr><tr><td>`Is object`</td></tr><tr><td>`Is real`</td></tr><tr><td>`Is text`</td></tr><tr><td>`Is time`</td></tr></table><p><p>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](calling-project-methods-fields.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value).|
+ | | 	|	\[ ].type|	Number|	Type of the parameter. Supported types:<p><p><table><tr><th>Constant</th></tr><tr><td>`Is Boolean`</td></tr><tr><td>`Is date`</td></tr><tr><td>`Is longint`</td></tr><tr><td>`Is object`</td></tr><tr><td>`Is real`</td></tr><tr><td>`Is text`</td></tr><tr><td>`Is time`</td></tr></table><p><p>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](calling-methods-fields.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value).|
 | | 	summary |	 	|Text |	Formula description to display in 4D View Pro|
 | | 	minParams|	 	|Number| 	Minimum number of parameters |
 | | 	maxParams |	 	|Number |	Maximum number of parameters. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type |
@@ -3287,7 +3287,7 @@ The `VP SET FIELD` command <!-- REF _command_.VP_SET_FIELD.Summary -->assigns a 
 
 In *rangeObj*, pass a range of the cell(s) whose value you want to specify. If *rangeObj* includes multiple cells, the specified field will be linked in each cell.
 
-The *field* parameter specifies a 4D database field to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. For information about the supported field types and the virtual structure, see [Field references](calling-project-methods-fields.md#field-references). If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
+The *field* parameter specifies a 4D database field to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. For information about the supported field types and the virtual structure, see [Field references](calling-methods-fields.md#field-references). If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
 
 The optional *formatPattern* defines a pattern for the field parameter. Pass any custom format (for information on patterns and formatting characters, please refer to the [4D View Pro Cell Format](configuring.md#cell-format) section).
  
@@ -3364,7 +3364,7 @@ The *formulasCol* is a two-dimensional collection:
 
 *	The first-level collection contains subcollections of formulas. Each subcollection defines a row.
 *	Each subcollection defines cell values for the row. Values must be text elements containing the formulas to assign to the cells. 
-	>If a 4D method is used, it must be allowed with the `SET ALLOWED METHODS` command (see [Project method references](calling-project-methods-fields.md#project-method-references). 
+	>If a 4D method is used, it must be allowed with the `SET ALLOWED METHODS` command (see [Project method references](calling-methods-fields.md#project-method-references). 
 
 >You can remove the formulas in *rangeObj* by replacing them with an empty string ("").
  

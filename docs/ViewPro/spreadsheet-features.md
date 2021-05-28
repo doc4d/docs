@@ -46,6 +46,8 @@ The direction keys (arrows) allow you to move a cell in the direction indicated 
 
 A spreadsheet formula is an expression that calculates the value of a cell.
 
+### Entering formulas
+
 To enter a formula in a 4D View Pro area:
 
 1.	Select the cell into which you will enter the formula or function.
@@ -56,7 +58,7 @@ When typing a formula, click on a cell to enter that cell's reference in the for
 
 ![](assets/en/ViewPro/vpFormula1.PNG) 
 
-You can also create named formulas that can be called via their name. In this case, the formula is entered using the [VP ADD FORMULA NAME](command-list.md#vp-add-formula-name) command. 
+You can also create named formulas that can be called via their name. To do so, enter these formulas using the [VP ADD FORMULA NAME](command-list.md#vp-add-formula-name) command. 
 
 ### Operators and Operands
 All formulas have operands and operators:
@@ -169,7 +171,11 @@ The following table shows the effect of the different notations:
 
 ## Using Functions
 
-Spreadsheet functions are pre-defined formulas. To enter a function in a formula:
+Spreadsheet functions are preset formulas used to calculate cell values.
+
+### Entering functions
+
+To enter a function in a formula:
 
 1.	Select the cell into which you will enter the function.
 2.	Enter = (the equal sign).
@@ -177,7 +183,7 @@ Spreadsheet functions are pre-defined formulas. To enter a function in a formula
 
 ![](assets/en/ViewPro/vpFormula2.PNG)
 
- See [SpreadJS's list of functions](http://help.grapecity.com/spread/SpreadSheets11/webframe.html#FormulaFunctions.html) for details and examples.
+ See [SpreadJS's list of functions](http://help.grapecity.com/spread/SpreadSheets14/webframe.html#FormulaFunctions.html) for details and examples.
 	
 ## Using the Context Menu  
 
