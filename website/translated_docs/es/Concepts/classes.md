@@ -1,14 +1,14 @@
 ---
-id: classes
+id: clases
 title: Clases
 ---
 
 
 ## Generalidades
 
-The 4D language supports the concept of **classes**. In a programming language, using a class allows you to define an object behaviour with associated properties and functions.
+El lenguaje 4D soporta el concepto de **clases**. En un lenguaje de programación, el uso de una clase permite definir el comportamiento de un objeto con propiedades y funciones asociadas.
 
-Once a user class is defined, you can **instantiate** objects of this class anywhere in your code. Each object is an instance of its class. A class can [`extend`](#class-extends-classname) another class, and then inherits from its [functions](#function).
+Once a user class is defined, you can **instantiate** objects of this class anywhere in your code. Cada objeto es una instancia de su clase. A class can [`extend`](#class-extends-classname) another class, and then inherits from its [functions](#function).
 
 > The class model in 4D is similar to classes in JavaScript, and based on a chain of prototypes.
 
@@ -68,13 +68,13 @@ To delete an existing class, you can:
 
 Class files are automatically stored at the appropriate location when created through the 4D interface, either via the **File** menu or the Explorer.
 
-#### File menu and toolbar
+#### Menú Archivo y barra de herramientas
 
 You can create a new class file for the project by selecting **New > Class...** in the 4D Developer **File** menu or from the toolbar.
 
 You can also use the **Ctrl+Shift+Alt+k** shortcut.
 
-#### Explorer
+#### Explorador
 
 In the **Methods** page of the Explorer, classes are grouped in the **Classes** category.
 
@@ -84,7 +84,7 @@ To create a new class, you can:
 - select **New Class...** from the action menu at the bottom of the Explorer window, or from the contexual menu of the Classes group. ![](assets/en/Concepts/newClass.png)
 - select **New > Class...** from the contexual menu of the Explorer's Home page.
 
-#### Class code support
+#### Soporte del código de clase
 
 In the various 4D windows (code editor, compiler, debugger, runtime explorer), class code is basically handled like a project method with some specificities:
 
@@ -129,7 +129,7 @@ $instance:=cs.myClass.new()
 | ---------- | ------ | -- | -------------- |
 | classStore | object | <- | 4D class store |
 
-The `4D` command returns the class store for available built-in 4D classes. It provides access to specific APIs such as [CryptoKey](API/cryptoKeyClass.md).
+The `4D` command returns the class store for available built-in 4D classes. Ofrece acceso a APIs específicas como [CryptoKey](API/cryptoKeyClass.md).
 
 #### Ejemplo
 
@@ -144,10 +144,10 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 ## Class object
 
-When a class is [defined](#class-definition) in the project, it is loaded in the 4D language environment. A class is an object itself, of ["Class" class](API/classClass.md). A class object has the following properties and function:
+When a class is [defined](#class-definition) in the project, it is loaded in the 4D language environment. Una clase es un objeto en sí mismo, de ["Class" class](API/classClass.md). A class object has the following properties and function:
 
-- [`name`](API/classClass.md#name) string
-- [`superclass`](API/classClass.md#superclass) object (null if none)
+- cadena [`name`](API/classClass.md#name)
+- objeto [`superclass`](API/classClass.md#superclass) (null si ninguno)
 - [`new()`](API/classClass.md#new) function, allowing to instantiate class objects.
 
 In addition, a class object can reference a [`constructor`](#class-constructor) object (optional).
