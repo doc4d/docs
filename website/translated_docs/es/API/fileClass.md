@@ -64,7 +64,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 
 
 <!-- REF #_command_.File.Params -->
-| Parameter    | Type    |    | Description                                     |
+| Parameter    | Tipo    |    | Description                                     |
 | ------------ | ------- |:--:| ----------------------------------------------- |
 | path         | Texto   | -> | File path                                       |
 | fileConstant | Entero  | -> | 4D file constant                                |
@@ -163,7 +163,7 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 **.create()** : Boolean <!-- END REF -->
 
 <!--REF #fileClass.create().Params -->
-| Parameter | Type     |    | Description                                                |
+| Parameter | Tipo     |    | Description                                                |
 | --------- | -------- | -- | ---------------------------------------------------------- |
 | Result    | Booleano | <- | True if the file was created successfully, false otherwise |
 <!-- END REF -->
@@ -206,7 +206,7 @@ Creation of a preferences file in the database folder:
 **.createAlias**( *destinationFolder* : 4D.Folder ; *aliasName* : Text { ; *aliasType* : Integer } ) : 4D.File<!-- END REF -->
 
 <!--REF #fileClass.createAlias().Params -->
-| Parameter         | Type      |    | Description                                  |
+| Parameter         | Tipo      |    | Description                                  |
 | ----------------- | --------- | -- | -------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
 | aliasName         | Texto     | -> | Name of the alias or shortcut                |
@@ -272,7 +272,7 @@ You want to create an alias to a file in your database folder:
 
 
 <!-- REF #fileClass.delete().Params -->
-| Parameter | Type |  | Description                     |
+| Parameter | Tipo |  | Description                     |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |
 <!-- END REF -->
@@ -378,7 +378,7 @@ You want to delete a specific file in the database folder:
 **.moveTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } ) : 4D.File<!-- END REF -->
 
 <!--REF #fileClass.moveTo().Params -->
-| Parameter         | Type      |    | Description                  |
+| Parameter         | Tipo      |    | Description                  |
 | ----------------- | --------- | -- | ---------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder           |
 | newName           | Texto     | -> | Full name for the moved file |
@@ -446,7 +446,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 **.rename**( *newName* : Text ) : 4D.File<!-- END REF -->
 
 <!--REF #fileClass.rename().Params -->
-| Parameter | Type    |    | Description                |
+| Parameter | Tipo    |    | Description                |
 | --------- | ------- | -- | -------------------------- |
 | newName   | Texto   | -> | New full name for the file |
 | Result    | 4D.File | <- | Renamed file               |
@@ -491,7 +491,7 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 **.setContent** ( *content* : Blob ) <!-- END REF -->
 
 <!--REF #fileClass.setContent().Params -->
-| Parameter | Type |    | Description               |
+| Parameter | Tipo |    | Description               |
 | --------- | ---- | -- | ------------------------- |
 | content   | BLOB | -> | New contents for the file |
 <!-- END REF -->
@@ -530,7 +530,7 @@ The `.setContent( )` function <!-- REF #fileClass.setContent().Summary -->rewrit
 
 
 <!--REF #fileClass.setText().Params -->
-| Parameter   | Type   |    | Description                                                |
+| Parameter   | Tipo   |    | Description                                                |
 | ----------- | ------ | -- | ---------------------------------------------------------- |
 | text        | Texto  | -> | Text to store in the file                                  |
 | charSetName | Texto  | -> | Name of character set                                      |
