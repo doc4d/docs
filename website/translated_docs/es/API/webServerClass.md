@@ -46,7 +46,7 @@ They provide the following properties and functions:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| Parameter | Type         |    | Description                                                    |
+| Parameter | Tipo         |    | Description                                                    |
 | --------- | ------------ | -- | -------------------------------------------------------------- |
 | option    | Entero       | -> | Web server to get (default if omitted = `Web server database`) |
 | Result    | 4D.WebServer | <- | Web server object                                              |
@@ -92,7 +92,7 @@ From your component, you want to know if the Web server of the host database is 
 
 <!-- REF #_command_.WEB Server list.Params -->
 
-| Parameter | Type      |    | Description                                    |
+| Parameter | Tipo      |    | Description                                    |
 | --------- | --------- | -- | ---------------------------------------------- |
 | Result    | Colección | <- | Collection of the available Web server objects |
 
@@ -727,7 +727,7 @@ The <!-- REF #webServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 <!-- REF #webServerClass.start().Params -->
 
-| Parameter  | Type   |    | Description                           |
+| Parameter  | Tipo   |    | Description                           |
 | ---------- | ------ | -- | ------------------------------------- |
 | parámetros | Objeto | -> | Web server settings to set at startup |
 | Result     | Objeto | <- | Status of the web server startup      |
@@ -747,7 +747,7 @@ Customized session settings will be reset when the [`.stop()`](#stop) function i
 
 The function returns an object describing the Web server launch status. This object can contain the following properties:
 
-| Property |                         | Type      | Description                                                          |
+| Property |                         | Tipo      | Description                                                          |
 | -------- | ----------------------- | --------- | -------------------------------------------------------------------- |
 | success  |                         | Booleano  | True if the web server was correctly started, False otherwise        |
 | errors   |                         | Colección | 4D error stack (not returned if the web server started successfully) |
@@ -789,7 +789,7 @@ The function returns an object describing the Web server launch status. This obj
 
 <!-- REF #webServerClass.stop().Params -->
 
-| Parameter | Type |  | Description                     |
+| Parameter | Tipo |  | Description                     |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |
 
