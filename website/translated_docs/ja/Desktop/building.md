@@ -217,13 +217,13 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 ビルドを行うと、クライアント/サーバーアプリケーションは 2つのカスタマイズされたパーツ (サーバーと、各クライアントマシンにインストールするクライアント) で構成されます。
 
-> If you want to deploy a client/server application in an heterogeneous environment (client applications running on Intel/AMD and Apple Silicon machines), it is recommended to [compile the project for all processors](Project/compiler.md#compilation-target) on a macOS machine, so that all client applications will run natively.
+> Intel/AMD と Apple Silicon マシンが混在している環境でクライアントアプリケーションを実行する場合、そのクライアントサーバーアプリケーションは macOS 上で、[全てのプロセッサ](Project/compiler.md#コンパイル対象cpu) 向けにコンパイルすることが推奨されます。こうすることで、クライアントアプリケーションはすべてネイティブに実行されます。
 
 ビルドされたクライアント/サーバーアプリケーションは起動や接続処理が簡易です:
 
 - サーバーを起動するには、サーバーアプリケーションをダブルクリックします。 プロジェクトファイルを選択する必要はありません。
 - クライアントを起動するにも、同様にクライアントアプリケーションをダブルクリックします。すると、サーバーアプリケーションへの接続が直接おこなわれるため、 接続ダイアログでサーバーを選択する必要はありません。 クライアントは接続対象のサーバーを名称 (サーバーが同じサブネットワーク上にある場合)、あるいはIPアドレスによって認識します。IPアドレスの指定は buildapp.4DSettings ファイル内の `IPAddress` XMLキーを使用して設定されます。 接続が失敗した場合のために、代替機構を実装することができます。これについては [クライアント接続の管理](#クライアント接続の管理) の章で説明されています。 また、**Option** (macOS) や **Alt** (Windows) キーを押しながらクライアントアプリケーション起動すると、標準の接続ダイアログを強制的に表示させることもできます。 サーバーアプリケーションには、対応するクライアントアプリケーションのみが接続できます。 標準の 4Dアプリケーションを使用してサーバーアプリケーションに接続を試みると、接続は拒否されエラーが返されます。
-- クライアント側を [ネットワーク越しに自動更新](#サーバーアプリケーション内部のクライアントアプリケーションのコピー) するようにクライアント/サーバーアプリケーションを設定することも可能です。 You only need to create and distribute an initial version of the client application, subsequent updates are handled using the automatic update mechanism.
+- クライアント側を [ネットワーク越しに自動更新](#サーバーアプリケーション内部のクライアントアプリケーションのコピー) するようにクライアント/サーバーアプリケーションを設定することも可能です。 クライアントアプリケーションは最初のバージョンのみビルドして配布する必要があります。以降のアップデートは、自動アップデート機構を利用することで管理します。
 - また、ランゲージコマンド ([SET UPDATE FOLDER](https://doc.4d.com/4dv19/help/command/ja/page1291.html)、および [RESTART 4D](https://doc.4d.com/4dv19/help/command/ja/page1292.html)) を使用して、サーバーアプリケーションの更新を自動化することも可能です
 
 
@@ -262,7 +262,7 @@ You can check this option:
 
 #### 4D Volume Desktopの場所
 
-Designates the location on your disk of the 4D Volume Desktop application to be used to build the client part of your application.
+クライアントアプリケーションのビルドに使用する 4D Volume Desktop アプリケーションの場所を指定します。
 
 > 4D Volume Desktop のバージョン番号は、4D Developer のバージョン番号と合致する必要があります。 たとえば、4D v19 を利用していれば、4D Volume Desktop v19 が必要です。
 
