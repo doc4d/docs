@@ -46,7 +46,7 @@ POP3 Transporter objects are instantiated with the [POP3 New transporter](#pop3-
 <!-- REF POP3TransporterClass.POP3 New transporter.Params -->
 | Parameter | Tipo               |    | Description                                         |
 | --------- | ------------------ |:--:| --------------------------------------------------- |
-| server    | object             | -> | Mail server information                             |
+| server    | objeto             | -> | Mail server information                             |
 | Result    | 4D.POP3Transporter | <- | [POP3 transporter object](#pop3-transporter-object) |
 <!-- END REF -->
 
