@@ -172,7 +172,7 @@ Specific 4D keywords can be used in class definitions:
 
 ### Function
 
-#### Syntax
+#### Sintaxis
 
 ```4d
 Function <name>({$parameterName : type; ...}){->$parameterName : type}
@@ -185,13 +185,13 @@ In the class definition file, function declarations use the `Function` keyword, 
 
 > **Tip:** Starting the function name with an underscore character ("_") will exclude the function from the autocompletion features in the 4D code editor. For example, if you declare `Function _myPrivateFunction` in `MyClass`, it will not be proposed in the code editor when you type in `"cs.MyClass. "`.
 
-Immediately following the function name, [parameters](#parameters) for the function can be declared with an assigned name and data type, including the return parameter (optional). For example:
+Immediately following the function name, [parameters](#parameters) for the function can be declared with an assigned name and data type, including the return parameter (optional). Por ejemplo:
 
 ```4d
 Function computeArea($width : Integer; $height : Integer)->$area : Integer
 ```
 
-Within a class function, the `This` command is used as the object instance. For example:
+Within a class function, the `This` command is used as the object instance. Por ejemplo:
 
 ```4d  
 Function setFullname($firstname : Text; $lastname : Text)
