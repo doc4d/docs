@@ -132,7 +132,7 @@ In this documentation, "Mixed" data type is used to designate the various type o
 *   null
 *   booleano
 *   fecha
-*   object
+*   objeto
 *   colección
 *   picture(\*)
 
