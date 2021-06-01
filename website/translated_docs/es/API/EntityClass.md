@@ -369,7 +369,7 @@ The object returned by `.drop( )` contains the following properties:
 | statusText(*) |                     | text                  | Description of the error, see below                                                                                   |
 |               |                     |                       | ***Available only in case of pessimistic lock error:***                                                               |
 | LockKindText  |                     | text                  | "Locked by record"                                                                                                    |
-| lockInfo      |                     | object                | Information about the lock origin                                                                                     |
+| lockInfo      |                     | objeto                | Information about the lock origin                                                                                     |
 |               | task_id             | number                | Process id                                                                                                            |
 |               | user_name           | text                  | Session user name on the machine                                                                                      |
 |               | user4d_id           | text                  | User name in the 4D database directory                                                                                |
@@ -929,7 +929,7 @@ The object returned by `.lock( )` contains the following properties:
 | statusText(\*) |                     | text                  | Description of the error, see below                                                                                 |
 |                  |                     |                       | ***Available only in case of pessimistic lock error:***                                                             |
 | lockKindText     |                     | text                  | "Locked by record"                                                                                                  |
-| lockInfo         |                     | object                | Information about the lock origin                                                                                   |
+| lockInfo         |                     | objeto                | Information about the lock origin                                                                                   |
 |                  | task_id             | number                | Process ID                                                                                                          |
 |                  | user_name           | text                  | Session user name on the machine                                                                                    |
 |                  | user4d_alias        | text                  | Name or alias of the 4D user                                                                                        |
@@ -1187,7 +1187,7 @@ The object returned by `.save()` contains the following properties:
 | statusText   |                    | text                  | Description of the error, [see below](#status-and-statustext)                                                           |
 |              |                    |                       | ***Available only in case of pessimistic lock error***:                                                                 |
 | lockKindText |                    | text                  | "Locked by record"                                                                                                      |
-| lockInfo     |                    | object                | Information about the lock origin                                                                                       |
+| lockInfo     |                    | objeto                | Information about the lock origin                                                                                       |
 |              | task_id            | number                | Process id                                                                                                              |
 |              | user_name          | text                  | Session user name on the machine                                                                                        |
 |              | user4d_id          | text                  | User name in the 4D database directory                                                                                  |
