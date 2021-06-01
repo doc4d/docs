@@ -3,11 +3,11 @@ id: number
 title: Número (Real, Entero largo, Entero)
 ---
 
-Number is a generic term that stands for:
+Número es un término genérico que significa:
 
-- Real field, variable or expression. The range for the Real data type is ±1.7e±308 (13 significant digits).
-- Long Integer field, variable or expression. The range for the Long Integer data type (4-byte Integer) is -2^31..(2^31)-1.
-- Integer field, array or expression. The range for the Integer data type (2-byte Integer) is -32,768..32,767 (2^15..(2^15)-1).
+- Los campos, variables o expresiones de tipo real. El rango del tipo Real es ±1,7e±308 (13 dígitos significativos).
+- Los campos, variables o expresiones de tipo Entero largo. El rango para el tipo de datos Entero largo (4 bytes) es -2^31..(2^31)-1.
+- Los campos, variables o expresiones de tipo Entero. El rango para el tipo de datos Entero (2 bytes) es -32.768..32.767 (2^15..(2^15)-1).
 
 **Note:** Integer field values are automatically converted in Long integers when used in the 4D Language.
 
@@ -28,7 +28,7 @@ A numeric literal constant is written as a real number. Here are some examples o
 
 > The default decimal separator is a period (.), regardless of the system language. If you have checked the "Use regional system settings" option in the Methods Page of the Preferences, you must use the separator defined in your system.
 
-Negative numbers are specified with the minus sign (-). For example:
+Negative numbers are specified with the minus sign (-). Por ejemplo:
 
 ```4d
 -27
@@ -38,49 +38,49 @@ Negative numbers are specified with the minus sign (-). For example:
 
 ## Number operators
 
-| Operation                | Syntax           | Returns  | Expression | Value |
-| ------------------------ | ---------------- | -------- | ---------- | ----- |
-| Addition                 | Number + Number  | Number   | 2 + 3      | 5     |
-| Subtraction              | Number - Number  | Number   | 3 – 2      | 1     |
-| Multiplication           | Number * Number  | Number   | 5 * 2      | 10    |
-| Division                 | Number / Number  | Number   | 5 / 2      | 2.5   |
-| Longint division         | Number \ Number | Number   | 5 \ 2     | 2     |
-| Modulo                   | Number % Number  | Number   | 5 % 2      | 1     |
-| Exponentiation           | Number ^ Number  | Number   | 2 ^ 3      | 8     |
-| Equality                 | Number = Number  | Booleano | 10 = 10    | True  |
-|                          |                  |          | 10 = 11    | False |
-| Inequality               | Number # Number  | Booleano | 10 #11     | True  |
-|                          |                  |          | 10 # 10    | False |
-| Greater than             | Number > Number  | Booleano | 11 > 10    | True  |
-|                          |                  |          | 10 > 11    | False |
-| Less than                | Number < Number  | Booleano | 10 < 11    | True  |
-|                          |                  |          | 11 < 10    | False |
-| Greater than or equal to | Number >= Number | Booleano | 11 >= 10   | True  |
-|                          |                  |          | 10 >= 11   | False |
-| Less than or equal to    | Number <= Number | Booleano | 10 <= 11   | True  |
-|                          |                  |          | 11 <= 10   | False |
+| Operación         | Sintaxis         | Devuelve | Expresión | Valor |
+| ----------------- | ---------------- | -------- | --------- | ----- |
+| Addition          | Number + Number  | Número   | 2 + 3     | 5     |
+| Subtraction       | Number - Number  | Número   | 3 – 2     | 1     |
+| Multiplication    | Number * Number  | Número   | 5 * 2     | 10    |
+| Division          | Number / Number  | Número   | 5 / 2     | 2.5   |
+| Longint division  | Number \ Number | Número   | 5 \ 2    | 2     |
+| Modulo            | Number % Number  | Número   | 5 % 2     | 1     |
+| Exponentiation    | Number ^ Number  | Número   | 2 ^ 3     | 8     |
+| Igual             | Número = Número  | Booleano | 10 = 10   | True  |
+|                   |                  |          | 10 = 11   | False |
+| Desigualdad       | Número # Número  | Booleano | 10 #11    | True  |
+|                   |                  |          | 10 # 10   | False |
+| Mayor que         | Número > Número  | Booleano | 11 > 10   | True  |
+|                   |                  |          | 10 > 11   | False |
+| Menor que         | Número < Número  | Booleano | 10 < 11   | True  |
+|                   |                  |          | 11 < 10   | False |
+| Mayor o igual que | Número >= Número | Booleano | 11 >= 10  | True  |
+|                   |                  |          | 10 >= 11  | False |
+| Menor o igual que | Número <= Número | Booleano | 10 <= 11  | True  |
+|                   |                  |          | 11 <= 10  | False |
 
-The modulo operator % divides the first number by the second number and returns a whole number remainder. Here are some examples:
+El operador modulo % divide el primer número entre el segundo y devuelve un resto de número entero. He aquí algunos ejemplos:
 
-- 10 % 2 returns 0 because 10 is evenly divided by 2.
-- 10 % 3 returns 1 because the remainder is 1.
-- 10.5 % 2 returns 0 because the remainder is not a whole number.
+- 10 % 2 devuelve 0 porque 10 está dividido uniformemente por 2.
+- 10 % 3 devuelve 1 porque el resto es 1.
+- 10,5 % 2 devuelve 0 porque el resto no es un número entero.
 
-**WARNING:**
-- The modulo operator % returns significant values with numbers that are in the Long Integer range (from minus 2^31 to 2^31 minus one). To calculate the modulo with numbers outside of this range, use the `Mod` command.
-- The longint division operator \ returns significant values with integer numbers only.
+**ATENCIÓN:**
+- El operador modulo % devuelve valores significativos con números que están en el rango de los enteros largos (de –2^31 hasta 2^31 menos 1). Para calcular el módulo con números fuera de este rango, utilice el comando `Mod`.
+- El operador de división entero largo \ devuelve valores significativos sólo con números enteros.
 
-### Precedence
+### Prioridad
 
-The order in which an expression is evaluated is called precedence. 4D has a strict left-to-right precedence, in which algebraic order is not observed. For example:
+El orden en que se evalúa una expresión se llama prioridad. 4D tiene una precedencia estricta de izquierda a derecha, en la que no se aplica el orden algebraico. Por ejemplo:
 
 ```4d
  3+4*5
 ```
 
-returns 35, because the expression is evaluated as 3 + 4, yielding 7, which is then multiplied by 5, with the final result of 35.
+devuelve 35, porque la expresión se evalúa como 3 + 4, dando como resultado 7, que luego se multiplica por 5, con el resultado final de 35.
 
-To override the left-to-right precedence, you MUST use parentheses. For example:
+Para anular la precedencia de izquierda a derecha, DEBE utilizar paréntesis. Por ejemplo:
 
 ```4d
  3+(4*5)
@@ -103,16 +103,16 @@ Because each bit can equal 0 or 1, you can also think about a Long Integer value
 
 An expression that uses a bitwise operator returns a Long Integer value, except for the Bit Test operator, where the expression returns a Boolean value. The following table lists the bitwise operators and their syntax:
 
-| Operation              | Operator  | Syntax              | Returns              |
+| Operación              | Operador  | Sintaxis            | Devuelve             |
 | ---------------------- | --------- | ------------------- | -------------------- |
-| Bitwise AND            | &         | Long & Long         | Long                 |
-| Bitwise OR (inclusive) | &#124;    | Long &#124; Long    | Long                 |
-| Bitwise OR (exclusive) | \^&#124; | Long \^&#124; Long | Long                 |
+| Bitwise AND            | &         | Long & Long         | Largo                |
+| Bitwise OR (inclusive) | &#124;    | Long &#124; Long    | Largo                |
+| Bitwise OR (exclusive) | \^&#124; | Long \^&#124; Long | Largo                |
 | Left Bit Shift         | <<        | Long << Long        | Long (see note 1)    |
 | Right Bit Shift        | >>        | Long >> Long        | Long (see note 1)    |
 | Bit Set                | ?+        | Long ?+ Long        | Long (see note 2)    |
 | Bit Clear              | ?-        | Long ?- Long        | Long (see note 2)    |
-| Bit Test               | ??        | Long ?? Long        | Boolean (see note 2) |
+| Bit Test               | ??        | Long ?? Largo       | Boolean (see note 2) |
 
 #### Notes
 
@@ -123,7 +123,7 @@ An expression that uses a bitwise operator returns a Long Integer value, except 
 
 The following table lists the bitwise operators and their effects:
 
-| Operation              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Operación              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Bitwise AND            | Each resulting bit is the logical AND of the bits in the two operands. <p>Here is the logical AND table:<li>1 & 1 --> 1<li>0 & 1 --> 0<li>1 & 0 --> 0<li>0 & 0 --> 0<p>In other words, the resulting bit is 1 if the two operand bits are 1; otherwise the resulting bit is 0.                                           |
 | Bitwise OR (inclusive) | Each resulting bit is the logical OR of the bits in the two operands.<p>Here is the logical OR table:<li>1 &#124; 1 --> 1<li>0 &#124; 1 --> 1<li>1 &#124; 0 --> 1<li>0 &#124; 0 --> 0<p>In other words, the resulting bit is 1 if at least one of the two operand bits is 1; otherwise the resulting bit is 0.           |
@@ -134,9 +134,9 @@ The following table lists the bitwise operators and their effects:
 | Bit Clear              | The resulting value is set to the first operand value, then the resulting bit, whose number is indicated by the second operand, is set to 0. The other bits are left unchanged.                                                                                                                                                                                                                                                                                |
 | Bit Test               | Returns True if, in the first operand, the bit whose number is indicated by the second operand is equal to 1. Returns False if, in the first operand, the bit whose number is indicated by the second operand is equal to 0.                                                                                                                                                                                                                                   |
 
-### Examples
+### Ejemplos
 
-| Operation              | Ejemplo                         | Result     |
+| Operación              | Ejemplo                         | Result     |
 | ---------------------- | ------------------------------- | ---------- |
 | Bitwise AND            | 0x0000FFFF & 0xFF00FF00         | 0x0000FF00 |
 | Bitwise OR (inclusive) | 0x0000FFFF &#124; 0xFF00FF00    | 0xFF00FFFF |
