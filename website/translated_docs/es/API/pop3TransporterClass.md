@@ -230,8 +230,8 @@ The `boxInfo` object returned contains the following properties:
 
 | Property  | Tipo   | Description                       |
 | --------- | ------ | --------------------------------- |
-| mailCount | Number | Number of messages in the mailbox |
-| size      | Number | Message size in bytes             |
+| mailCount | Número | Number of messages in the mailbox |
+| size      | Número | Message size in bytes             |
 
 
 
@@ -345,7 +345,7 @@ The `mailInfo` object returned contains the following properties:
 
 | Property | Tipo   | Description              |
 | -------- | ------ | ------------------------ |
-| size     | Number | Message size in bytes    |
+| size     | Número | Message size in bytes    |
 | id       | Texto  | Unique ID of the message |
 
 The method returns **Null** if:
@@ -405,8 +405,8 @@ Each `mailInfo` object in the returned collection contains the following propert
 
 | Property     | Tipo   | Description                                                        |
 | ------------ | ------ | ------------------------------------------------------------------ |
-| \[ ].size   | Number | Message size in bytes                                              |
-| \[ ].number | Number | Message number                                                     |
+| \[ ].size   | Número | Message size in bytes                                              |
+| \[ ].number | Número | Message number                                                     |
 | \[ ].id     | Texto  | Unique ID of the message (useful if you store the message locally) |
 
 If the mailbox does not contain a message, an empty collection is returned.
