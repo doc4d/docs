@@ -57,7 +57,7 @@ The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the d
 
 By default, if the *option* parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the *option* parameter:
 
-| Constant                       | Value | Comment                                                  |
+| Constant                       | Valor | Comment                                                  |
 | ------------------------------ | ----- | -------------------------------------------------------- |
 | `Web server database`          | 1     | Current database Web server (default if omitted)         |
 | `Web server host database`     | 2     | Web server of the host database of a component           |
@@ -751,7 +751,7 @@ The function returns an object describing the Web server launch status. This obj
 | -------- | ----------------------- | --------- | -------------------------------------------------------------------- |
 | success  |                         | Booleano  | True if the web server was correctly started, False otherwise        |
 | errors   |                         | Colección | 4D error stack (not returned if the web server started successfully) |
-|          | \[].errCode            | Number    | 4D error code                                                        |
+|          | \[].errCode            | Número    | 4D error code                                                        |
 |          | \[].message            | Texto     | Description of the 4D error                                          |
 |          | \[].componentSignature | Texto     | Signature of the internal component which returned the error         |
 > If the Web server was already launched, an error is returned.
