@@ -109,7 +109,7 @@ Available classes are accessible from their class stores. Two class stores are a
 
 | Parameter  | Tipo   |    | Description                                   |
 | ---------- | ------ | -- | --------------------------------------------- |
-| classStore | object | <- | User class store for the project or component |
+| classStore | objeto | <- | User class store for the project or component |
 
 The `cs` command returns the user class store for the current project or component. The `cs` command returns the user class store for the current project or component. By default, only project [ORDA classes](ORDA/ordaClasses.md) are available.
 
@@ -127,7 +127,7 @@ $instance:=cs.myClass.new()
 
 | Parameter  | Tipo   |    | Description    |
 | ---------- | ------ | -- | -------------- |
-| classStore | object | <- | 4D class store |
+| classStore | objeto | <- | 4D class store |
 
 The `4D` command returns the class store for available built-in 4D classes. Ofrece acceso a APIs específicas como [CryptoKey](API/cryptoKeyClass.md).
 
