@@ -320,7 +320,7 @@ The returned object contains the following properties:
 | tables      |             |               | Objeto   | Object containing as many properties as there are encryptable or encrypted tables. |
 |             | *tableName* |               | Objeto   | Encryptable or Encrypted table                                                     |
 |             |             | name          | Texto    | Name of the table                                                                  |
-|             |             | num           | Number   | Table number                                                                       |
+|             |             | num           | Número   | Table number                                                                       |
 |             |             | isEncryptable | Booleano | True if the table is declared encryptable in the structure file                    |
 |             |             | isEncrypted   | Booleano | True if the records of the table are encrypted in the data file                    |
 
@@ -581,11 +581,11 @@ The result of the command is described in the returned object:
 | ---------- | ------------------------ | --------- | ------------------------------------------------------------------------------- |
 | success    |                          | Booleano  | True if the provided encryption key matches the encrypted data, False otherwise |
 |            |                          |           | Properties below are returned only if success is *FALSE*                        |
-| status     |                          | Number    | Error code (4 if the provided encryption key is wrong)                          |
+| status     |                          | Número    | Error code (4 if the provided encryption key is wrong)                          |
 | statusText |                          | Texto     | Error message                                                                   |
 | errors     |                          | Colección | Stack of errors. The first error has the highest index                          |
 |            | \[ ].componentSignature | Texto     | Internal component name                                                         |
-|            | \[ ].errCode            | Number    | Error number                                                                    |
+|            | \[ ].errCode            | Número    | Error number                                                                    |
 |            | \[ ].message            | Texto     | Error message                                                                   |
 
 If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **null** (no error is generated).
