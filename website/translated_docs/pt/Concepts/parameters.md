@@ -319,7 +319,7 @@ C_OBJECT($3)
 ```
 See [Interpreted and compiled modes](interpreted.md) page for more information.
 
-Parameter declaration is also mandatory in the following contexts (these contexts do not support declaration in a "Compiler" method):
+A declaração de parâmetros também é obrigatóiria nos contextos abaixo (esses contextos não são compatíveis com declarações em um método "Compiler"):
 
 - Database methods - For example, the `On Web Connection Database Method` receives six parameters, $1 to $6, of the data type Text. At the beginning of the database method, you must write (even if all parameters are not used):
 
@@ -465,58 +465,58 @@ APPEND TEXT(vtSomeText;"";$wpArea) //Displays text message and writes it to $wpA
 
 ## Values or references
 
-When you pass a parameter, 4D always evaluates the parameter expression in the context of the calling method and sets the **resulting value** to the local variables in the class function or subroutine. The local variables/parameters are not the actual fields, variables, or expressions passed by the calling method; they only contain the values that have been passed. Since its scope is local, if the value of a parameter is modified in the class function/subroutine, it does not change the value in the calling method. For example:
+When you pass a parameter, 4D always evaluates the parameter expression in the context of the calling method and sets the **resulting value** to the local variables in the class function or subroutine. As variáveis locais/parâmetros não são os campos, variáveis ou expressões realmente passadas pelo método chamada; eles apenas contém os valores que foram passados. Since its scope is local, if the value of a parameter is modified in the class function/subroutine, it does not change the value in the calling method. For example:
 
 ```4d
-    //Here is some code from the method MY_METHOD
-DO_SOMETHING([People]Name) //Let's say [People]Name value is "williams"
+    //Esta é uma parte do código do método MY_METHOD
+DO_SOMETHING([People]Name) //Suponha que o valor [People]Name seja "williams"
 ALERT([People]Name)
 
-    //Here is the code of the method DO_SOMETHING
+    //Este é o código do método DO_SOMETHING
  $1:=Uppercase($1)
  ALERT($1)
 ```
 
-The alert box displayed by `DO_SOMETHING` will read "WILLIAMS" and the alert box displayed by `MY_METHOD` will read "williams". The method locally changed the value of the parameter $1, but this does not affect the value of the field `[People]Name` passed as parameter by the method `MY_METHOD`.
+A caixa de alerta mostrada por `DO_SOMETHING` dirá "WILLIAMS" e a caixa de alerta mostrada por `MY_METHOD` dirá "williams". O método mudou localmente o valor do parâmetro $1, ma isso não afeta o valor de campo `[People]Name` passado como parâmetro pelo método `MY_METHOD`.
 
-There are two ways to make the method `DO_SOMETHING` change the value of the field:
+Há duas formas de fazer com que o método `DO_SOMETHING` mude o valor de campo:
 
 1. Rather than passing the field to the method, you pass a pointer to it, so you would write:
 
 ```4d
-  //Here is some code from the method MY_METHOD
- DO_SOMETHING(->[People]Name) //Let's say [People]Name value is "williams"
+  //Esta é uma parte do código do método MY_METHOD
+ DO_SOMETHING(->[People]Name) //Suponha que o valor de [People]Name value seja "williams"
  ALERT([People]Last Name)
 
-  //Here the code of the method DO_SOMETHING
+  //Este é o código do método DO_SOMETHING
  $1->:=Uppercase($1->)
  ALERT($1->)
 ```
 
-Here the parameter is not the field, but a pointer to it. Therefore, within the `DO SOMETHING` method, $1 is no longer the value of the field but a pointer to the field. The object **referenced** by $1 ($1-> in the code above) is the actual field. Consequently, changing the referenced object goes beyond the scope of the subroutine, and the actual field is affected. In this example, both alert boxes will read "WILLIAMS".
+Aqui é o parâmetro não for o campo, mas sim um ponteiro ao mesmo. Portanto, dentro do método `DO SOMETHING`, $1 já não é o valor do campo mas um ponteiro ao campo. O objeto **referenciado** por $1 ($1-> no código anterior) é o campo real. Portanto, mudar o objeto referenciado vai além do escopo da subrotina, e o campo real não é afetado. Neste exemplo, as duas caixas de alerta dirão "WILLIAMS".
 
 2. Rather than having the method `DO_SOMETHING` "doing something," you can rewrite the method so it returns a value. Thus you would write:
 
 ```4d
-    //Here is some code from the method MY METHOD
- [People]Name:=DO_SOMETHING([People]Name) //Let's say [People]Name value is "williams"
+    //Esta é uma parte do código do método MY_METHO
+ [People]Name:=DO_SOMETHING([People]Name) //Suponha que o valor de [People]Name seja "williams"
  ALERT([People]Name)
 
-    //Here the code of the method DO SOMETHING
+    //Este é o código do método DO_SOMETHING
  $0:=Uppercase($1)
  ALERT($0)
 ```
 
-This second technique of returning a value by a subroutine is called “using a function.” This is described in the [Returning values](#returning-values) paragraph.
+Esta segunda técnica de retornar um valor por uma subrotina se chama " utilizar uma função" This is described in the [Returning values](#returning-values) paragraph.
 
 
 ### Particular cases: objects and collections
 
-You need to pay attention to the fact that Object and Collection data types can only be handled through a reference (i.e. an internal *pointer*).
+Deve prestar atenção ao fato de que os tipos de dados Objeto e Coleção só podem ser manejados através de uma referência (ou seja, um  *ponteiro* interno).
 
-Consequently, when using such data types as parameters, `$1, $2...` do not contain *values* but *references*. Modifying the value of the `$1, $2...` parameters within the subroutine will be propagated wherever the source object or collection is used. This is the same principle as for [pointers](dt_pointer.md#pointers-as-parameters-to-methods), except that `$1, $2...` parameters do not need to be dereferenced in the subroutine.
+Por isso, quando usar esses tipos de dados como parâmetros, `$1, $2...` não contém *valores* mas sim *referências*. A modificação do valor dos parâmetros `$1, $2...` dentro da subrotina se propagará a qualquer lugar onde se utilize o objeto ou coleção fonte. This is the same principle as for [pointers](dt_pointer.md#pointers-as-parameters-to-methods), except that `$1, $2...` parameters do not need to be dereferenced in the subroutine.
 
-For example, consider the `CreatePerson` method that creates an object and sends it as a parameter:
+Por exemplo, considere o método `CreatePerson` que cria um objeto e o envia como parâmetro:
 
 ```4d
   //CreatePerson
@@ -526,7 +526,7 @@ For example, consider the `CreatePerson` method that creates an object and sends
  ALERT(String($person.Age))  
 ```
 
-The `ChangeAge` method adds 10 to the Age attribute of the received object
+O método `ChangeAge` adiciona 10 ao atributo Age do objeto recebido
 
 ```4d
   //ChangeAge
