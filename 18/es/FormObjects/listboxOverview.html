@@ -130,7 +130,7 @@
 <p>In this type of list box, each column must be associated to an expression. The contents of each row is then evaluated per collection element or per entity of the entity selection.</p>
 <p>Each element of the collection or each entity is available as an object that can be accessed through the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/This.301-4310806.en.html">This</a> command. A column expression can be a project method, a variable, or any formula, accessing each entity or collection element object through <code>This</code>, for example <code>This.&lt;propertyPath&gt;</code> (or <code>This.value</code> in case of a collection of scalar values). You can use the <code>LISTBOX SET COLUMN FORMULA</code> and <code>LISTBOX INSERT COLUMN FORMULA</code> commands to modify columns programmatically.</p>
 <p>When the data source is an entity selection, any modifications made on the list box side are automatically saved in the database. On the other hand, modifications made on the database side are visible in the list box after touched entities have been reloaded.</p>
-<p>When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various methods of the <em>Collections</em> theme, you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. For example:</p>
+<p>When the data source is a collection, any modifications made in the list box values are reflected in the collection. On the other hand, if modifications are done on the collection using for example the various methods of the <em>Collections</em> theme, you will need to explicitely notify 4D by reassigning the collection variable to itself, so that the list box contents is refreshed. Por ejemplo:</p>
 <pre><code class="hljs css language-4d">myCol:=myCol.<span class="hljs-function">push</span>(<span class="hljs-string">"new value"</span>) <span class="hljs-comment">//display new value in list box</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="supported-properties"></a><a href="#supported-properties" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Supported Properties</h3>
@@ -201,7 +201,7 @@
 <tr><td><a href="/docs/18/es/FormObjects/propertiesText.html#style-expression">Style Expression</a></td><td></td><td>X</td><td>X</td></tr>
 <tr><td><a href="/docs/18/es/FormObjects/propertiesCoordinatesAndSizing.html#top">Top</a></td><td>X</td><td>X</td><td>X</td></tr>
 <tr><td><a href="/docs/18/es/FormObjects/propertiesBackgroundAndBorder.html#transparent">Transparent</a></td><td>X</td><td>X</td><td>X</td></tr>
-<tr><td><a href="/docs/18/es/FormObjects/propertiesObject.html#type">Type</a></td><td>X</td><td>X</td><td>X</td></tr>
+<tr><td><a href="/docs/18/es/FormObjects/propertiesObject.html#type">Tipo</a></td><td>X</td><td>X</td><td>X</td></tr>
 <tr><td><a href="/docs/18/es/FormObjects/propertiesText.html#underline">Underline</a></td><td>X</td><td>X</td><td>X</td></tr>
 <tr><td><a href="/docs/18/es/FormObjects/propertiesObject.html#variable-or-expression">Variable or Expression</a></td><td>X</td><td>X</td><td></td></tr>
 <tr><td><a href="/docs/18/es/FormObjects/propertiesText.html#vertical-alignment">Vertical Alignment</a></td><td>X</td><td>X</td><td>X</td></tr>
@@ -353,7 +353,7 @@
 <li><code>On Activate</code> (form property)</li>
 <li><code>On Deactivate</code> (form property) ...depending on whether and how you want to visually represent changes of focus in selections.</li>
 </ul>
-<h5><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h5>
+<h5><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h5>
 <p>You have chosen to hide the system highlight and want to display list box selections with a green background color, as shown here:</p>
 <p><img src="/docs/18/assets/en/FormObjects/listbox_styles7.png" alt=""></p>
 <p>For an array type list box, you need to update the <a href="/docs/18/es/FormObjects/propertiesBackgroundAndBorder.html#row-background-color-array">Row Background Color Array</a> by programming. In the JSON form, you have defined the following Row Background Color Array for the list box:</p>
@@ -640,7 +640,7 @@
 <tr><td>text</td><td>text input</td><td>drop-down menu (required list) or combo box (choice list)</td></tr>
 <tr><td>real</td><td>controlled text input (numbers and separators)</td><td>drop-down menu (required list) or combo box (choice list)</td></tr>
 <tr><td>integer</td><td>controlled text input (numbers only)</td><td>drop-down menu (required list) or combo box (choice list) or three-states check box</td></tr>
-<tr><td>boolean</td><td>check box</td><td>drop-down menu (required list)</td></tr>
+<tr><td>booleano</td><td>check box</td><td>drop-down menu (required list)</td></tr>
 <tr><td>color</td><td>background color</td><td>text</td></tr>
 <tr><td>event</td><td>button with label</td><td></td></tr>
 <tr><td></td><td></td><td>All widgets can have an additional unit toggle button or ellipsis button attached to the cell.</td></tr>
@@ -669,7 +669,7 @@
 <p>The only mandatory attribute is &quot;valueType&quot; and its supported values are &quot;text&quot;, &quot;real&quot;, &quot;integer&quot;, &quot;boolean&quot;, &quot;color&quot;, and &quot;event&quot;. The following table lists all the attributes supported in list box object arrays, depending on the &quot;valueType&quot; value (any other attributes are ignored). Display formats are detailed and examples are provided below.</p>
 <table>
 <thead>
-<tr><th></th><th>valueType</th><th>text</th><th>real</th><th>integer</th><th>boolean</th><th>color</th><th>event</th></tr>
+<tr><th></th><th>valueType</th><th>text</th><th>real</th><th>integer</th><th>booleano</th><th>color</th><th>event</th></tr>
 </thead>
 <tbody>
 <tr><td><em>Attributes</em></td><td><em>Description</em></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
@@ -753,7 +753,7 @@
 <blockquote>
 <p>The widget values are defined through an array. If you want to assign an existing 4D list to the widget, you need to use the &quot;requiredListReference&quot;, &quot;requiredListName&quot;, &quot;choiceListReference&quot;, or &quot;choiceListName&quot; attributes.</p>
 </blockquote>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <ul>
 <li>You want to display a drop-down list with only two options: &quot;Open&quot; or &quot;Closed&quot;. &quot;Closed&quot; must be preselected:</li>
 </ul>
@@ -790,7 +790,7 @@
 <li>If the list contains text items representing real values, the decimal separator must be a period (&quot;.&quot;), regardless of the local settings, e.g.: &quot;17.6&quot; &quot;1234.456&quot;.</li>
 </ul>
 </blockquote>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <ul>
 <li>You want to display a drop-down list based on a &quot;colors&quot; list defined in the Tool box (containing the values &quot;blue&quot;, &quot;yellow&quot;, and &quot;green&quot;), save it as a value and display &quot;blue&quot; by default:</li>
 </ul>
