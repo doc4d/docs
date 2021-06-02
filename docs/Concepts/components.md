@@ -23,16 +23,6 @@ The component management mechanisms in 4D require the implementation of the foll
 
 It should be noted that a project can be both a “matrix” and a “host,” in other words, a matrix project can itself use one or more components. However, a component cannot use “sub-components” itself. 
 
-## Interpreted / Compiled
-
-A host project running in interpreted mode can use either interpreted or compiled components. It's possible to install both interpreted and compiled components in the same host project. 
-
-A host project running in compiled mode cannot use interpreted components. In this case, only compiled components can be used.
-
-An interpreted host database that contains interpreted components can be compiled or syntax checked if it doesn't call methods of the interpreted component. Otherwise, a warning dialog box appears when you attempt to launch the compilation or a syntax check and it will not be possible to carry out the operation.
-
-In general, an interpreted method can call a compiled method, but not the reverse, except when using the `EXECUTE METHOD` and `EXECUTE FORMULA` commands (see [Scope of language commands](#scope-of-language-commands)).
-
 ### Protection of components: compilation  
 
 By default, all the project methods of a matrix project installed as a component are potentially visible from the host project. In particular:
