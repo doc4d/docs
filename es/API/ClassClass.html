@@ -107,7 +107,7 @@
 <p><strong>.new</strong>( <em>param</em> : any { <em>;...paramN</em> } ) : 4D.Class</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>param</td><td>any</td><td style="text-align:center">-&gt;</td><td>Parameter(s) to pass to the constructor function</td></tr>
@@ -118,7 +118,7 @@
 <p>The <code>.new()</code> function creates and returns a <code>cs.className</code> object which is a new instance of the class on which it is called. This function is automatically available on all classes from the <a href="/docs/es/Concepts/classes.html#cs"><code>cs</code> class store</a>.</p>
 <p>You can pass one or more optional <em>param</em> parameters, which will be passed to the <a href="/docs/es/Concepts/classes.html#class-constructor">class constructor</a> function (if any) in the className class definition. Within the constructor function, the <a href="/docs/es/Concepts/classes.html#this"><code>This</code></a> is bound to the new object being constructed.</p>
 <p>If <code>.new()</code> is called on a non-existing class, an error is returned.</p>
-<h4><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplos"></a><a href="#ejemplos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplos</h4>
 <p>To create a new instance of the Person class:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$person </span>: cs.Person  
 <span class="hljs-variable">$person</span>:=cs.Person.<span class="hljs-function">new</span>() <span class="hljs-comment">//create the new instance  </span>
@@ -154,7 +154,7 @@ var</span> <span class="hljs-variable">$person </span>: cs.Person
 <p>The <code>.superclass</code> property returns the parent class of the class. A superclass can be a <code>4D.Class</code> object, or a <code>cs.className</code> object. If the class does not have a parent class, the property returns <strong>null</strong>.</p>
 <p>A superclass of a user class is declared in a class by using the <a href="/docs/es/Concepts/classes.html#class-extends-classname"><code>Class extends &lt;superclass&gt;</code></a> keyword.</p>
 <p>This property is <strong>read-only</strong>.</p>
-<h4><a class="anchor" aria-hidden="true" id="examples-1"></a><a href="#examples-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplos-1"></a><a href="#ejemplos-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplos</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$sup</span>:=4D.File.superclass <span class="hljs-comment">//Document</span>
 <span class="hljs-variable">$sup</span>:=4D.Document.superclass <span class="hljs-comment">//Object</span>
 <span class="hljs-variable">$sup</span>:=4D.Object.superclass <span class="hljs-comment">//null</span>

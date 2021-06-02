@@ -70,23 +70,23 @@
 <p>A variant type variable can contain a value of the following data types:</p>
 <ul>
 <li>BLOB</li>
-<li>boolean</li>
-<li>collection</li>
-<li>date</li>
+<li>booleano</li>
+<li>colección</li>
+<li>fecha</li>
 <li>longint</li>
-<li>object</li>
+<li>objeto</li>
 <li>picture</li>
 <li>pointer</li>
 <li>real</li>
 <li>text</li>
 <li>time</li>
 <li>null</li>
-<li>undefined</li>
+<li>indefinido</li>
 </ul>
 <blockquote>
 <p>Arrays cannot be stored in variant variables.</p>
 </blockquote>
-<p>In both interpreted and in compiled modes, a same variant variable can be assigned contents of different types. Unlike regular variable types, the variant variable content type is different from the variant variable type itself. For example:</p>
+<p>In both interpreted and in compiled modes, a same variant variable can be assigned contents of different types. Unlike regular variable types, the variant variable content type is different from the variant variable type itself. Por ejemplo:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_VARIANT</span>(<span class="hljs-variable">$variant</span>)
 
 <span class="hljs-variable">$variant</span>:=<span class="hljs-string">"hello world"</span>
@@ -97,7 +97,7 @@
 <span class="hljs-variable">$vtype</span>:=<span class="hljs-function">Type</span>(<span class="hljs-variable">$variant</span>) <span class="hljs-comment">// 12 (Is variant)</span>
 <span class="hljs-variable">$vtypeVal</span>:=<span class="hljs-function">Value type</span>(<span class="hljs-variable">$variant</span>) <span class="hljs-comment">// 1 (Is real)</span>
 </code></pre>
-<p>You can use variant variables wherever variables are expected, you only need to make sure than the variable content data type is of the expected type. When accessing variant variables, only their current value is taken into account. For example:</p>
+<p>You can use variant variables wherever variables are expected, you only need to make sure than the variable content data type is of the expected type. When accessing variant variables, only their current value is taken into account. Por ejemplo:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">C_VARIANT</span>(<span class="hljs-variable">$v</span>)
 <span class="hljs-variable">$v</span>:=<span class="hljs-string">"hello world"</span>
 <span class="hljs-variable">$v2</span>:=<span class="hljs-variable">$v </span><span class="hljs-comment">//assign variable to another variable</span>

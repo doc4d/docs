@@ -67,7 +67,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/master/docs/Events/overview.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Generalidades</h1></header><article><div><span><p>Form events are events that can lead to the execution of the form method and/or form object method(s). Form events allow you to control the flow of your application and to write code that is executed only when a specific event occurs.</p>
-<p>In your code, you control the events using the <code>FORM Event</code> command, that returns the triggered event. For example:</p>
+<p>In your code, you control the events using the <code>FORM Event</code> command, that returns the triggered event. Por ejemplo:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//code of a button</span><span class="hljs-keyword">
 If</span>(FORM Event.code=On Clicked) 
 <span class="hljs-comment">// do something when the button is clicked</span><span class="hljs-keyword">
@@ -80,7 +80,7 @@ End if</span>
 <p>Each event is returned as an object by the <code>FORM Event</code> command. By default, it contains the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td></td><td></td><td></td></tr>
@@ -88,7 +88,7 @@ End if</span>
 </tbody>
 </table>
 <p><code>Form event code</code> command| |description|text|Name of the form event (e.g. &quot;On After Edit&quot;)|</p>
-<p>Additional properties are returned when the event occurs on specific objects. In particular:</p>
+<p>Additional properties are returned when the event occurs on specific objects. En particular:</p>
 <ul>
 <li><a href="/docs/es/FormObjects/listboxOverview.html#supported-form-events">list boxes</a> and <a href="/docs/es/FormObjects/listboxOverview.html#supported-form-events-1">list box columns</a> return <a href="/docs/es/FormObjects/listboxOverview.html#additional-properties">additional properties</a> such as <code>columnName</code> or <code>isRowSelected</code>.</li>
 <li><a href="/docs/es/FormObjects/viewProAreaOverview.html">4D View Pro areas</a> return for example <code>sheetName</code> or <code>action</code> properties in the <a href="/docs/es/Events/onAfterEdit.html">On After Edit</a> event object.</li>
@@ -109,44 +109,44 @@ End if</span>
 <tr><th>Event</th><th>Object Methods</th><th>Form Method</th><th>Which Objects</th></tr>
 </thead>
 <tbody>
-<tr><td>On Load</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Unload</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Validate</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Clicked</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Double Clicked</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Before Keystroke</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On After Keystroke</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On After Edit</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Getting Focus</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Losing Focus</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Activate</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Deactivate</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Outside Call</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Page Change</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Begin Drag Over</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Drop</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Drag Over</td><td>Yes</td><td>Never</td><td>Involved object only</td></tr>
-<tr><td>On Mouse Enter</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Mouse Move</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Mouse Leave</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Mouse Up</td><td>Yes</td><td>Never</td><td>Involved object only</td></tr>
-<tr><td>On Menu Selected</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Bound variable change</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Data Change</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Plug in Area</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Header</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Printing Detail</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Printing Break</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Printing Footer</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Close Box</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Display Detail</td><td>Yes</td><td>Yes</td><td>All objects</td></tr>
-<tr><td>On Open Detail</td><td>Yes (List box)</td><td>Yes</td><td>None except List boxes</td></tr>
-<tr><td>On Close Detail</td><td>Yes (List box)</td><td>Yes</td><td>None except List boxes</td></tr>
-<tr><td>On Resize</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Selection Change</td><td>Yes</td><td>Yes</td><td>Involved object only</td></tr>
-<tr><td>On Load Record</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Timer</td><td>Never</td><td>Yes</td><td>None</td></tr>
-<tr><td>On Scroll</td><td>Yes</td><td>Never</td><td>Involved object only</td></tr>
+<tr><td>On Load</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Unload</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Validate</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Clicked</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Double Clicked</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Before Keystroke</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On After Keystroke</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On After Edit</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Getting Focus</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Losing Focus</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Activate</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Deactivate</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Outside Call</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Page Change</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Begin Drag Over</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Drop</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Drag Over</td><td>Sí</td><td>Never</td><td>Involved object only</td></tr>
+<tr><td>On Mouse Enter</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Mouse Move</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Mouse Leave</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Mouse Up</td><td>Sí</td><td>Never</td><td>Involved object only</td></tr>
+<tr><td>On Menu Selected</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Bound variable change</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Data Change</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Plug in Area</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Header</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Printing Detail</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Printing Break</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Printing Footer</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Close Box</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Display Detail</td><td>Sí</td><td>Sí</td><td>All objects</td></tr>
+<tr><td>On Open Detail</td><td>Yes (List box)</td><td>Sí</td><td>None except List boxes</td></tr>
+<tr><td>On Close Detail</td><td>Yes (List box)</td><td>Sí</td><td>None except List boxes</td></tr>
+<tr><td>On Resize</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Selection Change</td><td>Sí</td><td>Sí</td><td>Involved object only</td></tr>
+<tr><td>On Load Record</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Timer</td><td>Never</td><td>Sí</td><td>None</td></tr>
+<tr><td>On Scroll</td><td>Sí</td><td>Never</td><td>Involved object only</td></tr>
 <tr><td>On Before Data Entry</td><td>Yes (List box)</td><td>Never</td><td>Involved object only</td></tr>
 <tr><td>On Column Moved</td><td>Yes (List box)</td><td>Never</td><td>Involved object only</td></tr>
 <tr><td>On Row Moved</td><td>Yes (List box)</td><td>Never</td><td>Involved object only</td></tr>
@@ -154,7 +154,7 @@ End if</span>
 <tr><td>On Header Click</td><td>Yes (List box and 4D View Pro Area)</td><td>Never</td><td>Involved object only</td></tr>
 <tr><td>On Footer Click</td><td>Yes (List box)</td><td>Never</td><td>Involved object only</td></tr>
 <tr><td>On After Sort</td><td>Yes (List box)</td><td>Never</td><td>Involved object only</td></tr>
-<tr><td>On Long Click</td><td>Yes (Button)</td><td>Yes</td><td>Involved object only</td></tr>
+<tr><td>On Long Click</td><td>Yes (Button)</td><td>Sí</td><td>Involved object only</td></tr>
 <tr><td>On Alternative Click</td><td>Yes (Button and List box)</td><td>Never</td><td>Involved object only</td></tr>
 <tr><td>On Expand</td><td>Yes (Hier. list and list box)</td><td>Never</td><td>Involved object only</td></tr>
 <tr><td>On Collapse</td><td>Yes (Hier. list and list box)</td><td>Never</td><td>Involved object only</td></tr>

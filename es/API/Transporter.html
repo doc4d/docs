@@ -63,7 +63,7 @@
 <p>Possible values are:</p>
 <table>
 <thead>
-<tr><th>Value</th><th>Constants</th><th>Comment</th></tr>
+<tr><th>Valor</th><th>Constants</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>CRAM-MD5</td><td><code>IMAP authentication CRAM MD5</code></td><td>Authentication using CRAM-MD5 protocol</td></tr>
@@ -91,7 +91,7 @@
 <p>Possible values are:</p>
 <table>
 <thead>
-<tr><th>Value</th><th>Constants</th><th>Comment</th></tr>
+<tr><th>Valor</th><th>Constants</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>APOP</td><td><code>POP3 authentication APOP</code></td><td>Authentication using APOP protocol (POP3 only)</td></tr>
@@ -120,7 +120,7 @@
 <p>Possible values are:</p>
 <table>
 <thead>
-<tr><th>Value</th><th>Constants</th><th>Comment</th></tr>
+<tr><th>Valor</th><th>Constants</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>CRAM-MD5</td><td><code>SMTP authentication CRAM MD5</code></td><td>Authentication using CRAM-MD5 protocol</td></tr>
@@ -153,7 +153,7 @@
 <p><strong>Possible values:</strong></p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><em>headerCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><em>bodyCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr>
@@ -200,7 +200,7 @@
 <p><strong>Possible values:</strong></p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><em>headerCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><em>bodyCharset</em>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr>
@@ -310,7 +310,7 @@
 <p><strong>.checkConnection()</strong> : Object</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>Objeto</td><td style="text-align:center">&lt;-</td><td>Status of the transporter object connection</td></tr>
@@ -322,13 +322,13 @@
 <p>The function sends a request to the mail server and returns an object describing the mail status. This object can contain the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th></th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th></th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>success</td><td></td><td>boolean</td><td>True if the check is successful, False otherwise</td></tr>
+<tr><td>success</td><td></td><td>booleano</td><td>True if the check is successful, False otherwise</td></tr>
 <tr><td>status</td><td></td><td>number</td><td>(SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing)</td></tr>
 <tr><td>statusText</td><td></td><td>text</td><td>Status message returned by the mail server, or last error returned in the 4D error stack</td></tr>
-<tr><td>errors</td><td></td><td>collection</td><td>4D error stack (not returned if a mail server response is received)</td></tr>
+<tr><td>errors</td><td></td><td>colección</td><td>4D error stack (not returned if a mail server response is received)</td></tr>
 <tr><td></td><td>[ ].errCode</td><td>number</td><td>4D error code</td></tr>
 <tr><td></td><td>[ ].message</td><td>text</td><td>Description of the 4D error</td></tr>
 <tr><td></td><td>[ ].componentSignature</td><td>text</td><td>Signature of the internal component which returned the error</td></tr>

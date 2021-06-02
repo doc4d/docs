@@ -222,7 +222,7 @@
 <p>The row control array must be of the Longint type and include the same number of rows as the list box. Each element of the <em>Row Control Array</em> defines the interface status of its corresponding row in the list box. Three interface properties are available using constants in the &quot;List Box&quot; constant theme:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>lk row is disabled</td><td>2</td><td>The corresponding row is disabled. The text and controls such as check boxes are dimmed or grayed out. Enterable text input areas are no longer enterable. Default value: Enabled</td></tr>
@@ -238,7 +238,7 @@
 <pre><code class="hljs css language-4d"> aLControlArr{<span class="hljs-number">8</span>}:=lk row is not selectable + lk row is disabled
 </code></pre>
 <p><img src="/docs/assets/en/FormObjects/listbox_styles6.png" alt=""></p>
-<p>Note that setting properties for an element overrides any other values for this element (if not reset). For example:</p>
+<p>Note that setting properties for an element overrides any other values for this element (if not reset). Por ejemplo:</p>
 <pre><code class="hljs css language-4d"> aLControlArr{<span class="hljs-number">6</span>}:=lk row is disabled + lk row is not selectable 
  <span class="hljs-comment">//sets row 6 as disabled AND not selectable</span>
  aLControlArr{<span class="hljs-number">6</span>}:=lk row is disabled 
