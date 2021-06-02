@@ -148,10 +148,10 @@
 <p><strong>.all</strong> ( { <em>settings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>settings</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
+<tr><td>parámetros</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>References on all entities related to the Dataclass</td></tr>
 </tbody>
 </table>
@@ -160,17 +160,17 @@
 <p>The entities are returned in the default order, which is initially the order in which they were created. Note however that, if entities have been deleted and new ones added, the default order does not reflect the creation order anymore.</p>
 <p>If no corresponding entity is found, an empty entity selection is returned.</p>
 <p>Lazy loading is applied.</p>
-<p><strong>settings</strong></p>
+<p><strong>parámetros</strong></p>
 <p>In the optional <em>settings</em> parameter, you can pass an object containing additional options. The following property is supported:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>context</td><td>Texto</td><td>Label for the optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is <a href="/docs/Rx/es/ORDA/entities.html#client-server-optimization">designed for ORDA client/server processing</a>.</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$allEmp </span>: cs.EmployeeSelection
  <span class="hljs-variable">$allEmp</span>:=ds.Employee.<span class="hljs-function">all</span>()
 </code></pre>
@@ -189,11 +189,11 @@
 <p><strong>.fromCollection</strong>( <em>objectCol</em> : Collection { ; <em>settings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>objectCol</td><td>Colección</td><td style="text-align:center">-&gt;</td><td>Collection of objects to be mapped with entities</td></tr>
-<tr><td>settings</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
+<tr><td>parámetros</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Entity selection filled from the collection</td></tr>
 </tbody>
 </table>
@@ -228,11 +228,11 @@
 </blockquote>
 <p><strong>Stamp</strong></p>
 <p>If a __STAMP attribute is given, a check is performed with the stamp in the datastore and an error can be returned (&quot;Given stamp does not match current one for record# XX of table XXXX&quot;). For more information, see <a href="/docs/Rx/es/ORDA/entities.html#entity-locking">Entity locking</a>.</p>
-<p><strong>settings</strong></p>
+<p><strong>parámetros</strong></p>
 <p>In the optional <em>settings</em> parameter, you can pass an object containing additional options. The following property is supported:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>context</td><td>Texto</td><td>Label for the optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is <a href="/docs/Rx/es/ORDA/entities.html#client-server-optimization">designed for ORDA client/server processing</a>.</td></tr>
@@ -356,11 +356,11 @@
 <p><strong>.get</strong>( <em>primaryKey</em> : Integer { ; <em>settings</em> : Object } ) : 4D.Entity<br><strong>.get</strong>( <em>primaryKey</em> : Text { ; <em>settings</em> : Object } ) : 4D.Entity</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>primaryKey</td><td>Integer OR Text</td><td style="text-align:center">-&gt;</td><td>Primary key value of the entity to retrieve</td></tr>
-<tr><td>settings</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
+<tr><td>parámetros</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
 <tr><td>Result</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Entity matching the designated primary key</td></tr>
 </tbody>
 </table>
@@ -369,11 +369,11 @@
 <p>In <em>primaryKey</em>, pass the primary key value of the entity to retrieve. The value type must match the primary key type set in the datastore (Integer or Text). You can also make sure that the primary key value is always returned as Text by using the <a href="/docs/Rx/es/API/entityClass.html#getkey"><code>.getKey()</code></a> function with the <code>dk key as string</code> parameter.</p>
 <p>If no entity is found with <em>primaryKey</em>, a <strong>Null</strong> entity is returned.</p>
 <p>Lazy loading is applied, which means that related data is loaded from disk only when it is required.</p>
-<p><strong>settings</strong></p>
+<p><strong>parámetros</strong></p>
 <p>In the optional <em>settings</em> parameter, you can pass an object containing additional options. The following property is supported:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>context</td><td>Texto</td><td>Label for the automatic optimization context applied to the entity. This context will be used by the subsequent code that loads the entity so that it can benefit from the optimization. This feature is <a href="/docs/Rx/es/ORDA/entities.html#client-server-optimization">designed for ORDA client/server processing</a>.</td></tr>
@@ -419,7 +419,7 @@
 <p><strong>.getDataStore()</strong> : cs.DataStore</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>cs.DataStore</td><td style="text-align:center">&lt;-</td><td>Datastore of the dataclass</td></tr>
@@ -432,7 +432,7 @@
 <li>the main datastore, as returned by the <code>ds</code> command.</li>
 <li>a remote datastore, opened using the <code>Open datastore</code> command.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-7"></a><a href="#example-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-1"></a><a href="#ejemplo-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>The <strong><em>SearchDuplicate</em></strong> project method searches for duplicated values in any dataclass.</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$pet </span>: cs.CatsEntity
  <span class="hljs-variable">$pet</span>:=ds.Cats.<span class="hljs-function">all</span>().<span class="hljs-function">first</span>() <span class="hljs-comment">//get an entity</span>
@@ -461,7 +461,7 @@
 <p><strong>.getInfo()</strong> : Object</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>Objeto</td><td>&lt;-</td><td>Information on the dataclass</td></tr>
@@ -472,12 +472,12 @@
 <p><strong>Returned object</strong></p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>name</td><td>Texto</td><td>Name of the dataclass</td></tr>
 <tr><td>primaryKey</td><td>Texto</td><td>Name of the primary key of the dataclass</td></tr>
-<tr><td>tableNumber</td><td>Integer</td><td>Internal 4D table number</td></tr>
+<tr><td>tableNumber</td><td>Entero</td><td>Internal 4D table number</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="example-1-3"></a><a href="#example-1-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
@@ -521,7 +521,7 @@
 <p><strong>.new()</strong> : 4D.Entity</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>4D.Entity</td><td>&lt;-</td><td>New entity matching the Dataclass</td></tr>
@@ -531,7 +531,7 @@
 <p>The <code>.new( )</code> function creates in memory and returns a new blank entity related to the Dataclass.</p>
 <p>The entity object is created in memory and is not saved in the database until the <a href="/docs/Rx/es/API/entityClass.html#save"><code>.save( )</code></a> function is called. If the entity is deleted before being saved, it cannot be recovered.</p>
 <p><strong>4D Server</strong>: In client-server, if the primary key of the corresponding table is auto-incremented, it will be calculated when the entity is saved on the server.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-8"></a><a href="#example-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-2"></a><a href="#ejemplo-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>This example creates a new entity in the &quot;Log&quot; Dataclass and records information in the &quot;info&quot; attribute:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$entity </span>: cs.LogEntity
  <span class="hljs-variable">$entity</span>:=ds.Log.<span class="hljs-function">new</span>() <span class="hljs-comment">//create a reference</span>
@@ -552,10 +552,10 @@
 <p><strong>.newSelection</strong>( { <em>keepOrder</em> : Integer } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>keepOrder</td><td>Integer</td><td>-&gt;</td><td><code>dk keep ordered</code>: creates an ordered entity selection,<br><code>dk non ordered</code>: creates an unordered entity selection (default if omitted)</td></tr>
+<tr><td>keepOrder</td><td>Entero</td><td>-&gt;</td><td><code>dk keep ordered</code>: creates an ordered entity selection,<br><code>dk non ordered</code>: creates an unordered entity selection (default if omitted)</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td>&lt;-</td><td>New blank entity selection related to the dataclass</td></tr>
 </tbody>
 </table>
@@ -566,7 +566,7 @@
 </blockquote>
 <p>If you want to create an ordered entity selection, pass the <code>dk keep ordered</code> selector in the <em>keepOrder</em> parameter. By default if you omit this parameter, or if you pass the <code>dk non ordered</code> selector, the method creates an unordered entity selection. Unordered entity selections are faster but you cannot rely on entity positions. For more information, please see <a href="/docs/Rx/es/ORDA/dsmapping.html#ordered-or-unordered-entity-selection">Ordered vs Unordered entity selections</a>.</p>
 <p>When created, the entity selection does not contain any entities (<code>mySelection.length</code> returns 0). This method lets you build entity selections gradually by making subsequent calls to the <a href="/docs/Rx/es/API/entitySelectionClass.html#add"><code>add()</code></a> function.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-9"></a><a href="#example-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-3"></a><a href="#ejemplo-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$USelection</span>; <span class="hljs-variable">$OSelection </span>: cs.EmployeeSelection
  <span class="hljs-variable">$USelection</span>:=ds.Employee.<span class="hljs-function">newSelection</span>() <span class="hljs-comment">//create an unordered empty entity selection</span>
  <span class="hljs-variable">$OSelection</span>:=ds.Employee.<span class="hljs-function">newSelection</span>(dk keep ordered) <span class="hljs-comment">//create an ordered empty entity selection</span>
@@ -587,7 +587,7 @@
 <p><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : any } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>queryString</td><td>Texto</td><td>-&gt;</td><td>Search criteria as string</td></tr>
@@ -645,10 +645,10 @@
 <tr><td></td><td>===, IS</td><td>Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic</td></tr>
 <tr><td>Not equal to</td><td>#, !=</td><td>Supports the wildcard (@)</td></tr>
 <tr><td></td><td>!==, IS NOT</td><td>Considers the @ as a standard character</td></tr>
-<tr><td>Less than</td><td>&lt;</td><td></td></tr>
-<tr><td>Greater than</td><td>&gt;</td><td></td></tr>
-<tr><td>Less than or equal to</td><td>&lt;=</td><td></td></tr>
-<tr><td>Greater than or equal to</td><td>&gt;=</td><td></td></tr>
+<tr><td>Menor que</td><td>&lt;</td><td></td></tr>
+<tr><td>Mayor que</td><td>&gt;</td><td></td></tr>
+<tr><td>Menor o igual que</td><td>&lt;=</td><td></td></tr>
+<tr><td>Mayor o igual que</td><td>&gt;=</td><td></td></tr>
 <tr><td>Included in</td><td>IN</td><td>Gets data equal to at least one of the values in a collection or in a set of values, supports the wildcard (@)</td></tr>
 <tr><td>Not condition applied on a statement</td><td>NOT</td><td>Parenthesis are mandatory when NOT is used before a statement containing several operators</td></tr>
 <tr><td>Contains keyword</td><td>%</td><td>Keywords can be used in attributes of string or picture type</td></tr>
@@ -670,7 +670,7 @@
 </thead>
 <tbody>
 <tr><td>AND</td><td>&amp;, &amp;&amp;, and</td></tr>
-<tr><td>OR</td><td>|,||, or</td></tr>
+<tr><td>O</td><td>|,||, or</td></tr>
 </tbody>
 </table>
 </li>
@@ -680,7 +680,7 @@
 <p>*If you use this statement, the returned entity selection is ordered (for more information, please refer to <a href="/docs/Rx/es/ORDA/dsmapping.html#ordered-or-unordered-entity-selection">Ordered vs Unordered entity selections</a>).</p>
 </blockquote>
 <p><strong>Using quotes</strong></p>
-<p>When you use quotes within queries, you must use single quotes ' ' inside the query and double quotes &quot; &quot; to enclose the whole query, otherwise an error is returned. For example:</p>
+<p>When you use quotes within queries, you must use single quotes ' ' inside the query and double quotes &quot; &quot; to enclose the whole query, otherwise an error is returned. Por ejemplo:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-string">"employee.name = 'smith' AND employee.firstname = 'john'"</span>
 </code></pre>
 <blockquote>
@@ -699,7 +699,7 @@
 </thead>
 <tbody>
 <tr><td>Definition</td><td>Parameters are inserted as :paramIndex (for example :1, :2...) in queryString and their corresponding values are provided by the sequence of value parameter(s). You can use up to 128 value parameters</td><td>Parameters are inserted as :paramName (for example :myparam) and their values are provided in the attributes and/or parameters objects in the querySettings parameter</td></tr>
-<tr><td>Example</td><td>$r:=class.query(&quot;:1=:2&quot;;&quot;city&quot;;&quot;Chicago&quot;)</td><td>$o.attributes:=New object(&quot;att&quot;;&quot;city&quot;)<br> $o.parameters:=New object(&quot;name&quot;;&quot;Chicago&quot;)<br> $r:=class.query(&quot;:att=:name&quot;;$o)</td></tr>
+<tr><td>Ejemplo</td><td>$r:=class.query(&quot;:1=:2&quot;;&quot;city&quot;;&quot;Chicago&quot;)</td><td>$o.attributes:=New object(&quot;att&quot;;&quot;city&quot;)<br> $o.parameters:=New object(&quot;name&quot;;&quot;Chicago&quot;)<br> $r:=class.query(&quot;:att=:name&quot;;$o)</td></tr>
 </tbody>
 </table>
 <p>You can mix all argument kinds in <em>queryString</em>. A <em>queryString</em> can contain, for <em>attributePath</em>, <em>formula</em> and <em>value</em> parameters:</p>
@@ -719,7 +719,7 @@
 </code></pre>
 <p>In this case if the user enters <em>smith OR status='private'</em> in the <em>myname</em> area, it will not be interpreted in the query string, but only passed as a value. Looking for a person named &quot;smith OR status='private'&quot; will just fail.</p></li>
 <li><p>It prevents having to worry about formatting or character issues, especially when handling <em>attributePath</em> or <em>value</em> parameters that might contain non-alphanumeric characters such as &quot;.&quot;, &quot;['...</p></li>
-<li><p>It allows the use of variables or expressions in query arguments. Examples:</p>
+<li><p>It allows the use of variables or expressions in query arguments. Ejemplos:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$result</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">query</span>(<span class="hljs-string">"address.city = :1 &amp; name =:2"</span>;<span class="hljs-variable">$city</span>;<span class="hljs-variable">$myVar</span>+<span class="hljs-string">"@"</span>)
 <span class="hljs-variable">$result2</span>:=<span class="hljs-variable">$col</span>.<span class="hljs-function">query</span>(<span class="hljs-string">"company.name = :1"</span>;<span class="hljs-string">"John's Pizzas"</span>)
 </code></pre></li>
@@ -793,11 +793,11 @@ ds<span class="hljs-selector-class">.People</span><span class="hljs-selector-cla
 <p>In the <em>querySettings</em> parameter, you can pass an object containing additional options. The following properties are supported:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>parameters</td><td>Objeto</td><td><strong>Named placeholders for values</strong> used in the <em>queryString</em> or <em>formula</em>. Values are expressed as property / value pairs, where property is the placeholder name inserted for a value in the <em>queryString</em> or <em>formula</em> (&quot;:placeholder&quot;) and value is the value to compare. You can mix indexed placeholders (values directly passed in value parameters) and named placeholder values in the same query.</td></tr>
-<tr><td>attributes</td><td>Objeto</td><td><strong>Named placeholders for attribute paths</strong> used in the <em>queryString</em> or <em>formula</em>. Attributes are expressed as property / value pairs, where property is the placeholder name inserted for an attribute path in the <em>queryString</em> or <em>formula</em> (&quot;:placeholder&quot;), and value can be a string or a collection of strings. Each value is a path that can designate either a scalar or a related attribute of the dataclass or a property in an object field of the dataclass<p><table><tr><th>Type</th><th>Description</th></tr><tr><td>Cadena</td><td>attributePath expressed using the dot notation, e.g. &quot;name&quot; or &quot;user.address.zipCode&quot;</td></tr><tr><td>Collection of strings</td><td>Each string of the collection represents a level of attributePath, e.g. [&quot;name&quot;] or [&quot;user&quot;,&quot;address&quot;,&quot;zipCode&quot;]. Using a collection allows querying on attributes with names that are not compliant with dot notation, e.g. [&quot;4Dv17.1&quot;,&quot;en/fr&quot;]</td></tr></table>You can mix indexed placeholders (values directly passed in <em>value</em> parameters) and named placeholder values in the same query.</td></tr>
+<tr><td>attributes</td><td>Objeto</td><td><strong>Named placeholders for attribute paths</strong> used in the <em>queryString</em> or <em>formula</em>. Attributes are expressed as property / value pairs, where property is the placeholder name inserted for an attribute path in the <em>queryString</em> or <em>formula</em> (&quot;:placeholder&quot;), and value can be a string or a collection of strings. Each value is a path that can designate either a scalar or a related attribute of the dataclass or a property in an object field of the dataclass<p><table><tr><th>Tipo</th><th>Description</th></tr><tr><td>Cadena</td><td>attributePath expressed using the dot notation, e.g. &quot;name&quot; or &quot;user.address.zipCode&quot;</td></tr><tr><td>Collection of strings</td><td>Each string of the collection represents a level of attributePath, e.g. [&quot;name&quot;] or [&quot;user&quot;,&quot;address&quot;,&quot;zipCode&quot;]. Using a collection allows querying on attributes with names that are not compliant with dot notation, e.g. [&quot;4Dv17.1&quot;,&quot;en/fr&quot;]</td></tr></table>You can mix indexed placeholders (values directly passed in <em>value</em> parameters) and named placeholder values in the same query.</td></tr>
 <tr><td>args</td><td>Objeto</td><td>Parameter(s) to pass to formulas, if any. The <strong>args</strong> object will be received in $1 within formulas and thus its values will be available through <em>$1.property</em> (see example 3).</td></tr>
 <tr><td>allowFormulas</td><td>Booleano</td><td>True to allow the formula calls in the query (default). Pass false to disallow formula execution. If set to false and <code>query()</code> is given a formula, an error is sent (1278 - Formula not allowed in this member method).</td></tr>
 <tr><td>context</td><td>Texto</td><td>Label for the automatic optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is designed for client/server processing; for more information, please refer to the <strong>Client/server optimization</strong> section.</td></tr>

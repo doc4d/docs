@@ -91,7 +91,7 @@
 <li>Thereafter, the name can include any letter, digit, the underscore character (&quot;_&quot;), or the dollar character (&quot;$&quot;).</li>
 <li>Property names are case sensitive.</li>
 </ul>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-4d">myObject.myAttribute:=<span class="hljs-string">"10"</span>
 <span class="hljs-variable">$value</span>:=<span class="hljs-variable">$clientObj</span>.data.address.city
 </code></pre>
@@ -101,7 +101,7 @@
 <p>See also <a href="https://www.ecma-international.org/ecma-262/5.1/#sec-7.6">ECMA Script standard</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="parámetros"></a><a href="#parámetros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parámetros</h2>
 <p>Parameter names must start with a <code>$</code> character and follow the same rules as <a href="#variables">variable names</a>.</p>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">Function</span><span class="hljs-function"> getArea</span>(<span class="hljs-variable">$width </span>: Integer; <span class="hljs-variable">$height </span>: Integer)-&gt; <span class="hljs-variable">$area </span>: Integer
 
 #<span class="hljs-function">DECLARE </span>(<span class="hljs-variable">$i </span>: Integer ; <span class="hljs-variable">$param </span>: Date) -&gt; <span class="hljs-variable">$myResult </span>: Object
@@ -114,7 +114,7 @@
 <li>Do not use reserved names, i.e. 4D command names (<code>Date</code>, <code>Time</code>, etc), keywords (<code>If</code>, <code>For</code>, etc.), or constant names (<code>Euro</code>, <code>Black</code>, <code>Friday</code>, etc.).</li>
 <li>Project method names are case insensitive.</li>
 </ul>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">If</span>(New client)
 DELETE DUPLICATED VALUES
 <span class="hljs-function">APPLY TO SELECTION</span>([Employees];INCREASE SALARIES)
@@ -123,7 +123,7 @@ DELETE DUPLICATED VALUES
 <blockquote>
 <p>When you call a method, you just type its name. However, some 4D built-in commands, such as <code>ON EVENT CALL</code>, as well as all plug-in commands, expect the name of a method as a string when a method parameter is passed.</p>
 </blockquote>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//Este comando espera un método (función) o una fórmula</span>
 <span class="hljs-function">QUERY BY FORMULA</span>([aTable];Special query)
     <span class="hljs-comment">//Este comando espera un método (procedimiento) o una instrucción</span>
@@ -140,7 +140,7 @@ DELETE DUPLICATED VALUES
 <li>Do not use reserved names, i.e. 4D command names (<code>Date</code>, <code>Time</code>, etc), keywords (<code>If</code>, <code>For</code>, etc.), or constant names (<code>Euro</code>, <code>Black</code>, <code>Friday</code>, etc.).</li>
 <li>Additional rules must be respected when the database must be handled via SQL: only the characters _0123456789abcdefghijklmnopqrstuvwxyz are accepted, and the name must not include any SQL keywords (command, attribute, etc.).</li>
 </ul>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">FORM SET INPUT</span>([Clients];<span class="hljs-string">"Entry"</span>)
 <span class="hljs-function">ADD RECORD</span>([Letters])
 [Orders]Total:=<span class="hljs-function">Sum</span>([Line]Amount)
@@ -161,7 +161,7 @@ DELETE DUPLICATED VALUES
 <li>Do not use reserved names, i.e. 4D command names (<code>Date</code>, <code>Time</code>, etc), keywords (<code>If</code>, <code>For</code>, etc.), or constant names (<code>Euro</code>, <code>Black</code>, <code>Friday</code>, etc.).</li>
 <li>Variable names are case insensitive.</li>
 </ul>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">For</span>(<span class="hljs-variable">$vlRecord</span>;<span class="hljs-number">1</span>;<span class="hljs-number">100</span>) <span class="hljs-comment">//local variable</span>
 <span class="hljs-variable">$vsMyString</span>:=<span class="hljs-string">"Hello there"</span> <span class="hljs-comment">//local variable</span><span class="hljs-keyword">
 var</span> <span class="hljs-variable">$vName</span>; <span class="hljs-variable">$vJob </span>: Text <span class="hljs-comment">//local variales </span><span class="hljs-keyword">
@@ -175,7 +175,7 @@ If</span>(bValidate=<span class="hljs-number">1</span>) <span class="hljs-commen
 <li>String names can contain any characters.</li>
 <li>String names are case insensitive.</li>
 </ul>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function">DIALOG</span>([Storage];<span class="hljs-string">"Note box"</span>+<span class="hljs-function">String</span>(<span class="hljs-variable">$vlStage</span>))
 <span class="hljs-function">OBJECT SET FONT</span>(*;<span class="hljs-string">"Binfo"</span>;<span class="hljs-string">"Times"</span>)
 <span class="hljs-function">USE NAMED SELECTION</span>([Customers];<span class="hljs-string">"Closed"</span>)<span class="hljs-comment">//Process Named Selection</span>

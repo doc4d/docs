@@ -109,11 +109,11 @@
 <p><strong>Create entity selection</strong> ( <em>dsTable</em> : Table { ; <em>settings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>dsTable</td><td>Table</td><td style="text-align:center">-&gt;</td><td>Table in the 4D database whose current selection will be used to build the entity selection</td></tr>
-<tr><td>settings</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
+<tr><td>parámetros</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Entity selection matching the dataclass related to the given table</td></tr>
 </tbody>
 </table>
@@ -124,13 +124,13 @@
 <p>In the optional <em>settings</em> parameter, you can pass an object containing the following property:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>context</td><td>Texto</td><td>Label for the <a href="/docs/Rx/es/ORDA/entities.html#clientserver-optimization">optimization context</a> applied to the entity selection.</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
 <span class="hljs-function">ALL RECORDS</span>([Employee])
 <span class="hljs-variable">$employees</span>:=<span class="hljs-function">Create entity selection</span>([Employee]) 
@@ -161,7 +161,7 @@
 </ul>
 <blockquote>
 <blockquote>
-<p><strong>Warning</strong>: <code>EntitySelection[index]</code> is a non assignable expression, which means that it cannot be used as en editable entity reference with methods like <a href="/docs/Rx/es/API/entityClass.html#lock"><code>.lock()</code></a> or <a href="/docs/Rx/es/API/entityClass.html#save"><code>.save()</code></a>. To work with the corresponding entity, you need to assign the returned expression to an assignable expression, such as a variable. Examples:</p>
+<p><strong>Warning</strong>: <code>EntitySelection[index]</code> is a non assignable expression, which means that it cannot be used as en editable entity reference with methods like <a href="/docs/Rx/es/API/entityClass.html#lock"><code>.lock()</code></a> or <a href="/docs/Rx/es/API/entityClass.html#save"><code>.save()</code></a>. To work with the corresponding entity, you need to assign the returned expression to an assignable expression, such as a variable. Ejemplos:</p>
 </blockquote>
 </blockquote>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">all</span>() <span class="hljs-comment">//create the entity selection</span>
@@ -174,7 +174,7 @@
  <span class="hljs-variable">$entity</span>.lastName:=<span class="hljs-string">"Smith"</span> <span class="hljs-comment">//OK</span>
  <span class="hljs-variable">$entity</span>.<span class="hljs-function">save</span>() <span class="hljs-comment">//OK</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-1"></a><a href="#ejemplo-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee </span>: cs.EmployeeEntity
  <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>)
@@ -201,7 +201,7 @@
 </ul>
 <p>When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned. In this case, if no entities are returned, the result is an empty entity selection.</p>
 <p>If the attribute does not exist in the entity selection, an error is returned.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-1"></a><a href="#example-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>Projection of storage values:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$firstNames </span>: Collection
  <span class="hljs-variable">$entitySelection</span>:=ds.Employee.<span class="hljs-function">all</span>()
@@ -242,7 +242,7 @@
 <p><strong>.add</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to be added to the entity selection</td></tr>
@@ -264,7 +264,7 @@
 </blockquote>
 <p>The modified entity selection is returned by the function, so that function calls can be chained.</p>
 <p>An error occurs if <em>entity</em> and the entity selection are not related to the same Dataclass. If <em>entity</em> is Null, no error is raised.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-2"></a><a href="#example-1-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-1"></a><a href="#example-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee </span>: cs.EmployeeEntity
  <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"S@"</span>)
@@ -298,7 +298,7 @@
 <p><strong>.and</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.and</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to intersect with</td></tr>
@@ -317,7 +317,7 @@
 </blockquote>
 <p>If the original entity selection or the <em>entitySelection</em> parameter is empty, or if the <em>entity</em> is Null, an empty entity selection is returned.</p>
 <p>If the original entity selection and the parameter are not related to the same dataclass, an error is raised.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-3"></a><a href="#example-1-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-2"></a><a href="#example-1-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees</span>; <span class="hljs-variable">$result </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee </span>: cs.EmployeeEntity
  <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>)   
@@ -351,7 +351,7 @@
 <p><strong>.average</strong>( <em>attributePath</em> : Text ) : Real</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Attribute path to be used for calculation</td></tr>
@@ -371,7 +371,7 @@
 <li><em>attributePath</em> is a related attribute,</li>
 <li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-4"></a><a href="#example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-2"></a><a href="#ejemplo-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>We want to obtain a list of employees whose salary is higher than the average salary:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$averageSalary </span>: Real<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$moreThanAv </span>: cs.EmployeeSelection
@@ -392,7 +392,7 @@
 <p><strong>.contains</strong>( <em>entity</em> : 4D.Entity ) : Boolean</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to evaluate</td></tr>
@@ -403,7 +403,7 @@
 <p>The <code>.contains()</code> function returns true if entity reference belongs to the entity selection, and false otherwise.</p>
 <p>In <em>entity</em>, specify the entity to search for in the entity selection. If entity is Null, the function will return false.</p>
 <p>If <em>entity</em> and the entity selection do not belong to the same dataclass, an error is raised.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-5"></a><a href="#example-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-3"></a><a href="#ejemplo-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee </span>: cs.EmployeeEntity
 
@@ -430,7 +430,7 @@
 <p><strong>.count</strong>( <em>attributePath</em> : Text ) : Real</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
@@ -447,7 +447,7 @@
 <li><em>attributePath</em> is a related attribute,</li>
 <li><em>attributePath</em> is not found in the entity selection dataclass.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-6"></a><a href="#example-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-4"></a><a href="#ejemplo-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>We want to find out the total number of employees for a company without counting any whose job title has not been specified:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$sel </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$count </span>: Real
@@ -469,10 +469,10 @@
 <p><strong>.copy</strong>( { <em>option</em> : Integer } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>ck shared</code>: return a shareable entity selection</td></tr>
+<tr><td>option</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>ck shared</code>: return a shareable entity selection</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Copy of the entity selection</td></tr>
 </tbody>
 </table>
@@ -485,7 +485,7 @@
 <blockquote>
 <p>For information on the shareable property of entity selections, please refer to the <a href="/docs/Rx/es/ORDA/entities.html#shareable-or-alterable-entity-selections">Shareable or alterable entity selections</a> section.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="example-7"></a><a href="#example-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-5"></a><a href="#ejemplo-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>You create a new, empty entity selection of products when the form is loaded:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> Case of</span>
     :(Form event code=On Load)
@@ -522,11 +522,11 @@
 <p><strong>.distinct</strong>( <em>attributePath</em> : Text { ; <em>option</em> : Integer } ) : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of attribute whose distinct values you want to get</td></tr>
-<tr><td>option</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>dk diacritical</code>: diacritical evaluation (&quot;A&quot; # &quot;a&quot; for example)</td></tr>
+<tr><td>option</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk diacritical</code>: diacritical evaluation (&quot;A&quot; # &quot;a&quot; for example)</td></tr>
 <tr><td>Result</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection with only distinct values</td></tr>
 </tbody>
 </table>
@@ -547,7 +547,7 @@
 <li><em>attributePath</em> is a related attribute,</li>
 <li><em>attributePath</em> is not found in the entity selection dataclass.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplos"></a><a href="#ejemplos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplos</h4>
 <p>You want to get a collection containing a single element per country name:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$countries </span>: Collection
  <span class="hljs-variable">$countries</span>:=ds.Employee.<span class="hljs-function">all</span>().<span class="hljs-function">distinct</span>(<span class="hljs-string">"address.country"</span>)
@@ -569,10 +569,10 @@
 <p><strong>.drop</strong>( { <em>mode</em> : Integer } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>mode</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>dk stop dropping on first error</code>: stops method execution on first non-droppable entity</td></tr>
+<tr><td>mode</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk stop dropping on first error</code>: stops method execution on first non-droppable entity</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Empty entity selection if successful, else entity selection containing non-droppable entity(ies)</td></tr>
 </tbody>
 </table>
@@ -582,7 +582,7 @@
 <p>Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.</p>
 </blockquote>
 <p>If a locked entity is encountered during the execution of <code>.drop()</code>, it is not removed. By default, the method processes all entities of the entity selection and returns non-droppable entities in the entity selection. If you want the method to stop execution at the first encountered non-droppable entity, pass the <code>dk stop dropping on first error</code> constant in the <em>mode</em> parameter.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-8"></a><a href="#example-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-6"></a><a href="#ejemplo-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>Example without the <code>dk stop dropping on first error</code> option:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees</span>; <span class="hljs-variable">$notDropped </span>: cs.EmployeeSelection
  <span class="hljs-variable">$employees</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"firstName=:1"</span>;<span class="hljs-string">"S@"</span>)
@@ -617,12 +617,12 @@
 <p><strong>.extract</strong>( <em>attributePath</em> : Text { ; <em>option</em> : Integer } ) : Collection<br><strong>.extract</strong>( <em>attributePath</em> { ; <em>targetPath</em> } { ; <em>...attributePathN</em> : Text ; <em>targetPathN</em> : Text } ) : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Attribute path whose values must be extracted to the new collection</td></tr>
 <tr><td>targetPath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Target attribute path or attribute name</td></tr>
-<tr><td>option</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>ck keep null</code>: include null attributes in the returned collection (ignored by default)</td></tr>
+<tr><td>option</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>ck keep null</code>: include null attributes in the returned collection (ignored by default)</td></tr>
 <tr><td>Result</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection containing extracted values</td></tr>
 </tbody>
 </table>
@@ -653,7 +653,7 @@
 <blockquote>
 <p>Entities of a collection of entities accessed by [ ] are not reloaded from the database.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="example-9"></a><a href="#example-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-7"></a><a href="#ejemplo-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>Given the following table and relation:</p>
 <p><img src="/docs/Rx/assets/en/API/entityselection.PNG" alt=""></p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$firstnames</span>; <span class="hljs-variable">$addresses</span>; <span class="hljs-variable">$mailing</span>; <span class="hljs-variable">$teachers </span>: Collection
@@ -702,7 +702,7 @@
 <p><strong>.first()</strong> : 4D.Entity</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to the first entity of the entity selection (Null if selection is empty)</td></tr>
@@ -721,7 +721,7 @@
  <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySel</span>.<span class="hljs-function">first</span>() <span class="hljs-comment">//returns Null</span>
  <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySel</span>[<span class="hljs-number">0</span>]  <span class="hljs-comment">//generates an error</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-10"></a><a href="#example-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-8"></a><a href="#ejemplo-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$entitySelection </span>: cs.EmpSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$entity </span>: cs.EmpEntity
  <span class="hljs-variable">$entitySelection</span>:=ds.Emp.<span class="hljs-function">query</span>(<span class="hljs-string">"salary &gt; :1"</span>;<span class="hljs-number">100000</span>)<span class="hljs-keyword">
@@ -743,7 +743,7 @@
 <p><strong>.getDataClass()</strong> : 4D.DataClass</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>4D.DataClass</td><td style="text-align:center">&lt;-</td><td>Dataclass object to which the entity selection belongs</td></tr>
@@ -752,7 +752,7 @@
 <h4><a class="anchor" aria-hidden="true" id="description-13"></a><a href="#description-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>The <code>.getDataClass()</code> function returns the dataclass of the entity selection.</p>
 <p>This function is mainly useful in the context of generic code.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-11"></a><a href="#example-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-9"></a><a href="#ejemplo-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>The following generic code duplicates all entities of the entity selection:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//duplicate_entities method</span>
   <span class="hljs-comment">//duplicate_entities($entity_selection)</span>
@@ -783,7 +783,7 @@
 <p><strong>.isAlterable()</strong> : Boolean</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity selection is alterable, False otherwise</td></tr>
@@ -792,7 +792,7 @@
 <h4><a class="anchor" aria-hidden="true" id="description-14"></a><a href="#description-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>The <code>.isAlterable()</code> function returns True if the entity selection is alterable, and False if the entity selection is not alterable.</p>
 <p>For more information, please refer to <a href="/docs/Rx/es/ORDA/entities.html#shareable-or-alterable-entity-selections">Shareable or alterable entity selections</a>.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-12"></a><a href="#example-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-10"></a><a href="#ejemplo-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>You are about to display <code>Form.products</code> in a <a href="/docs/Rx/es/FormObjects/listboxOverview.html">list box</a> to allow the user to add new products. You want to make sure it is alterable so that the user can add new products without error:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">If</span> (<span class="hljs-function">Not</span>(Form.products.<span class="hljs-function">isAlterable</span>()))
     Form.products:=Form.products.<span class="hljs-function">copy</span>()<span class="hljs-keyword">
@@ -814,7 +814,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.isOrdered()</strong> : Boolean</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity selection is ordered, False otherwise</td></tr>
@@ -826,7 +826,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p>This function always returns True when the entity selection comes from a remote datastore.</p>
 </blockquote>
 <p>For more information, please refer to <a href="/docs/Rx/es/ORDA/dsmapping.html#ordered-or-unordered-entity-selection">Ordered or unordered entity selection</a>.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-13"></a><a href="#example-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-11"></a><a href="#ejemplo-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee </span>: cs.EmployeeEntity<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$isOrdered </span>: Boolean
@@ -857,7 +857,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.last()</strong> : 4D.Entity</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to the last entity of the entity selection (Null if empty entity selection)</td></tr>
@@ -869,7 +869,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySel</span>[length<span class="hljs-number">-1</span>]
 </code></pre>
 <p>If the entity selection is empty, the function returns Null.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-14"></a><a href="#example-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-12"></a><a href="#ejemplo-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$entitySelection </span>: cs.EmpSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$entity </span>: cs.EmpEntity
  <span class="hljs-variable">$entitySelection</span>:=ds.Emp.<span class="hljs-function">query</span>(<span class="hljs-string">"salary &lt; :1"</span>;<span class="hljs-number">50000</span>)<span class="hljs-keyword">
@@ -892,7 +892,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <h4><a class="anchor" aria-hidden="true" id="description-17"></a><a href="#description-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
 <p>The <code>.length</code> property returns the number of entities in the entity selection. If the entity selection is empty, it returns 0.</p>
 <p>Entity selections always have a <code>.length</code> property.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-15"></a><a href="#example-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-13"></a><a href="#ejemplo-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$vSize </span>: Integer
  <span class="hljs-variable">$vSize</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"gender = :1"</span>;<span class="hljs-string">"male"</span>).length
 <span class="hljs-function"> ALERT</span>(<span class="hljs-function">String</span>(vSize)+<span class="hljs-string">" male employees found."</span>)
@@ -912,7 +912,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.max</strong>( <em>attributePath</em> : Text ) : any</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
@@ -928,7 +928,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <li><em>attributePath</em> is a related attribute,</li>
 <li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-16"></a><a href="#example-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-14"></a><a href="#ejemplo-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>We want to find the highest salary among all the female employees:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$sel </span>: cs.EmpSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$maxSalary </span>: Real
@@ -950,7 +950,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.min</strong>( <em>attributePath</em> : Text ) : any</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
@@ -966,7 +966,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <li><em>attributePath</em> is a related attribute,</li>
 <li><em>attributePath</em> designates an attribute that does not exist in the entity selection dataclass.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-17"></a><a href="#example-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-15"></a><a href="#ejemplo-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>In this example, we want to find the lowest salary among all the female employees:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$sel </span>: cs.EmpSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$minSalary </span>: Real
@@ -987,7 +987,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.minus</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.minus</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to substract</td></tr>
@@ -1007,7 +1007,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p>If the original entity selection or both the original entity selection and the <em>entitySelection</em> parameter are empty, an empty entity selection is returned.</p>
 <p>If <em>entitySelection</em> is empty or if <em>entity</em> is Null, a new reference to the original entity selection is returned.</p>
 <p>If the original entity selection and the parameter are not related to the same dataclass, an error is raised.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-4"></a><a href="#example-1-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-3"></a><a href="#example-1-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees</span>; <span class="hljs-variable">$result </span>: cs.EmployeeSelection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$employee </span>: cs.EmployeeEntity
 
@@ -1040,7 +1040,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.or</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.or</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to intersect with</td></tr>
@@ -1060,7 +1060,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p>If the original entity selection and the <em>entitySelection</em> parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to <em>entitySelection</em> or an entity selection containing only <em>entity</em> is returned.</p>
 <p>If <em>entitySelection</em> is empty or if <em>entity</em> is Null, a new reference to the original entity selection is returned.</p>
 <p>If the original entity selection and the parameter are not related to the same dataclass, an error is raised.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-5"></a><a href="#example-1-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-4"></a><a href="#example-1-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employees1</span>; <span class="hljs-variable">$employees2</span>; <span class="hljs-variable">$result </span>: cs.EmployeeSelection
  <span class="hljs-variable">$employees1</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"H@"</span>) <span class="hljs-comment">//Returns "Colin Hetrick","Grady Harness"</span>
  <span class="hljs-variable">$employees2</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"firstName = :1"</span>;<span class="hljs-string">"C@"</span>) <span class="hljs-comment">//Returns "Colin Hetrick", "Cath Kidston"</span>
@@ -1089,7 +1089,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.orderBy</strong>( <em>pathString</em> : Text ) : 4D.EntitySelection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>pathString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Attribute path(s) and sorting instruction(s) for the entity selection</td></tr>
@@ -1127,7 +1127,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <blockquote>
 <p>Null values are evaluated as less than other values.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="example-18"></a><a href="#example-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-16"></a><a href="#ejemplo-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// order by formula</span>
  <span class="hljs-variable">$sortedEntitySelection</span>:=<span class="hljs-variable">$entitySelection</span>.<span class="hljs-function">orderBy</span>(<span class="hljs-string">"firstName asc, salary desc"</span>)
  <span class="hljs-variable">$sortedEntitySelection</span>:=<span class="hljs-variable">$entitySelection</span>.<span class="hljs-function">orderBy</span>(<span class="hljs-string">"firstName"</span>)
@@ -1157,13 +1157,13 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.orderByFormula</strong>( <em>formulaString</em> : Text { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection<br><strong>.orderByFormula</strong>( <em>formulaObj</em> : Object { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>formulaString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Formula string</td></tr>
 <tr><td>formulaObj</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Formula object</td></tr>
-<tr><td>sortOrder</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>dk ascending</code> (default) or <code>dk descending</code></td></tr>
-<tr><td>settings</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Parameter(s) for the formula</td></tr>
+<tr><td>sortOrder</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk ascending</code> (default) or <code>dk descending</code></td></tr>
+<tr><td>parámetros</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Parameter(s) for the formula</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New ordered entity selection</td></tr>
 </tbody>
 </table>
@@ -1184,7 +1184,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p>By default if you omit the <em>sortOrder</em> parameter, the resulting entity selection is sorted in ascending order. Optionnally, you can pass one of the following values in the <em>sortOrder</em> parameter:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>dk ascending</td><td>0</td><td>Ascending sort order (default)</td></tr>
@@ -1193,7 +1193,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </table>
 <p>Within the <em>formulaString</em> or <em>formulaObj</em>, the processed entity and thus its attributes are available through the <code>This</code> command (for example, <code>This.lastName</code>).</p>
 <p>You can pass parameter(s) to the formula using the <code>args</code> property (object) of the <code>settings</code> parameter: the formula receives the <code>settings.args</code> object in $1.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-6"></a><a href="#example-1-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-5"></a><a href="#example-1-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>Sorting students using a formula provided as text:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$es1</span>; <span class="hljs-variable">$es2 </span>: cs.StudentsSelection
  <span class="hljs-variable">$es1</span>:=ds.Students.<span class="hljs-function">query</span>(<span class="hljs-string">"nationality=:1"</span>;<span class="hljs-string">"French"</span>)
@@ -1264,7 +1264,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : any } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>queryString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Search criteria as string</td></tr>
@@ -1285,7 +1285,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <blockquote>
 <p>By default if you omit the <strong>order by</strong> statement in the <em>queryString</em>, the returned entity selection is <a href="/docs/Rx/es/ORDA/dsmapping.html#ordered-or-unordered-entity-selection">not ordered</a>. Note however that, in Client/Server mode, it behaves like an ordered entity selection (entities are added at the end of the selection).</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="example-1-7"></a><a href="#example-1-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-6"></a><a href="#example-1-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$entitySelectionTemp </span>: cs.EmployeeSelection
  <span class="hljs-variable">$entitySelectionTemp</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"lastName = :1"</span>;<span class="hljs-string">"M@"</span>)
  Form.emps:=<span class="hljs-variable">$entitySelectionTemp</span>.<span class="hljs-function">query</span>(<span class="hljs-string">"manager.lastName = :1"</span>;<span class="hljs-string">"S@"</span>)
@@ -1336,7 +1336,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </table>
 <p></details></p>
 <p><strong>.refresh()</strong>
-| Parameter | Type |  | Description                     |
+| Parameter | Tipo |  | Description                     |
 | --------- | ---- |::| ------------------------------- |
 |           |      |  | Does not require any parameters |</p>
 <h4><a class="anchor" aria-hidden="true" id="description-27"></a><a href="#description-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
@@ -1345,7 +1345,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </blockquote>
 <p>The <code>.refresh()</code> function immediately &quot;invalidates&quot; the entity selection data in the local ORDA cache so that the next time 4D requires the entity selection, it will be reloaded from the database.</p>
 <p>By default, the local ORDA cache is invalidated after 30 seconds. In the context of client / server applications using both ORDA and the classic language, this method allows you to make sure a remote application will always work with the latest data.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-8"></a><a href="#example-1-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-7"></a><a href="#example-1-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>In this example, classic and ORDA code modify the same data simultaneously:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-comment">//On a 4D remote</span><span class="hljs-keyword">
 
@@ -1399,11 +1399,11 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.slice</strong>( <em>startFrom</em> : Integer { ; <em>end</em> : Integer } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>startFrom</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Index to start the operation at (included)</td></tr>
-<tr><td>end</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>End index (not included)</td></tr>
+<tr><td>startFrom</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>Index to start the operation at (included)</td></tr>
+<tr><td>end</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>End index (not included)</td></tr>
 <tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection containing sliced entities (shallow copy)</td></tr>
 </tbody>
 </table>
@@ -1420,7 +1420,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <li>If <em>end &lt; startFrom</em> (passed or calculated values), the method does nothing.</li>
 </ul>
 <p>If the entity selection contains entities that were dropped in the meantime, they are also returned.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-9"></a><a href="#example-1-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-8"></a><a href="#example-1-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>You want to get a selection of the first 9 entities of the entity selection:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$sel</span>; <span class="hljs-variable">$sliced </span>: cs.EmployeeSelection
 <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">query</span>(<span class="hljs-string">"salary &gt; :1"</span>;<span class="hljs-number">50000</span>)
@@ -1446,7 +1446,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.sum</strong>( <em>attributePath</em> : Text ) : Real</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
@@ -1463,7 +1463,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <li><em>attributePath</em> is a related attribute,</li>
 <li><em>attributePath</em> is not found in the entity selection dataclass.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-19"></a><a href="#example-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-17"></a><a href="#ejemplo-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$sel </span>: cs.EmployeeSelection<span class="hljs-keyword">
 var</span> <span class="hljs-variable">$sum </span>: Real
 
@@ -1484,14 +1484,14 @@ var</span> <span class="hljs-variable">$sum </span>: Real
 <p><strong>.toCollection</strong>( { <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer } } ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterString</em> : Text {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterCol</em> : Collection {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em></p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>filterString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>String with entity attribute path(s) to extract</td></tr>
 <tr><td>filterCol</td><td>Colección</td><td style="text-align:center">-&gt;</td><td>Collection of entity attribute path(s) to extract</td></tr>
-<tr><td>options</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>dk with primary key</code>: adds the primary key<br><code>dk with stamp</code>: adds the stamp</td></tr>
-<tr><td>begin</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Designates the starting index</td></tr>
-<tr><td>howMany</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>Number of entities to extract</td></tr>
+<tr><td>options</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk with primary key</code>: adds the primary key<br><code>dk with stamp</code>: adds the stamp</td></tr>
+<tr><td>begin</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>Designates the starting index</td></tr>
+<tr><td>howMany</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>Number of entities to extract</td></tr>
 <tr><td>Result</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection of objects containing attributes and values of entity selection</td></tr>
 </tbody>
 </table>
@@ -1523,7 +1523,7 @@ var</span> <span class="hljs-variable">$sum </span>: Real
 <li>the entity selection is empty, or</li>
 <li><em>begin</em> is greater than the length of the entity selection.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-1-10"></a><a href="#example-1-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-9"></a><a href="#example-1-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>The following structure will be used throughout all examples of this section:</p>
 <p><img src="/docs/Rx/assets/en/API/dataclassAttribute4.png" alt=""></p>
 <p>Example without filter or options parameter:</p>
@@ -1652,7 +1652,7 @@ var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
 ]
 
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-4-1"></a><a href="#example-4-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 4</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-4"></a><a href="#example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 4</h4>
 <p>Example with <code>relatedEntity</code> type with simple form:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$employeesCollection </span>: Collection
 <span class="hljs-variable">$employeesCollection</span>:=New collection
@@ -1683,7 +1683,7 @@ var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
     }
    ]
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-5-1"></a><a href="#example-5-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 5</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-5"></a><a href="#example-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 5</h4>
 <p>Example with <em>filterCol</em> parameter:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$employeesCollection</span>; <span class="hljs-variable">$coll </span>: Collection
 <span class="hljs-variable">$employeesCollection</span>:=New collection
@@ -1702,7 +1702,7 @@ var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
     }
 ]
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-6-1"></a><a href="#example-6-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 6</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-6"></a><a href="#example-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 6</h4>
 <p>Example with extraction of all properties of a relatedEntity:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$employeesCollection</span>; <span class="hljs-variable">$coll </span>: Collection
 <span class="hljs-variable">$employeesCollection</span>:=New collection
@@ -1749,7 +1749,7 @@ var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
     }
   ]
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-7-1"></a><a href="#example-7-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 7</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-7"></a><a href="#example-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 7</h4>
 <p>Example with extraction of some properties of a relatedEntity:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$employeesCollection </span>: Collection
 <span class="hljs-variable">$employeesCollection</span>:=New collection
@@ -1779,7 +1779,7 @@ var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
         }
     }]
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-8-1"></a><a href="#example-8-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 8</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-8"></a><a href="#example-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 8</h4>
 <p>Example with extraction of some properties of <code>relatedEntities</code>:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$employeesCollection </span>: Collection
  <span class="hljs-variable">$employeesCollection</span>:=New collection
@@ -1824,7 +1824,7 @@ var</span> <span class="hljs-variable">$employees </span>: cs.EmployeeSelection
         ]
     }]
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="example-9-1"></a><a href="#example-9-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 9</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-9"></a><a href="#example-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 9</h4>
 <p>Example with extraction of all properties of <code>relatedEntities</code>:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$employeesCollection </span>: Collection
 <span class="hljs-variable">$employeesCollection</span>:=New collection

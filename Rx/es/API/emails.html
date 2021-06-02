@@ -119,7 +119,7 @@
 <p>An object with two properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>name</td><td>Texto</td><td>Display name (can be null)</td></tr>
@@ -170,7 +170,7 @@
 <p>The <code>.bodyStructure</code> object contains the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Value</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Valor</th></tr>
 </thead>
 <tbody>
 <tr><td>partID</td><td>Texto</td><td>Identifies the part uniquely within the email</td></tr>
@@ -191,11 +191,11 @@
 <p>The <code>.bodyValues</code> object contains the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Value</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Valor</th></tr>
 </thead>
 <tbody>
 <tr><td><em>partID</em>.value</td><td>text</td><td>Value of the body part</td></tr>
-<tr><td><em>partID</em>.isEncodingProblem</td><td>boolean</td><td>True if malformed sections are found while decoding the charset, or unknown charset, or unknown content transfer-encoding. False by default</td></tr>
+<tr><td><em>partID</em>.isEncodingProblem</td><td>booleano</td><td>True if malformed sections are found while decoding the charset, or unknown charset, or unknown content transfer-encoding. False by default</td></tr>
 </tbody>
 </table>
 <h2><a class="anchor" aria-hidden="true" id="cc"></a><a href="#cc" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.cc</h2>
@@ -228,7 +228,7 @@
 <p>Every object of the headers collection can contain the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Type</th><th>Value</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Valor</th></tr>
 </thead>
 <tbody>
 <tr><td>[].name</td><td>text</td><td>(mandatory) Header field name as defined in <a href="https://tools.ietf.org/html/rfc5322">RFC#5322</a>. If null or undefined, the header field is not added to the MIME header.</td></tr>
@@ -260,11 +260,11 @@
       Property
     </th>
 <pre><code class="hljs">&lt;th&gt;
-  Type
+  Tipo
 &lt;/th&gt;
 
 &lt;th&gt;
-  Value
+  Valor
 &lt;/th&gt;
 </code></pre>
   </tr>
@@ -273,7 +273,7 @@
       .\<keyword\>
     </td>
 <pre><code class="hljs">&lt;td&gt;
-  boolean
+  booleano
 &lt;/td&gt;
 
 &lt;td&gt;
@@ -290,7 +290,7 @@
 <li>$answered - Indicates a message has been replied to</li>
 <li>$deleted - Indicates a message to delete</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs"> <span class="hljs-keyword">var</span> $mail : Object
  $mail.keywords[<span class="hljs-string">"$flagged"</span>]:=<span class="hljs-keyword">True</span>
  $mail.keywords[<span class="hljs-string">"4d"</span>]:=<span class="hljs-keyword">True</span>
