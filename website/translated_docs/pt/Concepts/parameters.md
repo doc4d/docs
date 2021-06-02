@@ -281,18 +281,18 @@ Function add($x : Variant; $y : Integer)-> $result : Integer
 ```
 
 
-When using the sequential variable syntax, you need to make sure all parameters are properly declared. In the following example, the `Capitalize` project method accepts a text parameter and returns a text result:
+When using the sequential variable syntax, you need to make sure all parameters are properly declared. No exemplo abaixo, o método projeto `Capitalize`  aceita um parâmetro texto e devolve um resultado texto:
 
 ```4d
-  // Capitalize Project Method
-  // Capitalize ( Text ) -> Text
-  // Capitalize ( Source string ) -> Capitalized string
+  // Método projeto Maiúsculas
+  // Maiúsculas( Texto ) -> Texto
+  // Maiúsculas( Cadena fuente ) -> String com a primeira letra em maiúscula
 
  C_TEXT($0;$1)
  $0:=Uppercase(Substring($1;1;1))+Lowercase(Substring($1;2))
 ```
 
-Using commands such as `New process` with process methods that accept parameters also require that parameters are explicitely declared in the called method. For example:
+A utilização de comandos tais como `New process` com métodos processo que aceitem parâmetros também requer que os parâmetros se declarem explicitamente no método chamado. For example:
 
 ```4d
 C_TEXT($string)
@@ -302,7 +302,7 @@ C_OBJECT($obj)
 $idProc:=New process("foo_method";0;"foo_process";$string;$int;$obj)
 ```
 
-This code can be executed in compiled mode only if "foo_method" declares its parameters:
+Este código pode ser executado em modo compilado só se "foo_method" declarar seus parâmetros:
 
 ```4d
 //foo_method
@@ -312,7 +312,7 @@ C_OBJECT($3)
 ...
 ```
 
-> For compiled mode, you can group all local variable parameters for project methods in a specific method with a name starting with "Compiler". Within this method, you can predeclare the parameters for each method, for example:
+> For compiled mode, you can group all local variable parameters for project methods in a specific method with a name starting with "Compiler". Dentro deste método, pode pré-declarar os parâmetros de cada método, por exemplo:
 ```4d  
  // Compiler_method
  C_REAL(OneMethodAmongOthers;$1) 
