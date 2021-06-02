@@ -67,7 +67,7 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/API/FolderClass.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Folder</h1></header><article><div><span><p><code>Folder</code> objects are created with the <a href="#folder"><code>Folder</code></a> command. They contain references to folders that may or may not actually exist on disk. For example, when you execute the <code>Folder</code> command to create a new folder, a valid <code>Folder</code> object is created but nothing is actually stored on disk until you call the <a href="#create-"><code>folder.create( )</code></a> function.</p>
-<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<h3><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h3>
 <p>The following example creates a &quot;JohnSmith&quot; folder:</p>
 <pre><code class="hljs css language-code4d"><span class="hljs-variable">Form.curfolder</span>:=<span class="hljs-function"><span class="hljs-title">Folder</span>(<span class="hljs-variable">fk</span> <span class="hljs-variable">database</span> <span class="hljs-variable">folder</span>)</span>
 <span class="hljs-variable">Form.curfolder</span>:=<span class="hljs-function"><span class="hljs-title">Folder</span>(<span class="hljs-string">"C:\\Users\\JohnSmith\\"</span>;<span class="hljs-variable">fk</span> <span class="hljs-variable">platform</span> <span class="hljs-variable">path</span>)</span>
@@ -118,12 +118,12 @@
 <p><strong>Folder</strong> ( <em>path</em> : Text { ; <em>pathType</em> : Integer }{ ; <em>*</em> } ) : 4D.Folder<br><strong>Folder</strong> ( <em>folderConstant</em> : Integer { ; <em>*</em> } ) : 4D.Folder</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>path</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Folder path</td></tr>
-<tr><td>folderConstant</td><td>Integer</td><td style="text-align:center">-&gt;</td><td>4D folder constant</td></tr>
-<tr><td>pathType</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (default) or <code>fk platform path</code></td></tr>
+<tr><td>folderConstant</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>4D folder constant</td></tr>
+<tr><td>pathType</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>fk posix path</code> (default) or <code>fk platform path</code></td></tr>
 <tr><td>*</td><td></td><td style="text-align:center">-&gt;</td><td>* to return folder of host database</td></tr>
 <tr><td>Result</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>New folder object</td></tr>
 </tbody>
@@ -138,7 +138,7 @@
 <p>By default, 4D expects a path expressed with the POSIX syntax. If you work with platform pathnames (Windows or macOS), you must declare it using the <em>pathType</em> parameter. The following constants are available:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>fk platform path</td><td>1</td><td>Path expressed with a platform-specific syntax (mandatory in case of platform pathname)</td></tr>
@@ -149,7 +149,7 @@
 <p>In the <em>folderConstant</em> parameter, pass a 4D built-in or system folder, using one of the following constants:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td>fk applications folder</td><td>116</td><td></td></tr>
@@ -199,12 +199,12 @@
 <p><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D Folder</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>Destination folder</td></tr>
 <tr><td>newName</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Name for the copy</td></tr>
-<tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr>
+<tr><td>overwrite</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr>
 <tr><td>Result</td><td>4D.Folder</td><td style="text-align:center">&lt;-</td><td>Copied file or folder</td></tr>
 </tbody>
 </table>
@@ -215,7 +215,7 @@
 <p>If a folder with the same name already exists in the <em>destinationFolder</em>, by default 4D generates an error. You can pass the <code>fk overwrite</code> constant in the <em>overwrite</em> parameter to ignore and overwrite the existing file</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk overwrite</code></td><td>4</td><td>Overwrite existing elements, if any</td></tr>
@@ -223,7 +223,7 @@
 </table>
 <p><strong>Returned value</strong></p>
 <p>The copied <code>Folder</code> object.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-1"></a><a href="#ejemplo-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>You want to copy a Pictures <em>folder</em> from the user's Document folder to the Database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$userImages</span>; <span class="hljs-variable">$copiedImages </span>: 4D.Folder
 <span class="hljs-variable">$userImages</span>:=<span class="hljs-function">Folder</span>(fk documents folder+<span class="hljs-string">"/Pictures/"</span>)
@@ -243,7 +243,7 @@
 <p><strong>.create()</strong> : Boolean</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>Booleano</td><td>&lt;-</td><td>True if the folder was created successfully, false otherwise</td></tr>
@@ -257,7 +257,7 @@
 <li><strong>True</strong> if the folder is created successfully;</li>
 <li><strong>False</strong> if a folder with the same name already exists or if an error occured.</li>
 </ul>
-<h4><a class="anchor" aria-hidden="true" id="example-1-1"></a><a href="#example-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>Create an empty folder in the database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$created </span>: Boolean
 <span class="hljs-variable">$created</span>:=<span class="hljs-function">Folder</span>(<span class="hljs-string">"/PACKAGE/SpecialPrefs"</span>).<span class="hljs-function">create</span>()
@@ -285,12 +285,12 @@ End if</span>
 <p><strong>.createAlias</strong>( <em>destinationFolder</em> : 4D.Folder ; <em>aliasName</em> : Text { ; <em>aliasType</em> : Integer } ) : 4D.File</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>Destination folder for the alias or shortcut</td></tr>
 <tr><td>aliasName</td><td>Texto</td><td>-&gt;</td><td>Name of the alias or shortcut</td></tr>
-<tr><td>aliasType</td><td>Integer</td><td>-&gt;</td><td>Type of the alias link</td></tr>
+<tr><td>aliasType</td><td>Entero</td><td>-&gt;</td><td>Type of the alias link</td></tr>
 <tr><td>Result</td><td>4D.File</td><td>&lt;-</td><td>Alias or shortcut reference</td></tr>
 </tbody>
 </table>
@@ -300,7 +300,7 @@ End if</span>
 <p>By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the <em>aliasType</em> parameter. The following constants are available:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk alias link</code></td><td>0</td><td>Alias link (default)</td></tr>
@@ -310,7 +310,7 @@ End if</span>
 <p>On Windows, a shortcut (.lnk file) is always created (the <em>aliasType</em> parameter is ignored).</p>
 <p><strong>Returned object</strong></p>
 <p>A <code>4D.File</code> object with the <code>isAlias</code> property set to <strong>true</strong>.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-3"></a><a href="#example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-2"></a><a href="#ejemplo-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>You want to create an alias to an archive folder in your database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$myFolder</span>:=<span class="hljs-function">Folder</span>(<span class="hljs-string">"C:\\Documents\\Archives\\2019\\January"</span>;fk platform path)
 <span class="hljs-variable">$aliasFile</span>:=<span class="hljs-variable">$myFolder</span>.<span class="hljs-function">createAlias</span>(<span class="hljs-function">Folder</span>(<span class="hljs-string">"/PACKAGE"</span>);<span class="hljs-string">"Jan2019"</span>)
@@ -359,10 +359,10 @@ End if</span>
 <p><strong>.delete</strong>( { <em>option</em> : Integer } )</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>Integer</td><td>-&gt;</td><td>Folder deletion option</td></tr>
+<tr><td>option</td><td>Entero</td><td>-&gt;</td><td>Folder deletion option</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="description-7"></a><a href="#description-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
@@ -370,7 +370,7 @@ End if</span>
 <p>By default, for security reasons, if you omit the option parameter, <code>.delete( )</code> only allows empty folders to be deleted. If you want the command to be able to delete folders that are not empty, you must use the option parameter with one of the following constants:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>Delete only if empty</code></td><td>0</td><td>Deletes folder only when it is empty</td></tr>
@@ -432,7 +432,7 @@ End if</span>
 <p><strong>.file</strong>( <em>path</em> : Text ) : 4D.File</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>path</td><td>Texto</td><td>-&gt;</td><td>Relative POSIX file pathname</td></tr>
@@ -444,7 +444,7 @@ End if</span>
 <p>In <em>path</em>, pass a relative POSIX path to designate the file to return. The path will be evaluated from the parent folder as root.</p>
 <p><strong>Returned value</strong></p>
 <p>A <code>File</code> object or null if <em>path</em> is invalid.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-4"></a><a href="#example-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-3"></a><a href="#ejemplo-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$myPDF </span>: 4D.File
 <span class="hljs-variable">$myPDF</span>:=<span class="hljs-function">Folder</span>(fk documents folder).<span class="hljs-function">file</span>(<span class="hljs-string">"Pictures/info.pdf"</span>)
 </code></pre>
@@ -462,10 +462,10 @@ End if</span>
 <p><strong>.files</strong>( { <em>options</em> : Integer } ) : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>options</td><td>Integer</td><td>-&gt;</td><td>File list options</td></tr>
+<tr><td>options</td><td>Entero</td><td>-&gt;</td><td>File list options</td></tr>
 <tr><td>Result</td><td>Colección</td><td>&lt;-</td><td>Collection of children file objects</td></tr>
 </tbody>
 </table>
@@ -477,7 +477,7 @@ End if</span>
 <p>By default, if you omit the <em>options</em> parameter, only the files at the first level of the folder are returned in the collection, as well as invisible files or folders. You can modify this by passing, in the <em>options</em> parameter, one or more of the following constants:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk recursive</code></td><td>1</td><td>The collection contains files or folders of the specified folder and its subfolders</td></tr>
@@ -486,7 +486,7 @@ End if</span>
 </table>
 <p><strong>Returned value</strong></p>
 <p>Collection of <code>File</code> objects.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1-2"></a><a href="#example-1-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
+<h4><a class="anchor" aria-hidden="true" id="example-1-1"></a><a href="#example-1-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example 1</h4>
 <p>You want to know if there are invisible files in the Database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$all</span>; <span class="hljs-variable">$noInvisible </span>: Collection
  <span class="hljs-variable">$all</span>:=<span class="hljs-function">Folder</span>(fk database folder).<span class="hljs-function">files</span>()
@@ -514,7 +514,7 @@ End if</span>
 <p><strong>.folder</strong>( <em>path</em> : Text ) : 4D.Folder</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>path</td><td>Texto</td><td>-&gt;</td><td>Relative POSIX file pathname</td></tr>
@@ -526,7 +526,7 @@ End if</span>
 <p>In <em>path</em>, pass a relative POSIX path to designate the folder to return. The path will be evaluated from the parent folder as root.</p>
 <p><strong>Returned value</strong></p>
 <p>A <code>Folder</code> object or null if <em>path</em> is invalid.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-5"></a><a href="#example-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-4"></a><a href="#ejemplo-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$mypicts </span>: 4D.Folder
  <span class="hljs-variable">$mypicts</span>:=<span class="hljs-function">Folder</span>(fk documents folder).<span class="hljs-function">folder</span>(<span class="hljs-string">"Pictures"</span>)
 </code></pre>
@@ -544,10 +544,10 @@ End if</span>
 <p><strong>.folders</strong>( { <em>options</em> : Integer } ) : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>options</td><td>Integer</td><td>-&gt;</td><td>Folder list options</td></tr>
+<tr><td>options</td><td>Entero</td><td>-&gt;</td><td>Folder list options</td></tr>
 <tr><td>Result</td><td>Colección</td><td>&lt;-</td><td>Collection of children folder objects</td></tr>
 </tbody>
 </table>
@@ -556,7 +556,7 @@ End if</span>
 <p>By default, if you omit the <em>options</em> parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the <em>options</em> parameter, one or more of the following constants:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk recursive</code></td><td>1</td><td>The collection contains files or folders of the specified folder and its subfolders</td></tr>
@@ -565,7 +565,7 @@ End if</span>
 </table>
 <p><strong>Returned value</strong></p>
 <p>Collection of <code>Folder</code> objects.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-6"></a><a href="#example-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-5"></a><a href="#ejemplo-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>You want the collection of all folders and subfolders of the database folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$allFolders </span>: Collection
  <span class="hljs-variable">$allFolders</span>:=<span class="hljs-function">Folder</span>(<span class="hljs-string">"/PACKAGE"</span>).<span class="hljs-function">folders</span>(fk recursive)
@@ -599,10 +599,10 @@ End if</span>
 <p><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>size</td><td>Integer</td><td>-&gt;</td><td>Side length for the returned picture (pixels)</td></tr>
+<tr><td>size</td><td>Entero</td><td>-&gt;</td><td>Side length for the returned picture (pixels)</td></tr>
 <tr><td>Result</td><td>Imagen</td><td>&lt;-</td><td>Icon</td></tr>
 </tbody>
 </table>
@@ -732,7 +732,7 @@ End if</span>
 <p><strong>.moveTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } ) : 4D.Folder</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>destinationFolder</td><td>4D.Folder</td><td>-&gt;</td><td>Destination folder</td></tr>
@@ -746,7 +746,7 @@ End if</span>
 <p>By default, the folder retains its name when moved. If you want to rename the moved folder, pass the new full name in the <em>newName</em> parameter. The new name must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned.</p>
 <p><strong>Returned object</strong></p>
 <p>The moved <code>Folder</code> object.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-7"></a><a href="#example-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-6"></a><a href="#ejemplo-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>You want to move and rename a folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$tomove</span>; <span class="hljs-variable">$moved </span>: Object
  <span class="hljs-variable">$docs</span>:=<span class="hljs-function">Folder</span>(fk documents folder)
@@ -846,7 +846,7 @@ End if</span>
 <p><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.Folder</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>newName</td><td>Texto</td><td>-&gt;</td><td>New full name for the folder</td></tr>
@@ -858,7 +858,7 @@ End if</span>
 <p>The <em>newName</em> parameter must comply with naming rules (e.g., it must not contain characters such as &quot;:&quot;, &quot;/&quot;, etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.</p>
 <p><strong>Returned object</strong></p>
 <p>The renamed <code>Folder</code> object.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-8"></a><a href="#example-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-7"></a><a href="#ejemplo-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$toRename </span>: 4D.Folder
  <span class="hljs-variable">$toRename</span>:=<span class="hljs-function">Folder</span>(<span class="hljs-string">"/RESOURCES/Pictures"</span>).<span class="hljs-function">rename</span>(<span class="hljs-string">"Images"</span>)
 </code></pre>

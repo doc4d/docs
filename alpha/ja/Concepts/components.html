@@ -85,21 +85,29 @@
 <h3><a class="anchor" aria-hidden="true" id="コンポーネントの保護-コンパイル"></a><a href="#コンポーネントの保護-コンパイル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コンポーネントの保護: コンパイル</h3>
 <p>コンポーネントとしてインストールされたマトリクスプロジェクトのプロジェクトメソッドは、ホストプロジェクトからデフォルトでアクセス可能です。 特に:</p>
 <ul>
-<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 しかし、それらをメソッドエディター上で開いたり編集したりすることはできません。</li>
+<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 However, it's not possible to open them in the Method editor or modify them.</li>
 <li>マトリクスプロジェクトの他のプロジェクトメソッドはエクスプローラーに現れません。しかし、ホストプロジェクトのデバッガーには内容が表示されます。</li>
 </ul>
 <p>コンポーネントのプロジェクトメソッドを効果的に保護するには、マトリクスプロジェクトをコンパイルして、インタプリターコードを含まない .4dz ファイルとして提供します。 コンパイルされたマトリクスプロジェクトがコンポーネントとしてインストールされると:</p>
 <ul>
-<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 しかし、その内容はプレビューエリアにもデバッガーにも表示されません。</li>
+<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 However, their contents will not appear in the preview area and in the debugger.</li>
 <li>マトリクスプロジェクトの他のプロジェクトメソッドは一切表示されません。</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="プロジェクトメソッドの共有"></a><a href="#プロジェクトメソッドの共有" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プロジェクトメソッドの共有</h2>
 <p>マトリクスプロジェクトのすべてのプロジェクトメソッドは 、コンポーネントに含まれます。つまり、マトリクスプロジェクトをコンポーネント化しても、これらのプロジェクトメソッドは同コンポーネントにて呼び出して実行することができます。</p>
-<p>他方、デフォルトでは、これらのプロジェクトメソッドはホストプロジェクトに表示されず、呼び出すこともできません。 プロジェクトメソッドをホストプロジェクトと共有するには、 マトリクスプロジェクト側でそのメソッドをそのように明示的に設定しなければなりません。 設定することで、それらのプロジェクトメソッドはホストプロジェクトにて呼び出すことができるようになります (しかしホストプロジェクトのメソッドエディターで編集することはできません)。 これらのメソッドはコンポーネントの <strong>エントリーポイント</strong> となります。</p>
-<p><strong>注:</strong> セキュリティのため、デフォルトでは、コンポーネントはホストプロジェクトのプロジェクトメソッドを実行することはできません。 特定の場合に、ホストプロジェクトのプロジェクトメソッドにコンポーネントがアクセスできるようにする必要があるかもしれません。 そうするには、ホストプロジェクトのプロジェクトメソッド側で、コンポーネントからのアクセスを可能にするよう明示的に指定しなければなりません。</p>
+<p>On the other hand, by default these project methods will not be visible, and they can't be called in the host project. プロジェクトメソッドをホストプロジェクトと共有するには、 マトリクスプロジェクト側でそのメソッドをそのように明示的に設定しなければなりません。 These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). これらのメソッドはコンポーネントの <strong>エントリーポイント</strong> となります。</p>
+<p>Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. 特定の場合に、ホストプロジェクトのプロジェクトメソッドにコンポーネントがアクセスできるようにする必要があるかもしれません。 To do this, you must explicitly designate which project methods of the host project you want to make accessible to the components (in the method properties, check the <strong>Shared by components and host project</strong> box).</p>
 <p><img src="/docs/alpha/assets/en/Concepts/pict516563.en.png" alt=""></p>
+<p>Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the <code>EXECUTE FORMULA</code> or <code>EXECUTE METHOD</code> commands. たとえば:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Host Method</span>
+<span class="hljs-function">component_method</span>(<span class="hljs-string">"host_method_name"</span>)
+</code></pre>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// component_method</span>
+<span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$1</span>)
+<span class="hljs-function"> EXECUTE METHOD</span>(<span class="hljs-variable">$1</span>)
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="変数の渡し方"></a><a href="#変数の渡し方" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数の渡し方</h2>
-<p>ローカル、プロセス、インタープロセス変数は、コンポーネントとホストプロジェクト間で共有されません。 ホストプロジェクトからコンポーネントの変数、またはその逆にアクセスする唯一の方法はポインターを使用することです。</p>
+<p>ローカル、プロセス、インタープロセス変数は、コンポーネントとホストプロジェクト間で共有されません。 The only way to modify component variables from the host project and vice versa is using pointers.</p>
 <p>配列を使用した例:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// ホストプロジェクト側:</span>
 <span class="hljs-function">     ARRAY INTEGER</span>(MyArray;<span class="hljs-number">10</span>)
@@ -109,10 +117,18 @@
 <span class="hljs-function">     APPEND TO ARRAY</span>(<span class="hljs-variable">$1</span>-&gt;;<span class="hljs-number">2</span>)
 </code></pre>
 <p>変数を使用した例:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-function"> C_TEXT</span>(myvariable)
-<span class="hljs-function"> component_method1</span>(-&gt;myvariable)
-<span class="hljs-function"> C_POINTER</span>(<span class="hljs-variable">$p</span>)
- <span class="hljs-variable">$p</span>:=<span class="hljs-function">component_method2</span>(...)
+<pre><code class="hljs css language-4d"><span class="hljs-function">C_TEXT</span>(myvariable)
+<span class="hljs-function">component_method1</span>(-&gt;myvariable)
+</code></pre>
+<pre><code class="hljs css language-4d"><span class="hljs-function">C_POINTER</span>(<span class="hljs-variable">$p</span>)
+<span class="hljs-variable">$p</span>:=<span class="hljs-function">component_method2</span>(...)
+</code></pre>
+<p>Without a pointer, a component can still access the value of a host database variable (but not the variable itself) and vice versa:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">//In the host database</span>
+<span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$input_t</span>)
+<span class="hljs-variable">$input_t</span>:=<span class="hljs-string">"DoSomething"</span>
+<span class="hljs-function">component_method</span>(<span class="hljs-variable">$input_t</span>)
+<span class="hljs-comment">// component_method gets "DoSomething" in $1 (but not the $input_t variable)</span>
 </code></pre>
 <p>ホストプロジェクトとコンポーネント間でポインターを使用して通信をおこなうには、以下の点を考慮する必要があります:</p>
 <ul>
@@ -131,7 +147,7 @@
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">     If</span>(myptr1=myptr2) <span class="hljs-comment">// このテストはFalse を返します</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="ホストプロジェクトのテーブルへのアクセス"></a><a href="#ホストプロジェクトのテーブルへのアクセス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ホストプロジェクトのテーブルへのアクセス</h2>
-<p>コンポーネントでテーブルを使用することはできませんが、ホストプロジェクトとコンポーネントはポインターを使用して通信を行うことができます。 たとえば、以下はコンポーネントで実行可能なメソッドです:</p>
+<p>Although components cannot use tables, pointers can allow host projects and components to communicate with each other. たとえば、以下はコンポーネントで実行可能なメソッドです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// コンポーネントメソッドの呼び出し</span>
 <span class="hljs-function">methCreateRec</span>(-&gt;[PEOPLE];-&gt;[PEOPLE]Name;<span class="hljs-string">"Julie Andrews"</span>)
 </code></pre>
@@ -147,9 +163,12 @@
 <span class="hljs-variable">$fieldpointer</span>-&gt;:=<span class="hljs-variable">$3</span>
 <span class="hljs-function">SAVE RECORD</span>(<span class="hljs-variable">$tablepointer</span>-&gt;)
 </code></pre>
+<blockquote>
+<p>In the context of a component, 4D assumes that a reference to a table form is a reference to the host table form (as components can't have tables.)</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="ランゲージコマンドのスコープ"></a><a href="#ランゲージコマンドのスコープ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ランゲージコマンドのスコープ</h2>
 <p><a href="#使用できないコマンド">使用できないコマンド</a> を除き、コンポーネントではすべての 4D ランゲージコマンドが使用できます。</p>
-<p>コマンドがコンポーネントから呼ばれると、コマンドはコンポーネントのコンテキストで実行されます。ただし <code>EXECUTE METHOD</code> コマンドは除きます。このコマンドは、パラメーターにて指定されたメソッドのコンテキストを使用します。 また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。</p>
+<p>When commands are called from a component, they are executed in the context of the component, except for the <code>EXECUTE METHOD</code> or <code>EXECUTE FORMULA</code> command that use the context of the method specified by the command. また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。</p>
 <p><code>SET DATABASE PARAMETER</code> と <code>Get database parameter</code> コマンドは例外となります: これらのコマンドのスコープはグローバルです。 これらのコマンドがコンポーネントから呼び出されると、結果はホストプロジェクトに適用されます。</p>
 <p>さらに、<code>Structure file</code> と <code>Get 4D folder</code> コマンドは、コンポーネントで使用するための設定ができるようになっています。</p>
 <p><code>COMPONENT LIST</code> コマンドを使用して、ホストプロジェクトにロードされたコンポーネントのリストを取得できます。</p>
@@ -186,10 +205,15 @@
 <li>特定のテーブルに属さない&quot; プロジェクトフォーム&quot; のみが、コンポーネント内で利用できます。 マトリクスプロジェクトのすべてのプロジェクトフォームをコンポーネントで使用することができます。</li>
 <li>コンポーネントはホストプロジェクトのテーブルフォームを使用できます。 この場合、コンポーネントのコードでフォームを指定するにあたっては、テーブル名ではなく、テーブルへのポインターを使用しなければならないことに注意してください。</li>
 </ul>
-<p><strong>注:</strong> コンポーネントが <code>ADD RECORD</code> コマンドを使用すると、ホストプロジェクトのコンテキストで、ホストプロジェクトのカレントの入力フォームが表示されます。 したがって、その入力フォーム上に変数が含まれている場合、コンポーネントはその変数にアクセスできません。</p>
+<blockquote>
+<p>If a component uses the <code>ADD RECORD</code> command, the current Input form of the host project will be displayed, in the context of the host project. したがって、その入力フォーム上に変数が含まれている場合、コンポーネントはその変数にアクセスできません。</p>
+</blockquote>
 <ul>
 <li>コンポーネントフォームをホストプロジェクト内でサブフォームとして公開することができます。 これは具体的には、グラフィックオブジェクトを提供するコンポーネントを開発できることを意味します。 たとえば、4D社が提供するウィジェットはコンポーネントのサブフォーム利用に基づいています。</li>
 </ul>
+<blockquote>
+<p>In the context of a component, any referenced project form must belong to the component. For example, inside a component, referencing a host project form using <code>DIALOG</code> or <code>Open form window</code> will throw an error.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="テーブルやフィールドの利用"></a><a href="#テーブルやフィールドの利用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>テーブルやフィールドの利用</h2>
 <p>コンポーネントは、マトリクスプロジェクトのストラクチャーで定義されたテーブルやフィールドを使用することはできません。 しかし外部データベースを作成し、そのテーブルやフィールドを必要に応じ利用することはできます。 外部データベースの作成と管理は SQL を用いておこないます。 外部データベースは、メインの4Dプロジェクトから独立している別の 4Dプロジェクトですが、メインプロジェクトから操作が可能です。 外部データベースの利用は、そのデータベースを一時的にカレントデータベースに指定することです。言い換えれば、4Dが実行する SQL クエリのターゲットデータベースとして外部データベースを指定します。 外部データベースの作成は SQL の <code>CREATE DATABASE</code> コマンドを使用します。</p>
 <h3><a class="anchor" aria-hidden="true" id="例題"></a><a href="#例題" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題</h3>

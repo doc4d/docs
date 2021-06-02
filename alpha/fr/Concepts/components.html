@@ -85,21 +85,29 @@
 <h3><a class="anchor" aria-hidden="true" id="protection-des-composants--la-compilation"></a><a href="#protection-des-composants--la-compilation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Protection des composants : la compilation</h3>
 <p>By default, all the project methods of a matrix project installed as a component are potentially visible from the host project. En particulier :</p>
 <ul>
-<li>The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host project. Leur contenu peut être sélectionné et copié dans la zone de prévisualisation de l’Explorateur. Elles peuvent également être visualisées dans le débogueur. Il n’est toutefois pas possible de les ouvrir dans l’éditeur de méthodes ni de les modifier.</li>
+<li>The shared project methods are found on the Methods Page of the Explorer and can be called in the methods of the host project. Leur contenu peut être sélectionné et copié dans la zone de prévisualisation de l’Explorateur. Elles peuvent également être visualisées dans le débogueur. However, it's not possible to open them in the Method editor or modify them.</li>
 <li>The other project methods of the matrix project do not appear in the Explorer but they too can be viewed in the debugger of the host project.</li>
 </ul>
 <p>To protect the project methods of a component effectively, simply compile the matrix project and provide it in the form of a .4dz file. When a compiled matrix project is installed as a component:</p>
 <ul>
-<li>The shared project methods are shown on the Methods Page of the Explorer and can be called in the methods of the host project. En revanche, leur contenu n’apparaît pas dans la zone de prévisualisation ni dans le débogueur.</li>
+<li>The shared project methods are shown on the Methods Page of the Explorer and can be called in the methods of the host project. However, their contents will not appear in the preview area and in the debugger.</li>
 <li>The other project methods of the matrix project will never appear.</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="partage-des-méthodes-projet"></a><a href="#partage-des-méthodes-projet" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Partage des méthodes projet</h2>
 <p>All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed by the component.</p>
-<p>On the other hand, by default these project methods will not be visible, nor can they be called in the host projects. In the matrix project, you must explicitly designate the methods that you want to share with the host project. These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host database). Ces méthodes constituent les <strong>points d’entrée</strong> dans le composant.</p>
-<p><strong>Note:</strong> Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. In certain cases, you may need to allow a component to access the project methods of your host project. To do this, you must explicitly designate the project methods of the host project that you want to make accessible to the components.</p>
+<p>On the other hand, by default these project methods will not be visible, and they can't be called in the host project. In the matrix project, you must explicitly designate the methods that you want to share with the host project. These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). Ces méthodes constituent les <strong>points d’entrée</strong> dans le composant.</p>
+<p>Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. In certain cases, you may need to allow a component to access the project methods of your host project. To do this, you must explicitly designate which project methods of the host project you want to make accessible to the components (in the method properties, check the <strong>Shared by components and host project</strong> box).</p>
 <p><img src="/docs/alpha/assets/en/Concepts/pict516563.en.png" alt=""></p>
+<p>Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the <code>EXECUTE FORMULA</code> or <code>EXECUTE METHOD</code> commands. Par exemple :</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// Host Method</span>
+<span class="hljs-function">component_method</span>(<span class="hljs-string">"host_method_name"</span>)
+</code></pre>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">// component_method</span>
+<span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$1</span>)
+<span class="hljs-function"> EXECUTE METHOD</span>(<span class="hljs-variable">$1</span>)
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="passage-de-variables"></a><a href="#passage-de-variables" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Passage de variables</h2>
-<p>The local, process and interprocess variables are not shared between components and host projects. The only way to access component variables from the host project and vice versa is using pointers.</p>
+<p>The local, process and interprocess variables are not shared between components and host projects. The only way to modify component variables from the host project and vice versa is using pointers.</p>
 <p>Exemple utilisant un tableau :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">//In the host project:</span>
 <span class="hljs-function">     ARRAY INTEGER</span>(MyArray;<span class="hljs-number">10</span>)
@@ -109,10 +117,18 @@
 <span class="hljs-function">     APPEND TO ARRAY</span>(<span class="hljs-variable">$1</span>-&gt;;<span class="hljs-number">2</span>)
 </code></pre>
 <p>Exemples utilisant des variables :</p>
-<pre><code class="hljs css language-4d"><span class="hljs-function"> C_TEXT</span>(myvariable)
-<span class="hljs-function"> component_method1</span>(-&gt;myvariable)
-<span class="hljs-function"> C_POINTER</span>(<span class="hljs-variable">$p</span>)
- <span class="hljs-variable">$p</span>:=<span class="hljs-function">component_method2</span>(...)
+<pre><code class="hljs css language-4d"><span class="hljs-function">C_TEXT</span>(myvariable)
+<span class="hljs-function">component_method1</span>(-&gt;myvariable)
+</code></pre>
+<pre><code class="hljs css language-4d"><span class="hljs-function">C_POINTER</span>(<span class="hljs-variable">$p</span>)
+<span class="hljs-variable">$p</span>:=<span class="hljs-function">component_method2</span>(...)
+</code></pre>
+<p>Without a pointer, a component can still access the value of a host database variable (but not the variable itself) and vice versa:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">//In the host database</span>
+<span class="hljs-function">C_TEXT</span>(<span class="hljs-variable">$input_t</span>)
+<span class="hljs-variable">$input_t</span>:=<span class="hljs-string">"DoSomething"</span>
+<span class="hljs-function">component_method</span>(<span class="hljs-variable">$input_t</span>)
+<span class="hljs-comment">// component_method gets "DoSomething" in $1 (but not the $input_t variable)</span>
 </code></pre>
 <p>When you use pointers to allow components and the host project to communicate, you need to take the following specificities into account:</p>
 <ul>
@@ -131,7 +147,7 @@
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">     If</span>(monptr1=monptr2) <span class="hljs-comment">//Ce test retourne Faux</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="accès-aux-tables-du-projet-hôte"></a><a href="#accès-aux-tables-du-projet-hôte" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accès aux tables du projet hôte</h2>
-<p>Bien que les composants ne puissent pas utiliser de tables, les pointeurs permettent au projet hôte et au composant de communiquer dans ce cas. Par exemple, voici une méthode pouvant être appelée depuis un composant :</p>
+<p>Although components cannot use tables, pointers can allow host projects and components to communicate with each other. Par exemple, voici une méthode pouvant être appelée depuis un composant :</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// appeler une méthode composant</span>
 <span class="hljs-function">methCreateRec</span>(-&gt;[PERSONNES];-&gt;[PERSONNES]Nom;<span class="hljs-string">"Julie Andrews"</span>)
 </code></pre>
@@ -147,9 +163,12 @@
 <span class="hljs-variable">$fieldpointer</span>-&gt;:=<span class="hljs-variable">$3</span>
 <span class="hljs-function">SAVE RECORD</span>(<span class="hljs-variable">$tablepointer</span>-&gt;)
 </code></pre>
+<blockquote>
+<p>In the context of a component, 4D assumes that a reference to a table form is a reference to the host table form (as components can't have tables.)</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="portée-des-commandes-du-langage"></a><a href="#portée-des-commandes-du-langage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Portée des commandes du langage</h2>
 <p>Hormis les <a href="#unusable-commands">Commandes non utilisables</a>, un composant peut utiliser toute commande du langage 4D.</p>
-<p>Lorsqu’elles sont appelées depuis un composant, les commandes s’exécutent dans le contexte du composant, à l’exception de la commande <code>EXECUTE METHOD</code> qui utilise le contexte de la méthode désignée par la commande. A noter également que les commandes de lecture du thème “Utilisateurs et groupes” sont utilisables depuis un composant mais lisent les utilisateurs et les groupes du projet hôte (un composant n’a pas d’utilisateurs et groupes propres).</p>
+<p>When commands are called from a component, they are executed in the context of the component, except for the <code>EXECUTE METHOD</code> or <code>EXECUTE FORMULA</code> command that use the context of the method specified by the command. A noter également que les commandes de lecture du thème “Utilisateurs et groupes” sont utilisables depuis un composant mais lisent les utilisateurs et les groupes du projet hôte (un composant n’a pas d’utilisateurs et groupes propres).</p>
 <p>Les commandes <code>EXECUTE METHOD</code> et <code>Get database parameter</code> constituent aussi une exception à ce principe : leur portée est globale à l'application. Lorsque ces commandes sont appelées depuis un composant, elles s’appliquent au projet d'application hôte.</p>
 <p>Par ailleurs, des dispositions spécifiques sont définies pour les commandes <code>Structure file</code> et <code>Get 4D folder</code> lorsqu’elles sont utilisées dans le cadre des composants.</p>
 <p>La commande <code>COMPONENT LIST</code> permet de connaître la liste des composants chargés par le projet hôte.</p>
@@ -186,10 +205,15 @@
 <li>Seuls les &quot;formulaires projet&quot; (formulaires non associés à une table en particulier) peuvent être exploités directement dans un composant. Tous les formulaires projet présents dans le projet matrice peuvent être utilisés par le composant.</li>
 <li>Un composant peut faire appel à des formulaires table du projet hôte. A noter qu’il est nécessaire dans ce cas d’utiliser des pointeurs plutôt que des noms de table entre [] pour désigner les formulaires dans le code du composant.</li>
 </ul>
-<p><strong>Note :</strong> Si un composant utilise la commande <code>ADD RECORD</code>, le formulaire Entrée courant du projet hôte sera affiché, dans le contexte du projet hôte. Par conséquent, si le formulaire comporte des variables, le composant n’y aura pas accès.</p>
+<blockquote>
+<p>If a component uses the <code>ADD RECORD</code> command, the current Input form of the host project will be displayed, in the context of the host project. Par conséquent, si le formulaire comporte des variables, le composant n’y aura pas accès.</p>
+</blockquote>
 <ul>
 <li>Vous pouvez publier des formulaires de composants comme sous-formulaires dans les projets hôtes. Avec ce principe, vous pouvez notamment développer des composants proposant des objets graphiques. Par exemple, les Widgets proposés par 4D sont basés sur l’emploi de sous-formulaires en composants.</li>
 </ul>
+<blockquote>
+<p>In the context of a component, any referenced project form must belong to the component. For example, inside a component, referencing a host project form using <code>DIALOG</code> or <code>Open form window</code> will throw an error.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="utilisation-de-tables-et-de-champs"></a><a href="#utilisation-de-tables-et-de-champs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utilisation de tables et de champs</h2>
 <p>Un composant ne peut pas utiliser les tables et les champs définis dans la structure 4D du projet matrice. En revanche, il peut créer et utiliser des bases externes, et donc utiliser des tables et des champs en fonction de ses besoins. Les bases externes sont créées et gérées via le langage SQL. Une base externe est un projet 4D indépendant du projet 4D principal, mais qui est manipulée depuis le projet 4D principal. Utiliser une base externe signifie désigner temporairement cette base comme base courante, c’est-à-dire comme base cible des requêtes SQL exécutées par 4D. Les bases externes sont créées à l'aide de la commande SQL <code>CREATE DATABASE</code>.</p>
 <h3><a class="anchor" aria-hidden="true" id="exemple"></a><a href="#exemple" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h3>

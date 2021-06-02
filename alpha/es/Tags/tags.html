@@ -194,14 +194,14 @@ End if
 <li><a href="#--4deach-entity-in-entityselection--">entity selections</a>: loop through each entity,</li>
 <li><a href="#--4deach-property-in-object--">objects</a>: loop through each object property.</li>
 </ul>
-<p>The number of iterations is evaluated at startup and will not change during the processing. Adding or removing items during the loop is usually not recommended since it may result in missing or redundant iterations.</p>
+<p>The number of iterations is evaluated at startup and will not change during the processing. La adición o eliminación de elementos durante el bucle no suele ser recomendable, ya que puede resultar en redundancia o perdidas de iteraciones.</p>
 <h3><a class="anchor" aria-hidden="true" id="--4deach-item-in-collection--"></a><a href="#--4deach-item-in-collection--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DEACH item in collection--&gt;</code></h3>
 <p>This syntax iterates on each <em>item</em> of the <em>collection</em>. The code portion located between <code>&lt;!--#4DEACH --&gt;</code> and <code>&lt;!--#4DENDEACH--&gt;</code> is repeated for each collection element.</p>
 <p>The <em>item</em> parameter is a variable of the same type as the collection elements.</p>
 <p>The collection must contain only <strong>elements of the same type</strong>, otherwise an error is returned as soon as the <em>item</em> variable is assigned the first mismatched value type.</p>
 <p>The number of loops is based on the number of elements of the collection. At each iteration, the <em>item</em> variable is automatically filled with the matching element of the collection. Hay que tener en cuenta los siguientes puntos:</p>
 <ul>
-<li>If the <em>item</em> variable is of the object type or collection type (i.e. if <em>expression</em> is a collection of objects or of collections), modifying this variable will automatically modify the matching element of the collection (because objects and collections share the same references). If the variable is of a scalar type, only the variable will be modified.</li>
+<li>If the <em>item</em> variable is of the object type or collection type (i.e. if <em>expression</em> is a collection of objects or of collections), modifying this variable will automatically modify the matching element of the collection (because objects and collections share the same references). Si la variable es de tipo escalar, sólo se modificará la variable.</li>
 <li>The <em>item</em> variable gets the same type as the first collection element. If any collection element is not of the same type as the variable, an error is generated and the loop stops.</li>
 <li>If the collection contains elements with a Null value, an error is generated if the <em>item</em> variable type does not support Null values (such as longint variables).</li>
 </ul>
@@ -385,7 +385,7 @@ No name has been found.
 </blockquote>
 <p>The number of <code>&lt;!--#4DINCLUDE path--&gt;</code> within a page is unlimited. However, the <code>&lt;!--#4DINCLUDE path--&gt;</code> calls can be made only at one level. This means that, for example, you cannot insert <code>&lt;!--#4DINCLUDE mydoc3.html--&gt;</code> in the <em>mydoc2.html</em> body page, which is called by <code>&lt;!--#4DINCLUDE mydoc2--&gt;</code> inserted in <em>mydoc1.html</em>. Furthermore, 4D verifies that inclusions are not recursive.</p>
 <p>In case of error, the inserted text is &quot;<code>&lt;!--#4DINCLUDE path--&gt;</code> :The document cannot be opened&quot;.</p>
-<p>Examples:</p>
+<p>Ejemplos:</p>
 <pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DINCLUDE subpage.html--&gt;</span>
 <span class="hljs-comment">&lt;!--#4DINCLUDE folder/subpage.html--&gt;</span>
 <span class="hljs-comment">&lt;!--#4DINCLUDE ../folder/subpage.html--&gt;</span>

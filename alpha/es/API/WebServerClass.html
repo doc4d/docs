@@ -127,10 +127,10 @@
 <p><strong>WEB Server</strong> : 4D.WebServer<br><strong>WEB Server</strong>( <em>option</em> : Integer ) : 4D.WebServer</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>option</td><td>Integer</td><td>-&gt;</td><td>Web server to get (default if omitted = <code>Web server database</code>)</td></tr>
+<tr><td>option</td><td>Entero</td><td>-&gt;</td><td>Web server to get (default if omitted = <code>Web server database</code>)</td></tr>
 <tr><td>Result</td><td>4D.WebServer</td><td>&lt;-</td><td>Web server object</td></tr>
 </tbody>
 </table>
@@ -138,7 +138,7 @@
 <p>By default, if the <em>option</em> parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the <em>option</em> parameter:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>Web server database</code></td><td>1</td><td>Current database Web server (default if omitted)</td></tr>
@@ -147,7 +147,7 @@
 </tbody>
 </table>
 <p>The returned Web server object contains the current values of the Web server properties.</p>
-<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>From your component, you want to know if the Web server of the host database is started:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// Method of a component</span><span class="hljs-keyword">
  var</span> <span class="hljs-variable">$hostWS </span>: 4D.WebServer
@@ -170,7 +170,7 @@
 <p><strong>WEB Server list</strong> : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>Colección</td><td>&lt;-</td><td>Collection of the available Web server objects</td></tr>
@@ -187,7 +187,7 @@
 <p>The default Web server object is automatically loaded by 4D at startup. On the other hand, each component Web server that you want to use must be instantiated using the <a href="#web-server"><code>WEB Server</code></a> command.</p>
 </blockquote>
 <p>You can use the <a href="#name">.name</a> property of the Web server object to identify the project or component to which each Web server object in the list is attached.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-1"></a><a href="#ejemplo-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>We want to know how many running web servers are available:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$wSList </span>: Collection<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$vRun </span>: Integer
@@ -405,7 +405,7 @@ The listening IP port number for HTTPS.</p>
 <p>The &quot;SameSite&quot; session cookie value. Possible values (using constants):</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Web SameSite Strict</td><td>&quot;Strict&quot;</td><td><em>Default value</em> - Cookies are only sent in a first-party context</td></tr>
@@ -431,10 +431,10 @@ The listening IP port number for HTTPS.</p>
 <p><strong>.start</strong>() : Object<br><strong>.start</strong>( <em>settings</em> : Object ) : Object</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>settings</td><td>Objeto</td><td>-&gt;</td><td>Web server settings to set at startup</td></tr>
+<tr><td>parámetros</td><td>Objeto</td><td>-&gt;</td><td>Web server settings to set at startup</td></tr>
 <tr><td>Result</td><td>Objeto</td><td>&lt;-</td><td>Status of the web server startup</td></tr>
 </tbody>
 </table>
@@ -446,12 +446,12 @@ The listening IP port number for HTTPS.</p>
 <p>The function returns an object describing the Web server launch status. This object can contain the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th></th><th>Type</th><th>Description</th></tr>
+<tr><th>Property</th><th></th><th>Tipo</th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>success</td><td></td><td>Booleano</td><td>True if the web server was correctly started, False otherwise</td></tr>
 <tr><td>errors</td><td></td><td>Colección</td><td>4D error stack (not returned if the web server started successfully)</td></tr>
-<tr><td></td><td>[].errCode</td><td>Number</td><td>4D error code</td></tr>
+<tr><td></td><td>[].errCode</td><td>Número</td><td>4D error code</td></tr>
 <tr><td></td><td>[].message</td><td>Texto</td><td>Description of the 4D error</td></tr>
 <tr><td></td><td>[].componentSignature</td><td>Texto</td><td>Signature of the internal component which returned the error</td></tr>
 </tbody>
@@ -459,7 +459,7 @@ The listening IP port number for HTTPS.</p>
 <blockquote>
 <p>If the Web server was already launched, an error is returned.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-2"></a><a href="#ejemplo-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$settings</span>;<span class="hljs-variable">$result </span>: Object<span class="hljs-keyword">
  var</span> <span class="hljs-variable">$webServer </span>: 4D.WebServer
 
@@ -483,7 +483,7 @@ The listening IP port number for HTTPS.</p>
 </table>
 <p></details></p>
 <p><strong>.stop()</strong></p>
-<p>| Parameter | Type |  | Description                     |
+<p>| Parameter | Tipo |  | Description                     |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |</p>
 <p>The <code>.stop()</code> function stops the web server on which it is applied.</p>
@@ -491,7 +491,7 @@ The listening IP port number for HTTPS.</p>
 <blockquote>
 <p>This function resets the customized web settings defined for the session using the <em>settings</em> parameter of the <a href="#start"><code>.start()</code></a> function, if any.</p>
 </blockquote>
-<h4><a class="anchor" aria-hidden="true" id="example-3"></a><a href="#example-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-3"></a><a href="#ejemplo-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>To stop the database Web server:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$webServer </span>: 4D.WebServer
 

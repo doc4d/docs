@@ -164,7 +164,7 @@
 <p>The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the <em>writable</em> attribute of the file.</p>
 </blockquote>
 <p>This property is <strong>read-only</strong>.</p>
-<p><strong>Example</strong></p>
+<p><strong>Ejemplo</strong></p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$myFile</span>:=<span class="hljs-function">File</span>(<span class="hljs-string">"C:\\Documents\\Archives\\ReadMe.txt"</span>;fk platform path)<span class="hljs-keyword">
  If</span>(<span class="hljs-variable">$myFile</span>.isWritable)
     <span class="hljs-variable">$myNewFile</span>:=<span class="hljs-variable">$myFile</span>.<span class="hljs-function">setText</span>(<span class="hljs-string">"Added text"</span>)<span class="hljs-keyword">
@@ -309,12 +309,12 @@
 <p><strong>.copyTo</strong>( <em>destinationFolder</em> : 4D.Folder { ; <em>newName</em> : Text } { ; <em>overwrite</em> : Integer } ) : 4D.File</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>destinationFolder</td><td>4D.Folder</td><td style="text-align:center">-&gt;</td><td>Destination folder</td></tr>
 <tr><td>newName</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Name for the copy</td></tr>
-<tr><td>overwrite</td><td>Integer</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr>
+<tr><td>overwrite</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>fk overwrite</code> to replace existing elements</td></tr>
 <tr><td>Result</td><td>4D.File</td><td style="text-align:center">&lt;-</td><td>Copied file</td></tr>
 </tbody>
 </table>
@@ -325,7 +325,7 @@
 <p>If a file with the same name already exists in the <em>destinationFolder</em>, by default 4D generates an error. You can pass the <code>fk overwrite</code> constant in the <em>overwrite</em> parameter to ignore and overwrite the existing file</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk overwrite</code></td><td>4</td><td>Overwrite existing elements, if any</td></tr>
@@ -333,7 +333,7 @@
 </table>
 <p><strong>Returned value</strong></p>
 <p>The copied <code>File</code> object.</p>
-<h4><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>You want to copy a picture <em>file</em> from the user's document folder to the application folder:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> <span class="hljs-variable">$source</span>; <span class="hljs-variable">$copy </span>: Object
 <span class="hljs-variable">$source</span>:=<span class="hljs-function">Folder</span>(fk documents folder).<span class="hljs-function">file</span>(<span class="hljs-string">"Pictures/photo.png"</span>)
@@ -353,7 +353,7 @@
 <p><strong>.getContent( )</strong> : Blob</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>Result</td><td>Blob</td><td>&lt;-</td><td>File content</td></tr>
@@ -363,7 +363,7 @@
 <p>The <code>.getContent()</code> function  returns a <code>BLOB</code> containing the entire content of a file. For information on BLOBs, please refer to the <a href="/docs/alpha/es/Concepts/blob.html">BLOB</a> section.</p>
 <p><strong>Returned value</strong></p>
 <p>A <code>Blob</code>.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-1"></a><a href="#example-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-1"></a><a href="#ejemplo-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>To save a document's contents in a <code>BLOB</code> field:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> var</span> <span class="hljs-variable">$vPath </span>: Text
  <span class="hljs-variable">$vPath</span>:=<span class="hljs-function">Select document</span>(<span class="hljs-string">""</span>;<span class="hljs-string">"*"</span>;<span class="hljs-string">"Select a document"</span>;<span class="hljs-number">0</span>)<span class="hljs-keyword">
@@ -385,10 +385,10 @@
 <p><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>size</td><td>Integer</td><td>-&gt;</td><td>Side length for the returned picture (pixels)</td></tr>
+<tr><td>size</td><td>Entero</td><td>-&gt;</td><td>Side length for the returned picture (pixels)</td></tr>
 <tr><td>Result</td><td>Imagen</td><td>&lt;-</td><td>Icon</td></tr>
 </tbody>
 </table>
@@ -412,12 +412,12 @@
 <p><strong>.getText</strong>( { <em>charSetName</em> : Text } { ; } { <em>breakMode</em> : integer} ) : Text<br><strong>.getText</strong>( { <em>charSetNum</em> : integer } { ; } { <em>breakMode</em> : integer} ) : Text</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Type</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
 </thead>
 <tbody>
 <tr><td>charSetName</td><td>Texto</td><td>-&gt;</td><td>Name of character set</td></tr>
-<tr><td>charSetNum</td><td>Integer</td><td>-&gt;</td><td>Number of character set</td></tr>
-<tr><td>breakMode</td><td>Integer</td><td>-&gt;</td><td>Processing mode for line breaks</td></tr>
+<tr><td>charSetNum</td><td>Entero</td><td>-&gt;</td><td>Number of character set</td></tr>
+<tr><td>breakMode</td><td>Entero</td><td>-&gt;</td><td>Processing mode for line breaks</td></tr>
 <tr><td>Result</td><td>Texto</td><td>&lt;-</td><td>Text from the document</td></tr>
 </tbody>
 </table>
@@ -435,7 +435,7 @@
 <p>In <em>breakMode</em>, you can pass a number indicating the processing to apply to end-of-line characters in the document. The following constants of the &quot;System Documents&quot; theme are available:</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Value</th><th>Comment</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Comment</th></tr>
 </thead>
 <tbody>
 <tr><td><code>Document unchanged</code></td><td>0</td><td>No processing</td></tr>
@@ -448,7 +448,7 @@
 <p>By default, when you omit the <em>breakMode</em> parameter, line breaks are processed in native mode (1).</p>
 <p><strong>Returned value</strong></p>
 <p>Text of the file.</p>
-<h4><a class="anchor" aria-hidden="true" id="example-2"></a><a href="#example-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h4>
+<h4><a class="anchor" aria-hidden="true" id="ejemplo-2"></a><a href="#ejemplo-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
 <p>Given the following text document (fields are separated by tabs):</p>
 <pre><code class="hljs css language-4d">id name price vat
 <span class="hljs-number">3</span> thé <span class="hljs-number">1.06</span>€ <span class="hljs-number">19.6</span>
