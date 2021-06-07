@@ -67,36 +67,59 @@
               }
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/components.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">コンポーネント</h1></header><article><div><span><p>4D のコンポーネントとは、他のアプリケーションにインストール可能な、1つ以上の機能を持つ 4D メソッドやフォームの一式です。 たとえば、メールの送受信をおこない、それらを 4D アプリケーションに格納するための機能を持ったコンポーネントを作成できます。</p>
+<h2><a class="anchor" aria-hidden="true" id="presentation"></a><a href="#presentation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Presentation</h2>
+<h3><a class="anchor" aria-hidden="true" id="定義"></a><a href="#定義" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>定義</h3>
+<ul>
+<li><strong>マトリクスプロジェクト</strong>: コンポーネント開発に使用する4D プロジェクト。 マトリクスプロジェクトは特別な属性を持たない標準のプロジェクトです。 マトリクスプロジェクトはひとつのコンポーネントを構成します。</li>
+<li><strong>ホストプロジェクト</strong>: コンポーネントがインストールされ、それを使用するアプリケーションプロジェクト。</li>
+<li><strong>コンポーネント</strong>: ホストアプリケーションによって使用される目的で、同アプリケーションの <a href="/docs/alpha/ja/Project/architecture.html"><code>Components</code></a> フォルダーにコピーされたマトリクスプロジェクト (コンパイル済みまたは非コンパイル)。</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="principles"></a><a href="#principles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Principles</h3>
 <p>4D コンポーネントの作成とインストールは直接 4D を使用しておこないます。 4D では、コンポーネントは <a href="/docs/alpha/ja/Concepts/plug-ins.html">プラグイン</a> のように扱われ、以下の原則が適用されます:</p>
 <ul>
-<li>コンポーネントは、標準のアーキテクチャーまたはパッケージ (.4dbase 拡張子) の形をしたストラクチャーファイル ( コンパイルまたは非コンパイル) で構成されます。</li>
-<li>アプリケーションプロジェクトにコンポーネントをインストールするには、プロジェクトの Project フォルダーと同階層の &quot;Components&quot; フォルダーにコンポーネントをコピーします。</li>
-<li>コンポーネントは次の 4D の要素を呼び出すことができます: プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リスト、ライブラリピクチャーなど。 反面、コンポーネントが呼び出せないものは、データベースメソッドとトリガーです。</li>
+<li>A component consists of a regular 4D project file.</li>
+<li>To install a component, you simply need to copy it into the <a href="/docs/alpha/ja/Project/architecture.html"><code>Components</code> folder of the project</a>. You can use aliases or shortcuts.</li>
+<li>プロジェクトは &quot;マトリクス&quot; にも &quot;ホスト&quot; にもなりえます。言い換えれば、マトリクスプロジェクト自体も1 つ以上のコンポーネントを使用できます。 しかしコンポーネントが &quot;サブコンポーネント&quot; を使用することはできません。</li>
+<li>コンポーネントは次の 4D の要素を呼び出すことができます: プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リストなど。 反面、コンポーネントが呼び出せないものは、データベースメソッドとトリガーです。</li>
 <li>コンポーネント内で標準のテーブルやデータファイルを使用することはできません。 しかし、外部データベースのメカニズムを使用すればテーブルやフィールドを作成し、そこにデータを格納したり読み出したりすることができます。 外部データベースは、メインの 4D データベースとは独立して存在し、SQLコマンドでアクセスします。</li>
+<li>A host project running in interpreted mode can use either interpreted or compiled components. A host project running in compiled mode cannot use interpreted components. In this case, only compiled components can be used.</li>
 </ul>
-<h2><a class="anchor" aria-hidden="true" id="定義"></a><a href="#定義" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>定義</h2>
-<p>4D のコンポーネント管理メカニズムでは、以下の用語とコンセプトを使います:</p>
+<h2><a class="anchor" aria-hidden="true" id="ランゲージコマンドのスコープ"></a><a href="#ランゲージコマンドのスコープ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ランゲージコマンドのスコープ</h2>
+<p><a href="#使用できないコマンド">使用できないコマンド</a> を除き、コンポーネントではすべての 4D ランゲージコマンドが使用できます。</p>
+<p>コマンドがコンポーネントから呼ばれると、コマンドはコンポーネントのコンテキストで実行されます。ただし <code>EXECUTE METHOD</code> および <code>EXECUTE FORMULA</code> コマンドは除きます。このコマンドは、パラメーターにて指定されたメソッドのコンテキストを使用します。 また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。</p>
+<p><code>SET DATABASE PARAMETER</code> と <code>Get database parameter</code> コマンドは例外となります: これらのコマンドのスコープはグローバルです。 これらのコマンドがコンポーネントから呼び出されると、結果はホストプロジェクトに適用されます。</p>
+<p>さらに、<code>Structure file</code> と <code>Get 4D folder</code> コマンドは、コンポーネントで使用するための設定ができるようになっています。</p>
+<p><code>COMPONENT LIST</code> コマンドを使用して、ホストプロジェクトにロードされたコンポーネントのリストを取得できます。</p>
+<h3><a class="anchor" aria-hidden="true" id="使用できないコマンド"></a><a href="#使用できないコマンド" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用できないコマンド</h3>
+<p>(読み取り専用モードで開かれるため) ストラクチャーファイルを更新する以下のコマンドは、コンポーネントで使用することができません。 コンポーネント中で以下のコマンドを実行すると、-10511, &quot;CommandName コマンドをコンポーネントでコールすることはできません&quot; のエラーが生成されます:</p>
 <ul>
-<li><strong>マトリクスプロジェクト</strong>: コンポーネント開発に使用する4D プロジェクト。 マトリクスプロジェクトは特別な属性を持たない標準のプロジェクトです。 マトリクスプロジェクトはひとつのコンポーネントを構成します。 マトリクスプロジェクトは、コンポーネントを使用するプロジェクト (ホストアプリケーションプロジェクト) の Components フォルダーにコピーして使います。コンパイルされていてもいなくてもかまいません。</li>
-<li><strong>ホストプロジェクト</strong>: コンポーネントがインストールされ、それを使用するアプリケーションプロジェクト。</li>
-<li><strong>コンポーネント</strong>: ホストアプリケーションによって使用される目的で、同アプリケーションの Components フォルダーにコピーされたマトリクスプロジェクト (コンパイル済みまたは非コンパイル)。</li>
+<li><code>ON EVENT CALL</code></li>
+<li><code>Method called on event</code></li>
+<li><code>SET PICTURE TO LIBRARY</code></li>
+<li><code>REMOVE PICTURE FROM LIBRARY</code></li>
+<li><code>SAVE LIST</code></li>
+<li><code>ARRAY TO LIST</code></li>
+<li><code>EDIT FORM</code></li>
+<li><code>CREATE USER FORM</code></li>
+<li><code>DELETE USER FORM</code></li>
+<li><code>CHANGE PASSWORD</code></li>
+<li><code>EDIT ACCESS</code></li>
+<li><code>Set group properties</code></li>
+<li><code>Set user properties</code></li>
+<li><code>DELETE USER</code></li>
+<li><code>CHANGE LICENSES</code></li>
+<li><code>BLOB TO USERS</code></li>
+<li><code>SET PLUGIN ACCESS</code></li>
 </ul>
-<p>プロジェクトは &quot;マトリクス&quot; にも &quot;ホスト&quot; にもなりえます。言い換えれば、マトリクスプロジェクト自体も1 つ以上のコンポーネントを使用できます。 しかしコンポーネントが &quot;サブコンポーネント&quot; を使用することはできません。</p>
-<h3><a class="anchor" aria-hidden="true" id="コンポーネントの保護-コンパイル"></a><a href="#コンポーネントの保護-コンパイル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コンポーネントの保護: コンパイル</h3>
-<p>コンポーネントとしてインストールされたマトリクスプロジェクトのプロジェクトメソッドは、ホストプロジェクトからデフォルトでアクセス可能です。 特に:</p>
+<p><strong>注:</strong></p>
 <ul>
-<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 However, it's not possible to open them in the Method editor or modify them.</li>
-<li>マトリクスプロジェクトの他のプロジェクトメソッドはエクスプローラーに現れません。しかし、ホストプロジェクトのデバッガーには内容が表示されます。</li>
-</ul>
-<p>コンポーネントのプロジェクトメソッドを効果的に保護するには、マトリクスプロジェクトをコンパイルして、インタプリターコードを含まない .4dz ファイルとして提供します。 コンパイルされたマトリクスプロジェクトがコンポーネントとしてインストールされると:</p>
-<ul>
-<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 However, their contents will not appear in the preview area and in the debugger.</li>
-<li>マトリクスプロジェクトの他のプロジェクトメソッドは一切表示されません。</li>
+<li><code>Current form table</code> コマンドは、プロジェクトフォームのコンテキストで呼び出されると <code>Nil</code> を返します。 ゆえにこのコマンドをコンポーネントで使用することはできません。</li>
+<li>SQLデータ定義言語のコマンド (<code>CREATE TABLE</code>、<code>DROP TABLE</code>等) をコンポーネントのフレームワークで使用することはできません。 ただし、外部データベースの場合は使用することができます (<code>CREATE DATABASE</code> SQL コマンド参照)。</li>
 </ul>
 <h2><a class="anchor" aria-hidden="true" id="プロジェクトメソッドの共有"></a><a href="#プロジェクトメソッドの共有" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>プロジェクトメソッドの共有</h2>
 <p>マトリクスプロジェクトのすべてのプロジェクトメソッドは 、コンポーネントに含まれます。つまり、マトリクスプロジェクトをコンポーネント化しても、これらのプロジェクトメソッドは同コンポーネントにて呼び出して実行することができます。</p>
-<p>On the other hand, by default these project methods will not be visible, and they can't be called in the host project. プロジェクトメソッドをホストプロジェクトと共有するには、 マトリクスプロジェクト側でそのメソッドをそのように明示的に設定しなければなりません。 These project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). これらのメソッドはコンポーネントの <strong>エントリーポイント</strong> となります。</p>
-<p>Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. 特定の場合に、ホストプロジェクトのプロジェクトメソッドにコンポーネントがアクセスできるようにする必要があるかもしれません。 To do this, you must explicitly designate which project methods of the host project you want to make accessible to the components (in the method properties, check the <strong>Shared by components and host project</strong> box).</p>
+<p>他方、デフォルトでは、これらのプロジェクトメソッドはホストプロジェクトに表示されず、呼び出すこともできません。 プロジェクトメソッドをホストプロジェクトと共有するには、 マトリクスプロジェクト側でそのメソッドをそのように明示的に設定しなければなりません。 設定することで、それらのプロジェクトメソッドはホストプロジェクトにて呼び出すことができるようになります (しかしホストプロジェクトのメソッドエディターで編集することはできません)。 これらのメソッドはコンポーネントの <strong>エントリーポイント</strong> となります。</p>
+<p>セキュリティのため、デフォルトでは、コンポーネントはホストプロジェクトのプロジェクトメソッドを実行することはできません。 特定の場合に、ホストプロジェクトのプロジェクトメソッドにコンポーネントがアクセスできるようにする必要があるかもしれません。 To do this, you must explicitly designate which project methods of the host project you want to make accessible to the components (in the method properties, check the <strong>Shared by components and host project</strong> box).</p>
 <p><img src="/docs/alpha/assets/en/Concepts/pict516563.en.png" alt=""></p>
 <p>Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the <code>EXECUTE FORMULA</code> or <code>EXECUTE METHOD</code> commands. たとえば:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// Host Method</span>
@@ -106,8 +129,12 @@
 <span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$1</span>)
 <span class="hljs-function"> EXECUTE METHOD</span>(<span class="hljs-variable">$1</span>)
 </code></pre>
+<blockquote>
+<p>An interpreted host database that contains interpreted components can be compiled or syntax checked if it does not call methods of the interpreted component. Otherwise, a warning dialog box appears when you attempt to launch the compilation or a syntax check and it will not be possible to carry out the operation.<br>
+Keep in mind that an interpreted method can call a compiled method, but not the reverse, except via the use of the <code>EXECUTE METHOD</code> and <code>EXECUTE FORMULA</code> commands.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="変数の渡し方"></a><a href="#変数の渡し方" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数の渡し方</h2>
-<p>ローカル、プロセス、インタープロセス変数は、コンポーネントとホストプロジェクト間で共有されません。 The only way to modify component variables from the host project and vice versa is using pointers.</p>
+<p>ローカル、プロセス、インタープロセス変数は、コンポーネントとホストプロジェクト間で共有されません。 ホストプロジェクトからコンポーネントの変数を編集、またはその逆をおこなう唯一の方法はポインターを使用することです。</p>
 <p>配列を使用した例:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// ホストプロジェクト側:</span>
 <span class="hljs-function">     ARRAY INTEGER</span>(MyArray;<span class="hljs-number">10</span>)
@@ -146,8 +173,10 @@
 <p>このような場合には、ポインターを比較しなければなりません:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">     If</span>(myptr1=myptr2) <span class="hljs-comment">// このテストはFalse を返します</span>
 </code></pre>
+<h2><a class="anchor" aria-hidden="true" id="エラー処理"></a><a href="#エラー処理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>エラー処理</h2>
+<p><code>ON ERR CALL</code> コマンドによって実装された <a href="/docs/alpha/ja/Concepts/error-handling.html">エラー処理メソッド</a> は、実行中のプロジェクトに対してのみ適用されます。 コンポーネントによって生成されたエラーの場合、ホストプロジェクトの <code>ON ERR CALL</code> エラー処理メソッドは呼び出されず、その逆もまた然りです。</p>
 <h2><a class="anchor" aria-hidden="true" id="ホストプロジェクトのテーブルへのアクセス"></a><a href="#ホストプロジェクトのテーブルへのアクセス" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ホストプロジェクトのテーブルへのアクセス</h2>
-<p>Although components cannot use tables, pointers can allow host projects and components to communicate with each other. たとえば、以下はコンポーネントで実行可能なメソッドです:</p>
+<p>コンポーネントでテーブルを使用することはできませんが、ホストプロジェクトとコンポーネントはポインターを使用して通信をおこなうことができます。 たとえば、以下はコンポーネントで実行可能なメソッドです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-comment">// コンポーネントメソッドの呼び出し</span>
 <span class="hljs-function">methCreateRec</span>(-&gt;[PEOPLE];-&gt;[PEOPLE]Name;<span class="hljs-string">"Julie Andrews"</span>)
 </code></pre>
@@ -165,54 +194,6 @@
 </code></pre>
 <blockquote>
 <p>In the context of a component, 4D assumes that a reference to a table form is a reference to the host table form (as components can't have tables.)</p>
-</blockquote>
-<h2><a class="anchor" aria-hidden="true" id="ランゲージコマンドのスコープ"></a><a href="#ランゲージコマンドのスコープ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ランゲージコマンドのスコープ</h2>
-<p><a href="#使用できないコマンド">使用できないコマンド</a> を除き、コンポーネントではすべての 4D ランゲージコマンドが使用できます。</p>
-<p>When commands are called from a component, they are executed in the context of the component, except for the <code>EXECUTE METHOD</code> or <code>EXECUTE FORMULA</code> command that use the context of the method specified by the command. また、ユーザー＆グループテーマの読み出しコマンドはコンポーネントで使用することができますが、読み出されるのはホストプロジェクトのユーザー＆グループ情報であることに注意してください (コンポーネントに固有のユーザー＆グループはありません)。</p>
-<p><code>SET DATABASE PARAMETER</code> と <code>Get database parameter</code> コマンドは例外となります: これらのコマンドのスコープはグローバルです。 これらのコマンドがコンポーネントから呼び出されると、結果はホストプロジェクトに適用されます。</p>
-<p>さらに、<code>Structure file</code> と <code>Get 4D folder</code> コマンドは、コンポーネントで使用するための設定ができるようになっています。</p>
-<p><code>COMPONENT LIST</code> コマンドを使用して、ホストプロジェクトにロードされたコンポーネントのリストを取得できます。</p>
-<h3><a class="anchor" aria-hidden="true" id="使用できないコマンド"></a><a href="#使用できないコマンド" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用できないコマンド</h3>
-<p>(読み取り専用モードで開かれるため) ストラクチャーファイルを更新する以下のコマンドは、コンポーネントで使用することができません。 コンポーネント中で以下のコマンドを実行すると、-10511, &quot;CommandName コマンドをコンポーネントでコールすることはできません&quot; のエラーが生成されます:</p>
-<ul>
-<li><code>ON EVENT CALL</code></li>
-<li><code>Method called on event</code></li>
-<li><code>SET PICTURE TO LIBRARY</code></li>
-<li><code>REMOVE PICTURE FROM LIBRARY</code></li>
-<li><code>SAVE LIST</code></li>
-<li><code>ARRAY TO LIST</code></li>
-<li><code>EDIT FORM</code></li>
-<li><code>CREATE USER FORM</code></li>
-<li><code>DELETE USER FORM</code></li>
-<li><code>CHANGE PASSWORD</code></li>
-<li><code>EDIT ACCESS</code></li>
-<li><code>Set group properties</code></li>
-<li><code>Set user properties</code></li>
-<li><code>DELETE USER</code></li>
-<li><code>CHANGE LICENSES</code></li>
-<li><code>BLOB TO USERS</code></li>
-<li><code>SET PLUGIN ACCESS</code></li>
-</ul>
-<p><strong>注:</strong></p>
-<ul>
-<li><code>Current form table</code> コマンドは、プロジェクトフォームのコンテキストで呼び出されると <code>Nil</code> を返します。 ゆえにこのコマンドをコンポーネントで使用することはできません。</li>
-<li>SQLデータ定義言語のコマンド (<code>CREATE TABLE</code>、<code>DROP TABLE</code>等) をコンポーネントのフレームワークで使用することはできません。 ただし、外部データベースの場合は使用することができます (<code>CREATE DATABASE</code> SQL コマンド参照)。</li>
-</ul>
-<h2><a class="anchor" aria-hidden="true" id="エラー処理"></a><a href="#エラー処理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>エラー処理</h2>
-<p><code>ON ERR CALL</code> コマンドによって実装された <a href="/docs/alpha/ja/Concepts/error-handling.html">エラー処理メソッド</a> は、実行中のプロジェクトに対してのみ適用されます。 コンポーネントによって生成されたエラーの場合、ホストプロジェクトの <code>ON ERR CALL</code> エラー処理メソッドは呼び出されず、その逆もまた然りです。</p>
-<h2><a class="anchor" aria-hidden="true" id="フォームの使用"></a><a href="#フォームの使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>フォームの使用</h2>
-<ul>
-<li>特定のテーブルに属さない&quot; プロジェクトフォーム&quot; のみが、コンポーネント内で利用できます。 マトリクスプロジェクトのすべてのプロジェクトフォームをコンポーネントで使用することができます。</li>
-<li>コンポーネントはホストプロジェクトのテーブルフォームを使用できます。 この場合、コンポーネントのコードでフォームを指定するにあたっては、テーブル名ではなく、テーブルへのポインターを使用しなければならないことに注意してください。</li>
-</ul>
-<blockquote>
-<p>If a component uses the <code>ADD RECORD</code> command, the current Input form of the host project will be displayed, in the context of the host project. したがって、その入力フォーム上に変数が含まれている場合、コンポーネントはその変数にアクセスできません。</p>
-</blockquote>
-<ul>
-<li>コンポーネントフォームをホストプロジェクト内でサブフォームとして公開することができます。 これは具体的には、グラフィックオブジェクトを提供するコンポーネントを開発できることを意味します。 たとえば、4D社が提供するウィジェットはコンポーネントのサブフォーム利用に基づいています。</li>
-</ul>
-<blockquote>
-<p>In the context of a component, any referenced project form must belong to the component. For example, inside a component, referencing a host project form using <code>DIALOG</code> or <code>Open form window</code> will throw an error.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="テーブルやフィールドの利用"></a><a href="#テーブルやフィールドの利用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>テーブルやフィールドの利用</h2>
 <p>コンポーネントは、マトリクスプロジェクトのストラクチャーで定義されたテーブルやフィールドを使用することはできません。 しかし外部データベースを作成し、そのテーブルやフィールドを必要に応じ利用することはできます。 外部データベースの作成と管理は SQL を用いておこないます。 外部データベースは、メインの4Dプロジェクトから独立している別の 4Dプロジェクトですが、メインプロジェクトから操作が可能です。 外部データベースの利用は、そのデータベースを一時的にカレントデータベースに指定することです。言い換えれば、4Dが実行する SQL クエリのターゲットデータベースとして外部データベースを指定します。 外部データベースの作成は SQL の <code>CREATE DATABASE</code> コマンドを使用します。</p>
@@ -281,18 +262,42 @@
 
  End SQL</span>
 </code></pre>
+<h2><a class="anchor" aria-hidden="true" id="フォームの使用"></a><a href="#フォームの使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>フォームの使用</h2>
+<ul>
+<li>特定のテーブルに属さない&quot; プロジェクトフォーム&quot; のみが、コンポーネント内で利用できます。 マトリクスプロジェクトのすべてのプロジェクトフォームをコンポーネントで使用することができます。</li>
+<li>コンポーネントはホストプロジェクトのテーブルフォームを使用できます。 この場合、コンポーネントのコードでフォームを指定するにあたっては、テーブル名ではなく、テーブルへのポインターを使用しなければならないことに注意してください。</li>
+</ul>
+<blockquote>
+<p>コンポーネントが <code>ADD RECORD</code> コマンドを使用すると、ホストプロジェクトのコンテキストで、ホストプロジェクトのカレントの入力フォームが表示されます。 したがって、その入力フォーム上に変数が含まれている場合、コンポーネントはその変数にアクセスできません。</p>
+</blockquote>
+<ul>
+<li>コンポーネントフォームをホストプロジェクト内でサブフォームとして公開することができます。 これは具体的には、グラフィックオブジェクトを提供するコンポーネントを開発できることを意味します。 たとえば、4D社が提供するウィジェットはコンポーネントのサブフォーム利用に基づいています。</li>
+</ul>
+<blockquote>
+<p>In the context of a component, any referenced project form must belong to the component. For example, inside a component, referencing a host project form using <code>DIALOG</code> or <code>Open form window</code> will throw an error.</p>
+</blockquote>
 <h2><a class="anchor" aria-hidden="true" id="リソースの使用"></a><a href="#リソースの使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>リソースの使用</h2>
-<p>コンポーネントはリソースを使用することができます。 リソース管理の原則に従い、コンポーネントが .4dbase 形式の場合 (推奨されるアーキテクチャー)、Resources フォルダーは .4dbase フォルダーの中に置かれます。</p>
+<p>Components can use resources located in the Resources folder of the component.</p>
 <p>これによって自動メカニズムが有効となり、コンポーネントの Resources フォルダー内で見つかった XLIFF ファイルは、 同コンポーネントによってロードされます。</p>
 <p>1つ以上のコンポーネントを含むホストプロジェクトでは、ホストプロジェクトと同様にそれぞれのコンポーネントも固有のリソースチェーンを持っています。 リソースは異なるプロジェクト間で分離されます。コンポーネントA のリソースにコンポーネントB やホストプロジェクトからアクセスすることはできません。</p>
-<h2><a class="anchor" aria-hidden="true" id="コンポーネントのオンラインヘルプ"></a><a href="#コンポーネントのオンラインヘルプ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コンポーネントのオンラインヘルプ</h2>
-<p>コンポーネントにオンラインヘルプを追加できるように、専用のメカニズムが実装されています。 原理は 4D プロジェクトに提供されているものと同じです:</p>
+<h2><a class="anchor" aria-hidden="true" id="executing-initialization-code"></a><a href="#executing-initialization-code" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Executing initialization code</h2>
+<p>A component can execute 4D code automatically when opening or closing the host database, for example in order to load and/or save the preferences or user states related to the operation of the host database.</p>
+<p>Executing initialization or closing code is done by means of the <code>On Host Database Event</code> database method.</p>
+<blockquote>
+<p>For security reasons, you must explicitly authorize the execution of the <code>On Host Database Event</code> database method in the host database in order to be able to call it. To do this, you must check the <strong>Execute &quot;On Host Database Event&quot; method of the components</strong> option on the Security page the Settings.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="コンポーネントの保護-コンパイル"></a><a href="#コンポーネントの保護-コンパイル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>コンポーネントの保護: コンパイル</h2>
+<p>コンポーネントとしてインストールされたマトリクスプロジェクトのプロジェクトメソッドは、ホストプロジェクトからデフォルトでアクセス可能です。 特に:</p>
 <ul>
-<li>コンポーネントヘルプは拡張子が .htm, .html または (Windows のみ) .chm で提供されます。</li>
-<li>ヘルプファイルはコンポーネントのストラクチャーファイルと同階層に置かれ、ストラクチャーと同じ名前でなくてはなりません。</li>
-<li>このファイルは自動的にアプリケーションのヘルプメニューに、&quot; ヘルプ: ヘルプファイル名&quot; のタイトルでロードされます。</li>
+<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 しかし、それらをメソッドエディター上で開いたり編集したりすることはできません。</li>
+<li>マトリクスプロジェクトの他のプロジェクトメソッドはエクスプローラーに現れません。しかし、ホストプロジェクトのデバッガーには内容が表示されます。</li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/ja/Concepts/interpreted-compiled.html"><span class="arrow-prev">← </span><span>インタープリターモードとコンパイル済みモード</span></a><a class="docs-next button" href="/docs/alpha/ja/Concepts/plug-ins.html"><span>プラグイン</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#定義">定義</a><ul class="toc-headings"><li><a href="#コンポーネントの保護-コンパイル">コンポーネントの保護: コンパイル</a></li></ul></li><li><a href="#プロジェクトメソッドの共有">プロジェクトメソッドの共有</a></li><li><a href="#変数の渡し方">変数の渡し方</a></li><li><a href="#ホストプロジェクトのテーブルへのアクセス">ホストプロジェクトのテーブルへのアクセス</a></li><li><a href="#ランゲージコマンドのスコープ">ランゲージコマンドのスコープ</a><ul class="toc-headings"><li><a href="#使用できないコマンド">使用できないコマンド</a></li></ul></li><li><a href="#エラー処理">エラー処理</a></li><li><a href="#フォームの使用">フォームの使用</a></li><li><a href="#テーブルやフィールドの利用">テーブルやフィールドの利用</a><ul class="toc-headings"><li><a href="#例題">例題</a></li></ul></li><li><a href="#リソースの使用">リソースの使用</a></li><li><a href="#コンポーネントのオンラインヘルプ">コンポーネントのオンラインヘルプ</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+<p>コンポーネントのプロジェクトメソッドを効果的に保護するには、マトリクスプロジェクトをコンパイルして、インタプリターコードを含まない .4dz ファイルとして提供します。 コンパイルされたマトリクスプロジェクトがコンポーネントとしてインストールされると:</p>
+<ul>
+<li>エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 しかし、その内容はプレビューエリアにもデバッガーにも表示されません。</li>
+<li>マトリクスプロジェクトの他のプロジェクトメソッドは一切表示されません。</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/alpha/ja/Concepts/interpreted-compiled.html"><span class="arrow-prev">← </span><span>インタープリターモードとコンパイル済みモード</span></a><a class="docs-next button" href="/docs/alpha/ja/Concepts/plug-ins.html"><span>プラグイン</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#presentation">Presentation</a><ul class="toc-headings"><li><a href="#定義">定義</a></li><li><a href="#principles">Principles</a></li></ul></li><li><a href="#ランゲージコマンドのスコープ">ランゲージコマンドのスコープ</a><ul class="toc-headings"><li><a href="#使用できないコマンド">使用できないコマンド</a></li></ul></li><li><a href="#プロジェクトメソッドの共有">プロジェクトメソッドの共有</a></li><li><a href="#変数の渡し方">変数の渡し方</a></li><li><a href="#エラー処理">エラー処理</a></li><li><a href="#ホストプロジェクトのテーブルへのアクセス">ホストプロジェクトのテーブルへのアクセス</a></li><li><a href="#テーブルやフィールドの利用">テーブルやフィールドの利用</a><ul class="toc-headings"><li><a href="#例題">例題</a></li></ul></li><li><a href="#フォームの使用">フォームの使用</a></li><li><a href="#リソースの使用">リソースの使用</a></li><li><a href="#executing-initialization-code">Executing initialization code</a></li><li><a href="#コンポーネントの保護-コンパイル">コンポーネントの保護: コンパイル</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/alpha/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
