@@ -208,14 +208,14 @@ Tables or array expressions can only be passed [as reference using a pointer](dt
 
 ### Parameter indirection
 
-4D project methods accept a variable number of parameters of the same type, starting from the right. This principle is called **parameter indirection**. Using the `Count parameters` command you can then address those parameters with a `For...End for` loop and the parameter indirection syntax.
+Os métodos projeto 4D aceitam um número variável de parametros do mesmo tipo, começando pela direita. Este princípio se chama **la indireção de parâmetros**. Ao utilizar o comando `Count parameters` pode endereçar esses parâmetros com um loop `For...End for` e a sintaxe de indireção de parâmetros.
 
 > Parameter indirection can only be used with the [sequential](#sequential-parameters) syntax.
 
-In the following example, the project method `SEND PACKETS` accepts a time parameter followed by a variable number of text parameters:
+No exemplo abaixo, o método projeto `SEND PACKETS` aceita um parâmetro de tempo seguido de um número variável de parâmetros de texto:
 
 ```4d
-  //SEND PACKETS Project Method
+  //Método projeto SEND PACKETS
   //SEND PACKETS ( Time ; Text { ; Text2... ; TextN } )
   //SEND PACKETS ( docRef ; Data { ; Data2... ; DataN } )
 
@@ -228,20 +228,20 @@ In the following example, the project method `SEND PACKETS` accepts a time param
  End for
 ```
 
-Parameter indirection is best managed if you respect the following convention: if only some of the parameters are addressed by indirection, they should be passed after the others. Within the method, an indirection address is formatted: ${$i}, where $i is a numeric variable. ${$i} is called a **generic parameter**.
+A indireção de parâmetros se gerencia melhor se respeitar a convenção abaixo: se só alguns dos parâmetros forem endereçados por indireção, devem ser passados depois dos outros. Dentro do método, um endereço de indireçao é formatado: ${$i}, onde $i for uma variável numérica. ${$i} se denomina **parâmetro genérico**.
 
-For example, consider a function that adds values and returns the sum formatted according to a format that is passed as a parameter. Each time this method is called, the number of values to be added may vary. We must pass the values as parameters to the method and the format in the form of a character string. The number of values can vary from call to call.
+Por exemplo, considere uma função que some os valores e devolva a soma formatada segundo um formato que se passa como parâmetro. Cada vez que chamar a esse método, o número de valores a somar pode variar. Devemos passar os valores como parâmetros ao método e o formato em forma de string dos caracteres. O número de valores pode variar de chamada a chamada.
 
-This function is called in the following manner:
+Essa função é chamada da maneira abaixo:
 
 ```4d
  Result:=MySum("##0.00";125,2;33,5;24)
 
 ```
 
-In this case, the calling method will get the string “182.70”, which is the sum of the numbers, formatted as specified. The function's parameters must be passed in the correct order: first the format and then the values.
+Neste caso, o método que chama obterá a string "182,70", que é a soma dos números, com o formato especificado. Os parâmetros da função devem ser passados na ordem correta: primeiro o formato e depois os valores.
 
-Here is the function, named `MySum`:
+Aqui está a função, chamada `MySum`:
 ```4d
  $Sum:=0
  For($i;2;Count parameters)
@@ -250,7 +250,7 @@ Here is the function, named `MySum`:
  $0:=String($Sum;$1)
 ```
 
-This function can now be called in various ways:
+Esta função pode ser chamada agora de várias formas:
 
 ```4d
  Result:=MySum("##0.00";125,2;33,5;24)
@@ -258,7 +258,7 @@ This function can now be called in various ways:
 ```
 
 
-As with other local variables, it is not mandatory to declare generic parameters by compiler directive. However, it is recommended to avoid any ambiguity. To declare these parameters, you use a compiler directive to which you pass ${N} as a parameter, where N specifies the first generic parameter.
+Da mesma forma que com outras variáveis locais, não é obrigatório declarar os parâmetros genéricos mediante uma diretiva de compilador. Entretanto é recomendado que se evite qualquer ambiguidade. Para declarar estes parâmetros, se utiliza uma diretriz do  compilador à qual se passa ${N} como parâmetro, onde N especifica o primeiro parâmetro genérico.
 
 ```4d
  C_LONGINT(${4})
@@ -351,9 +351,9 @@ C_TEXT($1;$2;$3;$4;$5;$6)
 
 ## Using object properties as named parameters
 
-Using objects as parameters allow you to handle **named parameters**. This programming style is simple, flexible, and easy to read.
+A utilização de objetos como parâmetros permite manejar **parâmetros com nome**. Este estilo de programação é simples, flexível e fácil de ler.
 
-For example, using the `CreatePerson` method:
+Por exemplo, utilizando o método `CreatePerson`:
 
 ```4d
   //CreatePerson
@@ -363,7 +363,7 @@ For example, using the `CreatePerson` method:
  ALERT(String($person.Age))  
 ```
 
-In the `ChangeAge` method you can write:
+No método `ChangeAge` pode escrever:
 
 ```4d
   //ChangeAge
@@ -373,12 +373,12 @@ In the `ChangeAge` method you can write:
  ALERT($para.Name+" is "+String($para.Age)+" years old.")
 ```
 
-This provides a powerful way to define [optional parameters](#optional-parameters) (see also below). To handle missing parameters, you can either:
+Isso oferece uma poderosa maneira de definir [parâmetros opcionais](#optional-parameters) (ver também abaixo). Para manejar os parâmetros que faltam, pode:
 - check if all expected parameters are provided by comparing them to the `Null` value, or
 - preset parameter values, or
 - use them as empty values.
 
-In the `ChangeAge` method above, both Age and Name properties are mandatory and would produce errors if they were missing. To avoid this case, you can just write:
+No método `ChangeAge` anterior, as propriedades Age e Name são obrigatórias e produzirão erross se faltarão. Para evitar isso, pode escrever:
 
 ```4d
   //ChangeAge
@@ -387,9 +387,9 @@ In the `ChangeAge` method above, both Age and Name properties are mandatory and 
  $para.Age:=Num($para.Age)+10
  ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
 ```
-Then both parameters are optional; if they are not filled, the result will be " is 10 years old", but no error will be generated.
+Ambos parâmetros são opcionais: se não forem preenchidos, o resultado será "é 10 anos de idade", mas nenhum erro será gerado.
 
-Finally, with named parameters, maintaining or refactoring applications is very simple and safe. Imagine you later realize that adding 10 years is not always appropriate. You need another parameter to set how many years to add. You write:
+Finalmente, com parâmetros com nome, a manutenção ou a reprodução das aplicações é muito simples e seguro. Imagine que depois perceba de que adicionar 10 anos não funciona sempre. Precisa de outro parâmetro para definir quantos anos tem que adicionar. Escreva:
 
 ```4d
 $person:=New object("Name";"Smith";"Age";40;"toAdd";10)
@@ -405,9 +405,9 @@ $para.Age:=Num($para.Age)+$para.toAdd
 ALERT(String($para.Name)+" is "+String($para.Age)+" years old.")
 ```
 
-The power here is that you will not need to change your existing code. It will always work as in the previous version, but if necessary, you can use another value than 10 years.
+Não precisará mudar seu código existente. Sempre funcionará como na versão anterior, mas se for necessário, é possível usar outro valor diferente de 10 anos.
 
-With named variables, any parameter can be optional. In the above example, all parameters are optional and anyone can be given, in any order.
+Com variáveis com nome, qualquer parâmetro pode ser opcional. No exemplo acima, todos os parâmetros são opcionais e qualquer pode ser dado em qualquer ordem.
 
 
 
@@ -421,20 +421,20 @@ Dentro da subrotina, pode utilizar os parâmetros $1, $2... da mesma maneira que
 
 ## Optional parameters
 
-In the *4D Language Reference* manual, the { } characters (braces) indicate optional parameters. For example, `ALERT (message{; okButtonTitle})` means that the *okButtonTitle* parameter may be omitted when calling the command. You can call it in the following ways:
+No manual *Linguagem de 4D*, os caracteres { } (chaves) indicam parâmetros opcionais. Por exemplo, `ALERT (message{; okButtonTitle})` significa que o parâmetro *okButtonTitle* pode omitir o chamado ao comando. Pode fazer a chamada de duas maneiras:
 
 ```4d
-ALERT("Are you sure?";"Yes I am") //2 parameters
-ALERT("Time is over") //1 parameter
+ALERT("Are you sure?";"Yes I am") //2 parâmetros
+ALERT("Time is over") //1 parâmetro
 ```
 
-4D project methods also accept such optional parameters, starting from the right. The issue with optional parameters is how to handle the case where some of them are missing in the called method - it should never produce an error. A good practice is to assign default values to unused parameters.
+Os métodos projeto 4D também aceitam esses parâmetros opcionais, começando pela direita. O problema com os parâmetros opcionais é como manejar o caso em que alguns deles estejam faltando no método chamado, nunca deveria produzir um erro. Uma boa prática é atribuir valores padrão aos parâmetros não utilizados.
 
 > When optional parameters are needed in your methods, you might also consider using [object properties as named parameters](#using-objects-properties-as-named-parameters) which provide a flexible way to handle variable numbers of parameters.
 
-Using the `Count parameters` command from within the called method, you can detect the actual number of parameters and perform different operations depending on what you have received.
+Utilizando o comando `Count parameters` desde dentro do método chamado, pode detectar o número real de parâmetros e realizar diferentes operações dependendo do que tenha recebido.
 
-The following example displays a text message and can insert the text into a document on disk or in a 4D Write Pro area:
+O exemplo abaixo mostra uma mensagem de texto e pode inserir o texto em um documento no disco ou em uma área de 4D Write Pro:
 
 ```4d
 // APPEND TEXT Project Method
@@ -452,12 +452,12 @@ The following example displays a text message and can insert the text into a doc
     End if
  End if
 ```
-After this project method has been added to your application, you can write:
+Depois de adicionar este método projeto a sua aplicação, pode escrever:
 
 ```4d  
-APPEND TEXT(vtSomeText) //Will only display the  message
-APPEND TEXT(vtSomeText;$path) //Displays text message and appends it to document at $path
-APPEND TEXT(vtSomeText;"";$wpArea) //Displays text message and writes it to $wpArea
+APPEND TEXT(vtSomeText) //Só mostrará a mensagem
+APPEND TEXT(vtSomeText;$path) //Mostra a mensagem e o anexo ao documento em $path
+APPEND TEXT(vtSomeText;"";$wpArea) //Mostra a mensagem e escreve em $wpArea
 ```
 
 
@@ -535,8 +535,8 @@ O método `ChangeAge` adiciona 10 ao atributo Age do objeto recebido
  ALERT(String($person.Age))
 ```
 
-When you execute the `CreatePerson` method, both alert boxes will read "50" since the same object reference is handled by both methods.
+Quando executar o método `CreatePerson`, as duas caixas de alerta dirão "50" já que a mesma referência de objeto é manejada por ambos métodos.
 
-**4D Server:** When parameters are passed between methods that are not executed on the same machine (using for example the "Execute on Server" option), references are not usable. In these cases, copies of object and collection parameters are sent instead of references.
+**4D Server:** quando são passados parâmetros entre métodos que não são executados na mesma máquina (utilizando por exemplo a opção "Executar no servidor"), as referencias não são utilizáveis. Nestes casos, são enviadas cópias dos parâmetros de objetos e coleções ao invés de referências.
 
 
