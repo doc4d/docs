@@ -70,7 +70,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 | fileConstant | Entero  | -> | 4D file constant                                |
 | pathType     | Entero  | -> | `fk posix path` (default) or `fk platform path` |
 | *            |         | -> | * to return file of host database               |
-| Result       | 4D.File | <- | New file object                                 |
+| Resultado    | 4D.File | <- | New file object                                 |
 <!-- END REF -->
 
 
@@ -165,7 +165,7 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 <!--REF #fileClass.create().Params -->
 | Parameter | Tipo     |    | Description                                                |
 | --------- | -------- | -- | ---------------------------------------------------------- |
-| Result    | Booleano | <- | True if the file was created successfully, false otherwise |
+| Resultado | Booleano | <- | True if the file was created successfully, false otherwise |
 <!-- END REF -->
 
 #### Description
@@ -211,7 +211,7 @@ Creation of a preferences file in the database folder:
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
 | aliasName         | Texto     | -> | Name of the alias or shortcut                |
 | aliasType         | Entero    | -> | Type of the alias link                       |
-| Result            | 4D.File   | <- | Alias or shortcut file reference             |
+| Resultado         | 4D.File   | <- | Alias or shortcut file reference             |
 <!-- END REF -->
 
 
@@ -382,7 +382,7 @@ You want to delete a specific file in the database folder:
 | ----------------- | --------- | -- | ---------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder           |
 | newName           | Texto     | -> | Full name for the moved file |
-| Result            | 4D.File   | <- | Moved file                   |
+| Resultado         | 4D.File   | <- | Moved file                   |
 <!-- END REF -->
 
 
@@ -449,7 +449,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 | Parameter | Tipo    |    | Description                |
 | --------- | ------- | -- | -------------------------- |
 | newName   | Texto   | -> | New full name for the file |
-| Result    | 4D.File | <- | Renamed file               |
+| Resultado | 4D.File | <- | Renamed file               |
 <!-- END REF -->
 
 #### Description
@@ -532,7 +532,7 @@ The `.setContent( )` function <!-- REF #fileClass.setContent().Summary -->rewrit
 <!--REF #fileClass.setText().Params -->
 | Parameter   | Tipo   |    | Description                                                |
 | ----------- | ------ | -- | ---------------------------------------------------------- |
-| text        | Texto  | -> | Text to store in the file                                  |
+| texto       | Texto  | -> | Text to store in the file                                  |
 | charSetName | Texto  | -> | Name of character set                                      |
 | charSetNum  | Entero | -> | Number of character set                                    |
 | breakMode   | Entero | -> | Processing mode for line breaks|<!-- END REF -->
