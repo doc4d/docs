@@ -79,6 +79,20 @@ When this option is checked, 4D databases are automatically created in a folder 
 
 Thanks to this principle, under macOS the database folders appear as packages having specific properties. Under Windows, this has no particular impact.
 
+### Adding a gitignore file
+
+When working in project mode, you might need or want your version control system to ignore some files.  
+
+When a project is created in 4D, and the `com.4d/general/new_databases/add_gitignore` preference is set to `True`, 4D creates a `.gitignore` file at the same level as the `Project` folder.
+
+You can set this preference using the **Create default .gitignore file** checkbox.
+
+![](assets/en/Preferences/gitignore.png)
+
+The contents of this file comes from the `default_gitignore.txt` file in the current user's system preferences folder if it exists. Otherwise, it comes from the 4D resources folder.
+
+The [official git documentation](https://www.atlassian.com/git/tutorials/saving-changes/gitignoreatlassian) is a great resource to understand how `.gitignore` files work. 
+
 ### Language of text comparison
   
 This parameter configures the default language used for character string processing and comparison in new databases. The language choice has a direct influence on the sorting and searching of text, as well as the character case, but it has no effect on the translation of texts or on the date, time or currency formats, which remain in the system language. By default (factory setting), 4D uses the current user language set in the system.
@@ -88,7 +102,6 @@ A 4D database can thus operate in a language different from that of the system. 
 When creating a new data file, 4D uses the language previously set in this menu. When opening a data file that is not in the same language as the structure, the data file language is used and the language code is copied into the structure. 
 
 >You can modify this parameter for the open database using the Database Settings (see [Text comparison](https://doc.4d.com/4Dv18R6/4D/18-R6/DatabaseData-storage-page.300-5217842.en.html#460252)).
-
 
 ## Documentation Location  
 
@@ -118,7 +131,3 @@ Sets where 4D will look for documentation pages.
 Indicates the location of the static HTML documentation. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red. 
 
 You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the **[...]** button next to the entry area and choose a documentation root folder (folder corresponding to the language: `fr`, `en`, `es`, `de` or `ja`). 
-
-
-
-
