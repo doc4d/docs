@@ -79,11 +79,11 @@ When this option is checked, 4D databases are automatically created in a folder 
 
 Thanks to this principle, under macOS the database folders appear as packages having specific properties. Under Windows, this has no particular impact.
 
-### Adding a gitignore file
+### Create default `.gitignore` file
 
 When working in project mode, you might need or want your version control system to ignore some files.  
 
-When a project is created in 4D, and the `com.4d/general/new_databases/add_gitignore` preference is set to `True`, 4D creates a `.gitignore` file at the same level as the `Project` folder.
+When a project is created in 4D and the `com.4d/general/new_databases/add_gitignore` preference is set to `True`, 4D creates a `.gitignore` file at the same level as the `Project` folder.
 
 You can set this preference using the **Create default .gitignore file** checkbox.
 
