@@ -160,7 +160,9 @@
 <li>If <em>index</em> corresponds to a dropped entity, a Null value is returned.</li>
 </ul>
 <blockquote>
+<blockquote>
 <p><strong>Warning</strong>: <code>EntitySelection[index]</code> is a non assignable expression, which means that it cannot be used as en editable entity reference with methods like <a href="/docs/fr/API/EntityClass.html#lock"><code>.lock()</code></a> or <a href="/docs/fr/API/EntityClass.html#save"><code>.save()</code></a>. To work with the corresponding entity, you need to assign the returned expression to an assignable expression, such as a variable. Voici quelques exemples :</p>
+</blockquote>
 </blockquote>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$sel</span>:=ds.Employee.<span class="hljs-function">all</span>() <span class="hljs-comment">//create the entity selection</span>
   <span class="hljs-comment">//invalid statements:</span>
