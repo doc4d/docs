@@ -109,22 +109,22 @@
 <p><strong>Create entity selection</strong> ( <em>dsTable</em> : Table { ; <em>settings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>dsTable</td><td>Table</td><td style="text-align:center">-&gt;</td><td>Table in the 4D database whose current selection will be used to build the entity selection</td></tr>
 <tr><td>parámetros</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Build option: context</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Entity selection matching the dataclass related to the given table</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Entity selection matching the dataclass related to the given table</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción"></a><a href="#descripción" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>Create entity selection</code> command builds and returns a new, <a href="/docs/es/ORDA/entities.html#shareable-or-alterable-entity-selections">alterable</a> entity selection related to the dataclass matching the given <em>dsTable</em>, according to the current selection of this table.</p>
 <p>If the current selection is sorted, an <a href="/docs/es/ORDA/dsmapping.html#ordered-or-unordered-entity-selection">ordered</a> entity selection is created (the order of the current selection is kept). If the current selection is unsorted, an unordered entity selection is created.</p>
 <p>If the <em>dsTable</em> is not exposed in <a href="/docs/es/API/DataStoreClass.html#ds"><code>ds</code></a>, an error is returned. This command cannot be used with a Remote datastore.</p>
 <p>In the optional <em>settings</em> parameter, you can pass an object containing the following property:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>context</td><td>Texto</td><td>Label for the <a href="/docs/es/ORDA/entities.html#clientserver-optimization">optimization context</a> applied to the entity selection.</td></tr>
@@ -151,7 +151,7 @@
 </table>
 <p></details></p>
 <p><strong><em>[index]</em></strong> : 4D.Entity</p>
-<h4><a class="anchor" aria-hidden="true" id="description-1"></a><a href="#description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-1"></a><a href="#descripción-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>EntitySelection[index]</code> notation allows you to access entities within the entity selection using the standard collection syntax: pass the position of the entity you want to get in the <em>index</em> parameter.</p>
 <p>Note that the corresponding entity is reloaded from the datastore.</p>
 <p><em>index</em> can be any number between 0 and <code>.length</code>-1.</p>
@@ -190,7 +190,7 @@
 </table>
 <p></details></p>
 <p><strong><em>.attributeName</em></strong> : Collection<br><strong><em>.attributeName</em></strong> : 4D.EntitySelection</p>
-<h4><a class="anchor" aria-hidden="true" id="description-2"></a><a href="#description-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-2"></a><a href="#descripción-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>Any dataclass attribute can be used as a property of an entity selection to return a &quot;projection&quot; of values for the attribute in the entity selection. Projected values can be a collection or a new entity selection, depending on the <a href="/docs/es/API/DataClassAttributeClass.html#kind">kind</a> (<code>storage</code> or <code>relation</code>) of the attribute.</p>
 <ul>
 <li>If <em>attributeName</em> kind is <code>storage</code>: <code>.attributeName</code> returns a collection of values of the same type as <em>attributeName</em>.</li>
@@ -240,14 +240,14 @@
 <p><strong>.add</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to be added to the entity selection</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">-&gt;</td><td>Entity selection including the added <em>entity</em></td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">-&gt;</td><td>Entity selection including the added <em>entity</em></td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-3"></a><a href="#description-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-3"></a><a href="#descripción-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.add()</code> function adds the specified <em>entity</em> to the entity selection and returns the modified entity selection.</p>
 <blockquote>
 <p>This function modifies the original entity selection.</p>
@@ -296,15 +296,15 @@
 <p><strong>.and</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.and</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to intersect with</td></tr>
 <tr><td>entitySelection</td><td>4D.EntitySelection</td><td style="text-align:center">-&gt;</td><td>Entity selection to intersect with</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection with the result of intersection with logical AND operator</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection with the result of intersection with logical AND operator</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-4"></a><a href="#description-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-4"></a><a href="#descripción-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.and()</code> function combines the entity selection with an <em>entity</em> or <em>entitySelection</em> parameter using the logical AND operator; it returns a new, unordered entity selection that contains only the entities that are referenced in both the entity selection and the parameter.</p>
 <ul>
 <li>If you pass <em>entity</em> as parameter, you combine this entity with the entity selection. If the entity belongs to the entity selection, a new entity selection containing only the entity is returned. Otherwise, an empty entity selection is returned.</li>
@@ -349,14 +349,14 @@
 <p><strong>.average</strong>( <em>attributePath</em> : Text ) : Real</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Attribute path to be used for calculation</td></tr>
-<tr><td>Result</td><td>Real</td><td style="text-align:center">&lt;-</td><td>Arithmetic mean (average) of entity attribute values (Undefined if empty entity selection)</td></tr>
+<tr><td>Resultado</td><td>Real</td><td style="text-align:center">&lt;-</td><td>Arithmetic mean (average) of entity attribute values (Undefined if empty entity selection)</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-5"></a><a href="#description-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-5"></a><a href="#descripción-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.average()</code> function returns the arithmetic mean (average) of all the non-null values of <em>attributePath</em> in the entity selection.</p>
 <p>Pass in the <em>attributePath</em> parameter the attribute path to evaluate.</p>
 <p>Only numerical values are taken into account for the calculation. Note however that, if the <em>attributePath</em> of the entity selection contains mixed value types, <code>.average()</code> takes all scalar elements into account to calculate the average value.</p>
@@ -390,14 +390,14 @@
 <p><strong>.contains</strong>( <em>entity</em> : 4D.Entity ) : Boolean</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to evaluate</td></tr>
-<tr><td>Result</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity belongs to the entity selection, else False</td></tr>
+<tr><td>Resultado</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity belongs to the entity selection, else False</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-6"></a><a href="#description-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-6"></a><a href="#descripción-6" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.contains()</code> function returns true if entity reference belongs to the entity selection, and false otherwise.</p>
 <p>In <em>entity</em>, specify the entity to search for in the entity selection. If entity is Null, the function will return false.</p>
 <p>If <em>entity</em> and the entity selection do not belong to the same dataclass, an error is raised.</p>
@@ -428,14 +428,14 @@
 <p><strong>.count</strong>( <em>attributePath</em> : Text ) : Real</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
-<tr><td>Result</td><td>Real</td><td style="text-align:center">&lt;-</td><td>Number of non null <em>attributePath</em> values in the entity selection</td></tr>
+<tr><td>Resultado</td><td>Real</td><td style="text-align:center">&lt;-</td><td>Number of non null <em>attributePath</em> values in the entity selection</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-7"></a><a href="#description-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-7"></a><a href="#descripción-7" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.count()</code> function returns the number of entities in the entity selection with a non-null value in <em>attributePath</em>.</p>
 <blockquote>
 <p>Only scalar values are taken into account. Object or collection type values are considered as null values.</p>
@@ -467,14 +467,14 @@
 <p><strong>.copy</strong>( { <em>option</em> : Integer } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>option</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>ck shared</code>: return a shareable entity selection</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Copy of the entity selection</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Copy of the entity selection</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-8"></a><a href="#description-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-8"></a><a href="#descripción-8" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.copy()</code> function returns a copy of the original entity selection.</p>
 <blockquote>
 <p>This function does not modify the original entity selection.</p>
@@ -520,15 +520,15 @@
 <p><strong>.distinct</strong>( <em>attributePath</em> : Text { ; <em>option</em> : Integer } ) : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of attribute whose distinct values you want to get</td></tr>
 <tr><td>option</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk diacritical</code>: diacritical evaluation (&quot;A&quot; # &quot;a&quot; for example)</td></tr>
-<tr><td>Result</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection with only distinct values</td></tr>
+<tr><td>Resultado</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection with only distinct values</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-9"></a><a href="#description-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-9"></a><a href="#descripción-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.distinct()</code> function returns a collection containing only distinct (different) values from the <em>attributePath</em> in the entity selection.</p>
 <p>The returned collection is automatically sorted. <strong>Null</strong> values are not returned.</p>
 <p>In the <em>attributePath</em> parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the <em>attributePath</em> is an object attribute that contains values of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:</p>
@@ -567,14 +567,14 @@
 <p><strong>.drop</strong>( { <em>mode</em> : Integer } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>mode</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk stop dropping on first error</code>: stops method execution on first non-droppable entity</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Empty entity selection if successful, else entity selection containing non-droppable entity(ies)</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>Empty entity selection if successful, else entity selection containing non-droppable entity(ies)</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-10"></a><a href="#description-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-10"></a><a href="#descripción-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.drop()</code> function removes the entities belonging to the entity selection from the table related to its dataclass within the datastore. The entity selection remains in memory.</p>
 <blockquote>
 <p>Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.</p>
@@ -615,16 +615,16 @@
 <p><strong>.extract</strong>( <em>attributePath</em> : Text { ; <em>option</em> : Integer } ) : Collection<br><strong>.extract</strong>( <em>attributePath</em> { ; <em>targetPath</em> } { ; <em>...attributePathN</em> : Text ; <em>targetPathN</em> : Text } ) : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Attribute path whose values must be extracted to the new collection</td></tr>
 <tr><td>targetPath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Target attribute path or attribute name</td></tr>
 <tr><td>option</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>ck keep null</code>: include null attributes in the returned collection (ignored by default)</td></tr>
-<tr><td>Result</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection containing extracted values</td></tr>
+<tr><td>Resultado</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection containing extracted values</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-11"></a><a href="#description-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-11"></a><a href="#descripción-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.extract()</code> function returns a collection containing <em>attributePath</em> values extracted from the entity selection.</p>
 <p><em>attributePath</em> can refer to:</p>
 <ul>
@@ -700,13 +700,13 @@
 <p><strong>.first()</strong> : 4D.Entity</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to the first entity of the entity selection (Null if selection is empty)</td></tr>
+<tr><td>Resultado</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to the first entity of the entity selection (Null if selection is empty)</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-12"></a><a href="#description-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-12"></a><a href="#descripción-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.first()</code> function returns a reference to the entity in the first position of the entity selection.</p>
 <p>The result of this function is similar to:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySel</span>[<span class="hljs-number">0</span>]
@@ -741,13 +741,13 @@
 <p><strong>.getDataClass()</strong> : 4D.DataClass</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>4D.DataClass</td><td style="text-align:center">&lt;-</td><td>Dataclass object to which the entity selection belongs</td></tr>
+<tr><td>Resultado</td><td>4D.DataClass</td><td style="text-align:center">&lt;-</td><td>Dataclass object to which the entity selection belongs</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-13"></a><a href="#description-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-13"></a><a href="#descripción-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.getDataClass()</code> function returns the dataclass of the entity selection.</p>
 <p>This function is mainly useful in the context of generic code.</p>
 <h4><a class="anchor" aria-hidden="true" id="ejemplo-9"></a><a href="#ejemplo-9" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
@@ -781,13 +781,13 @@
 <p><strong>.isAlterable()</strong> : Boolean</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity selection is alterable, False otherwise</td></tr>
+<tr><td>Resultado</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity selection is alterable, False otherwise</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-14"></a><a href="#description-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-14"></a><a href="#descripción-14" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.isAlterable()</code> function returns True if the entity selection is alterable, and False if the entity selection is not alterable.</p>
 <p>For more information, please refer to <a href="/docs/es/ORDA/entities.html#shareable-or-alterable-entity-selections">Shareable or alterable entity selections</a>.</p>
 <h4><a class="anchor" aria-hidden="true" id="ejemplo-10"></a><a href="#ejemplo-10" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
@@ -812,13 +812,13 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.isOrdered()</strong> : Boolean</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity selection is ordered, False otherwise</td></tr>
+<tr><td>Resultado</td><td>Booleano</td><td style="text-align:center">&lt;-</td><td>True if the entity selection is ordered, False otherwise</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-15"></a><a href="#description-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-15"></a><a href="#descripción-15" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.isOrdered()</code> function returns True if the entity selection is ordered, and False if it is unordered.</p>
 <blockquote>
 <p>This function always returns True when the entity selection comes from a remote datastore.</p>
@@ -855,13 +855,13 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.last()</strong> : 4D.Entity</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to the last entity of the entity selection (Null if empty entity selection)</td></tr>
+<tr><td>Resultado</td><td>4D.Entity</td><td style="text-align:center">&lt;-</td><td>Reference to the last entity of the entity selection (Null if empty entity selection)</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-16"></a><a href="#description-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-16"></a><a href="#descripción-16" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.last()</code> function returns a reference to the entity in last position of the entity selection.</p>
 <p>The result of this function is similar to:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$entity</span>:=<span class="hljs-variable">$entitySel</span>[length<span class="hljs-number">-1</span>]
@@ -887,7 +887,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </table>
 <p></details></p>
 <p><strong>.length</strong> : Integer</p>
-<h4><a class="anchor" aria-hidden="true" id="description-17"></a><a href="#description-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-17"></a><a href="#descripción-17" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.length</code> property returns the number of entities in the entity selection. If the entity selection is empty, it returns 0.</p>
 <p>Entity selections always have a <code>.length</code> property.</p>
 <h4><a class="anchor" aria-hidden="true" id="ejemplo-13"></a><a href="#ejemplo-13" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
@@ -910,14 +910,14 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.max</strong>( <em>attributePath</em> : Text ) : any</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
-<tr><td>Result</td><td>any</td><td style="text-align:center">&lt;-</td><td>Highest value of attribute</td></tr>
+<tr><td>Resultado</td><td>any</td><td style="text-align:center">&lt;-</td><td>Highest value of attribute</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-18"></a><a href="#description-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-18"></a><a href="#descripción-18" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.max()</code> function returns the highest (or maximum) value among all the values of <em>attributePath</em> in the entity selection. It actually returns the value of the last entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function.</p>
 <p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.max()</code> function will return the maximum value within the first scalar type in the default 4D type list order (see <a href="/docs/es/API/CollectionClass.html#sort"><code>.sort()</code></a> description).</p>
 <p><code>.max()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
@@ -948,14 +948,14 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.min</strong>( <em>attributePath</em> : Text ) : any</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
-<tr><td>Result</td><td>any</td><td style="text-align:center">&lt;-</td><td>Lowest value of attribute</td></tr>
+<tr><td>Resultado</td><td>any</td><td style="text-align:center">&lt;-</td><td>Lowest value of attribute</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-19"></a><a href="#description-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-19"></a><a href="#descripción-19" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.min()</code> function  returns the lowest (or minimum) value among all the values of attributePath in the entity selection.  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the <a href="#orderby"><code>.orderBy()</code></a> function (excluding <strong>null</strong> values).</p>
 <p>If you pass in <em>attributePath</em> a path to an object attribute containing different types of values, the <code>.min()</code> function will return the minimum value within the first scalar value type in the type list order (see <a href="/docs/es/API/CollectionClass.html#sort"><code>.sort()</code></a> description).</p>
 <p><code>.min()</code> returns <strong>undefined</strong> if the entity selection is empty or <em>attributePath</em> is not found in the object attribute.</p>
@@ -985,15 +985,15 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.minus</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.minus</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to substract</td></tr>
 <tr><td>entitySelection</td><td>4D.EntitySelection</td><td style="text-align:center">-&gt;</td><td>Entity selection to substract</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection or a new reference on the existing entity selection</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection or a new reference on the existing entity selection</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-20"></a><a href="#description-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-20"></a><a href="#descripción-20" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.minus()</code> function excludes from the entity selection to which it is applied the <em>entity</em> or the entities of <em>entitySelection</em> and returns the resulting entity selection.</p>
 <ul>
 <li>If you pass <em>entity</em> as parameter, the function creates a new entity selection without <em>entity</em> (if <em>entity</em> belongs to the entity selection). If <em>entity</em> was not included in the original entity selection, a new reference to the entity selection is returned.</li>
@@ -1038,15 +1038,15 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.or</strong>( <em>entity</em> : 4D.Entity ) : 4D.EntitySelection<br><strong>.or</strong>( <em>entitySelection</em> : 4D.EntitySelection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>entity</td><td>4D.Entity</td><td style="text-align:center">-&gt;</td><td>Entity to intersect with</td></tr>
 <tr><td>entitySelection</td><td>4D.EntitySelection</td><td style="text-align:center">-&gt;</td><td>Entity selection to intersect with</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection or new reference to the original entity selection</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection or new reference to the original entity selection</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-21"></a><a href="#description-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-21"></a><a href="#descripción-21" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.or()</code> function combines the entity selection with the <em>entity</em> or <em>entitySelection</em> parameter using the logical (not exclusive) OR operator; it returns a new, unordered entity selection that contains all the entities from the entity selection and the parameter.</p>
 <ul>
 <li>If you pass <em>entity</em> as parameter, you compare this entity with the entity selection. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.</li>
@@ -1087,15 +1087,15 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.orderBy</strong>( <em>pathString</em> : Text ) : 4D.EntitySelection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>pathString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Attribute path(s) and sorting instruction(s) for the entity selection</td></tr>
 <tr><td>pathObjects</td><td>Colección</td><td style="text-align:center">-&gt;</td><td>Collection of criteria objects</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection in the specified order</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection in the specified order</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-22"></a><a href="#description-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-22"></a><a href="#descripción-22" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.orderBy()</code> function returns a new ordered entity selection containing all entities of the entity selection in the order specified by <em>pathString</em> or <em>pathObjects</em> criteria.</p>
 <blockquote>
 <ul>
@@ -1155,17 +1155,17 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.orderByFormula</strong>( <em>formulaString</em> : Text { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection<br><strong>.orderByFormula</strong>( <em>formulaObj</em> : Object { ; <em>sortOrder</em> : Integer } { ; <em>settings</em> : Object} ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>formulaString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Formula string</td></tr>
 <tr><td>formulaObj</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Formula object</td></tr>
 <tr><td>sortOrder</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk ascending</code> (default) or <code>dk descending</code></td></tr>
 <tr><td>parámetros</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Parameter(s) for the formula</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New ordered entity selection</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New ordered entity selection</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-23"></a><a href="#description-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-23"></a><a href="#descripción-23" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.orderByFormula()</code> function returns a new, ordered entity selection containing all entities of the entity selection in the order defined through the <em>formulaString</em> or <em>formulaObj</em> and, optionally, <em>sortOrder</em> and <em>settings</em> parameters.</p>
 <blockquote>
 <p>This function does not modify the original entity selection.</p>
@@ -1262,18 +1262,18 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.query</strong>( <em>queryString</em> : Text { ; <em>...value</em> : any } { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection <br><strong>.query</strong>( <em>formula</em> : Object { ; <em>querySettings</em> : Object } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>queryString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Search criteria as string</td></tr>
 <tr><td>formula</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Search criteria as formula object</td></tr>
 <tr><td>value</td><td>any</td><td style="text-align:center">-&gt;</td><td>Value(s) to use for indexed placeholder(s)</td></tr>
 <tr><td>querySettings</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection made up of entities from entity selection meeting the search criteria specified in <em>queryString</em> or <em>formula</em></td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection made up of entities from entity selection meeting the search criteria specified in <em>queryString</em> or <em>formula</em></td></tr>
 <tr><td></td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-24"></a><a href="#description-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-24"></a><a href="#descripción-24" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.query()</code> function searches for entities that meet the search criteria specified in <em>queryString</em> or <em>formula</em> and (optionally) <em>value</em>(s) among all the entities in the entity selection, and returns a new object of type <code>EntitySelection</code> containing all the entities that are found. Lazy loading is applied.</p>
 <blockquote>
 <p>This function does not modify the original entity selection.</p>
@@ -1304,7 +1304,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </table>
 <p></details></p>
 <p><strong>.queryPath</strong> : Text</p>
-<h4><a class="anchor" aria-hidden="true" id="description-25"></a><a href="#description-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-25"></a><a href="#descripción-25" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.queryPath</code> property contains a detailed description of the query as it was actually performed by 4D. This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPath&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
 <p>For more information, refer to the <strong>querySettings parameter</strong> paragraph in the Dataclass<a href="DataClassClass.html#query"><code>.query()</code></a> page.</p>
 <h2><a class="anchor" aria-hidden="true" id="queryplan"></a><a href="#queryplan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.queryPlan</h2>
@@ -1319,7 +1319,7 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </table>
 <p></details></p>
 <p><strong>.queryPlan</strong> : Text</p>
-<h4><a class="anchor" aria-hidden="true" id="description-26"></a><a href="#description-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-26"></a><a href="#descripción-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.queryPlan</code> property  contains a detailed description of the query just before it is executed (i.e., the planned query). This property is available for <code>EntitySelection</code> objects generated through queries if the <code>&quot;queryPlan&quot;:true</code> property was passed in the <em>querySettings</em> parameter of the <a href="#query"><code>.query()</code></a> function.</p>
 <p>For more information, refer to the <strong>querySettings parameter</strong> paragraph in the Dataclass<a href="DataClassClass.html#query"><code>.query()</code></a> page.</p>
 <h2><a class="anchor" aria-hidden="true" id="refresh"></a><a href="#refresh" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.refresh()</h2>
@@ -1334,10 +1334,10 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 </table>
 <p></details></p>
 <p><strong>.refresh()</strong>
-| Parameter | Tipo |  | Description                     |
+| Parameter | Tipo |  | Descripción                     |
 | --------- | ---- |::| ------------------------------- |
 |           |      |  | Does not require any parameters |</p>
-<h4><a class="anchor" aria-hidden="true" id="description-27"></a><a href="#description-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-27"></a><a href="#descripción-27" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <blockquote>
 <p>This function only works with a remote datastore (client / server or <code>Open datastore</code> connection).</p>
 </blockquote>
@@ -1397,15 +1397,15 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.slice</strong>( <em>startFrom</em> : Integer { ; <em>end</em> : Integer } ) : 4D.EntitySelection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>startFrom</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>Index to start the operation at (included)</td></tr>
 <tr><td>end</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>End index (not included)</td></tr>
-<tr><td>Result</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection containing sliced entities (shallow copy)</td></tr>
+<tr><td>Resultado</td><td>4D.EntitySelection</td><td style="text-align:center">&lt;-</td><td>New entity selection containing sliced entities (shallow copy)</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-28"></a><a href="#description-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-28"></a><a href="#descripción-28" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.slice()</code> function returns a portion of an entity selection into a new entity selection, selected from the <em>startFrom</em> index to the <em>end</em> index (<em>end</em> is not included) or to the last entity of the entity selection. This method returns a shallow copy of the entity selection (it uses the same entity references).</p>
 <blockquote>
 <p>This function does not modify the original entity selection.</p>
@@ -1444,14 +1444,14 @@ Form.products.<span class="hljs-function">add</span>(Form.product)
 <p><strong>.sum</strong>( <em>attributePath</em> : Text ) : Real</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>attributePath</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>Path of the attribute to be used for calculation</td></tr>
-<tr><td>Result</td><td>Real</td><td style="text-align:center">&lt;-</td><td>Sum of entity selection values</td></tr>
+<tr><td>Resultado</td><td>Real</td><td style="text-align:center">&lt;-</td><td>Sum of entity selection values</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-29"></a><a href="#description-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-29"></a><a href="#descripción-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.sum()</code> function returns the sum for all <em>attributePath</em> values in the entity selection.</p>
 <p><code>.sum()</code> returns 0 if the entity selection is empty.</p>
 <p>The sum can only be done on values of number type. If the <em>attributePath</em> type is object, only numerical values are taken into account for the calculation (other value types are ignored). In this case, if <em>attributePath</em> leads to a property that does not exist in the object or does not contain any numeric values, <code>.sum()</code> returns 0.</p>
@@ -1482,7 +1482,7 @@ var</span> <span class="hljs-variable">$sum </span>: Real
 <p><strong>.toCollection</strong>( { <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer } } ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterString</em> : Text {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em><br><strong>.toCollection</strong>( <em>filterCol</em> : Collection {; <em>options</em> : Integer { ; <em>begin</em> : Integer { ; <em>howMany</em> : Integer }}} ) : <em>Collection</em></p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>filterString</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>String with entity attribute path(s) to extract</td></tr>
@@ -1490,10 +1490,10 @@ var</span> <span class="hljs-variable">$sum </span>: Real
 <tr><td>options</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><code>dk with primary key</code>: adds the primary key<br><code>dk with stamp</code>: adds the stamp</td></tr>
 <tr><td>begin</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>Designates the starting index</td></tr>
 <tr><td>howMany</td><td>Entero</td><td style="text-align:center">-&gt;</td><td>Number of entities to extract</td></tr>
-<tr><td>Result</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection of objects containing attributes and values of entity selection</td></tr>
+<tr><td>Resultado</td><td>Colección</td><td style="text-align:center">&lt;-</td><td>Collection of objects containing attributes and values of entity selection</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-30"></a><a href="#description-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-30"></a><a href="#descripción-30" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.toCollection()</code> function creates and returns a collection where each element is an object containing a set of properties and values corresponding to the attribute names and values for the entity selection.</p>
 <p>If no filter parameter is passed or the first parameter contains an empty string or &quot;*&quot;, all the attributes are extracted. Attributes with <a href="/docs/es/API/DataClassAttributeClass.html#kind">kind</a> property as &quot;relatedEntity&quot; are extracted with the simple form: an object with property __KEY (primary key). Attributes with kind property as &quot;relatedEntities&quot; are not extracted.</p>
 <p>Or, you can designate the entity attributes to extract using a filter parameter. You can use one of these two filters:</p>
