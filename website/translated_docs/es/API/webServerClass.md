@@ -46,10 +46,10 @@ They provide the following properties and functions:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| Parameter | Tipo         |    | Description                                                    |
+| Parameter | Tipo         |    | Descripción                                                    |
 | --------- | ------------ | -- | -------------------------------------------------------------- |
 | option    | Entero       | -> | Web server to get (default if omitted = `Web server database`) |
-| Result    | 4D.WebServer | <- | Web server object                                              |
+| Resultado | 4D.WebServer | <- | Web server object                                              |
 
 <!-- END REF -->
 
@@ -92,9 +92,9 @@ From your component, you want to know if the Web server of the host database is 
 
 <!-- REF #_command_.WEB Server list.Params -->
 
-| Parameter | Tipo      |    | Description                                    |
+| Parameter | Tipo      |    | Descripción                                    |
 | --------- | --------- | -- | ---------------------------------------------- |
-| Result    | Colección | <- | Collection of the available Web server objects |
+| Resultado | Colección | <- | Collection of the available Web server objects |
 
 <!-- END REF -->
 
@@ -727,10 +727,10 @@ The <!-- REF #webServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 <!-- REF #webServerClass.start().Params -->
 
-| Parameter  | Tipo   |    | Description                           |
+| Parameter  | Tipo   |    | Descripción                           |
 | ---------- | ------ | -- | ------------------------------------- |
 | parámetros | Objeto | -> | Web server settings to set at startup |
-| Result     | Objeto | <- | Status of the web server startup      |
+| Resultado  | Objeto | <- | Status of the web server startup      |
 
 <!-- END REF -->
 
@@ -747,7 +747,7 @@ Customized session settings will be reset when the [`.stop()`](#stop) function i
 
 The function returns an object describing the Web server launch status. This object can contain the following properties:
 
-| Property |                         | Tipo      | Description                                                          |
+| Property |                         | Tipo      | Descripción                                                          |
 | -------- | ----------------------- | --------- | -------------------------------------------------------------------- |
 | success  |                         | Booleano  | True if the web server was correctly started, False otherwise        |
 | errors   |                         | Colección | 4D error stack (not returned if the web server started successfully) |
@@ -789,7 +789,7 @@ The function returns an object describing the Web server launch status. This obj
 
 <!-- REF #webServerClass.stop().Params -->
 
-| Parameter | Tipo |  | Description                     |
+| Parameter | Tipo |  | Descripción                     |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |
 
