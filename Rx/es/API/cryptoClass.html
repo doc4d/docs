@@ -113,7 +113,7 @@
 <p><strong>4D.CryptoKey.new</strong>( <em>settings</em> : Object ) : 4D.CryptoKey</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>parámetros</td><td>Objeto</td><td>-&gt;</td><td>Settings to generate or load a key pair</td></tr>
@@ -125,13 +125,13 @@
 <h4><a class="anchor" aria-hidden="true" id="parámetros"></a><a href="#parámetros" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>parámetros</em></h4>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td><a href="#curve">curve</a></td><td>text</td><td>Name of ECDSA curve</td></tr>
-<tr><td><a href="#pem">pem</a></td><td>text</td><td>PEM definition of an encryption key to load</td></tr>
+<tr><td><a href="#curve">curve</a></td><td>texto</td><td>Name of ECDSA curve</td></tr>
+<tr><td><a href="#pem">pem</a></td><td>texto</td><td>PEM definition of an encryption key to load</td></tr>
 <tr><td><a href="#size">size</a></td><td>integer</td><td>Size of RSA key in bits</td></tr>
-<tr><td><a href="#type">type</a></td><td>text</td><td>Type of the key: &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot;</li></td></tr>
+<tr><td><a href="#type">type</a></td><td>texto</td><td>Type of the key: &quot;RSA&quot;, &quot;ECDSA&quot;, or &quot;PEM&quot;</li></td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="cryptokey"></a><a href="#cryptokey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>cryptoKey</em></h4>
@@ -163,12 +163,12 @@
 <p><strong>.decrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Object</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>message</td><td>Texto</td><td>-&gt;</td><td>Message string to be decoded using <code>options.encodingEncrypted</code> and decrypted.</td></tr>
 <tr><td>options</td><td>Objeto</td><td>-&gt;</td><td>Decoding options</td></tr>
-<tr><td>Result</td><td>Objeto</td><td>&lt;-</td><td>Status</td></tr>
+<tr><td>Resultado</td><td>Objeto</td><td>&lt;-</td><td>Status</td></tr>
 </tbody>
 </table>
 <p>The <code>.decrypt()</code> function decrypts the <em>message</em> parameter using the <strong>private</strong> key. The algorithm used depends on the type of the key.</p>
@@ -176,23 +176,23 @@
 <h4><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>hash</td><td>text</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;.</td></tr>
-<tr><td>encodingEncrypted</td><td>text</td><td>Encoding used to convert the binary decrypted message into the result string. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
-<tr><td>encodingDecrypted</td><td>text</td><td>Encoding used to convert the binary decrypted message into the result string. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;UTF-8&quot;.</td></tr>
+<tr><td>hash</td><td>texto</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;.</td></tr>
+<tr><td>encodingEncrypted</td><td>texto</td><td>Encoding used to convert the binary decrypted message into the result string. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td>encodingDecrypted</td><td>texto</td><td>Encoding used to convert the binary decrypted message into the result string. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;UTF-8&quot;.</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="result"></a><a href="#result" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
+<h4><a class="anchor" aria-hidden="true" id="resultado"></a><a href="#resultado" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Resultado</em></h4>
 <p>The function returns a status object with <code>success</code> property set to <code>true</code> if the <em>message</em> could be successfully decrypted.</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>success</td><td>booleano</td><td>True if the message has been successfully decrypted</td></tr>
-<tr><td>result</td><td>text</td><td>Message decrypted and decoded using the <code>options.encodingDecrypted</code></td></tr>
+<tr><td>result</td><td>texto</td><td>Message decrypted and decoded using the <code>options.encodingDecrypted</code></td></tr>
 <tr><td>errors</td><td>colección</td><td>If <code>success</code> is <code>false</code>, may contain a collection of errors</td></tr>
 </tbody>
 </table>
@@ -211,12 +211,12 @@
 <p><strong>.encrypt</strong>( <em>message</em> : Text ; <em>options</em> : Object ) : Text</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>message</td><td>Texto</td><td>-&gt;</td><td>Message string to be encoded using <code>options.encodingDecrypted</code> and encrypted.</td></tr>
 <tr><td>options</td><td>Objeto</td><td>-&gt;</td><td>Encoding options</td></tr>
-<tr><td>Result</td><td>Texto</td><td>&lt;-</td><td>Message encrypted and encoded using the <code>options.encodingEncrypted</code></td></tr>
+<tr><td>Resultado</td><td>Texto</td><td>&lt;-</td><td>Message encrypted and encoded using the <code>options.encodingEncrypted</code></td></tr>
 </tbody>
 </table>
 <p>The <code>.encrypt()</code> function encrypts the <em>message</em> parameter using the <strong>public</strong> key. The algorithm used depends on the type of the key.</p>
@@ -224,15 +224,15 @@
 <h5><a class="anchor" aria-hidden="true" id="options-1"></a><a href="#options-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h5>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>hash</td><td>text</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;.</td></tr>
-<tr><td>encodingEncrypted</td><td>text</td><td>Encoding used to convert the binary encrypted message into the result string. Can be &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
-<tr><td>encodingDecrypted</td><td>text</td><td>Encoding used to convert the <code>message</code> parameter into the binary representation to encrypt. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;UTF-8&quot;.</td></tr>
+<tr><td>hash</td><td>texto</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;.</td></tr>
+<tr><td>encodingEncrypted</td><td>texto</td><td>Encoding used to convert the binary encrypted message into the result string. Can be &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td>encodingDecrypted</td><td>texto</td><td>Encoding used to convert the <code>message</code> parameter into the binary representation to encrypt. Can be &quot;UTF-8&quot;, &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;UTF-8&quot;.</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="result-1"></a><a href="#result-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
+<h4><a class="anchor" aria-hidden="true" id="resultado-1"></a><a href="#resultado-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Resultado</em></h4>
 <p>The returned value is an encrypted message.</p>
 <h2><a class="anchor" aria-hidden="true" id="getprivatekey"></a><a href="#getprivatekey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.getPrivateKey()</h2>
 <p><details><summary>History</summary></p>
@@ -248,14 +248,14 @@
 <p><strong>.getPrivateKey()</strong> : Text</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>Texto</td><td>&lt;-</td><td>Private key in PEM format</td></tr>
+<tr><td>Resultado</td><td>Texto</td><td>&lt;-</td><td>Private key in PEM format</td></tr>
 </tbody>
 </table>
 <p>The <code>.getPrivateKey()</code> function  returns the private key of the <code>cryptoKey</code> object in PEM format, or an empty string if none is available.</p>
-<h4><a class="anchor" aria-hidden="true" id="result-2"></a><a href="#result-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
+<h4><a class="anchor" aria-hidden="true" id="resultado-2"></a><a href="#resultado-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Resultado</em></h4>
 <p>The returned value is the private key.</p>
 <h2><a class="anchor" aria-hidden="true" id="getpublickey"></a><a href="#getpublickey" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.getPublicKey()</h2>
 <p><details><summary>History</summary></p>
@@ -271,14 +271,14 @@
 <p><strong>.getPublicKey( )</strong> : Text</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>Texto</td><td>&lt;-</td><td>Public key in PEM format</td></tr>
+<tr><td>Resultado</td><td>Texto</td><td>&lt;-</td><td>Public key in PEM format</td></tr>
 </tbody>
 </table>
 <p>The <code>.getPublicKey()</code> function returns the public key of the <code>cryptoKey</code> object in PEM format, or an empty string if none is available.</p>
-<h4><a class="anchor" aria-hidden="true" id="result-3"></a><a href="#result-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
+<h4><a class="anchor" aria-hidden="true" id="resultado-3"></a><a href="#resultado-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Resultado</em></h4>
 <p>The returned value is the public key.</p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="pem"></a><a href="#pem" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.pem</h2>
@@ -308,12 +308,12 @@
 <p>.<strong>sign</strong> (<em>message</em> : Text ; <em>options</em> : Text) : Text</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>message</td><td>Texto</td><td>-&gt;</td><td>Message string to sign</td></tr>
 <tr><td>options</td><td>Objeto</td><td>-&gt;</td><td>Signing options</td></tr>
-<tr><td>Result</td><td>Texto</td><td>&lt;-</td><td>Signature in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr>
+<tr><td>Resultado</td><td>Texto</td><td>&lt;-</td><td>Signature in Base64 or Base64URL representation, depending on &quot;encoding&quot; option</td></tr>
 </tbody>
 </table>
 <p>The <code>.sign()</code> function signs the utf8 representation of a <em>message</em> string using the <code>cryptoKey</code> object keys and provided <em>options</em>. It returns its signature in base64 or base64URL format, depending on the value of the <code>options.encoding</code> attribute you passed.</p>
@@ -321,16 +321,16 @@
 <h4><a class="anchor" aria-hidden="true" id="options-2"></a><a href="#options-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>hash</td><td>text</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
-<tr><td>encodingEncrypted</td><td>text</td><td>Encoding used to convert the binary encrypted message into the result string. Can be &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td>hash</td><td>texto</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
+<tr><td>encodingEncrypted</td><td>texto</td><td>Encoding used to convert the binary encrypted message into the result string. Can be &quot;Base64&quot;, or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 <tr><td>pss</td><td>booleano</td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when producing a JWT for PS@ algorithm</td></tr>
-<tr><td>encoding</td><td>text</td><td>ERepresentation to be used for result signature. Possible values are &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td>encoding</td><td>texto</td><td>ERepresentation to be used for result signature. Possible values are &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="result-4"></a><a href="#result-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
+<h4><a class="anchor" aria-hidden="true" id="resultado-4"></a><a href="#resultado-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Resultado</em></h4>
 <p>The utf8 representation of the <em>message</em> string.</p>
 <h2><a class="anchor" aria-hidden="true" id="size"></a><a href="#size" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.size</h2>
 <p><details><summary>History</summary></p>
@@ -372,13 +372,13 @@
 <p><strong>.verify</strong>( <em>message</em> : Text ; <em>signature</em> : Text ; <em>options</em> : Object) : object</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>message</td><td>Texto</td><td>-&gt;</td><td>Message string that was used to produce the signature</td></tr>
 <tr><td>signature</td><td>Texto</td><td>-&gt;</td><td>Signature to verify, in Base64 or Base64URL representation, depending on <code>options.encoding</code> value</td></tr>
 <tr><td>options</td><td>Objeto</td><td>-&gt;</td><td>Signing options</td></tr>
-<tr><td>Result</td><td>Objeto</td><td>&lt;-</td><td>Status of the verification</td></tr>
+<tr><td>Resultado</td><td>Objeto</td><td>&lt;-</td><td>Status of the verification</td></tr>
 </tbody>
 </table>
 <p>The <code>.verify()</code> function verifies the base64 signature against the utf8 representation of <em>message</em> using the <code>cryptoKey</code> object keys and provided <em>options</em>.</p>
@@ -386,20 +386,20 @@
 <h4><a class="anchor" aria-hidden="true" id="options-3"></a><a href="#options-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>options</em></h4>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>hash</td><td>text</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
+<tr><td>hash</td><td>texto</td><td>Digest algorithm to use. For example: &quot;SHA256&quot;, &quot;SHA384&quot;, or &quot;SHA512&quot;. &quot;HASH256&quot;, &quot;HASH384&quot;, or &quot;HASH512&quot;.</td></tr>
 <tr><td>pss</td><td>booleano</td><td>Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass <code>true</code> when verifying a JWT for PS@ algorithm</td></tr>
-<tr><td>encoding</td><td>text</td><td>Encoding used to convert the <code>message</code> parameter into the binary representation to decrypt. Can be &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
+<tr><td>encoding</td><td>texto</td><td>Encoding used to convert the <code>message</code> parameter into the binary representation to decrypt. Can be &quot;Base64&quot; or &quot;Base64URL&quot;. Default is &quot;Base64&quot;.</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="result-5"></a><a href="#result-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Result</em></h4>
+<h4><a class="anchor" aria-hidden="true" id="resultado-5"></a><a href="#resultado-5" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><em>Resultado</em></h4>
 <p>The function returns a status object with <code>success</code> property set to <code>true</code> if <code>message</code> could be successfully verified (i.e. the signature matches).</p>
 <p>In case the signature couldn't be verified because it was not signed with the same <em>message</em>, key or algorithm, the <code>status</code> object being returned contains an error collection in <code>status.errors</code>.</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>success</td><td>booleano</td><td>True if the signature matches the message</td></tr>
