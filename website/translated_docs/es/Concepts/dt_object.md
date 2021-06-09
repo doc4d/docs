@@ -247,10 +247,10 @@ La utilización de la notación de objetos simplifica el código 4D en el manejo
 ```4d
  C_OBJECT($Emp)
  $Emp:=New object
- $Emp.city:="London" //creates the city property and sets its value to "London"
- $Emp.city:="Paris" //modifies the city property
+ $Emp.city:="London" //crea la propiedad city con el valor "London"
+ $Emp.city:="Paris" //modifica la propiedad city
  $Emp.phone:=New object("office";"123456789";"home";"0011223344")
-  //creates the phone property and sets its value to an object
+  //crea la propiedad phone y define su valor para un objeto
 ```
 
 - Obtener un valor en un subobjeto es muy sencillo utilizando la notación de objetos:
@@ -262,12 +262,12 @@ La utilización de la notación de objetos simplifica el código 4D en el manejo
 - Puede acceder a las propiedades como cadenas utilizando el operador [ ]
 
 ```4d
- $Emp["city"]:="Berlin" //modifies the city property
-  //this can be useful for creating properties through variables
+ $Emp["city"]:="Berlin" //modifica la propiedad city
+  //esto puede ser útil para crear propiedades a través de variables
  C_TEXT($addr)
  $addr:="address"
  For($i;1;4)
-    $Emp[$addr+String($i)]:=""
+    $Emp[$addr+String($i)]:="
  End for
-  // creates 4 empty properties "address1...address4" in the $Emp object
+  // crea 4 propiedades vacías "dirección1...dirección4" en el objeto $Emp
 ```
