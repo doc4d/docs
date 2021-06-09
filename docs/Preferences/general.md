@@ -91,7 +91,7 @@ You can set this preference using the **Create default .gitignore file** checkbo
 
 The contents of this file comes from the `default_gitignore.txt` file in the current user's system preferences folder if it exists. Otherwise, it comes from the 4D resources folder.
 
-The [official git documentation](https://www.atlassian.com/git/tutorials/saving-changes/gitignoreatlassian) is a great resource to understand how `.gitignore` files work. 
+The [official git documentation](https://git-scm.com/docs/gitignore) is a great resource to understand how `.gitignore` files work. 
 
 ### Language of text comparison
   
