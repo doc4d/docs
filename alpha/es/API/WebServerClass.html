@@ -127,11 +127,11 @@
 <p><strong>WEB Server</strong> : 4D.WebServer<br><strong>WEB Server</strong>( <em>option</em> : Integer ) : 4D.WebServer</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>option</td><td>Entero</td><td>-&gt;</td><td>Web server to get (default if omitted = <code>Web server database</code>)</td></tr>
-<tr><td>Result</td><td>4D.WebServer</td><td>&lt;-</td><td>Web server object</td></tr>
+<tr><td>Resultado</td><td>4D.WebServer</td><td>&lt;-</td><td>Web server object</td></tr>
 </tbody>
 </table>
 <p>The <code>WEB Server</code> command returns the default Web server object, or the Web server object defined through the <em>option</em> parameter.</p>
@@ -170,10 +170,10 @@
 <p><strong>WEB Server list</strong> : Collection</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>Result</td><td>Colección</td><td>&lt;-</td><td>Collection of the available Web server objects</td></tr>
+<tr><td>Resultado</td><td>Colección</td><td>&lt;-</td><td>Collection of the available Web server objects</td></tr>
 </tbody>
 </table>
 <p>The <code>WEB Server list</code> commandreturns a collection of all Web server objects available in the 4D application.</p>
@@ -405,7 +405,7 @@ The listening IP port number for HTTPS.</p>
 <p>The &quot;SameSite&quot; session cookie value. Possible values (using constants):</p>
 <table>
 <thead>
-<tr><th>Constant</th><th>Valor</th><th>Description</th></tr>
+<tr><th>Constant</th><th>Valor</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>Web SameSite Strict</td><td>&quot;Strict&quot;</td><td><em>Default value</em> - Cookies are only sent in a first-party context</td></tr>
@@ -431,11 +431,11 @@ The listening IP port number for HTTPS.</p>
 <p><strong>.start</strong>() : Object<br><strong>.start</strong>( <em>settings</em> : Object ) : Object</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>parámetros</td><td>Objeto</td><td>-&gt;</td><td>Web server settings to set at startup</td></tr>
-<tr><td>Result</td><td>Objeto</td><td>&lt;-</td><td>Status of the web server startup</td></tr>
+<tr><td>Resultado</td><td>Objeto</td><td>&lt;-</td><td>Status of the web server startup</td></tr>
 </tbody>
 </table>
 <p>The <code>.start()</code> function starts the web server on which it is applied, using properties set in the optional <em>settings</em> object parameter.</p>
@@ -446,7 +446,7 @@ The listening IP port number for HTTPS.</p>
 <p>The function returns an object describing the Web server launch status. This object can contain the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th></th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th></th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>success</td><td></td><td>Booleano</td><td>True if the web server was correctly started, False otherwise</td></tr>
@@ -483,7 +483,7 @@ The listening IP port number for HTTPS.</p>
 </table>
 <p></details></p>
 <p><strong>.stop()</strong></p>
-<p>| Parameter | Tipo |  | Description                     |
+<p>| Parameter | Tipo |  | Descripción                     |
 | --------- | ---- |  | ------------------------------- |
 |           |      |  | Does not require any parameters |</p>
 <p>The <code>.stop()</code> function stops the web server on which it is applied.</p>

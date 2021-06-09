@@ -259,15 +259,15 @@
 <p>Form events on list box or list box column objects may return the following additional properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>area</td><td>text</td><td>List box object area (&quot;header&quot;, &quot;footer&quot;, &quot;cell&quot;)</td></tr>
-<tr><td>areaName</td><td>text</td><td>Name of the area</td></tr>
+<tr><td>area</td><td>texto</td><td>List box object area (&quot;header&quot;, &quot;footer&quot;, &quot;cell&quot;)</td></tr>
+<tr><td>areaName</td><td>texto</td><td>Name of the area</td></tr>
 <tr><td>column</td><td>longint</td><td>Column number</td></tr>
-<tr><td>columnName</td><td>text</td><td>Name of the column</td></tr>
-<tr><td>footerName</td><td>text</td><td>Name of the footer</td></tr>
-<tr><td>headerName</td><td>text</td><td>Name of the header</td></tr>
+<tr><td>columnName</td><td>texto</td><td>Name of the column</td></tr>
+<tr><td>footerName</td><td>texto</td><td>Name of the footer</td></tr>
+<tr><td>headerName</td><td>texto</td><td>Name of the header</td></tr>
 <tr><td>horizontalScroll</td><td>longint</td><td>Positive if scroll is towards the right, negative if towards the left</td></tr>
 <tr><td>isRowSelected</td><td>booleano</td><td>True if row is selected, else False</td></tr>
 <tr><td>newPosition</td><td>longint</td><td>New position of the column or row</td></tr>
@@ -730,11 +730,11 @@
 <tr><th>valueType</th><th>Default widget</th><th>Alternative widget(s)</th></tr>
 </thead>
 <tbody>
-<tr><td>text</td><td>text input</td><td>drop-down menu (required list) or combo box (choice list)</td></tr>
+<tr><td>texto</td><td>text input</td><td>drop-down menu (required list) or combo box (choice list)</td></tr>
 <tr><td>real</td><td>controlled text input (numbers and separators)</td><td>drop-down menu (required list) or combo box (choice list)</td></tr>
 <tr><td>integer</td><td>controlled text input (numbers only)</td><td>drop-down menu (required list) or combo box (choice list) or three-states check box</td></tr>
 <tr><td>booleano</td><td>check box</td><td>drop-down menu (required list)</td></tr>
-<tr><td>color</td><td>background color</td><td>text</td></tr>
+<tr><td>color</td><td>background color</td><td>texto</td></tr>
 <tr><td>event</td><td>button with label</td><td></td></tr>
 <tr><td></td><td></td><td>All widgets can have an additional unit toggle button or ellipsis button attached to the cell.</td></tr>
 </tbody>
@@ -747,7 +747,7 @@
 <tr><th>Value type</th><th>Default format</th><th>Entry control</th></tr>
 </thead>
 <tbody>
-<tr><td>text</td><td>same as defined in object</td><td>any (no control)</td></tr>
+<tr><td>texto</td><td>same as defined in object</td><td>any (no control)</td></tr>
 <tr><td>real</td><td>same as defined in object (using system decimal separator)</td><td>&quot;0-9&quot; and &quot;.&quot; and &quot;-&quot;</td></tr>
 <tr><td></td><td></td><td>&quot;0-9&quot; and &quot;.&quot; if min&gt;=0</td></tr>
 <tr><td>integer</td><td>same as defined in object</td><td>&quot;0-9&quot; and &quot;-&quot;</td></tr>
@@ -762,10 +762,10 @@
 <p>The only mandatory attribute is &quot;valueType&quot; and its supported values are &quot;text&quot;, &quot;real&quot;, &quot;integer&quot;, &quot;boolean&quot;, &quot;color&quot;, and &quot;event&quot;. The following table lists all the attributes supported in list box object arrays, depending on the &quot;valueType&quot; value (any other attributes are ignored). Display formats are detailed and examples are provided below.</p>
 <table>
 <thead>
-<tr><th></th><th>valueType</th><th>text</th><th>real</th><th>integer</th><th>booleano</th><th>color</th><th>event</th></tr>
+<tr><th></th><th>valueType</th><th>texto</th><th>real</th><th>integer</th><th>booleano</th><th>color</th><th>event</th></tr>
 </thead>
 <tbody>
-<tr><td><em>Attributes</em></td><td><em>Description</em></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td><em>Attributes</em></td><td><em>Descripción</em></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 <tr><td>value</td><td>cell value (input or output)</td><td>x</td><td>x</td><td>x</td><td></td><td></td><td></td></tr>
 <tr><td>min</td><td>minimum value</td><td></td><td>x</td><td>x</td><td></td><td></td><td></td></tr>
 <tr><td>max</td><td>maximum value</td><td></td><td>x</td><td>x</td><td></td><td></td><td></td></tr>
@@ -821,7 +821,7 @@
 <p>The behavior attribute provides variations to the regular representation of values. In 4D v15, a single variation is proposed:</p>
 <table>
 <thead>
-<tr><th>Attribute</th><th>Available value(s)</th><th>valueType(s)</th><th>Description</th></tr>
+<tr><th>Attribute</th><th>Available value(s)</th><th>valueType(s)</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>behavior</td><td>threeStates</td><td>integer</td><td>Represents a numeric value as a three-states check box.<br> 2=semi-checked, 1=checked, 0=unchecked, -1=invisible, -2=unchecked disabled, -3=checked disabled, -4=semi-checked disabled</td></tr>

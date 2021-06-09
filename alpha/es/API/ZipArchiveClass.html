@@ -110,7 +110,7 @@ End if</span>
 <p><strong>ZIP Create archive</strong> ( <em>fileToZip</em> : 4D.File ; <em>destinationFile</em> : 4D.File ) : Object<br><strong>ZIP Create archive</strong> ( <em>folderToZip</em> : 4D.Folder ; <em>destinationFile</em> : 4D.File { ; <em>options</em> : Integer }) : Object<br><strong>ZIP Create archive</strong> ( <em>zipStructure</em> : Object ; <em>destinationFile</em> : 4D.File ) : Object</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>fileToZip</td><td>4D.File</td><td style="text-align:center">-&gt;</td><td>File or Folder object to compress</td></tr>
@@ -118,10 +118,10 @@ End if</span>
 <tr><td>zipStructure</td><td>Objeto</td><td style="text-align:center">-&gt;</td><td>File or Folder object to compress</td></tr>
 <tr><td>destinationFile</td><td>4D.File</td><td style="text-align:center">-&gt;</td><td>Destination file for the archive</td></tr>
 <tr><td>options</td><td>Entero</td><td style="text-align:center">-&gt;</td><td><em>folderToZip</em> option: <code>ZIP Without enclosing folder</code></td></tr>
-<tr><td>Result</td><td>Objeto</td><td style="text-align:center">&lt;-</td><td>Status object</td></tr>
+<tr><td>Resultado</td><td>Objeto</td><td style="text-align:center">&lt;-</td><td>Status object</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description"></a><a href="#description" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción"></a><a href="#descripción" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>ZIP Create archive</code> command creates a compressed ZIP archive object and returns the status of the operation.</p>
 <p>You can pass a 4D.File, a 4D.Folder, or a zip structure object as first parameter:</p>
 <ul>
@@ -136,7 +136,7 @@ End if</span>
 Tipo
 </td></p>
 <p><td>
-Description
+Descripción
 </td></p>
   </tr>
   <tr>
@@ -199,7 +199,7 @@ A callback formula that will receive the compression progress (0 - 100) in $1.
 <p>The returned status object contains the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Description</th></tr>
+<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>statusText</td><td>Texto</td><td>Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption</td></tr>
@@ -278,15 +278,15 @@ A callback formula that will receive the compression progress (0 - 100) in $1.
 <p><strong>ZIP Read archive</strong> ( <em>zipFile</em> : 4D.File { ; <em>password</em> : Text }) : 4D.ZipArchive</p>
 <table>
 <thead>
-<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Description</th></tr>
+<tr><th>Parameter</th><th>Tipo</th><th style="text-align:center"></th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>zipFile</td><td>4D.File</td><td style="text-align:center">-&gt;</td><td>Zip archive file</td></tr>
 <tr><td>password</td><td>Texto</td><td style="text-align:center">-&gt;</td><td>ZIP archive password if any</td></tr>
-<tr><td>Result</td><td>4D.ZipArchive</td><td style="text-align:center">&lt;-</td><td>Archive object</td></tr>
+<tr><td>Resultado</td><td>4D.ZipArchive</td><td style="text-align:center">&lt;-</td><td>Archive object</td></tr>
 </tbody>
 </table>
-<h4><a class="anchor" aria-hidden="true" id="description-1"></a><a href="#description-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-1"></a><a href="#descripción-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>ZIP Read archive</code> command retrieves the contents of <em>zipFile</em> and returns it as a <code>4D.ZipArchive</code> object.</p>
 <blockquote>
 <p>This command does not uncompress the ZIP archive, it only provides a view of its contents. To extract the contents of an archive, you need to use methods such as <a href="/docs/alpha/es/API/Document.html#copyto">file.copyTo()</a> or <a href="/docs/alpha/es/API/Directory.html#copyto">folder.copyTo()</a>.</p>
@@ -324,7 +324,7 @@ A callback formula that will receive the compression progress (0 - 100) in $1.
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="root"></a><a href="#root" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>.root</h2>
 <p><strong>.root</strong> : 4D.ZipFolder</p>
-<h4><a class="anchor" aria-hidden="true" id="description-2"></a><a href="#description-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Description</h4>
+<h4><a class="anchor" aria-hidden="true" id="descripción-2"></a><a href="#descripción-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h4>
 <p>The <code>.root</code> property contains a virtual folder providing access to the contents of the ZIP archive.</p>
 <p>The <code>root</code> folder and its contents can be manipulated with the <a href="/docs/alpha/es/API/ZipFileClass.html">ZipFile</a> and <a href="/docs/alpha/es/API/ZipFolderClass.html">ZipFolder</a> functions and properties.</p>
 <p>This property is <strong>read-only</strong>.</p>
