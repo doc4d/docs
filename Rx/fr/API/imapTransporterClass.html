@@ -1063,7 +1063,11 @@ var</span> <span class="hljs-variable">$ids </span>: Collection
 <blockquote>
 <ul>
 <li>The function returns an empty BLOB if <em>msgNumber</em> or msgID* designates a non-existing message,</li>
-<li>If no mailbox is selected with the <a href="#selectbox"><code>.selectBox()</code></a> command, an error is generated,</li>
+<li><blockquote>
+<ul>
+<li>The function returns an empty BLOB if <em>msgNumber</em> or msgID* designates a non-existing message, &gt; * If no mailbox is selected with the <a href="#selectbox"><code>.selectBox()</code></a> command, an error is generated, &gt; * If there is no open connection, <code>.getMIMEAsBlob()</code> will open a connection the last mailbox specified with <code>.selectBox()</code>.</li>
+</ul>
+</blockquote></li>
 <li>If there is no open connection, <code>.getMIMEAsBlob()</code> will open a connection the last mailbox specified with <code>.selectBox()</code>.</li>
 </ul>
 </blockquote>
