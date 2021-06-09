@@ -81,15 +81,15 @@ Thanks to this principle, under macOS the database folders appear as packages ha
 
 ### Create default `.gitignore` file
 
-You might need or want git to ignore some files in your projects.  
+You might need or want git to ignore some files in your new projects.  
 
-You can set this preference using the **Create default .gitignore file** checkbox.
+You can set this preference by checking the **Create default .gitignore file**  option.
 
 ![](assets/en/Preferences/gitignore.png)
 
-When a project is created in 4D and that box is checked, 4D creates a `.gitignore` file at the same level as the `Project` folder.
+When a project is created in 4D and that box is checked, 4D creates a default `.gitignore` file at the same level as the `Project` folder [lien architecture](lien).
 
-4D has a built-in `default_gitignore.txt` file. You can edit its contents by clicking the `icon`. When you create a project, 4D copies the contents of the `default_gitignore.txt` in the project's `.gitignore` file.
+ You can define your own default file by clicking the `icon`. This will open the .gitignore configuration file in your text editor. The contents of this file will be used to generate the .gitignore files in your new projects.
 
 The [official git documentation](https://git-scm.com/docs/gitignore) is a great resource to understand how `.gitignore` files work. 
 
