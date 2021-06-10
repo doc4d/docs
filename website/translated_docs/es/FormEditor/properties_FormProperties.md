@@ -62,7 +62,7 @@ Supported types depend on the form category:
 
 | Name        | Data Type | Possible Values                                              |
 | ----------- | --------- | ------------------------------------------------------------ |
-| destination | string    | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
+| destination | cadena    | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
 ---
 
@@ -79,7 +79,7 @@ To remove inheritance, select **\<None>** in the Property List (or " " in JSON).
 
 | Name          | Data Type | Possible Values                                                                                                    |
 | ------------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
-| inheritedForm | string    | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
+| inheritedForm | cadena    | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
 
 ---
 
@@ -157,6 +157,6 @@ You can use dynamic references to set the window titles for forms, *i.e.*:
 
 | Name        | Data Type | Possible Values                                        |
 | ----------- | --------- | ------------------------------------------------------ |
-| windowTitle | string    | The name of the window as plain text or as a reference |
+| windowTitle | cadena    | The name of the window as plain text or as a reference |
 
 
