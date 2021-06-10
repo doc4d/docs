@@ -198,16 +198,16 @@ A continuación se explica cada línea del ejemplo:
 - $PointerOne:=->$MyVar --> $PointerOne ahora contiene un puntero a $MyVar.
 - $PointerTwo:=->$PointerOne --> $PointerTwo (una nueva variable) contiene un puntero a $PointerOne, que a su vez apunta a $MyVar.
 - ($PointerTwo->)->:="Goodbye" --> $PointerTwo-> referencia el contenido de $PointerOne, que a su vez referencia $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar. Así que en este caso, a $MyVar se le asigna "Goodbye".
-- ALERT (($PointerTwo->)->) --> Same thing: $PointerTwo-> references the contents of $PointerOne, which in turn references $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar. So in this case, the alert box displays the contents of $MyVar.
+- ALERT (($PointerTwo->)->) --> Lo mismo que: $PointerTwo-> referencia el contenido de $PointerOne, que a su vez referencia $MyVar. Por lo tanto, ($PointerTwo->)-> referencia el contenido de $MyVar. En este caso, la caja de alerta muestra el contenido de $MyVar.
 
-The following line puts "Hello" into $MyVar:
+La siguiente línea pone "Hello" en $MyVar:
 ```4d
 ($PointerTwo->)->:="Hello"
 ```
 
-The following line gets "Hello" from $MyVar and puts it into $NewVar:
+La siguiente línea obtiene "Hello de $MyVar y lo pone en $NewVar:
 ```
 $NewVar:=($PointerTwo->)->
 ```
 
-**Important:** Multiple dereferencing requires parentheses.
+**Importante:** la desreferenciación múltiple requiere paréntesis.
