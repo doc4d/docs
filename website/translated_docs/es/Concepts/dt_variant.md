@@ -3,27 +3,27 @@ id: variant
 title: Variant
 ---
 
-Variant is a variable type which allows encapsulating data of any valid regular type in a variable. Typically, this variable type can be used to write generic code returning or receiving values for which the type is not known. This is the case for example for code handling object attributes.
+Variant es un tipo de variable que permite encapsular datos de todo tipo válido y estándar en una variable. Normalmente, este tipo de variable puede utilizarse para escribir código genérico que devuelva o reciba valores cuyo tipo no se conoce. Este es el caso, por ejemplo, del código que maneja los atributos de objeto.
 
-A variant type variable can contain a value of the following data types:
+Una variable de tipo variant puede contener un valor de los tipos de datos siguientes:
 
 - BLOB
 - booleano
 - colección
 - fecha
-- longint
+- entero largo
 - objeto
 - imagen
 - puntero
 - real
 - texto
-- time
+- hora
 - null
 - indefinido
 
-> Arrays cannot be stored in variant variables.
+> Las matrices no pueden almacenarse en variables de tipo variant.
 
-In both interpreted and in compiled modes, a same variant variable can be assigned contents of different types. Unlike regular variable types, the variant variable content type is different from the variant variable type itself. Por ejemplo:
+Tanto en modo interpretado como en compilado, a una misma variable variant se le pueden asignar contenidos de diferentes tipos. A diferencia de los tipos de variable estándar, el tipo de contenido de la variable variant es diferente del tipo de variable variant mismo. Por ejemplo:
 
 ```4d
 C_VARIANT($variant)
