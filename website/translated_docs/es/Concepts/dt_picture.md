@@ -60,51 +60,51 @@ Concatenación horizontal
 
 Concatenación vertical
 ```4d
- circle/rectangle //Place the rectangle under the circle
- rectangle/circle //Place the circle under the rectangle
+ circle+rectangle //Colocar el rectángulo debajo del círculo
+ rectangle+circle //Colocar el círculo debajo del rectángulo
 ```
 ![](assets/en/Concepts/concatVer.en.png) ![](assets/en/Concepts/concatVer2.en.png)
 
 Superposición exclusiva
 ```4d
-Pict3:=Pict1 & Pict2 // Superimposes Pict2 on top of  Pict1
+Pict3:=Pict1 & Pict2 // Superponer Pict2 sobre Pict1
 ```
 ![](assets/en/Concepts/superimpoExc.fr.png)
 
 Superposición inclusiva
 ```4d
-Pict3:=Pict1|Pict2 // Recovers resulting mask from superimposing two pictures of the same size
+Pict3:=Pict1|Pict2 // Recupera la máscara resultante de la superposición de dos imágenes del mismo tamaño
 ```
 ![](assets/en/Concepts/superimpoInc.fr.png)
 
 Desplazamiento horizontal
 ```4d
-rectangle+50 //Move the rectangle 50 pixels to the right
-rectangle-50 //Move the rectangle 50 pixels to the left
+rectangle+50 //Mover el rectángulo 50 píxeles a la derecha
+rectangle-50 //Mover el rectángulo 50 píxeles a la izquierda
 ```
 ![](assets/en/Concepts/hormove.en.png)
 
 Movimiento vertical
 
 ```4d
-rectangle/50 //Move the rectangle down by 50 pixels
-rectangle/-20 //Move the rectangle up by 20 pixels
+rectangle/50 //Mover el rectángulo 50 píxeles hacia abajo
+rectangle/-20 //Mover el rectángulo 20 píxeles hacia arriba
 ```
 ![](assets/en/Concepts/vertmove.en.png)![](assets/en/Concepts/vertmove2.en.png)
 
-Resize
+Redimensionamiento
 
 ```4d
-rectangle*1.5 //The rectangle becomes 50% bigger
-rectangle*0.5 //The rectangle becomes 50% smaller
+rectangle*1.5 //El rectángulo se hace un 50% más grande
+rectangle*0.5 //El rectángulo se hace un 50% más pequeño
 ```
 ![](assets/en/Concepts/resize.en.png)![](assets/en/Concepts/resisze2.en.png)
 
 Escala horizontal
 
 ```4d
-circle*+3 //The circle becomes 3 times wider
-circle*+0.25 //The circle's width becomes a quarter of what it was
+circle*+3 //El círculo se hace 3 veces más ancho
+circle*+0,25 //El ancho del círculo se convierte en una cuarta parte de lo que era
 ```
 
 ![](assets/en/Concepts/Horscaling.en.png)![](assets/en/Concepts/Horscaling2.en.png)
@@ -112,8 +112,8 @@ circle*+0.25 //The circle's width becomes a quarter of what it was
 Escala vertical
 
 ```4d
-circle*|2 //The circle becomes twice as tall
-circle*|0.25 //The circle's height becomes a quarter of what it was
+circle*|2 //El círculo pasa a ser el doble de alto
+circle*|0.25 //La altura del círculo pasa a ser un cuarto de lo que era
 ```
 
 ![](assets/en/Concepts/vertscaling.en.png)![](assets/en/Concepts/veticalscaling2.en.png)
