@@ -140,29 +140,29 @@ A diferencia de otras comparaciones de cadenas, la búsqueda por palabras clave 
 > **Notas:** - 4D utiliza la librería ICU para comparar cadenas (utilizando operadores <>=#) y detectar palabras claves. Para más información sobre las normas aplicadas, consulte la siguiente dirección: http://www.unicode.org/reports/tr29/#Word_Boundaries. - En la versión japonesa, en lugar de ICU, 4D utiliza por defecto Mecab para detectar las palabras claves.
 
 ## Símbolos de indice de cadena
-The character reference symbols: [[...]]
+Los símbolos de indice de cadena son: [[...]]
 
-These symbols are used to refer to a single character within a string. This syntax allows you to individually address the characters of a text variable, string variable, or field.
+Estos símbolos se utilizan para referirse a un solo carácter dentro de una cadena. Esta sintaxis permite direccionar individualmente los caracteres en un campo o una variable de tipo Alfa o Texto.
 
-If the character reference symbols appear on the left side of the assignment operator (:=), a character is assigned to the referenced position in the string. For example, if vsName is not an empty string, the following line sets the first character of vsName to uppercase:
+Si los símbolos de referencia de caracteres aparecen a la izquierda del operador de asignación (:=), se asigna un carácter a la posición referenciada en la cadena. Por ejemplo, si vsName no es una cadena vacía, la siguiente línea pone el primer carácter de vsName en mayúsculas:
 
 ```4d
-If(vsName#"")
-    vsName[[1]]:=Uppercase(vsName[[1]])
+If(vsNom#"")
+    vsNom[[1]]:=Uppercase(vsNom[[1]])
 End if
 ```
 
-Otherwise, if the character reference symbols appear within an expression, they return the character (to which they refer) as a 1-character string. Por ejemplo:
+En caso contrario, si los símbolos de referencia de caracteres aparecen dentro de una expresión, devuelven el caracter (al que se refieren) como una cadena de 1 caracter. Por ejemplo:
 
 ```4d
-//The following example tests if the last character of vtText is an At sign "@"
+//El siguiente ejemplo comprueba si el último caracter de vtText es una arroba "@".
  If(vtText#"")
     If(Character code(Substring(vtText;Length(vtText);1))=At sign)
   //...
     End if
  End if
 
-  //Using the character reference syntax, you would write in a simpler manner:
+  //Utilizando la sintaxis de los caracteres de indice, se escribiría de forma más sencilla:
  If(vtText#"")
     If(Character code(vtText[[Length(vtText)]])=At sign)
   // ...
