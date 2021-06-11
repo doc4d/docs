@@ -91,63 +91,63 @@
 <tr><td>Concatenación horizontal</td><td>Imagen1 + Imagen2</td><td>Imagen</td><td>Añadir Imagen2 a la derecha de Imagen1</td></tr>
 <tr><td>Concatenación vertical</td><td>Imagen1 / Imagen2</td><td>Imagen</td><td>Añadir Imagen2 debajo de Imagen1</td></tr>
 <tr><td>Superposición exclusiva</td><td>Imagen1 &amp; Imagen2</td><td>Imagen</td><td>Superpone Imagen2 sobre Imagen1 (Imagen2 en primer plano). Produce el mismo resultado que <code>COMBINE PICTURES(pict3;pict1;Superimposition;pict2)</code></td></tr>
-<tr><td>Superposición inclusiva</td><td>Pict1 | Pict2</td><td>Imagen</td><td>Superimposes Pict2 on Pict1 and returns resulting mask if both pictures are the same size. Produces the same result as <code>$equal:=Equal pictures(Pict1;Pict2;Pict3)</code></td></tr>
-<tr><td>Horizontal move</td><td>Picture + Number</td><td>Imagen</td><td>Move Picture horizontally Number pixels</td></tr>
-<tr><td>Vertical move</td><td>Picture / Number</td><td>Imagen</td><td>Move Picture vertically Number pixels</td></tr>
-<tr><td>Resizing</td><td>Picture * Number</td><td>Imagen</td><td>Resize Picture by Number ratio</td></tr>
-<tr><td>Horizontal scaling</td><td>Picture *+ Number</td><td>Imagen</td><td>Resize Picture horizontally by Number ratio</td></tr>
-<tr><td>Vertical scaling</td><td>Picture *| Number</td><td>Imagen</td><td>Resize Picture vertically by Number ratio</td></tr>
+<tr><td>Superposición inclusiva</td><td>Imagen1 | Imagen2</td><td>Imagen</td><td>Superpone Imagen2 sobre Imagen1 y devuelve la máscara resultante si ambas imágenes tienen el mismo tamaño. Produce el mismo resultado que <code>$equal:=Equal pictures(Pict1;Pict2;Pict3)</code></td></tr>
+<tr><td>Desplazamiento horizontal</td><td>Imagen + Número</td><td>Imagen</td><td>Mover la imagen horizontalmente un Número de píxeles</td></tr>
+<tr><td>Movimiento vertical</td><td>Imagen / Número</td><td>Imagen</td><td>Mover la imagen verticalmente un Número de píxeles</td></tr>
+<tr><td>Redimensionamiento</td><td>Imagen * Número</td><td>Imagen</td><td>Redimensiona la imagen según el porcentaje Número</td></tr>
+<tr><td>Escala horizontal</td><td>Imagen *+ Número</td><td>Imagen</td><td>Redimensionar la imagen horizontalmente al porcentaje Número</td></tr>
+<tr><td>Escala vertical</td><td>Imagen *| Número</td><td>Imagen</td><td>Redimensionar la imagen verticalmente al porcentaje Número</td></tr>
 </tbody>
 </table>
-<p><strong>Notes :</strong></p>
+<p><strong>Notas:</strong></p>
 <ul>
-<li>In order to use the | operator, Pict1 and Pict2 must have exactly the same dimension. If both pictures are a different size, the operation Pict1 | Pict2 produces a blank picture.</li>
-<li>The <code>COMBINE PICTURES</code> command can be used to superimpose pictures while keeping the characteristics of each source picture in the resulting picture.</li>
-<li>Additional operations can be performed on pictures using the <code>TRANSFORM PICTURE</code> command.</li>
-<li>There is no comparison operators on pictures, however 4D proposes the <code>Equal picture</code> command to compare two pictures.</li>
+<li>Para poder utilizar el operador |, Imag1 e Imag2 deben tener exactamente la misma dimensión. Si ambas imágenes tienen un tamaño diferente, la operación Imagen1 | Imagen2 produce una imagen en blanco.</li>
+<li>El comando <code>COMBINE PICTURES</code> puede utilizarse para superponer imágenes manteniendo las características de cada imagen fuente en la imagen resultante.</li>
+<li>Se pueden realizar operaciones adicionales en las imágenes utilizando el comando <code>TRANSFORM PICTURE</code>.</li>
+<li>No hay operadores de comparación de imágenes, sin embargo 4D propone el comando <code>Equal picture</code> para comparar dos imágenes.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="ejemplos"></a><a href="#ejemplos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplos</h3>
 <p>Concatenación horizontal</p>
-<pre><code class="hljs css language-4d"> circle+rectangle <span class="hljs-comment">//Place the rectangle to the right of the circle</span>
- rectangle+circle <span class="hljs-comment">//Place the circle to the right of the rectangle</span>
+<pre><code class="hljs css language-4d"> circle+rectangle <span class="hljs-comment">//Colocar el rectángulo a la derecha del círculo</span>
+ rectangle+circle <span class="hljs-comment">//Colocar el círculo a la derecha del rectángulo</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/concatHor.en.png" alt=""> <img src="/docs/Rx/assets/en/Concepts/concatHor2.en.png" alt=""></p>
 <p>Concatenación vertical</p>
-<pre><code class="hljs css language-4d"> circle/rectangle <span class="hljs-comment">//Place the rectangle under the circle</span>
- rectangle/circle <span class="hljs-comment">//Place the circle under the rectangle</span>
+<pre><code class="hljs css language-4d"> circle+rectangle <span class="hljs-comment">//Colocar el rectángulo debajo del círculo</span>
+ rectangle+circle <span class="hljs-comment">//Colocar el círculo debajo del rectángulo</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/concatVer.en.png" alt=""> <img src="/docs/Rx/assets/en/Concepts/concatVer2.en.png" alt=""></p>
 <p>Superposición exclusiva</p>
-<pre><code class="hljs css language-4d">Pict3:=Pict1 &amp; Pict2 <span class="hljs-comment">// Superimposes Pict2 on top of  Pict1</span>
+<pre><code class="hljs css language-4d">Pict3:=Pict1 &amp; Pict2 <span class="hljs-comment">// Superponer Pict2 sobre Pict1</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/superimpoExc.fr.png" alt=""></p>
 <p>Superposición inclusiva</p>
-<pre><code class="hljs css language-4d">Pict3:=Pict1|Pict2 <span class="hljs-comment">// Recovers resulting mask from superimposing two pictures of the same size</span>
+<pre><code class="hljs css language-4d">Pict3:=Pict1|Pict2 <span class="hljs-comment">// Recupera la máscara resultante de la superposición de dos imágenes del mismo tamaño</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/superimpoInc.fr.png" alt=""></p>
-<p>Horizontal move</p>
-<pre><code class="hljs css language-4d">rectangle+<span class="hljs-number">50</span> <span class="hljs-comment">//Move the rectangle 50 pixels to the right</span>
-rectangle<span class="hljs-number">-50</span> <span class="hljs-comment">//Move the rectangle 50 pixels to the left</span>
+<p>Desplazamiento horizontal</p>
+<pre><code class="hljs css language-4d">rectangle+<span class="hljs-number">50</span> <span class="hljs-comment">//Mover el rectángulo 50 píxeles a la derecha</span>
+rectangle<span class="hljs-number">-50</span> <span class="hljs-comment">//Mover el rectángulo 50 píxeles a la izquierda</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/hormove.en.png" alt=""></p>
-<p>Vertical move</p>
-<pre><code class="hljs css language-4d">rectangle/<span class="hljs-number">50</span> <span class="hljs-comment">//Move the rectangle down by 50 pixels</span>
-rectangle/<span class="hljs-number">-20</span> <span class="hljs-comment">//Move the rectangle up by 20 pixels</span>
+<p>Movimiento vertical</p>
+<pre><code class="hljs css language-4d">rectangle/<span class="hljs-number">50</span> <span class="hljs-comment">//Mover el rectángulo 50 píxeles hacia abajo</span>
+rectangle/<span class="hljs-number">-20</span> <span class="hljs-comment">//Mover el rectángulo 20 píxeles hacia arriba</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/vertmove.en.png" alt=""><img src="/docs/Rx/assets/en/Concepts/vertmove2.en.png" alt=""></p>
-<p>Resize</p>
-<pre><code class="hljs css language-4d">rectangle*<span class="hljs-number">1.5</span> <span class="hljs-comment">//The rectangle becomes 50% bigger</span>
-rectangle*<span class="hljs-number">0.5</span> <span class="hljs-comment">//The rectangle becomes 50% smaller</span>
+<p>Redimensionamiento</p>
+<pre><code class="hljs css language-4d">rectangle*<span class="hljs-number">1.5</span> <span class="hljs-comment">//El rectángulo se hace un 50% más grande</span>
+rectangle*<span class="hljs-number">0.5</span> <span class="hljs-comment">//El rectángulo se hace un 50% más pequeño</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/resize.en.png" alt=""><img src="/docs/Rx/assets/en/Concepts/resisze2.en.png" alt=""></p>
-<p>Horizontal scaling</p>
-<pre><code class="hljs css language-4d">circle*+<span class="hljs-number">3</span> <span class="hljs-comment">//The circle becomes 3 times wider</span>
-circle*+<span class="hljs-number">0.25</span> <span class="hljs-comment">//The circle's width becomes a quarter of what it was</span>
+<p>Escala horizontal</p>
+<pre><code class="hljs css language-4d">circle*+<span class="hljs-number">3</span> <span class="hljs-comment">//El círculo se hace 3 veces más ancho</span>
+circle*+<span class="hljs-number">0</span>,<span class="hljs-number">25</span> <span class="hljs-comment">//El ancho del círculo se convierte en una cuarta parte de lo que era</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/Horscaling.en.png" alt=""><img src="/docs/Rx/assets/en/Concepts/Horscaling2.en.png" alt=""></p>
-<p>Vertical scaling</p>
-<pre><code class="hljs css language-4d">circle*|<span class="hljs-number">2</span> <span class="hljs-comment">//The circle becomes twice as tall</span>
-circle*|<span class="hljs-number">0.25</span> <span class="hljs-comment">//The circle's height becomes a quarter of what it was</span>
+<p>Escala vertical</p>
+<pre><code class="hljs css language-4d">circle*|<span class="hljs-number">2</span> <span class="hljs-comment">//El círculo pasa a ser el doble de alto</span>
+circle*|<span class="hljs-number">0.25</span> <span class="hljs-comment">//La altura del círculo pasa a ser un cuarto de lo que era</span>
 </code></pre>
 <p><img src="/docs/Rx/assets/en/Concepts/vertscaling.en.png" alt=""><img src="/docs/Rx/assets/en/Concepts/veticalscaling2.en.png" alt=""></p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/Rx/es/Concepts/object.html"><span class="arrow-prev">← </span><span>Objeto</span></a><a class="docs-next button" href="/docs/Rx/es/Concepts/pointer.html"><span>Puntero</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#identificadores-de-códecs-de-imágenes">Identificadores de códecs de imágenes</a></li><li><a href="#operadores-de-imágenes">Operadores de imágenes</a><ul class="toc-headings"><li><a href="#ejemplos">Ejemplos</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/Rx/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
