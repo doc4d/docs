@@ -30,30 +30,30 @@ Un plug-in suele contener un conjunto de rutinas entregadas al desarrollador 4D.
 
 ### Nota importante
 
-Un plug-in puede ser muy sencillo, con una sola rutina que realice una tarea muy pequeña, o puede ser muy complejo, con cientos de rutinas y áreas. Prácticamente no hay límite para lo que puede hacer un plug-in, sin embargo todo desarrollador de plug-ins debe recordar que un plug-in es una parte de código "de muestra". Es el plug-in que se ejecuta dentro de 4D, no lo contrario. As a piece of code, it is the host of 4D; it is not a stand-alone application. It shares CPU time and memory with 4D and other plug-ins, thus, it should be a polite code, using just what is necessary to run. For example, in long loops, a plug-in should call `PA_Yield()` to give time to the 4D scheduler unless its task is critical for both it and the application.
+Un plug-in puede ser muy sencillo, con una sola rutina que realice una tarea muy pequeña, o puede ser muy complejo, con cientos de rutinas y áreas. Prácticamente no hay límite para lo que puede hacer un plug-in, sin embargo todo desarrollador de plug-ins debe recordar que un plug-in es una parte de código "de muestra". Es el plug-in que se ejecuta dentro de 4D, no lo contrario. Como parte de código, es el anfitrión de 4D; no es una aplicación independiente. Comparte el tiempo de la CPU y la memoria con 4D y otros plug-ins, por lo tanto, debería ser un código conciso, utilizando sólo lo necesario para funcionar. Por ejemplo, en los bucles largos, un plug-in debe llamar a `PA_Yield()` para dar tiempo al planificador 4D a menos que su tarea sea crítica tanto para él como para la aplicación.
 
-## How to create a plug-in?
+## ¿Cómo crear un plug-in?
 
-4D provides on GitHub an open-source [**plug-in SDK**](https://github.com/4d/4D-Plugin-SDK), containing the 4D Plugin API and the 4D Plugin Wizard:
+4D ofrece en GitHub un código abierto [**plug-in SDK**](https://github.com/4d/4D-Plugin-SDK), que contiene el plug-in API 4D y el asistente de plugins 4D:
 
-- the [**4D Plugin API**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20API), written in C, adds more than 400 functions that help you to easily create your own plug-ins to add new functionnalities to your 4D application. 4D Plug-in API functions manage all the interactions between the 4D application and your plug-in.
-- The [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) is an essential tool that simplifies the task of developing 4D plug-ins. It writes the code 4D needs to correctly load and interact with a plug-in, allowing you to concentrate on your own code.
+- el [**Plugin API de 4D **](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20API), escrito en C, añade más de 400 funciones que le ayudan a crear fácilmente sus propios plug-ins para añadir nuevas funcionalidades a su aplicación 4D. Las funciones del plug-in de API de 4D gestionan todas las interacciones entre la aplicación 4D y su plug-in.
+- [**El Asistente de plug-in 4D**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) es una herramienta esencial que simplifica la tarea de desarrollar plugins 4D. Escribe el código que 4D necesita para cargar e interactuar correctamente con un plug-in, permitiéndole concentrarse en su propio código.
 
-## How to install a plug-in?
+## ¿Cómo instalar un plug-in?
 
-You install plug-ins in the 4D environment by copying their files into the appropriate folder.
+Los plug-ins se instalan en el entorno 4D copiando sus archivos en la carpeta correspondiente.
 
-“PluginName.bundle” folders contain both Windows and macOS versions of 4D plug-ins. Their specific internal architecture lets 4D Server load the appropriate version according to the platform where the client machine will be run. To install a plug-in in your environment, you just need to put the “PluginName.bundle” folder or package concerned into the desired **Plugins** folder.
+Las carpetas "PluginName.bundle" contienen las versiones para Windows y macOS de los plug-ins 4D. Su arquitectura interna específica permite a 4D Server cargar la versión adecuada según la plataforma en la que se ejecutará la máquina cliente. Para instalar un plug-in en su entorno, sólo tiene que poner la carpeta "PluginName.bundle" o el paquete correspondiente en la carpeta **Plugins** deseada.
 
-You can put the Plugins folder in two different places:
+Puede colocar la carpeta Plugins en dos lugares diferentes:
 
-- At the level of the 4D executable application, i.e.:
-  - Under Windows: next to the .exe file
-  - Under macOS: at the first level of the Contents folder inside the application package. In this case, plug-ins are available in every project opened by this application.
-- At the same level as the Project folder. In this case, plug-ins are only available in this particular project.
+- A nivel de la aplicación 4D ejecutable, es decir:
+  - En Windows: junto al archivo .exe
+  - En macOS: en el primer nivel de la carpeta Contents dentro del paquete de la aplicación. En este caso, los plug-ins están disponibles en cada proyecto abierto por esta aplicación.
+- En el mismo nivel que la carpeta Project. En este caso, los plug-ins sólo están disponibles en esta aplicación en particular.
 
-The choice of location depends on how you want to use the plug-in.
+La elección de la ubicación depende de cómo quiera utilizar el plug-in.
 
-If the same plug-in is placed in both locations, 4D will only load the one located next to the structure. In an application that is compiled and merged using 4D Volume Desktop, if there are several instances of the same plug-in present, this will prevent the application from opening.
+Si se coloca el mismo plug-in en ambas ubicaciones, 4D sólo cargará el que esté situado junto a la estructura. En una aplicación compilada y fusionada con 4D Volume Desktop, si hay varias instancias del mismo plug-in presentes, esto impedirá que la aplicación se abra.
 
-Plug-ins are loaded by 4D when the application is launched so you will need to quit your 4D application before installing them. Then open your project with 4D. If any plug-in requires a specific license for use, it will be loaded but not available for use.
+Los plug-ins son cargados por 4D cuando se lanza la aplicación, por lo que tendrá que salir de su aplicación 4D antes de instalarlos. A continuación, abra su proyecto con 4D. Si algún plug-in requiere una licencia específica, se cargará pero no estará disponible para su uso.
