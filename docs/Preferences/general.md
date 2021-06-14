@@ -87,9 +87,9 @@ You can set this preference by checking the **Create default .gitignore file**  
 
 ![](assets/en/Preferences/gitignore.png)
 
-When a project is created in 4D and that box is checked, 4D creates a default `.gitignore` file at the same level as the `Project` folder [lien architecture](lien).
+When a project is created in 4D and that box is checked, 4D creates a default `.gitignore` file at the same level as the `Project` folder (see [Architecture of a Project](Project/architecture.md#gitignore-file-optional)).
 
- You can define your own default file by clicking the `icon`. This will open the .gitignore configuration file in your text editor. The contents of this file will be used to generate the .gitignore files in your new projects.
+ You can define the default contents of the `.gitignore` file by clicking the pencil icon. This will open the .gitignore configuration file in your text editor. The contents of this file will be used to generate the `.gitignore` files in your new projects.
 
 The [official git documentation](https://git-scm.com/docs/gitignore) is a great resource to understand how `.gitignore` files work. 
 
