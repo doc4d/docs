@@ -23,6 +23,6 @@ title: ドキュメンテーション更新情報
 - [EntitySelection クラス](API/EntitySelectionClass.md): `.average()`, `.max()` および `.min()` 関数は、エンティティセレクションが空の場合には *undefined* を返すようになりました。
 - [IMAP Mail](API/IMAPTransporterClass.md), [POP3 Mail](API/POP3TransporterClass.md) and [SMTP Mail](API/SMTPTransporterClass.md): `authenticationMode` プロパティは OAuth 2.0 を有効化します。
 - [IMAP Mail](API/IMAPTransporterClass.md): 新しい `.expunge()` および `.append()` 関数の追加。
-- 新しい [Web管理](Admin/webAdmin.md) 機能
+- 新しい [Web管理](Admin/webAdmin.md) Webサーバーコンポーネント
 - 新しい [データエクスプローラー](Admin/dataExplorer) インターフェース
 - 新しい Web [ユーザーセッション](WebServer/sessions.md) および [その API](API/SessionClass.md)
