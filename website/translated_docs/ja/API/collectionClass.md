@@ -69,17 +69,17 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## `New collection`
+## `新しいコレクション`
 
 
 <!-- REF #_command_.New collection.Syntax -->
 **New collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New collection.Params -->
-| 参照    | タイプ                                         |    | 説明             |
-| ----- | ------------------------------------------- |:--:| -------------- |
-| value | 数値、テキスト、日付、時間、ブール、オブジェクト、コレクション、ピクチャー、ポインター | -> | コレクションの値       |
-| 戻り値   | コレクション                                      | <- | New collection |
+| 参照    | タイプ                                         |    | 説明        |
+| ----- | ------------------------------------------- |:--:| --------- |
+| value | 数値、テキスト、日付、時間、ブール、オブジェクト、コレクション、ピクチャー、ポインター | -> | コレクションの値  |
+| 戻り値   | コレクション                                      | <- | 新しいコレクション |
 <!-- END REF -->
 
 
@@ -148,7 +148,7 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## `New shared collection`
+## `新規の共有コレクション`
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -160,10 +160,10 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 **New shared collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New shared collection.Params -->
-| 参照    | タイプ                                 |    | 説明                    |
-| ----- | ----------------------------------- |:--:| --------------------- |
-| value | 数値、テキスト、日付、時間、ブール、共有オブジェクト、共有コレクション | -> | 共有コレクションの値            |
-| 戻り値   | コレクション                              | <- | New shared collection |
+| 参照    | タイプ                                 |    | 説明          |
+| ----- | ----------------------------------- |:--:| ----------- |
+| value | 数値、テキスト、日付、時間、ブール、共有オブジェクト、共有コレクション | -> | 共有コレクションの値  |
+| 戻り値   | コレクション                              | <- | 新規の共有コレクション |
 <!-- END REF -->
 
 
