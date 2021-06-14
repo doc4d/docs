@@ -76,11 +76,11 @@
 <p>This property is an &quot;object function&quot;, i.e. a function which is bound to its parent object. To execute a function stored in an object property, use the <strong>()</strong> operator after the property name, such as:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$f</span>.<span class="hljs-function">message</span>() <span class="hljs-comment">//displays "Hello world"</span>
 </code></pre>
-<p>Syntax with brackets is also supported:</p>
+<p>También se admite la sintaxis con paréntesis:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$f</span>[<span class="hljs-string">"message"</span>]() <span class="hljs-comment">//displays "Hello world"</span>
 </code></pre>
-<p>Note that, even if it does not have parameters (see below), an object function to be executed must be called with ( ) parenthesis. Calling only the object property will return a new reference to the formula (and will not execute it):</p>
-<pre><code class="hljs css language-4d"> <span class="hljs-variable">$o</span>:=<span class="hljs-variable">$f</span>.message <span class="hljs-comment">//returns the formula object in $o </span>
+<p>Note that, even if it does not have parameters (see below), an object function to be executed must be called with ( ) parenthesis. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):</p>
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$o</span>:=<span class="hljs-variable">$f</span>.message <span class="hljs-comment">//devuelve el objeto fórmula en $o </span>
 </code></pre>
 <p>You can also execute a function using the <a href="#apply"><code>apply()</code></a> and <a href="#call"><code>call()</code></a> functions:</p>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$f</span>.message.<span class="hljs-function">apply</span>() <span class="hljs-comment">//displays "Hello world"</span>
