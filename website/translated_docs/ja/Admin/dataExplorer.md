@@ -1,22 +1,22 @@
 ---
 id: dataExplorer
-title: Web Data Explorer
+title: Webデータエクスプローラー
 ---
 
-> **Preview**: The Web Data Explorer is provided as a preview feature. Using this feature in a production purpose is not recommended; final implementation could be slightly different.
+> **プレビュー**: Webデータエクスプローラーは、プレビュー機能として提供されています。 運用環境でこの機能を使用することは推奨されません。最終的な実装は若干異なる可能性があります。
 
 
-The Data Explorer provides a web interface to view and query data in your project datastore. Using this tool, you can easily browse among all your entities and search, order, or filter attribute values. It helps you to control data and quickly identify issues at any steps of the development process.
+データエクスプローラーは、プロジェクトのデータストアにあるデータを表示・クエリするための Webインターフェースを提供します。 このツールを使用すると、すべてのエンティティを簡単に表示し、属性値に基づいて検索・並べ替え・フィルターすることができます。 このツールは、開発プロセスのどの段階においても、データを管理し、問題を迅速に特定するのに役立ちます。
 
 ![alt-text](assets/en/Admin/dataExplorer1.png)
 
 
-## Access Configuration
+## アクセス設定
 
-The Data Explorer relies on the [`WebAdmin`](webAdmin.md) web server component for the configuration and authentication settings.
+データエクスプローラーの設定や認証は [`WebAdmin`](webAdmin.md) Webサーバーコンポーネントに依存しています。
 
-- **configuration**: the Data Explorer configuration reuses the [`WebAdmin` web server settings](webAdmin.md#webadmin-settings),
-- **authentication**: access to the Data Explorer is granted when the [session user is authenticated](webAdmin.md#authentication-and-session) and has the "WebAdmin" privilege. When the Data Explorer is accessed through the **Data Explorer** menu item (see below), an automatic authentication is provided.
+- **設定**: データエクスプローラーの設定は、[`WebAdmin` Webサーバーの設定](webAdmin.md#webadmin-設定) を再利用します。
+- **認証**: データエクスプローラーへのアクセスは、[認証されたセッションユーザー](webAdmin.md#認証とセッション) が、"WebAdmin" 権限を持っている場合に許可されます。 **データエクスプローラー** のメニュー項目 (後述参照) からデータエクスプローラーにアクセスした場合、認証は自動的におこなわれます。
 
 > The Data Explorer access can be disabled using the [`.setAdminProtection()`](API/DataStoreClass.md#setadminprotection) function.
 
