@@ -1778,8 +1778,10 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 *   *pathObjects* : Collection。 *pathObjects* コレクションには必要な数だけオブジェクトを追加することができます。 デフォルトでは、プロパティは昇順に並べ替えられます ("descending" は false)。 コレクションの各要素は、以下の構造を持つオブジェクトを格納します:
 
 ```4d
-    {"*propertyPath*": string,
-    "*descending*": boolean}  
+{
+    "propertyPath": string,
+    "descending": boolean
+}
 ```
 
 *   *ascOrDesc* : Integer。 **Objects and collections** テーマから、以下の定数のいずれか一つを渡します:
