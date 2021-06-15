@@ -69,7 +69,7 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## `新しいコレクション`
+## `New collection`
 
 
 <!-- REF #_command_.New collection.Syntax -->
@@ -148,7 +148,7 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 
 
-## `新規の共有コレクション`
+## `New shared collection`
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -1784,10 +1784,10 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 
 *   *ascOrDesc* : Integer。 **Objects and collections** テーマから、以下の定数のいずれか一つを渡します:
 
-    | 定数            | タイプ  | 結果 | 説明                   |
-    | ------------- | ---- | -- | -------------------- |
-    | ck ascending  | 倍長整数 | 0  | 要素は昇順に並べられます (デフォルト) |
-    | ck descending | 倍長整数 | 1  | 要素は降順に並べられます         |
+    | 定数            | タイプ  | 値 | 説明                   |
+    | ------------- | ---- | - | -------------------- |
+    | ck ascending  | 倍長整数 | 0 | 要素は昇順に並べられます (デフォルト) |
+    | ck descending | 倍長整数 | 1 | 要素は降順に並べられます         |
 
     このシンタックスは、コレクション内のスカラー値のみを並べ替えます (オブジェクトやコレクションなどの他の型は並べ替えされないまま返されます)。
 
