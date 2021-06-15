@@ -265,7 +265,7 @@ The same symbols are often used for different operations, depending on the data 
 | Data Type       | Operación     | Ejemplo                                                                                              |
 | --------------- | ------------- | ---------------------------------------------------------------------------------------------------- |
 | Número          | Adición       | 1 + 2 adds the numbers and results in 3                                                              |
-| Cadena          | Concatenation | “Hello ” + “there” concatenates (joins together) the strings and results in “Hello there”            |
+| Cadena          | Concatenación | “Hello ” + “there” concatenates (joins together) the strings and results in “Hello there”            |
 | Date and Number | Date addition | !1989-01-01! + 20 adds 20 days to the date January 1, 1989, and results in the date January 21, 1989 |
 
 
