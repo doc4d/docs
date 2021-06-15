@@ -6,7 +6,7 @@
     "tagline": " 4D 開発リファレンス",
     "docs": {
       "Admin/dataExplorer": {
-        "title": "Web Data Explorer"
+        "title": "Webデータエクスプローラー"
       },
       "Admin/licenses": {
         "title": "4D ライセンスの管理"
@@ -873,7 +873,7 @@
     "Web Administration|no description given": "Web 管理",
     "Client/Server|no description given": "クライアント/サーバー",
     "TLS Protocol (HTTPS)|no description given": "TLS Protocol (HTTPS)",
-    "Web Data Explorer|no description given": "Web Data Explorer",
+    "Web Data Explorer|no description given": "Webデータエクスプローラー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
     "Access Rights|no description given": "アクセス権限",
     "Preferences|no description given": "Preferences",
