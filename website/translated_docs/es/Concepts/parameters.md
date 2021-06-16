@@ -4,49 +4,49 @@ title: Parámetros
 ---
 
 
-You'll often find that you need to pass data to your methods and functions. This is easily done with parameters.
+A menudo encontrará que necesita pasar datos a sus métodos y funciones. Esto se hace fácilmente con parámetros.
 
 ## Generalidades
 
-**Parameters** (or **arguments**) are pieces of data that a method or a class function needs in order to perform its task. The terms *parameter* and *argument* are used interchangeably throughout this manual. Parameters are also passed to built-in 4D commands. In this example, the string “Hello” is an argument to the `ALERT` built-in command:
+**Los parámetros** (o **argumentos**) son piezas de datos que un método o una función de clase necesita para realizar su tarea. Los términos *parámetros* y *argumentos* se utilizan indistintamente en este manual. Los parámetros también se pasan a los comandos integrados de 4D. En este ejemplo, la cadena "Hello" es un argumento para el comando integrado `ALERT`:
 
 ```4d
 ALERT("Hello")
 ```
 
-Parameters are passed to methods or class functions in the same way. For example, if a class function named `getArea()` accepts two parameters, a call to the class function might look like this:
+Los parámetros se pasan de la misma manera a los métodos o las funciones de clase. Por ejemplo, si una función de clase llamada `getArea()` acepta dos parámetros, una llamada a la función de clase podría verse así:
 
 ```
 $area:=$o.getArea(50;100)
 ```
 
-Or, if a project method named `DO_SOMETHING` accepts three parameters, a call to the method might look like this:
+O, si un método proyecto llamado `DO_SOMETHING` acepta tres parámetros, una llamada al método podría verse así:
 
 ```4d
 DO_SOMETHING($WithThis;$AndThat;$ThisWay)
 ```
 
-The input parameters are separated by semicolons (;).
+Los parámetros de entrada están separados por punto y coma (;).
 
 The same principles are used when methods are executed through dedicated commands, for example:
 
 ```4d
 EXECUTE METHOD IN SUBFORM("Cal2";"SetCalendarDate";*;!05/05/20!)  
-//pass the !05/05/20! date as parameter to the SetCalendarDate  
-//in the context of a subform
+//pase la fecha !05/05/20! como parámetro de SetCalendarDate  
+//en el contexto de un subformulario
 ```
 
-Data can also be **returned** from methods and class functions. Data can be returned from methods. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
+Los datos también pueden ser **devueltos**desde métodos y funciones de clase. Data can be returned from methods. The statement puts the value returned by `Length` in a variable called *MyLength*. Here is the statement:
 
 ```4d
 MyLength:=Length("How did I get here?")
 ```
 
-Any subroutine can return a value. Only one single output parameter can be declared per method or class function.
+Any subroutine can return a value. Sólo se puede declarar un único parámetro de salida por método o función de clase.
 
-Input and output values are [evaluated](#values-or-references) at the moment of the call and copied into local variables within the called class function or method. Two syntaxes are proposed to declare variable parameters in the called code:
+Los valores de entrada y salida son [evaluados](#values-or-references) en el momento de la llamada y copiados en variables locales dentro de la función o método de la clase llamada. Se proponen dos sintaxis para declarar los parámetros de las variables en el código llamado:
 
-- [named variables](#named-parameters) (recommended in most cases) or
+- [named variables](#named-parameters) (recomendado en la mayoría de los casos) o
 - [sequentially numbered variables](#sequential-parameters).
 
 
