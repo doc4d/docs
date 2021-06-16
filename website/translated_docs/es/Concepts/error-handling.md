@@ -82,18 +82,18 @@ He aquí un sistema de gestión de errores sencillo:
 ```
 
 ```4d
-// errorMethod project method
- If(Error#1006) //this is not a user interruption
-    ALERT("The error "+String(Error)+" occurred". The code in question is: \""+Error formula+"\"")
+// método proyecto errorMethod
+ If(Error#1006) //esto no es una interrupción del usuario
+    ALERT("Se ha producido el error "+String(Error)+". El código en cuestión es: \""+Error formula+"\"")
  End if
 ```
 
-### Using an empty error-handling method
+### Utilizar un método de gestión de errores vacío
 
-If you mainly want the standard error dialog box to be hidden, you can install an empty error-handling method. The `Error` system variable can be tested in any method, i.e. outside of the error-handling method:
+Si desea principalmente que la caja de diálogo de error estándar esté oculta, puede instalar un método de gestión de errores vacío. La variable sistema `Error` puede ser probada en cualquier método, es decir, fuera del método de gestión de errores:
 
 ```4d
-ON ERR CALL("emptyMethod") //emptyMethod exists but is empty
+ON ERR CALL("emptyMethod") //emptyMethod existe pero está vacío
 $doc:=Open document( "myFile.txt")
 If (Error=-43)
     ALERT("File not found.")
