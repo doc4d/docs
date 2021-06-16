@@ -104,7 +104,7 @@ vRef:=Open document("PassFile";"TEXT";Read Mode) // open doc in read only mode
 
 4D provides a large number of built-in methods (or commands) but also lets you can create your own **project methods**. Project methods are user-defined methods that contain commands, operators, and other parts of the language. Project methods are generic methods, but there are other kinds of methods: Object methods, Form methods, Table methods (Triggers), and Database methods.
 
-A method is composed of statements; each statement consists of one line in the method. A statement performs an action, and may be simple or complex.
+Un método se compone de varias líneas de instrucciones, cada una de las cuales consta de una línea en el método. Una línea de instrucción realiza una acción, y puede ser simple o compleja.
 
 For example, the following line is a statement that will display a confirmation dialog box:
 
