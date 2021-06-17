@@ -260,11 +260,30 @@ SMTP接続は、以下の場合に自動的に閉じられます:
 `.send()` 関数は、 <!-- REF #SMTPTransporterClass.send().Summary -->[*mail*](EmailObjectClass.md#email-オブジェクト) 引数が指定するメールメッセージを、`transporter` オブジェクトが定義する SMTPサーバーへと送信し、ステータスオブジェクトを返します<!-- END REF -->。
 > `transporter` オブジェクトは、事前に `SMTP New transporter` コマンドによって作成されている必要があります。
 
-この関数は、SMTP接続が事前に開かれていなかった場合には、それを作成します。 `transporter` オブジェクトの `.keepAlive` プロパティが false であった場合、SMTP接続は `.send()` 実行後に自動的に閉じられます。そ例外の場合には、接続は `transporter` オブジェクトが消去されるまで開いたままになります。 詳細については、`SMTP New transporter` コマンドの説明を参照してください。
+この関数は、SMTP接続が事前に開かれていなかった場合には、それを作成します。 `transporter` オブジェクトの `.keepAlive` プロパティが false であった場合、SMTP接続は `.send()` 実行後に自動的に閉じられます。そ例外の場合には、接続は `transporter` オブジェクトが消去されるまで開いたままになります。 For more information, please refer to the [`SMTP New transporter`](#smtp-new-transporter) command description.
 
 *mail*には、送信する有効な [`Email` オブジェクト](EmailObjectClass.md#email-オブジェクト) を渡します。 メールには送信元 (メールがどこから送られるか) と送信先 (一名以上の受信者) プロパティが含まれている必要がありますが、その他のプロパティは任意です。
 
 
+#### 返されるオブジェクト
+
+The function returns an object describing the SMTP status of the operation. このオブジェクトには、次のプロパティが格納されることがあります:
+
+| プロパティ      | タイプ     | 説明                                                                                               |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------ |
+| success    | boolean | True if the send is successful, False otherwise                                                  |
+| status     | number  | Status code returned by the SMTP server (0 in case of an issue unrelated to the mail processing) |
+| statusText | text    | Status message returned by the SMTP server                                                       |
+
+In case of an issue unrelated to the SMTP processing (e.g. a mandatory property is missing in mail), 4D generates an error that you can intercept using a method installed by the `ON ERR CALL` command. Use the `GET LAST ERROR STACK` command for information about the error.
+
+In this case, the resulting status object contains the following values:
+
+| プロパティ      | 値                      |
+| ---------- | ---------------------- |
+| success    | False                  |
+| status     | 0                      |
+| statusText | "Failed to send email" |
 
 
 <!-- INCLUDE transporter.sendTimeOut.Desc -->
