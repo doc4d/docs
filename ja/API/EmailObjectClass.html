@@ -174,7 +174,7 @@
 <p><code>.bodyStructure</code> オブジェクトには、次のプロパティが格納されています:</p>
 <table>
 <thead>
-<tr><th>プロパティ</th><th>タイプ</th><th>結果</th></tr>
+<tr><th>プロパティ</th><th>タイプ</th><th>値</th></tr>
 </thead>
 <tbody>
 <tr><td>partID</td><td>テキスト</td><td>メールのパートを固有に識別する ID</td></tr>
@@ -195,7 +195,7 @@
 <p><code>.bodyValues</code> オブジェクトには、次のプロパティが格納されています:</p>
 <table>
 <thead>
-<tr><th>プロパティ</th><th>タイプ</th><th>結果</th></tr>
+<tr><th>プロパティ</th><th>タイプ</th><th>値</th></tr>
 </thead>
 <tbody>
 <tr><td><em>partID</em>.value</td><td>text</td><td>本文パートの値</td></tr>
@@ -232,7 +232,7 @@
 <p>ヘッダーコレクションの各オブジェクトには、次のプロパティが格納されることがあります:</p>
 <table>
 <thead>
-<tr><th>プロパティ</th><th>タイプ</th><th>結果</th></tr>
+<tr><th>プロパティ</th><th>タイプ</th><th>値</th></tr>
 </thead>
 <tbody>
 <tr><td>[].name</td><td>text</td><td>(必須) <a href="https://tools.ietf.org/html/rfc5322">RFC#5322</a> で定義されているヘッダーフィールド名。 null または未定義の場合には、ヘッダーフィールドは MIME ヘッダーに追加されません。</td></tr>
@@ -260,7 +260,7 @@
 <p>このプロパティは &quot;keywords&quot; ヘッダーです (<a href="https://tools.ietf.org/html/rfc4021">RFC#4021</a> 参照)。</p>
 <table>
 <thead>
-<tr><th>プロパティ</th><th>タイプ</th><th>結果</th></tr>
+<tr><th>プロパティ</th><th>タイプ</th><th>値</th></tr>
 </thead>
 <tbody>
 <tr><td>.&lt;keyword&gt;</td><td>boolean</td><td>設定するキーワード (値は true でなければなりません)。</td></tr>
@@ -437,7 +437,7 @@
 <tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>headerCharset</td><td>テキスト</td><td>メールの以下の部分で使用される文字セットとエンコーディング: 件名、添付ファイル名、メール名の属性。 とりうる値:<p><p><table><tr><th>定数</th><th>結果</th><th>説明</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: 可能なら US-ASCII 、次に可能なら Japanese (ISO-2022-JP) &amp; Quoted-printable 、それも不可なら UTF-8 &amp; Quoted-printable</li><li><i>bodyCharset</i>: 可能なら US-ASCII、次に可能なら Japanese (ISO-2022-JP) &amp; 7-bit、それも不可なら UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 &amp; Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能なら US-ASCII、それが不可なら UTF-8 &amp; Quoted-printable (<strong>デフォルト値</strong>)</tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能な場合は US-ASCII、それ以外は UTF-8 &amp; base64</td></tr></table></td></tr>
+<tr><td>headerCharset</td><td>テキスト</td><td>メールの以下の部分で使用される文字セットとエンコーディング: 件名、添付ファイル名、メール名の属性。 とりうる値:<p><p><table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: 可能なら US-ASCII 、次に可能なら Japanese (ISO-2022-JP) &amp; Quoted-printable 、それも不可なら UTF-8 &amp; Quoted-printable</li><li><i>bodyCharset</i>: 可能なら US-ASCII、次に可能なら Japanese (ISO-2022-JP) &amp; 7-bit、それも不可なら UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 &amp; Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能なら US-ASCII、それが不可なら UTF-8 &amp; Quoted-printable (<strong>デフォルト値</strong>)</tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: 可能な場合は US-ASCII、それ以外は UTF-8 &amp; base64</td></tr></table></td></tr>
 <tr><td>bodyCharset</td><td>テキスト</td><td>メールの HTML およびテキスト本文コンテンツで使用される文字セットとエンコーディング。 取りうる値: headerCharset と同じ(上記参照)</td></tr>
 </tbody>
 </table>

@@ -138,7 +138,7 @@
 <p>デフォルトで、4D は POSIXシンタックスで表現されたパスを期待します。 プラットフォームパス名 (Windows または macOS) を使用する場合、<em>pathType</em> 引数を使用してそのことを宣言する必要があります。 以下の定数を使用することができます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td>fk platform path</td><td>1</td><td>プラットフォーム特有のシンタックスで表現されたパス (プラットフォームパス名の場合には必須)</td></tr>
@@ -149,7 +149,7 @@
 <p><em>folderConstant</em> には、以下の定数のどれか一つを指定して 4Dビルトインの、またはシステムフォルダーを渡します:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td>fk applications folder</td><td>116</td><td></td></tr>
@@ -215,7 +215,7 @@
 <p><em>destinationFolder</em> 引数が指定するフォルダー内に同じ名前のフォルダーが既に存在する場合、4D はデフォルトでエラーを生成します。 <em>overwrite</em> に <code>fk overwrite</code> 定数を渡すことで、既存のフォルダーを無視して上書きすることができます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk overwrite</code></td><td>4</td><td>既存要素があれば、それを上書きします</td></tr>
@@ -300,7 +300,7 @@ End if</span>
 <p>macOS 上では、この関数はデフォルトで標準エイリアスを作成します。 <em>aliasType</em> 引数を渡すことで、シンボリックリンクを作成することもできます。 以下の定数を使用することができます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk alias link</code></td><td>0</td><td>エイリアスリンク (デフォルト)</td></tr>
@@ -370,7 +370,7 @@ End if</span>
 <p>セキュリティ上の理由から、option 引数を渡さなかった場合はデフォルトで、<code>.delete()</code> は空のフォルダーしか削除しません。 空でないフォルダーを削除するには、以下の定数のいずれか一つを option 引数として渡す必要があります:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>Delete only if empty</code></td><td>0</td><td>フォルダーが空の場合のみ削除します</td></tr>
@@ -477,7 +477,7 @@ End if</span>
 <p><em>options</em>引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるファイルのみがコレクションに返されます。これには非表示のファイルや、フォルダーも含まれます。 <em>options</em> 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk recursive</code></td><td>1</td><td>コレクションには、指定フォルダーとそのサブフォルダーのファイル/フォルダーが含まれます</td></tr>
@@ -556,7 +556,7 @@ End if</span>
 <p><em>options</em>引数を渡さなかった場合はデフォルトで、フォルダーの第一階層にあるフォルダーのみがコレクションに返されます。 <em>options</em> 引数に以下の定数を一つ以上渡すことで、このふるまいを変更することができます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>fk recursive</code></td><td>1</td><td>コレクションには、指定フォルダーとそのサブフォルダーのファイル/フォルダーが含まれます</td></tr>
