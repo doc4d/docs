@@ -93,7 +93,7 @@
 <p><img src="/docs/alpha/assets/en/Admin/waMenu2.png" alt="alt-text"></p>
 <p>サーバーが開始されていると、メニュー項目は <strong>Webサーバー停止</strong> になります。<code>WebAdmin</code> Webサーバーを停止するには、これを選択します。</p>
 <h2><a class="anchor" aria-hidden="true" id="webadmin-設定"></a><a href="#webadmin-設定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>WebAdmin 設定</h2>
-<p><a href="#access-key"><strong>アクセスキー</strong></a> を定義するには、<code>WebAdmin</code> コンポーネントの設定は必須です。 デフォルトで、アクセスキーが設定されていない場合は、URL経由のアクセスは許可されません。</p>
+<p><a href="#access-key"><strong>アクセスキー</strong></a> を定義するには、<code>WebAdmin</code> コンポーネントの設定は必須です。 By default when the access key is not set, access via a URL is not allowed.</p>
 <p><code>WebAdmin</code> コンポーネントの設定は、<a href="#settings-dialog-box">Web管理設定ダイアログボックス</a> (後述参照) でおこないます。</p>
 <blockquote>
 <p>ヘッドレス4Dアプリケーションを使用している場合は、<a href="#webadmin-headless-configuration"><em>コマンドライン・インターフェース</em> の引数</a> を使用して基本的な設定を定義できます。 高度なパラメーターを定義するには、設定ファイルをカスタマイズする必要があります。</p>
@@ -130,7 +130,7 @@
 <li><strong>レスポンスのbody</strong> - レスポンスのボディパーツのみを含める形で有効化。</li>
 </ul>
 <h4><a class="anchor" aria-hidden="true" id="アクセスキー"></a><a href="#アクセスキー" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>アクセスキー</h4>
-<p><code>WebAdmin</code> Webサーバーへの URL経由アクセスのロックを解除するには、アクセスキーの定義は必須です (4Dメニューコマンドによるアクセスにはアクセスキーは必要ありません)。 アクセスキーが定義されていない場合、<a href="/docs/alpha/ja/Admin/dataExplorer.html">データエクスプローラーページ</a> などの Web管理インターフェースに Webクライアントを使って URLを介した接続はできません。 接続リクエストがあった場合には、エラーページが返されます:</p>
+<p>Defining an access key is mandatory to unlock access to the <code>WebAdmin</code> web server through a URL (access via a 4D menu command does not require an access key). When no access key is defined, no web client is allowed to connect through a URL to a web administration interface like the <a href="/docs/alpha/ja/Admin/dataExplorer.html">Data Explorer page</a>. 接続リクエストがあった場合には、エラーページが返されます:</p>
 <p><img src="/docs/alpha/assets/en/Admin/accessKey.png" alt="alt-text"></p>
 <p>アクセスキーはパスワードに似ていますが、ログインとは関係ありません。</p>
 <ul>
@@ -154,7 +154,7 @@
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="認証とセッション"></a><a href="#認証とセッション" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>認証とセッション</h2>
 <ul>
-<li><p>事前に本人確認せずに URL経由で Web管理ページにアクセスした場合、認証が必要になります。 ユーザーは、認証ダイアログボックスに <a href="#アクセスキー">アクセスキー</a> を入力する必要があります。 <code>WebAdmin</code> 設定でアクセスキーが定義されていない場合には、URL経由のアクセスはできません。</p></li>
+<li><p>When a web management page is accessed by entering a URL and without prior identification, an authentication is required. ユーザーは、認証ダイアログボックスに <a href="#アクセスキー">アクセスキー</a> を入力する必要があります。 <code>WebAdmin</code> 設定でアクセスキーが定義されていない場合には、URL経由のアクセスはできません。</p></li>
 <li><p>4D または 4D Server のメニュー項目 (<strong>レコード ＞ データエクスプローラー</strong> または <strong>ウィンドウ ＞ データエクスプローラー</strong> (4D Server) など) から Web管理ページに直接アクセスした場合、アクセスは認証なしで許可され、ユーザーは自動的に認証されます。</p></li>
 </ul>
 <p>アクセスが許可されると、4Dアプリケーション上に &quot;WebAdmin&quot; 権限を持つ Web<a href="/docs/alpha/ja/WebServer/sessions.html">セッション</a> が作成されます。 カレントセッションが &quot;WebAdmin&quot; 権限を持っている限り、<code>WebAdmin</code> コンポーネントは要求されたページを提供します。</p>

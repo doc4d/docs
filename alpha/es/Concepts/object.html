@@ -68,7 +68,7 @@
             });
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/develop/docs/Concepts/dt_object.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Objeto</h1></header><article><div><span><p>Las variables, campos o expresiones de tipo objeto pueden contener datos de diversos tipos. La estructura de los objetos &quot;nativos&quot; 4D se basa en el principio clásico de los pares &quot;propiedad/valor&quot;. La sintaxis de estos objetos se basa en la notación JSON:</p>
 <ul>
-<li><p>El nombre de una propiedad es siempre un texto, por ejemplo &quot;Name&quot;. It must follow <a href="/docs/alpha/es/Concepts/identifiers.html#object-properties">specific rules</a>.</p></li>
+<li><p>El nombre de una propiedad es siempre un texto, por ejemplo &quot;Name&quot;. Debe seguir <a href="/docs/alpha/es/Concepts/identifiers.html#object-properties">reglas específicas</a>.</p></li>
 <li><p>Un valor de propiedad puede ser del tipo siguiente:</p>
 <ul>
 <li>número (Real, Entero, etc.)</li>
@@ -77,18 +77,18 @@
 <li>booleano</li>
 <li>puntero (almacenado como tal, evaluado con el comando <code>JSON Stringify</code> o al copiar),</li>
 <li>fecha (tipo fecha o cadena en formato fecha ISO)</li>
-<li>object(1) (objects can be nested on several levels)</li>
-<li>picture(2)</li>
+<li>objeto(1) (los objetos pueden ser anidados en varios niveles)</li>
+<li>imagen(2)</li>
 <li>colección</li>
 </ul></li>
 </ul>
-<p>(1)ORDA objects such as <a href="/docs/alpha/es/ORDA/dsmapping.html#entity">entities</a> or <a href="/docs/alpha/es/ORDA/dsmapping.html#entity-selection">entity selections</a> cannot be stored in <strong>object fields</strong>; however, they are fully supported in <strong>object variables</strong> in memory.</p>
-<p>(2)When exposed as text in the debugger or exported to JSON, picture object properties print &quot;[object Picture]&quot;.</p>
+<p>(1)Los objetos ORDA como <a href="/docs/alpha/es/ORDA/dsmapping.html#entity">entidades</a> o las <a href="/docs/alpha/es/ORDA/dsmapping.html#entity-selection">selecciones de entidades</a> no pueden almacenarse en <strong>campos objeto</strong>; sin embargo, se soportan completamente en las <strong>variables objeto</strong> en memoria.</p>
+<p>(2)Cuando se expone como texto en el depurador o se exporta a JSON, las propiedades de los objetos de tipo imagen indican &quot;[objeto Imagen]&quot;.</p>
 <p><strong>Atención:</strong> recuerde que los nombres de atributos diferencian entre mayúsculas y minúsculas.</p>
-<p>You manage Object type variables, fields or expressions using the <a href="/docs/alpha/es/Concepts/object.html#syntax-basics">object notation</a> or the classic commands available in the <strong>Objects (Language)</strong> theme. Note that specific commands of the <strong>Queries</strong> theme such as <code>QUERY BY ATTRIBUTE</code>, <code>QUERY SELECTION BY ATTRIBUTE</code>, or <code>ORDER BY ATTRIBUTE</code> can be used to carry out processing on object fields.</p>
-<p>Cada valor de propiedad al que se accede a través de la notación de objeto se considera una expresión. You can use such values wherever 4D expressions are expected:</p>
+<p>Las variables, campos o expresiones de tipo Objeto se gestionan utilizando la <a href="/docs/alpha/es/Concepts/object.html#syntax-basics">notación objeto</a> o los comandos clásicos disponibles en el tema <strong>Objetos (Lenguaje)</strong>. Tenga en cuenta que se pueden utilizar comandos específicos del tema <strong>Búsquedas</strong>, como <code>QUERY BY ATTRIBUTE</code>, <code>QUERY SELECTION BY ATTRIBUTE</code>, o <code>ORDER BY ATTRIBUTE</code> para llevar a cabo el procesamiento de los campos objetos.</p>
+<p>Cada valor de propiedad al que se accede a través de la notación de objeto se considera una expresión. Puede utilizar estos valores siempre que se esperen expresiones 4D:</p>
 <ul>
-<li>in 4D code, either written in the methods (Method editor) or externalized (formulas, 4D tags files processed by <code>PROCESS 4D TAGS</code> or the Web Server, export files, 4D Write Pro documents...),</li>
+<li>en código 4D, ya sea escrito en los métodos (editor de métodos) o externalizado (fórmulas, archivos de etiquetas procesados por <code>PROCESS 4D TAGS</code> o el servidor web, archivos de exportación, documentos 4D Write Pro...),</li>
 <li>en las áreas de expresiones del depurador y del explorador de ejecución,</li>
 <li>en la lista de propiedades del editor de formularios para los objetos formulario: campo Variable o Expresión, así como diversas expresiones de list box y columnas (fuente de datos, color de fondo, estilo o color de fuente).</li>
 </ul>

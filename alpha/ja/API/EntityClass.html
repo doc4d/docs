@@ -379,7 +379,7 @@
 <tr><td>lockInfo</td><td></td><td>object</td><td>ロック元についての情報</td></tr>
 <tr><td></td><td>task_id</td><td>number</td><td>プロセスID</td></tr>
 <tr><td></td><td>user_name</td><td>text</td><td>マシン上でのセッションユーザー名</td></tr>
-<tr><td></td><td>user4d_id</td><td>text</td><td>4Dデータベースディレクトリでのユーザー名</td></tr>
+<tr><td></td><td>user4d_alias</td><td>text</td><td><code>SET USER ALIAS</code> で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名</td></tr>
 <tr><td></td><td>host_name</td><td>text</td><td>マシン名</td></tr>
 <tr><td></td><td>task_name</td><td>text</td><td>プロセス名</td></tr>
 <tr><td></td><td>client_version</td><td>text</td><td></td></tr>
@@ -393,7 +393,7 @@
 <p>(*) エラー時には <em>Result</em> オブジェクトの <em>status</em> あるいは <em>statusText</em> プロパティに以下のいずれかの値が返されます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>dk status entity does not exist anymore</code></td><td>5</td><td>エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<br><li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 entity.drop( ) を使用するとき、このエラーは dk force drop if stamp changed オプションを使用した場合に返されることがあります。 entity.lock( ) を使用するとき、このエラーは dk reload drop if stamp changed オプションを使用した場合に返されることがあります。</li><p><strong>割り当てられた statusText</strong>: &quot;エンティティはもう存在しません&quot;</td></tr>
@@ -839,7 +839,7 @@
 <p>(*) エラー時には <em>Result</em> オブジェクトの <em>status</em> あるいは <em>statusText</em> プロパティに以下のいずれかの値が返されます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>dk status entity does not exist anymore</code></td><td>5</td><td>エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 entity.drop( ) を使用するとき、このエラーは dk force drop if stamp changed オプションを使用した場合に返されることがあります。 entity.lock( ) を使用するとき、このエラーは dk reload drop if stamp changed オプションを使用した場合に返されることがあります。</li><br><strong>割り当てられた statusText</strong>: &quot;エンティティはもう存在しません&quot;</td></tr>
@@ -974,7 +974,7 @@
 <p>(*) エラー時には <em>Result</em> オブジェクトの <em>status</em> あるいは <em>statusText</em> プロパティに以下のいずれかの値が返されます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>dk status entity does not exist anymore</code></td><td>5</td><td>エンティティはもうデータ内に存在していません。 このエラーは以下のような場合に起きえます:<br><li>エンティティがドロップされている (スタンプが変更されていて、メモリ空間は解放されている)</li><li>エンティティがドロップされていて、他のプライマリーキー値を持つエンティティで置き換えられている (スタンプは変更されていて、新しいエンティティがメモリ空間を使用している)。 entity.drop( ) を使用するとき、このエラーは dk force drop if stamp changed オプションを使用した場合に返されることがあります。 entity.lock( ) を使用するとき、このエラーは dk reload drop if stamp changed オプションを使用した場合に返されることがあります。</li><br><strong><em>割り当てられた statusText</em></strong>: &quot;エンティティはもう存在しません&quot;</td></tr>
@@ -1045,7 +1045,7 @@
 <tr><td>lockInfo</td><td></td><td>object</td><td>ロック元についての情報</td></tr>
 <tr><td></td><td>task_id</td><td>number</td><td>プロセスID</td></tr>
 <tr><td></td><td>user_name</td><td>text</td><td>マシン上でのセッションユーザー名</td></tr>
-<tr><td></td><td>user4d_id</td><td>text</td><td>4Dデータベースディレクトリでのユーザー名</td></tr>
+<tr><td></td><td>user4d_alias</td><td>text</td><td><code>SET USER ALIAS</code> で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名</td></tr>
 <tr><td></td><td>host_name</td><td>text</td><td>マシン名</td></tr>
 <tr><td></td><td>task_name</td><td>text</td><td>プロセス名</td></tr>
 <tr><td></td><td>client_version</td><td>text</td><td></td></tr>
@@ -1060,7 +1060,7 @@
 <p>エラー時には Result オブジェクトの <code>status</code> あるいは <code>statusText</code> プロパティに以下のいずれかの値が返されます:</p>
 <table>
 <thead>
-<tr><th>定数</th><th>結果</th><th>説明</th></tr>
+<tr><th>定数</th><th>値</th><th>説明</th></tr>
 </thead>
 <tbody>
 <tr><td><code>dk status automerge failed</code></td><td>6</td><td>(<code>dk auto merge</code> オプションが使用されたときのみ) エンティティを保存するときに自動マージオプションが失敗しました。<p><p><strong>割り当てられた statusText</strong>: &quot;自動マージ失敗&quot;</td></tr>
