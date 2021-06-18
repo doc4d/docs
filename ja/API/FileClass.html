@@ -87,7 +87,7 @@
 <tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    ディスク上にファイルが存在する場合は true を返します</td></tr>
 <tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    ファイル名の拡張子</td></tr>
 <tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    拡張子 (あれば) を含めたファイルの完全な名称</td></tr>
-<tr><td><a href="#getappinfo"><strong>.getAppInfo</strong>() : Object</a><p>    <strong>.exe</strong> や <strong>.plist</strong> ファイルの情報をオブジェクトとして返します</td></tr>
+<tr><td><a href="#getappinfo"><strong>.getAppInfo</strong>() : Object</a><p>    returns the contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file information as an object</td></tr>
 <tr><td><a href="#getcontent"><strong>.getContent( )</strong> : Blob</a><p>ファイルの全コンテンツを格納した BLOB を返します</td></tr>
 <tr><td><a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    ファイルのアイコンを返します</td></tr>
 <tr><td><a href="#gettext"><strong>.getText</strong>( { <em>charSetName</em> : Text } { ; } { <em>breakMode</em> : integer} ) : Text<br><strong>.getText</strong>( { <em>charSetNum</em> : integer } { ; } { <em>breakMode</em> : integer} ) : Text</a><p>    ファイルのコンテンツをテキストとして返します</td></tr>
@@ -106,7 +106,7 @@
 <tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    ファイルの POSIXパス</td></tr>
 <tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    カレントプラットフォームのシンタックスで表現されたファイルのパス</td></tr>
 <tr><td><a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.File</a><p>    ファイル名を <em>newName</em> に指定した名称に変更し、名称変更後の <code>File</code> オブジェクトを返します</td></tr>
-<tr><td><a href="#setappinfo"><strong>.setAppInfo</strong>( <em>info</em> : Object )</a><p>    <em>info</em> に渡したプロパティを <strong>.exe</strong> や <strong>.plist</strong> ファイルの情報として書き込みます</td></tr>
+<tr><td><a href="#setappinfo"><strong>.setAppInfo</strong>( <em>info</em> : Object )</a><p>    writes the <em>info</em> properties as information contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file</td></tr>
 <tr><td><a href="#setcontent"><strong>.setContent</strong> ( <em>content</em> : Blob ) </a><p>    <em>content</em> 引数の BLOB に保存されているデータを使用して、ファイルの全コンテンツを上書きします</td></tr>
 <tr><td><a href="#settext"><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetName</em> : Text { ; <em>breakMode</em> : Integer } } )<br><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetNum</em> : Integer { ; <em>breakMode</em> : Integer } } ) </a><p>    <em>text</em> に渡されたテキストをファイルの新しいコンテンツとして書き込みます</td></tr>
 <tr><td><a href="#size"><strong>.size</strong> : Real</a><p>    ファイルのサイズ (バイト単位)</td></tr>
@@ -447,18 +447,18 @@
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>戻り値</td><td>オブジェクト</td><td>&lt;-</td><td>.exe のバージョンリソースや .plist ファイルの中身</td></tr>
+<tr><td>戻り値</td><td>オブジェクト</td><td>&lt;-</td><td>Contents of .exe/.dll version resource or .plist file</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-11"></a><a href="#説明-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.getAppInfo()</code> 関数は、 <strong>.exe</strong> や <strong>.plist</strong> ファイルの情報をオブジェクトとして返します。</p>
-<p>この関数は、既存の .exe あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .plist ファイルでない場合、この関数は空のオブジェクトを返します (エラーは生成されません)。</p>
+<p>The <code>.getAppInfo()</code> function returns the contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file information as an object.</p>
+<p>The function must be used with an existing .exe, .dll or .plist file. If the file does not exist on disk or is not a valid .exe, .dll or .plist file, the function returns an empty object (no error is generated).</p>
 <blockquote>
 <p>この関数は xml形式の .plist ファイル (テキスト) のみをサポートしています。 バイナリ形式の .plist ファイルを対象に使用した場合、エラーが返されます。</p>
 </blockquote>
-<p><strong>.exe ファイルの場合に返されるオブジェクト</strong></p>
+<p><strong>Returned object with a .exe or .dll file</strong></p>
 <blockquote>
-<p>.exe ファイルの読み取りは Windows上でのみ可能です。</p>
+<p>Reading a .exe or .dll is only possible on Windows.</p>
 </blockquote>
 <p>プロパティはすべてテキストです。</p>
 <table>
@@ -895,20 +895,20 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <tr><th>参照</th><th>タイプ</th><th></th><th>説明</th></tr>
 </thead>
 <tbody>
-<tr><td>info</td><td>オブジェクト</td><td>-&gt;</td><td>.exe のバージョンリソースや .plist ファイルに書き込むプロパティ</td></tr>
+<tr><td>info</td><td>オブジェクト</td><td>-&gt;</td><td>Properties to write in .exe/.dll version resource or .plist file</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="説明-29"></a><a href="#説明-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
-<p><code>.setAppInfo()</code> 関数は、 <em>info</em> に渡したプロパティを <strong>.exe</strong> や <strong>.plist</strong> ファイルの情報として書き込みます。</p>
-<p>この関数は、既存の .exe あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .plist ファイルでない場合、この関数は何もしません (エラーは生成されません)。</p>
+<p>The <code>.setAppInfo()</code> function writes the <em>info</em> properties as information contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file.</p>
+<p>The function must be used with an existing .exe, .dll or .plist file. If the file does not exist on disk or is not a valid .exe, .dll or .plist file, the function does nothing (no error is generated).</p>
 <blockquote>
 <p>この関数は xml形式の .plist ファイル (テキスト) のみをサポートしています。 バイナリ形式の .plist ファイルを対象に使用した場合、エラーが返されます。</p>
 </blockquote>
-<p><strong>.exe ファイル用の <em>info</em> オブジェクト</strong></p>
+<p><strong><em>info</em> parameter object with a .exe or .dll file</strong></p>
 <blockquote>
-<p>.exe ファイル情報の書き込みは Windows上でのみ可能です。</p>
+<p>Writing a .exe or .dll file information is only possible on Windows.</p>
 </blockquote>
-<p><em>info</em> オブジェクトに設定された各プロパティは .exe ファイルのバージョンリソースに書き込まれます。 以下のプロパティが使用できます (それ以外のプロパティは無視されます):</p>
+<p>Each valid property set in the <em>info</em> object parameter is written in the version resource of the .exe or .dll file. 以下のプロパティが使用できます (それ以外のプロパティは無視されます):</p>
 <table>
 <thead>
 <tr><th>プロパティ</th><th>タイプ</th></tr>

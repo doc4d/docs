@@ -87,7 +87,7 @@
 <tr><td><a href="#exists"><strong>.exists</strong> : Boolean</a><p>    true if the file exists on disk</td></tr>
 <tr><td><a href="#extension"><strong>.extension</strong> : Text</a><p>    the extension of the file name (if any)</td></tr>
 <tr><td><a href="#fullname"><strong>.fullName</strong> : Text</a><p>    the full name of the file, including its extension (if any)</td></tr>
-<tr><td><a href="#getappinfo"><strong>.getAppInfo</strong>() : Object</a><p>    returns the contents of a <strong>.exe</strong> or <strong>.plist</strong> file information as an object</td></tr>
+<tr><td><a href="#getappinfo"><strong>.getAppInfo</strong>() : Object</a><p>    returns the contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file information as an object</td></tr>
 <tr><td><a href="#getcontent"><strong>.getContent( )</strong> : Blob</a><p>returns a <code>BLOB</code> containing the entire content of a file</td></tr>
 <tr><td><a href="#geticon"><strong>.getIcon</strong>( { <em>size</em> : Integer } ) : Picture</a><p>    the icon of the file</td></tr>
 <tr><td><a href="#gettext"><strong>.getText</strong>( { <em>charSetName</em> : Text } { ; } { <em>breakMode</em> : integer} ) : Text<br><strong>.getText</strong>( { <em>charSetNum</em> : integer } { ; } { <em>breakMode</em> : integer} ) : Text</a><p>    returns the contents of the file as text</td></tr>
@@ -106,7 +106,7 @@
 <tr><td><a href="#path"><strong>.path</strong> : Text</a><p>    the POSIX path of the file</td></tr>
 <tr><td><a href="#platformpath"><strong>.platformPath</strong> : Text</a><p>    the path of the file expressed with the current platform syntax</td></tr>
 <tr><td><a href="#rename"><strong>.rename</strong>( <em>newName</em> : Text ) : 4D.File</a><p>    renames the file with the name you passed in <em>newName</em> and returns the renamed <code>File</code> object</td></tr>
-<tr><td><a href="#setappinfo"><strong>.setAppInfo</strong>( <em>info</em> : Object )</a><p>    writes the <em>info</em> properties as information contents of a <strong>.exe</strong> or <strong>.plist</strong> file</td></tr>
+<tr><td><a href="#setappinfo"><strong>.setAppInfo</strong>( <em>info</em> : Object )</a><p>    writes the <em>info</em> properties as information contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file</td></tr>
 <tr><td><a href="#setcontent"><strong>.setContent</strong> ( <em>content</em> : Blob ) </a><p>    rewrites the entire content of the file using the data stored in the <em>content</em> BLOB</td></tr>
 <tr><td><a href="#settext"><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetName</em> : Text { ; <em>breakMode</em> : Integer } } )<br><strong>.setText</strong> ( <em>text</em> : Text {; <em>charSetNum</em> : Integer { ; <em>breakMode</em> : Integer } } ) </a><p>    writes <em>text</em> as the new contents of the file</td></tr>
 <tr><td><a href="#size"><strong>.size</strong> : Real</a><p>    the size of the file expressed in bytes</td></tr>
@@ -447,18 +447,18 @@
 <tr><th>Parameter</th><th>Typ</th><th></th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>Ergebnis</td><td>Objekt</td><td>&lt;-</td><td>Contents of .exe version resource or .plist file</td></tr>
+<tr><td>Ergebnis</td><td>Objekt</td><td>&lt;-</td><td>Contents of .exe/.dll version resource or .plist file</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="beschreibung-11"></a><a href="#beschreibung-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beschreibung</h4>
-<p>The <code>.getAppInfo()</code> function returns the contents of a <strong>.exe</strong> or <strong>.plist</strong> file information as an object.</p>
-<p>The function must be used with an existing .exe or .plist file. If the file does not exist on disk or is not a valid .exe or .plist file, the function returns an empty object (no error is generated).</p>
+<p>The <code>.getAppInfo()</code> function returns the contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file information as an object.</p>
+<p>The function must be used with an existing .exe, .dll or .plist file. If the file does not exist on disk or is not a valid .exe, .dll or .plist file, the function returns an empty object (no error is generated).</p>
 <blockquote>
 <p>The function only supports .plist files in xml format (text-based). An error is returned if it is used with a .plist file in binary format.</p>
 </blockquote>
-<p><strong>Returned object with a .exe file</strong></p>
+<p><strong>Returned object with a .exe or .dll file</strong></p>
 <blockquote>
-<p>Reading a .exe is only possible on Windows.</p>
+<p>Reading a .exe or .dll is only possible on Windows.</p>
 </blockquote>
 <p>All property values are Text.</p>
 <table>
@@ -895,20 +895,20 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <tr><th>Parameter</th><th>Typ</th><th></th><th>Beschreibung</th></tr>
 </thead>
 <tbody>
-<tr><td>info</td><td>Objekt</td><td>-&gt;</td><td>Properties to write in .exe version resource or .plist file</td></tr>
+<tr><td>info</td><td>Objekt</td><td>-&gt;</td><td>Properties to write in .exe/.dll version resource or .plist file</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="beschreibung-29"></a><a href="#beschreibung-29" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Beschreibung</h4>
-<p>The <code>.setAppInfo()</code> function writes the <em>info</em> properties as information contents of a <strong>.exe</strong> or <strong>.plist</strong> file.</p>
-<p>The function must be used with an existing .exe or .plist file. If the file does not exist on disk or is not a valid .exe or .plist file, the function does nothing (no error is generated).</p>
+<p>The <code>.setAppInfo()</code> function writes the <em>info</em> properties as information contents of a <strong>.exe</strong>, <strong>.dll</strong> or <strong>.plist</strong> file.</p>
+<p>The function must be used with an existing .exe, .dll or .plist file. If the file does not exist on disk or is not a valid .exe, .dll or .plist file, the function does nothing (no error is generated).</p>
 <blockquote>
 <p>The function only supports .plist files in xml format (text-based). An error is returned if it is used with a .plist file in binary format.</p>
 </blockquote>
-<p><strong><em>info</em> parameter object with a .exe file</strong></p>
+<p><strong><em>info</em> parameter object with a .exe or .dll file</strong></p>
 <blockquote>
-<p>Writing a .exe file information is only possible on Windows.</p>
+<p>Writing a .exe or .dll file information is only possible on Windows.</p>
 </blockquote>
-<p>Each valid property set in the <em>info</em> object parameter is written in the version resource of the .exe file. Available properties are (any other property will be ignored):</p>
+<p>Each valid property set in the <em>info</em> object parameter is written in the version resource of the .exe or .dll file. Available properties are (any other property will be ignored):</p>
 <table>
 <thead>
 <tr><th>Property</th><th>Typ</th></tr>
