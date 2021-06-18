@@ -229,7 +229,7 @@ DELETE DUPLICATED VALUES
     <span class="hljs-comment">//Pero este comando espera un nombre de método</span>
 <span class="hljs-function">ON EVENT CALL</span>(<span class="hljs-string">"HANDLE EVENTS"</span>)
 </code></pre>
-<p>Los métodos proyecto pueden aceptar parámetros (argumentos). The parameters are passed to the method in parentheses, following the name of the method. Each parameter is separated from the next by a semicolon (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Además, se pueden direccionar múltiples parámetros consecutivos (y últimos) con la sintaxis ${n} donde n, expresión numérica, es el número del parámetro.</p>
+<p>Los métodos proyecto pueden aceptar parámetros (argumentos). Los parámetros se pasan al método entre paréntesis, a continuación del nombre del método. Each parameter is separated from the next by a semicolon (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Además, se pueden direccionar múltiples parámetros consecutivos (y últimos) con la sintaxis ${n} donde n, expresión numérica, es el número del parámetro.</p>
 <p>Dentro de una función, la variable local $0 contiene el valor a devolver.</p>
 <p>Ejemplos:</p>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//Dentro de DROP SPACES $1 es un puntero al campo [People]Name</span>
@@ -334,7 +334,7 @@ If</span>(<span class="hljs-function">Records in set</span>(<span class="hljs-st
 <tr><td>Propiedades de objetos</td><td>255</td><td>$o.myAttribute</td></tr>
 <tr><td>Form</td><td>31</td><td>&quot;My Custom Web Input&quot;</td></tr>
 <tr><td>Objetos de formulario</td><td>255</td><td>&quot;MyButton&quot;</td></tr>
-<tr><td>Project method</td><td>31</td><td>M_ADD_CUSTOMERS</td></tr>
+<tr><td>Métodos proyecto</td><td>31</td><td>M_ADD_CUSTOMERS</td></tr>
 <tr><td>Comando de plug-in</td><td>31</td><td>PDF SET ROTATION</td></tr>
 <tr><td>Conjuntos interproceso</td><td>&lt;&gt; + 255</td><td>&quot;&lt;&gt;Records to be Archived&quot;</td></tr>
 <tr><td>Conjuntos proceso</td><td>255</td><td>&quot;Current selected records&quot;</td></tr>
