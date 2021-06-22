@@ -99,30 +99,30 @@
 <p>Cuando crea un método proyecto, éste pasa a formar parte del lenguaje del proyecto en el que lo crea. Entonces puede llamar al método proyecto desde otros métodos (método proyecto, método objeto, etc.), de la misma manera que llama a los comandos integrados de 4D. Un método proyecto utilizado de este manera se llama una subrutina.</p>
 <p>Se utilizan subrutinas para:</p>
 <ul>
-<li>Reduce repetitive coding</li>
-<li>Clarify your methods</li>
-<li>Facilitate changes to your methods</li>
-<li>Modularize your code</li>
+<li>Reducción del código repetitivo</li>
+<li>Clarificación de los métodos</li>
+<li>Facilitar los cambios en sus métodos</li>
+<li>Modularizar el código</li>
 </ul>
-<p>For example, let’s say you have a project of customers. As you customize the project, you find that there are some tasks that you perform repeatedly, such as finding a customer and modifying his or her record. The code to do this might look like this:</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">// Look for a customer</span>
+<p>Por ejemplo, supongamos que tiene un proyecto de clientes. Al personalizar el proyecto, se da cuenta de que hay algunas tareas que realiza reiteradamente, como la búsqueda de un cliente y la modificación de su registro. El código para hacer esto podría ser:</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">// Búsqueda de un cliente</span>
 <span class="hljs-function"> QUERY BY EXAMPLE</span>([Customers])
-  <span class="hljs-comment">// Select the input form</span>
+  <span class="hljs-comment">// Selección del formulario entrada</span>
 <span class="hljs-function"> FORM SET INPUT</span>([Customers];<span class="hljs-string">"Data Entry"</span>)
-  <span class="hljs-comment">// Modify the customer's record</span>
+  <span class="hljs-comment">// Modificación del registro del cliente</span>
 <span class="hljs-function"> MODIFY RECORD</span>([Customers])
 </code></pre>
-<p>If you do not use subroutines, you will have to write the code each time you want to modify a customer’s record. If there are ten places in your project where you need to do this, you will have to write the code ten times. If you use subroutines, you will only have to write it once. This is the first advantage of subroutines—to reduce the amount of code.</p>
-<p>If the previously described code was a method called <code>MODIFY_CUSTOMER</code>, you would execute it simply by using the name of the method in another method. For example, to modify a customer’s record and then print the record, you would write this method:</p>
+<p>Si no utiliza subrutinas, tendrá que escribir el código cada vez que quiera modificar el registro de un cliente. Si hay diez lugares en su proyecto donde necesita hacer esto, tendrá que escribir el código diez veces. Si utiliza subrutinas, sólo tendrá que escribirlas una vez. Esta es la primera ventaja de las subrutinas: reducir la cantidad de código.</p>
+<p>Si el código descrito anteriormente fuera un método llamado <code>MODIFY_CUSTOMER</code>, se ejecutaría simplemente utilizando el nombre del método en otro método. Por ejemplo, para modificar el registro de un cliente y luego imprimir el registro, se escribiría este método:</p>
 <pre><code class="hljs css language-4d"> MODIFY_CUSTOMER
 <span class="hljs-function"> PRINT SELECTION</span>([Customers])
 </code></pre>
-<p>This capability simplifies your methods dramatically. In the example, you do not need to know how the <code>MODIFY_CUSTOMER</code> method works, just what it does. This is the second reason for using subroutines—to clarify your methods. In this way, your methods become extensions to the 4D language.</p>
-<p>If you need to change your method of finding customers in this example project, you will need to change only one method, not ten. This is the next reason to use subroutines—to facilitate changes to your methods.</p>
-<p>Using subroutines, you make your code modular. This simply means dividing your code into modules (subroutines), each of which performs a logical task. Consider the following code from a checking account project:</p>
-<pre><code class="hljs css language-4d"> FIND_CLEARED_CHECKS <span class="hljs-comment">//Find the cleared checks</span>
- RECONCILE_ACCOUNT <span class="hljs-comment">//Reconcile the account</span>
- PRINT_CHECK_BOOK_REPORT <span class="hljs-comment">//Print a checkbook report</span>
+<p>Esta posibilidad simplifica enormemente sus métodos. En el ejemplo, no es necesario saber cómo funciona el método <code>MODIFY_CUSTOMER</code>, sólo lo que hace. Esta es la segunda razón para utilizar subrutinas: clarificar sus métodos. De este modo, sus métodos se convierten en extensiones del lenguaje 4D.</p>
+<p>Si necesita cambiar su método de búsqueda de clientes en este proyecto de ejemplo, tendrá que cambiar sólo un método, no diez. Esta es la siguiente razón para utilizar subrutinas: facilitar los cambios en sus métodos.</p>
+<p>Utilizando las subrutinas, hace que su código sea modular. Esto significa simplemente dividir el código en módulos (subrutinas), cada una de las cuales realiza una tarea lógica. Considere el siguiente código de un proyecto de de cuentas corrientes:</p>
+<pre><code class="hljs css language-4d"> FIND_CLEARED_CHECKS <span class="hljs-comment">//Buscar los cheques emitidos</span>
+ RECONCILE_ACCOUNT <span class="hljs-comment">//Reconciliar la cuenta</span>
+ PRINT_CHECK_BOOK_REPORT <span class="hljs-comment">//Imprimir un informe de la chequera</span>
 </code></pre>
 <p>Incluso para alguien que no conozca el proyecto, está claro lo que hace este código. No es necesario examinar cada subrutina. Cada subrutina puede tener muchas líneas y realizar algunas operaciones complejas, pero aquí sólo es importante que realice su tarea. Le recomendamos que divida su código en tareas lógicas, o módulos, siempre que sea posible.</p>
 <h3><a class="anchor" aria-hidden="true" id="objeto-fórmula"></a><a href="#objeto-fórmula" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Objeto fórmula</h3>
@@ -183,8 +183,8 @@
 <li>El método A puede llamar al método B que puede llamar a A, por lo que A volverá a llamar a B y así sucesivamente.</li>
 <li>Un método puede llamarse a sí mismo.</li>
 </ul>
-<p>Esto se llama recursividad. The 4D language fully supports recursion.</p>
-<p>Here is an example. Let’s say you have a <code>[Friends and Relatives]</code> table composed of this extremely simplified set of fields:</p>
+<p>Esto se llama recursividad. El lenguaje 4D soporta totalmente la recursividad.</p>
+<p>Aquí un ejemplo. Digamos que tiene una tabla <code>[Friends and Relatives]</code> compuesta por este conjunto de campos extremadamente simplificado:</p>
 <ul>
 <li><code>[Friends and Relatives]Name</code></li>
 <li><code>[Friends and Relatives]ChildrensName</code></li>

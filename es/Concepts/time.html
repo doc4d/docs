@@ -69,7 +69,7 @@
         </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/4D/docs/edit/master/docs/Concepts/dt_time.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Hora</h1></header><article><div><span><p>Las variables, campos o expresiones de tipo Hora pueden estar comprendidas entre 00:00:00 y 596,000:00:00.</p>
 <p>Las horas están en formato de 24 horas.</p>
 <p>Un valor de tiempo puede ser tratado como un número. El número devuelto de una hora es el número de segundos desde la medianoche (00:00:00) que representa esa hora.</p>
-<p><strong>Note:</strong> In the <em>4D Language Reference</em> manual, Time parameters in command descriptions are denoted as Time, except when marked otherwise.</p>
+<p><strong>Nota:</strong> en el manual de <em>referencia del lenguaje 4D</em>, los parámetros de tipo Hora en las descripciones de los comandos se llaman Hora, excepto cuando se indique lo contrario.</p>
 <h2><a class="anchor" aria-hidden="true" id="constantes-literales-de-tipo-hora"></a><a href="#constantes-literales-de-tipo-hora" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Constantes literales de tipo hora</h2>
 <p>Una constante hora está rodeada de signos de interrogación (?...?).</p>
 <p>Una constante hora se ordena hora:minuto:segundo, con dos puntos (:) para separar cada parte. Las horas se especifican en formato de 24 horas.</p>
@@ -92,9 +92,9 @@
 <tr><td>Resta</td><td>Hora – Número</td><td>Número</td><td>?02:03:04? – 65</td><td>7319</td></tr>
 <tr><td>Multiplicación</td><td>Hora * Número</td><td>Número</td><td>?02:03:04? * 2</td><td>14768</td></tr>
 <tr><td>División</td><td>Hora / Número</td><td>Número</td><td>?02:03:04? / 2</td><td>3692</td></tr>
-<tr><td>División entera</td><td>Time \ Number</td><td>Número</td><td>?02:03:04? \ 2</td><td>3692</td></tr>
-<tr><td>Módulo</td><td>Time % Time</td><td>Hora</td><td>?20:10:00? % ?04:20:00?</td><td>?02:50:00?</td></tr>
-<tr><td>Módulo</td><td>Time % Number</td><td>Número</td><td>?02:03:04? % 2</td><td>0</td></tr>
+<tr><td>División entera</td><td>Hora \ Número</td><td>Número</td><td>?02:03:04? \ 2</td><td>3692</td></tr>
+<tr><td>Módulo</td><td>Hora % Hora</td><td>Hora</td><td>?20:10:00? % ?04:20:00?</td><td>?02:50:00?</td></tr>
+<tr><td>Módulo</td><td>Hora % Número</td><td>Número</td><td>?02:03:04? % 2</td><td>0</td></tr>
 <tr><td>Igual</td><td>Hora = Hora</td><td>Booleano</td><td>?01:02:03? = ?01:02:03?</td><td>True</td></tr>
 <tr><td></td><td></td><td></td><td>?01:02:03? = ?01:02:04?</td><td>False</td></tr>
 <tr><td>Desigualdad</td><td>Hora # Hora</td><td>Booleano</td><td>?01:02:03? # ?01:02:04?</td><td>True</td></tr>
