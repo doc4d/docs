@@ -107,15 +107,15 @@ Las clases disponibles son accesibles desde sus class stores. Hay dos class stor
 
 #### cs -> classStore
 
-| Parameter  | Tipo   |    | Descripción                                   |
-| ---------- | ------ | -- | --------------------------------------------- |
-| classStore | objeto | <- | User class store for the project or component |
+| Parameter  | Tipo   |    | Descripción                                       |
+| ---------- | ------ | -- | ------------------------------------------------- |
+| classStore | objeto | <- | Class store usuario para el proyecto o componente |
 
-The `cs` command returns the user class store for the current project or component. The `cs` command returns the user class store for the current project or component. By default, only project [ORDA classes](ORDA/ordaClasses.md) are available.
+El comando `cs` devuelve la class store usuario para el proyecto o componente actual. The `cs` command returns the user class store for the current project or component. Por defecto, sólo las [clases ORDA](ORDA/ordaClasses.md) están disponibles.
 
 #### Ejemplo
 
-You want to create a new instance of an object of `myClass`:
+Quiere crear una nueva instancia de un objeto de `myClass`:
 
 ```4d
 $instance:=cs.myClass.new()
@@ -127,13 +127,13 @@ $instance:=cs.myClass.new()
 
 | Parameter  | Tipo   |    | Descripción    |
 | ---------- | ------ | -- | -------------- |
-| classStore | objeto | <- | 4D class store |
+| classStore | objeto | <- | Class store 4D |
 
-The `4D` command returns the class store for available built-in 4D classes. Ofrece acceso a APIs específicas como [CryptoKey](API/cryptoKeyClass.md).
+El comando `4D` devuelve la class store 4D integrada disponible. Ofrece acceso a APIs específicas como [CryptoKey](API/cryptoKeyClass.md).
 
 #### Ejemplo
 
-You want to create a new key in the `CryptoKey` class:
+Quiere crear una nueva llave en la clase `CryptoKey`:
 
 ```4d
 $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
@@ -142,26 +142,26 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 
 
-## Class object
+## El objeto clase
 
-When a class is [defined](#class-definition) in the project, it is loaded in the 4D language environment. Una clase es un objeto en sí mismo, de ["Class" class](API/classClass.md). A class object has the following properties and function:
+Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Una clase es un objeto en sí mismo, de ["Class" class](API/classClass.md). Un objeto class tiene las propiedades y funciones siguientes:
 
 - cadena [`name`](API/classClass.md#name)
 - objeto [`superclass`](API/classClass.md#superclass) (null si ninguno)
 - función [`new()`](API/classClass.md#new), que permite instanciar objetos de clase.
 
-In addition, a class object can reference a [`constructor`](#class-constructor) object (optional).
+Además, un objeto clase puede hacer referencia a un objeto [`constructor`](#class-constructor) (opcional).
 
-A class object is a [shared object](shared.md) and can therefore be accessed from different 4D processes simultaneously.
+Un objeto de clase es un [objeto compartido](shared.md) y, por tanto, se puede acceder a él desde diferentes procesos de 4D simultáneamente.
 
-### Inheritance
+### Herencia
 
 Si una clase hereda de otra clase (es decir, se utiliza la palabra clave [Class extends](classes.md#class-extends-classname) en su definición), la clase padre es su [`superclass`](API/classClass.md#superclass).
 
 Cuando 4D no encuentra una función o una propiedad en una clase, la busca en su [`superclass`](API/classClass.md#superclass); si no la encuentra, 4D sigue buscando en la superclase de la superclase, y así sucesivamente hasta que no haya más superclase (todos los objetos heredan de la superclase "Object").
 
 
-## Class keywords
+## Palabras clave de clase
 
 Specific 4D keywords can be used in class definitions:
 
