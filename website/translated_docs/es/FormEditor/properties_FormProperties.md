@@ -17,9 +17,9 @@ For more information, please refer to [Form pages](forms.md#form-pages).
 
 #### JSON Grammar
 
-| Name  | Data Type | Possible Values                                                          |
-| ----- | --------- | ------------------------------------------------------------------------ |
-| pages | colección | Collection of pages (each page is an object, page 0 is the first element |
+| Name  | Tipos de datos | Possible Values                                                          |
+| ----- | -------------- | ------------------------------------------------------------------------ |
+| pages | colección      | Collection of pages (each page is an object, page 0 is the first element |
 
 ---
 
@@ -60,9 +60,9 @@ Supported types depend on the form category:
 
 #### JSON Grammar
 
-| Name        | Data Type | Possible Values                                              |
-| ----------- | --------- | ------------------------------------------------------------ |
-| destination | cadena    | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
+| Name        | Tipos de datos | Possible Values                                              |
+| ----------- | -------------- | ------------------------------------------------------------ |
+| destination | cadena         | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
 ---
 
@@ -77,9 +77,9 @@ To remove inheritance, select **\<None>** in the Property List (or " " in JSON).
 
 #### JSON Grammar
 
-| Name          | Data Type | Possible Values                                                                                                    |
-| ------------- | --------- | ------------------------------------------------------------------------------------------------------------------ |
-| inheritedForm | cadena    | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
+| Name          | Tipos de datos | Possible Values                                                                                                    |
+| ------------- | -------------- | ------------------------------------------------------------------------------------------------------------------ |
+| inheritedForm | cadena         | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
 
 ---
 
@@ -93,7 +93,7 @@ Set to **\<None>** in the Property List (or " " in JSON) to inherited from a pro
 
 #### JSON Grammar
 
-| Name               | Data Type        | Possible Values            |
+| Name               | Tipos de datos   | Possible Values            |
 | ------------------ | ---------------- | -------------------------- |
 | inheritedFormTable | string or number | table name or table number |
 
@@ -110,9 +110,9 @@ Only project forms can be specified as published subforms.
 
 #### JSON Grammar
 
-| Name   | Data Type | Possible Values |
-| ------ | --------- | --------------- |
-| shared | booleano  | true, false     |
+| Name   | Tipos de datos | Possible Values |
+| ------ | -------------- | --------------- |
+| shared | booleano       | true, false     |
 
 
 ---
@@ -129,11 +129,11 @@ When this option is selected, the [Save Value](FormObjects/properties_Object.md#
 
 #### JSON Grammar
 
-| Name             | Data Type | Possible Values |
-| ---------------- | --------- | --------------- |
-| memorizeGeometry | booleano  | true, false     |
+| Name             | Tipos de datos | Possible Values |
+| ---------------- | -------------- | --------------- |
+| memorizeGeometry | booleano       | true, false     |
 
-#### See also
+#### Ver también
 [**Save Value**](FormObjects/properties_Object.md#save-value)
 
 
@@ -155,8 +155,8 @@ You can use dynamic references to set the window titles for forms, *i.e.*:
 
 #### JSON Grammar
 
-| Name        | Data Type | Possible Values                                        |
-| ----------- | --------- | ------------------------------------------------------ |
-| windowTitle | cadena    | The name of the window as plain text or as a reference |
+| Name        | Tipos de datos | Possible Values                                        |
+| ----------- | -------------- | ------------------------------------------------------ |
+| windowTitle | cadena         | The name of the window as plain text or as a reference |
 
 
