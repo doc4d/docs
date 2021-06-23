@@ -372,8 +372,8 @@ La palabra clave`Super` permite llamar a la `superclass`, es decir, a la clase p
 
 `Super` sirve para dos propósitos diferentes:
 
-- dentro de un [código constructor](#class-constructor), `Super` es un comando que permite llamar al constructor de la superclase. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
-    - If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
+- dentro de un [código constructor](#class-constructor), `Super` es un comando que permite llamar al constructor de la superclase. Cuando se utiliza en un constructor, el comando `Super` aparece solo y debe utilizarse antes de la palabra clave `This`.
+    - Si todos los constructores de clase del árbol de herencia no se llaman correctamente, se genera el error -10748. It's 4D developer to make sure calls are valid.
     - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
 
     - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
@@ -407,7 +407,7 @@ Class constructor($width : Integer; $height : Integer)
 Function sayName()
     ALERT("Hi, I am a "+This.name+".")
 
-// Function definition
+// Definición de la función
 Function getArea()
     var $0 : Integer
     $0:=(This.height)*(This.width)
@@ -420,11 +420,11 @@ Class extends Rectangle
 
 Class constructor ($side : Integer)
 
-    // It calls the parent class's constructor with lengths
-    // provided for the Rectangle's width and height
+    // Llama al constructor de la clase padre con las longitudes
+    // suministradas para el ancho y el alto del Rectángulot
     Super($side;$side)
-    // In derived classes, Super must be called before you
-    // can use 'This'
+    // En las clases derivadas, Super debe ser llamado antes
+    // de que pueda usar 'This'
     This.name:="Square"
 
 Function getArea()
@@ -432,9 +432,9 @@ Function getArea()
     $0:=This.height*This.width
 ```
 
-#### Example 2
+#### Ejemplo 2
 
-This example illustrates the use of `Super` in a class member method. You created the `Rectangle` class with a function:
+Este ejemplo ilustra el uso de `Super` en un método miembro de clase. You created the `Rectangle` class with a function:
 
 ```4d
 //Class: Rectangle
