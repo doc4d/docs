@@ -223,21 +223,21 @@ Function parameters are declared using the parameter name and the parameter type
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
 ```
-> If the type is not stated, the parameter will be defined as `Variant`.
+> Si no se indica el tipo, el parámetro se definirá como `Variant`.
 
-You declare the return parameter (optional) by adding an arrow (->) and the return parameter definition after the input parameter(s) list. For example:
+Declare el parámetro de retorno (opcional) añadiendo una flecha (->) y la definición del parámetro de retorno después de la lista de parámetros de entrada. Por ejemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer)->$result : Integer
 ```
 
-You can also declare the return parameter only by adding `: type`, in which case it will automatically be available through $0. For example:
+También puedes declarar el parámetro de retorno sólo añadiendo `: type`, en cuyo caso estará disponible automáticamente vía $0. Por ejemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
     $0:=$x+$y
 ```
-> The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. Both syntaxes can be mixed. For example:
+> La[sintaxis 4D clásica ](parameters.md#sequential-parameters) de los parámetros de método puede utilizarse para declarar los parámetros de las funciones de clase. Ambas sintaxis pueden mezclarse. Por ejemplo:
 > 
 > ```4d
 > Function add($x : Integer)
@@ -249,7 +249,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### Example
+#### Ejemplo
 
 ```4d
 // Class: Rectangle
@@ -258,13 +258,13 @@ Class constructor($width : Integer; $height : Integer)
     This.height:=$height
     This.width:=$width
 
-// Function definition
+// Definición de la función
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
 
 ```4d
-// In a project method
+// En un método proyecto
 var $rect : cs.Rectangle
 var $area : Real
 
@@ -276,7 +276,7 @@ $area:=$rect.getArea() //5000
 
 ### Class constructor
 
-#### Syntax
+#### Sintaxis
 
 ```4d
 // Class: MyClass
@@ -284,7 +284,7 @@ Class Constructor({$parameterName : type; ...})
 // code
 ```
 
-A class constructor function, which can accept [parameters](#parameters), can be used to define a user class.
+Una función class constructor, que puede aceptar los [parámetros](#parameters), puede utilizarse para definir una clase usuario.
 
 In that case, when you call the [`new()`](API/ClassClass.md#new) function, the class constructor is called with the parameters optionally passed to the `new()` function.
 
@@ -321,36 +321,36 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
+The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. La clase hija hereda todas las funciones de la clase padre.
 
-Class extension must respect the following rules:
+La extensión de clase debe respetar las siguientes reglas:
 
-- A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
-- A user class cannot extend a user class from another project or component.
-- A user class cannot extend itself.
-- It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
+- Una clase usuario no puede extender una clase integrada (excepto de 4D.Object que se extiende por defecto para las clases usuario)
+- Una clase usuario no puede extender una clase usuario a partir de otro proyecto o componente.
+- Una clase usuario no puede extenderse a sí misma.
+- No es posible extender las clases de forma circular (es decir, "a" extiende "b" que extiende "a").
 
-Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
+El incumplimiento de una regla de este tipo no es detectado por el editor de código o el intérprete, sólo el compilador y la `sintaxis de verificación` arrojará un error en este caso.
 
-An extended class can call the constructor of its parent class using the [`Super`](#super) command.
+Una clase extendida puede llamar al constructor de su clase padre utilizando el comando [`Super`](#super).
 
-#### Example
+#### Ejemplo
 
-This example creates a class called `Square` from a class called `Polygon`.
+Este ejemplo crea una clase llamada `Square` a partir de una clase llamada `Polygon`.
 
 ```4d
 //Class: Square
 //path: Classes/Square.4dm 
 
-Class extends Polygon
+La clase extendida Polygon
 
 Class constructor ($side : Integer)
 
-    // It calls the parent class's constructor with lengths
-    // provided for the Polygon's width and height
+    // Llama a la clase constructor padre con largos
+    // proporcionados para el ancho y el alto de Polygon
     Super($side;$side)
-    // In derived classes, Super must be called before you
-    // can use 'This'
+    // En las clases derivadas, se debe llamar a Super antes de
+    // utilizar 'This'
     This.name:="Square"
 
     Function getArea()
@@ -363,16 +363,16 @@ Class constructor ($side : Integer)
 
 #### Super {( param{;...;paramN} )} {-> Object}
 
-| Parameter | Type   |    | Description                                    |
-| --------- | ------ | -- | ---------------------------------------------- |
-| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
-| Result    | object | <- | Object's parent                                |
+| Parameter | Type   |    | Description                               |
+| --------- | ------ | -- | ----------------------------------------- |
+| param     | mixed  | -> | Parámetro(s) a pasar al constructor padre |
+| Resultado | objeto | <- | Padre del objeto                          |
 
-The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
+La palabra clave`Super` permite llamar a la `superclass`, es decir, a la clase padre.
 
-`Super` serves two different purposes:
+`Super` sirve para dos propósitos diferentes:
 
-- inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
+- dentro de un [código constructor](#class-constructor), `Super` es un comando que permite llamar al constructor de la superclase. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used.
     - If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid.
     - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
 
