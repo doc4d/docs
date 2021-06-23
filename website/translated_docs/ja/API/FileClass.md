@@ -332,23 +332,23 @@ Windows 上では、常にショートカット (.lnk ファイル) が作成さ
 **.getAppInfo**() : Object<!-- END REF -->
 
 <!--REF #FileClass.getAppInfo().Params -->
-| 参照  | タイプ    |    | 説明                                                    |
-| --- | ------ | -- | ----------------------------------------------------- |
-| 戻り値 | オブジェクト | <- | Contents of .exe/.dll version resource or .plist file |
+| 参照  | タイプ    |    | 説明                                   |
+| --- | ------ | -- | ------------------------------------ |
+| 戻り値 | オブジェクト | <- | .exe/.dll のバージョンリソースや .plist ファイルの中身 |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.getAppInfo()` function <!-- REF #FileClass.getAppInfo().Summary -->returns the contents of a **.exe**, **.dll** or **.plist** file information as an object<!-- END REF -->.
+`.getAppInfo()` 関数は、 <!-- REF #FileClass.getAppInfo().Summary -->**.exe** や **.dll**、**.plist** ファイルの情報をオブジェクトとして返します<!-- END REF -->。
 
-The function must be used with an existing .exe, .dll or .plist file. If the file does not exist on disk or is not a valid .exe, .dll or .plist file, the function returns an empty object (no error is generated).
+この関数は、既存の .exe、.dll、あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .dll、.plist ファイルでない場合、この関数は空のオブジェクトを返します (エラーは生成されません)。
 
 > この関数は xml形式の .plist ファイル (テキスト) のみをサポートしています。 バイナリ形式の .plist ファイルを対象に使用した場合、エラーが返されます。
 
-**Returned object with a .exe or .dll file**
+**.exe または .dll ファイルの場合に返されるオブジェクト**
 
-> Reading a .exe or .dll is only possible on Windows.
+> .exe および .dll ファイルの読み取りは Windows上でのみ可能です。
 
 プロパティはすべてテキストです。
 
@@ -563,25 +563,25 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 **.setAppInfo**( *info* : Object )<!-- END REF -->
 
 <!--REF #FileClass.setAppInfo().Params -->
-| 参照   | タイプ    |    | 説明                                                               |
-| ---- | ------ | -- | ---------------------------------------------------------------- |
-| info | オブジェクト | -> | Properties to write in .exe/.dll version resource or .plist file |
+| 参照   | タイプ    |    | 説明                                          |
+| ---- | ------ | -- | ------------------------------------------- |
+| info | オブジェクト | -> | .exe/.dll のバージョンリソースや .plist ファイルに書き込むプロパティ |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.setAppInfo()` function <!-- REF #FileClass.setAppInfo().Summary -->writes the *info* properties as information contents of a **.exe**, **.dll** or **.plist** file<!-- END REF -->.
+`.setAppInfo()` 関数は、 <!-- REF #FileClass.setAppInfo().Summary -->*info* に渡したプロパティを **.exe** や **.dll**、**.plist** ファイルの情報として書き込みます<!-- END REF -->。
 
-The function must be used with an existing .exe, .dll or .plist file. If the file does not exist on disk or is not a valid .exe, .dll or .plist file, the function does nothing (no error is generated).
+この関数は、既存の .exe、.dll、あるいは .plist ファイルと使う必要があります。 ファイルがディスク上に存在しない、または、有効な .exe や .dll、.plist ファイルでない場合、この関数は何もしません (エラーは生成されません)。
 
 > この関数は xml形式の .plist ファイル (テキスト) のみをサポートしています。 バイナリ形式の .plist ファイルを対象に使用した場合、エラーが返されます。
 
-***info* parameter object with a .exe or .dll file**
+**.exe または .dll ファイル用の *info* オブジェクト**
 
-> Writing a .exe or .dll file information is only possible on Windows.
+> .exe および .dll ファイル情報の書き込みは Windows上でのみ可能です。
 
-Each valid property set in the *info* object parameter is written in the version resource of the .exe or .dll file. 以下のプロパティが使用できます (それ以外のプロパティは無視されます):
+*info* オブジェクトに設定された各プロパティは .exe または .dll ファイルのバージョンリソースに書き込まれます。 以下のプロパティが使用できます (それ以外のプロパティは無視されます):
 
 | プロパティ            | タイプ  |
 | ---------------- | ---- |
