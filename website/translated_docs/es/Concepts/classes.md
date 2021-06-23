@@ -373,28 +373,28 @@ La palabra clave`Super` permite llamar a la `superclass`, es decir, a la clase p
 `Super` sirve para dos propósitos diferentes:
 
 - dentro de un [código constructor](#class-constructor), `Super` es un comando que permite llamar al constructor de la superclase. Cuando se utiliza en un constructor, el comando `Super` aparece solo y debe utilizarse antes de la palabra clave `This`.
-    - Si todos los constructores de clase del árbol de herencia no se llaman correctamente, se genera el error -10748. It's 4D developer to make sure calls are valid.
-    - If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated.
+    - Si todos los constructores de clase del árbol de herencia no se llaman correctamente, se genera el error -10748. Es desarrollador de 4D para asegurarse de que las llamadas son válidas.
+    - Si se llama al comando `This` en un objeto cuyas superclases no han sido construidas, se genera el error -10743.
 
-    - If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
+    - Si `Super` se llama fuera del alcance de un objeto, o en un objeto cuyo constructor de la superclase ya ha sido llamado, se genera el error.
 
 ```4d
-// inside myClass constructor
+// dentro del constructor myClass
 var $text1; $text2 : Text
-Super($text1) //calls superclass constructor with a text param
-This.param:=$text2 // use second param
+Super($text1) //llama al superclass constructor con un parámetro texto
+This.param:=$text2 // utiliza el segundo parámetro
 ```
 
-- inside a [class member function](#class-function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
+- dentro de una [función miembro de clase](#class-function), `Super` designa el prototipo de la superclase y permite llamar una función de la jerarquía de la superclase.
 
 ```4d
-Super.doSomething(42) //calls "doSomething" function  
-//declared in superclasses
+Super.doSomething(42) //llama a la función "doSomething"  
+//declarada en las superclasses
 ```
 
-#### Example 1
+#### Ejemplo 1
 
-This example illustrates the use of `Super` in a class constructor. The command is called to avoid duplicating the constructor parts that are common between `Rectangle` and `Square` classes.
+Este ejemplo ilustra el uso de `Super` en un class constructor. El comando se llama para evitar duplicar las partes del constructor que son comunes entre las clases `Rectangle` y `Square`.
 
 ```4d
 // Class: Rectangle
@@ -434,17 +434,17 @@ Function getArea()
 
 #### Ejemplo 2
 
-Este ejemplo ilustra el uso de `Super` en un método miembro de clase. You created the `Rectangle` class with a function:
+Este ejemplo ilustra el uso de `Super` en un método miembro de clase. Ha creado la clase `Rectangle` con una función:
 
 ```4d
 //Class: Rectangle
 
 Function nbSides()
     var $0 : Text
-    $0:="I have 4 sides"
+    $0:="tengo 4 lados"
 ```
 
-You also created the `Square` class with a function calling the superclass function:
+También ha creado la clase `Square` con una función que llama a la función de la superclass:
 
 ```4d
 //Class: Square
@@ -456,13 +456,13 @@ Function description()
     $0:=Super.nbSides()+" which are all equal"
 ```
 
-Then you can write in a project method:
+Luego puedes escribir en un método del proyecto:
 
 ```4d
 var $square : Object
 var $message : Text
 $square:=cs.Square.new()
-$message:=$square.description() //I have 4 sides which are all equal
+$message:=$square.description() //Tengo 4 lados que son todos iguales
 ```
 
 ### This
@@ -473,9 +473,9 @@ $message:=$square.description() //I have 4 sides which are all equal
 | --------- | ------ | -- | -------------- |
 | Result    | object | <- | Current object |
 
-The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+La palabra clave `This` devuelve una referencia al objeto actualmente procesado. En 4D, se puede utilizar en [diferentes contextos](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-In most cases, the value of `This` is determined by how a function is called. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función. It can't be set by assignment during execution, and it may be different each time the function is called.
+En la mayoría de los casos, el valor de `This` viene determinado por cómo se llama a una función. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función. It can't be set by assignment during execution, and it may be different each time the function is called.
 
 When a formula is called as a member method of an object, its `This` is set to the object the method is called on. For example:
 
