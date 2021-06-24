@@ -434,17 +434,17 @@ Function getArea()
 
 #### Ejemplo 2
 
-Este ejemplo ilustra el uso de `Super` en un método miembro de clase. You created the `Rectangle` class with a function:
+Este ejemplo ilustra el uso de `Super` en un método miembro de clase. Ha creado la clase `Rectangle` con una función:
 
 ```4d
 //Class: Rectangle
 
 Function nbSides()
     var $0 : Text
-    $0:="I have 4 sides"
+    $0:="tengo 4 lados"
 ```
 
-You also created the `Square` class with a function calling the superclass function:
+También ha creado la clase `Square` con una función que llama a la función de la superclass:
 
 ```4d
 //Class: Square
@@ -456,13 +456,13 @@ Function description()
     $0:=Super.nbSides()+" which are all equal"
 ```
 
-Then you can write in a project method:
+Luego puedes escribir en un método del proyecto:
 
 ```4d
 var $square : Object
 var $message : Text
 $square:=cs.Square.new()
-$message:=$square.description() //I have 4 sides which are all equal
+$message:=$square.description() //Tengo 4 lados que son todos iguales
 ```
 
 ### This
@@ -473,9 +473,9 @@ $message:=$square.description() //I have 4 sides which are all equal
 | --------- | ------ | -- | -------------- |
 | Result    | object | <- | Current object |
 
-The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+La palabra clave `This` devuelve una referencia al objeto actualmente procesado. En 4D, se puede utilizar en [diferentes contextos](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-In most cases, the value of `This` is determined by how a function is called. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función. It can't be set by assignment during execution, and it may be different each time the function is called.
+En la mayoría de los casos, el valor de `This` viene determinado por cómo se llama a una función. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función. It can't be set by assignment during execution, and it may be different each time the function is called.
 
 When a formula is called as a member method of an object, its `This` is set to the object the method is called on. Por ejemplo:
 
