@@ -229,7 +229,7 @@ DELETE DUPLICATED VALUES
     <span class="hljs-comment">//Pero este comando espera un nombre de método</span>
 <span class="hljs-function">ON EVENT CALL</span>(<span class="hljs-string">"HANDLE EVENTS"</span>)
 </code></pre>
-<p>Los métodos proyecto pueden aceptar parámetros (argumentos). Los parámetros se pasan al método entre paréntesis, a continuación del nombre del método. Each parameter is separated from the next by a semicolon (;). The parameters are available within the called method as consecutively numbered local variables: $1, $2,…, $n. Además, se pueden direccionar múltiples parámetros consecutivos (y últimos) con la sintaxis ${n} donde n, expresión numérica, es el número del parámetro.</p>
+<p>Los métodos proyecto pueden aceptar parámetros (argumentos). Los parámetros se pasan al método entre paréntesis, a continuación del nombre del método. Cada parámetro está separado del siguiente por un punto y coma (;). Los parámetros están disponibles dentro del método llamado como variables locales numeradas secuencialmente: $1, $2,..., $n. Además, se pueden direccionar múltiples parámetros consecutivos (y últimos) con la sintaxis ${n} donde n, expresión numérica, es el número del parámetro.</p>
 <p>Dentro de una función, la variable local $0 contiene el valor a devolver.</p>
 <p>Ejemplos:</p>
 <pre><code class="hljs css language-4d">    <span class="hljs-comment">//Dentro de DROP SPACES $1 es un puntero al campo [People]Name</span>
@@ -332,7 +332,7 @@ If</span>(<span class="hljs-function">Records in set</span>(<span class="hljs-st
 <tr><td>Variable/Array proceso</td><td>31</td><td>vsCurrentName</td></tr>
 <tr><td>Variable/Array local</td><td>$ + 31</td><td>$vlLocalCounter</td></tr>
 <tr><td>Propiedades de objetos</td><td>255</td><td>$o.myAttribute</td></tr>
-<tr><td>Form</td><td>31</td><td>&quot;My Custom Web Input&quot;</td></tr>
+<tr><td>Formulario</td><td>31</td><td>&quot;My Custom Web Input&quot;</td></tr>
 <tr><td>Objetos de formulario</td><td>255</td><td>&quot;MyButton&quot;</td></tr>
 <tr><td>Métodos proyecto</td><td>31</td><td>M_ADD_CUSTOMERS</td></tr>
 <tr><td>Comando de plug-in</td><td>31</td><td>PDF SET ROTATION</td></tr>
@@ -352,7 +352,7 @@ If</span>(<span class="hljs-function">Records in set</span>(<span class="hljs-st
 <p>4D identifica los nombres utilizados en los métodos en función del siguiente orden de prioridad:</p>
 <ol>
 <li>Campos</li>
-<li>Commands</li>
+<li>Comandos</li>
 <li>Métodos</li>
 <li>Comandos de plug-in</li>
 <li>Constantes predefinidas</li>
