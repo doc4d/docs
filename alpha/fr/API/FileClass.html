@@ -1016,21 +1016,24 @@ var</span> <span class="hljs-variable">$info </span>: Object
 <blockquote>
 <p>For the list of character sets supported by 4D, refer to the description of the <code>CONVERT FROM TEXT</code> command.</p>
 </blockquote>
-<p>If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the file. If you do not specify a character set, by default 4D uses the &quot;UTF-8&quot; character set and a BOM.</p>
-<p>In <em>breakMode</em>, you can pass a number indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the <strong>System Documents</strong> theme are available:</p>
+<p>If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the file unless the character set used contains the suffix &quot;-no-bom&quot; (e.g. &quot;UTF-8-no-bom&quot;). If you do not specify a character set, by default 4D uses the &quot;UTF-8&quot; character set.</p>
+<p>In <em>breakMode</em>, you can pass a number indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the <strong>System Documents</strong> theme, are available:</p>
 <table>
 <thead>
 <tr><th>Constant</th><th>Valeur</th><th>Commentaire</th></tr>
 </thead>
 <tbody>
 <tr><td><code>Document unchanged</code></td><td>0</td><td>No processing</td></tr>
-<tr><td><code>Document with native format</code></td><td>1</td><td>(Default) Line breaks are converted to the native format of the operating system: CR (carriage return) in macOS, CRLF (carriage return + line feed) in Windows</td></tr>
-<tr><td><code>Document with CRLF</code></td><td>2</td><td>Line breaks are converted to Windows format: CRLF (carriage return + line feed)</td></tr>
-<tr><td><code>Document with CR</code></td><td>3</td><td>Line breaks are converted to OS X format: CR (carriage return)</td></tr>
-<tr><td><code>Document with LF</code></td><td>4</td><td>Line breaks are converted to Unix format: LF (line feed)</td></tr>
+<tr><td><code>Document with native format</code></td><td>1</td><td>(Default) Line breaks are converted to the native format of the operating system: LF (carriage return) on macOS, CRLF (carriage return + line feed) on Windows</td></tr>
+<tr><td><code>Document with CRLF</code></td><td>2</td><td>Line breaks are converted to CRLF (carriage return + line feed), the default Windows format</td></tr>
+<tr><td><code>Document with CR</code></td><td>3</td><td>Line breaks are converted to CR (carriage return), the default Classic Mac OS format</td></tr>
+<tr><td><code>Document with LF</code></td><td>4</td><td>Line breaks are converted to LF (line feed), the default Unix and macOS format</td></tr>
 </tbody>
 </table>
 <p>By default, when you omit the <em>breakMode</em> parameter, line breaks are processed in native mode (1).</p>
+<blockquote>
+<p><strong>Compatibility Note</strong>: compatibility options are available for EOL and BOM management. See <a href="https://doc.4d.com/4dv19R/help/title/en/page3239.html">Compatibility page</a> on doc.4d.com.</p>
+</blockquote>
 <h4><a class="anchor" aria-hidden="true" id="exemple-12"></a><a href="#exemple-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exemple</h4>
 <pre><code class="hljs css language-4d"><span class="hljs-variable">$myFile</span>:=<span class="hljs-function">File</span>(<span class="hljs-string">"C:\\Documents\\Hello.txt"</span>;fk platform path)
 <span class="hljs-variable">$myFile</span>.<span class="hljs-function">setText</span>(<span class="hljs-string">"Hello world"</span>)
