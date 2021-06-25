@@ -123,7 +123,7 @@
 <p>An object with two properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
+<tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>name</td><td>Texto</td><td>Display name (can be null)</td></tr>
@@ -174,7 +174,7 @@
 <p>The <code>.bodyStructure</code> object contains the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Valor</th></tr>
+<tr><th>Propriedad</th><th>Tipo</th><th>Valor</th></tr>
 </thead>
 <tbody>
 <tr><td>partID</td><td>Texto</td><td>Identifies the part uniquely within the email</td></tr>
@@ -195,7 +195,7 @@
 <p>The <code>.bodyValues</code> object contains the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Valor</th></tr>
+<tr><th>Propriedad</th><th>Tipo</th><th>Valor</th></tr>
 </thead>
 <tbody>
 <tr><td><em>partID</em>.value</td><td>texto</td><td>Value of the body part</td></tr>
@@ -232,7 +232,7 @@
 <p>Every object of the headers collection can contain the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Valor</th></tr>
+<tr><th>Propriedad</th><th>Tipo</th><th>Valor</th></tr>
 </thead>
 <tbody>
 <tr><td>[].name</td><td>texto</td><td>(mandatory) Header field name as defined in <a href="https://tools.ietf.org/html/rfc5322">RFC#5322</a>. If null or undefined, the header field is not added to the MIME header.</td></tr>
@@ -260,7 +260,7 @@
 <p>This property is the &quot;keywords&quot; header (see <a href="https://tools.ietf.org/html/rfc4021">RFC#4021</a>).</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Valor</th></tr>
+<tr><th>Propriedad</th><th>Tipo</th><th>Valor</th></tr>
 </thead>
 <tbody>
 <tr><td>.&lt;keyword&gt;</td><td>booleano</td><td>Keyword to set (value must be true)</td></tr>
@@ -434,7 +434,7 @@
 <p>In <em>options</em>, you can set a specific charset and encoding configuration for the mail. The following properties are available:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
+<tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td>headerCharset</td><td>Texto</td><td>Charset and encoding used for the following parts of the email: subject, attachment filenames, and email name attribute(s). Possible values:<p><p><table><tr><th>Constant</th><th>Valor</th><th>Comment</th></tr><tr><td>mail mode ISO2022JP</td><td>US-ASCII_ISO-2022-JP_UTF8_QP</td><td><ul><li><i>headerCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; Quoted-printable if possible, otherwise UTF-8 &amp; Quoted-printable</li><li><i>bodyCharset</i>: US-ASCII if possible, Japanese (ISO-2022-JP) &amp; 7-bit if possible, otherwise UTF-8 &amp; Quoted-printable</li></ul></td></tr><tr><td>mail mode ISO88591</td><td>ISO-8859-1</td><td><ul><li><i>headerCharset</i>: ISO-8859-1 &amp; Quoted-printable</li><li><i>bodyCharset</i>: ISO-8859-1 &amp; 8-bit</li></ul></td></tr><tr><td>mail mode UTF8</td><td>US-ASCII_UTF8_QP</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 &amp; Quoted-printable (<strong>default value</strong>)</tr><tr><td>mail mode UTF8 in base64</td><td>US-ASCII_UTF8_B64</td><td><i>headerCharset</i> &amp; <i>bodyCharset</i>: US-ASCII if possible, otherwise UTF-8 &amp; base64</td></tr></table></td></tr>

@@ -73,7 +73,7 @@
 <p>You can create different types of drop-down lists with different features. To define a type, select the appropriate <strong>Expression Type</strong> and <strong>Data Type</strong> values in the Property list, or use their JSON equivalent.</p>
 <table>
 <thead>
-<tr><th>Tipo</th><th>Features</th><th>Expression Type</th><th>Data Type</th><th>JSON definition</th></tr>
+<tr><th>Tipo</th><th>Features</th><th>Expression Type</th><th>Tipos de datos</th><th>JSON definition</th></tr>
 </thead>
 <tbody>
 <tr><td>Objeto</td><td>Built upon a collection</td><td>Objeto</td><td>Numeric, Text, Date, or Time</td><td><code>dataSourceTypeHint: object</code> + <code>numberFormat: &lt;format&gt;</code> or <code>textFormat: &lt;format&gt;</code> or <code>dateFormat: &lt;format&gt;</code> or <code>timeFormat: &lt;format&gt;</code></td></tr>
@@ -89,7 +89,7 @@
 <p>An <a href="/docs/es/Concepts/object.html">object</a> encapsulating a <a href="Concepts/dt_collection">collection</a> can be used as the data source of a drop-down list. The object must contain the following properties:</p>
 <table>
 <thead>
-<tr><th>Property</th><th>Tipo</th><th>Descripción</th></tr>
+<tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
 <tr><td><code>values</code></td><td>Colección</td><td>Mandatory - Collection of scalar values. All values must be of the same type. Supported types:<li>strings</li><li>numbers</li><li>dates</li><li>times</li>If empty or not defined, the drop-down list is empty</td></tr>
