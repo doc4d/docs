@@ -189,41 +189,41 @@
 <li><code>[Friends and Relatives]Name</code></li>
 <li><code>[Friends and Relatives]ChildrensName</code></li>
 </ul>
-<p>For this example, we assume the values in the fields are unique (there are no two persons with the same name). Given a name, you want to build the sentence “A friend of mine, John who is the child of Paul who is the child of Jane who is the child of Robert who is the child of Eleanor, does this for a living!”:</p>
+<p>Para este ejemplo, suponemos que los valores de los campos son únicos (no hay dos personas con el mismo nombre). A partir de un nombre, quiere escribir la frase &quot;Un amigo mío, Juan, que es hijo de Pablo, que es hijo de Juana, que es hijo de Roberto, que es hijo de Leonor, se gana la vida así&quot;:</p>
 <ol>
-<li>You can build the sentence in this way:</li>
+<li>Puede proceder de esta manera:</li>
 </ol>
-<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsName</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Enter the name:"</span>;<span class="hljs-string">"John"</span>)<span class="hljs-keyword">
+<pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsName</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Introduzca el nombre:"</span>;<span class="hljs-string">"John"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
 <span class="hljs-function">    QUERY</span>([Friends and Relatives];[Friends and Relatives]Name=<span class="hljs-variable">$vsName</span>)<span class="hljs-keyword">
     If</span>(<span class="hljs-function">Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
-       <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-string">"A friend of mine, "</span>+<span class="hljs-variable">$vsName</span><span class="hljs-keyword">
+       <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-string">"Un amigo mío, "</span>+<span class="hljs-variable">$vsName</span><span class="hljs-keyword">
        Repeat</span>
 <span class="hljs-function">          QUERY</span>([Friends and Relatives];[Friends and Relatives]ChildrensName=<span class="hljs-variable">$vsName</span>)
           <span class="hljs-variable">$vlQueryResult</span>:=<span class="hljs-function">Records in selection</span>([Friends and Relatives])<span class="hljs-keyword">
           If</span>(<span class="hljs-variable">$vlQueryResult</span>&gt;<span class="hljs-number">0</span>)
-             <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-variable">$vtTheWholeStory</span>+<span class="hljs-string">" who is the child of "</span>+[Friends and Relatives]Name
+             <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-variable">$vtTheWholeStory</span>+<span class="hljs-string">" que es hijo de "</span>+[Friends and Relatives]Name
              <span class="hljs-variable">$vsName</span>:=[Friends and Relatives]Name<span class="hljs-keyword">
           End if</span><span class="hljs-keyword">
        Until</span>(<span class="hljs-variable">$vlQueryResult</span>=<span class="hljs-number">0</span>)
-       <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-variable">$vtTheWholeStory</span>+<span class="hljs-string">", does this for a living!"</span>
+       <span class="hljs-variable">$vtTheWholeStory</span>:=<span class="hljs-variable">$vtTheWholeStory</span>+<span class="hljs-string">", ¡se gana la vida con esto!"</span>
 <span class="hljs-function">       ALERT</span>(<span class="hljs-variable">$vtTheWholeStory</span>)<span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
 <ol start="2">
-<li>You can also build it this way:</li>
+<li>También puede proceder así:</li>
 </ol>
 <pre><code class="hljs css language-4d"> <span class="hljs-variable">$vsName</span>:=<span class="hljs-function">Request</span>(<span class="hljs-string">"Enter the name:"</span>;<span class="hljs-string">"John"</span>)<span class="hljs-keyword">
  If</span>(OK=<span class="hljs-number">1</span>)
 <span class="hljs-function">    QUERY</span>([Friends and Relatives];[Friends and Relatives]Name=<span class="hljs-variable">$vsName</span>)<span class="hljs-keyword">
     If</span>(<span class="hljs-function">Records in selection</span>([Friends and Relatives])&gt;<span class="hljs-number">0</span>)
-<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"A friend of mine, "</span>+<span class="hljs-function">Genealogy of</span>(<span class="hljs-variable">$vsName</span>)+<span class="hljs-string">", does this for a living!"</span>)<span class="hljs-keyword">
+<span class="hljs-function">       ALERT</span>(<span class="hljs-string">"Un amigo, "</span>+<span class="hljs-function">Genealogy of</span>(<span class="hljs-variable">$vsName</span>)+<span class="hljs-string">", hace esto para vivir"</span>)<span class="hljs-keyword">
     End if</span><span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>with the recursive function <code>Genealogy of</code> listed here:</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">` Genealogy of project method</span>
+<p>con la función recursiva <code>Genealogy of</code> siguiente:</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">` Método proyecto Genealogy of</span>
 <span class="hljs-function">  ` Genealogy of </span>( String ) -&gt; Text
 <span class="hljs-function">  ` Genealogy of </span>( Name ) -&gt; Part of sentence
 
@@ -233,15 +233,15 @@
     <span class="hljs-variable">$0</span>:=<span class="hljs-variable">$0</span>+<span class="hljs-string">" who is the child of "</span>+<span class="hljs-function">Genealogy of</span>([Friends and Relatives]Name)<span class="hljs-keyword">
  End if</span>
 </code></pre>
-<p>Note the <code>Genealogy of</code> method which calls itself.</p>
-<p>The first way is an <strong>iterative algorithm</strong>. The second way is a <strong>recursive algorithm</strong>.</p>
-<p>When implementing code for cases like the previous example, it is important to note that you can always write methods using iteration or recursion. Typically, recursion provides more concise, readable, and maintainable code, but using it is not mandatory.</p>
-<p>Some typical uses of recursion in 4D are:</p>
+<p>Note que el método <code>Genealogy of</code> se llama a sí mismo.</p>
+<p>La primera forma es un <strong>algoritmo iterativo</strong>. La segunda forma es un <strong>algoritmo recursivo</strong>.</p>
+<p>Cuando implemente el código para casos como el del ejemplo anterior, es importante tener en cuenta que siempre puede escribir métodos utilizando los algoritmos iterativos o recursivos. Normalmente, la recursividad ofrece un código más conciso, legible y mantenible, pero su uso no es obligatorio.</p>
+<p>En 4D, algunos usos típicos de la recursividad son:</p>
 <ul>
-<li>Treating records within tables that relate to each other in the same way as in the example.</li>
-<li>Browsing documents and folders on your disk, using the commands <code>FOLDER LIST</code> and <code>DOCUMENT LIST</code>. A folder may contain folders and documents, the subfolders can themselves contain folders and documents, and so on.</li>
+<li>Tratar los registros dentro de las tablas que se relacionan entre sí de la misma manera que en el ejemplo.</li>
+<li>Navegar por los documentos y las carpetas del disco, utilizando los comandos <code>FOLDER LIST</code> y <code>DOCUMENT LIST</code>. Una carpeta puede contener carpetas y documentos, las subcarpetas pueden a su vez contener carpetas y documentos, y así sucesivamente.</li>
 </ul>
-<p><strong>Important:</strong> Recursive calls should always end at some point. In the example, the method <code>Genealogy of</code> stops calling itself when the query returns no records. Sin esta prueba condicional, el método se llamaría a sí mismo indefinidamente; eventualmente, 4D devolvería un error &quot;Pila llena&quot; porque ya no tendría espacio para &quot;apilar&quot; las llamadas (así como los parámetros y las variables locales utilizadas en el método).</p>
+<p><strong>Importante:</strong> Las llamadas recursivas deben terminar siempre en algún punto. En el ejemplo, el método <code>Genealogy of</code> deja de llamarse a sí mismo cuando la consulta no devuelve ningún registro. Sin esta prueba condicional, el método se llamaría a sí mismo indefinidamente; eventualmente, 4D devolvería un error &quot;Pila llena&quot; porque ya no tendría espacio para &quot;apilar&quot; las llamadas (así como los parámetros y las variables locales utilizadas en el método).</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/Rx/es/Concepts/arrays.html"><span class="arrow-prev">← </span><span>Arrays</span></a><a class="docs-next button" href="/docs/Rx/es/Concepts/parameters.html"><span>Parámetros</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#tipos-de-métodos">Tipos de métodos</a></li><li><a href="#métodos-proyecto">Métodos proyecto</a><ul class="toc-headings"><li><a href="#subrutinas">Subrutinas</a></li><li><a href="#objeto-fórmula">Objeto fórmula</a></li><li><a href="#métodos-de-menú">Métodos de menú</a></li><li><a href="#métodos-de-gestión-de-proceso">Métodos de gestión de proceso</a></li><li><a href="#métodos-de-gestión-de-eventos-y-errores">Métodos de gestión de eventos y errores</a></li></ul></li><li><a href="#métodos-proyecto-recursivos">Métodos proyecto recursivos</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/Rx/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
