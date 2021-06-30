@@ -68,7 +68,8 @@
 	"WebServer/authentication",
 	"WebServer/sessions",
 	"WebServer/preemptiveWeb",
-	"WebStudio/webStudio"],
+	"WebStudio/webStudio",
+	"WebStudio/webFormObject"],
   "REST Server": [		{
         "type": "subcategory",
         "label": "Guides",
