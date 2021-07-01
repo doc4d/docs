@@ -26,7 +26,7 @@ const siteConfig = {
   url: 'https://4d.github.io' /* your website url */,
   //baseUrl: '/doc/' /* base url for your project */,
   //baseUrl: '/docs/' /* base url for your project */,
-  baseUrl: '/docs/' /* base url for your project */,
+  baseUrl: '/docs/19/' /* base url for your project */,
 // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
@@ -88,7 +88,7 @@ const siteConfig = {
 
   },
 
-  editUrl: 'https://github.com/4D/docs/edit/master/docs/',
+  editUrl: 'https://github.com/4D/docs/edit/19/docs/',
 
   /* custom fonts for website */
   /*fonts: {
