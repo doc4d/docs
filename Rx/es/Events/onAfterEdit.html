@@ -76,16 +76,16 @@
 </table>
 <h2><a class="anchor" aria-hidden="true" id="descripción"></a><a href="#descripción" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Descripción</h2>
 <h3><a class="anchor" aria-hidden="true" id="caso-general"></a><a href="#caso-general" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caso general</h3>
-<p>This event can be used filter the data entry in keyboard enterable objects at the lowest level.</p>
-<p>When it is used, this event is generated after each change made to the contents of an enterable object, regardless of the action that caused the change, <em>i.e.</em>:</p>
+<p>Este evento se puede utilizar para filtrar la entrada de datos en los objetos editables por teclado en el nivel más bajo.</p>
+<p>Cuando se utiliza, este evento se genera después de cada cambio realizado en el contenido de un objeto editable, independientemente de la acción que haya provocado la modificación, <em>es decir</em>:</p>
 <ul>
-<li>Standard editing actions which modify content like paste, cut, delete or cancel;</li>
-<li>Dropping a value (action similar to paste);</li>
-<li>Any keyboard entry made by the user; in this case, the <code>On After Edit</code> event is generated after the <a href="/docs/Rx/es/Events/onBeforeKeystroke.html"><code>On Before Keystroke</code></a> and <a href="/docs/Rx/es/Events/onAfterKeystroke.html"><code>On After Keystroke</code></a> events, if they are used.</li>
-<li>Any modification made using a language command that simulates a user action (i.e., <code>POST KEY</code>).</li>
+<li>Acciones de edición estándar que modifican el contenido como pegar, cortar, borrar o cancelar;</li>
+<li>Soltar un valor (acción similar a pegar);</li>
+<li>Toda entrada de teclado realizada por el usuario; en este caso, el evento <code>On After Edit</code> se genera después de los eventos <a href="/docs/Rx/es/Events/onBeforeKeystroke.html"><code>On Before Keystroke</code></a> y <a href="/docs/Rx/es/Events/onAfterKeystroke.html"><code>On After Keystroke</code></a>, si se utilizan.</li>
+<li>Cualquier modificación realizada mediante un comando del lenguaje que simule una acción del usuario (es decir, <code>POST KEY</code>).</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="4d-view-pro"></a><a href="#4d-view-pro" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4D View Pro</h3>
-<p>The object returned by the <code>FORM Event</code> command contains:</p>
+<p>El objeto devuelto por el comando <code>FORM Event</code> contiene:</p>
 <table>
 <thead>
 <tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
@@ -98,15 +98,15 @@
 <tr><td>action</td><td>texto</td><td>&quot;editChange&quot;, &quot;valueChanged&quot;, &quot;DragDropBlock&quot;, &quot;DragFillBlock&quot;, &quot;formulaChanged&quot;, &quot;clipboardPasted&quot;</td></tr>
 </tbody>
 </table>
-<p>Depending on the <code>action</code> property value, the <a href="/docs/Rx/es/Events/overview.html#event-object">event object</a> will contain additional properties.</p>
+<p>En función del valor de la propiedad <code>action</code>, el <a href="/docs/Rx/es/Events/overview.html#event-object">objeto evento</a> contendrá propiedades adicionales.</p>
 <h4><a class="anchor" aria-hidden="true" id="action--editchange"></a><a href="#action--editchange" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>action = editChange</h4>
 <table>
 <thead>
 <tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>range</td><td>objeto</td><td>Cell range</td></tr>
-<tr><td>editingText</td><td>variant</td><td>The value from the current editor</td></tr>
+<tr><td>range</td><td>objeto</td><td>Rango de celdas</td></tr>
+<tr><td>editingText</td><td>variant</td><td>El valor proveniente del editor actual</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="action--valuechanged"></a><a href="#action--valuechanged" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>action = valueChanged</h4>
@@ -115,7 +115,7 @@
 <tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>range</td><td>objeto</td><td>Cell range</td></tr>
+<tr><td>range</td><td>objeto</td><td>Rango de celdas</td></tr>
 <tr><td>oldValue</td><td>variant</td><td>Valor de la celda antes de la modificación</td></tr>
 <tr><td>newValue</td><td>variant</td><td>Valor de la celda luego de la modificación</td></tr>
 </tbody>
@@ -126,7 +126,7 @@
 <tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>fromRange</td><td>objeto</td><td>Range of source cell range (being dragged)</td></tr>
+<tr><td>fromRange</td><td>objeto</td><td>Rango de celdas fuente (que se arrastra)</td></tr>
 <tr><td>toRange</td><td>objeto</td><td>Rango de la celda de destino (ubicación de soltar)</td></tr>
 <tr><td>copy</td><td>booleano</td><td>Indica si el rango fuente se copia o no</td></tr>
 <tr><td>insert</td><td>booleano</td><td>Indica si el rango fuente se inserta o no</td></tr>
@@ -139,7 +139,7 @@
 </thead>
 <tbody>
 <tr><td>fillRange</td><td>objeto</td><td>Gama utilizada para el relleno</td></tr>
-<tr><td>autoFillType</td><td>longint</td><td>Valor utilizado para el relleno.<li>0: Cells are filled with all data (values, formatting, and formulas)<li>1: Cells are filled with automatically sequential data<li>2: Cells are filled with formatting only<li>3: Cells are filled with values but not formatting<li>4: Values are removed from the cells<li>5: Cells are filled automatically</td><td></td><td>fillDirection</td><td>longint</td><td>Direction of the fill.<li>0: The cells to the left are filled<li>1: The cells to the right are filled<li>2: The cells above are filled<li>3: The cells below are filled</td></tr>
+<tr><td>autoFillType</td><td>longint</td><td>Valor utilizado para el relleno.<li>0: las celdas se llenan con todos los datos (valores, formato y fórmulas)<li>1: las celdas se llenan con datos automáticamente secuenciales<li>2: Las celdas se llenan sólo con el formato<li>3: Las celdas se llenan de valores pero sin formato<li>4: Se eliminan los valores de las celdas<li>5: Cells are filled automatically</td><td></td><td>fillDirection</td><td>longint</td><td>Direction of the fill.<li>0: Se llenan las celdas de la izquierda<li>1: Se llenan las celdas a la derecha<li>2: Las celdas de arriba se llenan<li>3: Las celdas de abajo se llenan</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="action--formulachanged"></a><a href="#action--formulachanged" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>action = formulaChanged</h4>
@@ -148,7 +148,7 @@
 <tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>range</td><td>objeto</td><td>Cell range</td></tr>
+<tr><td>range</td><td>objeto</td><td>Rango de celdas</td></tr>
 <tr><td>formula</td><td>texto</td><td>La fórmula introducida</td></tr>
 </tbody>
 </table>
@@ -158,13 +158,13 @@
 <tr><th>Propriedad</th><th>Tipo</th><th>Descripción</th></tr>
 </thead>
 <tbody>
-<tr><td>range</td><td>objeto</td><td>Cell range</td></tr>
-<tr><td>pasteOption</td><td>entero largo</td><td>Indica lo que se pega desde el portapapeles:<li>0: Everything is pasted (values, formatting, and formulas)<li>1: Only values are pasted<li>2: Only the formatting is pasted<li>3: Only formulas are pasted<li>4: Values and formatting are pasted (not formulas)<li>5: Formulas and formatting are pasted (not values)</td></tr>
-<tr><td>pasteData</td><td>objeto</td><td>The data from the clipboard to be pasted<li>&quot;text&quot; (text): The text from the clipboard<li>&quot;html&quot; (text): The HTML from the clipboard</td></tr>
+<tr><td>range</td><td>objeto</td><td>Rango de celdas</td></tr>
+<tr><td>pasteOption</td><td>entero largo</td><td>Indica lo que se pega desde el portapapeles:<li>0: se pega todo (valores, formato y fórmulas)<li>1: solo se pegan los valores<li>2: sólo se pega el formato<li>3: solo se pegan las fórmulas<li>4: los valores y el formato se pegan (no las fórmulas)<li>5: las fórmulas y el formato se pegan (no los valores)</td></tr>
+<tr><td>pasteData</td><td>objeto</td><td>Los datos del portapapeles a pegar<li>&quot;text&quot; (texto): el texto del portapapeles<li>&quot;html&quot; (texto): el código HTML del portapapeles</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="ejemplo"></a><a href="#ejemplo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ejemplo</h4>
-<p>Here is an example handling an <code>On After Edit</code> event:</p>
+<p>Aquí hay un ejemplo de manejo de un evento <code>On After Edit</code>:</p>
 <pre><code class="hljs css language-4d"> If(FORM Event.code=On After Edit)
     If(FORM Event.action="valueChanged")
        ALERT("WARNING: You are currently changing the value\  
@@ -175,7 +175,7 @@
     End if
  End if
 </code></pre>
-<p>The above example could generate an event object like this:</p>
+<p>El ejemplo anterior podría generar un objeto evento como este:</p>
 <pre><code class="hljs">{
 
 <span class="hljs-string">"code"</span>:<span class="hljs-number">45</span>;
