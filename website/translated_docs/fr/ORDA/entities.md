@@ -65,7 +65,7 @@ Ceci est illustré par le graphique suivant :
 
 A noter cependant que les entités font référence au même enregistrement. Dans tous les cas, si vous appelez la méthode `entity.save()`, l'enregistrement sera mis à jour (sauf en cas de conflit, voir [Verrouillage d'entité](#entity-locking)).
 
-De fait, `$e1` et `$e2` ne sont pas l'entité elle-même, mais une référence à l'entité. Cela signifie que vous pouvez la passer directement à n'importe quelle fonction ou méthode, et qu'elle agira comme un pointeur, et plus rapidement qu'un pointeur 4D. Par exemple :
+In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entity. It means that you can pass them directly to any function or method, and it will act like a pointer, and faster than a 4D pointer. Par exemple :
 
 ```4d
  For each($entity;$selection)
@@ -85,7 +85,7 @@ Et la méthode est :
 ```
 
 Vous pouvez gérer les entités comme n'importe quel autre objet dans 4D et passer leurs références directement en tant que [paramètres](Concepts/parameters.md).
-> Avec les entités, il n'y a pas de notion de "enregistrement courant" comme dans le langage classique de 4D. Vous pouvez utiliser autant d'entités que nécessaire, en même temps. Il n'existe pas non plus de verrouillage automatique d'une entité (voir [Verrouillage d'une entité](#entity-locking)). Lorsqu'une entité est chargée, elle utilise le mécanisme de [Lazy loading](glossary.md#lazy-loading), ce qui signifie que seules les informations nécessaires sont chargées. Néanmoins, en mode client/serveur, l'entité peut être automatiquement chargée directement si nécessaire.
+> Avec les entités, il n'y a pas de notion de "enregistrement courant" comme dans le langage classique de 4D. Vous pouvez utiliser autant d'entités que nécessaire, en même temps. Il n'existe pas non plus de verrouillage automatique d'une entité (voir [Verrouillage d'une entité](#entity-locking)). When an entity is loaded, it uses the [lazy loading](glossary.md#lazy-loading) mechanism, which means that only the needed information is loaded. Néanmoins, en mode client/serveur, l'entité peut être automatiquement chargée directement si nécessaire.
 
 
 ## Utilisation des attributs d'entités
@@ -96,9 +96,9 @@ Les attributs d'entité stockent les données et mappent les champs correspondan
 Par exemple, pour définir un attribut de stockage :
 
 ```4d
- $entity:=ds.Employee.get(1) //obtenir l'attribut d'Employee avec l'ID 1
- $name:=$entity.lastname //obtenir le nom de l'employé, par exemple "Dupont"
-$entity.lastname:="Jones" //définir le nom de l'employé
+ $entity:=ds.Employee.get(1) //get employee attribute with ID 1
+ $name:=$entity.lastname //get the employee name, e.g. "Smith"
+ $entity.lastname:="Jones" //set the employee name
 ```
 > Les attributs d'images ne peuvent pas être assignés directement à un chemin donné dans une entité.
 
