@@ -71,8 +71,22 @@
 <p>これらのタグは原則として HTMLコメント (<code>&lt;--#Tag Contents--&gt;</code>) として挿入されます。しかしながら、 <a href="#4dtext-4dhtml-4deval-の代替シンタックス">xml に準じた代替シンタックス</a> も一部利用可能です。</p>
 <p>複数タイプのタグを混用することも可能です。 たとえば、以下の HTML構造は、問題なく実行可能です:</p>
 <pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">HTML</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">BODY</span>&gt;</span><span class="hljs-comment">&lt;!--#4DSCRIPT/PRE_PROCESS--&gt;</span>(メソッド呼び出し)<span class="hljs-comment">&lt;!--#4DIF (myvar=1)--&gt;</span>(If 条件)<span class="hljs-comment">&lt;!--#4DINCLUDE banner1.html--&gt;</span>(サブページ挿入)<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>(End if)<span class="hljs-comment">&lt;!--#4DIF (mtvar=2)--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE banner2.html--&gt;</span><span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span><span class="hljs-comment">&lt;!--#4DLOOP [TABLE]--&gt;</span>(カレントセレクションでのループ)<span class="hljs-comment">&lt;!--#4DIF ([TABLE]ValNum&gt;10)--&gt;</span>(If [TABLE]ValNum&gt;10)<span class="hljs-comment">&lt;!--#4DINCLUDE subpage.html--&gt;</span>(サブページの挿入)<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>(Else)
-   <span class="hljs-tag">&lt;<span class="hljs-name">B</span>&gt;</span>Value:<span class="hljs-comment">&lt;!--#4DTEXT [TABLE]ValNum--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">B</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">BR</span>&gt;</span>   (フィールド表示)<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span><span class="hljs-comment">&lt;!--#4DENDLOOP--&gt;</span>(End for)
+<span class="hljs-tag">&lt;<span class="hljs-name">BODY</span>&gt;</span>
+<span class="hljs-comment">&lt;!--#4DSCRIPT/PRE_PROCESS--&gt;</span>   (メソッド呼び出し)
+<span class="hljs-comment">&lt;!--#4DIF (myvar=1)--&gt;</span>   (If 条件)
+   <span class="hljs-comment">&lt;!--#4DINCLUDE banner1.html--&gt;</span>   (サブページ挿入)
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>   (End if)
+<span class="hljs-comment">&lt;!--#4DIF (mtvar=2)--&gt;</span>
+   <span class="hljs-comment">&lt;!--#4DINCLUDE banner2.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+
+<span class="hljs-comment">&lt;!--#4DLOOP [TABLE]--&gt;</span>   (カレントセレクションでのループ)
+<span class="hljs-comment">&lt;!--#4DIF ([TABLE]ValNum&gt;10)--&gt;</span>   (If [TABLE]ValNum&gt;10)
+   <span class="hljs-comment">&lt;!--#4DINCLUDE subpage.html--&gt;</span>   (サブページの挿入)
+<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>   (Else)
+   <span class="hljs-tag">&lt;<span class="hljs-name">B</span>&gt;</span>Value: <span class="hljs-comment">&lt;!--#4DTEXT [TABLE]ValNum--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">B</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">BR</span>&gt;</span>   (フィールド表示)
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDLOOP--&gt;</span>   (End for)
 <span class="hljs-tag">&lt;/<span class="hljs-name">BODY</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">HTML</span>&gt;</span>
 </code></pre>
@@ -85,9 +99,10 @@
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="再起的処理"></a><a href="#再起的処理" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>再起的処理</h3>
 <p>4Dタグは繰り返し解釈されます。4D は常に変換の結果を解釈しようとし、新しい変換が起きた際にはそれに伴う新しい解釈が実行され、取得結果の変換が必要がなくなるまで繰り返されます。 たとえば、以下のようなステートメントがあった場合:</p>
-<p><code>html&lt;!--#4DHTML [Mail]Letter_type--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DHTML [Mail]Letter_type--&gt;</span>
+</code></pre>
 <p>もし <code>[Mail]Letter_type</code> テキストフィールド自体にもタグ (たとえば<code>&lt;!--#4DSCRIPT/m_Gender--&gt;</code>) が含まれていた場合、このタグは 4DHTMLタグの解釈の後に、それに伴って評価されます。</p>
-<p>この強力な原則は、テキスト変換に関連するほとんどの需要を満たすことができます。 しかしながら、Webコンテキストにおいて、これは場合によって悪意のあるコードの侵入を許す可能性があるという点に注意が必要です。これを防ぐ方法については <a href="WebServer/templates.md#悪意あるコードの侵入を防止">悪意あるコードの侵入を防止</a> を参照ください。</p>
+<p>この強力な原則は、テキスト変換に関連するほとんどの需要を満たすことができます。 しかしながら、Webコンテキストにおいて、これは場合によって悪意のあるコードの侵入を許す可能性があるという点に注意が必要です。これを防ぐ方法については <a href="/docs/ja/WebServer/templates.html#悪意あるコードの侵入を防止">悪意あるコードの侵入を防止</a> を参照ください。</p>
 <h3><a class="anchor" aria-hidden="true" id="トークンを使用した識別子"></a><a href="#トークンを使用した識別子" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>トークンを使用した識別子</h3>
 <p>4D のバージョンや言語設定に左右されずに、タグ経由の式の評価が正しくおこなわれることを確実にするため、バージョン間で名前が変わりうる要素 (コマンド、テーブル、フィールド、定数) については、トークンシンタックスを使用することが推奨されます。 たとえば、<code>Current time</code> コマンドを挿入するには、&quot;<code>Current time:C178</code>&quot;と入力します。</p>
 <h3><a class="anchor" aria-hidden="true" id="-を小数点として使用"></a><a href="#-を小数点として使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>&quot;.&quot; を小数点として使用</h3>
@@ -99,30 +114,49 @@
 <p><em>folderPath</em> 引数には現在のページに対する相対パスを指定し、パスは &quot;/&quot; で終わっていなければなりません。 また、指定フォルダーは Webフォルダー内になければなりません。</p>
 <p>&quot;WEBFOLDER&quot; キーワードを渡すと、(そのページに対して相対の) デフォルトパスに戻されます。</p>
 <p>以下のように、各呼び出しごとに相対パスを指定したコードは:</p>
-<p><code>html&lt;!--#4DINCLUDE subpage.html--&gt;&lt;!--#4DINCLUDE folder/subpage1.html--&gt;&lt;!--#4DINCLUDE folder/subpage2.html--&gt;&lt;!--#4DINCLUDE folder/subpage3.html--&gt;&lt;!--#4DINCLUDE ../folder/subpage.html--&gt;</code>
-以下のコードと同一です:</p>
-<p><code>html&lt;!--#4DINCLUDE subpage.html--&gt;&lt;!--#4DBASE folder/--&gt;&lt;!--#4DINCLUDE subpage1.html--&gt;&lt;!--#4DINCLUDE subpage2.html--&gt;&lt;!--#4DINCLUDE subpage3.html--&gt;&lt;!--#4DBASE ../folder/--&gt;&lt;!--#4DINCLUDE subpage.html--&gt;&lt;!--#4DBASE WEBFOLDER--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DINCLUDE subpage.html--&gt;</span> 
+<span class="hljs-comment">&lt;!--#4DINCLUDE folder/subpage1.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE folder/subpage2.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE folder/subpage3.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE ../folder/subpage.html--&gt;</span>
+</code></pre>
+<p>以下のコードと同一です:</p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DINCLUDE subpage.html--&gt;</span> 
+<span class="hljs-comment">&lt;!--#4DBASE folder/--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE subpage1.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE subpage2.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE subpage3.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DBASE ../folder/--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE subpage.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DBASE WEBFOLDER--&gt;</span>
+</code></pre>
 <p>たとえば、ホームページのディレクトリを設定する場合:</p>
-<pre><code class="hljs css language-html">/* Index.html */<span class="hljs-comment">&lt;!--#4DIF LangFR=True--&gt;</span><span class="hljs-comment">&lt;!--#4DBASE FR/--&gt;</span><span class="hljs-comment">&lt;!--#4DELSE--&gt;</span><span class="hljs-comment">&lt;!--#4DBASE US/--&gt;</span><span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE head.html--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE body.html--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE footer.html--&gt;</span>```
-
-上で組み込まれる "head.html" ファイル内でカレントフォルダーが `<span class="hljs-comment">&lt;!--#4DBASE --&gt;</span>` を使用して変更されても、"index.html" 内では変更されません:
-
-```html
-/* Head.htm */
-/* ここでのワーキングディレクトリはインクルードされるファイルに対して相対的 (FR/ または US/) */<span class="hljs-comment">&lt;!--#4DBASE Styles/--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE main.css--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE product.css--&gt;</span><span class="hljs-comment">&lt;!--#4DBASE Scripts/--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE main.js--&gt;</span><span class="hljs-comment">&lt;!--#4DINCLUDE product.js--&gt;</span>```
-
-
-## 4DCODE
-
-#### シンタックス: `<span class="hljs-comment">&lt;!--#4DCODE codeLines--&gt;</span>`
-
-`4DCODE` タグを使用すると、複数行の4Dコードのブロックをテンプレートに挿入できます。
-
-"`<span class="hljs-comment">&lt;!--#4DCODE`" シークエンスとそれに続くスペース、CRまたはLF文字が検知されると、4D は次の "`--&gt;</span>`"シークエンスまでのコードを解釈します。 コードブロック自体はキャリッジリターンもラインフィードも、あるいはその両方も含むことができ、4D によってシーケンシャルに解釈されます。
-
-たとえば、以下のようにテンプレートに書くことができます:
-
-```html<span class="hljs-comment">&lt;!--#4DCODE
+<pre><code class="hljs css language-html">/* Index.html */
+<span class="hljs-comment">&lt;!--#4DIF LangFR=True--&gt;</span>
+    <span class="hljs-comment">&lt;!--#4DBASE FR/--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>
+    <span class="hljs-comment">&lt;!--#4DBASE US/--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE head.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE body.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE footer.html--&gt;</span>
+</code></pre>
+<p>上で組み込まれる &quot;head.html&quot; ファイル内でカレントフォルダーが <code>&lt;!--#4DBASE --&gt;</code> を使用して変更されても、&quot;index.html&quot; 内では変更されません:</p>
+<pre><code class="hljs css language-html">/* Head.htm */
+/* ここでのワーキングディレクトリはインクルードされるファイルに対して相対的 (FR/ または US/) */
+<span class="hljs-comment">&lt;!--#4DBASE Styles/--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE main.css--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE product.css--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DBASE Scripts/--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE main.js--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE product.js--&gt;</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="4dcode"></a><a href="#4dcode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DCODE</h2>
+<h4><a class="anchor" aria-hidden="true" id="シンタックス---4dcode-codelines--"></a><a href="#シンタックス---4dcode-codelines--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス: <code>&lt;!--#4DCODE codeLines--&gt;</code></h4>
+<p><code>4DCODE</code> タグを使用すると、複数行の4Dコードのブロックをテンプレートに挿入できます。</p>
+<p>&quot;<code>&lt;!--#4DCODE</code>&quot; シークエンスとそれに続くスペース、CRまたはLF文字が検知されると、4D は次の &quot;<code>--&gt;</code>&quot;シークエンスまでのコードを解釈します。 コードブロック自体はキャリッジリターンもラインフィードも、あるいはその両方も含むことができ、4D によってシーケンシャルに解釈されます。</p>
+<p>たとえば、以下のようにテンプレートに書くことができます:</p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DCODE
 // パラメーターの初期化
 C_OBJECT:C1216($graphParameters)
 OB SET:C1220($graphParameters;"graphType";1)
@@ -138,70 +172,68 @@ If(OB Is defined:C1231($graphParameters;"graphType"))
         End if
     End if
 End if
---&gt;</span>```
+--&gt;</span>
+</code></pre>
+<p>4DCODE タグの機能は以下の通りです:</p>
+<ul>
+<li><code>TRACE</code> コマンドがサポートされています。これは 4Dデバッガーを起動するので、テンプレートコードをデバッグすることができます。</li>
+<li>エラーは標準のエラーダイアログを表示します。これを使って、ユーザーはコードの実行を中止したりデバッグモードに入ったりすることができます。</li>
+<li><code>&lt;!--#4DCODE</code> と <code>--&gt;</code> の間のテキストは改行され、どのような改行コードでも受け取ります (cr、lf、または crlf)。</li>
+<li>テキストは <code>PROCESS 4D TAGS</code> を呼び出したデータベースのコンテキストにてトークナイズされます。 これは、たとえばプロジェクトメソッドの認識等において重要です。 <a href="/docs/ja/WebServer/allowProject.html">公開オプション: 4DタグとURL(4DACTION...)</a> メソッドプロパティは考慮されません。</li>
+<li>テキストが常に English-US設定であったとしても、4Dのバージョン間においてコマンドや定数名が改名されることによる問題を避けるため、コマンド名や定数名はトークンシンタックスを使用することが推奨されいます。</li>
+</ul>
+<blockquote>
+<p>4DCODE タグがあらゆる 4Dランゲージコマンドおよびプロジェクトメソッドを呼び出せるという事実は、とくにデータベースが HTTP経由で使用可能な場合等に、セキュリティ上の問題になり得ます。 しかしながら、タグはサーバー側のコードをテンプレートファイルから実行するため、タグそのものはセキュリティ上の問題になりません。 このようなコンテキストにおいては、あらゆる Webサーバーと同様に、セキュリティは主にサーバーファイルへのリモートアクセスレベルにおいて管理されています。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="4deach-と-4dendeach"></a><a href="#4deach-と-4dendeach" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DEACH と 4DENDEACH</h2>
+<h4><a class="anchor" aria-hidden="true" id="シンタックス---4deach-variable-in-expression-----4dendeach--"></a><a href="#シンタックス---4deach-variable-in-expression-----4dendeach--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス: <code>&lt;!--#4DEACH variable in expression--&gt;</code> <code>&lt;!--#4DENDEACH--&gt;</code></h4>
+<p><code>&lt;!--#4DEACH--&gt;</code> コメントは、<em>expression</em> に含まれるすべての要素に対して処理を繰り返します。 各要素は <em>variable</em> に代入され、その型は <em>expression</em> の型に依存します。</p>
+<p><code>&lt;!--#4DEACH--&gt;</code> コメントは 3種類の <em>expression</em> を対象に反復処理をおこなうことができます:</p>
+<ul>
+<li><a href="#--4deach-item-in-collection--">コレクション</a>: コレクションの各要素をループします</li>
+<li><a href="#--4deach-entity-in-entityselection--">エンティティセレクション</a>: エンティティセレクションの各エンティティをループします</li>
+<li><a href="#--4deach-property-in-object--">オブジェクト</a>: オブジェクトの各プロパティをループします</li>
+</ul>
+<p>ループの数は開始時に評価され、処理中に変化することはありません。 ループ中に項目を追加・削除することは、繰り返しの不足・重複を引き起こすことがあるため、一般的には推奨されません。</p>
+<h3><a class="anchor" aria-hidden="true" id="--4deach-item-in-collection--"></a><a href="#--4deach-item-in-collection--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DEACH item in collection--&gt;</code></h3>
+<p>このシンタックスは、コレクションの各要素を対象に反復処理をおこないます。 <code>&lt;!--#4DEACH --&gt;</code> と <code>&lt;!--#4DENDEACH--&gt;</code> の間に書かれたコードが、各コレクション要素について繰り返されます。</p>
+<p><em>item</em> はコレクション要素と同じ型の変数です。</p>
+<p>コレクションの <strong>要素はすべて同じ型</strong> でなくてはなりません。そうでない場合には、<em>item</em> 変数に別の型の値が代入されたときにエラーが生成されます。</p>
+<p>ループの回数はコレクションの要素数に基づいています。 各繰り返しにおいて、<em>item</em> 変数には、コレクションの合致する要素が自動的に代入されます。 このとき、以下の点に注意する必要があります:</p>
+<ul>
+<li><em>item</em> 変数がオブジェクト型あるいはコレクション型であった場合 (つまり <em>expression</em> がオブジェクトのコレクション、あるいはコレクションのコレクションであった場合)、この変数を変更すると自動的にコレクションの対応する要素も変更されます (オブジェクトとコレクションは同じ参照を共有しているからです)。 変数がスカラー型である場合、変数のみが変更されます。</li>
+<li><em>item</em> 変数には、コレクションの先頭要素の型が設定されます。 コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。</li>
+<li>コレクションが Null値の要素を格納していたとき、<em>item</em> 変数の型が Null値をサポートしない型 (倍長整数変数など) であった場合にはエラーが生成されます。</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="例題-スカラー値のコレクション"></a><a href="#例題-スカラー値のコレクション" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題: スカラー値のコレクション</h4>
+<p><em>getNames</em> は文字列のコレクションを返すメソッドです。 このメソッドは <a href="/docs/ja/WebServer/allowProject.html">公開オプション: 4DタグとURL</a> が有効になっています。</p>
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>    
 
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
 
-4DCODE タグの機能は以下の通りです:
-
-- `TRACE` コマンドがサポートされています。これは 4Dデバッガーを起動するので、テンプレートコードをデバッグすることができます。
-- エラーは標準のエラーダイアログを表示します。これを使って、ユーザーはコードの実行を中止したりデバッグモードに入ったりすることができます。
-- `<span class="hljs-comment">&lt;!--#4DCODE` と `--&gt;</span>` の間のテキストは改行され、どのような改行コードでも受け取ります (cr、lf、または crlf)。
-- テキストは `PROCESS 4D TAGS` を呼び出したデータベースのコンテキストにてトークナイズされます。 これは、たとえばプロジェクトメソッドの認識等において重要です。 [公開オプション: 4DタグとURL(4DACTION...)](/docs/ja/WebServer/allowProject.html) メソッドプロパティは考慮されません。
-- テキストが常に English-US設定であったとしても、4Dのバージョン間においてコマンドや定数名が改名されることによる問題を避けるため、コマンド名や定数名はトークンシンタックスを使用することが推奨されいます。
-
-&gt; 4DCODE タグがあらゆる 4Dランゲージコマンドおよびプロジェクトメソッドを呼び出せるという事実は、とくにデータベースが HTTP経由で使用可能な場合等に、セキュリティ上の問題になり得ます。 しかしながら、タグはサーバー側のコードをテンプレートファイルから実行するため、タグそのものはセキュリティ上の問題になりません。 このようなコンテキストにおいては、あらゆる Webサーバーと同様に、セキュリティは主にサーバーファイルへのリモートアクセスレベルにおいて管理されています。
-
-
-## 4DEACH と 4DENDEACH
-
-#### シンタックス: `<span class="hljs-comment">&lt;!--#4DEACH variable in expression--&gt;</span>` `<span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span>`
-
-`<span class="hljs-comment">&lt;!--#4DEACH--&gt;</span>` コメントは、*expression* に含まれるすべての要素に対して処理を繰り返します。 各要素は *variable* に代入され、その型は *expression* の型に依存します。
-
-`<span class="hljs-comment">&lt;!--#4DEACH--&gt;</span>` コメントは 3種類の *expression* を対象に反復処理をおこなうことができます:
-
-- [コレクション](#--4deach-item-in-collection--): コレクションの各要素をループします
-- [エンティティセレクション](#--4deach-entity-in-entityselection--): エンティティセレクションの各エンティティをループします
-- [オブジェクト](#--4deach-property-in-object--): オブジェクトの各プロパティをループします
-
-ループの数は開始時に評価され、処理中に変化することはありません。 ループ中に項目を追加・削除することは、繰り返しの不足・重複を引き起こすことがあるため、一般的には推奨されません。
-
-
-### `<span class="hljs-comment">&lt;!--#4DEACH item in collection--&gt;</span>`
-
-このシンタックスは、コレクションの各要素を対象に反復処理をおこないます。 `<span class="hljs-comment">&lt;!--#4DEACH --&gt;</span>` と `<span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span>` の間に書かれたコードが、各コレクション要素について繰り返されます。
-
-*item* はコレクション要素と同じ型の変数です。
-
-コレクションの **要素はすべて同じ型** でなくてはなりません。そうでない場合には、*item* 変数に別の型の値が代入されたときにエラーが生成されます。
-
-ループの回数はコレクションの要素数に基づいています。 各繰り返しにおいて、*item* 変数には、コレクションの合致する要素が自動的に代入されます。 このとき、以下の点に注意する必要があります:
-
-- *item* 変数がオブジェクト型あるいはコレクション型であった場合 (つまり *expression* がオブジェクトのコレクション、あるいはコレクションのコレクションであった場合)、この変数を変更すると自動的にコレクションの対応する要素も変更されます (オブジェクトとコレクションは同じ参照を共有しているからです)。 変数がスカラー型である場合、変数のみが変更されます。
-- *item* 変数には、コレクションの先頭要素の型が設定されます。 コレクション要素のどれか一つでも、変数と異なる型のものがあった場合、エラーが生成され、ループは停止します。
-- コレクションが Null値の要素を格納していたとき、*item* 変数の型が Null値をサポートしない型 (倍長整数変数など) であった場合にはエラーが生成されます。
-
-#### 例題: スカラー値のコレクション
-
-*getNames* は文字列のコレクションを返すメソッドです。 このメソッドは [公開オプション: 4DタグとURL](/docs/ja/WebServer/allowProject.html) が有効になっています。
-
-
-```html
-    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>    
-
-        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DEACH $name in getNames--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-comment">&lt;!--#4DEACH $name in getNames--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $name--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-オブジェクトのコレクション"></a><a href="#例題-オブジェクトのコレクション" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題: オブジェクトのコレクション</h4>
 <p><em>getSalesPersons</em> はオブジェクトのコレクションを返すメソッドです。</p>
-<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span><span class="hljs-comment">&lt;!--#4DCODE 
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>    
+         <span class="hljs-comment">&lt;!--#4DCODE 
             $salePersons:=getSalesPersons
-          --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>ID<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Firstname<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Lastname<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DEACH $salesPerson in $salePersons--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+          --&gt;</span>          
+       <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>ID<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Firstname<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Lastname<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+          <span class="hljs-comment">&lt;!--#4DEACH $salesPerson in $salePersons--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $salesPerson.ID--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $salesPerson.firstname--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $salesPerson.lastname--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="--4deach-entity-in-entityselection--"></a><a href="#--4deach-entity-in-entityselection--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DEACH entity in entitySelection--&gt;</code></h3>
 <p>このシンタックスは、エンティティセレクションの各エンティティを対象に反復処理をおこないます。 <code>&lt;!--#4DEACH --&gt;</code> と <code>&lt;!--#4DENDEACH--&gt;</code> の間に書かれたコードが、エンティティセレクションの各エンティティについて繰り返されます。</p>
@@ -210,11 +242,16 @@ End if
 <h4><a class="anchor" aria-hidden="true" id="例題-html-のテーブル"></a><a href="#例題-html-のテーブル" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題: html のテーブル</h4>
 <pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>     
 
-        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>ID<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Total purchase<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DEACH $customer in ds.Customers.all()--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>ID<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Total purchase<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+          <span class="hljs-comment">&lt;!--#4DEACH $customer in ds.Customers.all()--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $customer.ID--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $customer.name--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">center</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT String($customer.totalPurchase;"$###,##0")--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">center</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="例題-process-4d-tags"></a><a href="#例題-process-4d-tags" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題: <code>PROCESS 4D TAGS</code></h4>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword">var</span> customers : cs.CustomersSelection<span class="hljs-keyword">
@@ -233,12 +270,20 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <p>オブジェクトのプロパティは作成順に処理されていきます。 ループ中、プロパティをオブジェクトに追加/削除することが可能ですが、その場合でも残りのループ回数は、オブジェクトの元のプロパティ数に基づいているため、変化しません。</p>
 <h4><a class="anchor" aria-hidden="true" id="例題-オブジェクトのプロパティ"></a><a href="#例題-オブジェクトのプロパティ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>例題: オブジェクトのプロパティ</h4>
 <p><em>getGamers</em> は、ゲームスコアを管理するために (&quot;Mary&quot;; 10; &quot;Ann&quot;; 20; &quot;John&quot;; 40) のようなオブジェクトを返すプロジェクトメソッドです。</p>
-<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span><span class="hljs-comment">&lt;!--#4DCODE
+<pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>    
+          <span class="hljs-comment">&lt;!--#4DCODE
            $gamers:=getGamers
-          --&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Gamers<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Scores<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DEACH $key in $gamers--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+          --&gt;</span>          
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Gamers<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Scores<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+
+          <span class="hljs-comment">&lt;!--#4DEACH $key in $gamers--&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span> &gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $key--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span> &gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $gamers[$key]--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span><span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+          <span class="hljs-comment">&lt;!--#4DENDEACH--&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="4deval"></a><a href="#4deval" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DEVAL</h2>
 <h4><a class="anchor" aria-hidden="true" id="シンタックス---4deval-expression--"></a><a href="#シンタックス---4deval-expression--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス: <code>&lt;!--#4DEVAL expression--&gt;</code></h4>
@@ -281,18 +326,53 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <p><code>&lt;!--#4DELSEIF--&gt;</code> タグを使用すると、数に制限なく条件をテストできます。 最初に <code>true</code> と判定されたブロック内にあるコードだけが実行されます。 <code>true</code> ブロックがなく、<code>&lt;!--#4DELSE--&gt;</code> もない場合には、なにも実行されません。 <code>&lt;!--#4DELSE--&gt;</code>タグは、最後の <code>&lt;!--#4DELSEIF--&gt;</code> の後に記述できます。 それまでの条件がすべて <code>false</code> の場合、<code>&lt;!--#4DELSE--&gt;</code>ブロックの文が実行されます。</p>
 <p>以下の2つのコードは同等です。</p>
 <p><code>4DELSE</code> のみを使用する場合:</p>
-<pre><code class="hljs css language-html&lt;!--#4DIF Condition1--&gt;/* Condition1 が true の場合*/&lt;!--#4DELSE--&gt;&lt;!--#4DIF Condition2--&gt;/* Condition2 が true の場合*/&lt;!--#4DELSE--&gt;&lt;!--#4DIF Condition3--&gt;/* Condition3 が true の場合 */&lt;!--#4DELSE--&gt;/*いずれの条件も true でない場合*/&lt;!--#4DENDIF--&gt;">        <span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DIF Condition1--&gt;</span>
+  /* Condition1 が true の場合*/
+<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>
+    <span class="hljs-comment">&lt;!--#4DIF Condition2--&gt;</span>
+        /* Condition2 が true の場合*/
+    <span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>
+        <span class="hljs-comment">&lt;!--#4DIF Condition3--&gt;</span>
+            /* Condition3 が true の場合 */
+        <span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>
+            /*いずれの条件も true でない場合*/
+        <span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
     <span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
 </code></pre>
 <p>同じ内容を <code>4DELSEIF</code> タグを使用して記述した場合:</p>
-<p><code>&lt;!--#4DIF Condition1--&gt;/* Condition1 が true の場合*/&lt;!--#4DELSEIF Condition2--&gt;/* Condition2 が true の場合*/&lt;!--#4DELSEIF Condition3--&gt;/* Condition3 が true の場合 */&lt;!--#4DELSE--&gt;/* いずれの条件も true でない場合*/&lt;!--#4DENDIF--&gt;</code></p>
+<pre><code class="hljs"><span class="hljs-comment">&lt;!--#4DIF Condition1--&gt;</span>
+     /* Condition1 が true の場合*/
+<span class="hljs-comment">&lt;!--#4DELSEIF Condition2--&gt;</span>
+     /* Condition2 が true の場合*/
+<span class="hljs-comment">&lt;!--#4DELSEIF Condition3--&gt;</span>
+    /* Condition3 が true の場合 */
+<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>
+    /* いずれの条件も true でない場合*/
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+</code></pre>
 <p>スタティックな HTMLページに書かれたこの例題のコードは、<code>vname#&quot;&quot;</code> 式の結果に応じ、異なるラベルを表示します:</p>
 <pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">BODY</span>&gt;</span>
-...<span class="hljs-comment">&lt;!--#4DIF (vname#"")--&gt;</span>Names starting with<span class="hljs-comment">&lt;!--#4DTEXT vname--&gt;</span>.<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>No name has been found.<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>...
+...
+<span class="hljs-comment">&lt;!--#4DIF (vname#"")--&gt;</span>
+Names starting with <span class="hljs-comment">&lt;!--#4DTEXT vname--&gt;</span>.
+<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>
+No name has been found.
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+...
 <span class="hljs-tag">&lt;/<span class="hljs-name">BODY</span>&gt;</span>
 </code></pre>
 <p>この例題は接続したユーザーによって異なるページを返します:</p>
-<p><code>html&lt;!--#4DIF LoggedIn=False--&gt;&lt;!--#4DINCLUDE Login.htm --&gt;&lt;!--#4DELSEIF User=&quot;Admin&quot; --&gt;&lt;!--#4DINCLUDE AdminPanel.htm --&gt;&lt;!--#4DELSEIF User=&quot;Manager&quot; --&gt;&lt;!--#4DINCLUDE SalesDashboard.htm --&gt;&lt;!--#4DELSE--&gt;&lt;!--#4DINCLUDE ItemList.htm --&gt;&lt;!--#4DENDIF--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DIF LoggedIn=False--&gt;</span>
+    <span class="hljs-comment">&lt;!--#4DINCLUDE Login.htm --&gt;</span>
+<span class="hljs-comment">&lt;!--#4DELSEIF User="Admin" --&gt;</span>
+    <span class="hljs-comment">&lt;!--#4DINCLUDE AdminPanel.htm --&gt;</span>
+<span class="hljs-comment">&lt;!--#4DELSEIF User="Manager" --&gt;</span>
+    <span class="hljs-comment">&lt;!--#4DINCLUDE SalesDashboard.htm --&gt;</span>
+<span class="hljs-comment">&lt;!--#4DELSE--&gt;</span>
+    <span class="hljs-comment">&lt;!--#4DINCLUDE ItemList.htm --&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDIF--&gt;</span>
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="4dinclude"></a><a href="#4dinclude" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DINCLUDE</h2>
 <h4><a class="anchor" aria-hidden="true" id="シンタックス---4dinclude-path--"></a><a href="#シンタックス---4dinclude-path--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス: <code>&lt;!--#4DINCLUDE path--&gt;</code></h4>
 <p>このタグは主に、ある (<em>path</em> で指定された) HTMLページを別の HTMLページに含めるためにデザインされました。 デフォルトで、HTMLページのボディー部、つまり <code>&lt;body&gt;</code> と<code>&lt;/body&gt;</code> タグの間の内容だけが統合されます (bodyタグは含まれません)。 これにより、ヘッダーに含まれるメタタグ関連の衝突が回避されます。</p>
@@ -306,7 +386,10 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <p>ページ内で使用できる <code>&lt;!--#4DINCLUDE path--&gt;</code> 数に制限はありません。 しかし <code>&lt;!--#4DINCLUDE path--&gt;</code> の呼び出しは 1レベルのみ有効です。 つまり、たとえば <em>mydoc1.html</em> ページに <code>&lt;!--#4DINCLUDE mydoc2.html--&gt;</code> によって挿入される <em>mydoc2.html</em> がある場合、そのボディ内でさらに <code>&lt;!--#4DINCLUDE mydoc3.html--&gt;</code> を使うことはできません。 さらに、4Dはインクルードが再帰的かどうかを確認します。</p>
 <p>エラーの場合、&quot;<code>&lt;!--#4DINCLUDE path--&gt;</code> : ドキュメントを開けません&quot; というテキストが挿入されます。</p>
 <p>例:</p>
-<p><code>html&lt;!--#4DINCLUDE subpage.html--&gt;&lt;!--#4DINCLUDE folder/subpage.html--&gt;&lt;!--#4DINCLUDE ../folder/subpage.html--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DINCLUDE subpage.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE folder/subpage.html--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DINCLUDE ../folder/subpage.html--&gt;</span>
+</code></pre>
 <h2><a class="anchor" aria-hidden="true" id="4dloop-と-4dendloop"></a><a href="#4dloop-と-4dendloop" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4DLOOP と 4DENDLOOP</h2>
 <h4><a class="anchor" aria-hidden="true" id="シンタックス---4dloop-condition-----4dendloop--"></a><a href="#シンタックス---4dloop-condition-----4dendloop--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>シンタックス: <code>&lt;!--#4DLOOP condition--&gt;</code> <code>&lt;!--#4DENDLOOP--&gt;</code></h4>
 <p>このコメントを使用して、条件を満たす間、コードの一部を繰り返すことができます。 繰り返し部のコードは <code>&lt;!--#4DLOOP--&gt;</code> と <code>&lt;!--#4DENDLOOP--&gt;</code> で挟まれます。</p>
@@ -318,7 +401,10 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <p>テーブルを条件として <code>4DLOOP</code> タグが使用されると、レコードが &quot;読み取り専用&quot; モードでロードされます。</p>
 </blockquote>
 <p>以下のコードは:</p>
-<p><code>html&lt;!--#4DLOOP [People]--&gt;&lt;!--#4DTEXT [People]Name--&gt;&lt;!--#4DTEXT [People]Surname--&gt;&lt;BR&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DLOOP [People]--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DTEXT [People]Name--&gt;</span> <span class="hljs-comment">&lt;!--#4DTEXT [People]Surname--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">BR</span>&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDLOOP--&gt;</span>
+</code></pre>
 <p>4Dランゲージで表すと以下のとおりです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-function"> FIRST RECORD</span>([People])<span class="hljs-keyword">
  While</span>(<span class="hljs-function">Not</span>(<span class="hljs-function">End selec tion</span>([People])))
@@ -332,7 +418,10 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <p>このシンタックスで二次元配列を使用することはできません。 この場合には、代わりにメソッドを条件としたループをネストして使用します。</p>
 </blockquote>
 <p>以下のコードは:</p>
-<p><code>html&lt;!--#4DLOOP arr_names--&gt;&lt;!--#4DTEXT arr_names{arr_names}--&gt;&lt;BR&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DLOOP arr_names--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DTEXT arr_names{arr_names}--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">BR</span>&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDLOOP--&gt;</span>
+</code></pre>
 <p>4Dランゲージで表すと以下のとおりです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> For</span>(<span class="hljs-variable">$Elem</span>;<span class="hljs-number">1</span>;<span class="hljs-function">Size of array</span>(arr_names))
     arr_names:=<span class="hljs-variable">$Elem</span>
@@ -344,7 +433,10 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <p>セキュリティのため、Webプロセス内では、<code>On Web Authentication</code> データベースメソッドが初期化ステージ (引数に0が渡されて実行される) の前に一度呼び出されます。 認証に成功すると、初期化に進みます。</p>
 <p>コンパイルのため、<code>C_BOOLEAN($0)</code> と <code>C_LONGINT($1)</code> が必ず宣言されていなければなりません。</p>
 <p>以下のコードは:</p>
-<p><code>html&lt;!--#4DLOOP my_method--&gt;&lt;!--#4DTEXT var--&gt;&lt;BR&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DLOOP my_method--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DTEXT var--&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">BR</span>&gt;</span> 
+<span class="hljs-comment">&lt;!--#4DENDLOOP--&gt;</span>
+</code></pre>
 <p>4Dランゲージで表すと以下のとおりです:</p>
 <pre><code class="hljs css language-4d"><span class="hljs-keyword"> If</span>(AuthenticationWebOK)<span class="hljs-keyword">
     If</span>(<span class="hljs-function">my_method</span>(<span class="hljs-number">0</span>))
@@ -374,7 +466,12 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <h3><a class="anchor" aria-hidden="true" id="--4dloop-expression--"></a><a href="#--4dloop-expression--" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>&lt;!--#4DLOOP expression--&gt;</code></h3>
 <p>このシンタックスでは、<code>4DLOOP</code> タグは <em>expression</em> に指定した式が <code>true</code> を返す間ループがおこなわれます。 式は有効なブール式であればよく、無限ループを防ぐために、ループごとに評価される変数部分を含んでいる必要があります。</p>
 <p>たとえば、以下のコードは:</p>
-<p><code>html&lt;!--#4DEVAL $i:=0--&gt;&lt;!--#4DLOOP ($i&lt;4)--&gt;&lt;!--#4DEVAL $i--&gt;&lt;!--#4DEVAL $i:=$i+1--&gt;&lt;!--#4DENDLOOP--&gt;</code></p>
+<pre><code class="hljs css language-html"><span class="hljs-comment">&lt;!--#4DEVAL $i:=0--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DLOOP ($i&lt;4)--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DEVAL $i--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DEVAL $i:=$i+1--&gt;</span>
+<span class="hljs-comment">&lt;!--#4DENDLOOP--&gt;</span>
+</code></pre>
 <p>以下の結果を生成します:</p>
 <pre><code class="hljs"><span class="hljs-number">0</span>
 <span class="hljs-number">1</span>
@@ -390,7 +487,7 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
  <span class="hljs-variable">$array{2}</span>:=<span class="hljs-string">"world"</span>
  <span class="hljs-variable">$input</span>:=<span class="hljs-string">"&lt;!--#4DEVAL $1--&gt;"</span>
  <span class="hljs-variable">$input</span>:=<span class="hljs-variable">$input</span>+<span class="hljs-string">"&lt;!--#4DLOOP $2--&gt;"</span>
- <span class="hljs-variable">$input</span>:=<span class="hljs-variable">$input</span>+<span class="hljs-string">"&lt;!--#4DEVAL $2-&gt;{$2-&gt;}--&gt;"</span>
+ <span class="hljs-variable">$input</span>:=<span class="hljs-variable">$input</span>+<span class="hljs-string">"&lt;!--#4DEVAL $2-&gt;{$2-&gt;}--&gt; "</span>
  <span class="hljs-variable">$input</span>:=<span class="hljs-variable">$input</span>+<span class="hljs-string">"&lt;!--#4DENDLOOP--&gt;"</span>
 <span class="hljs-function"> PROCESS 4D TAGS</span>(<span class="hljs-variable">$input</span>;<span class="hljs-variable">$output</span>;<span class="hljs-string">"elements = "</span>;-&gt;<span class="hljs-variable">$array</span>)
   <span class="hljs-comment">// $output = "elements = hello world "</span>
@@ -427,12 +524,12 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <p><h4 spaces-before="0">シンタックス: <code><!--#4DTEXT expression-->`</h4></p>
 <h4><a class="anchor" aria-hidden="true" id="代替シンタックス-4dtextexpression"></a><a href="#代替シンタックス-4dtextexpression" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>代替シンタックス: <code>$4DTEXT(expression)</code></h4>
 <p>タグ <code>&lt;!--#4DTEXT VarName--&gt;</code> を使用して 4D変数や値を返す式への参照を挿入できます。 たとえば、(HTMLページ内にて) 以下のように記述すると:</p>
-<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">P</span>&gt;</span> <span class="hljs-comment">&lt;!--#4DTEXT vtSiteName--&gt;</span>へようこそ！<span class="hljs-tag">&lt;/<span class="hljs-name">P</span>&gt;</span>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">P</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT vtSiteName--&gt;</span> へようこそ！<span class="hljs-tag">&lt;/<span class="hljs-name">P</span>&gt;</span>
 </code></pre>
 <p>4D変数 <code>vtSiteName</code> の値が HTMLページに送信時に挿入されます。 値はテキストとして挿入されます。&quot;&gt;&quot;のようなHTMLの特殊文字は、自動的にエスケープされます。</p>
 <p>4DTEXT タグを使用して、4D式も挿入できます。 たとえば、フィールドの値を直接挿入できるほか (<code>&lt;!--#4DTEXT [tableName]fieldName--&gt;</code>) 、配列要素の値も挿入できますし (<code>&lt;!--#4DTEXT tabarr{1}--&gt;</code>) 、値を返すメソッドも使用できます (<code>&lt;!--#4DTEXT mymethod--&gt;</code>)。 式の変換には、変数の場合と同じルールが適用されます。 さらに、式は 4Dのシンタックスルールに適合していなければなりません。</p>
 <blockquote>
-<p>セキュリティ上の理由から、<a href="WebServer/templates.md#悪意あるコードの侵入を防止">悪意あるコードの侵入・挿入</a>を防ぐために、アプリケーション外から導入されたデータを処理するときには、このタグの使用が推奨されます。</p>
+<p>セキュリティ上の理由から、<a href="/docs/ja/WebServer/templates.html#悪意あるコードの侵入を防止">悪意あるコードの侵入・挿入</a>を防ぐために、アプリケーション外から導入されたデータを処理するときには、このタグの使用が推奨されます。</p>
 </blockquote>
 <p>解釈エラーの場合、&quot;<code>&lt;!--#4DTEXT myvar--&gt; : ## エラー # エラーコード</code>&quot; というテキストが挿入されます。</p>
 <ul>
@@ -467,7 +564,7 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <pre><code class="hljs css language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">line</span> <span class="hljs-attr">x1</span>=<span class="hljs-string">"$4DEVAL($x)"</span> <span class="hljs-attr">y1</span>=<span class="hljs-string">"$4DEVAL($graphY1)"</span>/&gt;</span>
 </code></pre>
 <p>ここで、<code>$4dtag</code> と <code>&lt;--#4dtag--&gt;</code> は厳密には同じではないという点に注意が必要です。<code>&lt;--#4dtag--&gt;</code> とは異なり、<code>$4dtag</code> は 4Dタグを <a href="#再起的処理">繰り返し解釈</a> することはありません。 <code>$</code> タグは常に一度だけ解釈され、その結果は標準テキストとして読まれます。</p>
-<p>この違いの理由は、悪意あるコードの侵入を防ぐためにあります。 <a href="WebServer/templates.md#悪意あるコードの侵入を防止">悪意あるコードの侵入を防止</a> の章で説明されているように、ユーザーテキストを使用する場合に不要なタグの再解釈を避けるには、<code>4DHTML</code> タグではなく <code>4DTEXT</code> タグの使用が強く推奨されます。<code>4DTEXT</code> を使用した場合、&quot;&lt;&quot; などの特殊記号はエスケープされるため、<code>&lt;!--#4dtag expression--&gt;</code> シンタックスを使用している 4Dタグはすべて元の意味を失います。 しかしながら、<code>4DTEXT</code> は <code>$</code> 記号をエスケープしないため、悪意あるコードの侵入を防ぐために <code>$4dtag (expression)</code> シンタックスにおける再帰的処理はサポートしないことになりました。</p>
+<p>この違いの理由は、悪意あるコードの侵入を防ぐためにあります。 <a href="/docs/ja/WebServer/templates.html#悪意あるコードの侵入を防止">悪意あるコードの侵入を防止</a> の章で説明されているように、ユーザーテキストを使用する場合に不要なタグの再解釈を避けるには、<code>4DHTML</code> タグではなく <code>4DTEXT</code> タグの使用が強く推奨されます。<code>4DTEXT</code> を使用した場合、&quot;&lt;&quot; などの特殊記号はエスケープされるため、<code>&lt;!--#4dtag expression--&gt;</code> シンタックスを使用している 4Dタグはすべて元の意味を失います。 しかしながら、<code>4DTEXT</code> は <code>$</code> 記号をエスケープしないため、悪意あるコードの侵入を防ぐために <code>$4dtag (expression)</code> シンタックスにおける再帰的処理はサポートしないことになりました。</p>
 <p>以下の例では、使用されるシンタックスとタグによる処理の結果の違いを表しています:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">// 例 1</span>
  myName:=<span class="hljs-string">"&lt;!--#4DHTML QUIT 4D--&gt;"</span> <span class="hljs-comment">// 悪意あるコードの侵入</span>
@@ -495,7 +592,7 @@ customers:=ds.Customers.<span class="hljs-function">all</span>()
 <span class="hljs-function"> PROCESS 4D TAGS</span>(input;output)
  --&gt; 結果は: <span class="hljs-number">1</span><span class="hljs-string">"(hello)"</span>
 </code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/looping.html"><span class="arrow-prev">← </span><span>ループ構造</span></a><a class="docs-next button" href="/docs/ja/Concepts/error-handling.html"><span>エラー処理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#タグ利用の原則">タグ利用の原則</a><ul class="toc-headings"><li><a href="#解析">解析</a></li><li><a href="#再起的処理">再起的処理</a></li><li><a href="#トークンを使用した識別子">トークンを使用した識別子</a></li><li><a href="#-を小数点として使用">&quot;.&quot; を小数点として使用</a></li></ul></li><li><a href="#4dbase">4DBASE</a><ul class="toc-headings"><li><a href="#--4deach-entity-in-entityselection--"><code>&lt;!--#4DEACH entity in entitySelection--&gt;</code></a></li><li><a href="#--4deach-property-in-object--"><code>&lt;!--#4DEACH property in object--&gt;</code></a></li></ul></li><li><a href="#4deval">4DEVAL</a></li><li><a href="#4dhtml">4DHTML</a></li><li><a href="#4dif-4delse-4delseif-と-4dendif">4DIF, 4DELSE, 4DELSEIF と 4DENDIF</a></li><li><a href="#4dinclude">4DINCLUDE</a></li><li><a href="#4dloop-と-4dendloop">4DLOOP と 4DENDLOOP</a><ul class="toc-headings"><li><a href="#--4dloop-table--"><code>&lt;!--#4DLOOP [table]--&gt;</code></a></li><li><a href="#--4dloop-array--"><code>&lt;!--#4DLOOP array--&gt;</code></a></li><li><a href="#--4dloop-method--"><code>&lt;!--#4DLOOP method--&gt;</code></a></li><li><a href="#--4dloop-expression--"><code>&lt;!--#4DLOOP expression--&gt;</code></a></li><li><a href="#--4dloop-pointerarray--"><code>&lt;!--#4DLOOP pointerArray--&gt;</code></a></li></ul></li><li><a href="#4dscript">4DSCRIPT/</a></li><li><a href="#4dtext-4dhtml-4deval-の代替シンタックス">4dtext, 4dhtml, 4deval の代替シンタックス</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ja/Concepts/looping.html"><span class="arrow-prev">← </span><span>ループ構造</span></a><a class="docs-next button" href="/docs/ja/Concepts/error-handling.html"><span>エラー処理</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#タグ利用の原則">タグ利用の原則</a><ul class="toc-headings"><li><a href="#解析">解析</a></li><li><a href="#再起的処理">再起的処理</a></li><li><a href="#トークンを使用した識別子">トークンを使用した識別子</a></li><li><a href="#-を小数点として使用">&quot;.&quot; を小数点として使用</a></li></ul></li><li><a href="#4dbase">4DBASE</a></li><li><a href="#4dcode">4DCODE</a></li><li><a href="#4deach-と-4dendeach">4DEACH と 4DENDEACH</a><ul class="toc-headings"><li><a href="#--4deach-item-in-collection--"><code>&lt;!--#4DEACH item in collection--&gt;</code></a></li><li><a href="#--4deach-entity-in-entityselection--"><code>&lt;!--#4DEACH entity in entitySelection--&gt;</code></a></li><li><a href="#--4deach-property-in-object--"><code>&lt;!--#4DEACH property in object--&gt;</code></a></li></ul></li><li><a href="#4deval">4DEVAL</a></li><li><a href="#4dhtml">4DHTML</a></li><li><a href="#4dif-4delse-4delseif-と-4dendif">4DIF, 4DELSE, 4DELSEIF と 4DENDIF</a></li><li><a href="#4dinclude">4DINCLUDE</a></li><li><a href="#4dloop-と-4dendloop">4DLOOP と 4DENDLOOP</a><ul class="toc-headings"><li><a href="#--4dloop-table--"><code>&lt;!--#4DLOOP [table]--&gt;</code></a></li><li><a href="#--4dloop-array--"><code>&lt;!--#4DLOOP array--&gt;</code></a></li><li><a href="#--4dloop-method--"><code>&lt;!--#4DLOOP method--&gt;</code></a></li><li><a href="#--4dloop-expression--"><code>&lt;!--#4DLOOP expression--&gt;</code></a></li><li><a href="#--4dloop-pointerarray--"><code>&lt;!--#4DLOOP pointerArray--&gt;</code></a></li></ul></li><li><a href="#4dscript">4DSCRIPT/</a></li><li><a href="#4dtext-4dhtml-4deval-の代替シンタックス">4dtext, 4dhtml, 4deval の代替シンタックス</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://www.4d.com" class="nav-home"><img src="/docs/img/logohome.png" alt="4D Documentation"/></a><div><h5>Community</h5><a href="https://developer.4D.com">4D Developer Center</a><a href="https://blog.4d.com/">4D Blog</a><a href="https://discuss.4d.com">4D Forum</a><a href="https://www.facebook.com/4Dsoftware/">Facebook</a><a href="https://twitter.com/4Dsoftware">Twitter</a><a href="https://www.youtube.com/user/4Dsoftware">Youtube</a><a href="https://github.com/4D/">GitHub</a></div><div><h5>Support</h5><a href="https://doc.4d.com/">4D Doc Center <i>(Where It All Began)</i></a><a href="http://kb.4d.com/">Knowledge Base</a><a href="https://us.4d.com/product-download">Downloads</a><a href="https://us.4d.com/resources">Resources</a><a href="https://us.4d.com/4d-technical-support">Get Support</a></div><div><h5>Company</h5><a href="https://us.4d.com/about-us">About 4D</a><a href="https://us.4d.com/contact-us">Contact us</a><a href="https://us.4d.com/4d-around-the-world">4D around the world</a><a href="https://us.4d.com/careers">Careers</a></div></section><section class="copyright">© 2021 4D SAS - All rights reserved</section><section class="copyright"><a class="cp2" href="https://us.4d.com/terms-and-conditions">Terms &amp; Conditions</a> | <a class="cp2" href="https://us.4d.com/legal-notices">Legal Notices</a> | <a class="cp2" href="https://us.4d.com/data-policy">Data Policy</a> | <a class="cp2" href="https://us.4d.com/cookies-policy">Cookie Policy</a> | <a class="cp2" href="https://us.4d.com/license">Product license</a></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
