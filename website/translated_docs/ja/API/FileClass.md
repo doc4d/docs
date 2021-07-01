@@ -205,6 +205,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 | v17 R5 | 追加 |
 </details>
 
+
 <!--REF #FileClass.createAlias().Syntax -->
 **.createAlias**( *destinationFolder* : 4D.Folder ; *aliasName* : Text { ; *aliasType* : Integer } ) : 4D.File<!-- END REF -->
 
@@ -711,21 +712,21 @@ $infoPlistFile.setAppInfo($info)
 
 > 4D によってサポートされている文字セットの一覧については、`CONVERT FROM TEXT` コマンドを参照ください。
 
-文字セットのバイトオーダーマーク (BOM) が存在する場合、4D はそれもファイルに挿入します。 文字セットを指定しない場合、 4D はデフォルトで "UTF-8" の文字セットと BOM を使用します。
+文字セットにバイトオーダーマーク (BOM) が存在し、かつその文字セットに "-no-bom" 接尾辞 (例: "UTF-8-no-bom") が含まれていない場合、4D は BOM をファイルに挿入します。 文字セットを指定しない場合、 4D はデフォルトで "UTF-8" の文字セットを使用します。
 
 *breakMode* には、ファイルを保存する前に改行文字に対しておこなう処理を指定する倍長整数を渡します。 **System Documents** テーマ内にある、以下の定数を使用することができます:
 
-| 定数                            | 値 | 説明                                                                                                        |
-| ----------------------------- | - | --------------------------------------------------------------------------------------------------------- |
-| `Document unchanged`          | 0 | 何も処理をしません。                                                                                                |
-| `Document with native format` | 1 | (デフォルト) 改行は OS のネイティブフォーマットに変換されます。macOS では CR (キャリッジリターン) に、Windows では CRLF (キャリッジリターン＋ラインフィード) に変換されます。 |
-| `Document with CRLF`          | 2 | 改行は Windowsフォーマット (CRLF、キャリッジリターン＋ラインフィード) へと変換されます。                                                      |
-| `Document with CR`            | 3 | 改行は macOSフォーマット (CR、キャリッジリターン) へと変換されます。                                                                  |
-| `Document with LF`            | 4 | 改行は Unixフォーマット (LF、ラインフィード) へと変換されます。                                                                     |
+| 定数                            | 値 | 説明                                                                                                      |
+| ----------------------------- | - | ------------------------------------------------------------------------------------------------------- |
+| `Document unchanged`          | 0 | 何も処理をしません。                                                                                              |
+| `Document with native format` | 1 | (デフォルト) 改行は OS のネイティブフォーマットに変換されます。macOS では LF (ラインフィード) に、Windows では CRLF (キャリッジリターン＋ラインフィード) に変換されます。 |
+| `Document with CRLF`          | 2 | 改行は Windows のデフォルトフォーマットである CRLF (キャリッジリターン＋ラインフィード) へと変換されます。                                          |
+| `Document with CR`            | 3 | 改行はクラシック Mac OS のデフォルトフォーマットである CR (キャリッジリターン) へと変換されます。                                                |
+| `Document with LF`            | 4 | 改行は Unix および macOS のデフォルトフォーマットである LF (ラインフィード) へと変換されます。                                               |
 
 *breakMode* 引数を渡さなかった場合はデフォルトで、改行はネイティブモード (1) で処理されます。
 
-
+> **互換性に関する注記:** EOL (改行コード) および BOM の管理については、互換性オプションが利用可能です。 doc.4d.com の[互換性ページ](https://doc.4d.com/4dv19R/help/title/ja/page3239.html) を参照ください。
 
 #### 例題
 
