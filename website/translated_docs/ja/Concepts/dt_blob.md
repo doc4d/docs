@@ -5,7 +5,7 @@ title: BLOB
 
 BLOB (Binary Large OBjects) フィールド・変数・式とは、連続した可変長バイトであり、各バイトを個々にアドレス指定可能な 1つのまとまったオブジェクトとして取り扱うことができます。 サポートされている BLOB のサイズは空 (長さがNULL) から、最大 2,147,483,647 バイト (2GB) までです。
 
-> By default, 4D sets the maximum blob size to 2GB, but this size limit may be lower depending on your OS and how much space is available. For example, the maximum blob size on macOS is 1GB.
+> By default, 4D sets the maximum blob size to 2GB, but this size limit may be lower depending on your OS and how much space is available.
 
 BLOB は全体がメモリにロードされます。 BLOB 変数はメモリ内にだけ保持され、存在します。 BLOB フィールドは、レコードの他フィールドと同様に、ディスクからメモリにロードされます。
 
