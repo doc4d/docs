@@ -25,6 +25,10 @@ $myComponent:= $WebForm.firstName
 
 In the example above, `$myComponent` is an object variable used to handle the component with `firstName` as server reference:
 
+## WebForm Component Functions
+
+To set the behavior of your web form's components, you can use the built-in functions of the `WebForm` object.
+
 ### Summary 
 ||
 |---|
@@ -33,11 +37,8 @@ In the example above, `$myComponent` is an object variable used to handle the co
 |[<!-- INCLUDE #WebForm.component.addCSSClass().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.addCSSClass().Summary --> |
 |[<!-- INCLUDE #WebForm.component.removeCSSClass().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.removeCSSClass().Summary --> |
 
-## WebForm Component Functions
 
-To set the behavior of your web form's components, you can use the built-in functions of the `WebForm` object.
-
-## WebForm.component.show()
+### WebForm.component.show()
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -55,7 +56,7 @@ To set the behavior of your web form's components, you can use the built-in func
 
 `WebForm.firstName.show()` <!-- REF #WebForm.component.show().Summary --> displays the WebForm component with `firstName` as server reference.
 
-## .hide()
+### .hide()
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -69,7 +70,7 @@ To set the behavior of your web form's components, you can use the built-in func
 #### Description
 `WebForm.component.hide()` <!-- REF #WebForm.component.hide().Summary --> hides the WebForm component.<!-- END REF --> 
 
-## .addCSSClass()
+### .addCSSClass()
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -89,7 +90,7 @@ To set the behavior of your web form's components, you can use the built-in func
 #### Description
 `WebForm.component.addCSSClass()` <!-- REF #WebForm.component.addCSSClass().Summary --> adds the CSS class specified in `className` to the WebForm component.<!-- END REF --> 
 
-## .removeCSSClass()
+### .removeCSSClass()
 
 <details><summary>History</summary>
 |Version|Changes|
