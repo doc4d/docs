@@ -3,15 +3,27 @@ id: webFormObject
 title: WebForm
 ---
 
-The WebForm class lets you handle, from the server, the behavior of your WebForm and its components. See [Handling components from the server](#)
+The `WebForm` object lets you handle, from the server, the behavior of your WebForm and its components. See [Handling components from the server](#)
 
-In the following sections, `.component` is an object. It refers to the server reference of a component inside the webform.
+## Instantiating a `WebForm` object
 
-In the following example, `$input` is an object variable used to handle the component with `firstName` as server reference:
+To instantiate a `WebForm` object, call the `WebForm` command:
 
 ```4d
-$input:=WebForm.firstName 
+var $myWebForm : Object
+
+$myWebForm:= WebForm 
 ```
+
+## Accessing the `WebForm`'s components
+
+Each component in your WebForm has a server reference. You can use it to access the component and modify its behavior, using dot notation:
+
+```4d
+$myComponent:= $WebForm.firstName 
+```
+
+In the example above, `$myComponent` is an object variable used to handle the component with `firstName` as server reference:
 
 ### Summary 
 ||
@@ -20,6 +32,10 @@ $input:=WebForm.firstName
 |[<!-- INCLUDE #WebForm.component.hide().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.hide().Summary --> |
 |[<!-- INCLUDE #WebForm.component.addCSSClass().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.addCSSClass().Summary --> |
 |[<!-- INCLUDE #WebForm.component.removeCSSClass().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.removeCSSClass().Summary --> |
+
+## WebForm Component Functions
+
+To set the behavior of your web form's components, you can use the built-in functions of the `WebForm` object.
 
 ## WebForm.component.show()
 
@@ -34,6 +50,10 @@ $input:=WebForm.firstName
 
 #### Description
 `WebForm.component.show()` <!-- REF #WebForm.component.show().Summary --> displays the WebForm component.<!-- END REF -->
+
+#### Example
+
+`WebForm.firstName.show()` <!-- REF #WebForm.component.show().Summary --> displays the WebForm component with `firstName` as server reference.
 
 ## .hide()
 
