@@ -7,9 +7,9 @@ The object returned by the [WEB Form](https://doc.4d.com/4dv19R/help/command/en/
 
 ## Accessing a web form's components
 
-When you call the [WEB Form](https://doc.4d.com/4dv19R/help/command/en/page1735.html) command, each property in the returned object is a [web form component](#), and the property name is the server reference of the web form component.
+Each property of the object returned by the [WEB Form command](https://doc.4d.com/4dv19R/help/command/en/page1735.html) is a [web form component](#). The property name is the server reference of the component.
 
-For example, the following code sample hides the component that has `firstName` as server reference.
+For example, the following code hides the component that has `firstName` as server reference.
 
 ```4d
 $input:=WebForm.firstName 
@@ -18,7 +18,7 @@ $input.hide()
 
 ## Setting the behavior of web form components using functions
 
-To set the behavior of a web form component, call one of the following WebForm object functions:
+Each web form component object contains the following functions:
 
 | Function | Description |
 |----|----|
@@ -27,3 +27,14 @@ To set the behavior of a web form component, call one of the following WebForm o
 | addCSSClass($className) |  adds the specified CSS class to the component
 | removeCSSClass($className) | removes the specified CSS class from the component
 
+#### Example
+
+```4d 
+WebForm.firstName.hide() // hides the component that has "firstName" as server reference
+
+WebForm.firstName.show() //displays the component that has "firstName" as server reference
+
+WebForm.firstName.addCSSClass("red") // adds the "red" CSS class to the component
+
+WebForm.firstName.removeCSSClass("red") // The "red" CSS class is removed from the component
+```
