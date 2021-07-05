@@ -69,6 +69,7 @@
 	"WebServer/sessions",
 	"WebServer/preemptiveWeb",
 	"WebStudio/webStudio",
+	"WebStudio/webEventObject",
 	"WebStudio/webFormObject"],
   "REST Server": [		{
         "type": "subcategory",
