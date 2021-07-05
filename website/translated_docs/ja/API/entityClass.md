@@ -372,7 +372,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 | lockInfo      |                     | object        | ロック元についての情報                                                              |
 |               | task_id             | number        | プロセスID                                                                   |
 |               | user_name           | text          | マシン上でのセッションユーザー名                                                         |
-|               | user4d_id           | text          | 4Dデータベースディレクトリでのユーザー名                                                    |
+|               | user4d_alias        | text          | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
 |               | host_name           | text          | マシン名                                                                     |
 |               | task_name           | text          | プロセス名                                                                    |
 |               | client_version      | text          |                                                                          |
@@ -1189,7 +1189,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 | lockInfo     |                    | object        | ロック元についての情報                                                              |
 |              | task_id            | number        | プロセスID                                                                   |
 |              | user_name          | text          | マシン上でのセッションユーザー名                                                         |
-|              | user4d_id          | text          | 4Dデータベースディレクトリでのユーザー名                                                    |
+|              | user4d_alias       | text          | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
 |              | host_name          | text          | マシン名                                                                     |
 |              | task_name          | text          | プロセス名                                                                    |
 |              | client_version     | text          |                                                                          |
