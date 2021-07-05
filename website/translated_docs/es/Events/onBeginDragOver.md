@@ -14,13 +14,13 @@ El evento de formulario `On Begin Drag Over` puede ser seleccionado para todos l
 
 > A diferencia del evento de formulario [`On Drag Over`](onDragOver.md), `On Begin Drag Over` se llama dentro del contexto del **objeto fuente** de la acción de arrastrar.
 
-The `On Begin Drag Over` event is useful for preparing of the drag action. Puede utilizarse para:
+El evento `On Begin Drag Over` es útil para preparar la acción de arrastrar. Puede utilizarse para:
 
-- Add data and signatures to the pasteboard (via the `APPEND DATA TO PASTEBOARD` command).
-- Use a custom icon during the drag action (via the `SET DRAG ICON` command).
-- Accept or refuse dragging via $0 in the method of the dragged object.
-    - To indicate that drag actions are accepted, the method of the source object must return 0 (zero); you must therefore execute `$0:=0`.
-    - To indicate that drag actions are refused, the method of the source object must return -1 (minus one); you must therefore execute `$0:=-1`.
-    - If no result is returned, 4D considers that drag actions are accepted.
+- Añadir los datos y las firmas al portapapeles (vía el comando `APPEND DATA TO PASTEBOARD`).
+- Utilizar un icono personalizado durante la acción de arrastre (vía el comando `SET DRAG ICON`).
+- Aceptar o rechazar el arrastre vía $0 en el método del objeto arrastrado.
+    - Para indicar que se aceptan las acciones de arrastre, el método del objeto fuente debe devolver 0 (cero); por tanto, debe ejecutar `$0:=0`.
+    - Para indicar que se rechazan las acciones de arrastre, el método del objeto fuente debe devolver -1 (menos uno); por tanto, debe ejecutar `$0:=-1`.
+    - Si no se devuelve ningún resultado, 4D considera que las acciones de arrastre son aceptadas.
 
-4D data are put in the pasteboard before calling the event. For example, in the case of dragging without the **Automatic Drag** action, the dragged text is already in the pasteboard when the event is called.
+Los datos 4D se colocan en el portapapeles antes de llamar al evento. Por ejemplo, en el caso de arrastrar sin la acción **Arrastre automático**, el texto arrastrado ya está en portapapeles cuando se llama al evento.
