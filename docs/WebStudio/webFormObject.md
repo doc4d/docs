@@ -1,111 +1,29 @@
 ---
 id: webFormObject
-title: WebForm
+title: WEB Form Object
 ---
 
-The `WebForm` object lets you handle, from the server, the behavior of your WebForm and its components. See [Handling components from the server](#)
+The object returned by the [WEB Form](https://doc.4d.com/4dv19R/help/command/en/page1735.html) command lets you handle, on the server side, the behavior of your WebForm and its components. See [Handling components from the server](#).
 
-## Instantiating a `WebForm` object
+## Accessing a web form's components
 
-To instantiate a `WebForm` object, call the `WebForm` command:
+When you call the [WEB Form](https://doc.4d.com/4dv19R/help/command/en/page1735.html) command, each property in the returned object is a [web form component](#), and the property name is the server reference of the web form component.
 
-```4d
-var $myWebForm : Object
-
-$myWebForm:= WebForm 
-```
-
-## Accessing the `WebForm`'s components
-
-Each component in your WebForm has a server reference. You can use it to access the component and modify its behavior, using dot notation:
+For example, the following code sample hides the component that has `firstName` as server reference.
 
 ```4d
-$myComponent:= $WebForm.firstName 
+$input:=WebForm.firstName 
+$input.hide()
 ```
 
-In the example above, `$myComponent` is an object variable used to handle the component with `firstName` as server reference:
+## Setting the behavior of web form components using functions
 
-## WebForm Component Functions
+To set the behavior of a web form component, call one of the following WebForm object functions:
 
-To set the behavior of your web form's components, you can use the built-in functions of the `WebForm` object.
+| Function | Description |
+|----|----|
+| show() | displays the component |
+| hide() | hides the component |
+| addCSSClass($className) |  adds the specified CSS class to the component
+| removeCSSClass($className) | removes the specified CSS class from the component
 
-### Summary 
-||
-|---|
-|[<!-- INCLUDE #WebForm.component.show().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.show().Summary --> |
-|[<!-- INCLUDE #WebForm.component.hide().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.hide().Summary --> |
-|[<!-- INCLUDE #WebForm.component.addCSSClass().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.addCSSClass().Summary --> |
-|[<!-- INCLUDE #WebForm.component.removeCSSClass().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebForm.component.removeCSSClass().Summary --> |
-
-
-### WebForm.component.show()
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v19 R2|Added|
-</details>
-
-<!-- REF #WebForm.component.show().Syntax -->
-**WebForm.component.show()**<!-- END REF -->
-
-#### Description
-`WebForm.component.show()` <!-- REF #WebForm.component.show().Summary --> displays the WebForm component.<!-- END REF -->
-
-#### Example
-
-`WebForm.firstName.show()` <!-- REF #WebForm.component.show().Summary --> displays the WebForm component with `firstName` as server reference.
-
-### .hide()
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v19 R2|Added|
-</details>
-
-<!-- REF #WebForm.component.hide().Syntax -->
-**WebForm.component.hide()**<!-- END REF -->
-
-#### Description
-`WebForm.component.hide()` <!-- REF #WebForm.component.hide().Summary --> hides the WebForm component.<!-- END REF --> 
-
-### .addCSSClass()
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v19 R2|Added|
-</details>
-
-<!-- REF #WebForm.component.addCSSClass().Syntax -->
-**WebForm.component.addCSSClass( className )**<!-- END REF -->
-
-<!-- REF #WebForm.component.addCSSClass().Params -->
-|Parameter|Type||Description|
-|---------|--- |:---:|------|
-|className| Text|->|name of the CSS class to add to the WebForm component|
-<!-- END REF -->
-
-#### Description
-`WebForm.component.addCSSClass()` <!-- REF #WebForm.component.addCSSClass().Summary --> adds the CSS class specified in `className` to the WebForm component.<!-- END REF --> 
-
-### .removeCSSClass()
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v19 R2|Added|
-</details>
-
-<!-- REF #WebForm.component.removeCSSClass().Syntax -->
-**WebForm.component.removeCSSClass( className )**<!-- END REF -->
-
-<!-- REF #WebForm.component.removeCSSClass().Params -->
-|Parameter|Type||Description|
-|---------|--- |:---:|------|
-|className| Text|->|name of the CSS class to remove from the component|
-<!-- END REF -->
-
-#### Description
-`WebForm.component.removeCSSClass()` <!-- REF #WebForm.component.removeCSSClass().Summary -->  removes the CSS class specified in `className` from the WebForm component.<!-- END REF --> 
