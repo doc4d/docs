@@ -312,7 +312,7 @@
 <h2><a class="anchor" aria-hidden="true" id="variable-calculation"></a><a href="#variable-calculation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Variable Calculation</h2>
 <p>This property sets the type of calculation to be done in a <a href="/docs/Rx/es/FormObjects/listboxOverview.html#list-box-footers">column footer</a> area.</p>
 <blockquote>
-<p>The calculation for footers can also be set using the <code>LISTBOX SET FOOTER CALCULATION</code> 4D command.</p>
+<p>The calculation for footers can also be set using the <a href="https://doc.4d.com/4dv19/help/command/en/page1140.html"><code>LISTBOX SET FOOTER CALCULATION</code></a> 4D command.</p>
 </blockquote>
 <p>There are several types of calculations available. The following table shows which calculations can be used according to the type of data found in each column and indicates the type automatically affected by 4D to the footer variable (if it is not typed by the code):</p>
 <table>
@@ -335,7 +335,8 @@
 <p>When an automatic calculation is set, it is applied to all the values found in the list box column. Note that the calculation does not take the shown/hidden state of list box rows into account. If you want to restrict a calculation to only visible rows, you must use a custom calculation.</p>
 <p>When <strong>Custom</strong> (&quot;none&quot; in JSON) is set, no automatic calculations are performed by 4D and you must assign the value of the variable in this area by programming.</p>
 <blockquote>
-<p>Automatic calculations are not supported with: *  footers of columns based on formulas, *  footers of <a href="/docs/Rx/es/FormObjects/listboxOverview.html#collection-or-entity-selection-list-boxes">Collection and Entity selection</a> list boxes. You need to use custom calculations.</p>
+<p>You can only use <a href="/docs/Rx/es/Concepts/variables.html">variables</a> as custom calculations. Other <a href="/docs/Rx/es/Concepts/quick-tour.html#expressions">expressions</a> are not supported.
+Automatic calculations are not supported with: *  footers of columns based on formulas, *  footers of <a href="/docs/Rx/es/FormObjects/listboxOverview.html#collection-or-entity-selection-list-boxes">Collection and Entity selection</a> list boxes. You need to use custom calculations.</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="json-grammar-11"></a><a href="#json-grammar-11" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON Grammar</h4>
 <table>
