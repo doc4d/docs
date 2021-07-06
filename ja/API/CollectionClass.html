@@ -1446,17 +1446,10 @@ End if</span>
 </table>
 <p></details></p>
 <p><strong>.orderBy</strong>( ) : Collection<br><strong>.orderBy</strong>( <em>pathStrings</em> : Text ) : Collection<br><strong>.orderBy</strong>( <em>pathObjects</em> : Collection ) : Collection<br><strong>.orderBy</strong>( <em>ascOrDesc</em> : Integer ) : Collection</p>
-<table>
-<thead>
-<tr><th>参照</th><th>タイプ</th><th style="text-align:center"></th><th>説明</th></tr>
-</thead>
-<tbody>
-<tr><td>pathStrings</td><td>テキスト</td><td style="text-align:center">-&gt;</td><td>コレクションの並べ替え基準とするプロパティパス</td></tr>
-<tr><td>pathObjects</td><td>コレクション</td><td style="text-align:center">-&gt;</td><td>条件オブジェクトのコレクション</td></tr>
-<tr><td>ascOrDesc</td><td>整数</td><td style="text-align:center">-&gt;</td><td><code>ck ascending</code> または <code>ck descending</code> (スカラー値)</td></tr>
-<tr><td>戻り値</td><td>コレクション</td><td style="text-align:center">&lt;-</td><td>並べ替えられたコレクションのコピー (シャロウ・コピー)</td></tr>
-</tbody>
-</table>
+<p>| 参照 | タイプ |  | 説明 |
+| -- | --- |::| -- |
+|    |     |  |    |</p>
+<p>|pathStrings|テキスト|-&gt;|コレクションの並べ替え基準とするプロパティパス| |pathObjects|コレクション|-&gt;|条件オブジェクトのコレクション| |ascOrDesc|整数|-&gt;|<code>ck ascending</code> または <code>ck descending</code> (スカラー値)| |戻り値|コレクション |&lt;-|並べ替えられたコレクションのコピー (シャロウ・コピー)|</p>
 <h4><a class="anchor" aria-hidden="true" id="説明-26"></a><a href="#説明-26" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>説明</h4>
 <p><code>.orderBy()</code> 関数は、 コレクションの要素を指定順に並べ替えた新しいコレクションを返します。</p>
 <p>この関数は <em>シャロウ・コピー</em> を返します。つまり、元のコレクションにオブジェクト要素やコレクション要素が含まれていた場合、それらの参照は戻り値のコレクションで共有されます。 また、元のコレクションが共有コレクションであった場合、返されるコレクションもまた共有コレクションになります。</p>
@@ -1469,8 +1462,10 @@ End if</span>
 <li><p><em>pathStrings</em> : Text (フォーミュラ)。 <strong>シンタックス</strong>: <code>propertyPath1 {desc または asc}, propertyPath2 {desc または asc},...</code> (デフォルトの並び順: asc)。 <em>pathStrings</em> はカンマで区切られた、1〜n のプロパティパスと並び順 (任意) で構成されたフォーミュラを格納します。 プロパティを渡す順番が、コレクション要素の並べ替えの優先順位を決定します。 デフォルトでは、プロパティは昇順に並べ替えられます。 並び順を設定するには、プロパティパスの後に半角スペースで区切ったあとに、昇順を指定するには &quot;asc&quot;、降順を指定するには &quot;desc&quot; を渡します。</p></li>
 <li><p><em>pathObjects</em> : Collection。 <em>pathObjects</em> コレクションには必要な数だけオブジェクトを追加することができます。 デフォルトでは、プロパティは昇順に並べ替えられます (&quot;descending&quot; は false)。 コレクションの各要素は、以下の構造を持つオブジェクトを格納します:</p></li>
 </ul>
-<pre><code class="hljs css language-4d">    {<span class="hljs-string">"*propertyPath*"</span>: string,
-    <span class="hljs-string">"*descending*"</span>: boolean}  
+<pre><code class="hljs css language-4d">{
+    <span class="hljs-string">"propertyPath"</span>: string,
+    <span class="hljs-string">"descending"</span>: boolean
+}
 </code></pre>
 <ul>
 <li><p><em>ascOrDesc</em> : Integer。 <strong>Objects and collections</strong> テーマから、以下の定数のいずれか一つを渡します:</p>
