@@ -312,7 +312,7 @@
 <h2><a class="anchor" aria-hidden="true" id="変数の計算"></a><a href="#変数の計算" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>変数の計算</h2>
 <p>このプロパティは、<a href="/docs/alpha/ja/FormObjects/listboxOverview.html#リストボックスフッター">リストボックスフッター</a> エリアに適用される計算タイプを設定します。</p>
 <blockquote>
-<p>リストボックスのフッターに割り当てる自動計算は <a href="https://doc.4d.com/4Dv18/4D/18/LISTBOX-SET-FOOTER-CALCULATION.301-4505215.ja.html"><code>LISTBOX SET FOOTER CALCULATION</code></a> 4D コマンドを使用しても設定できます。</p>
+<p>The calculation for footers can also be set using the <a href="https://doc.4d.com/4dv19/help/command/en/page1140.html"><code>LISTBOX SET FOOTER CALCULATION</code></a> 4D command.</p>
 </blockquote>
 <p>様々な自動計算が利用可能です。 以下の表は、列のデータ型に応じて使用することのできる計算と、(コードで明示的に宣言されていないとき) 4D によってフッター変数に自動で割り当てられる型を示しています:</p>
 <table>
@@ -332,6 +332,9 @@
 </tbody>
 </table>
 <p>(*) 配列型のリストボックスのみ</p>
+<blockquote>
+<p>Only declared or dynamic <a href="/docs/alpha/ja/Concepts/variables.html">variables</a> can be used to display footer calculations. Other kinds of <a href="/docs/alpha/ja/Concepts/quick-tour.html#expressions">expressions</a> such as <code>Form.value</code> are not supported.</p>
+</blockquote>
 <p>自動計算の際、リストボックス行の表示/非表示状態は考慮されません。 表示行だけを計算対象にしたい場合、カスタムを選択してプログラムコードで計算しなくてはなりません。</p>
 <p><em>Null</em> 値は計算において無視されます。</p>
 <p>異なる型の値がカラムに含まれる場合 (コレクションに基づいている場合など):</p>
