@@ -198,15 +198,15 @@ This folder contains **user settings files** used for application administration
 
 Esta carpeta contiene archivos que memorizan las configuraciones del usuario, por ejemplo, el punto de ruptura o las posiciones de las ventanas. You can just ignore this folder. It contains for example:
 
-| Contents                   | Descripción                                            | Format |
-| -------------------------- | ------------------------------------------------------ | ------ |
-| methodPreferences.json     | Current user method editor preferences                 | JSON   |
-| methodWindowPositions.json | Current user window positions for methods              | JSON   |
-| formWindowPositions.json   | Current user window positions for forms                | JSON   |
-| workspace.json             | List of opened windows; on macOS, order of tab windows | JSON   |
-| debuggerCatches.json       | Caught calls to commands                               | JSON   |
-| recentTables.json          | Ordered list of tables                                 | JSON   |
-| preferences.4DPreferences  | Current data path and main window positions            | XML    |
+| Contents                   | Descripción                                               | Format |
+| -------------------------- | --------------------------------------------------------- | ------ |
+| methodPreferences.json     | Current user method editor preferences                    | JSON   |
+| methodWindowPositions.json | Current user window positions for methods                 | JSON   |
+| formWindowPositions.json   | Current user window positions for forms                   | JSON   |
+| workspace.json             | List of opened windows; on macOS, order of tab windows    | JSON   |
+| debuggerCatches.json       | Caught calls to commands                                  | JSON   |
+| recentTables.json          | Ordered list of tables                                    | JSON   |
+| preferences.4DPreferences  | Ruta de datos actual y posiciones de la ventana principal | XML    |
 
 
 ## Components folder
