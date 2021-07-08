@@ -43,7 +43,7 @@ You can pass a scalar blob or a `4D.Blob` to any 4D command that takes a blob as
 var $myBlob: 4D.Blob
 
 $myBlob:= 4D.Blob.new()
-$myText:= BLOB to text ( $myBlob ; UTF8 )
+$myText:= BLOB to text ( $myBlob ; UTF8 text without length )
 ```
 
 Some 4D commands alter the original blob, and thus do not support the `4D.Blob` type:
