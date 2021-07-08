@@ -290,6 +290,7 @@ The `.4darchive` is copied at the following location:
 #### Selecting client archive for the concurrent platform
 
 
+
 You can check the **Allow automatic update...** option for client applications running on the concurrent platform. This option is only enabled if:
 
 - the **Build server application** option is checked,
@@ -443,6 +444,7 @@ La page liste les éléments chargés par l'application 4D courante :
 
 *    La colonne **Actif** indique les éléments qui seront intégrés dans l’application générée. Par défaut, tous les éléments sont inclus. Pour exclure un plug-in ou un composant, désélectionnez la case qui lui est associée.
 
+
 *   Colonne **Plugins et composants** - Affiche le nom du plug-in/composant.
 
 *   Colonne **ID** - Affiche le numéro d'identification du plug-in/composant (le cas échéant).
@@ -515,12 +517,13 @@ Pour obtenir un certificat de développeur auprès d’Apple, Inc., vous pouvez 
 > 4D recommande de souscrire au programme Apple Developer Program pour accéder aux "Developer Certificates" nécessaires à la notarisation des applications (voir ci-dessous).
 
 
-
 #### A propos de Gatekeeper
 
 Gatekeeper est une fonction de sécurité d’OS X permettant de contrôler l’exécution des applications téléchargées depuis Internet. Si une application téléchargée ne provient pas de l’Apple Store ou n’est pas signée, elle est rejetée et ne peut être lancée.
 
-L'option **Signer l'application** du Générateur d’application de 4D permet de générer des applications compatibles avec cette option par défaut.
+> On Apple Silicon machines, 4D [components](#components) need to be actually signed. An unsigned component will generate an error at application startup ("lib4d-arm64.dylib can't be opened...").
+
+The **Sign application** option of the 4D application builder lets you generate applications and components that are compatible with this option by default.
 
 
 #### À propos de la notarisation
@@ -577,6 +580,7 @@ La séquence de lancement d'une application fusionnée est la suivante :
 Toute application autonome ou serveur générée avec 4D stocke le chemin d'accès du dernier fichier de données ouvert dans le dossier de préférences de l'utilisateur de l'application.
 
 L'emplacement du dossier de préférences de l'utilisateur de l'application correspond au chemin retourné par l'instruction suivante :
+
 
 ```4d
 prefsUtilisateur:=Get 4D folder(Dossier 4D actif)
