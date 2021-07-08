@@ -334,12 +334,12 @@ Foreground color;Dark shadow color)
 <p>Style settings made with this property are ignored if other style settings are already defined through expressions (<em>i.e.</em>, <a href="#style-expression">Style Expression</a>, <a href="#font-color-expression">Font Color Expression</a>, <a href="#background-color-expression">Background Color Expression</a>).</p>
 </blockquote>
 <p><strong>Ejemplo</strong></p>
-<p>In the <em>Color</em> project method, write the following code:</p>
-<pre><code class="hljs css language-4d"><span class="hljs-comment">//Color method</span>
-<span class="hljs-comment">//Sets font color for certain rows and the background color for a specific column:</span>
+<p>En el método proyecto <em>Color</em>, escribe el siguiente código:</p>
+<pre><code class="hljs css language-4d"><span class="hljs-comment">//Método Color</span>
+<span class="hljs-comment">//Define el color de la fuente para ciertas líneas y el color de fondo para una columna específica:</span>
 <span class="hljs-function">C_OBJECT</span>(<span class="hljs-variable">$0</span>)
 Form.meta:=New object<span class="hljs-keyword">
-If</span>(<span class="hljs-literal">This</span>.ID&gt;<span class="hljs-number">5</span>) <span class="hljs-comment">//ID is an attribute of collection objects/entities</span>
+If</span>(<span class="hljs-literal">This</span>.ID&gt;<span class="hljs-number">5</span>) <span class="hljs-comment">//ID es un atributo de objetos/entidades de una colección</span>
   Form.meta.stroke:=<span class="hljs-string">"purple"</span>
   Form.meta.cell:=<span class="hljs-function">New object</span>(<span class="hljs-string">"Column2"</span>;<span class="hljs-function">New object</span>(<span class="hljs-string">"fill"</span>;<span class="hljs-string">"black"</span>))<span class="hljs-keyword">
 Else</span>
@@ -347,23 +347,23 @@ Else</span>
 End if</span>
 <span class="hljs-variable">$0</span>:=Form.meta
 </code></pre>
-<p><strong>Best Practice:</strong> For optimization reasons, it would be recommended in this case to create the <code>meta.cell</code> object once in the form method:</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//form method</span><span class="hljs-keyword">
+<p><strong>Buenas prácticas:</strong> por razones de optimización, se recomendaría en este caso crear el objeto <code>meta.cell</code> una vez en el método formulario:</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//método formulario</span><span class="hljs-keyword">
  Case of</span>
     :(Form event code=On Load)
        Form.colStyle:=<span class="hljs-function">New object</span>(<span class="hljs-string">"Column2"</span>;<span class="hljs-function">New object</span>(<span class="hljs-string">"fill"</span>;<span class="hljs-string">"black"</span>))<span class="hljs-keyword">
  End case</span>
 </code></pre>
-<p>Then, the <em>Color</em> method would contain:</p>
-<pre><code class="hljs css language-4d">  <span class="hljs-comment">//Color method</span>
+<p>Entonces, el método <em>Color</em> contendría:</p>
+<pre><code class="hljs css language-4d">  <span class="hljs-comment">//método Color</span>
  ...<span class="hljs-keyword">
  If</span>(<span class="hljs-literal">This</span>.ID&gt;<span class="hljs-number">5</span>)
     Form.meta.stroke:=<span class="hljs-string">"purple"</span>
-    Form.meta.cell:=Form.colStyle <span class="hljs-comment">//reuse the same object for better performance</span>
+    Form.meta.cell:=Form.colStyle <span class="hljs-comment">//reutilizar el mismo objeto para mejorar el rendimiento</span>
  ...
 </code></pre>
 <blockquote>
-<p>See also the <a href="https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html">This</a> command.</p>
+<p>Ver también el comando <a href="https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html">This</a>.</p>
 </blockquote>
 <h4><a class="anchor" aria-hidden="true" id="json-grammar-12"></a><a href="#json-grammar-12" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JSON Grammar</h4>
 <table>
@@ -378,7 +378,7 @@ End if</span>
 <p><a href="/docs/alpha/es/FormObjects/listboxOverview.html">List Box</a></p>
 <hr>
 <h2><a class="anchor" aria-hidden="true" id="multi-style"></a><a href="#multi-style" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multi-style</h2>
-<p>This property enables the possibility of using specific styles in the selected area. When this option is checked, 4D interprets any &lt;SPAN&gt; HTML tags found in the area. </p></p>
+<p>Esta propiedad permite la posibilidad de utilizar estilos específicos en el área seleccionada. Cuando esta opción está marcada, 4D interpreta todas las etiquetas &lt;SPAN&gt; HTML presentes en el área. </p></p>
 <p spaces-before="0">
   By default, this option is not enabled.
 </p>
@@ -424,7 +424,7 @@ Objects Supported
   Orientation
 </h2>
 <p spaces-before="0">
-  Modifies the orientation (rotation) of a text area. Text areas can be rotated by increments of 90°. Each orientation value is applied while keeping the same lower left starting point for the object:
+  Modifica la orientación (rotación) de un área de texto. Las áreas de texto pueden girarse en incrementos de 90°. Cada valor de orientación se aplica manteniendo el mismo punto de partida inferior izquierdo para el objeto:
 </p>
 <table spaces-before="0">
   <tr>
@@ -474,7 +474,7 @@ Objects Supported
   </tr>
 </table>
 <p spaces-before="0">
-  In addition to <a href="text.md">static text areas</a>, <a href="input_overview.md">input</a> text objects can be rotated when they are non-<a href="properties_Entry.md#enterable">enterable</a>. When a rotation property is applied to an input object, the enterable property is removed (if any). This object is then excluded from the entry order.
+  Además de <a href="text.md">áreas de texto estáticas</a>, los objetos de texto de las <a href="input_overview.md">áreas de entrada</a> pueden girar cuando no son<a href="properties_Entry.md#enterable">editables</a>. Cuando se aplica una propiedad de rotación a un objeto de entrada, se elimina la propiedad editable (si la hay). Este objeto se excluye entonces del orden de entrada.
 </p>
 <p><h4 spaces-before="0">
 JSON Grammar
@@ -511,7 +511,7 @@ JSON Grammar
 Objects Supported
 </h4></p>
 <p spaces-before="0">
-  <a href="input_overview.md">Input</a> (non-enterable) - <a href="text.md">Text Area</a>
+  <a href="input_overview.md">Entrada</a> (no editable) - <a href="text.md">Área de texto</a>
 </p>
 <hr />
 <h2 spaces-before="0">
@@ -521,10 +521,10 @@ Objects Supported
   <code>Array type list boxes</code>
 </p>
 <p spaces-before="0">
-  Allows setting a custom font color to each row of the list box or cell of the column.
+  Permite definir un color de fuente personalizado para cada línea del list box o celda de la columna.
 </p>
 <p spaces-before="0">
-  The name of a Longint array must be used. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. You can use the constants of the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html">SET RGB COLORS</a> theme. If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
+  Se debe utilizar el nombre de un array Entero largo. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. You can use the constants of the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/SET-RGB-COLORS.302-4310385.en.html">SET RGB COLORS</a> theme. If you want the cell to inherit the background color defined at the higher level, pass the value -255 to the corresponding array element.
 </p>
 <p><h4 spaces-before="0">
 JSON Grammar
@@ -571,10 +571,10 @@ Objects Supported
   <code>Array type list boxes</code>
 </p>
 <p spaces-before="0">
-  Allows setting a custom font style to each row of the list box or each cell of the column.
+  Permite definir un estilo de fuente personalizado para cada línea del list box o cada celda de la columna.
 </p>
 <p spaces-before="0">
-  The name of a Longint array must be used. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. To fill the array (using a method), use the constants of the <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/Font-Styles.302-4310343.en.html">Font Styles</a> theme. You can add constants together to combine styles. If you want the cell to inherit the style defined at the higher level, pass the value -255 to the corresponding array element.
+  Se debe utilizar el nombre de un array Entero largo. Each element of this array corresponds to a row of the list box (if applied to the list box) or to a cell of the column (if applied to a column), so the array must be the same size as the array associated with the column. Para llenar el array (utilizando un método), utilice las constantes del tema <a href="https://doc.4d.com/4Dv17R6/4D/17-R6/Font-Styles.302-4310343.en.html">Estilos de fuente</a>. Se pueden añadir constantes para combinar estilos. Si desea que la celda herede el estilo definido en el nivel superior, pase el valor -255 al elemento del array correspondiente.
 </p>
 <p><h4 spaces-before="0">
 JSON Grammar
@@ -618,23 +618,23 @@ Objects Supported
   Store with default style tags
 </h2>
 <p spaces-before="0">
-  This property is only available for a <a href="#multi-style">Multi-style</a> input area. When this property is enabled, the area will store the style tags with the text, even if no modification has been made. In this case, the tags correspond to the default style. When this property is disabled, only modified style tags are stored.
+  Esta propiedad sólo está disponible para un área de entrada <a href="#multi-estilo">Multi-estilo</a>. Cuando esta propiedad está activada, el área almacenará las etiquetas de estilo con el texto, incluso si no se ha realizado ninguna modificación. En este caso, las etiquetas corresponden al estilo por defecto. Cuando esta propiedad está desactivada, sólo se almacenan las etiquetas de estilo modificadas.
 </p>
 <p spaces-before="0">
-  For example, here is a text that includes a style modification:
+  Por ejemplo, este es un texto que incluye una modificación de estilo:
 </p>
 <p spaces-before="0">
   <img src="assets/en/FormObjects/tagStyle1.png" alt="" />
 </p>
 <p spaces-before="0">
-  When the property is disabled, the area only stores the modification. The stored contents are therefore:
+  Cuando la propiedad está desactivada, el área sólo almacena la modificación. Por lo tanto, los contenidos almacenados son:
 </p>
-<pre><code class="hljs">What a &lt;SPAN STYLE="font-size:13.5pt"&gt;beautiful&lt;/SPAN&gt; day!
+<pre><code class="hljs">¡Qué &lt;SPAN STYLE="font-size:13.5pt"&gt;hermoso&lt;/SPAN&gt; día!
 </code></pre>
 <p spaces-before="0">
-  When the property is enabled, the area stores all the formatting information. The first generic tag describes the default style then each variation is the subject of a pair of nested tags. The contents stored in the area are therefore:
+  Cuando la propiedad está activa, el área almacena toda la información de formato. La primera etiqueta genérica describe el estilo por defecto y luego cada variación es objeto de un par de etiquetas anidadas. Por lo tanto, los contenidos almacenados en el área son:
 </p>
-<pre><code class="hljs">&lt;SPAN STYLE="font-family:'Arial';font-size:9pt;text-align:left;font-weight:normal;font-style:normal;text-decoration:none;color:#000000;background-color:#FFFFFF"&gt;What a &lt;SPAN STYLE="font-size:13.5pt"&gt;beautiful&lt;/SPAN&gt; day!&lt;/SPAN&gt;
+<pre><code class="hljs">&lt;SPAN STYLE="font-family:'Arial';font-size:9pt;text-align:left;font-weight:normal;font-style:normal;text-decoration:none;color:#000000;background-color:#FFFFFF"&gt;¡Qué &lt;SPAN STYLE="font-size:13.5pt"&gt;hermoso&lt;/SPAN&gt; día!&lt;/SPAN&gt;
 </code></pre>
 <p><h4 spaces-before="0">
 JSON Grammar
