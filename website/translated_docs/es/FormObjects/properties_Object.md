@@ -344,7 +344,7 @@ When an automatic calculation is set, it is applied to all the values found in t
 When **Custom** ("none" in JSON) is set, no automatic calculations are performed by 4D and you must assign the value of the variable in this area by programming.
 
 > You can only use [variables](Concepts/variables.md) as custom calculations. Other [expressions](Concepts/quick-tour.md#expressions) are not supported.
-> Automatic calculations are not supported with: *  footers of columns based on formulas, *  footers of [Collection and Entity selection](listbox_overview.md#collection-or-entity-selection-list-boxes) list boxes. You need to use custom calculations.
+> Los cálculos automáticos no soportan: * pies de página de columnas basadas en fórmulas, *  los pies de página de los list boxes [Colección y selección de entidades](listbox_overview.md#collection-or-entity-selection-list-boxes). Es necesario utilizar cálculos personalizados.
 
 #### JSON Grammar
 
