@@ -210,7 +210,7 @@ End if
 <pre><code class="hljs css language-html">    <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>    
 
         <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
-        
+
           <span class="hljs-comment">&lt;!--#4DEACH $name in getNames--&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-comment">&lt;!--#4DTEXT $name--&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
@@ -510,7 +510,7 @@ No name has been found.
 <p>If the tag is called in the context of a Web process, when the page is loaded, 4D calls the <code>On Web Authentication</code> database method (if it exists). If it returns True, 4D executes the method.</p>
 </blockquote>
 <p>The method must return text in <code>$0</code>. If the string starts with the code character 1, it is considered as HTML (the same principle is true for the <code>4DHTML</code> tag).</p>
-<p>For example, let’s say that you insert the following comment <code>“Today is &lt;!--#4DSCRIPT/MYMETH/MYPARAM--&gt;”</code> into a template Web page. When loading the page, 4D calls the <code>On Web Authentication</code> database method, then calls the <code>MYMETH</code> method and passes the string “/MYPARAM” as the parameter <code>$1</code>. The method returns text in $0 (for example &quot;12/31/21&quot;); the expression &quot;<code>Today is &lt;!--#4DSCRIPT/MYMETH/MYPARAM––&gt;</code>&quot; therefore becomes &quot;Today is 12/31/21&quot;.</p>
+<p>For example, let’s say that you insert the following comment <code>“Today is &lt;!--#4DSCRIPT/MYMETH/MYPARAM--&gt;”</code> into a template Web page. When loading the page, 4D calls the <code>On Web Authentication</code> database method, then calls the <code>MYMETH</code> method and passes the string “/MYPARAM” as the parameter <code>$1</code>. The method returns text in $0 (for example &quot;12/31/21&quot;); the expression &quot;<code>Today is&lt;!--#4DSCRIPT/MYMETH/MYPARAM––&gt;</code>&quot; therefore becomes &quot;Today is 12/31/21&quot;.</p>
 <p>The <code>MYMETH</code> method is as follows:</p>
 <pre><code class="hljs css language-4d">  <span class="hljs-comment">//MYMETH</span>
 <span class="hljs-function"> C_TEXT</span>(<span class="hljs-variable">$0</span>;<span class="hljs-variable">$1</span>) <span class="hljs-comment">//These parameters must always be declared</span>
