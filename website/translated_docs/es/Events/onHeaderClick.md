@@ -3,16 +3,16 @@ id: onHeaderClick
 title: On Header Click
 ---
 
-| Code | Puede ser llamado por                                                                                                                                                       | Definición                        |
-| ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| 42   | [4D View Pro Area](FormObjects/viewProArea_overview.md) - [List Box](FormObjects/listbox_overview.md) - [List Box Column](FormObjects/listbox_overview.md#list-box-columns) | A click occurs in a column header |
+| Code | Puede ser llamado por                                                                                                                                                            | Definición                                     |
+| ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 42   | [Área 4D View Pro](FormObjects/viewProArea_overview.md) - [List Box](FormObjects/listbox_overview.md) - [Columna de List Box ](FormObjects/listbox_overview.md#list-box-columns) | Se produce un clic en el encabezado de columna |
 
 
 ## Descripción
 
 ### List Box
 
-This event is generated when a click occurs on the header of a column in the list box. In this case, the `Self` command lets you find out the header of the column that was clicked.
+Este evento se genera cuando se hace clic en el encabezado de una columna de list box. En este caso, el comando `Self` permite identificar el encabezado de la columna sobre la que se ha hecho clic.
 
 If the [Sortable](FormObjects/properties_Action.md#sortable) property was selected for the list box, you can decide whether or not to authorize a standard sort of the column by passing the value 0 or -1 in the `$0` variable:
 
