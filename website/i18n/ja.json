@@ -24,10 +24,10 @@
         "title": "Web 管理"
       },
       "API/ClassClass": {
-        "title": "クラス"
+        "title": "Class"
       },
       "API/CollectionClass": {
-        "title": "コレクション"
+        "title": "Collection"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -36,7 +36,7 @@
         "title": "DataClassAttribute"
       },
       "API/DataClassClass": {
-        "title": "データクラス"
+        "title": "DataClass"
       },
       "API/DataStoreClass": {
         "title": "DataStore"
@@ -51,7 +51,7 @@
         "title": "Email"
       },
       "API/EntityClass": {
-        "title": "エンティティ"
+        "title": "Entity"
       },
       "API/EntitySelectionClass": {
         "title": "EntitySelection"
@@ -78,7 +78,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "セッション"
+        "title": "Session"
       },
       "API/SignalClass": {
         "title": "Signal"
