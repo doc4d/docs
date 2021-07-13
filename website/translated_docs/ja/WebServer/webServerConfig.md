@@ -30,22 +30,22 @@ Webページキャッシュの有効化と設定をおこないます。
 4D Webサーバーにはキャッシュがあり、スタティックページ、GIF、JPEG (<512 kb)、そしてスタイルシート (.css ファイル) などがリクエストされると、メモリにロードされます。 キャッシュの利用は、スタティックページの送信時に Webサーバーのパフォーマンスを大幅に向上します。 キャッシュはすべての Webプロセスで共有されます。
 
 キャッシュのサイズは、**ページキャッシュサイズ** エリアで変更できます。 設定する値は、スタティックページのサイズや数、およびホストマシンで利用可能なリソースによります。
-> While using your web database, you can check the performance of the cache by using the `WEB GET STATISTICS` command. If, for example, you notice that the cache’s rate of use is close to 100%, you may want to consider increasing the size that has been allocated to it. The [/4DSTATS] and [/4DHTMLSTATS] URLs allow you to also obtain information about the cache’s state.
+> Webデータベースを利用する間、`WEB GET STATISTICS` コマンドを使用してキャッシュのパフォーマンスを検証できます。 たとえば、キャッシュ利用率が 100% に近い場合、キャッシュに割り当てたメモリ量を増やすことを考慮します。 [/4DSTATS] と [/4DHTMLSTATS] の URL も、キャッシュの状態を知るのに使用できます。
 
 
-## Certificate folder
+## 証明書フォルダー
 
-| 設定できる場所          | 名                   | コメント                                                                                                                                   |
-| ---------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| webServer オブジェクト | `certificateFolder` | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function. |
+| 設定できる場所          | 名                   | コメント                                                                                              |
+| ---------------- | ------------------- | ------------------------------------------------------------------------------------------------- |
+| webServer オブジェクト | `certificateFolder` | テキストプロパティ (`start()` 関数の *settings* パラメーターと使用する場合は、[`4D.Folder`](API/FolderClass.md) オブジェクトも使用可能) |
 
-Folder where the TLS certificate files for the web server are located.
+Webサーバー用の TLS証明書ファイルが置かれているフォルダーです。
 
-By default with 4D or 4D Server, these files must be placed next to the [project folder](Project/architecture.md#project-folder).
+4D または 4D Server のデフォルトでは、これらのファイルは[Project フォルダー](Project/architecture.md#project-フォルダー) の隣に配置する必要があります。
 
-With 4D in remote mode, these files must be located in the local resources folder of the database on the remote machine (see `4D Client Database Folder` paragraph of the `Get 4D folder` command). You must copy these files manually on the remote machine.
+4D をリモートモードで使用する場合、これらのファイルは、リモートマシン上のデータベースのローカルリソースフォルダーに配置されている必要があります (`Get 4D folder` コマンドの `4D Client Database Folder` の項を参照ください)。 これらのファイルをリモートマシンに手動でコピーする必要があります。
 
-> TLS certificate files are *key.pem* (document containing the private encryption key) and *cert.pem* (document containing the certificate).
+> TLS 証明書ファイルは、*key.pem* (秘密の暗号鍵を含むドキュメント) と *cert.pem* (証明書を含むドキュメント) です。
 
 
 ## Character Set
