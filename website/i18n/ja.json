@@ -165,7 +165,7 @@
         "title": "ポインター"
       },
       "Concepts/string": {
-        "title": "String"
+        "title": "文字列"
       },
       "Concepts/time": {
         "title": "時間"
@@ -848,7 +848,7 @@
         "title": "データベース管理"
       },
       "WebServer/webServerConfig": {
-        "title": "バックアップ設定"
+        "title": "設定"
       },
       "WebServer/webServerObject": {
         "title": "Webサーバーオブジェクト"
