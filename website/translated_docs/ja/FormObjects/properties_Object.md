@@ -348,7 +348,7 @@ You can use an [expression](Concepts/quick-tour.md#expressions) as data source f
 
 (*) 配列型のリストボックスのみ
 
-> Only declared or dynamic [variables](Concepts/variables.md) can be used to display footer calculations. Other kinds of [expressions](Concepts/quick-tour.md#expressions) such as `Form.value` are not supported.
+> フッター計算には、宣言された、あるいは動的な [変数](Concepts/variables.md) のみを使用できます。 その他の [式](Concepts/quick-tour.md#式) (例: `Form.value`) はサポートされていません。
 
 自動計算の際、リストボックス行の表示/非表示状態は考慮されません。 表示行だけを計算対象にしたい場合、カスタムを選択してプログラムコードで計算しなくてはなりません。
 
