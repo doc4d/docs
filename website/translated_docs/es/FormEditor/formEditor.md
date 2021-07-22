@@ -67,9 +67,9 @@ The toolbar contains the following elements:
 | ![](assets/en/FormEditor/displyAndPage.png)   | [Visualización y gestión de páginas](forms.html#form-pages) | Esta área permite pasar de una página de formulario a otra y añadir páginas. Para navegar entre las páginas del formulario, haga clic en los botones de flecha o en el área central y elija la página que desea visualizar en el menú que aparece. Si pulsa el botón flecha derecha mientras se muestra la última página del formulario, 4D le permite añadir una página. |
 | ![](assets/en/FormEditor/cssPreviewicon.png)  | [CSS Preview](#css-preview)                                 | Este botón se utiliza para seleccionar el modo CSS a utilizar.                                                                                                                                                                                                                                                                                                            |
 | ![](assets/en/FormEditor/views.png)           | [Gestión de vistas](#views)                                 | Este botón muestra u oculta la paleta de vistas. Esta función se detalla en la sección Utilizar las vistas de objeto.                                                                                                                                                                                                                                                     |
-| ![](assets/en/FormEditor/shields2.png)        | [Visualización de escudos](#shields)                        | Cada clic en este botón provoca la visualización sucesiva de todos los tipos de escudos de formulario. The button is also linked to a menu that allows directly selecting the type of shield to display.                                                                                                                                                                  |
-| ![](assets/en/FormEditor/library.png)         | [Preconfigured object library](objectLibrary.html)          | This button displays the preconfigured object library that provides numerous objects with certain properties that have been predefined.                                                                                                                                                                                                                                   |
-| ![](assets/en/FormEditor/listBoxBuilder1.png) | [List Box Builder](#list-box-builder)                       | This button creates new entity selection list boxes.                                                                                                                                                                                                                                                                                                                      |
+| ![](assets/en/FormEditor/shields2.png)        | [Visualización de escudos](#shields)                        | Cada clic en este botón provoca la visualización sucesiva de todos los tipos de escudos de formulario. El botón también está vinculado a un menú que permite seleccionar directamente el tipo de escudo a mostrar.                                                                                                                                                        |
+| ![](assets/en/FormEditor/library.png)         | [Librería de objetos preconfigurada](objectLibrary.html)    | Este botón muestra la librería de objetos preconfigurada que ofrece numerosos objetos con ciertas propiedades que han sido predefinidas.                                                                                                                                                                                                                                  |
+| ![](assets/en/FormEditor/listBoxBuilder1.png) | [Creación de list box](#list-box-builder)                   | Este botón crea nuevos list box de tipo selección de entidades.                                                                                                                                                                                                                                                                                                           |
 
 ### Object bar
 
@@ -113,69 +113,69 @@ You can navigate in the Property List using the following shortcuts:
 *   **Arrow keys** ← →: Used to expand/collapse themes or enter edit mode.
 *   **PgUp** and **PgDn**: Used to scroll the Property List contents.
 *   **Home** and **End**: Used to scroll the Property List so that the first or last cell is displayed.
-*   **Ctrl+click** (Windows) or **Command+click** (Mac OS) on an event: Used to select/deselect every event in the list, according to the initial state of the event on which you clicked.
-*   **Ctrl+click** (Windows) or **Command+click** (Mac OS) on a theme label: Used to Collapse/Expand every theme in the list.
+*   **Ctrl+clic** (Windows) o **Comando+clic** (Mac OS) en un evento: selecciona/deselecciona todos los eventos de la lista, en función del estado inicial del evento sobre el que se ha hecho clic.
+*   **Ctrl+clic** (Windows) o **Comando+clic** (Mac OS) en la etiqueta de tema: contrae/despliega todos los temas de la lista.
 
 
 
 ## Manipulating Form Objects
 
-### Adding objects
+### Añadir objetos
 
-You can add objects to forms in several ways:
+Puede añadir objetos en los formularios de varias maneras:
 
-*   By drawing the object directly in the form after selecting its type in the object bar (see [Using the object bar](#using-the-object-bar))
-*   By dragging and dropping the object from the object bar
-*   By drag-and-drop or copy-paste operations on an object selected from the preconfigured [object library](objectLibrary.md),
-*   By dragging and dropping an object from another form,
-*   By dragging and dropping an object from the Explorer (fields) or from other editors in the Design environment (lists, pictures, etc.)
+*   Dibujando el objeto directamente en el formulario después de seleccionar su tipo en la barra de objetos (ver [Utilizando la barra de objetos](#using-the-object-bar))
+*   Arrastrando y soltando el objeto desde la barra de objetos
+*   Mediante operaciones de arrastrar y soltar o copiar y pegar sobre un objeto seleccionado de la [librería de objetos](objectLibrary.md) preconfigurada,
+*   Arrastrando y soltando un objeto desde otro formulario,
+*   Arrastrando y soltando un objeto desde el Explorador (campos) o desde otros editores del modo Diseño (listas, imágenes, etc.)
 
-Once the object is placed in the form, you can modify its characteristics using the Form editor.
+Una vez insertado el objeto en el formulario, puede modificar sus características utilizando el editor de formularios.
 
-You can work with two types of objects in your forms:
+Puede trabajar con dos tipos de objetos en sus formularios:
 
-*   **Static objects** (lines, frames, background pictures, etc.): These objects are generally used for setting the appearance of the form and its labels as well as for the graphic interface. They are available in the object bar of the Form editor. You can also set their graphic attributes (size, color, font, etc.) and their resizing properties using the Property List. Static objects do not have associated variables like active objects. However, you can insert dynamic objects into static objects.
+*   **Objetos estáticos** (líneas, marcos, imágenes de fondo, etc.): estos objetos se utilizan generalmente para definir la apariencia del formulario y sus etiquetas, así como para la interfaz gráfica. Están disponibles en la barra de objetos del editor de formularios. También puede definir sus atributos gráficos (tamaño, color, fuente, etc.) y sus propiedades de redimensionamiento utilizando la lista de propiedades. Static objects do not have associated variables like active objects. However, you can insert dynamic objects into static objects.
 
-*   **Active objects**: These objects perform tasks or functions in the interface and can take many forms: fields, buttons, scrollable lists, etc. Each active object is associated with either a field or a variable.
+*   **Objetos activos**: estos objetos realizan tareas o funciones en la interfaz y pueden adoptar muchas formas: campos, botones, listas desplazables, etc. Cada objeto activo está asociado a un campo o a una variable.
 
-### Selecting objects
+### Seleccionar los objetos
 
-Before you can perform any operation on an object (such as changing a line width or font), you need to select the object that you want to modify.
+Antes de poder realizar cualquier operación en un objeto (como cambiar el ancho de la línea o la fuente), debe seleccionar el objeto que desea modificar.
 
-To select an object using the toolbar:
+Para seleccionar un objeto utilizando la barra de herramientas:
 
-1.  Click the Arrow tool  in the toolbar.<p>![](assets/en/FormEditor/selection.png)<p> When you move the pointer into the form area, it becomes a standard arrow-shaped pointer.
-2.  Click the object you want to select. Resizing handles identify the selected object.<p>![](assets/en/FormEditor/selectResize.png)
+1.  Haga clic en la herramienta Flecha de la barra de herramientas.<p>![](assets/en/FormEditor/selection.png)<p> Cuando se mueve el puntero en el área del formulario, se convierte en un puntero estándar con forma de flecha.
+2.  Haga clic en el objeto que desea seleccionar. Las manillas de redimensionamiento identifican el objeto seleccionado.<p>![](assets/en/FormEditor/selectResize.png)
 
-To select an object using the Property List:
+Para seleccionar un objeto utilizando la Lista de propiedades:
 
-1.  Choose the object’s name from the Object List drop-down list located at the top of the Property List.<p>Using these two methods, you can select an object that is hidden by other objects or located outside the visible area of the current window. To deselect an object, click outside the object’s boundary or **Shift+click** the object.
-> It is also possible to select objects by double-clicking them in the result window of ""Find in design" operation.
+1.  Seleccione el nombre del objeto en la lista desplegable de objetos situada en la parte superior de la lista de propiedades.<p>Con estos dos métodos, puede seleccionar un objeto que esté oculto por otros objetos o que se encuentre fuera del área visible de la ventana actual. Para deseleccionar un objeto, haga clic fuera del límite del objeto o **Mayúsculas+clic** en el objeto.
+> También es posible seleccionar objetos haciendo doble clic en la ventana de resultados de la operación "Buscar en diseño".
 
-### Selecting multiple objects
+### Selección de múltiples objetos
 
-You may want to perform the same operation on more than one form object — for example, to move the objects, align them, or change their appearance. 4D lets you select several objects at the same time. There are several ways to select multiple objects:
+Es posible que desee realizar la misma operación en más de un objeto de un formulario, por ejemplo, para mover los objetos, alinearlos o cambiar su apariencia. 4D le permite seleccionar varios objetos al mismo tiempo. Hay varias formas de seleccionar varios objetos:
 
-*   Choose **Select All** from the Edit menu to select all the objects.
-*   Right-click on the object and choose the **Select Similar Objects** command in the context menu.
-*   Hold down the **Shift** key and click the objects you want to select.
-*   Start at a location outside the group of objects you want to select and drag a marquee (sometimes called a selection rectangle) around the objects. When you release the mouse button, if any part of an object lies within or touches the boundaries of the selection rectangle, that object is selected.
-*   Hold down the **Alt** key (Windows) or the **Option** key (macOS) and draw a marquee. Any object that is completely enclosed by the marquee is selected.
+*   Seleccione **Seleccionar todo** en el menú Edición para seleccionar todos los objetos.
+*   Haga clic con el botón derecho en el objeto y elija el comando **Seleccionar objetos del mismo tipo** en el menú contextual.
+*   Mantenga presionada la tecla **Mayús** y haga clic en los objetos que desee seleccionar.
+*   Comience en una ubicación fuera del grupo de objetos que desea seleccionar y arrastre un marco (a veces llamado rectángulo de selección) alrededor de los objetos. Al soltar el botón del ratón, si alguna parte de un objeto se encuentra dentro o toca los límites del rectángulo de selección, ese objeto queda seleccionado.
+*   Mantenga presionada la tecla **Alt** (Windows) o la tecla **Opción** (macOS) y dibuje un rectángulo de selección. Se selecciona todo objeto que esté completamente encerrado por el marco.
 
-The figure below shows a marquee being drawn to select two objects:
+La imagen siguiente muestra el dibujo de un rectángulo para seleccionar dos objetos:
 
 ![](assets/en/FormEditor/selectMultiple.png)
 
-To deselect an object that is part of a set of selected objects, hold down the **Shift** key and click the object. The other objects remain selected. To deselect all the selected objects, click outside the boundaries of all the objects.
+Para deseleccionar un objeto que forma parte de un grupo de objetos seleccionados, mantenga presionada la tecla **Mayús** y haga clic en el objeto. Los demás objetos permanecen seleccionados. Para deseleccionar todos los objetos seleccionados, haga clic fuera de los límites de todos los objetos.
 
 
-### Duplicating objects
+### Duplicar los objetos
 
-You can duplicate any object in the form, including active objects. Copies of active objects retain all the properties of the original, including name, type, standard action, display format, and object method.
+Puede duplicar todo objeto de formulario, incluidos los objetos activos. Las copias de los objetos activos conservan todas las propiedades del objeto original, incluidos el nombre, el tipo, la acción estándar, el formato de visualización y el método objeto.
 
-You can duplicate an object directly using the Duplicate tool in the Tools palette or use the Duplicate Many dialog box to duplicate an object more than once. Also, using this dialog box, you can set the distance between two copies.
+Puede duplicar un objeto directamente con la herramienta Duplicar de la paleta Herramientas o utilizar la caja de diálogo Duplicar varios para duplicar un objeto más de una vez. Además, a través de esta caja de diálogo, se puede definir la distancia entre dos copias.
 
-To duplicate one or more objects:
+Para duplicar uno o más objetos:
 
 1. Select the object or objects that you want to duplicate.
 2. Choose **Duplicate** from the **Edit** menu. 4D creates a copy of each selected object and places the copy in front and slightly to the side of the original.
@@ -459,7 +459,7 @@ An attribute value defined in a style sheet can be overridden in the JSON form d
 
 
 
-## List Box Builder
+## Creación de list box
 
 You can create new entity selection list boxes quickly with the **List box builder**. The new list box can be used immediately or it can be edited via the Form Editor.
 
