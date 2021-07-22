@@ -228,8 +228,8 @@ You can ungroup a group of objects to treat them as individual objects again.
 
 An active object that has been grouped must be ungrouped before you can access its properties or method. However, it is possible to select an object belonging to a group without degrouping the set: to do this, **Ctrl+click** (Windows) or **Command+click** (macOS) on the object (the group must be selected beforehand).
 
-Grouping only affects objects in the Form editor. When the form is executed, all grouped objects act as if they were ungrouped.
-> It is not possible to group objects belonging to different views and only those objects belonging to the current view can be grouped (see [Views](#views) ).
+La agrupación sólo afecta a los objetos en el editor de formularios. Cuando se ejecuta el formulario, todos los objetos agrupados actúan como si estuvieran desagrupados.
+> No es posible agrupar objetos que pertenezcan a diferentes vistas y sólo se pueden agrupar aquellos objetos que pertenezcan a la vista actual (ver [Utilizar las vistas de objeto](#views) ).
 
 To group objects:
 
