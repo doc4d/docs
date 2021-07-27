@@ -264,22 +264,22 @@ HSTS によって、4D Webサーバーはブラウザーに対し、セキュア
 
 HTTP接続を受け付ける IP (TCP) ポート番号。 デフォルトで、4D は通常の Web HTTPポート (TCPポート) 番号である 80番を使用して Webアプリケーションを公開します。 他の Webサービスによってこのポート番号が既に使用されている場合、4D が使用する HTTPポート番号を変更する必要があります。
 
-> In macOS, modifying the HTTP port allows you to start the 4D web server without being the root user of the machine (see [macOS HelperTool](#macos-helpertool)).
+> macOS では、HTTPポートを変更することで、rootユーザーでなくても Webサーバーを開始することができるようになります ([macOS での Helperツール](#macos-での-helperツール) 参照)。
 
-From a web browser, you need to include the non-default HTTP port number into the address you enter for connecting to the web application. The address must have a suffix consisting of a colon followed by the port number. For example, if you are using the HTTP port number 8080, you will specify "123.4.567.89:8080".
-> **Warning**: If you use TCP port numbers other than the default numbers (80 for standard HTTP and 443 for HTTPS), be careful not to use port numbers that are defaults for other services that you might want to use simultaneously. For example, if you also plan to use the FTP protocol on your web server machine, do not use the TCP port 20 and 21, which are the default ports for that protocol. Ports numbers below 256 are reserved for well known services and ports numbers from 256 to 1024 are reserved for specific services originated on the UNIX platforms. For maximum security, specify a port number beyond these intervals (for example, in the 2000's or 3000's).
+デフォルトでない HTTPポート番号を使用して公開された Webアプリケーションに接続するには、Webブラウザーで入力するアドレスにポート番号を含めなければなりません。 アドレスの後にコロンに続けてポート番号を指定します。 たとえば、HTTPポート番号 8080を使用する場合、"123.4.567.89:8080" のように書きます。
+> **警告**: デフォルトの TCPポート番号 (標準モードで 80、HTTPSモードで 443) 以外を指定する場合、同時に使用する他のサービスのデフォルトポート番号を使わないよう注意が必要です。 たとえば、Webサーバーマシンで FTPプロトコルを使用する計画である場合、このプロトコルのデフォルトである TCPポート 20 と 21 を使用してはいけません。 256 より下のポート番号は、well-known サービスに予約されています。また、256 から 1024 は UNIXプラットフォーム由来のサービスに予約されています。 セキュリティのため、これらの数値よりも上、たとえば 2000台や 3000台などを指定します。
 
-If you specify 0, 4D will use the default HTTP port number 80.
+0 を指定すると、4D はデフォルトの HTTPポート番号 80を使用します。
 
 
 ## HTTP Trace
 
-| 設定できる場所          | 名称                                             | コメント                            |
-| ---------------- | ---------------------------------------------- | ------------------------------- |
-| webServer オブジェクト | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Boolean, default = false        |
-| `WEB SET OPTION` | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
+| 設定できる場所          | 名称                                             | コメント              |
+| ---------------- | ---------------------------------------------- | ----------------- |
+| webServer オブジェクト | [`HTTPTrace`](API/WebServerClass.md#httptrace) | ブール; デフォルトは false |
+| `WEB SET OPTION` | `Web HTTP TRACE`                               | 数値; デフォルトは 0 (無効) |
 
-HTTP TRACE method activation in the 4D web server. For security reasons, by default the 4D web server rejects HTTP TRACE requests with an error 405. If necessary, you can enable the HTTP TRACE method, in which case the 4D Web server replies to HTTP TRACE requests with the request line, header, and body.
+4D Webサーバーの HTTP TRACE メソッドを有効化します。 セキュリティ上の理由により、4D Webサーバーはデフォルトで HTTP TRACE リクエストをエラー405 で拒否します。 必要に応じて有効化された場合、HTTP TRACE リクエストに対して Webサーバーは、リクエスト行、ヘッダー、および本文を返します。
 
 
 
@@ -290,105 +290,105 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 | ---------------- | ---------------------------------------------- | ------ |
 | webServer オブジェクト | [`HTTPSPort`](API/WebServerClass.md#httpsport) | number |
 | `WEB SET OPTION` | `Web HTTPS port ID`                            |        |
-| 設定ダイアログボックス      | Configuration page/HTTPS Port                  |        |
+| 設定ダイアログボックス      | 設定ページ / HTTPSポート                               |        |
 
-Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
-
-
-## Inactive Process Timeout
-
-| 設定できる場所          | 名称                                                                       | コメント   |
-| ---------------- | ------------------------------------------------------------------------ | ------ |
-| webServer オブジェクト | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout) |        |
-| `WEB SET OPTION` | `Web inactive process timeout`                                           |        |
-| 設定ダイアログボックス      | Options (I) page/Inactive Process Timeout                                | Slider |
-
-Life duration (in minutes) of inactive processes associated with sessions. At the end of the timeout, the process is killed on the server, the `On Web Close Process` database method is called, then the session context is destroyed.
-
-Default: 480 minutes (pass 0 to restore the default value)
+TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォルトで HTTPSポート番号は 443です。 ポート番号に関する詳細については、[HTTP ポート](#http-ポート) を参照ください。
 
 
-## Inactive Session Timeout
+## 非動作プロセスのタイムアウト
+
+| 設定できる場所          | 名称                                                                       | コメント  |
+| ---------------- | ------------------------------------------------------------------------ | ----- |
+| webServer オブジェクト | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout) |       |
+| `WEB SET OPTION` | `Web inactive process timeout`                                           |       |
+| 設定ダイアログボックス      | オプション (I) ページ / 非動作プロセスのタイムアウト                                           | スライダー |
+
+セッションと紐づいた非アクティブWebプロセスのタイムアウト時間 (分単位) を設定します。 タイムアウト時間が経過すると、サーバーはプロセスを終了します。すると、`On Web Close Process` データベースメソッドが呼び出され、セッションのコンテキストは削除されます。
+
+デフォルト値: 480分 (デフォルト値に戻すには 0 を指定します)
+
+
+## 非アクティブセッションタイムアウト
 
 | 設定できる場所          | 名称                                                                       | コメント |
 | ---------------- | ------------------------------------------------------------------------ | ---- |
 | webServer オブジェクト | [`inactiveSessionTimeout`](API/WebServerClass.md#inactivesessiontimeout) |      |
 | `WEB SET OPTION` | `Web inactive session timeout`                                           |      |
 
-Life duration (in minutes) of inactive sessions (duration set in cookie). タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。
+非アクティブセッションのタイムアウト時間 (分単位) を cookie に設定します。 タイムアウト時間が経過するとセッションcookie が無効になり、HTTPクライアントによって送信されなくなります。
 
-Default: 480 minutes (pass 0 to restore the default value)
+デフォルト値: 480分 (デフォルト値に戻すには 0 を指定します)
 
 
-## IP Address to listen
+## リクエストを受け付ける IPアドレス
 
 | 設定できる場所          | 名称                                                             | コメント       |
 | ---------------- | -------------------------------------------------------------- | ---------- |
 | webServer オブジェクト | [`IPAddressToListen`](API/WebServerClass.md#ipaddresstolisten) |            |
 | `WEB SET OPTION` | `Web IP address to listen`                                     |            |
-| 設定ダイアログボックス      | Configuration page/IP Address                                  | ポップアップメニュー |
+| 設定ダイアログボックス      | 設定ページ / IPアドレス                                                 | ポップアップメニュー |
 
-IP address strings on which the 4D web server will receive HTTP requests (4D local and 4D Server).
+4D Webサーバーが HTTPリクエストを受け付ける IPアドレスを指定できます (4Dローカルおよび 4D Server)。
 
-By default, no specific address is defined (**Any** value in the Settings dialog box), which means that the server responds to all IP addresses. When you designate a specific address, the server only responds to requests sent to this address. This feature is designed for 4D web servers located on machines with multiple TCP/IP addresses. It is, for example, frequently the case of most host providers.
+デフォルトでは、特定のアドレスが定義されていないため (設定ダイアログボックスでは **任意** の値)、サーバーはすべての IPアドレスに応答します。 特定のアドレスを指定すると、サーバーはこの IPアドレスへのリクエストにのみ応答します。 この機能は複数の TCP/IPアドレスが設定されたマシン上で動作する 4D Webサーバーのためのものです。 これはしばしば、インターネットホストプロバイダーで使用されます。
 
-Possible values: IP address string. Both IPv6 string formats (e.g. "2001:0db8:0000:0000:0000:ff00:0042:8329") and IPv4 string formats (e.g. "123.45.67.89") are supported.
+とりうる値: IPアドレス文字列。 IPv6 文字列フォーマット (例: "2001:0db8:0000:0000:0000:ff00:0042:8329") と IPv4 文字列フォーマット (例: "123.45.67.89") の両方がサポートされます。
 
-#### About IPv6 support
+#### IPv6 のサポートについて
 
-*   **No warning when TCP port is occupied**<br> When the server is set to respond on "Any" IP addresses, if the TCP port is being used by another application, this is not indicated when the server is started. In fact, 4D server does not detect any error in this case because the port remains free on the IPv6 address. However, it is not possible to access it using the IPv4 address of the machine, nor by means of the local address: 127.0.0.1.<p> If your 4D server does not seem to be responding on the port defined, you can test the address [::1] on the server machine (equivalent to 127.0.0.1 for IPv6, add [:portNum] to test another port number). If 4D responds, it is likely that another application is using the port in IPv4.
+*   **TCPポートが使用済みでも警告は出ません**<br> サーバーが応答する IPアドレスが "任意" に設定されていた場合、TCPポートが他のアプリケーションで使用されていても、それはサーバー起動時に指摘されません。 IPv6 アドレスのポートが空いているため、この場合 4D Server はどのようなエラーも検知しません。 しかしながら、マシンの IPv4アドレスを使用、またはローカルアドレス 127.0.0.1 を使用してアクセスすることは不可能です。<p> 定義されたポートで 4D Server が反応していないようであれば、サーバーマシンで [::1] のアドレスを試してみてください (IPv6 における 127.0.0.1 と同義です。他のポート番号をテストするには [:portNum] を追加してください)。 4D が応答するようであれば、IPv4 のポートを他のアプリケーションが使用している可能性が高いです。
 
-*   **IPv4-mapped IPv6 addresses**<br> To standardize processing, 4D provides a standard hybrid representation of IPv4 addresses in IPv6. These addresses are written with a 96-bit prefix in IPv6 format, followed by 32 bits written in the dot-decimal notation of IPv4. For example, ::ffff:192.168.2.34 represents the IPv4 address 192.168.2.34.
+*   **IPv4-マップされた IPv6アドレス**<br> プロセスを標準化するために、4D では IPv4アドレスの標準ハイブリッド表示を IPv6 で提供しています。 これらのアドレスは IPv6フォーマットにおいて 96ビットの接頭辞付きで書かれ、その後に IPv4ドット区切り表記で書かれた 32ビットが続きます。 たとえば、::ffff:192.168.2.34 は、192.168.2.34 という IPv4アドレスを表します。
 
-*   **Indication of port numbers**<br> Since IPv6 notation uses colons (:), adding port numbers may lead to some confusion, for example:
-
-```code4d
-    2001:0DB8::85a3:0:ac1f:8001 // IPv6 address
-    2001:0DB8::85a3:0:ac1f:8001:8081 // IPv6 address with port 8081
-```
-
-To avoid this confusion, we recommend using the [ ] notation whenever you combine an IPv6 address with a port number, for instance:
+*   **ポート番号の表記**<br> IPv6 記法はコロン (:) を使用するので、ポート番号を追加するときには混乱を招く恐れがあることに注意が必要です。たとえば:
 
 ```code4d
-    [2001:0DB8::85a3:0:ac1f:8001]:8081 //IPv6 address with port 8081
+    2001:0DB8::85a3:0:ac1f:8001 // IPv6アドレス
+    2001:0DB8::85a3:0:ac1f:8001:8081 // ポート 8081 指定の IPv6アドレス
 ```
 
-## Keep Session
+混乱を避けるため、 IPv6アドレスをポート番号と併記する際には、以下の様に [ ] でアドレスを囲う記法が推奨されます:
+
+```code4d
+    [2001:0DB8::85a3:0:ac1f:8001]:8081 // ポート 8081 指定の IPv6アドレス
+```
+
+## 旧式セッション
 
 | 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer オブジェクト | [`keepSession`](API/WebServerClass.md#keepsession) |      |
 | `WEB SET OPTION` | `Web keep session`                                 |      |
-| 設定ダイアログボックス      | Options (I) page/Automatic Session Management      |      |
+| 設定ダイアログボックス      | オプション (I) ページ / 旧式セッション (シングルプロセスセッション)            |      |
 
-Session management enabling status for the 4D web server. Session mechanism is described in the [Session Management](sessions.md) section.
+4D Webサーバーによるユーザーセッションの自動管理を有効/無効にします。 このメカニズムについては [セッション管理](sessions.md) で説明しています。
 
-Default is true (enabled).
+デフォルト値は true (有効化)。
 
-> When this option is checked, the "Reuse Temporary Contexts" option is automatically checked (and locked).
+> このオプションが選択されていると、"一時的なコンテキストを再利用する" オプションも自動で選択され、ロックされます。
 
 
-## Log Recording
+## ログの記録
 
 | 設定できる場所          | 名称                                                   | コメント       |
 | ---------------- | ---------------------------------------------------- | ---------- |
 | webServer オブジェクト | [`logRecording`](API/WebServerClass.md#logrecording) |            |
 | `WEB SET OPTION` | `Web log recording`                                  |            |
-| 設定ダイアログボックス      | Log (type) page/Log Format                           | ポップアップメニュー |
+| 設定ダイアログボックス      | ログ (タイプ) ページ / ログフォーマット                              | ポップアップメニュー |
 
-Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
+4D Web サーバーが受け取るリクエストのログを開始/停止します。ログは、*logweb.txt* ファイルに記録され、そのフォーマットを指定することができます。 デフォルトでは、リクエストは規則されません (0 / ログファイルなし)。 有効化されると、*logweb.txt* ファイルが Logs フォルダー内に自動で保存されます。
 
-This setting allows you to select the format of this file. Available values are:
+このファイルのフォーマットを指定することができます。 使用可能な値:
 
-| 値 | フォーマット               | 説明                                                                                                                                                                                                                       |
-| - | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0 | No Log File          | Default                                                                                                                                                                                                                  |
-| 1 | Record in CLF format | Common Log Format - Each line of the file represents a request, such as: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Each field is separated by a space and each line ends by the CR/LF sequence. |
-| 2 | Record in DLF format | Combined Log Format - Similar to CLF format but adds two additional HTTP fields at the end of each request: Referer and User-agent.                                                                                      |
-| 3 | Record in ELF format | Extended Log Format - To be customized in the Settings dialog box                                                                                                                                                        |
-| 4 | Record in WLF format | WebStar Log Format - To be customized in the Settings dialog box                                                                                                                                                         |
+| 値 | フォーマット     | 説明                                                                                                                                                            |
+| - | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0 | ログファイルなし   | デフォルト                                                                                                                                                         |
+| 1 | CLF形式で記録する | Common Log Format - それぞれのリクエストが行単位でファイル内に表示されます: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - 各フィールドはスペースによって区切られ、各行は CR/LF シーケンスで終ります。 |
+| 2 | DLF形式で記録する | Combined Log Format - CLFフォーマットを使いながら、各リクエストの最後に 2つのHTTPフィールド、Refererと User-agent を追加します。                                                                     |
+| 3 | ELF形式で記録する | Extended Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                 |
+| 4 | WLF形式で記録する | WebStar Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                  |
 
-> Formats 3 and 4 are custom formats whose contents must be set beforehand in the Settings dialog box. If you use one of these formats without any of its fields having been selected on this page, the log file will not be generated.
+> フォーマット3、4はカスタムフォーマットで、あらかじめ設定ダイアログボックスにて内容を指定しておく必要があります。 このページでフィールドを選択せずにこれらのフォーマットを使用した場合、ログファイルは生成されません。
 
 
 ## 最大同時Webプロセス
@@ -397,46 +397,46 @@ This setting allows you to select the format of this file. Available values are:
 | ---------------- | ------------------------------------------------------------------------ | ---- |
 | webServer オブジェクト | [`maxConcurrentProcesses`](API/WebServerClass.md#maxconcurrentprocesses) |      |
 | `WEB SET OPTION` | `Web max concurrent processes`                                           |      |
-| 設定ダイアログボックス      | Options (I) page/Maximum Concurrent Web Processes                        |      |
+| 設定ダイアログボックス      | オプション (I) ページ / 最大同時Webプロセス                                              |      |
 
-Strictly high limit of concurrent web processes that can be simultaneously open on the server. This parameter allows prevention of server saturation as the result of massive number of requests. When the maximum number of concurrent Web processes (minus one) is reached, 4D no longer creates new processes and sends the HTTP status `503 - Service Unavailable` to all new requests.
+このオプションは、サーバー上で同時に開くことのできるすべての Webプロセスの最大同時接続数の厳格な上限を設定します。 このパラメーターは、異常な数のリクエストによる 4D Webサーバーの飽和状態を避けるために使用します。 最大Web同時接続数 (マイナス1) に達すると、4D は新しいプロセスを作成せず、HTTPステータス `503 - Service Unavailable` を新規リクエストに対して返信します。
 
-By default, the value is 100. You can set the number anywhere between 10 and 32000.
+デフォルト値は 100 です。 10から32000までの値を設定できます。
 
 
-## Maximum Request Size
+## 最大リクエストサイズ
 
 | 設定できる場所          | 名称                                                       | コメント |
 | ---------------- | -------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`maxRequestSize`](API/WebServerClass.md#maxrequestsize) |      |
 | `WEB SET OPTION` | `Web maximum requests size`                              |      |
 
-Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is authorized to process. By default, the value is 2 000 000, i.e. a little less than 2 MB. Passing the maximum value (2 147 483 648) means that, in practice, no limit is set.
+Webサーバーに処理を許可する HTTPリクエスト (POST) の最大サイズ (バイト単位)。 デフォルト値は 2,000,000 (2MBより、すこし少ない値) です。 最大値 (2,147,483,648) に設定した場合、実際には制限無しということになります。
 
-制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 When a request reaches this limit, the 4D web server rejects it.
+制限を設けることで、サイズが非常に大きいリクエストによって Webサーバーが過負荷状態に陥ることを防ぎます。 リクエストのサイズが制限に達していると、4D Webサーバーによって拒否されます。
 
-Possible values: 500 000 to 2 147 483 648.
+とりうる値: 500,000 - 2,147,483,648。
 
 
-## Maximum Session Number
+## 最大同時セッション数
 
 | 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer オブジェクト | [`maxSessions`](API/WebServerClass.md#maxsessions) |      |
 | `WEB SET OPTION` | `Web max sessions`                                 |      |
 
-Maximum number of simultaneous sessions. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
+同時セッション上限数。 上限に達すると、Webサーバーが新規セッションを作成するときに、一番古いセッションが閉じられます (`On Web Close Process` データベースメソッドが呼び出されます)。 同時セッション数は、[Webプロセスの最大値](#最大同時Webプロセス)を超えることはできません (デフォルトは 100)。
 
-Default value: 100 (pass 0 to restore the default value).
+デフォルト値: 100 (デフォルト値に戻すには 0 を指定します).
 
 
-## Minimum TLS Version
+## 最低TLSバージョン
 
 | 設定できる場所          | 名称                                                     | コメント   |
 | ---------------- | ------------------------------------------------------ | ------ |
 | webServer オブジェクト | [`minTLSVersion`](API/WebServerClass.md#mintlsversion) | number |
 
-Minimum TLS version accepted for connections. これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。
+接続に必要な最低TLSバージョン。 これよりも低いバージョンのみをサポートするクライアントからの接続は拒否されます。
 
 とりうる値:
 
@@ -447,7 +447,7 @@ Minimum TLS version accepted for connections. これよりも低いバージョ�
 
 変更した場合、設定を反映するには Webサーバーを再起動する必要があります。
 
-> The minimum TLS version used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server and client/server connections.
+> 4D が使用する最低TLSバージョンは、`SET DATABASE PARAMETER` コマンドを使用してセッションごとに変更することができます。この場合、変更は 4Dアプリケーション全体に適用されます (Webサーバー・SQLサーバー・クライアント/サーバー接続を含む)。
 
 
 ## 名称
@@ -457,35 +457,35 @@ Minimum TLS version accepted for connections. これよりも低いバージョ�
 | webServer オブジェクト | [`name`](API/WebServerClass.md#name) |      |
 
 
-Name of the web server application. Useful when component web servers are started.
+Webサーバーアプリケーションの名称。 コンポーネントの Webサーバーが起動されているときに便利です。
 
-## OpenSSL Version
+## OpenSSL バージョン
 
-| 設定できる場所          | 名称                                                       | コメント      |
-| ---------------- | -------------------------------------------------------- | --------- |
-| webServer オブジェクト | [`openSSLVersion`](API/WebServerClass.md#opensslversion) | Read-only |
+| 設定できる場所          | 名称                                                       | コメント   |
+| ---------------- | -------------------------------------------------------- | ------ |
+| webServer オブジェクト | [`openSSLVersion`](API/WebServerClass.md#opensslversion) | 読み取り専用 |
 
-Version of the OpenSSL library used.
+使用されている OpenSSLライブラリのバージョン。
 
 
-## Perfect Forward Secrecy
+## Perfect Forward Secrecy (PFS)
 
-| 設定できる場所          | 名称                                                                     | コメント               |
-| ---------------- | ---------------------------------------------------------------------- | ------------------ |
-| webServer オブジェクト | [`perfectForwardSecrecy`](API/WebServerClass.md#perfectforwardsecrecy) | Boolean, read-only |
+| 設定できる場所          | 名称                                                                     | コメント        |
+| ---------------- | ---------------------------------------------------------------------- | ----------- |
+| webServer オブジェクト | [`perfectForwardSecrecy`](API/WebServerClass.md#perfectforwardsecrecy) | ブール; 読み取り専用 |
 
-True if PFS is available on the web server (see [TLS](Admin/tls.md#perfect-forward-secrecy-pfs) section).
+Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-secrecy-pfs) 参照)。
 
 
 ## Robots.txt
 
-Certain robots (query engines, spiders...) scroll through web servers and static pages. If you do not want robots to be able to access your entire site, you can define which URLs they are not allowed to access.
+特定のクローラー (クエリエンジン、スパイダー...) は Webサーバーやスタティックページをクロールします。 クローラーにサイトへアクセスさせたくない場合、アクセスを禁止する URL を指定できます。
 
-To do so, put the ROBOTS.TXT file at the server's root. This file must be structured in the following manner:
+これには、ROBOTS.TXT ファイルをサーバーのルートに置きます。 このファイルの内容は以下の構造になっていなければなりません:
 
 ```4d
    User-Agent: <name>
-   Disallow: <URL> or <beginning of the URL>
+   Disallow: <URL> または <beginning of the URL>
 ```
 
 たとえば:
@@ -497,130 +497,130 @@ To do so, put the ROBOTS.TXT file at the server's root. This file must be struct
    Disallow: /GIFS/
 ```
 
-*   “User-Agent: *” - all robots are affected.
-*   “Disallow: /4D” - robots are not allowed to access URLs beginning with /4D.
-*   “Disallow: /%23%23” - robots are not allowed to access URLs beginning with /%23%23.
-*   “Disallow: /GIFS/’ - robots are not allowed to access the /GIFS/ folder or its subfolders.
+*   "User-Agent: *" は、すべてのクローラーが対象であることを示します。
+*   "Disallow: /4D" は、/4D から始まる URL へのアクセスを許可しないことをクローラーに通知します。
+*   "Disallow: /%23%23" は、/%23%23 から始まる URL へのアクセスを許可しないことをクローラーに通知します。
+*   "Disallow: /GIFS/" は、/GIFS/ フォルダーおよびそのサブフォルダーへのアクセスを許可しないことをクローラーに通知します。
 
-Another example:
+他の例題:
 
 ```code4d
    User-Agent: *
    Disallow: /
 ```
 
-In this case, robots are not allowed to access the entire site.
+この場合、クローラーにサイト全体へのアクセスを許可しないことを通知します。
 
 
 ## ルートフォルダー
 
-| 設定できる場所               | 名称                                               | コメント                                                                                                                                  |
-| --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
-| webServer オブジェクト      | [`rootFolder`](API/WebServerClass.md#rootfolder) | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function |
-| `WEB SET ROOT FOLDER` |                                                  |                                                                                                                                       |
-| 設定ダイアログボックス           | Configuration page/Default HTML Root             |                                                                                                                                       |
+| 設定できる場所               | 名称                                               | コメント                                                                                              |
+| --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------- |
+| webServer オブジェクト      | [`rootFolder`](API/WebServerClass.md#rootfolder) | テキストプロパティ (`start()` 関数の *settings* パラメーターと使用する場合は、[`4D.Folder`](API/FolderClass.md) オブジェクトも使用可能) |
+| `WEB SET ROOT FOLDER` |                                                  |                                                                                                   |
+| 設定ダイアログボックス           | 設定ページ / デフォルトHTMLルート                             |                                                                                                   |
 
-Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. The path is formatted in POSIX full path. The web server will need to be restarted in order for the new root folder to be taken into account.
+4D がブラウザーに送信するスタティック/セミダイナミックな HTMLページ、ピクチャーなどを検索するフォルダーを指定します。これが、Webサーバーのルートフォルダーです。 パスは、POSIXフルパスの形式です。 ルートフォルダーの変更を反映するには、Webサーバーを再起動する必要があります。
 
-Moreover, the HTML root folder defines, on the web server hard drive, the hierarchical level above which the files will not be accessible. If a requested URL or a 4D command tries to access a file located above the HTML root folder, an error is returned indicating that the file has not been found.
+さらに HTMLルートフォルダーは、Webサーバーのディスク上で、ファイルに対するアクセスができない階層を定義することにもなります。 ブラウザーから送られた URL や 4Dコマンドが、HTMLルートフォルダーよりも上の階層にアクセスしようとすると、ファイルが存在しないことを示すエラーが返されます。
 
-By default, 4D defines a HTML Root folder named **WebFolder**. If it does not already exist, the HTML root folder is physically created on disk at the moment the Web server is launched for the first time. The root folder is created:
-- with 4D (local) and 4D Server, at the same level as the [Project folder](Project/architecture.md#project-folder).
-- with 4D in remote mode, in the local resources folder.
+デフォルトで、4D は **WebFolder** という名前のデフォルトHTMLルートフォルダーを定義します。 Webサーバーの初回起動時にこのフォルダーが存在しなければ、HTMLルートフォルダーは物理的にディスク上に作成されます。 ルートフォルダーは以下の場所に作成されます:
+- 4D (ローカル) および 4D Server では、[Project フォルダー](Project/architecture.md#project-フォルダー) と同階層。
+- 4Dリモートモードでは、ローカルのリソースフォルダー内
 
-You can designate another default HTML root folder by entering its pathname.
+デフォルトHTMLルートフォルダーを変更するには、パスを "デフォルトHTMLルート" に入力します。
 
-- The path is relative to the [Project folder](Project/architecture.md#project-folder) (4D local and 4D Server) or to the folder containing the 4D application or software package (4D in remote mode).
+- このとき、相対パスの起点は [Projectフォルダー](Project/architecture.md#project-folder) (4Dローカルおよび 4D Server) 、または、4Dアプリケーションやソフトウェアーパッケージを含むフォルダーです (4Dリモートモード)。
 - パスは POSIX シンタックスで表します (フォルダーはスラッシュ ("/") で区切ります)。
-- To "go up" one level in the folder hierarchy, enter “..” (two periods) before the folder name
-- The path must not start with a slash (except if you want the HTML root folder to be the Project or 4D remote folder, but for access to the folders above to be forbidden, in which case you can pass "/" as the root folder).
+- フォルダー階層で 1つ上にあがるには、フォルダー名の前にピリオドを2つ “..”  置きます。
+- パスはスラッシュ (“/”) で始まってはいけません (HTMLルートフォルダーを Projectフォルダーや 4Dリモートフォルダーにしながら、それより上階層へのアクセスを禁止したい場合には、"/" を入力します)。
 
-For example, if you want the HTML root folder to be the "Web" subfolder in the "MyWebApp" folder, enter "MyWebApp/Web".
+たとえば、HTMLルートフォルダーを "MyWebApp" フォルダーの “Web” サブフォルダーにしたい場合、"MyWebApp/Web" と入力します。
 
-> When the HTML root folder is modified, the cache is cleared so as to not store files whose access is restricted.
+> HTMLルートフォルダーを変更すると、アクセスが制限されているファイルを格納しないようにするため、キャッシュがクリアされます。
 
 
 
-## Session Cookie Domain
+## セッションcookieドメイン
 
 | 設定できる場所          | 名称                                                                 | コメント |
 | ---------------- | ------------------------------------------------------------------ | ---- |
 | webServer オブジェクト | [`sessionCookieDomain`](API/WebServerClass.md#sessioncookiedomain) |      |
 | `WEB SET OPTION` | `Web session cookie domain`                                        |      |
 
-Value of the "domain" field of the session cookie. Useful for controlling the scope of the session cookies. たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。
+セッションcookie の "domain" フィールドの値。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/*.4d.fr" の値を設定した場合、リクエストの宛先が ".4d.fr" のドメインに限り、クライアントは cookie を送信します。つまり、外部の静的データをホストするサーバーは除外されます。
 
 
-## Session Cookie Name
+## セッションcookie名
 
 | 設定できる場所          | 名称                                                             | コメント |
 | ---------------- | -------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`sessionCookieName`](API/WebServerClass.md#sessioncookiename) |      |
 | `WEB SET OPTION` | `Web session cookie name`                                      |      |
 
-Name of the cookie used for saving the session ID. Default = "4DSID".
+セッションID の保存に使用されるセッションcookie の名称。 デフォルト = "4DSID"。
 
 
-## Session Cookie Path
+## セッションcookieパス
 
 | 設定できる場所          | 名称                                                             | コメント |
 | ---------------- | -------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`sessionCookiePath`](API/WebServerClass.md#sessioncookiepath) |      |
 | `WEB SET OPTION` | `Web session cookie path`                                      |      |
 
-"path" field of the session cookie. セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
+セッションcookie の "path" フィールド。 セッションcookie のスコープを制御するのに使用されます。 たとえば、このセレクターに "/4DACTION" という値を設定した場合、4DACTION で始まる動的リクエストの場合にのみクライアントは cookie を送信し、ピクチャーや静的ページへのリクエストは除外されます。
 
-## Session Cookie SameSite
+## セッションcookie SameSite
 
 | 設定できる場所          | 名称                                                                     | コメント |
 | ---------------- | ---------------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`sessionCookieSameSite`](API/WebServerClass.md#sessioncookiesamesite) |      |
 
-Value of the `SameSite` attribute value of the session cookie. This attribute allows you to declare if your cookie should be restricted to a first-party or same-site context, as a protection from some cross-site request forgery ([CSRF](https://developer.mozilla.org/en-US/docs/Glossary/CSRF)) attacks.
+セッションcookie の `SameSite` 属性の値。 この属性は、一部のクロスサイトリクエストフォージェリ ([CSRF](https://developer.mozilla.org/en-US/docs/Glossary/CSRF)) 攻撃からの保護として、ファーストパーティーコンテキストまたは同一サイトコンテキストのどちらかに cookie を限定するかを宣言することができます。
 
-> For a detailed description of the `SameSite` attribute, please refer to the [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) or [this web.dev page](https://web.dev/samesite-cookies-explained/).
+> `SameSite` 属性に関する詳細な説明は [Mozilla のドキュメンテーション](https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Set-Cookie/SameSite) または [こちらの Web開発ページ (英語)](https://web.dev/samesite-cookies-explained/) を参照ください。
 
 次の値が提供されています:
 
-- "Strict" (default `SameSite` attribute value for 4D session cookies): cookies will only be sent in the first-party context, i.e. context matching the domain of the current site, and never to third-party websites.
-- "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site (i.e. they follow a link).
-- "None": Cookies are sent in all contexts, i.e in responses to both first-party and cross-origin requests. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
+- "Strict" (4Dセッションcookie の `SameSite` 属性のデフォルト値): ファーストパーティーのコンテキスト、すなわち現在のサイトのドメインに一致するコンテキストでのみ cookie は送信され、サードパーティーの Webサイトには決して送信されません。
+- "Lax": クロスサイトのサブリクエストでは cookie は送信されませんが (たとえば、画像やフレームをサードパーティーのサイトにロードする場合など)、ユーザーがオリジンのサイトに移動するとき (つまり、リンクを辿っているとき) には送信されます。
+- "None": ファーストパーティーやオリジン間リクエストにかかわらず、すべてのコンテキストにおいて cookie が送信されます。 "None" を使用する場合は、cookie の `Secure` 属性も設定する必要があります (設定しないと、cookie がブロックされます)。
 
-The `Secure` attribute value of the session cookie is automatically set to "True" if the connection is HTTPS (whatever the `SameSite` attribute value).
+セッションcookie の `Secure` 属性値は、HTTPS接続の場合には (`SameSite` 属性値が何であれ)、自動的に "True" に設定されます。
 
-> It is not recommended to set `SameSite=None` on a HTTP server since the `Secure` attribute will be missing (used in HTTPS only) and cookies will be blocked.
-
-
-
-## Session IP Address Validation
-
-Can be set with|Name|Comments| |---|---|---| |webServer object|[`sessionIPAddressValidation`](API/WebServerClass.md#sessionipaddressvalidation)|| |`WEB SET OPTION`|`Web session enable IP address validation`||
-
-IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application.
-
-When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
-
-Possible values: 0 (disabled) or 1 (enabled, default).
+> HTTPサーバーで `SameSite=None` を設定することは、(HTTPS でのみ使用される) `Secure` 属性が欠落し、cookie がブロックされるため、推奨されません。
 
 
 
+## セッション IPアドレス検証
 
-## Deprecated Settings
+設定できる場所|名称|コメント| |---|---|---| |webServer object|[`sessionIPAddressValidation`](API/WebServerClass.md#sessionipaddressvalidation)|| |`WEB SET OPTION`|`Web session enable IP address validation`||
 
-The following settings are still supported but rely on deprecated features or technologies. It is usually recommended to keep default values.
+セッションcookie の IP アドレス検証のステータス。 セキュリティ上の理由により、セッションcookie を持つ各リクエストに対して 4D Webサーバーはデフォルトで IPアドレスを検証します。このアドレスが、cookie作成時の IPアドレスと合致しない場合、リクエストは拒否されます。 アプリケーションによっては、この検証機能を無効化し、IPアドレスが合致しなくてもセッションcookie を受け入れるようにしたいかもしれません。 たとえば、モバイルデバイスが WiFi と 4G/5G ネットワークを切り替えた場合、IPアドレスが変更されます。 このように IPアドレスが変更しても、クライアントによる Webセッションの継続を許可するには、このオプションに 0 を渡します。 この設定はアプリケーションのセキュリティレベルを下げることに留意が必要です。
 
-#### Allow database Access through 4DSYNC URLs
+この設定が変更された際には、その設定は直ちに反映されます (HTTPサーバーを再起動する必要はありません)。
 
-This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
+とり得る値: 0 (無効化) または 1 (有効化)。
 
 
-#### Reuse temporary contexts (in remote mode)
 
-Allows you to optimize the operation of the 4D Web Server in remote mode by reusing web processes created for processing previous web requests. In fact, the web server in 4D needs a specific web process for the handling of each web request; in remote mode, when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It thus generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
 
-When the **Reuse Temporary Contexts** option is checked, in remote mode 4D maintains the specific web processes and reuses them for subsequent requests. By removing the process creation stage, web server performance is improved.
+## 廃止予定の設定
 
-In return, you must make sure in this case to systematically initialize the variables used in 4D methods in order to avoid getting incorrect results. Similarly, it is necessary to erase any current selections or records defined during the previous request.
+以下の設定は現在もサポートされていますが、廃止予定の機能や技術に依存しています。 通常はデフォルト値のままにしておくことが推奨されます。
+
+#### "4DSYNC" URLを使用したデータベースアクセスを許可
+
+このオプションを使用して、廃止予定の */4DSYNC* URL による HTTP同期サポートを制御します。
+
+
+#### 一時的なコンテキストを再利用する (リモートモード)
+
+前の Webリクエストを処理するために作成された Webプロセスを再利用することによって、4Dリモートモードで実行されている 4D Webサーバーの動作を最適化できます。 実際、4D Webサーバーはそれぞれの Webリクエストを処理するために専用の Webプロセスを必要とします。リモートモードでは、このプロセスは必要に応じて、データやデータベースエンジンにアクセスするために 4D Server に接続します。 そしてプロセス独自の変数やセレクションを使用して、一時的なコンテキストを作成します。 リクエストの処理が終了すると、このプロセスは廃棄されます。
+
+**一時的なコンテキストを再利用する** オプションがチェックされていると、リモートモードの 4D は作成された固有の Webプロセスを保守し、その後のリクエストで再利用します。 プロセスの作成処理が省略されるため、Webサーバーのパフォーマンスが向上します。
+
+他方このオプションを使用する場合、不正な結果が返されることを避けるために、4Dメソッド内で使用される変数をシステマチックに初期化する必要があります。 同様に、以前のリクエストで使用されたカレントセレクションやカレントレコードをアンロードする必要があります。
 > * This option is checked (and locked) automatically when the **Automatic Session Management** option is checked. In fact, the session management mechanism is actually based on the principle of recycling web processes: each session uses the same process that is maintained during the lifespan of the session. However, note that session processes cannot be "shared" between different sessions: once the session is over, the process is automatically killed (and not reused). It is therefore unnecessary to reset the selections or variables in this case.
 > 
 > * This option only has an effect with a 4D web server in remote mode. With a 4D in local mode, all web processes (other than session processes) are killed after their use.
