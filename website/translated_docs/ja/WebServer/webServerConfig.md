@@ -20,7 +20,7 @@ title: 設定
 
 ## キャッシュ
 
-| 設定できる場所     | 名                                | コメント |
+| 設定できる場所     | 名称                               | コメント |
 | ----------- | -------------------------------- | ---- |
 | 設定ダイアログボックス | オプション (I) ページ / 4D Webキャッシュを使用する |      |
 | 設定ダイアログボックス | オプション (I) ページ / ページキャッシュサイズ      |      |
@@ -35,7 +35,7 @@ Webページキャッシュの有効化と設定をおこないます。
 
 ## 証明書フォルダー
 
-| 設定できる場所          | 名                   | コメント                                                                                              |
+| 設定できる場所          | 名称                  | コメント                                                                                              |
 | ---------------- | ------------------- | ------------------------------------------------------------------------------------------------- |
 | webServer オブジェクト | `certificateFolder` | テキストプロパティ (`start()` 関数の *settings* パラメーターと使用する場合は、[`4D.Folder`](API/FolderClass.md) オブジェクトも使用可能) |
 
@@ -50,7 +50,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 
 ## 文字コード
 
-| 設定できる場所          | 名                      | コメント                 |
+| 設定できる場所          | 名称                     | コメント                 |
 | ---------------- | ---------------------- | -------------------- |
 | webServer オブジェクト | `characterSet`         | MIBEnum 整数、または名称の文字列 |
 | `WEB SET OPTION` | `Web character set`    | MIBEnum 整数、または名称の文字列 |
@@ -62,7 +62,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 
 ## 暗号リスト
 
-| 設定できる場所          | 名                                                  | コメント |
+| 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer オブジェクト | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | テキスト |
 
@@ -72,7 +72,7 @@ Webサーバー用の TLS証明書ファイルが置かれているフォルダ�
 
 ## CORS設定
 
-| 設定できる場所          | 名                                                    | コメント                                      |
+| 設定できる場所          | 名称                                                   | コメント                                      |
 | ---------------- | ---------------------------------------------------- | ----------------------------------------- |
 | webServer オブジェクト | [`CORSSettings`](API/WebServerClass.md#corssettings) | オブジェクトのコレクション (CORSサービスで許可されたホストとメソッドの一覧) |
 | `WEB SET OPTION` | `Web CORS settings`                                  | オブジェクトのコレクション (CORSサービスで許可されたホストとメソッドの一覧) |
@@ -119,150 +119,150 @@ CORS を介したサーバーへのデータリクエスト送信が許可され
 
 ## デバッグログ
 
-| 設定できる場所          | 名               | コメント   |
+| 設定できる場所          | 名称              | コメント   |
 | ---------------- | --------------- | ------ |
 | webServer オブジェクト | `debugLog`      | number |
 | `WEB SET OPTION` | `Web debug log` | number |
 
-Webサーバーの HTTPリクエストログファイル (アプリケーションの "Logs" フォルダーに格納されている HTTPDebugLog_nn.txt (nn はファイル番号)) の状態を指定します。 It is useful for debugging issues related to the Web server. It records each request and each response in raw mode. Whole requests, including headers, are logged; optionally, body parts can be logged as well.
+Webサーバーの HTTPリクエストログファイル (アプリケーションの "Logs" フォルダーに格納されている HTTPDebugLog_nn.txt (nn はファイル番号)) の状態を指定します。 このログファイルは、Webサーバーに関連する問題をデバッグするのに便利です。 ログには、各リクエスト・レスポンスが rawモードで記録されます。 ヘッダーを含むリクエスト全体が記録され、オプションでボディ部分も記録することができます。
 
-| 値 | 定数          | 説明                             |
-| - | ----------- | ------------------------------ |
-| 0 | wdl disable | Web HTTP debug log is disabled |
-
-
-
-|1|wdl enable without body|Web HTTP debug log is enabled without body parts (body size is provided in this case)| |3|wdl enable with response body|Web HTTP debug log is enabled with body part in response only| |5|wdl enable with request body|Web HTTP debug log is enabled with body part in request only| |7|wdl enable with all body parts|Web HTTP debug log is enabled with body parts in response and request|
+| 値 | 定数          | 説明                            |
+| - | ----------- | ----------------------------- |
+| 0 | wdl disable | Web HTTP debug log は無効化されています |
 
 
-## Defaut Home page
 
-| 設定できる場所             | 名                                                          | コメント                                  |
-| ------------------- | ---------------------------------------------------------- | ------------------------------------- |
-| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | テキスト                                  |
-| `WEB SET HOME PAGE` |                                                            | Can be different for each web process |
-| 設定ダイアログボックス         | Configuration page/Default Home Page                       |                                       |
+|1|wdl enable without body|Web HTTP debug log はボディ部なしで有効化されています (この場合ボディ部のサイズは提供されます)| |3|wdl enable with response body|Web HTTP debug log はレスポンスのボディ部のみを含めた状態で有効化されています。| |5|wdl enable with request body|Web HTTP debug log はリクエストのボディ部のみ含めた状態で有効化されます| |7|wdl enable with all body parts|Web HTTP debug log はレスポンスとリクエスト両方をボディ部に含めた状態で有効化されます|
 
-Designate a default home page for the web server. This page can be static or [semi-dynamic].
 
-By default, when the web server is launched for the first time, 4D creates a home page named "index.html" and puts it in the HTML root folder. If you do not modify this configuration, any browser connecting to the web server will obtain the following page:
+## デフォルトホームページ
+
+| 設定できる場所             | 名称                                                         | コメント              |
+| ------------------- | ---------------------------------------------------------- | ----------------- |
+| webServer オブジェクト    | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | テキスト              |
+| `WEB SET HOME PAGE` |                                                            | Webプロセス毎に異なる設定が可能 |
+| 設定ダイアログボックス         | 設定ページ / デフォルトホームページ                                        |                   |
+
+Webサーバーのデフォルトホームページを指定します。 このページはスタティックでもセミダイナミックでも可能です。
+
+Webサーバーの初回起動時には、4D はデフォルトで "index.html" という名前のホームページを作成し、HTMLルートフォルダーに置きます。 この設定を変更しない場合、Webサーバーに接続するブラウザーには以下のようなページが表示されます:
 
 ![](assets/en/WebServer/defaultHomePage.png)
 
-You can designate another default home page by entering its pathname.
+デフォルトホームページを変更するには、パスを "デフォルトホームページ" エリアに入力します。
 
-- The path is relative to the [default HTML root folder](#root-folder).
-- The path is expressed with the POSIX syntax (folders are separated by a slash ("/"))
-- The path must neither start not end with a slash.
+- パスは、[デフォルトHTMLルート](#ルートフォルダー) からの相対パスで設定しなければなりません。
+- パスは POSIX シンタックスで表します (フォルダーはスラッシュ ("/") で区切ります)。
+- パスはスラッシュ ("/") で始まったり終わったりしてはいけません。
 
-For example, if you want the default home page to be "MyHome.htm", and it is located in the "Web" folder (itself located in the default HTML root folder), use "Web/MyHome.htm".
+たとえば、デフォルトHTMLルートフォルダー内の "Web" サブフォルダーにある "MyHome.htm" をデフォルトホームページにする場合、"Web/MyHome.htm" と入力します。
 
-If you do not specify any default home page, the `On Web Connection` database method is called. It is up to you to process the request procedurally.
+デフォルトホームページを指定しない場合、`On Web Connection` データベースメソッドが呼び出されます。 この場合には、プロシージャーでリクエストを処理するのは開発者の役割です。
 
 ## CORSを有効化
 
-| 設定できる場所          | 名                                                  | コメント                                                |
-| ---------------- | -------------------------------------------------- | --------------------------------------------------- |
-| webServer オブジェクト | [`CORSEnabled`](API/WebServerClass.md#corsenabled) | Boolean, true to enable the CORS (false by default) |
-| `WEB SET OPTION` | `Web CORS enabled`                                 | 0 (disabled, default) or 1 (enabled)                |
-| 設定ダイアログボックス      | Options (II) page/Enable CORS                      | Unchecked by default                                |
+| 設定できる場所          | 名称                                                 | コメント                                   |
+| ---------------- | -------------------------------------------------- | -------------------------------------- |
+| webServer オブジェクト | [`CORSEnabled`](API/WebServerClass.md#corsenabled) | ブール; CORSを有効化するには true (デフォルト値は false) |
+| `WEB SET OPTION` | `Web CORS enabled`                                 | 0 (デフォルト値; 無効) または 1 (有効)              |
+| 設定ダイアログボックス      | オプション (II) ページ / CORSを有効化                          | デフォルトではチェックなし                          |
 
-The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。 When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
+4D Webサーバーは、クロスオリジンリソースシェアリング (CORS) を実装しており、これによって別ドメインにて提供されている特定の Webページが、REST などを使用した XHRコールを介してカレントWebアプリケーションのリソースにアクセスできるようにすることが可能です。 セキュリティ上の理由により、"ドメイン間" のリクエストはブラウザーレベルでデフォルトで禁止されています。 有効化されている場合、ドメイン外 Webページからの XHRコール (RESTリクエストなど) をアプリケーションにおいて許可することができます (CORSドメインリストに許可されたアドレスのリストを定義する必要があります。[CORS設定](#CORS設定) 参照)。 有効時に、許可されていないドメインやメソッドがサイト間リクエストを送信した場合、"403 - forbidden" エラーレスポンスによって拒否されます。
 
-When disabled (default), all cross site requests sent with CORS are ignored.
+無効化されている場合 (デフォルト) には、CORS で送信されたサイト間リクエストはすべて無視されます。
 
-For more information about CORS, please refer to the [Cross-origin resource sharing page](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) on Wikipedia.
+CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) ページを参照ください。
 
 #### 参照
 [CORS設定](#cors-settings)
 
-## Enable HTTP
+## HTTPを有効化
 
-| 設定できる場所          | 名                                                  | コメント    |
+| 設定できる場所          | 名称                                                 | コメント    |
 | ---------------- | -------------------------------------------------- | ------- |
 | webServer オブジェクト | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | boolean |
 | `WEB SET OPTION` | `Web HTTP enabled`                                 |         |
-| 設定ダイアログボックス      | Configuration page/Enable HTTP                     |         |
+| 設定ダイアログボックス      | 設定ページ / HTTPを有効化                                   |         |
 
-Indicates whether or not the web server will accept non-secure connections.
+安全でない接続を Webサーバーが受け入れるかどうかを示します。
 
 
-## Enable HTTPS
+## HTTPSを有効にする
 
-| 設定できる場所          | 名                                                    | コメント    |
+| 設定できる場所          | 名称                                                   | コメント    |
 | ---------------- | ---------------------------------------------------- | ------- |
 | webServer オブジェクト | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean |
 | `WEB SET OPTION` | `Web HTTPS enabled`                                  |         |
-| 設定ダイアログボックス      | Configuration page/Enable HTTPS                      |         |
+| 設定ダイアログボックス      | 設定ページ / HTTPSを有効にする                                  |         |
 
-Status for communication over HTTPS. This option is described in [this section](Admin/tls.md).
+Webサーバーがセキュアな接続を受け入れるか受け入れないかを指定します。 このオプションは [TLSプロトコル](Admin/tls.md) で説明しています。
 
 
-## Enable HSTS
+## HSTSを有効にする
 
-| 設定できる場所          | 名                                                  | コメント                                            |
-| ---------------- | -------------------------------------------------- | ----------------------------------------------- |
-| webServer オブジェクト | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | Boolean, true to enable HSTS (default is false) |
-| `WEB SET OPTION` | `Web HSTS enabled`                                 | 0 (disabled, default) or 1 (enabled)            |
+| 設定できる場所          | 名称                                                 | コメント                                   |
+| ---------------- | -------------------------------------------------- | -------------------------------------- |
+| webServer オブジェクト | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | ブール; HSTSを有効化するには true (デフォルト値は false) |
+| `WEB SET OPTION` | `Web HSTS enabled`                                 | 0 (デフォルト値; 無効) または 1 (有効)              |
 
-HTTP Strict Transport Security (HSTS) status.
+HTTP Strict Transport Security (HSTS) の状態です。
 
-When [HTTPS is enabled](#enable-https), keep in mind that if [HTTP is also enabled](#enable-http), the browser can still switch between HTTPS and HTTP (for example, in the browser URL area, the user can replace "https" by "http"). To forbid http redirections, you can [disable HTTP](#enable-http), however in this case an error message is displayed to client HTTP requests.
+[HTTPSを有効](#httpsを有効にする) にした場合、同時に [HTTPも有効](#httpを有効化)になっていると、ブラウザー上では HTTPS と HTTP を切り替えることができることに注意が必要です (たとえば、ブラウザーのアドレスバーで、ユーザーは "https" を "http" に置き換えることができます)。 HTTP へのリダイレクトを禁止するには、[HTTPを無効](#httpを有効化) にすることもできますが、この場合、クライアントの HTTPリクエストに対してエラーメッセージが表示されてしまいます。
 
-HSTS allows the 4D web server to declare that browsers should only interact with it via secure HTTPS connections. Once activated, the 4D web server will automatically add HSTS-related information to all response headers. Browsers will record the HSTS information the first time they receive a response from the 4D web server, then any future HTTP requests will automatically be transformed into HTTPS requests. The length of time this information is stored by the browser is specified with the Web **HSTS max age** setting.
+HSTS によって、4D Webサーバーはブラウザーに対し、セキュアな HTTPS接続のみを許可すると宣言できます。 HSTS を有効にすると、4D Webサーバーはすべてのレスポンスヘッダーに HSTS 関連の情報を自動的に追加します。 4D Webサーバーからの初回レスポンスを受け取った際にブラウザーは HSTS情報を記録し、以降の HTTPリクエストは自動的に HTTPSリクエストに変換されます。 ブラウザー側でこの情報が保存される時間は **HSTS max age** 設定によって指定されます。
 
-> HSTS requires that HTTPS is [enabled](enable-https) on the server. [HTTP](enable-http) must also be enabled to allow client initial connections.
+> HSTS のためには、サーバー上で [HTTPS が有効](httpsを有効にする)になっていなくてはなりません。 また、クライアントの初回接続を許可するために、[HTTP も有効](httpを有効化) でなくてはなりません。
 
-> You can get the current connection mode using the `WEB Is secured connection` command.
+> 現在の接続モードは、`WEB Is secured connection` コマンドで取得できます。
 
 
 ## HSTS Max Age
 
-| 設定できる場所          | 名                                                | コメント              |
-| ---------------- | ------------------------------------------------ | ----------------- |
-| webServer オブジェクト | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | number in seconds |
-| `WEB SET OPTION` | `Web HSTS max age`                               | number in seconds |
+| 設定できる場所          | 名称                                               | コメント     |
+| ---------------- | ------------------------------------------------ | -------- |
+| webServer オブジェクト | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | 数値 (秒単位) |
+| `WEB SET OPTION` | `Web HSTS max age`                               | 数値 (秒単位) |
 
-Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. この情報はクライアント側で指定された時間のあいだ保存されます。 Default value is 63072000 (2 years)
+新規クライアント接続ごとに HSTS がアクティブな最長時間 (秒単位) を指定します。 この情報はクライアント側で指定された時間のあいだ保存されます。 デフォルト値は 63072000 (2年)。
 
-> **Warning:** Once HSTS is enabled, client connections will continue to use this mechanism for the specified duration. When you are testing your applications, it is recommended to set a short duration to be able to switch between secured and non-secured connection modes if necessary.
-
-
+> **警告:** HSTSを有効にすると指定された期間中、クライアントの接続はこのメカニズムを使用し続けます。 アプリケーションをテストする際には、セキュアな接続とセキュアでない接続を必要に応じて切り替えることができるように、短い期間を設定することが推奨されます。
 
 
 
-## HTTP Compression Level
 
-| 設定できる場所          | 名                                                                    | コメント                           |
-| ---------------- | -------------------------------------------------------------------- | ------------------------------ |
-| webServer オブジェクト | [`HTTPCompressionLevel`](API/WebServerClass.md#httpcompressionlevel) |                                |
-| `WEB SET OPTION` | `Web HTTP compression level`                                         | Applies to Web and Web Service |
 
-Compression level for all compressed HTTP exchanges for the 4D web server (client requests or server replies). This setting lets you optimize exchanges by either privileging speed of execution (less compression) or the amount of compression (less speed). The choice of a value depends on the size and type of data exchanged.
+## HTTP圧縮レベル
 
-Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You can also pass -1 to get a compromise between speed and rate of compression. By default, the compression level is 1 (faster compression).
+| 設定できる場所          | 名称                                                                   | コメント                   |
+| ---------------- | -------------------------------------------------------------------- | ---------------------- |
+| webServer オブジェクト | [`HTTPCompressionLevel`](API/WebServerClass.md#httpcompressionlevel) |                        |
+| `WEB SET OPTION` | `Web HTTP compression level`                                         | Web および Webサービスに適用されます |
 
-## HTTP Compression Threshold
+4D Webサーバーの HTTP圧縮通信 (クライアントリクエストまたはサーバーレスポンス) における圧縮レベル。 この設定を使って、実行速度を優先するか (圧縮少)、それとも圧縮レベルを優先するか (速度減) を指定し、通信を最適化することができます。 適切な値は、通信データのサイズとタイプによって異なります。
 
-| 設定できる場所          | 名                                                                            | コメント |
+1 から 9 の値を指定します (1 が低圧縮、9 が高圧縮)。 -1 を指定すると、圧縮速度と圧縮率の妥協点が得られます。 デフォルトの圧縮レベルは 1 (低圧縮) です。
+
+## HTTP圧縮のしきい値
+
+| 設定できる場所          | 名称                                                                           | コメント |
 | ---------------- | ---------------------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`HTTPCompressionThreshold`](API/WebServerClass.md#httpcompressionthreshold) |      |
 | `WEB SET OPTION` | `Web HTTP compression threshold`                                             |      |
 
-In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. この設定は、通信サイズが小さい場合、圧縮に処理時間が費やされるのを避けるのに有用です。
+最適化されたHTTP通信のフレームワークにおける、HTTP圧縮のしきい値 (バイト単位)。このサイズ未満のリクエストについては、通信が圧縮されません。 この設定は、通信サイズが小さい場合、圧縮に処理時間が費やされるのを避けるのに有用です。
 
-Pass the size expressed in bytes as value. By default, the compression threshold is set to 1024 bytes.
+サイズを数値 (バイト単位) で指定します。 デフォルトのしきい値は 1024 バイトに設定されています。
 
 
 ## HTTP ポート
 
-| 設定できる場所          | 名                                            | コメント   |
+| 設定できる場所          | 名称                                           | コメント   |
 | ---------------- | -------------------------------------------- | ------ |
 | webServer オブジェクト | [`HTTPPort`](API/WebServerClass.md#httpport) | number |
 | `WEB SET OPTION` | `Web port ID`                                |        |
-| 設定ダイアログボックス      | Configuration page/HTTP Port                 |        |
+| 設定ダイアログボックス      | 設定ページ / HTTPポート                              |        |
 
-Listening IP (TCP) port number for HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
+HTTP接続を受け付ける IP (TCP) ポート番号。 デフォルトで、4D は通常の Web HTTPポート (TCPポート) 番号である 80番を使用して Webアプリケーションを公開します。 他の Webサービスによってこのポート番号が既に使用されている場合、4D が使用する HTTPポート番号を変更する必要があります。
 
 > In macOS, modifying the HTTP port allows you to start the 4D web server without being the root user of the machine (see [macOS HelperTool](#macos-helpertool)).
 
@@ -274,7 +274,7 @@ If you specify 0, 4D will use the default HTTP port number 80.
 
 ## HTTP Trace
 
-| 設定できる場所          | 名                                              | コメント                            |
+| 設定できる場所          | 名称                                             | コメント                            |
 | ---------------- | ---------------------------------------------- | ------------------------------- |
 | webServer オブジェクト | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Boolean, default = false        |
 | `WEB SET OPTION` | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
@@ -286,7 +286,7 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 
 ## HTTPS ポート
 
-| 設定できる場所          | 名                                              | コメント   |
+| 設定できる場所          | 名称                                             | コメント   |
 | ---------------- | ---------------------------------------------- | ------ |
 | webServer オブジェクト | [`HTTPSPort`](API/WebServerClass.md#httpsport) | number |
 | `WEB SET OPTION` | `Web HTTPS port ID`                            |        |
@@ -297,7 +297,7 @@ Listening IP port number for HTTPS connections via TLS. By default, the value is
 
 ## Inactive Process Timeout
 
-| 設定できる場所          | 名                                                                        | コメント   |
+| 設定できる場所          | 名称                                                                       | コメント   |
 | ---------------- | ------------------------------------------------------------------------ | ------ |
 | webServer オブジェクト | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout) |        |
 | `WEB SET OPTION` | `Web inactive process timeout`                                           |        |
@@ -310,7 +310,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 
 ## Inactive Session Timeout
 
-| 設定できる場所          | 名                                                                        | コメント |
+| 設定できる場所          | 名称                                                                       | コメント |
 | ---------------- | ------------------------------------------------------------------------ | ---- |
 | webServer オブジェクト | [`inactiveSessionTimeout`](API/WebServerClass.md#inactivesessiontimeout) |      |
 | `WEB SET OPTION` | `Web inactive session timeout`                                           |      |
@@ -322,7 +322,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 
 ## IP Address to listen
 
-| 設定できる場所          | 名                                                              | コメント       |
+| 設定できる場所          | 名称                                                             | コメント       |
 | ---------------- | -------------------------------------------------------------- | ---------- |
 | webServer オブジェクト | [`IPAddressToListen`](API/WebServerClass.md#ipaddresstolisten) |            |
 | `WEB SET OPTION` | `Web IP address to listen`                                     |            |
@@ -355,7 +355,7 @@ To avoid this confusion, we recommend using the [ ] notation whenever you combin
 
 ## Keep Session
 
-| 設定できる場所          | 名                                                  | コメント |
+| 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer オブジェクト | [`keepSession`](API/WebServerClass.md#keepsession) |      |
 | `WEB SET OPTION` | `Web keep session`                                 |      |
@@ -370,7 +370,7 @@ Default is true (enabled).
 
 ## Log Recording
 
-| 設定できる場所          | 名                                                    | コメント       |
+| 設定できる場所          | 名称                                                   | コメント       |
 | ---------------- | ---------------------------------------------------- | ---------- |
 | webServer オブジェクト | [`logRecording`](API/WebServerClass.md#logrecording) |            |
 | `WEB SET OPTION` | `Web log recording`                                  |            |
@@ -393,7 +393,7 @@ This setting allows you to select the format of this file. Available values are:
 
 ## 最大同時Webプロセス
 
-| 設定できる場所          | 名                                                                        | コメント |
+| 設定できる場所          | 名称                                                                       | コメント |
 | ---------------- | ------------------------------------------------------------------------ | ---- |
 | webServer オブジェクト | [`maxConcurrentProcesses`](API/WebServerClass.md#maxconcurrentprocesses) |      |
 | `WEB SET OPTION` | `Web max concurrent processes`                                           |      |
@@ -406,7 +406,7 @@ By default, the value is 100. You can set the number anywhere between 10 and 320
 
 ## Maximum Request Size
 
-| 設定できる場所          | 名                                                        | コメント |
+| 設定できる場所          | 名称                                                       | コメント |
 | ---------------- | -------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`maxRequestSize`](API/WebServerClass.md#maxrequestsize) |      |
 | `WEB SET OPTION` | `Web maximum requests size`                              |      |
@@ -420,7 +420,7 @@ Possible values: 500 000 to 2 147 483 648.
 
 ## Maximum Session Number
 
-| 設定できる場所          | 名                                                  | コメント |
+| 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
 | webServer オブジェクト | [`maxSessions`](API/WebServerClass.md#maxsessions) |      |
 | `WEB SET OPTION` | `Web max sessions`                                 |      |
@@ -432,7 +432,7 @@ Default value: 100 (pass 0 to restore the default value).
 
 ## Minimum TLS Version
 
-| 設定できる場所          | 名                                                      | コメント   |
+| 設定できる場所          | 名称                                                     | コメント   |
 | ---------------- | ------------------------------------------------------ | ------ |
 | webServer オブジェクト | [`minTLSVersion`](API/WebServerClass.md#mintlsversion) | number |
 
@@ -450,9 +450,9 @@ Minimum TLS version accepted for connections. これよりも低いバージョ�
 > The minimum TLS version used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server and client/server connections.
 
 
-## 名
+## 名称
 
-| 設定できる場所          | 名                                    | コメント |
+| 設定できる場所          | 名称                                   | コメント |
 | ---------------- | ------------------------------------ | ---- |
 | webServer オブジェクト | [`name`](API/WebServerClass.md#name) |      |
 
@@ -461,7 +461,7 @@ Name of the web server application. Useful when component web servers are starte
 
 ## OpenSSL Version
 
-| 設定できる場所          | 名                                                        | コメント      |
+| 設定できる場所          | 名称                                                       | コメント      |
 | ---------------- | -------------------------------------------------------- | --------- |
 | webServer オブジェクト | [`openSSLVersion`](API/WebServerClass.md#opensslversion) | Read-only |
 
@@ -470,7 +470,7 @@ Version of the OpenSSL library used.
 
 ## Perfect Forward Secrecy
 
-| 設定できる場所          | 名                                                                      | コメント               |
+| 設定できる場所          | 名称                                                                     | コメント               |
 | ---------------- | ---------------------------------------------------------------------- | ------------------ |
 | webServer オブジェクト | [`perfectForwardSecrecy`](API/WebServerClass.md#perfectforwardsecrecy) | Boolean, read-only |
 
@@ -514,7 +514,7 @@ In this case, robots are not allowed to access the entire site.
 
 ## ルートフォルダー
 
-| 設定できる場所               | 名                                                | コメント                                                                                                                                  |
+| 設定できる場所               | 名称                                               | コメント                                                                                                                                  |
 | --------------------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
 | webServer オブジェクト      | [`rootFolder`](API/WebServerClass.md#rootfolder) | Text property but can be a [`4D.Folder`](API/FolderClass.md) object when used with the *settings* parameter of the `start()` function |
 | `WEB SET ROOT FOLDER` |                                                  |                                                                                                                                       |
@@ -531,7 +531,7 @@ By default, 4D defines a HTML Root folder named **WebFolder**. If it does not al
 You can designate another default HTML root folder by entering its pathname.
 
 - The path is relative to the [Project folder](Project/architecture.md#project-folder) (4D local and 4D Server) or to the folder containing the 4D application or software package (4D in remote mode).
-- The path is expressed with the POSIX syntax (folders are separated by a slash ("/"))
+- パスは POSIX シンタックスで表します (フォルダーはスラッシュ ("/") で区切ります)。
 - To "go up" one level in the folder hierarchy, enter “..” (two periods) before the folder name
 - The path must not start with a slash (except if you want the HTML root folder to be the Project or 4D remote folder, but for access to the folders above to be forbidden, in which case you can pass "/" as the root folder).
 
@@ -543,7 +543,7 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 
 ## Session Cookie Domain
 
-| 設定できる場所          | 名                                                                  | コメント |
+| 設定できる場所          | 名称                                                                 | コメント |
 | ---------------- | ------------------------------------------------------------------ | ---- |
 | webServer オブジェクト | [`sessionCookieDomain`](API/WebServerClass.md#sessioncookiedomain) |      |
 | `WEB SET OPTION` | `Web session cookie domain`                                        |      |
@@ -553,7 +553,7 @@ Value of the "domain" field of the session cookie. Useful for controlling the sc
 
 ## Session Cookie Name
 
-| 設定できる場所          | 名                                                              | コメント |
+| 設定できる場所          | 名称                                                             | コメント |
 | ---------------- | -------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`sessionCookieName`](API/WebServerClass.md#sessioncookiename) |      |
 | `WEB SET OPTION` | `Web session cookie name`                                      |      |
@@ -563,7 +563,7 @@ Name of the cookie used for saving the session ID. Default = "4DSID".
 
 ## Session Cookie Path
 
-| 設定できる場所          | 名                                                              | コメント |
+| 設定できる場所          | 名称                                                             | コメント |
 | ---------------- | -------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`sessionCookiePath`](API/WebServerClass.md#sessioncookiepath) |      |
 | `WEB SET OPTION` | `Web session cookie path`                                      |      |
@@ -572,7 +572,7 @@ Name of the cookie used for saving the session ID. Default = "4DSID".
 
 ## Session Cookie SameSite
 
-| 設定できる場所          | 名                                                                      | コメント |
+| 設定できる場所          | 名称                                                                     | コメント |
 | ---------------- | ---------------------------------------------------------------------- | ---- |
 | webServer オブジェクト | [`sessionCookieSameSite`](API/WebServerClass.md#sessioncookiesamesite) |      |
 
