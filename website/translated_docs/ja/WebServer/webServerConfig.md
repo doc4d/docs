@@ -353,7 +353,7 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォル
     [2001:0DB8::85a3:0:ac1f:8001]:8081 // ポート 8081 指定の IPv6アドレス
 ```
 
-## 旧式セッション
+## 旧式セッション (自動セッション管理)
 
 | 設定できる場所          | 名称                                                 | コメント |
 | ---------------- | -------------------------------------------------- | ---- |
@@ -621,20 +621,20 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 **一時的なコンテキストを再利用する** オプションがチェックされていると、リモートモードの 4D は作成された固有の Webプロセスを保守し、その後のリクエストで再利用します。 プロセスの作成処理が省略されるため、Webサーバーのパフォーマンスが向上します。
 
 他方このオプションを使用する場合、不正な結果が返されることを避けるために、4Dメソッド内で使用される変数をシステマチックに初期化する必要があります。 同様に、以前のリクエストで使用されたカレントセレクションやカレントレコードをアンロードする必要があります。
-> * This option is checked (and locked) automatically when the **Automatic Session Management** option is checked. In fact, the session management mechanism is actually based on the principle of recycling web processes: each session uses the same process that is maintained during the lifespan of the session. However, note that session processes cannot be "shared" between different sessions: once the session is over, the process is automatically killed (and not reused). It is therefore unnecessary to reset the selections or variables in this case.
+> * **旧式セッション** (自動セッション管理) が有効にされると、このオプションも自動的に選択されロックされます。 実際のところ、セッション管理メカニズムは Webプロセスの再利用の原則に基づいています: 各セッションは当該セッションが有効である間、同じWebプロセスを使用して処理されます。 異なるセッションで セッションプロセスが共有されることはありません。セッションが終了するとプロセスは破棄され、再利用されることはありません。 そのため、この場合セレクションや変数を初期化する必要はありません。
 > 
-> * This option only has an effect with a 4D web server in remote mode. With a 4D in local mode, all web processes (other than session processes) are killed after their use.
+> * このオプションはリモートモードの 4D Webサーバーでのみ効果があります。 ローカルモードの 4D では (セッション管理をおこなうプロセスを除く) すべてのWebプロセスが使用後に終了されます。
 
 
 
-#### Send Extended Characters Directly
+#### 拡張文字をそのまま送信
 
-When this option is checked, the web server sends extended characters “as is” in semi-dynamic pages, without converting them into HTML entities. This option has shown a speed increase on most foreign operating systems (especially the Japanese system).
+このオプションを有効にすると、Webサーバーはセミダイナミックページの拡張文字を、HTML標準に基づいた変換をおこなわずに「そのまま」送信します。 このオプションにより、とくに Shift_JIS文字コード利用時の日本語のシステムで速度が向上します。
 
 
-#### Keep-Alive Connections
+#### Keep-Alive接続を使用する
 
-The 4D Web Server can use keep-alive connections. The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
+4D Webサーバーは Keep-Alive接続を使用できます。 The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
 
 The **Use Keep-Alive Connections** option enables or disables keep-alive TCP connections for the web server. This option is enabled by default. In most cases, it is advisable to keep this option check since it accelerates the exchanges. If the web browser does not support connection keep alive, the 4D Web Server automatically switches to HTTP/1.0.
 
