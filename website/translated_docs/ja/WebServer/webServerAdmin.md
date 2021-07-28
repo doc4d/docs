@@ -1,30 +1,30 @@
 ---
 id: webServerAdmin
-title: データベース管理
+title: 管理
 ---
 
-4D provides several integrated tools to start, stop, or monitor the integrated web server.
+4Dには、統合された Webサーバーを起動・停止・監視するためのツールがいくつか用意されています。
 
 
-## Starting the 4D Web Server
+## 4D Webサーバーを開始する
 
-> To be able to launch the web server of 4D or 4D Server, you must have a "4D Web Application" license. For more information, please refer to the [4D Web site](https://www.4d.com).
+> 4D や 4D Server の Webサーバーを起動するには、"4D Web Application" ライセンスが必要です。 詳細については [4D Webサイト](https://www.4d.com) を参照ください。
 
 
-A 4D project can start and monitor a web server for the main (host) application as well as for each hosted component.
+4Dプロジェクトは、メイン (ホスト) アプリケーションおよび、ホストされた各コンポーネントの Webサーバーを起動して監視することができます。
 
-The main 4D web server can be started in different ways:
+4D Webサーバーは複数の方法で起動できます:
 
-*   Using a button/menu command.
-    *   4D: **Run\>Start Web Server** menu<br>![](assets/en/WebServer/start1.png)
-    *   4D Server: **Start HTTP server** button of the HTTP Server page<br>![](assets/en/WebServer/start2.png)
+*   ボタン/メニューコマンドの使用。
+    *   4D: **実行 ＞ Webサーバー開始** メニュー<br>![](assets/en/WebServer/start1.png)
+    *   4D Server: HTTPサーバーページの **HTTPサーバー開始ボタン**<br>![](assets/en/WebServer/start2.png)
 
-*   Automatically starting it each time the 4D application is opened. To do this, display the **Web\/Configuration** page of the Settings and select the **Launch Web Server at Startup** check box:<br>![](assets/en/WebServer/config.png)
+*   4Dアプリケーション開始時に Webサーバーを自動起動。 これには、ストラクチャー設定の **Web/設定**ページを表示し、**開始時にWebサーバーを起動** オプションを有効にします:<br>![](assets/en/WebServer/config.png)
 
-*   Programmatically, by calling the [`webServer.start()`](API/WebServerClass.md#start) function or `WEB START SERVER` command.
+*   [`webServer.start()`](API/WebServerClass.md#start) 関数または `WEB START SERVER` コマンドを呼び出してプログラムで開始。
 
-The web server of any component can be launched by calling the [`webServer.start()`](API/WebServerClass.md#start) function on the component's web server object.
-> You do not need to relaunch the 4D application to start or stop the web server.
+コンポーネントの Webサーバーは、コンポーネントの WebServer オブジェクトに対して [`webServer.start()`](API/WebServerClass.md#start) 関数を呼び出すことで開始できます。
+> Webサーバーを開始したり停止したりするために、4Dアプリケーションを再起動する必要はありません。
 
 ## Stopping the 4D Web Server
 
