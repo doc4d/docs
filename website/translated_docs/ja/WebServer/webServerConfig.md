@@ -113,7 +113,7 @@ CORS を介したサーバーへのデータリクエスト送信が許可され
 
 #### 参照
 
-[CORSを有効化](#enable-cors-service)
+[CORSを有効化](#CORSを有効化)
 
 
 
@@ -174,7 +174,7 @@ Webサーバーの初回起動時には、4D はデフォルトで "index.html" 
 CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) ページを参照ください。
 
 #### 参照
-[CORS設定](#cors-settings)
+[CORS設定](#CORS設定)
 
 ## HTTPを有効化
 
@@ -634,17 +634,17 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 
 #### Keep-Alive接続を使用する
 
-4D Webサーバーは Keep-Alive接続を使用できます。 The keep-alive option allows you to maintain a single open TCP connection for the set of exchanges between the web browser and the server to save system resources and to optimize transfers.
+4D Webサーバーは Keep-Alive接続を使用できます。 keep-alive接続を使用すると、Webブラウザーとサーバー間の一連のやり取りについて単一の TCP接続を維持し、システムリソースの節約と通信の最適化を図ることができます。
 
-The **Use Keep-Alive Connections** option enables or disables keep-alive TCP connections for the web server. This option is enabled by default. In most cases, it is advisable to keep this option check since it accelerates the exchanges. If the web browser does not support connection keep alive, the 4D Web Server automatically switches to HTTP/1.0.
+**Keep-Alive接続を使用する** オプションは、Webサーバーの Keep-Alive接続を有効および無効にします。 このオプションはデフォルトで有効になっています。 ほとんどの場合、通信が高速化されるため、この状態をお勧めします。 Webブラウザーが Keep-Alive接続をサ ポートしない場合、4D Webサーバーは自動で HTTP/1.0 に切り替えます。
 
-The 4D Web Server keep-alive function concerns all TCP/IP connections (HTTP, HTTPS). Note however that keep-alive connections are not always used for all 4D web processes.
+4D Webサーバーの Keep-Alive機能はすべての TCP/IP接続 (HTTP, HTTPS) に関連します。 しかしながら、すべての 4D Webプロセスで常に Keep-Alive接続が使用されるわけではないことに留意してください。
 
-In some cases, other optimized internal functions may be invoked. Keep-alive connections are useful mainly for static pages.
+あるケースでは、内部的な他の最適化機能が呼び出されることがあります。 Keep-Alive接続は、おもにスタティックページで有効です。
 
-Two options allow you to set how the keep-alive connections work:
+Keep-Alive接続を設定する 2つのオプションがあります:
 
-*   **Number of requests by connection**: Allows you to set the maximum number of requests and responses able to travel over a connection keep alive. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).<p> The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web Server.
+*   **接続毎のリクエスト数**: ひとつの Keep-Alive接続におけるリクエストとレスポンスの最大数を設定します。 接続あたりのリクエスト数を制限することで、サーバーのリクエスト過多を避けることができます (攻撃者が使用するテクニック)。<p> 4D Webサーバーをホストするマシンのリソースに応じて、デフォルト値 (100) を増減できます。
 
-*   **Timeout**: This value defines the maximum wait period (in seconds) during which the web server maintains an open TCP connection without receiving any requests from the web browser. Once this period is over, the server closes the connection.<p> If the web browser sends a request after the connection is closed, a new TCP connection is automatically created. This operation is not visible for the user.
+*   **タイムアウト**: この値を使用して、Webブラウザーからリクエストがおこなわれない状態で、Webサーバーが開かれた接続を保守する最大の待ち秒数を設定します。 この秒数が経過すると、サーバーは接続を閉じます。<p> 接続が閉じられた後に Webブラウザーがリクエストを送信すると、新しい TCP接続が作成されます。 この動作はユーザーからは見えません。
 
