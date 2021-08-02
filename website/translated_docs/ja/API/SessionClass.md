@@ -18,7 +18,7 @@ title: セッション
 | [<!-- INCLUDE #SessionClass.idleTimeout.Syntax -->](#idletimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.idleTimeout.Summary -->|
 | [<!-- INCLUDE #SessionClass.isGuest().Syntax -->](#isguest)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.isGuest().Summary -->|
 | [<!-- INCLUDE #SessionClass.setPrivileges().Syntax -->](#setprivileges)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.setPrivileges().Summary -->|
-| [<!-- INCLUDE #SessionClass.storage).Syntax -->](#storage)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.storage.Summary -->|
+| [<!-- INCLUDE #SessionClass.storage.Syntax -->](#storage)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.storage.Summary -->|
 | [<!-- INCLUDE #SessionClass.userName.Syntax -->](#username)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SessionClass.userName.Summary -->|
 
 
@@ -37,7 +37,7 @@ title: セッション
 
 
 <!-- REF #_command_.Session.Params -->
-| 参照  | タイプ        |    | 説明             |
+| 引数  | タイプ        |    | 説明             |
 | --- | ---------- |:--:| -------------- |
 | 戻り値 | 4D.Session | <- | Session オブジェクト |
 <!-- END REF -->
@@ -95,7 +95,7 @@ IP:port/4DACTION/action_Session
 **.clearPrivileges()**<!-- END REF -->
 
 <!-- REF #SessionClass.clearPrivileges().Params -->
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 <!-- END REF -->
@@ -164,7 +164,7 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 **.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| 参照        | タイプ  |    | 説明                                                |
+| 引数        | タイプ  |    | 説明                                                |
 | --------- | ---- |:--:| ------------------------------------------------- |
 | privilege | テキスト | <- | 確認するアクセス権の名称                                      |
 | 戻り値       | ブール  | <- | セッションが *privilege* のアクセス権を持っていれば true、それ以外は false |
@@ -247,7 +247,7 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.isGuest().Params -->
-| 参照  | タイプ |    | 説明                            |
+| 引数  | タイプ |    | 説明                            |
 | --- | --- |:--:| ----------------------------- |
 | 戻り値 | ブール | <- | ゲストセッションの場合は true、それ以外は false |
 <!-- END REF -->
@@ -285,7 +285,7 @@ End if
 **.setPrivileges**( *privilege* : Text )<br>**.setPrivileges**( *privileges* : Collection )<br>**.setPrivileges**( *settings* : Object )<!-- END REF -->
 
 <!-- REF #SessionClass.setPrivileges().Params -->
-| 参照         | タイプ    |    | 説明                                          |
+| 引数         | タイプ    |    | 説明                                          |
 | ---------- | ------ |:--:| ------------------------------------------- |
 | privilege  | テキスト   | -> | アクセス権の名称                                    |
 | privileges | コレクション | -> | アクセス権の名称のコレクション                             |
