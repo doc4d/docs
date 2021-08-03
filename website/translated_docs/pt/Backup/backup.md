@@ -90,6 +90,6 @@ O arquivo **backupHistory.json** é criado na pasta de destino do backup atual. 
 ```4d
 $backupHistory:=Get 4D file(arquivo histórico Backup)
 ```
-> **WARNING**  
-> Deleting or moving the **backupHistory.json** file will cause the next backup number to be reset.
-> The **backupHistory.json** file is formatted to be used by the 4D application. If you are looking for a human-readable report on backup operations, you might find the Backup journal more accurate. 
+> **AVISO**  
+> Apagar ou mover o arquivo **backupHistory.json** faz com que o próximo número de backup seja resetado.
+> O arquivo **backupHistory.json** é formatado para ser usado pela aplicação 4D. Se estiver procurando por um relatório que possa ser lido por olhos humanos, o diário de Backup journal é mais preciso. 
