@@ -191,16 +191,16 @@ http://localhost/rest/Friends
 
 ### ユーザーテーブルの作成
 
-The most simple and secured way to log a user on the 4D web server is based upon the following scenario:
+4D Webサーバーにユーザーをログインさせる、もっともシンプルで安全な方法は、以下のシナリオに基づきます:
 
-- Users are stored in a dedicated, unexposed table (named *WebUsers* for example)
-- The *WebUsers* table could be [encrypted](MSC/encrypt.md) and stores the user login and a hash of their password.
+- ユーザーは、専用の非公開テーブル (例: *WebUsers*) に保存されます。
+- [暗号化](MSC/encrypt.md) することも可能な *WebUsers* テーブルには、ユーザーのログイン名とパスワードのハッシュが保存されています。
 
-1. Create a table with some fields, for example:
+1. いくつかのフィールドを持つテーブルを作成します。たとえば:
 
 ![](assets/en/WebServer/helloUsers.png)
 
-2. Write and execute the following code to create a user:
+2. 以下のコードを実行し、ユーザーを作成します:
 
 ```4d
 var $webUser : cs.WebUsersEntity
@@ -208,7 +208,7 @@ var $webUser : cs.WebUsersEntity
 $webUser:=ds.WebUsers.new()
 $webUser.firstName:="John"
 $webUser.lastName:="Doe"
-// the password would be entered by the user
+// パスワードはユーザーが自身で入力します
 $webUser.password:=Generate password hash("123")
 $webUser.userId:="john@4d.com"
 $webUser.save()
@@ -218,11 +218,11 @@ $webUser.save()
 
 ### ユーザー認証
 
-> To be secure from end to end, it is necessary that the whole connection is established via [https](webServerConfig.md#enable-https).
+> 通信が安全であるためには、接続は [https](webServerConfig.md#HTTPSを有効にする) で確立されている必要があります。
 
-1. Open the Explorer and create a project method named "login".
+1. エクスプローラーを開き、"login" というプロジェクトメソッドを作成します。
 
-3. Write the following code:
+3. 以下のコードを書きます:
 
 ```4d
 var $indexUserId; $indexPassword : Integer
@@ -231,26 +231,26 @@ var $user; $info : Object
 ARRAY TEXT($anames; 0)
 ARRAY TEXT($avalues; 0)
 
-// get values sent in the header of the request
+// リクエストヘッダーにて送信された値を取得します
 WEB GET VARIABLES($anames; $avalues)
 
-// look for header login fields
+// ヘッダーのログインフィールドを探します
 $indexUserId:=Find in array($anames; "userId")
 $userId:=$avalues{$indexUserId}
 $indexPassword:=Find in array($anames; "password")
 $password:=$avalues{$indexPassword}
 
-//look for a user with the entered name in the users table
+// 入力された名前のユーザーを users テーブルで探します
 $user:=ds.WebUsers.query("userId = :1"; $userId).first()
 
-If ($user#Null) //a user was found
-        //check the password
+If ($user#Null) // ユーザーが見つかった場合
+        // パスワードを確認します
     If (Verify password hash($password; $user.password))
-            //password ok, fill the session
+            // パスワードがOKであれば、セッションに登録します
         $info:=New object()
         $info.userName:=$user.firstName+" "+$user.lastName
         Session.setPrivileges($info)
-            //You can use the user session to store any information
+            // ユーザーセッションを使って任意の情報を保存できます
         WEB SEND TEXT("Welcome "+Session.userName)
     Else 
         WEB SEND TEXT("Wrong user name or password.")
@@ -260,7 +260,7 @@ Else
 End if 
 ```
 
-3. Display the method properties by clicking on the **[i]** button in the code editor, check the `4D tags and URLs (4DACTION...)` option and click **OK**.
+3. コードエディターの **[i]** ボタンでメソッドプロパティを表示し、`4DタグとURL(4DACTION...)` オプションにチェックを入れて **OK** をクリックします。
 
 ![](assets/en/WebServer/hello0.png)
 
@@ -271,15 +271,15 @@ End if
 http://localhost/4DACTION/login/?userID=john@4d.com&password=123
 ```
 
-> Using such URLs is not recommended, it is only presented here to keep the example simple. A more realistic login request must be handled through a web form and a POST request. See [this page](sessions.md#example) for an example of form POST.
+> このような URL の使用は推奨されませんが、ここでは例を簡単にするために使っています。 より現実的なログインリクエストは、Webフォームと POSTリクエストで処理する必要があります。 フォームの POST の例は、[このページ](sessions.md#例題) を参照ください。
 
-Then you will be logged for the session:
+すると、そのセッションでログインされます:
 
 ![](assets/en/WebServer/login1.png)
 
-Wrong credentials would be rejected:
+間違ったログイン情報は拒否されます:
 
 ![](assets/en/WebServer/login2.png)
 
-Once a user is logged, you can handle the associated session using the `WEB Get Current Session ID` method. See the [User sessions](sessions.md) page. 
+ユーザーがログインすると、`WEB Get Current Session ID` メソッドを使って、関連するセッションを処理することができます。 [ユーザーセッション](sessions.md) のページを参照ください。 
 
