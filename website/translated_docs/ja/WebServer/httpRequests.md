@@ -1,20 +1,20 @@
 ---
 id: httpRequests
-title: Processing HTTP requests
+title: HTTPリクエストの処理
 ---
 
-The 4D web server provides several features to handle HTTP requests:
+4D Webサーバーは、HTTPリクエストを処理するための機能を複数備えています:
 
-- the `On Web Connection` database method, a router for your web application,
-- the `/4DACTION` URL to call server-side code
-- `WEB GET VARIABLES` to get values from HTML objects sent to the server
-- other commands such as `WEB GET HTTP BODY`, `WEB GET HTTP HEADER`, or `WEB GET BODY PART` allow to customize the request processing, including cookies.
-- the *COMPILER_WEB* project method, to declare your variables.
+- Webアプリケーションのルーターとなる `On Web Connection` データベースメソッド。
+- サーバーサイドコードを呼び出すための `/4DACTION` URL。
+- サーバーに送信された HTMLオブジェクトから値を取得する `WEB GET VARIABLES`。
+- `WEB GET HTTP BODY`、`WEB GET HTTP HEADER`、`WEB GET BODY PART` などのコマンドによって、リクエスト処理をカスタマイズすることができます (cookie 含む)。
+- 変数を宣言するための *COMPILER_WEB* プロジェクトメソッド。
 
 
 ## On Web Connection
 
-The `On Web Connection` database method can be used as the entry point for the 4D Web server.
+`On Web Connection` データベースメソッドは、4D Webサーバーのエントリーポイントとして使用できます。
 
 ### Database method calls
 
