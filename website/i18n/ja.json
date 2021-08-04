@@ -830,7 +830,7 @@
         "title": "はじめに"
       },
       "WebServer/httpRequests": {
-        "title": "Processing HTTP requests"
+        "title": "HTTPリクエストの処理"
       },
       "WebServer/preemptiveWeb": {
         "title": "Using preemptive web processes"
@@ -839,7 +839,7 @@
         "title": "User sessions"
       },
       "WebServer/templates": {
-        "title": "Template pages"
+        "title": "テンプレートページ"
       },
       "WebServer/webServer": {
         "title": "概要"
