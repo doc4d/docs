@@ -674,13 +674,21 @@ use the following code:
 
 #### Description
 
-The `VP EXPORT DOCUMENT` command <!-- REF _command_.VP_EXPORT_DOCUMENT.Summary -->exports the 4D View Pro object attached to the 4D View Pro area *vpAreaName* to a document on disk according to the *filePath* and *paramObj* parameters<!-- END REF -->. 
+The `VP EXPORT DOCUMENT` command <!-- REF _command_.VP_EXPORT_DOCUMENT.Summary -->exports the 4D View Pro object attached to the 4D View Pro area `vpAreaName` to a document on disk according to the `filePath` and `paramObj` parameters<!-- END REF -->. 
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+In `vpAreaName`, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In *filePath*, pass the destination path and name of the document to be exported. You can specify the document format by including its extension, 4D View Pro (".4vp"), Microsoft Excel (".xlsx"), or PDF (".pdf") after the document's name. If you pass only the document name, it will be saved at the same level as the 4D structure file with the default ".4vp" extension.
+In `filePath`, pass the destination path and name of the document to be exported. If you don't specify a path, the document will be saved at the same level as the Project folder.
 
-The optional *paramObj* parameter allows you to define multiple properties for the exported 4D View Pro object, as well as launch a callback method when the export has completed.
+You can specify the exported file's format by including an extension after the document's name:
+* 4D View Pro (".4vp") 
+* Microsoft Excel (".xlsx")
+* PDF (".pdf") 
+* CSV (".txt", or ".csv")
+
+If the extension is not included, but the format is specified in `paramObj`, the exported file will have the extension that corresponds to the format, except for the CSV format (no extension is added in this case).
+
+The optional parameter `paramObj` allows you to define multiple properties for the exported 4D View Pro object, as well as launch a callback method when the export has completed.
  
  
 |Property|	Type|	Description|
@@ -691,24 +699,30 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 |valuesOnly|	boolean|	Specifies that only the values from formulas (if any) will be exported.|
 |includeFormatInfo|	boolean|	True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.|
 |sheetIndex|	number|	PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
-|pdfOptions|	object|	PDF only (optional) - Options for the pdf export <p><table><tr><th>Property</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table>|
+|pdfOptions|	object|	PDF only (optional) - Options for pdf export <p><table><tr><th>Property</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>|
+|csvOptions|object|	CSV only (optional) - Options for csv export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>range</td><td>object</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>Column delimiter. Default: ","</td></tr></table></p>|
 |\<customProperty>|	any|	Any custom property that will be available through the $3 parameter in the callback method.|
 
->**Notes about Excel format**: 
->
->*	When exporting a 4D View Pro document into a Microsoft Excel-formatted file, some settings may be lost. For example, 4D methods and formulas are not supported by Excel. You can verify other settings with [this list](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html) from GrapeCity.
->
->*	Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export. 
+**Notes about Excel format**: 
+
+*	When exporting a 4D View Pro document into a Microsoft Excel-formatted file, some settings may be lost. For example, 4D methods and formulas are not supported by Excel. You can verify other settings with [this list](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html) from GrapeCity.
+
+*	Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export. 
 
 
->**Notes about PDF format**: 
->
->*	When exporting a 4D View Pro document in PDF, the fonts used in the document are automatically embedded in the PDF file. Only OpenType fonts (.OTF or .TTF files) having a Unicode map can be embedded. If no valid font file is found for a font, a default font is used instead. 
->
->*	Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export.
+**Notes about PDF format**: 
+
+*	When exporting a 4D View Pro document in PDF, the fonts used in the document are automatically embedded in the PDF file. Only OpenType fonts (.OTF or .TTF files) having a Unicode map can be embedded. If no valid font file is found for a font, a default font is used instead. 
+
+*	Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export.
+
+**Notes about CSV format**: 
+
+*	When exporting a 4D View Pro document to CSV, some settings may be lost, as only the text and values are saved. 
+
+*	All the values are saved as double-quoted strings. For more information on delimiter-separated values, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
 Once the export operation is finished, `VP EXPORT DOCUMENT` automatically triggers the execution of the method set in the *formula* property of the *paramObj*, if used. 
-
 
 #### Passing a callback method (formula)  
 
@@ -719,7 +733,7 @@ When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` comma
 |$1|		|text|	The name of the 4D View Pro object|
 |$2|		|text|	The filepath of the exported 4D View Pro object|
 |$3|		|object|	A reference to the command's *paramObj*|
-$4|		|object|	An object returned by the method with a status message|
+|$4|		|object|	An object returned by the method with a status message|
 ||.success	|boolean|	True if export with success, False otherwise.|
 ||.errorCode	|integer|	Error code. May be returned by 4D or JavaScript.|
 ||.errorMessage	|text|	Error message. May be returned by 4D or JavaScript.|
@@ -730,7 +744,7 @@ $4|		|object|	An object returned by the method with a status message|
 You want to export the contents of the "VPArea" area to a 4D View Pro document on disk:
 
 ```4d
-C_TEXT($docPath)
+var $docPath: Text
  
 $docPath:="C:\\Bases\\ViewProDocs\\MyExport.4VP"
 VP EXPORT DOCUMENT("VPArea";$docPath)
@@ -743,7 +757,7 @@ VP EXPORT DOCUMENT("VPArea";$docPath)
 You want to export the current sheet in PDF:
 
 ```4d
-C_OBJECT($params)
+var $params: Object
 $params:=New object
 $params.format:=vk pdf format
 $params.sheetIndex:=-1
@@ -782,7 +796,24 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
  End if
 ```
 
+#### Example 4 
 
+You want to export the current sheet to a `.txt` file with pipe-separated values:
+
+![example-export-csv](assets/en/ViewPro/vp-export-document-csv.png)
+
+```4d 
+var $params : Object
+$params:=New object
+$params.range:=VP Cells("ViewProArea";0;0;2;5)
+$params.rowDelimiter:="\n"
+$params.columnDelimiter:="|"
+VP EXPORT DOCUMENT("ViewProArea";"c:\\export\\data.txt";New object("format";vk csv format;"csvOptions";$params))
+``` 
+
+Here's the result: 
+
+![example-export-csv](assets/en/ViewPro/vp-export-document-csv-result.png)
 
 ### VP Export to object
 
@@ -793,18 +824,17 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName| Text|->|4D View Pro area form object name|
-
 |option| Object|->|Export option|
 |Result| Object|<-|4D View Pro object|
 <!-- END REF -->  
 
 #### Description
 
-The `VP Export to object` command <!-- REF _command_.VP_Export_to_object.Summary --> returns the 4D View Pro object attached to the 4D View Pro area *vpAreaName*<!-- END REF -->. You can use this command for example to store the 4D View Pro area in a 4D database object field.
+The `VP Export to object` command <!-- REF _command_.VP_Export_to_object.Summary --> returns the 4D View Pro object attached to the 4D View Pro area `vpAreaName`<!-- END REF -->. You can use this command for example to store the 4D View Pro area in a 4D database object field.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+In `vpAreaName`, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the *option* parameter, you can pass the following export option, if required:
+In the `option` parameter, you can pass the following export option, if required:
  
  
 |Property|	Type|	Description|
@@ -1929,22 +1959,34 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 
 #### Description
 
-The `VP IMPORT DOCUMENT` command <!-- REF _command_.VP_IMPORT_DOCUMENT.Summary -->imports and displays the 4D View Pro or Microsoft Excel document designated by *filePath* in the 4D View Pro area *vpAreaName*<!-- END REF -->. The imported document replaces any data already inserted in the area.
+The `VP IMPORT DOCUMENT` command <!-- REF _command_.VP_IMPORT_DOCUMENT.Summary -->imports and displays the 4D View Pro or Microsoft Excel document designated by `filePath` in the 4D View Pro area `vpAreaName`<!-- END REF -->. The imported document replaces any data already inserted in the area.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+In `vpAreaName`, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In *filePath*, pass the path and name of the document to be imported. 4D View Pro documents (extension ".4vp") and Microsoft Excel (extension ".xlsx") are supported by the command. You must pass a full path, unless the document is located at the same level as the database structure file, in which case you can just pass its name.
+In `filePath`, pass the path and name of the document to be imported. The following formats are supported : 
+
+* 4D View Pro documents (extension ".4vp")
+* Microsoft Excel (extension ".xlsx")
+* text documents (extension ".txt", ".csv", the document must be in utf-8)
+
+If the document extension is not a recognized extension, such as `.4vp` or `.xlsx`, the document is considered a text document. You must pass a full path, unless the document is located at the same level as the Project folder, in which case you can just pass its name.
 
 >When importing a Microsoft Excel-formatted file into a 4D View Pro document, some settings may be lost. You can verify your settings with [this list](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html) from GrapeCity.
 
-An error is returned if the *filePath* parameter is invalid, or if the file is missing or malformed.
+An error is returned if the `filePath` parameter is invalid, or if the file is missing or malformed.
 
-The optional *paramObj* parameter allows you to define properties for the imported document:
+The optional `paramObj` parameter allows you to define properties for the imported document:
 
-|Parameter|Type|Description|
-|---|---|---|
-|formula|	object|	A callback method name to be launched when the import has completed. The method must use the Formula command. See Passing a callback method (formula).|
-|password|	text|	Microsoft Excel only (optional) - The password used to protect a MS Excel document. |
+|Parameter||Type|Description|
+|---|---|---|---|
+|formula||	object |	A callback method name to be launched when the import has completed. The method must use the Formula command. See Passing a callback method (formula). |
+|password||	text|	Microsoft Excel only (optional) - The password used to protect a MS Excel document. |
+|csvOptions||object|options for csv import |
+||range|object|Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used. |
+||rowDelimiter|text|	Row delimiter. If not present, the delimiter is automatically determined by 4D. |
+||columnDelimiter|text|Column delimiter. Default: "," |
+
+>**Note**: For more information on the CSV format and delimiter-separated values in general, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
  
  
 #### Example 1
@@ -1971,7 +2013,20 @@ $o.password:="excel123"
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
 
+#### Example 2
 
+You want to import a .txt file that uses a comma (",") as delimiter:
+
+![example-import-csv](assets/en/ViewPro/vp-import-document-csv.png)
+
+```4d
+$params:=New object
+$params.range:=VP Cells("ViewProArea";0;0;2;5)
+VP IMPORT DOCUMENT("ViewProArea";"c:\\import\\my-file.txt";New object("csvOptions";$params))
+```
+
+Here's the result:
+![example-import-csv](assets/en/ViewPro/vp-import-document-csv-result.png)
 
 ### VP IMPORT FROM OBJECT
 

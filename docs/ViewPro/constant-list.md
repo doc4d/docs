@@ -118,7 +118,17 @@ Pastes only values.
 
 Pastes values and formatting.
 
+### vk csv format
 
+<details><summary>Type/Value</summary>
+|Type|Value|
+|---|---|
+|string|.csv|
+</details>
+
+#### Description
+
+CSV format
 
 ### vk current sheet 
 
