@@ -31,7 +31,7 @@ title: Command List
 |---|---|---|---|
 |vpAreaName| Text|->|4D View Pro area form object name|
 |vpFormula|Text|->	|4D View Pro formula	
-|name|Text|->|Name for the fomula|	
+|name|Text|->|Name for the formula|	
 |options|Object|->|Options for the named formula|
 <!-- END REF -->  
 
@@ -146,11 +146,49 @@ will display:
 
 ![](assets/en/ViewPro/cmd_vpAddSelection2.PNG)
 
+### VP ADD SHEET 
 
+<!-- REF _command_.VP_ADD_SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text {; *index* : Longint {; *name* : Text}} )<br>
+<!-- END REF --> 
+
+#### Description 
+
+The `VP ADD SHEET` command inserts a sheet in the document loaded in `vpAreaName`.
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `index`, you can pass an index for the new sheet. If the passed `index` is inferior to or equal to 0, the command inserts the new sheet at the beginning. If `index` exceeds the number of sheets, the command inserts the new sheet after the existing ones.
+
+>Indexing starts at 0.
+
+In `name`, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+
+<!-- REF _command_.VP_ADD_STYLESHEET.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|index|Longint|->	|Index of the new sheet|	
+|name|Text|->|Sheet name|	
+
+#### Example
+
+The document currently has 3 sheets:
+
+![](assets/en/ViewPro/vp-add-sheet.png)
+
+To insert a sheet at the third position (index 2) and name it "March":
+
+```4d
+VP ADD SHEET("ViewProArea";2;"March")
+```
+
+![](assets/en/ViewPro/vp-add-sheet-2.png)
 
 ### VP ADD STYLESHEET
 
-<!-- REF _command_.VP_ADD_STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Longint } )<!-- END REF -->  
+<!-- REF _command_.VP_ADD_STYLESHEET.Syntax -->**VP ADD STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text ; *styleObj* : Object { ; *scope* : Longint } ) 
+<!-- END REF -->  
 
 <!-- REF _command_.VP_ADD_STYLESHEET.Params -->
 
@@ -2015,7 +2053,7 @@ VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 
 #### Example 2
 
-You want to import a .txt file that uses a comma (",") as delimiter:
+You want to import a `.txt` file that uses a comma (",") as delimiter:
 
 ![example-import-csv](assets/en/ViewPro/vp-import-document-csv.png)
 
