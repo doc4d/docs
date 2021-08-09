@@ -177,7 +177,7 @@ In `name`, you can pass a name for the new sheet. The new name cannot contain th
 
 The document currently has 3 sheets:
 
-![](assets/en/ViewPro/vp-add-sheet.png)
+![](assets/en/ViewPro/vp-sheet.png)
 
 To insert a sheet at the third position (index 2) and name it "March":
 
@@ -185,7 +185,7 @@ To insert a sheet at the third position (index 2) and name it "March":
 VP ADD SHEET("ViewProArea";2;"March")
 ```
 
-![](assets/en/ViewPro/vp-add-sheet-2.png)
+![](assets/en/ViewPro/vp-add-sheet.png)
 
 ### VP ADD STYLESHEET
 
@@ -1268,17 +1268,13 @@ In `vpAreaName`, pass the name of the 4D View Pro area.
 
 When the third sheet is selected: 
 
-![](assets/en/ViewPro/vp-get-current-sheet.png)
+![](assets/en/ViewPro/vp-sheet-3-select.png)
 
 The command returns 2:
 
 ```4d
 $index:=VP Get current sheet("ViewProArea")
 ```
-
-![](assets/en/ViewPro/vp-add-sheet-2.png)
-
-
 
 ### VP Get default style
 
@@ -1743,7 +1739,41 @@ will retrieve the coordinates of all the cells in the current selection:
 
 ![](assets/en/ViewPro/cmd_vpGetSelection.PNG)
 
+### VP Get sheet count
 
+<!-- REF _command_.VP_Get_sheet_count.Syntax -->**VP Get sheet count** ( *vpAreaName* : Text )
+<!-- END REF --> 
+
+#### Description 
+
+The `VP Get sheet count` command <!-- REF _command_.VP_Get_sheet_count.Summary -->returns the number of sheets in the document loaded in `vpAreaName`.
+<!-- END REF --> 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+<!-- REF _command_.VP_Get_sheet_count.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|Function result|Longint|<-|Number of sheets|
+<!-- END REF --> 
+
+#### Example
+
+In the following document: 
+
+![](assets/en/ViewPro/vp-sheet.png)
+
+Get the sheet count and set the current sheet to the last sheet:
+
+```4d
+ $count:=VP Get sheet count("ViewProArea")
+  //set the current sheet to the last sheet (indexing starts at 0)
+ VP SET CURRENT SHEET("ViewProArea";$count-1)
+```
+
+![](assets/en/ViewPro/vp-sheet-3-select.png)
 
 ### VP Get sheet options
 
