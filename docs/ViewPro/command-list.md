@@ -148,12 +148,13 @@ will display:
 
 ### VP ADD SHEET 
 
-<!-- REF _command_.VP_ADD_SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text {; *index* : Longint {; *name* : Text}} )<br>
+<!-- REF _command_.VP_ADD_SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text {; *index* : Longint {; *name* : Text}} )
 <!-- END REF --> 
 
 #### Description 
 
-The `VP ADD SHEET` command inserts a sheet in the document loaded in `vpAreaName`.
+The `VP ADD SHEET` command <!-- REF _command_.VP_ADD_SHEET.Summary -->inserts a sheet in the document loaded in `vpAreaName`.
+<!-- END REF --> 
 
 In `vpAreaName`, pass the name of the 4D View Pro area.
 
@@ -163,13 +164,14 @@ In `index`, you can pass an index for the new sheet. If the passed `index` is in
 
 In `name`, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
 
-<!-- REF _command_.VP_ADD_STYLESHEET.Params -->
+<!-- REF _command_.VP_ADD_SHEET.Params -->
 
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName| Text|->|4D View Pro area form object name|
 |index|Longint|->	|Index of the new sheet|	
 |name|Text|->|Sheet name|	
+<!-- END REF --> 
 
 #### Example
 
@@ -1239,6 +1241,42 @@ The following code returns the number of columns in the 4D View Pro area:
 C_LONGINT($colCount)
 $colCount:=VP Get column count("ViewProarea")
 ```
+
+### VP Get current sheet
+
+<!-- REF _command_.VP_Get_current_sheet.Syntax -->**VP Get current sheet** ( *vpAreaName* : Text )
+<!-- END REF --> 
+
+#### Description 
+
+The `VP Get current sheet` command <!-- REF _command_.VP_Get_current_sheet.Summary -->returns the index of the current sheet in `vpAreaName`. The current sheet is the selected sheet in the document.
+<!-- END REF --> 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+> Indexing starts at 0.
+
+<!-- REF _command_.VP_Get_current_sheet.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|Function result|Longint|<-|Index of the current sheet|
+<!-- END REF --> 
+
+#### Example
+
+When the third sheet is selected: 
+
+![](assets/en/ViewPro/vp-get-current-sheet.png)
+
+The command returns 2:
+
+```4d
+$index:=VP Get current sheet("ViewProArea")
+```
+
+![](assets/en/ViewPro/vp-add-sheet-2.png)
 
 
 
