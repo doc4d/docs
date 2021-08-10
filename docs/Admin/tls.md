@@ -67,13 +67,13 @@ The 4D server can now work in a secured mode. A certificate is valid between 3 m
 
 ## Installation and activation  
 
-### `key.pem` and `cert.pem` files
+### Installing `key.pem` and `cert.pem` files
 
 To be able to use the TLS protocol with the server, you must install the **key.pem** (document containing the private encryption key) and **cert.pem** (document containing the certificate) at the appropriate location(s). Different locations are required depending on the server on which you want to use TLS.
 
 >Default *key.pem* and *cert.pem* files are provided with 4D. For a higher level of security, we strongly recommend that you replace these files with your own certificates.
 
-#### TLS with the web server
+#### With the web server
 
 To be used by the 4D web server, the **key.pem** and **cert.pem** files must be placed:
 
@@ -82,11 +82,14 @@ To be used by the 4D web server, the **key.pem** and **cert.pem** files must be 
 
 You must copy these files manually on the remote machine.
 
-#### TLS with the application server (client-server desktop applications)
+#### With the application server (client-server desktop applications)
 
-To be used by the 4D application server, the **key.pem** and **cert.pem** files must be placed in the [**Resources** subfolder](Project/architecture.md#resources) of the 4D Server application and of each machine of remote 4D applications. For more information about the location of this folder, see the [`Get 4D folder`](https://doc.4d.com/4dv19/help/command/en/page485.html) command. 
+To be used by the 4D application server, the **key.pem** and **cert.pem** files must be placed:
 
-#### TLS with the SQL server
+- in the [**Resources** folder](Project/architecture.md#resources) of the 4D Server application
+- and in the **Resources** folder on each remote 4D application (for more information about the location of this folder, see the [`Get 4D folder`](https://doc.4d.com/4dv19/help/command/en/page485.html) command). 
+
+#### With the SQL server
 
 To be used by the 4D SQL server, the **key.pem** and **cert.pem** files must be placed next to the [project folder](Project/architecture.md#project-folder). 
 
