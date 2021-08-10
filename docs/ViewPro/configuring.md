@@ -3,9 +3,15 @@ id: configuring
 title: Configuring an Area
 ---
 
-Using 4D events, commands, and attributes, you can set the behavior and appearance of your 4D View Pro areas.
+Using 4D events, commands, and attributes, you can set the behavior and appearance of your 4D View Pro areas. This includes :
+* Attaching [events](#form-events) to your form
+* Customizing and locking your sheet using [sheet options](#sheet-options) 
+* Customizing the [cell format](#cell-format)
+* Configuring [printing options](#print-attributes) using attributes
+* Customizing the appearance of your sheets using [style objects and style sheets](#style-objects-and-style-sheets)
+* Setting the behavior of [range objects](#range-object-properties) by modifying their properties
 
-## 4D View Pro Form Events
+## Form Events
 
 The following form events are available in the Property List for 4D View Pro areas.
 
@@ -79,27 +85,6 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 
 
 >All properties are optional.
-
-
-## Range Object Properties
-
-4D View Pro range objects are composed of several properties:
-
-*	area - The name of the 4D View Pro area
-*	ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties. 
-
-|Property|		|Type	|Description|	Available for|
-|---|---|---|---|---|
-|area||		text|	4D View Pro area form object name|	always available|
-|ranges	||	collection|	Collection of range(s)|	always available
-||\[ ].name	|text|	Range name	|name|
-||\[ ].sheet|	number|	Sheet index (current sheet index by default) (counting begins at 0)	|cell, cells, row, rows, column, columns, all, name|
-||\[ ].row	|number	|Row index (counting begins at 0)	|cell, cells, row, rows|
-||\[ ].rowCount	|number	|Row count|	cells, rows|
-||\[ ].column	|number	|Column index (counting begins at 0)	|cell, cells, column, columns
-||\[ ].columnCount	|number	|Column count|	cells, columns
-
-
 
 
 ## Cell Format
@@ -461,3 +446,22 @@ You can find detailed descriptions of the possible values below on the [4D View 
 |---|---|---|
 |name	|text	|Defines the name of the style| 
 |parentName	|text	|Specifies the style that the current style is based on. Values from the parent style will be applied, then any values from the current style are applied. Changes made in the current style will not be refelected in the parent style. Only available when using a style sheet.|
+
+
+## Range Object Properties
+
+4D View Pro range objects are composed of several properties:
+
+*	area - The name of the 4D View Pro area
+*	ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties. 
+
+|Property|		|Type	|Description|	Available for|
+|---|---|---|---|---|
+|area||		text|	4D View Pro area form object name|	always available|
+|ranges	||	collection|	Collection of range(s)|	always available
+||\[ ].name	|text|	Range name	|name|
+||\[ ].sheet|	number|	Sheet index (current sheet index by default) (counting begins at 0)	|cell, cells, row, rows, column, columns, all, name|
+||\[ ].row	|number	|Row index (counting begins at 0)	|cell, cells, row, rows|
+||\[ ].rowCount	|number	|Row count|	cells, rows|
+||\[ ].column	|number	|Column index (counting begins at 0)	|cell, cells, column, columns
+||\[ ].columnCount	|number	|Column count|	cells, columns
