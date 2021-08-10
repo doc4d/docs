@@ -26,7 +26,7 @@ By default, when the form is executed, the 4D View Pro area displays a spreadshe
 
 ![](assets/en/ViewPro/vpSpreadsheet.PNG)
 
-## Adding a User Interface
+## Adding a user interface
 
 You can add interfaces to 4D View Pro areas. They allow for basic modifications and data manipulation. The Ribbon is set by default in the property list. 
 
@@ -65,3 +65,9 @@ Enabling the Toolbar interface displays the Show Formula Bar option. When select
 With visible formula bar:
 
 ![](assets/en/ViewPro/vpToolbar.PNG)
+
+## Manipulating data with code
+
+You can manipulate the data of a 4D View Pro document using 4D commands. 
+
+### Ranges 

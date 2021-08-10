@@ -5,10 +5,10 @@ title: Configuring an Area
 
 Using 4D events, commands, and attributes, you can set the behavior and appearance of your 4D View Pro areas. This includes :
 * Attaching [events](#form-events) to your form
-* Customizing and locking your sheet using [sheet options](#sheet-options) 
-* Customizing the [cell format](#cell-format)
+* Customizing and locking your sheets using [sheet options](#sheet-options) 
+* Defining a [cell format](#cell-format)
 * Configuring [printing options](#print-attributes) using attributes
-* Customizing the appearance of your sheets using [style objects and style sheets](#style-objects-and-style-sheets)
+* Change the appearance of the sheets using [style objects and style sheets](#style-objects-and-style-sheets)
 * Setting the behavior of [range objects](#range-object-properties) by modifying their properties
 
 ## Form Events
