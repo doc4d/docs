@@ -2559,7 +2559,8 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 ### VP REMOVE SHEET
 
-<!-- REF _command_.VP_REMOVE_SHEET.Syntax -->**VP REMOVE SHEET** ( *rangeObj* : Object ) <!-- END REF -->  
+<!-- REF _command_.VP_REMOVE_SHEET.Syntax -->**VP REMOVE SHEET** ( *vpAreaName* : Text ; *index*: Longint ) 
+<!-- END REF -->  
 
 <!-- REF _command_.VP_REMOVE_SHEET.Params -->
 |Parameter|Type||Description|
@@ -2570,7 +2571,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 #### Description
 
-The `VP REMOVE SHEET` command <!-- REF _command_.VP_REMOVE_SHEET.Summary -->removes the sheet of with the specified `index` from the document loaded in `vpAreaName`.<!-- END REF -->. 
+The `VP REMOVE SHEET` command <!-- REF _command_.VP_REMOVE_SHEET.Summary -->removes the sheet of with the specified `index` from the document loaded in `vpAreaName`<!-- END REF -->.
 
 In `vpAreaName`, pass the name of the 4D View Pro area.
 
@@ -2583,12 +2584,12 @@ If the passed index does not exist, the command does nothing.
 #### Example
 The document currently has three sheets:
 
-![](assets/en/ViewPro/vp-sheet-index.png)
+![](assets/en/ViewPro/vp-sheet-3.png)
 
 Remove the third sheet:
 
 ```4d 
- VP REMOVE SHEET("ViewProArea";2)
+VP REMOVE SHEET("ViewProArea";2)
 ```
 
 ![](assets/en/ViewPro/vp-sheet-2.png)
@@ -3314,7 +3315,7 @@ The result:
 
 ### VP SET CURRENT SHEET
 
-<!-- REF _command_.VP_SET_CURRENT_SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Index )
+<!-- REF _command_.VP_SET_CURRENT_SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Text ; index : Longint)
 <!-- END REF --> 
 
 <!-- REF _command_.VP_SET_CURRENT_SHEET.Params -->
@@ -4031,7 +4032,7 @@ To set the number of sheets to 3:
 
 ### VP SET SHEET NAME
 
-<!-- REF _command_.VP_SET_SHEET_NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* {; index: Text} ) 
+<!-- REF _command_.VP_SET_SHEET_NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* : Text {; index: Longint} ) 
 <!-- END REF -->  
 
 <!-- REF _command_.VP_SET_SHEET_NAME.Params -->
