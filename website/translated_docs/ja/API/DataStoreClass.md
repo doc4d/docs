@@ -10,20 +10,20 @@ title: DataStore
 
 ### 概要
 
-|                                                                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #DataStoreClass.cancelTransaction().Syntax -->](#canceltransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.cancelTransaction().Summary -->|
-| [<!-- INCLUDE DataStoreClass.dataclassName.Syntax -->](#dataclassname)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataStoreClass.dataclassName.Summary --> |
-| [<!-- INCLUDE #DataStoreClass.encryptionStatus().Syntax -->](#encryptionstatus)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.encryptionStatus().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.getInfo().Syntax -->](#getinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.getInfo().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.getRequestLog().Syntax -->](#getrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.getRequestLog().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.makeSelectionsAlterable().Syntax -->](#makeselectionsalterable)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.makeSelectionsAlterable().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.provideDataKey().Syntax -->](#providedatakey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.provideDataKey().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.setAdminProtection().Syntax -->](#setadminprotection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.setAdminProtection().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.startRequestLog().Syntax -->](#startrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.startRequestLog().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.startTransaction().Syntax -->](#starttransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.startTransaction().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.stopRequestLog().Syntax -->](#stoprequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.stopRequestLog().Summary --> |
-| [<!-- INCLUDE #DataStoreClass.validateTransaction().Syntax -->](#validatetransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.validateTransaction().Summary --> |
+|                                                                                                                                                                                                                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [**.cancelTransaction()**](#canceltransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;cancels the transaction                                                                                                                                                                                                         |
+| [***.dataclassName*** : 4D.DataClass](#dataclassname)<p>&nbsp;&nbsp;&nbsp;&nbsp;contains a description of the dataclass                                                                                                                                                                                  |
+| [**.encryptionStatus()**: Object](#encryptionstatus)<p>&nbsp;&nbsp;&nbsp;&nbsp;returns an object providing the encryption status for the current data file                                                                                                                                               |
+| [**.getInfo()**: Object](#getinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;returns an object providing information about the datastore                                                                                                                                                                                 |
+| [**.getRequestLog()** : Collection](#getrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;returns the ORDA requests logged in memory on the client side                                                                                                                                                              |
+| [**.makeSelectionsAlterable()**](#makeselectionsalterable)<p>&nbsp;&nbsp;&nbsp;&nbsp;sets all entity selections as alterable by default in the current application datastores                                                                                                                            |
+| [**.provideDataKey**( *curPassPhrase* : Text ) : Object <br>**.provideDataKey**( *curDataKey* : Object ) : Object ](#providedatakey)<p>&nbsp;&nbsp;&nbsp;&nbsp;allows providing a data encryption key for the current data file of the datastore and detects if the key matches the encrypted data |
+| [**.setAdminProtection**( *status* : Boolean )](#setadminprotection)<p>&nbsp;&nbsp;&nbsp;&nbsp;allows disabling any data access on the [web admin port](Admin/webAdmin.md#http-port), including for the [Data Explorer](Admin/dataExplorer.md) in `WebAdmin` sessions                                    |
+| [**.startRequestLog**()<br>**.startRequestLog**( *file* : 4D.File )<br>**.startRequestLog**( *reqNum* : Integer )](#startrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;starts the logging of ORDA requests on the client side                                                                        |
+| [**.startTransaction()**](#starttransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;starts a transaction in the current process on the database matching the datastore to which it applies                                                                                                                            |
+| [**.stopRequestLog()**  ](#stoprequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;stops any logging of ORDA requests on the client side                                                                                                                                                                               |
+| [**.validateTransaction()**  ](#validatetransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;accepts the transaction                                                                                                                                                                                                   |
 
 
 
@@ -38,20 +38,16 @@ title: DataStore
 | v17   | 追加                  |
 </details>
 
-<!-- REF #_command_.ds.Syntax -->
-**ds** { ( *localID* : Text ) } : cs.DataStore <!-- END REF -->
-
-<!-- REF #_command_.ds.Params -->
+**ds** { ( *localID* : Text ) } : cs.DataStore
 | 引数      | タイプ          |    | 説明                        |
 | ------- | ------------ | -- | ------------------------- |
 | localID | テキスト         | -> | 参照を取得したいリモートデータストアのローカルID |
 | 戻り値     | cs.DataStore | <- | データストア参照                  |
-<!-- END REF -->
 
 
 #### 説明
 
-`ds` コマンドは、 <!-- REF #_command_.ds.Summary -->カレントの 4Dデータベース、または *localID* で指定したデータベースに合致するデータストアの参照を返します<!-- END REF -->。
+The `ds` command returns a reference to the datastore matching the current 4D database or the database designated by *localID*.
 
 *localID* を省略した (または空の文字列 "" を渡した) 場合には、ローカル4Dデータベース (4D Server でリモートデータベースを開いている場合にはそのデータベース) に合致するデータストアの参照を返します。 データストアは自動的に開かれ、`ds` を介して直接利用することができます。
 
@@ -112,21 +108,17 @@ title: DataStore
 | v18   | 追加 |
 </details>
 
-<!-- REF #_command_.Open datastore.Syntax -->
-**Open datastore**( *connectionInfo* : Object ; *localID* : Text ) : cs.DataStore <!-- END REF -->
-
-<!-- REF #_command_.Open datastore.Params -->
+**Open datastore**( *connectionInfo* : Object ; *localID* : Text ) : cs.DataStore
 | 引数             | タイプ          |    | 説明                                         |
 | -------------- | ------------ | -- | ------------------------------------------ |
 | connectionInfo | オブジェクト       | -> | リモートデータストアへの接続に使用する接続プロパティ                 |
 | localID        | テキスト         | -> | ローカルアプリケーション内で、開かれたデータストアに対して割り当てる ID (必須) |
 | 戻り値            | cs.DataStore | <- | データストアオブジェクト                               |
-<!-- END REF -->
 
 
 #### 説明
 
-`Open datastore` コマンドは、 <!-- REF #_command_.Open datastore.Summary -->*connectionInfo* 引数が指定する 4Dデータベースにアプリケーションを接続します<!-- END REF --> 。戻り値は、*localID* ローカルエイリアスに紐づけられた `cs.DataStore` オブジェクトです。
+The `Open datastore` command connects the application to the 4D database identified by the *connectionInfo* parameter and returns a matching `cs.DataStore` object associated with the *localID* local alias.
 
 *connectionInfo* で指定する 4Dデータベースはリモートデーターストアとして利用可能でなければなりません。つまり、以下の条件を満たしている必要があります:
 
@@ -233,7 +225,8 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 
 
-<!-- REF DataStoreClass.dataclassName.Desc -->
+
+
 ## *.dataclassName*
 
 <details><summary>履歴</summary>
@@ -242,13 +235,13 @@ user / password / timeout / tls を指定してリモートデータストアに
 | v17   | 追加 |
 </details>
 
-<!-- REF DataStoreClass.dataclassName.Syntax -->
-***.dataclassName*** : 4D.DataClass<!-- END REF -->
+***.dataclassName*** : 4D.DataClass
+
 
 
 #### 説明
 
-データストアの各データクラスは [DataStore オブジェクト](ORDA/dsMapping.md#データストア) のプロパティとして利用可能です。 戻り値のオブジェクトには <!-- REF DataStoreClass.dataclassName.Summary -->データクラスの詳細が格納されています<!-- END REF -->。
+データストアの各データクラスは [DataStore オブジェクト](ORDA/dsMapping.md#データストア) のプロパティとして利用可能です。 The returned object contains a description of the dataclass.
 
 
 
@@ -268,11 +261,12 @@ user / password / timeout / tls を指定してリモートデータストアに
 ```
 
 
-<!-- END REF -->
 
 
 
-<!-- REF DataStoreClass.cancelTransaction().Desc -->
+
+
+
 
 ## .cancelTransaction()
 
@@ -282,20 +276,19 @@ user / password / timeout / tls を指定してリモートデータストアに
 | v18   | 追加 |
 </details>
 
+**.cancelTransaction()** 
 
-<!-- REF #DataStoreClass.cancelTransaction().Syntax -->
-**.cancelTransaction()**<!-- END REF -->
-
-<!-- REF #DataStoreClass.cancelTransaction().Params -->
 | 引数 | タイプ |  | 説明                |
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.cancelTransaction()` 関数は、指定データストアのカレントプロセスにおいて、[`.startTransaction()`](#starttransaction) によって開かれた <!-- REF #DataStoreClass.cancelTransaction().Summary -->トランザクションをキャンセルします<!-- END REF --> 。
+The `.cancelTransaction()` function cancels the transaction opened by the [`.startTransaction()`](#starttransaction) function at the corresponding level in the current process for the specified datastore.
 
 `.cancelTransaction()` 関数は、トランザクション中におこなわれたデータ変更をすべてキャンセルします。
 
@@ -309,11 +302,11 @@ user / password / timeout / tls を指定してリモートデータストアに
 [`.startTransaction()`](#starttransaction) 関数の例題を参照ください。
 
 
-<!-- END REF -->
 
 
 
-<!-- REF DataStoreClass.encryptionStatus().Desc -->
+
+
 ## .encryptionStatus()
 
 <details><summary>履歴</summary>
@@ -322,20 +315,19 @@ user / password / timeout / tls を指定してリモートデータストアに
 | v17 R5 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.encryptionStatus().Syntax -->
-**.encryptionStatus()**: Object<!-- END REF -->
+**.encryptionStatus()**: Object
 
-
-<!-- REF #DataStoreClass.encryptionStatus().Params -->
 | 引数  | タイプ    |    | 説明                           |
 | --- | ------ |:--:| ---------------------------- |
 | 戻り値 | オブジェクト | <- | カレントデータストアと、各テーブルの暗号化についての情報 |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.encryptionStatus()` 関数は、 <!-- REF #DataStoreClass.encryptionStatus().Summary -->カレントデータファイルの暗号化状態を示すオブジェクトを返します<!-- END REF --> 。カレントデータファイルとはつまり、`ds` データストアのデータファイルです。 各テーブルの状態も提供されます。
+The `.encryptionStatus()` function returns an object providing the encryption status for the current data file (i.e., the data file of the `ds` datastore). 各テーブルの状態も提供されます。
 
 
 > その他のデータファイルの暗号化状態を調べるには、`Data file encryption status` コマンドを使います。
@@ -389,11 +381,12 @@ user / password / timeout / tls を指定してリモートデータストアに
  End if
 ```
 
-<!-- END REF -->
 
 
 
-<!-- REF DataStoreClass.getInfo().Desc -->
+
+
+
 ## .getInfo()
 
 <details><summary>履歴</summary>
@@ -404,18 +397,18 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 </details>
 
-<!-- REF #DataStoreClass.getInfo().Syntax -->
-**.getInfo()**: Object<!-- END REF -->
+**.getInfo()**: Object 
 
-<!-- REF #DataStoreClass.getInfo().Params -->
 | 引数  | タイプ    |    | 説明           |
 | --- | ------ |:--:| ------------ |
 | 戻り値 | オブジェクト | <- | データストアのプロパティ |
-<!-- END REF -->
+
+
+
 
 #### 説明
 
-`.getInfo()` 関数は、 <!-- REF #DataStoreClass.getInfo().Summary -->データストアの情報を提供するオブジェクトを返します<!-- END REF -->。 このメソッドは汎用的なコードを書くのに有用です。
+The `.getInfo()` function returns an object providing information about the datastore. このメソッドは汎用的なコードを書くのに有用です。
 
 **返されるオブジェクト**
 
@@ -471,11 +464,12 @@ user / password / timeout / tls を指定してリモートデータストアに
 ```
 
 
-<!-- END REF -->
 
 
 
-<!-- REF DataStoreClass.getRequestLog().Desc -->
+
+
+
 ## .getRequestLog()
 
 <details><summary>履歴</summary>
@@ -484,19 +478,19 @@ user / password / timeout / tls を指定してリモートデータストアに
 | v17 R6 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.getRequestLog().Syntax -->
-**.getRequestLog()** : Collection<!-- END REF -->
+**.getRequestLog()** : Collection 
 
-<!-- REF #DataStoreClass.getRequestLog().Params -->
 | 引数  | タイプ    |    | 説明                                 |
 | --- | ------ |:--:| ---------------------------------- |
 | 戻り値 | コレクション | <- | オブジェクトのコレクション (要素毎に一つのリクエストを記述します) |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.getRequestLog()` 関数は、 <!-- REF #DataStoreClass.getRequestLog().Summary -->クライアント側のメモリに記録されている ORDAリクエストを返します<!-- END REF -->。 ORDAリクエストのログが、[`.startRequestLog()`](#startrequestlog) 関数によって事前に有効化されている必要があります。
+The `.getRequestLog()` function returns the ORDA requests logged in memory on the client side. ORDAリクエストのログが、[`.startRequestLog()`](#startrequestlog) 関数によって事前に有効化されている必要があります。
 
 このメソッドはリモートの 4D で呼び出す必要があり、そうでない場合には空のコレクションを返します。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
@@ -513,10 +507,10 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 [`.startRequestLog()`](#startrequestlog) の例題2を参照ください。
 
-<!-- END REF -->
 
 
-<!-- REF DataStoreClass.isAdminProtected().Desc -->
+
+
 ## .isAdminProtected()
 
 <details><summary>履歴</summary>
@@ -525,19 +519,19 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 | v18 R6 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.isAdminProtected().Syntax -->
-**.isAdminProtected()** : Boolean<!-- END REF -->
+**.isAdminProtected()** : Boolean 
 
-<!-- REF #DataStoreClass.isAdminProtected().Params -->
 | 引数  | タイプ |    | 説明                                                         |
 | --- | --- |:--:| ---------------------------------------------------------- |
 | 戻り値 | ブール | <- | データエクスプローラーへのアクセスが無効に設定されているの場合は true、有効の場合は false (デフォルト) |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.isAdminProtected()` 関数は、 <!-- REF #DataStoreClass.isAdminProtected().Summary -->現在のセッションにおいて [データエクスプローラー](Admin/dataExplorer.md) へのアクセスが無効に設定されているの場合は `true`を返します<!-- END REF -->。
+The `.isAdminProtected()` function returns `True` if [Data Explorer](Admin/dataExplorer.md) access has been disabled for the working session.
 
 `webAdmin`セッションにおいて、データエクスプローラーへのアクセスはデフォルトで有効となっていますが、管理者によるデータアクセスを禁止するため無効にすることもできます ([`.setAdminProtection()`](#setadminprotection) 関数参照)。
 
@@ -547,12 +541,12 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 [`.setAdminProtection()`](#setadminprotection)
 
-<!-- END REF -->
 
 
 
 
-<!-- REF DataStoreClass.makeSelectionsAlterable().Desc -->
+
+
 ## .makeSelectionsAlterable()
 
 <details><summary>履歴</summary>
@@ -561,19 +555,19 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 | v18 R5 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.makeSelectionsAlterable().Syntax -->
-**.makeSelectionsAlterable()**<!-- END REF -->
+**.makeSelectionsAlterable()** 
 
-<!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
 | 引数 | タイプ |  | 説明                |
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.makeSelectionsAlterable()` 関数は、 <!-- REF #DataStoreClass.makeSelectionsAlterable().Summary -->カレントアプリケーションのデータストアにおいて、すべての新規エンティティセレクションをデフォルトで追加可能に設定します<!-- END REF --> ([リモートデータストア](ORDA/remoteDatastores.md) を含む)。 これはたとえば `On Startup` データベースメソッドなどで、一度だけ使用することが想定されています。
+The `.makeSelectionsAlterable()` function sets all entity selections as alterable by default in the current application datastores (including [remote datastores](ORDA/remoteDatastores.md)). これはたとえば `On Startup` データベースメソッドなどで、一度だけ使用することが想定されています。
 
 このメソッドが呼ばれてない場合、新規エンティティセレクションはそれぞれの "親" の性質や作成方法に応じて、共有可能に設定される場合もあります ([共有可能/追加可能なエンティティセレクション](ORDA/entities.md#共有可能追加可能なエンティティセレクション) 参照)。
 
@@ -587,10 +581,10 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 > **互換性に関する注記**: このメソッドは 4D v18 R5 より前のバージョンから変換されたプロジェクトで、[.add()](EntitySelectionClass.md#add) の呼び出しを使用しているものにおいてのみ使用してください。 このコンテキストにおいては、`.makeSelectionsAlterable()` を使用することで、既存プロジェクト内で以前の 4D のふるまいを再現し、時間を節約できます。 逆に、4D v18 R5 以降のバージョンで作成された新規プロジェクトにおいては、この関数の使用は **推奨されていません**。エンティティセレクションを共有可能にできないため、パフォーマンスとスケーラビリティの観点で妨げになるからです。
 
 
-<!-- END REF -->
 
 
-<!-- REF DataStoreClass.provideDataKey().Desc -->
+
+
 ## .provideDataKey()
 
 <details><summary>履歴</summary>
@@ -599,22 +593,21 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 | v17 R5 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.provideDataKey().Syntax -->
-**.provideDataKey**( *curPassPhrase* : Text ) : Object <br>**.provideDataKey**( *curDataKey* : Object ) : Object <!-- END REF -->
+**.provideDataKey**( *curPassPhrase* : Text ) : Object <br>**.provideDataKey**( *curDataKey* : Object ) : Object 
 
-
-<!-- REF #DataStoreClass.provideDataKey().Params -->
 | 引数            | タイプ    |    | 説明            |
 | ------------- | ------ | -- | ------------- |
 | curPassPhrase | テキスト   | -> | カレントのパスフレーズ   |
 | curDataKey    | オブジェクト | -> | カレントのデータ暗号化キー |
 | 戻り値           | オブジェクト | <- | 暗号化キーのチェックの結果 |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.provideDataKey()` 関数は、 <!-- REF #DataStoreClass.provideDataKey().Summary -->データストアのカレントデータファイルのデータ暗号化キーを受け取り、暗号化されたデータと合致するかどうかチェックします<!-- END REF -->。 この関数は、暗号化されたデータベースを開くときや、データファイルの再暗号化など暗号化キーが必要となる暗号化オペレーションを実行する際に使用します。
+The `.provideDataKey()` function allows providing a data encryption key for the current data file of the datastore and detects if the key matches the encrypted data. この関数は、暗号化されたデータベースを開くときや、データファイルの再暗号化など暗号化キーが必要となる暗号化オペレーションを実行する際に使用します。
 
 
 > * `.provideDataKey()` 関数は暗号化されたデータベース内で呼び出される必要があります。 暗号化されていないデータベース内で呼び出した場合、エラー2003 (暗号化キーはデータと合致しません) が返されます。 データベースが暗号化されているかどうかを調べるには `Data file encryption status` コマンドを使用します。
@@ -671,10 +664,11 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 ```
 
 
-<!-- END REF -->
 
 
-<!-- REF DataStoreClass.setAdminProtection().Desc -->
+
+
+
 ## .setAdminProtection()
 
 <details><summary>履歴</summary>
@@ -683,19 +677,19 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 | v18 R6 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.setAdminProtection().Syntax -->**.setAdminProtection**( *status* : Boolean )<!-- END REF -->
+**.setAdminProtection**( *status* : Boolean )
 
-
-<!-- REF #DataStoreClass.setAdminProtection().Params -->
 | 引数     | タイプ |    | 説明                                                                            |
 | ------ | --- | -- | ----------------------------------------------------------------------------- |
 | status | ブール | -> | `webAdmin`ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト) |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.setAdminProtection()` 関数は、 <!-- REF #DataStoreClass.setAdminProtection().Summary -->`WebAdmin`セッションにおける [データエクスプローラー](Admin/dataExplorer.md) 含め、[Web管理ポート](Admin/webAdmin.md#httpポート)上でのデータアクセスを無効に設定することができます<!-- END REF -->。
+The `.setAdminProtection()` function allows disabling any data access on the [web admin port](Admin/webAdmin.md#http-port), including for the [Data Explorer](Admin/dataExplorer.md) in `WebAdmin` sessions.
 
 この関数が呼び出されなかった場合のデフォルトでは、データエクスプローラーを使用した `WebAdmin` 権限を持つセッションについて、Web管理ポート上のデータアクセスは常に許可されます。 環境によっては (たとえば、アプリケーションサーバーが第三者のマシン上でホストされている場合)、 管理者に対して [access key](Admin/webAdmin.md#access-key) 設定を含むサーバー設定の編集は許可しても、データ閲覧はできないようにしたいかもしれません。
 
@@ -721,10 +715,10 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 [`.isAdminProtected()`](#isadminprotected)
 
-<!-- END REF -->
 
 
-<!-- REF DataStoreClass.startRequestLog().Desc -->
+
+
 ## .startRequestLog()
 
 <details><summary>履歴</summary>
@@ -733,21 +727,20 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 | v17 R6 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.startRequestLog().Syntax -->
-**.startRequestLog**()<br>**.startRequestLog**( *file* : 4D.File )<br>**.startRequestLog**( *reqNum* : Integer )<!-- END REF -->
+**.startRequestLog**()<br>**.startRequestLog**( *file* : 4D.File )<br>**.startRequestLog**( *reqNum* : Integer )
 
-
-<!-- REF #DataStoreClass.startRequestLog().Params -->
 | 引数     | タイプ     |    | 説明               |
 | ------ | ------- | -- | ---------------- |
 | file   | 4D.File | -> | File オブジェクト      |
 | reqNum | 整数      | -> | メモリ内に保管するリクエストの数 |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.startRequestLog()` 関数は、 <!-- REF #DataStoreClass.startRequestLog().Summary -->クライアント側で ORDAリクエストのログを開始します<!-- END REF -->。
+The `.startRequestLog()` function starts the logging of ORDA requests on the client side.
 
 このメソッドはリモート側の 4D で呼び出す必要があり、それ以外の場合には何もしません。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
@@ -807,12 +800,13 @@ ORDA クライアントリクエストをメモリに記録します:
  ALERT("The longest request lasted: "+String($log.max("duration"))+" ms")
 ```
 
-<!-- END REF -->
 
 
 
 
-<!-- REF DataStoreClass.startTransaction().Desc -->
+
+
+
 ## .startTransaction()
 
 <details><summary>履歴</summary>
@@ -821,19 +815,19 @@ ORDA クライアントリクエストをメモリに記録します:
 | v18   | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.startTransaction().Syntax -->
-**.startTransaction()**<!-- END REF -->
+**.startTransaction()** 
 
-<!-- REF #DataStoreClass.startTransaction().Params -->
 | 引数 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.startTransaction()` 関数は、 <!-- REF #DataStoreClass.startTransaction().Summary -->対象データストアに対応するデータベース上で、カレントプロセス内のトランザクションを開始します<!-- END REF -->。 トランザクションプロセス中にデータストアのエンティティに加えられた変更は、トランザクションが確定されるかキャンセルされるまで一時的に保管されたままになります。
+The `.startTransaction()` function starts a transaction in the current process on the database matching the datastore to which it applies. トランザクションプロセス中にデータストアのエンティティに加えられた変更は、トランザクションが確定されるかキャンセルされるまで一時的に保管されたままになります。
 
 
 > このメソッドがメインのデータストア (`ds` コマンドで返されるデータストア) で呼ばれた場合、トランザクションはメインのデータストアとそのデータベースで実行されるすべてのオペレーションに適用されます。これには、そこで実行される ORDA とクラシック言語も含まれます。
@@ -880,13 +874,14 @@ ORDA クライアントリクエストをメモリに記録します:
 ```
 
 
-<!-- END REF -->
 
 
 
 
 
-<!-- REF DataStoreClass.stopRequestLog().Desc -->
+
+
+
 ## .stopRequestLog()
 
 <details><summary>履歴</summary>
@@ -895,19 +890,20 @@ ORDA クライアントリクエストをメモリに記録します:
 | v17 R6 | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.stopRequestLog().Syntax -->
-**.stopRequestLog()**  <!-- END REF -->
+**.stopRequestLog()**  
 
-<!-- REF #DataStoreClass.stopRequestLog().Params -->
+
 | 引数 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.stopRequestLog()` 関数は、 <!-- REF #DataStoreClass.stopRequestLog().Summary -->クライアント側の ORDAリクエストのログをすべて停止します<!-- END REF --> (ファイル・メモリとも)。 これは、開かれたドキュメントを実際に閉じてディスクに保存するため、ファイルにログを取っている場合にとくに有用です。
+The `.stopRequestLog()` function stops any logging of ORDA requests on the client side (in file or in memory). これは、開かれたドキュメントを実際に閉じてディスクに保存するため、ファイルにログを取っている場合にとくに有用です。
 
 このメソッドはリモート側の 4D で呼び出す必要があり、それ以外の場合には何もしません。 これはクライアント/サーバー環境でのデバッグを想定して設計されています。
 
@@ -918,12 +914,12 @@ ORDA クライアントリクエストをメモリに記録します:
 
 [`.startRequestLog()`](#startrequestlog) の例題を参照ください。
 
-<!-- END REF -->
 
 
 
 
-<!-- REF DataStoreClass.validateTransaction().Desc -->
+
+
 ## .validateTransaction()
 
 <details><summary>履歴</summary>
@@ -932,19 +928,20 @@ ORDA クライアントリクエストをメモリに記録します:
 | v18   | 追加 |
 </details>
 
-<!-- REF #DataStoreClass.validateTransaction().Syntax -->
-**.validateTransaction()**  <!-- END REF -->
+**.validateTransaction()**  
 
-<!-- REF #DataStoreClass.validateTransaction().Params -->
+
 | 引数 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
-<!-- END REF -->
+
+
+
 
 
 #### 説明
 
-`.validateTransaction()` 関数は、対象データストアの対応するレベルで [`.startTransaction()`](#starttransaction) で開始された <!-- REF #DataStoreClass.validateTransaction().Summary -->トランザクションを受け入れます <!-- END REF -->。
+The `.validateTransaction()` function accepts the transaction that was started with [`.startTransaction()`](#starttransaction) at the corresponding level on the specified datastore.
 
 この関数は、トランザクション中におこなわれたデータストア上のデータの変更を保存します。
 
@@ -957,6 +954,5 @@ ORDA クライアントリクエストをメモリに記録します:
 
 [`.startTransaction()`](#starttransaction) の例題を参照ください。
 
-<!-- END REF -->
 
 <style> h2 { background: #d9ebff;}</style>
