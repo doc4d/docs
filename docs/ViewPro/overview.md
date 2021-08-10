@@ -20,22 +20,22 @@ However, 4D View Pro requires a license. You need to activate this license in yo
 
 ![](assets/en/ViewPro/licenseError.PNG)
 
-## Using 4D View Pro Methods
+## Using 4D View Pro commands
 
 4D View Pro methods can be used in the 4D Method editor, just like 4D language commands. 
 
 Since 4D View Pro is a built-in 4D component, you can access its list of methods from the Explorer, in the **Component Methods** section:
 
-![](assets/en/ViewPro/explorer-methods.PNG)
+![component-methods](assets/en/ViewPro/explorer-methods.PNG)
 
-For a detailed list of methods, see [Method Reference](command-list.md).
+For a detailed list of component methods, see [Component method list](command-list.md).
 
 ## Area Architecture Overview
 
 When working with 4D View Pro areas in your forms, you need to handle several elements:
 
 *	The **4D View Pro form area** (4D form object): contains and displays the 4D View Pro object. This area is defined by a name ("Object name" field in the Property list).
-*	The **4D View Pro object** ([C_OBJECT](Concepts/dt_object.md) type variable or expression): stores the whole spreadsheet contents (see below). You can get or set this object using the [VP IMPORT FROM OBJECT](command-list.md#vp-import-from-object) or [VP Export to object](command-list.md#vp-export-to-object) commands.
+*	The **4D View Pro object** ([object](Concepts/dt_object.md) type variable or expression): stores the whole spreadsheet contents (see below). You can get or set this object using the [VP IMPORT FROM OBJECT](command-list.md#vp-import-from-object) or [VP Export to object](command-list.md#vp-export-to-object) commands.
 *	The **4D View Pro document** (.4vp documents): stores the whole spreadsheet contents in JSON format.
 
 ![](assets/en/ViewPro/vpDocument.PNG)

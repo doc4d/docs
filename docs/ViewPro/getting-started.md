@@ -68,6 +68,23 @@ With visible formula bar:
 
 ## Manipulating data with code
 
-You can manipulate the data of a 4D View Pro document using 4D commands. 
+You can manipulate the data inside a 4D View Pro document using 4D View Pro methods. 
 
 ### Ranges 
+
+In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. 
+
+Using 4D View pro commands, you can create ranges and pass them to other commands to read from or write to specific locations in your document.
+
+For example, to create a range object for the following cells:
+
+![](assets/en/ViewPro/vp-cells.png)
+
+You can use the [VP Cells](component-method-list.md#vp-cells) method:
+
+```4d 
+$cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
+```
+
+## Importing and exporting .xslx 
+You can import and export `.xslx` files in 4D View Pro

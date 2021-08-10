@@ -1,6 +1,6 @@
 ---
-id: command-list
-title: Command List
+id: component-method-list
+title: Component Method List
 ---
 
 [A](#a) - 
@@ -383,7 +383,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 You want to define a range object for the following cells (on the current sheet):
 
-![](assets/en/ViewPro/cmd_vpCells.PNG)
+![](assets/en/ViewPro/vp-cells.png)
 
 The code would be:
 
