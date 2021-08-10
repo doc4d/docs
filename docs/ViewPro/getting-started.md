@@ -86,5 +86,12 @@ You can use the [VP Cells](component-method-list.md#vp-cells) method:
 $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 ```
 
-## Importing and exporting .xslx 
-You can import and export `.xslx` files in 4D View Pro
+## Importing and exporting different formats 
+
+4D View Pro supports the import and export of several document formats:
+* .4vp
+* .xlsx
+* .txt and .csv
+* .pdf (for export only)
+
+For more details, check out the description of the [VP IMPORT DOCUMENT](component-method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](component-method-list.md#vp-export-document) commands.
