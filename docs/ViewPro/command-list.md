@@ -151,6 +151,15 @@ will display:
 <!-- REF _command_.VP_ADD_SHEET.Syntax -->**VP ADD SHEET** ( *vpAreaName* : Text {; *index* : Longint {; *name* : Text}} )
 <!-- END REF --> 
 
+<!-- REF _command_.VP_ADD_SHEET.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|index|Longint|->	|Index of the new sheet|	
+|name|Text|->|Sheet name|	
+<!-- END REF --> 
+
 #### Description 
 
 The `VP ADD SHEET` command <!-- REF _command_.VP_ADD_SHEET.Summary -->inserts a sheet in the document loaded in `vpAreaName`.
@@ -164,20 +173,11 @@ In `index`, you can pass an index for the new sheet. If the passed `index` is in
 
 In `name`, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
 
-<!-- REF _command_.VP_ADD_SHEET.Params -->
-
-|Parameter|Type| |Description|
-|---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|index|Longint|->	|Index of the new sheet|	
-|name|Text|->|Sheet name|	
-<!-- END REF --> 
-
 #### Example
 
 The document currently has 3 sheets:
 
-![](assets/en/ViewPro/vp-sheet.png)
+![](assets/en/ViewPro/vp-sheet-3.png)
 
 To insert a sheet at the third position (index 2) and name it "March":
 
@@ -1247,6 +1247,13 @@ $colCount:=VP Get column count("ViewProarea")
 <!-- REF _command_.VP_Get_current_sheet.Syntax -->**VP Get current sheet** ( *vpAreaName* : Text )
 <!-- END REF --> 
 
+<!-- REF _command_.VP_Get_current_sheet.Params -->
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|Function result|Longint|<-|Index of the current sheet|
+<!-- END REF --> 
+
 #### Description 
 
 The `VP Get current sheet` command <!-- REF _command_.VP_Get_current_sheet.Summary -->returns the index of the current sheet in `vpAreaName`. The current sheet is the selected sheet in the document.
@@ -1256,19 +1263,11 @@ In `vpAreaName`, pass the name of the 4D View Pro area.
 
 > Indexing starts at 0.
 
-<!-- REF _command_.VP_Get_current_sheet.Params -->
-
-|Parameter|Type| |Description|
-|---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|Function result|Longint|<-|Index of the current sheet|
-<!-- END REF --> 
-
 #### Example
 
 When the third sheet is selected: 
 
-![](assets/en/ViewPro/vp-sheet-3-select.png)
+![third-sheet](assets/en/ViewPro/vp-sheet-3-select.png)
 
 The command returns 2:
 
@@ -1744,6 +1743,13 @@ will retrieve the coordinates of all the cells in the current selection:
 <!-- REF _command_.VP_Get_sheet_count.Syntax -->**VP Get sheet count** ( *vpAreaName* : Text )
 <!-- END REF --> 
 
+<!-- REF _command_.VP_Get_sheet_count.Params -->
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|Function result|Longint|<-|Number of sheets|
+<!-- END REF --> 
+
 #### Description 
 
 The `VP Get sheet count` command <!-- REF _command_.VP_Get_sheet_count.Summary -->returns the number of sheets in the document loaded in `vpAreaName`.
@@ -1751,19 +1757,11 @@ The `VP Get sheet count` command <!-- REF _command_.VP_Get_sheet_count.Summary -
 
 In `vpAreaName`, pass the name of the 4D View Pro area.
 
-<!-- REF _command_.VP_Get_sheet_count.Params -->
-
-|Parameter|Type| |Description|
-|---|---|---|---|
-|vpAreaName| Text|->|4D View Pro area form object name|
-|Function result|Longint|<-|Number of sheets|
-<!-- END REF --> 
-
 #### Example
 
 In the following document: 
 
-![](assets/en/ViewPro/vp-sheet.png)
+![](assets/en/ViewPro/vp-sheet-3.png)
 
 Get the sheet count and set the current sheet to the last sheet:
 
@@ -1774,6 +1772,76 @@ Get the sheet count and set the current sheet to the last sheet:
 ```
 
 ![](assets/en/ViewPro/vp-sheet-3-select.png)
+
+### VP Get sheet index
+
+<!-- REF _command_.VP_Get_sheet_index.Syntax -->**VP Get sheet index** ( *vpAreaName* : Text ; *name* : Text )
+<!-- END REF --> 
+
+<!-- REF _command_.VP_Get_sheet_index.Params -->
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|name| Text|->|Sheet name|
+|Function result|Longint|<-|Sheet index|
+<!-- END REF --> 
+
+#### Description 
+
+The `VP Get sheet index` command <!-- REF _command_.VP_Get_sheet_index.Summary -->returns the index of a sheet based on its name in `vpAreaName`.
+<!-- END REF --> 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `name`, pass the name of the sheet whose index will be returned. If no sheet named `name` is found in the document, the command returns -1.
+
+>Indexing starts at 0.
+
+#### Example
+
+In the following document: 
+
+![](assets/en/ViewPro/vp-sheet-index-name.png)
+
+Get the index of the sheet called "Total first quarter":
+
+```4d
+$index:=VP Get sheet index("ViewProArea";"Total first quarter") //the command returns 2
+```
+
+### VP Get sheet name
+
+<!-- REF _command_.VP_Get_sheet_name.Syntax -->**VP Get sheet name** ( *vpAreaName* : Text ; *index* : Longint )
+<!-- END REF --> 
+
+<!-- REF _command_.VP_Get_sheet_name.Params -->
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|index| Longint|->|Sheet index|
+|Function result|Text|<-|Sheet name|
+<!-- END REF --> 
+
+#### Description 
+
+The `VP Get sheet name` command <!-- REF _command_.VP_Get_sheet_name.Summary -->returns the name of a sheet based on its index in `vpAreaName`.
+<!-- END REF --> 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `index`, pass the index of the sheet whose name will be returned.
+
+If the passed index does not exist, the command returns an empty name.
+
+>Indexing starts at 0.
+
+#### Example
+
+Get the name of the third sheet in the document:
+
+```4d
+$sheetName:=VP Get sheet name("ViewProArea";2)
+```
 
 ### VP Get sheet options
 
@@ -2449,7 +2517,8 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 ### VP REMOVE NAME
 
-<!-- REF _command_.VP_REMOVE_NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Longint } ) <!-- END REF -->  
+<!-- REF _command_.VP_REMOVE_NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Longint } ) 
+<!-- END REF -->  
 
 <!-- REF _command_.VP_REMOVE_NAME.Params -->
 
@@ -2488,6 +2557,41 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 ```
 
 
+### VP REMOVE SHEET
+
+<!-- REF _command_.VP_REMOVE_SHEET.Syntax -->**VP REMOVE SHEET** ( *rangeObj* : Object ) <!-- END REF -->  
+
+<!-- REF _command_.VP_REMOVE_SHEET.Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName  |Text|->|4D View Pro area form object name|
+|index  |Longint|->|Index of the sheet to remove|
+<!-- END REF -->  
+
+#### Description
+
+The `VP REMOVE SHEET` command <!-- REF _command_.VP_REMOVE_SHEET.Summary -->removes the sheet of with the specified `index` from the document loaded in `vpAreaName`.<!-- END REF -->. 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `index`, pass the index of the sheet to remove.
+
+If the passed index does not exist, the command does nothing.
+
+>Indexing starts at 0.
+
+#### Example
+The document currently has three sheets:
+
+![](assets/en/ViewPro/vp-sheet-index.png)
+
+Remove the third sheet:
+
+```4d 
+ VP REMOVE SHEET("ViewProArea";2)
+```
+
+![](assets/en/ViewPro/vp-sheet-2.png)
 
 ### VP REMOVE SPAN
 
@@ -2497,7 +2601,6 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 |Parameter|Type||Description|
 |---|---|---|---|
-
 |rangeObj   |Object|->|Range object|
 
 <!-- END REF -->  
@@ -3207,10 +3310,44 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 The result:
 
- 
 ![](assets/en/ViewPro/cmd_vpSetColumnCount.PNG)
 
+### VP SET CURRENT SHEET
 
+<!-- REF _command_.VP_SET_CURRENT_SHEET.Syntax -->**VP SET CURRENT SHEET** ( *vpAreaName* : Index )
+<!-- END REF --> 
+
+<!-- REF _command_.VP_SET_CURRENT_SHEET.Params -->
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|Index|Longint|<-|Index of the new current sheet|
+<!-- END REF --> 
+
+#### Description 
+
+The `VP SET CURRENT SHEET` command <!-- REF _command_.VP_SET_CURRENT_SHEET.Summary -->sets the current sheet in `vpAreaName`. The current sheet is the selected sheet in the document.
+<!-- END REF --> 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `index`, pass the index of the sheet to be set as current sheet. If the index passed is inferior to 0 or exceeds the number of sheets, the command does nothing.
+
+> Indexing starts at 0.
+
+#### Example
+
+The document's current sheet is the first sheet:
+
+![first-sheet-selected](assets/en/ViewPro/vp-sheet-3-select.png)
+
+Set the current sheet to the third sheet:
+
+```4d
+VP SET CURRENT SHEET("ViewProArea";2)
+```
+
+![](assets/en/ViewPro/vp-sheet-3-select.png)
 
 ### VP SET CUSTOM FUNCTIONS
 
@@ -3858,7 +3995,91 @@ will set this selection:
 
 ![](assets/en/ViewPro/cmd_vpSetSelection.PNG)
 
+### VP SET SHEET COUNT
 
+<!-- REF _command_.VP_SET_SHEET_COUNT.Syntax -->**VP SET SHEET COUNT** ( *vpAreaName* : Text ; *number* : Longint  ) <!-- END REF -->  
+
+<!-- REF _command_.VP_SET_SHEET_COUNT.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|number |Longint|->|Number of sheets|
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP SET SHEET COUNT` command <!-- REF _command_.VP_SET_SHEET_COUNT.Summary -->sets the number of sheets in vpAreaName<!-- END REF -->. 
+
+In `number`, pass a number corresponding to how many sheets the document will contain after the command is executed.
+
+>**Warning**: The command will delete sheets if the amount of sheets in your document is superior to the number passed. For example, if there are 5 sheets in your document and you set the sheet count to 3, the command will delete sheets number 4 and 5.
+ 
+#### Example 
+
+The document currently has one sheet:
+
+![](assets/en/ViewPro/vp-sheet-1.png)
+
+To set the number of sheets to 3:
+```
+ VP SET SHEET COUNT("ViewProArea";3)
+```
+
+![](assets/en/ViewPro/vp-sheet-3.png)
+
+### VP SET SHEET NAME
+
+<!-- REF _command_.VP_SET_SHEET_NAME.Syntax -->**VP SET SHEET NAME** ( *vpAreaName* : Text ; *name* {; index: Text} ) 
+<!-- END REF -->  
+
+<!-- REF _command_.VP_SET_SHEET_NAME.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|name|Text|->|New name for the sheet|
+|index |Longint|->|Index of the sheet to be renamed|
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP SET SHEET NAME` command <!-- REF _command_.VP_SET_SHEET_NAME.Summary -->renames a sheet in the document loaded in `vpAreaName`<!-- END REF -->. 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `name`, pass a new name for the sheet.
+
+In `index`, pass the index of the sheet to rename.
+
+>Indexing starts at 0.
+
+If no `index` is passed, the command renames the current sheet.
+
+The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+
+The command does nothing if:
+
+* the new name contains forbidden characters
+* the new name's value is blank
+* the new name already exists
+* the passed index does not exist
+ 
+#### Example 
+
+The document currently has three sheets:
+
+![](assets/en/ViewPro/vp-sheet-3.png)
+
+Set the third sheet's name to "Total first quarter":
+
+```
+VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
+```
+
+![](assets/en/ViewPro/vp-sheet-index-name.png)
 
 ### VP SET SHEET OPTIONS
 
@@ -3978,6 +4199,48 @@ Here is the result:
 
 ![](assets/en/ViewPro/cmd_vpSetSheetOptions2.PNG)
 
+### VP SET SHOW PRINT LINES
+
+<!-- REF _command_.VP_SET_SHOW_PRINT_LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Longint} ) 
+<!-- END REF -->  
+
+<!-- REF _command_.VP_SET_SHOW_PRINT_LINES.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Text|->|4D View Pro area form object name|
+|visible|Boolean|->|Print lines displayed if True (default), hidden if False|
+|index |Longint|->|Sheet index|
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP SET SHEET NAME` command <!-- REF _command_.VP_SET_SHOW_PRINT_LINES.Summary --> sets whether to display print preview lines in a spreadsheet.<!-- END REF -->. 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `visible`, pass True to display the print lines, and False to hide them. True is passed by default.
+
+In `index`, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+
+> Indexing starts at 0.
+
+The position of a spreadsheet's print lines varies according to that spreadsheet's page breaks.
+ 
+#### Example 
+
+The following code displays print lines in a document's second sheet:
+
+```
+VP SET SHOW PRINT LINES("ViewProArea";True;1)
+```
+
+![set-show-print-lines](assets/en/ViewPro/vp-set-show-print-lines.png)
+
+With a page break:
+
+![set-show-print-lines-with-page-break](assets/en/ViewPro/vp-set-show-print-lines-page-break.png)
 
 
 ### VP SET TEXT VALUE

@@ -385,7 +385,7 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 ## Style Objects and Style Sheets
 
 
-4D View Pro style objects and style sheets allow you to control the graphical aspects and the look of your 4D View Pro documents. 
+4D View Pro style objects and style sheets allow you to control the graphical aspects and the look of your 4D View Pro documents.
 
 ### Style objects
 
