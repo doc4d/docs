@@ -86,6 +86,8 @@ You can use the [VP Cells](component-method-list.md#vp-cells) method:
 $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 ```
 
+You can then use this range to insert values.
+
 ## Importing and exporting different formats 
 
 4D View Pro supports the import and export of several document formats:
