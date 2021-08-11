@@ -177,7 +177,7 @@ In `name`, you can pass a name for the new sheet. The new name cannot contain th
 
 The document currently has 3 sheets:
 
-![](assets/en/ViewPro/vp-sheet-3.png)
+![vp-document-with-3-sheets](assets/en/ViewPro/vp-sheet-3.png)
 
 To insert a sheet at the third position (index 2) and name it "March":
 
@@ -185,7 +185,51 @@ To insert a sheet at the third position (index 2) and name it "March":
 VP ADD SHEET("ViewProArea";2;"March")
 ```
 
-![](assets/en/ViewPro/vp-add-sheet.png)
+![vp-add-sheet](assets/en/ViewPro/vp-add-sheet.png)
+
+### VP ADD SPAN
+
+<!-- REF _command_.VP_ADD_SPAN.Syntax -->**VP ADD SPAN** ( *rangeObj* : Object )
+<!-- END REF --> 
+
+<!-- REF _command_.VP_ADD_SPAN.Params -->
+
+|Parameter|Type| |Description|
+|---|---|---|---|
+|rangeObj| Object|->|Range object|
+<!-- END REF --> 
+
+#### Description
+
+The `VP ADD SPAN` command combines the cells in `rangeObj` as a single span of cells.
+
+In `rangeObj`, pass a range object of cells. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Note that if cell ranges overlap, only the first cell range is used.
+
+> Only the data in the upper-left cell is displayed. Data in the other combined cells is hidden until the span is removed.
+>
+> Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
+
+#### Example
+
+To span the First quarter and Second quarter cells across the two cells beside them, and the South area cell across the two rows below it:
+
+![initial-document](assets/en/ViewPro/vp-add-span.png)
+
+```4d
+ // First quarter range
+ $q1:=VP Cells("ViewProArea";2;3;3;1)
+ 
+  // Second quarter range
+ $q2:=VP Cells("ViewProArea";5;3;3;1)
+ 
+  // South area range
+ $south:=VP Cells("ViewProArea";0;5;1;3)
+ 
+ VP ADD SPAN(VP Combine ranges($q1;$q2;$south))
+```
+
+![vp-add-span-result](assets/en/ViewPro/vp-add-span-2.png)
+
 
 ### VP ADD STYLESHEET
 
@@ -1877,11 +1921,42 @@ To view the full list of the options, see [4D View Pro Sheet Options](configurin
 ```4d
 $options:=VP Get sheet options("ViewProArea")
 If($options.colHeaderVisible) //column headers are visible
-    ... //do somethnig
+    ... //do something
 End if
 ```
 
+### VP Get show print lines
 
+<!-- REF _command_.VP_Get_show_print_lines.Syntax -->**VP Get show print lines** ( *vpAreaName* : Text ; index} ) 
+<!-- END REF --> 
+
+<!-- REF _command_.VP_Get_show_print_lines.Params -->
+|Parameter|Type| |Description|
+|---|---|---|---|
+|vpAreaName| Text|->|4D View Pro area form object name|
+|index|Longint|<-|Sheet index|
+|Function result|Boolean|<-|True if print lines are visible, False otherwise|
+<!-- END REF --> 
+
+#### Description 
+
+The `VP Get show print lines` command <!-- REF _command_.VP_Get_show_print_lines.Summary -->returns `True` if the print preview lines are visible and `False` if they are hidden.
+<!-- END REF --> 
+
+In `vpAreaName`, pass the name of the 4D View Pro area.
+
+In `index`, pass the index of the target sheet. If index is omitted, the command applies to the current sheet.
+
+> Indexing starts at 0.
+
+#### Example
+
+The following code checks if preview lines are displayed or hidden in the document: 
+
+```4d
+ var $result : Boolean
+ $result:=VP Get show print lines("ViewProArea";1)
+```
 
 
 ### VP Get spans
