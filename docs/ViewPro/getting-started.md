@@ -83,12 +83,13 @@ For example, to create a range object for the following cells:
 You can use the [VP Cells](component-method-list.md#vp-cells) method:
 
 ```4d 
-$cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
+var $myRange : Object
+$myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 ```
 
-You can then use this range to insert values.
+You can then pass `$myRange` to another View Pro method to modify these cells (for example add a border to the set of cells with [VP SET BORDER](./component-method-list.md#vp-set-border)).
 
-## Importing and exporting different formats 
+## Import and export formats 
 
 4D View Pro supports the import and export of several document formats:
 * .4vp
@@ -96,4 +97,4 @@ You can then use this range to insert values.
 * .txt and .csv
 * .pdf (for export only)
 
-For more details, check out the description of the [VP IMPORT DOCUMENT](component-method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](component-method-list.md#vp-export-document) commands.
+For more details, check out the description of [VP IMPORT DOCUMENT](component-method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](component-method-list.md#vp-export-document).

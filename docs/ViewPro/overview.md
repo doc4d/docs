@@ -28,14 +28,14 @@ Since 4D View Pro is a built-in 4D component, you can access its list of methods
 
 ![component-methods](assets/en/ViewPro/explorer-methods.PNG)
 
-For a detailed list of component methods, see [Component method list](command-list.md).
+For a detailed list of component methods, see [Component method list](component-method-list.md).
 
 ## Area Architecture Overview
 
 When working with 4D View Pro areas in your forms, you need to handle several elements:
 
 *	The **4D View Pro form area** (4D form object): contains and displays the 4D View Pro object. This area is defined by a name ("Object name" field in the Property list).
-*	The **4D View Pro object** ([object](Concepts/dt_object.md) type variable or expression): stores the whole spreadsheet contents (see below). You can get or set this object using the [VP IMPORT FROM OBJECT](command-list.md#vp-import-from-object) or [VP Export to object](command-list.md#vp-export-to-object) commands.
+*	The **4D View Pro object** ([object](Concepts/dt_object.md) type variable or expression): stores the whole spreadsheet contents (see below). You can get or set this object using the [VP IMPORT FROM OBJECT](component-method-list.md#vp-import-from-object) or [VP Export to object](component-method-list.md#vp-export-to-object) commands.
 *	The **4D View Pro document** (.4vp documents): stores the whole spreadsheet contents in JSON format.
 
 ![](assets/en/ViewPro/vpDocument.PNG)
@@ -64,7 +64,7 @@ The 4D View Pro form object variable manages information used by the 4D View Pro
 |---|---|---|
 |area|	Text|	4D View Pro area name
 |callbacks|	Object|	Stores temporary information necessary for commands requiring callbacks such as importing and exporting.| 
-|commandBuffers|	Collection|	Stores sequentially the commands called by the method and executes them as a batch (rather than individually) upon exiting the method, or if a command returns a value or the [VP FLUSH COMMANDS](command-list.md#vp-flush-commands) is called. This mechanism increases performance by reducing the number of requests sent.|
+|commandBuffers|	Collection|	Stores sequentially the commands called by the method and executes them as a batch (rather than individually) upon exiting the method, or if a command returns a value or the [VP FLUSH COMMANDS](component-method-list.md#vp-flush-commands) is called. This mechanism increases performance by reducing the number of requests sent.|
 |formulaBar|	Boolean|	Indicates whether or not the formula bar is displayed. Available only for the "toolbar" interface.|
 |inited|	Boolean|	Indicates whether or not the 4D View Pro area has been initialized (see On VP Ready).|
 |interface|	Text|	Specifies the type of user interface:"ribbon", "toolbar", "none".|
