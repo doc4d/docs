@@ -49,9 +49,9 @@ macOS Sierra 以降、Mac のアプリケーションは、複数のウィンド
 *   **しない**: 4Dフォームエディターあるいはメソッドエディターで開かれた新しいドキュメントは常に新しいウィンドウを作成します (タブは作成されません)。
 *   **常にする**: 4Dフォームエディターあるいはメソッドエディターで開かれた新しいドキュメントは常に新しいタブを作成します。
 
-### Exit Design when going to Application Environment
+### アプリケーションモードに移動する時に、デザインモードを終了する
 
-If this option is checked, when the user switches to the Application environment using the **Test Application** menu command, all the windows of the Design environment are closed. If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
+このオプションが選択されていると、**アプリケーションモード** コマンドを使用してユーザーがアプリケーションモードに移動する際に、デザインモードのすべてのウィンドウが閉じられます。 If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
 
 
 ### Enable binary database creation
