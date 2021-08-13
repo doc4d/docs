@@ -10,7 +10,7 @@ title: ストラクチャーページ
 次のオプションから選択することができます:
 
 *   **Name** (デフォルトでは "ID"): プライマリーキーのフィールドのデフォルト名を設定します。 [4D の命名規則](Concepts/identifiers.md#テーブルとフィールド) に従う範囲内であればどんな名前も使用できます。
-*   **Type** ([Longint](Concepts/number.md) by default): Sets the default type of primary key fields. UUID を選択することもできます。 In this case, the primary key fields created by default are of the [Alpha type](Concepts/string.md) and have the **UUID Format** and **Auto UUID** field properties checked.
+*   **デフォルトタイプ** (デフォルトでは [倍長整数](Concepts/number.md)): プライマリーキーフィールドのデフォルトの型を設定します。 UUID を選択することもできます。 この場合、デフォルトで作成されたプライマリーキーフィールドは [文字型](Concepts/string.md) となり、**UUIDフォーマット** と　**自動UUID** プロパティにチェックが入っています。
 
 ## ストラクチャーエディター
 
@@ -22,5 +22,5 @@ title: ストラクチャーページ
 
 ### フォルダーが表示対象外のとき
 
-This option sets the appearance of dimmed tables in the Structure editor, when you carry out selections by folder (see [Highlight/dim tables by folder](https://doc.4d.com/4Dv18R6/4D/18-R6/Structure-editor.300-5217734.en.html#4592928)). The possible options are Dimmed (a shadow replaces the table image) and Invisible (the table disappears completely).
+このオプションは、ストラクチャーエディターでフォルダーによって選択する際の、テーブルが表示対象外のときのアピアランスを設定できます ([フォルダーごとにテーブルをハイライト/薄暗くする](https://doc.4d.com/4Dv19/4D/19/Structure-editor.300-5416818.ja.html#4592928) 参照)。 薄暗く表示 (テーブルイメージの代わりに影が表示される) または非表示 (テーブルは完全に見えなくなる) が選択できます。
 
