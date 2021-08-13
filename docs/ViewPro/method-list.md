@@ -1,6 +1,6 @@
 ---
-id: component-method-list
-title: Component Method List
+id: method-list
+title: Method List
 ---
 
 [A](#a) - 
@@ -1525,6 +1525,7 @@ The command returns an object describing the frozen columns and rows. This objec
  
 #### Example 
 
+
 You want to retrieve information about the number of frozen columns and rows:
 
 ```4d
@@ -1857,6 +1858,7 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") //the command re
 
 <!-- REF _command_.VP_Get_sheet_name.Syntax -->**VP Get sheet name** ( *vpAreaName* : Text ; *index* : Longint )
 <!-- END REF --> 
+
 
 <!-- REF _command_.VP_Get_sheet_name.Params -->
 |Parameter|Type| |Description|
@@ -2699,6 +2701,7 @@ use this code:
 ```4d
  //find all cell spans
  $span:=VP Get spans(VP All("ViewProArea"))
+
  
   //remove the cell spans
  VP REMOVE SPAN($span)
@@ -2873,6 +2876,7 @@ $row:=VP Row("ViewProArea";9) // row 10
 #### Description
 
 The `VP ROW AUTOFIT` command <!-- REF _command_.VP_ROW_AUTOFIT.Summary -->automatically sizes the row(s) in *rangeObj* according to their contents<!-- END REF -->. 
+
 
 In *rangeObj*, pass a range object containing a range of the rows whose size will be automatically handled.
   
@@ -4409,6 +4413,7 @@ The `VP SET VALUE` command <!-- REF _command_.VP_SET_VALUE.Summary -->assigns a 
 The command allows you to use a generic code to set and format the types of values in *rangeObj*, whereas other commands, such as [VP SET TEXT VALUE](#vp-set-text-value) and [VP SET NUM VALUE](#vp-set-num-value), reduce the values to specific types.
 
 In *rangeObj*, pass a range of the cell(s) (created for example with [VP Cell](#vp-cell) or [VP Column](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+
 
 The parameter *valueObj* is an object that includes properties for the value and the format to assign to *rangeObj*. It can include the following properties :
 

@@ -3,41 +3,37 @@ id: getting-started
 title: Getting Started
 ---
 
-4D View Pro allows you to insert spreadsheet areas in your 4D forms.
+To start using 4D View Pro, the first step consists of inserting and configuring a spreadsheet area in your 4D form.
 
-## Creating the area  
+> 4D View Pro areas can also be [created and used offscreen](method-list.md#vp-run-offscreen-area).
 
-4D View Pro documents are displayed and edited manually in a  [4D form object](FormObjects/formObjects_overview.md) named 4D View Pro. To access this object, click on the last tool in the object bar:
+## Inserting a 4D View Pro area  
+
+4D View Pro documents are displayed and edited manually in a [4D form object](FormObjects/viewProArea_overview.md) named 4D View Pro. To select this object, click on the last tool in the object bar:
 
 ![](assets/en/ViewPro/vpArea.PNG)
 
-## Setting standard area properties
+You can also select a preconfigured 4D View Pro area in the [Object library](FormEditor/objectLibrary.md). 
 
-Using the area's property list, you can set standard properties such as **Object Name**, **Variable or Expression**, **Appearance**, **Action**, and **Events**.
+## Setting area properties
+
+Using the area's property list, you can set [4D View Pro object properties](FormObjects/viewProArea_overview.md#supported-properties) such as **Object Name**, [**Variable or Expression**](overview.md#about-the-4d-view-pro-form-object-variable), **Appearance**, **Action**, and **Events**.
 
 ![](assets/en/ViewPro/vpPropertyList.PNG)
 
-*	**Object Name**: name of the 4D form area that contains and displays the 4D View Pro document.
-*	**Variable or Expression**: name of the 4D View Pro form area variable.
+## Adding a user interface
 
-## Executing the form
-
-By default, when the form is executed, the 4D View Pro area displays a spreadsheet with a Ribbon:
+You can select the interface to use with your 4D View Pro areas. For example, the following 4D View Pro area displays a spreadsheet with a Ribbon interface:
 
 ![](assets/en/ViewPro/vpSpreadsheet.PNG)
 
-## Adding a user interface
+Interfaces allow for basic modifications and data manipulation. 
 
-You can add interfaces to 4D View Pro areas. They allow for basic modifications and data manipulation. The Ribbon is set by default in the property list. 
+These interfaces can be enabled or disabled in the **Property List**, under **Appearance**:  
 
-These interfaces can be enabled or disabled either:
+![](assets/en/ViewPro/vpUserInterface.PNG)
 
-*	in the **Property List**, under **Appearance**:  
-	![](assets/en/ViewPro/vpUserInterface.PNG)
-	
-*	using a **JSON file** (see  [Dynamic Forms](https://doc.4d.com/4Dv19/4D/19/Dynamic-Forms.300-5416668.en.html)) with the following properties:
-	*	"userInterface": Default value is "none". To add an interface, set it to "Ribbon" or "Toolbar".
-	*	"withFormulaBar": Default value is "false". To enable the formula bar, set it to "true" . **Note**: Available only for the "Toolbar" interface. 
+> You can also use the [`userInterface`](FormObjects/properties_Appearance.md#user-interface) and [`withFormulaBar`](FormObjects/properties_Appearance.md#show-formula-bar)(only with the "toolbar" interface) JSON properties.  
 
 Both the Ribbon and the Toolbar interfaces group related actions into the following tabs: 	
 
@@ -60,7 +56,7 @@ User-defined modifications are saved in the 4D View Pro object when the user sav
 
 ### Toolbar
 
-Enabling the Toolbar interface displays the Show Formula Bar option. When selected, the formula bar is visible below the Toolbar interface. If not selected, the formula bar is hidden.
+Enabling the Toolbar interface displays the [**Show Formula Bar**](FormObjects/properties_Appearance.md#show-formula-bar) option. When selected, the formula bar is visible below the Toolbar interface. 
 
 With visible formula bar:
 
@@ -80,14 +76,14 @@ For example, to create a range object for the following cells:
 
 ![](assets/en/ViewPro/vp-cells.png)
 
-You can use the [VP Cells](component-method-list.md#vp-cells) method:
+You can use the [VP Cells](method-list.md#vp-cells) method:
 
 ```4d 
 var $myRange : Object
 $myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 ```
 
-You can then pass `$myRange` to another View Pro method to modify these cells (for example add a border to the set of cells with [VP SET BORDER](./component-method-list.md#vp-set-border)).
+You can then pass `$myRange` to another 4D View Pro method to modify these cells (for example add a border to the set of cells with [VP SET BORDER](method-list.md#vp-set-border)).
 
 ## Import and export formats 
 
@@ -97,4 +93,4 @@ You can then pass `$myRange` to another View Pro method to modify these cells (f
 * .txt and .csv
 * .pdf (for export only)
 
-For more details, check out the description of [VP IMPORT DOCUMENT](component-method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](component-method-list.md#vp-export-document).
+For more details, check out the description of [VP IMPORT DOCUMENT](method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](method-list.md#vp-export-document).

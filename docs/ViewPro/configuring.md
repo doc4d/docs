@@ -15,9 +15,9 @@ Using 4D events, commands, and attributes, you can set the behavior and appearan
 
 The following form events are available in the Property List for 4D View Pro areas.
 
-Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. The specific 4D View Pro form events provide additional information in the object returned by the `FORM Event` command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific 4D View Pro form events:
+Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. Some standard form events provide extended information in the object returned by the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific or provide additional information to 4D View Pro areas:
 
-|Standard 4D events (see `Form event code`)	|Specific 4D View Pro events|
+|Standard 4D events|Specific and extended 4D View Pro events|
 |---|---|
 |[On Load](../Events/onLoad.md) 	|[On VP Ready](../Events/onVpReady.md)|
 |[On Getting Focus](../Events/onGettingFocus.md)	|[On Clicked](../Events/onClicked.md)|
@@ -253,6 +253,7 @@ Header and footer attributes are used to specify text or images in the left, rig
 |headerCenterImage|	picture &#124; text*|	The image for the center section of the header.|
 |headerLeft|	text	|The text and format of the left header on printed pages. |
 |headerLeftImage|	picture &#124; text*	|The image for the left section of the header.|
+
 |headerRight|	text	|The text and format of the right header on printed pages.|
 |headerRightImage|	picture &#124; text*|	The image for the right section of the header.|
 

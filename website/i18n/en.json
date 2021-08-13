@@ -817,32 +817,26 @@
       "Users/overview": {
         "title": "Overview"
       },
+      "ViewPro/calling-methods-fields": {
+        "title": "Calling Methods and Fields in Formulas"
+      },
       "ViewPro/configuring": {
-        "title": "Configuring a 4D View Pro area"
+        "title": "Configuring an Area"
       },
-      "ViewPro/constantReference": {
-        "title": "Constant Reference"
+      "ViewPro/constant-list": {
+        "title": "Constant List"
       },
-      "ViewPro/databaseReferences": {
-        "title": "Database References"
+      "ViewPro/getting-started": {
+        "title": "Getting Started"
       },
-      "ViewPro/formulas": {
-        "title": "Formulas"
-      },
-      "ViewPro/fundamentals": {
-        "title": "Fundamentals"
-      },
-      "ViewPro/languageOverview": {
-        "title": "Using the 4D View Pro Language"
-      },
-      "ViewPro/languageReference": {
-        "title": "Language Reference"
+      "ViewPro/method-list": {
+        "title": "Method List"
       },
       "ViewPro/overview": {
         "title": "Overview"
       },
-      "ViewPro/usingArea": {
-        "title": "Using a 4D View Pro area"
+      "ViewPro/spreadsheet-features": {
+        "title": "Spreadsheet Features"
       },
       "WebServer/allowProject": {
         "title": "Allowing project methods"
@@ -940,6 +934,7 @@
     "Description of log files|no description given": "Description of log files",
     "Command Line Interface|no description given": "Command Line Interface",
     "Preferences|no description given": "Preferences",
+    "4D View Pro|no description given": "4D View Pro",
     "Getting started|no description given": "Getting started",
     "Core Development|no description given": "Core Development",
     "Administration|no description given": "Administration",

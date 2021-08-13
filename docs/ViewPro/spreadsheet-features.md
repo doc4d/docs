@@ -58,7 +58,7 @@ When typing a formula, click on a cell to enter that cell's reference in the for
 
 ![](assets/en/ViewPro/vpFormula1.PNG) 
 
-You can also create named formulas that can be called via their name. To do so, enter these formulas using the [VP ADD FORMULA NAME](command-list.md#vp-add-formula-name) command. 
+You can also create named formulas that can be called via their name. To do so, enter these formulas using the [VP ADD FORMULA NAME](method-list.md#vp-add-formula-name) command. 
 
 ### Operators and Operands
 All formulas have operands and operators:
@@ -68,8 +68,8 @@ All formulas have operands and operators:
 	*	values
 	*	references to other cells (relatives, absolutes, mixed or by name)
 	*	4D variables, fields and functions
-	*	4D methods (registered by [VP SET ALLOWED METHODS](command-list.md#vp-set-allowed-methods)) 
-	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](command-list.md#vp-set-custom-functions))
+	*	4D methods (registered by [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods)) 
+	*	4D formulas (via [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions))
 	*	Spreadsheet functions 
  
 ### Operators by data types  
