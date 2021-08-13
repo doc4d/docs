@@ -51,25 +51,25 @@ macOS Sierra 以降、Mac のアプリケーションは、複数のウィンド
 
 ### アプリケーションモードに移動する時に、デザインモードを終了する
 
-このオプションが選択されていると、**アプリケーションモード** コマンドを使用してユーザーがアプリケーションモードに移動する際に、デザインモードのすべてのウィンドウが閉じられます。 If this option is not checked (factory setting), the windows of the Design environment remain visible in the background of the Application environment.
+このオプションが選択されていると、**アプリケーションモード** コマンドを使用してユーザーがアプリケーションモードに移動する際に、デザインモードのすべてのウィンドウが閉じられます。 このオプションがチェックされていないと (初期設定)、デザインモードのウィンドウはアプリケーションモードの後ろに表示されたままとなります。
 
 
-### Enable binary database creation
+### バイナリー形式のデータベース作成を有効化する
 
-If you check this option, two items are added in the **File > New** menu and the **New** toolbar button:
+このオプションをチェックすると、**ファイル ＞ 新規** メニューと、ツールバーの **新規** ボタンに、2つの項目が追加されます:
 
-*   **Database...**
-*   **Database from Structure Definition...**
+*   **データベース...**
+*   **ストラクチャー定義を使用したデータベース...**
 
 ![](assets/en/Preferences/general5.png)
 
-These items allow you to create binary databases (see [Creating a new database](https://doc.4d.com/4Dv18R6/4D/18-R6/Creating-a-new-database.300-5217610.en.html) section). They are no longer proposed by default because 4D recommends using project-based architecture for new developments.
+この項目を使用するとバイナリーデータベースを作成することができるようになります([新しいデータベースを作成する](https://doc.4d.com/4Dv19/4D/19/Creating-a-new-database.300-5416694.ja.html) の章を参照)。 これらの項目はデフォルトでは表示されません。今後 4D は、新規の開発にはプロジェクトベースのアーキテクチャーを使用することを推奨するからです。
 
-## When creating a new project
+## 新規プロジェクト作成時
 
-### Use Log File
+### ログファイルを使用
 
-When this option is checked, a log file is automatically started and used when a new database is created. For more information, please refer to [Log file (.journal)](Backup/log.md).
+このオプションをチェックすると、新規データベース作成時にログファイルが自動的に開始され、使用されます。 For more information, please refer to [Log file (.journal)](Backup/log.md).
 
 ### Create package
 
