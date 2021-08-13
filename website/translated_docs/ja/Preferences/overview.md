@@ -3,20 +3,20 @@ id: overview
 title: 概要
 ---
 
-User preferences specify various settings affecting your working environment, e.g. default options, display themes, method editor features, shortcuts, etc. They are applied to all projects opened with your 4D or 4D Server application.
+環境設定は、作業環境に影響する様々なオプションを指定します (例: デフォルトオプション、表示テーマ、メソッドエディター機能、ショートカット)。 これらの設定は、4D や 4D Server アプリケーションで開くすべてのプロジェクトに適用されます。
 
-**4D Server**: Object locking occurs when two or more users try to modify the settings in the Preferences dialog box at the same time. Only one user can use the Preferences dialog box at a time.
-> 4D offers a different set of parameters specific to the open projet: **Settings** (available from the **Design** menu). For more information, refer to the Settings chapter.
+**4D Server**: 複数のユーザーが同時に環境設定を更新しようとすると、オブジェクトのロックが発生します。 一度に一人のユーザーのみが環境設定ダイアログボックスを使用できます。
+> 4D は開かれているプロジェクト固有の設定をおこなうための **ストラクチャー設定** ダイアログも提供しています (**デザイン** メニューから利用可能です)。 詳細はデータベース設定の章を参照ください。
 
-## Access
+## アクセス
 
-You can access the Preferences dialog box from the **Edit > Preferences...** menu (Windows) or the **4D** Application menu (macOS):
+環境設定ダイアログボックスにアクセスするには **編集** (Windows) または **4D** アプリケーションメニュー (macOS) から **環境設定...** を選択します:
 
 ![](assets/en/Preferences/overviewAccess.png)
 
-This menu option is available even when there is no open project.
+このメニューコマンドは、プロジェクトが開かれていない場合でも利用できます。
 
-You can also display the Preferences dialog box in Application mode using the "Preferences" standard action (associated with a menu item or a button) or using the `OPEN SETTINGS WINDOW` command.
+`OPEN SETTINGS WINDOW` コマンドや、"環境設定" 標準アクションを (ボタンやメニューに割り当てて) 使用することで、アプリケーションモードでも環境設定ダイアログボックスを表示できます。
 
 ## ストレージ
 
