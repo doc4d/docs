@@ -28,22 +28,22 @@ title: フォームエディター
 エディターでフォームを開いたとき、インターフェース要素は、以下に応じてデフォルトで表示または非表示になります:
 
 - 環境設定で設定された **新フォームにデフォルトで表示** オプション - チェックされていないオプションはデフォルトでは表示されません。
-- the current [form type](properties_FormProperties.md#form-type):
-    - Markers and marker labels are always displayed by default on list forms
-    - Paper is displayed by default on "for printing" forms.
+- カレントの [フォームタイプ](properties_FormProperties.md#フォームタイプ):
+    - リストフォームでは、マーカーとマーカーラベルはデフォルトで常に表示されます。
+    - 用紙は "印刷用" のフォームの場合、デフォルトで表示されます。
 
 #### 要素の表示/非表示
 
-You can display or hide elements at any moment in the Form editor’s current window by selecting **Display** from the **Form** menu or the Form editor's context menu:
+**フォーム** メニューまたはフォームエディターのコンテキストメニューから **表示** を選択すると、フォームエディターのカレントウィンドウ内でいつでも要素の表示/非表示を切り替えることができます。
 
 ![](assets/en/FormEditor/showHideElements.png)
 
 
 ### ルーラー
 
-右と下にあるルーラーが、オブジェクトの配置を手助けします。 They can be [displayed or hidden](#display-options).
+右と下にあるルーラーが、オブジェクトの配置を手助けします。 これらは、[表示または非表示](#表示オプション) にすることができます。
 
-Select **Ruler definition...** from the **Form** menu to change measurement units so that the form displays inches, centimeters, or pixels.
+**フォーム** メニューの **ルーラー定義...** を選択すると、単位を変更して、インチ、センチ、ピクセルのいずれかで表示させることができます。
 
 ### ツールバー
 
