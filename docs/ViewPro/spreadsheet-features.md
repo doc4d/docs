@@ -61,9 +61,10 @@ When typing a formula, click on a cell to enter that cell's reference in the for
 You can also create named formulas that can be called via their name. To do so, enter these formulas using the [VP ADD FORMULA NAME](method-list.md#vp-add-formula-name) command. 
 
 ### Operators and Operands
+
 All formulas have operands and operators:
 
-*	**Operators**: see [Operators and values](#operators-and-values)
+*	**Operators**: see [Operators by data types](#operators-by-data-types)
 *	**Operands** are divided into several categories:
 	*	values
 	*	references to other cells (relatives, absolutes, mixed or by name)
@@ -136,6 +137,7 @@ When two or more different operands have the same name, 4D View Pro determines t
 ### Cell references 
  
  Formulas often refer to other cells by cell addresses. You can copy these formulas into other cells. For example, the following formula, entered in cell C8, adds the values in the two cells above it and displays the result.
+
 = C6 + C7
 
 This formula refers to cells C6 and C7. That is, 4D View Pro is instructed to refer to these other cells for values to use in the formula.

@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-4D View Pro is a both a 4D component and a 4D form area. It allows you to embed advanced spreadsheet features in your forms.
+4D View Pro is a [4D component](Concepts/components.md) that includes a [4D form area](FormObjects/viewProArea_overview.md) an specific [methods](method-list.md). It allows you to embed advanced spreadsheet features in your projects.
 
 
 ![](assets/en/ViewPro/vpSpreadsheet.PNG)
@@ -20,15 +20,7 @@ However, 4D View Pro requires a license. You need to activate this license in yo
 
 ![](assets/en/ViewPro/licenseError.PNG)
 
-## Using 4D View Pro methods
 
-4D View Pro methods can be used in the 4D Method editor, just like 4D language commands. 
-
-Since 4D View Pro is a built-in 4D component, you can access its list of methods from the Explorer, in the **Component Methods** section:
-
-![component-methods](assets/en/ViewPro/explorer-methods.PNG)
-
-For a detailed list of component methods, see [Method list](method-list.md).
 
 ## Area architecture overview
 
@@ -70,3 +62,14 @@ The 4D View Pro form object variable manages information used by the 4D View Pro
 |interface|	Text|	Specifies the type of user interface:"ribbon", "toolbar", "none".|
 
 >The 4D View Pro form object variable is for information purposes only (i.e., debugging). Under no circumstances should it be modified.
+
+
+## Using 4D View Pro methods
+
+4D View Pro methods can be used in the 4D Method editor, just like 4D language commands. 
+
+Since 4D View Pro is a built-in 4D component, you can access its list of methods from the Explorer, in the **Component Methods** section:
+
+![component-methods](assets/en/ViewPro/explorer-methods.PNG)
+
+For a detailed list of component methods, see [Method list](method-list.md).

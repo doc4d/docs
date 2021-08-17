@@ -1,15 +1,56 @@
 ---
 id: configuring
-title: Configuring an Area
+title: Configuring 4D View Pro Areas
 ---
 
-Using 4D events, commands, and attributes, you can set the behavior and appearance of your 4D View Pro areas. This includes :
-* Attaching [events](#form-events) to your form
-* Customizing and locking your sheets using [sheet options](#sheet-options) 
-* Defining a [cell format](#cell-format)
-* Configuring [printing options](#print-attributes) using attributes
-* Change the appearance of the sheets using [style objects and style sheets](#style-objects-and-style-sheets)
-* Setting the behavior of [range objects](#range-object-properties) by modifying their properties
+The 4D View Pro area form properties can be configured using the Property list. Spreadsheet properties are available through the language. 
+
+## Form area properties
+
+Using the area's property list, you can set [4D View Pro object properties](FormObjects/viewProArea_overview.md#supported-properties) such as **Object Name**, [**Variable or Expression**](overview.md#about-the-4d-view-pro-form-object-variable), **Appearance**, **Action**, and **Events**.
+
+![](assets/en/ViewPro/vpPropertyList.PNG)
+
+
+
+### Selecting a user interface
+
+You can select the interface to use with your 4D View Pro form areas in the **Property List**, under **Appearance**:  
+
+![](assets/en/ViewPro/vpUserInterface.PNG)
+
+> You can also use the [`userInterface`](FormObjects/properties_Appearance.md#user-interface) and [`withFormulaBar`](FormObjects/properties_Appearance.md#show-formula-bar)(only with the "toolbar" interface) JSON properties.  
+
+
+Interfaces allow for basic modifications and data manipulation. User-defined modifications are saved in the 4D View Pro object when the user saves the document.
+
+#### Ribbon
+
+![](assets/en/ViewPro/vpRibbon.PNG)
+
+#### Toolbar
+
+Enabling the Toolbar interface displays the [**Show Formula Bar**](FormObjects/properties_Appearance.md#show-formula-bar) option. When selected, the formula bar is visible below the Toolbar interface. 
+
+With visible formula bar:
+
+![](assets/en/ViewPro/vpToolbar.PNG)
+
+#### Features
+
+Both the Ribbon and the Toolbar interfaces group related features into tabs: 	
+
+|Tab| 	Actions	|Ribbon Interface|	Toolbar Interface|
+|---|---|:---:|:---:|
+|File|File manipulation|X| |	 
+|Home|Text appearance|X|X|
+|Insert|Add items| X| X|
+|Formulas|Formula calculation and library|	 X|X|
+|Data|Data manipulation|X| X|
+|View|Visual presentation| X| X|
+|Settings|Sheet presentation reference|X| |	 
+
+
 
 ## Form Events
 
@@ -253,7 +294,6 @@ Header and footer attributes are used to specify text or images in the left, rig
 |headerCenterImage|	picture &#124; text*|	The image for the center section of the header.|
 |headerLeft|	text	|The text and format of the left header on printed pages. |
 |headerLeftImage|	picture &#124; text*	|The image for the left section of the header.|
-
 |headerRight|	text	|The text and format of the right header on printed pages.|
 |headerRightImage|	picture &#124; text*|	The image for the right section of the header.|
 
@@ -368,31 +408,34 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 
 
 
-## Style Objects and Style Sheets
+## Style Objects
 
 
 4D View Pro style objects and style sheets allow you to control the graphical aspects and the look of your 4D View Pro documents.
 
-### Style objects
+### Style objects & Style sheets
 
-Style objects contain the style property settings. They can be used either in a style sheet or on their own. Style objects can also be used in addition to a style sheet so that different settings can be specified for individual cell ranges without affecting the rest of the document. 
+Style objects contain the style settings. They can be used either in a style sheet or on their own. Style objects can also be used in addition to a style sheet so that different settings can be specified for individual cell ranges without affecting the rest of the document. You can use style objects directly with the [VP SET CELL STYLE](command-list.md#vp-set-cell-style) and [VP SET DEFAULT STYLE](command-list.md#vp-set-default-style) commands.
 
-You can use style objects directly with the [VP SET CELL STYLE](command-list.md#vp-set-cell-style)) and [VP SET DEFAULT STYLE](command-list.md#vp-set-default-style) commands.
-
-### Style sheets 
-
-A style sheet groups together a combination of properties in a style object (see below) to specify the look of all of the cells in your 4D View Pro documents. Style sheets saved with the document can be used to set the properties for a single sheet, multiple sheets, or an entire workbook.
-
-When created, a 4D View Pro style sheet is given a name which is saved within the style sheet in the "name" property. This allows a style sheet to be easily used and, if thoughtfully selected, can facilitate its identification and purpose (e.g., Letterhead\_internal, Letterhead_external).
+A **style sheet** groups together a combination of properties in a style object to specify the look of all of the cells in your 4D View Pro documents. Style sheets saved with the document can be used to set the properties for a single sheet, multiple sheets, or an entire workbook. When created, a 4D View Pro style sheet is given a name which is saved within the style sheet in the "name" property. This allows a style sheet to be easily used and, if thoughtfully selected, can facilitate its identification and purpose (e.g., Letterhead\_internal, Letterhead_external). 
 
 Style sheets are created with the [VP ADD STYLESHEET](command-list.md#vp-add-stylesheet) command and applied with the the [VP SET DEFAULT STYLE](command-list.md#vp-set-default-style) or [VP SET CELL STYLE](command-list.md#vp-set-cell-style) commands. You can  remove a style sheet with the [VP REMOVE STYLESHEET](command-list.md#vp-remove-stylesheet) command.
 
 The [VP Get stylesheet](command-list.md#vp-get-stylesheet) command can be used to return the style object of a single style sheet or you can use the [VP Get stylesheets](command-list.md#vp-get-stylesheets) command to retrieve a collection of style objects for multiple style sheets.
 
-### Style properties
+### Style object properties
 
+Example:
+
+```4d
+ $style:=New object
+ $style.hAlign:=vk horizontal align left
+ $style.font:="12pt papyrus"
+ $style.backColor:="#E6E6FA" //light purple color
  
-You can find detailed descriptions of the possible values below on the [4D View Pro Constants](constant-list.md) page.
+ VP SET DEFAULT STYLE("myDoc";$style)
+```
+
 
 #### Background & Foreground  
 
@@ -448,21 +491,3 @@ You can find detailed descriptions of the possible values below on the [4D View 
 |name	|text	|Defines the name of the style| 
 |parentName	|text	|Specifies the style that the current style is based on. Values from the parent style will be applied, then any values from the current style are applied. Changes made in the current style will not be refelected in the parent style. Only available when using a style sheet.|
 
-
-## Range Object Properties
-
-4D View Pro range objects are composed of several properties:
-
-*	area - The name of the 4D View Pro area
-*	ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties. 
-
-|Property|		|Type	|Description|	Available for|
-|---|---|---|---|---|
-|area||		text|	4D View Pro area form object name|	always available|
-|ranges	||	collection|	Collection of range(s)|	always available
-||\[ ].name	|text|	Range name	|name|
-||\[ ].sheet|	number|	Sheet index (current sheet index by default) (counting begins at 0)	|cell, cells, row, rows, column, columns, all, name|
-||\[ ].row	|number	|Row index (counting begins at 0)	|cell, cells, row, rows|
-||\[ ].rowCount	|number	|Row count|	cells, rows|
-||\[ ].column	|number	|Column index (counting begins at 0)	|cell, cells, column, columns
-||\[ ].columnCount	|number	|Column count|	cells, columns
