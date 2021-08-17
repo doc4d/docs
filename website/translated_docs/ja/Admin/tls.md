@@ -3,15 +3,15 @@ id: tls
 title: TLSプロトコル (HTTPS)
 ---
 
-All 4D servers can communicate in secured mode through the TLS (Transport Layer Security) protocol:
+すべての 4Dサーバーは、TLS (Transport Layer Security) プロトコルを通じて、保護モードで通信する事ができます:
 
-- the web server
-- the application server (client-server desktop applications)
-- the SQL server
+- Webサーバー
+- アプリケーションサーバー (クライアントサーバー・デスクトップアプリケーション）
+- SQLサーバー
 
 ## 概要
 
-The TLS protocol (successor of SSL) has been designed to secure data exchanges between two applications —mainly between a web server and a browser. This protocol is widely used and is compatible with most web browsers.
+TLSプロトコル (SSLプロトコルの後継版) は 2つのアプリケーション、主に Webサーバーとブラウザー間でのデータ交換を保護するために設計されています。 このプロトコルは幅広く使用されていて、多くの Webブラウザーとの互換性があります。
 
 At the network level, the security protocol is inserted between the TCP/IP layer (low level) and the HTTP high level protocol. It has been designed mainly to work with HTTP.
 
@@ -37,7 +37,7 @@ You can control the level of security of your web server by defining the [minimu
 ## How to get a certificate?
 
 A server working in secured mode means that you need a digital certificate from a certification authority. This certificate contains various information such as the site ID as well as the public key used to communicate with the server. This certificate is transmitted to the clients (e.g. Web browsers) connecting to this server. Once the certificate has been identified and accepted, the communication is made in secured mode.
-> Web browsers authorize only the certificates issued by a certification authority referenced in their properties.
+> ブラウザーは、ルート証明書がインストールされた認証機関によって発行された証明書のみを許可します。ルート証明書がインストールされていない場合、通常警告が表示されます。
 
 ![](assets/en/WebServer/tls2.png)
 
