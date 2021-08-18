@@ -258,7 +258,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 このオプションをチェックすると同時に:
 
 - [**サーバーアプリケーションをビルド**](#サーバーアプリケーションをビルド) オプションを選択: 現在のプラットフォーム用のサーバーと対応するクライアントをビルドし、(任意で) 自動アップデートアーカイブファイルも含むことができます。
-- [**サーバーアプリケーションをビルド**](#サーバーアプリケーションをビルド) オプションを選択しない: 通常は、サーバーの構築時に選択する "別プラットフォーム" 用のアップデートアーカイブをビルドするときにこの設定を使います。
+- [**サーバーアプリケーションをビルド**](#サーバーアプリケーションをビルド) オプションを選択しない: 通常は、サーバーのビルド時に選択する "別プラットフォーム" 用のアップデートアーカイブをビルドするときにこの設定を使います。
 
 #### 4D Volume Desktopの場所
 
@@ -298,7 +298,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 | macOS           | Windows用4D Volume Desktop *または* Windows クライアントアップデートアーカイブ | デフォルトでは、Windows用の `4D Volume Desktop` アプリケーションを選択します。 前もって Windows上で構築された `.4darchive` ファイルを選択するには、**Shift** を押しながら [...] をクリックします。 |
 | Windows         | macOS クライアントアップデートアーカイブ                                   | 前もって macOS でビルドされた署名入り `.4darchive` ファイルを選択します。                                                                                     |
 
-You can build specific a `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option.
+[**クライアントアプリケーションをビルド**](#クライアントアプリケーションをビルド) と [**自動更新を有効にする**](#copy-of-client-applications-inside-the-server-application) オプションのみを選択することで、サーバーとは異なるプラットフォーム上で `.4darchive` ファイルをビルドすることができます。
 
 
 #### 更新通知の表示
