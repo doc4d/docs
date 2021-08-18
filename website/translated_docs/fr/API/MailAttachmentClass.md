@@ -45,11 +45,11 @@ Attachment objects provide the following read-only properties and functions:
 
 The `MAIL New attachment` command <!-- REF #_command_.MAIL_New_attachment.Summary -->allows you to create an attachment object that you can add to an [Email object](EmailObjectClass.md#email-object)<!-- END REF -->.
 
-You can pass either a path or a Blob to define the attachment.
+Vous pouvez passer un chemin ou un Blob pour définir la pièce jointe.
 
-- If you use a *path*, pass a **text** value containing the path of the attachment file, expressed with the system syntax. You can pass a full path name or a simple file name (in which case 4D will search for the file in the same directory as the project file).
+- Si vous utilisez un *chemin*, passez une valeur **text** contenant le chemin du fichier joint, exprimé avec la syntaxe système. You can pass a full path name or a simple file name (in which case 4D will search for the file in the same directory as the project file).
 
-- If you use a *blob*, pass a **BLOB** value containing the attachment itself.
+- Si vous utilisez un *blob*, passez une valeur **BLOB** contenant le fichier joint.
 
 The optional *name* parameter lets you pass the name and extension to be used by the mail client to designate the attachment. If *name* is omitted and:
 
@@ -221,7 +221,7 @@ The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.S
 
 #### Description
 
-The `.getContent()` function <!-- REF #MailAttachmentClass.getContent().Summary -->returns the contents of the attachment object in a BLOB<!-- END REF -->. You can use this method with attachment objects received by the [`MAIL Convert from MIME`](#mail-convert-from-mime) command.
+La fonction `.getContent()` <!-- REF #MailAttachmentClass.getContent().Summary -->retourne le contenu de l'objet pièce jointe dans un BLOB<!-- END REF -->. You can use this method with attachment objects received by the [`MAIL Convert from MIME`](#mail-convert-from-mime) command.
 
 
 
