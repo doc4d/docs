@@ -820,23 +820,26 @@
       "ViewPro/calling-methods-fields": {
         "title": "Calling Methods and Fields in Formulas"
       },
+      "ViewPro/overview": {
+        "title": "Overview"
+      },
+      "ViewPro/spreadsheet-features": {
+        "title": "Spreadsheet Features"
+      },
       "ViewPro/configuring": {
         "title": "Configuring 4D View Pro Areas"
       },
       "ViewPro/constant-list": {
         "title": "Constant List"
       },
+      "ViewPro/formulas": {
+        "title": "Formulas and Functions"
+      },
       "ViewPro/getting-started": {
         "title": "Getting Started"
       },
       "ViewPro/method-list": {
         "title": "Method List"
-      },
-      "ViewPro/overview": {
-        "title": "Overview"
-      },
-      "ViewPro/spreadsheet-features": {
-        "title": "Spreadsheet Features"
       },
       "WebServer/allowProject": {
         "title": "Allowing project methods"

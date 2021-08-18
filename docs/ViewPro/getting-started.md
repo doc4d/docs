@@ -35,97 +35,6 @@ You can also select a preconfigured 4D View Pro area in the [Object library](For
 
 You can [configure the area](configuring.md) using the Property List and 4D View Pro methods.  
 
-## Calling 4D View Pro methods
-
-4D View Pro methods can be used in the 4D Method editor, just like 4D language commands. 
-
-Since 4D View Pro is a built-in 4D component, you can access its list of methods from the Explorer, in the **Component Methods** section:
-
-![component-methods](assets/en/ViewPro/explorer-methods.PNG)
-
-For a detailed list of component methods, see [Method list](method-list.md).
-
-
-
-
-## Area architecture
-
-When working with 4D View Pro areas in your forms, you need to handle several elements:
-
-*	The [**4D View Pro form area**](FormObjects/viewProArea_overview.md) (4D form object): contains and displays the 4D View Pro object. This area is defined by an [Object name](FormObjects/properties_Object.md#object-name) property.
-*	The **4D View Pro object** ([object](Concepts/dt_object.md) type variable or expression): stores the whole spreadsheet contents (see below). You can get or set this object using the [VP IMPORT FROM OBJECT](method-list.md#vp-import-from-object) or [VP Export to object](method-list.md#vp-export-to-object) commands.
-*	The **4D View Pro document** ([.4vp document](method-list.md#vp-export-document)): stores the whole spreadsheet contents in JSON format.
-
-![](assets/en/ViewPro/vpDocument.PNG)
-
-
-> When loading a 4D View Pro object in a form area, 4D generates the [On VP Ready](../Events/onVpReady.md) form event once the whole area is loaded. You must execute any 4D View Pro code handling the area in this event, otherwise an error is returned.
-
-### 4D View Pro object
-
-The 4D View Pro object describes the document and is automatically handled by the 4D View Pro commands. It contains the following properties:
-
-|Property|	Value type|	Description|
-|---|---|---|
-|version|Longint|Internal component version|
-|dateCreation|Timestamp|Creation date|
-|dateModified|Timestamp|Last modification date|
-|meta|Object|Free contents, reserved for the 4D developer|
-|spreadJS|Object|Reserved for the 4D View Pro component|
-
-### 4D View Pro form object variable  
-
-The 4D View Pro form object variable manages information used by the 4D View Pro object. It contains the following variables:
-
-|Property|	Value type|	Description|
-|---|---|---|
-|area|	Text|	4D View Pro area name
-|callbacks|	Object|	Stores temporary information necessary for commands requiring callbacks such as importing and exporting.| 
-|commandBuffers|	Collection|	Stores sequentially the commands called by the method and executes them as a batch (rather than individually) upon exiting the method, or if a command returns a value or the [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) is called. This mechanism increases performance by reducing the number of requests sent.|
-|formulaBar|	Boolean|	Indicates whether or not the formula bar is displayed. Available only for the "toolbar" interface.|
-|inited|	Boolean|	Indicates whether or not the 4D View Pro area has been initialized (see [On VP Ready](Events/onVpReady.md) event).|
-|interface|	Text|	Specifies the type of user interface:"ribbon", "toolbar", "none".|
-
->The 4D View Pro form object variable is for information purposes only (i.e., debugging). Under no circumstances should it be modified.
-
-
-## Range objects
-
-In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. 
-
-Using 4D View pro commands, you can create ranges and pass them to other commands to read from or write to specific locations in your document.
-
-For example, to create a range object for the following cells:
-
-![](assets/en/ViewPro/vp-cells.png)
-
-You can use the [VP Cells](method-list.md#vp-cells) method:
-
-```4d 
-var $myRange : Object
-$myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
-```
-
-You can then pass `$myRange` to another 4D View Pro method to modify these cells (for example add a border to the set of cells with [VP SET BORDER](method-list.md#vp-set-border)).
-
-### Range object properties
-
-4D View Pro range objects are composed of several properties:
-
-*	area - The name of the 4D View Pro area
-*	ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties. 
-
-|Property|		|Type	|Description|	Available for|
-|---|---|---|---|---|
-|area||		text|	4D View Pro area form object name|	always available|
-|ranges	||	collection|	Collection of range(s)|	always available
-||\[ ].name	|text|	Range name	|name|
-||\[ ].sheet|	number|	Sheet index (current sheet index by default) (counting begins at 0)	|cell, cells, row, rows, column, columns, all, name|
-||\[ ].row	|number	|Row index (counting begins at 0)	|cell, cells, row, rows|
-||\[ ].rowCount	|number	|Row count|	cells, rows|
-||\[ ].column	|number	|Column index (counting begins at 0)	|cell, cells, column, columns
-||\[ ].columnCount	|number	|Column count|	cells, columns
-
 
 ## Selection, Input and Navigation Basics  
 
@@ -165,7 +74,7 @@ The **Carriage return** key validates the cell input and selects the cell below 
 The direction keys (arrows) allow you to move a cell in the direction indicated by the arrow.
 
 
-## Using the Context Menu  
+### Using the Context Menu  
 
 4D View Pro areas benefit from an automatic context menu that offers standard editing features such as copy and paste, but also basic spreadsheet features:
 
@@ -181,10 +90,77 @@ The direction keys (arrows) allow you to move a cell in the direction indicated 
 	*	**Sort**: sorts the column contents.
 	*	**Insert Comment**: allows user to enter a comment for an area. When a comment has been entered for an area, the top left cell of the area displays a small red triangle:  
 		![](assets/en/ViewPro/vpContext2.PNG)
+
+
+## Using 4D View Pro methods
+
+4D View Pro methods can be used in the 4D Method editor, just like 4D language commands. 
+
+Since 4D View Pro is a built-in 4D component, you can access its list of methods from the Explorer, in the **Component Methods** section:
+
+![component-methods](assets/en/ViewPro/explorer-methods.PNG)
+
+For a detailed list of component methods, see [Method list](method-list.md).
+
+### Addressing a 4D View Pro area
+
+A 4D View Pro area handles several objects and elements. 
+
+![](assets/en/ViewPro/vpDocument.PNG)
+
+Most of 4D View Pro methods require a *vpAreaName*, which is the [**4D View Pro form area name**](FormObjects/viewProArea_overview.md) (4D form object). This name is the [object name](FormObjects/properties_Object.md#object-name) property. 
+
+For example, if you want to set the total number of columns of an area named "myVpArea", you write:
+
+```4d
+VP SET COLUMN COUNT("ViewProArea";5)
+```
+
+
+
+> When loading a 4D View Pro object in a form area, 4D generates the [On VP Ready](../Events/onVpReady.md) form event once the whole area is loaded. You must execute any 4D View Pro code handling the area in this event, otherwise an error is returned.
+
+
+### Using range objects
+
+Some 4D View Pro methods require a *rangeObj* parameter. In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. Using 4D View Pro methods, you can create ranges and pass them to other commands to read from or write to specific locations in your document.
+
+For example, to create a range object for the following cells:
+
+![](assets/en/ViewPro/vp-cells.png)
+
+You can use the [VP Cells](method-list.md#vp-cells) method:
+
+```4d 
+var $myRange : Object
+$myRange:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
+```
+
+You can then pass `$myRange` to another 4D View Pro method to modify these cells (for example add a border to the set of cells with [VP SET BORDER](method-list.md#vp-set-border)).
+
+4D View Pro range objects are composed of several properties:
+
+*	area - The name of the 4D View Pro area
+*	ranges - A collection of range object(s). Available properties within each range object depend on the range object type. For example, a column range object will only include the *.column* and *.sheet* properties. 
+
+|Property|		|Type	|Description|	Available for|
+|---|---|---|---|---|
+|area||		text|	4D View Pro area form object name|	always available|
+|ranges	||	collection|	Collection of range(s)|	always available
+||\[ ].name	|text|	Range name	|name|
+||\[ ].sheet|	number|	Sheet index (current sheet index by default) (counting begins at 0)	|cell, cells, row, rows, column, columns, all, name|
+||\[ ].row	|number	|Row index (counting begins at 0)	|cell, cells, row, rows|
+||\[ ].rowCount	|number	|Row count|	cells, rows|
+||\[ ].column	|number	|Column index (counting begins at 0)	|cell, cells, column, columns
+||\[ ].columnCount	|number	|Column count|	cells, columns
+
+
+
+
 		
 		
 
-## Import and export formats 
+## Importing and exporting documents 
 
 4D View Pro supports the import and export of several document formats:
 
