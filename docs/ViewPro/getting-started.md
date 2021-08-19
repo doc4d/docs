@@ -108,12 +108,12 @@ A 4D View Pro area handles several objects and elements.
 
 ![](assets/en/ViewPro/vpDocument.PNG)
 
-Most of 4D View Pro methods require a *vpAreaName*, which is the [**4D View Pro form area name**](FormObjects/viewProArea_overview.md) (4D form object). This name is the [object name](FormObjects/properties_Object.md#object-name) property. 
+Most of 4D View Pro methods require a *vpAreaName* parameter, which is the [**4D View Pro form area name**](FormObjects/viewProArea_overview.md) (4D form object). This name is the [object name](FormObjects/properties_Object.md#object-name) property. 
 
 For example, if you want to set the total number of columns of an area named "myVpArea", you write:
 
 ```4d
-VP SET COLUMN COUNT("ViewProArea";5)
+VP SET COLUMN COUNT("myVpArea";5)
 ```
 
 
@@ -123,7 +123,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 ### Using range objects
 
-Some 4D View Pro methods require a *rangeObj* parameter. In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. Using 4D View Pro methods, you can create ranges and pass them to other commands to read from or write to specific locations in your document.
+Some 4D View Pro methods require a *rangeObj* parameter. In 4D View Pro, a range is an object that references an area in a spreadsheet. This area can be composed of one or several cells. Using 4D View Pro methods, you can create ranges and pass them to other methods to read from or write to specific locations in your document.
 
 For example, to create a range object for the following cells:
 

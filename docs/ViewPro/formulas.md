@@ -16,10 +16,10 @@ To enter a formula in a 4D View Pro area:
 3.	Type the formula 
 	OR
 	Click on a cell to enter its reference in the formula
-	![](assets/en/ViewPro/formula.PNG)   
+	![](assets/en/ViewPro/formulas.PNG)   
 	OR  
 	Type the first letter of the function to enter. A pop-up menu listing the availables functions and references appears, allowing you to select the desired elements:
-	![](assets/en/ViewPro/formula.PNG)   
+	![](assets/en/ViewPro/formula2.PNG)   
 
 4. Hit the **Enter** key.   
 
@@ -29,15 +29,15 @@ You can also create named formulas that can be called via their name. To do so, 
 
 All formulas have operands and operators:
 
-*	**Operators**: see [Operators by data types](#operators-by-data-types)
+*	**Operators**: see [Values and operators](#values-and-operators) below.
 *	**Operands** are divided into several categories:
-	*	values
+	*	[values](#values-and-operators) of 5 types
 	*	[references to other cells](#cell-references) (relatives, absolutes, mixed or by name)
+	*	[4D fields](#field-references) declared in the virtual structure 
 	*	built-in [spreadsheet functions](#using-functions) 
-	*	4D fields declared in the [virtual structure](#field-references) 
-	*	[4D functions](#4d-functions) based upon 4D formulas registered by [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) (recommended) or upon 4D methods registered by [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods)).
+	*	[4D functions](#4d-functions) based upon 4D formulas registered by [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) (recommended) or upon 4D methods registered by [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods).
  
-## Operators  
+## Values and operators
 
 4D View Pro supports five types of data. For each data type, specific literal values and operators are supported.
 
@@ -290,7 +290,7 @@ Note that the ( ) are mandatory, even if no parameters are passed:
 =METHODWITHOUTNAME()
 ```
 
-You can declare the name, type, and number of parameters through the parameters collection of the function you declared using the [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) or [VP SET ALLOWED METHODS](command-list.md#vp-set-allowed-methods) method. Optionally, you can control the number of parameters passed by the user through *minParams* and *maxParams* properties. 
+You can declare the name, type, and number of parameters through the parameters collection of the function you declared using the [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) or [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods) method. Optionally, you can control the number of parameters passed by the user through *minParams* and *maxParams* properties. 
 
 For more information on supported incoming parameter types, please refer to the [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) method description. 
 
