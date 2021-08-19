@@ -157,7 +157,7 @@ The differences are returned as a collection of objects whose properties are:
 
 | Nom de propriété | Type                            | Description                                 |
 | ---------------- | ------------------------------- | ------------------------------------------- |
-| attributeName    | Chaine                          | Name of the attribute                       |
+| attributeName    | String                          | Name of the attribute                       |
 | value            | any - Depends on attribute type | Value of the attribute in the entity        |
 | otherValue       | any - Depends on attribute type | Value of the attribute in *entityToCompare* |
 
@@ -341,10 +341,10 @@ vCompareResult3 (only differences on $e1 touched attributes are returned)
 **.drop**( {*mode* : Integer} ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.drop().Params -->
-| Paramètres | Type        |    | Description                                                                     |
-| ---------- | ----------- |:--:| ------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk force drop if stamp changed`: Forces the drop even if the stamp has changed |
-| Résultat   | Objet       | <- | Result of drop operation                                                        |
+| Paramètres | Type    |    | Description                                                                     |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk force drop if stamp changed`: Forces the drop even if the stamp has changed |
+| Résultat   | Objet   | <- | Result of drop operation                                                        |
 <!-- END REF -->
 
 #### Description
