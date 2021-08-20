@@ -56,20 +56,20 @@ title: フォームエディター
 | アイコン                                          | 名称                                    | 説明                                                                                                                                                        |
 | --------------------------------------------- | ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ![](assets/en/FormEditor/execute.png)         | フォーム実行                                | フォームの実行をテストするために使用します。 このボタンをクリックすると、4D は新しいウィンドウを開き、そのコンテキストでフォームを表示します (リストフォームの場合レコードリスト、詳細フォームの場合カレントレコード)。 フォームはメインプロセスで実行されます。                      |
-| ![](assets/en/FormEditor/selection.png)       | [選択ツール](#selecting-objects)           | フォームオブジェクトの選択・移動・リサイズをおこないます。<p>**注**: テキストやグループボックスタイプのオブジェクトを選択すると、**Enter**キーを押すことで編集モードになります。                                   |
-| ![](assets/en/FormEditor/zOrder.png)          | [入力順](#data-entry-order)              | "入力順" モードに切り替わり、フォームの現在の入力順を表示・変更できます。 入力順は、バッジを使用して確認することもできます。                                                                                          |
-| ![](assets/en/FormEditor/moving.png)          | [移動](#moving-objects)                 | "移動" モードに移行し、ウィンドウ中をドラッグ＆ドロップすることで素早くフォームの表示部分を移動することができます。 このモードでカーソルは手の形になります。 このモードは、フォームを拡大表示している時に特に便利です。                                            |
-| ![](assets/en/FormEditor/zoom.png)            | [拡大](#zoom)                           | フォーム表示の拡大/縮小率を変更できます (デフォルトで100%)。 "拡大/縮小" モードにするには虫眼鏡をクリックするか、拡大/縮小率バーをクリックします。 この機能は前節で説明しています。                                                         |
-| ![](assets/en/FormEditor/alignment.png)       | [整列](#aligning-objects)               | このボタンには、フォーム中でオブジェクトの並びを揃えるためのメニューがリンクされています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。<p>CSS プレビューが "なし" の場合にのみ利用可能です。                    |
-| ![](assets/en/FormEditor/distribution.png)    | [均等配置](#distributing-objects)         | このボタンには、フォーム中でオブジェクトを均等に配置するためのメニューがリンクされています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。<p>CSS プレビューが "なし" の場合にのみ利用可能です。                   |
-| ![](assets/en/FormEditor/level.png)           | [レベル](#layering-objects)              | このボタンには、フォーム上のオブジェクトの階層を変更するためのメニューが関連付けられています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。                                                                        |
-| ![](assets/en/FormEditor/group.png)           | [グループ化/グループ解除](#grouping-objects)     | このボタンには、フォーム上の選択オブジェクトのグループ化やグループ解除をおこなうためのメニューが関連付けられています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。                                                            |
-| ![](assets/en/FormEditor/displyAndPage.png)   | [表示とページ管理](forms.html#form-pages)     | このエリアを使用して、フォームページ間の移動やページの追加ができます。 フォームページを移動するには矢印ボタンをクリックするか、または中央のエリアをクリックすると現われるメニューから表示したいページを選択します。 最終ページが表示されている状態で、右矢印ボタンをクリックすると、4D はページを追加します。 |
-| ![](assets/en/FormEditor/cssPreviewicon.png)  | [CSSプレビュー](#css-preview)              | このボタンで、使用する CSSモードを選択します。                                                                                                                                 |
-| ![](assets/en/FormEditor/views.png)           | [ビュー管理](#views)                       | このボタンは、ビューパレットの表示や非表示をおこないます。 この機能については "オブジェクトビューを使用する" で説明しています。                                                                                        |
-| ![](assets/en/FormEditor/shields2.png)        | [バッジ表示](#shields)                     | このボタンをクリックするたびに、すべてのタイプのフォームバッジが順に表示されます。 また、このボタンには、表示するバッジタイプを直接選択できるメニューが関連付けられています。                                                                   |
+| ![](assets/en/FormEditor/selection.png)       | [選択ツール](#オブジェクトの選択)                   | フォームオブジェクトの選択・移動・リサイズをおこないます。<p>**注**: テキストやグループボックスタイプのオブジェクトを選択すると、**Enter**キーを押すことで編集モードになります。                                   |
+| ![](assets/en/FormEditor/zOrder.png)          | [入力順](#データの入力順)                       | "入力順" モードに切り替わり、フォームの現在の入力順を表示・変更できます。 入力順は、バッジを使用して確認することもできます。                                                                                          |
+| ![](assets/en/FormEditor/moving.png)          | [移動](#オブジェクトの移動)                      | "移動" モードに移行し、ウィンドウ中をドラッグ＆ドロップすることで素早くフォームの表示部分を移動することができます。 このモードでカーソルは手の形になります。 このモードは、フォームを拡大表示している時に特に便利です。                                            |
+| ![](assets/en/FormEditor/zoom.png)            | [拡大](#拡大)                             | フォーム表示の拡大/縮小率を変更できます (デフォルトで100%)。 "拡大/縮小" モードにするには虫眼鏡をクリックするか、拡大/縮小率バーをクリックします。 この機能は前節で説明しています。                                                         |
+| ![](assets/en/FormEditor/alignment.png)       | [整列](#オブジェクトの整列)                      | このボタンには、フォーム中でオブジェクトの並びを揃えるためのメニューがリンクされています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。<p>CSS プレビューが "なし" の場合にのみ利用可能です。                    |
+| ![](assets/en/FormEditor/distribution.png)    | [均等配置](#オブジェクトの均等配置)                  | このボタンには、フォーム中でオブジェクトを均等に配置するためのメニューがリンクされています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。<p>CSS プレビューが "なし" の場合にのみ利用可能です。                   |
+| ![](assets/en/FormEditor/level.png)           | [レベル](#オブジェクトを重ねる)                    | このボタンには、フォーム上のオブジェクトの階層を変更するためのメニューが関連付けられています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。                                                                        |
+| ![](assets/en/FormEditor/group.png)           | [グループ化/グループ解除](#オブジェクトのグループ化)         | このボタンには、フォーム上の選択オブジェクトのグループ化やグループ解除をおこなうためのメニューが関連付けられています。 このボタンは選択されているオブジェクトに応じて有効/無効になります。                                                            |
+| ![](assets/en/FormEditor/displyAndPage.png)   | [表示とページ管理](forms.html#フォームのページ)       | このエリアを使用して、フォームページ間の移動やページの追加ができます。 フォームページを移動するには矢印ボタンをクリックするか、または中央のエリアをクリックすると現われるメニューから表示したいページを選択します。 最終ページが表示されている状態で、右矢印ボタンをクリックすると、4D はページを追加します。 |
+| ![](assets/en/FormEditor/cssPreviewicon.png)  | [CSSプレビュー](#cssプレビュー)                 | このボタンで、使用する CSSモードを選択します。                                                                                                                                 |
+| ![](assets/en/FormEditor/views.png)           | [ビュー管理](#オブジェクトビュー)                   | このボタンは、ビューパレットの表示や非表示をおこないます。 この機能については "オブジェクトビューを使用する" で説明しています。                                                                                        |
+| ![](assets/en/FormEditor/shields2.png)        | [バッジ表示](#バッジ)                         | このボタンをクリックするたびに、すべてのタイプのフォームバッジが順に表示されます。 また、このボタンには、表示するバッジタイプを直接選択できるメニューが関連付けられています。                                                                   |
 | ![](assets/en/FormEditor/library.png)         | [定義済みオブジェクトライブラリ](objectLibrary.html) | このボタンは定義済みオブジェクトライブラリを表示します。このライブラリは定義済みのプロパティを持つオブジェクトを多数提供します。                                                                                          |
-| ![](assets/en/FormEditor/listBoxBuilder1.png) | [リストボックスビルダー](#list-box-builder)      | このボタンは、新しいエンティティセレクション型リストボックスを作成します。                                                                                                                     |
+| ![](assets/en/FormEditor/listBoxBuilder1.png) | [リストボックスビルダー](#リストボックスビルダー)           | このボタンは、新しいエンティティセレクション型リストボックスを作成します。                                                                                                                     |
 
 ### オブジェクトバーを使用する
 
@@ -574,9 +574,9 @@ stroke: #800080;
 
 *   **ツールバー**: フォームエディターのツールバーにあるビューボタンをクリックする。 (1つ以上のオブジェクトがデフォルトビュー以外のビューに属している場合、このアイコンは塗り潰し表示されます)。
 
-    |                      デフォルトビューのみ                      |                      追加のビューあり                      |
-    |:----------------------------------------------------:|:--------------------------------------------------:|
-    | ![](assets/en/FormEditor/icon.png "No views in use") | ![](assets/en/FormEditor/icon2.png "Views in use") |
+    |                  デフォルトビューのみ                   |                    追加のビューあり                    |
+    |:---------------------------------------------:|:----------------------------------------------:|
+    | ![](assets/en/FormEditor/icon.png "ビューの使用なし") | ![](assets/en/FormEditor/icon2.png "ビューの使用あり") |
 
 *   **コンテキストメニュー** (フォームまたはオブジェクト): フォームエディターまたはオブジェクト上で右クリックし、**カレントビュー** を選択する。
 
@@ -633,7 +633,7 @@ stroke: #800080;
 
 ビューを名称変更するには、以下のいずれかの方法があります:
 
-*   ビュー名 (ここでは選択中のビュー) を直接ダブルクリックする。 すると、名前が編集可能になります:
+*   ビュー名を直接ダブルクリックする (ビューが選択されます)。 すると、名前が編集可能になります:
 
     ![](assets/en/FormEditor/rename.png)
 
@@ -641,136 +641,136 @@ stroke: #800080;
 
     ![](assets/en/FormEditor/rename2.png)
 
-#### Reordering views
+#### ビューの並べ替え
 
-You can change the display order of views by dragging/dropping them within the View palette.
+ビューパレット内のビューをドラッグ＆ドロップすることで、ビューの表示順を変更することができます。
 
-Note that the Default view does not change:
+ただし、デフォルトのビューは変更されません:
 
 ![](assets/en/FormEditor/reorderView.png)
 
 
-#### Deleting views
+#### ビューの削除
 
 ビューを名称変更するには、以下のいずれかの方法があります:
 
-*   Click on the **Delete the selected view** button at the bottom of the View palette:
+*   ビューパレットの下部にある **選択したビューを削除** ボタンをクリックする。
 
     ![](assets/en/FormEditor/deleteView.png)
 
 
-*   Right-click on the view name, and select **Delete View**:
+*   既存のビューを右クリックして **ビューを削除** を選択する:
 
     ![](assets/en/FormEditor/deleteView2.png)
-> If a view is deleted, any objects in it are automatically moved to the Default view.
+> ビューを削除すると、その中のオブジェクトは自動的にデフォルトビューに移動します。
 
 
 
 
-### Using views
+### ビューを使用する
 
-Once views are created, you can use the View palette to:
+ビューを作成したら、ビューパレットを使用して以下のことがおこなえます:
 
-*   Add object to views,
-*   Move objects from one view to another,
-*   Select all objects of the same view in a single click,
-*   Display or hide objects for each view,
-*   Lock the objects of a view.
+*   ビューにオブジェクトを追加する。
+*   オブジェクトを他のビューに移動する。
+*   同じビュー内の全オブジェクトを 1クリックで選択する。
+*   ビューごとに表示/非表示を切り替える。
+*   ビューのオブジェクトをロックする。
 
-#### Adding objects to views
+#### ビューにオブジェクトを追加する
 
-An object can only belong to a single view.
+1つのオブジェクトは、1つのビューにのみ属することができます。
 
-To create an object in another view, simply select the view in the View palette (prior to creating the object) by clicking its name (an Edit icon is displayed for the [Current view](#before-you-begin) and the name appears in bold text):
+他のビューにオブジェクトを作成するには、ビューパレットで目的のビューをクリックし、あらかじめ選択しておきます ([カレントビュー](#ビューを使い始める前に) に編集アイコンが表示され、名前が太字で表示されます)。
 
 ![](assets/en/FormEditor/addObject.png)
 
-#### Moving objects between views
+#### ビュー間のオブジェクト移動
 
-It's also possible to move one or more objects from one view to another. In the form, select the object(s) whose view you wish to change. The view list indicates, using a symbol, the view to which the selection belongs:
+1つ以上のオブジェクトを他のビューに移動することもできます。 これをおこなうには、ビューを変更したいオブジェクトをフォーム上で選択します。 それらのオブジェクトが属するビューが、ビューリスト上に記号で示されます:
 
 ![](assets/en/FormEditor/symbol.png)
-> The selection can contain several objects belonging to different views.
+> 選択したオブジェクトは異なるビューに属していることがあります。
 
-Simply select the destination view, right-click, and select **Move to**:
+次に移動先のビューを選択し、右クリックして **移行先** を選択します。
 
 ![](assets/en/FormEditor/moveObject.png)
 
 OR
 
-Select the destination view of the selection and click **Move to** button at the bottom of the View palette:
+次に移動先のビューを選択し、ビューパレットの下部にある **選択された全てのオブジェクトをカレントのビューに移動** ボタンをクリックします。
 
 ![](assets/en/FormEditor/moveObject3.png)
 
-The selection is then placed in the new view:
+選択されているオブジェクトは新しいビューに移動されます:
 
 ![](assets/en/FormEditor/objNewView.png)
 
-You can also move an object to another view via the object's context menu. Right-click on the object, select **Move to view**, and select a view from the list of available views:
+また、オブジェクトのコンテキストメニューから、オブジェクトを別のビューに移動することもできます。 オブジェクトを右クリックして **ビューに移動** を選択し、利用可能なビューのリストから移動先を選択します。
 
 ![](assets/en/FormEditor/moveObject2.png)
-> The [Current view](#before-you-begin) is shown in bold text.
+> [カレントビュー](#ビューを使い始める前に) は太字で表示されます。
 
 
 
-#### Select all objects of a view
+#### ビューの全オブジェクトを選択する
 
-You can select all objects belong to the same view in the current page of the form. This function is useful for applying global changes to a set of objects.
+フォームのカレントページ上で、同じビューに属するすべてのオブジェクトを選択できます。 一連のオブジェクトに同じ変更を適用する場合に、この機能は便利です。
 
-To do this, right-click on the view in which you wish to select all the objects, click on **Select All**:
+これをおこなうにはビュー上で右クリックし、**ビュー内の全オブジェクトを選択** をクリックします:
 
 ![](assets/en/FormEditor/selectAll.png)
 
-You can also use the button at the bottom of the View palette:
+ビューパレットの下部にある **カレントビューの全てのオブジェクトを選択** ボタンを使用することもできます。
 
 
 ![](assets/en/FormEditor/selectAll2.png)
 
 
-#### Show or hide objects of a view
+#### ビューのオブジェクトを表示/非表示にする
 
-You can show or hide objects belonging to a view at any time in the form's current page. This way you can focus on certain objects when editing the form, for example.
+フォームのカレントページ上で、ビューに属するオブジェクトの表示/非表示を切り替えることができます。 この方法で、フォームの特定オブジェクトに集中して操作することができます。
 
-By default, all views are shown, as indicated by the *Show/Hide* icon:
+デフォルトですべてのビューが表示されていて、ビューごとの *表示／非表示* アイコンで示されています:
 
 ![](assets/en/FormEditor/showHide.png)
 
-To hide a view, click the *Show/Hide* icon. It is then dimmed and objects of the corresponding view are no longer shown in the form:
+ビューを隠すにはこのアイコンをクリックします。 アイコンがグレーになり、そのビューに属するオブジェクトが非表示となります:
 
 ![](assets/en/FormEditor/hidden.png)
-> The [Current view](#before-you-begin) cannot be hidden.
+> [カレントビュー](#ビューを使い始める前に) は非表示にできません。
 
-To show a view that is hidden, simply select it or click on the *Show/Hide* icon for that view.
+非表示のビューを表示にするには、ビューを選択するか、*表示/非表示* アイコンをクリックします。
 
 
 
-#### Locking objects of a view
+#### ビューのオブジェクトをロックする
 
-You can lock the objects of a view. This prevents them from being selected, changed, or deleted from the form. Once locked, an object cannot be selected by a click, a rectangle, or the **Select Similar Objects** command of the context menu. This function is useful for preventing handling errors.
+ビューのオブジェクトをロックすることができます。 ロックされたオブジェクトは選択・変更・削除できなくなります。 また、クリックやマウスドラッグ、**同じ種類のオブジェクトを選択** コマンドで選択することもできません。 この機能は、操作ミスを防ぐのに役立ちます。
 
-By default, all views are unlocked, as indicated by the *Lock/Unlock* icon next to each view:
+デフォルトでは、すべてのビューがロックされていない状態です。これは、ビューごとの *ロック* アイコンで示されています:
 
 ![](assets/en/FormEditor/lockUnlock.png)
 
-To lock the objects of a view, click the *Lock/Unlock* icon. The padlock is shut, which means that the view is now locked:
+ビューをロックするにはこのアイコンをクリックします。 南京錠が閉まり、ビューがロックされます:
 
 ![](assets/en/FormEditor/locked.png)
-> The [Current view](#before-you-begin) cannot be locked.
+> [カレントビュー](#ビューを使い始める前に) はロックできません。
 
-To unlock a view that is locked, simply select it or click on the *Lock/Unlock* icon for that view.
+ビューのロックを解除するには、ビューを選択するか、*ロック* アイコンをクリックします。
 
 ## 拡大
 
-You can zoom in the current form. Switch to “Zoom” mode by clicking on the magnifying glass icon or clicking directly on the desired percentage bar (50%, 100%, 200%, 400% and 800%):
+カレントフォームを拡大/縮小表示することができます。 これをおこなうにはツールバーの虫眼鏡をクリックするか、拡大率を直接クリックします。拡大/縮小率は 50%, 100%, 200%, 400% そして 800%です。
 
 ![](assets/en/FormEditor/zoom.png)
 
-*   When you click on the magnifying glass, the cursor changes into one. You can then click in the form to increase the display or hold down Shift and click to reduce the display percentage.
-*   When you click on a percentage bar, the display is immediately modified.
+*   虫眼鏡ボタンをクリックすると、カーソルも虫眼鏡に変わります。 フォーム中をクリックすれば拡大表示され、Shiftキーを押しながらクリックすれば縮小表示されます。
+*   拡大率バーをクリックすると、即座に表示が変更されます。
 
-In Zoom mode, all Form editor functions remain available(*).
+拡大/縮小表示中もフォームエディターの機能は利用できます (*)。
 
-(*) For technical reasons, it is not possible to select list box elements (headers, columns, footers) when the Form editor is in Zoom mode.
+(*) 技術的な理由から、フォームエディターがズームモードの時にはリストボックスの要素 (ヘッダー、カラム、フッター) を選択することはできません。
 
 
 
