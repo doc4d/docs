@@ -18,7 +18,7 @@ Además de armonizar la interfaz de sus aplicaciones, las hojas de estilo ofrece
 
 | Hoja de estilo          | Plataforma                                                                |
 | ----------------------- | ------------------------------------------------------------------------- |
-| styleSheets.css         | Default global style sheet for both macOS and Windows                     |
+| styleSheets.css         | Hoja de estilo global por defecto para macOS y Windows                    |
 | styleSheets_mac.css     | For defining macOS only specific attribute styles                         |
 | styleSheets_windows.css | Para definir los estilos de atributos específicos para Windows únicamente |
 
