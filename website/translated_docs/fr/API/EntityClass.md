@@ -157,7 +157,7 @@ The differences are returned as a collection of objects whose properties are:
 
 | Nom de propriété | Type                            | Description                                 |
 | ---------------- | ------------------------------- | ------------------------------------------- |
-| attributeName    | Chaine                          | Name of the attribute                       |
+| attributeName    | String                          | Name of the attribute                       |
 | value            | any - Depends on attribute type | Value of the attribute in the entity        |
 | otherValue       | any - Depends on attribute type | Value of the attribute in *entityToCompare* |
 
@@ -341,10 +341,10 @@ vCompareResult3 (only differences on $e1 touched attributes are returned)
 **.drop**( {*mode* : Integer} ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.drop().Params -->
-| Paramètres | Type        |    | Description                                                                     |
-| ---------- | ----------- |:--:| ------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk force drop if stamp changed`: Forces the drop even if the stamp has changed |
-| Résultat   | Objet       | <- | Result of drop operation                                                        |
+| Paramètres | Type    |    | Description                                                                     |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk force drop if stamp changed`: Forces the drop even if the stamp has changed |
+| Résultat   | Objet   | <- | Result of drop operation                                                        |
 <!-- END REF -->
 
 #### Description
@@ -502,7 +502,7 @@ The mapping between the object and the entity is done on the attribute names:
 
 *   If a property of the object does not exist in the dataclass, it is ignored.
 *   Data types must be equivalent. If there is a type mismatch between the object and dataclass, 4D tries to convert the data whenever possible (see [`Converting data types`](Concepts/data-types.md#converting-data-types)), otherwise the attribute is left untouched.
-*   The primary key can be given as is or with a "__KEY" property (filled with the primary key value). If it does not already exist in the dataclass, the entity is created with the given value when [.save()](#save) is called. If the primary key is not given, the entity is created and the primary key value is assigned with respect to database rules. The auto-increment is only computed if the primary key is null.
+*   La clé primaire peut être donnée telle quelle ou avec une propriété "__KEY" (remplie avec la valeur de la clé primaire). Si elle n'existe pas déjà dans la dataclass, l'entité est créée avec la valeur donnée lorsque [.save()](#save) est appelé. Si la clé primaire n'est pas fournie, l'entité est créée et la valeur de la clé primaire est affectée en fonction des règles de la base de données. L'auto-incrémentation n'est calculée que si la clé primaire est nulle.
 
 *filler* can handle a related entity under the following conditions:
 
