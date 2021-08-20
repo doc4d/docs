@@ -1109,6 +1109,7 @@ size:16pt
 }
 ```
 
+
 #### Example 2  
 
 See example for [`VP Object to font`](#vp-object-to-font).
@@ -1476,6 +1477,7 @@ The returned collection is two-dimensional:
 #### Example 
 
 You want to retrieve the formulas in the Sum and Average columns from this document:
+
 
 ![](assets/en/ViewPro/cmd_vpGetFormulas.PNG)
 
@@ -1980,6 +1982,7 @@ The `VP Get spans` command <!-- REF _command_.VP_Get_spans.Summary -->retrieves 
 
 In *rangeObj*, pass a range of cell spans you want to retrieve. If *rangeObj* does not contain a cell span, an empty range is returned.
  
+
 #### Example 
 
 To center the text for the spanned cells in this document:
@@ -3099,8 +3102,8 @@ In the *methodObj* parameter, pass an object in which each property is the name 
 |<functionName>	||		|Object	|Name of the custom function to display in 4D View Pro formulas (no spaces allowed)|
 ||method|		|text	|(mandatory) Name of the existing 4D project method to allow|
 ||parameters|		|Collection of objects	|Collection of parameters (in the order they are defined in the method).| 
-|||\[ ].name|	Text|	Name of a parameter to display for the <functionName>.<p><p>**Note**: Parameter names must not contain space characters.|
-|||\[ ].type|	Number|	Type of the parameter. Supported types:<p><p><table><tr><th>Constant</th></tr><tr><td>`Is Boolean`</td></tr><tr><td>`Is date`</td></tr><tr><td>`Is longint`</td></tr><tr><td>`Is object`</td></tr><tr><td>`Is real`</td></tr><tr><td>`Is text`</td></tr><tr><td>`Is time`</td></tr></table><p>If omitted, by default the value is automatically sent with its type, except date or time values which are sent as an object (see Parameters section). If type is Is object, the object has the same structure as the object returned by VP Get value.
+|||\[ ].name|	Text|	Name of a parameter to display for the \<functionName>.<p><p>**Note**: Parameter names must not contain space characters.|
+|||\[ ].type|	Number|	Type of the parameter. Supported types:<p><p><table><tr><th>Constant</th></tr><tr><td>`Is Boolean`</td></tr><tr><td>`Is date`</td></tr><tr><td>`Is longint`</td></tr><tr><td>`Is object`</td></tr><tr><td>`Is real`</td></tr><tr><td>`Is text`</td></tr><tr><td>`Is time`</td></tr></table><p>If omitted, by default the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](formulas.md#parameters) section). If type is `Is object`, the object has the same structure as the object returned by [`VP Get value`](#vp-get-value).
 ||summary	|	|Text	|Function description to display in 4D View Pro|
 ||minParams|		|Number	|Minimum number of parameters|
 ||maxParams|		|Number	|Maximum number of parameters. Passing a number higher than the length of parameters allows declaring "optional" parameters with default type|
@@ -4317,6 +4320,7 @@ The following code displays print lines in a document's second sheet:
 
 ```
 VP SET SHOW PRINT LINES("ViewProArea";True;1)
+
 ```
 
 ![set-show-print-lines](assets/en/ViewPro/vp-set-show-print-lines.png)
