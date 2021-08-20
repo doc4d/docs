@@ -516,128 +516,128 @@ stroke: #800080;
 
 
 
-## Shields
+## バッジ
 
-The 4D Form Editor uses shields to make viewing object properties easier. You can find them on the form toolbar:
+フォームエディターではバッジを使用してオブジェクトプロパティの表示を容易にできます。 バッジは、フォームのツールバーで選択します:
 
 ![](assets/en/FormEditor/shields.png)
 
 
 
 
-This function works as follows: Each shield is associated with a property (for example, **Views**, which means the object “is in the current view”). When you activate a shield, 4D displays a small icon (shield) in the upper left of each object of the form where the property is applied.
+この機能は次のように動作します: 各バッジは特定のプロパティに対応しています (たとえば、**カレントビュー** は、当該オブジェクトがカレントビュー内にあることを示します)。 バッジを有効にすると、4D はバッジとして選択されたプロパティが割り当てられているフォームオブジェクトの左上に小さなアイコン (バッジ) を表示します。
 
 ![](assets/en/FormEditor/shield.png)
 
 ### バッジを使用する
 
-To activate a shield, click the *Shield* icon from the toolbar until the desired shield is selected. You can also click on the right side of the button and select the type of shield to display directly in the associated menu:
+バッジを有効にするには、希望するバッジが選択されるまでツールバーの *バッジ* ボタンをクリックします。 また、ボタンの右側をクリックして表示されるメニューから、バッジの種類を直接選択することもできます。
 
 
-If you don't want to display shields, select **No Shields** in the selection menu.
-> You can set which shields to display by default on the Forms Page of the application Preferences.
+バッジを表示したくない場合は、**バッジなし** を選択します。
+> アプリケーション環境設定のフォームページで、デフォルトで表示するバッジを設定できます。
 
-### Shield descriptions
+### 各バッジの説明
 
-Here is a description of each type of shield:
+各バッジの説明は以下の通りです:
 
-| アイコン                                         | 名称                          | Is displayed ...                                                                                                                     |
-| -------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ![](assets/en/FormEditor/objectMethod.png)   | Object Method               | For objects with an associated object method                                                                                         |
-| ![](assets/en/FormEditor/standardAction.png) | Standard Action             | For objects with an associated standard action                                                                                       |
-| ![](assets/en/FormEditor/resizing.png)       | サイズ変更                       | For objects with at least one resizing property, indicates the combination of current properties                                     |
-| ![](assets/en/FormEditor/entryOrder.png)     | Entry Order                 | For enterable objects, indicates the number of entry order                                                                           |
-| ![](assets/en/FormEditor/viewNumber.png)     | Current View                | For all objects in the current view                                                                                                  |
-| ![](assets/en/FormEditor/cssShield.png)      | [スタイルシート](stylesheets.html) | For objects with one or more attribute values overridden by a style sheet.                                                           |
-| ![](assets/en/FormEditor/filter.png)         | Filter                      | For enterable objects with an associated entry filter                                                                                |
-| ![](assets/en/FormEditor/helpTip.png)        | ヘルプTips                     | For objects with an associated tip                                                                                                   |
-| ![](assets/en/FormEditor/localized.png)      | Localized                   | For objects whose label comes from a reference (label beginning with “:”). The reference can be of the resource (STR#) or XLIFF type |
-| ![](assets/en/FormEditor/noShields.png)      | No Shields                  | No shields appear                                                                                                                    |
+| アイコン                                         | 名称                          | 表示                                                             |
+| -------------------------------------------- | --------------------------- | -------------------------------------------------------------- |
+| ![](assets/en/FormEditor/objectMethod.png)   | オブジェクトメソッド                  | オブジェクトメソッドが割り当てられたオブジェクト                                       |
+| ![](assets/en/FormEditor/standardAction.png) | 標準アクション                     | 標準アクションが割り当てられたオブジェクト                                          |
+| ![](assets/en/FormEditor/resizing.png)       | サイズ変更                       | リサイズプロパティが 1つ以上割り当てられたオブジェクトについて、カレントプロパティの組み合わせを表します          |
+| ![](assets/en/FormEditor/entryOrder.png)     | 入力順                         | 入力可能なオブジェクトの入力順を表示します                                          |
+| ![](assets/en/FormEditor/viewNumber.png)     | カレントビュー                     | カレントビュー内にあるオブジェクト                                              |
+| ![](assets/en/FormEditor/cssShield.png)      | [スタイルシート](stylesheets.html) | 1つ以上の属性値がスタイルシートにより上書きされたオブジェクト                                |
+| ![](assets/en/FormEditor/filter.png)         | フィルター                       | 入力フィルターが割り当てられた入力可オブジェクト                                       |
+| ![](assets/en/FormEditor/helpTip.png)        | ヘルプTips                     | ヘルプTips が割り当てられたオブジェクト                                         |
+| ![](assets/en/FormEditor/localized.png)      | ローカライズ済み                    | ラベルに参照が割り当てられたオブジェクト (“:”で始まるラベル)。 参照はリソース (STR#) または XLIFFタイプ |
+| ![](assets/en/FormEditor/noShields.png)      | バッジなし                       | バッジは表示されません                                                    |
 
 ## オブジェクトビュー
 
-The 4D Form Editor enables you to build complex forms by distributing form objects among separate views that can then be hidden or shown as needed.
+フォームエディターでは、必要に応じて表示/非表示が可能な異なるビューにそれぞれオブジェクトを配置することで、複雑なフォーム作成が容易になります。
 
-For example, you can distribute objects according to type (fields, variables, static objects, etc.). Any type of form object, including subforms and plug-in areas, can be included in views.
+たとえば、タイプごと (フィールド、変数、スタティックオブジェクト等) にオブジェクトを異なるビューに分けることができます。 サブフォームやプラグインエリアを含むすべてのタイプのオブジェクトをビューに含めることができます。
 
-There is no limit on the number of views per form. You can create as many different views as you need. Additionally, each view can be displayed, hidden, and/or locked.
+フォームごとのビューの数に制限はありません。 必要なだけ、ビューを作成することができます。 それぞれのビューごとに、表示/非表示とロックが切り換えられます。
 
 
-View management is handled via the View palette.
+ビューの管理はビューパレットを使用しておこないます。
 
 ![](assets/en/FormEditor/viewEditor.png)
 
 
-### Accessing the View palette
+### ビューパレットの表示
 
-There are three ways to access the View palette:
+ビューパレットを表示するには、次の 3つの方法があります:
 
-*   **Toolbar**: Click on the Views icon in the Form Editor toolbar. (This icon appears gray when at least one object belongs to a view other than the default view.)
+*   **ツールバー**: フォームエディターのツールバーにあるビューボタンをクリックする。 (1つ以上のオブジェクトがデフォルトビュー以外のビューに属している場合、このアイコンは塗り潰し表示されます)。
 
-    |                  Default view only                   |               With additional views                |
+    |                      デフォルトビューのみ                      |                      追加のビューあり                      |
     |:----------------------------------------------------:|:--------------------------------------------------:|
     | ![](assets/en/FormEditor/icon.png "No views in use") | ![](assets/en/FormEditor/icon2.png "Views in use") |
 
-*   **Context menu** (form or object): Right-click anywhere in the Form Editor or an object, and select **Current View**
+*   **コンテキストメニュー** (フォームまたはオブジェクト): フォームエディターまたはオブジェクト上で右クリックし、**カレントビュー** を選択する。
 
     ![](assets/en/FormEditor/contextMenu.png)
 
-The current view is indicated with a check mark (*e.g.*, "Work Address" in the image above)
+選択中のビューにはチェックマークが付いています (*例*: 上の画像では "Work Address" ビューが選択中です)
 
 
-*   **Form menu**: Click on the **Form** menu and select **View List**
+*   **フォームメニュー**: **フォーム** メニューから **ビューリスト** を選択する。
 
 ![](assets/en/FormEditor/formMenu.png)
 
 
-### Before you begin
+### ビューを使い始める前に
 
-Here are a few important things to know before you start working with views:
+ビューを使用する前に知っておくべき重要なことをいくつか紹介します:
 
-*   **Context of use**: Views are a purely graphic tool which can only be used in the Form Editor; you cannot access views programmatically or in the Application environment.
+*   **利用のコンテキスト**: ビューは純粋に表示ツールであり、フォームエディター上のみ効果があります。プログラムからビューにアクセスしたり、アプリケーションモードで使用したりすることはできません。
 
-*   **Views and pages**: Objects of the same view can belong to different form pages; only objects of the current page (and of page 0 if it is visible) can be displayed, regardless of the view configuration.
+*   **ビューとページ**: あるビューには異なるフォームページ上のオブジェクトを含めることができます。ビューの設定にかかわらず、カレントページ (およびページ0) のオブジェクトのみが表示されます。
 
-*   **Views and levels**: Views are independent of object levels; there is no display hierarchy among different views.
+*   **ビューとレベル**: ビューはオブジェクトレベルから独立しています。異なるビューの間で表示上の階層はありません。
 
-*   **Views and groups**: Only objects belonging to the current view can be grouped.
+*   **ビューとグループ**: カレントビューに属するオブジェクト同士のみをグループ化できます。
 
-*   **Current and Default** views: The Default view is the first view of a form and cannot be deleted; the Current view is the view that is being edited and the name is displayed in bold text.
+*   **カレント/デフォルトビュー**: デフォルトビューはフォームの最初のビューで、削除することはできません。カレントビューは編集中のビューで、名前が太字で表示されます。
 
 
 
 ### ビュー管理
 
-#### Creating views
+#### ビューの作成
 
-Any object created in a form is placed in the first view ("View 1") of the form. The first view is **always** the default view, indicated by (Default) after the name. The view's name can be changed (see [Renaming views](#renaming-views)), however it remains the default view.
+フォーム内で作成されたオブジェクトは、そのフォームの最初のビュー ("View 1") に配置されます。 最初のビューは **常に** デフォルトビューで、名前の後に (Default) と表示されます。 このビューの名前は変更することができますが ([ビューの名称変更](#ビューの名称変更) 参照)、デフォルトビューであることに変わりはありません。
 
 
 ![](assets/en/FormEditor/createView.png)
 
-There are two ways to add additional views:
+ビューを追加するには 2つの方法があります。
 
-*   Click on the **Add a new view** button at the bottom of the View palette:
+*   ビューパレットの下部にある **新しいビューを追加** ボタンをクリックする。
 
 ![](assets/en/FormEditor/addView.png)
 
-*   Right-click on an existing view and select **Insert view**:
+*   既存のビューを右クリックして **ビューを追加** を選択する:
 
 ![](assets/en/FormEditor/addView2.png)
 
-There is no limitation on the number of views.
+ビューの数に制限はありません。
 
-#### Renaming views
+#### ビューの名称変更
 
-By default views are named as "View" + the view number, however you can change these names to improve readability and better suit your needs.
+デフォルトでは、ビューの名前は "View" + ビュー番号となっていますが、可読性のためまたは必要性に応じて、これらの名前を変更することができます。
 
-To rename a view, you can use either:
+ビューを名称変更するには、以下のいずれかの方法があります:
 
-*   Double-click directly on the view name (the selected view in this case). The name then becomes editable:
+*   ビュー名 (ここでは選択中のビュー) を直接ダブルクリックする。 すると、名前が編集可能になります:
 
     ![](assets/en/FormEditor/rename.png)
 
-*   Right-click on the view name. The name then becomes editable:
+*   ビューの名前を右クリックする。 すると、名前が編集可能になります:
 
     ![](assets/en/FormEditor/rename2.png)
 
@@ -652,7 +652,7 @@ Note that the Default view does not change:
 
 #### Deleting views
 
-To rename a view, you can use either:
+ビューを名称変更するには、以下のいずれかの方法があります:
 
 *   Click on the **Delete the selected view** button at the bottom of the View palette:
 
