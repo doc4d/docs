@@ -381,58 +381,58 @@ JSONフォームの入力順序の設定は、[`entryOrder`](properties_JSONref.
 
 #### データ入力グループを使用する
 
-入力順序を変更する際に、フォーム上のオブジェクトグループを選択し、そのグループ内のオブジェクトに対して標準の入力順序を適用することも可能です。 This allows you to easily set the data entry order on forms in which fields are separated into groups or columns.
+入力順序を変更する際に、フォーム上のオブジェクトグループを選択し、そのグループ内のオブジェクトに対して標準の入力順序を適用することも可能です。 これにより、フィールドがグループや列に分かれているフォーム上で、データ入力順序を簡単に設定することができます。
 
-To create a data entry group:
+データ入力グループを作成するには:
 
-1.  Choose **Entry Order** from the *Form* menu or click the  button in the toolbar.
-2.  Draw a marquee around the objects you want to group for data entry.
+1.  **フォーム** メニューから *入力順* を選択するか、ツールバーの入力順ボタンをクリックします。
+2.  データ入力用のグループに指定したいオブジェクトの周囲をマーキーで囲みます。
 
-When you release the mouse button, the objects enclosed or touched by the rectangle follow the standard data entry order. The data entry order for the remaining objects adjusts as necessary.
+マウスボタンを放すと、マーキーに囲まれているオブジェクトや、その矩形に接しているオブジェクトが標準入力順に設定されます。 それ以外のオブジェクトのデータ入力順は、必要に応じて調整されます。
 
-#### Excluding an object from the entry order
+#### フィールドを入力順から除外する
 
-By default, all objects that support the focusable property are included in the entry order. To exclude an object from the entry order:
+デフォルトでは、すべてのフォーカス可オブジェクトが入力順に組み込まれています。 任意のオブジェクトを入力順から除外するには:
 
-1. Select the Entry order mode, then
+1. 入力順モードに切り替えます。
 
-2.  **shift-click** on the object
+2.  オブジェクト上で **Shift+クリック** します。<br /> または
 
-3.  **right-click** on the object and select **Remove from entry order** option from the context menu
+3.  オブジェクト上で右クリックし、コンテキストメニューから **入力順から削除する** を選択します。
 
 
 
 ## CSSプレビュー
 
-The Form editor allows you to view your forms with or without applied CSS values.
+フォームエディターでは、CSSの値を適用した状態、または適用しない状態でフォームを表示することができます。
 
-When [style sheets](createStylesheet.md) have been defined, forms (including inherited forms and subforms) are opened in the CSS Preview mode for your operating system by default.
+[スタイルシート](createStylesheet.md) が定義されている場合、フォーム (継承フォームとサブフォームを含む) はデフォルトで、現在の OS の CSSプレビューモードで開かれます。
 
 
-### Selecting CSS Preview Mode
+### CSSプレビューモードの選択
 
-The Form editor toolbar provides a CSS button for viewing styled objects:
+フォームエディターのツールバーには、スタイル付きオブジェクトを表示するための CSSボタンがあります:
 
 ![](assets/en/FormEditor/cssToolbar.png)
 
-Select one of the following preview modes from the menu:
+メニューから、以下のプレビューモードのいずれかを選択します:
 
-| Toolbar Icon                         | CSS Preview Mode | 説明                                                                                                            |
-| ------------------------------------ | ---------------- | ------------------------------------------------------------------------------------------------------------- |
-| ![](assets/en/FormEditor/cssNo.png)  | なし               | No CSS values are applied in the form and no CSS values or icons displayed in the Property List.              |
-| ![](assets/en/FormEditor/cssWin.png) | Windows          | CSS values for Windows platform are applied in the form. CSS values and icons displayed in the Property List. |
-| ![](assets/en/FormEditor/cssMac.png) | macOS            | CSS values for macOS platform are applied in the form. CSS values and icons displayed in the Property List.   |
-> If a font size too large for an object is defined in a style sheet or JSON, the object will automatically be rendered to accommodate the font, however the size of the object will not be changed.
+| ツールバーアイコン                            | CSSプレビューモード | 説明                                                               |
+| ------------------------------------ | ----------- | ---------------------------------------------------------------- |
+| ![](assets/en/FormEditor/cssNo.png)  | なし          | CSS の値はフォームに適用されず、CSS の値やアイコンはプロパティリストに表示されません。                  |
+| ![](assets/en/FormEditor/cssWin.png) | Windows     | Windowsプラットフォーム用の CSS値がフォームに適用されます。 プロパティリストに CSSの値とアイコンが表示されます。 |
+| ![](assets/en/FormEditor/cssMac.png) | macOS       | macOSプラットフォーム用の CSS値がフォームに適用されます。 プロパティリストに CSSの値とアイコンが表示されます。   |
+> オブジェクトに対して大きすぎるフォントサイズがスタイルシートまたは JSON で定義されている場合、オブジェクトは自動的にフォントに合わせてレンダリングされますが、オブジェクトのサイズは変更されません。
 
-The CSS preview mode reflects the priority order applied to style sheets vs JSON attributes as defined in the [JSON vs Style Sheet](stylesheets.html#json-vs-style-sheet) section.
+CSSプレビューモードは、[JSON vs スタイルシート](stylesheets.html#json-vs-スタイルシート) の項で定義した、スタイルシートと JSON属性に適用される優先順位を反映します。
 
-Once a CSS preview mode is selected, objects are automatically displayed with the styles defined in a style sheet (if any).
-> When copying or duplicating objects, only the CSS references (if any) and the JSON values are copied.
+CSSプレビューモードを選択すると、オブジェクトは自動的にスタイルシートで定義されたスタイル (あれば) で表示されます。
+> オブジェクトをコピーまたは複製すると、CSS参照 (あれば) と JSON値のみがコピーされます。
 
 
-### CSS support in the Property List
+### プロパティリストの CSSサポート
 
-In CSS Preview mode, if the value of an attribute has been defined in a style sheet, the attribute's name will appear with a CSS icon displayed next to it in the Property List. For example, the attribute values defined in this style sheet:
+CSSプレビューモードでは、スタイルシートで属性値が定義されている場合、その属性名が表示され、その横に CSSアイコンが表示されます。 たとえば、このスタイルシートで定義されている属性値は:
 
 ```4d
 .myButton {
@@ -442,69 +442,69 @@ stroke: #800080;
 }
 ```
 
-are displayed with a CSS icon in the Property List:
+プロパティリストに CSSアイコンとともに表示されます:
 
 ![](assets/en/FormEditor/cssPpropList.png)
 
-An attribute value defined in a style sheet can be overridden in the JSON form description (except if the CSS includes the `!important` declaration, see below). In this case, the Property List displays the JSON form value in **bold**. You can reset the value to its style sheet definition with the **Ctrl + click** (Windows) or **Command + click** (macOs) shortcuts.
-> If an attribute has been defined with the `!important` declaration for a group, an object within a group, or any object within a selection of multiple objects, that attribute value is locked and cannot be changed in the Property List.
+スタイルシートで定義された属性値は、JSONフォームの記述でオーバーライドすることができます (ただし、CSS に `!important` 宣言が含まれている場合は除きます。後述参照)。 この場合、プロパティリストでは、JSONフォームの値が **太字** で表示されます。 **Ctrl+クリック** (Windows) または **Command+クリック** (macOs) のショートカットで、値をスタイルシートの定義に戻すことができます。
+> グループ、グループ内のオブジェクト、または複数オブジェクトの選択範囲内のオブジェクトに対して、`!important` 宣言とともに属性が定義されている場合、その属性値はロックされ、プロパティリストで変更することはできません。
 
-#### Property List CSS Icons
+#### プロパティリスト CSSアイコン
 
-| アイコン                                       | 説明                                                                                                                                                                 |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| ![](assets/en/FormEditor/cssIcon.png)      | Indicates that an attribute value has been defined in a style sheet                                                                                                |
-| ![](assets/en/FormEditor/cssImportant.png) | Indicates that an attribute value has been defined in a style sheet with the `!important` declaration                                                              |
-| ![](assets/en/FormEditor/cssIconMixed.png) | Displayed when an attribute value defined in a style sheet for at least one item in a group or a selection of multiple objects is different from the other objects |
+| アイコン                                       | 説明                                                                                   |
+| ------------------------------------------ | ------------------------------------------------------------------------------------ |
+| ![](assets/en/FormEditor/cssIcon.png)      | 属性値がスタイルシートで定義されていることを示します                                                           |
+| ![](assets/en/FormEditor/cssImportant.png) | 属性値がスタイルシートで `!important` 宣言とともに定義されていることを示します                                       |
+| ![](assets/en/FormEditor/cssIconMixed.png) | グループまたは複数のオブジェクトの選択項目のうち、少なくとも 1つのオブジェクトについて、スタイルシートで定義された属性値が他のオブジェクトと異なる場合に表示されます。 |
 
 
 
 ## リストボックスビルダー
 
-You can create new entity selection list boxes quickly with the **List box builder**. The new list box can be used immediately or it can be edited via the Form Editor.
+**リストボックスビルダー** を使用して、エンティティセレクション型リストボックスを素早く作成することができます。 作成したリストボックスは、すぐに使用することも、フォームエディターで編集することもできます。
 
-The List box builder lets you create and fill entity selection list boxes in a few simple operations.
-
-
-
-### Using the List Box Builder
+リストボックスビルダーでは、いくつかの簡単な操作で、エンティティセレクション型リストボックスの作成と入力ができます。
 
 
-1.  In the Form Editor toolbar, click on the List box builder icon:
+
+### リストボックスビルダーを使用する
+
+
+1.  フォームエディターツールバーのリストボックスビルダーアイコンをクリックします:
 
     ![](assets/en/FormEditor/listboxBuilderIcon.png)
 
-    The List box builder is displayed:
+    リストボックスビルダーが表示されます:
 
     ![](assets/en/FormEditor/listboxBuilder.png)
 
-2.  Select a table from the **Table** dropdown list:
+2.  **テーブル** ドロップダウンリストからテーブルを選択します:
 
     ![](assets/en/FormEditor/listboxBuilderTable.png)
 
-3.  Select the fields for the list box in the **Fields** area:
+3.  **フィールド** エリアで、リストボックスに表示するフィールドを選択します:
 
     ![](assets/en/FormEditor/listboxBuilderFields.png)
 
-    By default, all fields are selected. You can select or deselect fields individually or use **Ctrl+click** (Windows) or **Cmd+click** (macOS) to select or deselect them all at once.
+    デフォルトでは、すべてのフィールドが選択されています。 フィールドは個別に選択/選択解除するか、**Ctrl+クリック** (Windows) または **Cmd+クリック** (macOS) で一括に選択/選択解除することができます。
 
-    You can change the order of the fields by dragging them and dropping them.
+    また、フィールドをドラッグ＆ドロップすることで、フィールドの順番を変更することができます。
 
-4.  The expression to fill the list box's rows from the entity selection is prefilled:
+4.  リストボックスをエンティティセレクションと紐づけるための式があらかじめ入力されています:
 
     ![](assets/en/FormEditor/listboxBuilderExpression.png)
 
-    This expression can be changed if necessary.
+    この式は必要に応じて変更できます。
 
-5.  Clicking on the **Copy** button will copy the expression for loading all records into memory:
+5.  **コピー** ボタンをクリックすると、全レコードをメモリに読み込む式が初期化用にコピーされます。
 
     ![](assets/en/FormEditor/listboxBuilderCode.png)
 
-6.  Click the the **Build widget** button to create the list box.
+6.  **ウィジェットをビルド** ボタンをクリックすると、リストボックスが作成されます。
 
     ![](assets/en/FormEditor/listboxBuilderBuild.png)
 
-The final list box:
+結果のリストボックスです:
 
 ![](assets/en/FormEditor/listboxBuilderListbox.png)
 
@@ -516,128 +516,128 @@ The final list box:
 
 
 
-## Shields
+## バッジ
 
-The 4D Form Editor uses shields to make viewing object properties easier. You can find them on the form toolbar:
+フォームエディターではバッジを使用してオブジェクトプロパティの表示を容易にできます。 バッジは、フォームのツールバーで選択します:
 
 ![](assets/en/FormEditor/shields.png)
 
 
 
 
-This function works as follows: Each shield is associated with a property (for example, **Views**, which means the object “is in the current view”). When you activate a shield, 4D displays a small icon (shield) in the upper left of each object of the form where the property is applied.
+この機能は次のように動作します: 各バッジは特定のプロパティに対応しています (たとえば、**カレントビュー** は、当該オブジェクトがカレントビュー内にあることを示します)。 バッジを有効にすると、4D はバッジとして選択されたプロパティが割り当てられているフォームオブジェクトの左上に小さなアイコン (バッジ) を表示します。
 
 ![](assets/en/FormEditor/shield.png)
 
 ### バッジを使用する
 
-To activate a shield, click the *Shield* icon from the toolbar until the desired shield is selected. You can also click on the right side of the button and select the type of shield to display directly in the associated menu:
+バッジを有効にするには、希望するバッジが選択されるまでツールバーの *バッジ* ボタンをクリックします。 また、ボタンの右側をクリックして表示されるメニューから、バッジの種類を直接選択することもできます。
 
 
-If you don't want to display shields, select **No Shields** in the selection menu.
-> You can set which shields to display by default on the Forms Page of the application Preferences.
+バッジを表示したくない場合は、**バッジなし** を選択します。
+> アプリケーション環境設定のフォームページで、デフォルトで表示するバッジを設定できます。
 
-### Shield descriptions
+### 各バッジの説明
 
-Here is a description of each type of shield:
+各バッジの説明は以下の通りです:
 
-| アイコン                                         | 名称                          | Is displayed ...                                                                                                                     |
-| -------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| ![](assets/en/FormEditor/objectMethod.png)   | Object Method               | For objects with an associated object method                                                                                         |
-| ![](assets/en/FormEditor/standardAction.png) | Standard Action             | For objects with an associated standard action                                                                                       |
-| ![](assets/en/FormEditor/resizing.png)       | サイズ変更                       | For objects with at least one resizing property, indicates the combination of current properties                                     |
-| ![](assets/en/FormEditor/entryOrder.png)     | Entry Order                 | For enterable objects, indicates the number of entry order                                                                           |
-| ![](assets/en/FormEditor/viewNumber.png)     | Current View                | For all objects in the current view                                                                                                  |
-| ![](assets/en/FormEditor/cssShield.png)      | [スタイルシート](stylesheets.html) | For objects with one or more attribute values overridden by a style sheet.                                                           |
-| ![](assets/en/FormEditor/filter.png)         | Filter                      | For enterable objects with an associated entry filter                                                                                |
-| ![](assets/en/FormEditor/helpTip.png)        | ヘルプTips                     | For objects with an associated tip                                                                                                   |
-| ![](assets/en/FormEditor/localized.png)      | Localized                   | For objects whose label comes from a reference (label beginning with “:”). The reference can be of the resource (STR#) or XLIFF type |
-| ![](assets/en/FormEditor/noShields.png)      | No Shields                  | No shields appear                                                                                                                    |
+| アイコン                                         | 名称                          | 表示                                                             |
+| -------------------------------------------- | --------------------------- | -------------------------------------------------------------- |
+| ![](assets/en/FormEditor/objectMethod.png)   | オブジェクトメソッド                  | オブジェクトメソッドが割り当てられたオブジェクト                                       |
+| ![](assets/en/FormEditor/standardAction.png) | 標準アクション                     | 標準アクションが割り当てられたオブジェクト                                          |
+| ![](assets/en/FormEditor/resizing.png)       | サイズ変更                       | リサイズプロパティが 1つ以上割り当てられたオブジェクトについて、カレントプロパティの組み合わせを表します          |
+| ![](assets/en/FormEditor/entryOrder.png)     | 入力順                         | 入力可能なオブジェクトの入力順を表示します                                          |
+| ![](assets/en/FormEditor/viewNumber.png)     | カレントビュー                     | カレントビュー内にあるオブジェクト                                              |
+| ![](assets/en/FormEditor/cssShield.png)      | [スタイルシート](stylesheets.html) | 1つ以上の属性値がスタイルシートにより上書きされたオブジェクト                                |
+| ![](assets/en/FormEditor/filter.png)         | フィルター                       | 入力フィルターが割り当てられた入力可オブジェクト                                       |
+| ![](assets/en/FormEditor/helpTip.png)        | ヘルプTips                     | ヘルプTips が割り当てられたオブジェクト                                         |
+| ![](assets/en/FormEditor/localized.png)      | ローカライズ済み                    | ラベルに参照が割り当てられたオブジェクト (“:”で始まるラベル)。 参照はリソース (STR#) または XLIFFタイプ |
+| ![](assets/en/FormEditor/noShields.png)      | バッジなし                       | バッジは表示されません                                                    |
 
 ## オブジェクトビュー
 
-The 4D Form Editor enables you to build complex forms by distributing form objects among separate views that can then be hidden or shown as needed.
+フォームエディターでは、必要に応じて表示/非表示が可能な異なるビューにそれぞれオブジェクトを配置することで、複雑なフォーム作成が容易になります。
 
-For example, you can distribute objects according to type (fields, variables, static objects, etc.). Any type of form object, including subforms and plug-in areas, can be included in views.
+たとえば、タイプごと (フィールド、変数、スタティックオブジェクト等) にオブジェクトを異なるビューに分けることができます。 サブフォームやプラグインエリアを含むすべてのタイプのオブジェクトをビューに含めることができます。
 
-There is no limit on the number of views per form. You can create as many different views as you need. Additionally, each view can be displayed, hidden, and/or locked.
+フォームごとのビューの数に制限はありません。 必要なだけ、ビューを作成することができます。 それぞれのビューごとに、表示/非表示とロックが切り換えられます。
 
 
-View management is handled via the View palette.
+ビューの管理はビューパレットを使用しておこないます。
 
 ![](assets/en/FormEditor/viewEditor.png)
 
 
-### Accessing the View palette
+### ビューパレットの表示
 
-There are three ways to access the View palette:
+ビューパレットを表示するには、次の 3つの方法があります:
 
-*   **Toolbar**: Click on the Views icon in the Form Editor toolbar. (This icon appears gray when at least one object belongs to a view other than the default view.)
+*   **ツールバー**: フォームエディターのツールバーにあるビューボタンをクリックする。 (1つ以上のオブジェクトがデフォルトビュー以外のビューに属している場合、このアイコンは塗り潰し表示されます)。
 
-    |                  Default view only                   |               With additional views                |
+    |                      デフォルトビューのみ                      |                      追加のビューあり                      |
     |:----------------------------------------------------:|:--------------------------------------------------:|
     | ![](assets/en/FormEditor/icon.png "No views in use") | ![](assets/en/FormEditor/icon2.png "Views in use") |
 
-*   **Context menu** (form or object): Right-click anywhere in the Form Editor or an object, and select **Current View**
+*   **コンテキストメニュー** (フォームまたはオブジェクト): フォームエディターまたはオブジェクト上で右クリックし、**カレントビュー** を選択する。
 
     ![](assets/en/FormEditor/contextMenu.png)
 
-The current view is indicated with a check mark (*e.g.*, "Work Address" in the image above)
+選択中のビューにはチェックマークが付いています (*例*: 上の画像では "Work Address" ビューが選択中です)
 
 
-*   **Form menu**: Click on the **Form** menu and select **View List**
+*   **フォームメニュー**: **フォーム** メニューから **ビューリスト** を選択する。
 
 ![](assets/en/FormEditor/formMenu.png)
 
 
-### Before you begin
+### ビューを使い始める前に
 
-Here are a few important things to know before you start working with views:
+ビューを使用する前に知っておくべき重要なことをいくつか紹介します:
 
-*   **Context of use**: Views are a purely graphic tool which can only be used in the Form Editor; you cannot access views programmatically or in the Application environment.
+*   **利用のコンテキスト**: ビューは純粋に表示ツールであり、フォームエディター上のみ効果があります。プログラムからビューにアクセスしたり、アプリケーションモードで使用したりすることはできません。
 
-*   **Views and pages**: Objects of the same view can belong to different form pages; only objects of the current page (and of page 0 if it is visible) can be displayed, regardless of the view configuration.
+*   **ビューとページ**: あるビューには異なるフォームページ上のオブジェクトを含めることができます。ビューの設定にかかわらず、カレントページ (およびページ0) のオブジェクトのみが表示されます。
 
-*   **Views and levels**: Views are independent of object levels; there is no display hierarchy among different views.
+*   **ビューとレベル**: ビューはオブジェクトレベルから独立しています。異なるビューの間で表示上の階層はありません。
 
-*   **Views and groups**: Only objects belonging to the current view can be grouped.
+*   **ビューとグループ**: カレントビューに属するオブジェクト同士のみをグループ化できます。
 
-*   **Current and Default** views: The Default view is the first view of a form and cannot be deleted; the Current view is the view that is being edited and the name is displayed in bold text.
+*   **カレント/デフォルトビュー**: デフォルトビューはフォームの最初のビューで、削除することはできません。カレントビューは編集中のビューで、名前が太字で表示されます。
 
 
 
 ### ビュー管理
 
-#### Creating views
+#### ビューの作成
 
-Any object created in a form is placed in the first view ("View 1") of the form. The first view is **always** the default view, indicated by (Default) after the name. The view's name can be changed (see [Renaming views](#renaming-views)), however it remains the default view.
+フォーム内で作成されたオブジェクトは、そのフォームの最初のビュー ("View 1") に配置されます。 最初のビューは **常に** デフォルトビューで、名前の後に (Default) と表示されます。 このビューの名前は変更することができますが ([ビューの名称変更](#ビューの名称変更) 参照)、デフォルトビューであることに変わりはありません。
 
 
 ![](assets/en/FormEditor/createView.png)
 
-There are two ways to add additional views:
+ビューを追加するには 2つの方法があります。
 
-*   Click on the **Add a new view** button at the bottom of the View palette:
+*   ビューパレットの下部にある **新しいビューを追加** ボタンをクリックする。
 
 ![](assets/en/FormEditor/addView.png)
 
-*   Right-click on an existing view and select **Insert view**:
+*   既存のビューを右クリックして **ビューを追加** を選択する:
 
 ![](assets/en/FormEditor/addView2.png)
 
-There is no limitation on the number of views.
+ビューの数に制限はありません。
 
-#### Renaming views
+#### ビューの名称変更
 
-By default views are named as "View" + the view number, however you can change these names to improve readability and better suit your needs.
+デフォルトでは、ビューの名前は "View" + ビュー番号となっていますが、可読性のためまたは必要性に応じて、これらの名前を変更することができます。
 
-To rename a view, you can use either:
+ビューを名称変更するには、以下のいずれかの方法があります:
 
-*   Double-click directly on the view name (the selected view in this case). The name then becomes editable:
+*   ビュー名 (ここでは選択中のビュー) を直接ダブルクリックする。 すると、名前が編集可能になります:
 
     ![](assets/en/FormEditor/rename.png)
 
-*   Right-click on the view name. The name then becomes editable:
+*   ビューの名前を右クリックする。 すると、名前が編集可能になります:
 
     ![](assets/en/FormEditor/rename2.png)
 
@@ -652,7 +652,7 @@ Note that the Default view does not change:
 
 #### Deleting views
 
-To rename a view, you can use either:
+ビューを名称変更するには、以下のいずれかの方法があります:
 
 *   Click on the **Delete the selected view** button at the bottom of the View palette:
 
