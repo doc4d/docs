@@ -64,15 +64,15 @@ title: マーカー
 フォームヘッダーエリアは画面の一番上に表示され、また印刷時には各ページの一番上に印刷されます。 ヘッダーエリアはフォームの一番上からヘッダーマーカー (H) までの間です。
 ヘッダーエリアの大きさは変更することができます。 ヘッダーエリアには列のタイトル、フォームの説明、その他の情報、会社ロゴなどの画像を配置します。<p>
 
-You can also place and use active objects in the Header area of output forms displayed as subforms, in the records display window or using the `DISPLAY SELECTION` and `MODIFY SELECTION` commands. The following active objects can be inserted:
+サブフォームとして表示される出力フォーム、あるいは `DISPLAY SELECTION` や `MODIFY SELECTION` コマンドを使用して表示される出力フォームのヘッダーエリアにアクティブオブジェクトを配置して使用することもできます。 以下のようなアクティブオブジェクトを配置できます:
 
-- Buttons, picture buttons,
-- Combo boxes, drop-down lists,  picture pop-up menus,
-- hierarchical lists, list boxes
-- Radio buttons, check boxes, 3D check boxes,
-- Progress indicators, rulers, steppers, spinners.
+- ボタン、ピクチャーボタン
+- コンボボックス、ドロップダウンリスト、ピクチャーポップアップメニュー
+- 階層リスト、リストボックス
+- ラジオボタン、チェックボックス、3Dチェックボックス
+- 進捗インジケーター、ルーラー、ステッパー、スピナー
 
-Standard actions such as `Add Subrecord`, `Cancel` (lists displayed using `DISPLAY SELECTION` and `MODIFY SELECTION`) or `Automatic splitter` can be assigned to the inserted buttons. The following events apply to the active objects you insert in the Header area: `On Load`, `On Clicked`, `On Header`, `On Printing Footer`, `On Double Clicked`, `On Drop`, `On Drag Over`, `On Unload`. Keep in mind that the form method is called with the `On Header` event after calling the object methods of the area.
+`addSubrecord` (サブレコード追加) や `cancel`、`automaticSplitter` (自動スプリッター) などの標準アクションをボタンに割り当てることができます。 ヘッダーエリアに配置したアクティブオブジェクトでは以下のイベントを使用できます: `On Load`, `On Clicked`, `On Header`, `On Printing Footer`, `On Double Clicked`, `On Drop`, `On Drag Over`, `On Unload`。 フォームメソッドが `On Header` イベントで呼び出されるのは、エリアのオブジェクトメソッドが呼び出された後になります。
 
 The form can contains [additional header areas](#additional-areas) to be associated with additional breaks. A level 1 Header is printed just before the records grouped by the first sorted field are printed.
 
