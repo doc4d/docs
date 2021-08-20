@@ -515,9 +515,9 @@ stroke: #800080;
 
 
 
-## Shields
+## バッジ
 
-The 4D Form Editor uses shields to make viewing object properties easier. You can find them on the form toolbar:
+フォームエディターではバッジを使用してオブジェクトプロパティの表示を容易にできます。 バッジは、フォームのツールバーで選択します:
 
 ![](assets/en/FormEditor/shields.png)
 
