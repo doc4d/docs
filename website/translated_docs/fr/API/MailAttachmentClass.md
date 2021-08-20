@@ -31,12 +31,12 @@ Attachment objects provide the following read-only properties and functions:
 
 | Paramètres  | Type              |    | Description                                                          |
 | ----------- | ----------------- |:--:| -------------------------------------------------------------------- |
-| path        | Texte             | -> | Path of the attachment file                                          |
+| path        | Text              | -> | Path of the attachment file                                          |
 | blob        | Blob              | -> | BLOB containing the attachment                                       |
-| name        | Texte             | -> | Name + extension used by the mail client to designate the attachment |
-| cid         | Texte             | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
-| type        | Texte             | -> | Value of the content-type header                                     |
-| disposition | Texte             | -> | Value of the content-disposition header: "inline" or "attachment".   |
+| name        | Text              | -> | Name + extension used by the mail client to designate the attachment |
+| cid         | Text              | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
+| type        | Text              | -> | Value of the content-type header                                     |
+| disposition | Text              | -> | Value of the content-disposition header: "inline" or "attachment".   |
 | Résultat    | 4D.MailAttachment | <- | Attachment object                                                    |
 <!-- END REF -->
 
@@ -168,12 +168,12 @@ $transporter.send($email)
 
 | Paramètres  | Type              |    | Description                                                          |
 | ----------- | ----------------- |:--:| -------------------------------------------------------------------- |
-| path        | Texte             | -> | Path of the attachment file                                          |
+| path        | Text              | -> | Path of the attachment file                                          |
 | blob        | Blob              | -> | BLOB containing the attachment                                       |
-| name        | Texte             | -> | Name + extension used by the mail client to designate the attachment |
-| cid         | Texte             | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
-| type        | Texte             | -> | Value of the content-type header                                     |
-| disposition | Texte             | -> | Value of the content-disposition header: "inline" or "attachment".   |
+| name        | Text              | -> | Name + extension used by the mail client to designate the attachment |
+| cid         | Text              | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
+| type        | Text              | -> | Value of the content-type header                                     |
+| disposition | Text              | -> | Value of the content-disposition header: "inline" or "attachment".   |
 | Résultat    | 4D.MailAttachment | <- | Attachment object                                                    |
 <!-- END REF -->
 
