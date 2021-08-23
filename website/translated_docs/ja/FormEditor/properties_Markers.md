@@ -74,15 +74,15 @@ title: マーカー
 
 `addSubrecord` (サブレコード追加) や `cancel`、`automaticSplitter` (自動スプリッター) などの標準アクションをボタンに割り当てることができます。 ヘッダーエリアに配置したアクティブオブジェクトでは以下のイベントを使用できます: `On Load`, `On Clicked`, `On Header`, `On Printing Footer`, `On Double Clicked`, `On Drop`, `On Drag Over`, `On Unload`。 フォームメソッドが `On Header` イベントで呼び出されるのは、エリアのオブジェクトメソッドが呼び出された後になります。
 
-The form can contains [additional header areas](#additional-areas) to be associated with additional breaks. A level 1 Header is printed just before the records grouped by the first sorted field are printed.
+フォームには、[追加のヘッダーエリア](#追加マーカーの作成) を作成し、追加ブレークと関連づけることができます。 レベル1ヘッダーは、最初のソートフィールドによりグループ化されたレコードが印刷される直前に印刷されます。
 
 
 
 #### JSON 文法
 
-| 名称           | データタイプ                            | とりうる値                                                                                                |
-| ------------ | --------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| markerHeader | integer &#x7c; integer collection | Header marker position or collection of header marker positions in pixels.<br>Minimum value: 0 |
+| 名称           | データタイプ                            | とりうる値                                                            |
+| ------------ | --------------------------------- | ---------------------------------------------------------------- |
+| markerHeader | integer &#x7c; integer collection | ヘッダーマーカーの位置 (ピクセル単位)、またはヘッダーマーカー位置のコレクションを指定します。<br>最小値: 0 |
 
 
 
@@ -108,7 +108,7 @@ A Break level 1 occurs after the records grouped by the first sorted field are p
 | Form Break 2 | Break at level 2 | Second sorted field             |
 | Form Break 3 | Break at level 3 | Third sorted field              |
 
-Additional Header areas are associated with Breaks. A level 1 Header is printed just before the records grouped by the first sorted field are printed.
+Additional Header areas are associated with Breaks. レベル1ヘッダーは、最初のソートフィールドによりグループ化されたレコードが印刷される直前に印刷されます。
 
 | Label         | 説明                | Prints after groups created by: |
 | ------------- | ----------------- | ------------------------------- |
