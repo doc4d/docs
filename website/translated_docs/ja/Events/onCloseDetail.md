@@ -3,9 +3,9 @@ id: onCloseDetail
 title: On Close Detail
 ---
 
-| Code | Can be called by                                   | 定義                                                             |
-| ---- | -------------------------------------------------- | -------------------------------------------------------------- |
-| 26   | Form - [List Box](FormObjects/listbox_overview.md) | You left the detail form and are going back to the output form |
+| コード | 呼び出し元                                              | 定義                                                             |
+| --- | -------------------------------------------------- | -------------------------------------------------------------- |
+| 26  | Form - [List Box](FormObjects/listbox_overview.md) | You left the detail form and are going back to the output form |
 
 
 ## 説明
