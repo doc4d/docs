@@ -3,9 +3,9 @@ id: onOpenDetail
 title: On Open Detail
 ---
 
-| Code | Can be called by                                   | 定義                                                                                          |
-| ---- | -------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| 25   | Form - [List Box](FormObjects/listbox_overview.md) | The detail form associated with the output form or with the list box is about to be opened. |
+| コード | 呼び出し元                                              | 定義                                                                                          |
+| --- | -------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 25  | Form - [List Box](FormObjects/listbox_overview.md) | The detail form associated with the output form or with the list box is about to be opened. |
 
 
 ## 説明
