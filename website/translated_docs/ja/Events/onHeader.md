@@ -16,10 +16,10 @@ title: On Header
 
 このコンテキストにおいて、メソッドやフォームイベントが呼び出される順序は以下のとおりです:
 
-- For each object in the header area:
-    - Object method with `On Header` event
-    - Form method with `On Header` event
+- ヘッダーエリアのオブジェクトごとに:
+    - オブジェクトメソッドの `On Header` イベント
+    - フォームメソッドの `On Header` イベント
 
-> Printed records are handled using the [`On Display Detail`](onDisplayDetail.md) event.
+> 印刷されるレコードは、[`On Display Detail`](onDisplayDetail.md) イベントで処理されます。
 
-Calling a 4D command that displays a dialog box from the `On Header` event is not allowed and will cause a syntax error to occur. 以下のコマンドが該当します: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, `MODIFY SELECTION`。
+`On Header` イベントから、ダイアログボックスを表示する 4Dコマンドを呼び出すことはできません。これはシンタックスエラーを起こします。 以下のコマンドが該当します: `ALERT`, `DIALOG`, `CONFIRM`, `Request`, `ADD RECORD`, `MODIFY RECORD`, `DISPLAY SELECTION`, `MODIFY SELECTION`。
