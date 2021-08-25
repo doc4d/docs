@@ -1,6 +1,6 @@
 ---
 id: glossary
-title: Glossary
+title: Glosario
 ---
 
 ## Main concepts at a glance
@@ -113,7 +113,7 @@ Since entities are managed as references, data is loaded only when necessary, i.
 
 The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
 
-## Method
+## Método
 
 ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
 
@@ -128,12 +128,12 @@ $myClass.query("name = smith")
 In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. It includes:
 
 *   number
-*   text
+*   texto
 *   null
-*   boolean
-*   date
-*   object
-*   collection
+*   booleano
+*   fecha
+*   objeto
+*   colección
 *   picture(\*)
 
 *(\*) picture type is not supported by statistical methods such as* `entitySelection.max( )`.
