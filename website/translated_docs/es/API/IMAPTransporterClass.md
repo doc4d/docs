@@ -57,14 +57,14 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 **IMAP New transporter**( *server* : Object ) : 4D.IMAPTransporter<!-- END REF -->
 
 <!-- REF IMAPTransporterClass.IMAP New transporter.Params -->
-| Parameter | Tipo               |    | Descripción                                         |
+| Parameter | Type               |    | Description                                         |
 | --------- | ------------------ |:--:| --------------------------------------------------- |
-| server    | Objeto             | -> | Mail server information                             |
-| Resultado | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object) |
+| server    | Object             | -> | Mail server information                             |
+| Result    | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object) |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `IMAP New transporter` command <!-- REF #_command_.IMAP New transporter.Summary -->configures a new IMAP connection<!-- END REF --> according to the *server* parameter and returns a new *transporter* object. The returned transporter object will then usually be used to receive emails.
 
@@ -85,12 +85,12 @@ In the *server* parameter, pass an object containing the following properties:
 > **Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
 
 
-#### Resultado
+#### Result
 
 The function returns an [**IMAP transporter object**](#imap-transporter-object). All returned properties are **read-only**.
 > The IMAP connection is automatically closed when the transporter object is destroyed.
 
-#### Ejemplo
+#### Example
 
 ```4d
 $server:=New object
@@ -117,13 +117,13 @@ End if
 **4D.IMAPTransporter.new**( *server* : Object ) : 4D.IMAPTransporter<!-- END REF -->
 
 <!-- REF #4D.IMAPTransporter.new().Params -->
-| Parameter | Tipo               |    | Descripción                                         |
+| Parameter | Type               |    | Description                                         |
 | --------- | ------------------ |:--:| --------------------------------------------------- |
-| server    | Objeto             | -> | Mail server information                             |
-| Resultado | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object) |
+| server    | Object             | -> | Mail server information                             |
+| Result    | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object) |
 <!-- END REF -->
 
-#### Descripción
+#### Description
 
 The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summary -->creates and returns a new object of the `4D.IMAPTransporter` type<!-- END REF -->. It is identical to the [`IMAP New transporter`](#imap-new-transporter) command (shortcut).
 
@@ -143,15 +143,15 @@ The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summa
 **.addFlags**( *msgIDs* : Collection ; *keywords* :  Object ) : Object<br>**.addFlags**( *msgIDs* : Text ; *keywords* :  Object ) : Object<br>**.addFlags**( *msgIDs* : Longint  ; *keywords* :  Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.addFlags().Params -->
-| Parameter | Tipo      |    | Descripción                                                                                                                                              |
-| --------- | --------- |:--:| -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgIDs    | Colección | -> | Collection of strings: Message unique IDs (text)<br>Text: Unique ID of a message<br>Longint (IMAP all): All messages in the selected mailbox |
-| keywords  | Objeto    | -> | Keyword flags to add                                                                                                                                     |
-| Resultado | Objeto    | <- | Status of the addFlags operation                                                                                                                         |
+| Parameter | Type       |    | Description                                                                                                                                              |
+| --------- | ---------- |:--:| -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgIDs    | Collection | -> | Collection of strings: Message unique IDs (text)<br>Text: Unique ID of a message<br>Longint (IMAP all): All messages in the selected mailbox |
+| keywords  | Object     | -> | Keyword flags to add                                                                                                                                     |
+| Result    | Object     | <- | Status of the addFlags operation                                                                                                                         |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.addFlags()` function <!-- REF #IMAPTransporterClass.addFlags().Summary -->adds flags to the `msgIDs` for the specified `keywords`<!-- END REF -->.
 
@@ -161,19 +161,19 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constant | Valor | Comment                                     |
+    | Constant | Value | Comment                                     |
     | -------- | ----- | ------------------------------------------- |
     | IMAP all | 1     | Select all messages in the selected mailbox |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to add to `msgIDs`. You can pass any of the following keywords:
 
-| Parameter | Tipo     | Descripción                                    |
-| --------- | -------- | ---------------------------------------------- |
-| $draft    | Booleano | True to add the "draft" flag to the message    |
-| $seen     | Booleano | True to add the "seen" flag to the message     |
-| $flagged  | Booleano | True to add the "flagged" flag to the message  |
-| $answered | Booleano | True to add the "answered" flag to the message |
-| $deleted  | Booleano | True to add the "deleted" flag to the message  |
+| Parameter | Type    | Description                                    |
+| --------- | ------- | ---------------------------------------------- |
+| $draft    | Boolean | True to add the "draft" flag to the message    |
+| $seen     | Boolean | True to add the "seen" flag to the message     |
+| $flagged  | Boolean | True to add the "flagged" flag to the message  |
+| $answered | Boolean | True to add the "answered" flag to the message |
+| $deleted  | Boolean | True to add the "deleted" flag to the message  |
 > * False values are ignored.
 > * The interpretation of keyword flags may vary per mail client.
 
@@ -182,17 +182,17 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
-#### Ejemplo
+#### Example
 
 ```4d
 var $options;$transporter;$boxInfo;$status : Object
@@ -231,16 +231,16 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 **.append**( *mailObj* : Object ; *destinationBox* : Text ; *options* : Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.append().Params -->
-| Parameter      | Tipo   |    | Descripción                     |
+| Parameter      | Type   |    | Description                     |
 | -------------- | ------ |:--:| ------------------------------- |
-| mailObj        | Objeto | -> | Email object                    |
-| destinationBox | Texto  | -> | Mailbox to receive Email object |
-| options        | Objeto | -> | Object containing charset info  |
-| Resultado      | Objeto | <- | Status of the delete operation  |
+| mailObj        | Object | -> | Email object                    |
+| destinationBox | Text   | -> | Mailbox to receive Email object |
+| options        | Object | -> | Object containing charset info  |
+| Result         | Object | <- | Status of the delete operation  |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.append()` function <!-- REF #IMAPTransporterClass.append().Summary -->appends a `mailObj` to the `destinationBox`<!-- END REF -->.
 
@@ -250,14 +250,14 @@ The optional `destinationBox` parameter lets you pass the name of a mailbox wher
 
 In the optional `options` parameter, you can pass an object to define the charset and encoding for specific parts of the email. Available properties:
 
-| Propriedad    | Tipo  | Descripción                                                                                                                                                                    |
-| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| headerCharset | Texto | Charset and encoding used for the following parts of the email: subject, attachment filenames, and email name attribute(s). Possible values: See possible charsets table below |
-| bodyCharset   | Texto | Charset and encoding used for the html and text body contents of the email. Possible values: See possible charsets table below                                                 |
+| Property      | Type | Description                                                                                                                                                                    |
+| ------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| headerCharset | Text | Charset and encoding used for the following parts of the email: subject, attachment filenames, and email name attribute(s). Possible values: See possible charsets table below |
+| bodyCharset   | Text | Charset and encoding used for the html and text body contents of the email. Possible values: See possible charsets table below                                                 |
 
 Possible charsets:
 
-| Constant                 | Valor                          | Comment                                                                                                   |
+| Constant                 | Value                          | Comment                                                                                                   |
 | ------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>bodyCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                 |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                 |
@@ -269,17 +269,17 @@ Possible charsets:
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
-#### Ejemplo
+#### Example
 
 To save an email in the Drafts mailbox:
 
@@ -333,7 +333,7 @@ $status:=$imap.append($msg; "Drafts")
 **.checkConnectionDelay** : Integer<!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->the maximum time (in seconds) allowed prior to checking the connection to the server<!-- END REF -->.  If this time is exceeded between two method calls, the connection to the server will be checked. By default, if the property has not been set in the *server* object, the value is 300.
 > **Warning**: Make sure the defined timeout is lower than the server timeout, otherwise the client timeout will be useless.
@@ -357,16 +357,16 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 **.copy**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.copy**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.copy().Params -->
-| Parameter      | Tipo      |    | Descripción                                      |
-| -------------- | --------- |:--:| ------------------------------------------------ |
-| msgsIDs        | Colección | -> | Collection of message unique IDs (strings)       |
-| allMsgs        | Entero    | -> | `IMAP all`: All messages in the selected mailbox |
-| destinationBox | Texto     | -> | Mailbox to receive copied messages               |
-| Resultado      | Objeto    | <- | Status of the copy operation                     |
+| Parameter      | Type       |    | Description                                      |
+| -------------- | ---------- |:--:| ------------------------------------------------ |
+| msgsIDs        | Collection | -> | Collection of message unique IDs (strings)       |
+| allMsgs        | Integer    | -> | `IMAP all`: All messages in the selected mailbox |
+| destinationBox | Text       | -> | Mailbox to receive copied messages               |
+| Result         | Object     | <- | Status of the copy operation                     |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.copy()` function <!-- REF #IMAPTransporterClass.copy().Summary -->copies the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
 
@@ -382,19 +382,19 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
 
 
-#### Ejemplo 1
+#### Example 1
 
 To copy a selection of messages:
 
@@ -422,7 +422,7 @@ To copy a selection of messages:
  $status:=$transporter.copy($mailIds;"documents")
 ```
 
-#### Ejemplo 2
+#### Example 2
 
 To copy all messages in the current mailbox:
 
@@ -463,14 +463,14 @@ To copy all messages in the current mailbox:
 **.createBox**( *name* :  Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.createBox().Params -->
-| Parameter | Tipo   |    | Descripción                              |
+| Parameter | Type   |    | Description                              |
 | --------- | ------ |:--:| ---------------------------------------- |
-| name      | Texto  | -> | Name of the new mailbox                  |
-| Resultado | Objeto | <- | Status of the mailbox creation operation |
+| name      | Text   | -> | Name of the new mailbox                  |
+| Result    | Object | <- | Status of the mailbox creation operation |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.createBox()` function <!-- REF #IMAPTransporterClass.createBox().Summary -->creates a mailbox with the given `name`<!-- END REF -->. If the IMAP server’s hierarchy separator character appears elsewhere in the mailbox name, the IMAP server will create any parent names needed to create the given mailbox.
 
@@ -487,19 +487,19 @@ In the `name` parameter, pass the name of the new mailbox.
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
 
 
-#### Ejemplo
+#### Example
 
 To create a new “Invoices” mailbox:
 
@@ -548,15 +548,15 @@ End if
 **.delete**( *msgsIDs* : Collection ) : Object<br>**.delete**( *allMsgs* : Integer ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.delete().Params -->
-| Parameter | Tipo      |    | Descripción                                      |
-| --------- | --------- |:--:| ------------------------------------------------ |
-| msgsIDs   | Colección | -> | Collection of message unique IDs (strings)       |
-| allMsgs   | Entero    | -> | `IMAP all`: All messages in the selected mailbox |
-| Resultado | Objeto    | <- | Status of the delete operation                   |
+| Parameter | Type       |    | Description                                      |
+| --------- | ---------- |:--:| ------------------------------------------------ |
+| msgsIDs   | Collection | -> | Collection of message unique IDs (strings)       |
+| allMsgs   | Integer    | -> | `IMAP all`: All messages in the selected mailbox |
+| Result    | Object     | <- | Status of the delete operation                   |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->sets the "deleted" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
 
@@ -573,19 +573,19 @@ Executing this function does not actually remove messages. Messages with the "de
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
 
 
-#### Ejemplo 1
+#### Example 1
 
 To delete a selection of messages:
 
@@ -613,7 +613,7 @@ To delete a selection of messages:
  $status:=$transporter.delete($mailIds)
 ```
 
-#### Ejemplo 2
+#### Example 2
 
 To delete all messages in the current mailbox:
 
@@ -653,14 +653,14 @@ To delete all messages in the current mailbox:
 **.deleteBox**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| Parameter | Tipo   |    | Descripción                              |
+| Parameter | Type   |    | Description                              |
 | --------- | ------ |:--:| ---------------------------------------- |
-| name      | Texto  | -> | Name of the mailbox to delete            |
-| Resultado | Objeto | <- | Status of the mailbox deletion operation |
+| name      | Text   | -> | Name of the mailbox to delete            |
+| Result    | Object | <- | Status of the mailbox deletion operation |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.deleteBox()` function <!-- REF #IMAPTransporterClass.deleteBox().Summary -->permanently removes the mailbox with the given `name` from the IMAP server<!-- END REF -->. Attempting to delete an INBOX or a mailbox that does not exist will generate an error.
 
@@ -674,19 +674,19 @@ In the `name` parameter, pass the name of the mailbox to delete.
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
 
 
-#### Ejemplo
+#### Example
 
 To delete the "Nova Orion Industries" child mailbox from the "Bills" mailbox hierarchy:
 
@@ -737,12 +737,12 @@ End if
 **.expunge()** : Object<!-- END REF -->
 
 <!-- REF IMAPTransporterClass.expunge().Params -->
-| Parameter | Tipo   |    | Descripción                     |
+| Parameter | Type   |    | Description                     |
 | --------- | ------ |:--:| ------------------------------- |
-| Resultado | Objeto | <- | Status of the expunge operation |
+| Result    | Object | <- | Status of the expunge operation |
 <!-- END REF -->
 
-#### Descripción
+#### Description
 
 The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
 
@@ -750,17 +750,17 @@ The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->re
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
-#### Ejemplo
+#### Example
 
 ```4d
 var $options;$transporter;$boxInfo;$status : Object
@@ -803,14 +803,14 @@ $status:=$transporter.expunge()
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
-| Parameter | Tipo   |    | Descripción         |
+| Parameter | Type   |    | Description         |
 | --------- | ------ |:--:| ------------------- |
-| name      | Texto  | -> | Name of the mailbox |
-| Resultado | Objeto | <- | boxInfo object      |
+| name      | Text   | -> | Name of the mailbox |
+| Result    | Object | <- | boxInfo object      |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the mailbox *name*<!-- END REF -->. This function returns the same information as [`.selectBox()`](#selectbox) without changing the current mailbox.
 
@@ -821,15 +821,15 @@ In the optional *name* parameter, pass the name of the mailbox to access. The na
 
 The `boxInfo` object returned contains the following properties:
 
-| Propriedad | Tipo   | Descripción                                                         |
+| Property   | Type   | Description                                                         |
 | ---------- | ------ | ------------------------------------------------------------------- |
-| name       | texto  | Name of the mailbox                                                 |
+| name       | text   | Name of the mailbox                                                 |
 | mailCount  | number | Number of messages in the mailbox                                   |
 | mailRecent | number | Number of messages with the "recent" flag (indicating new messages) |
 
 
 
-#### Ejemplo
+#### Example
 
 ```4d
  var $transporter : 4D.IMAPTransporter
@@ -858,33 +858,33 @@ The `boxInfo` object returned contains the following properties:
 **.getBoxList**( { *parameters* : Object } ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getBoxList().Params -->
-| Parameter  | Tipo      |    | Descripción                   |
-| ---------- | --------- |:--:| ----------------------------- |
-| parameters | Objeto    | -> | Parameter object              |
-| Resultado  | Colección | <- | Collection of mailbox objects |
+| Parameter  | Type       |    | Description                   |
+| ---------- | ---------- |:--:| ----------------------------- |
+| parameters | Object     | -> | Parameter object              |
+| Result     | Collection | <- | Collection of mailbox objects |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.getBoxList()` function <!-- REF #IMAPTransporterClass.getBoxList().Summary -->returns a collection of mailboxes describing all of the available mailboxes<!-- END REF -->. This function allows you to locally manage the list of messages located on the IMAP mail server.
 
 In the optional `parameters` parameter, pass an object containing values to filter the returned mailboxes. You can pass:
 
-| Propriedad   | Tipo     | Descripción                                          |
-| ------------ | -------- | ---------------------------------------------------- |
-| isSubscribed | Booleano | <li>**True** to return only subscribed mailboxes</li><li> **False** to return all available mailboxes</li> |
+| Property     | Type    | Description                                          |
+| ------------ | ------- | ---------------------------------------------------- |
+| isSubscribed | Boolean | <li>**True** to return only subscribed mailboxes</li><li> **False** to return all available mailboxes</li> |
 
-#### Resultado
+#### Result
 
 Each object of the returned collection contains the following properties:
 
-| Propriedad       | Tipo     | Descripción                                                                                                          |
-| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| \[].name        | texto    | Name of the mailbox                                                                                                  |
-| \[].selectable  | booleano | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
-| \[].inferior    | booleano | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
-| \[].interesting | booleano | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
+| Property         | Type    | Description                                                                                                          |
+| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
+| \[].name        | text    | Name of the mailbox                                                                                                  |
+| \[].selectable  | boolean | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
+| \[].inferior    | boolean | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
+| \[].interesting | boolean | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
 
 
 If the account does not contain any mailboxes, an empty collection is returned.
@@ -892,7 +892,7 @@ If the account does not contain any mailboxes, an empty collection is returned.
 > * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the `.checkConnection( )` function is automatically called.
 
 
-#### Ejemplo
+#### Example
 
 
 ```4d
@@ -926,13 +926,13 @@ If the account does not contain any mailboxes, an empty collection is returned.
 **.getDelimiter()** : Text<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getDelimiter().Params -->
-| Parameter | Tipo  |    | Descripción                   |
-| --------- | ----- |:--:| ----------------------------- |
-| Resultado | Texto | <- | Hierarchy delimiter character |
+| Parameter | Type |    | Description                   |
+| --------- | ---- |:--:| ----------------------------- |
+| Result    | Text | <- | Hierarchy delimiter character |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.getDelimiter()` function <!-- REF #IMAPTransporterClass.getDelimiter().Summary -->returns the character used to delimit levels of hierarchy in the mailbox name<!-- END REF -->.
 
@@ -942,7 +942,7 @@ The delimiter is a character which can be used to:
 *   search higher or lower within the mailbox hierarchy
 
 
-#### Resultado
+#### Result
 
 Mailbox name delimiter character.
 > * If there is no open connection, `.getDelimiter()` will open a connection.
@@ -950,7 +950,7 @@ Mailbox name delimiter character.
 
 
 
-#### Ejemplo
+#### Example
 
 
 ```4d
@@ -984,16 +984,16 @@ Mailbox name delimiter character.
 **.getMail**( *msgNumber*: Integer { ; *options* : Object } ) : Object<br>**.getMail**( *msgID*: Text { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMail().Params -->
-| Parameter | Tipo   |    | Descripción                                      |
-| --------- | ------ |:--:| ------------------------------------------------ |
-| msgNumber | Entero | -> | Sequence number of the message                   |
-| msgID     | Texto  | -> | Unique ID of the message                         |
-| options   | Objeto | -> | Message handling instructions                    |
-| Resultado | Objeto | <- | [Email object](EmailObjectClass.md#email-object) |
+| Parameter | Type    |    | Description                                      |
+| --------- | ------- |:--:| ------------------------------------------------ |
+| msgNumber | Integer | -> | Sequence number of the message                   |
+| msgID     | Text    | -> | Unique ID of the message                         |
+| options   | Object  | -> | Message handling instructions                    |
+| Result    | Object  | <- | [Email object](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. This function allows you to locally handle the email contents.
 
@@ -1004,21 +1004,21 @@ In the first parameter, you can pass either:
 
 The optional *options* parameter allows you pass an object defining additional instructions for handling the message. The following properties are available:
 
-| Propriedad | Tipo     | Descripción                                                                                                                 |
-| ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | booleano | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Default value: True |
-| withBody   | booleano | Pass True to return the body of the message. If False, only the message header is returned. Default value: True             |
+| Property   | Type    | Description                                                                                                                 |
+| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen | boolean | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Default value: True |
+| withBody   | boolean | Pass True to return the body of the message. If False, only the message header is returned. Default value: True             |
 > * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
 > * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
 
 
 
-#### Resultado
+#### Result
 
 `.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object) with the following specific IMAP properties: *id*, *receivedAt*, and *size*.
 
-#### Ejemplo
+#### Example
 
 You want to get the message with ID = 1:
 
@@ -1060,17 +1060,17 @@ You want to get the message with ID = 1:
 **.getMails**( *ids* : Collection { ; *options* : Object } ) : Object<br>**.getMails**( *startMsg* : Integer ; *endMsg* : Integer { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMails().Params -->
-| Parameter | Tipo      |    | Descripción                                            |
-| --------- | --------- |:--:| ------------------------------------------------------ |
-| ids       | Colección | -> | Collection of message ID                               |
-| startMsg  | Entero    | -> | Sequence number of the first message                   |
-| endMsg    | Entero    | -> | Sequence number of the last message                    |
-| options   | Objeto    | -> | Message handling instructions                          |
-| Resultado | Objeto    | <- | Object containing:<br><ul><li>a collection of [Email objects](EmailObjectClass.md#email-object) and</li><li>a collection of IDs or numbers for missing messages, if any</li></ul> |
+| Parameter | Type       |    | Description                                            |
+| --------- | ---------- |:--:| ------------------------------------------------------ |
+| ids       | Collection | -> | Collection of message ID                               |
+| startMsg  | Integer    | -> | Sequence number of the first message                   |
+| endMsg    | Integer    | -> | Sequence number of the last message                    |
+| options   | Object     | -> | Message handling instructions                          |
+| Result    | Object     | <- | Object containing:<br><ul><li>a collection of [Email objects](EmailObjectClass.md#email-object) and</li><li>a collection of IDs or numbers for missing messages, if any</li></ul> |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
 
@@ -1098,27 +1098,27 @@ The optional *options* parameter allows you to define the parts of the messages 
 
 **Options**
 
-| Propriedad | Tipo     | Descripción                                                                                                                                                               |
-| ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | Booleano | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). Default value: True |
-| withBody   | Booleano | Pass True to return the body of the specified messages. If False, only the message headers are returned. Default value: True                                              |
+| Property   | Type    | Description                                                                                                                               |
+| ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen | Boolean | If True, the specified messages are marked as "seen" in the mailbox. If False, the messages are not marked as "seen". Default value: True |
+| withBody   | Boolean | Pass True to return the body of the specified messages. If False, only the message headers are returned. Default value: True              |
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated.
 > * If there is no open connection, `.getMails()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox).
 
 
-#### Resultado
+#### Result
 
 `.getMails()` returns an object containing the following collections:
 
 
-| Propriedad | Tipo      | Descripción                                                                                                                        |
-| ---------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| list       | Colección | Collection of [`Email` objects](EmailObjectClass.md#email-object). If no Email objects are found, an empty collection is returned. |
+| Property | Type       | Description                                                                                                                        |
+| -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| list     | Collection | Collection of [`Email` objects](EmailObjectClass.md#email-object). If no Email objects are found, an empty collection is returned. |
 
 |notFound |Collection| Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.|
 
 
-#### Ejemplo
+#### Example
 
 You want to retrieve the 20 most recent emails without changing their "seen" status:
 
@@ -1166,18 +1166,18 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Params -->
-| Parameter  | Tipo     |    | Descripción                                                                                   |
-| ---------- | -------- |:--:| --------------------------------------------------------------------------------------------- |
-| msgNumber  | Entero   | -> | Sequence number of the message                                                                |
-| msgID      | Texto    | -> | Unique ID of the message                                                                      |
-| updateSeen | Booleano | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
-| Resultado  | BLOB     | <- | Blob of the MIME string returned from the mail server                                         |
+| Parameter  | Type    |    | Description                                                                                   |
+| ---------- | ------- |:--:| --------------------------------------------------------------------------------------------- |
+| msgNumber  | Integer | -> | Sequence number of the message                                                                |
+| msgID      | Text    | -> | Unique ID of the message                                                                      |
+| updateSeen | Boolean | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
+| Result     | BLOB    | <- | Blob of the MIME string returned from the mail server                                         |
 <!-- END REF -->
 
 
 
 
-#### Descripción
+#### Description
 
 The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
 
@@ -1189,18 +1189,18 @@ In the first parameter, you can pass either:
 The optional *updateSeen* parameter allows you to specify if the message is marked as "seen" in the mailbox. You can pass:
 
 *   **True** - to mark the message as "seen" (indicating the message has been read)
-*   **False** - to leave the message's "seen" status untouched > * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message, > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated, > * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox( )`.
+*   **False** - to leave the message's "seen" status untouched
 > * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message,
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated,
 > * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox()`.
 
 
-#### Resultado
+#### Result
 
 `.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
 
 
-#### Ejemplo
+#### Example
 
 
 ```4d
@@ -1252,16 +1252,16 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 **.move**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.move**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.move().Params -->
-| Parameter      | Tipo      |    | Descripción                                      |
-| -------------- | --------- |:--:| ------------------------------------------------ |
-| msgsIDs        | Colección | -> | Collection of message unique IDs (strings)       |
-| allMsgs        | Entero    | -> | `IMAP all`: All messages in the selected mailbox |
-| destinationBox | Texto     | -> | Mailbox to receive moved messages                |
-| Resultado      | Objeto    | <- | Status of the move operation                     |
+| Parameter      | Type       |    | Description                                      |
+| -------------- | ---------- |:--:| ------------------------------------------------ |
+| msgsIDs        | Collection | -> | Collection of message unique IDs (strings)       |
+| allMsgs        | Integer    | -> | `IMAP all`: All messages in the selected mailbox |
+| destinationBox | Text       | -> | Mailbox to receive moved messages                |
+| Result         | Object     | <- | Status of the move operation                     |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.move()` function <!-- REF #IMAPTransporterClass.move().Summary -->moves the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
 
@@ -1279,19 +1279,19 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
 
 
-#### Ejemplo 1
+#### Example 1
 
 To move a selection of messages:
 
@@ -1318,7 +1318,7 @@ To move a selection of messages:
  $status:=$transporter.move($mailIds;"documents")
 ```
 
-#### Ejemplo 2
+#### Example 2
 
 To move all messages in the current mailbox:
 
@@ -1359,15 +1359,15 @@ To move all messages in the current mailbox:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.numToID().Params -->
-| Parameter | Tipo      |    | Descripción                          |
-| --------- | --------- |:--:| ------------------------------------ |
-| startMsg  | Entero    | -> | Sequence number of the first message |
-| endMsg    | Entero    | -> | Sequence number of the last message  |
-| Resultado | Colección | <- | Collection of unique IDs             |
+| Parameter | Type       |    | Description                          |
+| --------- | ---------- |:--:| ------------------------------------ |
+| startMsg  | Integer    | -> | Sequence number of the first message |
+| endMsg    | Integer    | -> | Sequence number of the last message  |
+| Result    | Collection | <- | Collection of unique IDs             |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.numToID()` function <!-- REF #IMAPTransporterClass.numToID().Summary -->converts the sequence numbers to IMAP unique IDs for the messages in the sequential range designated by *startMsg* and *endMsg*<!-- END REF --> in the currently selected mailbox.
 
@@ -1376,11 +1376,11 @@ In the *startMsg* parameter, pass an integer value corresponding to the number o
 In the *endMsg* parameter, pass an integer value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (*endMsg* <= 0), the last message of the mailbox will be used as the end of the sequence.
 
 
-#### Resultado
+#### Result
 
 The function returns a collection of strings (unique IDs).
 
-#### Ejemplo
+#### Example
 
 
 ```4d
@@ -1422,15 +1422,15 @@ The function returns a collection of strings (unique IDs).
 **.removeFlags**( *msgIDs* : Collection ; *keywords* :  Object ) : Object<br>**.removeFlags**( *msgIDs* : Text ; *keywords* :  Object ) : Object<br>**.removeFlags**( *msgIDs* : Longint ; *keywords* :  Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.removeFlags().Params -->
-| Parameter | Tipo      |    | Descripción                                                                                                                                              |
-| --------- | --------- |:--:| -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| msgIDs    | Colección | -> | Collection of strings: Message unique IDs (text)<br>Text: Unique ID of a message<br>Longint (IMAP all): All messages in the selected mailbox |
-| keywords  | Objeto    | -> | Keyword flags to remove                                                                                                                                  |
-| Resultado | Objeto    | <- | Status of the removeFlags operation                                                                                                                      |
+| Parameter | Type       |    | Description                                                                                                                                              |
+| --------- | ---------- |:--:| -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| msgIDs    | Collection | -> | Collection of strings: Message unique IDs (text)<br>Text: Unique ID of a message<br>Longint (IMAP all): All messages in the selected mailbox |
+| keywords  | Object     | -> | Keyword flags to remove                                                                                                                                  |
+| Result    | Object     | <- | Status of the removeFlags operation                                                                                                                      |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.removeFlags()` function <!-- REF #IMAPTransporterClass.removeFlags().Summary -->removes flags from the `msgIDs` for the specified `keywords`<!-- END REF -->.
 
@@ -1440,19 +1440,19 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constant | Valor | Comment                                     |
+    | Constant | Value | Comment                                     |
     | -------- | ----- | ------------------------------------------- |
     | IMAP all | 1     | Select all messages in the selected mailbox |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. You can pass any of the following keywords:
 
-| Parameter | Tipo     | Descripción                                         |
-| --------- | -------- | --------------------------------------------------- |
-| $draft    | Booleano | True to remove the "draft" flag from the message    |
-| $seen     | Booleano | True to remove the "seen" flag from the message     |
-| $flagged  | Booleano | True to remove the "flagged" flag from the message  |
-| $answered | Booleano | True to remove the "answered" flag from the message |
-| $deleted  | Booleano | True to remove the "deleted" flag from the message  |
+| Parameter | Type    | Description                                         |
+| --------- | ------- | --------------------------------------------------- |
+| $draft    | Boolean | True to remove the "draft" flag from the message    |
+| $seen     | Boolean | True to remove the "seen" flag from the message     |
+| $flagged  | Boolean | True to remove the "flagged" flag from the message  |
+| $answered | Boolean | True to remove the "answered" flag from the message |
+| $deleted  | Boolean | True to remove the "deleted" flag from the message  |
 
 Note that False values are ignored.
 
@@ -1461,17 +1461,17 @@ Note that False values are ignored.
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
-#### Ejemplo
+#### Example
 
 ```4d
 var $options;$transporter;$boxInfo;$status : Object
@@ -1510,15 +1510,15 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 **.renameBox**( *currentName* : Text ; *newName* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.renameBox().Params -->
-| Parameter   | Tipo   |    | Descripción                      |
+| Parameter   | Type   |    | Description                      |
 | ----------- | ------ |:--:| -------------------------------- |
-| currentName | Texto  | -> | Name of the current mailbox      |
-| newName     | Texto  | -> | New mailbox name                 |
-| Resultado   | Objeto | <- | Status of the renaming operation |
+| currentName | Text   | -> | Name of the current mailbox      |
+| newName     | Text   | -> | New mailbox name                 |
+| Result      | Object | <- | Status of the renaming operation |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.renameBox()` function <!-- REF #IMAPTransporterClass.renameBox().Summary -->changes the name of a mailbox on the IMAP server<!-- END REF -->. Attempting to rename a mailbox from a mailbox name that does not exist or to a mailbox name that already exists will generate an error.
 
@@ -1531,17 +1531,17 @@ Pass the new name for the mailbox in the `newName` parameter.
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
-#### Ejemplo
+#### Example
 
 To to rename your “Invoices” mailbox to “Bills”:
 
@@ -1594,20 +1594,20 @@ End if
 **.searchMails**( *searchCriteria* : Text ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.searchMails().Params -->
-| Parameter      | Tipo      |    | Descripción                   |
-| -------------- | --------- |:--:| ----------------------------- |
-| searchCriteria | Texto     | -> | Search criteria               |
-| Resultado      | Colección | <- | Collection of message numbers |
+| Parameter      | Type       |    | Description                   |
+| -------------- | ---------- |:--:| ----------------------------- |
+| searchCriteria | Text       | -> | Search criteria               |
+| Result         | Collection | <- | Collection of message numbers |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 > This function is based upon the specification for the [IMAP protocol](https://en.wikipedia.org/wiki/Internet_Message_Access_Protocol).
 
 The `.searchMails()` function <!-- REF #IMAPTransporterClass.searchMails().Summary -->searches for messages that match the given *searchCriteria* in the current mailbox<!-- END REF -->. *searchCriteria* consists of one or more search keys.
 
-*searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. Por ejemplo:
+*searchCriteria* is a text parameter listing one or more search keys (see [Authorized search-keys](#authorized-search-keys) below) associated or not with values to look for. A search key may be a single or multiple items. For example:
 
 ```
 SearchKey1 = FLAGGED
@@ -1660,11 +1660,11 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 Search-keys may request the value to search for:
 
-- **Search-keys with a field-name value**: the field-name is the name of a header field. Example: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
+- **Search-keys with a date value**: the date is a string that must be formatted as follows: *date-day+"-"+date-month+"-"+date-year* where date-day indicates the number of the day of the month (max. 2 characters), date-month indicates the name of the month (Jan/Feb/Mar/Apr/May/Jun/Jul/Aug/Sep/Oct/Dec) and date-year indicates the year (4 characters). Example: `searchCriteria = SENTBEFORE 1-Feb-2020` (a date does not usually need to be quoted since it does not contain any special characters)
 
 - **Search-keys with a string value**: the string may contain any character and must be quoted. If the string does not contain any special characters, like the space character for instance, it does not need to be quoted. Quoting such strings will ensure that your string value will be correctly interpreted. Example: `searchCriteria = FROM "SMITH"` For all search keys that use strings, a message matches the key if the string is a substring of the field. Matching is not case-sensitive.
 
-- **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces. Example: `searchCriteria = KEYWORD \Flagged \Draft`
+- **Search-keys with a field-name value**: the field-name is the name of a header field. Example: `searchCriteria = HEADER CONTENT-TYPE "MIXED"`
 
 - **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces. Example: `searchCriteria = KEYWORD \Flagged \Draft`
 
@@ -1707,7 +1707,7 @@ Search-keys may request the value to search for:
 **LARGER** <n>: Messages with a size larger than the specified number of bytes.  
 **SMALLER** <n>: Messages with a size smaller than the specified number of bytes.  
 **NOT** <search-key>: Messages that do not match the specified search key.  
-**O** <search-key1> <search-key2>: Messages that match either search key.  
+**OR** <search-key1> <search-key2>: Messages that match either search key.  
 
 
 <!-- END REF -->
@@ -1726,15 +1726,15 @@ Search-keys may request the value to search for:
 **.selectBox**( *name* : Text { ; *state* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.selectBox().Params -->
-| Parameter | Tipo   |    | Descripción           |
-| --------- | ------ |:--:| --------------------- |
-| name      | Texto  | -> | Name of the mailbox   |
-| state     | Entero | -> | Mailbox access status |
-| Resultado | Objeto | <- | boxInfo object        |
+| Parameter | Type    |    | Description           |
+| --------- | ------- |:--:| --------------------- |
+| name      | Text    | -> | Name of the mailbox   |
+| state     | Integer | -> | Mailbox access status |
+| Result    | Object  | <- | boxInfo object        |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the `name` mailbox as the current mailbox<!-- END REF -->. This function allows you to retrieve information about the mailbox.
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
@@ -1743,10 +1743,10 @@ In the `name` parameter, pass the name of the mailbox to access. The name repres
 
 The optional `state` parameter defines the type of access to the mailbox. The possible values are:
 
-| Constant              | Valor | Comment                                                                                                                                                              |
-| --------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IMAP read only state  | 1     | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                |
-| IMAP read write state | 0     | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). Default value: |
+| Constant              | Value | Comment                                                                                                                                                               |
+| --------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IMAP read only state  | 1     | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                 |
+| IMAP read write state | 0     | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). (Default value) |
 > * The function generates an error and returns **Null** if name designates a non-existing mailbox.
 > * If there is no open connection, `.selectBox()` will open a connection.
 > * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the [`.checkConnection()`](#checkconnection) function is automatically called.
@@ -1755,14 +1755,14 @@ The optional `state` parameter defines the type of access to the mailbox. The po
 
 The `boxInfo` object returned contains the following properties:
 
-| Propriedad | Tipo   | Descripción                               |
+| Property   | Type   | Description                               |
 | ---------- | ------ | ----------------------------------------- |
-| name       | Texto  | Name of the mailbox                       |
+| name       | Text   | Name of the mailbox                       |
 | mailCount  | number | Number of messages in the mailbox         |
 | mailRecent | number | Number of messages with the "recent" flag |
 
 
-#### Ejemplo
+#### Example
 
 
 ```4d
@@ -1794,14 +1794,14 @@ The `boxInfo` object returned contains the following properties:
 **.subscribe**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.subscribe().Params -->
-| Parameter | Tipo   |    | Descripción                       |
+| Parameter | Type   |    | Description                       |
 | --------- | ------ |:--:| --------------------------------- |
-| name      | Texto  | -> | Name of the mailbox               |
-| Resultado | Objeto | <- | Status of the subscribe operation |
+| name      | Text   | -> | Name of the mailbox               |
+| Result    | Object | <- | Status of the subscribe operation |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -->allows adding or removing of the specified mailbox to/from the IMAP server’s set of “subscribed” mailboxes<!-- END REF -->. As such, you can choose to narrow down a large list of available mailboxes by subscribing to those you usually want to see.
 
@@ -1811,18 +1811,18 @@ In the `name` parameter, pass the name of the mailbox to add (subscribe) to your
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
 
-#### Ejemplo
+#### Example
 
 To subscribe to the "Atlas Corp” mailbox in the "Bills" hierarchy:
 
@@ -1867,14 +1867,14 @@ End if
 **.unsubscribe**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.unsubscribe().Params -->
-| Parameter | Tipo   |    | Descripción                         |
+| Parameter | Type   |    | Description                         |
 | --------- | ------ |:--:| ----------------------------------- |
-| name      | Texto  | -> | Name of the mailbox                 |
-| Resultado | Objeto | <- | Status of the unsubscribe operation |
+| name      | Text   | -> | Name of the mailbox                 |
+| Result    | Object | <- | Status of the unsubscribe operation |
 <!-- END REF -->
 
 
-#### Descripción
+#### Description
 
 The `.unsubscribe()` function <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->removes a mailbox from a set of subscribed mailboxes<!-- END REF -->. This allows you reduce the number of mailboxes you usually see.
 
@@ -1884,18 +1884,18 @@ In the `name` parameter, pass the name of the mailbox to remove (unsubscribe) fr
 
 The function returns an object describing the IMAP status:
 
-| Propriedad |                         | Tipo      | Descripción                                                                              |
-| ---------- | ----------------------- | --------- | ---------------------------------------------------------------------------------------- |
-| success    |                         | Booleano  | True if the operation is successful, False otherwise                                     |
-| statusText |                         | Texto     | Status message returned by the IMAP server, or last error returned in the 4D error stack |
-| errors     |                         | Colección | 4D error stack (not returned if a IMAP server response is received)                      |
-|            | \[].errcode            | Número    | 4D error code                                                                            |
-|            | \[].message            | Texto     | Description of the 4D error                                                              |
-|            | \[].componentSignature | Texto     | Signature of the internal component which returned the error                             |
+| Property   |                         | Type       | Description                                                                              |
+| ---------- | ----------------------- | ---------- | ---------------------------------------------------------------------------------------- |
+| success    |                         | Boolean    | True if the operation is successful, False otherwise                                     |
+| statusText |                         | Text       | Status message returned by the IMAP server, or last error returned in the 4D error stack |
+| errors     |                         | Collection | 4D error stack (not returned if a IMAP server response is received)                      |
+|            | \[].errcode            | Number     | 4D error code                                                                            |
+|            | \[].message            | Text       | Description of the 4D error                                                              |
+|            | \[].componentSignature | Text       | Signature of the internal component which returned the error                             |
 
 
 
-#### Ejemplo
+#### Example
 
 To unsubscribe from the "Atlas Corp” mailbox in the "Bills" hierarchy:
 
