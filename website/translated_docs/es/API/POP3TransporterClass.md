@@ -228,10 +228,10 @@ The `.getBoxInfo()` function <!-- REF #POP3TransporterClass.getBoxInfo().Summary
 
 The `boxInfo` object returned contains the following properties:
 
-| Propriedad | Tipo   | Descripción                       |
-| ---------- | ------ | --------------------------------- |
-| mailCount  | Número | Number of messages in the mailbox |
-| size       | Número | Message size in bytes             |
+| Property  | Tipo   | Descripción                       |
+| --------- | ------ | --------------------------------- |
+| mailCount | Número | Number of messages in the mailbox |
+| size      | Número | Message size in bytes             |
 
 
 
@@ -343,10 +343,10 @@ In *msgNumber*, pass the number of the message to retrieve. This number is retur
 
 The `mailInfo` object returned contains the following properties:
 
-| Propriedad | Tipo   | Descripción              |
-| ---------- | ------ | ------------------------ |
-| size       | Número | Message size in bytes    |
-| id         | Texto  | Unique ID of the message |
+| Property | Tipo   | Descripción              |
+| -------- | ------ | ------------------------ |
+| size     | Número | Message size in bytes    |
+| id       | Texto  | Unique ID of the message |
 
 The method returns **Null** if:
 
@@ -403,7 +403,7 @@ The `.getMailInfoList()` function <!-- REF #POP3TransporterClass.getMailInfoList
 
 Each `mailInfo` object in the returned collection contains the following properties:
 
-| Propriedad   | Tipo   | Descripción                                                        |
+| Property     | Tipo   | Descripción                                                        |
 | ------------ | ------ | ------------------------------------------------------------------ |
 | \[ ].size   | Número | Message size in bytes                                              |
 | \[ ].number | Número | Message number                                                     |
