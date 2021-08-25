@@ -53,7 +53,7 @@ Entity selections can be created from existing selections using various function
 | Parameter  | Tipo               |    | Descripción                                                                                 |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------------------- |
 | dsTable    | Tabla              | -> | Table in the 4D database whose current selection will be used to build the entity selection |
-| parámetros | Objeto             | -> | Build option: context                                                                       |
+| parámetros | Object             | -> | Build option: context                                                                       |
 | Resultado  | 4D.EntitySelection | <- | Entity selection matching the dataclass related to the given table                          |
 <!-- END REF -->
 
@@ -68,9 +68,9 @@ If the *dsTable* is not exposed in [`ds`](API/DataStoreClass.md#ds), an error is
 
 In the optional *settings* parameter, you can pass an object containing the following property:
 
-| Property | Tipo  | Descripción                                                                                                       |
-| -------- | ----- | ----------------------------------------------------------------------------------------------------------------- |
-| context  | Texto | Label for the [optimization context](ORDA/entities.md#clientserver-optimization) applied to the entity selection. |
+| Property | Tipo | Descripción                                                                                                       |
+| -------- | ---- | ----------------------------------------------------------------------------------------------------------------- |
+| context  | Text | Label for the [optimization context](ORDA/entities.md#clientserver-optimization) applied to the entity selection. |
 
 
 #### Ejemplo
