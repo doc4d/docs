@@ -427,7 +427,7 @@
         "title": "JSON プロパティリスト"
       },
       "FormEditor/markers": {
-        "title": "Markers"
+        "title": "マーカー"
       },
       "FormEditor/menu": {
         "title": "メニュー"
@@ -869,7 +869,7 @@
       "ORDA": "ORDA",
       "Class API Reference": "クラス API リファレンス",
       "Access Rights": "アクセス権限",
-      "Preferences": "Preferences",
+      "Preferences": "環境設定",
       "Administration": "管理",
       "MSC": "MSC",
       "Backup and Restore": "バックアップと復元",
@@ -914,7 +914,7 @@
     "Access Rights|no description given": "アクセス権限",
     "Description of log files|no description given": "Description of log files",
     "Command Line Interface|no description given": "コマンドライン・インターフェース",
-    "Preferences|no description given": "Preferences",
+    "Preferences|no description given": "環境設定",
     "Getting started|no description given": "はじめに",
     "Core Development|no description given": "コア開発",
     "Administration|no description given": "管理",
