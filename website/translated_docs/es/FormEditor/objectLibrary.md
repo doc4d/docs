@@ -4,26 +4,26 @@ title: Librerías de objetos
 ---
 
 
-You can use object librairies in your forms. An object library offers a collection of preconfigured objects that can be used in your forms by simple or copy-paste or drag-and-drop.
+Puede utilizar librerías de objetos en sus formularios. Una librería de objetos ofrece una colección de objetos preconfigurados que pueden ser utilizados en sus formularios mediante un simple copiar y pegar o arrastrar y soltar.
 
-4D proposes two kinds of object libraries:
+4D propone dos tipos de librerías de objetos:
 
-- a standard, preconfigured object library, available in all your projects.
-- custom object librairies, that you can use to store your favorite form objects or full project forms.
+- una librería de objetos estándar y preconfigurada, disponible en todos sus proyectos.
+- librerías de objetos personalizadas, que puede utilizar para almacenar sus objetos formularios favoritos o formularios proyecto completos.
 
 
 ## Utilización de la librería de objetos estándar
 
-The standard object library is available from the Form editor: click on the last button of the toolbar:  
+La librería de objetos estándar está disponible en el editor de formularios: haga clic en el último botón de la barra de herramientas:  
 ![](assets/en/FormEditor/library1.png)
 
-The library is displayed in a separate window:
+La librería se muestra en una ventana aparte:
 
 ![](assets/en/FormEditor/library2.png)
 
-The window has the following main features:
+La ventana tiene las siguientes características principales:
 
-- Preview area with tips: The central area displays a preview of each object. You can hover on an object to obtain information about the object in a tip.
+- Área de vista previa con mensajes de ayuda: el área central muestra una vista previa de cada objeto. You can hover on an object to obtain information about the object in a tip.
 - You can filter the window contents by using the **Categories** menu: ![](assets/en/FormEditor/library3.png)
 - To use an object from the library to your form, you can either:
     - right-click on an object and select **Copy** in the contextual menu
