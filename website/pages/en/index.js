@@ -59,6 +59,7 @@ class Index extends React.Component {
     webAdmin: <translate>Web Administration</translate>,
 	cs: <translate>Client/Server</translate>,
     tls: <translate>TLS Protocol (HTTPS)</translate>,
+	
     dataExplorer: <translate>Web Data Explorer</translate>,
 	langRef: <translate>Language Reference (4D Doc Center)</translate>,
 	  users: <translate>Access Rights</translate>,
@@ -129,7 +130,8 @@ class Index extends React.Component {
                   title: <translate>Web applications</translate>,
                 },
                 {
-                  content: `[4D for iOS](https://developer.4d.com/4d-for-ios/docs/${this.props.language}/overview.html)`,
+                  content: `[Go Mobile with 4D](https://developer.4d.com/go-mobile)<br>
+				  [4D for iOS (archive)](https://developer.4d.com/4d-for-ios/docs/${this.props.language}/overview.html)`,
                   image: `${siteConfig.baseUrl}img/illu_MobileApplication.png`,
                   imageAlign: 'top',
                   imageAlt: 'Mobile',
