@@ -249,7 +249,7 @@ End if
 <!-- REF #SessionClass.isGuest().Params -->
 | Paramètres | Type    |    | Description                                     |
 | ---------- | ------- |:--:| ----------------------------------------------- |
-| Résultat   | Booléen | <- | True if session is a Guest one, False otherwise |
+| Résultat   | Boolean | <- | True if session is a Guest one, False otherwise |
 <!-- END REF -->
 
 #### Description
