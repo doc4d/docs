@@ -193,7 +193,7 @@ Supported properties depend on the list box type.
 | [Vertical Scroll Bar](properties_Appearance.md#vertical-scroll-bar)                          | X              | X                  | X                                       |
 | [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing)                             | X              | X                  | X                                       |
 | [Visibility](properties_Display.md#visibility)                                               | X              | X                  | X                                       |
-| [Width](properties_CoordinatesAndSizing.md#width)                                            | X              | X                  | X                                       |
+| [Ancho](properties_CoordinatesAndSizing.md#width)                                            | X              | X                  | X                                       |
 
 
 > List box columns, headers and footers support specific properties.
