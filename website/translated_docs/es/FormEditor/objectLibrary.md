@@ -23,24 +23,24 @@ La librería se muestra en una ventana aparte:
 
 La ventana tiene las siguientes características principales:
 
-- Área de vista previa con mensajes de ayuda: el área central muestra una vista previa de cada objeto. You can hover on an object to obtain information about the object in a tip.
-- You can filter the window contents by using the **Categories** menu: ![](assets/en/FormEditor/library3.png)
-- To use an object from the library to your form, you can either:
-    - right-click on an object and select **Copy** in the contextual menu
-    - or drag and drop the object from the library The object is then added to the form.
+- Área de vista previa con mensajes de ayuda: el área central muestra una vista previa de cada objeto. Puede pasar el ratón por encima de un objeto para obtener información sobre el mismo en un mensaje de ayuda.
+- Puede filtrar el contenido de la ventana utilizando el menú **Categorías**: ![](assets/en/FormEditor/library3.png)
+- Para utilizar un objeto de la librería en su formulario, puede:
+    - hacer clic derecho en un objeto y seleccionar **Copiar** en el menú contextual
+    - o arrastrar y soltar el objeto desde la librería El objeto se añade al formulario.
 
-This library is read-only. If you want to edit default objects or create your own library of preconfigured objects or project forms, you need to create a custom object library (see below).
+Esta librería es de sólo lectura. Si desea editar objetos por defecto o crear su propia librería de objetos preconfigurados o formularios proyecto, deberá crear una librería de objetos personalizada (ver abajo).
 
-All objects proposed in the standard object library are described on [this section on doc.4d.com](https://doc.4d.com/4Dv17R6/4D/17-R6/Library-objects.200-4354586.en.html).
+Todos los objetos propuestos en la librería de objetos estándar se describen en [esta sección en doc.4d.com](https://doc.4d.com/4Dv17R6/4D/17-R6/Library-objects.200-4354586.en.html).
 
 
 ## Crear y utilizar librerías de objetos personalizadas
 
-You can create and use custom object libraries in 4D. A custom object library is a 4D project where you can store your favorite objects (buttons, texts, pictures, etc.) You can then reuse these objects in different forms and different projects.
+Puede crear y utilizar librerías de objetos personalizadas en 4D. Una librería de objetos personalizada es un proyecto 4D donde puede almacenar sus objetos favoritos (botones, textos, imágenes, etc.) A continuación, puede reutilizar estos objetos en diferentes formularios y proyectos.
 
-Objects are stored with all their properties, including their object methods. Libraries are put together and used by simple drag-and-drop or copy-paste operations.
+Los objetos se almacenan con todas sus propiedades, incluidos sus métodos. Las librerías se arman y utilizan mediante simples operaciones de arrastrar y soltar o copiar y pegar.
 
-Using libraries, you can build form object backgrounds grouped by graphic families, by behavior, etc.
+Mediante el uso de librerías, se pueden construir fondos de objetos de formulario agrupados por familias gráficas, por funcionalidades, etc.
 
 
 ### Crear una librería de objetos
@@ -64,7 +64,7 @@ Para abrir una librería de objetos personalizada, seleccione el comando **Abrir
 De hecho, las librerías de objetos personalizadas son proyectos 4D clásicos. Sólo se exponen las siguientes partes de un proyecto cuando se abre como librería:
 
 - formularios proyecto
-- form pages 1
+- páginas formulario 1
 
 
 ### Crear una librería de objetos
