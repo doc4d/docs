@@ -3,39 +3,39 @@ id: dropdownListOverview
 title: ドロップダウンリスト
 ---
 
-Drop-down lists are form objects that allow the user to select from a list. You manage the items displayed in the drop-down list using an object, an array, a choice list, or a standard action.
+ドロップダウンリストは、ユーザーがリストから選択をおこなえるようにするためのフォームオブジェクトです。 ドロップダウンリストに表示される項目は、オブジェクト、配列、選択リスト、または標準アクションを用いて管理します。
 
 macOS においては、ドロップダウンリストは "ポップアップメニュー" とも呼ばれます。 どちらの名前も同じタイプのオブジェクトを指します。 次の例に示すように、ドロップダウンリストの外観はプラットフォームによって若干異なります:
 
 ![](assets/en/FormObjects/popupDropdown_appearance.png)
 
 
-## Drop-down list types
+## ドロップダウンリストの種類
 
-You can create different types of drop-down lists with different features. To define a type, select the appropriate **Expression Type** and **Data Type** values in the Property list, or use their JSON equivalent.
+それぞれに特有の機能を持つ、複数タイプのドロップダウンリストを作成することができます。 タイプを定義するには、プロパティリストで適切な **式の型** と **データタイプ** の値を選択するか、それらに相当する JSON を指定します。
 
-| タイプ                            | Features                                         | 式の型/式タイプ | データタイプ                       | JSON definition                                                                                                                                               |
-| ------------------------------ | ------------------------------------------------ | -------- | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| オブジェクト                         | Built upon a collection                          | オブジェクト   | Numeric, Text, Date, or Time | `dataSourceTypeHint: object` + `numberFormat: <format>` or `textFormat: <format>` or `dateFormat: <format>` or `timeFormat: <format>` |
-| 配列                             | Built upon an array                              | 配列       | Numeric, Text, Date, or Time | `dataSourceTypeHint: arrayNumber` or `arrayText` or `arrayDate` or `arrayTime`                                                                                |
-| Choice list saved as value     | Built upon a choice list (standard)              | List     | Selected item value          | `dataSourceTypeHint: text` + `saveAs: value`                                                                                                                  |
-| Choice list saved as reference | Built upon a choice list. Item position is saved | List     | Selected item reference      | `dataSourceTypeHint: integer` + `saveAs: reference`                                                                                                           |
-| Hierarchical choice list       | Can display hierarchical contents                | List     | List reference               | `dataSourceTypeHint: integer`                                                                                                                                 |
-| 標準アクション                        | Automatically built by the action                | *any*    | *any except List reference*  | any definition + `action: <action>` (+ `focusable: false` for actions applying to other areas)                                                          |
+| タイプ           | 機能                   | 式の型/式タイプ | データタイプ                        | JSON 定義                                                                                                                                                          |
+| ------------- | -------------------- | -------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| オブジェクト        | コレクションに基づく           | オブジェクト   | Numeric, Text, Date, または Time | `dataSourceTypeHint: object` + `numberFormat: <format>` または `textFormat: <format>` または `dateFormat: <format>` または `timeFormat: <format>` |
+| 配列            | 配列に基づく               | 配列       | Numeric, Text, Date, または Time | `dataSourceTypeHint: arrayNumber` または `arrayText` または `arrayDate` または `arrayTime`                                                                                |
+| 選択リスト (値を保存)  | 選択リストに基づく (標準)       | リスト      | 選択された項目値                      | `dataSourceTypeHint: text` + `saveAs: value`                                                                                                                     |
+| 選択リスト (参照を保存) | 選択リストに基づく (項目の位置を保存) | リスト      | 選択された項目参照                     | `dataSourceTypeHint: integer` + `saveAs: reference`                                                                                                              |
+| 階層型選択リスト      | 階層型の表示が可能            | リスト      | リスト参照                         | `dataSourceTypeHint: integer`                                                                                                                                    |
+| 標準アクション       | アクションにより自動生成         | *any*    | *リスト参照以外*                     | いずれかの定義 + `action: <action>` (他エリアに適用されるアクションの場合は + `focusable: false`)                                                                                    |
 
 
 
-## Handling drop-down lists
+## ドロップダウンリストの使い方
 
 ### オブジェクトの使用
 
-An [object](Concepts/dt_object.md) encapsulating a [collection](Concepts/dt_collection) can be used as the data source of a drop-down list. このオブジェクトには、次のプロパティが格納されていなくてはなりません:
+ドロップダウンリストのデータソースとして、[コレクション](Concepts/dt_collection) を内包した [オブジェクト](Concepts/dt_object.md) を使用できます。 このオブジェクトには、次のプロパティが格納されていなくてはなりません:
 
-| プロパティ          | タイプ             | 説明                                                                                                                                                                                                          |
-| -------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `values`       | コレクション          | 必須 - スカラー値のコレクション。 すべての同じ型の値でなくてはなりません。 サポートされている型:<li>文字列</li><li>数値</li><li>日付</li><li>時間</li>If empty or not defined, the drop-down list is empty |
-| `index`        | number          | Index of the currently selected item (value between 0 and `collection.length-1`). If you set -1, `currentValue` is displayed as a placeholder string                                                        |
-| `currentValue` | Collection要素と同じ | Currently selected item (used as placeholder value if set by code)                                                                                                                                          |
+| プロパティ          | タイプ             | 説明                                                                                                                                                                                   |
+| -------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `values`       | コレクション          | 必須 - スカラー値のコレクション。 すべての同じ型の値でなくてはなりません。 サポートされている型:<li>文字列</li><li>数値</li><li>日付</li><li>時間</li>空、または未定義の場合、ドロップダウンリストは空になります |
+| `index`        | number          | 選択項目のインデックス (0 と `collection.length-1` の間の値)。 -1 に設定すると、プレースホルダー文字列として currentValue が表示されます。                                                                                         |
+| `currentValue` | Collection要素と同じ | 選択中の項目 (コードにより設定した場合はプレースホルダーとして使用される)                                                                                                                                               |
 
 オブジェクトにその他のプロパティが含まれている場合、それらは無視されます。
 
