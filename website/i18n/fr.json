@@ -220,7 +220,7 @@
         "title": "Debugging from remote machines"
       },
       "Desktop/building": {
-        "title": "Générer un package projet"
+        "title": "Générateur d'application"
       },
       "Desktop/clientServer": {
         "title": "Client/Server Management"
@@ -896,7 +896,7 @@
       "Form Object Properties": "Propriétés des objets formulaire",
       "Form Events": "Evénements formulaire",
       "Menus": "Menus",
-      "Build application": "Build application"
+      "Build Application": "Générateur d'application"
     }
   },
   "pages-strings": {
