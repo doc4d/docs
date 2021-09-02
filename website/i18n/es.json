@@ -205,7 +205,7 @@
         "title": "Variables"
       },
       "Desktop/building": {
-        "title": "Building a project package"
+        "title": "Generador de aplicaciones"
       },
       "Desktop/clientServer": {
         "title": "Client/Server Management"
@@ -880,7 +880,7 @@
       "Form Object Properties": "Propiedades de los objetos formulario",
       "Form Events": "Eventos formulario",
       "Menus": "Menús",
-      "Build application": "Build application"
+      "Build Application": "Generador de aplicaciones"
     }
   },
   "pages-strings": {
