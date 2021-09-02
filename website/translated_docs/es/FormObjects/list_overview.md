@@ -81,7 +81,7 @@ As with other object property management commands, it is possible to use the “
 
 ## Comandos genéricos utilizables con listas jerárquicas
 
-It is possible to modify the appearance of a hierarchical list form objects using several generic 4D commands. You can pass to these commands either the object name of the hierarchical list (using the * parameter), or its variable name (containing the ListRef value):
+Es posible modificar la apariencia de una lista jerárquica en un formulario utilizando varios comandos 4D genéricos. Puede pasar a estos comandos el nombre del objeto de la lista jerárquica (utilizando el parámetro *), o su nombre de variable (que contiene el valor ListRef):
 
 - `OBJECT SET FONT`
 - `OBJECT SET FONT STYLE`
