@@ -81,7 +81,7 @@ As with other object property management commands, it is possible to use the “
 
 ## Comandos genéricos utilizables con listas jerárquicas
 
-It is possible to modify the appearance of a hierarchical list form objects using several generic 4D commands. You can pass to these commands either the object name of the hierarchical list (using the * parameter), or its variable name (containing the ListRef value):
+Es posible modificar la apariencia de una lista jerárquica en un formulario utilizando varios comandos 4D genéricos. Puede pasar a estos comandos el nombre del objeto de la lista jerárquica (utilizando el parámetro *), o su nombre de variable (que contiene el valor ListRef):
 
 - `OBJECT SET FONT`
 - `OBJECT SET FONT STYLE`
@@ -93,24 +93,24 @@ It is possible to modify the appearance of a hierarchical list form objects usin
 - `OBJECT SET SCROLL POSITION`
 - `OBJECT SET RGB COLORS`
 
-> Reminder: Except `OBJECT SET SCROLL POSITION`, these commands modify all the representations of the same list, even if you only specify a list via its object name.
+> Recordatorio: excepto `OBJECT SET SCROLL POSITION`, estos comandos modifican todas las representaciones de una misma lista, aunque sólo se especifique una lista a través de su nombre de objeto.
 
 ## Prioridad de los comandos de propiedad
 
-Certain properties of hierarchical lists (for example, the **Enterable** attribute or the color) can be set in different ways: in the form properties, via a command of the “Object Properties” theme or via a command of the “Hierarchical Lists” theme. When all three of these means are used to set list properties, the following order of priority is applied:
+Ciertas propiedades de las listas jerárquicas (por ejemplo, el atributo **editable** o el color) pueden definirse de diferentes maneras: en las propiedades del formulario, mediante un comando del tema "Propiedades de los objetos" o mediante un comando del tema "Lista jerárquica". Cuando se utilizan los tres medios para definir las propiedades de la lista, se aplica el siguiente orden de prioridad:
 
-1. Commands of the “Hierarchical Lists” theme
-2. Generic object property commands
-3. Form property
+1. Comandos del tema "Lista jerárquica"
+2. Comandos genéricos de propiedad de objeto
+3. Propiedad formulario
 
-This principle is applied regardless of the order in which the commands are called. If an item property is modified individually via a hierarchical list command, the equivalent object property command will have no effect on this item even if it is called subsequently. For example, if the color of an item is modified via the `SET LIST ITEM PROPERTIES` command, the `OBJECT SET COLOR` command will have no effect on this item.
+Este principio se aplica independientemente del orden de llamada de los comandos. Si una propiedad de un elemento se modifica individualmente a través de un comando de lista jerárquica, el comando de propiedad de objeto equivalente no tendrá ningún efecto sobre este elemento, incluso si se llama posteriormente. Por ejemplo, si el color de un elemento se modifica a través del comando `SET LIST ITEM PROPERTIES`, el comando `OBJECT SET COLOR` no tendrá ningún efecto sobre este elemento.
 
 
 ## Gestión de los elementos por posición o por referencia
 
-You can usually work in two ways with the contents of hierarchical lists: by position or by reference.
+Normalmente se puede trabajar de dos maneras con el contenido de las listas jerárquicas: por posición o por referencia.
 
-- When you work by position, 4D bases itself on the position in relation to the items of the list displayed on screen in order to identify them. The result will differ according to whether or not certain hierarchical items are expanded or collapsed. Note that in the case of multiple representations, each form object has its own configuration of expanded/collapsed items.
+- Cuando se trabaja por posición, 4D se basa en la posición con respecto a los elementos de la lista que aparecen en pantalla para identificarlos. El resultado será diferente según se expandan o colapsen determinados elementos jerárquicos. Tenga en cuenta que en el caso de las representaciones múltiples, cada objeto formulario tiene su propia configuración de elementos expandidos/colapsados.
 - When you work by reference, 4D bases itself on the *itemRef* ID number of the list items. Each item can thus be specified individually, regardless of its position or its display in the hierarchical list.
 
 
