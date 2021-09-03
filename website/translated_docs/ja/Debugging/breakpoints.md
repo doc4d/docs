@@ -30,32 +30,32 @@ title: ブレークポイントとキャッチコマンド
 
 ### ブレークポイントプロパティ
 
-You can edit the behavior of a breakpoint using the Breakpoint Properties window:
+ブレークポイントプロパティウィンドウを使って、ブレークポイントのふるまいを変更することができます:
 
 ![breakpoint-properties](assets/en/Debugging/breakpoint-properties.png)
 
-This window is available from the Method Editor or the [Source Code Pane](debugger.md#source-code-pane). You can:
+このウィンドウはメソッドエディターおよびデバッガーの [ソースコードエリア](debugger.md#ソースコードエリア) からアクセスします。 次の操作がおこなえます:
 
-- right-click a line and select **Edit Breakpoint** in the contextual menu, or
-- `Alt+click` (Windows) or `Option+click` (macOS) in the left margin.
+- 任意の行を右クリックして、コンテキストメニューから **ブレークポイントを編集...** を選択する。
+- 左マージン内で `Alt+クリック` (Windows) または `Option+クリック` (macOS) を実行する。
 
-If a break point already exists, the window is displayed for that break point. Otherwise, a break point is created and the window is displayed for the newly created break point.
+ブレークポイントが既に存在する場合、そのブレークポイントについてのウィンドウが表示されます。 それ以外の場合は、ブレークポイントが新規作成され、そのブレークポイントに関するウィンドウを表示します。
 
-Here is a description of the properties:
+プロパティは、次の通りです:
 
-* **Location**: indicates the name of the method and the line number attached to the breakpoint.
-* **Break when following expression is true**: You can create **conditional breakpoints** by entering a 4D formula that returns `True` or `False`. For example, insert `Records in selection(\[aTable])=0` to make sure the break occurs only if there no record selected for the table \[aTable]. Breakpoint conditions are available in the **Condition** column of the [Break list](#break-list).
-* **Number of times to skip before breaking**: You can attach a breakpoint to a line located in a loop structure (While, Repeat, or For) or located in subroutine or function called from within a loop.
-* **Breakpoint is disabled**: If you currently do not need a break point, but might need it later, you can temporarily disable it. A disabled break point appears as a dash (-) instead of a bullet (•)|
+* **場所**: メソッド名とブレークポイントが設定されている行番号を示します。
+* **次の式が真のときブレーク**: `True` または `False` を返す 4Dフォーミュラを入力することによって、**条件付きブレークポイント** を作成することができます。 たとえば、`Records in selection(\[aTable])=0` と入力すると、テーブル \[aTable] のレコードが選択されていない場合に限ってブレークが発生します。 ブレークポイントの条件は、[ブレークリスト](#ブレークリスト)の **条件** カラムでも確認できます。
+* **ブレークの前にスキップする回数**: ループ構造 (While、Repeat、For) 内、またはループから呼び出されているサブルーチンや関数内のコード行にブレークポイントを設定することができます。
+* **ブレークポイントが無効です**: ブレークポイントが現在は必要でないものの、後で必要になるかもしれない場合には、一時的に無効にしておくことができます。 無効なブレークポイントは、点 (･) ではなくダッシュ記号 (-) で表示されます。
 
 
-### Breakpoints in remote debugging
+### リモートデバッグでのブレークポイント
 
-The break point list is stored locally. In remote debugging mode, if the attached debugger is a remote 4D, the remote break point list replaces temporarily the server break point list during the debugging session.
+ブレークポイントの一覧はローカルに保存されています。 リモートデバッグモードでは、起動したデバッガーがリモート4D だった場合、デバッグセッションの間はリモートのブレークポイント一覧がサーバーのブレークポイント一覧を一時的に置き換えます。
 
-The server break point list is automatically restored if it becomes again the attached debugger.
+サーバーのブレークポイント一覧は、サーバー上でデバッガーが起動した場合には自動的に復元され使用されます。
 
-### Break List
+### ブレークリスト
 
 The Break list is a page of the Runtime Explorer that lets you manage the breakpoints created in the Debugger Window or in the Method Editor. For more information on the Runtime Explorer, see its dedicated page in [the Design reference manual](https://doc.4d.com/4Dv19/4D/19/Runtime-Explorer.200-5416614.en.html).
 
