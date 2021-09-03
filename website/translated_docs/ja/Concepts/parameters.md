@@ -208,15 +208,15 @@ ALERT($0)
 
 テーブルや配列の式は [ポインターを介した参照として](dt_pointer.md#メソッドの引数としてのポインター) 渡す必要があります。
 
-## Parameter indirection (${N})
+## 引数の間接参照 (${N})
 
-4D project methods accept a variable number of parameters. You can address those parameters with a `For...End for` loop, the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command and the **parameter indirection syntax**. Within the method, an indirection address is formatted `${N}`, where `N` is a numeric expression. `${N}` is called a **generic parameter**.
+4Dプロジェクトメソッドは、不定数の引数を間接的に受け取ることができます。 `For...End for` ループや [`Count parameters`](https://doc.4d.com/4dv19/help/command/ja/page259.html) コマンド、**引数の間接参照シンタックス** を使って、これらの引数を扱うことができます。 メソッド内で、間接参照は `${N}` のように表示します。ここの `N` は数値式です。 `${N}` を **ジェネリックパラメーター** (generic parameter) と呼びます。
 
 
 
 ### Using generic parameters
 
-For example, consider a method that adds values and returns the sum formatted according to a format that is passed as a parameter. 合計される数値の数は、メソッドが呼ばれるたびに変わります。 このメソッドでは数値と表示形式を引数としてメソッドに渡さなければなりません。
+以下は間接参照の例です。引数の数値を合計した結果を、引数として渡された表示形式で返すようなメソッドを考えてみましょう。 合計される数値の数は、メソッドが呼ばれるたびに変わります。 このメソッドでは数値と表示形式を引数としてメソッドに渡さなければなりません。
 
 Here is the method, named `MySum`:
 
@@ -229,14 +229,14 @@ Here is the method, named `MySum`:
  $result:=String($sum;$format)
 ```
 
-The method's parameters must be passed in the correct order, first the format and then a variable number of values:
+このメソッドの引数は正しい順序で渡す必要があります。最初に表示形式、次に可変長の数値引数です。
 
 ```4d
- Result:=MySum("##0.00";125,2;33,5;24) //"182.70"
- Result:=MySum("000";1;2;200) //"203"
+ Result:=MySum("##0.00";125,2;33,5;24) // "182.70"
+ Result:=MySum("000";1;2;200) // "203"
 ```
 
-Note that even if you declared 0, 1, or more parameters in the method, you can always pass the number of parameters that you want. Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command. たとえば:
+メソッド内で 0、1、またはそれ以上のパラメーターを宣言した場合でも、任意の数の引数を渡すことができます。 Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command. たとえば:
 
 ```4d
 //foo method
