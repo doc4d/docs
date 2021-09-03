@@ -1,34 +1,34 @@
 ---
 id: breakpoints
-title: Breakpoints and Command Catching
+title: ブレークポイントとキャッチコマンド
 ---
 
 ## 概要
 
 
-Breakpoints and command catching are very efficient debugging techniques. Both have the same effect: they pause the code execution (and display the debugger window if not already displayed) at a desired step.
+ブレークポイントとキャッチコマンドは、非常に効率的なデバッグ手法です。 どちらも、コードの実行を任意のステップで一時停止させる (まだ表示されていない場合はデバッガーウィンドウを表示させる) という同じ効果があります。
 
-You set breakpoints on any line of code where you want the execution to be paused. You can associate a condition to the break point.
+ブレークポイントは、実行を一時停止させたいコードの任意の行に設定します。 ブレークポイントには条件を関連付けることができます。
 
-Catching a command enables you to start tracing the execution of any process as soon as a command is called by that process.
-
-
-
-## Breakpoints
+キャッチコマンドは、特定のコマンドが呼び出された時点で、呼び出し元プロセスの実行をトレース開始することができます。
 
 
-To create a break point, click in the left margin of the Source Code pane in the debugger or in the Method editor.
 
-In the following example, a break point (the red bullet) has been set, in the debugger, on the line `If ($in.dataClass#Null)`:
-
-![break-point](assets/en/Debugging/break.png)
-
-In the above example, clicking the [**No Trace**](./debugger.md/#no-trace) button resumes normal execution up to the line marked with the break point. That line is not executed itself — you are taken back to trace mode. Setting a break point beyond the program counter and clicking the **No Trace** button allows you to skip portions of the method being traced.
-
-To remove a break point, click the corresponding bullet.
+## ブレークポイント
 
 
-### Breakpoint Properties
+ブレークポイントを設定するには、デバッガーまたはメソッドエディターのソースコードエリアの左マージン内をクリックします。
+
+次の図では、ブレークポイント (赤い点) がデバッガー内で、`If ($in.dataClass#Null)` の行に設定されています:
+
+![ブレークポイント](assets/en/Debugging/break.png)
+
+上の状態で [**トレース終了**](./debugger.md/#トレース終了) ボタンをクリックすると、ブレークポイントが設定された行まで実行が再開されます。 その後、ブレークポイントで示された行は実行されずに、トレースモードへ 戻ります。 プログラムカウンターより下方の (後に実行される) 行にブレークポイントを設定し、**トレース終了** ボタンをクリックすると、ブレークポイントまでのメソッドをスキップすることができます。
+
+赤色の点をクリックすると、ブレークポイントは削除されます。
+
+
+### ブレークポイントプロパティ
 
 You can edit the behavior of a breakpoint using the Breakpoint Properties window:
 
