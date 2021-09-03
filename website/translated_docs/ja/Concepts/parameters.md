@@ -50,7 +50,7 @@ MyLength:=Length("How did I get here?")
 - [受け渡し順に番号が付けられた変数](#順番引数) (順番引数)
 
 
-Both [named](#named-parameters) and [sequential](#sequential-parameters) syntaxes can be mixed with no restriction to declare parameters. たとえば:
+引数の宣言にあたって、[名前付き](#名前付き引数) シンタックスと [順番](#順番引数) シンタックスは制限なく併用することができます。 たとえば:
 
 ```4d
 Function add($x : Integer)
@@ -101,7 +101,7 @@ $area:=$o.getArea(50;100)
 Function getArea($width : Integer; $height : Integer)-> $area : Integer
     $area:=$width*$height
 ```
-> If the type is not defined, the parameter will be defined as [`Variant`](dt_variant.md).
+> パラメーターの型が宣言されていない場合には、[`Variant`](dt_variant.md) 型として定義されます。
 
 データベースメソッドを含むすべての 4Dメソッドにおいて `#DECLARE` キーワードの使用がサポートされています。 たとえば、`On Web Authentication` データベースメソッドにおいて、次のように名前付き引数を宣言できます:
 
@@ -208,17 +208,17 @@ ALERT($0)
 
 テーブルや配列の式は [ポインターを介した参照として](dt_pointer.md#メソッドの引数としてのポインター) 渡す必要があります。
 
-## Parameter indirection (${N})
+## 引数の間接参照 (${N})
 
-4D project methods accept a variable number of parameters. You can address those parameters with a `For...End for` loop, the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command and the **parameter indirection syntax**. Within the method, an indirection address is formatted `${N}`, where `N` is a numeric expression. `${N}` is called a **generic parameter**.
+4Dプロジェクトメソッドは、可変個の引数を受け取ることができます。 `For...End for` ループや [`Count parameters`](https://doc.4d.com/4dv19/help/command/ja/page259.html) コマンド、**引数の間接参照シンタックス** を使って、これらの引数を扱うことができます。 メソッド内で、間接参照は `${N}` のように表示します。ここの `N` は数値式です。 `${N}` を **ジェネリックパラメーター** (generic parameter) と呼びます。
 
 
 
-### Using generic parameters
+### ジェネリックパラメーターの使い方
 
-For example, consider a method that adds values and returns the sum formatted according to a format that is passed as a parameter. 合計される数値の数は、メソッドが呼ばれるたびに変わります。 このメソッドでは数値と表示形式を引数としてメソッドに渡さなければなりません。
+以下は間接参照の例です。引数の数値を合計した結果を、引数として渡された表示形式で返すようなメソッドを考えてみましょう。 合計される数値の数は、メソッドが呼ばれるたびに変わります。 このメソッドでは数値と表示形式を引数としてメソッドに渡さなければなりません。
 
-Here is the method, named `MySum`:
+以下は `MySum` メソッドです:
 
 ```4d
  #DECLARE($format : Text) -> $result : Text
@@ -229,27 +229,27 @@ Here is the method, named `MySum`:
  $result:=String($sum;$format)
 ```
 
-The method's parameters must be passed in the correct order, first the format and then a variable number of values:
+このメソッドの引数は正しい順序で渡す必要があります。最初に表示形式、次に可変個の数値引数です。
 
 ```4d
- Result:=MySum("##0.00";125,2;33,5;24) //"182.70"
- Result:=MySum("000";1;2;200) //"203"
+ Result:=MySum("##0.00";125,2;33,5;24) // "182.70"
+ Result:=MySum("000";1;2;200) // "203"
 ```
 
-Note that even if you declared 0, 1, or more parameters in the method, you can always pass the number of parameters that you want. Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command. たとえば:
+メソッド内で 0、1、またはそれ以上のパラメーターを宣言した場合でも、任意の数の引数を渡すことができます。 呼び出されたメソッド内では、`${N}` シンタックスを使って引数を利用でき、可変長引数の型はデフォルトで [バリアント](dt_variant.md) です ([コンパイラー指示子](#ジェネリックパラメーターの宣言) を使ってこれらを宣言できます)。 [`Count parameters`](https://doc.4d.com/4dv19/help/command/ja/page259.html) コマンドを使用して、パラメーターが存在することをあらかじめ確認しておく必要があります。 たとえば:
 
 ```4d
-//foo method
+// foo メソッド
 #DECLARE($p1: Text;$p2 : Text; $p3 : Date) 
 For($i;1;Count parameters)
     ALERT("param "+String($i)+" = "+String(${$i}))
 End for
 ```
 
-This method can be called:
+このメソッドは次のように呼び出せます:
 
 ```4d
-foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed
+foo("hello";"world";!01/01/2021!;42;?12:00:00?) // 追加の引数が受け渡されます
 ```
 
 > 引数の間接参照は以下の条件を守ることにより、正しく動作します: 引数の一部のみを間接参照する場合、直接参照する引数の後に間接参照引数を配置するようにします。
@@ -257,17 +257,17 @@ foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed
 
 ### ジェネリックパラメーターの宣言
 
-他のローカル変数と同様、ジェネリックパラメーターはコンパイラーに指示する必要はありません。 ただし、曖昧になりそうな場合や最適化のために必要な場合は Non-declared generic parameters automatically get the [Variant](dt_variant.md) type.
+他のローカル変数と同様、ジェネリックパラメーターはコンパイラーに指示する必要はありません。 ただし、曖昧さを回避するためには推奨されます。 宣言なしのジェネリックパラメーターは自動的に [Variant](dt_variant.md)型となります。
 
-To declare generic parameters, you use a compiler directive to which you pass ${N} as a parameter, where N specifies the first generic parameter.
+ジェネリックパラメーターの宣言には、コンパイラー指示子に ${N} を渡す、以下のシンタックスを使用します (N は 1つ目の最初のジェネリックパラメーターの番号です):
 
 ```4d
  C_TEXT(${4})
 ```
 
-> Declaring generic parameters can only be done with the [sequential syntax](#sequential-parameters).
+> ジェネリックパラメーターの宣言は [受け渡し順](#順番引数) シンタックスでのみ使用できます。
 
-This command means that starting with the fourth parameter (included), the method can receive a variable number of parameters of text type. $1、$2、$3には、いかなるデータ型も使用できますが、 $2を間接参照した場合には、間接参照の型宣言の影響を受けます。 Thus, it will be of the data type text, even if for you it was, for instance, of the data type Real.
+このコマンドは、4番目以降に間接参照されるすべての引数のデータ型がテキストであることを意味します。 $1、$2、$3には、いかなるデータ型も使用できますが、 $2を間接参照した場合には、間接参照の型宣言の影響を受けます。 このため、たとえば $2 が実数であっても、間接参照されればテキストと見なされます。
 
 > 宣言に使用する数値は変数ではなく、定数でなくてはなりません。
 
@@ -287,7 +287,7 @@ Function add($x : Variant; $y : Integer)-> $result : Integer
 ```
 
 
-When using the [sequential variable syntax](#sequential-parameters), you need to make sure all parameters are properly declared. 次の例では `Capitalize` プロジェクトメソッドは第1パラメーターにテキスト型の引数を受け取り、戻り値としてテキスト型の値を返します:
+[順番引数シンタックス](#順番引数) を利用している場合には、引数がそれぞれ適切に宣言されていることを確認する必要があります。 次の例では `Capitalize` プロジェクトメソッドは第1パラメーターにテキスト型の引数を受け取り、戻り値としてテキスト型の値を返します:
 
 ```4d
   // Capitalize プロジェクトメソッド
@@ -352,24 +352,24 @@ C_TEXT($1;$2;$3;$4;$5;$6)
  End if
 ```
 
-## Wrong parameter type
+## 引数の型間違い
 
-Calling a parameter with an wrong type is an [error](error-handling.md) that prevents correct execution. For example, if you write the following methods:
+間違った型の引数を呼び出すことは、正しい実行を妨げる [エラー](error-handling.md) となります。 たとえば、次のようなメソッドを書いたとします:
 
 ```4d
-// method1
+// メソッド1
 #DECLARE($value : Text)
 ```
 
 ```4d
-// method2
-method1(42) //wrong type, text expected
+// メソッド2
+method1(42) // 型間違い。期待されるのはテキスト
 ```
 
-This case is handled by 4D depending on the context:
+このケースは、コンテキストに応じて 4D で処理されます。
 
-- in [compiled projects](interpreted.md), an error is generated at the compilation step whenever possible. Otherwise, an error is generated when the method is called.
-- in interpreted projects:
+- [コンパイル済みプロジェクト](interpreted.md) では、可能な限りコンパイル時にエラーが生成されます。 それ以外の場合は、メソッドの呼び出し時にエラーが生成されます。
+- インタープリタープロジェクトでは:
     + if the parameter was declared using the [named syntax](#named-parameters) (`#DECLARE` or `Function`), an error is generated when the method is called.
     + if the parameter was declared using the [sequential syntax](#sequential-parameters) (`C_XXX`), no error is generated, the called method receives an empty value of the expected type.
 
