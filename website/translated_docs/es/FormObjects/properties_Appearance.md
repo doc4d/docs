@@ -199,7 +199,7 @@ Displays/hides the headers when [Page view mode](#view-mode) is set to "Page".
 
 
 ---
-## Show hidden characters
+## Mostrar los caracteres ocultos
 
 Displays/hides invisible characters
 
@@ -217,9 +217,9 @@ Displays/hides invisible characters
 
 
 ---
-## Show horizontal ruler
+## Mostrar la regla horizontal
 
-Displays/hides the horizontal ruler when the document view is in [Page mode](#view-mode).
+Muestra/oculta la regla horizontal cuando la vista del documento está en modo [Página](#modo-de-vista).
 
 
 #### Gramática JSON
@@ -227,7 +227,7 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 | Nombre | Tipos de datos | Valores posibles |
 | ------ | -------------- | ---------------- |
 |        |                |                  |
- showHorizontalRuler|boolean|true (default), false|
+ showHorizontalRuler|boolean|true (por defecto), false|
 
 #### Objetos soportados
 
@@ -238,7 +238,7 @@ Displays/hides the horizontal ruler when the document view is in [Page mode](#vi
 
 
 ---
-## Show HTML WYSYWIG
+## Mostrar HTML WYSYWIG
 
 Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attributes which are not compliant with all browsers are removed.
 
@@ -248,7 +248,7 @@ Enables/disables the HTML WYSIWYG view, in which any 4D Write Pro advanced attri
 | Nombre | Tipos de datos | Valores posibles |
 | ------ | -------------- | ---------------- |
 |        |                |                  |
- showHTMLWysiwyg|boolean|true, false (default)|
+ showHTMLWysiwyg|boolean|true, false (por defecto)|
 
 #### Objetos soportados
 
@@ -426,7 +426,7 @@ Sets the zoom percentage for displaying 4D Write Pro area contents.
 | Nombre | Tipos de datos | Valores posibles |
 | ------ | -------------- | ---------------- |
 |        |                |                  |
- zoom|number|minimum = 0 |
+ zoom|número|minimum = 0 |
 
 #### Objetos soportados
 
