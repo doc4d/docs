@@ -170,8 +170,8 @@ Designates the font color.
 The color can be specified by:
 
 * a color name - like "red"
-* a HEX value - like "#ff0000"
-* an RGB value - like "rgb(255,0,0)"
+* un valor HEX - como "# ff0000"
+* un valor RVB - como "rgb (255,0,0)"
 
 You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-RGB-COLORS.301-4505456.en.html) command.
 
@@ -671,7 +671,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </h4>
 
 <p spaces-before="0">
-  <a href="listbox_overview.md#overview">List Box</a> - <a href="listbox_overview.md#list-box-columns">List Box Column</a>
+  <a href="listbox_overview.md#overview">List Box</a> - <a href="listbox_overview.md#list-box-columns">Columna List Box</a>
 </p>
 
 
