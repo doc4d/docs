@@ -57,43 +57,43 @@ title: ブレークポイントとキャッチコマンド
 
 ### ブレークリスト
 
-The Break list is a page of the Runtime Explorer that lets you manage the breakpoints created in the Debugger Window or in the Method Editor. For more information on the Runtime Explorer, see its dedicated page in [the Design reference manual](https://doc.4d.com/4Dv19/4D/19/Runtime-Explorer.200-5416614.en.html).
+ブレークリストは、デバッガーウィンドウ又はメソッドエディターで作成したブレークポイントを管理することが出来るランタイムエクスプローラのページです。 ランタイムエクスプローラーの詳細については、[デザインリファレンスマニュアル](https://doc.4d.com/4Dv19/4D/19/Runtime-Explorer.200-5416614.ja.html) を参照ください。
 
-To open the Break list page:
+ブレークリストのページを開くには:
 
-1. From the **Run menu**, click **Runtime Explorer...**
+1. **実行** メニューから **ランタイムエクスプローラー...** を選択します。
 
-2. Click the **Break** tab to display the Break list:
+2. **ブレーク** タブをクリックして、ブレークリストを表示させます:
 
 ![break-list-runtime-explorer](assets/en/Debugging/break-list.png)
 
-Using this window, you can:
+このウィンドウを使用して、以下のことが可能です:
 
-* Set conditions for breakpoints in the **Conditions** column
-* Enable or disable breakpoints by clicking the bullets in the margin. Disabled breakpoints display transparent bullets
-* Delete breakpoints by pressing the `Delete` or `Backspace` key, or click on the **Delete** button below the list.
-* Open the methods where the breakpoint are located by double-clicking any line in the list
+* ブレークポイントの **条件** を設定する。
+* マージンの赤い点をクリックして、ブレークポイントをそれぞれ有効・無効化する。 無効化されたブレークポイントは透明な (薄い赤の) 点で表されます。
+* `Delete` または `Backspace` キーを押すか、リスト下の**削除** ボタンをクリックして、ブレークポイントを削除する。
+* ブレークポイントをダブルクリックして、メソッドエディターで対象メソッドを開く。
 
-You cannot add new breakpoints from this window. Breakpoints can only be created from within the Debugger window or the Method Editor.
+このウィンドウから新しいブレークポイントを追加することはできません。 ブレークポイントは、デバッガーウィンドウかメソッドエディターでのみ設定できます。
 
 
-## Catching Commands
+## コマンドのキャッチ
 
-The **Catch** tab of the Runtime Explorer lets you add additional breaks to your code by catching calls to 4D commands. Unlike a break point, which is located in a particular project method (and therefore triggers a trace exception only when it is reached), the scope of catching a command includes all the processes that execute 4D code and call that command.
+**キャッチ** コマンドリストは、4Dコマンドの呼び出しを捕捉し、デバッガーウィンドウを表示するよう指示することができるランタイムエクスプローラのページです。 特定メソッドの特定行に効果が限定されるブレークポイントとは異なり、キャッチコマンドは、すべてのプロセスおよびメソッドが対象となります。
 
-Catching a command is a convenient way to trace large portions of code without setting break points at arbitrary locations. For example, if a record that should not be deleted is deleted after you've executed one or several processes, you can try to reduce the field of your investigation by catching commands such as `DELETE RECORD` and `DELETE SELECTION`. Each time these commands are called, you can check if the record in question has been deleted, and thus isolate the faulty part of the code.
+キャッチコマンド (コマンド捕捉) は、各所にブレークポイントを設定することなく、大きな範囲でトレースをおこなえる便利な方法です。 たとえば、いくつかのプロセスを実行した後に、削除すべきでないレコードが削除されてしまう場合には、`DELETE RECORD` や `DELETE SELECTION` といったコマンドの処理をキャッチすることにより、調査の範囲を狭めることができます。 キャッチ対象のコマンドが呼び出されるたびにデバッガーが起動されるので、問題のレコードが削除されてしまう経緯を調べ、コードの誤った箇所を突き止めることができます。
 
-Feel free to combine breakpoints and command catching.
+ブレークポイントとキャッチコマンドは組み合わせて使うことができます。
 
-To open the Caught Commands page:
+キャッチコマンドページを開くには:
 
-1. Choose **Run** > **Runtime explorer...** to open the Runtime Explorer.
+1. **実行** メニューから **ランタイムエクスプローラ...** を選択します。
 
-2. Click **Catch** to display the Caught Commands List:
+2. **キャッチ** タブをクリックすると、キャッチコマンドリストが表示されます:
 
 ![runtime-explorer-window](assets/en/Debugging/catch-command.png)
 
-This page lists the commands to be caught during execution. It is composed of two columns:
+このページは、実行中にキャッチされるコマンドをリスト表示します。 リストは 2つの列で構成されています:
 
 * The left column displays the Enable/Disable status of the caught command, followed by the name of the command
 * The right column displays the condition associated with the caught command, if any
