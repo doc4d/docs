@@ -72,10 +72,10 @@ They provide the following properties and functions:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| Parameter | Type         |    | Description                                                    |
+| Parameter | Typ          |    | Beschreibung                                                   |
 | --------- | ------------ | -- | -------------------------------------------------------------- |
-| option    | Integer      | -> | Web server to get (default if omitted = `Web server database`) |
-| Result    | 4D.WebServer | <- | Web server object                                              |
+| option    | Ganzzahl     | -> | Web server to get (default if omitted = `Web server database`) |
+| Ergebnis  | 4D.WebServer | <- | Web server object                                              |
 
 <!-- END REF -->
 
@@ -83,15 +83,15 @@ The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the d
 
 By default, if the *option* parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the *option* parameter:
 
-| Constant                       | Value | Comment                                                  |
-| ------------------------------ | ----- | -------------------------------------------------------- |
-| `Web server database`          | 1     | Current database Web server (default if omitted)         |
-| `Web server host database`     | 2     | Web server of the host database of a component           |
-| `Web server receiving request` | 3     | Web server that received the request (target Web server) |
+| Constant                       | Wert | Kommentar                                                |
+| ------------------------------ | ---- | -------------------------------------------------------- |
+| `Web server database`          | 1    | Current database Web server (default if omitted)         |
+| `Web server host database`     | 2    | Web server of the host database of a component           |
+| `Web server receiving request` | 3    | Web server that received the request (target Web server) |
 
 The returned Web server object contains the current values of the Web server properties.
 
-#### Example
+#### Beispiel
 
 From your component, you want to know if the Web server of the host database is started:
 
@@ -118,9 +118,9 @@ From your component, you want to know if the Web server of the host database is 
 
 <!-- REF #_command_.WEB Server list.Params -->
 
-| Parameter | Type       |    | Description                                    |
+| Parameter | Typ        |    | Beschreibung                                   |
 | --------- | ---------- | -- | ---------------------------------------------- |
-| Result    | Collection | <- | Collection of the available Web server objects |
+| Ergebnis  | Collection | <- | Collection of the available Web server objects |
 
 <!-- END REF -->
 
@@ -138,7 +138,7 @@ All available Web servers are returned by the `WEB Server list` command, whether
 You can use the [.name](#name) property of the Web server object to identify the project or component to which each Web server object in the list is attached.
 
 
-#### Example
+#### Beispiel
 
 We want to know how many running web servers are available:
 
@@ -739,7 +739,7 @@ The <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" field of the se
 
 The <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->"SameSite" session cookie value<!-- END REF -->. Possible values (using constants):
 
-| Constant            | Value    | Description                                                                                                                         |
+| Constant            | Wert     | Beschreibung                                                                                                                        |
 | ------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Web SameSite Strict | "Strict" | *Default value* - Cookies are only sent in a first-party context                                                                    |
 | Web SameSite Lax    | "Lax"    | Cookies are also sent on cross-site subrequests but only when a user is navigating to the origin site (i.e. when following a link). |
@@ -782,10 +782,10 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 <!-- REF #WebServerClass.start().Params -->
 
-| Parameter | Type   |    | Description                           |
+| Parameter | Typ    |    | Beschreibung                          |
 | --------- | ------ | -- | ------------------------------------- |
-| settings  | Object | -> | Web server settings to set at startup |
-| Result    | Object | <- | Status of the web server startup      |
+| settings  | Objekt | -> | Web server settings to set at startup |
+| Ergebnis  | Objekt | <- | Status of the web server startup      |
 
 <!-- END REF -->
 
@@ -802,16 +802,16 @@ Customized session settings will be reset when the [`.stop()`](#stop) function i
 
 The function returns an object describing the Web server launch status. This object can contain the following properties:
 
-| Property |                         | Type       | Description                                                          |
+| Property |                         | Typ        | Beschreibung                                                         |
 | -------- | ----------------------- | ---------- | -------------------------------------------------------------------- |
 | success  |                         | Boolean    | True if the web server was correctly started, False otherwise        |
 | errors   |                         | Collection | 4D error stack (not returned if the web server started successfully) |
-|          | \[].errCode            | Number     | 4D error code                                                        |
+|          | \[].errCode            | Zahl       | 4D error code                                                        |
 |          | \[].message            | Text       | Description of the 4D error                                          |
 |          | \[].componentSignature | Text       | Signature of the internal component which returned the error         |
 > If the Web server was already launched, an error is returned.
 
-#### Example
+#### Beispiel
 
 ```4d
  var $settings;$result : Object
@@ -844,9 +844,9 @@ The function returns an object describing the Web server launch status. This obj
 
 <!-- REF #WebServerClass.stop().Params -->
 
-| Parameter | Type |  | Description                     |
-| --------- | ---- |  | ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parameter | Typ |  | Beschreibung                    |
+| --------- | --- |  | ------------------------------- |
+|           |     |  | Does not require any parameters |
 
  <!-- END REF -->
 
@@ -856,7 +856,7 @@ If the web server was started, all web connections and web processes are closed,
 > This function resets the customized web settings defined for the session using the *settings* parameter of the [`.start()`](#start) function, if any.
 
 
-#### Example
+#### Beispiel
 
 To stop the database Web server:
 
