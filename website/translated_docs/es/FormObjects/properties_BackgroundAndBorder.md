@@ -15,7 +15,7 @@ Allows setting a different background color for odd-numbered rows/columns in a l
 | alternateFill | cadena         | any css value; "transparent"; "automatic"; "automaticAlternate" |
 
 #### Objetos soportados
-[List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md#overview) - [Columna List Box](listbox_overview.md#list-box-columns)
 
 
 
@@ -29,9 +29,9 @@ In the case of a list box, by default *Automatic* is selected: the column uses t
 #### Gramática JSON
 
 
-| Nombre | Tipos de datos | Valores posibles                          |
-| ------ | -------------- | ----------------------------------------- |
-| fill   | cadena         | any css value; "transparent"; "automatic" |
+| Nombre | Tipos de datos | Valores posibles                         |
+| ------ | -------------- | ---------------------------------------- |
+| fill   | cadena         | un valor css; "transparent"; "automatic" |
 
 #### Objetos soportados
 
@@ -58,7 +58,7 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 | rowFillSource | cadena         | An expression returning a RGB color value |
 
 #### Objetos soportados
-[List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
+[List Box](listbox_overview.md#overview) - [Columna List Box](listbox_overview.md#list-box-columns)
 
 
 
@@ -131,8 +131,8 @@ You can remove these empty rows by selecting this option. The bottom of the list
 Designates the color of the object's lines. The color can be specified by:
 
 * a color name - like "red"
-* a HEX value - like "#ff0000"
-* an RGB value - like "rgb(255,0,0)"
+* un valor HEX - como "# ff0000"
+* un valor RVB - como "rgb (255,0,0)"
 
 You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-RGB-COLORS.301-4505456.en.html) command.
 
@@ -146,7 +146,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 
 #### Objetos soportados
 
-[Line](shapes_overview.md#line) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle)
+[Línea](shapes_overview.md#line) - [Óvalo](shapes_overview.md#oval) - [Rectángulo](shapes_overview.md#rectangle)
 
 
 
@@ -163,7 +163,7 @@ Designates the thickness of a line.
 
 #### Objetos soportados
 
-[Line](shapes_overview.md#line) - [Oval](shapes_overview.md#oval) - [Rectangle](shapes_overview.md#rectangle)
+[Línea](shapes_overview.md#line) - [Óvalo](shapes_overview.md#oval) - [Rectángulo](shapes_overview.md#rectangle)
 
 
 
