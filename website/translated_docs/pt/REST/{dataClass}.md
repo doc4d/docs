@@ -162,7 +162,7 @@ If you want to expand a relation attribute using `$expand`, you do so by specify
 
 ### Example
 
-The following request returns all the public data in the Company dataclass whose key is 1.
+A petição abaixo retorna todos os dados públicos na dataclass Company cuja chave é 1.
 
  `GET  /rest/Company(1)`
 
