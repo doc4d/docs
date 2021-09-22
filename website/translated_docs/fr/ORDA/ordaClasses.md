@@ -56,7 +56,7 @@ De plus, les instances d'objet de classes utilisateurs du modèles de données O
 - un objet de classe Datastore peut appeler des fonctions de la [classe générique ORDA Datastore](API/DataStoreClass.md).
 - un objet de classe Dataclass peut appeler des fonctions de la [classe générique ORDA Dataclass](API/DataClassClass.md).
 - un objet de classe Entity selection peut appeler des fonctions de la [classe générique ORDA Entity selection](API/EntitySelectionClass.md).
-- un objet de classe Datastore peut appeler des fonctions de la [classe générique ORDA Datastore](API/EntityClass.md).
+- un objet de classe Entity peut appeler des fonctions de la [classe générique ORDA Entity](API/EntityClass.md).
 
 
 
@@ -606,7 +606,8 @@ The *$event* parameter contains the following properties:
 | dataClassName | Texte   | Dataclass name                                                                                                               |
 | kind          | Texte   | "orderBy"                                                                                                                    |
 | value         | Variant | Value to be handled by the computed attribute                                                                                |
-| descending    | Booelan | `true` for descending order, `false` for ascending order                                                                     |
+| operator      | Texte   | "desc" or "asc" (default)                                                                                                    |
+| descending    | Booléen | `true` for descending order, `false` for ascending order                                                                     |
 | result        | Variant | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default sort . |
 
 You can return the `orderBy` string either in the `$event.result` object property or in the *$result* function result.
@@ -625,6 +626,16 @@ Function orderBy fullName($event : Object)-> $result : Text
         $result:="firstName, lastName" 
     End if
 ```
+
+You can also write compact code:
+
+```4d
+Function orderBy fullName($event : Object)-> $result : Text
+
+    $result:="firstName "+$event.operator+", "lastName "+$event.operator
+
+```
+
 
 
 ## Fonctions exposées et non exposées
