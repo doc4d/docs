@@ -600,14 +600,15 @@ The `orderBy` function executes whenever the computed attribute needs to be orde
 
 The *$event* parameter contains the following properties:
 
-| プロパティ         | タイプ     | 説明                                                                                                                           |
-| ------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| attributeName | テキスト    | Computed attribute name                                                                                                      |
-| dataClassName | テキスト    | Dataclass name                                                                                                               |
-| kind          | テキスト    | "orderBy"                                                                                                                    |
-| value         | バリアント   | Value to be handled by the computed attribute                                                                                |
-| descending    | Booelan | `true` for descending order, `false` for ascending order                                                                     |
-| result        | バリアント   | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default sort . |
+| プロパティ         | タイプ   | 説明                                                                                                                           |
+| ------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------- |
+| attributeName | テキスト  | Computed attribute name                                                                                                      |
+| dataClassName | テキスト  | Dataclass name                                                                                                               |
+| kind          | テキスト  | "orderBy"                                                                                                                    |
+| value         | バリアント | Value to be handled by the computed attribute                                                                                |
+| operator      | テキスト  | "desc" or "asc" (default)                                                                                                    |
+| descending    | ブール   | `true` for descending order, `false` for ascending order                                                                     |
+| result        | バリアント | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default sort . |
 
 You can return the `orderBy` string either in the `$event.result` object property or in the *$result* function result.
 
@@ -625,6 +626,16 @@ Function orderBy fullName($event : Object)-> $result : Text
         $result:="firstName, lastName" 
     End if
 ```
+
+You can also write compact code:
+
+```4d
+Function orderBy fullName($event : Object)-> $result : Text
+
+    $result:="firstName "+$event.operator+", "lastName "+$event.operator
+
+```
+
 
 
 ## 公開vs非公開関数
