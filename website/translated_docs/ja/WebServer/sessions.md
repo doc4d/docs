@@ -51,7 +51,14 @@ Webサーバーのユーザーセッションでは、以下のことが可能�
 
 ![alt-text](assets/en/WebServer/schemaSession.png)
 
-> Webプロセスは通常終了せず、効率化のためにプールされリサイクルされます。 プロセスがリクエストの実行を終えると、プールに戻され、次のリクエストに対応できるようになります。 Webプロセスはどのセッションでも再利用できるため、実行終了時には ([`CLEAR VARIABLE`](https://doc.4d.com/4dv18/help/command/ja/page89.html) などを使用し) コードによって [プロセス変数](Concepts/variables.md#プロセス変数) をクリアする必要があります 。 このクリア処理は、開かれたファイルへの参照など、プロセスに関連するすべての情報に対して必要です。 これが、セッション関連の情報を保持したい場合には、[Session](API/SessionClass.md) オブジェクトを使用することが **推奨** される理由です。
+Webプロセスは通常終了せず、効率化のためにプールされリサイクルされます。 プロセスがリクエストの実行を終えると、プールに戻され、次のリクエストに対応できるようになります。 Webプロセスはどのセッションでも再利用できるため、実行終了時には ([`CLEAR VARIABLE`](https://doc.4d.com/4dv18/help/command/ja/page89.html) などを使用し) コードによって [プロセス変数](Concepts/variables.md#プロセス変数) をクリアする必要があります 。 このクリア処理は、開かれたファイルへの参照など、プロセスに関連するすべての情報に対して必要です。 これが、セッション関連の情報を保持したい場合には、[Session](API/SessionClass.md) オブジェクトを使用することが **推奨** される理由です。
+
+### Preemptive mode
+
+On 4D Server, Web server sessions are automatically handled through preemptive processes, **even in interpreted mode**. You need to make sure that your web server code is [compliant with a preemptive execution](preemptiveWeb.md#writing-thread-safe-web-server-code).
+
+> To debug the web server code on 4D Server, make sure the debugger is [attached to the server](Debugging/debugging-remote.md). In this context, web processes switch to cooperative mode and the web server code can be debugged.
+
 
 
 ## 情報の共有
@@ -160,13 +167,13 @@ If ($sales#Null)
             If (Session.storage.myTop3=Null)
                 $userTop3:=$sales.customers.orderBy("totalPurchase desc").slice(0; 3)
                 Session.storage.myTop3:=$userTop3
-            End if 
-        End use 
+            End if
+        End use
         WEB SEND HTTP REDIRECT("/authenticationOK.shtml")
-    Else 
+    Else
         WEB SEND TEXT("This password is wrong")
-    End if 
-Else 
+    End if
+Else
     WEB SEND TEXT("This userId is unknown")
-End if 
+End if
 ```
