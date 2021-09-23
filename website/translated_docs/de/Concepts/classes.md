@@ -55,6 +55,7 @@ Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Date
 
 - Project folder
     + Project
+
         * Sources
             - Classes
                 + Polygon.4dm
@@ -101,6 +102,7 @@ In verschiedenen 4D Entwicklerfenstern (Code-Editor, Compiler, Debugger, Runtime
 ## Stores für Klassen
 
 Klassen sind über Stores für Klassen verfügbar. Es gibt zwei Stores:
+
 
 - `cs` Store für Benutzerklassen
 - `4D` Store für vorgegebene Klassen
@@ -308,20 +310,11 @@ In the class definition file, computed property declarations use the `Function g
 
 When both functions are defined, the computed property is **read-write**. If only a `Function get` is defined, the computed property is **read-only**. In this case, an error is returned if the code tries to modify the property. If only a `Function set` is defined, 4D returns *undefined* when the property is read.
 
-The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of the following types:
-
-- Text
-- Boolean
-- Date
-- Number
-- Object
-- Collection
-- Image
-- Blob
+The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of any [valid property type](dt_object.md).
 
 > Assigning *undefined* to an object property clears its value while preserving its type. In order to do that, the `Function get` is first called to retrieve the value type, then the `Function set` is called with an empty value of that type.
 
-#### Examples
+#### Example 1
 
 ```4d  
 //Class: Person.4dm
@@ -333,7 +326,7 @@ Class constructor($firstname : Text; $lastname : Text)
 Function get fullName() -> $fullName : Text
     $fullName:=This.firstName+" "+This.lastName
 
-Function set fullName( $fullName : text )
+Function set fullName( $fullName : Text )
     $p:=Position(" "; $fullName)
     This.firstName:=Substring($fullName; 1; $p-1)
     This.lastName:=Substring($fullName; $p+1)
@@ -346,6 +339,20 @@ $fullName:=$person.fullName // Function get fullName() is called
 $person.fullName:="John Smith" // Function set fullName() is called
 ```
 
+#### Example 2
+
+```4d
+Function get fullAddress()->$result : Object
+
+    $result:=New object
+
+    $result.fullName:=This.fullName
+    $result.address:=This.address
+    $result.zipCode:=This.zipCode
+    $result.city:=This.city
+    $result.state:=This.state
+    $result.country:=This.country 
+```
 
 ### `Class Constructor`
 
@@ -508,7 +515,7 @@ Function getArea()
 
 #### Beispiel 2
 
-Dieses Beispiel zeigt die Verwendung von `Super` in einer Class Member Method. Sie haben die Klasse  `Rectangle` mit einer Funktion erstellt:
+Dieses Beispiel zeigt die Verwendung von `Super` in einer Class Member Method. You created the `Rectangle` class with a function:
 
 ```4d
 //Class: Rectangle
@@ -518,12 +525,13 @@ Function nbSides()
     $0:="I have 4 sides"
 ```
 
-Sie haben auch die Klasse `Square` mit einer Function erstellt, welche die Superclass Function aufruft:
+
+You also created the `Square` class with a function calling the superclass function:
 
 ```4d
 //Class: Square
 
-Class erweitert Rectangle
+Class extends Rectangle
 
 Function description()
     var $0 : Text
@@ -547,7 +555,7 @@ $message:=$square.description() //I have 4 sides which are all equal
 | --------- | ------ | -- | -------------- |
 | Result    | object | <- | Current object |
 
-Das Schlüsselwort `This` gibt eine Referenz auf das gerade bearbeitete Objekt zurück. In 4D lässt es sich in [verschiedenen Kontexten](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html) verwenden.
+The `This` keyword returns a reference to the currently processed object. In 4D lässt es sich in [verschiedenen Kontexten](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html) verwenden.
 
 In den meisten Fällen bestimmt der Wert von `This`, wie eine Function aufgerufen wird. Es lässt sich während der Ausführung nicht per Zuweisung setzen und kann bei jedem Aufrufen der Funktion anders sein.
 
@@ -576,10 +584,10 @@ $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> Beachten Sie beim Aufrufen des Superclass Constructor in einem Constructor mit dem Schlüsselwort [Super](#super), dass  `This` nicht vor dem Superclass Constructor aufgerufen wird, sonst wird ein Fehler generiert. Siehe [dieses Beispiel](#beispiel-1-1).
+> Beachten Sie beim Aufrufen des Superclass Constructor in einem Constructor mit dem Schlüsselwort [Super](#super), dass  `This` nicht vor dem Superclass Constructor aufgerufen wird, sonst wird ein Fehler generiert. See [this example](#example-1).
 
 
-In allen Fällen bezieht sich `This` auf das Objekt, wo die Methode aufgerufen wurde, als ob sie im Objekt wäre.
+In any cases, `This` refers to the object the method was called on, as if the method were on the object.
 
 ```4d
 //Class: ob
@@ -588,15 +596,16 @@ Function f()
     $0:=This.a+This.b
 ```
 
-Dann können Sie in einer Projektmethode schreiben:
+Then you can write in a project method:
 
 ```4d
 $o:=cs.ob.new()
 $o.a:=5
 $o.b:=3
 $val:=$o.f() //8
+
 ```
-In diesem Beispiel hat das der Variable $o zugewiesene Objekt keine eigene Eigenschaft *f*, sondern erbt sie von seiner Klasse. Da *f* als eine Methode von $o, aufgerufen wird, bezieht sich das dazugehörige `This` auf $o.
+In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Da *f* als eine Methode von $o, aufgerufen wird, bezieht sich das dazugehörige `This` auf $o.
 
 
 ## Befehle für Klassen
