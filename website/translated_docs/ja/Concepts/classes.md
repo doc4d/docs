@@ -55,6 +55,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
 
 - Project フォルダー
     + Project
+
         * Sources
             - クラス
                 + Polygon.4dm
@@ -101,6 +102,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
 ## クラスストア
 
 定義されたクラスには、クラスストアよりアクセスすることができます。 クラスストアには次の二つが存在します:
+
 
 - `cs` - ユーザークラスストア
 - `4D` - ビルトインクラスストア
@@ -362,16 +364,7 @@ In the class definition file, computed property declarations use the `Function g
 
 When both functions are defined, the computed property is **read-write**. If only a `Function get` is defined, the computed property is **read-only**. In this case, an error is returned if the code tries to modify the property. If only a `Function set` is defined, 4D returns *undefined* when the property is read. 
 
-The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of the following types:
-
-- Text
-- Boolean
-- Date
-- Number
-- Object
-- Collection
-- Image
-- Blob
+The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of any [valid property type](dt_object.md). 
 
 
 
@@ -379,7 +372,7 @@ The type of the computed property is defined by the `$return` type declaration o
 
 
 
-#### Examples
+#### Example 1
 
 
 
@@ -393,7 +386,7 @@ Class constructor($firstname : Text; $lastname : Text)
 Function get fullName() -> $fullName : Text
     $fullName:=This.firstName+" "+This.lastName
 
-Function set fullName( $fullName : text )
+Function set fullName( $fullName : Text )
     $p:=Position(" "; $fullName)
     This.firstName:=Substring($fullName; 1; $p-1)
     This.lastName:=Substring($fullName; $p+1)
@@ -409,6 +402,25 @@ $fullName:=$person.fullName // Function get fullName() is called
 $person.fullName:="John Smith" // Function set fullName() is called
 ```
 
+
+
+
+#### Example 2
+
+
+
+```4d
+Function get fullAddress()->$result : Object
+
+    $result:=New object
+
+    $result.fullName:=This.fullName
+    $result.address:=This.address
+    $result.zipCode:=This.zipCode
+    $result.city:=This.city
+    $result.state:=This.state
+    $result.country:=This.country 
+```
 
 
 
@@ -621,12 +633,12 @@ Function getArea()
 
 #### 例題 2
 
-クラスメンバーメソッド内で `Super` を使う例です。 メンバーメソッドを持つ `Rectangle` クラスを作成します:
+クラスメンバーメソッド内で `Super` を使う例です。 You created the `Rectangle` class with a function:
 
 
 
 ```4d
-// クラス: Rectangle
+//Class: Rectangle
 
 Function nbSides()
     var $0 : Text
@@ -634,12 +646,12 @@ Function nbSides()
 ```
 
 
-`Square` クラスには、スーパークラスメソッドを呼び出すメンバーメソッドを定義します:
+You also created the `Square` class with a function calling the superclass function:
 
 
 
 ```4d
-// クラス: Square
+//Class: Square
 
 Class extends Rectangle
 
@@ -649,7 +661,7 @@ Function description()
 ```
 
 
-すると、プロジェクトメソッド内には次のように書けます:
+Then you can write in a project method:
 
 
 
@@ -669,12 +681,12 @@ $message:=$square.description() //I have 4 sides which are all equal
 
 #### This -> Object
 
-| 引数     | 型      |    | 説明         |
-| ------ | ------ | -- | ---------- |
-| Result | object | <- | カレントオブジェクト |
+| Parameter | Type   |    | Description    |
+| --------- | ------ | -- | -------------- |
+| Result    | object | <- | Current object |
 
 
-`This` キーワードは、現在処理中のオブジェクトへの参照を返します。 `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
+The `This` keyword returns a reference to the currently processed object. `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
 
 `This` の値は、呼ばれ方によって決まります。 `This` の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。 
 
@@ -714,21 +726,21 @@ $val:=$o.a //42
 
 
 
-> コンストラクター内で [Super](#super) キーワードを使ってスーパークラスのコンストラクターを呼び出す場合、必ず `This` より先にスーパークラスのコンストラクターを呼ぶ必要があることに留意してください。順番を違えるとエラーが生成されます。 こちらの [例題](#例題-1) を参照ください。
+> コンストラクター内で [Super](#super) キーワードを使ってスーパークラスのコンストラクターを呼び出す場合、必ず `This` より先にスーパークラスのコンストラクターを呼ぶ必要があることに留意してください。順番を違えるとエラーが生成されます。 See [this example](#example-1).
 
-基本的に、`This` はメソッドの呼び出し元のオブジェクトを指します。
+In any cases, `This` refers to the object the method was called on, as if the method were on the object.
 
 
 
 ```4d
-// クラス: ob
+//Class: ob
 
 Function f()
     $0:=This.a+This.b
 ```
 
 
-この場合、プロジェクトメソッドには次のように書けます:
+Then you can write in a project method:
 
 
 
@@ -737,10 +749,11 @@ $o:=cs.ob.new()
 $o.a:=5
 $o.b:=3
 $val:=$o.f() //8
+
 ```
 
 
-この例では、変数 $o に代入されたオブジェクトは *f* プロパティを持たないため、これをクラスより継承します。 *f* は $o のメソッドとして呼び出されるため、メソッド内の `This` は $o を指します。
+In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. *f* は $o のメソッドとして呼び出されるため、メソッド内の `This` は $o を指します。
 
 
 
