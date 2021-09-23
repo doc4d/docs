@@ -55,6 +55,7 @@ Por ejemplo, si quiere definir una clase llamada "Polygon", tiene que crear el s
 
 - Project folder
     + Project
+
         * Sources
             - Clases
                 + Polygon.4dm
@@ -101,6 +102,7 @@ En las diferentes ventanas 4D (editor de código, compilador, depurador, explora
 ## Class stores
 
 Las clases disponibles son accesibles desde sus class stores. Hay dos class stores disponibles:
+
 
 - `cs` para el class store usuario
 - `4D` para el class store integrado
@@ -308,20 +310,11 @@ In the class definition file, computed property declarations use the `Function g
 
 When both functions are defined, the computed property is **read-write**. If only a `Function get` is defined, the computed property is **read-only**. In this case, an error is returned if the code tries to modify the property. If only a `Function set` is defined, 4D returns *undefined* when the property is read.
 
-The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of the following types:
-
-- Text
-- Boolean
-- Date
-- Number
-- Object
-- Collection
-- Image
-- Blob
+The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of any [valid property type](dt_object.md).
 
 > Assigning *undefined* to an object property clears its value while preserving its type. In order to do that, the `Function get` is first called to retrieve the value type, then the `Function set` is called with an empty value of that type.
 
-#### Examples
+#### Example 1
 
 ```4d  
 //Class: Person.4dm
@@ -333,7 +326,7 @@ Class constructor($firstname : Text; $lastname : Text)
 Function get fullName() -> $fullName : Text
     $fullName:=This.firstName+" "+This.lastName
 
-Function set fullName( $fullName : text )
+Function set fullName( $fullName : Text )
     $p:=Position(" "; $fullName)
     This.firstName:=Substring($fullName; 1; $p-1)
     This.lastName:=Substring($fullName; $p+1)
@@ -346,6 +339,20 @@ $fullName:=$person.fullName // Function get fullName() is called
 $person.fullName:="John Smith" // Function set fullName() is called
 ```
 
+#### Example 2
+
+```4d
+Function get fullAddress()->$result : Object
+
+    $result:=New object
+
+    $result.fullName:=This.fullName
+    $result.address:=This.address
+    $result.zipCode:=This.zipCode
+    $result.city:=This.city
+    $result.state:=This.state
+    $result.country:=This.country 
+```
 
 ### `Class Constructor`
 
@@ -518,6 +525,7 @@ Function nbSides()
     $0:="I have 4 sides"
 ```
 
+
 You also created the `Square` class with a function calling the superclass function:
 
 ```4d
@@ -576,10 +584,10 @@ $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. Ver [este ejemplo](#example-1).
+> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. See [this example](#example-1).
 
 
-En todos los casos, `Esto` se refiere al objeto al que el método fue llamado, como si el método estuviera en el objeto..
+In any cases, `This` refers to the object the method was called on, as if the method were on the object.
 
 ```4d
 //Class: ob
@@ -588,15 +596,16 @@ Function f()
     $0:=This.a+This.b
 ```
 
-Luego puede escribir en un método proyecto:
+Then you can write in a project method:
 
 ```4d
 $o:=cs.ob.new()
 $o.a:=5
 $o.b:=3
 $val:=$o.f() //8
+
 ```
-En este ejemplo, el objeto asignado a la variable $o no tiene su propia propiedad *f*, la hereda de su clase. Since *f* is called as a method of $o, its `This` refers to $o.
+In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Since *f* is called as a method of $o, its `This` refers to $o.
 
 
 ## Class commands
