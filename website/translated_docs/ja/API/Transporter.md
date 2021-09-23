@@ -6,6 +6,7 @@ title: Transporter クラス
 ## 説明
 
 
+<!-- REF transporter.acceptUnsecureConnection.Desc -->
 ## .acceptUnsecureConnection
 
 <details><summary>履歴</summary>
@@ -14,11 +15,13 @@ title: Transporter クラス
 | v17 R4 | 追加 |
 </details>
 
-**.acceptUnsecureConnection** : Boolean
+<!-- REF #transporter.acceptUnsecureConnection.Syntax -->
+**.acceptUnsecureConnection** : Boolean<!-- END REF -->
+
 
 #### 説明
 
-The `.acceptUnsecureConnection` property contains **True** if 4D is allowed to establish an unencrypted connection when encrypted connection is not possible.
+`.acceptUnsecureConnection` プロパティは、暗号化された接続が不可能な場合に、 <!-- REF #transporter.acceptUnsecureConnection.Summary -->暗号化されていない接続の確立が許可されてれば **true**<!-- END REF --> を格納します。
 
 暗号化されていない接続が許可されていない場合には **false** が格納されており、その場合に暗号化された接続が不可能な場合にはエラーが返されます。
 
@@ -34,11 +37,13 @@ The `.acceptUnsecureConnection` property contains **True** if 4D is allowed to e
 
 - POP3
     - 110: POP3 非暗号化ポート
-    - 995: POP3 with STARTTLS upgrade if supported by the server.
+    - 995: STARTTLS アップグレードがされた POP3 (サーバーがサポートしていれば)
+<!-- END REF -->
 
----
-
- ## .authenticationMode
+--- 
+ 
+ <!-- REF transporter.authenticationModeIMAP.Desc -->
+## .authenticationMode
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -46,10 +51,12 @@ The `.acceptUnsecureConnection` property contains **True** if 4D is allowed to e
 | v17 R4 | 追加 |
 </details>
 
-**.authenticationMode** : Text
+<!-- REF #transporter.authenticationMode.Syntax -->
+**.authenticationMode** : Text<!-- END REF -->
+
 #### 説明
 
-`.authenticationMode` プロパティは、メールサーバーのセッションを開くのに使用される認証モードを格納します。
+`.authenticationMode` プロパティは、 <!-- REF #transporter.authenticationMode.Summary -->メールサーバーのセッションを開くのに使用される認証モード<!-- END REF -->を格納します。
 
 デフォルトでは、サーバーによってサポートされている最も安全なモードが使用されます。
 
@@ -62,10 +69,12 @@ The `.acceptUnsecureConnection` property contains **True** if 4D is allowed to e
 | OAUTH2   | `IMAP authentication OAUTH2`   | OAuth2 プロトコルを使用した認証   |
 | PLAIN    | `IMAP authentication plain`    | PLAIN プロトコルを使用した認証    |
 
+<!-- END REF -->
 
----
-
- ## .authenticationMode
+--- 
+ 
+ <!-- REF transporter.authenticationModePOP3.Desc -->
+## .authenticationMode
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -92,10 +101,12 @@ The `.acceptUnsecureConnection` property contains **True** if 4D is allowed to e
 | OAUTH2   | `POP3 authentication OAUTH2`   | OAuth2 プロトコルを使用した認証         |
 | PLAIN    | `POP3 authentication plain`    | PLAIN プロトコルを使用した認証          |
 
+<!-- END REF -->
 
----
-
- ## .authenticationMode
+--- 
+ 
+ <!-- REF transporter.authenticationModeSMTP.Desc -->
+## .authenticationMode
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -121,9 +132,11 @@ The `.acceptUnsecureConnection` property contains **True** if 4D is allowed to e
 | OAUTH2   | `SMTP authentication OAUTH2`   | OAuth2 プロトコルを使用した認証   |
 | PLAIN    | `SMTP authentication plain`    | PLAIN プロトコルを使用した認証    |
 
+<!-- END REF -->
 
 ---
 
+<!-- REF transporter.bodyCharset.Desc -->
 ## .bodyCharset
 
 <details><summary>履歴</summary>
@@ -133,11 +146,13 @@ The `.acceptUnsecureConnection` property contains **True** if 4D is allowed to e
 | v17 R5 | 追加                |
 </details>
 
-**.bodyCharset** : Text
+<!-- REF #transporter.bodyCharset.Syntax -->
+**.bodyCharset** : Text<!-- END REF -->
+
 
 #### 説明
 
-The `.bodyCharset` property contains   the charset and encoding used for the body part of the email.
+`.bodyCharset` プロパティは、 <!-- REF #transporter.bodyCharset.Summary -->  メール本文で使用される文字セットとエンコーディング<!-- END REF -->を格納します。
 
 *   件名
 *   添付ファイル名
@@ -152,10 +167,12 @@ The `.bodyCharset` property contains   the charset and encoding used for the bod
 | mail mode UTF8           | US-ASCII_UTF8_QP             | *headerCharset* & *bodyCharset*: 可能なら US-ASCII、それが不可なら UTF-8 & Quoted-printable (**デフォルト値**) |
 | mail mode UTF8 in base64 | US-ASCII_UTF8_B64            | *headerCharset* & *bodyCharset*: 可能な場合は US-ASCII、それ以外は UTF-8 & base64                        |
 
+<!-- END REF -->
 
 ---
 
 
+<!-- REF transporter.connectionTimeOut.Desc -->
 ## .connectionTimeOut
 
 <details><summary>履歴</summary>
@@ -164,17 +181,21 @@ The `.bodyCharset` property contains   the charset and encoding used for the bod
 | v17 R5 | 追加 |
 </details>
 
-**.connectionTimeOut** : Integer
+<!-- REF #transporter.connectionTimeOut.Syntax -->
+**.connectionTimeOut** : Integer<!-- END REF -->
+
 
 
 #### 説明
 
-The `.connectionTimeOut` property contains the maximum wait time (in seconds) allowed to establish a connection to the server. `SMTP New transporter` や `POP3 New transporter`、 `IMAP New transporter` のコマンドで `transporter` オブジェクトを作成する際に使用される `server` オブジェクトにおいて、 このプロパティが指定されなかった場合のデフォルトは 30 です。
+`.connectionTimeOut` プロパティは、 <!-- REF #transporter.connectionTimeOut.Summary -->サーバー接続の確立までに待機する最長時間 (秒単位)<!-- END REF -->を格納します。 `SMTP New transporter` や `POP3 New transporter`、 `IMAP New transporter` のコマンドで `transporter` オブジェクトを作成する際に使用される `server` オブジェクトにおいて、 このプロパティが指定されなかった場合のデフォルトは 30 です。
 
+<!-- END REF -->
 
 
 ---
 
+<!-- REF transporter.headerCharset.Desc -->
 ## .headerCharset
 
 <details><summary>履歴</summary>
@@ -183,11 +204,13 @@ The `.connectionTimeOut` property contains the maximum wait time (in seconds) al
 | v17 R5 | 追加 |
 </details>
 
-**.headerCharset** : Text
+<!-- REF #transporter.headerCharset.Syntax -->
+**.headerCharset** : Text<!-- END REF -->
+
 
 #### 説明
 
-The `.headerCharset` property contains  the charset and encoding used for the email header. ヘッダーにはメールの次の要素を含みます:
+`.headerCharset` プロパティは、 <!-- REF #transporter.headerCharset.Summary --> メールヘッダーで使用される文字セットとエンコーディング<!-- END REF -->を格納します。 ヘッダーにはメールの次の要素を含みます:
 
 *   件名
 *   添付ファイル名
@@ -202,10 +225,12 @@ The `.headerCharset` property contains  the charset and encoding used for the em
 | mail mode UTF8           | US-ASCII_UTF8_QP             | *headerCharset* & *bodyCharset*: 可能なら US-ASCII、それが不可なら UTF-8 & Quoted-printable (デフォルト値) |
 | mail mode UTF8 in base64 | US-ASCII_UTF8_B64            | *headerCharset* & *bodyCharset*: 可能な場合は US-ASCII、それ以外は UTF-8 & base64                    |
 
+<!-- END REF -->
 
 ---
 
 
+<!-- REF transporter.host.Desc -->
 ## .host
 
 <details><summary>履歴</summary>
@@ -214,15 +239,19 @@ The `.headerCharset` property contains  the charset and encoding used for the em
 | v17 R5 | 追加 |
 </details>
 
-**.host** : Text
+<!-- REF #transporter.host.Syntax -->
+**.host** : Text<!-- END REF -->
+
 
 #### 説明
 
-The `.host` property contains the name or the IP address of the host server. この情報はメール通信 (SMTP、POP3、IMAP) に使用されます。
+`.host` プロパティは、 <!-- REF #transporter.host.Summary -->ホストサーバーの名前または IPアドレス<!-- END REF -->を格納します。 この情報はメール通信 (SMTP、POP3、IMAP) に使用されます。
 
+<!-- END REF -->
 
 ---
 
+<!-- REF transporter.logFile.Desc -->
 ## .logFile
 
 <details><summary>履歴</summary>
@@ -231,11 +260,13 @@ The `.host` property contains the name or the IP address of the host server. こ
 | v17 R5 | 追加 |
 </details>
 
-**.logFile** : Text
+<!-- REF #transporter.logFile.Syntax -->
+**.logFile** : Text<!-- END REF -->
+
 
 #### 説明
 
-The `.logFile` property contains the path of the extended log file defined (if any) for the mail connection. パスは、カレント Logs フォルダーを基準とした相対パス、あるいは絶対パスを指定できます。
+`.logFile` プロパティは、 <!-- REF #transporter.logFile.Summary -->メール接続に対して定義された拡張ログファイル (あれば) へのフルパス<!-- END REF -->を格納します。 パスは、カレント Logs フォルダーを基準とした相対パス、あるいは絶対パスを指定できます。
 
 `SET DATABASE PARAMETER` コマンドで有効化される通常のログファイルとは異なり、拡張ログファイルはすべての送信されたメールの MIMEコンテンツを保存し、サイズ制限がありません。 拡張ログファイルの詳細については、以下の章をそれぞれ参照ください:
 
@@ -246,10 +277,12 @@ The `.logFile` property contains the path of the extended log file defined (if a
 
 
 
+<!-- END REF -->
 
 
 ---
 
+<!-- REF transporter.port.Desc -->
 ## .port
 
 <details><summary>履歴</summary>
@@ -258,22 +291,26 @@ The `.logFile` property contains the path of the extended log file defined (if a
 | v17 R4 | 追加 |
 </details>
 
-**.port** : Integer
+<!-- REF #transporter.port.Syntax -->
+**.port** : Integer<!-- END REF -->
+
 
 #### 説明
 
-The `.port` property contains  the port number used for mail transactions. `SMTP New transporter` や `POP3 New transporter`、 `IMAP New transporter` のコマンドで `transporter` オブジェクトを作成する際に使用される *server* オブジェクトにおいて、 このプロパティが指定されなかった場合に使用されるポートは次のとおりです:
+`.port` プロパティは、 <!-- REF #transporter.port.Summary --> メール通信に使用されるポート番号<!-- END REF -->を格納します。 `SMTP New transporter` や `POP3 New transporter`、 `IMAP New transporter` のコマンドで `transporter` オブジェクトを作成する際に使用される *server* オブジェクトにおいて、 このプロパティが指定されなかった場合に使用されるポートは次のとおりです:
 
 *   **SMTP** - 587
 *   **POP3** - 995
 *   **IMAP** - 993
 
 
+<!-- END REF -->
 
 
 ---
 
 
+<!-- REF transporter.sendTimeOut.Desc -->
 ## .sendTimeOut
 
 <details><summary>履歴</summary>
@@ -282,15 +319,19 @@ The `.port` property contains  the port number used for mail transactions. `SMTP
 | v17 R4 | 追加 |
 </details>
 
-**.sendTimeOut** : Integer
+<!-- REF #transporter.sendTimeOut.Syntax -->
+**.sendTimeOut** : Integer<!-- END REF -->
+
 
 #### 説明
-The `.sendTimeOut` property contains  the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs. `.sendTimeOut` プロパティが `server` オブジェクトによって設定されていない場合は、デフォルトで 100 という値が使用されます。
+`.sendTimeOut` プロパティは、 <!-- REF #transporter.sendTimeOut.Summary --> `.send( )` 呼び出し時のタイムアウト時間 (秒単位)<!-- END REF -->を格納します。 `.sendTimeOut` プロパティが `server` オブジェクトによって設定されていない場合は、デフォルトで 100 という値が使用されます。
 
+<!-- END REF -->
 
 ---
 
 
+<!-- REF transporter.user.Desc -->
 ## .user
 
 <details><summary>履歴</summary>
@@ -299,14 +340,18 @@ The `.sendTimeOut` property contains  the maximum wait time (in seconds) of a ca
 | v17 R4 | 追加 |
 </details>
 
-**.user** : Text
+<!-- REF #transporter.user.Syntax -->
+**.user** : Text<!-- END REF -->
+
 
 #### 説明
-The `.user` property contains  the user name used for authentication on the mail server.
+`.user` プロパティは、 <!-- REF #transporter.user.Summary --> メールサーバーでの認証に使用されたユーザー名<!-- END REF -->を格納します。 
 
+<!-- END REF -->
 
 ---
 
+<!-- REF transporter.checkConnection().Desc -->
 ## .checkConnection()
 
 <details><summary>履歴</summary>
@@ -315,15 +360,19 @@ The `.user` property contains  the user name used for authentication on the mail
 | v17 R4 | 追加 |
 </details>
 
-**.checkConnection()** : Object
+<!-- REF #transporter.checkConnection().Syntax -->
+**.checkConnection()** : Object<!-- END REF -->
+
+<!-- REF #transporter.checkConnection().Params -->
 | 引数  | タイプ    |    | 説明                         |
 | --- | ------ |:--:| -------------------------- |
-| 戻り値 | オブジェクト | <- | transporter オブジェクト接続のステータス |
+| 戻り値 | Object | <- | transporter オブジェクト接続のステータス |
+<!-- END REF -->
 
 
 #### 説明
 
-The `.checkConnection()` function  checks the connection using information stored in the transporter object, recreates the connection if necessary, and returns the status. この関数を使用して、ユーザーから提供された値が有効かどうかを検証することができます。
+`.checkConnection()` 関数は、 <!-- REF #transporter.checkConnection().Summary --> transporter オブジェクトが保存する情報を使用して接続をチェックします<!-- END REF -->。必要なら再接続をし、そのステータスを返します。 この関数を使用して、ユーザーから提供された値が有効かどうかを検証することができます。
 
 
 #### 返されるオブジェクト
@@ -342,6 +391,7 @@ The `.checkConnection()` function  checks the connection using information store
 
 
 
+<!-- END REF -->
 
 
 
