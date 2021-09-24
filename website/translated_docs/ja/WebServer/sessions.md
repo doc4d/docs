@@ -53,9 +53,9 @@ Webサーバーのユーザーセッションでは、以下のことが可能�
 
 Webプロセスは通常終了せず、効率化のためにプールされリサイクルされます。 プロセスがリクエストの実行を終えると、プールに戻され、次のリクエストに対応できるようになります。 Webプロセスはどのセッションでも再利用できるため、実行終了時には ([`CLEAR VARIABLE`](https://doc.4d.com/4dv18/help/command/ja/page89.html) などを使用し) コードによって [プロセス変数](Concepts/variables.md#プロセス変数) をクリアする必要があります 。 このクリア処理は、開かれたファイルへの参照など、プロセスに関連するすべての情報に対して必要です。 これが、セッション関連の情報を保持したい場合には、[Session](API/SessionClass.md) オブジェクトを使用することが **推奨** される理由です。
 
-### Preemptive mode
+### プリエンプティブモード
 
-On 4D Server, Web server sessions are automatically handled through preemptive processes, **even in interpreted mode**. You need to make sure that your web server code is [compliant with a preemptive execution](preemptiveWeb.md#writing-thread-safe-web-server-code).
+4D Server上では、**インタプリタモードであっても**、Webサーバーセッションは自動的にプリエンプティブプロセスで処理されます。 そのため、Webサーバーのコードは [プリエンプティブ実行に準拠](preemptiveWeb.md#スレッドセーフなWebサーバーコードの書き方) している必要があります。
 
 > To debug the web server code on 4D Server, make sure the debugger is [attached to the server](Debugging/debugging-remote.md). In this context, web processes switch to cooperative mode and the web server code can be debugged.
 
