@@ -60,7 +60,7 @@ On 4D Server, Web server sessions are automatically handled through preemptive p
 
 > To debug web code on 4D Server (interpreted), you need to launch and connect [4D on the same machine as 4D Server](Desktop/clientServer.md#using-4d-and-4d-server-on-the-same-machine) and open the development environment (e.g., the Explorer) on the 4D application. With this configuration, all processes switch to cooperative mode and the web server code can be debugged. 
 
-With 4D single-user, interpreted code is always cooperative.
+With 4D single-user, interpreted code is always run in cooperative mode.
 
 ## Sharing information
 
