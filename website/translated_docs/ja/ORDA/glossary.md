@@ -27,9 +27,9 @@ title: 用語集
 ユーザークラス関数のコード。
 
 
-## Computed attribute
+## 計算属性
 
-A computed attribute doesn't actually store information. Instead, it determines its value based on other values from the same entity or from other entities, attributes or functions. When a computed attribute is referenced, the underlying "computation" is evaluated to determine the value. Computed attributes may even be assigned values where user-defined code determines what to do during the assignment.
+計算属性は、実際には情報を保存しません。 代わりに、同じエンティティや他のエンティティ、属性、関数などから得られる値に基づいて、その属性値を決定します。 計算属性が参照されると、それを定義する "計算" が評価され、値が決定されます。 計算属性の値を算出するにあたっては、ユーザー定義のコードによって、その評価中に評価の仕方を決定することも可能です。
 
 ## データモデルクラス
 
@@ -205,6 +205,6 @@ ORDA オブジェクトとは関わりのないユーザークラス。
 
 "オプティミステック" ロックテクノロジーにおいて使用されるものです。 すべてのエンティティにはスタンプと呼ばれる内部カウンターがあり、エンティティが保存されるたびにインクリメントされていきます。 エンティティ内のスタンプとディスク上に保存されているエンティティのスタンプを自動的に比較することで、4D は同じエンティティへの書き込みの衝突を防いでいます。
 
-## Storage attribute
+## ストレージ属性
 
-A storage attribute (sometimes referred to as a scalar attribute) is the most basic type of attribute in a datastore class and most directly corresponds to a field in a relational database. A storage attribute holds a single value for each entity in the class.
+ストレージ属性 (スカラー属性と呼ばれることも) は、データストアクラスの属性の中で最も基本的なタイプであり、リレーショナルデータベースのフィールドに最も直接的に対応するものです。 ストレージ属性は、データクラスのエンティティ毎に 1つの値を持ちます。
