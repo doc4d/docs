@@ -26,7 +26,7 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 - 構造が発展した場合には影響を受ける関数を適応させるだけで、クライアントアプリケーションは引き続き透過的にそれらを呼び出すことができます。
 
-- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes)) are **not exposed** to remote applications and cannot be called from REST requests. 公開する関数は [`exposed`](#公開vs非公開関数) キーワードによって明示的に宣言する必要があります。
+- デフォルトでは、データモデルクラス関数は ([計算属性関数](#計算属性) を含め) すべて、リモートアプリケーションに対して **非公開** に設定されており、RESTリクエストで呼び出すことはできません。 公開する関数は [`exposed`](#公開vs非公開関数) キーワードによって明示的に宣言する必要があります。
 
 ![](assets/en/ORDA/api.png)
 
@@ -133,7 +133,7 @@ Function GetBestOnes()
     $best:=ds.Company.GetBestOnes()
 ```
 
-> [Computed attributes](#computed-attributes) are defined in the [Entity Class](#entity-class).
+> [計算属性](#計算属性) は [Entity クラス](#entity-クラス) において定義されます。
 
 
 #### リモートデータストアの例
@@ -216,14 +216,14 @@ ORDA で公開されるテーブル毎に、Entity クラスが `cs` クラス�
 - **クラス名**: *DataClassName*Entity (*DataClassName* はテーブル名です)
 - **例**: cs.CityEntity
 
-Entity classes allow you to define **computed attributes** using specific keywords:
+Entity クラスでは、専用のキーワードを使用して **計算属性** を定義することができます:
 
 - `Function get` *attributeName*
 - `Function set` *attributeName*
 - `Function query` *attributeName*
 - `Function orderBy` *attributeName*
 
-For more information, please refer to the [Computed attributes](#computed-attributes) section.
+詳細については、[計算属性](#計算属性) を参照してください。
 
 #### 例題
 
@@ -270,33 +270,33 @@ End if
 - **`4D`** [クラスストア](Concepts/classes.md#クラスストア) のネイティブな ORDA クラス関数を、データモデルユーザークラス関数でオーバーライドすることはできません。
 
 
-## Computed attributes
+## 計算属性
 
 
 ### 概要
 
-A computed attribute is a dataclass attribute with a data type that masks a calculation. [Standard 4D classes](Concepts/classes.md) implement the concept of computed properties with `get` (*getter*) and `set` (*setter*) [accessor functions](Concepts/classes.md#function-get-and-function-set). ORDA dataclass attributes benefit from this feature and extend it with two additional functions: `query` and `orderBy`.
+計算属性は、計算をマスクするデータ型を持つデータクラス属性です。 [標準的な 4Dクラス](Concepts/classes.md)は、`get` (*ゲッター*) および `set` (*セッター*) [アクセサー関数](Concepts/classes.md#function-get-と-function-set) を用いて、計算プロパティの概念を実装しています。 ORDA のデータクラス属性はこれを利用し、さらに `query` と `orderBy` の 2つの関数で機能を拡張しています。
 
-At the very minimum, a computed attribute requires a `get` function that describes how its value will be calculated. When a *getter* function is supplied for an attribute, 4D does not create the underlying storage space in the datastore but instead substitutes the function's code each time the attribute is accessed. If the attribute is not accessed, the code never executes.
+計算属性には最低限、その値がどのように算出されるかを記述した `get` 関数が必要です。 属性に*ゲッター*関数が定義されている場合、4D は対応するストレージスペースをデータストアに作成せず、代わりに属性がアクセスされるたびに関数のコードを実行します。 属性がアクセスされなければ、コードも実行されません。
 
-A computed attribute can also implement a `set` function, which executes whenever a value is assigned to the attribute. The *setter* function describes what to do with the assigned value, usually redirecting it to one or more storage attributes or in some cases other entities.
+計算属性は、その属性に値が割り当てられたときに実行される `set` 関数を実装することもできます。 *セッター*関数は、割り当てられた値をどのように処理するかを記述します。通常は、1つ以上のストレージ属性や、場合によっては他のエンティティにリダイレクトします。
 
-Just like storage attributes, computed attributes may be included in **queries**. By default, when a computed attribute is used in a ORDA query, the attribute is calculated once per entity examined. In some cases this is sufficient. However for better performance, especially in client/server, computed attributes can implement a `query` function that relies on actual dataclass attributes and benefits from their indexes.
+ストレージ属性と同様に、計算属性も **クエリ** に含めることができます。 デフォルトでは、ORDA のクエリで計算属性が使用された場合、その属性はエンティティ毎に一度計算されます。 場合によっては、これで十分です。 しかし、特にクライアント/サーバーにおいてはパフォーマンスを向上させるため、実際のデータクラス属性に基づいた `query` 関数を計算属性に実装することで、それらのインデックスの恩恵を受けることができます。
 
-Similarly, computed attributes can be included in **sorts**. When a computed attribute is used in a ORDA sort, the attribute is calculated once per entity examined. Just like in queries, computed attributes can implement an `orderBy` function that substitutes other attributes during the sort, thus increasing performance.
+同様に、計算属性を **並べ替え** に含めることもできます。 デフォルトでは、ORDA の並べ替えで計算属性が使用された場合、その属性はエンティティ毎に一度計算されます。 クエリと同様に、実際のデータクラス属性に基づいた `orderBy` 関数を計算属性に実装することで、パフォーマンスを向上させることができます。
 
 
-### How to define computed attributes
+### 計算属性の定義
 
-You create a computed attribute by defining a `get` accessor in the [**entity class**](#entity-class) of the dataclass. The computed attribute will be automatically available in the dataclass attributes and in the entity attributes.
+計算属性を作成するには、データクラスの [**Entity クラス**](#entity-クラス) に `get` アクセサー関数を定義します。 計算属性は、データクラス属性およびエンティティ属性として自動的に利用可能になります。
 
-Other computed attribute functions (`set`, `query`, and `orderBy`) can also be defined in the entity class. They are optional.
+その他の計算属性の関数 (`set`、`query`、`orderBy`) も、Entityクラスに定義することができます。 これらの関数の定義は任意です。
 
-Within computed attribute functions, [`This`](Concepts/classes.md#this) designates the entity. Computed attributes can be used and handled as any dataclass attribute, i.e. they will be processed by [entity class](API/EntityClass.md) or [entity selection class](API/EntitySelectionClass.md) functions.
+計算属性の関数内において、[`This`](Concepts/classes.md#this) はエンティティを指します。 計算属性は、他のデータクラス属性と同様に使用することができます。つまり、[Entity クラス](API/EntityClass.md) や [EntitySelection クラス](API/EntitySelectionClass.md) の関数によっても同様に処理されます。
 
-> ORDA computed attributes are not [**exposed**](#exposed-vs-non-exposed-functions) by default. You expose a computed attribute by adding the `exposed` keyword to the **get function** definition.
+> ORDA の計算属性は、デフォルトでは [**公開**](#公開vs非公開関数) されません。 計算属性を公開するには、**get 関数** の定義に `exposed` キーワードを追加します。
 
-> **get and set functions** can have the [**local**](#local-functions) property to optimize client/server processing.
+> **get および set関数**は、クライアント/サーバー処理を最適化するために、[**local**](#ローカル関数) プロパティを持つこともできます。
 
 
 ### `Function get <attributeName>`
@@ -305,41 +305,41 @@ Within computed attribute functions, [`This`](Concepts/classes.md#this) designat
 
 ```4d
 {local} {exposed} Function get <attributeName>({$event : Object}) -> $result : type
-// code
+// コード
 ```
-The *getter* function is mandatory to declare the *attributeName* computed attribute. Whenever the *attributeName* is accessed, 4D evaluates the `Function get` code and returns the *$result* value.
+*ゲッター* 関数は、*attributeName* 計算属性を宣言するために必須です。 *attributeName* がアクセスされるたびに、4D は `Function get` のコードを評価し、*$result* 値を返します。
 
-> A computed attribute can use the value of other computed attribute(s). Recursive calls generate errors.
+> 計算属性は、他の計算属性の値を使用することができます。 再帰的な呼び出しはエラーになります。
 
-The *getter* function defines the data type of the computed attribute thanks to the *$result* parameter. The following resulting types are allowed:
+*ゲッター* 関数は、*$result* パラメーターに基づいて、計算属性のデータ型を定義します。 以下の結果の型が可能です:
 
-- Scalar (text, boolean, date, time, number)
+- スカラー (テキスト、ブール、日付、時間、数値)
 - オブジェクト
-- Image
+- ピクチャー
 - BLOB
-- Entity (i.e. cs.EmployeeEntity)
-- Entity selection (i.e. cs.EmployeeSelection)
+- エンティティ (例: cs.EmployeeEntity)
+- エンティティセレクション (例: cs.EmployeeSelection)
 
-The *$event* parameter contains the following properties:
+*$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                                                        |
-| ------------- | ----- | ----------------------------------------------------------------------------------------- |
-| attributeName | テキスト  | Computed attribute name                                                                   |
-| dataClassName | テキスト  | Dataclass name                                                                            |
-| kind          | テキスト  | "get"                                                                                     |
-| result        | バリアント | Optional. Add this property with Null value if you want a scalar attribute to return Null |
+| プロパティ         | タイプ     | 説明                                                |
+| ------------- | ------- | ------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                           |
+| dataClassName | Text    | データクラスの名称                                         |
+| kind          | Text    | "get"                                             |
+| result        | Variant | 任意。 スカラー属性が Null を返すようにするには、このプロパティを Null値で追加します。 |
 
 
 #### 例題
 
-- *fullName* computed attribute:
+- *fullName* 計算属性:
 
 ```4d
 Function get fullName($event : Object)-> $fullName : Text
 
   Case of   
     : (This.firstName=Null) & (This.lastName=Null)
-        $event.result:=Null //use result to return Null
+        $event.result:=Null // Null値を返すには result を使用します
     : (This.firstName=Null)
         $fullName:=This.lastName
     : (This.lastName=Null)
@@ -349,7 +349,7 @@ Function get fullName($event : Object)-> $fullName : Text
     End case 
 ```
 
-- A computed attribute can be based upon an entity related attribute:
+- 計算属性は、エンティティにリレートされた属性に基づいて定義することができます。
 
 ```4d
 Function get bigBoss($event : Object)-> $result: cs.EmployeeEntity
@@ -357,7 +357,7 @@ Function get bigBoss($event : Object)-> $result: cs.EmployeeEntity
 
 ```
 
-- A computed attribute can be based upon an entity selection related attribute:
+- 計算属性は、エンティティセレクションにリレートされた属性に基づいて定義することができます。
 
 ```4d
 Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
@@ -374,21 +374,21 @@ Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
 
 ```4d
 {local} Function set <attributeName>($value : type {; $event : Object})
-// code
+// コード
 ```
 
-The *setter* function executes whenever a value is assigned to the attribute. This function usually processes the input value(s) and the result is dispatched between one or more other attributes.
+*セッター* 関数は、属性に値が割り当てられたときに実行されます。 この関数は通常、入力値を処理し、その結果を 1つ以上の他の属性に転送します。
 
-The *$value* parameter receives the value assigned to the attribute.
+*$value* パラメーターは、属性に割り当てられた値を受け取ります。
 
-The *$event* parameter contains the following properties:
+*$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                            |
-| ------------- | ----- | --------------------------------------------- |
-| attributeName | テキスト  | Computed attribute name                       |
-| dataClassName | テキスト  | Dataclass name                                |
-| kind          | テキスト  | "set"                                         |
-| value         | バリアント | Value to be handled by the computed attribute |
+| プロパティ         | タイプ     | 説明               |
+| ------------- | ------- | ---------------- |
+| attributeName | Text    | 計算属性の名称          |
+| dataClassName | Text    | データクラスの名称        |
+| kind          | Text    | "set"            |
+| value         | Variant | 計算属性によって処理されるべき値 |
 
 #### 例題
 
@@ -410,41 +410,41 @@ Function set fullName($value : Text; $event : Object)
 Function query <attributeName>($event : Object)
 Function query <attributeName>($event : Object) -> $result : Text
 Function query <attributeName>($event : Object) -> $result : Object
-// code
+// コード
 ```
 
-This function supports three syntaxes:
+このメソッドは 3種類のシンタックスを受け入れます:
 
-- With the first syntax, you handle the whole query through the `$event.result` object property.
-- With the second and third syntaxes, the function returns a value in *$result*:
-    - If *$result* is a Text, it must be a valid query string
-    - If *$result* is an Object, it must contain two properties:
+- 最初のシンタックスでは、`$event.result` オブジェクトプロパティを通じてクエリ全体を処理します。
+- 2番目と 3番目のシンタックスでは、関数は *$result* に値を返します:
+    - *$result* がテキストの場合、それは有効なクエリ文字列でなければなりません。
+    - *$result* がオブジェクトの場合、次の 2つのプロパティを含まなければなりません:
 
-    | プロパティ              | タイプ    | 説明                                                  |
-    | ------------------ | ------ | --------------------------------------------------- |
-    | $result.query      | テキスト   | Valid query string with placeholders (:1, :2, etc.) |
-    | $result.parameters | コレクション | values for placeholders                             |
+    | プロパティ              | タイプ        | 説明                                  |
+    | ------------------ | ---------- | ----------------------------------- |
+    | $result.query      | Text       | プレースホルダー (:1, :2, など) を使った有効なクエリ文字列 |
+    | $result.parameters | Collection | プレースホルダーに渡す値                        |
 
-The `query` function executes whenever a query using the computed attribute is launched. It is useful to customize and optimize queries by relying on indexed attributes. When the `query` function is not implemented for a computed attribute, the search is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
+`query` 関数は、計算属性を使用するクエリが開始されるたびに実行されます。 インデックス付きの属性を利用することで、クエリをカスタマイズしたり最適化したりすることができます。 計算属性に対して `query` 関数が実装されていない場合、検索は常にシーケンシャルにおこなわれます (`get <AttributeName>` 関数によるすべての値の評価に基づきます)。
 
-> The following features are not supported: - calling a `query` function on computed attributes of type Entity or Entity selection, - using the `order by` keyword in the resulting query string.
+> 以下の機能はサポートされていません:<br /> - エンティティ、またはエンティティセレクション型の計算属性に対する `query` 関数の呼び出し<br /> - 結果のクエリ文字列における `order by` キーワードの使用
 
-The *$event* parameter contains the following properties:
+*$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                                                                                                                                                                                                                                                                                                                     |
-| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| attributeName | テキスト  | Computed attribute name                                                                                                                                                                                                                                                                                                                                |
-| dataClassName | テキスト  | Dataclass name                                                                                                                                                                                                                                                                                                                                         |
-| kind          | テキスト  | "query"                                                                                                                                                                                                                                                                                                                                                |
-| value         | バリアント | Value to be handled by the computed attribute                                                                                                                                                                                                                                                                                                          |
-| operator      | テキスト  | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). とりうる値:<li>== (equal to, @ is wildcard)</li><li>=== (equal to, @ is not wildcard)</li><li>!= (not equal to, @ is wildcard)</li><li>!== (not equal to, @ is not wildcard)</li><li>< (less than)</li><li><= (less than or equal to)</li><li>> (greater than)</li><li>>= (greater than or equal to)</li><li>IN (included in)</li><li>% (contains keyword)</li> |
-| result        | バリアント | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                               |
+| プロパティ         | タイプ     | 説明                                                                                                                                                                                                                                                                                                                              |
+| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                                                                                                                                                                                                                                                                                                         |
+| dataClassName | Text    | データクラスの名称                                                                                                                                                                                                                                                                                                                       |
+| kind          | Text    | "query"                                                                                                                                                                                                                                                                                                                         |
+| value         | Variant | 計算属性によって処理されるべき値                                                                                                                                                                                                                                                                                                                |
+| operator      | Text    | クエリ演算子 ([`query` クラス関数も参照ください](API/DataClassClass.md#query))。 とりうる値:<li>== (と等しい; @ はワイルドカード)</li><li>=== (と等しい; @ はワイルドカードでない)</li><li>!= (と等しくない; @ はワイルドカード)</li><li>!== (と等しくない; @ はワイルドカードでない)</li><li>&lt; (小さい)</li><li><= (less than or equal to)</li><li>&gt; (大きい)</li><li>&gt;= (以上)</li><li>IN (含まれる)</li><li>% (キーワードを含む)</li> |
+| result        | Variant | 計算属性によって処理されるべき値。 4D がデフォルトクエリ (計算属性では常にシーケンシャル) を実行するようにしたい場合は、このプロパティに `Null` を渡します。                                                                                                                                                                                                                                          |
 
-> If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
+> 関数が *$result* に値を返し、`$event.result` プロパティにも別の値が割り当てられている場合、`$event.result` が優先されます。
 
 #### 例題
 
-- Query on the *fullName* computed attribute.
+- *fullName* 計算属性のクエリ:
 
 ```4d
 Function query fullName($event : Object)->$result : Object
@@ -461,10 +461,10 @@ Function query fullName($event : Object)->$result : Object
     If ($p>0)
         $firstname:=Substring($fullname; 1; $p-1)+"@"
         $lastname:=Substring($fullname; $p+1)+"@"
-        $parameters:=New collection($firstname; $lastname) // two items collection
+        $parameters:=New collection($firstname; $lastname) // 2要素のコレクション
     Else 
         $fullname:=$fullname+"@"
-        $parameters:=New collection($fullname) // single item collection
+        $parameters:=New collection($fullname) // 1要素のコレクション
     End if 
 
     Case of 
@@ -485,15 +485,15 @@ Function query fullName($event : Object)->$result : Object
     $result:=New object("query"; $query; "parameters"; $parameters)
 ```
 
-> Keep in mind that using placeholders in queries based upon user text input is recommended for security reasons (see [`query()` description](API/DataClassClass.md#query)).
+> ユーザーのテキスト入力に基づくクエリでは、セキュリティ上の理由からプレースホルダーを使用することが推奨されています ([`query()` の説明](API/DataClassClass.md#query) 参照)。
 
-Calling code, for example:
+呼び出しコードの例:
 
 ```4d
 $emps:=ds.Employee.query("fullName = :1"; "Flora Pionsin")
 ```
 
-- This function handles queries on the *age* computed attribute and returns an object with parameters:
+- この関数は *age (年齢)* 計算属性に対するクエリを処理し、パラメーターを含むオブジェクトを返します:
 
 ```4d
 Function query age($event : Object)->$result : Object
@@ -504,7 +504,7 @@ Function query age($event : Object)->$result : Object
 
     $operator:=$event.operator
 
-    $age:=Num($event.value)  // integer
+    $age:=Num($event.value)  // 整数
     $d1:=Add to date(Current date; -$age-1; 0; 0)
     $d2:=Add to date($d1; 1; 0; 0)
     $parameters:=New collection($d1; $d2)
@@ -512,16 +512,16 @@ Function query age($event : Object)->$result : Object
     Case of 
 
         : ($operator="==")
-            $query:="birthday > :1 and birthday <= :2"  // after d1 and before or egal d2
+            $query:="birthday > :1 and birthday <= :2"  // d1 より大きい、かつ d2 以下
 
         : ($operator="===") 
 
-            $query:="birthday = :2"  // d2 = second calculated date (= birthday date)
+            $query:="birthday = :2"  // d2 = 2つ目の算出値 (= 誕生日)
 
         : ($operator=">=")
             $query:="birthday <= :2"
 
-            //... other operators           
+            //... その他の演算子           
 
 
     End case 
@@ -535,14 +535,14 @@ Function query age($event : Object)->$result : Object
 
 ```
 
-Calling code, for example:
+呼び出しコードの例:
 
 ```4d
-// people aged between 20 and 21 years (-1 day)
-$twenty:=people.query("age = 20")  // calls the "==" case
+// 20歳以上で 21歳未満の人
+$twenty:=people.query("age = 20")  // "==" のケースを呼び出します
 
-// people aged 20 years today
-$twentyToday:=people.query("age === 20") // equivalent to people.query("age is 20") 
+// 本日満 20歳になった人
+$twentyToday:=people.query("age === 20") // people.query("age is 20") と同じ 
 
 ```
 
@@ -555,33 +555,33 @@ $twentyToday:=people.query("age === 20") // equivalent to people.query("age is 2
 Function orderBy <attributeName>($event : Object)
 Function orderBy <attributeName>($event : Object)-> $result : Text
 
-// code
+// コード
 ```
 
-The `orderBy` function executes whenever the computed attribute needs to be ordered. It allows sorting the computed attribute. For example, you can sort *fullName* on first names then last names, or conversely. When the `orderBy` function is not implemented for a computed attribute, the sort is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
+`orderBy` 関数は、計算属性で並べ替えされるたびに実行されます。 これにより、計算属性で並べ替えることができます。 たとえば、*fullName* を名字、名前の順にソートしたり、逆に名字、名前の順にソートすることができます。 計算属性に対して `orderBy` 関数が実装されていない場合、並べ替えは常にシーケンシャルにおこなわれます (`get <AttributeName>` 関数によるすべての値の評価に基づきます)。
 
-> Calling an `orderBy` function on computed attributes of type Entity class or Entity selection class **is not supported**.
+> Entity クラス、または EntitySelection クラス型の計算属性に対する `orderBy` 関数の呼び出しは **サポートされていません**。
 
-The *$event* parameter contains the following properties:
+*$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                                                                         |
-| ------------- | ----- | ---------------------------------------------------------------------------------------------------------- |
-| attributeName | テキスト  | Computed attribute name                                                                                    |
-| dataClassName | テキスト  | Dataclass name                                                                                             |
-| kind          | テキスト  | "orderBy"                                                                                                  |
-| value         | バリアント | Value to be handled by the computed attribute                                                              |
-| operator      | テキスト  | "desc" or "asc" (default)                                                                                  |
-| descending    | ブール   | `true` for descending order, `false` for ascending order                                                   |
-| result        | バリアント | Value to be handled by the computed attribute. Pass `Null` if you want to let 4D execute the default sort. |
+| プロパティ         | タイプ     | 説明                                                   |
+| ------------- | ------- | ---------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                              |
+| dataClassName | Text    | データクラスの名称                                            |
+| kind          | Text    | "orderBy"                                            |
+| value         | Variant | 計算属性によって処理されるべき値                                     |
+| operator      | Text    | "desc" または "asc" (デフォルト)                             |
+| descending    | Boolean | 降順の場合は `true`, 昇順の場合は `false`                        |
+| result        | Variant | 計算属性によって処理されるべき値。 4D にデフォルトソートを実行させるには、`Null` を渡します。 |
 
-> You can use either the `operator` or the `descending` property. It is essentially a matter of programming style (see examples).
+> `operator` と `descending` プロパティのどちらを使っても構いません。 これは、基本的にプログラミングのスタイルの問題です (例題参照)。
 
-You can return the `orderBy` string either in the `$event.result` object property or in the *$result* function result. If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
+`orderBy` 文字列は、`$event.result` オブジェクトプロパティまたは関数の戻り値である *$result* のどちらでにも返すことができます。 関数が *$result* に値を返し、`$event.result` プロパティにも別の値が割り当てられている場合、`$event.result` が優先されます。
 
 
 #### 例題
 
-You can write conditional code:
+次のような条件分岐のコードを書くことができます:
 
 ```4d
 Function orderBy fullName($event : Object)-> $result : Text
@@ -592,7 +592,7 @@ Function orderBy fullName($event : Object)-> $result : Text
     End if
 ```
 
-You can also write compact code:
+また、次のような短縮コードを書くこともできます:
 
 ```4d
 Function orderBy fullName($event : Object)-> $result : Text
@@ -600,7 +600,7 @@ Function orderBy fullName($event : Object)-> $result : Text
 
 ```
 
-Conditional code is necessary in some cases:
+場合によっては条件分岐のコードが必要です:
 
 ```4d
 Function orderBy age($event : Object)-> $result : Text
