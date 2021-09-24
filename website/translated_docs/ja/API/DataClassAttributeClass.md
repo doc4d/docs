@@ -80,7 +80,7 @@ title: DataClassAttribute
 
 #### 説明
 
-The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->true if the attribute is exposed in REST<!-- END REF -->.
+`.exposed` プロパティは、 <!-- REF DataClassAttributeClass.exposed.Summary -->属性が REST で公開されている場合に true<!-- END REF -->です。
 
 <!-- END REF -->
 
@@ -118,9 +118,9 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 ## .fieldType
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                             |
-| ------ | ------------------------------ |
-| v19 R3 | Support of computed attributes |
+| バージョン  | 内容        |
+| ------ | --------- |
+| v19 R3 | 計算属性をサポート |
 </details>
 
 
@@ -134,12 +134,12 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 
 **とりうる値:**
 
-| dataClassAttribute.kind | fieldType                                                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| storage                 | Corresponding 4D field type, see [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)            |
-| relatedEntity           | 38 (`Is object`)                                                                                                   |
-| relatedEntities         | 42 (`Is collection`)                                                                                               |
-| calculated              | <li>scalar: corresponding 4D field type, see [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
+| dataClassAttribute.kind | fieldType                                                                                                      |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------- |
+| storage                 | 4D フィールドタイプに対応、[`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html) コマンド参照                   |
+| relatedEntity           | 38 (`Is object`)                                                                                               |
+| relatedEntities         | 42 (`Is collection`)                                                                                           |
+| calculated              | <li>スカラー: 4D フィールドタイプに対応、[`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html) コマンド参照</li><li>エンティティ: 38 (`Is object`)</li><li>エンティティセレクション: 42 (`Is collection)` |
 
 
 <!-- END REF -->
@@ -229,9 +229,9 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 ## .kind
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                 |
-| ------ | ------------------ |
-| v19 R3 | Added "calculated" |
+| バージョン  | 内容               |
+| ------ | ---------------- |
+| v19 R3 | "calculated" を追加 |
 </details>
 
 
@@ -244,7 +244,7 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 `.kind` プロパティは、 <!-- REF DataClassAttributeClass.kind.Summary -->属性の種類<!-- END REF -->を格納します。 以下のいずれかの値が返されます:
 
 *   "storage": ストレージ (あるいはスカラー) 属性。つまり、属性は値を保存しており、他の属性への参照ではありません。
-*   "calculated": computed attribute, i.e. defined through a [`get` function](ORDA/ordaClasses.md#function-get-attributename).
+*   "calculated": 計算属性。[`get` 関数](ORDA/ordaClasses.md#function-get-attributename) によって定義されます。
 *   "relatedEntity": N対1 リレーション属性 (エンティティへの参照)
 *   "relatedEntities": 1対N リレーション属性 (エンティティセレクションへの参照)
 
@@ -342,9 +342,9 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 
 #### 説明
 
-The `.readOnly` property is <!-- REF DataClassAttributeClass.readOnly.Summary -->true if the attribute is read-only<!-- END REF -->.
+`.readOnly` プロパティは、 <!-- REF DataClassAttributeClass.readOnly.Summary -->読み取り専用属性の場合に true<!-- END REF -->です。
 
-For example, computed attributes without [`set` function](ORDA/ordaClasses.md#function-set-attributename) are read-only. 
+たとえば、[`set` 関数](ORDA/ordaClasses.md#function-set-attributename) を持たない計算属性は読み取り専用です。 
 
 <!-- END REF -->
 
@@ -392,9 +392,9 @@ For example, computed attributes without [`set` function](ORDA/ordaClasses.md#fu
 ## .type
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                             |
-| ------ | ------------------------------ |
-| v19 R3 | Support of computed attributes |
+| バージョン  | 内容        |
+| ------ | --------- |
+| v19 R3 | 計算属性をサポート |
 </details>
 
 
@@ -410,12 +410,12 @@ For example, computed attributes without [`set` function](ORDA/ordaClasses.md#fu
 
 **とりうる値:**
 
-| dataClassAttribute.kind | type                                                                                                                         | 説明                                                                                                                                                                    |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| storage                 | "blob", "bool", "date", "image", "number", "object", または "string"                                                            | 数値型の場合 "number" が返されます (期間を含む)。 UUID、文字およびテキスト型フィールドの場合 "string" が返されます。 "blob" 属性は [BLOB オブジェクト](Concepts/dt_blob.md#blob-の種類) で、[Blob クラス](BlobClass.md) によって扱われます。 |
-| relatedEntity           | リレートされたデータクラス名                                                                                                               | 例: "Companies"                                                                                                                                                        |
-| relatedEntities         | リレートされたデータクラス名 + "Selection"                                                                                                 | 例: "EmployeeSelection"                                                                                                                                                |
-| calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection" |                                                                                                                                                                       |
+| dataClassAttribute.kind | type                                                                                                              | 説明                                                                                                                                                                    |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| storage                 | "blob", "bool", "date", "image", "number", "object", または "string"                                                 | 数値型の場合 "number" が返されます (期間を含む)。 UUID、文字およびテキスト型フィールドの場合 "string" が返されます。 "blob" 属性は [BLOB オブジェクト](Concepts/dt_blob.md#blob-の種類) で、[Blob クラス](BlobClass.md) によって扱われます。 |
+| relatedEntity           | リレートされたデータクラス名                                                                                                    | 例: "Companies"                                                                                                                                                        |
+| relatedEntities         | リレートされたデータクラス名 + "Selection"                                                                                      | 例: "EmployeeSelection"                                                                                                                                                |
+| calculated              | <li>ストレージ: データ型 ("blob", "number", など)</li><li>エンティティ: データクラス名</li><li>エンティティセレクション: データクラス名 + "Selection" |                                                                                                                                                                       |
 
 <!-- END REF -->
 
