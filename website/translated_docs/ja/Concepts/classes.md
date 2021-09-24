@@ -8,14 +8,14 @@ title: クラス
 
 4D ランゲージでは **クラス** の概念がサポートされています。 プログラミング言語では、クラスを利用することによって、属性やメソッドなどを持つ特定のオブジェクト種を定義することができます。
 
-ユーザークラスが定義されていれば、そのクラスのオブジェクトをコード内で **インスタンス化** することができます。 各オブジェクトは、それ自身が属するクラスのインスタンスです。 A class can [`extend`](#class-extends-classname) another class, and then inherits from its [functions](#function) and properties ([static](#class-constructor) and [computed](#function-get-and-function-set)).
+ユーザークラスが定義されていれば、そのクラスのオブジェクトをコード内で **インスタンス化** することができます。 各オブジェクトは、それ自身が属するクラスのインスタンスです。 クラスは、別のクラスを [継承](#class-extends-classname) することで、その [関数](#function) と、([スタティック](#class-constructor) および [計算された](#function-get-と-function-set)) プロパティを受け継ぐことができます。
 
 > 4D におけるクラスモデルは JavaScript のクラスに類似しており、プロトタイプチェーンに基づきます。
 
 たとえば、次のように `Person` クラスを定義した場合:
 
 ```4d  
-//Class: Person.4dm
+// クラス: Person.4dm
 Class constructor($firstname : Text; $lastname : Text)
     This.firstName:=$firstname
     This.lastName:=$lastname
@@ -30,11 +30,11 @@ Function sayHello()->$welcome : Text
 この "Person" のインスタンスをメソッド内で作成するには、以下のように書けます:
 
 ```
-var $person : cs.Person //object of Person class  
+var $person : cs.Person // Person クラスのオブジェクト
 var $hello : Text
 $person:=cs.Person.new("John";"Doe")
 // $person:{firstName: "John"; lastName: "Doe"; fullName: "John Doe"}
-$hello:=$person.sayHello() //"Hello John Doe"
+$hello:=$person.sayHello() // "Hello John Doe"
 ```
 
 
@@ -57,7 +57,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
     + Project
 
         * Sources
-            - クラス
+            - Classes
                 + Polygon.4dm
 
 ### クラスの削除
@@ -176,8 +176,8 @@ Class オブジェクトは [共有オブジェクト](shared.md) です。し�
 クラス定義内では、専用の 4Dキーワードが使用できます:
 
 - `Function <Name>`: オブジェクトのクラス関数を定義します。
-- `Function get <Name>` and `Function set <Name>` to define computed properties of the objects.
-- `Class constructor` to define static properties of the objects.
+- `Function get <Name>` と `Function set <Name>`: オブジェクトの計算プロパティを定義します。
+- `Class Constructor`: オブジェクトのスタティックプロパティを定義します。
 - `Class extends <ClassName>`: 継承を定義します。
 
 
@@ -280,7 +280,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 For example:
+> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 たとえば:
 > 
 > ```4d
 > Function add($x : Integer)
@@ -294,18 +294,18 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### Example
+#### 例題
 
 
 
 ```4d
-// Class: Rectangle
+// クラス: Rectangle
 Class constructor($width : Integer; $height : Integer)
     This.name:="Rectangle"
     This.height:=$height
     This.width:=$width
 
-// Function definition
+// 関数定義
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
@@ -314,7 +314,7 @@ Function getArea()->$result : Integer
 
 
 ```4d
-// In a project method
+// プロジェクトメソッドにて
 
 var $rect : cs.Rectangle
 var $area : Real
@@ -327,17 +327,17 @@ $area:=$rect.getArea() //5000
 
 
 
-### `Function get` and `Function set`
+### `Function get` と `Function set`
 
 
 
-#### Syntax
+#### シンタックス
 
 
 
 ```4d
 Function get <name>()->$result : type
-// code
+// コード
 ```
 
 
@@ -345,39 +345,39 @@ Function get <name>()->$result : type
 
 ```4d
 Function set <name>($parameterName : type)
-// code
+// コード
 ```
 
 
-`Function get` and `Function set` are accessors defining **computed properties** in the class. A computed property is a named property with a data type that masks a calculation. When a computed property value is accessed, 4D substitutes the corresponding accessor's code:
+`Function get` と `Function set` は、クラスの **計算プロパティ** を定義するアクセサーです。 計算プロパティとは、計算をマスクするデータ型を持つ命名プロパティです。 計算プロパティの値にアクセスすると、4D は対応するアクセサーのコードを実行します:
 
-- when the property is read, the `Function get` is executed,
-- when the property is written, the `Function set` is executed.
+- プロパティを読み取るときには `Function get` が実行されます。
+- プロパティに書き込むときには `Function set` が実行されます。
 
-If the property is not accessed, the code never executes.
+プロパティにアクセスされない場合は、コードも実行されません。
 
-Computed properties are designed to handle data that do not necessary need to be kept in memory. They are usually based upon persistent properties. For example, if a class object contains as persistent property the *gross price* and the *VAT rate*, the *net price* could be handled by a computed property. 
+計算プロパティは、メモリ上に保持する必要のないデータを処理するために設計されています。 計算プロパティは通常、永続的なプロパティに基づいています。 たとえば、クラスオブジェクトの永続的なプロパティとして、*税込価格* と *消費税率* が含まれている場合、*税抜価格* は計算プロパティで処理することができます。 
 
-In the class definition file, computed property declarations use the `Function get` (the *getter*) and `Function set` (the *setter*) keywords, followed by the name of the property. The name must be compliant with [property naming rules](Concepts/identifiers.md#object-properties). 
+クラス定義ファイルでは、計算プロパティの宣言には、`Function get` (*ゲッター*) と `Function set` (*セッター*) のキーワードを使い、その後にプロパティ名を記述します。 名称は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。 
 
-`Function get` returns a value of the property type and `Function set` takes a parameter of the property type. Both arguments must comply with standard [function parameters](#parameters).
+`Function get` はプロパティの型の値を返し、`Function set` はプロパティの型の引数を受け取ります。 どちらも、標準的な [関数の引数](#引数) のルールに準拠する必要があります。
 
-When both functions are defined, the computed property is **read-write**. If only a `Function get` is defined, the computed property is **read-only**. In this case, an error is returned if the code tries to modify the property. If only a `Function set` is defined, 4D returns *undefined* when the property is read. 
+両方の関数が定義されている場合、計算プロパティは **read-write** となります。 `Function get` のみが定義されている場合、計算プロパティは **read-only** です。 この場合、コードがプロパティを変更しようとするとエラーが返されます。 `Function set` のみが定義されている場合、4D はプロパティの読み取り時に *undefined* を返します。 
 
-The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of any [valid property type](dt_object.md). 
-
-
-
-> Assigning *undefined* to an object property clears its value while preserving its type. In order to do that, the `Function get` is first called to retrieve the value type, then the `Function set` is called with an empty value of that type.
+計算プロパティの型は、*ゲッター* の `$return` の型宣言によって定義されます。 [有効なプロパティタイプ](dt_object.md) であれば、いずれも使用可能です。 
 
 
 
-#### Example 1
+> オブジェクトプロパティに *undefined* を代入すると、型を保持したまま値がクリアされます。 このためには、まず `Function get` を呼び出して値の型を取得し、次に `Function set` を呼び出してその型の空の値を取得します。
+
+
+
+#### 例題 1
 
 
 
 ```4d  
-//Class: Person.4dm
+// クラス: Person.4dm
 
 Class constructor($firstname : Text; $lastname : Text)
     This.firstName:=$firstname
@@ -397,15 +397,15 @@ Function set fullName( $fullName : Text )
 
 
 ```4d
-//in a project method
-$fullName:=$person.fullName // Function get fullName() is called
-$person.fullName:="John Smith" // Function set fullName() is called
+// プロジェクトメソッドにて
+$fullName:=$person.fullName // Function get fullName() が呼び出されます
+$person.fullName:="John Smith" // Function set fullName() が呼び出されます
 ```
 
 
 
 
-#### Example 2
+#### 例題 2
 
 
 
@@ -429,12 +429,12 @@ Function get fullAddress()->$result : Object
 
 
 
-#### Syntax
+#### シンタックス
 
 
 
 ```4d
-// Class: MyClass
+// クラス: MyClass
 Class Constructor({$parameterName : type; ...})
 // コード
 ```
@@ -633,12 +633,12 @@ Function getArea()
 
 #### 例題 2
 
-クラスメンバーメソッド内で `Super` を使う例です。 You created the `Rectangle` class with a function:
+クラスメンバーメソッド内で `Super` を使う例です。 メンバーメソッドを持つ `Rectangle` クラスを作成します:
 
 
 
 ```4d
-//Class: Rectangle
+// クラス: Rectangle
 
 Function nbSides()
     var $0 : Text
@@ -646,12 +646,12 @@ Function nbSides()
 ```
 
 
-You also created the `Square` class with a function calling the superclass function:
+`Square`  クラスには、スーパークラスメソッドを呼び出すメンバーメソッドを定義します:
 
 
 
 ```4d
-//Class: Square
+// クラス: Square
 
 Class extends Rectangle
 
@@ -661,7 +661,7 @@ Function description()
 ```
 
 
-Then you can write in a project method:
+すると、プロジェクトメソッド内には次のように書けます:
 
 
 
@@ -669,7 +669,7 @@ Then you can write in a project method:
 var $square : Object
 var $message : Text
 $square:=cs.Square.new()
-$message:=$square.description() //I have 4 sides which are all equal
+$message:=$square.description() // I have 4 sides which are all equal
 ```
 
 
@@ -681,12 +681,12 @@ $message:=$square.description() //I have 4 sides which are all equal
 
 #### This -> Object
 
-| Parameter | Type   |    | Description    |
-| --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
+| 引数     | 型      |    | 説明         |
+| ------ | ------ | -- | ---------- |
+| Result | object | <- | カレントオブジェクト |
 
 
-The `This` keyword returns a reference to the currently processed object. `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
+`This`  キーワードは、現在処理中のオブジェクトへの参照を返します。 `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
 
 `This` の値は、呼ばれ方によって決まります。 `This` の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。 
 
@@ -726,21 +726,21 @@ $val:=$o.a //42
 
 
 
-> コンストラクター内で [Super](#super) キーワードを使ってスーパークラスのコンストラクターを呼び出す場合、必ず `This` より先にスーパークラスのコンストラクターを呼ぶ必要があることに留意してください。順番を違えるとエラーが生成されます。 See [this example](#example-1).
+> コンストラクター内で [Super](#super) キーワードを使ってスーパークラスのコンストラクターを呼び出す場合、必ず `This` より先にスーパークラスのコンストラクターを呼ぶ必要があることに留意してください。順番を違えるとエラーが生成されます。 こちらの [例題](#example-1) を参照ください。
 
-In any cases, `This` refers to the object the method was called on, as if the method were on the object.
+基本的に、`This` はメソッドの呼び出し元のオブジェクトを指します。
 
 
 
 ```4d
-//Class: ob
+// クラス: ob
 
 Function f()
     $0:=This.a+This.b
 ```
 
 
-Then you can write in a project method:
+この場合、プロジェクトメソッドには次のように書けます:
 
 
 
@@ -748,12 +748,12 @@ Then you can write in a project method:
 $o:=cs.ob.new()
 $o.a:=5
 $o.b:=3
-$val:=$o.f() //8
+$val:=$o.f() // 8
 
 ```
 
 
-In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. *f* は $o のメソッドとして呼び出されるため、メソッド内の `This` は $o を指します。
+この例では、変数 $o に代入されたオブジェクトは *f* プロパティを持たないため、これをクラスより継承します。 *f* は $o のメソッドとして呼び出されるため、メソッド内の `This` は $o を指します。
 
 
 
