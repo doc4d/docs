@@ -175,9 +175,9 @@ OB GET PROPERTY NAMES(ds.Employee;$prop)
 
 これらのオブジェクトは属性を表しますが、データへのアクセスは与えないという点に注意してください。 データの読み書きは [エンティティオブジェクト](entities.md#エンティティ属性の使用) を通しておこなわれます。
 
-#### Computed attributes
+#### 計算属性
 
-[Computed attributes](ordaClasses.md#computed-attributes) are declared using a `get <attributeName>` function in the [Entity class definition](ordaClasses.md#entity-class). Their value is not stored but evaluated each time they are accessed. They do not belong to the underlying database structure, but are built upon it and can be used as any attribute of the data model.
+[計算属性](ordaClasses.md#計算属性) は、[Entity クラスの定義](ordaClasses.md#entity-クラス) で `get <attributeName>` 関数を使用して宣言されます。 この属性値はアクセスされるたびに評価され、保存されません。 計算属性は、基礎となるデータベースストラクチャーには属しませんが、その上に構築され、データモデルの属性と同様に使用することができます。
 
 
 ### エンティティ
