@@ -55,11 +55,11 @@ Webプロセスは通常終了せず、効率化のためにプールされリ�
 
 ### プリエンプティブモード
 
-4D Server上では、**インタプリタモードであっても**、Webサーバーセッションは自動的にプリエンプティブプロセスで処理されます。 そのため、Webサーバーのコードは [プリエンプティブ実行に準拠](preemptiveWeb.md#スレッドセーフなWebサーバーコードの書き方) している必要があります。
+4D Server上では、**インタプリタモードであっても**、Webサーバーセッションは自動的にプリエンプティブプロセスで処理されます。 You need to make sure that your web code is [compliant with a preemptive execution](preemptiveWeb.md#writing-thread-safe-web-server-code).
 
-> Webサーバーコードを 4D Server でデバッグするには、[4D Server と同じマシン上の 4D](Desktop/clientServer.md#4D-と-4D-Server-の同じマシン上での使用) を開き、サーバーに接続します。 これにより、すべてのプロセスがコオペラティブモードに切り替わり、Webサーバーコードのデバッグが可能になります。
+> To debug web code on 4D Server (interpreted), you need to launch and connect [4D on the same machine as 4D Server](Desktop/clientServer.md#using-4d-and-4d-server-on-the-same-machine) and open the development environment (e.g., the Explorer) on the 4D application. これにより、すべてのプロセスがコオペラティブモードに切り替わり、Webサーバーコードのデバッグが可能になります。
 
-
+With 4D single-user, interpreted code is always run in cooperative mode.
 
 ## 情報の共有
 
