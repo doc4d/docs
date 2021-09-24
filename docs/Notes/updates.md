@@ -5,6 +5,21 @@ title: Documentation updates
 
 The list of main updates in this documentation. For general information about new features in the 4D products, see the **release notes** on [doc.4d.com](https://doc.4d.com). 
 
+
+## 4D v19 R3
+ 
+- [Computed properties](Concepts/classes.md#function-get-and-function-set) are available in classes.
+- [Computed attributes](ORDA/ordaClasses.md#computed-attributes) are available in ORDA classes. They are similar to computed properties but support [query](ORDA/ordaClasses.md#function-query-attributename) and [orderBy](ORDA/ordaClasses.md#function-orderby-attributename) functions.
+- New ORDA dataclass attributes: [`exposed`](API/DataClassAttributeClass.md#exposed) and [`readOnly`](API/DataClassAttributeClass.md#readonly).
+- [`ZIP Create archive command`](API/ZipArchiveClass.md#zip-create-archive) now supports *LZMA* and *xz* compression algorithms. 
+- A [new build option](Desktop/building.md#allow-connection-of-silicon-mac-clients) makes it easier to include Silicon Mac clients in 4D Server Windows. 
+- Extended [support of dark mode](Preferences/general.md#appearance-macos-only) on macOS.
+- Support of **OAuth2 token object** in [`IMAP New transporter`](API/IMAPTransporterClass.md#imap-new-transporter), [`POP3 New transporter`](API/POP3TransporterClass.md#pop3-new-transporter), and [`SMTP New transporter`](API/SMTPTransporterClass.md#smtp-new-transporter).
+- Users can now [load from the Server window](/Admin/server-admin.md#load-logs-configuration-file) a [log configuration file](Admin/debugLogFiles.md#using-a-log-configuration-file)
+- Handling [optional parameters](Concepts/parameters.md#optional-parameters) is more flexible.
+- Debugging web server sessions [is easier on 4D Server](WebServer/sessions.md#preemptive-mode). 
+
+
 ## 4D v19 R2
  
 - A [default .gitignore file](Preferences/general.md#create-gitignore-file) can be created with new projects
