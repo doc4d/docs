@@ -53,10 +53,10 @@ End if
 | --------------- | --------- |:--:| ------------------------------------------------------------------------------ |
 | fileToZip       | 4D.File   | -> | 圧縮する File または Folder オブジェクト                                                    |
 | folderToZip     | 4D.Folder | -> | 圧縮する File または Folder オブジェクト                                                    |
-| zipStructure    | オブジェクト    | -> | 圧縮する File または Folder オブジェクト                                                    |
+| zipStructure    | Object    | -> | 圧縮する File または Folder オブジェクト                                                    |
 | destinationFile | 4D.File   | -> | アーカイブの保存先ファイル                                                                  |
-| options         | 整数        | -> | *folderToZip* オプション: `ZIP Without enclosing folder` (外側のフォルダーを除外して ZIP圧縮をおこなう) |
-| 戻り値             | オブジェクト    | <- | ステータスオブジェクト                                                                    |
+| options         | Integer   | -> | *folderToZip* オプション: `ZIP Without enclosing folder` (外側のフォルダーを除外して ZIP圧縮をおこなう) |
+| 戻り値             | Object    | <- | ステータスオブジェクト                                                                    |
 <!-- END REF -->
 
 
@@ -113,7 +113,7 @@ End if
       
       <tr>
         <td>
-          オプション
+          option
         </td>
         
         <td>
@@ -279,7 +279,7 @@ ZIPアーカイブの圧縮にパスワードと進捗バーを使います:
 | 引数       | タイプ           |    | 説明                      |
 | -------- | ------------- |:--:| ----------------------- |
 | zipFile  | 4D.File       | -> | ZIPアーカイブファイル            |
-| password | テキスト          | -> | ZIPアーカイブのパスワード (必要であれば) |
+| password | Text          | -> | ZIPアーカイブのパスワード (必要であれば) |
 | 戻り値      | 4D.ZipArchive | <- | アーカイブオブジェクト             |
 <!-- END REF -->
 
