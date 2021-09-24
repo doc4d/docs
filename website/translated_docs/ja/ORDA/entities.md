@@ -96,13 +96,13 @@ $myEntity.save() // エンティティを保存します
 たとえば、ストレージ属性を設定するためには:
 
 ```4d
- $entity:=ds.Employee.get(1) //get employee attribute with ID 1
- $name:=$entity.lastname //get the employee name, e.g. "Smith"
- $entity.lastname:="Jones" //set the employee name
- $entity.save() //save the modifications
+ $entity:=ds.Employee.get(1) // ID1 の社員エンティティを取得します
+ $name:=$entity.lastname // 社員のラストネームを取得します。例: "Smith"
+ $entity.lastname:="Jones" // 社員のラストネームを変更します
+ $entity.save() // 変更を保存します
 ```
 
-> Database Blob fields ([scalar blobs](Concepts/blob.md) are automatically converted to and from blob object attributes ([`4D.Blob`](Concepts/blob.md)) when handled through ORDA. When saving a blob object attribute, keep in mind that, unlike blob object size which is only limited by the available memory, Blob field size is limited to 2GB.
+> データベースの BLOBフィールド ([スカラーBLOB](Concepts/blob.md)) は、ORDAで扱われるにあたって、BLOBオブジェクト属性 ([`4D.Blob`](Concepts/blob.md)) に自動変換されます。 BLOBオブジェクト属性を保存する際には、(利用可能なメモリによってのみサイズ制限される BLOBオブジェクトとは異なり) BLOBフィールドのサイズが 2GB に制限されることに注意してください。
 
 リレート属性にアクセスできるかどうかは、属性の型によります。 たとえば、以下のようなストラクチャーがあるとき:
 
