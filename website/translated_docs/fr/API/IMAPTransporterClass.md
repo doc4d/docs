@@ -1254,7 +1254,6 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 </details>
 
 <!-- REF #IMAPTransporterClass.move().Syntax -->
-
 **.move**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.move**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.move().Params -->
@@ -1501,6 +1500,7 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 ```
 
 <!-- END REF -->
+
 
 
 <!-- REF IMAPTransporterClass.renameBox().Desc -->
