@@ -57,8 +57,9 @@ Web processes usually do not end, they are recycled in a pool for efficiency. Wh
 
 On 4D Server, Web server sessions are automatically handled through preemptive processes, **even in interpreted mode**. You need to make sure that your web server code is [compliant with a preemptive execution](preemptiveWeb.md#writing-thread-safe-web-server-code).
 
-> To debug the web server code on 4D Server, make sure the debugger is [attached to the server](Debugging/debugging-remote.md). In this context, web processes switch to cooperative mode and the web server code can be debugged.
+> To debug interpreted web code on the server machine, make sure the debugger is [attached to the server](Debugging/debugging-remote.md) or [to a remote machine](Debugging/debugging-remote.md#attaching-the-debugger-to-a-remote-4d-client). Web processes then switch to cooperative mode and the web server code can be debugged.
 
+With 4D single-user, interpreted code always runs in cooperative mode.
 
 
 ## Sharing information
