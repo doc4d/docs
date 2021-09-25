@@ -223,7 +223,7 @@
         "title": "リモートマシンからのデバッグ"
       },
       "Desktop/building": {
-        "title": "プロジェクトパッケージのビルド"
+        "title": "アプリケーションビルド"
       },
       "Desktop/clientServer": {
         "title": "クライアント/サーバー管理"
@@ -902,7 +902,7 @@
       "Form Object Properties": "フォームオブジェクトプロパティ",
       "Form Events": "フォームイベント",
       "Menus": "メニュー",
-      "Build application": "アプリケーションビルド"
+      "Build Application": "アプリケーションビルド"
     }
   },
   "pages-strings": {
