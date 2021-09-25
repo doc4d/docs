@@ -223,7 +223,7 @@
         "title": "Debugging from remote machines"
       },
       "Desktop/building": {
-        "title": "Building a project package"
+        "title": "Build Application"
       },
       "Desktop/clientServer": {
         "title": "Client/Server Management"
@@ -902,7 +902,7 @@
       "Form Object Properties": "Form Object Properties",
       "Form Events": "Form Events",
       "Menus": "Menus",
-      "Build application": "Build application"
+      "Build Application": "Build Application"
     }
   },
   "pages-strings": {
