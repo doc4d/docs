@@ -203,8 +203,8 @@ ALERT($0)
 
 順番引数には、あらゆる [式](quick-tour.md#式のタイプ) の形が使用できますが、例外があります:
 
-- テーブル
-- 配列
+- tables
+- arrays
 
 テーブルや配列の式は [ポインターを介した参照として](dt_pointer.md#メソッドの引数としてのポインター) 渡す必要があります。
 
@@ -456,7 +456,7 @@ ALERT("Are you sure?";"Yes I am") // 2つの引数
 ALERT("Time is over") // 1つの引数
 ```
 
-4Dメソッドや関数も、このような任意パラメーターを受け入れます。 任意パラメーターの問題は、それらが指定されない場合への対処が必要だということです。 デフォルトでは、宣言されているよりも少ない引数をメソッドや関数に渡した場合、指定されなかったパラメーターは、[そのタイプに応じたデフォルト値](data-types.md#デフォルト値) として、呼び出されたコードの中で処理されます。 たとえば:
+4Dメソッドや関数も、このような任意パラメーターを受け入れます。 You can declare any number of parameters. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). たとえば:
 
 ```4d
 // myClass クラスの "concate" 関数
@@ -470,8 +470,7 @@ $result:=$param1+" "+$param2
  $class.concate() // スペースのみ: " "
 ```
 
-
-> 任意パラメーターが必要な場合、[オブジェクトプロパティを名前付き引数として使用する](#オブジェクトプロパティを名前付き引数として使用する) と型の制限がなく、柔軟で便利です。
+> You can also call a method or function with more parameters than declared. They will be available within the called code through the [${N} syntax](#parameter-indirection-n).
 
 `Count parameters` コマンドを使用すると、メソッドに渡された引数の数を確認することができるため、数に応じて異なる処理をおこなえます。
 
@@ -501,6 +500,7 @@ APPEND TEXT(vtSomeText;$path) // メッセージを表示して、 $path のド�
 APPEND TEXT(vtSomeText;"";$wpArea) // メッセージを表示して、 $wpArea の4D Write Pro ドキュメントに追記します
 ```
 
+> 任意パラメーターが必要な場合、[オブジェクトプロパティを名前付き引数として使用する](#オブジェクトプロパティを名前付き引数として使用する) と型の制限がなく、柔軟で便利です。
 
 
 
