@@ -95,7 +95,7 @@ The current variant of the theme is the object that will be inserted in the form
 
 ![](assets/en/FormEditor/objectBar.png)
 
-You can click twice on the button so that it remains selected even after you have traced an object in the form (continual selection). This function makes creating several successive objects of the same type easier. To cancel a continual selection, click on another object or tool.
+You can click twice on the button so that it remains selected even after you have traced an object in the form (continual selection). Esta función facilita la creación de varios objetos sucesivos del mismo tipo. Para cancelar una selección continua, haga clic en otro objeto o herramienta.
 
 ### Lista de propiedades
 
@@ -103,7 +103,7 @@ Both forms and form objects have properties that control access to the form, the
 
 Puede visualizar y modificar las propiedades de los objetos y formularios utilizando la lista de propiedades. Muestra las propiedades del formulario o de los objetos en función de lo que se seleccione en la ventana del editor.
 
-To display/hide the Property List, choose **Property List** from the **Form** menu or from the context menu of the Form editor. You can also display it by double-clicking in an empty area of the form.
+To display/hide the Property List, choose **Property List** from the **Form** menu or from the context menu of the Form editor. También puede mostrarlo haciendo doble clic en una área vacía del formulario.
 
 #### Accesos directos de navegación
 
