@@ -674,8 +674,8 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 <!-- REF #collection.distinct().Params -->
 | Parameter    | Tipo      |    | Descripción                                                      |
 | ------------ | --------- |:--:| ---------------------------------------------------------------- |
-| option       | Integer   | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
-| propertyPath | Text      | -> | Path of attribute whose distinct values you want to get          |
+| option       | Entero    | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
+| propertyPath | Texto     | -> | Path of attribute whose distinct values you want to get          |
 | Resultado    | Colección | <- | New collection with only distinct values                         |
 <!-- END REF -->
 
@@ -1786,10 +1786,10 @@ You can also pass a criteria parameter to define how the collection elements mus
 
 *   *ascOrDesc* : Integer. You pass one of the following constants from the **Objects and collections** theme:
 
-    | Constant      | Tipo    | Valor | Comment                                           |
-    | ------------- | ------- | ----- | ------------------------------------------------- |
-    | ck ascending  | Longint | 0     | Elements are ordered in ascending order (default) |
-    | ck descending | Longint | 1     | Elements are ordered in descending order          |
+    | Constant      | Tipo         | Valor | Comment                                           |
+    | ------------- | ------------ | ----- | ------------------------------------------------- |
+    | ck ascending  | Entero largo | 0     | Elements are ordered in ascending order (default) |
+    | ck descending | Entero largo | 1     | Elements are ordered in descending order          |
 
     This syntax orders scalar values in the collection only (other element types such as objects or collections are returned unordered).
 
@@ -2675,7 +2675,7 @@ If the collection contains elements of different types, they are first grouped b
 4.  numbers
 5.  objects
 6.  collections
-7.  dates
+7.  fechas
 
 #### Ejemplo 1
 
