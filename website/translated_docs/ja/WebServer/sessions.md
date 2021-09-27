@@ -57,8 +57,9 @@ Webプロセスは通常終了せず、効率化のためにプールされリ�
 
 4D Server上では、**インタプリタモードであっても**、Webサーバーセッションは自動的にプリエンプティブプロセスで処理されます。 そのため、Webサーバーのコードは [プリエンプティブ実行に準拠](preemptiveWeb.md#スレッドセーフなWebサーバーコードの書き方) している必要があります。
 
-> To debug the web server code on 4D Server, make sure the debugger is [attached to the server](Debugging/debugging-remote.md). In this context, web processes switch to cooperative mode and the web server code can be debugged.
+> To debug interpreted web code on the server machine, make sure the debugger is [attached to the server](Debugging/debugging-remote.md) or [to a remote machine](Debugging/debugging-remote.md#attaching-the-debugger-to-a-remote-4d-client). これにより、Webプロセスがコオペラティブモードに切り替わり、Webサーバーコードのデバッグが可能になります。
 
+シングルユーザーの 4D では、インタープリターコードは常にコオペラティブモードで実行されます。
 
 
 ## 情報の共有
