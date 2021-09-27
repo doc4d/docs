@@ -405,8 +405,8 @@ Each `mailInfo` object in the returned collection contains the following propert
 
 | Propiedad    | Tipo   | Descripción                                                        |
 | ------------ | ------ | ------------------------------------------------------------------ |
-| \[ ].size   | Number | Message size in bytes                                              |
-| \[ ].number | Number | Message number                                                     |
+| \[ ].size   | Número | Message size in bytes                                              |
+| \[ ].number | Número | Message number                                                     |
 | \[ ].id     | Texto  | Unique ID of the message (useful if you store the message locally) |
 
 If the mailbox does not contain a message, an empty collection is returned.
@@ -538,9 +538,9 @@ You want to know the total number and size of emails in the mailbox:
 **.undeleteAll()**<!-- END REF -->
 
 <!-- REF #POP3TransporterClass.undeleteAll().Params -->
-| Parámetros | Tipo |  | Descripción                     |
-| ---------- | ---- |::| ------------------------------- |
-|            |      |  | Does not require any parameters |
+| Parameter | Tipo |  | Descripción                     |
+| --------- | ---- |::| ------------------------------- |
+|           |      |  | Does not require any parameters |
 <!-- END REF -->
 
 
