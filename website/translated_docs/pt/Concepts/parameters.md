@@ -455,7 +455,7 @@ ALERT("Are you sure?";"Yes I am") //2 parâmetros
 ALERT("Time is over") //1 parâmetro
 ```
 
-4D methods and functions also accept such optional parameters. The issue with optional parameters is how to handle the case where some of them are missing in the called code. By default, if you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). For example:
+4D methods and functions also accept such optional parameters. You can declare any number of parameters. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). For example:
 
 ```4d
 // "concate" function of myClass
@@ -469,8 +469,7 @@ $result:=$param1+" "+$param2
  $class.concate() // Displays " "
 ```
 
-
-> When optional parameters are needed in your methods, you might also consider using [object properties as named parameters](#using-objects-properties-as-named-parameters) which provide a flexible way to handle variable numbers of parameters.
+> You can also call a method or function with more parameters than declared. They will be available within the called code through the [${N} syntax](#parameter-indirection-n).
 
 Utilizando o comando `Count parameters` desde dentro do método chamado, pode detectar o número real de parâmetros e realizar diferentes operações dependendo do que tenha recebido.
 
@@ -500,6 +499,7 @@ APPEND TEXT(vtSomeText;$path) //Mostra a mensagem e o anexo ao documento em $pat
 APPEND TEXT(vtSomeText;"";$wpArea) //Mostra a mensagem e escreve em $wpArea
 ```
 
+> When optional parameters are needed in your methods, you might also consider using [object properties as named parameters](#using-objects-properties-as-named-parameters) which provide a flexible way to handle variable numbers of parameters.
 
 
 
