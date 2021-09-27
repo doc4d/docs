@@ -104,7 +104,7 @@ End if
         </td>
         
         <td>
-          テキスト
+          Text
         </td>
         
         <td>
@@ -114,7 +114,7 @@ End if
       
       <tr>
         <td>
-          オプション
+          option
         </td>
         
         <td>
@@ -301,7 +301,7 @@ $err:=ZIP Create archive($zip; $destination)
 | 引数       | タイプ           |    | 説明                      |
 | -------- | ------------- |:--:| ----------------------- |
 | zipFile  | 4D.File       | -> | ZIPアーカイブファイル            |
-| password | テキスト          | -> | ZIPアーカイブのパスワード (必要であれば) |
+| password | Text          | -> | ZIPアーカイブのパスワード (必要であれば) |
 | 戻り値      | 4D.ZipArchive | <- | アーカイブオブジェクト             |
 <!-- END REF -->
 
