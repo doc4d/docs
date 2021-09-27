@@ -74,10 +74,10 @@ The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->create
 
 | Propiedad       | Tipo    | Descripción                                    |
 | --------------- | ------- | ---------------------------------------------- |
-| [curve](#curve) | text    | Name of ECDSA curve                            |
-| [pem](#pem)     | text    | PEM definition of an encryption key to load    |
+| [curve](#curve) | texto   | Name of ECDSA curve                            |
+| [pem](#pem)     | texto   | PEM definition of an encryption key to load    |
 | [size](#size)   | integer | Size of RSA key in bits                        |
-| [type](#type)   | text    | Type of the key: "RSA", "ECDSA", or "PEM"</li> |
+| [type](#type)   | texto   | Type of the key: "RSA", "ECDSA", or "PEM"</li> |
 
 
 #### *CryptoKey*
@@ -132,22 +132,22 @@ The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://too
 
 #### *options*
 
-| Propiedad         | Tipo | Descripción                                                                                                                                                    |
-| ----------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | text | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                                         |
-| encodingEncrypted | text | Codificación utilizada para convertir el parámetro `mensaje` en la representación binaria a descifrar. Puede ser "Base64", o "Base64URL". Default is "Base64". |
-| encodingDecrypted | text | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8".                    |
+| Propiedad         | Tipo  | Descripción                                                                                                                                                    |
+| ----------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash              | texto | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                                         |
+| encodingEncrypted | texto | Codificación utilizada para convertir el parámetro `mensaje` en la representación binaria a descifrar. Puede ser "Base64", o "Base64URL". Default is "Base64". |
+| encodingDecrypted | texto | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8".                    |
 
 
 #### *Resultado*
 
 The function returns a status object with `success` property set to `true` if the *message* could be successfully decrypted.
 
-| Propiedad | Tipo       | Descripción                                                         |
-| --------- | ---------- | ------------------------------------------------------------------- |
-| success   | boolean    | True if the message has been successfully decrypted                 |
-| result    | text       | Message decrypted and decoded using the `options.encodingDecrypted` |
-| errors    | collection | If `success` is `false`, may contain a collection of errors         |
+| Propiedad | Tipo      | Descripción                                                         |
+| --------- | --------- | ------------------------------------------------------------------- |
+| success   | booleano  | True if the message has been successfully decrypted                 |
+| result    | texto     | Message decrypted and decoded using the `options.encodingDecrypted` |
+| errors    | colección | If `success` is `false`, may contain a collection of errors         |
 
 
 In case the *message* couldn't be decrypted because it was not encrypted with the same key or algorithm, the `status` object being returned contains an error collection in `status.errors`.
@@ -179,11 +179,11 @@ The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://too
 
 ##### *options*
 
-| Propiedad         | Tipo | Descripción                                                                                                                                               |
-| ----------------- | ---- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hash              | text | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                                    |
-| encodingEncrypted | text | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Default is "Base64".                       |
-| encodingDecrypted | text | Encoding used to convert the `message` parameter into the binary representation to encrypt. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8". |
+| Propiedad         | Tipo  | Descripción                                                                                                                                               |
+| ----------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| hash              | texto | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                                    |
+| encodingEncrypted | texto | Encoding used to convert the binary encrypted message into the result string. Can be "Base64", or "Base64URL". Default is "Base64".                       |
+| encodingDecrypted | texto | Encoding used to convert the `message` parameter into the binary representation to encrypt. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8". |
 
 
 #### *Resultado*
@@ -208,9 +208,9 @@ The returned value is an encrypted message.
 
 
 <!-- REF #CryptoKey.getPrivateKey().Params -->
-| Parameter | Tipo |    | Descripción               |
-| --------- | ---- | -- | ------------------------- |
-| Resultado | Text | <- | Private key in PEM format |
+| Parameter | Tipo  |    | Descripción               |
+| --------- | ----- | -- | ------------------------- |
+| Resultado | Texto | <- | Private key in PEM format |
 <!-- END REF -->
 
 The `.getPrivateKey()` function  <!-- REF #CryptoKey.getPrivateKey().Summary -->returns the private key of the `CryptoKey` object<!-- END REF --> in PEM format, or an empty string if none is available.
@@ -368,7 +368,7 @@ The `CryptoKey` must contain a valid **public** key.
 
 | Propiedad | Tipo     | Descripción                                                                                                                                                                                      |
 | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| hash      | text     | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". Cuando se utiliza para producir un JWT, el tamaño del hash debe coincidir con el tamaño del algoritmo PS@, ES@, RS@ o PS@ |
+| hash      | texto    | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512". Cuando se utiliza para producir un JWT, el tamaño del hash debe coincidir con el tamaño del algoritmo PS@, ES@, RS@ o PS@ |
 | pss       | booleano | Use Probabilistic Signature Scheme (PSS). Ignored if the key is not an RSA key. Pass `true` when verifying a JWT for PS@ algorithm                                                               |
 | encoding  | texto    | Representación de la firma facilitada. Puede ser "Base64" o "Base64URL". Default is "Base64".                                                                                                    |
 
