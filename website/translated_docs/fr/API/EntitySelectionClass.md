@@ -69,9 +69,9 @@ If the *dsTable* is not exposed in [`ds`](API/DataStoreClass.md#ds), an error is
 
 In the optional *settings* parameter, you can pass an object containing the following property:
 
-| Propriété | Type | Description                                                                                                       |
-| --------- | ---- | ----------------------------------------------------------------------------------------------------------------- |
-| context   | Text | Label for the [optimization context](ORDA/entities.md#clientserver-optimization) applied to the entity selection. |
+| Propriété | Type  | Description                                                                                                       |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------- |
+| context   | Texte | Label for the [optimization context](ORDA/entities.md#clientserver-optimization) applied to the entity selection. |
 
 
 #### Exemple
