@@ -55,7 +55,7 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 
 The `.autoFilled` property <!-- REF DataClassAttributeClass.autoFilled.Summary -->contains True if the attribute value is automatically filled by 4D<!-- END REF -->. This property corresponds to the following 4D field properties:
 
-*   "Autoincrement", for numeric type fields
+*   "Autoincremento", para campos de tipo numérico
 *   "Auto UUID", for UUID (alpha type) fields.
 
 This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
@@ -136,10 +136,10 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 | dataClassAttribute.kind | fieldType                                                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| storage                 | Corresponding 4D field type, see [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)            |
-| relatedEntity           | 38 (`Is object`)                                                                                                   |
-| relatedEntities         | 42 (`Is collection`)                                                                                               |
-| calculated              | <li>scalar: corresponding 4D field type, see [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
+| storage                 | Corresponding 4D field type                                                                                        |
+| relatedEntity           | 38 (Is object)                                                                                                     |
+| relatedEntities         | 42 (Is collection)                                                                                                 |
+| calculated              | <li>See <a href="https://doc.4d.com/4dv19/help/command/en/page1509.html"><code>Value type</code></a></li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
 
 
 <!-- END REF -->
@@ -410,12 +410,12 @@ The conceptual value type depends on the attribute [`.kind`](#kind).
 
 **Possible values:**
 
-| dataClassAttribute.kind | type                                                                                                                         | Comment                                                                                                                                                                                                                                                                 |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| storage                 | "blob", "bool", "date", "image", "number", "object", o "string"                                                              | "number" se devuelve para cualquier tipo numérico, incluyendo la duración. "string" se devuelve para los tipos de campo uuid, alfa y texto. "blob" attributes are [blob objects](Concepts/dt_blob.md#blob-type), they are handled using the [Blob class](BlobClass.md). |
-| relatedEntity           | related dataClass name                                                                                                       | Ex: "Companies"                                                                                                                                                                                                                                                         |
-| relatedEntities         | related dataClass name + "Selection" suffix                                                                                  | Ex: "EmployeeSelection"                                                                                                                                                                                                                                                 |
-| calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection" |                                                                                                                                                                                                                                                                         |
+| dataClassAttribute.kind | type                                                                                                                         | Comment                                                                                                                                                                                                                                                           |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| storage                 | "blob", "bool", "date", "image", "number", "object", o "string"                                                              | "number" se devuelve para cualquier tipo numérico, incluyendo la duración. "string" is returned for uuid, alpha and text field types. "blob" attributes are [blob objects](Concepts/dt_blob.md#blob-type), they are handled using the [Blob class](BlobClass.md). |
+| relatedEntity           | related dataClass name                                                                                                       | Ex: "Companies"                                                                                                                                                                                                                                                   |
+| relatedEntities         | related dataClass name + "Selection" suffix                                                                                  | Ex: "EmployeeSelection"                                                                                                                                                                                                                                           |
+| calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection" |                                                                                                                                                                                                                                                                   |
 
 <!-- END REF -->
 
