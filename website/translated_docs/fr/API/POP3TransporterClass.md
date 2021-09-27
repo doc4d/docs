@@ -405,8 +405,8 @@ Each `mailInfo` object in the returned collection contains the following propert
 
 | Propriété    | Type   | Description                                                        |
 | ------------ | ------ | ------------------------------------------------------------------ |
-| \[ ].size   | Number | Taille du message en octets                                        |
-| \[ ].number | Number | Numéro du message                                                  |
+| \[ ].size   | Nombre | Taille du message en octets                                        |
+| \[ ].number | Nombre | Numéro du message                                                  |
 | \[ ].id     | Texte  | ID unique du message (utile si vous stockez le message localement) |
 
 If the mailbox does not contain a message, an empty collection is returned.
