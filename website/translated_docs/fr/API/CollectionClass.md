@@ -671,11 +671,11 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 
 
 <!-- REF #collection.distinct().Params -->
-| Paramètres   | Type       |    | Description                                                      |
-| ------------ | ---------- |:--:| ---------------------------------------------------------------- |
-| option       | Integer    | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
-| propertyPath | Text       | -> | Path of attribute whose distinct values you want to get          |
-| Résultat     | Collection | <- | New collection with only distinct values                         |
+| Paramètres   | Type        |    | Description                                                      |
+| ------------ | ----------- |:--:| ---------------------------------------------------------------- |
+| option       | Entier long | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
+| propertyPath | Texte       | -> | Path of attribute whose distinct values you want to get          |
+| Résultat     | Collection  | <- | New collection with only distinct values                         |
 <!-- END REF -->
 
 
@@ -1785,10 +1785,10 @@ You can also pass a criteria parameter to define how the collection elements mus
 
 *   *ascOrDesc* : Integer. You pass one of the following constants from the **Objects and collections** theme:
 
-    | Constant      | Type    | Valeur | Commentaire                                       |
-    | ------------- | ------- | ------ | ------------------------------------------------- |
-    | ck ascending  | Longint | 0      | Elements are ordered in ascending order (default) |
-    | ck descending | Longint | 1      | Elements are ordered in descending order          |
+    | Constant      | Type        | Valeur | Commentaire                                       |
+    | ------------- | ----------- | ------ | ------------------------------------------------- |
+    | ck ascending  | Entier long | 0      | Elements are ordered in ascending order (default) |
+    | ck descending | Entier long | 1      | Elements are ordered in descending order          |
 
     This syntax orders scalar values in the collection only (other element types such as objects or collections are returned unordered).
 
