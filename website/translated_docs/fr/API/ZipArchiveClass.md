@@ -40,10 +40,10 @@ End if
 ## ZIP Create archive
 
 <details><summary>Historique</summary>
-| Version | Modifications                                                         |
-| ------- | --------------------------------------------------------------------- |
-| v19 R3  | Added `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` property |
-| v18     | Ajoutées                                                              |
+| Version | Modifications |
+| ------- | ------------- |
+| v19 R3  | Ajoutées      |
+| v18     | Ajoutées      |
 </details>
 
 <!-- REF #_command_.ZIP Create archive.Syntax -->
@@ -151,11 +151,11 @@ Once an archive is created, you can use the [ZIP Read archive](#zip-read-archive
 
 The returned status object contains the following properties:
 
-| Propriété  | Type    | Description                                                                                                                              |
-| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| statusText | Text    | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
-| status     | Integer | Status code                                                                                                                              |
-| success    | Boolean | True if archive created successfully, else false                                                                                         |
+| Propriété  | Type        | Description                                                                                                                              |
+| ---------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| statusText | Texte       | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
+| status     | Entier long | Status code                                                                                                                              |
+| success    | Booléen     | True if archive created successfully, else false                                                                                         |
 
 
 
