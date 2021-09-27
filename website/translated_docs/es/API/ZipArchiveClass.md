@@ -151,11 +151,11 @@ Once an archive is created, you can use the [ZIP Read archive](#zip-read-archive
 
 The returned status object contains the following properties:
 
-| Propiedad  | Tipo    | Descripción                                                                                                                              |
-| ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| statusText | Text    | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
-| status     | Integer | Status code                                                                                                                              |
-| success    | Boolean | True if archive created successfully, else false                                                                                         |
+| Propiedad  | Tipo     | Descripción                                                                                                                              |
+| ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| statusText | Texto    | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
+| status     | Entero   | Status code                                                                                                                              |
+| success    | Booleano | True if archive created successfully, else false                                                                                         |
 
 
 
