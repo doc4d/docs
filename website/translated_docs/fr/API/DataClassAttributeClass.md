@@ -75,7 +75,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 
 
 <!-- REF DataClassAttributeClass.exposed.Syntax -->
-**.exposed** : Boolean<!-- END REF -->
+**.indexed** : Booléen<!-- END REF -->
 
 
 #### Description
@@ -136,10 +136,10 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 | dataClassAttribute.kind | fieldType                                                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| storage                 | Corresponding 4D field type, see [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)            |
-| relatedEntity           | 38 (`Is object`)                                                                                                   |
-| relatedEntities         | 42 (`Is collection`)                                                                                               |
-| calculated              | <li>scalar: corresponding 4D field type, see [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
+| storage                 | Corresponding 4D field type                                                                                        |
+| relatedEntity           | 38 (Is object)                                                                                                     |
+| relatedEntities         | 42 (Is collection)                                                                                                 |
+| calculated              | <li>See <a href="https://doc.4d.com/4dv19/help/command/en/page1509.html"><code>Value type</code></a></li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
 
 
 <!-- END REF -->
@@ -229,9 +229,9 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 ## .kind
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R3  | Added "calculated" |
+| Version | Modifications |
+| ------- | ------------- |
+| v19 R3  | Ajoutées      |
 </details>
 
 
@@ -337,14 +337,14 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 
 
 <!-- REF DataClassAttributeClass.readOnly.Syntax -->
-**.readOnly** : Boolean<!-- END REF -->
+**.unique** : Booléen<!-- END REF -->
 
 
 #### Description
 
 The `.readOnly` property is <!-- REF DataClassAttributeClass.readOnly.Summary -->true if the attribute is read-only<!-- END REF -->.
 
-For example, computed attributes without [`set` function](ORDA/ordaClasses.md#function-set-attributename) are read-only. 
+**.type** : Texte 
 
 <!-- END REF -->
 
