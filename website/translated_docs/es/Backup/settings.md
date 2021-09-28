@@ -73,7 +73,7 @@ La opción **Utilizar el archivo de historial**, cuando está marcada, indica qu
 
 Por defecto, todo proyecto creado con 4D utiliza un archivo de historial (opción **Utilizar archivo de historial**seleccionada en la **página General** de las **Preferencias**). El archivo de historial se llama *data.journal* y se coloca en la carpeta Data.
 
-> Activating a new log file requires the data of the application to be backed up beforehand. When you check this option, a warning message informs you that a backup is necessary. The creation of the log file is postponed and it will actually be created only after the next backup of the application.
+> La activación de un nuevo archivo de historial requiere una copia de seguridad previa de los datos de la aplicación. When you check this option, a warning message informs you that a backup is necessary. La creación del archivo de historial se pospone y se creará realmente sólo después de la siguiente copia de seguridad de la aplicación.
 
 
 ## Copia de seguridad y restitución
@@ -97,7 +97,7 @@ La modificación de las opciones de copia de seguridad y restauración es opcion
     - **Reintentar después de X segundo(s), minuto(s) u hora(s)**: cuando se marca esta opción, se ejecuta un nuevo intento de copia de seguridad después del periodo de espera. Este mecanismo permite anticipar ciertas circunstancias que pueden bloquear la copia de seguridad. Puede establecer un periodo de espera en segundos, minutos u horas utilizando el menú correspondiente. Si el nuevo intento también falla, se genera un error y se anota el fallo en el área de estado de la última copia de seguridad y en el archivo del diario de copias de seguridad.
     - **Cancelar la operación después de X intentos**: este parámetro se utiliza para definir el número máximo de intentos de copia de seguridad fallidos. Si la copia de seguridad no se ha realizado con éxito una vez alcanzado el número máximo de intentos establecido, se cancela y se genera el error 1401 ("Se ha alcanzado el número máximo de intentos de copia de seguridad; la copia de seguridad automática está temporalmente desactivada"). En este caso, no se intentará realizar una nueva copia de seguridad automática mientras no se haya reiniciado la aplicación o se haya realizado con éxito una copia de seguridad manual. Este parámetro es útil para evitar un caso en el que un problema prolongado (que requiera la intervención humana) que impidiera la realización de una copia de seguridad hubiera llevado a la aplicación a intentar repetidamente la copia de seguridad en detrimento de su rendimiento general. Por defecto, este parámetro no está seleccionado.
 
-> 4D considers a backup as failed if the application was not launched at the time when the scheduled automatic backup was set to be carried out.
+> 4D considera que una copia de seguridad ha fallado si la aplicación no se ha iniciado en el momento en que se ha programado la realización de la copia de seguridad automática.
 
 ### Archivo
 Estas opciones se aplican a los archivos de copia de seguridad principales y a los archivos de copia de seguridad del historial.
@@ -126,4 +126,4 @@ El usuario no ve ninguna caja de diálogo; la operación es completamente autom�
 
 > En el caso de una restauración automática, sólo se restauran los siguientes elementos: - Archivo .4DD - archivo .4DIndx - Archivo .4DSyncData - Archivo .4DSyncHeader - Carpeta de datos externos
 > 
-> If you wish to get the attached files or the project files, you must perform a [manual restore](restore.md#manually-restoring-a-backup-standard-dialog).
+> Si desea obtener los archivos adjuntos o los archivos del proyecto, debe realizar una [restauración manual](restore.md#manually-restoring-a-backup-standard-dialog).
