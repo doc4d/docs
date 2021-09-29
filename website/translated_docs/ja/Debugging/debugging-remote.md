@@ -5,47 +5,47 @@ title: リモートマシンからのデバッグ
 
 ## 概要
 
-When a 4D database is running on 4D Server, you can debug the 4D code running on the server from a remote 4D client logged to the project. You just need to attach the debugger to a specific remote machine, and the code execution can be monitored in the debugger directly on the remote machine.
+4Dデータベースが 4D Server 上で動いている場合、プロジェクトにログインしているリモート4Dクライアントからサーバーで実行中の 4Dコードをデバッグすることができます。 特定のリモートマシンでデバッガーを起動すると、そのリモートマシン上で直接、コードの実行をモニターすることができます。
 
-On a remote machine, the [debugger window](debugger.md) displays a specific server icon and a blue background color to indicate that you are debugging server code:
+リモートマシン上で起動された [デバッガー](debugger.md) には、サーバーコードのデバッグ中であることを示すサーバーアイコンと青い背景色のデバッグアイコンが表示されます:
 
 ![debugger-window-remote](assets/en/Debugging/debuggerWindowRemote.png)
 
-This feature is particularly useful when 4D Server runs in headless mode (see [Command Line Interface](../Admin/cli.md)), or when access to the server machine is not easy.
+この機能は、4D Server がヘッドレスモード ([コマンドラインインターフェース](../Admin/cli.md) 参照) で実行中、あるいはサーバーマシンへのアクセスが難しい場合などに特に有用です。
 
 
-## Attached debugger
+## 有効化済デバッガー
 
-Only one debugger can debug a 4D Server application at a given time. It is called the **attached debugger**. The attached debugger can be:
+4D Serverアプリケーションのデバッグは、一度に一つのデバッガーのみがおこなえます。 これを **有効化済デバッガー** と呼びます。 有効化済デバッガーには、以下の 2種類あります:
 
-* the local 4D Server debugger (default) - if the server is not running headless.
-* the debugger of a remote 4D client - if the remote session has access to Design mode.
+* ローカルの 4D Serverデバッガー (デフォルト) - サーバーがヘッドレス実行されていない場合
+* リモート4Dクライアントのデバッガー - リモートセッションがデザインモードにアクセス可能な場合
 
-The attached debugger is called whenever a 4D Server encounters:
-* a break point
-* a `TRACE` command
-* a caught command
-* an error
+有効化済デバッガーは、4D Server が次のいずれかに遭遇した場合に呼び出されます:
+* ブレークポイント
+* `TRACE` コマンド
+* キャッチコマンド
+* エラー
 
-Keep in mind that error messages are sent to the attached debugger machine. This means that in the case of a remote debugger, server error messages are displayed on the remote 4D client.
+エラーメッセージは、デバッガーが有効化されているマシンに送られるという点に注意してください。 これはつまり、リモートデバッガーの場合には、サーバーのエラーメッセージがリモート4Dクライアント上で表示されるということです。
 
-Note that:
-* The code executed in the `On Server Startup Database` Method cannot be debugged remotely. It can only be debugged on the server side
-* If no debugger is attached, the running code is not stopped by debugging commands
+注:
+* `On Server Startup` データベースメソッドで実行されたコードはリモートでデバッグすることができません。 これはサーバー側でしかデバッグすることができません。
+* デバッガーが有効化されていない場合、実行中のコードがデバッグコマンドによって中断されることはありません。
 
-## Attaching the debugger to a remote 4D client
+## リモート4Dクライアントでのデバッガーの有効化
 
-By default, the debugger is not attached to a remote 4D client:
-* If 4D Server is not running headless, the debugger is attached to the server
-* If 4D Server is running headless, no debugger is attached
+デフォルトでは、サーバーのデバッガーはリモート4Dクライアント上で有効化されていません:
+* 4D Server がヘッドレス実行中でない場合、デバッガーはサーバー側で有効化されています。
+* 4D Server がヘッドレス実行中の場合には、サーバーのデバッガーは有効化されていない状態です。
 
-You can attach the debugger to any remote 4D client allowed to connect to the 4D Server application.
+4D Serverアプリケーションに接続できるリモート4Dクライアントであれば、サーバーのデバッガーを有効化することができます。
 
-> The remote 4D client's user session must have access to the Design environment of the database.
+> リモート4Dクライアントのユーザーセッションは、データベースのデザイン環境へのアクセス権を持っている必要があります。
 
-To attach the debugger to a remote 4D client:
+サーバーのデバッガーをリモート4Dクライアントで有効化するには:
 
-* In the 4D Server menu bar, select **Edit** > **Detach Debugger** so that the debugger becomes available to remote machines.
+* 4D Server のメニューバーから、**編集** ＞ **デバッガを無効化する** を選択し、リモートマシンからデバッガーを利用できるようにします。
     - This step is useless if the 4D Server is running headless.
     - You can attach the debugger back to the server by selecting **Edit** > **Attach debugger** (if not attached to a remote 4D client, see [Rejected attachment requests](#rejected-attachment-requests)).
 * In a remote 4D client connected to the server, select **Run** > **Attach Remote Debugger**
