@@ -31,7 +31,7 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 
 ## ds
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                      |
 | ------- | ---------------------------- |
 | v18     | Support of localID parameter |
@@ -42,10 +42,10 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 **ds** { ( *localID* : Text ) } : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.ds.Params -->
-| Parameter | Tipo         |    | Descripción                                |
-| --------- | ------------ | -- | ------------------------------------------ |
-| localID   | Texto        | -> | Local ID of the remote datastore to return |
-| Resultado | cs.DataStore | <- | Reference to the datastore                 |
+| Parámetros | Tipo         |    | Descripción                                |
+| ---------- | ------------ | -- | ------------------------------------------ |
+| localID    | Texto        | -> | Local ID of the remote datastore to return |
+| Resultado  | cs.DataStore | <- | Reference to the datastore                 |
 <!-- END REF -->
 
 
@@ -106,7 +106,7 @@ Using the main datastore on the 4D database:
 
 ## Open datastore
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18     | Añadidos |
@@ -116,7 +116,7 @@ Using the main datastore on the 4D database:
 **Open datastore**( *connectionInfo* : Object ; *localID* : Text ) : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.Open datastore.Params -->
-| Parameter      | Tipo         |    | Descripción                                                               |
+| Parámetros     | Tipo         |    | Descripción                                                               |
 | -------------- | ------------ | -- | ------------------------------------------------------------------------- |
 | connectionInfo | Objeto       | -> | Connection properties used to reach the remote datastore                  |
 | localID        | Texto        | -> | Id to assign to the opened datastore on the local application (mandatory) |
@@ -188,7 +188,7 @@ Connection to a remote datastore with user / password / timeout / tls:
  ALERT("This remote datastore contains "+String($remoteDS.Students.all().length)+" students")
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 Working with several remote datastores:
 
@@ -212,7 +212,7 @@ In case of error, the command returns **Null**. If the remote datastore cannot b
 <!-- REF DataStoreClass.dataclassName.Desc -->
 ## *.dataclassName*
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -248,7 +248,7 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 
 ## .cancelTransaction()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18     | Añadidos |
@@ -259,9 +259,9 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 **.cancelTransaction()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.cancelTransaction().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |::| ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
@@ -286,7 +286,7 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 <!-- REF DataStoreClass.encryptionStatus().Desc -->
 ## .encryptionStatus()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -297,9 +297,9 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 
 
 <!-- REF #DataStoreClass.encryptionStatus().Params -->
-| Parameter | Tipo   |    | Descripción                                                                 |
-| --------- | ------ |:--:| --------------------------------------------------------------------------- |
-| Resultado | Objeto | <- | Information about the encryption of the current datastore and of each table |
+| Parámetros | Tipo   |    | Descripción                                                                 |
+| ---------- | ------ |:--:| --------------------------------------------------------------------------- |
+| Resultado  | Objeto | <- | Information about the encryption of the current datastore and of each table |
 <!-- END REF -->
 
 
@@ -360,7 +360,7 @@ You want to know the number of encrypted tables in the current data file:
 <!-- REF DataStoreClass.getInfo().Desc -->
 ## .getInfo()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -371,9 +371,9 @@ You want to know the number of encrypted tables in the current data file:
 **.getInfo()**: Object<!-- END REF -->
 
 <!-- REF #DataStoreClass.getInfo().Params -->
-| Parameter | Tipo   |    | Descripción          |
-| --------- | ------ |:--:| -------------------- |
-| Resultado | Objeto | <- | Datastore properties |
+| Parámetros | Tipo   |    | Descripción          |
+| ---------- | ------ |:--:| -------------------- |
+| Resultado  | Objeto | <- | Datastore properties |
 <!-- END REF -->
 
 #### Descripción
@@ -431,7 +431,7 @@ On a remote datastore:
 <!-- REF DataStoreClass.getRequestLog().Desc -->
 ## .getRequestLog()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R6  | Añadidos |
@@ -441,9 +441,9 @@ On a remote datastore:
 **.getRequestLog()** : Collection<!-- END REF -->
 
 <!-- REF #DataStoreClass.getRequestLog().Params -->
-| Parameter | Tipo      |    | Descripción                                                  |
-| --------- | --------- |:--:| ------------------------------------------------------------ |
-| Resultado | Colección | <- | Collection of objects, where each object describes a request |
+| Parámetros | Tipo       |    | Descripción                                                  |
+| ---------- | ---------- |:--:| ------------------------------------------------------------ |
+| Resultado  | Collection | <- | Collection of objects, where each object describes a request |
 <!-- END REF -->
 
 
@@ -470,7 +470,7 @@ See Example 2 of [`.startRequestLog()`](#startrequestlog).
 <!-- REF DataStoreClass.isAdminProtected().Desc -->
 ## .isAdminProtected()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -480,9 +480,9 @@ See Example 2 of [`.startRequestLog()`](#startrequestlog).
 **.isAdminProtected()** : Boolean<!-- END REF -->
 
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
-| Parameter | Tipo     |    | Descripción                                                                    |
-| --------- | -------- |:--:| ------------------------------------------------------------------------------ |
-| Resultado | Booleano | <- | True if the Data Explorer access is disabled, False if it is enabled (default) |
+| Parámetros | Tipo     |    | Descripción                                                                    |
+| ---------- | -------- |:--:| ------------------------------------------------------------------------------ |
+| Resultado  | Booleano | <- | True if the Data Explorer access is disabled, False if it is enabled (default) |
 <!-- END REF -->
 
 
@@ -504,7 +504,7 @@ By default, the Data Explorer access is granted for `webAdmin` sessions, but it 
 <!-- REF DataStoreClass.makeSelectionsAlterable().Desc -->
 ## .makeSelectionsAlterable()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R5  | Añadidos |
@@ -514,9 +514,9 @@ By default, the Data Explorer access is granted for `webAdmin` sessions, but it 
 **.makeSelectionsAlterable()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |::| ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
@@ -538,7 +538,7 @@ When this function is not called, new entity selections can be shareable, depend
 <!-- REF DataStoreClass.provideDataKey().Desc -->
 ## .provideDataKey()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -549,7 +549,7 @@ When this function is not called, new entity selections can be shareable, depend
 
 
 <!-- REF #DataStoreClass.provideDataKey().Params -->
-| Parameter     | Tipo   |    | Descripción                           |
+| Parámetros    | Tipo   |    | Descripción                           |
 | ------------- | ------ | -- | ------------------------------------- |
 | curPassPhrase | Texto  | -> | Current encryption passphrase         |
 | curDataKey    | Objeto | -> | Current data encryption key           |
@@ -577,16 +577,16 @@ If a valid data encryption key is provided, it is added to the *keyChain* in mem
 
 The result of the command is described in the returned object:
 
-| Propiedad  |                          | Tipo      | Descripción                                                                     |
-| ---------- | ------------------------ | --------- | ------------------------------------------------------------------------------- |
-| success    |                          | Booleano  | True if the provided encryption key matches the encrypted data, False otherwise |
-|            |                          |           | Properties below are returned only if success is *FALSE*                        |
-| status     |                          | Número    | Error code (4 if the provided encryption key is wrong)                          |
-| statusText |                          | Texto     | Error message                                                                   |
-| errors     |                          | Colección | Stack of errors. The first error has the highest index                          |
-|            | \[ ].componentSignature | Texto     | Internal component name                                                         |
-|            | \[ ].errCode            | Número    | Error number                                                                    |
-|            | \[ ].message            | Texto     | Error message                                                                   |
+| Propiedad  |                          | Tipo       | Descripción                                                                     |
+| ---------- | ------------------------ | ---------- | ------------------------------------------------------------------------------- |
+| success    |                          | Booleano   | True if the provided encryption key matches the encrypted data, False otherwise |
+|            |                          |            | Properties below are returned only if success is *FALSE*                        |
+| status     |                          | Número     | Error code (4 if the provided encryption key is wrong)                          |
+| statusText |                          | Texto      | Error message                                                                   |
+| errors     |                          | Collection | Stack of errors. The first error has the highest index                          |
+|            | \[ ].componentSignature | Texto      | Internal component name                                                         |
+|            | \[ ].errCode            | Número     | Error number                                                                    |
+|            | \[ ].message            | Texto      | Error message                                                                   |
 
 If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **null** (no error is generated).
 
@@ -616,7 +616,7 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 <!-- REF DataStoreClass.setAdminProtection().Desc -->
 ## .setAdminProtection()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -626,9 +626,9 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 
 
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
-| Parameter | Tipo     |    | Descripción                                                                                          |
-| --------- | -------- | -- | ---------------------------------------------------------------------------------------------------- |
-| status    | Booleano | -> | True to disable Data Explorer access to data on the `webAdmin` port, False (default) to grant access |
+| Parámetros | Tipo     |    | Descripción                                                                                          |
+| ---------- | -------- | -- | ---------------------------------------------------------------------------------------------------- |
+| status     | Booleano | -> | True to disable Data Explorer access to data on the `webAdmin` port, False (default) to grant access |
 <!-- END REF -->
 
 
@@ -659,7 +659,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 <!-- REF DataStoreClass.startRequestLog().Desc -->
 ## .startRequestLog()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R6  | Añadidos |
@@ -670,10 +670,10 @@ You create a *protectDataFile* project method to call before deployments for exa
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Parameter | Tipo    |    | Descripción                          |
-| --------- | ------- | -- | ------------------------------------ |
-| file      | 4D.File | -> | File object                          |
-| reqNum    | Entero  | -> | Number of requests to keep in memory |
+| Parámetros | Tipo    |    | Descripción                          |
+| ---------- | ------- | -- | ------------------------------------ |
+| file       | 4D.File | -> | File object                          |
+| reqNum     | Integer | -> | Number of requests to keep in memory |
 <!-- END REF -->
 
 
@@ -737,7 +737,7 @@ You want to log ORDA client requests in memory:
 <!-- REF DataStoreClass.startTransaction().Desc -->
 ## .startTransaction()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18     | Añadidos |
@@ -747,9 +747,9 @@ You want to log ORDA client requests in memory:
 **.startTransaction()**<!-- END REF -->
 
 <!-- REF #DataStoreClass.startTransaction().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |  | ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |  | ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
@@ -805,7 +805,7 @@ You can nest several transactions (sub-transactions). Each transaction or sub-tr
 <!-- REF DataStoreClass.stopRequestLog().Desc -->
 ## .stopRequestLog()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R6  | Añadidos |
@@ -815,9 +815,9 @@ You can nest several transactions (sub-transactions). Each transaction or sub-tr
 **.stopRequestLog()**  <!-- END REF -->
 
 <!-- REF #DataStoreClass.stopRequestLog().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |  | ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |  | ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
@@ -840,7 +840,7 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 <!-- REF DataStoreClass.validateTransaction().Desc -->
 ## .validateTransaction()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18     | Añadidos |
@@ -850,9 +850,9 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 **.validateTransaction()**  <!-- END REF -->
 
 <!-- REF #DataStoreClass.validateTransaction().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |  | ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |  | ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
