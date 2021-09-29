@@ -87,9 +87,9 @@ The table below shows choices available:
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos | Valores posibles                                                                                                                                                                 |
-| ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | cadena         | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (can be combined with the other possible values) |
+| Nombre     | Tipos de datos | Valores posibles                                                                                                                                                              |
+| ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dateFormat | cadena         | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (puede combinarse con otros valores posibles) |
 
 #### Objetos soportados
 
@@ -599,9 +599,9 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 #### Gramática JSON
 
-| Nombre   | Tipos de datos | Valores posibles                                   |
-| -------- | -------------- | -------------------------------------------------- |
-| wordwrap | cadena         | "automatic" (excluding list box), "normal", "none" |
+| Nombre   | Tipos de datos | Valores posibles                                    |
+| -------- | -------------- | --------------------------------------------------- |
+| wordwrap | cadena         | "automatic" (excluyendo list box), "normal", "none" |
 
 #### Objetos soportados
 
