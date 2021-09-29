@@ -97,7 +97,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 ## New signal
 
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -107,7 +107,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 **New signal** { ( *description* : Text ) } : 4D.Signal<!-- END REF -->
 
 <!-- REF SignalClass.New signal.Params -->
-| Parameter   | Tipo      |    | Descripción                            |
+| Parámetros  | Tipo      |    | Descripción                            |
 | ----------- | --------- |:--:| -------------------------------------- |
 | description | Texto     | -> | Description for the signal             |
 | Resultado   | 4D.Signal | <- | Native object encapsulating the signal |
@@ -169,7 +169,7 @@ The ***doSomething*** method could be like:
 <!-- REF SignalClass.description.Desc -->
 ## .description
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -193,7 +193,7 @@ This property is **read-write**.
 <!-- REF SignalClass.signaled.Desc -->
 ## .signaled
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -216,7 +216,7 @@ This property is **read-only**.
 <!-- REF SignalClass.trigger().Desc -->
 ## .trigger()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -226,9 +226,9 @@ This property is **read-only**.
 **.trigger( )**<!-- END REF -->
 
 <!-- REF #SignalClass.trigger().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |::| ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
@@ -245,7 +245,7 @@ If the signal is already in the signaled state (i.e., the `signaled` property is
 <!-- REF SignalClass.wait().Desc -->
 ## .wait()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -255,10 +255,10 @@ If the signal is already in the signaled state (i.e., the `signaled` property is
 **.wait**( { *timeout* : Real } ) : Boolean <!-- END REF -->
 
 <!-- REF #SignalClass.wait().Params -->
-| Parameter | Tipo     |    | Descripción                                    |
-| --------- | -------- | -- | ---------------------------------------------- |
-| timeout   | Real     | -> | Maximum waiting time for the signal in seconds |
-| Resultado | Booleano | <- | State of the `.signaled` property              |
+| Parámetros | Tipo     |    | Descripción                                    |
+| ---------- | -------- | -- | ---------------------------------------------- |
+| timeout    | Real     | -> | Maximum waiting time for the signal in seconds |
+| Resultado  | Booleano | <- | State of the `.signaled` property              |
 <!-- END REF -->
 
 
