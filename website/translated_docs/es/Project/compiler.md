@@ -140,7 +140,7 @@ Used to set the number of passes (code parsing) performed by the compiler and th
 
 #### Compilation Target
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v19     | Añadidos |
