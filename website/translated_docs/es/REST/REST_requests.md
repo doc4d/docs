@@ -18,7 +18,7 @@ While all REST requests must contain the URI and Resource parameters, the Output
 As with all URIs, the first parameter is delimited by a “?” and all subsequent parameters by a “&”. Por ejemplo:
 
  `GET  /rest/Person/?$filter="lastName!=Jones"&$method=entityset&$timeout=600`
-> You can place all values in quotes in case of ambiguity. For example, in our above example, we could have put the value for the last name in single quotes: "lastName!='Jones'".
+> Puede colocar todos los valores entre comillas en caso de ambigüedad. For example, in our above example, we could have put the value for the last name in single quotes: "lastName!='Jones'".
 
 The parameters allow you to manipulate data in dataclasses in your 4D project. Además de recuperar datos mediante los métodos HTTP `GET`, también se pueden añadir, actualizar y eliminar entidades de una clase de datos utilizando los métodos HTTP `POST`.
 
