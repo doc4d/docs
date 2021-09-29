@@ -258,7 +258,7 @@ Then, you can copy that structure to your Windows machine, and use it to build t
 
 #### Compiled structure location
 
-Path to the compiled structure of the Apple Silicon/Intel client application.
+Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
 
 #### Data linking mode
 

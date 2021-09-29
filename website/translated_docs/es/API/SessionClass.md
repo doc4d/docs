@@ -27,9 +27,9 @@ For detailed information about the session implementation, please refer to the [
 ## Session
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 </details>
 
 <!-- REF #_command_.Session.Syntax -->
@@ -37,9 +37,9 @@ For detailed information about the session implementation, please refer to the [
 
 
 <!-- REF #_command_.Session.Params -->
-| Parámetros | Tipo       |    | Descripción    |
-| ---------- | ---------- |:--:| -------------- |
-| Resultado  | 4D.Session | <- | Session object |
+| Parameter | Tipo       |    | Descripción    |
+| --------- | ---------- |:--:| -------------- |
+| Resultado | 4D.Session | <- | Session object |
 <!-- END REF -->
 
 
@@ -85,9 +85,9 @@ IP:port/4DACTION/action_Session
 ## .clearPrivileges()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 
 </details>
 
@@ -124,9 +124,9 @@ $isGuest:=Session.isGuest() //$isGuest is True
 ## .expirationDate
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 
 </details>
 
@@ -155,19 +155,19 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 ## .hasPrivilege()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 </details>
 
 <!-- REF #SessionClass.hasPrivilege().Syntax -->
 **.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| Parámetros | Tipo    |    | Descripción                                      |
-| ---------- | ------- |:--:| ------------------------------------------------ |
-| privilege  | Text    | <- | Name of the privilege to verify                  |
-| Resultado  | Boolean | <- | True if session has *privilege*, False otherwise |
+| Parameter | Tipo     |    | Descripción                                      |
+| --------- | -------- |:--:| ------------------------------------------------ |
+| privilege | Texto    | <- | Name of the privilege to verify                  |
+| Resultado | Booleano | <- | True if session has *privilege*, False otherwise |
 <!-- END REF -->
 
 
@@ -195,9 +195,9 @@ End if
 ## .idleTimeout
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 
 </details>
 
@@ -237,9 +237,9 @@ End if
 ## .isGuest()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 
 </details>
 
@@ -247,9 +247,9 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.isGuest().Params -->
-| Parameter | Tipo    |    | Descripción                                     |
-| --------- | ------- |:--:| ----------------------------------------------- |
-| Resultado | Boolean | <- | True if session is a Guest one, False otherwise |
+| Parameter | Tipo     |    | Descripción                                     |
+| --------- | -------- |:--:| ----------------------------------------------- |
+| Resultado | Booleano | <- | True if session is a Guest one, False otherwise |
 <!-- END REF -->
 
 #### Descripción
@@ -275,9 +275,9 @@ End if
 ## .setPrivileges()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 
 </details>
 
@@ -285,11 +285,11 @@ End if
 **.setPrivileges**( *privilege* : Text )<br>**.setPrivileges**( *privileges* : Collection )<br>**.setPrivileges**( *settings* : Object )<!-- END REF -->
 
 <!-- REF #SessionClass.setPrivileges().Params -->
-| Parameter  | Tipo       |    | Descripción                                                |
-| ---------- | ---------- |:--:| ---------------------------------------------------------- |
-| privilege  | Text       | -> | Privilege name                                             |
-| privileges | Collection | -> | Collection of privilege names                              |
-| parámetros | Object     | -> | Object with a "privileges" property (string or collection) |
+| Parameter  | Tipo      |    | Descripción                                                |
+| ---------- | --------- |:--:| ---------------------------------------------------------- |
+| privilege  | Texto     | -> | Privilege name                                             |
+| privileges | Colección | -> | Collection of privilege names                              |
+| parámetros | Objeto    | -> | Object with a "privileges" property (string or collection) |
 <!-- END REF -->
 
 #### Descripción
@@ -305,7 +305,7 @@ The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -
 | Propiedad  | Tipo               | Descripción                                        |
 | ---------- | ------------------ | -------------------------------------------------- |
 | privileges | Text or Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
-| userName   | Text               | User name to associate to the session (optional)   |
+| userName   | Texto              | User name to associate to the session (optional)   |
 
 If the `privileges` property contains an invalid privilege name, it is ignored.
 
@@ -340,9 +340,9 @@ End if
 ## .storage
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 
 </details>
 
@@ -382,9 +382,9 @@ End if
 ## .userName
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 
 </details>
 

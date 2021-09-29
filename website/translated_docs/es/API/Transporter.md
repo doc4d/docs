@@ -10,9 +10,9 @@ title: Transporter Class
 ## .acceptUnsecureConnection
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #transporter.acceptUnsecureConnection.Syntax -->
@@ -46,9 +46,9 @@ Available secured ports are:
 ## .authenticationMode
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #transporter.authenticationMode.Syntax -->
@@ -77,9 +77,9 @@ Possible values are:
 ## .authenticationMode
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 
@@ -109,9 +109,9 @@ Possible values are:
 ## .authenticationMode
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 
@@ -143,7 +143,7 @@ Possible values are:
 | Version | Changes                 |
 | ------- | ----------------------- |
 | v18     | Support for UTF8 base64 |
-| v17 R5  | Added                   |
+| v17 R5  | Añadidos                |
 </details>
 
 <!-- REF #transporter.bodyCharset.Syntax -->
@@ -176,9 +176,9 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 ## .connectionTimeOut
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #transporter.connectionTimeOut.Syntax -->
@@ -199,9 +199,9 @@ The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeO
 ## .headerCharset
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #transporter.headerCharset.Syntax -->
@@ -234,9 +234,9 @@ The `.headerCharset` property contains <!-- REF #transporter.headerCharset.Summa
 ## .host
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #transporter.host.Syntax -->
@@ -255,9 +255,9 @@ The `.host` property contains <!-- REF #transporter.host.Summary -->the name or 
 ## .logFile
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #transporter.logFile.Syntax -->
@@ -286,9 +286,9 @@ Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), ext
 ## .port
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #transporter.port.Syntax -->
@@ -314,9 +314,9 @@ The `.port` property contains <!-- REF #transporter.port.Summary --> the port nu
 ## .sendTimeOut
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #transporter.sendTimeOut.Syntax -->
@@ -335,9 +335,9 @@ The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary -
 ## .user
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #transporter.user.Syntax -->
@@ -355,9 +355,9 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 ## .checkConnection()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #transporter.checkConnection().Syntax -->
@@ -366,7 +366,7 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 <!-- REF #transporter.checkConnection().Params -->
 | Parameter | Tipo   |    | Descripción                                 |
 | --------- | ------ |:--:| ------------------------------------------- |
-| Resultado | Object | <- | Status of the transporter object connection |
+| Resultado | Objeto | <- | Status of the transporter object connection |
 <!-- END REF -->
 
 
@@ -379,15 +379,15 @@ The `.checkConnection()` function <!-- REF #transporter.checkConnection().Summar
 
 The function sends a request to the mail server and returns an object describing the mail status. This object can contain the following properties:
 
-| Propiedad  |                          | Tipo       | Descripción                                                                                                  |
-| ---------- | ------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------ |
-| success    |                          | boolean    | True if the check is successful, False otherwise                                                             |
-| status     |                          | number     | (SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing) |
-| statusText |                          | text       | Status message returned by the mail server, or last error returned in the 4D error stack                     |
-| errors     |                          | collection | 4D error stack (not returned if a mail server response is received)                                          |
-|            | \[ ].errCode            | number     | 4D error code                                                                                                |
-|            | \[ ].message            | text       | Description of the 4D error                                                                                  |
-|            | \[ ].componentSignature | text       | Signature of the internal component which returned the error                                                 |
+| Propiedad  |                          | Tipo      | Descripción                                                                                                  |
+| ---------- | ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------ |
+| success    |                          | booleano  | True if the check is successful, False otherwise                                                             |
+| status     |                          | number    | (SMTP only) Status code returned by the mail server (0 in case of an issue unrelated to the mail processing) |
+| statusText |                          | texto     | Status message returned by the mail server, or last error returned in the 4D error stack                     |
+| errors     |                          | colección | 4D error stack (not returned if a mail server response is received)                                          |
+|            | \[ ].errCode            | number    | 4D error code                                                                                                |
+|            | \[ ].message            | texto     | Description of the 4D error                                                                                  |
+|            | \[ ].componentSignature | texto     | Signature of the internal component which returned the error                                                 |
 
 
 

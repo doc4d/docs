@@ -40,10 +40,10 @@ Attachment objects provide the following read-only properties and functions:
 | file        | 4D.File           | -> | Attachment file                                                      |
 | zipFile     | 4D.ZipFile        | -> | Attachment Zipfile                                                   |
 | blob        | 4D.Blob           | -> | BLOB containing the attachment                                       |
-| path        | Text              | -> | Path of the attachment file                                          |
-| name        | Text              | -> | Name + extension used by the mail client to designate the attachment |
-| cid         | Text              | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
-| type        | Text              | -> | Value of the content-type header                                     |
+| path        | Texto             | -> | Path of the attachment file                                          |
+| name        | Texto             | -> | Name + extension used by the mail client to designate the attachment |
+| cid         | Texto             | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
+| type        | Texto             | -> | Value of the content-type header                                     |
 | disposition | Texto             | -> | Value of the content-disposition header: "inline" or "attachment".   |
 | Resultado   | 4D.MailAttachment | <- | Attachment object                                                    |
 <!-- END REF -->
@@ -88,7 +88,7 @@ By default, if the *type* parameter is omitted or contains an empty string, the 
 | xml       | application/xml               |
 | htm, html | text/html                     |
 | mp3       | audio/mpeg                    |
-| *other*   | application/octet-stream      |
+| *otro*    | application/octet-stream      |
 
 The optional *disposition* parameter lets you pass the `content-disposition` header of the attachment. You can pass one of the following constants from the "Mail" constant theme:
 
@@ -185,11 +185,11 @@ $transporter.send($email)
 | file        | 4D.File           | -> | Attachment file                                                      |
 | zipFile     | 4D.ZipFile        | -> | Attachment Zipfile                                                   |
 | blob        | 4D.Blob           | -> | BLOB containing the attachment                                       |
-| path        | Text              | -> | Path of the attachment file                                          |
-| name        | Text              | -> | Name + extension used by the mail client to designate the attachment |
-| cid         | Text              | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
-| type        | Text              | -> | Value of the content-type header                                     |
-| disposition | Text              | -> | Value of the content-disposition header: "inline" or "attachment".   |
+| path        | Texto             | -> | Path of the attachment file                                          |
+| name        | Texto             | -> | Name + extension used by the mail client to designate the attachment |
+| cid         | Texto             | -> | ID of attachment (HTML messages only), or " " if no cid is required  |
+| type        | Texto             | -> | Value of the content-type header                                     |
+| disposition | Texto             | -> | Value of the content-disposition header: "inline" or "attachment".   |
 | Resultado   | 4D.MailAttachment | <- | Attachment object                                                    |
 <!-- END REF -->
 
@@ -220,8 +220,8 @@ The `.cid` property contains <!-- REF #MailAttachmentClass.cid.Summary --> the I
 
 The `.disposition` property contains <!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->. Two values are available:
 
-*   "inline": the attachment is rendered within the message contents, at the "cid" location. The rendering depends on the mail client.
-*   "attachment": the attachment is provided as a link in the message.
+*   "inline": el archivo adjunto se muestra dentro del contenido del mensaje, en la ubicación "cid". The rendering depends on the mail client.
+*   "attachment": el archivo adjunto se presenta como un enlace en el mensaje.
 
 
 ## .getContent()
@@ -266,9 +266,9 @@ The `.path` property contains <!-- REF #MailAttachmentClass.path.Summary -->the 
 ## .platformPath
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19     | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v19     | Añadidos |
 </details>
 
 <!-- REF #MailAttachmentClass.platformPath.Syntax -->

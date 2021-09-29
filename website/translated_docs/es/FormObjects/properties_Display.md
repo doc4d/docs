@@ -38,9 +38,9 @@ The field actually contains "proportion". 4D accepts and stores the entire entry
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos | Valores posibles                                                                     |
-| ---------- | -------------- | ------------------------------------------------------------------------------------ |
-| textFormat | cadena         | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", custom formats |
+| Nombre     | Tipos de datos | Valores posibles                                                                              |
+| ---------- | -------------- | --------------------------------------------------------------------------------------------- |
+| textFormat | cadena         | "### ####", "(###) ### ####", "### ### ####", "### ## ####", "00000", formatos personalizados |
 
 #### Objetos soportados
 
@@ -72,7 +72,7 @@ The table below shows choices available:
 | System date long                | systemLong   | Wednesday, March 25, 2020     |
 | RFC 822                         | rfc822       | Tue, 25 Mar 2020 22:00:00 GMT |
 | Short Century                   | shortCentury | 03/25/20 but 04/25/2032 *(2)* |
-| Internal date long              | long         | March 25, 2020                |
+| Internal date long              | largo        | March 25, 2020                |
 | Internal date abbreviated *(1)* | abbreviated  | Mar 25, 2020                  |
 | Internal date short             | short        | 03/25/2020                    |
 | ISO Date Time *(3)*             | iso8601      | 2020-03-25T00:00:00           |
@@ -87,9 +87,9 @@ The table below shows choices available:
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos | Valores posibles                                                                                                                                                                 |
-| ---------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dateFormat | cadena         | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (can be combined with the other possible values) |
+| Nombre     | Tipos de datos | Valores posibles                                                                                                                                                              |
+| ---------- | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dateFormat | cadena         | "systemShort", "systemMedium", "systemLong", "iso8601", "rfc822", "short", "shortCentury", "abbreviated", "long", "blankIfNull" (puede combinarse con otros valores posibles) |
 
 #### Objetos soportados
 
@@ -215,7 +215,7 @@ corresponds to the 5th time format in the pop-up menu, specifically the AM/PM ti
 
 The following table shows how different formats affect the display of numbers. The three columns — Positive, Negative, and Zero — each show how 1,234.50, –1,234.50, and 0 would be displayed.
 
-| Format Entered                         | Positive         | Negative      | Zero                         |
+| Format Entered                         | Positive         | Negative      | Cero                         |
 | -------------------------------------- | ---------------- | ------------- | ---------------------------- |
 | ###                                    | <<<              | <<<           |                              |
 | ####                                   | 1234             | <<<<          |                              |
@@ -465,7 +465,7 @@ In this case as well, the [Title](#title) property is also available so that the
 
 
 ---
-## Title
+## Título
 
 This property is available for a list box column if:
 - the [column type](properties_Object.md#expression-type) is **boolean** and its [display type](properties_Display.md#display-type) is "Check Box"
@@ -599,9 +599,9 @@ Note that regardless of the Wordwrap option’s value, the row height is not cha
 
 #### Gramática JSON
 
-| Nombre   | Tipos de datos | Valores posibles                                   |
-| -------- | -------------- | -------------------------------------------------- |
-| wordwrap | cadena         | "automatic" (excluding list box), "normal", "none" |
+| Nombre   | Tipos de datos | Valores posibles                                    |
+| -------- | -------------- | --------------------------------------------------- |
+| wordwrap | cadena         | "automatic" (excluyendo list box), "normal", "none" |
 
 #### Objetos soportados
 

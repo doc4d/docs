@@ -10,7 +10,7 @@ The 4D web server settings include security parameters, listening ports, default
 
 There are different ways to configure the 4D web server settings, depending on the scope and the server you want to set:
 
-| Setting location                        | Scope                                    | Involved web server                             |
+| Setting location                        | Alcance                                  | Involved web server                             |
 | --------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
 | [webServer object](webServerObject.md)  | Temporary (current session)              | Any web server, including component web servers |
 | `WEB SET OPTION` or a `WEB XXX` command | Temporary (current session)              | Main server                                     |
@@ -18,7 +18,7 @@ There are different ways to configure the 4D web server settings, depending on t
 
 > Some settings are not available from all locations.
 
-## Cache
+## Caché
 
 | Can be set with     | Nombre                                  | Comentarios |
 | ------------------- | --------------------------------------- | ----------- |
@@ -568,7 +568,7 @@ Name of the cookie used for saving the session ID. Default = "4DSID".
 | webServer object | [`sessionCookiePath`](API/WebServerClass.md#sessioncookiepath) |             |
 | `WEB SET OPTION` | `Web session cookie path`                                      |             |
 
-"path" field of the session cookie. Used to control the scope of the session cookies. If you set, for example, the value "/4DACTION" for this selector, the client will only send a cookie for dynamic requests beginning with 4DACTION, and not for pictures, static pages, etc.
+Campo "path" de la cookie de sesión. Used to control the scope of the session cookies. If you set, for example, the value "/4DACTION" for this selector, the client will only send a cookie for dynamic requests beginning with 4DACTION, and not for pictures, static pages, etc.
 
 ## Session Cookie SameSite
 
@@ -584,7 +584,7 @@ Three values are available:
 
 - "Strict" (default `SameSite` attribute value for 4D session cookies): cookies will only be sent in the first-party context, i.e. context matching the domain of the current site, and never to third-party websites.
 - "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site (i.e. they follow a link).
-- "None": Cookies are sent in all contexts, i.e in responses to both first-party and cross-origin requests. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
+- "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
 
 The `Secure` attribute value of the session cookie is automatically set to "True" if the connection is HTTPS (whatever the `SameSite` attribute value).
 

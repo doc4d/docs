@@ -46,7 +46,7 @@ El tipo de objeto define el tipo de objeto al que hay que aplicar el estilo, y c
 
 Especifique el tipo de objeto, luego entre llaves, declare el estilo o los estilos a aplicar.
 
-> The object type corresponds to the JSON [type](FormObjects/properties_Object.md#type) property of form objects.
+> El tipo objeto corresponde a la propiedad JSON [tipo](FormObjects/properties_Object.md#type) de los objetos formulario.
 
 En el siguiente ejemplo, todos los objetos del tipo *botón* mostrarán el texto en la fuente Helvetica Neue, con un tamaño de 20 píxeles:
 
@@ -236,7 +236,7 @@ La mayoría de los atributos del objeto formulario pueden ser definidos dentro d
     - `method`
     - `type`
     - `class`
-    - `event`
+    - `evento`
     - `choiceList`, `excludedList`, `labels`, `list`, `requiredList` (list type)
 
 Form object attributes can be declared with their [JSON name](FormObjects/properties_Reference.md) as CSS attributes (not including object types, methods, events, and lists).

@@ -10,9 +10,9 @@ title: Directory Class
 ## .creationDate
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.creationDate.Syntax -->
@@ -33,9 +33,9 @@ This property is **read-only**.
 ## .creationTime
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.creationTime.Syntax -->
@@ -58,9 +58,9 @@ This property is **read-only**.
 ## .exists
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.exists.Syntax -->
@@ -83,9 +83,9 @@ This property is **read-only**.
 ## .extension
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.extension.Syntax -->
@@ -107,9 +107,9 @@ This property is **read-only**.
 ## .fullName
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.fullName.Syntax -->
@@ -131,9 +131,9 @@ This property is **read-only**.
 ## .hidden
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.hidden.Syntax -->
@@ -155,9 +155,9 @@ This property is **read-only**.
 ## .isAlias
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.isAlias.Syntax -->
@@ -179,9 +179,9 @@ This property is **read-only**.
 ## .isFile
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.isFile.Syntax -->
@@ -202,9 +202,9 @@ This property is **read-only**.
 ## .isFolder
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.isFolder.Syntax -->
@@ -225,9 +225,9 @@ This property is **read-only**.
 ## .isPackage
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.isPackage.Syntax -->
@@ -251,9 +251,9 @@ This property is **read-only**.
 ## .modificationDate
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.modificationDate.Syntax -->
@@ -275,9 +275,9 @@ This property is **read-only**.
 ## .modificationTime
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.modificationTime.Syntax -->
@@ -298,9 +298,9 @@ This property is **read-only**.
 ## .name
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 
@@ -323,9 +323,9 @@ This property is **read-only**.
 ## .original
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.original.Syntax -->
@@ -348,9 +348,9 @@ This property is **read-only**.
 ## .parent
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.parent.Syntax -->
@@ -374,9 +374,9 @@ This property is **read-only**.
 ## .path
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.path.Syntax -->
@@ -397,9 +397,9 @@ This property is **read-only**.
 ## .platformPath
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.platformPath.Syntax -->
@@ -425,9 +425,9 @@ This property is **read-only**.
 ## .copyTo()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.copyTo().Syntax -->
@@ -437,8 +437,8 @@ This property is **read-only**.
 | Parameter         | Tipo      |    | Descripción                                 |
 | ----------------- | --------- |:--:| ------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder                          |
-| newName           | Text      | -> | Name for the copy                           |
-| overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
+| newName           | Texto     | -> | Name for the copy                           |
+| overwrite         | Entero    | -> | `fk overwrite` to replace existing elements |
 | Resultado         | 4D.Folder | <- | Copied file or folder                       |
 <!-- END REF -->
 
@@ -481,9 +481,9 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 ## .file()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.file().Syntax -->
@@ -492,7 +492,7 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 <!-- REF #directory.file().Params -->
 | Parameter | Tipo    |    | Descripción                          |
 | --------- | ------- | -- | ------------------------------------ |
-| path      | Text    | -> | Relative POSIX file pathname         |
+| path      | Texto   | -> | Relative POSIX file pathname         |
 | Resultado | 4D.File | <- | `File` object (null if invalid path) |
 <!-- END REF -->
 
@@ -521,19 +521,19 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 ## .files()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.files().Syntax -->
 **.files**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.files().Params -->
-| Parameter | Tipo       |    | Descripción                         |
-| --------- | ---------- | -- | ----------------------------------- |
-| options   | Integer    | -> | File list options                   |
-| Resultado | Collection | <- | Collection of children file objects |
+| Parameter | Tipo      |    | Descripción                         |
+| --------- | --------- | -- | ----------------------------------- |
+| options   | Entero    | -> | File list options                   |
+| Resultado | Colección | <- | Collection of children file objects |
 <!-- END REF -->
 
 #### Descripción
@@ -582,9 +582,9 @@ You want to get all files that are not invisible in the Documents folder:
 ## .folder()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.folder().Syntax -->
@@ -593,7 +593,7 @@ You want to get all files that are not invisible in the Documents folder:
 <!-- REF #directory.folder().Params -->
 | Parameter | Tipo      |    | Descripción                                    |
 | --------- | --------- | -- | ---------------------------------------------- |
-| path      | Text      | -> | Relative POSIX file pathname                   |
+| path      | Texto     | -> | Relative POSIX file pathname                   |
 | Resultado | 4D.Folder | <- | Created folder object (null if invalid *path*) |
 <!-- END REF -->
 
@@ -622,19 +622,19 @@ A `Folder` object or null if *path* is invalid.
 ## .folders()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.folders().Syntax -->
 **.folders**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.folders().Params -->
-| Parameter | Tipo       |    | Descripción                           |
-| --------- | ---------- | -- | ------------------------------------- |
-| options   | Integer    | -> | Folder list options                   |
-| Resultado | Collection | <- | Collection of children folder objects |
+| Parameter | Tipo      |    | Descripción                           |
+| --------- | --------- | -- | ------------------------------------- |
+| options   | Entero    | -> | Folder list options                   |
+| Resultado | Colección | <- | Collection of children folder objects |
 <!-- END REF -->
 
 #### Descripción
@@ -669,19 +669,19 @@ You want the collection of all folders and subfolders of the database folder:
 ## .getIcon()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #directory.getIcon().Syntax -->
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #directory.getIcon().Params -->
-| Parameter | Tipo    |    | Descripción                                   |
-| --------- | ------- | -- | --------------------------------------------- |
-| size      | Integer | -> | Side length for the returned picture (pixels) |
-| Resultado | Picture | <- | Icono                                         |
+| Parameter | Tipo   |    | Descripción                                   |
+| --------- | ------ | -- | --------------------------------------------- |
+| size      | Entero | -> | Side length for the returned picture (pixels) |
+| Resultado | Imagen | <- | Icono                                         |
 <!-- END REF -->
 
 

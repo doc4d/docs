@@ -30,10 +30,10 @@
         "title": "BLOB"
       },
       "API/ClassClass": {
-        "title": "Class"
+        "title": "クラス"
       },
       "API/CollectionClass": {
-        "title": "Collection"
+        "title": "コレクション"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -42,7 +42,7 @@
         "title": "DataClassAttribute"
       },
       "API/DataClassClass": {
-        "title": "DataClass"
+        "title": "データクラス"
       },
       "API/DataStoreClass": {
         "title": "DataStore"
@@ -57,7 +57,7 @@
         "title": "Email"
       },
       "API/EntityClass": {
-        "title": "Entity"
+        "title": "エンティティ"
       },
       "API/EntitySelectionClass": {
         "title": "EntitySelection"
@@ -84,7 +84,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "Session"
+        "title": "セッション"
       },
       "API/SignalClass": {
         "title": "Signal"
@@ -171,7 +171,7 @@
         "title": "ポインター"
       },
       "Concepts/string": {
-        "title": "String"
+        "title": "文字列"
       },
       "Concepts/time": {
         "title": "時間"
@@ -430,7 +430,7 @@
         "title": "ピクチャー"
       },
       "FormEditor/action": {
-        "title": "動作"
+        "title": "アクション"
       },
       "FormEditor/propertiesForm": {
         "title": "フォームプロパティ"

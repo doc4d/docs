@@ -50,9 +50,9 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 ## Folder
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!-- REF #_command_.Folder.Syntax -->
@@ -62,9 +62,9 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 <!-- REF FolderClass.Folder.Params -->
 | Parameter      | Tipo      |    | Descripción                                     |
 | -------------- | --------- |:--:| ----------------------------------------------- |
-| path           | Text      | -> | Folder path                                     |
-| folderConstant | Integer   | -> | 4D folder constant                              |
-| pathType       | Integer   | -> | `fk posix path` (default) or `fk platform path` |
+| path           | Texto     | -> | Folder path                                     |
+| folderConstant | Entero    | -> | 4D folder constant                              |
+| pathType       | Entero    | -> | `fk posix path` (default) or `fk platform path` |
 | *              |           | -> | * to return folder of host database             |
 | Resultado      | 4D.Folder | <- | New folder object                               |
 <!-- END REF -->
@@ -113,9 +113,9 @@ If the command is called from a component, pass the optional * parameter to get 
 ## 4D.Folder.new()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R6  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v18 R6  | Añadidos |
 </details>
 
 <!-- REF #4D.Folder.new().Syntax -->**4D.Folder.new** ( *path* : Text { ; *pathType* : Integer }{ ; *\** } ) : 4D.Folder<br>**4D.Folder.new** ( *folderConstant* : Integer { ; *\** } ) : 4D.Folder<!-- END REF -->
@@ -136,9 +136,9 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 ## .create()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 
@@ -147,9 +147,9 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 **.create()** : Boolean<!-- END REF -->
 
 <!--REF #FolderClass.create().Params -->
-| Parameter | Tipo    |    | Descripción                                                  |
-| --------- | ------- | -- | ------------------------------------------------------------ |
-| Resultado | Boolean | <- | True if the folder was created successfully, false otherwise |
+| Parameter | Tipo     |    | Descripción                                                  |
+| --------- | -------- | -- | ------------------------------------------------------------ |
+| Resultado | Booleano | <- | True if the folder was created successfully, false otherwise |
 <!-- END REF -->
 
 
@@ -196,9 +196,9 @@ End if
 ## .createAlias()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 
@@ -211,8 +211,8 @@ End if
 | Parameter         | Tipo      |    | Descripción                                  |
 | ----------------- | --------- | -- | -------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | Text      | -> | Name of the alias or shortcut                |
-| aliasType         | Integer   | -> | Type of the alias link                       |
+| aliasName         | Texto     | -> | Name of the alias or shortcut                |
+| aliasType         | Entero    | -> | Type of the alias link                       |
 | Resultado         | 4D.File   | <- | Alias or shortcut reference                  |
 <!-- END REF -->
 
@@ -258,9 +258,9 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 ## .delete()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 
@@ -374,9 +374,9 @@ When `Delete with contents` is passed:
 ## .moveTo()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 
@@ -387,7 +387,7 @@ When `Delete with contents` is passed:
 | Parameter         | Tipo      |    | Descripción                    |
 | ----------------- | --------- | -- | ------------------------------ |
 | destinationFolder | 4D.Folder | -> | Destination folder             |
-| newName           | Text      | -> | Full name for the moved folder |
+| newName           | Texto     | -> | Full name for the moved folder |
 | Resultado         | 4D.Folder | <- | Moved folder                   |
 <!-- END REF -->
 
@@ -444,9 +444,9 @@ You want to move and rename a folder:
 ## .rename()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R5  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R5  | Añadidos |
 </details>
 
 <!--REF #FolderClass.rename().Syntax -->

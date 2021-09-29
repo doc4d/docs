@@ -98,9 +98,9 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #_command_.New signal.Syntax -->
@@ -109,7 +109,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 <!-- REF SignalClass.New signal.Params -->
 | Parameter   | Tipo      |    | Descripción                            |
 | ----------- | --------- |:--:| -------------------------------------- |
-| description | Text      | -> | Description for the signal             |
+| description | Texto     | -> | Description for the signal             |
 | Resultado   | 4D.Signal | <- | Native object encapsulating the signal |
 <!-- END REF -->
 
@@ -170,9 +170,9 @@ The ***doSomething*** method could be like:
 ## .description
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #SignalClass.description.Syntax -->
@@ -194,9 +194,9 @@ This property is **read-write**.
 ## .signaled
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 
 </details>
 
@@ -217,9 +217,9 @@ This property is **read-only**.
 ## .trigger()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #SignalClass.trigger().Syntax -->
@@ -246,19 +246,19 @@ If the signal is already in the signaled state (i.e., the `signaled` property is
 ## .wait()
 
 <details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+| Version | Changes  |
+| ------- | -------- |
+| v17 R4  | Añadidos |
 </details>
 
 <!-- REF #SignalClass.wait().Syntax -->
 **.wait**( { *timeout* : Real } ) : Boolean <!-- END REF -->
 
 <!-- REF #SignalClass.wait().Params -->
-| Parameter | Tipo    |    | Descripción                                    |
-| --------- | ------- | -- | ---------------------------------------------- |
-| timeout   | Real    | -> | Maximum waiting time for the signal in seconds |
-| Resultado | Boolean | <- | State of the `.signaled` property              |
+| Parameter | Tipo     |    | Descripción                                    |
+| --------- | -------- | -- | ---------------------------------------------- |
+| timeout   | Real     | -> | Maximum waiting time for the signal in seconds |
+| Resultado | Booleano | <- | State of the `.signaled` property              |
 <!-- END REF -->
 
 
