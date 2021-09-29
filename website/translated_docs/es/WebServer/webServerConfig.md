@@ -132,6 +132,7 @@ Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stor
 
 
 
+
 |1|wdl enable without body|Web HTTP debug log is enabled without body parts (body size is provided in this case)| |3|wdl enable with response body|Web HTTP debug log is enabled with body part in response only| |5|wdl enable with request body|Web HTTP debug log is enabled with body part in request only| |7|wdl enable with all body parts|Web HTTP debug log is enabled with body parts in response and request|
 
 
@@ -584,23 +585,13 @@ Three values are available:
 
 - "Strict" (default `SameSite` attribute value for 4D session cookies): cookies will only be sent in the first-party context, i.e. context matching the domain of the current site, and never to third-party websites.
 - "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site (i.e. they follow a link).
-- "None": Cookies are sent in all contexts, i.e in responses to both first-party and cross-origin requests. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
+- "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
 
 The `Secure` attribute value of the session cookie is automatically set to "True" if the connection is HTTPS (whatever the `SameSite` attribute value).
 
 > It is not recommended to set `SameSite=None` on a HTTP server since the `Secure` attribute will be missing (used in HTTPS only) and cookies will be blocked.
 
 
-
-## Session IP Address Validation
-
-Can be set with|Name|Comments| |---|---|---| |webServer object|[`sessionIPAddressValidation`](API/WebServerClass.md#sessionipaddressvalidation)|| |`WEB SET OPTION`|`Web session enable IP address validation`||
-
-IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application.
-
-When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
-
-Possible values: 0 (disabled) or 1 (enabled, default).
 
 
 
@@ -612,6 +603,12 @@ The following settings are still supported but rely on deprecated features or te
 #### Allow database Access through 4DSYNC URLs
 
 This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
+
+#### Session IP Address Validation
+
+> This option is not not available in [scalable sessions mode](WebServer/sessions.md) (there is no validation).
+
+IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
 
 
 #### Reuse temporary contexts (in remote mode)
