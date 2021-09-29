@@ -44,7 +44,7 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 <!-- REF #_command_.ds.Params -->
 | Paramètres | Type         |    | Description                                |
 | ---------- | ------------ | -- | ------------------------------------------ |
-| localID    | Text         | -> | Local ID of the remote datastore to return |
+| localID    | Texte        | -> | Local ID of the remote datastore to return |
 | Résultat   | cs.DataStore | <- | Reference to the datastore                 |
 <!-- END REF -->
 
@@ -113,8 +113,8 @@ Using the main datastore on the 4D database:
 <!-- REF #_command_.Open datastore.Params -->
 | Paramètres     | Type         |    | Description                                                               |
 | -------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| connectionInfo | Object       | -> | Connection properties used to reach the remote datastore                  |
-| localID        | Text         | -> | Id to assign to the opened datastore on the local application (mandatory) |
+| connectionInfo | Objet        | -> | Connection properties used to reach the remote datastore                  |
+| localID        | Texte        | -> | Id to assign to the opened datastore on the local application (mandatory) |
 | Résultat       | cs.DataStore | <- | Datastore object                                                          |
 <!-- END REF -->
 
@@ -312,14 +312,14 @@ The returned object contains the following properties:
 
 | Propriété   |             |               | Type    | Description                                                                        |
 | ----------- | ----------- | ------------- | ------- | ---------------------------------------------------------------------------------- |
-| isEncrypted |             |               | Boolean | True if the data file is encrypted                                                 |
-| keyProvided |             |               | Boolean | True if the encryption key matching the encrypted data file is provided(*).        |
-| tables      |             |               | Object  | Object containing as many properties as there are encryptable or encrypted tables. |
-|             | *tableName* |               | Object  | Encryptable or Encrypted table                                                     |
-|             |             | name          | Text    | Name of the table                                                                  |
-|             |             | num           | Number  | Table number                                                                       |
-|             |             | isEncryptable | Boolean | True if the table is declared encryptable in the structure file                    |
-|             |             | isEncrypted   | Boolean | True if the records of the table are encrypted in the data file                    |
+| isEncrypted |             |               | Booléen | True if the data file is encrypted                                                 |
+| keyProvided |             |               | Booléen | True if the encryption key matching the encrypted data file is provided(*).        |
+| tables      |             |               | Objet   | Object containing as many properties as there are encryptable or encrypted tables. |
+|             | *tableName* |               | Objet   | Encryptable or Encrypted table                                                     |
+|             |             | name          | Texte   | Name of the table                                                                  |
+|             |             | num           | Nombre  | Table number                                                                       |
+|             |             | isEncryptable | Booléen | True if the table is declared encryptable in the structure file                    |
+|             |             | isEncrypted   | Booléen | True if the records of the table are encrypted in the data file                    |
 
 (*) The encryption key can be provided:
 
@@ -383,7 +383,7 @@ The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns 
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D": main datastore, available through ds </li><li>"4D Server": remote datastore, open with Open datastore</li>                                                                                                              |
 | networked  | boolean | <li>True: the datastore is reached through a network connection.</li><li>False: the datastore is not reached through a network connection (local database)</li>                                                                                                              |
-| localID    | text    | ID of the datastore on the machine. Corresponds to the localId string given with the `Open datastore` command. Empty string ("") for main datastore.            |
+| localID    | Texte   | ID of the datastore on the machine. Corresponds to the localId string given with the `Open datastore` command. Empty string ("") for main datastore.            |
 | connection | object  | Object describing the remote datastore connection (not returned for main datastore). Available properties:<p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>Texte</td><td>IP address or name of the remote datastore + ":" + port number</td></tr><tr><td>tls</td><td>boolean</td><td>True if secured connection is used with the remote datastore</td></tr><tr><td>idleTimeout</td><td>number</td><td>Session inactivity timeout (in minutes)</td></tr><tr><td>user</td><td>Texte</td><td>User authenticated on the remote datastore</td></tr></table> |
 
 *   If the `.getInfo()` function is executed on a 4D Server or 4D single-user, `networked` is False.
@@ -576,14 +576,14 @@ The result of the command is described in the returned object:
 
 | Propriété  |                          | Type       | Description                                                                     |
 | ---------- | ------------------------ | ---------- | ------------------------------------------------------------------------------- |
-| success    |                          | Boolean    | True if the provided encryption key matches the encrypted data, False otherwise |
+| success    |                          | Booléen    | True if the provided encryption key matches the encrypted data, False otherwise |
 |            |                          |            | Properties below are returned only if success is *FALSE*                        |
-| status     |                          | Number     | Error code (4 if the provided encryption key is wrong)                          |
-| statusText |                          | Text       | Error message                                                                   |
+| status     |                          | Nombre     | Error code (4 if the provided encryption key is wrong)                          |
+| statusText |                          | Texte      | Error message                                                                   |
 | errors     |                          | Collection | Stack of errors. The first error has the highest index                          |
-|            | \[ ].componentSignature | Text       | Internal component name                                                         |
-|            | \[ ].errCode            | Number     | Error number                                                                    |
-|            | \[ ].message            | Text       | Error message                                                                   |
+|            | \[ ].componentSignature | Texte      | Internal component name                                                         |
+|            | \[ ].errCode            | Nombre     | Error number                                                                    |
+|            | \[ ].message            | Texte      | Error message                                                                   |
 
 If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **null** (no error is generated).
 
