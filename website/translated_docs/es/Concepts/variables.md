@@ -67,12 +67,12 @@ La siguiente tabla enumera todos los valores `varType` soportados:
 | Fecha          | Valor fecha                              |
 | Hora           | Valor Hora                               |
 | Booleano       | Valor booleano                           |
-| Entero         | Valor entero largo                       |
+| Integer        | Valor entero largo                       |
 | Real           | Valor real                               |
 | Puntero        | Valor puntero                            |
 | Imagen         | Valor imagen                             |
 | Blob           | Valor BLOB                               |
-| Colección      | Valor colección                          |
+| Collection     | Valor colección                          |
 | Variant        | Valor variant                            |
 | Objeto         | Objeto con clase por defecto (4D.object) |
 | 4D.*className* | Objeto del nombre de la clase 4D         |
