@@ -62,7 +62,7 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 ## Class Description
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 
 | Version | Changes                                                                                            |
 | ------- | -------------------------------------------------------------------------------------------------- |
