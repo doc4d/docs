@@ -109,7 +109,7 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 
 ## Formula
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                          |
 | ------- | -------------------------------- |
 | v17 R6  | Renamed (New formula -> Formula) |
@@ -120,7 +120,7 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 **Formula** ( *formulaExp* : Expression ) : 4D.Function<!-- END REF -->
 
 <!-- REF #_command_.Formula.Params -->
-| Parameter  | Tipo        |    | Descripción                               |
+| Parámetros | Tipo        |    | Descripción                               |
 | ---------- | ----------- |:--:| ----------------------------------------- |
 | formulaExp | Expresión   | -> | Formula to be returned as object          |
 | Resultado  | 4D.Function | <- | Native function encapsulating the formula |
@@ -244,7 +244,7 @@ Calling a formula using object notation:
 
 ## Formula from string
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                                                |
 | ------- | ------------------------------------------------------ |
 | v17 R6  | Renamed New formula from string -> Formula from string |
@@ -255,7 +255,7 @@ Calling a formula using object notation:
 **Formula from string**( *formulaString* : Text ) : 4D.Function<!-- END REF -->
 
 <!-- REF #_command_.Formula from string.Params -->
-| Parameter     | Tipo        |    | Descripción                             |
+| Parámetros    | Tipo        |    | Descripción                             |
 | ------------- | ----------- |:--:| --------------------------------------- |
 | formulaString | Texto       | -> | Text formula to be returned as object   |
 | Resultado     | 4D.Function | <- | Native object encapsulating the formula |
@@ -300,7 +300,7 @@ The following code will create a dialog accepting a formula in text format:
 <!-- REF FunctionClass.apply().Desc -->
 ## .apply()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R3  | Añadidos |
@@ -310,11 +310,11 @@ The following code will create a dialog accepting a formula in text format:
 **.apply**() : any<br>**.apply**( *thisObj* : Object { ; *formulaParams* : Collection } ) : any<!-- END REF -->
 
 <!-- REF #FunctionClass.apply().Params -->
-| Parameter     | Tipo      |    | Descripción                                                             |
-| ------------- | --------- |:--:| ----------------------------------------------------------------------- |
-| thisObj       | Objeto    | -> | Object to be returned by the This command in the formula                |
-| formulaParams | Colección | -> | Collection of values to be passed as $1...$n when `formula` is executed |
-| Resultado     | any       | <- | Value from formula execution                                            |
+| Parámetros    | Tipo       |    | Descripción                                                             |
+| ------------- | ---------- |:--:| ----------------------------------------------------------------------- |
+| thisObj       | Objeto     | -> | Object to be returned by the This command in the formula                |
+| formulaParams | Collection | -> | Collection of values to be passed as $1...$n when `formula` is executed |
+| Resultado     | any        | <- | Value from formula execution                                            |
 <!-- END REF -->
 
 
@@ -361,7 +361,7 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 <!-- REF FunctionClass.call().Desc -->
 ## .call()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R3  | Añadidos |
@@ -371,11 +371,11 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 **.call**() : any<br>**.call**( *thisObj* : Object { ; ...*params* : any } ) : any<!-- END REF -->
 
 <!-- REF #FunctionClass.call().Params -->
-| Parameter | Tipo   |    | Descripción                                               |
-| --------- | ------ | -- | --------------------------------------------------------- |
-| thisObj   | Objeto | -> | Object to be returned by the This command in the formula  |
-| params    | any    | -> | Value(s) to be passed as $1...$n when formula is executed |
-| Resultado | any    | <- | Value from formula execution                              |
+| Parámetros | Tipo   |    | Descripción                                               |
+| ---------- | ------ | -- | --------------------------------------------------------- |
+| thisObj    | Objeto | -> | Object to be returned by the This command in the formula  |
+| params     | any    | -> | Value(s) to be passed as $1...$n when formula is executed |
+| Resultado  | any    | <- | Value from formula execution                              |
 <!-- END REF -->
 
 
@@ -412,7 +412,7 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 <!-- REF FunctionClass.source.Desc -->
 ## .source
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R2  | Añadidos |
