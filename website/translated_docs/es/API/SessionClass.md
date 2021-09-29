@@ -26,7 +26,7 @@ For detailed information about the session implementation, please refer to the [
 
 ## Session
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -37,9 +37,9 @@ For detailed information about the session implementation, please refer to the [
 
 
 <!-- REF #_command_.Session.Params -->
-| Parameter | Tipo       |    | Descripción    |
-| --------- | ---------- |:--:| -------------- |
-| Resultado | 4D.Session | <- | Session object |
+| Parámetros | Tipo       |    | Descripción    |
+| ---------- | ---------- |:--:| -------------- |
+| Resultado  | 4D.Session | <- | Session object |
 <!-- END REF -->
 
 
@@ -84,7 +84,7 @@ IP:port/4DACTION/action_Session
 <!-- REF SessionClass.clearPrivileges().Desc -->
 ## .clearPrivileges()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -95,9 +95,9 @@ IP:port/4DACTION/action_Session
 **.clearPrivileges()**<!-- END REF -->
 
 <!-- REF #SessionClass.clearPrivileges().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |::| ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
@@ -123,7 +123,7 @@ $isGuest:=Session.isGuest() //$isGuest is True
 <!-- REF SessionClass.expirationDate.Desc -->
 ## .expirationDate
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -154,7 +154,7 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 <!-- REF SessionClass.hasPrivilege().Desc -->
 ## .hasPrivilege()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -164,10 +164,10 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 **.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| Parameter | Tipo     |    | Descripción                                      |
-| --------- | -------- |:--:| ------------------------------------------------ |
-| privilege | Texto    | <- | Name of the privilege to verify                  |
-| Resultado | Booleano | <- | True if session has *privilege*, False otherwise |
+| Parámetros | Tipo     |    | Descripción                                      |
+| ---------- | -------- |:--:| ------------------------------------------------ |
+| privilege  | Texto    | <- | Name of the privilege to verify                  |
+| Resultado  | Booleano | <- | True if session has *privilege*, False otherwise |
 <!-- END REF -->
 
 
@@ -194,7 +194,7 @@ End if
 <!-- REF SessionClass.idleTimeout.Desc -->
 ## .idleTimeout
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -236,7 +236,7 @@ End if
 <!-- REF SessionClass.isGuest().Desc -->
 ## .isGuest()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -247,9 +247,9 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.isGuest().Params -->
-| Parameter | Tipo     |    | Descripción                                     |
-| --------- | -------- |:--:| ----------------------------------------------- |
-| Resultado | Booleano | <- | True if session is a Guest one, False otherwise |
+| Parámetros | Tipo     |    | Descripción                                     |
+| ---------- | -------- |:--:| ----------------------------------------------- |
+| Resultado  | Booleano | <- | True if session is a Guest one, False otherwise |
 <!-- END REF -->
 
 #### Descripción
@@ -274,7 +274,7 @@ End if
 <!-- REF SessionClass.setPrivileges().Desc -->
 ## .setPrivileges()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -285,11 +285,11 @@ End if
 **.setPrivileges**( *privilege* : Text )<br>**.setPrivileges**( *privileges* : Collection )<br>**.setPrivileges**( *settings* : Object )<!-- END REF -->
 
 <!-- REF #SessionClass.setPrivileges().Params -->
-| Parameter  | Tipo      |    | Descripción                                                |
-| ---------- | --------- |:--:| ---------------------------------------------------------- |
-| privilege  | Texto     | -> | Privilege name                                             |
-| privileges | Colección | -> | Collection of privilege names                              |
-| parámetros | Objeto    | -> | Object with a "privileges" property (string or collection) |
+| Parámetros | Tipo       |    | Descripción                                                |
+| ---------- | ---------- |:--:| ---------------------------------------------------------- |
+| privilege  | Texto      | -> | Privilege name                                             |
+| privileges | Collection | -> | Collection of privilege names                              |
+| parámetros | Objeto     | -> | Object with a "privileges" property (string or collection) |
 <!-- END REF -->
 
 #### Descripción
@@ -339,7 +339,7 @@ End if
 <!-- REF SessionClass.storage.Desc -->
 ## .storage
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
@@ -381,7 +381,7 @@ End if
 <!-- REF SessionClass.userName.Desc -->
 ## .userName
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R6  | Añadidos |
