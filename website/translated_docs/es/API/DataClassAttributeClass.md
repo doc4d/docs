@@ -177,7 +177,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 <!-- REF DataClassAttributeClass.inverseName.Desc -->
 ## .inverseName
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -271,7 +271,7 @@ Given the following table and relation:
 <!-- REF DataClassAttributeClass.mandatory.Desc -->
 ## .mandatory
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -353,7 +353,7 @@ For example, computed attributes without [`set` function](ORDA/ordaClasses.md#fu
 <!-- REF DataClassAttributeClass.relatedDataClass.Desc -->
 ## .relatedDataClass
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -408,7 +408,7 @@ The `.type` property <!-- REF DataClassAttributeClass.type.Summary -->contains t
 
 The conceptual value type depends on the attribute [`.kind`](#kind).
 
-**Possible values:**
+**Valores posibles:**
 
 | dataClassAttribute.kind | type                                                                                                                         | Comment                                                                                                                                                                                                                                                           |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
