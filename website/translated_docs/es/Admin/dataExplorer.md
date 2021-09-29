@@ -151,7 +151,7 @@ You can also use the wildcard character (@) to replace one or more starting char
 | A filter with | Finds                                              |
 | ------------- | -------------------------------------------------- |
 | Bel           | All values beginning with “Bel”                    |
-| @do           | All values containing “do”                         |
+| @do           | Todos los valores que contienen "do"               |
 | Bel@do        | All values starting with “Bel” and containing “do” |
 
 If you want to create more specific queries, such as "is exactly", you may need to use the advanced queries feature.
