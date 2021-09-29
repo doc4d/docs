@@ -126,9 +126,10 @@ Separate each method with a ";" (e,g,: "post;get"). If methods is empty, null, o
 
 Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stored in the "Logs" folder of the application -- nn is the file number). It is useful for debugging issues related to the Web server. It records each request and each response in raw mode. Whole requests, including headers, are logged; optionally, body parts can be logged as well.
 
-| Valor | Constant    | Descripción                    |
+| Valor | Constante   | Descripción                    |
 | ----- | ----------- | ------------------------------ |
 | 0     | wdl disable | Web HTTP debug log is disabled |
+
 
 
 
@@ -415,7 +416,7 @@ Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is 
 
 This limit is used to avoid web server saturation due to incoming requests that are too large. When a request reaches this limit, the 4D web server rejects it.
 
-Possible values: 500 000 to 2 147 483 648.
+Valores posibles: 500 000 a 2 147 483 648.
 
 
 ## Maximum Session Number
@@ -438,7 +439,7 @@ Default value: 100 (pass 0 to restore the default value).
 
 Minimum TLS version accepted for connections. Connection attempts from clients supporting only versions below the minimum will be rejected.
 
-Possible values:
+Valores posibles:
 
 - 1 = TLSv1_0
 - 2 = TLSv1_1
@@ -580,7 +581,7 @@ Value of the `SameSite` attribute value of the session cookie. This attribute al
 
 > For a detailed description of the `SameSite` attribute, please refer to the [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) or [this web.dev page](https://web.dev/samesite-cookies-explained/).
 
-Three values are available:
+Hay tres valores disponibles:
 
 - "Strict" (default `SameSite` attribute value for 4D session cookies): cookies will only be sent in the first-party context, i.e. context matching the domain of the current site, and never to third-party websites.
 - "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site (i.e. they follow a link).
@@ -592,16 +593,6 @@ The `Secure` attribute value of the session cookie is automatically set to "True
 
 
 
-## Session IP Address Validation
-
-Can be set with|Name|Comments| |---|---|---| |webServer object|[`sessionIPAddressValidation`](API/WebServerClass.md#sessionipaddressvalidation)|| |`WEB SET OPTION`|`Web session enable IP address validation`||
-
-IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application.
-
-When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
-
-Possible values: 0 (disabled) or 1 (enabled, default).
-
 
 
 
@@ -612,6 +603,12 @@ The following settings are still supported but rely on deprecated features or te
 #### Allow database Access through 4DSYNC URLs
 
 This option controls the support of HTTP synchronization requests containing deprecated */4DSYNC* URLs.
+
+#### Session IP Address Validation
+
+> This option is not not available in [scalable sessions mode](WebServer/sessions.md) (there is no validation).
+
+IP address validation status for session cookies. For security reasons, by default the 4D web server checks the IP address of each request containing a session cookie and rejects it if this address does not match the IP address used to create the cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. For example when mobile devices switch between Wifi and 4G/5G networks, their IP address will change. In this case, you must pass 0 in this option to allow clients to be able to continue using their Web sessions even when the IP addresses change. Note that this setting lowers the security level of your application. When it is modified, this setting is effective immediately (you do not need to restart the HTTP server).
 
 
 #### Reuse temporary contexts (in remote mode)
