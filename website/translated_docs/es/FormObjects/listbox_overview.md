@@ -854,11 +854,11 @@ ARRAY OBJECT(obColumn;0) //column array
 
 When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Supported valueType values are:
 
-*   "text": for a text value
+*   "text": para un valor de texto
 *   "real": for a numeric value that can include separators like a \<space>, <.>, or <,>
 *   "integer": para un valor entero
 *   "boolean": for a True/False value
-*   "color": to define a background color
+*   "color": para definir un color de fondo
 *   "event": to display a button with a label.
 
 4D uses default widgets with regards to the "valueType" value (i.e., a "text" is displayed as a text input widget, a "boolean" as a check box), but alternate displays are also available through options (*e.g.*, a real can also be represented as a drop-down menu). The following table shows the default display as well as alternatives for each type of value:
@@ -986,7 +986,7 @@ Cuando un atributo "choiceList" o "requiredList" está presente dentro del objet
 *   If the attribute is "requiredList" then the cell is displayed as a drop-down list and the user can only select one of the values provided in the list.
 
 In both cases, a "value" attribute can be used to preselect a value in the widget.
-> The widget values are defined through an array. Si quiere asociar el widget a una lista 4D existente, debe utilizar los atributos "requiredListReference", "requiredListName", "choiceListReference" o "choiceListName".
+> Los valores del widget se definen a través de un array. Si quiere asociar el widget a una lista 4D existente, debe utilizar los atributos "requiredListReference", "requiredListName", "choiceListReference" o "choiceListName".
 
 Ejemplos:
 
