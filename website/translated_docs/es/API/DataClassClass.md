@@ -27,7 +27,7 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 <!-- REF DataClassClass.attributeName.Desc -->
 ## .*attributeName*
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -98,7 +98,7 @@ Considering the following table properties:
 <!-- REF DataClassClass.all().Desc -->
 ## .all()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                             |
 | ------- | ----------------------------------- |
 | v17 R5  | Support of the *settings* parameter |
@@ -110,7 +110,7 @@ Considering the following table properties:
 **.all** ( { *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #DataClassClass.all().Params -->
-| Parameter  | Tipo               |    | Descripción                                         |
+| Parámetros | Tipo               |    | Descripción                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------- |
 | parámetros | Objeto             | -> | Build option: context                               |
 | Resultado  | 4D.EntitySelection | <- | References on all entities related to the Dataclass |
@@ -151,7 +151,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 <!-- REF DataClassClass.fromCollection().Desc -->
 ## .fromCollection()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                             |
 | ------- | ----------------------------------- |
 | v17 R5  | Support of the *settings* parameter |
@@ -163,9 +163,9 @@ In the optional *settings* parameter, you can pass an object containing addition
 
 
 <!-- REF #DataClassClass.fromCollection().Params -->
-| Parameter  | Tipo               |    | Descripción                                      |
+| Parámetros | Tipo               |    | Descripción                                      |
 | ---------- | ------------------ |:--:| ------------------------------------------------ |
-| objectCol  | Colección          | -> | Collection of objects to be mapped with entities |
+| objectCol  | Collection         | -> | Collection of objects to be mapped with entities |
 | parámetros | Objeto             | -> | Build option: context                            |
 | Resultado  | 4D.EntitySelection | <- | Entity selection filled from the collection      |
 <!-- END REF -->
@@ -350,7 +350,7 @@ In this example, the first entity will be created and saved but the second will 
 <!-- REF DataClassClass.get().Desc -->
 ## .get()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -362,7 +362,7 @@ In this example, the first entity will be created and saved but the second will 
 
 
 <!-- REF #DataClassClass.get().Params -->
-| Parameter  | Tipo            |    | Descripción                                 |
+| Parámetros | Tipo            |    | Descripción                                 |
 | ---------- | --------------- |:--:| ------------------------------------------- |
 | primaryKey | Integer OR Text | -> | Primary key value of the entity to retrieve |
 | parámetros | Objeto          | -> | Build option: context                       |
@@ -429,7 +429,7 @@ This example illustrates the use of the *context* property:
 <!-- REF DataClassClass.getDataStore().Desc -->
 ## .getDataStore()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -439,9 +439,9 @@ This example illustrates the use of the *context* property:
 **.getDataStore()** : cs.DataStore<!-- END REF -->
 
 <!-- REF #DataClassClass.getDataStore().Params -->
-| Parameter | Tipo         |    | Descripción                |
-| --------- | ------------ |:--:| -------------------------- |
-| Resultado | cs.DataStore | <- | Datastore of the dataclass |
+| Parámetros | Tipo         |    | Descripción                |
+| ---------- | ------------ |:--:| -------------------------- |
+| Resultado  | cs.DataStore | <- | Datastore of the dataclass |
 <!-- END REF -->
 
 
@@ -483,7 +483,7 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 <!-- REF DataClassClass.getInfo().Desc -->
 ## .getInfo()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -493,9 +493,9 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 **.getInfo()** : Object <!-- END REF -->
 
 <!-- REF #DataClassClass.getInfo().Params -->
-| Parameter | Tipo   |    | Descripción                  |
-| --------- | ------ | -- | ---------------------------- |
-| Resultado | Objeto | <- | Information on the dataclass |
+| Parámetros | Tipo   |    | Descripción                  |
+| ---------- | ------ | -- | ---------------------------- |
+| Resultado  | Objeto | <- | Information on the dataclass |
 <!-- END REF -->
 
 
@@ -505,11 +505,11 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 
 **Returned object**
 
-| Propiedad   | Tipo   | Descripción                              |
-| ----------- | ------ | ---------------------------------------- |
-| name        | Texto  | Name of the dataclass                    |
-| primaryKey  | Texto  | Name of the primary key of the dataclass |
-| tableNumber | Entero | Internal 4D table number                 |
+| Propiedad   | Tipo    | Descripción                              |
+| ----------- | ------- | ---------------------------------------- |
+| name        | Texto   | Name of the dataclass                    |
+| primaryKey  | Texto   | Name of the primary key of the dataclass |
+| tableNumber | Integer | Internal 4D table number                 |
 
 
 
@@ -556,7 +556,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 <!-- REF DataClassClass.new().Desc -->
 ## .new()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -566,9 +566,9 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 **.new()** : 4D.Entity <!-- END REF -->
 
 <!-- REF #DataClassClass.new().Params -->
-| Parameter | Tipo      |    | Descripción                       |
-| --------- | --------- | -- | --------------------------------- |
-| Resultado | 4D.Entity | <- | New entity matching the Dataclass |
+| Parámetros | Tipo      |    | Descripción                       |
+| ---------- | --------- | -- | --------------------------------- |
+| Resultado  | 4D.Entity | <- | New entity matching the Dataclass |
 <!-- END REF -->
 
 
@@ -603,7 +603,7 @@ This example creates a new entity in the "Log" Dataclass and records information
 <!-- REF DataClassClass.newSelection().Desc -->
 ## .newSelection()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -613,10 +613,10 @@ This example creates a new entity in the "Log" Dataclass and records information
 **.newSelection**( { *keepOrder* : Integer } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #DataClassClass.newSelection().Params -->
-| Parameter | Tipo               |    | Descripción                                                                                                                                   |
-| --------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| keepOrder | Entero             | -> | `dk keep ordered`: creates an ordered entity selection,<br>`dk non ordered`: creates an unordered entity selection (default if omitted) |
-| Resultado | 4D.EntitySelection | <- | New blank entity selection related to the dataclass                                                                                           |
+| Parámetros | Tipo               |    | Descripción                                                                                                                                   |
+| ---------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| keepOrder  | Integer            | -> | `dk keep ordered`: creates an ordered entity selection,<br>`dk non ordered`: creates an unordered entity selection (default if omitted) |
+| Resultado  | 4D.EntitySelection | <- | New blank entity selection related to the dataclass                                                                                           |
 <!-- END REF -->
 
 
@@ -649,7 +649,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 <!-- REF DataClassClass.query().Desc -->
 ## .query()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                            |
 | ------- | ---------------------------------- |
 | v17 R6  | Support of Formula parameters      |
@@ -661,7 +661,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 **.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #DataClassClass.query().Params -->
-| Parameter     | Tipo               |    | Descripción                                                                                                                 |
+| Parámetros    | Tipo               |    | Descripción                                                                                                                 |
 | ------------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------- |
 | queryString   | Texto              | -> | Search criteria as string                                                                                                   |
 | formula       | Objeto             | -> | Search criteria as formula object                                                                                           |
