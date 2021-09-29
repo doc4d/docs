@@ -158,13 +158,13 @@ $c:=a+b
 
 This theme is composed of the following subthemes:
 
-| Subtheme     | Descripción                                                  | Can the values be modified? |
-| ------------ | ------------------------------------------------------------ | --------------------------- |
-| Interprocess | List of interprocess variables being used at this point      | Sí                          |
-| Process      | List of process variables used by the current process        | Sí                          |
-| Local        | List of local variables used by the method being traced      | Sí                          |
-| Parámetros   | List of parameters received by the method                    | Sí                          |
-| Self         | Pointer to the current object, when tracing an Object Method | No                          |
+| Subtheme     | Descripción                                                  | ¿Se pueden modificar los valores? |
+| ------------ | ------------------------------------------------------------ | --------------------------------- |
+| Interprocess | List of interprocess variables being used at this point      | Sí                                |
+| Process      | List of process variables used by the current process        | Sí                                |
+| Local        | List of local variables used by the method being traced      | Sí                                |
+| Parámetros   | List of parameters received by the method                    | Sí                                |
+| Self         | Pointer to the current object, when tracing an Object Method | No                                |
 
 Arrays, like other variables, appear in the Interprocess, Process, and Local subthemes, depending on their scope. The debugger displays the first 100 elements. Inside the **Value** column, you can modify the values of array elements, but not the size of the arrays.
 
@@ -190,7 +190,7 @@ Like the Constants page of the Explorer window, this theme displays predefined c
 
 #### Semaphores
 
-This theme lists the local semaphores currently being set. For each semaphore, the Value column provides the name of the process that sets the semaphore. The expressions from this theme cannot be modified. Global semaphores are not displayed.
+This theme lists the local semaphores currently being set. For each semaphore, the Value column provides the name of the process that sets the semaphore. The expressions from this theme cannot be modified. The expressions from this theme cannot be modified.
 
 #### Procesos
 
