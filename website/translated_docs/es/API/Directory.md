@@ -9,7 +9,7 @@ title: Directory Class
 <!-- REF directory.creationDate.Desc -->
 ## .creationDate
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -32,7 +32,7 @@ This property is **read-only**.
  <!-- REF directory.creationTime.Desc -->
 ## .creationTime
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -57,7 +57,7 @@ This property is **read-only**.
 <!-- REF directory.exists.Desc -->
 ## .exists
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -82,7 +82,7 @@ This property is **read-only**.
 <!-- REF directory.extension.Desc -->
 ## .extension
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -106,7 +106,7 @@ This property is **read-only**.
 <!-- REF directory.fullName.Desc -->
 ## .fullName
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -130,7 +130,7 @@ This property is **read-only**.
 <!-- REF directory.hidden.Desc -->
 ## .hidden
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -154,7 +154,7 @@ This property is **read-only**.
 <!-- REF directory.isAlias.Desc -->
 ## .isAlias
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -178,7 +178,7 @@ This property is **read-only**.
 <!-- REF directory.isFile.Desc -->
 ## .isFile
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -201,7 +201,7 @@ This property is **read-only**.
 <!-- REF directory.isFolder.Desc -->
 ## .isFolder
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -224,7 +224,7 @@ This property is **read-only**.
 <!-- REF directory.isPackage.Desc -->
 ## .isPackage
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -250,7 +250,7 @@ This property is **read-only**.
 <!-- REF directory.modificationDate.Desc -->
 ## .modificationDate
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -274,7 +274,7 @@ This property is **read-only**.
 <!-- REF directory.modificationTime.Desc -->
 ## .modificationTime
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -297,7 +297,7 @@ This property is **read-only**.
 <!-- REF directory.name.Desc -->
 ## .name
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -322,7 +322,7 @@ This property is **read-only**.
 <!-- REF directory.original.Desc -->
 ## .original
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -347,7 +347,7 @@ This property is **read-only**.
 <!-- REF directory.parent.Desc -->
 ## .parent
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -373,7 +373,7 @@ This property is **read-only**.
 <!-- REF directory.path.Desc -->
 ## .path
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -396,7 +396,7 @@ This property is **read-only**.
 <!-- REF directory.platformPath.Desc -->
 ## .platformPath
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -424,7 +424,7 @@ This property is **read-only**.
 <!-- REF directory.copyTo().Desc -->
 ## .copyTo()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -434,11 +434,11 @@ This property is **read-only**.
 **.copyTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } { ; *overwrite* : Integer } ) : 4D Folder<!-- END REF -->
 
 <!-- REF #directory.copyTo().Params -->
-| Parameter         | Tipo      |    | Descripción                                 |
+| Parámetros        | Tipo      |    | Descripción                                 |
 | ----------------- | --------- |:--:| ------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder                          |
 | newName           | Texto     | -> | Name for the copy                           |
-| overwrite         | Entero    | -> | `fk overwrite` to replace existing elements |
+| overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
 | Resultado         | 4D.Folder | <- | Copied file or folder                       |
 <!-- END REF -->
 
@@ -453,7 +453,7 @@ By default, the folder is copied with the name of the original folder. If you wa
 
 If a folder with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
 
-| Constant       | Valor | Comment                             |
+| Constante      | Valor | Comment                             |
 | -------------- | ----- | ----------------------------------- |
 | `fk overwrite` | 4     | Overwrite existing elements, if any |
 
@@ -480,7 +480,7 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 <!-- REF directory.file().Desc -->
 ## .file()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -490,10 +490,10 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 **.file**( *path* : Text ) : 4D.File<!-- END REF -->
 
 <!-- REF #directory.file().Params -->
-| Parameter | Tipo    |    | Descripción                          |
-| --------- | ------- | -- | ------------------------------------ |
-| path      | Texto   | -> | Relative POSIX file pathname         |
-| Resultado | 4D.File | <- | `File` object (null if invalid path) |
+| Parámetros | Tipo    |    | Descripción                          |
+| ---------- | ------- | -- | ------------------------------------ |
+| path       | Texto   | -> | Relative POSIX file pathname         |
+| Resultado  | 4D.File | <- | `File` object (null if invalid path) |
 <!-- END REF -->
 
 #### Descripción
@@ -520,7 +520,7 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 <!-- REF directory.files().Desc -->
 ## .files()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -530,10 +530,10 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 **.files**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.files().Params -->
-| Parameter | Tipo      |    | Descripción                         |
-| --------- | --------- | -- | ----------------------------------- |
-| options   | Entero    | -> | File list options                   |
-| Resultado | Colección | <- | Collection of children file objects |
+| Parámetros | Tipo       |    | Descripción                         |
+| ---------- | ---------- | -- | ----------------------------------- |
+| options    | Integer    | -> | File list options                   |
+| Resultado  | Collection | <- | Collection of children file objects |
 <!-- END REF -->
 
 #### Descripción
@@ -543,7 +543,7 @@ The `.files()` function returns <!-- REF #directory.files().Summary -->a collect
 
 By default, if you omit the *options* parameter, only the files at the first level of the folder are returned in the collection, as well as invisible files or folders. You can modify this by passing, in the *options* parameter, one or more of the following constants:
 
-| Constant              | Valor | Comment                                                                             |
+| Constante             | Valor | Comment                                                                             |
 | --------------------- | ----- | ----------------------------------------------------------------------------------- |
 | `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
 | `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
@@ -581,7 +581,7 @@ You want to get all files that are not invisible in the Documents folder:
 <!-- REF directory.folder().Desc -->
 ## .folder()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -591,10 +591,10 @@ You want to get all files that are not invisible in the Documents folder:
 **.folder**( *path* : Text ) : 4D.Folder<!-- END REF -->
 
 <!-- REF #directory.folder().Params -->
-| Parameter | Tipo      |    | Descripción                                    |
-| --------- | --------- | -- | ---------------------------------------------- |
-| path      | Texto     | -> | Relative POSIX file pathname                   |
-| Resultado | 4D.Folder | <- | Created folder object (null if invalid *path*) |
+| Parámetros | Tipo      |    | Descripción                                    |
+| ---------- | --------- | -- | ---------------------------------------------- |
+| path       | Texto     | -> | Relative POSIX file pathname                   |
+| Resultado  | 4D.Folder | <- | Created folder object (null if invalid *path*) |
 <!-- END REF -->
 
 #### Descripción
@@ -621,7 +621,7 @@ A `Folder` object or null if *path* is invalid.
 <!-- REF directory.folders().Desc -->
 ## .folders()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -631,10 +631,10 @@ A `Folder` object or null if *path* is invalid.
 **.folders**( { *options* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #directory.folders().Params -->
-| Parameter | Tipo      |    | Descripción                           |
-| --------- | --------- | -- | ------------------------------------- |
-| options   | Entero    | -> | Folder list options                   |
-| Resultado | Colección | <- | Collection of children folder objects |
+| Parámetros | Tipo       |    | Descripción                           |
+| ---------- | ---------- | -- | ------------------------------------- |
+| options    | Integer    | -> | Folder list options                   |
+| Resultado  | Collection | <- | Collection of children folder objects |
 <!-- END REF -->
 
 #### Descripción
@@ -643,7 +643,7 @@ The `.folders()` function <!-- REF #directory.folders().Summary -->returns a col
 
 By default, if you omit the *options* parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the *options* parameter, one or more of the following constants:
 
-| Constant              | Valor | Comment                                                                             |
+| Constante             | Valor | Comment                                                                             |
 | --------------------- | ----- | ----------------------------------------------------------------------------------- |
 | `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
 | `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
@@ -668,7 +668,7 @@ You want the collection of all folders and subfolders of the database folder:
 <!-- REF directory.getIcon().Desc -->
 ## .getIcon()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -678,10 +678,10 @@ You want the collection of all folders and subfolders of the database folder:
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #directory.getIcon().Params -->
-| Parameter | Tipo   |    | Descripción                                   |
-| --------- | ------ | -- | --------------------------------------------- |
-| size      | Entero | -> | Side length for the returned picture (pixels) |
-| Resultado | Imagen | <- | Icono                                         |
+| Parámetros | Tipo    |    | Descripción                                   |
+| ---------- | ------- | -- | --------------------------------------------- |
+| size       | Integer | -> | Side length for the returned picture (pixels) |
+| Resultado  | Imagen  | <- | Icono                                         |
 <!-- END REF -->
 
 
