@@ -9,7 +9,7 @@ title: Transporter Class
 <!-- REF transporter.acceptUnsecureConnection.Desc -->
 ## .acceptUnsecureConnection
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -45,7 +45,7 @@ Available secured ports are:
  <!-- REF transporter.authenticationModeIMAP.Desc -->
 ## .authenticationMode
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -76,7 +76,7 @@ Possible values are:
  <!-- REF transporter.authenticationModePOP3.Desc -->
 ## .authenticationMode
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -108,7 +108,7 @@ Possible values are:
  <!-- REF transporter.authenticationModeSMTP.Desc -->
 ## .authenticationMode
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -139,7 +139,7 @@ Possible values are:
 <!-- REF transporter.bodyCharset.Desc -->
 ## .bodyCharset
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                 |
 | ------- | ----------------------- |
 | v18     | Support for UTF8 base64 |
@@ -175,7 +175,7 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 <!-- REF transporter.connectionTimeOut.Desc -->
 ## .connectionTimeOut
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -198,7 +198,7 @@ The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeO
 <!-- REF transporter.headerCharset.Desc -->
 ## .headerCharset
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -233,7 +233,7 @@ The `.headerCharset` property contains <!-- REF #transporter.headerCharset.Summa
 <!-- REF transporter.host.Desc -->
 ## .host
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -254,7 +254,7 @@ The `.host` property contains <!-- REF #transporter.host.Summary -->the name or 
 <!-- REF transporter.logFile.Desc -->
 ## .logFile
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -285,7 +285,7 @@ Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), ext
 <!-- REF transporter.port.Desc -->
 ## .port
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -313,7 +313,7 @@ The `.port` property contains <!-- REF #transporter.port.Summary --> the port nu
 <!-- REF transporter.sendTimeOut.Desc -->
 ## .sendTimeOut
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -334,7 +334,7 @@ The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary -
 <!-- REF transporter.user.Desc -->
 ## .user
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -354,7 +354,7 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 <!-- REF transporter.checkConnection().Desc -->
 ## .checkConnection()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -364,9 +364,9 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 **.checkConnection()** : Object<!-- END REF -->
 
 <!-- REF #transporter.checkConnection().Params -->
-| Parameter | Tipo   |    | Descripción                                 |
-| --------- | ------ |:--:| ------------------------------------------- |
-| Resultado | Objeto | <- | Status of the transporter object connection |
+| Parámetros | Tipo   |    | Descripción                                 |
+| ---------- | ------ |:--:| ------------------------------------------- |
+| Resultado  | Objeto | <- | Status of the transporter object connection |
 <!-- END REF -->
 
 
