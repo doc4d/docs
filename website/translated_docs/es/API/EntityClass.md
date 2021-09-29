@@ -41,7 +41,7 @@ An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMap
 <!-- REF EntityClass.attributeName.Desc -->
 ## .*attributeName*
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -81,7 +81,7 @@ The attribute value type depends on the attribute [kind](DataClassAttributeClass
 <!-- REF EntityClass.clone().Desc -->
 ## .clone()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -92,9 +92,9 @@ The attribute value type depends on the attribute [kind](DataClassAttributeClass
 **.clone()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.clone().Params -->
-| Parameter | Tipo      |    | Descripción                       |
-| --------- | --------- |:--:| --------------------------------- |
-| Resultado | 4D.Entity | <- | New entity referencing the record |
+| Parámetros | Tipo      |    | Descripción                       |
+| ---------- | --------- |:--:| --------------------------------- |
+| Resultado  | 4D.Entity | <- | New entity referencing the record |
 <!-- END REF -->
 
 
@@ -126,7 +126,7 @@ This function can only be used with entities already saved in the database. It c
 <!-- REF EntityClass.diff().Desc -->
 ## .diff()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -137,11 +137,11 @@ This function can only be used with entities already saved in the database. It c
 
 
 <!-- REF #EntityClass.diff().Params -->
-| Parameter           | Tipo      |    | Descripción                                    |
-| ------------------- | --------- |:--:| ---------------------------------------------- |
-| entityToCompare     | 4D.Entity | -> | Entity to be compared with the original entity |
-| attributesToCompare | Colección | -> | Name of attributes to be compared              |
-| Resultado           | Colección | <- | Differences between the entities               |
+| Parámetros          | Tipo       |    | Descripción                                    |
+| ------------------- | ---------- |:--:| ---------------------------------------------- |
+| entityToCompare     | 4D.Entity  | -> | Entity to be compared with the original entity |
+| attributesToCompare | Collection | -> | Name of attributes to be compared              |
+| Resultado           | Collection | <- | Differences between the entities               |
 <!-- END REF -->
 
 
@@ -330,7 +330,7 @@ vCompareResult3 (only differences on $e1 touched attributes are returned)
 <!-- REF EntityClass.drop().Desc -->
 ## .drop()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -341,10 +341,10 @@ vCompareResult3 (only differences on $e1 touched attributes are returned)
 **.drop**( {*mode* : Integer} ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.drop().Params -->
-| Parameter | Tipo    |    | Descripción                                                                     |
-| --------- | ------- |:--:| ------------------------------------------------------------------------------- |
-| mode      | Integer | -> | `dk force drop if stamp changed`: Forces the drop even if the stamp has changed |
-| Resultado | Object  | <- | Result of drop operation                                                        |
+| Parámetros | Tipo    |    | Descripción                                                                     |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk force drop if stamp changed`: Forces the drop even if the stamp has changed |
+| Resultado  | Object  | <- | Result of drop operation                                                        |
 <!-- END REF -->
 
 #### Descripción
@@ -438,7 +438,7 @@ Example with `dk force drop if stamp changed` option:
 <!-- REF EntityClass.first().Desc -->
 ## .first()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -449,9 +449,9 @@ Example with `dk force drop if stamp changed` option:
 **.first()**: 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.first().Params -->
-| Parameter | Tipo      |    | Descripción                                                          |
-| --------- | --------- |:--:| -------------------------------------------------------------------- |
-| Resultado | 4D.Entity | <- | Reference to first entity of an entity selection (Null if not found) |
+| Parámetros | Tipo      |    | Descripción                                                          |
+| ---------- | --------- |:--:| -------------------------------------------------------------------- |
+| Resultado  | 4D.Entity | <- | Reference to first entity of an entity selection (Null if not found) |
 <!-- END REF -->
 
 #### Descripción
@@ -477,7 +477,7 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 <!-- REF EntityClass.fromObject().Desc -->
 ## .fromObject()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -488,9 +488,9 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 **.fromObject**( *filler* : Object )<!-- END REF -->
 
 <!-- REF #EntityClass.fromObject().Params -->
-| Parameter | Tipo   |    | Descripción                          |
-| --------- | ------ |:--:| ------------------------------------ |
-| filler    | Object | -> | Object from which to fill the entity |
+| Parámetros | Tipo   |    | Descripción                          |
+| ---------- | ------ |:--:| ------------------------------------ |
+| filler     | Object | -> | Object from which to fill the entity |
 <!-- END REF -->
 
 #### Descripción
@@ -567,7 +567,7 @@ You could also use a related entity given as an object:
 <!-- REF EntityClass.getDataClass().Desc -->
 ## .getDataClass()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -578,9 +578,9 @@ You could also use a related entity given as an object:
 **.getDataClass()** : 4D.DataClass<!-- END REF -->
 
 <!-- REF #EntityClass.getDataClass().Params -->
-| Parameter | Tipo         |    | Descripción                                  |
-| --------- | ------------ |:--:| -------------------------------------------- |
-| Resultado | 4D.DataClass | <- | DataClass object to which the entity belongs |
+| Parámetros | Tipo         |    | Descripción                                  |
+| ---------- | ------------ |:--:| -------------------------------------------- |
+| Resultado  | 4D.DataClass | <- | DataClass object to which the entity belongs |
 <!-- END REF -->
 
 #### Descripción
@@ -614,7 +614,7 @@ The following generic code duplicates any entity:
 <!-- REF EntityClass.getKey().Desc -->
 ## .getKey()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -625,11 +625,11 @@ The following generic code duplicates any entity:
 **.getKey**( { *mode* : Integer } ) : Text<br>**.getKey**( { *mode* : Integer } ) : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getKey().Params -->
-| Parameter | Tipo    |    | Descripción                                                                             |
-| --------- | ------- |:--:| --------------------------------------------------------------------------------------- |
-| mode      | Integer | -> | `dk key as string`: primary key is returned as a string, no matter the primary key type |
-| Resultado | Text    | <- | Value of the text primary key of the entity                                             |
-| Resultado | Integer | <- | Value of the numeric primary key of the entity                                          |
+| Parámetros | Tipo    |    | Descripción                                                                             |
+| ---------- | ------- |:--:| --------------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk key as string`: primary key is returned as a string, no matter the primary key type |
+| Resultado  | Text    | <- | Value of the text primary key of the entity                                             |
+| Resultado  | Integer | <- | Value of the numeric primary key of the entity                                          |
 
 <!-- END REF -->
 
@@ -658,7 +658,7 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 <!-- REF EntityClass.getSelection().Desc -->
 ## .getSelection()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -669,9 +669,9 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 **.getSelection()**: 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntityClass.getSelection().Params -->
-| Parameter | Tipo               |    | Descripción                                                      |
-| --------- | ------------------ |:--:| ---------------------------------------------------------------- |
-| Resultado | 4D.EntitySelection | <- | Entity selection to which the entity belongs (Null if not found) |
+| Parámetros | Tipo               |    | Descripción                                                      |
+| ---------- | ------------------ |:--:| ---------------------------------------------------------------- |
+| Resultado  | 4D.EntitySelection | <- | Entity selection to which the entity belongs (Null if not found) |
 <!-- END REF -->
 
 #### Descripción
@@ -702,7 +702,7 @@ If the entity does not belong to an entity selection, the function returns Null.
 <!-- REF EntityClass.getStamp().Desc -->
 ## .getStamp()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -713,9 +713,9 @@ If the entity does not belong to an entity selection, the function returns Null.
 **.getStamp()** : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getStamp().Params -->
-| Parameter | Tipo   |    | Descripción                                             |
-| --------- | ------ |:--:| ------------------------------------------------------- |
-| Resultado | Entero | <- | Stamp of the entity (0 if entity has just been created) |
+| Parámetros | Tipo    |    | Descripción                                             |
+| ---------- | ------- |:--:| ------------------------------------------------------- |
+| Resultado  | Integer | <- | Stamp of the entity (0 if entity has just been created) |
 <!-- END REF -->
 
 #### Descripción
@@ -751,7 +751,7 @@ The internal stamp is automatically incremented by 4D each time the entity is sa
 <!-- REF EntityClass.indexOf().Desc -->
 ## .indexOf()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -762,7 +762,7 @@ The internal stamp is automatically incremented by 4D each time the entity is sa
 **.indexOf**( { *entitySelection* : 4D.EntitySelection } ) : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.indexOf().Params -->
-| Parameter       | Tipo               |    | Descripción                                                        |
+| Parámetros      | Tipo               |    | Descripción                                                        |
 | --------------- | ------------------ |:--:| ------------------------------------------------------------------ |
 | entitySelection | 4D.EntitySelection | -> | Position of the entity is given according to this entity selection |
 | Resultado       | Integer            | <- | Position of the entity in an entity selection                      |
@@ -801,7 +801,7 @@ The resulting value is included between 0 and the length of the entity selection
 <!-- REF EntityClass.isNew().Desc -->
 ## .isNew()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -812,9 +812,9 @@ The resulting value is included between 0 and the length of the entity selection
 **.isNew()** : Boolean<!-- END REF -->
 
 <!-- REF #EntityClass.isNew().Params -->
-| Parameter | Tipo    |    | Descripción                                                               |
-| --------- | ------- |:--:| ------------------------------------------------------------------------- |
-| Resultado | Boolean | <- | True if entity has just been created and not yet saved. Otherwise, False. |
+| Parámetros | Tipo    |    | Descripción                                                               |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------- |
+| Resultado  | Boolean | <- | True if entity has just been created and not yet saved. Otherwise, False. |
 <!-- END REF -->
 
 #### Descripción
@@ -842,7 +842,7 @@ The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True i
 <!-- REF EntityClass.last().Desc -->
 ## .last()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -853,9 +853,9 @@ The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True i
 **.last()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.last().Params -->
-| Parameter | Tipo      |    | Descripción                                                         |
-| --------- | --------- |:--:| ------------------------------------------------------------------- |
-| Resultado | 4D.Entity | <- | Reference to last entity of an entity selection (Null if not found) |
+| Parámetros | Tipo      |    | Descripción                                                         |
+| ---------- | --------- |:--:| ------------------------------------------------------------------- |
+| Resultado  | 4D.Entity | <- | Reference to last entity of an entity selection (Null if not found) |
 <!-- END REF -->
 
 #### Descripción
@@ -883,7 +883,7 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 <!-- REF EntityClass.lock().Desc -->
 ## .lock()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -894,10 +894,10 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 **.lock**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.lock().Params -->
-| Parameter | Tipo    |    | Descripción                                                          |
-| --------- | ------- |:--:| -------------------------------------------------------------------- |
-| mode      | Integer | -> | `dk reload if stamp changed`: Reload before locking if stamp changed |
-| Resultado | Object  | <- | Result of lock operation                                             |
+| Parámetros | Tipo    |    | Descripción                                                          |
+| ---------- | ------- |:--:| -------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk reload if stamp changed`: Reload before locking if stamp changed |
+| Resultado  | Object  | <- | Result of lock operation                                             |
 <!-- END REF -->
 
 #### Descripción
@@ -996,7 +996,7 @@ Example with `dk reload if stamp changed` option:
 <!-- REF EntityClass.next().Desc -->
 ## .next()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1007,9 +1007,9 @@ Example with `dk reload if stamp changed` option:
 **.next()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.next().Params -->
-| Parameter | Tipo      |    | Descripción                                                          |
-| --------- | --------- |:--:| -------------------------------------------------------------------- |
-| Resultado | 4D.Entity | <- | Reference to next entity in the entity selection (Null if not found) |
+| Parámetros | Tipo      |    | Descripción                                                          |
+| ---------- | --------- |:--:| -------------------------------------------------------------------- |
+| Resultado  | 4D.Entity | <- | Reference to next entity in the entity selection (Null if not found) |
 <!-- END REF -->
 
 #### Descripción
@@ -1038,7 +1038,7 @@ If there is no valid next entity in the entity selection (i.e. you are on the la
 <!-- REF EntityClass.previous().Desc -->
 ## .previous()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1049,9 +1049,9 @@ If there is no valid next entity in the entity selection (i.e. you are on the la
 **.previous()**  : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.previous().Params -->
-| Parameter | Tipo      |    | Descripción                                                              |
-| --------- | --------- |:--:| ------------------------------------------------------------------------ |
-| Resultado | 4D.Entity | <- | Reference to previous entity in the entity selection (Null if not found) |
+| Parámetros | Tipo      |    | Descripción                                                              |
+| ---------- | --------- |:--:| ------------------------------------------------------------------------ |
+| Resultado  | 4D.Entity | <- | Reference to previous entity in the entity selection (Null if not found) |
 <!-- END REF -->
 
 #### Descripción
@@ -1080,7 +1080,7 @@ If there is no valid previous entity in the entity selection (i.e. you are on th
 <!-- REF EntityClass.reload().Desc -->
 ## .reload( )
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1091,9 +1091,9 @@ If there is no valid previous entity in the entity selection (i.e. you are on th
 **.reload()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.reload().Params -->
-| Parameter | Tipo   |    | Descripción   |
-| --------- | ------ |:--:| ------------- |
-| Resultado | Object | <- | Status object |
+| Parámetros | Tipo   |    | Descripción   |
+| ---------- | ------ |:--:| ------------- |
+| Resultado  | Object | <- | Status object |
 <!-- END REF -->
 
 #### Descripción
@@ -1143,7 +1143,7 @@ The object returned by `.reload( )` contains the following properties:
 <!-- REF EntityClass.save().Desc -->
 ## .save()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1154,10 +1154,10 @@ The object returned by `.reload( )` contains the following properties:
 **.save**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.save().Params -->
-| Parameter | Tipo    |    | Descripción                                       |
-| --------- | ------- |:--:| ------------------------------------------------- |
-| mode      | Integer | -> | `dk auto merge`: Enables the automatic merge mode |
-| Resultado | Object  | <- | Result of save operation                          |
+| Parámetros | Tipo    |    | Descripción                                       |
+| ---------- | ------- |:--:| ------------------------------------------------- |
+| mode       | Integer | -> | `dk auto merge`: Enables the automatic merge mode |
+| Resultado  | Object  | <- | Result of save operation                          |
 <!-- END REF -->
 
 #### Descripción
@@ -1278,7 +1278,7 @@ Updating an entity with `dk auto merge` option:
 <!-- REF EntityClass.toObject().Desc -->
 ## .toObject()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1289,7 +1289,7 @@ Updating an entity with `dk auto merge` option:
 **.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.toObject().Params -->
-| Parameter    | Tipo       |    | Descripción                                                                                             |
+| Parámetros   | Tipo       |    | Descripción                                                                                             |
 | ------------ | ---------- |:--:| ------------------------------------------------------------------------------------------------------- |
 | filterString | Text       | -> | Attribute(s) to extract (comma-separated string)                                                        |
 | filterCol    | Collection | -> | Collection of attribute(s) to extract                                                                   |
@@ -1565,7 +1565,7 @@ Returns:
 <!-- REF EntityClass.touched().Desc -->
 ## .touched( )
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1576,9 +1576,9 @@ Returns:
 **.touched()** : Boolean<!-- END REF -->
 
 <!-- REF #EntityClass.touched().Params -->
-| Parameter | Tipo    |    | Descripción                                                                           |
-| --------- | ------- |:--:| ------------------------------------------------------------------------------------- |
-| Resultado | Boolean | <- | True if at least one entity attribute has been modified and not yet saved, else False |
+| Parámetros | Tipo    |    | Descripción                                                                           |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------------- |
+| Resultado  | Boolean | <- | True if at least one entity attribute has been modified and not yet saved, else False |
 <!-- END REF -->
 
 #### Descripción
@@ -1609,7 +1609,7 @@ In this example, we check to see if it is necessary to save the entity:
 <!-- REF EntityClass.touchedAttributes().Desc -->
 ## .touchedAttributes( )
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1620,9 +1620,9 @@ In this example, we check to see if it is necessary to save the entity:
 **.touchedAttributes()** : Collection<!-- END REF -->
 
 <!-- REF #EntityClass.touchedAttributes().Params -->
-| Parameter | Tipo       |    | Descripción                                      |
-| --------- | ---------- |:--:| ------------------------------------------------ |
-| Resultado | Collection | <- | Names of touched attributes, or empty collection |
+| Parámetros | Tipo       |    | Descripción                                      |
+| ---------- | ---------- |:--:| ------------------------------------------------ |
+| Resultado  | Collection | <- | Names of touched attributes, or empty collection |
 <!-- END REF -->
 
 #### Descripción
@@ -1685,7 +1685,7 @@ In this case:
 <!-- REF EntityClass.unlock().Desc -->
 ## .unlock()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17     | Añadidos |
@@ -1696,9 +1696,9 @@ In this case:
 **.unlock()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.unlock().Params -->
-| Parameter | Tipo   |    | Descripción   |
-| --------- | ------ |:--:| ------------- |
-| Resultado | Object | <- | Status object |
+| Parámetros | Tipo   |    | Descripción   |
+| ---------- | ------ |:--:| ------------- |
+| Resultado  | Object | <- | Status object |
 <!-- END REF -->
 
 #### Descripción
