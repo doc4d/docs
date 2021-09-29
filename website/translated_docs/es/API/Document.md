@@ -9,7 +9,7 @@ title: Document Class
 <!-- REF document.creationDate.Desc -->
 ## .creationDate
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -31,7 +31,7 @@ This property is **read-only**.
  <!-- REF document.creationTime.Desc -->
 ## .creationTime
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -55,7 +55,7 @@ This property is **read-only**.
 <!-- REF document.exists.Desc -->
 ## .exists
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -81,7 +81,7 @@ This property is **read-only**.
 
 ## .extension
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -105,7 +105,7 @@ This property is **read-only**.
 <!-- REF document.fullName.Desc -->
 ## .fullName
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -128,7 +128,7 @@ This property is **read-only**.
 <!-- REF document.hidden.Desc -->
 ## .hidden
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -152,7 +152,7 @@ This property is **read-only**.
 <!-- REF document.isAlias.Desc -->
 ## .isAlias
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -175,7 +175,7 @@ This property is **read-only**.
 <!-- REF document.isFile.Desc -->
 ## .isFile
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -198,7 +198,7 @@ This property is **read-only**.
 <!-- REF document.isFolder.Desc -->
 ## .isFolder
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -222,7 +222,7 @@ This property is **read-only**.
 <!-- REF document.isWritable.Desc -->
 ## .isWritable
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -256,7 +256,7 @@ This property is **read-only**.
 <!-- REF document.modificationDate.Desc -->
 ## .modificationDate
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -280,7 +280,7 @@ This property is **read-only**.
 <!-- REF document.modificationTime.Desc -->
 ## .modificationTime
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -303,7 +303,7 @@ This property is **read-only**.
 <!-- REF document.name.Desc -->
 ## .name
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -325,7 +325,7 @@ This property is **read-only**.
 <!-- REF document.original.Desc -->
 ## .original
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -354,7 +354,7 @@ This property is **read-only**.
 <!-- REF document.parent.Desc -->
 ## .parent
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -378,7 +378,7 @@ This property is **read-only**.
 <!-- REF document.path.Desc -->
 ## .path
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -401,7 +401,7 @@ This property is **read-only**.
 <!-- REF document.platformPath.Desc -->
 ## .platformPath
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -425,7 +425,7 @@ This property is **read-only**.
 <!-- REF document.size.Desc -->
 ## .size
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -455,7 +455,7 @@ This property is **read-only**.
 <!-- REF document.copyTo().Desc -->
 ## .copyTo()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -465,11 +465,11 @@ This property is **read-only**.
 **.copyTo**( *destinationFolder* : 4D.Folder { ; *newName* : Text } { ; *overwrite* : Integer } ) : 4D.File<!-- END REF -->
 
 <!-- REF #document.copyTo().Params -->
-| Parameter         | Tipo      |    | Descripción                                 |
+| Parámetros        | Tipo      |    | Descripción                                 |
 | ----------------- | --------- |:--:| ------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder                          |
 | newName           | Texto     | -> | Name for the copy                           |
-| overwrite         | Entero    | -> | `fk overwrite` to replace existing elements |
+| overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
 | Resultado         | 4D.File   | <- | Copied file                                 |
 <!-- END REF -->
 
@@ -484,7 +484,7 @@ By default, the file is copied with the name of the original file. If you want t
 
 If a file with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
 
-| Constant       | Valor | Comment                             |
+| Constante      | Valor | Comment                             |
 | -------------- | ----- | ----------------------------------- |
 | `fk overwrite` | 4     | Overwrite existing elements, if any |
 
@@ -510,7 +510,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 <!-- REF document.getContent().Desc -->
 ## .getContent()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -520,9 +520,9 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 **.getContent( )** : Blob<!-- END REF -->
 
 <!-- REF #document.getContent().Params -->
-| Parameter | Tipo |    | Descripción  |
-| --------- | ---- | -- | ------------ |
-| Resultado | Blob | <- | File content |
+| Parámetros | Tipo |    | Descripción  |
+| ---------- | ---- | -- | ------------ |
+| Resultado  | Blob | <- | File content |
 <!-- END REF -->
 
 
@@ -553,7 +553,7 @@ To save a document's contents in a `BLOB` field:
 <!-- REF document.getIcon().Desc -->
 ## .getIcon()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -563,10 +563,10 @@ To save a document's contents in a `BLOB` field:
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #document.getIcon().Params -->
-| Parameter | Tipo   |    | Descripción                                   |
-| --------- | ------ | -- | --------------------------------------------- |
-| size      | Entero | -> | Side length for the returned picture (pixels) |
-| Resultado | Imagen | <- | Icono                                         |
+| Parámetros | Tipo    |    | Descripción                                   |
+| ---------- | ------- | -- | --------------------------------------------- |
+| size       | Integer | -> | Side length for the returned picture (pixels) |
+| Resultado  | Imagen  | <- | Icono                                         |
 <!-- END REF -->
 
 
@@ -591,7 +591,7 @@ File icon [picture](../Concepts/picture.html).
 <!-- REF document.getText().Desc -->
 ## .getText()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -602,12 +602,12 @@ File icon [picture](../Concepts/picture.html).
 
 
 <!-- REF #document.getText().Params -->
-| Parameter   | Tipo   |    | Descripción                     |
-| ----------- | ------ | -- | ------------------------------- |
-| charSetName | Texto  | -> | Name of character set           |
-| charSetNum  | Entero | -> | Number of character set         |
-| breakMode   | Entero | -> | Processing mode for line breaks |
-| Resultado   | Texto  | <- | Text from the document          |
+| Parámetros  | Tipo    |    | Descripción                     |
+| ----------- | ------- | -- | ------------------------------- |
+| charSetName | Texto   | -> | Name of character set           |
+| charSetNum  | Integer | -> | Number of character set         |
+| breakMode   | Integer | -> | Processing mode for line breaks |
+| Resultado   | Texto   | <- | Text from the document          |
 <!-- END REF -->
 
 
@@ -625,7 +625,7 @@ If the document contains a Byte Order Mark (BOM), 4D uses the character set that
 
 In *breakMode*, you can pass a number indicating the processing to apply to end-of-line characters in the document. The following constants of the "System Documents" theme are available:
 
-| Constant                      | Valor | Comment                                                                                                                                                             |
+| Constante                     | Valor | Comment                                                                                                                                                             |
 | ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Document unchanged`          | 0     | No processing                                                                                                                                                       |
 | `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
