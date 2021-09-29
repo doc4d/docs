@@ -68,7 +68,7 @@ An object with two properties:
 | name      | Texto | Display name (can be null) |
 | email     | Texto | Email address              |
 
-#### Colección
+#### Collection
 
 A collection of address objects.
 
@@ -495,7 +495,7 @@ The `.to` property contains the <!-- REF #EmailObjectClass.to.Summary -->primary
 
 ## MAIL Convert from MIME
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18     | Añadidos |
@@ -505,10 +505,10 @@ The `.to` property contains the <!-- REF #EmailObjectClass.to.Summary -->primary
 **MAIL Convert from MIME**( *mime* : Blob ) : Object<br>**MAIL Convert from MIME**( *mime* : Text ) : Object<!-- END REF -->
 
 <!-- REF #_command_.MAIL_Convert_from_MIME.Params -->
-| Parameter | Tipo       |    | Descripción   |
-| --------- | ---------- |:--:| ------------- |
-| mime      | Blob, Text | -> | Email in MIME |
-| Resultado | Objeto     | <- | Email object  |
+| Parámetros | Tipo       |    | Descripción   |
+| ---------- | ---------- |:--:| ------------- |
+| mime       | Blob, Text | -> | Email in MIME |
+| Resultado  | Objeto     | <- | Email object  |
 <!-- END REF -->
 
 #### Descripción
@@ -581,7 +581,7 @@ $status:=$transporter.send($email)
 
 ## MAIL Convert to MIME
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R4  | Añadidos |
@@ -592,11 +592,11 @@ $status:=$transporter.send($email)
 **MAIL Convert to MIME**( *mail* : Object { ; *options* : Object } ) : Text<!-- END REF -->
 
 <!-- REF #_command_.MAIL_Convert_to_MIME.Params -->
-| Parameter | Tipo   |    | Descripción                       |
-| --------- | ------ |:--:| --------------------------------- |
-| mail      | Objeto | -> | Email object                      |
-| options   | Objeto | -> | Charset and encoding mail options |
-| Resultado | Texto  | <- | Email object converted to MIME    |
+| Parámetros | Tipo   |    | Descripción                       |
+| ---------- | ------ |:--:| --------------------------------- |
+| mail       | Objeto | -> | Email object                      |
+| options    | Objeto | -> | Charset and encoding mail options |
+| Resultado  | Texto  | <- | Email object converted to MIME    |
 <!-- END REF -->
 
 #### Descripción
@@ -637,14 +637,16 @@ $mime:=[#current_title_incode]($mail)
 
 // Contents of $mime:
 // MIME-Version: 1.0
-// Date: Thu, 11 Oct 2018 15:42:25 GMT
+// Date:
+Thu, 11 Oct 2018 15:42:25 GMT
 // Message-ID: <7CA5D25B2B5E0047A36F2E8CB30362E2>
 // Sender: tsales@massmarket.com
 // From: tsales@massmarket.com
 // To: noreply@4d.com
 // To: test@4d.com
 // Content-Type: multipart/alternative; boundary="E0AE5773D5E95245BBBD80DD0687E218"
-// Subject: Terrific Sale! This week only!
+// Subject: Terrific Sale!
+This week only!
 //
 // --E0AE5773D5E95245BBBD80DD0687E218
 // Content-Type: text/plain; charset="UTF-8"
