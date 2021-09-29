@@ -46,10 +46,10 @@ You can also associate choice lists to objects using the [OBJECT SET LIST BY NAM
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos   | Valores posibles                                    |
-| ---------- | ---------------- | --------------------------------------------------- |
-| choiceList | list, collection | A list of possible values                           |
-| lista      | list, collection | A list of possible values (hierarchical lists only) |
+| Nombre     | Tipos de datos   | Valores posibles                                              |
+| ---------- | ---------------- | ------------------------------------------------------------- |
+| choiceList | list, collection | A list of possible values                                     |
+| lista      | list, collection | Una lista de valores posibles (listas jerárquicas únicamente) |
 
 
 #### Objetos soportados
