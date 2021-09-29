@@ -1,18 +1,18 @@
 ---
 id: building
-title: Building a project package
+title: Generar un paquete proyecto
 ---
 
-4D includes an application builder to create a project package (final build). This builder simplifies the finalization and deployment process for 4D compiled applications. It automatically handles the specific features of different operating systems and facilitates the deployment of client-server applications.
+4D incluye un generador de aplicaciones para crear un paquete de proyecto (versión final). Este generador simplifica el proceso de finalización y despliegue de las aplicaciones compiladas en 4D. Maneja automáticamente las funcionalidades específicas de los distintos sistemas operativos y facilita el despliegue de aplicaciones cliente-servidor.
 
-The application builder allows you to:
+El generador de aplicaciones le permite:
 
-*   Build a compiled structure, without interpreted code,
-*   Build a stand-alone, double-clickable application, *i.e.*, merged with 4D Volume Desktop, the 4D database engine,
-*   Build different applications from the same compiled structure via an XML project,
-*   Build homogeneous client-server applications,
-*   Build client-server applications with automatic updating of client and server parts.
-*   Save your build settings for future use (*Save settings* button).
+*   Generar una estructura compilada, sin código interpretado,
+*   Generar una aplicación autónoma ejecutable, *es decir*, fusionada con 4D Volume Desktop, el motor de base de datos 4D,
+*   Generar diferentes aplicaciones a partir de la misma estructura compilada mediante un proyecto XML,
+*   Generar aplicaciones cliente-servidor homogéneas,
+*   Generar aplicaciones cliente-servidor con actualización automática de los componentes del cliente y del servidor.
+*   Guardar sus parámetros de generación para su uso futuro (botón *Guardar los parámetros*).
 
 > Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. Sin embargo, puede crear aplicaciones específicas que soporten modificaciones locales utilizando la llave XML `PackProject` (ver [doc.4d.com](https://doc.4d.com)).
 
