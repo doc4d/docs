@@ -16,7 +16,7 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 
 > Dataclass attribute objects can be modified, but the underlying database structure will not be altered.
 
-### Summary
+### Resumen
 
 |                                                                                                                                                                                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 <!-- REF DataClassAttributeClass.autoFilled.Desc -->
 ## .autoFilled
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -67,7 +67,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 <!-- REF DataClassAttributeClass.exposed.Desc -->
 ## .exposed
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v19 R3  | Añadidos |
@@ -90,7 +90,7 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 <!-- REF DataClassAttributeClass.fieldNumber.Desc -->
 ## .fieldNumber
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -117,7 +117,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 <!-- REF DataClassAttributeClass.fieldType.Desc -->
 ## .fieldType
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                        |
 | ------- | ------------------------------ |
 | v19 R3  | Support of computed attributes |
@@ -132,7 +132,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 
 The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->contains the 4D database type of the attribute<!-- END REF -->. It depends on the attribute kind (see [`.kind`](#kind)).
 
-**Possible values:**
+**Valores posibles:**
 
 | dataClassAttribute.kind | fieldType                                                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -151,7 +151,7 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 <!-- REF DataClassAttributeClass.indexed.Desc -->
 ## .indexed
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -159,7 +159,7 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 
 <!-- REF DataClassAttributeClass.indexed.Syntax -->
-**.indexed** : Boolean<!-- END REF -->
+**.indexed**: Booleano<!-- END REF -->
 
 
 #### Descripción
@@ -185,7 +185,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 
 
 <!-- REF DataClassAttributeClass.inverseName.Syntax -->
-**.inverseName** : Text<!-- END REF -->
+**.inverseName**: Texto<!-- END REF -->
 
 
 #### Descripción
@@ -203,7 +203,7 @@ This property is not returned if `.kind` = "storage". It must be of the "related
 <!-- REF DataClassAttributeClass.keyWordIndexed.Desc -->
 ## .keyWordIndexed
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -228,7 +228,7 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 <!-- REF DataClassAttributeClass.kind.Desc -->
 ## .kind
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes            |
 | ------- | ------------------ |
 | v19 R3  | Added "calculated" |
@@ -279,7 +279,7 @@ Given the following table and relation:
 
 
 <!-- REF DataClassAttributeClass.mandatory.Syntax -->
-**.mandatory** : Boolean<!-- END REF -->
+**.mandatory**: Booleano<!-- END REF -->
 
 
 #### Descripción
@@ -298,7 +298,7 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 <!-- REF DataClassAttributeClass.name.Desc -->
 ## .name
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
@@ -327,7 +327,7 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 <!-- REF DataClassAttributeClass.readOnly.Desc -->
 ## .readOnly
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v19 R3  | Añadidos |
@@ -363,7 +363,7 @@ For example, computed attributes without [`set` function](ORDA/ordaClasses.md#fu
 
 
 <!-- REF DataClassAttributeClass.relatedDataClass.Syntax -->
-**.relatedDataClass** : Text<!-- END REF -->
+**.relatedDataClass**: Text<!-- END REF -->
 
 
 #### Descripción
@@ -391,7 +391,7 @@ Given the following tables and relations:
 <!-- REF DataClassAttributeClass.type.Desc -->
 ## .type
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes                        |
 | ------- | ------------------------------ |
 | v19 R3  | Support of computed attributes |
@@ -427,7 +427,7 @@ The conceptual value type depends on the attribute [`.kind`](#kind).
 <!-- REF DataClassAttributeClass.unique.Desc -->
 ## .unique
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v17 R5  | Añadidos |
