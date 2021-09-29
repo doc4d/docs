@@ -22,7 +22,7 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 <!-- REF ClassClass.name.Desc -->
 ## .name
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R3  | Añadidos |
@@ -45,7 +45,7 @@ This property is **read-only**.
 <!-- REF ClassClass.new().Desc -->
 ## .new()
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R3  | Añadidos |
@@ -55,10 +55,10 @@ This property is **read-only**.
 **.new**( *param* : any { *;...paramN* } ) : 4D.Class<!-- END REF -->
 
 <!-- REF #ClassClass.new().Params -->
-| Parameter | Tipo     |    | Descripción                                      |
-| --------- | -------- |:--:| ------------------------------------------------ |
-| param     | any      | -> | Parameter(s) to pass to the constructor function |
-| Resultado | 4D.Class | <- | New object of the class                          |
+| Parámetros | Tipo     |    | Descripción                                      |
+| ---------- | -------- |:--:| ------------------------------------------------ |
+| param      | any      | -> | Parameter(s) to pass to the constructor function |
+| Resultado  | 4D.Class | <- | New object of the class                          |
 <!-- END REF -->
 
 
@@ -107,7 +107,7 @@ $person:=cs.Person.new("John";"Doe";40)
 <!-- REF ClassClass.superclass.Desc -->
 ## .superclass
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 | Version | Changes  |
 | ------- | -------- |
 | v18 R3  | Añadidos |
