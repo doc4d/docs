@@ -7,19 +7,19 @@ title: Propiedades de los formularios
 
 ## Pages
 
-Each form has is made of at least two pages:
+Cada formulario consta de al menos dos páginas:
 
-- a page 0 (background page)
-- a page 1 (main page)
+- una página 0 (página de fondo)
+- una página 1 (página principal)
 
-For more information, please refer to [Form pages](forms.md#form-pages).
+Para más información, consulte [Páginas formulario](forms.md#form-pages).
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name  | Tipos de datos | Possible Values                                                          |
-| ----- | -------------- | ------------------------------------------------------------------------ |
-| pages | colección      | Collection of pages (each page is an object, page 0 is the first element |
+| Nombre | Tipos de datos | Valores posibles                                                                  |
+| ------ | -------------- | --------------------------------------------------------------------------------- |
+| pages  | colección      | Colección de páginas (cada página es un objeto, la página 0 es el primer elemento |
 
 ---
 
@@ -29,7 +29,7 @@ For more information, please refer to [Form pages](forms.md#form-pages).
 This property is the name of the form itself and is used to refer to the form by name using the 4D language. The form name must comply with the [rules specified for identifiers](Concepts/identifiers.md) in 4D.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
 The form name is defined by the name of the folder that contains the form.4Dform file. See [project architecture](Project/architecture.md#sources-folder) for more information.
 
@@ -49,18 +49,18 @@ Each table in a database generally has at least two table forms. One for listing
 Supported types depend on the form category:
 
 
-| Form Type                | JSON grammar     | Descripción                                                   | Supported with              |
+| Form Type                | Gramática JSON   | Descripción                                                   | Supported with              |
 | ------------------------ | ---------------- | ------------------------------------------------------------- | --------------------------- |
-| Detail Form              | detailScreen     | A display form for data entry and modification                | Project forms - Table forms |
+| Formulario detallado     | detailScreen     | A display form for data entry and modification                | Project forms - Table forms |
 | Detail Form for Printing | detailPrinter    | A printed report with one page per record, such as an invoice | Project forms - Table forms |
 | List Form                | listScreen       | A form for listing records on the screen                      | Table forms                 |
 | List Form for Printing   | listPrinter      | A printed report that list records                            | Table forms                 |
-| None                     | *no destination* | A form with no specific feature                               | Project forms - Table forms |
+| Ninguno                  | *no destination* | A form with no specific feature                               | Project forms - Table forms |
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name        | Tipos de datos | Possible Values                                              |
+| Nombre      | Tipos de datos | Valores posibles                                             |
 | ----------- | -------------- | ------------------------------------------------------------ |
 | destination | cadena         | "detailScreen", "listScreen", "detailPrinter", "listPrinter" |
 
@@ -75,9 +75,9 @@ To inherit from a table form, set the table in the [Inherited Form Table](#inher
 To remove inheritance, select **\<None>** in the Property List (or " " in JSON).
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name          | Tipos de datos | Possible Values                                                                                                    |
+| Nombre        | Tipos de datos | Valores posibles                                                                                                   |
 | ------------- | -------------- | ------------------------------------------------------------------------------------------------------------------ |
 | inheritedForm | cadena         | Name of table or project form OR a POSIX path to a .json file describing the form OR an object describing the form |
 
@@ -91,72 +91,72 @@ This property specifies the database table from which to [inherit a form](forms.
 Set to **\<None>** in the Property List (or " " in JSON) to inherited from a project form.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name               | Tipos de datos   | Possible Values            |
-| ------------------ | ---------------- | -------------------------- |
-| inheritedFormTable | string or number | table name or table number |
+| Nombre             | Tipos de datos  | Valores posibles           |
+| ------------------ | --------------- | -------------------------- |
+| inheritedFormTable | string o number | table name or table number |
 
 
 ---
 
-## Published as Subform
+## Publicado como Subformulario
 
-For a component form to be selected as a [subform](FormObjects/subform_overview.md) in a host application, it must have been explicitly shared. When this property is selected, the form will be published in the host application.
+Para que un formulario componente sea seleccionado como [subformulario](FormObjects/subform_overview.md) en una aplicación anfitriona, debe haber sido compartido explícitamente. When this property is selected, the form will be published in the host application.
 
 Only project forms can be specified as published subforms.
 
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name   | Tipos de datos | Possible Values |
-| ------ | -------------- | --------------- |
-| shared | booleano       | true, false     |
+| Nombre | Tipos de datos | Valores posibles |
+| ------ | -------------- | ---------------- |
+| shared | booleano       | true, false      |
 
 
 ---
 
-## Save Geometry
+## Memorizar geometría
 
-When the option is used, if the window is opened using the `Open form window` command with the `*` parameter, several form parameters are automatically saved by 4D when the window is closed, regardless of how they were modified during the session:
+Cuando se utiliza esta opción, si la ventana se abre utilizando el comando `Open form window` con el parámetro `*`, varios parámetros del formulario son guardados automáticamente por 4D cuando se cierra la ventana, independientemente de cómo se hayan modificado durante la sesión:
 
-*   the current page,
-*   the position, size and visibility of each form object (including the size and visibility of list box columns).
-> This option does not take into account objects generated using the `OBJECT DUPLICATE` command. In order for a user to recover their environment when using this command, the developer must repeat the sequence of creation, definition and positioning of the objects.
+*   la página actual,
+*   la posición, el tamaño y la visibilidad de cada objeto del formulario (incluyendo el tamaño y la visibilidad de las columnas de list box).
+> Esta opción no tiene en cuenta los objetos generados con el comando `OBJECT DUPLICATE`. Para que un usuario pueda recuperar su entorno al utilizar este comando, el desarrollador debe repetir la secuencia de creación, definición y posicionamiento de los objetos.
 
-When this option is selected, the [Save Value](FormObjects/properties_Object.md#save-value) option is available for certain objects.
+Cuando se selecciona esta opción, la opción [Guardar valor](FormObjects/properties_Object.md#save-value) está disponible para ciertos objetos.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name             | Tipos de datos | Possible Values |
-| ---------------- | -------------- | --------------- |
-| memorizeGeometry | booleano       | true, false     |
+| Nombre           | Tipos de datos | Valores posibles |
+| ---------------- | -------------- | ---------------- |
+| memorizeGeometry | booleano       | true, false      |
 
 #### Ver también
-[**Save Value**](FormObjects/properties_Object.md#save-value)
+[**Guardar valor**](FormObjects/properties_Object.md#save-value)
 
 
 ---
 
-## Window Title
+## Título de la ventana
 
-The window title is used when the form is opened using the `Open form window` and `Open window` 4D commands in Application environment. The window title appears in the Title bar of the window.
+El título de la ventana se utiliza cuando se abre el formulario mediante los comandos `Open form window` y `Open window`4D en el entorno de la aplicación. El nombre de la ventana aparece en la barra de título de la ventana.
 
-You can use dynamic references to set the window titles for forms, *i.e.*:
+Puede utilizar referencias dinámicas para definir los nombres de ventana de los formularios, *es decir*:
 
-*   A standard XLIFF reference stored in the Resources folder.
-*   A table or field label: The syntax to apply is <?[TableNum]FieldNum> or 
+*   Una referencia estándar XLIFF almacenada en la carpeta Resources.
+*   Una etiqueta de tabla o de campo: la sintaxis a aplicar es <?[TableNum]FieldNum> o 
   
   <?[TableName]FieldName>.
-*   A variable or a field: The syntax to apply is \<VariableName> or <[TableName]FieldName>. The current value of the field or variable will be displayed in the window title.
+*   Una variable o un campo: la sintaxis a aplicar es \<VariableName> o <[TableName]FieldName>. El valor actual del campo o de la variable se mostrará en el título de la ventana.
 
-> The number of characters for a window title is limited to 31.
+> El número de caracteres para el título de una ventana está limitado a 31.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name        | Tipos de datos | Possible Values                                        |
-| ----------- | -------------- | ------------------------------------------------------ |
-| windowTitle | cadena         | The name of the window as plain text or as a reference |
+| Nombre      | Tipos de datos | Valores posibles                                         |
+| ----------- | -------------- | -------------------------------------------------------- |
+| windowTitle | cadena         | El nombre de la ventana como texto plano o de referencia |
 
 
