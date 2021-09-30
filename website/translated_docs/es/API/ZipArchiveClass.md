@@ -30,7 +30,7 @@ If($zipFile.extension=".txt")
 End if
 ```
 
-### Summary
+### Resumen
 
 |                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,9 +40,9 @@ End if
 ## ZIP Create archive
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18     | Añadidos       |
 </details>
 
 <!-- REF #_command_.ZIP Create archive.Syntax -->
@@ -129,7 +129,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
   
   <tr>
     <td>
-      callback
+      retrollamada
     </td>
     
     <td>
@@ -267,9 +267,9 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 ## ZIP Read archive
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18     | Añadidos       |
 </details>
 
 <!-- REF #_command_.ZIP Read archive.Syntax -->
@@ -279,7 +279,7 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 | Parámetros | Tipo          |    | Descripción                 |
 | ---------- | ------------- |:--:| --------------------------- |
 | zipFile    | 4D.File       | -> | Zip archive file            |
-| password   | Texto         | -> | ZIP archive password if any |
+| contraseña | Texto         | -> | ZIP archive password if any |
 | Resultado  | 4D.ZipArchive | <- | Archive object              |
 <!-- END REF -->
 
