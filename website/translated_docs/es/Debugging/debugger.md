@@ -196,7 +196,7 @@ This theme lists the local semaphores currently being set. For each semaphore, t
 
 This theme lists the processes started since the beginning of the working session. The value column displays the time used and the current state for each process (i.e., Executing, Paused, and so on). The expressions from this theme cannot be modified.
 
-#### Tables and Fields
+#### Tablas y campos
 
 This theme lists the tables and fields in the 4D database. For each Table item, the Value column displays the size of the current selection for the current process as well as the number of **locked records**.
 
@@ -408,7 +408,7 @@ Specific shortcuts allow you to find strings identical to the one selected:
 
 The search is carried out only if you select at least one character in the Source code pane.
 
-## Shortcuts
+## Atajos
 
 This section lists all the shortcuts available in the debugger window.
 
