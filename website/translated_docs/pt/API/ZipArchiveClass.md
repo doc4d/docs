@@ -104,7 +104,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
         </td>
         
         <td>
-          Text
+          Texto
         </td>
         
         <td>
@@ -153,7 +153,7 @@ The returned status object contains the following properties:
 
 | Property   | Type    | Description                                                                                                                              |
 | ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| statusText | Text    | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
+| statusText | Texto   | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
 | status     | Integer | Status code                                                                                                                              |
 | success    | Boolean | True if archive created successfully, else false                                                                                         |
 
@@ -301,7 +301,7 @@ $err:=ZIP Create archive($zip; $destination)
 | Parameter | Type          |    | Description                 |
 | --------- | ------------- |:--:| --------------------------- |
 | zipFile   | 4D.File       | -> | Zip archive file            |
-| password  | Text          | -> | ZIP archive password if any |
+| password  | Texto         | -> | ZIP archive password if any |
 | Result    | 4D.ZipArchive | <- | Archive object              |
 <!-- END REF -->
 
