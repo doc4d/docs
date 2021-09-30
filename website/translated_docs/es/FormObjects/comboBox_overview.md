@@ -46,7 +46,7 @@ When the form is executed, 4D automatically manages the combo box during input o
 Please refer to **Using a choice** in the [drop-down list page](dropdownList_Overview.md#using-a-choice-list) for more information.
 
 
-## Options
+## Opciones
 
 Combo box type objects accept two specific options:
 
