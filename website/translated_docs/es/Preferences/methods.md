@@ -5,7 +5,7 @@ title: Methods Page
 
 This page contains parameters defining the Method editor interface and it default display as well as options concerning its operation. It is divided into two sections accessed using the Theme and Options tabs.
 
-## Themes
+## Temas
 
 This page allows selecting, creating, or configuring Method editor themes. A theme defines the font, font size, colors and styles of items displayed in the code editor.
 
@@ -75,7 +75,7 @@ These options configure the various colors used in the Method editor and debugge
 
 
 
-## Options
+## Opciones
 
 
 This page configures Method editor display options.
@@ -83,7 +83,7 @@ This page configures Method editor display options.
 ![](assets/en/Preferences/options.png)
 
 
-### Options
+### Opciones
 
 
 
