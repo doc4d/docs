@@ -201,7 +201,7 @@ The number of loops is based on the number of elements of the collection. At eac
 - The *item* variable gets the same type as the first collection element. If any collection element is not of the same type as the variable, an error is generated and the loop stops.
 - If the collection contains elements with a Null value, an error is generated if the *item* variable type does not support Null values (such as longint variables).
 
-#### Example with a collection of scalar values
+#### Ejemplo con una colección de valores escalares
 
 *getNames* returns a collection of strings. The method has been declared as "[available through 4D tags and URLs](WebServer/allowProject.md)".
 
