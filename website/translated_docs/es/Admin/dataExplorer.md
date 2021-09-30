@@ -125,13 +125,13 @@ With numeric, date, and time attributes, the "=" operator is selected by default
 
 ![alt-text](assets/en/Admin/DEFilter1.png)
 
-#### Dates
+#### Fechas
 
 With date attributes, you can enter the date to use through a datepicker widget (click on the date area to display the calendar):
 
 ![alt-text](assets/en/Admin/DEFilter2.png)
 
-#### Booleans
+#### Booleanos
 
 When you click on a boolean attribute area, you can filter on **true**/**false** values but also on **null**/**not null** values:
 
@@ -151,7 +151,7 @@ You can also use the wildcard character (@) to replace one or more starting char
 | A filter with | Finds                                              |
 | ------------- | -------------------------------------------------- |
 | Bel           | All values beginning with “Bel”                    |
-| @do           | All values containing “do”                         |
+| @do           | Todos los valores que contienen "do"               |
 | Bel@do        | All values starting with “Bel” and containing “do” |
 
 If you want to create more specific queries, such as "is exactly", you may need to use the advanced queries feature.
