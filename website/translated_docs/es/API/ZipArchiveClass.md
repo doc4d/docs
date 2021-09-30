@@ -30,7 +30,7 @@ If($zipFile.extension=".txt")
 End if
 ```
 
-### Summary
+### Resumen
 
 |                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ End if
 ## ZIP Create archive
 
 <details><summary>Histórico</summary>
-| Version | Changes                                                               |
+| Versión | Modificaciones                                                        |
 | ------- | --------------------------------------------------------------------- |
 | v19 R3  | Added `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` property |
 | v18     | Añadidos                                                              |
@@ -130,7 +130,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
   
   <tr>
     <td>
-      callback
+      retrollamada
     </td>
     
     <td>
@@ -289,9 +289,9 @@ $err:=ZIP Create archive($zip; $destination)
 ## ZIP Read archive
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18     | Añadidos       |
 </details>
 
 <!-- REF #_command_.ZIP Read archive.Syntax -->
@@ -301,7 +301,7 @@ $err:=ZIP Create archive($zip; $destination)
 | Parámetros | Tipo          |    | Descripción                 |
 | ---------- | ------------- |:--:| --------------------------- |
 | zipFile    | 4D.File       | -> | Zip archive file            |
-| password   | Texto         | -> | ZIP archive password if any |
+| contraseña | Texto         | -> | ZIP archive password if any |
 | Resultado  | 4D.ZipArchive | <- | Archive object              |
 <!-- END REF -->
 
