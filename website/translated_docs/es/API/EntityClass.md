@@ -6,7 +6,7 @@ title: Entity
 An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMapping.md#dataclass), like a record of the table matching the dataclass in its associated datastore. It contains the same attributes as the dataclass as well as the data values and specific properties and functions.
 
 
-### Summary
+### Resumen
 
 |                                                                                                                                                                                                                |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -42,9 +42,9 @@ An [entity](ORDA/dsMapping.md#entity) is an instance of a [Dataclass](ORDA/dsMap
 ## .*attributeName*
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF EntityClass.attributeName.Syntax -->
@@ -82,9 +82,9 @@ The attribute value type depends on the attribute [kind](DataClassAttributeClass
 ## .clone()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 
@@ -127,9 +127,9 @@ This function can only be used with entities already saved in the database. It c
 ## .diff()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF #EntityClass.diff().Syntax -->
@@ -331,9 +331,9 @@ vCompareResult3 (only differences on $e1 touched attributes are returned)
 ## .drop()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -384,7 +384,7 @@ The object returned by `.drop( )` contains the following properties:
 
 (\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
 
-| Constant                                  | Valor | Comment                                                                                                                                                                                                                                |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                             |
 | ----------------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using entity.drop( ), this error can be returned when dk force drop if stamp changed option is used. When using entity.lock( ), this error can be returned when dk reload if stamp changed option is used</li><p>**Associated statusText**: "Entity does not exist anymore" |
 | `dk status locked`                        | 3     | The entity is locked by a pessimistic lock.<br>**Associated statusText**: "Already locked"                                                                                                                                       |
@@ -439,9 +439,9 @@ Example with `dk force drop if stamp changed` option:
 ## .first()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -478,9 +478,9 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 ## .fromObject()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -568,9 +568,9 @@ You could also use a related entity given as an object:
 ## .getDataClass()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 
 </details>
 
@@ -615,9 +615,9 @@ The following generic code duplicates any entity:
 ## .getKey()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -659,9 +659,9 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 ## .getSelection()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -703,9 +703,9 @@ If the entity does not belong to an entity selection, the function returns Null.
 ## .getStamp()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -752,9 +752,9 @@ The internal stamp is automatically incremented by 4D each time the entity is sa
 ## .indexOf()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -802,9 +802,9 @@ The resulting value is included between 0 and the length of the entity selection
 ## .isNew()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -843,9 +843,9 @@ The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True i
 ## .last()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -884,9 +884,9 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 ## .lock()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -946,7 +946,7 @@ The object returned by `.lock( )` contains the following properties:
 
 (\*) The following values can be returned in the *status* and *statusText* properties of the *Result* object in case of error:
 
-| Constant                                  | Valor | Comment                                                                                                                                                                                                                                                 |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                              |
 | ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.drop( )`, this error can be returned when dk force drop if stamp changed option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity does not exist anymore"                                           |
 | `dk status locked`                        | 3     | The entity is locked by a pessimistic lock.<p><p>**Associated statusText**: "Already locked"                                                                                                            |
@@ -997,9 +997,9 @@ Example with `dk reload if stamp changed` option:
 ## .next()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1039,9 +1039,9 @@ If there is no valid next entity in the entity selection (i.e. you are on the la
 ## .previous()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1081,9 +1081,9 @@ If there is no valid previous entity in the entity selection (i.e. you are on th
 ## .reload( )
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1112,7 +1112,7 @@ The object returned by `.reload( )` contains the following properties:
 
 (\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
 
-| Constant                                  | Valor | Comment                                                                                                                                                                                                                   |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                |
 | ----------------------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>***Associated statusText***: "Entity does not exist anymore" |
 | `dk status serious error`                 | 4     | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                           |
@@ -1144,9 +1144,9 @@ The object returned by `.reload( )` contains the following properties:
 ## .save()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1204,7 +1204,7 @@ The object returned by `.save()` contains the following properties:
 
 The following values can be returned in the `status` and `statusText` properties of Result object in case of error:
 
-| Constant                                  | Valor | Comment                                                                                                                                                                                                                                                           |
+| Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                        |
 | ----------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status automerge failed`              | 6     | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"                                                        |
 | `dk status entity does not exist anymore` | 5     | The entity no longer exists in the data. This error can occur in the following cases:<br><li>the entity has been dropped (the stamp has changed and the memory space is now free)</li><li>the entity has been dropped and replaced by another one with another primary key (the stamp has changed and a new entity now uses the memory space). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. When using `.lock( )`, this error can be returned when `dk reload if stamp changed` option is used</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                            |
@@ -1249,7 +1249,7 @@ Updating an entity without `dk auto merge` option:
  End case
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 Updating an entity with `dk auto merge` option:
 
@@ -1279,9 +1279,9 @@ Updating an entity with `dk auto merge` option:
 ## .toObject()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1340,7 +1340,7 @@ Without filter parameter:
 employeeObject:=employeeSelected.toObject()
 ```
 
-Returns:
+Devuelve:
 
 ```4d
 {
@@ -1373,7 +1373,7 @@ Extracting the primary key and the stamp:
 employeeObject:=employeeSelected.toObject("";dk with primary key+dk with stamp)
 ```
 
-Returns:
+Devuelve:
 
 ```4d
 {
@@ -1398,7 +1398,7 @@ Returns:
 }
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 Expanding all the properties of `relatedEntities`:
 
@@ -1467,7 +1467,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 }
 ```
 
-#### Example 4
+#### Ejemplo 4
 
 Extracting some properties of `relatedEntities`:
 
@@ -1475,7 +1475,7 @@ Extracting some properties of `relatedEntities`:
  employeeObject:=employeeSelected.toObject("firstName, directReports.lastName")
 ```
 
-Returns:
+Devuelve:
 
 ```4d
 {
@@ -1494,7 +1494,7 @@ Returns:
 }
 ```
 
-#### Example 5
+#### Ejemplo 5
 
 Extracting a `relatedEntity` with simple form:
 
@@ -1503,7 +1503,7 @@ Extracting a `relatedEntity` with simple form:
  employeeObject:=employeeSelected.toObject($coll)
 ```
 
-Returns:
+Devuelve:
 
 ```4d
 {
@@ -1514,7 +1514,7 @@ Returns:
 }
 ```
 
-#### Example 6
+#### Ejemplo 6
 
 Extracting all the properties of a `relatedEntity`:
 
@@ -1522,7 +1522,7 @@ Extracting all the properties of a `relatedEntity`:
  employeeObject:=employeeSelected.toObject("employer.*")
 ```
 
-Returns:
+Devuelve:
 
 ```4d
 {
@@ -1536,7 +1536,7 @@ Returns:
 }
 ```
 
-#### Example 7
+#### Ejemplo 7
 
 Extracting some properties of a `relatedEntity`:
 
@@ -1547,7 +1547,7 @@ Extracting some properties of a `relatedEntity`:
  employeeObject:=employeeSelected.toObject($col)
 ```
 
-Returns:
+Devuelve:
 
 ```4d
 {
@@ -1566,9 +1566,9 @@ Returns:
 ## .touched( )
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1610,9 +1610,9 @@ In this example, we check to see if it is necessary to save the entity:
 ## .touchedAttributes( )
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1686,9 +1686,9 @@ In this case:
 ## .unlock()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
