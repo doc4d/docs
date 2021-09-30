@@ -33,7 +33,7 @@
         "title": "Class"
       },
       "API/CollectionClass": {
-        "title": "Collection"
+        "title": "Colección"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -886,7 +886,7 @@
       "4D Language Concepts": "Conceptos del lenguaje 4D",
       "ORDA": "ORDA",
       "Class API Reference": "Clases API",
-      "Debugging": "Depuración",
+      "Debugging": "Debugging",
       "Access Rights": "Derechos de acceso",
       "Preferences": "Preferencias",
       "Administration": "Administración",
@@ -925,17 +925,17 @@
     "Backup and Restore|no description given": "Copia de seguridad y restauración",
     "License Management|no description given": "Gestión de licencias",
     "Build Application|no description given": "Generador de aplicaciones",
-    "Web Administration|no description given": "Administración Web",
-    "4D Server Administration Window|no description given": "Ventana de administración de 4D Server",
-    "4D Components Library|no description given": "Librería de componentes 4D",
+    "Web Administration|no description given": "Web Administration",
+    "4D Server Administration Window|no description given": "4D Server Administration Window",
+    "4D Components Library|no description given": "4D Components Library",
     "Client/Server|no description given": "Cliente/Servidor",
     "TLS Protocol (HTTPS)|no description given": "Protocolo TLS (HTTPS)",
-    "Debugging|no description given": "Depuración",
-    "Web Data Explorer|no description given": "Explorador de datos Web",
+    "Debugging|no description given": "Debugging",
+    "Web Data Explorer|no description given": "Web Data Explorer",
     "Language Reference (4D Doc Center)|no description given": "Lenguaje (4D Doc Center)",
     "Access Rights|no description given": "Derechos de acceso",
-    "Description of log files|no description given": "Descripción de los archivos históricos",
-    "Command Line Interface|no description given": "Interfaz de línea de comando",
+    "Description of log files|no description given": "Description of log files",
+    "Command Line Interface|no description given": "Command Line Interface",
     "Preferences|no description given": "Preferencias",
     "Getting started|no description given": "Comencemos",
     "Core Development|no description given": "Desarrollo",

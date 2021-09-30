@@ -202,33 +202,36 @@ The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary
 .
 
 
-## .cid<!-- REF #MailAttachmentClass.cid.Syntax -->**.cid** : Text<!-- END REF -->#### Description
-
-The `.cid` property contains<!-- REF #MailAttachmentClass.cid.Summary -->the ID of the attachment<!-- END REF -->
+## .cid<!-- REF #MailAttachmentClass.cid.Syntax -->**.cid** : Text<!-- END REF -->#### Description<!-- REF #MailAttachmentClass.cid.Syntax -->.<!-- END REF -->
 
 
-. This property is used in HTML messages only. If this property is missing, the file is handled as a simple attachment (link).
+#### Description
+
+The `.cid` property contains<!-- REF #MailAttachmentClass.cid.Summary -->the ID of the attachment<!-- END REF -->. This property is used in HTML messages only. If this property is missing, the file is handled as a simple attachment (link).
 
 
-## .disposition<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text<!-- END REF -->#### Description
+## .disposition<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text<!-- END REF -->
 
-The `.disposition` property contains<!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->
+#### Description<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text
+<!-- END REF -->
 
-. Two values are available:
+
+#### Description
+
+The `.disposition` property contains<!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->. Two values are available:
 
 *   "inline": the attachment is rendered within the message contents, at the "cid" location. The rendering depends on the mail client.
 *   "attachment": the attachment is provided as a link in the message.
 
 
-## .getContent()<!-- REF #MailAttachmentClass.getContent().Syntax -->**.getContent()** : 4D.Blob
-<!-- END REF -->
+## .getContent()<!-- REF #MailAttachmentClass.getContent().Syntax -->**.getContent()** : 4D.Blob<!-- END REF -->
 
 
 <!-- REF #MailAttachmentClass.getContent().Params -->| Paramètres | Type    |    | Description               |
 | ---------- | ------- |:--:| ------------------------- |
 | Résultat   | 4D.Blob | <- | Content of the attachment |<!-- END REF -->#### Description
 
-The `.getContent()` function<!-- REF #MailAttachmentClass.getContent().Summary -->returns the contents of the attachment object in a `4D.Blob` object<!-- END REF -->
+The `.type` property contains<!-- REF #MailAttachmentClass.type.Summary -->the `content-type` of the attachment file<!-- END REF -->
 
 
 . You can use this method with attachment objects received by the [`MAIL Convert from MIME`](#mail-convert-from-mime) command.
@@ -258,10 +261,7 @@ The `.path` property contains<!-- REF #MailAttachmentClass.path.Summary -->the P
 | v19     | Ajoutées      |
 </details><!-- REF #MailAttachmentClass.platformPath.Syntax -->**.platformPath** : Text<!-- END REF -->#### Description
 
-The `.platformPath` property returns<!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->
-
-
-.
+The `.platformPath` property returns<!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->.
 
 
 ## .type<!-- REF #MailAttachmentClass.type.Syntax -->**.type** : Texte<!-- END REF -->#### Description

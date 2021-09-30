@@ -164,10 +164,10 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 **.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.hasPrivilege().Params -->
-| Parámetros | Tipo     |    | Descripción                                      |
-| ---------- | -------- |:--:| ------------------------------------------------ |
-| privilege  | Texto    | <- | Name of the privilege to verify                  |
-| Resultado  | Booleano | <- | True if session has *privilege*, False otherwise |
+| Parámetros | Tipo    |    | Descripción                                      |
+| ---------- | ------- |:--:| ------------------------------------------------ |
+| privilege  | Text    | <- | Name of the privilege to verify                  |
+| Resultado  | Boolean | <- | True if session has *privilege*, False otherwise |
 <!-- END REF -->
 
 
@@ -247,9 +247,9 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.isGuest().Params -->
-| Parámetros | Tipo     |    | Descripción                                     |
-| ---------- | -------- |:--:| ----------------------------------------------- |
-| Resultado  | Booleano | <- | True if session is a Guest one, False otherwise |
+| Parámetros | Tipo    |    | Descripción                                     |
+| ---------- | ------- |:--:| ----------------------------------------------- |
+| Resultado  | Boolean | <- | True if session is a Guest one, False otherwise |
 <!-- END REF -->
 
 #### Descripción
@@ -287,9 +287,9 @@ End if
 <!-- REF #SessionClass.setPrivileges().Params -->
 | Parámetros | Tipo       |    | Descripción                                                |
 | ---------- | ---------- |:--:| ---------------------------------------------------------- |
-| privilege  | Texto      | -> | Privilege name                                             |
+| privilege  | Text       | -> | Privilege name                                             |
 | privileges | Collection | -> | Collection of privilege names                              |
-| parámetros | Objeto     | -> | Object with a "privileges" property (string or collection) |
+| parámetros | Object     | -> | Object with a "privileges" property (string or collection) |
 <!-- END REF -->
 
 #### Descripción
@@ -302,10 +302,10 @@ The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -
 
 - In the *settings* parameter, pass an object containing the following properties:
 
-| Propiedad  | Tipo               | Descripción                                        |
-| ---------- | ------------------ | -------------------------------------------------- |
-| privileges | Text or Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
-| userName   | Texto              | User name to associate to the session (optional)   |
+| Propiedad  | Tipo              | Descripción                                        |
+| ---------- | ----------------- | -------------------------------------------------- |
+| privileges | Text o Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
+| userName   | Texto             | User name to associate to the session (optional)   |
 
 If the `privileges` property contains an invalid privilege name, it is ignored.
 

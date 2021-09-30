@@ -42,7 +42,7 @@ Los datos también pueden ser **devueltos**desde métodos y funciones de clase. 
 MyLength:=Length("How did I get here?")
 ```
 
-Toda subrutina puede devolver un valor. Sólo se puede declarar un único parámetro de salida por método o función de clase.
+Any subroutine can return a value. Sólo se puede declarar un único parámetro de salida por método o función de clase.
 
 Los valores de entrada y salida son [evaluados](#values-or-references) en el momento de la llamada y copiados en variables locales dentro de la función o método de la clase llamada. Se proponen dos sintaxis para declarar los parámetros de las variables en el código llamado:
 
@@ -81,7 +81,7 @@ Function getArea($width : Integer; $height : Integer) -> $area : Integer
 ```
 
 
-Se aplican las siguientes reglas:
+The following rules apply:
 
 - La línea de declaración debe ser la primera línea del código del método o de la función, de lo contrario se mostrará un error (sólo los comentarios o los saltos de línea pueden preceder la declaración).
 - Los nombres de los parámetros deben comenzar con un carácter `$` y cumplir con [reglas de denominación de las propiedades](dt_object.md#object-property-identifiers).
@@ -116,7 +116,7 @@ $entitySelection:=ds.User.query("login=:1"; $user)
 // Verificar la contraseña hash...
 ```
 
-### Valor devuelto
+### Returned value
 
 El parámetro de retorno de una función se declara añadiendo una flecha (->) y la definición del parámetro después de la lista de parámetros de entrada. Por ejemplo:
 
@@ -169,7 +169,7 @@ En el código del método, el valor de cada parámetro se copia automáticamente
 ```
 
 
-### Valor devuelto
+### Returned value
 
 El valor a devolver se pone automáticamente en la variable local `$0`.
 
@@ -188,7 +188,7 @@ $NewPhrase:=Uppercase4("This is good.")
 
 En este ejemplo, la variable *$NewPhrase* recibe “THIS is good.”
 
-El valor devuelto, `$0`, es una variable local dentro de la subrutina. Puede utilizarse como tal dentro de la subrutina. Por ejemplo, puede escribir:
+El valor devuelto, `$0`, es una variable local dentro de la subrutina. Puede utilizarse como tal dentro de la subrutina. For example, you can write:
 
 ```4d
 // Do_something
@@ -249,7 +249,7 @@ End for
 Este método se puede llamar:
 
 ```4d
-foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed
+foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed //extra parameters are passed
 ```
 
 > La indirección de parámetros se gestiona mejor si se respeta la siguiente convención: si sólo algunos de los parámetros se dirigen por indirección, deben pasarse después de los demás.
