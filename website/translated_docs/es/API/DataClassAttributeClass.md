@@ -16,7 +16,7 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 
 > Dataclass attribute objects can be modified, but the underlying database structure will not be altered.
 
-### Summary
+### Resumen
 
 |                                                                                                                                                                                                                              |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -39,9 +39,9 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 ## .autoFilled
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -69,9 +69,9 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 ## .fieldNumber
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -96,9 +96,9 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 ## .fieldType
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -112,7 +112,7 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 **Valores posibles:**
 
-| dataClassAttribute.kind | fieldType                   | Comment            |
+| dataClassAttribute.kind | fieldType                   | Comentario         |
 | ----------------------- | --------------------------- | ------------------ |
 | storage                 | Corresponding 4D field type | See `Type` command |
 | relatedEntity           | 38 (Is object)              |                    |
@@ -126,9 +126,9 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 ## .indexed
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -152,9 +152,9 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 ## .inverseName
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -178,9 +178,9 @@ This property is not returned if `.kind` = "storage". It must be of the "related
 ## .keyWordIndexed
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -203,9 +203,9 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 ## .kind
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -245,9 +245,9 @@ Given the following table and relation:
 ## .mandatory
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -272,9 +272,9 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 ## .name
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -301,9 +301,9 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 ## .relatedDataClass
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 
 </details>
 
@@ -338,9 +338,9 @@ Given the following tables and relations:
 ## .type
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -356,7 +356,7 @@ The conceptual value type depends on the attribute [`.kind`](#kind).
 
 **Valores posibles:**
 
-| dataClassAttribute.kind | type                                                    | Comment                                                                                                                                    |
+| dataClassAttribute.kind | type                                                    | Comentario                                                                                                                                 |
 | ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | storage                 | "number", "date", "object", "bool", "image", o "string" | "number" se devuelve para cualquier tipo numérico, incluyendo la duración. "string" se devuelve para los tipos de campo uuid, alfa y texto |
 | relatedEntity           | related dataClass name                                  | Ex: "Companies"                                                                                                                            |
@@ -371,9 +371,9 @@ The conceptual value type depends on the attribute [`.kind`](#kind).
 ## .unique
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
