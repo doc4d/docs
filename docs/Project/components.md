@@ -14,7 +14,7 @@ title: 4D Components Library
 |[4D Progress](https://doc.4d.com/4Dv19/4D/19/4D-Progress.100-5461799.en.html)|Open one or more progress bars in the same window|
 |[4D SVG](https://doc.4d.com/4Dv19/4D/19/4D-SVG-Component.300-5462064.en.html)|Create and manipulate common svg graphic objects|
 |[4D ViewPro](https://doc.4d.com/4Dv19/4D/19/4D-View-Pro-Reference.100-5442901.en.html)|Spreadsheet features in your forms|
-|[4D Widgets](https://doc.4d.com/4Dv19/4D/19/4D-Widgets.100-5462909.en.html)|
+|[4D Widgets](https://doc.4d.com/4Dv19/4D/19/4D-Widgets.100-5462909.en.html)|Manage DatePicker, TimePicker, SearchPicker 4D widgets|
 |[4D WritePro Interface](https://github.com/4d/4D-WritePro-Interface)|Manage 4D Write Pro palettes|
 
 
