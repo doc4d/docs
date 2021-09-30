@@ -5,7 +5,7 @@ title: General Page
 
 This page contains various options to configure the general operation of your 4D application.
 
-## Options
+## Opciones
 
 ### At startup
 
