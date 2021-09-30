@@ -1,6 +1,6 @@
 ---
-id: debugger
-title: Debugger
+id: depurador
+title: Depurador
 ---
 
 The debugger is useful when you need to spot errors or monitor the execution of methods. It allows you to step through methods slowly and examine the information. This process is called "tracing".
@@ -115,7 +115,7 @@ At any point, you can drag and drop themes, theme sublists (if any), and theme i
 
 #### Line Objects
 
-This theme lets you keep track of the values of the objects or expressions:
+Este tema le permite seguir los valores de los objetos o expresiones:
 
 * used in the line of code to be executed (the one marked with the program counter—the yellow arrow in the [Source Code Pane](#source-code-pane)),
 * used in the previous line of code
