@@ -124,7 +124,7 @@ Each employee can be a manager and can have a manager. To get the manager of the
  $manLev2:=$myEmp.manager.manager.lastname
 ```
 
-## Assigning values to relation attributes
+## Asignar los valores a los atributos de relación
 
 In the ORDA architecture, relation attributes directly contain data related to entities:
 
