@@ -25,7 +25,7 @@ Attachment objects provide the following read-only properties and functions:
 ## MAIL New attachment
 
 <details><summary>Histórico</summary>
-| Version | Changes                              |
+| Versión | Modificaciones                       |
 | ------- | ------------------------------------ |
 | v19 R2  | Accepts 4D.File, 4D.ZipFile, 4D.Blob |
 </details>
@@ -92,7 +92,7 @@ By default, if the *type* parameter is omitted or contains an empty string, the 
 
 The optional *disposition* parameter lets you pass the `content-disposition` header of the attachment. You can pass one of the following constants from the "Mail" constant theme:
 
-| Constant                    | Valor        | Comment                                                                                                                                                                                              |
+| Constante                   | Valor        | Comentario                                                                                                                                                                                           |
 | --------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | mail disposition attachment | "attachment" | Set the Content-disposition header value to "attachment", which means that the attachment file must be provided as a link in the message.                                                            |
 | mail disposition inline     | "inline"     | Set the Content-disposition header value to "inline", which means that the attachment must be rendered within the message contents, at the "cid" location. The rendering depends on the mail client. |
@@ -170,7 +170,7 @@ $transporter.send($email)
 ## 4D.MailAttachment.new()
 
 <details><summary>Histórico</summary>
-| Version | Changes                              |
+| Versión | Modificaciones                       |
 | ------- | ------------------------------------ |
 | v19 R2  | Accepts 4D.File, 4D.ZipFile, 4D.Blob |
 </details>
@@ -214,7 +214,7 @@ The `.cid` property contains<!-- REF #MailAttachmentClass.cid.Summary -->the ID 
 
 The `.disposition` property contains<!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->
 
-. Two values are available:
+. Hay dos valores disponibles:
 
 *   "inline": el archivo adjunto se muestra dentro del contenido del mensaje, en la ubicación "cid". The rendering depends on the mail client.
 *   "attachment": el archivo adjunto se presenta como un enlace en el mensaje.
@@ -253,9 +253,9 @@ The `.path` property contains<!-- REF #MailAttachmentClass.path.Summary -->the P
 ## .platformPath
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details><!-- REF #MailAttachmentClass.platformPath.Syntax -->**.platformPath** : Text<!-- END REF -->#### Descripción
 
 The `.platformPath` property returns<!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->
