@@ -32,7 +32,7 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 ## ds
 
 <details><summary>Histórico</summary>
-| Version | Changes                      |
+| Versión | Modificaciones               |
 | ------- | ---------------------------- |
 | v18     | Support of localID parameter |
 | v17     | Añadidos                     |
@@ -107,9 +107,9 @@ Using the main datastore on the 4D database:
 ## Open datastore
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18     | Añadidos       |
 </details>
 
 <!-- REF #_command_.Open datastore.Syntax -->
@@ -152,7 +152,7 @@ Pass in *connectionInfo* an object describing the remote datastore you want to c
 | ----------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | hostname    | Texto        | Name or IP address of the remote database + ":" + port number (port number is mandatory)                                                                                                                                                                               |
 | user        | Texto        | User name                                                                                                                                                                                                                                                              |
-| password    | Texto        | User password                                                                                                                                                                                                                                                          |
+| contraseña  | Texto        | User password                                                                                                                                                                                                                                                          |
 | idleTimeout | Entero largo | Inactivity session timeout (in minutes), after which the session is automatically closed by 4D. If omitted, default value is 60 (1h). The value cannot be < 60 (if a lower value is passed, the timeout is set to 60). For more information, see **Closing sessions**. |
 | tls         | Booleano     | Use secured connection(*). If omitted, false by default. Using a secured connection is recommended whenever possible.                                                                                                                                                  |
 | type        | Texto        | Must be "4D Server"                                                                                                                                                                                                                                                    |
@@ -213,9 +213,9 @@ In case of error, the command returns **Null**. If the remote datastore cannot b
 ## *.dataclassName*
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF DataStoreClass.dataclassName.Syntax -->
@@ -249,9 +249,9 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 ## .cancelTransaction()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18     | Añadidos       |
 </details>
 
 
@@ -287,9 +287,9 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 ## .encryptionStatus()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.encryptionStatus().Syntax -->
@@ -361,9 +361,9 @@ You want to know the number of encrypted tables in the current data file:
 ## .getInfo()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -432,9 +432,9 @@ En un almacén de datos remoto:
 ## .getRequestLog()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R6  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.getRequestLog().Syntax -->
@@ -471,9 +471,9 @@ Ver el ejemplo 2 de [`.startRequestLog()`](#startrequestlog).
 ## .isAdminProtected()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.isAdminProtected().Syntax -->
@@ -505,9 +505,9 @@ By default, the Data Explorer access is granted for `webAdmin` sessions, but it 
 ## .makeSelectionsAlterable()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Syntax -->
@@ -539,9 +539,9 @@ When this function is not called, new entity selections can be shareable, depend
 ## .provideDataKey()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.provideDataKey().Syntax -->
@@ -617,9 +617,9 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 ## .setAdminProtection()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.setAdminProtection().Syntax -->**.setAdminProtection**( *status* : Boolean )<!-- END REF -->
@@ -660,9 +660,9 @@ You create a *protectDataFile* project method to call before deployments for exa
 ## .startRequestLog()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R6  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.startRequestLog().Syntax -->
@@ -738,9 +738,9 @@ You want to log ORDA client requests in memory:
 ## .startTransaction()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18     | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.startTransaction().Syntax -->
@@ -806,9 +806,9 @@ You can nest several transactions (sub-transactions). Each transaction or sub-tr
 ## .stopRequestLog()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R6  | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.stopRequestLog().Syntax -->
@@ -841,9 +841,9 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 ## .validateTransaction()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18     | Añadidos       |
 </details>
 
 <!-- REF #DataStoreClass.validateTransaction().Syntax -->
