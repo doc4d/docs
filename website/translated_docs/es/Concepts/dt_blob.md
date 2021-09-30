@@ -24,7 +24,7 @@ Each blob type has its advantages. Use the following table to determine which on
 | Shareable in objects and collections |  No  |   Sí    |
 | Passed by reference\*              |  No  |   Sí    |
 | Performance when accessing bytes     |  +   |    -    |
-| Maximum size                         | 2GB  | Memory  |
+| Maximum size                         | 2GB  | Memoria |
 
 Keep in mind that unlike blob objects, which are passed by reference, scalar blobs are duplicated in memory when passed to methods. You can pass blobs and blob objects (`4D.Blob`) to methods.
 
