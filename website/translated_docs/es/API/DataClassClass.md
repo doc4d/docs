@@ -8,7 +8,7 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 
 
 
-### Summary
+### Resumen
 
 |                                                                                                                                                                                                             |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -28,9 +28,9 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 ## .*attributeName*
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF DataClassClass.attributeName.Syntax -->
@@ -77,7 +77,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
   //42=Is collection
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 Considering the following table properties:
 
@@ -99,7 +99,7 @@ Considering the following table properties:
 ## .all()
 
 <details><summary>Histórico</summary>
-| Version | Changes                             |
+| Versión | Modificaciones                      |
 | ------- | ----------------------------------- |
 | v17 R5  | Support of the *settings* parameter |
 | v17     | Añadidos                            |
@@ -152,7 +152,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 ## .fromCollection()
 
 <details><summary>Histórico</summary>
-| Version | Changes                             |
+| Versión | Modificaciones                      |
 | ------- | ----------------------------------- |
 | v17 R5  | Support of the *settings* parameter |
 | v17     | Añadidos                            |
@@ -253,7 +253,7 @@ We want to update an existing entity. The \_\_NEW property is not given, the emp
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 We want to simply create a new entity from a collection:
 
@@ -270,7 +270,7 @@ We want to simply create a new entity from a collection:
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
-#### Example 4
+#### Ejemplo 4
 
 We want to create an entity. The \_\_NEW property is True, the employee primary key is not given:
 
@@ -294,7 +294,7 @@ We want to create an entity. The \_\_NEW property is True, the employee primary 
 
 ```
 
-#### Example 5
+#### Ejemplo 5
 
 We want to create an entity. The \_\_NEW property is omitted, the employee primary key is given and does not exist:
 
@@ -312,7 +312,7 @@ We want to create an entity. The \_\_NEW property is omitted, the employee prima
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
-#### Example 6
+#### Ejemplo 6
 
 In this example, the first entity will be created and saved but the second will fail since they both use the same primary key:
 
@@ -351,9 +351,9 @@ In this example, the first entity will be created and saved but the second will 
 ## .get()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -430,9 +430,9 @@ This example illustrates the use of the *context* property:
 ## .getDataStore()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #DataClassClass.getDataStore().Syntax -->
@@ -484,9 +484,9 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 ## .getInfo()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -539,7 +539,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
  $es:=ds.Clients.query(":pk in :receivedIds";$settings)
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 ```4d 
  var $pk : Text
@@ -557,9 +557,9 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 ## .new()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF #DataClassClass.new().Syntax -->
@@ -604,9 +604,9 @@ This example creates a new entity in the "Log" Dataclass and records information
 ## .newSelection()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF #DataClassClass.newSelection().Syntax -->
@@ -650,7 +650,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 ## .query()
 
 <details><summary>Histórico</summary>
-| Version | Changes                            |
+| Versión | Modificaciones                     |
 | ------- | ---------------------------------- |
 | v17 R6  | Support of Formula parameters      |
 | v17 R5  | Support of placeholders for values |
@@ -687,7 +687,7 @@ attributePath|formula comparator value
     {order by attributePath {desc | asc}}
 ```
 
-where:
+donde:
 
 *   **attributePath**: path of attribute on which you want to execute the query. This parameter can be a simple name (for example "country") or any valid attribute path (for example "country.name".) In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). You can also use a **placeholder** (see below).
 > *You cannot use directly attributes whose name contains special characters such as ".", "\[ ]", or "=", ">", "#"..., because they will be incorrectly evaluated in the query string. If you need to query on such attributes, you must consider using placeholders, which allow an extended range of characters in attribute paths (see* **Using placeholders** *below).*
@@ -705,9 +705,9 @@ where:
 
 *   **comparator**: symbol that compares *attributePath* and *value*. The following symbols are supported:
 
-    | Comparison                           | Symbol(s)   | Comment                                                                                                        |
+    | Comparison                           | Symbol(s)   | Comentario                                                                                                     |
     | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
-    | Equal to                             | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
+    | Igual a                              | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
     |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
     | Not equal to                         | #, !=       | Supports the wildcard (@)                                                                                      |
     |                                      | !==, IS NOT | Considers the @ as a standard character                                                                        |
@@ -1082,7 +1082,7 @@ This section illustrates queries with named placeholders for attributes.
 
 Given an Employee dataclass with 2 entities:
 
-Entity 1:
+Entidad 1:
 
 ```4d
 name: "Marie"
@@ -1094,7 +1094,7 @@ softwares:{
 }
 ```
 
-Entity 2:
+Entidad 2:
 
 ```4d
 name: "Sophie"
@@ -1135,7 +1135,7 @@ Query with named placeholders for attributes and values:
  End if
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 These examples illustrate the various ways to use formulas with or without parameters in your queries.
 
