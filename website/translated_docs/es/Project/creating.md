@@ -40,7 +40,7 @@ To open an existing project from 4D:
     - *Shortcut files*: `.4dlink` extension - store additional parameters needed for opening projects or applications (addresses, identifiers, etc.)
     - *Binary files*: `.4db` or `.4dc` extension - legacy 4D database formats
 
-### Options
+### Opciones
 
 In addition to standard system options, the *Open* dialog in 4D provides two menus with specific options that are available using the **Open** button and the **Data file** menu.
 
