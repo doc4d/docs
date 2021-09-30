@@ -185,26 +185,29 @@ The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary
 .
 
 
-## .cid<!-- REF #MailAttachmentClass.cid.Syntax -->**.cid** : Text<!-- END REF -->#### Descripción
-
-The `.cid` property contains<!-- REF #MailAttachmentClass.cid.Summary -->the ID of the attachment<!-- END REF -->
+## .cid<!-- REF #MailAttachmentClass.cid.Syntax -->**.cid** : Text<!-- END REF -->#### Descripción<!-- REF #MailAttachmentClass.cid.Syntax -->.<!-- END REF -->
 
 
-. This property is used in HTML messages only. If this property is missing, the file is handled as a simple attachment (link).
+#### Descripción
+
+The `.cid` property contains<!-- REF #MailAttachmentClass.cid.Summary -->the ID of the attachment<!-- END REF -->. This property is used in HTML messages only. If this property is missing, the file is handled as a simple attachment (link).
 
 
-## .disposition<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text<!-- END REF -->#### Descripción
+## .disposition<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text<!-- END REF -->
 
-The `.disposition` property contains<!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->
+#### Descripción<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text
+<!-- END REF -->
 
-. Hay dos valores disponibles:
+
+#### Descripción
+
+The `.disposition` property contains<!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->. Hay dos valores disponibles:
 
 *   "inline": el archivo adjunto se muestra dentro del contenido del mensaje, en la ubicación "cid". The rendering depends on the mail client.
 *   "attachment": el archivo adjunto se presenta como un enlace en el mensaje.
 
 
-## .getContent()<!-- REF #MailAttachmentClass.getContent().Syntax -->**.getContent()**: Blob
-<!-- END REF -->
+## .getContent()<!-- REF #MailAttachmentClass.getContent().Syntax -->**.getContent()**: Blob<!-- END REF -->
 
 
 <!-- REF #MailAttachmentClass.getContent().Params -->| Parámetros | Tipo |    | Descripción               |
@@ -241,10 +244,7 @@ The `.path` property contains<!-- REF #MailAttachmentClass.path.Summary -->the P
 | v19     | Añadidos       |
 </details><!-- REF #MailAttachmentClass.platformPath.Syntax -->**.platformPath** : Text<!-- END REF -->#### Descripción
 
-The `.platformPath` property returns<!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->
-
-
-.
+The `.platformPath` property returns<!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->.
 
 
 ## .type<!-- REF #MailAttachmentClass.type.Syntax -->**.type** : Text<!-- END REF -->#### Descripción
