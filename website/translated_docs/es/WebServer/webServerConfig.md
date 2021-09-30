@@ -126,7 +126,7 @@ Separate each method with a ";" (e,g,: "post;get"). If methods is empty, null, o
 
 Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stored in the "Logs" folder of the application -- nn is the file number). It is useful for debugging issues related to the Web server. It records each request and each response in raw mode. Whole requests, including headers, are logged; optionally, body parts can be logged as well.
 
-| Valor | Constant    | Descripción                    |
+| Valor | Constante   | Descripción                    |
 | ----- | ----------- | ------------------------------ |
 | 0     | wdl disable | Web HTTP debug log is disabled |
 
@@ -382,7 +382,7 @@ This setting allows you to select the format of this file. Available values are:
 
 | Valor | Format name          | Descripción                                                                                                                                                                                                              |
 | ----- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0     | No Log File          | Default                                                                                                                                                                                                                  |
+| 0     | No Log File          | Por defecto                                                                                                                                                                                                              |
 | 1     | Record in CLF format | Common Log Format - Each line of the file represents a request, such as: `host rfc931 user [DD/MMM/YYYY:HH:MM:SS] "request" state length` - Each field is separated by a space and each line ends by the CR/LF sequence. |
 | 2     | Record in DLF format | Combined Log Format - Similar to CLF format but adds two additional HTTP fields at the end of each request: Referer and User-agent.                                                                                      |
 | 3     | Record in ELF format | Extended Log Format - To be customized in the Settings dialog box                                                                                                                                                        |
@@ -415,7 +415,7 @@ Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is 
 
 This limit is used to avoid web server saturation due to incoming requests that are too large. When a request reaches this limit, the 4D web server rejects it.
 
-Possible values: 500 000 to 2 147 483 648.
+Valores posibles: 500 000 a 2 147 483 648.
 
 
 ## Maximum Session Number
@@ -438,7 +438,7 @@ Default value: 100 (pass 0 to restore the default value).
 
 Minimum TLS version accepted for connections. Connection attempts from clients supporting only versions below the minimum will be rejected.
 
-Possible values:
+Valores posibles:
 
 - 1 = TLSv1_0
 - 2 = TLSv1_1
@@ -580,11 +580,11 @@ Value of the `SameSite` attribute value of the session cookie. This attribute al
 
 > For a detailed description of the `SameSite` attribute, please refer to the [Mozilla documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) or [this web.dev page](https://web.dev/samesite-cookies-explained/).
 
-Three values are available:
+Hay tres valores disponibles:
 
 - "Strict" (default `SameSite` attribute value for 4D session cookies): cookies will only be sent in the first-party context, i.e. context matching the domain of the current site, and never to third-party websites.
 - "Lax": Cookies are not sent on cross-site subrequests (for example to load images or frames into a third-party site), but are sent when a user is navigating to the origin site (i.e. they follow a link).
-- "None": Cookies are sent in all contexts, i.e in responses to both first-party and cross-origin requests. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
+- "Ninguna": las cookies se envían en todos los contextos, es decir, en las respuestas a las solicitudes de primera parte y de origen cruzado. When "None" value is used, the cookie `Secure` attribute must also be set (or the cookie will be blocked).
 
 The `Secure` attribute value of the session cookie is automatically set to "True" if the connection is HTTPS (whatever the `SameSite` attribute value).
 

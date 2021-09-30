@@ -189,7 +189,7 @@ The [documentation](https://doc.4d.com) of the command ....
 
 [![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
 ```
-[![logo 4D blog with link](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
+[![logo blog 4D con enlace](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
 
 > For more information, see the [GitHug Markdown guide](https://guides.github.com/features/mastering-markdown/).
 
@@ -227,6 +227,6 @@ C_LONGINT($size)
 $logo:=GetLogo(5)
 ```
 
-- Explorer view: ![](assets/en/Project/explorer_Doc.png)
+- Vista del Explorador: ![](assets/en/Project/explorer_Doc.png)
 
-- Code editor view: ![](assets/en/Project/comments-explo5.png)
+- Vista del Editor de código: ![](assets/en/Project/comments-explo5.png)

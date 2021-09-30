@@ -1,18 +1,18 @@
 ---
 id: building
-title: Building a project package
+title: Generar un paquete proyecto
 ---
 
-4D includes an application builder to create a project package (final build). This builder simplifies the finalization and deployment process for 4D compiled applications. It automatically handles the specific features of different operating systems and facilitates the deployment of client-server applications.
+4D incluye un generador de aplicaciones para crear un paquete de proyecto (versión final). Este generador simplifica el proceso de finalización y despliegue de las aplicaciones compiladas en 4D. Maneja automáticamente las funcionalidades específicas de los distintos sistemas operativos y facilita el despliegue de aplicaciones cliente-servidor.
 
-The application builder allows you to:
+El generador de aplicaciones le permite:
 
-*   Build a compiled structure, without interpreted code,
-*   Build a stand-alone, double-clickable application, *i.e.*, merged with 4D Volume Desktop, the 4D database engine,
-*   Build different applications from the same compiled structure via an XML project,
-*   Build homogeneous client-server applications,
-*   Build client-server applications with automatic updating of client and server parts.
-*   Save your build settings for future use (*Save settings* button).
+*   Generar una estructura compilada, sin código interpretado,
+*   Generar una aplicación autónoma ejecutable, *es decir*, fusionada con 4D Volume Desktop, el motor de base de datos 4D,
+*   Generar diferentes aplicaciones a partir de la misma estructura compilada mediante un proyecto XML,
+*   Generar aplicaciones cliente-servidor homogéneas,
+*   Generar aplicaciones cliente-servidor con actualización automática de los componentes del cliente y del servidor.
+*   Guardar sus parámetros de generación para su uso futuro (botón *Guardar los parámetros*).
 
 > Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. Sin embargo, puede crear aplicaciones específicas que soporten modificaciones locales utilizando la llave XML `PackProject` (ver [doc.4d.com](https://doc.4d.com)).
 
@@ -45,7 +45,7 @@ Default parameters are used the first time the Build Application dialog box is u
 
 XML keys provide additional options besides those displayed in the Build Application dialog box. La descripción de estas llaves se detalla en el manual [4D XML Keys BuildApplication](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html).
 
-### Log file
+### Archivo de historial
 
 When an application is built, 4D generates a log file named *BuildApp.log.xml* in the **Logs** folder of the project. The log file stores the following information for each build:
 
@@ -293,7 +293,7 @@ You can check the **Allow automatic update...** option for client applications r
 
 This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. The file to select depends on the current server platform:
 
-| Current server platform | Required file                                                | Details                                                                                                                                                                    |
+| Current server platform | Required file                                                | Detalles                                                                                                                                                                   |
 | ----------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | macOS                   | Windows 4D Volume Desktop *or* Windows client update archive | By default, you select the `4D Volume Desktop` application for Windows. To select a `.4darchive` file previously built on Windows, press **Shift** while clicking on [...] |
 | Windows                 | macOS client update archive                                  | Select a signed `.4darchive` file previously built on macOS                                                                                                                |
@@ -362,7 +362,7 @@ Items must be installed:
     *   **Server application** - in the *Client Server executable\ \<ApplicationName>Server\Server Database* subfolder.
     *   **Client application** - in the *Client Server executable\ \<ApplicationName>Client* subfolder.
 
-*   **on macOS**
+*   **en macOS**
     *   **Server application** - next to the *\<ApplicationName>Server* software package.
     *   **Client application** - next to the *\<ApplicationName>Client* software package.
 
@@ -462,7 +462,7 @@ The Licences & Certificate page can be used to:
 
 ![](assets/en/Admin/buildappCertif.png)
 
-### Licenses
+### Licencias
 
 This tab displays the list of available deployment licenses that you can integrate into your application. By default, the list is empty. You must explicitly add your *4D Developer Professional* license as well as each *4D Desktop Volume* license to be used in the application built. You can add another 4D Developer Professional number and its associated licenses other than the one currently being used.
 

@@ -27,7 +27,7 @@
         "title": "Class"
       },
       "API/CollectionClass": {
-        "title": "Colección"
+        "title": "Collection"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -78,7 +78,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "Session"
+        "title": "Sesión"
       },
       "API/SignalClass": {
         "title": "Signal"
@@ -144,7 +144,7 @@
         "title": "Booleano"
       },
       "Concepts/collection": {
-        "title": "Colección"
+        "title": "Collection"
       },
       "Concepts/date": {
         "title": "Fecha"
