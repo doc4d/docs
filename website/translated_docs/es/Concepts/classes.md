@@ -113,7 +113,7 @@ Las clases disponibles son accesibles desde sus class stores. Hay dos class stor
 
 #### cs -> classStore
 
-| Parameter  | Tipo   |    | Descripción                                       |
+| Parámetros | Tipo   |    | Descripción                                       |
 | ---------- | ------ | -- | ------------------------------------------------- |
 | classStore | objeto | <- | Class store usuario para el proyecto o componente |
 
@@ -131,7 +131,7 @@ $instance:=cs.myClass.new()
 
 #### 4D -> classStore
 
-| Parameter  | Tipo   |    | Descripción    |
+| Parámetros | Tipo   |    | Descripción    |
 | ---------- | ------ | -- | -------------- |
 | classStore | objeto | <- | Class store 4D |
 
@@ -150,7 +150,7 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 ## El objeto clase
 
-Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. A class is an object itself, of ["Class" class](API/ClassClass.md). Un objeto class tiene las propiedades y funciones siguientes:
+Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Un objeto class tiene las propiedades y funciones siguientes:
 
 - [`name`](API/ClassClass.md#name) string
 - [`superclass`](API/ClassClass.md#superclass) object (null if none)
@@ -186,7 +186,7 @@ Function <name>({$parameterName : type; ...}){->$parameterName : type}
 // code
 ```
 
-Las funciones de clase son propiedades específicas de la clase. They are objects of the [4D.Function](API/FunctionClass.md#about-4dfunction-objects) class.
+Las funciones de clase son propiedades específicas de la clase. Las funciones de clase son propiedades específicas de la clase.
 
 En el archivo de definición de clase, las declaraciones de función utilizan la palabra clave `Function`, y el nombre de la función. El nombre de la función debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties).
 
@@ -363,6 +363,8 @@ Function get fullAddress()->$result : Object
 Class Constructor({$parameterName : type; ...})
 // code
 ```
+
+Una función class constructor, que puede aceptar los [parámetros](#parameters), puede utilizarse para definir una clase usuario.  MyClass Class Constructor({$parameterName : type; ...}) // code </code></pre>
 
 Una función class constructor, que puede aceptar los [parámetros](#parameters), puede utilizarse para definir una clase usuario.
 
@@ -618,6 +620,13 @@ Several commands of the 4D language allows you to handle class features.
 #### OB Class ( object ) -> Object | Null
 
 `OB Class` returns the class of the object passed in parameter.
+
+
+### `OB Instance of`
+
+#### OB Instance of ( object ; class ) -> Boolean
+
+`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
 
 
 ### `OB Instance of`

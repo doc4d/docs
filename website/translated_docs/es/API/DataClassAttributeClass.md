@@ -41,9 +41,9 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 ## .autoFilled
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -68,9 +68,9 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 ## .exposed
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R3  | Añadidos       |
 </details>
 
 
@@ -91,9 +91,9 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 ## .fieldNumber
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -118,7 +118,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 ## .fieldType
 
 <details><summary>Histórico</summary>
-| Version | Changes                        |
+| Versión | Modificaciones                 |
 | ------- | ------------------------------ |
 | v19 R3  | Support of computed attributes |
 </details>
@@ -152,9 +152,9 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 ## .indexed
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -177,10 +177,10 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 <!-- REF DataClassAttributeClass.inverseName.Desc -->
 ## .inverseName
 
-<details><summary>History</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -204,9 +204,9 @@ This property is not returned if `.kind` = "storage". It must be of the "related
 ## .keyWordIndexed
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -229,7 +229,7 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 ## .kind
 
 <details><summary>Histórico</summary>
-| Version | Changes            |
+| Versión | Modificaciones     |
 | ------- | ------------------ |
 | v19 R3  | Added "calculated" |
 </details>
@@ -271,10 +271,10 @@ Given the following table and relation:
 <!-- REF DataClassAttributeClass.mandatory.Desc -->
 ## .mandatory
 
-<details><summary>History</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -299,9 +299,9 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 ## .name
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -328,9 +328,9 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 ## .readOnly
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R3  | Añadidos       |
 
 
 </details>
@@ -353,10 +353,10 @@ For example, computed attributes without [`set` function](ORDA/ordaClasses.md#fu
 <!-- REF DataClassAttributeClass.relatedDataClass.Desc -->
 ## .relatedDataClass
 
-<details><summary>History</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 
 
 </details>
@@ -392,7 +392,7 @@ Given the following tables and relations:
 ## .type
 
 <details><summary>Histórico</summary>
-| Version | Changes                        |
+| Versión | Modificaciones                 |
 | ------- | ------------------------------ |
 | v19 R3  | Support of computed attributes |
 </details>
@@ -408,9 +408,9 @@ The `.type` property <!-- REF DataClassAttributeClass.type.Summary -->contains t
 
 The conceptual value type depends on the attribute [`.kind`](#kind).
 
-**Possible values:**
+**Valores posibles:**
 
-| dataClassAttribute.kind | type                                                                                                                         | Comment                                                                                                                                                                                                                                                           |
+| dataClassAttribute.kind | type                                                                                                                         | Comentario                                                                                                                                                                                                                                                        |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | storage                 | "blob", "bool", "date", "image", "number", "object", o "string"                                                              | "number" se devuelve para cualquier tipo numérico, incluyendo la duración. "string" is returned for uuid, alpha and text field types. "blob" attributes are [blob objects](Concepts/dt_blob.md#blob-type), they are handled using the [Blob class](BlobClass.md). |
 | relatedEntity           | related dataClass name                                                                                                       | Ex: "Companies"                                                                                                                                                                                                                                                   |
@@ -428,9 +428,9 @@ The conceptual value type depends on the attribute [`.kind`](#kind).
 ## .unique
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 

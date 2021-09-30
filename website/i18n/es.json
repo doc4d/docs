@@ -33,7 +33,7 @@
         "title": "Class"
       },
       "API/CollectionClass": {
-        "title": "Colección"
+        "title": "Collection"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -84,7 +84,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "Session"
+        "title": "Sesión"
       },
       "API/SignalClass": {
         "title": "Signal"
@@ -150,7 +150,7 @@
         "title": "Booleano"
       },
       "Concepts/collection": {
-        "title": "Colección"
+        "title": "Collection"
       },
       "Concepts/date": {
         "title": "Fecha"
@@ -217,7 +217,7 @@
         "title": "Breakpoints and Command Catching"
       },
       "Debugging/debugger": {
-        "title": "Debugger"
+        "title": "Depurador"
       },
       "Debugging/debugging-remote": {
         "title": "Debugging from remote machines"

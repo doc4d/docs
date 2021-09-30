@@ -48,7 +48,7 @@ Default parameters are used the first time the Build Application dialog box is u
 
 XML keys provide additional options besides those displayed in the Build Application dialog box. La descripción de estas llaves se detalla en el manual [4D XML Keys BuildApplication](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html).
 
-### Log file
+### Archivo de historial
 
 When an application is built, 4D generates a log file named *BuildApp.log.xml* in the **Logs** folder of the project. The log file stores the following information for each build:
 
@@ -315,7 +315,7 @@ You can check the **Allow automatic update...** option for client applications r
 
 This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. The file to select depends on the current server platform:
 
-| Current server platform | Required file                                                | Details                                                                                                                                                                    |
+| Current server platform | Required file                                                | Detalles                                                                                                                                                                   |
 | ----------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | macOS                   | Windows 4D Volume Desktop *or* Windows client update archive | By default, you select the `4D Volume Desktop` application for Windows. To select a `.4darchive` file previously built on Windows, press **Shift** while clicking on [...] |
 | Windows                 | macOS client update archive                                  | Select a signed `.4darchive` file previously built on macOS                                                                                                                |
@@ -384,7 +384,7 @@ Items must be installed:
     *   **Server application** - in the *Client Server executable\ \<ApplicationName>Server\Server Database* subfolder.
     *   **Client application** - in the *Client Server executable\ \<ApplicationName>Client* subfolder.
 
-*   **on macOS**
+*   **en macOS**
     *   **Server application** - next to the *\<ApplicationName>Server* software package.
     *   **Client application** - next to the *\<ApplicationName>Client* software package.
 
@@ -486,7 +486,7 @@ The Licences & Certificate page can be used to:
 
 ![](assets/en/Admin/buildappCertif.png)
 
-### Licenses
+### Licencias
 
 This tab displays the list of available deployment licenses that you can integrate into your application. By default, the list is empty. You must explicitly add your *4D Developer Professional* license as well as each *4D Desktop Volume* license to be used in the application built. You can add another 4D Developer Professional number and its associated licenses other than the one currently being used.
 
