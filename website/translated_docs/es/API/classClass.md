@@ -36,7 +36,7 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 
 The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Class names are case sensitive.
 
-This property is **read-only**. 
+This property is **read-only**.
 
 <!-- END REF -->
 
@@ -54,7 +54,7 @@ This property is **read-only**.
 <!-- REF #ClassClass.new().Syntax -->
 **.new**( *param* : any { *;...paramN* } ) : 4D.Class<!-- END REF -->
 
-<!-- REF #ClassClass.new().Params -->
+<!-- REF #classClass.new().Params -->
 | Parámetros | Tipo     |    | Descripción                                      |
 | ---------- | -------- |:--:| ------------------------------------------------ |
 | param      | any      | -> | Parameter(s) to pass to the constructor function |
@@ -134,7 +134,7 @@ $sup:=4D.Object.superclass //null
 
 // If you created a MyFile class  
 // with `Class extends File`
-$sup:=cs.MyFile.superclass //File 
+$sup:=cs.MyFile.superclass //File
 
 ```
 

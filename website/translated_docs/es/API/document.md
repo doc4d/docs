@@ -1,5 +1,5 @@
 ---
-id: Document
+id: document
 title: Document Class
 ---
 
@@ -468,7 +468,7 @@ This property is **read-only**.
 | Parámetros        | Tipo      |    | Descripción                                 |
 | ----------------- | --------- |:--:| ------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder                          |
-| newName           | Texto     | -> | Name for the copy                           |
+| newName           | Text      | -> | Name for the copy                           |
 | overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
 | Resultado         | 4D.File   | <- | Copied file                                 |
 <!-- END REF -->
@@ -511,29 +511,28 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 ## .getContent()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones  |
-| ------- | --------------- |
-| v19 R2  | Returns 4D.Blob |
-| v17 R5  | Añadidos        |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #document.getContent().Syntax -->
-**.getContent( )** : 4D.Blob<!-- END REF -->
+**.getContent( )** : Blob<!-- END REF -->
 
 <!-- REF #document.getContent().Params -->
-| Parámetros | Tipo    |    | Descripción  |
-| ---------- | ------- | -- | ------------ |
-| Resultado  | 4D.Blob | <- | File content |
+| Parámetros | Tipo |    | Descripción  |
+| ---------- | ---- | -- | ------------ |
+| Resultado  | Blob | <- | File content |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `BLOB` containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
 
 **Returned value**
 
-A `4D.Blob` object.
+A `Blob`.
 
 #### Ejemplo
 
@@ -567,7 +566,7 @@ To save a document's contents in a `BLOB` field:
 | Parámetros | Tipo    |    | Descripción                                   |
 | ---------- | ------- | -- | --------------------------------------------- |
 | size       | Integer | -> | Side length for the returned picture (pixels) |
-| Resultado  | Imagen  | <- | Icono                                         |
+| Resultado  | Picture | <- | Icono                                         |
 <!-- END REF -->
 
 
@@ -605,10 +604,10 @@ File icon [picture](../Concepts/picture.html).
 <!-- REF #document.getText().Params -->
 | Parámetros  | Tipo    |    | Descripción                     |
 | ----------- | ------- | -- | ------------------------------- |
-| charSetName | Texto   | -> | Name of character set           |
+| charSetName | Text    | -> | Name of character set           |
 | charSetNum  | Integer | -> | Number of character set         |
 | breakMode   | Integer | -> | Processing mode for line breaks |
-| Resultado   | Texto   | <- | Text from the document          |
+| Resultado   | Text    | <- | Text from the document          |
 <!-- END REF -->
 
 

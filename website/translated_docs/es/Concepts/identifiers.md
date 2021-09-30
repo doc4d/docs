@@ -103,7 +103,7 @@ ON EVENT CALL("HANDLE EVENTS")
 
 
 
-## Tables and Fields
+## Tablas y campos
 
 Una tabla se designa colocando su nombre entre paréntesis: \[...]. Para designar un campo hay que especificar primero la tabla a la que pertenece (el nombre del campo sigue inmediatamente al nombre de la tabla).
 

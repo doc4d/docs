@@ -1,5 +1,5 @@
 ---
-id: Directory
+id: directory
 title: Directory Class
 ---
 
@@ -437,7 +437,7 @@ This property is **read-only**.
 | Parámetros        | Tipo      |    | Descripción                                 |
 | ----------------- | --------- |:--:| ------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder                          |
-| newName           | Texto     | -> | Name for the copy                           |
+| newName           | Text      | -> | Name for the copy                           |
 | overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
 | Resultado         | 4D.Folder | <- | Copied file or folder                       |
 <!-- END REF -->
@@ -492,7 +492,7 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 <!-- REF #directory.file().Params -->
 | Parámetros | Tipo    |    | Descripción                          |
 | ---------- | ------- | -- | ------------------------------------ |
-| path       | Texto   | -> | Relative POSIX file pathname         |
+| path       | Text    | -> | Relative POSIX file pathname         |
 | Resultado  | 4D.File | <- | `File` object (null if invalid path) |
 <!-- END REF -->
 
@@ -681,7 +681,7 @@ You want the collection of all folders and subfolders of the database folder:
 | Parámetros | Tipo    |    | Descripción                                   |
 | ---------- | ------- | -- | --------------------------------------------- |
 | size       | Integer | -> | Side length for the returned picture (pixels) |
-| Resultado  | Imagen  | <- | Icono                                         |
+| Resultado  | Picture | <- | Icono                                         |
 <!-- END REF -->
 
 
