@@ -3,11 +3,11 @@ id: checkboxOverview
 title: Check Box
 ---
 
-Una casilla de selección es un tipo de botón utilizado para introducir o mostrar datos binarios (verdadero-falso). Basically, it is either checked or unchecked, but a [third state](#three-states-check-box) can be defined.
+Una casilla de selección es un tipo de botón utilizado para introducir o mostrar datos binarios (verdadero-falso). Básicamente, está seleccionado o no, pero se puede definir un tercer estado (ver más abajo).
 
 ![](assets/en/FormObjects/checkbox.png)
 
-Check boxes are controlled by methods or [standard actions](#using-a-standard-action). El método asociado a ella se ejecuta cuando se selecciona la casilla de selección. Como todos los botones, la variable de la casilla de selección se pone en 0 cuando se abre el formulario por primera vez.
+Las casillas de selección se controlan por métodos. Como todos los botones, la variable de la casilla de selección se pone en 0 cuando se abre el formulario por primera vez. El método asociado a ella se ejecuta cuando se selecciona la casilla de selección.
 
 Una casilla de selección muestra el texto junto a un pequeño cuadrado. Este texto se define en el área [Título](properties_Object.md#title) del tema "Objetos" de la Lista de propiedades. Para introducir en esta área un título en forma de referencia XLIFF (ver [Anexo B: arquitectura XLIFF](https://doc.4d.com/4Dv17R5/4D/17-R5/Appendix-B-XLIFF-architecture.300-4163748.en.html)).
 
@@ -24,7 +24,7 @@ Una parte o todas las casillas de selección de un formulario pueden estar marca
 
 ### Casilla de selección de tres estados
 
-Check box objects with [Regular](checkbox_overview.md#regular) and [Flat](checkbox_overview.md#flat) [button style](properties_TextAndPicture.md#button-style) accept a third state. Este tercer estado es un estado intermedio, que generalmente se utiliza para fines de visualización. Por ejemplo, permite indicar que una propiedad está presente en una selección de objetos, pero no en cada objeto de la selección.
+Los objetos casilla de selección con el [estilo de botón](propertiesTextAndPicture.md#button-style) [Normal](checkbox_overview.md#regular) y [Plano](checkbox_overview.md#flat) aceptan un tercer estado. Este tercer estado es un estado intermedio, que generalmente se utiliza para fines de visualización. Por ejemplo, permite indicar que una propiedad está presente en una selección de objetos, pero no en cada objeto de la selección.
 
 ![](assets/en/FormObjects/checkbox_3states.png)
 
@@ -73,11 +73,11 @@ Sólo las acciones que pueden representar un estado verdadero/falso (acciones "m
 | visibleReferences                   |                                 |
 | widowAndOrphanControlEnabled        | Área 4D Write Pro únicamente    |
 
-For detailed information on these actions, please refer to the [Standard actions](properties_Action.md#standard-action) section.
+Para información detallada sobre estas acciones, consulte la sección [Acciones estándar](https://doc.4d.com/4Dv17R5/4D/17-R5/Standard-actions.300-4163633.en.html).
 
 ## Estilos de botones casillas de selección
 
-Check boxes use [button styles](properties_TextAndPicture.md#button-style) to control a check box's general appearance as well as its available properties. Es posible aplicar diferentes estilos predefinidos a las casillas de selección. Se puede obtener un gran número de variaciones combinando estas propiedades/comportamientos.
+Las casillas de selección utilizan [los estilos de botón](propertiesTextAndPicture.md#button-style) para controlar la apariencia general de una casilla de selección, así como sus posibles propiedades. Es posible aplicar diferentes estilos predefinidos a las casillas de selección. Se puede obtener un gran número de variaciones combinando estas propiedades/comportamientos.
 
 Con la excepción de las [propiedades-disponibles](#supported-properties), muchos objetos casilla de selección son *estructuralmente* idénticos. La diferencia está en el tratamiento de sus variables asociadas.
 
@@ -374,7 +374,7 @@ En macOS y Windows, una casilla de selección con el estilo de botón "Divulgaci
 
 El estilo del botón Personalizado acepta una imagen de fondo personalizada y permite gestionar propiedades específicas:
 
-- [Ruta de acceso fondo](properties_TextAndPicture.md#backgroundPathname)
+-  [Ruta de acceso fondo](properties_TextAndPicture.md#backgroundPathname)
 - [Desplazamiento icono](properties_TextAndPicture.md#icon-offset)
 - [Horizontal Margin](properties_TextAndPicture.md#horizontalMargin) and [Margen vertical](properties_TextAndPicture.md#verticalMargin)
 
@@ -408,7 +408,7 @@ Suele estar asociado a una [imagen de 4 estados](properties_TextAndPicture.md#nu
 Todas las casillas de selección comparten un mismo conjunto de propiedades básicas:
 
 
-[Bold](properties_Text.md#bold) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Button Style](properties_TextAndPicture.md#button-style) - [Class](properties_Object.md#css-class) - [Enterable](properties_Entry.md#enterable) - [Expression Type](properties_Object.md#expression-type) - [Focusable](properties_Entry.md#focusable) - [Font](properties_Text.md#font) - [Font Color](properties_Text.md#font-color) - [Font Size](properties_Text.md#font-size) - [Height](properties_CoordinatesAndSizing.md#height) - [Help Tip](properties_Help.md#help-tip) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Italic](properties_Text.md#italic) - [Left](properties_CoordinatesAndSizing.md#left) - [Object Name](properties_Object.md#object-name) - [Right](properties_CoordinatesAndSizing.md#right) - [Save value](properties_Object.md#save-value) - [Shortcut](properties_Entry.md#shortcut) - [Standard action](properties_Action.md#standard-action) - [Title](properties_Object.md#title) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Underline](properties_Text.md#underline) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
+[Bold](properties_Text.md#bold) - [Bottom](properties_CoordinatesAndSizing.md#bottom) - [Button Style](properties_TextAndPicture.md#button-style) - [Class](properties_Object.md#css-class) - [Focusable](properties_Entry.md#focusable) - [Font](properties_Text.md#font) - [Font Color](properties_Text.md#font-color) - [Font Size](properties_Text.md#font-size) - [Height](properties_CoordinatesAndSizing.md#height) - [Help Tip](properties_Help.md#help-tip) - [Horizontal Sizing](properties_ResizingOptions.md#horizontal-sizing) - [Italic](properties_Text.md#italic) - [Left](properties_CoordinatesAndSizing.md#left) - [Object Name](properties_Object.md#object-name) - [Right](properties_CoordinatesAndSizing.md#right) - [Save value](properties_Object.md#save-value) - [Shortcut](properties_Entry.md#shortcut) - [Standard action](properties_Action.md#standard-action) - [Title](properties_Object.md#title) - [Top](properties_CoordinatesAndSizing.md#top) - [Type](properties_Object.md#type) - [Underline](properties_Text.md#underline) - [Variable or Expression](properties_Object.md#variable-or-expression) - [Vertical Sizing](properties_ResizingOptions.md#vertical-sizing) - [Visibility](properties_Display.md#visibility) - [Width](properties_CoordinatesAndSizing.md#width)
 
 
 Existen propiedades específicas adicionales, dependiendo del [estilo-de-botón](#button-styles):

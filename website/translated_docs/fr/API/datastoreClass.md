@@ -44,7 +44,7 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 <!-- REF #_command_.ds.Params -->
 | Paramètres | Type         |    | Description                                |
 | ---------- | ------------ | -- | ------------------------------------------ |
-| localID    | Texte        | -> | Local ID of the remote datastore to return |
+| localID    | Text         | -> | Local ID of the remote datastore to return |
 | Résultat   | cs.DataStore | <- | Reference to the datastore                 |
 <!-- END REF -->
 
@@ -118,8 +118,8 @@ Using the main datastore on the 4D database:
 <!-- REF #_command_.Open datastore.Params -->
 | Paramètres     | Type         |    | Description                                                               |
 | -------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| connectionInfo | Objet        | -> | Connection properties used to reach the remote datastore                  |
-| localID        | Texte        | -> | Id to assign to the opened datastore on the local application (mandatory) |
+| connectionInfo | Object       | -> | Connection properties used to reach the remote datastore                  |
+| localID        | Text         | -> | Id to assign to the opened datastore on the local application (mandatory) |
 | Résultat       | cs.DataStore | <- | Datastore object                                                          |
 <!-- END REF -->
 

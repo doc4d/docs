@@ -81,7 +81,7 @@ Conversely, for security reasons, by default a component cannot execute project 
 
 Once the project methods of the host projects are available to the components, you can execute a host method from inside a component using the `EXECUTE FORMULA` or `EXECUTE METHOD` commands. Par exemple :
 
-```4d 
+```4d
 // Host Method
 component_method("host_method_name")
 ```
@@ -270,7 +270,7 @@ Lecture dans une base de données externe :
 
 ## Utilisation de formulaires
 
-- Seuls les "formulaires projet" (formulaires non associés à une table en particulier) peuvent être exploités directement dans un composant. Seuls les "formulaires projet" (formulaires non associés à une table en particulier) peuvent être exploités directement dans un composant.
+- Seuls les "formulaires projet" (formulaires non associés à une table en particulier) peuvent être exploités directement dans un composant. Un composant peut faire appel à des formulaires table du projet hôte.
 - Un composant peut faire appel à des formulaires table du projet hôte. A noter qu’il est nécessaire dans ce cas d’utiliser des pointeurs plutôt que des noms de table entre [] pour désigner les formulaires dans le code du composant.
 
 > If a component uses the `ADD RECORD` command, the current Input form of the host project will be displayed, in the context of the host project. Par conséquent, si le formulaire comporte des variables, le composant n’y aura pas accès.
@@ -286,7 +286,7 @@ Components can use resources located in the Resources folder of the component.
 
 Les mécanismes automatiques sont opérationnels : les fichiers XLIFF présents dans le dossier Resources d’un composant seront chargés par ce composant.
 
-Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Les ressources sont divisées entre les différents projets : il n'est pas possible d'accéder aux ressources du composant A depuis le composant B ou depuis le projet hôte.
+Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Dans un projet hôte contenant un ou plusieurs composants, chaque composant ainsi que les projets hôtes ont leur propre «chaîne de ressources» Les ressources sont divisées entre les différents projets : il n'est pas possible d'accéder aux ressources du composant A depuis le composant B ou depuis le projet hôte.
 
 
 ## Executing initialization code
@@ -308,7 +308,4 @@ By default, all the project methods of a matrix project installed as a component
 To protect the project methods of a component effectively, simply compile the matrix project and provide it in the form of a .4dz file. When a compiled matrix project is installed as a component:
 
 - The shared project methods are shown on the Methods Page of the Explorer and can be called in the methods of the host project. However, their contents will not appear in the preview area and in the debugger.
-- The other project methods of the matrix project will never appear. 
-
-
-
+- The other project methods of the matrix project will never appear.
