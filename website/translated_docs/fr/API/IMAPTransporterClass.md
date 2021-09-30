@@ -1578,6 +1578,10 @@ End if
    ALERT("Error: "+$status.statusText)
  End if
 End if
+   Else
+   ALERT("Error: "+$status.statusText)
+ End if
+End if
 ```
 
 <!-- END REF -->

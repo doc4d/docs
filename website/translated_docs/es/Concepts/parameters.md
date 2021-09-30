@@ -102,7 +102,7 @@ En el código de la función clase, el valor de cada parámetro se copia en el p
 Function getArea($width : Integer; $height : Integer)-> $area : Integer
     $area:=$width*$height
 ```
-> If the type is not defined, the parameter will be defined as [`Variant`](dt_variant.md).
+> Si no se define el tipo, el parámetro se definirá como [`Variant`](dt_variant.md).
 
 Todos los tipos de métodos de 4D soportan la palabra clave `#DECLARE`, incluidos los métodos base. Por ejemplo, en el método base `On Web Authentication`, puede declarar parámetros temporales:
 
@@ -218,7 +218,7 @@ Las expresiones de tablas o arrays sólo pueden pasarse [como referencia utiliza
 
 For example, consider a method that adds values and returns the sum formatted according to a format that is passed as a parameter. Cada vez que se llama a este método, el número de valores a sumar puede variar. Debemos pasar los valores como parámetros al método y el formato en forma de cadena de caracteres. El número de valores puede variar de una llamada a otra.
 
-Here is the method, named `MySum`:
+Aquí está el método, llamado `MySum`:
 
 ```4d
  #DECLARE($format : Text) -> $result : Text
@@ -239,14 +239,14 @@ The method's parameters must be passed in the correct order, first the format an
 Note that even if you declared 0, 1, or more parameters in the method, you can always pass the number of parameters that you want. Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command. Por ejemplo:
 
 ```4d
-//foo method
+//método foo
 #DECLARE($p1: Text;$p2 : Text; $p3 : Date) 
 For($i;1;Count parameters)
     ALERT("param "+String($i)+" = "+String(${$i}))
 End for
 ```
 
-This method can be called:
+Este método se puede llamar:
 
 ```4d
 foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed //extra parameters are passed

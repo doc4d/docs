@@ -44,6 +44,8 @@ Générer un package de projet peut être réalisée à l'aide de :
 
 <p spaces-before="2">Les clés XML fournissent des options supplémentaires à celles affichées dans la boîte de dialogue du Générateur d'application.</p>
 
+<p spaces-before="0">Les clés XML fournissent des options supplémentaires à celles affichées dans la boîte de dialogue du Générateur d'application.</p>
+
 <p spaces-before="0">Les clés XML fournissent des options supplémentaires à celles affichées dans la boîte de dialogue du Générateur d'application. La description de ces clés est détaillée dans le manuel <a href="https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html">4D Clés XML BuildApplication</a>.</p>
 
 <h3 spaces-before="0">Fichier d'historique</h3>
