@@ -62,9 +62,9 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 ## Class Description
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 
-| Version | Changes                                                                                            |
+| Versión | Modificaciones                                                                                     |
 | ------- | -------------------------------------------------------------------------------------------------- |
 | v18 R5  | Data model class functions are not exposed to REST by default. New `exposed` and `local` keywords. |
 </details>
@@ -446,7 +446,7 @@ For ORDA classes based upon the local datastore (`ds`), you can directly access 
 ![](assets/en/ORDA/classORDA5.png)
 
 
-### Method editor
+### Editor de método
 
 In the 4D method editor, variables typed as an ORDA class automatically benefit from autocompletion features. Example with an Entity class variable:
 
