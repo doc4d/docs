@@ -48,9 +48,9 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 ## IMAP New transporter
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R4  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R4  | Añadidos       |
 </details>
 
 <!-- REF #_command_.IMAP New transporter.Syntax -->
@@ -134,9 +134,9 @@ The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summa
 ## .addFlags()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.addFlags().Syntax -->
@@ -161,9 +161,9 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constant | Valor | Comment                                     |
-    | -------- | ----- | ------------------------------------------- |
-    | IMAP all | 1     | Select all messages in the selected mailbox |
+    | Constante | Valor | Comentario                                  |
+    | --------- | ----- | ------------------------------------------- |
+    | IMAP all  | 1     | Select all messages in the selected mailbox |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to add to `msgIDs`. You can pass any of the following keywords:
 
@@ -174,7 +174,7 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 | $flagged   | Booleano | True to add the "flagged" flag to the message  |
 | $answered  | Booleano | True to add the "answered" flag to the message |
 | $deleted   | Booleano | True to add the "deleted" flag to the message  |
-> * False values are ignored.
+> * Los valores falsos se ignoran.
 > * The interpretation of keyword flags may vary per mail client.
 
 
@@ -222,9 +222,9 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 ## .append()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.append().Syntax -->
@@ -257,7 +257,7 @@ In the optional `options` parameter, you can pass an object to define the charse
 
 Possible charsets:
 
-| Constant                 | Valor                          | Comment                                                                                                   |
+| Constante                | Valor                          | Comentario                                                                                                |
 | ------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>bodyCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                 |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                 |
@@ -324,9 +324,9 @@ $status:=$imap.append($msg; "Drafts")
 ## .checkConnectionDelay
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R4  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R4  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.checkConnectionDelay.Syntax -->
@@ -348,9 +348,9 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 ## .copy()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.copy().Syntax -->
@@ -454,9 +454,9 @@ To copy all messages in the current mailbox:
 ## .createBox()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.createBox().Syntax -->
@@ -541,9 +541,9 @@ End for each
 ## .delete()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.delete().Syntax -->
@@ -646,9 +646,9 @@ To delete all messages in the current mailbox:
 ## .deleteBox()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.deleteBox().Syntax -->
@@ -734,9 +734,9 @@ End if
 ## .expunge()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.expunge().Syntax -->
@@ -799,7 +799,7 @@ $status:=$transporter.expunge()
 ## .getBoxInfo()
 
 <details><summary>Histórico</summary>
-| Version | Changes          |
+| Versión | Modificaciones   |
 | ------- | ---------------- |
 | v18 R5  | name is optional |
 | v18 R4  | Añadidos         |
@@ -854,7 +854,7 @@ The `boxInfo` object returned contains the following properties:
 ## .getBoxList()
 
 <details><summary>Histórico</summary>
-| Version | Changes                      |
+| Versión | Modificaciones               |
 | ------- | ---------------------------- |
 | v18 R4  | Añadidos                     |
 | v19     | Add `isSubscribed` parameter |
@@ -923,9 +923,9 @@ If the account does not contain any mailboxes, an empty collection is returned.
 ## .getDelimiter()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R4  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R4  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.getDelimiter().Syntax -->
@@ -981,9 +981,9 @@ Mailbox name delimiter character.
 ## .getMail()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R4  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R4  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.getMail().Syntax -->
@@ -1057,9 +1057,9 @@ You want to get the message with ID = 1:
 ## .getMails()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.getMails().Syntax -->
@@ -1102,7 +1102,7 @@ In the *endMsg* parameter, pass an *integer* value corresponding to the number o
 
 The optional *options* parameter allows you to define the parts of the messages to be returned.
 
-**Options**
+**Opciones**
 
 | Propiedad  | Tipo     | Descripción                                                                                                                                     |
 | ---------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1162,9 +1162,9 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 ## .getMIMEAsBlob()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R4  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R4  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Syntax -->
@@ -1248,9 +1248,9 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 ## .move()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.move().Syntax -->
@@ -1356,9 +1356,9 @@ To move all messages in the current mailbox:
 ## .numToID()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.numToID().Syntax -->
@@ -1419,9 +1419,9 @@ The function returns a collection of strings (unique IDs).
 ## .removeFlags()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.removeFlags().Syntax -->
@@ -1446,9 +1446,9 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constant | Valor | Comment                                     |
-    | -------- | ----- | ------------------------------------------- |
-    | IMAP all | 1     | Select all messages in the selected mailbox |
+    | Constante | Valor | Comentario                                  |
+    | --------- | ----- | ------------------------------------------- |
+    | IMAP all  | 1     | Select all messages in the selected mailbox |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. You can pass any of the following keywords:
 
@@ -1460,7 +1460,7 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 | $answered  | Booleano | True to remove the "answered" flag from the message |
 | $deleted   | Booleano | True to remove the "deleted" flag from the message  |
 
-Note that False values are ignored.
+Note que los valores falsos se ignoran.
 
 
 **Returned object**
@@ -1507,9 +1507,9 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 ## .renameBox()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.renameBox().Syntax -->
@@ -1595,9 +1595,9 @@ End if
 ## .searchMails()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.searchMails().Syntax -->
@@ -1727,9 +1727,9 @@ Search-keys may request the value to search for:
 ## .selectBox()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R4  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R4  | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.selectBox().Syntax -->
@@ -1753,7 +1753,7 @@ In the `name` parameter, pass the name of the mailbox to access. The name repres
 
 The optional `state` parameter defines the type of access to the mailbox. The possible values are:
 
-| Constant              | Valor | Comment                                                                                                                                                                   |
+| Constante             | Valor | Comentario                                                                                                                                                                |
 | --------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IMAP read only state  | 1     | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                     |
 | IMAP read write state | 0     | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). (Valor por defecto) |
@@ -1795,9 +1795,9 @@ The `boxInfo` object returned contains the following properties:
 ## .subscribe()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.subscribe().Syntax -->
@@ -1868,9 +1868,9 @@ End if
 ## .unsubscribe()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!-- REF #IMAPTransporterClass.unsubscribe().Syntax -->
