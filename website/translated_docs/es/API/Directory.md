@@ -10,9 +10,9 @@ title: Directory Class
 ## .creationDate
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.creationDate.Syntax -->
@@ -33,9 +33,9 @@ This property is **read-only**.
 ## .creationTime
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.creationTime.Syntax -->
@@ -58,9 +58,9 @@ This property is **read-only**.
 ## .exists
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.exists.Syntax -->
@@ -83,9 +83,9 @@ This property is **read-only**.
 ## .extension
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.extension.Syntax -->
@@ -107,9 +107,9 @@ This property is **read-only**.
 ## .fullName
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.fullName.Syntax -->
@@ -131,9 +131,9 @@ This property is **read-only**.
 ## .hidden
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.hidden.Syntax -->
@@ -155,9 +155,9 @@ This property is **read-only**.
 ## .isAlias
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.isAlias.Syntax -->
@@ -179,9 +179,9 @@ This property is **read-only**.
 ## .isFile
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.isFile.Syntax -->
@@ -202,9 +202,9 @@ This property is **read-only**.
 ## .isFolder
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.isFolder.Syntax -->
@@ -225,9 +225,9 @@ This property is **read-only**.
 ## .isPackage
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.isPackage.Syntax -->
@@ -251,9 +251,9 @@ This property is **read-only**.
 ## .modificationDate
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.modificationDate.Syntax -->
@@ -275,9 +275,9 @@ This property is **read-only**.
 ## .modificationTime
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.modificationTime.Syntax -->
@@ -298,9 +298,9 @@ This property is **read-only**.
 ## .name
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -323,9 +323,9 @@ This property is **read-only**.
 ## .original
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.original.Syntax -->
@@ -348,9 +348,9 @@ This property is **read-only**.
 ## .parent
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.parent.Syntax -->
@@ -374,9 +374,9 @@ This property is **read-only**.
 ## .path
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.path.Syntax -->
@@ -397,9 +397,9 @@ This property is **read-only**.
 ## .platformPath
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.platformPath.Syntax -->
@@ -425,9 +425,9 @@ This property is **read-only**.
 ## .copyTo()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.copyTo().Syntax -->
@@ -453,7 +453,7 @@ By default, the folder is copied with the name of the original folder. If you wa
 
 If a folder with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
 
-| Constant       | Valor | Comment                             |
+| Constante      | Valor | Comentario                          |
 | -------------- | ----- | ----------------------------------- |
 | `fk overwrite` | 4     | Overwrite existing elements, if any |
 
@@ -481,9 +481,9 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 ## .file()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.file().Syntax -->
@@ -521,9 +521,9 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 ## .files()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.files().Syntax -->
@@ -543,7 +543,7 @@ The `.files()` function returns <!-- REF #directory.files().Summary -->a collect
 
 By default, if you omit the *options* parameter, only the files at the first level of the folder are returned in the collection, as well as invisible files or folders. You can modify this by passing, in the *options* parameter, one or more of the following constants:
 
-| Constant              | Valor | Comment                                                                             |
+| Constante             | Valor | Comentario                                                                          |
 | --------------------- | ----- | ----------------------------------------------------------------------------------- |
 | `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
 | `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
@@ -582,9 +582,9 @@ You want to get all files that are not invisible in the Documents folder:
 ## .folder()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.folder().Syntax -->
@@ -622,9 +622,9 @@ A `Folder` object or null if *path* is invalid.
 ## .folders()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.folders().Syntax -->
@@ -643,7 +643,7 @@ The `.folders()` function <!-- REF #directory.folders().Summary -->returns a col
 
 By default, if you omit the *options* parameter, only the folders at the first level of the folder are returned in the collection. You can modify this by passing, in the *options* parameter, one or more of the following constants:
 
-| Constant              | Valor | Comment                                                                             |
+| Constante             | Valor | Comentario                                                                          |
 | --------------------- | ----- | ----------------------------------------------------------------------------------- |
 | `fk recursive`        | 1     | The collection contains files or folders of the specified folder and its subfolders |
 | `fk ignore invisible` | 8     | Invisible files or folders are not listed                                           |
@@ -669,9 +669,9 @@ You want the collection of all folders and subfolders of the database folder:
 ## .getIcon()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #directory.getIcon().Syntax -->
