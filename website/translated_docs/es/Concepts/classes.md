@@ -45,12 +45,12 @@ Una clase usuario en 4D está definida por un archivo de método específico (.4
 Al nombrar las clases, debe tener en cuenta las siguientes reglas:
 
 - Un [nombre de clase](identifiers.md#classes) debe cumplir con [reglas de denominación de las propiedades](identifiers.md#object-properties).
-- Class names are case sensitive.
+- Los nombres de clases son sensibles a las mayúsculas y minúsculas.
 - No se recomienda dar el mismo nombre a una clase y a una tabla de la base, para evitar conflictos.
 
 Por ejemplo, si quiere definir una clase llamada "Polygon", tiene que crear el siguiente archivo:
 
-- Project folder
+- Carpeta Project
     + Project
         * Sources
             - Clases
@@ -93,7 +93,7 @@ En las diferentes ventanas 4D (editor de código, compilador, depurador, explora
     - una función de clase es un bloque de código
     - **Ir a la definición** en un objeto miembro busca las declaraciones de función de clase; por ejemplo, "$o.f()" encontrará "Function f".
     - **Buscar referencias** en la declaración de función de clase busca la función utilizada como miembro de objeto; por ejemplo, "Function f" encontrará "$o.f()".
-- En el explorador de ejecución y el depurador, las funciones de clase se muestran con el formato \<ClassName> constructor o \<ClassName>.\<FunctionName> formato.
+- En el explorador de ejecución y el depurador, las funciones de clase se muestran con el formato \<ClassName> constructor o \<ClassName>. \<FunctionName> formato.
 
 ## Class stores
 
@@ -107,11 +107,11 @@ Las clases disponibles son accesibles desde sus class stores. Hay dos class stor
 
 #### cs -> classStore
 
-| Parameter  | Tipo   |    | Descripción                                       |
+| Parámetros | Tipo   |    | Descripción                                       |
 | ---------- | ------ | -- | ------------------------------------------------- |
 | classStore | objeto | <- | Class store usuario para el proyecto o componente |
 
-El comando `cs` devuelve la class store usuario para el proyecto o componente actual. The `cs` command returns the user class store for the current project or component. Por defecto, sólo las [clases ORDA](ORDA/ordaClasses.md) están disponibles.
+El comando `cs` devuelve la class store usuario para el proyecto o componente actual. Devuelve todas las clases de usuario [definidas](#class-definition) en el proyecto o componente abierto. Por defecto, sólo las [clases ORDA](ORDA/ordaClasses.md) están disponibles.
 
 #### Ejemplo
 
@@ -125,7 +125,7 @@ $instance:=cs.myClass.new()
 
 #### 4D -> classStore
 
-| Parameter  | Tipo   |    | Descripción    |
+| Parámetros | Tipo   |    | Descripción    |
 | ---------- | ------ | -- | -------------- |
 | classStore | objeto | <- | Class store 4D |
 
@@ -475,9 +475,9 @@ $message:=$square.description() //Tengo 4 lados que son todos iguales
 
 La palabra clave `This` devuelve una referencia al objeto actualmente procesado. En 4D, se puede utilizar en [diferentes contextos](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-En la mayoría de los casos, el valor de `This` viene determinado por cómo se llama a una función. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función. It can't be set by assignment during execution, and it may be different each time the function is called.
+En la mayoría de los casos, el valor de `This` viene determinado por cómo se llama a una función. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función.
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. Por ejemplo:
+Cuando se llama a una fórmula como método miembro de un objeto, su `This` se define en el objeto al que se llama el método. Por ejemplo:
 
 ```4d
 $o:=Nuevo objeto("prop";42; "f";Formula(This.prop))
@@ -522,26 +522,19 @@ $o.a:=5
 $o.b:=3
 $val:=$o.f() //8
 ```
-En este ejemplo, el objeto asignado a la variable $o no tiene su propia propiedad *f*, la hereda de su clase. Since *f* is called as a method of $o, its `This` refers to $o.
+En este ejemplo, el objeto asignado a la variable $o no tiene su propia propiedad *f*, la hereda de su clase. Como *f* se llama como un método de $o, su `This` hace referencia a $o.
 
 
-## Class commands
+## Comandos de clase
 
-Several commands of the 4D language allows you to handle class features.
+Varios comandos del lenguaje 4D permiten manejar las funcionalidades de clase.
 
 
 ### OB Class
 
 #### OB Class ( object ) -> Object | Null
 
-`OB Class` returns the class of the object passed in parameter.
-
-
-### OB Instance of
-
-#### OB Instance of ( object ; class ) -> Boolean
-
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.</p>
+`OB Class` devuelve la clase del objeto pasado como parámetro.
 
 
 ### OB Instance of
