@@ -9,50 +9,50 @@ title: Texto
 When this property is enabled, the [OPEN FONT PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-FONT-PICKER.301-4505612.en.html) and [OPEN COLOR PICKER](https://doc.4d.com/4Dv18/4D/18/OPEN-COLOR-PICKER.301-4505611.en.html) commands can be called to display the system font and color picker windows. Using these windows, the users can change the font or color of a form object that has the focus directly by clicking. When this property is disabled (default), the open picker commands have no effect.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Propriedad           | Tipos de datos | Possible Values       |
+| Propiedad            | Tipos de datos | Valores posibles      |
 | -------------------- | -------------- | --------------------- |
 | allowFontColorPicker | booleano       | false (default), true |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Entrada](input_overview.md)
 
 ---
-## Bold
+## Negrita
 
 Sets the selected text to appear darker and heavier.
 
 You can set this property using the [**OBJECT SET FONT STYLE**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT-STYLE.301-4128244.en.html) command.
 > This is normal text.<br> **This is bold text.**
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Propriedad | Tipos de datos | Possible Values  |
+| Propiedad  | Tipos de datos | Valores posibles |
 | ---------- | -------------- | ---------------- |
 | fontWeight | texto          | "normal", "bold" |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 
 ---
-## Italic
+## Itálica
 
 Sets the selected text to slant slightly to the right.
 
 You can also set this property via the [**OBJECT SET FONT STYLE**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT-STYLE.301-4128244.en.html) command.
 > This is normal text.<br> *This is text in italics.*
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name      | Tipos de datos | Possible Values    |
+| Nombre    | Tipos de datos | Valores posibles   |
 | --------- | -------------- | ------------------ |
 | fontStyle | cadena         | "normal", "italic" |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -60,17 +60,17 @@ You can also set this property via the [**OBJECT SET FONT STYLE**](https://doc.4
 
 
 ---
-## Underline
+## Subrayado
 Sets the text to have a line running beneath it.
 > This is normal text.<br> This is <span style="text-decoration:underline">underlined</span> text.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name           | Tipos de datos | Possible Values       |
+| Nombre         | Tipos de datos | Valores posibles      |
 | -------------- | -------------- | --------------------- |
 | textDecoration | cadena         | "normal", "underline" |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -80,7 +80,7 @@ Sets the text to have a line running beneath it.
 
 
 ---
-## Font
+## Fuente
 
 This property allows you to specify either the **font theme** or the **font family** used in the object.
 > **Font theme** and **font family** properties are mutually exclusive. A font theme takes hold of font attributes, including size. A font family allows you to define font name, font size and font color.
@@ -88,7 +88,7 @@ This property allows you to specify either the **font theme** or the **font fami
 
 ### Font Theme
 
-The font theme property designates an automatic style name. Automatic styles determine the font family, font size and font color to be used for the object dynamically according to system parameters. These parameters depend on:
+The font theme property designates an automatic style name. Automatic styles determine the font family, font size and font color to be used for the object dynamically according to system parameters. Estos parámetros dependen de:
 
 - the platform,
 - the system language,
@@ -106,14 +106,14 @@ Three font themes are available:
 
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name      | Tipos de datos | Possible Values                |
+| Nombre    | Tipos de datos | Valores posibles               |
 | --------- | -------------- | ------------------------------ |
 | fontTheme | cadena         | "normal", "main", "additional" |
 
 
-#### Objects Supported
+#### Objetos soportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -128,39 +128,40 @@ There are two types of font family names:
 * *generic-family:* The name of a generic-family, like "serif", "sans-serif", "cursive", "fantasy", "monospace".
 
 You can set this using the [**OBJECT SET FONT**](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-FONT.301-4054834.en.html) command.
-> <span style="font-family:Times New Roman; font-size:20pt"> This is Times New Roman font.</span><br> <span style="font-family:Calibri; font-size:20pt"> This is Calibri font.</span><br> <span style="font-family:Papyrus; font-size:20pt"> This is Papyrus font.</span>
+> <span style="font-family:Times New Roman; font-size:20pt"> This is Times New Roman font.</span><br> <span style="font-family:Calibri; font-size:20pt"> This is Calibri font.</span><br>
+<span style="font-family:Papyrus; font-size:20pt"> This is Papyrus font.</span>
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name       | Tipos de datos | Possible Values      |
+| Nombre     | Tipos de datos | Valores posibles     |
 | ---------- | -------------- | -------------------- |
 | fontFamily | cadena         | CSS font family name |
 > 4D recommends using only [web safe](https://www.w3schools.com/cssref/css_websafe_fonts.asp) fonts.
 
-#### Objects Supported
+#### Objetos soportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 
 
 ---
-## Font Size
+## Tamaño fuente
 
 Allows defining the object's font size in points.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name     | Tipos de datos | Possible Values                       |
+| Nombre   | Tipos de datos | Valores posibles                      |
 | -------- | -------------- | ------------------------------------- |
 | fontSize | integer        | Font size in points. Minimum value: 0 |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
 
 ---
-## Font Color
+## Color de fuente
 
 Designates the font color.
 
@@ -169,19 +170,19 @@ Designates the font color.
 The color can be specified by:
 
 * a color name - like "red"
-* a HEX value - like "#ff0000"
-* an RGB value - like "rgb(255,0,0)"
+* un valor HEX - como "# ff0000"
+* un valor RVB - como "rgb (255,0,0)"
 
 You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-RGB-COLORS.301-4505456.en.html) command.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name   | Tipos de datos | Possible Values                           |
+| Nombre | Tipos de datos | Valores posibles                          |
 | ------ | -------------- | ----------------------------------------- |
 | stroke | cadena         | any css value, "transparent", "automatic" |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Button](button_overview.md) - [Check Box](checkbox_overview.md) - [Combo Box](comboBox_overview.md) - [Drop-down List](dropdownList_Overview.md) - [Group Box](groupBox.md) - [Hierarchical List](list_overview.md#overview) - [Input](input_overview.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers) - [Progress Indicators](progressIndicator.md) - [Ruler](ruler.md) - [Radio Button](radio_overview.md) - [Text Area](text.md)
 
@@ -189,7 +190,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 
 ---
 
-## Font Color Expression
+## Expresión color fuente
 
 `Selection and collection/entity selection type list boxes`
 
@@ -207,18 +208,18 @@ CompanyColor:=Choose([Companies]ID;Background color;Light shadow color;
 Foreground color;Dark shadow color)
 ```
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name            | Tipos de datos | Possible Values       |
+| Nombre          | Tipos de datos | Valores posibles      |
 | --------------- | -------------- | --------------------- |
 | rowStrokeSource | cadena         | Font color expression |
 
-#### Objects Supported
+#### Objetos soportados
 
 [List Box](listbox_overview.md#overview)
 
 ---
-## Style Expression
+## Expresión estilo
 
 `Selection and collection/entity selection type list boxes`
 
@@ -236,13 +237,13 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 > This property can also be set using a [Meta Info Expression](properties_Text.md#meta-info-expression).
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name           | Tipos de datos | Possible Values                                 |
+| Nombre         | Tipos de datos | Valores posibles                                |
 | -------------- | -------------- | ----------------------------------------------- |
 | rowStyleSource | cadena         | Style expression to evaluate for each row/cell. |
 
-#### Objects Supported
+#### Objetos soportados
 
 [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -252,23 +253,23 @@ You can also set this property using the `LISTBOX SET PROPERTY` command with `lk
 
 
 ---
-## Horizontal Alignment
+## Alineación horizontal
 
 Horizontal location of text within the area that contains it.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name      | Tipos de datos | Possible Values                                   |
+| Nombre    | Tipos de datos | Valores posibles                                  |
 | --------- | -------------- | ------------------------------------------------- |
 | textAlign | cadena         | "automatic", "right", "center", "justify", "left" |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Group Box](groupBox.md) - [List Box](listbox_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Header](listbox_overview.md#list-box-headers) - [List Box Footer](listbox_overview.md#list-box-footers) - [Text Area](text.md)
 
 
 ---
-## Vertical Alignment
+## Alineamiento vertical
 
 Vertical location of text within the area that contains it.
 
@@ -279,13 +280,13 @@ The **Default** option (`automatic` JSON value) sets the alignment according to 
 This property can also be handled by the [OBJECT Get vertical alignment](https://doc.4d.com/4Dv18/4D/18/OBJECT-Get-vertical-alignment.301-4505442.en.html) and [OBJECT SET VERTICAL ALIGNMENT](https://doc.4d.com/4Dv18/4D/18/OBJECT-SET-VERTICAL-ALIGNMENT.301-4505430.en.html) commands.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name          | Tipos de datos | Possible Values                        |
+| Nombre        | Tipos de datos | Valores posibles                       |
 | ------------- | -------------- | -------------------------------------- |
 | verticalAlign | cadena         | "automatic", "top", "middle", "bottom" |
 
-#### Objects Supported
+#### Objetos soportados
 
 [List Box](listbox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [List Box Footer](listbox_overview.md#list-box-footers) - [List Box Header](listbox_overview.md#list-box-headers)
 
@@ -312,7 +313,7 @@ Specifies an expression or a variable which will be evaluated for each row displ
 | textDecoration      | cadena   | "normal","underline"                                                                                                                                                                                                                                                                                                                                                       |
 | unselectable        | booleano | Designates the corresponding row as not being selectable (*i.e.*, highlighting is not possible). Enterable areas are no longer enterable if this option is enabled unless the "Single-Click Edit" option is also enabled. Controls such as checkboxes and lists remain functional. This setting is ignored if the list box selection mode is "None". Default value: False. |
 | disabled            | booleano | Disables the corresponding row. Enterable areas are no longer enterable if this option is enabled. Text and controls (checkboxes, lists, etc.) appear dimmed or grayed out. Default value: False.                                                                                                                                                                          |
-| cell.\<columnName> | objeto   | Allows applying the property to a single column. Pass in \<columnName> the object name of the list box column. **Note**: "unselectable" and "disabled" properties can only be defined at row level. They are ignored if passed in the "cell" object                                                                                                                       |
+| cell.\<columnName> | objeto   | Allows applying the property to a single column. Pase en \<columnName> the object name of the list box column. **Note**: "unselectable" and "disabled" properties can only be defined at row level. They are ignored if passed in the "cell" object                                                                                                                       |
 
 > Style settings made with this property are ignored if other style settings are already defined through expressions (*i.e.*, [Style Expression](#style-expression), [Font Color Expression](#font-color-expression), [Background Color Expression](#background-color-expression)).
 
@@ -359,13 +360,13 @@ Entonces, el método *Color* contendría:
 
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name       | Tipos de datos | Possible Values                                  |
+| Nombre     | Tipos de datos | Valores posibles                                 |
 | ---------- | -------------- | ------------------------------------------------ |
 | metaSource | cadena         | Object expression to evaluate for each row/cell. |
 
-#### Objects Supported
+#### Objetos soportados
 
 [List Box](listbox_overview.md)
 
@@ -382,19 +383,19 @@ Entonces, el método *Color* contendría:
 Esta propiedad permite la posibilidad de utilizar estilos específicos en el área seleccionada. Cuando esta opción está marcada, 4D interpreta todas las etiquetas \<SPAN> HTML presentes en el área. </p> 
 
 <p spaces-before="0">
-  By default, this option is not enabled.
+  Por defecto, esta opción no está activada.
 </p>
 
 
 
 <h4 spaces-before="0">
-  JSON Grammar
+  Gramática JSON
 </h4>
 
 <table spaces-before="0">
   <tr>
     <th>
-      Name
+      Nombre
     </th>
     
     <th>
@@ -402,7 +403,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
     </th>
     
     <th>
-      Possible Values
+      Valores posibles
     </th>
   </tr>
   
@@ -422,7 +423,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </table>
 
 <h4 spaces-before="0">
-  Objects Supported
+  Objetos soportados
 </h4>
 
 <p spaces-before="0">
@@ -505,13 +506,13 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 
 
 <h4 spaces-before="0">
-  JSON Grammar
+  Gramática JSON
 </h4>
 
 <table spaces-before="0">
   <tr>
     <th>
-      Name
+      Nombre
     </th>
     
     <th>
@@ -519,7 +520,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
     </th>
     
     <th>
-      Possible Values
+      Valores posibles
     </th>
   </tr>
   
@@ -539,7 +540,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </table>
 
 <h4 spaces-before="0">
-  Objects Supported
+  Objetos soportados
 </h4>
 
 <p spaces-before="0">
@@ -552,11 +553,11 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 
 <hr />
 <h2 spaces-before="0">
-  Row Font Color Array
+  Array colores de fuente
 </h2>
 
 <p spaces-before="0">
-  <code>Array type list boxes</code>
+  <code>List box de tipo array</code>
 </p>
 
 <p spaces-before="0">
@@ -568,13 +569,13 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </p>
 
 <h4 spaces-before="0">
-  JSON Grammar
+  Gramática JSON
 </h4>
 
 <table spaces-before="0">
   <tr>
     <th>
-      Name
+      Nombre
     </th>
     
     <th>
@@ -582,7 +583,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
     </th>
     
     <th>
-      Possible Values
+      Valores posibles
     </th>
   </tr>
   
@@ -602,7 +603,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </table>
 
 <h4 spaces-before="0">
-  Objects Supported
+  Objetos soportados
 </h4>
 
 <p spaces-before="0">
@@ -615,11 +616,11 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 
 <hr />
 <h2 spaces-before="0">
-  Row Style Array
+  Array de estilos
 </h2>
 
 <p spaces-before="0">
-  <code>Array type list boxes</code>
+  <code>List box de tipo array</code>
 </p>
 
 <p spaces-before="0">
@@ -632,13 +633,13 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 
 
 <h4 spaces-before="0">
-  JSON Grammar
+  Gramática JSON
 </h4>
 
 <table spaces-before="0">
   <tr>
     <th>
-      Name
+      Nombre
     </th>
     
     <th>
@@ -646,7 +647,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
     </th>
     
     <th>
-      Possible Values
+      Valores posibles
     </th>
   </tr>
   
@@ -666,11 +667,11 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </table>
 
 <h4 spaces-before="0">
-  Objects Supported
+  Objetos soportados
 </h4>
 
 <p spaces-before="0">
-  <a href="listbox_overview.md#overview">List Box</a> - <a href="listbox_overview.md#list-box-columns">List Box Column</a>
+  <a href="listbox_overview.md#overview">List Box</a> - <a href="listbox_overview.md#list-box-columns">Columna List Box</a>
 </p>
 
 
@@ -707,13 +708,13 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </code></pre>
 
 <h4 spaces-before="0">
-  JSON Grammar
+  Gramática JSON
 </h4>
 
 <table spaces-before="0">
   <tr>
     <th>
-      Name
+      Nombre
     </th>
     
     <th>
@@ -721,7 +722,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
     </th>
     
     <th>
-      Possible Values
+      Valores posibles
     </th>
   </tr>
   
@@ -741,7 +742,7 @@ Esta propiedad permite la posibilidad de utilizar estilos específicos en el ár
 </table>
 
 <h4 spaces-before="0">
-  Objects Supported
+  Objetos soportados
 </h4>
 
 <p spaces-before="0">

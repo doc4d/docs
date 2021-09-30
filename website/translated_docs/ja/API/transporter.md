@@ -1,5 +1,5 @@
 ---
-id: transporter
+id: Transporter
 title: Transporter クラス
 ---
 
@@ -270,9 +270,9 @@ title: Transporter クラス
 
 `SET DATABASE PARAMETER` コマンドで有効化される通常のログファイルとは異なり、拡張ログファイルはすべての送信されたメールの MIMEコンテンツを保存し、サイズ制限がありません。 拡張ログファイルの詳細については、以下の章をそれぞれ参照ください:
 
-*   **SMTP 接続** - [4DSMTPLog.txt](https://doc.4d.com/4Dv18R4/4D/18-R4/Description-of-log-files.300-5005934.en.html#4165231)
-*   **POP3 接続** - [4DPOP3Log.txt](https://doc.4d.com/4Dv18R4/4D/18-R4/Description-of-log-files.300-5005934.en.html#4837674)
-*   **IMAP 接続** - [4DIMAPLog.txt](https://doc.4d.com/4Dv18R4/4D/18-R4/Description-of-log-files.300-5005934.en.html#5040475)
+*   **SMTP 接続** - [4DSMTPLog.txt](Admin/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
+*   **POP3 接続** - [4DPOP3Log.txt](Admin/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
+*   **IMAP 接続** - [4DIMAPLog.txt](Admin/debugLogFiles.md#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 
 
 
@@ -364,7 +364,7 @@ title: Transporter クラス
 **.checkConnection()** : Object<!-- END REF -->
 
 <!-- REF #transporter.checkConnection().Params -->
-| 参照  | タイプ    |    | 説明                         |
+| 引数  | タイプ    |    | 説明                         |
 | --- | ------ |:--:| -------------------------- |
 | 戻り値 | オブジェクト | <- | transporter オブジェクト接続のステータス |
 <!-- END REF -->

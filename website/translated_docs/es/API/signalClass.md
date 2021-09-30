@@ -1,5 +1,5 @@
 ---
-id: signalClass
+id: SignalClass
 title: Signal
 ---
 
@@ -80,34 +80,34 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  $signal.trigger()
 ```
 
-### Summary
+### Resumen
 
 
 |                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #signalClass.description.Syntax -->](#description)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #signalClass.description.Summary -->|
-| [<!-- INCLUDE #signalClass.signaled.Syntax -->](#signaled)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #signalClass.signaled.Summary --> |
-| [<!-- INCLUDE #signalClass.trigger().Syntax -->](#trigger)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #signalClass.trigger().Summary --> |
-| [<!-- INCLUDE #signalClass.wait().Syntax -->](#wait)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #signalClass.wait().Summary --> |
+| [<!-- INCLUDE #SignalClass.description.Syntax -->](#description)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SignalClass.description.Summary -->|
+| [<!-- INCLUDE #SignalClass.signaled.Syntax -->](#signaled)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SignalClass.signaled.Summary --> |
+| [<!-- INCLUDE #SignalClass.trigger().Syntax -->](#trigger)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SignalClass.trigger().Summary --> |
+| [<!-- INCLUDE #SignalClass.wait().Syntax -->](#wait)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SignalClass.wait().Summary --> |
 
 
 
 
-<!-- REF signalClass.New signal.Desc -->
+<!-- REF SignalClass.New signal.Desc -->
 ## New signal
 
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R4  | Añadidos       |
 </details>
 
 <!-- REF #_command_.New signal.Syntax -->
 **New signal** { ( *description* : Text ) } : 4D.Signal<!-- END REF -->
 
-<!-- REF signalClass.New signal.Params -->
-| Parameter   | Tipo      |    | Descripción                            |
+<!-- REF SignalClass.New signal.Params -->
+| Parámetros  | Tipo      |    | Descripción                            |
 | ----------- | --------- |:--:| -------------------------------------- |
 | description | Texto     | -> | Description for the signal             |
 | Resultado   | 4D.Signal | <- | Native object encapsulating the signal |
@@ -166,21 +166,21 @@ The ***doSomething*** method could be like:
 <!-- END REF -->
 
 
-<!-- REF signalClass.description.Desc -->
+<!-- REF SignalClass.description.Desc -->
 ## .description
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R4  | Añadidos       |
 </details>
 
-<!-- REF #signalClass.description.Syntax -->
+<!-- REF #SignalClass.description.Syntax -->
 **.description** : Text<!-- END REF -->
 
 #### Descripción
 
-The `.description` property <!-- REF #signalClass.description.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.
+The `.description` property <!-- REF #SignalClass.description.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.
 
 `.description` can be set at the creation of the signal object or at any moment. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
 
@@ -190,22 +190,22 @@ This property is **read-write**.
 
 
 
-<!-- REF signalClass.signaled.Desc -->
+<!-- REF SignalClass.signaled.Desc -->
 ## .signaled
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R4  | Añadidos       |
 
 </details>
 
-<!-- REF #signalClass.signaled.Syntax -->
+<!-- REF #SignalClass.signaled.Syntax -->
 **.signaled** : Boolean<!-- END REF -->
 
 #### Descripción
 
-The `.signaled` property <!-- REF #signalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. When the signal is created, `.signaled` is **False**. It becomes **True** when the `.trigger( )` is called on the object.
+The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. When the signal is created, `.signaled` is **False**. It becomes **True** when the `.trigger( )` is called on the object.
 
 This property is **read-only**. 
 
@@ -213,28 +213,28 @@ This property is **read-only**.
 
 
 
-<!-- REF signalClass.trigger().Desc -->
+<!-- REF SignalClass.trigger().Desc -->
 ## .trigger()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R4  | Añadidos       |
 </details>
 
-<!-- REF #signalClass.trigger().Syntax -->
+<!-- REF #SignalClass.trigger().Syntax -->
 **.trigger( )**<!-- END REF -->
 
-<!-- REF #signalClass.trigger().Params -->
-| Parameter | Tipo |  | Descripción                     |
-| --------- | ---- |::| ------------------------------- |
-|           |      |  | Does not require any parameters |
+<!-- REF #SignalClass.trigger().Params -->
+| Parámetros | Tipo |  | Descripción                  |
+| ---------- | ---- |::| ---------------------------- |
+|            |      |  | No requiere ningún parámetro |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.trigger( )` function <!-- REF #signalClass.trigger().Summary -->sets the `signaled` property of the signal object to **true**<!-- END REF --> and awakens all workers or processes waiting for this signal.
+The `.trigger( )` function <!-- REF #SignalClass.trigger().Summary -->sets the `signaled` property of the signal object to **true**<!-- END REF --> and awakens all workers or processes waiting for this signal.
 
 If the signal is already in the signaled state (i.e., the `signaled` property is already **true**), the function does nothing.
 
@@ -242,29 +242,29 @@ If the signal is already in the signaled state (i.e., the `signaled` property is
 
 
 
-<!-- REF signalClass.wait().Desc -->
+<!-- REF SignalClass.wait().Desc -->
 ## .wait()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v17 R4  | Added   |
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R4  | Añadidos       |
 </details>
 
-<!-- REF #signalClass.wait().Syntax -->
+<!-- REF #SignalClass.wait().Syntax -->
 **.wait**( { *timeout* : Real } ) : Boolean <!-- END REF -->
 
-<!-- REF #signalClass.wait().Params -->
-| Parameter | Tipo     |    | Descripción                                    |
-| --------- | -------- | -- | ---------------------------------------------- |
-| timeout   | Real     | -> | Maximum waiting time for the signal in seconds |
-| Resultado | Booleano | <- | State of the `.signaled` property              |
+<!-- REF #SignalClass.wait().Params -->
+| Parámetros | Tipo     |    | Descripción                                    |
+| ---------- | -------- | -- | ---------------------------------------------- |
+| timeout    | Real     | -> | Maximum waiting time for the signal in seconds |
+| Resultado  | Booleano | <- | State of the `.signaled` property              |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.wait( )` function <!-- REF #signalClass.wait().Summary -->makes the current process wait until the `.signaled` property of the signal object to become **true** or the optional *timeout* to expire<!-- END REF -->.
+The `.wait( )` function <!-- REF #SignalClass.wait().Summary -->makes the current process wait until the `.signaled` property of the signal object to become **true** or the optional *timeout* to expire<!-- END REF -->.
 
 To prevent blocking code, you can pass a maximum waiting time in seconds in the *timeout* parameter (decimals are accepted).
 > **Warning**: Calling `.wait( )` without a *timeout* in the 4D main process is not recommended because it could freeze the whole 4D application.

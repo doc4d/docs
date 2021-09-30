@@ -6,27 +6,30 @@ title: Fuente de datos
 ---
 ## Automatic Insertion
 
-When this option is selected, if a user enters a value that is not found in the choice list associated with the object, this value is automatically added to the list stored in memory. You can associate choice lists to objects using:
-- the [Choice List](properties_DataSource.md#choice-list) JSON property
-- the [OBJECT SET LIST BY NAME](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-LIST-BY-NAME.301-4128227.en.html) or [OBJECT SET LIST BY REFERENCE](https://doc.4d.com/4Dv17R5/4D/17-R5/OBJECT-SET-LIST-BY-REFERENCE.301-4128237.en.html) commands.
-- the form editor's Property List.
+When this option is selected, if a user enters a value that is not found in the list associated with the object, this value is automatically added to the list stored in memory.
+
+When the **automatic insertion** option is not set (default), the value entered is stored in the form object but not in the list in memory.
+
+This property is supported by:
+
+- [Combo box](comboBox_overview.md) and [list box column](listbox_overview.md#list-box-columns) form objects associated to a choice list.
+- [Combo box](comboBox_overview.md) form objects whose associated list is filled by their array or object datasource.
 
 For example, given a choice list containing "France, Germany, Italy" that is associated with a "Countries" combo box: if the **automatic insertion** property is set and a user enters "Spain", then the value "Spain" is automatically added to the list in memory:
 
 ![](assets/en/FormObjects/comboBox_AutomaticInsertion_example.png)
 
-Naturally, the value entered must not belong to the list of [excluded values](properties_RangeOfValues.md#excluded-list) associated with the object, if one has been set.
-> If the list was created from a list defined in Design mode, the original list is not modified.
+> If the choice list was created from a list defined in Design mode, the original list is not modified.
 
-When the **automatic insertion** option is not selected (default), the value entered is stored in the object but not in the list in memory.
 
-#### JSON Grammar
 
-| Name               | Tipos de datos | Possible Values |
-| ------------------ | -------------- | --------------- |
-| automaticInsertion | booleano       | true, false     |
+#### Gramática JSON
 
-#### Objects Supported
+| Nombre             | Tipos de datos | Valores posibles |
+| ------------------ | -------------- | ---------------- |
+| automaticInsertion | booleano       | true, false      |
+
+#### Objetos soportados
 
 [Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -36,17 +39,20 @@ When the **automatic insertion** option is not selected (default), the value ent
 ---
 ## Choice List
 
-Associates a choice list with an object. It can be a choice list name (a list reference) or a collection of default values.
+Associates a choice list with an object. Puede ser un nombre de lista de elección (una referencia de lista) o una colección de valores por defecto.
 
-#### JSON Grammar
-
-| Name       | Tipos de datos   | Possible Values                                     |
-| ---------- | ---------------- | --------------------------------------------------- |
-| choiceList | list, collection | A list of possible values                           |
-| list       | list, collection | A list of possible values (hierarchical lists only) |
+You can also associate choice lists to objects using the [OBJECT SET LIST BY NAME](https://doc.4d.com/4dv19/help/command/en/page237.html) or [OBJECT SET LIST BY REFERENCE](https://doc.4d.com/4dv19/help/command/en/page1266.html) commands.
 
 
-#### Objects Supported
+#### Gramática JSON
+
+| Nombre     | Tipos de datos   | Valores posibles                                              |
+| ---------- | ---------------- | ------------------------------------------------------------- |
+| choiceList | list, collection | A list of possible values                                     |
+| lista      | list, collection | Una lista de valores posibles (listas jerárquicas únicamente) |
+
+
+#### Objetos soportados
 
 [Drop-down List](dropdownList_Overview.md) - [Combo Box](comboBox_overview.md) - [Hierarchical List](list_overview.md#overview) - [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -57,31 +63,31 @@ Associates a choice list with an object. It can be a choice list name (a list re
 
 List of static values to use as labels for the tab control object.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name   | Tipos de datos   | Possible Values                          |
+| Nombre | Tipos de datos   | Valores posibles                         |
 | ------ | ---------------- | ---------------------------------------- |
 | labels | list, collection | A list of values to fill the tab control |
 
-#### Objects Supported
+#### Objetos soportados
 
 [Tab Control](tabControl.md)
 
 
 ---
-## Current item
+## Elemento actual
 `Collection or entity selection list boxes`
 
 Specifies a variable or expression that will be assigned the collection element/entity selected by the user. You must use an object variable or an assignable expression that accepts objects. If the user does not select anything or if you used a collection of scalar values, the Null value is assigned.
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name              | Tipos de datos | Possible Values   |
+| Nombre            | Tipos de datos | Valores posibles  |
 | ----------------- | -------------- | ----------------- |
 | currentItemSource | cadena         | Object expression |
 
-#### Objects Supported
+#### Objetos soportados
 [List Box ](listbox_overview.md#overview)
 
 
@@ -89,7 +95,7 @@ Specifies a variable or expression that will be assigned the collection element/
 
 ---
 
-## Current item position
+## Posición elemento actual
 `Collection or entity selection list boxes`
 
 Specifies a variable or expression that will be assigned a longint indicating the position of the collection element/entity selected by the user.
@@ -99,13 +105,13 @@ Specifies a variable or expression that will be assigned a longint indicating th
 *   if multiple elements/entities are selected, the variable or expression receives the position of element/entity that was last selected.
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name                      | Tipos de datos | Possible Values   |
+| Nombre                    | Tipos de datos | Valores posibles  |
 | ------------------------- | -------------- | ----------------- |
 | currentItemPositionSource | cadena         | Number expression |
 
-#### Objects Supported
+#### Objetos soportados
 [List Box ](listbox_overview.md)
 
 
@@ -113,17 +119,61 @@ Specifies a variable or expression that will be assigned a longint indicating th
 
 
 ---
-## Tipos de datos
+## Data Type (expression type)
 
-Please refer to [Expression Type](properties_Object.md#expression-type) section.
+Defines the data type for the displayed expression. This property is used with:
 
-#### Objects Supported
+- [List box columns](listbox_overview.md#list-box-columns) of the selection and collection types.
+- [Drop-down lists](dropdownList_Overview.md) associated to objects or arrays.
 
-[List Box Column](listbox_overview.md#list-box-columns)
+See also [**Expression Type**](properties_Object.md#expression-type) section.
+
+#### Gramática JSON
+
+| Nombre             | Tipos de datos | Valores posibles                                   |
+| ------------------ | -------------- | -------------------------------------------------- |
+| dataSourceTypeHint | cadena         | <li>**list box columns:** "boolean", "number", "picture", "text", date", "time". *Array/selection list box only*: "integer", "object"</li><li>**drop-down lists:** "object", "arrayText", "arrayDate", "arrayTime", "arrayNumber"</li> |
+
+
+#### Objetos soportados
+
+[Drop-down Lists](dropdownList_Overview.md) associated to objects or arrays - [List Box column](listbox_overview.md#list-box-columns)
 
 
 
+---
+## Data Type (list)
 
+Defines the type of data to save in the field or variable associated to the [drop-down list](dropdownList_Overview.md). This property is used with:
+
+- Drop-down lists [associated to a choice list](dropdownList_Overview.md#using-a-choice-list).
+- Drop-down lists [associated to a hierarchical choice list](dropdownList_Overview.md#using-a-hierarchical-choice-list).
+
+Three options are available:
+
+- **List reference**: declares that the drop-down list is hierarchical. It means that the drop-down list can display up to two hierarchical levels and its contents can be managed by the 4D language commands of the **Hierarchical Lists** theme.
+- **Selected item value** (default): the drop-down list is not hierarchical and the value of the item chosen in the list by the user is saved directly. For example, if the user chooses the value "Blue", then this value is saved in the field.
+- **Selected item reference**: the drop-down list is not hierarchical and the reference of the choice list item is saved in the object. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](https://doc.4d.com/4dv19/help/command/en/page376.html) or [`SET LIST ITEM`](https://doc.4d.com/4dv19/help/command/en/page385.html) commands, or in the list editor. This option lets you optimize memory usage: storing numeric values in fields uses less space than storing strings. It also makes it easier to translate applications: you just create multiple lists in different languages but with the same item references, then load the list based on the language of the application.
+
+Using the **Selected item reference** option requires compliance with the following principles:
+- To be able to store the reference, the field or variable data source must be of the Number type (regardless of the type of value displayed in the list). The [expression](properties_Object.md#expression-type) property is automatically set.
+- Valid and unique references must be associated with list items.
+- The drop-down list must be associated with a field or a variable.
+
+
+#### Gramática JSON
+
+| Nombre | Tipos de datos | Valores posibles     |
+| ------ | -------------- | -------------------- |
+| saveAs | cadena         | "value", "reference" |
+
+
+> Setting only `"dataSourceTypeHint" : "integer"` with a `"type": "dropdown"` form object will declare a hierarchical drop-down list.
+
+
+#### Objetos soportados
+
+[Drop-down Lists](dropdownList_Overview.md) associated to lists
 
 
 ---
@@ -140,13 +190,13 @@ You must enter a list of values. In the Form editor, a specific dialog box allow
 
 > You can also define a [choice list](properties_DataSource.md#choice-list) with the list box column. However, a choice list will be used as list of selectable values for each column row, whereas the default list fill all column rows.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name   | Tipos de datos | Possible Values                                                  |
+| Nombre | Tipos de datos | Valores posibles                                                 |
 | ------ | -------------- | ---------------------------------------------------------------- |
 | values | colección      | A collection of default values (strings), ex: "a", "b", "c", "d" |
 
-#### Objects Supported
+#### Objetos soportados
 
 [List Box Column (array type only)](listbox_overview.md#list-box-columns)
 
@@ -188,13 +238,13 @@ If you use a collection of scalar values, 4D will create an object for each coll
 If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is used, the column can be enterable or not depending on the [Enterable](properties_Entry.md#enterable) property.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name       | Tipos de datos | Possible Values                                                         |
+| Nombre     | Tipos de datos | Valores posibles                                                        |
 | ---------- | -------------- | ----------------------------------------------------------------------- |
 | dataSource | cadena         | A 4D variable, field name, or an arbitrary complex language expression. |
 
-#### Objects Supported
+#### Objetos soportados
 
 [List Box Column](listbox_overview.md#list-box-columns)
 
@@ -203,28 +253,27 @@ If a field, a variable, or an assignable expression (*e.g. Person.lastName*) is 
 
 ---
 
-## Master Table
+## Tabla principal
 `Current selection list boxes`
 
 Specifies the table whose current selection will be used. This table and its current selection will form the reference for the fields associated with the columns of the list box (field references or expressions containing fields). Even if some columns contain fields from other tables, the number of rows displayed will be defined by the master table.
 
 All database tables can be used, regardless of whether the form is related to a table (table form) or not (project form).
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name  | Tipos de datos | Possible Values |
-| ----- | -------------- | --------------- |
-| table | number         | Table number    |
+| Nombre | Tipos de datos | Valores posibles |
+| ------ | -------------- | ---------------- |
+| tabla  | number         | Table number     |
 
-#### Objects Supported
+#### Objetos soportados
 [List Box](listbox_overview.md#overview)
 
 
 
 ---
 
-## Save as
-
+## Guardar como
 
 This property is available in the following conditions:
 
@@ -234,30 +283,29 @@ This property is available in the following conditions:
 This property specifies, in the context of a field or variable associated with a list of values, the type of contents to save:
 
 - **Save as Value** (default option): the value of the item chosen in the list by the user is saved directly. For example, if the user chooses the value "Blue", then this value is saved in the field.
-- **Save as Reference**: the reference of the choice list item is saved in the object. This reference is the numeric value associated with each item either through the *itemRef* parameter of the `APPEND TO LIST` or `SET LIST ITEM` commands, or in the lists editor.
+- **Save as Reference**: the reference of the choice list item is saved in the object. This reference is the numeric value associated with each item either through the *itemRef* parameter of the [`APPEND TO LIST`](https://doc.4d.com/4dv19/help/command/en/page376.html) or [`SET LIST ITEM`](https://doc.4d.com/4dv19/help/command/en/page385.html) commands, or in the list editor.
 
 This option lets you optimize memory usage: storing numeric values in fields uses less space than storing strings. It also makes it easier to translate applications: you just create multiple lists in different languages but with the same item references, then load the list based on the language of the application.
 
 Using this property requires compliance with the following principles:
 
-- To be able to store the reference, the field or variable data source must be of the Number type (regardless of the type of value displayed in the list).
+- To be able to store the reference, the field or variable data source must be of the Number type (regardless of the type of value displayed in the list). The [expression](properties_Object.md#expression-type) property is automatically set.
 - Valid and unique references must be associated with list items.
-- If you use this property for a [drop-down list](dropdownList_Overview.md), it must be associated with a field.
 
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name   | Tipos de datos | Possible Values      |
+| Nombre | Tipos de datos | Valores posibles     |
 | ------ | -------------- | -------------------- |
 | saveAs | cadena         | "value", "reference" |
 
-#### Objects Supported
-[Drop-down List](dropdownList_Overview.md) - [Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
+#### Objetos soportados
+[Input](input_overview.md) - [List Box Column](listbox_overview.md#list-box-columns)
 
 
 
 ---
-## Selected Items
+## Elementos seleccionados
 `Collection or entity selection list boxes`
 
 Specifies a variable or expression that will be assigned the elements or entities selected by the user.
@@ -266,13 +314,13 @@ Specifies a variable or expression that will be assigned the elements or entitie
 *   for an entity selection list box, an entity selection object is built. You must use an object variable or an assignable expression that accepts objects.
 > This property is "read-only", it is automatically updated according to user actions in the list box. You cannot edit its value to modify the list box selection status.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name                | Tipos de datos | Possible Values       |
+| Nombre              | Tipos de datos | Valores posibles      |
 | ------------------- | -------------- | --------------------- |
 | selectedItemsSource | cadena         | Collection expression |
 
-#### Objects Supported
+#### Objetos soportados
 [List Box ](listbox_overview.md#overview)
 
 
@@ -284,11 +332,11 @@ Specifies the named selection to be used. You must enter the name of a valid nam
 
 > Named selections are ordered lists of records. They are used to keep the order and current record of a selection in memory. For more information, refer to **Named Selections** section in the *4D Language Reference manual*.
 
-#### JSON Grammar
+#### Gramática JSON
 
-| Name           | Tipos de datos | Possible Values      |
+| Nombre         | Tipos de datos | Valores posibles     |
 | -------------- | -------------- | -------------------- |
 | namedSelection | cadena         | Named selection name |
 
-#### Objects Supported
+#### Objetos soportados
 [List Box](listbox_overview.md#overview)

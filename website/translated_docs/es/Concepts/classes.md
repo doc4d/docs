@@ -93,7 +93,7 @@ En las diferentes ventanas 4D (editor de código, compilador, depurador, explora
     - una función de clase es un bloque de código
     - **Ir a la definición** en un objeto miembro busca las declaraciones de función de clase; por ejemplo, "$o.f()" encontrará "Function f".
     - **Buscar referencias** en la declaración de función de clase busca la función utilizada como miembro de objeto; por ejemplo, "Function f" encontrará "$o.f()".
-- En el explorador de ejecución y el depurador, las funciones de clase se muestran con el formato \<ClassName> constructor o \<ClassName>.\<FunctionName> formato.
+- En el explorador de ejecución y el depurador, las funciones de clase se muestran con el formato \<ClassName> constructor o \<ClassName>. \<FunctionName> formato.
 
 ## Class stores
 
@@ -103,15 +103,15 @@ Las clases disponibles son accesibles desde sus class stores. Hay dos class stor
 - `4D` para el class store integrado
 
 
-### cs
+### `cs`
 
 #### cs -> classStore
 
-| Parameter  | Tipo   |    | Descripción                                       |
+| Parámetros | Tipo   |    | Descripción                                       |
 | ---------- | ------ | -- | ------------------------------------------------- |
 | classStore | objeto | <- | Class store usuario para el proyecto o componente |
 
-El comando `cs` devuelve la class store usuario para el proyecto o componente actual. The `cs` command returns the user class store for the current project or component. Por defecto, sólo las [clases ORDA](ORDA/ordaClasses.md) están disponibles.
+El comando `cs` devuelve la class store usuario para el proyecto o componente actual. Devuelve todas las clases de usuario [definidas](#class-definition) en el proyecto o componente abierto. Por defecto, sólo las [clases ORDA](ORDA/ordaClasses.md) están disponibles.
 
 #### Ejemplo
 
@@ -121,15 +121,15 @@ Quiere crear una nueva instancia de un objeto de `myClass`:
 $instance:=cs.myClass.new()
 ```
 
-### 4D
+### `4D`
 
 #### 4D -> classStore
 
-| Parameter  | Tipo   |    | Descripción    |
+| Parámetros | Tipo   |    | Descripción    |
 | ---------- | ------ | -- | -------------- |
 | classStore | objeto | <- | Class store 4D |
 
-El comando `4D` devuelve la class store 4D integrada disponible. Ofrece acceso a APIs específicas como [CryptoKey](API/cryptoKeyClass.md).
+El comando `4D` devuelve la class store 4D integrada disponible. It provides access to specific APIs such as [CryptoKey](API/CryptoKeyClass.md).
 
 #### Ejemplo
 
@@ -144,11 +144,11 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 ## El objeto clase
 
-Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Una clase es un objeto en sí mismo, de ["Class" class](API/classClass.md). Un objeto class tiene las propiedades y funciones siguientes:
+Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Cuando una clase es [definida](#class-definition) en el proyecto, se carga en el entorno del lenguaje 4D. Un objeto class tiene las propiedades y funciones siguientes:
 
-- cadena [`name`](API/classClass.md#name)
-- objeto [`superclass`](API/classClass.md#superclass) (null si ninguno)
-- función [`new()`](API/classClass.md#new), que permite instanciar objetos de clase.
+- [`name`](API/ClassClass.md#name) string
+- [`superclass`](API/ClassClass.md#superclass) object (null if none)
+- [`new()`](API/ClassClass.md#new) function, allowing to instantiate class objects.
 
 Además, un objeto clase puede hacer referencia a un objeto [`constructor`](#class-constructor) (opcional).
 
@@ -156,9 +156,9 @@ Un objeto de clase es un [objeto compartido](shared.md) y, por tanto, se puede a
 
 ### Herencia
 
-Si una clase hereda de otra clase (es decir, se utiliza la palabra clave [Class extends](classes.md#class-extends-classname) en su definición), la clase padre es su [`superclass`](API/classClass.md#superclass).
+If a class inherits from another class (i.e. the [Class extends](classes.md#class-extends-classname) keyword is used in its definition), the parent class is its [`superclass`](API/ClassClass.md#superclass).
 
-Cuando 4D no encuentra una función o una propiedad en una clase, la busca en su [`superclass`](API/classClass.md#superclass); si no la encuentra, 4D sigue buscando en la superclase de la superclase, y así sucesivamente hasta que no haya más superclase (todos los objetos heredan de la superclase "Object").
+When 4D does not find a function or a property in a class, it searches it in its [`superclass`](API/ClassClass.md#superclass); if not found, 4D continues searching in the superclass of the superclass, and so on until there is no more superclass (all objects inherit from the "Object" superclass).
 
 
 ## Palabras clave de clase
@@ -170,7 +170,7 @@ En las definiciones de clase se pueden utilizar palabras claves específicas de 
 - `Class extends <ClassName>` para definir la herencia.
 
 
-### Function
+### `Function`
 
 #### Sintaxis
 
@@ -179,7 +179,7 @@ Function <name>({$parameterName : type; ...}){->$parameterName : type}
 // code
 ```
 
-Las funciones de clase son propiedades específicas de la clase. Son objetos de la clase [4D.Function](API/formulaClass.md#about-4dfunction-objects).
+Las funciones de clase son propiedades específicas de la clase. Las funciones de clase son propiedades específicas de la clase.
 
 En el archivo de definición de clase, las declaraciones de función utilizan la palabra clave `Function`, y el nombre de la función. El nombre de la función debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties).
 
@@ -206,19 +206,19 @@ Para una función de clase, el comando `Current method name` devuelve: "*\<Class
 
 En el código de la aplicación, las funciones de clase se llaman como métodos miembros de la instancia del objeto y pueden recibir los [parámetros](#class-function-parameters) si los hay. Se soportan las siguientes sintaxis:
 
-- uso del operador `()`. Por ejemplo, `miObjeto.methodName("hola")`
-- uso de un método miembro de la clase "4D.Function":
-    - [`apply()`](API/formulaClass.md#apply)
-    - [`call()`](API/formulaClass.md#call)
+- uso del operador `()`. For example, `myObject.methodName("hello")`
+- use of a "4D.Function" class member method:
+    - [`apply()`](API/FunctionClass.md#apply)
+    - [`call()`](API/FunctionClass.md#call)
 
-> **Advertencia de seguridad de hilos:** si una función de la clase no es segura para hilos y es llamada por un método con el atributo "Puede ejecutarse en un proceso apropiativo": - el compilador no genera ningún error (que es diferente en comparación con los métodos Clásicos), - un error es lanzado por 4D sólo en tiempo de ejecución.
-
-
+> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute: - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
 
 
-#### Parámetros
 
-Los parámetros de las funciones se declaran utilizando el nombre del parámetro y el tipo de parámetro, separados por dos puntos. El nombre del parámetro debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties). Múltiples parámetros (y tipos) están separados por punto y coma (;).
+
+#### Parameters
+
+Function parameters are declared using the parameter name and the parameter type, separated by a colon. El nombre del parámetro debe cumplir con las [reglas de nomenclatura de las propiedades](Concepts/identifiers.md#object-properties). Múltiples parámetros (y tipos) están separados por punto y coma (;).
 
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
@@ -237,7 +237,7 @@ También puedes declarar el parámetro de retorno sólo añadiendo `: type`, en 
 Function add($x : Variant; $y : Integer): Integer
     $0:=$x+$y
 ```
-> La[sintaxis 4D clásica ](parameters.md#sequential-parameters) de los parámetros de método puede utilizarse para declarar los parámetros de las funciones de clase. Ambas sintaxis pueden mezclarse. Por ejemplo:
+> La[sintaxis 4D clásica ](parameters.md#sequential-parameters) de los parámetros de método puede utilizarse para declarar los parámetros de las funciones de clase. Ambas sintaxis pueden mezclarse. For example:
 > 
 > ```4d
 > Function add($x : Integer)
@@ -249,7 +249,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### Ejemplo
+#### Example
 
 ```4d
 // Class: Rectangle
@@ -258,13 +258,14 @@ Class constructor($width : Integer; $height : Integer)
     This.height:=$height
     This.width:=$width
 
-// Definición de la función
+// Function definition
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
 
 ```4d
-// En un método proyecto
+// In a project method
+
 var $rect : cs.Rectangle
 var $area : Real
 
@@ -274,25 +275,26 @@ $area:=$rect.getArea() //5000
 
 
 
-### Class constructor
+### `Class Constructor`
 
-#### Sintaxis
+#### Syntax
 
 ```4d
-// Class: MyClass
-Class Constructor({$parameterName : type; ...})
+// Class:
 // code
 ```
 
+Una función class constructor, que puede aceptar los [parámetros](#parameters), puede utilizarse para definir una clase usuario.  MyClass Class Constructor({$parameterName : type; ...}) // code </code></pre>
+
 Una función class constructor, que puede aceptar los [parámetros](#parameters), puede utilizarse para definir una clase usuario.
 
-En ese caso, cuando se llama a la función [`new()`](API/classClass.md#new), se llama al constructor de la clase con los parámetros que se pasan opcionalmente a la función `new()`.
+In that case, when you call the [`new()`](API/ClassClass.md#new) function, the class constructor is called with the parameters optionally passed to the `new()` function.
 
-Para una función clase constructor, el comando `Current method name` devuelve: "*\<ClassName>:constructor*", por ejemplo "MiClase:constructor".
+For a class constructor function, the `Current method name` command returns: "*\<ClassName>:constructor*", for example "MyClass:constructor".
 
 
 
-#### Ejemplo:
+#### Example:
 
 ```4d
 // Class: MyClass
@@ -302,17 +304,17 @@ Class Constructor ($name : Text)
 ```
 
 ```4d
-// En un método de proyecto.
-// Se puede instanciar un objeto
+// In a project method
+// You can instantiate an object
 var $o : cs.MyClass
-$o:=cs.MyClass.new("HolaMundo")  
-// $o = {"nombre": "HolaMundo"}
+$o:=cs.MyClass.new("HelloWorld")  
+// $o = {"name":"HelloWorld"}
 ```
 
 
 
 
-### Class extends \<ClassName>
+### `Class extends <ClassName>`
 
 #### Syntax
 
@@ -321,36 +323,37 @@ $o:=cs.MyClass.new("HolaMundo")
 Class extends <ParentClass>
 ```
 
-La palabra clave `Class extends` se utiliza en la declaración de clases para crear una clase de usuario que sea hija de otra clase de usuario. La clase hija hereda todas las funciones de la clase padre.
+The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
 
-La extensión de clase debe respetar las siguientes reglas:
+Class extension must respect the following rules:
 
-- Una clase usuario no puede extender una clase integrada (excepto de 4D.Object que se extiende por defecto para las clases usuario)
-- Una clase usuario no puede extender una clase usuario a partir de otro proyecto o componente.
-- Una clase usuario no puede extenderse a sí misma.
-- No es posible extender las clases de forma circular (es decir, "a" extiende "b" que extiende "a").
+- A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
+- A user class cannot extend a user class from another project or component.
+- A user class cannot extend itself.
+- It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
 
-El incumplimiento de una regla de este tipo no es detectado por el editor de código o el intérprete, sólo el compilador y la `sintaxis de verificación` arrojará un error en este caso.
+Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
 
-Una clase extendida puede llamar al constructor de su clase padre utilizando el comando [`Super`](#super).
+An extended class can call the constructor of its parent class using the [`Super`](#super) command.
 
-#### Ejemplo
+#### Example
 
-Este ejemplo crea una clase llamada `Square` a partir de una clase llamada `Polygon`.
+This example creates a class called `Square` from a class called `Polygon`.
 
 ```4d
 //Class: Square
+
 //path: Classes/Square.4dm 
 
-La clase extendida Polygon
+Class extends Polygon
 
 Class constructor ($side : Integer)
 
-    // Llama a la clase constructor padre con largos
-    // proporcionados para el ancho y el alto de Polygon
+    // It calls the parent class's constructor with lengths
+    // provided for the Polygon's width and height
     Super($side;$side)
-    // En las clases derivadas, se debe llamar a Super antes de
-    // utilizar 'This'
+    // In derived classes, Super must be called before you
+    // can use 'This'
     This.name:="Square"
 
     Function getArea()
@@ -358,21 +361,21 @@ Class constructor ($side : Integer)
         $0:=This.height*This.width
 ```
 
-### Super
+### `Super`
 
 
 #### Super {( param{;...;paramN} )} {-> Object}
 
-| Parameter | Type   |    | Description                               |
-| --------- | ------ | -- | ----------------------------------------- |
-| param     | mixed  | -> | Parámetro(s) a pasar al constructor padre |
-| Resultado | objeto | <- | Padre del objeto                          |
+| Parameter | Type   |    | Description                                    |
+| --------- | ------ | -- | ---------------------------------------------- |
+| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
+| Result    | object | <- | Object's parent                                |
 
-La palabra clave`Super` permite llamar a la `superclass`, es decir, a la clase padre.
+The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
-`Super` sirve para dos propósitos diferentes:
+`Super` serves two different purposes:
 
-- dentro de un [código constructor](#class-constructor), `Super` es un comando que permite llamar al constructor de la superclase. Cuando se utiliza en un constructor, el comando `Super` aparece solo y debe utilizarse antes de la palabra clave `This`.
+- inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. Cuando se utiliza en un constructor, el comando `Super` aparece solo y debe utilizarse antes de la palabra clave `This`.
     - Si todos los constructores de clase del árbol de herencia no se llaman correctamente, se genera el error -10748. Es desarrollador de 4D para asegurarse de que las llamadas son válidas.
     - Si se llama al comando `This` en un objeto cuyas superclases no han sido construidas, se genera el error -10743.
 
@@ -434,17 +437,17 @@ Function getArea()
 
 #### Ejemplo 2
 
-Este ejemplo ilustra el uso de `Super` en un método miembro de clase. Ha creado la clase `Rectangle` con una función:
+Este ejemplo ilustra el uso de `Super` en un método miembro de clase. You created the `Rectangle` class with a function:
 
 ```4d
 //Class: Rectangle
 
 Function nbSides()
     var $0 : Text
-    $0:="tengo 4 lados"
+    $0:="I have 4 sides"
 ```
 
-También ha creado la clase `Square` con una función que llama a la función de la superclass:
+You also created the `Square` class with a function calling the superclass function:
 
 ```4d
 //Class: Square
@@ -456,16 +459,16 @@ Function description()
     $0:=Super.nbSides()+" which are all equal"
 ```
 
-Luego puedes escribir en un método del proyecto:
+Then you can write in a project method:
 
 ```4d
 var $square : Object
 var $message : Text
 $square:=cs.Square.new()
-$message:=$square.description() //Tengo 4 lados que son todos iguales
+$message:=$square.description() //I have 4 sides which are all equal
 ```
 
-### This
+### `This`
 
 #### This -> Object
 
@@ -473,36 +476,36 @@ $message:=$square.description() //Tengo 4 lados que son todos iguales
 | --------- | ------ | -- | -------------- |
 | Result    | object | <- | Current object |
 
-La palabra clave `This` devuelve una referencia al objeto actualmente procesado. En 4D, se puede utilizar en [diferentes contextos](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+The `This` keyword returns a reference to the currently processed object. En 4D, se puede utilizar en [diferentes contextos](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
 
-En la mayoría de los casos, el valor de `This` viene determinado por cómo se llama a una función. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función. It can't be set by assignment during execution, and it may be different each time the function is called.
+En la mayoría de los casos, el valor de `This` viene determinado por cómo se llama a una función. No se puede definir por asignación durante la ejecución, y puede ser diferente cada vez que se llame a la función.
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. Por ejemplo:
+Cuando se llama a una fórmula como método miembro de un objeto, su `This` se define en el objeto al que se llama el método. For example:
 
 ```4d
-$o:=Nuevo objeto("prop";42; "f";Formula(This.prop))
+$o:=New object("prop";42;"f";Formula(This.prop))
 $val:=$o.f() //42
 ```
 
-Cuando se utiliza una función [class constructor](#class-constructor) (con la función [`new()`](API/classClass.md#new)), su `This` se vincula al nuevo objeto que se está construyendo.
+When a [class constructor](#class-constructor) function is used (with the [`new()`](API/ClassClass.md#new) function), its `This` is bound to the new object being constructed.
 
 ```4d
 //Class: ob
 
 Class Constructor  
 
-    // Crear propiedades en This como
-    // quiera asignándoles
+    // Create properties on This as
+    // desired by assigning to them
     This.a:=42 
 ```
 
 ```4d
-// en un método 4D  
+// in a 4D method  
 $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> Cuando se llama al constructor de la superclase en un constructor que utiliza la palabra clave [Super](#super), hay que tener en cuenta que `This` no debe llamarse antes del constructor de la superclase, de lo contrario se genera un error. Ver [este ejemplo](#example-1).
+> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. Ver [este ejemplo](#example-1).
 
 
 En todos los casos, `Esto` se refiere al objeto al que el método fue llamado, como si el método estuviera en el objeto..
@@ -530,22 +533,22 @@ En este ejemplo, el objeto asignado a la variable $o no tiene su propia propieda
 Several commands of the 4D language allows you to handle class features.
 
 
-### OB Class
+### `OB Class`
 
 #### OB Class ( object ) -> Object | Null
 
 `OB Class` returns the class of the object passed in parameter.
 
 
-### OB Instance of
+### `OB Instance of`
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.</p>
+`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
 
 
-### OB Instance of
+### `OB Instance of`
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` devuelve `true` si `objeto` pertenece a `class` o a una de sus clases heredadas, y `false` de lo contrario,.
+`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
