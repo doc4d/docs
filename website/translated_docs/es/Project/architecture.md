@@ -24,7 +24,7 @@ A 4D project is made of several folders and files, stored within a single parent
 > If your project has been converted from a binary database, additional folders may be present. See "Converting databases to projects" on [doc.4d.com](https://doc.4d.com).
 
 
-## Project folder
+## Carpeta Project
 
 The Project folder typically contains the following hierarchy:
 
@@ -56,12 +56,12 @@ Project development file, used to designate and launch the project. This file ca
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
 | catalog.4DCatalog       | Table and field definitions                                                                                                                                                                                                                                                                                                                                                                                          | XML     |
 | folders.json            | Explorer folder definitions                                                                                                                                                                                                                                                                                                                                                                                          | JSON    |
-| menus.json              | Menu definitions                                                                                                                                                                                                                                                                                                                                                                                                     | JSON    |
+| menus.json              | Definiciones de los menús                                                                                                                                                                                                                                                                                                                                                                                            | JSON    |
 | settings.4DSettings     | *Structure* database settings. They are not taken into account if *[user settings](#settings-folder-1)* or *[user settings for data](#settings-folder)* are defined.<p>**Warning**: In compiled applications, structure settings are stored in the .4dz file (read-only). For deployment needs, it is necessary to use *user settings* or *user settings for data* to define custom settings. | XML     |
 | tips.json               | Defined tips                                                                                                                                                                                                                                                                                                                                                                                                         | JSON    |
-| lists.json              | Defined lists                                                                                                                                                                                                                                                                                                                                                                                                        | JSON    |
-| filters.json            | Defined filters                                                                                                                                                                                                                                                                                                                                                                                                      | JSON    |
-| styleSheets.css         | CSS style sheets                                                                                                                                                                                                                                                                                                                                                                                                     | CSS     |
+| lists.json              | Listas definidas                                                                                                                                                                                                                                                                                                                                                                                                     | JSON    |
+| filters.json            | Filtros definidos                                                                                                                                                                                                                                                                                                                                                                                                    | JSON    |
+| styleSheets.css         | Hojas de estilo CSS                                                                                                                                                                                                                                                                                                                                                                                                  | CSS     |
 | styleSheets_mac.css     | Mac css style sheets (from converted binary database)                                                                                                                                                                                                                                                                                                                                                                | CSS     |
 | styleSheets_windows.css | Windows css style sheets (from converted binary database)                                                                                                                                                                                                                                                                                                                                                            | CSS     |
 
@@ -92,7 +92,7 @@ Project development file, used to designate and launch the project. This file ca
 | *formName*/form.4DForm                    | Project form description                   | json    |
 | *formName*/method.4dm                     | Project form method                        | texto   |
 | *formName*/Images/*pictureName*           | Project form static picture                | imagen  |
-| *formName*/ObjectMethods/*objectName*.4dm | Object methods. One file per object method | texto   |
+| *formName*/ObjectMethods/*objectName*.4dm | Métodos objeto. One file per object method | texto   |
 
 #### `TableForms`
 
@@ -181,7 +181,7 @@ The Logs folder contains all log files used by the project. Log files include, i
 - database conversion,
 - web server requests,
 - backup/restore activities journal (*Backup Journal\[xxx].txt*, see [Backup journal](Backup/backup.md#backup-journal))
-- command debugging,
+- depuración de comandos,
 - 4D Server requests (generated on client machines and on the server).
 
 > An additional Logs folder is available in the system user preferences folder (active 4D folder, see [Get 4D folder](https://doc.4d.com/4Dv18R4/4D/18-R4/Get-4D-folder.301-4982857.en.html) command) for maintenance log files and in cases where data folder is read-only.
