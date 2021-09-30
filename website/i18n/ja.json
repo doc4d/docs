@@ -17,6 +17,9 @@
       "Admin/licenses": {
         "title": "4D ライセンスの管理"
       },
+      "Admin/server-admin": {
+        "title": "4D Server 管理ウィンドウ"
+      },
       "Admin/tls": {
         "title": "TLSプロトコル (HTTPS)"
       },
@@ -27,10 +30,10 @@
         "title": "BLOB"
       },
       "API/ClassClass": {
-        "title": "Class"
+        "title": "クラス"
       },
       "API/CollectionClass": {
-        "title": "Collection"
+        "title": "コレクション"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -39,7 +42,7 @@
         "title": "DataClassAttribute"
       },
       "API/DataClassClass": {
-        "title": "DataClass"
+        "title": "データクラス"
       },
       "API/DataStoreClass": {
         "title": "DataStore"
@@ -54,7 +57,7 @@
         "title": "Email"
       },
       "API/EntityClass": {
-        "title": "Entity"
+        "title": "エンティティ"
       },
       "API/EntitySelectionClass": {
         "title": "EntitySelection"
@@ -81,7 +84,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "Session"
+        "title": "セッション"
       },
       "API/SignalClass": {
         "title": "Signal"
@@ -220,7 +223,7 @@
         "title": "リモートマシンからのデバッグ"
       },
       "Desktop/building": {
-        "title": "プロジェクトパッケージのビルド"
+        "title": "アプリケーションビルド"
       },
       "Desktop/clientServer": {
         "title": "クライアント/サーバー管理"
@@ -718,6 +721,9 @@
       "Project/compiler": {
         "title": "コンパイル"
       },
+      "Project/components": {
+        "title": "4D コンポーネントライブラリ"
+      },
       "Project/creating": {
         "title": "プロジェクトを開発する"
       },
@@ -896,7 +902,7 @@
       "Form Object Properties": "フォームオブジェクトプロパティ",
       "Form Events": "フォームイベント",
       "Menus": "メニュー",
-      "Build application": "アプリケーションビルド"
+      "Build Application": "アプリケーションビルド"
     }
   },
   "pages-strings": {
@@ -920,6 +926,8 @@
     "License Management|no description given": "ライセンス管理",
     "Build Application|no description given": "アプリケーションビルド",
     "Web Administration|no description given": "Web 管理",
+    "4D Server Administration Window|no description given": "4D Server 管理ウィンドウ",
+    "4D Components Library|no description given": "4D コンポーネントライブラリ",
     "Client/Server|no description given": "クライアント/サーバー",
     "TLS Protocol (HTTPS)|no description given": "TLSプロトコル (HTTPS)",
     "Debugging|no description given": "デバッガー",

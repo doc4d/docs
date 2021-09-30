@@ -1,6 +1,6 @@
 ---
 id: building
-title: Générer un package projet
+title: Générateur d'application
 ---
 
 4D inclut un générateur d’application pour créer un package de projet (version finale). Ce générateur simplifie le processus de finalisation et de déploiement des applications compilées 4D. Il gère automatiquement les fonctionnalités spécifiques de différents systèmes d'exploitation et facilite le déploiement d'applications client-serveur.
@@ -17,16 +17,18 @@ Le générateur d'applications vous permet de :
 > Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. Vous pouvez néanmoins créer des applications spécifiques qui prennent en charge les modifications locales en utilisant la clé XML du `PackProject` (voir [doc.4d.com](https://doc.4d.com)).
 
 
-## Aperçu du générateur d'application
+## Aperçu
 
 Générer un package de projet peut être réalisée à l'aide de :
 
 - soit la commande
 `BUILD APPLICATION<code></a>,</li>
-<li>soit la<a href="#application-builder"> fenêtre Générateur d'application</a>.</li>
+<li>or the <a href="#application-builder">Build Application dialog</a>.</li>
 </ul>
 
-<p spaces-before="0">Pour afficher la boîte de dialogue du générateur d'application, sélectionnez <strong x-id="1">Développement</strong> > <strong x-id="1">Générer l'application...</strong> dans la barre de menus.</p>
+<h3 spaces-before="0">Build application dialog</h3>
+
+<p spaces-before="0">To display the Build application dialog, select <strong x-id="1">Design</strong> &#062; <strong x-id="1">Build Application...</strong> from the menu bar.</p>
 
 <p spaces-before="0"><img src="assets/en/Project/buildappProj.png" alt="" /></p>
 
@@ -66,7 +68,6 @@ Générer un package de projet peut être réalisée à l'aide de :
   
 
 
-
 ## Nom de l'application et dossier de destination
 
 ![](assets/en/Project/buidappstructureProj.png)
@@ -96,13 +97,13 @@ Cette fonctionnalité crée un fichier *.4dz* dans un dossier *Compiled Database
 
 *\<destination\>/Compiled Database/MyProject/MyProject.4dz*
 
-
-
-> Un fichier .4dz est essentiellement une version compressée du dossier du projet. .4dz files can be used by 4D Server, 4D Volume license (merged applications), and 4D. La taille compacte et optimisée des fichiers .4dz facilite le déploiement des packages de projet.  
+Un fichier .4dz est essentiellement une version compressée du dossier du projet. .4dz files can be used by 4D Server, 4D Volume license (merged applications), and 4D. La taille compacte et optimisée des fichiers .4dz facilite le déploiement des packages de projet.  
 
 
 
 > When generating .4dz files, 4D uses a **standard** zip format by default. The advantage of this format is that it is easily readable by any unzip tool. If you do not want to use this standard format, add the `UseStandardZipFormat` XML key with value `False` in your [`buildApp.4DSettings`](#build-application-settings) file (for more information, see the *4D XML Keys Backup* manual on [doc.4d.com](https://doc.4d.com)).
+
+
 
 
 
@@ -303,6 +304,24 @@ Utilisée pour indiquer le numéro de version courante de l'application génér�
 #### Data linking mode
 
 This option lets you choose the linking mode between the merged application and the local data file. 
+
+
+
+#### Allow connection of Silicon Mac clients
+
+When building a server on Windows, check this option to allow Apple Silicon clients to connect to your server application. You can then specify a path to the structure compiled for Apple Silicon/Intel.
+
+To allow Apple Silicon clients to connect to a Server application built on Windows, you must first build a client application on macOS, with a project compiled for Apple Silicon and Intel. This automatically creates a compiled structure, identical to the one created with the **[Build compiled structure](#build-compiled-structure)** option (without the related folders). 
+
+Then, you can copy that structure to your Windows machine, and use it to build the server application: 
+
+![](assets/en/Desktop/allow-mac-clients.png)
+
+
+
+#### Compiled structure location
+
+Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
 
 
 
