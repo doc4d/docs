@@ -61,7 +61,7 @@ If `varType` is omitted, a variable of the **variant** type is created.
 
 La siguiente tabla enumera todos los valores `varType` soportados:
 
-| varType        | Contents                                 |
+| varType        | Contenido                                |
 | -------------- | ---------------------------------------- |
 | Texto          | Valor texto                              |
 | Fecha          | Valor fecha                              |
