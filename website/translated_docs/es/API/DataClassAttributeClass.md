@@ -159,7 +159,7 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 
 <!-- REF DataClassAttributeClass.indexed.Syntax -->
-**.indexed**: Booleano<!-- END REF -->
+**.indexed** : Boolean<!-- END REF -->
 
 
 #### Descripción
@@ -185,7 +185,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 
 
 <!-- REF DataClassAttributeClass.inverseName.Syntax -->
-**.inverseName**: Texto<!-- END REF -->
+**.inverseName** : Text<!-- END REF -->
 
 
 #### Descripción
@@ -279,7 +279,7 @@ Given the following table and relation:
 
 
 <!-- REF DataClassAttributeClass.mandatory.Syntax -->
-**.mandatory**: Booleano<!-- END REF -->
+**.mandatory** : Boolean<!-- END REF -->
 
 
 #### Descripción
@@ -363,7 +363,7 @@ For example, computed attributes without [`set` function](ORDA/ordaClasses.md#fu
 
 
 <!-- REF DataClassAttributeClass.relatedDataClass.Syntax -->
-**.relatedDataClass**: Text<!-- END REF -->
+**.relatedDataClass** : Text<!-- END REF -->
 
 
 #### Descripción
