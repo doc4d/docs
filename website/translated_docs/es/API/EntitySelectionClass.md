@@ -8,7 +8,7 @@ An entity selection is an object containing one or more reference(s) to [entitie
 
 Entity selections can be created from existing selections using various functions of the [`DataClass` class](DataClassClass.md) such as [`.all()`](DataClassClass.md#all) or [`.query()`](DataClassClass.md#query), or functions of the `EntityClass` class itself, such as [`.and()`](#and) or [`orderBy()`](#orderby). You can also create blank entity selections using the [`dataClass.newSelection()`](DataClassClass.md#newselection) function or the [`Create new selection`](#create-new-selection) command.
 
-### Summary
+### Resumen
 
 |                                                                                                                                                                                                                         |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,9 +92,9 @@ $employees:=Create entity selection([Employee])
 ## &#91;*index*&#93;
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -145,9 +145,9 @@ Note that the corresponding entity is reloaded from the datastore.
 ## .*attributeName*
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF EntitySelectionClass.attributeName.Syntax -->
@@ -225,7 +225,7 @@ The resulting object is an entity selection of Employee with duplications remove
 ## .add()
 
 <details><summary>Histórico</summary>
-| Version | Changes                                   |
+| Versión | Modificaciones                            |
 | ------- | ----------------------------------------- |
 | v18 R5  | Only supports alterable entity selections |
 | v17     | Añadidos                                  |
@@ -293,9 +293,9 @@ Calls to the function can be chained:
 ## .and()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 </details>
 
 <!-- REF #EntitySelectionClass.and().Syntax -->
@@ -359,7 +359,7 @@ We want to have a selection of employees named "Jones" who live in New York:
 ## .average()
 
 <details><summary>Histórico</summary>
-| Version | Changes                                     |
+| Versión | Modificaciones                              |
 | ------- | ------------------------------------------- |
 | v18 R6  | Returns undefined if empty entity selection |
 | v17     | Añadidos                                    |
@@ -412,9 +412,9 @@ We want to obtain a list of employees whose salary is higher than the average sa
 ## .contains()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -460,9 +460,9 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
 ## .count()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -505,9 +505,9 @@ We want to find out the total number of employees for a company without counting
 ## .copy()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 
 </details>
 
@@ -568,9 +568,9 @@ Then this entity selection is updated with products and you want to share the pr
 ## .distinct()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -593,7 +593,7 @@ The returned collection is automatically sorted. **Null** values are not returne
 
 In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
 
-1.  booleans
+1.  booleanos
 2.  strings
 3.  numbers
 4.  fechas
@@ -630,9 +630,9 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 ## .drop()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -690,9 +690,9 @@ Example with the `dk stop dropping on first error` option:
 ## .extract()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R3  | Añadidos       |
 
 </details>
 
@@ -793,9 +793,9 @@ Given the following table and relation:
 ## .first()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -850,9 +850,9 @@ There is, however, a difference between both statements when the selection is em
 ## .getDataClass()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 
 </details>
 
@@ -901,9 +901,9 @@ The following generic code duplicates all entities of the entity selection:
 
 <details><summary>Histórico</summary>
 
-| Version | Changes  |
-| ------- | -------- |
-| v18 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R5  | Añadidos       |
 
 </details>
 
@@ -943,9 +943,9 @@ Form.products.add(Form.product)
 
 <details><summary>Histórico</summary>
 
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -996,9 +996,9 @@ For more information, please refer to [Ordered or unordered entity selection](OR
 ## .last()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1044,9 +1044,9 @@ If the entity selection is empty, the function returns Null.
 ## .length
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1077,7 +1077,7 @@ Entity selections always have a `.length` property.
 ## .max()
 
 <details><summary>Histórico</summary>
-| Version | Changes                                     |
+| Versión | Modificaciones                              |
 | ------- | ------------------------------------------- |
 | v17     | Añadidos                                    |
 | v18 R6  | Returns undefined if empty entity selection |
@@ -1129,7 +1129,7 @@ We want to find the highest salary among all the female employees:
 ## .min()
 
 <details><summary>Histórico</summary>
-| Version | Changes                                     |
+| Versión | Modificaciones                              |
 | ------- | ------------------------------------------- |
 | v17     | Añadidos                                    |
 | v18 R6  | Returns undefined if empty entity selection |
@@ -1179,9 +1179,9 @@ In this example, we want to find the lowest salary among all the female employee
 ## .minus()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1245,9 +1245,9 @@ We want to have a selection of female employees named "Jones" who live in New Yo
 ## .or()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1305,9 +1305,9 @@ If the original entity selection and the parameter are not related to the same d
 ## .orderBy()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1380,9 +1380,9 @@ You can add as many objects in the criteria collection as necessary.
 ## .orderByFormula( )
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R6  | Añadidos       |
 
 </details>
 
@@ -1414,7 +1414,7 @@ The *formulaString* or *formulaObj* is executed for each entity of the entity se
 
 By default if you omit the *sortOrder* parameter, the resulting entity selection is sorted in ascending order. Optionnally, you can pass one of the following values in the *sortOrder* parameter:
 
-| Constante     | Valor | Comment                        |
+| Constante     | Valor | Comentario                     |
 | ------------- | ----- | ------------------------------ |
 | dk ascending  | 0     | Ascending sort order (default) |
 | dk descending | 1     | Descending sort order          |
@@ -1501,7 +1501,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 ## .query()
 
 <details><summary>Histórico</summary>
-| Version | Changes                            |
+| Versión | Modificaciones                     |
 | ------- | ---------------------------------- |
 | v17 R6  | Support of Formula parameters      |
 | v17 R5  | Support of placeholders for values |
@@ -1559,9 +1559,9 @@ More examples of queries can be found in the DataClass [`.query()`](DataClassCla
 ## .queryPath
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1583,9 +1583,9 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 ## .queryPlan
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1606,9 +1606,9 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 ## .refresh()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R3  | Añadidos       |
 
 </details>
 
@@ -1685,9 +1685,9 @@ A list box displays the Form.students entity selection and several clients work 
 ## .selected()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R3  | Añadidos       |
 
 </details>
 
@@ -1753,9 +1753,9 @@ $result2:=$invoices.selected($creditSel)
 ## .slice()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1812,9 +1812,9 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 ## .sum( )
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 
 </details>
@@ -1863,9 +1863,9 @@ $sum:=$sel.sum("salary")
 ## .toCollection( )
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17     | Añadidos       |
 
 </details>
 
@@ -1880,7 +1880,7 @@ $sum:=$sel.sum("salary")
 | options      | Integer    | -> | `dk with primary key`: adds the primary key<br>`dk with stamp`: adds the stamp |
 | begin        | Integer    | -> | Designates the starting index                                                        |
 | howMany      | Integer    | -> | Number of entities to extract                                                        |
-| Resultado    | Collection | <- | Collection of objects containing attributes and values of entity selection           |
+| Resultado    | Collection | <- | Colección de objetos que contienen atributos y valores de la selección de entidades  |
 <!-- END REF -->
 
 #### Descripción
