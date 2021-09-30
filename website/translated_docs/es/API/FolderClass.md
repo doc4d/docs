@@ -50,9 +50,9 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 ## Folder
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #_command_.Folder.Syntax -->
@@ -82,7 +82,7 @@ In the *path* parameter, pass a folder path string. You can use a custom string 
 
 By default, 4D expects a path expressed with the POSIX syntax. If you work with platform pathnames (Windows or macOS), you must declare it using the *pathType* parameter. The following constants are available:
 
-| Constante        | Valor | Comment                                                                                 |
+| Constante        | Valor | Comentario                                                                              |
 | ---------------- | ----- | --------------------------------------------------------------------------------------- |
 | fk platform path | 1     | Path expressed with a platform-specific syntax (mandatory in case of platform pathname) |
 | fk posix path    | 0     | Path expressed with POSIX syntax (default)                                              |
@@ -91,7 +91,7 @@ By default, 4D expects a path expressed with the POSIX syntax. If you work with 
 
 In the *folderConstant* parameter, pass a 4D built-in or system folder, using one of the following constants:
 
-| Constante                  | Valor | Comment                                                                                             |
+| Constante                  | Valor | Comentario                                                                                          |
 | -------------------------- | ----- | --------------------------------------------------------------------------------------------------- |
 | fk applications folder     | 116   |                                                                                                     |
 | fk data folder             | 9     | Associated filesystem: "/DATA"                                                                      |
@@ -113,9 +113,9 @@ If the command is called from a component, pass the optional * parameter to get 
 ## 4D.Folder.new()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #4D.Folder.new().Syntax -->**4D.Folder.new** ( *path* : Text { ; *pathType* : Integer }{ ; *\** } ) : 4D.Folder<br>**4D.Folder.new** ( *folderConstant* : Integer { ; *\** } ) : 4D.Folder<!-- END REF -->
@@ -136,9 +136,9 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 ## .create()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -196,9 +196,9 @@ End if
 ## .createAlias()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -225,7 +225,7 @@ Pass the name of the alias or shortcut to create in the *aliasName* parameter.
 
 By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. The following constants are available:
 
-| Constante          | Valor | Comment                    |
+| Constante          | Valor | Comentario                 |
 | ------------------ | ----- | -------------------------- |
 | `fk alias link`    | 0     | Alias link (default)       |
 | `fk symbolic link` | 1     | Symbolic link (macOS only) |
@@ -258,9 +258,9 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 ## .delete()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -283,7 +283,7 @@ The `.delete()` function <!-- REF #FolderClass.delete().Summary -->deletes the f
 
 By default, for security reasons, if you omit the option parameter, `.delete( )` only allows empty folders to be deleted. If you want the command to be able to delete folders that are not empty, you must use the option parameter with one of the following constants:
 
-| Constante              | Valor | Comment                                          |
+| Constante              | Valor | Comentario                                       |
 | ---------------------- | ----- | ------------------------------------------------ |
 | `Delete only if empty` | 0     | Deletes folder only when it is empty             |
 | `Delete with contents` | 1     | Deletes folder along with everything it contains |
@@ -374,9 +374,9 @@ When `Delete with contents` is passed:
 ## .moveTo()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -444,9 +444,9 @@ You want to move and rename a folder:
 ## .rename()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!--REF #FolderClass.rename().Syntax -->
