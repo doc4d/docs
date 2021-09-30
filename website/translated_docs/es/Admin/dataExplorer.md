@@ -131,7 +131,7 @@ With date attributes, you can enter the date to use through a datepicker widget 
 
 ![alt-text](assets/en/Admin/DEFilter2.png)
 
-#### Booleans
+#### Booleanos
 
 When you click on a boolean attribute area, you can filter on **true**/**false** values but also on **null**/**not null** values:
 
