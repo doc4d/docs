@@ -15,7 +15,7 @@ Web server objects are instantiated with the [`WEB Server`](#web-server) command
 They provide the following properties and functions:
 
 
-### Summary
+### Resumen
 |                                                                                                                                                                                                                                      |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [<!-- INCLUDE #WebServerClass.accessKeyDefined.Syntax -->](#accesskeydefined)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #WebServerClass.accessKeyDefined.Summary -->|
@@ -59,7 +59,7 @@ They provide the following properties and functions:
 ## WEB Server
 
 <details><summary>Histórico</summary>
-| Version | Changes                            |
+| Versión | Modificaciones                     |
 | ------- | ---------------------------------- |
 | v18 R3  | Añadidos                           |
 | v19     | support for .sessionCookieSameSite |
@@ -83,7 +83,7 @@ The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the d
 
 By default, if the *option* parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the *option* parameter:
 
-| Constante                      | Valor | Comment                                                  |
+| Constante                      | Valor | Comentario                                               |
 | ------------------------------ | ----- | -------------------------------------------------------- |
 | `Web server database`          | 1     | Current database Web server (default if omitted)         |
 | `Web server host database`     | 2     | Web server of the host database of a component           |
@@ -107,9 +107,9 @@ From your component, you want to know if the Web server of the host database is 
 ## WEB Server list
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R3  | Añadidos       |
 </details>
 
 <!-- REF #_command_.WEB Server list.Syntax -->
@@ -728,9 +728,9 @@ The <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" field of the se
 ## .sessionCookieSameSite
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!-- REF #WebServerClass.sessionCookieSameSite.Syntax -->
@@ -769,9 +769,9 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 ## .start()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R3  | Añadidos       |
 </details>
 
 <!-- REF #WebServerClass.start().Syntax -->
@@ -834,9 +834,9 @@ The function returns an object describing the Web server launch status. This obj
 ## .stop()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R3  | Añadidos       |
 </details>
 
 <!-- REF #WebServerClass.stop().Syntax -->
