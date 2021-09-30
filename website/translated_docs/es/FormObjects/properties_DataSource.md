@@ -39,17 +39,17 @@ For example, given a choice list containing "France, Germany, Italy" that is ass
 ---
 ## Choice List
 
-Associates a choice list with an object. It can be a choice list name (a list reference) or a collection of default values.
+Associates a choice list with an object. Puede ser un nombre de lista de elección (una referencia de lista) o una colección de valores por defecto.
 
 You can also associate choice lists to objects using the [OBJECT SET LIST BY NAME](https://doc.4d.com/4dv19/help/command/en/page237.html) or [OBJECT SET LIST BY REFERENCE](https://doc.4d.com/4dv19/help/command/en/page1266.html) commands.
 
 
 #### Gramática JSON
 
-| Nombre     | Tipos de datos   | Valores posibles                                    |
-| ---------- | ---------------- | --------------------------------------------------- |
-| choiceList | list, collection | A list of possible values                           |
-| lista      | list, collection | A list of possible values (hierarchical lists only) |
+| Nombre     | Tipos de datos   | Valores posibles                                              |
+| ---------- | ---------------- | ------------------------------------------------------------- |
+| choiceList | list, collection | A list of possible values                                     |
+| lista      | list, collection | Una lista de valores posibles (listas jerárquicas únicamente) |
 
 
 #### Objetos soportados
