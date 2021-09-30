@@ -7,7 +7,7 @@ Session objects are returned by the [`Session`](#session) command when [scalable
 
 For detailed information about the session implementation, please refer to the [web server Sessions](WebServer/sessions.md) section.
 
-### Summary
+### Resumen
 
 
 |                                                                                                                                                                                                           |
@@ -27,9 +27,9 @@ For detailed information about the session implementation, please refer to the [
 ## Session
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #_command_.Session.Syntax -->
@@ -85,9 +85,9 @@ IP:port/4DACTION/action_Session
 ## .clearPrivileges()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 
 </details>
 
@@ -124,9 +124,9 @@ $isGuest:=Session.isGuest() //$isGuest is True
 ## .expirationDate
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 
 </details>
 
@@ -155,9 +155,9 @@ $expiration:=Session.expirationDate //eg "2021-11-05T17:10:42Z"
 ## .hasPrivilege()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #SessionClass.hasPrivilege().Syntax -->
@@ -195,9 +195,9 @@ End if
 ## .idleTimeout
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 
 </details>
 
@@ -237,9 +237,9 @@ End if
 ## .isGuest()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 
 </details>
 
@@ -275,9 +275,9 @@ End if
 ## .setPrivileges()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 
 </details>
 
@@ -340,9 +340,9 @@ End if
 ## .storage
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 
 </details>
 
@@ -382,9 +382,9 @@ End if
 ## .userName
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 
 </details>
 
