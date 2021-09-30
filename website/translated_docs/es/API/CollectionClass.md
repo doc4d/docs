@@ -22,7 +22,7 @@ A collection is initialized with:
 ```
 
 
-### Summary
+### Resumen
 
 
 |                                                                                                                                                                                                  |
@@ -132,7 +132,7 @@ You want to create a prefilled collection:
   //$filledColl=[33,"mike","november","->myPtr","2017-03-28T22:00:00.000Z"]
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 You create a new collection and then add a new element:
 
@@ -151,9 +151,9 @@ You create a new collection and then add a new element:
 ## `New shared collection`
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #_command_.New shared collection.Syntax -->
@@ -212,9 +212,9 @@ You can pass any number of values of the following supported types:
 ## .average()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.average().Syntax -->
@@ -274,9 +274,9 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
 ## .clear()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.clear().Syntax -->
@@ -313,9 +313,9 @@ $vSize:=$col.length //$vSize=0
 ## .combine()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.combine().Syntax -->
@@ -363,9 +363,9 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 ## .concat()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.concat().Syntax -->
@@ -407,7 +407,7 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 ## .copy()
 
 <details><summary>Histórico</summary>
-| Version | Changes                                            |
+| Versión | Modificaciones                                     |
 | ------- | -------------------------------------------------- |
 | v18 R3  | New *ck shared* option. New *groupWith* parameters |
 | v16 R6  | Añadidos                                           |
@@ -482,7 +482,7 @@ $sharedColl2:=New shared collection(New shared object("lastname";"Brown"))
  End use
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 We have a regular collection (*$lastnames*) and we want to put it in the **Storage** of the application. To do this, we must create a shared copy beforehand (*$sharedLastnames*).
 
@@ -500,7 +500,7 @@ Use(Storage)
 End use
 ```
 
-#### Example 4
+#### Ejemplo 4
 
 This example illustrates the use of the `ck resolve pointers` option:
 
@@ -533,9 +533,9 @@ This example illustrates the use of the `ck resolve pointers` option:
 ## .count()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.count().Syntax -->
@@ -581,9 +581,9 @@ If the collection contains objects, you can pass the *propertyPath* parameter. I
 ## .countValues()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.countValues().Syntax -->
@@ -639,7 +639,7 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 ```
 
 
-#### Example 3
+#### Ejemplo 3
 
 ```4d
  var $numbers; $letters : Collection
@@ -662,9 +662,9 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 ## .distinct()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.distinct().Syntax -->
@@ -717,9 +717,9 @@ If the collection contains objects, you can pass the *propertyPath* parameter to
 ## .equal()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.equal().Syntax -->
@@ -773,9 +773,9 @@ By default, a non-diacritical evaluation is performed. If you want the evaluatio
 ## .every()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.every().Syntax -->
@@ -869,9 +869,9 @@ End if
 ## .extract()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.extract().Syntax -->
@@ -884,7 +884,7 @@ End if
 | propertyPath | Texto      | -> | Object property path whose values must be extracted to the new collection                                                          |
 | targetpath   | Texto      | -> | Target property path or property name                                                                                              |
 | option       | Integer    | -> | `ck keep null`: include null properties in the returned collection (ignored by default). Parameter ignored if *targetPath* passed. |
-| Resultado    | Collection | <- | New collection containing extracted values                                                                                         |
+| Resultado    | Collection | <- | Nueva colección que contiene los valores extraídos                                                                                 |
 <!-- END REF -->
 
 
@@ -944,9 +944,9 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 ## .fill()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.fill().Syntax -->
@@ -1001,9 +1001,9 @@ In case of inconsistency, the following rules apply:
 ## .filter()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.filter().Syntax -->
@@ -1095,9 +1095,9 @@ The code for ***TypeLookUp*** is:
 ## .find()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.find().Syntax -->
@@ -1192,9 +1192,9 @@ The code for ***FindCity*** is:
 ## .findIndex()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 
@@ -1273,9 +1273,9 @@ The code for ***FindCity*** method is:
 ## .indexOf()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.indexOf().Syntax -->
@@ -1333,9 +1333,9 @@ Optionally, you can pass the index of collection from which to start the search 
 ## .indices()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.indices().Syntax -->
@@ -1389,9 +1389,9 @@ For a detailed description of the *queryString* and *value* parameters, please r
 ## .insert()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.insert().Syntax -->
@@ -1440,9 +1440,9 @@ Any type of element accepted by a collection can be inserted, even another colle
 ## .join()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.join().Syntax -->
@@ -1484,9 +1484,9 @@ By default, null or empty elements of the collection are returned in the resulti
 ## .lastIndexOf()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.lastIndexOf().Syntax -->
@@ -1543,9 +1543,9 @@ Optionally, you can pass the index of collection from which to start a reverse s
 ## .length
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R5  | Añadidos       |
 </details>
 
 <!-- REF #collection.length.Syntax -->
@@ -1578,9 +1578,9 @@ The `.length` property is initialized when the collection is created. Adding or 
 ## .map()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.map().Syntax -->
@@ -1644,9 +1644,9 @@ Here is the ***Percentage*** method:
 ## .max()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.max().Syntax -->
@@ -1694,9 +1694,9 @@ If the collection is empty, `.max()` returns *Undefined*.
 ## .min()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.min().Syntax -->
@@ -1744,9 +1744,9 @@ If the collection is empty, `.min()` returns *Undefined*.
 ## .orderBy()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.orderBy().Syntax -->
@@ -1786,7 +1786,7 @@ You can also pass a criteria parameter to define how the collection elements mus
 
 *   *ascOrDesc*: Integer. You pass one of the following constants from the **Objects and collections** theme:
 
-    | Constant      | Tipo         | Valor | Comment                                           |
+    | Constante     | Tipo         | Valor | Comentario                                        |
     | ------------- | ------------ | ----- | ------------------------------------------------- |
     | ck ascending  | Entero largo | 0     | Elements are ordered in ascending order (default) |
     | ck descending | Entero largo | 1     | Elements are ordered in descending order          |
@@ -1796,10 +1796,10 @@ You can also pass a criteria parameter to define how the collection elements mus
 If the collection contains elements of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
 
 1.  null
-2.  booleans
+2.  booleanos
 3.  strings
 4.  numbers
-5.  objects
+5.  objetos
 6.  collections
 7.  fechas
 
@@ -1845,7 +1845,7 @@ Ordering a collection of objects with a property path:
 ```
 
 
-#### Example 3
+#### Ejemplo 3
 
 Ordering a collection of objects using a collection of criteria objects:
 
@@ -1883,9 +1883,9 @@ Ordering with a property path:
 ## .orderByMethod()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.orderByMethod().Syntax -->
@@ -1956,7 +1956,7 @@ Here is the code for ***WordLength***:
  $1.result:=Length(String($1.value))>Length(String($1.value2))
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 You want to sort a collection by character code or language:
 
@@ -1992,9 +1992,9 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 ## .pop()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 
@@ -2040,9 +2040,9 @@ When applied to an empty collection, `.pop()` returns ***undefined***.
 ## .push()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.push().Syntax -->
@@ -2098,7 +2098,7 @@ You want to sort the resutling collection:
 ## .query()
 
 <details><summary>Histórico</summary>
-| Version | Changes                  |
+| Versión | Modificaciones           |
 | ------- | ------------------------ |
 | v17 R5  | Support of querySettings |
 | v16 R6  | Añadidos                 |
@@ -2192,7 +2192,7 @@ This example returns persons hired more than 90 days ago:
 ```
 
 
-#### Example 3
+#### Ejemplo 3
 
 More examples of queries can be found in the `dataClass.query()` page. 
 
@@ -2206,9 +2206,9 @@ More examples of queries can be found in the `dataClass.query()` page.
 ## .reduce()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.reduce().Syntax -->
@@ -2296,9 +2296,9 @@ With the following ***Flatten*** method:
 ## .remove()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.remove().Syntax -->
@@ -2357,9 +2357,9 @@ If you try to remove an element from an empty collection, the method does nothin
 
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 
@@ -2384,7 +2384,7 @@ The `.resize()` function <!-- REF #collection.resize().Summary -->sets the colle
 *   If *size* < collection length, exceeding elements are removed from the collection.
 *   If *size* > collection length, the collection length is increased to size.
 
-By default, new elements are filled will **null** values. You can specify the value to fill in added elements using the *defaultValue* parameter.
+Por defecto, los nuevos elementos se llenan con valores **null**. You can specify the value to fill in added elements using the *defaultValue* parameter.
 
 #### Ejemplo
 
@@ -2416,9 +2416,9 @@ By default, new elements are filled will **null** values. You can specify the va
 ## .reverse()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.reverse().Syntax -->
@@ -2455,9 +2455,9 @@ The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a de
 ## .shift()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.shift().Syntax -->
@@ -2499,9 +2499,9 @@ If the collection is empty, this method does nothing.
 ## .slice()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.slice().Syntax -->
@@ -2550,9 +2550,9 @@ The returned collection contains the element specified by *startFrom* and all su
 ## .some()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.some().Syntax -->
@@ -2631,9 +2631,9 @@ With the following *NumberGreaterThan0* method:
 ## .sort()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.sort().Syntax -->
@@ -2670,10 +2670,10 @@ If you want to sort the collection elements in some other order or sort any type
 If the collection contains elements of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
 
 1.  null
-2.  booleans
+2.  booleanos
 3.  strings
 4.  numbers
-5.  objects
+5.  objetos
 6.  collections
 7.  fechas
 
@@ -2695,7 +2695,7 @@ If the collection contains elements of different types, they are first grouped b
  $col2:=$col.push(5;3;1;4;6;2).sort() //$col2=[1,2,3,4,5,6,10,20]
 ```
 
-#### Example 3
+#### Ejemplo 3
 
 ```4d
  var $col; $col2; $col3 : Collection
@@ -2719,9 +2719,9 @@ If the collection contains elements of different types, they are first grouped b
 ## .sum()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.sum().Syntax -->
@@ -2781,9 +2781,9 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
 ## .unshift()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v16 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v16 R6  | Añadidos       |
 </details>
 
 <!-- REF #collection.unshift().Syntax -->
