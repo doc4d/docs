@@ -56,9 +56,9 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 ## File
 
 <details><summary>Histórico</summary>
-| Versión | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!-- REF #_command_.File.Syntax -->
@@ -88,7 +88,7 @@ In the *path* parameter, pass a file path string. You can use a custom string or
 
 By default, 4D expects a path expressed with the POSIX syntax. If you work with platform pathnames (Windows or macOS), you must declare it using the *pathType* parameter. The following constants are available:
 
-| Constante        | Valor | Comment                                                                                 |
+| Constante        | Valor | Comentario                                                                              |
 | ---------------- | ----- | --------------------------------------------------------------------------------------- |
 | fk platform path | 1     | Path expressed with a platform-specific syntax (mandatory in case of platform pathname) |
 | fk posix path    | 0     | Path expressed with POSIX syntax (default)                                              |
@@ -97,7 +97,7 @@ By default, 4D expects a path expressed with the POSIX syntax. If you work with 
 
 In the *fileConstant* parameter, pass a 4D built-in or system file, using one of the following constants:
 
-| Constante                         | Valor | Comment                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Constante                         | Valor | Comentario                                                                                                                                                                                                                                                                                                                                                                                               |
 | --------------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Backup history file               | 19    | Backup history file (see Configuration and trace files). Stored in the backup destination folder.                                                                                                                                                                                                                                                                                                        |
 | Backup log file                   | 13    | Current backup journal file. Stored in the application Logs folder.                                                                                                                                                                                                                                                                                                                                      |
@@ -130,9 +130,9 @@ If the command is called from a component, pass the optional * parameter to get 
 ## 4D.File.new()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R6  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R6  | Añadidos       |
 </details>
 
 <!-- REF #4D.File.new().Syntax -->**4D.File.new** ( *path* : Text { ; *pathType* : Integer }{ ; *\** } ) : 4D.File<br>**4D.File.new** ( *fileConstant* : Integer { ; *\** } ) : 4D.File<!-- END REF -->
@@ -153,9 +153,9 @@ The `4D.File.new()` function <!-- REF #4D.File.new().Summary -->creates and retu
 ## .create()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!--REF file.create().Note -->
@@ -200,9 +200,9 @@ Creation of a preferences file in the database folder:
 ## .createAlias()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 <!--REF #FileClass.createAlias().Syntax -->
@@ -226,7 +226,7 @@ Pass the name of the alias or shortcut to create in the *aliasName* parameter.
 
 By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. The following constants are available:
 
-| Constante          | Valor | Comment                    |
+| Constante          | Valor | Comentario                 |
 | ------------------ | ----- | -------------------------- |
 | `fk alias link`    | 0     | Alias link (default)       |
 | `fk symbolic link` | 1     | Symbolic link (macOS only) |
@@ -264,9 +264,9 @@ You want to create an alias to a file in your database folder:
 ## .delete()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -323,9 +323,9 @@ You want to delete a specific file in the database folder:
 ## .getAppInfo()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!--REF #FileClass.getAppInfo().Syntax -->
@@ -442,9 +442,9 @@ ALERT($info.Copyright)
 ## .moveTo()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -510,9 +510,9 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 ## .rename()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -554,9 +554,9 @@ You want to rename "ReadMe.txt" in "ReadMe_new.txt":
 ## .setAppInfo()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v19     | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19     | Añadidos       |
 </details>
 
 <!--REF #FileClass.setAppInfo().Syntax -->
@@ -638,9 +638,9 @@ $infoPlistFile.setAppInfo($info)
 ## .setContent()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -676,9 +676,9 @@ The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrit
 
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R5  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R5  | Añadidos       |
 </details>
 
 
@@ -715,7 +715,7 @@ If a Byte Order Mark (BOM) exists for the character set, 4D inserts it into the 
 
 In *breakMode*, you can pass a number indicating the processing to apply to end-of-line characters before saving them in the file. The following constants, found in the **System Documents** theme are available:
 
-| Constante                     | Valor | Comment                                                                                                                                                        |
+| Constante                     | Valor | Comentario                                                                                                                                                     |
 | ----------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Document unchanged`          | 0     | No processing                                                                                                                                                  |
 | `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) in macOS, CRLF (carriage return + line feed) in Windows |
