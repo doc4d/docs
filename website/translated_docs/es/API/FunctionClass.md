@@ -95,7 +95,7 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 
 
 
-### Summary
+### Resumen
 
 
 |                                                                                                                                                                               |
@@ -110,7 +110,7 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 ## Formula
 
 <details><summary>Histórico</summary>
-| Version | Changes                          |
+| Versión | Modificaciones                   |
 | ------- | -------------------------------- |
 | v17 R6  | Renamed (New formula -> Formula) |
 | v17 R3  | Añadidos                         |
@@ -187,7 +187,7 @@ A formula using local variables:
 ```
 
 
-#### Example 3
+#### Ejemplo 3
 
 A simple formula using parameters:
 
@@ -197,7 +197,7 @@ A simple formula using parameters:
 ```
 
 
-#### Example 4
+#### Ejemplo 4
 
 A formula using a project method with parameters:
 
@@ -207,7 +207,7 @@ A formula using a project method with parameters:
 ```
 
 
-#### Example 5
+#### Ejemplo 5
 
 Using `This`:
 
@@ -218,7 +218,7 @@ Using `This`:
  $result:=$o.fullName() //returns "John Smith"
 ```
 
-#### Example 6
+#### Ejemplo 6
 
 Calling a formula using object notation:
 
@@ -245,7 +245,7 @@ Calling a formula using object notation:
 ## Formula from string
 
 <details><summary>Histórico</summary>
-| Version | Changes                                                |
+| Versión | Modificaciones                                         |
 | ------- | ------------------------------------------------------ |
 | v17 R6  | Renamed New formula from string -> Formula from string |
 | v17 R3  | Añadidos                                               |
@@ -301,20 +301,20 @@ The following code will create a dialog accepting a formula in text format:
 ## .apply()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R3  | Añadidos       |
 </details>
 
 <!-- REF #FunctionClass.apply().Syntax -->
 **.apply**() : any<br>**.apply**( *thisObj* : Object { ; *formulaParams* : Collection } ) : any<!-- END REF -->
 
 <!-- REF #FunctionClass.apply().Params -->
-| Parámetros    | Tipo       |    | Descripción                                                             |
-| ------------- | ---------- |:--:| ----------------------------------------------------------------------- |
-| thisObj       | Objeto     | -> | Object to be returned by the This command in the formula                |
-| formulaParams | Collection | -> | Collection of values to be passed as $1...$n when `formula` is executed |
-| Resultado     | any        | <- | Value from formula execution                                            |
+| Parámetros    | Tipo       |    | Descripción                                                                   |
+| ------------- | ---------- |:--:| ----------------------------------------------------------------------------- |
+| thisObj       | Objeto     | -> | Object to be returned by the This command in the formula                      |
+| formulaParams | Collection | -> | Colección de valores que se pasan como $1...$n cuando se ejecuta la `fórmula` |
+| Resultado     | any        | <- | Value from formula execution                                                  |
 <!-- END REF -->
 
 
@@ -362,9 +362,9 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 ## .call()
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v17 R3  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v17 R3  | Añadidos       |
 </details>
 
 <!-- REF #FunctionClass.call().Syntax -->
@@ -413,9 +413,9 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 ## .source
 
 <details><summary>Histórico</summary>
-| Version | Changes  |
-| ------- | -------- |
-| v18 R2  | Añadidos |
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v18 R2  | Añadidos       |
 </details>
 
 <!-- REF #FunctionClass.source.Syntax -->
