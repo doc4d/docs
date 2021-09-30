@@ -18,6 +18,7 @@ The list of main updates in this documentation. For general information about ne
 - Users can now load a [log configuration file](Admin/debugLogFiles.md#using-a-log-configuration-file) using a button in the [server administration window](/Admin/server-admin.md#load-logs-configuration-file).
 - Handling [optional parameters](Concepts/parameters.md#optional-parameters) is more flexible in the 4D language.
 - Debugging web server sessions [is easier on 4D Server](WebServer/sessions.md#preemptive-mode). 
+- The new [4D NetKit](Project/components.md#list-of-4d-components) component allows you to connect to third-party APIs such as Microsoft Graph.
 
 
 ## 4D v19 R2
