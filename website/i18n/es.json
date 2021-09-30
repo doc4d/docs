@@ -81,7 +81,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "Session"
+        "title": "Sesión"
       },
       "API/SignalClass": {
         "title": "Signal"
@@ -214,7 +214,7 @@
         "title": "Breakpoints and Command Catching"
       },
       "Debugging/debugger": {
-        "title": "Debugger"
+        "title": "Depurador"
       },
       "Debugging/debugging-remote": {
         "title": "Debugging from remote machines"
