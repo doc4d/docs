@@ -53,8 +53,8 @@ title: ピクチャー
 *   [ボタン](FormObjects/button_overview.md)/[ラジオボタン](FormObjects/radio_overview.md)/[チェックボックス](FormObjects/checkbox_overview.md)
 *   [ピクチャーボタン](FormObjects/pictureButton_overview.md)/[ピクチャーポップアップメニュー](FormObjects/picturePopupMenu_overview.md)
 *   [タブコントロール](FormObjects/tabControl.md)
-*   [リストボックスヘッダー](FormObjects/listbox_overview.md#list-box-headers)
-*   [メニューアイコン](Menus/properties.md#item-icon)
+*   [リストボックスヘッダー](FormObjects/listbox_overview.md#リストボックスヘッダー)
+*   [メニューアイコン](Menus/properties.md#項目アイコン)
 
 
 
