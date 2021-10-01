@@ -42,7 +42,7 @@ title: DataStore
 **ds** { ( *localID* : Text ) } : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.ds.Params -->
-| 参照      | タイプ          |    | 説明                        |
+| 引数      | タイプ          |    | 説明                        |
 | ------- | ------------ | -- | ------------------------- |
 | localID | テキスト         | -> | 参照を取得したいリモートデータストアのローカルID |
 | 戻り値     | cs.DataStore | <- | データストア参照                  |
@@ -116,7 +116,7 @@ title: DataStore
 **Open datastore**( *connectionInfo* : Object ; *localID* : Text ) : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.Open datastore.Params -->
-| 参照             | タイプ          |    | 説明                                         |
+| 引数             | タイプ          |    | 説明                                         |
 | -------------- | ------------ | -- | ------------------------------------------ |
 | connectionInfo | オブジェクト       | -> | リモートデータストアへの接続に使用する接続プロパティ                 |
 | localID        | テキスト         | -> | ローカルアプリケーション内で、開かれたデータストアに対して割り当てる ID (必須) |
@@ -287,7 +287,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 **.cancelTransaction()**<!-- END REF -->
 
 <!-- REF #datastoreClass.cancelTransaction().Params -->
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 <!-- END REF -->
@@ -327,7 +327,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 
 <!-- REF #datastoreClass.encryptionStatus().Params -->
-| 参照  | タイプ    |    | 説明                           |
+| 引数  | タイプ    |    | 説明                           |
 | --- | ------ |:--:| ---------------------------- |
 | 戻り値 | オブジェクト | <- | カレントデータストアと、各テーブルの暗号化についての情報 |
 <!-- END REF -->
@@ -408,7 +408,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 **.getInfo()**: Object<!-- END REF -->
 
 <!-- REF #datastoreClass.getInfo().Params -->
-| 参照  | タイプ    |    | 説明           |
+| 引数  | タイプ    |    | 説明           |
 | --- | ------ |:--:| ------------ |
 | 戻り値 | オブジェクト | <- | データストアのプロパティ |
 <!-- END REF -->
@@ -488,7 +488,7 @@ user / password / timeout / tls を指定してリモートデータストアに
 **.getRequestLog()** : Collection<!-- END REF -->
 
 <!-- REF #datastoreClass.getRequestLog().Params -->
-| 参照  | タイプ    |    | 説明                                 |
+| 引数  | タイプ    |    | 説明                                 |
 | --- | ------ |:--:| ---------------------------------- |
 | 戻り値 | コレクション | <- | オブジェクトのコレクション (要素毎に一つのリクエストを記述します) |
 <!-- END REF -->
@@ -529,7 +529,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 **.isAdminProtected()** : Boolean<!-- END REF -->
 
 <!-- REF #datastoreClass.isAdminProtected().Params -->
-| 参照  | タイプ |    | 説明                                                         |
+| 引数  | タイプ |    | 説明                                                         |
 | --- | --- |:--:| ---------------------------------------------------------- |
 | 戻り値 | ブール | <- | データエクスプローラーへのアクセスが無効に設定されているの場合は true、有効の場合は false (デフォルト) |
 <!-- END REF -->
@@ -565,7 +565,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 **.makeSelectionsAlterable()**<!-- END REF -->
 
 <!-- REF #datastoreClass.makeSelectionsAlterable().Params -->
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 <!-- END REF -->
@@ -604,7 +604,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #datastoreClass.provideDataKey().Params -->
-| 参照            | タイプ    |    | 説明            |
+| 引数            | タイプ    |    | 説明            |
 | ------------- | ------ | -- | ------------- |
 | curPassPhrase | テキスト   | -> | カレントのパスフレーズ   |
 | curDataKey    | オブジェクト | -> | カレントのデータ暗号化キー |
@@ -687,7 +687,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #datastoreClass.setAdminProtection().Params -->
-| 参照     | タイプ |    | 説明                                                                            |
+| 引数     | タイプ |    | 説明                                                                            |
 | ------ | --- | -- | ----------------------------------------------------------------------------- |
 | status | ブール | -> | `webAdmin`ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト) |
 <!-- END REF -->
@@ -738,10 +738,10 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #datastoreClass.startRequestLog().Params -->
-| 参照     | タイプ     |    | 説明               |
+| 引数     | タイプ     |    | 説明               |
 | ------ | ------- | -- | ---------------- |
 | file   | 4D.File | -> | File オブジェクト      |
-| reqNum | 整数      | -> | メモリ内に保管するリクエストの数 |
+| reqNum | Integer | -> | メモリ内に保管するリクエストの数 |
 <!-- END REF -->
 
 
@@ -825,7 +825,7 @@ ORDA クライアントリクエストをメモリに記録します:
 **.startTransaction()**<!-- END REF -->
 
 <!-- REF #datastoreClass.startTransaction().Params -->
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 <!-- END REF -->
@@ -899,7 +899,7 @@ ORDA クライアントリクエストをメモリに記録します:
 **.stopRequestLog()**  <!-- END REF -->
 
 <!-- REF #datastoreClass.stopRequestLog().Params -->
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 <!-- END REF -->
@@ -936,7 +936,7 @@ ORDA クライアントリクエストをメモリに記録します:
 **.validateTransaction()**  <!-- END REF -->
 
 <!-- REF #datastoreClass.validateTransaction().Params -->
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 <!-- END REF -->
