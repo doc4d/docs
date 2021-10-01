@@ -68,7 +68,7 @@ A [web server class object](API/WebServerClass.md#web-server-object) contains th
 
 | Funciones                                | Parámetros        | Return value    | Descripción           |
 | ---------------------------------------- | ----------------- | --------------- | --------------------- |
-| [`start()`](API/WebServerClass.md#start) | settings (object) | status (object) | Starts the web server |
+| [`start()`](API/WebServerClass.md#start) | settings (object) | status (objeto) | Starts the web server |
 | [`stop()`](API/WebServerClass.md#start)  | -                 | -               | Stops the web server  |
 
 To start and stop a web server, just call the [`start()`](API/WebServerClass.md#start) and [`stop()`](API/WebServerClass.md#stop) functions of the web server object:
