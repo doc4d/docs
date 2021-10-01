@@ -92,7 +92,7 @@ title: Entity
 **.clone()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #entityClass.clone().Params -->
-| 参照  | タイプ       |    | 説明                  |
+| 引数  | タイプ       |    | 説明                  |
 | --- | --------- |:--:| ------------------- |
 | 戻り値 | 4D.Entity | <- | 同レコードを参照する新しいエンティティ |
 <!-- END REF -->
@@ -137,7 +137,7 @@ title: Entity
 
 
 <!-- REF #entityClass.diff().Params -->
-| 参照                  | タイプ       |    | 説明                  |
+| 引数                  | タイプ       |    | 説明                  |
 | ------------------- | --------- |:--:| ------------------- |
 | entityToCompare     | 4D.Entity | -> | 対象エンティティと比較するエンティティ |
 | attributesToCompare | コレクション    | -> | 比較する属性の名称           |
@@ -155,11 +155,11 @@ title: Entity
 
 エンティティの差異は、以下のプロパティを持つオブジェクトのコレクションとして返されます:
 
-| プロパティ名        | タイプ     | 説明                     |
-| ------------- | ------- | ---------------------- |
-| attributeName | String  | 属性名                    |
-| value         | 属性の型による | オリジナルエンティティの属性値        |
-| otherValue    | 属性の型による | *entityToCompare* の属性値 |
+| プロパティ名        | タイプ           | 説明                     |
+| ------------- | ------------- | ---------------------- |
+| attributeName | String        | 属性名                    |
+| value         | any - 属性の型による | オリジナルエンティティの属性値        |
+| otherValue    | any - 属性の型による | *entityToCompare* の属性値 |
 
 コレクションに含まれるのは異なる値を持っていた属性のみです。 差異が見つからない場合、`diff()` は空のコレクションを返します。
 
@@ -341,10 +341,10 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.drop**( {*mode* : Integer} ) : Object<!-- END REF -->
 
 <!-- REF #entityClass.drop().Params -->
-| 参照   | タイプ    |    | 説明                                                           |
-| ---- | ------ |:--:| ------------------------------------------------------------ |
-| mode | 整数     | -> | `dk force drop if stamp changed`: スタンプが変更されていた場合でも強制的にドロップする |
-| 戻り値  | オブジェクト | <- | ドロップの結果                                                      |
+| 引数   | タイプ     |    | 説明                                                           |
+| ---- | ------- |:--:| ------------------------------------------------------------ |
+| mode | Integer | -> | `dk force drop if stamp changed`: スタンプが変更されていた場合でも強制的にドロップする |
+| 戻り値  | オブジェクト  | <- | ドロップの結果                                                      |
 <!-- END REF -->
 
 #### 説明
@@ -361,26 +361,26 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 `.drop( )` によって返されるオブジェクトには以下のプロパティが格納されます:
 
-| プロパティ         |                     | タイプ           | 説明                                                                       |
-| ------------- | ------------------- | ------------- | ------------------------------------------------------------------------ |
-| success       |                     | boolean       | ドロップが成功した場合には true、それ以外は false                                           |
-|               |                     |               | ***エラーの場合にのみ利用可能:***                                                     |
-| status(*)     |                     | number        | エラーコード、以下参照                                                              |
-| statusText(*) |                     | text          | エラーの詳細、以下参照                                                              |
-|               |                     |               | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                         |
-| LockKindText  |                     | text          | "Locked by record"                                                       |
-| lockInfo      |                     | object        | ロック元についての情報                                                              |
-|               | task_id             | number        | プロセスID                                                                   |
-|               | user_name           | text          | マシン上でのセッションユーザー名                                                         |
-|               | user4d_alias        | text          | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
-|               | host_name           | text          | マシン名                                                                     |
-|               | task_name           | text          | プロセス名                                                                    |
-|               | client_version      | text          |                                                                          |
-|               |                     |               | ***深刻なエラーの場合にのみ利用可能 (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです):*** |
-| errors        |                     | オブジェクトのコレクション |                                                                          |
-|               | message             | text          | エラーメッセージ                                                                 |
-|               | component signature | text          | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                               |
-|               | errCode             | number        | エラーコード                                                                   |
+| プロパティ         |                     | タイプ                 | 説明                                                                       |
+| ------------- | ------------------- | ------------------- | ------------------------------------------------------------------------ |
+| success       |                     | boolean             | ドロップが成功した場合には true、それ以外は false                                           |
+|               |                     |                     | ***エラーの場合にのみ利用可能:***                                                     |
+| status(*)     |                     | number              | エラーコード、以下参照                                                              |
+| statusText(*) |                     | text                | エラーの詳細、以下参照                                                              |
+|               |                     |                     | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                         |
+| LockKindText  |                     | text                | "Locked by record"                                                       |
+| lockInfo      |                     | object              | ロック元についての情報                                                              |
+|               | task_id             | number              | プロセスID                                                                   |
+|               | user_name           | text                | マシン上でのセッションユーザー名                                                         |
+|               | user4d_alias        | text                | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
+|               | host_name           | text                | マシン名                                                                     |
+|               | task_name           | text                | プロセス名                                                                    |
+|               | client_version      | text                |                                                                          |
+|               |                     |                     | ***深刻なエラーの場合にのみ利用可能 (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです):*** |
+| errors        |                     | Object の Collection |                                                                          |
+|               | message             | text                | エラーメッセージ                                                                 |
+|               | component signature | text                | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                               |
+|               | errCode             | number              | エラーコード                                                                   |
 
 (\*) エラー時には *Result* オブジェクトの *status* あるいは *statusText* プロパティに以下のいずれかの値が返されます:
 
@@ -449,7 +449,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.first()**: 4D.Entity<!-- END REF -->
 
 <!-- REF #entityClass.first().Params -->
-| 参照  | タイプ       |    | 説明                                        |
+| 引数  | タイプ       |    | 説明                                        |
 | --- | --------- |:--:| ----------------------------------------- |
 | 戻り値 | 4D.Entity | <- | エンティティセレクションの先頭エンティティへの参照 (見つからなければ null) |
 <!-- END REF -->
@@ -488,7 +488,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.fromObject**( *filler* : Object )<!-- END REF -->
 
 <!-- REF #entityClass.fromObject().Params -->
-| 参照     | タイプ    |    | 説明                    |
+| 引数     | タイプ    |    | 説明                    |
 | ------ | ------ |:--:| --------------------- |
 | filler | オブジェクト | -> | エンティティの属性値を設定するオブジェクト |
 <!-- END REF -->
@@ -577,7 +577,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.getDataClass()** : 4D.DataClass<!-- END REF -->
 
 <!-- REF #entityClass.getDataClass().Params -->
-| 参照  | タイプ          |    | 説明                             |
+| 引数  | タイプ          |    | 説明                             |
 | --- | ------------ |:--:| ------------------------------ |
 | 戻り値 | 4D.DataClass | <- | エンティティが所属している DataClass オブジェクト |
 <!-- END REF -->
@@ -624,11 +624,11 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.getKey**( { *mode* : Integer } ) : Text<br>**.getKey**( { *mode* : Integer } ) : Integer<!-- END REF -->
 
 <!-- REF #entityClass.getKey().Params -->
-| 参照   | タイプ  |    | 説明                                                       |
-| ---- | ---- |:--:| -------------------------------------------------------- |
-| mode | 整数   | -> | `dk key as string`: プライマリーキーの型にかかわらず、プライマリーキーを文字列として返します |
-| 戻り値  | テキスト | <- | エンティティのテキスト型プライマリーキーの値                                   |
-| 戻り値  | 整数   | <- | エンティティの数値型プライマリーキーの値                                     |
+| 引数   | タイプ     |    | 説明                                                       |
+| ---- | ------- |:--:| -------------------------------------------------------- |
+| mode | Integer | -> | `dk key as string`: プライマリーキーの型にかかわらず、プライマリーキーを文字列として返します |
+| 戻り値  | テキスト    | <- | エンティティのテキスト型プライマリーキーの値                                   |
+| 戻り値  | Integer | <- | エンティティの数値型プライマリーキーの値                                     |
 
 <!-- END REF -->
 
@@ -668,7 +668,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.getSelection()**: 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #entityClass.getSelection().Params -->
-| 参照  | タイプ                |    | 説明                                      |
+| 引数  | タイプ                |    | 説明                                      |
 | --- | ------------------ |:--:| --------------------------------------- |
 | 戻り値 | 4D.EntitySelection | <- | エンティティが所属するエンティティセレクション (見つからなければ null) |
 <!-- END REF -->
@@ -712,9 +712,9 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.getStamp()** : Integer<!-- END REF -->
 
 <!-- REF #entityClass.getStamp().Params -->
-| 参照  | タイプ |    | 説明                                   |
-| --- | --- |:--:| ------------------------------------ |
-| 戻り値 | 整数  | <- | エンティティのスタンプ (エンティティが作成されたばかりの場合には 0) |
+| 引数  | タイプ     |    | 説明                                   |
+| --- | ------- |:--:| ------------------------------------ |
+| 戻り値 | Integer | <- | エンティティのスタンプ (エンティティが作成されたばかりの場合には 0) |
 <!-- END REF -->
 
 #### 説明
@@ -761,10 +761,10 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.indexOf**( { *entitySelection* : 4D.EntitySelection } ) : Integer<!-- END REF -->
 
 <!-- REF #entityClass.indexOf().Params -->
-| 参照              | タイプ                |    | 説明                            |
+| 引数              | タイプ                |    | 説明                            |
 | --------------- | ------------------ |:--:| ----------------------------- |
 | entitySelection | 4D.EntitySelection | -> | エンティティの位置を取得する対象のエンティティセレクション |
-| 戻り値             | 整数                 | <- | エンティティセレクション内でのエンティティの位置      |
+| 戻り値             | Integer            | <- | エンティティセレクション内でのエンティティの位置      |
 <!-- END REF -->
 
 #### 説明
@@ -811,7 +811,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.isNew()** : Boolean<!-- END REF -->
 
 <!-- REF #entityClass.isNew().Params -->
-| 参照  | タイプ |    | 説明                                         |
+| 引数  | タイプ |    | 説明                                         |
 | --- | --- |:--:| ------------------------------------------ |
 | 戻り値 | ブール | <- | エンティティが作成されたばかりで未保存の場合は true。 それ以外は false。 |
 <!-- END REF -->
@@ -852,7 +852,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.last()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #entityClass.last().Params -->
-| 参照  | タイプ       |    | 説明                                        |
+| 引数  | タイプ       |    | 説明                                        |
 | --- | --------- |:--:| ----------------------------------------- |
 | 戻り値 | 4D.Entity | <- | エンティティセレクションの最終エンティティへの参照 (見つからなければ null) |
 <!-- END REF -->
@@ -893,10 +893,10 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.lock**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #entityClass.lock().Params -->
-| 参照   | タイプ    |    | 説明                                                       |
-| ---- | ------ |:--:| -------------------------------------------------------- |
-| mode | 整数     | -> | `dk reload if stamp changed`: スタンプが変更されてる場合はロック前にリロードします |
-| 戻り値  | オブジェクト | <- | ロックの結果                                                   |
+| 引数   | タイプ     |    | 説明                                                       |
+| ---- | ------- |:--:| -------------------------------------------------------- |
+| mode | Integer | -> | `dk reload if stamp changed`: スタンプが変更されてる場合はロック前にリロードします |
+| 戻り値  | オブジェクト  | <- | ロックの結果                                                   |
 <!-- END REF -->
 
 #### 説明
@@ -918,29 +918,29 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 `.lock( )` によって返されるオブジェクトには以下のプロパティが格納されます:
 
-| プロパティ            |                     | タイプ           | 説明                                                                       |
-| ---------------- | ------------------- | ------------- | ------------------------------------------------------------------------ |
-| success          |                     | boolean       | ロックに成功した場合 (あるいはエンティティがすでにカレントプロセスでロックされていた場合) には true、それ以外は false       |
-|                  |                     |               | ***`dk reload if stamp changed` オプションが使用されていた場合にのみ利用可能:***               |
-| **wasReloaded**  |                     | boolean       | エンティティがリロードされ、かつリロードに成功した場合には true、それ以外は false                           |
-|                  |                     |               | ***エラーの場合にのみ利用可能:***                                                     |
-| status(\*)     |                     | number        | エラーコード、以下参照                                                              |
-| statusText(\*) |                     | text          | エラーの詳細、以下参照                                                              |
-|                  |                     |               | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                         |
-| lockKindText     |                     | text          | "Locked by record"                                                       |
-| lockInfo         |                     | object        | ロック元についての情報                                                              |
-|                  | task_id             | number        | プロセスID                                                                   |
-|                  | user_name           | text          | マシン上でのセッションユーザー名                                                         |
-|                  | user4d_alias        | text          | 4D ユーザーの名前またはエイリアス                                                       |
-|                  | user4d_id           | number        | 4DデータベースディレクトリでのユーザーID                                                   |
-|                  | host_name           | text          | マシン名                                                                     |
-|                  | task_name           | text          | プロセス名                                                                    |
-|                  | client_version      | text          |                                                                          |
-|                  |                     |               | ***深刻なエラーの場合にのみ利用可能*** (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです): |
-| errors           |                     | オブジェクトのコレクション |                                                                          |
-|                  | message             | text          | エラーメッセージ                                                                 |
-|                  | component signature | text          | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                               |
-|                  | errCode             | number        | エラーコード                                                                   |
+| プロパティ            |                     | タイプ                 | 説明                                                                       |
+| ---------------- | ------------------- | ------------------- | ------------------------------------------------------------------------ |
+| success          |                     | boolean             | ロックに成功した場合 (あるいはエンティティがすでにカレントプロセスでロックされていた場合) には true、それ以外は false       |
+|                  |                     |                     | ***`dk reload if stamp changed` オプションが使用されていた場合にのみ利用可能:***               |
+| **wasReloaded**  |                     | boolean             | エンティティがリロードされ、かつリロードに成功した場合には true、それ以外は false                           |
+|                  |                     |                     | ***エラーの場合にのみ利用可能:***                                                     |
+| status(\*)     |                     | number              | エラーコード、以下参照                                                              |
+| statusText(\*) |                     | text                | エラーの詳細、以下参照                                                              |
+|                  |                     |                     | ***ペシミスティック・ロックエラーの場合にのみ利用可能:***                                         |
+| lockKindText     |                     | text                | "Locked by record"                                                       |
+| lockInfo         |                     | object              | ロック元についての情報                                                              |
+|                  | task_id             | number              | プロセスID                                                                   |
+|                  | user_name           | text                | マシン上でのセッションユーザー名                                                         |
+|                  | user4d_alias        | text                | 4D ユーザーの名前またはエイリアス                                                       |
+|                  | user4d_id           | number              | 4DデータベースディレクトリでのユーザーID                                                   |
+|                  | host_name           | text                | マシン名                                                                     |
+|                  | task_name           | text                | プロセス名                                                                    |
+|                  | client_version      | text                |                                                                          |
+|                  |                     |                     | ***深刻なエラーの場合にのみ利用可能*** (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです): |
+| errors           |                     | Object の Collection |                                                                          |
+|                  | message             | text                | エラーメッセージ                                                                 |
+|                  | component signature | text                | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                               |
+|                  | errCode             | number              | エラーコード                                                                   |
 
 
 (\*) エラー時には *Result* オブジェクトの *status* あるいは *statusText* プロパティに以下のいずれかの値が返されます:
@@ -1006,7 +1006,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.next()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #entityClass.next().Params -->
-| 参照  | タイプ       |    | 説明                                         |
+| 引数  | タイプ       |    | 説明                                         |
 | --- | --------- |:--:| ------------------------------------------ |
 | 戻り値 | 4D.Entity | <- | エンティティセレクション内の次のエンティティへの参照 (見つからなければ null) |
 <!-- END REF -->
@@ -1048,7 +1048,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.previous()**  : 4D.Entity<!-- END REF -->
 
 <!-- REF #entityClass.previous().Params -->
-| 参照  | タイプ       |    | 説明                                         |
+| 引数  | タイプ       |    | 説明                                         |
 | --- | --------- |:--:| ------------------------------------------ |
 | 戻り値 | 4D.Entity | <- | エンティティセレクション内の前のエンティティへの参照 (見つからなければ null) |
 <!-- END REF -->
@@ -1090,7 +1090,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.reload()** : Object<!-- END REF -->
 
 <!-- REF #entityClass.reload().Params -->
-| 参照  | タイプ    |    | 説明          |
+| 引数  | タイプ    |    | 説明          |
 | --- | ------ |:--:| ----------- |
 | 戻り値 | オブジェクト | <- | ステータスオブジェクト |
 <!-- END REF -->
@@ -1153,10 +1153,10 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.save**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #entityClass.save().Params -->
-| 参照   | タイプ    |    | 説明                               |
-| ---- | ------ |:--:| -------------------------------- |
-| mode | 整数     | -> | `dk auto merge`: 自動マージモードを有効化します |
-| 戻り値  | オブジェクト | <- | 保存の結果                            |
+| 引数   | タイプ     |    | 説明                               |
+| ---- | ------- |:--:| -------------------------------- |
+| mode | Integer | -> | `dk auto merge`: 自動マージモードを有効化します |
+| 戻り値  | オブジェクト  | <- | 保存の結果                            |
 <!-- END REF -->
 
 #### 説明
@@ -1176,28 +1176,28 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 `.save()` によって返されるオブジェクトには以下のプロパティが格納されます:
 
-| プロパティ        |                    | タイプ           | 説明                                                                       |
-| ------------ | ------------------ | ------------- | ------------------------------------------------------------------------ |
-| success      |                    | boolean       | 保存に成功した場合には true、それ以外は false                                             |
-|              |                    |               | ***`dk auto merge` オプションが使用されていた場合にのみ利用可能***:                            |
-| autoMerged   |                    | boolean       | 自動マージが実行された場合には true、それ以外は false                                         |
-|              |                    |               | ***エラーの場合にのみ利用可能***:                                                     |
-| status       |                    | number        | エラーコード、[以下参照](#status-と-statustext)                                      |
-| statusText   |                    | text          | エラーの詳細、[以下参照](#status-と-statustext)                                      |
-|              |                    |               | ***ペシミスティック・ロックエラーの場合にのみ利用可能***:                                         |
-| lockKindText |                    | text          | "Locked by record"                                                       |
-| lockInfo     |                    | object        | ロック元についての情報                                                              |
-|              | task_id            | number        | プロセスID                                                                   |
-|              | user_name          | text          | マシン上でのセッションユーザー名                                                         |
-|              | user4d_alias       | text          | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
-|              | host_name          | text          | マシン名                                                                     |
-|              | task_name          | text          | プロセス名                                                                    |
-|              | client_version     | text          |                                                                          |
-|              |                    |               | ***深刻なエラーの場合にのみ利用可能*** (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです): |
-| errors       |                    | オブジェクトのコレクション |                                                                          |
-|              | message            | text          | エラーメッセージ                                                                 |
-|              | componentSignature | text          | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                               |
-|              | errCode            | number        | エラーコード                                                                   |
+| プロパティ        |                    | タイプ                 | 説明                                                                       |
+| ------------ | ------------------ | ------------------- | ------------------------------------------------------------------------ |
+| success      |                    | boolean             | 保存に成功した場合には true、それ以外は false                                             |
+|              |                    |                     | ***`dk auto merge` オプションが使用されていた場合にのみ利用可能***:                            |
+| autoMerged   |                    | boolean             | 自動マージが実行された場合には true、それ以外は false                                         |
+|              |                    |                     | ***エラーの場合にのみ利用可能***:                                                     |
+| status       |                    | number              | エラーコード、[以下参照](#status-と-statustext)                                      |
+| statusText   |                    | text                | エラーの詳細、[以下参照](#status-と-statustext)                                      |
+|              |                    |                     | ***ペシミスティック・ロックエラーの場合にのみ利用可能***:                                         |
+| lockKindText |                    | text                | "Locked by record"                                                       |
+| lockInfo     |                    | object              | ロック元についての情報                                                              |
+|              | task_id            | number              | プロセスID                                                                   |
+|              | user_name          | text                | マシン上でのセッションユーザー名                                                         |
+|              | user4d_alias       | text                | `SET USER ALIAS` で設定されていればユーザーエイリアス。それ以外は 4Dディレクトリのユーザー名                 |
+|              | host_name          | text                | マシン名                                                                     |
+|              | task_name          | text                | プロセス名                                                                    |
+|              | client_version     | text                |                                                                          |
+|              |                    |                     | ***深刻なエラーの場合にのみ利用可能*** (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです): |
+| errors       |                    | Object の Collection |                                                                          |
+|              | message            | text                | エラーメッセージ                                                                 |
+|              | componentSignature | text                | 内部コンポーネント署名 (例 "dmbg" はデータベースコンポーネントを表します)                               |
+|              | errCode            | number              | エラーコード                                                                   |
 
 ##### status と statusText
 
@@ -1288,12 +1288,12 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #entityClass.toObject().Params -->
-| 参照           | タイプ    |    | 説明                                                                                            |
-| ------------ | ------ |:--:| --------------------------------------------------------------------------------------------- |
-| filterString | テキスト   | -> | 取得する属性 (カンマ区切り)                                                                               |
-| filterCol    | コレクション | -> | 取得する属性のコレクション                                                                                 |
-| options      | 整数     | -> | `dk with primary key`: \_\_KEY プロパティを追加;<br>`dk with stamp`: \_\_STAMP プロパティを追加 |
-| 戻り値          | オブジェクト | <- | エンティティを元にビルドされたオブジェクト                                                                         |
+| 引数           | タイプ     |    | 説明                                                                                            |
+| ------------ | ------- |:--:| --------------------------------------------------------------------------------------------- |
+| filterString | テキスト    | -> | 取得する属性 (カンマ区切り)                                                                               |
+| filterCol    | コレクション  | -> | 取得する属性のコレクション                                                                                 |
+| options      | Integer | -> | `dk with primary key`: \_\_KEY プロパティを追加;<br>`dk with stamp`: \_\_STAMP プロパティを追加 |
+| 戻り値          | オブジェクト  | <- | エンティティを元にビルドされたオブジェクト                                                                         |
 <!-- END REF -->
 
 #### 説明
@@ -1575,7 +1575,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 **.touched()** : Boolean<!-- END REF -->
 
 <!-- REF #entityClass.touched().Params -->
-| 参照  | タイプ |    | 説明                                                   |
+| 引数  | タイプ |    | 説明                                                   |
 | --- | --- |:--:| ---------------------------------------------------- |
 | 戻り値 | ブール | <- | 少なくとも一つのエンティティ属性が編集されていて未保存の場合に true、それ以外の場合には false |
 <!-- END REF -->
@@ -1619,7 +1619,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 **.touchedAttributes()** : Collection<!-- END REF -->
 
 <!-- REF #entityClass.touchedAttributes().Params -->
-| 参照  | タイプ    |    | 説明                      |
+| 引数  | タイプ    |    | 説明                      |
 | --- | ------ |:--:| ----------------------- |
 | 戻り値 | コレクション | <- | 変更された属性の名前、あるいは空のコレクション |
 <!-- END REF -->
@@ -1695,7 +1695,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 **.unlock()** : Object<!-- END REF -->
 
 <!-- REF #entityClass.unlock().Params -->
-| 参照  | タイプ    |    | 説明          |
+| 引数  | タイプ    |    | 説明          |
 | --- | ------ |:--:| ----------- |
 | 戻り値 | オブジェクト | <- | ステータスオブジェクト |
 <!-- END REF -->
