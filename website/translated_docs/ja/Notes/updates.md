@@ -18,6 +18,7 @@ title: ドキュメンテーション更新情報
 - Users can now load a [log configuration file](Admin/debugLogFiles.md#using-a-log-configuration-file) using a button in the [server administration window](/Admin/server-admin.md#load-logs-configuration-file).
 - 4Dランゲージで [任意パラメーター](Concepts/parameters.md#任意パラメーター) をより柔軟に扱えるようになりました。
 - Webサーバーセッションのデバッグが [4D Server 上で容易になりました](WebServer/sessions.md#プリエンプティブモード)。
+- 新しい [4D NetKit](Project/components.md#list-of-4d-components) コンポーネントを使って、Microsoft Graph などのサードパーティーAPI に接続することができます。
 
 
 ## 4D v19 R2
