@@ -12,7 +12,7 @@
         "title": "4D ライセンスの管理"
       },
       "Admin/tls": {
-        "title": "TLS Protocol (HTTPS)"
+        "title": "TLSプロトコル (HTTPS)"
       },
       "Admin/webAdmin": {
         "title": "Web 管理"
@@ -415,7 +415,7 @@
         "title": "JSON プロパティリスト"
       },
       "FormEditor/markers": {
-        "title": "Markers"
+        "title": "マーカー"
       },
       "FormEditor/menu": {
         "title": "メニュー"
@@ -490,7 +490,7 @@
         "title": "データソース"
       },
       "FormObjects/propertiesDisplay": {
-        "title": "表示フォーマット"
+        "title": "表示"
       },
       "FormObjects/propertiesEntry": {
         "title": "入力"
@@ -785,37 +785,37 @@
         "title": "概要"
       },
       "WebServer/allowProject": {
-        "title": "Allowing project methods"
+        "title": "プロジェクトメソッドの許可"
       },
       "WebServer/authentication": {
-        "title": "Authentication"
+        "title": "認証"
       },
       "WebServer/errorPages": {
-        "title": "Custom HTTP Error Pages"
+        "title": "カスタム HTTPエラーページ"
       },
       "WebServer/gettingStarted": {
         "title": "はじめに"
       },
       "WebServer/httpRequests": {
-        "title": "Processing HTTP requests"
+        "title": "HTTPリクエストの処理"
       },
       "WebServer/preemptiveWeb": {
-        "title": "Using preemptive web processes"
+        "title": "プリエンプティブWebプロセスの使用"
       },
       "WebServer/sessions": {
-        "title": "User sessions"
+        "title": "ユーザーセッション"
       },
       "WebServer/templates": {
-        "title": "Template pages"
+        "title": "テンプレートページ"
       },
       "WebServer/webServer": {
         "title": "概要"
       },
       "WebServer/webServerAdmin": {
-        "title": "データベース管理"
+        "title": "管理"
       },
       "WebServer/webServerConfig": {
-        "title": "バックアップ設定"
+        "title": "設定"
       },
       "WebServer/webServerObject": {
         "title": "Webサーバーオブジェクト"
@@ -834,7 +834,7 @@
       "ORDA": "ORDA",
       "Class API Reference": "クラス API リファレンス",
       "Access Rights": "アクセス権限",
-      "Administration": "データベース管理",
+      "Administration": "管理",
       "MSC": "MSC",
       "Backup and Restore": "バックアップと復元",
       "Web Server": "Web サーバー",
@@ -872,14 +872,14 @@
     "Build Application|no description given": "アプリケーションビルド",
     "Web Administration|no description given": "Web 管理",
     "Client/Server|no description given": "クライアント/サーバー",
-    "TLS Protocol (HTTPS)|no description given": "TLS Protocol (HTTPS)",
+    "TLS Protocol (HTTPS)|no description given": "TLSプロトコル (HTTPS)",
     "Web Data Explorer|no description given": "Webデータエクスプローラー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
     "Access Rights|no description given": "アクセス権限",
-    "Preferences|no description given": "Preferences",
+    "Preferences|no description given": "環境設定",
     "Getting started|no description given": "はじめに",
     "Core Development|no description given": "コア開発",
-    "Administration|no description given": "データベース管理",
+    "Administration|no description given": "管理",
     "Web applications|no description given": "Web アプリ",
     "Mobile applications|no description given": "モバイルアプリ",
     "Desktop applications|no description given": "デスクトップアプリ",
