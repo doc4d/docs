@@ -96,13 +96,13 @@
         "title": "Backup"
       },
       "Backup/log": {
-        "title": "Log file (.journal)"
+        "title": "Arquivo de Log (.journal)"
       },
       "Backup/overview": {
-        "title": "Overview"
+        "title": "Visão Geral"
       },
       "Backup/restore": {
-        "title": "Restore"
+        "title": "Restaurar"
       },
       "Backup/settings": {
         "title": "Backup Settings"
@@ -159,7 +159,7 @@
         "title": "String"
       },
       "Concepts/time": {
-        "title": "Time"
+        "title": "Hora"
       },
       "Concepts/variant": {
         "title": "Variant"
@@ -382,7 +382,7 @@
         "title": "On Window Opening Denied"
       },
       "Events/overview": {
-        "title": "Overview"
+        "title": "Visão Geral"
       },
       "FormEditor/stylesheets": {
         "title": "Style sheets"
@@ -541,7 +541,7 @@
         "title": "Subform"
       },
       "FormObjects/propertiesText": {
-        "title": "Text"
+        "title": "Texto"
       },
       "FormObjects/propertiesTextAndPicture": {
         "title": "Text and Picture"
@@ -577,7 +577,7 @@
         "title": "Tab Controls"
       },
       "FormObjects/text": {
-        "title": "Text"
+        "title": "Texto"
       },
       "FormObjects/viewProAreaOverview": {
         "title": "4D View Pro area"
@@ -598,7 +598,7 @@
         "title": "Creating menus and menu bars"
       },
       "Menus/overview": {
-        "title": "Overview"
+        "title": "Visão Geral"
       },
       "Menus/properties": {
         "title": "Menu item properties"
@@ -627,8 +627,8 @@
         "sidebar_label": "Information Page"
       },
       "MSC/overview": {
-        "title": "Overview",
-        "sidebar_label": "Overview"
+        "title": "Visão Geral",
+        "sidebar_label": "Visão Geral"
       },
       "MSC/repair": {
         "title": "Repair Page",
@@ -677,7 +677,7 @@
         "title": "Documenting a project"
       },
       "Project/overview": {
-        "title": "Overview"
+        "title": "Visão Geral"
       },
       "ReleaseNotes/whatsNew": {
         "title": "What's New"
@@ -782,7 +782,7 @@
         "title": "Managing 4D users and groups"
       },
       "Users/overview": {
-        "title": "Overview"
+        "title": "Visão Geral"
       },
       "WebServer/allowProject": {
         "title": "Allowing project methods"
@@ -809,7 +809,7 @@
         "title": "Template pages"
       },
       "WebServer/webServer": {
-        "title": "Overview"
+        "title": "Visão Geral"
       },
       "WebServer/webServerAdmin": {
         "title": "Administration"
