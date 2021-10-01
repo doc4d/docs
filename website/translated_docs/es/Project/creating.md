@@ -28,7 +28,7 @@ When you validate the **Save** dialog, 4D closes the current project (if any), c
 You can then start developing your project.
 
 
-## Opening a project
+## Abrir un proyecto
 
 To open an existing project from 4D:
 
@@ -57,15 +57,15 @@ In addition to standard system options, the *Open* dialog in 4D provides two men
 
 4D offers two ways to let you open projects directly and bypass the Open dialog:
 
-- via menu options:
+- mediante las opciones de menú:
     -   *Menu bar* - **File** > **Open Recent Projects / {project name}**
     -   *4D Tool bar* -  Select the project from the menu associated with the **Open** button
 
-- via preferences:
+- vía las preferencias:
     -   Set the **At startup** general preference to **Open last used project**.
 
 
-## File saving
+## Guardado de archivos
 
 When working on a project in 4D, you can use built-in 4D editors to create, modify, or save structure items, methods, forms, etc. Modifications are saved to disk when you select a **Save** menu item, or when the editor's window loses or gets the focus.
 
