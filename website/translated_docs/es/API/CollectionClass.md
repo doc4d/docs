@@ -69,7 +69,7 @@ A collection is initialized with:
 
 
 
-## `New collection`
+## `Nueva colección`
 
 
 <!-- REF #_command_.New collection.Syntax -->
@@ -79,7 +79,7 @@ A collection is initialized with:
 | Parámetros | Tipo                                                                    |    | Descripción           |
 | ---------- | ----------------------------------------------------------------------- |:--:| --------------------- |
 | value      | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | Collection's value(s) |
-| Resultado  | Collection                                                              | <- | New collection        |
+| Resultado  | Collection                                                              | <- | Nueva colección       |
 <!-- END REF -->
 
 
@@ -1282,11 +1282,11 @@ The code for ***FindCity*** method is:
 **.indexOf**(  *toSearch* : expression { ; *startFrom* : Integer } ) : Integer <!-- END REF -->
 
 <!-- REF #collection.indexOf().Params -->
-| Parámetros | Tipo       |    | Descripción                                                                  |
-| ---------- | ---------- |:--:| ---------------------------------------------------------------------------- |
-| toSearch   | expression | -> | Expression to search in the collection                                       |
-| startFrom  | Integer    | -> | Index to start the search at                                                 |
-| Resultado  | Integer    | <- | Index of the first occurrence of toSearch in the collection, -1 if not found |
+| Parámetros | Tipo      |    | Descripción                                                                  |
+| ---------- | --------- |:--:| ---------------------------------------------------------------------------- |
+| toSearch   | expresión | -> | Expression to search in the collection                                       |
+| startFrom  | Integer   | -> | Index to start the search at                                                 |
+| Resultado  | Integer   | <- | Index of the first occurrence of toSearch in the collection, -1 if not found |
 <!-- END REF -->
 
 
@@ -1493,11 +1493,11 @@ By default, null or empty elements of the collection are returned in the resulti
 **.lastIndexOf**( *toSearch* : expression { ; *startFrom* : Integer } ) : Integer <!-- END REF -->
 
 <!-- REF #collection.lastIndexOf().Params -->
-| Parámetros | Tipo       |    | Descripción                                                             |
-| ---------- | ---------- |:--:| ----------------------------------------------------------------------- |
-| toSearch   | expression | -> | The element that is to be searched for within the collection            |
-| startFrom  | Integer    | -> | Index to start the search at                                            |
-| Resultado  | Integer    | <- | Index of last occurrence of toSearch in the collection, -1 if not found |
+| Parámetros | Tipo      |    | Descripción                                                             |
+| ---------- | --------- |:--:| ----------------------------------------------------------------------- |
+| toSearch   | expresión | -> | The element that is to be searched for within the collection            |
+| startFrom  | Integer   | -> | Index to start the search at                                            |
+| Resultado  | Integer   | <- | Index of last occurrence of toSearch in the collection, -1 if not found |
 <!-- END REF -->
 
 
@@ -1896,7 +1896,7 @@ Ordering with a property path:
 | Parámetros | Tipo       |    | Descripción                                      |
 | ---------- | ---------- |:--:| ------------------------------------------------ |
 | methodName | Texto      | -> | Name of method used to specify the sorting order |
-| extraParam | expression | -> | Parameter(s) for the method                      |
+| extraParam | expresión  | -> | Parameter(s) for the method                      |
 | Resultado  | Collection | <- | Sorted copy of the collection (shallow copy)     |
 <!-- END REF -->
 
@@ -2220,7 +2220,7 @@ More examples of queries can be found in the `dataClass.query()` page.
 | ---------- | ----------------------------------------------- |:--:| -------------------------------------------------------------------- |
 | methodName | Texto                                           | -> | Name of the function to call to process collection elements          |
 | initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *methodName* |
-| param      | expression                                      | -> | Parameter(s) to pass to *methodName*                                 |
+| param      | expresión                                       | -> | Parameter(s) to pass to *methodName*                                 |
 | Resultado  | Text, Number, Object, Collection, Date, Boolean | <- | Result of the accumulator value                                      |
 <!-- END REF -->
 

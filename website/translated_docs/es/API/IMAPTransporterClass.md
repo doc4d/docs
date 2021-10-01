@@ -1076,7 +1076,7 @@ You want to get the message with ID = 1:
 
 The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
 
-**First Syntax:**
+**Primera sintaxis:**
 
 ***.getMails( ids { ; options } ) -> result***
 
@@ -1086,7 +1086,7 @@ In the *ids* parameter, pass a collection of IDs for the messages to return. You
 
 The optional *options* parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
 
-**Second syntax:**
+**Segunda sintaxis:**
 
  ***.getMails( startMsg ; endMsg { ; options } ) -> result***
 

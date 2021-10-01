@@ -17,7 +17,7 @@ When you call a datastore using the [`ds`](API/DataStoreClass.md#ds) or the [`Op
 ![](assets/en/ORDA/datastoreMapping.png)
 
 
-### General rules
+### Reglas generales
 
 The following rules are applied for any conversions:
 
