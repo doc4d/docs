@@ -279,7 +279,7 @@ A <!-- REF #WebServerClass.CORSSettings.Summary -->list of allowed hosts and met
 
 The <!-- REF #WebServerClass.debugLog.Summary -->status of the HTTP request log file<!-- END REF --> (HTTPDebugLog_nn.txt, stored in the "Logs" folder of the application -- nn is the file number).
 
-*   0 = disabled
+*   0 = desactivado
 *   1 = enabled without body parts (body size is provided in this case)
 *   3 = enabled with body parts in response only
 *   5 = enabled with body parts in request only
@@ -391,7 +391,7 @@ The <!-- REF #WebServerClass.HTTPEnabled.Summary -->HTTP protocol state<!-- END 
 
 The <!-- REF #WebServerClass.HTTPPort.Summary -->listening IP port number for HTTP<!-- END REF -->.
 
-Default = 80
+Por defecto = 80
 
 <!-- END REF -->
 
@@ -432,7 +432,7 @@ The <!-- REF #WebServerClass.HTTPSEnabled.Summary -->HTTPS protocol state<!-- EN
 
 The <!-- REF #WebServerClass.HTTPSPort.Summary -->listening IP port number for HTTPS<!-- END REF -->.
 
-Default = 443
+Por defecto = 443
 
 <!-- END REF -->
 
@@ -510,7 +510,7 @@ The <!-- REF #WebServerClass.isRunning.Summary -->web server running state<!-- E
 
 <!-- REF #WebServerClass.keepSession.Summary -->True if legacy sessions are enabled in the web server, False otherwise<!-- END REF -->.
 
-##### See also:
+##### Ver también:
 [.scalableSession](#scalablesession)
 
 <!-- END REF -->
@@ -549,7 +549,7 @@ The <!-- REF #WebServerClass.maxConcurrentProcesses.Summary -->maximum number of
 
 Valores posibles: 500000 - 2147483648
 
-Default = 100
+Por defecto = 100
 
 <!-- END REF -->
 
@@ -676,7 +676,7 @@ The <!-- REF #WebServerClass.rootFolder.Summary -->path of web server root folde
 
 <!-- REF #WebServerClass.scalableSession.Summary -->True if scalable sessions are used in the web server, and False otherwise<!-- END REF -->.
 
-##### See also:
+##### Ver también:
 [.keepSession](#keepsession)
 <!-- END REF -->
 
