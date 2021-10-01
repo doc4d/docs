@@ -9,7 +9,7 @@
         "title": "Command Line Interface"
       },
       "Admin/dataExplorer": {
-        "title": "Web Data Explorer"
+        "title": "Explorador de datos Web"
       },
       "Admin/debugLogFiles": {
         "title": "Description of log files"
@@ -698,10 +698,10 @@
         "title": "Utilizar un almacén de datos remoto"
       },
       "Preferences/forms": {
-        "title": "Forms Page"
+        "title": "Página formulario"
       },
       "Preferences/general": {
-        "title": "General Page"
+        "title": "Página general"
       },
       "Preferences/methods": {
         "title": "Methods Page"
