@@ -6,7 +6,7 @@ title: Objetos
 ---
 ## Tipo
 
- `MANDATORY SETTING`
+ `PARÁMETRO OBLIGATORIO`
 
 This property designates the type of the [active or inactive form object](formObjects_overview.md).
 
@@ -47,7 +47,7 @@ For more information about naming rules for form objects, refer to [Identifiers]
 
 
 ---
-## Save value
+## Guardar valor
 
 This property is available when the [Save Geometry](FormEditor/properties_FormProperties.md#save-geometry) option is checked for the form.
 
@@ -55,12 +55,12 @@ This feature is only supported for objects that contribute to the overall geomet
 
 Here is the list of objects whose value can be saved:
 
-| Objeto                                        | Saved value                                                                            |
+| Objeto                                        | Valor guardado                                                                         |
 | --------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Check Box](checkbox_overview.md)             | Value of associated variable (0, 1, 2)                                                 |
 | [Lista desplegable](dropdownList_Overview.md) | Number of selected row                                                                 |
 | [Botón radio](radio_overview.md)              | Value of associated variable (1, 0, True or False for buttons according to their type) |
-| [Tab control](tabControl.md)                  | Number of selected tab                                                                 |
+| [Control de pestañas](tabControl.md)          | Number of selected tab                                                                 |
 
 
 #### Gramática JSON
@@ -104,7 +104,7 @@ You can use an [expression](Concepts/quick-tour.md#expressions) as data source f
 
 
 
-### Dynamic variables
+### Variables dinámicas
 
 You can leave it up to 4D to create variables associated with your form objects (buttons, enterable variables, check boxes, etc.) dynamically and according to your needs. To do this, simply leave the "Variable or Expression" property (or `dataSource` JSON field) blank.
 
@@ -376,7 +376,7 @@ When **Custom** ("none" in JSON) is set, no automatic calculations are performed
 
 #### Objetos soportados
 
-[List Box Footer](listbox_overview.md#list-box-footers)
+[Pie de list box](listbox_overview.md#list-box-footers)
 
 
 
