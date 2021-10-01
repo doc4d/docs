@@ -110,7 +110,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 **.all** ( { *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #dataclassClass.all().Params -->
-| 参照       | タイプ                |    | 説明                |
+| 引数       | タイプ                |    | 説明                |
 | -------- | ------------------ |:--:| ----------------- |
 | settings | オブジェクト             | -> | ビルドオプション: context |
 | 戻り値      | 4D.EntitySelection | <- | データクラスの全エンティティの参照 |
@@ -163,7 +163,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 
 <!-- REF #dataclassClass.fromCollection().Params -->
-| 参照        | タイプ                |    | 説明                        |
+| 引数        | タイプ                |    | 説明                        |
 | --------- | ------------------ |:--:| ------------------------- |
 | objectCol | コレクション             | -> | エンティティにマップするオブジェクトのコレクション |
 | settings  | オブジェクト             | -> | ビルドオプション: context         |
@@ -361,7 +361,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 
 <!-- REF #dataclassClass.get().Params -->
-| 参照         | タイプ       |    | 説明                      |
+| 引数         | タイプ       |    | 説明                      |
 | ---------- | --------- |:--:| ----------------------- |
 | primaryKey | 整数または文字列  | -> | 取得するエンティティのプライマリーキー値    |
 | settings   | オブジェクト    | -> | ビルドオプション: context       |
@@ -438,7 +438,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 **.getDataStore()** : cs.DataStore<!-- END REF -->
 
 <!-- REF #dataclassClass.getDataStore().Params -->
-| 参照  | タイプ          |    | 説明                 |
+| 引数  | タイプ          |    | 説明                 |
 | --- | ------------ |:--:| ------------------ |
 | 戻り値 | cs.DataStore | <- | データクラスが属しているデータストア |
 <!-- END REF -->
@@ -492,7 +492,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 **.getInfo()** : Object <!-- END REF -->
 
 <!-- REF #dataclassClass.getInfo().Params -->
-| 参照  | タイプ    |    | 説明        |
+| 引数  | タイプ    |    | 説明        |
 | --- | ------ | -- | --------- |
 | 戻り値 | オブジェクト | <- | データクラスの情報 |
 <!-- END REF -->
@@ -504,11 +504,11 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 **返されるオブジェクト**
 
-| プロパティ       | タイプ  | 説明                   |
-| ----------- | ---- | -------------------- |
-| name        | テキスト | データクラスの名称            |
-| primaryKey  | テキスト | データクラスのプライマリーキー属性の名称 |
-| tableNumber | 整数   | 内部的な 4Dテーブル番号        |
+| プロパティ       | タイプ     | 説明                   |
+| ----------- | ------- | -------------------- |
+| name        | テキスト    | データクラスの名称            |
+| primaryKey  | テキスト    | データクラスのプライマリーキー属性の名称 |
+| tableNumber | Integer | 内部的な 4Dテーブル番号        |
 
 
 
@@ -565,7 +565,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 **.new()** : 4D.Entity <!-- END REF -->
 
 <!-- REF #dataclassClass.new().Params -->
-| 参照  | タイプ       |    | 説明              |
+| 引数  | タイプ       |    | 説明              |
 | --- | --------- | -- | --------------- |
 | 戻り値 | 4D.Entity | <- | データクラスの新規エンティティ |
 <!-- END REF -->
@@ -608,9 +608,9 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 **.newSelection**( { *keepOrder* : Integer } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #dataclassClass.newSelection().Params -->
-| 参照        | タイプ                |    | 説明                                                                                                      |
+| 引数        | タイプ                |    | 説明                                                                                                      |
 | --------- | ------------------ | -- | ------------------------------------------------------------------------------------------------------- |
-| keepOrder | 整数                 | -> | `dk keep ordered`: 順列ありのエンティティセレクションを作成します<br>`dk non ordered` (あるいは省略時): 順列なしのエンティティセレクションを作成します |
+| keepOrder | Integer            | -> | `dk keep ordered`: 順列ありのエンティティセレクションを作成します<br>`dk non ordered` (あるいは省略時): 順列なしのエンティティセレクションを作成します |
 | 戻り値       | 4D.EntitySelection | <- | データクラスの空の新規エンティティセレクション                                                                                 |
 <!-- END REF -->
 
@@ -656,7 +656,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 **.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #dataclassClass.query().Params -->
-| 参照            | タイプ                |    | 説明                                                                                   |
+| 引数            | タイプ                |    | 説明                                                                                   |
 | ------------- | ------------------ | -- | ------------------------------------------------------------------------------------ |
 | queryString   | テキスト               | -> | 検索条件 (文字列)                                                                           |
 | formula       | オブジェクト             | -> | 検索条件 (フォーミュラオブジェクト)                                                                  |
