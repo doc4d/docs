@@ -1,6 +1,6 @@
 ---
 id: general
-title: General Page
+title: Página general
 ---
 
 This page contains various options to configure the general operation of your 4D application.
@@ -96,7 +96,7 @@ This area configures access to the 4D HTML documentation displayed in the curren
 
 You can choose to access the 4D online documentation site directly or to access a static version that is stored locally.
 
-### Local folder
+### Carpeta local
 
 Indicates the location of the static HTML documentation. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red.
 
