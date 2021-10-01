@@ -1,6 +1,6 @@
 ---
 id: general
-title: General Page
+title: Página general
 ---
 
 This page contains various options to configure the general operation of your 4D application.
@@ -136,7 +136,7 @@ Sets where 4D will look for documentation pages.
 *   When checked (default), 4D first looks for the page in the local folder (see below). If it is found, 4D displays the page in the current browser. If not, 4D automatically looks for it in the on-line documentation Web site. This makes it possible to access the documentation even when you are offline.
 *   If it is not found, 4D displays an error message in the browser. When not checked, 4D looks for the desired page directly in the on-line documentation Web site and displays it in the current browser.
 
-### Local folder
+### Carpeta local
 
 > This option is only taken into account for command documentation access (excluding class functions).
 
