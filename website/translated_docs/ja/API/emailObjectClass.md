@@ -145,17 +145,17 @@ attachment オブジェクトは [`MAIL New attachment`](https://doc.4d.com/4dv1
 
 `.bodyStructure` オブジェクトには、次のプロパティが格納されています:
 
-| プロパティ       | タイプ            | 値                                                                                                     |
-| ----------- | -------------- | ----------------------------------------------------------------------------------------------------- |
-| partID      | テキスト           | メールのパートを固有に識別する ID                                                                                    |
-| type        | テキスト           | (必須) パートの Content-Type ヘッダーフィールドの値                                                                    |
-| charset     | テキスト           | Content-Type ヘッダーフィールドの Charset の値                                                                    |
-| encoding    | テキスト           | `isEncodingProblem=true` の場合、Content-Transfer-Encoding の値が追加されます (デフォルトでは未定義)                         |
-| disposition | テキスト           | パートの Content-Disposition ヘッダーフィールドの値                                                                  |
-| language    | テキストのコレクション    | パートの Content-Language ヘッダーフィールドの、[RFC3282](https://tools.ietf.org/html/rfc3282) で定義されている言語タグの一覧 (あれば) |
-| location    | テキスト           | パートの Content-Location ヘッダーフィールドの、[RFC2557](https://tools.ietf.org/html/rfc2557) で定義されている URI (あれば)    |
-| subParts    | オブジェクトのコレクション。 | それぞれの子の本文パート (*EmailBodyPart* オブジェクトのコレクション)                                                          |
-| headers     | オブジェクトのコレクション。 | パート内の全ヘッダーフィールドの、メッセージ内で出現する順の一覧 (*EmailHeader* オブジェクトのコレクション。[headers](#headers) プロパティ参照)            |
+| プロパティ       | タイプ                 | 値                                                                                                     |
+| ----------- | ------------------- | ----------------------------------------------------------------------------------------------------- |
+| partID      | テキスト                | メールのパートを固有に識別する ID                                                                                    |
+| type        | テキスト                | (必須) パートの Content-Type ヘッダーフィールドの値                                                                    |
+| charset     | テキスト                | Content-Type ヘッダーフィールドの Charset の値                                                                    |
+| encoding    | テキスト                | `isEncodingProblem=true` の場合、Content-Transfer-Encoding の値が追加されます (デフォルトでは未定義)                         |
+| disposition | テキスト                | パートの Content-Disposition ヘッダーフィールドの値                                                                  |
+| language    | Text の Collection   | パートの Content-Language ヘッダーフィールドの、[RFC3282](https://tools.ietf.org/html/rfc3282) で定義されている言語タグの一覧 (あれば) |
+| location    | テキスト                | パートの Content-Location ヘッダーフィールドの、[RFC2557](https://tools.ietf.org/html/rfc2557) で定義されている URI (あれば)    |
+| subParts    | Object の Collection | それぞれの子の本文パート (*EmailBodyPart* オブジェクトのコレクション)                                                          |
+| headers     | Object の Collection | パート内の全ヘッダーフィールドの、メッセージ内で出現する順の一覧 (*EmailHeader* オブジェクトのコレクション。[headers](#headers) プロパティ参照)            |
 
 
 
