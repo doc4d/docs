@@ -46,10 +46,10 @@ Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドに
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| 参照    | タイプ          |    | 説明                                               |
-| ----- | ------------ | -- | ------------------------------------------------ |
-| オプション | 整数           | -> | 取得する Webサーバー (省略時のデフォルト = `Web server database`) |
-| 戻り値   | 4D.WebServer | <- | WebServer オブジェクト                                 |
+| 引数     | タイプ          |    | 説明                                               |
+| ------ | ------------ | -- | ------------------------------------------------ |
+| option | 整数           | -> | 取得する Webサーバー (省略時のデフォルト = `Web server database`) |
+| 戻り値    | 4D.WebServer | <- | WebServer オブジェクト                                 |
 
 <!-- END REF -->
 
@@ -92,7 +92,7 @@ Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドに
 
 <!-- REF #_command_.WEB Server list.Params -->
 
-| 参照  | タイプ    |    | 説明                         |
+| 引数  | タイプ    |    | 説明                         |
 | --- | ------ | -- | -------------------------- |
 | 戻り値 | コレクション | <- | 利用可能な Webサーバーオブジェクトのコレクション |
 
@@ -462,7 +462,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.isRunning** : Boolean<!-- END REF -->
 
 
-*読み取り専用プロパティ* <!-- REF #webServerClass.isRunning.Summary -->Webサーバーの実行状態<!-- END REF -->。
+*読み取り専用プロパティ。* <!-- REF #webServerClass.isRunning.Summary -->Webサーバーの実行状態<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -582,7 +582,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.name** : Text<!-- END REF -->
 
 
-*読み取り専用プロパティ* <!-- REF #webServerClass.name.Summary -->Webサーバーアプリケーションの名称<!-- END REF -->。
+*読み取り専用プロパティ。* <!-- REF #webServerClass.name.Summary -->Webサーバーアプリケーションの名称<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -596,7 +596,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.openSSLVersion** : Text<!-- END REF -->
 
 
-*読み取り専用プロパティ* <!-- REF #webServerClass.openSSLVersion.Summary -->使用されている OpenSSLライブラリのバージョン<!-- END REF -->。
+*読み取り専用プロパティ。* <!-- REF #webServerClass.openSSLVersion.Summary -->使用されている OpenSSLライブラリのバージョン<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -610,7 +610,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 **.perfectForwardSecrecy** : Boolean<!-- END REF -->
 
 
-*読み取り専用プロパティ* <!-- REF #webServerClass.perfectForwardSecrecy.Summary -->サーバーの PFS利用可否状況<!-- END REF -->。
+*読み取り専用プロパティ。* <!-- REF #webServerClass.perfectForwardSecrecy.Summary -->サーバーの PFS利用可否状況<!-- END REF -->。
 
 <!-- END REF -->
 
@@ -669,7 +669,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
  <!-- REF #webServerClass.sessionCookieName.Summary -->セッションID の保存に使用されるセッションcookie の名称<!-- END REF -->。
 
-*読み取り専用プロパティ*
+*読み取り専用プロパティ。*
 
 <!-- END REF -->
 
@@ -719,7 +719,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 <!-- REF #webServerClass.start().Params -->
 
-| 参照       | タイプ    |    | 説明              |
+| 引数       | タイプ    |    | 説明              |
 | -------- | ------ | -- | --------------- |
 | settings | オブジェクト | -> | 開始時の Webサーバー設定  |
 | 戻り値      | オブジェクト | <- | Webサーバー開始のステータス |
@@ -790,7 +790,7 @@ CORS についての詳細は、Wikipedia の[Cross-origin resource sharing](htt
 
 <!-- REF #webServerClass.stop().Params -->
 
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |  | ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 
