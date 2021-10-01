@@ -36,7 +36,7 @@ title: Session
 
 
 <!-- REF #_command_.Session.Params -->
-| 参照  | タイプ        |    | 説明             |
+| 引数  | タイプ        |    | 説明             |
 | --- | ---------- |:--:| -------------- |
 | 戻り値 | 4D.Session | <- | Session オブジェクト |
 <!-- END REF -->
@@ -94,7 +94,7 @@ IP:port/4DACTION/action_Session
 **.clearPrivileges()**<!-- END REF -->
 
 <!-- REF #sessionClass.clearPrivileges().Params -->
-| 参照 | タイプ |  | 説明                |
+| 引数 | タイプ |  | 説明                |
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
 <!-- END REF -->
@@ -163,7 +163,7 @@ $expiration:=Session.expirationDate // 例: "2021-11-05T17:10:42Z"
 **.hasPrivilege**( *privilege* : Text ) : Boolean<!-- END REF -->
 
 <!-- REF #sessionClass.hasPrivilege().Params -->
-| 参照        | タイプ  |    | 説明                                                |
+| 引数        | タイプ  |    | 説明                                                |
 | --------- | ---- |:--:| ------------------------------------------------- |
 | privilege | テキスト | <- | 確認するアクセス権の名称                                      |
 | 戻り値       | ブール  | <- | セッションが *privilege* のアクセス権を持っていれば true、それ以外は false |
@@ -246,7 +246,7 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #sessionClass.isGuest().Params -->
-| 参照  | タイプ |    | 説明                            |
+| 引数  | タイプ |    | 説明                            |
 | --- | --- |:--:| ----------------------------- |
 | 戻り値 | ブール | <- | ゲストセッションの場合は true、それ以外は false |
 <!-- END REF -->
@@ -284,7 +284,7 @@ End if
 **.setPrivileges**( *privilege* : Text )<br>**.setPrivileges**( *privileges* : Collection )<br>**.setPrivileges**( *settings* : Object )<!-- END REF -->
 
 <!-- REF #sessionClass.setPrivileges().Params -->
-| 参照         | タイプ    |    | 説明                                          |
+| 引数         | タイプ    |    | 説明                                          |
 | ---------- | ------ |:--:| ------------------------------------------- |
 | privilege  | テキスト   | -> | アクセス権の名称                                    |
 | privileges | コレクション | -> | アクセス権の名称のコレクション                             |
@@ -301,10 +301,10 @@ End if
 
 - *settings* には、以下のプロパティを持つオブジェクトを渡します:
 
-| プロパティ      | タイプ           | 説明                                                 |
-| ---------- | ------------- | -------------------------------------------------- |
-| privileges | テキストまたはコレクション | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li> |
-| userName   | テキスト          | (任意) セッションと紐づけるユーザー名                               |
+| プロパティ      | タイプ                 | 説明                                                 |
+| ---------- | ------------------- | -------------------------------------------------- |
+| privileges | Text または Collection | <li>アクセス権名の文字列</li><li>アクセス権名のコレクション</li> |
+| userName   | テキスト                | (任意) セッションと紐づけるユーザー名                               |
 
 無効なアクセス権名を含む場合、`privileges` プロパティは無視されます。
 
