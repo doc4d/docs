@@ -15,7 +15,7 @@ Attachment objects provide the following read-only properties and functions:
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #MailAttachmentClass.cid.Syntax -->](#cid)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.cid.Summary -->|
 | [<!-- INCLUDE #MailAttachmentClass.disposition.Syntax -->](#disposition)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.disposition.Summary -->|
-| [<!-- INCLUDE #MailAttachmentClass.getContent().Syntax -->](#getcontent)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.getContent().Summary -->|
+| [<!-- INCLUDE #MailAttachmentClass.getContent().Syntax -->](#getContent)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.getContent().Summary -->|
 | [<!-- INCLUDE #MailAttachmentClass.name.Syntax -->](#name)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.name.Summary -->|
 | [<!-- INCLUDE #MailAttachmentClass.path.Syntax -->](#path)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.path.Summary -->|
 | [<!-- INCLUDE #MailAttachmentClass.platformPath.Syntax -->](#platformpath)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #MailAttachmentClass.platformPath.Summary -->|
@@ -71,7 +71,7 @@ You can use the optional *type* parameter to explicitly set the `content-type` o
 
 By default, if the *type* parameter is omitted or contains an empty string, the `content-type` of the attachment file is based on its extension. The following rules are applied for the main MIME types:
 
-| Extension | Content Type                  |
+| Extension | Content-Type                  |
 | --------- | ----------------------------- |
 | jpg, jpeg | image/jpeg                    |
 | png       | image/png                     |
@@ -202,33 +202,36 @@ The `4D.MailAttachment.new()` function <!-- REF #4D.MailAttachment.new().Summary
 .
 
 
-## .cid<!-- REF #MailAttachmentClass.cid.Syntax -->**.cid** : Text<!-- END REF -->#### Descripción
-
-The `.cid` property contains<!-- REF #MailAttachmentClass.cid.Summary -->the ID of the attachment<!-- END REF -->
+## .cid<!-- REF #MailAttachmentClass.cid.Syntax -->**.cid** : Text<!-- END REF -->#### Descripción<!-- REF #MailAttachmentClass.cid.Syntax -->.<!-- END REF -->
 
 
-. This property is used in HTML messages only. If this property is missing, the file is handled as a simple attachment (link).
+#### Descripción
+
+The `.cid` property contains<!-- REF #MailAttachmentClass.cid.Summary -->the ID of the attachment<!-- END REF -->. This property is used in HTML messages only. If this property is missing, the file is handled as a simple attachment (link).
 
 
-## .disposition<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text<!-- END REF -->#### Descripción
+## .disposition<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text<!-- END REF -->
 
-The `.disposition` property contains<!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->
+#### Descripción<!-- REF #MailAttachmentClass.disposition.Syntax -->**.disposition** : Text
+<!-- END REF -->
 
-. Hay dos valores disponibles:
+
+#### Descripción
+
+The `.disposition` property contains<!-- REF #MailAttachmentClass.disposition.Summary -->the value of the `Content-Disposition` header<!-- END REF -->. Hay dos valores disponibles:
 
 *   "inline": el archivo adjunto se muestra dentro del contenido del mensaje, en la ubicación "cid". The rendering depends on the mail client.
 *   "attachment": el archivo adjunto se presenta como un enlace en el mensaje.
 
 
-## .getContent()<!-- REF #MailAttachmentClass.getContent().Syntax -->**.getContent()** : 4D.Blob
-<!-- END REF -->
+## .getContent()<!-- REF #MailAttachmentClass.getContent().Syntax -->**.getContent()** : 4D.Blob<!-- END REF -->
 
 
 <!-- REF #MailAttachmentClass.getContent().Params -->| Parámetros | Tipo    |    | Descripción               |
 | ---------- | ------- |:--:| ------------------------- |
 | Resultado  | 4D.Blob | <- | Content of the attachment |<!-- END REF -->#### Descripción
 
-The `.getContent()` function<!-- REF #MailAttachmentClass.getContent().Summary -->returns the contents of the attachment object in a `4D.Blob` object<!-- END REF -->
+The `.type` property contains<!-- REF #MailAttachmentClass.type.Summary -->the `content-type` of the attachment file<!-- END REF -->
 
 
 . You can use this method with attachment objects received by the [`MAIL Convert from MIME`](#mail-convert-from-mime) command.
@@ -258,10 +261,7 @@ The `.path` property contains<!-- REF #MailAttachmentClass.path.Summary -->the P
 | v19     | Añadidos       |
 </details><!-- REF #MailAttachmentClass.platformPath.Syntax -->**.platformPath** : Text<!-- END REF -->#### Descripción
 
-The `.platformPath` property returns<!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->
-
-
-.
+The `.platformPath` property returns<!-- REF #MailAttachmentClass.platformPath.Summary -->the path of the attachment file expressed with the current platform syntax<!-- END REF -->.
 
 
 ## .type<!-- REF #MailAttachmentClass.type.Syntax -->**.type** : Text<!-- END REF -->#### Descripción

@@ -53,7 +53,7 @@ Al nombrar las clases, debe tener en cuenta las siguientes reglas:
 
 Por ejemplo, si quiere definir una clase llamada "Polygon", tiene que crear el siguiente archivo:
 
-- Project folder
+- Carpeta Project
     + Project
 
         * Sources

@@ -324,9 +324,9 @@ The *$event* parameter contains the following properties:
 
 | Property      | Type    | Description                                                                               |
 | ------------- | ------- | ----------------------------------------------------------------------------------------- |
-| attributeName | Text    | Computed attribute name                                                                   |
-| dataClassName | Text    | Dataclass name                                                                            |
-| kind          | Text    | "get"                                                                                     |
+| attributeName | Texto   | Computed attribute name                                                                   |
+| dataClassName | Texto   | Dataclass name                                                                            |
+| kind          | Texto   | "get"                                                                                     |
 | result        | Variant | Optional. Add this property with Null value if you want a scalar attribute to return Null |
 
 
@@ -385,9 +385,9 @@ The *$event* parameter contains the following properties:
 
 | Property      | Type    | Description                                   |
 | ------------- | ------- | --------------------------------------------- |
-| attributeName | Text    | Computed attribute name                       |
-| dataClassName | Text    | Dataclass name                                |
-| kind          | Text    | "set"                                         |
+| attributeName | Texto   | Computed attribute name                       |
+| dataClassName | Texto   | Dataclass name                                |
+| kind          | Texto   | "set"                                         |
 | value         | Variant | Value to be handled by the computed attribute |
 
 #### Example
@@ -422,7 +422,7 @@ This function supports three syntaxes:
 
     | Property           | Type       | Description                                         |
     | ------------------ | ---------- | --------------------------------------------------- |
-    | $result.query      | Text       | Valid query string with placeholders (:1, :2, etc.) |
+    | $result.query      | Texto      | Valid query string with placeholders (:1, :2, etc.) |
     | $result.parameters | Collection | values for placeholders                             |
 
 The `query` function executes whenever a query using the computed attribute is launched. It is useful to customize and optimize queries by relying on indexed attributes. When the `query` function is not implemented for a computed attribute, the search is always sequential (based upon the evaluation of all values using the `get <AttributeName>` function).
@@ -433,11 +433,11 @@ The *$event* parameter contains the following properties:
 
 | Property      | Type    | Description                                                                                                                                                                                                                                                                                                                                                      |
 | ------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| attributeName | Text    | Computed attribute name                                                                                                                                                                                                                                                                                                                                          |
-| dataClassName | Text    | Dataclass name                                                                                                                                                                                                                                                                                                                                                   |
-| kind          | Text    | "query"                                                                                                                                                                                                                                                                                                                                                          |
+| attributeName | Texto   | Computed attribute name                                                                                                                                                                                                                                                                                                                                          |
+| dataClassName | Texto   | Dataclass name                                                                                                                                                                                                                                                                                                                                                   |
+| kind          | Texto   | "query"                                                                                                                                                                                                                                                                                                                                                          |
 | value         | Variant | Value to be handled by the computed attribute                                                                                                                                                                                                                                                                                                                    |
-| operator      | Text    | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Possible values:<li>== (equal to, @ is wildcard)</li><li>=== (equal to, @ is not wildcard)</li><li>!= (not equal to, @ is wildcard)</li><li>!== (not equal to, @ is not wildcard)</li><li>< (less than)</li><li><= (less than or equal to)</li><li>> (greater than)</li><li>>= (greater than or equal to)</li><li>IN (included in)</li><li>% (contains keyword)</li> |
+| operator      | Texto   | Query operator (see also the [`query` class function](API/DataClassClass.md#query)). Possible values:<li>== (equal to, @ is wildcard)</li><li>=== (equal to, @ is not wildcard)</li><li>!= (not equal to, @ is wildcard)</li><li>!== (not equal to, @ is not wildcard)</li><li>< (less than)</li><li><= (less than or equal to)</li><li>> (greater than)</li><li>>= (greater than or equal to)</li><li>IN (included in)</li><li>% (contains keyword)</li> |
 | result        | Variant | Value to be handled by the computed attribute. Pass `Null` in this property if you want to let 4D execute the default query (always sequential for computed attributes).                                                                                                                                                                                         |
 
 > If the function returns a value in *$result* and another value is assigned to the `$event.result` property, the priority is given to `$event.result`.
@@ -566,11 +566,11 @@ The *$event* parameter contains the following properties:
 
 | Property      | Type    | Description                                                                                                |
 | ------------- | ------- | ---------------------------------------------------------------------------------------------------------- |
-| attributeName | Text    | Computed attribute name                                                                                    |
-| dataClassName | Text    | Dataclass name                                                                                             |
-| kind          | Text    | "orderBy"                                                                                                  |
+| attributeName | Texto   | Computed attribute name                                                                                    |
+| dataClassName | Texto   | Dataclass name                                                                                             |
+| kind          | Texto   | "orderBy"                                                                                                  |
 | value         | Variant | Value to be handled by the computed attribute                                                              |
-| operator      | Text    | "desc" or "asc" (default)                                                                                  |
+| operator      | Texto   | "desc" or "asc" (default)                                                                                  |
 | descending    | Boolean | `true` for descending order, `false` for ascending order                                                   |
 | result        | Variant | Value to be handled by the computed attribute. Pass `Null` if you want to let 4D execute the default sort. |
 

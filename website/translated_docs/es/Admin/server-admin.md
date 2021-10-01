@@ -105,7 +105,7 @@ The list is updated in real time as you enter text in the area. It is possible t
 
 This page includes three control buttons. These are active if at least one row is selected. You can select several rows by holding down the **Shift** key for an adjacent selection or **Ctrl** (Windows) / **Command** (macOS) key for a non-adjacent selection.
 
-#### Send message
+#### Enviar mensaje
 
 This button can be used to send a message to the 4D users selected in the window. If no user is selected, the button is not active. When you click on this button, a dialog box appears that lets you enter the message. The dialog box indicates the number of users that will receive this message:
 
@@ -274,7 +274,7 @@ This button can be used to immediately close and restart the project. When you c
 
 > If the request for restarting was carried out from a remote 4D machine, this machine is automatically reconnected by 4D Server.
 
-### Last backup
+### Última copia de seguridad
 
 This area indicates the date and time of the [last backup](MSC/backup.md) of the database and provides information about the next scheduled automatic backup (if any). Automatic backups are configured using the **Scheduler** page of the structure settings.
 
@@ -441,7 +441,7 @@ This button toggles and can be used to control the activation of the 4D Server H
 > 
 > The HTTP server can also be launched automatically on application startup (Settings) or by programming.
 
-### Web Information
+### Información Web
 
 This area provides specific information about the Web server of 4D Server.
 

@@ -693,33 +693,29 @@ The function returns an object describing the IMAP status:
 To delete the "Nova Orion Industries" child mailbox from the "Bills" mailbox hierarchy:
 
 ```4d
-var $pw; $name : text
-var $options; $transporter; $status : object
+var $server,$boxInfo,$result : Object
+ var $transporter : 4D.IMAPTransporter
 
-$options:=New object
+ $server:=New object
+ $server.host:="imap.gmail.com" //Mandatory
+ $server.port:=993
+ $server.user:="4d@gmail.com"
+ $server.password:="XXXXXXXX"
 
-$pw:=Request("Please enter your password:")
+  //create transporter
+ $transporter:=IMAP New transporter($server)
 
-If(OK=1) $options.host:="imap.gmail.com"
-$options.user:="test@gmail.com"
-$options.password:=$pw
+  //select mailbox
+ $boxInfo:=$transporter.selectBox("INBOX")
 
-$transporter:=IMAP New transporter($options)
-
-// delete mailbox
-$name:="Bills"+$transporter.getDelimiter()+"Nova Orion Industries"
-$status:=$transporter.deleteBox($name)
-
-If ($status.success)
-    ALERT("Mailbox deletion successful!")
-    Else
-    ALERT("Error: "+$status.statusText)
-    End if
-End if
-    Else
-    ALERT("Error: "+$status.statusText)
-    End if
-End if
+  If($boxInfo.mailCount>0)
+        // retrieve the headers of the last 20 messages without marking them as read
+    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
+        New object("withBody";False;"updateSeen";False))
+    For each($mail;$result.list)
+        // ...
+    End for each
+ End if
 ```
 
 <!-- END REF -->
@@ -1080,7 +1076,7 @@ You want to get the message with ID = 1:
 
 The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
 
-**First Syntax:**
+**Primera sintaxis:**
 
 ***.getMails( ids { ; options } ) -> result***
 
@@ -1090,7 +1086,7 @@ In the *ids* parameter, pass a collection of IDs for the messages to return. You
 
 The optional *options* parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
 
-**Second syntax:**
+**Segunda sintaxis:**
 
  ***.getMails( startMsg ; endMsg { ; options } ) -> result***
 
@@ -1570,6 +1566,10 @@ $status:=$transporter.renameBox("Invoices"; "Bills")
 
 If ($status.success)
    ALERT("Mailbox renaming successful!")
+   Else
+   ALERT("Error: "+$status.statusText)
+ End if
+End if
    Else
    ALERT("Error: "+$status.statusText)
  End if
