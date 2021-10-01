@@ -160,7 +160,7 @@ JSONファイルの説明です:
 
 #### Class constructor($macro : object)
 
-| 参照     | タイプ    | 説明                                 |
+| 引数     | タイプ    | 説明                                 |
 | ------ | ------ | ---------------------------------- |
 | $macro | オブジェクト | `formMacros.json` ファイルのマクロ宣言オブジェクト |
 
@@ -200,7 +200,7 @@ Class constructor($macro : Object)
 
 #### onInvoke($editor : object) -> $result : object
 
-| 参照      | タイプ    | 説明                         |
+| 引数      | タイプ    | 説明                         |
 | ------- | ------ | -------------------------- |
 | $editor | オブジェクト | フォームプロパティ                  |
 | $result | オブジェクト | マクロによって変更されたフォームプロパティ (任意) |
@@ -292,7 +292,7 @@ Function onInvoke($editor : Object)->$result : Object
 
 #### onError($editor : object; $resultMacro : Object ; $error : Collection)
 
-| 参照           |                       | タイプ    | 説明                                   |
+| 引数           |                       | タイプ    | 説明                                   |
 | ------------ | --------------------- | ------ | ------------------------------------ |
 | $editor      |                       | オブジェクト | [onInvoke](#oninvoke) に渡されたオブジェクト    |
 | $resultMacro |                       | オブジェクト | [onInvoke](#oninvoke) によって返されたオブジェクト |
