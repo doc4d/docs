@@ -26,13 +26,13 @@ You can choose between [two rendering engines](properties_WebArea.md#use-embedde
 
 Selecting the embedded web rendering engine allows you to call 4D methods from the web area.
 
-### Access 4D methods
+### Acceder a los métodos 4D
 
 When the [Access 4D methods](properties_WebArea.md#access-4d-methods) property is selected, you can call 4D methods from a web area.
 
 > This property is only available if the web area [uses the embedded web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine).
 
-### $4d object
+### Objeto $4d
 
 
 The [4D embedded web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) supplies the area with a JavaScript object named $4d that you can associate with any 4D project method using the "." object notation.
@@ -148,7 +148,7 @@ In addition, web areas support the following generic form events:
 
 ## Reglas de las áreas web
 
-### User interface
+### Interfaz de usuario
 
 When the form is executed, standard browser interface functions are available to the user in the web area, which permit interaction with other form areas:
 

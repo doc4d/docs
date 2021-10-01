@@ -30,7 +30,7 @@ This log file records standard requests carried out by the 4D Server machine or 
 
 How to start this log:
 
-*   on the server:
+*   en el servidor:
 
 ```4d
 SET DATABASE PARAMETER(4D Server log recording;1)
@@ -83,7 +83,7 @@ This log file records information on each process created on the 4D Server machi
 
 How to start this log:
 
-*   on the server:
+*   en el servidor:
 
 ```4d
 SET DATABASE PARAMETER(4D Server log recording;1) //server side
