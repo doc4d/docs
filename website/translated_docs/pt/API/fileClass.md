@@ -66,7 +66,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 <!-- REF #_command_.File.Params -->
 | Parameter    | Type    |    | Description                                     |
 | ------------ | ------- |:--:| ----------------------------------------------- |
-| path         | Text    | -> | File path                                       |
+| path         | Texto   | -> | File path                                       |
 | fileConstant | Integer | -> | 4D file constant                                |
 | pathType     | Integer | -> | `fk posix path` (default) or `fk platform path` |
 | *            |         | -> | * to return file of host database               |
@@ -209,7 +209,7 @@ Creation of a preferences file in the database folder:
 | Parameter         | Type      |    | Description                                  |
 | ----------------- | --------- | -- | -------------------------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | Text      | -> | Name of the alias or shortcut                |
+| aliasName         | Texto     | -> | Name of the alias or shortcut                |
 | aliasType         | Integer   | -> | Type of the alias link                       |
 | Result            | 4D.File   | <- | Alias or shortcut file reference             |
 <!-- END REF -->
@@ -381,7 +381,7 @@ You want to delete a specific file in the database folder:
 | Parameter         | Type      |    | Description                  |
 | ----------------- | --------- | -- | ---------------------------- |
 | destinationFolder | 4D.Folder | -> | Destination folder           |
-| newName           | Text      | -> | Full name for the moved file |
+| newName           | Texto     | -> | Full name for the moved file |
 | Result            | 4D.File   | <- | Moved file                   |
 <!-- END REF -->
 
@@ -448,7 +448,7 @@ $myFile.moveTo($DocFolder.folder("Archives");"Infos_old.txt")
 <!--REF #fileClass.rename().Params -->
 | Parameter | Type    |    | Description                |
 | --------- | ------- | -- | -------------------------- |
-| newName   | Text    | -> | New full name for the file |
+| newName   | Texto   | -> | New full name for the file |
 | Result    | 4D.File | <- | Renamed file               |
 <!-- END REF -->
 
@@ -532,8 +532,8 @@ The `.setContent( )` function <!-- REF #fileClass.setContent().Summary -->rewrit
 <!--REF #fileClass.setText().Params -->
 | Parameter   | Type    |    | Description                                                |
 | ----------- | ------- | -- | ---------------------------------------------------------- |
-| text        | Text    | -> | Text to store in the file                                  |
-| charSetName | Text    | -> | Name of character set                                      |
+| text        | Texto   | -> | Text to store in the file                                  |
+| charSetName | Texto   | -> | Name of character set                                      |
 | charSetNum  | Integer | -> | Number of character set                                    |
 | breakMode   | Integer | -> | Processing mode for line breaks|<!-- END REF -->
 
