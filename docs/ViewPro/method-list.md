@@ -23,9 +23,9 @@ title: Method List
 ### VP ADD FORMULA NAME
 
 
-<!-- REF #method.VP_ADD_FORMULA_NAME.Syntax -->**VP ADD FORMULA NAME** ( *vpAreaName* : Text ; *vpFormula* : Text ; *name* : Text { ; *options* : Object } )<!-- END REF -->  
+<!-- REF #method.VP ADD FORMULA NAME.Syntax -->**VP ADD FORMULA NAME** ( *vpAreaName* : Text ; *vpFormula* : Text ; *name* : Text { ; *options* : Object } )<!-- END REF -->  
 
-<!-- REF #method.VP_ADD_FORMULA_NAME.Params -->
+<!-- REF #method.VP ADD FORMULA NAME.Params -->
 
 |Parameter|Type| |Description|
 |---|---|---|---|
@@ -37,7 +37,7 @@ title: Method List
 
 #### Description
 
-The `VP ADD FORMULA NAME` command <!-- REF #method.VP_ADD_FORMULA_NAME.Summary -->creates or modifies a named formula in the open document<!-- END REF -->.
+The `VP ADD FORMULA NAME` command <!-- REF #method.VP ADD FORMULA NAME.Summary -->creates or modifies a named formula in the open document<!-- END REF -->.
 
 >Named formulas created by this command are saved with the document.
 
@@ -67,9 +67,9 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 ###  VP ADD RANGE NAME
 
 
-<!-- REF #method.VP_ADD_RANGE_NAME.Syntax -->**VP ADD RANGE NAME** ( *rangeObj* : Object ; *name* : Text { ; *options* : Object } )<!-- END REF -->  
+<!-- REF #method.VP ADD RANGE NAME.Syntax -->**VP ADD RANGE NAME** ( *rangeObj* : Object ; *name* : Text { ; *options* : Object } )<!-- END REF -->  
 
-<!-- REF #method.VP_ADD_RANGE_NAME.Params -->
+<!-- REF #method.VP ADD RANGE NAME.Params -->
 
 |Parameter|Type| |Description|
 |---|---|---|---|
@@ -81,7 +81,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 #### Description
 
 
-The `VP ADD RANGE NAME` command <!-- REF #method.VP_ADD_RANGE_NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->.
+The `VP ADD RANGE NAME` command <!-- REF #method.VP ADD RANGE NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->.
 
 >Named ranges created by this command are saved with the document.
 
