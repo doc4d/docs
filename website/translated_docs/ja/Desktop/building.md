@@ -246,9 +246,9 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 生成されるアプリケーションのバージョン番号を指定します。 このバージョン番号をもとに、クライアントアプリケーションからの接続を受け入れたり拒否したりできます。 クライアントとサーバーアプリケーションで互換性のある番号の範囲は [XML キー](#アプリケーションビルド設定) で設定します。
 
-#### Silicon-macOS-クライアントからの接続を許可
+#### Silicon macOS クライアントからの接続を許可
 
-When building a server on Windows, check this option to allow Apple Silicon clients to connect to your server application. You can then specify a path to the structure compiled for Apple Silicon/Intel.
+Windows でサーバーアプリケーションをビルドする際、Apple Siliconクライアントが接続できるようにするには、このオプションをチェックします。 You can then specify a path to the structure compiled for Apple Silicon/Intel.
 
 To allow Apple Silicon clients to connect to a Server application built on Windows, you must first build a client application on macOS, with a project compiled for Apple Silicon and Intel. This automatically creates a compiled structure, identical to the one created with the **[Build compiled structure](#build-compiled-structure)** option (without the related folders).
 
