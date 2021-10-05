@@ -1718,7 +1718,7 @@ The returned object contains the following properties:
 | ranges[].start | Integer    | First entity index in the range |
 | ranges[].end   | Integer    | Last entity index in the range  |
 
-If a `ranges` property contains a single entity, `start` = `end`. Index starts at 0.
+If a `ranges` property contains a single entity, `start` = `end`. El índice comienza en 0.
 
 The function returns an empty collection in the `ranges` property if the original entity selection or the *selectedEntities* entity selection is empty.
 
