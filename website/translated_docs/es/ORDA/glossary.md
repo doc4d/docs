@@ -163,7 +163,7 @@ User class not related to an ORDA object.
 
 These are dataclasses linked by relation attributes.
 
-## Relation attribute
+## Atributo relacional
 
 Relation attributes are used to conceptualize relations between dataclasses (many-to-one and one-to-many).
 
