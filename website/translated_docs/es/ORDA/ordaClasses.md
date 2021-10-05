@@ -723,7 +723,7 @@ Else
 End if
 ```
 
-#### Checking attributes
+#### Verificación de los atributos
 
 We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server to save them.
 
