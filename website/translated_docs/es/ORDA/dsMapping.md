@@ -175,7 +175,7 @@ All dataclass attributes are exposed as properties of the dataclass:
 
 Keep in mind that these objects describe attributes, but do not give access to data. Reading or writing data is done through [entity objects](entities.md#using-entity-attributes).
 
-#### Computed attributes
+#### Atributos calculados
 
 [Computed attributes](ordaClasses.md#computed-attributes) are declared using a `get <attributeName>` function in the [Entity class definition](ordaClasses.md#entity-class). Their value is not stored but evaluated each time they are accessed. They do not belong to the underlying database structure, but are built upon it and can be used as any attribute of the data model.
 
@@ -212,12 +212,9 @@ var $e : cs.EmployeeSelection //declares a $e object variable of the EmployeeSel
 $e:=ds.Employee.all() //assigns the resulting entity selection reference to the $e variable
 ```
 
-Entity selections can be:
+Entity selections can be "sorted" or "unsorted" ([see below](#ordered-or-unordered-entity-selection)).
 
-- "compartible" o "no compartible",
-- " ordenadas" o "no ordenadas".
-
-These points are discussed below.
+> Entity selections can also be "shareable" or "non-shareable", depending on [how they have been created](entities.md#shareable-or-alterable-entity-selections).
 
 The entity selection object itself cannot be copied as an object:
 
