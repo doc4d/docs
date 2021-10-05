@@ -22,7 +22,7 @@ Documentation is displayed in the preview area (right-side panel) of the Explore
 It can also be partially exposed as [code editor tips](#viewing-documentation-in-the-code-editor).
 
 
-## Documentation files
+## Archivos documentación
 
 ### Documentation file name
 
