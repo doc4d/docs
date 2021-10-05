@@ -216,7 +216,7 @@ $webUser.save()
 
 
 
-### Authenticating users
+### Autenticación de los usuarios
 
 > To be secure from end to end, it is necessary that the whole connection is established via [https](webServerConfig.md#enable-https).
 
