@@ -27,7 +27,7 @@ An attributePath is the path of an attribute inside a given dataclass or entity.
 Code for the user class function(s).
 
 
-## Computed attribute
+## Atributo calculado
 
 A computed attribute doesn't actually store information. Instead, it determines its value based on other values from the same entity or from other entities, attributes or functions. When a computed attribute is referenced, the underlying "computation" is evaluated to determine the value. Computed attributes may even be assigned values where user-defined code determines what to do during the assignment.
 
@@ -168,7 +168,7 @@ User class not related to an ORDA object.
 
 These are dataclasses linked by relation attributes.
 
-## Relation attribute
+## Atributo relacional
 
 Relation attributes are used to conceptualize relations between dataclasses (many-to-one and one-to-many).
 
