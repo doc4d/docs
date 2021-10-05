@@ -24,7 +24,7 @@ With 4D, select the **License Manager...** command from the **Help** menu of the
 
 4D offers three activation modes. We recommend **Instant Activation**.
 
-### Instant Activation
+### Activación inmediata
 
 Enter your user ID (email or 4D account) as well as your password. If you do not have an existing user account, you will need to create it at the following address:
 
