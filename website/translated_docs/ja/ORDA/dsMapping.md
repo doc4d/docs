@@ -212,12 +212,9 @@ var $e : cs.EmployeeSelection // EmployeeSelection クラスのオブジェク�
 $e:=ds.Employee.all() // 結果のエンティティセレクションへの参照を $e に代入します
 ```
 
-エンティティセレクションには次の種類が存在します:
+Entity selections can be "sorted" or "unsorted" ([see below](#ordered-or-unordered-entity-selection)).
 
-- "共有可能" または "共有不可"
-- "順列あり" または "順列なし"
-
-詳細は後述を参照ください。
+> Entity selections can also be "shareable" or "non-shareable", depending on [how they have been created](entities.md#shareable-or-alterable-entity-selections).
 
 エンティティセレクションオブジェクト自身は、オブジェクトとしてコピーすることはできません:
 

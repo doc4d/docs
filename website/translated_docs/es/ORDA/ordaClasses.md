@@ -270,7 +270,7 @@ When creating or editing data model classes, you must pay attention to the follo
 - You cannot override a native ORDA class function from the **`4D`** [class store](Concepts/classes.md#class-stores) with a data model user class function.
 
 
-## Computed attributes
+## Atributos calculados
 
 
 ### Generalidades
@@ -723,7 +723,7 @@ Else
 End if
 ```
 
-#### Checking attributes
+#### Verificación de los atributos
 
 We want to check the consistency of the attributes of an entity loaded on the client and updated by the user before requesting the server to save them.
 
