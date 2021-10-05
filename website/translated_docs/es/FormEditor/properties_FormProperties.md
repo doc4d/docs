@@ -101,7 +101,7 @@ To remove inheritance, select **\<None>** in the Property List (or " " in JSON).
 ---
 
 
-## Inherited Form Table
+## Tablas de formulario heredadas
 
 This property specifies the database table from which to [inherit a form](forms.md#inherited-forms) in the current form.
 
