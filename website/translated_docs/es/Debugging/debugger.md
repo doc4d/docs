@@ -172,7 +172,7 @@ To display the variable types and their internal names, right click and check th
 
 ![show-types-menu-item](assets/en/Debugging/showTypes.png)
 
-Here's the result:
+Aquí está el resultado:
 
 ![dynamic-variable-names](assets/en/Debugging/dynamicVariableNames.png)
 
