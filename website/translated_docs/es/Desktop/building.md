@@ -207,7 +207,7 @@ Items must be installed:
 
 
 
-## Client/Server page
+## Página Cliente/Servidor
 
 On this tab, you can build customized client-server applications that are homogenous, cross-platform and with an automatic update option.
 
@@ -238,7 +238,7 @@ Also, the client/server application is customized and its handling simplified:
 
 Check this option to generate the server part of your application during the building phase. You must designate the location on your disk of the 4D Server application to be used. This 4D Server must correspond to the current platform (which will also be the platform of the server application).
 
-#### 4D Server location
+#### Ubicación de 4D Server
 
 Click on the **[...]** button and use the *Browse for folder* dialog box to locate the 4D Server application. In macOS, you must select the 4D Server package directly.
 
@@ -421,7 +421,7 @@ Client and server cache folders are used to store shared elements such as resour
 In some specific cases, you might need to customize the names of these folders to implement specific architectures (see below). 4D provides you with the `ClientServerSystemFolderName` and `ServerStructureFolderName` keys to be set in the *buildApp* settings file.
 
 
-#### Client cache folder
+#### Carpeta de caché cliente
 
 Customizing the client-side cache folder name can be useful when your client application is used to connect to several merged servers which are similar but use different data sets. In this case, to save multiple unnecessary downloads of identical local resources, you can use the same custom local cache folder.
 
@@ -434,7 +434,7 @@ Customizing the client-side cache folder name can be useful when your client app
 ![](assets/en/Admin/cacheb.png)
 
 
-#### Server cache folder
+#### Carpeta de caché del servidor
 
 Customizing the server-side cache folder name is useful when you run several identical server applications built with different 4D versions on the same computer. If you want each server to use its own set of resources, you need to customize the server cache folder.
 
@@ -542,7 +542,7 @@ Gatekeeper is a security feature of OS X that controls the execution of applicat
 La opción **Firmar la aplicación** del Generador de aplicaciones de 4D le permite generar aplicaciones y componentes compatibles con esta opción por defecto.
 
 
-#### About Notarization
+#### Sobre la notarización
 
 Application notarization is highly recommended by Apple as of macOS 10.14.5 (Mojave) and 10.15 (Catalina), since non-notarized applications deployed via the internet are blocked by default.
 
@@ -655,7 +655,7 @@ When the default data file is detected at first launch, it is silently opened in
 
 The management of connections by client applications covers the mechanisms by which a merged client application connects to the target server, once it is in its production environment.
 
-### Connection scenario
+### Escenario de conexión
 
 The connection procedure for merged client applications supports cases where the dedicated server is not available. The startup scenario for a 4D client application is the following:
 
@@ -687,7 +687,7 @@ This mechanism addresses the case where the primary targeted server is temporary
 
 You can choose whether or not to display the standard server selection dialog box on merged client applications when the server cannot be reached. The configuration depends on the value of the [ServerSelectionAllowed](https://doc.4d.com/4Dv17R6/4D/17-R6/ServerSelectionAllowed.300-4465714.en.html) XML key on the machine where the application was built:
 
-- **Display of an error message with no access possible to the server selection dialog box**. Default operation. The application can only quit.  
+- **Display of an error message with no access possible to the server selection dialog box**. Funcionamiento por defecto. The application can only quit.  
   `ServerSelectionAllowed`: **False** or key omitted ![](assets/en/Project/connect1.png)
 
 - **Display of an error message with access to the server selection dialog box possible**. The user can access the server selection window by clicking on the **Select...** button.   

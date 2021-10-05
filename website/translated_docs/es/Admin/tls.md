@@ -66,7 +66,7 @@ The 4D server can now work in a secured mode. A certificate is valid between 3 m
 To be able to use the TLS protocol with the server, you must install the **key.pem** (document containing the private encryption key) and **cert.pem** (document containing the certificate) at the appropriate location(s). Different locations are required depending on the server on which you want to use TLS.
 > Default *key.pem* and *cert.pem* files are provided with 4D. For a higher level of security, we strongly recommend that you replace these files with your own certificates.
 
-#### With the web server
+#### Con el servidor Web
 
 To be used by the 4D web server, the **key.pem** and **cert.pem** files must be placed:
 
@@ -82,7 +82,7 @@ To be used by the 4D application server, the **key.pem** and **cert.pem** files 
 - in the [**Resources** folder](Project/architecture.md#resources) of the 4D Server application
 - and in the **Resources** folder on each remote 4D application (for more information about the location of this folder, see the [`Get 4D folder`](https://doc.4d.com/4dv19/help/command/en/page485.html) command).
 
-#### With the SQL server
+#### Con el servidor Web
 
 To be used by the 4D SQL server, the **key.pem** and **cert.pem** files must be placed next to the [project folder](Project/architecture.md#project-folder).
 

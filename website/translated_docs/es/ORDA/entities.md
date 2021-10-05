@@ -6,7 +6,7 @@ title: Trabajar con los datos
 In ORDA, you access data through [entities](dsMapping.md#entity) and [entity selections](dsMapping.md#entity-selection). These objects allow you to create, update, query, or sort the data of the datastore.
 
 
-## Creating an entity
+## Crear una entidad
 
 There are two ways to create a new entity in a dataclass:
 
@@ -73,7 +73,7 @@ In fact, `$e1` and `$e2` are not the entity itself, but a reference to the entit
  End for each
 ```
 
-And the method is:
+Y el método es:
 
 ```4d
  $entity:=$1
