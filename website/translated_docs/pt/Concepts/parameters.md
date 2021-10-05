@@ -258,7 +258,7 @@ foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed
 
 Da mesma forma que com outras variáveis locais, não é obrigatório declarar os parâmetros genéricos mediante uma diretiva de compilador. Entretanto é recomendado que se evite qualquer ambiguidade. Non-declared generic parameters automatically get the [Variant](dt_variant.md) type.
 
-To declare generic parameters, you use a compiler directive to which you pass ${N} as a parameter, where N specifies the first generic parameter.
+Para declarar parâmetros genéricos, se utiliza uma diretriz do compilador à qual se passa ${N} como parâmetro, onde N especifica o primeiro parâmetro genérico.
 
 ```4d
  C_TEXT(${4})
