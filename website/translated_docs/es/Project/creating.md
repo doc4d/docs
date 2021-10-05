@@ -8,7 +8,7 @@ title: Working with a project
 Multi-user development is managed via standard **source control** repository tools (Perforce, Git, SVN, etc.), which allow developers to work on different branches, and compare, merge, or revert modifications.
 
 
-## Creating a project
+## Crear un proyecto
 
 New 4D application projects can be created from **4D** or **4D Server**. In any case, project files are stored on the local machine.
 
