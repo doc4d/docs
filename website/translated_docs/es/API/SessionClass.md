@@ -259,7 +259,7 @@ The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns Tr
 
 #### Ejemplo
 
-In the `On Web Connection` database method:
+En el método base `On Web Connection`:
 
 ```4d
 If (Session.isGuest())
@@ -302,10 +302,10 @@ The `.setPrivileges()` function <!-- REF #SessionClass.setPrivileges().Summary -
 
 - In the *settings* parameter, pass an object containing the following properties:
 
-| Propiedad  | Tipo               | Descripción                                        |
-| ---------- | ------------------ | -------------------------------------------------- |
-| privileges | Text or Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
-| userName   | Texto              | User name to associate to the session (optional)   |
+| Propiedad  | Tipo              | Descripción                                        |
+| ---------- | ----------------- | -------------------------------------------------- |
+| privileges | Text o Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
+| userName   | Texto             | User name to associate to the session (optional)   |
 
 If the `privileges` property contains an invalid privilege name, it is ignored.
 
