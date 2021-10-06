@@ -46,7 +46,7 @@ Under macOS, in addition to the standard position (top), the tab controls can al
 Para suministrar las etiquetas de un control de pestañas, puede utilizar:
 
 - un objeto
-- a choice list
+- una lista de selección
 - an array
 
 ### Using an object
@@ -89,7 +89,7 @@ You can create a Text array that contains the names of each page of the form. Th
 
 ## Goto page features
 
-### FORM GOTO PAGE command
+### Comandoe FORM GOTO PAGE
 
 You can use the [`FORM GOTO PAGE`](https://doc.4d.com/4dv19/help/command/en/page247.html) command in the tab control’s method:
 

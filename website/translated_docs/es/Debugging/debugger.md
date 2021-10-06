@@ -37,7 +37,7 @@ The Debugger window is usually displayed on the machine where the code is execut
 
 > If the server is running headless, no debugger window can be displayed on the server, you need to use the remote debugger. See [Debugging from remote machines](./debugging-remote.md).
 
-## Tool bar Buttons
+## Botones barra de herramientas
 
 The debugger's tool bar includes several buttons, associated with default shortcuts:
 
@@ -188,7 +188,7 @@ Some objects, such as list box arrays, can be presented as two distinct objects,
 
 Like the Constants page of the Explorer window, this theme displays predefined constants provided by 4D. The expressions from this theme cannot be modified.
 
-#### Semaphores
+#### Semáforos
 
 This theme lists the local semaphores currently being set. For each semaphore, the Value column provides the name of the process that sets the semaphore. The expressions from this theme cannot be modified. The expressions from this theme cannot be modified.
 
@@ -278,7 +278,7 @@ The Custom Watch Pane is useful for evaluating expressions. It is similar to the
 * variable
 * puntero
 * calculation
-* 4D command
+* Comando 4D
 * method
 * and anything else that returns a value
 

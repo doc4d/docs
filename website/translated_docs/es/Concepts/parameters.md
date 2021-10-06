@@ -116,7 +116,7 @@ $entitySelection:=ds.User.query("login=:1"; $user)
 // Verificar la contraseña hash...
 ```
 
-### Returned value
+### Valor devuelto
 
 El parámetro de retorno de una función se declara añadiendo una flecha (->) y la definición del parámetro después de la lista de parámetros de entrada. Por ejemplo:
 
@@ -169,7 +169,7 @@ En el código del método, el valor de cada parámetro se copia automáticamente
 ```
 
 
-### Returned value
+### Valor devuelto
 
 El valor a devolver se pone automáticamente en la variable local `$0`.
 

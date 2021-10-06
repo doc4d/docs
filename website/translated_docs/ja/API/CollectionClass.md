@@ -76,10 +76,10 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 **New collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New collection.Params -->
-| 引数    | タイプ                                                                     |    | 説明             |
-| ----- | ----------------------------------------------------------------------- |:--:| -------------- |
-| value | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | コレクションの値       |
-| 戻り値   | Collection                                                              | <- | New collection |
+| 引数    | タイプ                                                                     |    | 説明        |
+| ----- | ----------------------------------------------------------------------- |:--:| --------- |
+| value | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | コレクションの値  |
+| 戻り値   | Collection                                                              | <- | 新しいコレクション |
 <!-- END REF -->
 
 
@@ -160,10 +160,10 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 **New shared collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New shared collection.Params -->
-| 引数    | タイプ                                                                 |    | 説明                    |
-| ----- | ------------------------------------------------------------------- |:--:| --------------------- |
-| value | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | 共有コレクションの値            |
-| 戻り値   | Collection                                                          | <- | New shared collection |
+| 引数    | タイプ                                                                 |    | 説明          |
+| ----- | ------------------------------------------------------------------- |:--:| ----------- |
+| value | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | 共有コレクションの値  |
+| 戻り値   | Collection                                                          | <- | 新規の共有コレクション |
 <!-- END REF -->
 
 
@@ -420,7 +420,7 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 <!-- REF #collection.copy().Params -->
 | 引数           | タイプ        |    | 説明                                                                       |
 | ------------ | ---------- |:--:| ------------------------------------------------------------------------ |
-| オプション        | Integer    | -> | `ck resolve pointers`: コピー前にポインターを解決する<br>`ck shared`: 共有コレクションを返す |
+| option       | Integer    | -> | `ck resolve pointers`: コピー前にポインターを解決する<br>`ck shared`: 共有コレクションを返す |
 | groupWithCol | Collection | -> | 結果のコレクションとグループする共有コレクション                                                 |
 | groupWithObj | Object     | -> | 結果のコレクションとグループする共有オブジェクト                                                 |
 | 戻り値          | Collection | <- | 元のコレクションのディープ・コピー                                                        |
@@ -674,7 +674,7 @@ End use
 <!-- REF #collection.distinct().Params -->
 | 引数           | タイプ        |    | 説明                                                       |
 | ------------ | ---------- |:--:| -------------------------------------------------------- |
-| オプション        | Integer    | -> | `ck diacritical`: アクセント等の発音区別符号を無視しない評価 (たとえば "A" # "a") |
+| option       | Integer    | -> | `ck diacritical`: アクセント等の発音区別符号を無視しない評価 (たとえば "A" # "a") |
 | propertyPath | Text       | -> | 重複しない値を取得する属性のパス                                         |
 | 戻り値          | Collection | <- | 重複しない値のみを格納した新規コレクション                                    |
 <!-- END REF -->
@@ -729,7 +729,7 @@ End use
 | 引数          | タイプ        |    | 説明                                                       |
 | ----------- | ---------- |:--:| -------------------------------------------------------- |
 | collection2 | Collection | -> | 比較するコレクション                                               |
-| オプション       | Integer    | -> | `ck diacritical`: アクセント等の発音区別符号を無視しない評価 (たとえば "A" # "a") |
+| option      | Integer    | -> | `ck diacritical`: アクセント等の発音区別符号を無視しない評価 (たとえば "A" # "a") |
 | 戻り値         | Boolean    | <- | コレクションが同一の場合には true、それ以外は false                          |
 <!-- END REF -->
 
@@ -883,7 +883,7 @@ End if
 | ------------ | ---------- |:--:| ----------------------------------------------------------------------------------------------- |
 | propertyPath | Text       | -> | 新しいコレクションに抽出する値のオブジェクトプロパティパス                                                                   |
 | targetpath   | Text       | -> | 抽出先のプロパティパスあるいはプロパティ名                                                                           |
-| オプション        | Integer    | -> | `ck keep null`: 返されるコレクションに null プロパティを含めます (デフォルトでは無視されます)。 *targetPath* を渡した場合には、この引数は無視されます。 |
+| option       | Integer    | -> | `ck keep null`: 返されるコレクションに null プロパティを含めます (デフォルトでは無視されます)。 *targetPath* を渡した場合には、この引数は無視されます。 |
 | 戻り値          | Collection | <- | 抽出した値を格納した新しいコレクション                                                                             |
 <!-- END REF -->
 
@@ -1452,7 +1452,7 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 | 引数        | タイプ     |    | 説明                                               |
 | --------- | ------- |:--:| ------------------------------------------------ |
 | delimiter | Text    | -> | 要素間に用いる区切り文字                                     |
-| オプション     | Integer | -> | `ck ignore null or empty`: 戻り値に null と空の文字列を含めない |
+| option    | Integer | -> | `ck ignore null or empty`: 戻り値に null と空の文字列を含めない |
 | 戻り値       | Text    | <- | 区切り文字を使ってコレクションの全要素をつなげた文字列                      |
 <!-- END REF -->
 
