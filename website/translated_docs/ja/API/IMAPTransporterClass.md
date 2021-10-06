@@ -236,7 +236,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 | mailObj        | Object | -> | Email オブジェクト            |
 | destinationBox | Text   | -> | Emailオブジェクトを受信するメールボックス |
 | options        | Object | -> | 文字セット情報を格納したオブジェクト      |
-| 戻り値            | Result | <- | delete処理のステータス          |
+| 戻り値            | Result | <- | append処理のステータス          |
 <!-- END REF -->
 
 
@@ -1493,6 +1493,7 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 ```
 
 <!-- END REF -->
+
 
 
 
