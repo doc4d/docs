@@ -373,8 +373,8 @@ The object returned by `.drop( )` contains the following properties:
 |               | task_id             | number                | Process id                                                                                                            |
 |               | user_name           | texto                 | Session user name on the machine                                                                                      |
 |               | user4d_alias        | texto                 | User alias if defined by `SET USER ALIAS`, otherwise user name in the 4D directory                                    |
-|               | host_name           | texto                 | Machine name                                                                                                          |
-|               | task_name           | texto                 | Process name                                                                                                          |
+|               | host_name           | texto                 | Nombre de la máquina                                                                                                  |
+|               | task_name           | texto                 | Nombre del proceso                                                                                                    |
 |               | client_version      | texto                 |                                                                                                                       |
 |               |                     |                       | ***Available only in case of serious error (serious error can be trying to duplicate a primary key, disk full...):*** |
 | errors        |                     | collection of objects |                                                                                                                       |
@@ -812,9 +812,9 @@ The resulting value is included between 0 and the length of the entity selection
 **.isNew()** : Boolean<!-- END REF -->
 
 <!-- REF #EntityClass.isNew().Params -->
-| Parámetros | Tipo     |    | Descripción                                                               |
-| ---------- | -------- |:--:| ------------------------------------------------------------------------- |
-| Resultado  | Booleano | <- | True if entity has just been created and not yet saved. Otherwise, False. |
+| Parámetros | Tipo     |    | Descripción                                                                       |
+| ---------- | -------- |:--:| --------------------------------------------------------------------------------- |
+| Resultado  | Booleano | <- | True if entity has just been created and not yet saved. En caso contrario, False. |
 <!-- END REF -->
 
 #### Descripción
@@ -934,8 +934,8 @@ The object returned by `.lock( )` contains the following properties:
 |                  | user_name           | texto                 | Session user name on the machine                                                                                    |
 |                  | user4d_alias        | texto                 | Name or alias of the 4D user                                                                                        |
 |                  | user4d_id           | number                | User id in the 4D database directory                                                                                |
-|                  | host_name           | texto                 | Machine name                                                                                                        |
-|                  | task_name           | texto                 | Process name                                                                                                        |
+|                  | host_name           | texto                 | Nombre de la máquina                                                                                                |
+|                  | task_name           | texto                 | Nombre del proceso                                                                                                  |
 |                  | client_version      | texto                 |                                                                                                                     |
 |                  |                     |                       | ***Available only in case of serious error*** (primary key already exists, disk full...):                           |
 | errors           |                     | collection of objects |                                                                                                                     |
@@ -1191,8 +1191,8 @@ The object returned by `.save()` contains the following properties:
 |              | task_id            | number                | Process id                                                                                                              |
 |              | user_name          | texto                 | Session user name on the machine                                                                                        |
 |              | user4d_alias       | texto                 | User alias if defined by `SET USER ALIAS`, otherwise user name in the 4D directory                                      |
-|              | host_name          | texto                 | Machine name                                                                                                            |
-|              | task_name          | texto                 | Process name                                                                                                            |
+|              | host_name          | texto                 | Nombre de la máquina                                                                                                    |
+|              | task_name          | texto                 | Nombre del proceso                                                                                                      |
 |              | client_version     | texto                 |                                                                                                                         |
 |              |                    |                       | ***Available only in case of serious error*** (serious error - can be trying to duplicate a primary key, disk full...): |
 | errors       |                    | collection of objects |                                                                                                                         |
