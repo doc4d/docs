@@ -47,7 +47,7 @@ This is illustrated by the following graphic:
 
 ![](assets/en/ORDA/entityRef1.png)
 
-Now if you execute:
+Ahora, si se ejecuta:
 
 ```4d
  var $e1; $e2 : cs.EmployeeEntity
@@ -204,7 +204,7 @@ An **alterable** entity selection has the following characteristics:
 - it accepts the addition of new entities, i.e. it is supports the [`.add()`](API/EntitySelectionClass.md#add) function.
 
 
-#### How are they defined?
+#### ¿Cómo se definen?
 
 The **shareable** or **alterable** nature of an entity selection is defined when the entity selection is created (it cannot be modified afterwards). [entitySelection.*attributeName*](API/EntitySelectionClass.md#attributename) (e.g.
 
@@ -328,7 +328,7 @@ In addition to the variety of ways you can query, you can also use relation attr
 The last line will return in $myInvoices an entity selection of all invoices that have at least one invoice item related to a part in the entity selection myParts. When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned. When a relation attribute is used as a property of an entity selection and no entities are returned, the result is an empty entity selection, not null.
 
 
-## Entity Locking
+## Bloqueo de una entidad
 
 You often need to manage possible conflicts that might arise when several users or processes load and attempt to modify the same entities at the same time. Record locking is a methodology used in relational databases to avoid inconsistent updates to data. The concept is to either lock a record upon read so that no other process can update it, or alternatively, to check when saving a record to verify that some other process hasn’t modified it since it was read. The former is referred to as **pessimistic record locking** and it ensures that a modified record can be written at the expense of locking records to other users. The latter is referred to as **optimistic record locking** and it trades the guarantee of write privileges to the record for the flexibility of deciding write privileges only if the record needs to be updated. In pessimistic record locking, the record is locked even if there is no need to update it. In optimistic record locking, the validity of a record’s modification is decided at update time.
 
