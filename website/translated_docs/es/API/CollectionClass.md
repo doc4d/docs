@@ -4,9 +4,9 @@ title: Collection
 ---
 
 
-The Collection class manages [Collection](Concepts/dt_collection.md) type variables.
+La clase Collection gestiona variables de tipo [Collection](Concepts/dt_collection.md).
 
-A collection is initialized with:
+Una colección se inicializa con:
 
 |                                                                                                                                                                                                                        |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -17,8 +17,8 @@ A collection is initialized with:
 ### Ejemplo
 
 ```4d
- var $colVar : Collection //creation of collection type 4D variable
- $colVar:=New collection //initialization of the collection and assignment to the 4D variable
+ var $colVar : Collection //creación de una variable 4D de tipo colección
+ $colVar:=New collection //inicialización de la colección y asignación a la variable 4D
 ```
 
 
@@ -76,20 +76,20 @@ A collection is initialized with:
 **New collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New collection.Params -->
-| Parámetros | Tipo                                                                    |    | Descripción           |
-| ---------- | ----------------------------------------------------------------------- |:--:| --------------------- |
-| value      | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | Collection's value(s) |
-| Resultado  | Collection                                                              | <- | Nueva colección       |
+| Parámetros | Tipo                                                                    |    | Descripción             |
+| ---------- | ----------------------------------------------------------------------- |:--:| ----------------------- |
+| value      | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | Valor(es) de collection |
+| Resultado  | Collection                                                              | <- | Nueva colección         |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `New collection` command <!-- REF #_command_.New collection.Summary --> creates a new empty or prefilled collection<!-- END REF --> and returns its reference.
+El comando `Nueva colección` <!-- REF #_command_.New collection.Summary --> crea una nueva colección vacía o precargada<!-- END REF --> y devuelve su referencia.
 
-If you do not pass any parameters, `New collection` creates an empty collection and returns its reference.
+Si no se pasa ningún parámetro, `New collection` crea una colección vacía y devuelve su referencia.
 
-You must assign the returned reference to a 4D variable of the Collection type.
+Debe asignar la referencia devuelta a una variable 4D del tipo Collection.
 > Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but does not create any collection.
 
 Optionally, you can prefill the new collection by passing one or several *value*(s) as parameter(s).
@@ -140,7 +140,7 @@ You create a new collection and then add a new element:
  var $coll : Collection
  $coll:=New collection("a";"b";"c")
   //$coll=["a","b","c"]
- $coll[9]:="z" //add a 10th element with value "z"
+ $coll[9]:="z" //añadir un décimo elemento con valor "z"
  $vcolSize:=$coll.length //10
   //$coll=["a","b","c",null,null,null,null,null,null,"z"]
 ```
@@ -148,7 +148,7 @@ You create a new collection and then add a new element:
 
 
 
-## `New shared collection`
+## `Nueva collection compartida`
 
 <details><summary>Histórico</summary>
 | Versión | Modificaciones |
@@ -160,10 +160,10 @@ You create a new collection and then add a new element:
 **New shared collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New shared collection.Params -->
-| Parámetros | Tipo                                                                |    | Descripción                  |
-| ---------- | ------------------------------------------------------------------- |:--:| ---------------------------- |
-| value      | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | Shared collection's value(s) |
-| Resultado  | Collection                                                          | <- | New shared collection        |
+| Parámetros | Tipo                                                                |    | Descripción                           |
+| ---------- | ------------------------------------------------------------------- |:--:| ------------------------------------- |
+| value      | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | Valor(es) de la collection compartida |
+| Resultado  | Collection                                                          | <- | Nueva collection compartida           |
 <!-- END REF -->
 
 
@@ -176,7 +176,7 @@ Adding an element to this collection must be surrounded by the [`Use...End`](Con
 
 If you do not pass any parameters, `New shared collection` creates an empty shared collection and returns its reference.
 
-You must assign the returned reference to a 4D variable of the Collection type.
+Debe asignar la referencia devuelta a una variable 4D del tipo Collection.
 > Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but does not create any collection.
 
 Optionally, you can prefill the new shared collection by passing one or several *value*(s) as parameter(s). Otherwise, you can add or modify elements subsequently through object notation assignment (see example).
@@ -240,7 +240,7 @@ Only numerical elements are taken into account for the calculation (other elemen
 
 If the collection contains objects, pass the *propertyPath* parameter to indicate the object property to take into account.
 
-`.average()` returns `undefined` if:
+`.average()` devuelve `undefined` if:
 
 *   the collection is empty,
 *   the collection does not contain numerical elements,
@@ -515,7 +515,7 @@ This example illustrates the use of the `ck resolve pointers` option:
 
  $col2:=$col.copy()
  $col2[1].beta:="World!"
- ALERT($col[0].alpha+" "+$col2[1].beta) //displays "Hello World!"
+ ALERT($col[0].alpha+" "+$col2[1].beta) //muestra "Hello World!"
 
  $what:="You!"
  $col3:=$col2.copy(ck resolve pointers)
@@ -1298,7 +1298,7 @@ The `.indexOf()` function <!-- REF #collection.indexOf().Summary -->searches the
 In *toSearch*, pass the expression to find in the collection. You can pass:
 
 *   a scalar value (text, number, boolean, date),
-*   the null value,
+*   el valor null,
 *   an object or a collection reference.
 
 *toSearch* must match exactly the element to find (the same rules as for the equality operator of the data type are applied).
@@ -1509,7 +1509,7 @@ The `.lastIndexOf()` function <!-- REF #collection.lastIndexOf().Summary -->sear
 In *toSearch*, pass the expression to find in the collection. You can pass:
 
 *   a scalar value (text, number, boolean, date),
-*   the null value,
+*   el valor null,
 *   an object or a collection reference.
 
 *toSearch* must match exactly the element to find (the same rules as for the equality operator are applied).
@@ -1911,7 +1911,7 @@ This function returns a *shallow copy*, which means that objects or collections 
 In *methodName*, pass a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. You can provide additional parameters to *methodName* if necessary.
 
 *   *methodName* will receive the following parameters:
-    *   $1 (object), where:
+    *   $1 (objeto), donde:
         *   *$1.value* (any type): first element value to be compared
         *   *$1.value2* (any type): second element value to be compared
     *   $2...$N (any type): extra parameters
@@ -2188,7 +2188,7 @@ This example returns persons hired more than 90 days ago:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
-  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] if today is 01/10/2018
+  //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}] si hoy es 01/10/2018
 ```
 
 
@@ -2659,7 +2659,7 @@ If `.sort()` is called with no parameters, only scalar values (number, text, dat
 If you want to sort the collection elements in some other order or sort any type of element, you must supply in *methodName* a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. You can provide additional parameters to *methodName* if necessary.
 
 *   *methodName* will receive the following parameters:
-    *   $1 (object), where:
+    *   $1 (objeto), donde:
         *   *$1.value* (any type): first element value to be compared
         *   *$1.value2* (any type): second element value to be compared
     *   $2...$N (any type): extra parameters
