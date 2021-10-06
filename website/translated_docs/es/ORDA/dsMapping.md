@@ -104,7 +104,7 @@ For example, consider the following table in the 4D structure:
 
 ![](assets/en/ORDA/companyTable.png)
 
-The `Company` table is automatically available as a dataclass in the `ds` datastore. You can write:
+The `Company` table is automatically available as a dataclass in the `ds` datastore. Puede escribir:
 
 ```4d 
 var $compClass : cs.Company //declares a $compClass object variable of the Company class
@@ -114,7 +114,7 @@ $compClass:=ds.Company //assigns the Company dataclass reference to $compClass
 A dataclass object can contain:
 
 *   attributes
-*   relation attributes
+*   atributos relacionales
 
 The dataclass offers an abstraction of the physical database and allows handling a conceptual data model. The dataclass is the only means to query the datastore. A query is done from a single dataclass. Queries are built around attributes and relation attribute names of the dataclasses. So the relation attributes are the means to involve several linked tables in a query.
 
@@ -207,12 +207,9 @@ var $e : cs.EmployeeSelection //declares a $e object variable of the EmployeeSel
 $e:=ds.Employee.all() //assigns the resulting entity selection reference to the $e variable
 ```
 
-Entity selections can be:
+Entity selections can be "sorted" or "unsorted" ([see below](#ordered-or-unordered-entity-selection)).
 
-- "compartible" o "no compartible",
-- " ordenadas" o "no ordenadas".
-
-These points are discussed below.
+> Entity selections can also be "shareable" or "non-shareable", depending on [how they have been created](entities.md#shareable-or-alterable-entity-selections).
 
 The entity selection object itself cannot be copied as an object:
 

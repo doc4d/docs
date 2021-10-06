@@ -1,6 +1,6 @@
 ---
 id: webAdmin
-title: Web Administration
+title: Administración Web
 ---
 
 
@@ -84,16 +84,16 @@ When this option is checked, you will be able to connect to the `WebAdmin` web s
 
 #### HTTP Port
 
-Port number to use for connections through HTTP to the `WebAdmin` web server when the **Accept HTTP connections on localhost** option is checked. Default value is 7080.
+Port number to use for connections through HTTP to the `WebAdmin` web server when the **Accept HTTP connections on localhost** option is checked. El valor por defecto es 7080.
 
 
-#### Accept HTTPS
+#### Aceptar HTTPS
 
 When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. By default, this option is checked.
 
 #### HTTPS Port
 
-Port number to use for connections through HTTPS to the `WebAdmin` web server when the **Accept HTTPS** option is checked. Default value is 7443.
+Port number to use for connections through HTTPS to the `WebAdmin` web server when the **Accept HTTPS** option is checked. El valor por defecto es 7443.
 
 
 #### Certificate folder path

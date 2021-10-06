@@ -470,7 +470,7 @@ This property is **read-only**.
 | destinationFolder | 4D.Folder | -> | Destination folder                          |
 | newName           | Texto     | -> | Name for the copy                           |
 | overwrite         | Integer   | -> | `fk overwrite` to replace existing elements |
-| Resultado         | 4D.File   | <- | Copied file                                 |
+| Resultado         | 4D.File   | <- | Archivo copiado                             |
 <!-- END REF -->
 
 
@@ -489,7 +489,7 @@ If a file with the same name already exists in the *destinationFolder*, by defau
 | `fk overwrite` | 4     | Overwrite existing elements, if any |
 
 
-**Returned value**
+**Valor devuelto**
 
 The copied `File` object.
 
@@ -520,9 +520,9 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 **.getContent( )** : Blob<!-- END REF -->
 
 <!-- REF #document.getContent().Params -->
-| Parámetros | Tipo |    | Descripción  |
-| ---------- | ---- | -- | ------------ |
-| Resultado  | Blob | <- | File content |
+| Parámetros | Tipo |    | Descripción           |
+| ---------- | ---- | -- | --------------------- |
+| Resultado  | Blob | <- | Contenido del archivo |
 <!-- END REF -->
 
 
@@ -530,9 +530,9 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `BLOB` containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
 
-**Returned value**
+**Valor devuelto**
 
-A `Blob`.
+Un `Blob`.
 
 #### Ejemplo
 
@@ -578,7 +578,7 @@ The optional *size* parameter specifies the dimensions in pixels of the returned
 
 If the file does not exist on disk, a default blank icon is returned.
 
-**Returned value**
+**Valor devuelto**
 
 File icon [picture](../Concepts/picture.html).
 
@@ -635,7 +635,7 @@ In *breakMode*, you can pass a number indicating the processing to apply to end-
 
 By default, when you omit the *breakMode* parameter, line breaks are processed in native mode (1).
 
-**Returned value**
+**Valor devuelto**
 
 Text of the file.
 
@@ -653,10 +653,10 @@ When you execute this code:
 
 
 ```4d
- $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 by default
+ $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 por defecto
  $txt:=$myFile.getText()
 ```
-... you get:
+... obtiene:
 
 ```4d
   // $Text = "id name price vat\r\n3 thé 1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"

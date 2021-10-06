@@ -8,7 +8,7 @@ title: Formula
 The [Formula](#formula) and [Formula from string](#formula-from-string) commands allow you to create native [`4D.Function` objects](#about-4dfunction-objects) to execute any 4D expression or code expressed as text.
 
 
-### Formula Objects
+### Objetos Formula
 
 Formula objects can be encapsulated in object properties:
 

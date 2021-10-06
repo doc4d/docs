@@ -89,7 +89,7 @@ The following code, which must specify a relative path for each call:
 <!--#4DINCLUDE folder/subpage3.html-->
 <!--#4DINCLUDE ../folder/subpage.html-->
 ```
-... is equivalent to:
+... es equivalente a:
 
 ```html
 <!--#4DINCLUDE subpage.html--> 
@@ -344,7 +344,7 @@ The value of the 4D variable `vtSiteName` will be inserted in the HTML page when
 
 For example, here are the processing results of the 4D text variable myvar with the available tags:
 
-| myvar Value          | Etiquetas                    | Resultado           |
+| Valor myvar          | Etiquetas                    | Resultado           |
 | -------------------- | ---------------------------- | ------------------- |
 | `myvar:="<B>"` | `<!--#4DTEXT myvar-->` | `&lt;B&gt;` |
 | `myvar:="<B>"` | `<!--#4DHTML myvar-->` | `<B>`         |
@@ -682,7 +682,7 @@ In case of an evaluation error, the inserted text will appear as `<!--#4DTEXT my
 Several existing 4D transformation tags can be expressed using a $-based syntax:
 
 #### $4dtag (expression)
-can be used instead of
+puede utilizarse en lugar de
 #### `<!--#4dtag expression-->`
 
 This alternative syntax is available only for tags used to return processed values:
@@ -699,7 +699,7 @@ For example, you can write:
 $4DEVAL(UserName)
 ```
 
-instead of:
+en lugar de:
 
 ```html
 <!--#4DEVAL(UserName)-->
@@ -753,7 +753,7 @@ Note that the `$4dtag` syntax supports matching pairs of enclosed quotes or pare
 String(1) + "\"(hello)\""
 ```
 
-You can write:
+Puede escribir:
 
 ```4d
  input:="$4DEVAL( String(1)+\"\\\"(hello)\\\"\")"

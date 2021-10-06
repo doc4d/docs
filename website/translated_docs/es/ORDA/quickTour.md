@@ -31,7 +31,7 @@ ds.Company.city //returns the name of the city
 
 > In the ORDA world, ds.Company is a **dataclass**. ds.Company.city is an **attribute**.
 
-> ORDA is case sensitive. `ds.company.city` will not refer to the ds.Company.city attribute.
+> ORDA es sensible a las mayúsculas y minúsculas. `ds.company.city` will not refer to the ds.Company.city attribute.
 
 You have also noticed the extra `hires` property in the ds.Company dataclass. It does not correspond to a field. `hires` is actually the name of the *One to many* relation between Company and Employee:
 
@@ -98,7 +98,7 @@ The list of users displays all the users, including the [Designer and the Admini
 
 4D adds a new user to the list, named "New userX" by default.
 
-3. Enter the user name. This name will be used by the user to open the database. You can rename a user at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
+3. Introduzca el nombre de usuario. This name will be used by the user to open the database. You can rename a user at any time using the **Rename** command of the context menu, or by using the Alt+click (Windows) or Option+click (macOS) shortcuts, or by clicking twice on the name you want to change.
 
 4. To enter a password for the user, click the **Edit...** button in the user properties area and enter the password twice in the dialog box. You can use up to 15 alphanumeric characters for a password. The password editor is case sensitive.
 
