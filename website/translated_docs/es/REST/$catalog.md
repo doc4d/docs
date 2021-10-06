@@ -73,7 +73,7 @@ Para más información sobre lo que se devuelve para cada clase de datos y sus a
 
 ### Ejemplo
 
-`GET  /rest/$catalog/$all`
+`GET /rest/$catalog/$all`
 
 **Result**:
 
