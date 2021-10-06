@@ -319,7 +319,7 @@ Displays/hides the vertical ruler when the document view is in [Page mode](#view
 
 
 ---
-## Tab Control Direction
+## Pestañas
 
 You can set the direction of tab controls in your forms. This property is available on all the platforms but can only be displayed in macOS. You can choose to place the tab controls on top (standard) or on the bottom.
 
@@ -334,7 +334,7 @@ When tab controls with a custom direction are displayed under Windows, they auto
 
 #### Objetos soportados
 
-[Tab Control](tabControl.md)
+[Pestañas](tabControl.md)
 
 
 ---
@@ -389,7 +389,7 @@ Valores disponibles:
 
 #### Ver también
 
-[Horizontal scroll bar](#horizontal-scroll-bar)
+[Barra de desplazamiento horizontal](#horizontal-scroll-bar)
 
 ---
 ## Modo de visualización
