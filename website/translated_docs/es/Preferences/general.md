@@ -20,7 +20,7 @@ This option allows you to configure the default 4D display at startup, when the 
 
 ### Automatic form creation
 
-> This option is only used in binary databases; it is ignored in project architecture. See doc.4d.com.
+> This option is only used in binary databases; it is ignored in project architecture. Ver doc.4d.com.
 
 #### Window tabbing (macOS only)
 
@@ -103,7 +103,7 @@ Indicates the location of the static HTML documentation. By default, this is the
 You can modify this location as desired, for example if you want to display the documentation in a language different from that of the application. The static HTML documentation can be located on another volume, on a web server, etc. To designate a different location, click on the [...] button next to the entry area and choose a documentation root folder (folder corresponding to the language: fr, en, es, de or ja).
 
 
-### Web Site
+### Sitio Web
 
 URL access to the on-line documentation for the version on 4D Doc Center. 4D builds calls to the pages of the documentation based on this URL. You can modify it, for example if you want to display documentation in a different language from the application language. The test button to the right of the area launches the default browser to go to the URL specified.
 
