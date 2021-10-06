@@ -91,10 +91,10 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
     </td>
     
     <td>
-      4D.File or 4D.Folder
+      4D.File o 4D.Folder
       
       <td>
-        File or Folder
+        File o Folder
       </td></tr>
       
       <tr>
@@ -218,7 +218,7 @@ To compress a ZIP archive structure with a password and progress bar:
  $zip.password:="password"
  $zip.callback:=Formula(myFormulaCompressingMethod($1))
 
- progID:=Progress New //we use the 4D Progress component
+ progID:=Progress New //utilizamos el componente 4D Progress
 
  $status:=ZIP Create archive($zip;$destination)
 
