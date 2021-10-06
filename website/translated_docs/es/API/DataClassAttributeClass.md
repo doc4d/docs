@@ -359,7 +359,7 @@ The conceptual value type depends on the attribute [`.kind`](#kind).
 | dataClassAttribute.kind | type                                                    | Comentario                                                                                                                                 |
 | ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | storage                 | "number", "date", "object", "bool", "image", o "string" | "number" se devuelve para cualquier tipo numérico, incluyendo la duración. "string" se devuelve para los tipos de campo uuid, alfa y texto |
-| relatedEntity           | related dataClass name                                  | Ex: "Companies"                                                                                                                            |
+| relatedEntity           | related dataClass name                                  | Ej.: "Companies"                                                                                                                           |
 | relatedEntities         | related dataClass name + "Selection" suffix             | Ex: "EmployeeSelection"                                                                                                                    |
 
 <!-- END REF -->
