@@ -66,7 +66,7 @@ The `Documentation` folder architecture is the following:
 
 ## Documentation in the Explorer
 
-### Viewing documentation
+### Ver la documentación
 
 To view documentation in the Explorer window:
 
