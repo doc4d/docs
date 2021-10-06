@@ -11,7 +11,7 @@ If more than one person uses an application, which is usually the case in client
 
 
 
-## Assigning group access
+## Asignación de acceso a grupos
 
 4D’s password access system is based on users and groups. You create users and assign passwords, put users in groups, and assign each group access rights to appropriate parts of the application.
 
@@ -42,7 +42,7 @@ In project applications (.4DProject or .4dz files), 4D users and groups can be c
 | ------------------------------------------------------------- | ---------------------------- | --------- |
 | Adding/editing users and groups                               | sí                           | sí        |
 | Assigning user/group access to servers                        | sí                           | sí        |
-| User identification                                           | no (all users are Designer)  | sí        |
+| Identificación del usuario                                    | no (all users are Designer)  | sí        |
 | Access control once the Designer has been assigned a password | no (all access are Designer) | sí        |
 
 
@@ -59,7 +59,7 @@ The editors for users and groups are located in the toolbox of 4D. These editors
 
 
 
-## Directory.json file
+## Archivo directory.json
 
 Users, groups, as well as their access rights are stored in a specific project file named **directory.json**.
 
