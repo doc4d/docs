@@ -309,7 +309,7 @@ The `.encryptionStatus()` function <!-- REF #DataStoreClass.encryptionStatus().S
 > Use the `Data file encryption status` command to determine the encryption status of any other data file.
 
 
-**Returned value**
+**Valor devuelto**
 
 The returned object contains the following properties:
 
@@ -319,7 +319,7 @@ The returned object contains the following properties:
 | keyProvided |             |               | Booleano | True if the encryption key matching the encrypted data file is provided(*).        |
 | tablas      |             |               | Objeto   | Object containing as many properties as there are encryptable or encrypted tables. |
 |             | *tableName* |               | Objeto   | Encryptable or Encrypted table                                                     |
-|             |             | name          | Texto    | Name of the table                                                                  |
+|             |             | name          | Texto    | Nombre de la tabla                                                                 |
 |             |             | num           | Número   | Table number                                                                       |
 |             |             | isEncryptable | Booleano | True if the table is declared encryptable in the structure file                    |
 |             |             | isEncrypted   | Booleano | True if the records of the table are encrypted in the data file                    |
@@ -380,7 +380,7 @@ You want to know the number of encrypted tables in the current data file:
 
 The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. This function is useful for setting up generic code.
 
-**Returned object**
+**Objeto devuelto**
 
 | Propiedad  | Tipo     | Descripción                                                                                                                                                     |
 | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -407,7 +407,7 @@ The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns 
 
 #### Ejemplo 2
 
-On a remote datastore:
+En un almacén de datos remoto:
 
 ```4d
   var $remoteDS : cs.DataStore
@@ -453,7 +453,7 @@ The `.getRequestLog()` function <!-- REF #DataStoreClass.getRequestLog().Summary
 
 This function must be called on a remote 4D, otherwise it returns an empty collection. It is designed for debugging purposes in client/server configurations.
 
-**Returned value**
+**Valor devuelto**
 
 Collection of stacked request objects. The most recent request has index 0.
 
@@ -585,7 +585,7 @@ The result of the command is described in the returned object:
 | statusText |                          | Texto      | Error message                                                                   |
 | errors     |                          | Collection | Stack of errors. The first error has the highest index                          |
 |            | \[ ].componentSignature | Texto      | Internal component name                                                         |
-|            | \[ ].errCode            | Número     | Error number                                                                    |
+|            | \[ ].errCode            | Número     | Número de error                                                                 |
 |            | \[ ].message            | Texto      | Error message                                                                   |
 
 If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **null** (no error is generated).
