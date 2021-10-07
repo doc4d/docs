@@ -800,9 +800,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be evaluated
+*   en *$1.value*: valor del elemento a evaluar
 *   en *$2*: param
-*   in *$N...*: paramN...
+*   en *$N...*: paramN...
 
 *methodName* sets the following parameter(s):
 
@@ -1029,8 +1029,8 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 *methodName* receives the following parameters:
 
 *   in *$1.value*: element value to be filtered
-*   in *$2*: *param*
-*   in *$N...*: param2...paramN
+*   en *$2*: *param*
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
@@ -1123,9 +1123,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value:* element value to be evaluated
+*   en *$1.value:* valor del elemento a evaluar
 *   en *$2: param*
-*   in *$N...*: param2...paramN
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
@@ -1222,9 +1222,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be evaluated
+*   en *$1.value*: valor del elemento a evaluar
 *   en *$2: param*
-*   in *$N...*: param2...paramN
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
@@ -2237,7 +2237,7 @@ You can pass the value to initialize the accumulator in *initValue*. If omitted,
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be processed
+*   en *$1.value*: valor del elemento a procesar
 *   en *$2: param*
 *   in *$N...*: *paramN...*
 
@@ -2578,9 +2578,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be evaluated
+*   en *$1.value*: valor del elemento a evaluar
 *   en *$2*: param
-*   in *$N...*: param2...paramN
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
