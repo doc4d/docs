@@ -170,7 +170,7 @@ Supported properties depend on the list box type.
 | [Number of Locked Columns](properties_ListBox.md#number-of-locked-columns)                   | X              | X                  | X                                       |
 | [Number of Static Columns](properties_ListBox.md#number-of-static-columns)                   | X              | X                  | X                                       |
 | [Object Name](properties_Object.md#object-name)                                              | X              | X                  | X                                       |
-| [Right](properties_CoordinatesAndSizing.md#right)                                            | X              | X                  | X                                       |
+| [Direita](properties_CoordinatesAndSizing.md#right)                                          | X              | X                  | X                                       |
 | [Row Background Color Array](properties_BackgroundAndBorder.md#row-background-color-array)   | X              |                    |                                         |
 | [Row Control Array](properties_ListBox.md#row-control-array)                                 | X              |                    |                                         |
 | [Row Font Color Array](properties_Text.md#row-font-color-array)                              | X              |                    |                                         |
