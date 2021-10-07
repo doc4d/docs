@@ -336,7 +336,7 @@ You want to know the number of encrypted tables in the current data file:
 
  $status:=dataStore.encryptionStatus()
 
- If($status.isEncrypted) //the database is encrypted
+ If($status.isEncrypted) //la base está encriptada
     C_LONGINT($vcount)
     C_TEXT($tabName)
     For each($tabName;$status.tables)
@@ -395,10 +395,10 @@ The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns 
 ```4d
  var $info : Object
 
- $info:=ds.getInfo() //Executed on 4D Server or 4D
+ $info:=ds.getInfo() //Ejecutado en 4D Server o 4D
   //{"type":"4D","networked":false,"localID":""}
 
- $info:=ds.getInfo() // Executed on 4D remote
+ $info:=ds.getInfo() // Ejecutado en 4D remoto
   //{"type":"4D","networked":true,"localID":""}
 ```
 
