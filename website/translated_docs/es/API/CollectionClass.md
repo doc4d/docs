@@ -801,7 +801,7 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 *methodName* receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
-*   in *$2*: param
+*   en *$2*: param
 *   in *$N...*: paramN...
 
 *methodName* sets the following parameter(s):
@@ -1124,7 +1124,7 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 *methodName* receives the following parameters:
 
 *   in *$1.value:* element value to be evaluated
-*   in *$2: param*
+*   en *$2: param*
 *   in *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
@@ -1223,7 +1223,7 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 *methodName* receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
-*   in *$2: param*
+*   en *$2: param*
 *   in *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
@@ -2238,7 +2238,7 @@ You can pass the value to initialize the accumulator in *initValue*. If omitted,
 *methodName* receives the following parameters:
 
 *   in *$1.value*: element value to be processed
-*   in *$2: param*
+*   en *$2: param*
 *   in *$N...*: *paramN...*
 
 *methodName* sets the following parameter(s):
@@ -2579,7 +2579,7 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 *methodName* receives the following parameters:
 
 *   in *$1.value*: element value to be evaluated
-*   in *$2*: param
+*   en *$2*: param
 *   in *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
