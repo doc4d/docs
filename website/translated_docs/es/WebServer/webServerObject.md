@@ -32,7 +32,7 @@ The web server object of the host application (default web server) is automatica
 
 ```4d
 $nbSrv:=WEB Server list.length   
-//$nbSrv value is 1
+//el valor de $nbSrv es 1
 ```
 
 To instantiate a web server object, call the [`WEB Server`](API/webServerClass.md#web-server) command:
@@ -62,14 +62,14 @@ webServer:=WEB Server(Web server receiving request)
 ```
 
 
-## Web server functions
+## Funciones del servidor web
 
 A [web server class object](API/webServerClass.md#web-server-object) contains the following functions:
 
-| Funciones                                | Parámetros        | Return value    | Descripción           |
-| ---------------------------------------- | ----------------- | --------------- | --------------------- |
-| [`start()`](API/webServerClass.md#start) | settings (object) | status (objeto) | Starts the web server |
-| [`stop()`](API/webServerClass.md#start)  | -                 | -               | Stops the web server  |
+| Funciones                                | Parámetros        | Valor devuelto  | Descripción             |
+| ---------------------------------------- | ----------------- | --------------- | ----------------------- |
+| [`start()`](API/webServerClass.md#start) | settings (object) | status (objeto) | Iniciar el servidor web |
+| [`stop()`](API/webServerClass.md#start)  | -                 | -               | Detener el servidor Web |
 
 To start and stop a web server, just call the [`start()`](API/webServerClass.md#start) and [`stop()`](API/webServerClass.md#stop) functions of the web server object:
 
@@ -86,7 +86,7 @@ $status:=webServer.stop()
 ```
 
 
-## Web server properties
+## Propiedades del servidor web
 
 A web server object contains [various properties](API/webServerClass.md#web-server-object) which configure the web server.
 
