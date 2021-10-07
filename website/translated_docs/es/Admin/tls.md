@@ -5,9 +5,9 @@ title: Protocolo TLS (HTTPS)
 
 All 4D servers can communicate in secured mode through the TLS (Transport Layer Security) protocol:
 
-- the web server
+- el servidor web
 - the application server (client-server desktop applications)
-- the SQL server
+- el servidor SQL
 
 ## Generalidades
 
@@ -71,7 +71,7 @@ To be able to use the TLS protocol with the server, you must install the **key.p
 You must copy these files manually on the remote machine.
 > Default *key.pem* and *cert.pem* files are provided with 4D. For a higher level of security, we strongly recommend that you replace these files with your own certificates.
 
-### Enabling TLS
+### Activar TLS
 
 The installation of **key.pem** and **cert.pem** files makes it possible to use TLS with the 4D server. However, in order for TLS connections to be accepted by the server, you must enable them:
 
