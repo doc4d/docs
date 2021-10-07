@@ -48,10 +48,10 @@ Webサーバーオブジェクトは [`WEB Server`](#web-server) コマンドに
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| 引数    | タイプ          |    | 説明                                               |
-| ----- | ------------ | -- | ------------------------------------------------ |
-| オプション | Integer      | -> | 取得する Webサーバー (省略時のデフォルト = `Web server database`) |
-| 戻り値   | 4D.WebServer | <- | WebServer オブジェクト                                 |
+| 引数     | タイプ          |    | 説明                                               |
+| ------ | ------------ | -- | ------------------------------------------------ |
+| option | Integer      | -> | 取得する Webサーバー (省略時のデフォルト = `Web server database`) |
+| 戻り値    | 4D.WebServer | <- | WebServer オブジェクト                                 |
 
 <!-- END REF -->
 
