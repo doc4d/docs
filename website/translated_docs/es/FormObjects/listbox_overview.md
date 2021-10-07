@@ -245,11 +245,11 @@ Los eventos formulario de los objetos list box o columnas de list box pueden dev
 | Propiedad        | Tipo         | Descripción                                                           |
 | ---------------- | ------------ | --------------------------------------------------------------------- |
 | area             | texto        | List box object area ("header", "footer", "cell")                     |
-| areaName         | texto        | Name of the area                                                      |
+| areaName         | texto        | Nombre del área                                                       |
 | column           | entero largo | Column number                                                         |
-| columnName       | texto        | Name of the column                                                    |
-| footerName       | texto        | Name of the footer                                                    |
-| headerName       | texto        | Name of the header                                                    |
+| columnName       | texto        | Nombre de la columna                                                  |
+| footerName       | texto        | Nombre del pie                                                        |
+| headerName       | texto        | Nombre del encabezado                                                 |
 | horizontalScroll | entero largo | Positive if scroll is towards the right, negative if towards the left |
 | isRowSelected    | booleano     | True if row is selected, else False                                   |
 | newPosition      | entero largo | New position of the column or row                                     |
@@ -855,7 +855,7 @@ ARRAY OBJECT(obColumn;0) //column array
 When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Supported valueType values are:
 
 *   "text": para un valor de texto
-*   "real": for a numeric value that can include separators like a \<space>, <.>, or <,>
+*   "real": for a numeric value that can include separators like a \<space>, <.>, o <,>
 *   "integer": para un valor entero
 *   "boolean": for a True/False value
 *   "color": para definir un color de fondo
@@ -863,7 +863,7 @@ When a list box column is associated with an object array, the way a cell is dis
 
 4D uses default widgets with regards to the "valueType" value (i.e., a "text" is displayed as a text input widget, a "boolean" as a check box), but alternate displays are also available through options (*e.g.*, a real can also be represented as a drop-down menu). The following table shows the default display as well as alternatives for each type of value:
 
-| valueType | Default widget                                 | Alternative widget(s)                                                                          |
+| valueType | Default widget                                 | Widget(s) alternativo(s)                                                                       |
 | --------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | texto     | text input                                     | drop-down menu (required list) or combo box (choice list)                                      |
 | real      | controlled text input (numbers and separators) | drop-down menu (required list) or combo box (choice list)                                      |
@@ -910,7 +910,7 @@ The only mandatory attribute is "valueType" and its supported values are "text",
 | saveAs                | "reference" o "value"                   | x     | x    | x       |          |       |        |
 | choiceListReference   | 4D list ref, display combo box          | x     | x    | x       |          |       |        |
 | choiceListName        | 4D list name, display combo box         | x     | x    | x       |          |       |        |
-| unitList              | array of X elements                     | x     | x    | x       |          |       |        |
+| unitList              | array de X elementos                    | x     | x    | x       |          |       |        |
 | unitReference         | index of selected element               | x     | x    | x       |          |       |        |
 | unitsListReference    | 4D list ref for units                   | x     | x    | x       |          |       |        |
 | unitsListName         | 4D list name for units                  | x     | x    | x       |          |       |        |
