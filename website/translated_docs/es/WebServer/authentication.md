@@ -6,7 +6,7 @@ title: Autenticación
 Authenticating users is necessary when you want to provide specific access rights to web users. Authentication designates the way the information concerning the user credentials (usually name and password) are collected and processed.
 
 
-## Authentication modes
+## Modos de autenticación
 
 The 4D web server proposes three authentication modes, that you can select in the **Web**/**Options (I)** page of the Settings dialog box:
 
@@ -23,7 +23,7 @@ The operation of the 4D web server's access system is summarized in the followin
 > Requests starting with `rest/` are directly handled by the [REST server](REST/configuration.md).
 
 
-### Custom (default)
+### Personalizado (por defecto)
 
 Basically in this mode, it's up to the developer to define how to authenticate users. 4D only evaluates HTTP requests [that require an authentication](#method-calls).
 
@@ -45,7 +45,7 @@ If no custom authentication is provided, 4D calls the [`On Web Authentication`](
 > **Warning:** If the `On Web Authentication` database method does not exist, connections are automatically accepted (test mode).
 
 
-### Basic protocol
+### Protocolo Basic
 
 When a user connects to the server, a standard dialog box appears on their browser in order for them to enter their user name and password.
 
@@ -134,7 +134,7 @@ The first parameter (`$1`) is the URL received by the server, from which the hos
 
 Let’s take the example of an Intranet connection. Suppose that the IP address of your 4D Web Server machine is 123.45.67.89. The following table shows the values of $1 depending on the URL entered in the Web browser:
 
-| URL entered in web browser           | Value of parameter $1    |
+| URL entered in web browser           | Valor del parámetro $1   |
 | ------------------------------------ | ------------------------ |
 | 123.45.67.89                         | /                        |
 | http://123.45.67.89                  | /                        |
@@ -165,7 +165,7 @@ The `$4` parameter receives the IP address used to call the web server. 4D allow
 The `$5` and `$6` parameters receive the user name and password entered by the user in the standard identification dialog box displayed by the browser. This dialog box appears for each connection, if [basic](#basic-protocol) or [digest](#digest-protocol) authentication is selected.
 > If the user name sent by the browser exists in 4D, the $6 parameter (the user’s password) is not returned for security reasons.
 
-#### $0 parameter
+#### Parámetro $0
 
 The `On Web Authentication` database method returns a boolean in $0:
 
