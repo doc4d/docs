@@ -20,7 +20,7 @@ Two specific variables can be associated with each web area:
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the web area.
 
-### Web rendering engine
+### Motor de renderización web
 
 You can choose between [two rendering engines](properties_WebArea.md#use-embedded-web-rendering-engine) for the web area, depending on the specifics of your application.
 
@@ -176,7 +176,7 @@ The use of web plugins and Java applets is not recommended in web areas because 
 The URLs handled by programming in web areas in macOS must begin with the protocol. For example, you need to pass the string "http://www.mysite.com" and not just "www.mysite.com".
 
 
-## Access to web inspector
+## Acceso al inspector web
 You can view and use a web inspector within web areas in your forms or in offscreen web areas. The web inspector is a debugger which is provided by the embedded Web engine. It allows parsing the code and the flow of information of the web pages.
 
 ### Displaying the web inspector
@@ -195,7 +195,7 @@ To display the web inspector, you can either execute the `WA OPEN WEB INSPECTOR`
 
 For more information, refer to the description of the `WA SET PREFERENCE` command.
 
-### Using the web inspector
+### Utilización del inspector web
 When you have done the settings as described above, you then have new options such as **Inspect Element** in the context menu of the area. When you select this option, the web inspector window is displayed.
 
 > The web inspector is included in the embedded web rendering engine. For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
