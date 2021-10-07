@@ -173,7 +173,7 @@ Notice that the presence of the second semicolon instructs 4D to use nothing to 
 
     ￥###,##0.00;(￥###,##0.00)
 
-In this case, the display for zero would be $0.00.
+En este caso, la visualización del cero sería $0.00.
 
 ### Notación científica
 
