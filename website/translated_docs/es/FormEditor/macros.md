@@ -187,7 +187,7 @@ In the `formMacros.json` file:
 }
 ```
 
-You can write:
+Puede escribir:
 
 ```code4d  
 // Class "AlignOnTarget"
@@ -218,7 +218,7 @@ Here are the properties of the `$editor` object:
 | ------------------------- | ---------- | --------------------------------------------------------------------------------- |
 | $editor.form              | Objeto     | The entire form                                                                   |
 | $editor.file              | File       | File object of the form file                                                      |
-| $editor.name              | Cadena     | Name of the form                                                                  |
+| $editor.name              | Cadena     | Nombre del formulario                                                             |
 | $editor.table             | number     | Table number of the form, 0 for project form                                      |
 | $editor.currentPageNumber | number     | The number of the current page                                                    |
 | $editor.currentPage       | Objeto     | The current page, containing all the form objects and the entry order of the page |
