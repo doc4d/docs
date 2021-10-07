@@ -331,11 +331,11 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
 | . \<keyword\> | booleano | Keyword to set (value must be true) |
 
 Palabras clave reservadas:
-* $draft - Indicates a message is a draft
-* $seen - Indicates a message has been read
+* $draft - Indica que un mensaje es un borrador
+* $seen - Indica que se ha leído un mensaje
 * $flagged - Indicates a message needs special attention (e.g., Urgent)
-* $answered - Indicates a message has been replied to
-* $deleted - Indicates a message to delete
+* $answered - Indica que se ha respondido un mensaje
+* $deleted - Indica un mensaje a eliminar
 
 #### Ejemplo
 
