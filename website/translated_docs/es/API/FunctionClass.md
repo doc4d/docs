@@ -27,7 +27,7 @@ This property is an "object function", i.e. a function which is bound to its par
 También se admite la sintaxis con paréntesis:
 
 ```4d
- $f["message"]() //displays "Hello world"
+ $f["message"]() //muestra "Hello world"
 ```
 
 Note that, even if it does not have parameters (see below), an object function to be executed must be called with ( ) parenthesis. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
@@ -39,7 +39,7 @@ Note that, even if it does not have parameters (see below), an object function t
 You can also execute a function using the [`apply()`](#apply) and [`call()`](#call) functions:
 
 ```4d
- $f.message.apply() //displays "Hello world"
+ $f.message.apply() //muestra "Hello world"
 ```
 
 #### Passing parameters
