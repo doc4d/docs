@@ -34,7 +34,7 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 
 #### Description
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Class names are case sensitive.
+A propriedade `.name` property <!-- REF #ClassClass.name.Summary -->contém o nome do objeto `4D.Class`<!-- END REF -->. Class names are case sensitive.
 
 This property is **read-only**. 
 
@@ -55,24 +55,24 @@ This property is **read-only**.
 **.new**( *param* : any { *;...paramN* } ) : 4D.Class<!-- END REF -->
 
 <!-- REF #ClassClass.new().Params -->
-| Parameter | Type     |    | Description                                      |
-| --------- | -------- |:--:| ------------------------------------------------ |
-| param     | any      | -> | Parameter(s) to pass to the constructor function |
-| Result    | 4D.Class | <- | New object of the class                          |
+| Parameter | Type     |    | Description                              |
+| --------- | -------- |:--:| ---------------------------------------- |
+| param     | any      | -> | Parâmetros a passar à função constructor |
+| Result    | 4D.Class | <- | Novo objeto da classe                    |
 <!-- END REF -->
 
 
 #### Description
 
-The `.new()` function <!-- REF #ClassClass.new().Summary -->creates and returns a `cs.className` object which is a new instance of the class on which it is called<!-- END REF -->. This function is automatically available on all classes from the [`cs` class store](Concepts/classes.md#cs).
+A função `.new()` <!-- REF #ClassClass.new().Summary -->cria e retorna um objeto `cs.className` que é uma nova instância da classe da qual é chamada<!-- END REF -->. Essa função está disponível automaticamente para todas as classes da classe store [`cs`](Concepts/classes.md#cs).
 
-You can pass one or more optional *param* parameters, which will be passed to the [class constructor](Concepts/classes.md#class-constructor) function (if any) in the className class definition. Within the constructor function, the [`This`](Concepts/classes.md#this) is bound to the new object being constructed.
+Pode passar um ou mais parâmetros opcionais *param*, que serão passados para a função [class constructor](Concepts/classes.md#class-constructor)  (se houver) na definição de classe className. Dentro da função constructor, [`This`](Concepts/classes.md#this) é conectado ao novo objeto sendo construído.
 
-If `.new()` is called on a non-existing class, an error is returned.
+Se `.new()` for chamado em uma classe não existente, um erro é retornado.
 
 #### Examples
 
-To create a new instance of the Person class:
+Para criar uma nova instância da classe Person:
 
 ```4d
 var $person : cs.Person  
@@ -80,7 +80,7 @@ $person:=cs.Person.new() //create the new instance
 //$person contains functions of the class
 ```
 
-To create a new instance of the Person class with parameters:
+Para criar uma nova instância da classe Person com parâmetros:
 
 ```4d
 //Class: Person.4dm
@@ -119,9 +119,9 @@ $person:=cs.Person.new("John";"Doe";40)
 
 #### Description
 
-The `.superclass` property <!-- REF #ClassClass.superclass.Summary -->returns the parent class of the class<!-- END REF -->. A superclass can be a `4D.Class` object, or a `cs.className` object. If the class does not have a parent class, the property returns **null**.
+A propriedade `.superclass` <!-- REF #ClassClass.superclass.Summary -->retorna a classe pai da classe<!-- END REF -->. Uma superclasse pode ser um `4D.Class` objeto ou um objeto `cs.className`. Se a classe não tiver uma classe pai, a propriedade retorna **null**.
 
-A superclass of a user class is declared in a class by using the [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname) keyword.
+Uma superclasse de uma classe de usuário é declarada em uma classe usando a palavra chave [`Class extends <superclass>`](Concepts/classes.md#class-extends-classname).
 
 This property is **read-only**.
 
@@ -140,7 +140,7 @@ $sup:=cs.MyFile.superclass //File
 
 
 
-**See also:** [Super](Concepts/classes.md#super)
+**Ver também:** [Super](Concepts/classes.md#super)
 <!-- END REF -->
 
 <style> h2 { background: #d9ebff;}</style>
