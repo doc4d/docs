@@ -277,7 +277,7 @@ vCompareResult1 (all differences are returned):
 ]
 ```
 
-vCompareResult2 (only differences on $attributesToInspect are returned)
+vCompareResult2 (sólo se devuelven las diferencias en $attributesToInspect)
 
 ```4d
 [
