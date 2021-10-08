@@ -77,7 +77,7 @@ A datastore references only a single local or remote database.
 The datastore object itself cannot be copied as an object:
 
 ```4d 
-$mydatastore:=OB Copy(ds) //returns null
+$mydatastore:=OB Copy(ds) //devuelve null
 ```
 
 
@@ -121,7 +121,7 @@ The dataclass offers an abstraction of the physical database and allows handling
 The dataclass object itself cannot be copied as an object:
 
 ```4d 
-$mydataclass:=OB Copy(ds.Employee) //returns null
+$mydataclass:=OB Copy(ds.Employee) //devuelve null
 ```
 
 The dataclass properties are however enumerable:
