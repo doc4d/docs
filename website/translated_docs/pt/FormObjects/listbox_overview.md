@@ -170,7 +170,7 @@ Supported properties depend on the list box type.
 | [Number of Locked Columns](properties_ListBox.md#number-of-locked-columns)                   | X              | X                  | X                                       |
 | [Number of Static Columns](properties_ListBox.md#number-of-static-columns)                   | X              | X                  | X                                       |
 | [Object Name](properties_Object.md#object-name)                                              | X              | X                  | X                                       |
-| [Right](properties_CoordinatesAndSizing.md#right)                                            | X              | X                  | X                                       |
+| [Direita](properties_CoordinatesAndSizing.md#right)                                          | X              | X                  | X                                       |
 | [Row Background Color Array](properties_BackgroundAndBorder.md#row-background-color-array)   | X              |                    |                                         |
 | [Row Control Array](properties_ListBox.md#row-control-array)                                 | X              |                    |                                         |
 | [Row Font Color Array](properties_Text.md#row-font-color-array)                              | X              |                    |                                         |
@@ -183,7 +183,7 @@ Supported properties depend on the list box type.
 | [Sortable](properties_Action.md#sortable)                                                    | X              | X                  | X                                       |
 | [Standard action](properties_Action.md#standard-action)                                      | X              |                    |                                         |
 | [Style Expression](properties_Text.md#style-expression)                                      |                | X                  | X                                       |
-| [Top](properties_CoordinatesAndSizing.md#top)                                                | X              | X                  | X                                       |
+| [Topo](properties_CoordinatesAndSizing.md#top)                                               | X              | X                  | X                                       |
 | [Transparent](properties_BackgroundAndBorder.md#transparent)                                 | X              | X                  | X                                       |
 | [Type](properties_Object.md#type)                                                            | X              | X                  | X                                       |
 | [Underline](properties_Text.md#underline)                                                    | X              | X                  | X                                       |
@@ -393,16 +393,16 @@ The typical sequence of events generated during data entry or modification is as
 
 | Action                                                                          | Listbox type(s)             | Sequence of events                                                                                                                                                                                             |
 | ------------------------------------------------------------------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| A cell switches to edit mode (user action or a call to the `EDIT ITEM` command) | All                         | On Before Data Entry                                                                                                                                                                                           |
-|                                                                                 | All                         | On Getting Focus                                                                                                                                                                                               |
-| Its value is modified                                                           | All                         | On Before Keystroke                                                                                                                                                                                            |
-|                                                                                 | All                         | On After Keystroke                                                                                                                                                                                             |
-|                                                                                 | All                         | On After Edit                                                                                                                                                                                                  |
+| A cell switches to edit mode (user action or a call to the `EDIT ITEM` command) | Todos                       | On Before Data Entry                                                                                                                                                                                           |
+|                                                                                 | Todos                       | On Getting Focus                                                                                                                                                                                               |
+| Its value is modified                                                           | Todos                       | On Before Keystroke                                                                                                                                                                                            |
+|                                                                                 | Todos                       | On After Keystroke                                                                                                                                                                                             |
+|                                                                                 | Todos                       | On After Edit                                                                                                                                                                                                  |
 | A user validates and leaves the cell                                            | Selection list boxes        | Save                                                                                                                                                                                                           |
 |                                                                                 | Record selection list boxes | On saving an existing record trigger (if set)                                                                                                                                                                  |
 |                                                                                 | Selection list boxes        | On Data Change(*)                                                                                                                                                                                              |
 |                                                                                 | Entity selection list boxes | Entity is saved with automerge option, optimistic lock (see entity.save( )). In case of successful save, the entity is refreshed with the last update done. If the save operation fails, an error is displayed |
-|                                                                                 | All                         | On Losing Focus                                                                                                                                                                                                |
+|                                                                                 | Todos                       | On Losing Focus                                                                                                                                                                                                |
 
 (*) With entity selection list boxes, in the On Data Change event:
 - the [Current item](properties_DataSource.md#current-item) object contains the value before modification.
@@ -510,7 +510,7 @@ You can write in the *UI_SetColor* method:
 
 ```4d
  If(Is in set("$SampleSet"))
-    $color:=0x0080C080 // green background
+    $color:=0x0080C080 //  fundo verde
  Else
     $color:=lk inherited
  End if
@@ -527,24 +527,24 @@ By default, a list box automatically handles standard column sorts when the head
 
 You can prevent standard user sorts by deselecting the [Sortable](properties_Action.md#sortable) property of the list box.
 
-The developer can set up custom sorts using the `LISTBOX SORT COLUMNS` command and/or combining the `On Header Click` and `On After Sort` form events (see the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command) and relevant 4D commands.
+The developer can set up custom sorts using the `LISTBOX SORT COLUMNS` command and/or combining the `On Header Click` and `On After Sort` form events (see the `FORM Event` command) and relevant 4D commands.
 
-> The [Sortable](properties_Action.md#sortable) property only affects the standard user sorts; the [`LISTBOX SORT COLUMNS`](https://doc.4d.com/4dv19/help/command/en/page916.html) command does not take this property into account.
+> The [Sortable](properties_Action.md#sortable) property only affects the standard user sorts; the `LISTBOX SORT COLUMNS` command does not take this property into account.
 
 The value of the [column header variable](properties_Object.md#variable-or-expression) allows you to manage additional information: the current sort of the column (read) and the display of the sort arrow.
 
-- If the variable is set to 0, the column is not sorted and the sort arrow is not displayed.  
+- If the variable is set to 0, the column is not sorted and the sort arrow is not displayed;  
   ![](assets/en/FormObjects/sorticon0.png)
 
-- If the variable is set to 1, the column is sorted in ascending order and the sort arrow is displayed. ![](assets/en/FormObjects/sorticon1.png)
+- If the variable is set to 1, the column is sorted in ascending order and the sort arrow is displayed;  
+  ![](assets/en/FormObjects/sorticon1.png)
 
-- If the variable is set to 2, the column is sorted in descending order and the sort arrow is displayed. ![](assets/en/FormObjects/sorticon2.png)
+- If the variable is set to 2, the column is sorted in descending order and the sort arrow is displayed.  
+  ![](assets/en/FormObjects/sorticon2.png)
 
-> Only declared or dynamic [variables](Concepts/variables.md) can be used as header column variables. Other kinds of [expressions](Concepts/quick-tour.md#expressions) such as `Form.sortValue` are not supported.
+You can set the value of the variable (for example, Header2:=2) in order to “force” the sort arrow display. The column sort itself is not modified in this case; it is up to the developer to handle it.
 
-You can set the value of the variable (for example, Header2:=2) in order to "force" the sort arrow display. The column sort itself is not modified in this case; it is up to the developer to handle it.
-
-> The [`OBJECT SET FORMAT`](https://doc.4d.com/4dv19/help/command/en/page236.html) command offers specific support for icons in list box headers, which can be useful when you want to work with a customized sort icon.
+> The `OBJECT SET FORMAT` command offers specific support for icons in list box headers, which can be useful when you want to work with a customized sort icon.
 
 
 ## Managing row colors, styles, and display
