@@ -4,11 +4,11 @@ title: Class
 ---
 
 
-When a user class is [defined](Concepts/classes.md#class-definition) in the project, it is loaded in the 4D language environment. A class is an object itself, of "Class" class, which has properties and a function.
+Quando uma classe de usuário for [definida](Concepts/classes.md#class-definition) no projeto, é carregada no ambiente da linguagem 4D. Uma classe é um objeto em si mesmo, da classe "Class", que tem propriedades e uma função.
 
 
 
-### Summary
+### Resumo
 
 
 |                                                                                                                                                                                    |
@@ -22,21 +22,21 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 <!-- REF ClassClass.name.Desc -->
 ## .name
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R3  | Added   |
+<details><summary>Histórico</summary>
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R3 | Adicionado |
 
 </details>
 
 <!-- REF #ClassClass.name.Syntax -->
 **.name** : Text<!-- END REF -->
 
-#### Description
+#### Descrição
 
-The `.name` property <!-- REF #ClassClass.name.Summary -->contains the name of the `4D.Class` object<!-- END REF -->. Class names are case sensitive.
+A propriedade `.name` property <!-- REF #ClassClass.name.Summary -->contém o nome do objeto `4D.Class`<!-- END REF -->. Nomes de classe diferenciam minúsculas de maiúsculas.
 
-This property is **read-only**. 
+Essa propriedade é**apenas leitura**. 
 
 <!-- END REF -->
 
@@ -45,28 +45,28 @@ This property is **read-only**.
 <!-- REF ClassClass.new().Desc -->
 ## .new()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R3  | Added   |
+<details><summary>Histórico</summary>
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R3 | Adicionado |
 </details>
 
 <!-- REF #ClassClass.new().Syntax -->
 **.new**( *param* : any { *;...paramN* } ) : 4D.Class<!-- END REF -->
 
 <!-- REF #ClassClass.new().Params -->
-| Parameter | Type     |    | Description                                      |
-| --------- | -------- |:--:| ------------------------------------------------ |
-| param     | any      | -> | Parameter(s) to pass to the constructor function |
-| Result    | 4D.Class | <- | New object of the class                          |
+| Parâmetros | Tipo     |    | Descrição                                |
+| ---------- | -------- |:--:| ---------------------------------------- |
+| param      | any      | -> | Parâmetros a passar à função constructor |
+| Resultado  | 4D.Class | <- | Novo objeto da classe                    |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.new()` function <!-- REF #ClassClass.new().Summary -->creates and returns a `cs.className` object which is a new instance of the class on which it is called<!-- END REF -->. This function is automatically available on all classes from the [`cs` class store](Concepts/classes.md#cs).
+A função `.new()` <!-- REF #ClassClass.new().Summary -->cria e retorna um objeto `cs.className` que é uma nova instância da classe da qual é chamada<!-- END REF -->. Essa função está disponível automaticamente para todas as classes da classe store [`cs`](Concepts/classes.md#cs).
 
-You can pass one or more optional *param* parameters, which will be passed to the [class constructor](Concepts/classes.md#class-constructor) function (if any) in the className class definition. Within the constructor function, the [`This`](Concepts/classes.md#this) is bound to the new object being constructed.
+Pode passar um ou mais parâmetros opcionais *param*, que serão passados para a função [class constructor](Concepts/classes.md#class-constructor)  (se houver) na definição de classe className. Dentro da função constructor, [`This`](Concepts/classes.md#this) é conectado ao novo objeto sendo construído.
 
 If `.new()` is called on a non-existing class, an error is returned.
 
