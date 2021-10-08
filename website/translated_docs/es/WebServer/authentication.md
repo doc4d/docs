@@ -64,7 +64,7 @@ Entered values are then evaluated:
 
 This mode provides a greater level of security since the authentication information is processed by a one-way process called hashing which makes their contents impossible to decipher.
 
-As in BASIC mode, users must enter their name and password when they connect. The [`On Web Authentication`](#on-web-authentication) database method is then called. When the DIGEST mode is activated, the $6 parameter (password) is always returned empty. In fact, when using this mode, this information does not pass by the network as clear text (unencrypted). It is therefore imperative in this case to evaluate connection requests using the `WEB Validate digest` command.
+As in BASIC mode, users must enter their name and password when they connect. The [`On Web Authentication`](#on-web-authentication) database method is then called. Cuando se activa el modo DIGEST, el parámetro $6 (contraseña) se devuelve siempre vacío. In fact, when using this mode, this information does not pass by the network as clear text (unencrypted). It is therefore imperative in this case to evaluate connection requests using the `WEB Validate digest` command.
 > You must restart the web server in order for the changes made to these parameters to be taken into account.
 
 
@@ -130,9 +130,9 @@ Alternatively, you can use the [named parameters](Concepts/parameters.md#named-p
 
 #### $1 - URL
 
-The first parameter (`$1`) is the URL received by the server, from which the host address has been removed.
+El primer parámetro (`$1`) es la URL recibida por el servidor, de la que se ha eliminado la dirección del host.
 
-Let’s take the example of an Intranet connection. Suppose that the IP address of your 4D Web Server machine is 123.45.67.89. The following table shows the values of $1 depending on the URL entered in the Web browser:
+Let’s take the example of an Intranet connection. Suppose that the IP address of your 4D Web Server machine is 123.45.67.89. La siguiente tabla muestra los valores de $1 en función de la URL introducida en el navegador web:
 
 | URL entered in web browser           | Valor del parámetro $1   |
 | ------------------------------------ | ------------------------ |
