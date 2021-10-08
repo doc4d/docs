@@ -333,7 +333,7 @@ This property is the "keywords" header (see [RFC#4021](https://tools.ietf.org/ht
 Palabras clave reservadas:
 * $draft - Indica que un mensaje es un borrador
 * $seen - Indica que se ha leído un mensaje
-* $flagged - Indicates a message needs special attention (e.g., Urgent)
+* $flagged - Indica que un mensaje necesita atención especial (por ejemplo, urgente)
 * $answered - Indica que se ha respondido un mensaje
 * $deleted - Indica un mensaje a eliminar
 
@@ -585,7 +585,7 @@ $status:=$transporter.send($email)
 | Versión | Modificaciones |
 | ------- | -------------- |
 | v17 R4  | Añadidos       |
-| v17 R5  | Modified       |
+| v17 R5  | Modificado     |
 </details>
 
 <!-- REF #_command_.MAIL_Convert_to_MIME.Syntax -->
