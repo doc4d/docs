@@ -47,7 +47,7 @@ Para suministrar las etiquetas de un control de pestañas, puede utilizar:
 
 - un objeto
 - una lista de selección
-- an array
+- un array
 
 ### Using an object
 
