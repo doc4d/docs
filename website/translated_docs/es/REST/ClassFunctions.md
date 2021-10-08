@@ -490,7 +490,7 @@ You run this request, called on a Students entity : **POST** `http://127.0.0.1:8
 
 ### Receiving an entity selection as parameter
 
-In the `Students` Dataclass class, the `setFinalExam()` function updates a received entity selection ($1). It actually updates the *finalExam* attribute with the received value ($2). It returns the primary keys of the updated entities.
+In the `Students` Dataclass class, the `setFinalExam()` function updates a received entity selection ($1). En realidad, actualiza el atributo *finalExam* con el valor recibido ($2). It returns the primary keys of the updated entities.
 
 ```
 // Students class
