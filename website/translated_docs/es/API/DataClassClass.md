@@ -798,13 +798,13 @@ You can mix all argument kinds in *queryString*. A *queryString* can contain, fo
 When you look for null values, you cannot use the placeholder syntax because the query engine considers null as an unexpected comparison value. For example, if you execute the following query:
 
 ```4d
-$vSingles:=ds.Person.query("spouse = :1";Null) // will NOT work
+$vSingles:=ds.Person.query("spouse = :1";Null) // NO funcionará
 ```
 
 You will not get the expected result because the null value will be evaluated by 4D as an error resulting from the parameter evaluation (for example, an attribute coming from another query). For these kinds of queries, you must use the direct query syntax:
 
 ```4d
- $vSingles:=ds.Person.query("spouse = null") //correct syntax
+ $vSingles:=ds.Person.query("spouse = null") // Sintaxis correcta
 ```
 
 
