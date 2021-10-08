@@ -119,8 +119,8 @@ End if
 <!-- REF #4D.IMAPTransporter.new().Params -->
 | Parámetros | Tipo               |    | Descripción                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------- |
-| server     | Objeto             | -> | Mail server information                             |
-| Resultado  | 4D.IMAPTransporter | <- | [IMAP transporter object](#imap-transporter-object) |
+| server     | Objeto             | -> | Información del servidor de correo                  |
+| Resultado  | 4D.IMAPTransporter | <- | [Objeto IMAP Transporter](#imap-transporter-object) |
 <!-- END REF -->
 
 #### Descripción
