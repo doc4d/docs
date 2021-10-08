@@ -37,24 +37,24 @@ All documentation files are stored in the `Documentation` folder, located at the
 
 The `Documentation` folder architecture is the following:
 
-- `Documentation`
-    + `Classes`
+- **Documentation**
+    + **Classes**
         * myClass.md
-    + `DatabaseMethods`
+    + **DatabaseMethods**
         * onStartup.md
         * ...
-    + `Forms`
+    + **Forms**
         * loginDial.md
         * ...
-    + `Methods`
+    + **Methods**
         * myMethod.md
         * ...
-    + `TableForms`
+    + **TableForms**
         * **1**
             - input.md
             - ...
         * ...
-    + `Triggers`
+    + **Triggers**
         * table1.md
         * ...
 
@@ -153,8 +153,8 @@ _italic_
 - The code block tag (\```4d ... ```) is supported with 4D code highlight:
 
     \``` 4d  
-  C_TEXT($txt)  
-  $txt:="Hello world!"  
+C_TEXT($txt)  
+$txt:="Hello world!"  
   \` ``
 
 
