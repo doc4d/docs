@@ -41,11 +41,11 @@ For example, the URL "*a/b/c*" will call the database method, but "*a/b/c.html*"
 You must declare these parameters as shown below:
 
 ```4d
-//On Web Connection database method
+//Método base On Web Connection
 
  C_TEXT($1;$2;$3;$4;$5;$6)
 
-//Code for the method
+//Código para el métodod
 ```
 
 Alternatively, you can use the [named parameters](Concepts/parameters.md#named-parameters) syntax:
@@ -66,7 +66,7 @@ Alternatively, you can use the [named parameters](Concepts/parameters.md#named-p
 
 The first parameter ($1) is the URL entered by users in the address area of their web browser, without the host address.
 
-Let’s use an intranet connection as an example. Suppose that the IP address of your 4D Web Server machine is 123.4.567.89. The following table shows the values of $1 depending on the URL entered in the web browser:
+Let’s use an intranet connection as an example. Suppose that the IP address of your 4D Web Server machine is 123.4.567.89. La siguiente tabla muestra los valores de $1 en función de la URL introducida en el navegador web:
 
 | URL entered in web browser           | Valor del parámetro $1   |
 | ------------------------------------ | ------------------------ |
@@ -89,7 +89,7 @@ If your application uses this information, it is up to you to parse the header a
 
 ### $3 - Web client IP address
 
-The $3 parameter receives the IP address of the browser’s machine. This information can allow you to distinguish between intranet and internet connections.
+El parámetro $3 recibe la dirección IP de la máquina del navegador. This information can allow you to distinguish between intranet and internet connections.
 > 4D returns IPv4 addresses in a hybrid IPv6/IPv4 format written with a 96-bit prefix, for example ::ffff:192.168.2.34 for the IPv4 address 192.168.2.34. For more information, refer to the [IPv6 Support](webServerConfig.md#about-ipv6-support) section.
 
 ### $4 - Server IP address
