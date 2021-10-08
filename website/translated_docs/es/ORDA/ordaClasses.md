@@ -16,7 +16,7 @@ $nextHigh:=ds.Employee(1).getNextWithHigherSalary()
 Developers can not only use these functions in local datastores, but also in client/server and remote architectures:
 
 ```4d
- //$cityManager is the reference of a remote datastore
+ //$cityManager es la referencia de un datastore remoto
 Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 ```
 
