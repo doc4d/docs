@@ -524,7 +524,7 @@ This syntax makes a loop as long as the method returns `True`. The method takes 
 
 For security reasons, within a Web process, the `On Web Authentication` database method can be called once just before the initialization stage (method execution with 0 as parameter). If the authentication is OK, the initialization stage will proceed.
 
-`C_BOOLEAN($0)` and `C_LONGINT($1)` MUST be declared within the method for compilation purposes.
+`C_BOOLEAN($0)` y `C_LONGINT($1)` DEBE declararse dentro del método a efectos de compilación.
 
 The following code example:
 
@@ -561,7 +561,7 @@ The `my_method` method can be as follows:
        var:=...
        $0:=True
     Else
-       $0:=False `Stops the loop
+       $0:=False `Detiene el bucle
     End if
  End if
 ```
@@ -637,7 +637,7 @@ The `MYMETH` method is as follows:
 
 ```4d
   //MYMETH
- C_TEXT($0;$1) //These parameters must always be declared
+ C_TEXT($0;$1) //Estos parámetros deben declararse siempre
  $0:=String(Current date)
 ```
 
@@ -713,13 +713,13 @@ For example, the following code would cause an XML parsing error because of the 
 <line x1="<!--#4DEVAL $x-->" y1="<!--#4DEVAL $graphY1-->"/>
 ```
 
-Using the $ syntax, the following code is validated by the parser:
+Utilizando la sintaxis $, el siguiente código es validado por el analizador:
 
 ```xml
 <line x1="$4DEVAL($x)" y1="$4DEVAL($graphY1)"/>
 ```
 
-Note that `$4dtag` and `<--#4dtag -->` are not strictly equivalent: unlike `<--#4dtag -->`, `$4dtag` processing does not interpret 4D tags [recursively](#recursive-processing). `$` tags are always evaluated once and the result is considered as plain text.
+Note that `$4dtag` and `<--#4dtag -->` are not strictly equivalent: unlike `<--#4dtag -->`, `$4dtag` processing does not interpret 4D tags [recursively](#recursive-processing). Las etiquetas `$` siempre se evalúan una vez y el resultado se considera texto plano.
 
 The reason for this difference is to prevent malicious code injection. As [explained below](#prevention-of-malicious-code-insertion), it is strongly recommended to use `4DTEXT` tags instead of `4DHTML` tags when handling user text to protect against unwanted reinterpretation of tags: with `4DTEXT`, special characters such as "<" are escaped, thus any 4D tags using the `<!--#4dtag expression -->` syntax will lose their particular meaning. However, since `4DTEXT` does not escape the `$` symbol, we decided to break support for recursion in order to prevent malicious injection using the `$4dtag (expression)` syntax.
 
