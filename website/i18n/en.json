@@ -820,6 +820,9 @@
       "ViewPro/calling-methods-fields": {
         "title": "Calling Methods and Fields in Formulas"
       },
+      "ViewPro/constant-list": {
+        "title": "Constant List"
+      },
       "ViewPro/overview": {
         "title": "Overview"
       },
@@ -828,9 +831,6 @@
       },
       "ViewPro/configuring": {
         "title": "Configuring 4D View Pro Areas"
-      },
-      "ViewPro/constant-list": {
-        "title": "Constant List"
       },
       "ViewPro/formulas": {
         "title": "Formulas and Functions"
