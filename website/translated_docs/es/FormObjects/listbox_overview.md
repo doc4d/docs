@@ -245,11 +245,11 @@ Los eventos formulario de los objetos list box o columnas de list box pueden dev
 | Propiedad        | Tipo         | Descripción                                                           |
 | ---------------- | ------------ | --------------------------------------------------------------------- |
 | area             | texto        | List box object area ("header", "footer", "cell")                     |
-| areaName         | texto        | Name of the area                                                      |
+| areaName         | texto        | Nombre del área                                                       |
 | column           | entero largo | Column number                                                         |
-| columnName       | texto        | Name of the column                                                    |
-| footerName       | texto        | Name of the footer                                                    |
-| headerName       | texto        | Name of the header                                                    |
+| columnName       | texto        | Nombre de la columna                                                  |
+| footerName       | texto        | Nombre del pie                                                        |
+| headerName       | texto        | Nombre del encabezado                                                 |
 | horizontalScroll | entero largo | Positive if scroll is towards the right, negative if towards the left |
 | isRowSelected    | booleano     | True if row is selected, else False                                   |
 | newPosition      | entero largo | New position of the column or row                                     |
@@ -360,7 +360,7 @@ When the `OBJECT SET VISIBLE` command is used with a footer, it is applied to al
 For a list box cell to be enterable, both of the following conditions must be met:
 
 - The cell’s column must have been set as [Enterable](properties_Entry.md#enterable) (otherwise, the cells of the column can never be enterable).
-- In the `On Before Data Entry` event, $0 does not return -1. When the cursor arrives in the cell, the `On Before Data Entry` event is generated in the column method. Si, en el contexto de este evento, $0 se define como -1, la celda se considera como no editable. Si el evento se generó después de presionar **Tab** o **Mayús+Tab**, el foco pasa a la siguiente celda o a la anterior, respectivamente. Si $0 no es -1 (por defecto $0 es 0), la celda se puede introducir y pasa al modo de edición.
+- En el evento `On Before Data Entry`, $0 no devuelve -1. When the cursor arrives in the cell, the `On Before Data Entry` event is generated in the column method. Si, en el contexto de este evento, $0 se define como -1, la celda se considera como no editable. Si el evento se generó después de presionar **Tab** o **Mayús+Tab**, el foco pasa a la siguiente celda o a la anterior, respectivamente. Si $0 no es -1 (por defecto $0 es 0), la celda se puede introducir y pasa al modo de edición.
 
 Let’s consider the example of a list box containing two arrays, one date and one text. The date array is not enterable but the text array is enterable if the date has not already past.
 
@@ -527,24 +527,24 @@ By default, a list box automatically handles standard column sorts when the head
 
 You can prevent standard user sorts by deselecting the [Sortable](properties_Action.md#sortable) property of the list box.
 
-The developer can set up custom sorts using the `LISTBOX SORT COLUMNS` command and/or combining the `On Header Click` and `On After Sort` form events (see the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command) and relevant 4D commands.
+The developer can set up custom sorts using the `LISTBOX SORT COLUMNS` command and/or combining the `On Header Click` and `On After Sort` form events (see the `FORM Event` command) and relevant 4D commands.
 
-> The [Sortable](properties_Action.md#sortable) property only affects the standard user sorts; the [`LISTBOX SORT COLUMNS`](https://doc.4d.com/4dv19/help/command/en/page916.html) command does not take this property into account.
+> The [Sortable](properties_Action.md#sortable) property only affects the standard user sorts; the `LISTBOX SORT COLUMNS` command does not take this property into account.
 
 The value of the [column header variable](properties_Object.md#variable-or-expression) allows you to manage additional information: the current sort of the column (read) and the display of the sort arrow.
 
-- If the variable is set to 0, the column is not sorted and the sort arrow is not displayed.  
+- If the variable is set to 0, the column is not sorted and the sort arrow is not displayed;  
   ![](assets/en/FormObjects/sorticon0.png)
 
-- Si la variable está definida como 1, la columna se organiza en orden ascendente y se muestra la flecha de ordenación. ![](assets/en/FormObjects/sorticon1.png)
+- If the variable is set to 1, the column is sorted in ascending order and the sort arrow is displayed;  
+  ![](assets/en/FormObjects/sorticon1.png)
 
-- Si la variable está definida en 2, la columna se organiza en orden descendente y se muestra la flecha de clasificación. ![](assets/en/FormObjects/sorticon2.png)
+- If the variable is set to 2, the column is sorted in descending order and the sort arrow is displayed.  
+  ![](assets/en/FormObjects/sorticon2.png)
 
-> Only declared or dynamic [variables](Concepts/variables.md) can be used as header column variables. Other kinds of [expressions](Concepts/quick-tour.md#expressions) such as `Form.sortValue` are not supported.
+You can set the value of the variable (for example, Header2:=2) in order to “force” the sort arrow display. The column sort itself is not modified in this case; it is up to the developer to handle it.
 
-You can set the value of the variable (for example, Header2:=2) in order to "force" the sort arrow display. The column sort itself is not modified in this case; it is up to the developer to handle it.
-
-> The [`OBJECT SET FORMAT`](https://doc.4d.com/4dv19/help/command/en/page236.html) command offers specific support for icons in list box headers, which can be useful when you want to work with a customized sort icon.
+> The `OBJECT SET FORMAT` command offers specific support for icons in list box headers, which can be useful when you want to work with a customized sort icon.
 
 
 ## Managing row colors, styles, and display
@@ -843,7 +843,7 @@ the value type (mandatory): text, color, event, etc. the value itself (optional)
 ARRAY OBJECT(obColumn;0) //column array
  C_OBJECT($ob) //first element
  OB SET($ob;"valueType";"text") //defines the value type (mandatory)
- OB SET($ob;"value";"Hello World!") //defines the value
+ OB SET($ob;"value";"Hello World!") //define el valor
  APPEND TO ARRAY(obColumn;$ob)  
 ```
 
@@ -855,7 +855,7 @@ ARRAY OBJECT(obColumn;0) //column array
 When a list box column is associated with an object array, the way a cell is displayed, entered, or edited, is based on the valueType attribute of the array element. Supported valueType values are:
 
 *   "text": para un valor de texto
-*   "real": for a numeric value that can include separators like a \<space>, <.>, or <,>
+*   "real": for a numeric value that can include separators like a \<space>, <.>, o <,>
 *   "integer": para un valor entero
 *   "boolean": for a True/False value
 *   "color": para definir un color de fondo
@@ -863,7 +863,7 @@ When a list box column is associated with an object array, the way a cell is dis
 
 4D uses default widgets with regards to the "valueType" value (i.e., a "text" is displayed as a text input widget, a "boolean" as a check box), but alternate displays are also available through options (*e.g.*, a real can also be represented as a drop-down menu). The following table shows the default display as well as alternatives for each type of value:
 
-| valueType | Default widget                                 | Alternative widget(s)                                                                          |
+| valueType | Default widget                                 | Widget(s) alternativo(s)                                                                       |
 | --------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | texto     | text input                                     | drop-down menu (required list) or combo box (choice list)                                      |
 | real      | controlled text input (numbers and separators) | drop-down menu (required list) or combo box (choice list)                                      |
@@ -910,7 +910,7 @@ The only mandatory attribute is "valueType" and its supported values are "text",
 | saveAs                | "reference" o "value"                   | x     | x    | x       |          |       |        |
 | choiceListReference   | 4D list ref, display combo box          | x     | x    | x       |          |       |        |
 | choiceListName        | 4D list name, display combo box         | x     | x    | x       |          |       |        |
-| unitList              | array of X elements                     | x     | x    | x       |          |       |        |
+| unitList              | array de X elementos                    | x     | x    | x       |          |       |        |
 | unitReference         | index of selected element               | x     | x    | x       |          |       |        |
 | unitsListReference    | 4D list ref for units                   | x     | x    | x       |          |       |        |
 | unitsListName         | 4D list name for units                  | x     | x    | x       |          |       |        |
