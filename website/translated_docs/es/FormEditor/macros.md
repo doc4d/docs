@@ -187,7 +187,7 @@ In the `formMacros.json` file:
 }
 ```
 
-You can write:
+Puede escribir:
 
 ```code4d  
 // Class "AlignOnTarget"
@@ -218,7 +218,7 @@ Here are the properties of the `$editor` object:
 | ------------------------- | ---------- | --------------------------------------------------------------------------------- |
 | $editor.form              | Objeto     | The entire form                                                                   |
 | $editor.file              | File       | File object of the form file                                                      |
-| $editor.name              | Cadena     | Name of the form                                                                  |
+| $editor.name              | Cadena     | Nombre del formulario                                                             |
 | $editor.table             | number     | Table number of the form, 0 for project form                                      |
 | $editor.currentPageNumber | number     | The number of the current page                                                    |
 | $editor.currentPage       | Objeto     | The current page, containing all the form objects and the entry order of the page |
@@ -255,13 +255,13 @@ When handling the `method` attribute of form objects, you can define the attribu
 
 4D will create a file using the object name in the "objectMethods" folder with the content of `source` attribute. This feature is only available for macro code.
 
-#### `$4dId` property in `currentPage.objects`
+#### Propiedad `$4dId` en `currentPage.objects`
 
-The `$4dId` property defines a unique ID for each object in the current page. This key is used by the macro processor to control changes in `$result.currentPage`:
+La propiedad `$4dId` define un ID único para cada objeto de la página actual. Esta clave es utilizada por el procesador de macros para controlar los cambios en `$result.currentPage`:
 
-- if the `$4dId` key is missing in both the form and an object in `$result`, the object is created.
-- if the `$4dId` key exists in the form but is missing in `$result`, the object is deleted.
-- if the `$4dId` key exists in both the form and an object in `$result`, the object is modified.
+- si la llave `$4dId` falta tanto en el formulario y en un objeto en `$result`, el objeto se crea.
+- si la llave `$4dId` existe en el formulario pero falta en `$result`, el objeto se elimina.
+- si la llave `$4dId` existe tanto en el formulario y en un objeto en `$result`, el objeto se modifica.
 
 
 #### Ejemplo
@@ -284,7 +284,7 @@ Function onInvoke($editor : Object)->$result : Object
         ALERT("Please select a form object.")
     End if 
 
-    // Notify to 4D the modification
+    // Notificar la modificación a 4D
     $result:=New object("currentPage"; $editor.editor.currentPage)
 ```
 
