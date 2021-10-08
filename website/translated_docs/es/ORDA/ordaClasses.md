@@ -16,7 +16,7 @@ $nextHigh:=ds.Employee(1).getNextWithHigherSalary()
 Developers can not only use these functions in local datastores, but also in client/server and remote architectures:
 
 ```4d
- //$cityManager is the reference of a remote datastore
+ //$cityManager es la referencia de un datastore remoto
 Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 ```
 
@@ -416,7 +416,7 @@ Function query <attributeName>($event : Object) -> $result : Object
 This function supports three syntaxes:
 
 - With the first syntax, you handle the whole query through the `$event.result` object property.
-- With the second and third syntaxes, the function returns a value in *$result*:
+- Con la segunda y tercera sintaxis, la función devuelve un valor en *$result*:
     - If *$result* is a Text, it must be a valid query string
     - If *$result* is an Object, it must contain two properties:
 

@@ -82,7 +82,7 @@ When this option is checked, you will be able to connect to the `WebAdmin` web s
 - Even if this option is checked, when [Accept HTTPS](#accept-https) is checked and the TLS configuration is valid, localhost connections use HTTPS.
 
 
-#### HTTP Port
+#### Puerto HTTP
 
 Port number to use for connections through HTTP to the `WebAdmin` web server when the **Accept HTTP connections on localhost** option is checked. El valor por defecto es 7080.
 

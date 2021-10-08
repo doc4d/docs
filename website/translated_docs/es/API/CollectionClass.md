@@ -444,7 +444,7 @@ The *groupWithCol* or *groupWithObj* parameters allow you to designate a collect
 
 #### Ejemplo 1
 
-We want to copy the *$lastnames* regular (non shared) collection into the *$sharedObject* shared object. To do this, we must create a shared copy of the collection (*$sharedLastnames*).
+We want to copy the *$lastnames* regular (non shared) collection into the *$sharedObject* shared object. Para ello, debemos crear una copia compartida de la colección (*$sharedLastnames*).
 
 ```4d
 var $sharedObject : Object
@@ -484,7 +484,7 @@ $sharedColl2:=New shared collection(New shared object("lastname";"Brown"))
 
 #### Ejemplo 3
 
-We have a regular collection (*$lastnames*) and we want to put it in the **Storage** of the application. To do this, we must create a shared copy beforehand (*$sharedLastnames*).
+We have a regular collection (*$lastnames*) and we want to put it in the **Storage** of the application. Para ello, debemos crear previamente una copia compartida (*$sharedLastnames*).
 
 ```4d
 var $lastnames;$sharedLastnames : Collection
@@ -800,9 +800,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be evaluated
-*   in *$2*: param
-*   in *$N...*: paramN...
+*   en *$1.value*: valor del elemento a evaluar
+*   en *$2*: param
+*   en *$N...*: paramN...
 
 *methodName* sets the following parameter(s):
 
@@ -1029,8 +1029,8 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 *methodName* receives the following parameters:
 
 *   in *$1.value*: element value to be filtered
-*   in *$2*: *param*
-*   in *$N...*: param2...paramN
+*   en *$2*: *param*
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
@@ -1123,9 +1123,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value:* element value to be evaluated
-*   in *$2: param*
-*   in *$N...*: param2...paramN
+*   en *$1.value:* valor del elemento a evaluar
+*   en *$2: param*
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
@@ -1179,7 +1179,7 @@ The code for ***FindCity*** is:
 ```4d
  var $1 : Object
  var $2 : Text
- $1.result:=$1.value.name=$2 //name is a property name of objects in the collection
+ $1.result:=$1.value.name=$2 //name es un nombre de propiedad de los objetos de la colección
 ``` 
 
 <!-- END REF -->
@@ -1222,9 +1222,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be evaluated
-*   in *$2: param*
-*   in *$N...*: param2...paramN
+*   en *$1.value*: valor del elemento a evaluar
+*   en *$2: param*
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
@@ -1605,15 +1605,15 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value* (any type): element value to be mapped
+*   en *$1.value* (todo tipo): valor del elemento que se va a asignar
 *   in *$2* (any type): *param*
-*   in *$N...* (any type): *paramN...*
+*   en *$N...* (any type): *paramN...*
 
 *methodName* sets the following parameter(s):
 
 
-*   *$1.result* (any type): new transformed value to add to the resulting collection
-*   *$1.stop* (boolean): **true** to stop the method callback. The returned value is the last calculated.
+*   *$1.result* (todo tipo): nuevo valor transformado para añadir a la colección resultante
+*   *$1.stop* (boolean): **true** para detener la retrollamada del método. The returned value is the last calculated.
 
 #### Ejemplo
 
@@ -2237,8 +2237,8 @@ You can pass the value to initialize the accumulator in *initValue*. If omitted,
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be processed
-*   in *$2: param*
+*   en *$1.value*: valor del elemento a procesar
+*   en *$2: param*
 *   in *$N...*: *paramN...*
 
 *methodName* sets the following parameter(s):
@@ -2578,9 +2578,9 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 *methodName* receives the following parameters:
 
-*   in *$1.value*: element value to be evaluated
-*   in *$2*: param
-*   in *$N...*: param2...paramN
+*   en *$1.value*: valor del elemento a evaluar
+*   en *$2*: param
+*   en *$N...*: param2...paramN
 
 *methodName* sets the following parameter(s):
 
@@ -2705,7 +2705,7 @@ If the collection contains elements of different types, they are first grouped b
 ```
 
 ```4d
-  //numberOrder project method
+  //método proyecto numberOrder
  var $1 : Object
  $1.result:=String($1.value)<String($1.value2)
 ``` 
