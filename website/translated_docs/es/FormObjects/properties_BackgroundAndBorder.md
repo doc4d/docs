@@ -125,7 +125,7 @@ You can remove these empty rows by selecting this option. The bottom of the list
 
 
 ---
-## Line Color
+## Color de línea
 
 Designates the color of the object's lines. The color can be specified by:
 
@@ -150,7 +150,7 @@ You can also set this property using the [**OBJECT SET RGB COLORS**](https://doc
 
 
 ---
-## Line Width
+## Ancho de línea
 
 Designates the thickness of a line.
 
@@ -183,7 +183,7 @@ For example, given a list box where the rows have an alternating gray/light gray
 
 ```4d
  <>_BgndColors{$i}:=0x00FFD0B0 // orange
- <>_BgndColors{$i}:=-255 // default value
+ <>_BgndColors{$i}:=-255 // valor por defecto
 ```
 ![](assets/en/FormObjects/listbox_styles1.png)
 
