@@ -109,7 +109,7 @@ Built-in class for ORDA objects such as entities, or dataclasses. Functions and 
 
 Since entities are managed as references, data is loaded only when necessary, i.e. when accessing it in the code or through interface widgets. This optimization principle is called lazy loading.
 
-## Main datastore
+## Datastore principal
 
 The Datastore object matching the opened 4D database (standalone or client/server). The main datastore is returned by the ds command.
 
@@ -117,7 +117,7 @@ The Datastore object matching the opened 4D database (standalone or client/serve
 
 ORDA objects such as datastores, dataclasses, entity selections, and entities, define classes of objects. They provide specific methods to directly interact with them. These methods are also called member functions. Such methods are used by calling them on an instance of the object.
 
-For example, the `query()` method is a dataclass member function. If you have stored a dataclass object in the `$myClass` variable, you can write:
+For example, the `query()` method is a dataclass member function. Si ha almacenado un objeto dataclass en la variable `$myClass`, puede escribir:
 
 ```code4d
 $myClass.query("name = smith")
@@ -125,7 +125,7 @@ $myClass.query("name = smith")
 
 ## Mixed data type
 
-In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. It includes:
+In this documentation, "Mixed" data type is used to designate the various type of values that can be stored within dataclass attributes. Incluye:
 
 *   number
 *   texto
@@ -192,9 +192,9 @@ Each time a new session is opened, a license is used. Each time a session is clo
 
 Inactive sessions are automatically closed after a timeout. The default timeout is 48 hours, it can be set by the developer (it must be >= 60 minutes).
 
-## Shallow copy
+## Copia superficial (Shallow copy)
 
-A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. See also Deep copy.
+A shallow copy only duplicates the structure of elements, and keeps the same internal references. After a shallow copy, two collections will both share the individual elements. Ver también Copia profunda.
 
 ## Sello
 
