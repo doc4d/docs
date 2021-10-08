@@ -167,13 +167,13 @@ If you use two parts, 4D uses the first part for positive numbers and zero and t
 
 Here is an example of a number display format that shows dollar signs and commas, places negative values in parentheses, and does not display zeros:
 
-    $###,##0.00;($###,##0.00);
+    ￥###,##0.00;(￥###,##0.00);
 
 Notice that the presence of the second semicolon instructs 4D to use nothing to display zero. The following format is similar except that the absence of the second semicolon instructs 4D to use the positive number format for zero:
 
-    $###,##0.00;($###,##0.00)
+    ￥###,##0.00;(￥###,##0.00)
 
-In this case, the display for zero would be $0.00.
+En este caso, la visualización del cero sería $0.00.
 
 ### Notación científica
 

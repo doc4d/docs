@@ -142,7 +142,7 @@ Let’s take the example of an Intranet connection. Suppose that the IP address 
 | http://123.45.67.89/Customers/Add    | /Customers/Add           |
 | 123.45.67.89/Do_This/If_OK/Do_That | /Do_This/If_OK/Do_That |
 
-#### $2 - Header and Body of the HTTP request
+#### $2 - Encabezado y cuerpo de la petición HTTP
 
 The second parameter (`$2`) is the header and the body of the HTTP request sent by the web browser. Note that this information is passed to your `On Web Authentication` database method as it is. Its contents will vary depending on the nature of the web browser which is attempting the connection.
 
@@ -160,7 +160,7 @@ The `$3` parameter receives the IP address of the browser’s machine. This info
 The `$4` parameter receives the IP address used to call the web server. 4D allows for multi-homing, which allows you to exploit machines with more than one IP address. For more information, please refer to the [Configuration page](webServerConfig.md#ip-address-to-listen).
 
 
-#### $5 and $6 - User Name and Password
+#### $5 y $6 - Nombre de usuario y contraseña
 
 The `$5` and `$6` parameters receive the user name and password entered by the user in the standard identification dialog box displayed by the browser. This dialog box appears for each connection, if [basic](#basic-protocol) or [digest](#digest-protocol) authentication is selected.
 > If the user name sent by the browser exists in 4D, the $6 parameter (the user’s password) is not returned for security reasons.
@@ -169,9 +169,9 @@ The `$5` and `$6` parameters receive the user name and password entered by the u
 
 The `On Web Authentication` database method returns a boolean in $0:
 
-*   If $0 is True, the connection is accepted.
+*   Si $0 es True, la conexión es aceptada.
 
-*   If $0 is False, the connection is refused.
+*   Si $0 es False, la conexión es rechazada.
 
 The `On Web Connection` database method is only executed if the connection has been accepted by `On Web Authentication`.
 > **WARNING**<br>If no value is set to $0 or if $0 is not defined in the `On Web Authentication` database method, the connection is considered as accepted and the `On Web Connection` database method is executed.

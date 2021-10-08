@@ -35,7 +35,7 @@ You can then write the following REST request to delete the entity whose key is 
 
  `POST  /rest/Employee(22)/?$method=delete`
 
-You can also do a query as well using $filter:
+También se puede hacer una petición de información utilizando $filter:
 
  `POST  /rest/Employee?$filter="ID=11"&$method=delete`
 

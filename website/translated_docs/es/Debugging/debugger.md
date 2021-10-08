@@ -143,7 +143,7 @@ $c:=a+b
     | -- | ---------- |
     | $b | Indefinido |
 
-    The value of the `$a` variable is now 1. The `$b` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
+    El valor de la variable `$a` es ahora 1. The `$b` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
 
 3. You click the **Step Over** button again. The program counter is now set on the line with c:=a+b. At this point the Line Objects theme displays:
 
@@ -152,7 +152,7 @@ $c:=a+b
     | $a | 1          |
     | $b | 2          |
 
-    The value of the `$b` variable is now 2. The `$c` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
+    El valor de la variable `$b` es ahora 2. The `$c` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
 
 #### Variables
 
@@ -256,7 +256,7 @@ In the image above:
 * `secondMethod` has received three parameters from `firstMethod`:
     * $1 is a pointer to the `[Employee]` table
     * $2 is a pointer to the `ID` field in the  `[Employee]` table
-    * $3 is an alphanumeric parameter whose value is "Z"
+    * $3 es un parámetro alfanumérico cuyo valor es "Z"
 
 You can double-click the name of any method to display its contents in the [Source Code Pane](#source-code-pane).
 

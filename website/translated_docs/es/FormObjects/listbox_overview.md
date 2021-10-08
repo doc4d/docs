@@ -843,7 +843,7 @@ the value type (mandatory): text, color, event, etc. the value itself (optional)
 ARRAY OBJECT(obColumn;0) //column array
  C_OBJECT($ob) //first element
  OB SET($ob;"valueType";"text") //defines the value type (mandatory)
- OB SET($ob;"value";"Hello World!") //defines the value
+ OB SET($ob;"value";"Hello World!") //define el valor
  APPEND TO ARRAY(obColumn;$ob)  
 ```
 

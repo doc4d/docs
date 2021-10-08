@@ -262,7 +262,7 @@ When handling the `method` attribute of form objects, you can define the attribu
 
 4D will create a file using the object name in the "objectMethods" folder with the content of `source` attribute. This feature is only available for macro code.
 
-#### `$4dId` property in `currentPage.objects`
+#### Propiedad `$4dId` en `currentPage.objects`
 
 The `$4dId` property defines a unique ID for each object in the current page. This key is used by the macro processor to control changes in `$result.currentPage`:
 
