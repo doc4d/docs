@@ -1,6 +1,6 @@
 ---
 id: macros
-title: Form Editor Macros
+title: Macros del editor de formularios
 ---
 
 
@@ -9,7 +9,7 @@ The 4D Form editor supports macros. A macro is a set of instructions to perform 
 For example if you have a recurring report with specific formatting (e.g., certain text must appear in red and certain text must appear in green), you can create a macro to automatically set the color. You can create macros for the 4D Form editor that can:
 
 *   Create and execute 4D code
-*   Display dialogs
+*   Mostrar las cajas de diálogo
 *   Seleccione los objetos de formulario
 *   Add / delete / modify forms, form objects as well as their properties
 *   Modify project files (update, delete)
@@ -151,7 +151,7 @@ Macros are instantiated at application startup. Consequently, if you modify the 
 
 
 
-## Macro Functions
+## Funciones macro
 
 Every macro class can contain a `Class constructor` and two functions: `onInvoke()` and `onError()`.
 
@@ -203,7 +203,7 @@ Class constructor($macro : Object)
 
 | Parámetros | Tipo   | Descripción                                      |
 | ---------- | ------ | ------------------------------------------------ |
-| $editor    | Objeto | Form properties                                  |
+| $editor    | Objeto | Propiedades del formulario                       |
 | $result    | Objeto | Form properties modified by the macro (optional) |
 
 The `onInvoke` function is automatically executed each time the macro is called.
@@ -216,7 +216,7 @@ Here are the properties of the `$editor` object:
 
 | Propiedad                 | Tipo       | Descripción                                                                       |
 | ------------------------- | ---------- | --------------------------------------------------------------------------------- |
-| $editor.form              | Objeto     | The entire form                                                                   |
+| $editor.form              | Objeto     | Formulario completo                                                               |
 | $editor.file              | File       | File object of the form file                                                      |
 | $editor.name              | Cadena     | Nombre del formulario                                                             |
 | $editor.table             | number     | Table number of the form, 0 for project form                                      |
@@ -235,7 +235,7 @@ Here are the properties that you can pass in the `$result` object if you want th
 | formProperties    | Objeto     | formProperties if modified by the macro                     |
 | editor.groups     | Objeto     | group info, if groups are modified by the macro             |
 | editor.views      | Objeto     | view info, if views are modified by the macro               |
-| editor.activeView | Cadena     | Active view name                                            |
+| editor.activeView | Cadena     | Nombres de vistas activos                                   |
 
 
 
