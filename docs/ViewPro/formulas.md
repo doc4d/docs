@@ -37,9 +37,6 @@ All formulas have operands and operators:
 	*	[references to other cells](#cell-references) (relative, absolute, mixed or by name)
 	*	[standard spreadsheet functions](#using-functions)
 	*	[4D functions](#4d-functions) based upon 4D formulas and providing access to 4D variables, fields, methods, commands, or expressions. 
-	
-	registered by [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) (recommended) or upon 4D methods registered by [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods).	*	[4D fields](#field-references) declared in the virtual structure 
-
  
 ## Values and operators
 
@@ -186,6 +183,7 @@ We want to print "Hello World" in a 4D View Pro area cell using a 4D project met
 ```4d
  #DECLARE->$hw Text
  $hw:="Hello World"
+
 ```
 
 2.	Execute the following code before opening any form that contains a 4D View Pro area:
