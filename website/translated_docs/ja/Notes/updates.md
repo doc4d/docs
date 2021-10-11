@@ -39,6 +39,7 @@ title: ドキュメンテーション更新情報
 - Apple Silicon プロセッサー用の [ネイティブコンパイル](Project/compiler.md#コンパイラーメソッド)
 - エンティティセレクション型リストボックスの列で、[変数の計算](FormObjects/properties_Object.md#変数の計算) プロパティがサポートされるようになりました。
 - 新しい包括的な [CLI](Admin/cli.md) (コマンドラインインターフェース) ページ
+- [4D View Pro](ViewPro/overview.md) chapter added.
 
 
 ## 4D v18 R6
