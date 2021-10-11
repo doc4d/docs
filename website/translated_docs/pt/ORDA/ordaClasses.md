@@ -62,11 +62,11 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 ## Class Description
 
-<details><summary>History</summary>
+<details><summary>Histórico</summary>
 
-| Version | Changes                                                                                            |
-| ------- | -------------------------------------------------------------------------------------------------- |
-| v18 R5  | Data model class functions are not exposed to REST by default. New `exposed` and `local` keywords. |
+| Versão | Mudanças                                                                                           |
+| ------ | -------------------------------------------------------------------------------------------------- |
+| v18 R5 | Data model class functions are not exposed to REST by default. New `exposed` and `local` keywords. |
 </details>
 
 
@@ -80,7 +80,7 @@ A 4D database exposes its own DataStore class in the `cs` class store.
 
 You can create functions in the DataStore class that will be available through the `ds` object.
 
-#### Example
+#### Exemplo
 
 ```4d  
 // cs.DataStore class
@@ -110,7 +110,7 @@ Each table exposed with ORDA offers a DataClass class in the `cs` class store.
 
 
 
-#### Example
+#### Exemplo
 
 ```4D
 // cs.Company class
@@ -184,7 +184,7 @@ Each table exposed with ORDA offers an EntitySelection class in the `cs` class s
 - **Example name**: cs.EmployeeSelection
 
 
-#### Example
+#### Exemplo
 
 ```4d
 // cs.EmployeeSelection class
@@ -214,7 +214,7 @@ Each table exposed with ORDA offers an Entity class in the `cs` class store.
 - **Class name**: *DataClassName*Entity (where *DataClassName* is the table name)
 - **Example name**: cs.CityEntity
 
-#### Example
+#### Exemplo
 
 ```4d
 // cs.CityEntity class
@@ -282,7 +282,7 @@ exposed Function <functionName>
 
 > The `exposed` keyword can only be used with Data model class functions. If used with a [regular user class](Concepts/classes.md) function, it is ignored and an error is returned by the compiler.
 
-### Example
+### Exemplo
 
 You want an exposed function to use a private function in a dataclass class:
 
@@ -349,7 +349,7 @@ local Function getYoungest
 - **with** the `local` keyword, 4 requests are necessary: one to get the Schools entity students, one for the `query()`, one for the `orderBy()`, and one for the `slice()`. In this example, using the `local` keyword is inappropriate.
 
 
-### Examples
+### Exemplos
 
 #### Calculating age
 
