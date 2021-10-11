@@ -84,15 +84,15 @@ The 4D View Pro sheet options object allows you to control various options of yo
 |allowCellOverflow|	|	boolean|	Specifies whether data can overflow into adjacent empty cells.|
 |sheetTabColor|	|	string|	A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.|
 |frozenlineColor|	|	string|	A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.|
-|clipBoardOptions|	|	longint|	The clipboard option. Available values: [`vk clipboard paste options all`](constant-list.md#vk-clipboard-paste-options-all), [`vk clipboard paste options formatting`](constant-list.md#vk-clipboard-paste-options-formatting), [`vk clipboard paste options formulas`](constant-list.md#vk-clipboard-paste-options-formulas), [`vk clipboard paste options formulas and formatting`](constant-list.md#vk-clipboard-paste-options-formulas-and-formatting), [`vk clipboard paste options values`](constant-list.md#vk-clipboard-paste-options-values), [`vk clipboard paste options values and formatting`](constant-list.md#vk-clipboard-paste-options-values-and-formatting)|
+|clipBoardOptions|	|	longint|	The clipboard option. Available values: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting`|
 |gridline|	|	object|	The grid line's options.|
 ||color|	string|	A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.|
 ||showVerticalGridline|	boolean|	Specifies whether to show the vertical grid line.
 ||showHorizontalGridline|	boolean|	Specifies whether to show the horizontal grid line.|
 |rowHeaderVisible|	|	boolean|	Specifies whether the row header is visible.|
 |colHeaderVisible|	|	boolean|	Specifies whether the column header is visible.|
-|rowHeaderAutoText|		|longint|	Specifies whether the row header displays letters or numbers or is blank. Available values: [`vk header auto text blank`](constant-list.md#vk-header-auto-text-blank), [`vk header auto text letters`](constant-list.md#vk-header-auto-text-letters), [`vk header auto text numbers`](constant-list.md#vk-header-auto-text-numbers)|
-|colHeaderAutoText|		|longint|	Specifies whether the column header displays letters or numbers or is blank. Available values: [`vk header auto text blank`](constant-list.md#vk-header-auto-text-blank), [`vk header auto text letters`](constant-list.md#vk-header-auto-text-letters), [`vk header auto text numbers`](constant-list.md#vk-header-auto-text-numbers)|
+|rowHeaderAutoText|		|longint|	Specifies whether the row header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`|
+|colHeaderAutoText|		|longint|	Specifies whether the column header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`|
 |selectionBackColor|	|	string|	The selection's background color for the sheet. (preferred RGBA format)
 |selectionBorderColor|		|string|	The selection's border color for the sheet.|
 |sheetAreaOffset|		|object|	The sheetAreaOffset's options.|
@@ -179,15 +179,15 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 |Constant|	Value|	Comment|
 |---|---|---|
-|[`vk pattern full date time`](constant-list.md#vk-pattern-full-date-time)|	"_fullDateTimePattern_"	|ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"|
-|[`vk pattern long date`](constant-list.md#vk-pattern-long-date)|	"_longDatePattern_"	|ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"|
-|[`vk pattern long time`](constant-list.md#vk-pattern-long-time)|	"_longTimePattern_"	|ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"|
-|[`vk pattern month day`](constant-list.md#vk-pattern-month-day)|	"_monthDayPattern_"	|ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"|
-|[`vk pattern short date`](constant-list.md#vk-pattern-short-date)|	"_shortDatePattern_"	|Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"|
-|[`vk pattern short time`](constant-list.md#vk-pattern-short-time)|	"_shortTimePattern_"|	Abbreviated ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm"|
-|[`vk pattern sortable date time`](constant-list.md#vk-pattern-sortable-date-time)|	"_sortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"|
-|[`vk pattern universal sortable date time`](constant-list.md#vk-pattern-universal-sortable-date-time)|	"_universalSortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization using UTC which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'"|
-|[`vk pattern year month`](constant-list.md#vk-pattern-year-month)	|"_yearMonthPattern_"|	ISO 8601 format for the month and year in current localization.<p><p>USA default pattern: "yyyy MMMM"|
+|`vk pattern full date time`|	"_fullDateTimePattern_"	|ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"|
+|`vk pattern long date`|	"_longDatePattern_"	|ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"|
+|`vk pattern long time`|	"_longTimePattern_"	|ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"|
+|`vk pattern month day`|	"_monthDayPattern_"	|ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"|
+|`vk pattern short date`|	"_shortDatePattern_"	|Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"|
+|`vk pattern short time`|	"_shortTimePattern_"|	Abbreviated ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm"|
+|`vk pattern sortable date time`|	"_sortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"|
+|`vk pattern universal sortable date time`|	"_universalSortableDateTimePattern_"	|ISO 8601 format for the date and time in current localization using UTC which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'"|
+|`vk pattern year month`|"_yearMonthPattern_"|	ISO 8601 format for the month and year in current localization.<p><p>USA default pattern: "yyyy MMMM"|
 
 
 #### Example  
@@ -344,7 +344,7 @@ Orientation attributes are used to specify the direction the printed page layout
 
 |Property|	Type|	Description|
 |---|---|---|
-|orientation|	longint|	Page orientation. Available values: [`vk print page orientation landscape`](constant-list.md#vk-print-page-orientation-landscape), [`vk print page orientation portrait`](constant-list.md#vk-print-page-orientation-portrait) (default)|
+|orientation|	longint|	Page orientation. Available values: `vk print page orientation landscape`, `vk print page orientation portrait` (default)|
 
 ### Page  
 
@@ -352,14 +352,14 @@ Page attributes are used to specify general document print settings.
 
 |Property|	Type|	Description|
 |---|---|---|
-|blackAndWhite|	boolean	|Printing in black and white only. <p>Default value = false<p><p>**Note**: PDFs are not affected by this attribute. Colors in PDFs remain.|
-|centering|	longint|	How the contents are centered on the printed page. Available values: [`vk print centering both`](constant-list.md#vk-print-centering-both), [`vk print centering horizontal`](constant-list.md#vk-print-centering-horizontal), [`vk print centering none`](constant-list.md#vk-print-centering-none) (default), [`vk print centering vertical`](constant-list.md#vk-print-centering-vertical)|
+|blackAndWhite|	boolean	|Printing in black and white only. <p>Default value = false</p><p>**Note**: PDFs are not affected by this attribute. Colors in PDFs remain.</p>|
+|centering|	longint|	How the contents are centered on the printed page. Available values: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (default), `vk print centering vertical`|
 |firstPageNumber|longint|The page number to print on the first page.<p>Default value = 1|
-|pageOrder|	longint	|The order pages are printed. Available values: [`vk print page order auto`](constant-list.md#vk-print-page-order-auto) (default), [`vk print page order down then over`](constant-list.md#vk-print-page-order-down-then-over), [`vk print page order over then down`](constant-list.md#vk-print-page-order-over-then-down).|
+|pageOrder|	longint	|The order pages are printed. Available values: `vk print page order auto` (default), `vk print page order down then over`, `vk print page order over then down`.|
 |pageRange	|text|	The range of pages for printing|
-|qualityFactor	|longint|	The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Default value = 2|
-|useMax	|boolean|	Only columns and rows with data are printed.<p>Default value = true|
-|zoomFactor	|real|	The amount to enlarge or reduce the printed page.<p>Default value = 1|
+|qualityFactor	|longint|	The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Default value = 2</p>|
+|useMax	|boolean|	Only columns and rows with data are printed.<p>Default value = true</p>|
+|zoomFactor	|real|	The amount to enlarge or reduce the printed page.<p>Default value = 1</p>|
 
 ### Paper Size  
 
@@ -393,9 +393,9 @@ Show / Hide attributes are used to specify the visibility (printing) of 4D View 
 |Property|	Type|	Description|
 |---|---|---|
 |showBorder|	boolean	|Prints the outline border.<p><p>Default value = "true"|
-|showColumnHeader	|longint	|Column header print settings. Available values: [`vk print visibility hide`](constant-list.md#vk-print-visibility-hide), [`vk print visibility inherit`](constant-list.md#vk-print-visibility-inherit) (default), [`vk print visibility show`](constant-list.md#vk-print-visibility-show), [`vk print visibility show once`](constant-list.md#vk-print-visibility-show-once) |
+|showColumnHeader	|longint	|Column header print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`|
 |showGridLine|	boolean	|Prints the gridlines.<p>Default value = "false"|
-|showRowHeader	|longint	|Row headers print settings. Available values: [`vk print visibility hide`](constant-list.md#vk-print-visibility-hide), [`vk print visibility inherit`](constant-list.md#vk-print-visibility-inherit) (default), [`vk print visibility show`](constant-list.md#vk-print-visibility-show), [`vk print visibility show once`](constant-list.md#vk-print-visibility-show-once)|
+|showRowHeader	|longint	|Row headers print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`|
 
 ### Watermark  
 
@@ -450,7 +450,7 @@ Example:
 |---|---|---|---|
 |backColor|	text|Defines the color of the background.|CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)|
 |backgroundImage|picture, text|Specifies a background image.|Can be specified directly or via the image path (full path or file name only). If the file name only is used, the file must be located next to the database structure file. No matter how set (picture or text), a picture is saved with the document. This could impact the size of a document if the image is large. Note for Windows: File extension must be included.| 
-|backgroundImageLayout|	longint|	Defines the layout for the background image.|[`vk image layout center`](constant-list.md#vk-image-layout-center), [`vk image layout none`](constant-list.md#vk-image-layout-none)[`vk image layout stretch`](constant-list.md#vk-image-layout-stretch)[`vk image layout zoom`](constant-list.md#vk-image-layout-zoom)|
+|backgroundImageLayout|	longint|	Defines the layout for the background image.|`vk image layout center`, `vk image layout none`, `vk image layout stretch`, `vk image layout zoom`|
 |foreColor|	text|Defines the color of the foreground.|CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)|
 
 #### Borders  
@@ -459,7 +459,7 @@ Example:
 |---|---|---|---|---|
 |borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp||object|	Defines the corresponding border line|	 |
 ||color|	text|	Defines the color of the border. Default = black.|CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)|
-||style|	longint|	Defines the style of the border. Default = empty. Cannot be null or undefined.|	[`vk line style dash dot`](constant-list.md#vk-line-style-dash-dot), [`vk line style dash dot dot`](constant-list.md#vk-line-style-dash-dot-dot), [`vk line style dashed`](constant-list.md#vk-line-style-dashed), [`vk line style dotted`](constant-list.md#vk-line-style-dotted), [`vk line style double`](constant-list.md#vk-line-style-double), [`vk line style empty`](constant-list.md#vk-line-style-empty), [`vk line style hair`](constant-list.md#vk-line-style-hair), [`vk line style medium`](constant-list.md#vk-line-style-medium), [`vk line style medium dash dot`](constant-list.md#vk-line-style-medium-dash-dot), [`vk line style medium dash dot dot`](constant-list.md#vk-line-style-medium-dash-dot-dot), [`vk line style medium dashed`](constant-list.md#vk-line-style-medium-dashed), [`vk line style slanted dash dot`](constant-list.md#vk-line-style-slanted-dash-dot), [`vk line style thick`](constant-list.md#vk-line-style-thick)|
+||style|	longint|	Defines the style of the border. Default = empty. Cannot be null or undefined.|	`vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick`|
 
 #### Fonts and text 
 
@@ -469,11 +469,11 @@ Example:
 |formatter|		|text|Pattern for value/time property.|Number/text/date/time formats, special characters. See [Cell Format](#cell-format).|
 |isVerticalText|		|boolean|Specifies text direction.|True = vertical text, False = horizontal text.|
 |labelOptions|		|object|	Defines cell label options (watermark options).| |	
-||alignment|	longint|Specifies the position of the cell label. Optional property.|	[`vk label alignment top left`](constant-list.md#vk-label-alignment-top-left), [`vk label alignment bottom left`](constant-list.md#vk-label-alignment-bottom-left), [`vk label alignment top center`](constant-list.md#vk-label-alignment-top-center), [`vk label alignment bottom center`](constant-list.md#vk-label-alignment-bottom-center), [`vk label alignment top right`](constant-list.md#vk-label-alignment-top-right), [`vk label alignment bottom right`](constant-list.md#vk-label-alignment-bottom-right)|
-||visibility|	longint|	Specifies the visibility of the cell label. Optional property.|	[`vk label visibility auto`](constant-list.md#vk-label-visibility-auto), [`vk label visibility hidden`](constant-list.md#vk-label-visibility-hidden), [`vk label visibility visible`](constant-list.md#vk-label-visibility-visible)|
+||alignment|	longint|Specifies the position of the cell label. Optional property.|`vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right`|
+||visibility|	longint|	Specifies the visibility of the cell label. Optional property.|	`vk label visibility auto`, `vk label visibility hidden`, `vk label visibility visible`|
 ||foreColor|	text|Defines the color of the foreground. Optional property.|	CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)|
 ||font|	text|Specifies the font characteristics with CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). The font-size and font-family values are mandatory.|	|
-|textDecoration|		|longint|Specifies the decoration added to text.|	[`vk text decoration double underline`](constant-list.md#vk-text-decoration-double-underline), [`vk text decoration line through`](constant-list.md#vk-text-decoration-line-through), [`vk text decoration none`](constant-list.md#vk-text-decoration-none), [`vk text decoration overline`](constant-list.md#vk-text-decoration-line-through), [`vk text decoration underline`](constant-list.md#vk-text-decoration-underline)|
+|textDecoration|		|longint|Specifies the decoration added to text.|`vk text decoration double underline`, `vk text decoration line through`, `vk text decoration none`, `vk text decoration overline`, `vk text decoration underline`|
 |textIndent|		|longint|Defines the unit of text indention. 1 = 8 pixels	||
 |textOrientation|		|longint|	Defines the rotation angle of the text in a cell. Number between -90 and 90| |
 |watermark|		|text|Defines the watermark (cell label) content|	|
@@ -484,11 +484,11 @@ Example:
 |Property|	Type|	Description|	Possible values|
 |---|---|---|---|
 |cellPadding	|text	|Defines the cell padding|	| 
-|hAlign	|longint	|Defines the horizontal alignment of cell contents.	|[`vk horizontal align center`](constant-list.md#vk-horizontal-align-center), [`vk horizontal align general`](constant-list.md#vk-horizontal-align-general), [`vk horizontal align left`](constant-list.md#vk-horizontal-align-left), [`vk horizontal align right`](constant-list.md#vk-horizontal-align-right)|
+|hAlign	|longint	|Defines the horizontal alignment of cell contents.	|`vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right`|
 |locked	|boolean	|Specifies cell protection status. Note, this is only available if [sheet protection](#sheet-protection) is enabled.|True = locked, False = unlocked.|
 |shrinkToFit	|boolean	|Specifies if the contents of the cell should be reduced.	|True = reduced content, False = no reduction.|
 |tabStop	|boolean	|Specifies if the focus to the cell can be set using the Tab key.	|True = Tab key sets focus, False = Tab key does not set focus.|
-|vAlign	|longint	|Specifies the vertical alignment of cell contents.	|[`vk vertical align bottom`](constant-list.md#vk-vertical-align-bottom), [`vk vertical align center`](constant-list.md#vk-vertical-align-center), [`vk vertical align top`](constant-list.md#vk-vertical-align-top)|
+|vAlign	|longint	|Specifies the vertical alignment of cell contents.	|`vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`|
 
 
 #### Style information  
