@@ -421,7 +421,7 @@
         "title": "Acerca de los formularios 4D"
       },
       "FormEditor/macros": {
-        "title": "Form Editor Macros"
+        "title": "Macros del editor de formularios"
       },
       "FormEditor/objectLibrary": {
         "title": "Librerías de objetos"
@@ -677,7 +677,7 @@
         "title": "Actualizaciones de la documentación"
       },
       "ORDA/dsmapping": {
-        "title": "Data Model Objects"
+        "title": "Objeto del modelo de datos"
       },
       "ORDA/entities": {
         "title": "Trabajar con los datos"
@@ -830,13 +830,25 @@
         "title": "Acerca de las peticiones REST"
       },
       "Tags/tags": {
-        "title": "Transformation tags"
+        "title": "Etiquetas de transformación"
       },
       "Users/editing": {
         "title": "Gestión de usuarios y grupos 4D"
       },
       "Users/overview": {
         "title": "Generalidades"
+      },
+      "ViewPro/configuring": {
+        "title": "Configuring 4D View Pro Areas"
+      },
+      "ViewPro/formulas": {
+        "title": "Formulas and Functions"
+      },
+      "ViewPro/getting-started": {
+        "title": "Comencemos"
+      },
+      "ViewPro/method-list": {
+        "title": "Method List"
       },
       "WebServer/allowProject": {
         "title": "Permitir métodos proyecto"
@@ -860,7 +872,7 @@
         "title": "Sesiones usuario"
       },
       "WebServer/templates": {
-        "title": "Template pages"
+        "title": "Páginas de plantillas"
       },
       "WebServer/webServer": {
         "title": "Generalidades"
@@ -902,7 +914,8 @@
       "Form Object Properties": "Propiedades de los objetos formulario",
       "Form Events": "Eventos formulario",
       "Menus": "Menús",
-      "Build Application": "Generador de aplicaciones"
+      "Build application": "Build application",
+      "4D View Pro": "4D View Pro"
     }
   },
   "pages-strings": {
@@ -936,6 +949,7 @@
     "Access Rights|no description given": "Derechos de acceso",
     "Description of log files|no description given": "Descripción de los archivos históricos",
     "Command Line Interface|no description given": "Interfaz de línea de comando",
+    "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferencias",
     "Getting started|no description given": "Comencemos",
     "Core Development|no description given": "Desarrollo",
