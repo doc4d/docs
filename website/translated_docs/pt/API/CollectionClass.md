@@ -92,19 +92,19 @@ Se não passar nenhum parâmetro, `New collection` cria uma coleção vazia e re
 Precisa atribuir a referência devolvida à uma variável 4D de tipo Collection.
 > Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but does not create any collection.
 
-Optionally, you can prefill the new collection by passing one or several *value*(s) as parameter(s).
+Opcionalmente pode pré-preencher a nova coleção passando um ou mais parâmetros *value*.
 
-Otherwise, you can add or modify elements subsequently through assignment. For example:
+Pode também adicionar ou modificar elementos subsequentemente através de assignação. For example:
 
 ```4d
  myCol[10]:="My new element"
 ```
 
-If the new element index is beyond the last existing element of the collection, the collection is automatically resized and all new intermediary elements are assigned a **null** value.
+Se o novo índice de elemento estiver além do último elemento existente da coleção, a coelção é redimensionada automaticamente e todos os elementos intermediários são atribuídos ao valor **null**.
 
-You can pass any number of values of any supported type (number, text, date, picture, pointer, object, collection...). Unlike arrays, collections can mix data of different types.
+Pode passar qualquer número de valores de qualquer tipo compatível (número, texto, data, imagem, ponteiro, objeto, coleção....). Diferente de arrays, coleções podem misturar dados de tipos diferentes.
 
-You must pay attention to the following conversion issues:
+Pode prestar atenção aos problemas de conversão abaixo:
 
 *   If you pass a pointer, it is kept "as is"; it is evaluated using the `JSON Stringify` command
 *   Dates are stored as "yyyy-mm-dd" dates or strings with the "YYYY-MM-DDTHH:mm:ss.SSSZ" format, according to the current "dates inside objects" database setting. When converting 4D dates into text prior to storing them in the collection, by default the program takes the local time zone into account. You can modify this behavior using the `Dates inside objects` selector of the `SET DATABASE PARAMETER` command.
@@ -114,7 +114,7 @@ You must pay attention to the following conversion issues:
 
 
 
-You want to create a new empty collection and assign it to a 4D collection variable:
+Se quiser criar uma nova coleção vazia e atribuí-la à uma variável coleção 4D:
 
 ```4d
  var $myCol : Collection
@@ -124,7 +124,7 @@ You want to create a new empty collection and assign it to a 4D collection varia
 
 #### Example 2
 
-You want to create a prefilled collection:
+Se quiser criar uma coleção pré-prenchida:
 
 ```4d
  var $filledColl : Collection
@@ -134,7 +134,7 @@ You want to create a prefilled collection:
 
 #### Example 3
 
-You create a new collection and then add a new element:
+Pode criar uma nova coleção e adicionar um novo elemento:
 
 ```4d
  var $coll : Collection
@@ -160,21 +160,21 @@ You create a new collection and then add a new element:
 **New shared collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New shared collection.Params -->
-| Parameter | Type                                                                |    | Description                  |
-| --------- | ------------------------------------------------------------------- |:--:| ---------------------------- |
-| value     | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | Shared collection's value(s) |
-| Result    | Collection                                                          | <- | New shared collection        |
+| Parameter | Type                                                                |    | Description                      |
+| --------- | ------------------------------------------------------------------- |:--:| -------------------------------- |
+| value     | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | Valores da collection compartida |
+| Result    | Collection                                                          | <- | New shared collection            |
 <!-- END REF -->
 
 
 #### Description
 
-The `New shared collection` command <!-- REF #_command_.New shared collection.Summary --> creates a new empty or prefilled shared collection<!-- END REF --> and returns its reference.
+O comando `New shared collection` <!-- REF #_command_.New shared collection.Summary --> cria uma nova coleção vazia ou pré-preenchida partilhada<!-- END REF --> e retorna sua referência.
 
-Adding an element to this collection must be surrounded by the [`Use...End`](Concepts/shared.md#useend-use) use structure, otherwise an error is generated. Reading an element without a structure is, however, possible.
+Adicionar um elemento para essa coleção deve ser rodeada pela estrutura [`Use...End`](Concepts/shared.md#useend-use), senão um erro é gerado. Ler um elemento sem a estrutura é entretanto possível.
 > For more information on shared collections, please refer to the [Shared objects and collections](Concepts/shared.md) page.
 
-If you do not pass any parameters, `New shared collection` creates an empty shared collection and returns its reference.
+Se não quiser passar parâmetros, `New shared collection` cria uma coleção vazia partilhada e retorna sua referência.
 
 Precisa atribuir a referência devolvida à uma variável 4D de tipo Collection.
 > Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but does not create any collection.
