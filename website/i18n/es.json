@@ -394,7 +394,7 @@
         "title": "Acerca de los formularios 4D"
       },
       "FormEditor/macros": {
-        "title": "Form Editor Macros"
+        "title": "Macros del editor de formularios"
       },
       "FormEditor/objectLibrary": {
         "title": "Librerías de objetos"
@@ -647,7 +647,7 @@
         "sidebar_label": "Página Verificación"
       },
       "ORDA/dsmapping": {
-        "title": "Data Model Objects"
+        "title": "Objeto del modelo de datos"
       },
       "ORDA/entities": {
         "title": "Trabajar con los datos"
@@ -806,7 +806,7 @@
         "title": "Sesiones usuario"
       },
       "WebServer/templates": {
-        "title": "Template pages"
+        "title": "Páginas de plantillas"
       },
       "WebServer/webServer": {
         "title": "Generalidades"
