@@ -67,7 +67,7 @@ For each request, the following fields are logged:
 | process\_info_                           | index   Corresponds to the "index" field in 4DRequestsLog_ProcessInfo.txt log, and permits linking a request to a process.                                                                                       |
 | request                                    | Request ID in C/S or message string for SQL requests or `LOG EVENT` messages                                                                                                                                     |
 | bytes_in                                   | Number of bytes received                                                                                                                                                                                         |
-| bytes_out                                  | Number of bytes sent                                                                                                                                                                                             |
+| bytes_out                                  | Número de bytes enviados                                                                                                                                                                                         |
 | server\_duration &#124; exec\_duration | Depends on where the log is generated:<p><li>*server\_duration* when generated on the client --Time taken in microseconds for the server to process the request and return a response. B to F in image below, OR</li><li>*exec\_duration* when generated on the server --Time taken in microseconds for the server to process the request. B to E in image below.</li>                                                                                               |
 | write\_duration                          | Time taken in microseconds for sending the:<p><li>Request (when run on the client). A to B in image below.</li><li>Response (when run on the server). E to F in image below.</li>                                                                                          |
 | task_kind                                  | Preemptive or cooperative (respectively 'p' or 'c')                                                                                                                                                              |
@@ -116,13 +116,13 @@ For each process, the following fields are logged:
 | process\_info\_index          | Unique and sequential process number                           |
 | CDB4DBaseContext                  | DB4D component database context UUID                           |
 | systemid                          | ID del sistema                                                 |
-| server\_process\_id           | Process ID on Server                                           |
-| remote\_process\_id           | Process ID on Client                                           |
+| server\_process\_id           | ID del proceso en el servidor                                  |
+| remote\_process\_id           | ID del proceso en el cliente                                   |
 | process\_name                   | Nombre del proceso                                             |
 | cID                               | Identifier of 4D Connection                                    |
 | uID                               | Identifier of 4D Client                                        |
 | IP Client                         | IPv4/IPv6 address                                              |
-| host_name                         | Client hostname                                                |
+| host_name                         | Nombre de host del cliente                                     |
 | user_name                         | User Login Name on client                                      |
 | connection\_uuid                | UUID identifier of process connection                          |
 | server\_process\_unique\_id | Unique process ID on Server                                    |
@@ -194,7 +194,7 @@ The following fields are logged for each event:
 | --------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 1         | sequence_number                 | Unique and sequential operation number in the logging session                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | 2         | time                            | Date and time in ISO 8601 format (YYYY-MM-DDThh:mm:ss.mmm)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| 3         | ProcessID                       | Process ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 3         | ProcessID                       | ID del Proceso                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | 4         | unique_processID                | Unique process ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | 5         | stack_level                     | Stack level                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | 6         | operation_type                  | Tipo de operación histórico. This value may be an absolute value:<p><ol><li>Comando</li><li>Method (project method, database method, etc.)</li><li>Message (sent by [LOG EVENT](https://doc.4d.com/4dv19/help/command/en/page667.html) command only)</li><li>PluginMessage</li><li>PluginEvent</li><li>PluginCommand</li><li>PluginCallback</li><li>Tarea</li><li>Member method (method attached to a collection or an object)</li></ol></p>When closing a stack level, the `operation_type`, `operation` and `operation_parameters` columns have the same value as the opening stack level logged in the `stack_opening_sequence_number` column. Por ejemplo:<p><ol><li>121  15:16:50:777  5  8  1  2 CallMethod Parameters 0</li><li>122  15:16:50:777  5  8  2  1 283  0</li><li>123  15:16:50:777  5  8  2  1 283  0 122 3</li><li>124  15:16:50:777  5  8  1  2 CallMethod Parameters 0 121 61</li></ol></p>The 1st and 2nd lines open a stack level, the 3rd and 4th lines close a stack level. Values in the columns 6, 7 and 8 are repeated in the closing stack level line. The column 10 contains the stack level opening sequence numbers, i.e. 122 for the 3rd line and 121 for the 4th. |
@@ -216,13 +216,13 @@ Como iniciar este historial:
 
 The following fields are logged for each event:
 
-| Field Name         | Descripción                                                   |
+| Nombre del campo   | Descripción                                                   |
 | ------------------ | ------------------------------------------------------------- |
 | sequenceNumber     | Unique and sequential operation number in the logging session |
 | timestamp          | Date and time in ISO 8601 format (YYYY-MM-DDThh:mm:ss.mmm)    |
 | loggerID           | Opcional                                                      |
 | componentSignature | Optional - internal component signature                       |
-| messageLevel       | Info, Warning, Error                                          |
+| messageLevel       | Información, avisos, errores                                  |
 | message            | Description of the log entry                                  |
 
 Depending on the event, various other fields can also be logged, such as task, socket, etc.
@@ -237,13 +237,13 @@ These log files record each exchange between the 4D application and the mail ser
 
 The log files can be produced in two versions:
 
-*   a regular version:
+*   una versión normal:
     *   named 4DSMTPLog.txt, 4DPOP3Log.txt, or 4DIMAPLog.txt
     *   no attachments
     *   uses an automatic circular file recycling each 10 MB
     *   intended for usual debugging
 
-    To start this log:
+    Para iniciar este historial:
 
     ```4d
     SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log 
@@ -255,12 +255,12 @@ The log files can be produced in two versions:
 
       This log path is returned by the `Get 4D file` command.
 
-*   an extended version:
+*   una versión extendida:
     *   attachment(s) included no automatic recycling
-    *   custom name
+    *   nombre personalizado
     *   reserved for specific purposes
 
-    To start this log:
+    Para iniciar este historial:
 
     ```4d
     $server:=New object
@@ -290,7 +290,7 @@ For each request, the following fields are logged:
 | 4         | Unique process ID                                             |
 | 5         | <ul><li>SMTP,POP3, or IMAP session startup information, including server host name, TCP port number used to connect to SMTP,POP3, or IMAP server and TLS status,or</li><li>data exchanged between server and client, starting with "S <" (data received from the SMTP,POP3, or IMAP server) or "C >" (data sent by the SMTP,POP3, or IMAP client): authentication mode list sent by the server and selected authentication mode, any error reported by the SMTP,POP3, or IMAP Server, header information of sent mail (standard version only) and if the mail is saved on the server,or</li><li>SMTP,POP3, or IMAP session closing information.</li></ul>                                    |
 
-## ORDA client requests
+## Peticiones cliente ORDA
 
 This log records each ORDA request sent from a remote machine. You can direct log information to memory or to a file on disk. The name and location of this log file are your choice.
 
