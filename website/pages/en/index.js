@@ -5,17 +5,17 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+const React = require("react");
 
-const CompLibrary = require('../../core/CompLibrary.js');
+const CompLibrary = require("../../core/CompLibrary.js");
 
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 //const Showcase = require(`${process.cwd()}/core/Showcase.js`);
-const translate = require('../../server/translate.js').translate;
+const translate = require("../../server/translate.js").translate;
 
 function HomeSplash(props) {
-  const {siteConfig, language} = props;
+  const { siteConfig, language } = props;
 
   return (
     <div className="index-hero">
@@ -26,7 +26,7 @@ function HomeSplash(props) {
             className="index-hero-logo"
             src={`${siteConfig.baseUrl}img/banner-object.png`}
           />
-			{siteConfig.tagline}
+          {siteConfig.tagline}
         </h1>
       </div>
     </div>
@@ -34,7 +34,7 @@ function HomeSplash(props) {
 }
 class Index extends React.Component {
   render() {
-    const {config: siteConfig, language = 'en'} = this.props;
+    const { config: siteConfig, language = "en" } = this.props;
     const pinnedUsersToShowcase = siteConfig.users.filter(user => user.pinned);
     var subContents={
       installation: <translate desc="in index page Getting started">Installation</translate>,
@@ -67,24 +67,23 @@ class Index extends React.Component {
 	  users: <translate>Access Rights</translate>,
 	  	 debugLogFiles: <translate>Description of log files</translate>,
 	   cli: <translate>Command Line Interface</translate>,
+     viewPro: <translate>4D View Pro</translate>,
 	  preferences:<translate>Preferences</translate>
     };
-
-
 
     return (
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Container padding={['bottom', 'top']} background="white">
+          <Container padding={["bottom", "top"]} background="white">
             <GridBlock
               align="left"
               contents={[
                 {
                   content: `[${subContents.installation}](${siteConfig.baseUrl}${this.props.language}/GettingStarted/installation.html)`,
                   image: `${siteConfig.baseUrl}img/illu_GettingStarted.png`,
-                  imageAlign: 'top',
-                  imageAlt: 'Get started',
+                  imageAlign: "top",
+                  imageAlt: "Get started",
                   title: <translate>Getting started</translate>,
                 },
                 {
@@ -98,8 +97,8 @@ class Index extends React.Component {
 				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)<br>
 				  [${subContents.components}](${siteConfig.baseUrl}${this.props.language}/Project/components.html)`,
                   image: `${siteConfig.baseUrl}img/illu_CoreDevelopment.png`,
-                  imageAlign: 'top',
-                  imageAlt: 'Core',
+                  imageAlign: "top",
+                  imageAlt: "Core",
                   title: <translate>Core Development</translate>,
                 },
                 {
@@ -113,8 +112,8 @@ class Index extends React.Component {
 				[${subContents.msc}](${siteConfig.baseUrl}${this.props.language}/MSC/overview.html)<br>
                 [${subContents.backup}](${siteConfig.baseUrl}${this.props.language}/Backup/overview.html)<br>`,
                   image: `${siteConfig.baseUrl}img/illu_Administration.png`,
-                  imageAlign: 'top',
-                  imageAlt: 'Admin',
+                  imageAlign: "top",
+                  imageAlt: "Admin",
                   title: <translate>Administration</translate>,
                 },
               ]}
@@ -130,16 +129,16 @@ class Index extends React.Component {
 				  [${subContents.webDev}](${siteConfig.baseUrl}${this.props.language}/WebServer/gettingStarted.html)<br>
 				  [${subContents.restServer}](${siteConfig.baseUrl}${this.props.language}/REST/gettingStarted.html)`,
                   image: `${siteConfig.baseUrl}img/illu_WebApplication.png`,
-                  imageAlign: 'top',
-                  imageAlt: 'Web',
+                  imageAlign: "top",
+                  imageAlt: "Web",
                   title: <translate>Web applications</translate>,
                 },
                 {
                   content: `[Go Mobile with 4D](https://developer.4d.com/go-mobile)<br>
 				  [4D for iOS (archive)](https://developer.4d.com/4d-for-ios/docs/${this.props.language}/overview.html)`,
                   image: `${siteConfig.baseUrl}img/illu_MobileApplication.png`,
-                  imageAlign: 'top',
-                  imageAlt: 'Mobile',
+                  imageAlign: "top",
+                  imageAlt: "Mobile",
                   title: <translate>Mobile applications</translate>,
                 },
                 {
@@ -150,24 +149,25 @@ class Index extends React.Component {
 				  [${subContents.formObjectProperties}](${siteConfig.baseUrl}${this.props.language}/FormObjects/propertiesReference.html)<br>
 				  [${subContents.events}](${siteConfig.baseUrl}${this.props.language}/Events/overview.html)<br>
 				  [${subContents.menus}](${siteConfig.baseUrl}${this.props.language}/Menus/overview.html)<br>
-				  [${subContents.buildApp}](${siteConfig.baseUrl}${this.props.language}/Desktop/building.html)`,
+				  [${subContents.buildApp}](${siteConfig.baseUrl}${this.props.language}/Desktop/building.html)<br>
+				  [${subContents.viewPro}](${siteConfig.baseUrl}${this.props.language}/ViewPro/getting-started.html)`,
                   //image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,
                   image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,
-				  imageAlign: 'top',
-                  imageAlt: 'Desktop',
+                  imageAlign: "top",
+                  imageAlt: "Desktop",
                   title: <translate>Desktop applications</translate>,
                 },
-				{},
+                {},
               ]}
               layout="threeColumn"
             />
           </Container>
- 		<div className="doc-updates">
-          <a
-            href={`${siteConfig.baseUrl}${language}/Notes/updates`}>
-            <translate>Documentation updates</translate>
-          </a></div>
-       </div>
+          <div className="doc-updates">
+            <a href={`${siteConfig.baseUrl}${language}/Notes/updates`}>
+              <translate>Documentation updates</translate>
+            </a>
+          </div>
+        </div>
       </div>
     );
   }

@@ -39,6 +39,7 @@ The list of main updates in this documentation. For general information about ne
 - [Native compilation](Project/compiler.md#compiler-methods-for) for Silicon processors.
 - [Variable calculation](FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
 - New, comprehensive [CLI](Admin/cli.md) page.
+- [4D View Pro](ViewPro/overview.md) chapter added.
 
 
 ## 4D v18 R6
