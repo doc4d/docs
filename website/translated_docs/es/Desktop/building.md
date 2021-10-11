@@ -70,7 +70,7 @@ Specify the folder for the built application in **Destination Folder**. If the s
 
 
 
-## Compiled structure page
+## Página de estructura compilada
 
 This tab allows you to build a standard compiled structure file and/or a compiled component:
 
@@ -88,7 +88,7 @@ This feature creates a *.4dz* file within a *Compiled Database/\<project name>* 
 > A .4dz file is essentially a zipped (packed) version of the project folder. .4dz files can be used by 4D Server, 4D Volume license (merged applications), and 4D. The compact and optimized size of .4dz files makes project packages easy to deploy.
 
 
-#### Include related folders
+#### Incluir las carpetas asociadas
 
 When you check this option, any folders related to the project are copied into the Build folder as *Components* and *Resources* folders. For more information about these folders, refer to the [description of project architecture](Project/architecture.md).
 
@@ -122,7 +122,7 @@ The following elements are required for the build:
 - 4D Volume Desktop (the 4D database engine),
 - an [appropriate license](#licenses)
 
-On Windows, this feature creates an executable file (.exe). On macOS, it handles the creation of software packages.
+On Windows, this feature creates an executable file (.exe). En macOS, se encarga de la creación de paquetes de software.
 
 The principle consists of merging a compiled structure file with 4D Volume Desktop. The functionality provided by the 4D Volume Desktop file is linked with the product offer to which you have subscribed. For more information about this point, refer to the sales documentation and to the [4D Store](http://www.4d.com/).
 
@@ -184,12 +184,12 @@ When building a stand-alone application, 4D copies the contents of the 4D Volume
 > In macOS, 4D Volume Desktop is provided in the form of a software package. In order to modify it, you must first display its contents (**Control+click** on the icon).
 
 
-#### Location of Web files
+#### Ubicación de los archivos web
 
 If your stand-alone application is used as a Web server, the files and folders required by the server must be installed in specific locations. These items are the following:
 
 *   *cert.pem* and *key.pem* files (optional): These files are used for TLS connections and by data encryption commands,
-*   default Web root folder.
+*   carpeta raíz web por defecto.
 
 Items must be installed:
 
@@ -233,7 +233,7 @@ Check this option to generate the server part of your application during the bui
 
 Click on the **[...]** button and use the *Browse for folder* dialog box to locate the 4D Server application. In macOS, you must select the 4D Server package directly.
 
-#### Current version
+#### Versión actual
 
 Used to indicate the current version number for the application generated. You may then accept or reject connections by client applications according to their version number. El intervalo de compatibilidad de las aplicaciones del cliente y del servidor se define mediante el uso de [llaves XML](#build-application-settings) específicas).
 
@@ -295,7 +295,7 @@ To force the update, simply exclude the current version number of client applica
 The [current version number](#current_version) is set on the Client/Server page of the Build Application dialog box. The intervals of authorized numbers are set in the application project using specific [XML keys](#build-application-settings).
 
 
-#### Update Error
+#### En caso de error
 
 If 4D cannot carry out the update of the client application, the client machine displays the following error message: “The update of the client application failed. The application is now going to quit.”
 
@@ -322,7 +322,7 @@ The contents of these folders vary depending on the current platform:
 If you checked the “Allow automatic update of client application” option, an additional subfolder called *Upgrade4DClient* is added in the *\<ApplicationName>Server* folder/package. This subfolder contains the client application in macOS and/or Windows format as a compressed file. This file is used during the automatic client application update.
 
 
-#### Location of Web files
+#### Ubicación de los archivos web
 
 If the server and/or client part of your double-clickable application is used as a Web server, the files and folders required by the server must be installed in specific locations. These items are the following:
 
@@ -482,7 +482,7 @@ To obtain a developer certificate from Apple, Inc., you can use the commands of 
 
 
 
-#### About Gatekeeper
+#### Sobre Gatekeeper
 
 Gatekeeper is a security feature of OS X that controls the execution of applications downloaded from the Internet. If a downloaded application does not come from the Apple Store or is not signed, it is rejected and cannot be launched.
 
@@ -569,7 +569,7 @@ This mode allows you to duplicate your merged applications without breaking the 
 
 *Duplication when data linked by application path:* ![](assets/en/Project/datalinking2.png)
 
-You can select the data linking mode during the build application process. You can either:
+You can select the data linking mode during the build application process. Puede:
 
 - Use the [Application page](#application) or [Client/Server page](#client-server) of the Build Application dialog box.
 - Use the **LastDataPathLookup** XML key (single-user application or server application).
