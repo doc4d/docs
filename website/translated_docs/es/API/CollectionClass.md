@@ -191,8 +191,8 @@ You can pass any number of values of the following supported types:
 *   fecha
 *   time (stored as number of milliseconds - real)
 *   null
-*   shared object(*)
-*   shared collection(*)
+*   objeto compartido(*)
+*   collection compartida(*)
 > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 
 (*)When a shared object or collection is added to a shared collection, they share the same *locking identifier*. For more information on this point, refer to the **4D Developer**'s guide.
@@ -325,7 +325,7 @@ $vSize:=$col.length //$vSize=0
 <!-- REF #collection.combine().Params -->
 | Parámetros | Tipo       |    | Descripción                                                                   |
 | ---------- | ---------- |:--:| ----------------------------------------------------------------------------- |
-| col2       | Collection | -> | Collection to combine                                                         |
+| col2       | Collection | -> | Colección a combinar                                                          |
 | index      | Integer    | -> | Position to which insert elements to combine in collection (default=length+1) |
 | Resultado  | Collection | <- | Original collection containing combined element(s)                            |
 <!-- END REF -->
@@ -728,7 +728,7 @@ If the collection contains objects, you can pass the *propertyPath* parameter to
 <!-- REF #collection.equal().Params -->
 | Parámetros  | Tipo       |    | Descripción                                                      |
 | ----------- | ---------- |:--:| ---------------------------------------------------------------- |
-| collection2 | Collection | -> | Collection to compare                                            |
+| collection2 | Collection | -> | Colección a comparar                                             |
 | option      | Integer    | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
 | Resultado   | Booleano   | <- | True if collections are identical, false otherwise               |
 <!-- END REF -->
