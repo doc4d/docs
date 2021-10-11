@@ -193,7 +193,7 @@ The scientific notation format is the only format that will automatically round 
 You can display a number in hexadecimal using the following display formats:
 
 *   `&x`: This format displays hexadecimal numbers using the “0xFFFF” format.
-*   `&$`: This format displays hexadecimal numbers using the “$FFFF” format.
+*   `&$`: este formato muestra números hexadecimales utilizando el formato "$FFFF".
 
 ### Notación XML
 

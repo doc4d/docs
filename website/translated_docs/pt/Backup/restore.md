@@ -35,17 +35,17 @@ Também pode clicar no botão **[...]** para especificar um local diferente.
 4.(Opcional) Clique **OK** para integrar o arquivo de histórico na aplicação restaurada. Se a restauração e integração forem realizadas corretamente, 4D exibe uma caixa de diálogo indicando que a operação foi feita com sucesso.
 5. Clique **OK**.
 
-A pasta de destino é mostrada. Durante a restauração, 4D coloca todos os arquivos de backup nessa pasta, independente da posição dos arquivos originais no disco quando o backup começou. This way your files will be easier to find.
+A pasta de destino é mostrada. Durante a restauração, 4D coloca todos os arquivos de backup nessa pasta, independente da posição dos arquivos originais no disco quando o backup começou. Dessa forma seus arquivos serão mais fáceis de encontrar.
 
-> Any content related to the data file (files and `Settings` folder) are automatically restored in a `Data` subfolder within the destination folder.
-
-
-## Manually restoring a backup (MSC)
-
-You can manually restore an archive of the current application using the [Restore page](MSC/restore.md) of the Maintenance and Security Center (MSC).
+> Qualquer conteúdo relacionado aos arquivos de dados (arquivos e pasta `Settings` folder) são restauradas automaticamente em uma subpasta `Data` dentro da pasta destino.
 
 
-## Manually integrating the log
+## Restaurar manualmente a cópia de segurança (MSC)
+
+Pode restaurar manualmente um arquivo da aplicação atual usando a página  [Restauração](MSC/restore.md) do Centro de Manutenção e Segurança (MSC).
+
+
+## Integração manual do histórico
 
 If you have not checked the option for the automatic integration of the log file on the Restore page of the MSC (see [Successive integration of several log files](MSC/restore.md#successive-intergration-of-several-data-log-files)), a warning dialog box appears during the opening of the application when 4D notices that the log file contains more operations than have been carried out in the data file.
 

@@ -264,11 +264,11 @@ When handling the `method` attribute of form objects, you can define the attribu
 
 #### Propiedad `$4dId` en `currentPage.objects`
 
-The `$4dId` property defines a unique ID for each object in the current page. This key is used by the macro processor to control changes in `$result.currentPage`:
+La propiedad `$4dId` define un ID único para cada objeto de la página actual. Esta clave es utilizada por el procesador de macros para controlar los cambios en `$result.currentPage`:
 
-- if the `$4dId` key is missing in both the form and an object in `$result`, the object is created.
-- if the `$4dId` key exists in the form but is missing in `$result`, the object is deleted.
-- if the `$4dId` key exists in both the form and an object in `$result`, the object is modified.
+- si la llave `$4dId` falta tanto en el formulario y en un objeto en `$result`, el objeto se crea.
+- si la llave `$4dId` existe en el formulario pero falta en `$result`, el objeto se elimina.
+- si la llave `$4dId` existe tanto en el formulario y en un objeto en `$result`, el objeto se modifica.
 
 
 #### Ejemplo
@@ -291,7 +291,7 @@ Function onInvoke($editor : Object)->$result : Object
         ALERT("Please select a form object.")
     End if 
 
-    // Notify to 4D the modification
+    // Notificar la modificación a 4D
     $result:=New object("currentPage"; $editor.editor.currentPage)
 ```
 

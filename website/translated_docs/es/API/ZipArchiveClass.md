@@ -300,7 +300,7 @@ $err:=ZIP Create archive($zip; $destination)
 <!-- REF #_command_.ZIP Read archive.Params -->
 | Parámetros | Tipo          |    | Descripción                 |
 | ---------- | ------------- |:--:| --------------------------- |
-| zipFile    | 4D.File       | -> | Zip archive file            |
+| zIPFile    | 4D.File       | -> | Zip archive file            |
 | contraseña | Texto         | -> | ZIP archive password if any |
 | Resultado  | 4D.ZipArchive | <- | Archive object              |
 <!-- END REF -->

@@ -50,7 +50,7 @@ You can pass parameters to your formulas using the [sequential parameter syntax]
  var $f : Object
  $f:=New object
  $f.message:=Formula(ALERT("Hello "+$1))
- $f.message("John") //displays "Hello John"
+ $f.message("John") //muestra "Hello John"
 ```
 
 Or using the [.call()](#call) function:
@@ -169,7 +169,7 @@ A simple formula:
  var $o : Object
  $o:=New object("f";$f)
 
- $result:=$o.f() // returns 3
+ $result:=$o.f() // devuelve 3
 ```
 
 #### Ejemplo 2
@@ -183,7 +183,7 @@ A formula using local variables:
  $o:=New object("f";Formula($value))
  $value:=20
 
- $result:=$o.f() // returns 10
+ $result:=$o.f() // devuelve 10
 ```
 
 
@@ -193,7 +193,7 @@ A simple formula using parameters:
 
 ```4d
  $o:=New object("f";Formula($1+$2))
- $result:=$o.f(10;20) //returns 30
+ $result:=$o.f(10;20) //devuelve 30
 ```
 
 
@@ -337,7 +337,7 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
  $f:=Formula($1+$2+$3)
 
  $c:=New collection(10;20;30)
- $result:=$f.apply(Null;$c) // returns 60
+ $result:=$f.apply(Null;$c) // devuelve 60
 ```
 
 
@@ -402,7 +402,7 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 ```4d
  $o:=New object("value";50)
  $f:=Formula(This.value*2)
- $result:=$f.call($o) // returns 100
+ $result:=$f.call($o) // devuelve 100
 ``` 
 
 <!-- END REF -->

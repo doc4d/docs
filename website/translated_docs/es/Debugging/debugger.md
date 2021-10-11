@@ -135,7 +135,7 @@ $c:=a+b
     | -- | ---------- |
     |    |            |
 
-    The `$a` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
+    La variable `$a` aún no está inicializada, pero se muestra porque se utiliza en la línea que se va a ejecutar.
 
 2. You click the **Step Over** button. The program counter is now set to the line `b:=a+1`. At this point, the theme displays:
 
@@ -143,7 +143,7 @@ $c:=a+b
     | -- | ---------- |
     | $b | Indefinido |
 
-    El valor de la variable `$a` es ahora 1. The `$b` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
+    El valor de la variable `$a` es ahora 1. La variable `$b` aún no está inicializada, pero se muestra porque se utiliza en la línea que se va a ejecutar.
 
 3. You click the **Step Over** button again. The program counter is now set on the line with c:=a+b. At this point the Line Objects theme displays:
 
@@ -152,7 +152,7 @@ $c:=a+b
     | $a | 1          |
     | $b | 2          |
 
-    El valor de la variable `$b` es ahora 2. The `$c` variable is not yet initialized, but it is displayed because it is used in the line to be executed.
+    El valor de la variable `$b` es ahora 2. La variable `$c` aún no está inicializada, pero se muestra porque se utiliza en la línea que se va a ejecutar.
 
 #### Variables
 
