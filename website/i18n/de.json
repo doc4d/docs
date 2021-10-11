@@ -838,6 +838,18 @@
       "Users/overview": {
         "title": "Überblick"
       },
+      "ViewPro/configuring": {
+        "title": "Configuring 4D View Pro Areas"
+      },
+      "ViewPro/formulas": {
+        "title": "Formulas and Functions"
+      },
+      "ViewPro/getting-started": {
+        "title": "Getting Started"
+      },
+      "ViewPro/method-list": {
+        "title": "Method List"
+      },
       "WebServer/allowProject": {
         "title": "Allowing project methods"
       },
@@ -902,7 +914,8 @@
       "Form Object Properties": "Form Object Properties",
       "Form Events": "Form Events",
       "Menus": "Menus",
-      "Build Application": "Build Application"
+      "Build application": "Build application",
+      "4D View Pro": "4D View Pro"
     }
   },
   "pages-strings": {
@@ -936,6 +949,7 @@
     "Access Rights|no description given": "Access Rights",
     "Description of log files|no description given": "Description of log files",
     "Command Line Interface|no description given": "Command Line Interface",
+    "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferences",
     "Getting started|no description given": "Getting started",
     "Core Development|no description given": "Core Development",
