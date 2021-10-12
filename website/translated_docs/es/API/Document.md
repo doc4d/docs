@@ -337,7 +337,7 @@ This property is **read-only**.
 
 #### Descripción
 
-The `.original` property returns <!-- REF #document.original.Summary -->the target element for an alias, a shortcut, or a symbolic link file<!-- END REF -->. The target element can be:
+The `.original` property returns <!-- REF #document.original.Summary -->the target element for an alias, a shortcut, or a symbolic link file<!-- END REF -->. El elemento objetivo puede ser:
 
 *   a file object
 *   un objeto de la carpeta
