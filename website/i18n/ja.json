@@ -838,6 +838,18 @@
       "Users/overview": {
         "title": "概要"
       },
+      "ViewPro/configuring": {
+        "title": "Configuring 4D View Pro Areas"
+      },
+      "ViewPro/formulas": {
+        "title": "Formulas and Functions"
+      },
+      "ViewPro/getting-started": {
+        "title": "はじめに"
+      },
+      "ViewPro/method-list": {
+        "title": "Method List"
+      },
       "WebServer/allowProject": {
         "title": "プロジェクトメソッドの許可"
       },
@@ -902,7 +914,8 @@
       "Form Object Properties": "フォームオブジェクトプロパティ",
       "Form Events": "フォームイベント",
       "Menus": "メニュー",
-      "Build Application": "アプリケーションビルド"
+      "Build application": "アプリケーションビルド",
+      "4D View Pro": "4D View Pro"
     }
   },
   "pages-strings": {
@@ -936,6 +949,7 @@
     "Access Rights|no description given": "アクセス権限",
     "Description of log files|no description given": "ログファイルの詳細",
     "Command Line Interface|no description given": "コマンドライン・インターフェース",
+    "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "環境設定",
     "Getting started|no description given": "はじめに",
     "Core Development|no description given": "コア開発",

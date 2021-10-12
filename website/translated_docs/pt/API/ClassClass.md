@@ -8,7 +8,7 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 
 
 
-### Summary
+### Resumo
 
 
 |                                                                                                                                                                                    |
@@ -22,10 +22,10 @@ When a user class is [defined](Concepts/classes.md#class-definition) in the proj
 <!-- REF ClassClass.name.Desc -->
 ## .name
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R3  | Added   |
+<details><summary>Histórico</summary>
+| Versão | Mudanças |
+| ------ | -------- |
+| v18 R3 | Added    |
 
 </details>
 
@@ -45,10 +45,10 @@ This property is **read-only**.
 <!-- REF ClassClass.new().Desc -->
 ## .new()
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R3  | Added   |
+<details><summary>Histórico</summary>
+| Versão | Mudanças |
+| ------ | -------- |
+| v18 R3 | Added    |
 </details>
 
 <!-- REF #ClassClass.new().Syntax -->
@@ -70,7 +70,7 @@ Pode passar um ou mais parâmetros opcionais *param*, que serão passados para a
 
 Se `.new()` for chamado em uma classe não existente, um erro é retornado.
 
-#### Examples
+#### Exemplos
 
 Para criar uma nova instância da classe Person:
 
@@ -107,10 +107,10 @@ $person:=cs.Person.new("John";"Doe";40)
 <!-- REF ClassClass.superclass.Desc -->
 ## .superclass
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v18 R3  | Added   |
+<details><summary>Histórico</summary>
+| Versão | Mudanças |
+| ------ | -------- |
+| v18 R3 | Added    |
 
 </details>
 
@@ -125,7 +125,7 @@ Uma superclasse de uma classe de usuário é declarada em uma classe usando a pa
 
 This property is **read-only**.
 
-#### Examples
+#### Exemplos
 
 ```4d
 $sup:=4D.File.superclass //Document

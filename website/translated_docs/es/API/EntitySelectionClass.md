@@ -54,7 +54,7 @@ Entity selections can be created from existing selections using various function
 | Parámetros | Tipo               |    | Descripción                                                                                 |
 | ---------- | ------------------ |:--:| ------------------------------------------------------------------------------------------- |
 | dsTable    | Tabla              | -> | Table in the 4D database whose current selection will be used to build the entity selection |
-| parámetros | Objeto             | -> | Build option: context                                                                       |
+| parámetros | Objeto             | -> | Opciones de construcción: context                                                           |
 | Resultado  | 4D.EntitySelection | <- | Entity selection matching the dataclass related to the given table                          |
 <!-- END REF -->
 
@@ -1191,7 +1191,7 @@ In this example, we want to find the lowest salary among all the female employee
 <!-- REF #EntitySelectionClass.minus().Params -->
 | Parámetros      | Tipo               |    | Descripción                                                              |
 | --------------- | ------------------ |:--:| ------------------------------------------------------------------------ |
-| entity          | 4D.Entity          | -> | Entity to substract                                                      |
+| entity          | 4D.Entity          | -> | Entidad a sustraer                                                       |
 | entitySelection | 4D.EntitySelection | -> | Entity selection to substract                                            |
 | Resultado       | 4D.EntitySelection | <- | New entity selection or a new reference on the existing entity selection |
 <!-- END REF -->
@@ -1417,7 +1417,7 @@ By default if you omit the *sortOrder* parameter, the resulting entity selection
 | Constante     | Valor | Comentario                     |
 | ------------- | ----- | ------------------------------ |
 | dk ascending  | 0     | Ascending sort order (default) |
-| dk descending | 1     | Descending sort order          |
+| dk descending | 1     | Orden descendente              |
 
 Within the *formulaString* or *formulaObj*, the processed entity and thus its attributes are available through the `This` command (for example, `This.lastName`).
 
