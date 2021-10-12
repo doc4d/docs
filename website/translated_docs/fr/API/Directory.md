@@ -12,7 +12,7 @@ title: Classe Directory
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.creationDate.Syntax -->
@@ -35,7 +35,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.creationTime.Syntax -->
@@ -60,7 +60,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.exists.Syntax -->
@@ -85,7 +85,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.extension.Syntax -->
@@ -109,7 +109,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.fullName.Syntax -->
@@ -133,7 +133,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.hidden.Syntax -->
@@ -157,7 +157,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.isAlias.Syntax -->
@@ -181,7 +181,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.isFile.Syntax -->
@@ -204,7 +204,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.isFolder.Syntax -->
@@ -227,7 +227,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.isPackage.Syntax -->
@@ -253,7 +253,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.modificationDate.Syntax -->
@@ -277,7 +277,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.modificationTime.Syntax -->
@@ -300,7 +300,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -325,7 +325,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.original.Syntax -->
@@ -350,7 +350,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.parent.Syntax -->
@@ -376,7 +376,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.path.Syntax -->
@@ -399,7 +399,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.platformPath.Syntax -->
@@ -427,7 +427,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.copyTo().Syntax -->
@@ -483,7 +483,7 @@ $copiedImages:=$userImages.copyTo(Folder(fk database folder);fk overwrite)
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.file().Syntax -->
@@ -523,7 +523,7 @@ $myPDF:=Folder(fk documents folder).file("Pictures/info.pdf")
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.files().Syntax -->
@@ -585,7 +585,7 @@ You want to get all files that are not invisible in the Documents folder:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.folder().Syntax -->
@@ -625,7 +625,7 @@ A `Folder` object or null if *path* is invalid.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.folders().Syntax -->
@@ -672,7 +672,7 @@ You want the collection of all folders and subfolders of the database folder:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #directory.getIcon().Syntax -->
