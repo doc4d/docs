@@ -1,6 +1,6 @@
 ---
 id: basics
-title: Basics
+title: Básicos
 ---
 
 Los errores son comunes. It would be unusual to write a substantial number of lines of code without generating any errors. Conversely, treating and/or fixing errors is normal, too!
