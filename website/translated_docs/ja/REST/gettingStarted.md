@@ -32,7 +32,7 @@ RESTサーバーは 4D および 4D Server に含まれており、[設定完了
 
 ![](assets/en/REST/getstarted2.png)
 
-4. ストラクチャー設定の **Web＞RESTリソース** ページを開き、[RESTサーバーとして公開](configuration.md#RESTサーバーを開始する) オプションを選択します。
+4. Open the **Web > Web Features** page of the Settings dialog box and [check the Expose as REST server](configuration.md#starting-the-rest-server) option.
 
 5. 上部の **実行** メニューから、必要に応じて **Webサーバー開始** を選択し、次に同メニューから **Webサーバーテスト** を選択します。
 
