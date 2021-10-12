@@ -17,7 +17,7 @@ To start using the REST features, you need to start and configure the 4D REST se
 
 For security reasons, by default, 4D does not respond to REST requests. If you want to start the REST Server, you must check the **Expose as REST server** option in the **Web** > **Web Features** page of the structure settings in order for REST requests to be processed. 
 
-![alt-text](assets/en/REST/settings.png)
+![alt-text](assets/en/REST/Settings.png)
 
 > REST services use the 4D HTTP server, so you need to make sure that the 4D web server is started.
 
