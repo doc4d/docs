@@ -579,7 +579,7 @@ Then this entity selection is updated with products and you want to share the pr
 <!-- REF #EntitySelectionClass.distinct().Params -->
 | Parameter     | Type       |    | Description                                                      |
 | ------------- | ---------- |:--:| ---------------------------------------------------------------- |
-| attributePath | Texto      | -> | Path of attribute whose distinct values you want to get          |
+| attributePath | Texto      | -> | Rota do atributo cujos valores quer obter                        |
 | option        | Integer    | -> | `dk diacritical`: diacritical evaluation ("A" # "a" for example) |
 | Result        | Collection | <- | Collection with only distinct values                             |
 <!-- END REF -->
@@ -588,7 +588,7 @@ Then this entity selection is updated with products and you want to share the pr
 
 The `.distinct()` function <!-- REF #EntitySelectionClass.distinct().Summary -->returns a collection containing only distinct (different) values from the *attributePath* in the entity selection<!-- END REF -->.
 
-The returned collection is automatically sorted. **Null** values are not returned.
+A coleção retornada é ordenada automaticamente. Valores **Null** não são retornados.
 
 In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
 
@@ -599,7 +599,7 @@ In the *attributePath* parameter, pass the entity attribute whose distinct value
 
 You can use the `[]` notation to designate a collection when *attributePath* is a path within an object (see examples).
 
-By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
+Como padrão, uma avaliação não-diacrítica é realizada. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
 
 An error is returned if:
 
