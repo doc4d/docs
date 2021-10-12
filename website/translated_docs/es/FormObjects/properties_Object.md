@@ -305,7 +305,7 @@ For application translation purposes, you can enter an XLIFF reference in the ti
 
 | Nombre | Tipos de datos | Valores posibles |
 | ------ | -------------- | ---------------- |
-| texto  | cadena         | any text         |
+| texto  | cadena         | todo texto       |
 
 #### Objetos soportados
 
