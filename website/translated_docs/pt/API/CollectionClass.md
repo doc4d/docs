@@ -422,29 +422,29 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 | ------------ | ---------- |:--:| --------------------------------------------------------------------------------------------------------------- |
 | option       | Integer    | -> | `ck resolve pointers`: resolve ponteiros antes de copiar,<br>`ck shared`: retorna uma coleção partilihada |
 | groupWithCol | Collection | -> | Coleção partilhada a ser agrupada com a coleção resultante                                                      |
-| groupWithObj | Objeto     | -> | Shared object to be grouped with the resulting collection                                                       |
-| Result       | Collection | <- | Deep copy of the original collection                                                                            |
+| groupWithObj | Objeto     | -> | Objeto partilhado a ser agrupado com a coleção resultante                                                       |
+| Result       | Collection | <- | Cópia profunda da collection original                                                                           |
 <!-- END REF -->
 
 
 #### Description
 
-The `.copy()` function <!-- REF #collection.copy().Summary --> returns a deep copy of the collection instance<!-- END REF -->.***Deep copy*** means that objects or collections within the original collection are duplicated and do not share any reference with the returned collection.
+A função `.copy()` <!-- REF #collection.copy().Summary --> retorna uma cópia profunda da instância collection<!-- END REF -->.***Deep copy*** significa que objetos ou collections dentro da coleção original são duplicadas e não partilham qualquer referência com a collection retornada.
 > This function does not modify the original collection.
 
-If passed, the *option* parameter can contain one of the following constants (or both):
+Se passado, o parâmetro *option* pode conter uma das constantes abaixo (ou ambas):
 
-| option                | Description                                                                                                                                                                                                                                                                                                         |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ck resolve pointers` | If the original collection contains pointer type values, by default the copy also contains the pointers. However, you can resolve pointers when copying by passing the ck resolve pointers. In this case, each pointer present in the collection is evaluated when copying and its dereferenced value is used.      |
-| `ck shared`           | By default, copy() returns a regular (not shared) collection, even if the command is applied to a shared collection. Pass the ck shared constant to create a shared collection. In this case, you can use the groupWith parameter to associate the shared collection with another collection or object (see below). |
+| option                | Description                                                                                                                                                                                                                                                                                                                 |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ck resolve pointers` | Se a collection original contém valores tipo ponteiro, por padrão a cópia também contém os ponteiros. Entretanto pode resolver ponteiros quando copiar por passando os ck resolve pointers. Nesse caso, cada ponteiro presenta na coleção é avaliada quando copiar e seu valor de dereferencia é usado.                     |
+| `ck shared`           | Como padrão, copy() retorna uma colleciton regular (não partilhado), mesmo se o comando for aplicado para a collection shared. Passe a constante ck shared para criar uma collection shared. Nesse caso, pode usar o parâmetro groupWith para associar a collection partilhada com outra collection ou objeto (ver abaixo). |
 
-The *groupWithCol* or *groupWithObj* parameters allow you to designate a collection or an object with which the resulting collection should be associated.
+Os parâmetros *groupWithCol* ou *groupWithObj* permite determinar uma collection ou um objeto com o qual a coleção resultante deveria ser associada.
 
 
 #### Example 1
 
-We want to copy the *$lastnames* regular (non shared) collection into the *$sharedObject* shared object. To do this, we must create a shared copy of the collection (*$sharedLastnames*).
+Se quiser copiar a collection comum (não partilhada) *$lastnames* no objeto partilhado *$sharedObject*. Para fazer isso, precisa criar uma cópia partilhada da coleção (*$sharedLastnames*).
 
 ```4d
 var $sharedObject : Object
@@ -467,7 +467,7 @@ End use
 
 #### Example 2
 
-We want to combine *$sharedColl1* and *$sharedColl2*. Since they belong to different shared groups, a direct combination would result in an error. Therefore, we must make a shared copy of *$sharedColl1* and designate *$sharedColl2* as a shared group for the copy.
+Se quisermos combinar *$sharedColl1* e *$sharedColl2*. Já que pertencem a grupos partilhados diferentes, uma combinação diferente resultaria em um erro. Por isso precisa fazer uma cópia partilhada de *$sharedColl1* e designar *$sharedColl2* commo um grupo partilhado para a cópia.
 
 ```4d
 var $sharedColl1;$sharedColl2;$copyColl : Collection
@@ -484,7 +484,7 @@ $sharedColl2:=New shared collection(New shared object("lastname";"Brown"))
 
 #### Example 3
 
-We have a regular collection (*$lastnames*) and we want to put it in the **Storage** of the application. To do this, we must create a shared copy beforehand (*$sharedLastnames*).
+Se tiver uma collection comum (*$lastnames*) e se quisermos colocar em**Storage** da aplicação. Para fazer isso, precisamos criar antes uma cópia partilhada (*$sharedLastnames*).
 
 ```4d
 var $lastnames;$sharedLastnames : Collection
@@ -502,7 +502,7 @@ End use
 
 #### Example 4
 
-This example illustrates the use of the `ck resolve pointers` option:
+Esse exemplo ilustra o uso da opção `ck resolve pointers`:
 
 ```4d
  var $col : Collection
@@ -546,15 +546,15 @@ This example illustrates the use of the `ck resolve pointers` option:
 | Parameter    | Type  |    | Description                                          |
 | ------------ | ----- |:--:| ---------------------------------------------------- |
 | propertyPath | Texto | -> | Rota de propriedade objeto a ser usado para cálculos |
-| Result       | Real  | <- | Number of elements in the collection                 |
+| Result       | Real  | <- | Número de elementos na coleção                       |
 <!-- END REF -->
 
 
 #### Description
 
-The `.count()` function <!-- REF #collection.count().Summary -->returns the number of non-null elements in the collection<!-- END REF -->.
+A função `.count()` <!-- REF #collection.count().Summary -->retorna o número de elementos não-null na coleção<!-- END REF -->.
 
-If the collection contains objects, you can pass the *propertyPath* parameter. In this case, only elements that contain the *propertyPath* are taken into account.
+Se a coleção conter objetos, pode passar o parâmetro *propertyPath*. Nesse caso, só elementos que conterem *propertyPath* serão levados em consideração.
 
 #### Exemplo
 
@@ -593,25 +593,25 @@ If the collection contains objects, you can pass the *propertyPath* parameter. I
 <!-- REF #collection.countValues().Params -->
 | Parameter    | Type                                            |    | Description                                          |
 | ------------ | ----------------------------------------------- |:--:| ---------------------------------------------------- |
-| value        | Text, Number, Boolean, Date, Object, Collection | -> | Value to count                                       |
+| value        | Text, Number, Boolean, Date, Object, Collection | -> | Valor a contar                                       |
 | propertyPath | Texto                                           | -> | Rota de propriedade objeto a ser usado para cálculos |
-| Result       | Real                                            | <- | Number of occurrences of the value                   |
+| Result       | Real                                            | <- | Número de ocorrências do valor                       |
 <!-- END REF -->
 
 
 #### Description
 
-The `.countValues()` function <!-- REF #collection.countValues().Summary -->returns the number of times value is found in the collection<!-- END REF -->.
+A função `.countValues()` <!-- REF #collection.countValues().Summary -->retorna o número de vezes que o valor foi encontrado na coleção<!-- END REF -->.
 
-You can pass in *value*:
+Pode passar em *value*:
 
 *   a scalar value (text, number, boolean, date),
 *   an object or a collection reference.
 
 
-For an element to be found, the type of *value* must be equivalent to the type of the element; the method uses the equality operator.
+Para um elemento ser encontrado, o tipo de *value* deve ser equivalente ao tipo de elemento, o método usa o operador equality.
 
-The optional *propertyPath* parameter allows you to count values inside a collection of objects: pass in *propertyPath* the path of the property whose values you want to count.
+O parâmetro opcional *propertyPath* permite contar valores dentro de uma coleção de objetos: passe em *propertyPath* a rota da propriedade cujos valores quer contar.
 > This function does not modify the original collection.
 
 #### Example 1
@@ -672,24 +672,24 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 
 
 <!-- REF #collection.distinct().Params -->
-| Parameter    | Type       |    | Description                                                      |
-| ------------ | ---------- |:--:| ---------------------------------------------------------------- |
-| option       | Integer    | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
-| propertyPath | Texto      | -> | Path of attribute whose distinct values you want to get          |
-| Result       | Collection | <- | New collection with only distinct values                         |
+| Parameter    | Type       |    | Description                                                     |
+| ------------ | ---------- |:--:| --------------------------------------------------------------- |
+| option       | Integer    | -> | `ck diacritical`: avaliação diacríticos ("A" # "a" por exemplo) |
+| propertyPath | Texto      | -> | Rota do atributo cujos valores quer obter                       |
+| Result       | Collection | <- | Nova coleção com apenas valores distintos                       |
 <!-- END REF -->
 
 
 #### Description
 
-The `.distinct()` function <!-- REF #collection.distinct().Summary -->returns a collection containing only distinct (different) values from the original collection<!-- END REF -->.
+A função `.distinct()` function <!-- REF #collection.distinct().Summary -->retorna uma coleção que contém apenas valores distintos (diferentes) da coleção original<!-- END REF -->.
 > This function does not modify the original collection.
 
-The returned collection is automatically sorted. **Null** values are not returned.
+A coleção retornada é ordenada automaticamente. Valores **Null** não são retornados.
 
-By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `ck diacritical` constant in the *option* parameter.
+Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a avaliação diferencie minúsculas de maiúsculas ou que diferencie letras acentuadas, passe a constante `ck diacritical` no parâmetro*option*.
 
-If the collection contains objects, you can pass the *propertyPath* parameter to indicate the object property whose distinct values you want to get.
+Se a coleção conter objetos, pode passar o parâmetro *propertyPath* para indicar a propriedade objeto cujos valores diferentes você quer obter.
 
 
 
@@ -726,19 +726,19 @@ If the collection contains objects, you can pass the *propertyPath* parameter to
 **.equal**( *collection2* : Collection {; *option* : Integer } ) : Boolean<!-- END REF -->
 
 <!-- REF #collection.equal().Params -->
-| Parameter   | Type       |    | Description                                                      |
-| ----------- | ---------- |:--:| ---------------------------------------------------------------- |
-| collection2 | Collection | -> | Collection to compare                                            |
-| option      | Integer    | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
-| Result      | Booleano   | <- | True if collections are identical, false otherwise               |
+| Parameter   | Type       |    | Description                                                     |
+| ----------- | ---------- |:--:| --------------------------------------------------------------- |
+| collection2 | Collection | -> | Coleção a comparar                                              |
+| option      | Integer    | -> | `ck diacritical`: avaliação diacríticos ("A" # "a" por exemplo) |
+| Result      | Booleano   | <- | True se as coleções forem idênticas, senão false                |
 <!-- END REF -->
 
 
 #### Description
 
-The `.equal()` function <!-- REF #collection.equal().Summary -->compares the collection with collection2 <!-- END REF -->and returns **true** if they are identical (deep comparison).
+A função `.equal()` <!-- REF #collection.equal().Summary -->compara collection com collection2 <!-- END REF -->e retorna **true** se forem idênticos (comparação profunda/deep comparison).
 
-By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `ck diacritical` constant in the option parameter.
+Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a avaliação diferencie maiúsculas de minúsculas e caracteres acentuados, passe a constante`ck diacritical` no parâmetro option.
 > Elements with **Null** values are not equal to Undefined elements.
 
 #### Exemplo
