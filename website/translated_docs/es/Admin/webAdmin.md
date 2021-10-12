@@ -91,7 +91,7 @@ Port number to use for connections through HTTP to the `WebAdmin` web server whe
 
 When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. By default, this option is checked.
 
-#### HTTPS Port
+#### Puerto HTTPS
 
 Port number to use for connections through HTTPS to the `WebAdmin` web server when the **Accept HTTPS** option is checked. El valor por defecto es 7443.
 
