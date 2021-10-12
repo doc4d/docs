@@ -125,7 +125,7 @@ The web server returns the results in JSON:
 
 You get the catalog, i.e. the list of exposed dataclasses and attributes in the datastore.
 
-You can also get any data.
+También puede obtener cualquier dato.
 
 3. Enter the following URL:
 
