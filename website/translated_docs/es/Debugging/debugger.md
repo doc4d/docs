@@ -45,7 +45,7 @@ The debugger's tool bar includes several buttons, associated with default shortc
 
 > Default shortcuts can be customized in the Shortcuts Page of the Preferences dialog box.
 
-#### No Trace
+#### Fin del rastreo
 
 Tracing stops and normal method execution resumes.
 
@@ -158,10 +158,10 @@ $c:=a+b
 
 This theme is composed of the following subthemes:
 
-| Subtheme     | Descripción                                                  | ¿Se pueden modificar los valores? |
+| Subtema      | Descripción                                                  | ¿Se pueden modificar los valores? |
 | ------------ | ------------------------------------------------------------ | --------------------------------- |
 | Interproceso | List of interprocess variables being used at this point      | Sí                                |
-| Process      | List of process variables used by the current process        | Sí                                |
+| Proceso      | List of process variables used by the current process        | Sí                                |
 | Local        | List of local variables used by the method being traced      | Sí                                |
 | Parámetros   | List of parameters received by the method                    | Sí                                |
 | Self         | Pointer to the current object, when tracing an Object Method | No                                |
@@ -330,7 +330,7 @@ The Source Code Pane shows the source code of the method or function currently b
 
 This area also allows you to add or remove [**break points**](breakpoints.md).
 
-### Tool tip
+### Tips
 
 Hover your pointer over any expression to display a tool tip that indicates:
 
