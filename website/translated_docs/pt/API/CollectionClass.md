@@ -179,11 +179,11 @@ Se não quiser passar parâmetros, `New shared collection` cria uma coleção va
 Precisa atribuir a referência devolvida à uma variável 4D de tipo Collection.
 > Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but does not create any collection.
 
-Optionally, you can prefill the new shared collection by passing one or several *value*(s) as parameter(s). Otherwise, you can add or modify elements subsequently through object notation assignment (see example).
+Opcionalmente pode preencher automaticamente a nova coleção partilhada passando um ou vários *valores*como parâmetros. Também pode adicionar ou modificar elementos através de atribuição de notação de objetos (ver exemplo).
 
-If the new element index is beyond the last existing element of the shared collection, the collection is automatically resized and all new intermediary elements are assigned a **null** value.
+Se o novo índice elemento for além do último elemento existente da coleção partilhada, a coleção é automaticamente redimensionada e todos os novos elementos intermediários são atribuídos um valor**null**.
 
-You can pass any number of values of the following supported types:
+Pode passar qualquer número de valores dos tipos compatíveis abaixo:
 
 *   number (real, longint...). Number values are always stored as reals.
 *   text
@@ -195,7 +195,7 @@ You can pass any number of values of the following supported types:
 *   shared collection(*)
 > Unlike standard (not shared) collections, shared collections do not support pictures, pointers, and objects or collections that are not shared.
 
-(*)When a shared object or collection is added to a shared collection, they share the same *locking identifier*. For more information on this point, refer to the **4D Developer**'s guide.
+(*)Quando um objeto partilhado ou coleção forem adicionadas a uma coleção partilhada, partilham o mesmo *locking identifier*. Para saber mais sobre esse ponto, veja o guia **4D Developer**'.
 
 #### Exemplo
 
@@ -222,25 +222,25 @@ You can pass any number of values of the following supported types:
 
 
 <!-- REF #collection.average().Params -->
-| Parameter    | Type            |    | Description                                     |
-| ------------ | --------------- |:--:| ----------------------------------------------- |
-| propertyPath | Texto           | -> | Object property path to be used for calculation |
-| Result       | Real, Undefined | <- | Arithmetic mean (average) of collection values  |
+| Parameter    | Type            |    | Description                                          |
+| ------------ | --------------- |:--:| ---------------------------------------------------- |
+| propertyPath | Texto           | -> | Rota de propriedade objeto a ser usado para cálculos |
+| Result       | Real, Undefined | <- | Média aritmética dos valores coleção                 |
 <!-- END REF -->
 
 
 
 #### Description
 
-The `.average()` function <!-- REF #collection.average().Summary -->returns the arithmetic mean (average) of defined values in the collection instance<!-- END REF -->.
+A função `.average()` <!-- REF #collection.average().Summary -->retorna a média aritmética de valores definidos da instância da collection<!-- END REF -->.
 
 
 
-Only numerical elements are taken into account for the calculation (other element types are ignored).
+Apenas elementos numéricos são considerados para cálculos (outros tipos são ignorados).
 
-If the collection contains objects, pass the *propertyPath* parameter to indicate the object property to take into account.
+Se a coleção contiver objetos, passe o parâmetro *propertyPath* para indicar a propriedade objeto para levar em consideração.
 
-`.average()` returns `undefined` if:
+`.average()` retorna `undefined` se:
 
 *   the collection is empty,
 *   the collection does not contain numerical elements,
@@ -283,15 +283,15 @@ If the collection contains objects, pass the *propertyPath* parameter to indicat
 **.clear()** : Collection<!-- END REF -->
 
 <!-- REF #collection.clear().Params -->
-| Parameter | Type       |    | Description                                   |
-| --------- | ---------- |:--:| --------------------------------------------- |
-| Result    | Collection | <- | Original collection with all elements removed |
+| Parameter | Type       |    | Description                                          |
+| --------- | ---------- |:--:| ---------------------------------------------------- |
+| Result    | Collection | <- | Collection original com todos os elementos removidos |
 <!-- END REF -->
 
 
 #### Description
 
-The `.clear()` function <!-- REF #collection.clear().Summary -->removes all elements from the collection instance and returns an empty collection<!-- END REF -->.
+A função `.clear()` <!-- REF #collection.clear().Summary -->remove todos os elementos da instância collection e retorna uma collection vazia<!-- END REF -->.
 > This function modifies the original collection.
 
 #### Exemplo
@@ -323,20 +323,20 @@ $vSize:=$col.length //$vSize=0
 
 
 <!-- REF #collection.combine().Params -->
-| Parameter | Type       |    | Description                                                                   |
-| --------- | ---------- |:--:| ----------------------------------------------------------------------------- |
-| col2      | Collection | -> | Collection to combine                                                         |
-| index     | Integer    | -> | Position to which insert elements to combine in collection (default=length+1) |
-| Result    | Collection | <- | Original collection containing combined element(s)                            |
+| Parameter | Type       |    | Description                                                                         |
+| --------- | ---------- |:--:| ----------------------------------------------------------------------------------- |
+| col2      | Collection | -> | Collection a combinar                                                               |
+| index     | Integer    | -> | Posição para a qual inserir elementos para combinar em coleção (padrão = length +1) |
+| Result    | Collection | <- | Collection original contendo elementos combinados                                   |
 <!-- END REF -->
 
 
 #### Description
 
-The `.combine()` function <!-- REF #collection.combine().Summary -->inserts *col2* elements at the end or at the specified *index* position in the collection instance and returns the edited collection<!-- END REF -->. Unlike the `.insert()` function, `.combine()` adds each value of *col2* in the original collection, and not as a single collection element.
+A função `.combine()` <!-- REF #collection.combine().Summary -->insere elementos *col2* no final da posição especificada *index* na instância da coleção e retorna a coleção editada<!-- END REF -->. Diferente da função `.insert()`, `.combine()` adiciona cada valor de *col2* na collection original, e não como um único elemento da coleção.
 > This function modifies the original collection.
 
-By default, *col2* elements are added at the end of the orginal collection. You can pass in *index* the position where you want the *col2* elements to be inserted in the collection.
+Como padrão, elementos *col2* são adicionados ao final da collection original. Pode passar em *index* a posição onde quiser que os elmentos *col2* sejam inseridos na coleção.
 > **Warning**: Keep in mind that collection elements are numbered from 0.
 
 *   If *index* > the length of the collection, the actual starting *index* will be set to the length of the collection.
@@ -372,19 +372,19 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 **.concat**( *value* : any { *;...valueN* } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.concat().Params -->
-| Parameter | Type                                                           |    | Description                                                                                                       |
-| --------- | -------------------------------------------------------------- |:--:| ----------------------------------------------------------------------------------------------------------------- |
-| value     | Number, Text, Object, Collection, Date, Time, Boolean, Picture | -> | Value(s) to concatenate. If *value* is a collection, all collection elements are added to the original collection |
-| Result    | Collection                                                     | <- | New collection with value(s) added to the original collection                                                     |
+| Parameter | Type                                                           |    | Description                                                                                                             |
+| --------- | -------------------------------------------------------------- |:--:| ----------------------------------------------------------------------------------------------------------------------- |
+| value     | Number, Text, Object, Collection, Date, Time, Boolean, Picture | -> | Valores a concatenar. Se *value* for uma coleção, todos os elementos da coleção são adicionados para a coleção original |
+| Result    | Collection                                                     | <- | Nova coleção com valores adicionados à coleção original                                                                 |
 <!-- END REF -->
 
 
 #### Description
 
-The `.concat()` function <!-- REF #collection.concat().Summary -->returns a new collection containing the elements of the original collection with all elements of the *value* parameter added to the end<!-- END REF -->.
+A função `.concat()` <!-- REF #collection.concat().Summary -->retorna uma nova coleção contendo os elementos da coleção original com todos os elementos do parâmetro *value* adicionado ao final<!-- END REF -->.
 > This function does not modify the original collection.
 
-If *value* is a collection, all its elements are added as new elements at the end of the original collection. If *value* is not a collection, it is added itself as a new element.
+Se *value* for uma coleção, todos os elementos são adicionados como novos elementos no final da coleção original. Se *value* não for a coleção, será adicionado ao novo elemento.
 
 
 #### Exemplo
@@ -418,12 +418,12 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 
 <!-- REF #collection.copy().Params -->
-| Parameter    | Type       |    | Description                                                                                              |
-| ------------ | ---------- |:--:| -------------------------------------------------------------------------------------------------------- |
-| option       | Integer    | -> | `ck resolve pointers`: resolve pointers before copying,<br>`ck shared`: return a shared collection |
-| groupWithCol | Collection | -> | Shared collection to be grouped with the resulting collection                                            |
-| groupWithObj | Objeto     | -> | Shared object to be grouped with the resulting collection                                                |
-| Result       | Collection | <- | Deep copy of the original collection                                                                     |
+| Parameter    | Type       |    | Description                                                                                                     |
+| ------------ | ---------- |:--:| --------------------------------------------------------------------------------------------------------------- |
+| option       | Integer    | -> | `ck resolve pointers`: resolve ponteiros antes de copiar,<br>`ck shared`: retorna uma coleção partilihada |
+| groupWithCol | Collection | -> | Coleção partilhada a ser agrupada com a coleção resultante                                                      |
+| groupWithObj | Objeto     | -> | Shared object to be grouped with the resulting collection                                                       |
+| Result       | Collection | <- | Deep copy of the original collection                                                                            |
 <!-- END REF -->
 
 
@@ -543,10 +543,10 @@ This example illustrates the use of the `ck resolve pointers` option:
 
 
 <!-- REF #collection.count().Params -->
-| Parameter    | Type  |    | Description                                     |
-| ------------ | ----- |:--:| ----------------------------------------------- |
-| propertyPath | Texto | -> | Object property path to be used for calculation |
-| Result       | Real  | <- | Number of elements in the collection            |
+| Parameter    | Type  |    | Description                                          |
+| ------------ | ----- |:--:| ---------------------------------------------------- |
+| propertyPath | Texto | -> | Rota de propriedade objeto a ser usado para cálculos |
+| Result       | Real  | <- | Number of elements in the collection                 |
 <!-- END REF -->
 
 
@@ -591,11 +591,11 @@ If the collection contains objects, you can pass the *propertyPath* parameter. I
 
 
 <!-- REF #collection.countValues().Params -->
-| Parameter    | Type                                            |    | Description                                     |
-| ------------ | ----------------------------------------------- |:--:| ----------------------------------------------- |
-| value        | Text, Number, Boolean, Date, Object, Collection | -> | Value to count                                  |
-| propertyPath | Texto                                           | -> | Object property path to be used for calculation |
-| Result       | Real                                            | <- | Number of occurrences of the value              |
+| Parameter    | Type                                            |    | Description                                          |
+| ------------ | ----------------------------------------------- |:--:| ---------------------------------------------------- |
+| value        | Text, Number, Boolean, Date, Object, Collection | -> | Value to count                                       |
+| propertyPath | Texto                                           | -> | Rota de propriedade objeto a ser usado para cálculos |
+| Result       | Real                                            | <- | Number of occurrences of the value                   |
 <!-- END REF -->
 
 
@@ -2728,10 +2728,10 @@ If the collection contains elements of different types, they are first grouped b
 **.sum**( { *propertyPath* : Text } ) : Real<!-- END REF -->
 
 <!-- REF #collection.sum().Params -->
-| Parameter    | Type  |    | Description                                     |
-| ------------ | ----- |:--:| ----------------------------------------------- |
-| propertyPath | Texto | -> | Object property path to be used for calculation |
-| Result       | Real  | <- | Sum of collection values                        |
+| Parameter    | Type  |    | Description                                          |
+| ------------ | ----- |:--:| ---------------------------------------------------- |
+| propertyPath | Texto | -> | Rota de propriedade objeto a ser usado para cálculos |
+| Result       | Real  | <- | Sum of collection values                             |
 <!-- END REF -->
 
 
@@ -2739,9 +2739,9 @@ If the collection contains elements of different types, they are first grouped b
 
 The `.sum()` function <!-- REF #collection.sum().Summary -->returns the sum for all values in the collection instance<!-- END REF -->.
 
-Only numerical elements are taken into account for the calculation (other element types are ignored).
+Apenas elementos numéricos são considerados para cálculos (outros tipos são ignorados).
 
-If the collection contains objects, pass the *propertyPath* parameter to indicate the object property to take into account.
+Se a coleção contiver objetos, passe o parâmetro *propertyPath* para indicar a propriedade objeto para levar em consideração.
 
 `.sum()` returns 0 if:
 
