@@ -339,9 +339,9 @@ A função `.combine()` <!-- REF #collection.combine().Summary -->insere element
 Como padrão, elementos *col2* são adicionados ao final da collection original. Pode passar em *index* a posição onde quiser que os elmentos *col2* sejam inseridos na coleção.
 > **Aviso**: Lembre que elementos coleção são numerados a partir de 0.
 
-*   If *index* > the length of the collection, the actual starting *index* will be set to the length of the collection.
-*   If *index* < 0, it is recalculated as *index:=index+length* (it is considered as the offset from the end of the collection).
-*   If the calculated value is negative, *index* is set to 0.
+*   Se *index* > o tamanho da coleção, o início real de *index* será estabelecido para o tamanho da coleção.
+*   Se *index* < 0, será recalculado como  *index:=index+length* (é considerado como o offset do final da coleção).
+*   Se o valor calculado for negativo, *index* será estabelecido como 0.
 
 
 #### Exemplo
@@ -372,19 +372,19 @@ $c.combine($fruits;3) //[1,2,3,"Orange","Banana","Apple","Grape",4,5,6]
 **.concat**( *value* : any { *;...valueN* } ) : Collection<!-- END REF -->
 
 <!-- REF #collection.concat().Params -->
-| Parameter | Type                                                           |    | Description                                                                                                       |
-| --------- | -------------------------------------------------------------- |:--:| ----------------------------------------------------------------------------------------------------------------- |
-| value     | Number, Text, Object, Collection, Date, Time, Boolean, Picture | -> | Value(s) to concatenate. If *value* is a collection, all collection elements are added to the original collection |
-| Result    | Collection                                                     | <- | New collection with value(s) added to the original collection                                                     |
+| Parâmetros | Tipo                                                           |    | Descrição                                                                                                               |
+| ---------- | -------------------------------------------------------------- |:--:| ----------------------------------------------------------------------------------------------------------------------- |
+| value      | Number, Text, Object, Collection, Date, Time, Boolean, Picture | -> | Valores a concatenar. Se *value* for uma coleção, todos os elementos da coleção são adicionados para a coleção original |
+| Resultado  | Collection                                                     | <- | Nova coleção com valores adicionados à coleção original                                                                 |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.concat()` function <!-- REF #collection.concat().Summary -->returns a new collection containing the elements of the original collection with all elements of the *value* parameter added to the end<!-- END REF -->.
-> This function does not modify the original collection.
+A função `.concat()` <!-- REF #collection.concat().Summary -->retorna uma nova coleção contendo os elementos da coleção original com todos os elementos do parâmetro *value* adicionado ao final<!-- END REF -->.
+> Essa função não modifica a coleção original.
 
-If *value* is a collection, all its elements are added as new elements at the end of the original collection. If *value* is not a collection, it is added itself as a new element.
+Se *value* for uma coleção, todos os elementos são adicionados como novos elementos no final da coleção original. Se *value* não for a coleção, será adicionado ao novo elemento.
 
 
 #### Exemplo
@@ -418,12 +418,12 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 
 
 <!-- REF #collection.copy().Params -->
-| Parameter    | Type       |    | Description                                                                                              |
-| ------------ | ---------- |:--:| -------------------------------------------------------------------------------------------------------- |
-| option       | Integer    | -> | `ck resolve pointers`: resolve pointers before copying,<br>`ck shared`: return a shared collection |
-| groupWithCol | Collection | -> | Shared collection to be grouped with the resulting collection                                            |
-| groupWithObj | Objeto     | -> | Shared object to be grouped with the resulting collection                                                |
-| Result       | Collection | <- | Deep copy of the original collection                                                                     |
+| Parâmetros   | Tipo       |    | Descrição                                                                                                       |
+| ------------ | ---------- |:--:| --------------------------------------------------------------------------------------------------------------- |
+| option       | Integer    | -> | `ck resolve pointers`: resolve ponteiros antes de copiar,<br>`ck shared`: retorna uma coleção partilihada |
+| groupWithCol | Collection | -> | Coleção partilhada a ser agrupada com a coleção resultante                                                      |
+| groupWithObj | Objeto     | -> | Shared object to be grouped with the resulting collection                                                       |
+| Result       | Collection | <- | Deep copy of the original collection                                                                            |
 <!-- END REF -->
 
 
