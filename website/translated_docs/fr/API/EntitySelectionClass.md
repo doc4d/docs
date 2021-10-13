@@ -4,9 +4,9 @@ title: EntitySelection
 ---
 
 
-An entity selection is an object containing one or more reference(s) to [entities](ORDA/dsMapping.md#entity) belonging to the same [Dataclass](ORDA/dsMapping.md#dataclass). Une sélection d'entité peut contenir 0, 1 ou X entités de la dataclasse - où X peut représenter le nombre total d'entités contenues dans la dataclasse.
+Une entity selection est un objet contenant une ou plusieurs référence(s) à des [entités](ORDA/dsMapping.md#entity) appartenant à la même [Dataclass](ORDA/dsMapping.md#dataclass). Une entity selection peut contenir 0, 1 ou X entités de la dataclass - où X peut représenter le nombre total d'entités contenues dans la dataclass.
 
-Entity selections can be created from existing selections using various functions of the [`DataClass` class](DataClassClass.md) such as [`.all()`](DataClassClass.md#all) or [`.query()`](DataClassClass.md#query), or functions of the `EntityClass` class itself, such as [`.and()`](#and) or [`orderBy()`](#orderby). You can also create blank entity selections using the [`dataClass.newSelection()`](DataClassClass.md#newselection) function or the [`Create new selection`](#create-new-selection) command.
+Les entity selections peuvent être créées à partir de sélections existantes à l'aide de diverses fonctions de la classe [`DataClass`](DataClassClass.md) telles que [`.all()`](DataClassClass.md#all) ou [`.query()`](DataClassClass.md#query), ou de la classe `EntityClass` elle-même, telles que [`.and()`](#and) ou [`orderBy()`](#orderby). Vous pouvez également créer des entity selections vides à l'aide de la fonction [`dataClass.newSelection()`](DataClassClass.md#newselection) ou de la commande [`Create new selection`](#create-new-selection).
 
 ### Sommaire
 
@@ -51,23 +51,23 @@ Entity selections can be created from existing selections using various function
 **Create entity selection** ( *dsTable* : Table { ; *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #_command_.Create entity selection.Params -->
-| Paramètres | Type               |    | Description                                                                                 |
-| ---------- | ------------------ |:--:| ------------------------------------------------------------------------------------------- |
-| dsTable    | Table              | -> | Table in the 4D database whose current selection will be used to build the entity selection |
-| settings   | Objet              | -> | Build option: context                                                                       |
-| Résultat   | 4D.EntitySelection | <- | Entity selection matching the dataclass related to the given table                          |
+| Paramètres | Type               |    | Description                                                                                          |
+| ---------- | ------------------ |:--:| ---------------------------------------------------------------------------------------------------- |
+| dsTable    | Table              | -> | Table de la base 4D dont la sélection courante doit être utilisée pour construire l'entity selection |
+| settings   | Objet              | -> | Option de création : contexte                                                                        |
+| Résultat   | 4D.EntitySelection | <- | Nouvelle entity selection liée à la dataclass de la table                                            |
 <!-- END REF -->
 
 
 #### Description
 
-The `Create entity selection` command builds and returns a new, [alterable](ORDA/entities.md#shareable-or-alterable-entity-selections) entity selection related to the dataclass matching the given *dsTable*, according to the current selection of this table.
+La commande `Create entity selection` construit et retourne une nouvelle entity selection [altérable](ORDA/entities.md#shareable-or-alterable-entity-selections) liée à la dataclass correspondant à la table *dsTable*, basée sur la sélection courante de cette table.
 
-If the current selection is sorted, an [ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) entity selection is created (the order of the current selection is kept). If the current selection is unsorted, an unordered entity selection is created.
+Si la sélection courante est triée, une entity selection [triée](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) est créée (l'ordre de la sélection courante est conservé). Si la sélection courante n'est pas triée, une entity selection non-triée est créée.
 
-If the *dsTable* is not exposed in [`ds`](API/DataStoreClass.md#ds), an error is returned. This command cannot be used with a Remote datastore.
+Si la table *dsTable* n'est pas exposée dans [`ds`](API/DataStoreClass.md#ds), une erreur est retournée. Cette commande ne peut pas être utilisée avec un datastore distant.
 
-In the optional *settings* parameter, you can pass an object containing the following property:
+Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant la propriété suivante :
 
 | Propriété | Type  | Description                                                                                                       |
 | --------- | ----- | ----------------------------------------------------------------------------------------------------------------- |
