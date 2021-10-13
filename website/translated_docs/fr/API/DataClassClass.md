@@ -30,7 +30,7 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 </details>
 
 <!-- REF DataClassClass.attributeName.Syntax -->
@@ -102,7 +102,7 @@ Considering the following table properties:
 | Version | Modifications                       |
 | ------- | ----------------------------------- |
 | v17 R5  | Support of the *settings* parameter |
-| v17     | Ajoutées                            |
+| v17     | Ajout                               |
 </details>
 
 
@@ -112,7 +112,7 @@ Considering the following table properties:
 <!-- REF #DataClassClass.all().Params -->
 | Paramètres | Type               |    | Description                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------- |
-| settings   | Object             | -> | Build option: context                               |
+| settings   | Object             | -> | Option de création : contexte                       |
 | Résultat   | 4D.EntitySelection | <- | References on all entities related to the Dataclass |
 <!-- END REF -->
 
@@ -155,7 +155,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 | Version | Modifications                       |
 | ------- | ----------------------------------- |
 | v17 R5  | Support of the *settings* parameter |
-| v17     | Ajoutées                            |
+| v17     | Ajout                               |
 </details>
 
 <!-- REF #DataClassClass.fromCollection().Syntax -->
@@ -166,7 +166,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 | Paramètres | Type               |    | Description                                      |
 | ---------- | ------------------ |:--:| ------------------------------------------------ |
 | objectCol  | Collection         | -> | Collection of objects to be mapped with entities |
-| settings   | Object             | -> | Build option: context                            |
+| settings   | Object             | -> | Option de création : contexte                    |
 | Résultat   | 4D.EntitySelection | <- | Entity selection filled from the collection      |
 <!-- END REF -->
 
@@ -352,7 +352,7 @@ In this example, the first entity will be created and saved but the second will 
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -364,7 +364,7 @@ In this example, the first entity will be created and saved but the second will 
 | Paramètres | Type            |    | Description                                 |
 | ---------- | --------------- |:--:| ------------------------------------------- |
 | primaryKey | Integer OR Text | -> | Primary key value of the entity to retrieve |
-| settings   | Object          | -> | Build option: context                       |
+| settings   | Object          | -> | Option de création : contexte               |
 | Résultat   | 4D.Entity       | <- | Entity matching the designated primary key  |
 <!-- END REF -->
 
@@ -431,7 +431,7 @@ This example illustrates the use of the *context* property:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #DataClassClass.getDataStore().Syntax -->
@@ -485,7 +485,7 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
@@ -558,7 +558,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 </details>
 
 <!-- REF #DataClassClass.new().Syntax -->
@@ -601,7 +601,7 @@ This example creates a new entity in the "Log" Dataclass and records information
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 </details>
 
 <!-- REF #DataClassClass.newSelection().Syntax -->
@@ -649,7 +649,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 | ------- | ---------------------------------- |
 | v17 R6  | Support of Formula parameters      |
 | v17 R5  | Support of placeholders for values |
-| v17     | Ajoutées                           |
+| v17     | Ajout                              |
 </details>
 
 <!-- REF #DataClassClass.query().Syntax -->
