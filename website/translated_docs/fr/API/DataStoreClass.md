@@ -35,7 +35,7 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 | Version | Modifications                |
 | ------- | ---------------------------- |
 | v18     | Support of localID parameter |
-| v17     | Ajoutées                     |
+| v17     | Ajout                        |
 </details>
 
 <!-- REF #_command_.ds.Syntax -->
@@ -104,7 +104,7 @@ Using the main datastore on the 4D database:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18     | Ajoutées      |
+| v18     | Ajout         |
 </details>
 
 <!-- REF #_command_.Open datastore.Syntax -->
@@ -212,7 +212,7 @@ In case of error, the command returns **Null**. If the remote datastore cannot b
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 </details>
 
 <!-- REF DataStoreClass.dataclassName.Syntax -->
@@ -248,7 +248,7 @@ Each dataclass in a datastore is available as a property of the [DataStore objec
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18     | Ajoutées      |
+| v18     | Ajout         |
 </details>
 
 
@@ -286,7 +286,7 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.encryptionStatus().Syntax -->
@@ -363,7 +363,7 @@ You want to know the number of encrypted tables in the current data file:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -434,7 +434,7 @@ On a remote datastore:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R6  | Ajoutées      |
+| v17 R6  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.getRequestLog().Syntax -->
@@ -473,7 +473,7 @@ See Example 2 of [`.startRequestLog()`](#startrequestlog).
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R6  | Ajoutées      |
+| v18 R6  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.isAdminProtected().Syntax -->
@@ -507,7 +507,7 @@ By default, the Data Explorer access is granted for `webAdmin` sessions, but it 
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R5  | Ajoutées      |
+| v18 R5  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.makeSelectionsAlterable().Syntax -->
@@ -541,7 +541,7 @@ When this function is not called, new entity selections can be shareable, depend
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.provideDataKey().Syntax -->
@@ -619,7 +619,7 @@ If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **nu
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R6  | Ajoutées      |
+| v18 R6  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.setAdminProtection().Syntax -->**.setAdminProtection**( *status* : Boolean )<!-- END REF -->
@@ -646,10 +646,10 @@ In this case, you can call this function to disable the data access from Data Ex
 You create a *protectDataFile* project method to call before deployments for example:
 
 ```4d
- ds.setAdminProtection(True) //Disables the Data Explorer data access
+ ds.setAdminProtection(True) //Désactive l'accès aux données de l'Explorateur de données
 ```
 
-#### Voir également
+#### See also
 
 [`.isAdminProtected()`](#isadminprotected)
 
@@ -662,7 +662,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R6  | Ajoutées      |
+| v17 R6  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.startRequestLog().Syntax -->
@@ -740,7 +740,7 @@ You want to log ORDA client requests in memory:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18     | Ajoutées      |
+| v18     | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.startTransaction().Syntax -->
@@ -808,7 +808,7 @@ You can nest several transactions (sub-transactions). Each transaction or sub-tr
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R6  | Ajoutées      |
+| v17 R6  | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.stopRequestLog().Syntax -->
@@ -843,7 +843,7 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18     | Ajoutées      |
+| v18     | Ajout         |
 </details>
 
 <!-- REF #DataStoreClass.validateTransaction().Syntax -->
