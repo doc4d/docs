@@ -94,7 +94,7 @@ $employees:=Create entity selection([Employee])
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -147,7 +147,7 @@ Note that the corresponding entity is reloaded from the datastore.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 </details>
 
 <!-- REF EntitySelectionClass.attributeName.Syntax -->
@@ -228,7 +228,7 @@ The resulting object is an entity selection of Employee with duplications remove
 | Version | Modifications                             |
 | ------- | ----------------------------------------- |
 | v18 R5  | Only supports alterable entity selections |
-| v17     | Ajoutées                                  |
+| v17     | Ajout                                     |
 </details>
 
 
@@ -295,7 +295,7 @@ Calls to the function can be chained:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 </details>
 
 <!-- REF #EntitySelectionClass.and().Syntax -->
@@ -362,7 +362,7 @@ We want to have a selection of employees named "Jones" who live in New York:
 | Version | Modifications                               |
 | ------- | ------------------------------------------- |
 | v18 R6  | Returns undefined if empty entity selection |
-| v17     | Ajoutées                                    |
+| v17     | Ajout                                       |
 
 </details>
 
@@ -414,7 +414,7 @@ We want to obtain a list of employees whose salary is higher than the average sa
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -462,7 +462,7 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -507,7 +507,7 @@ We want to find out the total number of employees for a company without counting
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R5  | Ajoutées      |
+| v18 R5  | Ajout         |
 
 </details>
 
@@ -570,7 +570,7 @@ Then this entity selection is updated with products and you want to share the pr
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -632,7 +632,7 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -692,7 +692,7 @@ Example with the `dk stop dropping on first error` option:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R3  | Ajoutées      |
+| v18 R3  | Ajout         |
 
 </details>
 
@@ -795,7 +795,7 @@ Given the following table and relation:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -852,7 +852,7 @@ There is, however, a difference between both statements when the selection is em
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 
 </details>
 
@@ -903,7 +903,7 @@ The following generic code duplicates all entities of the entity selection:
 
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R5  | Ajoutées      |
+| v18 R5  | Ajout         |
 
 </details>
 
@@ -945,7 +945,7 @@ Form.products.add(Form.product)
 
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -998,7 +998,7 @@ For more information, please refer to [Ordered or unordered entity selection](OR
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -1046,7 +1046,7 @@ If the entity selection is empty, the function returns Null.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -1079,7 +1079,7 @@ Entity selections always have a `.length` property.
 <details><summary>Historique</summary>
 | Version | Modifications                               |
 | ------- | ------------------------------------------- |
-| v17     | Ajoutées                                    |
+| v17     | Ajout                                       |
 | v18 R6  | Returns undefined if empty entity selection |
 
 </details>
@@ -1131,7 +1131,7 @@ We want to find the highest salary among all the female employees:
 <details><summary>Historique</summary>
 | Version | Modifications                               |
 | ------- | ------------------------------------------- |
-| v17     | Ajoutées                                    |
+| v17     | Ajout                                       |
 | v18 R6  | Returns undefined if empty entity selection |
 
 
@@ -1181,7 +1181,7 @@ In this example, we want to find the lowest salary among all the female employee
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details>
 
@@ -1241,7 +1241,7 @@ We want to have a selection of female employees named "Jones" who live in New Yo
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.or().Syntax -->**.or**( *entity* : 4D.Entity ) : 4D.EntitySelection<br>**.or**( *entitySelection* : 4D.EntitySelection ) : 4D.EntitySelection
 <!-- END REF -->
@@ -1289,7 +1289,7 @@ If the original entity selection and the parameter are not related to the same d
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.orderBy().Syntax -->**.orderBy**( *pathString* : Text ) : 4D.EntitySelection<br>**.orderBy**( *pathObjects* : Collection ) : 4D.EntitySelection
 <!-- END REF -->
@@ -1351,7 +1351,7 @@ You can add as many objects in the criteria collection as necessary.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R6  | Ajoutées      |
+| v17 R6  | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.orderByFormula().Syntax -->**.orderByFormula**( *formulaString* : Text { ; *sortOrder* : Integer } { ; *settings* : Object} ) : 4D.EntitySelection<br>**.orderByFormula**( *formulaObj* : Object { ; *sortOrder* : Integer } { ; *settings* : Object} ) : 4D.EntitySelection
 <!-- END REF -->
@@ -1461,7 +1461,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 | ------- | ---------------------------------- |
 | v17 R6  | Support of Formula parameters      |
 | v17 R5  | Support of placeholders for values |
-| v17     | Ajoutées                           |
+| v17     | Ajout                              |
 
 </details><!-- REF #EntitySelectionClass.query().Syntax -->**.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
@@ -1504,7 +1504,7 @@ More examples of queries can be found in the DataClass [`.query()`](DataClassCla
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.queryPath.Syntax -->**.queryPath** : Text<!-- END REF -->#### Description
 
@@ -1515,7 +1515,7 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.queryPlan.Syntax -->**.queryPlan** : Text<!-- END REF -->#### Description
 
@@ -1526,7 +1526,7 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R3  | Ajoutées      |
+| v18 R3  | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.refresh().Syntax -->**.refresh()**
 <!-- END REF -->
@@ -1592,7 +1592,7 @@ A list box displays the Form.students entity selection and several clients work 
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v19 R3  | Ajoutées      |
+| v19 R3  | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.selected().Syntax -->**.selected**( *selectedEntities* : 4D.EntitySelection ) : Object
 <!-- END REF -->
@@ -1643,7 +1643,7 @@ $result2:=$invoices.selected($creditSel)
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.slice().Syntax -->**.slice**( *startFrom* : Integer { ; *end* : Integer } ) : 4D.EntitySelection
 <!-- END REF -->
@@ -1690,7 +1690,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 
 </details><!-- REF #EntitySelectionClass.sum().Syntax -->**.sum**( *attributePath* : Text ) : Real
@@ -1729,7 +1729,7 @@ $sum:=$sel.sum("salary")
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17     | Ajoutées      |
+| v17     | Ajout         |
 
 </details><!-- REF #EntitySelectionClass.toCollection().Syntax -->**.toCollection**( { *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer } } ) : *Collection*<br>**.toCollection**( *filterString* : Text {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<br>**.toCollection**( *filterCol* : Collection {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*
 <!-- END REF -->
