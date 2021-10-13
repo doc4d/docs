@@ -10,6 +10,7 @@ title: Method List
 [F](#f) - 
 [G](#g) - 
 [I](#i) - 
+[M](#m) -
 [N](#n) - 
 [O](#o) - 
 [P](#p) - 
@@ -2367,6 +2368,45 @@ The results is:
 
 ![](assets/en/ViewPro/cmd_vpInsertRows.PNG)
 
+## M 
+
+### VP MOVE CELLS
+
+<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *fromRange* : Object ; *toRange* : Object ; options : Object )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP MOVE CELLS.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|originRange||Object|->|4D View Pro area form object name|
+|targetRange||Object|->|Existing range name|
+|options||Object|->||
+||copy|boolean|true if the fromRange must be kept after pasting, false (default) if it must be removed. |
+||pasteOptions|Longint|Specifies what needs to be pasted or moved|
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the content, style and formula cells of an origin range to a target range<!-- END REF -->. 
+
+In *originRange*, pass the range of cells whose content, style, and formula cells will be copied or moved.
+
+In *targetRange*, pass the range where the data, style, and formula cells will be copied or moved.
+
+If the *copy* parameter is set to *True*, the command performs a copy. If set to *False*, the contents, style, and formula cells are moved.
+
+*pasteOptions* determines what needs to be copied or moved. Possible values:
+
+|Constant|Value|Description|
+|---|---|---|
+|vk clipboard options all|0|Pastes all data objects, including values, formatting, and formulas.|
+|vk clipboard options formatting|2|Pastes only the formatting|
+|vk clipboard options formulas|3|Pastes only the formulas.|
+|vk clipboard options formulas and formatting|5|Pastes formulas and formatting.|
+|vk clipboard options values|1|Pastes only values.|
+|vk clipboard options value and formatting|4|Pastes values and formatting.|
 
 
 ## N
