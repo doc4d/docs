@@ -76,11 +76,11 @@ Pour créer une nouvelle instance de la classe Person :
 
 ```4d
 var $person : cs.Person  
-$person:=cs.Person.new() //create the new instance  
-//$person contains functions of the class
+$person:=cs.Person.new() //créer la nouvelle instance  
+//$person contient les fonctions de la classe
 ```
 
-To create a new instance of the Person class with parameters:
+Pour créer une nouvelle instance de la classe Person avec des paramètres :
 
 ```4d
 //Class: Person.4dm
@@ -91,7 +91,7 @@ Class constructor($firstname : Text; $lastname : Text; $age : Integer)
 ```
 
 ```4d
-//In a method
+//Dans une méthode
 var $person : cs.Person  
 $person:=cs.Person.new("John";"Doe";40)  
 //$person.firstName = "John"
