@@ -15,11 +15,11 @@ REST機能を使い始めるまえに、まずは 4D REST サーバーの設定�
 
 ## RESTサーバーを開始する
 
-セキュリティ上の理由により、デフォルトでは、4D は RESTリクエストに応答しません。 If you want to start the REST Server, you must check the **Expose as REST server** option in the **Web** > **Web Features** page of the structure settings in order for REST requests to be processed.
+セキュリティ上の理由により、デフォルトでは、4D は RESTリクエストに応答しません。 RESTサーバーを開始し、RESTリクエストを処理するには、**ストラクチャー設定** の **Web** ＞ **Web機能** ページにて、**RESTサーバーとして公開** オプションを有効化する必要があります。
 
 ![alt-text](assets/en/REST/Settings.png)
 
-> REST services use the 4D HTTP server, so you need to make sure that the 4D web server is started.
+> RESTサービスは 4D の HTTPサーバーを使用するため、4D Webサーバーが開始されていることを確認してください。
 
 このオプションが有効化されると、「警告: アクセス権が正しく設定されているか確認してください。」という警告メッセージが表示されます。これは REST接続の認証設定がされていない限り、デフォルトではデータベースオブジェクトに自由にアクセスできてしまうためです。
 
@@ -29,15 +29,15 @@ REST機能を使い始めるまえに、まずは 4D REST サーバーの設定�
 デフォルトでは、REST接続はすべてのユーザーに対してオープンですが、この状態はライセンス管理上もセキュリティ上も推奨されません。
 
 REST接続は次の方法で制限することができます:
-- assigning a **Read/Write** user group to REST services in the "**Web** > **Web Features**" page of the Structure Settings;
+- ストラクチャー設定の "**Web** ＞ **Web機能**" ページにて、RESTサービスに割り当てる **読み込み/書き出し** ユーザーグループを設定します;
 - `On REST Authentication` データベースメソッドに、RESTの初期リクエストを処理するコードを書きます。
 
-> 上に挙げた 2つの方法を同時に使用することはできません。 Once an `On REST Authentication` database method has been defined, 4D fully delegates control of REST requests to it: any setting made using the "Read/Write" menu on the **Web** > **Web Features** page of the Structure Settings is ignored.
+> 上に挙げた 2つの方法を同時に使用することはできません。 `On REST Authentication` データベースメソッドを定義した場合、4D は RESTリクエストの処理を同メソッドに委ねます。つまり、ストラクチャー設定の "**Web** ＞ **Web機能**" ページにて指定した "読み込み/書き出し" の設定は無視されます。
 
 
 ### ストラクチャー設定を使用する
 
-The **Read/Write** menu in the "**Web** > **Web Features**" page of the structure settings specifies a group of 4D users that is authorized to establish the link to the 4D application using REST queries.
+ストラクチャー設定の "**Web** ＞ **Web機能**" ページにある **読み込み/書き出し** 設定は、RESTクエリを使って 4Dアプリケーションへのリンクを設立することのできる 4Dユーザーのグループを指定します。
 
 デフォルトでは、メニューには **\<Anyone>** が選択されています。これは、REST接続はすべてのユーザーに対してオープンであるという状態を示しています。 グループを指定すると、そのグループに所属する 4Dユーザーアカウントのみが [RESTリクエストを通して 4D にアクセス](authUsers.md) できるようになります。 このグループに所属していないアカウントの場合、4D はリクエストの送信者に対して認証エラーを返します。
 
