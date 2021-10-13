@@ -1,7 +1,7 @@
 {
   "docs": {
     "Getting Started":["GettingStarted/installation"],
-    "Project Management":["Project/overview","Project/creating","Project/architecture","Project/documentation","Project/compiler","Project/components"],
+    "Project Management":["Project/overview","Project/creating","Project/architecture","Project/documentation","Project/compiler"],
 	"4D Language Concepts":
 	["Concepts/about","Concepts/quick-tour",
       {
@@ -24,33 +24,7 @@
 	],
 
   "ORDA":["ORDA/overview","ORDA/dsmapping","ORDA/ordaClasses","ORDA/entities","ORDA/datastores","ORDA/glossary"],
-  "Class API Reference":
-  [
-	"API/overview",
-	"API/BlobClass",
-	"API/ClassClass",
-	"API/CollectionClass",
-	"API/CryptoKeyClass",
-	"API/DataClassClass",
-	"API/DataClassAttributeClass",
-	"API/DataStoreClass",
-	"API/EmailObjectClass",
-	"API/EntityClass",
-	"API/EntitySelectionClass",
-	"API/FileClass",
-	"API/FolderClass",
-	"API/FunctionClass",
-	"API/IMAPTransporterClass",
-	"API/MailAttachmentClass",
-	"API/POP3TransporterClass",
-	"API/SessionClass",
-	"API/SignalClass",
-	"API/SMTPTransporterClass",
-	"API/WebServerClass",
-	"API/ZipArchiveClass",
-	"API/ZipFileClass",
-	"API/ZipFolderClass"
-	],
+ 
   "Debugging":["Debugging/basics","Debugging/debugger","Debugging/breakpoints", "Debugging/debugging-remote"],
   "Access Rights":["Users/overview","Users/editing"],
   "Preferences":["Preferences/overview","Preferences/general","Preferences/structure","Preferences/forms","Preferences/methods","Preferences/shortcuts"],
@@ -210,9 +184,40 @@
 			"Events/onVpReady",
 			"Events/onWindowOpeningDenied"],
   "Menus":["Menus/overview","Menus/creating","Menus/properties","Menus/bars","Menus/sdi"],
-   "Build application":["Desktop/building"],
-   "4D View Pro":["ViewPro/getting-started","ViewPro/configuring","ViewPro/formulas","ViewPro/method-list"]
+   "Build application":["Desktop/building"]
 
-
-  }
+  },
+   "API": {"Class API Reference":
+  [
+	"API/overview",
+	"API/BlobClass",
+	"API/ClassClass",
+	"API/CollectionClass",
+	"API/CryptoKeyClass",
+	"API/DataClassClass",
+	"API/DataClassAttributeClass",
+	"API/DataStoreClass",
+	"API/EmailObjectClass",
+	"API/EntityClass",
+	"API/EntitySelectionClass",
+	"API/FileClass",
+	"API/FolderClass",
+	"API/FunctionClass",
+	"API/IMAPTransporterClass",
+	"API/MailAttachmentClass",
+	"API/POP3TransporterClass",
+	"API/SessionClass",
+	"API/SignalClass",
+	"API/SMTPTransporterClass",
+	"API/WebServerClass",
+	"API/ZipArchiveClass",
+	"API/ZipFileClass",
+	"API/ZipFolderClass"
+	]
+	},
+	"Extensions": {
+		"Overview": ["Project/components"],
+		"4D View Pro":["ViewPro/getting-started","ViewPro/configuring","ViewPro/formulas","ViewPro/method-list"]
+			}
+	
 }

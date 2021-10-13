@@ -411,6 +411,9 @@
       "Events/overview": {
         "title": "Overview"
       },
+      "Extensions/components": {
+        "title": "About Components"
+      },
       "FormEditor/stylesheets": {
         "title": "Style sheets"
       },
@@ -722,7 +725,7 @@
         "title": "Compilation"
       },
       "Project/components": {
-        "title": "4D Components Library"
+        "title": "Extensions"
       },
       "Project/creating": {
         "title": "Working with a project"
@@ -888,7 +891,12 @@
       }
     },
     "links": {
-      "v19 R2 BETA": "v19 R2 BETA",
+      "Docs": "Docs",
+      "API": "API",
+      "4D Language": "4D Language",
+      "Extensions": "Extensions",
+      "v19 R3 BETA": "v19 R3 BETA",
+      "v19 R2": "v19 R2",
       "v19": "v19",
       "v18": "v18"
     },
@@ -897,7 +905,6 @@
       "Project Management": "Project Management",
       "4D Language Concepts": "4D Language Concepts",
       "ORDA": "ORDA",
-      "Class API Reference": "Class API Reference",
       "Debugging": "Debugging",
       "Access Rights": "Access Rights",
       "Preferences": "Preferences",
@@ -915,6 +922,8 @@
       "Form Events": "Form Events",
       "Menus": "Menus",
       "Build application": "Build application",
+      "Class API Reference": "Class API Reference",
+      "Overview": "Overview",
       "4D View Pro": "4D View Pro"
     }
   },
