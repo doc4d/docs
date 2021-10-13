@@ -43,7 +43,7 @@ End if
 | Version | Modifications |
 | ------- | ------------- |
 | v19 R3  | Ajoutées      |
-| v18     | Ajoutées      |
+| v18     | Ajout         |
 </details>
 
 <!-- REF #_command_.ZIP Create archive.Syntax -->
@@ -291,7 +291,7 @@ $err:=ZIP Create archive($zip; $destination)
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18     | Ajoutées      |
+| v18     | Ajout         |
 </details>
 
 <!-- REF #_command_.ZIP Read archive.Syntax -->
