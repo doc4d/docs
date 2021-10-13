@@ -136,10 +136,10 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 | dataClassAttribute.kind | fieldType                                                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| storage                 | Corresponding 4D field type                                                                                        |
+| storage                 | Type de champ 4D correspondant, voir [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)        |
 | relatedEntity           | 38 (Is object)                                                                                                     |
 | relatedEntities         | 42 (Is collection)                                                                                                 |
-| calculated              | <li>See <a href="https://doc.4d.com/4dv19/help/command/en/page1509.html"><code>Value type</code></a></li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
+| calculated              | <li>scalaire : type de champ 4D correspondant, voir [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
 
 
 <!-- END REF -->
@@ -244,7 +244,7 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 The `.kind` property <!-- REF DataClassAttributeClass.kind.Summary -->returns the category of the attribute<!-- END REF -->. Returned value can be one of the following:
 
 *   "storage": storage (or scalar) attribute, i.e. attribute storing a value, not a reference to another attribute
-*   "calculated": computed attribute, i.e. defined through a [`get` function](ORDA/ordaClasses.md#function-get-attributename).
+*   "calculated": champ calculé, c'est-à-dire défini par [la fonction `get`](ORDA/ordaClasses.md#function-get-attributename).
 *   "relatedEntity": N -> 1 relation attribute (reference to an entity)
 *   "relatedEntities": 1 -> N relation attribute (reference to an entity selection)
 
@@ -342,7 +342,7 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 
 #### Description
 
-The `.readOnly` property is <!-- REF DataClassAttributeClass.readOnly.Summary -->true if the attribute is read-only<!-- END REF -->.
+La propriété `.readOnly` est <!-- REF DataClassAttributeClass.readOnly.Summary -->mise à "true" si l'attribut est en lecture seule<!-- END REF -->.
 
 **.type** : Texte 
 
@@ -412,7 +412,7 @@ Le type de valeur conceptuelle dépend de l'attribut [`.kind`](#kind).
 
 | dataClassAttribute.kind | type                                                                                                                         | Commentaire                                                                                                                                                                                                                                                       |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| storage                 | "blob", "bool", "date", "image", "number", "object", or "string"                                                             | "nombre" est rertourné pour tous les types numériques, y compris la durée. "string" is returned for uuid, alpha and text field types. "blob" attributes are [blob objects](Concepts/dt_blob.md#blob-type), they are handled using the [Blob class](BlobClass.md). |
+| storage                 | "blob", "bool", "date", "image", "number", "object", ou "string"                                                             | "nombre" est rertourné pour tous les types numériques, y compris la durée. "string" is returned for uuid, alpha and text field types. "blob" attributes are [blob objects](Concepts/dt_blob.md#blob-type), they are handled using the [Blob class](BlobClass.md). |
 | relatedEntity           | related dataClass name                                                                                                       | Ex : "Companies"                                                                                                                                                                                                                                                  |
 | relatedEntities         | related dataClass name + "Selection" suffix                                                                                  | Ex : "EmployeeSelection"                                                                                                                                                                                                                                          |
 | calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection" |                                                                                                                                                                                                                                                                   |
