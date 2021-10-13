@@ -5,7 +5,7 @@ title: Un recorrido rápido en ORDA
 
 Since ORDA is object-based, using ORDA requires basic knowledge in object programmming.
 
-## Exploring the datastore
+## Explorar el datastore
 
 The ORDA datastore is automatically based upon a 4D database structure, provided it complies with the [ORDA prerequisites](overview.md#orda-prerequisites).
 

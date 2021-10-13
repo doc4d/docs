@@ -43,7 +43,7 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -70,7 +70,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v19 R3  | Ajoutées      |
+| v19 R3  | Ajout         |
 </details>
 
 
@@ -93,7 +93,7 @@ The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->t
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -154,7 +154,7 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -180,7 +180,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -206,7 +206,7 @@ This property is not returned if `.kind` = "storage". It must be of the "related
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -274,7 +274,7 @@ Given the following table and relation:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -301,7 +301,7 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 
@@ -330,7 +330,7 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v19 R3  | Ajoutées      |
+| v19 R3  | Ajout         |
 
 
 </details>
@@ -356,7 +356,7 @@ The `.readOnly` property is <!-- REF DataClassAttributeClass.readOnly.Summary --
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 
 
 </details>
@@ -430,7 +430,7 @@ Le type de valeur conceptuelle dépend de l'attribut [`.kind`](#kind).
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R5  | Ajoutées      |
+| v17 R5  | Ajout         |
 </details>
 
 

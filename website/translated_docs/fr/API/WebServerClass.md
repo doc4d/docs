@@ -37,7 +37,7 @@ They provide the following properties and functions:
 <details><summary>Historique</summary>
 | Version | Modifications                      |
 | ------- | ---------------------------------- |
-| v18 R3  | Ajoutées                           |
+| v18 R3  | Ajout                              |
 | v19     | support for .sessionCookieSameSite |
 
 </details>
@@ -85,7 +85,7 @@ From your component, you want to know if the Web server of the host database is 
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R3  | Ajoutées      |
+| v18 R3  | Ajout         |
 </details>
 
 <!-- REF #_command_.WEB Server list.Syntax -->
@@ -706,7 +706,7 @@ The <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" field of the se
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v19     | Ajoutées      |
+| v19     | Ajout         |
 </details>
 
 <!-- REF #WebServerClass.sessionCookieSameSite.Syntax -->
@@ -748,7 +748,7 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R3  | Ajoutées      |
+| v18 R3  | Ajout         |
 </details>
 
 <!-- REF #WebServerClass.start().Syntax -->
@@ -813,7 +813,7 @@ The function returns an object describing the Web server launch status. This obj
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v18 R3  | Ajoutées      |
+| v18 R3  | Ajout         |
 </details>
 
 <!-- REF #WebServerClass.stop().Syntax -->
