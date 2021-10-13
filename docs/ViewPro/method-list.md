@@ -649,6 +649,68 @@ $vpAreaObj:=VP Export to object("ViewProArea")
 $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ```
 
+### VP Copy to Object
+
+<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to Object** ( *range* : Object ; *targetObject* : Object ) : Object 
+<!-- END REF -->  
+
+<!-- REF #_method_.Copy to object.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|originRange||Object|->|Range to copy data from|
+|targetObject||Object|->|Range to copy the data to|
+|options||Object|->||
+||copy|boolean|True if the fromRange must be kept after pasting, False (default) if it must be removed.|
+||pasteOptions|Longint|Specifies what is pasted or moved|
+|Result||Object|<-|Object returned. Contains the copied data|
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP Copy to object` command <!-- REF #_method_.Copy to object.Summary -->copies the content, style and formula cells from a range to an object<!-- END REF -->. 
+
+In *originRange*, pass the range of cells whose content, style, and formula cells will be copied or moved. If *originRange* is a combined range, only the first one is used.
+
+In *targetRange*, pass the range of cells where the data, style, and formula cells will be copied or moved.
+
+If the *copy* parameter is set to *False* (default). The contents, style, and formula cells of *originRange* are not kept after the data is pasted. If set to *True*, they are preserved.
+
+*pasteOptions* determines what is copied or moved. Possible values:
+
+|Constant|Value|Description|
+|---|---|---|
+|vk clipboard options all|0|Pastes all data objects, including values, formatting, and formulas.|
+|vk clipboard options formatting|2|Pastes only the formatting.|
+|vk clipboard options formulas|3|Pastes only the formulas.|
+|vk clipboard options formulas and formatting|5|Pastes formulas and formatting.|
+|vk clipboard options values|1|Pastes only values.|
+|vk clipboard options value and formatting|4|Pastes values and formatting.|
+
+If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./ViewPro/configuring.md#sheet-options).
+
+The paste options defined in the [workbook options](#) are taken into account.
+
+#### Example
+
+To copy the contents, values, formatting and formulas from an origin range:
+
+```4d
+var $originRange; $targetRange; $copyOptions : Object
+
+$originRange:=New object
+$originRange:=VP Cells("ViewProArea"; 0; 0; 2; 5)
+
+$targetRange:=New object
+$targetRange:=VP Cells("ViewProArea"; 4; 0; 2; 5)
+
+$copyOptions:=New object
+$copyOptions.copy:=True
+$copyOptions.pasteOptions:=vk clipboard options all
+
+VP MOVE CELLS($originRange; $targetRange; $copyOptions)
+```
 
 ## D
 
@@ -2372,41 +2434,65 @@ The results is:
 
 ### VP MOVE CELLS
 
-<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *fromRange* : Object ; *toRange* : Object ; options : Object )
+<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; options : Object )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP MOVE CELLS.Params -->
 
 |Parameter|Type||Description|
 |---|---|---|---|
-|originRange||Object|->|4D View Pro area form object name|
-|targetRange||Object|->|Existing range name|
+|originRange||Object|->|Range to copy from|
+|targetRange||Object|->|Target range for the values, formatting and formulas|
 |options||Object|->||
-||copy|boolean|true if the fromRange must be kept after pasting, false (default) if it must be removed. |
-||pasteOptions|Longint|Specifies what needs to be pasted or moved|
+||copy|boolean|True if the fromRange must be kept after pasting, False (default) if it must be removed. |
+||pasteOptions|Longint|Specifies what is pasted or moved|
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the content, style and formula cells of an origin range to a target range<!-- END REF -->. 
+The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the content, style and formula cells from an origin range to a target range<!-- END REF -->. 
 
-In *originRange*, pass the range of cells whose content, style, and formula cells will be copied or moved.
+In *originRange*, pass the range of cells whose content, style, and formula cells will be copied or moved. If *originRange* is a combined range, only the first one is used.
 
-In *targetRange*, pass the range where the data, style, and formula cells will be copied or moved.
+In *targetRange*, pass the range of cells where the data, style, and formula cells will be copied or moved.
 
-If the *copy* parameter is set to *True*, the command performs a copy. If set to *False*, the contents, style, and formula cells are moved.
+If the *copy* parameter is set to *False* (default). The contents, style, and formula cells of *originRange* are not kept after the data is pasted. If set to *True*, they are preserved.
 
-*pasteOptions* determines what needs to be copied or moved. Possible values:
+*pasteOptions* determines what is copied or moved. Possible values:
 
 |Constant|Value|Description|
 |---|---|---|
 |vk clipboard options all|0|Pastes all data objects, including values, formatting, and formulas.|
-|vk clipboard options formatting|2|Pastes only the formatting|
+|vk clipboard options formatting|2|Pastes only the formatting.|
 |vk clipboard options formulas|3|Pastes only the formulas.|
 |vk clipboard options formulas and formatting|5|Pastes formulas and formatting.|
 |vk clipboard options values|1|Pastes only values.|
 |vk clipboard options value and formatting|4|Pastes values and formatting.|
+
+If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./ViewPro/configuring.md#sheet-options).
+
+The paste options defined in the [workbook options](#) are taken into account.
+
+#### Example
+
+To copy the contents, values, formatting and formulas from an origin range:
+
+```4d
+var $originRange; $targetRange; $copyOptions : Object
+
+$originRange:=New object
+$originRange:=VP Cells("ViewProArea"; 0; 0; 2; 5)
+
+$targetRange:=New object
+$targetRange:=VP Cells("ViewProArea"; 4; 0; 2; 5)
+
+$copyOptions:=New object
+$copyOptions.copy:=True
+$copyOptions.pasteOptions:=vk clipboard options all
+
+VP MOVE CELLS($originRange; $targetRange; $copyOptions)
+```
 
 
 ## N
