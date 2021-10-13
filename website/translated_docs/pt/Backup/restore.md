@@ -24,28 +24,28 @@ A restauração manual de backups pode ser realizada via a caixa de diálogo de 
 
 Para restaurar a aplicação manualmente vai uma caixa de diálogo padrão:
 
-1. Choose **Restore...** in the 4D application **File** menu. It is not mandatory that an application project be open. OR Execute the `RESTORE` command from a 4D method. A standard Open file dialog box appears.
-2. Select a backup file (.4bk) or a log backup file (.4bl) to be restored and click **Open**. A dialog box appears, which allows you to specify the location where files will be restored. By default, 4D restores the files in a folder named *Archivename* (no extension) located next to the archive. You can display the path:
+1. Escolha **Restaurar...** no menu da aplicação 4D **File**. Não é obrigatório que um projeto de aplicação esteja aberto OU Execute o comando `RESTORE` desde um método 4D. Uma caixa de diálogo de abertura de arquivos vai aparecer.
+2. Selecione um arquivo de backup (.4bk) ou um arquivo de backup de histórico (.4bl) para ser restaurado e clique **Abrir**. Aparece um diálogo que permite especificar o local onde os arquivos serão restaurados. Como padrão 4D restaura os arquivos em uma pasta chamada *Archivename* (sem extensão) que fica do lado do arquivo. Pode exibir a rota:
 
 ![](assets/en/Backup/backup07.png)
 
-You can also click on the **[...]** button to specify a different location.
-3. Click on the **Restore** button. 4D extracts all backup files from the specified location. If the current log file or a log backup file with the same number as the backup file is stored in the same folder, 4D examines its contents. If it contains operations not present in the data file, the program asks you if you want to integrate these operations. Integration is done automatically if the **Integrate last log file...** option is checked (see [Automatic Restore](settings.md#automatic-restore)).
+Também pode clicar no botão **[...]** para especificar um local diferente.
+3. Clique no botão **Restaurar**. 4D extrai todos os arquivos de backup do local especificado. Se o arquivo de histórico atual ou um arquivo de histórico de backup com o mesmo número que o arquivo de cópia de segurança for armazenado na mesma pasta, 4D examina seus conteúdos. Se conter operações não presentes no arquivo de dados, o programa vai perguntar se deseja integrar essas operações. A integração é feita automaticamente se a opção **Integrar último arquivo de histórico...** for marcada (ver [Restauração automática](settings.md#automatic-restore)).
 
-4.(Optional) Click **OK** to integrate the log file into the restored application. If the restore and integration were carried out correctly, 4D displays a dialog box indicating that the operation was successful.
-5. Click **OK**.
+4.(Opcional) Clique **OK** para integrar o arquivo de histórico na aplicação restaurada. Se a restauração e integração forem realizadas corretamente, 4D exibe uma caixa de diálogo indicando que a operação foi feita com sucesso.
+5. Clique **OK**.
 
-The destination folder is displayed. During the restore, 4D places all backup files in this folder, regardless of the position of the original files on the disk when the backup starts. This way your files will be easier to find.
+A pasta de destino é mostrada. Durante a restauração, 4D coloca todos os arquivos de backup nessa pasta, independente da posição dos arquivos originais no disco quando o backup começou. Dessa forma seus arquivos serão mais fáceis de encontrar.
 
-> Any content related to the data file (files and `Settings` folder) are automatically restored in a `Data` subfolder within the destination folder.
-
-
-## Manually restoring a backup (MSC)
-
-You can manually restore an archive of the current application using the [Restore page](MSC/restore.md) of the Maintenance and Security Center (MSC).
+> Qualquer conteúdo relacionado aos arquivos de dados (arquivos e pasta `Settings` folder) são restauradas automaticamente em uma subpasta `Data` dentro da pasta destino.
 
 
-## Manually integrating the log
+## Restaurar manualmente a cópia de segurança (MSC)
+
+Pode restaurar manualmente um arquivo da aplicação atual usando a página  [Restauração](MSC/restore.md) do Centro de Manutenção e Segurança (MSC).
+
+
+## Integração manual do histórico
 
 If you have not checked the option for the automatic integration of the log file on the Restore page of the MSC (see [Successive integration of several log files](MSC/restore.md#successive-intergration-of-several-data-log-files)), a warning dialog box appears during the opening of the application when 4D notices that the log file contains more operations than have been carried out in the data file.
 

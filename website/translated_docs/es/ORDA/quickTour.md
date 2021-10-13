@@ -5,7 +5,7 @@ title: Un recorrido rápido en ORDA
 
 Since ORDA is object-based, using ORDA requires basic knowledge in object programmming.
 
-## Exploring the datastore
+## Explorar el datastore
 
 The ORDA datastore is automatically based upon a 4D database structure, provided it complies with the [ORDA prerequisites](overview.md#orda-prerequisites).
 
@@ -62,7 +62,7 @@ A new entity object contains a "copy" of all attributes of its parent dataclass,
 ```code4d
 $entity.name:="ACME, inc."  
 $entity.city:="London"  
-//$entity.ID is automatically filled
+//$entity.ID se llena automáticamente
 ```
 
 Right now, the entity only exists in memory. To store it in the data file, you need to save it using the `save()` member method:

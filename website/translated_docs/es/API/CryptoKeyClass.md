@@ -74,7 +74,7 @@ The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->create
 
 | Propiedad       | Tipo    | Descripción                                    |
 | --------------- | ------- | ---------------------------------------------- |
-| [curve](#curve) | texto   | Name of ECDSA curve                            |
+| [curve](#curve) | texto   | Nombre de la curva ECDSA                       |
 | [pem](#pem)     | texto   | PEM definition of an encryption key to load    |
 | [size](#size)   | integer | Size of RSA key in bits                        |
 | [type](#type)   | texto   | Type of the key: "RSA", "ECDSA", or "PEM"</li> |
@@ -121,7 +121,7 @@ Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for
 | Parámetros | Tipo   |    | Descripción                                                                   |
 | ---------- | ------ | -- | ----------------------------------------------------------------------------- |
 | message    | Texto  | -> | Message string to be decoded using `options.encodingEncrypted` and decrypted. |
-| options    | Objeto | -> | Decoding options                                                              |
+| options    | Objeto | -> | Opciones de decodificación                                                    |
 | Resultado  | Objeto | <- | Estado                                                                        |
 <!-- END REF -->
 
@@ -170,7 +170,7 @@ In case the *message* couldn't be decrypted because it was not encrypted with th
 | Parámetros | Tipo   |    | Descripción                                                                   |
 | ---------- | ------ | -- | ----------------------------------------------------------------------------- |
 | message    | Texto  | -> | Message string to be encoded using `options.encodingDecrypted` and encrypted. |
-| options    | Objeto | -> | Encoding options                                                              |
+| options    | Objeto | -> | Opciones de codificación                                                      |
 | Resultado  | Texto  | <- | Message encrypted and encoded using the `options.encodingEncrypted`           |
 <!-- END REF -->
 

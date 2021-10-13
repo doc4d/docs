@@ -153,7 +153,7 @@ The returned status object contains the following properties:
 | Propiedad  | Tipo     | Descripción                                                                                                                             |
 | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | statusText | Texto    | Error message (if any):<li>Cannot open ZIP archive</li><li>Cannot create ZIP archive</li><li>Password is required for encryption |
-| status     | Integer  | Status code                                                                                                                             |
+| status     | Integer  | Código de estado                                                                                                                        |
 | success    | Booleano | True if archive created successfully, else false                                                                                        |
 
 
@@ -278,7 +278,7 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 <!-- REF #_command_.ZIP Read archive.Params -->
 | Parámetros | Tipo          |    | Descripción                 |
 | ---------- | ------------- |:--:| --------------------------- |
-| zipFile    | 4D.File       | -> | Zip archive file            |
+| zIPFile    | 4D.File       | -> | Archivos Zip                |
 | contraseña | Texto         | -> | ZIP archive password if any |
 | Resultado  | 4D.ZipArchive | <- | Archive object              |
 <!-- END REF -->

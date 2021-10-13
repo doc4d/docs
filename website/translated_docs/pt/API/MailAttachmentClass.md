@@ -248,10 +248,10 @@ The `.path` property contains <!-- REF #MailAttachmentClass.path.Summary -->the 
 
 ## .platformPath
 
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19     | Added   |
+<details><summary>Histórico</summary>
+| Versão | Mudanças |
+| ------ | -------- |
+| v19    | Added    |
 </details>
 
 <!-- REF #MailAttachmentClass.platformPath.Syntax -->

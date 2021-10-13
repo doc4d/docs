@@ -352,7 +352,7 @@ C_TEXT($1;$2;$3;$4;$5;$6)
  End if
 ```
 
-## Wrong parameter type
+## Tipo de parámetro equivocado
 
 Calling a parameter with an wrong type is an [error](error-handling.md) that prevents correct execution. For example, if you write the following methods:
 

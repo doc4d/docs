@@ -1,12 +1,12 @@
 ---
 id: dsmapping
-title: Data Model Objects
+title: Objeto del modelo de datos
 ---
 
 The ORDA technology is based upon an automatic mapping of an underlying 4D structure. It also provides access to data through entity and entity selection objects. As a result, ORDA exposes the whole database as a set of data model objects.
 
 
-## Structure mapping
+## Cartografía de la estructura
 
 When you call a datastore using the `ds` or the `Open datastore` command, 4D automatically references tables and fields of the corresponding 4D structure as properties of the returned [datastore](#datastore) object:
 
@@ -40,7 +40,7 @@ This option must be selected at the 4D structure level for each table and each f
 ![](assets/en/ORDA/ExposeDataclass.png)
 
 
-### Data model update
+### Actualización del modelo de datos
 
 Any modifications applied at the level of the database structure invalidate the current ORDA model layer. These modifications include:
 
@@ -77,7 +77,7 @@ A datastore references only a single local or remote database.
 The datastore object itself cannot be copied as an object:
 
 ```4d 
-$mydatastore:=OB Copy(ds) //returns null
+$mydatastore:=OB Copy(ds) //devuelve null
 ```
 
 
@@ -121,7 +121,7 @@ The dataclass offers an abstraction of the physical database and allows handling
 The dataclass object itself cannot be copied as an object:
 
 ```4d 
-$mydataclass:=OB Copy(ds.Employee) //returns null
+$mydataclass:=OB Copy(ds.Employee) //devuelve null
 ```
 
 The dataclass properties are however enumerable:
