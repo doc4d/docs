@@ -100,7 +100,7 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R4  | Ajoutées      |
+| v17 R4  | Ajout         |
 </details>
 
 <!-- REF #_command_.New signal.Syntax -->
@@ -172,7 +172,7 @@ The ***doSomething*** method could be like:
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R4  | Ajoutées      |
+| v17 R4  | Ajout         |
 </details>
 
 <!-- REF #SignalClass.description.Syntax -->
@@ -196,7 +196,7 @@ This property is **read-write**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R4  | Ajoutées      |
+| v17 R4  | Ajout         |
 
 </details>
 
@@ -219,7 +219,7 @@ Cette propriété est en **lecture seule**.
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R4  | Ajoutées      |
+| v17 R4  | Ajout         |
 </details>
 
 <!-- REF #SignalClass.trigger().Syntax -->
@@ -248,7 +248,7 @@ If the signal is already in the signaled state (i.e., the `signaled` property is
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R4  | Ajoutées      |
+| v17 R4  | Ajout         |
 </details>
 
 <!-- REF #SignalClass.wait().Syntax -->
