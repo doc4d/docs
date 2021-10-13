@@ -782,36 +782,36 @@ Como padrão, uma avaliação não-diacrítica é realizada. Se quiser que a ava
 **.every**( *methodName* : Text { ;*...param* : any } ) : Boolean<br>**.every**( *startFrom* : Integer ; *methodName* : Text { ;*...param* : any } ) : Boolean<!-- END REF -->
 
 <!-- REF #collection.every().Params -->
-| Parameter  | Type     |    | Description                                       |
-| ---------- | -------- |:--:| ------------------------------------------------- |
-| startFrom  | Integer  | -> | Index to start the test at                        |
-| methodName | Texto    | -> | Name of the method to call for the test           |
-| param      | Mixed    | -> | Parameter(s) to pass to methodName                |
-| Result     | Booleano | <- | True if all elements successfully passed the test |
+| Parameter  | Type     |    | Description                                             |
+| ---------- | -------- |:--:| ------------------------------------------------------- |
+| startFrom  | Integer  | -> | Índice para início do teste em                          |
+| methodName | Texto    | -> | Nome do método para chamar para o teste                 |
+| param      | Mixed    | -> | Parâmetros a passar para methodName                     |
+| Result     | Booleano | <- | True se todos os elementos passarem o teste com sucesso |
 <!-- END REF -->
 
 
 #### Description
 
-The `.every()` function <!-- REF #collection.every().Summary -->returns **true** if all elements in the collection successfully passed a test implemented in the provided *methodName* method<!-- END REF -->.
+A função `.every()` <!-- REF #collection.every().Summary -->retorna **true** se todos os elementos na coleção passarem com sucesso o teste implementado no método fornecido *methodName*<!-- END REF -->.
 
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s). This method receives an `Object` in first parameter ($1) and must set *$1.result* to true for every element fulfilling the test.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. can perform any test, with or without the parameter(s). Esse método recebe um `Object` no primeiro parâmetro($1) e deve estabelecer o *$1.result* como true para todo elemento que cumpre o teste.
 
-*methodName* receives the following parameters:
+*methodName* recebe os parâmetros abaixo:
 
 *   in *$1.value*: element value to be evaluated
 *   *$2*: param
 *   in *$N...*: paramN...
 
-*methodName* sets the following parameter(s):
+*methodName* estabelece os parâmetros abaixo:
 
 *   *$1.result* (Boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *   *$1.stop* (Boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
 
-In all cases, at the point when the `.every()` function encounters the first collection element returning **false** in *$1.result*, it stops calling *methodName* and returns **false**.
+Em todos os casos, no ponto quanod a função `.every()` encontra o primeiro elemento de coleção retornando **false** em *$1.result*, ele para de chamar *methodName* e retorna **false**.
 
-By default, `.every()` tests the whole collection. Optionally, you can pass in *startFrom* the index of the element from which to start the test.
+Como padrão, `.every()` testa a coleção completa. Opcionalmente pode passar em *startFrom* o índice do elemento do qual vai começar o teste.
 
 *   If *startFrom* >= the collection's length, **false** is returned, which means the collection is not tested.
 *   If *startFrom* < 0, it is considered as the offset from the end of the collection ( *startFrom:=startFrom+length*).
@@ -830,7 +830,7 @@ $c.push(-1)
 $b:=$c.every("NumberGreaterThan0") //returns false
 ```
 
-With the following ***NumberGreaterThan0*** method:
+Com o método a seguir ***NumberGreaterThan0***:
 
 ```4d
 $1.result:=$1.value>0
@@ -838,7 +838,7 @@ $1.result:=$1.value>0
 
 #### Example 2
 
-This example tests that all elements of a collection are of the real type:
+Esse exemplo testa que todos os elementos da coleção sejam do tipo real:
 
 ```4d
 var $c : Collection
@@ -851,7 +851,7 @@ $c:=$c.push(New object("name";"Blountsville";"zc";35031))
 $b:=$c.every("TypeLookUp";Is real) //$b=false
 ```
 
-With the following ***TypeLookUp*** method:
+Com o método ***TypeLookUp***:
 
 ```4d
 #DECLARE ($toEval : Object ; $param : Integer) //$1; $2
@@ -879,12 +879,12 @@ End if
 
 
 <!-- REF #collection.extract().Params -->
-| Parameter    | Type       |    | Description                                                                                                                        |
-| ------------ | ---------- |:--:| ---------------------------------------------------------------------------------------------------------------------------------- |
-| propertyPath | Texto      | -> | Object property path whose values must be extracted to the new collection                                                          |
-| targetpath   | Texto      | -> | Target property path or property name                                                                                              |
-| option       | Integer    | -> | `ck keep null`: include null properties in the returned collection (ignored by default). Parameter ignored if *targetPath* passed. |
-| Result       | Collection | <- | New collection containing extracted values                                                                                         |
+| Parameter    | Type       |    | Description                                                                                                                           |
+| ------------ | ---------- |:--:| ------------------------------------------------------------------------------------------------------------------------------------- |
+| propertyPath | Texto      | -> | Rota de propriedade de objeto cujos valores serão extraídos para nova coleção                                                         |
+| targetpath   | Texto      | -> | Rota de propriedade alvo ou nome propriedade                                                                                          |
+| option       | Integer    | -> | `ck keep null`: inclui propriedades null na coleção retornada (ignorado como padrão). Parâmetro ignorado se for passado *targetPath*. |
+| Result       | Collection | <- | New collection containing extracted values                                                                                            |
 <!-- END REF -->
 
 
@@ -1024,15 +1024,15 @@ In case of inconsistency, the following rules apply:
 The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new collection containing all elements of the original collection for which *methodName* method result is **true**<!-- END REF -->. This function returns a ***shallow copy***, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.
 > This function does not modify the original collection.
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s). This method receives an `Object` in first parameter ($1) and must set *$1.result* to **true** for each element fulfilling the condition and thus, to push to the new collection.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. can perform any test, with or without the parameter(s). This method receives an `Object` in first parameter ($1) and must set *$1.result* to **true** for each element fulfilling the condition and thus, to push to the new collection.
 
-*methodName* receives the following parameters:
+*methodName* recebe os parâmetros abaixo:
 
 *   in *$1.value*: element value to be filtered
 *   in *$2*: *param*
 *   *$N...*: param2...paramN
 
-*methodName* sets the following parameter(s):
+*methodName* estabelece os parâmetros abaixo:
 
 *   *$1.result* (boolean): **true** if the element value matches the filter condition and must be kept.
 *   *$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
@@ -1119,15 +1119,15 @@ The code for ***TypeLookUp*** is:
 The `.find()` function <!-- REF #collection.find().Summary -->returns the first value in the collection for which *methodName*, applied on each element, returns **true**<!-- END REF -->.
 > This function does not modify the original collection.
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s). This method receives an `Object` in the first parameter ($1) and must set *$1.result* to **true** for the first element fulfilling the condition.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. can perform any test, with or without the parameter(s). This method receives an `Object` in the first parameter ($1) and must set *$1.result* to **true** for the first element fulfilling the condition.
 
-*methodName* receives the following parameters:
+*methodName* recebe os parâmetros abaixo:
 
 *   in *$1.value:* element value to be evaluated
 *   in *$2: param*
 *   *$N...*: param2...paramN
 
-*methodName* sets the following parameter(s):
+*methodName* estabelece os parâmetros abaixo:
 
 *   *$1.result* (boolean): **true** if the element value matches the search condition.
 *   *$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
@@ -1218,15 +1218,15 @@ The code for ***FindCity*** is:
 The `.findIndex()` function <!-- REF #collection.findIndex().Summary -->returns the index, in the collection, of the first value for which *methodName*, applied on each element, returns **true**<!-- END REF -->.
 > This function does not modify the original collection.
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, using or not the parameter(s). This method receives an `Object` as first parameter ($1) and must set *$1.result* to **true** for the first element fulfilling the condition.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* can perform any test, using or not the parameter(s). This method receives an `Object` as first parameter ($1) and must set *$1.result* to **true** for the first element fulfilling the condition.
 
-*methodName* receives the following parameters:
+*methodName* recebe os parâmetros abaixo:
 
 *   in *$1.value*: element value to be evaluated
 *   in *$2: param*
 *   *$N...*: param2...paramN
 
-*methodName* sets the following parameter(s):
+*methodName* estabelece os parâmetros abaixo:
 
 *   *$1.result* (boolean): **true** if the element value matches the search condition.
 *   *$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
@@ -1601,15 +1601,15 @@ The `.length` property is initialized when the collection is created. Adding or 
 The `.map()` function <!-- REF #collection.map().Summary -->creates a new collection based upon the result of the call of the *methodName* method on each element of the original collection<!-- END REF -->. Optionally, you can pass parameters to *methodName* using the *param* parameter(s). `.map()` always returns a collection with the same size as the original collection.
 > This function does not modify the original collection.
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any operation, with or without the parameter(s).
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* can perform any operation, with or without the parameter(s).
 
-*methodName* receives the following parameters:
+*methodName* recebe os parâmetros abaixo:
 
 *   in *$1.value* (any type): element value to be mapped
 *   in *$2* (any type): *param*
 *   in *$N...* (any type): *paramN...*
 
-*methodName* sets the following parameter(s):
+*methodName* estabelece os parâmetros abaixo:
 
 
 *   *$1.result* (any type): new transformed value to add to the resulting collection
@@ -2235,13 +2235,13 @@ In *methodName*, pass the name of the method to use to evaluate collection eleme
 
 You can pass the value to initialize the accumulator in *initValue*. If omitted, *$1.accumulator* starts with *Undefined*.
 
-*methodName* receives the following parameters:
+*methodName* recebe os parâmetros abaixo:
 
 *   in *$1.value*: element value to be processed
 *   in *$2: param*
 *   in *$N...*: *paramN...*
 
-*methodName* sets the following parameter(s):
+*methodName* estabelece os parâmetros abaixo:
 
 *   *$1.accumulator*: value to be modified by the function and which is initialized by *initValue*.
 *   *$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
@@ -2562,8 +2562,8 @@ The returned collection contains the element specified by *startFrom* and all su
 <!-- REF #collection.some().Params -->
 | Parameter  | Type     |    | Description                                               |
 | ---------- | -------- |:--:| --------------------------------------------------------- |
-| startFrom  | Integer  | -> | Index to start the test at                                |
-| methodName | Texto    | -> | Name of the method to call for the test                   |
+| startFrom  | Integer  | -> | Índice para início do teste em                            |
+| methodName | Texto    | -> | Nome do método para chamar para o teste                   |
 | param      | Mixed    | -> | Parameter(s) to pass to *methodName*                      |
 | Result     | Booleano | <- | True if at least one element successfully passed the test |
 <!-- END REF -->
@@ -2574,15 +2574,15 @@ The returned collection contains the element specified by *startFrom* and all su
 The `.some()` function <!-- REF #collection.some().Summary -->returns true if at least one element in the collection successfully passed a test<!-- END REF --> implemented in the provided *methodName* method.
 
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in *param* (optional). *methodName* can perform any test, with or without the parameter(s). This method receives an `Object` as first parameter ($1) and must set *$1.result* to **True** for every element fulfilling the test.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. can perform any test, with or without the parameter(s). This method receives an `Object` as first parameter ($1) and must set *$1.result* to **True** for every element fulfilling the test.
 
-*methodName* receives the following parameters:
+*methodName* recebe os parâmetros abaixo:
 
 *   in *$1.value*: element value to be evaluated
 *   *$2*: param
 *   *$N...*: param2...paramN
 
-*methodName* sets the following parameter(s):
+*methodName* estabelece os parâmetros abaixo:
 
 *   *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
 *   *$1.stop* (boolean, optional): **true** to stop the method callback. The returned value is the last calculated.
