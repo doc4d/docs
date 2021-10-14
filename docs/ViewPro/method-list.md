@@ -651,14 +651,14 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 ### VP Copy to object
 
-<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *copyOptions* : Object} ) : Object
-<!-- END REF -->  
-	
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
 |v19 R4|Added
 </details>
+
+<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *copyOptions* : Object} ) : Object
+<!-- END REF -->  
 
 <!-- REF #_method_.Copy to object.Params -->
 
@@ -676,22 +676,20 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 The `VP Copy to object` command <!-- REF #_method_.Copy to object.Summary -->copies the contents, style and formulas from a cell range to an object<!-- END REF -->. 
 
-In *originRange*, pass the cell range with the content, style, and/or formulas to copy or move. If *originRange* is a combined range, only the first one is used.
+In *rangeObj*, pass the cell range with the content, style, and/or formulas to copy or move. If *originRange* is a combined range, only the first one is used.
 
-In *targetObject*, pass the object where the data, style, and formulas in *originRange* will be copied or moved.
-
-In the *options* parameter: 
-* If *copy* is set to *False* (default). The cell contents, style, and formulas of *originRange* are removed after the command executes. If set to *True*, they are preserved.
+In the *copyOptions* parameter: 
+* If *copy* is set to *True* (default), the cell contents, style, and formulas of *rangeObj* are preserved after the command executes. If set to *False*, they are removed.
 * *pasteOptions* determines what is copied or moved. Possible values:
 
 |Constant|Value|Description|
 |---|---|---|
-|vk clipboard options all|0|Pastes all data objects, including values, formatting, and formulas.|
-|vk clipboard options formatting|2|Pastes only the formatting.|
-|vk clipboard options formulas|3|Pastes only the formulas.|
-|vk clipboard options formulas and formatting|5|Pastes formulas and formatting.|
-|vk clipboard options values|1|Pastes only values.|
-|vk clipboard options value and formatting|4|Pastes values and formatting.|
+|`vk clipboard options all`|0|Pastes all data objects, including values, formatting, and formulas.|
+|`vk clipboard options formatting`|2|Pastes only the formatting.|
+|`vk clipboard options formulas`|3|Pastes only the formulas.|
+|`vk clipboard options formulas and formatting`|5|Pastes formulas and formatting.|
+|`vk clipboard options values`|1|Pastes only values.|
+|`vk clipboard options value and formatting|4|Pastes values and formatting.|
 
 If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
 
@@ -2442,14 +2440,14 @@ The results is:
 
 ### VP MOVE CELLS
 
-<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; *options* : Object )
-<!-- END REF -->  
-
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
 |v19 R4|Added
 </details>
+
+<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; *options* : Object )
+<!-- END REF -->  
 
 <!-- REF #_method_.VP MOVE CELLS.Params -->
 
@@ -2479,12 +2477,12 @@ The *copy* parameter determines if the contents are moved or copied. If set to *
 
 |Constant|Value|Description|
 |---|---|---|
-|vk clipboard options all|0|Pastes all data objects, including values, formatting, and formulas.|
-|vk clipboard options formatting|2|Pastes only the formatting.|
-|vk clipboard options formulas|3|Pastes only the formulas.|
-|vk clipboard options formulas and formatting|5|Pastes formulas and formatting.|
-|vk clipboard options values|1|Pastes only values.|
-|vk clipboard options value and formatting|4|Pastes values and formatting.|
+|`vk clipboard options all`|0|Pastes all data objects, including values, formatting, and formulas.|
+|`vk clipboard options formatting`|2|Pastes only the formatting.|
+|`vk clipboard options formulas`|3|Pastes only the formulas.|
+|`vk clipboard options formulas and formatting`|5|Pastes formulas and formatting.|
+|`vk clipboard options values`|1|Pastes only values.|
+|`vk clipboard options value and formatting`|4|Pastes values and formatting.|
 
 If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
 
@@ -2639,9 +2637,6 @@ $cellStyle.font:=VP Object to font($font)
 ## P
 
 ### VP PASTE FROM OBJECT
-
-<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *targetRange* : Object ; *dataObject* : Object {; *pasteOptions* : Longint} )
-<!-- END REF -->  
 	
 <details><summary>History</summary>
 |Version|Changes|
@@ -2649,12 +2644,15 @@ $cellStyle.font:=VP Object to font($font)
 |v19 R4|Added
 </details>
 
+<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *targetRange* : Object ; *dataObject* : Object {; *pasteOptions* : Longint} )
+<!-- END REF -->  
+
 <!-- REF #_method_.PASTE FROM OBJECT.Params -->
 
 |Parameter|Type||Description|
 |---|---|---|---|
 |targetRange|Object|->|Coordinates of the first cell where data must be pasted|
-|object|Object|->|Object containing the data|
+|dataObject|Object|->|Object containing the data to be pasted|
 |pasteOptions|Longint|->|Specifies what is pasted|
 
 <!-- END REF -->  
@@ -2663,7 +2661,7 @@ $cellStyle.font:=VP Object to font($font)
 
 The `VP PASTE FROM OBJECT` command <!-- REF #_method_.PASTE FROM OBJECT.Summary -->pastes the contents, style and formulas stored in a object to a cell range<!-- END REF -->. 
 
-In *targetRange*, pass the cell range whose content, style, and/or formula cells will be cpasted. If *originRange* refers to more than one cell, only the first one is used.
+In *targetRange*, pass the cell range whose content, style, and/or formula cells will be pasted. If *originRange* refers to more than one cell, only the first one is used.
 
 In *dataObject*, pass the object that contains the cell data, style, and formulas to be pasted.
 
@@ -2671,12 +2669,12 @@ In the optional *pasteOptions* parameter, you can specify what to paste in the c
 
 |Constant|Value|Description|
 |---|---|---|
-|vk clipboard options all|0|Pastes all data objects, including values, formatting, and formulas.|
-|vk clipboard options formatting|2|Pastes only the formatting.|
-|vk clipboard options formulas|3|Pastes only the formulas.|
-|vk clipboard options formulas and formatting|5|Pastes formulas and formatting.|
-|vk clipboard options values|1|Pastes only values.|
-|vk clipboard options value and formatting|4|Pastes values and formatting.|
+|`vk clipboard options all`|0|Pastes all data objects, including values, formatting, and formulas.|
+|`vk clipboard options formatting`|2|Pastes only the formatting.|
+|`vk clipboard options formulas`|3|Pastes only the formulas.|
+|`vk clipboard options formulas and formatting`|5|Pastes formulas and formatting.|
+|`vk clipboard options values`|1|Pastes only values.|
+|`vk clipboard options value and formatting`|4|Pastes values and formatting.|
 
 If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
 
@@ -2686,7 +2684,7 @@ If pasteOptions refers to a paste option not present in the copied object, the c
 
 #### Example
 
-This code sample first stores the contents, values, formatting and formulas from a range to an object, and then pastes them to another range:
+This code sample first stores the contents, values, formatting and formulas from a range in an object, and then pastes them to another range:
 
 ```4d
 var $originRange; $targetRange; $myObject; $copyOptions : Object
