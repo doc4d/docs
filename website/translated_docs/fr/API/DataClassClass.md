@@ -78,7 +78,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
   //42=Is collection
 ```
 
-#### Example 3
+#### Exemple 3
 
 Considering the following table properties:
 
@@ -273,7 +273,7 @@ We want to update an existing entity. The \_\_NEW property is not given, the emp
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
-#### Example 3
+#### Exemple 3
 
 We want to simply create a new entity from a collection:
 
@@ -560,7 +560,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
  $es:=ds.Clients.query(":pk in :receivedIds";$settings)
 ```
 
-#### Example 3
+#### Exemple 3
 
 ```4d 
  var $pk : Text
@@ -1156,7 +1156,7 @@ Query with named placeholders for attributes and values:
  End if
 ```
 
-#### Example 3
+#### Exemple 3
 
 These examples illustrate the various ways to use formulas with or without parameters in your queries.
 
