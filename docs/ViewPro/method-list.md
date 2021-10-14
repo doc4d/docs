@@ -2629,7 +2629,7 @@ $cellStyle.font:=VP Object to font($font)
 
 ### VP PASTE FROM OBJECT
 
-<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *targetRange* : Object ; dataObject : Object {; *pasteOptions* : Longint} )
+<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *targetRange* : Object ; *dataObject* : Object {; *pasteOptions* : Longint} )
 <!-- END REF -->  
 
 <!-- REF #_method_.PASTE FROM OBJECT.Params -->
