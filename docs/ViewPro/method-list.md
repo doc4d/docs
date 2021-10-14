@@ -675,9 +675,8 @@ In *originRange*, pass the cell range whose content, style, and/or formula cells
 In *targetObject*, pass the object where the data, style, and formulas in *originRange* will be copied or moved.
 
 In the *options* parameter: 
-If the *copy* parameter is set to *False* (default). The cell contents, style, and formulas of *originRange* are removed after the command executes. If set to *True*, they are preserved.
-
-*pasteOptions* determines what is copied or moved. Possible values:
+* If *copy* is set to *False* (default). The cell contents, style, and formulas of *originRange* are removed after the command executes. If set to *True*, they are preserved.
+* *pasteOptions* determines what is copied or moved. Possible values:
 
 |Constant|Value|Description|
 |---|---|---|
