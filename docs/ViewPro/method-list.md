@@ -660,7 +660,7 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 |---|---|---|---|---|
 |rangeObj||Object|->|Range object|
 |copyOptions||Object|->||
-||copy|Boolean||Determines if the copied contents, formatting and formulas are preserved or removed after the command executes: <ul><li>If set to *True* (default), they are preserved</li><li> If set to *False*, they are removed</li></ul>|
+||copy|Boolean||*True* (default) to keep the copied values, formatting and formulas after the command executes. *False* to remove them</li></ul>|
 ||pasteOptions|Longint||Specifies what is copied|
 |Result||Object|<-|Object returned. Contains the copied data|
 
@@ -2437,7 +2437,7 @@ The results is:
 
 ### VP MOVE CELLS
 
-<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; options : Object )
+<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; *options* : Object )
 <!-- END REF -->  
 
 <!-- REF #_method_.VP MOVE CELLS.Params -->
@@ -2447,7 +2447,7 @@ The results is:
 |originRange||Object|->|Cell range to copy from|
 |targetRange||Object|->|Target range for the values, formatting and formulas|
 |options||Object|->||
-||copy|boolean||False (default) to remove the copied values, formatting and formulas . True to keep them|
+||copy|boolean||False (default) to remove the copied values, formatting and formulas after the command executes. True to keep them|
 ||pasteOptions|Longint||Specifies what is pasted or moved|
 
 <!-- END REF -->  
