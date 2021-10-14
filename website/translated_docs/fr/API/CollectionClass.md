@@ -131,7 +131,7 @@ You want to create a prefilled collection:
   //$filledColl=[33,"mike","november","->myPtr","2017-03-28T22:00:00.000Z"]
 ```
 
-#### Example 3
+#### Exemple 3
 
 You create a new collection and then add a new element:
 
@@ -481,7 +481,7 @@ $sharedColl2:=New shared collection(New shared object("lastname";"Brown"))
  End use
 ```
 
-#### Example 3
+#### Exemple 3
 
 We have a regular collection (*$lastnames*) and we want to put it in the **Storage** of the application. To do this, we must create a shared copy beforehand (*$sharedLastnames*).
 
@@ -638,7 +638,7 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 ```
 
 
-#### Example 3
+#### Exemple 3
 
 ```4d
  var $numbers; $letters : Collection
@@ -1844,7 +1844,7 @@ Ordering a collection of objects with a property path:
 ```
 
 
-#### Example 3
+#### Exemple 3
 
 Ordering a collection of objects using a collection of criteria objects:
 
@@ -1955,7 +1955,7 @@ Here is the code for ***WordLength***:
  $1.result:=Length(String($1.value))>Length(String($1.value2))
 ```
 
-#### Example 3
+#### Exemple 3
 
 You want to sort a collection by character code or language:
 
@@ -2199,7 +2199,7 @@ Cet exemple retourne des personnes embauchées il y a plus de 90 jours :
 ```
 
 
-#### Example 3
+#### Exemple 3
 
 Vous trouverez plus d'exemples de requêtes dans la page `dataClass.query()`. 
 
@@ -2702,7 +2702,7 @@ If the collection contains elements of different types, they are first grouped b
  $col2:=$col.push(5;3;1;4;6;2).sort() //$col2=[1,2,3,4,5,6,10,20]
 ```
 
-#### Example 3
+#### Exemple 3
 
 ```4d
  var $col; $col2; $col3 : Collection
