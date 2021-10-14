@@ -538,9 +538,9 @@ You want to know the total number and size of emails in the mailbox:
 **.undeleteAll()**<!-- END REF -->
 
 <!-- REF #POP3TransporterClass.undeleteAll().Params -->
-| Paramètres | Type |  | Description                     |
-| ---------- | ---- |::| ------------------------------- |
-|            |      |  | Does not require any parameters |
+| Paramètres | Type |  | Description                 |
+| ---------- | ---- |::| --------------------------- |
+|            |      |  | Ne requiert aucun paramètre |
 <!-- END REF -->
 
 
