@@ -187,7 +187,7 @@ A formula using local variables:
 ```
 
 
-#### Example 3
+#### Exemple 3
 
 A simple formula using parameters:
 
