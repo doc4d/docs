@@ -651,8 +651,14 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 ### VP Copy to object
 
-<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to Object** ( *rangeObj* : Object {; *copyOptions* : Object} ) : Object
+<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *copyOptions* : Object} ) : Object
 <!-- END REF -->  
+	
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R4|Added
+</details>
 
 <!-- REF #_method_.Copy to object.Params -->
 
@@ -2439,6 +2445,12 @@ The results is:
 <!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; *options* : Object )
 <!-- END REF -->  
 
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R4|Added
+</details>
+
 <!-- REF #_method_.VP MOVE CELLS.Params -->
 
 |Parameter||Type|&nbsp|Description|
@@ -2630,6 +2642,12 @@ $cellStyle.font:=VP Object to font($font)
 
 <!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *targetRange* : Object ; *dataObject* : Object {; *pasteOptions* : Longint} )
 <!-- END REF -->  
+	
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R4|Added
+</details>
 
 <!-- REF #_method_.PASTE FROM OBJECT.Params -->
 
