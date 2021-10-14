@@ -700,7 +700,7 @@ $originRange:=VP Cells("ViewProArea"; 0; 0; 2; 5)
 
 $options:=New object
 $options.copy:=True
-$copyOptions.copyOptions:=vk clipboard options all
+$options.copyOptions:=vk clipboard options all
 
 $dataObject:=New object
 $dataObject:=VP Copy to object($originRange; $options)
@@ -2668,7 +2668,7 @@ If *options* refers to a paste option not present in the copied object (e.g. for
 
 #### Example
 
-See example the example from [VP PASTE FROM OBJECT](#vp-paste-from-object)
+See example the example from [VP Copy to object](#vp-copy-to-object)
 
 ### VP PRINT
 
