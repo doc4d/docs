@@ -2455,7 +2455,7 @@ The results is:
 
 The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the values, style and formulas from a cell range to another<!-- END REF -->. 
 
-The originRange and targetRange can refer to different View Pro areas.
+The *originRange* and *targetRange* can refer to different View Pro areas.
 
 In *originRange*, pass a range object containing the values, style, and formula cells to copy or move. If *originRange* is a combined range, only the first one is used.
 
@@ -2477,7 +2477,7 @@ The paste options defined in the [workbook options](#) are taken into account.
 To copy the contents, values, formatting and formulas from an origin range:
 
 ```4d
-var $originRange; $targetRange; $copyOptions : Object
+var $originRange; $targetRange; $options : Object
 
 $originRange:=New object
 $originRange:=VP Cells("ViewProArea"; 0; 0; 2; 5)
@@ -2485,11 +2485,11 @@ $originRange:=VP Cells("ViewProArea"; 0; 0; 2; 5)
 $targetRange:=New object
 $targetRange:=VP Cells("ViewProArea"; 4; 0; 2; 5)
 
-$copyOptions:=New object
-$copyOptions.copy:=True
-$copyOptions.pasteOptions:=vk clipboard options all
+$options:=New object
+$options.copy:=True
+$options.pasteOptions:=vk clipboard options all
 
-VP MOVE CELLS($originRange; $targetRange; $copyOptions)
+VP MOVE CELLS($originRange; $targetRange; $options)
 ```
 
 
