@@ -337,7 +337,7 @@ Cette propriété est en **lecture seule**.
 The `.original` property returns <!-- REF #directory.original.Summary -->the same Folder object as the folder<!-- END REF -->.
 
 Cette propriété est en **lecture seule**.
-> This property is available on folders to allow generic code to process folders or files.
+> Cette propriété est disponible sur les dossiers pour permettre au code générique de traiter les dossiers ou les fichiers.
 
 <!-- END REF -->
 
@@ -359,9 +359,9 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
+The `.parent` property returns <!-- REF #directory.parent.Summary -->the parent folder object of the folder<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
 
-If the folder does not have a parent (root), the null value is returned.
+Si le dossier n'a pas de parent (racine), la valeur nulle est retournée.
 
 Cette propriété est en **lecture seule**. 
 
@@ -385,7 +385,7 @@ Cette propriété est en **lecture seule**.
 
 #### Description
 
-The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
+The `.path` property returns <!-- REF #directory.path.Summary -->the POSIX path of the folder<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
 
 Cette propriété est en **lecture seule**. 
 
