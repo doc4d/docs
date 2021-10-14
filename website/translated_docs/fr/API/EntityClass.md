@@ -60,7 +60,7 @@ The attribute value type depends on the attribute [kind](DataClassAttributeClass
 
 *   If *attributeName* kind is **storage**: `.attributeName` returns a value of the same type as *attributeName*.
 *   If *attributeName* kind is **relatedEntity**: `.attributeName` returns the related entity. Values of the related entity are directly available through cascading properties, for example "myEntity.employer.employees\[0].lastname".
-*   If *attributeName* kind is **relatedEntities**: `.attributeName` returns a new entity selection of related entities. Duplications are removed (an unordered entity selection is returned).
+*   If *attributeName* kind is **relatedEntities**: `.attributeName` returns a new entity selection of related entities. Les doublons sont supprimés (une entity selection non ordonnée est retournée).
 
 
 #### Exemple
@@ -1249,7 +1249,7 @@ Updating an entity without `dk auto merge` option:
  End case
 ```
 
-#### Example 3
+#### Exemple 3
 
 Updating an entity with `dk auto merge` option:
 
@@ -1398,7 +1398,7 @@ Returns:
 }
 ```
 
-#### Example 3
+#### Exemple 3
 
 Expanding all the properties of `relatedEntities`:
 
