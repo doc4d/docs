@@ -368,7 +368,7 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 <details><summary>Historique</summary>
 | Version | Modifications |
 | ------- | ------------- |
-| v17 R4  | Ajoutées      |
+| v17 R4  | Ajout         |
 </details>
 
 <!-- REF #_method_.VP Cells.Params -->
@@ -810,7 +810,7 @@ VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 ```
 
 
-#### Example 3
+#### Exemple 3
 
 You want to export a 4D View Pro document in ".xlsx" format and call a method that will launch Microsoft Excel with the document open once the export has completed:
 
@@ -4137,7 +4137,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 ```
 
 
-#### Example 3
+#### Exemple 3
 
 You want to customize the colors of your sheet tabs, frozen lines, grid lines, selection background and selection border:
 
