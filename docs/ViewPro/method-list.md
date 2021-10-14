@@ -670,7 +670,7 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 The `VP Copy to object` command <!-- REF #_method_.Copy to object.Summary -->copies the contents, style and formulas from a cell range to an object<!-- END REF -->. 
 
-In *originRange*, pass the cell range whose content, style, and/or formula cells will be copied or moved. If *originRange* is a combined range, only the first one is used.
+In *originRange*, pass the cell range with the content, style, and/or formulas to copy or move. If *originRange* is a combined range, only the first one is used.
 
 In *targetObject*, pass the object where the data, style, and formulas in *originRange* will be copied or moved.
 
