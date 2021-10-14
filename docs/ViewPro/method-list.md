@@ -662,25 +662,22 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 <!-- REF #_method_.Copy to object.Params -->
 
-|Parameter||Type||Description|
-|---|---|---|---|---|
+|Parameter|Type||Description|
+|---|---|---|---|
 |rangeObj||Object|->|Range object|
-|options||Object|->||
-||copy|Boolean||*True* (default) to keep the copied values, formatting and formulas after the command executes. *False* to remove them</li></ul>|
-||options|Longint||Specifies what is copied|
+|options||Object|->|Additional options|
 |Result||Object|<-|Object returned. Contains the copied data|
 
 <!-- END REF -->  
-
 #### Description
 
 The `VP Copy to object` command <!-- REF #_method_.Copy to object.Summary -->copies the contents, style and formulas from a cell range to an object<!-- END REF -->. 
 
 In *rangeObj*, pass the cell range with the content, style, and/or formulas to copy or move. If *rangeObj* is a combined range, only the first one is used.
 
-In the *copyOptions* parameter: 
+In the *options* parameter: 
 * If *copy* is set to *True* (default), the cell contents, style, and formulas of *rangeObj* are preserved after the command executes. If set to *False*, they are removed.
-* *options* determines what is copied or moved. Possible values:
+* *copyOptions* determines what is copied or moved. Possible values:
 
 |Constant|Value|Description|
 |---|---|---|
@@ -689,7 +686,7 @@ In the *copyOptions* parameter:
 |`vk clipboard options formulas`|3|Pastes only the formulas.|
 |`vk clipboard options formulas and formatting`|5|Pastes formulas and formatting.|
 |`vk clipboard options values`|1|Pastes only values.|
-|`vk clipboard options value and formatting|4|Pastes values and formatting.|
+|`vk clipboard options value and formatting`|4|Pastes values and formatting.|
 
 If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
 
@@ -2451,13 +2448,11 @@ The results is:
 
 <!-- REF #_method_.VP MOVE CELLS.Params -->
 
-|Parameter||Type|&nbsp;|Description|
-|---|---|---|---|---|
+|Parameter|Type||Description|
+|---|---|---|---|
 |originRange||Object|->|Cell range to copy from|
 |targetRange||Object|->|Target range for the values, formatting and formulas|
-|options||Object|->||
-||copy|boolean||False (default) to remove the copied values, formatting and formulas after the command executes. True to keep them|
-||pasteOptions|Longint||Specifies what is pasted or moved|
+|options||Object|->|Additional options|
 
 <!-- END REF -->  
 
@@ -2465,15 +2460,17 @@ The results is:
 
 The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the content, style and formulas from a cell range to another<!-- END REF -->. 
 
-The origin range and target range can refer to different View Pro areas.
+The originRange and targetRange can refer to different View Pro areas.
 
 In *originRange*, pass a range object containing the values, style, and formula cells to copy or move. If *originRange* is a combined range, only the first one is used.
 
 In *targetRange*, pass the range of cells where the cell values, style, and formulas will be copied or moved.
 
-The *copy* parameter determines if the contents are moved or copied. If set to *False* (default), the contents, style, and formula cells of *originRange* are not kept after the command executes. If set to *True*, they are preserved.
+The additional *options* parameter has several properties:
 
-*pasteOptions* determines what is copied or moved. Possible values:
+* The *copy* property determines if the contents are moved or copied. If set to *False* (default), the contents, style, and formula cells of *originRange* are not kept after the command executes. If set to *True*, they are preserved.
+
+* The *pasteOptions* property determines what is copied or moved. Possible values:
 
 |Constant|Value|Description|
 |---|---|---|
@@ -2653,7 +2650,7 @@ $cellStyle.font:=VP Object to font($font)
 |---|---|---|---|
 |targetRange|Object|->|Coordinates of the first cell where data must be pasted|
 |dataObject|Object|->|Object containing the data to be pasted|
-|pasteOptions|Longint|->|Specifies what is pasted|
+|options|Longint|->|Specifies what is pasted|
 
 <!-- END REF -->  
 
@@ -2665,7 +2662,7 @@ In *targetRange*, pass the cell range whose content, style, and/or formula cells
 
 In *dataObject*, pass the object that contains the cell data, style, and formulas to be pasted.
 
-In the optional *pasteOptions* parameter, you can specify what to paste in the cell range. Possible values:
+In the optional *options* parameter, you can specify what to paste in the cell range. Possible values:
 
 |Constant|Value|Description|
 |---|---|---|
