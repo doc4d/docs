@@ -657,7 +657,7 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 |v19 R4|Added
 </details>
 
-<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *copyOptions* : Object} ) : Object
+<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *options* : Object} ) : Object
 <!-- END REF -->  
 
 <!-- REF #_method_.Copy to object.Params -->
@@ -665,9 +665,9 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 |Parameter||Type||Description|
 |---|---|---|---|---|
 |rangeObj||Object|->|Range object|
-|copyOptions||Object|->||
+|options||Object|->||
 ||copy|Boolean||*True* (default) to keep the copied values, formatting and formulas after the command executes. *False* to remove them</li></ul>|
-||pasteOptions|Longint||Specifies what is copied|
+||options|Longint||Specifies what is copied|
 |Result||Object|<-|Object returned. Contains the copied data|
 
 <!-- END REF -->  
@@ -680,7 +680,7 @@ In *rangeObj*, pass the cell range with the content, style, and/or formulas to c
 
 In the *copyOptions* parameter: 
 * If *copy* is set to *True* (default), the cell contents, style, and formulas of *rangeObj* are preserved after the command executes. If set to *False*, they are removed.
-* *pasteOptions* determines what is copied or moved. Possible values:
+* *options* determines what is copied or moved. Possible values:
 
 |Constant|Value|Description|
 |---|---|---|
@@ -2451,7 +2451,7 @@ The results is:
 
 <!-- REF #_method_.VP MOVE CELLS.Params -->
 
-|Parameter||Type|&nbsp|Description|
+|Parameter||Type|&nbsp;|Description|
 |---|---|---|---|---|
 |originRange||Object|->|Cell range to copy from|
 |targetRange||Object|->|Target range for the values, formatting and formulas|
@@ -2471,7 +2471,7 @@ In *originRange*, pass a range object containing the values, style, and formula 
 
 In *targetRange*, pass the range of cells where the cell values, style, and formulas will be copied or moved.
 
-The *copy* parameter determines if the contents are moved or copied. If set to *False* (default). The contents, style, and formula cells of *originRange* are not kept after the command executes. If set to *True*, they are preserved.
+The *copy* parameter determines if the contents are moved or copied. If set to *False* (default), the contents, style, and formula cells of *originRange* are not kept after the command executes. If set to *True*, they are preserved.
 
 *pasteOptions* determines what is copied or moved. Possible values:
 
