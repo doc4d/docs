@@ -3,7 +3,7 @@ id: method-list
 title: Method List
 ---
 
-[A](#a) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) - [I](#i) - [N](#n) - [O](#o) - [P](#p) - [R](#r) - [S](#s)
+[A](#a) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) - [I](#i) - [M](#m) - [N](#n) - [O](#o) - [P](#p) - [R](#r) - [S](#s)
 
 ## A
 
@@ -628,6 +628,66 @@ $vpAreaObj:=VP Export to object("ViewProArea")
 $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ```
 
+### VP Copy to object
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R4  | Añadidos       |
+</details>
+
+<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *options* : Object} ) : Object
+<!-- END REF -->  
+
+<!-- REF #_method_.Copy to object.Params -->
+
+| Parámetros | Tipo   |    | Descripción                               |
+| ---------- | ------ | -- | ----------------------------------------- |
+| rangeObj   | Objeto | -> | Range object                              |
+| options    | Objeto | -> | Additional options                        |
+| Resultado  | Objeto | <- | Object returned. Contains the copied data |
+
+<!-- END REF -->  
+#### Descripción
+
+The `VP Copy to object` command <!-- REF #_method_.Copy to object.Summary -->copies the contents, style and formulas from a cell range to an object<!-- END REF -->.
+
+In *rangeObj*, pass the cell range with the values, formatting, and formulas to copy or move. If *rangeObj* is a combined range, only the first one is used.
+
+You can pass an optional *options* parameter with the following properties:
+
+| Propiedad   | Tipo         | Descripción                                                                                                             |
+| ----------- | ------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| copy        | Booleano     | *True* (default) to keep the copied values, formatting and formulas after the command executes. *False* to remove them. |
+| copyOptions | Entero largo | Specifies what is copied or moved. Valores posibles: <p><table><tr><th>Propiedad</th><th>Descripción</th></tr><tr><td>`vk clipboard options all`</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes values and formatting.</td></tr></table></p>                                           |
+
+If the *copyOptions* property is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
+
+The paste options defined in the [workbook options](#) are taken into account.
+
+The command returns an object that contains the copied data.
+
+#### Ejemplo
+
+This code sample first stores the contents, values, formatting and formulas from a range to an object, and then pastes them in another range:
+
+```4d
+var $originRange; $targetRange; $dataObject; $options : Object
+
+$originRange:=New object
+$originRange:=VP Cells("ViewProArea"; 0; 0; 2; 5)
+
+$options:=New object
+$options.copy:=True
+$options.copyOptions:=vk clipboard options all
+
+$dataObject:=New object
+$dataObject:=VP Copy to object($originRange; $options)
+
+$targetRange:=New object
+$targetRange:=VP Cell("ViewProArea"; 4; 0)
+VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
+```
 
 ## D
 
@@ -738,17 +798,17 @@ If the extension is not included, but the format is specified in *paramObj*, the
 The optional *paramObj* parameter allows you to define multiple properties for the exported 4D View Pro object, as well as launch a callback method when the export has completed.
 
 
-| Propiedad          | Tipo     | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Propiedad          | Tipo     | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| ------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | format             | texto    | (optional) When present, designates the exported file format: ".4vp" (default), ".csv", ".xlsx", or ".pdf". You can use the following constants:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D adds the appropriate extension to the file name if needed. If the format specified doesn't correspond with the extension in *filePath*, it will be added to the end of *filePath*. If a format is not specified and no extension is provided in *filePath*, the default file format is used. |
-| contraseña         | texto    | Microsoft Excel only (optional) - Password used to protect the MS Excel document                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| formula            | objeto   | Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).                                                                                                                                                     |
-| valuesOnly         | booleano | Specifies that only the values from formulas (if any) will be exported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| includeFormatInfo  | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                               |
-| sheetIndex         | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| contraseña         | texto    | Microsoft Excel only (optional) - Password used to protect the MS Excel document                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| formula            | objeto   | Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).                                                                                                                                                      |
+| valuesOnly         | booleano | Specifies that only the values from formulas (if any) will be exported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| includeFormatInfo  | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                |
+| sheetIndex         | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | pdfOptions         | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>title of the document.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>texto</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| csvOptions         | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Default: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| \<customProperty> | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| csvOptions         | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Default: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| \<customProperty> | any      | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 **Notes about Excel format**:
 
@@ -2341,6 +2401,69 @@ The results is:
 
 ![](assets/en/ViewPro/cmd_vpInsertRows.PNG)
 
+## M
+
+### VP MOVE CELLS
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R4  | Añadidos       |
+</details>
+
+<!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; *options* : Object )
+<!-- END REF -->  
+
+<!-- REF #_method_.VP MOVE CELLS.Params -->
+
+| Parámetros  | Tipo |        | Descripción                                             |
+| ----------- | ---- | ------ | ------------------------------------------------------- |
+| originRange |      | Objeto | ->|Cell range to copy from                              |
+| targetRange |      | Objeto | ->|Target range for the values, formatting and formulas |
+| options     |      | Objeto | ->|Additional options                                   |
+
+<!-- END REF -->  
+
+#### Descripción
+
+The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the values, style and formulas from a cell range to another<!-- END REF -->.
+
+The *originRange* and *targetRange* can refer to different View Pro areas.
+
+In *originRange*, pass a range object containing the values, style, and formula cells to copy or move. If *originRange* is a combined range, only the first one is used.
+
+In *targetRange*, pass the range of cells where the cell values, style, and formulas will be copied or moved.
+
+The *options* parameter has several properties:
+
+| Propiedad    | Tipo         | Descripción                                                                                                            |
+| ------------ | ------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| copy         | Booleano     | *False* (default) to remove the copied values, formatting and formulas after the command executes. *True* to keep them |
+| pasteOptions | Entero largo | Specifies what is pasted. Valores posibles: <p><table><tr><th>Propiedad</th><th>Descripción</th></tr><tr><td>`vk clipboard options all`</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes values and formatting.</td></tr></table></p>                                                  |
+
+If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
+
+The paste options defined in the [workbook options](#) are taken into account.
+
+#### Ejemplo
+
+To copy the contents, values, formatting and formulas from an origin range:
+
+```4d
+var $originRange; $targetRange; $options : Object
+
+$originRange:=New object
+$originRange:=VP Cells("ViewProArea"; 0; 0; 2; 5)
+
+$targetRange:=New object
+$targetRange:=VP Cells("ViewProArea"; 4; 0; 2; 5)
+
+$options:=New object
+$options.copy:=True
+$options.pasteOptions:=vk clipboard options all
+
+VP MOVE CELLS($originRange; $targetRange; $options)
+```
 
 
 ## N
@@ -2469,6 +2592,56 @@ $cellStyle.font:=VP Object to font($font)
 
 
 ## P
+
+### VP PASTE FROM OBJECT
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R4  | Añadidos       |
+</details>
+
+<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *targetRange* : Object ; *dataObject* : Object {; *options* : Longint} )
+<!-- END REF -->  
+
+<!-- REF #_method_.PASTE FROM OBJECT.Params -->
+
+| Parámetros | Tipo         |    | Descripción                             |
+| ---------- | ------------ | -- | --------------------------------------- |
+| rangeObj   | Objeto       | -> | Cell range object                       |
+| dataObject | Objeto       | -> | Object containing the data to be pasted |
+| options    | Entero largo | -> | Specifies what is pasted                |
+
+<!-- END REF -->  
+
+#### Descripción
+
+The `VP PASTE FROM OBJECT` command <!-- REF #_method_.PASTE FROM OBJECT.Summary -->pastes the contents, style and formulas stored in a object to a cell range<!-- END REF -->.
+
+In *targetRange*, pass the cell range object where the values, formatting, and/or formula cells will be pasted. If *rangeObj* refers to more than one cell, only the first one is used.
+
+In *dataObject*, pass the object that contains the cell data, formatting, and formulas to be pasted.
+
+In the optional *options* parameter, you can specify what to paste in the cell range. Valores posibles:
+
+| Constante                                      | Valor | Descripción                                                          |
+| ---------------------------------------------- | ----- | -------------------------------------------------------------------- |
+| `vk clipboard options all`                     | 0     | Pastes all data objects, including values, formatting, and formulas. |
+| `vk clipboard options formatting`              | 2     | Pastes only the formatting.                                          |
+| `vk clipboard options formulas`                | 3     | Pastes only the formulas.                                            |
+| `vk clipboard options formulas and formatting` | 5     | Pastes formulas and formatting.                                      |
+| `vk clipboard options values`                  | 1     | Pastes only values.                                                  |
+| `vk clipboard options value and formatting`    | 4     | Pastes values and formatting.                                        |
+
+If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
+
+The paste options defined in the [workbook options](#) are taken into account.
+
+If *options* refers to a paste option not present in the copied object (e.g. formulas), the command does nothing.
+
+#### Ejemplo
+
+See example the example from [VP Copy to object](#vp-copy-to-object)
 
 ### VP PRINT
 
@@ -3404,7 +3577,7 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 |                          | summary    |            | Texto                 | Formula description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 |                          | minParams  |            | Número                | Minimum number of parameters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |                          | maxParams  |            | Número                | Maximum number of parameters. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-> **WARNING**
+> **ATENCIÓN**
 > 
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the functions based upon `SET TABLE TITLES` and `SET FIELD TITLES` commands are ignored in the 4D View Pro area.
