@@ -235,9 +235,9 @@ The returned value is the private key.
 <!-- REF #CryptoKey.getPublicKey().Syntax -->**.getPublicKey( )** : Text<!-- END REF -->
 
 <!-- REF #CryptoKey.getPublicKey().Params -->
-| Parámetros | Tipo  |    | Descripción              |
-| ---------- | ----- | -- | ------------------------ |
-| Resultado  | Texto | <- | Public key in PEM format |
+| Parámetros | Tipo  |    | Descripción                  |
+| ---------- | ----- | -- | ---------------------------- |
+| Resultado  | Texto | <- | Llave pública en formato PEM |
 <!-- END REF -->
 
 
@@ -245,7 +245,7 @@ The `.getPublicKey()` function <!-- REF #CryptoKey.getPublicKey().Summary -->ret
 
 #### *Resultado*
 
-The returned value is the public key.
+El valor devuelto es la llave pública.
 <!-- END REF -->
 
 ---
