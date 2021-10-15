@@ -217,7 +217,7 @@ Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.par
 | v17 R5  | Ajout         |
 </details><!-- REF #document.parent.Syntax -->**.parent** : 4D.Folder<!-- END REF -->#### Description
 
-The `.parent` property returns<!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
+The `.parent` property returns<!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
 
 Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.path.Desc -->## .path
 
@@ -227,7 +227,7 @@ Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.pat
 | v17 R5  | Ajout         |
 </details><!-- REF #document.path.Syntax -->**.path** : Text<!-- END REF -->#### Description
 
-The `.path` property returns<!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
+The `.path` property returns<!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. Si le chemin représente un filesystem (ex : "/DATA/"), le filesystem est retourné.
 
 Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.platformPath.Desc -->## .platformPath
 

@@ -42,7 +42,7 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 The attributes of dataclasses are <!-- REF DataClassClass.attributeName.Summary -->objects that are available directly as properties<!-- END REF --> of these classes.
 
 The returned objects are of the [`DataClassAttribute`](DataClassAttributeClass.md) class. These objects have properties that you can read to get information about your dataclass attributes.
-> Dataclass attribute objects can be modified, but the underlying database structure will not be altered.
+> Les objets de l'attribut Dataclass peuvent être modifiés, mais la structure sous-jacente de la base de données ne sera pas altérée.
 
 #### Exemple 1
 
@@ -77,7 +77,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
   //42=Is collection
 ```
 
-#### Example 3
+#### Exemple 3
 
 Considering the following table properties:
 
@@ -253,7 +253,7 @@ We want to update an existing entity. The \_\_NEW property is not given, the emp
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
-#### Example 3
+#### Exemple 3
 
 We want to simply create a new entity from a collection:
 
@@ -538,7 +538,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
  $es:=ds.Clients.query(":pk in :receivedIds";$settings)
 ```
 
-#### Example 3
+#### Exemple 3
 
 ```4d 
  var $pk : Text
@@ -1130,7 +1130,7 @@ Query with named placeholders for attributes and values:
  End if
 ```
 
-#### Example 3
+#### Exemple 3
 
 These examples illustrate the various ways to use formulas with or without parameters in your queries.
 
