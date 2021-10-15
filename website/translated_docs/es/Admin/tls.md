@@ -6,7 +6,7 @@ title: Protocolo TLS (HTTPS)
 All 4D servers can communicate in secured mode through the TLS (Transport Layer Security) protocol:
 
 - el servidor web
-- the application server (client-server desktop applications)
+- el servidor de aplicaciones (aplicaciones de escritorio cliente-servidor)
 - el servidor SQL
 
 ## Generalidades
