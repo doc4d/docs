@@ -159,7 +159,7 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 
 
 <!-- REF DataClassAttributeClass.inverseName.Syntax -->
-**.inverseName** : Text<!-- END REF -->
+**.inverseName**: Texto<!-- END REF -->
 
 
 #### Descripción
@@ -185,7 +185,7 @@ This property is not returned if `.kind` = "storage". It must be of the "related
 
 
 <!-- REF DataClassAttributeClass.keywordIndexed.Syntax -->
-**.keywordIndexed** : Boolean<!-- END REF -->
+**.keywordIndexed**: Boolean<!-- END REF -->
 
 
 #### Descripción
@@ -224,7 +224,7 @@ The `.kind` property <!-- REF DataClassAttributeClass.kind.Summary -->returns th
 
 #### Ejemplo
 
-Given the following table and relation:
+Dada la siguiente tabla y relación:
 
 ![](/assets/en/API/dataclassAttribute3.png)
 
@@ -309,7 +309,7 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 
 
 <!-- REF DataClassAttributeClass.relatedDataClass.Syntax -->
-**.relatedDataClass** : Text<!-- END REF -->
+**.relatedDataClass**: Text<!-- END REF -->
 
 
 #### Descripción
@@ -319,7 +319,7 @@ The `.relatedDataClass` property <!-- REF DataClassAttributeClass.relatedDataCla
 
 #### Ejemplo
 
-Given the following tables and relations:
+Dadas las siguientes tablas y relaciones:
 
 
 ![](assets/en/API/dataclassAttribute4.png)
@@ -360,7 +360,7 @@ The conceptual value type depends on the attribute [`.kind`](#kind).
 | ----------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | storage                 | "number", "date", "object", "bool", "image", o "string" | "number" se devuelve para cualquier tipo numérico, incluyendo la duración. "string" se devuelve para los tipos de campo uuid, alfa y texto |
 | relatedEntity           | related dataClass name                                  | Ej.: "Companies"                                                                                                                           |
-| relatedEntities         | related dataClass name + "Selection" suffix             | Ex: "EmployeeSelection"                                                                                                                    |
+| relatedEntities         | related dataClass name + "Selection" suffix             | Ej.: "EmployeeSelection"                                                                                                                   |
 
 <!-- END REF -->
 
