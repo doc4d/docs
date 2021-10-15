@@ -217,7 +217,7 @@
         "title": "Breakpoints and Command Catching"
       },
       "Debugging/debugger": {
-        "title": "Debugger"
+        "title": "Débogueur"
       },
       "Debugging/debugging-remote": {
         "title": "Debugging from remote machines"
@@ -830,7 +830,7 @@
         "title": "A propos des requêtes REST"
       },
       "Tags/tags": {
-        "title": "Transformation tags"
+        "title": "Balises de transformation"
       },
       "Users/editing": {
         "title": "Gestion des groupes et utilisateurs 4D"
