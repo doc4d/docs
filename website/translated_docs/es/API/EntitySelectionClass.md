@@ -746,7 +746,7 @@ If several *attributePath* are given, a *targetPath* must be given for each. Onl
 
 #### Ejemplo
 
-Given the following table and relation:
+Dada la siguiente tabla y relación:
 
 ![](assets/en/API/entityselection.PNG)
 
