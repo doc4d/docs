@@ -649,7 +649,7 @@ $vpAreaObj:=VP Export to object("ViewProArea")
 $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ```
 
-### VP Copy to object
+### VP Copy to object ![](assets/en/new.png)
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -2430,7 +2430,7 @@ The results is:
 
 ## M 
 
-### VP MOVE CELLS
+### VP MOVE CELLS ![](assets/en/new.png)
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -2620,7 +2620,7 @@ $cellStyle.font:=VP Object to font($font)
 
 ## P
 
-### VP PASTE FROM OBJECT
+### VP PASTE FROM OBJECT ![](assets/en/new.png)
 	
 <details><summary>History</summary>
 |Version|Changes|
