@@ -12,7 +12,7 @@ The `WebServer` class API allows you to start and monitor a web server for the m
 
 Les objets Web server sont installés à l'aide de la commande [`WEB Server`](#web-server).
 
-They provide the following properties and functions:
+Leurs propriétés et fonctions sont les suivantes :
 
 
 ### Sommaire
