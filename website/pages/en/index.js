@@ -70,8 +70,8 @@ class Index extends React.Component {
      viewPro: <translate>4D View Pro</translate>,
 	  preferences: <translate>Preferences</translate>,
 	  overview: <translate>Overview</translate>,
-	  comp: <translate>Components on GitHub</translate>,
-	  plug: <translate>Plugins on GitHub</translate>
+	  comp: <translate>Developing Components</translate>,
+	  plug: <translate>Developing Plugins</translate>
     };
 
     return (
@@ -171,8 +171,14 @@ class Index extends React.Component {
                 {
                   content: `[${subContents.overview}](${siteConfig.baseUrl}${this.props.language}/Extensions/components.html)<br>
 				  [${subContents.viewPro}](${siteConfig.baseUrl}${this.props.language}/ViewPro/getting-started.html)<br>
-				  [${subContents.comp}](https://github.com/search?q=4d-component)<br>
-				  [${subContents.plug}](https://github.com/search?q=4d-plugin)`,
+				  [4D Mobile App Server](ttps://github.com/4d-go-mobile/4D-Mobile-App-Server)<br>
+				  [4D NetKit](https://github.com/4d/4D-NetKit)<br>
+				  [4D Progress](https://doc.4d.com/4Dv19/4D/19/4D-Progress.100-5461799.en.html)<br>
+				  [4D SVG](https://doc.4d.com/4Dv19/4D/19/4D-SVG-Component.300-5462064.en.html)<br>
+				  [4D Widgets](https://doc.4d.com/4Dv19/4D/19/4D-Widgets.100-5462909.en.html)<br>
+				  [4D Write Pro Interface](https://github.com/4d/4D-WritePro-Interface)<br>
+				  [${subContents.comp}](${siteConfig.baseUrl}${this.props.language}/Extensions/develop-components.html)<br>
+				  [${subContents.plug}](${siteConfig.baseUrl}${this.props.language}/Extensions/develop-plug-ins.html)<br>`,
                   image: `${siteConfig.baseUrl}img/illu_Extensions.png`,
                   imageAlign: "top",
                   imageAlt: "Extensions",

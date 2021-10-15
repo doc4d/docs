@@ -1,14 +1,14 @@
 ---
-id: components
+id: overview
 title: Overview
 ---
 
 The 4D [project architecture](Project/architecture) is modular. You can provide additional functionalities to your 4D projects by installing [**components**](Concepts/components.md) and [**plug-ins**](Concepts/plug-ins). Components are made of 4D code, while plug-ins can be built using any language. 
 
 
-## 4D Component Library
+## Preinstalled 4D components
 
-4D includes a set of built-in 4D components, that you can see in the **Component Methods** theme of the Explorer's Methods page. 
+4D includes by default a set of built-in 4D components, that you can see in the **Component Methods** theme of the Explorer's Methods page. 
 
 
 |Component Name|Description|Main Features
@@ -27,22 +27,14 @@ The 4D [project architecture](Project/architecture) is modular. You can provide 
 
 You can develop and install your own 4D components. See [this section](Concepts/components.md) for more information. 
 
-Many developers from the 4D community propose public 4D components that you can install and use in you projects.
+Many developers from the 4D community have shared 4D components that you can install and use in you projects.
 
 Browse Github to have the [**list of public 4D components**](https://github.com/search?q=4d-component&type=Repositories).
-
-### Documentation in the Explorer
-
-When an installed component contains methods, they appear in the **Component Methods** theme of the Explorer's Methods page. 
-
-Select a component method and click on the **Documentation** button of the Explorer to get information about it, [if any](Project/documentation.md). 
-
-![alt-text](assets/en/Project/compDoc.png)
 
 
 ## Plugins
 
-Plugins do things that 4D does not natively (e.g., specific platform technology), or would be very hard to write just using 4D. A lot of functionnalities are covered by the existing 4D plug-in library. 
+Plugins do things that 4D does not natively (e.g., specific platform technology), or would be very hard to write just using 4D. A lot of functionnalities are covered by the existing 4D plug-ins. 
 
 Browse Github to have the [**list of public 4D plugins**](https://github.com/search?q=4d-plugin&type=Repositories).
 
