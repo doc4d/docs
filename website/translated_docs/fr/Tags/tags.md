@@ -1,15 +1,15 @@
 ---
 id: tags
-title: Transformation tags
+title: Balises de transformation
 ---
 
-4D provides a set of transformation tags which allow you to insert references to 4D variables or expressions, or to perform different types of processing within a source text, referred to as a "template". These tags are interpreted when the source text is executed and generate an output text.
+4D fournit un ensemble de balises de transformation qui vous permettent d'insérer des références à des variables ou des expressions 4D, ou d'effectuer différents types de traitement dans un texte source, appelé "template". Ces balises sont interprétées lors de l'exécution du texte source et génèrent un texte de sortie.
 
-This principle is used in particular by the 4D Web server to build [web template pages](WebServer/templates.md).
+Ce principe est notamment utilisé par le serveur Web 4D pour créer [des pages de template Web](WebServer/templates.md).
 
-These tags are generally be inserted as HTML type comments (`<!--#Tag Contents-->`) but an [xml-compliant alternative syntax](#alternative-syntax-for-4dtext-4dhtml-4deval) is available for some of them.
+Ces balises sont généralement insérées sous forme de commentaires de type HTML (`<!--#Tag Contents-->`) mais [une syntaxe alternative conforme à la norme xml](#alternative-syntax-for-4dtext-4dhtml-4deval) est disponible pour certaines d'entre elles.
 
-It is possible to mix several types of tags. For example, the following HTML structure is entirely feasible:
+Il est possible de combiner plusieurs types de balises. Par exemple, la structure HTML suivante est tout à fait envisageable :
 
 ```html
 <HTML>
@@ -35,15 +35,15 @@ It is possible to mix several types of tags. For example, the following HTML str
 
 
 
-## Principles for using tags
+## Principes d'utilisation des balises
 
 ### Parsing
 
-Parsing the contents of a *template* source is done in two contexts:
+L'analyse ou le parsing du contenu d'une source de *template* se fait dans deux contextes :
 
-- Using the `PROCESS 4D TAGS` command; this command accepts a *template* as input, as well as optional parameters and returns a text resulting from the processing.
+- En utilisant la commande `PROCESS 4D TAGS` ; cette commande accepte un *template*en entrée, ainsi que des paramètres optionnels et retourne un texte résultant du traitement.
 
-- Using 4D's integrated HTTP server: [template pages](WebServer/templates.md) sent by means of the `WEB SEND FILE` (.htm, .html, .shtm, .shtml), `WEB SEND BLOB` (text/html type BLOB), `WEB SEND TEXT` commands, or called using URLs. In this last case, for reasons of optimization, pages that are suffixed with “.htm” and “.html” are NOT parsed. In this last case, for reasons of optimization, pages that are suffixed with “.htm” and “.html” are NOT parsed.
+- En utilisant le serveur HTTP intégré de 4D : [pages de templates](WebServer/templates.md) envoyées au moyen des commandes `WEB SEND FILE` (.htm, .html, .shtm, .shtml), `WEB SEND BLOB` (text/html type BLOB), `WEB SEND TEXT` , ou appelées au moyen d'une URL. In this last case, for reasons of optimization, pages that are suffixed with “.htm” and “.html” are NOT parsed. In this last case, for reasons of optimization, pages that are suffixed with “.htm” and “.html” are NOT parsed.
 
 
 ### Recursive processing
@@ -56,31 +56,31 @@ Parsing the contents of a *template* source is done in two contexts:
 
 If the `[Mail]Letter_type` text field itself contains a tag, for example `<!--#4DSCRIPT/m_Gender-->`, this tag will be evaluated recursively after the interpretation of the 4DHTML tag.
 
-This powerful principle meets most needs related to text transformation. Note, however, that in some cases this can also allow malicious code to be inserted in the web context, [which can be avoided](WebServer/templates.md#prevention-of-malicious-code-insertion).
+This powerful principle meets most needs related to text transformation. Notez toutefois que, dans certains cas, cela peut également permettre l'insertion d'un code malveillant dans le contexte web, [ce qui peut être évité](WebServer/templates.md#prevention-of-malicious-code-insertion).
 
 
-### Identifiers with tokens
+### Identifiants avec tokens
 
-To ensure the correct evaluation of expressions processed via tags, regardless of the language or 4D version, it's recommended to use the tokenized syntax for elements whose name may vary over versions (commands, tables, fields, constants). For example, to insert the `Current time` command, enter `Current time:C178`.
+Pour garantir l'évaluation correcte des expressions traitées via les balises, quel que soit le langage ou la version de 4D, il est recommandé d'utiliser la syntaxe tokenisée pour les éléments dont le nom peut varier selon les versions (commandes, tables, champs, constantes). Par exemple, pour insérer la commande `Current time`, entrez `Current time:C178`.
 
-### Using the "." as decimal separator
+### Utilisation du "." comme séparateur décimal
 
-4D always uses the period character (.) as a decimal separator when evaluating a numerical expression using a 4D tag `4DTEXT`, `4DHTML`, and `4DEVAL`. Regional settings are ignored. This feature facilitates code maintenance and compatibility between 4D languages and versions.
+4D utilise toujours le caractère point (.) comme séparateur décimal lorsqu'il évalue une expression numérique à l'aide d'une balise `4DTEXT`, `4DHTML`, et `4DEVAL`. Les paramètres régionaux sont ignorés. Cette fonctionnalité facilite la maintenance du code et la compatibilité entre les langues et les versions de 4D.
 
 
 ## 4DBASE
 
 #### Syntax: `<!--#4DBASE folderPath-->`
 
-The `<!--#4DBASE -->` tag designates the working directory to be used by the `<!--#4DINCLUDE-->` tag.
+La balise `<!--#4DBASE -->` désigne le répertoire de travail à utiliser par la balise `<!--#4DINCLUDE-->`.
 
-When it is called in a Web page, the `<!--#4DBASE -->` tag modifies all subsequent `<!--#4DINCLUDE-->` calls on this page, until the next `<!--#4DBASE -->, if any. If the`<!--#4DBASE -->` folder is modified from within an included file, it retrieves its original value from the parent file.
+Lorsqu'elle est appelée dans une page Web, la balise `<!--#4DBASE -->` modifie tous les appels `<!--#4DINCLUDE-->` ultérieurs sur cette page, jusqu'au prochain `<!--#4DBASE -->, le cas échéant. Si le dossier `<!--#4DBASE -->est modifié à partir d'un fichier inclus, il récupère sa valeur originale dans le fichier parent.
 
-The *folderPath* parameter must contain a pathname relative to the current page and it must end with a slash (/). The designated folder must be located inside the Web folder.
+Le paramètre *folderPath* doit contenir un nom de chemin relatif à la page actuelle et il doit se terminer par une barre oblique (/). Le dossier désigné doit être situé à l'intérieur du dossier Web.
 
-Pass the "WEBFOLDER" keyword to restore the default path (relative to the page).
+Passez le mot-clé "WEBFOLDER" pour rétablir le chemin par défaut (relatif à la page).
 
-The following code, which must specify a relative path for each call:
+Le code suivant, qui doit spécifier un chemin relatif pour chaque appel :
 
 ```html
 <!--#4DINCLUDE subpage.html--> 
@@ -89,7 +89,7 @@ The following code, which must specify a relative path for each call:
 <!--#4DINCLUDE folder/subpage3.html-->
 <!--#4DINCLUDE ../folder/subpage.html-->
 ```
-... is equivalent to:
+...équivaut à :
 
 ```html
 <!--#4DINCLUDE subpage.html--> 
@@ -134,11 +134,11 @@ In the "head.html" file, the current folder is modified through `<!--#4DBASE -->
 
 #### Syntax: `<!--#4DCODE codeLines-->`
 
-The `4DCODE` tag allows you to insert a multi-line 4D code block in a template.
+La balise `4DCODE` permet d'insérer un bloc de code 4D de plusieurs lignes dans un template.
 
-When a `<!--#4DCODE` sequence is detected that is followed by a space, a CR or a LF character, 4D interprets all the lines of code up to the next `-->` sequence. The code block itself can contain carriage returns, line feeds, or both; it will be interpreted sequentially by 4D.
+Lorsqu'une séquence `<!--#4DCODE` est détectée et qu'elle est suivie d'un espace, d'un caractère CR ou LF, 4D interprète toutes les lignes de code jusqu'à la séquence `-->` suivante. Le bloc de code lui-même peut contenir des retours chariot, des sauts de ligne ou les deux ; il sera interprété séquentiellement par 4D.
 
-For example, you can write in a template:
+Par exemple, vous pouvez écrire dans un template :
 
 ```html
 <!--#4DCODE
@@ -161,18 +161,18 @@ End if
 ```
 
 
-Here are the 4DCODE tag features:
+Voici les caractéristiques de la balise 4DCODE :
 
-- The `TRACE` command is supported and activates the 4D debugger, thus allowing you to debug your template code.
-- Any error will display the standard error dialog that lets the user stop code execution or enter debugging mode.
-- The text in between `<!--#4DCODE` and `-->` is split into lines accepting any line-ending convention (cr, lf, or crlf).
-- The text is tokenized within the context of the database that called `PROCESS 4D TAGS`. This is important for recognition of project methods for example. The [Available through tags and 4D URLs (4DACTION ...)](WebServer/allowProject.md) method property is not taken into account.
-- Even if the text always uses English-US, it is recommended to use the token syntax (:Cxxx) for command and constant names to protect against potential problems due to commands or constants being renamed from one version of 4D to another.
+- La commande `TRACE` est prise en charge et active le débogueur 4D, vous permettant ainsi de déboguer le code de votre modèle.
+- Toute erreur affichera le dialogue d'erreur standard qui permet à l'utilisateur d'arrêter l'exécution du code ou d'entrer en mode débogage.
+- Le texte entre `<!--#4DCODE` et `-->` est divisé en lignes acceptant toute convention de fin de ligne (cr, lf ou crlf).
+- Le texte est tokenisé dans le contexte de la base de données qui a appelé `PROCESS 4D TAGS`. Ceci est important pour la reconnaissance des méthodes de projet par exemple. La propriété de la méthode [Available through tags et 4D URLs (4DACTION ...)](WebServer/allowProject.md) n'est pas prise en compte.
+- Même si le texte utilise toujours l'anglais-US, il est recommandé d'utiliser la syntaxe token (:Cxxx) pour les noms de commandes et de constantes afin de se prémunir contre d'éventuels problèmes dus à des commandes ou des constantes renommées d'une version de 4D à une autre.
 
-> The fact that 4DCODE tags can call any of the 4D language commands or project methods could be seen as a security issue, especially when the database is available through HTTP. However, since it executes server-side code called from your own template files, the tag itself does not represent a security issue. In this context, as for any Web server, security is mainly handled at the level of remote accesses to server files.
+> Le fait que les balises 4DCODE puissent appeler n'importe quelle commande du langage 4D ou méthode du projet pourrait être considéré comme un problème de sécurité, en particulier lorsque la base de données est disponible via HTTP. Toutefois, étant donné qu'elle exécute du code côté serveur appelé à partir de vos propres fichiers de modèle, la balise elle-même ne représente pas un problème de sécurité. Dans ce contexte, comme pour tout serveur Web, la sécurité est principalement gérée au niveau des accès distants aux fichiers du serveur.
 
 
-## 4DEACH and 4DENDEACH
+## 4DEACH et 4DENDEACH
 
 #### Syntax: `<!--#4DEACH variable in expression-->` `<!--#4DENDEACH-->`
 
@@ -354,7 +354,7 @@ In case of an interpretation error, the inserted text will be `<!--#4DHTML myvar
 > For security reasons, it is recommended to use the [`4DTEXT`](#4dtext) tag when processing data introduced from outside the application, in order to prevent the [insertion of malicious code](#prevention-of-malicious-code-insertion).
 
 
-## 4DIF, 4DELSE, 4DELSEIF and 4DENDIF
+## 4DIF, 4DELSE, 4DELSEIF et 4DENDIF
 
 #### Syntax: `<!--#4DIF expression-->` {`<!--#4DELSEIF expression2-->...<!--#4DELSEIF expressionN-->`} {`<!--#4DELSE-->`} `<!--#4DENDIF-->`
 
@@ -461,7 +461,7 @@ Voici quelques exemples :
 
 
 
-## 4DLOOP and 4DENDLOOP
+## 4DLOOP et 4DENDLOOP
 
 #### Syntax: `<!--#4DLOOP condition-->` `<!--#4DENDLOOP-->`
 
