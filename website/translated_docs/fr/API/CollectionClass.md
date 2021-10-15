@@ -2388,7 +2388,7 @@ Si vous essayez de supprimer un élément d'une collection vide, la méthode ne 
 La fonction `.resize()` <!-- REF #collection.resize().Summary -->définit la longueur de la collection sur la nouvelle taille spécifiée et retourne la collection redimensionnée<!-- END REF -->.
 > Cette fonction modifie la collection d'origine.
 
-*   If *size* < collection length, exceeding elements are removed from the collection.
+*   Si *size* est inférieure à la longueur de la collection, les éléments excédentaires sont retirés de la collection.
 *   If *size* > collection length, the collection length is increased to size.
 
 Par défaut, les nouveaux éléments sont remplis par des valeurs **null**. Vous pouvez indiquer la valeur à remplir dans les éléments ajoutés à l'aide du paramètre *defaultValue*.
