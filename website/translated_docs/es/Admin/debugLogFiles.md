@@ -1,6 +1,6 @@
 ---
 id: debugLogFiles
-title: Description of log files
+title: Descripción de los archivos históricos
 ---
 
 4D applications can generate several log files that are useful for debugging or optimizing their execution. Logs are usually started or stopped using selectors of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) or [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) commands and are stored in the [Logs folder](Project/architecture.md#logs-folder) of the database.
@@ -34,15 +34,15 @@ Como iniciar este historial:
 
 ```4d
 SET DATABASE PARAMETER(4D Server log recording;1)
-//server side
+//del lado del servidor
 ```
 
 
-*   on a client:
+*   en un cliente:
 
 ```4d
 SET DATABASE PARAMETER(Client Log Recording;1)
-//remote side
+////del lado remoto
 ```
 > This statement also starts the [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt) log file.
 
@@ -92,7 +92,7 @@ SET DATABASE PARAMETER(4D Server log recording;1) //server side
 *   on a client:
 
 ```4d
-SET DATABASE PARAMETER(Client Log Recording;1) //remote side
+SET DATABASE PARAMETER(Client Log Recording;1) ////del lado remoto
 ```
 > This statement also starts the [4DRequestsLog.txt](#4drequestslogtxt) log file.
 
@@ -157,10 +157,10 @@ Como iniciar este historial:
 
 ```4d
 SET DATABASE PARAMETER(Debug Log Recording;2)  
-//standard, all processes
+//estándar, todos los procesos
 
 SET DATABASE PARAMETER(Current process debug log recording;2)  
-//standard, current process only
+//estándar, sólo el proceso actual
 ```
 
 The following fields are logged for each event:
@@ -211,7 +211,7 @@ This log file records many events related to the internal application operation 
 Como iniciar este historial:
 
 ```4d
- SET DATABASE PARAMETER(Diagnostic log recording;1) //start recording
+ SET DATABASE PARAMETER(Diagnostic log recording;1) //iniciar registro
 ```
 
 The following fields are logged for each event:
@@ -227,7 +227,7 @@ The following fields are logged for each event:
 
 Depending on the event, various other fields can also be logged, such as task, socket, etc.
 
-## 4DSMTPLog.txt, 4DPOP3Log.txt, and 4DIMAPLog.txt
+## 4DSMTPLog.txt, 4DPOP3Log.txt y 4DIMAPLog.txt
 
 These log files record each exchange between the 4D application and the mail server (SMTP, POP3, IMAP) that has been initiated by the following commands:
 
@@ -246,9 +246,9 @@ The log files can be produced in two versions:
     Para iniciar este historial:
 
     ```4d
-    SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log 
-    SET DATABASE PARAMETER(POP3 Log;1) //start POP3 log 
-    SET DATABASE PARAMETER(IMAP Log;1) //start IMAP log
+    SET DATABASE PARAMETER(SMTP Log;1) //inicia SMTP log 
+    SET DATABASE PARAMETER(POP3 Log;1) //inicia POP3 log 
+    SET DATABASE PARAMETER(IMAP Log;1) //inicia IMAP log
     ```
 
     4D Server: Click on the **Start Request and Debug Logs** button in the [Maintenance Page](https://doc.4d.com/4Dv18R5/4D/18-R5/Maintenance-Page.300-5149308.en.html) of the 4D Server administration window.
@@ -258,7 +258,7 @@ The log files can be produced in two versions:
 *   una versión extendida:
     *   attachment(s) included no automatic recycling
     *   nombre personalizado
-    *   reserved for specific purposes
+    *   reservado para fines específicos
 
     Para iniciar este historial:
 
