@@ -1766,7 +1766,7 @@ $result2:=$invoices.selected($creditSel)
 | Parameter | Type               |    | Description                                                    |
 | --------- | ------------------ |:--:| -------------------------------------------------------------- |
 | startFrom | Integer            | -> | Index to start the operation at (included)                     |
-| end       | Integer            | -> | End index (not included)                                       |
+| end       | Integer            | -> | Final do índice (não incluído)                                 |
 | Result    | 4D.EntitySelection | <- | New entity selection containing sliced entities (shallow copy) |
 <!-- END REF -->
 
