@@ -153,7 +153,7 @@ Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.isW
 </details><!-- REF #document.isWritable.Syntax -->**.isWritable** : Boolean<!-- END REF -->#### Description
 
 The `.isWritable` property returns<!-- REF #document.isWritable.Summary -->true if the file exists on disk and is writable<!-- END REF -->.
-> The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the *writable* attribute of the file.
+> Cette propriété vérifie la capacité de l'application 4D à écrire sur le disque (droits d'accès). elle ne se base pas uniquement sur l'attribut *writable* du fichier.
 
 Cette propriété est en **lecture seule**.
 
@@ -202,12 +202,12 @@ Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.ori
 | v17 R5  | Ajout         |
 </details><!-- REF #document.original.Syntax -->**.original** : 4D.File<br>**.original** : 4D.Folder<!-- END REF -->#### Description
 
-The `.original` property returns<!-- REF #document.original.Summary -->the target element for an alias, a shortcut, or a symbolic link file<!-- END REF -->. The target element can be:
+The `.original` property returns<!-- REF #document.original.Summary -->the target element for an alias, a shortcut, or a symbolic link file<!-- END REF -->. L'élément cible peut être :
 
-*   a file object
-*   a folder object
+*   un objet File
+*   un objet Folder
 
-For non-alias files, the property returns the same file object as the file.
+Pour les fichiers sans alias, la propriété retourne le même objet File que le fichier.
 
 Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.parent.Desc -->## .parent
 
@@ -247,7 +247,7 @@ Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.siz
 | v17 R5  | Ajout         |
 </details><!-- REF #document.size.Syntax -->**.size** : Real<!-- END REF -->#### Description
 
-The `.size` property returns<!-- REF #document.size.Summary -->the size of the file expressed in bytes<!-- END REF -->. If the file does not exist on disk, the size is 0.
+The `.size` property returns<!-- REF #document.size.Summary -->the size of the file expressed in bytes<!-- END REF -->. Si le fichier n'existe pas sur le disque, la taille est de 0.
 
 Cette propriété est en **lecture seule**.<!-- END REF --><!-- REF document.copyTo().Desc -->## .copyTo()
 
@@ -274,9 +274,9 @@ By default, the file is copied with the name of the original file. If you want t
 
 If a file with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
 
-| Constant       | Valeur | Commentaire                         |
-| -------------- | ------ | ----------------------------------- |
-| `fk overwrite` | 4      | Overwrite existing elements, if any |
+| Constant       | Valeur | Commentaire                                   |
+| -------------- | ------ | --------------------------------------------- |
+| `fk overwrite` | 4      | Écrase les éléments existants, le cas échéant |
 
 
 **Valeur retournée**
@@ -306,7 +306,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 | ---------- | ------- | -- | ------------ |
 | Résultat   | 4D.Blob | <- | File content |<!-- END REF -->#### Description
 
-The `.getContent()` function<!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+La fonction `.getContent()`<!-- REF #document.getContent().Summary -->retourne un objet `4D.Blob` contenant l'intégralité du contenu d'un fichier<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
 
 **Valeur retournée**
 
@@ -319,7 +319,7 @@ To save a document's contents in a `BLOB` field:
 ```4d
  var $vPath : Text
  $vPath:=Select document("";"*";"Select a document";0)
- If(OK=1) //If a document has been chosen
+ If(OK=1) //Si un document a été sélectionné
     [aTable]aBlobField:=File($vPath;fk platform path).getContent()
  End if
 ```<!-- END REF --><!-- REF document.getIcon().Desc -->## .getIcon()
@@ -365,10 +365,10 @@ The `.getText()` function<!-- REF #document.getText().Summary -->returns the con
 
 Optionally, you can designate the character set to be used for reading the contents. You can pass either:
 
-- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or ""UTF-8"),
-- or in *charSetNum*, the MIBEnum ID (number) of the standard set name.
+- dans *charSetName*, une chaîne contenant le nom de jeu standard (par exemple "ISO-8859-1" ou ""UTF-8"),
+- ou dans *charSetNum*, l'ID MIBEnum (numéro) du nom du jeu standard.
 
-> For the list of character sets supported by 4D, refer to the description of the `CONVERT FROM TEXT` command.
+> Pour consulter la liste des jeux de caractères pris en charge par 4D, veuillez vous reporter à la description de la commande `CONVERT FROM TEXT`.
 
 If the document contains a Byte Order Mark (BOM), 4D uses the character set that it has set instead of the one specified in *charSetName* or *charSetNum* (this parameter is then ignored). If the document does not contain a BOM and if *charSetName* or *charSetNum* is omitted, by default 4D uses the "UTF-8" character set.
 
@@ -402,7 +402,7 @@ When you execute this code:
 
 
 ```4d
- $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 by default
+ $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 par défaut
  $txt:=$myFile.getText()
 ```
 ... you get:
