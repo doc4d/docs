@@ -251,7 +251,7 @@ The `.kind` property <!-- REF DataClassAttributeClass.kind.Summary -->returns th
 
 #### Ejemplo
 
-Given the following table and relation:
+Dada la siguiente tabla y relación:
 
 ![](/assets/en/API/dataclassAttribute3.png)
 
@@ -373,7 +373,7 @@ The `.relatedDataClass` property <!-- REF DataClassAttributeClass.relatedDataCla
 
 #### Ejemplo
 
-Given the following tables and relations:
+Dadas las siguientes tablas y relaciones:
 
 
 ![](assets/en/API/dataclassAttribute4.png)
