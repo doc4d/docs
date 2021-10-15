@@ -672,7 +672,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 <!-- REF #DataStoreClass.startRequestLog().Params -->
 | Paramètres | Type    |    | Description                          |
 | ---------- | ------- | -- | ------------------------------------ |
-| file       | 4D.File | -> | File object                          |
+| file       | 4D.File | -> | Objet File                           |
 | reqNum     | Integer | -> | Number of requests to keep in memory |
 <!-- END REF -->
 
