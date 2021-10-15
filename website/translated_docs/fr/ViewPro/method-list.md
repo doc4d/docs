@@ -628,7 +628,7 @@ $vpAreaObj:=VP Export to object("ViewProArea")
 $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ```
 
-### VP Copy to object
+### VP Copy to object ![](assets/en/new.png)
 
 <details><summary>Historique</summary>
 | Version | Modifications |
@@ -2403,7 +2403,7 @@ The results is:
 
 ## M
 
-### VP MOVE CELLS
+### VP MOVE CELLS ![](assets/en/new.png)
 
 <details><summary>Historique</summary>
 | Version | Modifications |
@@ -2416,11 +2416,11 @@ The results is:
 
 <!-- REF #_method_.VP MOVE CELLS.Params -->
 
-| Paramètres  | Type |       | Description                                             |
-| ----------- | ---- | ----- | ------------------------------------------------------- |
-| originRange |      | Objet | ->|Cell range to copy from                              |
-| targetRange |      | Objet | ->|Target range for the values, formatting and formulas |
-| options     |      | Objet | ->|Additional options                                   |
+| Paramètres  | Type  |    | Description                                          |
+| ----------- | ----- | -- | ---------------------------------------------------- |
+| originRange | Objet | -> | Cell range to copy from                              |
+| targetRange | Objet | -> | Target range for the values, formatting and formulas |
+| options     | Objet | -> | Additional options                                   |
 
 <!-- END REF -->  
 
@@ -2436,10 +2436,10 @@ In *targetRange*, pass the range of cells where the cell values, style, and form
 
 The *options* parameter has several properties:
 
-| Propriété    | Type        | Description                                                                                                            |
-| ------------ | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
-| copy         | Booléen     | *False* (default) to remove the copied values, formatting and formulas after the command executes. *True* to keep them |
-| pasteOptions | Entier long | Specifies what is pasted. Valeurs possibles : <p><table><tr><th>Propriété</th><th>Description</th></tr><tr><td>`vk clipboard options all`</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes values and formatting.</td></tr></table></p>                                                |
+| Propriété    | Type        | Description                                                                                                                                                                                            |
+| ------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| copy         | Booléen     | Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li> |
+| pasteOptions | Entier long | Specifies what is pasted. Valeurs possibles : <p><table><tr><th>Propriété</th><th>Description</th></tr><tr><td>`vk clipboard options all`</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes values and formatting.</td></tr></table></p>                                                                                                                                |
 
 If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
 
@@ -2593,7 +2593,7 @@ $cellStyle.font:=VP Object to font($font)
 
 ## P
 
-### VP PASTE FROM OBJECT
+### VP PASTE FROM OBJECT ![](assets/en/new.png)
 
 <details><summary>Historique</summary>
 | Version | Modifications |
