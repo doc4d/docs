@@ -2445,9 +2445,9 @@ The results is:
 
 |Parameter|Type||Description|
 |---|---|---|---|
-|originRange||Object|->|Cell range to copy from|
-|targetRange||Object|->|Target range for the values, formatting and formulas|
-|options||Object|->|Additional options|
+|originRange|Object|->|Cell range to copy from|
+|targetRange|Object|->|Target range for the values, formatting and formulas|
+|options|Object|->|Additional options|
 
 <!-- END REF -->  
 
@@ -2465,7 +2465,7 @@ The *options* parameter has several properties:
 
 |Property|Type|Description|
 |---|---|---|
-|copy|Boolean|*False* (default) to remove the copied values, formatting and formulas after the command executes. *True* to keep them|
+|copy|Boolean|Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li>|
 |pasteOptions|Longint|Specifies what is pasted. Possible values: <p><table><tr><th>Property</th><th>Description</th></tr><tr><td>`vk clipboard options all`</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes values and formatting.</td></tr></table></p>|
 
 If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
