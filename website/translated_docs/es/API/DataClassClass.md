@@ -54,7 +54,7 @@ $compCity:=ds.Company["city"] //returns the city attribute in the Company datacl
 
 #### Ejemplo 2
 
-Considering the following database structure:
+Considerando la siguiente estructura de la base:
 
 ![](assets/en/API/dataclassAttribute.png)
 
@@ -465,7 +465,7 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 ```
 
 ```4d
-  // SearchDuplicate method
+  // método SearchDuplicate 
   // SearchDuplicate(entity_to_search;dataclass_name)
 
  #DECLARE ($pet : Object ; $dataClassName : Text)
@@ -518,7 +518,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
  #DECLARE ($entity : Object)  
  var $status : Object
 
- computeEmployeeNumber($entity) //do some actions on entity
+ computeEmployeeNumber($entity) //realizar algunas acciones en la entidad
 
  $status:=$entity.save()
  if($status.success)
