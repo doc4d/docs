@@ -114,7 +114,7 @@ Debe prestar atención a los siguientes aspectos de la conversión:
 
 
 
-You want to create a new empty collection and assign it to a 4D collection variable:
+Quiere crear una nueva colección vacía y asignarla a una variable colección 4D:
 
 ```4d
  var $myCol : Collection
@@ -124,7 +124,7 @@ You want to create a new empty collection and assign it to a 4D collection varia
 
 #### Ejemplo 2
 
-You want to create a prefilled collection:
+Quiere crear una colección precargada:
 
 ```4d
  var $filledColl : Collection
@@ -134,7 +134,7 @@ You want to create a prefilled collection:
 
 #### Ejemplo 3
 
-You create a new collection and then add a new element:
+Se crea una nueva colección y se añade un nuevo elemento:
 
 ```4d
  var $coll : Collection
@@ -169,7 +169,7 @@ You create a new collection and then add a new element:
 
 #### Descripción
 
-The `New shared collection` command <!-- REF #_command_.New shared collection.Summary --> creates a new empty or prefilled shared collection<!-- END REF --> and returns its reference.
+El comando `New shared collection` <!-- REF #_command_.New shared collection.Summary --> crea una nueva colección compartida vacía o precargada<!-- END REF --> y devuelve su referencia.
 
 Adding an element to this collection must be surrounded by the [`Use...End`](Concepts/shared.md#useend-use) use structure, otherwise an error is generated. Reading an element without a structure is, however, possible.
 > For more information on shared collections, please refer to the [Shared objects and collections](Concepts/shared.md) page.
