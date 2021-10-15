@@ -884,26 +884,26 @@ End if
 | propertyPath | Texto      | -> | Rota de propriedade de objeto cujos valores serão extraídos para nova coleção                                                         |
 | targetpath   | Texto      | -> | Rota de propriedade alvo ou nome propriedade                                                                                          |
 | option       | Inteiro    | -> | `ck keep null`: inclui propriedades null na coleção retornada (ignorado como padrão). Parâmetro ignorado se for passado *targetPath*. |
-| Result       | Collection | <- | New collection containing extracted values                                                                                            |
+| Resultados   | Collection | <- | Nova collection contendo valores extraídos                                                                                            |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.extract()` function <!-- REF #collection.extract().Summary -->creates and returns a new collection containing *propertyPath* values extracted from the original collection of objects<!-- END REF -->.
-> This function does not modify the original collection.
+A função `.extract()` <!-- REF #collection.extract().Summary -->cria e retorna uma nova coleção contendo valores *propertyPath* extraídos da coleção original de objetos<!-- END REF -->.
+> Essa função não modifica a coleção original.
 
-The contents of the returned collection depends on the *targetPath* parameter:
+Os conteúdos da coleção retornada depende do parâmetro *targetPath*:
 
-*   If the *targetPath* parameter is omitted, `.extract()` populates the new collection with the *propertyPath* values of the original collection.
+*   Se o parâmetro *targetPath* for omitido, `.extract()` preenche a nova coleção com os valores *propertyPath* da coleção original.
 
-    By default, elements for which *propertyPath* is null or undefined are ignored in the resulting collection. You can pass the `ck keep null` constant in the *option* parameter to include these values as null elements in the returned collection.
-
-
-*   If one or more *targetPath* parameter(s) are passed, `.extract()` populates the new collection with the *propertyPath* properties and each element of the new collection is an object with *targetPath* properties filled with the corresponding *propertyPath* properties. Null values are kept (*option* parameter is ignored with this syntax).
+    Como padrão, elementos para os quais *propertyPath* for null ou undefined são ignorados na coleção resultante. Pode passar a constante `ck keep null` no parâmetro *option* para incluir esses valores como elementos null na coleção retornada.
 
 
-#### Example 1
+*   Se um ou mais parâmetros *targetPath* forem passados,, `.extract()` preenche a nova coelção com as propriedades *propertyPath* e cada elemento da nova coleção é um objeto com as propriedades *targetPath* preenchidas com as propriedades correspondentes *propertyPath*. Valores null são mantidos (o parâmetro *option* é ignorado com essa sintaxe).
+
+
+#### Exemplo 1
 
 ```4d
 var $c : Collection
@@ -917,7 +917,7 @@ $c2:=$c.extract("name";ck keep null) //$c2=[Cleveland,null,Blountsville,null]
 ```
 
 
-#### Example 2
+#### Exemplo 2
 
 
 ```4d
@@ -955,29 +955,29 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 
 
 <!-- REF #collection.fill().Params -->
-| Parameter | Type                                            |    | Description                            |
-| --------- | ----------------------------------------------- |:--:| -------------------------------------- |
-| value     | number, Text, Collection, Object, Date, Boolean | -> | Filling value                          |
-| startFrom | Integer                                         | -> | Start index (included)                 |
-| end       | Integer                                         | -> | End index (not included)               |
-| Result    | collection                                      | <- | Original collection with filled values |
+| Parâmetros | Tipo                                            |    | Descrição                                |
+| ---------- | ----------------------------------------------- |:--:| ---------------------------------------- |
+| value      | number, Text, Collection, Object, Date, Boolean | -> | Valores preenchido                       |
+| startFrom  | Integer                                         | -> | Início do índice (incluído)              |
+| end        | Integer                                         | -> | Final do índice (não incluído)           |
+| Resultados | coleção                                         | <- | Coleção original com valores preenchidos |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.fill()` function <!-- REF #collection.fill().Summary -->fills the collection with the specified *value*, optionally from *startFrom* index to *end* index, and returns the resulting collection<!-- END REF -->.
-> This function modifies the original collection.
+A função `.fill()` <!-- REF #collection.fill().Summary -->retorna a coleção com o *value* especificado, opcionalmente do índice*startFrom* até o índice *end*, e retorna a coleção resultante<!-- END REF -->.
+> Essa função modifica a coleção original.
 
-*   If the *startFrom* parameter is omitted, *value* is set to all collection elements (*startFrom*=0).
-*   If the *startFrom* parameter is passed and *end* omitted, *value* is set to collection elements starting at *startFrom* to the last element of the collection (*end*=length).
-*   If both the *startFrom* parameter and *end* are passed, *value* is set to collection elements starting at *startFrom* to the element *end*.
+*   Se o parâmetro *startFrom* for omitido, *value* é estabelecido para todos os elementos coleção (*startFrom*=0).
+*   Se o parâmetro *startFrom* for passado e o parâmetro*end* for omitido, *value* é estabelecido para elementos de coleção começando com *startFrom* até o elemento final da coleção (*end*=length).
+*   Se tanto *startFrom* quanto *end* forem passados, *value* é estabelecido para elementos coleção começando em *startFrom* ao elemento *end*.
 
-In case of inconsistency, the following rules apply:
+Em caso de inconsistências, as regras abaixos são seguidas:
 
-*   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the collection). If the calculated value is negative, *startFrom* is set to 0.
-*   If *end* < 0 , it is recalculated as *end:=end+length*.
-*   If *end* < *startFrom* (passed or calculated values), the method does nothing.
+*   Se *index* < 0, será recalculado como *startFrom:=startFrom+length* (é considerado como o offset do final da coleção). Se o valor calculado for negativo, *startFrom* toma o valor 0.
+*   Se *end* < 0 , é recalculado como sendo *end:=end+length*.
+*   Se *end* < *startFrom* (valores passados ou calculados), o método não faz nada.
 
 
 #### Exemplo
@@ -1011,25 +1011,25 @@ In case of inconsistency, the following rules apply:
 
 
 <!-- REF #collection.filter().Params -->
-| Parameter  | Type       |    | Description                                                |
-| ---------- | ---------- |:--:| ---------------------------------------------------------- |
-| methodName | Texto      | -> | Name of the function to call to filter the collection      |
-| param      | Mixed      | -> | Parameter(s) to pass to *methodName*                       |
-| Result     | Collection | <- | New collection containing filtered elements (shallow copy) |
+| Parâmetros | Tipo       |    | Descrição                                                     |
+| ---------- | ---------- |:--:| ------------------------------------------------------------- |
+| methodName | Texto      | -> | Nome da função a chamar para filtrar a coleção                |
+| param      | Mixed      | -> | Parâmetros a passar para *methodName*                         |
+| Resultados | Collection | <- | Nova coleção contendo elementos filtrados (cópia superficial) |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.filter()` function <!-- REF #collection.filter().Summary -->returns a new collection containing all elements of the original collection for which *methodName* method result is **true**<!-- END REF -->. This function returns a ***shallow copy***, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.
-> This function does not modify the original collection.
+A função `.filter()` <!-- REF #collection.filter().Summary -->retorna uma nova coleção contendo todos os elementos da coleção original para a qual o resultado do método *methodName*for **true**<!-- END REF -->. Essa função retorna uma ***shallow copy***/cópia superficial, o que significa que objetos ou coleções em ambas as coleções partilham a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+> Essa função não modifica a coleção original.
 
-Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. can perform any test, with or without the parameter(s). This method receives an `Object` in first parameter ($1) and must set *$1.result* to **true** for each element fulfilling the condition and thus, to push to the new collection.
+Em *methodName*, passe o nome do método para usar para avliar elementos collection, junto com os parâmetros em *param* (opcional). *methodName* pode realizar qualquer teste, com ou sem os parâmetros. Esse método recebe um `Objeto` no primeiro parâmetro ($1) e deve estabelecer *$1.result* como **true** para cada elemento que preenche a condição e assim, enviado para a nova coleção.
 
 *methodName* recebe os parâmetros abaixo:
 
-*   in *$1.value*: element value to be filtered
-*   in *$2*: *param*
+*   em *$1.value*: valor elemento a ser filtrado
+*   em *$2*: *param*
 *   *$N...*: param2...paramN
 
 *methodName* estabelece os parâmetros abaixo:
@@ -1109,7 +1109,7 @@ The code for ***TypeLookUp*** is:
 | ---------- | ------- |:--:| -------------------------------------------- |
 | startFrom  | Integer | -> | Index to start the search at                 |
 | methodName | Texto   | -> | Name of the function to call for the find    |
-| param      | any     | -> | Parameter(s) to pass to *methodName*         |
+| param      | any     | -> | Parâmetros a passar para *methodName*        |
 | Result     | any     | <- | First value found, or Undefined if not found |
 <!-- END REF -->
 
@@ -1208,7 +1208,7 @@ The code for ***FindCity*** is:
 | ---------- | ------- |:--:| ---------------------------------------------- |
 | startFrom  | Integer | -> | Index to start the search at                   |
 | methodName | Texto   | -> | Name of the function to call for the find      |
-| param      | any     | -> | Parameter(s) to pass to *methodName*           |
+| param      | any     | -> | Parâmetros a passar para *methodName*          |
 | Result     | Integer | <- | Index of first value found, or -1 if not found |
 <!-- END REF -->
 
@@ -1766,7 +1766,7 @@ If the collection is empty, `.min()` returns *Undefined*.
 
 The `.orderBy()` function <!-- REF #collection.orderBy().Summary -->returns a new collection containing all elements of the collection in the specified order<!-- END REF -->.
 
-This function returns a *shallow copy*, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.
+This function returns a *shallow copy*, which means that objects or collections in both collections share the same reference. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 If you pass no parameter, the function orders scalar values in the collection in ascending order (other element types such as objects or collections are returned unordered). You can modify this automatic order by passing the `ck ascending` or `ck descending` constants in the *ascOrDesc* parameter (see below).
@@ -1905,7 +1905,7 @@ Ordering with a property path:
 
 The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->returns a new collection containing all elements of the collection in the order defined through the *methodName* method<!-- END REF -->.
 
-This function returns a *shallow copy*, which means that objects or collections in both collections share the same reference. If the original collection is a shared collection, the returned collection is also a shared collection.
+This function returns a *shallow copy*, which means that objects or collections in both collections share the same reference. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 In *methodName*, pass a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. You can provide additional parameters to *methodName* if necessary.
@@ -2120,7 +2120,7 @@ You want to sort the resutling collection:
 
 #### Description
 
-The `.query()` function <!-- REF #collection.query().Summary -->returns all elements of a collection of objects that match the search conditions <!-- END REF -->defined by *queryString* and (optionally) *value* or *querySettings*. If the original collection is a shared collection, the returned collection is also a shared collection.
+The `.query()` function <!-- REF #collection.query().Summary -->returns all elements of a collection of objects that match the search conditions <!-- END REF -->defined by *queryString* and (optionally) *value* or *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 The *queryString* parameter uses the following syntax:
@@ -2220,7 +2220,7 @@ More examples of queries can be found in the `dataClass.query()` page.
 | ---------- | ----------------------------------------------- |:--:| -------------------------------------------------------------------- |
 | methodName | Texto                                           | -> | Name of the function to call to process collection elements          |
 | initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *methodName* |
-| param      | expression                                      | -> | Parameter(s) to pass to *methodName*                                 |
+| param      | expression                                      | -> | Parâmetros a passar para *methodName*                                |
 | Result     | Text, Number, Object, Collection, Date, Boolean | <- | Result of the accumulator value                                      |
 <!-- END REF -->
 
@@ -2433,7 +2433,7 @@ By default, new elements are filled will **null** values. You can specify the va
 
 #### Description
 
-The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a deep copy of the collection with all its elements in reverse order<!-- END REF -->. If the original collection is a shared collection, the returned collection is also a shared collection.
+The `.reverse()` function <!-- REF #collection.reverse().Summary -->returns a deep copy of the collection with all its elements in reverse order<!-- END REF -->. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 #### Exemplo
@@ -2511,14 +2511,14 @@ If the collection is empty, this method does nothing.
 | Parameter | Type       |    | Description                                              |
 | --------- | ---------- |:--:| -------------------------------------------------------- |
 | startFrom | Integer    | -> | Index to start the search at (included)                  |
-| end       | Integer    | -> | End index (not included)                                 |
+| end       | Integer    | -> | Final do índice (não incluído)                           |
 | Result    | Collection | <- | New collection containing sliced elements (shallow copy) |
 <!-- END REF -->
 
 
 #### Description
 
-The `.slice()` function <!-- REF #collection.slice().Summary -->returns a portion of a collection into a new collection<!-- END REF -->, selected from *startFrom* index to *end* index (end not included). This function returns a *shallow copy* of the collection. If the original collection is a shared collection, the returned collection is also a shared collection.
+The `.slice()` function <!-- REF #collection.slice().Summary -->returns a portion of a collection into a new collection<!-- END REF -->, selected from *startFrom* index to *end* index (end not included). This function returns a *shallow copy* of the collection. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 The returned collection contains the element specified by *startFrom* and all subsequent elements up to, but not including, the element specified by *end*. If only the *startFrom* parameter is specified, the returned collection contains all elements from *startFrom* to the last element of the original collection.
@@ -2564,7 +2564,7 @@ The returned collection contains the element specified by *startFrom* and all su
 | ---------- | -------- |:--:| --------------------------------------------------------- |
 | startFrom  | Integer  | -> | Índice para início do teste em                            |
 | methodName | Texto    | -> | Nome do método para chamar para o teste                   |
-| param      | Mixed    | -> | Parameter(s) to pass to *methodName*                      |
+| param      | Mixed    | -> | Parâmetros a passar para *methodName*                     |
 | Result     | Booleano | <- | True if at least one element successfully passed the test |
 <!-- END REF -->
 
