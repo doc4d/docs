@@ -92,19 +92,19 @@ Si no se pasa ningún parámetro, `New collection` crea una colección vacía y 
 Debe asignar la referencia devuelta a una variable 4D del tipo Collection.
 > Keep in mind that `var : Collection` or `C_COLLECTION` statements declare a variable of the `Collection` type but does not create any collection.
 
-Optionally, you can prefill the new collection by passing one or several *value*(s) as parameter(s).
+Opcionalmente, puede prellenar la nueva colección pasando uno o varios *valores* como parámetro(s).
 
-Otherwise, you can add or modify elements subsequently through assignment. Por ejemplo:
+De lo contrario, puede añadir o modificar elementos posteriormente por asignación. Por ejemplo:
 
 ```4d
  myCol[10]:="My new element"
 ```
 
-If the new element index is beyond the last existing element of the collection, the collection is automatically resized and all new intermediary elements are assigned a **null** value.
+Si el nuevo índice del elemento está más allá del último elemento existente de la colección, la colección se redimensiona automáticamente y a todos los nuevos elementos intermedios se les asigna un valor **null**.
 
-You can pass any number of values of any supported type (number, text, date, picture, pointer, object, collection...). Unlike arrays, collections can mix data of different types.
+Puede pasar cualquier número de valores de todos los tipos soportados (number, text, date, picture, pointer, object, collection...). A diferencia de los arrays, las colecciones pueden mezclar datos de diferentes tipos.
 
-You must pay attention to the following conversion issues:
+Debe prestar atención a los siguientes aspectos de la conversión:
 
 *   If you pass a pointer, it is kept "as is"; it is evaluated using the `JSON Stringify` command
 *   Dates are stored as "yyyy-mm-dd" dates or strings with the "YYYY-MM-DDTHH:mm:ss.SSSZ" format, according to the current "dates inside objects" database setting. When converting 4D dates into text prior to storing them in the collection, by default the program takes the local time zone into account. You can modify this behavior using the `Dates inside objects` selector of the `SET DATABASE PARAMETER` command.
@@ -1973,7 +1973,7 @@ $strings2:=$string1s.orderByMethod("sortCollection";sk strict)
 // result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ```
 
-The ***sortCollection*** method:
+El método ***sortCollection***:
 
 ```4d
 var$1Object
@@ -2002,9 +2002,9 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 **.pop()** : any <!-- END REF -->
 
 <!-- REF #collection.pop().Params -->
-| Parámetros | Tipo |    | Descripción                |
-| ---------- | ---- |:--:| -------------------------- |
-| Resultado  | any  | <- | Last element of collection |
+| Parámetros | Tipo |    | Descripción                     |
+| ---------- | ---- |:--:| ------------------------------- |
+| Resultado  | any  | <- | Último elemento de la colección |
 <!-- END REF -->
 
 
@@ -2076,7 +2076,7 @@ The `.push()` function <!-- REF #collection.push().Summary -->appends one or mor
 
 #### Ejemplo 2
 
-You want to sort the resutling collection:
+Quiere ordenar la colección resultante:
 
 ```4d
  var $col; $sortedCol : Collection
