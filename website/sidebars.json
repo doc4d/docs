@@ -216,7 +216,7 @@
 	]
 	},
 	"Extensions": {
-		"Overview": ["Project/components"],
+		"Extensions": ["Extensions/components"],
 		"4D View Pro":["ViewPro/getting-started","ViewPro/configuring","ViewPro/formulas","ViewPro/method-list"]
 			}
 	

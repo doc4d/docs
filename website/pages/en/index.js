@@ -68,9 +68,10 @@ class Index extends React.Component {
 	  	 debugLogFiles: <translate>Description of log files</translate>,
 	   cli: <translate>Command Line Interface</translate>,
      viewPro: <translate>4D View Pro</translate>,
-	  preferences:<translate>Preferences</translate>,
-	  third-party-comp:<translate>Third-party Components</translate>,
-	  third-party-plug:<translate>Plugins</translate>
+	  preferences: <translate>Preferences</translate>,
+	  overview: <translate>Overview</translate>,
+	  comp: <translate>Components on GitHub</translate>,
+	  plug: <translate>Plugins on GitHub</translate>
     };
 
     return (
@@ -168,10 +169,10 @@ class Index extends React.Component {
               align="left"
               contents={[
                 {
-                  content: `[${subContents.extensions}](${siteConfig.baseUrl}${this.props.language}/Extensions/components.html)<br>,
-				  [${subContents.viewPro}](${siteConfig.baseUrl}${this.props.language}/ViewPro/getting-started.html),
-				  [${subContents.third-party-comp}](https://github.com/search?q=4d-component)<br>,
-				  [${subContents.third-party-plug}](https://github.com/search?q=4d-plugin)<br>`,
+                  content: `[${subContents.overview}](${siteConfig.baseUrl}${this.props.language}/Extensions/components.html)<br>
+				  [${subContents.viewPro}](${siteConfig.baseUrl}${this.props.language}/ViewPro/getting-started.html)<br>
+				  [${subContents.comp}](https://github.com/search?q=4d-component)<br>
+				  [${subContents.plug}](https://github.com/search?q=4d-plugin)`,
                   image: `${siteConfig.baseUrl}img/illu_Extensions.png`,
                   imageAlign: "top",
                   imageAlt: "Extensions",

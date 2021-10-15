@@ -412,7 +412,7 @@
         "title": "Overview"
       },
       "Extensions/components": {
-        "title": "About Components"
+        "title": "Overview"
       },
       "FormEditor/stylesheets": {
         "title": "Style sheets"
@@ -724,9 +724,6 @@
       "Project/compiler": {
         "title": "Compilation"
       },
-      "Project/components": {
-        "title": "Extensions"
-      },
       "Project/creating": {
         "title": "Working with a project"
       },
@@ -893,7 +890,7 @@
     "links": {
       "Docs": "Docs",
       "API": "API",
-      "4D Language": "4D Language",
+      "4D Language ": "4D Language ",
       "Extensions": "Extensions",
       "v19 R3 BETA": "v19 R3 BETA",
       "v19 R2": "v19 R2",
@@ -923,7 +920,7 @@
       "Menus": "Menus",
       "Build application": "Build application",
       "Class API Reference": "Class API Reference",
-      "Overview": "Overview",
+      "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }
   },
@@ -960,12 +957,16 @@
     "Command Line Interface|no description given": "Command Line Interface",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferences",
+    "Overview|no description given": "Overview",
+    "Components on GitHub|no description given": "Components on GitHub",
+    "Plugins on GitHub|no description given": "Plugins on GitHub",
     "Getting started|no description given": "Getting started",
     "Core Development|no description given": "Core Development",
     "Administration|no description given": "Administration",
     "Web applications|no description given": "Web applications",
     "Mobile applications|no description given": "Mobile applications",
     "Desktop applications|no description given": "Desktop applications",
+    "Extensions|no description given": "Extensions",
     "Documentation updates|no description given": "Documentation updates",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
