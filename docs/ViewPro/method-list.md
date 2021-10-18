@@ -342,19 +342,20 @@ $all:=VP All("ViewProArea") // all cells of the current sheet
 
 ### VP Cell
 
-<!-- REF #_method_.VP Cell.Syntax -->**VP Cell** ( *vpAreaName* : Text { ; *sheet* : Integer } )  : Object<!-- END REF -->  
+<!-- REF #_method_.VP Cell.Syntax -->**VP Cell** ( *vpAreaName* ; *column* : Integer ; *row* : Integer ; Text { ; *sheet* : Integer } )  : Object<!-- END REF -->  
 
 <!-- REF #_method_.VP Cell.Params -->
 
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName| Text|->|4D View Pro area form object name|
+|column|Longint|->|Sheet index (current sheet if omitted)|
+|row|Longint|->|Sheet index (current sheet if omitted)|
 |sheet|Integer|->|Sheet index (current sheet if omitted)|	
 |Result|Object|<-|Range object of all cells|
 <!-- END REF -->  
 
 #### Description
-
 
 The `VP Cell` command <!-- REF #_method_.VP Cell.Summary -->returns a new range object referencing a specific cell<!-- END REF -->. 
 
@@ -362,7 +363,13 @@ The `VP Cell` command <!-- REF #_method_.VP Cell.Summary -->returns a new range 
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used by default. 
+The *column* parameter defines the column of the cell range's position. Pass the column index in this parameter.
+
+The *row* parameter defines the row of the cell range's position. Pass the row index in this parameter.
+
+In the optional *sheet* parameter, you can indicate the index of the sheet where the range will be defined. If omitted or if you pass `vk current sheet`, the current spreadsheet is used by default. 
+
+> indexing starts at 0.
 
 #### Example  
 
