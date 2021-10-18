@@ -169,7 +169,7 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 
 | Paramètres | Type    | Description                                    |
 | ---------- | ------- | ---------------------------------------------- |
-| $draft     | Booléen | True to add the "draft" flag to the message    |
+| $draft     | Boolean | True to add the "draft" flag to the message    |
 | $seen      | Booléen | True to add the "seen" flag to the message     |
 | $flagged   | Booléen | True to add the "flagged" flag to the message  |
 | $answered  | Booléen | True to add the "answered" flag to the message |
