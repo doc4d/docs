@@ -4,51 +4,51 @@ title: はじめに
 ---
 
 
-4D View Pro is a [4D component](Concepts/components.md) that includes a [4D form area](FormObjects/viewProArea_overview.md) an specific [methods](method-list.md). It allows you to embed advanced spreadsheet features in your projects.
+4D View Pro は、[4D フォームエリア](FormObjects/viewProArea_overview.md) と専用の [メソッド](method-list.md) が含まれる [4Dコンポーネント](Concepts/components.md) です。 これにより、先進的なスプレッドシート機能をプロジェクトに埋め込むことが可能です。
 
 
 ![](assets/en/ViewPro/vpSpreadsheet.PNG)
 
-スプレッドシートとは、セルのグリッドを格納したアプリケーションのことで、これらのセルに情報を入力したり、計算を実行させたり、あるいはピクチャーを表示したりすることができます。 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/v14/online/overview.html) integrated in 4D.
+スプレッドシートとは、セルのグリッドを格納したアプリケーションのことで、これらのセルに情報を入力したり、計算を実行させたり、あるいはピクチャーを表示したりすることができます。 4D View Proは、4Dに統合された [SpreadJS スプレッドシートソリューション](https://www.grapecity.com/spreadjs/docs/v14/online/overview.html) に基づいて動作します。
 
-Embedding 4D View Pro areas in your forms allows you to import and export spreadsheets documents using the 4D View Pro commands.
+フォームに 4D View Pro エリアを埋め込むことで、4D View Pro コマンドを使ってスプレッドシートドキュメントを読み込んだり書き出したりすることができます。
 
 
 ## インストールとアクティベーション
 
-4D View Pro features are directly included in 4D, making it easy to deploy and manage. No additional installation is required.
+4D View Pro 機能は 4D に直接含まれているため、配布と運用が容易です。 追加のインストールは必要ありません。
 
-However, 4D View Pro requires a license. You need to activate this license in your application in order to use its features. When using this component without a license, the contents of an object that requires a 4D View Pro feature are not displayed at runtime, an error message is displayed instead:
+しかしながら、4D View Pro はライセンスを必要とします。 これらの機能を使用するには、アプリケーションにおいて当該ライセンスを有効化しておく必要があります。 4D View ライセンスがインストールされていない場合、4D View Pro 機能を必要とするオブジェクトのコンテンツはランタイムでは表示されず、エラーメッセージだけが表示されます:
 
 ![](assets/en/ViewPro/licenseError.PNG)
 
 
-## Inserting a 4D View Pro area
+## 4D View Pro エリアを挿入する
 
-4D View Pro documents are displayed and edited manually in a [4D form object](FormObjects/viewProArea_overview.md) named 4D View Pro. To select this object, click on the last tool in the object bar:
+4D View Pro ドキュメントは 4D View Pro という名前の [4Dフォームオブジェクト](FormObjects/viewProArea_overview.md) 内に表示され、手動で編集されます。 このオブジェクトを選択するには、オブジェクトバーの最後のツールをクリックします:
 
 ![](assets/en/ViewPro/vpArea.PNG)
 
-You can also select a preconfigured 4D View Pro area in the [Object library](FormEditor/objectLibrary.md).
+また、[オブジェクトライブラリ](FormEditor/objectLibrary.md) であらかじめ設定された 4D View Pro エリアを選択することもできます。
 
-> 4D View Pro areas can also be [created and used offscreen](method-list.md#vp-run-offscreen-area).
+> 4D View Pro エリアは、[オフスクリーンでも作成・使用する](method-list.md#vp-run-offscreen-area) ことができます。
 
-You can [configure the area](configuring.md) using the Property List and 4D View Pro methods.
+[エリアの設定](configuring.md) は、プロパティリストと 4D View Pro メソッドを使っておこないます。
 
 
-## Selection, Input and Navigation Basics
+## セレクション、入力、およびナビゲージョンの基本
 
-Spreadsheets are composed of rows and columns. A number is associated with each row. A letter (or group of letters once the number of columns surpasses the number of letters in the alphabet) is associated with each column. The intersection of a row and a column makes a cell. Cells can be selected and their contents edited.
+スプレッドシートは行と列から構成されています。 各行には番号が割り当てられています。 各列には文字 (アルファベットの文字数を超えた場合には文字のグループ) が割り当てられています。 行と列の交差する場所がセルと呼ばれます。 セルを選択したり、そのコンテンツを編集したりすることができます。
 
-### Selecting cells, columns and rows
+### セル、列、および行の選択
 
-*   To select a cell, simply click on it or use the direction arrows on the keyboard. Its content (or formula) is displayed within the cell.
+*   セルを選択するには、単にセルをクリックするか、キーボードの矢印キーを使用します。 その中身 (あるいは式) がセル内に表示されます。
 
-*   To select several continuous cells, drag the mouse from one end of the selection to the other. You can also click on the two ends of the selection while holding down the Shift key.
+*   複数の連続したセルを選択するには、マウスをセレクションの端から端へとドラッグします。 また、Shiftキーを押しながらセレクションの二つの端をクリックすることでも選択可能です。
 
-*   To select all cells in the spreadsheet, click on the cell at the top left of the area: ![](assets/en/ViewPro/vpSelectAll.PNG)
+*   スプレッドシート内のセルをすべて選択するには、エリアの左上端にあるセルをクリックします: ![](assets/en/ViewPro/vpSelectAll.PNG)
 
-*   To select a column, click on the corresponding letter (or set of letters).
+*   列を選択するには、対応する文字 (アルファベット) をクリックします。
 
 *   To select a row, click on the corresponding number.
 
