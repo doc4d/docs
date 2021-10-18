@@ -71,7 +71,8 @@ class Index extends React.Component {
 	  preferences: <translate>Preferences</translate>,
 	  overview: <translate>Overview</translate>,
 	  comp: <translate>Developing Components</translate>,
-	  plug: <translate>Developing Plugins</translate>
+	  plug: <translate>Developing Plugins</translate>,
+	  working: <translate>Working with a project</translate>
     };
 
     return (
@@ -83,7 +84,8 @@ class Index extends React.Component {
               align="left"
               contents={[
                 {
-                  content: `[${subContents.installation}](${siteConfig.baseUrl}${this.props.language}/GettingStarted/installation.html)`,
+                  content: `[${subContents.installation}](${siteConfig.baseUrl}${this.props.language}/GettingStarted/installation.html)<br>
+				  [${subContents.working}](${siteConfig.baseUrl}${this.props.language}/GettingStarted/creating.html)`,
                   image: `${siteConfig.baseUrl}img/illu_GettingStarted.png`,
                   imageAlign: "top",
                   imageAlt: "Get started",
@@ -97,21 +99,18 @@ class Index extends React.Component {
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>
                   [${subContents.users}](${siteConfig.baseUrl}${this.props.language}/Users/overview.html)<br>
-				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)<br>
-				  [${subContents.components}](${siteConfig.baseUrl}${this.props.language}/Project/components.html)`,
+				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)`,
                   image: `${siteConfig.baseUrl}img/illu_CoreDevelopment.png`,
                   imageAlign: "top",
                   imageAlt: "Core",
                   title: <translate>Core Development</translate>,
                 },
                 {
-                  content: `[${subContents.webAdmin}](${siteConfig.baseUrl}${this.props.language}/Admin/webAdmin.html)<br>
-				[${subContents.dataExplorer}](${siteConfig.baseUrl}${this.props.language}/Admin/dataExplorer.html)<br>
-				[${subContents.serverAdmin}](${siteConfig.baseUrl}${this.props.language}/Admin/server-admin.html)<br>
-				[${subContents.licenses}](${siteConfig.baseUrl}${this.props.language}/Admin/licenses.html)<br>
+                  content: `[${subContents.serverAdmin}](${siteConfig.baseUrl}${this.props.language}/ServerWindow/overview.html)<br>
+				[${subContents.webAdmin}](${siteConfig.baseUrl}${this.props.language}/Admin/webAdmin.html)<br>
+				[${subContents.cli}](${siteConfig.baseUrl}${this.props.language}/Admin/cli.html)<br>
 				[${subContents.tls}](${siteConfig.baseUrl}${this.props.language}/Admin/tls.html)<br>
-	            [${subContents.cli}](${siteConfig.baseUrl}${this.props.language}/Admin/cli.html)<br>
-				[${subContents.debugLogFiles}](${siteConfig.baseUrl}${this.props.language}/Admin/debugLogFiles.html)<br>
+				[${subContents.licenses}](${siteConfig.baseUrl}${this.props.language}/Admin/licenses.html)<br>
 				[${subContents.msc}](${siteConfig.baseUrl}${this.props.language}/MSC/overview.html)<br>
                 [${subContents.backup}](${siteConfig.baseUrl}${this.props.language}/Backup/overview.html)<br>`,
                   image: `${siteConfig.baseUrl}img/illu_Administration.png`,

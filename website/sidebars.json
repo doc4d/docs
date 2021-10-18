@@ -1,8 +1,8 @@
 {
   "docs": {
-	"Getting Started":["GettingStarted/installation"]},
+	"Getting Started":["GettingStarted/installation","GettingStarted/creating"]},
   "Core":{  
-    "Project Management":["Project/overview","Project/creating","Project/architecture","Project/documentation","Project/compiler"],
+    "Project Management":["Project/overview","Project/architecture","Project/documentation","Project/compiler"],
 	"4D Language Concepts":
 	["Concepts/about","Concepts/quick-tour",
       {
@@ -52,12 +52,16 @@
 	"API/ZipFileClass",
 	"API/ZipFolderClass"
 	],
-  "Debugging":["Debugging/basics","Debugging/debugger","Debugging/breakpoints", "Debugging/debugging-remote"],
+  "Debugging":["Debugging/basics","Debugging/debugger","Debugging/breakpoints", "Debugging/debugging-remote","Debugging/debugLogFiles"],
   "Access Rights":["Users/overview","Users/editing"],
   "Preferences":["Preferences/overview","Preferences/general","Preferences/structure","Preferences/forms","Preferences/methods","Preferences/shortcuts"]},
   
   "Admin":{
-  "Administration":["Admin/webAdmin","Admin/dataExplorer","Admin/server-admin","Admin/licenses","Admin/tls","Admin/debugLogFiles","Admin/cli"],
+	"4D Server Administration Window":["ServerWindow/overview","ServerWindow/monitor","ServerWindow/users","ServerWindow/processes","ServerWindow/mainenance","ServerWindow/application-server","ServerWindow/sql-server","ServerWindow/http-server","ServerWindow/real-time-monitor"],
+  "Web Administration":["Admin/webAdmin","Admin/dataExplorer"],
+  "Command Line Interface":["Admin/cli"],
+  "TLS Protocol":["Admin/tls"],
+  "License Management":["Admin/licenses"],
 	"MSC":["MSC/overview","MSC/information","MSC/analysis","MSC/verify","MSC/backup","MSC/compact","MSC/rollback","MSC/restore","MSC/repair","MSC/encrypt"],
   "Backup and Restore":["Backup/overview","Backup/backup","Backup/settings","Backup/log","Backup/restore"]},
   "web":{

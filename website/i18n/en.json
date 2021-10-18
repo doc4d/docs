@@ -11,20 +11,14 @@
       "Admin/dataExplorer": {
         "title": "Web Data Explorer"
       },
-      "Admin/debugLogFiles": {
-        "title": "Description of log files"
-      },
       "Admin/licenses": {
         "title": "Managing 4D Licenses"
-      },
-      "Admin/server-admin": {
-        "title": "4D Server Administration Window"
       },
       "Admin/tls": {
         "title": "TLS Protocol (HTTPS)"
       },
       "Admin/webAdmin": {
-        "title": "Web Administration"
+        "title": "WebAdmin"
       },
       "API/BlobClass": {
         "title": "Blob"
@@ -222,6 +216,9 @@
       "Debugging/debugging-remote": {
         "title": "Debugging from remote machines"
       },
+      "Debugging/debugLogFiles": {
+        "title": "Description of log files"
+      },
       "Desktop/building": {
         "title": "Build Application"
       },
@@ -411,7 +408,13 @@
       "Events/overview": {
         "title": "Overview"
       },
-      "Extensions/components": {
+      "Extensions/develop-components": {
+        "title": "Developing Components"
+      },
+      "Extensions/develop-plug-ins": {
+        "title": "Developing Plug-ins"
+      },
+      "Extensions/overview": {
         "title": "Overview"
       },
       "FormEditor/stylesheets": {
@@ -617,6 +620,9 @@
       },
       "FormObjects/writeProAreaOverview": {
         "title": "4D Write Pro area"
+      },
+      "GettingStarted/creating": {
+        "title": "Working with a project"
       },
       "GettingStarted/installation": {
         "title": "Installation"
@@ -829,6 +835,33 @@
       "REST/REST_requests": {
         "title": "About REST Requests"
       },
+      "ServerWindow/application-server": {
+        "title": "Application Server Page"
+      },
+      "ServerWindow/http-server": {
+        "title": "HTTP Server Page"
+      },
+      "ServerWindow/maintenance": {
+        "title": "Maintenance Page"
+      },
+      "ServerWindow/monitor": {
+        "title": "Monitor Page"
+      },
+      "ServerWindow/overview": {
+        "title": "Overview"
+      },
+      "ServerWindow/processes": {
+        "title": "Processes Page"
+      },
+      "ServerWindow/real-time-monitor": {
+        "title": "Real Time Monitor Page"
+      },
+      "ServerWindow/sql-server": {
+        "title": "SQL Server Page"
+      },
+      "ServerWindow/users": {
+        "title": "Users Page"
+      },
       "Tags/tags": {
         "title": "Transformation tags"
       },
@@ -888,10 +921,6 @@
       }
     },
     "links": {
-      "Docs": "Docs",
-      "API": "API",
-      "4D Language ": "4D Language ",
-      "Extensions": "Extensions",
       "v19 R3 BETA": "v19 R3 BETA",
       "v19 R2": "v19 R2",
       "v19": "v19",
@@ -902,10 +931,15 @@
       "Project Management": "Project Management",
       "4D Language Concepts": "4D Language Concepts",
       "ORDA": "ORDA",
+      "Class API Reference": "Class API Reference",
       "Debugging": "Debugging",
       "Access Rights": "Access Rights",
       "Preferences": "Preferences",
-      "Administration": "Administration",
+      "4D Server Administration Window": "4D Server Administration Window",
+      "Web Administration": "Web Administration",
+      "Command Line Interface": "Command Line Interface",
+      "TLS Protocol": "TLS Protocol",
+      "License Management": "License Management",
       "MSC": "MSC",
       "Backup and Restore": "Backup and Restore",
       "Web Server": "Web Server",
@@ -919,7 +953,6 @@
       "Form Events": "Form Events",
       "Menus": "Menus",
       "Build application": "Build application",
-      "Class API Reference": "Class API Reference",
       "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }
@@ -958,8 +991,9 @@
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferences",
     "Overview|no description given": "Overview",
-    "Components on GitHub|no description given": "Components on GitHub",
-    "Plugins on GitHub|no description given": "Plugins on GitHub",
+    "Developing Components|no description given": "Developing Components",
+    "Developing Plugins|no description given": "Developing Plugins",
+    "Working with a project|no description given": "Working with a project",
     "Getting started|no description given": "Getting started",
     "Core Development|no description given": "Core Development",
     "Administration|no description given": "Administration",
