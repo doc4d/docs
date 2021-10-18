@@ -214,13 +214,13 @@
         "title": "Basics"
       },
       "Debugging/breakpoints": {
-        "title": "Breakpoints and Command Catching"
+        "title": "Points d'arrêt et points d'arrêt sur commande"
       },
       "Debugging/debugger": {
         "title": "Débogueur"
       },
       "Debugging/debugging-remote": {
-        "title": "Debugging from remote machines"
+        "title": "Débogage depuis des machines distantes"
       },
       "Desktop/building": {
         "title": "Générateur d'application"
