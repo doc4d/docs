@@ -579,7 +579,7 @@ Then this entity selection is updated with products and you want to share the pr
 <!-- REF #EntitySelectionClass.distinct().Params -->
 | Parámetros    | Tipo       |    | Descripción                                                      |
 | ------------- | ---------- |:--:| ---------------------------------------------------------------- |
-| attributePath | Text       | -> | Path of attribute whose distinct values you want to get          |
+| attributePath | Text       | -> | Ruta del atributo cuyos valores distintos desea obtener          |
 | option        | Integer    | -> | `dk diacritical`: diacritical evaluation ("A" # "a" for example) |
 | Resultado     | Collection | <- | Collection with only distinct values                             |
 <!-- END REF -->
