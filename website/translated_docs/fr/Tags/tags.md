@@ -102,7 +102,7 @@ Le code suivant, qui doit spécifier un chemin relatif pour chaque appel :
 <!--#4DBASE WEBFOLDER-->
 ```
 
-For example, to set a directory for the home page:
+Par exemple, pour définir un répertoire pour la page d'accueil :
 
 ```html
 /* Index.html */
@@ -116,7 +116,7 @@ For example, to set a directory for the home page:
 <!--#4DINCLUDE footer.html-->
 ```
 
-In the "head.html" file, the current folder is modified through `<!--#4DBASE -->`, without this changing its value in "Index.html":
+Dans le fichier "head.html", le dossier courant est modifié par `<!--#4DBASE -->`, sans que cela ne change sa valeur dans "Index.html" :
 
 ```html
 /* Head.htm */
