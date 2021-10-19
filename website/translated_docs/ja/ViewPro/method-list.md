@@ -16,12 +16,12 @@ title: Method List
 
 <!-- REF #_method_.VP ADD FORMULA NAME.Params -->
 
-| 引数         | タイプ    |    | 説明                                |
-| ---------- | ------ | -- | --------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name |
-| vpFormula  | テキスト   | -> | 4D View Pro formula               |
-| name       | テキスト   | -> | Name for the formula              |
-| options    | オブジェクト | -> | Options for the named formula     |
+| 引数         | タイプ    |    | 説明                            |
+| ---------- | ------ | -- | ----------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名       |
+| vpFormula  | テキスト   | -> | 4D View Pro formula           |
+| name       | テキスト   | -> | Name for the formula          |
+| options    | オブジェクト | -> | Options for the named formula |
 <!-- END REF -->  
 
 #### 説明
@@ -138,11 +138,11 @@ VP ADD SELECTION($currentSelection)
 
 <!-- REF #_method_.VP ADD SHEET.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
-| index      | 整数   | -> | Index of the new sheet            |
-| name       | テキスト | -> | Sheet name                        |	
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| index      | 整数   | -> | Index of the new sheet  |
+| name       | テキスト | -> | Sheet name              |	
 <!-- END REF --> 
 
 #### 説明
@@ -222,7 +222,7 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | styleName  | テキスト   | -> | Name of style                          |
 | styleObj   | オブジェクト | -> | Object defining attribute settings     |
 | scope      | 整数     | -> | Target scope (default = current sheet) |
@@ -295,7 +295,7 @@ will create and apply the following style object named *GreenDashDotStyle*:
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
 | 戻り値        | オブジェクト | <- | Range object of all cells              |
 <!-- END REF -->  
@@ -325,19 +325,20 @@ $all:=VP All("ViewProArea") // all cells of the current sheet
 
 ### VP Cell
 
-<!-- REF #_method_.VP Cell.Syntax -->**VP Cell** ( *vpAreaName* : Text { ; *sheet* : Integer } )  : Object<!-- END REF -->  
+<!-- REF #_method_.VP Cell.Syntax -->**VP Cell** ( *vpAreaName* ; *column* : Integer ; *row* : Integer ; Text { ; *sheet* : Integer } )  : Object<!-- END REF -->  
 
 <!-- REF #_method_.VP Cell.Params -->
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
+| column     | 倍長整数   | -> | Sheet index (current sheet if omitted) |
+| row        | 倍長整数   | -> | Sheet index (current sheet if omitted) |
 | sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
 | 戻り値        | オブジェクト | <- | Range object of all cells              |
 <!-- END REF -->  
 
 #### 説明
-
 
 The `VP Cell` command <!-- REF #_method_.VP Cell.Summary -->returns a new range object referencing a specific cell<!-- END REF -->.
 
@@ -345,7 +346,13 @@ The `VP Cell` command <!-- REF #_method_.VP Cell.Summary -->returns a new range 
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used by default.
+The *column* parameter defines the column of the cell range's position. Pass the column index in this parameter.
+
+The *row* parameter defines the row of the cell range's position. Pass the row index in this parameter.
+
+In the optional *sheet* parameter, you can indicate the index of the sheet where the range will be defined. If omitted or if you pass `vk current sheet`, the current spreadsheet is used by default.
+
+> indexing starts at 0.
 
 #### 例題
 
@@ -375,7 +382,7 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 
 | 引数          | タイプ    |    | 説明                                     |
 | ----------- | ------ | -- | -------------------------------------- |
-| vpAreaName  | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | column      | 整数     | -> | Column index                           |
 | row         | 整数     | -> | Row index                              |
 | columnCount | 整数     | -> | Number of columns                      |
@@ -424,7 +431,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 
 | 引数          | タイプ    |    | 説明                                     |
 | ----------- | ------ | -- | -------------------------------------- |
-| vpAreaName  | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | column      | 整数     | -> | Column index                           |
 | columnCount | 整数     | -> | Number of columns                      |
 | sheet       | 整数     | -> | Sheet index (current sheet if omitted) |
@@ -771,11 +778,11 @@ use the following code:
 
 <!-- REF #_method_.VP EXPORT DOCUMENT.Params -->
 
-| 引数         | タイプ    |    | 説明                                |
-| ---------- | ------ | -- | --------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name |
-| filePath   | テキスト   | -> | Pathname of the document          |
-| paramObj   | オブジェクト | -> | Export options                    |
+| 引数         | タイプ    |    | 説明                       |
+| ---------- | ------ | -- | ------------------------ |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名  |
+| filePath   | テキスト   | -> | Pathname of the document |
+| paramObj   | オブジェクト | -> | Export options           |
 <!-- END REF -->  
 
 #### 説明
@@ -925,11 +932,11 @@ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv 
 
 <!-- REF #_method_.VP Export to object.Params -->
 
-| 引数         | タイプ    |    | 説明                                |
-| ---------- | ------ | -- | --------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name |
-| option     | オブジェクト | -> | Export option                     |
-| 戻り値        | オブジェクト | <- | 4D View Pro object                |
+| 引数         | タイプ    |    | 説明                      |
+| ---------- | ------ | -- | ----------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名 |
+| option     | オブジェクト | -> | Export option           |
+| 戻り値        | オブジェクト | <- | 4D View Pro object      |
 <!-- END REF -->  
 
 #### 説明
@@ -1064,9 +1071,9 @@ End if
 
 <!-- REF #_method_.VP FLUSH COMMANDS.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
 <!-- END REF -->  
 
 #### 説明
@@ -1149,7 +1156,7 @@ See example for [`VP Object to font`](#vp-object-to-font).
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
 | 戻り値        | オブジェクト | <- | Range object of single cell            |
 <!-- END REF -->  
@@ -1315,10 +1322,10 @@ $colCount:=VP Get column count("ViewProarea")
 
 <!-- REF #_method_.VP Get current sheet.Params -->
 
-| 引数              | タイプ  |    | 説明                                |
-| --------------- | ---- | -- | --------------------------------- |
-| vpAreaName      | テキスト | -> | 4D View Pro area form object name |
-| Function result | 整数   | <- | Index of the current sheet        |
+| 引数              | タイプ  |    | 説明                         |
+| --------------- | ---- | -- | -------------------------- |
+| vpAreaName      | テキスト | -> | 4D View Pro フォームオブジェクト名    |
+| Function result | 整数   | <- | Index of the current sheet |
 <!-- END REF --> 
 
 #### 説明
@@ -1427,7 +1434,7 @@ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 
 | 引数         | タイプ  |    | 説明                                      |
 | ---------- | ---- | -- | --------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name       |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                 |
 | name       | テキスト | -> | Name of the named range                 |
 | scope      | 数値   | -> | Target scope (default=current sheet)    |
 | 戻り値        | テキスト | <- | Named formula or named range definition |
@@ -1520,7 +1527,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 | 引数         | タイプ    |    | 説明                                                  |
 | ---------- | ------ | -- | --------------------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name                   |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                             |
 | sheet      | 整数     | -> | Sheet index (current sheet if omitted)              |
 | 戻り値        | オブジェクト | <- | Object containing frozen column and row information |
 <!-- END REF -->  
@@ -1570,7 +1577,7 @@ The returned object contains, for example:
 
 | 引数         | タイプ    |    | 説明                                    |
 | ---------- | ------ | -- | ------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name     |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名               |
 | scope      | 数値     | -> | Target scope (default= current sheet) |
 | 戻り値        | コレクション | <- | Existing names in the defined scope   |
 <!-- END REF -->  
@@ -1615,7 +1622,7 @@ $list:=VP Get names("ViewProArea";2) //names in 3rd sheet
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
 | 戻り値        | オブジェクト | <- | Object of printing information         |
 <!-- END REF -->  
@@ -1806,10 +1813,10 @@ $currentSelection:=VP Get selection("myVPArea")
 
 <!-- REF #_method_.VP Get sheet count.Params -->
 
-| 引数              | タイプ  |    | 説明                                |
-| --------------- | ---- | -- | --------------------------------- |
-| vpAreaName      | テキスト | -> | 4D View Pro area form object name |
-| Function result | 整数   | <- | Number of sheets                  |
+| 引数              | タイプ  |    | 説明                      |
+| --------------- | ---- | -- | ----------------------- |
+| vpAreaName      | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| Function result | 整数   | <- | Number of sheets        |
 <!-- END REF --> 
 
 #### 説明
@@ -1842,11 +1849,11 @@ Get the sheet count and set the current sheet to the last sheet:
 
 <!-- REF #_method_.VP Get sheet index.Params -->
 
-| 引数              | タイプ  |    | 説明                                |
-| --------------- | ---- | -- | --------------------------------- |
-| vpAreaName      | テキスト | -> | 4D View Pro area form object name |
-| name            | テキスト | -> | Sheet name                        |
-| Function result | 整数   | <- | Sheet index                       |
+| 引数              | タイプ  |    | 説明                      |
+| --------------- | ---- | -- | ----------------------- |
+| vpAreaName      | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| name            | テキスト | -> | Sheet name              |
+| Function result | 整数   | <- | Sheet index             |
 <!-- END REF --> 
 
 #### 説明
@@ -1879,11 +1886,11 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
 
 <!-- REF #_method_.VP Get sheet name.Params -->
 
-| 引数              | タイプ  |    | 説明                                |
-| --------------- | ---- | -- | --------------------------------- |
-| vpAreaName      | テキスト | -> | 4D View Pro area form object name |
-| sheet           | 整数   | -> | Sheet index                       |
-| Function result | テキスト | <- | Sheet name                        |
+| 引数              | タイプ  |    | 説明                      |
+| --------------- | ---- | -- | ----------------------- |
+| vpAreaName      | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| sheet           | 整数   | -> | Sheet index             |
+| Function result | テキスト | <- | Sheet name              |
 <!-- END REF --> 
 
 #### 説明
@@ -1952,7 +1959,7 @@ End if
 
 | 引数              | タイプ  |    | 説明                                               |
 | --------------- | ---- | -- | ------------------------------------------------ |
-| vpAreaName      | テキスト | -> | 4D View Pro area form object name                |
+| vpAreaName      | テキスト | -> | 4D View Pro フォームオブジェクト名                          |
 | sheet           | 整数   | <- | Sheet index                                      |
 | Function result | ブール  | <- | True if print lines are visible, False otherwise |
 <!-- END REF --> 
@@ -2022,7 +2029,7 @@ VP SET CELL STYLE($range;$style)
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | styleName  | テキスト   | -> | Name of style                          |
 | scope      | 整数     | -> | Target scope (default = current sheet) |
 | 戻り値        | オブジェクト | <- | Style sheet object                     |
@@ -2071,7 +2078,7 @@ borderTop:{color:green,style:10}
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | scope      | 整数     | -> | Target scope (default = current sheet) |
 | 戻り値        | コレクション | <- | Collection of style sheet objects      |
 <!-- END REF -->  
@@ -2219,11 +2226,11 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 
 <!-- REF #_method_.VP IMPORT DOCUMENT.Params -->
 
-| 引数         | タイプ    |    | 説明                                |
-| ---------- | ------ | -- | --------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name |
-| filePath   | テキスト   | -> | Pathname of the document          |
-| paramObj   | オブジェクト | -> | Import options                    |
+| 引数         | タイプ    |    | 説明                       |
+| ---------- | ------ | -- | ------------------------ |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名  |
+| filePath   | テキスト   | -> | Pathname of the document |
+| paramObj   | オブジェクト | -> | Import options           |
 
 <!-- END REF -->  
 
@@ -2304,10 +2311,10 @@ Here's the result: ![example-import-csv](assets/en/ViewPro/vp-import-document-cs
 
 <!-- REF #_method_.VP IMPORT FROM OBJECT.Params -->
 
-| 引数         | タイプ    |    | 説明                                |
-| ---------- | ------ | -- | --------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name |
-| viewPro    | オブジェクト | -> | 4D View Pro object                |
+| 引数         | タイプ    |    | 説明                      |
+| ---------- | ------ | -- | ----------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名 |
+| viewPro    | オブジェクト | -> | 4D View Pro object      |
 
 <!-- END REF -->  
 
@@ -2476,7 +2483,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 | 引数         | タイプ    |    | 説明                                        |
 | ---------- | ------ | -- | ----------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name         |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                   |
 | rangeName  | テキスト   | -> | Existing range name                       |
 | scope      | 整数     | -> | Range location (current sheet if omitted) |
 | 戻り値        | オブジェクト | <- | Range object of name                      |
@@ -2516,9 +2523,9 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 
 <!-- REF #_method_.VP NEW DOCUMENT.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
 
 <!-- END REF -->  
 
@@ -2651,7 +2658,7 @@ See example the example from [VP Copy to object](#vp-copy-to-object)
 
 | 引数         | タイプ  |    | 説明                                     |
 | ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
 | sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
 
 <!-- END REF -->  
@@ -2696,9 +2703,9 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 
 <!-- REF #_method_.VP RECOMPUTE FORMULAS.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
 
 
 <!-- END REF -->  
@@ -2730,7 +2737,7 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 | 引数         | タイプ  |    | 説明                                                 |
 | ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name                  |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                            |
 | name       | テキスト | -> | Name of the named range or named formula to remove |
 | scope      | 整数   | -> | Target scope (default=current sheet)               |
 
@@ -2769,10 +2776,10 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 <!-- REF #_method_.VP REMOVE SHEET.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
-| index      | 整数   | -> | Index of the sheet to remove      |
+| 引数         | タイプ  |    | 説明                           |
+| ---------- | ---- | -- | ---------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名      |
+| index      | 整数   | -> | Index of the sheet to remove |
 <!-- END REF -->  
 
 
@@ -2847,7 +2854,7 @@ To remove all cell spans from this document:
 
 | 引数         | タイプ  |    | 説明                                     |
 | ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
 | styleName  | テキスト | -> | Name of style to remove                |
 | scope      | 整数   | -> | Target scope (default = current sheet) |
 
@@ -2884,7 +2891,7 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 | 引数         | タイプ  |    | 説明                                     |
 | ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
 | sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
 
 <!-- END REF -->  
@@ -2918,9 +2925,9 @@ VP RESET SELECTION("myVPArea")
 
 <!-- REF #_method_.VP RESUME COMPUTING.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
 
 <!-- END REF -->  
 
@@ -2950,7 +2957,7 @@ See example in [VP SUSPEND COMPUTING](#vp-suspend-computing).
 
 | 引数         | タイプ    |    | 説明                                     |
 | ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | row        | 整数     | -> | Row index                              |
 | rowCount   | 整数     | -> | Number of rows                         |
 | sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
@@ -3477,7 +3484,7 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 
 | 引数          | タイプ  |    | 説明                                     |
 | ----------- | ---- | -- | -------------------------------------- |
-| vpAreaName  | テキスト | -> | 4D View Pro area form object name      |
+| vpAreaName  | テキスト | -> | 4D View Pro フォームオブジェクト名                |
 | columnCount | 整数   | -> | Number of columns                      |
 | sheet       | 整数   | -> | Sheet index (current sheet if omitted) |
 
@@ -3512,10 +3519,10 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
-| index      | 整数   | <- | Index of the new current sheet    |
+| 引数         | タイプ  |    | 説明                             |
+| ---------- | ---- | -- | ------------------------------ |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名        |
+| index      | 整数   | <- | Index of the new current sheet |
 <!-- END REF --> 
 
 #### 説明
@@ -3548,10 +3555,10 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Params -->
 
-| 引数         | タイプ    |    | 説明                                |
-| ---------- | ------ | -- | --------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name |
-| formulaObj | オブジェクト | -> | フォーミュラオブジェクト                      |
+| 引数         | タイプ    |    | 説明                      |
+| ---------- | ------ | -- | ----------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名 |
+| formulaObj | オブジェクト | -> | フォーミュラオブジェクト            |
 
 <!-- END REF -->  
 
@@ -3719,7 +3726,7 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 
 | 引数         | タイプ    |    | 説明                                    |
 | ---------- | ------ | -- | ------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name     |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名               |
 | styleObj   | オブジェクト | -> | Style object                          |
 | sheet      | 整数     | -> | Sheet index (default = current sheet) |
 
@@ -3895,7 +3902,7 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 
 | 引数         | タイプ    |    | 説明                                                  |
 | ---------- | ------ | -- | --------------------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area form object name                   |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                             |
 | paneObj    | オブジェクト | -> | Object containing frozen column and row information |
 | sheet      | 整数     | -> | Sheet index (current sheet if omitted)              |
 
@@ -4105,7 +4112,7 @@ VP SET ROW ATTRIBUTES($row;$properties)
 
 | 引数         | タイプ  |    | 説明                                     |
 | ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name      |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
 | rowCount   | 整数   | -> | Number of rows                         |
 | sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
 
@@ -4169,10 +4176,10 @@ VP SET SELECTION($currentSelection)
 
 <!-- REF #_method_.VP SET SHEET COUNT.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
-| number     | 整数   | -> | Number of sheets                  |
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| number     | 整数   | -> | Number of sheets        |
 
 <!-- END REF -->  
 
@@ -4204,11 +4211,11 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 <!-- REF #_method_.VP SET SHEET NAME.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
-| name       | テキスト | -> | New name for the sheet            |
-| index      | 整数   | -> | Index of the sheet to be renamed  |
+| 引数         | タイプ  |    | 説明                               |
+| ---------- | ---- | -- | -------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名          |
+| name       | テキスト | -> | New name for the sheet           |
+| index      | 整数   | -> | Index of the sheet to be renamed |
 
 <!-- END REF -->  
 
@@ -4372,7 +4379,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 | 引数         | タイプ  |    | 説明                                                       |
 | ---------- | ---- | -- | -------------------------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name                        |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                                  |
 | visible    | ブール  | -> | Print lines displayed if True (default), hidden if False |
 | index      | 整数   | -> | Sheet index                                              |
 
@@ -4654,9 +4661,9 @@ VP SHOW CELL($displayCell;vk position top;vk position right)
 
 <!-- REF #_method_.VP SUSPEND COMPUTING.Params -->
 
-| 引数         | タイプ  |    | 説明                                |
-| ---------- | ---- | -- | --------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area form object name |
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
 
 <!-- END REF -->  
 

@@ -1,64 +1,64 @@
 ---
 id: configuring
-title: Configuring 4D View Pro Areas
+title: 4D View Pro エリアの設定
 ---
 
-The 4D View Pro area properties can be configured using the Property list. Spreadsheet properties are available through the language.
+4D View Pro エリアのプロパティは、プロパティリストを利用して設定することが可能です。 スプレッドシートプロパティはランゲージにより設定します。
 
-## Form area properties
+## フォームエリアプロパティ
 
-Using the area's property list, you can set [4D View Pro object properties](FormObjects/viewProArea_overview.md#supported-properties) such as **Object Name**, [**Variable or Expression**](#4d-view-pro-form-object-variable), **Appearance**, **Action**, and **Events**.
+**オブジェクト名**、[**変数あるいは式**](#4d-view-pro-フォームオブジェクト変数)、**アピアランス**、**アクション**、**イベント** などの [4D View Pro オブジェクトプロパティ](FormObjects/viewProArea_overview.md#プロパティ一覧) は、エリアのプロパティリストを使って設定できます。
 
 ![](assets/en/ViewPro/vpPropertyList.PNG)
 
 
 
-### Selecting a user interface
+### ユーザーインターフェースの選択
 
-You can select the interface to use with your 4D View Pro form areas in the **Property List**, under **Appearance**:
+4D View Pro のフォームエリアで使用するインターフェースは、**プロパティリスト** の **アピアランス** から選択できます:
 
 ![](assets/en/ViewPro/vpUserInterface.PNG)
 
-> You can also use the [`userInterface`](FormObjects/properties_Appearance.md#user-interface) and [`withFormulaBar`](FormObjects/properties_Appearance.md#show-formula-bar)(only with the "toolbar" interface) JSON properties.
+> また、[`userInterface`](FormObjects/properties_Appearance.md#ユーザーインターフェース) および [`withFormulaBar`](FormObjects/properties_Appearance.md#フォーミュラバーを表示) ("ツールバー" インターフェースのみ) の JSONプロパティを使用することもできます。
 
 
-Interfaces allow for basic modifications and data manipulation. User-defined modifications are saved in the 4D View Pro object when the user saves the document.
+インターフェースにより、基本的な編集とデータ操作がおこなえます。 ユーザーによる編集は、ユーザーによってドキュメントが保存されたときに 4D View Pro オブジェクトに保存されます。
 
-#### Ribbon
+#### リボン
 
 ![](assets/en/ViewPro/vpRibbon.PNG)
 
 #### ツールバー
 
-Enabling the Toolbar interface displays the [**Show Formula Bar**](FormObjects/properties_Appearance.md#show-formula-bar) option. When selected, the formula bar is visible below the Toolbar interface.
+ツールバー型インターフェースを有効化すると [**フォーミュラバーを表示**](FormObjects/properties_Appearance.md#フォーミュラバーを表示) オプションが表示されます。 これを選択すると、ツールバーのすぐ下にフォーミュラバーが表示されます。
 
-With visible formula bar:
+フォーミュラバーが表示された状態:
 
 ![](assets/en/ViewPro/vpToolbar.PNG)
 
 #### 機能
 
-Both the Ribbon and the Toolbar interfaces group related features into tabs:
+リボン型、ツールバー型のいずれのインターフェースでも、関連機能はタブにグループ分けされます:
 
-| Tab      | アクション                           | Ribbon Interface | Toolbar Interface |
-| -------- | ------------------------------- |:----------------:|:-----------------:|
-| File     | File manipulation               |        ○         |                   |
-| Home     | Text appearance                 |        ○         |         ○         |
-| Insert   | Add items                       |        ○         |         ○         |
-| Formulas | Formula calculation and library |        ○         |         ○         |
-| データ      | Data manipulation               |        ○         |         ○         |
-| View     | Visual presentation             |        ○         |         ○         |
-| 設定       | Sheet presentation reference    |        ○         |                   |
+| タブ     | アクション           | リボン型インターフェース | ツールバー型インターフェース |
+| ------ | --------------- |:------------:|:--------------:|
+| ファイル   | ファイル操作          |      ○       |                |
+| ホーム    | テキストの書式など       |      ○       |       ○        |
+| 挿入     | アイテムの追加         |      ○       |       ○        |
+| フォーミュラ | フォーミュラの計算とライブラリ |      ○       |       ○        |
+| データ    | データ操作           |      ○       |       ○        |
+| 表示     | 表示の設定           |      ○       |       ○        |
+| 設定     | スプレッドシートの設定     |      ○       |                |
 
 
 
 ## フォームイベント
 
-The following form events are available in the Property List for 4D View Pro areas.
+4D View Pro エリアのプロパティリスト内では、以下のフォームイベントが利用可能です。
 
-Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. Some standard form events provide extended information in the object returned by the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific or provide additional information to 4D View Pro areas:
+一部のイベントは (すべてのアクティブオブジェクトで利用可能な) 標準のフォームイベントであり、一部は 4D View Pro 専用のフォームイベントです。 また一部の標準フォームイベントは、4D View Pro エリアにおいて生成された場合、[`FORM Event`](https://doc.4d.com/4dv19/help/command/ja/page1606.html) コマンドが返すオブジェクトに追加の情報を提供します。 以下の表は標準イベントと、4D View Pro 専用または追加情報を提供するイベントの一覧です:
 
-| Standard 4D events                              | Specific and extended 4D View Pro events              |
+| 標準の 4Dイベント                                      | 4D View Pro 専用、または追加情報を返すイベント                         |
 | ----------------------------------------------- | ----------------------------------------------------- |
 | [On Load](../Events/onLoad.md)                  | [On VP Ready](../Events/onVpReady.md)                 |
 | [On Getting Focus](../Events/onGettingFocus.md) | [On Clicked](../Events/onClicked.md)                  |
@@ -70,186 +70,186 @@ Some of the events are standard form events (available to all active objects) an
 |                                                 | [On Row Resize](../Events/onRowResize.md)             |
 |                                                 | [On VP Range Changed](../Events/onVpRangeChanged.md)  |
 
-## Sheet Options
+## シートオプション
 
-The 4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
+4D View Pro シートオプションオブジェクトを使って、4D View Pro エリアの様々なオプションをコントロールすることができます。 このオブジェクトは以下のコマンドで操作します:
 
 *   [VP SET SHEET OPTIONS](method-list.md#vp-set-sheet-options)
 *   [VP Get sheet options](method-list.md#vp-get-sheet-options)
 
-### Sheet appearance
+### シートのアピアランス
 
-| プロパティ                |                        | タイプ     | 説明                                                                                                                                                                                                                                                                                                      |
-| -------------------- | ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| allowCellOverflow    |                        | boolean | Specifies whether data can overflow into adjacent empty cells.                                                                                                                                                                                                                                          |
-| sheetTabColor        |                        | string  | A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
-| frozenlineColor      |                        | string  | A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                |
-| clipBoardOptions     |                        | 倍長整数    | The clipboard option. Available values: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
-| gridline             |                        | object  | The grid line's options.                                                                                                                                                                                                                                                                                |
-|                      | color                  | string  | A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
-|                      | showVerticalGridline   | boolean | Specifies whether to show the vertical grid line.                                                                                                                                                                                                                                                       |
-|                      | showHorizontalGridline | boolean | Specifies whether to show the horizontal grid line.                                                                                                                                                                                                                                                     |
-| rowHeaderVisible     |                        | boolean | Specifies whether the row header is visible.                                                                                                                                                                                                                                                            |
-| colHeaderVisible     |                        | boolean | Specifies whether the column header is visible.                                                                                                                                                                                                                                                         |
-| rowHeaderAutoText    |                        | 倍長整数    | Specifies whether the row header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                   |
-| colHeaderAutoText    |                        | 倍長整数    | Specifies whether the column header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                |
-| selectionBackColor   |                        | string  | The selection's background color for the sheet. (preferred RGBA format)                                                                                                                                                                                                                                 |
-| selectionBorderColor |                        | string  | The selection's border color for the sheet.                                                                                                                                                                                                                                                             |
-| sheetAreaOffset      |                        | object  | The sheetAreaOffset's options.                                                                                                                                                                                                                                                                          |
-|                      | left                   | 倍長整数    | The offset left of sheet from host.                                                                                                                                                                                                                                                                     |
-|                      | top                    | 倍長整数    | The offset top of sheet from host.                                                                                                                                                                                                                                                                      |
-> All properties are optional.
+| プロパティ                |                        | タイプ     | 説明                                                                                                                                                                                                                                                                                    |
+| -------------------- | ---------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| allowCellOverflow    |                        | boolean | セルに収まらないデータを隣の空のセルにはみ出し表示するかどうかを指定します                                                                                                                                                                                                                                                 |
+| sheetTabColor        |                        | string  | シートタブの色を指定するカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")                                                                                                                                                                                                                     |
+| frozenlineColor      |                        | string  | 固定化された線の色を指定するカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")                                                                                                                                                                                                                   |
+| clipBoardOptions     |                        | longint | クリップボードオプション。 利用可能な値: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
+| gridline             |                        | object  | 枠線のオプション                                                                                                                                                                                                                                                                              |
+|                      | color                  | string  | 枠線の色を表すカラー文字列 (例: "red"、"#FFFF00"、"rgb(255,0,0)"、"Accent 5")                                                                                                                                                                                                                          |
+|                      | showVerticalGridline   | boolean | 垂直の枠線を表示するかどうかを指定します。                                                                                                                                                                                                                                                                 |
+|                      | showHorizontalGridline | boolean | 水平の枠線を表示するかどうかを指定します。                                                                                                                                                                                                                                                                 |
+| rowHeaderVisible     |                        | boolean | 行ヘッダーを表示するかどうかを指定します。                                                                                                                                                                                                                                                                 |
+| colHeaderVisible     |                        | boolean | 列ヘッダーを表示するかどうかを指定します。                                                                                                                                                                                                                                                                 |
+| rowHeaderAutoText    |                        | longint | 行ヘッダーが文字を表示するか、数字を表示するか、あるいは空かを指定します。 利用可能な値: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                                               |
+| colHeaderAutoText    |                        | longint | 列ヘッダーが文字を表示するか、数字を表示するか、あるいは空かを指定します。 利用可能な値: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                                               |
+| selectionBackColor   |                        | string  | シートにおける選択範囲の背景色。 (RGBAフォーマット推奨)                                                                                                                                                                                                                                                       |
+| selectionBorderColor |                        | string  | シートにおける選択範囲の枠線の色。                                                                                                                                                                                                                                                                     |
+| sheetAreaOffset      |                        | object  | シートエリアのオフセットオプション                                                                                                                                                                                                                                                                     |
+|                      | left                   | longint | シートの、ホストからの左オフセット                                                                                                                                                                                                                                                                     |
+|                      | top                    | longint | シートの、ホストからの上オフセット                                                                                                                                                                                                                                                                     |
+> いずれのプロパティも任意です。
 
-### Sheet protection
+### シートの保護
 
-To lock the whole sheet, you only need to set the *isProtected* property to **true**. You can then unlock cells individually by setting the [locked](#layout) cell style property.
-
-
-| プロパティ             |                          | タイプ     | 説明                                                                                                                                |
-| ----------------- | ------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| isProtected       |                          | boolean | Specifies whether cells on this sheet that are marked as protected cannot be edited.                                              |
-| protectionOptions |                          | object  | A value that indicates the elements that you want users to be able to change. If null : the protectionOptions parameter is reset. |
-|                   | allowSelectLockedCells   | boolean | Specifies whether the user can select locked cells, optional. True by default.                                                    |
-|                   | allowSelectUnlockedCells | boolean | Specifies whether the user can select unlocked cells, optional. True by default.                                                  |
-|                   | allowSort                | boolean | Specifies whether the user can sort ranges, optional. False by default.                                                           |
-|                   | allowFilter              | boolean | Specifies whether the user can filter ranges, optional. False by default.                                                         |
-|                   | allowEditObjects         | boolean | Specifies whether the user can edit floating objects, optional. False by default.                                                 |
-|                   | allowResizeRows          | boolean | Specifies whether the user can resize rows, optional. False by default.                                                           |
-|                   | allowResizeColumns       | boolean | Specifies whether the user can resize columns, optional. False by default.                                                        |
-|                   | allowDragInsertRows      | boolean | Specifies whether the user can perform the drag operation to insert rows, optional. False by default.                             |
-|                   | allowDragInsertColumns   | boolean | Specifies whether the user can perform the drag operation to insert columns, optional. False by default.                          |
-|                   | allowInsertRows          | boolean | Specifies whether the user can insert rows, optional. False by default.                                                           |
-|                   | allowInsertColumns       | boolean | Specifies whether the user can insert columns, optional. False by default.                                                        |
-|                   | allowDeleteRows          | boolean | Specifies whether the user can delete rows, optional. False by default.                                                           |
-|                   | allowDeleteColumns       | boolean | Specifies whether the user can delete columns, optional. False by default.                                                        |
-> All properties are optional.
+シート全体をロック (保護) するには、*isProtected* プロパティを **true** に設定するだけです。 その上で、[locked](#レイアウト) セルスタイルプロパティを個別に設定することで、特定のセルをロック解除することができます。
 
 
-## Cell Format
+| プロパティ             |                          | タイプ     | 説明                                                                |
+| ----------------- | ------------------------ | ------- | ----------------------------------------------------------------- |
+| isProtected       |                          | boolean | シート上で保護状態とされているセルが編集可能かどうかを指定します。                                 |
+| protectionOptions |                          | object  | ユーザーにより編集可能な要素を指定します。 null の場合、protectionOptions パラメーターはリセットされます。 |
+|                   | allowSelectLockedCells   | boolean | ロックされたセルをユーザーが選択できるかどうかを指定します (任意)。 デフォルトは true。                  |
+|                   | allowSelectUnlockedCells | boolean | ロック解除されたセルをユーザーが選択できるかどうかを指定します (任意)。 デフォルトは true。                |
+|                   | allowSort                | boolean | ユーザーによるレンジの並べ替えが可能かどうかを指定します (任意)。 デフォルトは false。                  |
+|                   | allowFilter              | boolean | ユーザーによるレンジのフィルタリングが可能かどうかを指定します (任意)。 デフォルトは false。               |
+|                   | allowEditObjects         | boolean | フローティングオブジェクトをユーザーが編集できるかどうかを指定します (任意)。 デフォルトは false。            |
+|                   | allowResizeRows          | boolean | ユーザーが行をリサイズできるかどうかを指定します (任意)。 デフォルトは false。                      |
+|                   | allowResizeColumns       | boolean | ユーザーが列をリサイズできるかどうかを指定します (任意)。 デフォルトは false。                      |
+|                   | allowDragInsertRows      | boolean | ユーザーがドラッグ操作で行を挿入できるかどうかを指定します (任意)。 デフォルトは false。                 |
+|                   | allowDragInsertColumns   | boolean | ユーザーがドラッグ操作で列を挿入できるかどうかを指定します (任意)。 デフォルトは false。                 |
+|                   | allowInsertRows          | boolean | ユーザーが行を挿入できるかどうかを指定します (任意)。 デフォルトは false。                        |
+|                   | allowInsertColumns       | boolean | ユーザーが列を挿入できるかどうかを指定します (任意)。 デフォルトは false。                        |
+|                   | allowDeleteRows          | boolean | ユーザーが行を削除できるかどうかを指定します (任意)。 デフォルトは false。                        |
+|                   | allowDeleteColumns       | boolean | ユーザーが列を削除できるかどうかを指定します (任意)。 デフォルトは false。                        |
+> いずれのプロパティも任意です。
 
 
-Defining a format pattern ensures that the content of your 4D View Pro documents is displayed the way you intended. Formats can be set using the selected 4D View Pro [interface](#selecting-a-user-interface), or using the [VP SET VALUE](method-list.md#vp-set-value) or [VP SET NUM VALUE](method-list.md#vp-set-num-value) methods.
+## セルフォーマット
 
-4D View Pro has built-in formats for numbers, dates, times, and text, but you can also create your own patterns to format the contents of cells using special characters and codes.
 
-For example, when using the [VP SET VALUE](method-list.md#vp-set-value) or [VP SET NUM VALUE](method-list.md#vp-set-num-value) methods to enter amounts in an invoice, you may want the currency symbols ($, €, ¥, etc.) to be aligned regardless of the space required by the number (i.e., whether the amount is $5.00 or $5,000.00). You could use formatting characters and spectify the pattern _($* #,##0.00_) which would display amounts as shown:
+フォーマットパターン (表示形式) を定義することで、4D View Pro ドキュメントのコンテンツを想定通りに表示することができます。 フォーマットは、選択された 4D View Pro の [インターフェース](#ユーザーインターフェースの選択) を使用するか、[VP SET VALUE](method-list.md#vp-set-value) または [VP SET NUM VALUE](method-list.md#vp-set-num-value) メソッドを使用して設定します。
+
+4D View Pro には数値、日付、時間、そしてテキスト用のビルトインのフォーマットがありますが、カスタムパターンを作成することで、特殊文字やコードを使ったフォーマットでセルのコンテンツを表示することができます。
+
+たとえば、請求書において [VP SET VALUE](method-list.md#vp-set-value) あるいは [VP SET NUM VALUE](method-list.md#vp-set-num-value) メソッドを使用して金額を入力している場合、数値の桁数とは関係なく (つまり金額が $5.00 だろうと $5,000.00 だろうと) 通貨記号 ($, €, ¥, など) を同じ位置に整列させたい場合があるかもしれません。 この場合、フォーマット文字を使用してパターン _($* #,##0.00)_ を指定することで、以下のように表示させることができます:
 
 ![](assets/en/ViewPro/apx_vpCellFormat1.PNG)
 
-Note that when creating your own format patterns, only the display of the data is modified. The value of the data remains unchanged.
+カスタムのフォーマットパターンを作成する場合、データの表示 のみが変更されるという点に注意してください。 データの値そのものは変わりません。
 
-### Number and text formats
+### 数値とテキストのフォーマット
 
-Number formats apply to all number types (e.g., positive, negative, and zeros).
+数値フォーマットはすべての数値型 (例: 正の数、負の数、ゼロ) に対して適用されます。
 
 
-| 文字        | 説明                                                                                                                                                                                                                                                                             | 例題                                                                                                                         |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| 0         | Placeholder that displays zeros.                                                                                                                                                                                                                                               | #.00 will display 1.1 as 1.10                                                                                              |
-| .         | Displays a decimal point                                                                                                                                                                                                                                                       | 0.00 will display 1999 as 1999.00                                                                                          |
-| ,         | Displays the thousands separator in a number.<p><p> Thousands are separated by commas if the format contains a comma enclosed by number signs "#" or by zeros. A comma following a digit placeholder scales the number by 1,000. | #,0 will display 12200000 as 12,200,000                                                                                    |
-| \_      | Skips the width of the next character.                                                                                                                                                                                                                                         | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
-| @         | Formatter for text. Applies the format to all text in the cell                                                                                                                                                                                                                 | "\[Red]@" applies the red font color for text values.                                                                     |
-| *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                           | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
-| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                   | "8%" will display as: 8%                                                                                                   |
-| %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                       | 8% will be displayed as .08                                                                                                |
-| \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                            | #.# will display 1.54 as 1.5                                                                                               |
-| ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                              | $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                               |
-| \        | Displays the character following it.                                                                                                                                                                                                                                           | #.00\? will display 123 as 123.00?                                                                                        |
-| /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                                | #/# will display .75 as 3/4                                                                                                |
-| \[ ]     | Creates conditional formats.                                                                                                                                                                                                                                                   | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0                                                             |
-| E         | Scientific notation format.                                                                                                                                                                                                                                                    | #E+# - will display 1,500,500 as 2E+6                                                                                      |
-| \[color] | Formats the text or number in the color specified                                                                                                                                                                                                                              | \[Green]###.##\[Red]-###.###                                                                                             |
+| 文字        | 説明                                                                                                                                                                 | 例題                                                                        |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------- |
+| 0         | ゼロを表示する桁のプレースホルダー                                                                                                                                                  | #.00 は 1.1 を 1.10 と表示します。                                                 |
+| .         | 小数点を表示します                                                                                                                                                          | 0.00 は 1999 を 1999.00 と表示します。                                             |
+| ,         | 数値内に千区切りのカンマを表示します。<p><p> 数値記号 "#" あるいはゼロに挟まれたカンマがフォーマットに含まれる場合、3桁ごとにカンマで区切られます。 桁のプレースホルダーの後にくるカンマは、数値を 1000 で割ります。 | #,0 は 12200000 を 12,200,000 と表示します。                                       |
+| \_      | アンダーバーに続く文字の幅をスキップします。                                                                                                                                             | \_( のようにカッコなどと組み合わせることで、左や右にスペースを追加します。                                 |
+| @         | テキストのフォーマット文字。 セル内のすべてのテキストにフォーマットを適用します。                                                                                                                          | "\[Red]@" はテキスト値に対して赤のフォントカラーを適用します。                                     |
+| *         | 列幅いっぱいまで、後に続く文字を繰り返します。                                                                                                                                            | 0*- は、数値の後にセルの幅いっぱいまでダッシュを繰り返します。対して、*0 をフォーマットの前につけると、先頭に 0 が複数表示されます。 |
+| " "       | 引用符にはさまれたテキストを、解釈せずにそのまま表示します。                                                                                                                                     | "8%" は 8% と表示されます。                                                        |
+| %         | 数値を百分率で表示します。                                                                                                                                                      | 8% は、.08 として表示されます。                                                       |
+| \#      | 追加のゼロを表示しない、桁のプレースホルダー。 もしプレースホルダーの数以上に小数点以下の桁数があった場合、それらの数字は丸められます。                                                                                               | #.# は 1.54 を 1.5 として表示します。                                                |
+| ?         | 追加のゼロの分のスペースを残すが、そのゼロは表示しない桁のプレースホルダー。 通常、数値を小数点の位置で揃えるために使用されます。                                                                                                  | $?? は最低 2桁のスペースを確保し、1桁の数値が混じっていても 2桁の場所に $記号が並ぶように指定します。                  |
+| \        | 後に続く文字を表示します。                                                                                                                                                      | #.00\? は 123 を 123.00? として表示します。                                         |
+| /         | 数値に対して使用した場合、分数として表記します。 テキスト、日付、時刻に対して使用した場合、それらをそのまま表示します。                                                                                                       | #/# は .75 を 3/4 として表示します。                                                 |
+| \[ ]     | 条件つき書式を作成します。                                                                                                                                                      | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0            |
+| E         | 指数表記のフォーマット。                                                                                                                                                       | #E+# - は 1,500,500 を 2E+6 として表示します。                                       |
+| \[color] | テキストまたは数値を指定カラーで表示します。                                                                                                                                             | \[Green]###.##\[Red]-###.###                                            |
 
 
 #### 例題
 
 
 ```4d
-//Set the cell value as $125,571.35
+// セルの値を $125,571.35 と表示する設定
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_($* #,##0.00_)")
 ```
 
-### Date and time formats
+### 日付と時間のフォーマット
 
-4D View Pro provides the following constants for ISO 8601 date and time patterns:
+4D View Pro では IS0 8601 の日付と時間パターンを示す以下の定数を提供しています:
 
-| 定数                                        | 値                                    | 説明                                                                                                                                                                                                                          |
-| ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vk pattern full date time`               | "_fullDateTimePattern_"              | ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"                                                   |
-| `vk pattern long date`                    | "_longDatePattern_"                  | ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"                                                                     |
-| `vk pattern long time`                    | "_longTimePattern_"                  | ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm:ss"                                                                                    |
-| `vk pattern month day`                    | "_monthDayPattern_"                  | ISO 8601 format for the month and day in current localization.<p><p>USA default pattern: "MMMM dd"                                                                           |
-| `vk pattern short date`                   | "_shortDatePattern_"                 | Abbreviated ISO 8601 format for the date in current localization.<p><p>USA default pattern: "MM/dd/yyyy"                                                                    |
-| `vk pattern short time`                   | "_shortTimePattern_"                 | Abbreviated ISO 8601 format for the time in current localization.<p><p>USA default pattern: "HH:mm"                                                                         |
-| `vk pattern sortable date time`           | "_sortableDateTimePattern_"          | ISO 8601 format for the date and time in current localization which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"            |
-| `vk pattern universal sortable date time` | "_universalSortableDateTimePattern_" | ISO 8601 format for the date and time in current localization using UTC which can be sorted.<p><p>USA default pattern: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'" |
-| `vk pattern year month`                   | "_yearMonthPattern_"                 | ISO 8601 format for the month and year in current localization.<p><p>USA default pattern: "yyyy MMMM"                                                                       |
+| 定数                                        | 値                                    | 説明                                                                                                                                                                                |
+| ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `vk pattern full date time`               | "_fullDateTimePattern_"              | カレント言語設定における ISO 8601 フォーマットの完全な日付と時間。<p><p>アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy HH:mm:ss"                                       |
+| `vk pattern long date`                    | "_longDatePattern_"                  | カレント言語設定における ISO 8601 フォーマットの完全な日付。<p><p>アメリカ合衆国でのデフォルトパターン: "dddd, dd MMMM yyyy"                                                   |
+| `vk pattern long time`                    | "_longTimePattern_"                  | カレント言語設定における ISO 8601 フォーマットの時間。<p><p>アメリカ合衆国でのデフォルトパターン: "HH:mm:ss"                                                                |
+| `vk pattern month day`                    | "_monthDayPattern_"                  | カレント言語設定における ISO 8601 フォーマットの月日の日付。<p><p>アメリカ合衆国でのデフォルトパターン: "MMMM dd"                                                             |
+| `vk pattern short date`                   | "_shortDatePattern_"                 | カレント言語設定における省略形の ISO 8601 フォーマットの日付。<p><p>アメリカ合衆国でのデフォルトパターン: "MM/dd/yyyy"                                                        |
+| `vk pattern short time`                   | "_shortTimePattern_"                 | カレント言語設定における省略形の ISO 8601 フォーマットの時間。<p><p>アメリカ合衆国でのデフォルトパターン: "HH:mm"                                                             |
+| `vk pattern sortable date time`           | "_sortableDateTimePattern_"          | カレント言語設定における、並べ替え可能な ISO 8601 フォーマットの日付と時間。<p><p>アメリカ合衆国でのデフォルトパターン: "yyyy\'-\'MM\'-\'dd\'T\'HH\':\'mm\':\'ss"          |
+| `vk pattern universal sortable date time` | "_universalSortableDateTimePattern_" | カレント言語設定における、UTCを使用した並べ替え可能な ISO 8601 フォーマットの日付と時間。<p><p>アメリカ合衆国でのデフォルトパターン: "yyyy\'-\'MM\'-\'dd HH\':\'mm\':\'ss\'Z\'" |
+| `vk pattern year month`                   | "_yearMonthPattern_"                 | カレント言語設定における ISO 8601 フォーマットの年月。<p><p>アメリカ合衆国でのデフォルトパターン: "yyyy MMMM"                                                             |
 
 
 #### 例題
 
 
 ```4d
-//Set the cell value as specific date and time
+// セルの値を特定の日付と時間として表示する設定
 VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";?14:30:10?;"format";vk pattern full date time))
 ```
 
-### Custom date and time formats
+### カスタムの日付と時間のフォーマット
 
-To create your own date and time patterns, in your current localization, you can use combinations of the following codes:
+カレント言語設定における日付と時間のカスタムパターンを作成したい場合、以下のコードを組み合わせて使用することができます:
 
 
-|    | Code<br>(not case-sensitive) | 説明                                             | 例題                 |
-| -- | ---------------------------------- | ---------------------------------------------- | ------------------ |
-| 日付 |                                    |                                                | (January 1, 2019)  |
-|    | m                                  | Month number without leading zero              | 1                  |
-|    | mm                                 | Month number with leading zero                 | 01                 |
-|    | mmm                                | Month name, short                              | Jan                |
-|    | mmmm                               | Month name, long                               | January            |
-|    | d                                  | Day number without leading zero                | 1                  |
-|    | dd                                 | Day number with leading zero                   | 01                 |
-|    | ddd                                | Day of week, short                             | Tue                |
-|    | dddd                               | Day of week, long                              | Tuesday            |
-|    | yy                                 | Year, short                                    | 19                 |
-|    | yyyy                               | Year, long                                     | 2019               |
-| 時間 |                                    |                                                | (2:03:05 PM)       |
-|    | h                                  | Hour without leading zero. 0-23                | 2                  |
-|    | hh                                 | Hour with leading zero. 00-23                  | 02                 |
-|    | m                                  | Minutes without leading zero. 0-59             | 3                  |
-|    | mm                                 | Minutes with leading zero. 00-59               | 03                 |
-|    | s                                  | Seconds without leading zero. 0-59             | 5                  |
-|    | ss                                 | Seconds with leading zero. 00-59               | 05                 |
-|    | \[h]                              | Elapsed time in hours                          | 14 (can exceed 24) |
-|    | \[mm]                             | Elapsed time in minutes                        | 843                |
-|    | \[ss]                             | Elapsed time in seconds                        | 50585              |
-|    | AM/PM                              | Periods of day. 24 hour fomat used if omitted. | PM                 |
-> The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
+|    | コード<br>(文字の大小の区別なし) | 説明                            | 例題                |
+| -- | ------------------------- | ----------------------------- | ----------------- |
+| 日付 |                           |                               | (January 1, 2019) |
+|    | m                         | 先頭のゼロなしの月表示                   | 1                 |
+|    | mm                        | 先頭のゼロありの月表示                   | 01                |
+|    | mmm                       | 短い月名                          | Jan               |
+|    | mmmm                      | 長い月名                          | January           |
+|    | d                         | 先頭のゼロなしの日付表示                  | 1                 |
+|    | dd                        | 先頭のゼロありの日付表示                  | 01                |
+|    | ddd                       | 短い曜日名                         | Tue               |
+|    | dddd                      | 長い曜日名                         | Tuesday           |
+|    | yy                        | 短い年表示                         | 19                |
+|    | yyyy                      | 長い年表示                         | 2019              |
+| 時間 |                           |                               | (2:03:05 PM)      |
+|    | h                         | 先頭のゼロなしの時間。 0-23の値            | 2                 |
+|    | hh                        | 先頭のゼロありの時間。 00-23の値           | 02                |
+|    | m                         | 先頭のゼロなしの分数。 0-59の値            | 3                 |
+|    | mm                        | 先頭のゼロありの分数。 00-59の値           | 03                |
+|    | s                         | 先頭のゼロなしの秒数。 0-59の値            | 5                 |
+|    | ss                        | 先頭のゼロありの秒数。 00-59の値           | 05                |
+|    | \[h]                     | 経過時間の時間数                      | 14 (24 を超える表示も可能) |
+|    | \[mm]                    | 経過時間の分数                       | 843               |
+|    | \[ss]                    | 経過時間の秒数                       | 50585             |
+|    | AM/PM                     | 午前/午後。 省略された場合、24時間表記が適用されます。 | PM                |
+> 'm' のコードはその位置とパターンに応じて解釈されます。 If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
 ### Additional symbols
 
 In addition to the special characters and codes described in the previous sections, there are additional characters and symbols that can be used in your format patterns. These additional characters and symbols do not require a \ or "" and do not impact the interpretation of the format pattern. They appear "as-is" within the pattern.
 
-| 文字      | 説明                                                                 | 例題                   |
-| ------- | ------------------------------------------------------------------ | -------------------- |
-| + and - | Plus and minus signs                                               | ### + ### = ###,### |
-| ( )     | Left and right parenthesis                                         | (-###.##)            |
-| :       | Colon                                                              | hh:mm:ss             |
-| ^       | Caret                                                              | #\^#                |
-| '       | Apostrophe                                                         | '######              |
-| { }     | Curly brackets                                                     | {###,###,###}        |
-| < >     | Less-than and greater than signs                                   | ## >##              |
-| =       | Equal sign                                                         | #+#=##               |
-| /       | Forward slash. When used with numbers, displays them as fractions. | mm/dd/yyyy           |
-| !       | Exclamation point                                                  | $###.00!             |
-| &       | Ampersand                                                          | "Hello" & "Welcome"  |
-| ~       | Tilde                                                              | ~##                  |
-|         | Space character                                                    |                      |
-| €       | Euro                                                               | €###.00              |
-| £       | British Pound                                                      | £###.00              |
-| ¥       | Japanese Yen                                                       | ¥###.00              |
-| $       | Dollar sign                                                        | $###.00              |
-| ¢       | Cent sign                                                          | .00¢                 |
+| 文字      | 説明                                      | 例題                   |
+| ------- | --------------------------------------- | -------------------- |
+| + and - | Plus and minus signs                    | ### + ### = ###,### |
+| ( )     | Left and right parenthesis              | (-###.##)            |
+| :       | Colon                                   | hh:mm:ss             |
+| ^       | Caret                                   | #\^#                |
+| '       | Apostrophe                              | '######              |
+| { }     | Curly brackets                          | {###,###,###}        |
+| < >     | Less-than and greater than signs        | ## >##              |
+| =       | Equal sign                              | #+#=##               |
+| /       | Forward slash. 数値に対して使用した場合、分数として表記します。 | mm/dd/yyyy           |
+| !       | Exclamation point                       | $###.00!             |
+| &       | Ampersand                               | "Hello" & "Welcome"  |
+| ~       | Tilde                                   | ~##                  |
+|         | Space character                         |                      |
+| €       | Euro                                    | €###.00              |
+| £       | British Pound                           | £###.00              |
+| ¥       | Japanese Yen                            | ¥###.00              |
+| $       | Dollar sign                             | $###.00              |
+| ¢       | Cent sign                               | .00¢                 |
 
 
 
@@ -474,7 +474,7 @@ The [VP Get stylesheet](method-list.md#vp-get-stylesheet) command can be used to
 | watermark       |            | text    | Defines the watermark (cell label) content                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                             |
 | wordWrap        |            | boolean | Specifies if text should be wrapped.                                                                                                                                                                                                                                                                                                                                 | True = wrapped text, False = unwrapped text                                                                                                                                                                                                 |
 
-#### Layout
+#### レイアウト
 
 | プロパティ       | タイプ     | 説明                                                                                                                  | Possible values                                                                                                      |
 | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
@@ -510,7 +510,7 @@ It contains the following properties:
 | spreadJS     | オブジェクト    | Reserved for the 4D View Pro component       |
 
 
-## 4D View Pro Form Object Variable
+## 4D View Pro フォームオブジェクト変数
 
 The 4D View Pro form object variable is the [object](Concepts/dt_object.md) variable associated to the 4D View Pro form area. It manages information used by the 4D View Pro object.
 > The 4D View Pro form object variable is for information purposes only (i.e., debugging). Under no circumstances should it be modified.

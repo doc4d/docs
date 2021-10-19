@@ -3,23 +3,23 @@ id: debugger
 title: Débogueur
 ---
 
-The debugger is useful when you need to spot errors or monitor the execution of methods. It allows you to step through methods slowly and examine the information. This process is called "tracing".
+Le débogueur est utile lorsque vous devez repérer des erreurs ou surveiller l'exécution de méthodes. Il vous permet d'avancer lentement sur les méthodes et d'examiner les informations. Ce processus est appelé le "traçage".
 
 ![debugger-window-local](assets/en/Debugging/debugger-Window-local.png)
 
 
-## Calling the Debugger
+## Appeler le débogueur
 
-There are multiple ways to get the Debugger to display:
+Il existe plusieurs façons d'afficher le débogueur :
 
-* Clicking the **Trace** button in the [Syntax Error window](basics.md#syntax-error-window)
-* Using the [`TRACE`](https://doc.4d.com/4dv19/help/command/en/page157.html) command
-* Clicking the **Debug** button in the Execute Method window or selecting **Run and debug...** button in the Method editor
-* Using **Alt+Shift+Right click** (Windows) or **Ctrl+Option+Cmd+Click** (macOS) while a method is executing, then selecting the process to trace in the pop-up menu:
+* En cliquant sur le bouton **Trace** dans [la fenêtre des erreurs de syntaxe](basics.md#syntax-error-window)
+* En utilisant la commande [`TRACE`](https://doc.4d.com/4dv19/help/command/en/page157.html)
+* En cliquant sur le bouton **Debug** dans la fenêtre d'exécution de la méthode ou en sélectionnant le bouton **Run and debug...** dans l'éditeur de méthode
+* En utilisant **Alt+Shift+Clic** droit (Windows) ou **Ctrl+Option+Cmd+Clic (macOS)** pendant l'exécution d'une méthode, puis en sélectionnant le processus à suivre dans le menu contextuel :
 
 ![open-debugger](assets/en/Debugging/openDebugger.png)
 
-* Clicking the **Trace** button when a process is selected in the Process page of the Runtime Explorer.
+* Cliquez sur le bouton **Trace** lorsqu'un process est sélectionné dans la page Process de l'Explorateur d'exécution.
 * Adding a break point in the Method Editor window or in the Break and Catch pages of the Runtime Explorer.
 
 When called, the debugger window provides the name of the method or class function you're currently tracing, and the action causing the initial appearance of the Debugger window. For example, in the above debugger window:
