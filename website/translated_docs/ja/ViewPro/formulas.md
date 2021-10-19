@@ -77,7 +77,7 @@ List of operators from most to least important:
 | %               | Percent                    |
 | ^               | Exponent                   |
 | * and /         | Multiply and divide        |
-| + and -         | Add and Subtract           |
+| + と -           | Add and Subtract           |
 | &               | Concatenate                |
 | =  > < >= <= <> | Compare                    |
 
