@@ -11,20 +11,14 @@
       "Admin/dataExplorer": {
         "title": "Explorador de datos Web"
       },
-      "Admin/debugLogFiles": {
-        "title": "Description of log files"
-      },
       "Admin/licenses": {
         "title": "Gestión de licencias 4D"
-      },
-      "Admin/server-admin": {
-        "title": "4D Server Administration Window"
       },
       "Admin/tls": {
         "title": "Protocolo TLS (HTTPS)"
       },
       "Admin/webAdmin": {
-        "title": "Administración Web"
+        "title": "WebAdmin"
       },
       "API/BlobClass": {
         "title": "Blob"
@@ -222,6 +216,9 @@
       "Debugging/debugging-remote": {
         "title": "Debugging from remote machines"
       },
+      "Debugging/debugLogFiles": {
+        "title": "Description of log files"
+      },
       "Desktop/building": {
         "title": "Generador de aplicaciones"
       },
@@ -409,6 +406,15 @@
         "title": "On Window Opening Denied"
       },
       "Events/overview": {
+        "title": "Generalidades"
+      },
+      "Extensions/develop-components": {
+        "title": "Developing Components"
+      },
+      "Extensions/develop-plug-ins": {
+        "title": "Developing Plug-ins"
+      },
+      "Extensions/overview": {
         "title": "Generalidades"
       },
       "FormEditor/stylesheets": {
@@ -615,6 +621,9 @@
       "FormObjects/writeProAreaOverview": {
         "title": "Área 4D Write Pro"
       },
+      "GettingStarted/creating": {
+        "title": "Working with a project"
+      },
       "GettingStarted/installation": {
         "title": "Instalación"
       },
@@ -721,12 +730,6 @@
       "Project/compiler": {
         "title": "Compilación"
       },
-      "Project/components": {
-        "title": "Librería de componentes 4D"
-      },
-      "Project/creating": {
-        "title": "Working with a project"
-      },
       "Project/documentation": {
         "title": "Documentar un proyecto"
       },
@@ -829,6 +832,33 @@
       "REST/REST_requests": {
         "title": "Acerca de las peticiones REST"
       },
+      "ServerWindow/application-server": {
+        "title": "Application Server Page"
+      },
+      "ServerWindow/http-server": {
+        "title": "Página del servidor HTTP"
+      },
+      "ServerWindow/maintenance": {
+        "title": "Página Mantenimiento"
+      },
+      "ServerWindow/monitor": {
+        "title": "Monitor Page"
+      },
+      "ServerWindow/overview": {
+        "title": "Generalidades"
+      },
+      "ServerWindow/processes": {
+        "title": "Página Procesos"
+      },
+      "ServerWindow/real-time-monitor": {
+        "title": "Página de seguimiento en tiempo real"
+      },
+      "ServerWindow/sql-server": {
+        "title": "SQL Server Page"
+      },
+      "ServerWindow/users": {
+        "title": "Página Usuarios"
+      },
       "Tags/tags": {
         "title": "Etiquetas de transformación"
       },
@@ -888,7 +918,8 @@
       }
     },
     "links": {
-      "v19 R2 BETA": "v19 R2 BETA",
+      "v19 R3 BETA": "v19 R3 BETA",
+      "v19 R2": "v19 R2",
       "v19": "v19",
       "v18": "v18"
     },
@@ -901,7 +932,11 @@
       "Debugging": "Depuración",
       "Access Rights": "Derechos de acceso",
       "Preferences": "Preferencias",
-      "Administration": "Administración",
+      "4D Server Administration Window": "Ventana de administración de 4D Server",
+      "Web Administration": "Administración Web",
+      "Command Line Interface": "Interfaz de línea de comando",
+      "TLS Protocol": "TLS Protocol",
+      "License Management": "Gestión de licencias",
       "MSC": "CSM",
       "Backup and Restore": "Copia de seguridad y restauración",
       "Web Server": "Servidor Web",
@@ -915,6 +950,7 @@
       "Form Events": "Eventos formulario",
       "Menus": "Menús",
       "Build application": "Build application",
+      "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }
   },
@@ -942,7 +978,7 @@
     "4D Server Administration Window|no description given": "Ventana de administración de 4D Server",
     "4D Components Library|no description given": "Librería de componentes 4D",
     "Client/Server|no description given": "Cliente/Servidor",
-    "TLS Protocol (HTTPS)|no description given": "Protocolo TLS (HTTPS)",
+    "TLS Protocol|no description given": "TLS Protocol",
     "Debugging|no description given": "Depuración",
     "Web Data Explorer|no description given": "Explorador de datos Web",
     "Language Reference (4D Doc Center)|no description given": "Lenguaje (4D Doc Center)",
@@ -951,12 +987,17 @@
     "Command Line Interface|no description given": "Interfaz de línea de comando",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferencias",
+    "Overview|no description given": "Generalidades",
+    "Developing Components|no description given": "Developing Components",
+    "Developing Plugins|no description given": "Developing Plugins",
+    "Working with a project|no description given": "Working with a project",
     "Getting started|no description given": "Comencemos",
     "Core Development|no description given": "Desarrollo",
     "Administration|no description given": "Administración",
     "Web applications|no description given": "Aplicaciones Web",
     "Mobile applications|no description given": "Aplicaciones móbiles",
     "Desktop applications|no description given": "Aplicaciones de escritorio",
+    "Extensions|no description given": "Extensions",
     "Documentation updates|no description given": "Actualizaciones de la documentación",
     "Help Translate|recruit community translators for your project": "Ayúdenos a traducir",
     "Edit this Doc|recruitment message asking to edit the doc source": "Editar",
