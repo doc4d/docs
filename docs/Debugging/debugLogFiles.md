@@ -196,6 +196,7 @@ The following fields are logged for each event:
 |---|---|---|
 |1| sequence_number| Unique and sequential operation number in the logging session |
 
+
 |2| time| Date and time in ISO 8601 format (YYYY-MM-DDThh:mm:ss.mmm) |
 |3|	ProcessID|Process ID|
 |4|	unique_processID|Unique process ID|
@@ -254,7 +255,7 @@ The log files can be produced in two versions:
 	SET DATABASE PARAMETER(IMAP Log;1) //start IMAP log
 	```
  
-	4D Server: Click on the **Start Request and Debug Logs** button in the [Maintenance Page](https://doc.4d.com/4Dv18R5/4D/18-R5/Maintenance-Page.300-5149308.en.html) of the 4D Server administration window.   
+> 4D Server: Click on the **Start Request and Debug Logs** button in the [Maintenance Page](ServerWindow/maintenance.md) of the 4D Server administration window.   
 	  
 	  This log path is returned by the `Get 4D file` command.
 
@@ -342,7 +343,7 @@ You can use a **log configuration file** to easily manage log recording in a pro
 
 There are several ways to enable the log configuration file:
 
-- On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](Admin/server-admin.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. It is immediately enabled on the server. 
+- On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. It is immediately enabled on the server. 
 - You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
 - With a built application, you can copy the `logConfig.json` file in the following folder:
 	+ Windows: `Users\[userName]\AppData\Roaming\[application]`

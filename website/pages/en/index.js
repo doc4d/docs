@@ -60,7 +60,7 @@ class Index extends React.Component {
     serverAdmin: <translate>4D Server Administration Window</translate>,
 	components: <translate>4D Components Library</translate>,
 	cs: <translate>Client/Server</translate>,
-    tls: <translate>TLS Protocol (HTTPS)</translate>,
+    tls: <translate>TLS Protocol</translate>,
 	  debugging: <translate>Debugging</translate>,
     dataExplorer: <translate>Web Data Explorer</translate>,
 	langRef: <translate>Language Reference (4D Doc Center)</translate>,
@@ -68,7 +68,11 @@ class Index extends React.Component {
 	  	 debugLogFiles: <translate>Description of log files</translate>,
 	   cli: <translate>Command Line Interface</translate>,
      viewPro: <translate>4D View Pro</translate>,
-	  preferences:<translate>Preferences</translate>
+	  preferences: <translate>Preferences</translate>,
+	  overview: <translate>Overview</translate>,
+	  comp: <translate>Developing Components</translate>,
+	  plug: <translate>Developing Plugins</translate>,
+	  working: <translate>Working with a project</translate>
     };
 
     return (
@@ -80,7 +84,8 @@ class Index extends React.Component {
               align="left"
               contents={[
                 {
-                  content: `[${subContents.installation}](${siteConfig.baseUrl}${this.props.language}/GettingStarted/installation.html)`,
+                  content: `[${subContents.installation}](${siteConfig.baseUrl}${this.props.language}/GettingStarted/installation.html)<br>
+				  [${subContents.working}](${siteConfig.baseUrl}${this.props.language}/GettingStarted/creating.html)`,
                   image: `${siteConfig.baseUrl}img/illu_GettingStarted.png`,
                   imageAlign: "top",
                   imageAlt: "Get started",
@@ -94,21 +99,18 @@ class Index extends React.Component {
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>
                   [${subContents.users}](${siteConfig.baseUrl}${this.props.language}/Users/overview.html)<br>
-				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)<br>
-				  [${subContents.components}](${siteConfig.baseUrl}${this.props.language}/Project/components.html)`,
+				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)`,
                   image: `${siteConfig.baseUrl}img/illu_CoreDevelopment.png`,
                   imageAlign: "top",
                   imageAlt: "Core",
                   title: <translate>Core Development</translate>,
                 },
                 {
-                  content: `[${subContents.webAdmin}](${siteConfig.baseUrl}${this.props.language}/Admin/webAdmin.html)<br>
-				[${subContents.dataExplorer}](${siteConfig.baseUrl}${this.props.language}/Admin/dataExplorer.html)<br>
-				[${subContents.serverAdmin}](${siteConfig.baseUrl}${this.props.language}/Admin/server-admin.html)<br>
-				[${subContents.licenses}](${siteConfig.baseUrl}${this.props.language}/Admin/licenses.html)<br>
+                  content: `[${subContents.serverAdmin}](${siteConfig.baseUrl}${this.props.language}/ServerWindow/overview.html)<br>
+				[${subContents.webAdmin}](${siteConfig.baseUrl}${this.props.language}/Admin/webAdmin.html)<br>
+				[${subContents.cli}](${siteConfig.baseUrl}${this.props.language}/Admin/cli.html)<br>
 				[${subContents.tls}](${siteConfig.baseUrl}${this.props.language}/Admin/tls.html)<br>
-	            [${subContents.cli}](${siteConfig.baseUrl}${this.props.language}/Admin/cli.html)<br>
-				[${subContents.debugLogFiles}](${siteConfig.baseUrl}${this.props.language}/Admin/debugLogFiles.html)<br>
+				[${subContents.licenses}](${siteConfig.baseUrl}${this.props.language}/Admin/licenses.html)<br>
 				[${subContents.msc}](${siteConfig.baseUrl}${this.props.language}/MSC/overview.html)<br>
                 [${subContents.backup}](${siteConfig.baseUrl}${this.props.language}/Backup/overview.html)<br>`,
                   image: `${siteConfig.baseUrl}img/illu_Administration.png`,
@@ -149,8 +151,7 @@ class Index extends React.Component {
 				  [${subContents.formObjectProperties}](${siteConfig.baseUrl}${this.props.language}/FormObjects/propertiesReference.html)<br>
 				  [${subContents.events}](${siteConfig.baseUrl}${this.props.language}/Events/overview.html)<br>
 				  [${subContents.menus}](${siteConfig.baseUrl}${this.props.language}/Menus/overview.html)<br>
-				  [${subContents.buildApp}](${siteConfig.baseUrl}${this.props.language}/Desktop/building.html)<br>
-				  [${subContents.viewPro}](${siteConfig.baseUrl}${this.props.language}/ViewPro/getting-started.html)`,
+				  [${subContents.buildApp}](${siteConfig.baseUrl}${this.props.language}/Desktop/building.html)`,
                   //image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,
                   image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,
                   imageAlign: "top",
@@ -159,6 +160,30 @@ class Index extends React.Component {
                 },
                 {},
               ]}
+              layout="threeColumn"
+            />
+			<br />
+            <br />
+            <GridBlock
+              align="left"
+              contents={[
+                {
+                  content: `[${subContents.overview}](${siteConfig.baseUrl}${this.props.language}/Extensions/overview.html)<br>
+				  [${subContents.viewPro}](${siteConfig.baseUrl}${this.props.language}/ViewPro/getting-started.html)<br>
+				  [4D Mobile App Server](ttps://github.com/4d-go-mobile/4D-Mobile-App-Server)<br>
+				  [4D NetKit](https://github.com/4d/4D-NetKit)<br>
+				  [4D Progress](https://doc.4d.com/4Dv19/4D/19/4D-Progress.100-5461799.en.html)<br>
+				  [4D SVG](https://doc.4d.com/4Dv19/4D/19/4D-SVG-Component.300-5462064.en.html)<br>
+				  [4D Widgets](https://doc.4d.com/4Dv19/4D/19/4D-Widgets.100-5462909.en.html)<br>
+				  [4D Write Pro Interface](https://github.com/4d/4D-WritePro-Interface)<br>
+				  [${subContents.comp}](${siteConfig.baseUrl}${this.props.language}/Extensions/develop-components.html)<br>
+				  [${subContents.plug}](${siteConfig.baseUrl}${this.props.language}/Extensions/develop-plug-ins.html)<br>`,
+                  image: `${siteConfig.baseUrl}img/illu_Extensions.png`,
+                  imageAlign: "top",
+                  imageAlt: "Extensions",
+                  title: <translate>Extensions</translate>,
+                }
+               ]}
               layout="threeColumn"
             />
           </Container>
