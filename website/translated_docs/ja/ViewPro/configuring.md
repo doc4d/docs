@@ -224,32 +224,32 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 |    | \[mm]                    | 経過時間の分数                       | 843               |
 |    | \[ss]                    | 経過時間の秒数                       | 50585             |
 |    | AM/PM                     | 午前/午後。 省略された場合、24時間表記が適用されます。 | PM                |
-> 'm' のコードはその位置とパターンに応じて解釈されます。 If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
+> 'm' のコードはその位置とパターンに応じて解釈されます。 'h' または 'hh' の直後、あるいは 's' または 'ss' の直前に位置する場合には分を表すと解釈されますが、それ以外の場合には月を表すと解釈されます。
 
-### Additional symbols
+### 追加の記号
 
-In addition to the special characters and codes described in the previous sections, there are additional characters and symbols that can be used in your format patterns. These additional characters and symbols do not require a \ or "" and do not impact the interpretation of the format pattern. They appear "as-is" within the pattern.
+上記で説明されている特殊文字とコードに加えて、フォーマットパターンに使用可能な追加の文字と記号があります。 これらの追加文字と記号は \ または "" を必要とせず、フォーマットパターンの解釈に影響することはありません。 これらはパターン内において "そのまま" 表示されます。
 
-| 文字      | 説明                                      | 例題                   |
-| ------- | --------------------------------------- | -------------------- |
-| + and - | Plus and minus signs                    | ### + ### = ###,### |
-| ( )     | Left and right parenthesis              | (-###.##)            |
-| :       | Colon                                   | hh:mm:ss             |
-| ^       | Caret                                   | #\^#                |
-| '       | Apostrophe                              | '######              |
-| { }     | Curly brackets                          | {###,###,###}        |
-| < >     | Less-than and greater than signs        | ## >##              |
-| =       | Equal sign                              | #+#=##               |
-| /       | Forward slash. 数値に対して使用した場合、分数として表記します。 | mm/dd/yyyy           |
-| !       | Exclamation point                       | $###.00!             |
-| &       | Ampersand                               | "Hello" & "Welcome"  |
-| ~       | Tilde                                   | ~##                  |
-|         | Space character                         |                      |
-| €       | Euro                                    | €###.00              |
-| £       | British Pound                           | £###.00              |
-| ¥       | Japanese Yen                            | ¥###.00              |
-| $       | Dollar sign                             | $###.00              |
-| ¢       | Cent sign                               | .00¢                 |
+| 文字    | 説明                                   | 例題                   |
+| ----- | ------------------------------------ | -------------------- |
+| + と - | プラス記号およびマイナス記号                       | ### + ### = ###,### |
+| ( )   | 左と右のカッコ記号                            | (-###.##)            |
+| :     | コロン                                  | hh:mm:ss             |
+| ^     | キャレット                                | #\^#                |
+| '     | アポストロフィー                             | '######              |
+| { }   | 中カッコ                                 | {###,###,###}        |
+| < >   | 小なり大なり                               | ## >##              |
+| =     | 等号                                   | #+#=##               |
+| /     | フォワードスラッシュ。 数値に対して使用した場合、分数として表記します。 | mm/dd/yyyy           |
+| !     | 感嘆符                                  | $###.00!             |
+| &     | アンパサンド                               | "Hello" & "Welcome"  |
+| ~     | チルダ                                  | ~##                  |
+|       | スペース文字                               |                      |
+| €     | ユーロ                                  | €###.00              |
+| £     | 英ポンド                                 | £###.00              |
+| ¥     | 日本円                                  | ¥###.00              |
+| $     | ドル記号                                 | $###.00              |
+| ¢     | セント記号                                | .00¢                 |
 
 
 
@@ -410,22 +410,22 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 
 
 
-## Style Objects
+## スタイルオブジェクト
 
 
-4D View Pro style objects and style sheets allow you to control the graphical aspects and the look of your 4D View Pro documents.
+4D View Pro スタイルオブジェクトとスタイルシートを使用すると、4D View Pro ドキュメントのグラフィカル要素や見た目を管理することができるようになります。
 
-### Style objects & Style sheets
+### スタイルオブジェクトとスタイルシート
 
-Style objects contain the style settings. They can be used either in a style sheet or on their own. Style objects can also be used in addition to a style sheet so that different settings can be specified for individual cell ranges without affecting the rest of the document. You can use style objects directly with the [VP SET CELL STYLE](method-list.md#vp-set-cell-style) and [VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) commands.
+スタイルオブジェクトには、スタイル設定が格納されます。 これらはスタイルシートで使用するか、あるいはそのまま使用することができます。 スタイルオブジェクトはスタイルシートと組み合わせて使用することもでき、ドキュメントの他の部分に影響を及ぼすことなく個別のセルレンジに異なる設定を指定することもできます。 [VP SET CELL STYLE](method-list.md#vp-set-cell-style) および [VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) コマンドでは、スタイルオブジェクトを直接使用することができます。
 
-A **style sheet** groups together a combination of properties in a style object to specify the look of all of the cells in your 4D View Pro documents. Style sheets saved with the document can be used to set the properties for a single sheet, multiple sheets, or an entire workbook. When created, a 4D View Pro style sheet is given a name which is saved within the style sheet in the "name" property. This allows a style sheet to be easily used and, if thoughtfully selected, can facilitate its identification and purpose (e.g., Letterhead\_internal, Letterhead_external).
+**スタイルシート** は、プロパティの組み合わせをスタイルオブジェクトにまとめたもので、それによって 4D View Pro ドキュメントのすべてのセルの見た目を指定します。 ドキュメントとともに保存されたスタイルシートを使用して、単一のシート、複数のシート、あるいはワークブック全体に対してプロパティを設定することができます。 4D View Pro スタイルシートは作成時に名前が与えられ、この名前はスタイルシートの "name" プロパティに保存されます。 これによりスタイルシートの使用が容易になり、また注意深く命名することで、その定義と目的を分かりやすくすることもできます (例: Letterhead_internal、Letterhead_external、など)。
 
-Style sheets are created with the [VP ADD STYLESHEET](method-list.md#vp-add-stylesheet) command and applied with the the [VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) or [VP SET CELL STYLE](method-list.md#vp-set-cell-style) commands. You can  remove a style sheet with the [VP REMOVE STYLESHEET](method-list.md#vp-remove-stylesheet) command.
+スタイルシートは [VP ADD STYLESHEET](method-list.md#vp-add-stylesheet) コマンドで作成され、[VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) あるいは [VP SET CELL STYLE](method-list.md#vp-set-cell-style) コマンドで適用されます。 スタイルシートは [VP REMOVE STYLESHEET](method-list.md#vp-remove-stylesheet) コマンドで削除できます。
 
-The [VP Get stylesheet](method-list.md#vp-get-stylesheet) command can be used to return the style object of a single style sheet or you can use the [VP Get stylesheets](method-list.md#vp-get-stylesheets) command to retrieve a collection of style objects for multiple style sheets.
+[VP Get stylesheet](method-list.md#vp-get-stylesheet) コマンドを使用することでスタイルシートのスタイルオブジェクトを取得できます。また、[VP Get stylesheets](method-list.md#vp-get-stylesheets) コマンドを使用して複数のスタイルシートのスタイルオブジェクトのコレクションを取得することもできます。
 
-### Style object properties
+### スタイルオブジェクトプロパティ
 
 例:
 
@@ -433,32 +433,31 @@ The [VP Get stylesheet](method-list.md#vp-get-stylesheet) command can be used to
  $style:=New object
  $style.hAlign:=vk horizontal align left
  $style.font:="12pt papyrus"
- $style.backColor:="#E6E6FA" //light purple color
-
+ $style.backColor:="#E6E6FA" // 薄紫色
  VP SET DEFAULT STYLE("myDoc";$style)
 ```
 
 
-#### Background & Foreground
+#### 背景色と文字色
 
-| プロパティ                 | タイプ           | 説明                                           | Possible values                                                                                                                                                                                                                                                                                                                                                           |
+| プロパティ                 | タイプ           | 説明                                           | とりうる値                                                                                                                                                                                                                                                                                                                                                                     |
 | --------------------- | ------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| backColor             | text          | Defines the color of the background.         | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                        |
+| backColor             | text          | 背景色を定義します。                                   | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                             |
 | backgroundImage       | picture, text | Specifies a background image.                | Can be specified directly or via the image path (full path or file name only). If the file name only is used, the file must be located next to the database structure file. No matter how set (picture or text), a picture is saved with the document. This could impact the size of a document if the image is large. Note for Windows: File extension must be included. |
 | backgroundImageLayout | 倍長整数          | Defines the layout for the background image. | `vk image layout center`, `vk image layout none`, `vk image layout stretch`, `vk image layout zoom`                                                                                                                                                                                                                                                                       |
-| foreColor             | text          | Defines the color of the foreground.         | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                        |
+| foreColor             | text          | Defines the color of the foreground.         | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                             |
 
 #### Borders
 
-| プロパティ                                                                      |       | タイプ    | 説明                                                                             | Possible values                                                                                                                                                                                                                                                                                                                                                  |
+| プロパティ                                                                      |       | タイプ    | 説明                                                                             | とりうる値                                                                                                                                                                                                                                                                                                                                                            |
 | -------------------------------------------------------------------------- | ----- | ------ | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | object | Defines the corresponding border line                                          |                                                                                                                                                                                                                                                                                                                                                                  |
-|                                                                            | color | text   | Defines the color of the border. Default = black.                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                               |
+|                                                                            | color | text   | Defines the color of the border. Default = black.                              | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                    |
 |                                                                            | style | 倍長整数   | Defines the style of the border. Default = empty. Cannot be null or undefined. | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
 
 #### Fonts and text
 
-| プロパティ           |            | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                   | Possible values                                                                                                                                                                                                                             |
+| プロパティ           |            | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                   | とりうる値                                                                                                                                                                                                                                       |
 | --------------- | ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | font            |            | text    | Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes. | A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](method-list.md#vp-font-to-object) and [`VP Object to font`](method-list.md#vp-object-to-font) |
 | formatter       |            | text    | Pattern for value/time property.                                                                                                                                                                                                                                                                                                                                     | Number/text/date/time formats, special characters. See [Cell Format](#cell-format).                                                                                                                                                         |
@@ -466,7 +465,7 @@ The [VP Get stylesheet](method-list.md#vp-get-stylesheet) command can be used to
 | labelOptions    |            | object  | Defines cell label options (watermark options).                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                             |
 |                 | alignment  | 倍長整数    | Specifies the position of the cell label. Optional property.                                                                                                                                                                                                                                                                                                         | `vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right`                                     |
 |                 | visibility | 倍長整数    | Specifies the visibility of the cell label. Optional property.                                                                                                                                                                                                                                                                                                       | `vk label visibility auto`, `vk label visibility hidden`, `vk label visibility visible`                                                                                                                                                     |
-|                 | foreColor  | text    | Defines the color of the foreground. Optional property.                                                                                                                                                                                                                                                                                                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                          |
+|                 | foreColor  | text    | Defines the color of the foreground. Optional property.                                                                                                                                                                                                                                                                                                              | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                               |
 |                 | font       | text    | Specifies the font characteristics with CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). The font-size and font-family values are mandatory.                                                                                                                                                                            |                                                                                                                                                                                                                                             |
 | textDecoration  |            | 倍長整数    | Specifies the decoration added to text.                                                                                                                                                                                                                                                                                                                              | `vk text decoration double underline`, `vk text decoration line through`, `vk text decoration none`, `vk text decoration overline`, `vk text decoration underline`                                                                          |
 | textIndent      |            | 倍長整数    | Defines the unit of text indention. 1 = 8 pixels                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                             |
@@ -476,7 +475,7 @@ The [VP Get stylesheet](method-list.md#vp-get-stylesheet) command can be used to
 
 #### レイアウト
 
-| プロパティ       | タイプ     | 説明                                                                                                                  | Possible values                                                                                                      |
+| プロパティ       | タイプ     | 説明                                                                                                                  | とりうる値                                                                                                                |
 | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | cellPadding | text    | Defines the cell padding                                                                                            |                                                                                                                      |
 | hAlign      | 倍長整数    | Defines the horizontal alignment of cell contents.                                                                  | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
