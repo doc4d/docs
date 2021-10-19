@@ -589,7 +589,7 @@ Then this entity selection is updated with products and you want to share the pr
 
 The `.distinct()` function <!-- REF #EntitySelectionClass.distinct().Summary -->returns a collection containing only distinct (different) values from the *attributePath* in the entity selection<!-- END REF -->.
 
-The returned collection is automatically sorted. **Null** values are not returned.
+La colección devuelta se clasifica automáticamente. Los valores **Null** no se devuelven.
 
 In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
 
@@ -600,7 +600,7 @@ In the *attributePath* parameter, pass the entity attribute whose distinct value
 
 You can use the `[]` notation to designate a collection when *attributePath* is a path within an object (see examples).
 
-By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
+Por defecto, se realiza una evaluación no diacrítica. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
 
 An error is returned if:
 
@@ -1766,7 +1766,7 @@ $result2:=$invoices.selected($creditSel)
 | Parámetros | Tipo               |    | Descripción                                                    |
 | ---------- | ------------------ |:--:| -------------------------------------------------------------- |
 | startFrom  | Integer            | -> | Index to start the operation at (included)                     |
-| end        | Integer            | -> | End index (not included)                                       |
+| end        | Integer            | -> | Índice final (no incluido)                                     |
 | Resultado  | 4D.EntitySelection | <- | New entity selection containing sliced entities (shallow copy) |
 <!-- END REF -->
 
