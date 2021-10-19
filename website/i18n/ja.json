@@ -11,20 +11,14 @@
       "Admin/dataExplorer": {
         "title": "Webデータエクスプローラー"
       },
-      "Admin/debugLogFiles": {
-        "title": "ログファイルの詳細"
-      },
       "Admin/licenses": {
         "title": "4D ライセンスの管理"
-      },
-      "Admin/server-admin": {
-        "title": "4D Server 管理ウィンドウ"
       },
       "Admin/tls": {
         "title": "TLSプロトコル (HTTPS)"
       },
       "Admin/webAdmin": {
-        "title": "Web 管理"
+        "title": "WebAdmin"
       },
       "API/BlobClass": {
         "title": "BLOB"
@@ -222,6 +216,9 @@
       "Debugging/debugging-remote": {
         "title": "リモートマシンからのデバッグ"
       },
+      "Debugging/debugLogFiles": {
+        "title": "ログファイルの詳細"
+      },
       "Desktop/building": {
         "title": "アプリケーションビルド"
       },
@@ -409,6 +406,15 @@
         "title": "On Window Opening Denied"
       },
       "Events/overview": {
+        "title": "概要"
+      },
+      "Extensions/develop-components": {
+        "title": "Developing Components"
+      },
+      "Extensions/develop-plug-ins": {
+        "title": "Developing Plug-ins"
+      },
+      "Extensions/overview": {
         "title": "概要"
       },
       "FormEditor/stylesheets": {
@@ -615,6 +621,9 @@
       "FormObjects/writeProAreaOverview": {
         "title": "4D Write Pro エリア"
       },
+      "GettingStarted/creating": {
+        "title": "プロジェクトを開発する"
+      },
       "GettingStarted/installation": {
         "title": "インストール"
       },
@@ -721,12 +730,6 @@
       "Project/compiler": {
         "title": "コンパイル"
       },
-      "Project/components": {
-        "title": "4D コンポーネントライブラリ"
-      },
-      "Project/creating": {
-        "title": "プロジェクトを開発する"
-      },
       "Project/documentation": {
         "title": "ドキュメンテーション"
       },
@@ -829,6 +832,33 @@
       "REST/REST_requests": {
         "title": "RESTリクエストについて"
       },
+      "ServerWindow/application-server": {
+        "title": "アプリケーションサーバーページ"
+      },
+      "ServerWindow/http-server": {
+        "title": "HTTPサーバーページ"
+      },
+      "ServerWindow/maintenance": {
+        "title": "メンテナンスページ"
+      },
+      "ServerWindow/monitor": {
+        "title": "モニターページ"
+      },
+      "ServerWindow/overview": {
+        "title": "概要"
+      },
+      "ServerWindow/processes": {
+        "title": "プロセスページ"
+      },
+      "ServerWindow/real-time-monitor": {
+        "title": "リアルタイムモニターページ"
+      },
+      "ServerWindow/sql-server": {
+        "title": "SQLサーバーページ"
+      },
+      "ServerWindow/users": {
+        "title": "ユーザーページ"
+      },
       "Tags/tags": {
         "title": "変換タグ"
       },
@@ -888,7 +918,8 @@
       }
     },
     "links": {
-      "v19 R2 BETA": "v19 R2 BETA",
+      "v19 R3 BETA": "v19 R3 BETA",
+      "v19 R2": "v19 R2",
       "v19": "v19",
       "v18": "v18"
     },
@@ -901,7 +932,11 @@
       "Debugging": "デバッガー",
       "Access Rights": "アクセス権限",
       "Preferences": "環境設定",
-      "Administration": "管理",
+      "4D Server Administration Window": "4D Server 管理ウィンドウ",
+      "Web Administration": "Web 管理",
+      "Command Line Interface": "コマンドライン・インターフェース",
+      "TLS Protocol": "TLS Protocol",
+      "License Management": "ライセンス管理",
       "MSC": "MSC",
       "Backup and Restore": "バックアップと復元",
       "Web Server": "Web サーバー",
@@ -915,6 +950,7 @@
       "Form Events": "フォームイベント",
       "Menus": "メニュー",
       "Build application": "アプリケーションビルド",
+      "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }
   },
@@ -942,7 +978,7 @@
     "4D Server Administration Window|no description given": "4D Server 管理ウィンドウ",
     "4D Components Library|no description given": "4D コンポーネントライブラリ",
     "Client/Server|no description given": "クライアント/サーバー",
-    "TLS Protocol (HTTPS)|no description given": "TLSプロトコル (HTTPS)",
+    "TLS Protocol|no description given": "TLS Protocol",
     "Debugging|no description given": "デバッガー",
     "Web Data Explorer|no description given": "Webデータエクスプローラー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
@@ -951,12 +987,17 @@
     "Command Line Interface|no description given": "コマンドライン・インターフェース",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "環境設定",
+    "Overview|no description given": "概要",
+    "Developing Components|no description given": "Developing Components",
+    "Developing Plugins|no description given": "Developing Plugins",
+    "Working with a project|no description given": "プロジェクトを開発する",
     "Getting started|no description given": "はじめに",
     "Core Development|no description given": "コア開発",
     "Administration|no description given": "管理",
     "Web applications|no description given": "Web アプリ",
     "Mobile applications|no description given": "モバイルアプリ",
     "Desktop applications|no description given": "デスクトップアプリ",
+    "Extensions|no description given": "Extensions",
     "Documentation updates|no description given": "ドキュメンテーション更新情報",
     "Help Translate|recruit community translators for your project": "翻訳を手伝う",
     "Edit this Doc|recruitment message asking to edit the doc source": "編集",
