@@ -60,7 +60,7 @@ class Index extends React.Component {
     serverAdmin: <translate>4D Server Administration Window</translate>,
 	components: <translate>4D Components Library</translate>,
 	cs: <translate>Client/Server</translate>,
-    tls: <translate>TLS Protocol (HTTPS)</translate>,
+    tls: <translate>TLS Protocol</translate>,
 	  debugging: <translate>Debugging</translate>,
     dataExplorer: <translate>Web Data Explorer</translate>,
 	langRef: <translate>Language Reference (4D Doc Center)</translate>,
@@ -168,7 +168,7 @@ class Index extends React.Component {
               align="left"
               contents={[
                 {
-                  content: `[${subContents.overview}](${siteConfig.baseUrl}${this.props.language}/Extensions/components.html)<br>
+                  content: `[${subContents.overview}](${siteConfig.baseUrl}${this.props.language}/Extensions/overview.html)<br>
 				  [${subContents.viewPro}](${siteConfig.baseUrl}${this.props.language}/ViewPro/getting-started.html)<br>
 				  [4D Mobile App Server](ttps://github.com/4d-go-mobile/4D-Mobile-App-Server)<br>
 				  [4D NetKit](https://github.com/4d/4D-NetKit)<br>
