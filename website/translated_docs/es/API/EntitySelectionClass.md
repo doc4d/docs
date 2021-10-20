@@ -591,7 +591,7 @@ The `.distinct()` function <!-- REF #EntitySelectionClass.distinct().Summary -->
 
 La colección devuelta se clasifica automáticamente. Los valores **Null** no se devuelven.
 
-In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
+In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Los tipos se devuelven en el siguiente orden:
 
 1.  booleanos
 2.  strings
