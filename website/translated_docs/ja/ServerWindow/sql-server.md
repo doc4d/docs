@@ -4,7 +4,7 @@ title: SQLサーバーページ
 ---
 
 
-The **SQL Server** page groups together information about the integrated SQL server of 4D Server. また、SQLサーバーを有効にするためのボタンも含まれています。
+**SQLサーバー** ページには、4D Server に統合された SQLサーバーについての情報が集められています。 また、SQLサーバーを有効にするためのボタンも含まれています。
 
 ![](assets/en/Admin/server-admin-sql-page.png)
 
