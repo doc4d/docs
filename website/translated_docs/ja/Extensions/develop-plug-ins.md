@@ -1,6 +1,6 @@
 ---
 id: develop-plug-ins
-title: Developing Plug-ins
+title: プラグインの開発
 ---
 
 ## プラグインの必要性
@@ -38,6 +38,6 @@ title: Developing Plug-ins
 - [**4D Plugin Wizard**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) は、4D プラグインの開発を簡略化するために不可欠なツールです。 プラグインのロードや、プラグインとの通信に 4D が必要とするコードがツールによって提供されることで、デベロッパーはプラグインの根幹をなすコードに集中することができます。
 
 
-## Sharing plug-ins
+## プラグインの共有
 
-We encourage you to support the 4D developer community by sharing your plug-ins, for example on the [GitHub platform](https://github.com/search?q=4d-plugin).
+開発したプラグインを [GitHub](https://github.com/search?q=4d-plugin) などで公開し、4D開発者のコミュニティをサポートすることをお勧めします。
