@@ -13,7 +13,7 @@ title: プロセスページ
 
 列ヘッダーをドラッグ＆ドロップして、列の順番を入れ替えることができます。 また、ヘッダーをクリックすると、リストの値が並べ替えられます。
 
-Like the Users page, this page contains a dynamic [search/filtering area](users.md#searchfiltering-area) that can be used to reduce the number of rows displayed in the list to those that correspond to the text entered in the search area. 検索/フィルターはセッションとプロセス名の列に対して実行されます。
+ユーザーページと同様にこのページにも、検索欄に入力されたテキストに対応する行だけをリストに表示させ、行数を減らすことができる動的な [検索/フィルターエリア](users.md#検索フィルターエリア) があります。 検索/フィルターはセッションとプロセス名の列に対して実行されます。
 
 ウィンドウに表示されるプロセスを、タイプ毎にフィルターするためのボタンが 3つあります:
 
@@ -97,5 +97,5 @@ Like the Users page, this page contains a dynamic [search/filtering area](users.
 
 > 確認ダイアログなしに選択したプロセスをデバッグするには、**Alt**キーを押しながらこのボタンをクリックします。
 
-- **Watch users**: used to display, on the [Users page](users.md), all the processes of the selected user(s). 1つ以上のユーザープロセスが選択されている場合にこのボタンは有効になります。
+- **ユーザーを表示**: 選択されたプロセスのユーザーを管理ウィンドウの [ユーザーページ](users.md) に直接表示させることができます。 1つ以上のユーザープロセスが選択されている場合にこのボタンは有効になります。
 
