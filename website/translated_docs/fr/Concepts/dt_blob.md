@@ -3,11 +3,11 @@ id: blob
 title: BLOB
 ---
 
-A BLOB (Binary Large OBject) field, variable or expression is a contiguous series of bytes that can be treated as one whole object, or whose bytes can be addressed individually.
+Un champ, une variable ou une expression de type BLOB (Binary Large OBject) est une série contiguë d'octets qui peut être traitée comme un seul objet ou dont les octets peuvent être adressés individuellement.
 
-A blob is loaded into memory in its entirety. A blob variable is held and exists in memory only. A blob field is loaded into memory from the disk, like the rest of the record to which it belongs.
+Lorsque vous travaillez avec un blob, il est stocké entièrement en mémoire. Si vous travaillez avec une variable, le blob n'existe qu'en mémoire. Si vous travaillez avec un champ de type blob, il est chargé en mémoire à partir du disque, comme le reste de l'enregistrement auquel il appartient.
 
-Like other field types that can retain a large amount of data (such as the Picture field type), Blob fields are not duplicated in memory when you modify a record. Consequently, the result returned by the `Old` and `Modified` commands is not significant when applied to a Blob field.
+A l'instar d'autres types de champs pouvant contenir une grande quantité de données (comme les champs de type Image), les champs de type blob ne sont pas dupliqués en mémoire lorsque vous modifiez un enregistrement. Par conséquent, les résultats renvoyés par `Ancien` et `Modifie` ne sont pas significatifs lorsque ces fonctions sont appliquées à des champs de type blob.
 
 ## Blob Types
 
