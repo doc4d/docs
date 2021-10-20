@@ -253,160 +253,160 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 
 
-## Print Attributes
+## 印刷属性
 
-4D View Pro print attributes allow you to control all aspects of printing 4D View Pro areas. These attributes are handled by the following commands:
+4D View Pro 印刷属性を使って、4D View Pro エリアの印刷に関するすべての項目を管理することができます。 これらの属性は以下のコマンドによって操作します:
 
 *   [VP SET PRINT INFO](method-list.md#vp-set-print-info)
 *   [VP Get print info](method-list.md#vp-get-print-info)
 
-### Columns / Rows
+### カラム / 行
 
-Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
+カラム属性と行属性を使って、カラムと行の始まり、終わり、そして繰り返しについて指定します。
 
-| プロパティ             | タイプ  | 説明                                                                                                         |
-| ----------------- | ---- | ---------------------------------------------------------------------------------------------------------- |
-| columnEnd         | 倍長整数 | The last column to print in a cell range. Default value = -1 (all columns)                                 |
-| columnStart       | 倍長整数 | The first column to print in a cell range. Default value = -1 (all columns)                                |
-| repeatColumnEnd   | 倍長整数 | The last column of a range of columns to print on the left of each page. Default value = -1 (all columns)  |
-| repeatColumnStart | 倍長整数 | The first column of a range of columns to print on the left of each page. Default value = -1 (all columns) |
-| repeatRowEnd      | 倍長整数 | The last row of a range of rows to print on the top of each page. Default value = -1 (all rows)            |
-| repeatRowStart    | 倍長整数 | The first row of a range of rows to print at the top of each page. Default value = -1 (all rows)           |
-| rowEnd            | 倍長整数 | The last row to print in a cell range. Default value = -1 (all rows)                                       |
-| rowStart          | 倍長整数 | The first row to print in a cell range. Default value = -1 (all rows)                                      |
+| プロパティ             | タイプ     | 説明                                             |
+| ----------------- | ------- | ---------------------------------------------- |
+| columnEnd         | longint | セルレンジ内で印刷する最後のカラム。 デフォルト値 = -1 (全カラム)          |
+| columnStart       | longint | セルレンジ内で印刷する最初のカラム。 デフォルト値 = -1 (全カラム)          |
+| repeatColumnEnd   | longint | 各ページの左に印刷するカラムのレンジの、最後のカラム。 デフォルト値 = -1 (全カラム) |
+| repeatColumnStart | longint | 各ページの左に印刷するカラムのレンジの、最初のカラム。 デフォルト値 = -1 (全カラム) |
+| repeatRowEnd      | longint | 各ページの上に印刷する行のレンジの、最後の行。 デフォルト値 = -1 (すべての行)    |
+| repeatRowStart    | longint | 各ページの上に印刷する行のレンジの、最初の行。 デフォルト値 = -1 (すべての行)    |
+| rowEnd            | longint | セルレンジ内で印刷する最後の行。 デフォルト値 = -1 (すべての行)           |
+| rowStart          | longint | セルレンジ内で印刷する最初の行。 デフォルト値 = -1 (すべての行)           |
 
-### Headers / Footers
+### ヘッダー / フッター
 
-Header and footer attributes are used to specify text or images in the left, right, and center header/footer sections.
+ヘッダー属性とフッター属性は、ヘッダー/フッターセクションの左・右・センターのテキストまたは画像を指定するのに使用されます。
 
-| プロパティ             | タイプ                  | 説明                                                         |
-| ----------------- | -------------------- | ---------------------------------------------------------- |
-| footerCenter      | text                 | The text and format of the center footer on printed pages. |
-| footerCenterImage | picture &#124; text* | The image for the center section of the footer.            |
-| footerLeft        | text                 | The text and format of the left footer on printed pages.   |
-| footerLeftImage   | picture &#124; text* | The image for the left section of the footer.              |
-| footerRight       | text                 | The text and format of the right footer on printed pages.  |
-| footerRightImage  | picture &#124; text* | The image for the right section of the footer.             |
-| headerCenter      | text                 | The text and format of the center header on printed pages. |
-| headerCenterImage | picture &#124; text* | The image for the center section of the header.            |
-| headerLeft        | text                 | The text and format of the left header on printed pages.   |
-| headerLeftImage   | picture &#124; text* | The image for the left section of the header.              |
-| headerRight       | text                 | The text and format of the right header on printed pages.  |
-| headerRightImage  | picture &#124; text* | The image for the right section of the header.             |
+| プロパティ             | タイプ                  | 説明                         |
+| ----------------- | -------------------- | -------------------------- |
+| footerCenter      | text                 | 印刷ページのセンターフッターのテキストとフォーマット |
+| footerCenterImage | picture &#124; text* | フッターのセンターセクションの画像          |
+| footerLeft        | text                 | 印刷ページの左フッターのテキストとフォーマット    |
+| footerLeftImage   | picture &#124; text* | フッターの左セクションの画像             |
+| footerRight       | text                 | 印刷ページの右フッターのテキストとフォーマット    |
+| footerRightImage  | picture &#124; text* | フッターの右セクションの画像             |
+| headerCenter      | text                 | 印刷ページのセンターヘッダーのテキストとフォーマット |
+| headerCenterImage | picture &#124; text* | ヘッダーのセンターセクションの画像          |
+| headerLeft        | text                 | 印刷ページの左ヘッダーのテキストとフォーマット    |
+| headerLeftImage   | picture &#124; text* | ヘッダーの左セクションの画像             |
+| headerRight       | text                 | 印刷ページの右ヘッダーのテキストとフォーマット    |
+| headerRightImage  | picture &#124; text* | ヘッダーの右セクションの画像             |
 
-\* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
+\* テキスト型を使用する場合には、画像のファイルパス (絶対パスまたは相対パス) を渡します。 相対パスを渡す場合、ファイルはデータベースのストラクチャーファイルのと階層に置かれてなければなりません。 Windows では、ファイル拡張子も含めて渡します。 画像指定に使用するデータ型にかかわらず、4D View Pro エリアには (参照ではなく) 画像そのものが保存され、[VP Get print info](method-list.md#vp-get-print-info) によって返されます。
 
-### Special Characters
+### 特殊文字
 
-The following special characters allow the automatic addition or formatting of information in the header and footer when the 4D View Pro area is printed.
+以下の特殊文字を使用すると、4D View Pro エリアが印刷される際にヘッダーとフッター内に自動で情報を追加およびフォーマットすることができます。
 
 
-| 文字 | 説明                               | 例題                                                                    | 戻り値                                               |
-| -- | -------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
-| &  | Escape character                 | (see examples below)                                                  |                                                   |
-| P  | Current page                     | printInfo.headerLeft:="This is page &P."                              | This is page 5.|                                  |
-| N  | Page count                       | printInfo.headerLeft:="There are &N pages."                           | There are 10 pages.                               |
-| D  | Current date (yyyy/mm/dd format) | printInfo.headerLeft:="It is &D."                                     | It is 2015/6/19.                                  |
-| T  | 現在の時刻                            | printInfo.headerLeft:="It is &T."                                     | It is 16:30:36.                                   |
-| G  | ピクチャー                            | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
-| S  | Strikethrough                    | printInfo.headerLeft:="&SThis is text."                               | ~~This is text.~~                                 |
-| U  | 下線                               | printInfo.headerLeft:="&UThis is text."                               | <ins>This is text.</ins>                         |
-| B  | 太字                               | printInfo.headerLeft:="&BThis is text."                               | **This is text.**                                 |
-| I  | イタリック                            | printInfo.headerLeft:="&IThis is text."                               | *This is text.*                                   |
-| "  | Font prefix                      | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
-| K  | Text Color prefix                | printInfo.headerLeft:="&KFF0000This is text."                         | <span style="color:red">This is text</span>.      |
-| F  | Workbook name                    | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
-| A  | Spreadsheet name                 | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
+| 文字 | 説明                         | 例題                                                                    | 戻り値                                               |
+| -- | -------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- |
+| &  | エスケープ文字                    | (以下の例を参照)                                                             |                                                   |
+| P  | カレントページ                    | printInfo.headerLeft:="これは &P ページ目です"                                 | これは 5 ページ目です|                                     |
+| N  | ページ数                       | printInfo.headerLeft:="&N ページあります"                                    | 10 ページあります                                        |
+| D  | カレント日付 (yyyy/mm/dd フォーマット) | printInfo.headerLeft:="日付は &D です"                                     | 日付は 2015/6/19 です                                  |
+| T  | 現在の時刻                      | printInfo.headerLeft:="時刻は &T です"                                     | 時刻は 16:30:36 です                                   |
+| G  | ピクチャー                      | printInfo.headerLeftImage:=smiley<br>printInfo.headerLeft:="&G" | ![](assets/en/ViewPro/apx_vpPrintAttributes1.PNG) |
+| S  | 打ち消し線                      | printInfo.headerLeft:="&Sこれはテキストです"                                   | ~~これはテキストです~~                                     |
+| U  | 下線                         | printInfo.headerLeft:="&Uこれはテキストです"                                   | <ins>これはテキストです</ins>                         |
+| B  | 太字                         | printInfo.headerLeft:="&Bこれはテキストです"                                   | **これはテキストです**                                     |
+| I  | イタリック                      | printInfo.headerLeft:="&Iこれはテキストです"                                   | *これはテキストです*                                       |
+| "  | フォント指定                     | printInfo.headerLeft:="&\"Lucida Console\"&14This is text."         | ![](assets/en/ViewPro/apx_vpPrintAttributes2.PNG) |
+| K  | 文字カラー指定                    | printInfo.headerLeft:="&KFF0000これはテキストです"                             | <span style="color:red">これはテキストです</span>          |
+| F  | ワークブック名                    | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
+| A  | スプレッドシート名                  | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
 
-### Margins
+### マージン
 
-Margin attributes are used to specify the 4D View Pro area margins for printing. Expressed in hundreds of an inch.
+マージン属性は、印刷時の 4D View Pro エリアのマージンを指定するために使用されます。 100分の1インチ単位で表現されます。
 
-| プロパティ  |        | タイプ    | 説明                                                          |
-| ------ | ------ | ------ | ----------------------------------------------------------- |
-| margin |        | object | The print margins                                           |
-|        | top    | 倍長整数   | Top margin, in hundredths of an inch. Default value = 75    |
-|        | bottom | 倍長整数   | Bottom margin, in hundredths of an inch. Default value = 75 |
-|        | left   | 倍長整数   | Left margin, in hundredths of an inch. Default value = 70   |
-|        | right  | 倍長整数   | Right margin, in hundredths of an inch. Default value = 70  |
-|        | header | 倍長整数   | Header offset, in hundredths of an inch. Default value = 30 |
-|        | footer | 倍長整数   | Footer offset, in hundredths of an inch. Default value = 30 |
+| プロパティ  |        | タイプ     | 説明                                  |
+| ------ | ------ | ------- | ----------------------------------- |
+| margin |        | object  | 印刷マージン                              |
+|        | top    | longint | 上部マージン、100分の1インチ単位。 デフォルト値 = 75     |
+|        | bottom | longint | 下部マージン、100分の1インチ単位。 デフォルト値 = 75     |
+|        | left   | longint | 左マージン、100分の1インチ単位。 デフォルト値 = 70      |
+|        | right  | longint | 右マージン、100分の1インチ単位。 デフォルト値 = 70      |
+|        | header | longint | ヘッダーのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
+|        | footer | longint | フッターのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
 
-### 方向
+### 向き
 
-Orientation attributes are used to specify the direction the printed page layout.
-> This attribute defines rendering information only.
+向き属性は、印刷ページレイアウトの方向を指定するのに使用されます。
+> この属性はレンダリング情報のみを定義します。
 
-| プロパティ       | タイプ  | 説明                                                                                                                        |
-| ----------- | ---- | ------------------------------------------------------------------------------------------------------------------------- |
-| orientation | 倍長整数 | Page orientation. Available values: `vk print page orientation landscape`, `vk print page orientation portrait` (default) |
+| プロパティ       | タイプ     | 説明                                                                                                 |
+| ----------- | ------- | -------------------------------------------------------------------------------------------------- |
+| orientation | longint | ページの向き。 とりうる値: `vk print page orientation landscape`, `vk print page orientation portrait` (デフォルト) |
 
-### Page
+### ページ
 
-Page attributes are used to specify general document print settings.
+ページ属性は、一般的なドキュメント印刷設定を指定するのに使用されます。
 
-| プロパティ           | タイプ     | 説明                                                                                                                                                                                                  |
-| --------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| blackAndWhite   | boolean | Printing in black and white only. <p>Default value = false</p><p>**Note**: PDFs are not affected by this attribute. Colors in PDFs remain.</p>                                                                                                                 |
-| centering       | 倍長整数    | How the contents are centered on the printed page. Available values: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (default), `vk print centering vertical` |
-| firstPageNumber | 倍長整数    | The page number to print on the first page.<p>Default value = 1                                                                                                             |
-| pageOrder       | 倍長整数    | The order pages are printed. Available values: `vk print page order auto` (default), `vk print page order down then over`, `vk print page order over then down`.                                    |
-| pageRange       | text    | The range of pages for printing                                                                                                                                                                     |
-| qualityFactor   | 倍長整数    | The quality factor for printing (1 - 8).  The higher the quality factor, the better the printing quality, however printing performance may be affected.<p>Default value = 2</p>                    |
-| useMax          | boolean | Only columns and rows with data are printed.<p>Default value = true</p>                                                                                                                               |
-| zoomFactor      | 実数      | The amount to enlarge or reduce the printed page.<p>Default value = 1</p>                                                                                                                          |
+| プロパティ           | タイプ     | 説明                                                                                                                                                                   |
+| --------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| blackAndWhite   | boolean | 白黒で印刷します。 <p>デフォルト値 = false</p><p>**注**: PDF はこの属性に影響されません。 PDF のカラーはそのままです。</p>                                                                                                          |
+| centering       | longint | 印刷ページ上でコンテンツをどのように中央揃えするかを指定します。 とりうる値: `vk print centering both`, `vk print centering horizontal`, `vk print centering none` (デフォルト), `vk print centering vertical` |
+| firstPageNumber | longint | 最初のページに印刷するページ番号。<p>デフォルト値 = 1                                                                                                               |
+| pageOrder       | longint | ページの印刷順。 とりうる値: `vk print page order auto` (default), `vk print page order down then over`, `vk print page order over then down`.                                    |
+| pageRange       | text    | 印刷されるページの範囲                                                                                                                                                          |
+| qualityFactor   | longint | 印刷の品質指定 (1 - 8)。  高ければ印刷の質は高くなりますが、印刷のパフォーマンスに影響する可能性があります。<p>デフォルト値 = 2</p>                                                                                 |
+| useMax          | boolean | データのあるカラムと行のみが印刷されます。<p>デフォルト値 = true</p>                                                                                                                       |
+| zoomFactor      | real    | 印刷ページの拡大/縮小率。<p>デフォルト値 = 1</p>                                                                                                                               |
 
-### Paper Size
+### 用紙サイズ
 
-Paper size attributes are used to specify the dimensions or model of paper to use for printing. There are two ways to define paper size:
+用紙サイズ属性は印刷に使用する用紙の寸法や規格サイズを指定します。 用紙サイズを定義するには 2つの方法があります:
 
-*   Custom size - height and width attributes
-*   Standard size - kind attribute
+*   カスタムサイズ - height と width 属性を使用
+*   規格サイズ - kind 属性を使用
 
-| プロパティ     |        | タイプ    | 説明                                                                                                               |
-| --------- | ------ | ------ | ---------------------------------------------------------------------------------------------------------------- |
-| paperSize |        | object | Paper dimensions (height, width) or specific format (kind) for printing.                                         |
-|           | height | 倍長整数   | Height of the paper, in hundredths of an inch.                                                                   |
-|           | width  | 倍長整数   | Width of the paper, in hundredths of an inch.                                                                    |
-|           | kind   | text   | Name of standard paper size (e.g., A2, A4, legal, etc.) returned by `Get Print Option`. Default value = "letter" |
+| プロパティ     |        | タイプ     | 説明                                                                              |
+| --------- | ------ | ------- | ------------------------------------------------------------------------------- |
+| paperSize |        | object  | 印刷に使用する用紙の寸法 (height、width) または規格 (kind)                                        |
+|           | height | longint | 用紙の高さ、100分の1インチ単位                                                               |
+|           | width  | longint | 用紙の幅、100分の1インチ単位                                                                |
+|           | kind   | text    | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。`GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
 
 ### スケール
 
-Scale attributes are used to specify printing optimization and adjustments.
+スケール属性は印刷の最適化と調整のために使用されます。
 
-| プロパティ          | タイプ     | 説明                                                                                                                                      |
-| -------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| bestFitColumns | boolean | Column width is adjusted to fit the largest text width for printing.<p>Default value = "false"                  |
-| bestFitRows    | boolean | Row height is adjusted to fit the tallest text height for printing. <p>Default value = "false"                  |
-| fitPagesTall   | 倍長整数    | The number of vertical pages (portrait orientation) to check when optimizing printing.<p> Default value = -1    |
-| fitPagesWide   | 倍長整数    | The number of horizontal pages (landscape orientation) to check when optimizing printing. <p>Default value = -1 |
+| プロパティ          | タイプ     | 説明                                                                        |
+| -------------- | ------- | ------------------------------------------------------------------------- |
+| bestFitColumns | boolean | 印刷時、カラムの幅はテキストの最大幅に合うように調整されます。<p>デフォルト値 = false  |
+| bestFitRows    | boolean | 印刷時、行の高さはテキストの最大高さに合うように調整されます。 <p>デフォルト値 = false |
+| fitPagesTall   | longint | 最適化印刷時、チェックする垂直方向 (縦向き) のページ数。<p> デフォルト値 = -1     |
+| fitPagesWide   | longint | 最適化印刷時、チェックする水平方向 (横向き) のページ数。 <p>デフォルト値 = -1     |
 
-### Show / Hide
+### 表示 / 非表示
 
-Show / Hide attributes are used to specify the visibility (printing) of 4D View Pro area elements.
+表示 / 非表示属性は 4D View Pro エリア要素の表示 (印刷) 状態を指定するのに使用されます。
 
-| プロパティ            | タイプ     | 説明                                                                                                                                                                               |
-| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| showBorder       | boolean | Prints the outline border.<p><p>Default value = "true"                                                                           |
-| showColumnHeader | 倍長整数    | Column header print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once` |
-| showGridLine     | boolean | Prints the gridlines.<p>Default value = "false"                                                                                                          |
-| showRowHeader    | 倍長整数    | Row headers print settings. Available values: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`   |
+| プロパティ            | タイプ     | 説明                                                                                                                                                    |
+| ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| showBorder       | boolean | 外枠の境界線を印刷します。<p><p>デフォルト値 = true                                                                      |
+| showColumnHeader | longint | カラムヘッダーの印刷設定。 とりうる値: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once` |
+| showGridLine     | boolean | 枠線を印刷します。<p>デフォルト値 = false                                                                                                    |
+| showRowHeader    | longint | 行ヘッダーの印刷設定。 とりうる値: `vk print visibility hide`, `vk print visibility inherit` (default), `vk print visibility show`, `vk print visibility show once`   |
 
-### Watermark
+### ウォーターマーク
 
-Watermark attributes are used to superimpose text or an image onto the 4D View Pro area.
+ウォーターマーク属性は 4D View Pro エリアに透かしとして、テキストまたは画像を重ねて表示するために使用されます。
 
-| プロパティ     |                | タイプ                  | 説明                                                                                                                                                                               |
-| --------- | -------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| watermark |                | collection           | Collection of watermark settings. <p>Default value: undefined                                                                                            |
-|           | \[ ].height   | 倍長整数                 | The height of the watermark text / image.                                                                                                                                        |
-|           | \[ ].imageSrc | picture &#124; text* | The watermark text / image.                                                                                                                                                      |
-|           | \[ ].page     | text                 | The page(s) where the watermark is printed.<p>For all pages: "all". For specific pages: page numbers or page ranges separated by commas. Ex.: "1,3,5-12" |
-|           | \[ ].width    | 倍長整数                 | The width of the watermark text / image.                                                                                                                                         |
-|           | \[ ].x        | 倍長整数                 | The horizontal coordinate of the top left point of the watermark text / image.                                                                                                   |
-|           | \[ ].y        | 倍長整数                 | The vertical coordinate of the top left point of the watermark text / image.                                                                                                     |
+| プロパティ     |                | タイプ                  | 説明                                                                                                          |
+| --------- | -------------- | -------------------- | ----------------------------------------------------------------------------------------------------------- |
+| watermark |                | collection           | ウォーターマーク設定のコレクション。 <p>デフォルト値: undefined                                             |
+|           | \[ ].height   | longint              | ウォーターマークのテキスト/画像の高さ。                                                                                        |
+|           | \[ ].imageSrc | picture &#124; text* | ウォーターマークのテキスト/画像。                                                                                           |
+|           | \[ ].page     | text                 | ウォーターマークが印刷されるページ。<p>全ページに印刷: "all"。 特定のページ: カンマで区切られたページ番号またはページの範囲。 例: "1,3,5-12" |
+|           | \[ ].width    | longint              | ウォーターマークのテキスト/画像の幅。                                                                                         |
+|           | \[ ].x        | longint              | ウォーターマークのテキスト/画像の左上端の水平方向の座標                                                                                |
+|           | \[ ].y        | longint              | ウォーターマークのテキスト/画像の左上端の垂直方向の座標                                                                                |
 
-\* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
+\* テキスト型を使用する場合には、画像のファイルパス (絶対パスまたは相対パス) を渡します。 相対パスを渡す場合、ファイルはデータベースのストラクチャーファイルのと階層に置かれてなければなりません。 Windows では、ファイル拡張子も含めて渡します。 画像指定に使用するデータ型にかかわらず、4D View Pro エリアには (参照ではなく) 画像そのものが保存され、[VP Get print info](method-list.md#vp-get-print-info) によって返されます。
 
 
 
@@ -440,49 +440,49 @@ Watermark attributes are used to superimpose text or an image onto the 4D View P
 
 #### 背景色と文字色
 
-| プロパティ                 | タイプ           | 説明                                           | とりうる値                                                                                                                                                                                                                                                                                                                                                                     |
-| --------------------- | ------------- | -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| backColor             | text          | 背景色を定義します。                                   | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                             |
-| backgroundImage       | picture, text | Specifies a background image.                | Can be specified directly or via the image path (full path or file name only). If the file name only is used, the file must be located next to the database structure file. No matter how set (picture or text), a picture is saved with the document. This could impact the size of a document if the image is large. Note for Windows: File extension must be included. |
-| backgroundImageLayout | 倍長整数          | Defines the layout for the background image. | `vk image layout center`, `vk image layout none`, `vk image layout stretch`, `vk image layout zoom`                                                                                                                                                                                                                                                                       |
-| foreColor             | text          | Defines the color of the foreground.         | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                             |
+| プロパティ                 | タイプ           | 説明                | とりうる値                                                                                                                                                                                                                                |
+| --------------------- | ------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| backColor             | text          | 背景色を定義します。        | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                        |
+| backgroundImage       | picture, text | 背景画像を指定します。       | 直接指定するか、または画像パス (フルパス、またはファイル名のみ) で指定することができます。 ファイル名のみを使用する場合、ファイルはデータベースのストラクチャーファイルと同じ階層に置かれている必要があります。 指定の方法 (ピクチャーまたはテキスト) に関わらず、ピクチャーはドキュメントとともに保存されます。 画像のサイズが大きい場合、ドキュメントのサイズに影響する場合があります。 Windows での注意: ファイル拡張子も含める必要があります。 |
+| backgroundImageLayout | longint       | 背景画像のレイアウトを定義します。 | `vk image layout center`, `vk image layout none`, `vk image layout stretch`, `vk image layout zoom`                                                                                                                                  |
+| foreColor             | text          | 文字のカラーを定義します。     | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                        |
 
-#### Borders
+#### 境界線
 
-| プロパティ                                                                      |       | タイプ    | 説明                                                                             | とりうる値                                                                                                                                                                                                                                                                                                                                                            |
-| -------------------------------------------------------------------------- | ----- | ------ | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | object | Defines the corresponding border line                                          |                                                                                                                                                                                                                                                                                                                                                                  |
-|                                                                            | color | text   | Defines the color of the border. Default = black.                              | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                    |
-|                                                                            | style | 倍長整数   | Defines the style of the border. Default = empty. Cannot be null or undefined. | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
+| プロパティ                                                                      |       | タイプ     | 説明                                                     | とりうる値                                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------------------------------------------------------- | ----- | ------- | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| borderBottom, borderLeft, borderRight, borderTop, diagonalDown, diagonalUp |       | object  | それぞれに対応する境界線を定義します。                                    |                                                                                                                                                                                                                                                                                                                                                                  |
+|                                                                            | color | text    | 境界線のカラーを定義します。 デフォルト = black                           | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                                                                                                                                                    |
+|                                                                            | style | longint | 境界線のスタイルを定義します。 デフォルト = empty。 null または未定義をとることはできません。 | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
 
-#### Fonts and text
+#### フォントとテキスト
 
-| プロパティ           |            | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                   | とりうる値                                                                                                                                                                                                                                       |
-| --------------- | ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| font            |            | text    | Specifies the font characteristics in CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). Example: "14pt Century Gothic". The font-size and font-family values are mandatory. If one of the other values is missing, their default values are used. Note: If a font name contains a space, the name must be within quotes. | A CSS font shorthand.<p>4D provides utility commands to handle font characteristics as objects: [`VP Font to object`](method-list.md#vp-font-to-object) and [`VP Object to font`](method-list.md#vp-object-to-font) |
-| formatter       |            | text    | Pattern for value/time property.                                                                                                                                                                                                                                                                                                                                     | Number/text/date/time formats, special characters. See [Cell Format](#cell-format).                                                                                                                                                         |
-| isVerticalText  |            | boolean | Specifies text direction.                                                                                                                                                                                                                                                                                                                                            | True = vertical text, False = horizontal text.                                                                                                                                                                                              |
-| labelOptions    |            | object  | Defines cell label options (watermark options).                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                             |
-|                 | alignment  | 倍長整数    | Specifies the position of the cell label. Optional property.                                                                                                                                                                                                                                                                                                         | `vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right`                                     |
-|                 | visibility | 倍長整数    | Specifies the visibility of the cell label. Optional property.                                                                                                                                                                                                                                                                                                       | `vk label visibility auto`, `vk label visibility hidden`, `vk label visibility visible`                                                                                                                                                     |
-|                 | foreColor  | text    | Defines the color of the foreground. Optional property.                                                                                                                                                                                                                                                                                                              | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                                               |
-|                 | font       | text    | Specifies the font characteristics with CSS font shorthand ("font-style font-variant font-weight font-size/line-height font-family"). The font-size and font-family values are mandatory.                                                                                                                                                                            |                                                                                                                                                                                                                                             |
-| textDecoration  |            | 倍長整数    | Specifies the decoration added to text.                                                                                                                                                                                                                                                                                                                              | `vk text decoration double underline`, `vk text decoration line through`, `vk text decoration none`, `vk text decoration overline`, `vk text decoration underline`                                                                          |
-| textIndent      |            | 倍長整数    | Defines the unit of text indention. 1 = 8 pixels                                                                                                                                                                                                                                                                                                                     |                                                                                                                                                                                                                                             |
-| textOrientation |            | 倍長整数    | Defines the rotation angle of the text in a cell. Number between -90 and 90                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                                                                             |
-| watermark       |            | text    | Defines the watermark (cell label) content                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                             |
-| wordWrap        |            | boolean | Specifies if text should be wrapped.                                                                                                                                                                                                                                                                                                                                 | True = wrapped text, False = unwrapped text                                                                                                                                                                                                 |
+| プロパティ           |            | タイプ     | 説明                                                                                                                                                                                                                                                                            | とりうる値                                                                                                                                                                                                            |
+| --------------- | ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| font            |            | text    | フォントの特徴を CSS の fontショートハンドで指定します ("font-style font-variant font-weight font-size/line-height font-family")。 例: "14pt Century Gothic"。 フォントサイズ (font-size) とフォントファミリー (font-family) の値は必須です。 その他の値が省略された場合には、そのデフォルト値が使用されます。 注: フォント名にスペースが含まれる場合、その名前は引用符 ("") で括られる必要があります。 | CSS fontショートハンド。<p>4D ではフォントの特徴をオブジェクトとして管理するためのユーティリティコマンドを提供しています: [`VP Font to object`](method-list.md#vp-font-to-object) および [`VP Object to font`](method-list.md#vp-object-to-font) |
+| formatter       |            | text    | 値や日時に対するパターン                                                                                                                                                                                                                                                                  | 数値/テキスト/日付/時間フォーマット、特殊文字など。 [セルフォーマット](#セルフォーマット) 参照。                                                                                                                                                            |
+| isVerticalText  |            | boolean | テキストの向きを指定します。                                                                                                                                                                                                                                                                | true = 縦方向のテキスト, false = 横方向のテキスト                                                                                                                                                                                |
+| labelOptions    |            | object  | セルラベルのオプションを定義します (ウォーターマークオプション)                                                                                                                                                                                                                                             |                                                                                                                                                                                                                  |
+|                 | alignment  | longint | セルラベルの位置を指定します。 任意プロパティです。                                                                                                                                                                                                                                                    | `vk label alignment top left`, `vk label alignment bottom left`, `vk label alignment top center`, `vk label alignment bottom center`, `vk label alignment top right`, `vk label alignment bottom right`          |
+|                 | visibility | longint | セルラベルの表示状態を指定します。 任意プロパティです。                                                                                                                                                                                                                                                  | `vk label visibility auto`, `vk label visibility hidden`, `vk label visibility visible`                                                                                                                          |
+|                 | foreColor  | text    | 文字のカラーを定義します。 任意プロパティです。                                                                                                                                                                                                                                                      | CSSカラー "#rrggbb" シンタックス (推奨シンタックス)、CSSカラー "rgb(r,g,b)" シンタックス (代替シンタックス)、CSSカラーネーム (代替シンタックス)                                                                                                                    |
+|                 | font       | text    | フォントの特徴を CSS の fontショートハンドで指定します ("font-style font-variant font-weight font-size/line-height font-family")。 フォントサイズ (font-size) とフォントファミリー (font-family) の値は必須です。                                                                                                             |                                                                                                                                                                                                                  |
+| textDecoration  |            | longint | テキストに追加する装飾を指定します。                                                                                                                                                                                                                                                            | `vk text decoration double underline`, `vk text decoration line through`, `vk text decoration none`, `vk text decoration overline`, `vk text decoration underline`                                               |
+| textIndent      |            | longint | テキストのインデントを定義します。 1 = 8ピクセル                                                                                                                                                                                                                                                   |                                                                                                                                                                                                                  |
+| textOrientation |            | longint | セル内のテキストの回転角度を定義します。 -90 から 90 の数値                                                                                                                                                                                                                                            |                                                                                                                                                                                                                  |
+| watermark       |            | text    | ウォーターマーク (セルラベル) のコンテンツを定義します。                                                                                                                                                                                                                                                |                                                                                                                                                                                                                  |
+| wordWrap        |            | boolean | テキストを折り返すかどうかを指定します。                                                                                                                                                                                                                                                          | true = テキストを折り返す、false = テキストを折り返さない                                                                                                                                                                             |
 
 #### レイアウト
 
-| プロパティ       | タイプ     | 説明                                                                                                                  | とりうる値                                                                                                                |
-| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| cellPadding | text    | Defines the cell padding                                                                                            |                                                                                                                      |
-| hAlign      | 倍長整数    | Defines the horizontal alignment of cell contents.                                                                  | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
-| locked      | boolean | Specifies cell protection status. Note, this is only available if [sheet protection](#sheet-protection) is enabled. | True = locked, False = unlocked.                                                                                     |
-| shrinkToFit | boolean | Specifies if the contents of the cell should be reduced.                                                            | True = reduced content, False = no reduction.                                                                        |
-| tabStop     | boolean | Specifies if the focus to the cell can be set using the Tab key.                                                    | True = Tab key sets focus, False = Tab key does not set focus.                                                       |
-| vAlign      | 倍長整数    | Specifies the vertical alignment of cell contents.                                                                  | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
+| プロパティ       | タイプ     | 説明                                                                    | とりうる値                                                                                                                |
+| ----------- | ------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| cellPadding | text    | セルのパッディングを定義します                                                       |                                                                                                                      |
+| hAlign      | longint | セルコンテンツの水平方向の揃え方を定義します                                                | `vk horizontal align center`, `vk horizontal align general`, `vk horizontal align left`, `vk horizontal align right` |
+| locked      | boolean | セルの保護状態を指定します。 ただし、[シートの保護](#シートの保護) が有効化されている場合にのみ利用可能である点に注意してください。 | true = ロックされている、false = ロック解除                                                                                        |
+| shrinkToFit | boolean | セルのコンテンツが縮小されるかどうかを指定します。                                             | true = コンテンツ縮小、false = 縮小なし                                                                                          |
+| tabStop     | boolean | Tabキーを使用してセルにフォーカスできるかどうかを指定します。                                      | true = Tabキーでフォーカス可、false = Tabキーでフォーカス不可                                                                            |
+| vAlign      | longint | セルコンテンツの垂直方向の揃え方を定義します                                                | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
 
 
 #### Style information
