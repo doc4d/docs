@@ -1,42 +1,21 @@
 ---
 id: overview
-title: Overview
+title: Access control overview
 ---
 
-If more than one person uses an application, which is usually the case in client-server architecture or Web interfaces, you need to control access or provide different features according to the connected users. It is also essential to provide security for sensitive data. You can provide this security by assigning passwords to users and creating access groups that have different levels of access to information in the application or to application operations.
+If more than one person uses an application, which is usually the case in client-server architecture or Web interfaces, you need to control access or provide different features according to the connected users. It is also essential to provide security for sensitive data, even in single-user applications. 
+
+Depending on your deployment needs, 4D proposes different features:
+
+- in multi-user applications, you can assign and control user passwords, and create access groups that have different levels of access to information in the application or to application features.
+- in single-user applications, user accesses must be controlled by your code, using commands such as [`Get system user`].
 
 > For an overview of 4D's security features, see the [4D Security guide](https://blog.4d.com/4d-security-guide/).
 
 
+## Users and groups in projects
 
-
-
-## Assigning group access
-
-4D’s password access system is based on users and groups. You create users and assign passwords, put users in groups, and assign each group access rights to appropriate parts of the application. 
-
-Groups can then be assigned access privileges to specific parts or features of the application (Design access, HTTP server, SQL server, etc.), or any custom part. 
-
-The following example shows Design and Runtime explorer access rights being assigned to the "Devs" group: 
-
-![](assets/en/Users/Access1.png)
-
-
-
-## Activating access control
-
-You initiate the 4D password access control system in client-server by **assigning a password to the Designer**.
-
-Until you give the Designer a password, all application access are done with the Designer's access rights, even if you have set up users and groups (when the application opens, no ID is required). Any part of the application can be opened.
-
-When a password is assigned to the Designer, all the access privileges take effect. In order to connect to the application, remote users must enter a password.
-
-To disable the password access system, you just need to remove the Designer password. 
-
-
-## Users and groups in project architecture
-
-In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and client-server environments. However, access control is only effective with 4D Server. The following table lists the main users and groups features and their availability:
+In project applications (.4DProject or .4dz files), 4D users and groups can be [configured](handling_users_group.md) in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. The following table lists the main users and groups features and their availability:
 
 ||4D (single-user)|4D Server|  
 |---|---|---|
@@ -48,26 +27,35 @@ In project applications (.4DProject or .4dz files), 4D users and groups can be c
 
 
 
+## Access control in multi-user applications
 
-## Toolbox editor
+Multi-user applications are deployed with 4D Server. They include client-server, Web, or REST applications. 
 
-The editors for users and groups are located in the toolbox of 4D. These editors can be used to create both users and groups, assign passwords to users, place users in groups, etc.
+You initiate the 4D password access control system with 4D Server by **assigning a password to the Designer**.
 
-![](assets/en/Users/editor.png)
+Until you give the Designer a password, all application access are done with the Designer's access rights, even if you have set up users and groups (when the application opens, no ID is required). Any part of the application can be opened.
 
-> Users and groups editor can be displayed at runtime using the [EDIT ACCESS](https://doc.4d.com/4Dv18/4D/18/EDIT-ACCESS.301-4504687.en.html) command. 
-> The whole users and groups configuration can also be edited during application execution using 4D language commands of the [Users and Groups](https://doc.4d.com/4Dv18R3/4D/18-R3/Users-and-Groups.201-4900438.en.html) theme.  
+When a password is assigned to the Designer, all the access privileges take effect. In order to connect to the application or use a [protected server](handling_users_group.md#assigning-group-access), remote users must enter a password.
+
+To disable the password access system, you just need to remove the Designer password. 
 
 
+## Access control in single-user applications
 
-## Directory.json file
+In single-user desktop applications, all users are "Designer". Access control is not based upon 4D users and groups, but rather upon user sessions.
 
-Users, groups, as well as their access rights are stored in a specific project file named **directory.json**.
+### User identification
 
-This file can be stored at the following locations:
+To identify the current user (e.g. to store their name in log files), it is recommended to use code such as:
 
-- in the user settings folder, i.e. in the "Settings" folder at the same level as the "Project" folder. These settings are used by default for the application. 
-- in the data settings folder,  i.e. in the "Settings" folder in the "Data" folder. If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. This feature allows you to define custom/local Users and Groups configurations. The custom configuration will left untouched by an application upgrade.  
+```4d
+$user:=SET USER ALIAS(Current system user)
+```
 
-> If 4D password access control is not enabled, the **directory.json** is not created.
+[`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html) returns the user who opened the session at the OS level, and [`SET USER ALIAS`](https://doc.4d.com/4dv19R/help/command/en/page1666.html) registers it instead of "Designer"
 
+### Protecting data access
+
+- Usually, if the application is accessed by a single user, it is recommended to install it in the **user's session system folder**. The application is only available when the user opened successfully a session.
+
+- However, if several users could access the machine and you want to protect access, the solution is to [encrypt data](MSC/encrypt.md) and provide the encryption key to the user. 

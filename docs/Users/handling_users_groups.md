@@ -6,6 +6,7 @@ title: Managing 4D users and groups
 
 4D provides users with certain standard access privileges and certain powers. Once a users and groups system has been initiated, these standard privileges take effect. 
 
+> User and groups an be configured using 4D Server and 4D single-user, however they can be used for access control in multi-user applications only (see [Users and groups in projects](overview.md#users-and-groups-in-project-architecture)). 
 
 ## Designer and Administrator
 
@@ -45,6 +46,9 @@ The Designer and Administrator can each create up to 16,000 groups and 16,000 us
 The editor for users is located in the Toolbox of 4D. 
 
 ![](assets/en/Users/editor.png)
+
+> Users and groups editor can be displayed at runtime using the [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html) command. 
+> The whole users and groups configuration can also be edited during application execution using 4D language commands of the `Users and Groups` theme.  
 
 ### Adding and modifying users
 
@@ -123,6 +127,7 @@ You can rename a group at any time using the **Rename** command of the context m
 
 ### Placing users or groups into groups  
 
+
 You can place any user or group into a group, and you can also place the group itself into several other groups. It is not mandatory to place a user in a group. 
 
 To place a user or group in a group, you simply need to check the "Member" option for each user or group in the member attribution area:
@@ -171,3 +176,30 @@ The groups are then nested so that privileges are correctly distributed to the u
 You can decide which access privileges to assign to each group based on the level of responsibility of the users it includes.
 
 Such a hierarchical system makes it easy to remember to which group a new user should be assigned. You only have to assign each user to one group and use the hierarchy of groups to determine access.
+
+
+## Assigning group access
+
+Groups can be assigned access privileges to specific parts or features of the application: 
+
+- Design and Runtime Explorer access, 
+- HTTP server, 
+- REST server, 
+- SQL server. 
+
+These accesses are defined in the Settings dialog. The following example shows Design and Runtime explorer access rights being assigned to the "Devs" group: 
+
+![](assets/en/Users/Access1.png)
+
+
+## Directory.json file
+
+Users, groups, as well as their access rights are stored in a specific project file named **directory.json**.
+
+This file can be stored at the following locations:
+
+- in the user settings folder, i.e. in the "Settings" folder at the same level as the "Project" folder. These settings are used by default for the application. 
+- in the data settings folder,  i.e. in the "Settings" folder in the "Data" folder. If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. This feature allows you to define custom/local Users and Groups configurations. The custom configuration will left untouched by an application upgrade.  
+
+> If 4D password access control is not enabled, the **directory.json** is not created.
+
