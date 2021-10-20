@@ -409,10 +409,10 @@
         "title": "概要"
       },
       "Extensions/develop-components": {
-        "title": "Developing Components"
+        "title": "コンポーネントの開発"
       },
       "Extensions/develop-plug-ins": {
-        "title": "Developing Plug-ins"
+        "title": "プラグインの開発"
       },
       "Extensions/overview": {
         "title": "概要"
@@ -988,7 +988,7 @@
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "環境設定",
     "Overview|no description given": "概要",
-    "Developing Components|no description given": "Developing Components",
+    "Developing Components|no description given": "コンポーネントの開発",
     "Developing Plugins|no description given": "Developing Plugins",
     "Working with a project|no description given": "プロジェクトを開発する",
     "Getting started|no description given": "はじめに",
