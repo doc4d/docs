@@ -67,7 +67,7 @@ title: メンテナンスページ
 
 このエリアには、(ログファイルが有効化されている場合に) ログファイルの記録に要した時間が表示され、ログの有効化も管理できます。
 
-Refer to the [**Description of log files**](Debugging/debugLogFiles.md) section for details on log files.
+ログファイルについては、[**ログファイルの詳細**](Debugging/debugLogFiles.md) を参照ください。
 
 ### リクエストとデバッグのログを開始/停止
 
@@ -83,7 +83,7 @@ Refer to the [**Description of log files**](Debugging/debugLogFiles.md) section 
 
 ### ログ設定ファイルを読み込む
 
-This button allows you to load a special server [log configuration file](Debugging/debugLogFiles.md#using-a-log-configuration-file) (`.json` file). この特殊ファイルは、特定のケースを監視・調査するために 4Dテクニカルサービスが提供することがあります。
+このボタンを押すと、特殊な [ログ設定ファイル](Debugging/debugLogFiles.md#ログ設定ファイルを使用する) (`.json` ファイル) をサーバーに読み込むことができます。 この特殊ファイルは、特定のケースを監視・調査するために 4Dテクニカルサービスが提供することがあります。
 
 
 ### ログを停止する
