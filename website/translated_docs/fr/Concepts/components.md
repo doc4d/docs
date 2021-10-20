@@ -5,7 +5,7 @@ title: Composants
 
 Un composant 4D est un ensemble d’objets 4D représentant une ou plusieurs fonctionnalité(s), qu’il est possible d’installer dans différentes applications. Par exemple, vous pouvez développer un composant 4D de courrier électronique gérant tous les aspects de l’envoi, la réception et le stockage d’emails au sein des applications 4D.
 
-## Presentation
+## Présentation
 
 ### Définitions
 
@@ -13,16 +13,16 @@ Un composant 4D est un ensemble d’objets 4D représentant une ou plusieurs fon
 - **Host Project**: Application project in which a component is installed and used.
 - **Component**: Matrix project, compiled or not, copied into the [`Components`](Project/architecture.md) folder of the host application and whose contents are used in the host application.
 
-### Principles
+### Principes
 
 La création et l’installation des composants 4D s’effectuent directement depuis 4D. Schématiquement, les composants sont gérés comme des [plug-ins](Concepts/plug-ins.md). Les principes sont les suivants :
 
-- A component consists of a regular 4D project file.
-- To install a component, you simply need to copy it into the [`Components` folder of the project](Project/architecture.md). You can use aliases or shortcuts.
-- A project can be both a “matrix” and a “host,” in other words, a matrix project can itself use one or more components. En revanche, une base utilisée comme composant ne peut pas elle-même utiliser un composant : un seul niveau de composant est chargé.
-- A component can call on most of the 4D elements: project methods, project forms, menu bars, choice lists, and so on. Il ne peut pas appeler des méthodes base et des triggers.
+- Un composant consiste en un fichier de projet 4D classique.
+- Pour installer un composant, il suffit de le copier dans le dossier [`Components` du projet](Project/architecture.md). Vous pouvez utiliser des alias ou des raccourcis.
+- Un projet peut être à la fois une "matrice" et un "hôte", c'est-à-dire qu'un projet matriciel peut lui-même utiliser un ou plusieurs composants. En revanche, une base utilisée comme composant ne peut pas elle-même utiliser un composant : un seul niveau de composant est chargé.
+- Un composant peut appeler la plupart des éléments 4D : des méthodes projet, des formulaires projet, des barres de menus, des listes à choix multiples, etc. Il ne peut pas appeler des méthodes base et des triggers.
 - Il n’est pas possible d’exploiter des tables standard ou des fichiers de données dans les composants 4D. En revanche, un composant peut créer et/ou utiliser des tables, des champs et des fichiers de données via les mécanismes des bases externes. Les bases externes sont des bases 4D indépendantes manipulées via les commandes SQL.
-- A host project running in interpreted mode can use either interpreted or compiled components. A host project running in compiled mode cannot use interpreted components. In this case, only compiled components can be used.
+- Un projet hôte fonctionnant en mode interprété peut utiliser des composants interprétés ou compilés. Un projet hôte fonctionnant en mode compilé ne peut pas utiliser de composants interprétés. Dans ce cas, seuls les composants compilés peuvent être utilisés.
 
 
 
@@ -31,7 +31,7 @@ La création et l’installation des composants 4D s’effectuent directement de
 
 Hormis les [Commandes non utilisables](#unusable-commands), un composant peut utiliser toute commande du langage 4D.
 
-When commands are called from a component, they are executed in the context of the component, except for the `EXECUTE METHOD` or `EXECUTE FORMULA` command that use the context of the method specified by the command. A noter également que les commandes de lecture du thème “Utilisateurs et groupes” sont utilisables depuis un composant mais lisent les utilisateurs et les groupes du projet hôte (un composant n’a pas d’utilisateurs et groupes propres).
+Lorsqu’elles sont appelées depuis un composant, les commandes s’exécutent dans le contexte du composant, à l’exception de la commande `EXECUTE METHOD` ou `EXECUTE FORMULA` qui utilise le contexte de la méthode désignée par la commande. A noter également que les commandes de lecture du thème “Utilisateurs et groupes” sont utilisables depuis un composant mais lisent les utilisateurs et les groupes du projet hôte (un composant n’a pas d’utilisateurs et groupes propres).
 
 Les commandes `EXECUTE METHOD` et `Get database parameter` constituent aussi une exception à ce principe : leur portée est globale à l'application. Lorsque ces commandes sont appelées depuis un composant, elles s’appliquent au projet d'application hôte.
 
@@ -75,7 +75,7 @@ All the project methods of a matrix project are by definition included in the co
 
 On the other hand, by default these project methods will not be visible, and they can't be called in the host project. In the matrix project, you must explicitly designate the methods that you want to share with the host project. In the matrix project, you must explicitly designate the methods that you want to share with the host project. Ces méthodes constituent les **points d’entrée** dans le composant.
 
-Conversely, for security reasons, by default a component cannot execute project methods belonging to the host project. In certain cases, you may need to allow a component to access the project methods of your host project. In certain cases, you may need to allow a component to access the project methods of your host project.
+A l’inverse, pour des raisons de sécurité, par défaut un composant ne peut pas exécuter de méthode projet appartenant au projet hôte. In certain cases, you may need to allow a component to access the project methods of your host project. In certain cases, you may need to allow a component to access the project methods of your host project.
 
 ![](assets/en/Concepts/pict516563.en.png)
 
