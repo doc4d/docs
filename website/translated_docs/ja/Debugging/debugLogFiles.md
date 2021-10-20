@@ -244,9 +244,9 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
     SET DATABASE PARAMETER(IMAP Log;1) // IMAPログを開始
     ```
 
-> 4D Server: Click on the **Start Request and Debug Logs** button in the [Maintenance Page](ServerWindow/maintenance.md) of the 4D Server administration window.   
+> 4D Server: 4D Server 管理ウィンドウ内の [メンテナンスページ](ServerWindow/maintenance.md) の **リクエストとデバッグのログを開始** ボタンをクリックします。   
 
-      This log path is returned by the `Get 4D file` command.
+      このログのパスは `Get 4D file` コマンドによって返されます。
 
 *   拡張バージョン:
     *   添付ファイルも含まれます。 自動ファイルリサイクルは使用されません。
@@ -333,7 +333,7 @@ SET DATABASE PARAMETER(Client Log Recording;0)
 
 ログ設定ファイルを有効化する方法はいくつかあります:
 
-- On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. この場合、設定ファイルには任意の名前を使用することができます。 ファイルは、サーバー上で即座に有効化されます。
+- インターフェース付きの 4D Server のメンテナンスページを開き、[ログ設定ファイルを読み込む](ServerWindow/maintenance.md#ログ設定ファイルを読み込む) ボタンをクリックしてファイルを選択します。 この場合、設定ファイルには任意の名前を使用することができます。 ファイルは、サーバー上で即座に有効化されます。
 - ログ設定ファイルを、プロジェクトの [Settingsフォルダー](Project/architecture.md#settings-1) にコピーすることができます。 この場合、ファイル名は `logConfig.json` でなくてはなりません。 このファイルは、プロジェクトの起動時に有効化されます (クライアント/サーバーのサーバーのみ)。
 - ビルドしたアプリケーションでは、`logConfig.json` ファイルを次のフォルダーにコピーできます:
     + Windows: `Users\[userName]\AppData\Roaming\[application]`
