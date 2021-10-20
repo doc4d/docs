@@ -65,7 +65,7 @@ title: ユーザーページ
 
 ### プロセス監視
 
-This button can be used to directly show the processes of the user(s) selected on the [**Processes** page](processes.md) of the window. ボタンをクリックすると、4D Server はプロセスページに移動し、このページの検索/フィルターエリアに選択されたユーザー名を入力します。
+このボタンをクリックすると、選択されたユーザーのプロセスを、管理ウィンドウの [**プロセス** ページ](processes.md) に直接表示させることができます。 ボタンをクリックすると、4D Server はプロセスページに移動し、このページの検索/フィルターエリアに選択されたユーザー名を入力します。
 
 ### ユーザーをドロップ
 
