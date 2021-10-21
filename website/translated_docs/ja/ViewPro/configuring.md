@@ -485,45 +485,45 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | vAlign      | longint | セルコンテンツの垂直方向の揃え方を定義します                                                | `vk vertical align bottom`, `vk vertical align center`, `vk vertical align top`                                      |
 
 
-#### Style information
+#### スタイル情報
 
-| プロパティ      | タイプ  | 説明                                                                                                                                                                                                                                                                               |
-| ---------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name       | text | Defines the name of the style                                                                                                                                                                                                                                                    |
-| parentName | text | Specifies the style that the current style is based on. Values from the parent style will be applied, then any values from the current style are applied. Changes made in the current style will not be refelected in the parent style. Only available when using a style sheet. |
+| プロパティ      | タイプ  | 説明                                                                                                                      |
+| ---------- | ---- | ----------------------------------------------------------------------------------------------------------------------- |
+| name       | text | スタイルの名前を定義します。                                                                                                          |
+| parentName | text | カレントスタイルの元となっているスタイルを指定します。 まず親スタイルの値が適用され、次にカレントスタイルの値が適用されます。 カレントスタイルの変更は親スタイルには反映されません。 これはスタイルシートを使用している時のみ利用可能です。 |
 
 
 
-## 4D View Pro Object
+## 4D View Pro オブジェクト
 
-The 4D View Pro [object](Concepts/dt_object.md) stores the whole spreadsheet contents. It is automatically handled by 4D View Pro. You can set or get this object using the [VP IMPORT FROM OBJECT](method-list.md#vp-import-from-object) or [VP Export to object](method-list.md#vp-export-to-object) methods.
+4D View Pro [オブジェクト](Concepts/dt_object.md) はスプレッドシートの中身をすべて保存します。 このオブジェクトは 4D View Pro によって自動的に管理されます。 [VP IMPORT FROM OBJECT](method-list.md#vp-import-from-object) および [VP Export to object](method-list.md#vp-export-to-object) メソッドによって、このオブジェクトを設定したり取得したりできます。
 
-It contains the following properties:
+このオブジェクトには次のプロパティが含まれます:
 
-| プロパティ        | 値の型       | 説明                                           |
-| ------------ | --------- | -------------------------------------------- |
-| version      | 倍長整数      | Internal component version                   |
-| dateCreation | Timestamp | Creation date                                |
-| dateModified | Timestamp | Last modification date                       |
-| meta         | オブジェクト    | Free contents, reserved for the 4D developer |
-| spreadJS     | オブジェクト    | Reserved for the 4D View Pro component       |
+| プロパティ        | 値の型       | 説明                    |
+| ------------ | --------- | --------------------- |
+| version      | Longint   | 内部コンポーネントのバージョン       |
+| dateCreation | Timestamp | 作成日                   |
+| dateModified | Timestamp | 最終更新日                 |
+| meta         | Object    | 4Dデベロッパー専用の任意コンテンツ    |
+| spreadJS     | Object    | 4D View Pro コンポーネント専用 |
 
 
 ## 4D View Pro フォームオブジェクト変数
 
-The 4D View Pro form object variable is the [object](Concepts/dt_object.md) variable associated to the 4D View Pro form area. It manages information used by the 4D View Pro object.
-> The 4D View Pro form object variable is for information purposes only (i.e., debugging). Under no circumstances should it be modified.
+The 4D View Pro フォームオブジェクト変数は、4D View Pro フォームエリアに紐づけられた [オブジェクト](Concepts/dt_object.md) 変数のことです。 この変数は、4D View Pro オブジェクトが使用する情報を管理します。
+> 4D View Pro フォームオブジェクト変数は、情報目的 (例: デバッグなど) のためだけに存在します。 どのような状況においてもこれを編集してはいけません。
 
-It contains the following properties:
+このオブジェクトには次のプロパティが含まれます:
 
-| プロパティ                  | 値の型    | 説明                                                                                                                                                                                                                                                                                                                           |
-| ---------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ViewPro.area           | テキスト   | 4D View Pro エリア名                                                                                                                                                                                                                                                                                                             |
-| ViewPro.callbacks      | オブジェクト | Stores temporary information necessary for commands requiring callbacks such as importing and exporting.                                                                                                                                                                                                                     |
-| ViewPro.commandBuffers | コレクション | Stores sequentially the commands called by the method and executes them as a batch (rather than individually) upon exiting the method, or if a command returns a value or the [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) is called. This mechanism increases performance by reducing the number of requests sent. |
-| ViewPro.events         | オブジェクト | [Event](#form-events) list.                                                                                                                                                                                                                                                                                                  |
-| ViewPro.formulaBar     | ブール    | Indicates whether or not the formula bar is displayed. Available only for the "toolbar" interface.                                                                                                                                                                                                                           |
-| ViewPro.inited         | ブール    | Indicates whether or not the 4D View Pro area has been initialized (see [On VP Ready](Events/onVpReady.md) event).                                                                                                                                                                                                           |
-| ViewPro.interface      | テキスト   | Specifies the type of user interface:"ribbon", "toolbar", "none".                                                                                                                                                                                                                                                            |
+| プロパティ                  | 値の型        | 説明                                                                                                                                                                                               |
+| ---------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ViewPro.area           | Text       | 4D View Pro エリア名                                                                                                                                                                                 |
+| ViewPro.callbacks      | Object     | インポートやエクスポートなど、コールバックを必要とするコマンドが使用するための一時的な情報を保存します。                                                                                                                                             |
+| ViewPro.commandBuffers | Collection | メソッドによって呼び出されるコマンドを順番に保存し、メソッド終了時、あるいはコマンドが値を返した時、あるいは [VP FLUSH COMMANDS](method-list.md#vp-flush-commands) が呼び出された時に、それらのコマンドを (個別にではなく) バッチとして実行します。 この機構によって、送信されるリクエスト数が抑えられ、パフォーマンスが向上します。 |
+| ViewPro.events         | Object     | [イベント](Events/overview.md) リスト。                                                                                                                                                                  |
+| ViewPro.formulaBar     | Boolean    | フォーミュラバーが表示されているかどうかを示します。 "toolbar" インターフェースにおいてのみ利用可能です。                                                                                                                                       |
+| ViewPro.inited         | Boolean    | 4D View Pro エリアが初期化されたかどうかを示します([On VP Ready](Events/onVpReady.md) 参照)。                                                                                                                          |
+| ViewPro.interface      | Text       | ユーザーインターフェースのタイプを指定します: "ribbon"、"toolbar"、"none"。                                                                                                                                               |
 
 
