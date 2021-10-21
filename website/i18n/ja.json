@@ -872,7 +872,7 @@
         "title": "4D View Pro エリアの設定"
       },
       "ViewPro/formulas": {
-        "title": "Formulas and Functions"
+        "title": "フォーミュラとファンクション"
       },
       "ViewPro/getting-started": {
         "title": "はじめに"
@@ -989,7 +989,7 @@
     "Preferences|no description given": "環境設定",
     "Overview|no description given": "概要",
     "Developing Components|no description given": "コンポーネントの開発",
-    "Developing Plugins|no description given": "Developing Plugins",
+    "Developing Plugins|no description given": "プラグインの開発",
     "Working with a project|no description given": "プロジェクトを開発する",
     "Getting started|no description given": "はじめに",
     "Core Development|no description given": "コア開発",
