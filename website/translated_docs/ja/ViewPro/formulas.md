@@ -1,31 +1,31 @@
 ---
 id: formulas
-title: Formulas and Functions
+title: フォーミュラとファンクション
 ---
    
-## Using formulas
+## フォーミュラの使い方
 
-A spreadsheet formula is an expression that calculates the value of a cell.
+スプレッドシートのフォーミュラとは、セルの値を計算する式のことです。
 
-### Entering formulas
+### フォーミュラの入力
 
-To enter a formula in a 4D View Pro area:
+4D View Pro エリアにフォーミュラを入力するには:
 
-1.  Select the cell into which you will enter the formula or function.
-2.  Enter = (the equal sign).
-3.  Type the formula and hit the **Enter** key.
+1.  フォーミュラを入力するセルを選択します。
+2.  = (等号) を入力します。
+3.  フォーミュラを入力し、**Enter**キーを入力します。
 
-When writing a formula, you can use different shortcuts:
+フォーミュラ入力の際には、次のショートカットを使うことができます:
 
-- click on a cell to enter its reference in the formula:
+- フォーミュラにセル参照を入力する代わりに、参照するセルをクリックします:
 
 ![](assets/en/ViewPro/formulas.PNG)
 
-- type the first letter of a function to enter. A pop-up menu listing the available functions and references appears, allowing you to select the desired elements:
+- 入力したい関数の頭文字を入力します。 すると、利用可能な関数と参照の一覧がポップアップメニューに表示され、必要な要素を選択することができます:
 
 ![](assets/en/ViewPro/formula2.PNG)
 
-You can also create named formulas that can be called via their name. To do so, enter these formulas using the [VP ADD FORMULA NAME](method-list.md#vp-add-formula-name) command.
+また、命名フォーミュラを作成すると、その名前で呼び出すことが可能です。 この場合、[VP ADD FORMULA NAME](method-list.md#vp-add-formula-name) コマンドを使用して命名フォーミュラを入力します。
 
 ### Operators and Operands
 
