@@ -4,9 +4,21 @@ title: Managing 4D users and groups
 ---
 
 
-4D provides users with certain standard access privileges and certain powers. Once a users and groups system has been initiated, these standard privileges take effect. 
+In multi-user applications, 4D provides users with certain standard access privileges and certain powers. Once a users and groups system has been initiated, these standard privileges take effect. 
 
-> User and groups an be configured using 4D Server and 4D single-user, however they can be used for access control in multi-user applications only (see [Users and groups in projects](overview.md#users-and-groups-in-project-architecture)). 
+
+## Users and groups in projects
+
+In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. The following table lists the main users and groups features and their availability:
+
+||4D (single-user)|4D Server|  
+|---|---|---|
+|Adding/editing users and groups|yes|yes|
+|Assigning user/group access to servers|yes|yes|
+|User identification|no (all users are Designer)|yes|
+|Access control once the Designer has been assigned a password|no (all access are Designer)|yes|
+
+> For information about user identification and access control in single-user deployments, see [this paragraph](overview.md#access-control-in-single-user-applications). 
 
 ## Designer and Administrator
 
@@ -201,5 +213,5 @@ This file can be stored at the following locations:
 - in the user settings folder, i.e. in the "Settings" folder at the same level as the "Project" folder. These settings are used by default for the application. 
 - in the data settings folder,  i.e. in the "Settings" folder in the "Data" folder. If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. This feature allows you to define custom/local Users and Groups configurations. The custom configuration will left untouched by an application upgrade.  
 
-> If 4D password access control is not enabled, the **directory.json** is not created.
+> If no password is assigned to the "Designer" user, the **directory.json** is not created.
 

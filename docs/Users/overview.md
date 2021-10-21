@@ -1,28 +1,16 @@
 ---
 id: overview
-title: Access control overview
+title: Access Control overview
 ---
 
 If more than one person uses an application, which is usually the case in client-server architecture or Web interfaces, you need to control access or provide different features according to the connected users. It is also essential to provide security for sensitive data, even in single-user applications. 
 
-Depending on your deployment needs, 4D proposes different features:
+4D access control strategy depends on your deployment configuration:
 
-- in multi-user applications, you can assign and control user passwords, and create access groups that have different levels of access to information in the application or to application features.
-- in single-user applications, user accesses must be controlled by your code, using commands such as [`Get system user`].
+- in multi-user applications, you can rely on 4D users and groups,
+- in single-user applications, user access is controlled through the session itself, using commands such as [`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html).
 
 > For an overview of 4D's security features, see the [4D Security guide](https://blog.4d.com/4d-security-guide/).
-
-
-## Users and groups in projects
-
-In project applications (.4DProject or .4dz files), 4D users and groups can be [configured](handling_users_group.md) in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. The following table lists the main users and groups features and their availability:
-
-||4D (single-user)|4D Server|  
-|---|---|---|
-|Adding/editing users and groups|yes|yes|
-|Assigning user/group access to servers|yes|yes|
-|User identification|no (all users are Designer)|yes|
-|Access control once the Designer has been assigned a password|no (all access are Designer)|yes|
 
 
 
@@ -31,31 +19,36 @@ In project applications (.4DProject or .4dz files), 4D users and groups can be [
 
 Multi-user applications are deployed with 4D Server. They include client-server, Web, or REST applications. 
 
-You initiate the 4D password access control system with 4D Server by **assigning a password to the Designer**.
+In multi-user applications, access control is done through [4D users and groups](handling_users_group.md). You create users, assign passwords, create access groups that have different levels of privileges in the application. 
 
-Until you give the Designer a password, all application access are done with the Designer's access rights, even if you have set up users and groups (when the application opens, no ID is required). Any part of the application can be opened.
+You initiate the 4D password access control system with 4D Server by [assigning a password to the Designer user](handling_users_groups.md#designer-and-administrator). Until you give the Designer a password, all application access are done with the Designer's access rights, even if you have [set up users and groups](handling_users_group.md) (when the application opens, no ID is required). Any part of the application can be opened.
 
-When a password is assigned to the Designer, all the access privileges take effect. In order to connect to the application or use a [protected server](handling_users_group.md#assigning-group-access), remote users must enter a password.
+When a password is assigned to the Designer, all the access privileges take effect. In order to connect to the application or to a [server with protected access](handling_users_group.md#assigning-group-access), remote users must enter a login/password.
 
 To disable the password access system, you just need to remove the Designer password. 
 
 
 ## Access control in single-user applications
 
-In single-user desktop applications, all users are "Designer". Access control is not based upon 4D users and groups, but rather upon user sessions.
+Single-user applications are desktop applications, deployed with 4D or merged with 4D Volume License. In single-user applications, all users opening the application are [Designers](handling_users_groups.md#designer-and-administrator), they have all privileges and their name is "Designer". Access control is not based upon 4D users and groups, but upon **user sessions**.
 
 ### User identification
 
-To identify the current user (e.g. to store their name in log files), it is recommended to use code such as:
+To identify the current user (for example to store user name in the log file), it is recommended to use code such as:
 
 ```4d
 $user:=SET USER ALIAS(Current system user)
 ```
 
-[`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html) returns the user who opened the session at the OS level, and [`SET USER ALIAS`](https://doc.4d.com/4dv19R/help/command/en/page1666.html) registers it instead of "Designer"
+[`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html) returns the user who opened the session at the OS level, and [`SET USER ALIAS`](https://doc.4d.com/4dv19R/help/command/en/page1666.html) registers a user name instead of "Designer". 
 
 ### Protecting data access
 
-- Usually, if the application is accessed by a single user, it is recommended to install it in the **user's session system folder**. The application is only available when the user opened successfully a session.
+#### User session 
 
-- However, if several users could access the machine and you want to protect access, the solution is to [encrypt data](MSC/encrypt.md) and provide the encryption key to the user. 
+Usually, if the application is accessed by a single user, a good practice is to install the application files in the **user's session system folder**, returned by `Folder(fk user preferences folder)` for example. The application is only available when the user is logged to their own session. Access rights are granted at the session level.
+
+
+#### Encrypting data 
+
+When the application cannot be installed in a session user folder and you want to protect access to data, we recommend to [encrypt data](MSC/encrypt.md) and provide the encryption key to the authorized user(s). 
