@@ -374,7 +374,7 @@ The object returned by `.drop( )` contains the following properties:
 |               | user_name           | Texte                 | Session user name on the machine                                                                                      |
 |               | user4d_alias        | Texte                 | User alias if defined by `SET USER ALIAS`, otherwise user name in the 4D directory                                    |
 |               | host_name           | Texte                 | Machine name                                                                                                          |
-|               | task_name           | Texte                 | Process name                                                                                                          |
+|               | task_name           | Texte                 | Nom du process                                                                                                        |
 |               | client_version      | Texte                 |                                                                                                                       |
 |               |                     |                       | ***Available only in case of serious error (serious error can be trying to duplicate a primary key, disk full...):*** |
 | errors        |                     | collection of objects |                                                                                                                       |
@@ -935,7 +935,7 @@ The object returned by `.lock( )` contains the following properties:
 |                  | user4d_alias        | Texte                 | Name or alias of the 4D user                                                                                        |
 |                  | user4d_id           | number                | User id in the 4D database directory                                                                                |
 |                  | host_name           | Texte                 | Machine name                                                                                                        |
-|                  | task_name           | Texte                 | Process name                                                                                                        |
+|                  | task_name           | Texte                 | Nom du process                                                                                                      |
 |                  | client_version      | Texte                 |                                                                                                                     |
 |                  |                     |                       | ***Available only in case of serious error*** (primary key already exists, disk full...):                           |
 | errors           |                     | collection of objects |                                                                                                                     |
@@ -1192,7 +1192,7 @@ The object returned by `.save()` contains the following properties:
 |              | user_name          | Texte                 | Session user name on the machine                                                                                        |
 |              | user4d_alias       | Texte                 | User alias if defined by `SET USER ALIAS`, otherwise user name in the 4D directory                                      |
 |              | host_name          | Texte                 | Machine name                                                                                                            |
-|              | task_name          | Texte                 | Process name                                                                                                            |
+|              | task_name          | Texte                 | Nom du process                                                                                                          |
 |              | client_version     | Texte                 |                                                                                                                         |
 |              |                    |                       | ***Available only in case of serious error*** (serious error - can be trying to duplicate a primary key, disk full...): |
 | errors       |                    | collection of objects |                                                                                                                         |

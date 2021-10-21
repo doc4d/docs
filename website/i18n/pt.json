@@ -11,20 +11,14 @@
       "Admin/dataExplorer": {
         "title": "Web Data Explorer"
       },
-      "Admin/debugLogFiles": {
-        "title": "Description of log files"
-      },
       "Admin/licenses": {
         "title": "Managing 4D Licenses"
-      },
-      "Admin/server-admin": {
-        "title": "4D Server Administration Window"
       },
       "Admin/tls": {
         "title": "TLS Protocol (HTTPS)"
       },
       "Admin/webAdmin": {
-        "title": "Web Administration"
+        "title": "WebAdmin"
       },
       "API/BlobClass": {
         "title": "Blob"
@@ -222,6 +216,9 @@
       "Debugging/debugging-remote": {
         "title": "Debugging from remote machines"
       },
+      "Debugging/debugLogFiles": {
+        "title": "Description of log files"
+      },
       "Desktop/building": {
         "title": "Build Application"
       },
@@ -409,6 +406,15 @@
         "title": "On Window Opening Denied"
       },
       "Events/overview": {
+        "title": "Visão Geral"
+      },
+      "Extensions/develop-components": {
+        "title": "Developing Components"
+      },
+      "Extensions/develop-plug-ins": {
+        "title": "Developing Plug-ins"
+      },
+      "Extensions/overview": {
         "title": "Visão Geral"
       },
       "FormEditor/stylesheets": {
@@ -615,6 +621,9 @@
       "FormObjects/writeProAreaOverview": {
         "title": "4D Write Pro area"
       },
+      "GettingStarted/creating": {
+        "title": "Working with a project"
+      },
       "GettingStarted/installation": {
         "title": "Installation"
       },
@@ -721,12 +730,6 @@
       "Project/compiler": {
         "title": "Compilation"
       },
-      "Project/components": {
-        "title": "4D Components Library"
-      },
-      "Project/creating": {
-        "title": "Working with a project"
-      },
       "Project/documentation": {
         "title": "Documenting a project"
       },
@@ -829,6 +832,33 @@
       "REST/REST_requests": {
         "title": "About REST Requests"
       },
+      "ServerWindow/application-server": {
+        "title": "Application Server Page"
+      },
+      "ServerWindow/http-server": {
+        "title": "HTTP Server Page"
+      },
+      "ServerWindow/maintenance": {
+        "title": "Maintenance Page"
+      },
+      "ServerWindow/monitor": {
+        "title": "Monitor Page"
+      },
+      "ServerWindow/overview": {
+        "title": "Visão Geral"
+      },
+      "ServerWindow/processes": {
+        "title": "Processes Page"
+      },
+      "ServerWindow/real-time-monitor": {
+        "title": "Real Time Monitor Page"
+      },
+      "ServerWindow/sql-server": {
+        "title": "SQL Server Page"
+      },
+      "ServerWindow/users": {
+        "title": "Users Page"
+      },
       "Tags/tags": {
         "title": "Transformation tags"
       },
@@ -888,7 +918,8 @@
       }
     },
     "links": {
-      "v19 R2 BETA": "v19 R2 BETA",
+      "v19 R3 BETA": "v19 R3 BETA",
+      "v19 R2": "v19 R2",
       "v19": "v19",
       "v18": "v18"
     },
@@ -901,7 +932,11 @@
       "Debugging": "Debugging",
       "Access Rights": "Access Rights",
       "Preferences": "Preferences",
-      "Administration": "Administration",
+      "4D Server Administration Window": "4D Server Administration Window",
+      "Web Administration": "Web Administration",
+      "Command Line Interface": "Command Line Interface",
+      "TLS Protocol": "TLS Protocol",
+      "License Management": "License Management",
       "MSC": "MSC",
       "Backup and Restore": "Backup and Restore",
       "Web Server": "Web Server",
@@ -915,6 +950,7 @@
       "Form Events": "Form Events",
       "Menus": "Menus",
       "Build application": "Build application",
+      "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }
   },
@@ -942,7 +978,7 @@
     "4D Server Administration Window|no description given": "4D Server Administration Window",
     "4D Components Library|no description given": "4D Components Library",
     "Client/Server|no description given": "Client/Server",
-    "TLS Protocol (HTTPS)|no description given": "TLS Protocol (HTTPS)",
+    "TLS Protocol|no description given": "TLS Protocol",
     "Debugging|no description given": "Debugging",
     "Web Data Explorer|no description given": "Web Data Explorer",
     "Language Reference (4D Doc Center)|no description given": "Language Reference (4D Doc Center)",
@@ -951,12 +987,17 @@
     "Command Line Interface|no description given": "Command Line Interface",
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Preferences",
+    "Overview|no description given": "Visão Geral",
+    "Developing Components|no description given": "Developing Components",
+    "Developing Plugins|no description given": "Developing Plugins",
+    "Working with a project|no description given": "Working with a project",
     "Getting started|no description given": "Getting started",
     "Core Development|no description given": "Core Development",
     "Administration|no description given": "Administration",
     "Web applications|no description given": "Web applications",
     "Mobile applications|no description given": "Mobile applications",
     "Desktop applications|no description given": "Desktop applications",
+    "Extensions|no description given": "Extensions",
     "Documentation updates|no description given": "Documentation updates",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
