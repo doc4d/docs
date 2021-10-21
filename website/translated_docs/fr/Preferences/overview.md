@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Aperçu
+title: Présentation
 ---
 
 User preferences specify various settings affecting your working environment, e.g. default options, display themes, method editor features, shortcuts, etc. They are applied to all projects opened with your 4D or 4D Server application.

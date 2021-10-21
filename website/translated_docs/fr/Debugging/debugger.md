@@ -20,9 +20,9 @@ Il existe plusieurs façons d'afficher le débogueur :
 ![open-debugger](assets/en/Debugging/openDebugger.png)
 
 * Cliquez sur le bouton **Trace** lorsqu'un process est sélectionné dans la page Process de l'Explorateur d'exécution.
-* Adding a break point in the Method Editor window or in the Break and Catch pages of the Runtime Explorer.
+* Ajout d'un point d'arrêt dans la fenêtre de l'éditeur de méthode ou dans les pages Break et Catch de l'explorateur d'exécution.
 
-When called, the debugger window provides the name of the method or class function you're currently tracing, and the action causing the initial appearance of the Debugger window. For example, in the above debugger window:
+Lorsqu'il est appelé, la fenêtre du débogueur fournit le nom de la méthode ou de la fonction de classe que vous êtes en train de tracer, ainsi que l'action qui a provoqué l'apparition initiale de la fenêtre du débogueur. Par exemple, dans la fenêtre du débogueur ci-dessus :
 
 * *Clients_BuildLogo* is the method being traced
 * The debugger window appeared because it detected a call to the `C_PICTURE` command and this command was one of the commands to be caught
