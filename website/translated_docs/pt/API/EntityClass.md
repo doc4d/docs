@@ -1308,7 +1308,7 @@ If no filter is specified, or if the *filterString* parameter contains an empty 
 *   attributes of the `relatedEntities` [kind](DataClassAttributeClass.md#kind): attribute is not returned.
 
 
-In the first parameter, you pass the entity attribute(s) to extract. You can pass:
+In the first parameter, you pass the entity attribute(s) to extract. Pode passar:
 
 *   *filterString*: a string with property paths separated with commas: "propertyPath1, propertyPath2, ...", or
 *   *filterCol*: a collection of strings: \["propertyPath1","propertyPath2";...]
