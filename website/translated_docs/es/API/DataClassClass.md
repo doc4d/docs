@@ -888,7 +888,7 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 
 As an alternative to formula insertion within the *queryString* parameter (see above), you can pass directly a formula object as a boolean search criteria. Using a formula object for queries is **recommended** since you benefit from tokenization, and code is easier to search/read.
 
-The formula must have been created using the `Formula` or `Formula from string` command. In this case:
+The formula must have been created using the `Formula` or `Formula from string` command. En este caso:
 
 *   the *formula* is evaluated for each entity and must return true or false. During the execution of the query, if the formula's result is not a boolean, it is considered as false.
 *   within the *formula*, the entity is available through the `This` object.
