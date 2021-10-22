@@ -74,7 +74,7 @@ Certaines commandes 4D modifient le blob d'origine et ne prennent donc pas en ch
 
 ### Passer des blobs et des objets blob aux méthodes
 
-When working with methods, using blob objects (`4D.Blob`) is more efficient, as they are passed by reference. A noter que, contrairement aux objets blob, qui sont transmis par référence, les blobs scalaires sont dupliqués en mémoire lorsqu'ils sont passés aux méthodes.
+You can pass blobs and blob objects (`4D.Blob`) to methods. A noter que, contrairement aux objets blob, qui sont transmis par référence, les blobs scalaires sont dupliqués en mémoire lorsqu'ils sont passés aux méthodes.
 
 ### Passer un blob scalaire par référence en utilisant un pointeur
 
