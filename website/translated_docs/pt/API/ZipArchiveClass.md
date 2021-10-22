@@ -40,9 +40,9 @@ End if
 ## ZIP Create archive
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18    | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18    | Adicionado |
 </details>
 
 <!-- REF #_command_.ZIP Create archive.Syntax -->
@@ -200,7 +200,7 @@ To compress a `4D.Folder` without the folder itself:
 
 
 
-#### Example 3
+#### Exemplo 3
 
 To compress a ZIP archive structure with a password and progress bar:
 
@@ -239,7 +239,7 @@ To compress a ZIP archive structure with a password and progress bar:
 
 
 
-#### Example 4
+#### Exemplo 4
 
 You want to pass a collection of folders and files to compress to the *zipStructure* object:
 
@@ -267,9 +267,9 @@ You want to pass a collection of folders and files to compress to the *zipStruct
 ## ZIP Read archive
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18    | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18    | Adicionado |
 </details>
 
 <!-- REF #_command_.ZIP Read archive.Syntax -->
@@ -372,7 +372,7 @@ The `.root` property contains <!-- REF #ZipArchiveClass.root.Summary -->a virtua
 
 The `root` folder and its contents can be manipulated with the [ZipFile](ZipFileClass.md) and [ZipFolder](ZipFolderClass.md) functions and properties.
 
-This property is **read-only**.
+Essa propriedade é**apenas leitura**.
 
 
 <style> h2 { background: #d9ebff;}</style>
