@@ -4,8 +4,21 @@ title: Gestion des groupes et utilisateurs 4D
 ---
 
 
-4D fournit à certains utilisateurs des privilèges d’accès standard ainsi que des prérogatives spécifiques. Une fois qu’un système d’utilisateurs et de groupes a été créé, ces privilèges standard prennent effet.
+In multi-user applications, 4D provides users with certain standard access privileges and certain powers. Une fois qu’un système d’utilisateurs et de groupes a été créé, ces privilèges standard prennent effet.
 
+
+## Users and groups in projects
+
+In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. Le tableau suivant liste les principales fonctionnalités des utilisateurs et groupes ainsi que leur disponibilité :
+
+|                                                                                 | 4D (monoposte)                                          | 4D Server |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------- | --------- |
+| Ajouter/modifier des utilisateurs et groupes                                    | oui                                                     | oui       |
+| Affecter l'accès des utilisateurs/groupes aux serveurs                          | oui                                                     | oui       |
+| Identification de l'utilisateur                                                 | non (tous les utilisateurs sont des Super_Utilisateur)  | oui       |
+| Contrôle d'accès une fois qu'un mot de passe a été affecté au Super_Utilisateur | non (tous les accès sont accordés au Super_Utilisateur) | oui       |
+
+> For information about user identification and access control in single-user deployments, see [this paragraph](overview.md#access-control-in-single-user-applications).
 
 ## Super_Utilisateur et Administrateur
 
@@ -42,6 +55,8 @@ Le Super_Utilisateur et l’Administrateur peuvent créer chacun 16 000 groupes 
 L'éditeur des utilisateurs se trouve dans la boîte à outils de 4D.
 
 ![](assets/en/Users/editor.png)
+
+> Users and groups editor can be displayed at runtime using the [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html) command. The whole users and groups configuration can also be edited during application execution using 4D language commands of the `Users and Groups` theme.
 
 ### Ajouter et modifier des utilisateurs
 
@@ -110,6 +125,7 @@ Pour créer un groupe :
 
 ### Placer des utilisateurs ou des groupes dans des groupes
 
+
 Vous pouvez placer tout utilisateur ou tout groupe dans un groupe et vous pouvez aussi le placer dans plusieurs groupes. Il n’est pas obligatoire de placer un utilisateur dans un groupe.
 
 Pour placer un utilisateur ou un groupe dans un groupe, il suffit de sélectionner le groupe dans la liste puis de cocher l’option "Membre" pour chaque utilisateur ou groupe dans la zone d’attribution des membres :
@@ -154,3 +170,31 @@ Les groupes sont hiérarchisés afin que les privilèges soient correctement aff
 Vous pouvez ensuite décider des privilèges affectés à chaque groupe suivant le niveau de responsabilité des utilisateurs qu’il contient.
 
 Un tel système hiérarchique rend aisée l’affectation d’un utilisateur à un groupe. Il suffit de placer chaque utilisateur dans un groupe et d’utiliser la hiérarchie des groupes pour déterminer les accès.
+
+
+## Définition des accès aux groupes
+
+Groups are assigned access privileges to specific parts or features of the application:
+
+- Design and Runtime Explorer access,
+- HTTP server,
+- REST server,
+- SQL server.
+
+These accesses are defined in the Settings dialog. L'exemple suivant présente les droits d'accès à l'explorateur d'exécution et au Développement assignés au groupe "Devs" :
+
+![](assets/en/Users/Access1.png)
+
+You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
+
+## Fichier directory.json
+
+Les utilisateurs, les groupes ainsi que leurs droits d'accès sont stockés dans un fichier spécifique du projet nommé **directory.json**.
+
+This file can be stored at the following locations, depending on your needs:
+
+- If you want to use the same directory for all data files (or if you use a single data file), store the **directory.json** file in the user settings folder, i.e. in the "Settings" folder at the [same level as the "Project" folder](Project/architecture.md#project-folder) (default location).
+- If you want to use a specific directory file per data file, store the **directory.json** file in the data settings folder, i.e. in the ["Settings" folder of the "Data" folder](Project/architecture.md#settings). Si un fichier **directory.json** se trouve à cet emplacement, il est prioritaire par rapport au fichier du dossier Settings utilisateur. This custom/local Users and Groups configuration will left untouched by an application upgrade.
+
+> If no password is assigned to the "Designer" user, the **directory.json** is not created.
+
