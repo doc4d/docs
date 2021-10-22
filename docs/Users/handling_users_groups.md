@@ -192,7 +192,7 @@ Such a hierarchical system makes it easy to remember to which group a new user s
 
 ## Assigning group access
 
-Groups can be assigned access privileges to specific parts or features of the application: 
+Groups are assigned access privileges to specific parts or features of the application: 
 
 - Design and Runtime Explorer access, 
 - HTTP server, 
@@ -203,15 +203,16 @@ These accesses are defined in the Settings dialog. The following example shows D
 
 ![](assets/en/Users/Access1.png)
 
+You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
 
 ## Directory.json file
 
 Users, groups, as well as their access rights are stored in a specific project file named **directory.json**.
 
-This file can be stored at the following locations:
+This file can be stored at the following locations, depending on your needs:
 
-- in the user settings folder, i.e. in the "Settings" folder at the same level as the "Project" folder. These settings are used by default for the application. 
-- in the data settings folder,  i.e. in the "Settings" folder in the "Data" folder. If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. This feature allows you to define custom/local Users and Groups configurations. The custom configuration will left untouched by an application upgrade.  
+- If you want to use the same directory for all data files (or if you use a single data file), store the **directory.json** file in the user settings folder, i.e. in the "Settings" folder at the [same level as the "Project" folder](Project/architecture.md#project-folder) (default location). 
+- If you want to use a specific directory file per data file, store the **directory.json** file in the data settings folder, i.e. in the ["Settings" folder of the "Data" folder](Project/architecture.md#settings). If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. This custom/local Users and Groups configuration will left untouched by an application upgrade.  
 
 > If no password is assigned to the "Designer" user, the **directory.json** is not created.
 
