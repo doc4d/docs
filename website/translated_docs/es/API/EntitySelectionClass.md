@@ -111,7 +111,7 @@ Note that the corresponding entity is reloaded from the datastore.
 
 *   If *index* is out of range, an error is returned.
 *   If *index* corresponds to a dropped entity, a Null value is returned.
-> > > **Warning**: `EntitySelection[index]` is a non assignable expression, which means that it cannot be used as en editable entity reference with methods like [`.lock()`](EntityClass.md#lock) or [`.save()`](EntityClass.md#save). To work with the corresponding entity, you need to assign the returned expression to an assignable expression, such as a variable. Ejemplos:
+> **Warning**: `EntitySelection[index]` is a non assignable expression, which means that it cannot be used as en editable entity reference with methods like [`.lock()`](EntityClass.md#lock) or [`.save()`](EntityClass.md#save). To work with the corresponding entity, you need to assign the returned expression to an assignable expression, such as a variable. Ejemplos:
 
 ```4d
  $sel:=ds.Employee.all() //create the entity selection
@@ -546,7 +546,7 @@ Then this entity selection is updated with products and you want to share the pr
 
 ```4d
  ...
-  // The Form.products entity selection is updated
+  // La selección de entidades de Form.products se actualiza
  Form.products.add(Form.selectedProduct)
 
  Use(Storage)
@@ -581,7 +581,7 @@ Then this entity selection is updated with products and you want to share the pr
 | ------------- | ---------- |:--:| ---------------------------------------------------------------- |
 | attributePath | Text       | -> | Ruta del atributo cuyos valores distintos desea obtener          |
 | option        | Integer    | -> | `dk diacritical`: diacritical evaluation ("A" # "a" for example) |
-| Resultado     | Collection | <- | Collection with only distinct values                             |
+| Resultado     | Collection | <- | Colección con sólo valores distintos                             |
 <!-- END REF -->
 
 #### Descripción
@@ -592,7 +592,7 @@ La colección devuelta se clasifica automáticamente. Los valores **Null** no se
 
 In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Los tipos se devuelven en el siguiente orden:
 
-1.  booleanos
+1.  booleans
 2.  strings
 3.  numbers
 4.  fechas
@@ -876,7 +876,7 @@ This function is mainly useful in the context of generic code.
 The following generic code duplicates all entities of the entity selection:
 
 ```4d
-  //duplicate_entities method
+  //método duplicate_entities 
   //duplicate_entities($entity_selection)
 
  #DECLARE ( $entitySelection : 4D.EntitySelection )  
@@ -887,7 +887,7 @@ The following generic code duplicates all entities of the entity selection:
  For each($entity;$entitySelection)
     $duplicate:=$dataClass.new()
     $duplicate.fromObject($entity.toObject())
-    $duplicate[$dataClass.getInfo().primaryKey]:=Null //reset the primary key
+    $duplicate[$dataClass.getInfo().primaryKey]:=Null //restablecer la llave primaria
     $status:=$duplicate.save()
  End for each
 ```
