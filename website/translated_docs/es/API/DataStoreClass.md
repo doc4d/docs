@@ -42,10 +42,10 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 **ds** { ( *localID* : Text ) } : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.ds.Params -->
-| Parámetros | Tipo         |    | Descripción                                |
-| ---------- | ------------ | -- | ------------------------------------------ |
-| localID    | Texto        | -> | Local ID of the remote datastore to return |
-| Resultado  | cs.DataStore | <- | Reference to the datastore                 |
+| Parámetros | Tipo         |    | Descripción                                     |
+| ---------- | ------------ | -- | ----------------------------------------------- |
+| localID    | Texto        | -> | ID local del almacén de datos remoto a devolver |
+| Resultado  | cs.DataStore | <- | Referencia al almacén de datos                  |
 <!-- END REF -->
 
 
@@ -827,7 +827,7 @@ This function must be called on a remote 4D, otherwise it does nothing. It is de
 
 #### Ejemplo
 
-See examples for [`.startRequestLog()`](#startrequestlog).
+Ver ejemplos de [`.startRequestLog()`](#startrequestlog).
 
 <!-- END REF -->
 
@@ -864,7 +864,7 @@ You can nest several transactions (sub-transactions). If the main transaction is
 
 #### Ejemplo
 
-See example for [`.startTransaction()`](#starttransaction).
+Ver el ejemplo de [`.startTransaction()`](#starttransaction).
 
 <!-- END REF -->
 

@@ -246,7 +246,7 @@ In addition to the special characters and codes described in the previous sectio
 | ~        | Tilde                                                              | ~##                  |
 |          | Space character                                                    |                      |
 | €        | Euro                                                               | €###.00              |
-| £        | British Pound                                                      | £###.00              |
+| £        | Libra esterlina                                                    | £###.00              |
 | ¥        | Japanese Yen                                                       | ¥###.00              |
 | $        | Dollar sign                                                        | $###.00              |
 | ¢        | Cent sign                                                          | .00¢                 |
