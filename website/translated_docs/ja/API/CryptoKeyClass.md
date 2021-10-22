@@ -4,7 +4,7 @@ title: CryptoKey
 ---
 
 
-The `CryptoKey` class in the 4D language encapsulates an asymmetric encryption key pair.
+4D ランゲージの `CryptoKey` クラスは、非対称の暗号化キーペアをカプセル化します。
 
 このクラスは `4D` クラスストアより提供されます。
 
