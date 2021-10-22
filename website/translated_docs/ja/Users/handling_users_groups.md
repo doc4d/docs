@@ -4,8 +4,21 @@ title: 4Dユーザー＆グループの管理
 ---
 
 
-4Dは、ユーザーに対して標準的なアクセス権と特定の権限を与えます。 ユーザー＆グループシステムが起動されると、これらの標準的な権限が有効になります。
+In multi-user applications, 4D provides users with certain standard access privileges and certain powers. ユーザー＆グループシステムが起動されると、これらの標準的な権限が有効になります。
 
+
+## Users and groups in projects
+
+In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. 次の表は、主なユーザーとグループの機能と、それらが利用かどうかを一覧に示します:
+
+|                              | 4D (シングルユーザー)        | 4D Server |
+| ---------------------------- | -------------------- | --------- |
+| ユーザーとグループの追加/編集              | ◯                    | ◯         |
+| ユーザー/グループにサーバーアクセスを割り振る      | ◯                    | ◯         |
+| ユーザー認証                       | × (すべてのユーザーがデザイナーです) | ◯         |
+| デザイナーへのパスワード設定によるアクセスシステムの起動 | × (すべてのアクセスがデザイナーです) | ◯         |
+
+> For information about user identification and access control in single-user deployments, see [this paragraph](overview.md#access-control-in-single-user-applications).
 
 ## デザイナーと管理者
 
@@ -42,6 +55,8 @@ title: 4Dユーザー＆グループの管理
 ユーザーのエディターは 4Dのツールボックスにあります。
 
 ![](assets/en/Users/editor.png)
+
+> Users and groups editor can be displayed at runtime using the [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html) command. The whole users and groups configuration can also be edited during application execution using 4D language commands of the `Users and Groups` theme.
 
 ### ユーザーの追加と変更
 
@@ -110,6 +125,7 @@ title: 4Dユーザー＆グループの管理
 
 ### ユーザーやグループをグループに入れる
 
+
 任意のユーザーやグループをグループ内に配置することができます。さらに、そのグループ自体を他のいくつかのグループ内に入れることも可能です。 必ずしもユーザーをグループに入れる必要はありません。
 
 ユーザーやグループをグループに配置するには、当該グループのユーザー/グループ一覧にてメンバーカラムにチェックを入れます:
@@ -154,3 +170,31 @@ title: 4Dユーザー＆グループの管理
 所属ユーザーの責務に基づいて、各グループに割り当てるアクセス権を決定します。
 
 このような階層システムを使用すると、新規ユーザーに割り当てるべきグループがわかりやすくなります。 各ユーザーを 1つのグループに割り当てるだけで、グループの階層を介してアクセス権を決定できます。
+
+
+## 権限を割り当てる
+
+Groups are assigned access privileges to specific parts or features of the application:
+
+- Design and Runtime Explorer access,
+- HTTP server,
+- REST server,
+- SQL server.
+
+These accesses are defined in the Settings dialog. 次の図は、デザインおよびランタイムエクスプローラーアクセス権を "Devs" グループに割り当てている様子を表しています (データベース設定の "セキュリティ" タブ):
+
+![](assets/en/Users/Access1.png)
+
+You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
+
+## Directory.json ファイル
+
+ユーザー、グループ、およびそれらのアクセス権は、**directory.json** という名称の専用のプロジェクトファイルに保存されます。
+
+This file can be stored at the following locations, depending on your needs:
+
+- If you want to use the same directory for all data files (or if you use a single data file), store the **directory.json** file in the user settings folder, i.e. in the "Settings" folder at the [same level as the "Project" folder](Project/architecture.md#project-folder) (default location).
+- If you want to use a specific directory file per data file, store the **directory.json** file in the data settings folder, i.e. in the ["Settings" folder of the "Data" folder](Project/architecture.md#settings). **directory.json** ファイルがこの場所に保存されている場合、ユーザー設定フォルダーのファイルよりも優先されます。 This custom/local Users and Groups configuration will left untouched by an application upgrade.
+
+> If no password is assigned to the "Designer" user, the **directory.json** is not created.
+
