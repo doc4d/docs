@@ -48,9 +48,9 @@ IMAP Transporter objects are instantiated with the [IMAP New transporter](#imap-
 ## IMAP New transporter
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R4 | Adicionado |
 </details>
 
 <!-- REF #_command_.IMAP New transporter.Syntax -->
@@ -134,9 +134,9 @@ The `4D.IMAPTransporter.new()` function <!-- REF #4D.IMAPTransporter.new().Summa
 ## .addFlags()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R6 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R6 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.addFlags().Syntax -->
@@ -222,9 +222,9 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 ## .append()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R6 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R6 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.append().Syntax -->
@@ -324,9 +324,9 @@ $status:=$imap.append($msg; "Drafts")
 ## .checkConnectionDelay
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R4 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.checkConnectionDelay.Syntax -->
@@ -348,9 +348,9 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 ## .copy()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R5 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R5 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.copy().Syntax -->
@@ -454,9 +454,9 @@ To copy all messages in the current mailbox:
 ## .createBox()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19    | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19    | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.createBox().Syntax -->
@@ -539,9 +539,9 @@ End if
 ## .delete()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R5 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R5 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.delete().Syntax -->
@@ -644,9 +644,9 @@ To delete all messages in the current mailbox:
 ## .deleteBox()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19    | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19    | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.deleteBox().Syntax -->
@@ -728,9 +728,9 @@ End if
 ## .expunge()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R6 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R6 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.expunge().Syntax -->
@@ -796,7 +796,7 @@ $status:=$transporter.expunge()
 | Versão | Mudanças         |
 | ------ | ---------------- |
 | v18 R5 | name is optional |
-| v18 R4 | Added            |
+| v18 R4 | Adicionado       |
 </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
@@ -850,7 +850,7 @@ The `boxInfo` object returned contains the following properties:
 <details><summary>Histórico</summary>
 | Versão | Mudanças                     |
 | ------ | ---------------------------- |
-| v18 R4 | Added                        |
+| v18 R4 | Adicionado                   |
 | v19    | Add `isSubscribed` parameter |
 </details>
 
@@ -917,9 +917,9 @@ If the account does not contain any mailboxes, an empty collection is returned.
 ## .getDelimiter()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R4 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.getDelimiter().Syntax -->
@@ -975,9 +975,9 @@ Mailbox name delimiter character.
 ## .getMail()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R4 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.getMail().Syntax -->
@@ -1051,9 +1051,9 @@ You want to get the message with ID = 1:
 ## .getMails()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R5 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R5 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.getMails().Syntax -->
@@ -1156,9 +1156,9 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 ## .getMIMEAsBlob()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R4 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Syntax -->
@@ -1242,9 +1242,9 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 ## .move()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R5 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R5 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.move().Syntax -->
@@ -1350,9 +1350,9 @@ To move all messages in the current mailbox:
 ## .numToID()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R5 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R5 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.numToID().Syntax -->
@@ -1413,9 +1413,9 @@ The function returns a collection of strings (unique IDs).
 ## .removeFlags()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R6 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R6 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.removeFlags().Syntax -->
@@ -1501,9 +1501,9 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 ## .renameBox()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19    | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19    | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.renameBox().Syntax -->
@@ -1585,9 +1585,9 @@ End if
 ## .searchMails()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R5 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R5 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.searchMails().Syntax -->
@@ -1717,9 +1717,9 @@ Search-keys may request the value to search for:
 ## .selectBox()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v18 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v18 R4 | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.selectBox().Syntax -->
@@ -1785,9 +1785,9 @@ The `boxInfo` object returned contains the following properties:
 ## .subscribe()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19    | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19    | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.subscribe().Syntax -->
@@ -1858,9 +1858,9 @@ End if
 ## .unsubscribe()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19    | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19    | Adicionado |
 </details>
 
 <!-- REF #IMAPTransporterClass.unsubscribe().Syntax -->
