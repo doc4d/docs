@@ -1,72 +1,62 @@
 ---
 id: overview
-title: 概要
+title: Access Control overview
 ---
 
-クライアントサーバーアーキテクチャーや Webインターフェースなど、複数のユーザーがアプリケーションを使用する場合は、アクセスを制御したり、接続ユーザーに応じて異なる機能を提供したりする必要が生じます。 機密性の高いデータを保護することは重要です。 ユーザーにパスワードを割り当て、データやアプリケーション操作へのアクセスレベルが異なるアクセスグループを作成することで、これらのデータを保護することができます。
+クライアントサーバーアーキテクチャーや Webインターフェースなど、複数のユーザーがアプリケーションを使用する場合は、アクセスを制御したり、接続ユーザーに応じて異なる機能を提供したりする必要が生じます。 It is also essential to provide security for sensitive data, even in single-user applications.
+
+4D access control strategy depends on your deployment configuration:
+
+- in multi-user applications, you can rely on 4D users and groups,
+- in single-user applications, user access is controlled through the system session, using commands such as [`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html).
 
 > 4Dのセキュリティ機能の概要については、[4D Security guide](https://blog.4d.com/4d-security-guide/) をご覧ください。
 
 
 
 
+## Access control in multi-user applications
 
-## 権限を割り当てる
+Multi-user applications are deployed with 4D Server. They include client-server, Web, or REST applications.
 
-4D のパスワードアクセスシステムは、ユーザーとグループに基づいています。 ユーザーを作成してパスワードを割り当てたり、ユーザーをグループに入れて、各グループに対しアプリケーションの適切な部分へのアクセス権を割り当てます。
+In multi-user applications, access control is done through [4D users and groups](handling_users_groups.md). You create users, assign passwords, create access groups that have different levels of privileges in the application.
 
-グループには、アクセス可能なメソッドや、HTTPサーバー、SQLサーバーなど、任意の機能へのアクセス権が割り当てられます。
+You initiate the 4D password access control system with 4D Server by [assigning a password to the Designer user](handling_users_groups.md#designer-and-administrator). Until you give the Designer a password, all application access are done with the Designer's access rights, even if you have [set up users and groups](handling_users_groups.md) (when the application opens, no ID is required). つまり、アプリケーションのあらゆる部分を開くことができます。
 
-次の図は、デザインおよびランタイムエクスプローラーアクセス権を "Devs" グループに割り当てている様子を表しています (データベース設定の "セキュリティ" タブ):
-
-![](assets/en/Users/Access1.png)
-
-
-
-## アクセスシステムを起動する
-
-クライアントサーバーにおいて、4D のパスワードアクセスシステムを起動するには、**デザイナー (Designer) にパスワードを割り当て** ます。
-
-ユーザー＆グループを作成したとしても、デザイナーにパスワードが指定されるまでは、すべてのアプリケーションアクセスがデザイナーアクセス権でおこなわれます (アプリケーションを開く際に ID を求められません)。 つまり、アプリケーションのあらゆる部分を開くことができます。
-
-デザイナーにパスワードが指定されると、すべてのアクセス権が有効になります。 リモートユーザーがアプリケーションを開くには、パスワードを入力しなければなりません。
+デザイナーにパスワードが指定されると、すべてのアクセス権が有効になります。 In order to connect to the application or to a [server with protected access](handling_users_groups.md#assigning-group-access), remote users must enter a login/password.
 
 パスワードアクセスシステムを無効にするには、デザイナーのパスワードを削除します。
 
 
-## プロジェクトアーキテクチャーにおけるユーザー＆グループ
-
-プロジェクトアプリケーション (.4DProject および .4dz ファイル) では、シングルユーザーおよびクライアントサーバー環境の両方でユーザーとグループを設定することができます。 ただし、アクセスシステムは 4D Server でのみ有効です。 次の表は、主なユーザーとグループの機能と、それらが利用かどうかを一覧に示します:
-
-|                              | 4D (シングルユーザー)        | 4D Server |
-| ---------------------------- | -------------------- | --------- |
-| ユーザーとグループの追加/編集              | ◯                    | ◯         |
-| ユーザー/グループにサーバーアクセスを割り振る      | ◯                    | ◯         |
-| ユーザー認証                       | × (すべてのユーザーがデザイナーです) | ◯         |
-| デザイナーへのパスワード設定によるアクセスシステムの起動 | × (すべてのアクセスがデザイナーです) | ◯         |
+## Access control in single-user applications
 
 
+Single-user applications are desktop applications, deployed with 4D or merged with 4D Volume License. In single-user applications all users opening the application are [Designers](handling_users_groups.md#designer-and-administrator), they have all privileges and their name is "Designer". Access control is not based upon 4D users and groups, but upon **user sessions**.
 
+### ユーザー認証
 
+To identify the current user in a 4D single-user application, you can rely on the [`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html) command, which returns the user who opened the system session. Thus user authentication is delegated to the OS level.
 
-## ツールボックス
+You can then allow or deny access within your application by using code such as:
 
-ユーザーとグループのエディターは 4Dのツールボックスにあります。 ユーザーとグループを作成し、ユーザーにパスワードを設定し、ユーザーをグループに所属させるといった操作はこのエディターにて可能です。
+```4d
+If(Current system user = $user) //you can store users in a database table
+    // give access to some features
+Enf if
+```
 
-![](assets/en/Users/editor.png)
+If you want to use the system user name in 4D instead of "Designer" (e.g. in log files), you can call the [`SET USER ALIAS`](https://doc.4d.com/4dv19R/help/command/en/page1666.html) command, for example:
 
-> ランタイムにおいてユーザーとグループのエディターを表示させるには [EDIT ACCESS](https://doc.4d.com/4Dv18/4D/18/EDIT-ACCESS.301-4504687.ja.html) コマンドを使用します。 ユーザーとグループの設定は、アプリケーション実行中でも [Users and Groups](https://doc.4d.com/4Dv18R3/4D/18-R3/Users-and-Groups.201-4900438.ja.html) テーマの 4Dランゲージコマンドを使って編集することができます。
+```4d
+SET USER ALIAS(Current system user)
+```
 
+### Protecting access
 
+#### 権限
 
-## Directory.json ファイル
+On a machine that is shared by several users, you can install the 4D application in a folder and give appropriate user access privileges to the folder at the OS level.
 
-ユーザー、グループ、およびそれらのアクセス権は、**directory.json** という名称の専用のプロジェクトファイルに保存されます。
+#### Encrypting data
 
-このフォルダーは次の場所に保存することができます:
-
-- ユーザー設定フォルダー (つまり "Project" フォルダーと同階層にある "Settings" フォルダー) 内。 これらの設定はアプリケーションによりデフォルトで使用されます。
-- データ設定フォルダー (つまり "Data" フォルダーの中の "Settings" フォルダー) 内。 **directory.json** ファイルがこの場所に保存されている場合、ユーザー設定フォルダーのファイルよりも優先されます。 この機能により、カスタム/ローカルなユーザー＆グループ設定を定義することができます。 アプリケーションをアップグレードしても、カスタム設定はそのままです。
-
-> 4Dパスワードとアクセスコントロールが有効化されていない場合、**directory.json** ファイルは生成されません。
-
+If you want to protect access to the application data, we recommend to [encrypt data](MSC/encrypt.md) and provide the encryption key to the authorized user(s). 
