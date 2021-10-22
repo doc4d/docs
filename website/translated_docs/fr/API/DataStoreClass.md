@@ -348,9 +348,6 @@ You want to know the number of encrypted tables in the current data file:
  Else
     ALERT("This database is not encrypted.")
  End if
- Else
-    ALERT("This database is not encrypted.")
- End if
 ```
 
 <!-- END REF -->
