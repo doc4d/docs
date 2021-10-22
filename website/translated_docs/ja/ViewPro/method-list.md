@@ -16,32 +16,32 @@ title: Method List
 
 <!-- REF #_method_.VP ADD FORMULA NAME.Params -->
 
-| 引数         | タイプ    |    | 説明                            |
-| ---------- | ------ | -- | ----------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名       |
-| vpFormula  | テキスト   | -> | 4D View Pro formula           |
-| name       | テキスト   | -> | Name for the formula          |
-| options    | オブジェクト | -> | Options for the named formula |
+| 引数         | タイプ    |    | 説明                      |
+| ---------- | ------ | -- | ----------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名 |
+| vpFormula  | テキスト   | -> | 4D View Pro フォーミュラ      |
+| name       | テキスト   | -> | フォーミュラの名称               |
+| options    | オブジェクト | -> | 命名フォーミュラのオプション          |
 <!-- END REF -->  
 
 #### 説明
 
-The `VP ADD FORMULA NAME` command <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->creates or modifies a named formula in the open document<!-- END REF -->.
-> Named formulas created by this command are saved with the document.
+`VP ADD FORMULA NAME` コマンドは、 <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->開いているドキュメント内において命名されたフォーミュラを作成、または編集します<!-- END REF -->。
+> このコマンドで作成された命名フォーミュラはドキュメントとともに保存されます。
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-Pass the 4D View Pro formula that you want to name in *vpFormula*. For detailed information about formula syntax, see [Formulas and Functions](formulas.md) page.
+*vpFormula* には、命名する 4D View Pro フォーミュラを渡します。 フォーミュラシンタックスの詳細については、[式と関数](formulas.md) ページを参照ください。
 
-Pass the new name for the formula in *name*. If the name is already used within the same scope, the new named formula replaces the existing one. Note that you can use the same name for different scopes (see below).
+*name* 引数には、新しいフォーミュラの名前を渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名フォーミュラは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
-You can pass an object with additional properties for the named formula in *options*. 以下のオブジェクトプロパティがサポートされています:
+*options* 引数には、命名フォーミュラの追加プロパティを格納したオブジェクト型を渡すことができます。 以下のオブジェクトプロパティがサポートされています:
 
 
-| プロパティ   | タイプ  | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| scope   | 数値   | Scope for the formula. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>The scope determines whether a formula name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`). |
-| comment | テキスト | Comment associated to named formula                                                                                                                                                                                                                                                                                                                                                                                                |
+| プロパティ   | タイプ  | 説明                                                                                                                                                                                                                                                                                                                                              |
+| ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scope   | 数値   | フォーミュラのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>スコープは、フォーミュラ名が特定のワークシートに限定されたローカル (*scope* = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (*scope* = `vk workbook`) なものかを決定します。 |
+| comment | テキスト | 命名フォーミュラに割り当てられたコメント                                                                                                                                                                                                                                                                                                                            |
 
 
 #### 例題
@@ -59,11 +59,11 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 <!-- REF #_method_.VP ADD RANGE NAME.Params -->
 
-| 引数       | タイプ    |    | 説明                            |
-| -------- | ------ | -- | ----------------------------- |
-| rangeObj | テキスト   | -> | Range object                  |
-| name     | テキスト   | -> | Name for the fomula           |
-| options  | オブジェクト | -> | Options for the named formula |
+| 引数       | タイプ    |    | 説明             |
+| -------- | ------ | -- | -------------- |
+| rangeObj | テキスト   | -> | レンジオブジェクト      |
+| name     | テキスト   | -> | フォーミュラの名称      |
+| options  | オブジェクト | -> | 命名フォーミュラのオプション |
 <!-- END REF -->  
 
 #### 説明
@@ -72,15 +72,15 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 The `VP ADD RANGE NAME` command <!-- REF #_method_.VP ADD RANGE NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->.
 > Named ranges created by this command are saved with the document.
 
-In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. Note that you can use the same name for different scopes (see below).
+In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
 You can pass an object with additional properties for the named range in *options*. 以下のオブジェクトプロパティがサポートされています:
 
 
-| プロパティ   | タイプ  | 説明                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| scope   | 数値   | Scope for the range. You can pass the sheet index (counting begins at 0) or use the following constants: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>The scope determines whether a range name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`). |
-| comment | テキスト | Comment associated to named range                                                                                                                                                                                                                                                                                                                                                                                              |
+| プロパティ   | タイプ  | 説明                                                                                                                                                                                                                                                                                                                                        |
+| ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scope   | 数値   | レンジのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>スコープは、レンジ名が特定のワークシートに限定されたローカル (*scope* = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (*scope* = `vk workbook`) なものかを決定します。 |
+| comment | テキスト | 命名レンジに割り当てられたコメント                                                                                                                                                                                                                                                                                                                         |
 > * A named range is actually a named formula containing coordinates. `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](#vp-add-formula-name) method to create named ranges.
 > * Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](#vp-get-formula-by-name) method.
 
@@ -102,9 +102,9 @@ VP ADD RANGE NAME($range;"Total1")
 
 <!-- REF #_method_.VP ADD SELECTION.Params -->
 
-| 引数       | タイプ  |    | 説明           |
-| -------- | ---- | -- | ------------ |
-| rangeObj | テキスト | -> | Range object |
+| 引数       | タイプ  |    | 説明        |
+| -------- | ---- | -- | --------- |
+| rangeObj | テキスト | -> | レンジオブジェクト |
 <!-- END REF -->  
 
 #### 説明
@@ -149,7 +149,7 @@ VP ADD SELECTION($currentSelection)
 
 The `VP ADD SHEET` command <!-- REF #_method_.VP ADD SHEET.Summary -->inserts a sheet in the document loaded in *vpAreaName*.<!-- END REF --> 
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *index*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
 > Indexing starts at 0.
@@ -177,9 +177,9 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 <!-- REF #_method_.VP ADD SPAN.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 <!-- END REF --> 
 
 #### 説明
@@ -235,9 +235,9 @@ The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->
 > Style sheets created by this command are saved with the document.
 
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-The *styleName* parameter lets you assign a name to the style sheet. If the name is already used within the same scope, the new style sheet replaces the existing one. Note that you can use the same name for different scopes (see below).
+The *styleName* parameter lets you assign a name to the style sheet. If the name is already used within the same scope, the new style sheet replaces the existing one. ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
 Within the *styleObj*, designate the settings for the style sheet (e.g., font, text decoration, alignment, borders, etc.). For the full list of style properties, see [Style object properties](configuring.md#style-objects-properties).
 
@@ -293,11 +293,11 @@ will create and apply the following style object named *GreenDashDotStyle*:
 
 <!-- REF #_method_.VP ALL.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | オブジェクト | <- | Range object of all cells              |
+| 引数         | タイプ    |    | 説明                          |
+| ---------- | ------ | -- | --------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値        | オブジェクト | <- | Range object of all cells   |
 <!-- END REF -->  
 
 #### 説明
@@ -305,7 +305,7 @@ will create and apply the following style object named *GreenDashDotStyle*:
 
 The `VP ALL` command <!-- REF #_method_.VP ALL.Summary -->returns a new range object referencing all cells<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -329,13 +329,13 @@ $all:=VP All("ViewProArea") // all cells of the current sheet
 
 <!-- REF #_method_.VP Cell.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| column     | 倍長整数   | -> | Sheet index (current sheet if omitted) |
-| row        | 倍長整数   | -> | Sheet index (current sheet if omitted) |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | オブジェクト | <- | Range object of all cells              |
+| 引数         | タイプ    |    | 説明                          |
+| ---------- | ------ | -- | --------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
+| column     | 倍長整数   | -> | シートのインデックス (省略した場合はカレントシート) |
+| row        | 倍長整数   | -> | シートのインデックス (省略した場合はカレントシート) |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値        | オブジェクト | <- | Range object of all cells   |
 <!-- END REF -->  
 
 #### 説明
@@ -344,7 +344,7 @@ The `VP Cell` command <!-- REF #_method_.VP Cell.Summary -->returns a new range 
 
 > This command is intended for ranges of a single cell. To create a range object for multiple cells, use the [VP Cells](#vp-cells) command.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 The *column* parameter defines the column of the cell range's position. Pass the column index in this parameter.
 
@@ -380,15 +380,15 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 
 <!-- REF #_method_.VP Cells.Params -->
 
-| 引数          | タイプ    |    | 説明                                     |
-| ----------- | ------ | -- | -------------------------------------- |
-| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| column      | 整数     | -> | Column index                           |
-| row         | 整数     | -> | Row index                              |
-| columnCount | 整数     | -> | Number of columns                      |
-| rowCount    | 整数     | -> | Number of rows                         |
-| sheet       | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値         | オブジェクト | <- | Range object of cells                  |
+| 引数          | タイプ    |    | 説明                          |
+| ----------- | ------ | -- | --------------------------- |
+| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
+| column      | 整数     | -> | Column index                |
+| row         | 整数     | -> | Row index                   |
+| columnCount | 整数     | -> | Number of columns           |
+| rowCount    | 整数     | -> | Number of rows              |
+| sheet       | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値         | オブジェクト | <- | Range object of cells       |
 <!-- END REF -->  
 
 #### 説明
@@ -396,7 +396,7 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 
 The `VP Cells` command <!-- REF #_method_.VP Cells.Summary -->returns a new range object referencing specific cells<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 The *column* parameter defines the first column of the cell range. Pass the column index (counting begins at 0) in this parameter. If the range is within multiple columns, you should also use the *columnCount* parameter.
 
@@ -429,13 +429,13 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 
 <!-- REF #_method_.VP Column.Params -->
 
-| 引数          | タイプ    |    | 説明                                     |
-| ----------- | ------ | -- | -------------------------------------- |
-| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| column      | 整数     | -> | Column index                           |
-| columnCount | 整数     | -> | Number of columns                      |
-| sheet       | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値         | オブジェクト | <- | Range object of cells                  |
+| 引数          | タイプ    |    | 説明                          |
+| ----------- | ------ | -- | --------------------------- |
+| vpAreaName  | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
+| column      | 整数     | -> | Column index                |
+| columnCount | 整数     | -> | Number of columns           |
+| sheet       | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値         | オブジェクト | <- | Range object of cells       |
 <!-- END REF -->  
 
 #### 説明
@@ -443,7 +443,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 
 The `VP Column` command <!-- REF #_method_.VP Column.Summary -->returns a new range object referencing a specific column or columns<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 The *column* parameter defines the first column of the column range. Pass the column index (counting begins at 0)  in this parameter. If the range contains multiple columns, you should also use the optional *columnCount* parameter.
 
@@ -471,9 +471,9 @@ The code would be:
 
 <!-- REF #_method_.VP COLUMN AUTOFIT.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 
 <!-- END REF -->  
 
@@ -512,8 +512,8 @@ Selecting the columns and running this code:
 
 | 引数            | タイプ    |    | 説明                                 |
 | ------------- | ------ | -- | ---------------------------------- |
-| rangeObj      | オブジェクト | -> | Range object                       |
-| otherRangeObj | オブジェクト | -> | Range object                       |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                          |
+| otherRangeObj | オブジェクト | -> | レンジオブジェクト                          |
 | 戻り値           | オブジェクト | <- | Object containing a combined range |
 
 <!-- END REF -->  
@@ -586,7 +586,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 | 引数       | タイプ    |    | 説明                                                |
 | -------- | ------ | -- | ------------------------------------------------- |
 | vpObject | オブジェクト | -> | 4D View Pro object containing the area to convert |
-| rangeObj | オブジェクト | -> | Range object                                      |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                         |
 | 戻り値      | オブジェクト | <- | SVG picture of the area                           |	
 
 
@@ -650,13 +650,13 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 | 引数       | タイプ    |    | 説明                                        |
 | -------- | ------ | -- | ----------------------------------------- |
-| rangeObj | オブジェクト | -> | Range object                              |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                 |
 | options  | オブジェクト | -> | Additional options                        |
 | 戻り値      | オブジェクト | <- | Object returned. Contains the copied data |
 <!-- END REF -->  
 #### 説明
 
-The `VP Copy to object` command <!-- REF #_method_.Copy to object.Summary -->copies the contents, style and formulas from a cell range to an object<!-- END REF -->.
+The `VP Copy to object` command <!-- REF #_method_.Copy to object.Summary -->copies the contents, style and formulas from *rangeObj* to an object<!-- END REF -->.
 
 In *rangeObj*, pass the cell range with the values, formatting, and formulas to copy. If *rangeObj* is a combined range, only the first one is used.
 
@@ -665,7 +665,7 @@ You can pass an optional *options* parameter with the following properties:
 | プロパティ       | タイプ  | 説明                                                                                                                      |
 | ----------- | ---- | ----------------------------------------------------------------------------------------------------------------------- |
 | copy        | ブール  | *True* (default) to keep the copied values, formatting and formulas after the command executes. *False* to remove them. |
-| copyOptions | 倍長整数 | Specifies what is copied or moved. とりうる値: <p><table><tr><th>プロパティ</th><th>説明</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Copies all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copies only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copies only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copies the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Copies only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copies the values and formatting.</td></tr></table></p>                                                      |
+| copyOptions | 倍長整数 | Specifies what is copied or moved. とりうる値: <p><table><tr><th>値</th><th>説明</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Copies all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copies only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copies only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copies the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Copies only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copies the values and formatting.</td></tr></table></p>                                                      |
 
 The paste options defined in the [workbook options](#) are taken into account.
 
@@ -690,6 +690,10 @@ $targetRange:=VP Cell("ViewProArea"; 4; 0)
 VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 ```
 
+#### 参照
+
+[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)
+
 ## D
 
 ### VP DELETE COLUMNS
@@ -698,9 +702,9 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 <!-- REF #_method_.VP DELETE COLUMNS.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 <!-- END REF -->  
 
 #### 説明
@@ -734,9 +738,9 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 <!-- REF #_method_.VP DELETE ROWS.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 <!-- END REF -->  
 
 #### 説明
@@ -783,7 +787,7 @@ use the following code:
 
 The `VP EXPORT DOCUMENT` command <!-- REF #_method_.VP EXPORT DOCUMENT.Summary -->exports the 4D View Pro object attached to the 4D View Pro area *vpAreaName* to a document on disk according to the *filePath* and *paramObj* parameters<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In *filePath*, pass the destination path and name of the document to be exported. If you don't specify a path, the document will be saved at the same level as the Project folder.
 
@@ -937,7 +941,7 @@ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv 
 
 The `VP Export to object` command <!-- REF #_method_.VP Export to object.Summary --> returns the 4D View Pro object attached to the 4D View Pro area *vpAreaName*<!-- END REF -->. You can use this command for example to store the 4D View Pro area in a 4D database object field.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In the *option* parameter, you can pass the following export option, if required:
 
@@ -984,11 +988,11 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 
 | 引数              | タイプ    |    | 説明                                    |
 | --------------- | ------ | -- | ------------------------------------- |
-| rangeObj        | オブジェクト | -> | Range object                          |
+| rangeObj        | オブジェクト | -> | レンジオブジェクト                             |
 | searchValue     | テキスト   | -> | Search value                          |
 | searchCondition | オブジェクト | -> | Object containing search condition(s) |
 | replaceValue    | テキスト   | -> | Replacement value                     |
-| 戻り値             | オブジェクト | <- | Range object                          |
+| 戻り値             | オブジェクト | <- | レンジオブジェクト                             |
 <!-- END REF -->  
 
 #### 説明
@@ -1074,7 +1078,7 @@ End if
 
 The `VP FLUSH COMMANDS` command <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->immediately executes stored commands and clears the command buffer<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In order to increase performance and reduce the number of requests sent, the 4D View Pro commands called by the developer are stored in a command buffer. When called, `VP FLUSH COMMANDS` executes the commands as a batch when leaving the method and empties the contents of the command buffer.
 
@@ -1148,18 +1152,18 @@ See example for [`VP Object to font`](#vp-object-to-font).
 
 <!-- REF #_method_.VP Get active cell.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | オブジェクト | <- | Range object of single cell            |
+| 引数         | タイプ    |    | 説明                          |
+| ---------- | ------ | -- | --------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値        | オブジェクト | <- | Range object of single cell |
 <!-- END REF -->  
 
 #### 説明
 
 The `VP Get active cell` command <!-- REF #_method_.VP Get active cell.Summary -->returns a new range object referencing the cell which has the focus and where new data will be entered (the active cell)<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1192,7 +1196,7 @@ $activeCell:=VP Get active cell("myVPArea")
 
 | 引数       | タイプ    |    | 説明           |
 | -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| rangeObj | オブジェクト | -> | レンジオブジェクト    |
 | 戻り値      | オブジェクト | <- | Style object |
 <!-- END REF -->  
 
@@ -1247,7 +1251,7 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 
 | 引数       | タイプ    |    | 説明                              |
 | -------- | ------ | -- | ------------------------------- |
-| rangeObj | オブジェクト | -> | Range object                    |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                       |
 | 戻り値      | コレクション | <- | Collection of column properties |
 <!-- END REF -->  
 
@@ -1284,18 +1288,18 @@ $attr:=VP Get column attributes($range)
 
 <!-- REF #_method_.VP Get column count.Params -->
 
-| 引数         | タイプ  |    | 説明                                     |
-| ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area from object name      |
-| sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | 整数   | <- | Total number of columns                |
+| 引数         | タイプ  |    | 説明                                |
+| ---------- | ---- | -- | --------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro area from object name |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)       |
+| 戻り値        | 整数   | <- | Total number of columns           |
 <!-- END REF -->  
 
 #### 説明
 
 The `VP Get column count` command <!-- REF #_method_.VP Get column count.Summary -->returns the total number of columns from the designated *sheet*<!-- END REF -->.
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+In *vpAreaName*, pass the name property of the 4D View Pro area. 存在しない名前を渡した場合、エラーが返されます。
 
 You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1327,7 +1331,7 @@ $colCount:=VP Get column count("ViewProarea")
 The `VP Get current sheet` command <!-- REF #_method_.VP Get current sheet.Summary -->returns the index of the current sheet in *vpAreaName*. The current sheet is the selected sheet in the document.
 <!-- END REF --> 
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 > Indexing starts at 0.
 
@@ -1349,18 +1353,18 @@ $index:=VP Get current sheet("ViewProArea")
 
 <!-- REF #_method_.VP Get default style.Params -->
 
-| 引数         | タイプ  |    | 説明                                     |
-| ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area from object name      |
-| sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | 整数   | <- | Total number of columns                |
+| 引数         | タイプ  |    | 説明                                |
+| ---------- | ---- | -- | --------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro area from object name |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)       |
+| 戻り値        | 整数   | <- | Total number of columns           |
 <!-- END REF -->  
 
 #### 説明
 
 The `VP Get default style` command <!-- REF #_method_.VP Get default style.Summary -->returns a default style object for a sheet<!-- END REF -->. The returned object contains basic document rendering properties as well as the default style settings (if any) previously set by the [VP SET DEFAULT STYLE](#vp-set-default-style) method. For more information about style properties, see [Style Objects & Style Sheets](configuring.md#style-objects--style-sheets).
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+In *vpAreaName*, pass the name property of the 4D View Pro area. 存在しない名前を渡した場合、エラーが返されます。
 
 You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1396,10 +1400,10 @@ will return this information in the *$defaultStyle* object:
 
 <!-- REF #_method_.VP Get formula.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
-| 戻り値      | テキスト   | <- | Formula      |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
+| 戻り値      | テキスト   | <- | Formula   |
 <!-- END REF -->  
 
 #### 説明
@@ -1438,7 +1442,7 @@ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 
 The `VP Get formula by name` command <!-- REF #_method_.VP Get formula by name.Summary --> returns the formula and comment corresponding to the named range or named formula passed in the *name* parameter, or **null** if it does not exist in the defined scope<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 Pass the named range or named formula that you want to get in *name*. Note that named ranges are returned as formulas containing absolute cell references.
 
@@ -1480,7 +1484,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total")
 
 | 引数       | タイプ    |    | 説明                           |
 | -------- | ------ | -- | ---------------------------- |
-| rangeObj | オブジェクト | -> | Range object                 |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                    |
 | 戻り値      | コレクション | <- | Collection of formula values |
 <!-- END REF -->  
 
@@ -1522,7 +1526,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 | 引数         | タイプ    |    | 説明                                                  |
 | ---------- | ------ | -- | --------------------------------------------------- |
 | vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                             |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted)              |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)                         |
 | 戻り値        | オブジェクト | <- | Object containing frozen column and row information |
 <!-- END REF -->  
 
@@ -1530,7 +1534,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 The `VP Get frozen panes` command <!-- REF #_method_.VP Get frozen panes.Summary -->returns an object with information about the frozen columns and rows in *vpAreaName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1580,7 +1584,7 @@ The returned object contains, for example:
 
 The `VP Get names` command <!-- REF #_method_.VP Get names.Summary -->returns a collection of all defined "names" in the current sheet or in the scope designated by the *scope* parameter<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 You can define where to get the names in *scope* using either the sheet index (counting begins at 0) or the following constants:
 
@@ -1614,11 +1618,11 @@ $list:=VP Get names("ViewProArea";2) //names in 3rd sheet
 
 <!-- REF #_method_.VP Get print info.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | オブジェクト | <- | Object of printing information         |
+| 引数         | タイプ    |    | 説明                             |
+| ---------- | ------ | -- | ------------------------------ |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名        |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)    |
+| 戻り値        | オブジェクト | <- | Object of printing information |
 <!-- END REF -->  
 
 #### 説明
@@ -1626,7 +1630,7 @@ $list:=VP Get names("ViewProArea";2) //names in 3rd sheet
 The `VP Get print info` command <!-- REF #_method_.VP Get print info.Summary -->returns an object containing the print attributes of the *vpAreaName*<!-- END REF -->.
 
 
-Pass the the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pass the the name of the 4D View Pro area in *vpAreaName*. 存在しない名前を渡した場合、エラーが返されます。
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0) whose printing attributes you want returned.  If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1696,7 +1700,7 @@ zoomFactor:1
 
 | 引数       | タイプ    |    | 説明                           |
 | -------- | ------ | -- | ---------------------------- |
-| rangeObj | オブジェクト | -> | Range object                 |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                    |
 | 戻り値      | コレクション | <- | Collection of row properties |
 <!-- END REF -->  
 
@@ -1732,18 +1736,18 @@ $attr:=VP Get row attributes($range)
 
 <!-- REF #_method_.VP Get row count.Params -->
 
-| 引数         | タイプ  |    | 説明                                     |
-| ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro area from object name      |
-| sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | 整数   | <- | Total number of rows                   |
+| 引数         | タイプ  |    | 説明                                |
+| ---------- | ---- | -- | --------------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro area from object name |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート)       |
+| 戻り値        | 整数   | <- | Total number of rows              |
 <!-- END REF -->  
 
 #### 説明
 
 The `VP Get row count` command <!-- REF #_method_.VP Get row count.Summary -->returns the total number of rows from the designated *sheet*<!-- END REF -->.
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+In *vpAreaName*, pass the name property of the 4D View Pro area. 存在しない名前を渡した場合、エラーが返されます。
 
 You can define where to get the row count in the optional *sheet* parameter using the sheet index (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1765,18 +1769,18 @@ $rowCount:=VP Get row count("ViewProarea")
 
 <!-- REF #_method_.VP Get selection.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area from object name      |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | オブジェクト | <- | Range object of cells                  |
+| 引数         | タイプ    |    | 説明                                |
+| ---------- | ------ | -- | --------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro area from object name |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)       |
+| 戻り値        | オブジェクト | <- | Range object of cells             |
 <!-- END REF -->  
 
 #### 説明
 
 The `VP Get selection` command <!-- REF #_method_.VP Get selection.Summary -->returns a new range object referencing the current selected cells<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1818,7 +1822,7 @@ $currentSelection:=VP Get selection("myVPArea")
 The `VP Get sheet count` command <!-- REF #_method_.VP Get sheet count.Summary -->returns the number of sheets in the document loaded in *vpAreaName*.
 <!-- END REF --> 
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 #### 例題
 
@@ -1855,7 +1859,7 @@ Get the sheet count and set the current sheet to the last sheet:
 The `VP Get sheet index` command <!-- REF #_method_.VP Get sheet index.Summary -->returns the index of a sheet based on its name in *vpAreaName*.
 <!-- END REF --> 
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *name*, pass the name of the sheet whose index will be returned. If no sheet named *name* is found in the document, the method returns -1.
 > Indexing starts at 0.
@@ -1892,7 +1896,7 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
 The `VP Get sheet name` command <!-- REF #_method_.VP Get sheet name.Summary -->returns the name of a sheet based on its index in *vpAreaName*.
 <!-- END REF --> 
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *sheet*, pass the index of the sheet whose name will be returned.
 
@@ -1913,18 +1917,18 @@ $sheetName:=VP Get sheet name("ViewProArea";2)
 
 <!-- REF #_method_.VP Get sheet options.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro area from object name      |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | オブジェクト | <- | Sheet options object                   |
+| 引数         | タイプ    |    | 説明                                |
+| ---------- | ------ | -- | --------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro area from object name |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)       |
+| 戻り値        | オブジェクト | <- | Sheet options object              |
 <!-- END REF -->  
 
 #### 説明
 
 The `VP Get sheet options` command <!-- REF #_method_.VP Get sheet options.Summary -->returns an object containing the current sheet options of the *vpAreaName* area<!-- END REF -->.
 
-Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pass the name of the 4D View Pro area in *vpAreaName*. 存在しない名前を渡した場合、エラーが返されます。
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet (counting begins at 0). If omitted or if you pass `vk current sheet`, the current spreadsheet is used.
 
@@ -1963,7 +1967,7 @@ End if
 The `VP Get show print lines` command <!-- REF #_method_.VP Get show print lines.Summary -->returns `True` if the print preview lines are visible and `False` if they are hidden.
 <!-- END REF --> 
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *sheet*, pass the index of the target sheet. If *sheet* is omitted, the command applies to the current sheet.
 
@@ -1987,7 +1991,7 @@ The following code checks if preview lines are displayed or hidden in the docume
 
 | 引数       | タイプ    |    | 説明                                        |
 | -------- | ------ | -- | ----------------------------------------- |
-| rangeObj | オブジェクト | -> | Range object                              |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                                 |
 | 戻り値      | オブジェクト | <- | Object of cell spans in the defined range |
 <!-- END REF -->  
 
@@ -2033,7 +2037,7 @@ VP SET CELL STYLE($range;$style)
 
 The `VP Get stylesheet` command <!-- REF #_method_.VP Get stylesheet.Summary -->returns the *styleName* style sheet object containing the property values which have been defined<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In *styleName*, pass the name of the style sheet to get.
 
@@ -2081,7 +2085,7 @@ borderTop:{color:green,style:10}
 
 The `VP Get stylesheets` command <!-- REF #_method_.VP Get stylesheets.Summary -->returns the collection of defined style sheet objects from the designated *scope*<!-- END REF -->.
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+In *vpAreaName*, pass the name property of the 4D View Pro area. 存在しない名前を渡した場合、エラーが返されます。
 
 You can define where to get the style sheets in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
 
@@ -2126,7 +2130,7 @@ In this case, the current sheet uses two style objects:
 
 | 引数       | タイプ    |    | 説明                             |
 | -------- | ------ | -- | ------------------------------ |
-| rangeObj | オブジェクト | -> | Range object                   |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                      |
 | 戻り値      | オブジェクト | <- | Object containing a cell value |
 <!-- END REF -->  
 
@@ -2172,7 +2176,7 @@ End if
 
 | 引数       | タイプ    |    | 説明                   |
 | -------- | ------ | -- | -------------------- |
-| rangeObj | オブジェクト | -> | Range object         |
+| rangeObj | オブジェクト | -> | レンジオブジェクト            |
 | 戻り値      | コレクション | <- | Collection of values |
 <!-- END REF -->  
 
@@ -2232,7 +2236,7 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 
 The `VP IMPORT DOCUMENT` command <!-- REF #_method_.VP IMPORT DOCUMENT.Summary -->imports and displays the document designated by *filePath* in the 4D View Pro area *vpAreaName*<!-- END REF -->. The imported document replaces any data already inserted in the area.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In *filePath*, pass the path and name of the document to be imported. The following formats are supported :
 
@@ -2316,7 +2320,7 @@ Here's the result: ![example-import-csv](assets/en/ViewPro/vp-import-document-cs
 
 The `VP IMPORT FROM OBJECT` command <!-- REF #_method_.VP IMPORT FROM OBJECT.Summary -->imports and displays the *viewPro* 4D View Pro object in the *vpAreaName* 4D View Pro area<!-- END REF -->. The imported object contents replaces any data already inserted in the area.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In *viewPro*, pass a valid 4D View Pro object. This object can have been created using [VP Export to object](#vp-export-to-object) or manually. For more information on 4D View Pro objects, please refer to the [4D View Pro object](languageOverview.html#4d-view-pro-object) section.
 
@@ -2340,9 +2344,9 @@ VP IMPORT FROM OBJECT("ViewProArea1";[VPWorkBooks]SPBook)
 
 <!-- REF #_method_.VP INSERT COLUMNS.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 
 <!-- END REF -->  
 
@@ -2375,9 +2379,9 @@ The results is:
 
 <!-- REF #_method_.VP INSERT ROWS.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 
 <!-- END REF -->  
 
@@ -2427,9 +2431,9 @@ The results is:
 
 #### 説明
 
-The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the values, style and formulas from a cell range to another<!-- END REF -->.
+The `VP MOVE CELLS` command <!-- REF #_method_.VP MOVE CELLS.Summary -->moves or copies the values, style and formulas from *originRange* to *targetRange*<!-- END REF -->.
 
-The *originRange* and *targetRange* can refer to different View Pro areas.
+*originRange* and *targetRange* can refer to different View Pro areas.
 
 In *originRange*, pass a range object containing the values, style, and formula cells to copy or move. If *originRange* is a combined range, only the first one is used.
 
@@ -2440,7 +2444,7 @@ The *options* parameter has several properties:
 | プロパティ        | タイプ  | 説明                                                                                                                                                                                                     |
 | ------------ | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | copy         | ブール  | Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li> |
-| pasteOptions | 倍長整数 | Specifies what is pasted. とりうる値: <p><table><tr><th>プロパティ</th><th>説明</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                             |
+| pasteOptions | 倍長整数 | Specifies what is pasted. とりうる値: <p><table><tr><th>値</th><th>説明</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                             |
 
 The paste options defined in the [workbook options](#) are taken into account.
 #### 例題
@@ -2460,7 +2464,9 @@ $options.pasteOptions:=vk clipboard options all
 
 VP MOVE CELLS($originRange; $targetRange; $options)
 ```
+### 参照
 
+[VP Copy to object](#vp-copy-to-object)<br/>[VP PASTE FROM OBJECT](#vp-paste-from-object)
 
 ## N
 
@@ -2483,7 +2489,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 
 The `VP Name` command <!-- REF #_method_.VP Name.Summary -->returns a new range object referencing a named range<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 The *rangeName* parameter specifies an existing named cell range.
 
@@ -2522,7 +2528,7 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 
 The `VP NEW DOCUMENT` command <!-- REF #_method_.VP NEW DOCUMENT.Summary -->loads and display a new, default document in the 4D View Pro form area object *vpAreaName*<!-- END REF -->. The new empty document replaces any data already inserted in the area.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 
 #### 例題
@@ -2597,7 +2603,7 @@ $cellStyle.font:=VP Object to font($font)
 | v19 R4 | 追加 |
 </details>
 
-<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *targetRange* : Object ; *dataObject* : Object {; *options* : Longint} )
+<!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *rangeObj* : Object ; *dataObject* : Object {; *options* : Longint} )
 <!-- END REF -->  
 
 <!-- REF #_method_.PASTE FROM OBJECT.Params -->
@@ -2612,24 +2618,22 @@ $cellStyle.font:=VP Object to font($font)
 
 #### 説明
 
-The `VP PASTE FROM OBJECT` command <!-- REF #_method_.PASTE FROM OBJECT.Summary -->pastes the contents, style and formulas stored in a object to a cell range<!-- END REF -->.
+The `VP PASTE FROM OBJECT` command <!-- REF #_method_.PASTE FROM OBJECT.Summary -->pastes the contents, style and formulas stored in *dataObject* to the *rangeObj* object<!-- END REF -->.
 
-In *targetRange*, pass the cell range object where the values, formatting, and/or formula cells will be pasted. If *rangeObj* refers to more than one cell, only the first one is used.
+In *rangeObj*, pass the cell range object where the values, formatting, and/or formula cells will be pasted. If *rangeObj* refers to more than one cell, only the first one is used.
 
 In *dataObject*, pass the object that contains the cell data, formatting, and formulas to be pasted.
 
 In the optional *options* parameter, you can specify what to paste in the cell range. とりうる値:
 
-| 定数                                             | 値 | 説明                                                                   |
-| ---------------------------------------------- | - | -------------------------------------------------------------------- |
-| `vk clipboard options all`                     | 0 | Pastes all data objects, including values, formatting, and formulas. |
-| `vk clipboard options formatting`              | 2 | Pastes only the formatting.                                          |
-| `vk clipboard options formulas`                | 3 | Pastes only the formulas.                                            |
-| `vk clipboard options formulas and formatting` | 5 | Pastes formulas and formatting.                                      |
-| `vk clipboard options values`                  | 1 | Pastes only values.                                                  |
-| `vk clipboard options value and formatting`    | 4 | Pastes values and formatting.                                        |
-
-If *pasteOptions* is not defined, the command uses the [clipBoardOptions defined in the sheet options](./configuring.md#sheet-options).
+| 定数                                             | 説明                                                                   |
+| ---------------------------------------------- | -------------------------------------------------------------------- |
+| `vk clipboard options all`                     | Pastes all data objects, including values, formatting, and formulas. |
+| `vk clipboard options formatting`              | Pastes only the formatting.                                          |
+| `vk clipboard options formulas`                | Pastes only the formulas.                                            |
+| `vk clipboard options formulas and formatting` | Pastes formulas and formatting.                                      |
+| `vk clipboard options values`                  | Pastes only values.                                                  |
+| `vk clipboard options value and formatting`    | Pastes values and formatting.                                        |
 
 The paste options defined in the [workbook options](#) are taken into account.
 
@@ -2639,16 +2643,20 @@ If *options* refers to a paste option not present in the copied object (e.g. for
 
 See example the example from [VP Copy to object](#vp-copy-to-object)
 
+#### 参照
+
+[VP Copy to object](#vp-copy-to-object)<br/>[VP MOVE CELLS](#vp-move-cells)
+
 ### VP PRINT
 
 <!-- REF #_method_.VP PRINT.Syntax -->**VP PRINT** ( *vpAreaName* : Text  { ; *sheet* : Integer } ) <!-- END REF -->  
 
 <!-- REF #_method_.VP PRINT.Params -->
 
-| 引数         | タイプ  |    | 説明                                     |
-| ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
-| sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
+| 引数         | タイプ  |    | 説明                          |
+| ---------- | ---- | -- | --------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名     |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート) |
 
 <!-- END REF -->  
 
@@ -2703,7 +2711,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 
 The `VP RECOMPUTE FORMULAS` command <!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->immediately evaluates all formulas in *vpAreaName*<!-- END REF -->. By default, 4D automatically computes formulas when they are inserted, imported, or exported. `VP RECOMPUTE FORMULAS` allows you to force the compute at any time (e.g, in case modifications are made to the formulas or if the formulas contain calls to the database). The command launches the execution of the [VP FLUSH COMMANDS](#vp-flush-commands) command to execute any stored commands and clear the command buffer, then calculates all formulas in the workbook.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 > Be sure the [VP SUSPEND COMPUTING](#vp-suspend-computing) command has not been executed before using `VP RECOMPUTE FORMULAS`, otherwise the command does nothing.
 
 
@@ -2736,7 +2744,7 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 
 The `VP REMOVE NAME` command <!-- REF #_method_.VP REMOVE NAME.Summary -->removes the named range or named formula passed in the *name* parameter in the defined *scope*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 Pass the named range or named formula that you want to remove in *name*.
 
@@ -2776,7 +2784,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 
 The `VP REMOVE SHEET` command <!-- REF #_method_.VP REMOVE SHEET.Summary -->removes the sheet with the specified *index* from the document loaded in *vpAreaName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *index*, pass the index of the sheet to remove. If the passed *index* does not exist, the command does nothing.
 > Indexing starts at 0.
@@ -2801,9 +2809,9 @@ VP REMOVE SHEET("ViewProArea";2)
 
 <!-- REF #_method_.VP REMOVE SPAN.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 
 <!-- END REF -->  
 
@@ -2853,7 +2861,7 @@ To remove all cell spans from this document:
 
 The `VP REMOVE STYLESHEET` command <!-- REF #_method_.VP REMOVE STYLESHEET.Summary -->removes the style sheet passed in the *styleName* from the *vpAreaName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 Pass the style sheet to remove in the *styleName* parameter.
 
@@ -2878,10 +2886,10 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 
 <!-- REF #_method_.VP RESET SELECTION.Params -->
 
-| 引数         | タイプ  |    | 説明                                     |
-| ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
-| sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
+| 引数         | タイプ  |    | 説明                          |
+| ---------- | ---- | -- | --------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名     |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート) |
 
 <!-- END REF -->  
 
@@ -2891,7 +2899,7 @@ The `VP RESET SELECTION` command <!-- REF #_method_.VP RESET SELECTION.Summary -
 
 > A default active cell (cell A1) remains defined for 4D View Pro commands.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 In the optional *sheet* parameter, you can designate a specific spreadsheet where the range will be defined (counting begins at 0). If omitted, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
 
@@ -2926,7 +2934,7 @@ The `VP RESUME COMPUTING` command <!-- REF #_method_.VP RESUME COMPUTING.Summary
 
 The command reactivates the calculation service in 4D View Pro. Any formulas impacted by changes made while calculations were suspended are updated, and formulas added after `VP RESUME COMPUTING` is executed are calculated.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 > The 4D View Pro calculation service maintains a counter of suspend/resume actions. Therefore, each execution of `VP RESUME COMPUTING` must be balanced by a corresponding execution of the [VP SUSPEND COMPUTING](#vp-suspend-computing) command.
 
@@ -2944,13 +2952,13 @@ See example in [VP SUSPEND COMPUTING](#vp-suspend-computing).
 
 <!-- REF #_method_.VP Row.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| row        | 整数     | -> | Row index                              |
-| rowCount   | 整数     | -> | Number of rows                         |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
-| 戻り値        | オブジェクト | <- | Range object of row(s)                 |
+| 引数         | タイプ    |    | 説明                          |
+| ---------- | ------ | -- | --------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
+| row        | 整数     | -> | Row index                   |
+| rowCount   | 整数     | -> | Number of rows              |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
+| 戻り値        | オブジェクト | <- | Range object of row(s)      |
 
 <!-- END REF -->  
 
@@ -2958,7 +2966,7 @@ See example in [VP SUSPEND COMPUTING](#vp-suspend-computing).
 
 The `VP Row` command <!-- REF #_method_.VP Row.Summary -->returns a new range object referencing a specific row or rows<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 The *row* parameter defines the first row of the row range. Pass the row index (counting begins at 0) in this parameter. If the range contains multiple rows, you should also use the optional *rowCount* parameter.
 
@@ -2989,9 +2997,9 @@ $row:=VP Row("ViewProArea";9) // row 10
 
 <!-- REF #_method_.VP ROW AUTOFIT.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 
 <!-- END REF -->  
 
@@ -3160,9 +3168,9 @@ $result:=VP Run offscreen area($o)
 
 <!-- REF #_method_.VP SET ACTIVE CELL.Params -->
 
-| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| 引数       | タイプ    |    | 説明        |
+| -------- | ------ | -- | --------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト |
 
 <!-- END REF -->  
 
@@ -3199,7 +3207,7 @@ VP SET ACTIVE CELL($activeCell)
 <!-- END REF -->  
 
 
-> **Compatibility**
+> **互換性**
 > 
 > For greater flexiblity, it is recommended to use the [`VP SET CUSTOM FUNCTIONS`](#vp-set-custom-functions) command which allows you to designate 4D formulas that can be called from 4D View Pro areas. As soon as `VP SET CUSTOM FUNCTIONS` is called, `VP SET ALLOWED METHODS` calls are ignored. 4D View Pro also supports 4D's generic `SET ALLOWED METHODS` command if neither `VP SET CUSTOM FUNCTIONS` nor `VP SET ALLOWED METHODS` are called, however using the generic command is not recommended.
 
@@ -3268,7 +3276,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 | 引数        | タイプ    |    | 説明                   |
 | --------- | ------ | -- | -------------------- |
-| rangeObj  | オブジェクト | -> | Range object         |
+| rangeObj  | オブジェクト | -> | レンジオブジェクト            |
 | boolValue | ブール    | -> | Boolean value to set |
 
 <!-- END REF -->  
@@ -3299,7 +3307,7 @@ VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 
 | 引数             | タイプ    |    | 説明                                  |
 | -------------- | ------ | -- | ----------------------------------- |
-| rangeObj       | オブジェクト | -> | Range object                        |
+| rangeObj       | オブジェクト | -> | レンジオブジェクト                           |
 | borderStyleObj | オブジェクト | -> | Object containing border line style |
 | borderPosObj   | オブジェクト | -> | Object containing border placement  |
 
@@ -3379,7 +3387,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 | 引数       | タイプ    |    | 説明           |
 | -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | Range object |
+| rangeObj | オブジェクト | -> | レンジオブジェクト    |
 | styleObj | オブジェクト | -> | Style object |
 
 <!-- END REF -->  
@@ -3425,7 +3433,7 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 | 引数          | タイプ    |    | 説明                                  |
 | ----------- | ------ | -- | ----------------------------------- |
-| rangeObj    | オブジェクト | -> | Range object                        |
+| rangeObj    | オブジェクト | -> | レンジオブジェクト                           |
 | propertyObj | オブジェクト | -> | Object containing column properties |
 
 <!-- END REF -->  
@@ -3471,11 +3479,11 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 
 <!-- REF #_method_.VP SET COLUMN COUNT.Params -->
 
-| 引数          | タイプ  |    | 説明                                     |
-| ----------- | ---- | -- | -------------------------------------- |
-| vpAreaName  | テキスト | -> | 4D View Pro フォームオブジェクト名                |
-| columnCount | 整数   | -> | Number of columns                      |
-| sheet       | 整数   | -> | Sheet index (current sheet if omitted) |
+| 引数          | タイプ  |    | 説明                          |
+| ----------- | ---- | -- | --------------------------- |
+| vpAreaName  | テキスト | -> | 4D View Pro フォームオブジェクト名     |
+| columnCount | 整数   | -> | Number of columns           |
+| sheet       | 整数   | -> | シートのインデックス (省略した場合はカレントシート) |
 
 <!-- END REF -->  
 
@@ -3483,7 +3491,7 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 
 The `VP SET COLUMN COUNT` command <!-- REF #_method_.VP SET COLUMN COUNT.Summary -->defines the total number of columns in *vpAreaName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 Pass the total number of columns in the *columnCount* parameter. *columnCount* must be greater than 0.
 
@@ -3518,7 +3526,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->sets the current sheet in *vpAreaName*<!-- END REF --> . The current sheet is the selected sheet in the document.
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *index*, pass the index of the sheet to be set as current sheet. If the index passed is inferior to 0 or exceeds the number of sheets, the command does nothing.
 
@@ -3559,7 +3567,7 @@ The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when
 
 > If `VP SET CUSTOM FUNCTIONS` is called multiple times for the same area, in the same session, only the last call is taken into account.
 
-Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pass the name of the 4D View Pro area in *vpAreaName*. 存在しない名前を渡した場合、エラーが返されます。
 
 In the *formulaObj* parameter, pass an object containing the 4D formulas that can be called from 4D View Pro formulas as well as additional properties. Each `customFunction` property passed in *formulaObj* becomes the name of a function in the 4D View Pro area.
 
@@ -3576,7 +3584,7 @@ In the *formulaObj* parameter, pass an object containing the 4D formulas that ca
 > **WARNING**
 > 
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
-> * As soon as `VP SET CUSTOM FUNCTIONS` is called, the functions based upon `SET TABLE TITLES` and `SET FIELD TITLES` commands are ignored in the 4D View Pro area.
+> * `VP SET CUSTOM FUNCTIONS` が呼び出されると、4D View Pro エリアは `SET TABLE TITLES` や `SET FIELD TITLES` コマンドに基づく機能を無視します。
 
 #### 例題
 
@@ -3626,7 +3634,7 @@ End case
 
 | 引数            | タイプ    |    | 説明                |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | Range object      |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
 | dateValue     | 日付     | -> | Date value to set |
 | timeValue     | 時間     | -> | Time value to set |
 | formatPattern | テキスト   | -> | Format of value   |
@@ -3667,7 +3675,7 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 | 引数            | タイプ    |    | 説明                |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | Range object      |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
 | dateValue     | 日付     | -> | Date value to set |
 | formatPattern | テキスト   | -> | Format of value   |
 
@@ -3725,7 +3733,7 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 
 The `VP SET DEFAULT STYLE` command <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->defines the style in the *styleObj* as the default style for a *sheet*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 The *styleObj* lets you pass an object containing style settings. You can use an existing style sheet or you can create a new style. For more information, see the [Style objects](configuring.md#style-objects) paragraph.
 
@@ -3757,7 +3765,7 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 | 引数            | タイプ    |    | 説明                                      |
 | ------------- | ------ | -- | --------------------------------------- |
-| rangeObj      | オブジェクト | -> | Range object                            |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト                               |
 | フィールド         | ポインター  | -> | Reference to field in virtual structure |
 | formatPattern | テキスト   | -> | Format of field                         |
 
@@ -3789,7 +3797,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 | 引数            | タイプ    |    | 説明                   |
 | ------------- | ------ | -- | -------------------- |
-| rangeObj      | オブジェクト | -> | Range object         |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト            |
 | formula       | テキスト   | -> | Formula or 4D method |
 | formatPattern | テキスト   | -> | Format of field      |
 
@@ -3893,7 +3901,7 @@ VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 | ---------- | ------ | -- | --------------------------------------------------- |
 | vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                             |
 | paneObj    | オブジェクト | -> | Object containing frozen column and row information |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted)              |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)                         |
 
 <!-- END REF -->  
 
@@ -3904,7 +3912,7 @@ The `VP SET FROZEN PANES` command <!-- REF #_method_.VP SET FROZEN PANES.Summary
 *   **Columns on the left or right**: For columns on the left of the sheet, the line is displayed on the right side of the last frozen column. For columns on the right side of the sheet, the line is displayed on the left side of the first frozen column.
 *   **Rows on the top or bottom**: For rows at the top of the sheet, the line is displayed below the last frozen row. For rows at the bottom of the sheet, the line is displayed above the first frozen row.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 You can pass an object defining the columns and rows to freeze in the *paneObj* parameter. Setting the value of any of the column or row properties equal to zero resets (unfreezes) the property. If a property is set to less than zero, the command does nothing. 以下のものを渡すことができます:
 
@@ -3947,7 +3955,7 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 
 | 引数            | タイプ    |    | 説明                  |
 | ------------- | ------ | -- | ------------------- |
-| rangeObj      | オブジェクト | -> | Range object        |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト           |
 | numberValue   | 数値     | -> | Number value to set |
 | formatPattern | テキスト   | -> | Format of value     |
 
@@ -3981,11 +3989,11 @@ VP SET NUM VALUE(VP Cell("ViewProArea";3;2);12.356;"_($* #,##0.00_)")
 
 <!-- REF #_method_.VP SET PRINT INFO.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro エリア名                       |
-| printInfo  | オブジェクト | -> | Object containing printing attributes  |
-| sheet      | 整数     | -> | Sheet index (current sheet if omitted) |
+| 引数         | タイプ    |    | 説明                                    |
+| ---------- | ------ | -- | ------------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro エリア名                      |
+| printInfo  | オブジェクト | -> | Object containing printing attributes |
+| sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート)           |
 
 <!-- END REF -->  
 
@@ -3993,7 +4001,7 @@ VP SET NUM VALUE(VP Cell("ViewProArea";3;2);12.356;"_($* #,##0.00_)")
 
 The `VP SET PRINT INFO` command <!-- REF #_method_.VP SET PRINT INFO.Summary -->defines the attributes to use when printing the *vpAreaName*<!-- END REF -->.
 
-Pass the name of the 4D View Pro area to print in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pass the name of the 4D View Pro area to print in *vpAreaName*. 存在しない名前を渡した場合、エラーが返されます。
 
 You can pass an object containing definitions for various printing attributes in the *printInfo* parameter. To view the full list of the available attributes, see [Print Attributes](configuring.md#print-attributes).
 
@@ -4099,11 +4107,11 @@ VP SET ROW ATTRIBUTES($row;$properties)
 
 <!-- REF #_method_.VP SET ROW COUNT.Params -->
 
-| 引数         | タイプ  |    | 説明                                     |
-| ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
-| rowCount   | 整数   | -> | Number of rows                         |
-| sheet      | 整数   | -> | Sheet index (current sheet if omitted) |
+| 引数         | タイプ  |    | 説明                          |
+| ---------- | ---- | -- | --------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名     |
+| rowCount   | 整数   | -> | Number of rows              |
+| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート) |
 
 <!-- END REF -->  
 
@@ -4111,7 +4119,7 @@ VP SET ROW ATTRIBUTES($row;$properties)
 
 The `VP SET ROW COUNT` command <!-- REF #_method_.VP SET ROW COUNT.Summary -->defines the total number of rows in *vpAreaName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
 Pass the total number of rows in the *rowCount* parameter. *rowCount* must be greater than 0.
 
@@ -4212,7 +4220,7 @@ VP SET SHEET COUNT("ViewProArea";3)
 
 The `VP SET SHEET NAME` command <!-- REF #_method_.VP SET SHEET NAME.Summary -->renames a sheet in the document loaded in *vpAreaName*<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *name*, pass a new name for the sheet.
 
@@ -4247,11 +4255,11 @@ VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 
 <!-- REF #_method_.VP SET SHEET OPTIONS.Params -->
 
-| 引数           | タイプ    |    | 説明                                     |
-| ------------ | ------ | -- | -------------------------------------- |
-| vpAreaName   | オブジェクト | -> | 4D View Pro エリア名                       |
-| sheetOptions | オブジェクト | -> | Sheet option(s) to set                 |
-| sheet        | オブジェクト | -> | Sheet index (current sheet if omitted) |
+| 引数           | タイプ    |    | 説明                          |
+| ------------ | ------ | -- | --------------------------- |
+| vpAreaName   | オブジェクト | -> | 4D View Pro エリア名            |
+| sheetOptions | オブジェクト | -> | Sheet option(s) to set      |
+| sheet        | オブジェクト | -> | シートのインデックス (省略した場合はカレントシート) |
 
 <!-- END REF -->  
 
@@ -4259,7 +4267,7 @@ VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 
 The `VP SET SHEET OPTIONS` command <!-- REF #_method_.VP SET SHEET OPTIONS.Summary -->allows defining various sheet options of the *vpAreaName* area<!-- END REF -->.
 
-Pass the name of the 4D View Pro area in *vpAreaName*. If you pass a name that does not exist, an error is returned.
+Pass the name of the 4D View Pro area in *vpAreaName*. 存在しない名前を渡した場合、エラーが返されます。
 
 Pass an object containing definitions for the options to set in the *sheetOptions* parameter. To view the full list of the available options, see the [Sheet Options](configuring.md#sheet-options) paragraph.
 
@@ -4378,7 +4386,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 The `VP SET SHEET NAME` command <!-- REF #_method_.VP SET SHOW PRINT LINES.Summary --> sets whether to display print preview lines in a spreadsheet.<!-- END REF -->.
 
-In *vpAreaName*, pass the name of the 4D View Pro area.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *visible*, pass `True` to display the print lines, and `False` to hide them. `True` is passed by default.
 
@@ -4413,7 +4421,7 @@ With a page break:
 
 | 引数            | タイプ    |    | 説明                |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | Range object      |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
 | textValue     | テキスト   | -> | Text value to set |
 | formatPattern | テキスト   | -> | Format of value   |
 
@@ -4446,7 +4454,7 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 | 引数            | タイプ    |    | 説明                |
 | ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | Range object      |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
 | timeValue     | テキスト   | -> | Time value to set |
 | formatPattern | テキスト   | -> | Format of value   |
 
@@ -4482,7 +4490,7 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 
 | 引数       | タイプ    |    | 説明                             |
 | -------- | ------ | -- | ------------------------------ |
-| rangeObj | オブジェクト | -> | Range object                   |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                      |
 | valueObj | オブジェクト | -> | Cell values and format options |
 
 <!-- END REF -->  
@@ -4544,7 +4552,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 | 引数        | タイプ    |    | 説明                   |
 | --------- | ------ | -- | -------------------- |
-| rangeObj  | オブジェクト | -> | Range object         |
+| rangeObj  | オブジェクト | -> | レンジオブジェクト            |
 | valuesCol | コレクション | -> | Collection of values |
 
 <!-- END REF -->  
@@ -4592,7 +4600,7 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 
 | 引数       | タイプ    |    | 説明                                      |
 | -------- | ------ | -- | --------------------------------------- |
-| rangeObj | オブジェクト | -> | Range object                            |
+| rangeObj | オブジェクト | -> | レンジオブジェクト                               |
 | vPos     | 整数     | -> | Vertical view position of cell or row   |
 | hPos     | 整数     | -> | Horizontal view position of cell or row |
 
@@ -4662,7 +4670,7 @@ The `VP SUSPEND COMPUTING` command <!-- REF #_method_.VP SUSPEND COMPUTING.Summa
 
 The command pauses the calculation service in 4D View Pro. Formulas that have already been calculated remain unchanged, however any formulas added after `VP SUSPEND COMPUTING` command  is executed are not calculated.
 
-In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
+*vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 > The 4D View Pro calculation service maintains a counter of suspend/resume actions. Therefore, each execution of `VP SUSPEND COMPUTING` command  must be balanced by a corresponding execution of the `VP RESUME COMPUTING` command. Any formula impacted by modifications made while calculations are suspended will be recalculated when the command is executed.
 
 #### 例題
