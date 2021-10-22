@@ -455,7 +455,7 @@ ALERT($info.Copyright)
 <!--REF #FileClass.moveTo().Params -->
 | Parámetros        | Tipo      |    | Descripción                  |
 | ----------------- | --------- | -- | ---------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder           |
+| destinationFolder | 4D.Folder | -> | Carpeta de destino           |
 | newName           | Texto     | -> | Full name for the moved file |
 | Resultado         | 4D.File   | <- | Archivo movido               |
 <!-- END REF -->

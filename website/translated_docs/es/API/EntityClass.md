@@ -1516,7 +1516,7 @@ Devuelve:
 
 #### Ejemplo 6
 
-Extracting all the properties of a `relatedEntity`:
+Extracción de todas las propiedades de una `Entidad relacionada`:
 
 ```4d
  employeeObject:=employeeSelected.toObject("employer.*")
@@ -1538,7 +1538,7 @@ Devuelve:
 
 #### Ejemplo 7
 
-Extracting some properties of a `relatedEntity`:
+Extracción de algunas propiedades de una `Entidad relacionada`:
 
 ```4d
  $col:=New collection
@@ -1673,7 +1673,7 @@ If no entity attribute has been touched, the method returns an empty collection.
   //collection $touchedAttributes: ["firstName","lastName","employer","employerID"]
 ```
 
-In this case:
+En este caso:
 
 *   firstName and lastName have a `storage` kind
 *   employer has a `relatedEntity` kind

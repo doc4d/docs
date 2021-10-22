@@ -40,7 +40,7 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 
 #### Descripción
 
-The attributes of dataclasses are <!-- REF DataClassClass.attributeName.Summary -->objects that are available directly as properties<!-- END REF --> of these classes.
+Los atributos de las clases de datos son<!-- REF ClaseDeDatos.attributeName.Summary -->objetos que están disponibles directamente como propiedades<!-- END REF --> de estas clases.
 
 The returned objects are of the [`DataClassAttribute`](DataClassAttributeClass.md) class. These objects have properties that you can read to get information about your dataclass attributes.
 > Dataclass attribute objects can be modified, but the underlying database structure will not be altered.
@@ -111,22 +111,22 @@ Considering the following table properties:
 **.all** ( { *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #DataClassClass.all().Params -->
-| Parámetros | Tipo               |    | Descripción                                         |
-| ---------- | ------------------ |:--:| --------------------------------------------------- |
-| parámetros | Objeto             | -> | Opciones de construcción: context                   |
-| Resultado  | 4D.EntitySelection | <- | References on all entities related to the Dataclass |
+| Parámetros | Tipo               |    | Descripción                                                              |
+| ---------- | ------------------ |:--:| ------------------------------------------------------------------------ |
+| parámetros | Objeto             | -> | Opciones de construcción: context                                        |
+| Resultado  | 4D.EntitySelection | <- | Referencias sobre todas las entidades relacionadas con la clase de datos |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.all( )` function <!-- REF #DataClassClass.all().Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->.
+La función `.all( )` <!-- REF #DataClassClass.all().Summary -->consulta el datastore para encontrar todas las entidades relacionadas con la dataclass y las devuelve como una selección de entidades<!-- END REF -->.
 
-The entities are returned in the default order, which is initially the order in which they were created. Note however that, if entities have been deleted and new ones added, the default order does not reflect the creation order anymore.
+Las entidades se devuelven en el orden por defecto, que es inicialmente el orden en que fueron creadas. Tenga en cuenta, sin embargo, que si se han eliminado entidades y se han añadido otras nuevas, el orden por defecto ya no refleja el orden de creación.
 
-If no corresponding entity is found, an empty entity selection is returned.
+Si no se encuentra la entidad correspondiente, se devuelve una selección de entidades vacía.
 
-Lazy loading is applied.
+Se aplica carga diferida.
 
 **parámetros**
 
@@ -183,11 +183,11 @@ The `.exposed` property is <!-- REF DataClassClass.exposed.Summary -->true if th
 
 
 <!-- REF #DataClassClass.fromCollection().Params -->
-| Parámetros | Tipo               |    | Descripción                                      |
-| ---------- | ------------------ |:--:| ------------------------------------------------ |
-| objectCol  | Collection         | -> | Collection of objects to be mapped with entities |
-| parámetros | Objeto             | -> | Opciones de construcción: context                |
-| Resultado  | 4D.EntitySelection | <- | Entity selection filled from the collection      |
+| Parámetros | Tipo               |    | Descripción                                     |
+| ---------- | ------------------ |:--:| ----------------------------------------------- |
+| objectCol  | Collection         | -> | Colección de objetos a mapear con entidades     |
+| parámetros | Objeto             | -> | Opciones de construcción: context               |
+| Resultado  | 4D.EntitySelection | <- | Selección de entidades llenadas de la colección |
 <!-- END REF -->
 
 
@@ -694,7 +694,7 @@ When created, the entity selection does not contain any entities (`mySelection.l
 
 #### Descripción
 
-The `.query( )` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Lazy loading is applied.
+The `.query( )` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carga diferida.
 
 If no matching entities are found, an empty `EntitySelection` is returned.
 
@@ -888,7 +888,7 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 
 As an alternative to formula insertion within the *queryString* parameter (see above), you can pass directly a formula object as a boolean search criteria. Using a formula object for queries is **recommended** since you benefit from tokenization, and code is easier to search/read.
 
-The formula must have been created using the `Formula` or `Formula from string` command. In this case:
+The formula must have been created using the `Formula` or `Formula from string` command. En este caso:
 
 *   the *formula* is evaluated for each entity and must return true or false. During the execution of the query, if the formula's result is not a boolean, it is considered as false.
 *   within the *formula*, the entity is available through the `This` object.
