@@ -53,7 +53,6 @@
 	"API/ZipFolderClass"
 	],
   "Debugging":["Debugging/basics","Debugging/debugger","Debugging/breakpoints", "Debugging/debugging-remote","Debugging/debugLogFiles"],
-  "Access Rights":["Users/overview","Users/editing"],
   "Preferences":["Preferences/overview","Preferences/general","Preferences/structure","Preferences/forms","Preferences/methods","Preferences/shortcuts"]},
   
   "Admin":{
@@ -61,7 +60,8 @@
   "Web Administration":["Admin/webAdmin","Admin/dataExplorer"],
   "Command Line Interface":["Admin/cli"],
   "TLS Protocol":["Admin/tls"],
-  "License Management":["Admin/licenses"],
+  "License Management":["Admin/licenses"], 
+  "Access Rights":["Users/overview","Users/editing"],
 	"MSC":["MSC/overview","MSC/information","MSC/analysis","MSC/verify","MSC/backup","MSC/compact","MSC/rollback","MSC/restore","MSC/repair","MSC/encrypt"],
   "Backup and Restore":["Backup/overview","Backup/backup","Backup/settings","Backup/log","Backup/restore"]},
   "web":{
