@@ -3,7 +3,7 @@ id: EmailObjectClass
 title: Email
 ---
 
-Creating, sending or receiving emails in 4D is done by handling an `Email` object.
+La creación, el envío o la recepción de correos electrónicos en 4D se realiza manejando un objeto `Email`.
 
 `Email` objects are created when receiving mails through a *transporter* class function:
 
@@ -288,7 +288,7 @@ The `.htmlBody` property contains the <!-- REF #EmailObjectClass.htmlBody.Summar
 
 #### Descripción
 
-[IMAP transporter](IMAPTransporterClass.md) only.
+[IMAP transporter](IMAPTransporterClass.md) únicamente.
 
 The `.id` property contains the <!-- REF #EmailObjectClass.id.Summary -->unique ID from the IMAP server<!-- END REF -->.
 
@@ -449,7 +449,7 @@ For better deliverability, it is recommended to use the same from and sender add
 
 #### Descripción
 
-[IMAP transporter](IMAPTransporterClass.md) only.
+[IMAP transporter](IMAPTransporterClass.md) únicamente.
 
 The `.size` property contains the <!-- REF #EmailObjectClass.size.Summary -->size (expressed in bytes) of the Email object returned by the IMAP server<!-- END REF -->.
 
@@ -623,7 +623,7 @@ C_OBJECT($mail)
 C_TEXT($mime)
 $mail:=New object
 
-// Creation of a mail
+// Creación de un mail
 $mail.from:="tsales@massmarket.com"
 $mail.subject:="Terrific Sale! This week only!"
 $mail.textBody:="Text format email"
