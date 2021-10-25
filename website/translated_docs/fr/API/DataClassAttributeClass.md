@@ -75,7 +75,7 @@ Cette propriété n'est pas retournée si `.kind` = "relatedEntity" ou "relatedE
 
 
 <!-- REF DataClassAttributeClass.exposed.Syntax -->
-**.indexed** : Booléen<!-- END REF -->
+**.exposed** : Boolean<!-- END REF -->
 
 
 #### Description
@@ -137,8 +137,8 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 | dataClassAttribute.kind | fieldType                                                                                                          |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | storage                 | Type de champ 4D correspondant, voir [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)        |
-| relatedEntity           | 38 (Is object)                                                                                                     |
-| relatedEntities         | 42 (Is collection)                                                                                                 |
+| relatedEntity           | 38 (`Is object`)                                                                                                   |
+| relatedEntities         | 42 (`Is collection`)                                                                                               |
 | calculated              | <li>scalaire : type de champ 4D correspondant, voir [`Value type`](https://doc.4d.com/4dv19/help/command/en/page1509.html)</li><li>entity: 38 (`Is object`)</li><li>entity selection: 42 (`Is collection)` |
 
 
@@ -229,9 +229,9 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 ## .kind
 
 <details><summary>Historique</summary>
-| Version | Modifications |
-| ------- | ------------- |
-| v19 R3  | Ajoutées      |
+| Version | Modifications      |
+| ------- | ------------------ |
+| v19 R3  | Added "calculated" |
 </details>
 
 
@@ -337,14 +337,14 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 
 
 <!-- REF DataClassAttributeClass.readOnly.Syntax -->
-**.unique** : Booléen<!-- END REF -->
+**.readOnly** : Boolean<!-- END REF -->
 
 
 #### Description
 
 La propriété `.readOnly` est <!-- REF DataClassAttributeClass.readOnly.Summary -->mise à "true" si l'attribut est en lecture seule<!-- END REF -->.
 
-**.type** : Texte 
+For example, computed attributes without [`set` function](ORDA/ordaClasses.md#function-set-attributename) are read-only. 
 
 <!-- END REF -->
 
@@ -367,7 +367,7 @@ La propriété `.readOnly` est <!-- REF DataClassAttributeClass.readOnly.Summary
 
 
 #### Description
-> Pour la programmation générique, vous pouvez utiliser **Bool** (dataClassAttribute.unique) pour obtenir une valeur valide (false) même si `.unique` n'est pas retourné.
+> Cette propriété n'est disponible qu'avec les attributs de la propriété "relatedEntity" ou "relatedEntities" [`.kind`](#kind).
 
 The `.relatedDataClass` property <!-- REF DataClassAttributeClass.relatedDataClass.Summary -->returns the name of the dataclass related to the attribute<!-- END REF -->.
 

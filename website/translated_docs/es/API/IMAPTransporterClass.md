@@ -70,7 +70,7 @@ The `IMAP New transporter` command <!-- REF #_command_.IMAP New transporter.Summ
 
 In the *server* parameter, pass an object containing the following properties:
 
-| *server*                                                                                                                                                                                                                                                                                                                                                                                                                   | Default value (if omitted)                                          |
+| *server*                                                                                                                                                                                                                                                                                                                                                                                                                   | Valor por defecto (si se omite)                                     |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                                               |
 | .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<p>Text string or token object representing OAuth2 authorization credentials. Used only with OAUTH2 `authenticationMode`. If `accessTokenOAuth2` is used but `authenticationMode` is omitted, the OAuth 2 protocol is used (if allowed by the server). Not returned in *[IMAP transporter](#imap-transporter-object)* object. | ninguno                                                             |
@@ -87,7 +87,7 @@ In the *server* parameter, pass an object containing the following properties:
 
 #### Resultado
 
-The function returns an [**IMAP transporter object**](#imap-transporter-object). All returned properties are **read-only**.
+The function returns an [**IMAP transporter object**](#imap-transporter-object). Todas las propiedades devueltas son **de sólo lectura**.
 > The IMAP connection is automatically closed when the transporter object is destroyed.
 
 #### Ejemplo
@@ -396,7 +396,7 @@ The function returns an object describing the IMAP status:
 
 #### Ejemplo 1
 
-To copy a selection of messages:
+Para copiar una selección de mensajes:
 
 
 ```4d
@@ -465,7 +465,7 @@ To copy all messages in the current mailbox:
 <!-- REF #IMAPTransporterClass.createBox().Params -->
 | Parámetros | Tipo   |    | Descripción                              |
 | ---------- | ------ |:--:| ---------------------------------------- |
-| name       | Texto  | -> | Name of the new mailbox                  |
+| name       | Texto  | -> | Nombre del nuevo buzón                   |
 | Resultado  | Objeto | <- | Status of the mailbox creation operation |
 <!-- END REF -->
 
@@ -505,29 +505,27 @@ To create a new “Invoices” mailbox:
 
 
 ```4d
-var $server,$boxInfo,$result : Object
- var $transporter : 4D.IMAPTransporter
+var $pw : text
+var $options; $transporter; $status : object
 
- $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
- $server.port:=993
- $server.user:="4d@gmail.com"
- $server.password:="XXXXXXXX"
+$options:=New object
 
-  //create transporter
- $transporter:=IMAP New transporter($server)
+$pw:=Request("Please enter your password:")
+If(OK=1)
+$options.host:="imap.gmail.com"
+$options.user:="test@gmail.com"
+$options.password:=$pw
 
-  //select mailbox
- $boxInfo:=$transporter.selectBox("INBOX")
+$transporter:=IMAP New transporter($options)
 
-  If($boxInfo.mailCount>0)
-        // retrieve the headers of the last 20 messages without marking them as read
-    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
-        New object("withBody";False;"updateSeen";False))
-    For each($mail;$result.list)
-        // ...
-End for each
- End if
+$status:=$transporter.createBox("Invoices")
+
+If ($status.success)
+ALERT("Mailbox creation successful!")
+Else
+ALERT("Error: "+$status.statusText)
+End if
+End if
 ```
 
 <!-- END REF -->
@@ -589,7 +587,7 @@ The function returns an object describing the IMAP status:
 
 #### Ejemplo 1
 
-To delete a selection of messages:
+Para eliminar una selección de mensajes:
 
 
 ```4d
@@ -693,29 +691,29 @@ The function returns an object describing the IMAP status:
 To delete the "Nova Orion Industries" child mailbox from the "Bills" mailbox hierarchy:
 
 ```4d
-var $server,$boxInfo,$result : Object
- var $transporter : 4D.IMAPTransporter
+var $pw; $name : text
+var $options; $transporter; $status : object
 
- $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
- $server.port:=993
- $server.user:="4d@gmail.com"
- $server.password:="XXXXXXXX"
+$options:=New object
 
-  //create transporter
- $transporter:=IMAP New transporter($server)
+$pw:=Request("Please enter your password:")
 
-  //select mailbox
- $boxInfo:=$transporter.selectBox("INBOX")
+If(OK=1) $options.host:="imap.gmail.com"
+$options.user:="test@gmail.com"
+$options.password:=$pw
 
-  If($boxInfo.mailCount>0)
-        // retrieve the headers of the last 20 messages without marking them as read
-    $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
-        New object("withBody";False;"updateSeen";False))
-    For each($mail;$result.list)
-        // ...
-    End for each
- End if
+$transporter:=IMAP New transporter($options)
+
+// delete mailbox
+$name:="Bills"+$transporter.getDelimiter()+"Nova Orion Industries"
+$status:=$transporter.deleteBox($name)
+
+If ($status.success)
+    ALERT("Mailbox deletion successful!")
+    Else
+    ALERT("Error: "+$status.statusText)
+    End if
+End if
 ```
 
 <!-- END REF -->
@@ -1294,7 +1292,7 @@ The function returns an object describing the IMAP status:
 
 #### Ejemplo 1
 
-To move a selection of messages:
+Para mover una selección de mensajes:
 
 ```4d
  var $server;$boxInfo;$status : Object
@@ -1321,7 +1319,7 @@ To move a selection of messages:
 
 #### Ejemplo 2
 
-To move all messages in the current mailbox:
+Para mover todos los mensajes del buzón actual:
 
 
 ```4d
@@ -1567,14 +1565,6 @@ $status:=$transporter.renameBox("Invoices"; "Bills")
 
 If ($status.success)
    ALERT("Mailbox renaming successful!")
-   Else
-   ALERT("Error: "+$status.statusText)
- End if
-End if
-   Else
-   ALERT("Error: "+$status.statusText)
- End if
-End if
    Else
    ALERT("Error: "+$status.statusText)
  End if
