@@ -269,7 +269,7 @@ Pour déclarer des paramètres génériques, utilisez une directive du compilate
 
 > La déclaration de paramètres génériques ne peut se faire qu'avec [la syntaxe séquentielle](#sequential-parameters).
 
-La commande ci-dessus signifie que tous les paramètres à partir du quatrième (inclus) seront adressés par indirection. Ils seront tous de type text. Les types de $1, $2 et $3 pourront être quelconques. En revanche, si vous utilisez $2 par indirection, le type utilisé sera le type générique. Les types de $1, $2 et $3 pourront être quelconques.
+La commande ci-dessus signifie que tous les paramètres à partir du quatrième (inclus) seront adressés par indirection. Ils seront tous de type text. Les types de $1, $2 et $3 pourront être quelconques. En revanche, si vous utilisez $2 par indirection, le type utilisé sera le type générique. Thus, it will be of the data type text, even if for you it was, for instance, of the data type Real.
 
 > The number in the declaration has to be a constant and not a variable.
 
@@ -458,7 +458,7 @@ ALERT("Etes*vous sûr?";"Oui, je le suis") //2 paramètres
 ALERT("Temps écoulé") //1 paramètre
 ```
 
-4D methods and functions also accept such optional parameters. Note that even if you declared 0, 1, or more parameters in the method, you can always pass the number of parameters that you want. Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). Par exemple :
+4D methods and functions also accept such optional parameters. You can declare any number of parameters. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). Par exemple :
 
 ```4d
 // "concate" function of myClass
