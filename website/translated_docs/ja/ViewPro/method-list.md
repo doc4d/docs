@@ -1,6 +1,6 @@
 ---
 id: method-list
-title: Method List
+title: メソッド一覧
 ---
 
 [A](#a) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) - [I](#i) - [M](#m) - [N](#n) - [O](#o) - [P](#p) - [R](#r) - [S](#s)
@@ -69,25 +69,25 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 #### 説明
 
 
-The `VP ADD RANGE NAME` command <!-- REF #_method_.VP ADD RANGE NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->.
-> Named ranges created by this command are saved with the document.
+`VP ADD RANGE NAME` コマンドは、 <!-- REF #_method_.VP ADD RANGE NAME.Summary -->開いているドキュメント内に命名レンジを作成、または編集します<!-- END REF -->。
+> このコマンドで作成された命名レンジはドキュメントとともに保存されます。
 
-In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
+名前をつけたいレンジを *rangeObj* に、新しいレンジの名前は *name* に渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名レンジは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
-You can pass an object with additional properties for the named range in *options*. 以下のオブジェクトプロパティがサポートされています:
+*options* 引数には、命名レンジの追加プロパティを格納したオブジェクト型を渡すことができます。 以下のオブジェクトプロパティがサポートされています:
 
 
 | プロパティ   | タイプ  | 説明                                                                                                                                                                                                                                                                                                                                        |
 | ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | scope   | 数値   | レンジのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>スコープは、レンジ名が特定のワークシートに限定されたローカル (*scope* = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (*scope* = `vk workbook`) なものかを決定します。 |
 | comment | テキスト | 命名レンジに割り当てられたコメント                                                                                                                                                                                                                                                                                                                         |
-> * A named range is actually a named formula containing coordinates. `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](#vp-add-formula-name) method to create named ranges.
-> * Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](#vp-get-formula-by-name) method.
+> * 命名レンジの実態は、座標を格納した命名フォーミュラです。 `VP ADD RANGE NAME` を使うと簡単に命名レンジの作成ができますが、[`VP ADD FORMULA NAME`](#vp-add-formula-name) コマンドで命名レンジを作成することもできます。
+> * 命名レンジを定義するフォーミュラは、[`VP Get formula by name`](#vp-get-formula-by-name) コマンドで取得することができます。
 
 
 #### 例題
 
-You want to create a named range for a cell range:
+あるセルレンジに対して命名レンジを作成します:
 
 ```4d
 $range:=VP Cell("ViewProArea";2;10)
@@ -109,18 +109,18 @@ VP ADD RANGE NAME($range;"Total1")
 
 #### 説明
 
-The `VP ADD SELECTION` command <!-- REF #_method_.VP ADD SELECTION.Summary -->adds the specified cells to the currently selected cells<!-- END REF -->.
+`VP ADD SELECTION` コマンドは、 <!-- REF #_method_.VP ADD SELECTION.Summary -->指定されたセルを、現在選択されているセル範囲に追加します<!-- END REF -->。
 
-In *rangeObj*, pass a range object of cells to add to the current selection.
-> The active cell is not modified.
+*rangeObj* には、カレントセレクションに追加するセルのレンジオブジェクトを渡します。
+> アクティブセルは変更されません。
 
 #### 例題
 
-You have cells currently selected:
+以下のようにセルが選択されている場合:
 
 ![](assets/en/ViewPro/cmd_vpAddSelection1.PNG)
 
-The following code will add cells to your selection:
+以下のコードを実行すると、指定したセルを選択範囲に追加します:
 
 ```4d
 $currentSelection:=VP Cells("myVPArea";3;4;2;3)
@@ -141,28 +141,28 @@ VP ADD SELECTION($currentSelection)
 | 引数         | タイプ  |    | 説明                      |
 | ---------- | ---- | -- | ----------------------- |
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
-| index      | 整数   | -> | Index of the new sheet  |
-| name       | テキスト | -> | Sheet name              |	
+| index      | 整数   | -> | 新しいシートのインデックス           |
+| name       | テキスト | -> | シート名                    |	
 <!-- END REF --> 
 
 #### 説明
 
-The `VP ADD SHEET` command <!-- REF #_method_.VP ADD SHEET.Summary -->inserts a sheet in the document loaded in *vpAreaName*.<!-- END REF --> 
+`VP ADD SHEET` コマンドは、 <!-- REF #_method_.VP ADD SHEET.Summary -->*vpAreaName* にロードされているドキュメントにシートを挿入します。<!-- END REF --> 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *index*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
-> Indexing starts at 0.
+*index* 引数として、新しいシートのインデックスを渡します。 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
+> インデックスは 0 起点です。
 
-In *name*, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+*name* 引数として、新しいシートの名前を渡します。 新しい名前には、次の文字を含めることはできません: `*, :, [, ], ?,\,/`
 
 #### 例題
 
-The document currently has 3 sheets:
+ドキュメントには現在 3つのシートがあります:
 
 ![vp-document-with-3-sheets](assets/en/ViewPro/vp-sheet-3.png)
 
-To insert a sheet at the third position (index 2) and name it "March":
+新しいシートを 3つ目の位置 (インデックスは 2) に挿入し、名前を "March" にします:
 
 ```4d
 VP ADD SHEET("ViewProArea";2;"March")
@@ -184,27 +184,27 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 #### 説明
 
-The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of cells.
+`VP ADD SPAN` コマンドは、*rangeObj* に渡したセルを単一のセルに結合します。
 
-In *rangeObj*, pass a range object of cells. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Note that if cell ranges overlap, only the first cell range is used.
+*rangeObj* には、セルのレンジオブジェクトを渡します。 レンジ内のセルは結合され、複数のカラム/行にまたがる大きなセルが作成されます。 複数のセルレンジを渡すことで、一度に複数の結合セルを作成することもできます。 ただし、セルレンジが重なった場合、最初のセルレンジのみが使用されます。
 
-> - Only the data in the upper-left cell is displayed. Data in the other combined cells is hidden until the span is removed.
-> - Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
+> - 結合セルでは、元のレンジの左上端セルのデータのみが表示されます。 他のセルのデータは結合が解除されるまで非表示になります。
+> - 結合セル内の非表示データは、フォーミュラを使用することでアクセス可能です (フォーミュラは左上端セルから始まります)。
 
 #### 例題
 
-To span the First quarter and Second quarter cells across the two cells beside them, and the South area cell across the two rows below it:
+"First quarter" セルと "Second quarter" セルを、それぞれ右 2つのセルと結合し、"South area" セルは下 2つのセルと結合します:
 
 ![initial-document](assets/en/ViewPro/vp-add-span.png)
 
 ```4d
- // First quarter range
+ // "First quarter" レンジ
  $q1:=VP Cells("ViewProArea";2;3;3;1)
 
-  // Second quarter range
+  // "Second quarter" レンジ
  $q2:=VP Cells("ViewProArea";5;3;3;1)
 
-  // South area range
+  // "South area" レンジ
  $south:=VP Cells("ViewProArea";0;5;1;3)
 
  VP ADD SPAN(VP Combine ranges($q1;$q2;$south))
@@ -220,35 +220,35 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| styleName  | テキスト   | -> | Name of style                          |
-| styleObj   | オブジェクト | -> | Object defining attribute settings     |
-| scope      | 整数     | -> | Target scope (default = current sheet) |
+| 引数         | タイプ    |    | 説明                           |
+| ---------- | ------ | -- | ---------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名      |
+| styleName  | テキスト   | -> | スタイルの名前                      |
+| styleObj   | オブジェクト | -> | 属性設定を定義するオブジェクト              |
+| scope      | 整数     | -> | ターゲットのスコープ (デフォルト = カレントシート) |
 <!-- END REF -->  
 
 #### 説明
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. If a style sheet with the same name and scope already exists in the document, this command will overwrite it with the new values.
+`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とスコープを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
 
-> Style sheets created by this command are saved with the document.
+> このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-The *styleName* parameter lets you assign a name to the style sheet. If the name is already used within the same scope, the new style sheet replaces the existing one. ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
+*styleName* 引数には、スタイルシートの名前を渡します。 同じスコープ内で名前が既に使用されている場合、新しいスタイルシートは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
-Within the *styleObj*, designate the settings for the style sheet (e.g., font, text decoration, alignment, borders, etc.). For the full list of style properties, see [Style object properties](configuring.md#style-objects-properties).
+*styleObj* には、スタイルシートの設定 (例: フォント、テキスト装飾、テキスト揃え、境界線、など) を指定します。 スタイルプロパティの完全な一覧については、[スタイルオブジェクトプロパティ](configuring.md#スタイルオブジェクトプロパティ) を参照ください。
 
-You can designate where to define the style sheet in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+任意の *scope* 引数を使用することで、スタイルシートをどこに定義するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
 *   `vk current sheet`
 *   `vk workbook`
 
-If a *styleName* style sheet is defined at the workbook level and at a sheet level, the sheet level has priority over the workbook level when the style sheet is set.
+同じ *styleName* のスタイルシートが、ワークブックレベルとシートレベルとで定義されている場合、シートレベルのスタイルが優先されます。
 
-To apply the style sheet, use the [VP SET DEFAULT STYLE](#vp-set-default-style) or [VP SET CELL STYLE](#vp-set-cell-style) commands.
+スタイルシートを適用するには、[VP SET DEFAULT STYLE](#vp-set-default-style) または [VP SET CELL STYLE](#vp-set-cell-style) コマンドを使用します。
 
 
 #### 例題
@@ -259,7 +259,7 @@ To apply the style sheet, use the [VP SET DEFAULT STYLE](#vp-set-default-style) 
 $styles:=New object
 $styles.backColor:="green"
 
-//Line Border Object
+// 境界線オブジェクト
 $borders:=New object("color";"green";"style";vk line style medium dash dot)
 
 $styles.borderBottom:=$borders
@@ -269,11 +269,11 @@ $styles.borderTop:=$borders
 
 VP ADD STYLESHEET("ViewProArea";"GreenDashDotStyle";$styles)
 
-//To apply the style
+// スタイルを適用します
 VP SET CELL STYLE(VP Cells("ViewProArea";1;1;2;2);New object("name";"GreenDashDotStyle"))
 ```
 
-will create and apply the following style object named *GreenDashDotStyle*:
+*GreenDashDotStyle* という名前の、以下のようなスタイルオブジェクトを作成します:
 
 ```
 {
@@ -1333,7 +1333,7 @@ The `VP Get current sheet` command <!-- REF #_method_.VP Get current sheet.Summa
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 #### 例題
 
@@ -1850,7 +1850,7 @@ Get the sheet count and set the current sheet to the last sheet:
 | 引数              | タイプ  |    | 説明                      |
 | --------------- | ---- | -- | ----------------------- |
 | vpAreaName      | テキスト | -> | 4D View Pro フォームオブジェクト名 |
-| name            | テキスト | -> | Sheet name              |
+| name            | テキスト | -> | シート名                    |
 | Function result | 整数   | <- | Sheet index             |
 <!-- END REF --> 
 
@@ -1862,7 +1862,7 @@ The `VP Get sheet index` command <!-- REF #_method_.VP Get sheet index.Summary -
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *name*, pass the name of the sheet whose index will be returned. If no sheet named *name* is found in the document, the method returns -1.
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 #### 例題
 
@@ -1888,7 +1888,7 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
 | --------------- | ---- | -- | ----------------------- |
 | vpAreaName      | テキスト | -> | 4D View Pro フォームオブジェクト名 |
 | sheet           | 整数   | -> | Sheet index             |
-| Function result | テキスト | <- | Sheet name              |
+| Function result | テキスト | <- | シート名                    |
 <!-- END REF --> 
 
 #### 説明
@@ -1901,7 +1901,7 @@ The `VP Get sheet name` command <!-- REF #_method_.VP Get sheet name.Summary -->
 In *sheet*, pass the index of the sheet whose name will be returned.
 
 If the passed sheet index does not exist, the method returns an empty name.
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 #### 例題
 
@@ -1971,7 +1971,7 @@ The `VP Get show print lines` command <!-- REF #_method_.VP Get show print lines
 
 In *sheet*, pass the index of the target sheet. If *sheet* is omitted, the command applies to the current sheet.
 
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 #### 例題
 
@@ -2025,12 +2025,12 @@ VP SET CELL STYLE($range;$style)
 
 <!-- REF #_method_.VP Get stylesheet.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| styleName  | テキスト   | -> | Name of style                          |
-| scope      | 整数     | -> | Target scope (default = current sheet) |
-| 戻り値        | オブジェクト | <- | Style sheet object                     |
+| 引数         | タイプ    |    | 説明                           |
+| ---------- | ------ | -- | ---------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名      |
+| styleName  | テキスト   | -> | スタイルの名前                      |
+| scope      | 整数     | -> | ターゲットのスコープ (デフォルト = カレントシート) |
+| 戻り値        | オブジェクト | <- | Style sheet object           |
 <!-- END REF -->  
 
 #### 説明
@@ -2074,11 +2074,11 @@ borderTop:{color:green,style:10}
 
 <!-- REF #_method_.VP Get stylesheets.Params -->
 
-| 引数         | タイプ    |    | 説明                                     |
-| ---------- | ------ | -- | -------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
-| scope      | 整数     | -> | Target scope (default = current sheet) |
-| 戻り値        | コレクション | <- | Collection of style sheet objects      |
+| 引数         | タイプ    |    | 説明                                |
+| ---------- | ------ | -- | --------------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名           |
+| scope      | 整数     | -> | ターゲットのスコープ (デフォルト = カレントシート)      |
+| 戻り値        | コレクション | <- | Collection of style sheet objects |
 <!-- END REF -->  
 
 #### 説明
@@ -2787,7 +2787,7 @@ The `VP REMOVE SHEET` command <!-- REF #_method_.VP REMOVE SHEET.Summary -->remo
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 In *index*, pass the index of the sheet to remove. If the passed *index* does not exist, the command does nothing.
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 #### 例題
 
@@ -2849,11 +2849,11 @@ To remove all cell spans from this document:
 
 <!-- REF #_method_.VP REMOVE STYLESHEET.Params -->
 
-| 引数         | タイプ  |    | 説明                                     |
-| ---------- | ---- | -- | -------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                |
-| styleName  | テキスト | -> | Name of style to remove                |
-| scope      | 整数   | -> | Target scope (default = current sheet) |
+| 引数         | タイプ  |    | 説明                           |
+| ---------- | ---- | -- | ---------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名      |
+| styleName  | テキスト | -> | Name of style to remove      |
+| scope      | 整数   | -> | ターゲットのスコープ (デフォルト = カレントシート) |
 
 <!-- END REF -->  
 
@@ -3530,7 +3530,7 @@ The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summa
 
 In *index*, pass the index of the sheet to be set as current sheet. If the index passed is inferior to 0 or exceeds the number of sheets, the command does nothing.
 
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 #### 例題
 
@@ -4226,11 +4226,11 @@ In *name*, pass a new name for the sheet.
 
 In *index*, pass the index of the sheet to rename.
 
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 If no *index* is passed, the command renames the current sheet.
 
-The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+新しい名前には、次の文字を含めることはできません: `*, :, [, ], ?,\,/`
 
 The command does nothing if:
 
@@ -4392,7 +4392,7 @@ In *visible*, pass `True` to display the print lines, and `False` to hide them. 
 
 In *index*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
 
-> Indexing starts at 0.
+> インデックスは 0 起点です。
 
 The position of a spreadsheet's print lines varies according to that spreadsheet's page breaks.
 
