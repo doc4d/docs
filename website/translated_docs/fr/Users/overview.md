@@ -1,72 +1,62 @@
 ---
 id: overview
-title: Aperçu
+title: Access Control overview
 ---
 
-Si plusieurs personnes utilisent une application, ce qui est souvent le cas dans une architecture client-serveur ou d'interfaces Web, vous devez contrôler ses accès ou proposer différentes fonctionnalités selon les utilisateurs connectés. Il peut être également essentiel de protéger des données importantes. You can provide this security by assigning passwords to users and creating access groups that have different levels of access to information in the application or to application operations.
+Si plusieurs personnes utilisent une application, ce qui est souvent le cas dans une architecture client-serveur ou d'interfaces Web, vous devez contrôler ses accès ou proposer différentes fonctionnalités selon les utilisateurs connectés. It is also essential to provide security for sensitive data, even in single-user applications.
+
+4D access control strategy depends on your deployment configuration:
+
+- in multi-user applications, you can rely on 4D users and groups,
+- in single-user applications, user access is controlled through the system session, using commands such as [`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html).
 
 > Consultez le document [4D Security guide](https://blog.4d.com/4d-security-guide/) pour une vue d'ensemble des fonctions de sécurité de 4D.
 
 
 
 
+## Access control in multi-user applications
 
-## Définition des accès aux groupes
+Multi-user applications are deployed with 4D Server. They include client-server, Web, or REST applications.
 
-Le système de gestion des accès de 4D est basé sur les notions d’utilisateurs et de groupes. Créez des noms d’utilisateurs et affectez-leur un mot de passe, placez les utilisateurs dans des groupes, et assignez à chaque groupe les privilèges d’accès appropriés aux objets de l'application.
+In multi-user applications, access control is done through [4D users and groups](handling_users_groups.md). You create users, assign passwords, create access groups that have different levels of privileges in the application.
 
-Les groupes peuvent alors se voir affecter des privilèges d'accès à des parties spécifiques ou des fonctionnalités de l'application (accès au mode Développement, serveur HTTP, serveur SQL, etc.), ou à toute partie personnalisée.
+You initiate the 4D password access control system with 4D Server by [assigning a password to the Designer user](handling_users_groups.md#designer-and-administrator). Until you give the Designer a password, all application access are done with the Designer's access rights, even if you have [set up users and groups](handling_users_groups.md) (when the application opens, no ID is required). N'importe quelle partie de l'application peut être ouverte.
 
-L'exemple suivant présente les droits d'accès à l'explorateur d'exécution et au Développement assignés au groupe "Devs" :
-
-![](assets/en/Users/Access1.png)
-
-
-
-## Activer le contrôle des accès
-
-Le contrôle effectif des accès par mots de passe de 4D est activé par **l’affectation d’un mot de passe au Super_Utilisateur**.
-
-Tant que le Super_Utilisateur n’a pas de mot de passe, 4D permet à tout utilisateur d’accéder à toutes les parties de l'application, même si vous avez défini des utilisateurs et des groupes (à l'ouverture de l'application, aucune identification n'est requise). N'importe quelle partie de l'application peut être ouverte.
-
-Lorsqu’un mot de passe est affecté au Super_Utilisateur, tous les privilèges d’accès que vous avez affectés prennent effet. Pour pouvoir utiliser l'application, les utilisateurs distants doivent alors saisir un mot de passe.
+Lorsqu’un mot de passe est affecté au Super_Utilisateur, tous les privilèges d’accès que vous avez affectés prennent effet. In order to connect to the application or to a [server with protected access](handling_users_groups.md#assigning-group-access), remote users must enter a login/password.
 
 Pour désactiver le système de restriction d’accès, il suffit de supprimer (mettre à blanc) le mot de passe du Super_Utilisateur.
 
 
-## Utilisateurs et groupes dans l'architecture projet
-
-Dans les applications projet (fichiers .4DProject ou .4dz), les utilisateurs et groupes 4D peuvent être configurés à la fois en monoposte ou en client-serveur. Toutefois, le contrôle d'accès ne prend effet qu'avec 4D Server. Le tableau suivant liste les principales fonctionnalités des utilisateurs et groupes ainsi que leur disponibilité :
-
-|                                                                                 | 4D (monoposte)                                          | 4D Server |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------- | --------- |
-| Ajouter/modifier des utilisateurs et groupes                                    | oui                                                     | oui       |
-| Affecter l'accès des utilisateurs/groupes aux serveurs                          | oui                                                     | oui       |
-| Identification de l'utilisateur                                                 | non (tous les utilisateurs sont des Super_Utilisateur)  | oui       |
-| Contrôle d'accès une fois qu'un mot de passe a été affecté au Super_Utilisateur | non (tous les accès sont accordés au Super_Utilisateur) | oui       |
+## Access control in single-user applications
 
 
+Single-user applications are desktop applications, deployed with 4D or merged with 4D Volume License. In single-user applications all users opening the application are [Designers](handling_users_groups.md#designer-and-administrator), they have all privileges and their name is "Designer". Access control is not based upon 4D users and groups, but upon **user sessions**.
 
+### Identification de l'utilisateur
 
+To identify the current user in a 4D single-user application, you can rely on the [`Current system user`](https://doc.4d.com/4dv19R/help/command/en/page484.html) command, which returns the user who opened the system session. Thus user authentication is delegated to the OS level.
 
-## Éditeur de boîte à outils
+You can then allow or deny access within your application by using code such as:
 
-Les éditeurs des utilisateurs et groupes sont placés dans la boîte à outils de 4D. Ces éditeurs peuvent être utilisés pour la création d'utilisateurs et de groupes, l'affectation de mots de passe aux utilisateurs, le placement d'utilisateurs dans des groupes, etc.
+```4d
+If(Current system user = $user) //you can store users in a database table
+    // give access to some features
+Enf if
+```
 
-![](assets/en/Users/editor.png)
+If you want to use the system user name in 4D instead of "Designer" (e.g. in log files), you can call the [`SET USER ALIAS`](https://doc.4d.com/4dv19R/help/command/en/page1666.html) command, for example:
 
-> L'éditeur d'utilisateurs et de groupes peut s'afficher à l'exécution à l'aide de la commande [EDIT ACCESS](https://doc.4d.com/4Dv18/4D/18/EDIT-ACCESS.301-4504687.en.html). L'éditeur d'utilisateurs et de groupes peut s'afficher à l'exécution à l'aide de la commande [EDIT ACCESS](https://doc.4d.com/4Dv18/4D/18/EDIT-ACCESS.301-4504687.en.html).
+```4d
+SET USER ALIAS(Current system user)
+```
 
+### Protecting access
 
+#### Privileges
 
-## Fichier directory.json
+On a machine that is shared by several users, you can install the 4D application in a folder and give appropriate user access privileges to the folder at the OS level.
 
-Les utilisateurs, les groupes ainsi que leurs droits d'accès sont stockés dans un fichier spécifique du projet nommé **directory.json**.
+#### Encrypting data
 
-Ce fichier peut être stocké dans les emplacements suivants :
-
-- dans le dossier de propriétés utilisateur, c'est-à-dire le dossier "Settings", au même niveau que le dossier "Project". Ces propriétés sont utilisées par défaut dans l'application.
-- dans le dossier de propriétés des données, c'est-à-dire dans le dossier "Settings" du dossier "Data". Si un fichier **directory.json** se trouve à cet emplacement, il est prioritaire par rapport au fichier du dossier Settings utilisateur. Cette fonctionnalité vous permet de définir des configurations Utilisateurs et Groupes personnalisées/locales. La configuration personnalisée ne sera pas affectée par des mises à niveau de l'application.
-
-> Si la gestion de l'accès au mot de passe 4D est inactive, le fichier **directory.json** n'est pas créé.
-
+If you want to protect access to the application data, we recommend to [encrypt data](MSC/encrypt.md) and provide the encryption key to the authorized user(s). 

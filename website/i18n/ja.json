@@ -866,13 +866,13 @@
         "title": "4Dユーザー＆グループの管理"
       },
       "Users/overview": {
-        "title": "概要"
+        "title": "Access Control overview"
       },
       "ViewPro/configuring": {
         "title": "4D View Pro エリアの設定"
       },
       "ViewPro/formulas": {
-        "title": "フォーミュラとファンクション"
+        "title": "式と関数"
       },
       "ViewPro/getting-started": {
         "title": "はじめに"
@@ -930,13 +930,13 @@
       "ORDA": "ORDA",
       "Class API Reference": "クラス API リファレンス",
       "Debugging": "デバッガー",
-      "Access Rights": "アクセス権限",
       "Preferences": "環境設定",
       "4D Server Administration Window": "4D Server 管理ウィンドウ",
       "Web Administration": "Web 管理",
       "Command Line Interface": "コマンドライン・インターフェース",
       "TLS Protocol": "TLS Protocol",
       "License Management": "ライセンス管理",
+      "Access Rights": "アクセス権限",
       "MSC": "MSC",
       "Backup and Restore": "バックアップと復元",
       "Web Server": "Web サーバー",

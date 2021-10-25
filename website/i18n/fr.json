@@ -866,7 +866,7 @@
         "title": "Gestion des groupes et utilisateurs 4D"
       },
       "Users/overview": {
-        "title": "Aperçu"
+        "title": "Access Control overview"
       },
       "ViewPro/configuring": {
         "title": "Configuring 4D View Pro Areas"
@@ -930,13 +930,13 @@
       "ORDA": "ORDA",
       "Class API Reference": "Classes API",
       "Debugging": "Débogage",
-      "Access Rights": "Droits d'accès",
       "Preferences": "Préférences",
       "4D Server Administration Window": "Fenêtre d'administration de 4D Server",
       "Web Administration": "Web Administration",
       "Command Line Interface": "Interface de ligne de commande",
       "TLS Protocol": "TLS Protocol",
       "License Management": "Gestion des licences",
+      "Access Rights": "Droits d'accès",
       "MSC": "CSM",
       "Backup and Restore": "Sauvegarde et restitution",
       "Web Server": "Serveur Web",
