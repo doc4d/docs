@@ -1,6 +1,6 @@
 ---
 id: develop-plug-ins
-title: Developing Plug-ins
+title: Plug-ins de développement
 ---
 
 ## Pourquoi un plugin ?
