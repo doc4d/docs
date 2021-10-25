@@ -866,7 +866,7 @@
         "title": "4Dユーザー＆グループの管理"
       },
       "Users/overview": {
-        "title": "Access Control overview"
+        "title": "アクセスコントロールの概要"
       },
       "ViewPro/configuring": {
         "title": "4D View Pro エリアの設定"
@@ -878,7 +878,7 @@
         "title": "はじめに"
       },
       "ViewPro/method-list": {
-        "title": "Method List"
+        "title": "メソッド一覧"
       },
       "WebServer/allowProject": {
         "title": "プロジェクトメソッドの許可"
