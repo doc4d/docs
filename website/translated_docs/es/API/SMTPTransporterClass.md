@@ -65,7 +65,7 @@ The `SMTP New transporter` command <!-- REF #_command_.SMTP New transporter.Summ
 
 In the *server* parameter, pass an object containing the following properties:
 
-| *server*                                                                                                                                                                                                                                                                                                                                                                                                                  | Default value (if omitted)                                          |
+| *server*                                                                                                                                                                                                                                                                                                                                                                                                                  | Valor por defecto (si se omite)                                     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | [<!-- INCLUDE #transporter.acceptUnsecureConnection.Syntax -->](#acceptunsecureconnection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.acceptUnsecureConnection.Summary -->| False                                                               |
 | .**accessTokenOAuth2**: Text<br/>.**accessTokenOAuth2**: Object<p>Text string or token object representing OAuth2 authorization credentials. Used only with OAUTH2 `authenticationMode`. If `accessTokenOAuth2` is used but `authenticationMode` is omitted, the OAuth 2 protocol is used (if allowed by the server). Not returned in *[SMTP transporter](#smtp-transporter-object)* object. | ninguno                                                             |
@@ -85,7 +85,7 @@ In the *server* parameter, pass an object containing the following properties:
 
 #### Resultado
 
-The function returns a [**SMTP transporter object**](#smtp-transporter-object). All returned properties are **read-only**.
+The function returns a [**SMTP transporter object**](#smtp-transporter-object). Todas las propiedades devueltas son **de sólo lectura**.
 
 
 #### Ejemplo
