@@ -637,16 +637,14 @@ $mime:=[#current_title_incode]($mail)
 
 // Contents of $mime:
 // MIME-Version: 1.0
-// Date:
-Thu, 11 Oct 2018 15:42:25 GMT
+// Date: Thu, 11 Oct 2018 15:42:25 GMT
 // Message-ID: <7CA5D25B2B5E0047A36F2E8CB30362E2>
 // Sender: tsales@massmarket.com
 // From: tsales@massmarket.com
 // To: noreply@4d.com
 // To: test@4d.com
 // Content-Type: multipart/alternative; boundary="E0AE5773D5E95245BBBD80DD0687E218"
-// Subject: Terrific Sale!
-This week only!
+// Subject: Terrific Sale! This week only!
 //
 // --E0AE5773D5E95245BBBD80DD0687E218
 // Content-Type: text/plain; charset="UTF-8"
