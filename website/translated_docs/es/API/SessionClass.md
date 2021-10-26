@@ -221,10 +221,10 @@ Esta propiedad es **de sólo escritura**.
 
 ```4d
 If (Session.isGuest())
-        // A Guest session will close after 60 minutes of inactivity
+        // Una sesión de invitado se cerrará tras 60 minutos de inactividad
     Session.idleTimeout:=60
 Else
-        // Other sessions will close after 120 minutes of inactivity
+        // Las demás sesiones se cerrarán tras 120 minutos de inactividad
     Session.idleTimeout:=120
 End if
 
@@ -247,14 +247,14 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.isGuest().Params -->
-| Parámetros | Tipo    |    | Descripción                                     |
-| ---------- | ------- |:--:| ----------------------------------------------- |
-| Resultado  | Boolean | <- | True if session is a Guest one, False otherwise |
+| Parámetros | Tipo    |    | Descripción                                                    |
+| ---------- | ------- |:--:| -------------------------------------------------------------- |
+| Resultado  | Boolean | <- | True si la sesión es una sesión Guest, False en caso contrario |
 <!-- END REF -->
 
 #### Descripción
 
-The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns True if the session is a Guest session (i.e. it has no privileges)<!-- END REF -->.
+La función `.isGuest()` <!-- REF #SessionClass.isGuest().Summary -->devuelve True si la sesión es una sesión Guest (es decir, no tiene privilegios)<!-- END REF -->.
 
 
 #### Ejemplo
@@ -263,7 +263,7 @@ En el método base `On Web Connection`:
 
 ```4d
 If (Session.isGuest())
-    //Do something for Guest user
+    //Hacer algo para el usuario invitado
 End if
 ```
 
@@ -287,7 +287,7 @@ End if
 <!-- REF #SessionClass.setPrivileges().Params -->
 | Parámetros | Tipo       |    | Descripción                                                |
 | ---------- | ---------- |:--:| ---------------------------------------------------------- |
-| privilege  | Text       | -> | Privilege name                                             |
+| privilege  | Text       | -> | Nombre del privilegio                                      |
 | privileges | Collection | -> | Collection of privilege names                              |
 | parámetros | Object     | -> | Object with a "privileges" property (string or collection) |
 <!-- END REF -->
@@ -322,9 +322,9 @@ In a custom authentication method, you set the "WebAdmin" privilege to the user:
 ```4d
 var $userOK : Boolean
 
-... //Authenticate the user
+... //Autenticar al usuario
 
-If ($userOK) //The user has been approved
+If ($userOK) //El usuario ha sido aprobado
   var $info : Object
   $info:=New object()
   $info.privileges:=New collection("WebAdmin")
@@ -364,7 +364,7 @@ This property is **read only** itself but it returns a read-write object.
 You want to store the client IP in the `.storage` property. You can write in the `On Web Authentication` database method:
 
 ```4d
-If (Session.storage.clientIP=Null) //first access
+If (Session.storage.clientIP=Null) //primer acceso
     Use (Session.storage)
         Session.storage.clientIP:=New shared object("value"; $clientIP)
     End use 
@@ -397,7 +397,7 @@ The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the
 
 This property is an empty string by default. It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
 
-This property is **read only**. 
+Esta propiedad es**de sólo lectura**. 
 
 
 
