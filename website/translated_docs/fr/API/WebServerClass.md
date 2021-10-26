@@ -806,9 +806,9 @@ The function returns an object describing the Web server launch status. This obj
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
 | success   |                         | Booléen    | Vrai si le serveur web a été correctement démarré, sinon Faux             |
 | errors    |                         | Collection | Pile d'erreurs 4D (non retournée si le serveur web a démarré avec succès) |
-|           | \[].errCode            | Nombre     | Code d'erreur 4D                                                          |
-|           | \[].message            | Texte      | Description de l'erreur 4D                                                |
-|           | \[].componentSignature | Texte      | Signature du composant interne qui a retourné l'erreur                    |
+|           | \[].errCode            | Nombre     | 4D error code                                                             |
+|           | \[].message            | Texte      | Description of the 4D error                                               |
+|           | \[].componentSignature | Texte      | Signature of the internal component which returned the error              |
 > If the Web server was already launched, an error is returned.
 
 #### Exemple
