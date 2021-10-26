@@ -80,7 +80,7 @@ Cette propriété n'est pas retournée si `.kind` = "relatedEntity" ou "relatedE
 
 #### Description
 
-The `.exposed` property is <!-- REF DataClassAttributeClass.exposed.Summary -->true if the attribute is exposed in REST<!-- END REF -->.
+La propriété `.exposed` est <!-- REF DataClassAttributeClass.exposed.Summary -->mise à "true" si l'attribut est "exposed" dans REST<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -118,9 +118,9 @@ Cette propriété n'est pas retournée si `.kind` = "relatedEntity" ou "relatedE
 ## .fieldType
 
 <details><summary>Historique</summary>
-| Version | Modifications                  |
-| ------- | ------------------------------ |
-| v19 R3  | Support of computed attributes |
+| Version | Modifications                       |
+| ------- | ----------------------------------- |
+| v19 R3  | Prise en charge des champs calculés |
 </details>
 
 
@@ -229,9 +229,9 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 ## .kind
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v19 R3  | Added "calculated" |
+| Version | Modifications         |
+| ------- | --------------------- |
+| v19 R3  | Ajout de "calculated" |
 </details>
 
 
@@ -344,7 +344,7 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 
 La propriété `.readOnly` est <!-- REF DataClassAttributeClass.readOnly.Summary -->mise à "true" si l'attribut est en lecture seule<!-- END REF -->.
 
-For example, computed attributes without [`set` function](ORDA/ordaClasses.md#function-set-attributename) are read-only. 
+Par exemple, les champs calculés sans fonction [`set`](ORDA/ordaClasses.md#function-set-attributename) sont en lecture seule. 
 
 <!-- END REF -->
 
@@ -392,9 +392,9 @@ Considérons les tableaux et relations suivants :
 ## .type
 
 <details><summary>Historique</summary>
-| Version | Modifications                  |
-| ------- | ------------------------------ |
-| v19 R3  | Support of computed attributes |
+| Version | Modifications                       |
+| ------- | ----------------------------------- |
+| v19 R3  | Prise en charge des champs calculés |
 </details>
 
 
@@ -410,12 +410,12 @@ Le type de valeur conceptuelle dépend de l'attribut [`.kind`](#kind).
 
 **Valeurs possibles :**
 
-| dataClassAttribute.kind | type                                                                                                                         | Commentaire                                                                                                                                                                                                                                                       |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| storage                 | "blob", "bool", "date", "image", "number", "object", ou "string"                                                             | "nombre" est rertourné pour tous les types numériques, y compris la durée. "string" is returned for uuid, alpha and text field types. "blob" attributes are [blob objects](Concepts/dt_blob.md#blob-type), they are handled using the [Blob class](BlobClass.md). |
-| relatedEntity           | related dataClass name                                                                                                       | Ex : "Companies"                                                                                                                                                                                                                                                  |
-| relatedEntities         | related dataClass name + "Selection" suffix                                                                                  | Ex : "EmployeeSelection"                                                                                                                                                                                                                                          |
-| calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection" |                                                                                                                                                                                                                                                                   |
+| dataClassAttribute.kind | type                                                                                                                         | Commentaire                                                                                                                                                                                                                                                                           |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| storage                 | "blob", "bool", "date", "image", "number", "object", ou "string"                                                             | "nombre" est rertourné pour tous les types numériques, y compris la durée. "string" est retourné pour les types de champs uuid, alpha et text. Les attributs "blob" sont des [objets blob](Concepts/dt_blob.md#blob-type), ils sont gérés à l'aide de [la classe Blob](BlobClass.md). |
+| relatedEntity           | related dataClass name                                                                                                       | Ex : "Companies"                                                                                                                                                                                                                                                                      |
+| relatedEntities         | related dataClass name + "Selection" suffix                                                                                  | Ex : "EmployeeSelection"                                                                                                                                                                                                                                                              |
+| calculated              | <li>storage: type ("blob", "number", etc.)</li><li>entity: dataClass name</li><li>entity selection: dataClass name + "Selection" |                                                                                                                                                                                                                                                                                       |
 
 <!-- END REF -->
 
