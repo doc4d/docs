@@ -4,12 +4,12 @@ title: 4Dユーザー＆グループの管理
 ---
 
 
-In multi-user applications, 4D provides users with certain standard access privileges and certain powers. ユーザー＆グループシステムが起動されると、これらの標準的な権限が有効になります。
+マルチユーザーアプリケーションにおいて、4Dはユーザーに対して標準的なアクセス権と特定の権限を与えます。 ユーザー＆グループシステムが起動されると、これらの標準的な権限が有効になります。
 
 
-## Users and groups in projects
+## プロジェクトにおけるユーザー＆グループ
 
-In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. 次の表は、主なユーザーとグループの機能と、それらが利用かどうかを一覧に示します:
+プロジェクトアプリケーション (.4DProject および .4dz ファイル) では、シングルユーザーおよびマルチユーザー環境の両方でユーザーとグループを設定することができます。 ただし、**アクセスシステム** は 4D Server でのみ有効です。 次の表は、主なユーザーとグループの機能と、それらが利用かどうかを一覧に示します:
 
 |                              | 4D (シングルユーザー)        | 4D Server |
 | ---------------------------- | -------------------- | --------- |
@@ -18,7 +18,7 @@ In project applications (.4DProject or .4dz files), 4D users and groups can be c
 | ユーザー認証                       | × (すべてのユーザーがデザイナーです) | ◯         |
 | デザイナーへのパスワード設定によるアクセスシステムの起動 | × (すべてのアクセスがデザイナーです) | ◯         |
 
-> For information about user identification and access control in single-user deployments, see [this paragraph](overview.md#access-control-in-single-user-applications).
+> シングルユーザー環境でのユーザー認証とアクセスコントロールについては、[シングルユーザーアプリケーションのアクセスコントロール](overview.md#シングルユーザーアプリケーションのアクセスコントロール) を参照ください。
 
 ## デザイナーと管理者
 
@@ -56,7 +56,7 @@ In project applications (.4DProject or .4dz files), 4D users and groups can be c
 
 ![](assets/en/Users/editor.png)
 
-> Users and groups editor can be displayed at runtime using the [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html) command. The whole users and groups configuration can also be edited during application execution using 4D language commands of the `Users and Groups` theme.
+> ランタイムにおいてユーザーとグループのエディターを表示させるには [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/ja/page281.html) コマンドを使用します。 ユーザーとグループの設定は、アプリケーション実行中でも `Users and Groups` テーマの 4Dランゲージコマンドを使って編集することができます。
 
 ### ユーザーの追加と変更
 
@@ -174,27 +174,27 @@ In project applications (.4DProject or .4dz files), 4D users and groups can be c
 
 ## 権限を割り当てる
 
-Groups are assigned access privileges to specific parts or features of the application:
+グループには、アプリケーションの特定機能へのアクセス権が割り当てられます:
 
-- Design and Runtime Explorer access,
-- HTTP server,
-- REST server,
-- SQL server.
+- デザイン環境やランタイムエクスプローラー
+- HTTPサーバー
+- RESTサーバー
+- SQLサーバー
 
-These accesses are defined in the Settings dialog. 次の図は、デザインおよびランタイムエクスプローラーアクセス権を "Devs" グループに割り当てている様子を表しています (データベース設定の "セキュリティ" タブ):
+これらのアクセス権はストラクチャー設定で定義します。 次の図は、デザインおよびランタイムエクスプローラーアクセス権を "Devs" グループに割り当てている様子を表しています (データベース設定の "セキュリティ" タブ):
 
 ![](assets/en/Users/Access1.png)
 
-You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
+また、グループを使って [利用可能なライセンスを割り当てる](#プラグインやサーバーにグループを割り当てる) こともできます。 この割り当ては、グループエディターで定義します。
 
 ## Directory.json ファイル
 
 ユーザー、グループ、およびそれらのアクセス権は、**directory.json** という名称の専用のプロジェクトファイルに保存されます。
 
-This file can be stored at the following locations, depending on your needs:
+必要に応じて、このフォルダーは次の場所に保存することができます:
 
-- If you want to use the same directory for all data files (or if you use a single data file), store the **directory.json** file in the user settings folder, i.e. in the "Settings" folder at the [same level as the "Project" folder](Project/architecture.md#project-folder) (default location).
-- If you want to use a specific directory file per data file, store the **directory.json** file in the data settings folder, i.e. in the ["Settings" folder of the "Data" folder](Project/architecture.md#settings). **directory.json** ファイルがこの場所に保存されている場合、ユーザー設定フォルダーのファイルよりも優先されます。 This custom/local Users and Groups configuration will left untouched by an application upgrade.
+- すべてのデータファイルについて同じディレクトリを使用する場合 (または 1つのデータファイルだけを使用する場合)、ユーザー設定フォルダー (["Project" フォルダーと同じ階層](Project/architecture.md#project-フォルダー) の "Settings" フォルダー) に **directory.json** ファイルをに保存します (デフォルトの場所)。
+- データファイルごとに特定のディレクトリファイルを使用する場合は、**directory.json** ファイルをデータ設定フォルダー、つまり ["Data" フォルダーの "Settings" フォルダー](Project/architecture.md#settings) に格納します。 **directory.json** ファイルがこの場所に保存されている場合、ユーザー設定フォルダーのファイルよりも優先されます。 アプリケーションをアップグレードしても、このカスタム/ローカルなユーザー＆グループ設定はそのままです。
 
-> If no password is assigned to the "Designer" user, the **directory.json** is not created.
+> "Designer" ユーザーにパスワードが設定されていない場合、**directory.json** ファイルは生成されません。
 

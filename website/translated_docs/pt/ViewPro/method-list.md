@@ -373,9 +373,9 @@ $cell:=VP Cell("ViewProArea";2;4) // C5
 <!-- REF #_method_.VP Cells.Syntax -->**VP Cells** ( *vpAreaName* : Text ; *column*: Integer ; *row*: Integer ; *columnCount* : Integer ; *rowCount* : Integer { ; *sheet* : Integer } ) : Object<!-- END REF -->  
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v17 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v17 R4 | Adicionado |
 </details>
 
 <!-- REF #_method_.VP Cells.Params -->
@@ -638,9 +638,9 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ### VP Copy to object
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19 R4 | Adicionado |
 </details>
 
 <!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *options* : Object} ) : Object
@@ -875,7 +875,7 @@ VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 ```
 
 
-#### Example 3
+#### Exemplo 3
 
 You want to export a 4D View Pro document in ".xlsx" format and call a method that will launch Microsoft Excel with the document open once the export has completed:
 
@@ -905,7 +905,7 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
  End if
 ```
 
-#### Example 4
+#### Exemplo 4
 
 You want to export the current sheet to a `.txt` file with pipe-separated values:
 
@@ -2411,9 +2411,9 @@ The results is:
 ### VP MOVE CELLS
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19 R4 | Adicionado |
 </details>
 
 <!-- REF #_method_.VP MOVE CELLS.Syntax -->**VP MOVE CELLS** ( *originRange* : Object ; *targetRange* : Object ; *options* : Object )
@@ -2598,9 +2598,9 @@ $cellStyle.font:=VP Object to font($font)
 ### VP PASTE FROM OBJECT
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças |
-| ------ | -------- |
-| v19 R4 | Added    |
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19 R4 | Adicionado |
 </details>
 
 <!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *rangeObj* : Object ; *dataObject* : Object {; *options* : Longint} )
@@ -4314,7 +4314,7 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 ```
 
 
-#### Example 3
+#### Exemplo 3
 
 You want to customize the colors of your sheet tabs, frozen lines, grid lines, selection background and selection border:
 
@@ -4346,7 +4346,7 @@ Resultado:
 
 ![](assets/en/ViewPro/cmd_vpSetSheetOptions1.PNG)
 
-#### Example 4
+#### Exemplo 4
 
 You want to hide the grid lines as well as the row and column headers.
 

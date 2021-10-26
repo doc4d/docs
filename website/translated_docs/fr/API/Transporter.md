@@ -385,9 +385,9 @@ The function sends a request to the mail server and returns an object describing
 | status     |                          | number     | (SMTP uniquement) Code du statut retourné par le serveur de messagerie (0 en cas de problème non lié au traitement du mail) |
 | statusText |                          | Texte      | Message du statut retourné par le serveur de messagerie, ou dernière erreur retournée dans la pile d'erreurs 4D             |
 | errors     |                          | collection | Pile d'erreurs 4D (non retournée si une réponse du serveur de messagerie est reçue)                                         |
-|            | \[ ].errCode            | number     | 4D error code                                                                                                               |
-|            | \[ ].message            | Texte      | Description of the 4D error                                                                                                 |
-|            | \[ ].componentSignature | Texte      | Signature of the internal component which returned the error                                                                |
+|            | \[ ].errCode            | number     | Code d'erreur 4D                                                                                                            |
+|            | \[ ].message            | Texte      | Description de l'erreur 4D                                                                                                  |
+|            | \[ ].componentSignature | Texte      | Signature du composant interne qui a retourné l'erreur                                                                      |
 
 
 

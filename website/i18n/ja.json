@@ -866,7 +866,7 @@
         "title": "4Dユーザー＆グループの管理"
       },
       "Users/overview": {
-        "title": "Access Control overview"
+        "title": "アクセスコントロールの概要"
       },
       "ViewPro/configuring": {
         "title": "4D View Pro エリアの設定"
@@ -878,7 +878,7 @@
         "title": "はじめに"
       },
       "ViewPro/method-list": {
-        "title": "Method List"
+        "title": "メソッド一覧"
       },
       "WebServer/allowProject": {
         "title": "プロジェクトメソッドの許可"
@@ -934,7 +934,7 @@
       "4D Server Administration Window": "4D Server 管理ウィンドウ",
       "Web Administration": "Web 管理",
       "Command Line Interface": "コマンドライン・インターフェース",
-      "TLS Protocol": "TLS Protocol",
+      "TLS Protocol": "TLSプロトコル",
       "License Management": "ライセンス管理",
       "Access Rights": "アクセス権限",
       "MSC": "MSC",
@@ -950,7 +950,7 @@
       "Form Events": "フォームイベント",
       "Menus": "メニュー",
       "Build application": "アプリケーションビルド",
-      "Extensions": "Extensions",
+      "Extensions": "拡張機能",
       "4D View Pro": "4D View Pro"
     }
   },
@@ -978,7 +978,7 @@
     "4D Server Administration Window|no description given": "4D Server 管理ウィンドウ",
     "4D Components Library|no description given": "4D コンポーネントライブラリ",
     "Client/Server|no description given": "クライアント/サーバー",
-    "TLS Protocol|no description given": "TLS Protocol",
+    "TLS Protocol|no description given": "TLSプロトコル",
     "Debugging|no description given": "デバッガー",
     "Web Data Explorer|no description given": "Webデータエクスプローラー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
@@ -997,7 +997,7 @@
     "Web applications|no description given": "Web アプリ",
     "Mobile applications|no description given": "モバイルアプリ",
     "Desktop applications|no description given": "デスクトップアプリ",
-    "Extensions|no description given": "Extensions",
+    "Extensions|no description given": "拡張機能",
     "Documentation updates|no description given": "ドキュメンテーション更新情報",
     "Help Translate|recruit community translators for your project": "翻訳を手伝う",
     "Edit this Doc|recruitment message asking to edit the doc source": "編集",

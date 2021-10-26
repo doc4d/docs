@@ -20,7 +20,7 @@ Un projet hôte fonctionnant en mode interprété peut utiliser des composants i
 
 Component methods and forms can be used as standard elements in your 4D development.
 
-When an installed component contains methods, they appear in the **Component Methods** theme of the Explorer's Methods page.
+Lorsqu'un composant installé contient des méthodes, celles-ci apparaissent dans le thème **Méthodes composant** de la page Méthodes de l'Explorateur.
 
 You can select a component method and click on the **Documentation** button of the Explorer to get information about it, [if any](Project/documentation.md).
 

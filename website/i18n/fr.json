@@ -409,10 +409,10 @@
         "title": "Aperçu"
       },
       "Extensions/develop-components": {
-        "title": "Developing Components"
+        "title": "Composants de développement"
       },
       "Extensions/develop-plug-ins": {
-        "title": "Developing Plug-ins"
+        "title": "Plug-ins de développement"
       },
       "Extensions/overview": {
         "title": "Aperçu"
@@ -878,7 +878,7 @@
         "title": "Prise en main"
       },
       "ViewPro/method-list": {
-        "title": "Method List"
+        "title": "Liste de méthodes"
       },
       "WebServer/allowProject": {
         "title": "Allowing project methods"
@@ -934,7 +934,7 @@
       "4D Server Administration Window": "Fenêtre d'administration de 4D Server",
       "Web Administration": "Web Administration",
       "Command Line Interface": "Interface de ligne de commande",
-      "TLS Protocol": "TLS Protocol",
+      "TLS Protocol": "Protocole TLS",
       "License Management": "Gestion des licences",
       "Access Rights": "Droits d'accès",
       "MSC": "CSM",
@@ -976,9 +976,9 @@
     "Build Application|no description given": "Générateur d'application",
     "Web Administration|no description given": "Web Administration",
     "4D Server Administration Window|no description given": "Fenêtre d'administration de 4D Server",
-    "4D Components Library|no description given": "4D Components Library",
+    "4D Components Library|no description given": "Bibliothèque des composants 4D",
     "Client/Server|no description given": "Client/Server",
-    "TLS Protocol|no description given": "TLS Protocol",
+    "TLS Protocol|no description given": "Protocole TLS",
     "Debugging|no description given": "Débogage",
     "Web Data Explorer|no description given": "Explorateur de données Web",
     "Language Reference (4D Doc Center)|no description given": "Langage (4D Doc Center)",
@@ -988,8 +988,8 @@
     "4D View Pro|no description given": "4D View Pro",
     "Preferences|no description given": "Préférences",
     "Overview|no description given": "Aperçu",
-    "Developing Components|no description given": "Developing Components",
-    "Developing Plugins|no description given": "Developing Plugins",
+    "Developing Components|no description given": "Composants de développement",
+    "Developing Plugins|no description given": "Plugins de développement",
     "Working with a project|no description given": "Working with a project",
     "Getting started|no description given": "Prise en main",
     "Core Development|no description given": "Développement",
