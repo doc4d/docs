@@ -49,46 +49,46 @@ A página Cópia de segurança| Configuração das propriedades das Propriedades
 Essa área lhe permite determinar quais os arquivos ou pastas que devem ser copiados durante o backup.
 
 - **Data**: arquivo de dados da Aplicação. Quando essa opção estiver marcada, os elementos abaixo fazem backup automaticamente ao mesmo tempo que os dados:
-    - the current log file of the application (if it exists),
-    - the full `Settings` folder located [next to the data file](Project/architecture.md#settings-folder) (if it exists), i.e. the *user settings for data*.
-- **Structure**: Application project folders and files. In cases where projects are compiled, this option allows you to backup the .4dz file. When this option is checked, the full `Settings` folder located [at the same level as the Project folder](Project/architecture.md#settings-folder-1), i.e. the *user settings*, is automatically backed up.
-- **User Structure File (only for binary database)**: *deprecated feature*
-- **Attachments**: This area allows you to specify a set of files and/or folders to be backed up at the same time as the application. These files can be of any type (documents or plug-in templates, labels, reports, pictures, etc.). You can set either individual files or folders whose contents will be fully backed up. Each attached element is listed with its full access path in the “Attachments” area.
-    - **Delete**: Removes the selected file from the list of attached files.
-    - **Add folder...**: Displays a dialog box that allows selecting a folder to add to the backup. In the case of a restore, the folder will be recovered with its internal structure. You can select any folder or volume connected to the machine, with the exception of the folder containing the application files.
-    - **Add file...**: Displays a dialog box that allows you to select a file to add to the backup.
+    - o arquivo de histórico atual da aplicação (se houver),
+    - a pasta `Settings` situada [ao lado do arquivo de dados](Project/architecture.md#settings-folder) (se existir), ou seja *os parâmetros usuário para os dados*.
+- **Arquivo de estrutura**: pastas e arquivos da aplicação. No caso de projetos compilados, essa opção permite fazer o backup do arquivo .4dz. Quando esta opção estiver marcada, uma cópia de segurança é feita automaticamente da pasta completa `Settings` situada [no mesmo nível que a pasta Project ](Project/architecture.md#settings-folder-1), ou seja, os *parâmetros usuário*.
+- **Arquivo de estrutura usuário (só para bancos binários)**: *funcionalidade obsoleta*
+- **Arquivos anexos**: esta área permite especificar um conjunto de arquivos ou pastas que sofrerão o backup no mesmo momento que a aplicação. Esses arquivos podem ser de qualquer tipo (documentos ou modelos de plug-ins, etiquetas, relatórios, imagens, etc). Pode estabelecer arquivos ou pastas individuais cujos conteúdos serão respaldados completamente. Cada elemento anexado é listado com sua rota de acesso completa na área "Anexos".
+    - **Eliminar**: retira o arquivo selecionado da lista de arquivos anexos.
+    - **Adicionar pasta...**: mostra uma caixa de diálogo que permite selecionar uma pasta para adicionar à cópia de segurança. No caso de uma restauração, a pasta vai recuperar sua estrutura interna. Pode selecionar toda pasta ou volume conectado à máquina, exceto a pasta que conter os arquivos da aplicação.
+    - **Adicionar pasta...**: mostra uma caixa de diálogo que permite selecionar um arquivo para adicionar à cópia de segurança.
 
 
-### Backup File Destination Folder
+### Pasta de destino de arquivo de cópia de segurança
 
-This area lets you view and change the location where backup files as well as log backup files (where applicable) will be stored.
+Esta área lhe permite visualizar e mudar o local na que se armazenarão os arquivos de cópia de segurança, assim como os arquivos de cópia de segurança do arquivo historial (se aplicável).
 
-To view the location of the files, click in the area in order to display their pathname as a pop-up menu.
+Para ver o local dos arquivos, clique na área para que apareça sua rota de acesso no menu emergente.
 
-To modify the location where these files are stored, click the **...** button. A selection dialog box appears, which allows you to select a folder or disk where the backups will be placed. The "Used Space" and "Free Space" areas are updated automatically and indicate the remaining space on the disk of the selected folder.
+Para modificar o local onde se armazenam esses arquivos, clique no botão **...**. Uma caixa de seleção aparece, que permite selecionar uma pasta ou disco onde os backups são colocados. As áreas "Espaço utilizado" e "Espaço livre" são atualizadas automaticamente e indicam o espaço restante no disco da pasta selecionada.
 
-### Log management
+### Gestão do arquivo de histórico
 
-The **Use Log** option, when checked, indicates that the application uses a log file. Its pathname is specified below the option. When this option is checked, it is not possible to open the application without a log file.
+A opção **Utilizar o arquivo de histórico**, quando estiver marcada, indica que a aplicação utiliza um arquivo de histórico. Sua rota de acesso é especificada debaixo da opção. Quando essa opção for marcada, não é possível abrir a aplicação sem um arquivo de histórico.
 
-By default, any project created with 4D uses a log file (option **Use Log File** checked in the **General Page** of the **Preferences**). O arquivo de histórico é chamado *data.journal* e está na pasta Data.
+Como padrão, todo projeto criado com 4D usando um arquivo de histórico (opção **Use Log File** marcada na página **Geral** das **Preferências**). O arquivo de histórico é chamado *data.journal* e está na pasta Data.
 
-> Activating a new log file requires the data of the application to be backed up beforehand. When you check this option, a warning message informs you that a backup is necessary. The creation of the log file is postponed and it will actually be created only after the next backup of the application.
+> Ativar um novo arquivo de histórico exige que tenha sido feita anteriormente uma cópia de segurança da aplicação. When you check this option, a warning message informs you that a backup is necessary. A criação dos arquivos de histórico é adiada e será feita somente depois do próximo backup da aplicação.
 
 
-## Backup & Restore
+## Cópia de segurança e restauração
 
-Modifying backup and restore options is optional. Their default values correspond to a standard use of the function.
+Modificar as opções de cópia de segurança e restauração é opcional. Seus valores padrão correspondem ao uso padrão da função.
 
 ![](assets/en/Backup/backup04.png)
 
-### General settings
+### Seção Geral
 
-- **Keep only the last X backup files**: This parameter activates and configures the mechanism used to delete the oldest backup files, which avoids the risk of saturating the disk drive. This feature works as follows: Once the current backup is complete, 4D deletes the oldest archive if it is found in the same location as the archive being backed up and has the same name (you can request that the oldest archive be deleted before the backup in order to save space). If, for example, the number of sets is set to 3, the first three backups create the archives MyBase-0001, MyBase-0002, and MyBase-0003 respectively. During the fourth backup, the archive MyBase-0004 is created and MyBase-0001 is deleted. By default, the mechanism for deleting sets is enabled and 4D keeps 3 backup sets. To disable the mechanism, simply deselect the option.
-> This parameter concerns both application and log file backups.
+- **Conservar unicamente os últimos X arquivos de cópia de segurança**: este parâmetro ativa e configura o mecanismo utilizado para eliminar os arquivos de cópia de segurança mais antigos, o que evita o risco de saturar a unidade de disco. Esta funcionalidade opera da seguinte maneira: uma vez finalizado o backup atual, 4D elimina o arquivo mais antigo se for encontrado no mesmo local que o arquivo do qual se está fazendo o backup e tiver o mesmo nome (pode solicitar que o arquivo mais antigo se elimine antes do backup para poupar espaço). Se, por exemplo, o número de conjuntos se definir como 3, as três primeiras cópias de segurança criam os arquivos MyBase-0001, MyBase-0002 e MyBase-0003 respectivamente. Durante o quarto backup, o arquivo MyBase-0004 é criado e MyBase-0001 é apagado. Como padrão, o mecanismo de eliminação de conjuntos está ativado e 4D salva 3 conjuntos de cópias de segurança. Para desativar o mecanismo, simplesmente desmarque a opção.
+> Esse parâmetro se refere tanto a aplicações quanto aos arquivos de registro.
 
-- **Backup only if the data file has been modified**: When this option is checked, 4D starts scheduled backups only if data has been added, changed or deleted since the last backup. Otherwise, the scheduled backup is cancelled and put off until the next scheduled backup. No error is generated; however the backup journal notes that the backup has been postponed. This option also allows saving machine time for the backup of applications principally used for viewing purposes. Please note that enabling this option does not take any modifications made to the project files or attached files into account.
-> This parameter concerns both application and log file backups.
+- **Fazer Cópia de segurança só se o arquivo de dados tiver sido modificado**: quando marcar esta opção, 4D inicia as cópias de segurança programadas apenas se dados tiverem sido adicionados, modificados ou eliminados desde a última cópia de segurança. Senão, o backup programado é cancelado e abandonado até o próximo backup programado. Nenhum erro é gerado, entretanto o diário de cópias de segurança assinala que a cópia de segurança foi adiada. Esta opção também permite poupar tempo de máquina para a cópia de segurança de aplicações utilizados principalmente para visualização. Lembre que ao ativar esta opção não se levam em consideração as modificações realizadas nos arquivos de estrutura ou nos arquivos anexos.
+> Esse parâmetro se refere tanto a aplicações quanto aos arquivos de registro.
 
 - **Delete oldest backup file before/after backup**: This option is only used if the "Keep only the last X backup files" option is checked. It specifies whether 4D should start by deleting the oldest archive before starting the backup (**before** option) or whether the deletion should take place once the backup is completed (**after** option). In order for this mechanism to work, the oldest archive must not have been renamed or moved.
 
