@@ -163,7 +163,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 
 #### Description
 
-The `.exposed` property is <!-- REF DataClassClass.exposed.Summary -->true if the dataclass is exposed in REST<!-- END REF -->.
+La propriété `.exposed` est mise à <!-- REF DataClassClass.exposed.Summary -->true si la dataclass est exposée en REST<!-- END REF -->.
 
 
 <!-- END REF -->
@@ -601,7 +601,7 @@ The entity object is created in memory and is not saved in the database until th
 
 **4D Server**: In client-server, if the primary key of the corresponding table is auto-incremented, it will be calculated when the entity is saved on the server.
 
-All attributes of the entity are initialized with the **null** value.
+Tous les attributs de l'entité sont initialisés avec la valeur **null**.
 
 > Attributes can be initialized with default values if the **Map NULL values to blank values** option is selected at the 4D database structure level.
 
