@@ -722,7 +722,7 @@
         "title": "Compilation"
       },
       "Project/components": {
-        "title": "4D Components Library"
+        "title": "Bibliothèque des composants 4D"
       },
       "Project/creating": {
         "title": "Working with a project"
@@ -928,7 +928,7 @@
     "Build Application|no description given": "Générateur d'application",
     "Web Administration|no description given": "Web Administration",
     "4D Server Administration Window|no description given": "Fenêtre d'administration de 4D Server",
-    "4D Components Library|no description given": "4D Components Library",
+    "4D Components Library|no description given": "Bibliothèque des composants 4D",
     "Client/Server|no description given": "Client/Server",
     "TLS Protocol (HTTPS)|no description given": "TLS Protocol (HTTPS)",
     "Debugging|no description given": "Débogage",
