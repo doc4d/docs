@@ -1,6 +1,6 @@
 ---
 id: components
-title: 4D Components Library
+title: Bibliothèque des composants 4D
 ---
 
 4D comprend une large bibliothèque de composants 4D intégrés. Un [composant](Concepts/components.md) fournit des fonctionnalités supplémentaires à vos projets 4D.
