@@ -38,6 +38,6 @@ Sur GitHub, 4D fournit un [**plug-in SDK**](https://github.com/4d/4D-Plugin-SDK)
 - [**L'assistant de plug-in 4D**](https://github.com/4d/4D-Plugin-SDK/blob/master/4D%20Plugin%20Wizard) est un outil essentiel qui simplifie la tâche de développement des plug-ins 4D. Il écrit le code dont 4D a besoin pour interagir correctement avec un plug-in et le charger, afin de vous concentrer sur votre propre code.
 
 
-## Sharing plug-ins
+## Partager des plug-ins
 
-We encourage you to support the 4D developer community by sharing your plug-ins, for example on the [GitHub platform](https://github.com/search?q=4d-plugin).
+Nous vous encourageons à soutenir la communauté des développeurs 4D en partageant vos plug-ins, notamment sur la [plateforme GitHub](https://github.com/search?q=4d-plugin).
