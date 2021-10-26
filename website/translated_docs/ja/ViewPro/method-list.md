@@ -767,67 +767,67 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 任意の *paramObj* 引数を渡すと、書き出される 4D View Pro オブジェクトの複数のプロパティに加えて、書き出しが完了した際に呼び出されるコールバックメソッド名を定義することができます。
 
 
-| プロパティ              | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                                              |
-| ------------------ | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| format             | text    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。                                  |
-| password           | text    | Microsoft Excel only (optional) - Password used to protect the MS Excel document                                                                                                                                                                                                                                                                                                                |
-| formula            | object  | Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information). |
-| valuesOnly         | boolean | Specifies that only the values from formulas (if any) will be exported.                                                                                                                                                                                                                                                                                                                         |
-| includeFormatInfo  | boolean | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                           |
-| sheetIndex         | number  | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                    |
-| pdfOptions         | object  | PDF only (optional) - Options for pdf export <p><table><tr><th>プロパティ</th><th>タイプ</yh><th>説明</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                          |
-| csvOptions         | object  | CSV only (optional) - Options for csv export <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>Column delimiter. Default: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                          |
-| \<customProperty> | any     | Any custom property that will be available through the $3 parameter in the callback method.                                                                                                                                                                                                                                                                                                     |
+| プロパティ              | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------ | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| format             | text    | (任意) 渡した場合、書き出されるファイルの形式を指定します: ".4VP" (デフォルト)、 ".csv"、".xlsx"、または ".pdf"。 次の定数が利用できます:<li>`vk 4D View Pro format`</li><li>`vk csv format`</li><li>`vk MS Excel format`</li><li>`vk pdf format`</li>4D は必要に応じて適切な拡張子をファイル名に追加します。 指定した形式が *filePath* 引数として渡された拡張子と合致しない場合、指定形式の拡張子は *filePath* 引数の後ろに追加されます。 形式が指定されず、*filePath* 引数にも拡張子がなかった場合には、デフォルトのファイル形式が使用されます。 |
+| password           | text    | Microsoft Excel のみ (任意) - MS Excel ドキュメントの保護に使用されるパスワード。                                                                                                                                                                                                                                                                                                       |
+| formula            | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                        |
+| valuesOnly         | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                              |
+| includeFormatInfo  | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                          |
+| sheetIndex         | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                   |
+| pdfOptions         | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</yh><th>説明</th></tr><tr><td>creator</td><td>text</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>text</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>text</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>text</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>text</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
+| csvOptions         | object  | CSV only (optional) - Options for csv export <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>text</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                         |
+| \<customProperty> | any     | コールバックメソッドの $3 引数を通して利用可能な任意のプロパティ。                                                                                                                                                                                                                                                                                                                            |
 
-**Notes about Excel format**:
+**Excel 形式についての注意**:
 
-* When exporting a 4D View Pro document into a Microsoft Excel-formatted file, some settings may be lost. For example, 4D methods and formulas are not supported by Excel. You can verify other settings with [this list from GrapeCity](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html).
-* Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export.
+* 4D View Pro ドキュメントを Microsoft Excel 形式のファイルに書き出す場合、一部の設定が失われる可能性があります。 たとえば、4Dメソッドとフォーミュラは Excel ではサポートされません。 [GrapeCity にある一覧](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html) にて、その他の設定を確認することができます。
+* このフォーマットへの書き出しは非同期に実行されるため、書き出し後にコードを実行するには、*paramObj* 引数の *formula* プロパティを使用します。
 
 
-**Notes about PDF format**:
+**PDF 形式についての注意**:
 
-* When exporting a 4D View Pro document in PDF, the fonts used in the document are automatically embedded in the PDF file. Only OpenType fonts (.OTF or .TTF files) having a Unicode map can be embedded. If no valid font file is found for a font, a default font is used instead.
-* Exporting in this format is run asynchronously, use the *formula* property of the *paramObj* for code to be executed after the export.
+* 4D View Pro ドキュメントを PDF 形式に書き出す場合、ドキュメントで使用されているフォントは自動的に PDF ファイルに埋め込まれます。 ただし、埋め込み可能なのは Unicode マップを持つ OpenType フォント (.OTF または .TTF ファイル) のみです。 フォントに対して有効なフォントファイルが見つからない場合、デフォルトのフォントが代用されます。
+* このフォーマットへの書き出しは非同期に実行されるため、書き出し後にコードを実行するには、*paramObj* 引数の *formula* プロパティを使用します。
 
-**Notes about CSV format**:
+**CSV 形式についての注意**:
 
-* When exporting a 4D View Pro document to CSV, some settings may be lost, as only the text and values are saved.
-* All the values are saved as double-quoted strings. For more information on delimiter-separated values, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values).
+* 4D View Pro ドキュメントを CSV 形式に書き出す場合、テキストと値のみが保存されるため、一部の設定が失われる可能性があります。
+* すべての値は二重引用符で括られた形で保存されます。 ユーザー定義区切りの値 (DSV) に関する詳細については、こちらの [Wikipedia の記事](https://en.wikipedia.org/wiki/Delimiter-separated_values) (英文) を参照ください。
 
-Once the export operation is finished, `VP EXPORT DOCUMENT` automatically triggers the execution of the method set in the *formula* property of the *paramObj*, if used.
+書き出し操作が完了すると、`VP EXPORT DOCUMENT` は自動的に、*paramObj* オブジェクトの *formula* プロパティに設定されたメソッドをトリガーします (設定されていれば)。
 
-#### Passing a callback method (formula)
+#### コールバックメソッド (フォーミュラ) の渡し方
 
-When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` command allows you to use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command to call a 4D method which will be executed once the export has completed. The callback method will receive the following values in local variables:
+`VP EXPORT DOCUMENT` コマンドに任意の *paramObj* 引数を渡す場合、[`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドを使って、書き出し完了時に実行される 4Dメソッドを呼び出すことができます。 コールバックメソッドは、以下の値をローカル変数として受け取ります:
 
-| 変数 |               | タイプ     | 説明                                                     |
-| -- | ------------- | ------- | ------------------------------------------------------ |
-| $1 |               | text    | The name of the 4D View Pro object                     |
-| $2 |               | text    | The filepath of the exported 4D View Pro object        |
-| $3 |               | object  | A reference to the command's *paramObj*                |
-| $4 |               | object  | An object returned by the method with a status message |
-|    | .success      | boolean | True if export with success, False otherwise.          |
-|    | .errorCode    | integer | Error code. May be returned by 4D or JavaScript.       |
-|    | .errorMessage | text    | Error message. May be returned by 4D or JavaScript.    |
+| 変数 |               | タイプ     | 説明                                    |
+| -- | ------------- | ------- | ------------------------------------- |
+| $1 |               | text    | 4D View Pro オブジェクト名                   |
+| $2 |               | text    | 書き出された 4D View Pro オブジェクトのファイルパス      |
+| $3 |               | object  | コマンドの *paramObj* 引数への参照               |
+| $4 |               | object  | メソッドから返されるステータスメッセージを格納したオブジェクト       |
+|    | .success      | boolean | 書き出しに成功した場合は true 、それ以外の場合は false     |
+|    | .errorCode    | integer | エラーコード。 4D あるいは JavaScript から返されます。   |
+|    | .errorMessage | text    | エラーメッセージ。 4D あるいは JavaScript から返されます。 |
 
 
 #### 例題 1
 
-You want to export the contents of the "VPArea" area to a 4D View Pro document on disk:
+"VPArea" エリアのコンテンツをディスク上の 4D View Pro ドキュメントに書き出します:
 
 ```4d
 var $docPath: Text
 
 $docPath:="C:\\Bases\\ViewProDocs\\MyExport.4VP"
 VP EXPORT DOCUMENT("VPArea";$docPath)
-//MyExport.4VP is saved on your disk
+// MyExport.4VP がディスク上に保存されます
 ```
 
 
 #### 例題 2
 
-You want to export the current sheet in PDF:
+カレントシートを PDF に書き出します:
 
 ```4d
 var $params: Object
@@ -841,18 +841,18 @@ VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 
 #### 例題 3
 
-You want to export a 4D View Pro document in ".xlsx" format and call a method that will launch Microsoft Excel with the document open once the export has completed:
+4D View Pro ドキュメントを ".xlsx" 形式に書き出して、書き出し完了後にそのドキュメントをMicrosoft Excel で開くメソッドを呼び出します:
 
 ```4d
  $params:=New object
  $params.formula:=Formula(AfterExport)
- $params.format:=vp MS Excel format //".xlsx"
+ $params.format:=vp MS Excel format // ".xlsx"
  $params.valuesOnly:=True
 
  VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\convertedfile";$params)
 ```
 
-***AfterExport*** method:
+***AfterExport*** メソッド:
 
 ```4d
  C_TEXT($1;$2)
@@ -871,7 +871,7 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
 
 #### 例題 4
 
-You want to export the current sheet to a `.txt` file with pipe-separated values:
+カレントシートを、縦棒 (|) 区切りの `.txt` ファイルに書き出します:
 
 ![example-export-csv](assets/en/ViewPro/vp-export-document-csv.png)
 
@@ -891,26 +891,26 @@ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv 
 ### VP Export to object<!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *option* : Object} ) : Object<!-- END REF --><!-- REF #_method_.VP Export to object.Params -->| 引数         | タイプ    |    | 説明                      |
 | ---------- | ------ | -- | ----------------------- |
 | vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名 |
-| option     | オブジェクト | -> | Export option           |
+| option     | オブジェクト | -> | 書き出しのオプション              |
 | 戻り値        | オブジェクト | <- | 4D View Pro オブジェクト      |<!-- END REF -->#### 説明
 
-The `VP Export to object` command<!-- REF #_method_.VP Export to object.Summary -->returns the 4D View Pro object attached to the 4D View Pro area *vpAreaName*<!-- END REF -->. You can use this command for example to store the 4D View Pro area in a 4D database object field.
+`VP Export to object` コマンドは、<!-- REF #_method_.VP Export to object.Summary -->*vpAreaName* で指定した 4D View Pro エリアに関連付けられている 4D View Pro オブジェクトを返します<!-- END REF -->。 このコマンドによって、たとえば 4D View Pro エリアを 4Dデータベースのオブジェクトフィールドに保存することができます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-In the *option* parameter, you can pass the following export option, if required:
+*option* 引数として、必要に応じて以下の書き出しオプションを渡すことができます:
 
 
-| プロパティ             | タイプ     | 説明                                                                                                                                                                                                                                        |
-| ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| includeFormatInfo | boolean | True to include formatting information, false otherwise (default is **true**). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time. |
+| プロパティ             | タイプ     | 説明                                                                                                                                                        |
+| ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| includeFormatInfo | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは **true**)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。 |
 
-For more information on 4D View Pro objects, please refer to the [4D View Pro object](configuring.md#4d-view-pro-object) paragraph.
+4D View Pro オブジェクトについての詳細は [4D View Pro オブジェクト](configuring.md#4d-view-pro-オブジェクト) を参照ください。
 
 
 #### 例題 1
 
-You want to get the "version" property of the current 4D View Pro area:
+4D View Pro エリアの "version" プロパティを取得します:
 
 ```4d
 var $vpAreaObj : Object
@@ -923,7 +923,7 @@ $vpVersion:=$vpAreaObj.version
 
 #### 例題 2
 
-You want to export the area, excluding formatting information:
+フォーマット (書式) 情報を含めてエリアを書き出します:
 
 ```4d
 var $vpObj : Object
@@ -934,42 +934,42 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 
 ## F
 
-### VP Find<!-- REF #_method_.VP Find.Syntax -->**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ) : Object<br>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object } ) : Object<br>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ; *replaceValue* : Text ) : Object<!-- END REF --><!-- REF #_method_.VP Find.Params -->| 引数              | タイプ    |    | 説明                                    |
-| --------------- | ------ | -- | ------------------------------------- |
-| rangeObj        | オブジェクト | -> | レンジオブジェクト                             |
-| searchValue     | テキスト   | -> | Search value                          |
-| searchCondition | オブジェクト | -> | Object containing search condition(s) |
-| replaceValue    | テキスト   | -> | Replacement value                     |
-| 戻り値             | オブジェクト | <- | レンジオブジェクト                             |<!-- END REF -->#### 説明
-The `VP Find` command<!-- REF #_method_.VP Find.Summary -->searches the *rangeObj* for the *searchValue*<!-- END REF -->. Optional parameters can be used to refine the search and/or replace any results found.
+### VP Find<!-- REF #_method_.VP Find.Syntax -->**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ) : Object<br>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object } ) : Object<br>**VP Find** (  *rangeObj* : Object ; *searchValue* : Text ; *searchCondition* : Object ; *replaceValue* : Text ) : Object<!-- END REF --><!-- REF #_method_.VP Find.Params -->| 引数              | タイプ    |    | 説明              |
+| --------------- | ------ | -- | --------------- |
+| rangeObj        | オブジェクト | -> | レンジオブジェクト       |
+| searchValue     | テキスト   | -> | 検索値             |
+| searchCondition | オブジェクト | -> | 検索条件を格納したオブジェクト |
+| replaceValue    | テキスト   | -> | 置き換え値           |
+| 戻り値             | オブジェクト | <- | レンジオブジェクト       |<!-- END REF -->#### 説明
+`VP Find` コマンドは、<!-- REF #_method_.VP Find.Summary -->*rangeObj* に指定したレンジ内で *searchValue* に指定した値を検索します<!-- END REF -->。 任意の引数を渡すことで、検索条件を詳細に指定したり、検索結果を置換したりすることができます。
 
-In the *rangeObj* parameter, pass an object containing a range to search.
+*rangeObj* 引数として、検索対象のレンジを格納したオブジェクトを渡します。
 
-The *searchValue* parameter lets you pass the text to search for within the *rangeObj*.
+*searchValue* 引数として、*rangeObj* に指定したレンジ内で検索するテキスト値を渡します。
 
-You can pass the optional *searchCondition* parameter to specify how the search is performed. 以下のオブジェクトプロパティがサポートされています:
-
-
-| プロパティ       | タイプ | 説明                                                                                                                                                                                                                   |
-| ----------- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| afterColumn | 整数  | The number of the column just before the starting column of the search. If the *rangeObj* is a combined range, the column number given must be from the first range. Default value: -1 (beginning of the *rangeObj*) |
-| afterRow    | 整数  | The number of the row just before the starting row of the search. If the *rangeObj* is a combined range, the row number given must be from the first range. Default value: -1 (beginning of the *rangeObj*)          |
-| all         | ブール | <li>True - All cells in *rangeObj* corresponding to *searchValue* are returned</li><li>False - (default value) Only the first cell in *rangeObj* corresponding to *searchValue* is returned</li>                                                                                                                                                                 |
-| flags       | 整数  | <table><tr><td>`vk find flag exact match`</td><td>The entire content of the cell must completely match the search value</td></tr><tr><td>`vk find flag ignore case`</td><td>Capital and lower-case letters are considered the same. Ex: "a" is the same as "A".</td></tr><tr><td>`vk find flag none`</td><td>no search flags are considered (default)</td></tr><tr><td>`vk find flag use wild cards`</td><td>Wildcard characters (\*,?) can be used in the search string. Wildcard characters can be used in any string comparison to match any number of characters:<li>\* for zero or multiple characters (for example, searching for "bl*"  can find "bl", "black", or "blob")</li><li>? for a single character (for example, searching for "h?t" can find "hot", or "hit"</li></td></tr></table><p>These flags can be combined. たとえば:<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code></p>                                                                                                    |
-| order       | 整数  | <table><tr><td>`vk find order by columns`</td><td>The search is performed by columns. Each row of a column is searched before the search continues to the next column.</td></tr><tr><td>`vk find order by rows`</td><td>The search is performed by rows. Each column of a row is searched before the search continues to the next row (default)</td></tr></table>                                                                                                                                                                                           |
-| target      | 整数  | <table><tr><td>`vk find target formula`</td><td>The search is performed in the cell formula</td></tr><tr><td>`vk find target tag`</td><td>The search is performed in the cell tag</td></tr><tr><td>`vk find target text`</td><td>The search is performed in the cell text (default)</td></tr></table><p>These flags can be combined. たとえば:<p> <code>$search.target:=vk find target formula+vk find target text</code></p>                                                                                                    |
-
-In the optional *replaceValue* parameter, you can pass text to take the place of any instance of the text in *searchValue* found in the *rangeObj*.
+任意の *searchCondition* 引数を渡すことで、検索がどのように実行されるかを指定することができます。 以下のオブジェクトプロパティがサポートされています:
 
 
-#### Returned Object
+| プロパティ       | タイプ | 説明                                                                                                          |
+| ----------- | --- | ----------------------------------------------------------------------------------------------------------- |
+| afterColumn | 整数  | 検索を開始するカラムの直前のカラムの番号。 *rangeObj* 引数が統合されたレンジの場合、渡されるカラムの番号は最初のレンジのものでなければなりません。 デフォルト値: -1 (*rangeObj* の最初) |
+| afterRow    | 整数  | 検索を開始する行の直前の行番号。 *rangeObj* 引数が統合されたレンジの場合、渡される行番号は最初のレンジのものでなければなりません。 デフォルト値: -1 (*rangeObj* の最初)         |
+| all         | ブール | <li>true - *rangeObj* 内で *searchValue* の値に合致するセルはすべて返されます。</li><li>false - (デフォルト値) *rangeObj* 内で *searchValue* の値に合致する最初のセルのみが返されます。</li>                                                        |
+| flags       | 整数  | <table><tr><td>`vk find flag exact match`</td><td>セルの中身全体が検索値と完全に一致する必要があります</td></tr><tr><td>`vk find flag ignore case`</td><td>文字の大小は区別されません。 例: "a" と "A" は同じとみなされます。</td></tr><tr><td>`vk find flag none`</td><td>検索フラグは指定されていません (デフォルト)。</td></tr><tr><td>`vk find flag use wild cards`</td><td>検索文字列においてワイルドカード文字 (\*,?) を使用できます。 ワイルドカードは、すべての文字列の比較に使用することができ、ワイルドカードによって置き換わる文字の数は指定されません:<li>\* は 0 から複数文字に使用可能です (例: "bl*" を検索した場合、"bl"、"black"、"blob" などが合致します)。</li><li>? は単一文字に使用可能です (例: "h?t" を検索した場合、"hot"、"hit" などが合致します)。</li></td></tr></table><p>フラグは組み合わせることができます。 たとえば:<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code></p>     |
+| order       | 整数  | <table><tr><td>`vk find order by columns`</td><td>検索がカラムごとに実行されます。 カラムの各行が検索されたあとに次のカラムへと移動します。</td></tr><tr><td>`vk find order by rows`</td><td>検索が行ごとに実行されます。 行の各カラムが検索されたあとに次の行へと移動します (デフォルト)。</td></tr></table>                                                                                  |
+| target      | 整数  | <table><tr><td>`vk find target formula`</td><td>セルフォーミュラ内で検索がおこなわれます。</td></tr><tr><td>`vk find target tag`</td><td>セルタグ内で検索がおこなわれます。</td></tr><tr><td>`vk find target text`</td><td>セルテキスト内で検索がおこなわれます (デフォルト)。</td></tr></table><p>フラグは組み合わせることができます。 たとえば:<p> <code>$search.target:=vk find target formula+vk find target text</code></p>     |
 
-The function returns a range object describing each search value that was found or replaced. An empty range object is returned if no results are found.
+任意の *replaceValue* 引数として、*rangeObj* 内で見つかった *searchValue* の値のテキストを置換するテキストを渡すことができます。
+
+
+#### 返されるオブジェクト
+
+この関数は、検出または置換された検索値の詳細を格納したレンジオブジェクトを返します。 何も見つからなかった場合には、空のレンジオブジェクトが返されます。
 
 
 #### 例題 1
 
-To find the first cell containing the word "Total":
+"Total" という単語が入っている最初のセルを見つけるには:
 
 ```4d
 var $range;$result : Object
@@ -982,7 +982,7 @@ $result:=VP Find($range;"Total")
 
 #### 例題 2
 
-To find "Total" and replace it with "Grand Total":
+"Total" のセルを検出し、それを "Grand Total" で置き換えるには:
 
 ```4d
 var $range;$condition;$result : Object
@@ -991,13 +991,13 @@ $range:=VP All("ViewProArea")
 
 $condition:=New object
 $condition.target:=vk find target text
-$condition.all:=True //Search entire document
+$condition.all:=True // ドキュメント全体を検索します
 $condition.flags:=vk find flag exact match
 
-  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
+  // カレントシートにおいて "Total" のみを格納しているセルを "Grand Total" で置き換えます
 $result:=VP Find($range;"Total";$condition;"Grand Total")
 
-  // Check for empty range object 
+  // 戻り値のレンジオブジェクトが空かどうかをチェックします
 If($result.ranges.length=0)
     ALERT("No result found")
 Else
@@ -1012,15 +1012,15 @@ End if
 | ---------- | ---- | -- | ----------------------- |
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |<!-- END REF -->#### 説明
 
-The `VP FLUSH COMMANDS` command<!-- REF #_method_.VP FLUSH COMMANDS.Summary -->immediately executes stored commands and clears the command buffer<!-- END REF -->.
+`VP FLUSH COMMANDS` コマンドは、<!-- REF #_method_.VP FLUSH COMMANDS.Summary -->保存されているコマンドをただちに実行し、コマンドバッファをクリアします<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-In order to increase performance and reduce the number of requests sent, the 4D View Pro commands called by the developer are stored in a command buffer. When called, `VP FLUSH COMMANDS` executes the commands as a batch when leaving the method and empties the contents of the command buffer.
+パフォーマンス向上と、送信リクエスト数を抑えるため、デベロッパーが呼び出した 4D View Pro コマンドはコマンドバッファに保存されます。 `VP FLUSH COMMANDS` は呼び出されると、メソッド終了時にコマンドをバッチとして実行し、コマンドバッファのコンテンツを空にします。
 
 #### 例題
 
-You want to trace the execution of the commands and empty the command buffer:
+コマンドの実行をトレースし、コマンドバッファを空にします:
 
 ```4d
  VP SET TEXT VALUE(VP Cell("ViewProArea1";10;1);"INVOICE")
@@ -1033,25 +1033,25 @@ You want to trace the execution of the commands and empty the command buffer:
 
 
 
-### VP Font to object<!-- REF #_method_.VP Font to object.Syntax -->**VP Font to object** (  *font* : Text ) : Object<!-- END REF --><!-- REF #_method_.VP Font to object.Params -->| 引数   | タイプ  |    | 説明                    |
-| ---- | ---- | -- | --------------------- |
-| font | テキスト | -> | Font shorthand string |<!-- END REF -->#### 説明
+### VP Font to object<!-- REF #_method_.VP Font to object.Syntax -->**VP Font to object** (  *font* : Text ) : Object<!-- END REF --><!-- REF #_method_.VP Font to object.Params -->| 引数   | タイプ  |    | 説明              |
+| ---- | ---- | -- | --------------- |
+| font | テキスト | -> | フォントのショートハンド文字列 |<!-- END REF -->#### 説明
 
-The `VP Font to object` utility command<!-- REF #_method_.VP Font to object.Summary -->returns an object from a font shorthand string<!-- END REF -->. This object can then be used to set or get font property settings via object notation.
+`VP Font to object` ユーティリティコマンドは、<!-- REF #_method_.VP Font to object.Summary -->フォントのショートハンド文字列からオブジェクトを返します<!-- END REF -->。 このオブジェクトはその後、オブジェクト記法を通してフォントプロパティ設定を取得・設定するのに使用することができます。
 
-In the *font* parameter, pass a font shorthand string to specify the different properties of a font (e.g., "12 pt Arial"). You can learn more about font shorthand strings [in this page](https://www.w3schools.com/cssref/pr_font_font.asp) for example.
+*font* には、フォントのショートハンド文字列を渡してフォントのプロパティを指定します (例: "12 pt Arial")。 フォントのショートハンド文字列についての詳細は、[こちら](https://www.w3schools.com/cssref/pr_font_font.asp) を参照ください。
 
-The returned object contains defined font attributes as properties. For more information about the available properties, see the [VP Object to font](#vp-object-to-font) command.
+返されるオブジェクトには、フォント属性がプロパティとして格納されています。 利用可能なプロパティの詳細については、[VP Object to font](#vp-object-to-font) コマンドを参照ください。
 
 #### 例題 1
 
-This code:
+以下のコードを実行すると:
 
 ```4d
 $font:=VP Font to object("16pt arial")
 ```
 
-will return the following $font object:
+以下の $font オブジェクトが返されます:
 
 ```4d
 {
@@ -1064,7 +1064,7 @@ size:16pt
 
 #### 例題 2
 
-See example for [`VP Object to font`](#vp-object-to-font).
+[`VP Object to font`](#vp-object-to-font) の例題を参照ください。
 
 
 
@@ -1077,9 +1077,9 @@ See example for [`VP Object to font`](#vp-object-to-font).
 | ---------- | ------ | -- | --------------------------- |
 | vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名     |
 | sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
-| 戻り値        | オブジェクト | <- | Range object of single cell |<!-- END REF -->#### 説明
+| 戻り値        | オブジェクト | <- | 単一セルのレンジオブジェクト              |<!-- END REF -->#### 説明
 
-The `VP Get active cell` command<!-- REF #_method_.VP Get active cell.Summary -->returns a new range object referencing the cell which has the focus and where new data will be entered (the active cell)<!-- END REF -->.
+`VP Get active cell` コマンドは、<!-- REF #_method_.VP Get active cell.Summary -->フォーカスを持ち、データ入力されようとしてるセル (アクティブセル) を参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -1091,12 +1091,12 @@ The `VP Get active cell` command<!-- REF #_method_.VP Get active cell.Summary --
 
 ![](assets/en/ViewPro/cmd_vpGetActiveCell.PNG)
 
-The following code will retrieve the coordinates of the active cell:
+以下のコードを実行するとアクティブセルの座標が取得できます:
 
 ```4d
 $activeCell:=VP Get active cell("myVPArea")
 
-  //returns a range object containing: 
+  // 返されるレンジオブジェクトには以下が格納されています:
   //$activeCell.ranges[0].column=3
   //$activeCell.ranges[0].row=4
   //$activeCell.ranges[0].sheet=0
@@ -1106,33 +1106,33 @@ $activeCell:=VP Get active cell("myVPArea")
 
 
 
-### VP Get cell style<!-- REF #_method_.VP Get cell style.Syntax -->**VP Get cell style** (  *rangeObj* : Object ) : Object<!-- END REF --><!-- REF #_method_.VP Get cell style.Params -->| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | レンジオブジェクト    |
-| 戻り値      | オブジェクト | <- | Style object |<!-- END REF -->#### 説明
+### VP Get cell style<!-- REF #_method_.VP Get cell style.Syntax -->**VP Get cell style** (  *rangeObj* : Object ) : Object<!-- END REF --><!-- REF #_method_.VP Get cell style.Params -->| 引数       | タイプ    |    | 説明         |
+| -------- | ------ | -- | ---------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト  |
+| 戻り値      | オブジェクト | <- | スタイルオブジェクト |<!-- END REF -->#### 説明
 
-The `VP Get cell style` command<!-- REF #_method_.VP Get cell style.Summary -->returns a [style object](configuring.md#style-objects) for the first cell in the *rangeObj*<!-- END REF -->.
+`VP Get cell style` コマンドは、<!-- REF #_method_.VP Get cell style.Summary -->*rangeObj* 引数で指定したレンジの最初のセルの [スタイルオブジェクト](configuring.md#スタイルオブジェクト) を返します<!-- END REF -->。
 
-In *rangeObj*, pass a range containing the style to retrieve.
+*rangeObj* 引数で、スタイルを取得するレンジを指定します。
 
-*   If *rangeObj* contains a cell range, the cell style is returned.
-*   If *rangeObj* contains a range that is not a cell range, the style of the first cell in the range is returned.
-*   If *rangeObj* contains several ranges, only the style of the first cell in the first range is returned.
+*   *rangeObj* 引数としてセルレンジを渡した場合、セルのスタイルが返されます。
+*   *rangeObj* 引数として、セルレンジではないレンジを渡した場合、そのレンジ内の最初のセルのスタイルが返されます。
+*   *rangeObj* 引数に複数のレンジが含まれている場合、最初のレンジの最初のセルのスタイルのみが返されます。
 
 
 #### 例題
 
-To get the details about the style in the selected cell (B2):
+選択されたセル (B2) のスタイルの詳細を取得します:
 
 ![](assets/en/ViewPro/cmd_vpGetCellStyle.PNG)
 
-This code:
+以下のコードを実行すると:
 
 ```4d
 $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 ```
 
-... will return this object:
+... 以下のオブジェクトが返されます:
 
 ```4d
 {
@@ -1244,7 +1244,7 @@ To get the details about the default style for this document:
 
 ![](assets/en/ViewPro/cmd_vpGetDefaultStyle.PNG)
 
-This code:
+以下のコードを実行すると:
 
 ```4d
 $defaultStyle:=VP Get default style("myDoc")
@@ -1303,7 +1303,7 @@ You can define where to get the formula in *scope* using either the sheet index 
 *   `vk workbook`
 
 
-##### Returned Object
+##### 返されるオブジェクト
 
 戻り値のオブジェクトには、以下のプロパティが格納されています:
 
@@ -1452,7 +1452,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet (cou
 
 #### 例題
 
-This code:
+以下のコードを実行すると:
 
 ```4d
 $pinfo:=VP Get print info("ViewProArea")
@@ -1929,8 +1929,8 @@ The optional *paramObj* parameter allows you to define properties for the import
 | password   |                 | text   | Microsoft Excel only (optional) - The password used to protect a MS Excel document.                                                                                                                                                                      |
 | csvOptions |                 | object | options for csv import                                                                                                                                                                                                                                   |
 |            | range           | object | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                            |
-|            | rowDelimiter    | text   | Row delimiter. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                          |
-|            | columnDelimiter | text   | Column delimiter. Default: ","                                                                                                                                                                                                                           |
+|            | rowDelimiter    | text   | 行の区切り文字。 If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                                |
+|            | columnDelimiter | text   | カラムの区切り文字。 デフォルト: ","                                                                                                                                                                                                                                    |
 
 > For more information on the CSV format and delimiter-separated values in general, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
 
@@ -2814,10 +2814,10 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 
 
-### VP SET CELL STYLE<!-- REF #_method_.VP SET CELL STYLE.Syntax -->**VP SET CELL STYLE** ( *rangeObj* : Object  ; *styleObj*  : Object)<!-- END REF --><!-- REF #_method_.VP SET CELL STYLE.Params -->| 引数       | タイプ    |    | 説明           |
-| -------- | ------ | -- | ------------ |
-| rangeObj | オブジェクト | -> | レンジオブジェクト    |
-| styleObj | オブジェクト | -> | Style object |<!-- END REF -->#### 説明
+### VP SET CELL STYLE<!-- REF #_method_.VP SET CELL STYLE.Syntax -->**VP SET CELL STYLE** ( *rangeObj* : Object  ; *styleObj*  : Object)<!-- END REF --><!-- REF #_method_.VP SET CELL STYLE.Params -->| 引数       | タイプ    |    | 説明         |
+| -------- | ------ | -- | ---------- |
+| rangeObj | オブジェクト | -> | レンジオブジェクト  |
+| styleObj | オブジェクト | -> | スタイルオブジェクト |<!-- END REF -->#### 説明
 
 The `VP SET CELL STYLE` command<!-- REF #_method_.VP SET CELL STYLE.Summary -->applies the style(s) defined in the *styleObj* to the cells defined in the *rangeObj*<!-- END REF -->.
 
@@ -3083,7 +3083,7 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 ### VP SET DEFAULT STYLE<!-- REF #_method_.VP SET DEFAULT STYLE.Syntax -->**VP SET DEFAULT STYLE** ( *vpAreaName* : Text ; *styleObj* : Object { ; *sheet* : Integer } )<!-- END REF --><!-- REF #_method_.VP SET DEFAULT STYLE.Params -->| 引数         | タイプ    |    | 説明                                    |
 | ---------- | ------ | -- | ------------------------------------- |
 | vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名               |
-| styleObj   | オブジェクト | -> | Style object                          |
+| styleObj   | オブジェクト | -> | スタイルオブジェクト                            |
 | sheet      | 整数     | -> | Sheet index (default = current sheet) |<!-- END REF -->#### 説明
 
 The `VP SET DEFAULT STYLE` command<!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->defines the style in the *styleObj* as the default style for a *sheet*<!-- END REF -->.
