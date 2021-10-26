@@ -117,10 +117,10 @@
         "title": "Restaurar"
       },
       "Backup/settings": {
-        "title": "Backup Settings"
+        "title": "Parâmetros da cópia de segurança"
       },
       "Concepts/about": {
-        "title": "About the 4D Language"
+        "title": "Sobre a linguagem 4D"
       },
       "Concepts/arrays": {
         "title": "Arrays"
@@ -863,7 +863,7 @@
         "title": "Administration"
       },
       "WebServer/webServerConfig": {
-        "title": "Configuration"
+        "title": "Configuração"
       },
       "WebServer/webServerObject": {
         "title": "Web Server object"

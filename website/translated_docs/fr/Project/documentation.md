@@ -191,7 +191,7 @@ The [documentation](https://doc.4d.com) of the command ....
 ```
 [![logo blog 4D avec lien](https://blog.4d.com/wp-content/uploads/2016/09/logoOrignal-1.png "4D blog logo")](https://blog.4d.com)
 
-> For more information, see the [GitHub Markdown guide](https://guides.github.com/features/mastering-markdown/).
+> Pour plus d'informations, consultez le [guide Markdown de GitHub](https://guides.github.com/features/mastering-markdown/).
 
 
 
