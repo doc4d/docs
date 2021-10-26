@@ -247,14 +247,14 @@ End if
 **.isGuest()** : Boolean<!-- END REF -->
 
 <!-- REF #SessionClass.isGuest().Params -->
-| Parámetros | Tipo     |    | Descripción                                     |
-| ---------- | -------- |:--:| ----------------------------------------------- |
-| Resultado  | Booleano | <- | True if session is a Guest one, False otherwise |
+| Parámetros | Tipo     |    | Descripción                                                    |
+| ---------- | -------- |:--:| -------------------------------------------------------------- |
+| Resultado  | Booleano | <- | True si la sesión es una sesión Guest, False en caso contrario |
 <!-- END REF -->
 
 #### Descripción
 
-The `.isGuest()` function <!-- REF #SessionClass.isGuest().Summary -->returns True if the session is a Guest session (i.e. it has no privileges)<!-- END REF -->.
+La función `.isGuest()` <!-- REF #SessionClass.isGuest().Summary -->devuelve True si la sesión es una sesión Guest (es decir, no tiene privilegios)<!-- END REF -->.
 
 
 #### Ejemplo
@@ -287,7 +287,7 @@ End if
 <!-- REF #SessionClass.setPrivileges().Params -->
 | Parámetros | Tipo       |    | Descripción                                                |
 | ---------- | ---------- |:--:| ---------------------------------------------------------- |
-| privilege  | Texto      | -> | Privilege name                                             |
+| privilege  | Texto      | -> | Nombre del privilegio                                      |
 | privileges | Collection | -> | Collection of privilege names                              |
 | parámetros | Objeto     | -> | Object with a "privileges" property (string or collection) |
 <!-- END REF -->
@@ -397,7 +397,7 @@ The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the
 
 This property is an empty string by default. It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
 
-This property is **read only**. 
+Esta propiedad es**de sólo lectura**. 
 
 
 
