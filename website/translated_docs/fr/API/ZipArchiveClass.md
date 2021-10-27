@@ -70,7 +70,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
 
 - *folderToZip* : passez un `4D.Folder` à compresser. Dans ce cas, le paramètre *options* vous permet de compresser uniquement le contenu du dossier (c'est-à-dire d'exclure le dossier parent). Par défaut, l'archive `ZIP Create archive` compressera le dossier et son contenu, de sorte que l'opération de décompression recrée un dossier. Si vous souhaitez que l'opération de décompression ne restaure que le contenu du dossier, passez la constante `ZIP Without enclosing folder` dans le paramètre *options*.
 
-- *zipStructure* : passez un objet décrivant l'objet ZIP archive. Les propriétés suivantes sont disponibles pour définir la structure :<li>a collection of `4D.File` or `4D.Folder` objects or</li><li>a collection of objects with the following properties:</li><table>
+- *zipStructure* : passez un objet décrivant l'objet ZIP archive. Les propriétés suivantes sont disponibles pour définir la structure :<li>une collection d'objets `4D.File` ou `4D.Folder` ou</li><li>une collection d'objets dont les propriétés sont les suivantes :</li><table>
   <tr>
     <td>
       Propriété
@@ -91,10 +91,10 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
     </td>
     
     <td>
-      4D.File or 4D.Folder
+      4D.File ou 4D.Folder
       
       <td>
-        File or Folder
+        File ou Folder
       </td></tr>
       
       <tr>
@@ -107,7 +107,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
         </td>
         
         <td>
-          (optional) - Specify a relative filepath to change the organization of the contents of the archive
+          (facultatif) - Indiquer un chemin de fichier relatif pour modifier l'organisation du contenu de l'archive
         </td>
       </tr>
       
@@ -121,7 +121,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
         </td>
         
         <td>
-          (optional) - `ZIP Ignore invisible files` or 0 to compress all of the file
+          (facultatif) - `ZIP Ignore invisible files` ou 0 pour compresser tout le fichier
         </td>
       </tr></table></html>
     </td>
@@ -137,7 +137,7 @@ You can pass a 4D.File, a 4D.Folder, or a zip structure object as first paramete
     </td>
     
     <td>
-      A callback formula that will receive the compression progress (0 - 100) in $1.
+      Une formule de rétro-appel qui recevra la progression de la compression (0 à 100) dans $1.
     </td>
   </tr></tbody> 
 </table>
