@@ -458,21 +458,21 @@ ALERT("Etes*vous sûr?";"Oui, je le suis") //2 paramètres
 ALERT("Temps écoulé") //1 paramètre
 ```
 
-4D methods and functions also accept such optional parameters. You can declare any number of parameters. If you call a method or function with less parameters than declared, missing parameters are processed as default values in the called code, [according to their type](data-types.md#default-values). Par exemple :
+Les méthodes et les fonctions 4D acceptent également de ces paramètres optionnels. Vous pouvez déclarer un nombre quelconque de paramètres. Si vous appelez une méthode ou une fonction avec moins de paramètres que ceux déclarés, les paramètres manquants sont traités comme des valeurs par défaut dans le code appelé, [en fonction de leur type](data-types.md#default-values). Par exemple :
 
 ```4d
-// "concate" function of myClass
+// fonction "concate" de myClass
 Function concate ($param1 : Text ; $param2 : Text)->$result : Text
 $result:=$param1+" "+$param2
 ```
 ```4d
-  // Calling method
+  // Méthode appelante
  $class:=cs.myClass.new()
  $class.concate("Hello") // "Hello "
- $class.concate() // Displays " "
+ $class.concate() // Affiche " "
 ```
 
-> You can also call a method or function with more parameters than declared. They will be available within the called code through the [${N} syntax](#parameter-indirection-n).
+> Vous pouvez également appeler une méthode ou une fonction avec plus de paramètres que ceux déclarés. Ils seront disponibles dans le code appelé grâce à la [syntaxe ${N}](#parameter-indirection-n).
 
 A l'aide de la commande `Count parameters` contenue dans la méthode appelée, vous pouvez détecter le nombre de paramètres et effectuer des opérations différentes en fonction de ce nombre.
 
