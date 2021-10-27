@@ -65,7 +65,7 @@ Le message sera affiché sous forme d’alerte sur les postes distants.
 
 ### Visualiser process
 
-This button can be used to directly show the processes of the user(s) selected on the [**Processes** page](processes.md) of the window. Lorsque vous cliquez sur ce bouton, 4D Server bascule sur la page Process et pré-remplit la zone de recherche/filtrage de cette page avec les noms des utilisateurs sélectionnés.
+Ce bouton permet de visualiser directement les process du ou des utilisateur(s) sélectionné(s) dans la [page **Process**](processes.md) de la fenêtre d’administration. Lorsque vous cliquez sur ce bouton, 4D Server bascule sur la page Process et pré-remplit la zone de recherche/filtrage de cette page avec les noms des utilisateurs sélectionnés.
 
 ### Déconnecter
 
