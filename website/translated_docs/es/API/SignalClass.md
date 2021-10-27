@@ -201,7 +201,7 @@ This property is **read-write**.
 </details>
 
 <!-- REF #SignalClass.signaled.Syntax -->
-**.signaled** : Boolean<!-- END REF -->
+**.signaled**: Boolean<!-- END REF -->
 
 #### Descripción
 
