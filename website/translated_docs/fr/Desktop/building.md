@@ -14,7 +14,7 @@ Le générateur d'applications vous permet de :
 *   Générer des applications client-serveur avec mise à jour automatique des composants client et serveur.
 *   Enregistrer vos paramètres de génération pour une utilisation ultérieure (bouton *Enregistrer les paramètres*).
 
-> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. Vous pouvez néanmoins créer des applications spécifiques qui prennent en charge les modifications locales en utilisant la clé XML du `PackProject` (voir [doc.4d.com](https://doc.4d.com)).
+> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. A noter que l'utilisation de commandes ou de fonctions qui modifient les fichiers sources (telles que `CREATE INDEX` ou `CREATE TABLE` (SQL)) n'est pas possible par défaut dans les applications compilées. Vous pouvez néanmoins créer des applications spécifiques qui prennent en charge les modifications locales en utilisant la clé XML du `PackProject` (voir [doc.4d.com](https://doc.4d.com)).
 
 
 ## Aperçu du générateur d'application
@@ -361,15 +361,15 @@ The `.4darchive` is copied at the following location:
 
 You can check the **Allow automatic update...** option for client applications running on the concurrent platform. This option is only enabled if:
 
-- the **Build server application** option is checked,
-- the **Allow automatic update...** option for client applications running on the current platform is checked.
+- l'option **Build server application** est cochée,
+- l'option **Autoriser la mise à jour automatique...** pour les applications clientes exécutées sur la plate-forme actuelle est cochée.
 
 This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. The file to select depends on the current server platform:
 
-| Current server platform | Required file                                                | Détails                                                                                                                                                                    |
-| ----------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| macOS                   | Windows 4D Volume Desktop *or* Windows client update archive | By default, you select the `4D Volume Desktop` application for Windows. To select a `.4darchive` file previously built on Windows, press **Shift** while clicking on [...] |
-| Sous Windows            | macOS client update archive                                  | Select a signed `.4darchive` file previously built on macOS                                                                                                                |
+| Plateforme du serveur courant | Fichier requis                                               | Détails                                                                                                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| macOS                         | Windows 4D Volume Desktop *ou* Windows client update archive | Par défaut, sélectionnez l'application `4D Volume Desktop` pour Windows. Pour sélectionner un fichier `.4darchive` précédemment créé sur Windows, appuyez sur la touche **Shift** tout en cliquant sur [...] |
+| Sous Windows                  | macOS client update archive                                  | Sélectionnez un fichier `.4darchive` signé, précédemment créé sur macOS                                                                                                                                      |
 
 
 You can build specific a `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option. 
