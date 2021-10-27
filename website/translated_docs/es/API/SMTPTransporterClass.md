@@ -3,13 +3,13 @@ id: SMTPTransporterClass
 title: SMTPTransporter
 ---
 
-The `SMTPTransporter` class allows you to configure SMTP connections and send emails through *SMTP transporter* objects.
+La clase `SMTPTransporter` permite configurar conexiones SMTP y enviar correos electrónicos a través de objetos *SMTP transporter*.
 
 
 
-### SMTP Transporter object
+### Objeto SMTP Transporter
 
-SMTP Transporter objects are instantiated with the [SMTP New transporter](#smtp-new-transporter) command. They provide the following properties and functions:
+Los objetos SMTP Transporter se instancian con el comando [SMTP New transporter](#smtp-new-transporter). Ofrecen las siguientes propiedades y funciones:
 
 
 |                                                                                                                                                                                                                                |
@@ -48,7 +48,7 @@ SMTP Transporter objects are instantiated with the [SMTP New transporter](#smtp-
 | Parámetros | Tipo               |    | Descripción                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------- |
 | server     | Objeto             | -> | Información del servidor de correo                  |
-| Resultado  | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object) |
+| Resultado  | 4D.SMTPTransporter | <- | [Objeto SMTP transporter](#smtp-transporter-object) |
 <!-- END REF -->
 
 
@@ -128,7 +128,7 @@ The function returns a [**SMTP transporter object**](#smtp-transporter-object). 
 | Parámetros | Tipo               |    | Descripción                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------- |
 | server     | Objeto             | -> | Información del servidor de correo                  |
-| Resultado  | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object) |
+| Resultado  | 4D.SMTPTransporter | <- | [Objeto SMTP transporter](#smtp-transporter-object) |
 <!-- END REF -->
 
 #### Descripción
