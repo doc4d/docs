@@ -189,13 +189,19 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
 
 それぞれのイベントに対して、以下のフィールドが記録されます:
 
-| カラム番号 | フィールド名          | 説明                             |
-| ----- | --------------- | ------------------------------ |
-| 1     | sequence_number | ログセッション内で固有かつシーケンシャルなオペレーション番号 |
-
-
-|2| time| ISO 8601フォーマットの日付と時間 (YYYY-MM-DDThh:mm:ss.mmm) | |3| ProcessID|プロセスID| |4| unique_processID|固有プロセスID| |5| stack_level|スタックレベル |6| operation_type| ログオペレーションタイプ。 この値は絶対値を取ることがあります:<p><ol><li>コマンド</li><li>メソッド (プロジェクトメソッド、データベースメソッド、等)</li><li>メッセージ ([LOG EVENT](https://doc.4d.com/4dv19/help/command/ja/page667.html) コマンドによって送信されたもののみ)</li><li>プラグインメッセージ</li><li>プラグインイベント</li><li>プラグインコマンド</li><li>プラグインコールバック</li><li>タスク</li><li>メンバーメソッド (コレクションまたはオブジェクトに割り当てられているメソッド)</li></ol></p>スタックレベルを閉じる時には、`operation_type`、`operation` および `operation_parameters` カラムには `stack_opening_sequence_number` カラムに記録された開始スタックレベルと同じ値が記録されます。 たとえば:<p><ol><li>121  15:16:50:777  5  8  1  2 CallMethod Parameters 0</li><li>122  15:16:50:777  5  8  2  1 283  0</li><li>123  15:16:50:777  5  8  2  1 283  0 122 3</li><li>124  15:16:50:777  5  8  1  2 CallMethod Parameters 0 121 61</li></ol></p>1行目と 2行目はスタックレベルを開き、3行目と 4行目はスタックレベルを閉じます。 6、7、8カラム目の値は、終了スタックレベル行において繰り返されます。 10カラム目にはスタックレベル開始番号、つまり 3行目の 122 と 4行目の 121 が格納されます。| |7|operation|以下のいずれかを表す可能性があります (オペレーションタイプによる):<li>ランゲージコマンドID (type=1 の場合)</li><li>メソッド名 (type=2 の場合)</li><li>pluginIndex;pluginCommand の組み合わせ (type=4、5、6 または 7 の場合)。 '3;2' のような形式で格納されます。</li><li>タスク接続UUID (type=8 の場合)</li>
-|8|operation_parameters|コマンド、メソッド、プラグインに渡された引数| |9|form_event|フォームイベント (あれば)。その他の場合には空になります (フォームメソッドまたはオブジェクトメソッド内でコードが実行された場合に使用されると考えて下さい)| |10|stack_opening_sequence_number|スタックレベルを閉じる時のみ: 開始スタックレベルに対応するシーケンス番号| |11|stack_level_execution_time|スタックレベルを閉じる時のみ: 現在記録されているアクションの経過時間をマイクロ秒単位で表します (上記ログの123 行目と124 行目の 10番目のカラムを参照ください)|
+| カラム番号 | フィールド名                          | 説明                                                                                                                                                                                                                                                                                                                                                                     |
+| ----- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1     | sequence_number                 | ログセッション内で固有かつシーケンシャルなオペレーション番号                                                                                                                                                                                                                                                                                                                                         |
+| 2     | time                            | ISO 8601フォーマットの日付と時間 (YYYY-MM-DDTHH:MM:SS.mmm)                                                                                                                                                                                                                                                                                                                         |
+| 3     | ProcessID                       | プロセスID                                                                                                                                                                                                                                                                                                                                                                 |
+| 4     | unique_processID                | 固有プロセスID                                                                                                                                                                                                                                                                                                                                                               |
+| 5     | stack_level                     | スタックレベル                                                                                                                                                                                                                                                                                                                                                                |
+| 6     | operation_type                  | ログオペレーションタイプ。 この値は絶対値を取ることがあります:<p><ol><li>コマンド</li><li>メソッド (プロジェクトメソッド、データベースメソッド、等)</li><li>メッセージ ([LOG EVENT](https://doc.4d.com/4dv19/help/command/ja/page667.html) コマンドによって送信されたもののみ)</li><li>プラグインメッセージ</li><li>プラグインイベント</li><li>プラグインコマンド</li><li>プラグインコールバック</li><li>タスク</li><li>メンバーメソッド (コレクションまたはオブジェクトに割り当てられているメソッド)</li></ol></p>スタックレベルを閉じる時には、`operation_type`、`operation` および `operation_parameters` カラムには `stack_opening_sequence_number` カラムに記録された開始スタックレベルと同じ値が記録されます。 たとえば:<p><ol><li>121  15:16:50:777  5  8  1  2 CallMethod Parameters 0</li><li>122  15:16:50:777  5  8  2  1 283  0</li><li>123  15:16:50:777  5  8  2  1 283  0 122 3</li><li>124  15:16:50:777  5  8  1  2 CallMethod Parameters 0 121 61</li></ol></p>1行目と 2行目はスタックレベルを開き、3行目と 4行目はスタックレベルを閉じます。 6、7、8カラム目の値は、終了スタックレベル行において繰り返されます。 10カラム目にはスタックレベル開始番号、つまり 3行目の 122 と 4行目の 121 が格納されます。 |
+| 7     | operation                       | 以下のいずれかを表す可能性があります (オペレーションタイプによる):<li>ランゲージコマンドID (type=1 の場合)</li><li>メソッド名 (type=2 の場合)</li><li>pluginIndex;pluginCommand の組み合わせ (type=4、5、6 または 7 の場合)。 '3;2' のような形式で格納されます。</li><li>タスク接続UUID (type=8 の場合)</li>                                                                                                                                                                                                                              |
+| 8     | operation_parameters            | コマンド、メソッド、プラグインに渡された引数                                                                                                                                                                                                                                                                                                                                                 |
+| 9     | form_event                      | フォームイベント (あれば)。その他の場合には空になります (フォームメソッドまたはオブジェクトメソッド内でコードが実行された場合に使用されると考えて下さい)                                                                                                                                                                                                                                                                                        |
+| 10    | stack_opening_sequence_number | スタックレベルを閉じる時のみ: 開始スタックレベルに対応するシーケンス番号                                                                                                                                                                                                                                                                                                                                  |
+| 11    | stack_level_execution_time    | スタックレベルを閉じる時のみ: 現在記録されているアクションの経過時間をマイクロ秒単位で表します (上記ログの123 行目と124 行目の 10番目のカラムを参照ください)                                                                                                                                                                                                                                                                                 |
 
 ## 4DDiagnosticLog.txt
 
@@ -239,9 +245,9 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
     このログを開始するには:
 
     ```4d
-    SET DATABASE PARAMETER(SMTP Log;1) // SMTPログを開始
-    SET DATABASE PARAMETER(POP3 Log;1) // POP3ログを開始
-    SET DATABASE PARAMETER(IMAP Log;1) // IMAPログを開始
+    SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log
+    SET DATABASE PARAMETER(POP3 Log;1) //start POP3 log
+    SET DATABASE PARAMETER(IMAP Log;1) //start IMAP log
     ```
 
 > 4D Server: 4D Server 管理ウィンドウ内の [メンテナンスページ](ServerWindow/maintenance.md) の **リクエストとデバッグのログを開始** ボタンをクリックします。   
@@ -339,7 +345,7 @@ SET DATABASE PARAMETER(Client Log Recording;0)
     + Windows: `Users\[userName]\AppData\Roaming\[application]`
     + macOS: `/Users/[userName]/Library/ApplicationSupport/[application]`
 
-> スタンドアロン、サーバー、リモート4Dアプリケーションのプロジェクトすべてでログ設定ファイルを有効化するには、次のフォルダーに `logConfig.json` ファイルをコピーします: <br /> - Windows: `Users\[userName]\AppData\Roaming\4D または \4D Server`<br /> - macOS: `/Users/[userName]/Library/ApplicationSupport/4D または /4D Server`
+> If you want to enable the log configuration file for all projects in stand-alone, server and remote 4D applications, you can copy the `logConfig.json` file in the following folder: - Windows: `Users\[userName]\AppData\Roaming\4D or \4D Server` - macOS: `/Users/[userName]/Library/ApplicationSupport/4D or /4D Server`
 
 ### JSONでの記述
 
@@ -381,7 +387,7 @@ SET DATABASE PARAMETER(Client Log Recording;0)
                     "description": "Commands to log or not log",
                     "type": "array",
                     "items": {
-                        "type": "string" 
+                        "type": "string"
                     },
                     "minItems": 1,
                     "uniqueItems": true
@@ -451,7 +457,7 @@ SET DATABASE PARAMETER(Client Log Recording;0)
             "properties": {
                 "state": {
                     "description": "Enable/Disable IMAP log recording (form 0 to N)",
-                    "type": "integer" 
+                    "type": "integer"
                 }
             }
         },
@@ -461,10 +467,10 @@ SET DATABASE PARAMETER(Client Log Recording;0)
             "properties": {
                 "state": {
                     "description": "Enable/Disable ORDA logs (0 or 1)",
-                    "type": "integer" 
+                    "type": "integer"
                 },
                 "filename": {
-                    "type": "string" 
+                    "type": "string"
                 }
             }
         }
@@ -495,13 +501,13 @@ SET DATABASE PARAMETER(Client Log Recording;0)
         "state" : 1
     },
     "POP3Logs": {
-        "state" : 1 
+        "state" : 1
     },
     "SMTPLogs": {
-        "state" : 1 
+        "state" : 1
     },
     "IMAPLogs": {
-        "state" : 1 
+        "state" : 1
     },
     "ORDALogs": {
         "state" : 1,
