@@ -54,7 +54,7 @@ Les entity selections peuvent être créées à partir de sélections existantes
 | Paramètres | Type               |    | Description                                                                                          |
 | ---------- | ------------------ |:--:| ---------------------------------------------------------------------------------------------------- |
 | dsTable    | Table              | -> | Table de la base 4D dont la sélection courante doit être utilisée pour construire l'entity selection |
-| settings   | Objet              | -> | Option de création : contexte                                                                        |
+| settings   | Object             | -> | Option de création : contexte                                                                        |
 | Résultat   | 4D.EntitySelection | <- | Nouvelle entity selection liée à la dataclass de la table                                            |
 <!-- END REF -->
 
@@ -1695,32 +1695,32 @@ A list box displays the Form.students entity selection and several clients work 
 **.selected**( *selectedEntities* : 4D.EntitySelection ) : Object<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.selected().Params -->
-| Paramètres       | Type               |    | Description                                                                       |
-| ---------------- | ------------------ |:--:| --------------------------------------------------------------------------------- |
-| selectedEntities | 4D.EntitySelection | -> | Entity selection with entities for which to know the rank in the entity selection |
-| Résultat         | Objet              | <- | Range(s) of selected entities in entity selection                                 |
+| Paramètres       | Type               |    | Description                                                                              |
+| ---------------- | ------------------ |:--:| ---------------------------------------------------------------------------------------- |
+| selectedEntities | 4D.EntitySelection | -> | Entity selection avec des entités dont il faut connaître le rang dans l'entity selection |
+| Résultat         | Objet              | <- | Plage(s) d'entités sélectionnées dans l'entity selection                                 |
 <!-- END REF -->
 
 #### Description
 
-The `.selected()` function <!-- REF #EntitySelectionClass.selected().Summary -->returns an object describing the position(s) of *selectedEntities* in the original entity selection<!-- END REF -->.
+La fonction `.selected()` <!-- REF #EntitySelectionClass.selected().Summary -->retourne un objet décrivant la ou les positions de *selectedEntities* dans l'entity selection d'origine<!-- END REF -->.
 > Cette fonction ne modifie pas l'entity selection d'origine.
 
-Pass in the *selectedEntities* parameter an entity selection containing entities for which you want to know the position in the original entity selection. *selectedEntities* must be an entity selection belonging to the same dataclass as the original entity selection, otherwise an error 1587 - "The entity selection comes from an incompatible dataclass" is raised.
+Passez, dans le paramètre *selectedEntities* une entity selection contenant des entités dont vous souhaitez connaître la position dans l'entity selection d'origine. *selectedEntities* doit être une entity selection appartenant à la même dataclass que l'entity selection d'origine, sinon une erreur 1587 - "La sélection d'entités provient d'une dataclass incompatible" est générée.
 
 #### Résultat
 
 The returned object contains the following properties:
 
-| Propriété      | Type        | Description                     |
-| -------------- | ----------- | ------------------------------- |
-| ranges         | Collection  | Collection of range objects     |
-| ranges[].start | Entier long | First entity index in the range |
-| ranges[].end   | Entier long | Last entity index in the range  |
+| Propriété      | Type        | Description                              |
+| -------------- | ----------- | ---------------------------------------- |
+| ranges         | Collection  | Collection d'objets plage                |
+| ranges[].start | Entier long | Indice de la première entité de la plage |
+| ranges[].end   | Entier long | Indice de la dernière entité de la plage |
 
-If a `ranges` property contains a single entity, `start` = `end`. Index starts at 0.
+Si une propriété `ranges` contient une seule entité, `start` = `end`. L'indice démarre à 0.
 
-The function returns an empty collection in the `ranges` property if the original entity selection or the *selectedEntities* entity selection is empty.
+La fonction retourne une collection vide dans la propriété `ranges` si l'entity selection d'origine ou l'entity selection *selectedEntities* est vide.
 
 #### Exemple
 
