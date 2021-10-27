@@ -17,7 +17,7 @@ Les informations de l'historique doivent être analysées pour détecter et corr
 *   [4DSMTPLog.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 *   [Fichier d'historique des requêtes ORDA clientes](#orda-client-requests)
 
-> When a log file can be generated either on 4D Server or on the remote client, the word "Server" is added to the server-side log file name, for example "4DRequestsLogServer.txt"
+> Lorsqu'un fichier d'historique peut être généré soit sur 4D Server, soit sur le client distant, le mot " Server " est ajouté au nom du fichier d'historique côté serveur, par exemple " 4DRequestsLogServer.txt"
 
 Log files share some fields so that you can establish a chronology and make connections between entries while debugging:
 
@@ -194,8 +194,8 @@ The following fields are logged for each event:
 | --------- | --------------- | ------------------------------------------------------------- |
 | 1         | sequence_number | Unique and sequential operation number in the logging session |
 
-|2| time| Date and time in ISO 8601 format (YYYY-MM-DDThh:mm:ss.mmm) | |3| ProcessID|Process ID| |4| unique_processID|Unique process ID| |5| stack_level|Stack level |6| operation_type| Log operation type. This value may be an absolute value:<p><ol><li>Commande</li><li>Method (project method, database method, etc.)</li><li>Message (sent by [LOG EVENT](https://doc.4d.com/4dv19/help/command/en/page667.html) command only)</li><li>PluginMessage</li><li>PluginEvent</li><li>PluginCommand</li><li>PluginCallback</li><li>Task</li><li>Member method (method attached to a collection or an object)</li></ol></p>When closing a stack level, the `operation_type`, `operation` and `operation_parameters` columns have the same value as the opening stack level logged in the `stack_opening_sequence_number` column. Par exemple :<p><ol><li>121  15:16:50:777  5  8  1  2 CallMethod Parameters 0</li><li>122  15:16:50:777  5  8  2  1 283  0</li><li>123  15:16:50:777  5  8  2  1 283  0 122 3</li><li>124  15:16:50:777  5  8  1  2 CallMethod Parameters 0 121 61</li></ol></p>The 1st and 2nd lines open a stack level, the 3rd and 4th lines close a stack level. Values in the columns 6, 7 and 8 are repeated in the closing stack level line. The column 10 contains the stack level opening sequence numbers, i.e. 122 for the 3rd line and 121 for the 4th.| |7|operation|May represent (depending on operation type):<li>a Language Command ID (when type=1)</li><li>a Method Name (when type=2)</li><li>a combination of pluginIndex;pluginCommand (when type=4, 5, 6 or 7). May contain something like '3;2'</li><li>a Task Connection UUID (when type=8)</li>
-|8|operation_parameters|Parameters passed to commands, methods, or plugins| |9|form_event|Form event if any; empty in other cases (suppose that column is used when code is executed in a form method or object method)| |10|stack_opening_sequence_number|Only for the closing stack levels: Sequence number of the corresponding opening stack level| |11|stack_level_execution_time|Only for the closing stack levels: Elapsed time in micro seconds of the current logged action; only for the closing stack levels (see 10th columns in lines 123 and 124 in the log above)|
+|2| time| Date et heure au format ISO 8601 (YYYY-MM-DDThh:mm:ss.mmm) | |3| ProcessID|ID du process| |4| unique_processID|ID unique du process| |5| stack_level|Niveau de la pile |6| operation_type| Type d'opération de journalisation. This value may be an absolute value:<p><ol><li>Commande</li><li>Method (project method, database method, etc.)</li><li>Message (sent by [LOG EVENT](https://doc.4d.com/4dv19/help/command/en/page667.html) command only)</li><li>PluginMessage</li><li>PluginEvent</li><li>PluginCommand</li><li>PluginCallback</li><li>Task</li><li>Member method (method attached to a collection or an object)</li></ol></p>When closing a stack level, the `operation_type`, `operation` and `operation_parameters` columns have the same value as the opening stack level logged in the `stack_opening_sequence_number` column. Par exemple :<p><ol><li>121  15:16:50:777  5  8  1  2 CallMethod Parameters 0</li><li>122  15:16:50:777  5  8  2  1 283  0</li><li>123  15:16:50:777  5  8  2  1 283  0 122 3</li><li>124  15:16:50:777  5  8  1  2 CallMethod Parameters 0 121 61</li></ol></p>The 1st and 2nd lines open a stack level, the 3rd and 4th lines close a stack level. Values in the columns 6, 7 and 8 are repeated in the closing stack level line. La colonne 10 contient les numéros de séquence d'ouverture du niveau de pile, c'est-à-dire 122 pour la 3ème ligne et 121 pour la 4ème.| |7|operation|Peut représenter (selon le type d'opération) :<li>a Language Command ID (when type=1)</li><li>a Method Name (when type=2)</li><li>a combination of pluginIndex;pluginCommand (when type=4, 5, 6 or 7). May contain something like '3;2'</li><li>a Task Connection UUID (when type=8)</li>
+|8|operation_parameters|Paramètres passés aux commandes, méthodes ou plugins| |9|form_event|Événement formulaire le cas échéant ; vide dans les autres cas (supposez que cette colonne est utilisée lorsque le code est exécuté dans une méthode formulaire ou une méthode objet)| |10|stack_opening_sequence_number|Uniquement pour les niveaux de pile de fermeture : Numéro de séquence du niveau de pile d'ouverture correspondant| |11|stack_level_execution_time|Uniquement pour les niveaux de pile de fermeture : Temps écoulé de l'action enregistrée en cours (en microsecondes); uniquement pour les niveaux de fermeture de la pile (voir les 10e colonnes des lignes 123 et 124 du log ci-dessus)
 
 ## 4DDiagnosticLog.txt
 
@@ -323,13 +323,13 @@ The following fields are logged for each request:
 
 
 
-## Using a log configuration file
+## Utilisation d'un fichier de configuration de log
 
-You can use a **log configuration file** to easily manage log recording in a production environment. This file is preconfigured by the developer. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
+Vous pouvez utiliser un **fichier de configuration de log** pour gérer facilement l'enregistrement des journaux dans un environnement de production. Ce fichier est préconfiguré par le développeur. En général, il peut être envoyé aux clients pour qu'ils n'aient qu'à le sélectionner ou à le copier dans un dossier local. Une fois activé, le fichier de configuration de log déclenche l'enregistrement de journaux spécifiques.
 
-### How to enable the file
+### Activation du fichier
 
-There are several ways to enable the log configuration file:
+Il existe plusieurs façons d'activer le fichier de configuration des logs :
 
 - On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](Admin/server-admin.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. It is immediately enabled on the server.
 - You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
@@ -339,9 +339,9 @@ There are several ways to enable the log configuration file:
 
 > If you want to enable the log configuration file for all projects in stand-alone, server and remote 4D applications, you can copy the `logConfig.json` file in the following folder: - Windows: `Users\[userName]\AppData\Roaming\4D or \4D Server` - macOS: `/Users/[userName]/Library/ApplicationSupport/4D or /4D Server`
 
-### JSON file description
+### Description du fichier JSON
 
-The log configuration file is a `.json` file that can contain the following properties:
+Le fichier de configuration de log est un fichier `.json` qui peut contenir les propriétés suivantes :
 
 ```json
 {
@@ -472,7 +472,7 @@ The log configuration file is a `.json` file that can contain the following prop
 
 ### Exemple
 
-Here is an example of log configuration file:
+Voici un exemple de fichier de configuration de log :
 
 ```json
 {
