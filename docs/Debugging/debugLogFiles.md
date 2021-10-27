@@ -1,6 +1,6 @@
 ---
 id: debugLogFiles
-title: Description of log files 
+title: Description of log files
 ---
 
 4D applications can generate several log files that are useful for debugging or optimizing their execution. Logs are usually started or stopped using selectors of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) or [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) commands and are stored in the [Logs folder](Project/architecture.md#logs-folder) of the database.
@@ -139,7 +139,7 @@ How to start this log:
 WEB SET OPTION(Web debug log;wdl enable without body)  
 //other values are available
 ```
- 
+
 The following fields are logged for both Request and Response:
 
 |Field name|	Description|
@@ -160,7 +160,7 @@ How to start this log:
 ```4d
 SET DATABASE PARAMETER(Debug Log Recording;2)  
 //standard, all processes
-  
+
 SET DATABASE PARAMETER(Current process debug log recording;2)  
 //standard, current process only
 ```
@@ -185,7 +185,7 @@ How to start this log:
 ```4d
 SET DATABASE PARAMETER(Debug Log Recording;2+4)  
 //extended tabbed format, all processes
-  
+
 SET DATABASE PARAMETER(Current process debug log recording;2+4)  
 //extended, current process only
 ```
@@ -195,8 +195,6 @@ The following fields are logged for each event:
 |Column #|Field name|Description|
 |---|---|---|
 |1| sequence_number| Unique and sequential operation number in the logging session |
-
-
 |2| time| Date and time in ISO 8601 format (YYYY-MM-DDThh:mm:ss.mmm) |
 |3|	ProcessID|Process ID|
 |4|	unique_processID|Unique process ID|
@@ -235,7 +233,7 @@ Depending on the event, various other fields can also be logged, such as task, s
 
 These log files record each exchange between the 4D application and the mail server (SMTP, POP3, IMAP) that has been initiated by the following commands:
 
-*	SMTP - [SMTP New transporter](API/SMTPTransporterClass.md#smtp-new-transporter) 
+*	SMTP - [SMTP New transporter](API/SMTPTransporterClass.md#smtp-new-transporter)
 *	POP3 - [POP3 New transporter](API/POP3TransporterClass.md#pop3-new-transporter)
 *	IMAP  - [IMAP New transporter](API/IMAPTransporterClass.md#imap-new-transporter)   
 
@@ -248,18 +246,18 @@ The log files can be produced in two versions:
 	*	intended for usual debugging
 
 	To start this log:
-	
+
 	```4d
-	SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log 
-	SET DATABASE PARAMETER(POP3 Log;1) //start POP3 log 
+	SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log
+	SET DATABASE PARAMETER(POP3 Log;1) //start POP3 log
 	SET DATABASE PARAMETER(IMAP Log;1) //start IMAP log
 	```
- 
+
 > 4D Server: Click on the **Start Request and Debug Logs** button in the [Maintenance Page](ServerWindow/maintenance.md) of the 4D Server administration window.   
-	  
+
 	  This log path is returned by the `Get 4D file` command.
 
-*	an extended version: 
+*	an extended version:
 	*	attachment(s) included
 no automatic recycling
 	*	custom name
@@ -273,11 +271,11 @@ no automatic recycling
 	//SMTP
 	$server.logFile:="MySMTPAuthLog.txt"
 	$transporter:=SMTP New transporter($server)
-	 
+
 	// POP3
 	$server.logFile:="MyPOP3AuthLog.txt"
 	$transporter:=POP3 New transporter($server)
-	 
+
 	//IMAP
 	$server.logFile:="MyIMAPAuthLog.txt"
 	$transporter:=IMAP New transporter($server)
@@ -311,13 +309,13 @@ If you want to use the unique sequence number in ORDA request log, you need to t
 
 ```4d
 //to be executed on a remote machine
-  
+
 SET DATABASE PARAMETER(Client Log Recording;1)  
 //to enable log sequence number
- 
+
 ds.startRequestLog(File("/PACKAGE/Logs/ordaLog.txt"))  
 //can be also sent to memory
-  
+
 SET DATABASE PARAMETER(Client Log Recording;0)  
 //disabling sequence number
 ```
@@ -337,19 +335,19 @@ The following fields are logged for each request:
 
 ## Using a log configuration file
 
-You can use a **log configuration file** to easily manage log recording in a production environment. This file is preconfigured by the developer. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs. 
+You can use a **log configuration file** to easily manage log recording in a production environment. This file is preconfigured by the developer. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
 
 ### How to enable the file
 
 There are several ways to enable the log configuration file:
 
-- On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. It is immediately enabled on the server. 
+- On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. It is immediately enabled on the server.
 - You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
 - With a built application, you can copy the `logConfig.json` file in the following folder:
 	+ Windows: `Users\[userName]\AppData\Roaming\[application]`
 	+ macOS: `/Users/[userName]/Library/ApplicationSupport/[application]`
 
-> If you want to enable the log configuration file for all projects in stand-alone, server and remote 4D applications, you can copy the `logConfig.json` file in the following folder: 
+> If you want to enable the log configuration file for all projects in stand-alone, server and remote 4D applications, you can copy the `logConfig.json` file in the following folder:
 > - Windows: `Users\[userName]\AppData\Roaming\4D or \4D Server `
 > - macOS: `/Users/[userName]/Library/ApplicationSupport/4D or /4D Server`
 
@@ -393,7 +391,7 @@ The log configuration file is a `.json` file that can contain the following prop
                     "description": "Commands to log or not log",
                     "type": "array",
                     "items": {
-                        "type": "string" 
+                        "type": "string"
                     },
                     "minItems": 1,
                     "uniqueItems": true
@@ -463,7 +461,7 @@ The log configuration file is a `.json` file that can contain the following prop
             "properties": {
                 "state": {
                     "description": "Enable/Disable IMAP log recording (form 0 to N)",
-                    "type": "integer" 
+                    "type": "integer"
                 }
             }
         },
@@ -473,10 +471,10 @@ The log configuration file is a `.json` file that can contain the following prop
             "properties": {
                 "state": {
                     "description": "Enable/Disable ORDA logs (0 or 1)",
-                    "type": "integer" 
+                    "type": "integer"
                 },
                 "filename": {
-                    "type": "string" 
+                    "type": "string"
                 }
             }
         }
@@ -507,13 +505,13 @@ Here is an example of log configuration file:
         "state" : 1
 	},
 	"POP3Logs": {
-        "state" : 1	
+        "state" : 1
 	},
 	"SMTPLogs": {
-        "state" : 1	
+        "state" : 1
 	},
 	"IMAPLogs": {
-        "state" : 1	
+        "state" : 1
 	},
 	"ORDALogs": {
         "state" : 1,
