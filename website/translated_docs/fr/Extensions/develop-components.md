@@ -3,23 +3,23 @@ id: develop-components
 title: Composants de développement
 ---
 
-A 4D component is a set of 4D methods and forms representing one or more functionalities that can be [installed and used in 4D applications](Concepts/components.md). Par exemple, vous pouvez développer un composant 4D de courrier électronique gérant tous les aspects de l’envoi, la réception et le stockage d’emails au sein des applications 4D.
+Un composant 4D est un ensemble de formulaires et de méthodes 4D représentant une ou plusieurs fonctionnalité(s) qu’il est possible [d’installer et d'utiliser dans des applications 4D](Concepts/components.md). Par exemple, vous pouvez développer un composant 4D de courrier électronique gérant tous les aspects de l’envoi, la réception et le stockage d’emails au sein des applications 4D.
 
-You can develop 4D components for your own needs and keep them private. You can also [share your components with the 4D community](https://github.com/search?q=4d-component).
+Vous pouvez développer des composants 4D pour vos propres besoins et les garder privés. Vous pouvez également [les partager vos composants avec la communauté 4D](https://github.com/search?q=4d-component).
 
 
 ## Définitions
 
 - **Projet utilisé comme matrice** : Projet 4D utilisé pour le développement du composant. C'est un projet standard, sans attribut spécifique. Il constitue un seul composant.
 - **Projet hôte :** projet dans lequel un composant est installé et utilisé.
-- **Component**: Matrix project that can be compiled or [built](Desktop/building.md#build-component), copied into the [`Components`](Project/architecture.md) folder of the host application and whose contents are used in the host application.
+- **Composant** : Projet utilisé comme matrice, pouvant être compilé ou [généré](Desktop/building.md#build-component), copié dans le dossier [`Components`](Project/architecture.md) de l'application hôte et dont le contenu est utilisé dans l'application hôte.
 
 ## Basics
 
-Creating and installing 4D components is carried out directly from 4D:
+La création et l’installation des composants 4D s’effectuent directement depuis 4D :
 
-- To install a component, you simply need to copy the component files into the [`Components` folder of the project](Project/architecture.md). Vous pouvez utiliser des alias ou des raccourcis.
-- A project can be both a matrix and a "host", in other words, a matrix project can itself use one or more components. However, a component cannot use "sub-components" itself.
+- Pour installer un composant, il suffit de copier les fichiers du composant dans le dossier [`Components` du projet](Project/architecture.md). Vous pouvez utiliser des alias ou des raccourcis.
+- Un projet peut être à la fois "matrice" et "hôte", c'est-à-dire qu'un projet utilisé comme matrice peut lui-même utiliser un ou plusieurs composants. En revanche, un composant ne peut pas lui-même utiliser de "sous-composants".
 - Un composant peut appeler la plupart des éléments 4D : des méthodes projet, des formulaires projet, des barres de menus, des listes à choix multiples, etc. Il ne peut pas appeler des méthodes base et des triggers.
 - Il n’est pas possible d’exploiter des tables standard ou des fichiers de données dans les composants 4D. En revanche, un composant peut créer et/ou utiliser des tables, des champs et des fichiers de données via les mécanismes des bases externes. Les bases externes sont des bases 4D indépendantes manipulées via les commandes SQL.
 - Un projet hôte fonctionnant en mode interprété peut utiliser des composants interprétés ou compilés. Un projet hôte fonctionnant en mode compilé ne peut pas utiliser de composants interprétés. Dans ce cas, seuls les composants compilés peuvent être utilisés.
@@ -305,12 +305,12 @@ Par défaut, toutes les méthodes projet d’un projet utilisé comme matrice et
 - Les méthodes projet partagées sont accessibles dans la Page Méthodes de l’Explorateur et peuvent être appelées dans les méthodes du projet hôte. Leur contenu peut être sélectionné et copié dans la zone de prévisualisation de l’Explorateur. Elles peuvent également être visualisées dans le débogueur. Il n’est toutefois pas possible de les ouvrir dans l’éditeur de méthodes ni de les modifier.
 - Les autres méthodes projet du projet utilisé comme matrice n’apparaissent pas dans l’Explorateur mais peuvent également être visualisées dans le débogueur du projet hôte.
 
-To protect the project methods of a component effectively, simply [compile and build](Desktop/building.md#build-component) the matrix project and provide it in the form of a .4dz file. Lorsqu’un projet compilé utilisé comme matrice est installé comme composant :
+Pour assurer la protection des méthodes projet d'un composant, [compilez et générerez](Desktop/building.md#build-component) simplement le projet utilisé comme matrice et fournissez-le sous forme de fichier .4dz. Lorsqu’un projet compilé utilisé comme matrice est installé comme composant :
 
 - Les méthodes projet partagées se trouvent dans la Page Méthodes de l’Explorateur et peuvent être appelées dans les méthodes du projet hôte. En revanche, leur contenu n’apparaît pas dans la zone de prévisualisation ni dans le débogueur.
 - Les autres méthodes projet du projet utilisé comme matrice n’apparaissent jamais.
 
 
-## Sharing components
+## Partage des composants
 
-We encourage you to support the 4D developer community by sharing your components, for example on the [GitHub platform](https://github.com/search?q=4d-component).
+Nous vous encourageons à soutenir la communauté des développeurs 4D en partageant vos composants, notamment sur la [plateforme GitHub](https://github.com/search?q=4d-component).
