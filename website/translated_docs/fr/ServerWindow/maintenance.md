@@ -67,7 +67,7 @@ The **Start backup** button can be used to backup the database immediately using
 
 This area indicates the server log files recording duration (when log files are activated) and allows you to control their activation.
 
-Refer to the [**Description of log files**](Debugging/debugLogFiles.md) section for details on log files.
+Consultez la section [**Description des fichiers d'historique**](Debugging/debugLogFiles.md) pour obtenir plus de détails sur les fichiers d'historique.
 
 ### Start/Stop Request and Debug Logs
 
@@ -83,7 +83,7 @@ The **View Report** button (named **Download report** if the operation was carri
 
 ### Load logs configuration file
 
-This button allows you to load a special server [log configuration file](Debugging/debugLogFiles.md#using-a-log-configuration-file) (`.json` file). Such a file can be provided by 4D technical services to monitor and study specific cases.
+Ce bouton vous permet de charger un [fichier de configuration de log](Debugging/debugLogFiles.md#using-a-log-configuration-file) (fichier `.json`) pour un serveur spécifique. Such a file can be provided by 4D technical services to monitor and study specific cases.
 
 
 ### Pause logging
