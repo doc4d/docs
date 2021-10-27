@@ -23,12 +23,12 @@ Générer un package de projet peut être réalisée à l'aide de :
 
 - soit la commande
 `BUILD APPLICATION<code></a>,</li>
-<li>or the <a href="#application-builder">Build Application dialog</a>.</li>
+<li>soit la<a href="#application-builder">boîte de dialogue du Générateur d'application</a>.</li>
 </ul>
 
-<h3 spaces-before="0">Build application dialog</h3>
+<h3 spaces-before="0">Générateur d'application</h3>
 
-<p spaces-before="0">To display the Build application dialog, select <strong x-id="1">Design</strong> &#062; <strong x-id="1">Build Application...</strong> from the menu bar.</p>
+<p spaces-before="0">Pour afficher la boîte de dialogue du générateur d'application, sélectionnez <strong x-id="1">Développement</strong> > <strong x-id="1">Générer l'application...</strong> dans la barre de menus.</p>
 
 <p spaces-before="0"><img src="assets/en/Project/buildappProj.png" alt="" /></p>
 
@@ -100,7 +100,7 @@ Un fichier .4dz est essentiellement une version compressée du dossier du projet
 
 
 
-> When generating .4dz files, 4D uses a **standard** zip format by default. The advantage of this format is that it is easily readable by any unzip tool. If you do not want to use this standard format, add the `UseStandardZipFormat` XML key with value `False` in your [`buildApp.4DSettings`](#build-application-settings) file (for more information, see the *4D XML Keys Backup* manual on [doc.4d.com](https://doc.4d.com)).
+> Lors de la génération de fichiers .4dz, 4D utilise par défaut un format zip **standard**. L'avantage de ce format est qu'il est facilement lisible par tout outil de dézippage. Si vous ne souhaitez pas utiliser ce format standard, ajoutez la clé XML `UseStandardZipFormat` avec la valeur `False` dans votre fichier [`buildApp.4DSettings`](#build-application-settings) (pour plus d'informations, voir le manuel *4D XML Keys Backup* sur [doc.4d.com](https://doc.4d.com)).
 
 
 
@@ -306,9 +306,9 @@ This option lets you choose the linking mode between the merged application and 
 
 
 
-#### Allow connection of Silicon Mac clients
+#### Autoriser la connexion des clients Silicon Mac
 
-When building a server on Windows, check this option to allow Apple Silicon clients to connect to your server application. You can then specify a path to the structure compiled for Apple Silicon/Intel.
+Lorsque vous créez un serveur sous Windows, cochez cette option pour permettre aux clients Apple Silicon de se connecter à votre application serveur. You can then specify a path to the structure compiled for Apple Silicon/Intel.
 
 To allow Apple Silicon clients to connect to a Server application built on Windows, you must first build a client application on macOS, with a project compiled for Apple Silicon and Intel. This automatically creates a compiled structure, identical to the one created with the **[Build compiled structure](#build-compiled-structure)** option (without the related folders). 
 
