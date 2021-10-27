@@ -13,7 +13,7 @@ Le bouton "Process" indique entre parenthèses le nombre total de process en cou
 
 Vous pouvez modifier l’ordre des colonnes par simple glisser-déposer de la zone d’en-tête des colonnes. Vous pouvez également trier la liste sur les valeurs d’une colonne en cliquant sur son en-tête.
 
-Like the Users page, this page contains a dynamic [search/filtering area](users.md#searchfiltering-area) that can be used to reduce the number of rows displayed in the list to those that correspond to the text entered in the search area. La recherche/le filtrage est effectué(e) dans les colonnes Session et Nom de process.
+Tout comme la Page Utilisateurs, cette page contient une [zone de recherche/filtrage](users.md#searchfiltering-area) dynamique, permettant de réduire le nombre de lignes affichées dans la liste à celles qui correspondent au texte saisi dans la zone de recherche. La recherche/le filtrage est effectué(e) dans les colonnes Session et Nom de process.
 
 Vous disposez également de trois boutons-raccourcis permettant de filtrer par famille les process affichés dans la fenêtre :
 
@@ -97,5 +97,5 @@ La page comporte cinq boutons de commande permettant d’agir sur le ou les proc
 
 > Vous pouvez déboguer un process directement, sans afficher la boîte de dialogue de confirmation : pour cela, appuyez sur la touche **Alt** avant de cliquer sur le bouton.
 
-- **Watch users**: used to display, on the [Users page](users.md), all the processes of the selected user(s). Le bouton est actif lorsqu’un process utilisateur au moins est sélectionné.
+- **Voir utilisateurs** : permet d’afficher dans la [page Utilisateurs](users.md) tous les process du ou des utilisateur(s) sélectionné(s). Le bouton est actif lorsqu’un process utilisateur au moins est sélectionné.
 
