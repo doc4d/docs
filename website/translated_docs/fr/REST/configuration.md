@@ -34,7 +34,7 @@ Vous pouvez configurer les accès REST de l'une des manières suivantes :
 - en attribuant un groupe d'utilisateurs **en lecture/écriture** aux services REST dans la page "**Web** > **Web Features**" des paramètres de structure ;
 - saisir d'une méthode base `On REST Authentication`pour intercepter et gérer chaque demande REST initiale.
 
-> Vous ne pouvez pas utiliser les deux fonctionnalités simultanément. Once an `On REST Authentication` database method has been defined, 4D fully delegates control of REST requests to it: any setting made using the "Read/Write" menu on the **Web** > **Web Features** page of the Structure Settings is ignored.
+> Vous ne pouvez pas utiliser les deux fonctionnalités simultanément. Une fois qu'une méthode base `On REST Authentication` a été définie, 4D lui donne entièrement le contrôle des requêtes REST : tout paramètre effectué à l'aide du menu "Lecture/Ecriture" de la page de **Web** > **Fonctionnalités Web** des paramètres de la structure est ignoré.
 
 
 ### Utilisation des Paramètres de la Structure
