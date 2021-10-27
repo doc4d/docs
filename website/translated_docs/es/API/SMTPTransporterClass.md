@@ -48,7 +48,7 @@ SMTP Transporter objects are instantiated with the [SMTP New transporter](#smtp-
 | Parámetros | Tipo               |    | Descripción                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------- |
 | server     | Objeto             | -> | Información del servidor de correo                  |
-| Resultado  | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object) |
+| Resultado  | 4D.SMTPTransporter | <- | [Objeto SMTP transporter](#smtp-transporter-object) |
 <!-- END REF -->
 
 
@@ -128,7 +128,7 @@ The function returns a [**SMTP transporter object**](#smtp-transporter-object). 
 | Parámetros | Tipo               |    | Descripción                                         |
 | ---------- | ------------------ |:--:| --------------------------------------------------- |
 | server     | Objeto             | -> | Información del servidor de correo                  |
-| Resultado  | 4D.SMTPTransporter | <- | [SMTP transporter object](#smtp-transporter-object) |
+| Resultado  | 4D.SMTPTransporter | <- | [Objeto SMTP transporter](#smtp-transporter-object) |
 <!-- END REF -->
 
 #### Descripción
