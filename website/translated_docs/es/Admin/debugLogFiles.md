@@ -3,9 +3,9 @@ id: debugLogFiles
 title: Descripción de los archivos históricos
 ---
 
-4D applications can generate several log files that are useful for debugging or optimizing their execution. Logs are usually started or stopped using selectors of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) or [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) commands and are stored in the [Logs folder](Project/architecture.md#logs-folder) of the database.
+Las aplicaciones 4D pueden generar varios archivos de historial que son útiles para depurar u optimizar su ejecución. Los historiales suelen iniciarse o detenerse utilizando selectores de los comandos [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) o [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) y se almacenan en la carpeta [Logs folder](Project/architecture.md#logs-folder) de la base.
 
-Information logged needs to be analyzed to detect and fix issues. This section provides a comprehensive description of the following log files:
+La información histórica debe ser analizada para detectar y solucionar los problemas. Esta sección ofrece una descripción completa de los siguientes archivos de registro:
 
 *   [4DRequestsLog.txt](#4drequestslogtxt)
 *   [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt)
@@ -15,18 +15,18 @@ Information logged needs to be analyzed to detect and fix issues. This section p
 *   [4DIMAPLog.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 *   [4DPOP3Log.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 *   [4DSMTPLog.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
-*   [ORDA client requests log file](#orda-client-requests)
+*   [Archivo de historial de peticiones ORDA clientes](#orda-client-requests)
 
-Note: When a log file can be generated either on 4D Server or on the remote client, the word "Server" is added to the server-side log file name, for example "4DRequestsLogServer.txt"
+Nota: cuando un archivo de historial puede generarse tanto en 4D Server como en el cliente remoto, se añade la palabra "Server" al nombre del archivo de historial del lado del servidor, por ejemplo "4DRequestsLogServer.txt"
 
-Log files share some fields so that you can establish a chronology and make connections between entries while debugging:
+Los archivos de historial comparten algunos campos para que pueda establecer una cronología y hacer conexiones entre las entradas mientras depura:
 
-*   `sequence_number`: this number is unique over all debug logs and is incremented for each new entry whatever the log file, so that you can know the exact sequence of the operations.
-*   `connection_uuid`: for any 4D process created on a 4D client that connects to a server, this connection UUID is logged on both server and client side. It allows you to easily identify the remote client that launched each process.
+*   `sequence_number`: este número es único en todos los registros de depuración y se incrementa para cada nueva entrada cualquiera que sea el archivo de historial, para que pueda conocer la secuencia exacta de las operaciones.
+*   `connection_uuid`: para cada proceso 4D creado en un cliente 4D que se conecte a un servidor, este UUID de conexión se registra tanto del lado del servidor como del cliente. Permite identificar fácilmente el cliente remoto que lanzó cada proceso.
 
 ## 4DRequestsLog.txt
 
-This log file records standard requests carried out by the 4D Server machine or the 4D remote machine that executed the command (excluding Web requests).
+Este archivo de historial registra las solicitudes estándar llevadas a cabo por la máquina 4D Server o la máquina remota 4D que ejecutó el comando (excluyendo las solicitudes web).
 
 Como iniciar este historial:
 
@@ -44,34 +44,34 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 SET DATABASE PARAMETER(Client Log Recording;1)
 ////del lado remoto
 ```
-> This statement also starts the [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt) log file.
+> Esta instrucción también inicia el archivo de historial [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt).
 
 #### Encabezados
 
-This file starts with the following headers:
+Este archivo comienza con los siguientes encabezados:
 
-*   Log Session Identifier
-*   Hostname of the server that hosts the application
-*   User Login Name: login on the OS of the user that ran the 4D application on the server.
+*   Log Session Identifier (Identificador de sesión de historial)
+*   Nombre del servidor que aloja la aplicación
+*   Nombre de usuario: nombre de usuario en el sistema operativo que ejecutó la aplicación 4D en el servidor.
 
 #### Contenido
 
-For each request, the following fields are logged:
+Para cada petición, se registran los siguientes campos:
 
-| Nombre del campo                           | Descripción                                                                                                                                                                                                      |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| sequence_number                            | Unique and sequential operation number in the logging session                                                                                                                                                    |
-| time                                       | Date and time using ISO 8601 format: 'YYYY-MM-DDTHH:MM:SS.mmm'                                                                                                                                                   |
-| systemid                                   | ID del sistema                                                                                                                                                                                                   |
-| component                                  | Component signature (e.g., '4SQLS' or 'dbmg')                                                                                                                                                                    |
-| process\_info_                           | index   Corresponds to the "index" field in 4DRequestsLog_ProcessInfo.txt log, and permits linking a request to a process.                                                                                       |
-| request                                    | Request ID in C/S or message string for SQL requests or `LOG EVENT` messages                                                                                                                                     |
-| bytes_in                                   | Number of bytes received                                                                                                                                                                                         |
-| bytes_out                                  | Número de bytes enviados                                                                                                                                                                                         |
-| server\_duration &#124; exec\_duration | Depends on where the log is generated:<p><li>*server\_duration* when generated on the client --Time taken in microseconds for the server to process the request and return a response. B to F in image below, OR</li><li>*exec\_duration* when generated on the server --Time taken in microseconds for the server to process the request. B to E in image below.</li>                                                                                               |
-| write\_duration                          | Time taken in microseconds for sending the:<p><li>Request (when run on the client). A to B in image below.</li><li>Response (when run on the server). E to F in image below.</li>                                                                                          |
-| task_kind                                  | Preemptive or cooperative (respectively 'p' or 'c')                                                                                                                                                              |
-| rtt                                        | Time estimate in microseconds for the client to send the request and the server to acknowledge it. A to D and E to H in image below.<p><li>Only measured when using the ServerNet network layer, returns 0 when used with the legacy network layer.</li><li>For Windows versions prior to Windows 10 or Windows Server 2016, the call will return 0.</li> |
+| Nombre del campo                           | Descripción                                                                                                                                                                                                                                  |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| sequence_number                            | Número de operación único y secuencial en la sesión de historial                                                                                                                                                                             |
+| time                                       | Fecha y hora utilizando el formato ISO 8601: 'YYYY-MM-DDTHH:MM:SS.mmm'                                                                                                                                                                       |
+| systemid                                   | ID del sistema                                                                                                                                                                                                                               |
+| component                                  | Firma del componente (por ejemplo, "4SQLS" o "dbmg")                                                                                                                                                                                         |
+| process\_info_                           | corresponde al campo "index" en el archivo de historial 4DRequestsLog_ProcessInfo.txt, y permite vincular una petición a un proceso.                                                                                                         |
+| request                                    | ID de petición en modo remoto cadena de mensajes para las peticiones SQL o mensajes `LOG EVENT`                                                                                                                                              |
+| bytes_in                                   | Número de bytes recibidos                                                                                                                                                                                                                    |
+| bytes_out                                  | Número de bytes enviados                                                                                                                                                                                                                     |
+| server\_duration &#124; exec\_duration | Depende de dónde se genere el registro:<p><li>*server\_duration* cuando se genera en el cliente --Tiempo que tarda el servidor en procesar la petición y devolver una respuesta en microsegundos. B a F en la imagen de abajo, O</li><li>*exec\_duration* cuando se genera en el servidor --Tiempo en microsegundos que tarda el servidor en procesar la petición. B a E en la imagen de abajo.</li>                                                                                                                          |
+| write\_duration                          | Tiempo de envío en microsegundos:<p><li>La petición (cuando se ejecuta en el cliente). A a B en la imagen de abajo.</li><li>Respuesta (cuando se ejecuta en el servidor). E a F en la imagen de abajo.</li>                                                                                                                                |
+| task_kind                                  | Apropiativo o cooperativo (respectivamente "p" o "c")                                                                                                                                                                                        |
+| rtt                                        | Tiempo estimado en microsegundos para que el cliente envíe la solicitud y el servidor la acuse de recibo. De la A a la D y de la E a la H en la imagen de abajo.<p><li>Sólo se mide cuando se utiliza la capa de red ServerNet, devuelve 0 cuando se utiliza con la capa de red heredada.</li><li>Para las versiones de Windows anteriores a Windows 10 o Windows Server 2016, la llamada devolverá 0.</li> |
 
 Flujo de solicitudes:
 
@@ -79,57 +79,57 @@ Flujo de solicitudes:
 
 ## 4DRequestsLog_ProcessInfo.txt
 
-This log file records information on each process created on the 4D Server machine or the 4D remote machine that executed the command (excluding Web requests).
+Este archivo de historial registra la información de cada proceso creado en la máquina 4D Server o en la máquina remota 4D que ejecutó el comando (excluyendo las solicitudes web).
 
 Como iniciar este historial:
 
 *   en el servidor:
 
 ```4d
-SET DATABASE PARAMETER(4D Server log recording;1) //server side
+SET DATABASE PARAMETER(4D Server log recording;1) //lado servidor
 ```
 
-*   on a client:
+*   en un cliente:
 
 ```4d
 SET DATABASE PARAMETER(Client Log Recording;1) ////del lado remoto
 ```
-> This statement also starts the [4DRequestsLog.txt](#4drequestslogtxt) log file.
+> Esta instrucción también inicia el archivo de historial [4DRequestsLog.txt](#4drequestslogtxt).
 
 #### Encabezados
 
-This file starts with the following headers:
+Este archivo comienza con los siguientes encabezados:
 
-*   Log Session Identifier
-*   Hostname of the server that hosts the application
-*   User Login Name: login on the OS of the user that ran the 4D application on the server.
+*   Log Session Identifier (Identificador de sesión de historial)
+*   Nombre del servidor que aloja la aplicación
+*   Nombre de usuario: nombre de usuario en el sistema operativo que ejecutó la aplicación 4D en el servidor.
 
 
 #### Contenido
 
-For each process, the following fields are logged:
+Para cada proceso, se registran los siguientes campos:
 
-| Nombre del campo                  | Descripción                                                    |
-| --------------------------------- | -------------------------------------------------------------- |
-| sequence_number                   | Unique and sequential operation number in the logging session  |
-| time                              | Date and time using ISO 8601 format: "YYYY-MM-DDTHH:MM:SS.mmm" |
-| process\_info\_index          | Unique and sequential process number                           |
-| CDB4DBaseContext                  | DB4D component database context UUID                           |
-| systemid                          | ID del sistema                                                 |
-| server\_process\_id           | ID del proceso en el servidor                                  |
-| remote\_process\_id           | ID del proceso en el cliente                                   |
-| process\_name                   | Nombre del proceso                                             |
-| cID                               | Identifier of 4D Connection                                    |
-| uID                               | Identifier of 4D Client                                        |
-| IP Client                         | IPv4/IPv6 address                                              |
-| host_name                         | Nombre de host del cliente                                     |
-| user_name                         | User Login Name on client                                      |
-| connection\_uuid                | UUID identifier of process connection                          |
-| server\_process\_unique\_id | Unique process ID on Server                                    |
+| Nombre del campo                  | Descripción                                                            |
+| --------------------------------- | ---------------------------------------------------------------------- |
+| sequence_number                   | Número de operación único y secuencial en la sesión de historial       |
+| time                              | Fecha y hora utilizando el formato ISO 8601: 'YYYY-MM-DDTHH:MM:SS.mmm" |
+| process\_info\_index          | Número de proceso único y secuencial                                   |
+| CDB4DBaseContext                  | UUID del contexto de base del componente DB4D                          |
+| systemid                          | ID del sistema                                                         |
+| server\_process\_id           | ID del proceso en el servidor                                          |
+| remote\_process\_id           | ID del proceso en el cliente                                           |
+| process\_name                   | Nombre del proceso                                                     |
+| cID                               | Identificador de la conexión 4D                                        |
+| uID                               | Identificador del cliente 4D                                           |
+| IP Client                         | Dirección IPv4/IPv6                                                    |
+| host_name                         | Nombre de host del cliente                                             |
+| user_name                         | Nombre de conexión usuario en el cliente                               |
+| connection\_uuid                | Identificador UUID de proceso de conexión                              |
+| server\_process\_unique\_id | ID único del proceso en el servidor                                    |
 
 ## HTTPDebugLog.txt
 
-This log file records each HTTP request and each response in raw mode. Whole requests, including headers, are logged; optionally, body parts can be logged as well.
+Este archivo de historial registra cada petición HTTP y cada respuesta en modo crudo. Se registran las solicitudes completas, incluidos los encabezados; opcionalmente, también se pueden registrar las partes del cuerpo.
 
 Como iniciar este historial:
 
@@ -138,7 +138,7 @@ WEB SET OPTION(Web debug log;wdl enable without body)
 //otros valores están disponibles
 ```
 
-The following fields are logged for both Request and Response:
+Los siguientes campos se registran tanto para la solicitud como para la respuesta:
 
 | Nombre del campo | Descripción                                                   |
 | ---------------- | ------------------------------------------------------------- |
@@ -163,16 +163,16 @@ SET DATABASE PARAMETER(Current process debug log recording;2)
 //estándar, sólo el proceso actual
 ```
 
-The following fields are logged for each event:
+Los siguientes campos se registran para cada evento:
 
-| Columna # | Descripción                                                                                                   |
-| --------- | ------------------------------------------------------------------------------------------------------------- |
-| 1         | Unique and sequential operation number in the logging session                                                 |
-| 2         | Date and time in ISO 8601 format (YYYY-MM-DDThh:mm:ss.mmm)                                                    |
-| 3         | Process ID (p=xx) and unique process ID (puid=xx)                                                             |
-| 4         | Stack level                                                                                                   |
-| 5         | Can be Command Name/ Method Name/Message/ Task Start Stop info/Plugin Name, event or Callback/Connection UUID |
-| 6         | Time taken for logging operation in milliseconds                                                              |
+| Columna # | Descripción                                                                                                                                        |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1         | Número de operación único y secuencial en la sesión de historial                                                                                   |
+| 2         | Fecha y hora en el formato ISO 8601: (YYYY-MM-DDThh:mm:ss.mmm)                                                                                     |
+| 3         | ID proceso (p=xx) e ID único proceso (puid=xx)                                                                                                     |
+| 4         | Nivel de stack                                                                                                                                     |
+| 5         | Puede ser Nombre del comando/Nombre del método/Mensaje/Información de inicio y parada de la tarea/Nombre, evento o callback plugin / UUID conexión |
+| 6         | Tiempo de la operación de conexión en milisegundos                                                                                                 |
 
 ## 4DDebugLog.txt (tabular)
 
@@ -182,13 +182,13 @@ Como iniciar este historial:
 
 ```4d
 SET DATABASE PARAMETER(Debug Log Recording;2+4)  
-//extended tabbed format, all processes
+//formato tabular extendido, todos los procesos
 
 SET DATABASE PARAMETER(Current process debug log recording;2+4)  
-//extended, current process only
+//extendido, sólo el proceso actual
 ```
 
-The following fields are logged for each event:
+Los siguientes campos se registran para cada evento:
 
 | Columna # | Nombre del campo                | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | --------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -214,7 +214,7 @@ Como iniciar este historial:
  SET DATABASE PARAMETER(Diagnostic log recording;1) //iniciar registro
 ```
 
-The following fields are logged for each event:
+Los siguientes campos se registran para cada evento:
 
 | Nombre del campo   | Descripción                                                   |
 | ------------------ | ------------------------------------------------------------- |
@@ -280,7 +280,7 @@ The log files can be produced in two versions:
 
 #### Contenido
 
-For each request, the following fields are logged:
+Para cada petición, se registran los siguientes campos:
 
 | Columna # | Descripción                                                   |
 | --------- | ------------------------------------------------------------- |
