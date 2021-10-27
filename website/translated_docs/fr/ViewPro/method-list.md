@@ -19,9 +19,9 @@ title: Liste de méthodes
 | Paramètres | Type  |    | Description                       |
 | ---------- | ----- | -- | --------------------------------- |
 | vpAreaName | Texte | -> | 4D View Pro area form object name |
-| vpFormula  | Texte | -> | 4D View Pro formula               |
-| name       | Texte | -> | Name for the formula              |
-| options    | Objet | -> | Options for the named formula     |
+| vpFormula  | Texte | -> | Formule 4D View Pro               |
+| name       | Texte | -> | Nom de la formule                 |
+| options    | Objet | -> | Options de la formule nommée      |
 <!-- END REF -->  
 
 #### Description
@@ -35,7 +35,7 @@ Passez la formule 4D View Pro que vous souhaitez nommer dans *vpFormula*. Pour p
 
 Passez le nouveau nom de la formule dans *name*. Si le nom est déjà utilisé dans le même scope, la nouvelle formule nommée remplace la formule existante. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
 
-You can pass an object with additional properties for the named formula in *options*. Les propriétés suivantes sont prises en charge :
+Vous pouvez passer, dans *options*. un objet avec des propriétés supplémentaires pour la formule nommée. Les propriétés suivantes sont prises en charge :
 
 
 | Propriété | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -59,28 +59,28 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 <!-- REF #_method_.VP ADD RANGE NAME.Params -->
 
-| Paramètres | Type  |    | Description                   |
-| ---------- | ----- | -- | ----------------------------- |
-| rangeObj   | Texte | -> | Range object                  |
-| name       | Texte | -> | Name for the fomula           |
-| options    | Objet | -> | Options for the named formula |
+| Paramètres | Type  |    | Description                  |
+| ---------- | ----- | -- | ---------------------------- |
+| rangeObj   | Texte | -> | Objet plage                  |
+| name       | Texte | -> | Nom de la formule            |
+| options    | Objet | -> | Options de la formule nommée |
 <!-- END REF -->  
 
 #### Description
 
 
-The `VP ADD RANGE NAME` command <!-- REF #_method_.VP ADD RANGE NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->.
-> Named ranges created by this command are saved with the document.
+La commande `VP ADD RANGE NAME` <!-- REF #_method_.VP ADD RANGE NAME.Summary -->permet de créer ou de modifier une plage nommée dans le document courant<!-- END REF -->.
+> Les plages nommées créées par cette commande sont stockées dans le document.
 
-In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
+Dans *rangeObj*, passez la plage que vous souhaitez nommer, et passez le nouveau nom de la plage dans *name*. Si le nom est déjà utilisé dans le même scope, la nouvelle plage nommée remplace la plage existante. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
 
-You can pass an object with additional properties for the named range in *options*. Les propriétés suivantes sont prises en charge :
+Vous pouvez passer, dans *options*. un objet avec des propriétés supplémentaires pour la plage nommée. Les propriétés suivantes sont prises en charge :
 
 
-| Propriété | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| scope     | Nombre | Scope for the range. Vous pouvez passer l'indice de la feuille (la numérotation commence à zéro) ou utiliser les constantes suivantes : <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>The scope determines whether a range name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`). |
-| comment   | Texte  | Comment associated to named range                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Propriété | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| --------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| scope     | Nombre | Scope de la plage. Vous pouvez passer l'indice de la feuille (la numérotation commence à zéro) ou utiliser les constantes suivantes : <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>The scope determines whether a range name is local to a given worksheet (*scope*=sheet index or `vk current sheet`), or global across the entire workbook (*scope*=`vk workbook`). |
+| comment   | Texte  | Comment associated to named range                                                                                                                                                                                                                                                                                                                                                                                                                           |
 > * A named range is actually a named formula containing coordinates. `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](#vp-add-formula-name) method to create named ranges.
 > * Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](#vp-get-formula-by-name) method.
 
@@ -102,9 +102,9 @@ VP ADD RANGE NAME($range;"Total1")
 
 <!-- REF #_method_.VP ADD SELECTION.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Texte | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Texte | -> | Objet plage |
 <!-- END REF -->  
 
 #### Description
@@ -177,9 +177,9 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 <!-- REF #_method_.VP ADD SPAN.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 <!-- END REF --> 
 
 #### Description
@@ -471,9 +471,9 @@ The code would be:
 
 <!-- REF #_method_.VP COLUMN AUTOFIT.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 
 <!-- END REF -->  
 
@@ -512,8 +512,8 @@ Selecting the columns and running this code:
 
 | Paramètres    | Type  |    | Description                        |
 | ------------- | ----- | -- | ---------------------------------- |
-| rangeObj      | Objet | -> | Range object                       |
-| otherRangeObj | Objet | -> | Range object                       |
+| rangeObj      | Objet | -> | Objet plage                        |
+| otherRangeObj | Objet | -> | Objet plage                        |
 | Résultat      | Objet | <- | Object containing a combined range |
 
 <!-- END REF -->  
@@ -586,7 +586,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 | Paramètres | Type  |    | Description                                       |
 | ---------- | ----- | -- | ------------------------------------------------- |
 | vpObject   | Objet | -> | 4D View Pro object containing the area to convert |
-| rangeObj   | Objet | -> | Range object                                      |
+| rangeObj   | Objet | -> | Objet plage                                       |
 | Résultat   | Objet | <- | SVG picture of the area                           |	
 
 
@@ -650,7 +650,7 @@ $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 
 | Paramètres | Type  |    | Description                               |
 | ---------- | ----- | -- | ----------------------------------------- |
-| rangeObj   | Objet | -> | Range object                              |
+| rangeObj   | Objet | -> | Objet plage                               |
 | options    | Objet | -> | Additional options                        |
 | Résultat   | Objet | <- | Object returned. Contains the copied data |
 <!-- END REF -->  
@@ -702,9 +702,9 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 <!-- REF #_method_.VP DELETE COLUMNS.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 <!-- END REF -->  
 
 #### Description
@@ -738,9 +738,9 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 <!-- REF #_method_.VP DELETE ROWS.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 <!-- END REF -->  
 
 #### Description
@@ -988,11 +988,11 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 
 | Paramètres      | Type  |    | Description                           |
 | --------------- | ----- | -- | ------------------------------------- |
-| rangeObj        | Objet | -> | Range object                          |
+| rangeObj        | Objet | -> | Objet plage                           |
 | searchValue     | Texte | -> | Search value                          |
 | searchCondition | Objet | -> | Object containing search condition(s) |
 | replaceValue    | Texte | -> | Replacement value                     |
-| Résultat        | Objet | <- | Range object                          |
+| Résultat        | Objet | <- | Objet plage                           |
 <!-- END REF -->  
 
 #### Description
@@ -1196,7 +1196,7 @@ $activeCell:=VP Get active cell("myVPArea")
 
 | Paramètres | Type  |    | Description  |
 | ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| rangeObj   | Objet | -> | Objet plage  |
 | Résultat   | Objet | <- | Style object |
 <!-- END REF -->  
 
@@ -1251,7 +1251,7 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 
 | Paramètres | Type       |    | Description                     |
 | ---------- | ---------- | -- | ------------------------------- |
-| rangeObj   | Objet      | -> | Range object                    |
+| rangeObj   | Objet      | -> | Objet plage                     |
 | Résultat   | Collection | <- | Collection of column properties |
 <!-- END REF -->  
 
@@ -1400,10 +1400,10 @@ will return this information in the *$defaultStyle* object:
 
 <!-- REF #_method_.VP Get formula.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
-| Résultat   | Texte | <- | Formula      |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
+| Résultat   | Texte | <- | Formula     |
 <!-- END REF -->  
 
 #### Description
@@ -1484,7 +1484,7 @@ $formula:=VP Get formula by name("ViewProArea";"Total")
 
 | Paramètres | Type       |    | Description                  |
 | ---------- | ---------- | -- | ---------------------------- |
-| rangeObj   | Objet      | -> | Range object                 |
+| rangeObj   | Objet      | -> | Objet plage                  |
 | Résultat   | Collection | <- | Collection of formula values |
 <!-- END REF -->  
 
@@ -1700,7 +1700,7 @@ zoomFactor:1
 
 | Paramètres | Type       |    | Description                  |
 | ---------- | ---------- | -- | ---------------------------- |
-| rangeObj   | Objet      | -> | Range object                 |
+| rangeObj   | Objet      | -> | Objet plage                  |
 | Résultat   | Collection | <- | Collection of row properties |
 <!-- END REF -->  
 
@@ -1991,7 +1991,7 @@ The following code checks if preview lines are displayed or hidden in the docume
 
 | Paramètres | Type  |    | Description                               |
 | ---------- | ----- | -- | ----------------------------------------- |
-| rangeObj   | Objet | -> | Range object                              |
+| rangeObj   | Objet | -> | Objet plage                               |
 | Résultat   | Objet | <- | Object of cell spans in the defined range |
 <!-- END REF -->  
 
@@ -2130,7 +2130,7 @@ In this case, the current sheet uses two style objects:
 
 | Paramètres | Type  |    | Description                    |
 | ---------- | ----- | -- | ------------------------------ |
-| rangeObj   | Objet | -> | Range object                   |
+| rangeObj   | Objet | -> | Objet plage                    |
 | Résultat   | Objet | <- | Object containing a cell value |
 <!-- END REF -->  
 
@@ -2176,7 +2176,7 @@ End if
 
 | Paramètres | Type       |    | Description          |
 | ---------- | ---------- | -- | -------------------- |
-| rangeObj   | Objet      | -> | Range object         |
+| rangeObj   | Objet      | -> | Objet plage          |
 | Résultat   | Collection | <- | Collection of values |
 <!-- END REF -->  
 
@@ -2344,9 +2344,9 @@ VP IMPORT FROM OBJECT("ViewProArea1";[VPWorkBooks]SPBook)
 
 <!-- REF #_method_.VP INSERT COLUMNS.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 
 <!-- END REF -->  
 
@@ -2379,9 +2379,9 @@ The results is:
 
 <!-- REF #_method_.VP INSERT ROWS.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 
 <!-- END REF -->  
 
@@ -2809,9 +2809,9 @@ VP REMOVE SHEET("ViewProArea";2)
 
 <!-- REF #_method_.VP REMOVE SPAN.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 
 <!-- END REF -->  
 
@@ -2997,9 +2997,9 @@ $row:=VP Row("ViewProArea";9) // row 10
 
 <!-- REF #_method_.VP ROW AUTOFIT.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 
 <!-- END REF -->  
 
@@ -3168,9 +3168,9 @@ $result:=VP Run offscreen area($o)
 
 <!-- REF #_method_.VP SET ACTIVE CELL.Params -->
 
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| Paramètres | Type  |    | Description |
+| ---------- | ----- | -- | ----------- |
+| rangeObj   | Objet | -> | Objet plage |
 
 <!-- END REF -->  
 
@@ -3276,7 +3276,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 | Paramètres | Type    |    | Description          |
 | ---------- | ------- | -- | -------------------- |
-| rangeObj   | Objet   | -> | Range object         |
+| rangeObj   | Objet   | -> | Objet plage          |
 | boolValue  | Booléen | -> | Boolean value to set |
 
 <!-- END REF -->  
@@ -3307,7 +3307,7 @@ VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 
 | Paramètres     | Type  |    | Description                         |
 | -------------- | ----- | -- | ----------------------------------- |
-| rangeObj       | Objet | -> | Range object                        |
+| rangeObj       | Objet | -> | Objet plage                         |
 | borderStyleObj | Objet | -> | Object containing border line style |
 | borderPosObj   | Objet | -> | Object containing border placement  |
 
@@ -3387,7 +3387,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 | Paramètres | Type  |    | Description  |
 | ---------- | ----- | -- | ------------ |
-| rangeObj   | Objet | -> | Range object |
+| rangeObj   | Objet | -> | Objet plage  |
 | styleObj   | Objet | -> | Style object |
 
 <!-- END REF -->  
@@ -3433,7 +3433,7 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 | Paramètres  | Type  |    | Description                         |
 | ----------- | ----- | -- | ----------------------------------- |
-| rangeObj    | Objet | -> | Range object                        |
+| rangeObj    | Objet | -> | Objet plage                         |
 | propertyObj | Objet | -> | Object containing column properties |
 
 <!-- END REF -->  
@@ -3634,7 +3634,7 @@ End case
 
 | Paramètres    | Type  |    | Description       |
 | ------------- | ----- | -- | ----------------- |
-| rangeObj      | Objet | -> | Range object      |
+| rangeObj      | Objet | -> | Objet plage       |
 | dateValue     | Date  | -> | Date value to set |
 | timeValue     | Heure | -> | Time value to set |
 | formatPattern | Texte | -> | Format of value   |
@@ -3675,7 +3675,7 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 | Paramètres    | Type  |    | Description       |
 | ------------- | ----- | -- | ----------------- |
-| rangeObj      | Objet | -> | Range object      |
+| rangeObj      | Objet | -> | Objet plage       |
 | dateValue     | Date  | -> | Date value to set |
 | formatPattern | Texte | -> | Format of value   |
 
@@ -3765,7 +3765,7 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 | Paramètres    | Type     |    | Description                             |
 | ------------- | -------- | -- | --------------------------------------- |
-| rangeObj      | Objet    | -> | Range object                            |
+| rangeObj      | Objet    | -> | Objet plage                             |
 | field         | Pointeur | -> | Reference to field in virtual structure |
 | formatPattern | Texte    | -> | Format of field                         |
 
@@ -3797,7 +3797,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 | Paramètres    | Type  |    | Description          |
 | ------------- | ----- | -- | -------------------- |
-| rangeObj      | Objet | -> | Range object         |
+| rangeObj      | Objet | -> | Objet plage          |
 | formula       | Texte | -> | Formula or 4D method |
 | formatPattern | Texte | -> | Format of field      |
 
@@ -3955,7 +3955,7 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 
 | Paramètres    | Type   |    | Description         |
 | ------------- | ------ | -- | ------------------- |
-| rangeObj      | Objet  | -> | Range object        |
+| rangeObj      | Objet  | -> | Objet plage         |
 | numberValue   | Nombre | -> | Number value to set |
 | formatPattern | Texte  | -> | Format of value     |
 
@@ -4421,7 +4421,7 @@ With a page break:
 
 | Paramètres    | Type  |    | Description       |
 | ------------- | ----- | -- | ----------------- |
-| rangeObj      | Objet | -> | Range object      |
+| rangeObj      | Objet | -> | Objet plage       |
 | textValue     | Texte | -> | Text value to set |
 | formatPattern | Texte | -> | Format of value   |
 
@@ -4454,7 +4454,7 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 | Paramètres    | Type  |    | Description       |
 | ------------- | ----- | -- | ----------------- |
-| rangeObj      | Objet | -> | Range object      |
+| rangeObj      | Objet | -> | Objet plage       |
 | timeValue     | Texte | -> | Time value to set |
 | formatPattern | Texte | -> | Format of value   |
 
@@ -4490,7 +4490,7 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 
 | Paramètres | Type  |    | Description                    |
 | ---------- | ----- | -- | ------------------------------ |
-| rangeObj   | Objet | -> | Range object                   |
+| rangeObj   | Objet | -> | Objet plage                    |
 | valueObj   | Objet | -> | Cell values and format options |
 
 <!-- END REF -->  
@@ -4552,7 +4552,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 | Paramètres | Type       |    | Description          |
 | ---------- | ---------- | -- | -------------------- |
-| rangeObj   | Objet      | -> | Range object         |
+| rangeObj   | Objet      | -> | Objet plage          |
 | valuesCol  | Collection | -> | Collection of values |
 
 <!-- END REF -->  
@@ -4600,7 +4600,7 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 
 | Paramètres | Type        |    | Description                             |
 | ---------- | ----------- | -- | --------------------------------------- |
-| rangeObj   | Objet       | -> | Range object                            |
+| rangeObj   | Objet       | -> | Objet plage                             |
 | vPos       | Entier long | -> | Vertical view position of cell or row   |
 | hPos       | Entier long | -> | Horizontal view position of cell or row |
 
