@@ -14,7 +14,7 @@ Le générateur d'applications vous permet de :
 *   Générer des applications client-serveur avec mise à jour automatique des composants client et serveur.
 *   Enregistrer vos paramètres de génération pour une utilisation ultérieure (bouton *Enregistrer les paramètres*).
 
-> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. Keep in mind that using commands or functions that modify the source files (such as `CREATE INDEX` or `CREATE TABLE` (SQL)) is not possible by default in compiled applications. Vous pouvez néanmoins créer des applications spécifiques qui prennent en charge les modifications locales en utilisant la clé XML du `PackProject` (voir [doc.4d.com](https://doc.4d.com)).
+> Compiled applications are based upon [.4dz files](#build-compiled-structure) that are **read-only**. A noter que l'utilisation de commandes ou de fonctions qui modifient les fichiers sources (telles que `CREATE INDEX` ou `CREATE TABLE` (SQL)) n'est pas possible par défaut dans les applications compilées. Vous pouvez néanmoins créer des applications spécifiques qui prennent en charge les modifications locales en utilisant la clé XML du `PackProject` (voir [doc.4d.com](https://doc.4d.com)).
 
 
 ## Aperçu
@@ -308,19 +308,19 @@ This option lets you choose the linking mode between the merged application and 
 
 #### Autoriser la connexion des clients Silicon Mac
 
-Lorsque vous créez un serveur sous Windows, cochez cette option pour permettre aux clients Apple Silicon de se connecter à votre application serveur. You can then specify a path to the structure compiled for Apple Silicon/Intel.
+Lorsque vous créez un serveur sous Windows, cochez cette option pour permettre aux clients Apple Silicon de se connecter à votre application serveur. Vous pouvez alors spécifier un chemin d'accès à la structure compilée pour Apple Silicon/Intel.
 
-To allow Apple Silicon clients to connect to a Server application built on Windows, you must first build a client application on macOS, with a project compiled for Apple Silicon and Intel. This automatically creates a compiled structure, identical to the one created with the **[Build compiled structure](#build-compiled-structure)** option (without the related folders). 
+Pour permettre aux clients Apple Silicon de se connecter à une application serveur créée sous Windows, vous devez d'abord créer une application cliente sous macOS, avec un projet compilé pour Apple Silicon et Intel. Cela crée automatiquement une structure compilée, identique à celle créée avec l'option **[Build compiled structure](#build-compiled-structure)** (sans les dossiers associés). 
 
-Then, you can copy that structure to your Windows machine, and use it to build the server application: 
+Vous pouvez ensuite copier cette structure sur votre machine Windows, et l'utiliser pour construire l'application serveur : 
 
 ![](assets/en/Desktop/allow-mac-clients.png)
 
 
 
-#### Compiled structure location
+#### Emplacement de la structure compilée
 
-Path to compiled structure of the Apple Silicon/Intel client application used to build a Windows Server (see [Allow connection of Silicon Mac clients](#allow-connection-of-silicon-mac-clients).
+Chemin d'accès à la structure compilée de l'application cliente Apple Silicon/Intel utilisée pour créer un serveur Windows (voir [Autoriser la connexion des clients Silicon Mac](#allow-connection-of-silicon-mac-clients)).
 
 
 
@@ -384,15 +384,15 @@ The `.4darchive` is copied at the following location:
 
 You can check the **Allow automatic update...** option for client applications running on the concurrent platform. This option is only enabled if:
 
-- the **Build server application** option is checked,
-- the **Allow automatic update...** option for client applications running on the current platform is checked.
+- l'option **Build server application** est cochée,
+- l'option **Autoriser la mise à jour automatique...** pour les applications clientes exécutées sur la plate-forme actuelle est cochée.
 
 This feature requires that you click on the **[...]** button and designate the location on your disk of the file to use for the update. The file to select depends on the current server platform:
 
-| Current server platform | Required file                                                | Détails                                                                                                                                                                    |
-| ----------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| macOS                   | Windows 4D Volume Desktop *or* Windows client update archive | By default, you select the `4D Volume Desktop` application for Windows. To select a `.4darchive` file previously built on Windows, press **Shift** while clicking on [...] |
-| Sous Windows            | macOS client update archive                                  | Select a signed `.4darchive` file previously built on macOS                                                                                                                |
+| Plateforme du serveur courant | Fichier requis                                               | Détails                                                                                                                                                                                                      |
+| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| macOS                         | Windows 4D Volume Desktop *ou* Windows client update archive | Par défaut, sélectionnez l'application `4D Volume Desktop` pour Windows. Pour sélectionner un fichier `.4darchive` précédemment créé sur Windows, appuyez sur la touche **Shift** tout en cliquant sur [...] |
+| Sous Windows                  | macOS client update archive                                  | Sélectionnez un fichier `.4darchive` signé, précédemment créé sur macOS                                                                                                                                      |
 
 
 You can build specific a `.4darchive` file on the concurrent platform by selecting only the [**Build client application**](#build-client-application) and the appropriate [**Allow automatic update...**](#copy-of-client-applications-inside-the-server-application) option. 
@@ -624,7 +624,7 @@ A l’issue de la génération, un nouveau fichier de licence de déploiement es
 
 ### Certification des applications sous OS X
 
-The application builder can sign merged 4D applications under macOS (single-user applications, components, 4D Server and client parts under macOS). Signer une application permet d’autoriser son exécution par la fonctionnalité Gatekeeper de macOS lorsque l’option "Mac App Store et Développeurs identifiés" est sélectionnée (cf. "A propos de Gatekeeper" ci-dessous).
+Le Générateur d’application permet de signer les applications 4D fusionnées sous macOS (applications monoposte, composants, 4D Server et parties clientes sous macOS). Signer une application permet d’autoriser son exécution par la fonctionnalité Gatekeeper de macOS lorsque l’option "Mac App Store et Développeurs identifiés" est sélectionnée (cf. "A propos de Gatekeeper" ci-dessous).
 
 - Cochez l'option **Signer l’application** pour inclure la certification dans le processus de génération de l’application pour macOS :
 
@@ -656,7 +656,7 @@ Gatekeeper est une fonction de sécurité d’OS X permettant de contrôler l’
 
 
 
-> On Apple Silicon machines, 4D [components](#components) need to be actually signed. An unsigned component will generate an error at application startup ("lib4d-arm64.dylib can't be opened..."). 
+> Sur les machines Apple Silicon, les [composants](#components) 4D doivent être signés. Un composant non signé générera une erreur au démarrage de l'application ("lib4d-arm64.dylib can't be opened..."). 
 
 L'option **Signer l'application** du Générateur d’application de 4D permet de générer des applications et des composants compatibles avec cette option par défaut.
 
@@ -667,7 +667,7 @@ L'option **Signer l'application** du Générateur d’application de 4D permet d
 
 La notarisation des applications est fortement recommandée par Apple à partir de macOS 10.14.5 (Mojave) et 10.15 (Catalina), car les applications non notariées déployées via Internet sont bloquées par défaut.
 
-The 4D [built-in signing features](#os-x-signing-certificate) have been adapted to meet all of Apple's requirements to allow using the Apple notary service. La notarisation elle-même doit être réalisée par le développeur et est indépendante de 4D (à noter également qu'elle nécessite l'installation de Xcode). Veuillez vous référer à [ce post du blog 4D](https://blog.4d.com/how-to-notarize-your-merged-4d-application/) qui fournit une description, par étapes, du processus de notarisation. 
+Les [fonctionnalités de signature intégrées](#os-x-signing-certificate) ont été mises à jour pour répondre à toutes les exigences d'Apple et permettre l'utilisation du service de notarisation d'Apple. La notarisation elle-même doit être réalisée par le développeur et est indépendante de 4D (à noter également qu'elle nécessite l'installation de Xcode). Veuillez vous référer à [ce post du blog 4D](https://blog.4d.com/how-to-notarize-your-merged-4d-application/) qui fournit une description, par étapes, du processus de notarisation. 
 
 Pour plus d'informations sur le concept de notarisation, veuillez consulter [cette page sur le site Apple developer](https://developer.apple.com/documentation/xcode/notarizing_your_app_before_distribution/customizing_the_notarization_workflow). 
 
