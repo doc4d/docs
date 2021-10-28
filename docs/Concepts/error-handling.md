@@ -22,7 +22,7 @@ Other "unpredictable" errors include disk write error, network failure, or in ge
 
 ## Installing an error-handling method
 
-In 4D, all errors can be catched and handled in a specific project method, the **error-handling** (or **error-catching**) method.
+In 4D, all errors can be caught and handled in a specific project method, the **error-handling** (or **error-catching**) method.
 
 This project method is installed for the current process and will be automatically called for any error that occurs in the process, in interpreted or compiled mode. To *install* this project method, you just need to call the `ON ERR CALL` command with the project method name as parameter. For example:
 
