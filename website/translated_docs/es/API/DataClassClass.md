@@ -130,7 +130,7 @@ Se aplica carga diferida.
 
 **parámetros**
 
-In the optional *settings* parameter, you can pass an object containing additional options. The following property is supported:
+En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
 | Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                          |
 | --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -193,15 +193,15 @@ The `.exposed` property is <!-- REF DataClassClass.exposed.Summary -->true if th
 
 #### Descripción
 
-The `.fromCollection()` function <!-- REF #DataClassClass.fromCollection().Summary -->updates or creates entities in the dataclass according to the *objectCol* collection of objects, and returns the corresponding entity selection<!-- END REF -->.
+La función `.fromCollection()` <!-- REF #DataClassClass.fromCollection().Summary -->actualiza o crea entidades en la clase de datos según la colección de objetos *objectCol*, y devuelve la selección de entidades correspondiente<!-- END REF -->.
 
-In the *objectCol* parameter, pass a collection of objects to create new or update existing entities of the dataclass. The property names must be the same as attribute names in the dataclass. If a property name does not exist in the dataclass, it is ignored. If an attribute value is not defined in the collection, its value is null.
+En el parámetro *objectCol*, pasa una colección de objetos para crear nuevas entidades o actualizar las existentes de la clase de datos. Los nombres de las propiedades deben ser los mismos que los de los atributos de la clase de datos. Si un nombre de propiedad no existe en la clase de datos, se ignora. Si un valor de atributo no está definido en la colección, su valor es null.
 
-The mapping between the objects of the collection and the entities is done on the **attribute names** and **matching types**. If an object's property has the same name as an entity's attribute but their types do not match, the entity's attribute is not filled.
+El mapeo entre los objetos de la colección y las entidades se realiza sobre los **nombres de atributos** y **tipos coincidentes**. Si la propiedad de un objeto tiene el mismo nombre que el atributo de una entidad pero sus tipos no coinciden, el atributo de la entidad no se llena.
 
 **Crear o actualizar modos**
 
-For each object of *objectCol*:
+Para cada objeto de *objectCol*:
 
 *   If the object contains a boolean property "\_\_NEW" set to false (or does not contain a boolean "\_\_NEW" property), the entity is updated or created with the corresponding values of the properties from the object. No check is performed in regards to the primary key:
     *   If the primary key is given and exists, the entity is updated. In this case, the primary key can be given as is or with a "\_\_KEY" property (filled with the primary key value).
@@ -215,18 +215,18 @@ For each object of *objectCol*:
 
 **Related entities**
 
-The objects of *objectCol* may contain one or more nested object(s) featuring one or more related entities, which can be useful to create or update links between entities.
+Los objetos de *objectCol* pueden contener uno o más objetos anidados que presentan una o más entidades relacionadas, lo que puede ser útil para crear o actualizar enlaces entre entidades.
 
-The nested objects featuring related entities must contain a "\_\_KEY" property (filled with the primary key value of the related entity) or the primary key attribute of the related entity itself. The use of a \_\_KEY property allows independence from the primary key attribute name.
+Los objetos anidados que presentan entidades relacionadas deben contener una propiedad "\_\_KEY" (llenada con el valor de la llave primaria de la entidad relacionada) o el atributo de llave primaria de la propia entidad relacionada. El uso de una propiedad \_\_KEY permite la independencia del nombre del atributo de la llave primaria.
 > The content of the related entities cannot be created / updated through this mechanism.
 
 **Sello**
 
-If a \_\_STAMP attribute is given, a check is performed with the stamp in the datastore and an error can be returned ("Given stamp does not match current one for record# XX of table XXXX"). For more information, see [Entity locking](ORDA/entities.md#entity-locking).
+Si se da un atributo \_\_STAMP, se realiza una comprobación con el sello en el almacén de datos y se puede devolver un error ("El sello dado no coincide con el actual para el registro# XX de la tabla XXXX"). Para más información, consulte [Entity locking](ORDA/entities.md#entity-locking).
 
 **parámetros**
 
-In the optional *settings* parameter, you can pass an object containing additional options. The following property is supported:
+En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
 | Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                          |
 | --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -235,7 +235,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 
 #### Ejemplo 1
 
-We want to update an existing entity. The \_\_NEW property is not given, the employee primary key is given and exists:
+Queremos actualizar una entidad existente. La propiedad \_\_NEW no se da, la llave primaria del empleado se da y existe:
 
 ```4d
  var $empsCollection : Collection
@@ -255,7 +255,7 @@ We want to update an existing entity. The \_\_NEW property is not given, the emp
 
 #### Ejemplo 2
 
-We want to update an existing entity. The \_\_NEW property is not given, the employee primary key is with the \_\_KEY attribute and exists:
+Queremos actualizar una entidad existente. La propiedad \_\_NEW no se da, la llave primaria del empleado está con el atributo \_\_KEY y existe:
 
 ```4d
  var $empsCollection : Collection
@@ -275,7 +275,7 @@ We want to update an existing entity. The \_\_NEW property is not given, the emp
 
 #### Ejemplo 3
 
-We want to simply create a new entity from a collection:
+Queremos crear simplemente una nueva entidad a partir de una colección:
 
 ```4d
  var $empsCollection : Collection
@@ -292,7 +292,7 @@ We want to simply create a new entity from a collection:
 
 #### Ejemplo 4
 
-We want to create an entity. The \_\_NEW property is True, the employee primary key is not given:
+Queremos crear una entidad. La propiedad \_\_NEW es True, la llave primaria del empleado no se da:
 
 ```4d
  var $empsCollection : Collection
@@ -317,7 +317,7 @@ We want to create an entity. The \_\_NEW property is True, the employee primary 
 
 #### Ejemplo 5
 
-We want to create an entity. The \_\_NEW property is omitted, the employee primary key is given and does not exist:
+Queremos crear una entidad. La propiedad \_\_NEW se omite, la llave primaria del empleado se da y no existe:
 
 ```4d
  var $empsCollection : Collection
@@ -335,7 +335,7 @@ We want to create an entity. The \_\_NEW property is omitted, the employee prima
 
 #### Ejemplo 6
 
-In this example, the first entity will be created and saved but the second will fail since they both use the same primary key:
+En este ejemplo, la primera entidad se creará y guardará pero la segunda fallará ya que ambas utilizan la misma llave primaria:
 
 ```4d
  var $empsCollection : Collection
@@ -383,30 +383,30 @@ In this example, the first entity will be created and saved but the second will 
 
 
 <!-- REF #DataClassClass.get().Params -->
-| Parámetros | Tipo            |    | Descripción                                 |
-| ---------- | --------------- |:--:| ------------------------------------------- |
-| primaryKey | Integer OR Text | -> | Primary key value of the entity to retrieve |
-| parámetros | Objeto          | -> | Opciones de construcción: context           |
-| Resultado  | 4D.Entity       | <- | Entity matching the designated primary key  |
+| Parámetros | Tipo            |    | Descripción                                          |
+| ---------- | --------------- |:--:| ---------------------------------------------------- |
+| primaryKey | Integer OR Text | -> | Valor de la llave primaria de la entidad a recuperar |
+| parámetros | Objeto          | -> | Opciones de construcción: context                    |
+| Resultado  | 4D.Entity       | <- | Entidad que coincide con la llave primaria designada |
 <!-- END REF -->
 
 #### Descripción
 
-The `.get()` function <!-- REF #DataClassClass.get().Summary -->queries the dataclass to retrieve the entity matching the *primaryKey* parameter<!-- END REF -->.
+La función `.get()` <!-- REF #DataClassClass.get().Summary -->consulta la clase de datos para recuperar la entidad que coincide con el parámetro *primaryKey*<!-- END REF -->.
 
-In *primaryKey*, pass the primary key value of the entity to retrieve. The value type must match the primary key type set in the datastore (Integer or Text). You can also make sure that the primary key value is always returned as Text by using the [`.getKey()`](EntityClass.md#getkey) function with the `dk key as string` parameter.
+En *primaryKey*, pase el valor de la llave primaria de la entidad a recuperar. El tipo de valor debe coincidir con el tipo de la llave primaria definida en el almacén de datos (Entero o Texto). También puede asegurarse de que el valor de la llave primaria se devuelva siempre como Texto utilizando la función [`.getKey()`](EntityClass.md#getkey) con el parámetro `dk key as string`.
 
-If no entity is found with *primaryKey*, a **Null** entity is returned.
+Si no se encuentra ninguna entidad con*primaryKey*, se devuelve una entidad **Null**.
 
-Lazy loading is applied, which means that related data is loaded from disk only when it is required.
+Se aplica la carga diferida, lo que significa que los datos relacionados se cargan desde el disco sólo cuando son necesarios.
 
 **parámetros**
 
-In the optional *settings* parameter, you can pass an object containing additional options. The following property is supported:
+En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                         |
-| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Label for the automatic optimization context applied to the entity. This context will be used by the subsequent code that loads the entity so that it can benefit from the optimization. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
+| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                      |
+| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el contexto de optimización automática aplicado a la entidad. Este contexto será utilizado por el código siguiente que carga la entidad para que pueda beneficiarse de la optimización. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
 
 
 
@@ -421,7 +421,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 
 #### Ejemplo 2
 
-This example illustrates the use of the *context* property:
+Este ejemplo ilustra el uso de la propiedad *context*:
 
 ```4d
  var $e1; $e2; $e3; $e4 : cs.EmployeeEntity
@@ -457,18 +457,18 @@ This example illustrates the use of the *context* property:
 </details>
 
 <!-- REF #DataClassClass.getDataStore().Syntax -->
-**.getDataStore()** : cs.DataStore<!-- END REF -->
+**.getDataStore()**: cs.DataStore<!-- END REF -->
 
 <!-- REF #DataClassClass.getDataStore().Params -->
-| Parámetros | Tipo         |    | Descripción                |
-| ---------- | ------------ |:--:| -------------------------- |
-| Resultado  | cs.DataStore | <- | Datastore of the dataclass |
+| Parámetros | Tipo         |    | Descripción               |
+| ---------- | ------------ |:--:| ------------------------- |
+| Resultado  | cs.DataStore | <- | Datastore de la dataclass |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getDataStore( )` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+La función `.getDataStore( )`<!-- REF #DataClass.getDataStore().Summary -->devuelve el datastore para la clase de datos especificada<!-- END REF -->.
 
 El almacén de datos puede ser:
 
@@ -478,7 +478,7 @@ El almacén de datos puede ser:
 
 #### Ejemplo
 
-The ***SearchDuplicate*** project method searches for duplicated values in any dataclass.
+El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualquier clase de datos.
 
 ```4d
  var $pet : cs.CatsEntity
@@ -514,23 +514,23 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 **.getInfo()** : Object <!-- END REF -->
 
 <!-- REF #DataClassClass.getInfo().Params -->
-| Parámetros | Tipo   |    | Descripción                  |
-| ---------- | ------ | -- | ---------------------------- |
-| Resultado  | Objeto | <- | Information on the dataclass |
+| Parámetros | Tipo   |    | Descripción                         |
+| ---------- | ------ | -- | ----------------------------------- |
+| Resultado  | Objeto | <- | Información sobre la clase de datos |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. This function is useful for setting up generic code.
+La función `.getInfo( )` <!-- REF #DataClassClass.getInfo().Summary -->devuelve un objeto que proporciona información sobre la clase de datos<!-- END REF -->. Esta función es útil para configurar el código genérico.
 
 **Objeto devuelto**
 
-| Propiedad   | Tipo    | Descripción                              |
-| ----------- | ------- | ---------------------------------------- |
-| name        | Texto   | Nombre de la dataclass                   |
-| primaryKey  | Texto   | Name of the primary key of the dataclass |
-| tableNumber | Integer | Internal 4D table number                 |
+| Propiedad   | Tipo    | Descripción                                      |
+| ----------- | ------- | ------------------------------------------------ |
+| name        | Texto   | Nombre de la dataclass                           |
+| primaryKey  | Texto   | Nombre de la llave primaria de la clase de datos |
+| tableNumber | Integer | Número de la tabla 4D interna                    |
 
 
 
@@ -587,19 +587,19 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 **.new()** : 4D.Entity <!-- END REF -->
 
 <!-- REF #DataClassClass.new().Params -->
-| Parámetros | Tipo      |    | Descripción                       |
-| ---------- | --------- | -- | --------------------------------- |
-| Resultado  | 4D.Entity | <- | New entity matching the Dataclass |
+| Parámetros | Tipo      |    | Descripción                                      |
+| ---------- | --------- | -- | ------------------------------------------------ |
+| Resultado  | 4D.Entity | <- | Nueva entidad que coincide con la clase de datos |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.new( )` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+La función `.new( )` <!-- REF #DataClassClass.new().Summary -->crea en memoria y devuelve una nueva entidad en blanco relacionada con la Dataclass<!-- END REF -->.
 
-The entity object is created in memory and is not saved in the database until the [`.save( )`](EntityClass.md#save) function is called. If the entity is deleted before being saved, it cannot be recovered.
+El objeto entidad se crea en memoria y no se guarda en la base de datos hasta que se llama a la función [`.save( )`](EntityClass.md#save). Si la entidad se borra antes de ser guardada, no se puede recuperar.
 
-**4D Server**: In client-server, if the primary key of the corresponding table is auto-incremented, it will be calculated when the entity is saved on the server.
+**4D Server**: en cliente-servidor, si la llave primaria de la tabla correspondiente se autoincrementa, se calculará cuando la entidad se guarde en el servidor.
 
 All attributes of the entity are initialized with the **null** value.
 
@@ -607,7 +607,7 @@ All attributes of the entity are initialized with the **null** value.
 
 #### Ejemplo
 
-This example creates a new entity in the "Log" Dataclass and records information in the "info" attribute:
+Este ejemplo crea una nueva entidad en la clase de datos "Log" y registra la información en el atributo "info":
 
 ```4d 
  var $entity : cs.LogEntity
@@ -634,21 +634,21 @@ This example creates a new entity in the "Log" Dataclass and records information
 **.newSelection**( { *keepOrder* : Integer } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #DataClassClass.newSelection().Params -->
-| Parámetros | Tipo               |    | Descripción                                                                                                                                   |
-| ---------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| keepOrder  | Integer            | -> | `dk keep ordered`: creates an ordered entity selection,<br>`dk non ordered`: creates an unordered entity selection (default if omitted) |
-| Resultado  | 4D.EntitySelection | <- | New blank entity selection related to the dataclass                                                                                           |
+| Parámetros | Tipo               |    | Descripción                                                                                                                                                   |
+| ---------- | ------------------ | -- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| keepOrder  | Integer            | -> | `dk keep ordered`: crea una selección de entidades ordenada,<br>`dk no ordenada`: crea una selección de entidades no ordenada (por defecto si se omite) |
+| Resultado  | 4D.EntitySelection | <- | Nueva selección de entidades en blanco relacionadas con la clase de datos                                                                                     |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.newSelection( )` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+La función `.newSelection( )` <!-- REF #DataClassClass.newSelection().Summary -->crea una nueva selección de entidades en blanco, no compartible, relacionada con la clase de datos, en memoria<!-- END REF -->.
 
-> For information on non-shareable entity selections, please refer to [this section](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
+> Para más información sobre las selecciones de entidades no compartibles, consulte [esta sección](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
 
-If you want to create an ordered entity selection, pass the `dk keep ordered` selector in the *keepOrder* parameter. By default if you omit this parameter, or if you pass the `dk non ordered` selector, the method creates an unordered entity selection. Unordered entity selections are faster but you cannot rely on entity positions. For more information, please see [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
+Si quieres crear una selección de entidades ordenada, pase el selector `dk keep ordered` en el parámetro *keepOrder*. Por defecto, si se omite este parámetro, o si se pasa el selector `dk non ordered`, el método crea una selección de entidades no ordenada. Las selecciones de entidades desordenadas son más rápidas pero no se puede confiar en las posiciones de las entidades. Para más información, consulte [Selecciones de entidades ordenadas y desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
 
 When created, the entity selection does not contain any entities (`mySelection.length` returns 0). This method lets you build entity selections gradually by making subsequent calls to the [`add()`](EntitySelectionClass.md#add) function.
 
