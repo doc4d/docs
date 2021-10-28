@@ -116,7 +116,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 |                   | allowEditObjects         | boolean | Specifies whether the user can edit floating objects, optional. False by default.                                                 |
 |                   | allowResizeRows          | boolean | Specifies whether the user can resize rows, optional. False by default.                                                           |
 |                   | allowResizeColumns       | boolean | Specifies whether the user can resize columns, optional. False by default.                                                        |
-|                   | allowDragInsertRows      | boolean | Specifies whether the user can perform the drag operation to insert rows, optional. False by default.                             |
+|                   | boolean                  | boolean | Specifies whether the user can perform the drag operation to insert rows, optional. False by default.                             |
 |                   | allowDragInsertColumns   | boolean | Specifies whether the user can perform the drag operation to insert columns, optional. False by default.                          |
 |                   | allowInsertRows          | boolean | Specifies whether the user can insert rows, optional. False by default.                                                           |
 |                   | allowInsertColumns       | boolean | Specifies whether the user can insert columns, optional. False by default.                                                        |

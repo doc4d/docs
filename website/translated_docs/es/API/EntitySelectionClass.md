@@ -88,6 +88,37 @@ $employees:=Create entity selection([Employee])
 
 [`dataClass.newSelection()`](DataClassClass.md#newselection)
 
+
+## USE ENTITY SELECTION
+
+<!-- REF #_command_.USE ENTITY SELECTION.Syntax -->
+**USE ENTITY SELECTION** (*entitySelection*)<!-- END REF -->
+
+<!-- REF #_command_.USE ENTITY SELECTION.Params -->
+| Parámetros      | Tipo            |    | Descripción         |
+| --------------- | --------------- |:--:| ------------------- |
+| entitySelection | EntitySelection | -> | An entity selection |
+<!-- END REF -->
+
+#### Descripción
+
+The `USE ENTITY SELECTION` command updates the current selection of the table matching the dataclass of the *entitySelection* parameter, according to the content of the entity selection.
+
+This command cannot be used with a [Remote datastore](../ORDA/remoteDatastores.md).
+
+> After a call to `USE ENTITY SELECTION`, the first record of the updated current selection (if not empty) becomes the current record, but it is not loaded in memory. If you need to use the values of the fields in the current record, use the `LOAD RECORD` command after the `USE ENTITY SELECTION` command.
+
+#### Ejemplo
+
+```4d
+var $entitySel : Object
+
+$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel is related to the Employee dataclass
+REDUCE SELECTION([Employee];0)
+USE ENTITY SELECTION($entitySel) //The current selection of the Employee table is updated
+```
+
+
 <!-- REF EntitySelectionClass.index.Desc -->
 ## &#91;*index*&#93;
 
@@ -547,7 +578,7 @@ Then this entity selection is updated with products and you want to share the pr
 
 ```4d
  ...
-  // The Form.products entity selection is updated
+  // La selección de entidades de Form.products se actualiza
  Form.products.add(Form.selectedProduct)
 
  Use(Storage)
@@ -877,7 +908,7 @@ This function is mainly useful in the context of generic code.
 The following generic code duplicates all entities of the entity selection:
 
 ```4d
-  //duplicate_entities method
+  //método duplicate_entities 
   //duplicate_entities($entity_selection)
 
  #DECLARE ( $entitySelection : 4D.EntitySelection )  
@@ -888,7 +919,7 @@ The following generic code duplicates all entities of the entity selection:
  For each($entity;$entitySelection)
     $duplicate:=$dataClass.new()
     $duplicate.fromObject($entity.toObject())
-    $duplicate[$dataClass.getInfo().primaryKey]:=Null //reset the primary key
+    $duplicate[$dataClass.getInfo().primaryKey]:=Null //restablecer la llave primaria
     $status:=$duplicate.save()
  End for each
 ```
@@ -1695,18 +1726,18 @@ A list box displays the Form.students entity selection and several clients work 
 **.selected**( *selectedEntities* : 4D.EntitySelection ) : Object<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.selected().Params -->
-| Parámetros       | Tipo               |    | Descripción                                                                       |
-| ---------------- | ------------------ |:--:| --------------------------------------------------------------------------------- |
-| selectedEntities | 4D.EntitySelection | -> | Entity selection with entities for which to know the rank in the entity selection |
-| Resultado        | Objeto             | <- | Range(s) of selected entities in entity selection                                 |
+| Parámetros       | Tipo               |    | Descripción                                                                                        |
+| ---------------- | ------------------ |:--:| -------------------------------------------------------------------------------------------------- |
+| selectedEntities | 4D.EntitySelection | -> | Selección de entidades con entidades para las cuales conocer el rango en la selección de entidades |
+| Resultado        | Objeto             | <- | Rango(s) de entidades seleccionadas en la selección de entidades                                   |
 <!-- END REF -->
 
 #### Descripción
 
-The `.selected()` function <!-- REF #EntitySelectionClass.selected().Summary -->returns an object describing the position(s) of *selectedEntities* in the original entity selection<!-- END REF -->.
+La función `.selected()` <!-- REF #EntitySelectionClass.selected().Summary -->devuelve un objeto que describe la(s) posición(es) de *selectedEntities* en la selección de entidades original<!-- END REF -->.
 > This function does not modify the original entity selection.
 
-Pass in the *selectedEntities* parameter an entity selection containing entities for which you want to know the position in the original entity selection. *selectedEntities* must be an entity selection belonging to the same dataclass as the original entity selection, otherwise an error 1587 - "The entity selection comes from an incompatible dataclass" is raised.
+Pase en el parámetro *selectedEntities* una selección de entidades que contenga entidades de las que desee conocer la posición en la selección de entidades original. *selectedEntities* debe ser una selección de entidades que pertenezca a la misma clase de datos que la selección de entidades original, de lo contrario se produce un error 1587 - "La selección de entidades procede de una clase de datos incompatible".
 
 #### Resultado
 
@@ -1718,9 +1749,9 @@ The returned object contains the following properties:
 | ranges[].start | Integer    | First entity index in the range |
 | ranges[].end   | Integer    | Last entity index in the range  |
 
-If a `ranges` property contains a single entity, `start` = `end`. El índice comienza en 0.
+Si una propiedad `ranges` contiene una sola entidad, `start` = `end`. El índice comienza en 0.
 
-The function returns an empty collection in the `ranges` property if the original entity selection or the *selectedEntities* entity selection is empty.
+La función devuelve una colección vacía en la propiedad `ranges` si la selección de entidades original o la selección de entidades *selectedEntities* está vacía.
 
 #### Ejemplo
 
