@@ -88,6 +88,37 @@ $employees:=Create entity selection([Employee])
 
 [`dataClass.newSelection()`](DataClassClass.md#newselection)
 
+
+## USE ENTITY SELECTION
+
+<!-- REF #_command_.USE ENTITY SELECTION.Syntax -->
+**USE ENTITY SELECTION** (*entitySelection*)<!-- END REF -->
+
+<!-- REF #_command_.USE ENTITY SELECTION.Params -->
+| Paramètres      | Type            |    | Description         |
+| --------------- | --------------- |:--:| ------------------- |
+| entitySelection | EntitySelection | -> | An entity selection |
+<!-- END REF -->
+
+#### Description
+
+The `USE ENTITY SELECTION` command updates the current selection of the table matching the dataclass of the *entitySelection* parameter, according to the content of the entity selection.
+
+This command cannot be used with a [Remote datastore](../ORDA/remoteDatastores.md).
+
+> After a call to `USE ENTITY SELECTION`, the first record of the updated current selection (if not empty) becomes the current record, but it is not loaded in memory. If you need to use the values of the fields in the current record, use the `LOAD RECORD` command after the `USE ENTITY SELECTION` command.
+
+#### Exemple
+
+```4d
+var $entitySel : Object
+
+$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel is related to the Employee dataclass
+REDUCE SELECTION([Employee];0)
+USE ENTITY SELECTION($entitySel) //The current selection of the Employee table is updated
+```
+
+
 <!-- REF EntitySelectionClass.index.Desc -->
 ## &#91;*index*&#93;
 
@@ -174,7 +205,7 @@ Si l'attribut n'existe pas dans l'entity selection, une erreur est retournée.
 
 #### Exemple 1
 
-Projection de valeurs storage :
+Projection de valeurs de stockage :
 
 
 ```4d
@@ -195,7 +226,7 @@ Le résultat est une collection de chaînes, par exemple :
 
 #### Exemple 2
 
-Projection de related entity :
+Projection d'entité liée :
 
 ```4d
  var $es; $entitySelection : cs.EmployeeSelection
@@ -203,11 +234,11 @@ Projection de related entity :
  $es:=$entitySelection.employer // employer est lié à la dataclass Company
 ```
 
-Le résultat est une entity selection de la dataclass Company sans doublons (s'il y en a).
+L'objet résultant est une entity selection de la dataclass Company sans doublons (s'il y en a).
 
 #### Exemple 3
 
-Projection de related entities :
+Projection d'entités liées :
 
 ```4d
  var $es : cs.EmployeeSelection
@@ -1695,32 +1726,32 @@ A list box displays the Form.students entity selection and several clients work 
 **.selected**( *selectedEntities* : 4D.EntitySelection ) : Object<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.selected().Params -->
-| Paramètres       | Type               |    | Description                                                                       |
-| ---------------- | ------------------ |:--:| --------------------------------------------------------------------------------- |
-| selectedEntities | 4D.EntitySelection | -> | Entity selection with entities for which to know the rank in the entity selection |
-| Résultat         | Objet              | <- | Range(s) of selected entities in entity selection                                 |
+| Paramètres       | Type               |    | Description                                                                              |
+| ---------------- | ------------------ |:--:| ---------------------------------------------------------------------------------------- |
+| selectedEntities | 4D.EntitySelection | -> | Entity selection avec des entités dont il faut connaître le rang dans l'entity selection |
+| Résultat         | Objet              | <- | Plage(s) d'entités sélectionnées dans l'entity selection                                 |
 <!-- END REF -->
 
 #### Description
 
-The `.selected()` function <!-- REF #EntitySelectionClass.selected().Summary -->returns an object describing the position(s) of *selectedEntities* in the original entity selection<!-- END REF -->.
+La fonction `.selected()` <!-- REF #EntitySelectionClass.selected().Summary -->retourne un objet décrivant la ou les positions de *selectedEntities* dans l'entity selection d'origine<!-- END REF -->.
 > Cette fonction ne modifie pas l'entity selection d'origine.
 
-Pass in the *selectedEntities* parameter an entity selection containing entities for which you want to know the position in the original entity selection. *selectedEntities* must be an entity selection belonging to the same dataclass as the original entity selection, otherwise an error 1587 - "The entity selection comes from an incompatible dataclass" is raised.
+Passez, dans le paramètre *selectedEntities* une entity selection contenant des entités dont vous souhaitez connaître la position dans l'entity selection d'origine. *selectedEntities* doit être une entity selection appartenant à la même dataclass que l'entity selection d'origine, sinon une erreur 1587 - "La sélection d'entités provient d'une dataclass incompatible" est générée.
 
 #### Résultat
 
 The returned object contains the following properties:
 
-| Propriété      | Type        | Description                     |
-| -------------- | ----------- | ------------------------------- |
-| ranges         | Collection  | Collection of range objects     |
-| ranges[].start | Entier long | First entity index in the range |
-| ranges[].end   | Entier long | Last entity index in the range  |
+| Propriété      | Type        | Description                              |
+| -------------- | ----------- | ---------------------------------------- |
+| ranges         | Collection  | Collection d'objets plage                |
+| ranges[].start | Entier long | Indice de la première entité de la plage |
+| ranges[].end   | Entier long | Indice de la dernière entité de la plage |
 
-If a `ranges` property contains a single entity, `start` = `end`. Index starts at 0.
+Si une propriété `ranges` contient une seule entité, `start` = `end`. L'indice démarre à 0.
 
-The function returns an empty collection in the `ranges` property if the original entity selection or the *selectedEntities* entity selection is empty.
+La fonction retourne une collection vide dans la propriété `ranges` si l'entity selection d'origine ou l'entity selection *selectedEntities* est vide.
 
 #### Exemple
 
