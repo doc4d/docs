@@ -245,9 +245,9 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
     このログを開始するには:
 
     ```4d
-    SET DATABASE PARAMETER(SMTP Log;1) //start SMTP log
-    SET DATABASE PARAMETER(POP3 Log;1) //start POP3 log
-    SET DATABASE PARAMETER(IMAP Log;1) //start IMAP log
+    SET DATABASE PARAMETER(SMTP Log;1) // SMTPログを開始
+    SET DATABASE PARAMETER(POP3 Log;1) // POP3ログを開始
+    SET DATABASE PARAMETER(IMAP Log;1) // IMAPログを開始
     ```
 
 > 4D Server: 4D Server 管理ウィンドウ内の [メンテナンスページ](ServerWindow/maintenance.md) の **リクエストとデバッグのログを開始** ボタンをクリックします。   
@@ -345,7 +345,7 @@ SET DATABASE PARAMETER(Client Log Recording;0)
     + Windows: `Users\[userName]\AppData\Roaming\[application]`
     + macOS: `/Users/[userName]/Library/ApplicationSupport/[application]`
 
-> If you want to enable the log configuration file for all projects in stand-alone, server and remote 4D applications, you can copy the `logConfig.json` file in the following folder: - Windows: `Users\[userName]\AppData\Roaming\4D or \4D Server` - macOS: `/Users/[userName]/Library/ApplicationSupport/4D or /4D Server`
+> スタンドアロン、サーバー、リモート4Dアプリケーションのプロジェクトすべてでログ設定ファイルを有効化するには、次のフォルダーに `logConfig.json` ファイルをコピーします:<br /> - Windows: `Users\[userName]\AppData\Roaming\4D または \4D Server`<br /> - macOS: `/Users/[userName]/Library/ApplicationSupport/4D または /4D Server`
 
 ### JSONでの記述
 
