@@ -35,7 +35,7 @@ To stop catching errors and give back hand to 4D, call `ON ERR CALL` with an emp
 ON ERR CALL("") //gives back control to 4D
 ```
 
-The  `Method called on error` command allows to know the name of the method installed by `ON ERR CALL` for the current process. It is particularly useful in the context of generic code because it enables you to temporarily change and then restore the error-catching method:
+The  `Method called on error` command allows you to know the name of the method installed by `ON ERR CALL` for the current process. It is particularly useful in the context of generic code because it enables you to temporarily change and then restore the error-catching method:
 
 ```4d
  $methCurrent:=Method called on error
@@ -56,7 +56,7 @@ An error-handling method installed by the `ON ERR CALL` command only applies to 
 
 ### Handling errors within the method
 
-Within the custom error method, you have access to several information that will help you identifying the error:
+Within the custom error method, you have access to several pieces of information that will help you identifying the error:
 
 - dedicated system variables(*):
 
