@@ -2336,7 +2336,7 @@ La función `.sort()`<!-- REF #collection.sort().Summary -->ordena los elementos
 y también devuelve la colección ordenada.
 > Esta función modifica la colección original.
 
-Si se llama a `.sort()` sin parámetros, sólo se ordenan los valores escalares (número, texto, fecha, booleanos). Elements are sorted by default in ascending order, according to their type.
+Si se llama a `.sort()` sin parámetros, sólo se ordenan los valores escalares (número, texto, fecha, booleanos). Los elementos se ordenan por defecto de forma ascendente, según su tipo.
 
 Si desea ordenar los elementos de la colección en otro orden o clasificar cualquier tipo de elemento, debe suministrar en *methodName*, un método de comparación que compare dos valores y devuelva **true** en *$1.result* si el primer valor es menor que el segundo. Puede suministrar parámetros adicionales a *methodName* si es necesario.
 

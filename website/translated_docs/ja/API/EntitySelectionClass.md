@@ -95,27 +95,27 @@ $employees:=Create entity selection([Employee])
 **USE ENTITY SELECTION** (*entitySelection*)<!-- END REF -->
 
 <!-- REF #_command_.USE ENTITY SELECTION.Params -->
-| 引数              | タイプ             |    | 説明                  |
-| --------------- | --------------- |:--:| ------------------- |
-| entitySelection | EntitySelection | -> | An entity selection |
+| 引数              | タイプ             |    | 説明           |
+| --------------- | --------------- |:--:| ------------ |
+| entitySelection | EntitySelection | -> | エンティティセレクション |
 <!-- END REF -->
 
 #### 説明
 
-The `USE ENTITY SELECTION` command updates the current selection of the table matching the dataclass of the *entitySelection* parameter, according to the content of the entity selection.
+`USE ENTITY SELECTION` コマンドは、*entitySelection* 引数で指定したデータクラスに合致するテーブルのカレントセレクションを、エンティティセレクションの中身に応じて更新します。
 
-This command cannot be used with a [Remote datastore](../ORDA/remoteDatastores.md).
+[リモートデータストア](../ORDA/remoteDatastores.md) の場合は、このコマンドは使用できません。
 
-> After a call to `USE ENTITY SELECTION`, the first record of the updated current selection (if not empty) becomes the current record, but it is not loaded in memory. If you need to use the values of the fields in the current record, use the `LOAD RECORD` command after the `USE ENTITY SELECTION` command.
+> `USE ENTITY SELECTION` の呼び出し後、更新された (空でない) カレントセレクションの最初のレコードがカレントレコードとなりますが、それはメモリ内にはロードされません。 カレントレコードのフィールド値を使用するには、`USE ENTITY SELECTION` コマンドの後に `LOAD RECORD` コマンドを使用します。
 
 #### 例題
 
 ```4d
 var $entitySel : Object
 
-$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel is related to the Employee dataclass
+$entitySel:=ds.Employee.query("lastName = :1";"M@") // $entitySel は Employee データクラスにリレートされています
 REDUCE SELECTION([Employee];0)
-USE ENTITY SELECTION($entitySel) //The current selection of the Employee table is updated
+USE ENTITY SELECTION($entitySel) // Employee テーブルのカレントセレクションが更新されました
 ```
 
 

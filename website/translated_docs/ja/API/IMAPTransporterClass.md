@@ -792,10 +792,10 @@ $status:=$transporter.expunge()
 ## .getBoxInfo()
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                 |
-| ------ | ------------------ |
-| v18 R5 | *name* is optional |
-| v18 R4 | 追加                 |
+| バージョン  | 内容           |
+| ------ | ------------ |
+| v18 R5 | *name* は任意です |
+| v18 R4 | 追加           |
 </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
@@ -811,11 +811,11 @@ $status:=$transporter.expunge()
 
 #### 説明
 
-The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the current maibox, or the mailbox *name*<!-- END REF -->. この関数は、[`.selectBox()`](#selectbox) と同じ情報を返しますが、カレントメールボックスは変えません。
+`.getBoxInfo()` 関数は、 <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->カレントメールボックス、または *name* が指定するメールボックスに対応する `boxInfo` オブジェクトを返します<!-- END REF -->。 この関数は、[`.selectBox()`](#selectbox) と同じ情報を返しますが、カレントメールボックスは変えません。
 
 任意の *name* パラメーターには、アクセスするメールボックスの名称を渡します。 この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は [`.getDelimiter()`](#getdelimiter) 関数で調べることができます。
 
-If the mailbox *name* is not selectable or does not exist, the function generates an error and returns **null**.
+*name* のメールボックスが選択不可の場合、または見つからない場合には、関数はエラーを生成し、**null** を返します。
 
 **返されるオブジェクト**
 
@@ -1738,18 +1738,18 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 #### 説明
 
-The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. この関数を使用するとメールボックスに関する情報を取得することができます。
+`.selectBox()` 関数は、 <!-- REF #IMAPTransporterClass.selectBox().Summary -->*name* に指定したメールボックスをカレントメールボックスとして選択します<!-- END REF -->。 この関数を使用するとメールボックスに関する情報を取得することができます。
 > カレントメールボックスを変更せずに、メールボックスから情報を取得するには、[`.getBoxInfo()`](#getboxinfo) を使用します。
 
-In the *name* parameter, pass the name of the mailbox to access. この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は [`.getDelimiter()`](#getdelimiter) 関数で調べることができます。
+*name* には、アクセスするメールボックスの名前を渡します。 この名称は明確な左から右への階層を表し、特定の区切り文字でレベルを区分けします。 この区切り文字は [`.getDelimiter()`](#getdelimiter) 関数で調べることができます。
 
-The optional *state* parameter defines the type of access to the mailbox. 取りうる値は以下の通りです:
+任意の *state* 引数を渡すと、メールボックスへのアクセスタイプを定義できます。 取りうる値は以下の通りです:
 
 | 定数                    | 値 | 説明                                                                         |
 | --------------------- | - | -------------------------------------------------------------------------- |
 | IMAP read only state  | 1 | 選択されたメールボックスは読み取り専用権限でアクセスされます。 新しいメッセージを表す "新着" フラグはそのまま変化しません。           |
 | IMAP read write state | 0 | 選択されたメールボックスは読み書き可能権限でアクセスされます。 メッセージは "既読" と判断され、"新着" フラグは失われます。 (デフォルト値) |
-> * The function generates an error and returns **Null** if *name* designates a non-existing mailbox.
+> * *name* 引数が存在しないメールボックスを指定した場合、関数はエラーを生成し **Null** を返します。
 > * 開いている接続がない場合、`.selectBox()` は接続を開きます。
 > * 接続が指定された時間 (`IMAP New transporter` 参照) 以上に使用されなかった場合には、[`.checkConnection()`](#checkconnection) 関数が自動的に呼び出されます。
 
