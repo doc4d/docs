@@ -820,7 +820,7 @@ If the mailbox *name* is not selectable or does not exist, the function generate
 
 **Returned object**
 
-The `boxInfo` object returned contains the following properties:
+O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 
 | Property   | Type   | Description                                                         |
 | ---------- | ------ | ------------------------------------------------------------------- |
@@ -1737,7 +1737,7 @@ Search-keys may request the value to search for:
 
 #### Description
 
-The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. Essa função permite que recupere informação sobre o mailbox.
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
 In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
@@ -1754,7 +1754,7 @@ The optional *state* parameter defines the type of access to the mailbox. The po
 
 **Returned object**
 
-The `boxInfo` object returned contains the following properties:
+O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 
 | Property   | Type   | Description                               |
 | ---------- | ------ | ----------------------------------------- |

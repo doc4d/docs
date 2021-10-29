@@ -129,11 +129,11 @@ Se aplica carga diferida.
 
 **parámetros**
 
-In the optional *settings* parameter, you can pass an object containing additional options. The following property is supported:
+En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                          |
-| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Label for the optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
+| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                                                     |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el contexto de optimización aplicado a la selección de entidades. Este contexto será utilizado por el código que maneja la selección de entidades para que pueda beneficiarse de la optimización. Esta funcionalidad está [diseñada para el procesamiento cliente/servidor de ORDA](ORDA/entities.md#client-server-optimization). |
 
 
 #### Ejemplo
@@ -173,49 +173,49 @@ In the optional *settings* parameter, you can pass an object containing addition
 
 #### Descripción
 
-The `.fromCollection()` function <!-- REF #DataClassClass.fromCollection().Summary -->updates or creates entities in the dataclass according to the *objectCol* collection of objects, and returns the corresponding entity selection<!-- END REF -->.
+La función `.fromCollection()` <!-- REF #DataClassClass.fromCollection().Summary -->actualiza o crea entidades en la clase de datos según la colección de objetos *objectCol*, y devuelve la selección de entidades correspondiente<!-- END REF -->.
 
-In the *objectCol* parameter, pass a collection of objects to create new or update existing entities of the dataclass. The property names must be the same as attribute names in the dataclass. If a property name does not exist in the dataclass, it is ignored. If an attribute value is not defined in the collection, its value is null.
+En el parámetro *objectCol*, pasa una colección de objetos para crear nuevas entidades o actualizar las existentes de la clase de datos. Los nombres de las propiedades deben ser los mismos que los de los atributos de la clase de datos. Si un nombre de propiedad no existe en la clase de datos, se ignora. Si un valor de atributo no está definido en la colección, su valor es null.
 
-The mapping between the objects of the collection and the entities is done on the **attribute names** and **matching types**. If an object's property has the same name as an entity's attribute but their types do not match, the entity's attribute is not filled.
+El mapeo entre los objetos de la colección y las entidades se realiza sobre los **nombres de atributos** y **tipos coincidentes**. Si la propiedad de un objeto tiene el mismo nombre que el atributo de una entidad pero sus tipos no coinciden, el atributo de la entidad no se llena.
 
 **Crear o actualizar modos**
 
-For each object of *objectCol*:
+Para cada objeto de *objectCol*:
 
-*   If the object contains a boolean property "\_\_NEW" set to false (or does not contain a boolean "\_\_NEW" property), the entity is updated or created with the corresponding values of the properties from the object. No check is performed in regards to the primary key:
-    *   If the primary key is given and exists, the entity is updated. In this case, the primary key can be given as is or with a "\_\_KEY" property (filled with the primary key value).
-    *   If the primary key is given (as is) and does not exist, the entity is created
-    *   If the primary key is not given, the entity is created and the primary key value is assigned with respect to standard database rules.
-*   If the object contains a boolean property "\_\_NEW" set to **true**, the entity is created with the corresponding values of the attributes from the object. A check is performed in regards to the primary key:
-    *   If the primary key is given (as is) and exists, an error is sent
-    *   If the primary key is given (as is) and does not exist, the entity is created
-    *   If the primary is not given, the entity is created and the primary key value is assigned with respect to standard database rules.
-> The "\_\_KEY" property containing a value is taken into account only when the "\_\_NEW" property is set to **false** (or is omitted) and a corresponding entity exists. In all other cases, the "\_\_KEY" property value is ignored, primary key value must be passed "as is".
+*   Si el objeto contiene una propiedad booleana "\__NEW" establecida en false (o no contiene una propiedad booleana "\__NEW"), la entidad se actualiza o se crea con los valores correspondientes de las propiedades del objeto. No se realiza ninguna comprobación con respecto a la llave primaria:
+    *   Si la llave primaria se da y existe, la entidad se actualiza. En este caso, la llave primaria puede darse tal cual o con una propiedad "\_\_KEY" (llenada con el valor de la llave primaria).
+    *   Si se da la llave primaria (tal cual) y no existe, se crea la entidad
+    *   Si no se da la llave primaria, se crea la entidad y se asigna el valor de la llave primaria con respecto a las reglas estándar de la base de datos.
+*   Si el objeto contiene una propiedad booleana "\_\_NEW" establecida como **true**, la entidad se crea con los valores correspondientes de los atributos del objeto. Se realiza una comprobación con respecto a la llave primaria:
+    *   Si se da la llave primaria (tal cual) y existe, se envía un error
+    *   Si se da la llave primaria (tal cual) y no existe, se crea la entidad
+    *   Si no se da la primaria, se crea la entidad y se asigna el valor de la llave primaria con respecto a las reglas estándar de la base de datos.
+> La propiedad "\__KEY" que contiene un valor sólo se tiene en cuenta cuando la propiedad "\__NEW" se establece como **false** (o se omite) y existe una entidad correspondiente. En todos los demás casos, el valor de la propiedad "\_\_KEY" se ignora, el valor de la llave primaria debe pasarse "tal cual".
 
 **Related entities**
 
-The objects of *objectCol* may contain one or more nested object(s) featuring one or more related entities, which can be useful to create or update links between entities.
+Los objetos de *objectCol* pueden contener uno o más objetos anidados que presentan una o más entidades relacionadas, lo que puede ser útil para crear o actualizar enlaces entre entidades.
 
-The nested objects featuring related entities must contain a "\_\_KEY" property (filled with the primary key value of the related entity) or the primary key attribute of the related entity itself. The use of a \_\_KEY property allows independence from the primary key attribute name.
-> The content of the related entities cannot be created / updated through this mechanism.
+Los objetos anidados que presentan entidades relacionadas deben contener una propiedad "\_\_KEY" (llenada con el valor de la llave primaria de la entidad relacionada) o el atributo de llave primaria de la propia entidad relacionada. El uso de una propiedad \_\_KEY permite la independencia del nombre del atributo de la llave primaria.
+> El contenido de las entidades relacionadas no puede ser creado / actualizado a través de este mecanismo.
 
 **Sello**
 
-If a \_\_STAMP attribute is given, a check is performed with the stamp in the datastore and an error can be returned ("Given stamp does not match current one for record# XX of table XXXX"). For more information, see [Entity locking](ORDA/entities.md#entity-locking).
+Si se da un atributo \_\_STAMP, se realiza una comprobación con el sello en el almacén de datos y se puede devolver un error ("El sello dado no coincide con el actual para el registro# XX de la tabla XXXX"). Para más información, consulte [Entity locking](ORDA/entities.md#entity-locking).
 
-**parámetros**
+**settings**
 
-In the optional *settings* parameter, you can pass an object containing additional options. The following property is supported:
+En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                          |
-| --------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Label for the optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
+| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                                                     |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el contexto de optimización aplicado a la selección de entidades. Este contexto será utilizado por el código que maneja la selección de entidades para que pueda beneficiarse de la optimización. Esta funcionalidad está [diseñada para el procesamiento cliente/servidor de ORDA](ORDA/entities.md#client-server-optimization). |
 
 
 #### Ejemplo 1
 
-We want to update an existing entity. The \_\_NEW property is not given, the employee primary key is given and exists:
+Queremos actualizar una entidad existente. La propiedad \_\_NEW no se da, la llave primaria del empleado se da y existe:
 
 ```4d
  var $empsCollection : Collection
@@ -235,7 +235,7 @@ We want to update an existing entity. The \_\_NEW property is not given, the emp
 
 #### Ejemplo 2
 
-We want to update an existing entity. The \_\_NEW property is not given, the employee primary key is with the \_\_KEY attribute and exists:
+Queremos actualizar una entidad existente. La propiedad \_\_NEW no se da, la llave primaria del empleado está con el atributo \_\_KEY y existe:
 
 ```4d
  var $empsCollection : Collection
@@ -244,18 +244,18 @@ We want to update an existing entity. The \_\_NEW property is not given, the emp
 
  $empsCollection:=New collection
  $emp:=New object
- $emp.__KEY:=1720 //Existing PK in Employee table
+ $emp.__KEY:=1720 //PK existente en la tabla Employee
  $emp.firstName:="John"
  $emp.lastName:="Boorman"
- $emp.employer:=New object("ID";121) //Existing PK in the related dataClass Company
-  // For this employee, we can change the Company by using another existing PK in the related dataClass Company
+ $emp.employer:=New object("ID";121) // PK existente en la dataClass relacionada Company
+  // Para este empleado, podemos cambiar la Empresa utilizando otro PK existente en la dataClass relacionada Company
  $empsCollection.push($emp)
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
 #### Ejemplo 3
 
-We want to simply create a new entity from a collection:
+Queremos crear simplemente una nueva entidad a partir de una colección:
 
 ```4d
  var $empsCollection : Collection
@@ -272,7 +272,7 @@ We want to simply create a new entity from a collection:
 
 #### Ejemplo 4
 
-We want to create an entity. The \_\_NEW property is True, the employee primary key is not given:
+Queremos crear una entidad. La propiedad \_\_NEW es True, la llave primaria del empleado no se da:
 
 ```4d
  var $empsCollection : Collection
@@ -283,7 +283,7 @@ We want to create an entity. The \_\_NEW property is True, the employee primary 
  $emp:=New object
  $emp.firstName:="Mary"
  $emp.lastName:="Smith"
- $emp.employer:=New object("__KEY";121) //Existing PK in the related dataClass Company
+ $emp.employer:=New object("__KEY";121) //PK existente en la dataClass Company
  $emp.__NEW:=True
  $empsCollection.push($emp)
  $employees:=ds.Employee.fromCollection($empsCollection)
@@ -295,7 +295,7 @@ We want to create an entity. The \_\_NEW property is True, the employee primary 
 
 #### Ejemplo 5
 
-We want to create an entity. The \_\_NEW property is omitted, the employee primary key is given and does not exist:
+Queremos crear una entidad. La propiedad \_\_NEW se omite, la llave primaria del empleado se da y no existe:
 
 ```4d
  var $empsCollection : Collection
@@ -304,7 +304,7 @@ We want to create an entity. The \_\_NEW property is omitted, the employee prima
 
  $empsCollection:=New collection
  $emp:=New object
- $emp.ID:=10000 //Unexisting primary key
+ $emp.ID:=10000 //Llave primaria inexistente
  $emp.firstName:="Françoise"
  $emp.lastName:="Sagan"
  $empsCollection.push($emp)
@@ -313,7 +313,7 @@ We want to create an entity. The \_\_NEW property is omitted, the employee prima
 
 #### Ejemplo 6
 
-In this example, the first entity will be created and saved but the second will fail since they both use the same primary key:
+En este ejemplo, la primera entidad se creará y guardará pero la segunda fallará ya que ambas utilizan la misma llave primaria:
 
 ```4d
  var $empsCollection : Collection
@@ -322,21 +322,21 @@ In this example, the first entity will be created and saved but the second will 
 
  $empsCollection:=New collection
  $emp:=New object
- $emp.ID:=10001 // Unexisting primary key
+ $emp.ID:=10001 // Llave primaria inexistente
  $emp.firstName:="Simone"
  $emp.lastName:="Martin"
  $emp.__NEW:=True
  $empsCollection.push($emp)
 
  $emp2:=New object
- $emp2.ID:=10001 // Same primary key, already existing
+ $emp2.ID:=10001 // La misma llave primaria, ya existente
  $emp2.firstName:="Marc"
  $emp2.lastName:="Smith"
  $emp2.__NEW:=True
  $empsCollection.push($emp2)
  $employees:=ds.Employee.fromCollection($empsCollection)
-  //first entity is created
-  //duplicated key error for the second entity
+  //se crea la primera entidad
+  //error de llave duplicada para la segunda entidad
 ```
 
 #### Ver también
@@ -361,16 +361,16 @@ In this example, the first entity will be created and saved but the second will 
 
 
 <!-- REF #DataClassClass.get().Params -->
-| Parámetros | Tipo            |    | Descripción                                 |
-| ---------- | --------------- |:--:| ------------------------------------------- |
-| primaryKey | Integer OR Text | -> | Primary key value of the entity to retrieve |
-| parámetros | Objeto          | -> | Opciones de construcción: context           |
-| Resultado  | 4D.Entity       | <- | Entity matching the designated primary key  |
+| Parámetros | Tipo            |    | Descripción                                          |
+| ---------- | --------------- |:--:| ---------------------------------------------------- |
+| primaryKey | Integer OR Text | -> | Valor de la llave primaria de la entidad a recuperar |
+| parámetros | Objeto          | -> | Opciones de construcción: context                    |
+| Resultado  | 4D.Entity       | <- | Entidad que coincide con la llave primaria designada |
 <!-- END REF -->
 
 #### Descripción
 
-The `.get()` function <!-- REF #DataClassClass.get().Summary -->queries the dataclass to retrieve the entity matching the *primaryKey* parameter<!-- END REF -->.
+La función `.get()` <!-- REF #DataClassClass.get().Summary -->consulta la clase de datos para recuperar la entidad que coincide con el parámetro *primaryKey*<!-- END REF -->.
 
 In *primaryKey*, pass the primary key value of the entity to retrieve. The value type must match the primary key type set in the datastore (Integer or Text). You can also make sure that the primary key value is always returned as Text by using the [`.getKey()`](EntityClass.md#getkey) function with the `dk key as string` parameter.
 
@@ -380,7 +380,7 @@ Lazy loading is applied, which means that related data is loaded from disk only 
 
 **parámetros**
 
-In the optional *settings* parameter, you can pass an object containing additional options. The following property is supported:
+En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
 | Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                         |
 | --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
