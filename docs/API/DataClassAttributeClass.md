@@ -236,6 +236,7 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
+|v19 R4|Added "alias"|
 |v19 R3|Added "calculated"|
 </details>
 
@@ -249,7 +250,8 @@ This property is not returned if [`.kind`](#kind) = "relatedEntity" or "relatedE
 The `.kind` property <!-- REF DataClassAttributeClass.kind.Summary -->returns the category of the attribute<!-- END REF -->. Returned value can be one of the following:
 
 *	"storage": storage (or scalar) attribute, i.e. attribute storing a value, not a reference to another attribute
-*	"calculated": computed attribute, i.e. defined through a [`get` function](ORDA/ordaClasses.md#function-get-attributename).
+*	"calculated": computed attribute, i.e. defined through a [`get` function](ORDA/ordaClasses.md#function-get-attributename)
+*	"alias": attribute built upon a relation attribute
 *	"relatedEntity": N -> 1 relation attribute (reference to an entity)
 *	"relatedEntities": 1 -> N relation attribute (reference to an entity selection)
 

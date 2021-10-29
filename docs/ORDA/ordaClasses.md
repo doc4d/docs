@@ -26,7 +26,7 @@ Thanks to this feature, the entire business logic of your 4D application can be 
 
 - If the physical structure evolves, you can simply adapt function code and client applications will continue to call them transparently. 
 
-- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes)) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
+- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes)) and [alias attributes](XXX) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function and alias with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
 
 ![](assets/en/ORDA/api.png)
 
@@ -66,6 +66,8 @@ Also, object instances from ORDA data model user classes benefit from their pare
 
 |Version|Changes|
 |---|---|
+|v19 R4|Alias attributes in the Entity Class
+|v19 R3|Computed attributes in the Entity Class
 |v18 R5|Data model class functions are not exposed to REST by default. New `exposed` and `local` keywords.
 </details>
 
@@ -127,6 +129,7 @@ Function GetBestOnes()
 ```
 
 Then you can get an entity selection of the "best" companies by executing: 
+
 
 ```4d
 	var $best : cs.CompanySelection
@@ -216,6 +219,8 @@ Each table exposed with ORDA offers an Entity class in the `cs` class store.
 - **Class name**: *DataClassName*Entity (where *DataClassName* is the table name)
 - **Example name**: cs.CityEntity
 
+#### Computed attributes
+
 Entity classes allow you to define **computed attributes** using specific keywords:
 
 - `Function get` *attributeName*
@@ -223,7 +228,16 @@ Entity classes allow you to define **computed attributes** using specific keywor
 - `Function query` *attributeName*
 - `Function orderBy` *attributeName*
 
-For more information, please refer to the [Computed attributes](#computed-attributes) section. 
+For information, please refer to the [Computed attributes](#computed-attributes) section. 
+
+#### Alias attributes
+
+Entity classes allow you to define **alias attributes**, usually over related attributes, using the `Alias` keyword:
+
+`Alias` *attributeName* *targetPath*
+
+For information, please refer to the [Alias attributes](#alias-attributes) section. 
+
 
 #### Example
 
@@ -236,8 +250,7 @@ Function getPopulation()
     $0:=This.zips.sum("population")
 
 
-Function isBigCity
-C_BOOLEAN($0)
+Function isBigCity(): Boolean
 // The getPopulation() function is usable inside the class
 $0:=This.getPopulation()>50000
 ```
@@ -616,10 +629,141 @@ Function orderBy age($event : Object)-> $result : Text
 ```
 
 
+## Alias attributes
+
+### Overview
+
+An **alias** attribute is built above another attribute of the data model, which can belong to the same dataclass or to a related dataclass (available through one or more levels). An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass. 
+
+Alias attributes bring more readability and simplicity in the code and in queries by allowing to expose business concepts instead of implementation details. 
+
+> ORDA alias attributes are not [**exposed**](#exposed-vs-non-exposed-functions) by default. You expose an alias attribute by adding the `exposed` keyword before the Alias keyword.
+
+
+### `Alias <attributeName> <targetPath>`
+
+You create an alias attribute in the [**entity class**](#entity-class) of the dataclass using the `Alias` keyword. 
+
+#### Syntax
+
+```
+{exposed} Alias <attributeName> <targetPath>
+
+```
+
+*attributeName* must comply with [standard rules for property names](Concepts/identifiers.html#object-properties). 
+
+*targetPath* can be an attribute name (if it belongs to the same dataclass) or an attribute path such as "a.b.c". 
+
+### Example
+
+Considering the following model:
+
+![](assets/en/ORDA/alias1.png)
+
+In the Teacher dataclass, an alias attribute returns all students of a teacher:
+
+```4d
+// cs.TeacherEntity class
+
+Class extends Entity
+
+Alias students courses.student //relatedEntities 
+```
+
+In the Student dataclass, an alias attribute returns all teachers of a student:
+
+```4d
+// cs.StudentEntity class
+
+Class extends Entity
+
+Alias teachers courses.teacher //relatedEntities 
+```
+
+In the Course dataclass:
+
+- an alias attribute returns another label for the "name" attribute
+- an alias attribute returns the teacher name
+- an alias attribute returns the student name
+
+
+```4d
+// cs.CourseEntity class
+
+Class extends Entity
+
+Alias label name 
+Exposed Alias teacherName teacher.name //relatedEntity
+Exposed Alias studentName student.name //relatedEntity
+
+```
+
+You can then execute the following queries:
+
+```4d
+// Find course named "Archeography"
+ds.Course.query("label = :1";"Archeography")
+
+// Find courses given by the professor Smith
+ds.Course.query("teacherName = :1";"Smith")
+
+// Find courses where Student "Martin" assists
+ds.Course.query("studentName = :1";"Martin")
+
+// Find students who have M. Smith as teacher 
+ds.Student.query("teachers.name = :1";"Smith")
+
+// Find teachers who have M. Martin as Student
+ds.Teacher.query("students.name = :1";"Martin")
+```
+
+
+
+### Using alias attributes
+
+Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see below). They can be used instead of their target attribute path in the following class functions:
+
+query()
+entity.toObject()
+entitySelection.toCollection()
+entitySelection.extract()
+entitySelection.orderBy()
+entitySelection.orderByFormula ()
+entitySelection.average() --> if an alias has been defined on a property of an object field
+entitySelection.count() --> if an alias has been defined on a property of an object field
+entitySelection.distinct() --> if an alias has been defined on a property of an object field
+entitySelection.sum() --> if an alias has been defined on a property of an object field
+entitySelection.min() --> if an alias has been defined on a property of an object field
+entitySelection.max() --> if an alias has been defined on a property of an object field
+entity.diff() (1)
+entity.touchedAttributes() (1)
+
+An alias attribute gets the same data type as the associated property path when the result of the path is scalar. 
+
+
+
+
+
+
+An alias attribute hinerits its data type from the target attribute: 
+
+- if the target attribute kind is storage, the alias data type will be the same
+- if the target attribute kind is relatedEntity or relatedEntities, the alias data type will be 4D.Entity or 4D.EntitySelection. 
+
+An al 
+`Alias` *attributeName* *targetPath*
+
+Once a relationship exists between dataclasses, it becomes simple to add new attributes to child classes that refer to parent or even ancestral class attributes. Referred to as **alias** attributes, these attributes store no data, but provide the convenience found in a denormalized relational structure. 
+
+Notice that the InvoiceItem class has two attributes, partCost and partName, each of which refers to a storage attribute in the related class Part via the relation attribute itemPart. Because Wakanda traverses a specifically named relation attribute to determine each alias attribute’s value, there is no ambiguity when it is accessed. Any number of alias attributes can be included this way. The result is an InvoiceItem datastore class that incorporates all the pieces of information needed by the application.
+
+
+
 
 ## Exposed vs non-exposed functions
 
-For security reasons, all of your data model class functions are **not exposed** (i.e., private) by default to remote requests. 
+For security reasons, all of your data model class functions and alias attributes are **not exposed** (i.e., private) by default to remote requests. 
 
 Remote requests include:
 
