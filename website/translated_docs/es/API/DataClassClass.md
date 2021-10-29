@@ -372,19 +372,19 @@ En este ejemplo, la primera entidad se creará y guardará pero la segunda falla
 
 La función `.get()` <!-- REF #DataClassClass.get().Summary -->consulta la clase de datos para recuperar la entidad que coincide con el parámetro *primaryKey*<!-- END REF -->.
 
-In *primaryKey*, pass the primary key value of the entity to retrieve. The value type must match the primary key type set in the datastore (Integer or Text). You can also make sure that the primary key value is always returned as Text by using the [`.getKey()`](EntityClass.md#getkey) function with the `dk key as string` parameter.
+En *primaryKey*, pase el valor de la llave primaria de la entidad a recuperar. El tipo de valor debe coincidir con el tipo de la llave primaria definida en el almacén de datos (Entero o Texto). También puede asegurarse de que el valor de la llave primaria se devuelva siempre como Texto utilizando la función [`.getKey()`](EntityClass.md#getkey) con el parámetro `dk key as string`.
 
-If no entity is found with *primaryKey*, a **Null** entity is returned.
+Si no se encuentra ninguna entidad con*primaryKey*, se devuelve una entidad **Null**.
 
-Lazy loading is applied, which means that related data is loaded from disk only when it is required.
+Se aplica la carga diferida, lo que significa que los datos relacionados se cargan desde el disco sólo cuando son necesarios.
 
-**parámetros**
+**settings**
 
 En el parámetro opcional *settings* se puede pasar un objeto que contenga opciones adicionales. Se soporta la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                         |
-| --------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Label for the automatic optimization context applied to the entity. This context will be used by the subsequent code that loads the entity so that it can benefit from the optimization. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization). |
+| Propiedad | Tipo  | Descripción                                                                                                                                                                                                                                                                                                                           |
+| --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el contexto de optimización automática aplicado a la entidad. Este contexto será utilizado por el código siguiente que carga la entidad para que pueda beneficiarse de la optimización. Esta funcionalidad está [diseñada para el procesamiento cliente/servidor de ORDA](ORDA/entities.md#client-server-optimization). |
 
 
 
@@ -393,13 +393,13 @@ En el parámetro opcional *settings* se puede pasar un objeto que contenga opcio
 ```4d
  var $entity : cs.EmployeeEntity  
  var $entity2 : cs.InvoiceEntity
- $entity:=ds.Employee.get(167) // return the entity whose primary key value is 167
- $entity2:=ds.Invoice.get("DGGX20030") // return the entity whose primary key value is "DGGX20030"
+ $entity:=ds.Employee.get(167) // devuelve la entidad cuyo valor de llave primaria es 167
+ $entity2:=ds.Invoice.get("DGGX20030") // devuelve la entidad cuyo valor de llave primaria es "DGGX20030"
 ```
 
 #### Ejemplo 2
 
-This example illustrates the use of the *context* property:
+Este ejemplo ilustra el uso de la propiedad *context*:
 
 ```4d
  var $e1; $e2; $e3; $e4 : cs.EmployeeEntity
@@ -409,16 +409,16 @@ This example illustrates the use of the *context* property:
  $settings2:=New object("context";"summary")
 
  $e1:=ds.Employee.get(1;$settings)
- completeAllData($e1) // In completeAllData method, an optimization is triggered and associated to context "detail"
+ completeAllData($e1) // En el método completeAllData, se lanza una optimización y se asocia al contexto "detail"
 
  $e2:=ds.Employee.get(2;$settings)
- completeAllData($e2) // In completeAllData method, the optimization associated to context "detail" is applied
+ completeAllData($e2) // En el método completeAllData, se aplica la optimización asociada al contexto "detail"
 
  $e3:=ds.Employee.get(3;$settings2)
- completeSummary($e3) //In completeSummary method, an optimization is triggered and associated to context "summary"
+ completeSummary($e3) //En el método completeSummary, se lanza una optimización y se asocia al contexto "summary"
 
  $e4:=ds.Employee.get(4;$settings2)
- completeSummary($e4) //In completeSummary method, the optimization associated to context "summary" is applied
+ completeSummary($e4) //En el método completeSummary se aplica la optimización asociada al contexto "summary"
 ``` 
  
 
@@ -435,32 +435,32 @@ This example illustrates the use of the *context* property:
 </details>
 
 <!-- REF #DataClassClass.getDataStore().Syntax -->
-**.getDataStore()** : cs.DataStore<!-- END REF -->
+**.getDataStore()**: cs.DataStore<!-- END REF -->
 
 <!-- REF #DataClassClass.getDataStore().Params -->
-| Parámetros | Tipo         |    | Descripción                |
-| ---------- | ------------ |:--:| -------------------------- |
-| Resultado  | cs.DataStore | <- | Datastore of the dataclass |
+| Parámetros | Tipo         |    | Descripción               |
+| ---------- | ------------ |:--:| ------------------------- |
+| Resultado  | cs.DataStore | <- | Datastore de la dataclass |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getDataStore( )` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+La función `.getDataStore( )`<!-- REF #DataClass.getDataStore().Summary -->devuelve el datastore para la clase de datos especificada<!-- END REF -->.
 
 El almacén de datos puede ser:
 
-*   the main datastore, as returned by the `ds` command.
-*   a remote datastore, opened using the `Open datastore` command.
+*   el almacén de datos principal, devuelto por el comando `ds`.
+*   un almacén de datos remoto, abierto con el comando `Open datastore`.
 
 
 #### Ejemplo
 
-The ***SearchDuplicate*** project method searches for duplicated values in any dataclass.
+El método de proyecto ***SearchDuplicate*** busca valores duplicados en cualquier clase de datos.
 
 ```4d
  var $pet : cs.CatsEntity
- $pet:=ds.Cats.all().first() //get an entity
+ $pet:=ds.Cats.all().first() //obtener una entidad
  SearchDuplicate($pet;"Dogs")
 ```
 
@@ -492,23 +492,23 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 **.getInfo()** : Object <!-- END REF -->
 
 <!-- REF #DataClassClass.getInfo().Params -->
-| Parámetros | Tipo   |    | Descripción                  |
-| ---------- | ------ | -- | ---------------------------- |
-| Resultado  | Objeto | <- | Information on the dataclass |
+| Parámetros | Tipo   |    | Descripción                         |
+| ---------- | ------ | -- | ----------------------------------- |
+| Resultado  | Objeto | <- | Información sobre la clase de datos |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. This function is useful for setting up generic code.
+La función `.getInfo( )` <!-- REF #DataClassClass.getInfo().Summary -->devuelve un objeto que proporciona información sobre la clase de datos<!-- END REF -->. Esta función es útil para configurar el código genérico.
 
 **Objeto devuelto**
 
-| Propiedad   | Tipo    | Descripción                              |
-| ----------- | ------- | ---------------------------------------- |
-| name        | Texto   | Nombre de la dataclass                   |
-| primaryKey  | Texto   | Name of the primary key of the dataclass |
-| tableNumber | Integer | Internal 4D table number                 |
+| Propiedad   | Tipo    | Descripción                                      |
+| ----------- | ------- | ------------------------------------------------ |
+| name        | Texto   | Nombre de la dataclass                           |
+| primaryKey  | Texto   | Nombre de la llave primaria de la clase de datos |
+| tableNumber | Integer | Número de la tabla 4D interna                    |
 
 
 
@@ -545,7 +545,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
  var $dataClassAttribute : Object
 
  $pk:=ds.Employee.getInfo().primaryKey
- $dataClassAttribute:=ds.Employee[$pk] // If needed the attribute matching the primary key is accessible
+ $dataClassAttribute:=ds.Employee[$pk] // Si es necesario, el atributo que coincide con la llave primaria es accesible
 ```
 
 <!-- END REF -->
@@ -565,29 +565,29 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 **.new()** : 4D.Entity <!-- END REF -->
 
 <!-- REF #DataClassClass.new().Params -->
-| Parámetros | Tipo      |    | Descripción                       |
-| ---------- | --------- | -- | --------------------------------- |
-| Resultado  | 4D.Entity | <- | New entity matching the Dataclass |
+| Parámetros | Tipo      |    | Descripción                                      |
+| ---------- | --------- | -- | ------------------------------------------------ |
+| Resultado  | 4D.Entity | <- | Nueva entidad que coincide con la clase de datos |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.new( )` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+La función `.new( )` <!-- REF #DataClassClass.new().Summary -->crea en memoria y devuelve una nueva entidad en blanco relacionada con la Dataclass<!-- END REF -->.
 
-The entity object is created in memory and is not saved in the database until the [`.save( )`](EntityClass.md#save) function is called. If the entity is deleted before being saved, it cannot be recovered.
+El objeto entidad se crea en memoria y no se guarda en la base de datos hasta que se llama a la función [`.save( )`](EntityClass.md#save). Si la entidad se borra antes de ser guardada, no se puede recuperar.
 
-**4D Server**: In client-server, if the primary key of the corresponding table is auto-incremented, it will be calculated when the entity is saved on the server.
+**4D Server**: en cliente-servidor, si la llave primaria de la tabla correspondiente se autoincrementa, se calculará cuando la entidad se guarde en el servidor.
 
 #### Ejemplo
 
-This example creates a new entity in the "Log" Dataclass and records information in the "info" attribute:
+Este ejemplo crea una nueva entidad en la clase de datos "Log" y registra la información en el atributo "info":
 
 ```4d 
  var $entity : cs.LogEntity
- $entity:=ds.Log.new() //create a reference
- $entity.info:="New entry" //store some information
- $entity.save() //save the entity
+ $entity:=ds.Log.new() //crea una referencia
+ $entity.info:="New entry" //almacenar alguna información
+ $entity.save() //guardar la entidad
 ```
  
 <!-- END REF -->
@@ -608,21 +608,21 @@ This example creates a new entity in the "Log" Dataclass and records information
 **.newSelection**( { *keepOrder* : Integer } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #DataClassClass.newSelection().Params -->
-| Parámetros | Tipo               |    | Descripción                                                                                                                                   |
-| ---------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| keepOrder  | Integer            | -> | `dk keep ordered`: creates an ordered entity selection,<br>`dk non ordered`: creates an unordered entity selection (default if omitted) |
-| Resultado  | 4D.EntitySelection | <- | New blank entity selection related to the dataclass                                                                                           |
+| Parámetros | Tipo               |    | Descripción                                                                                                                                                   |
+| ---------- | ------------------ | -- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| keepOrder  | Integer            | -> | `dk keep ordered`: crea una selección de entidades ordenada,<br>`dk no ordenada`: crea una selección de entidades no ordenada (por defecto si se omite) |
+| Resultado  | 4D.EntitySelection | <- | Nueva selección de entidades en blanco relacionadas con la clase de datos                                                                                     |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.newSelection( )` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+La función `.newSelection( )` <!-- REF #DataClassClass.newSelection().Summary -->crea una nueva selección de entidades en blanco, no compartible, relacionada con la clase de datos, en memoria<!-- END REF -->.
 
-> For information on non-shareable entity selections, please refer to [this section](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
+> Para más información sobre las selecciones de entidades no compartibles, consulte [esta sección](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
 
-If you want to create an ordered entity selection, pass the `dk keep ordered` selector in the *keepOrder* parameter. By default if you omit this parameter, or if you pass the `dk non ordered` selector, the method creates an unordered entity selection. Unordered entity selections are faster but you cannot rely on entity positions. For more information, please see [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
+Si quieres crear una selección de entidades ordenada, pase el selector `dk keep ordered` en el parámetro *keepOrder*. Por defecto, si se omite este parámetro, o si se pasa el selector `dk non ordered`, el método crea una selección de entidades no ordenada. Las selecciones de entidades desordenadas son más rápidas pero no se puede confiar en las posiciones de las entidades. Para más información, consulte [Selecciones de entidades ordenadas y desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
 
 When created, the entity selection does not contain any entities (`mySelection.length` returns 0). This method lets you build entity selections gradually by making subsequent calls to the [`add()`](EntitySelectionClass.md#add) function.
 
