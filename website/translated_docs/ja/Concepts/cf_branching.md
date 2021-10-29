@@ -35,7 +35,7 @@ title: 分岐構造
  End if
 ```
 
-The expression is TRUE only if both methods are TRUE. しかしながら _MethodA_ が false であっても、4Dは_MethodB_ も評価するため、これは時間の無駄になります。 この場合には、以下のような構造を使用するほうが賢明といえます:
+この場合、両方のメソッドが true である場合に限り、式は true になります。 しかしながら _MethodA_ が false であっても、4Dは_MethodB_ も評価するため、これは時間の無駄になります。 この場合には、以下のような構造を使用するほうが賢明といえます:
 
 ```4d
  If(MethodA)
