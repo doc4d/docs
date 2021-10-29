@@ -21,7 +21,7 @@ title: エラー処理
 
 ## エラー処理メソッドの実装
 
-4D においては、エラー専用のプロジェクトメソッドである **エラー処理** (または **エラーキャッチ**) メソッド内ですべてのエラーをキャッチし、処理することができます。
+In 4D, all errors can be caught and handled in a specific project method, the **error-handling** (or **error-catching**) method.
 
 このプロジェクトメソッドはカレントプロセスに対して実装 (インストール) され、インタープリターモードかコンパイルモードかにかかわらず、プロセス内で発生するすべてのエラーの際に自動で呼び出されます。 このプロジェクトメソッドを *実装* するには、`ON ERR CALL` コマンドをコールし、コマンドに当該プロジェクトメソッド名を引数として渡します。 たとえば:
 
@@ -34,7 +34,7 @@ ON ERR CALL("IO_ERRORS") // エラー処理メソッドを実装します
 ON ERR CALL("") // エラーの検知を中止します
 ```
 
-`Method called on error` コマンドは、`ON ERR CALL` によってカレントプロセスにインストールされているエラー処理メソッド名を返します。 このコマンドは汎用的なコードでとくに有用です。エラー処理メソッドを一時的に変更し、後で復元することができます:
+The  `Method called on error` command allows you to know the name of the method installed by `ON ERR CALL` for the current process. このコマンドは汎用的なコードでとくに有用です。エラー処理メソッドを一時的に変更し、後で復元することができます:
 
 ```4d
  $methCurrent:=Method called on error
@@ -55,7 +55,7 @@ ON ERR CALL("") // エラーの検知を中止します
 
 ### メソッド内でのエラー処理
 
-独自に作成してエラー処理メソッド内では、エラーを調査するための情報がいくつか提供されています:
+Within the custom error method, you have access to several pieces of information that will help you identifying the error:
 
 - 専用のシステム変数 (*):
 

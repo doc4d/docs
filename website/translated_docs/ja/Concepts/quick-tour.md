@@ -100,7 +100,7 @@ objectRef:=SVG_New_arc(svgRef;100;100;90;90;180)
 vRef:=Open document("PassFile";"TEXT";Read Mode) // ドキュメントを読み取り専用モードで開きます
 ```
 
-> Predefined constants appear <u>underlined</u> by default in the 4D Method editor.
+> メソッドエディターにおいて、定義済定数はデフォルトで <u>下線付き</u> で表示されます。
 
 ## メソッド
 
