@@ -319,11 +319,11 @@ SET DATABASE PARAMETER(Client Log Recording;0)
 
 Los siguientes campos se registran para cada petición:
 
-| Nombre del campo | Descripción                                                   | Ejemplo                                                 |
-| ---------------- | ------------------------------------------------------------- | ------------------------------------------------------- |
-| sequenceNumber   | Unique and sequential operation number in the logging session | 104                                                     |
-| url              | Client ORDA request URL                                       | "rest/Persons(30001)"                                   |
-| startTime        | Starting date and time using ISO 8601 format                  | "2019-05-28T08:25:12.346Z"                              |
-| endTime          | Ending date and time using ISO 8601 format                    | "2019-05-28T08:25:12.371Z"                              |
-| duration         | Client processing duration (ms)                               | 25                                                      |
-| response         | Server response object                                        | {"status":200,"body":{"__entityModel":"Persons",\[...] |
+| Nombre del campo | Descripción                                                      | Ejemplo                                                 |
+| ---------------- | ---------------------------------------------------------------- | ------------------------------------------------------- |
+| sequenceNumber   | Número de operación único y secuencial en la sesión de historial | 104                                                     |
+| url              | URL de la petición ORDA efectuada por el cliente                 | "rest/Persons(30001)"                                   |
+| startTime        | Fecha y hora de inicio en formato ISO 8601                       | "2019-05-28T08:25:12.346Z"                              |
+| endTime          | Fecha y hora final en formato ISO 8601                           | "2019-05-28T08:25:12.371Z"                              |
+| duration         | Duración del procesamiento cliente (ms)                          | 25                                                      |
+| response         | Objeto respuesta del servidor                                    | {"status":200,"body":{"__entityModel":"Persons",\[...] |
