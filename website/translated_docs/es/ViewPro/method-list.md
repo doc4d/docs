@@ -1454,7 +1454,7 @@ You can define where to get the formula in *scope* using either the sheet index 
 
 ##### Returned Object
 
-The returned object contains the following properties:
+El objeto devuelto contiene las siguientes propiedades:
 
 | Propiedad | Tipo  | Descripción                                                                                                                                 |
 | --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- |
