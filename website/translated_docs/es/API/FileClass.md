@@ -692,7 +692,7 @@ The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrit
 | ----------- | ------- | -- | --------------------------------------------------------------------- |
 | texto       | Texto   | -> | Texto a almacenar en el archivo                                       |
 | charSetName | Texto   | -> | Nombre del juego de caracteres                                        |
-| charSetNum  | Integer | -> | Number of character set                                               |
+| charSetNum  | Integer | -> | Número del conjunto de caracteres                                     |
 | breakMode   | Integer | -> | Modo de tratamiento de los saltos de línea|<!-- END REF -->
 
 |
