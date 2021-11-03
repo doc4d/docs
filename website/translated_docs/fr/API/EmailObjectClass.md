@@ -527,12 +527,12 @@ Email object.
 You want to load a mail template saved as MIME in a text document and send an email:
 
 ```4d
-C_BLOB($mime)
-C_OBJECT($mail;$server;$transporter;$status)
+var $mime: Blob
+var $mail;$server;$transporter;$status: Object
 
 $mime:=File("/PACKAGE/Mails/templateMail.txt").getContent())
 
-$mail:=[#current_title_incode]($mime)
+$mail:=MAIL Convert from MIME($mime)
 $mail.to:="smith@mail.com"
 $mail.subject:="Hello world"
 
@@ -551,8 +551,8 @@ $status:=$transporter.send($mail)
 In this example, you send directly a 4D Write Pro document containing pictures:
 
 ```4d
-C_TEXT($mime)
-C_OBJECT($email;$server;$transporter;$status)
+var $mime: Blob
+var $email;$server;$transporter;$status: Object
 
 // Mime export of the 4D Write Pro document
 WP EXPORT VARIABLE(WParea;$mime;wk mime html)
@@ -619,11 +619,11 @@ If the *options* parameter is omitted, the mail mode UTF8 configuration is used 
 #### Exemple
 
 ```4d
-C_OBJECT($mail)
-C_TEXT($mime)
+var $mail: Object
+var $mime: Text
 $mail:=New object
 
-// Création d'un mail
+// Creation of a mail
 $mail.from:="tsales@massmarket.com"
 $mail.subject:="Terrific Sale! This week only!"
 $mail.textBody:="Text format email"
@@ -632,10 +632,10 @@ $mail.to:=New collection
 $mail.to.push(New object ("email";"noreply@4d.com"))
 $mail.to.push(New object ("email";"test@4d.com"))
 
-// transformer l'objet mail en MIME
-$mime:=[#current_title_incode]($mail)
+// transform the mail object in MIME
+$mime:=MAIL Convert to MIME($mail)
 
-// Contenu de $mime :
+// Contents of $mime:
 // MIME-Version: 1.0
 // Date: Thu, 11 Oct 2018 15:42:25 GMT
 // Message-ID: <7CA5D25B2B5E0047A36F2E8CB30362E2>

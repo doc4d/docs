@@ -92,9 +92,9 @@ The attribute value type depends on the attribute [kind](DataClassAttributeClass
 **.clone()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.clone().Params -->
-| Parámetros | Tipo      |    | Descripción                       |
-| ---------- | --------- |:--:| --------------------------------- |
-| Resultado  | 4D.Entity | <- | New entity referencing the record |
+| Parámetros | Tipo      |    | Descripción                                   |
+| ---------- | --------- |:--:| --------------------------------------------- |
+| Resultado  | 4D.Entity | <- | Nueva entidad que hace referencia al registro |
 <!-- END REF -->
 
 
@@ -294,7 +294,7 @@ vCompareResult2 (sólo se devuelven las diferencias en $attributesToInspect)
 ]
 ```
 
-vCompareResult3 (only differences on $e1 touched attributes are returned)
+vCompareResult3 (sólo se devuelven las diferencias en atributos tocados $e1)
 
 ```4d
 [
@@ -359,15 +359,15 @@ Otherwise, you can pass the `dk force drop if stamp changed` option in the *mode
 
 **Resultado**
 
-The object returned by `.drop( )` contains the following properties:
+El objeto devuelto por `.drop( )` contiene las siguientes propiedades:
 
 | Propiedad     |                     | Tipo                  | Descripción                                                                                                           |
 | ------------- | ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| success       |                     | booleano              | true if the drop action is successful, false otherwise.                                                               |
-|               |                     |                       | ***Available only in case of error:***                                                                                |
+| success       |                     | booleano              | true si la acción de soltar tiene éxito, false en caso contrario.                                                     |
+|               |                     |                       | ***Disponible sólo en caso de error:***                                                                               |
 | status(*)     |                     | number                | Código de error, ver abajo                                                                                            |
-| statusText(*) |                     | texto                 | Description of the error, see below                                                                                   |
-|               |                     |                       | ***Available only in case of pessimistic lock error:***                                                               |
+| statusText(*) |                     | texto                 | Descripción del error, ver abajo                                                                                      |
+|               |                     |                       | ***Disponible sólo en caso de error de bloqueo pesimista:***                                                          |
 | LockKindText  |                     | texto                 | "Locked by record"                                                                                                    |
 | lockInfo      |                     | objeto                | Information about the lock origin                                                                                     |
 |               | task_id             | number                | Id del proceso                                                                                                        |
@@ -394,7 +394,7 @@ The object returned by `.drop( )` contains the following properties:
 
 #### Ejemplo 1
 
-Example without `dk force drop if stamp changed` option:
+Ejemplo sin la opción `dk force drop if stamp changed`:
 
 ```4d
  var $employees : cs.EmployeeSelection
@@ -413,7 +413,7 @@ Example without `dk force drop if stamp changed` option:
 
 #### Ejemplo 2
 
-Example with `dk force drop if stamp changed` option:
+Ejemplo con la opción `dk force drop if stamp changed`:
 
 ```4d
  var $employees : cs.EmployeeSelection
@@ -488,9 +488,9 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 **.fromObject**( *filler* : Object )<!-- END REF -->
 
 <!-- REF #EntityClass.fromObject().Params -->
-| Parámetros | Tipo   |    | Descripción                          |
-| ---------- | ------ |:--:| ------------------------------------ |
-| filler     | Objeto | -> | Object from which to fill the entity |
+| Parámetros | Tipo   |    | Descripción                                  |
+| ---------- | ------ |:--:| -------------------------------------------- |
+| filler     | Objeto | -> | Objeto a partir del cual se llena la entidad |
 <!-- END REF -->
 
 #### Descripción
@@ -512,7 +512,7 @@ The mapping between the object and the entity is done on the attribute names:
 
 #### Ejemplo
 
-With the following $o object:
+Con el siguiente objeto $o:
 
 ```4d
 {
@@ -527,7 +527,7 @@ With the following $o object:
 ```
 
 
-The following code will create an entity with manager and employer related entities.
+El siguiente código creará una entidad con entidades relacionadas con el gerente y el empleador.
 
 
 ```4d
@@ -539,7 +539,7 @@ The following code will create an entity with manager and employer related entit
 ```
 
 
-You could also use a related entity given as an object:
+También puede utilizar una entidad relacionada dada como objeto:
 
 ```4d
 
@@ -580,17 +580,17 @@ You could also use a related entity given as an object:
 <!-- REF #EntityClass.getDataClass().Params -->
 | Parámetros | Tipo         |    | Descripción                                  |
 | ---------- | ------------ |:--:| -------------------------------------------- |
-| Resultado  | 4D.DataClass | <- | DataClass object to which the entity belongs |
+| Resultado  | 4D.DataClass | <- | Objeto DataClass al que pertenece la entidad |
 <!-- END REF -->
 
 #### Descripción
 
-The `.getDataClass()` function <!-- REF #EntityClass.getDataClass().Summary -->returns the dataclass of the entity<!-- END REF -->. This function is useful when writing generic code.
+La función `.getDataClass()` <!-- REF #EntityClass.getDataClass().Summary -->devuelve la clase de datos de la entidad<!-- END REF -->. This function is useful when writing generic code.
 
 
 #### Ejemplo
 
-The following generic code duplicates any entity:
+El siguiente código genérico duplica cualquier entidad:
 
 ```4d
   //duplicate_entity method 
@@ -812,14 +812,14 @@ The resulting value is included between 0 and the length of the entity selection
 **.isNew()** : Boolean<!-- END REF -->
 
 <!-- REF #EntityClass.isNew().Params -->
-| Parámetros | Tipo     |    | Descripción                                                                       |
-| ---------- | -------- |:--:| --------------------------------------------------------------------------------- |
-| Resultado  | Booleano | <- | True if entity has just been created and not yet saved. En caso contrario, False. |
+| Parámetros | Tipo     |    | Descripción                                                                               |
+| ---------- | -------- |:--:| ----------------------------------------------------------------------------------------- |
+| Resultado  | Booleano | <- | True si la entidad acaba de ser creada y aún no se ha guardado. En caso contrario, False. |
 <!-- END REF -->
 
 #### Descripción
 
-The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True if the entity to which it is applied has just been created and has not yet been saved in the datastore<!-- END REF -->. Otherwise, it returns False.
+The `.isNew()` function <!-- REF #EntityClass.isNew().Summary --> returns True if the entity to which it is applied has just been created and has not yet been saved in the datastore<!-- END REF -->. En caso contrario, devuelve False.
 
 
 #### Ejemplo
@@ -897,7 +897,7 @@ If the entity does not belong to any existing entity selection (i.e. [.getSelect
 | Parámetros | Tipo    |    | Descripción                                                          |
 | ---------- | ------- |:--:| -------------------------------------------------------------------- |
 | mode       | Integer | -> | `dk reload if stamp changed`: Reload before locking if stamp changed |
-| Resultado  | Objeto  | <- | Result of lock operation                                             |
+| Resultado  | Objeto  | <- | Resultado de la operación de bloqueo                                 |
 <!-- END REF -->
 
 #### Descripción
@@ -906,7 +906,7 @@ The `.lock()` function <!-- REF #EntityClass.lock().Summary -->puts a pessimisti
 
 Other processes will see this record as locked (the `result.success` property will contain False if they try to lock the same entity using this function). Only functions executed in the "locking" session are allowed to edit and save the attributes of the entity. The entity can be loaded as read-only by other sessions, but they will not be able to enter and save values.
 
-A locked record is unlocked:
+Un registro bloqueado se desbloquea:
 
 *   when the [`unlock()`](#unlock) function is called on a matching entity in the same process
 *   automatically, when it is no longer referenced by any entities in memory. For example, if the lock is put only on one local reference of an entity, the entity is unlocked when the function ends. As long as there are references to the entity in memory, the record remains locked.
@@ -917,17 +917,17 @@ Otherwise, you can pass the `dk reload if stamp changed` option in the *mode* pa
 
 **Resultado**
 
-The object returned by `.lock( )` contains the following properties:
+El objeto devuelto por `.lock( )` contiene las siguientes propiedades:
 
 | Propiedad        |                     | Tipo                  | Descripción                                                                                                         |
 | ---------------- | ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | success          |                     | booleano              | true if the lock action is successful (or if the entity is already locked in the current process), false otherwise. |
 |                  |                     |                       | ***Available only if `dk reload if stamp changed` option is used:***                                                |
 | **wasReloaded**  |                     | booleano              | true if the entity was reloaded with success, false otherwise.                                                      |
-|                  |                     |                       | ***Available only in case of error:***                                                                              |
+|                  |                     |                       | ***Disponible sólo en caso de error:***                                                                             |
 | status(\*)     |                     | number                | Código de error, ver abajo                                                                                          |
-| statusText(\*) |                     | texto                 | Description of the error, see below                                                                                 |
-|                  |                     |                       | ***Available only in case of pessimistic lock error:***                                                             |
+| statusText(\*) |                     | texto                 | Descripción del error, ver abajo                                                                                    |
+|                  |                     |                       | ***Disponible sólo en caso de error de bloqueo pesimista:***                                                        |
 | lockKindText     |                     | texto                 | "Locked by record"                                                                                                  |
 | lockInfo         |                     | objeto                | Information about the lock origin                                                                                   |
 |                  | task_id             | number                | ID del Proceso                                                                                                      |
@@ -974,7 +974,7 @@ Ejemplo con error:
 
 #### Ejemplo 2
 
-Example with `dk reload if stamp changed` option:
+Ejemplo con la opción `dk reload if stamp changed`:
 
 ```4d
  var $employee : cs.EmployeeEntity
@@ -1108,7 +1108,7 @@ The object returned by `.reload( )` contains the following properties:
 | ---------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | success          | booleano | True if the reload action is successful, False otherwise.<p><p>***Available only in case of error***: |
 | status(\*)     | number   | Código de error, ver abajo                                                                                                                            |
-| statusText(\*) | texto    | Description of the error, see below                                                                                                                   |
+| statusText(\*) | texto    | Descripción del error, ver abajo                                                                                                                      |
 
 (\*) The following values can be returned in the *status* and *statusText* properties of *Result* object in case of error:
 
@@ -1175,7 +1175,7 @@ Otherwise, you can pass the `dk auto merge` option in the *mode* parameter: when
 
 **Resultado**
 
-The object returned by `.save()` contains the following properties:
+El objeto devuelto por `.save()` contiene las siguientes propiedades:
 
 | Propiedad    |                    | Tipo                  | Descripción                                                                                                             |
 | ------------ | ------------------ | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
@@ -1215,7 +1215,7 @@ The following values can be returned in the `status` and `statusText` properties
 
 #### Ejemplo 1
 
-Creating a new entity:
+Crear una nueva entidad:
 
 ```4d
  var $status : Object
@@ -1231,7 +1231,7 @@ Creating a new entity:
 
 #### Ejemplo 2
 
-Updating an entity without `dk auto merge` option:
+Actualización de una entidad sin la opción `dk auto merge`:
 
 ```4d
  var $status : Object
@@ -1251,7 +1251,7 @@ Updating an entity without `dk auto merge` option:
 
 #### Ejemplo 3
 
-Updating an entity with `dk auto merge` option:
+Actualización de una entidad con la opción `dk auto merge`:
 
 ```4d
  var $status : Object
@@ -1469,7 +1469,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 
 #### Ejemplo 4
 
-Extracting some properties of `relatedEntities`:
+Extracción de algunas propiedades de `relatedEntities`:
 
 ```4d
  employeeObject:=employeeSelected.toObject("firstName, directReports.lastName")
@@ -1720,11 +1720,11 @@ A record is automatically unlocked when it is no longer referenced by any entiti
 
 **Resultado**
 
-The object returned by `.unlock()` contains the following property:
+El objeto devuelto por <`.unlock()<` contiene la siguiente propiedad:
 
-| Propiedad | Tipo     | Descripción                                                                                                                                                                                        |
-| --------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success   | Booleano | True if the unlock action is successful, False otherwise. If the unlock is done on a dropped entity, on a non locked record, or on a record locked by another process or entity, success is False. |
+| Propiedad | Tipo     | Descripción                                                                                                                                                                                                     |
+| --------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success   | Booleano | True si la acción de desbloquear tiene éxito, False en caso contrario. If the unlock is done on a dropped entity, on a non locked record, or on a record locked by another process or entity, success is False. |
 
 #### Ejemplo
 
