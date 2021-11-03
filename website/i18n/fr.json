@@ -21,7 +21,7 @@
         "title": "TLS Protocol (HTTPS)"
       },
       "Admin/webAdmin": {
-        "title": "Web Administration"
+        "title": "Administration Web"
       },
       "API/BlobClass": {
         "title": "Blob"
@@ -920,7 +920,7 @@
     "Backup and Restore|no description given": "Sauvegarde et restitution",
     "License Management|no description given": "Gestion des licences",
     "Build Application|no description given": "Générateur d'application",
-    "Web Administration|no description given": "Web Administration",
+    "Web Administration|no description given": "Administration Web",
     "Client/Server|no description given": "Client/Server",
     "TLS Protocol (HTTPS)|no description given": "TLS Protocol (HTTPS)",
     "Debugging|no description given": "Débogage",
