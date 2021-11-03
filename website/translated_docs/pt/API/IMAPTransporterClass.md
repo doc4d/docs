@@ -988,7 +988,7 @@ Mailbox name delimiter character.
 | Parameter | Type    |    | Description                                      |
 | --------- | ------- |:--:| ------------------------------------------------ |
 | msgNumber | Integer | -> | Sequence number of the message                   |
-| msgID     | Texto   | -> | Unique ID of the message                         |
+| msgID     | Texto   | -> | ID única da mensagem                             |
 | options   | Objeto  | -> | Message handling instructions                    |
 | Result    | Objeto  | <- | [Email object](EmailObjectClass.md#email-object) |
 <!-- END REF -->
@@ -996,7 +996,7 @@ Mailbox name delimiter character.
 
 #### Description
 
-The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. This function allows you to locally handle the email contents.
+The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. Essa função permite manejar localmente os conteúdos de email.
 
 In the first parameter, you can pass either:
 
@@ -1170,7 +1170,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 | Parameter  | Type     |    | Description                                                                                   |
 | ---------- | -------- |:--:| --------------------------------------------------------------------------------------------- |
 | msgNumber  | Integer  | -> | Sequence number of the message                                                                |
-| msgID      | Texto    | -> | Unique ID of the message                                                                      |
+| msgID      | Texto    | -> | ID única da mensagem                                                                          |
 | updateSeen | Booleano | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
 | Result     | BLOB     | <- | Blob of the MIME string returned from the mail server                                         |
 <!-- END REF -->
