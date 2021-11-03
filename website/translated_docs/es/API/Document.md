@@ -164,7 +164,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.isAlias` property returns <!-- REF #document.isAlias.Summary -->true if the file is an alias, a shortcut, or a symbolic link<!-- END REF -->, and false otherwise.
+La propiedad `.isAlias` devuelve <!-- REF #document.isAlias.Summary -->true si el archivo es un alias, un acceso directo o un enlace simbólico<!-- END REF -->, y false en caso contrario.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -187,7 +187,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.isFile` property returns <!-- REF #document.isFile.Summary -->always true for a file<!-- END REF -->.
+La propiedad `.isFile` devuelve <!-- REF #document.isFile.Summary -->siempre verdadero para un archivo<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -234,7 +234,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.isWritable` property returns <!-- REF #document.isWritable.Summary -->true if the file exists on disk and is writable<!-- END REF -->.
+La propiedad `.isWritable` devuelve <!-- REF #document.isWritable.Summary -->true si el archivo existe en el disco y es escribible<!-- END REF -->.
 > The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the *writable* attribute of the file.
 
 Esta propiedad es **de sólo lectura**.
@@ -268,7 +268,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.modificationDate` property returns <!-- REF #document.modificationDate.Summary -->the date of the file's last modification<!-- END REF -->.
+La propiedad `.modificationDate` devuelve <!-- REF #document.modificationDate.Summary -->la fecha de la última modificación del archivo<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -292,7 +292,7 @@ Esta propiedad es **de sólo lectura**.
 
 ##### Descripción
 
-The `.modificationTime` property returns <!-- REF #document.modificationTime.Summary -->the time of the file's last modification<!-- END REF --> (expressed as a number of seconds beginning at 00:00).
+La propiedad `.modificationTime` devuelve <!-- REF #document.modificationTime.Summary -->la hora de la última modificación del archivo<!-- END REF --> (expresada como un número de segundos que comienza en 00:00).
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -315,7 +315,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.name` property returns <!-- REF #document.name.Summary -->the name of the file without extension (if any)<!-- END REF -->.
+La propiedad `.name` devuelve <!-- REF #document.name.Summary -->el nombre del archivo, sin extensión (si la hay)<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -337,7 +337,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.original` property returns <!-- REF #document.original.Summary -->the target element for an alias, a shortcut, or a symbolic link file<!-- END REF -->. El elemento objetivo puede ser:
+La propiedad `.original` devuelve<!-- REF #documento.original.Resumen -->el elemento de destino para un alias, un acceso directo o un archivo de enlace simbólico<!-- END REF -->. El elemento objetivo puede ser:
 
 *   a file object
 *   un objeto de la carpeta
@@ -366,7 +366,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.parent` property returns <!-- REF #document.parent.Summary -->the parent folder object of the file<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
+La propiedad `.parent` devuelve <!-- REF #document.parent.Summary -->el objeto carpeta padre del archivo<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -390,7 +390,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.path` property returns <!-- REF #document.path.Summary -->the POSIX path of the file<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
+La propiedad `.path` devuelve <!-- REF #document.path.Summary -->la ruta POSIX del archivo<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -413,7 +413,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.platformPath` property returns <!-- REF #document.platformPath.Summary -->the path of the file expressed with the current platform syntax<!-- END REF -->.
+La propiedad `.platformPath` devuelve <!-- REF #document.platformPath.Summary -->la ruta del archivo expresada con la sintaxis de la plataforma actual<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -437,7 +437,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.size` property returns <!-- REF #document.size.Summary -->the size of the file expressed in bytes<!-- END REF -->. If the file does not exist on disk, the size is 0.
+La propiedad `.size` devuelve <!-- REF #document.size.Summary -->el tamaño del archivo expresado en bytes<!-- END REF -->. If the file does not exist on disk, the size is 0.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -476,7 +476,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-The `.copyTo()` function <!-- REF #document.copyTo().Summary -->copies the `File` object into the specified *destinationFolder* <!-- END REF -->.
+La función `.copyTo()` <!-- REF #document.copyTo().Summary -->copia el objeto `File` en el *destinationFolder* especificado> <!-- END REF -->.
 
 The *destinationFolder* must exist on disk, otherwise an error is generated.
 
@@ -564,10 +564,10 @@ To save a document's contents in a `BLOB` field:
 **.getIcon**( { *size* : Integer } ) : Picture<!-- END REF -->
 
 <!-- REF #document.getIcon().Params -->
-| Parámetros | Tipo    |    | Descripción                                   |
-| ---------- | ------- | -- | --------------------------------------------- |
-| size       | Integer | -> | Side length for the returned picture (pixels) |
-| Resultado  | Imagen  | <- | Icono                                         |
+| Parámetros | Tipo    |    | Descripción                                       |
+| ---------- | ------- | -- | ------------------------------------------------- |
+| size       | Integer | -> | Longitud del lado de la imagen devuelta (píxeles) |
+| Resultado  | Imagen  | <- | Icono                                             |
 <!-- END REF -->
 
 
@@ -603,12 +603,12 @@ File icon [picture](../Concepts/picture.html).
 
 
 <!-- REF #document.getText().Params -->
-| Parámetros  | Tipo    |    | Descripción                     |
-| ----------- | ------- | -- | ------------------------------- |
-| charSetName | Texto   | -> | Nombre del juego de caracteres  |
-| charSetNum  | Integer | -> | Number of character set         |
-| breakMode   | Integer | -> | Processing mode for line breaks |
-| Resultado   | Texto   | <- | Text from the document          |
+| Parámetros  | Tipo    |    | Descripción                                |
+| ----------- | ------- | -- | ------------------------------------------ |
+| charSetName | Texto   | -> | Nombre del juego de caracteres             |
+| charSetNum  | Integer | -> | Número del conjunto de caracteres          |
+| breakMode   | Integer | -> | Modo de tratamiento de los saltos de línea |
+| Resultado   | Texto   | <- | Texto del documento                        |
 <!-- END REF -->
 
 

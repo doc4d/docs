@@ -51,21 +51,21 @@ Entity selections can be created from existing selections using various function
 **Create entity selection** ( *dsTable* : Table { ; *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #_command_.Create entity selection.Params -->
-| Parámetros | Tipo               |    | Descripción                                                                                 |
-| ---------- | ------------------ |:--:| ------------------------------------------------------------------------------------------- |
-| dsTable    | Tabla              | -> | Table in the 4D database whose current selection will be used to build the entity selection |
-| parámetros | Objeto             | -> | Opciones de construcción: context                                                           |
-| Resultado  | 4D.EntitySelection | <- | Entity selection matching the dataclass related to the given table                          |
+| Parámetros | Tipo               |    | Descripción                                                                                     |
+| ---------- | ------------------ |:--:| ----------------------------------------------------------------------------------------------- |
+| dsTable    | Tabla              | -> | Tabla de la base 4D cuya selección actual se utilizará para construir la selección de entidades |
+| parámetros | Objeto             | -> | Opciones de construcción: context                                                               |
+| Resultado  | 4D.EntitySelection | <- | Selección de entidades que coinciden con la clase de datos relacionada con la tabla dada        |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `Create entity selection` command builds and returns a new, [alterable](ORDA/entities.md#shareable-or-alterable-entity-selections) entity selection related to the dataclass matching the given *dsTable*, according to the current selection of this table.
+El comando `Create entity selection` construye y devuelve una nueva, [alterable](ORDA/entities.md#shareable-or-alterable-entity-selections) selección de entidad relacionada con la clase de datos que coincide con la tabla *dsTable* dada, según la selección actual de esta tabla.
 
-If the current selection is sorted, an [ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) entity selection is created (the order of the current selection is kept). If the current selection is unsorted, an unordered entity selection is created.
+Si la selección actual está ordenada, se crea una selección de entidades [ordenada](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) (se mantiene el orden de la selección actual). Si la selección actual no está ordenada, se crea una selección de entidades no ordenada.
 
-If the *dsTable* is not exposed in [`ds`](API/DataStoreClass.md#ds), an error is returned. This command cannot be used with a Remote datastore.
+Si la tabla *dsTable* no está expuesto en [`ds`](API/DataStoreClass.md#ds), se devuelve un error. Este comando no puede utilizarse con un datastore remoto.
 
 In the optional *settings* parameter, you can pass an object containing the following property:
 
@@ -1546,10 +1546,10 @@ In this example, the "marks" object field in the **Students** dataClass contains
 <!-- REF #EntitySelectionClass.query().Params -->
 | Parámetros    | Tipo               |    | Descripción                                                                                                                                                   |
 | ------------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| queryString   | Texto              | -> | Search criteria as string                                                                                                                                     |
-| formula       | Objeto             | -> | Search criteria as formula object                                                                                                                             |
-| value         | any                | -> | Value(s) to use for indexed placeholder(s)                                                                                                                    |
-| querySettings | Objeto             | -> | Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                                     |
+| queryString   | Texto              | -> | Criterios de búsqueda como cadena                                                                                                                             |
+| formula       | Objeto             | -> | Criterios de búsqueda como objeto fórmula                                                                                                                     |
+| value         | any                | -> | Valor(es) a utilizar para los marcadores de posición indexados                                                                                                |
+| querySettings | Objeto             | -> | Opciones de búsqueda: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                              |
 | Resultado     | 4D.EntitySelection | <- | New entity selection made up of entities from entity selection meeting the search criteria specified in *queryString* or *formula*|<!-- END REF -->
 
 |
@@ -1559,7 +1559,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 The `.query()` function <!-- REF #EntitySelectionClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s) among all the entities in the entity selection<!-- END REF -->, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carga diferida.
 > This function does not modify the original entity selection.
 
-If no matching entities are found, an empty `EntitySelection` is returned.
+Si no se encuentran entidades coincidentes, se devuelve una `EntitySelection` vacía.
 
 For detailed information on how to build a query using *queryString*, *value*, and *querySettings* parameters, please refer to the DataClass [`.query()`](DataClassClass.md#query) function description.
 > By default if you omit the **order by** statement in the *queryString*, the returned entity selection is [not ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). Note however that, in Client/Server mode, it behaves like an ordered entity selection (entities are added at the end of the selection).
@@ -1741,7 +1741,7 @@ Pase en el parámetro *selectedEntities* una selección de entidades que conteng
 
 #### Resultado
 
-The returned object contains the following properties:
+El objeto devuelto contiene las siguientes propiedades:
 
 | Propiedad      | Tipo       | Descripción                             |
 | -------------- | ---------- | --------------------------------------- |
