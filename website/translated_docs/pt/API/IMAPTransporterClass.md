@@ -1172,7 +1172,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 | msgNumber  | Integer  | -> | Sequence number of the message                                                                |
 | msgID      | Texto    | -> | ID única da mensagem                                                                          |
 | updateSeen | Booleano | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
-| Result     | BLOB     | <- | Blob of the MIME string returned from the mail server                                         |
+| Result     | BLOB     | <- | Blob da string MIME retornado do servidor mail                                                |
 <!-- END REF -->
 
 
@@ -1198,7 +1198,7 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 
 #### Result
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` retorna um `BLOB` que pode ser arquivado em um banco de dados ou convertido a um objeto [`Email` ](EmailObjectClass.md#email-object) com o comando `MAIL Convert from MIME`.
 
 
 #### Exemplo
