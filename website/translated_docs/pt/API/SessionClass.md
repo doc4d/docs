@@ -3,9 +3,9 @@ id: SessionClass
 title: Session
 ---
 
-Session objects are returned by the [`Session`](#session) command when [scalable sessions are enabled in your project](WebServer/sessions.md#enabling-sessions). The Session object is automatically created and maintained by the 4D web server to control the session of a web client (e.g. a browser). This object provides the web developer with an interface to the user session, allowing to manage privileges, store contextual data, share information between processes, and launch session-related preemptive processes.
+Os objetos Session são devolvidos pelo comando [`Session`](#session) quando [são habilitadas as sessões escaláveis em seu projeto](WebServer/sessions.md#enabling-sessions). O objeto Session é criado e mantido automaticamente pelo servidor web 4D para controlar a sessão de um cliente web (por exemplo, um navegador). Esse objeto oferece ao desenvolvedor web uma interface para a sessão de usuário, permitindo gerenciar privilégios, armazenar dados contextuais, partilhar informação entre processos e lançar processos preemptivos relacionados a sessão.
 
-For detailed information about the session implementation, please refer to the [web server Sessions](WebServer/sessions.md) section.
+Para obter informação detalhada sobre a implementação da sessão, consulte [Sessões do servidor web](WebServer/sessions.md).
 
 ### Resumo
 
@@ -37,21 +37,21 @@ For detailed information about the session implementation, please refer to the [
 
 
 <!-- REF #_command_.Session.Params -->
-| Parameter | Type       |    | Description    |
-| --------- | ---------- |:--:| -------------- |
-| Result    | 4D.Session | <- | Session object |
+| Parâmetros | Tipo       |    | Descrição      |
+| ---------- | ---------- |:--:| -------------- |
+| Resultados | 4D.Session | <- | Session object |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current scalable user web session<!-- END REF -->.
+O comando `Session` <!-- REF #_command_.Session.Summary -->devolve o objeto `Session` correspondente à sessão web atual do usuário escalável<!-- END REF -->.
 
-This command only works when [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions). It returns *Null* when sessions are disabled or when legacy sessions are used.
+Este comando só funciona quando [estão ativadas as sessões escaláveis](WebServer/sessions.md#enabling-sessions). Devolve *Null* quando as sessões estiverem desabilitadas ou quando utilizar sessões herdadas.
 
-When scalable sessions are enabled, the `Session` object is available from any web processes in the following contexts:
+Quando se habilitam as sessões escaláveis, o objeto `Sessão` está disponível desde qualquer processo web nos seguintes contextos:
 
-- `On Web Authentication`, `On Web Connection`, and `On REST Authentication` database methods,
+- `On Web Authentication`, `On Web Connection`, e métodos database`On REST Authentication`,
 - ORDA [Data Model Class functions](ORDA/ordaClasses.md) called with REST requests,
 - code processed through 4D tags in semi-dynamic pages (4DTEXT, 4DHTML, 4DEVAL, 4DSCRIPT/, 4DCODE)
 - project methods with the "Available through 4D tags and URLs (4DACTION...)" attribute and called through 4DACTION/ urls.
