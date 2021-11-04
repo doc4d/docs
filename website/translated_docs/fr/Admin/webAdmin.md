@@ -4,23 +4,23 @@ title: Administration Web
 ---
 
 
-An embedded web server component, named `WebAdmin`, is used by 4D and 4D Server to provide a secured web access to specific management features such as the [Data Explorer](dataExplorer.md). You can connect locally or remotely to this web server from a browser or any web application and access the associated 4D application.
+4D et 4D Server ont un composant intégré appelé `WebAdmin` qui permet de lancer un serveur web qui fournit un accès sécurisé à des outils de gestion de données, tel que l'[Explorateur de données Web](dataExplorer.md). Ce serveur est accessible en local ou à distance, depuis un navigateur ou une application web, et permet d'accéder à l'application 4D associée.
 
-The WebAdmin handles the authentication of users with "WebAdmin" privileges, so that they can open administration sessions and access dedicated interfaces.
+Le WebAdmin gère l'authentification des utilisateurs via des privilèges "WebAdmin", leur permettant d'ouvrir des sessions en tant qu'administrateurs et d'accéder à des interfaces dédiées.
 
-This feature can be used in 4D applications running headless as well as 4D applications running with interfaces.
-
-
-## Starting the WebAdmin web server
-
-By default, the `WebAdmin` web server is not launched. You need to configure the launch at startup, or (in versions with interface) launch it manually using a menu item.
+Cette fonctionnalité est disponible pour les applications 4D avec ou sans interfaces.
 
 
-### Launch at startup
+## Démarrer le WebAdmin web server
 
-You can configure the `WebAdmin` web server to be launched at 4D or 4D Server application startup (before any project is loaded).
+Par défaut, le serveur web `WebAdmin` ne démarre pas automatiquement. Il faut configurer son lancement automatique au démarrage, ou (dans les versions avec une interface) le lancer manuellement via un menu.
 
-- If you use a 4D application with interface, select the **File > Web Administration > Settings...** menu item.
+
+### Lancement au démarrage
+
+Vous pouvez configurer le server web `WebAdmin` pour qu'il se lance au démarrage de 4D ou 4D Server (avant l'ouverture d'un projet).
+
+- Si vous utilisez une application 4D avec une interface, sélectionnez **Fichier > Administration Web > Paramètres...**.
 
 ![alt-text](assets/en/Admin/waMenu1.png)
 
