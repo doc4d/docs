@@ -45,11 +45,11 @@ For detailed information about the session implementation, please refer to the [
 
 #### Description
 
-The `Session` command <!-- REF #_command_.Session.Summary -->returns the `Session` object corresponding to the current scalable user web session<!-- END REF -->.
+O comando `Session` <!-- REF #_command_.Session.Summary -->devolve o objeto `Session` correspondente à sessão web atual do usuário escalável<!-- END REF -->.
 
-This command only works when [scalable sessions are enabled](WebServer/sessions.md#enabling-sessions). It returns *Null* when sessions are disabled or when legacy sessions are used.
+Este comando só funciona quando [estão ativadas as sessões escaláveis](WebServer/sessions.md#enabling-sessions). Devolve *Null* quando as sessões estiverem desabilitadas ou quando utilizar sessões herdadas.
 
-When scalable sessions are enabled, the `Session` object is available from any web processes in the following contexts:
+Quando se habilitam as sessões escaláveis, o objeto `Sessão` está disponível desde qualquer processo web nos seguintes contextos:
 
 - `On Web Authentication`, `On Web Connection`, and `On REST Authentication` database methods,
 - ORDA [Data Model Class functions](ORDA/ordaClasses.md) called with REST requests,
