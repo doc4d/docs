@@ -1665,11 +1665,11 @@ Aqui está o método ***Percentage***:
 A função `.max()` <!-- REF #collection.max().Summary -->retorna o elemento com o maior valor na coleção<!-- END REF --> (o último elemento da coleção como seria ordenado de forma ascendente usando a função [`.sort()`](#sort)).
 > This function does not modify the original collection.
 
-If the collection contains different types of values, the `.max()` function will return the maximum value within the last element type in the type list order (see [`.sort()`](#sort) description).
+Se a coleção conter diferentes tipos de valores, a função `.max()` devolverá o valor máximo dentro do último tipo de elemento na orde, da lista de tipos (ver a descrição de [`.sort()`](#sort)).
 
-If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose maximum value you want to get.
+Se a coleção conter objetos, pode passar o parâmetro *propertyPath* para indicar a propriedade objeto cujos valores máximos você quer obter.
 
-If the collection is empty, `.max()` returns *Undefined*.
+Se a coleção estiver vazia, `.max()` devolve *Undefined*.
 
 #### Exemplo
 
@@ -1706,20 +1706,20 @@ If the collection is empty, `.max()` returns *Undefined*.
 | Parameter    | Type                                            |    | Description                                           |
 | ------------ | ----------------------------------------------- |:--:| ----------------------------------------------------- |
 | propertyPath | Texto                                           | -> | Rota de propriedade objeto a ser usado para avaliação |
-| Result       | Boolean, Text, Number, Collection, Object, Date | <- | Minimum value in the collection                       |
+| Result       | Boolean, Text, Number, Collection, Object, Date | <- | Valor mínimo na coleção                               |
 <!-- END REF -->
 
 
 #### Description
 
-The `.min()` function <!-- REF #collection.min().Summary -->returns the element with the smallest value in the collection<!-- END REF --> (the first element of the collection as it would be sorted in ascending order using the [`.sort()`](#sort) function).
+A função `.min()` <!-- REF #collection.min().Summary -->retorna o elemento com o menor valor na coleção<!-- END REF --> (o primeiro elemento da coleção como seria ordenado de forma ascendente usando a função [`.sort()`](#sort)).
 > This function does not modify the original collection.
 
-If the collection contains different types of values, the `.min()` function will return the minimum value within the first element type in the type list order (see [`.sort()`](#sort) description).
+Se a coleção conter diferentes tipos de valores, a função `.min()` devolverá o valor mínimo dentro do primeiro tipo de elemento na ordem da lista de tipos (ver a descrição de [`.sort()`](#sort)).
 
-If the collection contains objects, pass the *propertyPath* parameter to indicate the object property whose minimum value you want to get.
+Se a coleção conter objetos, pode passar o parâmetro *propertyPath* para indicar a propriedade objeto cujos valores mínimos você quer obter.
 
-If the collection is empty, `.min()` returns *Undefined*.
+Se a coleção estiver vazia, `.min()` devolve *Undefined*.
 
 #### Exemplo
 
@@ -1758,20 +1758,20 @@ If the collection is empty, `.min()` returns *Undefined*.
 | --------- | ---- |::| ----------- |
 |           |      |  |             |
 
-|pathStrings|Text|->|Property path(s) on which to order the collection| |pathObjects|Collection|->|Collection of criteria objects| |ascOrDesc|Integer|->|`ck ascending` or `ck descending` (scalar values)| |Result|Collection |<-|Ordered copy of the collection (shallow copy)|
+|pathStrings|Text|->|Rota(s) da propriedade na que ordenar a coleção| |pathObjects|Collection|->|Coleção de objetos de critério| |ascOrDesc|Integer|->|`ck ascending` ou `ck descending` (valores escalares)| |Result|Collection |<-|Cópia ordenada da coleção (cópia superficial)|
 <!-- END REF -->
 
 
 #### Description
 
-The `.orderBy()` function <!-- REF #collection.orderBy().Summary -->returns a new collection containing all elements of the collection in the specified order<!-- END REF -->.
+A função `.orderBy()` <!-- REF #collection.orderBy().Summary -->devolve uma nova coleção que contém todos os elementos da coleção na ordem especificado<!-- END REF -->.
 
-This function returns a *shallow copy*, which means that objects or collections in both collections share the same reference. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
-If you pass no parameter, the function orders scalar values in the collection in ascending order (other element types such as objects or collections are returned unordered). You can modify this automatic order by passing the `ck ascending` or `ck descending` constants in the *ascOrDesc* parameter (see below).
+Se não passar nenhum parâmetro, a função ordena os valores escalares da coleção em ordem ascendente (outros tipos de elementos, como objetos ou coleções, se devolvem desordenados). Pode modificar esta ordem automático passando as constantes `ck ascending` ou `ck descending` no parâmetro *ascOrDesc* (ver abaixo).
 
-You can also pass a criteria parameter to define how the collection elements must be sorted. Three syntaxes are supported for this parameter:
+Também pode passar um parâmetro de critérios para definir como devem ordenar-se os elementos da coleção. Três sintaxes são compatíveis com esse parâmetro:
 
 *   *pathStrings* : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. The order in which the properties are passed determines the sorting priority of the collection elements. By default, properties are sorted in ascending order. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass "asc" to sort in ascending order or "desc" in descending order.
 
@@ -1905,7 +1905,7 @@ Ordering with a property path:
 
 The `.orderByMethod()` function <!-- REF #collection.orderByMethod().Summary -->returns a new collection containing all elements of the collection in the order defined through the *methodName* method<!-- END REF -->.
 
-This function returns a *shallow copy*, which means that objects or collections in both collections share the same reference. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 In *methodName*, pass a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. You can provide additional parameters to *methodName* if necessary.
