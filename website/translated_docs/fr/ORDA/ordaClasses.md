@@ -320,7 +320,7 @@ La fonction *getter* définit le type de données du champ calculé grâce au pa
 - Entity (i.e. cs.EmployeeEntity)
 - Entity selection (i.e. cs.EmployeeSelection)
 
-The *$event* parameter contains the following properties:
+Les propriétés du paramètre *$event* sont les suivantes :
 
 | Propriété     | Type    | Description                                                                                                   |
 | ------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
@@ -332,14 +332,14 @@ The *$event* parameter contains the following properties:
 
 #### Exemples
 
-- *fullName* computed attribute:
+- Le champ calculé *fullName* :
 
 ```4d
 Function get fullName($event : Object)-> $fullName : Text
 
   Case of   
     : (This.firstName=Null) & (This.lastName=Null)
-        $event.result:=Null //use result to return Null
+        $event.result:=Null //utiliser le résultat pour retourner Null
     : (This.firstName=Null)
         $fullName:=This.lastName
     : (This.lastName=Null)
@@ -349,7 +349,7 @@ Function get fullName($event : Object)-> $fullName : Text
     End case 
 ```
 
-- A computed attribute can be based upon an entity related attribute:
+- Un champ calculé peut être basé sur un attribut relatif à une entité :
 
 ```4d
 Function get bigBoss($event : Object)-> $result: cs.EmployeeEntity
@@ -381,7 +381,7 @@ The *setter* function executes whenever a value is assigned to the attribute. Th
 
 The *$value* parameter receives the value assigned to the attribute.
 
-The *$event* parameter contains the following properties:
+Les propriétés du paramètre *$event* sont les suivantes :
 
 | Propriété     | Type    | Description                                   |
 | ------------- | ------- | --------------------------------------------- |
@@ -429,7 +429,7 @@ The `query` function executes whenever a query using the computed attribute is l
 
 > The following features are not supported: - calling a `query` function on computed attributes of type Entity or Entity selection, - using the `order by` keyword in the resulting query string.
 
-The *$event* parameter contains the following properties:
+Les propriétés du paramètre *$event* sont les suivantes :
 
 | Propriété     | Type    | Description                                                                                                                                                                                                                                                                                                                                                         |
 | ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -562,7 +562,7 @@ La fonction `orderBy` s'exécute chaque fois que le champ calculé doit être or
 
 > L'appel d'une fonction `orderBy` sur des champs calculés de type Entity class ou Entity selection class **n'est pas pris en charge**.
 
-The *$event* parameter contains the following properties:
+Les propriétés du paramètre *$event* sont les suivantes :
 
 | Propriété     | Type    | Description                                                                                                        |
 | ------------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
