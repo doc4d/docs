@@ -401,22 +401,22 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-Le mot-clé `Class extends` est utilisé dans la déclaration de classe pour créer une user class qui est un enfant d'une autre user class. The child class inherits all functions of the parent class.
+Le mot-clé `Class extends` est utilisé dans la déclaration de classe pour créer une user class qui est un enfant d'une autre user class. La classe enfant hérite de toutes les fonctions de la classe parente.
 
-Class extension must respect the following rules:
+L'extension des classes doit suivre les règles suivantes :
 
-- A user class cannot extend a built-in class (except 4D.Object which is extended by default for user classes)
-- A user class cannot extend a user class from another project or component.
-- A user class cannot extend itself.
-- It is not possible to extend classes in a circular way (i.e. "a" extends "b" that extends "a").
+- Une classe utilisateur ne peut pas étendre une classe intégrée (sauf 4D.Object, qui est étendue par défaut pour les classes utilisateur)
+- Une classe utilisateur ne peut pas étendre une classe utilisateur d'un autre projet ou composant.
+- Une classe utilisateur ne peut pas s'étendre elle-même.
+- Il n'est pas possible d'étendre des classes de manière circulaire (i.e. "a" étend "b" qui étend "a").
 
-Breaking such a rule is not detected by the code editor or the interpreter, only the compiler and `check syntax` will throw an error in this case.
+Le non respect de cette règle n'est pas détecté par l'éditeur de code ou l'interpréteur, seul le compilateur et le `contrôle syntaxique` génèreront une erreur dans ce cas.
 
-An extended class can call the constructor of its parent class using the [`Super`](#super) command.
+Une classe étendue peut appeler le constructeur de sa classe parente en utilisant la commande [`Super`](#super).
 
-#### Example
+#### Exemple
 
-This example creates a class called `Square` from a class called `Polygon`.
+Cet exemple crée une classe appelée `Square` à partir d'une classe appelée `Polygon`.
 
 ```4d
 //Class: Square
@@ -427,11 +427,11 @@ Class extends Polygon
 
 Class constructor ($side : Integer)
 
-    // It calls the parent class's constructor with lengths
-    // provided for the Polygon's width and height
+    // Il appelle le constructeur de la classe parente avec des mesures
+    // fournies pour la largeur et la hauteur du polygone
     Super($side;$side)
-    // In derived classes, Super must be called before you
-    // can use 'This'
+    // Dans les classes dérivées, Super doit être appelé avant de
+    // pouvoir utiliser 'This'
     This.name:="Square"
 
     Function getArea()
@@ -444,16 +444,16 @@ Class constructor ($side : Integer)
 
 #### Super {( param{;...;paramN} )} {-> Object}
 
-| Parameter | Type   |    | Description                                    |
-| --------- | ------ | -- | ---------------------------------------------- |
-| param     | mixed  | -> | Parameter(s) to pass to the parent constructor |
-| Result    | object | <- | Object's parent                                |
+| Paramètre | Type   |    | Description                                  |
+| --------- | ------ | -- | -------------------------------------------- |
+| param     | mixed  | -> | Paramètre(s) à passer au constructeur parent |
+| Result    | object | <- | Parent de l'objet                            |
 
-The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
+Le mot clé `Super` permet d'appeler la `superclass`, c'est-à-dire la classe prente.
 
-`Super` serves two different purposes:
+`Super` a deux finalités :
 
-- inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. Lorsqu'elle est utilisée dans un constructeur, la commande `Super` apparaît seule et doit être utilisée avant que le mot clé `This` ne soit utilisé.
+- dans un [constructor code](#class-constructor), `Super` est une commande qui permet d'appeler le constructeur de la superclass. Lorsqu'elle est utilisée dans un constructeur, la commande `Super` apparaît seule et doit être utilisée avant que le mot clé `This` ne soit utilisé.
     - Si tous les constructeurs de classe de l'arborescence d'héritage ne sont pas appelés correctement, l'erreur -10748 est générée. C'est au développeur 4D de s'assurer que les appels sont valides.
     - Si la commande `This` est appelée sur un objet dont les superclasses n'ont pas été construites, l'erreur -10743 est générée.
 
