@@ -24,83 +24,83 @@ Vous pouvez configurer le server web `WebAdmin` pour qu'il se lance au démarrag
 
 ![alt-text](assets/en/Admin/waMenu1.png)
 
-Check the **Web server administration automatic startup** option in the settings dialog box:
+Cochez l'option **Démarrage de l'admin du serveur web** dans la fenêtre des paramètres :
 
 ![alt-text](assets/en/Admin/waSettings.png)
 
-- Whether you use 4D application which is headless or not, you can enable the automatic startup mode using the following *Command Line Interface* argument:
+- Que vous utilisiez une application 4D avec ou sans interface, vous pouvez activer le lancement automatique au démarrage en utilisant l'argument suivant dans *L'interface de ligne de commande* :
 
 
 ```
 open ~/Desktop/4D.app --webadmin-auto-start true
 ```
 
-> If the TCP port used by the `WebAdmin` web server ([HTTPS](#https-port) or [HTTP](#http-port), depending on the settings) is not free at startup, 4D will try successively the 20 following ports, and use the first one that is available. If no port is available, the web server is not launched and an error is displayed or (headless application) logged in the console.
+> Si le port TCP utilisé par le serveur web `WebAdmin` ([HTTPS](#https-port) ou [HTTP](#http-port) selon les paramètres) n'est pas disponible au démarrage, 4D essaiera avec les 20 ports suivants et utilisera le premier disponible. Si aucun port n'est disponible, le serveur web ne se lance pas et un message d'erreur s'affiche. Pour les applications sans interface, il apparaît dans la console.
 
 
-### Start and stop
+### Démarrage et arrêt
 
-If you use a 4D application with interface, you can start or stop the `WebAdmin` web server for your project at any moment:
+Si vous utilisez une application 4D avec une interface, vous pouvez démarrer ou arrêter le serveur web `WebAdmin` de votre projet à tout moment :
 
-Select the **File > Web Administration > Start Server** menu item.
+Sélectionnez **Fichier> Administration web > Démarrer le serveur**.
 
 ![alt-text](assets/en/Admin/waMenu2.png)
 
-The menu item becomes **Stop Server** when the server is launched; select **Stop Server** to stop the `WebAdmin` web server.
+Le menu affiche **Arrêter le Server** une fois le serveur lancé. Sélectionnez **Arrêter le Server** pour arrêter le serveur web `WebAdmin`.
 
 
 
-## WebAdmin Settings
+## Propriétés WebAdmin
 
-Configuring the `WebAdmin` component is mandatory in particular to define the [**access key**](#access-key). By default when the access key is not set, access via a URL is not allowed.
+La configuration du composant `WebAdmin` est obligatoire, en particulier pour définir la [**clé d'accès**](#access-key). By default when the access key is not set, access via a URL is not allowed.
 
-You can configure the `WebAdmin` component using the [Web Administration settings dialog box](#settings-dialog-box) (see below).
+Vous pouvez configurer le composant `WebAdmin` dans la [fenêtre de configuration](#settings-dialog-box)(voir ci-dessous).
 
-> If you use a headless 4D application, you can use [*Command Line Interface* arguments](#webadmin-headless-configuration) to define basic settings. You will have to customize the settings file to define advanced parameters.
+> Si vous utilisez une application 4D sans interface, vous pouvez utiliser des [arguments de *l'interface de ligne de commande*](#webadmin-headless-configuration) pour définir des paramètres de base. La définition de paramètres avancés se fait via le fichier de paramètres.
 
 
-### Settings dialog box
+### Fenêtre de configuration
 
-To open the Web Administration settings dialog box, select the **File > Web Administration > Settings...** menu item.
+Pour ouvrir la fenêtre de configuration des paramètres d'administration web, sélectionnez **Fichier > Administration web > Paramètres...**.
 
 ![alt-text](assets/en/Admin/waMenu1.png)
 
-The following dialog box is displayed:
+La fenêtre suivante s'affiche :
 
 ![alt-text](assets/en/Admin/waSettings2.png)
 
-#### Web server administration automatic startup
+#### Démarrage automatique de l'admin du serveur web
 
-Check this option if you want the `WebAdmin` web server to be automatically launched when the 4D or 4D Server application starts ([see above](#launching-at-startup)). By default, this option is not checked.
+Cochez cette option pour lancer le serveur web `WebAdmin` automatiquement au démarrage de 4D ou 4D Server (voir [ci-dessus](#launching-at-startup)). Cette option n'est pas cochée par défaut.
 
-#### Accept HTTP connections on localhost
+#### Connexions HTTP sur localhost acceptées
 
-When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTP on the same machine as the 4D application. By default, this option is checked.
+Quand cette option est cochée, il est possible de se connecter au serveur `WebAdmin` via HTTP sur la même machine que l'application 4D. Cette option est activée par défaut.
 
 **Notes :**
-- Connections with HTTP other than localhost are never accepted.
-- Even if this option is checked, when [Accept HTTPS](#accept-https) is checked and the TLS configuration is valid, localhost connections use HTTPS.
+- Les connections HTTP autres que sur localhost ne sont jamais acceptées.
+- Même si cette option est activée, quand [HTTPS Accepté](#accept-https) est activé et que la configuration TLS est valide, les connections sur localhost se font via HTTPS.
 
 
-#### HTTP Port
+#### Port HTTP
 
-Port number to use for connections through HTTP to the `WebAdmin` web server when the **Accept HTTP connections on localhost** option is checked. Default value is 7080.
-
-
-#### Accept HTTPS
-
-When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. By default, this option is checked.
-
-#### HTTPS Port
-
-Port number to use for connections through HTTPS to the `WebAdmin` web server when the **Accept HTTPS** option is checked. Default value is 7443.
+Numéro de port utilisé pour les connexions au serveur web `WebAdmin` via HTTP quand **Connexions HTTP sur localhost acceptées** est activé. La valeur par défaut est 7080.
 
 
-#### Certificate folder path
+#### HTTPS Accepté
 
-Path of the folder where the TLS certificate files are located. By default, the certificate folder path is empty and 4D or 4D Server uses the certificate files embedded in the 4D application (custom certificates must be stored next to the project folder).
+Lorsque cette option est activé, vous pourrez vous connecter au serveur web `WebAdmin` via HTTPS. Cette option est activée par défaut.
 
-#### Debug log mode
+#### Port HTTPS
+
+Numéro de port utilisé pour les connexions au serveur web `WebAdmin` via HTTPS quand **HTTPS accepté** est activé. La valeur par défaut est 7443.
+
+
+#### Chemin du dossier de certificat
+
+Chemin du dossier qui contient les fichiers de certificat TLS. By default, the certificate folder path is empty and 4D or 4D Server uses the certificate files embedded in the 4D application (custom certificates must be stored next to the project folder).
+
+#### Mode du debug log
 
 Status or format of the HTTP request log file (HTTPDebugLog_*nn*.txt, stored in the "Logs" folder of the application -- *nn* is the file number). Les options suivantes sont disponibles :
 
@@ -110,7 +110,7 @@ Status or format of the HTTP request log file (HTTPDebugLog_*nn*.txt, stored in 
 - **With request body** - enabled with body part in request only
 - **With response body** - enabled with body part in response only
 
-#### Access Key
+#### Clé d'accès
 
 Defining an access key is mandatory to unlock access to the `WebAdmin` web server through a URL (access via a 4D menu command does not require an access key). When no access key is defined, no web client is allowed to connect through a URL to a web administration interface like the [Data Explorer page](dataExplorer.md). An error page is returned in case of connection request:
 
