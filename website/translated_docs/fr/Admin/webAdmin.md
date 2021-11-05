@@ -20,7 +20,7 @@ Par défaut, le serveur web `WebAdmin` ne démarre pas automatiquement. Il faut 
 
 Vous pouvez configurer le server web `WebAdmin` pour qu'il se lance au démarrage de 4D ou 4D Server (avant l'ouverture d'un projet).
 
-- Si vous utilisez une application 4D avec une interface, sélectionnez **Fichier > Administration Web > Paramètres...**.
+- Si vous utilisez une application 4D avec une interface, sélectionnez **Fichier > Administration Web > Propriétés...**.
 
 ![alt-text](assets/en/Admin/waMenu1.png)
 
@@ -61,7 +61,7 @@ Vous pouvez configurer le composant `WebAdmin` dans la [fenêtre de configuratio
 
 ### Fenêtre de configuration
 
-Pour ouvrir la fenêtre de configuration des paramètres d'administration web, sélectionnez **Fichier > Administration web > Paramètres...**.
+Pour ouvrir la fenêtre de configuration des paramètres d'administration web, sélectionnez **Fichier > Administration web > Propriétés...**.
 
 ![alt-text](assets/en/Admin/waMenu1.png)
 
@@ -98,49 +98,49 @@ Numéro de port utilisé pour les connexions au serveur web `WebAdmin` via HTTPS
 
 #### Chemin du dossier de certificat
 
-Chemin du dossier qui contient les fichiers de certificat TLS. By default, the certificate folder path is empty and 4D or 4D Server uses the certificate files embedded in the 4D application (custom certificates must be stored next to the project folder).
+Chemin du dossier qui contient les fichiers de certificat TLS. Par défaut, le chemin du dossier de certificat est vide, et 4D ou 4D server utilise les fichiers de certificat contenus dans l'application 4D (les certificats personnalisés doivent être stockés au niveau du dossier de projet).
 
 #### Mode du debug log
 
-Status or format of the HTTP request log file (HTTPDebugLog_*nn*.txt, stored in the "Logs" folder of the application -- *nn* is the file number). Les options suivantes sont disponibles :
+Statut ou format du fichier de logs des requêtes HTTP (HTTPDebugLog_*nn*.txt, stocké dans le dossier "Logs" de l'application. --*nn* représente le numéro du fichier). Les options suivantes sont disponibles :
 
-- **Disable** (default)
-- **With all body parts** - enabled with body parts in response and request
-- **Without body parts** - enabled without body parts (body size is provided)
-- **With request body** - enabled with body part in request only
-- **With response body** - enabled with body part in response only
+- **Désactivé** (valeur par défaut)
+- **Avec tous les body** - activé avec toutes les parts des body des requêtes et réponses
+- **Sans les body** - activé sans les parts des body (la taille du body est indiquée)
+- **Avec les body des requêtes** - activé avec les parts des body uniquement dans les requêtes
+- **Avec la réponse corps** - activé avec les parts des body uniquement dans les réponses
 
 #### Clé d'accès
 
-Defining an access key is mandatory to unlock access to the `WebAdmin` web server through an URL (access via a 4D menu command does not require an access key). When no access key is defined, no web client is allowed to connect through an URL to a web administration interface like the [Data Explorer page](dataExplorer.md). An error page is returned in case of connection request:
+La configuration d'une clé d'accès est obligatoire pour débloquer l'accès au serveur web `webAdmin` via des URL (l'accès via les menus ne requiert pas de clé d'accès). Lorsque aucune clé d'accès n'est définie, il n'est pas possible pour les clients web d'accéder aux interfaces d'administration web telles que l'[Explorateur de données](dataExplorer.md) via des URL. En cas de requête de connexion, une page d'erreur est retournée:
 
 ![alt-text](assets/en/Admin/accessKey.png)
 
-An access key is similar to a password but not associated to a login.
+Une clé d'accès est similaire à un mot de passe, mais sans login associé.
 
-- To define a new access key: click the **Define** button, enter the access key string in the dialog box and click **OK**. The button label becomes **Modify**.
-- To modify the access key: click the **Modify** button, enter the new access key string in the dialog box and click **OK**.
-- To delete the access key: click the **Modify** button, let the access key area empty and click **OK**.
+- Pour définir une nouvelle clé d'accès, cliquez sur le bouton **Définir**, entrez une chaîne de caractères et cliquez sur **OK**. Une fois fait, le label du bouton devient **Modifier**.
+- Pour modifier la clé d'accès, cliquez sur **Modifier**, entrez la nouvelle clé d'accès et cliquez sur **OK**.
+- Pour supprimer la clé d'accès, cliquez sur **Modifier**, laissez le champ d'entrée vide et cliquez sur **OK**.
 
 
-## WebAdmin Headless Configuration
+## Configuration de WebAdmin sans interface
 
-All [WebAdmin settings](#webadmin-settings) are stored in the `WebAdmin.4DSettings` file. There is one default `WebAdmin.4DSettings` file per 4D and 4D Server application, so that it is possible to deploy multiple applications on the same host machine.
+Tous les [settings WebAdmin](#webadmin-settings) sont stockés dans le fichier `WebAdmin.4DSettings`. Par défaut, il existe un fichier `WebAdmin.4DSettings` par application 4D et 4D Server. Ainsi, il est possible de déployer plusieurs applications sur la même machine hôte.
 
-When running a 4D or 4D Server application headless, you can set and use the default `WebAdmin.4DSettings` file, or designate a custom `.4DSettings` file.
+Dans le cas d'une application 4D ou 4D Server sans interface, vous pouvez configurer et utiliser le fichier `WebAdmin.4DSettings` par défaut, ou désigner un fichier `.4DSettings` personnalisé.
 
-To set the file contents, you can use the [WebAdmin settings dialog](#settings-dialog-box) of the 4D application with interface and run it headless afterwards. The default `WebAdmin.4DSettings` file is then used.
+Pour gérer le contenu du fichier, vous pouvez utiliser la [fenêtre de paramètres WebAdmin](#settings-dialog-box) de l'application 4D avec une interface, et la lancer sans interface ensuite. Le fichier par défaut `WebAdmin.4DSettings` est alors utilisé.
 
-Or, you can set a custom `.4DSettings` file (xml format) and use it instead of the default file. Several dedicated arguments are available in the *Command Line Interface* to support this feature:
+Vous pouvez aussi définir un fichier `.4DSettings`. (format XML) et l'utiliser à la place du fichier par défaut. Plusieurs arguments de l'*Interface de ligne de commande* sont disponibles :
 
-| Argument&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Valeur    | Description                                                                                                                                                                                                                                                                                          |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--webadmin-settings-file`                                                                                                                                                                   | File path | Path of the custom WebAdmin `.4DSettings` file for the WebAdmin web server                                                                                                                                                                                                                           |
-| `--webadmin-access-key`                                                                                                                                                                      | Chaine    | Access key for the WebAdmin web server                                                                                                                                                                                                                                                               |
-| `--webadmin-auto-start`                                                                                                                                                                      | Booléen   | Status of the automatic startup for the WebAdmin web server                                                                                                                                                                                                                                          |
-| `--webadmin-store-settings`                                                                                                                                                                  |           | Store the access key and automatic starting parameters in the currently used settings file (i.e. the default `WebAdmin.4DSettings` file or a custom file designated with the `--webadmin-settings-path` parameter). Use the `--webadmin-store-settings` argument to save these settings if necessary |
+| Argument&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Valeur            | Description                                                                                                                                                                                                                                                                                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--webadmin-settings-file`                                                                                                                                                                   | Chemin de fichier | Chemin du fichier `.4DSettings` personnalisé pour le serveur web WebAdmin                                                                                                                                                                                                                                                                   |
+| `--webadmin-access-key`                                                                                                                                                                      | Chaine            | Clé d'accès pour le serveur web WebAdmin                                                                                                                                                                                                                                                                                                    |
+| `--webadmin-auto-start`                                                                                                                                                                      | Booléen           | Statut du lancement automatique du serveur web WebAdmin                                                                                                                                                                                                                                                                                     |
+| `--webadmin-store-settings`                                                                                                                                                                  |                   | Stocker la clé d'accès et les paramètres de lancement automatique dans le fichier de configuration courant (i.e le fichier `WebAdmin.4DSettings` par défaut, ou un fichier personnalisé désigné via le paramètre `--webadmin-settings-file`). Utilisez l'argument `--webadmin-store-settings` pour sauvegarder ces paramètres si nécessaire |
 
-> The access key is not stored in clear in the `.4DSettings` file.
+> Cette clé d'accès n'est pas stockée de façon transparente dans le fichier `.4DSettings`.
 
 Exemple :
 
@@ -152,12 +152,12 @@ Exemple :
 ```
 
 
-## Authentication and Session
+## Authentification et Session
 
-- When a web management page is accessed by entering an URL and without prior identification, an authentication is required. The user must enter the [access key](#access-key) in an authentication dialog box. If the access key was not defined in the `WebAdmin` settings, no access via URL is possible.
+- Quand une page d'aministration web est ouverte via une URL et sans identification au préalable, une authentification est nécessaire. L'utilisateur doit entrer la [clé d'accès](#access-key) dans une fenêtre d'authentification. Si aucune clé d'accès n'a été définie dans les propriétés `WebAdmin`, aucun accès via URL n'est possible.
 
-- When a web management page is accessed directly from a 4D or 4D Server menu item (such as **Records > Data Explorer** or **Window > Data Explorer** (4D Server)), access is granted without authentication, the user is automatically authenticated.
+- Qand une page d'administration web est ouverte directement depuis un menu 4D ou 4D Server, tel que **Enregistrements> Data Explorer**ou**Fenêtre> Explorateur de données**(4D Server), l'accès est autorisé sans authentification. L'utilisateur est authentifié automatiquement.
 
-Once the access is granted, a web [session](WebServer/sessions.md) with the "WebAdmin" privilege is created on the 4D application. As long as the current session has "WebAdmin" privilege, the `WebAdmin` component delivers requested pages.
+Une fois l'accès autorisé, une [session web](WebServer/sessions.md) est créée avec les privilèges "WebAdmin" sur l'application 4D. Tant que la session courante a le privilège "WebAdmin", le composant `WebAdmin` sert les pages demandées dans les requêtes.
 
 
