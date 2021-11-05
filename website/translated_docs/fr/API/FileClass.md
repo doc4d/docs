@@ -68,7 +68,7 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 <!-- REF #_command_.File.Params -->
 | Paramètres   | Type        |    | Description                                     |
 | ------------ | ----------- |:--:| ----------------------------------------------- |
-| path         | Texte       | -> | File path                                       |
+| path         | Texte       | -> | Chemin de fichier                               |
 | fileConstant | Entier long | -> | 4D file constant                                |
 | pathType     | Entier long | -> | `fk posix path` (default) or `fk platform path` |
 | *            |             | -> | * to return file of host database               |
