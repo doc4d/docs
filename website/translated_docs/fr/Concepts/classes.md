@@ -295,26 +295,26 @@ Function set <name>($parameterName : type)
 // code
 ```
 
-`Function get` et `Function set` définissent les **propriétés calculées** dans la classe. A computed property is a named property with a data type that masks a calculation. When a computed property value is accessed, 4D substitutes the corresponding accessor's code:
+`Function get` et `Function set` définissent les **propriétés calculées** dans la classe. Une propriété calculée est une propriété nommée avec un type de données qui masque un calcul. Lorsqu'on accède à une valeur de propriété calculée, 4D substitue le code correspondant :.
 
-- when the property is read, the `Function get` is executed,
-- when the property is written, the `Function set` is executed.
+- lorsque la propriété est lue, la fonction `get` est exécutée,.
+- lorsque la propriété est écrite, la fonction `set` est exécutée,.
 
-If the property is not accessed, the code never executes.
+Si on n'accède pas à la propriété, le code ne s'exécute jamais.
 
-Computed properties are designed to handle data that do not necessary need to be kept in memory. They are usually based upon persistent properties. For example, if a class object contains as persistent property the *gross price* and the *VAT rate*, the *net price* could be handled by a computed property.
+Les propriétés calculées sont conçues pour gérer les données qui n'ont pas nécessairement besoin d'être conservées en mémoire. Traduit avec www. DeepL. com/Translator (version gratuite). Elles sont généralement basées sur des propriétés persistantes. Par exemple, si un objet de classe contient comme propriété persistante le *prix brut* et le *taux de TVA*, le *prix net* pourrait être traité par une propriété calculée.
 
-In the class definition file, computed property declarations use the `Function get` (the *getter*) and `Function set` (the *setter*) keywords, followed by the name of the property. The name must be compliant with [property naming rules](Concepts/identifiers.md#object-properties).
+Dans le fichier de définition de la classe, les déclarations de propriétés calculées utilisent les mots-clés `Function get` (le *getter*) et `Function set` (le *setter*), suivis du nom de la propriété. Le nom doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties).
 
-`Function get` returns a value of the property type and `Function set` takes a parameter of the property type. Both arguments must comply with standard [function parameters](#parameters).
+`Function get` retourne une valeur du type de la propriété et `Function set` prend un paramètre du type de la propriété. Les deux arguments doivent être conformes aux [paramètres standard des fonctions](#parameters).
 
-When both functions are defined, the computed property is **read-write**. If only a `Function get` is defined, the computed property is **read-only**. In this case, an error is returned if the code tries to modify the property. If only a `Function set` is defined, 4D returns *undefined* when the property is read.
+Lorsque les deux fonctions sont définies, la propriété calculée est en **lecture-écriture**. Si seule une `Function get` est définie, la propriété calculée est en **lecture seule**. Dans ce cas, une erreur est retournée si le code tente de modifier la propriété. Si seule une `Function set` est définie, 4D retourne *undefined* lorsque la propriété est lue.
 
-The type of the computed property is defined by the `$return` type declaration of the *getter*. It can be of any [valid property type](dt_object.md).
+Le type de la propriété calculée est défini par la déclaration du type `$return` du *getter*. Il peut s'agir de n'importe quel [type de propriété valide](dt_object.md).
 
-> Assigning *undefined* to an object property clears its value while preserving its type. In order to do that, the `Function get` is first called to retrieve the value type, then the `Function set` is called with an empty value of that type.
+> Assigner *undefined* à une propriété d'objet efface sa valeur tout en préservant son type. Pour ce faire, on appelle d'abord la fonction `get` pour récupérer le type de valeur, puis la fonction `set` avec une valeur vide de ce type.
 
-#### Example 1
+#### Exemple 1
 
 ```4d  
 //Class: Person.4dm
@@ -334,12 +334,12 @@ Function set fullName( $fullName : Text )
 ```
 
 ```4d
-//in a project method
-$fullName:=$person.fullName // Function get fullName() is called
-$person.fullName:="John Smith" // Function set fullName() is called
+//dans une méthode projet
+$fullName:=$person.fullName // la fonction get fullName() est appelée
+$person.fullName:="John Smith" // la fonction set fullName() est appelée
 ```
 
-#### Example 2
+#### Exemple 2
 
 ```4d
 Function get fullAddress()->$result : Object
@@ -366,24 +366,24 @@ Class Constructor({$parameterName : type; ...})
 
 Une fonction class constructor, qui peut accepter des [paramètres](#parameters), peut être utilisée pour définir une classe utilisateur.
 
-In that case, when you call the [`new()`](API/ClassClass.md#new) function, the class constructor is called with the parameters optionally passed to the `new()` function.
+Dans ce cas, lorsque vous appelez la fonction [`new()`](API/ClassClass.md#new), le class constructor est appelé avec les paramètres optionnels passés à la fonction `new()`.
 
-For a class constructor function, the `Current method name` command returns: "*\<ClassName>:constructor*", for example "MyClass:constructor".
+Pour une fonction class constructor, la commande `Current method name` retourne : "*\<ClassName>:constructor*", par exemple "MyClass:constructor".
 
 
 
-#### Example:
+#### Exemple :
 
 ```4d
 // Class: MyClass
-// Class constructor of MyClass
+// Class constructor de MyClass
 Class Constructor ($name : Text)
     This.name:=$name
 ```
 
 ```4d
-// In a project method
-// You can instantiate an object
+// Dans une méthode projet
+// Vous pouvez instancier un objet
 var $o : cs.MyClass
 $o:=cs.MyClass.new("HelloWorld")  
 // $o = {"name":"HelloWorld"}
@@ -401,7 +401,7 @@ $o:=cs.MyClass.new("HelloWorld")
 Class extends <ParentClass>
 ```
 
-The `Class extends` keyword is used in class declaration to create a user class which is a child of another user class. The child class inherits all functions of the parent class.
+Le mot-clé `Class extends` est utilisé dans la déclaration de classe pour créer une user class qui est un enfant d'une autre user class. The child class inherits all functions of the parent class.
 
 Class extension must respect the following rules:
 
