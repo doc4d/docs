@@ -429,11 +429,11 @@ Queremos obtener una lista de empleados cuyo salario es superior al salario medi
 
 #### Descripción
 
-The `.contains()` function <!-- REF #EntitySelectionClass.contains().Summary -->returns true if entity reference belongs to the entity selection<!-- END REF -->, and false otherwise.
+La función `.contains()` <!-- REF #EntitySelectionClass.contains().Summary -->devuelve true si la referencia de entidad pertenece a la entity selection<!-- END REF -->, y false en caso contrario.
 
-In *entity*, specify the entity to search for in the entity selection. If entity is Null, the function will return false.
+En *entity*, especifique la entidad a buscar en la entity selection. Si la entidad es Null, la función devolverá false.
 
-If *entity* and the entity selection do not belong to the same dataclass, an error is raised.
+Si *entity* y la entity selection no pertenecen a la misma dataclass, se produce un error.
 
 #### Ejemplo
 
@@ -445,9 +445,9 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
  $employee:=ds.Employee.get(610)
 
  If($employees.contains($employee))
-    ALERT("The entity with primary key 610 has a last name beginning with H")
+    ALERT("La entidad con llave primaria 610 tiene un apellido que empieza por H")
  Else
-    ALERT("The entity with primary key 610 does not have a last name beginning with H")
+    ALERT("La entidad con llave primaria 610 no tiene un apellido que empiece por H")
  End if
 ```
 
@@ -469,25 +469,25 @@ If *entity* and the entity selection do not belong to the same dataclass, an err
 **.count**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.count().Params -->
-| Parámetros    | Tipo |    | Descripción                                                       |
-| ------------- | ---- |:--:| ----------------------------------------------------------------- |
-| attributePath | Text | -> | Path of the attribute to be used for calculation                  |
-| Resultado     | Real | <- | Number of non null *attributePath* values in the entity selection |
+| Parámetros    | Tipo |    | Descripción                                                         |
+| ------------- | ---- |:--:| ------------------------------------------------------------------- |
+| attributePath | Text | -> | Ruta del atributo que se utilizará para el cálculo                  |
+| Resultado     | Real | <- | Número de valores de *attributePath* no null en la entity selection |
 <!-- END REF -->
 
 #### Descripción
 
-The `.count()` function <!-- REF #EntitySelectionClass.count().Summary -->returns the number of entities in the entity selection with a non-null value in *attributePath*<!-- END REF -->.
-> Only scalar values are taken into account. Object or collection type values are considered as null values.
+La función `.count()` <!-- REF #EntitySelectionClass.count().Summary -->devuelve el número de entidades en la entity selection con un valor no null en *attributePath*<!-- END REF -->.
+> Sólo se tienen en cuenta los valores escalares. Los valores de tipo objeto o colección se consideran valores nulos.
 
 Se devuelve un error si:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* es un atributo relativo,
+*   *attributePath* no se encuentra en la clase de datos de la entity selection.
 
 #### Ejemplo
 
-We want to find out the total number of employees for a company without counting any whose job title has not been specified:
+Queremos averiguar el número total de empleados de una empresa sin contar a los que no se les ha especificado el cargo:
 
 ```4d
  var $sel : cs.EmployeeSelection
@@ -514,10 +514,10 @@ We want to find out the total number of employees for a company without counting
 **.copy**( { *option* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.copy().Params -->
-| Parámetros | Type               |    | Descripción                                      |
-| ---------- | ------------------ |:--:| ------------------------------------------------ |
-| option     | Integer            | -> | `ck shared`: return a shareable entity selection |
-| Resultado  | 4D.EntitySelection | <- | Copy of the entity selection                     |
+| Parámetros | Type               |    | Descripción                                            |
+| ---------- | ------------------ |:--:| ------------------------------------------------------ |
+| option     | Integer            | -> | `ck shared`: devuelve una entity selection compartible |
+| Resultado  | 4D.EntitySelection | <- | Copia de la entity selection                           |
 <!-- END REF -->
 
 #### Descripción
@@ -1088,10 +1088,10 @@ Entity selections always have a `.length` property.
 
 
 <!-- REF #EntitySelectionClass.max().Params -->
-| Parámetros    | Tipo |    | Descripción                                      |
-| ------------- | ---- |:--:| ------------------------------------------------ |
-| attributePath | Text | -> | Path of the attribute to be used for calculation |
-| Resultado     | any  | <- | Highest value of attribute                       |
+| Parámetros    | Tipo |    | Descripción                                        |
+| ------------- | ---- |:--:| -------------------------------------------------- |
+| attributePath | Text | -> | Ruta del atributo que se utilizará para el cálculo |
+| Resultado     | any  | <- | Highest value of attribute                         |
 <!-- END REF -->
 
 #### Descripción
@@ -1140,10 +1140,10 @@ We want to find the highest salary among all the female employees:
 **.min**( *attributePath* : Text ) : any<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.min().Params -->
-| Parámetros    | Tipo |    | Descripción                                      |
-| ------------- | ---- |:--:| ------------------------------------------------ |
-| attributePath | Text | -> | Path of the attribute to be used for calculation |
-| Resultado     | any  | <- | Lowest value of attribute                        |
+| Parámetros    | Tipo |    | Descripción                                        |
+| ------------- | ---- |:--:| -------------------------------------------------- |
+| attributePath | Text | -> | Ruta del atributo que se utilizará para el cálculo |
+| Resultado     | any  | <- | Lowest value of attribute                          |
 <!-- END REF -->
 
 #### Descripción
@@ -1755,10 +1755,10 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 **.sum**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.sum().Params -->
-| Parámetros    | Tipo |    | Descripción                                      |
-| ------------- | ---- |:--:| ------------------------------------------------ |
-| attributePath | Text | -> | Path of the attribute to be used for calculation |
-| Resultado     | Real | <- | Sum of entity selection values                   |
+| Parámetros    | Tipo |    | Descripción                                        |
+| ------------- | ---- |:--:| -------------------------------------------------- |
+| attributePath | Text | -> | Ruta del atributo que se utilizará para el cálculo |
+| Resultado     | Real | <- | Sum of entity selection values                     |
 <!-- END REF -->
 
 #### Descripción
