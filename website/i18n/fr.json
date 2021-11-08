@@ -24,7 +24,7 @@
         "title": "TLS Protocol (HTTPS)"
       },
       "Admin/webAdmin": {
-        "title": "Web Administration"
+        "title": "Administration Web"
       },
       "API/BlobClass": {
         "title": "Blob"
@@ -926,7 +926,7 @@
     "Backup and Restore|no description given": "Sauvegarde et restitution",
     "License Management|no description given": "Gestion des licences",
     "Build Application|no description given": "Générateur d'application",
-    "Web Administration|no description given": "Web Administration",
+    "Web Administration|no description given": "Administration Web",
     "4D Server Administration Window|no description given": "Fenêtre d'administration de 4D Server",
     "4D Components Library|no description given": "Bibliothèque des composants 4D",
     "Client/Server|no description given": "Client/Server",
