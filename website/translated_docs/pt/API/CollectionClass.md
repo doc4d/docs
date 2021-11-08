@@ -1908,7 +1908,7 @@ A função `.orderByMethod()` <!-- REF #collection.orderByMethod().Summary -->de
 Esta função devolve uma *cópia superficial*, o que significa que os objetos ou coleções de ambas coleções compartem a mesma referência. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
-In *methodName*, pass a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. You can provide additional parameters to *methodName* if necessary.
+Em *methodName*, passe um método de comparação que compare dois valores e devolva **true** em *$1.result* se o  primeiro valor for menor que o segundo. Pode fornecer parâmetros adicionais a *methodName* se for necessário.
 
 *   *methodName* will receive the following parameters:
     *   $1 (object), where:
@@ -1920,7 +1920,7 @@ In *methodName*, pass a comparison method that compares two values and returns *
 
 #### Example 1
 
-You want to sort a collection of strings in numerical order rather than alphabetical order:
+Se quiser ordenar a coleção de strings em ordem numérica ao invés de ordem alfabética:
 
 ```4d
  var $c; $c2; $c3 : Collection
@@ -1930,7 +1930,7 @@ You want to sort a collection of strings in numerical order rather than alphabet
  $c3:=$c.orderByMethod("NumAscending") // $c3=["4","33","222","1111"]
 ```
 
- Here is the code for ***NumAscending***:
+ O código para ***NumAscending*** é:
 
 
 ```4d
@@ -1941,7 +1941,7 @@ You want to sort a collection of strings in numerical order rather than alphabet
 
 #### Example 2
 
-You want to sort a collection of strings on their length:
+Se quiser ordenar a coleção de strings de acordo com seu tamanho:
 
 ```4d
  var $fruits; $c2 : Collection
@@ -1950,7 +1950,7 @@ You want to sort a collection of strings on their length:
   //$c2=[Passion fruit,Blackberry,Orange,Banana,Apple,Grape,pear,fig]
 ```
 
-Here is the code for ***WordLength***:
+O código para ***WordLength*** é:
 
 ```4d
  $1.result:=Length(String($1.value))>Length(String($1.value2))
@@ -1958,7 +1958,7 @@ Here is the code for ***WordLength***:
 
 #### Exemplo 3
 
-You want to sort a collection by character code or language:
+Se quiser ordenar a coleção por código de caractere ou alfabeticamente:
 
 ```4d
 var $strings1; $strings2 : Collection
@@ -1973,7 +1973,7 @@ $strings2:=$string1s.orderByMethod("sortCollection";sk strict)
 // result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ```
 
-The ***sortCollection*** method:
+Aqui está o método ***sortCollection***:
 
 ```4d
 var$1Object
@@ -1988,16 +1988,16 @@ $1.result:=(Compare strings($1.value;$1.value2;$2)<0)
 | v16 R6 | Adicionado |
 </details><!-- REF #collection.pop().Syntax -->**.pop()** : any<!-- END REF --><!-- REF #collection.pop().Params -->| Parameter | Type |    | Description                |
 | --------- | ---- |:--:| -------------------------- |
-| Result    | any  | <- | Last element of collection |<!-- END REF -->#### Description
+| Result    | any  | <- | Último elemento da coleção |<!-- END REF -->#### Description
 
-The `.pop()` function<!-- REF #collection.pop().Summary -->removes the last element from the collection and returns it as the function result<!-- END REF -->.
+A função `.pop()`<!-- REF #colección.pop().Resumen -->elimina o último elemento da coleção e o devolve como resultado da função<!-- END REF -->.
 > This function modifies the original collection.
 
-When applied to an empty collection, `.pop()` returns ***undefined***.
+Quando for aplicado a uma coleção vazia, `.pop()` devolve ***undefined***.
 
 #### Exemplo
 
-`.pop()`, used in conjunction with [`.push()`](#push), can be used to implement a first-in, last-out stack feature:
+`.pop()`, utilizado junto com [`.push()`](#push), pode ser utilizado para implementar uma funcionalidade primeira entrada, última saída de tratamento de dados empilhados:
 
 ```4d
  var $stack : Collection
@@ -2013,12 +2013,12 @@ When applied to an empty collection, `.pop()` returns ***undefined***.
 | Versão | Mudanças   |
 | ------ | ---------- |
 | v16 R6 | Adicionado |
-</details><!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* } ) : Collection<!-- END REF --><!-- REF #collection.push().Params -->| Parameter | Type       |    | Description                                   |
-| --------- | ---------- |:--:| --------------------------------------------- |
-| element   | Mixed      | -> | Element(s) to add to the collection           |
-| Result    | Collection | <- | Original collection containing added elements |<!-- END REF -->#### Description
+</details><!-- REF #collection.push().Syntax -->**.push**( *element* : any { ;...*elementN* } ) : Collection<!-- END REF --><!-- REF #collection.push().Params -->| Parameter | Type       |    | Description                                      |
+| --------- | ---------- |:--:| ------------------------------------------------ |
+| element   | Mixed      | -> | Elementos a adicionar à coleção                  |
+| Result    | Collection | <- | Collection original contendo elementos inseridos |<!-- END REF -->#### Description
 
-The `.push()` function<!-- REF #collection.push().Summary -->appends one or more *element*(s) to the end of the collection instance and returns the edited collection<!-- END REF -->.
+A função `.push()`<!-- REF #collection.push().Summary -->adiciona um ou mais *elementos* ao final da instância da coleção e devolve a coleção editada<!-- END REF -->.
 > This function modifies the original collection.
 
 
@@ -2036,7 +2036,7 @@ The `.push()` function<!-- REF #collection.push().Summary -->appends one or more
 
 #### Example 2
 
-You want to sort the resutling collection:
+Se quiser ordenar a coleção resultante:
 
 ```4d
  var $col; $sortedCol : Collection
@@ -2047,18 +2047,18 @@ You want to sort the resutling collection:
 ```<!-- END REF --><!-- REF collection.query().Desc -->## .query()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças                 |
-| ------ | ------------------------ |
-| v17 R5 | Support of querySettings |
-| v16 R6 | Adicionado               |
+| Versão | Mudanças                     |
+| ------ | ---------------------------- |
+| v17 R5 | Assistência de querySettings |
+| v16 R6 | Adicionado                   |
 </details><!-- REF #collection.query().Syntax -->**.query**( *queryString* : Text ; *...value* : any ) : Collection<br>**.query**( *queryString* : Text ; *querySettings* : Object ) : Collection<!-- END REF --><!-- REF #collection.query().Params -->| Parameter     | Type       |    | Description                                                       |
 | ------------- | ---------- |:--:| ----------------------------------------------------------------- |
 | queryString   | Texto      | -> | Critérios de pesquisa                                             |
 | value         | Mixed      | -> | Valores a comparar quando usar placeholders (valores temporários) |
-| querySettings | Objeto     | -> | Query options: parameters, attributes                             |
-| Result        | Collection | <- | Element(s) matching queryString in the collection                 |<!-- END REF -->#### Description
+| querySettings | Objeto     | -> | Opções de pesquisa: parâmetros, atributos                         |
+| Result        | Collection | <- | Elementos que correspondem com queryString na coleção             |<!-- END REF -->#### Description
 
-The `.query()` function<!-- REF #collection.query().Summary -->returns all elements of a collection of objects that match the search conditions<!-- END REF -->defined by *queryString* and (optionally) *value* or *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
+A função `.query()`<!-- REF #collection.query().Summary -->devolve todos os elementos de uma coleção de objetos que coincidem com as condiciones de pesquisa<!-- END REF -->definidas por *queryString* e (opcionalmente) *value* ou *querySettings*. Na coleção original é uma coleção partilhada, a coleção retornada também é uma coleção partilhada.
 > This function does not modify the original collection.
 
 O parâmetro *queryString* usa a sintaxe abaixo:
@@ -2067,7 +2067,7 @@ O parâmetro *queryString* usa a sintaxe abaixo:
 propertyPath comparator value {logicalOperator propertyPath comparator value}
 ```
 
-For detailed information on how to build a query using *queryString*, *value* and *querySettings* parameters, please refer to the [`dataClass.query()`](DataClassClass.md#query) function description.
+Para obter informação detalhada sobre como construir uma consulta utilizando os parâmetros *queryString*, *value* e *querySettings*, consulte a descrição da função [`dataClass.query()`](DataClassClass.md#query).
 
 > Formulas are not supported by the `collection.query()` function, neither in the *queryString* parameter nor as *formula* object parameter.
 
@@ -2100,14 +2100,14 @@ For detailed information on how to build a query using *queryString*, *value* an
  $c.push(New object("name";"Mark";"dateHired";!01-01-2002!))
 ```
 
-This example returns persons whose name contains "in":
+Este exemplo devolve as pessoas cujo nome contém "in":
 
 ```4d
  $col:=$c.query("name = :1";"@in@")
   //$col=[{name:Winch...},{name:Sterling...}]
 ```
 
-This example returns persons whose name does not begin with a string from a variable (entered by the user, for example):
+Este exemplo devolve as pessoas cujo nome não começa por uma string de uma variável (introduzida pelo usuário, por exemplo):
 
 ```4d
  $col:=$c.query("name # :1";$aString+"@")
@@ -2115,14 +2115,14 @@ This example returns persons whose name does not begin with a string from a vari
   //$col=[{name:Smith...},{name:Sterling...},{name:Mark...}]
 ```
 
-This example returns persons whose age is not known (property set to null or undefined):
+Este exemplo devolve as pessoas cuja idade não se conhece (propriedade definida como null ou indefinida):
 
 ```4d
  $col:=$c.query("age=null") //placeholders not allowed with "null"
   //$col=[{name:Wesson...},{name:Sterling...},{name:Mark...}]
 ```
 
-This example returns persons hired more than 90 days ago:
+Este exemplo devolve as pessoas contratadas há mais de 90 dias:
 
 ```4d
  $col:=$c.query("dateHired < :1";(Current date-90))
@@ -2132,26 +2132,26 @@ This example returns persons hired more than 90 days ago:
 
 #### Exemplo 3
 
-More examples of queries can be found in the `dataClass.query()` page. <!-- END REF --><!-- REF collection.reduce().Desc -->## .reduce()
+Mais exemplos de pesquisas podem ser encontrados na página `dataClass.query()`. <!-- END REF --><!-- REF collection.reduce().Desc -->## .reduce()
 
 <details><summary>Histórico</summary>
 | Versão | Mudanças   |
 | ------ | ---------- |
 | v16 R6 | Adicionado |
-</details><!-- REF #collection.reduce().Syntax -->**.reduce**( *methodName* : Text ) : any <br>**.reduce**( *methodName* : Text ; *initValue* : any { ; *...param* : expression } ) : any<!-- END REF --><!-- REF #collection.reduce().Params -->| Parameter  | Type                                            |    | Description                                                          |
-| ---------- | ----------------------------------------------- |:--:| -------------------------------------------------------------------- |
-| methodName | Texto                                           | -> | Name of the function to call to process collection elements          |
-| initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Value to use as the first argument to the first call of *methodName* |
-| param      | expressão                                       | -> | Parâmetros a passar para *methodName*                                |
-| Result     | Text, Number, Object, Collection, Date, Boolean | <- | Result of the accumulator value                                      |<!-- END REF -->#### Description
+</details><!-- REF #collection.reduce().Syntax -->**.reduce**( *methodName* : Text ) : any <br>**.reduce**( *methodName* : Text ; *initValue* : any { ; *...param* : expression } ) : any<!-- END REF --><!-- REF #collection.reduce().Params -->| Parameter  | Type                                            |    | Description                                                                  |
+| ---------- | ----------------------------------------------- |:--:| ---------------------------------------------------------------------------- |
+| methodName | Texto                                           | -> | Nome da função a qual se chama para processar os elementos da coleção        |
+| initValue  | Text, Number, Object, Collection, Date, Boolean | -> | Valor a utilizar como primeiro argumento da primeira chamada de *methodName* |
+| param      | expressão                                       | -> | Parâmetros a passar para *methodName*                                        |
+| Result     | Text, Number, Object, Collection, Date, Boolean | <- | Resultado do valor do acumulador                                             |<!-- END REF -->#### Description
 
 
-The `.reduce()` function<!-- REF #collection.reduce().Summary -->applies the *methodName* callback method against an accumulator and each element in the collection (from left to right) to reduce it to a single value<!-- END REF -->.
+A função `.reduce()`<!-- REF #collection.reduce().Summar -->aplica o método de retrochamada *methodName* contra um acumulador e cada elemento da coleção (de esquerda a direita) para reduzi-lo a um único valor<!-- END REF -->.
 > This function does not modify the original collection.
 
-In *methodName*, pass the name of the method to use to evaluate collection elements, along with its parameter(s) in param (optional). *methodName* takes each collection element and performs any desired operation to accumulate the result into *$1.accumulator*, which is returned in *$1.value*.
+Em *methodName*, passe o nome do método para usar para avaliar elementos de coleção, junto com os parâmetros em param (opcional). *methodName* toma cada elemento da coleção e realiza todas as operações desejadas para acumular o resultado em *$1.accumulator*, que se devolve em *$1.value*.
 
-You can pass the value to initialize the accumulator in *initValue*. If omitted, *$1.accumulator* starts with *Undefined*.
+Pode passar o valor para inicializar o acumulador em *initValue*. Se omitido, *$1.accumulator>* começa com *Undefined*.
 
 *methodName* recebe os parâmetros abaixo:
 
@@ -2174,7 +2174,7 @@ You can pass the value to initialize the accumulator in *initValue*. If omitted,
  $r:=$c.reduce("Multiply";1) //returns 86400
 ```
 
-With the following ***Multiply*** method:
+Com o método ***Multiply***:
 
 ```4d
  If(Value type($1.value)=Is real)
@@ -2184,7 +2184,7 @@ With the following ***Multiply*** method:
 
 #### Exemplo
 
-This example allows reducing several collection elements to a single one:
+Este exemplo permite reduzir vários elementos da coleção a um só:
 
 ```4d
  var $c;$r : Collection
@@ -2196,7 +2196,7 @@ This example allows reducing several collection elements to a single one:
  $r:=$c.reduce("Flatten") //$r=[0,1,2,3,4,5,6,7]
 ```
 
-With the following ***Flatten*** method:
+Com o método ***Flatten***:
 
 ```4d
  If($1.accumulator=Null)
@@ -2209,11 +2209,11 @@ With the following ***Flatten*** method:
 | Versão | Mudanças   |
 | ------ | ---------- |
 | v16 R6 | Adicionado |
-</details><!-- REF #collection.remove().Syntax -->**.remove**( *index* : Integer { ; *howMany* : Integer } ) : Collection<!-- END REF --><!-- REF #collection.remove().Params -->| Parameter | Type       |    | Description                                           |
-| --------- | ---------- |:--:| ----------------------------------------------------- |
-| index     | Integer    | -> | Element at which to start removal                     |
-| howMany   | Integer    | -> | Number of elements to remove, or 1 element if omitted |
-| Result    | Collection | <- | Original collection without removed element(s)        |<!-- END REF -->#### Description
+</details><!-- REF #collection.remove().Syntax -->**.remove**( *index* : Integer { ; *howMany* : Integer } ) : Collection<!-- END REF --><!-- REF #collection.remove().Params -->| Parameter | Type       |    | Description                                             |
+| --------- | ---------- |:--:| ------------------------------------------------------- |
+| index     | Integer    | -> | Elemento no qual que se inicia a eliminação             |
+| howMany   | Integer    | -> | Número de elementos a eliminar, ou 1 elemento se omitir |
+| Result    | Collection | <- | Colección original sem elementos eliminados             |<!-- END REF -->#### Description
 
 The `.remove()` function<!-- REF #collection.remove().Summary -->removes one or more element(s) from the specified *index* position in the collection and returns the edited collection<!-- END REF -->.
 > This function modifies the original collection.
@@ -2434,7 +2434,7 @@ The `.sort()` function<!-- REF #collection.sort().Summary -->sorts the elements 
 
 If `.sort()` is called with no parameters, only scalar values (number, text, date, booleans) are sorted. Elements are sorted by default in ascending order, according to their type.
 
-If you want to sort the collection elements in some other order or sort any type of element, you must supply in *methodName* a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. You can provide additional parameters to *methodName* if necessary.
+If you want to sort the collection elements in some other order or sort any type of element, you must supply in *methodName* a comparison method that compares two values and returns **true** in *$1.result* if the first value is lower than the second value. Pode fornecer parâmetros adicionais a *methodName* se for necessário.
 
 *   *methodName* will receive the following parameters:
     *   $1 (object), where:
