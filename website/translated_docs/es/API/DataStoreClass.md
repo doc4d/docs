@@ -859,7 +859,7 @@ The `.validateTransaction()` function <!-- REF #DataStoreClass.validateTransacti
 
 The function saves the changes to the data on the datastore that occurred during the transaction.
 
-Puede anidar varias transacciones (subtransacciones). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using this function.
+Puede anidar varias transacciones (subtransacciones). Si se cancela la transacción principal, también se cancelan todas sus subtransacciones, aunque se hayan validado individualmente utilizando esta función.
 
 
 #### Ejemplo
