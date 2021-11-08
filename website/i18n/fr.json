@@ -21,7 +21,7 @@
         "title": "Fenêtre d'administration de 4D Server"
       },
       "Admin/tls": {
-        "title": "TLS Protocol (HTTPS)"
+        "title": "Protocole TLS (HTTPS)"
       },
       "Admin/webAdmin": {
         "title": "Administration Web"
@@ -930,7 +930,7 @@
     "4D Server Administration Window|no description given": "Fenêtre d'administration de 4D Server",
     "4D Components Library|no description given": "Bibliothèque des composants 4D",
     "Client/Server|no description given": "Client/Server",
-    "TLS Protocol (HTTPS)|no description given": "TLS Protocol (HTTPS)",
+    "TLS Protocol (HTTPS)|no description given": "Protocole TLS (HTTPS)",
     "Debugging|no description given": "Débogage",
     "Web Data Explorer|no description given": "Explorateur de données Web",
     "Language Reference (4D Doc Center)|no description given": "Langage (4D Doc Center)",
