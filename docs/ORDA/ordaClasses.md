@@ -274,10 +274,10 @@ When creating or editing data model classes, you must pay attention to the follo
 
 When compiled, data model class functions are executed:
 
-- in **preemptive processes** in client/server applications,
-- in **preemptive or cooperative processes** (depending on the calling process mode) in single-user applications.
+- in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
+- in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
 
-If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If some thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications). 
+If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications). 
 
 
 ## Computed attributes
