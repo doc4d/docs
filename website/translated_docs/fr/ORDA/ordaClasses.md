@@ -270,6 +270,16 @@ Lors de la création ou de la modification de classes de modèles de données, v
 - Vous ne pouvez pas remplacer une fonction de classe ORDA native du [class store](Concepts/classes.md#class-stores) **`4D`** par une fonction de classe utilisateur de modèle de données.
 
 
+### Preemptive execution
+
+When compiled, data model class functions are executed:
+
+- in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
+- in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
+
+If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications).
+
+
 ## Champs calculés
 
 
@@ -314,7 +324,7 @@ La fonction *getter* est obligatoire pour déclarer le champ calculé *attribute
 La fonction *getter* définit le type de données du champ calculé grâce au paramètre *$result*. Les types de résultats suivants sont autorisés :
 
 - Scalar (text, boolean, date, time, number)
-- Object
+- Objet
 - Image
 - BLOB
 - Entity (i.e. cs.EmployeeEntity)
@@ -760,7 +770,7 @@ End if
 
 
 
-## Prise en charge dans les projets 4D
+## Support in 4D IDE
 
 
 ### Fichiers de classe (class files)

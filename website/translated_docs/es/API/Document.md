@@ -478,11 +478,11 @@ Esta propiedad es **de sólo lectura**.
 
 La función `.copyTo()` <!-- REF #document.copyTo().Summary -->copia el objeto `File` en el *destinationFolder* especificado> <!-- END REF -->.
 
-The *destinationFolder* must exist on disk, otherwise an error is generated.
+La *destinationFolder* debe existir en el disco, de lo contrario se genera un error.
 
-By default, the file is copied with the name of the original file. If you want to rename the copy, pass the new name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
+Por defecto, el archivo se copia con el nombre del archivo original. If you want to rename the copy, pass the new name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
 
-If a file with the same name already exists in the *destinationFolder*, by default 4D generates an error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
+Si ya existe un archivo con el mismo nombre en la *destinationFolder*, por defecto 4D genera un error. You can pass the `fk overwrite` constant in the *overwrite* parameter to ignore and overwrite the existing file
 
 | Constante      | Valor | Comentario                          |
 | -------------- | ----- | ----------------------------------- |
@@ -495,7 +495,7 @@ El objeto `File` copiado.
 
 #### Ejemplo
 
-You want to copy a picture *file* from the user's document folder to the application folder:
+Desea copiar un *archivo* imagen de la carpeta de documentos del usuario a la carpeta de la aplicación:
 
 ```4d
 var $source; $copy : Object
@@ -529,7 +529,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 #### Descripción
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. Para obtener información sobre los BLOB, consulte la sección [BLOB](Conceptos/dt_blob.md).
 
 **Valor devuelto**
 
@@ -537,7 +537,7 @@ A `4D.Blob` object.
 
 #### Ejemplo
 
-To save a document's contents in a `BLOB` field:
+Para guardar el contenido de un documento en un campo `BLOB`:
 
 ```4d
  var $vPath : Text
@@ -573,15 +573,15 @@ To save a document's contents in a `BLOB` field:
 
 #### Descripción
 
-The `.getIcon()` function returns <!-- REF #document.getIcon().Summary -->the icon of the file<!-- END REF -->.
+La función `.getIcon()` devuelve <!-- REF #document.getIcon().Summary -->el icono del archivo<!-- END REF -->.
 
-The optional *size* parameter specifies the dimensions in pixels of the returned icon. This value actually represents the length of the side of the square containing the icon. Icons are usually defined in 32x32 pixels (“large icons”) or 16x16 pixels (“small icons”). If you pass 0 or omit this parameter, the "large icon" version is returned.
+The optional *size* parameter specifies the dimensions in pixels of the returned icon. This value actually represents the length of the side of the square containing the icon. Los iconos suelen definirse en 32x32 píxeles ("iconos grandes") o 16x16 píxeles ("iconos pequeños"). If you pass 0 or omit this parameter, the "large icon" version is returned.
 
-If the file does not exist on disk, a default blank icon is returned.
+Si el archivo no existe en el disco, se devuelve un icono vacío por defecto.
 
 **Valor devuelto**
 
-File icon [picture](../Concepts/picture.html).
+Icono de archivo [picture](../Concepts/picture.html).
 
 
 
@@ -613,9 +613,9 @@ File icon [picture](../Concepts/picture.html).
 
 
 #### Descripción
-The `.getText()` function <!-- REF #document.getText().Summary -->returns the contents of the file as text <!-- END REF -->.
+La función `.getText()` <!-- REF #document.getText().Summary -->devuelve el contenido del archivo como texto <!-- END REF -->.
 
-Optionally, you can designate the character set to be used for reading the contents. Puede pasar:
+Opcionalmente, puede designar el conjunto de caracteres que se utilizará para leer el contenido. Puede pasar:
 
 - in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or ""UTF-8"),
 - or in *charSetNum*, the MIBEnum ID (number) of the standard set name.

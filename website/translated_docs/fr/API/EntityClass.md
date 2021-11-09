@@ -1467,7 +1467,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 }
 ```
 
-#### Example 4
+#### Exemple 4
 
 Extracting some properties of `relatedEntities`:
 
@@ -1494,7 +1494,7 @@ Returns:
 }
 ```
 
-#### Example 5
+#### Exemple 5
 
 Extracting a `relatedEntity` with simple form:
 
@@ -1514,7 +1514,7 @@ Returns:
 }
 ```
 
-#### Example 6
+#### Exemple 6
 
 Extracting all the properties of a `relatedEntity`:
 

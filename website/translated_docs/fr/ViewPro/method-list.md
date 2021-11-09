@@ -905,7 +905,7 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
  End if
 ```
 
-#### Example 4
+#### Exemple 4
 
 You want to export the current sheet to a `.txt` file with pipe-separated values:
 
@@ -4346,7 +4346,7 @@ Résultat :
 
 ![](assets/en/ViewPro/cmd_vpSetSheetOptions1.PNG)
 
-#### Example 4
+#### Exemple 4
 
 You want to hide the grid lines as well as the row and column headers.
 
