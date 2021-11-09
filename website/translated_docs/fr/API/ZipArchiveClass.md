@@ -239,7 +239,7 @@ To compress a ZIP archive structure with a password and progress bar:
 
 
 
-#### Example 4
+#### Exemple 4
 
 You want to pass a collection of folders and files to compress to the *zipStructure* object:
 
