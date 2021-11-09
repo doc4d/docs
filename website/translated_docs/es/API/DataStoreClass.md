@@ -825,7 +825,7 @@ Puede anidar varias transacciones (subtransacciones). Each transaction or sub-tr
 
 The `.stopRequestLog()` function <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk.
 
-This function must be called on a remote 4D, otherwise it does nothing. Está diseñado para fines de depuración en configuraciones cliente/servidor.
+Esta función debe ser llamada en un 4D remoto, de lo contrario no hace nada. Está diseñado para fines de depuración en configuraciones cliente/servidor.
 
 
 #### Ejemplo
@@ -862,7 +862,7 @@ The `.validateTransaction()` function <!-- REF #DataStoreClass.validateTransacti
 
 The function saves the changes to the data on the datastore that occurred during the transaction.
 
-Puede anidar varias transacciones (subtransacciones). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using this function.
+Puede anidar varias transacciones (subtransacciones). Si se cancela la transacción principal, también se cancelan todas sus subtransacciones, aunque se hayan validado individualmente utilizando esta función.
 
 
 #### Ejemplo

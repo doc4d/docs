@@ -447,7 +447,7 @@ Esta propiedad es **de sólo lectura**.
 
 La función `.copyTo()` <!-- REF #directory.copyTo().Summary -->copia el objeto `Folder` en el *destinationFolder* especificado><!-- END REF -->.
 
-The *destinationFolder* must exist on disk, otherwise an error is generated.
+La *destinationFolder* debe existir en el disco, de lo contrario se genera un error.
 
 By default, the folder is copied with the name of the original folder. If you want to rename the copy, pass the new name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
 

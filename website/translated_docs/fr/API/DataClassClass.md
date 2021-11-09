@@ -270,7 +270,7 @@ We want to simply create a new entity from a collection:
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
-#### Example 4
+#### Exemple 4
 
 We want to create an entity. The \_\_NEW property is True, the employee primary key is not given:
 
@@ -293,7 +293,7 @@ We want to create an entity. The \_\_NEW property is True, the employee primary 
 
 ```
 
-#### Example 5
+#### Exemple 5
 
 We want to create an entity. The \_\_NEW property is omitted, the employee primary key is given and does not exist:
 
@@ -311,7 +311,7 @@ We want to create an entity. The \_\_NEW property is omitted, the employee prima
  $employees:=ds.Employee.fromCollection($empsCollection)
 ```
 
-#### Example 6
+#### Exemple 6
 
 In this example, the first entity will be created and saved but the second will fail since they both use the same primary key:
 
