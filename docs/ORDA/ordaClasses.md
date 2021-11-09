@@ -131,6 +131,7 @@ Function GetBestOnes()
 Then you can get an entity selection of the "best" companies by executing: 
 
 
+
 ```4d
 	var $best : cs.CompanySelection
 	$best:=ds.Company.GetBestOnes()
@@ -635,9 +636,8 @@ Function orderBy age($event : Object)-> $result : Text
 
 An **alias** attribute is built above another attribute of the data model, which can belong to the same dataclass or to a related dataclass (available through one or more levels). An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass. 
 
-Alias attributes bring more readability and simplicity in the code and in queries by allowing to expose business concepts instead of implementation details. 
+Alias attributes bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details. 
 
-> ORDA alias attributes are not [**exposed**](#exposed-vs-non-exposed-functions) by default. You expose an alias attribute by adding the `exposed` keyword before the Alias keyword.
 
 
 ### `Alias <attributeName> <targetPath>`
@@ -653,9 +653,46 @@ You create an alias attribute in the [**entity class**](#entity-class) of the da
 
 *attributeName* must comply with [standard rules for property names](Concepts/identifiers.html#object-properties). 
 
-*targetPath* can be an attribute name (if it belongs to the same dataclass) or an attribute path such as "a.b.c". 
+*targetPath* can be an attribute name (if it belongs to the same dataclass) or an attribute path such as "a.b.c".
 
-### Example
+An alias can be used as a part of a path of another alias. 
+
+A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last item. Otherwise, an error is returned. 
+
+> ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
+
+
+### Using alias attributes
+
+Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see example below). They can be used instead of their target attribute path in the following class functions:
+
+|Function|Condition|
+|---|---|
+|`dataClass.query()`, `entitySelection.query()`||
+|`entity.toObject()`||
+|`entitySelection.toCollection()`||
+|`entitySelection.extract()`||
+|`entitySelection.orderBy()`||
+|`entitySelection.orderByFormula()`||
+|`entitySelection.average()`|alias defined on a property of an object attribute|
+|`entitySelection.count()`|alias defined on a property of an object attribute|
+|`entitySelection.distinct()`|alias defined on a property of an object attribute|
+|`entitySelection.sum()`|alias defined on a property of an object attribute|
+|`entitySelection.min()`|alias defined on a property of an object attribute|
+|`entitySelection.max()`|alias defined on a property of an object attribute|
+|`entity.diff()`|returns the alias name (for scalar type)|
+|`entity.touchedAttributes()`|returns the alias name (for scalar type)|
+
+
+### Data types
+
+An alias attribute hinerits its data type from the target attribute: 
+
+- if the target attribute [`kind`](DataClassAttributeClass.md#kind) is "storage", the alias data type is of the same type,
+- if the target attribute [`kind`](DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is 4D.Entity or 4D.EntitySelection. 
+
+
+### Examples
 
 Considering the following model:
 
@@ -693,9 +730,9 @@ In the Course dataclass:
 
 Class extends Entity
 
-Alias label name 
-Exposed Alias teacherName teacher.name //relatedEntity
-Exposed Alias studentName student.name //relatedEntity
+Exposed Alias courseName name //scalar 
+Exposed Alias teacherName teacher.name //scalar value
+Exposed Alias studentName student.name //scalar value
 
 ```
 
@@ -703,7 +740,7 @@ You can then execute the following queries:
 
 ```4d
 // Find course named "Archeography"
-ds.Course.query("label = :1";"Archeography")
+ds.Course.query("courseName = :1";"Archeography")
 
 // Find courses given by the professor Smith
 ds.Course.query("teacherName = :1";"Smith")
@@ -718,45 +755,14 @@ ds.Student.query("teachers.name = :1";"Smith")
 ds.Teacher.query("students.name = :1";"Martin")
 ```
 
+You can also edit the value of the *courseName* alias:
 
-
-### Using alias attributes
-
-Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see below). They can be used instead of their target attribute path in the following class functions:
-
-query()
-entity.toObject()
-entitySelection.toCollection()
-entitySelection.extract()
-entitySelection.orderBy()
-entitySelection.orderByFormula ()
-entitySelection.average() --> if an alias has been defined on a property of an object field
-entitySelection.count() --> if an alias has been defined on a property of an object field
-entitySelection.distinct() --> if an alias has been defined on a property of an object field
-entitySelection.sum() --> if an alias has been defined on a property of an object field
-entitySelection.min() --> if an alias has been defined on a property of an object field
-entitySelection.max() --> if an alias has been defined on a property of an object field
-entity.diff() (1)
-entity.touchedAttributes() (1)
-
-An alias attribute gets the same data type as the associated property path when the result of the path is scalar. 
-
-
-
-
-
-
-An alias attribute hinerits its data type from the target attribute: 
-
-- if the target attribute kind is storage, the alias data type will be the same
-- if the target attribute kind is relatedEntity or relatedEntities, the alias data type will be 4D.Entity or 4D.EntitySelection. 
-
-An al 
-`Alias` *attributeName* *targetPath*
-
-Once a relationship exists between dataclasses, it becomes simple to add new attributes to child classes that refer to parent or even ancestral class attributes. Referred to as **alias** attributes, these attributes store no data, but provide the convenience found in a denormalized relational structure. 
-
-Notice that the InvoiceItem class has two attributes, partCost and partName, each of which refers to a storage attribute in the related class Part via the relation attribute itemPart. Because Wakanda traverses a specifically named relation attribute to determine each alias attribute’s value, there is no ambiguity when it is accessed. Any number of alias attributes can be included this way. The result is an InvoiceItem datastore class that incorporates all the pieces of information needed by the application.
+```4d
+// Rename a course
+$arch:=ds.Course.query("courseName = :1";"Archeography")
+$arch.courseName:="Archeography II"
+$arch.save() //courseName and label are "Archeography II"
+```
 
 
 

@@ -251,7 +251,7 @@ The `.kind` property <!-- REF DataClassAttributeClass.kind.Summary -->returns th
 
 *	"storage": storage (or scalar) attribute, i.e. attribute storing a value, not a reference to another attribute
 *	"calculated": computed attribute, i.e. defined through a [`get` function](ORDA/ordaClasses.md#function-get-attributename)
-*	"alias": attribute built upon a relation attribute
+*	"alias": attribute built upon [another attribute](ORDA/ordaClasses.md#alias-attributes-1)
 *	"relatedEntity": N -> 1 relation attribute (reference to an entity)
 *	"relatedEntities": 1 -> N relation attribute (reference to an entity selection)
 
