@@ -174,7 +174,7 @@ Une formule simple :
 
 #### Exemple 2
 
-A formula using local variables:
+Une formule utilisant des variables locales :
 
 ```4d
 
@@ -189,7 +189,7 @@ A formula using local variables:
 
 #### Exemple 3
 
-A simple formula using parameters:
+Une formule simple utilisant des paramètres :
 
 ```4d
  $o:=New object("f";Formula($1+$2))
@@ -197,19 +197,19 @@ A simple formula using parameters:
 ```
 
 
-#### Example 4
+#### Exemple 4
 
-A formula using a project method with parameters:
+Une formule utilisant une méthode projet avec des paramètres :
 
 ```4d
  $o:=New object("f";Formula(myMethod))
- $result:=$o.f("param1";"param2") // equivalent to $result:=myMethod("param1";"param2")
+ $result:=$o.f("param1";"param2") // équivalent à $result:=myMethod("param1";"param2")
 ```
 
 
-#### Example 5
+#### Exemple 5
 
-Using `This`:
+Avec l'utilisation de `This` :
 
 ```4d
  $o:=New object("fullName";Formula(This.firstName+" "+This.lastName))
@@ -218,9 +218,9 @@ Using `This`:
  $result:=$o.fullName() //retourne "John Smith"
 ```
 
-#### Example 6
+#### Exemple 6
 
-Calling a formula using object notation:
+Appeler une formule à l'aide de la notation objet :
 
 ```4d
  var $feta; $robot : Object
@@ -255,24 +255,24 @@ Calling a formula using object notation:
 **Formula from string**( *formulaString* : Text ) : 4D.Function<!-- END REF -->
 
 <!-- REF #_command_.Formula from string.Params -->
-| Paramètres    | Type        |    | Description                             |
-| ------------- | ----------- |:--:| --------------------------------------- |
-| formulaString | Texte       | -> | Text formula to be returned as object   |
-| Résultat      | 4D.Function | <- | Native object encapsulating the formula |
+| Paramètres    | Type        |    | Description                           |
+| ------------- | ----------- |:--:| ------------------------------------- |
+| formulaString | Texte       | -> | Formule texte à retourner comme objet |
+| Résultat      | 4D.Function | <- | Objet natif encapsulant la formule    |
 <!-- END REF -->
 
 
 #### Description
 
-The `Formula from string` command <!-- REF #_command_.Formula from string.Summary -->creates a 4D.Function object based upon the *formulaString*<!-- END REF -->.  *formulaString* can be as simple as a single value or complex, such as a project method with parameters.
+La commande `Formula from string` <!-- REF #_command_.Formula from string.Summary -->crée un objet 4D.Function basé sur *formulaString*<!-- END REF -->.  *formulaString* peut être aussi simple qu'une valeur unique ou complexe, comme une méthode projet avec des paramètres.
 
-This command is similar to [`Formula`](#formula), except that it handles a text-based formula. In most cases, it is recommended to use the `Formula` command. `Formula from string` should only be used when the original formula was expressed as text (e.g., stored externally in a JSON file). In this context, using syntax with tokens is highly advised.
-> Because local variable contents can not be accessed by name in compiled mode, they can not be used in *formulaString*. An attempt to access a local variable with `Formula from string` will result in an error (-10737).
+Cette commande est similaire à [`Formula`](#formula), sauf qu'elle traite une formule de type texte. Dans la plupart des cas, il est recommandé d'utiliser la commande `Formula`. `Formula from string` ne doit être utilisée que lorsque la formule d'origine a été exprimée sous forme de texte (par exemple, stockée en externe dans un fichier JSON). Dans ce contexte, l'utilisation de la syntaxe avec des tokens est fortement conseillée.
+> Le contenu des variables locales n'étant pas accessible par son nom en mode compilé, il ne peut pas être utilisé dans la *formulaString*. Si vous tentez d'accéder à une variable locale avec `Formula from string`, cela génèrera une erreur (-10737).
 
 
 #### Exemple
 
-The following code will create a dialog accepting a formula in text format:
+Le code suivant permettra de créer un dialogue acceptant une formule dans un format texte :
 
 ```4d
  var $textFormula : Text
@@ -310,24 +310,24 @@ The following code will create a dialog accepting a formula in text format:
 **.apply**() : any<br>**.apply**( *thisObj* : Object { ; *formulaParams* : Collection } ) : any<!-- END REF -->
 
 <!-- REF #FunctionClass.apply().Params -->
-| Paramètres    | Type       |    | Description                                                             |
-| ------------- | ---------- |:--:| ----------------------------------------------------------------------- |
-| thisObj       | Objet      | -> | Object to be returned by the This command in the formula                |
-| formulaParams | Collection | -> | Collection of values to be passed as $1...$n when `formula` is executed |
-| Résultat      | any        | <- | Value from formula execution                                            |
+| Paramètres    | Type       |    | Description                                                                       |
+| ------------- | ---------- |:--:| --------------------------------------------------------------------------------- |
+| thisObj       | Objet      | -> | Objet à retourner par la commande This dans la formule                            |
+| formulaParams | Collection | -> | Collection des valeurs à passer en tant que $1...$n lorsque `formula` est exécuté |
+| Résultat      | any        | <- | Valeur obtenue à partir de l'exécution de la formule                              |
 <!-- END REF -->
 
 
 #### Description
 
-The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. The formula object can be created using the `Formula` or `Formula from string` commands.
+The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. L'objet formula peut être créé à l'aide des commandes `Formula` ou `Formula from string`.
 
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the formula.
+Dans le paramètre *thisObj*, vous pouvez passer une référence à l'objet à utiliser en tant que `This` dans la formule.
 
-You can also pass a collection to be used as $1...$n parameters in the formula using the optional *formulaParams* parameter.
+Vous pouvez également passer une collection à utiliser comme paramètres $1...$n dans la formule à l'aide du paramètre facultatif *formulaParams*.
 
-Note that `.apply()` is similar to [`.call()`](#call) except that parameters are passed as a collection. This can be useful for passing calculated results.
+A noter que `.apply()` est similaire à [`.call()`](#call), néanmoins les paramètres sont passés sous forme de collection. Cela peut être utile pour passer des résultats calculés.
 
 
 #### Exemple 1
@@ -371,23 +371,23 @@ Note that `.apply()` is similar to [`.call()`](#call) except that parameters are
 **.call**() : any<br>**.call**( *thisObj* : Object { ; ...*params* : any } ) : any<!-- END REF -->
 
 <!-- REF #FunctionClass.call().Params -->
-| Paramètres | Type  |    | Description                                               |
-| ---------- | ----- | -- | --------------------------------------------------------- |
-| thisObj    | Objet | -> | Object to be returned by the This command in the formula  |
-| params     | any   | -> | Value(s) to be passed as $1...$n when formula is executed |
-| Résultat   | any   | <- | Value from formula execution                              |
+| Paramètres | Type  |    | Description                                                        |
+| ---------- | ----- | -- | ------------------------------------------------------------------ |
+| thisObj    | Objet | -> | Objet à retourner par la commande This dans la formule             |
+| params     | any   | -> | Valeur(s) à passer en tant que $1...$n lorsque formula est exécuté |
+| Résultat   | any   | <- | Valeur obtenue à partir de l'exécution de la formule               |
 <!-- END REF -->
 
 
 #### Description
 
-The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. The formula object can be created using the `Formula` or `Formula from string` commands.
+The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. L'objet formula peut être créé à l'aide des commandes `Formula` ou `Formula from string`.
 
-In the *thisObj* parameter, you can pass a reference to the object to be used as `This` within the formula.
+Dans le paramètre *thisObj*, vous pouvez passer une référence à l'objet à utiliser en tant que `This` dans la formule.
 
-You can also pass values to be used as *$1...$n* parameters in the formula using the optional *params* parameter(s).
+Vous pouvez également passer des valeurs à utiliser comme paramètres *$1...$n* dans la formule à l'aide du paramètre facultatif *params*.
 
-Note that `.call()` is similar to [`.apply()`](#apply) except that parameters are passed directly.
+A noter que `.call()` est similaire à [`.apply()`](#apply), néanmoins les paramètres sont passés directement.
 
 #### Exemple 1
 
