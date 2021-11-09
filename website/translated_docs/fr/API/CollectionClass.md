@@ -499,7 +499,7 @@ Use(Storage)
 End use
 ```
 
-#### Example 4
+#### Exemple 4
 
 This example illustrates the use of the `ck resolve pointers` option:
 
