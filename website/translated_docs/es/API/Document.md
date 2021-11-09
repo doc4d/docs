@@ -577,11 +577,11 @@ La función `.getIcon()` devuelve <!-- REF #document.getIcon().Summary -->el ico
 
 The optional *size* parameter specifies the dimensions in pixels of the returned icon. This value actually represents the length of the side of the square containing the icon. Los iconos suelen definirse en 32x32 píxeles ("iconos grandes") o 16x16 píxeles ("iconos pequeños"). If you pass 0 or omit this parameter, the "large icon" version is returned.
 
-If the file does not exist on disk, a default blank icon is returned.
+Si el archivo no existe en el disco, se devuelve un icono vacío por defecto.
 
 **Valor devuelto**
 
-File icon [picture](../Concepts/picture.html).
+Icono de archivo [picture](../Concepts/picture.html).
 
 
 
@@ -613,9 +613,9 @@ File icon [picture](../Concepts/picture.html).
 
 
 #### Descripción
-The `.getText()` function <!-- REF #document.getText().Summary -->returns the contents of the file as text <!-- END REF -->.
+La función `.getText()` <!-- REF #document.getText().Summary -->devuelve el contenido del archivo como texto <!-- END REF -->.
 
-Optionally, you can designate the character set to be used for reading the contents. Puede pasar:
+Opcionalmente, puede designar el conjunto de caracteres que se utilizará para leer el contenido. Puede pasar:
 
 - in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or ""UTF-8"),
 - or in *charSetNum*, the MIBEnum ID (number) of the standard set name.
