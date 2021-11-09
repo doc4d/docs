@@ -2009,7 +2009,7 @@ Returns:
 ```
 
 
-#### Example 4
+#### Exemple 4
 
 Example with `relatedEntity` type with simple form:
 
@@ -2048,7 +2048,7 @@ returns:
    ]
 ```
 
-#### Example 5
+#### Exemple 5
 
 Example with *filterCol* parameter:
 
@@ -2074,7 +2074,7 @@ Returns:
 ]
 ```
 
-#### Example 6
+#### Exemple 6
 
 Example with extraction of all properties of a relatedEntity:
 
