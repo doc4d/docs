@@ -43,7 +43,7 @@ Folder where the TLS certificate files for the web server are located.
 
 By default with 4D or 4D Server, these files must be placed next to the [project folder](Project/architecture.md#project-folder).
 
-With 4D in remote mode, these files must be located in the local resources folder of the database on the remote machine (see `4D Client Database Folder` paragraph of the `Get 4D folder` command). You must copy these files manually on the remote machine.
+With 4D in remote mode, these files must be located in the local resources folder of the database on the remote machine (see `4D Client Database Folder` paragraph of the `Get 4D folder` command). Vous devez copier ces filles manuellement sur la machine distante.
 
 > TLS certificate files are *key.pem* (document containing the private encryption key) and *cert.pem* (document containing the certificate).
 

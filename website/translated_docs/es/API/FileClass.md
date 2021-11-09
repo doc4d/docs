@@ -465,7 +465,7 @@ ALERT($info.Copyright)
 
 The `.moveTo()` function <!-- REF #FileClass.moveTo().Summary -->moves or renames the `File` object into the specified *destinationFolder*<!-- END REF -->.
 
-The *destinationFolder* must exist on disk, otherwise an error is generated.
+La *destinationFolder* debe existir en el disco, de lo contrario se genera un error.
 
 By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
 
@@ -657,7 +657,7 @@ $infoPlistFile.setAppInfo($info)
 
 #### Descripción
 
-The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the *content* BLOB<!-- END REF -->. For information on BLOBs, please refer to the [BLOB](Concepts/dt_blob.md) section.
+The `.setContent( )` function <!-- REF #FileClass.setContent().Summary -->rewrites the entire content of the file using the data stored in the *content* BLOB<!-- END REF -->. Para obtener información sobre los BLOB, consulte la sección [BLOB](Conceptos/dt_blob.md).
 
 
 #### Ejemplo
