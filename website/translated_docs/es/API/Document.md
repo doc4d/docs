@@ -616,24 +616,24 @@ La función `.getText()` <!-- REF #document.getText().Summary -->devuelve el con
 
 Opcionalmente, puede designar el conjunto de caracteres que se utilizará para leer el contenido. Puede pasar:
 
-- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or ""UTF-8"),
-- or in *charSetNum*, the MIBEnum ID (number) of the standard set name.
+- en *charSetName*, una cadena que contiene el nombre del conjunto estándar (por ejemplo "ISO-8859-1" o ""UTF-8"),
+- o en *charSetNum*, el ID MIBEnum (número) del nombre del conjunto estándar.
 
-> For the list of character sets supported by 4D, refer to the description of the `CONVERT FROM TEXT` command.
+> Para conocer la lista de los conjuntos de caracteres que soporta 4D, consulte la descripción del comando `CONVERT FROM TEXT`.
 
-If the document contains a Byte Order Mark (BOM), 4D uses the character set that it has set instead of the one specified in *charSetName* or *charSetNum* (this parameter is then ignored). If the document does not contain a BOM and if *charSetName* or *charSetNum* is omitted, by default 4D uses the "UTF-8" character set.
+Si el documento contiene una marca de orden de bytes (BOM), 4D utiliza el conjunto de caracteres que ha establecido en lugar del especificado en *charSetName* o *charSetNum* (este parámetro se ignora entonces). Si el documento no contiene una BOM y si *charSetName* o *charSetNum* se omite, por defecto 4D utiliza el conjunto de caracteres "UTF-8".
 
-In *breakMode*, you can pass a number indicating the processing to apply to end-of-line characters in the document. The following constants of the "System Documents" theme are available:
+En *breakMode*, se puede pasar un número que indica el procesamiento a aplicar a los caracteres de fin de línea en el documento. Las siguientes constantes del tema "Documentos del sistema" están disponibles:
 
-| Constante                     | Valor | Comentario                                                                                                                                                          |
-| ----------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Document unchanged`          | 0     | Sin procesar                                                                                                                                                        |
-| `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) under OS X, CRLF (carriage return + line feed) under Windows |
-| `Document with CRLF`          | 2     | Line breaks are converted to Windows format: CRLF (carriage return + line feed)                                                                                     |
-| `Document with CR`            | 3     | Line breaks are converted to OS X format: CR (carriage return)                                                                                                      |
-| `Document with LF`            | 4     | Line breaks are converted to Unix format: LF (line feed)                                                                                                            |
+| Constante                     | Valor | Comentario                                                                                                                                                                  |
+| ----------------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Document unchanged`          | 0     | Sin procesar                                                                                                                                                                |
+| `Document with native format` | 1     | (Por defecto) Los saltos de línea se convierten al formato nativo del sistema operativo: CR (retorno de carro) en OS X, CRLF (retorno de carro + salto de línea) en Windows |
+| `Document with CRLF`          | 2     | Los saltos de línea se convierten al formato de Windows: CRLF (retorno de carro + salto de línea)                                                                           |
+| `Document with CR`            | 3     | Los saltos de línea se convierten al formato OS X: CR (retorno de carro)                                                                                                    |
+| `Document with LF`            | 4     | Los saltos de línea se convierten al formato Unix: LF (salto de línea)                                                                                                      |
 
-By default, when you omit the *breakMode* parameter, line breaks are processed in native mode (1).
+Por defecto, cuando se omite el parámetro *breakMode*, los saltos de línea se procesan en modo nativo (1).
 
 **Valor devuelto**
 
@@ -641,7 +641,7 @@ Texto del archivo.
 
 #### Ejemplo
 
-Given the following text document (fields are separated by tabs):
+Dado el siguiente documento de texto (los campos están separados por tabulaciones):
 
 ```4d
 id name price vat

@@ -719,11 +719,11 @@ In *breakMode*, you can pass a number indicating the processing to apply to end-
 | ----------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Document unchanged`          | 0     | Sin procesar                                                                                                                                                   |
 | `Document with native format` | 1     | (Default) Line breaks are converted to the native format of the operating system: CR (carriage return) in macOS, CRLF (carriage return + line feed) in Windows |
-| `Document with CRLF`          | 2     | Line breaks are converted to Windows format: CRLF (carriage return + line feed)                                                                                |
-| `Document with CR`            | 3     | Line breaks are converted to OS X format: CR (carriage return)                                                                                                 |
-| `Document with LF`            | 4     | Line breaks are converted to Unix format: LF (line feed)                                                                                                       |
+| `Document with CRLF`          | 2     | Los saltos de línea se convierten al formato de Windows: CRLF (retorno de carro + salto de línea)                                                              |
+| `Document with CR`            | 3     | Los saltos de línea se convierten al formato OS X: CR (retorno de carro)                                                                                       |
+| `Document with LF`            | 4     | Los saltos de línea se convierten al formato Unix: LF (salto de línea)                                                                                         |
 
-By default, when you omit the *breakMode* parameter, line breaks are processed in native mode (1).
+Por defecto, cuando se omite el parámetro *breakMode*, los saltos de línea se procesan en modo nativo (1).
 
 
 
