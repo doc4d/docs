@@ -209,14 +209,14 @@ How to start this log:
 
 The following fields are logged for each event:
 
-| Nom des champs     | Description                                                   |
-| ------------------ | ------------------------------------------------------------- |
-| sequenceNumber     | Unique and sequential operation number in the logging session |
-| timestamp          | Date et heure au format ISO 8601 (YYYY-MM-DDThh:mm:ss.mmm)    |
-| loggerID           | Optionnel                                                     |
-| componentSignature | Optionnel - signature de composant interne                    |
-| messageLevel       | Info, Attention, Erreur                                       |
-| message            | Description de la saisie de journal                           |
+| Nom des champs     | Description                                                          |
+| ------------------ | -------------------------------------------------------------------- |
+| sequenceNumber     | Numéro d'opération séquentiel et unique dans la session d'historique |
+| timestamp          | Date et heure au format ISO 8601 (YYYY-MM-DDThh:mm:ss.mmm)           |
+| loggerID           | Optionnel                                                            |
+| componentSignature | Optionnel - signature de composant interne                           |
+| messageLevel       | Info, Attention, Erreur                                              |
+| message            | Description de la saisie de journal                                  |
 
 Depending on the event, various other fields can also be logged, such as task, socket, etc.
 
@@ -275,13 +275,13 @@ Les fichiers d'historique peuvent êtres produits en deux versions :
 
 For each request, the following fields are logged:
 
-| Colonne # | Description                                                   |
-| --------- | ------------------------------------------------------------- |
-| 1         | Unique and sequential operation number in the logging session |
-| 2         | Date et heure au format RFC3339 (yyyy-mm-ddThh:mm:ss.ms)      |
-| 3         | ID du Process 4D                                              |
-| 4         | ID unique du process                                          |
-| 5         | <ul><li>Informations sur le lancement d'une session SMTP, POP3 ou IMAP, y compris le nom d'hôte du serveur, le numéro de port TCP utilisé pour se connecter au serveur SMTP, POP3 ou IMAP et l'état TLS, ou</li><li>données échangées entre le serveur et le client, en commençant par "S <" (données reçues depuis le serveur SMTP, POP3 ou IMAP) ou "C>" (données envoyées par le client IMAP) : liste des modes d'authentification envoyés par le serveur et mode d'authentification sélectionné, toute erreur signalée par le serveur SMTP, POP3 ou IMAP, les informations sur l'en-tête de l'e-mail envoyé (version standard uniquement) et si l'e-mail est sauvegardé sur le serveur, ou</li><li>Les informations sur la clôture de la session IMAP.</li></ul>                                    |
+| Colonne # | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| 1         | Numéro d'opération séquentiel et unique dans la session d'historique |
+| 2         | Date et heure au format RFC3339 (yyyy-mm-ddThh:mm:ss.ms)             |
+| 3         | ID du Process 4D                                                     |
+| 4         | ID unique du process                                                 |
+| 5         | <ul><li>Informations sur le lancement d'une session SMTP, POP3 ou IMAP, y compris le nom d'hôte du serveur, le numéro de port TCP utilisé pour se connecter au serveur SMTP, POP3 ou IMAP et l'état TLS, ou</li><li>données échangées entre le serveur et le client, en commençant par "S <" (données reçues depuis le serveur SMTP, POP3 ou IMAP) ou "C>" (données envoyées par le client IMAP) : liste des modes d'authentification envoyés par le serveur et mode d'authentification sélectionné, toute erreur signalée par le serveur SMTP, POP3 ou IMAP, les informations sur l'en-tête de l'e-mail envoyé (version standard uniquement) et si l'e-mail est sauvegardé sur le serveur, ou</li><li>Les informations sur la clôture de la session IMAP.</li></ul>                                           |
 
 ## Requêtes client ORDA
 
