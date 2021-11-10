@@ -407,10 +407,10 @@ $c2:=$c.concat(6;7;8) //[1,2,3,4,5,6,7,8]
 ## .copy()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                                     |
-| ------- | -------------------------------------------------- |
-| v18 R3  | New *ck shared* option. New *groupWith* parameters |
-| v16 R6  | Añadidos                                           |
+| Versión | Modificaciones                                          |
+| ------- | ------------------------------------------------------- |
+| v18 R3  | Nueva opción *ck shared*. Nuevos parámetros *groupWith* |
+| v16 R6  | Añadidos                                                |
 </details>
 
 <!-- REF #collection.copy().Syntax -->
