@@ -1857,7 +1857,7 @@ An empty collection is returned if:
 
 #### Ejemplo 1
 
-The following structure will be used throughout all examples of this section:
+En todos los ejemplos de esta sección se utilizará la siguiente estructura:
 
 ![](assets/en/API/dataclassAttribute4.png)
 
