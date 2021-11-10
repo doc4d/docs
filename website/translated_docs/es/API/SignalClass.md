@@ -107,41 +107,41 @@ Método ***OpenForm***:
 **New signal** { ( *description* : Text ) } : 4D.Signal<!-- END REF -->
 
 <!-- REF SignalClass.New signal.Params -->
-| Parámetros  | Tipo      |    | Descripción                            |
-| ----------- | --------- |:--:| -------------------------------------- |
-| description | Texto     | -> | Description for the signal             |
-| Resultado   | 4D.Signal | <- | Native object encapsulating the signal |
+| Parámetros  | Tipo      |    | Descripción                          |
+| ----------- | --------- |:--:| ------------------------------------ |
+| description | Texto     | -> | Descripción para la señal            |
+| Resultado   | 4D.Signal | <- | Objeto nativo que encapsula la señal |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `New signal` command <!-- REF #_command_.New signal.Summary -->creates a `4D.Signal` object<!-- END REF -->.
+El comando `New signal` <!-- REF #_command_.New signal.Summary -->crea un objeto `4D.Signal`<!-- END REF -->.
 
-A signal is a shared object which can be passed as parameter from a worker or process to another worker or process, so that:
+Una señal es un objeto compartido que puede ser pasado como parámetro de un worker o proceso a otro worker o proceso, de manera que:
 
-*   the called worker/process can update the signal object after specific processing has completed
-*   the calling worker/process can stop its execution and wait until the signal is updated, without consuming any CPU resources.
+*   el worker/proceso llamado puede actualizar el objeto de la señal después de que se haya completado el procesamiento específico
+*   el worker/proceso que llama puede detener su ejecución y esperar hasta que se actualice la señal, sin consumir recursos de la CPU.
 
-Optionally, in the *description* parameter you can pass a custom text describing the signal. This text can also be defined after signal creation.
+Opcionalmente, en el parámetro *description* puede pasar un texto personalizado que describa la señal. Este texto también puede definirse después de la creación de la señal.
 
-Since the signal object is a shared object, it can also be used to maintain user properties, including the [`.description`](#description) property, by calling the `Use...End use` structure.
+Dado que el objeto señal es un objeto compartido, también se puede utilizar para mantener las propiedades del usuario, incluyendo la propiedad [`.description`](#description), llamando a la estructura `Use...End use`.
 
 
 **Valor devuelto**
 
-A new [`4D.Signal` object](#signal-object).
+Un nuevo objeto [`4D.Signal`](#signal-object).
 
 #### Ejemplo
 
-Here is a typical example of a worker that sets a signal:
+Este es un ejemplo típico de un worker que fija una señal:
 
 ```4d
  var $signal : 4D.Signal
  $signal:=New signal("This is my first signal")
 
  CALL WORKER("myworker";"doSomething";$signal)
- $signaled:=$signal.wait(1) //wait for 1 second max
+ $signaled:=$signal.wait(1) //espera 1 segundo como máximo
 
  If($signaled)
     ALERT("myworker finished the work. Result: "+$signal.myresult)
@@ -151,16 +151,16 @@ Here is a typical example of a worker that sets a signal:
 ```
 
 
-The ***doSomething*** method could be like:
+El método ***doSomething*** puede ser:
 
 ```4d
  #DECLARE ($signal : 4D.Signal)
-  //any processing
+  //todo proceso
   //...
  Use($signal)
-    $signal.myresult:=$processingResult  //return the result
+    $signal.myresult:=$processingResult  //devolver el resultado
  End use
- $signal.trigger() // The work is finished
+ $signal.trigger() //La operación se ha terminado
 ```
 
 <!-- END REF -->
@@ -180,9 +180,9 @@ The ***doSomething*** method could be like:
 
 #### Descripción
 
-The `.description` property <!-- REF #SignalClass.description.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.
+La propiedad `.description` <!-- REF #SignalClass.description.Summary -->contiene una descripción personalizada para el objeto `Signal`.<!-- END REF -->.
 
-`.description` can be set at the creation of the signal object or at any moment. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
+`.description` puede definirse al crear el objeto signal o en cualquier momento. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
 
 This property is **read-write**. 
 
