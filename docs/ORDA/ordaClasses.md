@@ -639,11 +639,13 @@ An **alias** attribute is built above another attribute of the data model, named
 
 Alias attributes bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details. 
 
+### How to define alias attributes
+
+You create an alias attribute in a dataclass by using the `Alias` keyword in the [**entity class**](#entity-class) of the dataclass. 
 
 
 ### `Alias <attributeName> <targetPath>`
 
-You create an alias attribute in the [**entity class**](#entity-class) of the dataclass using the `Alias` keyword. 
 
 #### Syntax
 
