@@ -107,34 +107,34 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 **New signal** { ( *description* : Text ) } : 4D.Signal<!-- END REF -->
 
 <!-- REF SignalClass.New signal.Params -->
-| Parameter   | Type      |    | Description                            |
-| ----------- | --------- |:--:| -------------------------------------- |
-| description | Texto     | -> | Description for the signal             |
-| Result      | 4D.Signal | <- | Native object encapsulating the signal |
+| Parameter   | Type      |    | Description                        |
+| ----------- | --------- |:--:| ---------------------------------- |
+| description | Texto     | -> | Descrição para o sinal             |
+| Result      | 4D.Signal | <- | Objeto nativo encapsulando o sinal |
 <!-- END REF -->
 
 
 #### Description
 
-The `New signal` command <!-- REF #_command_.New signal.Summary -->creates a `4D.Signal` object<!-- END REF -->.
+O comando `New signal` <!-- REF #_command_.New signal.Summary -->cria um objeto `4D.Signal`<!-- END REF -->.
 
-A signal is a shared object which can be passed as parameter from a worker or process to another worker or process, so that:
+Um sinal é um objeto partilhado que pode ser passado como parâmetro de um worker ou processo para outro worker ou processo, de forma que:
 
 *   the called worker/process can update the signal object after specific processing has completed
 *   the calling worker/process can stop its execution and wait until the signal is updated, without consuming any CPU resources.
 
-Optionally, in the *description* parameter you can pass a custom text describing the signal. This text can also be defined after signal creation.
+Opcionalmente, no parâmetro *description* pode passar um texto personalizado descrevendo o sinal. Esse texto pode também ser definido depois da criação do sinal.
 
-Since the signal object is a shared object, it can also be used to maintain user properties, including the [`.description`](#description) property, by calling the `Use...End use` structure.
+Já que o objeto sinal é um objeto partilhado, pode também ser usado para manter propriedades usuário, incluindo a propriedade [`.description`](#description) por chamar a estrutura `Use...End use`.
 
 
 **Returned value**
 
-A new [`4D.Signal` object](#signal-object).
+Um novo objeto [`4D.Signal`](#signal-object).
 
 #### Exemplo
 
-Here is a typical example of a worker that sets a signal:
+Este é um exemplo típico de um worker que fixa um sinal:
 
 ```4d
  var $signal : 4D.Signal
@@ -151,7 +151,7 @@ Here is a typical example of a worker that sets a signal:
 ```
 
 
-The ***doSomething*** method could be like:
+O método ***doSomething*** poderia ser algo como:
 
 ```4d
  #DECLARE ($signal : 4D.Signal)
@@ -180,9 +180,9 @@ The ***doSomething*** method could be like:
 
 #### Description
 
-The `.description` property <!-- REF #SignalClass.description.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.
+A propriedade `.description` <!-- REF #SignalClass.description.Summary -->contém uma descrição personalizada para o objeto `Signal`.<!-- END REF -->.
 
-`.description` can be set at the creation of the signal object or at any moment. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
+`.description` pode ser definida ao criar o objeto signal ou a qualquer momento. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
 
 This property is **read-write**. 
 
