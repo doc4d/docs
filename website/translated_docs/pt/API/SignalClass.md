@@ -3,59 +3,59 @@ id: SignalClass
 title: Signal
 ---
 
-Signals are tools provided by the 4D language to manage interactions and avoid conflicts between processes in a multiprocess application. Signals allow you to make sure one or more process(es) will wait for a specific task to be completed before continuing execution. Any process can wait and/or release a signal.
+Sinais são ferramentas fornecidas pela linguagem 4D para gerenciar interações e evitar conflitos entre processos em uma aplicação multiprocesso. Sinais permitem assegurar que um ou mais processos vão esperar por uma tarefa específica a ser completada antes de continuar a execução. Qualquer processo pode esperar ou liberar um sinal.
 
-> Semaphores can also be used to manage interactions. Semaphores allow you to make sure that two or more processes do not modify the same resource (file, record...) at the same time. Only the process that sets the semaphore can remove it.
+> Os semáforos podem ser usados para gerenciar interações. Semáforos permitem ter certeza que dois ou mais processos não modificam o mesmo recurso (arquivo, registro..) ao mesmo tempo. Só o processo que estabelece o semáforo pode removê-lo.
 
 
-### Signal Object
+### Objeto sinal
 
-A signal is a shared object that must be passed as a parameter to commands that call or create workers or processes.
+Um sinal é um objeto partilhado que deve ser passado como parâmetro a comandos que chamam ou criam trabalhadores ou processo.
 
-A `4D.Signal` object contains the following built-in methods and properties:
+Um objeto `4D.Signal` contém os métodos e propriedades integrados abaixo:
 
 - [`.wait()`](#wait)
 - [`.trigger()`](#trigger)
 - [`.signaled`](#signaled)
 - [`.description`](#description).
 
-Any worker/process calling the `.wait()` method will suspend its execution until the `.signaled` property is true. While waiting for a signal, the calling process does not use any CPU. This can be very interesting for performance in multiprocess applications. The `.signaled` property becomes true when any worker/process calls the `.trigger()` method.
+Qualquer worker/processo que chame ao método `.wait()` suspenderá sua execução até que a propriedade `.signaled` seja verdaidera. Enquanto espera um sinal, o processo que chamar não usa nenhuma CPU. Isso pode ser muito interessante para o rendimento nas aplicações multiprocesso. A propriedade `.signaled` se converte em true quando qualquer worker/processo chamar ao método `.trigger()`.
 
-Note that to avoid blocking situations, the `.wait()` can also return after a defined timeout has been reached.
+Lembre que para evitar situações de bloqueio,  `.wait()` também pode regrassar depois de que tenha alcançado um tempo de espera definido.
 
-Signal objects are created with the [New signal](#new-signal) command.
+Os objetos sinal se criam com o comando [New signal](#new-signal).
 
 
-### Working with signals
+### Trabalhar com sinais
 
-In 4D, you create a new signal object by calling the [`New signal`](#new-signal) command. Once created, this signal must be passed as a parameter to the `New process` or `CALL WORKER` commands so that they can modify it when they have finished the task you want to wait for.
+Em 4D, se cria um novo objeto sinal chamando ao comando [`New signal`](#new-signal). Quando tiver criado o sinal, deve ser passado como parâmetro a `New process` ou `CALL WORKER` para que a modifiquem quando terminem a tarefa que queira esperar.
 
-- `signal.wait()` must be called from the worker/process that needs another worker/process to finish a task in order to continue.
-- `signal.trigger()` must be called from the worker/process that finished its execution in order to release all others.
+- `signal.wait()` deve ser chamado do worker/processo que precisa de outro worker/processo para terminar uma tarefa para poder continuar.
+- `signal.trigger()` deve ser chamado desde worker/processo que terminou sua execução para liberar a todos os outros.
 
 
 ![](assets/en/API/signal.png)
 
-Once a signal has been released using a `signal.trigger()` call, it cannot be reused again. If you want to set another signal, you need to call the `New signal` command again.
+Quando um sinal tiver sido lançado usando uma chamada `signal.trigger()`, não pode ser reutilizado. Se quiser estabelecer outro sinal, precisa chamar o comando `New signal` novamente.
 
-Since a signal object is a [shared object](Concepts/shared.md), you can use it to return results from called workers/processes, provided that you do not forget to write values within a `Use...End use` structure (see example).
+Como um objeto sinal é um [objeto compartilhado](Concepts/shared.md), pode ser usado para retornar resultados de workers/processos, desde que não esqueça de escrever valores dentro de uma estrutura `Use...End use` (ver exemplo).
 
 ### Exemplo
 
 ```4d
  var $signal : 4D.Signal
 
-  // Creation of a signal
+  // Criação de sinal
  $signal:=New signal
 
-  // call main process and execute OpenForm method
+  // chama processo principal e executar o método OpenForm
  CALL WORKER(1;"OpenForm";$signal)
-  // do another calculation
+  // fazer outro cálculo
  ...
-  // Waiting for the end of the process
+  // Esperando pelo final do processo
  $signaled:=$signal.wait()
 
-  // Processing of the results
+  // Processando o resultado
  $calc:=$signal.result+...
 ```
 
@@ -66,17 +66,17 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
  var $form : Object
  $form:=New object("value";0)
 
-  // Open the form
+  // Abrir o formulário
  $win:=Open form window("Information";Movable form dialog box)
  DIALOG("Information";$form)
  CLOSE WINDOW($win)
 
-  // Add a new attribute to your $signal shared object to pass your result to the other process:
+  // Adiciona um novo atributo para seu objeto partilhado $signal para passar seu resultado aos outros processos:
  Use($signal)
     $signal.result:=$form.value
  End use
 
-  // Trigger the signal to the waiting process
+  // Ativa o sinal para o processo de espera
  $signal.trigger()
 ```
 
@@ -107,60 +107,60 @@ Since a signal object is a [shared object](Concepts/shared.md), you can use it t
 **New signal** { ( *description* : Text ) } : 4D.Signal<!-- END REF -->
 
 <!-- REF SignalClass.New signal.Params -->
-| Parameter   | Type      |    | Description                            |
-| ----------- | --------- |:--:| -------------------------------------- |
-| description | Texto     | -> | Description for the signal             |
-| Result      | 4D.Signal | <- | Native object encapsulating the signal |
+| Parâmetros | Tipo      |    | Descrição                          |
+| ---------- | --------- |:--:| ---------------------------------- |
+| descrição  | Texto     | -> | Descrição para o sinal             |
+| Resultados | 4D.Signal | <- | Objeto nativo encapsulando o sinal |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `New signal` command <!-- REF #_command_.New signal.Summary -->creates a `4D.Signal` object<!-- END REF -->.
+O comando `New signal` <!-- REF #_command_.New signal.Summary -->cria um objeto `4D.Signal`<!-- END REF -->.
 
-A signal is a shared object which can be passed as parameter from a worker or process to another worker or process, so that:
+Um sinal é um objeto partilhado que pode ser passado como parâmetro de um worker ou processo para outro worker ou processo, de forma que:
 
-*   the called worker/process can update the signal object after specific processing has completed
-*   the calling worker/process can stop its execution and wait until the signal is updated, without consuming any CPU resources.
+*   o worker/processo chamado pode atualizar o objeto sinal depois de um processamento especifico ter terminado
+*   o worker/processo chamado pode parar sua execução e esperar até que o sinal seja atualizado, sem consumir qualquer recurso de CPU.
 
-Optionally, in the *description* parameter you can pass a custom text describing the signal. This text can also be defined after signal creation.
+Opcionalmente, no parâmetro *description* pode passar um texto personalizado descrevendo o sinal. Esse texto pode também ser definido depois da criação do sinal.
 
-Since the signal object is a shared object, it can also be used to maintain user properties, including the [`.description`](#description) property, by calling the `Use...End use` structure.
+Já que o objeto sinal é um objeto partilhado, pode também ser usado para manter propriedades usuário, incluindo a propriedade [`.description`](#description) por chamar a estrutura `Use...End use`.
 
 
-**Returned value**
+**Valor devoluto**
 
-A new [`4D.Signal` object](#signal-object).
+Um novo objeto [`4D.Signal`](#signal-object).
 
 #### Exemplo
 
-Here is a typical example of a worker that sets a signal:
+Este é um exemplo típico de um worker que fixa um sinal:
 
 ```4d
  var $signal : 4D.Signal
  $signal:=New signal("This is my first signal")
 
  CALL WORKER("myworker";"doSomething";$signal)
- $signaled:=$signal.wait(1) //wait for 1 second max
+ $signaled:=$signal.wait(1) //espere por um segundo no máximo
 
  If($signaled)
     ALERT("myworker finished the work. Result: "+$signal.myresult)
  Else
-    ALERT("myworker has not finished in less than 1s")
+    ALERT("myworker no ha terminado en menos de 1s")
  End if
 ```
 
 
-The ***doSomething*** method could be like:
+O método ***doSomething*** poderia ser algo como:
 
 ```4d
  #DECLARE ($signal : 4D.Signal)
-  //any processing
+  //qualquer processo
   //...
  Use($signal)
-    $signal.myresult:=$processingResult  //return the result
+    $signal.myresult:=$processingResult  //retorna o resultado
  End use
- $signal.trigger() // The work is finished
+ $signal.trigger() // O trabalho terminou
 ```
 
 <!-- END REF -->
@@ -170,19 +170,19 @@ The ***doSomething*** method could be like:
 ## .description
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v17 R4 | Adicionado |
+| Version | Mudanças   |
+| ------- | ---------- |
+| v17 R4  | Adicionado |
 </details>
 
 <!-- REF #SignalClass.description.Syntax -->
 **.description** : Text<!-- END REF -->
 
-#### Description
+#### Descrição
 
-The `.description` property <!-- REF #SignalClass.description.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.
+A propriedade `.description` <!-- REF #SignalClass.description.Summary -->contém uma descrição personalizada para o objeto `Signal`.<!-- END REF -->.
 
-`.description` can be set at the creation of the signal object or at any moment. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
+`.description` pode ser definida ao criar o objeto signal ou a qualquer momento. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
 
 This property is **read-write**. 
 
