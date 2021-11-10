@@ -971,46 +971,46 @@ La operación de guardar se ejecuta sólo si se ha "tocado" al menos un atributo
 
 En una aplicación multiusuario o multiproceso, la función `.save()` se ejecuta bajo un mecanismo de ["bloqueo optimista"](ORDA/entities.md#entity-locking), en el que un sello de bloqueo interno se incrementa automáticamente cada vez que se guarda el registro.
 
-By default, if the *mode* parameter is omitted, the method will return an error (see below) whenever the same entity has been modified by another process or user in the meantime, no matter the modified attribute(s).
+Por defecto, si se omite el parámetro *mode*, el método devolverá un error (ver más abajo) siempre que la misma entidad haya sido modificada por otro proceso o usuario mientras tanto, sin importar el atributo o atributos modificados.
 
-Otherwise, you can pass the `dk auto merge` option in the *mode* parameter: when the automatic merge mode is enabled, a modification done concurrently by another process/user on the same entity but on a different attribute will not result in an error. The resulting data saved in the entity will be the combination (the "merge") of all non-concurrent modifications (if modifications were applied to the same attribute, the save fails and an error is returned, even with the auto merge mode).
+En caso contrario, se puede pasar la opción `dk auto merge` en el parámetro *mode*: cuando el modo de fusión automática está activado, una modificación realizada simultáneamente por otro proceso/usuario en la misma entidad pero en un atributo diferente no dará lugar a un error. Los datos resultantes guardados en la entidad serán la combinación (la "fusión") de todas las modificaciones no concurrentes (si se aplicaron modificaciones al mismo atributo, el guardado falla y se devuelve un error, incluso con el modo de fusión automática).
 > The automatic merge mode is not available for attributes of Picture, Object, and Text type when stored outside of the record. Concurrent changes in these attributes will result in a `dk status stamp has changed` error.
 
 **Resultado**
 
 El objeto devuelto por `.save()` contiene las siguientes propiedades:
 
-| Propiedad    |                    | Tipo                  | Descripción                                                                                                             |
-| ------------ | ------------------ | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| success      |                    | boolean               | True if the save action is successful, False otherwise.                                                                 |
-|              |                    |                       | ***Available only if `dk auto merge` option is used***:                                                                 |
-| autoMerged   |                    | boolean               | True if an auto merge was done, False otherwise.                                                                        |
-|              |                    |                       | ***Disponible sólo en caso de error***:                                                                                 |
-| status       |                    | number                | Error code, [see below](#status-and-statustext)                                                                         |
-| statusText   |                    | text                  | Description of the error, [see below](#status-and-statustext)                                                           |
-|              |                    |                       | ***Available only in case of pessimistic lock error***:                                                                 |
-| lockKindText |                    | text                  | "Locked by record"                                                                                                      |
-| lockInfo     |                    | object                | Información sobre el origen del bloqueo                                                                                 |
-|              | task_id            | number                | Id del proceso                                                                                                          |
-|              | user_name          | text                  | Nombre de usuario de la sesión en la máquina                                                                            |
-|              | user4d_alias       | text                  | Alias de usuario si está definido por `SET USER ALIAS`, si no, nombre de usuario en el directorio 4D                    |
-|              | host_name          | text                  | Nombre de la máquina                                                                                                    |
-|              | task_name          | texto                 | Nombre del proceso                                                                                                      |
-|              | client_version     | text                  |                                                                                                                         |
-|              |                    |                       | ***Available only in case of serious error*** (serious error - can be trying to duplicate a primary key, disk full...): |
-| errors       |                    | collection of objects |                                                                                                                         |
-|              | message            | text                  | Mensaje de error                                                                                                        |
-|              | componentSignature | text                  | Internal component signature (e.g. "dmbg" stands for the database component)                                            |
-|              | errCode            | number                | Error code                                                                                                              |
+| Propiedad    |                    | Tipo                  | Descripción                                                                                                                  |
+| ------------ | ------------------ | --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| success      |                    | boolean               | True si la acción guardar tiene éxito, false en caso contrario.                                                              |
+|              |                    |                       | ***Disponible sólo si se utiliza la opción `dk auto merge`***:                                                               |
+| autoMerged   |                    | boolean               | True si se ha realizado una fusión automática, False en caso contrario.                                                      |
+|              |                    |                       | ***Disponible sólo en caso de error***:                                                                                      |
+| status       |                    | number                | Código de error, [ver abajo](#status-and-statustext)                                                                         |
+| statusText   |                    | text                  | Descripción del error, [ver más abajo](#status-and-statustext)                                                               |
+|              |                    |                       | ***Disponible sólo en caso de bloqueo pesimista***:                                                                          |
+| lockKindText |                    | text                  | "Locked by record"                                                                                                           |
+| lockInfo     |                    | object                | Información sobre el origen del bloqueo                                                                                      |
+|              | task_id            | number                | Id del proceso                                                                                                               |
+|              | user_name          | text                  | Nombre de usuario de la sesión en la máquina                                                                                 |
+|              | user4d_alias       | text                  | Alias de usuario si está definido por `SET USER ALIAS`, si no, nombre de usuario en el directorio 4D                         |
+|              | host_name          | text                  | Nombre de la máquina                                                                                                         |
+|              | task_name          | texto                 | Nombre del proceso                                                                                                           |
+|              | client_version     | text                  |                                                                                                                              |
+|              |                    |                       | ***Disponible sólo en caso de error grave*** (error grave - puede ser intentar duplicar una llave primaria, disco lleno...): |
+| errors       |                    | collection of objects |                                                                                                                              |
+|              | message            | text                  | Mensaje de error                                                                                                             |
+|              | componentSignature | text                  | Firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                        |
+|              | errCode            | number                | Error code                                                                                                                   |
 
 ##### status and statusText
 
-The following values can be returned in the `status` and `statusText` properties of Result object in case of error:
+Los siguientes valores pueden ser devueltos en las propiedades `status` y `statusText` del objeto Result en caso de error:
 
 | Constante                                 | Valor | Comentario                                                                                                                                                                                                                                                              |
 | ----------------------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status automerge failed`              | 6     | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"                                                              |
-| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br><li>la entidad ha sido abandonada (el sello ha cambiado y el espacio de memoria está ahora libre)</li><li>la entidad ha sido eliminada y sustituida por otra con otra llave primaria (el sello ha cambiado y una nueva entidad utiliza ahora el espacio de memoria). Cuando se utiliza `.drop( )`, este error puede devolverse cuando se utiliza la opción `dk force drop if stamp changed`. Cuando se utiliza `.lock( )`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                                |
+| `dk status automerge failed`              | 6     | (Sólo si se utiliza la opción `dk auto merge`) La opción de fusión automática falló al guardar la entidad.<p><p>**statusText asociado**: "Fallo de la fusión automática"                                                |
+| `dk status entity does not exist anymore` | 5     | La entidad ya no existe en los datos. Este error puede ocurrir en los siguientes casos:<br><li>la entidad ha sido abandonada (el sello ha cambiado y el espacio de memoria está ahora libre)</li><li>la entidad ha sido eliminada y sustituida por otra con otra llave primaria (el sello ha cambiado y una nueva entidad utiliza ahora el espacio de memoria). Cuando se utiliza `.drop( )`, este error puede devolverse cuando se utiliza la opción `dk force drop if stamp changed`. Cuando se utiliza `.lock( )`, este error puede ser devuelto cuando se utiliza la opción `dk reload if stamp changed`</li><br>**statusText asociado**: "La entidad ya no existe"                                                       |
 | `dk status locked`                        | 3     | La entidad está bloqueada por un bloqueo pesimista.<p><p>**statusText asociado**: "Ya bloqueado"                                                                                                                        |
 | `dk status serious error`                 | 4     | Un error grave es un error de base de datos de bajo nivel (por ejemplo, una llave duplicada), un error de hardware, etc.<p><p>**statusText asociado**: "Otro error"                                                     |
 | `dk status stamp has changed`             | 2     | El valor del sello interno de la entidad no coincide con el de la entidad almacenada en los datos (bloqueo optimista).<br><li>con `.save( )`: error sólo si no se utiliza la opción `dk auto merge`</li><li>con `.drop( )`: error sólo si no se utiliza la opción `dk force drop if stamp changed`</li><li>con `.lock( )`: error sólo si no se utiliza la opción `dk reload if stamp changed`</li><br>**statusText asociado**: "El sello ha cambiado" |
@@ -1079,14 +1079,14 @@ Actualización de una entidad con la opción `dk auto merge`:
 | ------- | -------------- |
 | v17     | Añadidos       |
 
-</details><!-- REF #EntityClass.toObject().Syntax -->**.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF --><!-- REF #EntityClass.toObject().Params -->| Parámetros   | Tipo       |    | Descripción                                                                                             |
-| ------------ | ---------- |:--:| ------------------------------------------------------------------------------------------------------- |
-| filterString | Text       | -> | Attribute(s) to extract (comma-separated string)                                                        |
-| filterCol    | Collection | -> | Collection of attribute(s) to extract                                                                   |
-| options      | Integer    | -> | `dk with primary key`: adds the \_KEY property;<br>`dk with stamp`: adds the \_STAMP property |
-| Resultado    | Object     | <- | Object built from the entity                                                                            |<!-- END REF -->#### Descripción
+</details><!-- REF #EntityClass.toObject().Syntax -->**.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF --><!-- REF #EntityClass.toObject().Params -->| Parámetros   | Tipo       |    | Descripción                                                                                               |
+| ------------ | ---------- |:--:| --------------------------------------------------------------------------------------------------------- |
+| filterString | Text       | -> | Atributo(s) a extraer (cadena separada por comas)                                                         |
+| filterCol    | Collection | -> | Colección de atributos a extraer                                                                          |
+| options      | Integer    | -> | `dk with primary key`: añade la propiedad \_KEY;<br>`dk with stamp`: añade la propiedad \_STAMP |
+| Resultado    | Object     | <- | Objeto creado a partir de la entidad                                                                      |<!-- END REF -->#### Descripción
 
-The `.toObject()` function<!-- REF #EntityClass.toObject().Summary -->returns an object which has been built from the entity<!-- END REF -->. Property names in the object match attribute names of the entity.
+La función `.toObject()`<!-- REF #EntityClass.toObject().Summary -->devuelve un objeto que ha sido construido a partir de la entidad<!-- END REF -->. Property names in the object match attribute names of the entity.
 
 If no filter is specified, or if the *filterString* parameter contains an empty string or "*", the returned object will contain:
 
