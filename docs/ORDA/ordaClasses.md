@@ -635,7 +635,7 @@ Function orderBy age($event : Object)-> $result : Text
 
 ### Overview
 
-An **alias** attribute is built above another attribute of the data model, which can belong to the same dataclass or to a related dataclass (available through one or more levels). An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass. 
+An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass. 
 
 Alias attributes bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details. 
 
@@ -654,11 +654,11 @@ You create an alias attribute in the [**entity class**](#entity-class) of the da
 
 *attributeName* must comply with [standard rules for property names](Concepts/identifiers.html#object-properties). 
 
-*targetPath* can be an attribute name (if it belongs to the same dataclass) or an attribute path such as "a.b.c".
+*targetPath* is an attribute path containing one or more levels, such as "a.b.c". If the target attribute belongs to the same dataclass, *targetPath* is the attribute name. 
 
 An alias can be used as a part of a path of another alias. 
 
-A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last item. Otherwise, an error is returned. 
+A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last level (i.e. "c" in the above path). Otherwise, an error is returned. 
 
 > ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
 
@@ -685,12 +685,14 @@ Alias attributes are read-only (except when based upon a scalar attribute of the
 |`entity.touchedAttributes()`|
 
 
-### Alias data types
+### Alias properties
 
-An alias attribute hinerits its data type from the target attribute: 
+An alias attribute hinerits its data [`type`](../API/DataClassAttributeClass.md#type) property from the target attribute: 
 
 - if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "storage", the alias data type is of the same type,
 - if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is of the `4D.Entity` or `4D.EntitySelection` type ("*classname*Entity" or "*classname*Selection"). 
+
+Alias attributes based upon relations have a specific [`path`](../API/DataClassAttributeClass.md#path) property, containing the path of their target attributes. Alias attributes based upon attributes of the same dataclass have the same properties as their target attributes (and no `path` property). 
 
 
 ### Examples
@@ -759,7 +761,7 @@ ds.Teacher.query("students.name = :1";"Martin")
 You can also edit the value of the *courseName* alias:
 
 ```4d
-// Rename a course
+// Rename a course using its alias attribute
 $arch:=ds.Course.query("courseName = :1";"Archeography")
 $arch.courseName:="Archeography II"
 $arch.save() //courseName and label are "Archeography II"
