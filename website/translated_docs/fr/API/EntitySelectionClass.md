@@ -45,7 +45,7 @@ Les entity selections peuvent être créées à partir de sélections existantes
 
 
 
-## Créer une entity selection
+## Create entity selection
 
 <!-- REF #_command_.Create entity selection.Syntax -->
 **Create entity selection** ( *dsTable* : Table { ; *settings* : Object } ) : 4D.EntitySelection<!-- END REF -->
@@ -95,27 +95,27 @@ $employees:=Create entity selection([Employee])
 **USE ENTITY SELECTION** (*entitySelection*)<!-- END REF -->
 
 <!-- REF #_command_.USE ENTITY SELECTION.Params -->
-| Paramètres      | Type            |    | Description         |
-| --------------- | --------------- |:--:| ------------------- |
-| entitySelection | EntitySelection | -> | An entity selection |
+| Paramètres      | Type            |    | Description          |
+| --------------- | --------------- |:--:| -------------------- |
+| entitySelection | EntitySelection | -> | Une entity selection |
 <!-- END REF -->
 
 #### Description
 
-The `USE ENTITY SELECTION` command updates the current selection of the table matching the dataclass of the *entitySelection* parameter, according to the content of the entity selection.
+La commande `USE ENTITY SELECTION` met à jour la sélection courante de la table correspondant à la dataclass du paramètre *entitySelection*, en fonction du contenu de l'entity selection.
 
-This command cannot be used with a [Remote datastore](../ORDA/remoteDatastores.md).
+Cette commande ne peut pas être utilisée avec un [datastore distant](../ORDA/remoteDatastores.md).
 
-> After a call to `USE ENTITY SELECTION`, the first record of the updated current selection (if not empty) becomes the current record, but it is not loaded in memory. If you need to use the values of the fields in the current record, use the `LOAD RECORD` command after the `USE ENTITY SELECTION` command.
+> Après un appel à `USE ENTITY SELECTION`, le premier enregistrement de la sélection courante mise à jour (s'il n'est pas vide) devient l'enregistrement courant, mais il n'est pas chargé en mémoire. Si vous avez besoin d'utiliser les valeurs des champs de l'enregistrement courant, utilisez la commande `LOAD RECORD` après la commande `USE ENTITY SELECTION`.
 
 #### Exemple
 
 ```4d
 var $entitySel : Object
 
-$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel is related to the Employee dataclass
+$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel est associé à la dataclass Employee
 REDUCE SELECTION([Employee];0)
-USE ENTITY SELECTION($entitySel) //The current selection of the Employee table is updated
+USE ENTITY SELECTION($entitySel) //La sélection courante de la table Employee est mise à jour
 ```
 
 
