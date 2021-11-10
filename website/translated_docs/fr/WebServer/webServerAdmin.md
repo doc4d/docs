@@ -3,32 +3,32 @@ id: webServerAdmin
 title: Administration
 ---
 
-4D provides several integrated tools to start, stop, or monitor the integrated web server.
+4D offre plusieurs outils intégrés permettant de démarrer, arrêter ou administrer le serveur web intégré.
 
 
-## Starting the 4D Web Server
+## Démarrer le Serveur Web 4D
 
-> To be able to launch the web server of 4D or 4D Server, you must have a "4D Web Application" license. For more information, please refer to the [4D Web site](https://www.4d.com).
+> Une licence 4D Web Application est requise pour pouvoir lancer le serveur web de 4D ou 4D Server. Pour plus d'informations, consultez le [site web de 4D](https://www.4d.com).
 
 
-A 4D project can start and monitor a web server for the main (host) application as well as for each hosted component.
+Un projet 4D peut démarrer et surveiller un serveur Web pour l'application principale (hôte) ainsi que chaque composant hébergé.
 
-The main 4D web server can be started in different ways:
+Il y a plusieurs façons de lancer le serveur web principal de 4D :
 
-*   Using a button/menu command.
-    *   4D: **Run\>Start Web Server** menu<br>![](assets/en/WebServer/start1.png)
-    *   4D Server: **Start HTTP server** button of the HTTP Server page<br>![](assets/en/WebServer/start2.png)
+*   via un bouton/une commande de menu :
+    *   4D: **Exécution > démarrer le serveur Web**<br>![](assets/en/WebServer/start1.png)
+    *   4D Server : depuis la page du serveur HTTP, cliquez sur **Démarrer le serveur HTTP**<br>![](assets/en/WebServer/start2.png)
 
-*   Automatically starting it each time the 4D application is opened. To do this, display the **Web\/Configuration** page of the Settings and select the **Launch Web Server at Startup** check box:<br>![](assets/en/WebServer/config.png)
+*   automatiquement à l'ouverture de l'application 4D. en cochant l'option **Lancer le serveur Web au démarrage** dans **Propriétés** &#062 **Web** &#062 **Configuration** <br>![](assets/en/WebServer/config.png)
 
 *   Par programmation, en appelant la fonction [`webServer.start()`](API/WebServerClass.md#start) ou la commande `WEB START SERVER`.
 
 Le serveur Web de n'importe quel composant peut être lancé en appelant la fonction [`webServer.start()`](API/WebServerClass.md#start) sur l'objet serveur Web du composant.
-> You do not need to relaunch the 4D application to start or stop the web server.
+> Il n'est pas nécessaire de relancer l'application 4D pour démarrer ou arrêter le serveur web.
 
-## Stopping the 4D Web Server
+## Arrêter le Serveur Web 4D
 
-The main 4D web server can be stopped in different ways:
+Il y a plusieurs manières d'arrêter le serveur web principal :
 
 *   Using the **Run\>Stop Web Server** menu of 4D or the **Stop HTTP server** button of the HTTP Server page of 4D Server (both items show **Start...** when the server is not already started).
 
