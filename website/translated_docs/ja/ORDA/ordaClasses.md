@@ -270,7 +270,7 @@ End if
 - **`4D`** [クラスストア](Concepts/classes.md#クラスストア) のネイティブな ORDA クラス関数を、データモデルユーザークラス関数でオーバーライドすることはできません。
 
 
-### Preemptive execution
+### プリエンプティブ実行
 
 When compiled, data model class functions are executed:
 
