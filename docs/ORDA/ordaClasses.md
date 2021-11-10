@@ -132,6 +132,7 @@ Then you can get an entity selection of the "best" companies by executing:
 
 
 
+
 ```4d
 	var $best : cs.CompanySelection
 	$best:=ds.Company.GetBestOnes()
@@ -666,30 +667,30 @@ A [computed attribute](#computed-attributes) can be used in an alias path, but o
 
 Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see example below). They can be used instead of their target attribute path in the following class functions:
 
-|Function|Condition|
-|---|---|
-|`dataClass.query()`, `entitySelection.query()`||
-|`entity.toObject()`||
-|`entitySelection.toCollection()`||
-|`entitySelection.extract()`||
-|`entitySelection.orderBy()`||
-|`entitySelection.orderByFormula()`||
-|`entitySelection.average()`|alias defined on a property of an object attribute|
-|`entitySelection.count()`|alias defined on a property of an object attribute|
-|`entitySelection.distinct()`|alias defined on a property of an object attribute|
-|`entitySelection.sum()`|alias defined on a property of an object attribute|
-|`entitySelection.min()`|alias defined on a property of an object attribute|
-|`entitySelection.max()`|alias defined on a property of an object attribute|
-|`entity.diff()`|returns the alias name (for scalar type)|
-|`entity.touchedAttributes()`|returns the alias name (for scalar type)|
+|Function|
+|----|
+|`dataClass.query()`, `entitySelection.query()`|
+|`entity.toObject()`|
+|`entitySelection.toCollection()`|
+|`entitySelection.extract()`|
+|`entitySelection.orderBy()`|
+|`entitySelection.orderByFormula()`|
+|`entitySelection.average()`|
+|`entitySelection.count()`|
+|`entitySelection.distinct()`|
+|`entitySelection.sum()`|
+|`entitySelection.min()`|
+|`entitySelection.max()`|
+|`entity.diff()`|
+|`entity.touchedAttributes()`|
 
 
-### Data types
+### Alias data types
 
 An alias attribute hinerits its data type from the target attribute: 
 
-- if the target attribute [`kind`](DataClassAttributeClass.md#kind) is "storage", the alias data type is of the same type,
-- if the target attribute [`kind`](DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is 4D.Entity or 4D.EntitySelection. 
+- if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "storage", the alias data type is of the same type,
+- if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is of the `4D.Entity` or `4D.EntitySelection` type ("*classname*Entity" or "*classname*Selection"). 
 
 
 ### Examples
@@ -926,6 +927,7 @@ An ORDA data model user class is defined by adding, at the [same location as reg
 4D automatically pre-creates empty classes in memory for each available data model object.
 
 ![](assets/en/ORDA/ORDA_Classes-3.png)
+
 
 > By default, empty ORDA classes are not displayed in the Explorer. To show them you need to select **Show all data classes** from the Explorer's options menu:
 ![](assets/en/ORDA/showClass.png)
