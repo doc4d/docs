@@ -357,11 +357,11 @@ Quando um objeto `Session` for criado, a propriedade `.storage` é vazia. Já qu
 
 > Da mesma forma que o objeto `Storage` do servidor, a propriedade `.storage` sempre será "single": adicionar um objeto partilhado ou uma collection partilhada a `.storage` não cria um grupo partilhado.
 
-This property is **read only** itself but it returns a read-write object.
+Esas propriedade é **read only** mas retorna um objeto  read-write.
 
 #### Exemplo
 
-You want to store the client IP in the `.storage` property. You can write in the `On Web Authentication` database method:
+Se quiser armazenar a IP do cliente na propriedade `.storage`. Pode escrever no método de banco de dados `On Web Authentication`:
 
 ```4d
 If (Session.storage.clientIP=Null) //first access
@@ -391,13 +391,13 @@ End if
 <!-- REF #SessionClass.userName.Syntax -->
 **.userName** : Text<!-- END REF -->
 
-#### Description
+#### Descrição
 
-The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the user name associated to the session<!-- END REF -->. You can use it to identify the user within your code.
+A propriedade `.userName` contém <!-- REF #SessionClass.userName.Summary -->o nome de usuuário associado à sessão<!-- END REF -->. Pode usá-la para identificar o usuário dentro de seu código.
 
-This property is an empty string by default. It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
+Essa propriedade é uma string vazia como padrão. Pode ser estabelecida usando a propriedade `privileges` da função [`setPrivileges()`](#setprivileges).
 
-This property is **read only**. 
+Essa propriedade é**apenas leitura**. 
 
 
 
