@@ -21,7 +21,7 @@ title: Clase Transporter
 
 #### Descripción
 
-The `.acceptUnsecureConnection` property contains <!-- REF #transporter.acceptUnsecureConnection.Summary -->**True** if 4D is allowed to establish an unencrypted connection<!-- END REF --> when encrypted connection is not possible.
+La propiedad `.acceptUnsecureConnection` contiene <!-- REF #transporter.acceptUnsecureConnection.Summary -->**True** si se permite a 4D establecer una conexión no cifrada<!-- END REF --> cuando la conexión cifrada no es posible.
 
 It contains **False** if unencrypted connections are unallowed, in which case an error in returned when encrypted connection is not possible.
 
@@ -37,7 +37,7 @@ Available secured ports are:
 
 - POP3
     - 110: POP3 non-encrypted port
-    - 995: POP3 with STARTTLS upgrade if supported by the server.
+    - 995: POP3 con actualización STARTTLS si lo soporta el servidor.
 <!-- END REF -->
 
 --- 
@@ -56,7 +56,7 @@ Available secured ports are:
 
 #### Descripción
 
-The `.authenticationMode` property contains <!-- REF #transporter.authenticationMode.Summary -->the authentication mode used to open the session on the mail server<!-- END REF -->.
+La propiedad `.authenticationMode` contiene <!-- REF #transporter.authenticationMode.Summary -->el modo de autenticación utilizado para abrir la sesión en el servidor de correo<!-- END REF -->.
 
 By default, the most secured mode supported by the server is used.
 
@@ -152,7 +152,7 @@ Los valores posibles son:
 
 #### Descripción
 
-The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -->  the charset and encoding used for the body part of the email<!-- END REF -->.
+La propiedad `.bodyCharset` contiene <!-- REF #transporter.bodyCharset.Summary -->  el conjunto de caracteres y la codificación utilizados para la parte del cuerpo del correo electrónico<!-- END REF -->.
 
 *   subject,
 *   attachment filename(s),
@@ -188,7 +188,7 @@ The `.bodyCharset` property contains <!-- REF #transporter.bodyCharset.Summary -
 
 #### Descripción
 
-The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeOut.Summary -->the maximum wait time (in seconds) allowed to establish a connection to the server<!-- END REF -->. By default, if the property has not been set in the server object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, or `IMAP New transporter`), the value is 30.
+La propiedad `.connectionTimeOut` contiene <!-- REF #transporter.connectionTimeOut.Summary -->el tiempo máximo de espera (en segundos) permitido para establecer una conexión con el servidor<!-- END REF -->. By default, if the property has not been set in the server object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, or `IMAP New transporter`), the value is 30.
 
 <!-- END REF -->
 
@@ -210,7 +210,7 @@ The `.connectionTimeOut` property contains <!-- REF #transporter.connectionTimeO
 
 #### Descripción
 
-The `.headerCharset` property contains <!-- REF #transporter.headerCharset.Summary --> the charset and encoding used for the email header<!-- END REF -->. The header includes the following parts of the email:
+La propiedad `.headerCharset` contiene <!-- REF #transporter.headerCharset.Summary --> el conjunto de caracteres y la codificación utilizados para el encabezado del correo electrónico<!-- END REF -->. The header includes the following parts of the email:
 
 *   subject,
 *   attachment filename(s),
