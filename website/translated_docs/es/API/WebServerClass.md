@@ -79,9 +79,9 @@ They provide the following properties and functions:
 
 <!-- END REF -->
 
-The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the default Web server object, or the Web server object defined through the *option* parameter<!-- END REF -->.
+El comando `WEB Server` <!-- REF #_command_.WEB Server.Summary -->devuelve el objeto servidor web por defecto, o el objeto servidor web definido a través del parámetro *option*<!-- END REF -->.
 
-By default, if the *option* parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the *option* parameter:
+Por defecto, si se omite el parámetro *option*, el comando devuelve una referencia al servidor web de la base de datos, es decir, al servidor web por defecto. Para designar el servidor web a devolver, puede pasar una de las siguientes constantes en el parámetro *option*:
 
 | Constante                      | Valor | Comentario                                               |
 | ------------------------------ | ----- | -------------------------------------------------------- |
