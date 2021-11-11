@@ -245,7 +245,7 @@ La propiedad `.headerCharset` contiene <!-- REF #transporter.headerCharset.Summa
 
 #### Descripción
 
-The `.host` property contains <!-- REF #transporter.host.Summary -->the name or the IP address of the host server<!-- END REF -->. Used for mail transactions (SMTP, POP3, IMAP).
+La propiedad `.host` contiene <!-- REF #transporter.host.Summary -->el nombre o la dirección IP del servidor local<!-- END REF -->. Used for mail transactions (SMTP, POP3, IMAP).
 
 <!-- END REF -->
 
@@ -266,7 +266,7 @@ The `.host` property contains <!-- REF #transporter.host.Summary -->the name or 
 
 #### Descripción
 
-The `.logFile` property contains <!-- REF #transporter.logFile.Summary -->the path of the extended log file defined (if any) for the mail connection<!-- END REF -->. It can be relative (to the current Logs folder) or absolute.
+La propiedad `.logFile` contiene <!-- REF #transporter.logFile.Summary -->la ruta del archivo de registro extendido definido (si existe) para la conexión de correo<!-- END REF -->. It can be relative (to the current Logs folder) or absolute.
 
 Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), extended log files store MIME contents of all sent mails and do not have any size limit. For more information about extended log files, refer to:
 
@@ -297,7 +297,7 @@ Unlike regular log files (enabled via the `SET DATABASE PARAMETER` command), ext
 
 #### Descripción
 
-The `.port` property contains <!-- REF #transporter.port.Summary --> the port number used for mail transactions<!-- END REF -->. By default, if the *port* property has not been set in the *server* object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, `IMAP New transporter`), the port used is:
+La propiedad `.port` contiene <!-- REF #transporter.port.Summary --> el número de puerto utilizado para las transacciones de correo<!-- END REF -->. By default, if the *port* property has not been set in the *server* object (used to create the transporter object with `SMTP New transporter`, `POP3 New transporter`, `IMAP New transporter`), the port used is:
 
 *   **SMTP** - 587
 *   **POP3** - 995
