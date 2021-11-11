@@ -79,9 +79,9 @@ They provide the following properties and functions:
 
 <!-- END REF -->
 
-The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the default Web server object, or the Web server object defined through the *option* parameter<!-- END REF -->.
+El comando `WEB Server` <!-- REF #_command_.WEB Server.Summary -->devuelve el objeto servidor web por defecto, o el objeto servidor web definido a través del parámetro *option*<!-- END REF -->.
 
-By default, if the *option* parameter is omitted, the command returns a reference to the Web server of the database, i.e. the default Web server. To designate the Web server to return, you can pass one of the following constants in the *option* parameter:
+Por defecto, si se omite el parámetro *option*, el comando devuelve una referencia al servidor web de la base de datos, es decir, al servidor web por defecto. Para designar el servidor web a devolver, puede pasar una de las siguientes constantes en el parámetro *option*:
 
 | Constante                      | Valor | Comentario                                               |
 | ------------------------------ | ----- | -------------------------------------------------------- |
@@ -89,11 +89,11 @@ By default, if the *option* parameter is omitted, the command returns a referenc
 | `Web server host database`     | 2     | Web server of the host database of a component           |
 | `Web server receiving request` | 3     | Web server that received the request (target Web server) |
 
-The returned Web server object contains the current values of the Web server properties.
+El objeto servidor web devuelto contiene los valores actuales de las propiedades del servidor web.
 
 #### Ejemplo
 
-From your component, you want to know if the Web server of the host database is started:
+Desde su componente, quiere saber si el servidor web de la base de datos anfitriona está iniciado:
 
 ```4d
   // Method of a component
@@ -126,21 +126,21 @@ From your component, you want to know if the Web server of the host database is 
 
 El comando `WEB Server list` <!-- REF #_command_.WEB Server list.Summary -->devuelve una colección de todos los objetos del servidor web disponibles en la aplicación 4D<!-- END REF -->.
 
-A 4D application can contain anywhere from one to several Web servers:
+Una aplicación 4D puede contener de uno a varios servidores web:
 
 - one Web server for the host database (default Web server)
 - one Web server for each component.
 
-All available Web servers are returned by the `WEB Server list` command, whether they are actually running or not.
+El comando `WEB Server list` devuelve todos los servidores web disponibles, estén o no en funcionamiento.
 
 > The default Web server object is automatically loaded by 4D at startup. On the other hand, each component Web server that you want to use must be instantiated using the [`WEB Server`](#web-server) command.
 
-You can use the [.name](#name) property of the Web server object to identify the project or component to which each Web server object in the list is attached.
+Puede utilizar la propiedad [.name](#nombre) del objeto servidor web para identificar el proyecto o componente al que está unido cada objeto servidor web de la lista.
 
 
 #### Ejemplo
 
-We want to know how many running web servers are available:
+Queremos saber cuántos servidores web en funcionamiento hay disponibles:
 
 ```4d
  var $wSList : Collection
@@ -162,7 +162,7 @@ We want to know how many running web servers are available:
 **.accessKeyDefined** : Boolean<!-- END REF -->
 
 
-The **.accessKeyDefined** property contains <!-- REF #WebServerClass.accessKeyDefined.Summary -->true if an access key is defined in the settings of the web server<!-- END REF -->. This property is used by the WebAdmin web server to validate the security configuration of the administration interface.
+La propiedad **.accessKeyDefined** contiene <!-- REF #WebServerClass.accessKeyDefined.Summary -->true si se define una llave de acceso en la configuración del servidor web<!-- END REF -->. Esta propiedad es utilizada por el servidor web de WebAdmin para validar la configuración de seguridad de la interfaz de administración.
 
 
 <!-- REF WebServerClass.certificateFolder.Desc -->
