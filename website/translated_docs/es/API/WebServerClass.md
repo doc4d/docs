@@ -4,15 +4,15 @@ title: WebServer
 ---
 
 
-The `WebServer` class API allows you to start and monitor a web server for the main (host) application as well as each hosted component (see the [Web Server object](WebServer/webServerObject.md) overview). This class is available from the `4D` class store.
+La API de la clase `WebServer` permite iniciar y supervisar un servidor web para la aplicación principal (host), así como para cada componente alojado (ver la descripción general de [Objeto servidor web](WebServer/webServerObject.md)). Esta clase está disponible en el almacén de clases de `4D`.
 
 
 
 ### Objeto servidor web
 
-Web server objects are instantiated with the [`WEB Server`](#web-server) command.
+Los objetos del servidor web se instancian con el comando [`WEB Server`](#web-server).
 
-They provide the following properties and functions:
+Ofrecen las siguientes propiedades y funciones:
 
 
 ### Resumen
@@ -72,10 +72,10 @@ They provide the following properties and functions:
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| Parámetros | Tipo         |    | Descripción                                                    |
-| ---------- | ------------ | -- | -------------------------------------------------------------- |
-| option     | Integer      | -> | Web server to get (default if omitted = `Web server database`) |
-| Resultado  | 4D.WebServer | <- | Objeto servidor web                                            |
+| Parámetros | Tipo         |    | Descripción                                                              |
+| ---------- | ------------ | -- | ------------------------------------------------------------------------ |
+| option     | Integer      | -> | Servidor web a obtener (por defecto si se omite = `Web server database`) |
+| Resultado  | 4D.WebServer | <- | Objeto servidor web                                                      |
 
 <!-- END REF -->
 
