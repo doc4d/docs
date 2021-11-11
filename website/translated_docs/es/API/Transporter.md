@@ -324,7 +324,7 @@ La propiedad `.port` contiene <!-- REF #transporter.port.Summary --> el número 
 
 
 #### Descripción
-The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary --> the maximum wait time (in seconds) of a call to `.send( )` before a timeout occurs<!-- END REF -->. By default, if the `.sendTimeOut` property has not been set in the `server` object, the value 100 is used.
+La propiedad `.sendTimeOut` contiene <!-- REF #transporter.sendTimeOut.Summary --> el tiempo máximo de espera (en segundos) de una llamada a `.send( )` antes de que se produzca un timeout<!-- END REF -->. By default, if the `.sendTimeOut` property has not been set in the `server` object, the value 100 is used.
 
 <!-- END REF -->
 
@@ -345,7 +345,7 @@ The `.sendTimeOut` property contains <!-- REF #transporter.sendTimeOut.Summary -
 
 
 #### Descripción
-The `.user` property contains <!-- REF #transporter.user.Summary --> the user name used for authentication on the mail server<!-- END REF -->. 
+La propiedad `.user` contiene <!-- REF #transporter.user.Summary --> el nombre de usuario utilizado para la autenticación en el servidor de correo<!-- END REF -->. 
 
 <!-- END REF -->
 
@@ -364,20 +364,20 @@ The `.user` property contains <!-- REF #transporter.user.Summary --> the user na
 **.checkConnection()** : Object<!-- END REF -->
 
 <!-- REF #transporter.checkConnection().Params -->
-| Parámetros | Tipo   |    | Descripción                                 |
-| ---------- | ------ |:--:| ------------------------------------------- |
-| Resultado  | Objeto | <- | Status of the transporter object connection |
+| Parámetros | Tipo   |    | Descripción                                    |
+| ---------- | ------ |:--:| ---------------------------------------------- |
+| Resultado  | Objeto | <- | Estado de la conexión del objeto transportador |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.checkConnection()` function <!-- REF #transporter.checkConnection().Summary --> checks the connection using information stored in the transporter object<!-- END REF -->, recreates the connection if necessary, and returns the status. This function allows you to verify that the values provided by the user are valid and consistent.
+La función `.checkConnection()` <!-- REF #transporter.checkConnection().Summary --> comprueba la conexión utilizando la información almacenada en el objeto transporter<!-- END REF -->, recrea la conexión si es necesario y devuelve el estado. Esta función permite verificar que los valores proporcionados por el usuario son válidos y coherentes.
 
 
 #### Objeto devuelto
 
-The function sends a request to the mail server and returns an object describing the mail status. This object can contain the following properties:
+La función envía una solicitud al servidor de correo y devuelve un objeto que describe el estado del correo. This object can contain the following properties:
 
 | Propiedad  |                          | Tipo      | Descripción                                                                                                  |
 | ---------- | ------------------------ | --------- | ------------------------------------------------------------------------------------------------------------ |
