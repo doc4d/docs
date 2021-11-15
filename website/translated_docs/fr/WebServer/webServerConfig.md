@@ -33,15 +33,15 @@ Vous pouvez modifier la taille du cache dans la zone **Taille du cache des pages
 > Lorsque vous utilisez votre base de données web, vous pouvez vérifier les performances du cache en utilisant la commande `WEB LIRE STATISTIQUES`. Si, par exemple, vous remarquez que le taux d'utilisation du cache est proche de 100 %, vous pouvez envisager d'augmenter la taille qui lui a été allouée. Les URL [/4DSTATS] et [/4DHTMLSTATS] vous permettent également d'obtenir des informations sur l'état du cache.
 
 
-## Certificate folder
+## Dossier de certificat
 
 | Peut être configuré via | Nom                 | Commentaires                                                                                                                                                     |
 | ----------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | objet webServer         | `certificateFolder` | La propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/FolderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()`. |
 
-Folder where the TLS certificate files for the web server are located.
+Dossier qui contient les fichiers de certificat TLS pour le serveur web.
 
-By default with 4D or 4D Server, these files must be placed next to the [project folder](Project/architecture.md#project-folder).
+Par défaut, avec 4D ou 4D Server, ces fichiers doivent être placés à côté du [dossier du projet](Project/architecture.md#project-folder).
 
 With 4D in remote mode, these files must be located in the local resources folder of the database on the remote machine (see `4D Client Database Folder` paragraph of the `Get 4D folder` command). Vous devez copier ces filles manuellement sur la machine distante.
 
