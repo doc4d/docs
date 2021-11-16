@@ -133,6 +133,7 @@ Then you can get an entity selection of the "best" companies by executing:
 
 
 
+
 ```4d
 	var $best : cs.CompanySelection
 	$best:=ds.Company.GetBestOnes()
@@ -656,18 +657,18 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 
 *attributeName* must comply with [standard rules for property names](Concepts/identifiers.html#object-properties). 
 
-*targetPath* is an attribute path containing one or more levels, such as "a.b.c". If the target attribute belongs to the same dataclass, *targetPath* is the attribute name. 
+*targetPath* is an attribute path containing one or more levels, such as "employee.company.name". If the target attribute belongs to the same dataclass, *targetPath* is the attribute name. 
 
 An alias can be used as a part of a path of another alias. 
 
-A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last level (i.e. "c" in the above path). Otherwise, an error is returned. 
+A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last level (i.e. "name" in the above path). Otherwise, an error is returned. 
 
 > ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
 
 
 ### Using alias attributes
 
-Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see example below). They can be used instead of their target attribute path in the following class functions:
+Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see the last example below). They can be used instead of their target attribute path in the following class functions:
 
 |Function|
 |----|
