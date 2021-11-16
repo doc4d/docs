@@ -72,17 +72,17 @@ Suite cryptographique utilisée pour le protocole sécurisé. Fixe la priorité 
 
 ## Paramètres CORS
 
-| Peut être configuré via  | Nom                                                     | Commentaires                                                                      |
-| ------------------------ | ------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| objet webServer          | [`CORSSettings`](API/WebServerClass.md#corssettings)    | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS) |
-| `WEB SET OPTION`         | `Web CORS settings`                                     | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS) |
-| Fenêtre de configuration | Options (II) page/Domain names and HTTP methods allowed | Click on the [+] button to add an allowed domain name and its method(s)           |
+| Peut être configuré via  | Nom                                                                           | Commentaires                                                                            |
+| ------------------------ | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| objet webServer          | [`CORSSettings`](API/WebServerClass.md#corssettings)                          | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS)       |
+| `WEB SET OPTION`         | `Web CORS settings`                                                           | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS)       |
+| Fenêtre de configuration | Propriétés > Web > Options (II) > Noms de domaine et Méthodes HTTP autorisées | Cliquez sur le bouton [+] pour ajouter un nom de domaine autorisé et sa ou ses méthodes |
 
 List of allowed hosts and methods for the CORS service.
 
-#### Domain names (host property)
+#### Noms de domaine
 
-Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Plusieurs attributs de domaine peuvent être ajoutés pour créer une liste blanche. Several syntaxes are supported:
+Nom de domaine ou adresse IP à partir desquels les pages externes sont autorisées à envoyer des demandes de données au serveur via CORS. Plusieurs attributs de domaine peuvent être ajoutés pour créer une liste blanche. Plusieurs syntaxes sont supportées :
 
 - 192.168.5.17:8081
 - 192.168.5.17
@@ -96,9 +96,9 @@ Domain name or IP address from where external pages are allowed to send data req
 - \*
 
 
-#### HTTP methods allowed (methods property)
+#### Méthodes HTTP autorisées (propriété méthodes)
 
-Accepted HTTP method(s) for the corresponding CORS host. The following HTTP methods are supported:
+Méthodes HTTP acceptées pour l'hôte CORS correspondant. Les méthodes HTTP suivantes sont prises en charge :
 
 - GET
 - HEAD
@@ -109,11 +109,11 @@ Accepted HTTP method(s) for the corresponding CORS host. The following HTTP meth
 - TRACE
 - PATCH
 
-Séparez chaque méthode par un ";" (ex : "post;get"). If methods is empty, null, or undefined, all methods are enabled.
+Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, null ou non défini, toutes les méthodes sont activées.
 
 #### Voir également
 
-[Enable CORS Service](#enable-cors-service)
+[Activer CORS](#enable-cors-service)
 
 
 
@@ -124,11 +124,11 @@ Séparez chaque méthode par un ";" (ex : "post;get"). If methods is empty, null
 | objet webServer         | `debugLog`      | number       |
 | `WEB SET OPTION`        | `Web debug log` | number       |
 
-Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stored in the "Logs" folder of the application -- nn is the file number). It is useful for debugging issues related to the Web server. It records each request and each response in raw mode. Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parts du body peuvent optionellement être enregistrées.
+État du fichier journal des requêtes HTTP du serveur web (HTTPDebugLog_nn.txt, stocké dans le dossier "Logs" de l'application -- nn est le numéro du fichier). Il est utile pour déboguer les problèmes liés au serveur Web. Il enregistre chaque demande et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parts du body peuvent optionellement être enregistrées.
 
-| Valeur | Constant    | Description                    |
-| ------ | ----------- | ------------------------------ |
-| 0      | wdl disable | Web HTTP debug log is disabled |
+| Valeur | Constant    | Description                             |
+| ------ | ----------- | --------------------------------------- |
+| 0      | wdl disable | Les debug logs Web HTTP sont désactivés |
 
 
 
@@ -136,41 +136,41 @@ Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stor
 |1|wdl enable without body|Web HTTP debug log is enabled without body parts (body size is provided in this case)| |3|wdl enable with response body|Web HTTP debug log is enabled with body part in response only| |5|wdl enable with request body|Web HTTP debug log is enabled with body part in request only| |7|wdl enable with all body parts|Web HTTP debug log is enabled with body parts in response and request|
 
 
-## Defaut Home page
+## Page d'accueil par défaut
 
-| Peut être configuré via  | Nom                                                        | Commentaires                          |
-| ------------------------ | ---------------------------------------------------------- | ------------------------------------- |
-| objet webServer          | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | Texte                                 |
-| `WEB SET HOME PAGE`      |                                                            | Can be different for each web process |
-| Fenêtre de configuration | Configuration page/Default Home Page                       |                                       |
+| Peut être configuré via  | Nom                                                        | Commentaires                                 |
+| ------------------------ | ---------------------------------------------------------- | -------------------------------------------- |
+| objet webServer          | [`defaultHomepage`](API/WebServerClass.md#defaulthomepage) | Texte                                        |
+| `WEB SET HOME PAGE`      |                                                            | Peut être différente pour chaque web process |
+| Fenêtre de configuration | Configuration > Page d'accueil par défaut                  |                                              |
 
-Designate a default home page for the web server. This page can be static or [semi-dynamic].
+Désigne une page comme page d'accueil par défaut pour le serveur web. Cette page peut être statique ou [semi-dynamic].
 
-By default, when the web server is launched for the first time, 4D creates a home page named "index.html" and puts it in the HTML root folder. If you do not modify this configuration, any browser connecting to the web server will obtain the following page:
+Par défaut, quand le serveur web est lancé pour la première fois, 4D crée une page d'accueil appelée "index.html" et la place dans le dossier HTML racine. Si vous ne modifiez pas cette configuration, n'importe quel browser se connectant au serveur web obtiendra cette page :
 
 ![](assets/en/WebServer/defaultHomePage.png)
 
-You can designate another default home page by entering its pathname.
+Vous pouvez désigner une autre page comme page d'accueil par défaut en entrant son chemin d'accès :
 
-- The path is relative to the [default HTML root folder](#root-folder).
-- The path is expressed with the POSIX syntax (folders are separated by a slash ("/"))
-- The path must neither start not end with a slash.
+- Le chemin est relatif au [dossier HTML racine ](#root-folder),
+- Le chemin ext exprimé avec la syntaxe POSIX (les dossiers sont séparés par un slash (/)),
+- Le chemin ne doit pas commencer ou finir par un slash.
 
-For example, if you want the default home page to be "MyHome.htm", and it is located in the "Web" folder (itself located in the default HTML root folder), use "Web/MyHome.htm".
+Par exemple, pour que la page d'accueil par défaut soit "MyHome.htm", si elle se trouve dans le dossier "Web" (lui-même situé dans le dossier racine HTML par défaut), utilisez "Web/MyHome.htm".
 
-If you do not specify any default home page, the `On Web Connection` database method is called. It is up to you to process the request procedurally.
+Si vous ne spécifiez aucune page d'accueil par défaut, la méthode base `On Web Connection` est appelée. Il vous appartient de traiter la demande de manière procédurale.
 
-## Enable CORS Service
+## Activer CORS
 
 | Peut être configuré via  | Nom                                                | Commentaires                                        |
 | ------------------------ | -------------------------------------------------- | --------------------------------------------------- |
-| objet webServer          | [`CORSEnabled`](API/WebServerClass.md#corsenabled) | Boolean, true to enable the CORS (false by default) |
-| `WEB SET OPTION`         | `Web CORS enabled`                                 | 0 (disabled, default) or 1 (enabled)                |
-| Fenêtre de configuration | Options (II) page/Enable CORS                      | Unchecked by default                                |
+| objet webServer          | [`CORSEnabled`](API/WebServerClass.md#corsenabled) | Booléen. True pour activer CORS (False par défaut). |
+| `WEB SET OPTION`         | `Web CORS enabled`                                 | 0 (désactivé, par défaut) ou 1 (activé)             |
+| Fenêtre de configuration | Page Options (II) > Activer CORS                   | Décoché par défaut                                  |
 
-The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. Pour des raisons de sécurité, les requêtes "cross-domain" sont interdites par défaut au niveau du navigateur. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
+Le serveur Web 4D implémente le cross-origin resource sharing (CORS) pour permettre à des pages Web spécifiques servies à partir d'un autre domaine d'accéder aux ressources de l'application Web actuelle via des appels XHR, par exemple via REST. Pour des raisons de sécurité, les requêtes "cross-domain" sont interdites par défaut au niveau du navigateur. Lorsqu'elle l'option est activée, les appels XHR (par exemple, les requêtes REST) provenant de pages Web situées en dehors du domaine peuvent être autorisés dans votre application (vous devez définir la liste des adresses autorisées dans la liste de domaines CORS, voir Paramètres CORS ci-dessous). Dans ce cas, si un domaine ou une méthode non autorisée envoie une demande cross-site, celle-ci est rejetée et une erreur "403 - forbidden" est renvoyée.
 
-When disabled (default), all cross site requests sent with CORS are ignored.
+Lorsqu'elle est désactivée (par défaut), toutes les demandes intersites envoyées avec CORS sont ignorées.
 
 Pour plus d'informations sur CORS, veuillez consulter la [page de partage de ressources cross-origin](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) sur Wikipedia.
 
@@ -204,7 +204,7 @@ Status for communication over HTTPS. This option is described in [this section](
 | Peut être configuré via | Nom                                                | Commentaires                                    |
 | ----------------------- | -------------------------------------------------- | ----------------------------------------------- |
 | objet webServer         | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | Boolean, true to enable HSTS (default is false) |
-| `WEB SET OPTION`        | `Web HSTS enabled`                                 | 0 (disabled, default) or 1 (enabled)            |
+| `WEB SET OPTION`        | `Web HSTS enabled`                                 | 0 (désactivé, par défaut) ou 1 (activé)         |
 
 État de HTTP Strict Transport Security (HSTS).
 
@@ -532,7 +532,7 @@ By default, 4D defines a HTML Root folder named **WebFolder**. If it does not al
 You can designate another default HTML root folder by entering its pathname.
 
 - The path is relative to the [Project folder](Project/architecture.md#project-folder) (4D local and 4D Server) or to the folder containing the 4D application or software package (4D in remote mode).
-- The path is expressed with the POSIX syntax (folders are separated by a slash ("/"))
+- Le chemin ext exprimé avec la syntaxe POSIX (les dossiers sont séparés par un slash (/)),
 - To "go up" one level in the folder hierarchy, enter “..” (two periods) before the folder name
 - The path must not start with a slash (except if you want the HTML root folder to be the Project or 4D remote folder, but for access to the folders above to be forbidden, in which case you can pass "/" as the root folder).
 
