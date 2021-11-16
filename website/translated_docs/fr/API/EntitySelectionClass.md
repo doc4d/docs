@@ -577,29 +577,29 @@ Cette entity selection est ensuite mise à jour avec les produits et vous souhai
 **.distinct**( *attributePath* : Text { ; *option* : Integer } ) : Collection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.distinct().Params -->
-| Paramètres    | Type       |    | Description                                                      |
-| ------------- | ---------- |:--:| ---------------------------------------------------------------- |
-| attributePath | Text       | -> | Path of attribute whose distinct values you want to get          |
-| option        | Integer    | -> | `dk diacritical`: diacritical evaluation ("A" # "a" for example) |
-| Résultat      | Collection | <- | Collection with only distinct values                             |
+| Paramètres    | Type       |    | Description                                                             |
+| ------------- | ---------- |:--:| ----------------------------------------------------------------------- |
+| attributePath | Text       | -> | Chemin de l'attribut dont vous souhaitez obtenir les valeurs distinctes |
+| option        | Integer    | -> | `dk diacritical` : évaluation diacritique ("A" # "a" par exemple)       |
+| Résultat      | Collection | <- | Collection avec seulement les valeurs distinctes                        |
 <!-- END REF -->
 
 #### Description
 
-The `.distinct()` function <!-- REF #EntitySelectionClass.distinct().Summary -->returns a collection containing only distinct (different) values from the *attributePath* in the entity selection<!-- END REF -->.
+La fonction `.distinct()` <!-- REF #EntitySelectionClass.distinct().Summary -->renvoie une collection contenant uniquement les valeurs distinctes (différentes) de *attributePath* dans l'entity selection<!-- END REF -->.
 
-The returned collection is automatically sorted. **Null** values are not returned.
+La collection retournée est automatiquement triée. Les valeurs **Null** ne sont pas renvoyées.
 
-In the *attributePath* parameter, pass the entity attribute whose distinct values you want to get. Only scalar values (text, number, boolean, or date) can be handled. If the *attributePath* leads to an object property that contains values of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
+Dans le paramètre *attributePath* passez l'attribut d'entité dont vous voulez obtenir les valeurs distinctes. Seules les valeurs scalaires (texte, nombre, booléen ou date) peuvent être gérées. Si *attributePath* est un attribut d'objet qui contient des valeurs de types différents, elles sont groupées par type et triées ensuite. Les types sont renvoyés dans l'ordre suivant :
 
-1.  booleans
-2.  strings
-3.  numbers
+1.  booléens
+2.  chaînes
+3.  nombres
 4.  dates
 
-You can use the `[]` notation to designate a collection when *attributePath* is a path within an object (see examples).
+Vous pouvez utiliser la notation `[]` pour désigner une collection lorsque *attributePath* est un chemin dans un objet (cf. exemples).
 
-By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `dk diacritical` constant in the *option* parameter.
+Par défaut, une évaluation non diacritique est effectuée. Si vous souhaitez que l'évaluation soit sensible à la casse ou pour différencier des caractères accentués et non-accentués, passez la constante `dk diacritical` dans le paramètre *option*.
 
 Une erreur est retournée si :
 
@@ -608,14 +608,14 @@ Une erreur est retournée si :
 
 #### Exemples
 
-You want to get a collection containing a single element per country name:
+Vous souhaitez obtenir une collection contenant un seul élément par nom de pays :
 
 ```4d
  var $countries : Collection
  $countries:=ds.Employee.all().distinct("address.country")
 ```
 
-`nicknames` is a collection and `extra` is an object attribute:
+`nicknames` est une collection et `extra` est un attribut d'objet :
 
 ```4d
 $values:=ds.Employee.all().distinct("extra.nicknames[].first")
@@ -639,44 +639,44 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 **.drop**( { *mode* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.drop().Params -->
-| Paramètres | Type               |    | Description                                                                                      |
-| ---------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------ |
-| mode       | Integer            | -> | `dk stop dropping on first error`: stops method execution on first non-droppable entity          |
-| Résultat   | 4D.EntitySelection | <- | Empty entity selection if successful, else entity selection containing non-droppable entity(ies) |
+| Paramètres | Type               |    | Description                                                                                                           |
+| ---------- | ------------------ |:--:| --------------------------------------------------------------------------------------------------------------------- |
+| mode       | Integer            | -> | `dk stop dropping on first error` : stoppe l'exécution de la fonction au niveau de la première entité non-supprimable |
+| Résultat   | 4D.EntitySelection | <- | Entity selection vide si exécutée avec succès, sinon entity selection contenant la ou les entité(s) non supprimée(s)  |
 <!-- END REF -->
 
 #### Description
 
-The `.drop()` function <!-- REF #EntitySelectionClass.drop().Summary -->removes the entities belonging to the entity selection from the table related to its dataclass within the datastore<!-- END REF -->. The entity selection remains in memory.
-> Removing entities is permanent and cannot be undone. It is recommended to call this action in a transaction in order to have a rollback option.
+La fonction `.drop()` <!-- REF #EntitySelectionClass.drop().Summary -->supprime les entités appartenant à l'entity selection de la table liée à sa dataclass dans le datastore<!-- END REF -->. L'entity selection reste en mémoire.
+> La suppression d'entités est permanente et ne peut pas être annulée. Il est recommandé d'appeler cette action dans une transaction afin d'avoir une possibilité de récupération.
 
-If a locked entity is encountered during the execution of `.drop()`, it is not removed. By default, the method processes all entities of the entity selection and returns non-droppable entities in the entity selection. If you want the method to stop execution at the first encountered non-droppable entity, pass the `dk stop dropping on first error` constant in the *mode* parameter.
+Si une entité verrouillée est rencontrée lors de l'exécution de `.drop()`, elle n'est pas supprimée. Par défaut, la fonction traite toutes les entités de l'entity selection et renvoie des entités non supprimables dans l'entity selection. Si vous souhaitez que la fonction arrête l'exécution au niveau de la première entité non supprimable rencontrée, passez la constante `dk stop dropping on first error` dans le paramètre *mode*.
 
 #### Exemple
 
-Example without the `dk stop dropping on first error` option:
+Exemple sans l'option `dk stop dropping on first error` :
 
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
  $employees:=ds.Employee.query("firstName=:1";"S@")
- $notDropped:=$employees.drop() // $notDropped is an entity selection containing all the not dropped entities
- If($notDropped.length=0) //The delete action is successful, all the entities have been deleted
-    ALERT("You have dropped "+String($employees.length)+" employees") //The dropped entity selection remains in memory
+ $notDropped:=$employees.drop() // $notDropped est une entity selection contenant toutes les entités non supprimées
+ If($notDropped.length=0) ///La suppression est un succès, toutes les entités ont été supprimées
+    ALERT("Vous avez supprimé "+String($employees.length)+" employés") //L'entity selection supprimée reste en mémoire
  Else
-    ALERT("Problem during drop, try later")
+    ALERT("Problème durant la suppression, réessayez plus tard")
  End if
 ```
 
-Example with the `dk stop dropping on first error` option:
+Exemple avec l'option `dk stop dropping on first error` :
 
 ```4d
  var $employees; $notDropped : cs.EmployeeSelection
  $employees:=ds.Employee.query("firstName=:1";"S@")
- $notDropped:=$employees.drop(dk stop dropping on first error) //$notDropped is an entity selection containing the first not dropped entity
- If($notDropped.length=0) //The delete action is successful, all the entities have been deleted
-    ALERT("You have dropped "+String($employees.length)+" employees") //The dropped entity selection remains in memory
+ $notDropped:=$employees.drop(dk stop dropping on first error) //$notDropped est une entity selection contenant la première entité non supprimée
+ If($notDropped.length=0) //La suppression est un succès, toutes les entités ont été supprimées
+    ALERT("Vous avez supprimé "+String($employees.length)+" employés") //L'entity selection supprimée reste en mémoire
  Else
-    ALERT("Problem during drop, try later")
+    ALERT("Problème durant la suppression, réessayez plus tard")
  End if
 ```
 
@@ -700,27 +700,27 @@ Example with the `dk stop dropping on first error` option:
 
 
 <!-- REF #EntitySelectionClass.extract().Params -->
-| Paramètres    | Type       |    | Description                                                                             |
-| ------------- | ---------- |:--:| --------------------------------------------------------------------------------------- |
-| attributePath | Text       | -> | Attribute path whose values must be extracted to the new collection                     |
-| targetPath    | Text       | -> | Target attribute path or attribute name                                                 |
-| option        | Integer    | -> | `ck keep null`: include null attributes in the returned collection (ignored by default) |
-| Résultat      | Collection | <- | Collection containing extracted values                                                  |
+| Paramètres    | Type       |    | Description                                                                                                                             |
+| ------------- | ---------- |:--:| --------------------------------------------------------------------------------------------------------------------------------------- |
+| attributePath | Text       | -> | Chemin d'attribut dont les valeurs doivent être extraites dans la nouvelle collection                                                   |
+| targetPath    | Text       | -> | Chemin ou nom d'attribut cible                                                                                                          |
+| option        | Integer    | -> | `ck keep null` : inclure les attributs null dans la collection retournée (ignorés par défaut). Paramètre ignoré si targetPath est passé |
+| Résultat      | Collection | <- | Collection contenant les valeurs extraites                                                                                              |
 <!-- END REF -->
 
 #### Description
 
-The `.extract()` function <!-- REF #EntitySelectionClass.extract().Summary -->returns a collection containing *attributePath* values extracted from the entity selection<!-- END REF -->.
+La fonction `.extract()` <!-- REF #EntitySelectionClass.extract().Summary -->retourne une collection contenant les valeurs *attributePath* extraites de l'entity selection<!-- END REF -->.
 
-*attributePath* can refer to:
+*attributePath* peut désigner :
 
-*   a scalar dataclass attribute,
-*   related entity,
-*   related entities.
+*   un attribut scalaire de dataclass,
+*   une entité liée,
+*   des entités liées.
 
-If *attributePath* is invalid, an empty collection is returned.
+Si *attributePath* est invalide, une collection vide est retournée.
 
-This function accepts two syntaxes.
+Cette fonction accepte deux syntaxes.
 
 **.extract( attributePath : Text { ; option : Integer } ) : Collection**
 
