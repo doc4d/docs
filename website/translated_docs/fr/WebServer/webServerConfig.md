@@ -43,20 +43,20 @@ Dossier qui contient les fichiers de certificat TLS pour le serveur web.
 
 Par défaut, avec 4D ou 4D Server, ces fichiers doivent être placés à côté du [dossier du projet](Project/architecture.md#project-folder).
 
-With 4D in remote mode, these files must be located in the local resources folder of the database on the remote machine (see `4D Client Database Folder` paragraph of the `Get 4D folder` command). Vous devez copier ces filles manuellement sur la machine distante.
+Avec 4D à distance, ces fichiers doivent être placés dans le dossier des ressources locales de la base de données sur la machine distante (voir le paragraphe `Dossier base 4D Client` de la commande `Dossier 4D`). Vous devez copier ces fichiers manuellement sur la machine distante.
 
-> TLS certificate files are *key.pem* (document containing the private encryption key) and *cert.pem* (document containing the certificate).
+> Les fichiers de certificat TLS sont *key.pem* (document contenant la clé de chiffrement privée) et *cert.pem* (document contenant le certificat).
 
 
-## Character Set
+## Jeu de caractères
 
-| Peut être configuré via  | Nom                            | Commentaires                   |
-| ------------------------ | ------------------------------ | ------------------------------ |
-| objet webServer          | `characterSet`                 | MIBEnum integer or Name string |
-| `WEB SET OPTION`         | `Web character set`            | MIBEnum integer or Name string |
-| Fenêtre de configuration | Options (II) page/Standard Set | Pop up menu                    |
+| Peut être configuré via  | Nom                            | Commentaires                                   |
+| ------------------------ | ------------------------------ | ---------------------------------------------- |
+| objet webServer          | `characterSet`                 | Entier (MIBEnum) ou chaîne de caractères (nom) |
+| `WEB SET OPTION`         | `Web character set`            | Entier (MIBEnum) ou chaîne de caractères (nom) |
+| Fenêtre de configuration | Options (II) page/Standard Set | Menu popup                                     |
 
-Defines the set of characters to be used by the 4D web server. La valeur par défaut dépend de la langue du système d'exploitation.
+Définit le jeu de caractères à utiliser par le serveur web 4D. La valeur par défaut dépend de la langue du système d'exploitation.
 > This setting is also used for generating Quick Reports in HTML format .
 
 
@@ -324,7 +324,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 | ------------------------ | -------------------------------------------------------------- | ------------ |
 | objet webServer          | [`IPAddressToListen`](API/webServerClass.md#ipaddresstolisten) |              |
 | `WEB SET OPTION`         | `Web IP address to listen`                                     |              |
-| Fenêtre de configuration | Configuration page/IP Address                                  | Pop up menu  |
+| Fenêtre de configuration | Configuration page/IP Address                                  | Menu popup   |
 
 IP address strings on which the 4D web server will receive HTTP requests (4D local and 4D Server).
 
@@ -372,7 +372,7 @@ Default is true (enabled).
 | ------------------------ | ---------------------------------------------------- | ------------ |
 | objet webServer          | [`logRecording`](API/webServerClass.md#logrecording) |              |
 | `WEB SET OPTION`         | `Web log recording`                                  |              |
-| Fenêtre de configuration | Log (type) page/Log Format                           | Pop up menu  |
+| Fenêtre de configuration | Log (type) page/Log Format                           | Menu popup   |
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
 
