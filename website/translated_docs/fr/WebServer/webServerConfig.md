@@ -13,7 +13,7 @@ Vous pouvez configurer les paramètres du serveur web 4D, en fonction de la port
 | Setting location                           | Portée                                                | Serveur web concerné                                                 |
 | ------------------------------------------ | ----------------------------------------------------- | -------------------------------------------------------------------- |
 | [objet webServer](webServerObject.md)      | Temporaire (session courante)                         | N'importe quel serveur web, y compris les serveurs Web de composants |
-| `WEB FIXER OPTION` ou commande `WEB XXX`   | Temporaire (session courante)                         | Serveur principal                                                    |
+| `WEB SET OPTION` ou commande `WEB XXX`     | Temporaire (session courante)                         | Serveur principal                                                    |
 | Fenêtre des **Propriétés** (pages **Web**) | Permanent (toutes les sessions, stocké sur le disque) | Serveur principal                                                    |
 
 > Certains paramètres ne sont pas disponibles depuis tous les emplacements.
@@ -43,40 +43,40 @@ Dossier qui contient les fichiers de certificat TLS pour le serveur web.
 
 Par défaut, avec 4D ou 4D Server, ces fichiers doivent être placés à côté du [dossier du projet](Project/architecture.md#project-folder).
 
-With 4D in remote mode, these files must be located in the local resources folder of the database on the remote machine (see `4D Client Database Folder` paragraph of the `Get 4D folder` command). Vous devez copier ces filles manuellement sur la machine distante.
+Avec 4D à distance, ces fichiers doivent être placés dans le dossier des ressources locales de la base de données sur la machine distante (voir le paragraphe `Dossier base 4D Client` de la commande `Dossier 4D`). Vous devez copier ces filles manuellement sur la machine distante.
 
-> TLS certificate files are *key.pem* (document containing the private encryption key) and *cert.pem* (document containing the certificate).
-
-
-## Character Set
-
-| Peut être configuré via  | Nom                            | Commentaires                   |
-| ------------------------ | ------------------------------ | ------------------------------ |
-| objet webServer          | `characterSet`                 | MIBEnum integer or Name string |
-| `WEB SET OPTION`         | `Web character set`            | MIBEnum integer or Name string |
-| Fenêtre de configuration | Options (II) page/Standard Set | Pop up menu                    |
-
-Defines the set of characters to be used by the 4D web server. La valeur par défaut dépend de la langue du système d'exploitation.
-> This setting is also used for generating Quick Reports in HTML format .
+> Les fichiers de certificat TLS sont *key.pem* (document contenant la clé de chiffrement privée) et *cert.pem* (document contenant le certificat).
 
 
-## Cipher list
+## Jeu de caractères
+
+| Peut être configuré via  | Nom                            | Commentaires                                        |
+| ------------------------ | ------------------------------ | --------------------------------------------------- |
+| objet webServer          | `characterSet`                 | Entier long (MIBEnum) ou chaîne de caractères (nom) |
+| `WEB SET OPTION`         | `Web character set`            | Entier long (MIBEnum) ou chaîne de caractères (nom) |
+| Fenêtre de configuration | Page Options (II)/Jeu standard | Menu popup                                          |
+
+Définit le jeu de caractères à utiliser par le serveur web 4D. La valeur par défaut dépend de la langue du système d'exploitation.
+> Ce paramètre est également utilisé pour générer des États Rapides au format HTML.
+
+
+## Suite cryptographique
 
 | Peut être configuré via | Nom                                                | Commentaires |
 | ----------------------- | -------------------------------------------------- | ------------ |
 | objet webServer         | [`cipherSuite`](API/WebServerClass.md#ciphersuite) | Texte        |
 
-Cipher list used for the secure protocol; sets the priority of ciphering algorithms implemented by the web server. Peut être une séquence de chaînes séparées par des deux-points (par exemple "ECDHE-RSA-AES128 -..."). Voir la [page des chiffrements](https://www.openssl.org/docs/manmaster/man1/ciphers.html) sur le site OpenSSL.
+Suite cryptographique utilisée pour le protocole sécurisé. Fixe la priorité des algorithmes de chiffrement implémentés par le serveur web. Peut être une séquence de chaînes séparées par des deux-points (par exemple "ECDHE-RSA-AES128 -..."). Voir la [page des chiffrements](https://www.openssl.org/docs/manmaster/man1/ciphers.html) sur le site OpenSSL.
 
-> The default cipher list used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server, client/server connections, as well as the HTTP client and all the 4D commands that make use of the secure protocol.
+> La liste de chiffrement par défaut utilisée par 4D peut être modifiée pour la session à l'aide de la commande `FIXER PARAMETRE BASE `, auquel cas la modification s'applique à l'ensemble de l'application 4D, y compris le serveur web, le serveur SQL, les connexions client/serveur, ainsi que le client HTTP et toutes les commandes 4D qui font appel au protocole sécurisé.
 
-## CORS Settings
+## Paramètres CORS
 
-| Peut être configuré via  | Nom                                                     | Commentaires                                                                   |
-| ------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| objet webServer          | [`CORSSettings`](API/WebServerClass.md#corssettings)    | Collection of objects (List of allowed hosts and methods for the CORS service) |
-| `WEB SET OPTION`         | `Web CORS settings`                                     | Collection of objects (List of allowed hosts and methods for the CORS service) |
-| Fenêtre de configuration | Options (II) page/Domain names and HTTP methods allowed | Click on the [+] button to add an allowed domain name and its method(s)        |
+| Peut être configuré via  | Nom                                                     | Commentaires                                                                      |
+| ------------------------ | ------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| objet webServer          | [`CORSSettings`](API/WebServerClass.md#corssettings)    | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS) |
+| `WEB SET OPTION`         | `Web CORS settings`                                     | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS) |
+| Fenêtre de configuration | Options (II) page/Domain names and HTTP methods allowed | Click on the [+] button to add an allowed domain name and its method(s)           |
 
 List of allowed hosts and methods for the CORS service.
 
@@ -175,7 +175,7 @@ When disabled (default), all cross site requests sent with CORS are ignored.
 Pour plus d'informations sur CORS, veuillez consulter la [page de partage de ressources cross-origin](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) sur Wikipedia.
 
 #### Voir également
-[CORS Settings](#cors-settings)
+[Paramètres CORS](#cors-settings)
 
 ## Enable HTTP
 
@@ -327,7 +327,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 | ------------------------ | -------------------------------------------------------------- | ------------ |
 | objet webServer          | [`IPAddressToListen`](API/WebServerClass.md#ipaddresstolisten) |              |
 | `WEB SET OPTION`         | `Web IP address to listen`                                     |              |
-| Fenêtre de configuration | Configuration page/IP Address                                  | Pop up menu  |
+| Fenêtre de configuration | Configuration page/IP Address                                  | Menu popup   |
 
 IP address strings on which the 4D web server will receive HTTP requests (4D local and 4D Server).
 
@@ -375,7 +375,7 @@ Default is true (enabled).
 | ------------------------ | ---------------------------------------------------- | ------------ |
 | objet webServer          | [`logRecording`](API/WebServerClass.md#logrecording) |              |
 | `WEB SET OPTION`         | `Web log recording`                                  |              |
-| Fenêtre de configuration | Log (type) page/Log Format                           | Pop up menu  |
+| Fenêtre de configuration | Log (type) page/Log Format                           | Menu popup   |
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
 
