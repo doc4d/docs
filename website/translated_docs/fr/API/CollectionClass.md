@@ -671,11 +671,11 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 
 
 <!-- REF #collection.distinct().Params -->
-| Paramètres   | Type       |    | Description                                                      |
-| ------------ | ---------- |:--:| ---------------------------------------------------------------- |
-| option       | Integer    | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example) |
-| propertyPath | Text       | -> | Path of attribute whose distinct values you want to get          |
-| Résultat     | Collection | <- | New collection with only distinct values                         |
+| Paramètres   | Type       |    | Description                                                             |
+| ------------ | ---------- |:--:| ----------------------------------------------------------------------- |
+| option       | Integer    | -> | `ck diacritical`: diacritical evaluation ("A" # "a" for example)        |
+| propertyPath | Text       | -> | Chemin de l'attribut dont vous souhaitez obtenir les valeurs distinctes |
+| Résultat     | Collection | <- | New collection with only distinct values                                |
 <!-- END REF -->
 
 
@@ -684,9 +684,9 @@ The optional *propertyPath* parameter allows you to count values inside a collec
 The `.distinct()` function <!-- REF #collection.distinct().Summary -->returns a collection containing only distinct (different) values from the original collection<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
-The returned collection is automatically sorted. **Null** values are not returned.
+La collection retournée est automatiquement triée. Les valeurs **Null** ne sont pas renvoyées.
 
-By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `ck diacritical` constant in the *option* parameter.
+Par défaut, une évaluation non diacritique est effectuée. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `ck diacritical` constant in the *option* parameter.
 
 If the collection contains objects, you can pass the *propertyPath* parameter to indicate the object property whose distinct values you want to get.
 
@@ -737,7 +737,7 @@ If the collection contains objects, you can pass the *propertyPath* parameter to
 
 The `.equal()` function <!-- REF #collection.equal().Summary -->compares the collection with collection2 <!-- END REF -->and returns **true** if they are identical (deep comparison).
 
-By default, a non-diacritical evaluation is performed. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `ck diacritical` constant in the option parameter.
+Par défaut, une évaluation non diacritique est effectuée. If you want the evaluation to be case sensitive or to differentiate accented characters, pass the `ck diacritical` constant in the option parameter.
 > Les éléments contenant valeurs **Null** ne sont pas équivalents aux éléments Undefined.
 
 #### Exemple
@@ -1792,12 +1792,12 @@ You can also pass a criteria parameter to define how the collection elements mus
 
     This syntax orders scalar values in the collection only (other element types such as objects or collections are returned unordered).
 
-If the collection contains elements of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
+If the collection contains elements of different types, they are first grouped by type and sorted afterwards. Les types sont renvoyés dans l'ordre suivant :
 
 1.  null
-2.  booleans
-3.  strings
-4.  numbers
+2.  booléens
+3.  chaînes
+4.  nombres
 5.  objects
 6.  collections
 7.  dates
@@ -2670,12 +2670,12 @@ Si vous souhaitez trier les éléments de la collection dans un autre ordre ou t
 *methodName* sets the following parameter:
     *   *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise
 
-If the collection contains elements of different types, they are first grouped by type and sorted afterwards. Types are returned in the following order:
+If the collection contains elements of different types, they are first grouped by type and sorted afterwards. Les types sont renvoyés dans l'ordre suivant :
 
 1.  null
-2.  booleans
-3.  strings
-4.  numbers
+2.  booléens
+3.  chaînes
+4.  nombres
 5.  objects
 6.  collections
 7.  dates
