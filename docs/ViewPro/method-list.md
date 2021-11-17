@@ -4664,8 +4664,74 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 ### Description
 
 `VP SET WORKBOOK OPTIONS` <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
-sets the workbook options in *vpArea*<!-- END REF -->
+sets the workbook options in *vpArea*<!-- END REF -->.
 
+In *optionObj*, pass the workbook options to apply to *vpArea*.
+
+If *optionObj* is undefined or empty, the command does nothing. 
+
+The following table groups the available options : 
+
+
+|Property|Type|Description|
+|---|---|---|
+| allowUserDragMerge | boolean | Whether to allow the user to drag merge cells. |
+| allowUserDragDrop | boolean | Whether to allow the user to drag and drop range data. |
+| allowUserDragFill | boolean | Whether to allow the user to drag fill a range. |
+| allowUserZoom | boolean | Whether to zoom the display by scrolling the mouse wheel while pressing the Ctrl key. |
+| allowUserResize | boolean | Whether to allow the user to resize columns and rows. |
+| allowUndo | boolean | Whether to allow the user to undo edits. |
+| allowSheetReorder | boolean | Whether the user can reorder the sheets in the Spread component. |
+| allowContextMenu | boolean | Whether to allow the user to open the built-in context menu. |
+| allowUserDeselect | boolean | Whether to allow the user to can use deselect in selection. |
+| defaultDragFillType | number | The default fill type. Available values : <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk auto fill type auto </td><td> Automatically fills cells. </td></tr><tr><td> vk auto fill type clear values </td><td> Clears cell values.</td></tr><tr><td> vk auto fill type copycells </td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td> Fills cells only with formatting.</td></tr><tr><td> vk auto fill type fill series </td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td> Fills cells with values and not formatting. </td></tr></table> |
+| showDragFillSmartTag | boolean | Whether to display the drag fill dialog. |
+| showHorizontalScrollbar | boolean | Whether to display the horizontal scroll bar. |
+| showVerticalScrollbar | boolean | Whether to display the vertical scroll bar. |
+| scrollbarShowMax | boolean | Whether the displayed scroll bars are based on the entire number of columns and rows in the sheet. |
+| scrollbarMaxAlign | boolean | Whether the scroll bar aligns with the last row and column of the active sheet. |
+| tabStripVisible | boolean | Whether to display the sheet tab strip. |
+| tabStripRatio | number | The width of the tab strip expressed as a percentage of the overall horizontal scroll bar width. |
+| tabEditable | boolean | Whether to allow the user to edit the sheet tab strip. |
+| newTabVisible | boolean | Whether the spreadsheet displays the special tab to let users insert new sheets. |
+| tabNavigationVisible | boolean | Whether to display the sheet tab navigation. |
+| cutCopyIndicatorVisible | boolean | Whether to display an indicator when copying or cutting the selected item. |
+| cutCopyIndicatorBorderColor | string | The border color for the indicator displayed when the user cuts or copies the selection. |
+| backColor | string | A color string used to represent the background color of the Spread component, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on. The backcolor is hidden when a backcolor is set. |
+| backgroundImage | string / picture / file | The background image of the Spread component. |
+| backgroundImageLayout | number | The background image layout for the Spread component. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk image layout center </td><td> Specifies that the background image displayes in the center of the area.</td></tr><tr><td> vk image layout none </td><td> Specifies that the background image displays in the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td> Specifies that the background image fills the area.</td></tr><tr><td> vk image layout zoom </td><td> Specifies that the background image displays in the area with its original aspect ratio.</td></tr></table> |
+| grayAreaBackColor | string | A color string used to represent the background color of the gray area , such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on. |
+| showResizeTip | number | How to display the resize tip. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk show resize tip both </td><td> Specifies that horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td> Specifies that only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td> Specifies that no resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td> Specifies that only the vertical resize tip is displayed.</td></tr></table>|
+| showDragDropTip | boolean | Whether to display the drag-drop tip. |
+| showDragFillTip | boolean | Whether to display the drag-fill tip. |
+| showScrollTip | number | How to display the scroll tip. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk show scroll tip both </td><td> Specifies that horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td> Specifies that only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> Specifies that no scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td> Specifies that only the vertical scroll tip is displayed.</td></tr></table> |
+| scrollIgnoreHidden | boolean | Whether the scroll bar ignores hidden rows or columns. |
+| highlightInvalidData | boolean | Whether to highlight invalid data. |
+| useTouchLayout | boolean | Whether to use touch layout to present the Spread component. |
+| resizeZeroIndicator | number | The drawing policy when the row or column is resized to zero. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk resize zero indicator default </td><td> Uses the current drawing policy when the row or column is resized to zero</td></tr><tr><td> vk resize zero indicator enhanced </td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table> |
+| allowUserEditFormula | boolean | Whether the user can edit formulas in a cell in the spreadsheet. |
+| enableFormulaTextbox | boolean | Whether to enable the formula text box in the spreadsheet. |
+| autoFitType | number | Whether content will be formatted to fit in cells or in cells and headers. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk auto fit type cell </td><td> The component autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td> The component autofits cells and headers</td></tr></table> |
+| referenceStyle | number | the style for cell and range references in cell formulas on this sheet. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk reference style a1 </td><td> Indicates a1 style.</td></tr><tr><td> vk reference style r1c1 </td><td> Indicates r1c1 style</td></tr></table> |
+| calcOnDemand | boolean | Whether to calculate formulas only when they are demanded. |
+| allowCopyPasteExcelStyle | boolean | Whether the user can copy style from Spread Sheets then paste to Excel, or copy style from Excel then paste to Spread Sheets. |
+| copyPasteHeaderOptions | number | Which headers are included when data is copied to or pasted. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk copy paste header options all headers</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td> Includes neither column nor row headers when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td> 	Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table> |
+| scrollByPixel | boolean | Whether to enable the precision scrolling by pixel. |
+| scrollPixel | integer | Decides scrolling by that number of pixels at a time when scrollByPixel is true. The final scrolling pixels are the result of scrolling delta multiply scrollPixel. For example, the scrolling delta is 3, and the scrollPixel is 5, the final scrolling pixels are 15. |
+| enableAccessibility | boolean | Whether to enable the accessibility support in the spreadsheet. |
+| allowAutoCreateHyperlink | boolean | Whether to enable auto creating hyperlink in the spreadsheet. |
+| columnResizeMode | number | Specifies the way to resize column. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk resize mode normal </td><td> specifies use normal way to resize</td></tr><tr><td> vk resize mode split </td><td> specifies use split way to resize</td></tr></table>|
+| rowResizeMode | number | Specifies the way to resize row. Available values are the same as columnResizeMode|
+| customList | collection | The list for users to customize drag fill, prioritize matching this list in each fill. Each collection item is a collection of strings. See [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b)|
+| scrollbarAppearance | number | The scrollbar appearance, contains skin and mobile two enums. Default is skin. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk scrollbar appearance mobile</td><td> Specifies the fashionable mobile scrollbars appearance which could be customized.</td></tr><tr><td> vk scrollbar appearance skin </td><td> Specifies the excel-like classic scrollbars appearance.</td></tr></table>|
+| pasteSkipInvisibleRange | boolean | Whether paste skip invisible range. Default is false. |
+| tabStripPosition | number | Specifies the position of the tab strip |
+| tabStripWidth | numeric | Specifies the width of the tab strip when position is left or right |
+| numbersFitMode |number | Changes display mode when date/number data width longer than column width. |
+| iterativeCalculation | boolean | enables iterative calculation in worksheets. See on [Grapecity's website](https://www.grapecity.com/spreadjs/docs/v14/online/calculating-iterative.html). |
+| iterativeCalculationMaximumChange | numeric | specify the maximum amount of change between two calculation values |
+| iterativeCalculationMaximumIterations | numeric | specify the number of times the formula should recalculate |
+| allowDynamicArray|boolean| enables dynamic array in worksheets|
 
 #### Example
 
