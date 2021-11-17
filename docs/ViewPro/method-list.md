@@ -2241,6 +2241,29 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 // $result[2]=[null,{time:42,value:2019-05-29T00:00:00.000Z},null,null,null]
 ```
 
+### VP Get workbook options
+
+<!-- REF #_method_.VP Get workbook options.Syntax -->**VP Get workbook options** ( *vpAreaName* : Text ) : Object<!-- END REF -->  
+
+<!-- REF #_method_.VP IMPORT DOCUMENT.Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName  |Text|->|4D View Pro area form object name|
+|Result |Object|<-|Object containing the workbook options|
+<!-- END REF -->  
+
+### Description
+
+`VP Get workbook options` <!-- REF #_method_.Get workbook options.Summary -->
+Returns an object containing the workbook options in *vpArea*<!-- END REF -->
+
+
+#### Example
+
+```4d
+var $workbookOptions : Object
+$workbookOptions:=VP Get workbook options("ViewProArea")
+```
 
 ## I
 
@@ -4627,7 +4650,34 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 
 ![](assets/en/ViewPro/cmd_vpSetValues.PNG)
 
+### VP SET WORKBOOK OPTIONS 
 
+<!-- REF #_method_.VP SET WORKBOOK OPTIONS.Syntax -->**VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->  
+
+<!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName  |Text|->|4D View Pro area form object name|
+|optionObj |Object|->|Object containing the workbook options to be set|
+<!-- END REF -->  
+
+### Description
+
+`VP SET WORKBOOK OPTIONS` <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
+sets the workbook options in *vpArea*<!-- END REF -->
+
+
+#### Example
+
+To allow extending the paste range when it is not large enough for pasting:
+
+```4d
+var $workbookOptions : Object
+
+$workbookOptions.allowExtendPasteRange:=True
+
+$workbookOptions:=VP SET WORKBOOK OPTIONS("ViewProArea";$optionObj)
+```
 
 ### VP SHOW CELL
 
