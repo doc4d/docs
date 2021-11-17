@@ -688,7 +688,7 @@ You can pass an optional *options* parameter with the following properties:
 |copy|Boolean|*True* (default) to keep the copied values, formatting and formulas after the command executes. *False* to remove them.|
 |copyOptions|Longint|Specifies what is copied or moved. Possible values: <p><table><tr><th>Value</th><th>Description</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Copies all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copies only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copies only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copies the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Copies only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copies the values and formatting.</td></tr></table></p>|
 
-The paste options defined in the [workbook options](#) are taken into account.
+The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 
 The command returns an object that contains the copied data.
 
@@ -713,8 +713,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 #### See also 
 
-[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)
-
+[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 ## D
 
 ### VP DELETE COLUMNS
@@ -2257,6 +2256,9 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 `VP Get workbook options` <!-- REF #_method_.Get workbook options.Summary -->
 Returns an object containing the workbook options in *vpArea*<!-- END REF -->
 
+The list of options is referenced in [`VK SET WORKBOOK OPTIONS`'s description](#vk-set-workbook-options)
+
+> This command is not thread-safe
 
 #### Example
 
@@ -2264,6 +2266,10 @@ Returns an object containing the workbook options in *vpArea*<!-- END REF -->
 var $workbookOptions : Object
 $workbookOptions:=VP Get workbook options("ViewProArea")
 ```
+
+#### See Also 
+
+[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ## I
 
@@ -2496,7 +2502,7 @@ The *options* parameter has several properties:
 |copy|Boolean|Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li>|
 |pasteOptions|Longint|Specifies what is pasted. Possible values: <p><table><tr><th>Value</th><th>Description</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>|
 
-The paste options defined in the [workbook options](#) are taken into account.
+The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 #### Example
 
 To copy the contents, values, formatting and formulas from an origin range:
@@ -2516,7 +2522,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 ```
 ### See also 
 
-[VP Copy to object](#vp-copy-to-object)<br/>[VP PASTE FROM OBJECT](#vp-paste-from-object)
+[VP Copy to object](#vp-copy-to-object)<br/>[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ## N
 
@@ -2685,7 +2691,7 @@ In the optional *options* parameter, you can specify what to paste in the cell r
 |`vk clipboard options values`|Pastes only values.|
 |`vk clipboard options value and formatting`|Pastes values and formatting.|
 
-The paste options defined in the [workbook options](#) are taken into account.
+The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 
 If *options* refers to a paste option not present in the copied object (e.g. formulas), the command does nothing.
 
@@ -2695,7 +2701,7 @@ See example the example from [VP Copy to object](#vp-copy-to-object)
 
 #### See also 
 
-[VP Copy to object](#vp-copy-to-object)<br/>[VP MOVE CELLS](#vp-move-cells)
+[VP Copy to object](#vp-copy-to-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP PRINT
 
@@ -4670,13 +4676,12 @@ In *optionObj*, pass the workbook options to apply to *vpArea*.
 
 If *optionObj* is undefined or empty, the command does nothing. 
 
-The following table groups the available options : 
-
+The following table groups the available options for *optionObj*: 
 
 |Property|Type|Description|
 |---|---|---|
-| allowUserDragMerge | boolean | Whether to allow the user to drag merge cells. |
-| allowUserDragDrop | boolean | Whether to allow the user to drag and drop range data. |
+| allowUserDragMerge | boolean | Specifies whether to allow the drag merge operation (select cells and drag the selection to merge cells) 
+| allowUserDragDrop | boolean | Whether to allow drag and drop of range data. |
 | allowUserDragFill | boolean | Whether to allow the user to drag fill a range. |
 | allowUserZoom | boolean | Whether to zoom the display by scrolling the mouse wheel while pressing the Ctrl key. |
 | allowUserResize | boolean | Whether to allow the user to resize columns and rows. |
@@ -4715,6 +4720,7 @@ The following table groups the available options :
 | referenceStyle | number | the style for cell and range references in cell formulas on this sheet. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk reference style a1 </td><td> Indicates a1 style.</td></tr><tr><td> vk reference style r1c1 </td><td> Indicates r1c1 style</td></tr></table> |
 | calcOnDemand | boolean | Whether to calculate formulas only when they are demanded. |
 | allowCopyPasteExcelStyle | boolean | Whether the user can copy style from Spread Sheets then paste to Excel, or copy style from Excel then paste to Spread Sheets. |
+| allowExtendPasteRange| boolean | Whether to extend paste range if the paste range is not enough for pasting |
 | copyPasteHeaderOptions | number | Which headers are included when data is copied to or pasted. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk copy paste header options all headers</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td> Includes neither column nor row headers when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td> 	Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table> |
 | scrollByPixel | boolean | Whether to enable the precision scrolling by pixel. |
 | scrollPixel | integer | Decides scrolling by that number of pixels at a time when scrollByPixel is true. The final scrolling pixels are the result of scrolling delta multiply scrollPixel. For example, the scrolling delta is 3, and the scrollPixel is 5, the final scrolling pixels are 15. |
@@ -4725,25 +4731,32 @@ The following table groups the available options :
 | customList | collection | The list for users to customize drag fill, prioritize matching this list in each fill. Each collection item is a collection of strings. See [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b)|
 | scrollbarAppearance | number | The scrollbar appearance, contains skin and mobile two enums. Default is skin. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk scrollbar appearance mobile</td><td> Specifies the fashionable mobile scrollbars appearance which could be customized.</td></tr><tr><td> vk scrollbar appearance skin </td><td> Specifies the excel-like classic scrollbars appearance.</td></tr></table>|
 | pasteSkipInvisibleRange | boolean | Whether paste skip invisible range. Default is false. |
-| tabStripPosition | number | Specifies the position of the tab strip |
+| tabStripPosition | number | Specifies the position of the tab strip. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk tab strip position bottom </td><td> Specifies the position of the tab strip relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td> Specifies the position of the tab strip relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td> Specifies the position of the tab strip relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td> Specifies the position of the tab strip relative to the top of the workbook.</td></tr></table>|
 | tabStripWidth | numeric | Specifies the width of the tab strip when position is left or right |
-| numbersFitMode |number | Changes display mode when date/number data width longer than column width. |
+| numbersFitMode |number | Changes display mode when date/number data width longer than column width. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk numbers fit mode mask</td><td> Indicates replacing data content with "###" and show tip</td></tr><tr><td> vk numbers fit mode overflow </td><td> Indicates display data content as a string, if next cell is empty, overflow the content.</td></tr></table>|
 | iterativeCalculation | boolean | enables iterative calculation in worksheets. See on [Grapecity's website](https://www.grapecity.com/spreadjs/docs/v14/online/calculating-iterative.html). |
 | iterativeCalculationMaximumChange | numeric | specify the maximum amount of change between two calculation values |
 | iterativeCalculationMaximumIterations | numeric | specify the number of times the formula should recalculate |
 | allowDynamicArray|boolean| enables dynamic array in worksheets|
 
+> This command is not thread-safe
+
 #### Example
 
-To allow extending the paste range when it is not large enough for pasting:
+To set the allowExtendpasteRange option in "ViewProArea":
 
 ```4d
 var $workbookOptions : Object
 
+$workbookOptions:= New Object
 $workbookOptions.allowExtendPasteRange:=True
 
-$workbookOptions:=VP SET WORKBOOK OPTIONS("ViewProArea";$optionObj)
+VP SET WORKBOOK OPTIONS("ViewProArea";$optionObj)
 ```
+
+#### See Also 
+
+[VP Get workbook options](#vp-get-workbook-options)
 
 ### VP SHOW CELL
 
