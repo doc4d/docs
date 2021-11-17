@@ -232,7 +232,7 @@ Les propriétés des sélections d'entités sont toutefois énumérables :
 ```
 
 
-#### Sélections d'entités triées vs Sélections d'entités non-triées
+#### Entity selections triées vs Entity selections non-triées
 
 Pour des raisons d'optimisation, par défaut, 4D ORDA crée généralement des sélections d'entités non-ordonnées, sauf lorsque vous utilisez la méthode `orderBy( )` ou si vous utilisez les options appropriées. Dans cette documentation, sauf indication contraire, "sélection d'entités" fait généralement référence à une "sélection d'entités non-ordonnée".
 
