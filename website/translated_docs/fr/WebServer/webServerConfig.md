@@ -3,86 +3,86 @@ id: webServerConfig
 title: Configuration
 ---
 
-The 4D web server settings include security parameters, listening ports, defaults paths, and various options covering all the server features. 4D provides default values for every settings.
+Les paramètres du serveur web 4D comprennent les paramètres de sécurité, les ports d'écoute, les chemins par défaut et diverses options couvrant toutes les fonctionnalités du serveur. 4D fournit des valeurs par défaut pour tous les paramètres.
 
 
-## Where to configure settings?
+## Configurer les paramètres
 
-There are different ways to configure the 4D web server settings, depending on the scope and the server you want to set:
+Vous pouvez configurer les paramètres du serveur web 4D, en fonction de la portée et du serveur que vous souhaitez configurer :
 
-| Setting location                        | Portée                                   | Involved web server                             |
-| --------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
-| [webServer object](webServerObject.md)  | Temporary (current session)              | Any web server, including component web servers |
-| `WEB SET OPTION` or a `WEB XXX` command | Temporary (current session)              | Main server                                     |
-| **Settings** dialog box (**Web** pages) | Permanent (all sessions, stored on disk) | Main server                                     |
+| Emplacement du paramètre                   | Portée                                                | Serveur web concerné                                                 |
+| ------------------------------------------ | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| [objet webServer](webServerObject.md)      | Temporaire (session courante)                         | N'importe quel serveur web, y compris les serveurs Web de composants |
+| `WEB SET OPTION` ou commande `WEB XXX`     | Temporaire (session courante)                         | Serveur principal                                                    |
+| Fenêtre des **Propriétés** (pages **Web**) | Permanent (toutes les sessions, stocké sur le disque) | Serveur principal                                                    |
 
-> Some settings are not available from all locations.
+> Certains paramètres ne sont pas disponibles depuis tous les emplacements.
 
 ## Cache
 
-| Can be set with          | Nom                                     | Commentaires |
-| ------------------------ | --------------------------------------- | ------------ |
-| Fenêtre de configuration | Configuration page/Use the 4D Web cache |              |
-| Fenêtre de configuration | Configuration page/Page Cache Size      |              |
+| Peut être configuré via  | Nom                                               | Commentaires |
+| ------------------------ | ------------------------------------------------- | ------------ |
+| Fenêtre de configuration | Page de configuration/Utilisation du cache Web 4D |              |
+| Fenêtre de configuration | Page de configuration/Taille du cache des pages   |              |
 
-Enables and configures the web page cache.
+Active et configure le cache des pages web.
 
-The 4D web server has a cache that allows you to load static pages, GIF images, JPEG images (<512 kb) and style sheets (.css files) in memory, as they are requested. Using the cache allows you to significantly increase the web server’s performance when sending static pages. The cache is shared between all the web processes.
+Le serveur web 4D dispose d'un cache qui permet de charger les pages statiques, les images GIF, les images JPEG (<512 kb) et les feuilles de style (fichiers .css) en mémoire, au fur et à mesure qu'elles sont appelées. L'utilisation du cache permet d'augmenter considérablement les performances du serveur web lors de l'envoi de pages statiques. Le cache est partagé entre tous les processus web.
 
-You can modify the size of the cache in the **Pages Cache Size** area. The value you set depends on the number and size of your website’s static pages, as well as the resources that the host machines has at its disposal.
-> While using your web database, you can check the performance of the cache by using the `WEB GET STATISTICS` command. If, for example, you notice that the cache’s rate of use is close to 100%, you may want to consider increasing the size that has been allocated to it. The [/4DSTATS] and [/4DHTMLSTATS] URLs allow you to also obtain information about the cache’s state.
-
-
-## Certificate folder
-
-| Can be set with  | Nom                 | Commentaires                                                                                                                                                     |
-| ---------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| webServer object | `certificateFolder` | La propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()`. |
-
-Folder where the TLS certificate files for the web server are located.
-
-By default with 4D or 4D Server, these files must be placed next to the [project folder](Project/architecture.md#project-folder).
-
-With 4D in remote mode, these files must be located in the local resources folder of the database on the remote machine (see `4D Client Database Folder` paragraph of the `Get 4D folder` command). Vous devez copier ces filles manuellement sur la machine distante.
-
-> TLS certificate files are *key.pem* (document containing the private encryption key) and *cert.pem* (document containing the certificate).
+Vous pouvez modifier la taille du cache dans la zone **Taille du cache des pages**. La valeur à définir dépend du nombre et de la taille des pages statiques de votre site Web, ainsi que des ressources dont dispose la machine hôte.
+> Lorsque vous utilisez votre base de données web, vous pouvez vérifier les performances du cache en utilisant la commande `WEB LIRE STATISTIQUES`. Si, par exemple, vous remarquez que le taux d'utilisation du cache est proche de 100 %, vous pouvez envisager d'augmenter la taille qui lui a été allouée. Les URL [/4DSTATS] et [/4DHTMLSTATS] vous permettent également d'obtenir des informations sur l'état du cache.
 
 
-## Character Set
+## Dossier de certificat
 
-| Can be set with          | Nom                            | Commentaires                   |
-| ------------------------ | ------------------------------ | ------------------------------ |
-| webServer object         | `characterSet`                 | MIBEnum integer or Name string |
-| `WEB SET OPTION`         | `Web character set`            | MIBEnum integer or Name string |
-| Fenêtre de configuration | Options (II) page/Standard Set | Pop up menu                    |
+| Peut être configuré via | Nom                 | Commentaires                                                                                                                                                     |
+| ----------------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| objet webServer         | `certificateFolder` | La propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()`. |
 
-Defines the set of characters to be used by the 4D web server. La valeur par défaut dépend de la langue du système d'exploitation.
-> This setting is also used for generating Quick Reports in HTML format .
+Dossier qui contient les fichiers de certificat TLS pour le serveur web.
+
+Par défaut, avec 4D ou 4D Server, ces fichiers doivent être placés à côté du [dossier du projet](Project/architecture.md#project-folder).
+
+Avec 4D à distance, ces fichiers doivent être placés dans le dossier des ressources locales de la base de données sur la machine distante (voir le paragraphe `Dossier base 4D Client` de la commande `Dossier 4D`). Vous devez copier ces fichiers manuellement sur la machine distante.
+
+> Les fichiers de certificat TLS sont *key.pem* (document contenant la clé de chiffrement privée) et *cert.pem* (document contenant le certificat).
 
 
-## Cipher list
+## Jeu de caractères
 
-| Can be set with  | Nom                                                | Commentaires |
-| ---------------- | -------------------------------------------------- | ------------ |
-| webServer object | [`cipherSuite`](API/webServerClass.md#ciphersuite) | Texte        |
+| Peut être configuré via  | Nom                            | Commentaires                                        |
+| ------------------------ | ------------------------------ | --------------------------------------------------- |
+| objet webServer          | `characterSet`                 | Entier long (MIBEnum) ou chaîne de caractères (nom) |
+| `WEB SET OPTION`         | `Web character set`            | Entier long (MIBEnum) ou chaîne de caractères (nom) |
+| Fenêtre de configuration | Page Options (II)/Jeu standard | Menu popup                                          |
 
-Cipher list used for the secure protocol; sets the priority of ciphering algorithms implemented by the web server. Peut être une séquence de chaînes séparées par des deux-points (par exemple "ECDHE-RSA-AES128 -..."). Voir la [page des chiffrements](https://www.openssl.org/docs/manmaster/man1/ciphers.html) sur le site OpenSSL.
+Définit le jeu de caractères à utiliser par le serveur web 4D. La valeur par défaut dépend de la langue du système d'exploitation.
+> Ce paramètre est également utilisé pour générer des États Rapides au format HTML.
 
-> The default cipher list used by 4D can be modified for the session using the `SET DATABASE PARAMETER` command, in which case the modification applies to the entire 4D application, including the web server, SQL server, client/server connections, as well as the HTTP client and all the 4D commands that make use of the secure protocol.
 
-## CORS Settings
+## Suite cryptographique
 
-| Can be set with          | Nom                                                     | Commentaires                                                                   |
-| ------------------------ | ------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| webServer object         | [`CORSSettings`](API/webServerClass.md#corssettings)    | Collection of objects (List of allowed hosts and methods for the CORS service) |
-| `WEB SET OPTION`         | `Web CORS settings`                                     | Collection of objects (List of allowed hosts and methods for the CORS service) |
-| Fenêtre de configuration | Options (II) page/Domain names and HTTP methods allowed | Click on the [+] button to add an allowed domain name and its method(s)        |
+| Peut être configuré via | Nom                                                | Commentaires |
+| ----------------------- | -------------------------------------------------- | ------------ |
+| objet webServer         | [`cipherSuite`](API/webServerClass.md#ciphersuite) | Texte        |
+
+Suite cryptographique utilisée pour le protocole sécurisé. Fixe la priorité des algorithmes de chiffrement implémentés par le serveur web. Peut être une séquence de chaînes séparées par des deux-points (par exemple "ECDHE-RSA-AES128 -..."). Voir la [page des chiffrements](https://www.openssl.org/docs/manmaster/man1/ciphers.html) sur le site OpenSSL.
+
+> La liste de chiffrement par défaut utilisée par 4D peut être modifiée pour la session à l'aide de la commande `FIXER PARAMETRE BASE `, auquel cas la modification s'applique à l'ensemble de l'application 4D, y compris le serveur web, le serveur SQL, les connexions client/serveur, ainsi que le client HTTP et toutes les commandes 4D qui font appel au protocole sécurisé.
+
+## Paramètres CORS
+
+| Peut être configuré via  | Nom                                                                           | Commentaires                                                                            |
+| ------------------------ | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| objet webServer          | [`CORSSettings`](API/webServerClass.md#corssettings)                          | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS)       |
+| `WEB SET OPTION`         | `Web CORS settings`                                                           | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS)       |
+| Fenêtre de configuration | Propriétés > Web > Options (II) > Noms de domaine et Méthodes HTTP autorisées | Cliquez sur le bouton [+] pour ajouter un nom de domaine autorisé et sa ou ses méthodes |
 
 List of allowed hosts and methods for the CORS service.
 
-#### Domain names (host property)
+#### Noms de domaine
 
-Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Plusieurs attributs de domaine peuvent être ajoutés pour créer une liste blanche. Several syntaxes are supported:
+Nom de domaine ou adresse IP à partir desquels les pages externes sont autorisées à envoyer des demandes de données au serveur via CORS. Plusieurs attributs de domaine peuvent être ajoutés pour créer une liste blanche. Plusieurs syntaxes sont supportées :
 
 - 192.168.5.17:8081
 - 192.168.5.17
@@ -96,9 +96,9 @@ Domain name or IP address from where external pages are allowed to send data req
 - \*
 
 
-#### HTTP methods allowed (methods property)
+#### Méthodes HTTP autorisées (propriété méthodes)
 
-Accepted HTTP method(s) for the corresponding CORS host. The following HTTP methods are supported:
+Méthodes HTTP acceptées pour l'hôte CORS correspondant. Les méthodes HTTP suivantes sont prises en charge :
 
 - GET
 - HEAD
@@ -109,76 +109,76 @@ Accepted HTTP method(s) for the corresponding CORS host. The following HTTP meth
 - TRACE
 - PATCH
 
-Séparez chaque méthode par un ";" (ex : "post;get"). If methods is empty, null, or undefined, all methods are enabled.
+Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, null ou non défini, toutes les méthodes sont activées.
 
 #### Voir également
 
-[Enable CORS Service](#enable-cors-service)
+[Activer CORS](#enable-cors-service)
 
 
 
 ## Debug log
 
-| Can be set with  | Nom             | Commentaires |
-| ---------------- | --------------- | ------------ |
-| webServer object | `debugLog`      | number       |
-| `WEB SET OPTION` | `Web debug log` | number       |
+| Peut être configuré via | Nom             | Commentaires |
+| ----------------------- | --------------- | ------------ |
+| objet webServer         | `debugLog`      | Entier long  |
+| `WEB SET OPTION`        | `Web debug log` | Entier long  |
 
-Status of the HTTP request log file of the web server (HTTPDebugLog_nn.txt, stored in the "Logs" folder of the application -- nn is the file number). It is useful for debugging issues related to the Web server. It records each request and each response in raw mode. Whole requests, including headers, are logged; optionally, body parts can be logged as well.
+État du fichier journal des requêtes HTTP du serveur web (HTTPDebugLog_nn.txt, stocké dans le dossier "Logs" de l'application -- nn est le numéro du fichier). Il est utile pour déboguer les problèmes liés au serveur Web. Il enregistre chaque demande et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parts du body peuvent optionellement être enregistrées.
 
-| Valeur | Constant    | Description                    |
-| ------ | ----------- | ------------------------------ |
-| 0      | wdl disable | Web HTTP debug log is disabled |
+| Valeur | Constante   | Description                             |
+| ------ | ----------- | --------------------------------------- |
+| 0      | wdl disable | Les debug logs Web HTTP sont désactivés |
 
 |1|wdl enable without body|Web HTTP debug log is enabled without body parts (body size is provided in this case)| |3|wdl enable with response body|Web HTTP debug log is enabled with body part in response only| |5|wdl enable with request body|Web HTTP debug log is enabled with body part in request only| |7|wdl enable with all body parts|Web HTTP debug log is enabled with body parts in response and request|
 
 
-## Defaut Home page
+## Page d'accueil par défaut
 
-| Can be set with          | Nom                                                        | Commentaires                          |
-| ------------------------ | ---------------------------------------------------------- | ------------------------------------- |
-| webServer object         | [`defaultHomepage`](API/webServerClass.md#defaulthomepage) | Texte                                 |
-| `WEB SET HOME PAGE`      |                                                            | Can be different for each web process |
-| Fenêtre de configuration | Configuration page/Default Home Page                       |                                       |
+| Peut être configuré via  | Nom                                                        | Commentaires                                 |
+| ------------------------ | ---------------------------------------------------------- | -------------------------------------------- |
+| objet webServer          | [`defaultHomepage`](API/webServerClass.md#defaulthomepage) | Texte                                        |
+| `WEB SET HOME PAGE`      |                                                            | Peut être différente pour chaque web process |
+| Fenêtre de configuration | Configuration > Page d'accueil par défaut                  |                                              |
 
-Designate a default home page for the web server. This page can be static or [semi-dynamic].
+Désigne une page comme page d'accueil par défaut pour le serveur web. Cette page peut être statique ou [semi-dynamic].
 
-By default, when the web server is launched for the first time, 4D creates a home page named "index.html" and puts it in the HTML root folder. If you do not modify this configuration, any browser connecting to the web server will obtain the following page:
+Par défaut, quand le serveur web est lancé pour la première fois, 4D crée une page d'accueil appelée "index.html" et la place dans le dossier HTML racine. Si vous ne modifiez pas cette configuration, n'importe quel browser se connectant au serveur web obtiendra cette page :
 
 ![](assets/en/WebServer/defaultHomePage.png)
 
-You can designate another default home page by entering its pathname.
+Vous pouvez désigner une autre page comme page d'accueil par défaut en entrant son chemin d'accès :
 
-- The path is relative to the [default HTML root folder](#root-folder).
-- The path is expressed with the POSIX syntax (folders are separated by a slash ("/"))
-- The path must neither start not end with a slash.
+- Le chemin est relatif au [dossier HTML racine ](#root-folder),
+- Le chemin ext exprimé avec la syntaxe POSIX (les dossiers sont séparés par un slash (/)),
+- Le chemin ne doit pas commencer ou finir par un slash.
 
-For example, if you want the default home page to be "MyHome.htm", and it is located in the "Web" folder (itself located in the default HTML root folder), use "Web/MyHome.htm".
+Par exemple, pour que la page d'accueil par défaut soit "MyHome.htm", si elle se trouve dans le dossier "Web" (lui-même situé dans le dossier racine HTML par défaut), utilisez "Web/MyHome.htm".
 
-If you do not specify any default home page, the `On Web Connection` database method is called. It is up to you to process the request procedurally.
+Si vous ne spécifiez aucune page d'accueil par défaut, la méthode base `On Web Connection` est appelée. Il vous appartient de traiter la demande de manière procédurale.
 
-## Enable CORS Service
+## Activer CORS
 
-| Can be set with          | Nom                                                | Commentaires                                        |
+| Peut être configuré via  | Nom                                                | Commentaires                                        |
 | ------------------------ | -------------------------------------------------- | --------------------------------------------------- |
-| webServer object         | [`CORSEnabled`](API/webServerClass.md#corsenabled) | Boolean, true to enable the CORS (false by default) |
-| `WEB SET OPTION`         | `Web CORS enabled`                                 | 0 (disabled, default) or 1 (enabled)                |
-| Fenêtre de configuration | Options (II) page/Enable CORS                      | Unchecked by default                                |
+| objet webServer          | [`CORSEnabled`](API/webServerClass.md#corsenabled) | Booléen. True pour activer CORS (False par défaut). |
+| `WEB SET OPTION`         | `Web CORS enabled`                                 | 0 (désactivé, par défaut) ou 1 (activé)             |
+| Fenêtre de configuration | Page Options (II) > Activer CORS                   | Décoché par défaut                                  |
 
-The 4D web server implements cross-origin resource sharing (CORS) to allow specific Web pages served from another domain to access the current Web application's resources via XHR calls, e.g., using REST. Pour des raisons de sécurité, les requêtes "cross-domain" sont interdites par défaut au niveau du navigateur. When enabled, XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see CORS Settings below). In this case, if a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
+Le serveur Web 4D implémente le cross-origin resource sharing (CORS) pour permettre à des pages Web spécifiques servies à partir d'un autre domaine d'accéder aux ressources de l'application Web actuelle via des appels XHR, par exemple via REST. Pour des raisons de sécurité, les requêtes "cross-domain" sont interdites par défaut au niveau du navigateur. Lorsqu'elle l'option est activée, les appels XHR (par exemple, les requêtes REST) provenant de pages Web situées en dehors du domaine peuvent être autorisés dans votre application (vous devez définir la liste des adresses autorisées dans la liste de domaines CORS, voir Paramètres CORS ci-dessous). Dans ce cas, si un domaine ou une méthode non autorisée envoie une demande cross-site, celle-ci est rejetée et une erreur "403 - forbidden" est renvoyée.
 
-When disabled (default), all cross site requests sent with CORS are ignored.
+Lorsqu'elle est désactivée (par défaut), toutes les demandes intersites envoyées avec CORS sont ignorées.
 
 Pour plus d'informations sur CORS, veuillez consulter la [page de partage de ressources cross-origin](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) sur Wikipedia.
 
 #### Voir également
-[CORS Settings](#cors-settings)
+[Paramètres CORS](#cors-settings)
 
 ## Enable HTTP
 
-| Can be set with          | Nom                                                | Commentaires |
+| Peut être configuré via  | Nom                                                | Commentaires |
 | ------------------------ | -------------------------------------------------- | ------------ |
-| webServer object         | [`HTTPEnabled`](API/webServerClass.md#httpenabled) | boolean      |
+| objet webServer          | [`HTTPEnabled`](API/webServerClass.md#httpenabled) | boolean      |
 | `WEB SET OPTION`         | `Web HTTP enabled`                                 |              |
 | Fenêtre de configuration | Configuration page/Enable HTTP                     |              |
 
@@ -187,9 +187,9 @@ Indicates whether or not the web server will accept non-secure connections.
 
 ## Enable HTTPS
 
-| Can be set with          | Nom                                                  | Commentaires |
+| Peut être configuré via  | Nom                                                  | Commentaires |
 | ------------------------ | ---------------------------------------------------- | ------------ |
-| webServer object         | [`HTTPSEnabled`](API/webServerClass.md#httpsenabled) | boolean      |
+| objet webServer          | [`HTTPSEnabled`](API/webServerClass.md#httpsenabled) | boolean      |
 | `WEB SET OPTION`         | `Web HTTPS enabled`                                  |              |
 | Fenêtre de configuration | Configuration page/Enable HTTPS                      |              |
 
@@ -198,10 +198,10 @@ Status for communication over HTTPS. This option is described in [this section](
 
 ## Enable HSTS
 
-| Can be set with  | Nom                                                | Commentaires                                    |
-| ---------------- | -------------------------------------------------- | ----------------------------------------------- |
-| webServer object | [`HSTSEnabled`](API/webServerClass.md#hstsenabled) | Boolean, true to enable HSTS (default is false) |
-| `WEB SET OPTION` | `Web HSTS enabled`                                 | 0 (disabled, default) or 1 (enabled)            |
+| Peut être configuré via | Nom                                                | Commentaires                                    |
+| ----------------------- | -------------------------------------------------- | ----------------------------------------------- |
+| objet webServer         | [`HSTSEnabled`](API/webServerClass.md#hstsenabled) | Boolean, true to enable HSTS (default is false) |
+| `WEB SET OPTION`        | `Web HSTS enabled`                                 | 0 (désactivé, par défaut) ou 1 (activé)         |
 
 État de HTTP Strict Transport Security (HSTS).
 
@@ -216,10 +216,10 @@ HSTS allows the 4D web server to declare that browsers should only interact with
 
 ## HSTS Max Age
 
-| Can be set with  | Nom                                              | Commentaires      |
-| ---------------- | ------------------------------------------------ | ----------------- |
-| webServer object | [`HSTSMaxAge`](API/webServerClass.md#hstsmaxage) | number in seconds |
-| `WEB SET OPTION` | `Web HSTS max age`                               | number in seconds |
+| Peut être configuré via | Nom                                              | Commentaires      |
+| ----------------------- | ------------------------------------------------ | ----------------- |
+| objet webServer         | [`HSTSMaxAge`](API/webServerClass.md#hstsmaxage) | number in seconds |
+| `WEB SET OPTION`        | `Web HSTS max age`                               | number in seconds |
 
 Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Ces informations sont stockées côté client pendant la durée spécifiée. Default value is 63072000 (2 years)
 
@@ -231,10 +231,10 @@ Specifies the maximum length of time (in seconds) that HSTS is active for each n
 
 ## HTTP Compression Level
 
-| Can be set with  | Nom                                                                  | Commentaires                   |
-| ---------------- | -------------------------------------------------------------------- | ------------------------------ |
-| webServer object | [`HTTPCompressionLevel`](API/webServerClass.md#httpcompressionlevel) |                                |
-| `WEB SET OPTION` | `Web HTTP compression level`                                         | Applies to Web and Web Service |
+| Peut être configuré via | Nom                                                                  | Commentaires                   |
+| ----------------------- | -------------------------------------------------------------------- | ------------------------------ |
+| objet webServer         | [`HTTPCompressionLevel`](API/webServerClass.md#httpcompressionlevel) |                                |
+| `WEB SET OPTION`        | `Web HTTP compression level`                                         | Applies to Web and Web Service |
 
 Compression level for all compressed HTTP exchanges for the 4D web server (client requests or server replies). This setting lets you optimize exchanges by either privileging speed of execution (less compression) or the amount of compression (less speed). The choice of a value depends on the size and type of data exchanged.
 
@@ -242,10 +242,10 @@ Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You c
 
 ## HTTP Compression Threshold
 
-| Can be set with  | Nom                                                                          | Commentaires |
-| ---------------- | ---------------------------------------------------------------------------- | ------------ |
-| webServer object | [`HTTPCompressionThreshold`](API/webServerClass.md#httpcompressionthreshold) |              |
-| `WEB SET OPTION` | `Web HTTP compression threshold`                                             |              |
+| Peut être configuré via | Nom                                                                          | Commentaires |
+| ----------------------- | ---------------------------------------------------------------------------- | ------------ |
+| objet webServer         | [`HTTPCompressionThreshold`](API/webServerClass.md#httpcompressionthreshold) |              |
+| `WEB SET OPTION`        | `Web HTTP compression threshold`                                             |              |
 
 In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. Ce paramètre est utile pour éviter de perdre du temps machine en compressant les petits échanges.
 
@@ -254,9 +254,9 @@ Pass the size expressed in bytes as value. By default, the compression threshold
 
 ## Port HTTP
 
-| Can be set with          | Nom                                          | Commentaires |
+| Peut être configuré via  | Nom                                          | Commentaires |
 | ------------------------ | -------------------------------------------- | ------------ |
-| webServer object         | [`HTTPPort`](API/webServerClass.md#httpport) | number       |
+| objet webServer          | [`HTTPPort`](API/webServerClass.md#httpport) | number       |
 | `WEB SET OPTION`         | `Web port ID`                                |              |
 | Fenêtre de configuration | Configuration page/HTTP Port                 |              |
 
@@ -272,10 +272,10 @@ If you specify 0, 4D will use the default HTTP port number 80.
 
 ## HTTP Trace
 
-| Can be set with  | Nom                                            | Commentaires                    |
-| ---------------- | ---------------------------------------------- | ------------------------------- |
-| webServer object | [`HTTPTrace`](API/webServerClass.md#httptrace) | Boolean, default = false        |
-| `WEB SET OPTION` | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
+| Peut être configuré via | Nom                                            | Commentaires                    |
+| ----------------------- | ---------------------------------------------- | ------------------------------- |
+| objet webServer         | [`HTTPTrace`](API/webServerClass.md#httptrace) | Boolean, default = false        |
+| `WEB SET OPTION`        | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
 
 HTTP TRACE method activation in the 4D web server. For security reasons, by default the 4D web server rejects HTTP TRACE requests with an error 405. If necessary, you can enable the HTTP TRACE method, in which case the 4D Web server replies to HTTP TRACE requests with the request line, header, and body.
 
@@ -284,9 +284,9 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 
 ## Port HTTPS
 
-| Can be set with          | Nom                                            | Commentaires |
+| Peut être configuré via  | Nom                                            | Commentaires |
 | ------------------------ | ---------------------------------------------- | ------------ |
-| webServer object         | [`HTTPSPort`](API/webServerClass.md#httpsport) | number       |
+| objet webServer          | [`HTTPSPort`](API/webServerClass.md#httpsport) | number       |
 | `WEB SET OPTION`         | `Web HTTPS port ID`                            |              |
 | Fenêtre de configuration | Configuration page/HTTPS Port                  |              |
 
@@ -295,9 +295,9 @@ Listening IP port number for HTTPS connections via TLS. By default, the value is
 
 ## Inactive Process Timeout
 
-| Can be set with          | Nom                                                                      | Commentaires |
+| Peut être configuré via  | Nom                                                                      | Commentaires |
 | ------------------------ | ------------------------------------------------------------------------ | ------------ |
-| webServer object         | [`inactiveProcessTimeout`](API/webServerClass.md#inactiveprocesstimeout) |              |
+| objet webServer          | [`inactiveProcessTimeout`](API/webServerClass.md#inactiveprocesstimeout) |              |
 | `WEB SET OPTION`         | `Web inactive process timeout`                                           |              |
 | Fenêtre de configuration | Options (I) page/Inactive Process Timeout                                | Slider       |
 
@@ -308,10 +308,10 @@ Default: 480 minutes (pass 0 to restore the default value)
 
 ## Inactive Session Timeout
 
-| Can be set with  | Nom                                                                      | Commentaires |
-| ---------------- | ------------------------------------------------------------------------ | ------------ |
-| webServer object | [`inactiveSessionTimeout`](API/webServerClass.md#inactivesessiontimeout) |              |
-| `WEB SET OPTION` | `Web inactive session timeout`                                           |              |
+| Peut être configuré via | Nom                                                                      | Commentaires |
+| ----------------------- | ------------------------------------------------------------------------ | ------------ |
+| objet webServer         | [`inactiveSessionTimeout`](API/webServerClass.md#inactivesessiontimeout) |              |
+| `WEB SET OPTION`        | `Web inactive session timeout`                                           |              |
 
 Durée de vie (en minutes) des sessions inactives (durée définie dans le cookie). À la fin de cette période, le cookie de session expire et n'est plus envoyé par le client HTTP.
 
@@ -320,11 +320,11 @@ Default: 480 minutes (pass 0 to restore the default value)
 
 ## IP Address to listen
 
-| Can be set with          | Nom                                                            | Commentaires |
+| Peut être configuré via  | Nom                                                            | Commentaires |
 | ------------------------ | -------------------------------------------------------------- | ------------ |
-| webServer object         | [`IPAddressToListen`](API/webServerClass.md#ipaddresstolisten) |              |
+| objet webServer          | [`IPAddressToListen`](API/webServerClass.md#ipaddresstolisten) |              |
 | `WEB SET OPTION`         | `Web IP address to listen`                                     |              |
-| Fenêtre de configuration | Configuration page/IP Address                                  | Pop up menu  |
+| Fenêtre de configuration | Configuration page/IP Address                                  | Menu popup   |
 
 IP address strings on which the 4D web server will receive HTTP requests (4D local and 4D Server).
 
@@ -353,9 +353,9 @@ To avoid this confusion, we recommend using the [ ] notation whenever you combin
 
 ## Keep Session
 
-| Can be set with          | Nom                                                | Commentaires |
+| Peut être configuré via  | Nom                                                | Commentaires |
 | ------------------------ | -------------------------------------------------- | ------------ |
-| webServer object         | [`keepSession`](API/webServerClass.md#keepsession) |              |
+| objet webServer          | [`keepSession`](API/webServerClass.md#keepsession) |              |
 | `WEB SET OPTION`         | `Web keep session`                                 |              |
 | Fenêtre de configuration | Options (I) page/Automatic Session Management      |              |
 
@@ -368,11 +368,11 @@ Default is true (enabled).
 
 ## Log Recording
 
-| Can be set with          | Nom                                                  | Commentaires |
+| Peut être configuré via  | Nom                                                  | Commentaires |
 | ------------------------ | ---------------------------------------------------- | ------------ |
-| webServer object         | [`logRecording`](API/webServerClass.md#logrecording) |              |
+| objet webServer          | [`logRecording`](API/webServerClass.md#logrecording) |              |
 | `WEB SET OPTION`         | `Web log recording`                                  |              |
-| Fenêtre de configuration | Log (type) page/Log Format                           | Pop up menu  |
+| Fenêtre de configuration | Log (type) page/Log Format                           | Menu popup   |
 
 Starts or stops the recording of requests received by the 4D web server in the *logweb.txt* file and sets its format. By default, requests are not recorded (0/No Log File). When enabled, the *logweb.txt* file is automatically placed in the Logs folder.
 
@@ -391,9 +391,9 @@ This setting allows you to select the format of this file. Available values are:
 
 ## Maximum Concurrent Web Processes
 
-| Can be set with          | Nom                                                                      | Commentaires |
+| Peut être configuré via  | Nom                                                                      | Commentaires |
 | ------------------------ | ------------------------------------------------------------------------ | ------------ |
-| webServer object         | [`maxConcurrentProcesses`](API/webServerClass.md#maxconcurrentprocesses) |              |
+| objet webServer          | [`maxConcurrentProcesses`](API/webServerClass.md#maxconcurrentprocesses) |              |
 | `WEB SET OPTION`         | `Web max concurrent processes`                                           |              |
 | Fenêtre de configuration | Options (I) page/Maximum Concurrent Web Processes                        |              |
 
@@ -404,10 +404,10 @@ By default, the value is 100. You can set the number anywhere between 10 and 320
 
 ## Maximum Request Size
 
-| Can be set with  | Nom                                                      | Commentaires |
-| ---------------- | -------------------------------------------------------- | ------------ |
-| webServer object | [`maxRequestSize`](API/webServerClass.md#maxrequestsize) |              |
-| `WEB SET OPTION` | `Web maximum requests size`                              |              |
+| Peut être configuré via | Nom                                                      | Commentaires |
+| ----------------------- | -------------------------------------------------------- | ------------ |
+| objet webServer         | [`maxRequestSize`](API/webServerClass.md#maxrequestsize) |              |
+| `WEB SET OPTION`        | `Web maximum requests size`                              |              |
 
 Maximum size (in bytes) of incoming HTTP requests (POST) that the web server is authorized to process. By default, the value is 2 000 000, i.e. a little less than 2 MB. Passing the maximum value (2 147 483 648) means that, in practice, no limit is set.
 
@@ -418,10 +418,10 @@ Possible values: 500 000 to 2 147 483 648.
 
 ## Maximum Session Number
 
-| Can be set with  | Nom                                                | Commentaires |
-| ---------------- | -------------------------------------------------- | ------------ |
-| webServer object | [`maxSessions`](API/webServerClass.md#maxsessions) |              |
-| `WEB SET OPTION` | `Web max sessions`                                 |              |
+| Peut être configuré via | Nom                                                | Commentaires |
+| ----------------------- | -------------------------------------------------- | ------------ |
+| objet webServer         | [`maxSessions`](API/webServerClass.md#maxsessions) |              |
+| `WEB SET OPTION`        | `Web max sessions`                                 |              |
 
 Nombre maximum de sessions simultanées. When you reach the limit set, the oldest session is closed (and `On Web Close Process` database method is called) if the Web server needs to create a new one. The number of simultaneous sessions cannot exceed the [maximum number of Web processes](#maximum-concurrent-web-processes) (100 by default).
 
@@ -430,9 +430,9 @@ Default value: 100 (pass 0 to restore the default value).
 
 ## Minimum TLS Version
 
-| Can be set with  | Nom                                                    | Commentaires |
-| ---------------- | ------------------------------------------------------ | ------------ |
-| webServer object | [`minTLSVersion`](API/webServerClass.md#mintlsversion) | number       |
+| Peut être configuré via | Nom                                                    | Commentaires |
+| ----------------------- | ------------------------------------------------------ | ------------ |
+| objet webServer         | [`minTLSVersion`](API/webServerClass.md#mintlsversion) | number       |
 
 Version TLS minimale acceptée pour les connexions. Les tentatives de connexion de clients prenant en charge uniquement les versions inférieures au minimum seront rejetées.
 
@@ -450,27 +450,27 @@ En cas de modification, le serveur doit être redémarré pour utiliser la nouve
 
 ## Nom
 
-| Can be set with  | Nom                                  | Commentaires |
-| ---------------- | ------------------------------------ | ------------ |
-| webServer object | [`name`](API/webServerClass.md#name) |              |
+| Peut être configuré via | Nom                                  | Commentaires |
+| ----------------------- | ------------------------------------ | ------------ |
+| objet webServer         | [`name`](API/webServerClass.md#name) |              |
 
 
 Name of the web server application. Useful when component web servers are started.
 
 ## OpenSSL Version
 
-| Can be set with  | Nom                                                      | Commentaires |
-| ---------------- | -------------------------------------------------------- | ------------ |
-| webServer object | [`openSSLVersion`](API/webServerClass.md#opensslversion) | Read-only    |
+| Peut être configuré via | Nom                                                      | Commentaires |
+| ----------------------- | -------------------------------------------------------- | ------------ |
+| objet webServer         | [`openSSLVersion`](API/webServerClass.md#opensslversion) | Read-only    |
 
 Version of the OpenSSL library used.
 
 
 ## Perfect Forward Secrecy
 
-| Can be set with  | Nom                                                                    | Commentaires       |
-| ---------------- | ---------------------------------------------------------------------- | ------------------ |
-| webServer object | [`perfectForwardSecrecy`](API/webServerClass.md#perfectforwardsecrecy) | Boolean, read-only |
+| Peut être configuré via | Nom                                                                    | Commentaires       |
+| ----------------------- | ---------------------------------------------------------------------- | ------------------ |
+| objet webServer         | [`perfectForwardSecrecy`](API/webServerClass.md#perfectforwardsecrecy) | Boolean, read-only |
 
 True if PFS is available on the web server (see [TLS](Admin/tls.md#perfect-forward-secrecy-pfs) section).
 
@@ -512,9 +512,9 @@ In this case, robots are not allowed to access the entire site.
 
 ## Root Folder
 
-| Can be set with          | Nom                                              | Commentaires                                                                                                                                                 |
+| Peut être configuré via  | Nom                                              | Commentaires                                                                                                                                                 |
 | ------------------------ | ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| webServer object         | [`rootFolder`](API/webServerClass.md#rootfolder) | Propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()` |
+| objet webServer          | [`rootFolder`](API/webServerClass.md#rootfolder) | Propriété Text, mais il peut s'agir d'un objet [`4D.Folder`](API/folderClass.md) lorsqu'il est utilisé avec le paramètre *settings* de la fonction `start()` |
 | `WEB SET ROOT FOLDER`    |                                                  |                                                                                                                                                              |
 | Fenêtre de configuration | Configuration page/Default HTML Root             |                                                                                                                                                              |
 
@@ -529,7 +529,7 @@ By default, 4D defines a HTML Root folder named **WebFolder**. If it does not al
 You can designate another default HTML root folder by entering its pathname.
 
 - The path is relative to the [Project folder](Project/architecture.md#project-folder) (4D local and 4D Server) or to the folder containing the 4D application or software package (4D in remote mode).
-- The path is expressed with the POSIX syntax (folders are separated by a slash ("/"))
+- Le chemin ext exprimé avec la syntaxe POSIX (les dossiers sont séparés par un slash (/)),
 - To "go up" one level in the folder hierarchy, enter “..” (two periods) before the folder name
 - The path must not start with a slash (except if you want the HTML root folder to be the Project or 4D remote folder, but for access to the folders above to be forbidden, in which case you can pass "/" as the root folder).
 
@@ -541,30 +541,30 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 
 ## Session Cookie Domain
 
-| Can be set with  | Nom                                                                | Commentaires |
-| ---------------- | ------------------------------------------------------------------ | ------------ |
-| webServer object | [`sessionCookieDomain`](API/webServerClass.md#sessioncookiedomain) |              |
-| `WEB SET OPTION` | `Web session cookie domain`                                        |              |
+| Peut être configuré via | Nom                                                                | Commentaires |
+| ----------------------- | ------------------------------------------------------------------ | ------------ |
+| objet webServer         | [`sessionCookieDomain`](API/webServerClass.md#sessioncookiedomain) |              |
+| `WEB SET OPTION`        | `Web session cookie domain`                                        |              |
 
 Value of the "domain" field of the session cookie. Useful for controlling the scope of the session cookies. Par exemple, si vous définissez la valeur "/*.4d.fr" pour ce sélecteur, le client enverra un cookie uniquement lorsque la requête est adressée au domaine ".4d.fr", ce qui exclut les serveurs hébergeant des données statiques externes.
 
 
 ## Session Cookie Name
 
-| Can be set with  | Nom                                                            | Commentaires |
-| ---------------- | -------------------------------------------------------------- | ------------ |
-| webServer object | [`sessionCookieName`](API/webServerClass.md#sessioncookiename) |              |
-| `WEB SET OPTION` | `Web session cookie name`                                      |              |
+| Peut être configuré via | Nom                                                            | Commentaires |
+| ----------------------- | -------------------------------------------------------------- | ------------ |
+| objet webServer         | [`sessionCookieName`](API/webServerClass.md#sessioncookiename) |              |
+| `WEB SET OPTION`        | `Web session cookie name`                                      |              |
 
 Name of the cookie used for saving the session ID. Default = "4DSID".
 
 
 ## Session Cookie Path
 
-| Can be set with  | Nom                                                            | Commentaires |
-| ---------------- | -------------------------------------------------------------- | ------------ |
-| webServer object | [`sessionCookiePath`](API/webServerClass.md#sessioncookiepath) |              |
-| `WEB SET OPTION` | `Web session cookie path`                                      |              |
+| Peut être configuré via | Nom                                                            | Commentaires |
+| ----------------------- | -------------------------------------------------------------- | ------------ |
+| objet webServer         | [`sessionCookiePath`](API/webServerClass.md#sessioncookiepath) |              |
+| `WEB SET OPTION`        | `Web session cookie path`                                      |              |
 
 Champ "path" du cookie de session. Utilisé pour contrôler la portée des cookies de session. Par exemple, si vous définissez la valeur "/4DACTION" pour ce sélecteur, le client enverra un cookie uniquement pour les requêtes dynamiques commençant par 4DACTION, et non pour les images, les pages statiques, etc.
 
