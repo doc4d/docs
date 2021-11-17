@@ -9,7 +9,7 @@ In multi-user applications, 4D provides users with certain standard access privi
 
 ## Users and groups in projects
 
-In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. Le tableau suivant liste les principales fonctionnalités des utilisateurs et groupes ainsi que leur disponibilité :
+Dans les applications projet (fichiers .4DProject ou .4dz), les utilisateurs et groupes 4D peuvent être configurés à la fois en monoposte ou en multi-utilisateurs. However, **access control** is only effective with 4D Server. Le tableau suivant liste les principales fonctionnalités des utilisateurs et groupes ainsi que leur disponibilité :
 
 |                                                                                 | 4D (monoposte)                                          | 4D Server |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------- | --------- |

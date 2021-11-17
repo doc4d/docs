@@ -3766,7 +3766,7 @@ VP SET DEFAULT STYLE("myDoc";$style)
 | Parámetros    | Tipo    |    | Descripción                             |
 | ------------- | ------- | -- | --------------------------------------- |
 | rangeObj      | Objeto  | -> | Range object                            |
-| field         | Puntero | -> | Reference to field in virtual structure |
+| campo         | Puntero | -> | Reference to field in virtual structure |
 | formatPattern | Texto   | -> | Format of field                         |
 
 <!-- END REF -->  
