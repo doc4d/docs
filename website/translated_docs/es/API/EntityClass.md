@@ -1086,42 +1086,42 @@ Actualización de una entidad con la opción `dk auto merge`:
 | options      | Integer    | -> | `dk with primary key`: añade la propiedad \_KEY;<br>`dk with stamp`: añade la propiedad \_STAMP |
 | Resultado    | Object     | <- | Objeto creado a partir de la entidad                                                                      |<!-- END REF -->#### Descripción
 
-La función `.toObject()`<!-- REF #EntityClass.toObject().Summary -->devuelve un objeto que ha sido construido a partir de la entidad<!-- END REF -->. Property names in the object match attribute names of the entity.
+La función `.toObject()`<!-- REF #EntityClass.toObject().Summary -->devuelve un objeto que ha sido construido a partir de la entidad<!-- END REF -->. Los nombres de las propiedades en el objeto coinciden con los nombres de los atributos de la entidad.
 
-If no filter is specified, or if the *filterString* parameter contains an empty string or "*", the returned object will contain:
+Si no se especifica ningún filtro, o si el parámetro *filterString* contiene una cadena vacía o "*", el objeto devuelto contendrá:
 
 *   all storage entity attributes
 *   attributes of the `relatedEntity` [kind](DataClassAttributeClass.md#kind): you get a property with the same name as the related entity (name of the many-to-one link). Attribute is extracted with the simple form.
 *   attributes of the `relatedEntities` [kind](DataClassAttributeClass.md#kind): attribute is not returned.
 
 
-In the first parameter, you pass the entity attribute(s) to extract. Puede pasar:
+En el primer parámetro, se pasa el atributo o atributos de la entidad a extraer. Puede pasar:
 
 *   *filterString*: a string with property paths separated with commas: "propertyPath1, propertyPath2, ...", or
 *   *filterCol*: a collection of strings: \["propertyPath1","propertyPath2";...]
 
-If a filter is specified for attributes of the relatedEntity [kind](DataClassAttributeClass.md#kind):
+Si se especifica un filtro para los atributos de la relatedEntity [kind](DataClassAttributeClass.md#kind):
 
 *   propertyPath = "relatedEntity" -> it is extracted with simple form: an object with property \_\_KEY (primary key).
 *   propertyPath = "relatedEntity.*" -> all the properties are extracted
 *   propertyPath = "relatedEntity.propertyName1; relatedEntity.propertyName2; ..." -> only those properties are extracted
 
-If a filter is specified for attributes of the relatedEntities [kind](DataClassAttributeClass.md#kind):
+Si se especifica un filtro para los atributos de las relatedEntities [kind](DataClassAttributeClass.md#kind):
 
 *   propertyPath = "relatedEntities.*" -> all the properties are extracted
 *   propertyPath = "relatedEntities.propertyName1; relatedEntities.propertyName2; ..." -> only those properties are extracted
 
-In the *options* parameter, you can pass the `dk with primary key` and/or`dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
+En el parámetro *options* se puede pasar el selector `ddk with primary key` y/o`dk with stamp` para añadir las llaves primarias de la entidad y/o los sellos en los objetos extraídos.
 
 
 #### Ejemplo 1
 
-The following structure will be used throughout all examples of this section:
+En todos los ejemplos de esta sección se utilizará la siguiente estructura:
 
 ![](assets/en/API/dataclassAttribute4.png)
 
 
-Without filter parameter:
+Sin parámetro de filtro:
 
 ```4d
 employeeObject:=employeeSelected.toObject()
@@ -1154,7 +1154,7 @@ Devuelve:
 
 #### Ejemplo 2
 
-Extracting the primary key and the stamp:
+Extraer la llave primaria y el sello:
 
 ```4d
 employeeObject:=employeeSelected.toObject("";dk with primary key+dk with stamp)
@@ -1187,7 +1187,7 @@ Devuelve:
 
 #### Ejemplo 3
 
-Expanding all the properties of `relatedEntities`:
+Desplegando todas las propiedades de `relatedEntities`:
 
 ```4d
 employeeObject:=employeeSelected.toObject("directReports.*")
@@ -1283,7 +1283,7 @@ Devuelve:
 
 #### Ejemplo 5
 
-Extracting a `relatedEntity` with simple form:
+Obtenga una `relatedEntity` en un formulario simple:
 
 ```4d
  $coll:=New collection("firstName";"employer")
@@ -1350,19 +1350,19 @@ Devuelve:
 | ------- | -------------- |
 | v17     | Añadidos       |
 
-</details><!-- REF #EntityClass.touched().Syntax -->**.touched()** : Boolean<!-- END REF --><!-- REF #EntityClass.touched().Params -->| Parámetros | Tipo    |    | Descripción                                                                           |
-| ---------- | ------- |:--:| ------------------------------------------------------------------------------------- |
-| Resultado  | Boolean | <- | True if at least one entity attribute has been modified and not yet saved, else False |<!-- END REF -->#### Descripción
+</details><!-- REF #EntityClass.touched().Syntax -->**.touched()** : Boolean<!-- END REF --><!-- REF #EntityClass.touched().Params -->| Parámetros | Tipo    |    | Descripción                                                                                       |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------------------------- |
+| Resultado  | Boolean | <- | True si se ha modificado al menos un atributo de la entidad y aún no se ha guardado, si no, False |<!-- END REF -->#### Descripción
 
-The `.touched()` function<!-- REF #EntityClass.touched().Summary -->tests whether or not an entity attribute has been modified since the entity was loaded into memory or saved<!-- END REF -->.
+La función `.touched()`<!-- REF #EntityClass.touched().Summary -->comprueba si un atributo de la entidad ha sido modificado o no desde que la entidad fue cargada en memoria o guardada<!-- END REF -->.
 
-If an attribute has been modified or calculated, the function returns True, else it returns False. You can use this function to determine if you need to save the entity.
+Si un atributo ha sido modificado o calculado, la función devuelve True, en caso contrario devuelve False. Puede utilizar esta función para determinar si necesita guardar la entidad.
 
-This function returns False for a new entity that has just been created (with [`.new( )`](DataClassClass.md#new)). Note however that if you use a function which calculates an attribute of the entity, the `.touched()` function will then return True. For example, if you call [`.getKey()`](#getkey) to calculate the primary key, `.touched()` returns True.
+Esta función devuelve False para una nueva entidad que acaba de ser creada (con [`.new( )`](DataClassClass.md#new)). Tenga en cuenta, sin embargo, que si utiliza una función que calcula un atributo de la entidad, la función `.touched()` devolverá entonces True. Por ejemplo, si se llama a [`.getKey()`](#getkey) para calcular la llave primaria, `.touched()` devuelve True.
 
 #### Ejemplo
 
-In this example, we check to see if it is necessary to save the entity:
+En este ejemplo, comprobamos si es necesario guardar la entidad:
 
 ```4d
  var $emp : cs.EmployeeEntity
@@ -1379,17 +1379,17 @@ In this example, we check to see if it is necessary to save the entity:
 | ------- | -------------- |
 | v17     | Añadidos       |
 
-</details><!-- REF #EntityClass.touchedAttributes().Syntax -->**.touchedAttributes()** : Collection<!-- END REF --><!-- REF #EntityClass.touchedAttributes().Params -->| Parámetros | Tipo       |    | Descripción                                      |
-| ---------- | ---------- |:--:| ------------------------------------------------ |
-| Resultado  | Collection | <- | Names of touched attributes, or empty collection |<!-- END REF -->#### Descripción
+</details><!-- REF #EntityClass.touchedAttributes().Syntax -->**.touchedAttributes()** : Collection<!-- END REF --><!-- REF #EntityClass.touchedAttributes().Params -->| Parámetros | Tipo       |    | Descripción                                     |
+| ---------- | ---------- |:--:| ----------------------------------------------- |
+| Resultado  | Collection | <- | Nombres de atributos tocados, o colección vacía |<!-- END REF -->#### Descripción
 
-The `.touchedAttributes()` function<!-- REF #EntityClass.touchedAttributes().Summary -->returns the names of the attributes that have been modified since the entity was loaded into memory<!-- END REF -->.
+La función `.touchedAttributes()`<!-- REF #EntityClass.touchedAttributes().Summary -->devuelve los nombres de los atributos que han sido modificados desde que la entidad fue cargada en memoria<!-- END REF -->.
 
-This applies for attributes of the [kind](DataClassAttributeClass.md#kind) `storage` or `relatedEntity`.
+Esto se aplica a los atributos [kind](DataClassAttributeClass.md#kind) `storage` o `relatedEntity`.
 
-In the case of a related entity having been touched (i.e., the foreign key), the name of the related entity and its primary key's name are returned.
+En el caso de que se haya tocado una entidad relacionada (es decir, la llave externa), se devuelve el nombre de la entidad relacionada y el nombre de su llave primaria.
 
-If no entity attribute has been touched, the method returns an empty collection.
+Si no se ha tocado ningún atributo de entidad, el método devuelve una colección vacía.
 
 #### Ejemplo 1
 
@@ -1444,11 +1444,11 @@ En este caso:
 | ---------- | ------ |:--:| ---------------- |
 | Resultado  | Object | <- | Objeto de estado |<!-- END REF -->#### Descripción
 
-The `.unlock()` function<!-- REF #EntityClass.unlock().Summary -->removes the pessimistic lock on the record matching the entity<!-- END REF -->in the datastore and table related to its dataclass.
+La función `.unlock()`<!-- REF #EntityClass.unlock().Summary -->elimina el bloqueo pesimista del registro que coincide con la entidad<!-- END REF -->en el datastore y la tabla relacionada con su dataclass.
 
 > For more information, please refer to [Entity locking](ORDA/entities.md#entity-locking) section.
 
-A record is automatically unlocked when it is no longer referenced by any entities in the locking process (for example: if the lock is put only on one local reference of an entity, the entity and thus the record is unlocked when the process ends).
+Un registro se desbloquea automáticamente cuando ya no es referenciado por ninguna entidad en el proceso de bloqueo (por ejemplo: si el bloqueo se pone sólo en una referencia local de una entidad, la entidad y, por tanto, el registro se desbloquea cuando el proceso termina).
 > When a record is locked, it must be unlocked from the locking process and on the entity reference which put the lock. Por ejemplo:
 
 ```4d
@@ -1463,9 +1463,9 @@ A record is automatically unlocked when it is no longer referenced by any entiti
 
 El objeto devuelto por <`.unlock()<` contiene la siguiente propiedad:
 
-| Propiedad | Tipo    | Descripción                                                                                                                                                                                                     |
-| --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success   | Boolean | True si la acción de desbloquear tiene éxito, False en caso contrario. If the unlock is done on a dropped entity, on a non locked record, or on a record locked by another process or entity, success is False. |
+| Propiedad | Tipo    | Descripción                                                                                                                                                                                                                         |
+| --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success   | Boolean | True si la acción de desbloquear tiene éxito, False en caso contrario. Si el desbloqueo se realiza en una entidad abandonada, en un registro no bloqueado o en un registro bloqueado por otro proceso o entidad, el éxito es False. |
 
 #### Ejemplo
 
