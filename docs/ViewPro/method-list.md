@@ -2244,7 +2244,7 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 
 <!-- REF #_method_.VP Get workbook options.Syntax -->**VP Get workbook options** ( *vpAreaName* : Text ) : Object<!-- END REF -->  
 
-<!-- REF #_method_.VP IMPORT DOCUMENT.Params -->
+<!-- REF #_method_.VP Get workbook options.Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
 |vpAreaName  |Text|->|4D View Pro area form object name|
