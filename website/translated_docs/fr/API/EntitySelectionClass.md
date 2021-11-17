@@ -756,29 +756,29 @@ Cette fonction accepte deux syntaxes.
 
 **.extract( attributePath : Text { ; option : Integer } ) : Collection**
 
-With this syntax, `.extract()` populates the returned collection with the *attributePath* values of the entity selection.
+Avec cette syntaxe, `.extract()` remplit la collection retournée avec des valeurs de *attributePath* de l'entity selection.
 
-By default, entities for which *attributePath* is *null* or undefined are ignored in the resulting collection. You can pass the `ck keep null` constant in the *option* parameter to include these values as **null** elements in the returned collection.
+Par défaut, les entités pour lesquelles *attributePath* est *null* ou indéfini sont ignorées dans la collection résultante. Vous pouvez passer la constante `ck keep null` dans le paramètre *option* pour intégrer ces valeurs comme des éléments **null** dans la collection retournée.
 
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" are extracted as a collection of entities (duplications are kept).
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" are extracted as a collection of entity selections.
+*   Les attributs dataclass avec [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" sont extraits sous forme de collection d'entités (les duplications sont conservées).
+*   Les attributs dataclass avec [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" sont extraits sous forme de collection d'entity selections.
 
 
 **.extract ( attributePath ; targetPath { ; ...attributePathN ; ... targetPathN}) : Collection**
 
-With this syntax, `.extract()` populates the returned collection with the *attributePath* properties. Each element of the returned collection is an object with *targetPath* properties filled with the corresponding *attributePath* properties. Null values are kept (*option* parameter is ignored with this syntax).
+Avec cette syntaxe, `.extract()` remplit la collection retournée avec les valeurs de *attributePath*. Chaque élément de la collection retournée est un objet avec les propriétés *targetPath* complétées par les propriétés *attributePath* correspondantes. Les valeurs null sont conservées (le paramètre *option* est ignoré avec cette syntaxe).
 
-If several *attributePath* are given, a *targetPath* must be given for each. Only valid pairs \[*attributePath*, *targetPath*] are extracted.
+Si plusieurs *attributePath* sont renseignés, un *targetPath* doit être fourni pour chacun. Seules les paires \[*attributePath*, *targetPath*] valides sont extraites.
 
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" are extracted as an entity.
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" are extracted as an entity selection.
+*   Les attributs dataclass avec [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" sont extraits sous forme d'entity.
+*   Les attributs dataclass avec [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" sont extraits sous forme d'entity selection.
 
-> Entities of a collection of entities accessed by \[ ] are not reloaded from the database.
+> Les entités d'une collection d'entités auxquelles on accède via [ ] ne sont pas rechargées depuis la base de données.
 
 
 #### Exemple
 
-Given the following table and relation:
+Considérons les tables et relations suivantes :
 
 ![](assets/en/API/entityselection.PNG)
 
@@ -786,33 +786,33 @@ Given the following table and relation:
  var $firstnames; $addresses; $mailing; $teachers : Collection
   //
   //
-  //$firstnames is a collection of Strings
+  //$firstnames est une collection de Chaînes
 
 
  $firstnames:=ds.Teachers.all().extract("firstname")
   //
-  //$addresses is a collection of entities related to dataclass Address
-  //Null values for address are extracted
+  //$addresses est une collection d'entités liées à la dataclass Address
+  //Les valeurs null d'Address sont extraites
  $addresses:=ds.Teachers.all().extract("address";ck keep null)
   //
   //
-  //$mailing is a collection of objects with properties "who" and "to"
-  //"who" property content is String type 
-  //"to" property content is entity type (Address dataclass)
+  //$mailing est une collection d'objets avec les propriétés "who" et "to"
+  //Le contenu de la propriété "who" est de type Chaîne 
+  //Le contenu de la propriété "to" est de type entity (dataclass Address)
  $mailing:=ds.Teachers.all().extract("lastname";"who";"address";"to")
   //
   //
-  //$mailing is a collection of objects with properties "who" and "city"
-  //"who" property content is String type 
-  //"city" property content is String type 
+  //$mailing est une collection d'objets avec les propriétés "who" et "city"
+  //Le contenu de la propriété "who" est de type Chaîne 
+  //Le contenu de la propriété "city" est de type Chaîne 
  $mailing:=ds.Teachers.all().extract("lastname";"who";"address.city";"city")
   //
-  //$teachers is a collection of objects with properties "where" and "who"
-  //"where" property content is String
-  //"who" property content is an entity selection (Teachers dataclass)
+  //$teachers est une collection d'objets avec les propriétés "where" et "who"
+  //Le contenu de la propriété "where" est de type Chaîne
+  //Le contenu de la propriété "who" est une entity selection (dataclass Teachers)
  $teachers:=ds.Address.all().extract("city";"where";"teachers";"who")
   //
-  //$teachers is a collection of entity selections
+  //$teachers est une collection d'entity selections
  $teachers:=ds.Address.all().extract("teachers")
 ```
 
@@ -834,31 +834,31 @@ Given the following table and relation:
 **.first()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.first().Params -->
-| Paramètres | Type      |    | Description                                                                        |
-| ---------- | --------- |:--:| ---------------------------------------------------------------------------------- |
-| Résultat   | 4D.Entity | <- | Reference to the first entity of the entity selection (Null if selection is empty) |
+| Paramètres | Type      |    | Description                                                                             |
+| ---------- | --------- |:--:| --------------------------------------------------------------------------------------- |
+| Résultat   | 4D.Entity | <- | Référence vers la première entité de l'entity selection (Null si la selection est vide) |
 <!-- END REF -->
 
 #### Description
 
-The `.first()` function <!-- REF #EntitySelectionClass.first().Summary -->returns a reference to the entity in the first position of the entity selection<!-- END REF -->.
+La fonction `.first()` <!-- REF #EntitySelectionClass.first().Summary -->retourne une référence vers l'entité en première position dans l'entity selection<!-- END REF -->.
 
-The result of this function is similar to:
+Le résultat de cette fonction est similaire à :
 
 ```4d
  $entity:=$entitySel[0]
 ```
 
-There is, however, a difference between both statements when the selection is empty:
+Il existe cependant une différence entre les deux instructions lorsque la sélection est vide :
 
 
 ```4d
  var $entitySel : cs.EmpSelection
  var $entity : cs.EmpEntity
- $entitySel:=ds.Emp.query("lastName = :1";"Nonexistentname") //no matching entity
-  //entity selection is then empty
- $entity:=$entitySel.first() //returns Null
- $entity:=$entitySel[0]  //generates an error
+ $entitySel:=ds.Emp.query("lastName = :1";"Nonexistentname") //aucune entité correspondante
+  //l'entity selection est alors vide
+ $entity:=$entitySel.first() //renvoie Null
+ $entity:=$entitySel[0]  //génère une erreur
 ```
 
 #### Exemple
@@ -892,23 +892,23 @@ There is, however, a difference between both statements when the selection is em
 
 
 <!-- REF #EntitySelectionClass.getDataClass().Params -->
-| Paramètres | Type         |    | Description                                            |
-| ---------- | ------------ |:--:| ------------------------------------------------------ |
-| Résultat   | 4D.DataClass | <- | Dataclass object to which the entity selection belongs |
+| Paramètres | Type         |    | Description                                        |
+| ---------- | ------------ |:--:| -------------------------------------------------- |
+| Résultat   | 4D.DataClass | <- | Dataclass à laquelle appartient l'entity selection |
 <!-- END REF -->
 
 #### Description
 
-The `.getDataClass()` function <!-- REF #EntitySelectionClass.getDataClass().Summary -->returns the dataclass of the entity selection<!-- END REF -->.
+La fonction `.getDataClass()` <!-- REF #EntitySelectionClass.getDataClass().Summary -->retourne la dataclass de l'entity selection<!-- END REF -->.
 
-This function is mainly useful in the context of generic code.
+Cette fonction est utile principalement dans le contexte de code générique.
 
 #### Exemple
 
-The following generic code duplicates all entities of the entity selection:
+Le code générique suivant duplique toutes les entités de l'entity selection :
 
 ```4d
-  //duplicate_entities method
+  //méthode duplicate_entities
   //duplicate_entities($entity_selection)
 
  #DECLARE ( $entitySelection : 4D.EntitySelection )  
@@ -919,7 +919,7 @@ The following generic code duplicates all entities of the entity selection:
  For each($entity;$entitySelection)
     $duplicate:=$dataClass.new()
     $duplicate.fromObject($entity.toObject())
-    $duplicate[$dataClass.getInfo().primaryKey]:=Null //reset the primary key
+    $duplicate[$dataClass.getInfo().primaryKey]:=Null //réinitialise la clé primaire
     $status:=$duplicate.save()
  End for each
 ```
@@ -942,20 +942,20 @@ The following generic code duplicates all entities of the entity selection:
 **.isAlterable()** : Boolean<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.isAlterable().Params -->
-| Paramètres | Type    |    | Description                                                |
-| ---------- | ------- |:--:| ---------------------------------------------------------- |
-| Résultat   | Booléen | <- | True if the entity selection is alterable, False otherwise |
+| Paramètres | Type    |    | Description                                           |
+| ---------- | ------- |:--:| ----------------------------------------------------- |
+| Résultat   | Booléen | <- | Vrai si l'entity selection est modifiable, sinon Faux |
 <!-- END REF -->
 
 #### Description
 
-The `.isAlterable()` function <!-- REF #EntitySelectionClass.isAlterable().Summary -->returns True if the entity selection is alterable<!-- END REF -->, and False if the entity selection is not alterable.
+La fonction `.isAlterable()` <!-- REF #EntitySelectionClass.isAlterable().Summary -->retourne Vrai si l'entity selection est modifiable (alterable)<!-- END REF -->, et Faux si elle n'est pas modifiable.
 
-For more information, please refer to [Shareable or alterable entity selections](ORDA/entities.md#shareable-or-alterable-entity-selections).
+Pour plus d'informations, voir [Entity selections partageables ou modifiables](ORDA/entities.md#entity-selections-partageables-ou-modifiables).
 
 #### Exemple
 
-You are about to display `Form.products` in a [list box](FormObjects/listbox_overview.md) to allow the user to add new products. You want to make sure it is alterable so that the user can add new products without error:
+Vous êtes sur le point d'afficher l'entity selection `Form.products` dans une [list box](FormObjects/listbox_overview.md) pour permettre à l'utilisateur d'ajouter de nouveaux produits. Vous voulez vous assurer qu'elle est modifiable afin que l'utilisateur puisse ajouter de nouveaux produits sans erreur :
 
 ```4d
 If (Not(Form.products.isAlterable()))
@@ -984,17 +984,17 @@ Form.products.add(Form.product)
 **.isOrdered()** : Boolean<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.isOrdered().Params -->
-| Paramètres | Type    |    | Description                                              |
-| ---------- | ------- |:--:| -------------------------------------------------------- |
-| Résultat   | Booléen | <- | True if the entity selection is ordered, False otherwise |
+| Paramètres | Type    |    | Description                                      |
+| ---------- | ------- |:--:| ------------------------------------------------ |
+| Résultat   | Booléen | <- | Vrai si l'entity selection est triée, sinon Faux |
 <!-- END REF -->
 
 #### Description
 
-The `.isOrdered()` function <!-- REF #EntitySelectionClass.isOrdered().Summary -->returns True if the entity selection is ordered<!-- END REF -->, and False if it is unordered.
-> This function always returns True when the entity selection comes from a remote datastore.
+La fonction `.isOrdered()` <!-- REF #EntitySelectionClass.isOrdered().Summary -->retourne Vrai si l'entity selection est triée<!-- END REF -->, et Faux si elle est non triée.
+> Cette fonction retourne toujours vrai lorsque l'entity selection provient d'un datastore distant.
 
-For more information, please refer to [Ordered or unordered entity selection](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
+Pour plus d'informations, voir [Entity selections triées vs Entity selections non-triées](ORDA/dsMapping.md#entity-selections-triees-vs-entity-selections-non-triees).
 
 
 #### Exemple
@@ -1005,16 +1005,16 @@ For more information, please refer to [Ordered or unordered entity selection](OR
  var $employee : cs.EmployeeEntity
  var $isOrdered : Boolean
  $employees:=ds.Employee.newSelection(dk keep ordered)
- $employee:=ds.Employee.get(714) // Gets the entity with primary key 714
+ $employee:=ds.Employee.get(714) // // renvoie l'entité avec clé primaire 714
 
-  //In an ordered entity selection, we can add the same entity several times (duplications are kept)
+  //Dans une entity selection triée, vous pouvez ajouter la même entité plusieurs fois (les duplications sont conservées)
  $employees.add($employee)
  $employees.add($employee)
  $employees.add($employee)
 
  $isOrdered:=$employees.isOrdered()
  If($isOrdered)
-    ALERT("The entity selection is ordered and contains "+String($employees.length)+" employees")
+    ALERT("L'entity selection est triée et contient "+String($employees.length)+" employés")
  End if
 ```
 
@@ -1037,22 +1037,22 @@ For more information, please refer to [Ordered or unordered entity selection](OR
 **.last()** : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.last().Params -->
-| Paramètres | Type      |    | Description                                                                           |
-| ---------- | --------- |:--:| ------------------------------------------------------------------------------------- |
-| Résultat   | 4D.Entity | <- | Reference to the last entity of the entity selection (Null if empty entity selection) |
+| Paramètres | Type      |    | Description                                                                                   |
+| ---------- | --------- |:--:| --------------------------------------------------------------------------------------------- |
+| Résultat   | 4D.Entity | <- | Référence vers la dernière entité de l'entity selection (Null si l'entity selection est vide) |
 <!-- END REF -->
 
 #### Description
 
-The `.last()` function <!-- REF #EntitySelectionClass.last().Summary -->returns a reference to the entity in last position of the entity selection<!-- END REF -->.
+La fonction `.last()` <!-- REF #EntitySelectionClass.last().Summary -->retourne une référence vers l'entité en dernière position dans l'entity selection<!-- END REF -->.
 
-The result of this function is similar to:
+Le résultat de cette fonction est similaire à :
 
 ```4d
  $entity:=$entitySel[length-1]
 ```
 
-If the entity selection is empty, the function returns Null.
+Si l'entity selection est vide, la fonction renvoie Null.
 
 
 #### Exemple
@@ -1087,9 +1087,9 @@ If the entity selection is empty, the function returns Null.
 
 #### Description
 
-The `.length` property <!-- REF #EntitySelectionClass.length.Summary -->returns the number of entities in the entity selection<!-- END REF -->. If the entity selection is empty, it returns 0.
+La propriété `.length` <!-- REF #EntitySelectionClass.length.Summary -->retourne le nombre d'entités dans l'entity selection<!-- END REF -->. Si l'entity selection est vide, elle contient 0.
 
-Entity selections always have a `.length` property.
+Les entity selections ont toujours une propriété `.length`.
 
 
 #### Exemple
@@ -1097,7 +1097,7 @@ Entity selections always have a `.length` property.
 ```4d
  var $vSize : Integer
  $vSize:=ds.Employee.query("gender = :1";"male").length
- ALERT(String(vSize)+" male employees found.")
+ ALERT(String(vSize)+" employés masculins trouvés.")
 ```
 
 
@@ -1123,16 +1123,16 @@ Entity selections always have a `.length` property.
 | Paramètres    | Type  |    | Description                                    |
 | ------------- | ----- |:--:| ---------------------------------------------- |
 | attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul |
-| Résultat      | any   | <- | Highest value of attribute                     |
+| Résultat      | any   | <- | Valeur la plus haute de l'attribut             |
 <!-- END REF -->
 
 #### Description
 
-The `.max()` function <!-- REF #EntitySelectionClass.max().Summary -->returns the highest (or maximum) value among all the values of *attributePath* in the entity selection<!-- END REF -->. It actually returns the value of the last entity of the entity selection as it would be sorted in ascending order using the [`.orderBy()`](#orderby) function.
+La fonction `.max()` <!-- REF #EntitySelectionClass.max().Summary -->retourne la plus haute valeur (ou valeur maximale) parmi toutes les valeurs de *attributePath* dans l'entity selection<!-- END REF -->. Autrement dit, elle retourne la valeur de la dernière entité de la sélection si elle était triée par ordre croissant avec la fonction [`.orderBy()`](#orderby).
 
-If you pass in *attributePath* a path to an object property containing different types of values, the `.max()` function will return the maximum value within the first scalar type in the default 4D type list order (see [`.sort()`](CollectionClass.md#sort) description).
+Si vous passez dans *attributePath* le chemin d'un attribut objet contenant des valeurs de différents types, la fonction `.max()` retournera la valeur maximale du premier type de valeur scalaire dans l'ordre par défaut de la liste des types 4D (voir [`.sort()`](CollectionClass.md#sort)).
 
-`.max()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
+`.max()` retourne **undefined** si l'entity selection est vide ou si *attributePath* n'est pas trouvé dans l'attribut objet.
 
 
 Une erreur est retournée si :
@@ -1144,7 +1144,7 @@ Une erreur est retournée si :
 
 #### Exemple
 
-We want to find the highest salary among all the female employees:
+Nous souhaitons connaître le salaire le plus élevé parmi les employées :
 
 ```4d
  var $sel : cs.EmpSelection
@@ -1175,16 +1175,16 @@ We want to find the highest salary among all the female employees:
 | Paramètres    | Type  |    | Description                                    |
 | ------------- | ----- |:--:| ---------------------------------------------- |
 | attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul |
-| Résultat      | any   | <- | Lowest value of attribute                      |
+| Résultat      | any   | <- | Valeur la plus basse de l'attribut             |
 <!-- END REF -->
 
 #### Description
 
-The `.min()` function <!-- REF #EntitySelectionClass.min().Summary --> returns the lowest (or minimum) value among all the values of attributePath in the entity selection<!-- END REF -->.  It actually returns the first entity of the entity selection as it would be sorted in ascending order using the [`.orderBy()`](#orderby) function (excluding **null** values).
+La fonction `.min()` <!-- REF #EntitySelectionClass.min().Summary --> retourne la plus faible valeur (ou valeur minimale) parmi toutes les valeurs de attributePath dans l'entity selection<!-- END REF -->.  Autrement dit, elle retourne la valeur de la première entité de la sélection si elle était triée par ordre croissant avec la fonction [`.orderBy()`](#orderby) (hors valeurs **Null**).
 
 If you pass in *attributePath* a path to an object property containing different types of values, the `.min()` function will return the minimum value within the first scalar value type in the type list order (see [`.sort()`](CollectionClass.md#sort) description).
 
-`.min()` returns **undefined** if the entity selection is empty or *attributePath* is not found in the object attribute.
+`.min()` retourne **undefined** si l'entity selection est vide ou si *attributePath* n'est pas trouvé dans l'attribut objet.
 
 Une erreur est retournée si :
 
@@ -1194,7 +1194,7 @@ Une erreur est retournée si :
 
 #### Exemple
 
-In this example, we want to find the lowest salary among all the female employees:
+Nous souhaitons connaître le salaire le plus bas parmi les employées :
 
 ```4d
  var $sel : cs.EmpSelection
@@ -1220,24 +1220,24 @@ In this example, we want to find the lowest salary among all the female employee
 **.minus**( *entity* : 4D.Entity ) : 4D.EntitySelection<br>**.minus**( *entitySelection* : 4D.EntitySelection ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.minus().Params -->
-| Paramètres      | Type               |    | Description                                                              |
-| --------------- | ------------------ |:--:| ------------------------------------------------------------------------ |
-| entity          | 4D.Entity          | -> | Entity to substract                                                      |
-| entitySelection | 4D.EntitySelection | -> | Entity selection to substract                                            |
-| Résultat        | 4D.EntitySelection | <- | New entity selection or a new reference on the existing entity selection |
+| Paramètres      | Type               |    | Description                                                                          |
+| --------------- | ------------------ |:--:| ------------------------------------------------------------------------------------ |
+| entity          | 4D.Entity          | -> | Entité à soustraire                                                                  |
+| entitySelection | 4D.EntitySelection | -> | Entity selection à soustraire                                                        |
+| Résultat        | 4D.EntitySelection | <- | Nouvelle entity selection ou une nouvelle référence sur l'entity selection existante |
 <!-- END REF -->
 
 #### Description
 
-The `.minus()` function <!-- REF #EntitySelectionClass.minus().Summary -->excludes from the entity selection to which it is applied the *entity* or the entities of *entitySelection* and returns the resulting entity selection<!-- END REF -->.
+La fonction `.minus()` <!-- REF #EntitySelectionClass.minus().Summary -->exclut de l'entity selection à laquelle elle est appliquée l'*entity* ou les entités de l'*entitySelection* et retourne l'entity selection résultante<!-- END REF -->.
 
-*   If you pass *entity* as parameter, the function creates a new entity selection without *entity* (if *entity* belongs to the entity selection). If *entity* was not included in the original entity selection, a new reference to the entity selection is returned.
-*   If you pass *entitySelection* as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to *entitySelection*.
+*   Si vous passez *entity* en paramètre, la fonction crée une nouvelle entity selection sans *entity* (si *entity* appartient à l'entity selection). Si *entity* n'était pas incluse dans l'entity selection d'origine, une nouvelle référence à l'entity selection est renvoyée.
+*   Si vous passez *entitySelection* en paramètre, la fonction retourne une entity selection contenant les entités appartenant à l"entity selection d'origine, sans les entités appartenant à *entitySelection*.
 > Vous pouvez comparer des [entity selections ordonnées et/ou non ordonnées](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La sélection résultante est toujours non ordonnée.
 
-If the original entity selection or both the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned.
+Si l'entity selection initiale ou l'entity selection initiale et celle du paramètre *entitySelection* sont vides, une entity selection vide est retournée.
 
-If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
+Si *entitySelection* est vide ou si *entity* est Null, une nouvelle référence à l'entity selection d'origine est renvoyée.
 
 Si l'entity selection initiale et le paramètre ne sont pas liés à la même dataclass, une erreur est retournée.
 
@@ -1249,18 +1249,18 @@ Si l'entity selection initiale et le paramètre ne sont pas liés à la même da
  var $employee : cs.EmployeeEntity
 
  $employees:=ds.Employee.query("lastName = :1";"H@") 
-  // The $employees entity selection contains the entity with primary key 710 and other entities
-  // for ex. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (primary key 710)
+  // l'entity selection $employees contient l'entité avec la clé primaire 710 ainsi que d'autres entités
+  // par ex. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (clé primaire 710)
 
- $employee:=ds.Employee.get(710) // Returns "Sherlock Holmes"
+ $employee:=ds.Employee.get(710) // "Sherlock Holmes"
 
- $result:=$employees.minus($employee) //$result contains "Colin Hetrick", "Grady Harness"
+ $result:=$employees.minus($employee) //$result contient "Colin Hetrick", "Grady Harness"
 ```
 
 
 #### Exemple 2
 
-We want to have a selection of female employees named "Jones" who live in New York :
+Vous voulez avoir une sélection d'employées nommées "Jones" qui vivent à New York :
 
 ```4d
  var $sel1; $sel2; $sel3 : cs.EmployeeSelection
@@ -1303,7 +1303,7 @@ The `.or()` function <!-- REF #EntitySelectionClass.or().Summary -->combines the
 
 If the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to *entitySelection* or an entity selection containing only *entity* is returned.
 
-If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
+Si *entitySelection* est vide ou si *entity* est Null, une nouvelle référence à l'entity selection d'origine est renvoyée.
 
 Si l'entity selection initiale et le paramètre ne sont pas liés à la même dataclass, une erreur est retournée.
 
