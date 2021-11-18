@@ -2527,9 +2527,9 @@ La fonction `.slice()` <!-- REF #collection.slice().Summary -->retourne une part
 La collection retournée contient l'élément spécifié par *startFrom* et tous les éléments suivants jusqu'à l'élément spécifié par *end* (mais non compris). Si seul le paramètre *startFrom* est spécifié, la collection retournée contient tous les éléments de *startFrom* au dernier élément de la collection d'origine.
 
 *   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the collection).
-*   If the calculated value < 0, *startFrom* is set to 0.
+*   Si la valeur calculée est négative, *startFrom* prend la valeur 0.
 *   If *end* < 0 , it is recalculated as *end:=end+length*.
-*   If *end < startFrom* (passed or calculated values), the method does nothing.
+*   Si *end < startFrom* (valeurs passées ou recalculées), la fonction ne fait rien.
 
 #### Exemple
 
