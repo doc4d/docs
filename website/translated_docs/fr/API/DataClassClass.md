@@ -125,7 +125,7 @@ The entities are returned in the default order, which is initially the order in 
 
 If no corresponding entity is found, an empty entity selection is returned.
 
-Lazy loading is applied.
+Le mode lazy loading est appliqué.
 
 **settings**
 
@@ -658,19 +658,19 @@ When created, the entity selection does not contain any entities (`mySelection.l
 <!-- REF #DataClassClass.query().Params -->
 | Paramètres    | Type               |    | Description                                                                                                                 |
 | ------------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------- |
-| queryString   | Text               | -> | Search criteria as string                                                                                                   |
-| formula       | Object             | -> | Search criteria as formula object                                                                                           |
-| value         | any                | -> | Value(s) to use for indexed placeholder(s)                                                                                  |
-| querySettings | Object             | -> | Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                   |
+| queryString   | Text               | -> | Critères de recherche en texte                                                                                              |
+| formula       | Object             | -> | Critères de recherche en objet formule                                                                                      |
+| value         | any                | -> | Valeur(s) à utiliser comme placeholder(s)                                                                                   |
+| querySettings | Object             | -> | Options de recherche : parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                           |
 | Résultat      | 4D.EntitySelection | <- | New entity selection made up of entities from dataclass meeting the search criteria specified in *queryString* or *formula* |
 <!-- END REF -->
 
 
 #### Description
 
-The `.query( )` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Lazy loading is applied.
+The `.query( )` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Le mode lazy loading est appliqué.
 
-If no matching entities are found, an empty `EntitySelection` is returned.
+Si aucune entité correspondante n'est trouvée, une `EntitySelection` vide est retournée.
 
 **queryString parameter**
 
