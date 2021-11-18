@@ -1,9 +1,9 @@
 ---
 id: formulas
-title: Formulas and Functions
+title: Formules et fonctions
 ---
    
-## Using formulas
+## Utilisation des formules
 
 A spreadsheet formula is an expression that calculates the value of a cell.
 
