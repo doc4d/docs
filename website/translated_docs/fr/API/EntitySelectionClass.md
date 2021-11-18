@@ -390,10 +390,10 @@ Nous voulons obtenir une sélection d'employés nommés "Jones" qui vivent à Ne
 ## .average()
 
 <details><summary>Historique</summary>
-| Version | Modifications                               |
-| ------- | ------------------------------------------- |
-| v18 R6  | Returns undefined if empty entity selection |
-| v17     | Ajout                                       |
+| Version | Modifications                                     |
+| ------- | ------------------------------------------------- |
+| v18 R6  | Retourne undefined si l'entity selection est vide |
+| v17     | Ajout                                             |
 
 </details>
 
@@ -1108,10 +1108,10 @@ Les entity selections ont toujours une propriété `.length`.
 ## .max()
 
 <details><summary>Historique</summary>
-| Version | Modifications                               |
-| ------- | ------------------------------------------- |
-| v17     | Ajout                                       |
-| v18 R6  | Returns undefined if empty entity selection |
+| Version | Modifications                                     |
+| ------- | ------------------------------------------------- |
+| v17     | Ajout                                             |
+| v18 R6  | Retourne undefined si l'entity selection est vide |
 
 </details>
 
@@ -1160,10 +1160,10 @@ Nous souhaitons connaître le salaire le plus élevé parmi les employées :
 ## .min()
 
 <details><summary>Historique</summary>
-| Version | Modifications                               |
-| ------- | ------------------------------------------- |
-| v17     | Ajout                                       |
-| v18 R6  | Returns undefined if empty entity selection |
+| Version | Modifications                                     |
+| ------- | ------------------------------------------------- |
+| v17     | Ajout                                             |
+| v18 R6  | Retourne undefined si l'entity selection est vide |
 
 
 </details>
@@ -1803,36 +1803,36 @@ $result2:=$invoices.selected($creditSel)
 
 #### Description
 
-La fonction `.slice()` <!-- REF #EntitySelectionClass.slice().Summary -->retourne une partie d'une entity selection dans une nouvelle entity selection<!-- END REF -->, sélectionnée de l'index *startFrom* à l'index de *fin* (*fin* non incluse) ou à la dernière entité de l'entity selection. This method returns a shallow copy of the entity selection (it uses the same entity references).
+La fonction `.slice()` <!-- REF #EntitySelectionClass.slice().Summary -->retourne une partie d'une entity selection dans une nouvelle entity selection<!-- END REF -->, sélectionnée de l'index *startFrom* à l'index de *fin* (*fin* non incluse) ou à la dernière entité de l'entity selection. Cette fonction effectue une shallow copy (copie superficielle) de l'entity selection (les mêmes références d'entités sont utilisées).
 > Cette fonction ne modifie pas l'entity selection d'origine.
 
-The returned entity selection contains the entities specified by *startFrom* and all subsequent entities up to, but not including, the entity specified by *end*. If only the *startFrom* parameter is specified, the returned entity selection contains all entities from *startFrom* to the last entity of the original entity selection.
+L'entity selection retournée contient les entités comprises entre l'entité désignée par *startFrom* et, sans la contenir, celle désignée par *end*. Si seul le paramètre *startFrom* est spécifié, l'entity selection retournée contient toutes les entités entre *startFrom* et la dernière entité de l'entity selection d'origine.
 
-*   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the entity selection). If the calculated value < 0, *startFrom* is set to 0.
-*   If *startFrom >= length*, the function returns an empty entity selection.
-*   If *end* < 0, it is recalculated as *end:=end+length*.
-*   If *end < startFrom* (passed or calculated values), the method does nothing.
+*   Si *startFrom* < 0, il est recalculé comme *startFrom:=startFrom+length* (il est considéré comme partant de la fin de l'entity selection). Si la valeur calculée est négative, *startFrom* prend la valeur 0.
+*   Si *startFrom >= length*, la fonction retourne une entity selection vide.
+*   Si *end* < 0, le paramètre est recalculé comme *end:=end+length*.
+*   Si *end < startFrom* (valeurs passées ou recalculées), la fonction ne fait rien.
 
-If the entity selection contains entities that were dropped in the meantime, they are also returned.
+Si l'entity selection contient des entités qui ont été supprimées entre-temps, elles sont également retournées.
 
 #### Exemple 1
 
-You want to get a selection of the first 9 entities of the entity selection:
+Vous souhaitez obtenir une sous-sélection des 9 premières entités de l'entity selection :
 
 ```4d
 var $sel; $sliced : cs.EmployeeSelection
 $sel:=ds.Employee.query("salary > :1";50000)
-$sliced:=$sel.slice(0;9) //
+$sliced:=$sel.slice(0;9)
 ```
 
 
 #### Exemple 2
 
-Assuming we have ds.Employee.all().length = 10
+En supposant que ds.Employee.all().length = 10
 
 ```4d
 var $slice : cs.EmployeeSelection
-$slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 to 8, but since 9 > 8, returns an empty entity selection
+$slice:=ds.Employee.all().slice(-1;-2) //tente de retourner les entités de position 9 à 8, mais comme 9 > 8, retourne une entity selection vide
 
 ```
 
@@ -1857,21 +1857,21 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 | Paramètres    | Type  |    | Description                                    |
 | ------------- | ----- |:--:| ---------------------------------------------- |
 | attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul |
-| Résultat      | Réel  | <- | Sum of entity selection values                 |
+| Résultat      | Réel  | <- | Somme des valeurs de l'entity selection        |
 <!-- END REF -->
 
 #### Description
 
 
-La fonction `.sum()` <!-- REF #EntitySelectionClass.sum().Summary -->retourne la somme de toutes les valeurs d'*attributPath* dans la sélection d'entités<!-- END REF -->.
+La fonction `.sum()` <!-- REF #EntitySelectionClass.sum().Summary -->retourne la somme de toutes les valeurs d'*attributePath* dans l'entity selection<!-- END REF -->.
 
-`.sum()` returns 0 if the entity selection is empty.
+`.sum()` retourne 0 si l'entity selection est vide.
 
-The sum can only be done on values of number type. The sum can only be done on values of number type. In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
+La somme peut uniquement être effectuée sur des valeurs numériques. Si *attributePath* est de type objet, seules les valeurs numériques qu'il contient seront prises en compte (les autres types de valeurs sont ignorés). Dans ce cas, si *attributePath* désigne une propriété qui n'existe pas dans l'objet ou qui ne contient pas de valeurs numériques, `.sum()` retourne 0.
 
 Une erreur est retournée si :
 
-*   *attributePath* is not a numerical or an object attribute,
+*   *attributePath* est un attribut qui n'est ni de type numérique ni de type objet,
 *   *attributePath* est un attribut relatif,
 *   *attributePath* n'est pas trouvé dans la dataclass de l'entity selection.
 
@@ -1904,64 +1904,64 @@ $sum:=$sel.sum("salary")
 **.toCollection**( { *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer } } ) : *Collection*<br>**.toCollection**( *filterString* : Text {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<br>**.toCollection**( *filterCol* : Collection {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.toCollection().Params -->
-| Paramètres   | Type        |    | Description                                                                          |
-| ------------ | ----------- |:--:| ------------------------------------------------------------------------------------ |
-| filterString | Texte       | -> | String with entity attribute path(s) to extract                                      |
-| filterCol    | Collection  | -> | Collection of entity attribute path(s) to extract                                    |
-| options      | Entier long | -> | `dk with primary key`: adds the primary key<br>`dk with stamp`: adds the stamp |
-| begin        | Entier long | -> | Designates the starting index                                                        |
-| howMany      | Entier long | -> | Number of entities to extract                                                        |
-| Résultat     | Collection  | <- | Collection of objects containing attributes and values of entity selection           |
+| Paramètres   | Type        |    | Description                                                                                  |
+| ------------ | ----------- |:--:| -------------------------------------------------------------------------------------------- |
+| filterString | Texte       | -> | Chemin(s) d'attribut(s) à extraire                                                           |
+| filterCol    | Collection  | -> | Collection d'attribut(s) à extraire                                                          |
+| options      | Entier long | -> | `dk with primary key` : ajoute la clé primaire<br>`dk with stamp` : ajoute le marqueur |
+| begin        | Entier long | -> | Désigne la position de début                                                                 |
+| howMany      | Entier long | -> | Nombre d'entités à extraire                                                                  |
+| Résultat     | Collection  | <- | Collection d'objets contenant les attributs et valeurs de l'entity selection                 |
 <!-- END REF -->
 
 #### Description
 
-La fonction `.toCollection()` <!-- REF #EntitySelectionClass.toCollection().Summary -->crée et retourne une collection où chaque élément est un objet contenant un ensemble de propriétés et de valeurs <!-- END REF -->correspondant aux noms et valeurs d'attribut pour la sélection d'entité.
+La fonction `.toCollection()` <!-- REF #EntitySelectionClass.toCollection().Summary -->crée et retourne une collection dans laquelle chaque élément est un objet contenant un ensemble de propriétés et de valeurs <!-- END REF -->correspondant aux noms et valeurs d'attributs de l'entity selection.
 
-If no filter parameter is passed or the first parameter contains an empty string or "*", all the attributes are extracted. Les attributs avec la propriété [kind](DataClassAttributeClass.md#kind) définie sur "relatedEntity" sont extraits avec la forme simple : un objet avec la propriété \_\_KEY (clé primaire). Attributes with kind property as "relatedEntities" are not extracted.
+Si aucun paramètre de filtre n'est passé ou si le paramètre contient une chaîne vide ou "*", tous les attributs sont extraits. Les attributs dont la propriété [kind](DataClassAttributeClass.md#kind) est "relatedEntity" sont extraits avec la forme simple : un objet avec la propriété \_\_KEY (clé primaire). Les attributs dont la propriété "kind" est "relatedEntities" ne sont pas extraits.
 
-Or, you can designate the entity attributes to extract using a filter parameter. You can use one of these two filters:
+Vous pouvez également indiquer les attributs à extraire à l'aide d'un paramètre de filtre. Deux types de filtres sont utilisables :
 
-*   *filterString* --a string with property paths separated with commas: "propertyPath1, propertyPath2, ...".
-*   *filterCol* --a collection of strings containing property paths: \["propertyPath1","propertyPath2",...]
-
-
-If a filter is specified for an attribute of the `relatedEntity` kind:
-
-*   propertyPath = "relatedEntity" -> it is extracted with simple form
-*   propertyPath = "relatedEntity.*" -> all the properties are extracted
-*   propertyPath = "relatedEntity.propertyName1, relatedEntity.propertyName2, ..." -> only those properties are extracted
+*   *filterString* --une chaîne avec les chemins des propriétés séparés par des virgules : "propertyPath1, propertyPath2, ...".
+*   *filterCol* --une collection de chaînes contenant des chemins de propriétés : ["propertyPath1","propertyPath2",...]
 
 
-If a filter is specified for an attribute of the `relatedEntities` kind:
+Si un filtre est spécifié pour un attribut de type `relatedEntity` :
 
-*   propertyPath = "relatedEntities.*" -> all the properties are extracted
-*   propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> only those properties are extracted
+*   propertyPath = "relatedEntity" -> l'extraction se fait dans une forme simple
+*   propertyPath = "relatedEntity.*" -> toutes les propriétés sont extraites
+*   propertyPath = "relatedEntity.propertyName1, relatedEntity.propertyName2, ..." -> seules ces propriétés sont extraites
+
+
+Si un filtre est spécifié pour un attribut de type`relatedEntities` :
+
+*   propertyPath = "relatedEntities.*" -> toutes les propriétés sont extraites
+*   propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> seules ces propriétés sont extraites
 
 
 
-In the *options* parameter, you can pass the `dk with primary key` and/or `dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
+Dans le paramètre *options* vous pouvez passer le(s) sélecteur(s) `dk with primary key` et/ou `dk with stamp` pour ajouter les clés primaires et/ou les marqueurs internes des entités dans les objets extraits.
 
-The *begin* parameter allows you to indicate the starting index of the entities to extract. You can pass any value between 0 and entity selection length-1.
+Le paramètre *begin* vous permet d'indiquer la position de départ des entités à extraire. Vous pouvez passer toute valeur comprise entre 0 et la longueur de l'entity selection -1.
 
-The *howMany* parameter lets you specify the number of entities to extract, starting with the one specified in *begin*. Dropped entities are not returned but are taken into account according to *howMany*. For example, if *howMany*= 3 and there is 1 dropped entity, only 2 entities are extracted.
+Le paramètre *howMany* vous permet de spécifier le nombre d'entités à extraire, à partir de celle désignée par *begin*. Les entités supprimées ne sont pas retournées mais sont prises en compte dans *howMany*. Par exemple, si *howMany*= 3 et s'il y a une entité supprimée, seulement 2 entités sont extraites.
 
-If *howMany* > length of the entity selection, the method returns (length - *begin*) objects.
+Si *howMany* > length de l'entity selection, la fonction retourne (length - *begin*) objects.
 
-An empty collection is returned if:
+Une collection vide est retournée si :
 
-*   the entity selection is empty, or
-*   *begin* is greater than the length of the entity selection.
+*   l'entity selection est vide, ou
+*   *begin* est supérieur à la longueur de l'entity selection.
 
 
 #### Exemple 1
 
-The following structure will be used throughout all examples of this section:
+La structure suivante sera utilisée pour les exemples de cette section :
 
 ![](assets/en/API/dataclassAttribute4.png)
 
 
-Example without filter or options parameter:
+Exemple sans paramètres de filtre ni d'options :
 
 ```4d
  var $employeesCollection : Collection
@@ -1972,7 +1972,7 @@ Example without filter or options parameter:
  $employeesCollection:=$employees.toCollection()
 ```
 
-Returns:
+Retourne :
 
 ```4d
 [
@@ -2018,7 +2018,7 @@ Returns:
 
 #### Exemple 2
 
-Example with options:
+Exemple avec options :
 
 ```4d
 var $employeesCollection : Collection
@@ -2029,7 +2029,7 @@ $employees:=ds.Employee.all()
 $employeesCollection:=$employees.toCollection("";dk with primary key+dk with stamp)
 ```
 
-Returns:
+Retourne :
 
 ```4d
 [
@@ -2077,7 +2077,7 @@ Returns:
 
 #### Exemple 3
 
-Example with slicing and filtering on properties:
+Exemple avec découpage et filtrage :
 
 ```4d
 var $employeesCollection; $filter : Collection
@@ -2092,7 +2092,7 @@ $employees:=ds.Employee.all()
 $employeesCollection:=$employees.toCollection($filter;0;0;2)
 ```
 
-Returns:
+Retourne :
 
 ```4d
 [
@@ -2111,7 +2111,7 @@ Returns:
 
 #### Exemple 4
 
-Example with `relatedEntity` type with simple form:
+Exemple avec le type `relatedEntity` avec une forme simple :
 
 
 ```4d
@@ -2120,7 +2120,7 @@ $employeesCollection:=New collection
 $employeesCollection:=$employees.toCollection("firstName,lastName,employer")
 ```
 
-returns:
+retourne :
 
 ```4d
 [
@@ -2150,7 +2150,7 @@ returns:
 
 #### Exemple 5
 
-Example with *filterCol* parameter:
+Exemple avec paramètre *filterCol* :
 
 ```4d
 var $employeesCollection; $coll : Collection
@@ -2159,7 +2159,7 @@ $coll:=New collection("firstName";"lastName")
 $employeesCollection:=$employees.toCollection($coll)
 ```
 
-Returns:
+Retourne :
 
 ```4d
 [
@@ -2176,7 +2176,7 @@ Returns:
 
 #### Exemple 6
 
-Example with extraction of all properties of a relatedEntity:
+Exemple avec extraction de toutes les propriétés de relatedEntity :
 
 ```4d
 var $employeesCollection; $coll : Collection
@@ -2188,7 +2188,7 @@ $coll.push("employer.*")
 $employeesCollection:=$employees.toCollection($coll)
 ```
 
-Returns:
+Retourne :
 
 ```4d
 [
@@ -2230,7 +2230,7 @@ Returns:
 
 #### Example 7
 
-Example with extraction of some properties of a relatedEntity:
+Exemple avec extraction de quelques propriétés de relatedEntity :
 
 ```4d
 var $employeesCollection : Collection
@@ -2264,9 +2264,9 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, employer.nam
     }]
 ```
 
-#### Example 8
+#### Exemple 8
 
-Example with extraction of some properties of `relatedEntities`:
+Exemple avec extraction de quelques propriétés de `relatedEntities`:
 
 ```4d
  var $employeesCollection : Collection
@@ -2274,7 +2274,7 @@ Example with extraction of some properties of `relatedEntities`:
  $employeesCollection:=$employees.toCollection("firstName, lastName, directReports.firstName")
 ```
 
-Returns:
+Retourne :
 
 ```4d
 [
@@ -2316,9 +2316,9 @@ Returns:
     }]
 ```
 
-#### Example 9
+#### Exemple 9
 
-Example with extraction of all properties of `relatedEntities`:
+Exemple avec extraction de toutes les propriétés de `relatedEntities` :
 
 ```4d
 var $employeesCollection : Collection
