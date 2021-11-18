@@ -686,7 +686,7 @@
         "title": "Documentation updates"
       },
       "ORDA/dsmapping": {
-        "title": "Data Model Objects"
+        "title": "Objets Data Model"
       },
       "ORDA/entities": {
         "title": "Travailler avec des données"
@@ -869,10 +869,10 @@
         "title": "Présentation du contrôle des accès"
       },
       "ViewPro/configuring": {
-        "title": "Configuring 4D View Pro Areas"
+        "title": "Configuration des zones 4D View Pro"
       },
       "ViewPro/formulas": {
-        "title": "Formulas and Functions"
+        "title": "Formules et fonctions"
       },
       "ViewPro/getting-started": {
         "title": "Prise en main"
