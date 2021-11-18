@@ -958,7 +958,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 | ---------- | ----------------------------------------------- |:--:| -------------------------------------- |
 | value      | number, Text, Collection, Object, Date, Boolean | -> | Filling value                          |
 | startFrom  | Entier long                                     | -> | Start index (included)                 |
-| end        | Entier long                                     | -> | End index (not included)               |
+| end        | Entier long                                     | -> | Position de fin (non incluse)          |
 | Résultat   | collection                                      | <- | Original collection with filled values |
 <!-- END REF -->
 
@@ -1772,7 +1772,7 @@ If you pass no parameter, the function orders scalar values in the collection in
 
 You can also pass a criteria parameter to define how the collection elements must be sorted. Three syntaxes are supported for this parameter:
 
-*   *pathStrings* : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. The order in which the properties are passed determines the sorting priority of the collection elements. By default, properties are sorted in ascending order. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass "asc" to sort in ascending order or "desc" in descending order.
+*   *pathStrings* : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. The order in which the properties are passed determines the sorting priority of the collection elements. By default, properties are sorted in ascending order. Vous pouvez définir l'ordre de tri d'une propriété dans la chaîne des critères, séparée du chemin de propriété par un seul espace : passez "asc" pour trier par ordre croissant ou "desc" pour trier par ordre décroissant.
 
 *   *pathObjects* : Collection. You can add as many objects in the *pathObjects* collection as necessary. By default, properties are sorted in ascending order ("descending" is false). Each element of the collection contains an object structured in the following way:
 
@@ -1785,7 +1785,7 @@ You can also pass a criteria parameter to define how the collection elements mus
 
 *   *ascOrDesc* : Integer. You pass one of the following constants from the **Objects and collections** theme:
 
-    | Constant      | Type        | Valeur | Commentaire                                       |
+    | Constante     | Type        | Valeur | Commentaire                                       |
     | ------------- | ----------- | ------ | ------------------------------------------------- |
     | ck ascending  | Entier long | 0      | Elements are ordered in ascending order (default) |
     | ck descending | Entier long | 1      | Elements are ordered in descending order          |
@@ -2514,7 +2514,7 @@ Si la collection est vide, cette méthode ne fait rien.
 | Paramètres | Type        |    | Description                                                               |
 | ---------- | ----------- |:--:| ------------------------------------------------------------------------- |
 | startFrom  | Entier long | -> | Index pour démarrer la recherche (inclus)                                 |
-| end        | Entier long | -> | End index (not included)                                                  |
+| end        | Entier long | -> | Position de fin (non incluse)                                             |
 | Résultat   | Collection  | <- | Nouvelle collection contenant des éléments scindées (copie superficielle) |
 <!-- END REF -->
 
