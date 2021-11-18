@@ -958,7 +958,7 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 | ---------- | ----------------------------------------------- |:--:| -------------------------------------- |
 | value      | number, Text, Collection, Object, Date, Boolean | -> | Filling value                          |
 | startFrom  | Integer                                         | -> | Start index (included)                 |
-| end        | Integer                                         | -> | End index (not included)               |
+| end        | Integer                                         | -> | Position de fin (non incluse)          |
 | Résultat   | collection                                      | <- | Original collection with filled values |
 <!-- END REF -->
 
@@ -1772,7 +1772,7 @@ If you pass no parameter, the function orders scalar values in the collection in
 
 You can also pass a criteria parameter to define how the collection elements must be sorted. Three syntaxes are supported for this parameter:
 
-*   *pathStrings* : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. The order in which the properties are passed determines the sorting priority of the collection elements. By default, properties are sorted in ascending order. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass "asc" to sort in ascending order or "desc" in descending order.
+*   *pathStrings* : Text (formula). **Syntax**: `propertyPath1 {desc or asc}, propertyPath2 {desc or asc},...` (default order: asc). *pathStrings* contains a formula made of 1 to x property paths and (optionally) sort orders, separated by commas. The order in which the properties are passed determines the sorting priority of the collection elements. By default, properties are sorted in ascending order. Vous pouvez définir l'ordre de tri d'une propriété dans la chaîne des critères, séparée du chemin de propriété par un seul espace : passez "asc" pour trier par ordre croissant ou "desc" pour trier par ordre décroissant.
 
 *   *pathObjects* : Collection. You can add as many objects in the *pathObjects* collection as necessary. By default, properties are sorted in ascending order ("descending" is false). Each element of the collection contains an object structured in the following way:
 
@@ -1785,7 +1785,7 @@ You can also pass a criteria parameter to define how the collection elements mus
 
 *   *ascOrDesc* : Integer. You pass one of the following constants from the **Objects and collections** theme:
 
-    | Constant      | Type    | Valeur | Commentaire                                       |
+    | Constante     | Type    | Valeur | Commentaire                                       |
     | ------------- | ------- | ------ | ------------------------------------------------- |
     | ck ascending  | Longint | 0      | Elements are ordered in ascending order (default) |
     | ck descending | Longint | 1      | Elements are ordered in descending order          |
@@ -2514,7 +2514,7 @@ Si la collection est vide, cette méthode ne fait rien.
 | Paramètres | Type       |    | Description                                                               |
 | ---------- | ---------- |:--:| ------------------------------------------------------------------------- |
 | startFrom  | Integer    | -> | Index pour démarrer la recherche (inclus)                                 |
-| end        | Integer    | -> | End index (not included)                                                  |
+| end        | Integer    | -> | Position de fin (non incluse)                                             |
 | Résultat   | Collection | <- | Nouvelle collection contenant des éléments scindées (copie superficielle) |
 <!-- END REF -->
 
@@ -2527,9 +2527,9 @@ La fonction `.slice()` <!-- REF #collection.slice().Summary -->retourne une part
 La collection retournée contient l'élément spécifié par *startFrom* et tous les éléments suivants jusqu'à l'élément spécifié par *end* (mais non compris). Si seul le paramètre *startFrom* est spécifié, la collection retournée contient tous les éléments de *startFrom* au dernier élément de la collection d'origine.
 
 *   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the collection).
-*   If the calculated value < 0, *startFrom* is set to 0.
+*   Si la valeur calculée est négative, *startFrom* prend la valeur 0.
 *   If *end* < 0 , it is recalculated as *end:=end+length*.
-*   If *end < startFrom* (passed or calculated values), the method does nothing.
+*   Si *end < startFrom* (valeurs passées ou recalculées), la fonction ne fait rien.
 
 #### Exemple
 
