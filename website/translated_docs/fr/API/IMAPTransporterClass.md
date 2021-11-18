@@ -161,9 +161,9 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constant | Valeur | Commentaire                                 |
-    | -------- | ------ | ------------------------------------------- |
-    | IMAP all | 1      | Select all messages in the selected mailbox |
+    | Constante | Valeur | Commentaire                                 |
+    | --------- | ------ | ------------------------------------------- |
+    | IMAP all  | 1      | Select all messages in the selected mailbox |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to add to `msgIDs`. You can pass any of the following keywords:
 
@@ -257,7 +257,7 @@ In the optional `options` parameter, you can pass an object to define the charse
 
 Possible charsets:
 
-| Constant                 | Valeur                         | Commentaire                                                                                                |
+| Constante                | Valeur                         | Commentaire                                                                                                |
 | ------------------------ | ------------------------------ | ---------------------------------------------------------------------------------------------------------- |
 | mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset : US-ASCII si possible, japonais (ISO-2022-JP) & Quoted-printable si possible, sinon UTF-8 & Quoted-printable</li><li>bodyCharset : US-ASCII si possible, japonais (ISO-2022-JP) et 7 bits si possible, sinon UTF-8 et Quoted-printable</li></ul>                                                                                  |
 | mail mode ISO88591       | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                  |
@@ -1442,9 +1442,9 @@ In the `msgIDs` parameter, you can pass either:
 *   the unique ID (*text*) of a single message or
 *   the following constant (*longint*) for all messages in the selected mailbox:
 
-    | Constant | Valeur | Commentaire                                 |
-    | -------- | ------ | ------------------------------------------- |
-    | IMAP all | 1      | Select all messages in the selected mailbox |
+    | Constante | Valeur | Commentaire                                 |
+    | --------- | ------ | ------------------------------------------- |
+    | IMAP all  | 1      | Select all messages in the selected mailbox |
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. You can pass any of the following keywords:
 
@@ -1748,7 +1748,7 @@ In the *name* parameter, pass the name of the mailbox to access. The name repres
 
 The optional *state* parameter defines the type of access to the mailbox. The possible values are:
 
-| Constant              | Valeur | Commentaire                                                                                                                                                           |
+| Constante             | Valeur | Commentaire                                                                                                                                                           |
 | --------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IMAP read only state  | 1      | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                 |
 | IMAP read write state | 0      | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). (Default value) |
