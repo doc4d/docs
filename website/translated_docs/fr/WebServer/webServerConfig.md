@@ -126,7 +126,7 @@ Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, nu
 
 État du fichier journal des requêtes HTTP du serveur web (HTTPDebugLog_nn.txt, stocké dans le dossier "Logs" de l'application -- nn est le numéro du fichier). Il est utile pour déboguer les problèmes liés au serveur Web. Il enregistre chaque demande et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parts du body peuvent optionellement être enregistrées.
 
-| Valeur | Constant    | Description                             |
+| Valeur | Constante   | Description                             |
 | ------ | ----------- | --------------------------------------- |
 | 0      | wdl disable | Les debug logs Web HTTP sont désactivés |
 
