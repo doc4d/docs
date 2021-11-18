@@ -667,7 +667,7 @@ You can pass an optional *options* parameter with the following properties:
 | copy        | Booleano | *True* (default) to keep the copied values, formatting and formulas after the command executes. *False* to remove them. |
 | copyOptions | Longint  | Specifies what is copied or moved. Possible values: <p><table><tr><th>Value</th><th>Description</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Copies all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Copies only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Copies only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Copies the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Copies only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Copies the values and formatting.</td></tr></table></p>                                            |
 
-The paste options defined in the [workbook options](#) are taken into account.
+The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 
 The command returns an object that contains the copied data.
 
@@ -692,8 +692,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 #### See also
 
-[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)
-
+[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 ## D
 
 ### VP DELETE COLUMNS
@@ -2215,6 +2214,36 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 // $result[2]=[null,{time:42,value:2019-05-29T00:00:00.000Z},null,null,null]
 ```
 
+### VP Get workbook options
+
+<!-- REF #_method_.VP Get workbook options.Syntax -->**VP Get workbook options** ( *vpAreaName* : Text ) : Object<!-- END REF -->  
+
+<!-- REF #_method_.VP Get workbook options.Params -->
+| Parameter  | Type   |    | Description                            |
+| ---------- | ------ | -- | -------------------------------------- |
+| vpAreaName | Texto  | -> | 4D View Pro area form object name      |
+| Result     | Objeto | <- | Object containing the workbook options |
+<!-- END REF -->  
+
+### Description
+
+`VP Get workbook options` <!-- REF #_method_.Get workbook options.Summary -->
+Returns an object containing the workbook options in *vpArea*<!-- END REF -->
+
+The list of options is referenced in [`VK SET WORKBOOK OPTIONS`'s description](#vk-set-workbook-options)
+
+> This command is not thread-safe
+
+#### Exemplo
+
+```4d
+var $workbookOptions : Object
+$workbookOptions:=VP Get workbook options("ViewProArea")
+```
+
+#### See Also
+
+[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ## I
 
@@ -2446,7 +2475,7 @@ The *options* parameter has several properties:
 | copy         | Booleano | Determines if the values, formatting and formulas of the cells in *originRange* are removed after the command executes:<ul><li>*False* (default) to remove them</li><li>*True* to keep them</li> |
 | pasteOptions | Longint  | Specifies what is pasted. Possible values: <p><table><tr><th>Value</th><th>Description</th></tr><tr><td>`vk clipboard options all` (default)</td><td>Pastes all data objects, including values, formatting, and formulas.</td></tr><tr><td>`vk clipboard options formatting`</td><td>Pastes only the formatting.</td></tr><tr><td>`vk clipboard options formulas`</td><td>Pastes only the formulas.</td></tr><tr><td>`vk clipboard options formulas and formatting`</td><td>Pastes the formulas and formatting.</td></tr><tr><td>`vk clipboard options values`</td><td>Pastes only the values.</td></tr><tr><td>`vk clipboard options value and formatting`</td><td>Pastes the values and formatting.</td></tr></table></p>                                                                                                                                   |
 
-The paste options defined in the [workbook options](#) are taken into account.
+The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 #### Exemplo
 
 To copy the contents, values, formatting and formulas from an origin range:
@@ -2466,7 +2495,7 @@ VP MOVE CELLS($originRange; $targetRange; $options)
 ```
 ### See also
 
-[VP Copy to object](#vp-copy-to-object)<br/>[VP PASTE FROM OBJECT](#vp-paste-from-object)
+[VP Copy to object](#vp-copy-to-object)<br/>[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ## N
 
@@ -2635,7 +2664,7 @@ In the optional *options* parameter, you can specify what to paste in the cell r
 | `vk clipboard options values`                  | Pastes only values.                                                  |
 | `vk clipboard options value and formatting`    | Pastes values and formatting.                                        |
 
-The paste options defined in the [workbook options](#) are taken into account.
+The paste options defined in the [workbook options](#vp-set-workbook-options) are taken into account.
 
 If *options* refers to a paste option not present in the copied object (e.g. formulas), the command does nothing.
 
@@ -2645,7 +2674,7 @@ See example the example from [VP Copy to object](#vp-copy-to-object)
 
 #### See also
 
-[VP Copy to object](#vp-copy-to-object)<br/>[VP MOVE CELLS](#vp-move-cells)
+[VP Copy to object](#vp-copy-to-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
 ### VP PRINT
 
@@ -4590,7 +4619,107 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 
 ![](assets/en/ViewPro/cmd_vpSetValues.PNG)
 
+### VP SET WORKBOOK OPTIONS 
 
+<!-- REF #_method_.VP SET WORKBOOK OPTIONS.Syntax -->**VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->  
+
+<!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
+| Parameter  | Type   |    | Description                                      |
+| ---------- | ------ | -- | ------------------------------------------------ |
+| vpAreaName | Texto  | -> | 4D View Pro area form object name                |
+| optionObj  | Objeto | -> | Object containing the workbook options to be set |
+<!-- END REF -->  
+
+### Description
+
+`VP SET WORKBOOK OPTIONS` <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
+sets the workbook options in *vpArea*<!-- END REF -->.
+
+In *optionObj*, pass the workbook options to apply to *vpArea*.
+
+If *optionObj* is undefined or empty, the command does nothing.
+
+The following table groups the available options for *optionObj*:
+
+| Property                              | Type                    | Description                                                                                                                                                                                                                                                             |
+| ------------------------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| allowUserDragMerge                    | booleano                | Specifies whether to allow the drag merge operation (select cells and drag the selection to merge cells)                                                                                                                                                                |
+| allowUserDragDrop                     | booleano                | Whether to allow drag and drop of range data.                                                                                                                                                                                                                           |
+| allowUserDragFill                     | booleano                | Whether to allow the user to drag fill a range.                                                                                                                                                                                                                         |
+| allowUserZoom                         | booleano                | Whether to zoom the display by scrolling the mouse wheel while pressing the Ctrl key.                                                                                                                                                                                   |
+| allowUserResize                       | booleano                | Whether to allow the user to resize columns and rows.                                                                                                                                                                                                                   |
+| allowUndo                             | booleano                | Whether to allow the user to undo edits.                                                                                                                                                                                                                                |
+| allowSheetReorder                     | booleano                | Whether the user can reorder the sheets in the Spread component.                                                                                                                                                                                                        |
+| allowContextMenu                      | booleano                | Whether to allow the user to open the built-in context menu.                                                                                                                                                                                                            |
+| allowUserDeselect                     | booleano                | Whether to allow the user to can use deselect in selection.                                                                                                                                                                                                             |
+| defaultDragFillType                   | number                  | The default fill type. Available values : <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk auto fill type auto </td><td> Automatically fills cells. </td></tr><tr><td> vk auto fill type clear values </td><td> Clears cell values.</td></tr><tr><td> vk auto fill type copycells </td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td> Fills cells only with formatting.</td></tr><tr><td> vk auto fill type fill series </td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td> Fills cells with values and not formatting. </td></tr></table>                                                                                                                                                                                                     |
+| showDragFillSmartTag                  | booleano                | Whether to display the drag fill dialog.                                                                                                                                                                                                                                |
+| showHorizontalScrollbar               | booleano                | Whether to display the horizontal scroll bar.                                                                                                                                                                                                                           |
+| showVerticalScrollbar                 | booleano                | Whether to display the vertical scroll bar.                                                                                                                                                                                                                             |
+| scrollbarShowMax                      | booleano                | Whether the displayed scroll bars are based on the entire number of columns and rows in the sheet.                                                                                                                                                                      |
+| scrollbarMaxAlign                     | booleano                | Whether the scroll bar aligns with the last row and column of the active sheet.                                                                                                                                                                                         |
+| tabStripVisible                       | booleano                | Whether to display the sheet tab strip.                                                                                                                                                                                                                                 |
+| tabStripRatio                         | number                  | The width of the tab strip expressed as a percentage of the overall horizontal scroll bar width.                                                                                                                                                                        |
+| tabEditable                           | booleano                | Whether to allow the user to edit the sheet tab strip.                                                                                                                                                                                                                  |
+| newTabVisible                         | booleano                | Whether the spreadsheet displays the special tab to let users insert new sheets.                                                                                                                                                                                        |
+| tabNavigationVisible                  | booleano                | Whether to display the sheet tab navigation.                                                                                                                                                                                                                            |
+| cutCopyIndicatorVisible               | booleano                | Whether to display an indicator when copying or cutting the selected item.                                                                                                                                                                                              |
+| cutCopyIndicatorBorderColor           | string                  | The border color for the indicator displayed when the user cuts or copies the selection.                                                                                                                                                                                |
+| backColor                             | string                  | A color string used to represent the background color of the Spread component, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on. The backcolor is hidden when a backcolor is set.                                                                        |
+| backgroundImage                       | string / picture / file | The background image of the Spread component.                                                                                                                                                                                                                           |
+| backgroundImageLayout                 | number                  | The background image layout for the Spread component. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk image layout center </td><td> Specifies that the background image displayes in the center of the area.</td></tr><tr><td> vk image layout none </td><td> Specifies that the background image displays in the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td> Specifies that the background image fills the area.</td></tr><tr><td> vk image layout zoom </td><td> Specifies that the background image displays in the area with its original aspect ratio.</td></tr></table>                                                                                                                                                                       |
+| grayAreaBackColor                     | string                  | A color string used to represent the background color of the gray area , such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                               |
+| showResizeTip                         | number                  | How to display the resize tip. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk show resize tip both </td><td> Specifies that horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td> Specifies that only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td> Specifies that no resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td> Specifies that only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                                              |
+| showDragDropTip                       | booleano                | Whether to display the drag-drop tip.                                                                                                                                                                                                                                   |
+| showDragFillTip                       | booleano                | Whether to display the drag-fill tip.                                                                                                                                                                                                                                   |
+| showScrollTip                         | number                  | How to display the scroll tip. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk show scroll tip both </td><td> Specifies that horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td> Specifies that only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> Specifies that no scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td> Specifies that only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                                              |
+| scrollIgnoreHidden                    | booleano                | Whether the scroll bar ignores hidden rows or columns.                                                                                                                                                                                                                  |
+| highlightInvalidData                  | booleano                | Whether to highlight invalid data.                                                                                                                                                                                                                                      |
+| useTouchLayout                        | booleano                | Whether to use touch layout to present the Spread component.                                                                                                                                                                                                            |
+| resizeZeroIndicator                   | number                  | The drawing policy when the row or column is resized to zero. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk resize zero indicator default </td><td> Uses the current drawing policy when the row or column is resized to zero</td></tr><tr><td> vk resize zero indicator enhanced </td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table>                                                                                                                                                               |
+| allowUserEditFormula                  | booleano                | Whether the user can edit formulas in a cell in the spreadsheet.                                                                                                                                                                                                        |
+| enableFormulaTextbox                  | booleano                | Whether to enable the formula text box in the spreadsheet.                                                                                                                                                                                                              |
+| autoFitType                           | number                  | Whether content will be formatted to fit in cells or in cells and headers. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk auto fit type cell </td><td> The component autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td> The component autofits cells and headers</td></tr></table>                                                                                                                                                  |
+| referenceStyle                        | number                  | the style for cell and range references in cell formulas on this sheet. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk reference style a1 </td><td> Indicates a1 style.</td></tr><tr><td> vk reference style r1c1 </td><td> Indicates r1c1 style</td></tr></table>                                                                                                                                                     |
+| calcOnDemand                          | booleano                | Whether to calculate formulas only when they are demanded.                                                                                                                                                                                                              |
+| allowCopyPasteExcelStyle              | booleano                | Whether the user can copy style from Spread Sheets then paste to Excel, or copy style from Excel then paste to Spread Sheets.                                                                                                                                           |
+| allowExtendPasteRange                 | booleano                | Whether to extend paste range if the paste range is not enough for pasting                                                                                                                                                                                              |
+| copyPasteHeaderOptions                | number                  | Which headers are included when data is copied to or pasted. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk copy paste header options all headers</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td> Includes neither column nor row headers when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>    Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                                |
+| scrollByPixel                         | booleano                | Whether to enable the precision scrolling by pixel.                                                                                                                                                                                                                     |
+| scrollPixel                           | integer                 | Decides scrolling by that number of pixels at a time when scrollByPixel is true. The final scrolling pixels are the result of scrolling delta multiply scrollPixel. For example, the scrolling delta is 3, and the scrollPixel is 5, the final scrolling pixels are 15. |
+| enableAccessibility                   | booleano                | Whether to enable the accessibility support in the spreadsheet.                                                                                                                                                                                                         |
+| allowAutoCreateHyperlink              | booleano                | Whether to enable auto creating hyperlink in the spreadsheet.                                                                                                                                                                                                           |
+| columnResizeMode                      | number                  | Specifies the way to resize column. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk resize mode normal </td><td> specifies use normal way to resize</td></tr><tr><td> vk resize mode split </td><td> specifies use split way to resize</td></tr></table>                                                                                                                                                                                         |
+| rowResizeMode                         | number                  | Specifies the way to resize row. Available values are the same as columnResizeMode                                                                                                                                                                                      |
+| customList                            | collection              | The list for users to customize drag fill, prioritize matching this list in each fill. Each collection item is a collection of strings. See [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b)                              |
+| scrollbarAppearance                   | number                  | The scrollbar appearance, contains skin and mobile two enums. Default is skin. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk scrollbar appearance mobile</td><td> Specifies the fashionable mobile scrollbars appearance which could be customized.</td></tr><tr><td> vk scrollbar appearance skin </td><td> Specifies the excel-like classic scrollbars appearance.</td></tr></table>                                                                                                                                              |
+| pasteSkipInvisibleRange               | booleano                | Whether paste skip invisible range. Default is false.                                                                                                                                                                                                                   |
+| tabStripPosition                      | number                  | Specifies the position of the tab strip. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk tab strip position bottom </td><td> Specifies the position of the tab strip relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td> Specifies the position of the tab strip relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td> Specifies the position of the tab strip relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td> Specifies the position of the tab strip relative to the top of the workbook.</td></tr></table>                                                                                                                                                                                    |
+| tabStripWidth                         | numeric                 | Specifies the width of the tab strip when position is left or right                                                                                                                                                                                                     |
+| numbersFitMode                        | number                  | Changes display mode when date/number data width longer than column width. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk numbers fit mode mask</td><td> Indicates replacing data content with "###" and show tip</td></tr><tr><td> vk numbers fit mode overflow </td><td> Indicates display data content as a string, if next cell is empty, overflow the content.</td></tr></table>                                                                                                                                                  |
+| iterativeCalculation                  | booleano                | enables iterative calculation in worksheets. See on [Grapecity's website](https://www.grapecity.com/spreadjs/docs/v14/online/calculating-iterative.html).                                                                                                               |
+| iterativeCalculationMaximumChange     | numeric                 | specify the maximum amount of change between two calculation values                                                                                                                                                                                                     |
+| iterativeCalculationMaximumIterations | numeric                 | specify the number of times the formula should recalculate                                                                                                                                                                                                              |
+| allowDynamicArray                     | booleano                | enables dynamic array in worksheets                                                                                                                                                                                                                                     |
+
+> This command is not thread-safe
+
+#### Exemplo
+
+To set the allowExtendpasteRange option in "ViewProArea":
+
+```4d
+var $workbookOptions : Object
+
+$workbookOptions:= New Object
+$workbookOptions.allowExtendPasteRange:=True
+
+VP SET WORKBOOK OPTIONS("ViewProArea";$optionObj)
+```
+
+#### See Also
+
+[VP Get workbook options](#vp-get-workbook-options)
 
 ### VP SHOW CELL
 
@@ -4699,4 +4828,4 @@ If(FORM Event.code=On Clicked)
 End if
 ```
 
-
+<style> h2 { background: #d9ebff;}</style>
