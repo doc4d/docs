@@ -133,7 +133,7 @@ Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, nu
 
 
 
-|1|wdl enable without body|Web HTTP debug log is enabled without body parts (body size is provided in this case)| |3|wdl enable with response body|Web HTTP debug log is enabled with body part in response only| |5|wdl enable with request body|Web HTTP debug log is enabled with body part in request only| |7|wdl enable with all body parts|Web HTTP debug log is enabled with body parts in response and request|
+|1|wdl enable without body|Le journal de débogage de Web HTTP est activé sans le body (la taille du body est fournie dans ce cas). |3|wdl enable with response body|Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la réponse |5|wdl enable with request body| Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la requête |7|wdl enable with all body parts|Web HTTP debug log est activé, le body est inclus dans la réponse et la requête|
 
 
 ## Page d'accueil par défaut
@@ -177,82 +177,82 @@ Pour plus d'informations sur CORS, veuillez consulter la [page de partage de res
 #### Voir également
 [Paramètres CORS](#cors-settings)
 
-## Enable HTTP
+## Activer HTTP
 
 | Peut être configuré via  | Nom                                                | Commentaires |
 | ------------------------ | -------------------------------------------------- | ------------ |
 | objet webServer          | [`HTTPEnabled`](API/WebServerClass.md#httpenabled) | boolean      |
 | `WEB SET OPTION`         | `Web HTTP enabled`                                 |              |
-| Fenêtre de configuration | Configuration page/Enable HTTP                     |              |
+| Fenêtre de configuration | Configuration > Activer HTTP                       |              |
 
-Indicates whether or not the web server will accept non-secure connections.
+Indique si le web server accepte des connexions non sécurisées.
 
 
-## Enable HTTPS
+## Activer HTTPS
 
 | Peut être configuré via  | Nom                                                  | Commentaires |
 | ------------------------ | ---------------------------------------------------- | ------------ |
 | objet webServer          | [`HTTPSEnabled`](API/WebServerClass.md#httpsenabled) | boolean      |
 | `WEB SET OPTION`         | `Web HTTPS enabled`                                  |              |
-| Fenêtre de configuration | Configuration page/Enable HTTPS                      |              |
+| Fenêtre de configuration | Configuration > Activer HTTPS                        |              |
 
-Status for communication over HTTPS. This option is described in [this section](Admin/tls.md).
+Statut de la communication via HTTPS. Cette option est décrite dans [cette section](Admin/tls.md).
 
 
-## Enable HSTS
+## Activer HSTS
 
-| Peut être configuré via | Nom                                                | Commentaires                                    |
-| ----------------------- | -------------------------------------------------- | ----------------------------------------------- |
-| objet webServer         | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | Boolean, true to enable HSTS (default is false) |
-| `WEB SET OPTION`        | `Web HSTS enabled`                                 | 0 (désactivé, par défaut) ou 1 (activé)         |
+| Peut être configuré via | Nom                                                | Commentaires                                          |
+| ----------------------- | -------------------------------------------------- | ----------------------------------------------------- |
+| objet webServer         | [`HSTSEnabled`](API/WebServerClass.md#hstsenabled) | Booléen, True pour activer le HSTS (False par défaut) |
+| `WEB SET OPTION`        | `Web HSTS enabled`                                 | 0 (désactivé, par défaut) ou 1 (activé)               |
 
 État de HTTP Strict Transport Security (HSTS).
 
-When [HTTPS is enabled](#enable-https), keep in mind that if [HTTP is also enabled](#enable-http), the browser can still switch between HTTPS and HTTP (for example, in the browser URL area, the user can replace "https" by "http"). To forbid http redirections, you can [disable HTTP](#enable-http), however in this case an error message is displayed to client HTTP requests.
+Lorsque [HTTPS est activé](#enable-https), n'oubliez pas que si [HTTP est également activé](#enable-http), le navigateur peut toujours basculer entre HTTPS et HTTP (par exemple, dans la zone URL du navigateur, l'utilisateur peut remplacer "https" par "http"). Pour interdire les redirections http, vous pouvez [désactiver le HTTP](#enable-http), cependant dans ce cas un message d'erreur est affiché lors des requêtes HTTP du client.
 
-HSTS allows the 4D web server to declare that browsers should only interact with it via secure HTTPS connections. Once activated, the 4D web server will automatically add HSTS-related information to all response headers. Browsers will record the HSTS information the first time they receive a response from the 4D web server, then any future HTTP requests will automatically be transformed into HTTPS requests. The length of time this information is stored by the browser is specified with the Web **HSTS max age** setting.
+HSTS permet au serveur web 4D de déclarer que les navigateurs ne doivent interagir avec lui que par des connexions HTTPS sécurisées. Une fois activé, le serveur Web 4D ajoutera automatiquement des informations relatives au HSTS à tous les en-têtes des réponses. Les navigateurs enregistreront les informations HSTS la première fois qu'ils recevront une réponse du serveur web 4D, puis toutes les futures demandes HTTP seront automatiquement transformées en demandes HTTPS. La durée de stockage de ces informations par le navigateur est spécifiée avec le paramètre Web **HSTS max age**.
 
-> HSTS requires that HTTPS is [enabled](enable-https) on the server. [HTTP](enable-http) must also be enabled to allow client initial connections.
+> Activer le HSTS requiert que HTTPS soit [activé](enable-https) sur le serveur. [Le HTTP](enable-http) doit également être activé pour permettre les connexions initiales du client.
 
-> You can get the current connection mode using the `WEB Is secured connection` command.
+> Vous pouvez vérifier le mode de connexion utilisé en utilisant la commande `WEB Is secured connection`.
 
 
 ## HSTS Max Age
 
-| Peut être configuré via | Nom                                              | Commentaires      |
-| ----------------------- | ------------------------------------------------ | ----------------- |
-| objet webServer         | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | number in seconds |
-| `WEB SET OPTION`        | `Web HSTS max age`                               | number in seconds |
+| Peut être configuré via | Nom                                              | Commentaires       |
+| ----------------------- | ------------------------------------------------ | ------------------ |
+| objet webServer         | [`HSTSMaxAge`](API/WebServerClass.md#hstsmaxage) | nombre en secondes |
+| `WEB SET OPTION`        | `Web HSTS max age`                               | nombre en secondes |
 
-Specifies the maximum length of time (in seconds) that HSTS is active for each new client connection. Ces informations sont stockées côté client pendant la durée spécifiée. Default value is 63072000 (2 years)
+Spécifie la durée maximale (en secondes) d'activation de HSTS pour chaque nouvelle connexion client. Ces informations sont stockées côté client pendant la durée spécifiée. Valeur par défaut : 63072000 (2 ans)
 
-> **Warning:** Once HSTS is enabled, client connections will continue to use this mechanism for the specified duration. When you are testing your applications, it is recommended to set a short duration to be able to switch between secured and non-secured connection modes if necessary.
-
-
+> **Avertissement:** Une fois le HSTS activé, les connexions des clients continueront à utiliser ce mécanisme pendant la durée spécifiée. Lorsque vous testez vos applications, il est recommandé de définir une courte durée pour pouvoir passer du mode de connexion sécurisé au mode non sécurisé si nécessaire.
 
 
 
-## HTTP Compression Level
 
-| Peut être configuré via | Nom                                                                  | Commentaires                   |
-| ----------------------- | -------------------------------------------------------------------- | ------------------------------ |
-| objet webServer         | [`HTTPCompressionLevel`](API/WebServerClass.md#httpcompressionlevel) |                                |
-| `WEB SET OPTION`        | `Web HTTP compression level`                                         | Applies to Web and Web Service |
 
-Compression level for all compressed HTTP exchanges for the 4D web server (client requests or server replies). This setting lets you optimize exchanges by either privileging speed of execution (less compression) or the amount of compression (less speed). The choice of a value depends on the size and type of data exchanged.
+## Niveau de compression
 
-Pass 1 to 9 as value where 1 is the fastest compression and 9 the highest. You can also pass -1 to get a compromise between speed and rate of compression. By default, the compression level is 1 (faster compression).
+| Peut être configuré via | Nom                                                                  | Commentaires                        |
+| ----------------------- | -------------------------------------------------------------------- | ----------------------------------- |
+| objet webServer         | [`HTTPCompressionLevel`](API/WebServerClass.md#httpcompressionlevel) |                                     |
+| `WEB SET OPTION`        | `Web HTTP compression level`                                         | S'applique au Web et au service Web |
 
-## HTTP Compression Threshold
+Niveau de compression pour tous les échanges HTTP compressés pour le serveur web 4D (requêtes clients ou réponses serveur). Cette option vous permet d'optimiser les échanges en privilégiant soit la vitesse d'exécution (moins de compression), soit la quantité de compression (moins de vitesse). Le choix d'une valeur dépend de la taille et du type de données échangées.
+
+Passez une valeur de 1 à 9 où 1 est la compression la plus rapide et 9 la plus élevée. Vous pouvez également passer -1 pour un compromis entre vitesse et taux de compression. Par défaut, le niveau de compression est de 1 (compression plus rapide).
+
+## Seuil de compression HTTP
 
 | Peut être configuré via | Nom                                                                          | Commentaires |
 | ----------------------- | ---------------------------------------------------------------------------- | ------------ |
 | objet webServer         | [`HTTPCompressionThreshold`](API/WebServerClass.md#httpcompressionthreshold) |              |
 | `WEB SET OPTION`        | `Web HTTP compression threshold`                                             |              |
 
-In the framework of optimized HTTP exchanges, size threshold for requests below which exchanges should not be compressed. Ce paramètre est utile pour éviter de perdre du temps machine en compressant les petits échanges.
+Dans le cadre des échanges HTTP optimisés, seuil de taille des requêtes en dessous duquel les échanges ne doivent pas être compressés. Ce paramètre est utile pour éviter de perdre du temps machine en compressant les petits échanges.
 
-Pass the size expressed in bytes as value. By default, the compression threshold is set to 1024 bytes.
+Comme valeur, passez la taille exprimée en octets. Par défaut, le seuil de compression est fixé à 1024 octets.
 
 
 ## Port HTTP
@@ -261,26 +261,26 @@ Pass the size expressed in bytes as value. By default, the compression threshold
 | ------------------------ | -------------------------------------------- | ------------ |
 | objet webServer          | [`HTTPPort`](API/WebServerClass.md#httpport) | number       |
 | `WEB SET OPTION`         | `Web port ID`                                |              |
-| Fenêtre de configuration | Configuration page/HTTP Port                 |              |
+| Fenêtre de configuration | Configuration > Port HTTP                    |              |
 
-Listening IP (TCP) port number for HTTP. By default, 4D publishes a web application on the regular Web HTTP Port (TCP port), which is port 80. If that port is already used by another web service, you need to change the HTTP Port used by 4D for this database.
+Numéro de port IP (TCP) d'écoute pour HTTP. Par défaut, 4D publie une application Web sur le port HTTP normal (port TCP), qui est le port 80. Si ce port est déjà utilisé par un autre service Web, vous devez modifier le port HTTP utilisé par 4D pour ce projet.
 
-> In macOS, modifying the HTTP port allows you to start the 4D web server without being the root user of the machine (see [macOS HelperTool](#macos-helpertool)).
+> Sous macOS, la modification du port HTTP permet de lancer le serveur web 4D sans être l'utilisateur root de la machine (voir [macOS HelperTool](#macos-helpertool)).
 
-From a web browser, you need to include the non-default HTTP port number into the address you enter for connecting to the web application. The address must have a suffix consisting of a colon followed by the port number. For example, if you are using the HTTP port number 8080, you will specify "123.4.567.89:8080".
-> **Warning**: If you use TCP port numbers other than the default numbers (80 for standard HTTP and 443 for HTTPS), be careful not to use port numbers that are defaults for other services that you might want to use simultaneously. For example, if you also plan to use the FTP protocol on your web server machine, do not use the TCP port 20 and 21, which are the default ports for that protocol. Ports numbers below 256 are reserved for well known services and ports numbers from 256 to 1024 are reserved for specific services originated on the UNIX platforms. For maximum security, specify a port number beyond these intervals (for example, in the 2000's or 3000's).
+À partir d'un navigateur Web, vous devez inclure le numéro de port HTTP par défaut dans l'adresse que vous saisissez pour vous connecter à l'application Web. L'adresse doit comporter un suffixe composé de deux points suivis du numéro de port. Par exemple, si vous utilisez le port HTTP numéro 8080, indiquez "123.4.567.89:8080".
+> **Avertissement** : Si vous utilisez des numéros de port TCP autres que ceux par défaut (80 pour HTTP standard et 443 pour HTTPS), veillez à ne pas utiliser des numéros de port utilisés par défaut pour d'autres services que vous pourriez vouloir utiliser simultanément. Par exemple, si vous prévoyez également d'utiliser le protocole FTP sur votre machine de serveur Web, n'utilisez pas les ports TCP 20 et 21, qui sont les ports par défaut pour ce protocole. Les numéros de ports inférieurs à 256 sont réservés à des services connus, et les numéros de ports de 256 à 1024 sont réservés à des services spécifiques issus des plateformes UNIX. Pour une sécurité maximale, spécifiez un numéro de port au-delà de ces intervalles (par exemple, dans les 2000 ou 3000).
 
-If you specify 0, 4D will use the default HTTP port number 80.
+Si vous spécifiez 0, 4D utilisera le numéro de port HTTP 80 par défaut.
 
 
 ## HTTP Trace
 
-| Peut être configuré via | Nom                                            | Commentaires                    |
-| ----------------------- | ---------------------------------------------- | ------------------------------- |
-| objet webServer         | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Boolean, default = false        |
-| `WEB SET OPTION`        | `Web HTTP TRACE`                               | Integer, default = 0 (disabled) |
+| Peut être configuré via | Nom                                            | Commentaires                          |
+| ----------------------- | ---------------------------------------------- | ------------------------------------- |
+| objet webServer         | [`HTTPTrace`](API/WebServerClass.md#httptrace) | Booléen, false par défaut             |
+| `WEB SET OPTION`        | `Web HTTP TRACE`                               | Entier long, 0 par défaut (désactivé) |
 
-HTTP TRACE method activation in the 4D web server. For security reasons, by default the 4D web server rejects HTTP TRACE requests with an error 405. If necessary, you can enable the HTTP TRACE method, in which case the 4D Web server replies to HTTP TRACE requests with the request line, header, and body.
+Activation de la méthode HTTP TRACE dans le serveur web 4D. Pour des raisons de sécurité, le serveur web 4D rejette par défaut les demandes HTTP TRACE avec une erreur 405. Si nécessaire, vous pouvez activer la méthode HTTP TRACE, auquel cas le serveur Web 4D répond aux demandes HTTP TRACE avec la request line, l'en-tête et le body.
 
 
 
@@ -291,18 +291,18 @@ HTTP TRACE method activation in the 4D web server. For security reasons, by defa
 | ------------------------ | ---------------------------------------------- | ------------ |
 | objet webServer          | [`HTTPSPort`](API/WebServerClass.md#httpsport) | number       |
 | `WEB SET OPTION`         | `Web HTTPS port ID`                            |              |
-| Fenêtre de configuration | Configuration page/HTTPS Port                  |              |
+| Fenêtre de configuration | Configuration > Port HTTP                      |              |
 
-Listening IP port number for HTTPS connections via TLS. By default, the value is 443 (standard value). See also [HTTP Port](#http-port) for information on port numbers.
+Numéro de port IP d'écoute pour les connections HTTP via TLS. La valeur par défaut est 443 (valeur standard). Voir aussi [HTTP Port](#http-port) pour plus d'informations sur les numéros de port.
 
 
-## Inactive Process Timeout
+## Timeout des process inactifs
 
 | Peut être configuré via  | Nom                                                                      | Commentaires |
 | ------------------------ | ------------------------------------------------------------------------ | ------------ |
 | objet webServer          | [`inactiveProcessTimeout`](API/WebServerClass.md#inactiveprocesstimeout) |              |
 | `WEB SET OPTION`         | `Web inactive process timeout`                                           |              |
-| Fenêtre de configuration | Options (I) page/Inactive Process Timeout                                | Slider       |
+| Fenêtre de configuration | Options (I) > Conservation des Process inactifs                          | Slider       |
 
 Life duration (in minutes) of inactive processes associated with sessions. À la fin du délai d'attente (tiemout), le process est tué sur le serveur, la méthode base `On Web Close Process` est appelée, puis le contexte de session est détruit.
 
