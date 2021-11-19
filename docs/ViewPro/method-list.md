@@ -2254,7 +2254,7 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 #### Description
 
 `VP Get workbook options` <!-- REF #_method_.Get workbook options.Summary -->
-Returns an object containing the workbook options in *vpArea*<!-- END REF -->
+returns an object containing the workbook options in *vpArea*<!-- END REF -->
 
 In *vpAreaName*, pass the name of the 4D View Pro area. 
 
@@ -2266,6 +2266,7 @@ The list of workbook options is referenced in [`VK SET WORKBOOK OPTIONS`'s descr
 
 ```4d
 var $workbookOptions : Object
+
 $workbookOptions:=VP Get workbook options("ViewProArea")
 ```
 
@@ -4680,7 +4681,7 @@ In *optionObj*, pass the workbook options to apply to *vpAreaName*.
 
 If *optionObj* is undefined or empty, the command does nothing. 
 
-The following table lists the available options for *optionObj*: 
+The following table lists the available workbook options: 
 
 |Property|Type|Description|
 |---|---|---|
