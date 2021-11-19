@@ -2254,7 +2254,8 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 #### Description
 
 `VP Get workbook options` <!-- REF #_method_.Get workbook options.Summary -->
-returns an object containing the workbook options in *vpArea*<!-- END REF -->
+returns an object containing the workbook options in *vpArea*
+<!-- END REF -->
 
 In *vpAreaName*, pass the name of the 4D View Pro area. 
 
