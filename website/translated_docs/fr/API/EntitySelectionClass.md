@@ -1500,11 +1500,11 @@ Dans cet exemple, le champ objet "marks" de la dataclass **Students** contient l
 ## .query()
 
 <details><summary>Historique</summary>
-| Version | Modifications                      |
-| ------- | ---------------------------------- |
-| v17 R6  | Support of Formula parameters      |
-| v17 R5  | Support of placeholders for values |
-| v17     | Ajout                              |
+| Version | Modifications                                     |
+| ------- | ------------------------------------------------- |
+| v17 R6  | Prise en charge des paramètres Formula            |
+| v17 R5  | Prise en charge des placeholders pour les valeurs |
+| v17     | Ajout                                             |
 
 </details>
 
@@ -2128,7 +2128,7 @@ Retourne :
   ]
 ```
 
-#### Example 7
+#### Exemple 7
 
 Exemple avec extraction de quelques propriétés de relatedEntity :
 
