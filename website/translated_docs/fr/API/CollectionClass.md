@@ -1294,7 +1294,7 @@ The code for ***FindCity*** method is:
 The `.indexOf()` function <!-- REF #collection.indexOf().Summary -->searches the *toSearch* expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
-In *toSearch*, pass the expression to find in the collection. You can pass:
+In *toSearch*, pass the expression to find in the collection. Vous pouvez passer :
 
 *   une valeur scalaire (texte, numérique, booléen, date),
 *   the null value,
@@ -1355,7 +1355,7 @@ Optionally, you can pass the index of collection from which to start the search 
 The `.indices()` function works exactly the same as the [`.query()`](#query) function but <!-- REF #collection.indices().Summary -->returns indexes, in the original collection, of object collection elements that match the *queryString* search conditions<!-- END REF -->, and not elements themselves. Indexes are returned in ascending order.
 > Cette fonction ne modifie pas la collection d'origine.
 
-The *queryString* parameter uses the following syntax:
+Le paramètre *queryString* doit respecter la syntaxe suivante :
 
 ```4d
 propertyPath comparator value {logicalOperator propertyPath comparator value}
@@ -1505,7 +1505,7 @@ By default, null or empty elements of the collection are returned in the resulti
 The `.lastIndexOf()` function <!-- REF #collection.lastIndexOf().Summary -->searches the *toSearch* expression among collection elements and returns the index of the last occurrence<!-- END REF -->, or -1 if it was not found.
 > Cette fonction ne modifie pas la collection d'origine.
 
-In *toSearch*, pass the expression to find in the collection. You can pass:
+In *toSearch*, pass the expression to find in the collection. Vous pouvez passer :
 
 *   une valeur scalaire (texte, numérique, booléen, date),
 *   the null value,
@@ -2122,7 +2122,7 @@ Vous souhaitez trier la collection résultante :
 La fonction `.query()` <!-- REF #collection.query().Summary -->retourne tous les éléments d'une collection d'objets qui correspondent aux critères de recherche <!-- END REF -->définis par *queryString* et (éventuellement) *value* ou *querySettings*. If the original collection is a shared collection, the returned collection is also a shared collection.
 > Cette fonction ne modifie pas la collection d'origine.
 
-The *queryString* parameter uses the following syntax:
+Le paramètre *queryString* doit respecter la syntaxe suivante :
 
 ```4d
 propertyPath comparator value {logicalOperator propertyPath comparator value}
