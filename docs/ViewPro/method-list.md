@@ -2259,7 +2259,7 @@ returns an object containing the workbook options in *vpArea*
 
 In *vpAreaName*, pass the name of the 4D View Pro area. 
 
-The list of workbook options is referenced in [`VK SET WORKBOOK OPTIONS`'s description](#vk-set-workbook-options).
+The list of workbook options is referenced in [`VP SET WORKBOOK OPTIONS`'s description](#vp-set-workbook-options).
 
 > This command is not thread-safe
 
