@@ -2228,7 +2228,7 @@ Retourne :
   ]
 ```
 
-#### Example 7
+#### Exemple 7
 
 Exemple avec extraction de quelques propriétés de relatedEntity :
 
