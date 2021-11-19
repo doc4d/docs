@@ -1048,18 +1048,18 @@ S'il n'y a pas d'entité suivante valide dans l'entity selection (i.e. vous ête
 **.previous()**  : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.previous().Params -->
-| Paramètres | Type      |    | Description                                                              |
-| ---------- | --------- |:--:| ------------------------------------------------------------------------ |
-| Résultat   | 4D.Entity | <- | Reference to previous entity in the entity selection (Null if not found) |
+| Paramètres | Type      |    | Description                                                                   |
+| ---------- | --------- |:--:| ----------------------------------------------------------------------------- |
+| Résultat   | 4D.Entity | <- | Référence à l'entité précédente dans l'entity selection (Null si non trouvée) |
 <!-- END REF -->
 
 #### Description
 
-The `.previous()` function <!-- REF #EntityClass.previous().Summary --> returns a reference to the previous entity in the entity selection which the entity belongs to<!-- END REF -->.
+La fonction `.previous()` <!-- REF #EntityClass.previous().Summary --> retourne une référence sur l'entité précédente dans l'entity selection à laquelle appartient l'entité<!-- END REF -->.
 
 Si l'entité n'appartient à aucune entity selection existante (i.e. [.getSelection()](#getselection) retourne Null), la fonction renvoie une valeur Null.
 
-If there is no valid previous entity in the entity selection (i.e. you are on the first entity of the selection), the function returns Null. If the previous entity has been dropped, the function returns the previous valid entity (and eventually Null).
+S'il n'y a pas d'entité précédente valide dans l'entity selection (i.e. vous êtes sur la première entité de la sélection), la fonction retourne Null. Si l'entité précédente a été supprimée, la fonction renvoie l'entité valide précédente (et finalement Null).
 
 
 #### Exemple
@@ -1090,31 +1090,31 @@ If there is no valid previous entity in the entity selection (i.e. you are on th
 **.reload()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.reload().Params -->
-| Paramètres | Type   |    | Description   |
-| ---------- | ------ |:--:| ------------- |
-| Résultat   | Object | <- | Status object |
+| Paramètres | Type   |    | Description  |
+| ---------- | ------ |:--:| ------------ |
+| Résultat   | Object | <- | Objet statut |
 <!-- END REF -->
 
 #### Description
 
-The `.reload()` function <!-- REF #EntityClass.reload().Summary -->reloads the content of the entity in memory<!-- END REF -->, according to information stored in the table related to the dataclass in the datastore. The reload is done only if the entity still exists with the same primary key.
+La fonction `.reload()` <!-- REF #EntityClass.reload().Summary -->recharge en mémoire le contenu de l'entité<!-- END REF -->à partir des informations stockées dans la table associée à la dataclass dans le datastore. Le rechargement est effectué uniquement si l'entité existe toujours avec la même clé primaire.
 
 **Résultat**
 
-The object returned by `.reload( )` contains the following properties:
+L'objet retourné par `.reload( )` contient les propriétés suivantes :
 
-| Propriété        | Type    | Description                                                                                                                                           |
-| ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          | boolean | True if the reload action is successful, False otherwise.<p><p>***Available only in case of error***: |
-| status(\*)     | number  | Code d'erreur, voir ci-dessous                                                                                                                        |
-| statusText(\*) | text    | Description de l'erreur, voir ci-dessous                                                                                                              |
+| Propriété        | Type    | Description                                                                                                                                                        |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| success          | boolean | Vrai si le rechargement a été effectué avec succès, sinon Faux.<p><p>***Disponible uniquement en cas d'erreur*** : |
+| status(\*)     | number  | Code d'erreur, voir ci-dessous                                                                                                                                     |
+| statusText(\*) | text    | Description de l'erreur, voir ci-dessous                                                                                                                           |
 
 (\*) Les valeurs suivantes peuvent être retournées dans les propriétés *status* et *statusText* de l'objet *Résultat* en cas d'erreur :
 
-| Constante                                 | Valeur | Commentaire                                                                                                                                                                                                                        |
-| ----------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>***Associated statusText***: "Entity does not exist anymore" |
-| `dk status serious error`                 | 4      | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                                    |
+| Constante                                 | Valeur | Commentaire                                                                                                                                                                                                                      |
+| ----------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). Avec `.drop( )`, cette erreur peut être retournée lorsque l'option `dk force drop if stamp changed` est utilisée. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>***statusText associé*** : "Entity does not exist anymore" |
+| `dk status serious error`                 | 4      | Une erreur critique peut être une erreur de bas niveau de la base de données (ex. clé dupliquée), une erreur matérielle, etc.<br>***statusText associé*** : "Other error"                                                  |
 
 
 #### Exemple
@@ -1130,9 +1130,9 @@ The object returned by `.reload( )` contains the following properties:
  $result:=$employee.reload()
  Case of
     :($result.success)
-       ALERT("Reload has been done")
+       ALERT("Rechargement effectué")
     :($result.status=dk status entity does not exist anymore)
-       ALERT("The entity has been dropped")
+       ALERT("L'entité a été supprimée")
  End case
 ```
 
@@ -1153,60 +1153,60 @@ The object returned by `.reload( )` contains the following properties:
 **.save**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.save().Params -->
-| Paramètres | Type    |    | Description                                       |
-| ---------- | ------- |:--:| ------------------------------------------------- |
-| mode       | Integer | -> | `dk auto merge`: Enables the automatic merge mode |
-| Résultat   | Object  | <- | Result of save operation                          |
+| Paramètres | Type    |    | Description                                        |
+| ---------- | ------- |:--:| -------------------------------------------------- |
+| mode       | Integer | -> | `dk auto merge` : Active le mode "automatic merge" |
+| Résultat   | Object  | <- | Résultat de la sauvegarde                          |
 <!-- END REF -->
 
 #### Description
 
-The `.save()` function <!-- REF #EntityClass.save().Summary -->saves the changes made to the entity<!-- END REF --> in the table related to its dataClass. You must call this method after creating or modifying an entity if you want to save the changes made to it.
+La fonction `.save()` <!-- REF #EntityClass.save().Summary -->sauvegarde les modifications effectuées sur l'entité<!-- END REF --> dans la table de sa dataclass. Vous devez appeler cette fonction après toute création ou modification d'entité si vous souhaitez sauvegarder les changements.
 
-The save operation is executed only if at least one entity attribute has been "touched" (see the [`.touched()`](#touched) and [`.touchedAttributes()`](#touchedattributes) functions). Otherwise, the function does nothing (the trigger is not called).
+La sauvegarde est effectuée si et seulement si au moins un attribut de l'entité a été "touché" (cf. les fonctions [`.touched()`](#touched) et [`.touchedAttributes()`](#touchedattributes)). Sinon, la fonction ne fait rien (le trigger n'est pas appelé).
 
-In a multi-user or multi-process application, the `.save()` function is executed under an ["optimistic lock"](ORDA/entities.md#entity-locking) mechanism, wherein an internal locking stamp is automatically incremented each time the record is saved.
+Dans une application multi-utilisateur ou multi-process, la fonction `.save()` est exécutée avec le mécanisme du ["verrouillage optimiste"](ORDA/entities.md#entity-locking), dans lequel un compteur interne (stamp) est automatiquement incrémenté à chaque sauvegarde de l'enregistrement.
 
-By default, if the *mode* parameter is omitted, the method will return an error (see below) whenever the same entity has been modified by another process or user in the meantime, no matter the modified attribute(s).
+Par défaut, si le paramètre *mode* est omis, la fonction retournera systématiquement une erreur (voir ci-dessous) lorsque la même entité a été modifiée entre-temps par un autre process ou utilisateur, quel(s) que soi(en)t l(es) attribut(s) modifié(s).
 
-Otherwise, you can pass the `dk auto merge` option in the *mode* parameter: when the automatic merge mode is enabled, a modification done concurrently by another process/user on the same entity but on a different attribute will not result in an error. The resulting data saved in the entity will be the combination (the "merge") of all non-concurrent modifications (if modifications were applied to the same attribute, the save fails and an error is returned, even with the auto merge mode).
+Sinon, vous pouvez passer l'option `dk auto merge` dans le paramètre *mode* afin d'activer le mode "automatic merge". Dans ce mode, une modification simultanée effectuée par un autre process/utilisateur sur la même entité mais sur un attribut différent ne génère pas d'erreur. Les données effectivement stockées dans l'enregistrement résultent alors de la combinaison (le "merge") des modifications non-concurrentes (si des modifications ont été effectuées sur le même attribut, la sauvegarde échoue et une erreur est retournée, même en mode "automatic merge").
 > Le mode de fusion automatique n'est pas disponible pour les attributs de type Image, Objet et Texte lorsqu'ils sont stockés en dehors de l'enregistrement. Des modifications simultanées de ces attributs entraîneront une erreur "`dk status stamp has changed`".
 
 **Résultat**
 
-The object returned by `.save()` contains the following properties:
+L'objet retourné par `.save()` contient les propriétés suivantes :
 
-| Propriété    |                    | Type                  | Description                                                                                                             |
-| ------------ | ------------------ | --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| success      |                    | boolean               | True if the save action is successful, False otherwise.                                                                 |
-|              |                    |                       | ***Available only if `dk auto merge` option is used***:                                                                 |
-| autoMerged   |                    | boolean               | True if an auto merge was done, False otherwise.                                                                        |
-|              |                    |                       | ***Available only in case of error***:                                                                                  |
-| status       |                    | number                | Error code, [see below](#status-and-statustext)                                                                         |
-| statusText   |                    | text                  | Description of the error, [see below](#status-and-statustext)                                                           |
-|              |                    |                       | ***Available only in case of pessimistic lock error***:                                                                 |
-| lockKindText |                    | text                  | "Locked by record"                                                                                                      |
-| lockInfo     |                    | object                | Information sur l'origine du verrouillage                                                                               |
-|              | task_id            | number                | Id du process                                                                                                           |
-|              | user_name          | text                  | Nom d'utilisateur de la session sur la machine                                                                          |
-|              | user4d_alias       | text                  | Alias utilisateur si défini avec `SET USER ALIAS`, sinon le nom d'utilisateur dans le répertoire de la base 4D          |
-|              | host_name          | text                  | Nom de la machine                                                                                                       |
-|              | task_name          | text                  | Nom du process                                                                                                          |
-|              | client_version     | text                  |                                                                                                                         |
-|              |                    |                       | ***Available only in case of serious error*** (serious error - can be trying to duplicate a primary key, disk full...): |
-| errors       |                    | collection of objects |                                                                                                                         |
-|              | message            | text                  | Message d'erreur                                                                                                        |
-|              | componentSignature | text                  | Internal component signature (e.g. "dmbg" stands for the database component)                                            |
-|              | errCode            | number                | Code d'erreur                                                                                                           |
+| Propriété    |                    | Type                  | Description                                                                                                    |
+| ------------ | ------------------ | --------------------- | -------------------------------------------------------------------------------------------------------------- |
+| success      |                    | boolean               | Vrai si la sauvegarde a été effectuée avec succès, sinon faux.                                                 |
+|              |                    |                       | ***Disponible uniquement si l'option `dk auto merge` a été utilisée*** :                                       |
+| autoMerged   |                    | boolean               | Vrai si un "auto merge" a été effectué, sinon faux.                                                            |
+|              |                    |                       | ***Disponible uniquement en cas d'erreur*** :                                                                  |
+| status       |                    | number                | Code d'erreur, [voir ci-dessous](#status-and-statustext)                                                       |
+| statusText   |                    | text                  | Description de l'erreur, [voir ci-dessous](#status-and-statustext)                                             |
+|              |                    |                       | ***Disponible uniquement en cas d'erreur en verrouillage pessimiste*** :                                       |
+| lockKindText |                    | text                  | "Locked by record"                                                                                             |
+| lockInfo     |                    | object                | Information sur l'origine du verrouillage                                                                      |
+|              | task_id            | number                | Id du process                                                                                                  |
+|              | user_name          | text                  | Nom d'utilisateur de la session sur la machine                                                                 |
+|              | user4d_alias       | text                  | Alias utilisateur si défini avec `SET USER ALIAS`, sinon le nom d'utilisateur dans le répertoire de la base 4D |
+|              | host_name          | text                  | Nom de la machine                                                                                              |
+|              | task_name          | text                  | Nom du process                                                                                                 |
+|              | client_version     | text                  |                                                                                                                |
+|              |                    |                       | ***Disponible uniquement en cas d'erreur critique*** (clé primaire dupliquée, disque plein...) :               |
+| errors       |                    | collection of objects |                                                                                                                |
+|              | message            | text                  | Message d'erreur                                                                                               |
+|              | componentSignature | text                  | Signature du composant interne (e.g. "dmbg" pour le composant de base de données)                              |
+|              | errCode            | number                | Code d'erreur                                                                                                  |
 
 ##### status et statusText
 
-The following values can be returned in the `status` and `statusText` properties of Result object in case of error:
+Les valeurs suivantes peuvent être retournées dans les propriétés `status` et `statusText` de l'objet Résultat en cas d'erreur :
 
 | Constante                                 | Valeur | Commentaire                                                                                                                                                                                                                                                                              |
 | ----------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status automerge failed`              | 6      | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"                                                                               |
-| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                                          |
+| `dk status automerge failed`              | 6      | (Uniquement si l'option `dk auto merge` est utilisée) Echec du mécanisme de merge automatique lors de la sauvegarde de l'entité.<p><p>**statusText associé** : "Auto merge failed"                                                       |
+| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). Avec `.drop( )`, cette erreur peut être retournée lorsque l'option `dk force drop if stamp changed` est utilisée. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>**statusText associé** : "Entity does not exist anymore"                                                           |
 | `dk status locked`                        | 3      | L'entité est verrouillée par un verrou pessimiste.<p><p>**statusText associé** : "Already locked"                                                                                                                                        |
 | `dk status serious error`                 | 4      | Une erreur critique peut être une erreur de bas niveau de la base de données (ex. clé dupliquée), une erreur matérielle, etc.<p><p>**statusText associé** : "Other error"                                                                |
 | `dk status stamp has changed`             | 2      | La valeur du marqueur interne (stamp) de l'entité ne correspond pas à celle de l'entité stockée dans les données (verrouillage optimiste).<br><li>avec `.save( )` : erreur uniquement si l'option `dk auto merge` n'est pas utilisée</li><li>avec `.drop( )` : erreur uniquement si l'option `dk force drop if stamp changed` n'est pas utilisée</li><li>avec `.lock( )` : erreur uniquement si l'option `dk reload if stamp changed` n'est pas utilisée</li><br>**statusText associé** : "Stamp has changed" |
@@ -1214,7 +1214,7 @@ The following values can be returned in the `status` and `statusText` properties
 
 #### Exemple 1
 
-Creating a new entity:
+Création d'une entité :
 
 ```4d
  var $status : Object
@@ -1224,13 +1224,13 @@ Creating a new entity:
  $employee.lastName:="Smith"
  $status:=$employee.save()
  If($status.success)
-    ALERT("Employee created")
+    ALERT("Employé créé")
  End if
 ```
 
 #### Exemple 2
 
-Updating an entity without `dk auto merge` option:
+Mise à jour d'une entité sans option `dk auto merge` :
 
 ```4d
  var $status : Object
@@ -1242,7 +1242,7 @@ Updating an entity without `dk auto merge` option:
  $status:=$employee.save()
  Case of
     :($status.success)
-       ALERT("Employee updated")
+       ALERT("Employé mis à jour")
     :($status.status=dk status stamp has changed)
        ALERT($status.statusText)
  End case
@@ -1250,7 +1250,7 @@ Updating an entity without `dk auto merge` option:
 
 #### Exemple 3
 
-Updating an entity with `dk auto merge` option:
+Mise à jour d'une entité avec option `dk auto merge` :
 
 ```4d
  var $status : Object
@@ -1264,7 +1264,7 @@ Updating an entity with `dk auto merge` option:
  $status:=$employee.save(dk auto merge)
  Case of
     :($status.success)
-       ALERT("Employee updated")
+       ALERT("Employé mis à jour")
     :($status.status=dk status automerge failed)
        ALERT($status.statusText)
  End case
@@ -1288,42 +1288,42 @@ Updating an entity with `dk auto merge` option:
 **.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.toObject().Params -->
-| Paramètres   | Type       |    | Description                                                                                             |
-| ------------ | ---------- |:--:| ------------------------------------------------------------------------------------------------------- |
-| filterString | Text       | -> | Attribute(s) to extract (comma-separated string)                                                        |
-| filterCol    | Collection | -> | Collection of attribute(s) to extract                                                                   |
-| options      | Integer    | -> | `dk with primary key`: adds the \_KEY property;<br>`dk with stamp`: adds the \_STAMP property |
-| Résultat     | Object     | <- | Object built from the entity                                                                            |
+| Paramètres   | Type       |    | Description                                                                                                      |
+| ------------ | ---------- |:--:| ---------------------------------------------------------------------------------------------------------------- |
+| filterString | Text       | -> | Attribut(s) à extraire (chaînes séparées par des virgules)                                                       |
+| filterCol    | Collection | -> | Collection d'attribut(s) à extraire                                                                              |
+| options      | Integer    | -> | `dk with primary key` : ajouter la propriété \_KEY ;<br>`dk with stamp` : ajouter la propriété \_STAMP |
+| Résultat     | Object     | <- | Objet généré à partir de l'entité                                                                                |
 <!-- END REF -->
 
 #### Description
 
-The `.toObject()` function <!-- REF #EntityClass.toObject().Summary -->returns an object which has been built from the entity<!-- END REF -->. Property names in the object match attribute names of the entity.
+La fonction `.toObject()` <!-- REF #EntityClass.toObject().Summary -->retourne un objet construit à partir de l'entité<!-- END REF -->. Les noms des propriétés de l'objet correspondent aux noms des attributs de l'entité.
 
-If no filter is specified, or if the *filterString* parameter contains an empty string or "*", the returned object will contain:
+Si aucun filtre n'est passé ou si le paramètre *filterString* contient une chaîne vide ou "*", l'objet retourné contiendra :
 
-*   all storage entity attributes
-*   attributes of the `relatedEntity` [kind](DataClassAttributeClass.md#kind): you get a property with the same name as the related entity (name of the many-to-one link). Attribute is extracted with the simple form.
-*   attributes of the `relatedEntities` [kind](DataClassAttributeClass.md#kind): attribute is not returned.
+*   tous les attributs storage de l'entité
+*   attributs dont le [kind](DataClassAttributeClass.md#kind) est `relatedEntity` : vous obtenez une propriété avec le même nom que l'entité liée (nom du lien N vers 1). L'attribut est extrait sous forme simple.
+*   attributs dont le [kind](DataClassAttributeClass.md#kind) est `relatedEntities` : non retournés.
 
 
-In the first parameter, you pass the entity attribute(s) to extract. You can pass:
+Dans le premier paramètre, indiquez le ou les attribut(s) à extraire. Vous pouvez passer :
 
-*   *filterString*: a string with property paths separated with commas: "propertyPath1, propertyPath2, ...", or
-*   *filterCol*: a collection of strings: \["propertyPath1","propertyPath2";...]
+*   *filterString* : une chaîne avec les chemins des propriétés séparés par des virgules : "propertyPath1, propertyPath2, ...", ou
+*   *filterCol* : une collection de chaînes contenant des chemins de propriétés : \["propertyPath1","propertyPath2";...]
 
-If a filter is specified for attributes of the relatedEntity [kind](DataClassAttributeClass.md#kind):
+Si un filtre contient des attributs dont le [kind](DataClassAttributeClass.md#kind) est relatedEntity :
 
-*   propertyPath = "relatedEntity" -> it is extracted with simple form: an object with property \_\_KEY (primary key).
+*   propertyPath = "relatedEntity" -> l'attribut est extrait sous forme simple : un objet avec la propriété \_\_KEY (clé primaire).
 *   propertyPath = "relatedEntity.*" -> toutes les propriétés sont extraites
 *   propertyPath = "relatedEntity.propertyName1; relatedEntity.propertyName2; ..." -> seules ces propriétés sont extraites
 
-If a filter is specified for attributes of the relatedEntities [kind](DataClassAttributeClass.md#kind):
+Si un filtre contient de attributs dont le [kind](DataClassAttributeClass.md#kind) est relatedEntities :
 
 *   propertyPath = "relatedEntities.*" -> toutes les propriétés sont extraites
 *   propertyPath = "relatedEntities.propertyName1; relatedEntities.propertyName2; ..." -> seules ces propriétés sont extraites
 
-In the *options* parameter, you can pass the `dk with primary key` and/or`dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
+Dans le paramètre *options*, vous pouvez passer les sélecteurs `dk with primary key` et/ou `dk with stamp` afin d'ajouter les clés primaires et/ou les stamps dans les objets extraits.
 
 
 #### Exemple 1
@@ -1333,7 +1333,7 @@ La structure suivante sera utilisée pour les exemples de cette section :
 ![](assets/en/API/dataclassAttribute4.png)
 
 
-Without filter parameter:
+Sans paramètre filtre :
 
 ```4d
 employeeObject:=employeeSelected.toObject()
@@ -1366,7 +1366,7 @@ Retourne :
 
 #### Exemple 2
 
-Extracting the primary key and the stamp:
+Extraction de la clé primaire et du stamp :
 
 ```4d
 employeeObject:=employeeSelected.toObject("";dk with primary key+dk with stamp)
@@ -1399,7 +1399,7 @@ Retourne :
 
 #### Exemple 3
 
-Expanding all the properties of `relatedEntities`:
+Extraction complète des attributs des `relatedEntities` :
 
 ```4d
 employeeObject:=employeeSelected.toObject("directReports.*")
@@ -1468,7 +1468,7 @@ employeeObject:=employeeSelected.toObject("directReports.*")
 
 #### Exemple 4
 
-Extracting some properties of `relatedEntities`:
+Extraction de quelques attributs des `relatedEntities` :
 
 ```4d
  employeeObject:=employeeSelected.toObject("firstName, directReports.lastName")
@@ -1495,7 +1495,7 @@ Retourne :
 
 #### Exemple 5
 
-Extracting a `relatedEntity` with simple form:
+Extraction d'une `relatedEntity` sous forme simple :
 
 ```4d
  $coll:=New collection("firstName";"employer")
@@ -1515,7 +1515,7 @@ Retourne :
 
 #### Exemple 6
 
-Extracting all the properties of a `relatedEntity`:
+Extraction de tous les attributs d'une `relatedEntity` :
 
 ```4d
  employeeObject:=employeeSelected.toObject("employer.*")
@@ -1535,9 +1535,9 @@ Retourne :
 }
 ```
 
-#### Example 7
+#### Exemple 7
 
-Extracting some properties of a `relatedEntity`:
+Extraction de quelques attributs d'une `relatedEntity` :
 
 ```4d
  $col:=New collection
@@ -1575,31 +1575,31 @@ Retourne :
 **.touched()** : Boolean<!-- END REF -->
 
 <!-- REF #EntityClass.touched().Params -->
-| Paramètres | Type    |    | Description                                                                           |
-| ---------- | ------- |:--:| ------------------------------------------------------------------------------------- |
-| Résultat   | Boolean | <- | True if at least one entity attribute has been modified and not yet saved, else False |
+| Paramètres | Type    |    | Description                                                                                 |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------------------- |
+| Résultat   | Boolean | <- | Vrai si au moins un attribut de l'entité a été modifié et non encore sauvegardé, sinon Faux |
 <!-- END REF -->
 
 #### Description
 
-The `.touched()` function <!-- REF #EntityClass.touched().Summary -->tests whether or not an entity attribute has been modified since the entity was loaded into memory or saved<!-- END REF -->.
+La fonction `.touched()` <!-- REF #EntityClass.touched().Summary -->indique si un attribut de l'entité a été modifié ou non depuis que l'entité a été chargée en mémoire ou sauvegardée<!-- END REF -->.
 
-If an attribute has been modified or calculated, the function returns True, else it returns False. You can use this function to determine if you need to save the entity.
+Si un attribut a été modifié ou calculé, la fonction retourne Vrai, sinon elle retourne Faux. Vous pouvez utiliser cette fonction pour savoir s'il est nécessaire de sauvegarder l'entité.
 
-This function returns False for a new entity that has just been created (with [`.new( )`](DataClassClass.md#new)). Note however that if you use a function which calculates an attribute of the entity, the `.touched()` function will then return True. For example, if you call [`.getKey()`](#getkey) to calculate the primary key, `.touched()` returns True.
+Cette fonction retourne Faux pour une entité qui vient d'être créée (avec [`.new( )`](DataClassClass.md#new)). A noter cependant que si vous utilisez une fonction pour calculer un attribut de l'entité, la fonction `.touched()` retournera Vrai. Par exemple, si vous appelez [`.getKey()`](#getkey) pour calculer la clé primaire, `.touched()` retourne alors Vrai.
 
 #### Exemple
 
-In this example, we check to see if it is necessary to save the entity:
+Cet exemple vérifie s'il est nécessaire de sauvegarder l'entité :
 
 ```4d
  var $emp : cs.EmployeeEntity
  $emp:=ds.Employee.get(672)
- $emp.firstName:=$emp.firstName //Even if updated with the same value, the attribute is marked as touched
+ $emp.firstName:=$emp.firstName //Même réassigné avec sa propre valeur, l'attribut est considéré "touched"
 
- If($emp.touched()) //if at least one of the attributes has been changed
+ If($emp.touched()) //si au moins l'un des attributs a été modifié
     $emp.save()
- End if // otherwise, no need to save the entity
+ End if // sinon, inutile de sauvegarder l'entité
 ```
 
 <!-- END REF -->
@@ -1619,20 +1619,20 @@ In this example, we check to see if it is necessary to save the entity:
 **.touchedAttributes()** : Collection<!-- END REF -->
 
 <!-- REF #EntityClass.touchedAttributes().Params -->
-| Paramètres | Type       |    | Description                                      |
-| ---------- | ---------- |:--:| ------------------------------------------------ |
-| Résultat   | Collection | <- | Names of touched attributes, or empty collection |
+| Paramètres | Type       |    | Description                                   |
+| ---------- | ---------- |:--:| --------------------------------------------- |
+| Résultat   | Collection | <- | Noms des attributs touchés ou collection vide |
 <!-- END REF -->
 
 #### Description
 
-The `.touchedAttributes()` function <!-- REF #EntityClass.touchedAttributes().Summary -->returns the names of the attributes that have been modified since the entity was loaded into memory<!-- END REF -->.
+La fonction `.touchedAttributes()` <!-- REF #EntityClass.touchedAttributes().Summary -->retourne les noms des attributs qui ont été modifiés depuis que l'entité a été chargée en mémoire<!-- END REF -->.
 
-This applies for attributes of the [kind](DataClassAttributeClass.md#kind) `storage` or `relatedEntity`.
+Cette fonction est applicable aux attributs dont le [kind](DataClassAttributeClass.md#kind) est `storage` ou `relatedEntity`.
 
-In the case of a related entity having been touched (i.e., the foreign key), the name of the related entity and its primary key's name are returned.
+Dans le cas d'un attribut relationnel ayant été "touché" (i.e., la clé étrangère), le nom de l'entité liée et celui de sa clé primaire sont retournés.
 
-If no entity attribute has been touched, the method returns an empty collection.
+Si aucun attribut de l'entité n'a été touché, la fonction retourne une collection vide.
 
 #### Exemple 1
 
@@ -1643,7 +1643,7 @@ If no entity attribute has been touched, the method returns an empty collection.
 
  $touchedAttributes:=New collection
  $emp:=ds.Employee.get(725)
- $emp.firstName:=$emp.firstName //Even if updated with the same value, the attribute is marked as touched
+ $emp.firstName:=$emp.firstName //Même modifié avec la même valeur, l'attribut est considéré comme touché
  $emp.lastName:="Martin"
  $touchedAttributes:=$emp.touchedAttributes()
   //$touchedAttributes: ["firstName","lastName"]
@@ -1672,7 +1672,7 @@ If no entity attribute has been touched, the method returns an empty collection.
   //collection $touchedAttributes: ["firstName","lastName","employer","employerID"]
 ```
 
-In this case:
+Dans ce cas :
 
 *   firstName et lastName ont un type `storage`
 *   employer a un type `relatedEntity`
@@ -1695,19 +1695,19 @@ In this case:
 **.unlock()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.unlock().Params -->
-| Paramètres | Type   |    | Description   |
-| ---------- | ------ |:--:| ------------- |
-| Résultat   | Object | <- | Status object |
+| Paramètres | Type   |    | Description  |
+| ---------- | ------ |:--:| ------------ |
+| Résultat   | Object | <- | Objet statut |
 <!-- END REF -->
 
 #### Description
 
-The `.unlock()` function <!-- REF #EntityClass.unlock().Summary -->removes the pessimistic lock on the record matching the entity<!-- END REF --> in the datastore and table related to its dataclass.
+La fonction `.unlock()` <!-- REF #EntityClass.unlock().Summary -->supprime le verrou pessimiste posé sur l'enregistrement correspondant à l'entité<!-- END REF --> dans sa table du datastore.
 
-> For more information, please refer to [Entity locking](ORDA/entities.md#entity-locking) section.
+> Pour plus d'informations, veuillez consulter la section [Verrouillage d'une entité](ORDA/entities.md#verrouillage-d-une-entite).
 
-A record is automatically unlocked when it is no longer referenced by any entities in the locking process (for example: if the lock is put only on one local reference of an entity, the entity and thus the record is unlocked when the process ends).
-> When a record is locked, it must be unlocked from the locking process and on the entity reference which put the lock. Par exemple :
+Un enregistrement est automatiquement déverrouillé lorsqu'il n'est plus référencé par aucune entité dans le process qui l'a verrouillé (par exemple : si le verrou est posé sur uniquement sur une référence locale d'une entité, l'entité et donc l'enregistrement sont déverrouillés lorsque le process se termine).
+> Lorsqu'un enregistrement est verrouillé, il doit être déverrouillé depuis le process qui l'a verrouillé et via la référence d'entité sur laquelle le verrou a été posé. Par exemple :
 
 ```4d
  $e1:=ds.Emp.all()[0]
@@ -1719,11 +1719,11 @@ A record is automatically unlocked when it is no longer referenced by any entiti
 
 **Résultat**
 
-The object returned by `.unlock()` contains the following property:
+L'objet retourné par `.unlock()` contient la propriété suivante :
 
-| Propriété | Type    | Description                                                                                                                                                                                        |
-| --------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success   | Boolean | True if the unlock action is successful, False otherwise. If the unlock is done on a dropped entity, on a non locked record, or on a record locked by another process or entity, success is False. |
+| Propriété | Type    | Description                                                                                                                                                                                                                                                                 |
+| --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success   | Boolean | Vrai si l'action unlock a été exécutée avec succès, Faux sinon. Si le déverrouillage est effectué sur une entité qui a été supprimée, sur un enregistrement non verrouillé ou sur un enregistrement verrouillé par un autre process ou une autre entité, success vaut Faux. |
 
 #### Exemple
 
@@ -1736,7 +1736,7 @@ The object returned by `.unlock()` contains the following property:
  ... //processing
  $status:=$employee.unlock()
  If($status.success)
-    ALERT("The entity is now unlocked")
+    ALERT("L'entité est déverrouillée")
  End if
 ```
 
