@@ -579,11 +579,11 @@ The result of the command is described in the returned object:
 | success    |                          | Booléen    | True if the provided encryption key matches the encrypted data, False otherwise |
 |            |                          |            | Properties below are returned only if success is *FALSE*                        |
 | status     |                          | Nombre     | Error code (4 if the provided encryption key is wrong)                          |
-| statusText |                          | Texte      | Error message                                                                   |
+| statusText |                          | Texte      | Message d'erreur                                                                |
 | errors     |                          | Collection | Stack of errors. The first error has the highest index                          |
 |            | \[ ].componentSignature | Texte      | Internal component name                                                         |
 |            | \[ ].errCode            | Nombre     | Error number                                                                    |
-|            | \[ ].message            | Texte      | Error message                                                                   |
+|            | \[ ].message            | Texte      | Message d'erreur                                                                |
 
 If no *curPassphrase* or *curDataKey* is given, `.provideDataKey()` returns **null** (no error is generated).
 
