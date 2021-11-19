@@ -235,7 +235,7 @@ By default on macOS, the function creates a standard alias. You can also create 
 On Windows, a shortcut (.lnk file) is always created (the *aliasType* parameter is ignored).
 
 
-**Returned object**
+**Objet retourné**
 
 A `4D.File` object with the `isAlias` property set to **true**.
 
@@ -470,7 +470,7 @@ The *destinationFolder* must exist on disk, otherwise an error is generated.
 By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
 
 
-**Returned object**
+**Objet retourné**
 
 The moved `File` object.
 
@@ -536,7 +536,7 @@ The *newName* parameter must comply with naming rules (e.g., it must not contain
 Note that the function modifies the full name of the file, i.e. if you do not pass an extension in *newName*, the file will have a name without an extension.
 
 
-**Returned object**
+**Objet retourné**
 
 The renamed `File` object.
 
