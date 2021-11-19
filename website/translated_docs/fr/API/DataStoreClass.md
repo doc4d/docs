@@ -375,9 +375,9 @@ You want to know the number of encrypted tables in the current data file:
 
 #### Description
 
-The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. This function is useful for setting up generic code.
+The `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->returns an object providing information about the datastore<!-- END REF -->. Cette fonction est utile pour l'écriture de code générique.
 
-**Returned object**
+**Objet retourné**
 
 | Propriété  | Type    | Description                                                                                                                                                     |
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
