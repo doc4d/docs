@@ -55,7 +55,7 @@ Toutes les formules ont des opérandes et des opérateurs :
 
 Les opérateurs suivants peuvent être utilisés avec deux opérandes de même type :
 
-| Opérateur | Comparison          |
+| Opérateur | Comparaison         |
 | --------- | ------------------- |
 | =         | est égal à          |
 | <>        | est différent de    |
