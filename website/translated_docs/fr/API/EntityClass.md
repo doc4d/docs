@@ -1048,18 +1048,18 @@ S'il n'y a pas d'entité suivante valide dans l'entity selection (i.e. vous ête
 **.previous()**  : 4D.Entity<!-- END REF -->
 
 <!-- REF #EntityClass.previous().Params -->
-| Paramètres | Type      |    | Description                                                              |
-| ---------- | --------- |:--:| ------------------------------------------------------------------------ |
-| Résultat   | 4D.Entity | <- | Reference to previous entity in the entity selection (Null if not found) |
+| Paramètres | Type      |    | Description                                                                   |
+| ---------- | --------- |:--:| ----------------------------------------------------------------------------- |
+| Résultat   | 4D.Entity | <- | Référence à l'entité précédente dans l'entity selection (Null si non trouvée) |
 <!-- END REF -->
 
 #### Description
 
-The `.previous()` function <!-- REF #EntityClass.previous().Summary --> returns a reference to the previous entity in the entity selection which the entity belongs to<!-- END REF -->.
+La fonction `.previous()` <!-- REF #EntityClass.previous().Summary --> retourne une référence sur l'entité précédente dans l'entity selection à laquelle appartient l'entité<!-- END REF -->.
 
 Si l'entité n'appartient à aucune entity selection existante (i.e. [.getSelection()](#getselection) retourne Null), la fonction renvoie une valeur Null.
 
-If there is no valid previous entity in the entity selection (i.e. you are on the first entity of the selection), the function returns Null. If the previous entity has been dropped, the function returns the previous valid entity (and eventually Null).
+S'il n'y a pas d'entité précédente valide dans l'entity selection (i.e. vous êtes sur la première entité de la sélection), la fonction retourne Null. Si l'entité précédente a été supprimée, la fonction renvoie l'entité valide précédente (et finalement Null).
 
 
 #### Exemple
@@ -1090,31 +1090,31 @@ If there is no valid previous entity in the entity selection (i.e. you are on th
 **.reload()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.reload().Params -->
-| Paramètres | Type   |    | Description   |
-| ---------- | ------ |:--:| ------------- |
-| Résultat   | Object | <- | Status object |
+| Paramètres | Type   |    | Description  |
+| ---------- | ------ |:--:| ------------ |
+| Résultat   | Object | <- | Objet statut |
 <!-- END REF -->
 
 #### Description
 
-The `.reload()` function <!-- REF #EntityClass.reload().Summary -->reloads the content of the entity in memory<!-- END REF -->, according to information stored in the table related to the dataclass in the datastore. The reload is done only if the entity still exists with the same primary key.
+La fonction `.reload()` <!-- REF #EntityClass.reload().Summary -->recharge en mémoire le contenu de l'entité<!-- END REF -->à partir des informations stockées dans la table associée à la dataclass dans le datastore. Le rechargement est effectué uniquement si l'entité existe toujours avec la même clé primaire.
 
 **Résultat**
 
-The object returned by `.reload( )` contains the following properties:
+L'objet retourné par `.reload( )` contient les propriétés suivantes :
 
-| Propriété        | Type    | Description                                                                                                                                           |
-| ---------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          | boolean | True if the reload action is successful, False otherwise.<p><p>***Available only in case of error***: |
-| status(\*)     | number  | Code d'erreur, voir ci-dessous                                                                                                                        |
-| statusText(\*) | text    | Description de l'erreur, voir ci-dessous                                                                                                              |
+| Propriété        | Type    | Description                                                                                                                                                        |
+| ---------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| success          | booléen | Vrai si le rechargement a été effectué avec succès, sinon Faux.<p><p>***Disponible uniquement en cas d'erreur*** : |
+| status(\*)     | nombre  | Code d'erreur, voir ci-dessous                                                                                                                                     |
+| statusText(\*) | text    | Description de l'erreur, voir ci-dessous                                                                                                                           |
 
 (\*) Les valeurs suivantes peuvent être retournées dans les propriétés *status* et *statusText* de l'objet *Résultat* en cas d'erreur :
 
-| Constante                                 | Valeur | Commentaire                                                                                                                                                                                                                        |
-| ----------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>***Associated statusText***: "Entity does not exist anymore" |
-| `dk status serious error`                 | 4      | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                                    |
+| Constante                                 | Valeur | Commentaire                                                                                                                                                                                                                      |
+| ----------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). Avec `.drop( )`, cette erreur peut être retournée lorsque l'option `dk force drop if stamp changed` est utilisée. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>***statusText associé*** : "Entity does not exist anymore" |
+| `dk status serious error`                 | 4      | A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.<br>***Associated statusText***: "Other error"                                                                                  |
 
 
 #### Exemple
@@ -1181,7 +1181,7 @@ The object returned by `.save()` contains the following properties:
 | success      |                    | boolean               | True if the save action is successful, False otherwise.                                                                 |
 |              |                    |                       | ***Available only if `dk auto merge` option is used***:                                                                 |
 | autoMerged   |                    | boolean               | True if an auto merge was done, False otherwise.                                                                        |
-|              |                    |                       | ***Available only in case of error***:                                                                                  |
+|              |                    |                       | ***Disponible uniquement en cas d'erreur*** :                                                                           |
 | status       |                    | number                | Error code, [see below](#status-and-statustext)                                                                         |
 | statusText   |                    | text                  | Description of the error, [see below](#status-and-statustext)                                                           |
 |              |                    |                       | ***Available only in case of pessimistic lock error***:                                                                 |
@@ -1206,7 +1206,7 @@ The following values can be returned in the `status` and `statusText` properties
 | Constante                                 | Valeur | Commentaire                                                                                                                                                                                                                                                                              |
 | ----------------------------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `dk status automerge failed`              | 6      | (Only if the `dk auto merge` option is used) The automatic merge option failed when saving the entity.<p><p>**Associated statusText**: "Auto merge failed"                                                                               |
-| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). When using `.drop( )`, this error can be returned when `dk force drop if stamp changed` option is used. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                                          |
+| `dk status entity does not exist anymore` | 5      | L'entité n'existe plus dans les données. Cette erreur peut se produire dans les cas suivants :<br><li>l'entité a été supprimée (le stamp est modifié et l'espace mémoire est libéré)</li><li>l'entité a été supprimée et remplacée par une autre avec une clé primaire différente (le stamp est modifié et une nouvelle entité occupe l'espace mémoire). Avec `.drop( )`, cette erreur peut être retournée lorsque l'option `dk force drop if stamp changed` est utilisée. Avec `.lock( )`, cette erreur peut être retournée lorsque l'option dk reload if stamp changed est utilisée.</li><br>**Associated statusText**: "Entity doesnot exist anymore"                                                          |
 | `dk status locked`                        | 3      | L'entité est verrouillée par un verrou pessimiste.<p><p>**statusText associé** : "Already locked"                                                                                                                                        |
 | `dk status serious error`                 | 4      | Une erreur critique peut être une erreur de bas niveau de la base de données (ex. clé dupliquée), une erreur matérielle, etc.<p><p>**statusText associé** : "Other error"                                                                |
 | `dk status stamp has changed`             | 2      | La valeur du marqueur interne (stamp) de l'entité ne correspond pas à celle de l'entité stockée dans les données (verrouillage optimiste).<br><li>avec `.save( )` : erreur uniquement si l'option `dk auto merge` n'est pas utilisée</li><li>avec `.drop( )` : erreur uniquement si l'option `dk force drop if stamp changed` n'est pas utilisée</li><li>avec `.lock( )` : erreur uniquement si l'option `dk reload if stamp changed` n'est pas utilisée</li><br>**statusText associé** : "Stamp has changed" |
@@ -1695,9 +1695,9 @@ In this case:
 **.unlock()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.unlock().Params -->
-| Paramètres | Type   |    | Description   |
-| ---------- | ------ |:--:| ------------- |
-| Résultat   | Object | <- | Status object |
+| Paramètres | Type   |    | Description  |
+| ---------- | ------ |:--:| ------------ |
+| Résultat   | Object | <- | Objet statut |
 <!-- END REF -->
 
 #### Description
