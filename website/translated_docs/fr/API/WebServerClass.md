@@ -798,7 +798,7 @@ Tous les paramètres des [objets Web server](#web-server-object) peuvent être p
 Customized session settings will be reset when the [`.stop()`](#stop) function is called.
 
 
-#### Returned object
+#### Objet retourné
 
 The function returns an object describing the Web server launch status. This object can contain the following properties:
 
