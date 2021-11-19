@@ -1294,7 +1294,7 @@ The code for ***FindCity*** method is:
 The `.indexOf()` function <!-- REF #collection.indexOf().Summary -->searches the *toSearch* expression among collection elements and returns the index of the first found occurrence, or -1 if it was not found<!-- END REF -->.
 > Cette fonction ne modifie pas la collection d'origine.
 
-In *toSearch*, pass the expression to find in the collection. You can pass:
+In *toSearch*, pass the expression to find in the collection. Vous pouvez passer :
 
 *   une valeur scalaire (texte, numérique, booléen, date),
 *   the null value,
@@ -1505,7 +1505,7 @@ By default, null or empty elements of the collection are returned in the resulti
 The `.lastIndexOf()` function <!-- REF #collection.lastIndexOf().Summary -->searches the *toSearch* expression among collection elements and returns the index of the last occurrence<!-- END REF -->, or -1 if it was not found.
 > Cette fonction ne modifie pas la collection d'origine.
 
-In *toSearch*, pass the expression to find in the collection. You can pass:
+In *toSearch*, pass the expression to find in the collection. Vous pouvez passer :
 
 *   une valeur scalaire (texte, numérique, booléen, date),
 *   the null value,
