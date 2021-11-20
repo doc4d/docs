@@ -178,7 +178,7 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 > * L'interprétation des indicateurs de mots-clés peut varier selon le client de messagerie.
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -265,7 +265,7 @@ Possible charsets:
 | mail mode UTF8 in base64 | US-ASCII_UTF8_B64            | headerCharset & bodyCharset : US-ASCII si possible, sinon UTF-8 & base64                                   |
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -378,7 +378,7 @@ Vous pouvez passer :
 The *destinationBox* parameter allows you to pass a text value with the name of the mailbox where the copies of messages will be placed.
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -483,7 +483,7 @@ In other words, an attempt to create "Projects/IMAP/Doc" on a server in which "/
 In the `name` parameter, pass the name of the new mailbox.
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -567,7 +567,7 @@ Executing this function does not actually remove messages. Messages with the "de
 
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -668,7 +668,7 @@ In the `name` parameter, pass the name of the mailbox to delete.
 > * The ability to delete a mailbox depends on the mail server.
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -748,7 +748,7 @@ End if
 
 The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -820,7 +820,7 @@ In the optional *name* parameter, pass the name of the mailbox to access. The na
 
 If the mailbox *name* is not selectable or does not exist, the function generates an error and returns **null**.
 
-**Returned object**
+**Objet retourné**
 
 The `boxInfo` object returned contains the following properties:
 
@@ -1278,7 +1278,7 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 > Cette fonction est uniquement prise en charge par les serveurs IMAP compatibles avec RFC [8474](https://tools.ietf.org/html/rfc8474).
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -1460,7 +1460,7 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 Note that False values are ignored.
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -1530,7 +1530,7 @@ In the `currentName` parameter, pass the name of the mailbox to be renamed.
 Pass the new name for the mailbox in the `newName` parameter.
 
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -1754,7 +1754,7 @@ The optional *state* parameter defines the type of access to the mailbox. The po
 > * If there is no open connection, `.selectBox()` will open a connection.
 > * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the [`.checkConnection()`](#checkconnection) function is automatically called.
 
-**Returned object**
+**Objet retourné**
 
 The `boxInfo` object returned contains the following properties:
 
@@ -1810,7 +1810,7 @@ The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -
 
 In the `name` parameter, pass the name of the mailbox to add (subscribe) to your "subscribed" mailboxes.
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
@@ -1887,7 +1887,7 @@ The `.unsubscribe()` function <!-- REF #IMAPTransporterClass.unsubscribe().Summa
 
 In the `name` parameter, pass the name of the mailbox to remove (unsubscribe) from your active mailboxes.
 
-**Returned object**
+**Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
 
