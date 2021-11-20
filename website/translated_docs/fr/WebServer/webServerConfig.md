@@ -299,11 +299,11 @@ Numéro de port IP d'écoute pour les connections HTTP via TLS. La valeur par d�
 | ------------------------ | ------------------------------------------------------------------------ | ------------ |
 | objet webServer          | [`inactiveProcessTimeout`](API/webServerClass.md#inactiveprocesstimeout) |              |
 | `WEB SET OPTION`         | `Web inactive process timeout`                                           |              |
-| Fenêtre de configuration | Options (I) > Conservation des Process inactifs                          | Slider       |
+| Fenêtre de configuration | Options (I) > Conservation des Process inactifs                          | Curseur      |
 
-Life duration (in minutes) of inactive processes associated with sessions. À la fin du délai d'attente (tiemout), le process est tué sur le serveur, la méthode base `On Web Close Process` est appelée, puis le contexte de session est détruit.
+Durée de vie (en minutes) des process inactifs associés aux sessions. À la fin du délai d'attente (tiemout), le process est tué sur le serveur, la méthode base `On Web Close Process` est appelée, puis le contexte de session est détruit.
 
-Default: 480 minutes (pass 0 to restore the default value)
+Valeur par défaut : 480 minutes (passez 0 pour restaurer la valeur par défaut)
 
 
 ## Inactive Session Timeout
@@ -315,7 +315,7 @@ Default: 480 minutes (pass 0 to restore the default value)
 
 Durée de vie (en minutes) des sessions inactives (durée définie dans le cookie). À la fin de cette période, le cookie de session expire et n'est plus envoyé par le client HTTP.
 
-Default: 480 minutes (pass 0 to restore the default value)
+Valeur par défaut : 480 minutes (passez 0 pour restaurer la valeur par défaut)
 
 
 ## IP Address to listen
