@@ -47,7 +47,7 @@ For more information, refer to [User settings](./user-settings).
 
 In the Preferences and Settings dialog boxes, parameters whose values have been modified appear in bold:
 
-![](assets/en/settings/customize-settings.PNG)   
+![](assets/en/settings/customize-settings.png)   
 
 Preferences indicated as customized may have been modified directly in the dialog box, or may have been modified previously in the case of a converted database. 
 
@@ -55,7 +55,7 @@ A parameter still appears in bold even when its value is replaced manually with 
 
 To reset the parameters to their default values and remove the bold style indicating that they have been customized, click on the **Factory settings** button:
 
-![](assets/en/settings/factory-settings.PNG)   
+![](assets/en/settings/factory-settings.png)   
 
 This button resets all the parameters of the current page. It becomes active when at least one parameter has been modified on the current page.
 
