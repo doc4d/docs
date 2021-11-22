@@ -1500,11 +1500,11 @@ In this example, the "marks" object field in the **Students** dataClass contains
 ## .query()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                     |
-| ------- | ---------------------------------- |
-| v17 R6  | Support of Formula parameters      |
-| v17 R5  | Support of placeholders for values |
-| v17     | Añadidos                           |
+| Versión | Modificaciones                             |
+| ------- | ------------------------------------------ |
+| v17 R6  | Soporte de los parámetros Formula          |
+| v17 R5  | Soporte de los marcadores para los valores |
+| v17     | Añadidos                                   |
 
 </details>
 
