@@ -3,6 +3,8 @@ id: method-list
 title: メソッド一覧
 ---
 
+> **Warning**: The commands on this page are not thread-safe.
+
 [A](#a) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) - [I](#i) - [M](#m) - [N](#n) - [O](#o) - [P](#p) - [R](#r) - [S](#s)
 
 ## A
@@ -27,7 +29,7 @@ title: メソッド一覧
 #### 説明
 
 `VP ADD FORMULA NAME` コマンドは、 <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->開いているドキュメント内において命名されたフォーミュラを作成、または編集します<!-- END REF -->。
-> このコマンドで作成された命名フォーミュラはドキュメントとともに保存されます。
+> Named formulas created by this command are saved with the document.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -70,7 +72,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 
 `VP ADD RANGE NAME` コマンドは、 <!-- REF #_method_.VP ADD RANGE NAME.Summary -->開いているドキュメント内に命名レンジを作成、または編集します<!-- END REF -->。
-> このコマンドで作成された命名レンジはドキュメントとともに保存されます。
+> Named ranges created by this command are saved with the document.
 
 名前をつけたいレンジを *rangeObj* に、新しいレンジの名前は *name* に渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名レンジは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
@@ -81,8 +83,8 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 | ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | scope   | 数値   | レンジのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>スコープは、レンジ名が特定のワークシートに限定されたローカル (*scope* = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (*scope* = `vk workbook`) なものかを決定します。 |
 | comment | テキスト | 命名レンジに割り当てられたコメント                                                                                                                                                                                                                                                                                                                         |
-> * 命名レンジの実態は、座標を格納した命名フォーミュラです。 `VP ADD RANGE NAME` を使うと簡単に命名レンジの作成ができますが、[`VP ADD FORMULA NAME`](#vp-add-formula-name) コマンドで命名レンジを作成することもできます。
-> * 命名レンジを定義するフォーミュラは、[`VP Get formula by name`](#vp-get-formula-by-name) コマンドで取得することができます。
+> * A named range is actually a named formula containing coordinates. `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](#vp-add-formula-name) method to create named ranges.
+> * Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](#vp-get-formula-by-name) method.
 
 
 #### 例題
@@ -112,7 +114,7 @@ VP ADD RANGE NAME($range;"Total1")
 `VP ADD SELECTION` コマンドは、 <!-- REF #_method_.VP ADD SELECTION.Summary -->指定されたセルを、現在選択されているセル範囲に追加します<!-- END REF -->。
 
 *rangeObj* には、カレントセレクションに追加するセルのレンジオブジェクトを渡します。
-> アクティブセルは変更されません。
+> The active cell is not modified.
 
 #### 例題
 
@@ -188,8 +190,8 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 *rangeObj* には、セルのレンジオブジェクトを渡します。 レンジ内のセルは結合され、複数のカラム/行にまたがる大きなセルが作成されます。 複数のセルレンジを渡すことで、一度に複数の結合セルを作成することもできます。 ただし、セルレンジが重なった場合、最初のセルレンジのみが使用されます。
 
-> - 結合セルでは、元のレンジの左上端セルのデータのみが表示されます。 他のセルのデータは結合が解除されるまで非表示になります。
-> - 結合セル内の非表示データは、フォーミュラを使用することでアクセス可能です (フォーミュラは左上端セルから始まります)。
+> - Only the data in the upper-left cell is displayed. Data in the other combined cells is hidden until the span is removed.
+> - Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
 
 #### 例題
 
@@ -232,7 +234,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 `VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とスコープを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
 
-> このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
+> Style sheets created by this command are saved with the document.
 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
@@ -342,7 +344,7 @@ $all:=VP All("ViewProArea") // カレントシートの全セル
 
 `VP Cell` コマンドは、 <!-- REF #_method_.VP Cell.Summary -->特定のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
-> このコマンドは単一セルのレンジを想定しています。 複数セルに対するレンジオブジェクトを作成するには、[VP Cells](#vp-cells) コマンドを使用します。
+> This command is intended for ranges of a single cell. To create a range object for multiple cells, use the [VP Cells](#vp-cells) command.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -525,7 +527,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 *rangeObj* には、1つ目のレンジオブジェクトを渡します。
 
 *otherRangeObj* には、*rangeObj* のレンジオブジェクトと統合させる他のレンジオブジェクトを渡します。
-> このコマンドは *rangeObj* および *otherRangeObj* のオブジェクトを参照によって組み合わせます。
+> The command incorporates *rangeObj* and *otherRangeObj* objects by reference.
 
 #### 例題
 
@@ -559,7 +561,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 #### 説明
 
 `VP Convert from 4D View` コマンドを使用すると、 <!-- REF #_method_.VP Convert from 4D View.Summary -->旧式の 4D View ドキュメントを 4D View Pro オブジェクトへと変換することができます<!-- END REF -->。
-> 旧式の 4D View プラグインが現環境にインストールされていなくても、このコマンドは使用可能です。
+> This command does not require that the legacy 4D View plug-in be installed in your environment.
 
 
 *4DViewDocument* には変換する 4D View ドキュメントを格納する BLOB変数やフィールドを渡します。 コマンドは、4D View ドキュメントに保存されていた情報をすべて 4D View Pro 属性へと変換した 4D View Pro オブジェクトを返します。
@@ -602,7 +604,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 *   4D View Pro ドキュメントを、4D View Pro エリアに読み込まずに印刷したい場合
 
 *vpObject* 引数には、変換したい 4D View Pro オブジェクトを渡します。 このオブジェクトは事前に [VP Export to object](#vp-export-to-object) コマンドで解析するか、または [VP EXPORT DOCUMENT](#vp-export-document) コマンドにより保存してある必要があります。
-> 4D View Pro エリアに含まれている式や書式 ([セルフォーマット](configuring.md#セルフォーマット) 参照) が正常に書き出されるよう、少なくともそれらが一度は評価されていることが SVG変換プロセスには必要です。 事前に評価されていないドキュメントを変換した場合、式や書式が予期せぬ形にレンダリングされている可能性があります。
+> SVG conversion process requires that expressions and formats (cf. [Cell Format](configuring.md#cell-format)) included in the 4D View Pro area be evaluated at least once, so that they can be correctly exported. If you convert a document that was not evaluated beforehand, expressions or formats may be rendered in an unexpected way.
 
 *rangeObj* には、変換するセルのレンジを渡します。 この引数が省略された場合のデフォルトでは、ドキュメントのコンテンツ全体が変換されます。
 
@@ -616,7 +618,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 *   行高さ
 *   カラム幅
 *   非表示のカラム / 行
-> 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。
+> Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
 #### ファンクションの戻り値
 
@@ -696,7 +698,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 *   レンジにカラムと行の両方が含まれる場合、カラムのみが削除されます。
 *   レンジに行しか含まれていない場合、コマンドは何もしません。
-> カラムは右から左に向かって削除されます。
+> Columns are deleted from right to left.
 
 
 #### 例題
@@ -723,7 +725,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 *   レンジにカラムと行の両方が含まれる場合、行のみが削除されます。
 *   レンジにカラムしか含まれていない場合、コマンドは何もしません。
-> 行は下から上に向かって削除されます。
+> Rows are deleted from bottom to top.
 
 
 #### 例題
@@ -1903,8 +1905,6 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 `VP Get workbook options`<!-- REF #_method_.Get workbook options.Summary -->returns an object containing the workbook options in *vpArea*<!-- END REF -->*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 The list of workbook options is referenced in [`VP SET WORKBOOK OPTIONS`'s description](#vp-set-workbook-options).
-
-> This command is not thread-safe
 
 #### 例題
 
@@ -3869,8 +3869,6 @@ The following table lists the available workbook options:
 | tabStripVisible                       | boolean                 | Display the sheet tab strip.                                                                                                                                                                                                                           |
 | tabStripWidth                         | number                  | Specifies the width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                        |
 | useTouchLayout                        | boolean                 | Whether to use touch layout to present the Spread component.                                                                                                                                                                                           |
-
-> This command is not thread-safe
 
 #### 例題
 
