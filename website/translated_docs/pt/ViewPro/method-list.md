@@ -3,6 +3,8 @@ id: method-list
 title: Method List
 ---
 
+> **Warning**: The commands on this page are not thread-safe.
+
 [A](#a) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) - [I](#i) - [M](#m) - [N](#n) - [O](#o) - [P](#p) - [R](#r) - [S](#s)
 
 ## A
@@ -2234,8 +2236,6 @@ returns an object containing the workbook options in *vpArea*
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
 The list of workbook options is referenced in [`VP SET WORKBOOK OPTIONS`'s description](#vp-set-workbook-options).
-
-> This command is not thread-safe
 
 #### Exemplo
 
@@ -4707,8 +4707,6 @@ The following table lists the available workbook options:
 | tabStripVisible                       | booleano                | Display the sheet tab strip.                                                                                                                                                                                                                           |
 | tabStripWidth                         | number                  | Specifies the width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                        |
 | useTouchLayout                        | booleano                | Whether to use touch layout to present the Spread component.                                                                                                                                                                                           |
-
-> This command is not thread-safe
 
 #### Exemplo
 
