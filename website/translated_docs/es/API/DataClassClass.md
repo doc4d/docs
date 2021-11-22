@@ -99,10 +99,10 @@ Considerando las siguientes propiedades de la tabla:
 ## .all()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                      |
-| ------- | ----------------------------------- |
-| v17 R5  | Support of the *settings* parameter |
-| v17     | Añadidos                            |
+| Versión | Modificaciones                   |
+| ------- | -------------------------------- |
+| v17 R5  | Soporte del parámetro *settings* |
+| v17     | Añadidos                         |
 </details>
 
 
@@ -152,10 +152,10 @@ En el parámetro opcional *settings* se puede pasar un objeto que contenga opcio
 ## .fromCollection()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                      |
-| ------- | ----------------------------------- |
-| v17 R5  | Support of the *settings* parameter |
-| v17     | Añadidos                            |
+| Versión | Modificaciones                   |
+| ------- | -------------------------------- |
+| v17 R5  | Soporte del parámetro *settings* |
+| v17     | Añadidos                         |
 </details>
 
 <!-- REF #DataClassClass.fromCollection().Syntax -->
@@ -645,11 +645,11 @@ Cuando se crea, la selección de entidades no contiene ninguna entidad (`mySelec
 ## .query()
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                     |
-| ------- | ---------------------------------- |
-| v17 R6  | Support of Formula parameters      |
-| v17 R5  | Support of placeholders for values |
-| v17     | Añadidos                           |
+| Versión | Modificaciones                             |
+| ------- | ------------------------------------------ |
+| v17 R6  | Soporte de los parámetros Formula          |
+| v17 R5  | Soporte de los marcadores para los valores |
+| v17     | Añadidos                                   |
 </details>
 
 <!-- REF #DataClassClass.query().Syntax -->
@@ -684,7 +684,7 @@ attributePath|formula comparator value
 
 donde:
 
-*   **attributePath**: path of attribute on which you want to execute the query. This parameter can be a simple name (for example "country") or any valid attribute path (for example "country.name".) In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). You can also use a **placeholder** (see below).
+*   **attributePath**: ruta del atributo sobre el que se quiere ejecutar la búsqueda. Este parámetro puede ser un nombre simple (por ejemplo, "país") o cualquier ruta de atributo válida (por ejemplo, "país.nombre".) In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). You can also use a **placeholder** (see below).
 > *You cannot use directly attributes whose name contains special characters such as ".", "\[ ]", or "=", ">", "#"..., because they will be incorrectly evaluated in the query string. If you need to query on such attributes, you must consider using placeholders, which allow an extended range of characters in attribute paths (see* **Using placeholders** *below).*
 
 *   **formula**: a valid formula passed as `Text` or `Object`. The formula will be evaluated for each processed entity and must return a boolean value. Within the formula, the entity is available through the `This` object.
