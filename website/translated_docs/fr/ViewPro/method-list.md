@@ -3,6 +3,8 @@ id: method-list
 title: Liste de méthodes
 ---
 
+> **Warning**: The commands on this page are not thread-safe.
+
 [A](#a) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) - [I](#i) - [M](#m) - [N](#n) - [O](#o) - [P](#p) - [R](#r) - [S](#s)
 
 ## A
@@ -27,7 +29,7 @@ title: Liste de méthodes
 #### Description
 
 La commande `VP ADD FORMULA NAME` <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->permet de créer ou de modifier une formule nommée dans le document courant<!-- END REF -->.
-> Les formules nommées créées par cette commande sont stockées dans le document.
+> Named formulas created by this command are saved with the document.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
@@ -70,7 +72,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 
 La commande `VP ADD RANGE NAME` <!-- REF #_method_.VP ADD RANGE NAME.Summary -->permet de créer ou de modifier une plage nommée dans le document courant<!-- END REF -->.
-> Les plages nommées créées par cette commande sont stockées dans le document.
+> Named ranges created by this command are saved with the document.
 
 Dans *rangeObj*, passez la plage que vous souhaitez nommer, et passez le nouveau nom de la plage dans *name*. Si le nom est déjà utilisé dans le même scope, la nouvelle plage nommée remplace la plage existante. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
 
@@ -2234,8 +2236,6 @@ returns an object containing the workbook options in *vpArea*
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
 The list of workbook options is referenced in [`VP SET WORKBOOK OPTIONS`'s description](#vp-set-workbook-options).
-
-> This command is not thread-safe
 
 #### Exemple
 
@@ -4707,8 +4707,6 @@ The following table lists the available workbook options:
 | tabStripVisible                       | boolean                 | Display the sheet tab strip.                                                                                                                                                                                                                           |
 | tabStripWidth                         | number                  | Specifies the width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                        |
 | useTouchLayout                        | boolean                 | Whether to use touch layout to present the Spread component.                                                                                                                                                                                           |
-
-> This command is not thread-safe
 
 #### Exemple
 
