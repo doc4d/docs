@@ -59,10 +59,10 @@ They provide the following properties and functions:
 ## WEB Server
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                     |
-| ------- | ---------------------------------- |
-| v18 R3  | Añadidos                           |
-| v19     | support for .sessionCookieSameSite |
+| Versión | Modificaciones                    |
+| ------- | --------------------------------- |
+| v18 R3  | Añadidos                          |
+| v19     | soporte de .sessionCookieSameSite |
 
 </details>
 
@@ -231,11 +231,11 @@ La lista de cifrado <!-- REF #WebServerClass.cipherSuite.Summary -->utilizada pa
 **.CORSEnabled** : Boolean<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.CORSEnabled.Summary -->CORS (*Cross-origin resource sharing*) service status for the web server<!-- END REF -->. For security reasons, "cross-domain" requests are forbidden at the browser level by default. When enabled (True), XHR calls (e.g. REST requests) from Web pages outside the domain can be allowed in your application (you need to define the list of allowed addresses in the CORS domain list, see `CORSSettings` below). When disabled (False, default), all cross site requests sent with CORS are ignored. When enabled (True) and a non-allowed domain or method sends a cross site request, it is rejected with a "403 - forbidden" error response.
+El estado del servicio <!-- REF #WebServerClass.CORSEnabled.Summary -->CORS (*Cross-origin resource sharing*) para el servidor web<!-- END REF -->. For security reasons, "cross-domain" requests are forbidden at the browser level by default. Cuando está habilitado (True), las llamadas XHR (por ejemplo, peticiones REST) de páginas web fuera del dominio pueden ser permitidas en su aplicación (necesita definir la lista de direcciones permitidas en la lista de dominios CORS, ver `CORSSettings` abajo). Cuando se desactiva (False, por defecto), se ignoran todas las peticiones cruzadas enviadas con CORS. Cuando se activa (True) y un dominio o método no permitido envía una solicitud de sitio cruzado, se rechaza con una respuesta de error "403 - prohibido".
 
-Default: False (disabled)
+Por defecto: False (desactivado)
 
-For more information about CORS, please refer to the [Cross-origin resource sharing page](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) on Wikipedia.
+Para más información sobre CORS, consulte la página [Cross-origin resource sharing page](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) en Wikipedia.
 
 <!-- END REF -->
 
@@ -249,7 +249,7 @@ For more information about CORS, please refer to the [Cross-origin resource shar
 **.CORSSettings** : Collection<!-- END REF -->
 
 
-A <!-- REF #WebServerClass.CORSSettings.Summary -->list of allowed hosts and methods for the CORS service<!-- END REF --> (see [`CORSEnabled`](#corsenabled) property). Each object must contain a **host** property and, optionally, a **methods** property:
+Una <!-- REF #WebServerClass.CORSSettings.Summary -->lista de hosts y métodos permitidos para el servicio CORS<!-- END REF --> (ver la propiedad [`CORSEnabled`](#corsenabled)). Each object must contain a **host** property and, optionally, a **methods** property:
 
 *   **host** (text, mandatory): Domain name or IP address from where external pages are allowed to send data requests to the Server via CORS. Multiple domain attributes can be added to create a white list. If *host* is not present or empty, the object is ignored. Several syntaxes are supported:
     -   192.168.5.17:8081
