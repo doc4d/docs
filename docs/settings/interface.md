@@ -1,6 +1,6 @@
 ---
 id: interface
-title: Interface-page
+title: Interface page
 ---
 
  
@@ -72,4 +72,5 @@ To change the shortcut of an operation, click the corresponding **Edit** butto
 ![](assets/en/settings/.png)
 
 To change the shortcut, type the new key combination on your keyboard and click OK. If you prefer not to have a shortcut for an operation, click the Clear button.
+
 

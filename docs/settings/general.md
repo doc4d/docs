@@ -3,7 +3,7 @@ id: general
 title: General page
 ---
 
-This page contains various options to configure generic parameters for the 4D database.
+The General page contains various options to configure generic parameters for the 4D database.
 
 ### Design  
 
