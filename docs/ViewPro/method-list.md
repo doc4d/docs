@@ -2256,7 +2256,7 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 #### Description
 
 `VP Get workbook options` <!-- REF #_method_.Get workbook options.Summary -->
-returns an object containing the workbook options in *vpArea*
+returns an object containing the workbook options in *vpAreaName*
 <!-- END REF -->
 
 In *vpAreaName*, pass the name of the 4D View Pro area. 
@@ -4674,7 +4674,7 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 #### Description
 
 `VP SET WORKBOOK OPTIONS` <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
-sets the workbook options in *vpArea*<!-- END REF -->.
+sets the workbook options in *vpAreaName*<!-- END REF -->.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. 
 
@@ -4702,10 +4702,10 @@ The following table lists the available workbook options:
 | allowUserZoom | boolean | Zooming (ctrl + mouse wheel) is allowed |
 | autoFitType | number | Content is formatted to fit in cells, or cells and headers. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk auto fit type cell </td><td> The content autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td> The  content autofits cells and headers</td></tr></table> |
 | backColor | string | A color string used to represent the background color of the area, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5". The initial backgroundcolor is hidden when a backgroundcolor is set. |
-| backgroundImage | string / picture / file | Sets the background image for the area |
-| backgroundImageLayout | number | Sets how the background image is displayed. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk image layout center </td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td> Fills the area.</td></tr><tr><td> vk image layout zoom </td><td> Displayed with its original aspect ratio.</td></tr></table> |
+| backgroundImage | string / picture / file | Background image for the area |
+| backgroundImageLayout | number | How the background image is displayed. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk image layout center </td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td> Fills the area.</td></tr><tr><td> vk image layout zoom </td><td> Displayed with its original aspect ratio.</td></tr></table> |
 | calcOnDemand | boolean | Formulas are calculated only when they are demanded. |
-| columnResizeMode | number | Specifies the resize mode for columns. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk resize mode normal </td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>|
+| columnResizeMode | number | Resize mode for columns. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk resize mode normal </td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>|
 | copyPasteHeaderOptions | number | Headers to include when data is copied to or pasted. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk copy paste header options all headers</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td> 	Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table> |
 | customList | collection | The list for users to customize drag fill, prioritize matching this list in each fill. Each collection item is a collection of strings. See on [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b).|
 | cutCopyIndicatorBorderColor | string | Border color for the indicator displayed when the user cuts or copies the selection. |
@@ -4721,9 +4721,9 @@ The following table lists the available workbook options:
 | newTabVisible | boolean | Display a special tab to let users insert new sheets. |
 | numbersFitMode | number | Changes display mode when date/number data width is longer than column width. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk numbers fit mode mask</td><td> Replace data content with "###" and shows tip</td></tr><tr><td> vk numbers fit mode overflow </td><td> Display data content as a string. If next cell is empty, overflow the content.</td></tr></table>|
 | pasteSkipInvisibleRange | boolean | Paste or skip pasting data in invisible ranges: <ul><li>False (default): paste data</li><li>True: Skip pasting in invisible ranges</li></ul>See [Grapecity's docs](https://www.grapecity.com/spreadjs/docs/v14/online/paste-skip-data-invisible-range.html) for more information on invisible ranges.|
-| referenceStyle | number | Gets or sets the style for cell and range references in cell formulas. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk reference style A1 </td><td> Use A1 style.</td></tr><tr><td> vk reference style R1C1 </td><td> Use  R1C1 style</td></tr></table> |
+| referenceStyle | number | Style for cell and range references in cell formulas. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk reference style A1 </td><td> Use A1 style.</td></tr><tr><td> vk reference style R1C1 </td><td> Use  R1C1 style</td></tr></table> |
 | resizeZeroIndicator | number | Drawing policy when the row or column is resized to zero. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk resize zero indicator default </td><td> Uses the current drawing policy when the row or column is resized to zero.</td></tr><tr><td> vk resize zero indicator enhanced </td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table> |
-| rowResizeMode | number | Specifies the way to resize row. Available values are the same as columnResizeMode |
+| rowResizeMode | number | The way rows are resized. Available values are the same as columnResizeMode |
 | scrollbarAppearance | number | Scrollbar appearance. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk scrollbar appearance mobile</td><td> Mobile scrollbars appearance which could be customized.</td></tr><tr><td> vk scrollbar appearance skin (default)</td><td> Excel-like classic scrollbars appearance.</td></tr></table>|
 | scrollbarMaxAlign | boolean | The scroll bar aligns with the last row and column of the active sheet. |
 | scrollbarShowMax | boolean | The displayed scroll bars are based on the entire number of columns and rows in the sheet. |
@@ -4742,7 +4742,7 @@ The following table lists the available workbook options:
 | tabStripPosition | number | Position of the tab strip. Available values: <table><tr><th>Value</th><th>Description</th></tr><tr><td> vk tab strip position bottom </td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>|
 | tabStripRatio | number | Percentage value (0.x) that specifies how much of the horizontal space will be allocated to the tab strip. The rest of the horizontal area (1 - 0.x) will allocated to the horizontal scrollbar. |
 | tabStripVisible | boolean | Display the sheet tab strip. |
-| tabStripWidth | number | Specifies the width of the tab strip when position is left or right. Default and minimum is 80. |
+| tabStripWidth | number | Width of the tab strip when position is left or right. Default and minimum is 80. |
 | useTouchLayout | boolean | Whether to use touch layout to present the Spread component. |
 
 #### Example
