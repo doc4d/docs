@@ -922,16 +922,16 @@ Dans le paramètre *querySettings* vous pouvez passer un objet contenant des opt
 | Propriété     | Type    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | parameters    | Objet   | **Placeholders nommés pour les valeurs** utilisées dans *queryString* ou *formula*. Les valeurs sont exprimées sous forme de paires propriété / valeur, où propriété est le nom du placeholder inséré pour une valeur dans *queryString* ou *formula* (":placeholder") et où valeur correspond à la valeur à comparer. Vous pouvez combiner, dans une même recherche, des placeholders indexés (valeurs passées directement dans les paramètres *value*) et les valeurs des placeholders nommés.                                                                                                                                                                                                                                                            |
-| attributes    | Objet   | **Placeholders nommés pour les chemins d'attributs** utilisés dans *queryString* ou *formula*. Les attributs sont exprimés sous forme de paires propriété / valeur, où propriété est le nom du placeholder inséré pour un chemin d'attribut dans *queryString* or *formula* (":placeholder"), et où valeur peut être une chaine ou une collection de chaines. Chaque valeur est un chemin qui peut désigner soit un attribut scalaire ou relatif de la dataclass soit une propriété d'un champ objet de la dataclass<p><table><tr><th>Type</th><th>Description</th></tr><tr><td>Chaine</td><td>attributePath exprimé à l'aide de la notation par point, ex : "name" ou "user.address.zipCode"</td></tr><tr><td>Collection de chaînes</td><td>Chaque chaine de la collection représente un niveau d'attributePath, ex : \["name"] ou \["user","address","zipCode"]. L'utilisation d'une collection permet de rechercher des attributs dont les noms ne sont pas conformes à la notation à point, ex : ["4Dv17.1","en/fr"]</td></tr></table>Vous pouvez combiner les valeurs des placeholders indexés (valeurs passées directement dans les paramètres *value*) et les valeurs des placeholders nommés dans la même recherche. |
-| args          | Objet   | Parameter(s) to pass to formulas, if any. The **args** object will be received in $1 within formulas and thus its values will be available through *$1.property* (see example 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| allowFormulas | Booléen | True to allow the formula calls in the query (default). Pass false to disallow formula execution. If set to false and `query()` is given a formula, an error is sent (1278 - Formula not allowed in this member method).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| context       | Texte   | Label for the automatic optimization context applied to the entity selection. Ce contexte sera utilisé par le code qui manipule l'entity selection afin de bénéficier de l'optimisation. This feature is designed for client/server processing; for more information, please refer to the **Client/server optimization** section.                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| queryPlan     | Booléen | In the resulting entity selection, returns or does not return the detailed description of the query just before it is executed, i.e. the planned query. The returned property is an object that includes each planned query and subquery (in the case of a complex query). This option is useful during the development phase of an application. It is usually used in conjunction with queryPath. Default if omitted: false. **Note**: This property is supported only by the `entitySelection.query( )` and `dataClass.query( )` functions.                                                                                                                                                                                                               |
-| queryPath     | Booléen | In the resulting entity selection, returns or does not return the detailed description of the query as it is actually performed. The returned property is an object that contains the actual path used for the query (usually identical to that of the queryPlan, but may differ if the engine manages to optimize the query), as well as the processing time and the number of records found. This option is useful during the development phase of an application. Default if omitted: false. **Note**: This property is supported only by the `entitySelection.query( )` and `dataClass.query( )` functions.                                                                                                                                             |
+| attributes    | Objet   | **Placeholders nommés pour les chemins d'attributs** utilisés dans *queryString* ou *formula*. Les attributs sont exprimés sous forme de paires propriété / valeur, où propriété est le nom du placeholder inséré pour un chemin d'attribut dans *queryString* or *formula* (":placeholder"), et où valeur peut être une chaine ou une collection de chaines. Chaque valeur est un chemin qui peut désigner soit un attribut scalaire ou relatif de la dataclass soit une propriété d'un champ objet de la dataclass<p><table><tr><th>Type</th><th>Description</th></tr><tr><td>Chaine</td><td>attributePath exprimé à l'aide de la notation à point, ex : "name" ou "user.address.zipCode"</td></tr><tr><td>Collection de chaînes</td><td>Chaque chaine de la collection représente un niveau d'attributePath, ex : \["name"] ou \["user","address","zipCode"]. L'utilisation d'une collection permet de rechercher des attributs dont les noms ne sont pas conformes à la notation à point, ex : ["4Dv17.1","en/fr"]</td></tr></table>Vous pouvez combiner les valeurs des placeholders indexés (valeurs passées directement dans les paramètres *value*) et les valeurs des placeholders nommés dans la même recherche. |
+| args          | Objet   | Paramètre(s) à passer aux formules, le cas échéant. L'objet **args** sera reçu dans $1 à l'intérieur des formules et donc ses valeurs seront disponibles via la propriété *$1.property* (cf. exemple 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| allowFormulas | Booléen | Vrai pour autoriser les appels de formules dans la query (défaut). Passez faux pour interdire l'exécution de formules. Si la `query()` contient une formule alors que cette propriété est à Faux, une erreur est retournée (1278 - Formule non autorisée).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| context       | Texte   | Nom du contexte d'optimisation automatique appliqué à l'entity selection. Ce contexte sera utilisé par le code qui manipule l'entity selection afin de bénéficier de l'optimisation. Cette fonctionnalité est conçue pour le traitement client/serveur ; pour plus d'informations, veuillez vous reporter à la section **Optimisation client/serveur**.                                                                                                                                                                                                                                                                                                                                                                                                     |
+| queryPlan     | Booléen | Dans l'entity selection résultante, retourne ou ne retourne la description détaillée de la recherche juste avant d'être exécutée, i.e. la recherche programmée. La propriété retournée est un objet qui inclut chaque recherche et sous-recherche programmée (dans le cas d'une recherche complexe). Cette option est utile durant la phase de développement d'une application. Elle est utilisée conjointement à queryPath. Par défaut, si elle est omise : faux. **Note** : Cette propriété est prise en charge uniquement par les fonctions `entitySelection.query()` et `dataClass.query()`.                                                                                                                                                            |
+| queryPath     | Booléen | Dans l'entity selection résultante, retourne ou ne retourne pas la description détaillée de la recherche telle qu'elle est effectuée. La propriété retournée est un objet qui contient le chemin utilisé pour la recherche (généralement identique à celui de queryPlan, mais il peut être différent si le moteur parvient à optimiser la recherche), la durée du traitement et le nombre d'enregistrements trouvés. Cette option est utile durant la phase de développement d'une application. Par défaut, si elle est omise : faux. **Note** : Cette propriété est prise en charge uniquement par les fonctions `entitySelection.query()` et `dataClass.query()`.                                                                                         |
 
-**About queryPlan and queryPath**
+**A propos de queryPlan et queryPath**
 
-The information recorded in `queryPlan`/`queryPath` include the query type (indexed and sequential) and each necessary subquery along with conjunction operators. Les chemins d'accès des requêtes contiennent également le nombre d'entités identifiées et la durée d'exécution de chaque critère de recherche. You may find it useful to analyze this information while developing your application(s). Généralement, la description du plan de requête et son chemin d'accès sont identiques mais ils peuvent différer car 4D peut intégrer des optimisations dynamiques lorsqu'une requête est exécutée, afin d'améliorer les performances. Par exemple, le moteur 4D peut convertir dynamiquement une requête indexée en requête séquentielle s'il estime que ce processus est plus rapide. Ce cas particulier peut se produire lorsque le nombre d'entités recherchées est faible.
+Les informations enregistrées dans `queryPlan` et `queryPath` incluent le type de recherche (indexée ou séquentielle), chaque sous-recherche nécessaire, ainsi que les opérateurs de conjonction. Les chemins d'accès des requêtes contiennent également le nombre d'entités identifiées et la durée d'exécution de chaque critère de recherche. Il vous sera utile d'analyser ces informations lors du développement de vos applications. Généralement, la description du plan de requête et son chemin d'accès sont identiques mais ils peuvent différer car 4D peut intégrer des optimisations dynamiques lorsqu'une requête est exécutée, afin d'améliorer les performances. Par exemple, le moteur 4D peut convertir dynamiquement une requête indexée en requête séquentielle s'il estime que ce processus est plus rapide. Ce cas particulier peut se produire lorsque le nombre d'entités recherchées est faible.
 
 Par exemple, si vous exécutez la recherche suivante :
 
@@ -940,7 +940,7 @@ Par exemple, si vous exécutez la recherche suivante :
  50000;"Lima West Kilo";10000000;New object("queryPath";True;"queryPlan";True))
 ```
 
-queryPlan:
+queryPlan :
 
 ```4d
 {Or:[{And:[{item:[index : Employee.salary ] < 50000},  
@@ -950,7 +950,7 @@ queryPlan:
     subquery:[{item:[index : Company.revenues ] > 10000000}]}]}
 ```
 
-queryPath:
+queryPath :
 
 ```4d
 {steps:[{description:OR,time:63,recordsfounds:1388132,  
@@ -962,46 +962,46 @@ queryPath:
 
 #### Exemple 1
 
-This section provides various examples of queries.
+Cette section fournit divers exemples de recherches.
 
-Query on a string:
+Recherche dans une chaîne :
 
 ```4d
 $entitySelection:=ds.Customer.query("firstName = 'S@'")
 ```
 
-Query with a NOT statement:
+Recherche avec une instruction NOT :
 
 ```4d
 $entitySelection:=ds.Employee.query("not(firstName=Kim)")
 ```
 
-Queries with dates:
+Recherche avec des dates :
 
 ```4d
 $entitySelection:=ds.Employee.query("birthDate > :1";"1970-01-01")
 $entitySelection:=ds.Employee.query("birthDate <= :1";Current date-10950)
 ```
 
-Query with indexed placeholders for values:
+Recherche avec des placeholders indexés pour les valeurs :
 
 ```4d
 $entitySelection:=ds.Customer.query("(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)";"D@";"R@";"S@";"K@")
 ```
 
-Query with indexed placeholders for values on a related dataclass:
+Recherche avec des placeholders indexés pour les valeurs sur une dataclass liée :
 
 ```4d
 $entitySelection:=ds.Employee.query("lastName = :1 and manager.lastName = :2";"M@";"S@")
 ```
 
-Query with indexed placeholder including a descending order by statement:
+Recherche avec des placeholders indexés avec tri décroissant :
 
 ```4d
 $entitySelection:=ds.Student.query("nationality = :1 order by campus.name desc, lastname";"French")
 ```
 
-Query with named placeholders for values:
+Recherche avec des placeholders nommés pour les valeurs :
 
 ```4d
 var $querySettings : Object
@@ -1011,7 +1011,7 @@ $querySettings.parameters:=New object("userId";1234;"extraInfo";New object("name
 $managedCustomers:=ds.Customer.query("salesperson.userId = :userId and name = :extraInfo.name";$querySettings)
 ```
 
-Query that uses both named and indexed placeholders for values:
+Recherche utilisant les placeholders nommés et indexés pour les valeurs :
 
 ```4d
 var $querySettings : Object
@@ -1020,7 +1020,7 @@ $querySettings.parameters:=New object("userId";1234)
 $managedCustomers:=ds.Customer.query("salesperson.userId = :userId and name=:1";"Smith";$querySettings)
 ```
 
-Query with queryPlan and queryPath objects:
+Recherche avec objets queryPlan et queryPath :
 
 ```4d
 $entitySelection:=ds.Employee.query("(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)";"D@";"R@";"S@";"K@";New object("queryPlan";True;"queryPath";True))
@@ -1031,19 +1031,19 @@ $queryPlan:=$entitySelection.queryPlan
 $queryPath:=$entitySelection.queryPath
 ```
 
-Query with an attribute path of Collection type:
+Recherche avec un chemin d'attribut de type Collection :
 
 ```4d
 $entitySelection:=ds.Employee.query("extraInfo.hobbies[].name = :1";"horsebackriding")
 ```
 
-Query with an attribute path of Collection type and linked attributes:
+Recherche avec un chemin d'attribut de type Collection et des attributs reliés :
 
 ```4d
 $entitySelection:=ds.Employee.query("extraInfo.hobbies[a].name = :1 and extraInfo.hobbies[a].level=:2";"horsebackriding";2)
 ```
 
-Query with an attribute path of Collection type and multiple linked attributes:
+Recherche avec un chemin d'attribut de type Collection et plusieurs attributs reliés :
 
 ```4d
 $entitySelection:=ds.Employee.query("extraInfo.hobbies[a].name = :1 and
@@ -1051,25 +1051,25 @@ $entitySelection:=ds.Employee.query("extraInfo.hobbies[a].name = :1 and
     extraInfo.hobbies[b].level = :4";"horsebackriding";2;"Tennis";5)
 ```
 
-Query with an attribute path of Object type:
+Recherche avec un chemin d'attribut de type Objet :
 
 ```4d
 $entitySelection:=ds.Employee.query("extra.eyeColor = :1";"blue")
 ```
 
-Query with an IN statement:
+Recherche avec instruction IN :
 
 ```4d
 $entitySelection:=ds.Employee.query("firstName in :1";New collection("Kim";"Dixie"))
 ```
 
-Query with a NOT (IN) statement:
+Recherche avec instruction NOT (IN) :
 
 ```4d
 $entitySelection:=ds.Employee.query("not (firstName in :1)";New collection("John";"Jane"))
 ```
 
-Query with indexed placeholders for attributes:
+Recherche avec des placeholders indexés pour les attributs :
 
 ```4d
 var $es : cs.EmployeeSelection
@@ -1077,7 +1077,7 @@ $es:=ds.Employee.query(":1 = 1234 and :2 = 'Smith'";"salesperson.userId";"name")
   //salesperson est une entité reliée
 ```
 
-Query with indexed placeholders for attributes and named placeholders for values:
+Recherche avec des placeholders indexés pour les attributs et avec des placeholders nommés pour les valeurs :
 
 ```4d
 var $es : cs.EmployeeSelection
@@ -1088,7 +1088,7 @@ $es:=ds.Customer.query(":1 = 1234 and :2 = :customerName";"salesperson.userId";"
   //salesperson est une entité reliée
 ```
 
-Query with indexed placeholders for attributes and values:
+Recherche avec des placeholders indexés pour les attributs et les valeurs :
 
 
 ```4d
@@ -1099,11 +1099,11 @@ $es:=ds.Clients.query(":1 = 1234 and :2 = :3";"salesperson.userId";"name";"Smith
 
 #### Exemple 2
 
-This section illustrates queries with named placeholders for attributes.
+Cette section illustre les recherches avec des placeholders nommés pour les attributs.
 
-Given an Employee dataclass with 2 entities:
+Considérons une dataclass Employee avec 2 entités :
 
-Entity 1:
+Entité 1 :
 
 ```4d
 name: "Marie"
@@ -1115,7 +1115,7 @@ softwares:{
 }
 ```
 
-Entity 2:
+Entité 2 :
 
 ```4d
 name: "Sophie"
@@ -1127,7 +1127,7 @@ softwares:{
 }
 ```
 
-Query with named placeholders for attributes:
+Recherche avec des placeholders nommés pour les attributs :
 
 ```4d
  var $querySettings : Object
@@ -1138,7 +1138,7 @@ Query with named placeholders for attributes:
   //$es.length=1 (Employee Marie)
 ```
 
-Query with named placeholders for attributes and values:
+Recherche avec des placeholders nommés pour les attributs et les valeurs :
 
 ```4d
  var $querySettings : Object
@@ -1158,16 +1158,16 @@ Query with named placeholders for attributes and values:
 
 #### Exemple 3
 
-These examples illustrate the various ways to use formulas with or without parameters in your queries.
+Ces exemples illustrent les diverses manières d'utiliser des formules avec ou sans paramètres dans vos recherches.
 
-The formula is given as text with `eval()` in the *queryString* parameter:
+La formule est fournie sous forme de texte avec `eval()` dans le paramètre *queryString* :
 
 ```4d
  var $es : cs.StudentsSelection
  $es:=ds.Students.query("eval(length(This.lastname) >=30) and nationality='French'")
 ```
 
-The formula is given as a `Formula` object through a placeholder:
+La formule est fournie sout forme d'objet `Formula` via un placeholder :
 
 ```4d
  var $es : cs.StudentsSelection
@@ -1176,7 +1176,7 @@ The formula is given as a `Formula` object through a placeholder:
  $es:=ds.Students.query(":1 and nationality='French'";$formula)
 ```
 
-Only a `Formula` object is given as criteria:
+Seul un objet `Formula` est fourni comme critère de recherche :
 
 ```4d
  var $es : cs.StudentsSelection
@@ -1185,7 +1185,7 @@ Only a `Formula` object is given as criteria:
  $es:=ds.Students.query($formula)
 ```
 
-Several formulas can be applied:
+Plusieurs formules peuvent être appliquées :
 
 ```4d
  var $formula1; $1; $formula2 ;$0 : Object
@@ -1195,7 +1195,7 @@ Several formulas can be applied:
 ```
 
 
-A text formula in *queryString* receives a parameter:
+Une formule texte dans *queryString* reçoit un paramètre :
 
 ```4d
  var $es : cs.StudentsSelection
@@ -1211,7 +1211,7 @@ A text formula in *queryString* receives a parameter:
  $result:=(Position($exclude;This.lastname)=0)
 ```
 
-Using the same ***checkName*** method, a `Formula` object as placeholder receives a parameter:
+En utilisant la même méthode ***checkName***, un objet `Formula` en placeholder reçoit un paramètre :
 
 ```4d
  var $es : cs.StudentsSelection
@@ -1224,7 +1224,7 @@ Using the same ***checkName*** method, a `Formula` object as placeholder receive
  $es:=ds.Students.query(":1 and nationality=:2";$formula;"French";$settings)
 ```
 
-We want to disallow formulas, for example when the user enters their query:
+Nous voulons interdire les formules, par exemple lorsque les utilisateurs saisissent leurs requêtes :
 
 ```4d
  var $es : cs.StudentsSelection
@@ -1239,7 +1239,7 @@ We want to disallow formulas, for example when the user enters their query:
 
 #### Voir également
 
-[`.query()`](EntitySelectionClass.md#query) for entity selections
+[`.query()`](EntitySelectionClass.md#query) pour les entity selections
 <!-- END REF -->
 
 <style> h2 { background: #d9ebff;}</style>
