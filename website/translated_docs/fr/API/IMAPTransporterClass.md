@@ -1601,7 +1601,7 @@ End if
 <!-- REF #IMAPTransporterClass.searchMails().Params -->
 | Paramètres     | Type       |    | Description                   |
 | -------------- | ---------- |:--:| ----------------------------- |
-| searchCriteria | Texte      | -> | Search criteria               |
+| searchCriteria | Texte      | -> | Critère(s) de recherche       |
 | Résultat       | Collection | <- | Collection of message numbers |
 <!-- END REF -->
 
