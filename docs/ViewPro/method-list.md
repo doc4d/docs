@@ -22,7 +22,6 @@ title: Method List
 ## A
 
 
-[Executing a quick report](https://doc.4d.com/4Dv19/4D/19/Executing-a-quick-report.300-5416653.en.html)
 ### VP ADD FORMULA NAME
 
 
