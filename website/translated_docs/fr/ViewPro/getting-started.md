@@ -140,16 +140,16 @@ Les objets plage 4D View Pro sont composés de plusieurs propriétés :
 *   area - Le nom de la zone 4D View Pro
 *   ranges - Une collection d'objet(s) plage. Les propriétés disponibles dans chaque objet de gamme dépendent du type d'objet plage. Par exemple, un objet plage de type colonne comprendra uniquement les propriétés *.column* et *.sheet*.
 
-| Propriété |                   | Type       | Description                                                         | Disponible pour                                    |
-| --------- | ----------------- | ---------- | ------------------------------------------------------------------- | -------------------------------------------------- |
-| area      |                   | Texte      | 4D View Pro area form object name                                   | always available                                   |
-| ranges    |                   | collection | Collection of range(s)                                              | always available                                   |
-|           | \[ ].name        | Texte      | Range name                                                          | name                                               |
-|           | \[ ].sheet       | number     | Sheet index (current sheet index by default) (counting begins at 0) | cell, cells, row, rows, column, columns, all, name |
-|           | \[ ].row         | number     | Row index (counting begins at 0)                                    | cell, cells, row, rows                             |
-|           | \[ ].rowCount    | number     | Row count                                                           | cells, rows                                        |
-|           | \[ ].column      | number     | Column index (counting begins at 0)                                 | cell, cells, column, columns                       |
-|           | \[ ].columnCount | number     | Column count                                                        | cells, columns                                     |
+| Propriété |                   | Type       | Description                                                                                | Disponible pour                                                |
+| --------- | ----------------- | ---------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------- |
+| area      |                   | text       | Nom d'objet formulaire zone 4D View Pro                                                    | toujours disponible                                            |
+| ranges    |                   | collection | Collection de plage(s)                                                                     | toujours disponible                                            |
+|           | \[ ].name        | Texte      | Nom de plage                                                                               | nom                                                            |
+|           | \[ ].sheet       | number     | Indice de la feuille (par défaut, indice de la feuille courante) (le comptage démarre à 0) | cellule, cellules, ligne, lignes, colonne, colonnes, tout, nom |
+|           | \[ ].row         | number     | Indice de la ligne (le comptage démarre à 0)                                               | cellule, cellules, ligne, lignes                               |
+|           | \[ ].rowCount    | number     | Row count                                                                                  | cellule, lignes                                                |
+|           | \[ ].column      | number     | Indice de la colonne (le comptage démarre à 0)                                             | cellule, cellules, colonne, colonnes                           |
+|           | \[ ].columnCount | number     | Column count                                                                               | cellules, colonnes                                             |
 
 
 
@@ -157,13 +157,13 @@ Les objets plage 4D View Pro sont composés de plusieurs propriétés :
 
 
 
-## Importing and exporting documents
+## Import et export de documents
 
-4D View Pro supports the import and export of several document formats:
+4D View Pro prend en charge l'import et l'export de plusieurs formats de documents :
 
 * .4vp
 * .xlsx
 * .txt et .csv
 * .pdf (à des fins d'export uniquement)
 
-For more details, check out the description of [VP IMPORT DOCUMENT](method-list.md#vp-import-document) and [VP EXPORT DOCUMENT](method-list.md#vp-export-document).
+Pour plus de détails, consultez la description de [VP IMPORT DOCUMENT](method-list.md#vp-import-document) et [VP EXPORT DOCUMENT](method-list.md#vp-export-document).
