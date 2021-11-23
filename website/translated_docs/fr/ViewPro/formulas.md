@@ -218,42 +218,42 @@ Les paramètres peuvent être passés aux fonctions 4D qui appellent les méthod
 =METHODNAME(param1,param2,...,paramN)
 ```
 
-These parameters are received in *methodName* in $1, $2...$N.
+Ces paramètres sont reçus dans *methodName* en $1, $2...$N.
 
-Note that the ( ) are mandatory, even if no parameters are passed:
+A noter que les ( ) sont obligatoires, même si aucun paramètre n'est passé :
 
 ```
 =METHODWITHOUTNAME()
 ```
 
-You can declare the name, type, and number of parameters through the *parameters* collection of the function you declared using the [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) method. Optionally, you can control the number of parameters passed by the user through *minParams* and *maxParams* properties.
+Vous pouvez déclarer le nom, le type et le nombre de paramètres via la collection de *paramètres* de la fonction que vous avez déclarée à l'aide de la méthode [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions). En option, vous pouvez contrôler le nombre de paramètres passés par l'utilisateur à l'aide des propriétés *minParams* et *maxParams*.
 
-For more information on supported incoming parameter types, please refer to the [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) method description.
+Pour plus d'informations sur les types de paramètres entrants pris en charge, veuillez vous reporter à la description de la méthode [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions).
 
-> If you do not declare parameters, values can be sequentially passed to methods (they will be received in $1, $2...) and their type will be automatically converted. Dates in *jstype* will be passed as [object](Concepts/dt_object.md) in 4D code with two properties:   
-> |Property|    Type|   Description| |---|---|---| |value|   Date|   Date value| |time |Real|  Time in seconds|
+> Si vous ne déclarez pas de paramètres, les valeurs peuvent être passées séquentiellement aux méthodes (elles seront reçues dans $1, $2...) et leur type sera automatiquement converti. Les dates en *jstype* seront passées comme [objet](Concepts/dt_object.md) dans le code 4D avec deux propriétés :   
+> |Property| Type| Description| |---|---|---| |value| Date| Valeur de la date| |time |Real| Temps en secondes|
 
-4D project methods can also return values in the 4D View Pro cell formula via $0. The following data types are supported for returned parameters:
+Les méthodes projet 4D peuvent également retourner des valeurs dans la formule de la cellule 4D View Pro via $0. Les types de données suivants sont pris en charge pour les paramètres retournés :
 
-* [text](Concepts/dt_string.md) (converted to string in 4D View Pro)
-* [real](Concepts/dt_number.md)/[longint](Concepts/dt_number.md) (converted to number in 4D View Pro)
-* [date](Concepts/dt_date.md) (converted to JS Date type in 4D View Pro - hour, minute, sec = 0)
-* [time](Concepts/dt_time.md) (converted to JS Date type in 4D View Pro - date in base date, i.e. 12/30/1899)
-* [boolean](Concepts/dt_boolean.md) (converted to bool in 4D View Pro)
-* [picture](Concepts/dt_picture.md) (jpg,png,gif,bmp,svg other types converted into png) creates a URI (data:image/png;base64,xxxx) and then used as the background in 4D View Pro in the cell where the formula is executed
-* [object](Concepts/dt_object.md) with the following two properties (allowing passing a date and time):
+* [text](Concepts/dt_string.md) (converti en chaîne de caractères dans 4D View Pro)
+* [real](Concepts/dt_number.md)/[longint](Concepts/dt_number.md) (converti en numérique dans 4D View Pro)
+* [date](Concepts/dt_date.md) (converti en type JS Date dans 4D View Pro - heure, minute, seconde = 0)
+* [time](Concepts/dt_time.md) (converti en type JS Date dans 4D View Pro - date en date de base, c'est-à-dire 30/12/1899)
+* [boolean](Concepts/dt_boolean.md) (converti en bool dans 4D View Pro)
+* [image](Concepts/dt_picture.md) (jpg,png,gif,bmp,svg autres types convertis en png) crée un URI (data:image/png;base64,xxxx) et ensuite utilisé comme fond dans 4D View Pro dans la cellule où la formule est exécutée
+* [objet](Concepts/dt_object.md) avec les deux propriétés suivantes (permettant de passer une date et une heure) :
 
-    | Propriété | Type | Description     |
-    | --------- | ---- | --------------- |
-    | value     | Date | Valeur date     |
-    | time      | Réel | Time in seconds |
+    | Propriété | Type | Description       |
+    | --------- | ---- | ----------------- |
+    | value     | Date | Valeur date       |
+    | time      | Réel | Heure en secondes |
 
-If the 4D method returns nothing, an empty string is automatically returned.
+Si la méthode 4D ne retourne rien, une chaîne vide est automatiquement retournée.
 
-An error is returned in the 4D View Pro cell if:
+Une erreur est retournée dans la cellule 4D View Pro si :
 
-*   the 4D method returns another type other than those listed above,
-*   an error occurred during 4D method execution (when user clicks on "abort" button).
+*   la méthode 4D retourne un autre type que ceux listés ci-dessus,
+*   une erreur s'est produite pendant l'exécution de la méthode 4D (lorsque l'utilisateur clique sur le bouton "abort").
 
 #### Exemple
 
@@ -274,52 +274,52 @@ VP SET CUSTOM FUNCTIONS("ViewProArea"; $o)
 ![](assets/en/ViewPro/params.PNG)
 
 
-## Compatibility
+## Compatibilité
 
-Alternate solutions are available to declare fields or methods as functions in your 4D View Pro areas. These solutions are maintained for compatibility reasons and can be used in specific cases. However, using the [`VP SET CUSTOM FUNCTIONS`](method-list.md#vp-set-custom-functions) method is recommended.
+Des solutions alternatives sont disponibles pour déclarer des champs ou des méthodes en tant que fonctions dans vos zones 4D View Pro. Ces solutions sont maintenues pour des raisons de compatibilité et peuvent être utilisées dans des cas spécifiques. Toutefois, il est recommandé d'utiliser la méthode [`VP SET CUSTOM FUNCTIONS`](method-list.md#vp-set-custom-functions).
 
-### Referencing fields using the virtual structure
+### Référencement de champs à l'aide de la structure virtuelle
 
 
-4D View Pro allows you to reference 4D fields using the virtual structure of the database, i.e. declared through the [`SET TABLE TITLES`](https://doc.4d.com/4dv19/help/command/en/page601.html) and/or [`SET FIELD TITLES`](https://doc.4d.com/4dv19/help/command/en/page602.html) commands with the \* parameter. This alternate solution could be useful if your application already relies on a virtual structure (otherwise, [using `VP SET CUSTOM FUNCTIONS`](#4d-functions) is recommended).
+4D View Pro vous permet de référencer des champs 4D en utilisant la structure virtuelle de la base de données, c'est-à-dire en les déclarant à l'aide des commandes [`SET TABLE TITLES`](https://doc.4d.com/4dv19/help/command/en/page601.html) et/ou [`SET FIELD TITLES`](https://doc.4d.com/4dv19/help/command/en/page602.html) avec le paramètre \*. Cette solution alternative peut être utile si votre application s'appuie déjà sur une structure virtuelle (sinon, il est recommandé d'[utiliser `VP SET CUSTOM FUNCTIONS`](#4d-functions)).
 
-> **WARNING:** You cannot use the virtual structure and `VP SET CUSTOM FUNCTIONS` simultaneously. As soon as `VP SET CUSTOM FUNCTIONS` is called, the functions based upon `SET TABLE TITLES` and `SET FIELD TITLES` commands are ignored in the 4D View Pro area.
+> **ATTENTION :** Vous ne pouvez pas utiliser la structure virtuelle et `VP SET CUSTOM FUNCTIONS` simultanément. Dès que `VP SET CUSTOM FUNCTIONS` est appelé, les fonctions basées sur les commandes `SET TABLE TITLES` et `SET FIELD TITLES` sont ignorées dans la zone 4D View Pro.
 
 #### Pré-requis
 
-*   The field must belong to the virtual structure of the database, i.e. it must be declared through the [`SET TABLE TITLES`](https://doc.4d.com/4dv19/help/command/en/page601.html) and/or [`SET FIELD TITLES`](https://doc.4d.com/4dv19/help/command/en/page602.html) commands with the \* parameter (see example),
-*   Table and field names must be ECMA compliant (see [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)),
-*   The field type must be supported by 4D View Pro (see above).
+*   Le champ doit appartenir à la structure virtuelle de la base de données, c'est-à-dire qu'il doit être déclaré par les commandes [`SET TABLE TITLES`](https://doc.4d.com/4dv19/help/command/en/page601.html) et/ou [`SET FIELD TITLES`](https://doc.4d.com/4dv19/help/command/en/page602.html) avec le paramètre \* (voir exemple),
+*   Les noms des tables et des champs doivent être conformes à la norme ECMA (voir la [norme ECMA Script](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)),
+*   Le type de champ doit être pris en charge par 4D View Pro (voir ci-dessus).
 
-An error is returned in the 4D View Pro cell if the formula calls a field which is not compliant.
+Une erreur est retournée dans la cellule 4D View Pro si la formule appelle un champ qui n'est pas conforme.
 
-#### Calling a virtual field in a formula
+#### Appel d'un champ virtuel dans une formule
 
-To insert a reference to a virtual field in a formula, enter the field with the following syntax:
+Pour insérer une référence à un champ virtuel dans une formule, saisissez le champ avec la syntaxe suivante :
 
 ```
 TABLENAME_FIELDNAME()
 ```
 
-For example, if you declared the "Name" field of the "People" table in the virtual structure, you can call the following functions:
+Par exemple, si vous avez déclaré le champ "Name" de la table "People" dans la structure virtuelle, vous pouvez appeler les fonctions suivantes :
 
 ```
 =PEOPLE_NAME()
 =LEN(PEOPLE_NAME())
 ```
 
-> If a field has the same name as a [4D method], it takes priority over the method.
+> Si un champ porte le même nom qu'une [méthode 4D], il a la priorité sur la méthode.
 
 #### Exemple
 
-We want to print the name of a person in a 4D View Pro area cell using a 4D virtual field:
+Nous souhaitons imprimer le nom d'une personne dans une cellule de la zone 4D View Pro en utilisant un champ virtuel 4D :
 
-1.  Create an "Employee" table with a "L_Name" field:
+1.  Créez une table "Employee" avec un champ "L_Name" :
 
 ![](assets/en/ViewPro/vpFieldMeth1.PNG)
 
 
-2.  Execute the following code to initialize a virtual structure:
+2.  Exécuter le code suivant pour initialiser une structure virtuelle :
 
     ```4d
     ARRAY TEXT($tableTitles;1)
@@ -335,33 +335,33 @@ We want to print the name of a person in a 4D View Pro area cell using a 4D virt
     SET FIELD TITLES([Employee];$fieldTitles;$fieldNum;*)
     ```
 
-3.  Edit the content of a cell in the 4D View Pro area and enter "=e":
+3.  Modifiez le contenu d'une cellule de la zone 4D View Pro et saisir "=e" :
 
 ![](assets/en/ViewPro/vpFieldMeth2.PNG)
 
 
-4.  Select EMP_NAME (use the Tab key) and enter the closing ).
+4.  Sélectionnez EMP_NAME (utilisez la touche Tab) et saisissez la fermeture ).
 
 ![](assets/en/ViewPro/vpFieldMeth3.PNG)
 
 
-5.  Validate the field to display the name of the current employee:
+5.  Validez le champ pour afficher le nom de l'employé courant :
 
 ![](assets/en/ViewPro/vpFieldMeth4.PNG)
-> The \[Employee] table must have a current record.
+> La table \[Employee] doit avoir un enregistrement en cours.
 
 
-### Declaring allowed methods
+### Déclarer des méthodes autorisées
 
-You can call directly 4D project methods from within your 4D View Pro formulas. For security reasons, you must declare explicitly methods that can be called by the user with the [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods) method.
+Vous pouvez appeler directement des méthodes du projet 4D à partir de vos formules 4D View Pro. Pour des raisons de sécurité, vous devez déclarer explicitement les méthodes qui peuvent être appelées par l'utilisateur avec la méthode [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods).
 
 
 #### Pré-requis
 
-To be called in a 4D View Pro formula, a project method must be:
+Pour être appelée dans une formule 4D View Pro, une méthode projet doit être :
 
-*   **Allowed**: it was explicitly declared using the [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods) method.
-*   **Runnable**: it belongs to the host project or a loaded component with the "Shared by components and host project" option enabled (see [Sharing of project methods](../Concepts/components.md#sharing-of-project-methods)).
-*   **Not in conflict** with an existing 4D View Pro spreadsheet function: if you call a project method with the same name as a 4D View Pro built-in function, the function is called.
-> If neither the [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) nor the [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods) method has been executed during the session, 4D View Pro custom functions rely on allowed methods defined by 4D's generic `SET ALLOWED METHODS` command. In this case, the project method names must comply with JavaScript Identifier Grammar (see [ECMA Script standard](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)). The global filtering option in the Settings dialog box (see *Data Access*) is ignored in all cases.
+*   **Autorisée :** elle a été déclarée explicitement avec la méthode [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods).
+*   **Exécutable :** elle appartient au projet hôte ou à un composant chargé dont l'option "Partagé par les composants et le projet hôte" est activée (voir [Partage des méthodes projet](../Concepts/components.md#sharing-of-project-methods)).
+*   **Pas de conflit** avec une fonction de tableur 4D View Pro existante : si vous appelez une méthode projet portant le même nom qu'une fonction intégrée 4D View Pro, la fonction est appelée.
+> Si ni la méthode [VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) ni la méthode [VP SET ALLOWED METHODS](method-list.md#vp-set-allowed-methods) n'ont été exécutées pendant la session, les fonctions personnalisées de 4D View Pro reposent sur les méthodes autorisées définies par la commande générique `SET ALLOWED METHODS` de 4D. Dans ce cas, les noms des méthodes projet doivent être conformes à la grammaire d'identification JavaScript (voir la [norme ECMA Script](https://www.ecma-international.org/ecma-262/5.1/#sec-7.6)). L'option de filtrage global de la boîte de dialogue Paramètres (voir *Accès aux données*) est ignorée dans tous les cas.
 
