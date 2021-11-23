@@ -3,11 +3,11 @@ id: configuring
 title: Configuration des zones 4D View Pro
 ---
 
-The 4D View Pro area properties can be configured using the Property list. Spreadsheet properties are available through the language.
+Les propriétés de la zone 4D View Pro peuvent être configurées à l'aide de la liste des propriétés. Les propriétés des feuilles de calcul sont disponibles à l'aide du langage.
 
-## Form area properties
+## Propriétés de la zone de formulaire
 
-Using the area's property list, you can set [4D View Pro object properties](FormObjects/viewProArea_overview.md#supported-properties) such as **Object Name**, [**Variable or Expression**](#4d-view-pro-form-object-variable), **Appearance**, **Action**, and **Events**.
+À l'aide de la liste de propriétés de la zone, vous pouvez configurer les [propriétés objet 4D View Pro](FormObjects/viewProArea_overview.md#supported-properties) telles que **Nom de l'objet**, [**Variable ou Expression**](#4d-view-pro-form-object-variable), **Apparance**, **Action**, et **Evénements**.
 
 ![](assets/en/ViewPro/vpPropertyList.PNG)
 
@@ -54,11 +54,11 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
 ## Evénements formulaire
 
-The following form events are available in the Property List for 4D View Pro areas.
+Les événements formulaire suivants sont disponibles dans la Liste de propriétés des zones 4D View Pro.
 
-Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. Some standard form events provide extended information in the object returned by the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific or provide additional information to 4D View Pro areas:
+Certains de ces événements sont des événements formulaire standard (disponibles pour tous les objets actifs) et d'autres sont des événements formulaire spécifiques à 4D View Pro. Certains événements formulaire standard fournissent des informations étendues dans l'objet retourné par la commande [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) lorsqu'ils sont générés pour les zones 4D View Pro. Le tableau suivant indique les événements standard et les événements spécifiques ou ceux qui fournissent des informations supplémentaires aux zones 4D View Pro :
 
-| Standard 4D events                              | Specific and extended 4D View Pro events                     |
+| Événements 4D standard                          | Événements 4D View Pro spécifiques et étendus                |
 | ----------------------------------------------- | ------------------------------------------------------------ |
 | [On Load](../Events/onLoad.md)                  | [On VP Ready](../Events/onVpReady.md)                        |
 | [On Getting Focus](../Events/onGettingFocus.md) | [Sur clic](../Events/onClicked.md)                           |
@@ -125,7 +125,7 @@ To lock the whole sheet, you only need to set the *isProtected* property to **tr
 > All properties are optional.
 
 
-## Cell Format
+## Format des cellules
 
 
 Defining a format pattern ensures that the content of your 4D View Pro documents is displayed the way you intended. Formats can be set using the selected 4D View Pro [interface](#selecting-a-user-interface), or using the [VP SET VALUE](method-list.md#vp-set-value) or [VP SET NUM VALUE](method-list.md#vp-set-num-value) methods.
