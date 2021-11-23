@@ -131,13 +131,14 @@ This area allows setting archive generation options. These options apply to main
 
 These options are used to configure the automatic mechanisms to be put into play when opening a damaged database.
 
--   **Restore last backup if database is damaged**: When this option is checked, the program automatically starts the restore of the data file of the last valid backup of the database, if an anomaly is detected (corrupted file, for example) during database launch. No intervention is required on the part of the user; however, the operation is logged in the backup journal.\
-    **Note:** In the case of an automatic restore, only the data file is restored. If you wish to get the attached files or the structure file, you must perform a manual restore.
+-   **Restore last backup if database is damaged**: When this option is checked, the program automatically starts the restore of the data file of the last valid backup of the database, if an anomaly is detected (corrupted file, for example) during database launch. No intervention is required on the part of the user; however, the operation is logged in the backup journal.
+>**Note:** In the case of an automatic restore, only the data file is restored. If you wish to get the attached files or the structure file, you must perform a manual restore.
 
 -   **Integrate last log file if database is incomplete**: When this option is checked, the program automatically integrates the log file when opening or restoring the database.
 
--   When opening a database, the current log file is automatically integrated if 4D detects that there are operations stored in the log file that are not present in the data. This situation arises, for example, if a power outage occurs when there are operations in the data cache that have not yet been written to the disk.
--   When restoring a database, if the current log file or a log backup file having the same number as the backup file is stored in the same folder, 4D examines its contents. If it contains operations not found in the data file, the program automatically integrates it.
+When opening a database, the current log file is automatically integrated if 4D detects that there are operations stored in the log file that are not present in the data. This situation arises, for example, if a power outage occurs when there are operations in the data cache that have not yet been written to the disk.
+
+When restoring a database, if the current log file or a log backup file having the same number as the backup file is stored in the same folder, 4D examines its contents. If it contains operations not found in the data file, the program automatically integrates it.
 
 -   **Log integration error handling**: Defines how to handle non-critical errors while integrating the log file. Available options are:
 
@@ -150,6 +151,6 @@ These options are used to configure the automatic mechanisms to be put into play
 -   The log requests to update a record, but this record does not yet exist. **Repair action**: 4D adds the record.
 -   The log requests to delete a record, but this record does not exist. **Repair action**: 4D does nothing.
 
-**Note:** The *Journal_YYYYMMDD_hhmmss_x.json* file is generated as soon as a log file integration with automatic repair mode is executed, even if there was no integration error. This feature can be used to know if an automatic integration operation occurred (see [Configuration and trace files](https://doc.4d.com/4Dv19/4D/19/Configuration-and-trace-files.300-5416795.en.html)).
+> **Note:** The *Journal_YYYYMMDD_hhmmss_x.json* file is generated as soon as a log file integration with automatic repair mode is executed, even if there was no integration error. This feature can be used to know if an automatic integration operation occurred (see [Configuration and trace files](https://doc.4d.com/4Dv19/4D/19/Configuration-and-trace-files.300-5416795.en.html)).
 
 Except in strict integration mode if the log file contains errors (see above), the user does not see any dialog box; the operation is completely automatic. The goal is to make use as easy as possible. The operation is logged in the backup journal.
