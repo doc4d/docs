@@ -437,9 +437,9 @@ The warning message "Caution, check the access privileges" is displayed when you
 
 ### Access  
 
-This option specifies a group of 4D users that is authorized to establish the link to the 4D database using REST queries. 
+This option specifies a group of 4D users that is authorized to establish the link to the 4D database using REST requests. 
 
-By default, the menu displays **<Anyone>**, which means that REST accesses are open to all users.\
+By default, the menu displays **<Anyone>**, which means that REST accesses are open to all users.
 Once you have specified a group, only a 4D user account that belongs to this group may be used to access 4D by means of a REST request -- in particular, to open a session using the [Open datastore](../API/DataStoreClass.md#open-datastore) command. If an account is used that does not belong to this group, 4D returns an authentication error to the sender of the request. 
 
 Note that in order for this setting to take effect, the [On REST Authentication database method](https://doc.4d.com/4Dv19R3/4D/19-R3/On-REST-Authentication-database-method.301-5583733.en.html) must not be defined. If it exists, 4D ignores access settings defined in the Database Settings,
