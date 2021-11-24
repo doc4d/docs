@@ -7,7 +7,7 @@ title: Backup page
 
 The options found on this tab let you set and configure scheduled automatic backups of the database. You can choose a standard quick configuration or you can completely customize it.
 
-Various options appear depending on the choice made in the **Automatic Backup** menu**:**
+Various options appear depending on the choice made in the **Automatic Backup** menu:
 
 -   **Never**: The scheduled backup feature is disabled.
 -   **Every Hour**: Programs an automatic backup every hour, starting with the next hour.
