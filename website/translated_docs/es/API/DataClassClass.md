@@ -898,14 +898,14 @@ En el parámetro *querySettings* se puede pasar un objeto que contenga opciones 
 | parameters    | Objeto   | **Marcadores nombrados para los valores** utilizados en *queryString* o *formula*. Los valores se expresan como pares propiedad / valor, donde propiedad es el nombre del marcador de posición insertado para un valor en *queryString* o *formula* (":placeholder") y valor es el valor a comparar. Puede combinar marcadores de posición indexados (valores pasados directamente en parámetros de valor) y valores de marcadores de posición con nombre en la misma búsqueda.                                                                                                                                                                                                                                                                  |
 | attributes    | Objeto   | **Marcadores nombrados para las rutas de atributos** utilizados en *queryString* o *formula*. Los atributos se expresan como pares propiedad / valor, donde propiedad es el nombre del marcador de posición insertado para una ruta de atributo en *queryString* o *formula* (":placeholder") y valor puede ser una cadena o una colección de cadenas. Cada valor es una ruta que puede designar un escalar o un atributo relacionado de la dataclass o una propiedad en un campo de objeto de la dataclass<p><table><tr><th>Tipo</th><th>Descripción</th></tr><tr><td>Cadena</td><td>attributePath expresado con la notación de puntos, por ejemplo: "name" o "user.address.zipCode"</td></tr><tr><td>Colección de cadenas</td><td>Cada cadena de la colección representa un nivel de attributePath, por ejemplo: \["name"] o \["user","address","zipCode"]. El uso de una colección permite consultar atributos con nombres que no se ajustan a la notación de puntos, por ejemplo, ["4Dv17.1", "en/fr"]</td></tr></table>Puede combinar marcadores de posición indexados (valores pasados directamente en los parámetros *value*) y los valores de marcadores de posición con nombre en la misma búsqueda. |
 | args          | Objeto   | Parámetro(s) a pasar a las fórmulas, si las hay. El objeto **args** se recibirá en $1 dentro de las fórmulas y, por tanto, sus valores estarán disponibles a través de *$1.property* (ver ejemplo 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| allowFormulas | Booleano | True to allow the formula calls in the query (default). Pass false to disallow formula execution. If set to false and `query()` is given a formula, an error is sent (1278 - Formula not allowed in this member method).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| context       | Texto    | Label for the automatic optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is designed for client/server processing; for more information, please refer to the **Client/server optimization** section.                                                                                                                                                                                                                                                                                                                                                                                                     |
-| queryPlan     | Booleano | In the resulting entity selection, returns or does not return the detailed description of the query just before it is executed, i.e. the planned query. The returned property is an object that includes each planned query and subquery (in the case of a complex query). This option is useful during the development phase of an application. It is usually used in conjunction with queryPath. Default if omitted: false. **Note**: This property is supported only by the `entitySelection.query( )` and `dataClass.query( )` functions.                                                                                                                                                                                                    |
-| queryPath     | Booleano | In the resulting entity selection, returns or does not return the detailed description of the query as it is actually performed. The returned property is an object that contains the actual path used for the query (usually identical to that of the queryPlan, but may differ if the engine manages to optimize the query), as well as the processing time and the number of records found. This option is useful during the development phase of an application. Default if omitted: false. **Note**: This property is supported only by the `entitySelection.query( )` and `dataClass.query( )` functions.                                                                                                                                  |
+| allowFormulas | Booleano | True para permitir las llamadas de fórmulas en la búsqueda (por defecto). Pase false para desautorizar la ejecución de fórmulas. Si se establece como false y `query()` recibe una fórmula, se envía un error (1278 - Fórmula no permitida en este método miembro).                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| context       | Texto    | Etiqueta para el contexto de optimización automática aplicado a la entity selection. Este contexto será utilizado por el código que maneja la selección de entidades para que pueda beneficiarse de la optimización. Esta función está diseñada para el procesamiento cliente/servidor; para más información, consulte la sección **Optimización cliente/servidor**.                                                                                                                                                                                                                                                                                                                                                                             |
+| queryPlan     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda justo antes de que se ejecute, es decir, la búsqueda planificada. La propiedad devuelta es un objeto que incluye cada búsqueda y sub búsqueda prevista (en el caso de una búsqueda compleja). Esta opción es útil durante la fase de desarrollo de una aplicación. Suele utilizarse junto con queryPath. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones` entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                                                                                     |
+| queryPath     | Booleano | En la entity selection resultante, devuelve o no la descripción detallada de la búsqueda tal cual es realizada. La propiedad devuelta es un objeto que contiene la ruta utilizada para la búsqueda (normalmente idéntica a la de queryPlan, pero puede diferir si el motor consigue optimizar la búsqueda), así como el tiempo de procesamiento y el número de registros encontrados. Esta opción es útil durante la fase de desarrollo de una aplicación. Por defecto si se omite: false. **Nota**: esta propiedad sólo la soportan las funciones` entitySelection.query( )` y `dataClass.query( )`.                                                                                                                                            |
 
-**About queryPlan and queryPath**
+**Sobre queryPlan y queryPath**
 
-The information recorded in `queryPlan`/`queryPath` include the query type (indexed and sequential) and each necessary subquery along with conjunction operators. Query paths also contain the number of entities found and the time required to execute each search criterion. You may find it useful to analyze this information while developing your application(s). Generally, the description of the query plan and its path are identical but they can differ because 4D can implement dynamic optimizations when a query is executed in order to improve performance. For example, the 4D engine can dynamically convert an indexed query into a sequential one if it estimates that it is faster. This particular case can occur when the number of entities being searched for is low.
+La información registrada en `queryPlan`/`queryPath` incluye el tipo de búsqueda (indexada y secuencial) y cada subconsulta necesaria junto con los operadores de conjunción. Las rutas de acceso de las peticiones también contienen el número de entidades encontradas y el tiempo necesario para ejecutar cada criterio de búsqueda. Puede resultarle útil analizar esta información mientras desarrolla sus aplicaciones. Generalmente, la descripción del plan de consulta y su ruta de acceso son idénticas, pero pueden diferir porque 4D puede implementar optimizaciones dinámicas cuando se ejecuta una consulta para mejorar el rendimiento. Por ejemplo, el motor 4D puede convertir dinámicamente una consulta indexada en una secuencial si estima que es más rápida. Este caso concreto puede darse cuando el número de entidades que se buscan es bajo.
 
 Por ejemplo, si ejecuta la siguiente búsqueda:
 
@@ -936,7 +936,7 @@ queryPath:
 
 #### Ejemplo 1
 
-This section provides various examples of queries.
+Esta sección ofrece varios ejemplos de búsquedas.
 
 Consultas en una cadena:
 
@@ -944,7 +944,7 @@ Consultas en una cadena:
 $entitySelection:=ds.Customer.query("firstName = 'S@'")
 ```
 
-Query with a NOT statement:
+Búsqueda con una instrucción NOT:
 
 ```4d
 $entitySelection:=ds.Employee.query("not(firstName=Kim)")
@@ -957,25 +957,25 @@ $entitySelection:=ds.Employee.query("birthDate > :1";"1970-01-01")
 $entitySelection:=ds.Employee.query("birthDate <= :1";Current date-10950)
 ```
 
-Query with indexed placeholders for values:
+Búsqueda con marcadores de posición indexados para los valores:
 
 ```4d
 $entitySelection:=ds.Customer.query("(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)";"D@";"R@";"S@";"K@")
 ```
 
-Query with indexed placeholders for values on a related dataclass:
+Búsqueda con marcadores de posición indexados para valores en una dataclass relacionada:
 
 ```4d
 $entitySelection:=ds.Employee.query("lastName = :1 and manager.lastName = :2";"M@";"S@")
 ```
 
-Query with indexed placeholder including a descending order by statement:
+Búsqueda con marcador de posición indexado que incluye una instrucción de orden descendente:
 
 ```4d
 $entitySelection:=ds.Student.query("nationality = :1 order by campus.name desc, lastname";"French")
 ```
 
-Query with named placeholders for values:
+Búsqueda con marcadores de posición con nombre para los valores:
 
 ```4d
 var $querySettings : Object
@@ -985,7 +985,7 @@ $querySettings.parameters:=New object("userId";1234;"extraInfo";New object("name
 $managedCustomers:=ds.Customer.query("salesperson.userId = :userId and name = :extraInfo.name";$querySettings)
 ```
 
-Query that uses both named and indexed placeholders for values:
+Búsqueda que utiliza marcadores de posición con nombre e indexados para los valores:
 
 ```4d
 var $querySettings : Object
@@ -994,7 +994,7 @@ $querySettings.parameters:=New object("userId";1234)
 $managedCustomers:=ds.Customer.query("salesperson.userId = :userId and name=:1";"Smith";$querySettings)
 ```
 
-Query with queryPlan and queryPath objects:
+Búsqueda con objetos queryPlan y queryPath:
 
 ```4d
 $entitySelection:=ds.Employee.query("(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)";"D@";"R@";"S@";"K@";New object("queryPlan";True;"queryPath";True))
@@ -1005,19 +1005,19 @@ $queryPlan:=$entitySelection.queryPlan
 $queryPath:=$entitySelection.queryPath
 ```
 
-Query with an attribute path of Collection type:
+Búsqueda con una ruta de atributo de tipo Collection:
 
 ```4d
 $entitySelection:=ds.Employee.query("extraInfo.hobbies[].name = :1";"horsebackriding")
 ```
 
-Query with an attribute path of Collection type and linked attributes:
+Búsqueda con una ruta de atributos de tipo Collection y atributos vinculados:
 
 ```4d
 $entitySelection:=ds.Employee.query("extraInfo.hobbies[a].name = :1 and extraInfo.hobbies[a].level=:2";"horsebackriding";2)
 ```
 
-Query with an attribute path of Collection type and multiple linked attributes:
+Búsqueda con una ruta de atributos de tipo Collection y múltiples atributos vinculados:
 
 ```4d
 $entitySelection:=ds.Employee.query("extraInfo.hobbies[a].name = :1 and
