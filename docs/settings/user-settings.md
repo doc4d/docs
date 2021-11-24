@@ -1,6 +1,6 @@
 ---
 id: user-settings
-title: User Settings
+title: User settings
 ---
 
 You can generate an external file containing custom settings. When this functionality is enabled, the settings contained in the external file (called "User settings") are used instead of settings stored in the database structure file (called "Structure settings").
