@@ -72,7 +72,8 @@ class Index extends React.Component {
 	  overview: <translate>Overview</translate>,
 	  comp: <translate>Developing Components</translate>,
 	  plug: <translate>Developing Plugins</translate>,
-	  working: <translate>Working with a project</translate>
+	  working: <translate>Working with a project</translate>,
+    settings: <translate>Settings</translate>,
     };
 
     return (
@@ -112,6 +113,7 @@ class Index extends React.Component {
 				[${subContents.licenses}](${siteConfig.baseUrl}${this.props.language}/Admin/licenses.html)<br>
                  [${subContents.users}](${siteConfig.baseUrl}${this.props.language}/Users/overview.html)<br>
 				[${subContents.msc}](${siteConfig.baseUrl}${this.props.language}/MSC/overview.html)<br>
+        [${subContents.settings}](${siteConfig.baseUrl}${this.props.language}/settings/overview.html)<br>
                 [${subContents.backup}](${siteConfig.baseUrl}${this.props.language}/Backup/overview.html)<br>`,
                   image: `${siteConfig.baseUrl}img/illu_Administration.png`,
                   imageAlign: "top",
