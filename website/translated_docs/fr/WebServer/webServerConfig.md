@@ -296,7 +296,7 @@ Activation de la méthode HTTP TRACE dans le serveur web 4D. Pour des raisons de
 Numéro de port IP d'écoute pour les connections HTTP via TLS. La valeur par défaut est 443 (valeur standard). Voir aussi [HTTP Port](#http-port) pour plus d'informations sur les numéros de port.
 
 
-## Timeout des process inactifs
+## Durée de vie des process inactifs
 
 | Peut être configuré via  | Nom                                                                      | Commentaires |
 | ------------------------ | ------------------------------------------------------------------------ | ------------ |
@@ -309,7 +309,7 @@ Durée de vie (en minutes) des process inactifs associés aux sessions. À la fi
 Valeur par défaut : 480 minutes (passez 0 pour restaurer la valeur par défaut)
 
 
-## Inactive Session Timeout
+## Durée de vie des sessions inactives
 
 | Peut être configuré via | Nom                                                                      | Commentaires |
 | ----------------------- | ------------------------------------------------------------------------ | ------------ |
@@ -321,34 +321,34 @@ Durée de vie (en minutes) des sessions inactives (durée définie dans le cooki
 Valeur par défaut : 480 minutes (passez 0 pour restaurer la valeur par défaut)
 
 
-## IP Address to listen
+## Adresse IP d'écoute
 
 | Peut être configuré via  | Nom                                                            | Commentaires |
 | ------------------------ | -------------------------------------------------------------- | ------------ |
 | objet webServer          | [`IPAddressToListen`](API/WebServerClass.md#ipaddresstolisten) |              |
 | `WEB SET OPTION`         | `Web IP address to listen`                                     |              |
-| Fenêtre de configuration | Configuration page/IP Address                                  | Menu popup   |
+| Fenêtre de configuration | Configuration > Adresse IP                                     | Menu popup   |
 
-IP address strings on which the 4D web server will receive HTTP requests (4D local and 4D Server).
+Adresses IP (chaînes) sur lesquelles le serveur web 4D recevra les requêtes HTTP (4D local et 4D Server).
 
-By default, no specific address is defined (**Any** value in the Settings dialog box), which means that the server responds to all IP addresses. When you designate a specific address, the server only responds to requests sent to this address. This feature is designed for 4D web servers located on machines with multiple TCP/IP addresses. It is, for example, frequently the case of most host providers.
+Par défaut, aucune adresse spécifique n'est définie (**Valeur Any** dans la boîte de dialogue Paramètres), cela signifie que le serveur répond à toutes les adresses IP. Lorsque vous désignez une adresse spécifique, le serveur ne répond qu'aux demandes envoyées à cette adresse. Cette fonction est conçue pour être utilisée avec les serveurs Web 4D situés sur des machines ayant plusieurs adresses TCP/IP. Par exemple, c'est régulièrement le cas dans des contextes d'hébergement.
 
-Possible values: IP address string. Both IPv6 string formats (e.g. "2001:0db8:0000:0000:0000:ff00:0042:8329") and IPv4 string formats (e.g. "123.45.67.89") are supported.
+Valeurs possibles: Chaîne de caractères représentant l'adresse IP. Les formats IPv6 (e.g. "2001:0db8:0000:0000:0000:ff00:0042:8329") et IPv4 (e.g. "123.45.67.89") sont tous les deux supportés.
 
-#### About IPv6 support
+#### À propos du support de l'IPv6
 
-*   **No warning when TCP port is occupied**<br> When the server is set to respond on "Any" IP addresses, if the TCP port is being used by another application, this is not indicated when the server is started. In fact, 4D server does not detect any error in this case because the port remains free on the IPv6 address. However, it is not possible to access it using the IPv4 address of the machine, nor by means of the local address: 127.0.0.1.<p> If your 4D server does not seem to be responding on the port defined, you can test the address [::1] on the server machine (equivalent to 127.0.0.1 for IPv6, add [:portNum] to test another port number). If 4D responds, it is likely that another application is using the port in IPv4.
+*   **Aucun avertissement lorsque le port TCP est occupé.**<br> Lorsque le serveur est configuré pour répondre sur les adresses IP "Any", si le port TCP est utilisé par une autre application, cela n'est pas indiqué au démarrage du serveur. En fait, le serveur 4D ne détecte pas d'erreur dans ce cas car le port reste libre sur l'adresse IPv6. Cependant, il n'est pas possible d'y accéder en utilisant l'adresse IPv4 de la machine, ni au moyen de l'adresse locale : 127.0.0.1.<p> Si votre serveur 4D ne semble pas répondre sur le port défini, vous pouvez tester l'adresse [::1] sur la machine serveur (équivalent à 127.0.0.1 pour IPv6, ajoutez [:portNum] pour tester un autre numéro de port). Si 4D répond, il est probable qu'une autre application utilise le port en IPv4.
 
-*   **IPv4-mapped IPv6 addresses**<br> To standardize processing, 4D provides a standard hybrid representation of IPv4 addresses in IPv6. These addresses are written with a 96-bit prefix in IPv6 format, followed by 32 bits written in the dot-decimal notation of IPv4. For example, ::ffff:192.168.2.34 represents the IPv4 address 192.168.2.34.
+*   **Adresses IPv4 mappées en IPv6**<br>. Pour normaliser le traitement, 4D fournit une représentation hybride standard des adresses IPv4 en IPv6. Ces adresses sont écrites avec un préfixe de 96 bits au format IPv6, suivi de 32 bits écrits dans la notation décimale à point d'IPv4. Par exemple, ::ffff:192.168.2.34 représente l'adresse IPv4 192.168.2.34.
 
-*   **Indication of port numbers**<br> Since IPv6 notation uses colons (:), adding port numbers may lead to some confusion, for example:
+*   **Indication des numéros de port**<br>. Comme la notation IPv6 utilise les deux-points (:), l'ajout de numéros de port peut entraîner une certaine confusion, par exemple :
 
 ```code4d
-    2001:0DB8::85a3:0:ac1f:8001 // IPv6 address
-    2001:0DB8::85a3:0:ac1f:8001:8081 // IPv6 address with port 8081
+    2001:0DB8::85a3:0:ac1f:8001 // adresse IPv6 
+    2001:0DB8::85a3:0:ac1f:8001:8081 // adresse IPv6 avec port 8081
 ```
 
-To avoid this confusion, we recommend using the [ ] notation whenever you combine an IPv6 address with a port number, for instance:
+Pour éviter cette confusion, nous recommandons d'utiliser la notation [ ] lorsque vous combinez une adresse IPv6 avec un numéro de port. Par exemple:
 
 ```code4d
     [2001:0DB8::85a3:0:ac1f:8001]:8081 //IPv6 address with port 8081
@@ -521,24 +521,24 @@ In this case, robots are not allowed to access the entire site.
 | `WEB SET ROOT FOLDER`    |                                                  |                                                                                                                                                                 |
 | Fenêtre de configuration | Configuration page/Default HTML Root             |                                                                                                                                                                 |
 
-Path of web server root folder, i.e. the folder in which 4D will search for the static and semi-dynamic HTML pages, pictures, etc., to send to the browsers. The path is formatted in POSIX full path. The web server will need to be restarted in order for the new root folder to be taken into account.
+Chemin du dossier racine du serveur web, i.e le dossier dans lequel 4D va chercher les pages HTML statiques et semi-dynamiques, les images, etc. à envoyer aux navigateurs. Le chemin d'accès est au format POSIX (chemin entier). Le serveur web doit être redémarré pour que le nouveau dossier racine soit pris en compte.
 
-Moreover, the HTML root folder defines, on the web server hard drive, the hierarchical level above which the files will not be accessible. If a requested URL or a 4D command tries to access a file located above the HTML root folder, an error is returned indicating that the file has not been found.
+De plus, le dossier racine HTML définit, sur le disque dur du serveur web, le niveau hiérarchique au-dessus duquel les fichiers ne seront pas accessibles. Si une URL demandée ou une commande 4D tente d'accéder à un fichier situé au-dessus du dossier racine HTML, une erreur est renvoyée indiquant que le fichier n'a pas été trouvé.
 
-By default, 4D defines a HTML Root folder named **WebFolder**. If it does not already exist, the HTML root folder is physically created on disk at the moment the Web server is launched for the first time. The root folder is created:
-- with 4D (local) and 4D Server, at the same level as the [Project folder](Project/architecture.md#project-folder).
-- with 4D in remote mode, in the local resources folder.
+Par défaut, 4D définit un dossier racine HTML nommé **WebFolder**. S'il n'existe pas encore, le dossier racine HTML est physiquement créé sur le disque au moment où le serveur Web est lancé pour la première fois. Le dossier racine est créé :
+- avec 4D en mode local ou 4D Server, à côté du [dossier du projet](Project/architecture.md#project-folder).
+- avec 4D en mode remote, dans le fichier des ressources locales.
 
-You can designate another default HTML root folder by entering its pathname.
+Vous pouvez désigner un autre dossier HTML racine comme page d'accueil par défaut en entrant son chemin d'accès.
 
-- The path is relative to the [Project folder](Project/architecture.md#project-folder) (4D local and 4D Server) or to the folder containing the 4D application or software package (4D in remote mode).
+- Le chemin est relatif au [dossier du projet](Project/architecture.md#project-folder) (4D local et 4D Server) ou au dossier contenant l'application 4D ou le package logiciel (4D en mode distant).
 - Le chemin ext exprimé avec la syntaxe POSIX (les dossiers sont séparés par un slash (/)),
-- To "go up" one level in the folder hierarchy, enter “..” (two periods) before the folder name
-- The path must not start with a slash (except if you want the HTML root folder to be the Project or 4D remote folder, but for access to the folders above to be forbidden, in which case you can pass "/" as the root folder).
+- Pour "remonter" d'un niveau dans la hiérarchie des dossiers, saisissez ".." (deux points) avant le nom de dossier
+- Le chemin ne doit pas commencer par un slash (sauf si vous souhaitez que le dossier racine HTML soit le dossier distant du projet ou de 4D, mais pour interdire l'accès aux dossiers ci-dessus, auquel cas vous pouvez passer "/" comme dossier racine).
 
-For example, if you want the HTML root folder to be the "Web" subfolder in the "MyWebApp" folder, enter "MyWebApp/Web".
+Par exemple, si vous voulez que le dossier racine HTML soit le sous-dossier "Web" du dossier "MyWebApp", entrez "MyWebApp/Web".
 
-> When the HTML root folder is modified, the cache is cleared so as to not store files whose access is restricted.
+> Lorsque le dossier racine HTML est modifié, le cache est effacé afin que les fichiers dont l'accès est restreint ne soient pas stockés.
 
 
 
@@ -549,7 +549,7 @@ For example, if you want the HTML root folder to be the "Web" subfolder in the "
 | objet webServer         | [`sessionCookieDomain`](API/WebServerClass.md#sessioncookiedomain) |              |
 | `WEB SET OPTION`        | `Web session cookie domain`                                        |              |
 
-Value of the "domain" field of the session cookie. Useful for controlling the scope of the session cookies. Par exemple, si vous définissez la valeur "/*.4d.fr" pour ce sélecteur, le client enverra un cookie uniquement lorsque la requête est adressée au domaine ".4d.fr", ce qui exclut les serveurs hébergeant des données statiques externes.
+Valeur du champ "domaine" du cookie de session. Utile pour contrôler le scope des cookies de session Par exemple, si vous définissez la valeur "/*.4d.fr" pour ce sélecteur, le client enverra un cookie uniquement lorsque la requête est adressée au domaine ".4d.fr", ce qui exclut les serveurs hébergeant des données statiques externes.
 
 
 ## Session Cookie Name
@@ -559,7 +559,7 @@ Value of the "domain" field of the session cookie. Useful for controlling the sc
 | objet webServer         | [`sessionCookieName`](API/WebServerClass.md#sessioncookiename) |              |
 | `WEB SET OPTION`        | `Web session cookie name`                                      |              |
 
-Name of the cookie used for saving the session ID. Default = "4DSID".
+Nom du cookie utilisé pour stocker l'ID de session. Par défaut = "4DSID".
 
 
 ## Session Cookie Path
