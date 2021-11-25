@@ -42,27 +42,27 @@ Un [Datastore](ORDA/dsMapping.md#datastore) correspond à l'objet d'interface fo
 **ds** { ( *localID* : Text ) } : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.ds.Params -->
-| Paramètres | Type         |    | Description                                |
-| ---------- | ------------ | -- | ------------------------------------------ |
-| localID    | Texte        | -> | Local ID of the remote datastore to return |
-| Résultat   | cs.DataStore | <- | Reference to the datastore                 |
+| Paramètres | Type         |    | Description                            |
+| ---------- | ------------ | -- | -------------------------------------- |
+| localID    | Texte        | -> | Identifiant local du datastore distant |
+| Résultat   | cs.DataStore | <- | Nouvelle référence de datastore        |
 <!-- END REF -->
 
 
 #### Description
 
-The `ds` command <!-- REF #_command_.ds.Summary -->returns a reference to the datastore matching the current 4D database or the database designated by *localID*<!-- END REF -->.
+La commande`ds` <!-- REF #_command_.ds.Summary -->retourne une nouvelle référence vers le datastore correspondant à la base de données 4D courante ou à la base désignée par *localID*<!-- END REF -->.
 
-If you omit the *localID* parameter (or pass an empty string ""), the command returns a reference to the datastore matching the local 4D database (or the 4D Server database in case of opening a remote database on 4D Server). The datastore is opened automatically and available directly through `ds`.
+Si vous omettez le paramètre *localID* (ou si vous passez une chaîne vide ""), la commande renvoie une référence au datastore correspondant à la base de données 4D locale (ou à la base 4D Server en cas d'ouverture d'une base de données distante sur 4D Server). Le datastore est ouvert automatiquement et est disponible directement via `ds`.
 
-You can also get a reference on an open remote datastore by passing its local id in the *localID* parameter. The datastore must have been previously opened with the [`Open datastore`](#open-datastore) command by the current database (host or component). The local id is defined when using this command.
+Vous pouvez également obtenir une référence sur un datastore distant ouvert en passant son identifiant local dans le paramètre *localID*. Le datastore doit avoir été préalablement ouvert avec la commande [`Open datastore`](#open-datastore) par la base de données courante (hôte ou composant). L'identifiant local est défini lors de l'utilisation de cette commande.
 > La portée de l'identifiant local est la base de données dans laquelle le datastore a été ouvert.
 
-If no *localID* datastore is found, the command returns **Null**.
+Si aucun datastore nommé *localID* n'est trouvé, la commande renvoie **Null**.
 
-Using `ds` requires that the target database is compliant with ORDA, as specified in the **ORDA prerequisites** section. The following rules are applied:
+L'utilisation de `ds` nécessite que la base de données cible soit conforme à ORDA. Les règles suivantes s'appliquent :
 
-*   Un datastore ne référence que les tables avec une seule clé primaire. Tables without a primary key or with composite primary keys are not referenced.
+*   Un datastore ne référence que les tables avec une seule clé primaire. Les tables sans clé primaire ou avec une clé primaire composite ne sont pas référencées.
 *   BLOB type attributes are not managed in the datastore.
 
 
