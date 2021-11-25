@@ -1894,7 +1894,7 @@ Quiere ordenar la colección resultante:
 <details><summary>Histórico</summary>
 | Versión | Modificaciones           |
 | ------- | ------------------------ |
-| v17 R5  | Support of querySettings |
+| v17 R5  | Soporte de querySettings |
 | v16 R6  | Añadidos                 |
 </details><!-- REF #collection.query().Syntax -->**.query**( *queryString* : Text ; *...value* : any ) : Collection<br>**.query**( *queryString* : Text ; *querySettings* : Object ) : Collection<!-- END REF --><!-- REF #collection.query().Params -->| Parámetros    | Tipo       |    | Descripción                                                        |
 | ------------- | ---------- |:--:| ------------------------------------------------------------------ |
