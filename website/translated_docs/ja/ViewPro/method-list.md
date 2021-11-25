@@ -3,10 +3,11 @@ id: method-list
 title: メソッド一覧
 ---
 
+> **Warning**: The commands on this page are not thread-safe.
+
 [A](#a) - [C](#c) - [D](#d) - [E](#e) - [F](#f) - [G](#g) - [I](#i) - [M](#m) - [N](#n) - [O](#o) - [P](#p) - [R](#r) - [S](#s)
 
 ## A
-
 
 
 ### VP ADD FORMULA NAME
@@ -27,7 +28,7 @@ title: メソッド一覧
 #### 説明
 
 `VP ADD FORMULA NAME` コマンドは、 <!-- REF #_method_.VP ADD FORMULA NAME.Summary -->開いているドキュメント内において命名されたフォーミュラを作成、または編集します<!-- END REF -->。
-> このコマンドで作成された命名フォーミュラはドキュメントとともに保存されます。
+> Named formulas created by this command are saved with the document.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -70,7 +71,7 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 
 
 `VP ADD RANGE NAME` コマンドは、 <!-- REF #_method_.VP ADD RANGE NAME.Summary -->開いているドキュメント内に命名レンジを作成、または編集します<!-- END REF -->。
-> このコマンドで作成された命名レンジはドキュメントとともに保存されます。
+> Named ranges created by this command are saved with the document.
 
 名前をつけたいレンジを *rangeObj* に、新しいレンジの名前は *name* に渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名レンジは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
@@ -81,8 +82,8 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 | ------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | scope   | 数値   | レンジのスコープ。 シートのインデックス (0起点) を渡すか、あるいは以下の定数を使用することができます: <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>スコープは、レンジ名が特定のワークシートに限定されたローカル (*scope* = シートのインデックス または `vk current sheet`) なものか、あるいはワークブック全体で使用できるグローバル (*scope* = `vk workbook`) なものかを決定します。 |
 | comment | テキスト | 命名レンジに割り当てられたコメント                                                                                                                                                                                                                                                                                                                         |
-> * 命名レンジの実態は、座標を格納した命名フォーミュラです。 `VP ADD RANGE NAME` を使うと簡単に命名レンジの作成ができますが、[`VP ADD FORMULA NAME`](#vp-add-formula-name) コマンドで命名レンジを作成することもできます。
-> * 命名レンジを定義するフォーミュラは、[`VP Get formula by name`](#vp-get-formula-by-name) コマンドで取得することができます。
+> * A named range is actually a named formula containing coordinates. `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](#vp-add-formula-name) method to create named ranges.
+> * Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](#vp-get-formula-by-name) method.
 
 
 #### 例題
@@ -112,7 +113,7 @@ VP ADD RANGE NAME($range;"Total1")
 `VP ADD SELECTION` コマンドは、 <!-- REF #_method_.VP ADD SELECTION.Summary -->指定されたセルを、現在選択されているセル範囲に追加します<!-- END REF -->。
 
 *rangeObj* には、カレントセレクションに追加するセルのレンジオブジェクトを渡します。
-> アクティブセルは変更されません。
+> The active cell is not modified.
 
 #### 例題
 
@@ -188,8 +189,8 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 *rangeObj* には、セルのレンジオブジェクトを渡します。 レンジ内のセルは結合され、複数のカラム/行にまたがる大きなセルが作成されます。 複数のセルレンジを渡すことで、一度に複数の結合セルを作成することもできます。 ただし、セルレンジが重なった場合、最初のセルレンジのみが使用されます。
 
-> - 結合セルでは、元のレンジの左上端セルのデータのみが表示されます。 他のセルのデータは結合が解除されるまで非表示になります。
-> - 結合セル内の非表示データは、フォーミュラを使用することでアクセス可能です (フォーミュラは左上端セルから始まります)。
+> - Only the data in the upper-left cell is displayed. Data in the other combined cells is hidden until the span is removed.
+> - Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
 
 #### 例題
 
@@ -232,7 +233,7 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 `VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とスコープを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
 
-> このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
+> Style sheets created by this command are saved with the document.
 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
@@ -342,7 +343,7 @@ $all:=VP All("ViewProArea") // カレントシートの全セル
 
 `VP Cell` コマンドは、 <!-- REF #_method_.VP Cell.Summary -->特定のセルを参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
-> このコマンドは単一セルのレンジを想定しています。 複数セルに対するレンジオブジェクトを作成するには、[VP Cells](#vp-cells) コマンドを使用します。
+> This command is intended for ranges of a single cell. To create a range object for multiple cells, use the [VP Cells](#vp-cells) command.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
@@ -525,7 +526,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 *rangeObj* には、1つ目のレンジオブジェクトを渡します。
 
 *otherRangeObj* には、*rangeObj* のレンジオブジェクトと統合させる他のレンジオブジェクトを渡します。
-> このコマンドは *rangeObj* および *otherRangeObj* のオブジェクトを参照によって組み合わせます。
+> The command incorporates *rangeObj* and *otherRangeObj* objects by reference.
 
 #### 例題
 
@@ -559,7 +560,7 @@ $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 から D7
 #### 説明
 
 `VP Convert from 4D View` コマンドを使用すると、 <!-- REF #_method_.VP Convert from 4D View.Summary -->旧式の 4D View ドキュメントを 4D View Pro オブジェクトへと変換することができます<!-- END REF -->。
-> 旧式の 4D View プラグインが現環境にインストールされていなくても、このコマンドは使用可能です。
+> This command does not require that the legacy 4D View plug-in be installed in your environment.
 
 
 *4DViewDocument* には変換する 4D View ドキュメントを格納する BLOB変数やフィールドを渡します。 コマンドは、4D View ドキュメントに保存されていた情報をすべて 4D View Pro 属性へと変換した 4D View Pro オブジェクトを返します。
@@ -602,7 +603,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 *   4D View Pro ドキュメントを、4D View Pro エリアに読み込まずに印刷したい場合
 
 *vpObject* 引数には、変換したい 4D View Pro オブジェクトを渡します。 このオブジェクトは事前に [VP Export to object](#vp-export-to-object) コマンドで解析するか、または [VP EXPORT DOCUMENT](#vp-export-document) コマンドにより保存してある必要があります。
-> 4D View Pro エリアに含まれている式や書式 ([セルフォーマット](configuring.md#セルフォーマット) 参照) が正常に書き出されるよう、少なくともそれらが一度は評価されていることが SVG変換プロセスには必要です。 事前に評価されていないドキュメントを変換した場合、式や書式が予期せぬ形にレンダリングされている可能性があります。
+> SVG conversion process requires that expressions and formats (cf. [Cell Format](configuring.md#cell-format)) included in the 4D View Pro area be evaluated at least once, so that they can be correctly exported. If you convert a document that was not evaluated beforehand, expressions or formats may be rendered in an unexpected way.
 
 *rangeObj* には、変換するセルのレンジを渡します。 この引数が省略された場合のデフォルトでは、ドキュメントのコンテンツ全体が変換されます。
 
@@ -616,7 +617,7 @@ $vpObj:=VP Convert from 4D View($pvblob)
 *   行高さ
 *   カラム幅
 *   非表示のカラム / 行
-> 枠線の表示状態は [VP SET PRINT INFO](#vp-set-print-info) で定義されたドキュメント属性に依存します。
+> Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
 
 #### ファンクションの戻り値
 
@@ -696,7 +697,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 
 *   レンジにカラムと行の両方が含まれる場合、カラムのみが削除されます。
 *   レンジに行しか含まれていない場合、コマンドは何もしません。
-> カラムは右から左に向かって削除されます。
+> Columns are deleted from right to left.
 
 
 #### 例題
@@ -723,7 +724,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 
 *   レンジにカラムと行の両方が含まれる場合、行のみが削除されます。
 *   レンジにカラムしか含まれていない場合、コマンドは何もしません。
-> 行は下から上に向かって削除されます。
+> Rows are deleted from bottom to top.
 
 
 #### 例題
@@ -1900,11 +1901,9 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 | vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                |
 | 戻り値        | オブジェクト | <- | Object containing the workbook options |<!-- END REF -->#### 説明
 
-`VP Get workbook options`<!-- REF #_method_.Get workbook options.Summary -->returns an object containing the workbook options in *vpArea*<!-- END REF -->*vpAreaName* には、4D View Pro エリアの名前を渡します。
+`VP Get workbook options`<!-- REF #_method_.Get workbook options.Summary -->returns an object containing the workbook options in *vpAreaName*<!-- END REF -->*vpAreaName* には、4D View Pro エリアの名前を渡します。
 
 The list of workbook options is referenced in [`VP SET WORKBOOK OPTIONS`'s description](#vp-set-workbook-options).
-
-> This command is not thread-safe
 
 #### 例題
 
@@ -3799,7 +3798,7 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 | vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                          |
 | optionObj  | オブジェクト | -> | Object containing the workbook options to be set |<!-- END REF -->#### 説明
 
-`VP SET WORKBOOK OPTIONS`<!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->sets the workbook options in *vpArea*<!-- END REF -->.
+`VP SET WORKBOOK OPTIONS`<!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->sets the workbook options in *vpAreaName*<!-- END REF -->.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
@@ -3825,17 +3824,17 @@ The following table lists the available workbook options:
 | allowUserEditFormula                  | boolean                 | Formulas can be entered in cells                                                                                                                                                                                                                       |
 | allowUserResize                       | boolean                 | Columns and rows can be resized                                                                                                                                                                                                                        |
 | allowUserZoom                         | boolean                 | Zooming (ctrl + mouse wheel) is allowed                                                                                                                                                                                                                |
-| autoFitType                           | number                  | Content is formatted to fit in cells, or cells and headers. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk auto fit type cell </td><td> The content autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td> The  content autofits cells and headers</td></tr></table>                                                                                                                                                          |
-| backColor                             | string                  | A color string used to represent the background color of the area, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5". The initial backgroundcolor is hidden when a backgroundcolor is set.                                                          |
-| backgroundImage                       | string / picture / file | Sets the background image for the area                                                                                                                                                                                                                 |
-| backgroundImageLayout                 | number                  | Sets how the background image is displayed. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk image layout center </td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td> Fills the area.</td></tr><tr><td> vk image layout zoom </td><td> Displayed with its original aspect ratio.</td></tr></table>                                                                                                                                                                          |
+| autoFitType                           | number                  | Content is formatted to fit in cells, or cells and headers. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk auto fit type cell </td><td>0</td><td> The content autofits cells</td></tr><tr><td> vk auto fit type cell with header </td><td>1</td><td> The content autofits cells and headers</td></tr></table>                                                                                                                                                          |
+| backColor                             | string                  | A color string used to represent the background color of the area, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5". The initial backgroundcolor is hidden when a backgroundImage is set.                                                          |
+| backgroundImage                       | string / picture / file | Background image for the area.                                                                                                                                                                                                                         |
+| backgroundImageLayout                 | number                  | How the background image is displayed. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk image layout center </td><td>1</td><td> In the center of the area.</td></tr><tr><td> vk image layout none </td><td>3</td><td> In the upper left corner of the area with its original size.</td></tr><tr><td> vk image layout stretch </td><td>0</td><td> Fills the area.</td></tr><tr><td> vk image layout zoom </td><td>2</td><td> Displayed with its original aspect ratio.</td></tr></table>                                                                                                                                                                               |
 | calcOnDemand                          | boolean                 | Formulas are calculated only when they are demanded.                                                                                                                                                                                                   |
-| columnResizeMode                      | number                  | Specifies the resize mode for columns. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk resize mode normal </td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>                                                                                                                                                                               |
-| copyPasteHeaderOptions                | number                  | Headers to include when data is copied to or pasted. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk copy paste header options all headers</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>    Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                                 |
+| columnResizeMode                      | number                  | Resize mode for columns. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk resize mode normal </td><td>0</td><td> Use normal resize mode (i.e remaining columns are affected)</td></tr><tr><td> vk resize mode split </td><td>1</td><td> Use split mode (i.e remaining columns are not affected)</td></tr></table>                                                                                                                                                                                             |
+| copyPasteHeaderOptions                | number                  | Headers to include when data is copied to or pasted. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk copy paste header options all headers</td><td>3</td><td> Includes selected headers when data is copied; overwrites selected headers when data is pasted.</td></tr><tr><td> vk copy paste header options column headers </td><td>2</td><td> Includes selected column headers when data is copied; overwrites selected column headers when data is pasted.</td></tr><tr><td> vk copy paste header options no headers</td><td>0</td><td> Column and row headers are not included when data is copied; does not overwrite selected column or row headers when data is pasted.</td></tr><tr><td> vk copy paste header options row headers</td><td>1</td><td>   Includes selected row headers when data is copied; overwrites selected row headers when data is pasted.</td></tr></table>                                                                                                                                                                 |
 | customList                            | collection              | The list for users to customize drag fill, prioritize matching this list in each fill. Each collection item is a collection of strings. See on [GrapeCity's website](https://www.grapecity.com/spreadjs/docs/v13/online/AutoFillLists.html#b).         |
 | cutCopyIndicatorBorderColor           | string                  | Border color for the indicator displayed when the user cuts or copies the selection.                                                                                                                                                                   |
 | cutCopyIndicatorVisible               | boolean                 | Display an indicator when copying or cutting the selected item.                                                                                                                                                                                        |
-| defaultDragFillType                   | number                  | The default drag fill type. Available values : <table><tr><th>値</th><th>説明</th></tr><tr><td> vk auto fill type auto </td><td> Automatically fills cells. </td></tr><tr><td> vk auto fill type clear values </td><td> Clears cell values.</td></tr><tr><td> vk auto fill type copycells </td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td> Fills cells only with formatting.</td></tr><tr><td> vk auto fill type fill series </td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td> Fills cells with values and not formatting. </td></tr></table>                                                                                                                                                                               |
+| defaultDragFillType                   | number                  | The default drag fill type. Available values : <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk auto fill type auto </td><td>5</td><td> Automatically fills cells. </td></tr><tr><td> vk auto fill type clear values </td><td>4</td><td> Clears cell values.</td></tr><tr><td> vk auto fill type copycells </td><td>0</td><td> Fills cells with all data objects, including values, formatting, and formulas.</td></tr><tr><td> vk auto fill type fill formatting only </td><td>2</td><td> Fills cells only with formatting.</td></tr><tr><td> vk auto fill type fill series </td><td>1</td><td> Fills cells with series. </td></tr><tr><td> vk auto fill type fill without formatting </td><td>3</td><td> Fills cells with values and not formatting. </td></tr></table>                                                                                                                                                                               |
 | enableAccessibility                   | boolean                 | Accessibility support is enabled in the spreadsheet.                                                                                                                                                                                                   |
 | enableFormulaTextbox                  | boolean                 | The formula text box is enabled.                                                                                                                                                                                                                       |
 | grayAreaBackColor                     | string                  | A color string used to represent the background color of the gray area , such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                              |
@@ -3844,12 +3843,12 @@ The following table lists the available workbook options:
 | iterativeCalculationMaximumChange     | numeric                 | Maximum amount of change between two calculation values.                                                                                                                                                                                               |
 | iterativeCalculationMaximumIterations | numeric                 | Number of times the formula should recalculate.                                                                                                                                                                                                        |
 | newTabVisible                         | boolean                 | Display a special tab to let users insert new sheets.                                                                                                                                                                                                  |
-| numbersFitMode                        | number                  | Changes display mode when date/number data width is longer than column width. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk numbers fit mode mask</td><td> Replace data content with "###" and shows tip</td></tr><tr><td> vk numbers fit mode overflow </td><td> Display data content as a string. If next cell is empty, overflow the content.</td></tr></table>                                                                                                                                        |
+| numbersFitMode                        | number                  | Changes display mode when date/number data width is longer than column width. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk numbers fit mode mask</td><td>0</td><td> Replace data content with "###" and shows tip</td></tr><tr><td> vk numbers fit mode overflow </td><td>1</td><td> Display data content as a string. If next cell is empty, overflow the content.</td></tr></table>                                                                                                                                        |
 | pasteSkipInvisibleRange               | boolean                 | Paste or skip pasting data in invisible ranges: <ul><li>False (default): paste data</li><li>True: Skip pasting in invisible ranges</li></ul>See [Grapecity's docs](https://www.grapecity.com/spreadjs/docs/v14/online/paste-skip-data-invisible-range.html) for more information on invisible ranges.                     |
-| referenceStyle                        | number                  | Gets or sets the style for cell and range references in cell formulas. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk reference style A1 </td><td> Use A1 style.</td></tr><tr><td> vk reference style R1C1 </td><td> Use  R1C1 style</td></tr></table>                                                                                                                                               |
-| resizeZeroIndicator                   | number                  | Drawing policy when the row or column is resized to zero. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk resize zero indicator default </td><td> Uses the current drawing policy when the row or column is resized to zero.</td></tr><tr><td> vk resize zero indicator enhanced </td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table>                                                                                                                                                            |
-| rowResizeMode                         | number                  | Specifies the way to resize row. Available values are the same as columnResizeMode                                                                                                                                                                     |
-| scrollbarAppearance                   | number                  | Scrollbar appearance. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk scrollbar appearance mobile</td><td> Mobile scrollbars appearance which could be customized.</td></tr><tr><td> vk scrollbar appearance skin (default)</td><td> Excel-like classic scrollbars appearance.</td></tr></table>                                                                                                                                                                                                |
+| referenceStyle                        | number                  | Style for cell and range references in cell formulas. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk reference style A1 </td><td>0</td><td> Use A1 style.</td></tr><tr><td> vk reference style R1C1 </td><td>1</td><td> Use R1C1 style</td></tr></table>                                                                                                                                                                |
+| resizeZeroIndicator                   | number                  | Drawing policy when the row or column is resized to zero. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk resize zero indicator default </td><td>0</td><td> Uses the current drawing policy when the row or column is resized to zero.</td></tr><tr><td> vk resize zero indicator enhanced </td><td>1</td><td> Draws two short lines when the row or column is resized to zero.</td></tr></table>                                                                                                                                                            |
+| rowResizeMode                         | number                  | The way rows are resized. Available values are the same as columnResizeMode                                                                                                                                                                            |
+| scrollbarAppearance                   | number                  | Scrollbar appearance. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk scrollbar appearance mobile</td><td>1</td><td> Mobile scrollbar appearance.</td></tr><tr><td> vk scrollbar appearance skin (default)</td><td>0</td><td> Excel-like classic scrollbar appearance.</td></tr></table>                                                                                                                                                                                                |
 | scrollbarMaxAlign                     | boolean                 | The scroll bar aligns with the last row and column of the active sheet.                                                                                                                                                                                |
 | scrollbarShowMax                      | boolean                 | The displayed scroll bars are based on the entire number of columns and rows in the sheet.                                                                                                                                                             |
 | scrollByPixel                         | boolean                 | Enable precision scrolling by pixel.                                                                                                                                                                                                                   |
@@ -3859,18 +3858,16 @@ The following table lists the available workbook options:
 | showDragFillSmartTag                  | boolean                 | Display the drag fill dialog.                                                                                                                                                                                                                          |
 | showDragFillTip                       | boolean                 | Display the drag-fill tip.                                                                                                                                                                                                                             |
 | showHorizontalScrollbar               | boolean                 | Display the horizontal scroll bar.                                                                                                                                                                                                                     |
-| showResizeTip                         | number                  | How to display the resize tip. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk show resize tip both </td><td> Horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td> Only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td> No resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td> Only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                                       |
-| showScrollTip                         | number                  | How to display the scroll tip. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk show scroll tip both </td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                                       |
+| showResizeTip                         | number                  | How to display the resize tip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk show resize tip both </td><td>3</td><td> Horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td>1</td><td> Only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td>0</td><td> No resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td>2</td><td> Only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                                       |
+| showScrollTip                         | number                  | How to display the scroll tip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                                       |
 | showVerticalScrollbar                 | boolean                 | Display the vertical scroll bar.                                                                                                                                                                                                                       |
 | tabEditable                           | boolean                 | The sheet tab strip can be edited.                                                                                                                                                                                                                     |
 | tabNavigationVisible                  | boolean                 | Display the sheet tab navigation.                                                                                                                                                                                                                      |
-| tabStripPosition                      | number                  | Position of the tab strip. 使用可能な値: <table><tr><th>値</th><th>説明</th></tr><tr><td> vk tab strip position bottom </td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                                           |
+| tabStripPosition                      | number                  | Position of the tab strip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                                           |
 | tabStripRatio                         | number                  | Percentage value (0.x) that specifies how much of the horizontal space will be allocated to the tab strip. The rest of the horizontal area (1 - 0.x) will allocated to the horizontal scrollbar.                                                       |
 | tabStripVisible                       | boolean                 | Display the sheet tab strip.                                                                                                                                                                                                                           |
-| tabStripWidth                         | number                  | Specifies the width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                        |
+| tabStripWidth                         | number                  | Width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                                      |
 | useTouchLayout                        | boolean                 | Whether to use touch layout to present the Spread component.                                                                                                                                                                                           |
-
-> This command is not thread-safe
 
 #### 例題
 
