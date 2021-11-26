@@ -361,7 +361,7 @@ Dans cet exemple, la première entité sera bien créée mais la seconde créati
   //erreur clé dupliquée pour la seconde
 ```
 
-#### Voir également
+#### Voir aussi
 
 [**.toCollection()**](EntitySelectionClass.md#tocollection)
 
@@ -1237,7 +1237,7 @@ Nous voulons interdire les formules, par exemple lorsque les utilisateurs saisis
  End if
 ```
 
-#### Voir également
+#### Voir aussi
 
 [`.query()`](EntitySelectionClass.md#query) pour les entity selections
 <!-- END REF -->

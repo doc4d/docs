@@ -272,12 +272,12 @@ End if
 
 ### プリエンプティブ実行
 
-When compiled, data model class functions are executed:
+コンパイル済みの状態では、データモデルクラス関数は次のように実行されます:
 
-- in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
-- in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
+- シングルユーザーアプリケーションでは、**プリエンプティブまたはコオペラティブプロセス** で実行されます (呼び出し元のプロセスに依存します)。
+- クライアント/サーバーアプリケーションでは、**プリエンプティブプロセス** で実行されます (ただし、[`local`](#local-functions) キーワードが使用されている場合は、シングルユーザーの場合と同様に、呼び出し元プロセスに依存します)。
 
-If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications).
+クライアント/サーバーで動作するように設計されているプロジェクトでは、データモデルクラス関数のコードがスレッドセーフであることを確認してください。 スレッドセーフでないコードが呼び出された場合、実行時にエラーが発生します (シングルユーザーアプリケーションではコオペラティブ実行がサポートされているため、コンパイル時にはエラーが発生しません)。
 
 
 ## 計算属性
