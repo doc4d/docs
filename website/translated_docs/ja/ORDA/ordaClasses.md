@@ -272,12 +272,12 @@ End if
 
 ### プリエンプティブ実行
 
-When compiled, data model class functions are executed:
+コンパイル済みの状態では、データモデルクラス関数は次のように実行されます:
 
-- in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
-- in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
+- シングルユーザーアプリケーションでは、**プリエンプティブまたはコオペラティブプロセス** で実行されます (呼び出し元のプロセスに依存します)。
+- クライアント/サーバーアプリケーションでは、**プリエンプティブプロセス** で実行されます (ただし、[`local`](#local-functions) キーワードが使用されている場合は、シングルユーザーの場合と同様に、呼び出し元プロセスに依存します)。
 
-If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications).
+クライアント/サーバーで動作するように設計されているプロジェクトでは、データモデルクラス関数のコードがスレッドセーフであることを確認してください。 スレッドセーフでないコードが呼び出された場合、実行時にエラーが発生します (シングルユーザーアプリケーションではコオペラティブ実行がサポートされているため、コンパイル時にはエラーが発生しません)。
 
 
 ## 計算属性
@@ -332,12 +332,12 @@ If your project is designed to run in client/server, make sure your data model c
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                |
-| ------------- | ----- | ------------------------------------------------- |
-| attributeName | テキスト  | 計算属性の名称                                           |
-| dataClassName | テキスト  | データクラスの名称                                         |
-| kind          | テキスト  | "get"                                             |
-| result        | バリアント | 任意。 スカラー属性が Null を返すようにするには、このプロパティを Null値で追加します。 |
+| プロパティ         | タイプ     | 説明                                                |
+| ------------- | ------- | ------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                           |
+| dataClassName | Text    | データクラスの名称                                         |
+| kind          | Text    | "get"                                             |
+| result        | Variant | 任意。 スカラー属性が Null を返すようにするには、このプロパティを Null値で追加します。 |
 
 
 #### 例題
@@ -393,12 +393,12 @@ Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明               |
-| ------------- | ----- | ---------------- |
-| attributeName | テキスト  | 計算属性の名称          |
-| dataClassName | テキスト  | データクラスの名称        |
-| kind          | テキスト  | "set"            |
-| value         | バリアント | 計算属性によって処理されるべき値 |
+| プロパティ         | タイプ     | 説明               |
+| ------------- | ------- | ---------------- |
+| attributeName | Text    | 計算属性の名称          |
+| dataClassName | Text    | データクラスの名称        |
+| kind          | Text    | "set"            |
+| value         | Variant | 計算属性によって処理されるべき値 |
 
 #### 例題
 
@@ -430,10 +430,10 @@ Function query <attributeName>($event : Object) -> $result : Object
     - *$result* がテキストの場合、それは有効なクエリ文字列でなければなりません。
     - *$result* がオブジェクトの場合、次の 2つのプロパティを含まなければなりません:
 
-    | プロパティ              | タイプ    | 説明                                  |
-    | ------------------ | ------ | ----------------------------------- |
-    | $result.query      | テキスト   | プレースホルダー (:1, :2, など) を使った有効なクエリ文字列 |
-    | $result.parameters | コレクション | プレースホルダーに渡す値                        |
+    | プロパティ              | タイプ        | 説明                                  |
+    | ------------------ | ---------- | ----------------------------------- |
+    | $result.query      | Text       | プレースホルダー (:1, :2, など) を使った有効なクエリ文字列 |
+    | $result.parameters | Collection | プレースホルダーに渡す値                        |
 
 `query` 関数は、計算属性を使用するクエリが開始されるたびに実行されます。 インデックス付きの属性を利用することで、クエリをカスタマイズしたり最適化したりすることができます。 計算属性に対して `query` 関数が実装されていない場合、検索は常にシーケンシャルにおこなわれます (`get <AttributeName>` 関数によるすべての値の評価に基づきます)。
 
@@ -441,14 +441,14 @@ Function query <attributeName>($event : Object) -> $result : Object
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                                                                                                                                                                                                                                                                                              |
-| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| attributeName | テキスト  | 計算属性の名称                                                                                                                                                                                                                                                                                                                         |
-| dataClassName | テキスト  | データクラスの名称                                                                                                                                                                                                                                                                                                                       |
-| kind          | テキスト  | "query"                                                                                                                                                                                                                                                                                                                         |
-| value         | バリアント | 計算属性によって処理されるべき値                                                                                                                                                                                                                                                                                                                |
-| operator      | テキスト  | クエリ演算子 ([`query` クラス関数も参照ください](API/DataClassClass.md#query))。 とりうる値:<li>== (と等しい; @ はワイルドカード)</li><li>=== (と等しい; @ はワイルドカードでない)</li><li>!= (と等しくない; @ はワイルドカード)</li><li>!== (と等しくない; @ はワイルドカードでない)</li><li>&lt; (小さい)</li><li><= (less than or equal to)</li><li>&gt; (大きい)</li><li>&gt;= (以上)</li><li>IN (含まれる)</li><li>% (キーワードを含む)</li> |
-| result        | バリアント | 計算属性によって処理されるべき値。 4D がデフォルトクエリ (計算属性では常にシーケンシャル) を実行するようにしたい場合は、このプロパティに `Null` を渡します。                                                                                                                                                                                                                                          |
+| プロパティ         | タイプ     | 説明                                                                                                                                                                                                                                                                                                                              |
+| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                                                                                                                                                                                                                                                                                                         |
+| dataClassName | Text    | データクラスの名称                                                                                                                                                                                                                                                                                                                       |
+| kind          | Text    | "query"                                                                                                                                                                                                                                                                                                                         |
+| value         | Variant | 計算属性によって処理されるべき値                                                                                                                                                                                                                                                                                                                |
+| operator      | Text    | クエリ演算子 ([`query` クラス関数も参照ください](API/DataClassClass.md#query))。 とりうる値:<li>== (と等しい; @ はワイルドカード)</li><li>=== (と等しい; @ はワイルドカードでない)</li><li>!= (と等しくない; @ はワイルドカード)</li><li>!== (と等しくない; @ はワイルドカードでない)</li><li>&lt; (小さい)</li><li><= (less than or equal to)</li><li>&gt; (大きい)</li><li>&gt;= (以上)</li><li>IN (含まれる)</li><li>% (キーワードを含む)</li> |
+| result        | Variant | 計算属性によって処理されるべき値。 4D がデフォルトクエリ (計算属性では常にシーケンシャル) を実行するようにしたい場合は、このプロパティに `Null` を渡します。                                                                                                                                                                                                                                          |
 
 > 関数が *$result* に値を返し、`$event.result` プロパティにも別の値が割り当てられている場合、`$event.result` が優先されます。
 
@@ -574,15 +574,15 @@ Function orderBy <attributeName>($event : Object)-> $result : Text
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                   |
-| ------------- | ----- | ---------------------------------------------------- |
-| attributeName | テキスト  | 計算属性の名称                                              |
-| dataClassName | テキスト  | データクラスの名称                                            |
-| kind          | テキスト  | "orderBy"                                            |
-| value         | バリアント | 計算属性によって処理されるべき値                                     |
-| operator      | テキスト  | "desc" または "asc" (デフォルト)                             |
-| descending    | ブール   | 降順の場合は `true`, 昇順の場合は `false`                        |
-| result        | バリアント | 計算属性によって処理されるべき値。 4D にデフォルトソートを実行させるには、`Null` を渡します。 |
+| プロパティ         | タイプ     | 説明                                                   |
+| ------------- | ------- | ---------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                              |
+| dataClassName | Text    | データクラスの名称                                            |
+| kind          | Text    | "orderBy"                                            |
+| value         | Variant | 計算属性によって処理されるべき値                                     |
+| operator      | Text    | "desc" または "asc" (デフォルト)                             |
+| descending    | Boolean | 降順の場合は `true`, 昇順の場合は `false`                        |
+| result        | Variant | 計算属性によって処理されるべき値。 4D にデフォルトソートを実行させるには、`Null` を渡します。 |
 
 > `operator` と `descending` プロパティのどちらを使っても構いません。 これは、基本的にプログラミングのスタイルの問題です (例題参照)。
 
@@ -770,7 +770,7 @@ End if
 
 
 
-## Support in 4D IDE
+## 4D IDE (統合開発環境) におけるサポート
 
 
 ### クラスファイル
