@@ -111,7 +111,7 @@ Méthodes HTTP acceptées pour l'hôte CORS correspondant. Les méthodes HTTP su
 
 Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, null ou non défini, toutes les méthodes sont activées.
 
-#### Voir également
+#### Voir aussi
 
 [Activer CORS](#enable-cors-service)
 
@@ -171,7 +171,7 @@ Lorsqu'elle est désactivée (par défaut), toutes les demandes intersites envoy
 
 Pour plus d'informations sur CORS, veuillez consulter la [page de partage de ressources cross-origin](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing) sur Wikipedia.
 
-#### Voir également
+#### Voir aussi
 [Paramètres CORS](#cors-settings)
 
 ## Activer HTTP
