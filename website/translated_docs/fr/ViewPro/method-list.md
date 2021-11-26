@@ -691,7 +691,7 @@ $targetRange:=VP Cell("ViewProArea"; 4; 0)
 VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 ```
 
-#### Voir également
+#### Voir aussi
 
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 ## D
@@ -1454,7 +1454,7 @@ You can define where to get the formula in *scope* using either the sheet index 
 
 ##### Returned Object
 
-The returned object contains the following properties:
+L'objet retourné contient les propriétés suivantes :
 
 | Propriété | Type  | Description                                                                                                                                 |
 | --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2498,7 +2498,7 @@ $options.pasteOptions:=vk clipboard options all
 
 VP MOVE CELLS($originRange; $targetRange; $options)
 ```
-#### Voir également
+#### Voir aussi
 
 [VP Copy to object](#vp-copy-to-object)<br/>[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -2677,7 +2677,7 @@ If *options* refers to a paste option not present in the copied object (e.g. for
 
 See example the example from [VP Copy to object](#vp-copy-to-object)
 
-#### Voir également
+#### Voir aussi
 
 [VP Copy to object](#vp-copy-to-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
