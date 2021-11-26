@@ -84,7 +84,7 @@ $employees:=Create entity selection([Employee])
 // références vers toutes les entités de la dataclass Employee
 ```
 
-#### Voir également
+#### Voir aussi
 
 [`dataClass.newSelection()`](DataClassClass.md#newselection)
 
@@ -1578,7 +1578,7 @@ Pour plus d'informations sur la génération d'une requête à l'aide des param�
 
 Vous trouverez plus d'exemples de requêtes dans la page [`.query()`](DataClassClass.md#query) .
 
-#### Voir également
+#### Voir aussi
 
 [`.query()`](DataClassClass.md#query) pour dataclass
 
@@ -1741,7 +1741,7 @@ Passez, dans le paramètre *selectedEntities* une entity selection contenant des
 
 #### Résultat
 
-The returned object contains the following properties:
+L'objet retourné contient les propriétés suivantes :
 
 | Propriété      | Type        | Description                              |
 | -------------- | ----------- | ---------------------------------------- |
