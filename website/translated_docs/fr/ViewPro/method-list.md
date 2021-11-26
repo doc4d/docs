@@ -691,7 +691,7 @@ $targetRange:=VP Cell("ViewProArea"; 4; 0)
 VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 ```
 
-#### Voir également
+#### Voir aussi
 
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 ## D
@@ -1454,7 +1454,7 @@ You can define where to get the formula in *scope* using either the sheet index 
 
 ##### Returned Object
 
-The returned object contains the following properties:
+L'objet retourné contient les propriétés suivantes :
 
 | Propriété | Type  | Description                                                                                                                                 |
 | --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2229,10 +2229,12 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 #### Description
 
 `VP Get workbook options` <!-- REF #_method_.Get workbook options.Summary -->
-returns an object containing the workbook options in *vpAreaName*
+returns an object containing all the workbook options in *vpAreaName*
 <!-- END REF -->
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
+
+The returned object contains all the workbook options (default and modified ones), in the workbook.
 
 The list of workbook options is referenced in [`VP SET WORKBOOK OPTIONS`'s description](#vp-set-workbook-options).
 
@@ -2496,7 +2498,7 @@ $options.pasteOptions:=vk clipboard options all
 
 VP MOVE CELLS($originRange; $targetRange; $options)
 ```
-#### Voir également
+#### Voir aussi
 
 [VP Copy to object](#vp-copy-to-object)<br/>[VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -2675,7 +2677,7 @@ If *options* refers to a paste option not present in the copied object (e.g. for
 
 See example the example from [VP Copy to object](#vp-copy-to-object)
 
-#### Voir également
+#### Voir aussi
 
 [VP Copy to object](#vp-copy-to-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -4642,7 +4644,7 @@ Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
 In *optionObj*, pass the workbook options to apply to *vpAreaName*.
 
-If *optionObj* is undefined or empty, the command does nothing.
+If *optionObj* is empty, the command does nothing.
 
 The following table lists the available workbook options:
 
@@ -4717,7 +4719,7 @@ var $workbookOptions : Object
 $workbookOptions:= New Object
 $workbookOptions.allowExtendPasteRange:=True
 
-VP SET WORKBOOK OPTIONS("ViewProArea";$optionObj)
+VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 ```
 
 #### See Also

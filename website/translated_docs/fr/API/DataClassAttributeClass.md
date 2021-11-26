@@ -144,7 +144,7 @@ La propriété `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary -
 
 <!-- END REF -->
 
-#### Voir également
+#### Voir aussi
 
 [`.type`](#type)
 
@@ -419,7 +419,7 @@ Le type de valeur conceptuelle dépend de l'attribut [`.kind`](#kind).
 
 <!-- END REF -->
 
-#### Voir également
+#### Voir aussi
 
 [`.fieldType`](#fieldtype)
 
