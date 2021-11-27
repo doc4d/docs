@@ -7,13 +7,13 @@ title: Interface page
 You use the Interface page to set various options related to the database interface.
 
 ## General  
-You use this area to set various options concerning database display.
+This area lets you set various options concerning database display.
 
 ![](assets/en/settings/interface-page.png)
 
 ### Font to use with the MESSAGE command  
 
-You use the **Select...** button to set the font and size for the characters used by the `MESSAGE` command.
+Click **Select...** to set the font and size for the characters used by the `MESSAGE` command.
 
 The default font and its size depend on the platform where 4D is running.
 

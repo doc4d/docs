@@ -15,9 +15,9 @@ You use this area to set various options concerning database startup and operati
 
 ### Startup Environment  
 
-You use this menu to select the default startup mode for the database: **Design** or **Application**. Unless otherwise specified, 4D opens by default in the Design environment if a password access system has not be activated. 
+You use this menu to select the default startup mode for the database: **Design** or **Application**. Unless specified, 4D opens by default in the Design environment if a password access system is not activated. 
 
-**Note:** You can choose whether to open the database in compiled or interpreted in the opening dialog box, see the `GET USER LIST`command description.
+> You can choose to open the database in compiled or interpreted in the opening dialog box, see the [GET USER LIST](https://doc.4d.com/4dv19R/help/command/en/page609.html) command description.
 
 ### Activate Automatic Comments  
 
