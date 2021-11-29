@@ -32,10 +32,10 @@ Un [Datastore](ORDA/dsMapping.md#datastore) correspond à l'objet d'interface fo
 ## ds
 
 <details><summary>Historique</summary>
-| Version | Modifications                |
-| ------- | ---------------------------- |
-| v18     | Support of localID parameter |
-| v17     | Ajout                        |
+| Version | Modifications                        |
+| ------- | ------------------------------------ |
+| v18     | Prise en charge du paramètre localID |
+| v17     | Ajout                                |
 </details>
 
 <!-- REF #_command_.ds.Syntax -->
@@ -344,7 +344,7 @@ Vous souhaitez connaitre le nombre de tables chiffrées dans le fichier de donn�
           $vcount:=$vcount+1
        End if
     End for each
-    ALERT(String($vcount)+" encrypted table(s) in this datastore.")
+    ALERT(String($vcount)+" table(s) chiffrée(s) dans ce datastore.")
  Else
     ALERT("This database is not encrypted.")
  End if
@@ -633,14 +633,14 @@ Si aucun paramètre *curPassphrase* ou *curDataKey* n'est fourni, `.provideDataK
 
 La fonction `.setAdminProtection()` <!-- REF #DataStoreClass.setAdminProtection().Summary -->permet de désactiver tout accès aux données sur le [port web admin](Admin/webAdmin.md#http-port), y compris via le [Data Explorer](Admin/dataExplorer.md) dans les sessions `WebAdmin`<!-- END REF -->.
 
-By default when the function is not called, access to data is always granted on the web administration port for a session with `WebAdmin` privilege using the Data Explorer. In some configurations, for example when the application server is hosted on a third-party machine, you might not want the administrator to be able to view your data, although they can edit the server configuration, including the [access key](Admin/webAdmin.md#access-key) settings.
+Par défaut lorsque la fonction n'est pas appelée, l'accès aux données est possible via le Data Explorer sur le port d'administration web pour une session avec le privilège `WebAdmin` . Dans certaines configurations, par exemple lorsque le serveur d'application est hébergé sur la machine d'un prestataire de service, vous pouvez souhaiter que l'administrateur ne puisse pas visualiser vos données, même s'il peut accéder à la configuration du serveur, y compris au paramétrage de l'[access key](Admin/webAdmin.md#access-key).
 
-In this case, you can call this function to disable the data access from Data Explorer on the web admin port of the machine, even if the user session has the `WebAdmin` privilege. When this function is executed, the data file is immediately protected and the status is stored on disk: the data file will be protected even if the application is restarted.
+Dans ce cas, vous pouvez appeler cette fonction pour désactiver l'accès aux données depuis le Data Explorer sur le port web admin de la machine, même pour les sessions utilisateurs ayant le privilège `WebAdmin`. Lorsque cette fonction est exécutée, le fichier de données est immédiatement protégé et le statut est sauvegardé sur disque : le fichier de données sera protégé même si l'application est redémarrée.
 
 
 #### Exemple
 
-You create a *protectDataFile* project method to call before deployments for example:
+Vous créez une méthode projet *protectDataFile* à appeler par exemple avant le déploiement :
 
 ```4d
  ds.setAdminProtection(True) //Désactive l'accès aux données de l'Explorateur de données
@@ -667,33 +667,33 @@ You create a *protectDataFile* project method to call before deployments for exa
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Paramètres | Type    |    | Description                          |
-| ---------- | ------- | -- | ------------------------------------ |
-| file       | 4D.File | -> | Objet File                           |
-| reqNum     | Integer | -> | Number of requests to keep in memory |
+| Paramètres | Type    |    | Description                               |
+| ---------- | ------- | -- | ----------------------------------------- |
+| file       | 4D.File | -> | Objet File                                |
+| reqNum     | Integer | -> | Nombre de requêtes à conserver en mémoire |
 <!-- END REF -->
 
 
 #### Description
 
-The `.startRequestLog()` function <!-- REF #DataStoreClass.startRequestLog().Summary -->starts the logging of ORDA requests on the client side<!-- END REF -->.
+La fonction `.startRequestLog()` function <!-- REF #DataStoreClass.startRequestLog().Summary -->lance l'enregistrement des requêtes ORDA sur le poste client<!-- END REF -->.
 
-This function must be called on a remote 4D, otherwise it does nothing. Elle est conçue à des fins de débogage dans les configurations client/serveur.
+Cette fonction doit être appelée sur un 4D distant, sinon elle ne fait rien. Elle est conçue à des fins de débogage dans les configurations client/serveur.
 
-The ORDA request log can be sent to a file or to memory, depending on the parameter type:
+L'enregistrement des requêtes ORDA peut être effectué dans un fichier ou dans la mémoire, en fonction du type de paramètre :
 
-*   If you passed a *file* object created with the `File` command, the log data is written in this file as a collection of objects (JSON format). Each object represents a request.<br>If the file does not already exist, it is created. Otherwise if the file already exists, the new log data is appended to it. If `.startRequestLog( )` is called with a file while a logging was previously started in memory, the memory log is stopped and emptied.
-> A \] character must be manually appended at the end of the file to perform a JSON validation
+*   Si vous avez passé un objet *file* créé à l'aide de la commande `File`, les données de l'enregistrement sont écrites dans ce fichier sous forme de collection d'objets (format JSON). Chaque objet représente une requête.<br>Si le fichier n'existe pas encore, il est créé. Sinon, s'il existe déjà, les nouvelles données d'enregistrement y sont ajoutées. Si la fonction `.startRequestLog( )` est appelée avec un fichier alors qu'un enregistrement des requêtes est déjà en cours en mémoire, l'enregistrement en mémoire est stoppé et vidé.
+> Un caractère \] doit être ajouté manuellement à la fin du fichier pour effectuer une validation JSON
 
-*   If you passed a *reqNum* integer, the log in memory is emptied (if any) and a new log is initialized. It will keep *reqNum* requests in memory until the number is reached, in which case the oldest entries are emptied (FIFO stack).<br>If `.startRequestLog()` is called with a *reqNum* while a logging was previously started in a file, the file logging is stopped.
+*   Si vous avez passé un numéro *reqNum*, l'enregistrement en mémoire est vidé (le cas échéant) et un nouvel enregistrement est lancé. Il gardera en mémoire les requêtes jusqu'à atteindre le nombre *reqNum*, auquel cas les entrées précédentes sont vidées (pile FIFO).<br>Si la fonction `.startRequestLog()` est appelée avec un *reqNum* alors qu'un enregistrement des requêtes dans un fichier est déjà en cours, l'enregistrement dans le fichier est stoppé.
 
-*   If you did not pass any parameter, the log is started in memory. If `.startRequestLog()` was previously called with a *reqNum* (before a `.stopRequestLog()`), the log data is stacked in memory until the next time the log is emptied or `.stopRequestLog()` is called.
+*   Si vous n'avez passé aucun paramètre, l'enregistrement est lancé dans la mémoire. Si `.startRequestLog()` a été préalablement appelée avec un *reqNum* (avant un `.stopRequestLog()`), les données enregistrées sont empilées dans la mémoire jusqu'au prochain vidage ou appel de `.stopRequestLog()`.
 
 Pour plus de détails sur le format d'enregistrement des requêtes ORDA, veuillez consulter la section [**ORDA client requests**](https://doc.4d.com/4Dv18/4D/18/Description-of-log-files.300-4575486.en.html#4385373).
 
 #### Exemple 1
 
-You want to log ORDA client requests in a file and use the log sequence number:
+Vous souhaitez enregistrer des requêtes ORDA clientes dans un fichier et utiliser le numéro de séquence de l'enregistrement :
 
 ```4d
  var $file : 4D.File
@@ -710,7 +710,7 @@ You want to log ORDA client requests in a file and use the log sequence number:
 
 #### Exemple 2
 
-You want to log ORDA client requests in memory:
+Vous souhaitez enregistrer des requêtes ORDA clientes dans la mémoire :
 
 ```4d
  var $es : cs.PersonsSelection
@@ -752,10 +752,10 @@ You want to log ORDA client requests in memory:
 
 #### Description
 
-The `.startTransaction()` function <!-- REF #DataStoreClass.startTransaction().Summary -->starts a transaction in the current process on the database matching the datastore to which it applies<!-- END REF -->. Any changes made to the datastore's entities in the transaction's process are temporarily stored until the transaction is either validated or cancelled.
+La fonction `.startTransaction()` <!-- REF #DataStoreClass.startTransaction().Summary -->démarre une transaction dans le process courant sur la base de données du datastore<!-- END REF -->. Toute modification apportée aux entités du datastore dans le process de la transaction est temporairement stockée jusqu'à ce que la transaction soit validée ou annulée.
 > Si cette méthode est appelée sur le datastore principal (c'est-à-dire le datastore retourné par la commande `ds`), la transaction est appliquée à toutes les opérations effectuées sur le datastore principal et sur la base de données sous-jacente, incluant donc le langage ORDA et le langage classique.
 
-Vous pouvez imbriquer plusieurs transactions (sous-transactions). Each transaction or sub-transaction must eventually be cancelled or validated. Note that if the main transaction is cancelled, all of its sub-transactions are also cancelled even if they were validated individually using the `.validateTransaction()` function.
+Vous pouvez imbriquer plusieurs transactions (sous-transactions). Chaque transaction ou sous-transaction doit être annulée ou validée. A noter que si la transaction principale est annulée, toutes ses sous-transactions le sont également, même si elles avaient été validées individuellement à l'aide de la fonction `.validateTransaction()`.
 
 
 #### Exemple
@@ -820,14 +820,14 @@ Vous pouvez imbriquer plusieurs transactions (sous-transactions). Each transacti
 
 #### Description
 
-The `.stopRequestLog()` function <!-- REF #DataStoreClass.stopRequestLog().Summary -->stops any logging of ORDA requests on the client side<!-- END REF --> (in file or in memory). It is particularly useful when logging in a file, since it actually closes the opened document on disk.
+La fonction `.stopRequestLog()` <!-- REF #DataStoreClass.stopRequestLog().Summary -->stoppe tout enregistrement des requêtes ORDA sur le poste client<!-- END REF --> (dans un fichier ou dans la mémoire). Elle est particulièrement utile en cas d'enregistrement dans un fichier, étant donné qu'elle ferme le document ouvert sur le disque.
 
-This function must be called on a remote 4D, otherwise it does nothing. Elle est conçue à des fins de débogage dans les configurations client/serveur.
+Cette fonction doit être appelée sur un 4D distant, sinon elle ne fait rien. Elle est conçue à des fins de débogage dans les configurations client/serveur.
 
 
 #### Exemple
 
-See examples for [`.startRequestLog()`](#startrequestlog).
+Voir les exemples de [`.startRequestLog()`](#startrequestlog).
 
 <!-- END REF -->
 
@@ -855,16 +855,16 @@ See examples for [`.startRequestLog()`](#startrequestlog).
 
 #### Description
 
-The `.validateTransaction()` function <!-- REF #DataStoreClass.validateTransaction().Summary -->accepts the transaction <!-- END REF -->that was started with [`.startTransaction()`](#starttransaction) at the corresponding level on the specified datastore.
+La fonction `.validateTransaction()` <!-- REF #DataStoreClass.validateTransaction().Summary -->valide la transaction <!-- END REF -->démarrée avec [`.startTransaction()`](#starttransaction)au niveau correspondant dans le datastore.
 
-The function saves the changes to the data on the datastore that occurred during the transaction.
+La fonction sauvegarde les modifications apportées aux données sur le datastore durant la transaction.
 
-Vous pouvez imbriquer plusieurs transactions (sous-transactions). If the main transaction is cancelled, all of its sub-transactions are also cancelled, even if they were validated individually using this function.
+Vous pouvez imbriquer plusieurs transactions (sous-transactions). Si la transaction principale est annulée, toutes ses sous-transactions sont également annulées, même si elles ont été validées individuellement à l'aide de cette fonction.
 
 
 #### Exemple
 
-See example for [`.startTransaction()`](#starttransaction).
+Voir l'exemple de [`.startTransaction()`](#starttransaction).
 
 <!-- END REF -->
 
