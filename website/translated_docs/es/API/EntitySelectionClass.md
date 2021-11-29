@@ -1220,24 +1220,24 @@ En este ejemplo, queremos encontrar el salario más bajo entre todas las emplead
 **.minus**( *entity* : 4D.Entity ) : 4D.EntitySelection<br>**.minus**( *entitySelection* : 4D.EntitySelection ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.minus().Params -->
-| Parámetros      | Tipo               |    | Descripción                                                              |
-| --------------- | ------------------ |:--:| ------------------------------------------------------------------------ |
-| entity          | 4D.Entity          | -> | Entidad a sustraer                                                       |
-| entitySelection | 4D.EntitySelection | -> | Entity selection a sustraer                                              |
-| Resultado       | 4D.EntitySelection | <- | New entity selection or a new reference on the existing entity selection |
+| Parámetros      | Tipo               |    | Descripción                                                                    |
+| --------------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
+| entity          | 4D.Entity          | -> | Entidad a sustraer                                                             |
+| entitySelection | 4D.EntitySelection | -> | Entity selection a sustraer                                                    |
+| Resultado       | 4D.EntitySelection | <- | Nueva entity selection o una nueva referencia en la entity selection existente |
 <!-- END REF -->
 
 #### Descripción
 
-The `.minus()` function <!-- REF #EntitySelectionClass.minus().Summary -->excludes from the entity selection to which it is applied the *entity* or the entities of *entitySelection* and returns the resulting entity selection<!-- END REF -->.
+La función `.minus()` <!-- REF #EntitySelectionClass.minus().Summary -->excluye de la entity selection a la que se aplica la *entity* o las entidades de *entitySelection* y devuelve la entity selection resultante<!-- END REF -->.
 
 *   If you pass *entity* as parameter, the function creates a new entity selection without *entity* (if *entity* belongs to the entity selection). If *entity* was not included in the original entity selection, a new reference to the entity selection is returned.
 *   If you pass *entitySelection* as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to *entitySelection*.
 > You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
 
-If the original entity selection or both the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned.
+Si la entity selection inicial o la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía.
 
-If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
+Si *entitySelection* está vacía o si *entity* es Null, se devuelve una nueva referencia a la entity selection original.
 
 Si la entity selection inicial y el parámetro no están relacionados con la misma dataclass, se produce un error.
 
@@ -1249,8 +1249,8 @@ Si la entity selection inicial y el parámetro no están relacionados con la mis
  var $employee : cs.EmployeeEntity
 
  $employees:=ds.Employee.query("lastName = :1";"H@") 
-  // The $employees entity selection contains the entity with primary key 710 and other entities
-  // for ex. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (primary key 710)
+  // la entity selection $employees contiene la entidad con llave primaria 710 y otras entidades
+  // por ejemplo. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (primary key 710)
 
  $employee:=ds.Employee.get(710) // Devuelve "Sherlock Holmes"
 
@@ -1260,7 +1260,7 @@ Si la entity selection inicial y el parámetro no están relacionados con la mis
 
 #### Ejemplo 2
 
-We want to have a selection of female employees named "Jones" who live in New York :
+Queremos tener una selección de empleadas llamadas "Jones" que vivan en Nueva York :
 
 ```4d
  var $sel1; $sel2; $sel3 : cs.EmployeeSelection
@@ -1286,24 +1286,24 @@ We want to have a selection of female employees named "Jones" who live in New Yo
 **.or**( *entity* : 4D.Entity ) : 4D.EntitySelection<br>**.or**( *entitySelection* : 4D.EntitySelection ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.or().Params -->
-| Parámetros      | Tipo               |    | Descripción                                                            |
-| --------------- | ------------------ |:--:| ---------------------------------------------------------------------- |
-| entity          | 4D.Entity          | -> | Entidad a intersectar                                                  |
-| entitySelection | 4D.EntitySelection | -> | Entity selection a intersectar                                         |
-| Resultado       | 4D.EntitySelection | <- | New entity selection or new reference to the original entity selection |
+| Parámetros      | Tipo               |    | Descripción                                                                   |
+| --------------- | ------------------ |:--:| ----------------------------------------------------------------------------- |
+| entity          | 4D.Entity          | -> | Entidad a intersectar                                                         |
+| entitySelection | 4D.EntitySelection | -> | Entity selection a intersectar                                                |
+| Resultado       | 4D.EntitySelection | <- | Nueva entity selection o una nueva referencia a la entity selection de origen |
 <!-- END REF -->
 
 #### Descripción
 
-The `.or()` function <!-- REF #EntitySelectionClass.or().Summary -->combines the entity selection with the *entity* or *entitySelection* parameter using the logical (not exclusive) OR operator<!-- END REF -->; it returns a new, unordered entity selection that contains all the entities from the entity selection and the parameter.
+La función `.or()` <!-- REF #EntitySelectionClass.or().Summary -->combina la entity selection con el parámetro *entity* o *entitySelection* utilizando el operador lógico (no excluyente) OR<!-- END REF -->; devuelve una nueva entitySelection no ordenada que contiene todas las entidades de la entitySelection y del parámetro.
 
 *   If you pass *entity* as parameter, you compare this entity with the entity selection. If the entity belongs to the entity selection, a new reference to the entity selection is returned. Otherwise, a new entity selection containing the original entity selection and the entity is returned.
 *   If you pass *entitySelection* as parameter, you compare entity selections. A new entity selection containing the entities belonging to the original entity selection or *entitySelection* is returned (or is not exclusive, entities referenced in both selections are not duplicated in the resulting selection).
 > You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
 
-If the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to *entitySelection* or an entity selection containing only *entity* is returned.
+Si la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía. Si la entity selection original está vacía, se devuelve una referencia a *entitySelection* o una entity selection que sólo contiene *entity*.
 
-If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
+Si *entitySelection* está vacía o si *entity* es Null, se devuelve una nueva referencia a la entity selection original.
 
 Si la entity selection inicial y el parámetro no están relacionados con la misma dataclass, se produce un error.
 
@@ -1312,9 +1312,9 @@ Si la entity selection inicial y el parámetro no están relacionados con la mis
 
 ```4d
  var $employees1; $employees2; $result : cs.EmployeeSelection
- $employees1:=ds.Employee.query("lastName = :1";"H@") //Returns "Colin Hetrick","Grady Harness"
- $employees2:=ds.Employee.query("firstName = :1";"C@") //Returns "Colin Hetrick", "Cath Kidston"
- $result:=$employees1.or($employees2) //$result contains "Colin Hetrick", "Grady Harness","Cath Kidston"
+ $employees1:=ds.Employee.query("lastName = :1";"H@") //Devuelve "Colin Hetrick","Grady Harness"
+ $employees2:=ds.Employee.query("firstName = :1";"C@") //Devuelve "Colin Hetrick", "Cath Kidston"
+ $result:=$employees1.or($employees2) //$result contiene "Colin Hetrick", "Grady Harness","Cath Kidston"
 ```
 
 #### Ejemplo 2
@@ -1322,11 +1322,11 @@ Si la entity selection inicial y el parámetro no están relacionados con la mis
 ```4d
  var $employees; $result : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
- $employees:=ds.Employee.query("lastName = :1";"H@") // Returns "Colin Hetrick","Grady Harness", "Sherlock Holmes"
- $employee:=ds.Employee.get(686) //the entity with primary key 686 does not belong to the $employees entity selection
-  //It matches the employee "Mary Smith"
+ $employees:=ds.Employee.query("lastName = :1";"H@") // Devuelve "Colin Hetrick","Grady Harness", "Sherlock Holmes"
+ $employee:=ds.Employee.get(686) //la entidad con llave primaria 686 no pertenece a la entity selection $employees 
+  //Coincide con la empleada "Mary Smith"
 
- $result:=$employees.or($employee) //$result contains "Colin Hetrick", "Grady Harness", "Sherlock Holmes", "Mary Smith"
+ $result:=$employees.or($employee) //$result contiene "Colin Hetrick", "Grady Harness", "Sherlock Holmes", "Mary Smith"
 ```
 
 <!-- END REF -->
@@ -1346,20 +1346,20 @@ Si la entity selection inicial y el parámetro no están relacionados con la mis
 **.orderBy**( *pathString* : Text ) : 4D.EntitySelection<br>**.orderBy**( *pathObjects* : Collection ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.orderBy().Params -->
-| Parámetros  | Tipo               |    | Descripción                                                           |
-| ----------- | ------------------ |:--:| --------------------------------------------------------------------- |
-| pathString  | Texto              | -> | Attribute path(s) and sorting instruction(s) for the entity selection |
-| pathObjects | Collection         | -> | Collection of criteria objects                                        |
-| Resultado   | 4D.EntitySelection | <- | New entity selection in the specified order                           |
+| Parámetros  | Tipo               |    | Descripción                                                                    |
+| ----------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
+| pathString  | Texto              | -> | Ruta(s) de atributos e instrucciones de clasificación para la entity selection |
+| pathObjects | Collection         | -> | Colección de objetos criterio                                                  |
+| Resultado   | 4D.EntitySelection | <- | Nueva entity selection en el orden especificado                                |
 <!-- END REF -->
 
 #### Descripción
 
-The `.orderBy()` function <!-- REF #EntitySelectionClass.orderBy().Summary -->returns a new ordered entity selection containing all entities of the entity selection in the order specified by *pathString* or *pathObjects* criteria<!-- END REF -->.
-> * This method does not modify the original entity selection.
+La función `.orderBy()` <!-- REF #EntitySelectionClass.orderBy().Summary -->devuelve una nueva entity selection ordenada que contiene todas las entidades de la entity selection en el orden especificado por los criterios *pathString* o *pathObjects*<!-- END REF -->.
+> * Este método no modifica la selección de entidades original.
 *   For more information, please refer to the [Ordered or unordered entity selection](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) section.
 
-You must use a criteria parameter to define how the entities must be sorted. Two different parameters are supported:
+Debe utilizar un parámetro de criterio para definir cómo deben ordenarse las entidades. Se soportan dos parámetros diferentes:
 
 *   *pathString* (Text) : This parameter contains a formula made of 1 to x attribute paths and (optionally) sort orders, separated by commas. La sintaxis es:
 
@@ -1367,7 +1367,7 @@ You must use a criteria parameter to define how the entities must be sorted. Two
 "attributePath1 {desc or asc}, attributePath2 {desc or asc},..."
 ```
 
-The order in which the attributes are passed determines the sorting priority of the entities. By default, attributes are sorted in ascending order. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass "asc" to sort in ascending order or "desc" in descending order.
+El orden en que se pasan los atributos determina la prioridad de ordenación de las entidades. Por defecto, los atributos se clasifican en orden ascendente. You can set the sort order of a property in the criteria string, separated from the property path by a single space: pass "asc" to sort in ascending order or "desc" in descending order.
 
 *   *pathObjects* (collection): each element of the collection contains an object structured in the following way:
 
@@ -1378,20 +1378,20 @@ The order in which the attributes are passed determines the sorting priority of 
 }
 ```
 
-By default, attributes are sorted in ascending order ("descending" is false).
+Por defecto, los atributos se clasifican en orden ascendente ("descending" es false).
 
-You can add as many objects in the criteria collection as necessary.
-> Null values are evaluated as less than other values.
+Puede añadir tantos objetos en la colección de criterios como sea necesario.
+> Los valores Null se evalúan como inferiores a los otros valores.
 
 #### Ejemplo
 
 
 ```4d
-// order by formula
+// orden con fórmula
  $sortedEntitySelection:=$entitySelection.orderBy("firstName asc, salary desc")
  $sortedEntitySelection:=$entitySelection.orderBy("firstName")
 
-  // order by collection with or without sort orders
+  // orden con collection con o sin órdenes de clasificación
  $orderColl:=New collection
  $orderColl.push(New object("propertyPath";"firstName";"descending";False))
  $orderColl.push(New object("propertyPath";"salary";"descending";True))
@@ -1421,21 +1421,21 @@ You can add as many objects in the criteria collection as necessary.
 **.orderByFormula**( *formulaString* : Text { ; *sortOrder* : Integer } { ; *settings* : Object} ) : 4D.EntitySelection<br>**.orderByFormula**( *formulaObj* : Object { ; *sortOrder* : Integer } { ; *settings* : Object} ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.orderByFormula().Params -->
-| Parámetros    | Tipo               |    | Descripción                                 |
-| ------------- | ------------------ |:--:| ------------------------------------------- |
-| formulaString | Texto              | -> | Formula string                              |
-| formulaObj    | Objeto             | -> | Formula object                              |
-| sortOrder     | Integer            | -> | `dk ascending` (default) or `dk descending` |
-| parámetros    | Objeto             | -> | Parameter(s) for the formula                |
-| Resultado     | 4D.EntitySelection | <- | New ordered entity selection                |
+| Parámetros    | Tipo               |    | Descripción                                   |
+| ------------- | ------------------ |:--:| --------------------------------------------- |
+| formulaString | Texto              | -> | Cadena formula                                |
+| formulaObj    | Objeto             | -> | Objeto formula                                |
+| sortOrder     | Integer            | -> | `dk ascending` (por defecto) o`dk descending` |
+| parámetros    | Objeto             | -> | Parámetros de la fórmula                      |
+| Resultado     | 4D.EntitySelection | <- | Nueva entity selection ordenada               |
 <!-- END REF -->
 
 #### Descripción
 
-The `.orderByFormula()` function <!-- REF #EntitySelectionClass.orderByFormula().Summary -->returns a new, ordered entity selection<!-- END REF --> containing all entities of the entity selection in the order defined through the *formulaString* or *formulaObj* and, optionally, *sortOrder* and *settings* parameters.
+La función `.orderByFormula()` <!-- REF #EntitySelectionClass.orderByFormula().Summary -->devuelve una nueva entity selection ordenada<!-- END REF --> que contiene todas las entidades de la entity selection en el orden definido a través de los parámetros *formulaString* o *formulaObj* y, opcionalmente, *sortOrder* y *settings*.
 > Esta función no modifica la selección de entidades original.
 
-You can use either a *formulaString* or a *formulaObj* parameter:
+Puede utilizar un parámetro *formulaString* o un parámetro *formulaObj*:
 
 - *formulaString*: you pass a 4D expression such as "Year of(this.birthDate)".
 - *formulaObj*: pass a valid formula object created using the `Formula` or `Formula from string` command.
