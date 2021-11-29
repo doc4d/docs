@@ -13,26 +13,29 @@ The Client-server pages group together parameters related to the use of the data
 
 This option lets you indicate whether or not the 4D Server database will appear in the list of published databases.
 
--   When this option is checked (default), the database is made public and appears in the list of published databases (**Available **tab).
+-   When this option is checked (default), the database is made public and appears in the list of published databases (**Available** tab).
 -   When the option is not checked, the database is not made public and it does not appear in the list of published databases. To connect, users must manually enter the address of the database on the **Custom** tab of the connection dialog box.
 
-**Note**: If you modify this parameter, you must restart the server database in order for it to be taken into account.
+> **Note**: If you modify this parameter, you must restart the server database in order for it to be taken into account.
 
 #### Publication name  
 
-This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available **tab of the connection dialog box (see the [Connecting to a 4D Server Database](https://doc.4d.com/4Dv19/4D/19/Connecting-to-a-4D-Server-Database.300-5422486.en.html) section). By default, 4D Server uses the name of the database structure file. You can enter any custom name you want.
+This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Connecting to a 4D Server Database](https://doc.4d.com/4Dv19/4D/19/Connecting-to-a-4D-Server-Database.300-5422486.en.html) section). By default, 4D Server uses the name of the database structure file. You can enter any custom name you want.
 
 **Note:** This parameter is not taken into account in custom client-server applications. In theory, the client application connects directly to the server application, without passing by the connection dialog box. However, in the event of an error, this dialog box will appear; in this case, the publication name of the server application is the name of the compiled database.
 
 #### Port Number  
 
 This option lets you change the TCP port number on which 4D Server publishes the database. This information is stored in the structure of the database and on each client machine. By default, the TCP port number used by 4D Server and 4D in remote mode is 19813.
+
 Customizing this value is necessary when you want to use several 4D applications on the same machine with the TCP protocol; in this case, you must specify a different port number for each application.
-When you modify this value from 4D Server or 4D, it is automatically passed on to all the 4D machines connected to the database. To update any other client machines that are not connected, you just need to enter the new port number (preceded by a colon) after the IP address of the server machine on the Custom page of the connection dialog box at the time of the next connection. For example, if the new port number is 19888:
+When you modify this value from 4D Server or 4D, it is automatically passed on to all the 4D machines connected to the database. 
+
+To update any other client machines that are not connected, you just need to enter the new port number (preceded by a colon) after the IP address of the server machine on the Custom page of the connection dialog box at the time of the next connection. For example, if the new port number is 19888:
 
 ![](assets/en/settings/client-server-network.png)
 
-**Note:** Only databases published on the same port as the one set in 4D client are visible on the TCP/IP dynamic publication page.
+> **Note:** Only databases published on the same port as the one set in 4D client are visible on the TCP/IP dynamic publication page.
 
 #### 4D Server and port numbers
 

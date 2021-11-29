@@ -3,9 +3,7 @@ id: web
 title: Web page
 ---
 
- [Symbol file](../Project/compiler.md#symbol-file)
-
-Using the tabs on the **Web** page, you can configure various aspects of the integrated Web server of 4D (security, startup, connections, Web services, etc.). For more information about how the 4D Web server works, see [Web server](../WebServer/webServer.html) . For more information about 4D Web services, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.en.html) chapter.
+Using the tabs on the **Web** page, you can configure various aspects of the integrated Web server of 4D (security, startup, connections, Web services, etc.). For more information about how the 4D Web server works, see [Web server](../WebServer/webServer.html). For more information about 4D Web services, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.en.html) chapter.
 
 ## Configuration 
 
@@ -68,7 +66,9 @@ Allows you to modify the TCP/IP port number used by the Web server for secured H
 You may consider changing this port number for two main reasons:
 
 -   for security reasons --- hacker attacks against Web servers are generally concentrated on standard HTTP ports (80 and 443).
--   for Mac OS X, in order to allow "standard" users to launch the 4D Web server in a secured mode --- in macOS, the use of TCP/IP ports reserved for Web publications (0 to 1023) requires specific access privileges: only the root user can launch an application using these ports. In order for standard users to be able to launch the Web server, one solution is to modify the port numbers (see [Web server configuration](../WebServer/webServerConfig.html#http-port).
+-   for Mac OS X, in order to allow "standard" users to launch the 4D Web server in a secured mode --- in macOS, the use of TCP/IP ports reserved for Web publications (0 to 1023) requires specific access privileges: only the root user can launch an application using these ports. 
+
+    In order for standard users to be able to launch the Web server, one solution is to modify the port numbers (see [Web server configuration](../WebServer/webServerConfig.html#http-port).
     You can pass any valid value (in order to avoid access restrictions on macOS, you should pass a value greater than 1023). For more information about port numbers, refer to the HTTP Port paragraph above.
 
 #### Allow database access through 4DSYNC URLs
@@ -116,10 +116,10 @@ No other settings are available. Scalable sessions:
 -   can use any number of processes,
 -   can be assigned privileges,
 -   can share information between processes
--   always use thread-safe code (see [Using preemptive Web processes](../WebServer/preemptiveWeb.html))
+-   always use thread-safe code (see [Using preemptive Web processes](../WebServer/preemptiveWeb.md))
 -   always reuse temporary contexts (see [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts)).
 
-Scalable sessions are detailed on the [User sessions page](https://developer.4d.com/docs/en/WebServer/Sessions.html).
+Scalable sessions are detailed on the [User sessions page](../WebServer/sessions.md).
 
 #### No sessions  
 
@@ -157,14 +157,17 @@ When the maximum number of concurrent Web processes (minus one) is reached, 4D n
 
 ##### How to determine the right value?  
 
-In theory, the maximum number of Web processes is the result of the following formula: Available memory/Web process stack size(*).\
+In theory, the maximum number of Web processes is the result of the following formula: Available memory/Web process stack size.
+
 Another solution is to visualize the information on Web processes displayed in the Runtime Explorer: the current number of Web processes and the maximum number reached since the Web server boot are indicated.
 
-(*) The stack size allocated by 4D for a Web process is around 512 KB (indicative value, ​​which may vary based on context). 
+> The stack size allocated by 4D for a Web process is around 512 KB (indicative value, ​​which may vary based on context). 
 
 ### Reuse Temporary Contexts (4D in remote mode)  
 
-Allows you to optimize the operation of the 4D Web server in remote mode by reusing Web processes created for processing previous Web requests. In fact, the Web server of a 4D client needs a specific Web process for the handling of each Web request; when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It then generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
+Allows you to optimize the operation of the 4D Web server in remote mode by reusing Web processes created for processing previous Web requests. 
+
+In fact, the Web server of a 4D client needs a specific Web process for the handling of each Web request; when necessary, this process connects to the 4D Server machine in order to access the data and database engine. It then generates a temporary context using its own variables, selections, etc. Once the request has been dealt with, this process is killed.
 
 When the **Reuse Temporary Contexts** option is checked, 4D maintains the specific Web processes created on the client machine and reuses them for subsequent requests. By removing the process creation stage, Web server performance is improved.
 
@@ -176,7 +179,7 @@ Allows you to set the maximum timeout before closing for inactive Web processes 
 
 #### Use preemptive processes  
 
-Enables preemptive web processes in your compiled applications. When **Use preemptive processes** is selected, the eligibility of your web-related code (including 4D tags and web database methods) to the preemptive execution will be evaluated during the compilation. For more information, see [Using preemptive Web processes](../WebServer/preemptiveWeb.html).
+Enables preemptive web processes in your compiled applications. When **Use preemptive processes** is selected, the eligibility of your web-related code (including 4D tags and web database methods) to the preemptive execution will be evaluated during the compilation. For more information, see [Using preemptive Web processes](../WebServer/preemptiveWeb.md).
 
 **Note:** This option does not apply to Web service processes (server or client). Preemptive mode is supported by Web service processes at method level: you just have to select "Can be run in preemptive processes" property for published SOAP server methods (see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler. 
 
@@ -224,7 +227,7 @@ To define a Generic Web User:
     You can associate a password with the user if you wish.
 2.  In the different 4D editors, authorize or restrict access to this user.
 3.  In the Database Settings dialog, choose the **Options (I)** page of the **Web** theme.
-    The "Web Passwords" area contains the **Generic Web User **drop-down list.By default, the Generic Web User is the Designer and the browsers have full access to the entire database.
+    The "Web Passwords" area contains the **Generic Web User** drop-down list. By default, the Generic Web User is the Designer and the browsers have full access to the entire database.
 4.  Choose a user in the drop-down list and validate the dialog box:
     ![](https://doc.4d.com/4Dv19/picture/37772/pict37772.en.png)
 
@@ -237,7 +240,7 @@ The "Passwords with BASIC protocol" option does not influence how the Generic We
 However, when the "Include 4D passwords" option is selected, two possible results can occur:
 
 -   The user's name and password don't exist in 4D's password table. In this case, if the connection has been accepted by the [On Web Authentication Database Method](https://doc.4d.com/4Dv19/4D/14-R2/On-Web-Authentication-Database-Method.300-1342178.en.html), the Generic Web User's access rights will be applied to the browser.
--   If the user's name and password exist in 4D's password table, the "Generic Web User" parameter is ignored. The user connects with his own access rights.
+-   If the user's name and password exist in 4D's password table, the Generic Web User parameter is ignored. The user connects with his own access rights.
 
 ## Options (II)
 
@@ -245,7 +248,8 @@ However, when the "Include 4D passwords" option is selected, two possible result
 
 #### Directly Sending Extended Characters  
 
-By default, the 4D Web server converts the extended characters in the dynamic and static Web pages according to HTML standards before sending them. They are then interpreted by the browsers.\
+By default, the 4D Web server converts the extended characters in the dynamic and static Web pages according to HTML standards before sending them. They are then interpreted by the browsers.
+
 You can set the Web server so that the extended characters are sent "as is", without converting them into HTML entities. This option has shown a speed increase on most foreign operating systems (especially the Japanese system).
 
 To do this, check the **Send Extended Characters Directly** option.
@@ -254,7 +258,7 @@ To do this, check the **Send Extended Characters Directly** option.
 
 The **Standard Set** drop-down list allows you to define the set of characters to be used by the 4D Web server. By default, the character set is UTF-8.
 
-**Note:** This setting is also used for generating Quick Reports in HTML format (see [Executing a quick report](https://doc.4d.com/4Dv19/4D/19/Executing-a-quick-report.300-5416653.en.html)).
+> **Note:** This setting is also used for generating Quick Reports in HTML format (see [Executing a quick report](https://doc.4d.com/4Dv19/4D/19/Executing-a-quick-report.300-5416653.en.html)).
 
 ### Keep-Alive Connections  
 
@@ -268,9 +272,11 @@ In some cases, other optimized internal functions may be invoked. Keep-alive con
 
 Two options allow you to set how the keep-alive connections work:
 
--   **Number of requests by connection**: Allows you to set the maximum number of requests and responses able to travel over a connection keep alive. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).\
+-   **Number of requests by connection**: Allows you to set the maximum number of requests and responses able to travel over a connection keep alive. Limiting the number of requests per connection allows you to prevent server flooding due to a large number of incoming requests (a technique used by hackers).
+
     The default value (100) can be increased or decreased depending on the resources of the machine hosting the 4D Web server.
--   **Timeout**: This value defines the maximum wait period (in seconds) during which the Web server maintains an open TCP connection without receiving any requests from the Web browser. Once this period is over, the server closes the connection.\
+-   **Timeout**: This value defines the maximum wait period (in seconds) during which the Web server maintains an open TCP connection without receiving any requests from the Web browser. Once this period is over, the server closes the connection.
+
     If the Web browser sends a request after the connection is closed, a new TCP connection is automatically created. This operation is not visible for the user.*
 
 ## Log
@@ -279,7 +285,7 @@ Two options allow you to set how the keep-alive connections work:
 
 4D allows you to obtain a log of requests.
 
-This file is named "logweb.txt" and is automatically located:
+This file is named `logweb.txt` and is automatically located:
 
 -   with 4D in local mode and 4D Server, in the Logs folder located next to the database structure file.
 -   with 4D in remote mode, in the Logs subfolder of the 4D client database folder (cache folder).
@@ -290,7 +296,7 @@ The activation and configuration of the log file contents is carried out on the 
 
 ## Activation and Format  
 
-The activation and deactivation of the log file of requests can also be carried out by programming using the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html) (4D v12) or [WEB SET OPTION](https://doc.4d.com/4dv19R/help/command/en/page1210.html) commands.
+The activation and deactivation of the log file of requests can also be carried out by programming using the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html) or [WEB SET OPTION](https://doc.4d.com/4dv19R/help/command/en/page1210.html) commands.
 
 The log format menu provides the following options:
 
@@ -389,7 +395,7 @@ First you must choose the frequency (days, weeks, etc.) or the file size limit c
 
 You use the options on this tab to activate and configure Web services for the 4D database, both for their publishing (server side) and their subscription (client side).
 
-For more information about the support of Web Services in 4D, refer to the [Publication and use of Web Services](https://livedoc.4d.com/What-s-new/4D-Design-Reference-19-R4/Publication-and-use-of-Web-Services.200-5736722.en.html) chapter.
+For more information about the support of Web Services in 4D, refer to the [Publication and use of Web Services](https://doc.4d.com/What-s-new/4D-Design-Reference-19-R4/Publication-and-use-of-Web-Services.200-5736722.en.html) chapter.
 
 ### Server Side  
 
@@ -418,9 +424,7 @@ This area contains various options related to the use of 4D as a Web Services "c
 
 This page contains the options used to enable and control REST access for the 4D database.
 
-REST allows external applications to access the data of your database directly, for example through 
-
-[Open datastore](../API/DataStoreClass.md#open-datastore) feature.  
+REST allows external applications to access the data of your database directly, for example through the [Open datastore](../API/DataStoreClass.md#open-datastore) feature.  
 
 **Note:**
 

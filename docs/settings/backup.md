@@ -41,7 +41,7 @@ This area allows you to set which files and/or folders to copy during the next b
     -   **Add folder...**: Displays a dialog box that allows selecting a folder to add to the backup. In the case of a restore, the folder will be recovered with its internal structure. You can select any folder or volume connected to the machine, with the exception of the folder containing the database files.
     -   **Add file...**: Displays a dialog box that allows you to select a file to add to the backup.
 
-For more information about 4D database files, refer to [Architecture of a project](../Project/architecture.md).
+For more information about 4D project files, refer to [Architecture of a project](../Project/architecture.md).
 
 ### Backup File Destination Folder  
 
@@ -53,7 +53,7 @@ To modify the location where these files are stored, click the **[...]** butto
 
 ### Log management  
 
-The **Use Log File** option, when checked, indicates that the database uses a log file. Its pathname is specified below the option. When this option is checked, it is not possible to open the database without a log file. 
+The **Use Log File** option, when checked, indicates that the database uses a log file. Its pathname is specified below the option. When this option is checked, the database cannot be opened without a log file. 
 
 By default, any database created with 4D uses a log file. The file is named *DataFileName.journal* and is placed in the data folder.
 
@@ -70,6 +70,7 @@ You use the options of this tab to configure the general backup and automatic re
 This area sets various mechanisms that come into play during backups.
 
 -   **Keep only the last X backup files**: This parameter activates and configures the mechanism used to delete the oldest backup files, which avoids the risk of saturating the disk drive.
+    
     This feature works as follows: Once the current backup is complete, 4D deletes the oldest archive if it is found in the same location as the archive being backed up and has the same name (you can request that the oldest archive be deleted before the backup in order to save space).
     
     If, for example, the number of sets is set to 3, the first three backups create the archives MyBase-0001, MyBase-0002, and MyBase-0003 respectively. During the fourth backup, the archive MyBase-0004 is created and MyBase-0001 is deleted. By default, the mechanism for deleting sets is enabled and 4D keeps 3 backup sets.
@@ -92,7 +93,9 @@ This area sets various mechanisms that come into play during backups.
 
     -   **Retry at the next scheduled date and time**: This option only makes sense when working with scheduled automatic backups. It amounts to cancelling the failed backup. An error is generated.
 
-    -   **Retry after X second(s), minute(s) or hour(s)**: When this option is checked, a new backup attempt is executed after the wait period. This mechanism allows anticipating certain circumstances that may block the backup. You can set a wait period in seconds, minutes or hours using the corresponding menu. If the new attempt also fails, an error is generated and the failure is noted in the status area of the last backup and in the backup journal file.
+    -   **Retry after X second(s), minute(s) or hour(s)**: When this option is checked, a new backup attempt is executed after the wait period. This mechanism allows anticipating certain circumstances that may block the backup. 
+    
+        You can set a wait period in seconds, minutes or hours using the corresponding menu. If the new attempt also fails, an error is generated and the failure is noted in the status area of the last backup and in the backup journal file.
 
     -   **Cancel the operation after X attempts**: This parameter is used to set the maximum number of failed backup attempts.
         If the backup has not be carried out successfully after the maximum number of attempts set has been reached, it is cancelled and the error 1401 is generated ("The maximum number of backup attempts has been reached; automatic backup is temporarily disabled").

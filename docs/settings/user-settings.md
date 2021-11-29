@@ -3,17 +3,17 @@ id: user-settings
 title: User settings
 ---
 
-You can generate an external file containing custom settings. When this functionality is enabled, the settings contained in the external file (called "User settings") are used instead of settings stored in the database structure file (called "Structure settings").
+You can generate an external file containing custom settings. When this functionality is enabled, the settings contained in the external file (called User settings) are used instead of the settings stored in the project's structure file (called Structure settings).
 
 This means that you can keep custom settings between updates of your 4D applications, or that you can manage different settings for the same 4D application deployed on several different sites. It also makes it possible to use programming to manage setting files using XML.
 
-4D can generate and use two kinds of user settings:
+4D can generate and use two types of user settings:
 
--   **User Settings (standard)**
-    These user settings will be used instead of structure settings for any data file opened with the application.
+-   **User Settings (standard)**:
+    They are used instead of structure settings for any data file opened with the application.
 
--   **User Settings for Data file**
-    These user settings can be defined specifically for each data file used with your application, configuring for example the port ID or the server cache.
+-   **User Settings for Data file**:
+    They can be defined specifically for each data file used with your application, configuring for example the port ID or the server cache.
 
     With this option, you can easily deploy and update several copies of the same application with several data files, each containing different settings. 
     
@@ -21,32 +21,26 @@ This means that you can keep custom settings between updates of your 4D applicat
 
     ![](assets/en/settings/user-settings-config.png)
 
-## Enabling User Settings mode
+## Externalizing settings
 
-To be able to externalize user settings, you need to check the **Settings** > **Security** > **Enable User Settings in External File option**,  of the Database settings:
+To be able to externalize user settings, you need to check the **Settings** > **Security** > **Enable User Settings in External File** option:
 
-When you check this option, database settings are separated into three dialog boxes: 
+When you check this option, the settings are separated into three dialog boxes: 
 * **Structure Settings**
 * **User Settings**
 * **User Settings for Data file**
 
-You can access these dialog boxes using the **Design > Database Settings** menu or the **Settings** button in the toolbar:
+You can access these dialog boxes using the **Design > Settings...** menu or the **Settings** button in the toolbar:
 
 ![](assets/en/settings/user-settings-dialog.png)
 
-**Note:** When the data file is located at the same level as the structure file (default configuration when creating a database), **User Settings for Data file...** is not displayed.
+When the data file is located at the same level as the structure file (default configuration when creating a database), **User Settings for Data file...** is not displayed.
 
 You can also access these dialog boxes using the [OPEN SETTINGS WINDOW](https://doc.4d.com/4dv19R/help/command/en/page903.html) command with the appropriate settingsType selector.
 
-## User Settings dialog box  
+The Structure Settings dialog box is identical to the standard Settings, and provides access to all its properties.
 
-When the external mode is enabled, database settings are available in three dialog boxes: 
-
-* **Structure Settings**
-* **User Settings**
-* **User Settings for Data File**
-
-The Structure Settings dialog box is identical to the standard Database Settings, and provides access to all its properties.
+### User Settings and User Settings for Data file
 
 The **User Settings** and **User Settings for Data File** dialog boxes contain a selection of relevant properties that can be externalized:
 
@@ -80,9 +74,9 @@ The following table lists the pages of settings found in the **User Settings** a
 
 When you edit settings in this dialog box, they are automatically stored in the corresponding *settings.4DSettings* file (see below).
 
-##### SET DATABASE PARAMETER and user settings  
+### SET DATABASE PARAMETER and user settings  
 
-Some of the user settings are also available through the `SET DATABASE PARAMETER` command. User settings are parameters with the **Kept between two sessions** property set to **Yes**.
+Some of the user settings are also available through the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html) command. User settings are parameters with the **Kept between two sessions** property set to **Yes**.
 
 When the **User Settings** feature is enabled, user settings edited by the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html) command are automatically saved in the user settings for the data file.
 
@@ -90,34 +84,33 @@ When the **User Settings** feature is enabled, user settings edited by the [SET
 
 ## settings.4DSettings files  
 
-When you check the **Enable User Settings in External File** option in the Database Settings, user settings files are automatically created. Their location depends on the kind of user settings defined.
+When you check the **Settings** > **Enable User Settings in External File** option, user settings files are automatically created. Their location depends on the type of user settings defined.
 
 ### User Settings (standard)  
 
-The standard user settings file is automatically created and placed in a [Settings] folder at the following location:
+The standard user settings file is automatically created and placed in a settings folder at the following location:
 
-`<DatabaseFolder>/Settings/settings.4DSettings`
+`ProjectFolder/Settings/settings.4DSettings`
 
-... where `<DatabaseFolder>` is the name of the folder containing the database structure file.
+... where ProjectFolder is the name of the folder containing the project structure file.
 
-> Note: In merged applications, the user settings file is placed at the following location:
-
-* In single-user versions: `<DatabaseFolder>/Database/Settings/settings.4DSettings`
-* In client-server versions: `<DatabaseFolder>/Server Database/Settings/settings.4DSettings`
+In merged applications, the user settings file is placed at the following location:
+* In single-user versions: ProjectFolder/Database/Settings/settings.4DSettings
+* In client/server versions: ProjectFolder/Server Database/Settings/settings.4DSettings
 
 ### User Settings for Data File 
 
-The user settings file linked to the data file is automatically created and placed in a [Settings] folder at the following location:
+The user settings file linked to the data file is automatically created and placed in a settings folder at the following location:
 
-`<DatabaseFolder>/Settings/settings.4DSettings`
+`DataFolder/Settings/settings.4DSettings`
 
-... where `<DataFolder>` is the name of the folder containing the current data file of the application.
+... where DataFolder is the name of the folder containing the current data file of the application.
 
 > **Note:** When the data file is located at the same level as the structure file (default when creating a database), structure-based and data-based user settings files share the same location and file. The **User Settings for Data File...** menu command is not proposed.
 
 User settings files are XML files; they can be read and modified using integrated 4D XML commands or using an XML editor. This means that you can manage settings by programming, particularly in the context of applications compiled and merged with 4D Volume Desktop. 
 
-Note that when you modify this file by programming, the changes are only taken into account the next time the database is opened. 
+When you modify this file by programming, the changes are only taken into account the next time the database is opened. 
 
 ## Priority of settings 
 

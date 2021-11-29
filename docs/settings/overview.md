@@ -3,24 +3,24 @@ id: overview
 title: Overview
 ---
 
-Database settings configure how the current database functions. These parameters may be different for each database. They include the listening ports, access rights to the Design environment, SQL configurations, etc.
+The settings configure how the current project functions. These parameters may be different for each database. They include the listening ports, access rights to the Design environment, SQL configurations, etc.
 
 ## Standard vs User Settings mode 
 
 4D provides two modes of operation for these settings:
 
-*   **Standard mode**, where all settings are stored in the database structure file and are applied in all cases (default mode).
-*   **User settings mode**, where part of the custom settings are stored in an external file that is used for the database or for each data file instead of the structure settings. You enable this mode using an option located on the [Security page](./security.md) of the Database settings. This chapter describes each page of the settings as displayed in standard mode. The "user settings" mode is detailed in [User settings](./user-settings.md).
+*   **Standard mode**: all settings are stored in the database structure file and are applied in all cases (default mode).
+*   **User settings mode**: part of the custom settings are stored in an external file that is used for the project or for each data file instead of the structure settings. You enable this mode using an option located on the [Security page](./security.md) of the Database settings. 
+
+This topic describes each page of the settings as displayed in **Standard mode**. The **User settings** mode is detailed in [User settings](./user-settings.md).
 
 Most of the settings are applied immediately. However, a few of them (such as the Start-up environment setting) only take effect when the database is restarted. In this case, a dialog box appears to inform you that the change will take effect at the next startup.
 
-**4D Server:** Object locking occurs when two or more users try to modify the settings in the Database Settings dialog box at the same time. Only one user can use the Database Settings dialog box at a time.
-
-**Note**: 4D provides another set of parameters that are applied to the 4D application: the user preferences. For more information, refer to the [Preferences](../Preferences/general.md) chapter.
+> 4D provides another set of parameters, called **Preferences**, that apply to the 4D application. For more information, refer to [Preferences](../Preferences/general.md).
 
 ### Locking information  
 
-Locking can occur in both project and client/server modes when:
+Locking can occur in both Project and Client/server modes when:
 
 -   The *settings.4DSettings* file is 'Read-only' (Projects only). Modifying a setting will display an alert to unlock it, if possible.
 -   Two or more users attempt to modify the same settings at the same time. The settings cannot be used until the first user frees it by closing the window. (Client/server only)
@@ -35,13 +35,13 @@ You can access the Database Settings dialog box:
 -   by clicking **Settings** on the 4D toolbar
 -   on 4D Server, using the **Edit > Database Settings...** menu option
 
-**Note:** In "User settings" mode, several menu commands are available at each location:
+> In **User settings** mode, several menu commands are available at each location:
 
--   **Structure Settings...** which is the same as the **Database Settings...** command in standard mode
--   **User Settings...** which gives you access to settings that can be stored externally in a user file and that are used instead of structure settings if they are modified.
--   **User Settings for Data File...** which gives you access to settings that can be stored externally in a user file attached to the current data file, and that are used instead of user or structure settings if they are modified.
+-   **Structure Settings...** is the same as the **Settings...** command in **Standard mode**.
+-   **User Settings...** gives you access to settings that can be stored externally in a user file. If these are modified, they are used instead of structure settings.
+-   **User Settings for Data File...** gives you access to settings that can be stored externally in a user file attached to the current data file. If they are modified, they are used instead of user or structure settings.
 
-For more information, refer to [User settings](./user-settings).
+For more information, refer to [User settings](./user-settings.md).
 
 ## Customizing parameters
 

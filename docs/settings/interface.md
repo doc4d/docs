@@ -28,19 +28,19 @@ Other options configure the display of various windows in the Application mode.
 
 -   **Flushing progress**: When this option is checked, 4D displays a window at the bottom left of the screen while the data in the cache is flushed. Since this operation momentarily blocks user actions, displaying this window lets them know that flushing is underway.
 
--   **Note:** You can set the frequency for cache flushing in **Settings** > **Database** > **Memory**.
+    > You can set the frequency for cache flushing in **Settings** > **Database** > **Memory**.
 
 -   **Printing progress**: Lets you enable or disable the display of the printing progress dialog box when printing.
 
 -   **Use SDI mode on Windows**: When this option checked, 4D enables automatically the SDI mode (Single-Document Interface) in your merged application if executed in a supported context.
 
-**Note:** This option can be selected on macOS but will be ignored when the application is executed on this platform.
+    > This option can be selected on macOS but will be ignored when the application is executed on this platform.
 
 ### Appearance  
 
 This menu lets you select the color scheme to use at the main application level. A color scheme defines a global set of interface colors for texts, backgrounds, windows, etc., used in your forms.
 
-**Note:** This option only works on macOS. On Windows, the "Light" scheme is always used.
+> This option only works on macOS. On Windows, the "Light" scheme is always used.
 
 The following schemes are available:
 
@@ -50,27 +50,27 @@ The following schemes are available:
     ![](assets/en/settings/dark-appearance.png)
 -   **Inherited** (default): the application will inherit from the higher priority level (i.e., OS user preferences)
 
-**Note:** Default themes can be handled using CSS. For more information, please refer to the [Media Queries](../FormEditor/stylesheets.md#media-queries) section. 
+**Note:** Default themes can be handled using CSS. For more information, please refer to the [Media Queries](../FormEditor/createStylesheet.md#media-queries) section. 
 
 The main application scheme will be applied to forms by default. However, it can be overriden:
 
--   by the `SET APPLICATION COLOR SCHEME` command at the working session level;
+-   by the [SET APPLICATION COLOR SCHEME](https://doc.4d.com/4dv19R/help/command/en/page1762.html)command at the working session level;
 -   using by the [Color Scheme](../FormEditor/propertiesForm.html#color-scheme) form property at each form level (highest priority level). **Note:** When printed, forms always use the "Light" scheme.
 
 ## Shortcuts  
 
-You use the Shortcuts area for viewing and modifying default shortcuts for three basic 4D operations: Accept input form, Cancel input form and Add to subform. These shortcuts are identical for both platforms. Icons in the form of keys indicate the corresponding Windows and Mac OS keys. 
+You use the Shortcuts area for viewing and modifying default shortcuts for three basic 4D operations. These shortcuts are identical for both platforms. Icons in the form of keys indicate the corresponding Windows and Mac OS keys. 
 
 The default shortcuts are as follows:
 
--   Accept input form: Enter
--   Cancel input form: Esc
+-   Accept input form: **Enter**
+-   Cancel input form: **Esc**
 -   Add to subform: **Ctrl+Shift+/** (Windows) or **Command+Shift+/** (Mac OS)
 
 To change the shortcut of an operation, click the corresponding **Edit** button. The following dialog box appears:
 
-![](assets/en/settings/.png)
+![](assets/en/settings/shortcut.png)
 
-To change the shortcut, type the new key combination on your keyboard and click OK. If you prefer not to have a shortcut for an operation, click the Clear button.
+To change the shortcut, type the new key combination on your keyboard and click **OK**. If you prefer not to have a shortcut for an operation, click **Clear**.
 
 
