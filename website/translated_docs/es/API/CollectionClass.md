@@ -1616,7 +1616,7 @@ Si la colección está vacía, `.min()` devuelve *Undefined*.
 </details><!-- REF #collection.orderBy().Syntax -->**.orderBy**( ) : Collection<br>**.orderBy**( *pathStrings* : Text ) : Collection<br>**.orderBy**( *pathObjects* : Collection ) : Collection<br>**.orderBy**( *ascOrDesc* : Integer ) : Collection<!-- END REF --><!-- REF #collection.orderBy().Params -->| Parámetros  | Tipo       |    | Descripción                                       |
 | ----------- | ---------- |:--:| ------------------------------------------------- |
 | pathStrings | Texto      | -> | Property path(s) on which to order the collection |
-| pathObjects | Collection | -> | Collection of criteria objects                    |
+| pathObjects | Collection | -> | Colección de objetos criterio                     |
 | ascOrDesc   | Integer    | -> | `ck ascending` or `ck descending` (scalar values) |
 | Resultado   | Collection | <- | Ordered copy of the collection (shallow copy)     |<!-- END REF -->#### Descripción
 
