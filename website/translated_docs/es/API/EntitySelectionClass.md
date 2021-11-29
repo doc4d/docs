@@ -1220,24 +1220,24 @@ En este ejemplo, queremos encontrar el salario más bajo entre todas las emplead
 **.minus**( *entity* : 4D.Entity ) : 4D.EntitySelection<br>**.minus**( *entitySelection* : 4D.EntitySelection ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.minus().Params -->
-| Parámetros      | Tipo               |    | Descripción                                                              |
-| --------------- | ------------------ |:--:| ------------------------------------------------------------------------ |
-| entity          | 4D.Entity          | -> | Entidad a sustraer                                                       |
-| entitySelection | 4D.EntitySelection | -> | Entity selection a sustraer                                              |
-| Resultado       | 4D.EntitySelection | <- | New entity selection or a new reference on the existing entity selection |
+| Parámetros      | Tipo               |    | Descripción                                                                    |
+| --------------- | ------------------ |:--:| ------------------------------------------------------------------------------ |
+| entity          | 4D.Entity          | -> | Entidad a sustraer                                                             |
+| entitySelection | 4D.EntitySelection | -> | Entity selection a sustraer                                                    |
+| Resultado       | 4D.EntitySelection | <- | Nueva entity selection o una nueva referencia en la entity selection existente |
 <!-- END REF -->
 
 #### Descripción
 
-The `.minus()` function <!-- REF #EntitySelectionClass.minus().Summary -->excludes from the entity selection to which it is applied the *entity* or the entities of *entitySelection* and returns the resulting entity selection<!-- END REF -->.
+La función `.minus()` <!-- REF #EntitySelectionClass.minus().Summary -->excluye de la entity selection a la que se aplica la *entity* o las entidades de *entitySelection* y devuelve la entity selection resultante<!-- END REF -->.
 
 *   If you pass *entity* as parameter, the function creates a new entity selection without *entity* (if *entity* belongs to the entity selection). If *entity* was not included in the original entity selection, a new reference to the entity selection is returned.
 *   If you pass *entitySelection* as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to *entitySelection*.
 > You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
 
-If the original entity selection or both the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned.
+Si la entity selection inicial o la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía.
 
-If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
+Si *entitySelection* está vacía o si *entity* es Null, se devuelve una nueva referencia a la entity selection original.
 
 Si la entity selection inicial y el parámetro no están relacionados con la misma dataclass, se produce un error.
 
@@ -1249,8 +1249,8 @@ Si la entity selection inicial y el parámetro no están relacionados con la mis
  var $employee : cs.EmployeeEntity
 
  $employees:=ds.Employee.query("lastName = :1";"H@") 
-  // The $employees entity selection contains the entity with primary key 710 and other entities
-  // for ex. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (primary key 710)
+  // la entity selection $employees contiene la entidad con llave primaria 710 y otras entidades
+  // por ejemplo. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (primary key 710)
 
  $employee:=ds.Employee.get(710) // Devuelve "Sherlock Holmes"
 
@@ -1260,7 +1260,7 @@ Si la entity selection inicial y el parámetro no están relacionados con la mis
 
 #### Ejemplo 2
 
-We want to have a selection of female employees named "Jones" who live in New York :
+Queremos tener una selección de empleadas llamadas "Jones" que vivan en Nueva York :
 
 ```4d
  var $sel1; $sel2; $sel3 : cs.EmployeeSelection
@@ -1286,11 +1286,11 @@ We want to have a selection of female employees named "Jones" who live in New Yo
 **.or**( *entity* : 4D.Entity ) : 4D.EntitySelection<br>**.or**( *entitySelection* : 4D.EntitySelection ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.or().Params -->
-| Parámetros      | Tipo               |    | Descripción                                                            |
-| --------------- | ------------------ |:--:| ---------------------------------------------------------------------- |
-| entity          | 4D.Entity          | -> | Entidad a intersectar                                                  |
-| entitySelection | 4D.EntitySelection | -> | Entity selection a intersectar                                         |
-| Resultado       | 4D.EntitySelection | <- | New entity selection or new reference to the original entity selection |
+| Parámetros      | Tipo               |    | Descripción                                                                   |
+| --------------- | ------------------ |:--:| ----------------------------------------------------------------------------- |
+| entity          | 4D.Entity          | -> | Entidad a intersectar                                                         |
+| entitySelection | 4D.EntitySelection | -> | Entity selection a intersectar                                                |
+| Resultado       | 4D.EntitySelection | <- | Nueva entity selection o una nueva referencia a la entity selection de origen |
 <!-- END REF -->
 
 #### Descripción
@@ -1303,7 +1303,7 @@ The `.or()` function <!-- REF #EntitySelectionClass.or().Summary -->combines the
 
 If the original entity selection and the *entitySelection* parameter are empty, an empty entity selection is returned. If the original entity selection is empty, a reference to *entitySelection* or an entity selection containing only *entity* is returned.
 
-If *entitySelection* is empty or if *entity* is Null, a new reference to the original entity selection is returned.
+Si *entitySelection* está vacía o si *entity* es Null, se devuelve una nueva referencia a la entity selection original.
 
 Si la entity selection inicial y el parámetro no están relacionados con la misma dataclass, se produce un error.
 
