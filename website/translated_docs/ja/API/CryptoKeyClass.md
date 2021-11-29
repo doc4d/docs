@@ -100,8 +100,7 @@ ASSERT($status.success)
 
 
 
-ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線名 <!-- END REF -->
-。 通常、ES256 (デフォルト) の場合は "prime256v1", ES384 の場合は "secp384r1", ES512 の場合は "secp521r1"
+Defined only for ECDSA keys: the <!-- REF #CryptoKey.curve.Summary -->normalised curve name of the key<!-- END REF -->. Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for ES512.
 <!-- END REF -->
 
 

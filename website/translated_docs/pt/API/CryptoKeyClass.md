@@ -4,23 +4,23 @@ title: CryptoKey
 ---
 
 
-The `CryptoKey` class in the 4D language encapsulates an asymmetric encryption key pair.
+A classe `CryptoKey` da linguagem 4D contém um par de chaves de cifrado assimétrico.
 
-This class is available from the `4D` class store.
+Esta classe está disponível na loja de classes de `4D`.
 
 ### Exemplo
 
-The following sample code signs and verifies a message using a new ECDSA key pair, for example in order to make a ES256 JSON Web token.
+O código abaixo de exemplo firma e verifica uma mensagem utilizando um novo par de chaves ECDSA, por exemplo para criar um token web JSON ES256.
 
 ```4d
- // Generate a new ECDSA key pair
+ // Gerar um novo par de chaves ECDSA
 $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
-  // Get signature as base64
+  // Obter a assinatura como base64
 $message:="hello world"
 $signature:=$key.sign($message;New object("hash";"SHA256"))
 
-  // Verify signature
+  // Verificar assinatura
 $status:=$key.verify($message;$signature;New object("hash";"SHA256"))
 ASSERT($status.success)
 ```
@@ -59,30 +59,30 @@ ASSERT($status.success)
 <!-- REF #4D.CryptoKey.new().Syntax -->**4D.CryptoKey.new**( *settings* : Object ) : 4D.CryptoKey<!-- END REF -->
 
 <!-- REF #4D.CryptoKey.new().Params -->
-| Parameter | Type         |    | Description                                                            |
-| --------- | ------------ | -- | ---------------------------------------------------------------------- |
-| settings  | Objeto       | -> | Settings to generate or load a key pair                                |
-| result    | 4D.CryptoKey | <- | Object encapsulating an encryption key pair|<!-- END REF -->
+| Parâmetros | Tipo         |    | Descrição                                                                    |
+| ---------- | ------------ | -- | ---------------------------------------------------------------------------- |
+| settings   | Objeto       | -> | Parâmetros para gerar ou carregar um par de chaves                           |
+| result     | 4D.CryptoKey | <- | Objeto que contém um par de chaves de criptografia<!-- END REF -->
 
 
 |
 
 
-The `4D.CryptoKey.new()` function <!-- REF #4D.CryptoKey.new().Summary -->creates a new `4D.CryptoKey` object encapsulating an encryption key pair<!-- END REF -->, based upon the *settings* object parameter. It allows to generate a new RSA or ECDSA key, or to load an existing key pair from a PEM definition.
+A função `4D.CryptoKey.new()` <!-- REF #4D.CryptoKey.new().Summary -->cria um novo objeto `4D.CryptoKey` que encapsula um par de chaves de cifrado<!-- END REF -->, baseado no parâmetro de objeto *settings*. Permite gerar uma nova chave RSA o ECDSA, ou carregar um par de chaves existente desde uma definição PEM.
 
 #### *settings*
 
-| Property        | Type    | Description                                    |
-| --------------- | ------- | ---------------------------------------------- |
-| [curve](#curve) | text    | Name of ECDSA curve                            |
-| [pem](#pem)     | text    | PEM definition of an encryption key to load    |
-| [size](#size)   | integer | Size of RSA key in bits                        |
-| [type](#type)   | text    | Type of the key: "RSA", "ECDSA", or "PEM"</li> |
+| Propriedade     | Tipo    | Descrição                                        |
+| --------------- | ------- | ------------------------------------------------ |
+| [curve](#curve) | text    | Nome da curva ECDSA                              |
+| [pem](#pem)     | text    | Definição PEM de uma chave de cifrado a carregar |
+| [size](#size)   | integer | Tamanho da chave RSA em bits                     |
+| [tipo](#type)   | text    | Tipo da chave: "RSA", "ECDSA" ou "PEM"</li>      |
 
 
 #### *CryptoKey*
 
-The returned `CryptoKey` object encapsulates an encryption key pair. It is a shared object and can therefore be used by multiple 4D processes simultaneously.
+O objeto `CryptoKey` devolvido encapsula um par de chaves de cifrado. É um objeto compartido e, portanto, pode ser utilizado por vários processos 4D simultaneamente.
 
 
 
@@ -100,8 +100,7 @@ The returned `CryptoKey` object encapsulates an encryption key pair. It is a sha
 
 
 
-Defined only for ECDSA keys: the <!-- REF #CryptoKey.curve.Summary -->normalised curve name of the key. <!-- END REF -->
-Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for ES512.
+Defined only for ECDSA keys: the <!-- REF #CryptoKey.curve.Summary -->normalised curve name of the key<!-- END REF -->. Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for ES512.
 <!-- END REF -->
 
 
@@ -118,23 +117,23 @@ Usually "prime256v1" for ES256 (default), "secp384r1" for ES384, "secp521r1" for
 <!-- REF #CryptoKey.decrypt().Syntax -->**.decrypt**( *message* : Text ; *options* : Object ) : Object<!-- END REF -->
 
 <!-- REF #CryptoKey.decrypt().Params -->
-| Parameter | Type   |    | Description                                                                   |
-| --------- | ------ | -- | ----------------------------------------------------------------------------- |
-| message   | Texto  | -> | Message string to be decoded using `options.encodingEncrypted` and decrypted. |
-| options   | Objeto | -> | Decoding options                                                              |
-| Result    | Objeto | <- | Estado                                                                        |
+| Parâmetros | Tipo   |    | Descrição                                                                             |
+| ---------- | ------ | -- | ------------------------------------------------------------------------------------- |
+| message    | Texto  | -> | String de mensagens a decodificar utilizando `options.encodingEncrypted` e descifrar. |
+| options    | Objeto | -> | Opções de decodificação                                                               |
+| Resultados | Objeto | <- | Estado                                                                                |
 <!-- END REF -->
 
 
-The `.decrypt()` function <!-- REF #CryptoKey.decrypt().Summary -->decrypts the *message* parameter using the **private** key<!-- END REF -->. The algorithm used depends on the type of the key.
+A função `.decrypt()` <!-- REF #CryptoKey.decrypt().Summary -->descifra o parâmetro *message* utilizando a chave **private**<!-- END REF -->. O algoritmo utilizado depende do tipo da chave.
 
-The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://tools.ietf.org/html/rfc3447)).
+A chave deveser do estilo RSA, o algoritmo é RSA-OAEP (ver [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
 #### *options*
 
-| Property          | Type | Description                                                                                                                                      |
+| Propriedade       | Tipo | Descrição                                                                                                                                        |
 | ----------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| hash              | text | Digest algorithm to use. For example: "SHA256", "SHA384", or "SHA512".                                                                           |
+| hash              | text | Algoritmo Digest a utilizar. Por exemplo: "SHA256", "SHA384", ou "SHA512".                                                                       |
 | encodingEncrypted | text | Encoding used to convert the `message` parameter into the binary representation to decrypt. Can be "Base64" or "Base64URL". Default is "Base64". |
 | encodingDecrypted | text | Encoding used to convert the binary decrypted message into the result string. Can be "UTF-8", "Base64", or "Base64URL". Default is "UTF-8".      |
 
@@ -174,9 +173,9 @@ In case the *message* couldn't be decrypted because it was not encrypted with th
 | Result    | Texto  | <- | Message encrypted and encoded using the `options.encodingEncrypted`           |
 <!-- END REF -->
 
-The `.encrypt()` function <!-- REF #CryptoKey.encrypt().Summary -->encrypts the *message* parameter using the **public** key<!-- END REF -->. The algorithm used depends on the type of the key.
+The `.encrypt()` function <!-- REF #CryptoKey.encrypt().Summary -->encrypts the *message* parameter using the **public** key<!-- END REF -->. O algoritmo utilizado depende do tipo da chave.
 
-The key must be a RSA key, the algorithm is RSA-OAEP (see [RFC 3447](https://tools.ietf.org/html/rfc3447)).
+A chave deveser do estilo RSA, o algoritmo é RSA-OAEP (ver [RFC 3447](https://tools.ietf.org/html/rfc3447)).
 
 ##### *options*
 

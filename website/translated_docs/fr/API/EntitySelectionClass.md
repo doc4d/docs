@@ -1335,7 +1335,7 @@ Vous devez utiliser un paramètre de critère pour définir la manière dont les
 "attributePath1 {desc or asc}, attributePath2 {desc or asc},..."
 ```
 
-L'ordre dans lequel les attributs sont passés détermine la priorité de tri des entités. Par défaut, les attributs sont triés par ordre croissant. Vous pouvez définir l'ordre de tri d'une propriété dans la chaîne des critères, séparée du chemin de propriété par un seul espace : passez "asc" pour trier par ordre croissant ou "desc" pour trier par ordre décroissant.
+L'ordre dans lequel les attributs sont passés détermine la priorité de tri des entités. Par défaut, les attributs sont triés par ordre croissant. Vous pouvez définir l'ordre de tri de chaque propriété dans la formule de critère, séparée du chemin de propriété par un simple espace : passez "asc" pour trier par ordre croissant ou "desc" pour un ordre décroissant.
 
 *   *pathObjects* (collection) : chaque élément de la collection contient un objet structuré de la façon suivante :
 
