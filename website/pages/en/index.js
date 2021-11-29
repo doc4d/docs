@@ -36,44 +36,44 @@ class Index extends React.Component {
   render() {
     const { config: siteConfig, language = "en" } = this.props;
     const pinnedUsersToShowcase = siteConfig.users.filter(user => user.pinned);
-    var subContents={
+    var subContents = {
       installation: <translate desc="in index page Getting started">Installation</translate>,
       start: <translate desc="in index page Getting started">Starting 4D</translate>,
       languageConcepts: <translate desc="in index page Getting started">Language Concepts</translate>,
-	projectDatabases: <translate desc="in index page Getting started">Project Management</translate>,
-	ORDA: <translate desc="in index page Getting started">Object Relational Data Access (ORDA)</translate>,
-  class: <translate>Class API Reference</translate>,
-    formEditor: <translate>Forms</translate>,
-	  formProperties: <translate>Form Properties</translate>,
-    events: <translate>Form Events</translate>,
-	  formObjects: <translate>Form Objects</translate>,
-	  formObjectProperties: <translate>Form Object Properties</translate>,
-	  menus: <translate>Menus</translate>,
-	  webServer: <translate>Web Server</translate>,
-	  webDev: <translate>Web Development</translate>,
-	  restServer: <translate>REST Server</translate>,
-	  msc: <translate>Maintenance and Security Center</translate>,
-	  backup: <translate>Backup and Restore</translate>,
-    licenses: <translate>License Management</translate>,
-    buildApp: <translate>Build Application</translate>,
-    webAdmin: <translate>Web Administration</translate>,
-    serverAdmin: <translate>4D Server Administration Window</translate>,
-	components: <translate>4D Components Library</translate>,
-	cs: <translate>Client/Server</translate>,
-    tls: <translate>TLS Protocol</translate>,
-	  debugging: <translate>Debugging</translate>,
-    dataExplorer: <translate>Web Data Explorer</translate>,
-	langRef: <translate>Language Reference (4D Doc Center)</translate>,
-	  users: <translate>Access Rights</translate>,
-	  	 debugLogFiles: <translate>Description of log files</translate>,
-	   cli: <translate>Command Line Interface</translate>,
-     viewPro: <translate>4D View Pro</translate>,
-	  preferences: <translate>Preferences</translate>,
-	  overview: <translate>Overview</translate>,
-	  comp: <translate>Developing Components</translate>,
-	  plug: <translate>Developing Plugins</translate>,
-	  working: <translate>Working with a project</translate>,
-    settings: <translate>Settings</translate>,
+      projectDatabases: <translate desc="in index page Getting started">Project Management</translate>,
+      ORDA: <translate desc="in index page Getting started">Object Relational Data Access (ORDA)</translate>,
+      class: <translate>Class API Reference</translate>,
+      formEditor: <translate>Forms</translate>,
+      formProperties: <translate>Form Properties</translate>,
+      events: <translate>Form Events</translate>,
+      formObjects: <translate>Form Objects</translate>,
+      formObjectProperties: <translate>Form Object Properties</translate>,
+      menus: <translate>Menus</translate>,
+      webServer: <translate>Web Server</translate>,
+      webDev: <translate>Web Development</translate>,
+      restServer: <translate>REST Server</translate>,
+      msc: <translate>Maintenance and Security Center</translate>,
+      backup: <translate>Backup and Restore</translate>,
+      licenses: <translate>License Management</translate>,
+      buildApp: <translate>Build Application</translate>,
+      webAdmin: <translate>Web Administration</translate>,
+      serverAdmin: <translate>4D Server Administration Window</translate>,
+      components: <translate>4D Components Library</translate>,
+      cs: <translate>Client/Server</translate>,
+      tls: <translate>TLS Protocol</translate>,
+      debugging: <translate>Debugging</translate>,
+      dataExplorer: <translate>Web Data Explorer</translate>,
+      langRef: <translate>Language Reference (4D Doc Center)</translate>,
+      users: <translate>Access Rights</translate>,
+      debugLogFiles: <translate>Description of log files</translate>,
+      cli: <translate>Command Line Interface</translate>,
+      viewPro: <translate>4D View Pro</translate>,
+      preferences: <translate>Preferences</translate>,
+      overview: <translate>Overview</translate>,
+      comp: <translate>Developing Components</translate>,
+      plug: <translate>Developing Plugins</translate>,
+      working: <translate>Working with a project</translate>,
+      settings: <translate>Settings</translate>,
     };
 
     return (
@@ -99,6 +99,7 @@ class Index extends React.Component {
                   [${subContents.ORDA}](${siteConfig.baseUrl}${this.props.language}/ORDA/overview.html)<br>
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>
+          [${subContents.settings}](${siteConfig.baseUrl}${this.props.language}/settings/overview.html)<br>
 				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)`,
                   image: `${siteConfig.baseUrl}img/illu_CoreDevelopment.png`,
                   imageAlign: "top",
@@ -113,7 +114,6 @@ class Index extends React.Component {
 				[${subContents.licenses}](${siteConfig.baseUrl}${this.props.language}/Admin/licenses.html)<br>
                  [${subContents.users}](${siteConfig.baseUrl}${this.props.language}/Users/overview.html)<br>
 				[${subContents.msc}](${siteConfig.baseUrl}${this.props.language}/MSC/overview.html)<br>
-        [${subContents.settings}](${siteConfig.baseUrl}${this.props.language}/settings/overview.html)<br>
                 [${subContents.backup}](${siteConfig.baseUrl}${this.props.language}/Backup/overview.html)<br>`,
                   image: `${siteConfig.baseUrl}img/illu_Administration.png`,
                   imageAlign: "top",
@@ -164,7 +164,7 @@ class Index extends React.Component {
               ]}
               layout="threeColumn"
             />
-			<br />
+            <br />
             <br />
             <GridBlock
               align="left"
@@ -185,7 +185,7 @@ class Index extends React.Component {
                   imageAlt: "Extensions",
                   title: <translate>Extensions</translate>,
                 }
-               ]}
+              ]}
               layout="threeColumn"
             />
           </Container>
