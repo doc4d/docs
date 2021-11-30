@@ -4,9 +4,9 @@ title: EntitySelection
 ---
 
 
-An entity selection is an object containing one or more reference(s) to [entities](ORDA/dsMapping.md#entity) belonging to the same [Dataclass](ORDA/dsMapping.md#dataclass). An entity selection can contain 0, 1 or X entities from the dataclass -- where X can represent the total number of entities contained in the dataclass.
+Una entity selection es un objeto que contiene una o más referencias a [entidades](ORDA/dsMapping.md#entity) pertenecientes a la misma [Dataclass](ORDA/dsMapping.md#dataclass). Una entity selection puede contener 0, 1 o X entidades de la dataclass -- donde X puede representar el número total de entidades contenidas en la dataclass.
 
-Entity selections can be created from existing selections using various functions of the [`DataClass` class](DataClassClass.md) such as [`.all()`](DataClassClass.md#all) or [`.query()`](DataClassClass.md#query), or functions of the `EntityClass` class itself, such as [`.and()`](#and) or [`orderBy()`](#orderby). You can also create blank entity selections using the [`dataClass.newSelection()`](DataClassClass.md#newselection) function or the [`Create new selection`](#create-new-selection) command.
+Las selecciones de entidades pueden crearse a partir de selecciones existentes utilizando varias funciones de la clase [`DataClass` class](DataClassClass.md) tales como [`.all()`](DataClassClass.md#all) o [`.query()`](DataClassClass.md#query), o de la clase `EntityClass` misma, tal como [`.and()`](#and) o [`orderBy()`](#orderby). También puede crear entity selections vacías utilizando la función [`dataClass.newSelection()`](DataClassClass.md#newselection) o el comando [`Create new selection`](#create-new-selection).
 
 ### Resumen
 
@@ -69,9 +69,9 @@ Si la tabla *dsTable* no está expuesto en [`ds`](API/DataStoreClass.md#ds), se 
 
 En el parámetro opcional *settings*, puede pasar un objeto que contenga la siguiente propiedad:
 
-| Propiedad | Tipo  | Descripción                                                                                                       |
-| --------- | ----- | ----------------------------------------------------------------------------------------------------------------- |
-| context   | Texto | Label for the [optimization context](ORDA/entities.md#clientserver-optimization) applied to the entity selection. |
+| Propiedad | Tipo  | Descripción                                                                                                             |
+| --------- | ----- | ----------------------------------------------------------------------------------------------------------------------- |
+| context   | Texto | Etiqueta para el [contexto de optimización](ORDA/entities.md#clientserver-optimization) aplicado a la entity selection. |
 
 
 #### Ejemplo
@@ -80,8 +80,8 @@ En el parámetro opcional *settings*, puede pasar un objeto que contenga la sigu
 var $employees : cs.EmployeeSelection
 ALL RECORDS([Employee])
 $employees:=Create entity selection([Employee]) 
-// The $employees entity selection now contains a set of reference
-// on all entities related to the Employee dataclass
+// La entity selection $employees ahora contiene un conjunto de referencias
+// en todas las entidades relacionadas con la clase de datos Employee
 ```
 
 #### Ver también
@@ -95,27 +95,27 @@ $employees:=Create entity selection([Employee])
 **USE ENTITY SELECTION** (*entitySelection*)<!-- END REF -->
 
 <!-- REF #_command_.USE ENTITY SELECTION.Params -->
-| Parámetros      | Tipo            |    | Descripción         |
-| --------------- | --------------- |:--:| ------------------- |
-| entitySelection | EntitySelection | -> | An entity selection |
+| Parámetros      | Tipo            |    | Descripción          |
+| --------------- | --------------- |:--:| -------------------- |
+| entitySelection | EntitySelection | -> | Una entity selection |
 <!-- END REF -->
 
 #### Descripción
 
-The `USE ENTITY SELECTION` command updates the current selection of the table matching the dataclass of the *entitySelection* parameter, according to the content of the entity selection.
+El comando `USE ENTITY SELECTION` actualiza la selección actual de la tabla que coincide con la dataclass del parámetro *entitySelection*, según el contenido de la entity selection.
 
-This command cannot be used with a [Remote datastore](../ORDA/remoteDatastores.md).
+Este comando no puede utilizarse con un [datastore remoto](../ORDA/remoteDatastores.md).
 
-> After a call to `USE ENTITY SELECTION`, the first record of the updated current selection (if not empty) becomes the current record, but it is not loaded in memory. If you need to use the values of the fields in the current record, use the `LOAD RECORD` command after the `USE ENTITY SELECTION` command.
+> Después de una llamada a `USE ENTITY SELECTION`, el primer registro de la selección actual actualizada (si no está vacío) se convierte en el registro actual, pero no se carga en la memoria. Si necesita utilizar los valores de los campos del registro actual, utilice el comando `LOAD RECORD` después del comando `USE ENTITY SELECTION`.
 
 #### Ejemplo
 
 ```4d
 var $entitySel : Object
 
-$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel is related to the Employee dataclass
+$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel está asociado a la dataclass Employee 
 REDUCE SELECTION([Employee];0)
-USE ENTITY SELECTION($entitySel) //The current selection of the Employee table is updated
+USE ENTITY SELECTION($entitySel) //Se actualiza la selección actual de la tabla Employee
 ```
 
 
@@ -141,8 +141,8 @@ Tenga en cuenta que la entidad correspondiente se vuelve a cargar desde el almac
 
 *index* puede ser cualquier número entre 0 y `.length`-1.
 
-*   If *index* is out of range, an error is returned.
-*   If *index* corresponds to a dropped entity, a Null value is returned.
+*   Si *index* está fuera de rango, se devuelve un error.
+*   Si *index* corresponde a una entidad descartada, se devuelve un valor Null.
 > **Atención**: `EntitySelection[index]` es una expresión no asignable, lo que significa que no puede utilizarse como referencia editable de la entidad con métodos como [`.lock()`](EntityClass.md#lock) o [`.save()`](EntityClass.md#save). Para trabajar con la entidad correspondiente, es necesario asignar la expresión devuelta a una expresión asignable, como una variable. Ejemplos:
 
 ```4d
@@ -189,12 +189,12 @@ Tenga en cuenta que la entidad correspondiente se vuelve a cargar desde el almac
 
 Todo atributo de dataclass puede ser utilizado como una propiedad de una entity selection para devolver <!-- REF EntitySelectionClass.attributeName.Summary -->una "proyección" de los valores del atributo en la entity selection<!-- END REF -->. Los valores proyectados pueden ser una colección o una nueva selección de entidades, dependiendo de [kind](DataClassAttributeClass.md#kind) (`storage` o `relation`) del atributo.
 
-*   If *attributeName* kind is `storage`: `.attributeName` returns a collection of values of the same type as *attributeName*.
-*   If *attributeName* kind is `relatedEntity`: `.attributeName` returns a new entity selection of related values of the same type as *attributeName*. Duplications are removed (an unordered entity selection is returned).
-*   If *attributeName* kind is `relatedEntities`: `.attributeName` returns a new entity selection of related values of the same type as *attributeName*. Duplications are removed (an unordered entity selection is returned).
+*   Si el "kind" de *attributeName* es `storage`: `.attributeName` devuelve una colección de valores del mismo tipo que *attributeName*.
+*   Si el "kind" de *attributeName* es `relatedEntity`: `.attributeName` devuelve una nueva entity selection de valores relacionados del mismo tipo que *attributeName*. Se eliminan los duplicados (se devuelve una selección de entidades desordenada).
+*   Si el "kind" de *attributeName* es `relatedEntities`: `.attributeName` devuelve una nueva entity selection de valores relacionados del mismo tipo que *attributeName*. Se eliminan los duplicados (se devuelve una selección de entidades desordenada).
 
 
-When a relation attribute is used as a property of an entity selection, the result is always another entity selection, even if only one entity is returned. En este caso, si no se devuelve ninguna entidad, el resultado es una selección de entidades vacía.
+Cuando se utiliza un atributo de relación como propiedad de una selección de entidades, el resultado es siempre otra selección de entidades, aunque sólo se devuelva una entidad. En este caso, si no se devuelve ninguna entidad, el resultado es una selección de entidades vacía.
 
 Si el atributo no existe en la selección de entidades, se devuelve un error.
 
@@ -282,9 +282,9 @@ La función `.add()` <!-- REF #EntitySelectionClass.add().Summary -->añade la *
 **Atención:** la entity selection debe ser *alterable*, es decir, ha sido creado, por ejemplo, por [`.newSelection()`](DataClassClass.md#newselection) o `Create entity selection`, de lo contrario `.add()` devolverá un error. Las entity selections compartibles no aceptan la adición de entidades. Para más información, consulte la sección [Entity selections compartibles o modificables ](ORDA/entities.md#shareable-or-alterable-entity-selections) section.
 
 
-*   If the entity selection is ordered, *entity* is added at the end of the selection. If a reference to the same entity already belongs to the entity selection, it is duplicated and a new reference is added.
-*   If the entity selection is unordered, *entity* is added anywhere in the selection, with no specific order.
-> For more information, please refer to the [Ordered or unordered entity selection](ORDA/dsMapping.md#ordered-or-unordered-entity-selection) section.
+*   Si la entity selection está ordenada, *entity* se añade al final de la selección. Si una referencia a la misma entidad ya pertenece a la selección de entidades, se duplica y se añade una nueva referencia.
+*   Si la entity selection no está ordenada, *entity* se añade en cualquier lugar de la selección, sin un orden específico.
+> Para más información, consulte la sección [Entity selections ordenada o no ordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
 
 La entity selection modificada es devuelta por la función, de modo que las llamadas a la función pueden encadenarse.
 
@@ -346,9 +346,9 @@ Las llamadas a la función se pueden encadenar:
 
 La función `.and()` <!-- REF #EntitySelectionClass.and().Summary -->combina la entity selection con el parámetro *entity* o *entitySelection* utilizando el operador lógico AND<!-- END REF -->; devuelve una nueva entity selection no ordenada que contiene sólo las entidades a las que se hace referencia tanto en la entity selection y el parámetro.
 
-*   If you pass *entity* as parameter, you combine this entity with the entity selection. If the entity belongs to the entity selection, a new entity selection containing only the entity is returned. Otherwise, an empty entity selection is returned.
-*   If you pass *entitySelection* as parameter, you combine both entity selections. A new entity selection that contains only the entities that are referenced in both selections is returned. If there is no intersecting entity, an empty entity selection is returned.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+*   Si pasa *entity* como parámetro, se combina esta entidad con la entity selection. Si la entidad pertenece a la entity selection, se devuelve una nueva entity selection que sólo contiene la entidad. En caso contrario, se devuelve una selección de entidades vacía.
+*   Si pasa *entitySelection* como parámetro, combina ambas entity selections. Se devuelve una nueva selección de entidades que contiene sólo las entidades a las que se hace referencia en ambas selecciones. Si no hay ninguna entidad intersectada, se devuelve una entity selection vacía.
+> Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
 
 Si la entity selection inicial o el parámetro *entitySelection* están vacíos, o si *entity* es Null, se devuelve una entity selection vacía.
 
@@ -420,8 +420,8 @@ Sólo se tienen en cuenta los valores numéricos para el cálculo. Tenga en cuen
 
 Se devuelve un error si:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
+*   *attributePath* es un atributo relativo,
+*   *attributePath* designa un atributo que no existe en la dataclass de la entity selection.
 
 
 #### Ejemplo
@@ -514,8 +514,8 @@ La función `.count()` <!-- REF #EntitySelectionClass.count().Summary -->devuelv
 
 Se devuelve un error si:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* es un atributo relativo,
+*   *attributePath* no se encuentra en la clase de datos de la entity selection.
 
 #### Ejemplo
 
@@ -625,8 +625,8 @@ La colección devuelta se clasifica automáticamente. Los valores **Null** no se
 En el parámetro *attributePath*, pase el atributo de entidad cuyos valores distintos quiere obtener. Sólo se pueden manejar valores escalares (texto, número, booleano o fecha). Si *attributePath* lleva a una propiedad de objeto que contiene valores de diferentes tipos, primero se agrupan por tipo y se ordenan después. Los tipos se devuelven en el siguiente orden:
 
 1.  booleanos
-2.  strings
-3.  numbers
+2.  cadenas
+3.  números
 4.  fechas
 
 Se puede utilizar la notación `[]` para designar una colección cuando *attributePath* es una ruta dentro de un objeto (ver ejemplos).
@@ -635,8 +635,8 @@ Por defecto, se realiza una evaluación no diacrítica. Si desea que la evaluaci
 
 Se devuelve un error si:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* es un atributo relativo,
+*   *attributePath* no se encuentra en la dataclass de la entity selection.
 
 #### Ejemplos
 
@@ -746,7 +746,7 @@ La función `.extract()` <!-- REF #EntitySelectionClass.extract().Summary -->ret
 
 *attributePath* puede referirse a:
 
-*   a scalar dataclass attribute,
+*   un atributo escalar de dataclass,
 *   entidad relacionada,
 *   entidades relacionadas.
 
@@ -760,18 +760,18 @@ Con esta sintaxis, `.extract()` llena la colección devuelta con los valores *at
 
 Por defecto, las entidades para las que *attributePath* es *null* o indefinida se ignoran en la colección resultante. Puede pasar la constante `ck keep null` en el parámetro *option* para incluir estos valores como elementos **null** en la colección devuelta.
 
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" are extracted as a collection of entities (duplications are kept).
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" are extracted as a collection of entity selections.
+*   Los atributos dataclass [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" se extraen como una colección de entidades (se mantienen las duplicaciones).
+*   Los atributos dataclass con [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" se extraen como una colección de entity selections.
 
 
 **.extract ( attributePath ; targetPath { ; ...attributePathN ; ... targetPathN}) : Collection**
 
-Con esta sintaxis, `.extract()` llena la colección devuelta con las propiedades *attributePath*. Cada elemento de la colección devuelta es un objeto con las propiedades *targetPath* llenadas con las propiedades *attributePath* correspondientes. Null values are kept (*option* parameter is ignored with this syntax).
+Con esta sintaxis, `.extract()` llena la colección devuelta con las propiedades *attributePath*. Cada elemento de la colección devuelta es un objeto con las propiedades *targetPath* llenadas con las propiedades *attributePath* correspondientes. Se mantienen los valores null (el parámetro *option* se ignora con esta sintaxis).
 
 Si se dan varios *attributePath*, debe darse un *targetPath* para cada uno. Sólo se extraen los pares válidos \[*attributePath*, *targetPath*].
 
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" are extracted as an entity.
-*   Dataclass attributes with [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" are extracted as an entity selection.
+*   Los atributos dataclass con [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" se extraen como una entidad.
+*   Los atributos dataclass con [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" se extraen como una entity selection.
 
 > Las entidades de una colección de entidades a las que se accede por medio de \[ ] no se recargan desde la base de datos.
 
@@ -1137,8 +1137,8 @@ Si se pasa en *attributePath* una ruta a una propiedad de objeto que contiene di
 
 Se devuelve un error si:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
+*   *attributePath* es un atributo relativo,
+*   *attributePath* designa un atributo que no existe en la dataclass de la entity selection.
 
 
 
@@ -1188,8 +1188,8 @@ Si se pasa en *attributePath* una ruta a una propiedad objeto que contiene difer
 
 Se devuelve un error si:
 
-*   *attributePath* is a related attribute,
-*   *attributePath* designates an attribute that does not exist in the entity selection dataclass.
+*   *attributePath* es un atributo relativo,
+*   *attributePath* designa un atributo que no existe en la dataclass de la entity selection.
 
 
 #### Ejemplo
@@ -1231,9 +1231,9 @@ En este ejemplo, queremos encontrar el salario más bajo entre todas las emplead
 
 La función `.minus()` <!-- REF #EntitySelectionClass.minus().Summary -->excluye de la entity selection a la que se aplica la *entity* o las entidades de *entitySelection* y devuelve la entity selection resultante<!-- END REF -->.
 
-*   If you pass *entity* as parameter, the function creates a new entity selection without *entity* (if *entity* belongs to the entity selection). If *entity* was not included in the original entity selection, a new reference to the entity selection is returned.
-*   If you pass *entitySelection* as parameter, the function returns an entity selection containing the entities belonging to the original entity selection without the entities belonging to *entitySelection*.
-> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
+*   Si se pasa *entity* como parámetro, la función crea una nueva entity selection sin *entity* (si *entity* pertenece a la entity selection). Si *entity* no estaba incluida en la entity selection original, se devuelve una nueva referencia a la entity selection.
+*   Si se pasa *entitySelection* como parámetro, la función devuelve una entity selection que contiene las entidades pertenecientes a la entity selection original sin las entidades pertenecientes a *entitySelection*.
+> Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
 
 Si la entity selection inicial o la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía.
 
@@ -1867,7 +1867,7 @@ La función `.sum()` <!-- REF #EntitySelectionClass.sum().Summary -->devuelve la
 
 `.sum()` devuelve 0 si la entity selection está vacía.
 
-The sum can only be done on values of number type. The sum can only be done on values of number type. In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
+La suma sólo puede hacerse en valores de tipo numérico. Si *attributePath* es una propiedad objeto, sólo se tienen en cuenta los valores numéricos para el cálculo (se ignoran otros tipos de valores). En este caso, si *attributePath* lleva a una propiedad que no existe en el objeto o no contiene ningún valor numérico, `.sum()` devuelve 0.
 
 Se devuelve un error si:
 
@@ -1904,51 +1904,51 @@ $sum:=$sel.sum("salary")
 **.toCollection**( { *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer } } ) : *Collection*<br>**.toCollection**( *filterString* : Text {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<br>**.toCollection**( *filterCol* : Collection {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.toCollection().Params -->
-| Parámetros   | Tipo       |    | Descripción                                                                          |
-| ------------ | ---------- |:--:| ------------------------------------------------------------------------------------ |
-| filterString | Texto      | -> | String with entity attribute path(s) to extract                                      |
-| filterCol    | Collection | -> | Collection of entity attribute path(s) to extract                                    |
-| options      | Integer    | -> | `dk with primary key`: adds the primary key<br>`dk with stamp`: adds the stamp |
-| begin        | Integer    | -> | Designates the starting index                                                        |
-| howMany      | Integer    | -> | Number of entities to extract                                                        |
-| Resultado    | Collection | <- | Colección de objetos que contienen atributos y valores de la selección de entidades  |
+| Parámetros   | Tipo       |    | Descripción                                                                                  |
+| ------------ | ---------- |:--:| -------------------------------------------------------------------------------------------- |
+| filterString | Texto      | -> | Cadena con la(s) ruta(s) de atributos de la entidad a extraer                                |
+| filterCol    | Collection | -> | Colección de rutas de atributos de entidad a extraer                                         |
+| options      | Integer    | -> | `dk with primary key`: añade la llave primaria <br>`dk with stamp<`: añade el sello |
+| begin        | Integer    | -> | Designa el índice inicial                                                                    |
+| howMany      | Integer    | -> | Número de entidades a extraer                                                                |
+| Resultado    | Collection | <- | Colección de objetos que contienen atributos y valores de la selección de entidades          |
 <!-- END REF -->
 
 #### Descripción
 
-The `.toCollection()` function <!-- REF #EntitySelectionClass.toCollection().Summary -->creates and returns a collection where each element is an object containing a set of properties and values <!-- END REF -->corresponding to the attribute names and values for the entity selection.
+La función `.toCollection()` <!-- REF #EntitySelectionClass.toCollection().Summary -->crea y devuelve una colección donde cada elemento es un objeto que contiene un conjunto de propiedades y valores <!-- END REF -->correspondientes a los nombres y valores de los atributos de la entity selection.
 
-If no filter parameter is passed or the first parameter contains an empty string or "*", all the attributes are extracted. Attributes with [kind](DataClassAttributeClass.md#kind) property as "relatedEntity" are extracted with the simple form: an object with property \_\_KEY (primary key). Attributes with kind property as "relatedEntities" are not extracted.
+Si no se pasa ningún parámetro de filtro o si el primer parámetro contiene una cadena vacía o "*", se extraen todos los atributos. Los atributos con la propiedad [kind](DataClassAttributeClass.md#kind) como "relatedEntity" se extraen con el formulario simple: un objeto con la propiedad \_\_KEY (llave primaria). Los atributos con la propiedad kind como "relatedEntities" no se extraen.
 
-Or, you can designate the entity attributes to extract using a filter parameter. You can use one of these two filters:
+O bien, puede designar los atributos de la entidad a extraer utilizando un parámetro de filtro. Puede utilizar uno de estos dos filtros:
 
 *   *filterString* --a string with property paths separated with commas: "propertyPath1, propertyPath2, ...".
 *   *filterCol* --a collection of strings containing property paths: \["propertyPath1","propertyPath2",...]
 
 
-If a filter is specified for an attribute of the `relatedEntity` kind:
+Si se especifica un filtro para un atributo de tipo `relatedEntity`:
 
 *   propertyPath = "relatedEntity" -> it is extracted with simple form
 *   propertyPath = "relatedEntity.*" -> all the properties are extracted
 *   propertyPath = "relatedEntity.propertyName1, relatedEntity.propertyName2, ..." -> only those properties are extracted
 
 
-If a filter is specified for an attribute of the `relatedEntities` kind:
+Si se especifica un filtro para un atributo de tipo `relatedEntities`:
 
 *   propertyPath = "relatedEntities.*" -> all the properties are extracted
 *   propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> only those properties are extracted
 
 
 
-In the *options* parameter, you can pass the `dk with primary key` and/or `dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
+En el parámetro *options*, puede pasar el selector `ddk with primary key` y/o `dk with stamp` para añadir las llaves primarias de la entidad y/o los sellos en los objetos extraídos.
 
-The *begin* parameter allows you to indicate the starting index of the entities to extract. You can pass any value between 0 and entity selection length-1.
+El parámetro *begin* permite indicar el índice de inicio de las entidades a extraer. Puede pasar cualquier valor entre 0 y la longitud de la entity selection -1.
 
-The *howMany* parameter lets you specify the number of entities to extract, starting with the one specified in *begin*. Dropped entities are not returned but are taken into account according to *howMany*. For example, if *howMany*= 3 and there is 1 dropped entity, only 2 entities are extracted.
+El parámetro *howMany* permite especificar el número de entidades a extraer, empezando por la especificada en *begin*. Las entidades descartadas no se devuelven pero se tienen en cuenta en *howMany*. Por ejemplo, si *howMany*= 3 y hay 1 entidad descartada, sólo se extraen 2 entidades.
 
-If *howMany* > length of the entity selection, the method returns (length - *begin*) objects.
+Si *howMany* > longitud de la entity selection, el método devuelve (length - *begin*) objetos.
 
-An empty collection is returned if:
+Se devuelve una colección vacía si:
 
 *   the entity selection is empty, or
 *   *begin* is greater than the length of the entity selection.
@@ -1961,7 +1961,7 @@ En todos los ejemplos de esta sección se utilizará la siguiente estructura:
 ![](assets/en/API/dataclassAttribute4.png)
 
 
-Example without filter or options parameter:
+Ejemplo sin parámetros de filtro ni de opciones:
 
 ```4d
  var $employeesCollection : Collection
@@ -2077,7 +2077,7 @@ Devuelve:
 
 #### Ejemplo 3
 
-Example with slicing and filtering on properties:
+Ejemplo con descarte y filtrado en las propiedades:
 
 ```4d
 var $employeesCollection; $filter : Collection
@@ -2111,7 +2111,7 @@ Devuelve:
 
 #### Ejemplo 4
 
-Example with `relatedEntity` type with simple form:
+Ejemplo con el tipo `relatedEntity` con una forma simple:
 
 
 ```4d
@@ -2150,7 +2150,7 @@ devuelve:
 
 #### Ejemplo 5
 
-Example with *filterCol* parameter:
+Ejemplo con el parámetro *filterCol*:
 
 ```4d
 var $employeesCollection; $coll : Collection
@@ -2176,7 +2176,7 @@ Devuelve:
 
 #### Ejemplo 6
 
-Example with extraction of all properties of a relatedEntity:
+Ejemplo con la extracción de todas las propiedades de una relatedEntity:
 
 ```4d
 var $employeesCollection; $coll : Collection
@@ -2230,7 +2230,7 @@ Devuelve:
 
 #### Ejemplo 7
 
-Example with extraction of some properties of a relatedEntity:
+Ejemplo con la extracción de algunas las propiedades de relatedEntity:
 
 ```4d
 var $employeesCollection : Collection
@@ -2266,7 +2266,7 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, employer.nam
 
 #### Ejemplo 8
 
-Example with extraction of some properties of `relatedEntities`:
+Ejemplo con la extracción de algunas las propiedades de `relatedEntities`:
 
 ```4d
  var $employeesCollection : Collection
@@ -2318,7 +2318,7 @@ Devuelve:
 
 #### Ejemplo 9
 
-Example with extraction of all properties of `relatedEntities`:
+Ejemplo con la extracción de todas las propiedades de `relatedEntities`:
 
 ```4d
 var $employeesCollection : Collection
