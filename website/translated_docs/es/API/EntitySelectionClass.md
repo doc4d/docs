@@ -1440,48 +1440,48 @@ Puede utilizar un parámetro *formulaString* o un parámetro *formulaObj*:
 - *formulaString*: you pass a 4D expression such as "Year of(this.birthDate)".
 - *formulaObj*: pass a valid formula object created using the `Formula` or `Formula from string` command.
 
-The *formulaString* or *formulaObj* is executed for each entity of the entity selection and its result is used to define the position of the entity in the returned entity selection. The result must be of a sortable type (boolean, date, number, text, time, null).
-> A null result is always the smallest value.
+La fórmula de *formulaString* o *formulaObj* se ejecuta para cada entidad de la entity selection y su resultado se utiliza para definir la posición de la entidad en la entity selection devuelta. El resultado debe ser de un tipo ordenable (booleano, fecha, número, texto, hora, null).
+> Un resultado null es siempre el valor más pequeño.
 
-By default if you omit the *sortOrder* parameter, the resulting entity selection is sorted in ascending order. Optionnally, you can pass one of the following values in the *sortOrder* parameter:
+Por defecto, si se omite el parámetro *sortOrder*, la selección de entidades resultante se clasifica en orden ascendente. Opcionalmente, puede pasar uno de los siguientes valores en el parámetro *sortOrder*:
 
 | Constante     | Valor | Comentario                     |
 | ------------- | ----- | ------------------------------ |
-| dk ascending  | 0     | Ascending sort order (default) |
+| dk ascending  | 0     | Orden ascendente (por defecto) |
 | dk descending | 1     | Orden descendente              |
 
-Within the *formulaString* or *formulaObj*, the processed entity and thus its attributes are available through the `This` command (for example, `This.lastName`).
+Dentro de *formulaString* o *formulaObj*, la entidad procesada y, por tanto, sus atributos están disponibles a través del comando `This` (por ejemplo, `This.lastName`).
 
-You can pass parameter(s) to the formula using the `args` property (object) of the `settings` parameter: the formula receives the `settings.args` object in $1.
+Puede pasar parámetros a la fórmula utilizando la propiedad `args/0> (objeto) del parámetro <code>settings`: la fórmula recibe el objeto `settings.args` en $1.
 
 #### Ejemplo 1
 
-Sorting students using a formula provided as text:
+Clasificar a los alumnos mediante una fórmula dada como texto:
 
 ```4d
  var $es1; $es2 : cs.StudentsSelection
  $es1:=ds.Students.query("nationality=:1";"French")
- $es2:=$es1.orderByFormula("length(this.lastname)") //ascending by default
+ $es2:=$es1.orderByFormula("length(this.lastname)") //ascendente por defecto
  $es2:=$es1.orderByFormula("length(this.lastname)";dk descending)
 ```
 
-Same sort order but using a formula object:
+El mismo orden de clasificación pero utilizando un objeto fórmula:
 
 ```4d
  var $es1; $es2 : cs.StudentsSelection
  var $formula : Object
  $es1:=ds.Students.query("nationality=:1";"French")
  $formula:=Formula(Length(This.lastname))
- $es2:=$es1.orderByFormula($formula) // ascending by default
+ $es2:=$es1.orderByFormula($formula) // ascendente por defecto
  $es2:=$es1.orderByFormula($formula;dk descending)
 ```
 
 
 #### Ejemplo 2
 
-A formula is given as a formula object with parameters; `settings.args` object is received as $1 in the ***computeAverage*** method.
+Una fórmula se da como un objeto fórmula con parámetros; el objeto `settings.args` se recibe como $1 en el método ***computeAverage***.
 
-In this example, the "marks" object field in the **Students** dataClass contains students' grades for each subject. A single formula object is used to compute a student's average grade with different coefficients for schoolA and schoolB.
+En este ejemplo, el campo objeto "marks" de la dataClass **Students** contiene las notas de los estudiantes para cada asignatura. Se utiliza un solo objeto fórmula para calcular la nota media de un alumno con diferentes coeficientes para schoolA y schoolB.
 
 ```4d
  var $es1; $es2 : cs.StudentsSelection
@@ -1490,21 +1490,21 @@ In this example, the "marks" object field in the **Students** dataClass contains
  $formula:=Formula(computeAverage($1))
 
  $schoolA:=New object() //settings object
- $schoolA.args:=New object("english";1;"math";1;"history";1) // Coefficients to compute an average
+ $schoolA.args:=New object("english";1;"math";1;"history";1) // Coeficientes para calcular una media
 
-  //Order students according to school A criteria
+  //Ordenar a los estudiantes según los criterios de la escuela A
  $es2:=$es1.entitySelection.orderByFormula($formula;$schoolA)
 
- $schoolB:=New object() //settings object
- $schoolB.args:=New object("english";1;"math";2;"history";3) // Coefficients to compute an average
+ $schoolB:=New object() //object settings 
+ $schoolB.args:=New object("english";1;"math";2;"history";3) // Coeficientes para calcular un promedio
 
-  //Order students according to school B criteria
+  //Ordenar a los estudiantes según los criterios de la escuela B
  $es2:=$es1.entitySelection.orderByFormula($formula;dk descending;$schoolB)
 ```
 
 ```4d
   //
-  // computeAverage method
+  // método computeAverage 
   // -----------------------------
  #DECLARE ($coefList : Object) -> $result : Integer
  var $subject : Text
@@ -1544,25 +1544,25 @@ In this example, the "marks" object field in the **Students** dataClass contains
 **.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.query().Params -->
-| Parámetros    | Tipo               |    | Descripción                                                                                                                                                   |
-| ------------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| queryString   | Texto              | -> | Criterios de búsqueda como cadena                                                                                                                             |
-| formula       | Objeto             | -> | Criterios de búsqueda como objeto fórmula                                                                                                                     |
-| value         | any                | -> | Valor(es) a utilizar para los marcadores de posición indexados                                                                                                |
-| querySettings | Objeto             | -> | Opciones de búsqueda: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                              |
-| Resultado     | 4D.EntitySelection | <- | New entity selection made up of entities from entity selection meeting the search criteria specified in *queryString* or *formula*|<!-- END REF -->
+| Parámetros    | Tipo               |    | Descripción                                                                                                                                                                              |
+| ------------- | ------------------ |:--:| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| queryString   | Texto              | -> | Criterios de búsqueda como cadena                                                                                                                                                        |
+| formula       | Objeto             | -> | Criterios de búsqueda como objeto fórmula                                                                                                                                                |
+| value         | any                | -> | Valor(es) a utilizar para los marcadores de posición indexados                                                                                                                           |
+| querySettings | Objeto             | -> | Opciones de búsqueda: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                                                         |
+| Resultado     | 4D.EntitySelection | <- | Nueva selección de entidades formada por las entidades de la entity selection que cumplen los criterios de búsqueda especificados en *queryString* o*formula*|<!-- END REF -->
 
 |
 
 #### Descripción
 
-The `.query()` function <!-- REF #EntitySelectionClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s) among all the entities in the entity selection<!-- END REF -->, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carga diferida.
+La función `.query()` <!-- REF #EntitySelectionClass.query().Summary -->busca entidades que cumplan los criterios de búsqueda especificados en *queryString* o *formula* y (opcionalmente) *value*(s) entre todas las entidades de la selección de entidades<!-- END REF -->, y devuelve un nuevo objeto de tipo `EntitySelection` que contiene todas las entidades encontradas. Se aplica carga diferida.
 > Esta función no modifica la selección de entidades original.
 
 Si no se encuentran entidades coincidentes, se devuelve una `EntitySelection` vacía.
 
-For detailed information on how to build a query using *queryString*, *value*, and *querySettings* parameters, please refer to the DataClass [`.query()`](DataClassClass.md#query) function description.
-> By default if you omit the **order by** statement in the *queryString*, the returned entity selection is [not ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). Note however that, in Client/Server mode, it behaves like an ordered entity selection (entities are added at the end of the selection).
+Para obtener información detallada sobre cómo construir una consulta utilizando los parámetros *queryString*, *value<* y *querySettings*, consulte la descripción de la función de dataClass [`.query()`](DataClassClass.md#query).
+> Por defecto, si se omite la declaración **order by** en *queryString*, la entity selection devuelta es [no ordenada](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). Sin embargo, tenga en cuenta que, en modo Cliente/Servidor, se comporta como una selección de entidades ordenada (las entidades se añaden al final de la selección).
 
 #### Ejemplo 1
 
@@ -1576,11 +1576,11 @@ For detailed information on how to build a query using *queryString*, *value*, a
 
 #### Ejemplo 2
 
-More examples of queries can be found in the DataClass [`.query()`](DataClassClass.md#query) page.
+Se pueden encontrar más ejemplos de búsquedas en la página [`.query()`](DataClassClass.md#query) DataClass.
 
 #### Ver también
 
-[`.query()`](DataClassClass.md#query) for dataclass
+[`.query()`](DataClassClass.md#query) para dataclass
 
 <!-- END REF -->
 
@@ -1602,9 +1602,9 @@ More examples of queries can be found in the DataClass [`.query()`](DataClassCla
 
 #### Descripción
 
-The `.queryPath` property <!-- REF #EntitySelectionClass.queryPath.Summary -->contains a detailed description of the query as it was actually performed by 4D<!-- END REF -->. This property is available for `EntitySelection` objects generated through queries if the `"queryPath":true` property was passed in the *querySettings* parameter of the [`.query()`](#query) function.
+La propiedad `.queryPath` <!-- REF #EntitySelectionClass.queryPath.Summary -->contiene una descripción detallada de la búsqueda tal y como fue realizada por 4D<!-- END REF -->. Esta propiedad está disponible para los objetos de tipo `EntitySelection` generados a través de búsquedas si la propiedad `"queryPath":true` fue pasada en el parámetro *querySettings* de la función [`.query()`](#query).
 
-For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](DataClassClass.html#query) page. 
+Para más información, consulte el párrafo **querySettings** en la página [`.query()`](DataClassClass.html#query) Dataclass. 
 
 <!-- END REF -->
 
@@ -1626,9 +1626,9 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 
 #### Descripción
 
-The `.queryPlan` property <!-- REF #EntitySelectionClass.queryPlan.Summary --> contains a detailed description of the query just before it is executed (i.e., the planned query)<!-- END REF -->. This property is available for `EntitySelection` objects generated through queries if the `"queryPlan":true` property was passed in the *querySettings* parameter of the [`.query()`](#query) function.
+La propiedad `.queryPlan` <!-- REF #EntitySelectionClass.queryPlan.Summary --> contiene una descripción detallada de la búsqueda justo antes de su ejecución (es decir, la búsqueda planeada)<!-- END REF -->. Esta propiedad está disponible para los objetos de tipo `EntitySelection` generados a través de búsquedas si la propiedad `"queryPlan":true` fue pasada en el parámetro *querySettings* de la función [`.query()`](#query).
 
-For more information, refer to the **querySettings parameter** paragraph in the Dataclass[`.query()`](DataClassClass.html#query) page. 
+Para más información, consulte el párrafo **querySettings** en la página [`.query()`](DataClassClass.html#query) Dataclass. 
 
 <!-- END REF -->
 
@@ -1653,34 +1653,34 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 <!-- END REF -->
 
 #### Descripción
-> This function only works with a remote datastore (client / server or `Open datastore` connection).
+> Esta función sólo funciona con un datastore remoto (cliente/servidor o conexión `Open datastore`).
 
-The `.refresh()` function <!-- REF #EntitySelectionClass.refresh().Summary -->immediately "invalidates" the entity selection data in the local ORDA cache<!-- END REF --> so that the next time 4D requires the entity selection, it will be reloaded from the database.
+La función `.refresh()` <!-- REF #EntitySelectionClass.refresh().Summary -->invalida inmediatamente los datos de la entity selection en la caché local de ORDA<!-- END REF --> para que la próxima vez que 4D requiera la entity selection, ésta sea recargada desde la base.
 
-By default, the local ORDA cache is invalidated after 30 seconds. In the context of client / server applications using both ORDA and the classic language, this method allows you to make sure a remote application will always work with the latest data.
+Por defecto, la caché local de ORDA se invalida después de 30 segundos. En el contexto de las aplicaciones cliente/servidor que utilizan tanto ORDA como el lenguaje clásico, este método le permite asegurarse de que una aplicación remota siempre funcionará con los datos más recientes.
 
 #### Ejemplo 1
 
-In this example, classic and ORDA code modify the same data simultaneously:
+En este ejemplo, el código clásico y el código ORDA modifican los mismos datos simultáneamente:
 
 ```4d
- //On a 4D remote
+ //En un 4D remoto
 
  var $selection : cs.StudentsSelection
  var $student : cs.StudentsEntity
 
  $selection:=ds.Students.query("lastname=:1";"Collins")
-  //The first entity is loaded in the ORDA cache
+  //La primera entidad se carga en la caché de ORDA
  $student:=$selection.first()
 
-  //Update with classic 4D, ORDA cache is not aware of if
+  //Actualización con un 4D clásico, la caché ORDA no es consciente de si
  QUERY([Students];[Students]lastname="Collins")
  [Students]lastname:="Colin"
  SAVE RECORD([Students])
 
-  //to get the latest version, the ORDA cache must be invalidated
+  //para obtener la última versión, hay que invalidar la caché de ORDA
  $selection.refresh()
-  // Even if cache is not expired, the first entity is reloaded from disk
+  // Aunque la caché no haya caducado, la primera entidad se recarga desde el disco
  $student:=$selection.first()
 
   //$student.lastname contains "Colin"
@@ -1689,23 +1689,23 @@ In this example, classic and ORDA code modify the same data simultaneously:
 
 #### Ejemplo 2
 
-A list box displays the Form.students entity selection and several clients work on it.
+Un list box muestra la entity selection Form.students y en la que varios clientes trabajan.
 
 ```4d
-// Form method:
+// Método formulario:
  Case of
     :(Form event code=On Load)
        Form.students:=ds.Students.all()
  End case
   //
   //
-  // On client #1, the user loads, updates, and saves the first entity
-  // On client #2, the user loads, updates, and saves the same entity
+  // En client #1, el usuario carga, actualiza y guarda la primera entidad
+  // En client #2, el usuario carga, actualiza y guarda la misma entidad
   //
   //
-  // On client #1:
- Form.students.refresh() // Invalidates the ORDA cache for the Form.students entity selection
-  // The list box content is refreshed from the database with update made by client #2
+  // En client #1:
+ Form.students.refresh() // Invalida la caché ORDA para la entity selection Form.students 
+  // El contenido del list box se refresca desde la base con la actualización realizada por el cliente #2
 ```
 
 
@@ -1794,30 +1794,30 @@ $result2:=$invoices.selected($creditSel)
 **.slice**( *startFrom* : Integer { ; *end* : Integer } ) : 4D.EntitySelection<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.slice().Params -->
-| Parámetros | Tipo               |    | Descripción                                                    |
-| ---------- | ------------------ |:--:| -------------------------------------------------------------- |
-| startFrom  | Integer            | -> | Index to start the operation at (included)                     |
-| end        | Integer            | -> | Índice final (no incluido)                                     |
-| Resultado  | 4D.EntitySelection | <- | New entity selection containing sliced entities (shallow copy) |
+| Parámetros | Tipo               |    | Descripción                                                               |
+| ---------- | ------------------ |:--:| ------------------------------------------------------------------------- |
+| startFrom  | Integer            | -> | Índice para iniciar la operación (incluído)                               |
+| end        | Integer            | -> | Índice final (no incluido)                                                |
+| Resultado  | 4D.EntitySelection | <- | Nueva entity selection que contiene la entidades extraídas (shallow copy) |
 <!-- END REF -->
 
 #### Descripción
 
-The `.slice()` function <!-- REF #EntitySelectionClass.slice().Summary -->returns a portion of an entity selection into a new entity selection<!-- END REF -->, selected from the *startFrom* index to the *end* index (*end* is not included) or to the last entity of the entity selection. This method returns a shallow copy of the entity selection (it uses the same entity references).
+La función `.slice()` <!-- REF #EntitySelectionClass.slice().Summary -->devuelve una parte de una selección de entidades en una nueva entity selection<!-- END REF -->, seleccionada desde el índice *startFrom* hasta el índice *end* (*end* no se incluye) o hasta la última entidad de la entity selection. Este método devuelve una shallow copy (copia superficial) de la entity selection (utiliza las mismas referencias de entidades).
 > Esta función no modifica la selección de entidades original.
 
-The returned entity selection contains the entities specified by *startFrom* and all subsequent entities up to, but not including, the entity specified by *end*. If only the *startFrom* parameter is specified, the returned entity selection contains all entities from *startFrom* to the last entity of the original entity selection.
+La entity selection devuelta contiene las entidades especificadas por *startFrom* y todas las entidades subsiguientes hasta, pero sin incluir, la entidad especificada por *end*. Si sólo se especifica el parámetro *startFrom*, la entity selection devuelta contiene todas las entidades entre *startFrom* y la última entidad de la entity selection original.
 
 *   If *startFrom* < 0, it is recalculated as *startFrom:=startFrom+length* (it is considered as the offset from the end of the entity selection). If the calculated value < 0, *startFrom* is set to 0.
 *   If *startFrom >= length*, the function returns an empty entity selection.
 *   If *end* < 0, it is recalculated as *end:=end+length*.
 *   If *end < startFrom* (passed or calculated values), the method does nothing.
 
-If the entity selection contains entities that were dropped in the meantime, they are also returned.
+Si la entity selection contiene entidades que se han eliminado mientras tanto, también se devuelven.
 
 #### Ejemplo 1
 
-You want to get a selection of the first 9 entities of the entity selection:
+Quiere obtener una selección de las primeras 9 entidades de la entity selection:
 
 ```4d
 var $sel; $sliced : cs.EmployeeSelection
@@ -1828,11 +1828,11 @@ $sliced:=$sel.slice(0;9) //
 
 #### Ejemplo 2
 
-Assuming we have ds.Employee.all().length = 10
+Asumiendo que tenemos ds.Employee.all().length = 10
 
 ```4d
 var $slice : cs.EmployeeSelection
-$slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 to 8, but since 9 > 8, returns an empty entity selection
+$slice:=ds.Employee.all().slice(-1;-2) //intenta devolver entidades del índice 9 al 8, pero como 9 > 8, devuelve una entity selection vacía
 
 ```
 
@@ -1857,15 +1857,15 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 | Parámetros    | Tipo  |    | Descripción                                        |
 | ------------- | ----- |:--:| -------------------------------------------------- |
 | attributePath | Texto | -> | Ruta del atributo que se utilizará para el cálculo |
-| Resultado     | Real  | <- | Sum of entity selection values                     |
+| Resultado     | Real  | <- | Suma de los valores de la entity selection         |
 <!-- END REF -->
 
 #### Descripción
 
 
-The `.sum()` function <!-- REF #EntitySelectionClass.sum().Summary -->returns the sum for all *attributePath* values in the entity selection<!-- END REF -->.
+La función `.sum()` <!-- REF #EntitySelectionClass.sum().Summary -->devuelve la suma de todos los valores de *attributePath* en la entity selection<!-- END REF -->.
 
-`.sum()` returns 0 if the entity selection is empty.
+`.sum()` devuelve 0 si la entity selection está vacía.
 
 The sum can only be done on values of number type. The sum can only be done on values of number type. In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
 
