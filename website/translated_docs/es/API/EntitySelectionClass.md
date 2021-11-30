@@ -1768,13 +1768,13 @@ La función `.sum()` <!-- REF #EntitySelectionClass.sum().Summary -->devuelve la
 
 `.sum()` devuelve 0 si la entity selection está vacía.
 
-The sum can only be done on values of number type. The sum can only be done on values of number type. In this case, if *attributePath* leads to a property that does not exist in the object or does not contain any numeric values, `.sum()` returns 0.
+La suma sólo puede hacerse en valores de tipo numérico. Si *attributePath* es una propiedad objeto, sólo se tienen en cuenta los valores numéricos para el cálculo (se ignoran otros tipos de valores). En este caso, si *attributePath* lleva a una propiedad que no existe en el objeto o no contiene ningún valor numérico, `.sum()` devuelve 0.
 
 Se devuelve un error si:
 
-*   *attributePath* is not a numerical or an object attribute,
-*   *attributePath* is a related attribute,
-*   *attributePath* is not found in the entity selection dataclass.
+*   *attributePath* no es un atributo numérico o un objeto,
+*   *attributePath* es un atributo relativo,
+*   *attributePath* no se encuentra en la clase de datos de la entity selection.
 
 
 
@@ -1805,54 +1805,54 @@ $sum:=$sel.sum("salary")
 **.toCollection**( { *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer } } ) : *Collection*<br>**.toCollection**( *filterString* : Text {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<br>**.toCollection**( *filterCol* : Collection {; *options* : Integer { ; *begin* : Integer { ; *howMany* : Integer }}} ) : *Collection*<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.toCollection().Params -->
-| Parámetros   | Tipo       |    | Descripción                                                                          |
-| ------------ | ---------- |:--:| ------------------------------------------------------------------------------------ |
-| filterString | Text       | -> | String with entity attribute path(s) to extract                                      |
-| filterCol    | Collection | -> | Collection of entity attribute path(s) to extract                                    |
-| options      | Integer    | -> | `dk with primary key`: adds the primary key<br>`dk with stamp`: adds the stamp |
-| begin        | Integer    | -> | Designates the starting index                                                        |
-| howMany      | Integer    | -> | Number of entities to extract                                                        |
-| Resultado    | Collection | <- | Colección de objetos que contienen atributos y valores de la selección de entidades  |
+| Parámetros   | Tipo       |    | Descripción                                                                                  |
+| ------------ | ---------- |:--:| -------------------------------------------------------------------------------------------- |
+| filterString | Text       | -> | Cadena con la(s) ruta(s) de atributos de la entidad a extraer                                |
+| filterCol    | Collection | -> | Colección de rutas de atributos de entidad a extraer                                         |
+| options      | Integer    | -> | `dk with primary key`: añade la llave primaria <br>`dk with stamp<`: añade el sello |
+| begin        | Integer    | -> | Designa el índice inicial                                                                    |
+| howMany      | Integer    | -> | Número de entidades a extraer                                                                |
+| Resultado    | Collection | <- | Colección de objetos que contienen atributos y valores de la selección de entidades          |
 <!-- END REF -->
 
 #### Descripción
 
-The `.toCollection()` function <!-- REF #EntitySelectionClass.toCollection().Summary -->creates and returns a collection where each element is an object containing a set of properties and values <!-- END REF -->corresponding to the attribute names and values for the entity selection.
+La función `.toCollection()` <!-- REF #EntitySelectionClass.toCollection().Summary -->crea y devuelve una colección donde cada elemento es un objeto que contiene un conjunto de propiedades y valores <!-- END REF -->correspondientes a los nombres y valores de los atributos de la entity selection.
 
-If no filter parameter is passed or the first parameter contains an empty string or "*", all the attributes are extracted. Attributes with [kind](DataClassAttributeClass.md#kind) property as "relatedEntity" are extracted with the simple form: an object with property \_\_KEY (primary key). Attributes with kind property as "relatedEntities" are not extracted.
+Si no se pasa ningún parámetro de filtro o si el primer parámetro contiene una cadena vacía o "*", se extraen todos los atributos. Los atributos con la propiedad [kind](DataClassAttributeClass.md#kind) como "relatedEntity" se extraen con el formulario simple: un objeto con la propiedad \_\_KEY (llave primaria). Los atributos con la propiedad kind como "relatedEntities" no se extraen.
 
-Or, you can designate the entity attributes to extract using a filter parameter. You can use one of these two filters:
+O bien, puede designar los atributos de la entidad a extraer utilizando un parámetro de filtro. Puede utilizar uno de estos dos filtros:
 
-*   *filterString* --a string with property paths separated with commas: "propertyPath1, propertyPath2, ...".
-*   *filterCol* --a collection of strings containing property paths: \["propertyPath1","propertyPath2",...]
-
-
-If a filter is specified for an attribute of the `relatedEntity` kind:
-
-*   propertyPath = "relatedEntity" -> it is extracted with simple form
-*   propertyPath = "relatedEntity.*" -> all the properties are extracted
-*   propertyPath = "relatedEntity.propertyName1, relatedEntity.propertyName2, ..." -> only those properties are extracted
+*   *filterString* --una cadena con rutas de propiedades separadas por comas: "propertyPath1, propertyPath2, ...".
+*   *filterCol*: --una colección de cadenas que contiene la rutas de propiedades: \["propertyPath1","propertyPath2",...]
 
 
-If a filter is specified for an attribute of the `relatedEntities` kind:
+Si se especifica un filtro para un atributo de tipo `relatedEntity`:
 
-*   propertyPath = "relatedEntities.*" -> all the properties are extracted
-*   propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> only those properties are extracted
+*   propertyPath = "relatedEntity" -> se extrae con una forma simple
+*   propertyPath = "relatedEntity.*" -> se extraen todas las propiedades
+*   propertyPath = "relatedEntity.propertyName1, relatedEntity.propertyName2, ..." -> sólo se extraen esas propiedades
+
+
+Si se especifica un filtro para un atributo de tipo `relatedEntities`:
+
+*   propertyPath = "relatedEntities.*" -> se extraen todas las propiedades
+*   propertyPath = "relatedEntities.propertyName1, relatedEntities.propertyName2, ..." -> sólo se extraen esas propiedades
 
 
 
-In the *options* parameter, you can pass the `dk with primary key` and/or `dk with stamp` selector(s) to add the entity's primary keys and/or stamps in extracted objects.
+En el parámetro *options*, puede pasar el selector `ddk with primary key` y/o `dk with stamp` para añadir las llaves primarias de la entidad y/o los sellos en los objetos extraídos.
 
-The *begin* parameter allows you to indicate the starting index of the entities to extract. You can pass any value between 0 and entity selection length-1.
+El parámetro *begin* permite indicar el índice de inicio de las entidades a extraer. Puede pasar cualquier valor entre 0 y la longitud de la entity selection -1.
 
-The *howMany* parameter lets you specify the number of entities to extract, starting with the one specified in *begin*. Dropped entities are not returned but are taken into account according to *howMany*. For example, if *howMany*= 3 and there is 1 dropped entity, only 2 entities are extracted.
+El parámetro *howMany* permite especificar el número de entidades a extraer, empezando por la especificada en *begin*. Las entidades descartadas no se devuelven pero se tienen en cuenta en *howMany*. Por ejemplo, si *howMany*= 3 y hay 1 entidad descartada, sólo se extraen 2 entidades.
 
-If *howMany* > length of the entity selection, the method returns (length - *begin*) objects.
+Si *howMany* > longitud de la entity selection, el método devuelve (length - *begin*) objetos.
 
-An empty collection is returned if:
+Se devuelve una colección vacía si:
 
-*   the entity selection is empty, or
-*   *begin* is greater than the length of the entity selection.
+*   la entity selection está vacía, o
+*   *begin* es mayor que la longitud de la entity selection.
 
 
 #### Ejemplo 1
@@ -1862,7 +1862,7 @@ En todos los ejemplos de esta sección se utilizará la siguiente estructura:
 ![](assets/en/API/dataclassAttribute4.png)
 
 
-Example without filter or options parameter:
+Ejemplo sin parámetros de filtro ni de opciones:
 
 ```4d
  var $employeesCollection : Collection
@@ -1977,7 +1977,7 @@ Devuelve:
 
 #### Ejemplo 3
 
-Example with slicing and filtering on properties:
+Ejemplo con descarte y filtrado en las propiedades:
 
 ```4d
 var $employeesCollection; $filter : Collection
@@ -2011,7 +2011,7 @@ Devuelve:
 
 #### Ejemplo 4
 
-Example with `relatedEntity` type with simple form:
+Ejemplo con el tipo `relatedEntity` con una forma simple:
 
 
 ```4d
@@ -2050,7 +2050,7 @@ devuelve:
 
 #### Ejemplo 5
 
-Example with *filterCol* parameter:
+Ejemplo con el parámetro *filterCol*:
 
 ```4d
 var $employeesCollection; $coll : Collection
@@ -2076,7 +2076,7 @@ Devuelve:
 
 #### Ejemplo 6
 
-Example with extraction of all properties of a relatedEntity:
+Ejemplo con la extracción de todas las propiedades de una relatedEntity:
 
 ```4d
 var $employeesCollection; $coll : Collection
@@ -2130,7 +2130,7 @@ Devuelve:
 
 #### Ejemplo 7
 
-Example with extraction of some properties of a relatedEntity:
+Ejemplo con la extracción de algunas las propiedades de relatedEntity:
 
 ```4d
 var $employeesCollection : Collection
@@ -2166,7 +2166,7 @@ $employeesCollection:=$employees.toCollection("firstName, lastName, employer.nam
 
 #### Ejemplo 8
 
-Example with extraction of some properties of `relatedEntities`:
+Ejemplo con la extracción de algunas las propiedades de `relatedEntities`:
 
 ```4d
  var $employeesCollection : Collection
@@ -2218,7 +2218,7 @@ Devuelve:
 
 #### Ejemplo 9
 
-Example with extraction of all properties of `relatedEntities`:
+Ejemplo con la extracción de todas las propiedades de `relatedEntities`:
 
 ```4d
 var $employeesCollection : Collection
