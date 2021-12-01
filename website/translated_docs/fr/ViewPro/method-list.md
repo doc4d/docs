@@ -82,13 +82,13 @@ Vous pouvez passer, dans *options*. un objet avec des propriétés supplémentai
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | scope     | Nombre | Scope de la plage. Vous pouvez passer l'indice de la feuille (la numérotation commence à zéro) ou utiliser les constantes suivantes : <p><li>`vk current sheet`</li><li>`vk workbook`</li><p><p>Le scope détermine si le nom d'une plage est propre à une feuille (*scope*=sheet index ou `vk current sheet`), ou s'il s'applique à l'ensemble du classeur (*scope*=`vk workbook`). |
 | comment   | Texte  | Commentaire associé à une plage nommée                                                                                                                                                                                                                                                                                                                                                                                                                       |
-> * A named range is actually a named formula containing coordinates. `VP ADD RANGE NAME` facilitates the creation of named ranges, but you can also use the [`VP ADD FORMULA NAME`](#vp-add-formula-name) method to create named ranges.
-> * Formulas defining named ranges can be retrieved with the [`VP Get formula by name`](#vp-get-formula-by-name) method.
+> * Une plage nommée est en réalité une formule nommée contenant des coordonnées. `VP ADD RANGE NAME` facilite la création de plages nommées, mais la commande [`VP ADD FORMULA NAME`](#vp-add-formula-name) permet également d'en créer.
+> * Les formules définissant des plages nommées peuvent être récupérées à l'aide de la commande [`VP Get formula by name`](#vp-get-formula-by-name).
 
 
 #### Exemple
 
-You want to create a named range for a cell range:
+Vous souhaitez créer une plage nommée à partir d'une plage contenant une cellule :
 
 ```4d
 $range:=VP Cell("ViewProArea";2;10)
@@ -110,18 +110,18 @@ VP ADD RANGE NAME($range;"Total1")
 
 #### Description
 
-The `VP ADD SELECTION` command <!-- REF #_method_.VP ADD SELECTION.Summary -->adds the specified cells to the currently selected cells<!-- END REF -->.
+La commande `VP ADD SELECTION` <!-- REF #_method_.VP ADD SELECTION.Summary -->ajoute les cellules spécifiées aux cellules sélectionnées<!-- END REF -->.
 
-In *rangeObj*, pass a range object of cells to add to the current selection.
-> The active cell is not modified.
+Dans *objPlage*, passez un objet plage de plusieurs cellules à ajouter à la sélection courante.
+> La cellule active n'est pas modifiée.
 
 #### Exemple
 
-You have cells currently selected:
+Les cellules sélectionnées sont les suivantes :
 
 ![](assets/en/ViewPro/cmd_vpAddSelection1.PNG)
 
-The following code will add cells to your selection:
+Le code suivant ajoutera des cellules à votre sélection :
 
 ```4d
 $currentSelection:=VP Cells("myVPArea";3;4;2;3)
