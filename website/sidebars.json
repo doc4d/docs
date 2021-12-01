@@ -97,6 +97,22 @@
 			"Debugging/debugging-remote",
 			"Debugging/debugLogFiles"
 		],
+		"Settings": [
+			"settings/overview",
+			"settings/user-settings",
+			"settings/general",
+			"settings/interface",
+			"settings/compiler",
+			"settings/database",
+			"settings/moving",
+			"settings/backup",
+			"settings/client-server",
+			"settings/web",
+			"settings/sql",
+			"settings/php",
+			"settings/security",
+			"settings/compatibility"
+		],
 		"Preferences": [
 			"Preferences/overview",
 			"Preferences/general",
@@ -377,22 +393,6 @@
 		],
 		"Build application": [
 			"Desktop/building"
-		],
-		"Settings": [
-			"settings/overview",
-			"settings/user-settings",
-			"settings/general",
-			"settings/interface",
-			"settings/compiler",
-			"settings/database",
-			"settings/moving",
-			"settings/backup",
-			"settings/client-server",
-			"settings/web",
-			"settings/sql",
-			"settings/php",
-			"settings/security",
-			"settings/compatibility"
 		]
 	},
 	"Extensions": {

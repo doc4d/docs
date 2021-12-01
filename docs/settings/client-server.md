@@ -9,22 +9,22 @@ The Client-server pages group together parameters related to the use of the data
 
 ### Network
 
-#### Publish database at startup 
+#### Publish database at startup 
 
 This option lets you indicate whether or not the 4D Server database will appear in the list of published databases.
 
 -   When this option is checked (default), the database is made public and appears in the list of published databases (**Available** tab).
--   When the option is not checked, the database is not made public and it does not appear in the list of published databases. To connect, users must manually enter the address of the database on the **Custom** tab of the connection dialog box.
+-   When the option is not checked, the database is not made public and it does not appear in the list of published databases. To connect, users must manually enter the address of the database on the **Custom** tab of the connection dialog box.
 
 > **Note**: If you modify this parameter, you must restart the server database in order for it to be taken into account.
 
-#### Publication name  
+#### Publication name  
 
-This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Connecting to a 4D Server Database](https://doc.4d.com/4Dv19/4D/19/Connecting-to-a-4D-Server-Database.300-5422486.en.html) section). By default, 4D Server uses the name of the database structure file. You can enter any custom name you want.
+This option lets you change the publication name of a 4D Server database, *i.e.*, the name displayed on the dynamic **Available** tab of the connection dialog box (see the [Connecting to a 4D Server Database](https://doc.4d.com/4Dv19/4D/19/Connecting-to-a-4D-Server-Database.300-5422486.en.html) section). By default, 4D Server uses the name of the database structure file. You can enter any custom name you want.
 
-**Note:** This parameter is not taken into account in custom client-server applications. In theory, the client application connects directly to the server application, without passing by the connection dialog box. However, in the event of an error, this dialog box will appear; in this case, the publication name of the server application is the name of the compiled database.
+**Note:** This parameter is not taken into account in custom client-server applications. In theory, the client application connects directly to the server application, without passing by the connection dialog box. However, in the event of an error, this dialog box will appear; in this case, the publication name of the server application is the name of the compiled database.
 
-#### Port Number  
+#### Port Number  
 
 This option lets you change the TCP port number on which 4D Server publishes the database. This information is stored in the structure of the database and on each client machine. By default, the TCP port number used by 4D Server and 4D in remote mode is 19813.
 
@@ -35,7 +35,7 @@ To update any other client machines that are not connected, you just need to ent
 
 ![](assets/en/settings/client-server-network.png)
 
-> **Note:** Only databases published on the same port as the one set in 4D client are visible on the TCP/IP dynamic publication page.
+> **Note:** Only databases published on the same port as the one set in 4D client are visible on the TCP/IP dynamic publication page.
 
 #### 4D Server and port numbers
 
@@ -51,50 +51,50 @@ To update any other client machines that are not connected, you just need to ent
 
 This option allows you to implement SSO (*Single Sign On*) capabilities in your 4D Server database on Windows. When you check this option, 4D transparently connects to the Active directory of the Windows domain server and gets the available authentication tokens.
 
-This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv19/4D/19/Single-Sign-On-SSO-on-Windows.300-5422467.en.html) section.
+This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv19/4D/19/Single-Sign-On-SSO-on-Windows.300-5422467.en.html) section.
 
 #### Service Principal Name
 
 When Single Sign On (SSO) is enabled (see above), you must fill in this field if you want to use Kerberos as your authentication protocol.
 
-This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv19/4D/19/Single-Sign-On-SSO-on-Windows.300-5422467.en.html) section.
+This option is described in the [Single Sign On (SSO) on Windows](https://doc.4d.com/4Dv19/4D/19/Single-Sign-On-SSO-on-Windows.300-5422467.en.html) section.
 
-#### Client-Server Connections Timeout  
+#### Client-Server Connections Timeout  
 
 This device is used to set the timeout (period of inactivity beyond which the connection is closed) between 4D Server and the client machines connecting to it.The Unlimited option removes the timeout. When this option is selected, client activity control is eliminated.
 
 When a timeout is selected, the server will close the connection of a client if it does not receive any requests from the latter during the specified time limit.
 
-### Client-Server Communication  
+### Client-Server Communication  
 
-#### Register Clients at Startup For Execute On Client  
+#### Register Clients at Startup For Execute On Client  
 
-When this option is checked, all the 4D remote machines connecting to the database can execute methods remotely. This mechanism is detailed in the section [Stored procedures on client machines](https://doc.4d.com/4Dv19/4D/19/Stored-procedures-on-client-machines.300-5422461.en.html).
+When this option is checked, all the 4D remote machines connecting to the database can execute methods remotely. This mechanism is detailed in the section [Stored procedures on client machines](https://doc.4d.com/4Dv19/4D/19/Stored-procedures-on-client-machines.300-5422461.en.html).
 
-#### Encrypt Client-Server Connections  
+#### Encrypt Client-Server Connections  
 
-This option lets you activate the secured mode for communications between the server machine and the 4D remote machines. This option is detailed in the [Encrypting Client/Server Connections](https://doc.4d.com/4Dv19/4D/19/Encrypting-ClientServer-Connections.300-5422465.en.html) section.
+This option lets you activate the secured mode for communications between the server machine and the 4D remote machines. This option is detailed in the [Encrypting Client/Server Connections](https://doc.4d.com/4Dv19/4D/19/Encrypting-ClientServer-Connections.300-5422465.en.html) section.
 
-#### Update Resources folder during a session  
+#### Update Resources folder during a session  
 
-This setting can be used to globally set the updating mode for the local instance of the **Resources **folder on the connected 4D machines when the **Resources **folder of the database is modified during the session (the **Resources **folder is automatically synchronized on the remote machine each time a session is opened). Three settings are available:
+This setting can be used to globally set the updating mode for the local instance of the **Resources **folder on the connected 4D machines when the **Resources **folder of the database is modified during the session (the **Resources **folder is automatically synchronized on the remote machine each time a session is opened). Three settings are available:
 
--   **Never**: The local **Resources** folder is not updated during the session. The notification sent by the server is ignored. The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv19/4D/19/Using-the-Resources-explorer.300-5416788.en.html)).
--   **Always**: The synchronization of the local **Resources **folder is automatically carried out during the session whenever notification is sent by the server.
--   **Ask**: When the notification is sent by the server, a dialog box is displayed on the client machines, indicating the modification. The user can then accept or refuse the synchronization of the local **Resources **folder.\
-    The **Resources **folder centralizes the custom files required for the database interface (translation files, pictures, etc.). Automatic or manual mechanisms can be used to notify each client when the contents of this folder have been modified. For more information, please refer to the [Managing the Resources folder](https://doc.4d.com/4Dv19/4D/19/Managing-the-Resources-folder.300-5422466.en.html) section.
+-   **Never**: The local **Resources** folder is not updated during the session. The notification sent by the server is ignored. The local **Resources** folder may be updated manually using the **Update Local Resources** action menu command (see [Using the Resources explorer](https://doc.4d.com/4Dv19/4D/19/Using-the-Resources-explorer.300-5416788.en.html)).
+-   **Always**: The synchronization of the local **Resources **folder is automatically carried out during the session whenever notification is sent by the server.
+-   **Ask**: When the notification is sent by the server, a dialog box is displayed on the client machines, indicating the modification. The user can then accept or refuse the synchronization of the local **Resources **folder.\
+    The **Resources **folder centralizes the custom files required for the database interface (translation files, pictures, etc.). Automatic or manual mechanisms can be used to notify each client when the contents of this folder have been modified. For more information, please refer to the [Managing the Resources folder](https://doc.4d.com/4Dv19/4D/19/Managing-the-Resources-folder.300-5422466.en.html) section.
 
-#### Open the structure in mode  
+#### Open the structure in mode  
 
-This option sets the opening mode for the database structure on client machines. By default, the **Read/Write** mode is set but you can also set it to **Read only** in order to prevent the structure from being modified.
+This option sets the opening mode for the database structure on client machines. By default, the **Read/Write** mode is set but you can also set it to **Read only** in order to prevent the structure from being modified.
 
-## IP configuration 
+## IP configuration page
 
-### Allow-Deny Configuration Table  
+### Allow-Deny Configuration Table  
 
 This table allows you to set access control rules for the database depending on 4D remote machine IP addresses. This option allows reinforcing security, for example, for strategic applications.
 
-> **Note:** This configuration table does not control Web connections.
+> **Note:** This configuration table does not control Web connections.
 
 The behavior of the configuration table is as follows:
 
