@@ -3808,6 +3808,8 @@ In *optionObj*, pass the workbook options to apply to *vpAreaName*.
 
 If *optionObj* is empty, the command does nothing.
 
+Modified workbook options are saved with the document.
+
 The following table lists the available workbook options:
 
 | プロパティ                                 | タイプ                     | 説明                                                                                                                                                                                                                                                     |

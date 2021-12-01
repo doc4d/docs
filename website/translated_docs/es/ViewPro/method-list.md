@@ -3589,7 +3589,7 @@ VP SET CURRENT SHEET("ViewProArea";2)
 | Parámetros | Tipo   |    | Descripción                       |
 | ---------- | ------ | -- | --------------------------------- |
 | vpAreaName | Texto  | -> | 4D View Pro area form object name |
-| formulaObj | Objeto | -> | Formula object                    |
+| formulaObj | Objeto | -> | Objeto formula                    |
 
 <!-- END REF -->  
 
@@ -4645,6 +4645,8 @@ In *vpAreaName*, pass the name of the 4D View Pro area.
 In *optionObj*, pass the workbook options to apply to *vpAreaName*.
 
 If *optionObj* is empty, the command does nothing.
+
+Modified workbook options are saved with the document.
 
 The following table lists the available workbook options:
 
