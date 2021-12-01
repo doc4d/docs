@@ -134,6 +134,7 @@ Then you can get an entity selection of the "best" companies by executing:
 
 
 
+
 ```4d
 	var $best : cs.CompanySelection
 	$best:=ds.Company.GetBestOnes()
@@ -745,8 +746,8 @@ Exposed Alias studentName student.name //scalar value
 You can then execute the following queries:
 
 ```4d
-// Find course named "Archeography"
-ds.Course.query("courseName = :1";"Archeography")
+// Find course named "Archaeology"
+ds.Course.query("courseName = :1";"Archaeology")
 
 // Find courses given by the professor Smith
 ds.Course.query("teacherName = :1";"Smith")
@@ -765,9 +766,9 @@ You can also edit the value of the *courseName* alias:
 
 ```4d
 // Rename a course using its alias attribute
-$arch:=ds.Course.query("courseName = :1";"Archeography")
-$arch.courseName:="Archeography II"
-$arch.save() //courseName and label are "Archeography II"
+$arch:=ds.Course.query("courseName = :1";"Archaeology")
+$arch.courseName:="Archaeology II"
+$arch.save() //courseName and name are "Archaeology II"
 ```
 
 
