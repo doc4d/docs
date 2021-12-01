@@ -45,7 +45,7 @@ Both the Ribbon and the Toolbar interfaces group related features into tabs:
 | File     | File manipulation               |        X         |                   |
 | Home     | Text appearance                 |        X         |         X         |
 | Insert   | Add items                       |        X         |         X         |
-| Formulas | Formula calculation and library |        X         |         X         |
+| Fórmulas | Formula calculation and library |        X         |         X         |
 | Datos    | Data manipulation               |        X         |         X         |
 | View     | Visual presentation             |        X         |         X         |
 | Settings | Sheet presentation reference    |        X         |                   |
@@ -232,9 +232,9 @@ In addition to the special characters and codes described in the previous sectio
 
 | Caracter | Descripción                                                        | Ejemplo              |
 | -------- | ------------------------------------------------------------------ | -------------------- |
-| + and -  | Plus and minus signs                                               | ### + ### = ###,### |
+| + y -    | Plus and minus signs                                               | ### + ### = ###,### |
 | ( )      | Left and right parenthesis                                         | (-###.##)            |
-| :        | Colon                                                              | hh:mm:ss             |
+| :        | Dos puntos                                                         | hh:mm:ss             |
 | ^        | Caret                                                              | #\^#                |
 | '        | Apostrophe                                                         | '######              |
 | { }      | Curly brackets                                                     | {###,###,###}        |
@@ -318,7 +318,7 @@ The following special characters allow the automatic addition or formatting of i
 | F        | Workbook name                    | printInfo.headerLeft:="&F"                                            | 2019 Monthly Revenue Forecasts                    |
 | A        | Spreadsheet name                 | printInfo.headerLeft:="&A"                                            | June 2019 revenue forecast                        |
 
-### Margins
+### Márgenes
 
 Margin attributes are used to specify the 4D View Pro area margins for printing. Expressed in hundreds of an inch.
 
@@ -341,7 +341,7 @@ Orientation attributes are used to specify the direction the printed page layout
 | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------- |
 | orientation | entero largo | Page orientation. Available values: `vk print page orientation landscape`, `vk print page orientation portrait` (default) |
 
-### Page
+### Página
 
 Page attributes are used to specify general document print settings.
 
@@ -448,7 +448,7 @@ Ejemplo:
 | backgroundImageLayout | entero largo  | Defines the layout for the background image. | `vk image layout center`, `vk image layout none`, `vk image layout stretch`, `vk image layout zoom`                                                                                                                                                                                                                                                                       |
 | foreColor             | texto         | Defines the color of the foreground.         | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                        |
 
-#### Borders
+#### Bordes
 
 | Propiedad                                                                  |       | Tipo         | Descripción                                                                    | Possible values                                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------------------------------------------------------- | ----- | ------------ | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

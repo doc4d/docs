@@ -406,6 +406,3 @@ These principles are shown in the following diagram:
 
 *	Example with a lock set by a classic command:<br><br>![](assets/en/ORDA/concurrent2.png)
 *	Example with a lock set by an ORDA method:<br><br>![](assets/en/ORDA/concurrent3.png)
-
-
-

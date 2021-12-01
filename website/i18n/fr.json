@@ -15,7 +15,7 @@
         "title": "Gestion des licences 4D"
       },
       "Admin/tls": {
-        "title": "TLS Protocol (HTTPS)"
+        "title": "Protocole TLS (HTTPS)"
       },
       "Admin/webAdmin": {
         "title": "WebAdmin"
@@ -686,7 +686,7 @@
         "title": "Documentation updates"
       },
       "ORDA/dsmapping": {
-        "title": "Data Model Objects"
+        "title": "Objets Data Model"
       },
       "ORDA/entities": {
         "title": "Travailler avec des données"
@@ -866,13 +866,13 @@
         "title": "Gestion des groupes et utilisateurs 4D"
       },
       "Users/overview": {
-        "title": "Access Control overview"
+        "title": "Présentation du contrôle des accès"
       },
       "ViewPro/configuring": {
-        "title": "Configuring 4D View Pro Areas"
+        "title": "Configuration des zones 4D View Pro"
       },
       "ViewPro/formulas": {
-        "title": "Formulas and Functions"
+        "title": "Formules et fonctions"
       },
       "ViewPro/getting-started": {
         "title": "Prise en main"
@@ -932,7 +932,7 @@
       "Debugging": "Débogage",
       "Preferences": "Préférences",
       "4D Server Administration Window": "Fenêtre d'administration de 4D Server",
-      "Web Administration": "Web Administration",
+      "Web Administration": "Administration Web",
       "Command Line Interface": "Interface de ligne de commande",
       "TLS Protocol": "Protocole TLS",
       "License Management": "Gestion des licences",
@@ -974,7 +974,7 @@
     "Backup and Restore|no description given": "Sauvegarde et restitution",
     "License Management|no description given": "Gestion des licences",
     "Build Application|no description given": "Générateur d'application",
-    "Web Administration|no description given": "Web Administration",
+    "Web Administration|no description given": "Administration Web",
     "4D Server Administration Window|no description given": "Fenêtre d'administration de 4D Server",
     "4D Components Library|no description given": "Bibliothèque des composants 4D",
     "Client/Server|no description given": "Client/Server",
@@ -991,6 +991,7 @@
     "Developing Components|no description given": "Composants de développement",
     "Developing Plugins|no description given": "Plugins de développement",
     "Working with a project|no description given": "Working with a project",
+    "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html|no description given": "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html",
     "Getting started|no description given": "Prise en main",
     "Core Development|no description given": "Développement",
     "Administration|no description given": "Administration",

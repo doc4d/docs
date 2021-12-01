@@ -73,13 +73,13 @@ List of operators from most to least important:
 | --------------- | -------------------------- |
 | ()              | Parenthesis (for grouping) |
 | -               | Negate                     |
-| +               | Plus                       |
-| %               | Percent                    |
+| +               | Más                        |
+| %               | Porcentaje                 |
 | ^               | Exponent                   |
-| * and /         | Multiply and divide        |
-| + and -         | Add and Subtract           |
+| * y /           | Multiply and divide        |
+| + y -           | Add and Subtract           |
 | &               | Concatenate                |
-| =  > < >= <= <> | Compare                    |
+| =  > < >= <= <> | Comparar                   |
 
 
 
@@ -138,7 +138,7 @@ See [**SpreadJS's extented list of functions**](https://www.grapecity.com/spread
 4D custom functions provide access, from within your 4D View Pro formulas, to:
 
 - 4D process variables,
-- fields,
+- campos,
 - project methods,
 - 4D language commands,
 - or any valid 4D expression.

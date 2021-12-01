@@ -1,18 +1,18 @@
 ---
 id: dsmapping
-title: Data Model Objects
+title: Objets Data Model
 ---
 
 La technologie ORDA est fondée sur une cartographie automatique d'une structure de base sous-jacente. Elle permet également d'accéder aux données via des objets sélection d'entités (entity selection) et entité (entity). Par conséquent, ORDA expose la base de données entière comme un ensemble d'objets de modèle de données.
 
 
-## Cartographie de la structure
+## Correspondance de la structure
 
 Lorsque vous appelez un datastore à l'aide de la commande [`ds`](API/DataStoreClass.md#ds) ou [`Open datastore`](API/DataStoreClass.md#open-datastore), 4D référence automatiquement les tables et les champs de la structure 4D correspondante en tant que propriétés de l'objet [datastore](#datastore) retourné :
 
-*   Les tables sont mappées aux classes de données (dataclasses).
-*   Les champs sont mappés aux attributs de stockage.
-*   Les relations sont mappées aux attributs de relation - les noms de relation, définis dans l'éditeur de structure, sont utilisés comme noms d'attribut de relation.
+*   Les tables correspondent à des dataclasses.
+*   Les champs correspondent à des attributs de stockage.
+*   Les relations correspondent à des attributs de relation - les noms de relation, définis dans l'éditeur de structure, sont utilisés comme noms d'attribut de relation.
 
 ![](assets/en/ORDA/datastoreMapping.png)
 
@@ -21,7 +21,7 @@ Lorsque vous appelez un datastore à l'aide de la commande [`ds`](API/DataStoreC
 
 Les règles suivantes s'appliquent à toutes les conversions :
 
-* Les noms de table, de champ et de relation sont mappés aux noms de propriété d'objet. Assurez-vous que ces noms sont conformes aux règles générales de dénomination des objets, comme expliqué dans la section [Conventions de dénomination des objets](Concepts/identifiers.md).
+* Les noms de table, de champ et de relation correspondent à des noms de propriété d'objet. Assurez-vous que ces noms sont conformes aux règles générales de dénomination des objets, comme expliqué dans la section [Conventions de dénomination des objets](Concepts/identifiers.md).
 *   Un datastore ne référence que les tables avec une seule clé primaire. Les tables suivantes ne sont pas référencées :
     *   Tables sans clé primaire
     *   Tables avec clés primaires composites.
@@ -232,7 +232,7 @@ Les propriétés des sélections d'entités sont toutefois énumérables :
 ```
 
 
-#### Sélections d'entités triées vs Sélections d'entités non-triées
+#### Entity selections triées vs Entity selections non-triées
 
 Pour des raisons d'optimisation, par défaut, 4D ORDA crée généralement des sélections d'entités non-ordonnées, sauf lorsque vous utilisez la méthode `orderBy( )` ou si vous utilisez les options appropriées. Dans cette documentation, sauf indication contraire, "sélection d'entités" fait généralement référence à une "sélection d'entités non-ordonnée".
 

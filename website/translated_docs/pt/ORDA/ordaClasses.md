@@ -270,6 +270,16 @@ When creating or editing data model classes, you must pay attention to the follo
 - You cannot override a native ORDA class function from the **`4D`** [class store](Concepts/classes.md#class-stores) with a data model user class function.
 
 
+### Preemptive execution
+
+When compiled, data model class functions are executed:
+
+- in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
+- in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
+
+If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications).
+
+
 ## Computed attributes
 
 
@@ -760,7 +770,7 @@ End if
 
 
 
-## Support in 4D projects
+## Support in 4D IDE
 
 
 ### Class files

@@ -4,12 +4,12 @@ title: Gestion des groupes et utilisateurs 4D
 ---
 
 
-In multi-user applications, 4D provides users with certain standard access privileges and certain powers. Une fois qu’un système d’utilisateurs et de groupes a été créé, ces privilèges standard prennent effet.
+Dans les applications multi-utilisateurs, 4D fournit aux utilisateurs certains privilèges d'accès standard et certains pouvoirs. Une fois qu’un système d’utilisateurs et de groupes a été créé, ces privilèges standard prennent effet.
 
 
-## Users and groups in projects
+## Utilisateurs et groupes dans les projets
 
-In project applications (.4DProject or .4dz files), 4D users and groups can be configured in both single-user and multi-user environments. However, **access control** is only effective with 4D Server. Le tableau suivant liste les principales fonctionnalités des utilisateurs et groupes ainsi que leur disponibilité :
+Dans les applications projet (fichiers .4DProject ou .4dz), les utilisateurs et groupes 4D peuvent être configurés à la fois en monoposte ou en multi-utilisateurs. Toutefois, **le contrôle des accès** est effectif uniquement avec 4D Server. Le tableau suivant liste les principales fonctionnalités des utilisateurs et groupes ainsi que leur disponibilité :
 
 |                                                                                 | 4D (monoposte)                                          | 4D Server |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------- | --------- |
@@ -18,7 +18,7 @@ In project applications (.4DProject or .4dz files), 4D users and groups can be c
 | Identification de l'utilisateur                                                 | non (tous les utilisateurs sont des Super_Utilisateur)  | oui       |
 | Contrôle d'accès une fois qu'un mot de passe a été affecté au Super_Utilisateur | non (tous les accès sont accordés au Super_Utilisateur) | oui       |
 
-> For information about user identification and access control in single-user deployments, see [this paragraph](overview.md#access-control-in-single-user-applications).
+> Pour obtenir des informations sur l'identification des utilisateurs et le contrôle des accès pour les déploiements monoposte, reportez-vous à [ce paragraphe](overview.md#access-control-in-single-user-applications).
 
 ## Super_Utilisateur et Administrateur
 
@@ -56,7 +56,7 @@ L'éditeur des utilisateurs se trouve dans la boîte à outils de 4D.
 
 ![](assets/en/Users/editor.png)
 
-> Users and groups editor can be displayed at runtime using the [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html) command. The whole users and groups configuration can also be edited during application execution using 4D language commands of the `Users and Groups` theme.
+> L'éditeur des utilisateurs et des groupes peut être affiché au moment de l'exécution à l'aide de la commande [EDIT ACCESS](https://doc.4d.com/4dv19R/help/command/en/page281.html). Toute la configuration des utilisateurs et des groupes peut également être modifiée pendant l'exécution de l'application à l'aide des commandes du langage 4D du thème `Utilisateurs et groupes`.
 
 ### Ajouter et modifier des utilisateurs
 
@@ -174,27 +174,27 @@ Un tel système hiérarchique rend aisée l’affectation d’un utilisateur à 
 
 ## Définition des accès aux groupes
 
-Groups are assigned access privileges to specific parts or features of the application:
+Les groupes se voient attribuer des privilèges d'accès à des parties ou des fonctionnalités spécifiques de l'application :
 
-- Design and Runtime Explorer access,
-- HTTP server,
-- REST server,
-- SQL server.
+- Accès à l'environnement de Développement et à l'Explorateur d'exécution,
+- Serveur HTTP,
+- Serveur REST,
+- Serveur SQL.
 
-These accesses are defined in the Settings dialog. L'exemple suivant présente les droits d'accès à l'explorateur d'exécution et au Développement assignés au groupe "Devs" :
+Ces accès sont définis dans la boîte de dialogue Paramètres. L'exemple suivant présente les droits d'accès à l'explorateur d'exécution et au Développement assignés au groupe "Devs" :
 
 ![](assets/en/Users/Access1.png)
 
-You also use groups to [distribute available licenses](#assigning-a-group-to-a-plug-in-or-to-a-server). This distribution is defined in the Groups editor.
+Vous utilisez également des groupes pour [distribuer les licences disponibles](#assigning-a-group-to-a-plug-in-or-to-a-server). Cette distribution est définie dans l'éditeur Groupes.
 
 ## Fichier directory.json
 
 Les utilisateurs, les groupes ainsi que leurs droits d'accès sont stockés dans un fichier spécifique du projet nommé **directory.json**.
 
-This file can be stored at the following locations, depending on your needs:
+Ce fichier peut être stocké aux emplacements suivants, en fonction de vos besoins :
 
-- If you want to use the same directory for all data files (or if you use a single data file), store the **directory.json** file in the user settings folder, i.e. in the "Settings" folder at the [same level as the "Project" folder](Project/architecture.md#project-folder) (default location).
-- If you want to use a specific directory file per data file, store the **directory.json** file in the data settings folder, i.e. in the ["Settings" folder of the "Data" folder](Project/architecture.md#settings). Si un fichier **directory.json** se trouve à cet emplacement, il est prioritaire par rapport au fichier du dossier Settings utilisateur. This custom/local Users and Groups configuration will left untouched by an application upgrade.
+- Si vous souhaitez utiliser le même répertoire pour tous les fichiers de données (ou si vous utilisez un seul fichier de données), stockez le fichier **directory.json** dans le dossier des paramètres utilisateur, c'est-à-dire dans le dossier "Settings" [au même niveau que le dossier "Project"](Project/architecture.md#project-folder) (emplacement par défaut).
+- Si vous souhaitez utiliser un fichier répertoire spécifique par fichier de données, stockez le fichier **directory.json** dans le dossier des paramètres des données, c'est-à-dire dans le dossier ["Settings" du dossier "Data"](Project/architecture.md#settings). Si un fichier **directory.json** se trouve à cet emplacement, il est prioritaire par rapport au fichier du dossier Settings utilisateur. Cette configuration personnalisée/locale des utilisateurs et des groupes ne sera pas modifiée par une mise à niveau de l'application.
 
-> If no password is assigned to the "Designer" user, the **directory.json** is not created.
+> Si aucun mot de passe n'est attribué au Super Utilisateur, le fichier **directory.json** n'est pas créé.
 
