@@ -859,6 +859,9 @@
       "ServerWindow/users": {
         "title": "Users Page"
       },
+      "settings/user-settings": {
+        "title": "User settings"
+      },
       "settings/backup": {
         "title": "Backup page"
       },
@@ -880,9 +883,6 @@
       "settings/interface": {
         "title": "Interface page"
       },
-      "settings/moving": {
-        "title": "Moving page"
-      },
       "settings/overview": {
         "title": "Overview"
       },
@@ -894,9 +894,6 @@
       },
       "settings/sql": {
         "title": "SQL page"
-      },
-      "settings/user-settings": {
-        "title": "User settings"
       },
       "settings/web": {
         "title": "Web page"
@@ -972,6 +969,7 @@
       "ORDA": "ORDA",
       "Class API Reference": "Class API Reference",
       "Debugging": "Debugging",
+      "Settings": "Settings",
       "Preferences": "Preferences",
       "4D Server Administration Window": "4D Server Administration Window",
       "Web Administration": "Web Administration",
@@ -992,7 +990,6 @@
       "Form Events": "Form Events",
       "Menus": "Menus",
       "Build application": "Build application",
-      "Settings": "Settings",
       "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }

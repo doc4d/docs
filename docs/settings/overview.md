@@ -16,7 +16,7 @@ You can access the Settings dialog box:
 -   by clicking **Settings** on the 4D toolbar
 -   on 4D Server, using the **Edit > Settings...** menu option
 
-When [**User settings** mode is enabled](./user-settings.md), **Settings...** is renamed **Structure Settings...** and two additional menu commands are available at each location:
+When [**User settings** mode is enabled](#user-settings), **Settings...** is renamed **Structure Settings...** and two additional menu commands are available at each location:
 
 -   **User Settings...** gives you access to settings that can be stored externally in a user file. If these are modified, they are used instead of structure settings.
 -   **User Settings for Data File...** gives you access to settings that can be stored externally in a user file attached to the current data file. If they are modified, they are used instead of user or structure settings.
@@ -57,7 +57,7 @@ This button resets all the parameters of the current page. It becomes active whe
 
 *   **Structure settings** mode: all settings are stored in the [*settings.4DSettings* file at the project level](../Project/architecture.md#sources) and are applied in all cases (default mode, suitable for development phase).
 
-*   [**User settings**](./user-settings.md) mode: part of the custom settings are stored in a *settings.4DSettings* file [in the Settings folder](../Project/architecture.md#settings-1) (for all data files) or [in the Data folder](../Project/architecture.md#settings) (for this data file) and are used instead of the structure settings. This mode is suitable for deployment phase. You enable this mode using an option located on the [Security page](./security.md) of the Settings. 
+*  **User settings** mode: part of the custom settings are stored in a *settings.4DSettings* file [in the Settings folder](../Project/architecture.md#settings-1) (for all data files) or [in the Data folder](../Project/architecture.md#settings) (for this data file) and are used instead of the structure settings. This mode is suitable for deployment phase. You enable this mode using an option located on the [Security page](./security.md) of the Settings. 
 
 By defining user settings, you can keep custom settings between updates of your 4D applications, or manage different settings for the same 4D application deployed on several different sites. It also makes it possible to use programming to manage setting files using XML.
 
@@ -107,7 +107,6 @@ The following table lists the pages of settings found in the **User Settings** a
 | [Compiler page](./compiler.md) | N/a | N/a |
 | [Database/Data storage page](./database.md#data-storage) | N/a | N/a |
 | [Database/Memory page](./database.md#memory) | Identical to standard settings | Identical to standard settings |
-| [Moving page](./moving.md) | N/a | N/a |
 | [Backup/Scheduler page](./backup.md#scheduler) | N/a | Identical to standard settings |
 | [Backup/Configuration page](./backup.md#configuration) | N/a | Identical to standard settings |
 | [Backup/Backup & Restore page](./backup.md/backup-restore) | N/a | Identical to standard settings |
