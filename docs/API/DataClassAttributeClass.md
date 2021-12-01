@@ -353,8 +353,6 @@ The `.name` property <!-- REF DataClassAttributeClass.name.Summary -->returns th
 
 The `.path` property <!-- REF DataClassAttributeClass.path.Summary -->returns the path of an alias attribute based upon a relation<!-- END REF -->.
 
-> This property is not returned for an alias attribute based upon another attribute of the same dataclass.  
-
 #### Example
 
 ```4d

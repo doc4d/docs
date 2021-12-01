@@ -135,6 +135,7 @@ Then you can get an entity selection of the "best" companies by executing:
 
 
 
+
 ```4d
 	var $best : cs.CompanySelection
 	$best:=ds.Company.GetBestOnes()
@@ -639,7 +640,7 @@ Function orderBy age($event : Object)-> $result : Text
 
 An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass. 
 
-Alias attributes bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details. 
+Alias attributes are particularly useful to handle N to N relations. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
 
 ### How to define alias attributes
 
@@ -653,7 +654,6 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 
 ```
 {exposed} Alias <attributeName> <targetPath>
-
 ```
 
 *attributeName* must comply with [standard rules for property names](Concepts/identifiers.html#object-properties). 
@@ -662,14 +662,14 @@ You create an alias attribute in a dataclass by using the `Alias` keyword in the
 
 An alias can be used as a part of a path of another alias. 
 
-A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last level (i.e. "name" in the above path). Otherwise, an error is returned. 
+A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last level of the path, otherwise, an error is returned. For example, if "fullName" is a computed attribute, an alias with path "employee.fullName" is valid. 
 
 > ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
 
 
 ### Using alias attributes
 
-Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see the last example below). They can be used instead of their target attribute path in the following class functions:
+Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see the last example below). They can be used instead of their target attribute path in class functions such as:
 
 |Function|
 |----|
@@ -688,10 +688,13 @@ Alias attributes are read-only (except when based upon a scalar attribute of the
 |`entity.diff()`|
 |`entity.touchedAttributes()`|
 
+> Keep in mind that alias attributes are calculated on the server. In remote configurations, updating alias attributes in entities requires that entities are reloaded from the server. 
 
 ### Alias properties
 
-An alias attribute hinerits its data [`type`](../API/DataClassAttributeClass.md#type) property from the target attribute: 
+Alias attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "alias".  
+
+An alias attribute inherits its data [`type`](../API/DataClassAttributeClass.md#type) property from the target attribute: 
 
 - if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "storage", the alias data type is of the same type,
 - if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is of the `4D.Entity` or `4D.EntitySelection` type ("*classname*Entity" or "*classname*Selection"). 
@@ -760,7 +763,13 @@ ds.Student.query("teachers.name = :1";"Smith")
 
 // Find teachers who have M. Martin as Student
 ds.Teacher.query("students.name = :1";"Martin")
+// Note that this very simple query string processes a complex 
+// query including a double join, as you can see in the queryPlan:   
+// "Join on Table : Course  :  Teacher.ID = Course.teacherID,    
+//  subquery:[ Join on Table : Student  :  Course.studentID = Student.ID,
+//  subquery:[ Student.name === Martin]]"
 ```
+
 
 You can also edit the value of the *courseName* alias:
 
