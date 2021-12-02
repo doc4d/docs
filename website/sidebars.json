@@ -99,7 +99,6 @@
 		],
 		"Settings": [
 			"settings/overview",
-			"settings/user-settings",
 			"settings/general",
 			"settings/interface",
 			"settings/compiler",
