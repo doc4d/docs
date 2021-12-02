@@ -134,7 +134,7 @@ Attachment objects are defined through the [`MAIL New attachment`](MailAttachmen
 
 #### Descripción
 
-The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc.Summary -->Blind Carbon Copy (BCC) hidden email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+La propiedad `.bcc` contiene la <!-- REF #EmailObjectClass.bcc.Summary -->copia carbón invisible (BCC) de las [dirección(es) ](#email-addresses)de los destinatarios del correo electrónico<!-- END REF -->.
 
 
 
@@ -147,7 +147,7 @@ The `.bcc` property contains the <!-- REF #EmailObjectClass.bcc.Summary -->Blind
 
 #### Descripción
 
-The `.bodyStructure` property contains the <!-- REF #EmailObjectClass.bodyStructure.Summary -->*EmailBodyPart* object, i.e. the full MIME structure of the message body (optional)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
+La propiedad `.bodyStructure` contiene el objeto <!-- REF #EmailObjectClass.bodyStructure.Summary -->*EmailBodyPart*, es decir, la estructura MIME completa del cuerpo del mensaje (opcional)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
 
 The `.bodyStructure` object contains the following properties:
 
