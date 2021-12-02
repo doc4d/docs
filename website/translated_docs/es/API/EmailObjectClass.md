@@ -151,17 +151,17 @@ La propiedad `.bodyStructure` contiene el objeto <!-- REF #EmailObjectClass.body
 
 El objeto `.bodyStructure` contiene las siguientes propiedades:
 
-| Propiedad   | Tipo                  | Valor                                                                                                                                                   |
-| ----------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| partID      | Texto                 | Identifies the part uniquely within the email                                                                                                           |
-| type        | Texto                 | (mandatory) Value of the Content-Type header field of the part                                                                                          |
-| charset     | Texto                 | Value of the charset parameter of the Content-Type header field                                                                                         |
-| encoding    | Texto                 | If `isEncodingProblem=true`, the Content-Transfer-Encoding value is added (by default undefined)                                                        |
-| disposition | Texto                 | Value of the Content-Disposition header field of the part                                                                                               |
-| lenguaje    | Colección de textos   | List of language tags, as defined in [RFC3282](https://tools.ietf.org/html/rfc3282), in the Content-Language header field of the part, if present.      |
-| location    | Texto                 | URI, as defined in [RFC2557](https://tools.ietf.org/html/rfc2557), in the Content-Location header field of the part, if present.                        |
-| subParts    | Collection of objects | Body parts of each child (collection of *EmailBodyPart* objects)                                                                                        |
-| headers     | Collection of objects | List of all header fields in the part, in the order they appear in the message (collection of *EmailHeader* objects, see [headers](#headers-) property) |
+| Propiedad   | Tipo                  | Valor                                                                                                                                                                           |
+| ----------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| partID      | Texto                 | Identifica la parte de manera única dentro del correo electrónico                                                                                                               |
+| type        | Texto                 | (obligatorio) Valor del campo del encabezado Content-Type de la parte                                                                                                           |
+| charset     | Texto                 | Valor del parámetro charset del campo del encabezado Content-Type                                                                                                               |
+| encoding    | Texto                 | Si `isEncodingProblem=true`, se añade el valor Content-Transfer-Encoding (por defecto indefinido)                                                                               |
+| disposition | Texto                 | Valor del campo del encabezado Content-Disposition de la parte                                                                                                                  |
+| lenguaje    | Colección de textos   | Lista de etiquetas de lenguaje, como se define en la [RFC3282](https://tools.ietf.org/html/rfc3282), en el campo del encabezado Content-Language de la parte, si está presente. |
+| location    | Texto                 | URI, como se define en la [RFC2557](https://tools.ietf.org/html/rfc2557), en el campo del encabezado Content-Location de la parte, si está presente.                            |
+| subParts    | Collection of objects | Partes del cuerpo de cada hijo (colección de objetos *EmailBodyPart*)                                                                                                           |
+| headers     | Collection of objects | Lista de todos los campos del encabezado de la parte, en el orden en que aparecen en el mensaje (colección de objetos *EmailHeader*, ver la propiedad [headers](#headers-))     |
 
 
 
@@ -174,14 +174,14 @@ El objeto `.bodyStructure` contiene las siguientes propiedades:
 
 #### Descripción
 
-The `.bodyValues` property contains the <!-- REF #EmailObjectClass.bodyValues.Summary -->*EmailBodyValue* object, containing an object for each \<partID\> of `bodyStructure` (optional)<!-- END REF -->. See [Handling body part](#handling-body-part) section.
+La propiedad `.bodyValues` contiene el objeto <!-- REF #EmailObjectClass.bodyValues.Summary -->*EmailBodyValue*, que contiene un objeto para cada \<partID\> de `bodyStructure` (opcional)<!-- END REF -->. Ver la sección [Gestión del cuerpo](#handling-body-part).
 
-The `.bodyValues` object contains the following properties:
+El objeto `.bodyValues` contiene las siguientes propiedades:
 
-| Propiedad                  | Tipo     | Valor                                                                                                                                        |
-| -------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| *partID*.value             | texto    | Valor de la parte del cuerpo                                                                                                                 |
-| *partID*.isEncodingProblem | booleano | True if malformed sections are found while decoding the charset, or unknown charset, or unknown content transfer-encoding. Falso por defecto |
+| Propiedad                  | Tipo     | Valor                                                                                                                                                                                                         |
+| -------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| *partID*.value             | texto    | Valor de la parte del cuerpo                                                                                                                                                                                  |
+| *partID*.isEncodingProblem | booleano | True si se encuentran secciones malformadas al decodificar el conjunto de caracteres, o el conjunto de caracteres desconocido, o la codificación de transferencia de contenido desconocida. Falso por defecto |
 
 
 
@@ -194,7 +194,7 @@ The `.bodyValues` object contains the following properties:
 
 #### Descripción
 
-The `.cc` property contains the <!-- REF #EmailObjectClass.cc.Summary -->Carbon Copy (CC) additional email recipient [addresse(s)](#email-addresses) of the email<!-- END REF -->.
+La propiedad `.cc` contiene la <!-- REF #EmailObjectClass.cc.Summary -->Carbon Copy (CC) adicional del destinatario del correo electrónico [addresse(s)](#email-addresses) del correo electrónico<!-- END REF -->.
 
 
 
@@ -209,11 +209,11 @@ The `.cc` property contains the <!-- REF #EmailObjectClass.cc.Summary -->Carbon 
 
 #### Descripción
 
-The `.comments` property contains an <!-- REF #EmailObjectClass.comments.Summary -->additional comments header<!-- END REF -->.
+La propiedad `.comments` contiene un <!-- REF #EmailObjectClass.comments.Summary -->encabezado de comentarios adicionales<!-- END REF -->.
 
-Comments only appear within the header section of the message (keeping the message's body untouched).
+Los comentarios sólo aparecen en la sección del encabezado del mensaje (manteniendo el cuerpo del mensaje intacto).
 
-For specific formatting requirements, please consult the [RFC#5322](https://tools.ietf.org/html/rfc5322).
+Para conocer los requisitos específicos de formato, consulte la [RFC#5322](https://tools.ietf.org/html/rfc5322).
 
 
 
@@ -226,7 +226,7 @@ For specific formatting requirements, please consult the [RFC#5322](https://tool
 
 #### Descripción
 
-The `.from` property contains the <!-- REF #EmailObjectClass.from.Summary -->Originating [address(es)](#email-addresses) of the email<!-- END REF -->.
+La propiedad `.from` contiene las <!-- REF #EmailObjectClass.from.Summary -->[Dirección(es)](#email-addresses) de origen del correo electrónico<!-- END REF -->.
 
 
 Each email you send out has both the [sender](#sender) and **from** addresses:
