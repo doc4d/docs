@@ -16,7 +16,7 @@ You can access the Settings dialog box:
 -   by clicking **Settings** on the 4D toolbar
 -   on 4D Server, using the **Edit > Settings...** menu option
 
-When [**User settings** mode is enabled](#user-settings), **Settings...** is renamed **Structure Settings...** and two additional menu commands are available at each location:
+When [**User settings** mode is enabled](../Desktop/user-settings.md), **Settings...** is renamed **Structure Settings...** and two additional menu commands are available at each location:
 
 -   **User Settings...** gives you access to settings that can be stored externally in a user file. If these are modified, they are used instead of structure settings.
 -   **User Settings for Data File...** gives you access to settings that can be stored externally in a user file attached to the current data file. If they are modified, they are used instead of user or structure settings.

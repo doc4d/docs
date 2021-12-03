@@ -74,6 +74,8 @@ class Index extends React.Component {
       plug: <translate>Developing Plugins</translate>,
       working: <translate>Working with a project</translate>,
       settings: <translate>Settings</translate>,
+      usersettings: <translate>User Settings</translate>,
+
     };
 
     return (
@@ -153,6 +155,7 @@ class Index extends React.Component {
 				  [${subContents.formObjectProperties}](${siteConfig.baseUrl}${this.props.language}/FormObjects/propertiesReference.html)<br>
 				  [${subContents.events}](${siteConfig.baseUrl}${this.props.language}/Events/overview.html)<br>
 				  [${subContents.menus}](${siteConfig.baseUrl}${this.props.language}/Menus/overview.html)<br>
+				  [${subContents.usersettings}](${siteConfig.baseUrl}${this.props.language}/Desktop/user-settings.html)<br>
 				  [${subContents.buildApp}](${siteConfig.baseUrl}${this.props.language}/Desktop/building.html)`,
                   //image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,
                   image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,

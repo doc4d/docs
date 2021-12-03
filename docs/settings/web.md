@@ -38,7 +38,7 @@ Allows you to modify the TCP/IP port number used by the Web server for secured H
 
 #### Allow database access through 4DSYNC URLs
 
-**Compatibility Note**: This option is [deprecated](../WebServer/webServerConfig.md#deprecated-settings). For database access through HTTP, it is now recommended to use ORDA remote datastore features and REST requests.
+*Compatibility Note*: This option is [deprecated](../WebServer/webServerConfig.md#deprecated-settings). For database access through HTTP, it is now recommended to use ORDA remote datastore features and REST requests.
 
 
 ### Paths
@@ -98,9 +98,9 @@ In this mode, you can configure additional web server setttings:
 
 #### Legacy sessions (single process sessions)
 
-*Compatibility Note:* This option is only available in databases/projects created with a 4D version prior to 4D v18 R6.*
+*Compatibility Note:* This option is only available in databases/projects created with a 4D version prior to 4D v18 R6.
 
-This option enables the handling of legacy user sessions by the 4D HTTP server. This mechanism is described in the [Web Sessions Management (Legacy)](https://doc.4d.com/4Dv19/4D/19/Web-Sessions-Management-Legacy.300-5391806.en.html) section. See [Keep Session](../WebServer/webServerConfig.md#keep-session)
+This option enables the handling of legacy user sessions by the 4D HTTP server. This mechanism is described in the [Web Sessions Management (Legacy)](https://doc.4d.com/4Dv19/4D/19/Web-Sessions-Management-Legacy.300-5391806.en.html) section. See [Keep Session](../WebServer/webServerConfig.md#keep-session).
 
 When selected, the [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts) option is automatically checked (and locked).
 
@@ -113,16 +113,15 @@ Strictly high limit of concurrent web processes. See [Maximum Concurrent Web Pro
 
 #### Reuse Temporary Contexts
 
+Not available with [scalable sessions](../WebServer/sessions.md).
 
-Allows you to optimize the operation of the 4D Web server in remote mode. See [Deprecated Settings](../WebServer/webServerConfig.md#reuse-temporary-contexts-in-remote-mode).
+Allows you to optimize the operation of the 4D Web server in remote mode. See [Reuse temporary contexts in remote mode)](../WebServer/webServerConfig.md#reuse-temporary-contexts-in-remote-mode).
 
 #### Use preemptive processes  
 
 Not available with [scalable sessions](../WebServer/sessions.md). 
 
-Enables preemptive web processes in your compiled applications.
-
-When **Use preemptive processes** is selected, the eligibility of your web-related code (including 4D tags and web database methods) to the preemptive execution will be evaluated during the compilation. For more information, see [Using preemptive Web processes](../WebServer/preemptiveWeb.md).
+Enables preemptive web processes in your compiled applications. When **Use preemptive processes** is selected, the eligibility of your web-related code (including 4D tags and web database methods) to the preemptive execution will be evaluated during the compilation. For more information, see [Using preemptive Web processes](../WebServer/preemptiveWeb.md).
 
 **Note:** This option does not apply to Web service processes (server or client). Preemptive mode is supported by Web service processes at method level: you just have to select "Can be run in preemptive processes" property for published SOAP server methods (see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler. 
 

@@ -390,6 +390,9 @@
 			"Menus/bars",
 			"Menus/sdi"
 		],
+		"User Settings": [
+			"Desktop/user-settings"
+		],
 		"Build application": [
 			"Desktop/building"
 		]

@@ -225,6 +225,9 @@
       "Desktop/clientServer": {
         "title": "Client/Server Management"
       },
+      "Desktop/user-settings": {
+        "title": "User Settings"
+      },
       "Events/onActivate": {
         "title": "On Activate"
       },
@@ -859,9 +862,6 @@
       "ServerWindow/users": {
         "title": "Users Page"
       },
-      "settings/user-settings": {
-        "title": "User settings"
-      },
       "settings/backup": {
         "title": "Backup page"
       },
@@ -989,6 +989,7 @@
       "Form Object Properties": "Form Object Properties",
       "Form Events": "Form Events",
       "Menus": "Menus",
+      "User Settings": "User Settings",
       "Build application": "Build application",
       "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
@@ -1032,6 +1033,7 @@
     "Developing Plugins|no description given": "Developing Plugins",
     "Working with a project|no description given": "Working with a project",
     "Settings|no description given": "Settings",
+    "User Settings|no description given": "User Settings",
     "Getting started|no description given": "Getting started",
     "Core Development|no description given": "Core Development",
     "Administration|no description given": "Administration",
