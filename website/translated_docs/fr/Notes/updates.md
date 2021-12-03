@@ -8,7 +8,8 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 
 ## 4D v19 R4
 
-- Chapitre [4D View Pro](ViewPro/getting-started.md) ajouté avec de nouvelles commandes : [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
+- [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
+- [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
 
 ## 4D v19 R3
 

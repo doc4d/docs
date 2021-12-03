@@ -248,7 +248,7 @@ In the `mailObj` parameter, pass an Email object. For a comprehensive descriptio
 
 The optional `destinationBox` parameter lets you pass the name of a mailbox where the `mailObj` will be appended. If omitted, the current mailbox is used.
 
-In the optional `options` parameter, you can pass an object to define the charset and encoding for specific parts of the email. Available properties:
+In the optional `options` parameter, you can pass an object to define the charset and encoding for specific parts of the email. Propriétés disponibles :
 
 | Propriété     | Type  | Description                                                                                                                                                                            |
 | ------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1019,6 +1019,7 @@ The optional *options* parameter allows you pass an object defining additional i
 
 #### Résultat
 
+
 `.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object) with the following specific IMAP properties: *id*, *receivedAt*, and *size*.
 
 #### Exemple
@@ -1117,8 +1118,7 @@ The optional *options* parameter allows you to define the parts of the messages 
 | Propriété | Type       | Description                                                                                                                        |
 | --------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | liste     | Collection | Collection of [`Email` objects](EmailObjectClass.md#email-object). If no Email objects are found, an empty collection is returned. |
-
-|notFound |Collection| Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.|
+| notFound  | Collection | Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.                       |
 
 
 #### Exemple
@@ -1601,7 +1601,7 @@ End if
 <!-- REF #IMAPTransporterClass.searchMails().Params -->
 | Paramètres     | Type       |    | Description                   |
 | -------------- | ---------- |:--:| ----------------------------- |
-| searchCriteria | Texte      | -> | Search criteria               |
+| searchCriteria | Texte      | -> | Critère(s) de recherche       |
 | Résultat       | Collection | <- | Collection of message numbers |
 <!-- END REF -->
 

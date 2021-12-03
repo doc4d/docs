@@ -75,6 +75,7 @@ class Index extends React.Component {
       working: <translate>Working with a project</translate>,
       settings: <translate>Settings</translate>,
       usersettings: <translate>User Settings</translate>,
+	    langUrl: <translate>https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html</translate>
 
     };
 
@@ -97,7 +98,7 @@ class Index extends React.Component {
                 {
                   content: `[${subContents.projectDatabases}](${siteConfig.baseUrl}${this.props.language}/Project/overview.html)<br>
                   [${subContents.languageConcepts}](${siteConfig.baseUrl}${this.props.language}/Concepts/about.html)<br>
-				  [${subContents.langRef}](https://doc.4d.com/4Dv19/4D/19/4D-Language-Reference.100-5391516.en.html)<br>
+				  [${subContents.langRef}](${subContents.langUrl})<br>
                   [${subContents.ORDA}](${siteConfig.baseUrl}${this.props.language}/ORDA/overview.html)<br>
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>

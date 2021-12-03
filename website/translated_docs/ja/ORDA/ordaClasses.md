@@ -26,7 +26,7 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 - 構造が発展した場合には影響を受ける関数を適応させるだけで、クライアントアプリケーションは引き続き透過的にそれらを呼び出すことができます。
 
-- デフォルトでは、データモデルクラス関数は ([計算属性関数](#計算属性) を含め) すべて、リモートアプリケーションに対して **非公開** に設定されており、RESTリクエストで呼び出すことはできません。 公開する関数は [`exposed`](#公開vs非公開関数) キーワードによって明示的に宣言する必要があります。
+- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes)) and [alias attributes](XXX) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function and alias with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
 
 ![](assets/en/ORDA/api.png)
 
@@ -54,7 +54,7 @@ ORDA データモデルクラスはすべて **`cs`** クラスストアのプ�
 ORDA データモデルユーザークラスのオブジェクトインスタンスは、それらの親クラスのプロパティや関数を使うことができます:
 
 - Datastore クラスオブジェクトは、[ORDA Datastore 汎用クラス](API/DataStoreClass.md) の関数を呼び出すことができます。
-- Datastore クラスオブジェクトは、[ORDA DataClass 汎用クラス](API/DataClassClass.md) の関数を呼び出すことができます。
+- DataClass クラスオブジェクトは、[ORDA DataClass 汎用クラス](API/DataClassClass.md) の関数を呼び出すことができます。
 - EntitySelection クラスオブジェクトは [ORDA EntitySelection 汎用クラス](API/EntitySelectionClass.md) の関数を呼び出すことができます。
 - Entity クラスオブジェクトは [ORDA Entity 汎用クラス](API/EntityClass.md) の関数を呼び出すことができます。
 
@@ -66,6 +66,8 @@ ORDA データモデルユーザークラスのオブジェクトインスタン
 
 | バージョン  | 内容                                                                   |
 | ------ | -------------------------------------------------------------------- |
+| v19 R4 | Alias attributes in the Entity Class                                 |
+| v19 R3 | Computed attributes in the Entity Class                              |
 | v18 R5 | データモデルクラス関数は、デフォルトでは REST に公開されません。 新しい `exposed` および `local` キーワード。 |
 </details>
 
@@ -127,6 +129,10 @@ Function GetBestOnes()
 ```
 
 全会社データから平均以上の会社データをエンティティセレクションに抽出するには次を実行します:
+
+
+
+
 
 ```4d
     var $best : cs.CompanySelection
@@ -216,6 +222,8 @@ ORDA で公開されるテーブル毎に、Entity クラスが `cs` クラス�
 - **クラス名**: *DataClassName*Entity (*DataClassName* はテーブル名です)
 - **例**: cs.CityEntity
 
+#### 計算属性
+
 Entity クラスでは、専用のキーワードを使用して **計算属性** を定義することができます:
 
 - `Function get` *attributeName*
@@ -223,12 +231,21 @@ Entity クラスでは、専用のキーワードを使用して **計算属性*
 - `Function query` *attributeName*
 - `Function orderBy` *attributeName*
 
-詳細については、[計算属性](#計算属性) を参照してください。
+For information, please refer to the [Computed attributes](#computed-attributes) section.
+
+#### Alias attributes
+
+Entity classes allow you to define **alias attributes**, usually over related attributes, using the `Alias` keyword:
+
+`Alias` *attributeName* *targetPath*
+
+For information, please refer to the [Alias attributes](#alias-attributes) section.
+
 
 #### 例題
 
 ```4d
-// cs.CityEntity クラス
+// cs.CityEntity class
 
 Class extends Entity
 
@@ -236,9 +253,8 @@ Function getPopulation()
     $0:=This.zips.sum("population")
 
 
-Function isBigCity
-C_BOOLEAN($0)
-// 関数 getPopulation() をクラス内で使用することができます
+Function isBigCity(): Boolean
+// The getPopulation() function is usable inside the class
 $0:=This.getPopulation()>50000
 ```
 
@@ -272,12 +288,12 @@ End if
 
 ### プリエンプティブ実行
 
-When compiled, data model class functions are executed:
+コンパイル済みの状態では、データモデルクラス関数は次のように実行されます:
 
-- in **preemptive or cooperative processes** (depending on the calling process) in single-user applications,
-- in **preemptive processes** in client/server applications (except if the [`local`](#local-functions) keyword is used, in which case it depends on the calling process like in single-user).
+- シングルユーザーアプリケーションでは、**プリエンプティブまたはコオペラティブプロセス** で実行されます (呼び出し元のプロセスに依存します)。
+- クライアント/サーバーアプリケーションでは、**プリエンプティブプロセス** で実行されます (ただし、[`local`](#local-functions) キーワードが使用されている場合は、シングルユーザーの場合と同様に、呼び出し元プロセスに依存します)。
 
-If your project is designed to run in client/server, make sure your data model class function code is thread-safe. If thread-unsafe code is called, an error will be thrown at runtime (no error will be thrown at compilation time since cooperative execution is supported in single-user applications).
+クライアント/サーバーで動作するように設計されているプロジェクトでは、データモデルクラス関数のコードがスレッドセーフであることを確認してください。 スレッドセーフでないコードが呼び出された場合、実行時にエラーが発生します (シングルユーザーアプリケーションではコオペラティブ実行がサポートされているため、コンパイル時にはエラーが発生しません)。
 
 
 ## 計算属性
@@ -332,12 +348,12 @@ If your project is designed to run in client/server, make sure your data model c
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                |
-| ------------- | ----- | ------------------------------------------------- |
-| attributeName | テキスト  | 計算属性の名称                                           |
-| dataClassName | テキスト  | データクラスの名称                                         |
-| kind          | テキスト  | "get"                                             |
-| result        | バリアント | 任意。 スカラー属性が Null を返すようにするには、このプロパティを Null値で追加します。 |
+| プロパティ         | タイプ     | 説明                                                |
+| ------------- | ------- | ------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                           |
+| dataClassName | Text    | データクラスの名称                                         |
+| kind          | Text    | "get"                                             |
+| result        | Variant | 任意。 スカラー属性が Null を返すようにするには、このプロパティを Null値で追加します。 |
 
 
 #### 例題
@@ -393,12 +409,12 @@ Function get coWorkers($event : Object)-> $result: cs.EmployeeSelection
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明               |
-| ------------- | ----- | ---------------- |
-| attributeName | テキスト  | 計算属性の名称          |
-| dataClassName | テキスト  | データクラスの名称        |
-| kind          | テキスト  | "set"            |
-| value         | バリアント | 計算属性によって処理されるべき値 |
+| プロパティ         | タイプ     | 説明               |
+| ------------- | ------- | ---------------- |
+| attributeName | Text    | 計算属性の名称          |
+| dataClassName | Text    | データクラスの名称        |
+| kind          | Text    | "set"            |
+| value         | Variant | 計算属性によって処理されるべき値 |
 
 #### 例題
 
@@ -430,10 +446,10 @@ Function query <attributeName>($event : Object) -> $result : Object
     - *$result* がテキストの場合、それは有効なクエリ文字列でなければなりません。
     - *$result* がオブジェクトの場合、次の 2つのプロパティを含まなければなりません:
 
-    | プロパティ              | タイプ    | 説明                                  |
-    | ------------------ | ------ | ----------------------------------- |
-    | $result.query      | テキスト   | プレースホルダー (:1, :2, など) を使った有効なクエリ文字列 |
-    | $result.parameters | コレクション | プレースホルダーに渡す値                        |
+    | プロパティ              | タイプ        | 説明                                  |
+    | ------------------ | ---------- | ----------------------------------- |
+    | $result.query      | Text       | プレースホルダー (:1, :2, など) を使った有効なクエリ文字列 |
+    | $result.parameters | Collection | プレースホルダーに渡す値                        |
 
 `query` 関数は、計算属性を使用するクエリが開始されるたびに実行されます。 インデックス付きの属性を利用することで、クエリをカスタマイズしたり最適化したりすることができます。 計算属性に対して `query` 関数が実装されていない場合、検索は常にシーケンシャルにおこなわれます (`get <AttributeName>` 関数によるすべての値の評価に基づきます)。
 
@@ -441,14 +457,14 @@ Function query <attributeName>($event : Object) -> $result : Object
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                                                                                                                                                                                                                                                                                              |
-| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| attributeName | テキスト  | 計算属性の名称                                                                                                                                                                                                                                                                                                                         |
-| dataClassName | テキスト  | データクラスの名称                                                                                                                                                                                                                                                                                                                       |
-| kind          | テキスト  | "query"                                                                                                                                                                                                                                                                                                                         |
-| value         | バリアント | 計算属性によって処理されるべき値                                                                                                                                                                                                                                                                                                                |
-| operator      | テキスト  | クエリ演算子 ([`query` クラス関数も参照ください](API/DataClassClass.md#query))。 とりうる値:<li>== (と等しい; @ はワイルドカード)</li><li>=== (と等しい; @ はワイルドカードでない)</li><li>!= (と等しくない; @ はワイルドカード)</li><li>!== (と等しくない; @ はワイルドカードでない)</li><li>&lt; (小さい)</li><li><= (less than or equal to)</li><li>&gt; (大きい)</li><li>&gt;= (以上)</li><li>IN (含まれる)</li><li>% (キーワードを含む)</li> |
-| result        | バリアント | 計算属性によって処理されるべき値。 4D がデフォルトクエリ (計算属性では常にシーケンシャル) を実行するようにしたい場合は、このプロパティに `Null` を渡します。                                                                                                                                                                                                                                          |
+| プロパティ         | タイプ     | 説明                                                                                                                                                                                                                                                                                                                              |
+| ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                                                                                                                                                                                                                                                                                                         |
+| dataClassName | Text    | データクラスの名称                                                                                                                                                                                                                                                                                                                       |
+| kind          | Text    | "query"                                                                                                                                                                                                                                                                                                                         |
+| value         | Variant | 計算属性によって処理されるべき値                                                                                                                                                                                                                                                                                                                |
+| operator      | Text    | クエリ演算子 ([`query` クラス関数も参照ください](API/DataClassClass.md#query))。 とりうる値:<li>== (と等しい; @ はワイルドカード)</li><li>=== (と等しい; @ はワイルドカードでない)</li><li>!= (と等しくない; @ はワイルドカード)</li><li>!== (と等しくない; @ はワイルドカードでない)</li><li>&lt; (小さい)</li><li><= (less than or equal to)</li><li>&gt; (大きい)</li><li>&gt;= (以上)</li><li>IN (含まれる)</li><li>% (キーワードを含む)</li> |
+| result        | Variant | 計算属性によって処理されるべき値。 4D がデフォルトクエリ (計算属性では常にシーケンシャル) を実行するようにしたい場合は、このプロパティに `Null` を渡します。                                                                                                                                                                                                                                          |
 
 > 関数が *$result* に値を返し、`$event.result` プロパティにも別の値が割り当てられている場合、`$event.result` が優先されます。
 
@@ -574,15 +590,15 @@ Function orderBy <attributeName>($event : Object)-> $result : Text
 
 *$event* パラメーターは、以下のプロパティが含みます:
 
-| プロパティ         | タイプ   | 説明                                                   |
-| ------------- | ----- | ---------------------------------------------------- |
-| attributeName | テキスト  | 計算属性の名称                                              |
-| dataClassName | テキスト  | データクラスの名称                                            |
-| kind          | テキスト  | "orderBy"                                            |
-| value         | バリアント | 計算属性によって処理されるべき値                                     |
-| operator      | テキスト  | "desc" または "asc" (デフォルト)                             |
-| descending    | ブール   | 降順の場合は `true`, 昇順の場合は `false`                        |
-| result        | バリアント | 計算属性によって処理されるべき値。 4D にデフォルトソートを実行させるには、`Null` を渡します。 |
+| プロパティ         | タイプ     | 説明                                                   |
+| ------------- | ------- | ---------------------------------------------------- |
+| attributeName | Text    | 計算属性の名称                                              |
+| dataClassName | Text    | データクラスの名称                                            |
+| kind          | Text    | "orderBy"                                            |
+| value         | Variant | 計算属性によって処理されるべき値                                     |
+| operator      | Text    | "desc" または "asc" (デフォルト)                             |
+| descending    | Boolean | 降順の場合は `true`, 昇順の場合は `false`                        |
+| result        | Variant | 計算属性によって処理されるべき値。 4D にデフォルトソートを実行させるには、`Null` を渡します。 |
 
 > `operator` と `descending` プロパティのどちらを使っても構いません。 これは、基本的にプログラミングのスタイルの問題です (例題参照)。
 
@@ -623,10 +639,158 @@ Function orderBy age($event : Object)-> $result : Text
 ```
 
 
+## Alias attributes
+
+### 概要
+
+An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass.
+
+Alias attributes are particularly useful to handle N to N relations. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
+
+### How to define alias attributes
+
+You create an alias attribute in a dataclass by using the `Alias` keyword in the [**entity class**](#entity-class) of the dataclass.
+
+
+### `Alias <attributeName> <targetPath>`
+
+
+#### シンタックス
+
+```
+{exposed} Alias <attributeName> <targetPath>
+```
+
+*attributeName* must comply with [standard rules for property names](Concepts/identifiers.html#object-properties).
+
+*targetPath* is an attribute path containing one or more levels, such as "employee.company.name". If the target attribute belongs to the same dataclass, *targetPath* is the attribute name.
+
+An alias can be used as a part of a path of another alias.
+
+A [computed attribute](#computed-attributes) can be used in an alias path, but only as the last level of the path, otherwise, an error is returned. For example, if "fullName" is a computed attribute, an alias with path "employee.fullName" is valid.
+
+> ORDA alias attributes are **not exposed** by default. You must add the [`exposed`](#exposed-vs-non-exposed-functions) keyword before the `Alias` keyword if you want the alias to be available to remote requests.
+
+
+### Using alias attributes
+
+Alias attributes are read-only (except when based upon a scalar attribute of the same dataclass, see the last example below). They can be used instead of their target attribute path in class functions such as:
+
+| Function                                       |
+| ---------------------------------------------- |
+| `dataClass.query()`, `entitySelection.query()` |
+| `entity.toObject()`                            |
+| `entitySelection.toCollection()`               |
+| `entitySelection.extract()`                    |
+| `entitySelection.orderBy()`                    |
+| `entitySelection.orderByFormula()`             |
+| `entitySelection.average()`                    |
+| `entitySelection.count()`                      |
+| `entitySelection.distinct()`                   |
+| `entitySelection.sum()`                        |
+| `entitySelection.min()`                        |
+| `entitySelection.max()`                        |
+| `entity.diff()`                                |
+| `entity.touchedAttributes()`                   |
+
+> Keep in mind that alias attributes are calculated on the server. In remote configurations, updating alias attributes in entities requires that entities are reloaded from the server.
+
+### Alias properties
+
+Alias attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "alias".
+
+An alias attribute inherits its data [`type`](../API/DataClassAttributeClass.md#type) property from the target attribute:
+
+- if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "storage", the alias data type is of the same type,
+- if the target attribute [`kind`](../API/DataClassAttributeClass.md#kind) is "relatedEntity" or "relatedEntities", the alias data type is of the `4D.Entity` or `4D.EntitySelection` type ("*classname*Entity" or "*classname*Selection").
+
+Alias attributes based upon relations have a specific [`path`](../API/DataClassAttributeClass.md#path) property, containing the path of their target attributes. Alias attributes based upon attributes of the same dataclass have the same properties as their target attributes (and no `path` property).
+
+
+### 例題
+
+Considering the following model:
+
+![](assets/en/ORDA/alias1.png)
+
+In the Teacher dataclass, an alias attribute returns all students of a teacher:
+
+```4d
+// cs.TeacherEntity class
+
+Class extends Entity
+
+Alias students courses.student //relatedEntities 
+```
+
+In the Student dataclass, an alias attribute returns all teachers of a student:
+
+```4d
+// cs.StudentEntity class
+
+Class extends Entity
+
+Alias teachers courses.teacher //relatedEntities 
+```
+
+In the Course dataclass:
+
+- an alias attribute returns another label for the "name" attribute
+- an alias attribute returns the teacher name
+- an alias attribute returns the student name
+
+
+```4d
+// cs.CourseEntity class
+
+Class extends Entity
+
+Exposed Alias courseName name //scalar 
+Exposed Alias teacherName teacher.name //scalar value
+Exposed Alias studentName student.name //scalar value
+
+```
+
+You can then execute the following queries:
+
+```4d
+// Find course named "Archaeology"
+ds.Course.query("courseName = :1";"Archaeology")
+
+// Find courses given by the professor Smith
+ds.Course.query("teacherName = :1";"Smith")
+
+// Find courses where Student "Martin" assists
+ds.Course.query("studentName = :1";"Martin")
+
+// Find students who have M. Smith as teacher 
+ds.Student.query("teachers.name = :1";"Smith")
+
+// Find teachers who have M. Martin as Student
+ds.Teacher.query("students.name = :1";"Martin")
+// Note that this very simple query string processes a complex 
+// query including a double join, as you can see in the queryPlan:   
+// "Join on Table : Course  :  Teacher.ID = Course.teacherID,    
+//  subquery:[ Join on Table : Student  :  Course.studentID = Student.ID,
+//  subquery:[ Student.name === Martin]]"
+```
+
+
+You can also edit the value of the *courseName* alias:
+
+```4d
+// Rename a course using its alias attribute
+$arch:=ds.Course.query("courseName = :1";"Archaeology")
+$arch.courseName:="Archaeology II"
+$arch.save() //courseName and name are "Archaeology II"
+```
+
+
+
 
 ## 公開vs非公開関数
 
-セキュリティ上の理由により、データモデルクラス関数はデフォルトですべて、リモートリクエストに対し **非公開** (つまりプライベート) に設定されています。
+For security reasons, all of your data model class functions and alias attributes are **not exposed** (i.e., private) by default to remote requests.
 
 リモートリクエストには次のものが含まれます:
 
@@ -783,6 +947,7 @@ ORDA データモデルユーザークラスは、クラスと同じ名称の .4
 各データモデルオブジェクトに関わるクラスは、4D によってあらかじめ自動的にメモリ内に作成されます。
 
 ![](assets/en/ORDA/ORDA_Classes-3.png)
+
 
 > 空の ORDA クラスは、デフォルトではエクスプローラーに表示されません。 表示するにはエクスプローラーのオプションメニューより **データクラスを全て表示** を選択します: ![](assets/en/ORDA/showClass.png)
 
