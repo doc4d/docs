@@ -5,6 +5,8 @@ title: Overview
 
 The Settings configure how the current project functions. These parameters may be different for each project. They include the listening ports, backup configurations, security options, Web parameters, etc.
 
+![](assets/en/settings/main.png)   
+
 > 4D provides another set of parameters, called **Preferences**, that apply to the 4D IDE application. For more information, refer to [Preferences](../Preferences/general.md).
 
 
