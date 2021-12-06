@@ -40,4 +40,4 @@ title: プラグインの開発
 
 ## プラグインの共有
 
-開発したプラグインを [GitHub](https://github.com/search?q=4d-plugin) などで公開し、4D開発者のコミュニティをサポートすることをお勧めします。
+開発したプラグインを [GitHub](https://github.com/topics/4d-plugin) で公開し、4D開発者のコミュニティをサポートすることをお勧めします。 We recommend that you use the **`4d-plugin`** topic to be correctly referenced.  
