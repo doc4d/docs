@@ -32,20 +32,21 @@ As well as a type, each value also has an inherent Boolean value, generally know
 
 The following values are **falsy** :
 
-false
-Null
-undefined
-Null object
-Null collection
-Null pointer
-Null picture
-Null date !00-00-00!
+* false
+* Null
+* undefined
+* Null object
+* Null collection
+* Null pointer
+* Null picture
+* Null date !00-00-00!
 
 All other values are considered **truthy**, including:
-0 - numeric zero (Integer or otherwise)
-"" - Empty strings
-[] - Empty collections
-{} - Empty arrays
+
+* 0 - numeric zero (Integer or otherwise)
+* "" - Empty strings
+* [] - Empty collections
+* {} - Empty arrays
 
 
 ## Logical operators
