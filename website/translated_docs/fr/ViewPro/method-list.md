@@ -142,28 +142,28 @@ Résultat :
 | Paramètres | Type        |    | Description                             |
 | ---------- | ----------- | -- | --------------------------------------- |
 | vpAreaName | Texte       | -> | Nom d'objet formulaire zone 4D View Pro |
-| index      | Entier long | -> | Index of the new sheet                  |
-| name       | Texte       | -> | Sheet name                              |	
+| index      | Entier long | -> | Indice de la nouvelle feuille           |
+| name       | Texte       | -> | Nom de la feuille                       |	
 <!-- END REF --> 
 
 #### Description
 
-The `VP ADD SHEET` command <!-- REF #_method_.VP ADD SHEET.Summary -->inserts a sheet in the document loaded in *vpAreaName*.<!-- END REF --> 
+La commande `VP ADD SHEET` <!-- REF #_method_.VP ADD SHEET.Summary -->insère une feuille dans le document chargé dans *vpAreaName*.<!-- END REF --> 
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
-In *index*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
-> Indexing starts at 0.
+Dans *index*, vous pouvez passer un index pour la nouvelle feuille. Si l'*index* passé est inférieur ou égal à 0, la commande insère la nouvelle feuille au début. Si l'*index* est supérieur au nombre de feuilles, la commande insère la nouvelle feuille après les feuilles existantes.
+> L'indexation démarre à 0.
 
-In *name*, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+Dans *name*, vous pouvez indiquer un nom pour la nouvelle feuille. Le nouveau nom ne peut pas contenir les caractères suivants : `*, :, [, ], ?,\,/`
 
 #### Exemple
 
-The document currently has 3 sheets:
+Le document comporte actuellement 3 feuilles :
 
 ![vp-document-with-3-sheets](assets/en/ViewPro/vp-sheet-3.png)
 
-To insert a sheet at the third position (index 2) and name it "March":
+Pour insérer une feuille à la troisième position (index 2) et la nommer "Mars" :
 
 ```4d
 VP ADD SHEET("ViewProArea";2;"March")
@@ -185,27 +185,27 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 #### Description
 
-The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of cells.
+La commande `VP ADD SPAN` combine les cellules de *objPlage* en une seule cellule fusionnée.
 
-In *rangeObj*, pass a range object of cells. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Note that if cell ranges overlap, only the first cell range is used.
+Dans *objPlage*, passez une plage de cellules. Les cellules de la plage sont jointes, afin de créer une cellule plus large qui s'étend sur plusieurs colonnes et/ou lignes. Vous pouvez passer plusieurs plages de cellules pour créer plusieurs fusions de cellules en même temps. A noter que si les plages de cellules se chevauchent, seule la première plage est utilisée.
 
-> - Only the data in the upper-left cell is displayed. Data in the other combined cells is hidden until the span is removed.
-> - Hidden data in spanned cells is accessible via formulas (beginning with the upper-left cell).
+> - Seules les données contenues dans la cellule supérieure gauche sont affichées. Les données des autres cellules combinées sont cachées jusqu'à ce que la fusion soit retirée.
+> - Les données masquées, contenues dans les cellules fusionnées, sont accessibles via des formules (commençant par la cellule supérieure gauche).
 
 #### Exemple
 
-To span the First quarter and Second quarter cells across the two cells beside them, and the South area cell across the two rows below it:
+Pour fusionner les cellules First quarter et Second quarter avec les deux cellules côte à côte, et de fusionner la cellule South area avec les deux lignes en-dessous :
 
 ![initial-document](assets/en/ViewPro/vp-add-span.png)
 
 ```4d
- // First quarter range
+ //  Plage First quarter
  $q1:=VP Cells("ViewProArea";2;3;3;1)
 
-  // Second quarter range
+// Plage Second quarter
  $q2:=VP Cells("ViewProArea";5;3;3;1)
 
-  // South area range
+  // Plage South area
  $south:=VP Cells("ViewProArea";0;5;1;3)
 
  VP ADD SPAN(VP Combine ranges($q1;$q2;$south))
@@ -221,19 +221,19 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 <!-- REF #_method_.VP ADD STYLESHEET.Params -->
 
-| Paramètres | Type        |    | Description                             |
-| ---------- | ----------- | -- | --------------------------------------- |
-| vpAreaName | Texte       | -> | Nom d'objet formulaire zone 4D View Pro |
-| styleName  | Texte       | -> | Name of style                           |
-| styleObj   | Objet       | -> | Object defining attribute settings      |
-| scope      | Entier long | -> | Target scope (default = current sheet)  |
+| Paramètres | Type   |    | Description                                    |
+| ---------- | ------ | -- | ---------------------------------------------- |
+| vpAreaName | Texte  | -> | Nom d'objet formulaire zone 4D View Pro        |
+| styleName  | Texte  | -> | Nom du style                                   |
+| styleObj   | Objet  | -> | Objet définissant les propriétés de l'attribut |
+| scope      | Entier | -> | Cible (par défaut = feuille courante)          |
 <!-- END REF -->  
 
 #### Description
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. If a style sheet with the same name and scope already exists in the document, this command will overwrite it with the new values.
+La commande `VP ADD STYLESHEET` <!-- REF #_method_.VP ADD STYLESHEET.Summary -->crée ou modifie la feuille de style *styleName* basée sur la combinaison de propriétés indiquées dans *styleObj* dans le document courant<!-- END REF -->. Si une feuille de style ayant le même nom et la même cible existe déjà dans le document, cette commande l'écrasera et le remplacera par les nouvelles valeurs.
 
-> Style sheets created by this command are saved with the document.
+> Les feuilles de style créées par cette commande sont sauvegardées avec le document.
 
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
@@ -1850,7 +1850,7 @@ Get the sheet count and set the current sheet to the last sheet:
 | Paramètres      | Type        |    | Description                             |
 | --------------- | ----------- | -- | --------------------------------------- |
 | vpAreaName      | Texte       | -> | Nom d'objet formulaire zone 4D View Pro |
-| name            | Texte       | -> | Sheet name                              |
+| name            | Texte       | -> | Nom de la feuille                       |
 | Function result | Entier long | <- | Sheet index                             |
 <!-- END REF --> 
 
@@ -1888,7 +1888,7 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
 | --------------- | ----------- | -- | --------------------------------------- |
 | vpAreaName      | Texte       | -> | Nom d'objet formulaire zone 4D View Pro |
 | sheet           | Entier long | -> | Sheet index                             |
-| Function result | Texte       | <- | Sheet name                              |
+| Function result | Texte       | <- | Nom de la feuille                       |
 <!-- END REF --> 
 
 #### Description
@@ -2028,8 +2028,8 @@ VP SET CELL STYLE($range;$style)
 | Paramètres | Type        |    | Description                             |
 | ---------- | ----------- | -- | --------------------------------------- |
 | vpAreaName | Texte       | -> | Nom d'objet formulaire zone 4D View Pro |
-| styleName  | Texte       | -> | Name of style                           |
-| scope      | Entier long | -> | Target scope (default = current sheet)  |
+| styleName  | Texte       | -> | Nom du style                            |
+| scope      | Entier long | -> | Cible (par défaut = feuille courante)   |
 | Résultat   | Objet       | <- | Style sheet object                      |
 <!-- END REF -->  
 
@@ -2077,7 +2077,7 @@ borderTop:{color:green,style:10}
 | Paramètres | Type        |    | Description                             |
 | ---------- | ----------- | -- | --------------------------------------- |
 | vpAreaName | Texte       | -> | Nom d'objet formulaire zone 4D View Pro |
-| scope      | Entier long | -> | Target scope (default = current sheet)  |
+| scope      | Entier long | -> | Cible (par défaut = feuille courante)   |
 | Résultat   | Collection  | <- | Collection of style sheet objects       |
 <!-- END REF -->  
 
@@ -2887,7 +2887,7 @@ Résultat :
 | ---------- | ----------- | -- | --------------------------------------- |
 | vpAreaName | Texte       | -> | Nom d'objet formulaire zone 4D View Pro |
 | styleName  | Texte       | -> | Name of style to remove                 |
-| scope      | Entier long | -> | Target scope (default = current sheet)  |
+| scope      | Entier long | -> | Cible (par défaut = feuille courante)   |
 
 <!-- END REF -->  
 
@@ -4264,7 +4264,7 @@ In *index*, pass the index of the sheet to rename.
 
 If no *index* is passed, the command renames the current sheet.
 
-The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+Le nouveau nom ne peut pas contenir les caractères suivants : `*, :, [, ], ?,\,/`
 
 The command does nothing if:
 

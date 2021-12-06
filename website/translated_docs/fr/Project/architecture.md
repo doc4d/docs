@@ -165,7 +165,7 @@ Le dossier Data contient le fichier de données ainsi que tous les fichiers et d
 
 Ce dossier contient des **fichiers de propriétés utilisateur des données** utilisés pour l'administration de l'application.
 
-> Ces paramètres ont la priorité sur les **[fichiers de propriétés utilisateur](#settings-folder-1)** et les fichiers de **[propriétés structure](#sources-folder)**.
+> These settings take priority over **[user settings files](#settings-1)** and **[structure settings](#sources)** files.
 
 | Contenu             | Description                                                                                                                                                                                                                                                                                    | Format |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
@@ -190,13 +190,14 @@ Le dossier Logs contient tous les fichiers journaux utilisés par le projet. Les
 
 Ce dossier contient des **fichiers de propriétés utilisateur** utilisés pour l'administration de l'application.
 
-> Ces paramètres ont la priorité sur les fichiers de **[propriétés structure](#sources-folder)**. Toutefois, si un **[fichier de paramètres utilisateur](#settings-folder)** existe, il est prioritaire par rapport au fichier des propriétés utilisateur.
+> These settings take priority over **[structure settings](#sources)** files. However, if a **[user settings file for data](#settings)** exists, it takes priority over user settings file.
 
 | Contenu             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                        | Format |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | directory.json      | Description des groupes et utilisateurs 4D pour l'application, ainsi que leurs droits d'accès                                                                                                                                                                                                                                                                                                                                                      | JSON   |
 | Backup.4DSettings   | Paramètres de sauvegarde de la base de données, utilisés pour définir les [options de sauvegarde](Backup/settings.md)) à chaque lancement de sauvegarde. Ce fichier peut également être utilisé pour lire ou définir des options supplémentaires, telles que la quantité d'informations stockées dans le *journal de sauvegarde*. Les clés concernant la configuration de la sauvegarde sont décrites dans le manuel *Sauvegarde des clés XML 4D*. | XML    |
 | BuildApp.4DSettings | Fichier de paramètres de génération, créé automatiquement lors de l'utilisation de la boîte de dialogue du générateur d'applications ou de la commande `BUILD APPLICATION`                                                                                                                                                                                                                                                                         | XML    |
+| settings.4DSettings | Custom settings for this project (all data files)                                                                                                                                                                                                                                                                                                                                                                                                  | XML    |
 
 
 ## `userPreferences.<userName>`
