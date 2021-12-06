@@ -92,7 +92,7 @@ The **&&** and **||** operators are **short circuit operators**. A short circuit
 
 The difference with the single **&** and **|** operators is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as truthy or falsy, then return one of the expressions.
 
-### Short-circuit AND (&&) operator
+### Short-circuit AND operator (&&)
 
 The rule is as follows: 
 
@@ -125,7 +125,7 @@ $tax:=$item.taxRate && ($item.price*$item.taxRate)
 `$tax` will be null if taxRate is null (or undefined), otherwise it will hold the result of the calculation.
 
 
-### Short-circuit OR (||) operator
+### Short-circuit OR operator (||)
 
 The following table summarizes the different cases and the value returned for the **||** operator:
 
@@ -161,7 +161,7 @@ $name:=$person.maidenName || $person.name
 
 ### Precedence:
 
-the && and || operators have the same precedence as the logical operators & and |, and are evaluated left to right.
+the `&&` and `||` operators have the same precedence as the logical operators `&` and `|`, and are evaluated left to right.
 
 This means that `a || b && c` is evaluated as `(a || b) && c`
 
