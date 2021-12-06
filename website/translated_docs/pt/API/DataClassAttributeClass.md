@@ -3,18 +3,18 @@ id: DataClassAttributeClass
 title: DataClassAttribute
 ---
 
-Dataclass attributes are available as properties of their respective classes. For example:
+Os atributos Dataclass estão disponíveis como propriedades de suas respectivas classes. Por exemplo:
 
 ```4d
- nameAttribute:=ds.Company.name //reference to class attribute
- revenuesAttribute:=ds.Company["revenues"] //alternate way
+ nameAttribute:=ds.Company.name //referencia a um atributo de classe
+ revenuesAttribute:=ds.Company["revenues"] //método alternativo
 ```
 
-This code assigns to *nameAttribute* and *revenuesAttribute* references to the name and revenues attributes of the Company class. This syntax does NOT return values held inside of the attribute, but instead returns references to the attributes themselves. To handle values, you need to go through [**Entities**](EntityClass.md).
+Este código assigna a *nameAttribute* e *revenuesAttribute* referências aos atributos name e revenues da classe Company. Essa sintaxe NAO devolve valores mantidos dentro do atributo, mas sim devolve referências aos próprios atributos. Para manejar os valores, é necessário passar por [**Entidades**](EntityClass.md).
 
-`DataClassAttribute` objects have properties that you can read to get information about your dataclass attributes.
+Os objetos `DataClassAttribute` têm propriedades que pode ler para obter informação sobre os atributos de sua classe de dados.
 
-> Dataclass attribute objects can be modified, but the underlying database structure will not be altered.
+> Os objetos do atributo Dataclass podem ser modificados, mas a estrutura subjacente do banco de dados não será alterada.
 
 ### Resumo
 
@@ -49,15 +49,15 @@ This code assigns to *nameAttribute* and *revenuesAttribute* references to the n
 **.autoFilled** : Boolean<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.autoFilled` property <!-- REF DataClassAttributeClass.autoFilled.Summary -->contains True if the attribute value is automatically filled by 4D<!-- END REF -->. This property corresponds to the following 4D field properties:
+La propiedad `.autoFilled` <!-- REF DataClassAttributeClass.autoFilled.Summary -->contém True se o valor de atributo for preenchido automaticamente por 4D<!-- END REF -->. Esta propriedade corresponde às seguintes propriedades de campo 4D:
 
-*   "Autoincrement", for numeric type fields
-*   "Auto UUID", for UUID (alpha type) fields.
+*   "Auto incremento", para campos de tipo numérico
+*   "Auto UUID", para campos UUID (tipo alfa).
 
-This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
-> For generic programming, you can use **Bool**(dataClassAttribute.autoFilled) to get a valid value (false) even if `.autoFilled` is not returned.
+Esta propriedade não é devolve se `.kind` = "relatedEntity" ou "relatedEntities".
+> Para a programação genérica, se pode utilizar **Bool**(dataClassAttribute.autoFilled) para obter um valor válido (false) mesmo que não se devolva `.autoFilled`.
 
 
 <!-- END REF -->
@@ -76,15 +76,15 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 
 
 <!-- REF DataClassAttributeClass.fieldNumber.Syntax -->
-**.fieldNumber** : Integer<!-- END REF -->
+**.size** : Integer<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.fieldNumber` property <!-- REF DataClassAttributeClass.fieldNumber.Summary -->contains the internal 4D field number of the attribute<!-- END REF -->.
+A propriedade `.fieldNumber` <!-- REF DataClassAttributeClass.fieldNumber.Summary -->contém o número de campo 4D interno do atributo<!-- END REF -->.
 
-This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
-> For generic programming, you can use **Num**(dataClassAttribute.fieldNumber) to get a valid value (0) even if `.fieldNumber` is not returned.
+Esta propriedade não é devolve se `.kind` = "relatedEntity" ou "relatedEntities".
+> Para a programação genérica, se pode utilizar **Num**(dataClassAttribute.fieldNumber) para obter um valor válido (0) mesmo que não se devolva `.fieldNumber`.
 
 
 <!-- END REF -->
@@ -106,17 +106,17 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 **.fieldType** : Integer<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->contains the 4D database type of the attribute<!-- END REF -->. It depends on the attribute kind (see [`.kind`](#kind)).
+A propriedade `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary -->contém o tipo 4D banco de dados do atributo<!-- END REF -->. Depende do tipo de atributo (ver [`.kind`](#kind)).
 
-**Possible values:**
+**Valores possíveis:**
 
-| dataClassAttribute.kind | fieldType                   | Comment            |
-| ----------------------- | --------------------------- | ------------------ |
-| storage                 | Corresponding 4D field type | See `Type` command |
-| relatedEntity           | 38 (Is object)              |                    |
-| relatedEntities         | 42 (Is collection)          |                    |
+| dataClassAttribute.kind | fieldType                       | Comentário           |
+| ----------------------- | ------------------------------- | -------------------- |
+| storage                 | Tipo de campo 4D correspondente | Ver o comando `Type` |
+| relatedEntity           | 38 (Is object)                  |                      |
+| relatedEntities         | 42 (Is collection)              |                      |
 
 <!-- END REF -->
 
@@ -136,11 +136,11 @@ The `.fieldType` property <!-- REF DataClassAttributeClass.fieldType.Summary -->
 **.indexed** : Boolean<!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.indexed` property <!-- REF DataClassAttributeClass.indexed.Summary -->contains **True** if there is a B-tree or a Cluster B-tree index on the attribute<!-- END REF -->.
+A propriedade `.indexed` <!-- REF DataClassAttributeClass.indexed.Summary -->contiene **True** se houver um índice B-tree ou Cluster B-tree no atributo<!-- END REF -->.
 
-This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
+Esta propriedade não é devolvida se `.kind` = "relatedEntity" ou "relatedEntities".
 > For generic programming, you can use **Bool**(dataClassAttribute.indexed) to get a valid value (false) even if `.indexed` is not returned.
 
 <!-- END REF -->
