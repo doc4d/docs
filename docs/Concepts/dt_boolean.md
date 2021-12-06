@@ -90,7 +90,7 @@ The following is the truth table for the OR logical operator:
 
 The **&&** and **||** operators are **short circuit operators**. A short circuit operator is one that doesn't necessarily evaluate all of its operands. 
 
-The difference with the single **&** and **|** operators is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as truthy or falsy, then return one of the expressions (which can be a boolean or another type of value).
+The difference with the single **&** and **|** operators is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as truthy or falsy, then return one of the expressions.
 
 ### Short-circuit AND (&&) operator
 
@@ -101,7 +101,7 @@ Given `exp1 && exp2`:
 If exp1 is falsy, the calculation is stopped without evaluating exp2, and exp1 is returned.
 If exp1 is truthy, the calculation returns exp2.
 
-The following table summarizes the different cases and the value returned for the **&&** operator:
+The following table summarizes the different cases for the **&&** operator:
 
 |Expr1	|Expr2	|  Value returned
 |---|---|---|
@@ -147,11 +147,22 @@ $phone:=$emp.phone || "n/a"
 
 In which case `$phone` will store either a phone number or the "n/a" string. 
 
+#### Example 2
+
+Given a table called Person with a *name* field, as well as a *maiden name* field for married women.
+
+The following example checks if there is a maiden name and stores it in a variable, otherwise it simply stores the person's name:
+
+```4d
+var $name: Text
+
+$name:=$person.maidenName || $person.name
+```
 
 ### Precedence:
 
 the && and || operators have the same precedence as the logical operators & and |, and are evaluated left to right.
 
-This means that a || b && c is evaluated as (a || b) && c
+This means that `a || b && c` is evaluated as `(a || b) && c`
 
 
