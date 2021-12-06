@@ -28,10 +28,23 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 ||
 |---|
-|[<!-- INCLUDE #4D.SystemWorker.new().Syntax -->](#description)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE ##4D.SystemWorker.new().Summary -->|
-|[<!-- INCLUDE #SignalClass.signaled.Syntax -->](#signaled)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SignalClass.signaled.Summary --> |
-|[<!-- INCLUDE #SignalClass.trigger().Syntax -->](#trigger)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SignalClass.trigger().Summary --> |
-|[<!-- INCLUDE #SignalClass.wait().Syntax -->](#wait)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SignalClass.wait().Summary --> |
+|[<!-- INCLUDE #4D.SystemWorker.new().Syntax -->](#4d-systemworker-new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE ##4D.SystemWorker.new().Summary -->|
+|[<!-- INCLUDE #SystemWorkerClass.closeInput().Syntax -->](#closeinput)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.closeInput.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.commandLine.Syntax -->](#commandline)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.commandLine.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.currentDirectory.Syntax -->](#currentdirectory)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.currentDirectory.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.dataType.Syntax -->](#dataype)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.dataType.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.encoding.Syntax -->](#encoding)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.encoding.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.errors.Syntax -->](#errors)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.errors.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.exitCode.Syntax -->](#exitcode)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.exitCode.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.hideConsole.Syntax -->](#hideconsole)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.hideConsole.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.pid.Syntax -->](#pid)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.pid.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.postMessage().Syntax -->](#postmessage)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.postMessage().Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.response.Syntax -->](#response)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.response.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.responseError.Syntax -->](#responseerror)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.responseError.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.terminate().Syntax -->](#terminate)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.terminate().Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.terminated.Syntax -->](#terminated)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.terminated.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.timeout.Syntax -->](#timeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.timeout.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.wait().Syntax -->](#wait)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.wait().Summary --> |
 
 
 
@@ -53,7 +66,7 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 |---------|--- |:---:|------|
 |commandLine|Text|->|Command line to execute|
 |options|Object|<-|Worker parameters|
-|result|4D.SystemWorker|<-|New asynchronous System worker|  
+|result|4D.SystemWorker|<-|New asynchronous System worker or Null if process not started|  
 <!-- END REF -->
 
 
@@ -89,107 +102,25 @@ In the *options* parameter, pass an object that can contain the following proper
 
 
 
-#### Returned SystemWorker proxy
-
-
-
-
-A new [`4D.Signal` object](#signal-object).
-
 #### Example 
 
-Here is a typical example of a worker that sets a signal:
-
-```4d
- var $signal : 4D.Signal
- $signal:=New signal("This is my first signal")
- 
- CALL WORKER("myworker";"doSomething";$signal)
- $signaled:=$signal.wait(1) //wait for 1 second max
- 
- If($signaled)
-    ALERT("myworker finished the work. Result: "+$signal.myresult)
- Else
-    ALERT("myworker has not finished in less than 1s")
- End if
-```
-
-
-The ***doSomething*** method could be like:
-
-```4d
- #DECLARE ($signal : 4D.Signal)
-  //any processing
-  //...
- Use($signal)
-    $signal.myresult:=$processingResult  //return the result
- End use
- $signal.trigger() // The work is finished
-```
 
 <!-- END REF -->
 
 
-<!-- REF SignalClass.description.Desc -->
-## .description 
+<!-- REF SystemWorkerClass.closeInput().Desc -->
+## .closeInput()   
 
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
-|v17 R4|Added|
-</details>
-
-<!-- REF #SignalClass.description.Syntax -->
-**.description** : Text<!-- END REF -->
-
-#### Description
-
-The `.description` property <!-- REF #SignalClass.description.Summary -->contains a custom description for the `Signal` object.<!-- END REF -->.  
-
-`.description` can be set at the creation of the signal object or at any moment. Note that since the `Signal` object is a shared object, any write-mode access to the `.description` property must be surrounded by a `Use...End use` structure.
-
-This property is **read-write**. 
-
-<!-- END REF -->
-
-
-
-<!-- REF SignalClass.signaled.Desc -->
-## .signaled   
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v17 R4|Added|
+|v19 R4|Added|
 
 </details>
 
-<!-- REF #SignalClass.signaled.Syntax -->
-**.signaled** : Boolean<!-- END REF -->
+<!-- REF #SystemWorkerClass.closeInput().Syntax -->**.closeInput**()<!-- END REF -->
 
-#### Description
-
-The `.signaled` property <!-- REF #SignalClass.signaled.Summary -->contains the current state of the `Signal` object<!-- END REF -->. When the signal is created, `.signaled` is **False**. It becomes **True** when the `.trigger( )` is called on the object.
-
-This property is **read-only**. 
-
-<!-- END REF -->
-
-
-
-<!-- REF SignalClass.trigger().Desc -->
-## .trigger()
-
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v17 R4|Added|
-</details>
-
-<!-- REF #SignalClass.trigger().Syntax -->
-**.trigger( )**<!-- END REF -->
-
-<!-- REF #SignalClass.trigger().Params -->
+<!-- REF #SystemWorkerClass.closeInput().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 ||||Does not require any parameters|
@@ -198,49 +129,294 @@ This property is **read-only**.
 
 #### Description
 
-The `.trigger( )` function <!-- REF #SignalClass.trigger().Summary -->sets the `signaled` property of the signal object to **true**<!-- END REF --> and awakens all workers or processes waiting for this signal.
+The `.closeInput()` function <!-- REF #SystemWorkerClass.closeInput().Summary -->closes the input stream (*stdin*) of the external process<!-- END REF -->. 
 
-If the signal is already in the signaled state (i.e., the `signaled` property is already **true**), the function does nothing.
+This function is useful when an attempt to write in the *stdin* of the external process using the `postMessage()` is blocked for some reason. A call to `.closeInput()` will release the execution.
+
 
 <!-- END REF -->
 
 
 
-<!-- REF SignalClass.wait().Desc -->
-## .wait()
+<!-- REF SystemWorkerClass.commandLine.Desc -->
+## .commandLine   
 
-<details><summary>History</summary>
-|Version|Changes|
-|---|---|
-|v17 R4|Added|
-</details>
+<!-- REF #SystemWorkerClass.commandLine.Syntax -->**.commandLine** : Text<!-- END REF -->
 
-<!-- REF #SignalClass.wait().Syntax -->
-**.wait**( { *timeout* : Real } ) : Boolean <!-- END REF -->
 
-<!-- REF #SignalClass.wait().Params -->
+#### Description
+
+The `.commandLine` property <!-- REF #SystemWorkerClass.commandLine.Summary -->contains the command line passed as parameter to the [`new()`](#4d-systemworker-new) function<!-- END REF -->. 
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+
+<!-- REF SystemWorkerClass.currentDirectory.Desc -->
+## .currentDirectory   
+
+<!-- REF #SystemWorkerClass.currentDirectory.Syntax -->**.currentDirectory** : 4D.Folder<!-- END REF -->
+
+
+#### Description
+
+The `.currentDirectory` property <!-- REF #SystemWorkerClass.currentDirectory.Summary -->contains the working directory in which the external process is executed<!-- END REF -->. 
+
+<!-- END REF -->
+
+
+
+<!-- REF SystemWorkerClass.dataType.Desc -->
+## .dataType   
+
+<!-- REF #SystemWorkerClass.dataType.Syntax -->**.dataType** : Text<!-- END REF -->
+
+
+#### Description
+
+The `.dataType` property <!-- REF #SystemWorkerClass.dataType.Summary -->contains the type of the response body content<!-- END REF -->. Possible values : "text" or "blob".
+ 
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+<!-- REF SystemWorkerClass.encoding.Desc -->
+## .encoding   
+
+<!-- REF #SystemWorkerClass.encoding.Syntax -->**.encoding** : Text<!-- END REF -->
+
+
+#### Description
+
+The `.encoding` property <!-- REF #SystemWorkerClass.encoding.Summary -->contains the encoding of the response body content<!-- END REF -->. This property is only available if the [`dataType`](#datatype) is "text". 
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+
+<!-- REF SystemWorkerClass.errors.Desc -->
+## .errors   
+
+<!-- REF #SystemWorkerClass.errors.Syntax -->**.errors** : Collection<!-- END REF -->
+
+
+#### Description
+
+The `.errors` property <!-- REF #SystemWorkerClass.responseError.Summary -->contains a collection of 4D errors stack in case of execution error(s)<!-- END REF -->. 
+
+Each element of the collection is an object with the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|[].errorCode|number|4D error code|
+|[].message|text|Description of the 4D error|
+|[ ].componentSignature|text|Signature of the internal component which returned the error|
+
+If no error occured, `.errors` contains an empty collection. 
+
+<!-- END REF -->
+
+
+
+<!-- REF SystemWorkerClass.exitCode.Desc -->
+## .exitCode   
+
+<!-- REF #SystemWorkerClass.exitCode.Syntax -->**.exitCode** : Integer<!-- END REF -->
+
+
+#### Description
+
+The `.exitCode` property <!-- REF #SystemWorkerClass.exitCode.Summary -->contains the exit code returned by the external process<!-- END REF -->. If the process did not terminate normaly, `exitCode` is *undefined*.
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+
+
+<!-- REF SystemWorkerClass.hideConsole.Desc -->
+## .hideConsole   
+
+<!-- REF #SystemWorkerClass.hideConsole.Syntax -->**.hideConsole** : Boolean<!-- END REF -->
+
+
+#### Description
+
+The `.hideConsole` property <!-- REF #SystemWorkerClass.hideConsole.Summary -->can be used to hide the window of the DOS console or the window of the launched executable (**Windows only**)<!-- END REF -->. 
+
+<!-- END REF -->
+
+This property is **read-write**. 
+
+
+
+<!-- REF SystemWorkerClass.pid.Desc -->
+## .pid   
+
+<!-- REF #SystemWorkerClass.pid.Syntax -->**.pid** : Integer<!-- END REF -->
+
+
+#### Description
+
+The `.pid` property <!-- REF #SystemWorkerClass.pid.Summary -->contains the process ID of the `SystemWorker` object<!-- END REF -->. 
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+
+<!-- REF SystemWorkerClass.postMessage().Desc -->
+## .postMessage() 
+
+
+<!-- REF #SystemWorkerClass.postMessage().Syntax -->**.postMessage**( *message* : Text)<br>**.postMessage**( *messageBLOB* : Blob)<!-- END REF -->
+
+
+<!-- REF #SystemWorkerClass.postMessage().Params -->
 |Parameter|Type||Description|
-|---|---|---|---|
-|timeout|Real|->|Maximum waiting time for the signal in seconds|
-|Result|Boolean|<-|State of the `.signaled` property|
+|---------|--- |:---:|------|
+|message|Text|->|Text to write on the input stream (stdin) of the external process|
+|messageBLOB|Blob|->|Bytes write on the input stream|
+<!-- END REF -->
+
+#### Description
+
+The `.postMessage()` function <!-- REF #SystemWorkerClass.postMessage().Summary -->allows you to write on the input stream (stdin) of the external process<!-- END REF -->. In the *message* parameter, pass the text to write in *stdin*.
+
+The `.postMessage()` function also accepts a Blob type value in *messageBLOB* to pass in *stdin*, so that you can post binary data. 
+
+You can use the `.dataType` property of the [options object](#options-object) to make response body return Blob values.
+
+<!-- END REF -->
+
+
+<!-- REF SystemWorkerClass.response.Desc -->
+## .response   
+
+<!-- REF #SystemWorkerClass.response.Syntax -->**.response** : Text<br>**.response** : Blob<!-- END REF -->
+
+
+#### Description
+
+The `.response` property <!-- REF #SystemWorkerClass.response.Summary -->contains the data returned once the request is terminated<!-- END REF -->, i.e. the full message received from the process output.
+
+The type of the message is defined according to the [`dataType`](#datatype) attribute.
+
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+
+
+<!-- REF SystemWorkerClass.responseError.Desc -->
+## .responseError   
+
+<!-- REF #SystemWorkerClass.responseError.Syntax -->**.responseError** : Text<!-- END REF -->
+
+
+#### Description
+
+The `.responseError` property <!-- REF #SystemWorkerClass.responseError.Summary -->contains the concatenation of all the errors returned, once the request is terminated<!-- END REF -->.
+
+<!-- END REF -->
+
+
+
+<!-- REF SystemWorkerClass.terminate().Desc -->
+## .terminate()   
+
+<!-- REF #SystemWorkerClass.terminate().Syntax -->**.terminate**()<!-- END REF -->
+
+<!-- REF #SystemWorkerClass.terminate().Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+||||Does not require any parameters|
 <!-- END REF -->
 
 
 #### Description
 
-The `.wait( )` function <!-- REF #SignalClass.wait().Summary -->makes the current process wait until the `.signaled` property of the signal object to become **true** or the optional *timeout* to expire<!-- END REF -->. 
+The `.terminate()` function <!-- REF #SystemWorkerClass.terminate().Summary -->forces the `SystemWorker` to terminate its execution<!-- END REF -->. 
 
-To prevent blocking code, you can pass a maximum waiting time in seconds in the *timeout* parameter (decimals are accepted). 
-
->**Warning**: Calling `.wait( )` without a *timeout* in the 4D main process is not recommended because it could freeze the whole 4D application.
-
-If the signal is already in the signaled state (i.e. the `.signaled` property is already **true**), the function returns immediately, without waiting.
-
-The function returns the value of the `.signaled` property. Evaluating this value allows knowing if the function returned because the `.trigger( )` has been called (`.signaled` is **true**) or if the *timeout* expired (`.signaled` is **false**).
-
->The state of a process that waits for a signal is `Waiting for internal flag`.
+This function sends the instruction to terminate and give control back to the executing script.
 
 
 <!-- END REF -->
+
+
+
+<!-- REF SystemWorkerClass.terminated.Desc -->
+## .terminated   
+
+<!-- REF #SystemWorkerClass.terminated.Syntax -->**.terminated** : Boolean<!-- END REF -->
+
+
+#### Description
+
+The `.terminated` property <!-- REF #SystemWorkerClass.terminated.Summary -->contains **true** if the external process is terminated<!-- END REF -->. 
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+
+
+
+<!-- REF SystemWorkerClass.timeout.Desc -->
+## .timeout   
+
+<!-- REF #SystemWorkerClass.timeout.Syntax -->**.timeout** : Integer<!-- END REF -->
+
+
+#### Description
+
+The `.timeout` property <!-- REF #SystemWorkerClass.timeout.Summary -->contains the duration in seconds before the external process will be killed if it is still alive<!-- END REF -->. 
+
+This property is **read-only**. 
+
+<!-- END REF -->
+
+
+<!-- REF SystemWorkerClass.wait().Desc -->
+## .wait()   
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R4|Added|
+
+</details>
+
+<!-- REF #SystemWorkerClass.wait().Syntax -->**.wait**( {*timeout* : Integer} ) : Boolean<!-- END REF -->
+
+<!-- REF #SystemWorkerClass.wait().Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+|timeout|Integer|->|Waiting time (in seconds)|
+|Result|Boolean|<-|True if external process has terminated|
+<!-- END REF -->
+
+
+#### Description
+
+The `.wait()` function <!-- REF #SystemWorkerClass.wait().Summary -->waits until the end of the `SystemWorker` execution or the specified *timeout*<!-- END REF -->. 
+
+In *timeout*, pass a value in seconds. The `SystemWorker` script will wait for the external process for the amount of time defined in the *timeout* parameter. If you pass 0 or omit the *timeout* parameter, the script execution will wait indefinitely. 
+
+Actually, `.wait()` waits until the end of processing of the `onTerminate` formula, except if the *timeout* is reached. If *timeout* is reached, the `SystemWorker` is not killed.
+
+During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances.
+
+This function returns `true` if the external process has terminated. 
+
+You can exit from a `.wait()` by calling [`terminate()`](#terminate).
+
+
+<!-- END REF -->
+
 
 <style> h2 { background: #d9ebff;}</style>
