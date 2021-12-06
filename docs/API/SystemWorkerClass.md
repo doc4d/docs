@@ -78,7 +78,7 @@ The returned system worker proxy object can be used to communicate with the work
 
 If an error occurs during the creation of the proxy object, the function returns `null` and an error is thrown.
 
-> The `4D.SystemWorker.new()` function only launches system processes; it does not create interface objects, such as windows.
+> The `4D.SystemWorker.new()` function only launches system processes; it does not create interface objects, such as windows. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
 
 In the *commandLine* parameter, pass the application's absolute file path to be executed, as well as any required arguments (if necessary). Under macOS, if you pass only the application name, 4D will use the PATH environment variable to locate the executable.
 
@@ -96,14 +96,33 @@ In the *options* parameter, pass an object that can contain the following proper
 |timeout|Number|undefined|Time in seconds before killing a process that is still alive|
 |dataType|Text|"blob"|Type of the response body content. Possible values: "blob" (default), "text", "image".|
 |encoding|Text|"UTF-8"|Only if `dataType="text"`. Encoding of the response body content. Default is "UTF-8".|
-|variables|Object||Sets custom environment variables for the system worker. <li>variables.key=value</i>Values are converted into strings when possible. The value cannot contain a '='. If not defined, the system worker inherits from the 4D environment. To get the general list of environment variables and possible values, please refer to the technical documentation of your operating system.|
+|variables|Object||Sets custom environment variables for the system worker. <li>variables.key=value</li>Values are converted into strings when possible. The value cannot contain a '='. If not defined, the system worker inherits from the 4D environment. To get the general list of environment variables and possible values, please refer to the technical documentation of your operating system.|
 |currentDirectory|Folder||Working directory in which the process is executed|
 |hideConsole|Boolean|true|(Windows) Hide the window of the DOS console|
 
 
+#### Returned value
 
-#### Example 
+The function returns a system worker proxy on which you can call functions and properties of the SystemWorker class.
 
+
+#### Example
+
+Run npm install in a terminal:
+
+```4d
+var $folder : 4D.Folder
+var $options : Object
+var $worker : 4D.SystemWorker
+
+$folder:=Folder(fk database folder) 
+$options:=New object
+$options.currentDirectory:=$folder
+$options.hideConsole:=False
+
+$worker:=4D.SystemWorker.new("cmd /c npm install";$options)
+
+```
 
 <!-- END REF -->
 
@@ -133,6 +152,24 @@ The `.closeInput()` function <!-- REF #SystemWorkerClass.closeInput().Summary --
 
 This function is useful when an attempt to write in the *stdin* of the external process using the `postMessage()` is blocked for some reason. A call to `.closeInput()` will release the execution.
 
+
+#### Example
+
+```4D
+// Create some data to gzip
+var $input : 4D.Blob
+CONVERT FROM TEXT("Hello, World!"; "UTF-8"; $blob)
+$input := 4D.Blob.new(  $blob)
+
+// Create an asynchronous system worker
+var $worker : 4D.SystemWorker
+$worker := 4D.SystemWorker.new( "gzip" )
+
+// Send the compressed file on stdin.
+$worker.postMessage( $input )
+// Note that we call closeInput() to indicate we're done. gzip (and most program waiting data from stdin) will wait for more data until the input is explicitely closed.
+$worker.closeInput()
+```
 
 <!-- END REF -->
 
@@ -391,13 +428,13 @@ This property is **read-only**.
 
 </details>
 
-<!-- REF #SystemWorkerClass.wait().Syntax -->**.wait**( {*timeout* : Integer} ) : Boolean<!-- END REF -->
+<!-- REF #SystemWorkerClass.wait().Syntax -->**.wait**( {*timeout* : Integer} ) : 4D.SystemWorker<!-- END REF -->
 
 <!-- REF #SystemWorkerClass.wait().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |timeout|Integer|->|Waiting time (in seconds)|
-|Result|Boolean|<-|True if external process has terminated|
+|Result|4D.SystemWorker|<-|SystemWorker object|
 <!-- END REF -->
 
 
@@ -411,7 +448,7 @@ Actually, `.wait()` waits until the end of processing of the `onTerminate` formu
 
 During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances.
 
-This function returns `true` if the external process has terminated. 
+This function returns the SystemWorker object. 
 
 You can exit from a `.wait()` by calling [`terminate()`](#terminate).
 
