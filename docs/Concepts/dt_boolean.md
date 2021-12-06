@@ -26,7 +26,7 @@ The previous example can be simplified into one line.
 ```4d
 myBoolean:=(myButton=1)
 ```
-### Truthy and falsy
+## Truthy and falsy
 
 As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
 
