@@ -28,8 +28,8 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 ||
 |---|
-|[<!-- INCLUDE #4D.SystemWorker.new().Syntax -->](#4d-systemworker-new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE ##4D.SystemWorker.new().Summary -->|
-|[<!-- INCLUDE #SystemWorkerClass.closeInput().Syntax -->](#closeinput)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.closeInput.Summary --> |
+|[<!-- INCLUDE #4D.SystemWorker.new().Syntax -->](#4d-systemworker-new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.SystemWorker.new().Summary -->|
+|[<!-- INCLUDE #SystemWorkerClass.closeInput().Syntax -->](#closeinput)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.closeInput().Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.commandLine.Syntax -->](#commandline)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.commandLine.Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.currentDirectory.Syntax -->](#currentdirectory)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.currentDirectory.Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.dataType.Syntax -->](#dataype)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.dataType.Summary --> |
@@ -205,7 +205,7 @@ This property is **read-only**.
 
 #### Description
 
-The `.errors` property <!-- REF #SystemWorkerClass.responseError.Summary -->contains a collection of 4D errors stack in case of execution error(s)<!-- END REF -->. 
+The `.errors` property <!-- REF #SystemWorkerClass.errors.Summary -->contains a collection of 4D errors stack in case of execution error(s)<!-- END REF -->. 
 
 Each element of the collection is an object with the following properties:
 
