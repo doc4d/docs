@@ -26,28 +26,6 @@ The previous example can be simplified into one line.
 ```4d
 myBoolean:=(myButton=1)
 ```
-## Truthy and falsy
-
-As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
-
-The following values are **falsy** :
-
-* false
-* Null
-* undefined
-* Null object
-* Null collection
-* Null pointer
-* Null picture
-* Null date !00-00-00!
-
-All other values are considered **truthy**, including:
-
-* 0 - numeric zero (Integer or otherwise)
-* "" - Empty strings
-* [] - Empty collections
-* {} - Empty arrays
-
 
 ## Logical operators
 
@@ -86,31 +64,43 @@ The following is the truth table for the OR logical operator:
  (Expr1|Expr2) & Not(Expr1 & Expr2)  
 ```
 
-## Short-circuit evaluation (&& and || operators)
+## Short-circuit operators
 
 The **&&** and **||** operators are **short circuit operators**. A short circuit operator is one that doesn't necessarily evaluate all of its operands. 
 
-The difference with the single **&** and **|** operators is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as truthy or falsy, then return one of the expressions.
+The difference with the single **&** and **|** operators is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as [truthy or falsy](#truthy-and-falsy), then return one of the expressions.
 
 ### Short-circuit AND operator (&&)
 
 The rule is as follows: 
 
-Given `exp1 && exp2`:
+Given `Expr1 && Expr2`:
 
-If exp1 is falsy, the calculation is stopped without evaluating exp2, and exp1 is returned.
-If exp1 is truthy, the calculation returns exp2.
+If Expr1 is falsy, the calculation stops without evaluating Expr2, and Expr1 is returned.
+If Expr1 is truthy, the calculation returns Expr2.
 
 The following table summarizes the different cases for the **&&** operator:
 
 |Expr1	|Expr2	|  Value returned
 |---|---|---|
-|Truthy	|Truthy	|Expr1|
+|Truthy	|Truthy	|Expr2|
 |Truthy	|Falsy	|Expr2|
 |Falsy	|Truthy	|Expr1|
 |Falsy	|Falsy	|Expr1|
 
-#### Example 
+#### Example 1 
+
+```4d
+var $a : Text
+var $b : Text
+
+$a:="Hello"
+$b:="World"
+
+ALERT($a && $b); // World
+```
+
+#### Example 2
 
 Say you have an online store, and some products have a tax rate applied, and others don't. 
 To calculate the tax, you multiply the price by the tax rate, which may not have been specified.
@@ -122,10 +112,14 @@ var $tax : Variant
 $tax:=$item.taxRate && ($item.price*$item.taxRate)
 ```
 
-`$tax` will be null if taxRate is null (or undefined), otherwise it will hold the result of the calculation.
-
+`$tax` will be NULL if taxRate is NULL (or undefined), otherwise it will store the result of the calculation.
 
 ### Short-circuit OR operator (||)
+
+The rule is as follows: 
+
+If Expr1 is Falsy, the calculation returns Expr2
+If Expr1 is Truthy, Expr 2 is not evaluated and the calculation returns Expr1
 
 The following table summarizes the different cases and the value returned for the **||** operator:
 
@@ -159,10 +153,95 @@ var $name: Text
 $name:=$person.maidenName || $person.name
 ```
 
-### Precedence:
+### Precedence
 
-the `&&` and `||` operators have the same precedence as the logical operators `&` and `|`, and are evaluated left to right.
+The `&&` and `||` operators have the same precedence as the logical operators `&` and `|`, and are evaluated left to right.
 
 This means that `a || b && c` is evaluated as `(a || b) && c`
 
+## Ternary operator 
 
+The ternary operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
+
+It takes three operands in the following order: 
+
+* a condition followed by a question mark (?)
+* an expression to execute if the condition is [truthy](#truthy-and-falsy), followed by a colon (:) 
+* the expression to execute if the condition is [falsy](#truthy-and-falsy)
+
+#### Syntax 
+
+The syntax is as follows:
+
+`condition ? exprIfTruthy : exprIfFalsy`
+
+### Examples
+
+#### A simple example
+
+```4d
+var $age : Integer
+var $beverage : Text
+
+$age:=26
+$beverage:=($age>=21) ? "Beer" : "Juice"
+
+ALERT($beverage) // "Beer"
+```
+
+#### Handling data from a table
+
+This example stores a person's full name in a variable, and handles the case when no first name or last name has been specified:
+
+```4d
+var $fullname : Text
+
+// If one of the names is missing, store the one that exists, otherwise store an empty string.
+$fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
+```
+
+## Truthy and falsy
+
+As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
+
+The following values are **falsy** :
+
+* false
+* Null
+* undefined
+* Null object
+* Null collection
+* Null pointer
+* Null picture
+* Null date !00-00-00!
+
+All other values are considered **truthy**, including:
+
+* 0 - numeric zero (Integer or otherwise)
+* "" - Empty strings
+* [] - Empty collections
+* {} - Empty arrays
+
+## Syntax issues and recommendations
+
+## Variable names 
+
+Since the colon `:` can be used in variable names (even if it is discouraged), we recommend insert a space after the colon `:`, or enclose the variable using parentheses if the character that follows the colon `:` is also legit in a variable name:
+
+```4d
+a:=1
+b:=2
+$value:=($size>1000) ? a:b  // Wrong syntax. Here 'a:b' is viewed as a variable name
+$value:=($size>1000) ? a: b  // OK
+```
+
+## Tokenization
+
+Since the [tokenization system](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html) uses colons in its syntax, we recommend inserting a space after the colon `:` or enclosing tokens using parentheses to avoid conflicts:
+
+```4d
+B42:=1
+C10:=2
+$value:=($size>1000) ? B42:C10  // Wrong syntax. Becomes $value:=($size>1000) ? String
+$value:=($size>1000) ? B42: C10  // OK
+```
