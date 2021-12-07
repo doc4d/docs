@@ -53,9 +53,9 @@ POP3 Transporter objects are instantiated with the [POP3 New transporter](#pop3-
 
 #### Descripción
 
-The `POP3 New transporter` command <!-- REF #_command_.POP3 New transporter.Summary -->configures a new POP3 connection<!-- END REF -->according to the *server* parameter and returns a new *[POP3 transporter](#pop3-transporter-object)* object. The returned transporter object will then usually be used to receive emails.
+The `POP3 New transporter` command <!-- REF #_command_.POP3 New transporter.Summary -->configures a new POP3 connection<!-- END REF -->according to the *server* parameter and returns a new *[POP3 transporter](#pop3-transporter-object)* object. El objeto transportador devuelto se utilizará normalmente para recibir correos electrónicos.
 
-In the *server* parameter, pass an object containing the following properties:
+En el parámetro *server*, pase un objeto que contenga las siguientes propiedades:
 
 
 | *server*                                                                                                                                                                                                                                                                                                                                                                                                                | Valor por defecto (si se omite)                                     |
@@ -218,7 +218,7 @@ Executing this method does not actually remove any email. The flagged email will
 <!-- REF #POP3TransporterClass.getBoxInfo().Params -->
 | Parámetros | Tipo   |    | Descripción    |
 | ---------- | ------ |:--:| -------------- |
-| Resultado  | Objeto | <- | boxInfo object |
+| Resultado  | Objeto | <- | objeto boxInfo |
 <!-- END REF -->
 
 
@@ -228,10 +228,10 @@ The `.getBoxInfo()` function <!-- REF #POP3TransporterClass.getBoxInfo().Summary
 
 The `boxInfo` object returned contains the following properties:
 
-| Propiedad | Tipo   | Descripción                       |
-| --------- | ------ | --------------------------------- |
-| mailCount | Número | Number of messages in the mailbox |
-| size      | Número | Tamaño del mensaje en bytes       |
+| Propiedad | Tipo   | Descripción                    |
+| --------- | ------ | ------------------------------ |
+| mailCount | Número | Número de mensajes en el buzón |
+| size      | Número | Tamaño del mensaje en bytes    |
 
 
 
