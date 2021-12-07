@@ -109,6 +109,7 @@ So you can write this:
 
 ```4d
 var $tax : Variant
+
 $tax:=$item.taxRate && ($item.price*$item.taxRate)
 ```
 
@@ -136,6 +137,7 @@ Say you have a table called Employee. Some employees have entered a telephone nu
 
 ```4d
 var $phone : Text
+
 $phone:=$emp.phone || "n/a"
 ```
 
@@ -159,7 +161,7 @@ The `&&` and `||` operators have the same precedence as the logical operators `&
 
 This means that `a || b && c` is evaluated as `(a || b) && c`
 
-## Ternary operator 
+## Ternary operator
 
 The ternary operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
 
@@ -209,7 +211,7 @@ Since the colon `:` can be used in variable names (even if it is discouraged), w
 ```4d
 a:=1
 b:=2
-$value:=($size>1000) ? a:b  // Wrong syntax. Here 'a:b' is viewed as a variable name
+$value:=($size>1000) ? a:b  // Wrong syntax. Here 'a:b' is viewed as a variable name.
 $value:=($size>1000) ? a: b  // OK
 ```
 
