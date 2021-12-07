@@ -103,6 +103,7 @@ ALERT($a && $b); // World
 #### Example 2
 
 Say you have an online store, and some products have a tax rate applied, and others don't. 
+
 To calculate the tax, you multiply the price by the tax rate, which may not have been specified.
 
 So you can write this: 
