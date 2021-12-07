@@ -40,15 +40,15 @@ Lorsque la barre de formule est visible :
 
 Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
-| Tab      | Actions                         | Ribbon Interface | Toolbar Interface |
-| -------- | ------------------------------- |:----------------:|:-----------------:|
-| File     | File manipulation               |        X         |                   |
-| Home     | Text appearance                 |        X         |         X         |
-| Insert   | Add items                       |        X         |         X         |
-| Formulas | Formula calculation and library |        X         |         X         |
-| Données  | Data manipulation               |        X         |         X         |
-| View     | Visual presentation             |        X         |         X         |
-| Settings | Sheet presentation reference    |        X         |                   |
+| Onglet   | Actions                         | Interface Ruban | Interface Barre d'outils |
+| -------- | ------------------------------- |:---------------:|:------------------------:|
+| File     | File manipulation               |        X        |                          |
+| Home     | Text appearance                 |        X        |            X             |
+| Insert   | Add items                       |        X        |            X             |
+| Formulas | Formula calculation and library |        X        |            X             |
+| Données  | Data manipulation               |        X        |            X             |
+| View     | Visual presentation             |        X        |            X             |
+| Settings | Sheet presentation reference    |        X        |                          |
 
 
 
