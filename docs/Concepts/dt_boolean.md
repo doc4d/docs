@@ -204,20 +204,7 @@ var $fullname : Text
 $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
-### Syntax issues and recommendations
-
-#### Variable names 
-
-Since the colon `:` can be used in variable names (even if it is discouraged), we recommend inserting a space after the colon `:`, or enclosing the variable using parentheses if the character that follows the colon `:` is also legit in a variable name:
-
-```4d
-a:=1
-b:=2
-$value:=($size>1000) ? a:b  // Wrong syntax. Here 'a:b' is viewed as a variable name.
-$value:=($size>1000) ? a: b  // OK
-```
-
-#### Tokenization
+### Syntax recommendation
 
 Since the [tokenization system](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html) uses colons in its syntax, we recommend inserting a space after the colon `:` or enclosing tokens using parentheses to avoid conflicts:
 
