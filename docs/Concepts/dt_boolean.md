@@ -119,8 +119,9 @@ $tax:=$item.taxRate && ($item.price*$item.taxRate)
 
 The rule is as follows: 
 
-If Expr1 is Falsy, the calculation returns Expr2
-If Expr1 is Truthy, Expr 2 is not evaluated and the calculation returns Expr1
+If Expr1 is Falsy, the calculation returns Expr2.
+
+If Expr1 is Truthy, Expr 2 is not evaluated and the calculation returns Expr1.
 
 The following table summarizes the different cases and the value returned for the **||** operator:
 
