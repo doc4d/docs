@@ -161,7 +161,7 @@ $name:=$person.maidenName || $person.name
 
 The `&&` and `||` operators have the same precedence as the logical operators `&` and `|`, and are evaluated left to right.
 
-This means that `a || b && c` is evaluated as `(a || b) && c`
+This means that `a || b && c` is evaluated as `(a || b) && c`.
 
 ## Ternary operator
 
