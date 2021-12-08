@@ -73,7 +73,10 @@ class Index extends React.Component {
       overview: <translate>Overview</translate>,
       comp: <translate>Developing Components</translate>,
       plug: <translate>Developing Plugins</translate>,
-      working: <translate>Working with a project</translate>
+      working: <translate>Working with a project</translate>,
+      settings: <translate>Settings</translate>,
+      usersettings: <translate>User Settings</translate>,
+	    langUrl: <translate>https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html</translate>
     };
 
     return (
@@ -95,11 +98,12 @@ class Index extends React.Component {
                 {
                   content: `[${subContents.projectDatabases}](${siteConfig.baseUrl}${this.props.language}/Project/overview.html)<br>
                   [${subContents.languageConcepts}](${siteConfig.baseUrl}${this.props.language}/Concepts/about.html)<br>
-				  [${subContents.langRef}](https://doc.4d.com/4Dv19/4D/19/4D-Language-Reference.100-5391516.en.html)<br>
+				  [${subContents.langRef}](${subContents.langUrl})<br>
                   [${subContents.ORDA}](${siteConfig.baseUrl}${this.props.language}/ORDA/overview.html)<br>
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
                   [${subContents.codeEditor}](${siteConfig.baseUrl}${this.props.language}/code-editor/dropdown.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>
+          [${subContents.settings}](${siteConfig.baseUrl}${this.props.language}/settings/overview.html)<br>
 				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)`,
                   image: `${siteConfig.baseUrl}img/illu_CoreDevelopment.png`,
                   imageAlign: "top",
@@ -153,6 +157,7 @@ class Index extends React.Component {
 				  [${subContents.formObjectProperties}](${siteConfig.baseUrl}${this.props.language}/FormObjects/propertiesReference.html)<br>
 				  [${subContents.events}](${siteConfig.baseUrl}${this.props.language}/Events/overview.html)<br>
 				  [${subContents.menus}](${siteConfig.baseUrl}${this.props.language}/Menus/overview.html)<br>
+				  [${subContents.usersettings}](${siteConfig.baseUrl}${this.props.language}/Desktop/user-settings.html)<br>
 				  [${subContents.buildApp}](${siteConfig.baseUrl}${this.props.language}/Desktop/building.html)`,
                   //image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,
                   image: `${siteConfig.baseUrl}img/illu_DesktopApplication.png`,

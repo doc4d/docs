@@ -5,7 +5,7 @@ title: Developing Components
 
 A 4D component is a set of 4D methods and forms representing one or more functionalities that can be [installed and used in 4D applications](Concepts/components.md). Por ejemplo, puede desarrollar un componente 4D de correo electrónico que gestione todos los aspectos del envío, la recepción y el almacenamiento de correos electrónicos en aplicaciones 4D.
 
-You can develop 4D components for your own needs and keep them private. You can also [share your components with the 4D community](https://github.com/search?q=4d-component).
+You can develop 4D components for your own needs and keep them private. You can also [share your components with the 4D community](https://github.com/topics/4d-component).
 
 
 ## Definiciones
@@ -313,4 +313,4 @@ To protect the project methods of a component effectively, simply [compile and b
 
 ## Sharing components
 
-We encourage you to support the 4D developer community by sharing your components, for example on the [GitHub platform](https://github.com/search?q=4d-component).
+We encourage you to support the 4D developer community by sharing your components, preferably on the [GitHub platform](https://github.com/topics/4d-component). We recommend that you use the **`4d-component`** topic to be correctly referenced.  

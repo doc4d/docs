@@ -71,8 +71,8 @@ $created:=File("/PACKAGE/SpecialPrefs/"+Current user+".myPrefs").create()
 | path         | Texto   | -> | File path                                          |
 | fileConstant | Integer | -> | Constante del archivo 4D                           |
 | pathType     | Integer | -> | `fk posix path` (por defecto) o `fk platform path` |
-| *            |         | -> | * to return file of host database                  |
-| Resultado    | 4D.File | <- | New file object                                    |
+| *            |         | -> | * para devolver el archivo de la base local        |
+| Resultado    | 4D.File | <- | Nuevo objeto de archivo                            |
 <!-- END REF -->
 
 
@@ -467,7 +467,7 @@ The `.moveTo()` function <!-- REF #FileClass.moveTo().Summary -->moves or rename
 
 La *destinationFolder* debe existir en el disco, de lo contrario se genera un error.
 
-By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the *newName* parameter. The new name must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned.
+By default, the file retains its name when moved. If you want to rename the moved file, pass the new full name in the *newName* parameter. El nuevo nombre debe cumplir con las reglas de nomenclatura (por ejemplo, no debe contener caracteres como ":", "/", etc.), de lo contrario se devuelve un error.
 
 
 **Objeto devuelto**

@@ -100,6 +100,21 @@
 			"Debugging/debugging-remote",
 			"Debugging/debugLogFiles"
 		],
+		"Settings": [
+			"settings/overview",
+			"settings/general",
+			"settings/interface",
+			"settings/compiler",
+			"settings/database",
+			"settings/moving",
+			"settings/backup",
+			"settings/client-server",
+			"settings/web",
+			"settings/sql",
+			"settings/php",
+			"settings/security",
+			"settings/compatibility"
+		],
 		"Preferences": [
 			"Preferences/overview",
 			"Preferences/general",
@@ -377,6 +392,9 @@
 			"Menus/properties",
 			"Menus/bars",
 			"Menus/sdi"
+		],
+		"User Settings": [
+			"Desktop/user-settings"
 		],
 		"Build application": [
 			"Desktop/building"

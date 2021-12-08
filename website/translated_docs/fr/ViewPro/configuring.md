@@ -1,38 +1,38 @@
 ---
 id: configuring
-title: Configuring 4D View Pro Areas
+title: Configuration des zones 4D View Pro
 ---
 
-The 4D View Pro area properties can be configured using the Property list. Spreadsheet properties are available through the language.
+Les propriétés de la zone 4D View Pro peuvent être configurées à l'aide de la liste des propriétés. Les propriétés des feuilles de calcul sont disponibles à l'aide du langage.
 
-## Form area properties
+## Propriétés de la zone de formulaire
 
-Using the area's property list, you can set [4D View Pro object properties](FormObjects/viewProArea_overview.md#supported-properties) such as **Object Name**, [**Variable or Expression**](#4d-view-pro-form-object-variable), **Appearance**, **Action**, and **Events**.
+À l'aide de la liste de propriétés de la zone, vous pouvez configurer les [propriétés objet 4D View Pro](FormObjects/viewProArea_overview.md#supported-properties) telles que **Nom de l'objet**, [**Variable ou Expression**](#4d-view-pro-form-object-variable), **Apparance**, **Action**, et **Evénements**.
 
 ![](assets/en/ViewPro/vpPropertyList.PNG)
 
 
 
-### Selecting a user interface
+### Sélection d'une interface utilisateur
 
-You can select the interface to use with your 4D View Pro form areas in the **Property List**, under **Appearance**:
+Vous pouvez sélectionner l'interface à utiliser avec vos zones de formulaire 4D View Pro dans la **Liste de propriétés**, dans **Apparence** :
 
 ![](assets/en/ViewPro/vpUserInterface.PNG)
 
-> You can also use the [`userInterface`](FormObjects/properties_Appearance.md#user-interface) and [`withFormulaBar`](FormObjects/properties_Appearance.md#show-formula-bar)(only with the "toolbar" interface) JSON properties.
+> Vous pouvez également utiliser les propriétés JSON [`userInterface`](FormObjects/properties_Appearance.md#user-interface) et [`withFormulaBar`](FormObjects/properties_Appearance.md#show-formula-bar) (uniquement avec l'interface "toolbar").
 
 
-Interfaces allow for basic modifications and data manipulation. User-defined modifications are saved in the 4D View Pro object when the user saves the document.
+Les interfaces permettent d'effectuer des modifications de base et de manipuler des données. Les modifications définies par l'utilisateur sont enregistrées dans l'objet 4D View Pro lorsque l'utilisateur enregistre le document.
 
-#### Ribbon
+#### Ruban
 
 ![](assets/en/ViewPro/vpRibbon.PNG)
 
 #### Barre d’outils
 
-Enabling the Toolbar interface displays the [**Show Formula Bar**](FormObjects/properties_Appearance.md#show-formula-bar) option. When selected, the formula bar is visible below the Toolbar interface.
+Lorsque l'interface Barre d'outils est activée, l'option [**Afficher barre de formule**](FormObjects/properties_Appearance.md#show-formula-bar) s'affiche. Si la case de l'option est cochée, la barre de formule est visible en-dessous de l'interface Barre d'outils.
 
-With visible formula bar:
+Lorsque la barre de formule est visible :
 
 ![](assets/en/ViewPro/vpToolbar.PNG)
 
@@ -40,25 +40,25 @@ With visible formula bar:
 
 Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
-| Tab      | Actions                         | Ribbon Interface | Toolbar Interface |
-| -------- | ------------------------------- |:----------------:|:-----------------:|
-| File     | File manipulation               |        X         |                   |
-| Home     | Text appearance                 |        X         |         X         |
-| Insert   | Add items                       |        X         |         X         |
-| Formulas | Formula calculation and library |        X         |         X         |
-| Données  | Data manipulation               |        X         |         X         |
-| View     | Visual presentation             |        X         |         X         |
-| Settings | Sheet presentation reference    |        X         |                   |
+| Onglet   | Actions                         | Interface Ruban | Interface Barre d'outils |
+| -------- | ------------------------------- |:---------------:|:------------------------:|
+| File     | File manipulation               |        X        |                          |
+| Home     | Text appearance                 |        X        |            X             |
+| Insert   | Add items                       |        X        |            X             |
+| Formulas | Formula calculation and library |        X        |            X             |
+| Données  | Data manipulation               |        X        |            X             |
+| View     | Visual presentation             |        X        |            X             |
+| Settings | Sheet presentation reference    |        X        |                          |
 
 
 
 ## Evénements formulaire
 
-The following form events are available in the Property List for 4D View Pro areas.
+Les événements formulaire suivants sont disponibles dans la Liste de propriétés des zones 4D View Pro.
 
-Some of the events are standard form events (available to all active objects) and some are specific 4D View Pro form events. Some standard form events provide extended information in the object returned by the [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) command when they are generated for 4D View Pro areas. The following table shows which events are standard and which are specific or provide additional information to 4D View Pro areas:
+Certains de ces événements sont des événements formulaire standard (disponibles pour tous les objets actifs) et d'autres sont des événements formulaire spécifiques à 4D View Pro. Certains événements formulaire standard fournissent des informations étendues dans l'objet retourné par la commande [`FORM Event`](https://doc.4d.com/4dv19/help/command/en/page1606.html) lorsqu'ils sont générés pour les zones 4D View Pro. Le tableau suivant indique les événements standard et les événements spécifiques ou ceux qui fournissent des informations supplémentaires aux zones 4D View Pro :
 
-| Standard 4D events                              | Specific and extended 4D View Pro events                     |
+| Événements 4D standard                          | Événements 4D View Pro spécifiques et étendus                |
 | ----------------------------------------------- | ------------------------------------------------------------ |
 | [On Load](../Events/onLoad.md)                  | [On VP Ready](../Events/onVpReady.md)                        |
 | [On Getting Focus](../Events/onGettingFocus.md) | [Sur clic](../Events/onClicked.md)                           |
@@ -70,62 +70,62 @@ Some of the events are standard form events (available to all active objects) an
 |                                                 | [On Row Resize](../Events/onRowResize.md)                    |
 |                                                 | [On VP Range Changed](../Events/onVpRangeChanged.md)         |
 
-## Sheet Options
+## Options feuille
 
-The 4D View Pro sheet options object allows you to control various options of your 4D View Pro areas. This object is handled by the following commands:
+L'objet options feuille 4D View Pro vous permet de contrôler plusieurs options pour vos zones 4D View Pro. Cet objet est géré par les commandes suivantes :
 
 *   [VP SET SHEET OPTIONS](method-list.md#vp-set-sheet-options)
 *   [VP Get sheet options](method-list.md#vp-get-sheet-options)
 
-### Sheet appearance
+### Apparence de la feuille
 
-| Propriété            |                        | Type        | Description                                                                                                                                                                                                                                                                                             |
-| -------------------- | ---------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| allowCellOverflow    |                        | boolean     | Specifies whether data can overflow into adjacent empty cells.                                                                                                                                                                                                                                          |
-| sheetTabColor        |                        | string      | A color string used to represent the sheet tab color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
-| frozenlineColor      |                        | string      | A color string used to represent the frozen line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                |
-| clipBoardOptions     |                        | entier long | The clipboard option. Available values: `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
-| gridline             |                        | object      | The grid line's options.                                                                                                                                                                                                                                                                                |
-|                      | color                  | string      | A color string used to represent the grid line color, such as "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", and so on.                                                                                                                                                                                  |
-|                      | showVerticalGridline   | boolean     | Specifies whether to show the vertical grid line.                                                                                                                                                                                                                                                       |
-|                      | showHorizontalGridline | boolean     | Specifies whether to show the horizontal grid line.                                                                                                                                                                                                                                                     |
-| rowHeaderVisible     |                        | boolean     | Specifies whether the row header is visible.                                                                                                                                                                                                                                                            |
-| colHeaderVisible     |                        | boolean     | Specifies whether the column header is visible.                                                                                                                                                                                                                                                         |
-| rowHeaderAutoText    |                        | entier long | Specifies whether the row header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                   |
-| colHeaderAutoText    |                        | entier long | Specifies whether the column header displays letters or numbers or is blank. Available values: `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                                |
-| selectionBackColor   |                        | string      | The selection's background color for the sheet. (preferred RGBA format)                                                                                                                                                                                                                                 |
-| selectionBorderColor |                        | string      | The selection's border color for the sheet.                                                                                                                                                                                                                                                             |
-| sheetAreaOffset      |                        | object      | The sheetAreaOffset's options.                                                                                                                                                                                                                                                                          |
-|                      | left                   | entier long | The offset left of sheet from host.                                                                                                                                                                                                                                                                     |
-|                      | top                    | entier long | The offset top of sheet from host.                                                                                                                                                                                                                                                                      |
-> All properties are optional.
+| Propriété            |                        | Type    | Description                                                                                                                                                                                                                                                                                                    |
+| -------------------- | ---------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| allowCellOverflow    |                        | boolean | Indique si les données peuvent déborder sur des cellules vides adjacentes.                                                                                                                                                                                                                                     |
+| sheetTabColor        |                        | string  | Une chaîne couleur utilisée pour représenter la couleur de l'onglet de la feuille, telle que "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", etc.                                                                                                                                                                |
+| frozenlineColor      |                        | string  | Une chaîne couleur utilisée pour représenter la couleur de ligne figée, telle que "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", etc.                                                                                                                                                                           |
+| clipBoardOptions     |                        | longint | L'option presse-papiers. Valeurs disponibles : `vk clipboard paste options all`, `vk clipboard paste options formatting`, `vk clipboard paste options formulas`, `vk clipboard paste options formulas and formatting`, `vk clipboard paste options values`, `vk clipboard paste options values and formatting` |
+| gridline             |                        | object  | Les options du quadrillage.                                                                                                                                                                                                                                                                                    |
+|                      | color                  | string  | Une chaîne couleur utilisée pour représenter la couleur du quadrillage, telle que "red", "#FFFF00", "rgb(255,0,0)", "Accent 5", etc.                                                                                                                                                                           |
+|                      | showVerticalGridline   | boolean | Indique s'il affiche le quadrillage vertical.                                                                                                                                                                                                                                                                  |
+|                      | showHorizontalGridline | boolean | Indique s'il affiche le quadrillage horizontal.                                                                                                                                                                                                                                                                |
+| rowHeaderVisible     |                        | boolean | Indique si l'en-tête de la ligne est visible.                                                                                                                                                                                                                                                                  |
+| colHeaderVisible     |                        | boolean | Indique si l'en-tête de la colonne est visible.                                                                                                                                                                                                                                                                |
+| rowHeaderAutoText    |                        | longint | Indique si l'en-tête de la ligne affiche des lettres ou des chiffres ou s'il n'affiche rien. Valeurs disponibles : `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                   |
+| colHeaderAutoText    |                        | longint | Indique si l'en-tête de la colonne affiche des lettres ou des chiffres ou s'il n'affiche rien. Valeurs disponibles : `vk header auto text blank`, `vk header auto text letters`, `vk header auto text numbers`                                                                                                 |
+| selectionBackColor   |                        | string  | La couleur d'arrière-plan de la sélection dans la feuille (de préférence au format Rgba).                                                                                                                                                                                                                      |
+| selectionBorderColor |                        | string  | La couleur de bordure de la sélection dans la feuille.                                                                                                                                                                                                                                                         |
+| sheetAreaOffset      |                        | object  | Les options de sheetAreaOffset.                                                                                                                                                                                                                                                                                |
+|                      | left                   | longint | Le décalage gauche de la feuille à partir de l'hôte.                                                                                                                                                                                                                                                           |
+|                      | top                    | longint | Le décalage supérieur de la feuille à partir de l'hôte.                                                                                                                                                                                                                                                        |
+> Toutes les propriétés sont optionnelles.
 
-### Sheet protection
+### Protection de la feuille
 
-To lock the whole sheet, you only need to set the *isProtected* property to **true**. You can then unlock cells individually by setting the [locked](#layout) cell style property.
-
-
-| Propriété         |                          | Type    | Description                                                                                                                       |
-| ----------------- | ------------------------ | ------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| isProtected       |                          | boolean | Specifies whether cells on this sheet that are marked as protected cannot be edited.                                              |
-| protectionOptions |                          | object  | A value that indicates the elements that you want users to be able to change. If null : the protectionOptions parameter is reset. |
-|                   | allowSelectLockedCells   | boolean | Specifies whether the user can select locked cells, optional. True by default.                                                    |
-|                   | allowSelectUnlockedCells | boolean | Specifies whether the user can select unlocked cells, optional. True by default.                                                  |
-|                   | allowSort                | boolean | Specifies whether the user can sort ranges, optional. False by default.                                                           |
-|                   | allowFilter              | boolean | Specifies whether the user can filter ranges, optional. False by default.                                                         |
-|                   | allowEditObjects         | boolean | Specifies whether the user can edit floating objects, optional. False by default.                                                 |
-|                   | allowResizeRows          | boolean | Specifies whether the user can resize rows, optional. False by default.                                                           |
-|                   | allowResizeColumns       | boolean | Specifies whether the user can resize columns, optional. False by default.                                                        |
-|                   | boolean                  | boolean | Specifies whether the user can perform the drag operation to insert rows, optional. False by default.                             |
-|                   | allowDragInsertColumns   | boolean | Specifies whether the user can perform the drag operation to insert columns, optional. False by default.                          |
-|                   | allowInsertRows          | boolean | Specifies whether the user can insert rows, optional. False by default.                                                           |
-|                   | allowInsertColumns       | boolean | Specifies whether the user can insert columns, optional. False by default.                                                        |
-|                   | allowDeleteRows          | boolean | Specifies whether the user can delete rows, optional. False by default.                                                           |
-|                   | allowDeleteColumns       | boolean | Specifies whether the user can delete columns, optional. False by default.                                                        |
-> All properties are optional.
+Pour verrouiller l'intégralité de la feuille, il suffit de mettre la propriété *isProtected* à **vrai**. Vous pouvez alors déverrouiller les cellules individuellement en définissant la propriété de style de la cellule [verrouillée](#layout).
 
 
-## Cell Format
+| Propriété         |                          | Type    | Description                                                                                                                           |
+| ----------------- | ------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| isProtected       |                          | boolean | Indique si les cellules protégées de cette feuille peuvent être modifiées ou non.                                                     |
+| protectionOptions |                          | object  | Une valeur qui indique les éléments que les utilisateurs peuvent modifier. Si null : le paramètre protectionOptions est réinitialisé. |
+|                   | allowSelectLockedCells   | boolean | Indique si l'utilisateur peut sélectionner des cellules verrouillées, optionnel. Vrai par défaut.                                     |
+|                   | allowSelectUnlockedCells | boolean | Indique si l'utilisateur peut sélectionner des cellules non verrouillées, optionnel. Vrai par défaut.                                 |
+|                   | allowSort                | boolean | Indique si l'utilisateur peut trier des plages, optionnel. Faux par défaut.                                                           |
+|                   | allowFilter              | boolean | Indique si l'utilisateur peut filtrer des plages, optionnel. Faux par défaut.                                                         |
+|                   | allowEditObjects         | boolean | Indique si l'utilisateur peut modifier des objets flottants, optionnel. Faux par défaut.                                              |
+|                   | allowResizeRows          | boolean | Indique si l'utilisateur peut redimensionner des lignes, optionnel. Faux par défaut.                                                  |
+|                   | allowResizeColumns       | boolean | Indique si l'utilisateur peut redimensionner des colonnes, optionnel. Faux par défaut.                                                |
+|                   | boolean                  | boolean | Indique si l'utilisateur peut effectuer des opérations de glissement pour insérer des lignes, optionnel. Faux par défaut.             |
+|                   | allowDragInsertColumns   | boolean | Indique si l'utilisateur peut effectuer des opérations de glissement pour insérer des colonnes, optionnel. Faux par défaut.           |
+|                   | allowInsertRows          | boolean | Indique si l'utilisateur peut insérer des lignes, optionnel. Faux par défaut.                                                         |
+|                   | allowInsertColumns       | boolean | Indique si l'utilisateur peut insérer des colonnes, optionnel. Faux par défaut.                                                       |
+|                   | allowDeleteRows          | boolean | Indique si l'utilisateur peut supprimer des lignes, optionnel. Faux par défaut.                                                       |
+|                   | allowDeleteColumns       | boolean | Indique si l'utilisateur peut supprimer des colonnes, optionnel. Faux par défaut.                                                     |
+> Toutes les propriétés sont optionnelles.
+
+
+## Format des cellules
 
 
 Defining a format pattern ensures that the content of your 4D View Pro documents is displayed the way you intended. Formats can be set using the selected 4D View Pro [interface](#selecting-a-user-interface), or using the [VP SET VALUE](method-list.md#vp-set-value) or [VP SET NUM VALUE](method-list.md#vp-set-num-value) methods.
@@ -174,7 +174,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 4D View Pro provides the following constants for ISO 8601 date and time patterns:
 
-| Constant                                  | Valeur                               | Commentaire                                                                                                                                                                                                                 |
+| Constante                                 | Valeur                               | Commentaire                                                                                                                                                                                                                 |
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `vk pattern full date time`               | "_fullDateTimePattern_"              | ISO 8601 format for the full date and time in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy HH:mm:ss"                                                   |
 | `vk pattern long date`                    | "_longDatePattern_"                  | ISO 8601 format for the full date in current localization.<p><p>USA default pattern: "dddd, dd MMMM yyyy"                                                                     |
@@ -232,7 +232,7 @@ In addition to the special characters and codes described in the previous sectio
 
 | Caractère | Description                                                        | Exemple              |
 | --------- | ------------------------------------------------------------------ | -------------------- |
-| + and -   | Plus and minus signs                                               | ### + ### = ###,### |
+| + et -    | Plus and minus signs                                               | ### + ### = ###,### |
 | ( )       | Left and right parenthesis                                         | (-###.##)            |
 | :         | Colon                                                              | hh:mm:ss             |
 | ^         | Caret                                                              | #\^#                |
@@ -260,7 +260,7 @@ In addition to the special characters and codes described in the previous sectio
 *   [VP SET PRINT INFO](method-list.md#vp-set-print-info)
 *   [VP Get print info](method-list.md#vp-get-print-info)
 
-### Columns / Rows
+### Colonnes / Lignes
 
 Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
 
@@ -448,7 +448,7 @@ Exemple :
 | backgroundImageLayout | entier long   | Defines the layout for the background image. | `vk image layout center`, `vk image layout none`, `vk image layout stretch`, `vk image layout zoom`                                                                                                                                                                                                                                                                       |
 | foreColor             | Texte         | Defines the color of the foreground.         | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                                        |
 
-#### Borders
+#### Bordures
 
 | Propriété                                                                  |       | Type        | Description                                                                    | Possible values                                                                                                                                                                                                                                                                                                                                                  |
 | -------------------------------------------------------------------------- | ----- | ----------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -456,7 +456,7 @@ Exemple :
 |                                                                            | color | Texte       | Defines the color of the border. Default = black.                              | CSS color "#rrggbb" syntax (preferred syntax), CSS color "rgb(r,g,b)" syntax (alternate syntax), CSS color name (alternate syntax)                                                                                                                                                                                                                               |
 |                                                                            | style | entier long | Defines the style of the border. Default = empty. Cannot be null or undefined. | `vk line style dash dot`, `vk line style dash dot dot`, `vk line style dashed`, `vk line style dotted`, `vk line style double`, `vk line style empty`, `vk line style hair`, `vk line style medium`, `vk line style medium dash dot`, `vk line style medium dash dot dot`,`vk line style medium dashed`, `vk line style slanted dash dot`, `vk line style thick` |
 
-#### Fonts and text
+#### Polices et texte
 
 | Propriété       |            | Type        | Description                                                                                                                                                                                                                                                                                                                                                          | Possible values                                                                                                                                                                                                                             |
 | --------------- | ---------- | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -474,7 +474,7 @@ Exemple :
 | watermark       |            | Texte       | Defines the watermark (cell label) content                                                                                                                                                                                                                                                                                                                           |                                                                                                                                                                                                                                             |
 | wordWrap        |            | boolean     | Specifies if text should be wrapped.                                                                                                                                                                                                                                                                                                                                 | True = wrapped text, False = unwrapped text                                                                                                                                                                                                 |
 
-#### Layout
+#### Affichage
 
 | Propriété   | Type        | Description                                                                                                         | Possible values                                                                                                      |
 | ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |

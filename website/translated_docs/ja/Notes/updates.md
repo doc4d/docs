@@ -8,7 +8,8 @@ title: ドキュメンテーション更新情報
 
 ## 4D v19 R4
 
-- [4D View Pro](ViewPro/getting-started.md) の章が次の新コマンドとともに追加されました: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
+- [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
+- [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
 
 ## 4D v19 R3
 
@@ -17,7 +18,7 @@ title: ドキュメンテーション更新情報
 - 新しい ORDAデータクラス属性: [`exposed`](API/DataClassAttributeClass.md#exposed) および [`readOnly`](API/DataClassAttributeClass.md#readonly)。
 - [ZIPアーカイブ](API/ZipArchiveClass.md#zip-create-archive): *LZMA* および *xz* 圧縮アルゴリズムをサポート。
 - [新しいビルドオプション](Desktop/building.md#silicon-macos-クライアントからの接続を許可) により、Windows上で Serverアプリケーションに Silicon Macクライアントを組み込むのが簡単になりました。
-- macOS で [ダークモードをサポート](Preferences/general.md#アピアランス-macOSのみ)。
+- macOS で [ダークモードをサポート](Preferences/general.md#アピアランス-macosのみ)。
 - [`IMAP New transporter`](API/IMAPTransporterClass.md#imap-new-transporter), [`POP3 New transporter`](API/POP3TransporterClass.md#pop3-new-transporter), および [`SMTP New transporter`](API/SMTPTransporterClass.md#smtp-new-transporter): **OAuth2 トークンオブジェクト** をサポート。
 - [サーバー管理ウィンドウ](ServerWindow/maintenance.md#ログ設定ファイルを読み込む) のボタンを使って、[ログ設定ファイル](Debugging/debugLogFiles.md#ログ設定ファイルを使用する) を読み込めるようになりました。
 - 4Dランゲージで [任意パラメーター](Concepts/parameters.md#任意パラメーター) をより柔軟に扱えるようになりました。

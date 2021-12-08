@@ -5,7 +5,7 @@ title: コンポーネントの開発
 
 4D のコンポーネントとは、[4Dアプリケーションにインストール可能](Concepts/components.md) な、1つ以上の機能を持つ 4Dメソッドやフォームの一式です。 たとえば、メールの送受信をおこない、それらを 4D アプリケーションに格納するための機能を持ったコンポーネントを作成できます。
 
-ニーズに合わせて独自の 4Dコンポーネントを開発し、それを非公開とすることができます。 また、作成した [コンポーネントを4Dコミュニティで共有](https://github.com/search?q=4d-component) することもできます。
+ニーズに合わせて独自の 4Dコンポーネントを開発し、それを非公開とすることができます。 また、作成した [コンポーネントを4Dコミュニティで共有](https://github.com/topics/4d-component) することもできます。
 
 
 ## 定義
@@ -313,4 +313,4 @@ SAVE RECORD($tablepointer->)
 
 ## コンポーネントの共有
 
-開発したコンポーネントを [GitHub](https://github.com/search?q=4d-component) などで公開し、4D開発者のコミュニティをサポートすることをお勧めします。
+開発したコンポーネントを [GitHub](https://github.com/topics/4d-component) で公開し、4D開発者のコミュニティをサポートすることをお勧めします。 We recommend that you use the **`4d-component`** topic to be correctly referenced.  

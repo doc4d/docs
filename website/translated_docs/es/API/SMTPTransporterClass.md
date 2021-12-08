@@ -63,7 +63,7 @@ The `SMTP New transporter` command <!-- REF #_command_.SMTP New transporter.Summ
 
 
 
-In the *server* parameter, pass an object containing the following properties:
+En el parámetro *server*, pase un objeto que contenga las siguientes propiedades:
 
 | *server*                                                                                                                                                                                                                                                                                                                                                                                                                  | Valor por defecto (si se omite)                                     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
@@ -76,7 +76,7 @@ In the *server* parameter, pass an object containing the following properties:
 | [<!-- INCLUDE #transporter.host.Syntax -->](#host)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.host.Summary -->| *obligatorio*                                                       |
 | [<!-- INCLUDE #SMTPTransporterClass.keepAlive.Syntax -->](#keepalive)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SMTPTransporterClass.keepAlive.Summary -->| True                                                                |
 | [<!-- INCLUDE #transporter.logFile.Syntax -->](#logfile)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.logFile.Summary -->| ninguno                                                             |
-| **password** : Text<p>User password for authentication on the server. Not returned in *[SMTP transporter](#smtp-transporter-object)* object.                                                                                                                                                                                                                                                       | ninguno                                                             |
+| **password** : Text<p>Contraseña del usuario para la autenticación en el servidor. Not returned in *[SMTP transporter](#smtp-transporter-object)* object.                                                                                                                                                                                                                                          | ninguno                                                             |
 | [<!-- INCLUDE #transporter.port.Syntax -->](#port)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.port.Summary -->| 587                                                                 |
 | [<!-- INCLUDE #transporter.sendTimeOut.Syntax -->](#sendtimeout)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.sendTimeOut.Summary -->| 100                                                                 |
 | [<!-- INCLUDE #transporter.user.Syntax -->](#user)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #transporter.user.Summary -->| ninguno                                                             |
@@ -85,7 +85,7 @@ In the *server* parameter, pass an object containing the following properties:
 
 #### Resultado
 
-The function returns a [**SMTP transporter object**](#smtp-transporter-object). Todas las propiedades devueltas son **de sólo lectura**.
+La función devuelve un [**SMTP transporter**](#smtp-transporter-object). Todas las propiedades devueltas son **de sólo lectura**.
 
 
 #### Ejemplo
@@ -248,10 +248,10 @@ The SMTP connection is automatically closed:
 **.send**( *mail* : Object ) : Object<!-- END REF -->
 
 <!-- REF #SMTPTransporterClass.send().Params -->
-| Parámetros | Tipo   |    | Descripción                                       |
-| ---------- | ------ |:--:| ------------------------------------------------- |
-| mail       | Objeto | -> | [Email](EmailObjectClass.md#email-object) to send |
-| Resultado  | Objeto | <- | Estado SMTP                                       |
+| Parámetros | Tipo   |    | Descripción                                        |
+| ---------- | ------ |:--:| -------------------------------------------------- |
+| mail       | Objeto | -> | [Email](EmailObjectClass.md#email-object) a enviar |
+| Resultado  | Objeto | <- | Estado SMTP                                        |
 <!-- END REF -->
 
 
@@ -271,7 +271,7 @@ The function returns an object describing the SMTP status of the operation. This
 
 | Propiedad  | Tipo     | Descripción                                                                                      |
 | ---------- | -------- | ------------------------------------------------------------------------------------------------ |
-| success    | booleano | True if the send is successful, False otherwise                                                  |
+| success    | booleano | True si el envío tiene éxito, false en caso contrario                                            |
 | status     | number   | Status code returned by the SMTP server (0 in case of an issue unrelated to the mail processing) |
 | statusText | texto    | Status message returned by the SMTP server                                                       |
 
