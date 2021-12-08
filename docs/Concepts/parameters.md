@@ -131,30 +131,7 @@ Function add($x : Variant; $y : Integer): Integer
 	$0:=$x+$y
 ```
 
-### `return {expression}`
 
-The `return` statement ends function or method execution and can specify an expression to be returned to the caller. 
-
-When a `return` statement is used in a function or method, the execution of the function or method is stopped. If specified, a given value is returned to the caller. For example, the following function returns the square of its argument, $x, where $x is a number.
-
-```4d
-Function square($x : Integer) 
-   return $x * $x
-```
-
-The `return` statement can be used along with the standard syntax for [returned values](#returned-value), however note that it ends immedialtely the code execution. For example:
-
-```4d
-Function getValue
-	$0:=10
-	return 20
-	// returns 20
-
-Function getValue -> $v : Integer
-	return 10
-	$v:=20
-	// returns 10
-```
 
 
 
@@ -233,6 +210,40 @@ You can use any [expression](quick-tour.md#expression-types) as sequential param
 - arrays
 
 Tables or array expressions can only be passed [as reference using a pointer](dt_pointer.md#pointers-as-parameters-to-methods). 
+
+## `return {expression}`
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R4|Added
+</details>
+
+The `return` statement ends function or method execution and can be used to return an expression to the caller. 
+
+For example, the following function returns the square of its argument, $x, where $x is a number.
+
+```4d
+Function square($x : Integer) 
+   return $x * $x
+```
+
+The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). However, note that it ends immediately the code execution. For example:
+
+```4d
+Function getValue
+	$0:=10
+	return 20
+	// returns 20
+
+Function getValue -> $v : Integer
+	return 10
+	$v:=20
+	// returns 10
+```
+
+> If `return` is executed without an expression to return, `Undefined` is returned.  
+
 
 ## Parameter indirection (${N})
 

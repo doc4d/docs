@@ -263,10 +263,10 @@ Function add($x : Variant; $y : Integer): Integer
 	$0:=$x+$y
 ```
 
-Or, you can use the [`return {expression}`](parameters.md#return-expression) statement to end the function execution and return the value. For example:
+Or, you can use the [`return expression`](parameters.md#return-expression) statement to end the function execution and return the value. For example:
 
 ```4d
-Function getRectArea($width : Integer; $height : Integer) {
+Function getRectArea($width : Integer; $height : Integer) : Integer
 	If ($width > 0 && $height > 0)
 		return $width * $height
 	Else
