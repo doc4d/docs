@@ -9,6 +9,8 @@ The list of main updates in this documentation. For general information about ne
 ## 4D v19 R4
 
 - [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
+- Support for [break and continue](Concepts/cf_looping.md#break-and-continue) statements in loops.
+- Support for [return](Concepts/flow-control.md#return-expression) statement and [return expression](Concepts/parameters.md#return-expression) to return values.
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
 
 ## 4D v19 R3

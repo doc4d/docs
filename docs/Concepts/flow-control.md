@@ -19,6 +19,12 @@ The loops are controlled in two ways: either they loop until a condition is met,
 
 ## return {expression}
 
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R4|Added
+</details>
+
 The `return` statement can be called in any programming structure. When a `return` statement is used in a function or method, the execution of the function or method is stopped. The remaining code is not executed and the hand is given back to the caller. 
 
 The `return` statement can be used to [return a value](parameters.md#return-expression) to the caller. If the value is omitted, `undefined` is returned instead.
