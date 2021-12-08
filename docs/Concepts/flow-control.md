@@ -31,10 +31,10 @@ The `return` statement can be used to [return a value](parameters.md#return-expr
 var $result : Text
 For ($i;1;1000)
 	$result:=$result+String($i)+"A\r" // until 5
-      If ($i = 5)
-        return 
-      End if
-      $result:=$result+String($i)+"B\r" // until 4
+    If ($i = 5)
+      return 
+    End if
+    $result:=$result+String($i)+"B\r" // until 4
 End for
 $result:=$result+String($i)+"C\r"  // never appears
 
