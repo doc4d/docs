@@ -10,6 +10,8 @@ title: ドキュメンテーション更新情報
 
 - [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
+- [Short-circuit operators](Concepts/dt_boolean.md#short-circuit-operators)
+- [Ternary operator](Concepts/dt_boolean.md#ternary-operator)
 
 ## 4D v19 R3
 
