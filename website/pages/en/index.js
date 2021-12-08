@@ -62,6 +62,7 @@ class Index extends React.Component {
       cs: <translate>Client/Server</translate>,
       tls: <translate>TLS Protocol</translate>,
       debugging: <translate>Debugging</translate>,
+      codeEditor: <translate>Code Editor</translate>,
       dataExplorer: <translate>Web Data Explorer</translate>,
       langRef: <translate>Language Reference (4D Doc Center)</translate>,
       users: <translate>Access Rights</translate>,
@@ -76,7 +77,6 @@ class Index extends React.Component {
       settings: <translate>Settings</translate>,
       usersettings: <translate>User Settings</translate>,
 	    langUrl: <translate>https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html</translate>
-
     };
 
     return (
@@ -101,6 +101,7 @@ class Index extends React.Component {
 				  [${subContents.langRef}](${subContents.langUrl})<br>
                   [${subContents.ORDA}](${siteConfig.baseUrl}${this.props.language}/ORDA/overview.html)<br>
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
+                  [${subContents.codeEditor}](${siteConfig.baseUrl}${this.props.language}/code-editor/dropdown.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>
           [${subContents.settings}](${siteConfig.baseUrl}${this.props.language}/settings/overview.html)<br>
 				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)`,

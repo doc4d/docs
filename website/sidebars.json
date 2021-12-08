@@ -90,6 +90,9 @@
 			"API/ZipFileClass",
 			"API/ZipFolderClass"
 		],
+		"Code Editor": [
+			"code-editor/dropdown"
+		],
 		"Debugging": [
 			"Debugging/basics",
 			"Debugging/debugger",
