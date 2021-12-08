@@ -988,7 +988,7 @@ Mailbox name delimiter character.
 | Parámetros | Tipo    |    | Descripción                                      |
 | ---------- | ------- |:--:| ------------------------------------------------ |
 | msgNumber  | Integer | -> | Sequence number of the message                   |
-| msgID      | Texto   | -> | Unique ID of the message                         |
+| msgID      | Texto   | -> | ID único del mensaje                             |
 | options    | Objeto  | -> | Message handling instructions                    |
 | Resultado  | Objeto  | <- | [Objeto Email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
