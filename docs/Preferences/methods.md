@@ -3,7 +3,7 @@ id: methods
 title: Methods Page
 ---
 
-This page contains parameters defining the Method editor interface and it default display as well as options concerning its operation. It is divided into two sections accessed using the Theme and Options tabs.
+This page contains parameters defining the Method editor interface and its default display as well as options concerning its operation. It is divided into two sections accessed using the Theme and Options tabs.
 
 ## Themes
 
@@ -112,6 +112,12 @@ Lets you display the line numbers by default in each window of the Method editor
 #### Show Lists
 
 Lets you choose whether or not to show the lists of objects (Commands, Tables and fields, etc.) by default when the Method editor window is opened. You can also show or hide each list directly from the Method editor.
+
+#### Show clipboards
+
+Lets you choose whether or not to show the multiple clipboards in the code editor. 
+
+![](assets/en/Preferences/show-clipboards.png)
 
 #### Highlight the logical blocks
 
