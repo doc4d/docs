@@ -76,28 +76,27 @@ The rule is as follows:
 
 Given `Expr1 && Expr2`:
 
-If Expr1 is falsy, the calculation stops without evaluating Expr2, and Expr1 is returned.
-If Expr1 is truthy, the calculation returns Expr2.
+The short-circuit AND operator evaluates operands from left to right, returning immediately with the value of the first falsy operand it encounters; if all values are [truthy](#truthy-and-falsy), the value of the last operand is returned.
 
 The following table summarizes the different cases for the **&&** operator:
 
 |Expr1	|Expr2	|  Value returned
 |---|---|---|
-|Truthy	|Truthy	|Expr2|
-|Truthy	|Falsy	|Expr2|
-|Falsy	|Truthy	|Expr1|
-|Falsy	|Falsy	|Expr1|
+|truthy	|truthy	|Expr2|
+|truthy	|falsy	|Expr2|
+|falsy	|truthy	|Expr1|
+|falsy	|falsy	|Expr1|
 
 #### Example 1 
 
 ```4d
-var $a : Text
-var $b : Text
+var $v : Variant
 
-$a:="Hello"
-$b:="World"
-
-ALERT($a && $b); // World
+$v:= "Hello" && "World" //"World"
+$v:=False && 0 // False
+$v:=0 && False // False
+$v:=5 && !00-00-00! // 00/00/00
+$v := 5 && 10 && "hello" //"hello"
 ```
 
 #### Example 2
@@ -118,24 +117,26 @@ $tax:=$item.taxRate && ($item.price*$item.taxRate)
 
 ### Short-circuit OR operator (||)
 
-The rule is as follows: 
+The || operator returns the value of one of the specified operands. The expression is evaluated left to right and tested for possible "short-circuit" evaluation using the following rule:
 
-If Expr1 is Falsy, the calculation returns Expr2.
+Given `Expr1 || Expr2`:
 
-If Expr1 is Truthy, Expr 2 is not evaluated and the calculation returns Expr1.
+If Expr1 is [truthy](#truthy-and-falsy), Expr2 is not evaluated and the calculation returns Expr1.
+
+If Expr1 is [falsy](#truthy-and-falsy), the calculation returns Expr2.
 
 The following table summarizes the different cases and the value returned for the **||** operator:
 
 |Expr1	|Expr2	|  Value returned
 |---|---|---|
-|Truthy	|Truthy	|Expr1|
-|Truthy	|Falsy	|Expr1|
-|Falsy	|Truthy	|Expr2|
-|Falsy	|Falsy	|Expr2|
+|truthy	|truthy	|Expr1|
+|truthy	|falsy	|Expr1|
+|falsy	|truthy	|Expr2|
+|falsy	|falsy	|Expr2|
 
-#### Example
+#### Example 1
 
-Say you have a table called Employee. Some employees have entered a telephone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. But you can write the following:
+Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. But you can write the following:
 
 ```4d
 var $phone : Text
@@ -171,7 +172,7 @@ It takes three operands in the following order:
 
 * a condition followed by a question mark (?)
 * an expression to execute if the condition is [truthy](#truthy-and-falsy), followed by a colon (:) 
-* the expression to execute if the condition is [falsy](#truthy-and-falsy)
+* an expression to execute if the condition is [falsy](#truthy-and-falsy)
 
 ### Syntax 
 
