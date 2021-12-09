@@ -333,9 +333,9 @@ You want to delete a specific file in the database folder:
 **.getAppInfo**() : Object<!-- END REF -->
 
 <!--REF #FileClass.getAppInfo().Params -->
-| Paramètres | Type  |    | Description                                           |
-| ---------- | ----- | -- | ----------------------------------------------------- |
-| Résultat   | Objet | <- | Contents of .exe/.dll version resource or .plist file |
+| Paramètres | Type   |    | Description                                           |
+| ---------- | ------ | -- | ----------------------------------------------------- |
+| Résultat   | Object | <- | Contents of .exe/.dll version resource or .plist file |
 <!-- END REF -->
 
 
