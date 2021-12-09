@@ -233,7 +233,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 <!-- REF #IMAPTransporterClass.append().Params -->
 | Paramètres     | Type  |    | Description                     |
 | -------------- | ----- |:--:| ------------------------------- |
-| mailObj        | Objet | -> | Email object                    |
+| mailObj        | Objet | -> | Objet email                     |
 | destinationBox | Texte | -> | Mailbox to receive Email object |
 | options        | Objet | -> | Object containing charset info  |
 | Résultat       | Objet | <- | Statut de l'opération           |
@@ -250,10 +250,10 @@ The optional `destinationBox` parameter lets you pass the name of a mailbox wher
 
 In the optional `options` parameter, you can pass an object to define the charset and encoding for specific parts of the email. Propriétés disponibles :
 
-| Propriété     | Type  | Description                                                                                                                                                                            |
-| ------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| headerCharset | Texte | Charset and encoding used for the following parts of the email: subject, attachment filenames, and email name attribute(s). Valeurs possibles : voir le tableau des charsets possibles |
-| bodyCharset   | Texte | Charset and encoding used for the html and text body contents of the email. Valeurs possibles : voir le tableau des charsets possibles                                                 |
+| Propriété     | Type  | Description                                                                                                                                                                           |
+| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| headerCharset | Texte | Charset et encodage utilisés pour les parties de mail suivantes : le sujet, les noms de fichiers joints et le nom du mail. Valeurs possibles : voir le tableau des charsets possibles |
+| bodyCharset   | Texte | Charset et encodage utilisés pour le contenu html et le texte du body du mail. Valeurs possibles : voir le tableau des charsets possibles                                             |
 
 Possible charsets:
 
@@ -987,12 +987,12 @@ Mailbox name delimiter character.
 **.getMail**( *msgNumber*: Integer { ; *options* : Object } ) : Object<br>**.getMail**( *msgID*: Text { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMail().Params -->
-| Paramètres | Type        |    | Description                                      |
-| ---------- | ----------- |:--:| ------------------------------------------------ |
-| msgNumber  | Entier long | -> | Sequence number of the message                   |
-| msgID      | Texte       | -> | ID unique du message                             |
-| options    | Objet       | -> | Message handling instructions                    |
-| Résultat   | Objet       | <- | [Email object](EmailObjectClass.md#email-object) |
+| Paramètres | Type        |    | Description                                     |
+| ---------- | ----------- |:--:| ----------------------------------------------- |
+| msgNumber  | Entier long | -> | Sequence number of the message                  |
+| msgID      | Texte       | -> | ID unique du message                            |
+| options    | Objet       | -> | Message handling instructions                   |
+| Résultat   | Objet       | <- | [Objet email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
@@ -1005,7 +1005,7 @@ In the first parameter, you can pass either:
 *   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
 *   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
 
-The optional *options* parameter allows you pass an object defining additional instructions for handling the message. The following properties are available:
+The optional *options* parameter allows you pass an object defining additional instructions for handling the message. Les propriétés suivantes sont disponibles :
 
 | Propriété  | Type    | Description                                                                                                                 |
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
