@@ -59,7 +59,7 @@ Toutes les propriétés qui contiennent des adresses email ([`from`](#from), [`c
 - un nom+adresse : "Somebody <somebody@domain.com>"
 - combinaison de plusieurs adresses : "Somebody <somebody@domain.com>,me@home.org"
 
-#### Objet
+#### Object
 
 Un objet avec deux propriétés :
 
@@ -508,7 +508,7 @@ La propriété `.to` contient <!-- REF #EmailObjectClass.to.Summary -->le ou les
 | Paramètres | Type       |    | Description   |
 | ---------- | ---------- |:--:| ------------- |
 | mime       | Blob, Text | -> | Email en MIME |
-| Résultat   | Objet      | <- | Objet email   |
+| Résultat   | Object     | <- | Objet email   |
 <!-- END REF -->
 
 #### Description
@@ -592,11 +592,11 @@ $status:=$transporter.send($email)
 **MAIL Convert to MIME**( *mail* : Object { ; *options* : Object } ) : Text<!-- END REF -->
 
 <!-- REF #_command_.MAIL_Convert_to_MIME.Params -->
-| Paramètres | Type  |    | Description                              |
-| ---------- | ----- |:--:| ---------------------------------------- |
-| mail       | Objet | -> | Objet email                              |
-| options    | Objet | -> | Options d'encodage et de charset du mail |
-| Résultat   | Texte | <- | Objet email converti en MIME             |
+| Paramètres | Type   |    | Description                              |
+| ---------- | ------ |:--:| ---------------------------------------- |
+| mail       | Object | -> | Objet email                              |
+| options    | Object | -> | Options d'encodage et de charset du mail |
+| Résultat   | Texte  | <- | Objet email converti en MIME             |
 <!-- END REF -->
 
 #### Description
