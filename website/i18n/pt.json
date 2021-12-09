@@ -116,6 +116,9 @@
       "Backup/settings": {
         "title": "Parâmetros da cópia de segurança"
       },
+      "code-editor/dropdown": {
+        "title": "Navigation dropdown"
+      },
       "Concepts/about": {
         "title": "Sobre a linguagem 4D"
       },
@@ -968,6 +971,7 @@
       "4D Language Concepts": "4D Language Concepts",
       "ORDA": "ORDA",
       "Class API Reference": "Class API Reference",
+      "Code Editor": "Code Editor",
       "Debugging": "Debugging",
       "Settings": "Settings",
       "Preferences": "Preferences",
@@ -1021,6 +1025,7 @@
     "Client/Server|no description given": "Client/Server",
     "TLS Protocol|no description given": "TLS Protocol",
     "Debugging|no description given": "Debugging",
+    "Code Editor|no description given": "Code Editor",
     "Web Data Explorer|no description given": "Web Data Explorer",
     "Language Reference (4D Doc Center)|no description given": "Language Reference (4D Doc Center)",
     "Access Rights|no description given": "Access Rights",
