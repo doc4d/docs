@@ -53,10 +53,10 @@ End if
 | --------------- | ----------- |:--:| ---------------------------------------------------- |
 | fileToZip       | 4D.File     | -> | File or Folder object to compress                    |
 | folderToZip     | 4D.Folder   | -> | File or Folder object to compress                    |
-| zipStructure    | Objet       | -> | File or Folder object to compress                    |
+| zipStructure    | Object      | -> | File or Folder object to compress                    |
 | destinationFile | 4D.File     | -> | Destination file for the archive                     |
 | options         | Entier long | -> | *folderToZip* option: `ZIP Without enclosing folder` |
-| Résultat        | Objet       | <- | Objet statut                                         |
+| Résultat        | Object      | <- | Objet statut                                         |
 <!-- END REF -->
 
 
