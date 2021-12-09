@@ -10,8 +10,11 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 
 - [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
+
 - [Short-circuit operators](Concepts/dt_boolean.md#short-circuit-operators)
 - [Ternary operator](Concepts/dt_boolean.md#ternary-operator)
+- The [Code Editor](code-editor/dropdown.md) now includes an dropdown tool and supports markers for better code navigation.
+- The [Preferences](Preferences/methods.md) now include the **Show clipboards** option on the Methods page.
 
 ## 4D v19 R3
 
