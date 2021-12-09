@@ -268,10 +268,10 @@ The `boxInfo` object returned contains the following properties:
 **.getMail**( *msgNumber* : Integer ) : Object<!-- END REF -->
 
 <!-- REF #POP3TransporterClass.getMail().Params -->
-| Paramètres | Type        |    | Description                                      |
-| ---------- | ----------- |:--:| ------------------------------------------------ |
-| msgNumber  | Entier long | -> | Number of the message in the list                |
-| Résultat   | Objet       | <- | [Email object](EmailObjectClass.md#email-object) |
+| Paramètres | Type        |    | Description                                     |
+| ---------- | ----------- |:--:| ----------------------------------------------- |
+| msgNumber  | Entier long | -> | Number of the message in the list               |
+| Résultat   | Objet       | <- | [Objet email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
