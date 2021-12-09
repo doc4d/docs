@@ -289,7 +289,7 @@ End if
 | ---------- | ---------- |:--:| ---------------------------------------------------------- |
 | privilege  | Texte      | -> | Privilege name                                             |
 | privileges | Collection | -> | Collection of privilege names                              |
-| settings   | Objet      | -> | Object with a "privileges" property (string or collection) |
+| settings   | Object     | -> | Object with a "privileges" property (string or collection) |
 <!-- END REF -->
 
 #### Description
