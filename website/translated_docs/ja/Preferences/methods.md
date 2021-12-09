@@ -3,7 +3,7 @@ id: methods
 title: メソッドページ
 ---
 
-このページでは、メソッドエディターのインターフェースやデフォルトの表示、および動作に関するオプションを設定します。 ページはテーマとオプションという 2つのタブに分けられています。
+This page contains parameters defining the Method editor interface and its default display as well as options concerning its operation. ページはテーマとオプションという 2つのタブに分けられています。
 
 ## テーマ
 
@@ -112,6 +112,12 @@ title: メソッドページ
 #### リスト表示
 
 メソッドエディターウィンドウを開いたときに、オブジェクト (コマンド、テーブル、フィールド等) のリストをデフォルトで表示するかどうかを設定します。 メソッドエディターで直接このリストを表示/非表示にすることもできます。
+
+#### Show clipboards
+
+Lets you choose whether or not to show the multiple clipboards in the code editor.
+
+![](assets/en/Preferences/show-clipboards.png)
 
 #### 論理ブロックを強調
 
