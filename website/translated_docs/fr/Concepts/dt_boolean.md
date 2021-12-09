@@ -180,6 +180,8 @@ La syntaxe est la suivante :
 
 `condition ? exprIfTruthy : exprIfFalsy`
 
+> Since the [token syntax](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html) uses colons, we recommend inserting a space after the colon `:` or enclosing tokens using parentheses to avoid any conflicts.
+
 ### Exemples
 
 #### A simple example
@@ -203,17 +205,6 @@ var $fullname : Text
 
 // If one of the names is missing, store the one that exists, otherwise store an empty string.
 $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
-```
-
-### Syntax recommendation
-
-Since the [tokenization system](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html) uses colons in its syntax, we recommend inserting a space after the colon `:` or enclosing tokens using parentheses to avoid conflicts:
-
-```4d
-B42:=1
-C10:=2
-$value:=($size>1000) ? B42:C10  // Wrong syntax. Becomes $value:=($size>1000) ? String
-$value:=($size>1000) ? B42: C10  // OK
 ```
 
 ## Truthy and falsy
