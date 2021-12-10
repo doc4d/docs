@@ -249,7 +249,7 @@ Aqui são dois exemplos:
  End for
 ```
 
-12. The following example builds an array of pointers to all the date fields present in the database:
+12. O seguinte exemplo constrói um array de ponteiros a todos os campos de data presentes no banco:
 
 ```4d
  ARRAY POINTER($apDateFields;0)
