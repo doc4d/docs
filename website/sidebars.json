@@ -91,7 +91,7 @@
 			"API/ZipFolderClass"
 		],
 		"Code Editor": [
-			"code-editor/dropdown"
+			"code-editor/navigation"
 		],
 		"Debugging": [
 			"Debugging/basics",
