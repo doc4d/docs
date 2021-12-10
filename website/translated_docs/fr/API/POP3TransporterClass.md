@@ -216,9 +216,9 @@ Executing this method does not actually remove any email. The flagged email will
 **.getBoxInfo()** : Object<!-- END REF -->
 
 <!-- REF #POP3TransporterClass.getBoxInfo().Params -->
-| Paramètres | Type   |    | Description    |
-| ---------- | ------ |:--:| -------------- |
-| Résultat   | Object | <- | boxInfo object |
+| Paramètres | Type   |    | Description   |
+| ---------- | ------ |:--:| ------------- |
+| Résultat   | Object | <- | Objet boxInfo |
 <!-- END REF -->
 
 
@@ -226,7 +226,7 @@ Executing this method does not actually remove any email. The flagged email will
 
 The `.getBoxInfo()` function <!-- REF #POP3TransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. This function allows you to retrieve information about the mailbox.
 
-The `boxInfo` object returned contains the following properties:
+L'objet `boxInfo` contient les propriété suivantes :
 
 | Propriété | Type   | Description                                            |
 | --------- | ------ | ------------------------------------------------------ |
@@ -277,7 +277,7 @@ The `boxInfo` object returned contains the following properties:
 
 ##### Description
 
-The `.getMail()` function <!-- REF #POP3TransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* in the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. This function allows you to locally handle the email contents.
+The `.getMail()` function <!-- REF #POP3TransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* in the mailbox designated by the [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. Cette fonction vous permet de gérer localement le contenu de l'email.
 
 Pass in *msgNumber* the number of the message to retrieve. This number is returned in the number property by the [`.getMailInfoList()`](#getmailinfolist) function.
 
@@ -460,10 +460,10 @@ You want to know the total number and size of emails in the mailbox:
 **.getMIMEAsBlob**( *msgNumber* : Integer ) : Blob<!-- END REF -->
 
 <!-- REF #POP3TransporterClass.getMIMEAsBlob().Params -->
-| Paramètres | Type        |    | Description                                           |
-| ---------- | ----------- |:--:| ----------------------------------------------------- |
-| msgNumber  | Entier long | -> | Number of the message in the list                     |
-| Résultat   | Blob        | <- | Blob of the MIME string returned from the mail server |
+| Paramètres | Type        |    | Description                                          |
+| ---------- | ----------- |:--:| ---------------------------------------------------- |
+| msgNumber  | Entier long | -> | Number of the message in the list                    |
+| Résultat   | Blob        | <- | Blob de la chaine MIME retournée par le serveur mail |
 <!-- END REF -->
 
 
@@ -481,7 +481,7 @@ The method returns an empty BLOB if:
 
 **Returned BLOB**
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` retourne un `BLOB` retourne un BLOB qui peut être archivé dans une base de données ou converti en un objet [`Email`](EmailObjectClass.md#objet-email) avec la commande `MAIL Convert from MIME`.
 
 
 ##### Exemple
