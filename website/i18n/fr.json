@@ -116,6 +116,9 @@
       "Backup/settings": {
         "title": "Paramètres de sauvegarde"
       },
+      "code-editor/dropdown": {
+        "title": "Navigation dropdown"
+      },
       "Concepts/about": {
         "title": "À propos du Langage 4D"
       },
@@ -156,7 +159,7 @@
         "title": "Numérique (Réel, Entier, Entier long)"
       },
       "Concepts/object": {
-        "title": "Objet"
+        "title": "Object"
       },
       "Concepts/picture": {
         "title": "Image"
@@ -968,6 +971,7 @@
       "4D Language Concepts": "Concepts du langage 4D",
       "ORDA": "ORDA",
       "Class API Reference": "Classes API",
+      "Code Editor": "Code Editor",
       "Debugging": "Débogage",
       "Settings": "Settings",
       "Preferences": "Préférences",
@@ -1021,6 +1025,7 @@
     "Client/Server|no description given": "Client/Server",
     "TLS Protocol|no description given": "Protocole TLS",
     "Debugging|no description given": "Débogage",
+    "Code Editor|no description given": "Code Editor",
     "Web Data Explorer|no description given": "Explorateur de données Web",
     "Language Reference (4D Doc Center)|no description given": "Langage (4D Doc Center)",
     "Access Rights|no description given": "Droits d'accès",

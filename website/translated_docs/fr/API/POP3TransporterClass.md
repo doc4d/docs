@@ -46,16 +46,16 @@ Les objets Transporter POP3 sont instanciés avec la commande [POP3 New transpor
 <!-- REF POP3TransporterClass.POP3 New transporter.Params -->
 | Paramètres | Type               |    | Description                                        |
 | ---------- | ------------------ |:--:| -------------------------------------------------- |
-| server     | object             | -> | Mail server information                            |
+| server     | object             | -> | Informations sur le serveur IMAP                   |
 | Résultat   | 4D.POP3Transporter | <- | [Objet POP3 transporter](#pop3-transporter-object) |
 <!-- END REF -->
 
 
 #### Description
 
-La commande `POP3 New transporter` <!-- REF #_command_.POP3 New transporter.Summary -->configure une nouvelle connexion POP3<!-- END REF -->en fonction du paramètre *server* et retourne un nouvel objet *[POP3 transporter](#pop3-transporter-object)*. The returned transporter object will then usually be used to receive emails.
+La commande `POP3 New transporter` <!-- REF #_command_.POP3 New transporter.Summary -->configure une nouvelle connexion POP3<!-- END REF -->en fonction du paramètre *server* et retourne un nouvel objet *[POP3 transporter](#pop3-transporter-object)*. L'objet transporteur retourné sera alors utilisé pour la réception d'emails.
 
-In the *server* parameter, pass an object containing the following properties:
+Dans le paramètre *server*, passez un objet contenant les propriétés suivantes :
 
 
 | *server*                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Valeur par défaut (si omise)                                                     |
@@ -73,7 +73,7 @@ In the *server* parameter, pass an object containing the following properties:
 
 #### Résultat
 
-La fonction retourne un [**objet POP3 transporter**](#pop3-transporter-object). All returned properties are **read-only**.
+La fonction retourne un [**objet POP3 transporter**](#pop3-transporter-object). Toutes les propriétés retournées sont en **lecture seule**.
 > La connexion POP3 est automatiquement fermée lorsque l'objet transporteur est détruit.
 
 #### Exemple
@@ -107,7 +107,7 @@ La fonction retourne un [**objet POP3 transporter**](#pop3-transporter-object). 
 <!-- REF #4D.POP3Transporter.new().Params -->
 | Paramètres | Type               |    | Description                                        |
 | ---------- | ------------------ |:--:| -------------------------------------------------- |
-| server     | Objet              | -> | Mail server information                            |
+| server     | Object             | -> | Informations sur le serveur IMAP                   |
 | Résultat   | 4D.POP3Transporter | <- | [Objet POP3 transporter](#pop3-transporter-object) |
 <!-- END REF -->
 
@@ -216,9 +216,9 @@ Executing this method does not actually remove any email. The flagged email will
 **.getBoxInfo()** : Object<!-- END REF -->
 
 <!-- REF #POP3TransporterClass.getBoxInfo().Params -->
-| Paramètres | Type  |    | Description    |
-| ---------- | ----- |:--:| -------------- |
-| Résultat   | Objet | <- | boxInfo object |
+| Paramètres | Type   |    | Description    |
+| ---------- | ------ |:--:| -------------- |
+| Résultat   | Object | <- | boxInfo object |
 <!-- END REF -->
 
 
@@ -271,7 +271,7 @@ The `boxInfo` object returned contains the following properties:
 | Paramètres | Type        |    | Description                                     |
 | ---------- | ----------- |:--:| ----------------------------------------------- |
 | msgNumber  | Entier long | -> | Number of the message in the list               |
-| Résultat   | Objet       | <- | [Objet email](EmailObjectClass.md#email-object) |
+| Résultat   | Object      | <- | [Objet email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
@@ -331,7 +331,7 @@ You want to know the sender of the first mail of the mailbox:
 | Paramètres | Type        |    | Description                       |
 | ---------- | ----------- |:--:| --------------------------------- |
 | msgNumber  | Entier long | -> | Number of the message in the list |
-| Résultat   | Objet       | <- | mailInfo object                   |
+| Résultat   | Object      | <- | mailInfo object                   |
 <!-- END REF -->
 
 

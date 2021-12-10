@@ -116,6 +116,9 @@
       "Backup/settings": {
         "title": "バックアップ設定"
       },
+      "code-editor/dropdown": {
+        "title": "Navigation dropdown"
+      },
       "Concepts/about": {
         "title": "4D ランゲージについて"
       },
@@ -968,6 +971,7 @@
       "4D Language Concepts": "ランゲージのコンセプト",
       "ORDA": "ORDA",
       "Class API Reference": "クラス API リファレンス",
+      "Code Editor": "Code Editor",
       "Debugging": "デバッガー",
       "Settings": "設定",
       "Preferences": "環境設定",
@@ -1021,6 +1025,7 @@
     "Client/Server|no description given": "クライアント/サーバー",
     "TLS Protocol|no description given": "TLSプロトコル",
     "Debugging|no description given": "デバッガー",
+    "Code Editor|no description given": "Code Editor",
     "Web Data Explorer|no description given": "Webデータエクスプローラー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
     "Access Rights|no description given": "アクセス権限",
