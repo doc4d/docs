@@ -244,7 +244,7 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 
 La fonction `.append()` <!-- REF #IMAPTransporterClass.append().Summary -->ajoute l'objet `mailObj` à la boîte `destinationBox`<!-- END REF -->.
 
-Dans le paramètre `mailObj`, passez un objet email. For a comprehensive description of mail properties, see [Email object](EmailObjectClass.md#email-object). La fonction `.append()` prend en charge les marqueurs de mots-clés dans l'attribut `keywords` des objets email.
+Dans le paramètre `mailObj`, passez un objet email. Pour une description détaillée des propriétés de mail, reportez-vous à la section [Objet Email](EmailObjectClass.md#object-email). La fonction `.append()` prend en charge les marqueurs de mots-clés dans l'attribut `keywords` des objets email.
 
 Le paramètre optionnel `destinationBox` vous permet de passer le nom de la boîte de réception dans laquelle l'objet `mailObj` sera ajouté. S'il est omis, la mailbox courante sera utilisée.
 
@@ -550,20 +550,20 @@ End for each
 | ---------- | ----------- |:--:| -------------------------------------------------------------------- |
 | msgsIDs    | Collection  | -> | Collection d'IDs uniques de messages (texte)                         |
 | allMsgs    | Entier long | -> | `IMAP all` : tous les messages de la boîte de réception sélectionnée |
-| Résultat   | Object      | <- | Status of the delete operation                                       |
+| Résultat   | Object      | <- | Statut de l'opération de suppression                                 |
 <!-- END REF -->
 
 
 #### Description
 
-The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->sets the "deleted" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
+La fonction `.delete()` <!-- REF #IMAPTransporterClass.delete().Summary -->associe le marqueur "deleted" aux messages désignés par `msgsIDs` ou `allMsgs`<!-- END REF -->.
 
 Vous pouvez passer :
 
-- in the `msgsIDs` parameter, a collection containing the unique IDs of the specific messages to delete, or
-- in the `allMsgs` parameter, the `IMAP all` constant (integer) to delete all messages in the selected mailbox.
+- dans le paramètre `msgsIDs`, une collection contenant les ID uniques des messages spécifiques à supprimer, ou
+- dans le paramètre `allMsgs`, la constante `IMAP all` (integer) pour supprimer tous les messages de la boîte de réception sélectionnée.
 
-Executing this function does not actually remove messages. Messages with the "delete" flag can still be found by the [.searchMails()](#searchmails) function. Flagged messages are deleted from the IMAP server with the [`.expunge()`](#expunge) function or by selecting another mailbox or when the [transporter object](#imap-transporter-object) (created with [IMAP New transporter](#imap-new-transporter)) is destroyed.
+L'exécution de cette fonction ne supprime pas réellement les messages. Les messages ayant le marqueur "deleted" peuvent toujours être trouvés par la fonction [.searchMails()](#searchmails). Les messages marqués sont supprimés du serveur IMAP uniquement avec [`.expunge()`](#expunge) ou en sélectionnant une autre boîte de réception ou lorsque l'objet [transporter](#imap-transporter-object) (créé avec [IMAP New transporter](#imap-new-transporter)) est détruit.
 
 
 
@@ -585,7 +585,7 @@ La fonction retourne un objet décrivant le statut IMAP :
 
 #### Exemple 1
 
-To delete a selection of messages:
+Pour supprimer une sélection de messages :
 
 
 ```4d
@@ -613,7 +613,7 @@ To delete a selection of messages:
 
 #### Exemple 2
 
-To delete all messages in the current mailbox:
+Pour supprimer tous les messages de la boîte de réception courante :
 
 
 ```4d
@@ -621,17 +621,17 @@ To delete all messages in the current mailbox:
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" //Obligatoire
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  //selection de la boîte
  $boxInfo:=$transporter.selectBox("Junk Email")
 
-  // delete all messages in the current mailbox
+  // suppression de tous les messages de la boîte courante
  $status:=$transporter.delete(IMAP all)
 ```
 
@@ -651,21 +651,21 @@ To delete all messages in the current mailbox:
 **.deleteBox**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| Paramètres | Type   |    | Description                              |
-| ---------- | ------ |:--:| ---------------------------------------- |
-| name       | Texte  | -> | Name of the mailbox to delete            |
-| Résultat   | Object | <- | Status of the mailbox deletion operation |
+| Paramètres | Type   |    | Description                                   |
+| ---------- | ------ |:--:| --------------------------------------------- |
+| name       | Texte  | -> | Nom de la boîte de réception à supprimer      |
+| Résultat   | Object | <- | Statut de l'opération de suppression de boîte |
 <!-- END REF -->
 
 
 #### Description
 
-The `.deleteBox()` function <!-- REF #IMAPTransporterClass.deleteBox().Summary -->permanently removes the mailbox with the given `name` from the IMAP server<!-- END REF -->. Attempting to delete an INBOX or a mailbox that does not exist will generate an error.
+La fonction `.deleteBox()` <!-- REF #IMAPTransporterClass.deleteBox().Summary -->supprime définitivement la boîte de réception nommée `name` sur le serveur IMAP<!-- END REF -->. Si vous tentez de supprimer la boîte INBOX ou une boîte de réception qui n'existe pas, une erreur sera générée.
 
-In the `name` parameter, pass the name of the mailbox to delete.
-> * The function cannot delete a mailbox that has child mailboxes if the parent mailbox has the "\Noselect" attribute.
-> * All messages in the deleted mailbox will also be deleted.
-> * The ability to delete a mailbox depends on the mail server.
+Dans le paramètre `name`, passez le nom de la mailbox à supprimer.
+> * La fonction ne peut pas supprimer une boîte de réception contenant des boîtes "enfant" si la boîte "parente" dispose de l'attribute "\Noselect".
+> * Tous les messages présents dans la boîte seront également supprimés.
+> * La possibilité de supprimer une boîte de réception dépend du serveur de messagerie.
 
 
 **Objet retourné**
@@ -686,7 +686,7 @@ La fonction retourne un objet décrivant le statut IMAP :
 
 #### Exemple
 
-To delete the "Nova Orion Industries" child mailbox from the "Bills" mailbox hierarchy:
+Vous souhaitez supprimer la boîte enfant "Nova Orion Industries" à l'intérieur de la boîte "Bills" :
 
 ```4d
 var $pw; $name : text
