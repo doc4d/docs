@@ -3,7 +3,7 @@ id: methods
 title: メソッドページ
 ---
 
-This page contains parameters defining the Method editor interface and its default display as well as options concerning its operation. ページはテーマとオプションという 2つのタブに分けられています。
+このページでは、メソッドエディターのインターフェースやデフォルトの表示、および動作に関するオプションを設定します。 ページはテーマとオプションという 2つのタブに分けられています。
 
 ## テーマ
 

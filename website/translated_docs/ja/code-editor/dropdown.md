@@ -26,7 +26,7 @@ The following items are added automatically:
 | ![no-tag-icon](assets/en/code-editor/no-tag.png)                         | No tag                                           |
 | ![constructor-icon](assets/en/code-editor/constructor.png)               | Class constructor or method declaration          |
 | ![computed-attribute-icon](assets/en/code-editor/computed-attribute.png) | Computed attribute (get, set, orderBy and query) |
-| ![function-icon](assets/en/code-editor/function.png)                     | Class function name                              |
+| ![function-icon](assets/en/code-editor/function.png)                     | クラス関数名                                           |
 
 
 ## Manual tagging

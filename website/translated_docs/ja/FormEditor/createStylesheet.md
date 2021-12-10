@@ -361,4 +361,4 @@ icon: url("edit.png"); /* フォームファイルを基準とした相対パス
 
 ## 参照
 
-See the [**CSS for 4D Forms**](https://www.youtube.com/watch?v=3Hk4FUQENyQ) video presentation.
+[**4DフォームとCSS**](https://www.youtube.com/watch?v=f4w7HMyGUJ0) のビデオプレゼンテーションをご覧ください。

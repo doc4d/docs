@@ -26,7 +26,7 @@ Form.comp.city:=$cityManager.City.getCityName(Form.comp.zipcode)
 
 - 構造が発展した場合には影響を受ける関数を適応させるだけで、クライアントアプリケーションは引き続き透過的にそれらを呼び出すことができます。
 
-- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes)) and [alias attributes](XXX) are **not exposed** to remote applications and cannot be called from REST requests. You must explicitly declare each public function and alias with the [`exposed`](#exposed-vs-non-exposed-functions) keyword.
+- By default, all of your data model class functions (including [computed attribute functions](#computed-attributes)) and [alias attributes](XXX) are **not exposed** to remote applications and cannot be called from REST requests. 公開する関数やエイリアスは [`exposed`](#公開vs非公開関数) キーワードによって明示的に宣言する必要があります。
 
 ![](assets/en/ORDA/api.png)
 
@@ -231,21 +231,21 @@ Entity クラスでは、専用のキーワードを使用して **計算属性*
 - `Function query` *attributeName*
 - `Function orderBy` *attributeName*
 
-For information, please refer to the [Computed attributes](#computed-attributes) section.
+詳細については、[計算属性](#計算属性) を参照してください。
 
-#### Alias attributes
+#### エイリアス属性
 
 Entity classes allow you to define **alias attributes**, usually over related attributes, using the `Alias` keyword:
 
 `Alias` *attributeName* *targetPath*
 
-For information, please refer to the [Alias attributes](#alias-attributes) section.
+詳細については、[エイリアス属性](#エイリアス属性) を参照してください。
 
 
 #### 例題
 
 ```4d
-// cs.CityEntity class
+// cs.CityEntity クラス
 
 Class extends Entity
 
@@ -254,7 +254,7 @@ Function getPopulation()
 
 
 Function isBigCity(): Boolean
-// The getPopulation() function is usable inside the class
+// 関数 getPopulation() をクラス内で使用することができます
 $0:=This.getPopulation()>50000
 ```
 
@@ -639,7 +639,7 @@ Function orderBy age($event : Object)-> $result : Text
 ```
 
 
-## Alias attributes
+## エイリアス属性
 
 ### 概要
 
@@ -790,7 +790,7 @@ $arch.save() //courseName and name are "Archaeology II"
 
 ## 公開vs非公開関数
 
-For security reasons, all of your data model class functions and alias attributes are **not exposed** (i.e., private) by default to remote requests.
+セキュリティ上の理由により、データモデルクラス関数およびエイリアス属性はデフォルトですべて、リモートリクエストに対し **非公開** (つまりプライベート) に設定されています。
 
 リモートリクエストには次のものが含まれます:
 
@@ -934,7 +934,7 @@ End if
 
 
 
-## Support in 4D IDE
+## 4D IDE (統合開発環境) におけるサポート
 
 
 ### クラスファイル
