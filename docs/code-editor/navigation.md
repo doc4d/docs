@@ -1,5 +1,5 @@
 ---
-id: dropdown
+id: navigation
 title: Navigation dropdown
 ---
 
@@ -45,7 +45,9 @@ You declare them by adding comments such as:
 // FIXME: Fix following items
 ```
 
-Adding a hyphen after the `MARK:` tag draws a separating line in the code editor and dropdown menu. So writing this:
+Declarations are not case-sensitive; writing `fixme:` has the same effect.
+
+Adding a hyphen after the `MARK:` tag draws a separating line in the code editor and the dropdown menu. So writing this:
 
 ![mark-hyphen-image](assets/en/code-editor/mark-hyphen-editor.png)
 
@@ -53,13 +55,11 @@ Results in this:
 
 ![mark-hyphen-image](assets/en/code-editor/dropdown-organize.png)
 
+All markers located inside functions are indented in the dropdown list, except for the `MARK:` tags located at the end of functions and not followed by instructions. Those will appear at the first level. 
+
 ## Display order
 
 Tags are displayed in their appearing order inside the method/class.
-
-* If the method has a #DECLARE line, the first item in the dropdown list is *declare*.
-
-* If the class has a constructor, the first item in the dropdown list is *constructor*.
 
 To display the tags of a method or class in alphabetical order, do one of the following:
 * **right-click** the dropdown tool

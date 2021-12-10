@@ -115,9 +115,11 @@ Lets you choose whether or not to show the lists of objects (Commands, Tables an
 
 #### Show clipboards
 
-Lets you choose whether or not to show the multiple clipboards in the code editor. 
+Lets you choose whether or not to show the multiple clipboards in the code editor.
 
 ![](assets/en/Preferences/show-clipboards.png)
+
+The corresponding [clipboard shorcuts](https://doc.4d.com/4Dv19R3/4D/19-R3/Writing-a-method.300-5612559.en.html#3977166) are still active when these clipboards are hidden. 
 
 #### Highlight the logical blocks
 

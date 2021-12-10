@@ -101,7 +101,7 @@ class Index extends React.Component {
 				  [${subContents.langRef}](${subContents.langUrl})<br>
                   [${subContents.ORDA}](${siteConfig.baseUrl}${this.props.language}/ORDA/overview.html)<br>
                   [${subContents.class}](${siteConfig.baseUrl}${this.props.language}/API/overview.html)<br>
-                  [${subContents.codeEditor}](${siteConfig.baseUrl}${this.props.language}/code-editor/dropdown.html)<br>
+                  [${subContents.codeEditor}](${siteConfig.baseUrl}${this.props.language}/code-editor/navigation.html)<br>
 				  [${subContents.debugging}](${siteConfig.baseUrl}${this.props.language}/Debugging/basics.html)<br>
           [${subContents.settings}](${siteConfig.baseUrl}${this.props.language}/settings/overview.html)<br>
 				  [${subContents.preferences}](${siteConfig.baseUrl}${this.props.language}/Preferences/overview.html)`,
