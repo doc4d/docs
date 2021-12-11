@@ -686,7 +686,7 @@ La fonction retourne un objet décrivant le statut IMAP :
 
 #### Exemple
 
-To delete the "Nova Orion Industries" child mailbox from the "Bills" mailbox hierarchy:
+Vous souhaitez supprimer la boîte enfant "Nova Orion Industries" à l'intérieur de la boîte "Bills" :
 
 ```4d
 var $pw; $name : text
@@ -739,14 +739,14 @@ End if
 **.expunge()** : Object<!-- END REF -->
 
 <!-- REF IMAPTransporterClass.expunge().Params -->
-| Paramètres | Type   |    | Description                     |
-| ---------- | ------ |:--:| ------------------------------- |
-| Résultat   | Object | <- | Status of the expunge operation |
+| Paramètres | Type   |    | Description                   |
+| ---------- | ------ |:--:| ----------------------------- |
+| Résultat   | Object | <- | Statut de l'opération expunge |
 <!-- END REF -->
 
 #### Description
 
-The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
+La fonction `.expunge()` <!-- REF #IMAPTransporterClass.expunge().Summary -->supprime tous les messages marqués "deleted" du serveur de messagerie IMAP.<!-- END REF --> Le marqueur "deleted" peut être fixé avec les fonctions [`.delete()`](#delete) ou [`.addFlags()`](#addflags).
 
 **Objet retourné**
 
@@ -774,17 +774,17 @@ $options.port:=993
 $options.user:="4d@gmail.com"
 $options.password:="xxxxx"
 
-// Create transporter
+// Creation du transporter
 $transporter:=IMAP New transporter($options)
 
-// Select mailbox
+// Sélection de la boîte
 $boxInfo:=$transporter.selectBox("INBOX")
 
-// Find and delete all seen messages in INBOX
+// Chercher et sélectionner les messages lus dans INBOX
 $ids:=$transporter.searchMails("SEEN")
 $status:=$transporter.delete($ids)
 
-// Purge all messages flagged as deleted
+// Purger tous les messages marqués deleted
 $status:=$transporter.expunge()
 ```
 
@@ -805,30 +805,30 @@ $status:=$transporter.expunge()
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
-| Paramètres | Type   |    | Description         |
-| ---------- | ------ |:--:| ------------------- |
-| name       | Texte  | -> | Name of the mailbox |
-| Résultat   | Object | <- | boxInfo object      |
+| Paramètres | Type   |    | Description                  |
+| ---------- | ------ |:--:| ---------------------------- |
+| name       | Texte  | -> | Nom de la boîte de réception |
+| Résultat   | Object | <- | Objet boxInfo                |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the current maibox, or the mailbox *name*<!-- END REF -->. This function returns the same information as [`.selectBox()`](#selectbox) without changing the current mailbox.
+La fonction `.getBoxInfo()` <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->retourne un objet `boxInfo` correspondant à la boîte de réception courante ou à la boîte nommée *name*<!-- END REF -->. Cette fonction retourne les mêmes informations que [`.selectBox()`](#selectbox) mais sans modifier la boite de réception courante.
 
-In the optional *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+Dans le paramètre optionnel *name* passez le nom de la boite de réception à laquelle vous souhaitez accéder. Le nom doit représenter une hiérarchie claire, de gauche à droite, avec des niveaux séparés par un caractère délimiteur spécifique. Le délimiteur peut être récupéré à l'aide de la fonction [`.getDelimiter()`](#getdelimiter).
 
-If the mailbox *name* is not selectable or does not exist, the function generates an error and returns **null**.
+Si la boîte de réception nommée *name* n'est pas sélectionnable ou n'existe pas, la fonction génère une erreur et retourne **null**.
 
 **Objet retourné**
 
-The `boxInfo` object returned contains the following properties:
+L'objet `boxInfo` contient les propriété suivantes :
 
-| Propriété  | Type   | Description                                                         |
-| ---------- | ------ | ------------------------------------------------------------------- |
-| name       | Texte  | Name of the mailbox                                                 |
-| mailCount  | number | Nombre de messages contenus dans la boîte de réception              |
-| mailRecent | number | Number of messages with the "recent" flag (indicating new messages) |
+| Propriété  | Type   | Description                                                                       |
+| ---------- | ------ | --------------------------------------------------------------------------------- |
+| name       | Texte  | Nom de la boîte de réception                                                      |
+| mailCount  | number | Nombre de messages contenus dans la boîte de réception                            |
+| mailRecent | number | Nombre de messages portant le marqueur "récent" (indiquant les nouveaux messages) |
 
 
 
@@ -851,48 +851,48 @@ The `boxInfo` object returned contains the following properties:
 ## .getBoxList()
 
 <details><summary>Historique</summary>
-| Version | Modifications                |
-| ------- | ---------------------------- |
-| v18 R4  | Ajout                        |
-| v19     | Add `isSubscribed` parameter |
+| Version | Modifications                  |
+| ------- | ------------------------------ |
+| v18 R4  | Ajout                          |
+| v19     | Ajout paramètre `isSubscribed` |
 </details>
 
 <!-- REF #IMAPTransporterClass.getBoxList().Syntax -->
 **.getBoxList**( { *parameters* : Object } ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getBoxList().Params -->
-| Paramètres | Type       |    | Description                   |
-| ---------- | ---------- |:--:| ----------------------------- |
-| parameters | Object     | -> | Parameter object              |
-| Résultat   | Collection | <- | Collection of mailbox objects |
+| Paramètres | Type       |    | Description                 |
+| ---------- | ---------- |:--:| --------------------------- |
+| parameters | Object     | -> | Objet de paramètre          |
+| Résultat   | Collection | <- | Collection d'objets mailbox |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getBoxList()` function <!-- REF #IMAPTransporterClass.getBoxList().Summary -->returns a collection of mailboxes describing all of the available mailboxes<!-- END REF -->. This function allows you to locally manage the list of messages located on the IMAP mail server.
+La fonction `.getBoxList()` <!-- REF #IMAPTransporterClass.getBoxList().Summary -->retourne une collection de boites de réception décrivant toutes les boites de réception disponibles<!-- END REF -->. Cette fonction vous permet de gérer localement les listes de messages situés sur le serveur de messagerie IMAP.
 
-In the optional `parameters` parameter, pass an object containing values to filter the returned mailboxes. Vous pouvez passer :
+Dans le paramètre optionnel `parameters`, passez un objet contenant des valeurs de filtrage des boîtes de réception retournées. Vous pouvez passer :
 
 | Propriété    | Type    | Description                                          |
 | ------------ | ------- | ---------------------------------------------------- |
-| isSubscribed | Booléen | <li>**True** to return only subscribed mailboxes</li><li> **False** to return all available mailboxes</li> |
+| isSubscribed | Booléen | <li>**True** pour retourner uniquement les boîtes auxquelles vous êtes abonné</li><li> **False** pour retourner toutes les boîtes de réception disponibles</li> |
 
 #### Résultat
 
-Each object of the returned collection contains the following properties:
+Chaque objet de la collection retournée contient les propriétés suivantes :
 
-| Propriété        | Type    | Description                                                                                                          |
-| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| \[].name        | Texte   | Name of the mailbox                                                                                                  |
-| \[].selectable  | boolean | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
-| \[].inferior    | boolean | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
-| \[].interesting | boolean | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
+| Propriété        | Type    | Description                                                                                                                                    |
+| ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| \[].name        | Texte   | Nom de la boîte de réception                                                                                                                   |
+| \[].selectable  | boolean | Indique si les droits d'accès permettent ou non à la boite de réception d'être sélectionnée : <ul><li>vrai - la boite de réception peut être sélectionnée</li><li>faux - la boite de réception ne peut pas être sélectionnée</li></ul>                        |
+| \[].inferior    | boolean | Indique si les droits d'accès permettent ou non la création d'une hiérarchie inférieure dans la boite de réception : <ul><li>vrai - un niveau inférieur peut être créé</li><li>faux - un niveau inférieur ne peut pas être créé</li></ul> |
+| \[].interesting | boolean | Indique si la boite de réception a été marquée comme "intéressante" par le serveur : <ul><li>vrai - la boite de réception a été marquée comme "intéressante" par le serveur. Par exemple, elle peut contenir de nouveaux messages.</li><li>faux - la boite de réception n'a pas été marquée comme "intéressante" par le serveur.</li></ul>                                 |
 
 
-If the account does not contain any mailboxes, an empty collection is returned.
-> * If there is no open connection, `.getBoxList()` will open a connection.
-> * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the `.checkConnection( )` function is automatically called.
+Si le compte ne contient pas de boites de réception, une collection vide est retournée.
+> * Si aucune connexion n'est ouverte, `.getBoxList()` ouvrira une connexion.
+> * Si la connexion n'a pas été utilisée depuis le délai de connexion (voir `IMAP New transporter`), la fonction `.checkConnection( )` est automatiquement appelée.
 
 
 #### Exemple
@@ -929,35 +929,35 @@ If the account does not contain any mailboxes, an empty collection is returned.
 **.getDelimiter()** : Text<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getDelimiter().Params -->
-| Paramètres | Type  |    | Description                   |
-| ---------- | ----- |:--:| ----------------------------- |
-| Résultat   | Texte | <- | Hierarchy delimiter character |
+| Paramètres | Type  |    | Description                             |
+| ---------- | ----- |:--:| --------------------------------------- |
+| Résultat   | Texte | <- | Caractère de délimitation de hiérarchie |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getDelimiter()` function <!-- REF #IMAPTransporterClass.getDelimiter().Summary -->returns the character used to delimit levels of hierarchy in the mailbox name<!-- END REF -->.
+La fonction `.getDelimiter()` <!-- REF #IMAPTransporterClass.getDelimiter().Summary -->retourne le caractère utilisé pour délimiter les niveaux de hiérarchie dans le nom de la boite de réception<!-- END REF -->.
 
-The delimiter is a character which can be used to:
+Le délimiteur est un caractère pouvant être utilisé pour :
 
-*   create lower level (inferior) mailboxes
-*   search higher or lower within the mailbox hierarchy
+*   créer des boites de réception de niveau inférieur
+*   rechercher des niveaux inférieurs ou supérieurs dans la hiérarchie de la boite de réception
 
 
 #### Résultat
 
-Mailbox name delimiter character.
-> * If there is no open connection, `.getDelimiter()` will open a connection.
-> * If the connection has not been used since the [designated connection delay](#checkconnectiondelay), the [`.checkConnection()`](#checkconnection) function is automatically called.
+Caractère de délimitation des noms de boites de réception.
+> * Si aucune connexion n'est ouverte, `.getDelimiter()` ouvrira une connexion.
+> * Si la connexion n'a pas été utilisée depuis le [délai de connexion](#checkconnectiondelay), la fonction
 
+`.checkConnection( )<code></a> est automatiquement appelée.</li>
+  </ul>
+</blockquote>
 
+<h4 spaces-before="0">Exemple</h4>
 
-#### Exemple
-
-
-```4d
- var $transporter : 4D.IMAPTransporter
+<pre><code class="4d"> var $transporter : 4D.IMAPTransporter
  $transporter:=IMAP New transporter($server)
 
  $boxList:=$transporter.getBoxList()
@@ -968,16 +968,19 @@ Mailbox name delimiter character.
        ALERT("New emails are available in the box: "+$split[$split.length-1])
     End if
  End for each
-```
+`</pre>
 
 <!-- END REF -->
 
 
 
 <!-- REF IMAPTransporterClass.getMail().Desc -->
-## .getMail()
-
-<details><summary>Historique</summary>
+>     
+>     ## .getMail()
+>     
+>     <details><summary>Historique</summary>
+>     
+>     
 | Version | Modifications |
 | ------- | ------------- |
 | v18 R4  | Ajout         |
@@ -989,43 +992,41 @@ Mailbox name delimiter character.
 <!-- REF #IMAPTransporterClass.getMail().Params -->
 | Paramètres | Type        |    | Description                                     |
 | ---------- | ----------- |:--:| ----------------------------------------------- |
-| msgNumber  | Entier long | -> | Sequence number of the message                  |
+| msgNumber  | Entier long | -> | Numéro de séquence du message                   |
 | msgID      | Texte       | -> | ID unique du message                            |
-| options    | Object      | -> | Message handling instructions                   |
+| options    | Object      | -> | Instructions sur la gestion du message          |
 | Résultat   | Object      | <- | [Objet email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. This function allows you to locally handle the email contents.
+La fonction `.getMail()` <!-- REF #IMAPTransporterClass.getMail().Summary -->retourne l'objet `Email` correspondant au *msgNumber* ou *msgID* dans la boite de réception désignée par `IMAP_transporter`<!-- END REF -->. Cette fonction vous permet de gérer localement le contenu de l'email.
 
-In the first parameter, you can pass either:
+Dans le premier paramètre, vous pouvez passer soit :
 
-*   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
-*   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
+* *msgNumber*, une valeur *integer* indiquant le numéro de séquence du message à récupérer ou
+* *msgID*, une valeur *text* indiquant l'ID unique du message à récupérer.
 
-The optional *options* parameter allows you pass an object defining additional instructions for handling the message. Les propriétés suivantes sont disponibles :
+Le paramètre facultatif *options* vous permet de passer un objet définissant des instructions supplémentaires pour la gestion de votre message. Les propriétés suivantes sont disponibles :
 
-| Propriété  | Type    | Description                                                                                                                 |
-| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | boolean | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Default value: True |
-| withBody   | boolean | Pass True to return the body of the message. If False, only the message header is returned. Default value: True             |
-> * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
-> * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
+| Propriété  | Type    | Description                                                                                                                                              |
+| ---------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen | boolean | Si Vrai, le message est marqué comme "seen" (lu) dans la boite de réception. Si Faux, le message n'est pas marqué comme "seen". Valeur par défaut : Vrai |
+| withBody   | boolean | Passez Vrai pour retourner le corps du message. Si Faux, seul l'en-tête du message est retourné. Valeur par défaut : Vrai                                |
 
 
+> * La fonction génère une erreur et retourne **Null** si *msgID* désigne un message non existant,
+> * Si aucune boite de réception n'est sélectionnée avec la fonction [`.selectBox()`](#selectbox), une erreur est générée,
+> * Si aucune connexion n'est ouverte, `.getMail()` ouvrira une connexion avec la dernière boite de réception spécifiée par [`.selectBox()`](#selectbox).
 
 #### Résultat
 
-
-
-`.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object) with the following specific IMAP properties: *id*, *receivedAt*, and *size*.
+`.getMail()` retourne un [`objet Email`](EmailObjectClass.md#objet-email) avec les propriétés IMAP supplémentaires suivantes : *id*, *receivedAt* et *size*.
 
 #### Exemple
 
-You want to get the message with ID = 1:
+Vous souhaitez lire le message avec ID = 1 :
 
 ```4d
  var $server : Object
@@ -1033,18 +1034,18 @@ You want to get the message with ID = 1:
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" //obligatoire
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
-  //create transporter
+  //creation du transporter
  $transporter:=IMAP New transporter($server)
 
-  //select mailbox
+  //selection de la mailbox
  $boxInfo:=$transporter.selectBox("Inbox")
 
-  //get Email object with ID 1
+  //récupération de l'objet Email d'ID 1
  $mail:=$transporter.getMail(1)
 ```
 
@@ -1065,73 +1066,73 @@ You want to get the message with ID = 1:
 **.getMails**( *ids* : Collection { ; *options* : Object } ) : Object<br>**.getMails**( *startMsg* : Integer ; *endMsg* : Integer { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMails().Params -->
-| Paramètres | Type        |    | Description                                            |
-| ---------- | ----------- |:--:| ------------------------------------------------------ |
-| ids        | Collection  | -> | Collection of message ID                               |
-| startMsg   | Entier long | -> | Sequence number of the first message                   |
-| endMsg     | Entier long | -> | Sequence number of the last message                    |
-| options    | Object      | -> | Message handling instructions                          |
-| Résultat   | Object      | <- | Object containing:<br><ul><li>a collection of [Email objects](EmailObjectClass.md#email-object) and</li><li>a collection of IDs or numbers for missing messages, if any</li></ul> |
+| Paramètres | Type        |    | Description                                           |
+| ---------- | ----------- |:--:| ----------------------------------------------------- |
+| ids        | Collection  | -> | Collection d'identifiants de messages                 |
+| startMsg   | Entier long | -> | Numéro de séquence du premier message                 |
+| endMsg     | Entier long | -> | Numéro de séquence du dernier message                 |
+| options    | Object      | -> | Instructions sur la gestion du message                |
+| Résultat   | Object      | <- | Objet contenant :<br><ul><li>une collection d'[objets Email](EmailObjectClass.md#objet-email) et</li><li>une collection d'identifiants ou de numéros des messages manquants, le cas échéant</li></ul> |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
+La fonction `.getMails()` <!-- REF #IMAPTransporterClass.getMails().Summary -->retourne un objet contenant une collection d'objets `Email`<!-- END REF -->.
 
-**First Syntax:**
+**Première syntaxe :**
 
 ***.getMails( ids { ; options } ) -> result***
 
-The first syntax allows you to retrieve messages based on their IDs.
+La première syntaxe vous permet de récupérer des messages en fonction de leurs identifiants.
 
-In the *ids* parameter, pass a collection of IDs for the messages to return. You can get the IDs with [`.getMail()`](#getmail).
+Dans le paramètre *ids*, passez une collection d'identifiants des messages à retourner. Vous pouvez obtenir les ID à l'aide de [`.getMail()`](#getmail).
 
-The optional *options* parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
+Le paramètre optionnel *options* vous permet de définir les parties de messages à retourner. Pour une description détaillée des propriétés disponibles, reportez-vous au tableau **Options** ci-dessous.
 
-**Second syntax:**
+**Deuxième syntaxe :**
 
- ***.getMails( startMsg ; endMsg { ; options } ) -> result***
+***.getMails( startMsg ; endMsg { ; options } ) -> result***
 
-The second syntax allows you to retrieve messages based on a sequential range. The values passed represent the position of the messages in the mailbox.
+La deuxième syntaxe vous permet de récupérer des messages en fonction d'une plage séquentielle. Les valeurs passées représentent la position des messages dans la boite de réception.
 
-In the *startMsg* parameter, pass an *integer* value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+Dans le paramètre *startMsg* passez une valeur *entier* correspondant au numéro du premier message dans une plage séquentielle. Si vous passez un nombre négatif (*startMsg* <= 0), le premier message de la boîte de réception sera utilisé comme début de séquence.
 
-In the *endMsg* parameter, pass an *integer* value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (*endMsg* <= 0), the last message of the mailbox will be used as the end of the sequence.
+Dans le paramètre *endMsg* passez une valeur *entier long* correspondant au numéro du dernier message à inclure dans une plage séquentielle. Si vous passez un nombre négatif (*endMsg* <= 0), le dernier message de la boîte de réception sera utilisé comme fin de séquence.
 
-The optional *options* parameter allows you to define the parts of the messages to be returned.
+Le paramètre optionnel *options* vous permet de définir les parties de messages à retourner.
 
 **Options**
 
-| Propriété  | Type    | Description                                                                                                                               |
-| ---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | Booléen | If True, the specified messages are marked as "seen" in the mailbox. If False, the messages are not marked as "seen". Default value: True |
-| withBody   | Booléen | Pass True to return the body of the specified messages. If False, only the message headers are returned. Default value: True              |
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated.
-> * If there is no open connection, `.getMails()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox).
+| Propriété  | Type    | Description                                                                                                                                                        |
+| ---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| updateSeen | Booléen | Si Vrai, les messages sont marqués comme "seen" (lus) dans la boite de réception. Si Faux, les messages ne sont pas marqués comme "seen". Valeur par défaut : Vrai |
+| withBody   | Booléen | Passez Vrai pour retourner le corps des messages spécifiés. Si Faux, seuls les en-tête des messages sont retournés. Valeur par défaut : Vrai                       |
 
+
+> * Si aucune boite de réception n'est sélectionnée avec la fonction [`.selectBox()`](#selectbox), une erreur est générée.
+> * S'il n'y a pas de connexion ouverte, `.getMails()` ouvrira une connexion avec la dernière boite de réception spécifiée à l'aide de [`.selectBox()`](#selectbox).
 
 #### Résultat
 
-`.getMails()` returns an object containing the following collections:
+`.getMails()` retourne un objet contenant les collections suivantes :
 
-
-| Propriété | Type       | Description                                                                                                                        |
-| --------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| liste     | Collection | Collection of [`Email` objects](EmailObjectClass.md#email-object). If no Email objects are found, an empty collection is returned. |
-| notFound  | Collection | Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.                       |
+| Propriété | Type       | Description                                                                                                                            |
+| --------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| liste     | Collection | Collection d'objets [`Email`](EmailObjectClass.md#email-object). Si aucun objet Email n'est trouvé, une collection vide est retournée. |
+| notFound  | Collection | Collection of:<br><ul><li>première syntaxe - IDs de messages passés antérieurement qui n'existent pas</li><li>deuxième syntaxe - numéros de séquence des messages entre startMsg et endMsg qui n'existent pas</li></ul>An empty collection is returned if all messages are found.                           |
 
 
 #### Exemple
 
-You want to retrieve the 20 most recent emails without changing their "seen" status:
+Vous souhaitez récupérer les 20 emails les plus récents sans modifier le statut "seen" :
 
 ```4d
  var $server,$boxInfo,$result : Object
  var $transporter : 4D.IMAPTransporter
 
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" //obligatoire
  $server.port:=993
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
@@ -1143,7 +1144,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
  $boxInfo:=$transporter.selectBox("INBOX")
 
   If($boxInfo.mailCount>0)
-        // retrieve the headers of the last 20 messages without marking them as read
+        // récupérer les en-têtes des 20 derniers messages sans les marquer comme lus
     $result:=$transporter.getMails($boxInfo.mailCount-20;$boxInfo.mailCount;\
         New object("withBody";False;"updateSeen";False))
     For each($mail;$result.list)
@@ -1170,12 +1171,12 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Params -->
-| Paramètres | Type        |    | Description                                                                                   |
-| ---------- | ----------- |:--:| --------------------------------------------------------------------------------------------- |
-| msgNumber  | Entier long | -> | Sequence number of the message                                                                |
-| msgID      | Texte       | -> | ID unique du message                                                                          |
-| updateSeen | Booléen     | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
-| Résultat   | BLOB        | <- | Blob of the MIME string returned from the mail server                                         |
+| Paramètres | Type        |    | Description                                                                                                        |
+| ---------- | ----------- |:--:| ------------------------------------------------------------------------------------------------------------------ |
+| msgNumber  | Entier long | -> | Numéro de séquence du message                                                                                      |
+| msgID      | Texte       | -> | ID unique du message                                                                                               |
+| updateSeen | Booléen     | -> | Si Vrai, le message est marqué comme "seen" (lu) dans la boite de réception. Si Faux, le message demeure inchangé. |
+| Résultat   | BLOB        | <- | Blob de la chaine MIME retournée par le serveur mail                                                               |
 <!-- END REF -->
 
 
@@ -1183,29 +1184,27 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 #### Description
 
-The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
+La fonction `.getMIMEAsBlob()` <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->retourne un BLOB avec le contenu MIME du message correspondant au *msgNumber* ou *msgID* dans la boîte de réception désignée par le `IMAP_transporter`<!-- END REF -->.
 
-In the first parameter, you can pass either:
+Dans le premier paramètre, vous pouvez passer soit :
 
-*   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
-*   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
+* *msgNumber*, une valeur *integer* indiquant le numéro de séquence du message à récupérer ou
+* *msgID*, une valeur *text* indiquant l'ID unique du message à récupérer.
 
-The optional *updateSeen* parameter allows you to specify if the message is marked as "seen" in the mailbox. Vous pouvez passer :
+Le paramètre optionnel *updateSeen* vous permet d'indiquer si le message est marqué comme "seen" (lu) dans la boîte de réception. Vous pouvez passer :
 
-*   **True** - to mark the message as "seen" (indicating the message has been read)
-*   **False** - to leave the message's "seen" status untouched > * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message, > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated, > * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox( )`.
-> * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message,
-> * > * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message, > * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated, > * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox()`.
-> * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox()`.
+* **Vrai** - pour marquer le message comme "seen" (indiquant que le message a été lu)
+* **Faux** - pour ne pas modifier le statut "seen" du message
 
+> * La fonction retourne un BLOB vide si *msgNumber* ou msgID désigne un message inexistant,
+> * Si aucune boite de réception n'est sélectionnée avec la fonction [`.selectBox()`](#selectbox), une erreur est générée,
+> * S'il n'y a pas de connexion ouverte,`.getMIMEAsBlob()` ouvrira une connexion avec la dernière boite de réception spécifiée à l'aide de `.selectBox()`.
 
 #### Résultat
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
-
+`.getMIMEAsBlob()` retourne un `BLOB` retourne un BLOB qui peut être archivé dans une base de données ou converti en un objet [`Email`](EmailObjectClass.md#objet-email) avec la commande `MAIL Convert from MIME`.
 
 #### Exemple
-
 
 ```4d
  var $server : Object
@@ -1278,7 +1277,6 @@ The *destinationBox* parameter allows you to pass a text value with the name of 
 
 > Cette fonction est uniquement prise en charge par les serveurs IMAP compatibles avec RFC [8474](https://tools.ietf.org/html/rfc8474).
 
-
 **Objet retourné**
 
 La fonction retourne un objet décrivant le statut IMAP :
@@ -1291,8 +1289,6 @@ La fonction retourne un objet décrivant le statut IMAP :
 |            | \[].errcode            | Nombre     | Code d'erreur 4D                                                                                       |
 |            | \[].message            | Texte      | Description de l'erreur 4D                                                                             |
 |            | \[].componentSignature | Texte      | Signature du composant interne qui a retourné l'erreur                                                 |
-
-
 
 
 #### Exemple 1
@@ -1325,7 +1321,6 @@ To move a selection of messages:
 #### Exemple 2
 
 To move all messages in the current mailbox:
-
 
 ```4d
  var $server;$boxInfo;$status : Object
@@ -1363,11 +1358,11 @@ To move all messages in the current mailbox:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.numToID().Params -->
-| Paramètres | Type        |    | Description                          |
-| ---------- | ----------- |:--:| ------------------------------------ |
-| startMsg   | Entier long | -> | Sequence number of the first message |
-| endMsg     | Entier long | -> | Sequence number of the last message  |
-| Résultat   | Collection  | <- | Collection of unique IDs             |
+| Paramètres | Type        |    | Description                           |
+| ---------- | ----------- |:--:| ------------------------------------- |
+| startMsg   | Entier long | -> | Numéro de séquence du premier message |
+| endMsg     | Entier long | -> | Numéro de séquence du dernier message |
+| Résultat   | Collection  | <- | Collection of unique IDs              |
 <!-- END REF -->
 
 
@@ -1375,17 +1370,15 @@ To move all messages in the current mailbox:
 
 The `.numToID()` function <!-- REF #IMAPTransporterClass.numToID().Summary -->converts the sequence numbers to IMAP unique IDs for the messages in the sequential range designated by *startMsg* and *endMsg*<!-- END REF --> in the currently selected mailbox.
 
-In the *startMsg* parameter, pass an integer value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+In the *startMsg* parameter, pass an integer value corresponding to the number of the first message in a sequential range. Si vous passez un nombre négatif (*startMsg* <= 0), le premier message de la boîte de réception sera utilisé comme début de séquence.
 
-In the *endMsg* parameter, pass an integer value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (*endMsg* <= 0), the last message of the mailbox will be used as the end of the sequence.
-
+In the *endMsg* parameter, pass an integer value corresponding to the number of the last message to be included in a sequential range. Si vous passez un nombre négatif (*endMsg* <= 0), le dernier message de la boîte de réception sera utilisé comme fin de séquence.
 
 #### Résultat
 
 The function returns a collection of strings (unique IDs).
 
 #### Exemple
-
 
 ```4d
  var $transporter : 4D.IMAPTransporter
@@ -1440,13 +1433,14 @@ The `.removeFlags()` function <!-- REF #IMAPTransporterClass.removeFlags().Summa
 
 Dans le paramètre `msgIDs`, vous pouvez passer soit :
 
-*   une *collection* contenant les IDs uniques de messages spécifiques, ou
-*   l'ID unique (*texte*) d'un seul message ou
-*   la constante suivante (*entier long*) pour tous les messages de la boîte sélectionnée :
-
+* une *collection* contenant les IDs uniques de messages spécifiques, ou
+* l'ID unique (*texte*) d'un seul message ou
+* la constante suivante (*entier long*) pour tous les messages de la boîte sélectionnée :
+    
     | Constante | Valeur | Commentaire                                             |
     | --------- | ------ | ------------------------------------------------------- |
     | IMAP all  | 1      | Sélectionner tous les messages de la boîte sélectionnée |
+
 
 The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. Vous pouvez utiliser les mots-clés suivants :
 
@@ -1458,8 +1452,8 @@ The `keywords` parameter lets you pass an object with keyword values for specifi
 | $answered  | Booléen | True to remove the "answered" flag from the message |
 | $deleted   | Booléen | True to remove the "deleted" flag from the message  |
 
-Note that False values are ignored.
 
+Note that False values are ignored.
 
 **Objet retourné**
 
@@ -1529,7 +1523,6 @@ The `.renameBox()` function <!-- REF #IMAPTransporterClass.renameBox().Summary -
 In the `currentName` parameter, pass the name of the mailbox to be renamed.
 
 Pass the new name for the mailbox in the `newName` parameter.
-
 
 **Objet retourné**
 
@@ -1627,27 +1620,33 @@ SearchKey3 = FLAGGED DRAFT
 ```
 searchCriteria = FLAGGED FROM "SMITH"
 ```
+
 ... returns all messages with \Flagged flag set AND sent by Smith.
+
 - You can use the **OR** or **NOT** operators as follows:
 
 ```
 searchCriteria = OR SEEN FLAGGED
 ```
+
 ... returns all messages with \Seen flag set OR \Flagged flag set
 
 ```
 searchCriteria = NOT SEEN
 ```
+
 ... returns all messages with \Seen flag not set.
 
 ```
 searchCriteria = HEADER CONTENT-TYPE "MIXED" NOT HEADER CONTENT-TYPE "TEXT"...
 ```
+
 ... returns message whose content-type header contains “Mixed” and does not contain “Text”.
 
 ```
 searchCriteria = HEADER CONTENT-TYPE "E" NOT SUBJECT "o" NOT HEADER CONTENT-TYPE "MIXED"
 ```
+
 ... returns message whose content-type header contains “ e ” and whose Subject header does not contain “ o ” and whose content-type header is not “ Mixed ”.
 
 As concerns the last two examples, notice that the result of the search is different when you remove the parentheses of the first search key list.
@@ -1657,8 +1656,8 @@ As concerns the last two examples, notice that the result of the search is diffe
 ```
 searchCriteria = CHARSET "ISO-8859" BODY "Help"
 ```
-... means the search criteria uses the charset iso-8859 and the server will have to convert the search criteria before searching, if necessary.
 
+... means the search criteria uses the charset iso-8859 and the server will have to convert the search criteria before searching, if necessary.
 
 #### Search value types
 
@@ -1673,7 +1672,6 @@ Search-keys may request the value to search for:
 - **Search-keys with a flag value**: the flag may accept one or several keywords (including standard flags), separated by spaces. Example: `searchCriteria = KEYWORD \Flagged \Draft`
 
 - **Search-keys with a message set value**: Identifies a set of messages. For message sequence numbers, these are consecutive numbers from 1 to the total number of messages in the mailbox. A comma delimits individual numbers; a colon delimits between two numbers inclusive. Examples: `2,4:7,9,12:*` is `2,4,5,6,7,9,12,13,14,15` for a mailbox with 15 messages. `searchCriteria = 1:5 ANSWERED` search in message selection from message sequence number 1 to 5 for messages which have the \Answered flag set. `searchCriteria= 2,4 ANSWERED` search in the message selection (message numbers 2 and 4) for messages which have the \Answered flag set.
-
 
 #### Authorized search-keys
 
@@ -1730,20 +1728,21 @@ Search-keys may request the value to search for:
 **.selectBox**( *name* : Text { ; *state* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.selectBox().Params -->
-| Paramètres | Type        |    | Description           |
-| ---------- | ----------- |:--:| --------------------- |
-| name       | Texte       | -> | Name of the mailbox   |
-| state      | Entier long | -> | Mailbox access status |
-| Résultat   | Object      | <- | boxInfo object        |
+| Paramètres | Type        |    | Description                  |
+| ---------- | ----------- |:--:| ---------------------------- |
+| name       | Texte       | -> | Nom de la boîte de réception |
+| state      | Entier long | -> | Mailbox access status        |
+| Résultat   | Object      | <- | Objet boxInfo                |
 <!-- END REF -->
 
 
 #### Description
 
 The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
-In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+In the *name* parameter, pass the name of the mailbox to access. Le nom doit représenter une hiérarchie claire, de gauche à droite, avec des niveaux séparés par un caractère délimiteur spécifique. Le délimiteur peut être récupéré à l'aide de la fonction [`.getDelimiter()`](#getdelimiter).
 
 The optional *state* parameter defines the type of access to the mailbox. The possible values are:
 
@@ -1751,23 +1750,24 @@ The optional *state* parameter defines the type of access to the mailbox. The po
 | --------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | IMAP read only state  | 1      | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                 |
 | IMAP read write state | 0      | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). (Default value) |
+
+
 > * The function generates an error and returns **Null** if *name* designates a non-existing mailbox.
 > * If there is no open connection, `.selectBox()` will open a connection.
 > * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the [`.checkConnection()`](#checkconnection) function is automatically called.
 
 **Objet retourné**
 
-The `boxInfo` object returned contains the following properties:
+L'objet `boxInfo` contient les propriété suivantes :
 
 | Propriété  | Type   | Description                                            |
 | ---------- | ------ | ------------------------------------------------------ |
-| name       | Texte  | Name of the mailbox                                    |
+| name       | Texte  | Nom de la boîte de réception                           |
 | mailCount  | number | Nombre de messages contenus dans la boîte de réception |
 | mailRecent | number | Number of messages with the "recent" flag              |
 
 
 #### Exemple
-
 
 ```4d
  var $server; $boxinfo : Object
@@ -1800,7 +1800,7 @@ The `boxInfo` object returned contains the following properties:
 <!-- REF #IMAPTransporterClass.subscribe().Params -->
 | Paramètres | Type   |    | Description                       |
 | ---------- | ------ |:--:| --------------------------------- |
-| name       | Texte  | -> | Name of the mailbox               |
+| name       | Texte  | -> | Nom de la boîte de réception      |
 | Résultat   | Object | <- | Status of the subscribe operation |
 <!-- END REF -->
 
@@ -1823,7 +1823,6 @@ La fonction retourne un objet décrivant le statut IMAP :
 |            | \[].errcode            | Nombre     | Code d'erreur 4D                                                                                       |
 |            | \[].message            | Texte      | Description de l'erreur 4D                                                                             |
 |            | \[].componentSignature | Texte      | Signature du composant interne qui a retourné l'erreur                                                 |
-
 
 
 #### Exemple
@@ -1877,7 +1876,7 @@ End if
 <!-- REF #IMAPTransporterClass.unsubscribe().Params -->
 | Paramètres | Type   |    | Description                         |
 | ---------- | ------ |:--:| ----------------------------------- |
-| name       | Texte  | -> | Name of the mailbox                 |
+| name       | Texte  | -> | Nom de la boîte de réception        |
 | Résultat   | Object | <- | Status of the unsubscribe operation |
 <!-- END REF -->
 
@@ -1900,7 +1899,6 @@ La fonction retourne un objet décrivant le statut IMAP :
 |            | \[].errcode            | Nombre     | Code d'erreur 4D                                                                                       |
 |            | \[].message            | Texte      | Description de l'erreur 4D                                                                             |
 |            | \[].componentSignature | Texte      | Signature du composant interne qui a retourné l'erreur                                                 |
-
 
 
 #### Exemple
