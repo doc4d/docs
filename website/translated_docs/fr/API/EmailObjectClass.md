@@ -585,7 +585,7 @@ $status:=$transporter.send($email)
 | Version | Modifications |
 | ------- | ------------- |
 | v17 R4  | Ajout         |
-| v17 R5  | Modified      |
+| v17 R5  | Modifié       |
 </details>
 
 <!-- REF #_command_.MAIL_Convert_to_MIME.Syntax -->
