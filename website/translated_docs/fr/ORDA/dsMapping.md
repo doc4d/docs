@@ -167,7 +167,7 @@ En outre, les attributs relationnels suivant seront également disponibles autom
 
 *   dans la dataclass Project : l'attribut **theClient**, du type "relatedEntity" ; il y a au plus une compagnie pour chaque projet (le client)
 *   dans la dataclass Company : l'attribut **companyProjects**, du type "relatedEntities" ; pour chaque compagnie, il existe un certain nombre de projets reliés.
-> La propriété "Manuel" ou "Automatique" d'une relation dans la base de données n'a aucun effet dans ORDA.
+> Les entity selections peuvent également être "partageables" ou "non partageables", selon [la façon dont elles ont été créées](entities.md#shareable-or-alterable-entity-selections).
 
 Tous les attributs de la dataclass sont exposés en tant que propriétés de la dataclass :
 
