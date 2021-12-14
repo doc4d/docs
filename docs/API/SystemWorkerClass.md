@@ -94,7 +94,7 @@ In the *options* parameter, pass an object that can contain the following proper
 |onError|Formula|undefined|Callback for execution errors. The callback receives two objects in $1 and $2:<li>$1: SystemWorker object</li><li>$2.type: always "error"</li>|
 |onTerminate|Formula|undefined|Callback when the external process is terminated. The callback receives two objects in $1 and $2:<li>$1: SystemWorker object</li><li>$2.type: always "termination"</li>|
 |timeout|Number|undefined|Time in seconds before killing a process that is still alive|
-|dataType|Text|"blob"|Type of the response body content. Possible values: "blob" (default), "text", "image".|
+|dataType|Text|"text"|Type of the response body content. Possible values: "text" (default), "blob".|
 |encoding|Text|"UTF-8"|Only if `dataType="text"`. Encoding of the response body content. Default is "UTF-8".|
 |variables|Object||Sets custom environment variables for the system worker. <li>variables.key=value</li>Values are converted into strings when possible. The value cannot contain a '='. If not defined, the system worker inherits from the 4D environment. To get the general list of environment variables and possible values, please refer to the technical documentation of your operating system.|
 |currentDirectory|Folder||Working directory in which the process is executed|
@@ -424,6 +424,7 @@ This property is **read-only**.
 <details><summary>History</summary>
 |Version|Changes|
 |---|---|
+
 |v19 R4|Added|
 
 </details>
