@@ -13,7 +13,6 @@ The `SystemWorker` class is available from the `4D` class store.
     // Windows example to get access to the ipconfig window
 var $myWinWorker : 4D.SystemWorker
 $myWinWorker:= 4D.SystemWorker.new("C:\\windows\\System32\\ipconfig.exe")
-$myWinWorker.wait(1000)
 
     // macOS example to change the permissions for a file on macOS
     // chmod is the macOS command used to modify file access
@@ -106,9 +105,20 @@ In the *options* parameter, pass an object that can contain the following proper
 The function returns a system worker proxy on which you can call functions and properties of the SystemWorker class.
 
 
-#### Example
+#### Examples on Windows
 
-Run npm install in a terminal:
+1. To open Notepad and open a specific document:
+
+```4d
+var $sw : 4D.SystemWorker
+var $options : Object
+$options:=New object
+$options.hideConsole:= False
+
+$sw:=4D.SystemWorker.new ("C:\\WINDOWS\\notepad.exe C:\\Docs\\new folder\\res.txt")
+```
+
+2. Run npm install in a terminal:
 
 ```4d
 var $folder : 4D.Folder
@@ -124,7 +134,119 @@ $worker:=4D.SystemWorker.new("cmd /c npm install";$options)
 
 ```
 
+3. To launch the Microsoft® Word® application and open a specific document:
+
+```4d
+$mydoc:="C:\\Program Files\\Microsoft Office\\Office15\\WINWORD.EXE C:\\Tempo\\output.txt"
+var $sw : 4D.SystemWorker
+$sw:=4D.SystemWorker.new($mydoc)
+```
+
+4. To execute a Perl script (requires ActivePerl):
+
+```4d
+var $options : Object
+var $sw : 4D.SystemWorker
+var $input : Text
+
+$options:=New object
+$options.variables:=New object("myvariable";"value")
+$options.onResponse:=New formula(m_onResponse)
+
+$sw:=4D.SystemWorker.new ("D:\\Perl\\bin\\perl.exe D:\\Perl\\eg\\cgi\\env.pl";$options)
+
+$sw.postMessage($input)
+```
+
+5. To launch a command with the current directory and without displaying the console:
+
+```4d
+var $options : Object
+var $sw : 4D.SystemWorker
+
+$options:=New object
+$options.currentDirectory:=Folder("C:\\4D_VCS")
+$options.hideConsole:=True //can be omitted (true by default)
+
+$sw:=4D.SystemWorker.new (mycommand;$options)
+```
+
+6. To allow the user to open an external document on Windows:
+
+```4d
+$docname:=Select document("";"*.*";"Choose the file to open";0)
+If(OK=1)
+	var $sw : 4D.SystemWorker
+	$sw:=4D.SystemWorker.new (("cmd.exe /C start \"\" \""+$docname+"\"")
+End if
+```
+
+
+
+#### Examples on macOS
+
+1. Edit a text file (`cat` is the macOS command used to edit files). In this example, the full access path of the command is passed:
+
+```4d
+
+var $sw : 4D.SystemWorker
+var $input;$output;$error : Text
+$sw:=4D.SystemWorker.new("/bin/cat /folder/myfile.txt")
+$sw.postMessage($input)
+$sw.closeInput()
+
+$sw.wait() //synchronous execution
+$output:=$sw.response
+$error:=$sw.error
+
+```
+
+2. To launch an independent "graphic" application, it is preferable to use the `open` system command (in this case, the code has the same effect as double-clicking the application): 
+
+var $sw : 4D.SystemWorker
+$sw:=4D.SystemWorker.new ("open /Applications/Calculator.app")
+
+
+3. To get the contents of the "Users" folder (ls -l is the macOS equivalent of the dir command in DOS). This code uses a sample "Params" user class to show how to handle callback functions:
+
+
+```4d
+
+var $systemworker : 4D.SystemWorker
+$systemworker:=4D.SystemWorker.new("/bin/ls -l /Users ";cs.Params.new())
+
+
+// "Params" class
+// _createFile logs values in a file  
+
+Class constructor
+	This.dataType:="text"
+	This.encoding:="ASCII"
+
+Function onResponse
+     This._createFile("onResponse"; $1; $2)
+     Use (PictureInfo) //using a shared object is necessary  
+         PictureInfo.Identify:=$systemworker.response
+     End use 
+
+Function onData
+     This._createFile("onData"; $1; $2)
+
+Function onError
+     This._createFile("onError"; $1; $2)
+
+Function onDataError
+     This._createFile("onDataError"; $1; $2)
+
+Function onTerminate
+     This._createFile("onTerminate"; $1; $2)
+
+
+```
+
+
 <!-- END REF -->
+
 
 
 <!-- REF SystemWorkerClass.closeInput().Desc -->
