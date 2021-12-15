@@ -103,7 +103,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
 - `4D` - ビルトインクラスストア
 
 
-### cs
+### `cs`
 
 #### cs -> classStore
 
@@ -121,7 +121,7 @@ $hello:=$person.sayHello() //"Hello John Doe"
 $instance:=cs.myClass.new()
 ```
 
-### 4D
+### `4D`
 
 #### 4D -> classStore
 
@@ -129,7 +129,7 @@ $instance:=cs.myClass.new()
 | ---------- | ------ | -- | -------- |
 | classStore | object | <- | 4Dクラスストア |
 
-`4D` コマンドは、ビルトイン 4Dクラスのクラスストアを返します。 [CryptoKey](API/cryptoKeyClass.md) などの専用 API へのアクセスを提供します。
+`4D` コマンドは、ビルトイン 4Dクラスのクラスストアを返します。 [CryptoKey](API/CryptoKeyClass.md) などの専用 API へのアクセスを提供します。
 
 #### 例題
 
@@ -144,11 +144,11 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 ## Class オブジェクト
 
-プロジェクトにおいてクラスが [定義](#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。 クラスとは、それ自身が ["Class" クラス](API/classClass.md) のオブジェクトです。 Class オブジェクトは次のプロパティや関数を持ちます:
+プロジェクトにおいてクラスが [定義](#クラス定義) されていれば、それは 4Dランゲージ環境に読み込まれます。 クラスとは、それ自身が ["Class" クラス](API/ClassClass.md) のオブジェクトです。 Class オブジェクトは次のプロパティや関数を持ちます:
 
-- [`name`](API/classClass.md#name) 文字列
-- [`superclass`](API/classClass.md#superclass) オブジェクト (無い場合は null)
-- [`new()`](API/classClass.md#new) 関数 (クラスオブジェクトをインスタンス化します)
+- [`name`](API/ClassClass.md#name) 文字列
+- [`superclass`](API/ClassClass.md#superclass) オブジェクト (無い場合は null)
+- [`new()`](API/ClassClass.md#new) 関数 (クラスオブジェクトをインスタンス化します)
 
 また、Class オブジェクトは [`constructor`](#class-constructor) オブジェクトを参照することも可能です。
 
@@ -160,7 +160,7 @@ Class オブジェクトは [共有オブジェクト](shared.md) です。し�
 
 `スーパークラス`) を継承します。 </p> 
 
-関数やプロパティがクラス内で見つからない場合、4D はそのクラスの [`スーパークラス`](API/classClass.md#superclass) 内を検索します。見つからない場合、4D はさらに、そのスーパークラスのスーパークラス内を探します。これは、スーパークラスが存在しなくなるまで続きます (すべてのオブジェクトは "Object" スーパークラスを継承しています)。 
+関数やプロパティがクラス内で見つからない場合、4D はそのクラスの [`スーパークラス`](API/ClassClass.md#superclass) 内を検索します。見つからない場合、4D はさらに、そのスーパークラスのスーパークラス内を探します。これは、スーパークラスが存在しなくなるまで続きます (すべてのオブジェクトは "Object" スーパークラスを継承しています)。 
 
 
 
@@ -176,7 +176,7 @@ Class オブジェクトは [共有オブジェクト](shared.md) です。し�
 
 
 
-### Function
+### `Function`
 
 
 
@@ -190,7 +190,7 @@ Function <name>({$parameterName : type; ...}){->$parameterName : type}
 ```
 
 
-クラス関数とは、当該クラスのプロパティです。 クラス関数は [4D.Function](API/formulaClass.md#4dfunction-オブジェクトについて) クラスのオブジェクトです。 
+クラス関数とは、当該クラスのプロパティです。 クラス関数は [4D.Function](API/FunctionClass.md#4dfunction-オブジェクトについて) クラスのオブジェクトです。 
 
 クラス定義ファイルでは、`Function` キーワードと関数名を使用して宣言をおこないます。 関数名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。
 
@@ -227,8 +227,8 @@ Function getFullname()->$fullname : Text
 
 - `()` 演算子の使用 例: `myObject.methodName("hello")`
 - "4D.Function" クラスメンバーメソッドの使用: 
-      - [`apply()`](API/formulaClass.md#apply)
-    - [`call()`](API/formulaClass.md#call)
+      - [`apply()`](API/FunctionClass.md#apply)
+    - [`call()`](API/FunctionClass.md#call)
 
 
 
@@ -273,7 +273,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 たとえば:
+> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 For example:
 > 
 > ```4d
 > Function add($x : Integer)
@@ -287,18 +287,18 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### 例題
+#### Example
 
 
 
 ```4d
-// クラス: Rectangle
-Class Constructor($width : Integer; $height : Integer)
+// Class: Rectangle
+Class constructor($width : Integer; $height : Integer)
     This.name:="Rectangle"
     This.height:=$height
     This.width:=$width
 
-// 関数定義
+// Function definition
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
@@ -307,7 +307,8 @@ Function getArea()->$result : Integer
 
 
 ```4d
-// プロジェクトメソッドにて
+// In a project method
+
 var $rect : cs.Rectangle
 var $area : Real
 
@@ -320,16 +321,16 @@ $area:=$rect.getArea() //5000
 
 
 
-### Class Constructor
+### `Class Constructor`
 
 
 
-#### シンタックス
+#### Syntax
 
 
 
 ```4d
-// クラス: MyClass
+// Class: MyClass
 Class Constructor({$parameterName : type; ...})
 // コード
 ```
@@ -337,9 +338,9 @@ Class Constructor({$parameterName : type; ...})
 
 クラスコンストラクター関数を使って、ユーザークラスを定義することができます。このコンストラクターは [引数](#引数) を受け取ることができます。  
 
-クラスコンストラクターが定義されていると、 [`new()`](API/classClass.md#new) 関数を呼び出したときに、当該コンストラクターが呼び出されます (引数を指定している場合は `new()` 関数に渡します)。
+クラスコンストラクターが定義されていると、 [`new()`](API/ClassClass.md#new) 関数を呼び出したときに、当該コンストラクターが呼び出されます (コンストラクターで引数を指定している場合は `new()` 関数に渡します)。
 
-クラスコンストラクター関数の場合には、 `Current method name` コマンドは次を返します: "*\<ClassName>:constructor*" (例:  "MyClass:constructor")。
+クラスコンストラクター関数の場合には、 `Current method name` コマンドは次を返します: "*\<ClassName>:constructor*" (例: "MyClass:constructor")。
 
 
 
@@ -352,7 +353,7 @@ Class Constructor({$parameterName : type; ...})
 ```4d
 // クラス: MyClass
 // MyClass のクラスコンストラクター
-Class constructor ($name : Text)
+Class Constructor ($name : Text)
     This.name:=$name
 ```
 
@@ -373,7 +374,7 @@ $o:=cs.MyClass.new("HelloWorld")
 
 
 
-### Class extends \<ClassName>
+### `Class extends <ClassName>`
 
 
 
@@ -398,7 +399,7 @@ Class extends <ParentClass>
 
 コードエディターやインタープリターは、これらのルールが破られていても検知することはできません。コンパイラーおよび "シンタックスチェック" のみがエラーを生成します。
 
-派生クラスは、[`Super`](#super) コマンドを使って親クラスのコンストラクターを呼び出すことができます。.
+派生クラスは、`Super` コマンドを使って親クラスのコンストラクターを呼び出すことができます。
 
 
 
@@ -410,14 +411,15 @@ Class extends <ParentClass>
 
 ```4d
 // クラス: Square
+
 // パス: Classes/Square.4dm 
 
 Class extends Polygon
 
 Class constructor ($side : Integer)
 
-    // 親クラスのコンストラクターを呼び出します
-    // 長方形の高さ・幅パラメーターに正方形の一辺の長さを引数として渡します
+// 親クラスのコンストラクターを呼び出します
+// 長方形の高さ・幅パラメーターに正方形の一辺の長さを引数として渡します
     Super($side;$side)
 	// 派生クラスにおいては、'This' を使用するより先に
 	// Super を呼び出しておく必要があります
@@ -431,17 +433,17 @@ Class constructor ($side : Integer)
 
 
 
-### Super
+### `Super`
 
 
 
 
 #### Super {( param{;...;paramN} )} {-> Object}
 
-| 引数    | 型      |    | 説明               |
-| ----- | ------ | -- | ---------------- |
-| param | mixed  | -> | 親コンストラクターに受け渡す引数 |
-| 戻り値   | object | <- | 親オブジェクト          |
+| 引数     | 型      |    | 説明               |
+| ------ | ------ | -- | ---------------- |
+| param  | mixed  | -> | 親コンストラクターに受け渡す引数 |
+| Result | object | <- | 親オブジェクト          |
 
 
 `Super` キーワードによってスーパークラス (親クラス) を呼び出すことができます。
@@ -527,12 +529,12 @@ Function getArea()
 
 #### 例題 2
 
-クラスメンバーメソッド内で `Super` を使う例です。 メンバーメソッドを持つ `Rectangle` クラスを作成します:
+クラスメンバーメソッド内で `Super` を使う例です。 You created the `Rectangle` class with a function:
 
 
 
 ```4d
-// クラス: Rectangle
+//Class: Rectangle
 
 Function nbSides()
     var $0 : Text
@@ -540,12 +542,12 @@ Function nbSides()
 ```
 
 
-`Square` クラスには、スーパークラスメソッドを呼び出すメンバーメソッドを定義します:
+You also created the `Square` class with a function calling the superclass function:
 
 
 
 ```4d
-// クラス: Square
+//Class: Square
 
 Class extends Rectangle
 
@@ -555,7 +557,7 @@ Function description()
 ```
 
 
-すると、プロジェクトメソッド内には次のように書けます:
+Then you can write in a project method:
 
 
 
@@ -563,24 +565,24 @@ Function description()
 var $square : Object
 var $message : Text
 $square:=cs.Square.new()
-$message:=$square.description() // "I have 4 sides which are all equal"
+$message:=$square.description() //I have 4 sides which are all equal
 ```
 
 
 
 
-### This
+### `This`
 
 
 
 #### This -> Object
 
-| 引数  | 型      |    | 説明         |
-| --- | ------ | -- | ---------- |
-| 戻り値 | object | <- | カレントオブジェクト |
+| Parameter | Type   |    | Description    |
+| --------- | ------ | -- | -------------- |
+| Result    | object | <- | Current object |
 
 
-`This` キーワードは、現在処理中のオブジェクトへの参照を返します。 `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
+The `This` keyword returns a reference to the currently processed object. `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
 
 `This` の値は、呼ばれ方によって決まります。 `This` の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。 
 
@@ -594,7 +596,7 @@ $val:=$o.f() //42
 ```
 
 
-[クラスコンストラクター](#class-constructor) 関数が  [`new()`](API/classClass.md#new) 関数により使用された場合、その内部の `This` はインスタンス化される新規オブジェクトを指します。
+[クラスコンストラクター](#class-constructor) 関数が  [`new()`](API/ClassClass.md#new) 関数により使用された場合、その内部の `This` はインスタンス化される新規オブジェクトを指します。
 
 
 
@@ -658,7 +660,7 @@ $val:=$o.f() //8
 
 
 
-### OB Class
+### `OB Class`
 
 
 
@@ -669,7 +671,7 @@ $val:=$o.f() //8
 
 
 
-### OB Instance of
+### `OB Instance of`
 
 
 
