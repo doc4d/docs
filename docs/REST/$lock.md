@@ -1,27 +1,85 @@
 ---
-id: expand
-title: $expand 
+id: lock
+title: $lock 
 ---
 
 
-Expands an image stored in an Image attribute (*e.g.*, `Employee(1)/photo?$imageformat=best&$expand=photo`)<br>
-or<br>
-Expands an BLOB attribute to save it.
-
-> **Compatibility**: For compatibility reasons, $expand can be used to expand a relational attribute (*e.g.*, `Company(1)?$expand=staff` or `Employee/?$filter="firstName BEGIN a"&$expand=employer`). It is however recommended to use [`$attributes`]($attributes.md) for this feature. 
+Locks and unlocks an entity using the [pessimistic mechanism](../ORDA/entities.md#pessimistic-lock).
 
 
+## Syntax
 
-## Viewing an image attribute  
+To lock and entity the entity for other sessions and 4D processes:
 
-If you want to view an image attribute in its entirety, write the following:
+```
+/?$lock=true
+```
 
- `GET  /rest/Employee(1)/photo?$imageformat=best&$version=1&$expand=photo`
 
-For more information about the image formats, refer to [`$imageformat`]($imageformat.md). For more information about the version parameter, refer to [`$version`]($version.md).
+To unlock the entity for other sessions and 4D processes:
 
-## Saving a BLOB attribute to disk  
+```
+/?$lock=false
+```
 
-If you want to save a BLOB stored in your dataclass, you can write the following by also passing "true" to $binary:
+A `?$lock` request returns the same object (in JSON) as [`entity.lock()`](../API/EntityClass.md#lock) and [`entity.unlock()`](../API/EntityClass.md#unlock) class functions. 
 
-  `GET  /rest/Company(11)/blobAtt?$binary=true&$expand=blobAtt`
+The [`lockKindText` property](../API/EntityClass.html#lock) is "Locked by session".
+
+
+### Description
+
+The locks triggered by the REST API are put at the [session](authUsers.md#opening-sessions) level. 
+
+A locked entity is seen as *locked* (i.e. lock / unlock / update / delete actions are not possible) by:
+
+- other REST sessions
+- 4D processes (client/server, remote datastore, standalone) running on the REST server.
+
+
+A lock is removed when:
+
+- the entity is explicitly unlocked by its locker (`/?$lock=false` in the REST session or [`entity.unlock()`](../API/EntityClass.md#unlock))
+- the session [inactivity timeout]($directory.md) is reached (the session is closed)
+- they are no more references to the locked entity in memory
+- the HTTP server is restarted
+- the database is closed
+
+
+
+## Example
+
+
+We lock an entity in a first browser:
+
+```
+GET /rest/Customers(1)/?$lock=true
+```
+
+**Response:**
+
+```
+{
+	"result": true,
+	"__STATUS": {
+		"success": true
+	}
+}
+```
+	
+In a second browser (other session), we send the same request.
+
+**Response:**
+
+```
+{
+	"result":false,
+	"__STATUS":{
+		"status":3,
+		"statusText":"Already Locked",
+		"lockKind":7,
+		"lockKindText":"Locked By Session"
+	}
+}
+```
+
