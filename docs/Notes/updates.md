@@ -9,6 +9,7 @@ The list of main updates in this documentation. For general information about ne
 ## 4D v19 R4
 
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
+- New [SystemWorker class](API/SystemWorkerClass.md).
 
 ## 4D v19 R3
  
