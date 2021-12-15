@@ -1,9 +1,9 @@
 ---
 id: looping
-title: Looping structures
+title: Estruturas de loop
 ---
 
-Looping structures repeat a sequence of statements until a condition is met or a number of times is reached.
+Estruturas de loop repetem uma sequência de declarações até que uma condição seja atingida ou até que alcance um certo número de vezes.
 
 
 ## While...End while
@@ -30,10 +30,10 @@ Se você se encontrar em uma situação desse tipo, na qual um método fica exec
 ### Exemplo
 
 ```4d
- CONFIRM("Add a new record?") //The user wants to add a record?
- While(OK=1) //Loop as long as the user wants to
-    ADD RECORD([aTable]) //Add a new record
- End while //The loop always ends with End while
+ CONFIRM("Add a new record?") //o usuário quer adicionar um registro?
+ While(OK=1) //Loop enquanto o usuário quiser
+    ADD RECORD([aTable]) //Adiciona um novo registro
+ End while //O loop sempre termina com End while
 ```
 
 Nesse exemplo, o valor da variável sistema `OK` é estabelecida pelo comando `CONFIRM` antes de que inicia o loop. Se o usuário clicar no botão **OK** da caixa de diálogo de confirmação, a variável do sistema `OK` toma o valor 1 e se inicia o loop. Senão, a variável de sistema `OK` toma o valor 0 e se omite o loop. Quando iniciar o loop, o comando `ADD RECORD` permite continuar a execução do loop porque se define a variável sistema `OK` em 1 quando o usuário salvar o registro. Quando o usuário cancelar (não salvar) o último registro, a variável do sistema `OK` é estabelecida como 0 e o loop para.
@@ -72,7 +72,7 @@ A sintaxe da estrutura condicional `For... End for` é:
 
 O loop `For... End for` é um loop controlado por um contador:
 
-- The counter variable *Counter_Variable* is a numeric variable (Real or Long Integer) that the `For...End for` loop initializes to the value specified by *Start_Expression*.
+- A variável contador *Counter_Variable* é uma variável numérica (Real ou Long Integer) iniciada por `For...End for` com o valor especificado por *Start_Expression*.
 - Each time the loop is executed, the counter variable is incremented by the value specified in the optional value *Increment_Expression*. If you do not specify *Increment_Expression*, the counter variable is incremented by one (1), which is the default.
 - When the counter variable passes the *End_Expression* value, the loop stops.
 
