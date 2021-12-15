@@ -12,7 +12,9 @@ The `SystemWorker` class is available from the `4D` class store.
 ```4d
     // Windows example to get access to the ipconfig window
 var $myWinWorker : 4D.SystemWorker
-$myWinWorker:= 4D.SystemWorker.new("C:\\windows\\System32\\ipconfig.exe")
+var $ipConfig : Text
+$myWinWorker:= 4D.SystemWorker.new("ipconfig")
+$ipConfig:=$myWinWorker.wait(1).response
 
     // macOS example to change the permissions for a file on macOS
     // chmod is the macOS command used to modify file access
@@ -64,7 +66,7 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 |commandLine|Text|->|Command line to execute|
-|options|Object|<-|Worker parameters|
+|options|Object|->|Worker parameters|
 |result|4D.SystemWorker|<-|New asynchronous System worker or Null if process not started|  
 <!-- END REF -->
 
@@ -73,13 +75,11 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 
 The `4D.SystemWorker.new()` function <!-- REF #4D.SystemWorker.new().Summary -->creates and returns a `4D.SystemWorker` proxy object that will execute the *commandLine* you passed as parameter to launch an external process<!-- END REF -->. 
 
-The returned system worker proxy object can be used to communicate with the worker and get the command output. 
+The returned system worker proxy object can be used to post messages to the worker and get the worker output. 
 
 If an error occurs during the creation of the proxy object, the function returns `null` and an error is thrown.
 
-> The `4D.SystemWorker.new()` function only launches system processes; it does not create interface objects, such as windows. All shell instructions must be preceded by a command line interpreter like `bash`, `sh` or `cmd` depending of the OS.
-
-In the *commandLine* parameter, pass the application's absolute file path to be executed, as well as any required arguments (if necessary). Under macOS, if you pass only the application name, 4D will use the PATH environment variable to locate the executable.
+In the *commandLine* parameter, pass the application's absolute file path to be executed, as well as any required arguments (if necessary). You can also pass directly a command, if known by the console (e.g. "ipconfig" on Windows). Under macOS, if you pass only the application name, 4D will use the PATH environment variable to locate the executable.
 
 #### *options* Object
 
@@ -87,17 +87,25 @@ In the *options* parameter, pass an object that can contain the following proper
 
 |Property|Type|Default|Description|
 |---|---|---|---|
-|onResponse|Formula|undefined|Callback for system worker messages. The function waits for the end of the reception and returns the full message. The callback receives two objects in $1 and $2: <li>$1: SystemWorker object</li><li>$2.type: always "response"</li>|
-|onData|Formula|undefined|Callback for system worker data. The function is called each time the system worker receives data. The callback receives two objects in $1 and $2:<li>$1: SystemWorker object</li><li>$2.type: always "data"</li><li>$2.data: receives data</li>|
-|onDataError|Formula|undefined|Callback for system worker errors. The callback receives two objects in $1 and $2:<li>$1: SystemWorker object</li><li>$2.type: always "error"</li><li>$2.data: receives error data</li>|
-|onError|Formula|undefined|Callback for execution errors. The callback receives two objects in $1 and $2:<li>$1: SystemWorker object</li><li>$2.type: always "error"</li>|
-|onTerminate|Formula|undefined|Callback when the external process is terminated. The callback receives two objects in $1 and $2:<li>$1: SystemWorker object</li><li>$2.type: always "termination"</li>|
+|onResponse|Formula|undefined|Callback for system worker messages. The function waits for the end of the reception and returns the full message. The callback receives two objects as parameters (see below)|
+|onData|Formula|undefined|Callback for system worker data. The function is called each time the system worker receives data. The callback receives two objects as parameters (see below) |
+|onDataError|Formula|undefined|Callback for system worker errors. The callback receives two objects as parameters (see below)|
+|onError|Formula|undefined|Callback for execution errors. The callback receives two objects as parameters (see below)</li>|
+|onTerminate|Formula|undefined|Callback when the external process is terminated. T The callback receives two objects as parameters (see below)|
 |timeout|Number|undefined|Time in seconds before killing a process that is still alive|
 |dataType|Text|"text"|Type of the response body content. Possible values: "text" (default), "blob".|
 |encoding|Text|"UTF-8"|Only if `dataType="text"`. Encoding of the response body content. Default is "UTF-8".|
 |variables|Object||Sets custom environment variables for the system worker. <li>variables.key=value</li>Values are converted into strings when possible. The value cannot contain a '='. If not defined, the system worker inherits from the 4D environment. To get the general list of environment variables and possible values, please refer to the technical documentation of your operating system.|
 |currentDirectory|Folder||Working directory in which the process is executed|
-|hideConsole|Boolean|true|(Windows) Hide the window of the DOS console|
+|hideConsole|Boolean|true|(Windows) Hide the application window (if possible) or the Windows console|
+
+All callback functions receive two object parameters. Their contents depend on the callback:
+
+|Parameter|Type|*onResponse*|*onData*|*onDataError*|*onError*|*onTerminate*|
+|---|---|---|---|---|---|---|
+|$param1|Object|SystemWorker|SystemWorker|SystemWorker|SystemWorker|SystemWorker|
+|$param2.type|Text|"response"|"data"|"error"|"error"|"termination"|
+|$param2.data|Text or Blob||received data|error data|||
 
 
 #### Returned value
@@ -115,10 +123,10 @@ var $options : Object
 $options:=New object
 $options.hideConsole:= False
 
-$sw:=4D.SystemWorker.new ("C:\\WINDOWS\\notepad.exe C:\\Docs\\new folder\\res.txt")
+$sw:=4D.SystemWorker.new ("C:\\WINDOWS\\notepad.exe C:\\Docs\\new folder\\res.txt";$options)
 ```
 
-2. Run npm install in a terminal:
+2. Run npm install in the console:
 
 ```4d
 var $folder : 4D.Folder
@@ -147,7 +155,6 @@ $sw:=4D.SystemWorker.new($mydoc)
 ```4d
 var $options : Object
 var $sw : 4D.SystemWorker
-var $input : Text
 
 $options:=New object
 $options.variables:=New object("myvariable";"value")
@@ -155,20 +162,19 @@ $options.onResponse:=New formula(m_onResponse)
 
 $sw:=4D.SystemWorker.new ("D:\\Perl\\bin\\perl.exe D:\\Perl\\eg\\cgi\\env.pl";$options)
 
-$sw.postMessage($input)
 ```
 
-5. To launch a command with the current directory and without displaying the console:
+5. To launch a command with the current directory and post a message:
 
 ```4d
-var $options : Object
-var $sw : 4D.SystemWorker
+var $param : Object
+var $sys : 4D.SystemWorker
 
-$options:=New object
-$options.currentDirectory:=Folder("C:\\4D_VCS")
-$options.hideConsole:=True //can be omitted (true by default)
-
-$sw:=4D.SystemWorker.new (mycommand;$options)
+$param:=New object
+$param.currentDirectory:=$myProjectDirectory
+$sys:=4D.SystemWorker.new("git commit -F -";$param)
+$sys.postMessage("test postMessage")
+$sys.closeInput()
 ```
 
 6. To allow the user to open an external document on Windows:
@@ -190,25 +196,33 @@ End if
 ```4d
 
 var $sw : 4D.SystemWorker
-var $input;$output;$error : Text
 $sw:=4D.SystemWorker.new("/bin/cat /folder/myfile.txt")
-$sw.postMessage($input)
-$sw.closeInput()
-
 $sw.wait() //synchronous execution
-$output:=$sw.response
-$error:=$sw.error
 
 ```
 
 2. To launch an independent "graphic" application, it is preferable to use the `open` system command (in this case, the code has the same effect as double-clicking the application): 
 
+```4d
 var $sw : 4D.SystemWorker
 $sw:=4D.SystemWorker.new ("open /Applications/Calculator.app")
+```
+
+3. To get the contents of the "Users" folder (ls -l is the macOS equivalent of the dir command in DOS).
+
+```4d
+var $systemworker : 4D.SystemWorker
+var $output;$error : Text
+
+$systemworker:=4D.SystemWorker.new("/bin/ls -l /Users ")
+$systemworker.wait(5)
+$output:=$systemworker.response
+$error:=$systemworker.error
+
+```
 
 
-3. To get the contents of the "Users" folder (ls -l is the macOS equivalent of the dir command in DOS). This code uses a sample "Params" user class to show how to handle callback functions:
-
+4. Same command as above, but using a sample "Params" user class to show how to handle callback functions:
 
 ```4d
 
@@ -223,23 +237,29 @@ Class constructor
 	This.dataType:="text"
 	This.encoding:="ASCII"
 
-Function onResponse
-     This._createFile("onResponse"; $1; $2)
+Function onResponse($sw : Object; $data : Object)
+     This._createFile("onResponse"; $sw; $data)
      Use (PictureInfo) //using a shared object is necessary  
          PictureInfo.Identify:=$systemworker.response
      End use 
 
-Function onData
-     This._createFile("onData"; $1; $2)
+Function onData($sw : Object; $data : Object)
+     This._createFile("onData";$sw;$data)
 
-Function onError
-     This._createFile("onError"; $1; $2)
+Function onError($sw : Object; $data : Object)
+     This._createFile("onError";$sw;$data)
 
-Function onDataError
-     This._createFile("onDataError"; $1; $2)
+Function onDataError($sw : Object; $data : Object)
+     This._createFile("onDataError";$sw;$data)
 
-Function onTerminate
-     This._createFile("onTerminate"; $1; $2)
+Function onTerminate($sw : Object; $data : Object)
+     This._createFile("onTerminate";$sw;$data)
+
+
+Function _createFile($title : Text; $systemWorker : Object; $data : Object)
+     var $textBody : Text
+     $textBody:="systemWorker : "+JSON Stringify($systemWorker; *)+"Data : "+JSON Stringify($data; *)
+     TEXT TO DOCUMENT(Get 4D folder(Current resources folder)+$title+".txt"; $textBody)
 
 
 ```
@@ -279,18 +299,24 @@ This function is useful when an attempt to write in the *stdin* of the external 
 
 ```4D
 // Create some data to gzip
-var $input : 4D.Blob
-CONVERT FROM TEXT("Hello, World!"; "UTF-8"; $blob)
-$input := 4D.Blob.new(  $blob)
+var $input;$output : Blob
+var $gzip : Text
+TEXT TO BLOB("Hello, World!";$input)
+$gzip:="\"C:\\Program Files (x86)\\GnuWin32\\bin\\gzip.exe\" "
 
 // Create an asynchronous system worker
 var $worker : 4D.SystemWorker
-$worker := 4D.SystemWorker.new( "gzip" )
+$worker:= 4D.SystemWorker.new($gzip;New object("dataType";"blob"))
 
 // Send the compressed file on stdin.
-$worker.postMessage( $input )
-// Note that we call closeInput() to indicate we're done. gzip (and most program waiting data from stdin) will wait for more data until the input is explicitely closed.
+$worker.postMessage($input)
+// Note that we call closeInput() to indicate we're done. 
+// gzip (and most program waiting data from stdin) will wait for more data until the input is explicitely closed.
 $worker.closeInput()
+$worker.wait()
+
+$output:=$worker.response
+
 ```
 
 <!-- END REF -->
