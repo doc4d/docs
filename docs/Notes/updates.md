@@ -10,11 +10,11 @@ The list of main updates in this documentation. For general information about ne
 
 - [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
-
 - [Short-circuit operators](Concepts/dt_boolean.md#short-circuit-operators)
 - [Ternary operator](Concepts/dt_boolean.md#ternary-operator)
 - The [Code Editor](code-editor/dropdown.md) now includes an dropdown tool and supports markers for better code navigation.
 - The [Preferences](Preferences/methods.md) now include the **Show clipboards** option on the Methods page.
+- New REST request to [lock/unlock](REST/$lock.md) entities.   
 
 ## 4D v19 R3
  
@@ -49,6 +49,7 @@ The list of main updates in this documentation. For general information about ne
 - [Native compilation](Project/compiler.md#compiler-methods-for) for Silicon processors.
 - [Variable calculation](FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
 - New, comprehensive [CLI](Admin/cli.md) page.
+
 
 
 ## 4D v18 R6
