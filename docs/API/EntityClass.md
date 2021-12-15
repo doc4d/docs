@@ -913,10 +913,12 @@ The `.lock()` function <!-- REF #EntityClass.lock().Summary -->puts a pessimisti
 
 Other processes will see this record as locked (the `result.success` property will contain False if they try to lock the same entity using this function). Only functions executed in the "locking" session are allowed to edit and save the attributes of the entity. The entity can be loaded as read-only by other sessions, but they will not be able to enter and save values.
 
-A locked record is unlocked:
+A record locked by `.lock()` is unlocked:
 
 *	when the [`unlock()`](#unlock) function is called on a matching entity in the same process
 *	automatically, when it is no longer referenced by any entities in memory. For example, if the lock is put only on one local reference of an entity, the entity is unlocked when the function ends. As long as there are references to the entity in memory, the record remains locked.
+
+> An entity can also be [locked by a REST session](../REST/$lock.md), in which case it can only be unlocked by the session.
 
 By default, if the *mode* parameter is omitted, the function will return an error (see below) if the same entity was modified (i.e. the stamp has changed) by another process or user in the meantime. 
 
@@ -935,7 +937,7 @@ The object returned by `.lock( )` contains the following properties:
 |status(\*)| 	|number|	Error code, see below|
 |statusText(\*)||	text|	Description of the error, see below|
 ||||***Available only in case of pessimistic lock error:***|
-|lockKindText|	|	text|	"Locked by record"|
+|lockKindText|	|	text|	"Locked by record" or (if locked by REST) "Locked by session"|
 |lockInfo|	|	object|	Information about the lock origin|
 ||task_id|	number|	Process ID|
 ||user_name	|text|	Session user name on the machine|

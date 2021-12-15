@@ -39,12 +39,9 @@ A locked entity is seen as *locked* (i.e. lock / unlock / update / delete action
 
 A lock is removed when:
 
-- the entity is explicitly unlocked by its locker (`/?$lock=false` in the REST session or [`entity.unlock()`](../API/EntityClass.md#unlock))
-- the session [inactivity timeout]($directory.md) is reached (the session is closed)
-- they are no more references to the locked entity in memory
-- the HTTP server is restarted
-- the database is closed
-
+- the entity is explicitly unlocked by its locker (`/?$lock=false` in the REST session or [`entity.unlock()`](../API/EntityClass.md#unlock) if locked by ORDA)
+- the session's [inactivity timeout]($directory.md) is reached (the session is closed)
+- there are no more references to the locked entity in memory
 
 
 ## Example
