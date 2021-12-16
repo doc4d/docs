@@ -273,7 +273,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 For example:
+> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 たとえば:
 > 
 > ```4d
 > Function add($x : Integer)
@@ -287,18 +287,18 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### Example
+#### 例題
 
 
 
 ```4d
-// Class: Rectangle
-Class constructor($width : Integer; $height : Integer)
+// クラス: Rectangle
+Class Constructor($width : Integer; $height : Integer)
     This.name:="Rectangle"
     This.height:=$height
     This.width:=$width
 
-// Function definition
+// 関数定義
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
@@ -307,8 +307,7 @@ Function getArea()->$result : Integer
 
 
 ```4d
-// In a project method
-
+// プロジェクトメソッドにて
 var $rect : cs.Rectangle
 var $area : Real
 
@@ -325,12 +324,12 @@ $area:=$rect.getArea() //5000
 
 
 
-#### Syntax
+#### シンタックス
 
 
 
 ```4d
-// Class: MyClass
+// クラス: MyClass
 Class Constructor({$parameterName : type; ...})
 // コード
 ```
@@ -529,12 +528,12 @@ Function getArea()
 
 #### 例題 2
 
-クラスメンバーメソッド内で `Super` を使う例です。 You created the `Rectangle` class with a function:
+クラスメンバーメソッド内で `Super` を使う例です。 メンバーメソッドを持つ `Rectangle` クラスを作成します:
 
 
 
 ```4d
-//Class: Rectangle
+// クラス: Rectangle
 
 Function nbSides()
     var $0 : Text
@@ -542,12 +541,12 @@ Function nbSides()
 ```
 
 
-You also created the `Square` class with a function calling the superclass function:
+`Square` クラスには、スーパークラスメソッドを呼び出すメンバーメソッドを定義します:
 
 
 
 ```4d
-//Class: Square
+// クラス: Square
 
 Class extends Rectangle
 
@@ -557,7 +556,7 @@ Function description()
 ```
 
 
-Then you can write in a project method:
+すると、プロジェクトメソッド内には次のように書けます:
 
 
 
@@ -577,12 +576,12 @@ $message:=$square.description() //I have 4 sides which are all equal
 
 #### This -> Object
 
-| Parameter | Type   |    | Description    |
-| --------- | ------ | -- | -------------- |
-| Result    | object | <- | Current object |
+| 引数     | 型      |    | 説明         |
+| ------ | ------ | -- | ---------- |
+| Result | object | <- | カレントオブジェクト |
 
 
-The `This` keyword returns a reference to the currently processed object. `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
+`This` キーワードは、現在処理中のオブジェクトへの参照を返します。 `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
 
 `This` の値は、呼ばれ方によって決まります。 `This` の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。 
 
