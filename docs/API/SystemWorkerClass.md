@@ -10,11 +10,11 @@ The `SystemWorker` class is available from the `4D` class store.
 ### Example
 
 ```4d
-    // Windows example to get access to the ipconfig window
+    // Windows example to get access to the ipconfig information
 var $myWinWorker : 4D.SystemWorker
 var $ipConfig : Text
 $myWinWorker:= 4D.SystemWorker.new("ipconfig")
-$ipConfig:=$myWinWorker.wait(1).response
+$ipConfig:=$myWinWorker.wait(1).response //timeout 1 second
 
     // macOS example to change the permissions for a file on macOS
     // chmod is the macOS command used to modify file access
@@ -37,7 +37,7 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 |[<!-- INCLUDE #SystemWorkerClass.encoding.Syntax -->](#encoding)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.encoding.Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.errors.Syntax -->](#errors)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.errors.Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.exitCode.Syntax -->](#exitcode)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.exitCode.Summary --> |
-|[<!-- INCLUDE #SystemWorkerClass.hideConsole.Syntax -->](#hideconsole)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.hideConsole.Summary --> |
+|[<!-- INCLUDE #SystemWorkerClass.hideWindow.Syntax -->](#hideWindow)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.hideWindow.Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.pid.Syntax -->](#pid)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.pid.Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.postMessage().Syntax -->](#postmessage)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.postMessage().Summary --> |
 |[<!-- INCLUDE #SystemWorkerClass.response.Syntax -->](#response)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #SystemWorkerClass.response.Summary --> |
@@ -67,19 +67,22 @@ $myMacWorker:= 4D.SystemWorker.new("chmod +x /folder/myfile.sh")
 |---------|--- |:---:|------|
 |commandLine|Text|->|Command line to execute|
 |options|Object|->|Worker parameters|
-|result|4D.SystemWorker|<-|New asynchronous System worker or Null if process not started|  
+|result|4D.SystemWorker|<-|New asynchronous System worker or null if process not started|  
 <!-- END REF -->
 
 
 #### Description
 
-The `4D.SystemWorker.new()` function <!-- REF #4D.SystemWorker.new().Summary -->creates and returns a `4D.SystemWorker` proxy object that will execute the *commandLine* you passed as parameter to launch an external process<!-- END REF -->. 
+The `4D.SystemWorker.new()` function <!-- REF #4D.SystemWorker.new().Summary -->creates and returns a `4D.SystemWorker` object that will execute the *commandLine* you passed as parameter to launch an external process<!-- END REF -->. 
 
-The returned system worker proxy object can be used to post messages to the worker and get the worker output. 
+The returned system worker object can be used to post messages to the worker and get the worker output. 
 
-If an error occurs during the creation of the proxy object, the function returns `null` and an error is thrown.
+If an error occurs during the creation of the proxy object, the function returns a `null` object and an error is thrown.
 
-In the *commandLine* parameter, pass the application's absolute file path to be executed, as well as any required arguments (if necessary). You can also pass directly a command, if known by the console (e.g. "ipconfig" on Windows). Under macOS, if you pass only the application name, 4D will use the PATH environment variable to locate the executable.
+In the *commandLine* parameter, pass the full path of the application's file to be executed (posix syntax), as well as any required arguments, if necessary. If you pass only the application name, 4D will use the `PATH` environment variable to locate the executable.
+
+**Warning:** This function can only launch executable applications; it cannot execute instructions that are part of the shell (command interpreter). For example, under Windows it is not possible to use this command to execute the `dir` instruction.
+
 
 #### *options* Object
 
@@ -87,17 +90,17 @@ In the *options* parameter, pass an object that can contain the following proper
 
 |Property|Type|Default|Description|
 |---|---|---|---|
-|onResponse|Formula|undefined|Callback for system worker messages. The function waits for the end of the reception and returns the full message. The callback receives two objects as parameters (see below)|
-|onData|Formula|undefined|Callback for system worker data. The function is called each time the system worker receives data. The callback receives two objects as parameters (see below) |
-|onDataError|Formula|undefined|Callback for system worker errors. The callback receives two objects as parameters (see below)|
-|onError|Formula|undefined|Callback for execution errors. The callback receives two objects as parameters (see below)</li>|
-|onTerminate|Formula|undefined|Callback when the external process is terminated. T The callback receives two objects as parameters (see below)|
-|timeout|Number|undefined|Time in seconds before killing a process that is still alive|
+|onResponse|Formula|undefined|Callback for system worker messages. This callback is called once the complete response is received. It receives two objects as parameters (see below)|
+|onData|Formula|undefined|Callback for system worker data. This callback is called each time the system worker receives data. It receives two objects as parameters (see below) |
+|onDataError|Formula|undefined|Callback for the external process errors (*stderr* of the external process). It receives two objects as parameters (see below)|
+|onError|Formula|undefined|Callback for execution errors, returned by the system worker in case of unusual runtime conditions (system errors). It receives two objects as parameters (see below)</li>|
+|onTerminate|Formula|undefined|Callback when the external process is terminated. It receives two objects as parameters (see below)|
+|timeout|Number|undefined|Time in seconds before the process is killed if it is still alive|
 |dataType|Text|"text"|Type of the response body content. Possible values: "text" (default), "blob".|
-|encoding|Text|"UTF-8"|Only if `dataType="text"`. Encoding of the response body content. Default is "UTF-8".|
-|variables|Object||Sets custom environment variables for the system worker. <li>variables.key=value</li>Values are converted into strings when possible. The value cannot contain a '='. If not defined, the system worker inherits from the 4D environment. To get the general list of environment variables and possible values, please refer to the technical documentation of your operating system.|
+|encoding|Text|"UTF-8"|Only if `dataType="text"`. Encoding of the response body content. For the list of available values, see the [`CONVERT FROM TEXT`](https://doc.4d.com/4dv19R/help/command/en/page1011.html) command description|
+|variables|Object||Sets custom environment variables for the system worker. Syntax; `variables.key=value`. Values are converted into strings when possible. The value cannot contain a '='. If not defined, the system worker inherits from the 4D environment.|
 |currentDirectory|Folder||Working directory in which the process is executed|
-|hideConsole|Boolean|true|(Windows) Hide the application window (if possible) or the Windows console|
+|hideWindow|Boolean|true|(Windows) Hide the application window (if possible) or the Windows console|
 
 All callback functions receive two object parameters. Their contents depend on the callback:
 
@@ -107,10 +110,17 @@ All callback functions receive two object parameters. Their contents depend on t
 |$param2.type|Text|"response"|"data"|"error"|"error"|"termination"|
 |$param2.data|Text or Blob||received data|error data|||
 
+Here is the sequence of callback calls:
+
+1. `onData` and `onDataError` are executed one or several times
+2. if called, `onError` is executed once (stops the system worker processing)
+3. if no error occured, `onResponse` is executed once
+4. `onTerminate` is always executed
+
 
 #### Returned value
 
-The function returns a system worker proxy on which you can call functions and properties of the SystemWorker class.
+The function returns a system worker object on which you can call functions and properties of the SystemWorker class.
 
 
 #### Examples on Windows
@@ -121,7 +131,7 @@ The function returns a system worker proxy on which you can call functions and p
 var $sw : 4D.SystemWorker
 var $options : Object
 $options:=New object
-$options.hideConsole:= False
+$options.hideWindow:= False
 
 $sw:=4D.SystemWorker.new ("C:\\WINDOWS\\notepad.exe C:\\Docs\\new folder\\res.txt";$options)
 ```
@@ -136,7 +146,7 @@ var $worker : 4D.SystemWorker
 $folder:=Folder(fk database folder) 
 $options:=New object
 $options.currentDirectory:=$folder
-$options.hideConsole:=False
+$options.hideWindow:=False
 
 $worker:=4D.SystemWorker.new("cmd /c npm install";$options)
 
@@ -150,40 +160,27 @@ var $sw : 4D.SystemWorker
 $sw:=4D.SystemWorker.new($mydoc)
 ```
 
-4. To execute a Perl script (requires ActivePerl):
 
-```4d
-var $options : Object
-var $sw : 4D.SystemWorker
-
-$options:=New object
-$options.variables:=New object("myvariable";"value")
-$options.onResponse:=New formula(m_onResponse)
-
-$sw:=4D.SystemWorker.new ("D:\\Perl\\bin\\perl.exe D:\\Perl\\eg\\cgi\\env.pl";$options)
-
-```
-
-5. To launch a command with the current directory and post a message:
+4. To launch a command with the current directory and post a message:
 
 ```4d
 var $param : Object
 var $sys : 4D.SystemWorker
 
 $param:=New object
-$param.currentDirectory:=$myProjectDirectory
+$param.currentDirectory:=Folder(fk database folder)
 $sys:=4D.SystemWorker.new("git commit -F -";$param)
-$sys.postMessage("test postMessage")
+$sys.postMessage("This is a postMessage")
 $sys.closeInput()
 ```
 
-6. To allow the user to open an external document on Windows:
+5. To allow the user to open an external document on Windows:
 
 ```4d
 $docname:=Select document("";"*.*";"Choose the file to open";0)
 If(OK=1)
 	var $sw : 4D.SystemWorker
-	$sw:=4D.SystemWorker.new (("cmd.exe /C start \"\" \""+$docname+"\"")
+	$sw:=4D.SystemWorker.new("cmd.exe /C start \"\" \""+$docname+"\"")
 End if
 ```
 
@@ -212,12 +209,13 @@ $sw:=4D.SystemWorker.new ("open /Applications/Calculator.app")
 
 ```4d
 var $systemworker : 4D.SystemWorker
-var $output;$error : Text
+var $output : Text
+var $errors : Collection
 
 $systemworker:=4D.SystemWorker.new("/bin/ls -l /Users ")
 $systemworker.wait(5)
 $output:=$systemworker.response
-$error:=$systemworker.error
+$error:=$systemworker.errors
 
 ```
 
@@ -231,7 +229,6 @@ $systemworker:=4D.SystemWorker.new("/bin/ls -l /Users ";cs.Params.new())
 
 
 // "Params" class
-// _createFile logs values in a file  
 
 Class constructor
 	This.dataType:="text"
@@ -292,7 +289,7 @@ Function _createFile($title : Text; $systemWorker : Object; $data : Object)
 
 The `.closeInput()` function <!-- REF #SystemWorkerClass.closeInput().Summary -->closes the input stream (*stdin*) of the external process<!-- END REF -->. 
 
-This function is useful when an attempt to write in the *stdin* of the external process using the `postMessage()` is blocked for some reason. A call to `.closeInput()` will release the execution.
+When the executable waits for all data to be received through `postMessage()`, `.closeInput()` is useful to indicate to the executable that data sending is finished and that it can proceed. 
 
 
 #### Example
@@ -390,7 +387,7 @@ This property is **read-only**.
 
 #### Description
 
-The `.errors` property <!-- REF #SystemWorkerClass.errors.Summary -->contains a collection of 4D errors stack in case of execution error(s)<!-- END REF -->. 
+The `.errors` property <!-- REF #SystemWorkerClass.errors.Summary -->contains a collection of 4D errors in case of execution error(s)<!-- END REF -->. 
 
 Each element of the collection is an object with the following properties:
 
@@ -422,15 +419,15 @@ This property is **read-only**.
 
 
 
-<!-- REF SystemWorkerClass.hideConsole.Desc -->
-## .hideConsole   
+<!-- REF SystemWorkerClass.hideWindow.Desc -->
+## .hideWindow   
 
-<!-- REF #SystemWorkerClass.hideConsole.Syntax -->**.hideConsole** : Boolean<!-- END REF -->
+<!-- REF #SystemWorkerClass.hideWindow.Syntax -->**.hideWindow** : Boolean<!-- END REF -->
 
 
 #### Description
 
-The `.hideConsole` property <!-- REF #SystemWorkerClass.hideConsole.Summary -->can be used to hide the window of the DOS console or the window of the launched executable (**Windows only**)<!-- END REF -->. 
+The `.hideWindow` property <!-- REF #SystemWorkerClass.hideWindow.Summary -->can be used to hide the window of the DOS console or the window of the launched executable (**Windows only**)<!-- END REF -->. 
 
 <!-- END REF -->
 
@@ -446,7 +443,7 @@ This property is **read-write**.
 
 #### Description
 
-The `.pid` property <!-- REF #SystemWorkerClass.pid.Summary -->contains the process ID of the `SystemWorker` object<!-- END REF -->. 
+The `.pid` property <!-- REF #SystemWorkerClass.pid.Summary -->contains the process unique identifier of the external process at the system level<!-- END REF -->. 
 
 This property is **read-only**. 
 
@@ -486,7 +483,7 @@ You can use the `.dataType` property of the [options object](#options-object) to
 
 #### Description
 
-The `.response` property <!-- REF #SystemWorkerClass.response.Summary -->contains the data returned once the request is terminated<!-- END REF -->, i.e. the full message received from the process output.
+The `.response` property <!-- REF #SystemWorkerClass.response.Summary -->contains the concatenation of all data returned once the request is terminated<!-- END REF -->, i.e. the full message received from the process output.
 
 The type of the message is defined according to the [`dataType`](#datatype) attribute.
 
@@ -577,12 +574,12 @@ This property is **read-only**.
 
 </details>
 
-<!-- REF #SystemWorkerClass.wait().Syntax -->**.wait**( {*timeout* : Integer} ) : 4D.SystemWorker<!-- END REF -->
+<!-- REF #SystemWorkerClass.wait().Syntax -->**.wait**( {*timeout* : Real} ) : 4D.SystemWorker<!-- END REF -->
 
 <!-- REF #SystemWorkerClass.wait().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|timeout|Integer|->|Waiting time (in seconds)|
+|timeout|Real|->|Waiting time (in seconds)|
 |Result|4D.SystemWorker|<-|SystemWorker object|
 <!-- END REF -->
 
@@ -591,16 +588,15 @@ This property is **read-only**.
 
 The `.wait()` function <!-- REF #SystemWorkerClass.wait().Summary -->waits until the end of the `SystemWorker` execution or the specified *timeout*<!-- END REF -->. 
 
-In *timeout*, pass a value in seconds. The `SystemWorker` script will wait for the external process for the amount of time defined in the *timeout* parameter. If you pass 0 or omit the *timeout* parameter, the script execution will wait indefinitely. 
+In *timeout*, pass a value in seconds. The `SystemWorker` script will wait for the external process for the amount of time defined in the *timeout* parameter. If you omit the *timeout* parameter, the script execution will wait indefinitely. 
 
 Actually, `.wait()` waits until the end of processing of the `onTerminate` formula, except if the *timeout* is reached. If *timeout* is reached, the `SystemWorker` is not killed.
 
-During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances.
+During a `.wait()` execution, callback functions are executed, especially callbacks from other events or from other `SystemWorker` instances. You can exit from a `.wait()` by calling [`terminate()`](#terminate) from a callback.
 
 This function returns the SystemWorker object. 
 
-You can exit from a `.wait()` by calling [`terminate()`](#terminate).
-
+> This function is not necessary if you created the `SystemWorker` form a 4D worker process.
 
 <!-- END REF -->
 
