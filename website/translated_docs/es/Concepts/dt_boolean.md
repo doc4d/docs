@@ -211,7 +211,7 @@ $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$per
 
 As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
 
-The following values are **falsy** :
+The following values are **falsy**:
 
 * false
 * Null
@@ -221,10 +221,10 @@ The following values are **falsy** :
 * Null pointer
 * Null picture
 * Null date !00-00-00!
+* "" - Empty strings
+* [] - Empty collections
+* {} - Empty arrays
 
 All other values are considered **truthy**, including:
 
 * 0 - numeric zero (Integer or otherwise)
-* "" - Empty strings
-* [] - Empty collections
-* {} - Empty arrays
