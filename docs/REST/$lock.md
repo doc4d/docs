@@ -67,12 +67,12 @@ The returned "__STATUS" object has the following properties:
 
 The following values can be returned in the *status* and *statusText* properties of the *__STATUS* object in case of error: 
 
-|status|	Comment|
-|---|---|
-|2|The internal stamp value of the entity does not match the one of the entity stored in the data (optimistic lock). **statusText**: "Stamp has changed"|
-|3	|The entity is locked by a pessimistic lock. **statusText**: "Already locked"
-|4 |A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc. **statusText**: "Other error"|
-|5	|The entity no longer exists in the data. **statusText**: "Entity does not exist anymore"|
+|status|statusText|Comment|
+|---|---|---|
+|2|"Stamp has changed"|The internal stamp value of the entity does not match the one of the entity stored in the data (optimistic lock).|
+|3|"Already locked"|The entity is locked by a pessimistic lock.|
+|4|"Other error"|A serious error is a low-level database error (e.g. duplicated key), a hardware error, etc.|
+|5|"Entity does not exist anymore"|The entity no longer exists in the data. |
 
 
 
