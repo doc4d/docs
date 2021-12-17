@@ -112,14 +112,14 @@ You can configure your existing projects to save code **without tokens** by inse
 "tokenizedText": false
 ```
 
+> This setting is only taken into account when methods are saved. Existing methods in your projects are left untouched, unless you resave them. 
+
 
 ### Create `.gitignore` file
 
 You might need or want git to ignore some files in your new projects.  
 
 You can set this preference by checking the **Create .gitignore file**  option.
-
-![](assets/en/Preferences/gitignore.png)
 
 When a project is created in 4D and that box is checked, 4D creates a `.gitignore` file at the same level as the `Project` folder (see [Architecture of a Project](Project/architecture.md#gitignore-file-optional)).
 
