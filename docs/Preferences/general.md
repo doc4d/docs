@@ -101,6 +101,7 @@ When this option is checked, saved [method source files](../Project/architecture
 If you intend to use VCS or external code editors with your projects, you might want to uncheck this option for a better readability of the code with these tools. 
 
 > This option only affects projects, binary databases always include tokens.
+> 
 > You can always get the code with tokens by calling [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) with 1 in the *option* parameter.
 
 
