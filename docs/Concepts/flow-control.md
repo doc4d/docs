@@ -25,26 +25,41 @@ The loops are controlled in two ways: either they loop until a condition is met,
 |v19 R4|Added
 </details>
 
-The `return` statement can be called in any programming structure. When a `return` statement is used in a function or method, the execution of the function or method is stopped. The remaining code is not executed and the hand is given back to the caller. 
+The `return` statement can be called from anywhere. When a `return` statement is used in a function or method, the execution of the function or method is stopped. The remaining code is not executed and the control is returned to the caller. 
 
-The `return` statement can be used to [return a value](parameters.md#return-expression) to the caller. If the value is omitted, `undefined` is returned instead.
+The `return` statement can be used to [return a value](parameters.md#return-expression) to the caller. 
 
 ### Example
 
 ```4d
 // counter method 
   
-var $result : Text
-For ($i;1;1000)
-	$result:=$result+String($i)+"A\r" // until 5
-    If ($i = 5)
-      return 
-    End if
-    $result:=$result+String($i)+"B\r" // until 4
-End for
-$result:=$result+String($i)+"C\r"  // never appears
+var $counter : Text
+var $i : Integer
 
-// $result =
+While (True)
+	$i:=$i+1
+	$counter+=String($i)+"A\r"  // until 5
+	logConsole($counter)
+	If ($i=5)
+		return 
+	End if 
+	$counter+=String($i)+"B\r"  // until 4
+	logConsole($counter)
+	
+End while 
+
+$counter+=String($i)+"C"  //never executed 
+logConsole($counter)
+
+
+// logConsole method
+// logConsole(message)
+
+#DECLARE($message : Text)
+MESSAGE($message)
+DELAY PROCESS(Current process; 20)
+
 // 1A
 // 1B
 // 2A
