@@ -15,6 +15,7 @@
 		"4D Language Concepts": [
 			"Concepts/about",
 			"Concepts/quick-tour",
+			"Concepts/operators",
 			{
 				"type": "subcategory",
 				"label": "Data Types",

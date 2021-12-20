@@ -5,9 +5,7 @@ title: Operators
 
 An operator is a symbol or a group of symbols that you use to check, modify, or combine values. You are already familiar with many operators. For example, `1 + 2` uses the addition (or plus sign) operator to add two numbers together, and the result is 3. Comparison operators, like = or >, let you compare two or more values. 
 
-The 4D language supports the operators you may already know from other languages like C or JavaScript.
-
- and improves several capabilities to eliminate common coding errors. The assignment operator (=) doesn’t return a value, to prevent it from being mistakenly used when the equal to operator (==) is intended. Arithmetic operators (+, -, *, /, % and so forth) detect and disallow value overflow, to avoid unexpected results when working with numbers that become larger or smaller than the allowed value range of the type that stores them. You can opt in to value overflow behavior by using Swift’s overflow operators, as described in Overflow Operators.
+The 4D language supports the operators you may already know from other languages like C or JavaScript. However, the assignment operator is `:=` to prevent it from being mistakenly used when the equal to operator (`=`) is intended. Arithmetic operators (+, -, *, /, %...) and comparison operators (=, >, >=...) can be used with numbers, but also with text, date, or picture data types. Like JavaScript, the 4D language supports the concept of truthy and falsy values in boolean contexts. 
 
 
 ## Terminology
@@ -21,9 +19,7 @@ The values that operators affect are operands. In the expression 1 + 2, the + sy
 
 
 
-## Basic operators
-
-### Assignment operator
+## Assignment operator
 
 The **assignment operator** (`a:=b`) initializes or updates the value of `a` with the value of `b`:
 
@@ -36,7 +32,8 @@ $col:=New collection //$col is initialized with an empty collection
 
 > Do NOT confuse the assignment operator `:=` with the equality comparison operator `=`. A different assignment operator (and not `=`) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. Such errors are often difficult to recognize by the compiler and lead to time-consuming troubleshooting.
 
-### Compound Assignment Operators
+
+### Compound assignment operators
 
 4D provides **compound assignment operators** that combine assignment (`:=`) with another operation. One example is the [addition assignment operator](#addition-assignment-operator) (`+=`):
 
@@ -260,6 +257,7 @@ $name:=$person.maidenName || $person.name
 The `&&` and `||` operators have the same precedence as the logical operators `&` and `|`, and are evaluated left to right.
 
 This means that `a || b && c` is evaluated as `(a || b) && c`.
+
 
 ## Ternary operator
 
