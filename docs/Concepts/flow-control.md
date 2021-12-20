@@ -32,25 +32,22 @@ The `return` statement can be used to [return a value](parameters.md#return-expr
 ### Example
 
 ```4d
-// counter method 
-  
-var $counter : Text
+var $message : Text
 var $i : Integer
 
-While (True)
+While (True) //infinite loop
 	$i:=$i+1
-	$counter+=String($i)+"A\r"  // until 5
-	logConsole($counter)
+	$message+=String($i)+"A\r"  // until 5
+	logConsole($message)
 	If ($i=5)
-		return 
+		return //stops the loop
 	End if 
-	$counter+=String($i)+"B\r"  // until 4
-	logConsole($counter)
+	$message+=String($i)+"B\r"  // until 4
+	logConsole($message)
 	
 End while 
-
-$counter+=String($i)+"C"  //never executed 
-logConsole($counter)
+$message+=String($i)+"C\r"  //never executed 
+logConsole($message)
 
 
 // logConsole method
