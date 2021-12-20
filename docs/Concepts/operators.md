@@ -5,15 +5,15 @@ title: Operators
 
 An operator is a symbol or a group of symbols that you use to check, modify, or combine values. You are already familiar with many operators. For example, `1 + 2` uses the addition (or plus sign) operator to add two numbers together, and the result is 3. Comparison operators, like = or >, let you compare two or more values. 
 
-The 4D language supports the operators you may already know from other languages like C or JavaScript. However, the assignment operator is `:=` to prevent it from being mistakenly used when the equal to operator (`=`) is intended. Arithmetic operators (+, -, *, /, %...) and comparison operators (=, >, >=...) can be used with numbers, but also with text, date, or picture data types. Like JavaScript, the 4D language supports the concept of truthy and falsy values in boolean contexts. 
+The 4D language supports the operators you may already know from other languages like C or JavaScript. However, the assignment operator is `:=` to prevent it from being mistakenly used when the equal to operator (`=`) is intended. [Basic operators](#basic-operators) such as arithmetic operators (+, -, *, /, %...) and comparison operators (=, >, >=...) can be used with numbers, but also with boolean, text, date, time, pointer, or picture data types. Like JavaScript, the 4D language supports the concept of [truthy and falsy values](#truthy-and-falsy), which in use in [short-cicrcuit operators](#short-circuit-operators). 
 
 
 ## Terminology
 
 The 4D language supports **binary** and **ternary** operators:
 
-- binary operators operate on two targets (such as 2 + 3) and are infix because they appear in between their two targets.
-- ternary operators operate on three targets. Like C, 4D has only one ternary operator, the ternary conditional operator (`a ? b : c`).
+- binary operators operate on two targets (such as 2 + 3) and appear in between their two targets.
+- ternary operators operate on three targets. Like C, 4D has only one ternary operator, the [ternary conditional operator](#ternary-operator) (`a ? b : c`).
 
 The values that operators affect are operands. In the expression 1 + 2, the + symbol is a binary operator and its two operands are the values 1 and 2.
 
@@ -35,12 +35,27 @@ $col:=New collection //$col is initialized with an empty collection
 
 ### Compound assignment operators
 
-4D provides **compound assignment operators** that combine assignment (`:=`) with another operation. One example is the [addition assignment operator](#addition-assignment-operator) (`+=`):
+4D provides **compound assignment operators** that combine assignment with another operation. One example is the [addition assignment operator](#addition-assignment-operator-) (`+=`):
 
 ```4d
 $a:=1 // $a=1
 $a+=2 // $a=3
 ```
+
+
+The following compound assignment operators are supported:
+
+|Operator|Symbol|Available with (\*)|Example|
+|---|---|---|---|
+|Addition|+=|[text](dt_string.md), [numbers](dt_number.md), [date](dt_date.md), [time](dt_time.md), [picture](dt_picture.md)|`$x+=5 //$x:=$x+5`|
+|Subtraction|-=|[numbers](dt_number.md), [date](dt_date.md), [time](dt_time.md), [picture](dt_picture.md)|`$x1-=5 //$x1:=$x1-5`|
+|Division|/=|[numbers](dt_number.md), [time](dt_time.md), [picture](dt_picture.md)|`$x3/=2 //$x3:=$x3/2`|
+|Multiplication|*=|[text](dt_string.md), [numbers](dt_number.md), [time](dt_time.md), [picture](dt_picture.md)|`$x2*=5 //$x2:=$x2*5`|
+
+(\*)
+*date*: with a number<br/>
+*time*: with a number or a time<br/>
+*picture*: with a picture (except multiplication) or a number, not in an object property or a collection element
 
 The operators apply specifically on following expressions:
 
@@ -65,19 +80,10 @@ $t:="a"
 $t[[1]]+=0 //error
 ```
 
-#### Addition assignment operator +=
-
-The addition assignment operator (`+=`) adds the value of the right operand to a variable and assigns the result to the variable.
-
-This operator is available for the following data types:
-
-- [text](dt_string.md)
-- [numbers](dt_number.md)
-- [date](dt_date.md) (with a number)
-- [time](dt_time.md) (with a number or a time)
-- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
+#### Examples
 
 ```4d
+// Addition compound assignment operator
 $x:=2
 $x+=5 //$x:=$x+5
 
@@ -86,66 +92,32 @@ $t+=" World" //$t:=$t+" World"
 
 $d:=!2000-11-10!
 $d+=10 // $d:=$d+10
-```
 
-
-#### Subtraction assignment operator -=
-
-The subtraction assignment operator (`-=`) subtracts the value of the right operand from a variable and assigns the result to the variable.
-
-This operator is available for the following data types:
-
-- [numbers](dt_number.md)
-- [date](dt_date.md) (with a number)
-- [time](dt_time.md) (with a number or a time)
-- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
-
-```4d
+// Subtraction compound assignment operator
 $x1:=10
 $x1-=5 //$x1:=$x1-5
 
 $d1:=!2000-11-10!
 $d1-=10 // $d1:=$d1-10
-```
 
-#### Division assignment operator /=
-
-The division assignment operator (`/=`) divides a variable by the value of the right operand and assigns the result to the variable.
-
-This operator is available for the following data types:
-
-- [numbers](dt_number.md)
-- [time](dt_time.md) (with a number or a time)
-- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
-
-```4d
+// Division compound assignment operator
 $x3:=10
 $x3/=2 // $x3:=$x3/2
-```
 
-#### Multiplication assignment operator *=
 
-The multiplication assignment operator (`*=`) multiplies a variable by the value of the right operand and assigns the result to the variable.
-
-This operator is available for the following data types:
-
-- [text](dt_string.md)
-- [numbers](dt_number.md)
-- [time](dt_time.md) (with a number or a time)
-- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
-
-```4d
+// Multiplication compound assignment operator
 $x2:=10
 $x2*=5 // $x2:=$x2*5
 
 $t2:="Hello" 
 $t2*=2 // $t2:=$t2*2
+
 ```
 
 
 ## Basic operators
 
-Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described in the following sections:
+Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
 
 - [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
 - [**Date operators**](dt_date.md#date-operators)
