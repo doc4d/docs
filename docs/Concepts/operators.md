@@ -35,27 +35,41 @@ $col:=New collection //$col is initialized with an empty collection
 
 ### Compound assignment operators
 
-4D provides **compound assignment operators** that combine assignment with another operation. One example is the [addition assignment operator](#addition-assignment-operator-) (`+=`):
+4D provides **compound assignment operators** that combine assignment with another operation. One example is the addition assignment operator (`+=`):
 
 ```4d
-$a:=1 // $a=1
+$a:=1 
 $a+=2 // $a=3
 ```
 
 
 The following compound assignment operators are supported:
 
-|Operator|Symbol|Available with (\*)|Example|
+|Operator|Syntax|Assigns|Example
 |---|---|---|---|
-|Addition|+=|[text](dt_string.md), [numbers](dt_number.md), [date](dt_date.md), [time](dt_time.md), [picture](dt_picture.md)|`$x+=5 //$x:=$x+5`|
-|Subtraction|-=|[numbers](dt_number.md), [date](dt_date.md), [time](dt_time.md), [picture](dt_picture.md)|`$x1-=5 //$x1:=$x1-5`|
-|Division|/=|[numbers](dt_number.md), [time](dt_time.md), [picture](dt_picture.md)|`$x3/=2 //$x3:=$x3/2`|
-|Multiplication|*=|[text](dt_string.md), [numbers](dt_number.md), [time](dt_time.md), [picture](dt_picture.md)|`$x2*=5 //$x2:=$x2*5`|
+|Addition|Text += Text|Text|`$t+=" World"  //$t:=$t+" World"`|
+||Number += Number |Number|`$n+=5 //$n:=$n+5`|
+||Date += Number |Date|`$d+=5 //$d:=$d+5`|
+||Time += Time |Time|`$t1+=$t2 //$t1:=$t1+$t2`|
+||Time += Number |Number |`$t1+=5 //$t1:=$t1+5`|
+||Picture += Picture|Picture|`$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`|
+||Picture += Number|Picture|`$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels)`|
+|Subtraction|Number -= Number |Number|`$n-=5 //$n:=$n-5`|
+||Date -= Number |Date|`$d-=5 //$d:=$d-5`|
+||Time -= Time |Time|`$t1-=$t2 //$t1:=$t1-$t2`|
+||Time -= Number |Number |`$t1-=5 //$t1:=$t1-5`|
+|Division|Number /= Number |Number|`$n/=5 //$n:=$n/5`|
+||Time /= Time |Time|`$t1/=$t2 //$t1:=$t1/$t2`|
+||Time /= Number |Number |`$t1/=5 //$t1:=$t1/5`|
+||Picture /= Picture|Picture|`$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`|
+||Picture /= Number|Picture|`$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`|
+|Multiplication|Text *= Text|Text|`$t*="abc"  //$t:=$t*"abc"`|
+||Number *= Number |Number|`$n*=5 //$n:=$n*5`|
+||Time *= Time |Time|`$t1*=$t2 //$t1:=$t1*$t2`|
+||Time *= Number |Number |`$t1*=5 //$t1:=$t1*5`|
+||Picture *= Number|Picture|`$p1*=5 //$p1:=$p1*5 (resize $p1 by 5)`|
 
-(\*)
-*date*: with a number<br/>
-*time*: with a number or a time<br/>
-*picture*: with a picture (except multiplication) or a number, not in an object property or a collection element
+> Pictures in an object property or a collection element cannot be processed by compound assignment operators.
 
 The operators apply specifically on following expressions:
 
@@ -83,34 +97,34 @@ $t[[1]]+=0 //error
 #### Examples
 
 ```4d
-// Addition compound assignment operator
+// Addition
 $x:=2
-$x+=5 //$x:=$x+5
+$x+=5 //$x=7
 
 $t:="Hello" 
-$t+=" World" //$t:=$t+" World" 
+$t+=" World" //$t="Hello World" 
 
 $d:=!2000-11-10!
-$d+=10 // $d:=$d+10
+$d+=10 //$d=!2000-11-20!
 
-// Subtraction compound assignment operator
+// Subtraction
 $x1:=10
-$x1-=5 //$x1:=$x1-5
+$x1-=5 //$x1=5
 
 $d1:=!2000-11-10!
-$d1-=10 // $d1:=$d1-10
+$d1-=10 // $d1=!2000-10-31!
 
-// Division compound assignment operator
+// Division
 $x3:=10
-$x3/=2 // $x3:=$x3/2
+$x3/=2 // $x3=5
 
 
-// Multiplication compound assignment operator
+// Multiplication
 $x2:=10
-$x2*=5 // $x2:=$x2*5
+$x2*=5 // $x2=10
 
 $t2:="Hello" 
-$t2*=2 // $t2:=$t2*2
+$t2*=2 // $t2="HelloHello"
 
 ```
 
@@ -233,7 +247,7 @@ This means that `a || b && c` is evaluated as `(a || b) && c`.
 
 ## Ternary operator
 
-The ternary operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
+The ternary conditional operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
 
 It takes three operands in the following order: 
 
