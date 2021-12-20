@@ -33,7 +33,21 @@ $col:=New collection //$col is initialized with an empty collection
 > Do NOT confuse the assignment operator `:=` with the equality comparison operator `=`. A different assignment operator (and not `=`) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. Such errors are often difficult to recognize by the compiler and lead to time-consuming troubleshooting.
 
 
-### Compound assignment operators
+## Basic operators
+
+Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
+
+- [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
+- [**Date operators**](dt_date.md#date-operators)
+- [**Time operators**](dt_time.md#time-operators)
+- [**Number operators**](dt_number.md#number-operators)
+- [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
+- [**Picture operators**](dt_picture.md#picture-operators)
+- [**Pointer operators**](dt_pointer.md#pointer-operators)
+- [**String operators**](dt_string.md#string-operators)
+
+
+## Compound assignment operators
 
 4D provides **compound assignment operators** that combine assignment with another operation. One example is the addition assignment operator (`+=`):
 
@@ -64,37 +78,18 @@ The following compound assignment operators are supported:
 ||Time /= Number |Number |`$t1/=5 //$t1:=$t1/5`|
 ||Picture /= Picture|Picture|`$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`|
 ||Picture /= Number|Picture|`$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`|
-|Multiplication|Text *= Text|Text|`$t*="abc"  //$t:=$t*"abc"`|
+|Multiplication|Text *= Number |Text|`$t*="abc"  //$t:=$t*"abc"`|
 ||Number *= Number |Number|`$n*=5 //$n:=$n*5`|
 ||Time *= Time |Time|`$t1*=$t2 //$t1:=$t1*$t2`|
 ||Time *= Number |Number |`$t1*=5 //$t1:=$t1*5`|
 ||Picture *= Number|Picture|`$p1*=5 //$p1:=$p1*5 (resize $p1 by 5)`|
 
-> Pictures in an object property or a collection element cannot be processed by compound assignment operators.
-
-The operators apply specifically on following expressions:
-
-- scalar variable
-- array variable
-- parameter ($n)
-- [table]field
-- object.property
-- collection[index]
+These operators apply on any [assignable expressions](quick-tour.md#assignable-vs-non-assignable-expressions) (except pictures as object properties or collection elements).
 
 The operation "source `operator` value" is not strictly equivalent to "source := source `operator` value" because the expression designating the source (variable, field, object property, collection element) is only evaluated once. For example, in such expression as `getPointer()->+=1` the `getPointer` method is called only once.
 
-[Character indexing in text](dt_string.md#character-reference-symbols) and [byte indexing in blob](dt_blob.md#accessing-a-scalar-blobs-bytes) do not support these operators. That means that following examples will throw errors "This operation is not compatible with the two arguments":
-
-```4d
-var $b : Blob
-SET BLOB SIZE($b;1)
-$b[[0]]+=0 //error
-
-var $t : Text
-$t:="a" 
-$t[[1]]+=0 //error
-```
-
+> [Character indexing in text](dt_string.md#character-reference-symbols) and [byte indexing in blob](dt_blob.md#accessing-a-scalar-blobs-bytes) do not support these operators.
+> 
 #### Examples
 
 ```4d
@@ -129,19 +124,6 @@ $t2*=2 // $t2="HelloHello"
 
 ```
 
-
-## Basic operators
-
-Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
-
-- [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
-- [**Date operators**](dt_date.md#date-operators)
-- [**Time operators**](dt_time.md#time-operators)
-- [**Number operators**](dt_number.md#number-operators)
-- [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
-- [**Picture operators**](dt_picture.md#picture-operators)
-- [**Pointer operators**](dt_pointer.md#pointer-operators)
-- [**String operators**](dt_string.md#string-operators)
 
 
  
@@ -195,6 +177,18 @@ $tax:=$item.taxRate && ($item.price*$item.taxRate)
 ```
 
 `$tax` will be NULL if taxRate is NULL (or undefined), otherwise it will store the result of the calculation.
+
+#### Example 3
+
+Short-circuit operators are useful in tests such as:
+
+```4d
+If(($myObject#Null) && ($myObject.value>10))
+	//code
+End if
+```
+
+If $myObject is Null, the second argument is not executed, thus no error is thrown.
 
 ### Short-circuit OR operator (||)
 
@@ -305,7 +299,7 @@ The following values are **falsy**:
 * Null date !00-00-00!
 * "" - Empty strings
 * [] - Empty collections
-* {} - Empty arrays
+* {} - Empty objects
 
 All other values are considered **truthy**, including:
 
