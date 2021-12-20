@@ -3,87 +3,169 @@ id: operators
 title: Operators
 ---
 
-An operator is a symbol or several symbols that you use to check, change, or combine values. You are already familiar with many operators. For example, 1 + 2 uses the addition (or plus sign) operator to add two numbers together, and the result is 3. Comparison operators, like = or >, let you compare to values. 
+An operator is a symbol or a group of symbols that you use to check, modify, or combine values. You are already familiar with many operators. For example, `1 + 2` uses the addition (or plus sign) operator to add two numbers together, and the result is 3. Comparison operators, like = or >, let you compare two or more values. 
 
 The 4D language supports the operators you may already know from other languages like C or JavaScript.
 
  and improves several capabilities to eliminate common coding errors. The assignment operator (=) doesn’t return a value, to prevent it from being mistakenly used when the equal to operator (==) is intended. Arithmetic operators (+, -, *, /, % and so forth) detect and disallow value overflow, to avoid unexpected results when working with numbers that become larger or smaller than the allowed value range of the type that stores them. You can opt in to value overflow behavior by using Swift’s overflow operators, as described in Overflow Operators.
 
-Swift also provides range operators that aren’t found in C, such as a..<b and a...b, as a shortcut for expressing a range of values.
 
-This chapter describes the common operators in Swift. Advanced Operators covers Swift’s advanced operators, and describes how to define your own custom operators and implement the standard operators for your own custom types.
+## Terminology
 
-Terminology
-Operators are unary, binary, or ternary:
+The 4D language supports **binary** and **ternary** operators:
 
-Unary operators operate on a single target (such as -a). Unary prefix operators appear immediately before their target (such as !b), and unary postfix operators appear immediately after their target (such as c!).
-Binary operators operate on two targets (such as 2 + 3) and are infix because they appear in between their two targets.
-Ternary operators operate on three targets. Like C, Swift has only one ternary operator, the ternary conditional operator (a ? b : c).
+- binary operators operate on two targets (such as 2 + 3) and are infix because they appear in between their two targets.
+- ternary operators operate on three targets. Like C, 4D has only one ternary operator, the ternary conditional operator (`a ? b : c`).
+
 The values that operators affect are operands. In the expression 1 + 2, the + symbol is a binary operator and its two operands are the values 1 and 2.
-## Boolean functions
 
-4D provides the Boolean functions `True`, `False`, and `Not` in the dedicated **Boolean** theme. For more information, see the descriptions of these commands
 
-### Example
 
-This example sets a Boolean variable based on the value of a button. It returns True in myBoolean if the myButton button was clicked and False if the button was not clicked. When a button is clicked, the button variable is set to 1.
+## Basic operators
 
-```4d
- If(myButton=1) //If the button was clicked
-    myBoolean:=True //myBoolean is set to True
- Else //If the button was not clicked,
-    myBoolean:=False //myBoolean is set to False
- End if
-```
+### Assignment operator
 
-The previous example can be simplified into one line.
+The **assignment operator** (`a:=b`) initializes or updates the value of `a` with the value of `b`:
 
 ```4d
-myBoolean:=(myButton=1)
+$myNumber:=3 //assigns 3 to MyNumber variable  
+$myDate:=!2018/01/21! //assigns a date literal
+$myLength:=Length("Acme") //assigns the result of the command (4) to $myLength
+$col:=New collection //$col is initialized with an empty collection
 ```
 
-## Logical operators
+> Do NOT confuse the assignment operator `:=` with the equality comparison operator `=`. A different assignment operator (and not `=`) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. Such errors are often difficult to recognize by the compiler and lead to time-consuming troubleshooting.
 
-4D supports two logical operators that work on Boolean expressions: conjunction (AND) and inclusive disjunction (OR). A logical AND returns TRUE if both expressions are TRUE. A logical OR returns TRUE if at least one of the expressions is TRUE. The following table shows the logical operators:
+### Compound Assignment Operators
 
-|Operation	|Syntax	|Returns	|Expression	|Value|
-|---|---|---|---|---|
-|AND|Boolean & Boolean	|Boolean	|("A" = "A") & (15 # 3)	|True|
-||||("A" = "B") & (15 # 3)	|False|
-||||("A" = "B") & (15 = 3)	|False|
-|OR	|Boolean  &#124; Boolean	|Boolean	|("A" = "A") &#124; (15 # 3)	|True|
-||||("A" = "B") &#124;  (15 # 3)	|True|
-||||("A" = "B") &#124;  (15 = 3)	|False|
-
-The following is the truth table for the AND logical operator:
-
-|Expr1	|Expr2	|Expr1 & Expr2|  
-|---|---|---|
-|True	|True	|True|
-|True	|False	|False|
-|False	|True	|False|
-|False	|False	|False|
-
-The following is the truth table for the OR logical operator:
-
-|Expr1	|Expr2	|Expr1 &#124; Expr2|
-|---|---|---|
-|True	|True	|True|
-|True	|False	|True|
-|False	|True	|True|
-|False	|False	|False|
-
-**Tip:** If you need to calculate the exclusive disjunction between Expr1 and Expr2, evaluate:
+4D provides **compound assignment operators** that combine assignment (`:=`) with another operation. One example is the [addition assignment operator](#addition-assignment-operator) (`+=`):
 
 ```4d
- (Expr1|Expr2) & Not(Expr1 & Expr2)  
+$a:=1 // $a=1
+$a+=2 // $a=3
 ```
 
+The operators apply specifically on following expressions:
+
+- scalar variable
+- array variable
+- parameter ($n)
+- [table]field
+- object.property
+- collection[index]
+
+The operation "source `operator` value" is not strictly equivalent to "source := source `operator` value" because the expression designating the source (variable, field, object property, collection element) is only evaluated once. For example, in such expression as `getPointer()->+=1` the `getPointer` method is called only once.
+
+[Character indexing in text](dt_string.md#character-reference-symbols) and [byte indexing in blob](dt_blob.md#accessing-a-scalar-blobs-bytes) do not support these operators. That means that following examples will throw errors "This operation is not compatible with the two arguments":
+
+```4d
+var $b : Blob
+SET BLOB SIZE($b;1)
+$b[[0]]+=0 //error
+
+var $t : Text
+$t:="a" 
+$t[[1]]+=0 //error
+```
+
+#### Addition assignment operator +=
+
+The addition assignment operator (`+=`) adds the value of the right operand to a variable and assigns the result to the variable.
+
+This operator is available for the following data types:
+
+- [text](dt_string.md)
+- [numbers](dt_number.md)
+- [date](dt_date.md) (with a number)
+- [time](dt_time.md) (with a number or a time)
+- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
+
+```4d
+$x:=2
+$x+=5 //$x:=$x+5
+
+$t:="Hello" 
+$t+=" World" //$t:=$t+" World" 
+
+$d:=!2000-11-10!
+$d+=10 // $d:=$d+10
+```
+
+
+#### Subtraction assignment operator -=
+
+The subtraction assignment operator (`-=`) subtracts the value of the right operand from a variable and assigns the result to the variable.
+
+This operator is available for the following data types:
+
+- [numbers](dt_number.md)
+- [date](dt_date.md) (with a number)
+- [time](dt_time.md) (with a number or a time)
+- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
+
+```4d
+$x1:=10
+$x1-=5 //$x1:=$x1-5
+
+$d1:=!2000-11-10!
+$d1-=10 // $d1:=$d1-10
+```
+
+#### Division assignment operator /=
+
+The division assignment operator (`/=`) divides a variable by the value of the right operand and assigns the result to the variable.
+
+This operator is available for the following data types:
+
+- [numbers](dt_number.md)
+- [time](dt_time.md) (with a number or a time)
+- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
+
+```4d
+$x3:=10
+$x3/=2 // $x3:=$x3/2
+```
+
+#### Multiplication assignment operator *=
+
+The multiplication assignment operator (`*=`) multiplies a variable by the value of the right operand and assigns the result to the variable.
+
+This operator is available for the following data types:
+
+- [text](dt_string.md)
+- [numbers](dt_number.md)
+- [time](dt_time.md) (with a number or a time)
+- [picture](dt_picture.md) (with a number or a picture), not in an object property or a collection element
+
+```4d
+$x2:=10
+$x2*=5 // $x2:=$x2*5
+
+$t2:="Hello" 
+$t2*=2 // $t2:=$t2*2
+```
+
+
+## Basic operators
+
+Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described in the following sections:
+
+- [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
+- [**Date operators**](dt_date.md#date-operators)
+- [**Time operators**](dt_time.md#time-operators)
+- [**Number operators**](dt_number.md#number-operators)
+- [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
+- [**Picture operators**](dt_picture.md#picture-operators)
+- [**Pointer operators**](dt_pointer.md#pointer-operators)
+- [**String operators**](dt_string.md#string-operators)
+
+
+ 
 ## Short-circuit operators
 
 The **&&** and **||** operators are **short circuit operators**. A short circuit operator is one that doesn't necessarily evaluate all of its operands. 
 
-The difference with the single **&** and **|** operators is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as [truthy or falsy](#truthy-and-falsy), then return one of the expressions.
+The difference with the single [**&** and **|** boolean operators](dt_boolean.md#logical-operators) is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as [truthy or falsy](#truthy-and-falsy), then return one of the expressions.
 
 ### Short-circuit AND operator (&&)
 
