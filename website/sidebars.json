@@ -230,6 +230,7 @@
 					"REST/expand",
 					"REST/filter",
 					"REST/imageformat",
+					"REST/lock",
 					"REST/method",
 					"REST/orderby",
 					"REST/querypath",
