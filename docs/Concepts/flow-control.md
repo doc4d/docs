@@ -44,18 +44,9 @@ While (True) //infinite loop
 	End if 
 	$message+=String($i)+"B\r"  // until 4
 	logConsole($message)
-	
 End while 
 $message+=String($i)+"C\r"  //never executed 
 logConsole($message)
-
-
-// logConsole method
-// logConsole(message)
-
-#DECLARE($message : Text)
-MESSAGE($message)
-DELAY PROCESS(Current process; 20)
 
 // 1A
 // 1B

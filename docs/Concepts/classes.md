@@ -57,6 +57,7 @@ For example, if you want to define a class named "Polygon", you need to create t
 	+ Project
 
 
+
 		* Sources
 			- Classes
 				+ Polygon.4dm
@@ -250,34 +251,23 @@ Function add($x; $y : Variant; $z : Integer; $xy : Object)
 
 #### Return value 
 
-You declare the return parameter (optional) by adding an arrow (->) and the return parameter definition after the input parameter(s) list. For example:
+You declare the return parameter (optional) by adding an arrow (`->`) and the return parameter definition after the input parameter(s) list, or a colon (`:`) and the return parameter type only. For example:
 
 ```4d
 Function add($x : Variant; $y : Integer)->$result : Integer
+	$result:=$x+$y
 ```
  
-You can also declare the return parameter only by adding `: type`, in which case it will automatically be available through $0. For example: 
+You can also declare the return parameter by adding only `: type` and use the [`return expression`](parameters.md#return-expression) (it will also end the function execution). For example: 
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
-	$0:=$x+$y
-```
-
-Or, you can use the [`return expression`](parameters.md#return-expression) statement to end the function execution and return the value. For example:
-
-```4d
-Function getRectArea($width : Integer; $height : Integer) : Integer
-	If ($width > 0 && $height > 0)
-		return $width * $height
-	Else
-		return 0
-	End if
+	// some code
+	return $x+$y
 ```
 
 
-
-
-#### Example
+#### Example 1
 
 ```4d
 // Class: Rectangle
@@ -300,6 +290,20 @@ var $area : Real
 $rect:=cs.Rectangle.new(50;100)  
 $area:=$rect.getArea() //5000
 ```
+
+#### Example 1
+
+This example uses the [`return expression`](parameters.md#return-expression):
+
+```4d
+Function getRectArea($width : Integer; $height : Integer) : Integer
+	If ($width > 0 && $height > 0)
+		return $width * $height
+	Else
+		return 0
+	End if
+```
+
 
 
 

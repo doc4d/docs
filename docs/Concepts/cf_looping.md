@@ -480,7 +480,7 @@ You can pass either keyword depending on your needs:
 
 ## `break` and `continue`
 
-Every looping structure above supports both `break` and `continue` statements. These statements give you more control over the loops by allowing to exit the loop and to bypass the current iteration at any moment.  
+All looping structures above support both `break` and `continue` statements. These statements give you more control over the loops by allowing to exit the loop and to bypass the current iteration at any moment.  
 
 ### break
 
@@ -488,7 +488,6 @@ The `break` statement terminates the loop containing it. Control of the program 
 
 If the `break` statement is inside a [nested loop](#nested-forend-for-looping-structures) (loop inside another loop), the `break` statement will terminate the innermost loop.
 
-> `break` is supported in [Use...End use](shared.md#useend-use) statements.
 
 #### Example
 
@@ -508,9 +507,9 @@ The `continue` statement terminates execution of the statements in the current i
 var $text : Text
 For ($i; 0; 9)
 	If ($i=3)
-        continue //go directly to the next iteration
-    End if
-    $text:=$text+String($i)
+		continue //go directly to the next iteration
+	End if
+	$text:=$text+String($i)
 End for
 // $text="012456789" 
 

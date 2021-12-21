@@ -124,7 +124,7 @@ You declare the return parameter of a function by adding an arrow (->) and the p
 Function add($x : Variant; $y : Integer) -> $result : Integer
 ```
  
-You can also declare the return parameter only by adding `: type`, in which case it will automatically be available through `$0` ([see sequential syntax below](#returned-value-1)). For example: 
+You can also declare the return parameter only by adding `: type`, in which case it can be handled by a [return statement](#return-expression) or through `$0`in the [sequential syntax](#returned-value-1)). For example: 
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
@@ -228,7 +228,11 @@ Function square($x : Integer)
    return $x * $x
 ```
 
+> Internally, `return x` executes `$0:=x` or, if declared, `myReturnValue:=x`, and returns to the caller.
+
+
 The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). However, note that it ends immediately the code execution. For example:
+
 
 ```4d
 Function getValue
@@ -238,11 +242,10 @@ Function getValue
 
 Function getValue -> $v : Integer
 	return 10
-	$v:=20
+	$v:=20 // never executed
 	// returns 10
 ```
 
-> If `return` is executed without an expression to return, `Undefined` is returned.  
 
 
 ## Parameter indirection (${N})
