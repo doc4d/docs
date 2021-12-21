@@ -937,15 +937,21 @@ The object returned by `.lock( )` contains the following properties:
 |status(\*)| 	|number|	Error code, see below|
 |statusText(\*)||	text|	Description of the error, see below|
 ||||***Available only in case of pessimistic lock error:***|
-|lockKindText|	|	text|	"Locked by record" or (if locked by REST) "Locked by session"|
-|lockInfo|	|	object|	Information about the lock origin|
+|lockKindText|	|	text|"Locked by record" if locked by a 4D process, "Locked by session" if locked by a REST session|
+|lockInfo|	|	object|	Information about the lock origin. Returned properties depend on the lock origin (4D process or REST session).|
+|||	|***Available only for a 4D process lock:***|
 ||task_id|	number|	Process ID|
 ||user_name	|text|	Session user name on the machine|
 ||user4d_alias|	text|	Name or alias of the 4D user|
 ||user4d_id	|number	|User id in the 4D database directory|
 ||host_name|	text|	Machine name
 ||task_name	|text	|Process name|
-||client_version|	text	||
+||client_version|	text	|Version of the client|
+||||***Available only for a REST session lock:***|
+||host|text|URL that locked the entity (e.g. "127.0.0.1:8043")|
+||IPAddr |text|IP address of the locker (e.g. "127.0.0.1")|
+||recordNumber |number|Record number of the locked record|
+||userAgent |text|userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36")|
 ||||***Available only in case of serious error*** (primary key already exists, disk full...):|
 |errors	||	collection of objects	||
 ||message	|text	|Error message|
