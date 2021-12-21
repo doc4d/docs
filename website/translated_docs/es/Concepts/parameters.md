@@ -126,12 +126,15 @@ El parámetro de retorno de una función se declara añadiendo una flecha (->) y
 Function add($x : Variant; $y : Integer) -> $result : Integer
 ```
 
-También puedes declarar el parámetro de retorno sólo añadiendo `: type`, en cuyo caso estará disponible automáticamente a través de `$0` ([ver sintaxis secuencial más abajo](#returned-value-1)). Por ejemplo:
+You can also declare the return parameter only by adding `: type`, in which case it can be handled by a [return statement](#return-expression) or through `$0`in the [sequential syntax](#returned-value-1)). Por ejemplo:
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
     $0:=$x+$y
 ```
+
+
+
 
 
 ### Tipos de datos soportados
@@ -210,6 +213,43 @@ Puede utilizar toda [expresión](quick-tour.md#expression-types) como parámetro
 
 Las expresiones de tablas o arrays sólo pueden pasarse [como referencia utilizando un puntero](dt_pointer.md#pointers-as-parameters-to-methods).
 
+## `return {expression}`
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R4  | Añadidos       |
+</details>
+
+The `return` statement ends function or method execution and can be used to return an expression to the caller.
+
+For example, the following function returns the square of its argument, $x, where $x is a number.
+
+```4d
+Function square($x : Integer) 
+   return $x * $x
+```
+
+> Internally, `return x` executes `$0:=x` or (if declared) `myReturnValue:=x`, and returns to the caller. If `return` is used without an expression, the function or method returns a null value of the declared return type (if any), otherwise *undefined*.
+
+
+The `return` statement can be used along with the standard syntax for [returned values](#returned-value) (the returned value must be of the declared type). However, note that it ends immediately the code execution. Por ejemplo:
+
+
+```4d
+Function getValue
+    $0:=10
+    return 20
+    // returns 20
+
+Function getValue -> $v : Integer
+    return 10
+    $v:=20 // never executed
+    // returns 10
+```
+
+
+
 ## Indirección de parámetros (${N})
 
 4D project methods accept a variable number of parameters. You can address those parameters with a `For...End for` loop, the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command and the **parameter indirection syntax**. Within the method, an indirection address is formatted `${N}`, where `N` is a numeric expression. `${N}` is called a **generic parameter**.
@@ -220,7 +260,7 @@ Las expresiones de tablas o arrays sólo pueden pasarse [como referencia utiliza
 
 For example, consider a method that adds values and returns the sum formatted according to a format that is passed as a parameter. Cada vez que se llama a este método, el número de valores a sumar puede variar. Debemos pasar los valores como parámetros al método y el formato en forma de cadena de caracteres. El número de valores puede variar de una llamada a otra.
 
-Aquí está el método, llamado `MySum`:
+Here is the method, named `MySum`:
 
 ```4d
  #DECLARE($format : Text) -> $result : Text
@@ -241,14 +281,14 @@ The method's parameters must be passed in the correct order, first the format an
 Note that even if you declared 0, 1, or more parameters in the method, you can always pass the number of parameters that you want. Parameters are all available within the called method through the `${N}` syntax and extra parameters type is [Variant](dt_variant.md) by default (you can declare them using a [compiler directive](#declaring-generic-parameters)). You just need to make sure parameters exist, thanks to the [`Count parameters`](https://doc.4d.com/4dv19/help/command/en/page259.html) command. Por ejemplo:
 
 ```4d
-//método foo
+//foo method
 #DECLARE($p1: Text;$p2 : Text; $p3 : Date) 
 For($i;1;Count parameters)
     ALERT("param "+String($i)+" = "+String(${$i}))
 End for
 ```
 
-Este método se puede llamar:
+This method can be called:
 
 ```4d
 foo("hello";"world";!01/01/2021!;42;?12:00:00?) //extra parameters are passed
