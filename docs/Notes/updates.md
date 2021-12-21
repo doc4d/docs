@@ -13,7 +13,7 @@ The list of main updates in this documentation. For general information about ne
 - [Compound assignment operators](Concepts/operators.md#compound-assignment-operators)
 - [Short-circuit operators](Concepts/operators.md#short-circuit-operators)
 - [Ternary operator](Concepts/operators.md#ternary-operator)
-- The [Code Editor](code-editor/dropdown.md) now includes an dropdown tool and supports markers for better code navigation.
+- The [Code Editor](code-editor/navigation.md) now includes an dropdown tool and supports markers for better code navigation.
 - New Preferences: [**Include tokens in project source files**](Preferences/general.md#include-tokens-in-project-source-files) and [**Show clipboards**](Preferences/methods.md#show-clipboards) option on the Methods page.
 
 ## 4D v19 R3
