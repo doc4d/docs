@@ -14,7 +14,7 @@ title: ドキュメンテーション更新情報
 - [Short-circuit operators](Concepts/dt_boolean.md#short-circuit-operators)
 - [Ternary operator](Concepts/dt_boolean.md#ternary-operator)
 - The [Code Editor](code-editor/dropdown.md) now includes an dropdown tool and supports markers for better code navigation.
-- The [Preferences](Preferences/methods.md) now include the **Show clipboards** option on the Methods page.
+- New Preferences: [**Include tokens in project source files**](Preferences/general.md#include-tokens-in-project-source-files) and [**Show clipboards**](Preferences/methods.md#show-clipboards) option on the Methods page.
 
 ## 4D v19 R3
 
@@ -49,6 +49,7 @@ title: ドキュメンテーション更新情報
 - Apple Silicon プロセッサー用の [ネイティブコンパイル](Project/compiler.md#コンパイラーメソッド)
 - エンティティセレクション型リストボックスの列で、[変数の計算](FormObjects/properties_Object.md#変数の計算) プロパティがサポートされるようになりました。
 - 新しい包括的な [CLI](Admin/cli.md) (コマンドラインインターフェース) ページ
+
 
 
 ## 4D v18 R6
