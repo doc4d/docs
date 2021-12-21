@@ -14,7 +14,7 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 - [Short-circuit operators](Concepts/dt_boolean.md#short-circuit-operators)
 - [Ternary operator](Concepts/dt_boolean.md#ternary-operator)
 - The [Code Editor](code-editor/dropdown.md) now includes an dropdown tool and supports markers for better code navigation.
-- The [Preferences](Preferences/methods.md) now include the **Show clipboards** option on the Methods page.
+- New Preferences: [**Include tokens in project source files**](Preferences/general.md#include-tokens-in-project-source-files) and [**Show clipboards**](Preferences/methods.md#show-clipboards) option on the Methods page.
 
 ## 4D v19 R3
 
@@ -49,6 +49,7 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 - [Native compilation](Project/compiler.md#compiler-methods-for) for Silicon processors.
 - [Variable calculation](FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
 - New, comprehensive [CLI](Admin/cli.md) page.
+
 
 
 ## 4D v18 R6
