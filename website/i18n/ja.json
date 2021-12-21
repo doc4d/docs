@@ -116,7 +116,7 @@
       "Backup/settings": {
         "title": "バックアップ設定"
       },
-      "code-editor/dropdown": {
+      "code-editor/navigation": {
         "title": "Navigation dropdown"
       },
       "Concepts/about": {
@@ -190,6 +190,9 @@
       },
       "Concepts/methods": {
         "title": "メソッド"
+      },
+      "Concepts/operators": {
+        "title": "演算子"
       },
       "Concepts/parameters": {
         "title": "引数"

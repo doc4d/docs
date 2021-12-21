@@ -116,7 +116,7 @@
       "Backup/settings": {
         "title": "Parámetros de la copia de seguridad"
       },
-      "code-editor/dropdown": {
+      "code-editor/navigation": {
         "title": "Navigation dropdown"
       },
       "Concepts/about": {
@@ -190,6 +190,9 @@
       },
       "Concepts/methods": {
         "title": "Métodos"
+      },
+      "Concepts/operators": {
+        "title": "Operadores"
       },
       "Concepts/parameters": {
         "title": "Parámetros"
