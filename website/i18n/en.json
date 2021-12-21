@@ -116,7 +116,7 @@
       "Backup/settings": {
         "title": "Backup Settings"
       },
-      "code-editor/dropdown": {
+      "code-editor/navigation": {
         "title": "Navigation dropdown"
       },
       "Concepts/about": {
@@ -190,6 +190,9 @@
       },
       "Concepts/methods": {
         "title": "Methods"
+      },
+      "Concepts/operators": {
+        "title": "Operators"
       },
       "Concepts/parameters": {
         "title": "Parameters"
