@@ -119,6 +119,9 @@
       "Backup/settings": {
         "title": "Backup Settings"
       },
+      "code-editor/navigation": {
+        "title": "Navigation dropdown"
+      },
       "Concepts/about": {
         "title": "About the 4D Language"
       },
@@ -191,6 +194,9 @@
       "Concepts/methods": {
         "title": "Methods"
       },
+      "Concepts/operators": {
+        "title": "Operators"
+      },
       "Concepts/parameters": {
         "title": "Parameters"
       },
@@ -227,6 +233,9 @@
       },
       "Desktop/clientServer": {
         "title": "Client/Server Management"
+      },
+      "Desktop/user-settings": {
+        "title": "User Settings"
       },
       "Events/onActivate": {
         "title": "On Activate"
@@ -781,6 +790,9 @@
       "REST/info": {
         "title": "$info"
       },
+      "REST/lock": {
+        "title": "$lock"
+      },
       "REST/method": {
         "title": "$method"
       },
@@ -862,6 +874,42 @@
       "ServerWindow/users": {
         "title": "Users Page"
       },
+      "settings/backup": {
+        "title": "Backup page"
+      },
+      "settings/client-server": {
+        "title": "Client-server page"
+      },
+      "settings/compatibility": {
+        "title": "Compatibility page"
+      },
+      "settings/compiler": {
+        "title": "Compiler page"
+      },
+      "settings/database": {
+        "title": "Database page"
+      },
+      "settings/general": {
+        "title": "General page"
+      },
+      "settings/interface": {
+        "title": "Interface page"
+      },
+      "settings/overview": {
+        "title": "Overview"
+      },
+      "settings/php": {
+        "title": "PHP page"
+      },
+      "settings/security": {
+        "title": "Security page"
+      },
+      "settings/sql": {
+        "title": "SQL page"
+      },
+      "settings/web": {
+        "title": "Web page"
+      },
       "Tags/tags": {
         "title": "Transformation tags"
       },
@@ -932,7 +980,9 @@
       "4D Language Concepts": "4D Language Concepts",
       "ORDA": "ORDA",
       "Class API Reference": "Class API Reference",
+      "Code Editor": "Code Editor",
       "Debugging": "Debugging",
+      "Settings": "Settings",
       "Preferences": "Preferences",
       "4D Server Administration Window": "4D Server Administration Window",
       "Web Administration": "Web Administration",
@@ -952,6 +1002,7 @@
       "Form Object Properties": "Form Object Properties",
       "Form Events": "Form Events",
       "Menus": "Menus",
+      "User Settings": "User Settings",
       "Build application": "Build application",
       "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
@@ -983,6 +1034,7 @@
     "Client/Server|no description given": "Client/Server",
     "TLS Protocol|no description given": "TLS Protocol",
     "Debugging|no description given": "Debugging",
+    "Code Editor|no description given": "Code Editor",
     "Web Data Explorer|no description given": "Web Data Explorer",
     "Language Reference (4D Doc Center)|no description given": "Language Reference (4D Doc Center)",
     "Access Rights|no description given": "Access Rights",
@@ -994,6 +1046,8 @@
     "Developing Components|no description given": "Developing Components",
     "Developing Plugins|no description given": "Developing Plugins",
     "Working with a project|no description given": "Working with a project",
+    "Settings|no description given": "Settings",
+    "User Settings|no description given": "User Settings",
     "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html|no description given": "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html",
     "Getting started|no description given": "Getting started",
     "Core Development|no description given": "Core Development",

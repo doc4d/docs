@@ -760,7 +760,7 @@ Ver la descripción de [Session Cookie SameSite](WebServer/webServerConfig.md#se
 
 > This property is not used in [scalable sessions mode](#scalablesession) (there is no IP address validation).
 
-La <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validación de la dirección IP para las cookies de sesión<!-- END REF -->. Por razones de seguridad, por defecto el servidor web comprueba la dirección IP de cada solicitud que contiene una cookie de sesión y la rechaza si esta dirección no coincide con la dirección IP utilizada para crear la cookie. In some specific applications, you may want to disable this validation and accept session cookies, even when their IP addresses do not match. Por ejemplo, cuando los dispositivos móviles cambian entre las redes WiFi y 3G/4G, su dirección IP cambiará. En este caso, puede permitir que los clientes puedan seguir utilizando sus sesiones web incluso cuando las direcciones IP cambien (esta configuración reduce el nivel de seguridad de su aplicación).
+La <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->validación de la dirección IP para las cookies de sesión<!-- END REF -->. Por razones de seguridad, por defecto el servidor web comprueba la dirección IP de cada solicitud que contiene una cookie de sesión y la rechaza si esta dirección no coincide con la dirección IP utilizada para crear la cookie. En algunas aplicaciones específicas, es posible que desee desactivar esta validación y aceptar las cookies de sesión, incluso cuando sus direcciones IP no coinciden. Por ejemplo, cuando los dispositivos móviles cambian entre las redes WiFi y 3G/4G, su dirección IP cambiará. En este caso, puede permitir que los clientes puedan seguir utilizando sus sesiones web incluso cuando las direcciones IP cambien (esta configuración reduce el nivel de seguridad de su aplicación).
 
 <!-- END REF -->
 
@@ -807,9 +807,9 @@ La función devuelve un objeto que describe el estado de lanzamiento del servido
 | --------- | ----------------------- | ---------- | -------------------------------------------------------------------- |
 | success   |                         | Booleano   | True if the web server was correctly started, False otherwise        |
 | errors    |                         | Collection | 4D error stack (not returned if the web server started successfully) |
-|           | \[].errCode            | Número     | 4D error code                                                        |
+|           | \[].errCode            | Número     | Código de error 4D                                                   |
 |           | \[].message            | Texto      | Description of the 4D error                                          |
-|           | \[].componentSignature | Texto      | Signature of the internal component which returned the error         |
+|           | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                |
 > If the Web server was already launched, an error is returned.
 
 #### Ejemplo

@@ -36,7 +36,7 @@ Vous devez impérativement distinguer l'opérateur d'affectation := des autres o
 
 ## Variables
 
-Le langage 4D est fortement typé, bien qu'une certaine flexibilité soit autorisée dans de nombreux cas. You create a typed variable using the `var` keyword. Par exemple, pour créer une variable du type date, vous pouvez écrire :
+Le langage 4D est fortement typé, bien qu'une certaine flexibilité soit autorisée dans de nombreux cas. Par exemple, pour créer une variable du type date, vous pouvez écrire : Par exemple, pour créer une variable du type date, vous pouvez écrire :
 
 ```4d
 var MyDate : Date 
@@ -309,7 +309,7 @@ Vous vous référez à une expression via le type de données qu’elle retourne
 | MonImage + 50           | Image                 | Cette expression considère l'image placée dans MonImage, la déplace de 50 pixels vers la droite, et retourne l'image résultante.                                                     |
 | ->[Personnes]Nom        | Pointeur              | Cette expression retourne un pointeur vers le champ [Amis]Nom.                                                                                                                       |
 | Table(1)                | Pointeur              | C'est une commande qui retourne un pointeur vers la première table.                                                                                                                  |
-| JSON Parse (MaChaine)   | Objet                 | C'est une commande qui retourne MaChaine sous forme d'objet (si format adéquat)                                                                                                      |
+| JSON Parse (MaChaine)   | Object                | C'est une commande qui retourne MaChaine sous forme d'objet (si format adéquat)                                                                                                      |
 | JSON Parse (MonTabJSON) | Collection            | C'est une commande qui retourne MonTabJSON sous forme de collection (si format adéquat)                                                                                              |
 | Form.pageNumber         | Propriété objet       | Une propriété objet est une expression qui peut être de tout type                                                                                                                    |
 | Col[5]                  | Élément de collection | Un élément de collection est une expression qui peut être de tout type                                                                                                               |

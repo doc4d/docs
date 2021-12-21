@@ -344,7 +344,7 @@ vCompareResult3 (seules les différences sur les attributs touchés de $e1 sont 
 | Paramètres | Type        |    | Description                                                                                  |
 | ---------- | ----------- |:--:| -------------------------------------------------------------------------------------------- |
 | mode       | Entier long | -> | `dk force drop if stamp changed` : Force la suppression même si le marqueur interne a changé |
-| Résultat   | Objet       | <- | Résultat de l'opération de suppression                                                       |
+| Résultat   | Object      | <- | Résultat de l'opération de suppression                                                       |
 <!-- END REF -->
 
 #### Description
@@ -488,9 +488,9 @@ Si l'entité n'appartient à aucune entity selection (i.e. [.getSelection( )](#g
 **.fromObject**( *filler* : Object )<!-- END REF -->
 
 <!-- REF #EntityClass.fromObject().Params -->
-| Paramètres | Type  |    | Description                        |
-| ---------- | ----- |:--:| ---------------------------------- |
-| filler     | Objet | -> | Objet avec lequel remplir l'entité |
+| Paramètres | Type   |    | Description                        |
+| ---------- | ------ |:--:| ---------------------------------- |
+| filler     | Object | -> | Objet avec lequel remplir l'entité |
 <!-- END REF -->
 
 #### Description
@@ -896,7 +896,7 @@ Si l'entité n'appartient à aucune entity selection (i.e. [.getSelection( )](#g
 | Paramètres | Type        |    | Description                                                                                   |
 | ---------- | ----------- |:--:| --------------------------------------------------------------------------------------------- |
 | mode       | Entier long | -> | `dk reload if stamp changed` : Recharger avant de verrouiller si le marqueur interne a changé |
-| Résultat   | Objet       | <- | Résultat de l'opération lock                                                                  |
+| Résultat   | Object      | <- | Résultat de l'opération lock                                                                  |
 <!-- END REF -->
 
 #### Description
@@ -1090,9 +1090,9 @@ S'il n'y a pas d'entité précédente valide dans l'entity selection (i.e. vous 
 **.reload()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.reload().Params -->
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- |:--:| ------------ |
-| Résultat   | Objet | <- | Objet statut |
+| Paramètres | Type   |    | Description  |
+| ---------- | ------ |:--:| ------------ |
+| Résultat   | Object | <- | Objet statut |
 <!-- END REF -->
 
 #### Description
@@ -1156,7 +1156,7 @@ L'objet retourné par `.reload( )` contient les propriétés suivantes :
 | Paramètres | Type        |    | Description                                        |
 | ---------- | ----------- |:--:| -------------------------------------------------- |
 | mode       | Entier long | -> | `dk auto merge` : Active le mode "automatic merge" |
-| Résultat   | Objet       | <- | Résultat de la sauvegarde                          |
+| Résultat   | Object      | <- | Résultat de la sauvegarde                          |
 <!-- END REF -->
 
 #### Description
@@ -1293,7 +1293,7 @@ Mise à jour d'une entité avec option `dk auto merge` :
 | filterString | Texte       | -> | Attribut(s) à extraire (chaînes séparées par des virgules)                                                       |
 | filterCol    | Collection  | -> | Collection d'attribut(s) à extraire                                                                              |
 | options      | Entier long | -> | `dk with primary key` : ajouter la propriété \_KEY ;<br>`dk with stamp` : ajouter la propriété \_STAMP |
-| Résultat     | Objet       | <- | Objet généré à partir de l'entité                                                                                |
+| Résultat     | Object      | <- | Objet généré à partir de l'entité                                                                                |
 <!-- END REF -->
 
 #### Description
@@ -1695,9 +1695,9 @@ Dans ce cas :
 **.unlock()** : Object<!-- END REF -->
 
 <!-- REF #EntityClass.unlock().Params -->
-| Paramètres | Type  |    | Description  |
-| ---------- | ----- |:--:| ------------ |
-| Résultat   | Objet | <- | Objet statut |
+| Paramètres | Type   |    | Description  |
+| ---------- | ------ |:--:| ------------ |
+| Résultat   | Object | <- | Objet statut |
 <!-- END REF -->
 
 #### Description

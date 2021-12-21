@@ -5,7 +5,7 @@ title: Composants de développement
 
 Un composant 4D est un ensemble de formulaires et de méthodes 4D représentant une ou plusieurs fonctionnalité(s) qu’il est possible [d’installer et d'utiliser dans des applications 4D](Concepts/components.md). Par exemple, vous pouvez développer un composant 4D de courrier électronique gérant tous les aspects de l’envoi, la réception et le stockage d’emails au sein des applications 4D.
 
-Vous pouvez développer des composants 4D pour vos propres besoins et les garder privés. Vous pouvez également [les partager vos composants avec la communauté 4D](https://github.com/search?q=4d-component).
+Vous pouvez développer des composants 4D pour vos propres besoins et les garder privés. You can also [share your components with the 4D community](https://github.com/topics/4d-component).
 
 
 ## Définitions
@@ -140,7 +140,7 @@ L’utilisation de pointeurs pour faire communiquer les composants et le projet 
 
 - The `Get pointer` command will not return a pointer to a variable of the host project if it is called from a component and vice versa.
 
-- The component architecture allows the coexistence, within the same interpreted project, of both interpreted and compiled components (conversely, only compiled components can be used in a compiled project). L’usage de pointeurs dans ce cas doit respecter le principe suivant : l’interpréteur peut dépointer un pointeur construit en mode compilé mais à l’inverse, en mode compilé, il n’est pas possible de dépointer un pointeur construit en mode interprété. Let’s illustrate this principle with the following example: given two components, C (compiled) and I (interpreted), installed in the same host project.
+- L’usage de pointeurs dans ce cas doit respecter le principe suivant : l’interpréteur peut dépointer un pointeur construit en mode compilé mais à l’inverse, en mode compilé, il n’est pas possible de dépointer un pointeur construit en mode interprété. L’usage de pointeurs dans ce cas doit respecter le principe suivant : l’interpréteur peut dépointer un pointeur construit en mode compilé mais à l’inverse, en mode compilé, il n’est pas possible de dépointer un pointeur construit en mode interprété. Let’s illustrate this principle with the following example: given two components, C (compiled) and I (interpreted), installed in the same host project.
  - Si le composant C définit la variable `mavarC`, le composant I peut accéder à la valeur de cette variable en utilisant le pointeur `->mavarC`.
  - Si le composant I définit la variable `mavarI`, le composant C ne peut pas accéder à cette variable en utilisant le pointeur `->mavarI`. Cette syntaxe provoque une erreur d’exécution.
 
@@ -313,4 +313,4 @@ Pour assurer la protection des méthodes projet d'un composant, [compilez et gé
 
 ## Partage des composants
 
-Nous vous encourageons à soutenir la communauté des développeurs 4D en partageant vos composants, notamment sur la [plateforme GitHub](https://github.com/search?q=4d-component).
+We encourage you to support the 4D developer community by sharing your components, preferably on the [GitHub platform](https://github.com/topics/4d-component). We recommend that you use the **`4d-component`** topic to be correctly referenced.  

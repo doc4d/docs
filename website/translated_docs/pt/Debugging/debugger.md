@@ -99,7 +99,7 @@ This action is not available in remote debugging mode (see [Debugging from Remot
 
 ## Watch Pane
 
-The **Watch pane** is displayed in the top left corner of the Debugger window, below the Execution Control Tool Bar. Here is an example:
+The **Watch pane** is displayed in the top left corner of the Debugger window, below the Execution Control Tool Bar. Aqui um exemplo simples:
 
 ![watch-pane](assets/en/Debugging/watchPane.png)
 

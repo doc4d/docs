@@ -8,8 +8,16 @@ The list of main updates in this documentation. For general information about ne
 
 ## 4D v19 R4
 
+- [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
+- Support for [break and continue](Concepts/cf_looping.md#break-and-continue) statements in loops.
+- Support for [return](Concepts/flow-control.md#return-expression) statement and [return expression](Concepts/parameters.md#return-expression) to return values.
+- Support for [compound assignment operators](Concepts/operators.md#compound-assignment-operators), [short-circuit operators](Concepts/operators.md#short-circuit-operators), and [ternary operator](Concepts/operators.md#ternary-operator)
+- The [Code Editor](code-editor/navigation.md) now includes an dropdown tool and supports markers for better code navigation.
+- New Preferences: [**Include tokens in project source files**](Preferences/general.md#include-tokens-in-project-source-files) and [**Show clipboards**](Preferences/methods.md#show-clipboards) option on the Methods page.
+- New REST request to [lock/unlock](REST/$lock.md) entities.   
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
 - New [SystemWorker class](API/SystemWorkerClass.md).
+
 
 ## 4D v19 R3
  
@@ -44,6 +52,7 @@ The list of main updates in this documentation. For general information about ne
 - [Native compilation](Project/compiler.md#compiler-methods-for) for Silicon processors.
 - [Variable calculation](FormObjects/properties_Object.md#variable-calculation) property is now supported by entity selection list box columns.
 - New, comprehensive [CLI](Admin/cli.md) page.
+
 
 
 ## 4D v18 R6

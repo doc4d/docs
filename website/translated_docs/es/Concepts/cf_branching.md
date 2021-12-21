@@ -47,6 +47,8 @@ The expression is TRUE only if both methods are TRUE. Sin embargo, incluso si _M
 
 El resultado es similar y _MethodB_ se evalúa sólo si es necesario.
 
+> **Note:** The [ternary operator](../dt_boolean.md#ternary-operator) allows writing one-line conditional expressions and can replace a full sequence of [If…Else](../cf_branching.md#ifelseend-if) statements.
+
 ### Ejemplo
 
 ```4d
@@ -56,6 +58,7 @@ El resultado es similar y _MethodB_ se evalúa sólo si es necesario.
     QUERY([People];[People]LastName=$Find)
  Else
     ALERT("No ha introducido un nombre.")
+ End if
  End if 
 ```
 
@@ -76,11 +79,11 @@ o:
  End if
 ```
 
-## Case of...Else...End case
+## Case of... Else...End case
 
-A diferencia de la estructura `If...Else...End`, la estructura `Case of...</p>
-
-<pre><code class="4d"> Case of
+A diferencia de la estructura `If...Else...End`, la estructura `Case of...
+```4d
+ Case of
     :(Boolean_Expression)
        statement(s)
     :(Boolean_Expression)
@@ -94,7 +97,7 @@ A diferencia de la estructura `If...Else...End`, la estructura `Case of...</p>
     Else
        statement(s)
  End case
-`</pre>
+```
 
 Tenga en cuenta que la parte `Else` es opcional; puede escribir:
 ```4d
@@ -137,6 +140,7 @@ Este ejemplo comprueba una variable numérica y muestra un cuadro de alerta con 
        ALERT("Three.") //Si es 3, mostrar una alerta
     Else //Si no es 1, 2 o 3, mostrar una alerta
        ALERT("It was not one, two, or three.")
+ //statement(s)
  End case
 ```
 
@@ -164,22 +168,33 @@ En consecuencia, cuando quiera implementar pruebas jerárquicas, debe asegurarse
 
 ```4d
  Case of
-    :(vResult=1)
-       ... //statement(s)
-    :((vResult=1) & (vCondition#2)) //este caso nunca será detectado
-       ... //statement(s)
+    :(vResult=1) //Probar si el número es 1
+       ALERT("One.") //Si es 1, mostrar una alerta
+    :(vResult=2) //Probar si el número es 2
+       ALERT("Two.") //Si es 2, mostrar una alerta
+    :(vResult=3) //Probar si el número es 3
+       ALERT("Three.") //Si es 3, mostrar una alerta
+    Else //Si no es 1, 2 o 3, mostrar una alerta
+       ALERT("It was not one, two, or three.")
  End case
 ```
 
 En el código anterior, la presencia de la segunda condición no se detecta, ya que la prueba "vResult=1" ramifica el código antes de cualquier otra prueba. Para que el código funcione correctamente, puedes escribirlo así:
 
 ```4d
- Case of
-    :((vResult=1) & (vCondition#2)) //este caso será detectado primero
-       ... //statement(s)
-    :(vResult=1)
-       ... //statement(s)
- End case
+ If(vResult=1) //Probar si el número es 1
+    ALERT("One.") //Si es 1, mostrar una alerta
+ Else
+    If(vResult=2) //Probar si el número es 2
+       ALERT("Two.") //Si es 2, mostrar una alerta
+    Else
+       If(vResult=3) //Probar si el número es 3
+          ALERT("Three.") //Si es 3, mostrar una alerta
+    Else //Si no es 1, 2 o 3, mostrar una alerta
+       ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if
 ```
 
 Además, si quiere implementar pruebas jerárquicas, puede considerar el uso de código jerárquico.

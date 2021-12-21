@@ -55,7 +55,7 @@ This feature is only supported for objects that contribute to the overall geomet
 
 Here is the list of objects whose value can be saved:
 
-| Objet                                        | Saved value                                                                            |
+| Object                                       | Saved value                                                                            |
 | -------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Case à cocher](checkbox_overview.md)        | Value of associated variable (0, 1, 2)                                                 |
 | [Liste déroulante](dropdownList_Overview.md) | Number of selected row                                                                 |
@@ -213,7 +213,7 @@ The collection or the entity selection must be available to the form when it is 
 
 *   if you used a collection of objects, you can call **This** in the datasource expression to access each property value, for example **This.\<propertyPath>**.
 *   if you used an entity selection, you can call **This** in the datasource expression to access each attribute value, for example  **This.\<attributePath>**.
-> If you used a collection of scalar values (and not objects), 4D allows you to display each value by calling **This.value** in the datasource expression. However in this case you will not be able to modify values or to access the current ite object (see below) Note: For information about entity selections, please refer to the [ORDA](https://doc.4d.com/4Dv17R6/4D/17-R6/ORDA.200-4354624.en.html) chapter.
+> > If you used a collection of scalar values (and not objects), 4D allows you to display each value by calling **This.value** in the datasource expression. However in this case you will not be able to modify values or to access the current ite object (see below) Note: For information about entity selections, please refer to the [ORDA](https://doc.4d.com/4Dv17R6/4D/17-R6/ORDA.200-4354624.en.html) chapter.
 
 #### Grammaire JSON
 

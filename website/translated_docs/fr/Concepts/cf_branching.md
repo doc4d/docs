@@ -47,6 +47,8 @@ L'expression n'est TRUE que si les deux méthodes sont mises à TRUE. Or, même 
 
 Le résultat est équivalent et _MethodB_ n'est évaluée que si nécessaire.
 
+> **Note:** The [ternary operator](../dt_boolean.md#ternary-operator) allows writing one-line conditional expressions and can replace a full sequence of [If…Else](../cf_branching.md#ifelseend-if) statements.
+
 ### Exemple
 
 ```4d
@@ -56,6 +58,7 @@ Le résultat est équivalent et _MethodB_ n'est évaluée que si nécessaire.
     QUERY([People];[People]LastName=$Find)
  Else
     ALERT("You did not enter a name.")
+ End if
  End if
  End if 
 ```
@@ -146,10 +149,19 @@ A titre de comparaison, voici la version avec `If...Else...End if` de la même m
 
 ```4d
  If(vResult=1) //Tester si le chiffre est 1
+    ALERT("One.") If(vResult=1) //Tester si le chiffre est 1
     ALERT("One.") //Si le chiffre est 1, afficher une alerte
  Else
     If(vResult=2) //Tester si le chiffre est 2
        ALERT("Two.") //Si le chiffre est 2, afficher une alerte
+    Else
+    If(vResult=3) //Tester si le chiffre est 3
+       ALERT("Three.") //Si le chiffre est 3, afficher une alerte
+    Else //Si le chiffre n'est pas 1, 2 ou 3, afficher une alerte
+       ALERT("It was not one, two, or three.")
+       End if
+    End if
+ End if //Si le chiffre est 2, afficher une alerte
     Else
     If(vResult=3) //Tester si le chiffre est 3
        ALERT("Three.") //Si le chiffre est 3, afficher une alerte

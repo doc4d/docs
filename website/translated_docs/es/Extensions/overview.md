@@ -29,13 +29,13 @@ You can develop and install your own 4D components. See [this page](develop-comp
 
 Many developers from the 4D community have shared 4D components that you can install and use in you projects.
 
-Browse Github to have the [**list of public 4D components**](https://github.com/search?q=4d-component&type=Repositories).
+Browse Github to have a list of public 4D components gathered with the [`4d-component`](https://github.com/topics/4d-component) topic.
 
 
 ## Plugins
 
 Plugins do things that 4D does not natively (e.g., specific platform technology), or would be very hard to write just using 4D. As described in [this page](develop-plug-ins.md), you can develop your own plug-ins.
 
-A lot of functionnalities are covered by the existing 4D plug-ins. Browse Github to have the [**list of public 4D plugins**](https://github.com/search?q=4d-plugin&type=Repositories).
+A lot of functionnalities are covered by the existing 4D plug-ins. Browse Github to have a list of public 4D plugins gathered with the [`4d-plugin`](https://github.com/topics/4d-plugin) topic.
 
 

@@ -7,7 +7,8 @@
     "syntaxViewPro": "doc_preprocess --path ../docs/ViewPro/ --syntax='./syntax/ViewPro/' && doc_preprocess --path 'translated_docs/*/ViewPro/' --syntax='./syntax/ViewPro/'",
     "syntax": "doc_preprocess --path ../docs/API/ --syntax='./syntax/4D/' --config='../docs/preprocessing.conf' && doc_preprocess --path 'translated_docs/*/API/' --syntax='./syntax/4D/' --config='../docs/preprocessing.conf'",
     "build": "doc_preprocess --path ../docs/ --config='../docs/preprocessing.conf' --output ../docs/ && doc_preprocess --path 'translated_docs/*' --config='../docs/preprocessing.conf' --output translated_docs/ && docusaurus-build",
-    "start": "doc_preprocess --path ../docs/ --output ../docsPostProcessed/ && docusaurus-start",
+    "start": "docusaurus-start",
+    "startwatch": "doc_preprocess --path ../docs/ --output ../docsPostProcessed/ --watch=true",
     "doc": "doc_preprocess --path ../docs/ --output ../docsPostProcessed/ --config='../docs/preprocessing.conf' --syntax='./syntax/'",
     "publish-gh-pages": "docusaurus-publish",
     "write-translations": "docusaurus-write-translations",
@@ -15,7 +16,7 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "@4dsas/doc_preprocessing": "1.0.13",
+    "@4dsas/doc_preprocessing": "1.0.14",
     "docusaurus": "^1.14.6",
     "highlightjs-4d": "^1.0.6"
   }
