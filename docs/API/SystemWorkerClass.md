@@ -232,32 +232,28 @@ $systemworker:=4D.SystemWorker.new("/bin/ls -l /Users ";cs.Params.new())
 
 Class constructor
 	This.dataType:="text"
-	This.encoding:="ASCII"
+    This.data:=""
+    This.dataError:=""
 
-Function onResponse($sw : Object; $data : Object)
-     This._createFile("onResponse"; $sw; $data)
-     Use (PictureInfo) //using a shared object is necessary  
-         PictureInfo.Identify:=$systemworker.response
-     End use 
+Function onResponse($systemWorker : Object)
+     This._createFile("onResponse"; $systemWorker.response)
 
-Function onData($sw : Object; $data : Object)
-     This._createFile("onData";$sw;$data)
+Function onData($systemWorker : Object; $info : Object)
+     This.data+=$info.data
+     This._createFile("onData";this.data)
 
-Function onError($sw : Object; $data : Object)
-     This._createFile("onError";$sw;$data)
+Function onDataError($systemWorker : Object; $info : Object)
+     This.dataError+=$info.data
+     This._createFile("onDataError";this.dataError)
 
-Function onDataError($sw : Object; $data : Object)
-     This._createFile("onDataError";$sw;$data)
-
-Function onTerminate($sw : Object; $data : Object)
-     This._createFile("onTerminate";$sw;$data)
-
-
-Function _createFile($title : Text; $systemWorker : Object; $data : Object)
+Function onTerminate($systemWorker : Object)
      var $textBody : Text
-     $textBody:="systemWorker : "+JSON Stringify($systemWorker; *)+"Data : "+JSON Stringify($data; *)
-     TEXT TO DOCUMENT(Get 4D folder(Current resources folder)+$title+".txt"; $textBody)
+     $textBody:="Response: "+$systemWorker.response
+     $textBody+="ResponseError: "+$systemWorker.responseError
+     This._createFile("onTerminate"; $textBody)
 
+Function _createFile($title : Text; $textBody : Text)
+     TEXT TO DOCUMENT(Get 4D folder(Current resources folder)+$title+".txt"; $textBody)
 
 ```
 
