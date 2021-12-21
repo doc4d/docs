@@ -86,6 +86,9 @@
       "API/SMTPTransporterClass": {
         "title": "SMTPTransporter"
       },
+      "API/SystemWorkerClass": {
+        "title": "SystemWorker"
+      },
       "API/Transporter": {
         "title": "Transporter Class"
       },

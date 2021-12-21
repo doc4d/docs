@@ -16,6 +16,7 @@ The list of main updates in this documentation. For general information about ne
 - New Preferences: [**Include tokens in project source files**](Preferences/general.md#include-tokens-in-project-source-files) and [**Show clipboards**](Preferences/methods.md#show-clipboards) option on the Methods page.
 - New REST request to [lock/unlock](REST/$lock.md) entities.   
 - [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
+- New [SystemWorker class](API/SystemWorkerClass.md).
 
 
 ## 4D v19 R3

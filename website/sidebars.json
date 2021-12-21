@@ -86,7 +86,8 @@
 			"API/SessionClass",
 			"API/SignalClass",
 			"API/SMTPTransporterClass",
-			"API/WebServerClass",
+			"API/SystemWorkerClass",
+      "API/WebServerClass",
 			"API/ZipArchiveClass",
 			"API/ZipFileClass",
 			"API/ZipFolderClass"
