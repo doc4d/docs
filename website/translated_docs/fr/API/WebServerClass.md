@@ -74,7 +74,7 @@ Leurs propriétés et fonctions sont les suivantes :
 
 | Paramètres | Type         |    | Description                                                    |
 | ---------- | ------------ | -- | -------------------------------------------------------------- |
-| option     | Entier long  | -> | Web server to get (default if omitted = `Web server database`) |
+| option     | Integer      | -> | Web server to get (default if omitted = `Web server database`) |
 | Résultat   | 4D.WebServer | <- | Objet Serveur Web                                              |
 
 <!-- END REF -->
