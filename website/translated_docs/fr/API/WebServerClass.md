@@ -74,7 +74,7 @@ Leurs propriétés et fonctions sont les suivantes :
 
 | Paramètres | Type         |    | Description                                                    |
 | ---------- | ------------ | -- | -------------------------------------------------------------- |
-| option     | Entier long  | -> | Web server to get (default if omitted = `Web server database`) |
+| option     | Integer      | -> | Web server to get (default if omitted = `Web server database`) |
 | Résultat   | 4D.WebServer | <- | Objet Serveur Web                                              |
 
 <!-- END REF -->
@@ -801,7 +801,7 @@ Customized session settings will be reset when the [`.stop()`](#stop) function i
 
 #### Objet retourné
 
-The function returns an object describing the Web server launch status. This object can contain the following properties:
+The function returns an object describing the Web server launch status. Cet objet peut avoir les propriétés suivantes :
 
 | Propriété |                         | Type       | Description                                                               |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
