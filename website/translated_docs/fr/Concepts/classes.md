@@ -572,7 +572,14 @@ Several commands of the 4D language allows you to handle class features.
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.</p>
+`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
+
+
+### `OB Instance of`
+
+#### OB Instance of ( object ; class ) -> Boolean
+
+`OB Instance of` retourne `true` si `object` appartient à `class` ou à l'une de ses classes héritées, sinon retourne `false`.</p>
 
 
 ### `OB Instance of`
