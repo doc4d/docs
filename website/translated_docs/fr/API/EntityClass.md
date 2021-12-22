@@ -341,10 +341,10 @@ vCompareResult3 (seules les différences sur les attributs touchés de $e1 sont 
 **.drop**( {*mode* : Integer} ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.drop().Params -->
-| Paramètres | Type        |    | Description                                                                                  |
-| ---------- | ----------- |:--:| -------------------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk force drop if stamp changed` : Force la suppression même si le marqueur interne a changé |
-| Résultat   | Object      | <- | Résultat de l'opération de suppression                                                       |
+| Paramètres | Type    |    | Description                                                                                  |
+| ---------- | ------- |:--:| -------------------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk force drop if stamp changed` : Force la suppression même si le marqueur interne a changé |
+| Résultat   | Object  | <- | Résultat de l'opération de suppression                                                       |
 <!-- END REF -->
 
 #### Description
@@ -625,11 +625,11 @@ Le code générique suivant duplique toute entité :
 **.getKey**( { *mode* : Integer } ) : Text<br>**.getKey**( { *mode* : Integer } ) : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getKey().Params -->
-| Paramètres | Type        |    | Description                                                                              |
-| ---------- | ----------- |:--:| ---------------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk key as string`: retourner la clé primaire en texte, quel que soit son type d'origine |
-| Résultat   | Texte       | <- | Valeur de la clé primaire texte de l'entité                                              |
-| Résultat   | Entier long | <- | Valeur de la clé primaire numérique de l'entité                                          |
+| Paramètres | Type    |    | Description                                                                              |
+| ---------- | ------- |:--:| ---------------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk key as string`: retourner la clé primaire en texte, quel que soit son type d'origine |
+| Résultat   | Texte   | <- | Valeur de la clé primaire texte de l'entité                                              |
+| Résultat   | Integer | <- | Valeur de la clé primaire numérique de l'entité                                          |
 
 <!-- END REF -->
 
@@ -713,9 +713,9 @@ Si l'entité n'appartient pas à une entity selection, la fonction renvoie Null.
 **.getStamp()** : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getStamp().Params -->
-| Paramètres | Type        |    | Description                                                      |
-| ---------- | ----------- |:--:| ---------------------------------------------------------------- |
-| Résultat   | Entier long | <- | Valeur du "stamp" de l'entité (0 si l'entité vient d'être créée) |
+| Paramètres | Type    |    | Description                                                      |
+| ---------- | ------- |:--:| ---------------------------------------------------------------- |
+| Résultat   | Integer | <- | Valeur du "stamp" de l'entité (0 si l'entité vient d'être créée) |
 <!-- END REF -->
 
 #### Description
@@ -765,7 +765,7 @@ Le stamp (marqueur interne) d'une entité est automatiquement incrémenté par 4
 | Paramètres      | Type               |    | Description                                                    |
 | --------------- | ------------------ |:--:| -------------------------------------------------------------- |
 | entitySelection | 4D.EntitySelection | -> | Entity selection dans laquelle obtenir la position de l'entité |
-| Résultat        | Entier long        | <- | Position de l'entité dans l'entity selection                   |
+| Résultat        | Integer            | <- | Position de l'entité dans l'entity selection                   |
 <!-- END REF -->
 
 #### Description
@@ -893,10 +893,10 @@ Si l'entité n'appartient à aucune entity selection (i.e. [.getSelection( )](#g
 **.lock**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.lock().Params -->
-| Paramètres | Type        |    | Description                                                                                   |
-| ---------- | ----------- |:--:| --------------------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk reload if stamp changed` : Recharger avant de verrouiller si le marqueur interne a changé |
-| Résultat   | Object      | <- | Résultat de l'opération lock                                                                  |
+| Paramètres | Type    |    | Description                                                                                   |
+| ---------- | ------- |:--:| --------------------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk reload if stamp changed` : Recharger avant de verrouiller si le marqueur interne a changé |
+| Résultat   | Object  | <- | Résultat de l'opération lock                                                                  |
 <!-- END REF -->
 
 #### Description
@@ -1153,10 +1153,10 @@ L'objet retourné par `.reload( )` contient les propriétés suivantes :
 **.save**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.save().Params -->
-| Paramètres | Type        |    | Description                                        |
-| ---------- | ----------- |:--:| -------------------------------------------------- |
-| mode       | Entier long | -> | `dk auto merge` : Active le mode "automatic merge" |
-| Résultat   | Object      | <- | Résultat de la sauvegarde                          |
+| Paramètres | Type    |    | Description                                        |
+| ---------- | ------- |:--:| -------------------------------------------------- |
+| mode       | Integer | -> | `dk auto merge` : Active le mode "automatic merge" |
+| Résultat   | Object  | <- | Résultat de la sauvegarde                          |
 <!-- END REF -->
 
 #### Description
@@ -1288,12 +1288,12 @@ Mise à jour d'une entité avec option `dk auto merge` :
 **.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.toObject().Params -->
-| Paramètres   | Type        |    | Description                                                                                                      |
-| ------------ | ----------- |:--:| ---------------------------------------------------------------------------------------------------------------- |
-| filterString | Texte       | -> | Attribut(s) à extraire (chaînes séparées par des virgules)                                                       |
-| filterCol    | Collection  | -> | Collection d'attribut(s) à extraire                                                                              |
-| options      | Entier long | -> | `dk with primary key` : ajouter la propriété \_KEY ;<br>`dk with stamp` : ajouter la propriété \_STAMP |
-| Résultat     | Object      | <- | Objet généré à partir de l'entité                                                                                |
+| Paramètres   | Type       |    | Description                                                                                                      |
+| ------------ | ---------- |:--:| ---------------------------------------------------------------------------------------------------------------- |
+| filterString | Texte      | -> | Attribut(s) à extraire (chaînes séparées par des virgules)                                                       |
+| filterCol    | Collection | -> | Collection d'attribut(s) à extraire                                                                              |
+| options      | Integer    | -> | `dk with primary key` : ajouter la propriété \_KEY ;<br>`dk with stamp` : ajouter la propriété \_STAMP |
+| Résultat     | Object     | <- | Objet généré à partir de l'entité                                                                                |
 <!-- END REF -->
 
 #### Description
