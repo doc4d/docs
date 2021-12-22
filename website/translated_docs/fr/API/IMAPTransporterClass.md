@@ -357,12 +357,12 @@ La propriété `.checkConnectionDelay` contient la <!-- REF #IMAPTransporterClas
 **.copy**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.copy**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.copy().Params -->
-| Paramètres     | Type        |    | Description                                                          |
-| -------------- | ----------- |:--:| -------------------------------------------------------------------- |
-| msgsIDs        | Collection  | -> | Collection d'IDs uniques de messages (texte)                         |
-| allMsgs        | Entier long | -> | `IMAP all` : tous les messages de la boîte de réception sélectionnée |
-| destinationBox | Texte       | -> | Boîte de réception recevant les messages copiés                      |
-| Résultat       | Object      | <- | Statut de l'opération de copie                                       |
+| Paramètres     | Type       |    | Description                                                          |
+| -------------- | ---------- |:--:| -------------------------------------------------------------------- |
+| msgsIDs        | Collection | -> | Collection d'IDs uniques de messages (texte)                         |
+| allMsgs        | Integer    | -> | `IMAP all` : tous les messages de la boîte de réception sélectionnée |
+| destinationBox | Texte      | -> | Boîte de réception recevant les messages copiés                      |
+| Résultat       | Object     | <- | Statut de l'opération de copie                                       |
 <!-- END REF -->
 
 
@@ -546,11 +546,11 @@ End for each
 **.delete**( *msgsIDs* : Collection ) : Object<br>**.delete**( *allMsgs* : Integer ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.delete().Params -->
-| Paramètres | Type        |    | Description                                                          |
-| ---------- | ----------- |:--:| -------------------------------------------------------------------- |
-| msgsIDs    | Collection  | -> | Collection d'IDs uniques de messages (texte)                         |
-| allMsgs    | Entier long | -> | `IMAP all` : tous les messages de la boîte de réception sélectionnée |
-| Résultat   | Object      | <- | Statut de l'opération de suppression                                 |
+| Paramètres | Type       |    | Description                                                          |
+| ---------- | ---------- |:--:| -------------------------------------------------------------------- |
+| msgsIDs    | Collection | -> | Collection d'IDs uniques de messages (texte)                         |
+| allMsgs    | Integer    | -> | `IMAP all` : tous les messages de la boîte de réception sélectionnée |
+| Résultat   | Object     | <- | Statut de l'opération de suppression                                 |
 <!-- END REF -->
 
 
@@ -795,10 +795,10 @@ $status:=$transporter.expunge()
 ## .getBoxInfo()
 
 <details><summary>Historique</summary>
-| Version | Modifications      |
-| ------- | ------------------ |
-| v18 R5  | *name* is optional |
-| v18 R4  | Ajout              |
+| Version | Modifications        |
+| ------- | -------------------- |
+| v18 R5  | *name* est optionnel |
+| v18 R4  | Ajout                |
 </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
@@ -990,12 +990,12 @@ Caractère de délimitation des noms de boites de réception.
 **.getMail**( *msgNumber*: Integer { ; *options* : Object } ) : Object<br>**.getMail**( *msgID*: Text { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMail().Params -->
-| Paramètres | Type        |    | Description                                     |
-| ---------- | ----------- |:--:| ----------------------------------------------- |
-| msgNumber  | Entier long | -> | Numéro de séquence du message                   |
-| msgID      | Texte       | -> | ID unique du message                            |
-| options    | Object      | -> | Instructions sur la gestion du message          |
-| Résultat   | Object      | <- | [Objet email](EmailObjectClass.md#email-object) |
+| Paramètres | Type    |    | Description                                     |
+| ---------- | ------- |:--:| ----------------------------------------------- |
+| msgNumber  | Integer | -> | Numéro de séquence du message                   |
+| msgID      | Texte   | -> | ID unique du message                            |
+| options    | Object  | -> | Instructions sur la gestion du message          |
+| Résultat   | Object  | <- | [Objet email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
@@ -1066,13 +1066,13 @@ Vous souhaitez lire le message avec ID = 1 :
 **.getMails**( *ids* : Collection { ; *options* : Object } ) : Object<br>**.getMails**( *startMsg* : Integer ; *endMsg* : Integer { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMails().Params -->
-| Paramètres | Type        |    | Description                                           |
-| ---------- | ----------- |:--:| ----------------------------------------------------- |
-| ids        | Collection  | -> | Collection d'identifiants de messages                 |
-| startMsg   | Entier long | -> | Numéro de séquence du premier message                 |
-| endMsg     | Entier long | -> | Numéro de séquence du dernier message                 |
-| options    | Object      | -> | Instructions sur la gestion du message                |
-| Résultat   | Object      | <- | Objet contenant :<br><ul><li>une collection d'[objets Email](EmailObjectClass.md#objet-email) et</li><li>une collection d'identifiants ou de numéros des messages manquants, le cas échéant</li></ul> |
+| Paramètres | Type       |    | Description                                           |
+| ---------- | ---------- |:--:| ----------------------------------------------------- |
+| ids        | Collection | -> | Collection d'identifiants de messages                 |
+| startMsg   | Integer    | -> | Numéro de séquence du premier message                 |
+| endMsg     | Integer    | -> | Numéro de séquence du dernier message                 |
+| options    | Object     | -> | Instructions sur la gestion du message                |
+| Résultat   | Object     | <- | Objet contenant :<br><ul><li>une collection d'[objets Email](EmailObjectClass.md#objet-email) et</li><li>une collection d'identifiants ou de numéros des messages manquants, le cas échéant</li></ul> |
 <!-- END REF -->
 
 
@@ -1172,12 +1172,12 @@ Vous souhaitez récupérer les 20 emails les plus récents sans modifier le stat
 
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Params -->
-| Paramètres | Type        |    | Description                                                                                                        |
-| ---------- | ----------- |:--:| ------------------------------------------------------------------------------------------------------------------ |
-| msgNumber  | Entier long | -> | Numéro de séquence du message                                                                                      |
-| msgID      | Texte       | -> | ID unique du message                                                                                               |
-| updateSeen | Booléen     | -> | Si Vrai, le message est marqué comme "seen" (lu) dans la boite de réception. Si Faux, le message demeure inchangé. |
-| Résultat   | BLOB        | <- | Blob de la chaine MIME retournée par le serveur mail                                                               |
+| Paramètres | Type    |    | Description                                                                                                        |
+| ---------- | ------- |:--:| ------------------------------------------------------------------------------------------------------------------ |
+| msgNumber  | Integer | -> | Numéro de séquence du message                                                                                      |
+| msgID      | Texte   | -> | ID unique du message                                                                                               |
+| updateSeen | Booléen | -> | Si Vrai, le message est marqué comme "seen" (lu) dans la boite de réception. Si Faux, le message demeure inchangé. |
+| Résultat   | BLOB    | <- | Blob de la chaine MIME retournée par le serveur mail                                                               |
 <!-- END REF -->
 
 
@@ -1256,12 +1256,12 @@ Le paramètre optionnel *updateSeen* vous permet d'indiquer si le message est ma
 **.move**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.move**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.move().Params -->
-| Paramètres     | Type        |    | Description                                                          |
-| -------------- | ----------- |:--:| -------------------------------------------------------------------- |
-| msgsIDs        | Collection  | -> | Collection d'IDs uniques de messages (texte)                         |
-| allMsgs        | Entier long | -> | `IMAP all` : tous les messages de la boîte de réception sélectionnée |
-| destinationBox | Texte       | -> | Mailbox to receive moved messages                                    |
-| Résultat       | Object      | <- | Status of the move operation                                         |
+| Paramètres     | Type       |    | Description                                                          |
+| -------------- | ---------- |:--:| -------------------------------------------------------------------- |
+| msgsIDs        | Collection | -> | Collection d'IDs uniques de messages (texte)                         |
+| allMsgs        | Integer    | -> | `IMAP all` : tous les messages de la boîte de réception sélectionnée |
+| destinationBox | Texte      | -> | Mailbox to receive moved messages                                    |
+| Résultat       | Object     | <- | Status of the move operation                                         |
 <!-- END REF -->
 
 
@@ -1359,11 +1359,11 @@ To move all messages in the current mailbox:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.numToID().Params -->
-| Paramètres | Type        |    | Description                           |
-| ---------- | ----------- |:--:| ------------------------------------- |
-| startMsg   | Entier long | -> | Numéro de séquence du premier message |
-| endMsg     | Entier long | -> | Numéro de séquence du dernier message |
-| Résultat   | Collection  | <- | Collection of unique IDs              |
+| Paramètres | Type       |    | Description                           |
+| ---------- | ---------- |:--:| ------------------------------------- |
+| startMsg   | Integer    | -> | Numéro de séquence du premier message |
+| endMsg     | Integer    | -> | Numéro de séquence du dernier message |
+| Résultat   | Collection | <- | Collection of unique IDs              |
 <!-- END REF -->
 
 
@@ -1729,17 +1729,17 @@ Search-keys may request the value to search for:
 **.selectBox**( *name* : Text { ; *state* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.selectBox().Params -->
-| Paramètres | Type        |    | Description                  |
-| ---------- | ----------- |:--:| ---------------------------- |
-| name       | Texte       | -> | Nom de la boîte de réception |
-| state      | Entier long | -> | Mailbox access status        |
-| Résultat   | Object      | <- | Objet boxInfo                |
+| Paramètres | Type    |    | Description                  |
+| ---------- | ------- |:--:| ---------------------------- |
+| name       | Texte   | -> | Nom de la boîte de réception |
+| state      | Integer | -> | Mailbox access status        |
+| Résultat   | Object  | <- | Objet boxInfo                |
 <!-- END REF -->
 
 
 #### Description
 
-The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. Cette fonction vous permet de récupérer des informations sur la boite de réception.
 
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
