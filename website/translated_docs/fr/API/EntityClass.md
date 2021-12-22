@@ -341,10 +341,10 @@ vCompareResult3 (seules les différences sur les attributs touchés de $e1 sont 
 **.drop**( {*mode* : Integer} ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.drop().Params -->
-| Paramètres | Type        |    | Description                                                                                  |
-| ---------- | ----------- |:--:| -------------------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk force drop if stamp changed` : Force la suppression même si le marqueur interne a changé |
-| Résultat   | Object      | <- | Résultat de l'opération de suppression                                                       |
+| Paramètres | Type    |    | Description                                                                                  |
+| ---------- | ------- |:--:| -------------------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk force drop if stamp changed` : Force la suppression même si le marqueur interne a changé |
+| Résultat   | Object  | <- | Résultat de l'opération de suppression                                                       |
 <!-- END REF -->
 
 #### Description
@@ -625,11 +625,11 @@ Le code générique suivant duplique toute entité :
 **.getKey**( { *mode* : Integer } ) : Text<br>**.getKey**( { *mode* : Integer } ) : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getKey().Params -->
-| Paramètres | Type        |    | Description                                                                              |
-| ---------- | ----------- |:--:| ---------------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk key as string`: retourner la clé primaire en texte, quel que soit son type d'origine |
-| Résultat   | Texte       | <- | Valeur de la clé primaire texte de l'entité                                              |
-| Résultat   | Entier long | <- | Valeur de la clé primaire numérique de l'entité                                          |
+| Paramètres | Type    |    | Description                                                                              |
+| ---------- | ------- |:--:| ---------------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk key as string`: retourner la clé primaire en texte, quel que soit son type d'origine |
+| Résultat   | Texte   | <- | Valeur de la clé primaire texte de l'entité                                              |
+| Résultat   | Integer | <- | Valeur de la clé primaire numérique de l'entité                                          |
 
 <!-- END REF -->
 
@@ -713,9 +713,9 @@ Si l'entité n'appartient pas à une entity selection, la fonction renvoie Null.
 **.getStamp()** : Integer<!-- END REF -->
 
 <!-- REF #EntityClass.getStamp().Params -->
-| Paramètres | Type        |    | Description                                                      |
-| ---------- | ----------- |:--:| ---------------------------------------------------------------- |
-| Résultat   | Entier long | <- | Valeur du "stamp" de l'entité (0 si l'entité vient d'être créée) |
+| Paramètres | Type    |    | Description                                                      |
+| ---------- | ------- |:--:| ---------------------------------------------------------------- |
+| Résultat   | Integer | <- | Valeur du "stamp" de l'entité (0 si l'entité vient d'être créée) |
 <!-- END REF -->
 
 #### Description
@@ -765,7 +765,7 @@ Le stamp (marqueur interne) d'une entité est automatiquement incrémenté par 4
 | Paramètres      | Type               |    | Description                                                    |
 | --------------- | ------------------ |:--:| -------------------------------------------------------------- |
 | entitySelection | 4D.EntitySelection | -> | Entity selection dans laquelle obtenir la position de l'entité |
-| Résultat        | Entier long        | <- | Position de l'entité dans l'entity selection                   |
+| Résultat        | Integer            | <- | Position de l'entité dans l'entity selection                   |
 <!-- END REF -->
 
 #### Description
@@ -893,10 +893,10 @@ Si l'entité n'appartient à aucune entity selection (i.e. [.getSelection( )](#g
 **.lock**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.lock().Params -->
-| Paramètres | Type        |    | Description                                                                                   |
-| ---------- | ----------- |:--:| --------------------------------------------------------------------------------------------- |
-| mode       | Entier long | -> | `dk reload if stamp changed` : Recharger avant de verrouiller si le marqueur interne a changé |
-| Résultat   | Object      | <- | Résultat de l'opération lock                                                                  |
+| Paramètres | Type    |    | Description                                                                                   |
+| ---------- | ------- |:--:| --------------------------------------------------------------------------------------------- |
+| mode       | Integer | -> | `dk reload if stamp changed` : Recharger avant de verrouiller si le marqueur interne a changé |
+| Résultat   | Object  | <- | Résultat de l'opération lock                                                                  |
 <!-- END REF -->
 
 #### Description
@@ -910,6 +910,8 @@ Un enregistrement verrouillé peut être déverrouillé :
 *   lorsque la fonction [`unlock()`](#unlock) est appelée sur une entité correspondante dans le même process
 *   automatiquement, lorsqu'elle n'est plus référencée par aucune entité en mémoire. Par exemple, si le verrou n'est posé que sur une référence locale d'une entité, celle-ci est déverrouillée à la fin de la fonction. Tant qu'il existe des références à l'entité en mémoire, l'enregistrement reste verrouillé.
 
+> Pour plus d'informations, veuillez consulter la section [Verrouillage d'une entité](ORDA/entities.md#verrouillage-d-une-entite).
+
 Par défaut, lorsque le paramètre *mode* est omis, la méthode retourne une erreur (cf. ci-dessous) si l'entité a été modifiée (i.e. le marqueur interne a changé) entre-temps par un autre process ou utilisateur.
 
 Sinon, vous pouvez passer l'option `dk reload if stamp changed` dans le paramètre *mode* : dans ce cas, aucune erreur n'est générée et l'entité est simplement rechargée si le stamp a changé (si l'entité existe toujours et si la clé primaire est toujours la même).
@@ -918,29 +920,35 @@ Sinon, vous pouvez passer l'option `dk reload if stamp changed` dans le paramèt
 
 L'objet retourné par `.lock( )` contient les propriétés suivantes :
 
-| Propriété        |                     | Type                | Description                                                                                                                             |
-| ---------------- | ------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| success          |                     | boolean             | vrai si l'action de verrouillage a été effectuée avec succès (ou si l'entité est déjà verrouillée dans le process courant), sinon faux. |
-|                  |                     |                     | ***Disponible uniquement si l'option `dk reload if stamp changed` est utilisée :***                                                     |
-| **wasReloaded**  |                     | boolean             | vrai si l'entité a été correctement rechargée, sinon faux.                                                                              |
-|                  |                     |                     | ***Disponible uniquement en cas d'erreur :***                                                                                           |
-| status(\*)     |                     | number              | Code d'erreur, voir ci-dessous                                                                                                          |
-| statusText(\*) |                     | Texte               | Description de l'erreur, voir ci-dessous                                                                                                |
-|                  |                     |                     | ***Disponible uniquement en cas d'erreur de verrouillage pessimiste :***                                                                |
-| lockKindText     |                     | Texte               | "Locked by record"                                                                                                                      |
-| lockInfo         |                     | object              | Information sur l'origine du verrouillage                                                                                               |
-|                  | task_id             | number              | ID du process                                                                                                                           |
-|                  | user_name           | Texte               | Nom d'utilisateur de la session sur la machine                                                                                          |
-|                  | user4d_alias        | Texte               | Nom ou alias de l'utilisateur 4D                                                                                                        |
-|                  | user4d_id           | number              | Identifiant utilisateur dans le répertoire de la base 4D                                                                                |
-|                  | host_name           | Texte               | Nom de la machine                                                                                                                       |
-|                  | task_name           | Texte               | Nom du process                                                                                                                          |
-|                  | client_version      | Texte               |                                                                                                                                         |
-|                  |                     |                     | ***Disponible uniquement en cas d'erreur critique*** (clé primaire dupliquée, disque plein...) :                                        |
-| errors           |                     | collection d'objets |                                                                                                                                         |
-|                  | message             | Texte               | Message d'erreur                                                                                                                        |
-|                  | component signature | Texte               | signature du composant interne (e.g. "dmbg" pour le composant de base de données)                                                       |
-|                  | errCode             | number              | Code d'erreur                                                                                                                           |
+| Propriété        |                     | Type                | Description                                                                                                                                                 |
+| ---------------- | ------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success          |                     | boolean             | vrai si l'action de verrouillage a été effectuée avec succès (ou si l'entité est déjà verrouillée dans le process courant), sinon faux.                     |
+|                  |                     |                     | ***Disponible uniquement si l'option `dk reload if stamp changed` est utilisée :***                                                                         |
+| **wasReloaded**  |                     | boolean             | vrai si l'entité a été correctement rechargée, sinon faux.                                                                                                  |
+|                  |                     |                     | ***Disponible uniquement en cas d'erreur :***                                                                                                               |
+| status(\*)     |                     | number              | Code d'erreur, voir ci-dessous                                                                                                                              |
+| statusText(\*) |                     | Texte               | Description de l'erreur, voir ci-dessous                                                                                                                    |
+|                  |                     |                     | ***Disponible uniquement en cas d'erreur de verrouillage pessimiste :***                                                                                    |
+| lockKindText     |                     | Texte               | "Locked by record" if locked by a 4D process, "Locked by session" if locked by a REST session                                                               |
+| lockInfo         |                     | object              | Information about the lock origin. Returned properties depend on the lock origin (4D process or REST session).                                              |
+|                  |                     |                     | ***Available only for a 4D process lock:***                                                                                                                 |
+|                  | task_id             | number              | ID du process                                                                                                                                               |
+|                  | user_name           | Texte               | Nom d'utilisateur de la session sur la machine                                                                                                              |
+|                  | user4d_alias        | Texte               | Nom ou alias de l'utilisateur 4D                                                                                                                            |
+|                  | user4d_id           | number              | Identifiant utilisateur dans le répertoire de la base 4D                                                                                                    |
+|                  | host_name           | Texte               | Nom de la machine                                                                                                                                           |
+|                  | task_name           | Texte               | Nom du process                                                                                                                                              |
+|                  | client_version      | Texte               | Version of the client                                                                                                                                       |
+|                  |                     |                     | ***Available only for a REST session lock:***                                                                                                               |
+|                  | host                | Texte               | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
+|                  | IPAddr              | Texte               | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
+|                  | recordNumber        | number              | Record number of the locked record                                                                                                                          |
+|                  | userAgent           | Texte               | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
+|                  |                     |                     | ***Disponible uniquement en cas d'erreur critique*** (clé primaire dupliquée, disque plein...) :                                                            |
+| errors           |                     | collection d'objets |                                                                                                                                                             |
+|                  | message             | Texte               | Message d'erreur                                                                                                                                            |
+|                  | component signature | Texte               | signature du composant interne (e.g. "dmbg" pour le composant de base de données)                                                                           |
+|                  | errCode             | number              | Code d'erreur                                                                                                                                               |
 
 
 (\*) Les valeurs suivantes peuvent être retournées dans les propriétés *status* et *statusText* de l'objet *Résultat* en cas d'erreur :
@@ -1153,10 +1161,10 @@ L'objet retourné par `.reload( )` contient les propriétés suivantes :
 **.save**( { *mode* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.save().Params -->
-| Paramètres | Type        |    | Description                                        |
-| ---------- | ----------- |:--:| -------------------------------------------------- |
-| mode       | Entier long | -> | `dk auto merge` : Active le mode "automatic merge" |
-| Résultat   | Object      | <- | Résultat de la sauvegarde                          |
+| Paramètres | Type    |    | Description                                        |
+| ---------- | ------- |:--:| -------------------------------------------------- |
+| mode       | Integer | -> | `dk auto merge` : Active le mode "automatic merge" |
+| Résultat   | Object  | <- | Résultat de la sauvegarde                          |
 <!-- END REF -->
 
 #### Description
@@ -1288,12 +1296,12 @@ Mise à jour d'une entité avec option `dk auto merge` :
 **.toObject**() : Object<br>**.toObject**( *filterString* : Text { ; *options* : Integer}  ) : Object<br>**.toObject**( *filterCol* : Collection { ; *options* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #EntityClass.toObject().Params -->
-| Paramètres   | Type        |    | Description                                                                                                      |
-| ------------ | ----------- |:--:| ---------------------------------------------------------------------------------------------------------------- |
-| filterString | Texte       | -> | Attribut(s) à extraire (chaînes séparées par des virgules)                                                       |
-| filterCol    | Collection  | -> | Collection d'attribut(s) à extraire                                                                              |
-| options      | Entier long | -> | `dk with primary key` : ajouter la propriété \_KEY ;<br>`dk with stamp` : ajouter la propriété \_STAMP |
-| Résultat     | Object      | <- | Objet généré à partir de l'entité                                                                                |
+| Paramètres   | Type       |    | Description                                                                                                      |
+| ------------ | ---------- |:--:| ---------------------------------------------------------------------------------------------------------------- |
+| filterString | Texte      | -> | Attribut(s) à extraire (chaînes séparées par des virgules)                                                       |
+| filterCol    | Collection | -> | Collection d'attribut(s) à extraire                                                                              |
+| options      | Integer    | -> | `dk with primary key` : ajouter la propriété \_KEY ;<br>`dk with stamp` : ajouter la propriété \_STAMP |
+| Résultat     | Object     | <- | Objet généré à partir de l'entité                                                                                |
 <!-- END REF -->
 
 #### Description
