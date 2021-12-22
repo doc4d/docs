@@ -70,7 +70,7 @@ Sets the cache size. See [Cache](../WebServer/webServerConfig.md#cache).
 
 #### Clear Cache
 
-À tout moment, vous pouvez vider le cache des pages et des images qu'il contient (si, par exemple, vous avez modifié une page statique et que vous souhaitez la recharger dans le cache). To do so, you just have to click on the **Clear Cache** button. Le cache est alors immédiatement effacé.
+À tout moment, vous pouvez vider le cache des pages et des images qu'il contient (si, par exemple, vous avez modifié une page statique et que vous souhaitez la recharger dans le cache). À tout moment, vous pouvez vider le cache des pages et des images qu'il contient (si, par exemple, vous avez modifié une page statique et que vous souhaitez la recharger dans le cache). Le cache est alors immédiatement effacé.
 
 > You can also use the special URL [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear).
 
@@ -210,7 +210,7 @@ The log format menu provides the following options:
 
 -   **WLF (WebStar Log Format)**: When this option is selected, the request log is generated in WLF format. WLF format was developed specifically for the 4D WebSTAR server. It is similar to the ELF format, with only a few additional fields. Like the ELF format, it can be customized.
 
-**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. Vous devrez sélectionner chaque champ à inclure dans le journal. To do so, use the arrow buttons or simply drag and drop the desired fields into the "Selected Tokens" area.
+**Configuring the fields** When you choose the ELF (Extended Log Format) or WLF (WebStar Log Format) format, the "Weg Log Token Selection" area displays the fields available for the chosen format. Vous devrez sélectionner chaque champ à inclure dans le journal. Vous devrez sélectionner chaque champ à inclure dans le journal.
 
 **Note**: You cannot select the same field twice.
 
