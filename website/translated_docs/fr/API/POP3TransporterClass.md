@@ -331,7 +331,7 @@ Vous souhaitez connaitre l'expéditeur du premier mail de la boite de réception
 | Paramètres | Type    |    | Description                     |
 | ---------- | ------- |:--:| ------------------------------- |
 | msgNumber  | Integer | -> | Numéro du message dans la liste |
-| Résultat   | Object  | <- | mailInfo object                 |
+| Résultat   | Object  | <- | Objet MailInfo                  |
 <!-- END REF -->
 
 
