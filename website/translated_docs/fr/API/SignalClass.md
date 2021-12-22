@@ -45,17 +45,17 @@ Etant donné qu'un objet signal est un [objet partagé](Concepts/shared.md), vou
 ```4d
  var $signal : 4D.Signal
 
-  // Creation of a signal
+  // Création d'un signal
  $signal:=New signal
 
-  // call main process and execute OpenForm method
+  // appel du process principal et exécution de la méthode OpenForm
  CALL WORKER(1;"OpenForm";$signal)
-  // do another calculation
+  // autre calcul
  ...
-  // Waiting for the end of the process
+  // Attente de la fin du process
  $signaled:=$signal.wait()
 
-  // Processing of the results
+  // Traitement des résultats
  $calc:=$signal.result+...
 ```
 
@@ -66,17 +66,17 @@ Méthode ***OpenForm*** :
  var $form : Object
  $form:=New object("value";0)
 
-  // Open the form
+  // Ouvrir le form
  $win:=Open form window("Information";Movable form dialog box)
  DIALOG("Information";$form)
  CLOSE WINDOW($win)
 
-  // Add a new attribute to your $signal shared object to pass your result to the other process:
+  // Ajout d'un nouvel attribut à votre objet partagé $signal pour passer votre résultat à l'autre process :
  Use($signal)
     $signal.result:=$form.value
  End use
 
-  // Trigger the signal to the waiting process
+  // Envoyer le signal au process en attente
  $signal.trigger()
 ```
 
