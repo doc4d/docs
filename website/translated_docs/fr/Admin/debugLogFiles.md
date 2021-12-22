@@ -338,9 +338,9 @@ Vous pouvez utiliser un **fichier de configuration de log** pour gérer facileme
 
 Il existe plusieurs façons d'activer le fichier de configuration des logs :
 
-- Sur le serveur 4D avec interface, vous pouvez ouvrir la page Maintenance et cliquer sur le bouton [Charger le fichier de configuration des logs](Admin/server-admin.md#load-logs-configuration-file), puis sélectionner le fichier. In this case, you can use any name for the configuration file. It is immediately enabled on the server.
-- You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
-- With a built application, you can copy the `logConfig.json` file in the following folder:
+- Sur le serveur 4D avec interface, vous pouvez ouvrir la page Maintenance et cliquer sur le bouton [Charger le fichier de configuration des logs](Admin/server-admin.md#load-logs-configuration-file), puis sélectionner le fichier. Dans ce cas, vous pouvez utiliser n'importe quel nom pour le fichier de configuration. Il est immédiatement activé sur le serveur.
+- Vous pouvez copier le fichier de configuration du journal dans le [dossier Settings](Project/architecture.md#settings-1) du projet. Dans ce cas, le fichier doit être nommé `logConfig.json`. Il est activé au démarrage du projet (uniquement sur le serveur en client/serveur).
+- Avec une application générée, vous pouvez copier le fichier `logConfig.json` dans le dossier suivant :
     + Windows : `Users\[userName]\AppData\Roaming\[application]`
     + macOS : `/Users/[userName]/Library/ApplicationSupport/[application]`
 
