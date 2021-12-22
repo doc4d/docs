@@ -23,12 +23,12 @@ Générer un package de projet peut être réalisée à l'aide de :
 
 - soit la commande
 `BUILD APPLICATION<code></a>,</li>
-<li>soit la<a href="#application-builder">boîte de dialogue du Générateur d'application</a>.</li>
+<li>Utiliser la <a href="#application">Page Application</a> ou la <a href="#client-server">Page Client/Serveur</a> de boîte de dialogue du Générateur d'applications.</li>
 </ul>
 
-<h3 spaces-before="0">Générateur d'application</h3>
+<h3 spaces-before="0">Construire application cliente</h3>
 
-<p spaces-before="0">Pour afficher la boîte de dialogue du générateur d'application, sélectionnez <strong x-id="1">Développement</strong> > <strong x-id="1">Générer l'application...</strong> dans la barre de menus.</p>
+<p spaces-before="0">Cochez l'option <strong x-id="1">Créer une application autonome</strong> et cliquez sur <strong x-id="1">Générer</strong> pour créer une application autonome (double-cliquable) directement à partir de votre projet d'application.</p>
 
 <p spaces-before="0"><img src="assets/en/Project/buildappProj.png" alt="" /></p>
 
@@ -802,14 +802,22 @@ La gestion des connexions des applications clientes recouvre les mécanismes par
 
 Le processus de connexion des applications clientes fusionnées prend en charge les cas où le serveur dédié n'est pas disponible. Le scénario du démarrage d'une application cliente 4D est le suivant :
 
-- L'application cliente tente de se connecter au serveur via le service de découverte (basé sur le nom du serveur, publié sur le même sous-réseau que l'application cliente).  
-  OU  
-  Si des informations de connexion valides sont présentes dans le fichier "EnginedServer.4DLink" à l'intérieur de son dossier, l'application cliente tente de se connecter à l'adresse du serveur spécifiée dans ce fichier.
-- En cas d'échec, l'application cliente tente de se connecter au serveur à l'aide des informations présentes dans le dossier de préférences utilisateur de l'application (fichier "lastServer.xml", cf. dernière étape).
-- En cas d'échec, l'application cliente affiche une boîte de dialogue d'erreur de connexion. 
-      - Si l'utilisateur clique sur le bouton **Sélectionner...** (lorsqu'il été autorisé par le développeur 4D au moment de la génération de l'application, voir ci-dessous), la boîte de dialogue standard "Connexion au serveur" est affichée.
+1.  L'application cliente tente de se connecter au serveur via le service de découverte (basé sur le nom du serveur, publié sur le même sous-réseau que l'application cliente).  
+   OU  
+   Si des informations de connexion valides sont présentes dans le fichier "EnginedServer.4DLink" à l'intérieur de son dossier, l'application cliente tente de se connecter à l'adresse du serveur spécifiée dans ce fichier.
+
+2.  En cas d'échec, l'application cliente tente de se connecter au serveur à l'aide des informations présentes dans le dossier de préférences utilisateur de l'application (fichier "lastServer.xml", cf. dernière étape).
+
+3.  En cas d'échec, l'application cliente affiche une boîte de dialogue d'erreur de connexion. 
+       - Si l'utilisateur clique sur le bouton **Sélectionner...** (lorsqu'il été autorisé par le développeur 4D au moment de la génération de l'application, voir ci-dessous), la boîte de dialogue standard "Connexion au serveur" est affichée.
     - Si l'utilisateur clique sur le bouton **Quitter**, l'application client quitte.
-- Si la connexion est établie avec succès, les paramètres de cette connexion sont sauvegardés dans le dossier de préférences utilisateur de l'application cliente, ce qui permettra de les réutiliser ultérieurement en cas de besoin.
+4. Si la connexion est établie avec succès, les paramètres de cette connexion sont sauvegardés dans le dossier de préférences utilisateur de l'application cliente, ce qui permettra de les réutiliser ultérieurement en cas de besoin.
+
+The whole procedure is described in the following diagram:
+
+![](assets/en/Desktop/client-connect.png)
+
+
 
 
 
