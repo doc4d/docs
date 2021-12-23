@@ -1203,7 +1203,7 @@ Le paramètre optionnel *updateSeen* vous permet d'indiquer si le message est ma
 
 #### Résultat
 
-`.getMIMEAsBlob()` retourne un `BLOB` retourne un BLOB qui peut être archivé dans une base de données ou converti en un objet [`Email`](EmailObjectClass.md#objet-email) avec la commande `MAIL Convert from MIME`.
+`.getMIMEAsBlob()` retourne un `BLOB` qui peut être archivé dans une base de données ou converti en un objet [`Email`](EmailObjectClass.md#objet-email) avec la commande `MAIL Convert from MIME`.
 
 #### Exemple
 
@@ -1678,41 +1678,41 @@ Les mots-clés de recherche peuvent traiter des valeurs des types suivants :
 
 #### Mots-clés de recherche autorisés
 
-**ALL**: All messages in the mailbox.  
-**ANSWERED**: Messages with the \Answered flag set.  
-**UNANSWERED**: Messages that do not have the \Answered flag set.  
-**DELETED**: Messages with the \Deleted flag set.  
-**UNDELETED**: Messages that do not have the \Deleted flag set.  
-**DRAFT**: Messages with the \Draft flag set.  
-**UNDRAFT**: Messages that do not have the \Draft flag set.  
-**FLAGGED**: Messages with the \Flagged flag set.  
-**UNFLAGGED**: Messages that do not have the \Flagged flag set.  
-**RECENT**: Messages that have the \Recent flag set.  
-**OLD**: Messages that do not have the \Recent flag set.  
-**SEEN**: Messages that have the \Seen flag set.  
-**UNSEEN**: Messages that do not have the \Seen flag set.  
-**NEW**: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to “(RECENT UNSEEN)”.  
-***KEYWORD ***flag******: Messages with the specified keyword set.  
-***UNKEYWORD ***flag******: Messages that do not have the specified keyword set.  
-***BEFORE ***date******: Messages whose internal date is earlier than the specified date.  
-***ON ***date******: Messages whose internal date is within the specified date.  
-***SINCE ***date******: Messages whose internal date is within or later than the specified date.  
-***SENTBEFORE ***date******: Messages whose Date header is earlier than the specified date.  
-***SENTON ***date******: Messages whose Date header is within the specified date.  
-***SENTSINCE ***date******: Messages whose Date header is within or later than the specified date.  
-***TO ***string******: Messages that contain the specified string in the TO header.  
-***FROM ***string******: Messages that contain the specified string in the FROM header.  
-***CC ***string******: Messages that contain the specified string in the CC header.  
-***BCC ***string******: Messages that contain the specified string in the BCC header.  
-***SUBJECT ***string******: Messages that contain the specified string in the Subject header.  
-***BODY ***string******: Messages that contain the specified string in the message body.  
-***TEXT ***string******: Messages that contain the specified string in the header or in the message body.  
-***HEADER *field-name* ***string******: Messages that have a header with the specified field-name and that contain the specified string in the field-body.  
-***UID ***message-UID******: Messages with unique identifiers corresponding to the specified unique identifier set.  
-***LARGER ***n******: Messages with a size larger than the specified number of bytes.  
-***SMALLER ***n******: Messages with a size smaller than the specified number of bytes.  
-***NOT ***search-key******: Messages that do not match the specified search key.  
-***OR *search-key1* ***search-key2******: Messages that match either search key.  
+**ALL**: Tous les messages de la boîte de réception.  
+**ANSWERED**: Messages comportant le marqueur \Answered.  
+**UNANSWERED**: Messages ne comportant pas le marqueur \Answered.  
+**DELETED**: Messages comportant le marqueur \Deleted.  
+**UNDELETED**: Messages ne comportant pas le marqueur \Deleted.  
+**DRAFT**: Messages comportant le marqueur \Draft.  
+**UNDRAFT**: Messages ne comportant pas le marqueur \Draft.  
+**FLAGGED**: Messages comportant le marqueur \Flagged.  
+**UNFLAGGED**: Messages ne comportant pas le marqueur \Flagged.  
+**RECENT**: Messages comportant le marqueur \Recent.  
+**OLD**: Messages ne comportant pas le marqueur \Recent.  
+**SEEN**: Messages comportant le marqueur \Seen.  
+**UNSEEN**: Messages ne comportant pas le marqueur \Seen.  
+**NEW**: Messages comportant le marqueur \Recent et pas le marqueur \Seen. Equivaut à “(RECENT UNSEEN)”.  
+***KEYWORD ***flag******: Messages comportant le marqueur spécifié.  
+***UNKEYWORD ***flag******: Messages ne comportant pas le marqueur spécifié.  
+***BEFORE ***date******: Messages dont la date interne est antérieure à la date spécifiée.  
+***ON ***date******: Messages dont la date interne est égale à la date spécifiée.  
+***SINCE ***date******: Messages dont la date interne est égale ou postérieure à la date spécifiée.  
+***SENTBEFORE ***date******: Messages dont l’en-tête Date est antérieur à la date spécifiée.  
+***SENTON ***date******: Messages dont l’en-tête Date est égal à la date spécifiée.  
+***SENTSINCE ***date******: Messages dont l’en-tête Date est égal ou postérieur à la date spécifiée.  
+***TO ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Destinataire.  
+***FROM ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Emetteur.  
+***CC ***string******: Messages contenant la chaîne spécifiée dans l’en-tête CC.  
+***BCC ***string******: Messages contenant la chaîne spécifiée dans l’en-tête BCC.  
+***SUBJECT ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Objet.  
+***BODY ***string******: Messages dont le corps contient la chaîne spécifiée.  
+***TEXT ***string******: Messages contenant la chaîne spécifiée dans l’en-tête ou le corps.  
+***HEADER *field-name* ***string******: Messages dont l’en-tête contient le champ défini et dont ce champ contient la chaîne définie.  
+***UID ***message-UID******: Messages dont le numéro unique correspond à la valeur spécifiée.  
+***LARGER ***n******: Messages dont la taille en octets est supérieure à la taille spécifiée.  
+***SMALLER ***n******: Messages dont la taille en octets est inférieure à la taille spécifiée.  
+***NOT ***search-key******: Messages ne correspondant pas au critère spécifié.  
+***OR *search-key1* ***search-key2******: Messages correspondant au premier ou au deuxième critère spécifié.  
 
 
 <!-- END REF -->
@@ -1731,33 +1731,33 @@ Les mots-clés de recherche peuvent traiter des valeurs des types suivants :
 **.selectBox**( *name* : Text { ; *state* : Integer } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.selectBox().Params -->
-| Paramètres | Type    |    | Description                  |
-| ---------- | ------- |:--:| ---------------------------- |
-| name       | Texte   | -> | Nom de la boîte de réception |
-| state      | Integer | -> | Mailbox access status        |
-| Résultat   | Object  | <- | Objet boxInfo                |
+| Paramètres | Type    |    | Description                               |
+| ---------- | ------- |:--:| ----------------------------------------- |
+| name       | Texte   | -> | Nom de la boîte de réception              |
+| state      | Integer | -> | Statut de l'accès à la boite de réception |
+| Résultat   | Object  | <- | Objet boxInfo                             |
 <!-- END REF -->
 
 
 #### Description
 
-The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. Cette fonction vous permet de récupérer des informations sur la boite de réception.
+La fonction `.selectBox()` <!-- REF #IMAPTransporterClass.selectBox().Summary -->sélectionne la mailbox *name* comme étant la mailbox courante<!-- END REF -->. Cette fonction vous permet de récupérer des informations sur la boite de réception.
 
-> To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
+> Pour lire les informations à partir d'une mailbox sans changer la mailbox courante, utilisez [`.getBoxInfo()`](#getboxinfo).
 
-In the *name* parameter, pass the name of the mailbox to access. Le nom doit représenter une hiérarchie claire, de gauche à droite, avec des niveaux séparés par un caractère délimiteur spécifique. Le délimiteur peut être récupéré à l'aide de la fonction [`.getDelimiter()`](#getdelimiter).
+Dans le paramètre *name* passez le nom de la mailbox à laquelle vous souhaitez accéder. Le nom doit représenter une hiérarchie claire, de gauche à droite, avec des niveaux séparés par un caractère délimiteur spécifique. Le délimiteur peut être récupéré à l'aide de la fonction [`.getDelimiter()`](#getdelimiter).
 
-The optional *state* parameter defines the type of access to the mailbox. The possible values are:
+Le paramètre optionnel *state* définit le type d'accès à la mailbox. Les valeurs possibles sont les suivantes :
 
-| Constante             | Valeur | Commentaire                                                                                                                                                           |
-| --------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IMAP read only state  | 1      | The selected mailbox is accessed with read only privileges. Messages with a "recent" flag (indicating new messages) remain unchanged.                                 |
-| IMAP read write state | 0      | The selected mailbox is accessed with read and write privileges. Messages are considered "seen" and lose the "recent" flag (indicating new messages). (Default value) |
+| Constante             | Valeur | Commentaire                                                                                                                                                                                                      |
+| --------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IMAP read only state  | 1      | La mailbox sélectionnée est accessible avec les privilèges de lecture seule. Les messages contenant un marqueur "recent" (indication de nouveaux messages) restent inchangés.                                    |
+| IMAP read write state | 0      | La mailbox sélectionnée est accessible avec des privilèges de lecture et d'écriture. Les messages sont considérés "seen" et perdent le marqueur "recent" (indication des nouveaux messages). (Valeur par défaut) |
 
 
-> * The function generates an error and returns **Null** if *name* designates a non-existing mailbox.
-> * If there is no open connection, `.selectBox()` will open a connection.
-> * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the [`.checkConnection()`](#checkconnection) function is automatically called.
+> * La fonction génère une erreur et retourne **Null** si *name* désigne une mailbox inexistante.
+> * Si aucune connexion n'est ouverte, `.selectBox()` ouvrira une connexion.
+> * Si la connexion n'a pas été utilisée depuis le délai de connexion (voir `IMAP New transporter`), la fonction [`.checkConnection( )`](#checkconnection) est automatiquement appelée.
 
 **Objet retourné**
 
@@ -1767,7 +1767,7 @@ L'objet `boxInfo` contient les propriété suivantes :
 | ---------- | ------ | ------------------------------------------------------ |
 | name       | Texte  | Nom de la boîte de réception                           |
 | mailCount  | number | Nombre de messages contenus dans la boîte de réception |
-| mailRecent | number | Number of messages with the "recent" flag              |
+| mailRecent | number | Nombre de messages avec le marqueur "recent"           |
 
 
 #### Exemple
@@ -1775,7 +1775,7 @@ L'objet `boxInfo` contient les propriété suivantes :
 ```4d
  var $server; $boxinfo : Object
  $server:=New object
- $server.host:="imap.gmail.com" //Mandatory
+ $server.host:="imap.gmail.com" //Obligatoire
  $server.user:="4d@gmail.com"
  $server.password:="XXXXXXXX"
 
@@ -1801,18 +1801,18 @@ L'objet `boxInfo` contient les propriété suivantes :
 **.subscribe**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.subscribe().Params -->
-| Paramètres | Type   |    | Description                       |
-| ---------- | ------ |:--:| --------------------------------- |
-| name       | Texte  | -> | Nom de la boîte de réception      |
-| Résultat   | Object | <- | Status of the subscribe operation |
+| Paramètres | Type   |    | Description                     |
+| ---------- | ------ |:--:| ------------------------------- |
+| name       | Texte  | -> | Nom de la boîte de réception    |
+| Résultat   | Object | <- | Statut de l'opération subscribe |
 <!-- END REF -->
 
 
 #### Description
 
-The `.subscribe()` function <!-- REF #IMAPTransporterClass.subscribe().Summary -->allows adding or removing of the specified mailbox to/from the IMAP server’s set of “subscribed” mailboxes<!-- END REF -->. As such, you can choose to narrow down a large list of available mailboxes by subscribing to those you usually want to see.
+La fonction `.subscribe()` <!-- REF #IMAPTransporterClass.subscribe().Summary -->permet d'ajouter la mailbox spécifiée à l'ensemble des mailboxes auxquelles vous avez "souscrit" sur le serveur IMAP<!-- END REF -->. Ainsi, vous pouvez contrôler la taille de la liste des boîtes de réception disponibles en souscrivant uniquement à celles que vous souhaitez généralement consulter.
 
-In the `name` parameter, pass the name of the mailbox to add (subscribe) to your "subscribed" mailboxes.
+Dans le paramètre `name`, passez le nom de la mailbox à ajouter (subscribe) à la liste de mailboxes auxquelles vous avez "souscrit".
 
 **Objet retourné**
 
@@ -1830,7 +1830,7 @@ La fonction retourne un objet décrivant le statut IMAP :
 
 #### Exemple
 
-To subscribe to the "Atlas Corp” mailbox in the "Bills" hierarchy:
+Pour souscrire à la mailbox "Atlas Corp” dans la hiérarchie "Bills" :
 
 ```4d
 var $pw; $name : text
@@ -1877,18 +1877,18 @@ End if
 **.unsubscribe**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.unsubscribe().Params -->
-| Paramètres | Type   |    | Description                         |
-| ---------- | ------ |:--:| ----------------------------------- |
-| name       | Texte  | -> | Nom de la boîte de réception        |
-| Résultat   | Object | <- | Status of the unsubscribe operation |
+| Paramètres | Type   |    | Description                       |
+| ---------- | ------ |:--:| --------------------------------- |
+| name       | Texte  | -> | Nom de la boîte de réception      |
+| Résultat   | Object | <- | Statut de l'opération unsubscribe |
 <!-- END REF -->
 
 
 #### Description
 
-The `.unsubscribe()` function <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->removes a mailbox from a set of subscribed mailboxes<!-- END REF -->. This allows you reduce the number of mailboxes you usually see.
+La fonction `.unsubscribe()` <!-- REF #IMAPTransporterClass.unsubscribe().Summary -->supprime la mailbox spécifiée de l'ensemble des mailboxes auxquelles vous avez "souscrit" sur le serveur IMAP<!-- END REF -->. Elle vous permet de réduire le nombre de mailboxes que vous consultez régulièrement.
 
-In the `name` parameter, pass the name of the mailbox to remove (unsubscribe) from your active mailboxes.
+Dans le paramètre `name`, passez le nom de la mailbox à supprimer (unsubscribe) de la liste de mailboxes auxquelles vous avez "souscrit".
 
 **Objet retourné**
 
@@ -1906,7 +1906,7 @@ La fonction retourne un objet décrivant le statut IMAP :
 
 #### Exemple
 
-To unsubscribe from the "Atlas Corp” mailbox in the "Bills" hierarchy:
+Pour ne plus souscrire à la mailbox "Atlas Corp” dans la hiérarchie "Bills" :
 
 ```4d
 var $pw; $name : text
