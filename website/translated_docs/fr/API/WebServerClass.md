@@ -800,7 +800,7 @@ Customized session settings will be reset when the [`.stop()`](#stop) function i
 
 #### Objet retourné
 
-The function returns an object describing the Web server launch status. This object can contain the following properties:
+The function returns an object describing the Web server launch status. Cet objet peut avoir les propriétés suivantes :
 
 | Propriété |                         | Type       | Description                                                               |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
