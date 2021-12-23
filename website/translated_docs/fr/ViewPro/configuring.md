@@ -38,17 +38,17 @@ Lorsque la barre de formule est visible :
 
 #### Features
 
-Both the Ribbon and the Toolbar interfaces group related features into tabs:
+Les interfaces de Ruban et de Barre d'outils regroupent les fonctionnalités qui s'y rattachent dans des onglets :
 
-| Onglet   | Actions                         | Interface Ruban | Interface Barre d'outils |
-| -------- | ------------------------------- |:---------------:|:------------------------:|
-| File     | File manipulation               |        X        |                          |
-| Home     | Text appearance                 |        X        |            X             |
-| Insert   | Add items                       |        X        |            X             |
-| Formulas | Formula calculation and library |        X        |            X             |
-| Données  | Data manipulation               |        X        |            X             |
-| View     | Visual presentation             |        X        |            X             |
-| Settings | Sheet presentation reference    |        X        |                          |
+| Onglet    | Actions                             | Interface Ruban | Interface Barre d'outils |
+| --------- | ----------------------------------- |:---------------:|:------------------------:|
+| Fichier   | Gestion de fichiers                 |        X        |                          |
+| Accueil   | Apparence du texte                  |        X        |            X             |
+| Insérer   | Ajouter des éléments                |        X        |            X             |
+| Formules  | Calculs de formules et bibliothèque |        X        |            X             |
+| Données   | Gestion des données                 |        X        |            X             |
+| Affichage | Présentation visuelle               |        X        |            X             |
+| Settings  | Présentation de la feuille          |        X        |                          |
 
 
 
@@ -128,37 +128,37 @@ Pour verrouiller l'intégralité de la feuille, il suffit de mettre la propriét
 ## Format des cellules
 
 
-Defining a format pattern ensures that the content of your 4D View Pro documents is displayed the way you intended. Formats can be set using the selected 4D View Pro [interface](#selecting-a-user-interface), or using the [VP SET VALUE](method-list.md#vp-set-value) or [VP SET NUM VALUE](method-list.md#vp-set-num-value) methods.
+La définition d'un modèle de format garantit que le contenu de vos documents 4D View Pro s'affiche comme souhaité. Les formats peuvent être définis à l'aide de l'[interface](#selecting-a-user-interface) 4D View Pro sélectionnée, ou à l'aide des méthodes [VP SET VALUE](method-list.md#vp-set-value) ou [VP SET NUM VALUE](method-list.md#vp-set-num-value).
 
-4D View Pro has built-in formats for numbers, dates, times, and text, but you can also create your own patterns to format the contents of cells using special characters and codes.
+4D View Pro dispose de formats intégrés pour les chiffres, les dates, les heures et le texte, mais il vous est possible de créer vos propres modèles pour formater le contenu des cellules à l'aide de caractères et de codes spéciaux.
 
-For example, when using the [VP SET VALUE](method-list.md#vp-set-value) or [VP SET NUM VALUE](method-list.md#vp-set-num-value) methods to enter amounts in an invoice, you may want the currency symbols ($, €, ¥, etc.) to be aligned regardless of the space required by the number (i.e., whether the amount is $5.00 or $5,000.00). You could use formatting characters and spectify the pattern _($* #,##0.00_) which would display amounts as shown:
+Par exemple, lorsque vous utilisez les méthodes [VP SET VALUE](method-list.md#vp-set-value) ou [VP SET NUM VALUE](method-list.md#vp-set-num-value) pour saisir des montants dans une facture, vous souhaiteriez que les symboles monétaires ($, €, ¥, etc.) soient alignés, quel que soit l'espace requis par le nombre (c'est-à-dire que le montant soit de 5,00 $ ou de 5 000,00 $). Vous pourriez utiliser des caractères de formatage et indiquer le motif _($* #,##0.00_) qui afficherait les montants comme indiqué :
 
 ![](assets/en/ViewPro/apx_vpCellFormat1.PNG)
 
-Note that when creating your own format patterns, only the display of the data is modified. The value of the data remains unchanged.
+A noter que lorsque vous créez vos propres modèles, seul l'affichage des données est modifié. La valeur des données reste inchangée.
 
-### Number and text formats
+### Format texte et format numérique
 
-Number formats apply to all number types (e.g., positive, negative, and zeros).
+Les formats numériques s'appliquent à tous les types de chiffres (ex : nombres positifs, négatifs, les zéros).
 
 
 | Caractère | Description                                                                                                                                                                                                                                                                    | Exemple                                                                                                                    |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
-| 0         | Placeholder that displays zeros.                                                                                                                                                                                                                                               | #.00 will display 1.1 as 1.10                                                                                              |
-| .         | Displays a decimal point                                                                                                                                                                                                                                                       | 0.00 will display 1999 as 1999.00                                                                                          |
-| ,         | Displays the thousands separator in a number.<p><p> Thousands are separated by commas if the format contains a comma enclosed by number signs "#" or by zeros. A comma following a digit placeholder scales the number by 1,000. | #,0 will display 12200000 as 12,200,000                                                                                    |
+| 0         | Placeholder that displays zeros.                                                                                                                                                                                                                                               | #.00 affichera 1.10 au lieu de 1.1                                                                                         |
+| .         | Displays a decimal point                                                                                                                                                                                                                                                       | 0.00 affichera 1999.00 au lieu de 1999                                                                                     |
+| ,         | Displays the thousands separator in a number.<p><p> Thousands are separated by commas if the format contains a comma enclosed by number signs "#" or by zeros. A comma following a digit placeholder scales the number by 1,000. | #,0 affichera 12200000 au lieu de 12,200,000                                                                               |
 | \_      | Skips the width of the next character.                                                                                                                                                                                                                                         | Usually used in combination with parentheses to add left and right indents, \_( and _) respectively.                     |
 | @         | Formatter for text. Applies the format to all text in the cell                                                                                                                                                                                                                 | "\[Red]@" applies the red font color for text values.                                                                     |
 | *         | Repeats the next character to fill the column width.                                                                                                                                                                                                                           | 0*- will include enough dashes after a number to fill the cell, whereas *0 before any format will include leading zeros. |
-| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                   | "8%" will display as: 8%                                                                                                   |
-| %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                       | 8% will be displayed as .08                                                                                                |
-| \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                            | #.# will display 1.54 as 1.5                                                                                               |
+| " "       | Displays the text within the quotes without interpreting it.                                                                                                                                                                                                                   | "8%" sera affiché comme suit : 8%                                                                                          |
+| %         | Displays numbers as a percentage of 100.                                                                                                                                                                                                                                       | 8% sera affiché comme suit : .08                                                                                           |
+| \#      | Digit placeholder that does not display extra zeros. If a number has more digits to the right of the decimal than there are placeholders, the number is rounded up.                                                                                                            | #.# affichera 1.5 au lieu de 1.54                                                                                          |
 | ?         | Digit placeholder that leaves space for extra zeros, but does not display them. Typically used to align numbers by decimal point.                                                                                                                                              | $?? displays a maximum of 2 decimals and causes dollar signs to line up for varying amounts.                               |
-| \        | Displays the character following it.                                                                                                                                                                                                                                           | #.00\? will display 123 as 123.00?                                                                                        |
-| /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                                | #/# will display .75 as 3/4                                                                                                |
+| \        | Displays the character following it.                                                                                                                                                                                                                                           | #.00\? affichera 123.00? au lieu de 123                                                                                   |
+| /         | When used with numbers, displays them as fractions. When used with text, date or time codes, displayed "as-is".                                                                                                                                                                | #/# affichera 3/4 au lieu de .75                                                                                           |
 | \[ ]     | Creates conditional formats.                                                                                                                                                                                                                                                   | \[>100]\[GREEN]#,##0;\[<=-100]\[YELLOW]#,##0;\[BLUE]#,##0                                                             |
-| E         | Scientific notation format.                                                                                                                                                                                                                                                    | #E+# - will display 1,500,500 as 2E+6                                                                                      |
+| E         | Scientific notation format.                                                                                                                                                                                                                                                    | #E+# - affichera 2E+6 au lieu de 1,500,500                                                                                 |
 | \[color] | Formats the text or number in the color specified                                                                                                                                                                                                                              | \[Green]###.##\[Red]-###.###                                                                                             |
 
 
@@ -166,13 +166,13 @@ Number formats apply to all number types (e.g., positive, negative, and zeros).
 
 
 ```4d
-//Set the cell value as $125,571.35
+//Définir la valeur de la cellule sur $125,571.35
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_($* #,##0.00_)")
 ```
 
-### Date and time formats
+### Formats date et heure
 
-4D View Pro provides the following constants for ISO 8601 date and time patterns:
+4D View Pro fournit les constantes suivantes pour les modèles de date et heure au format ISO 8601 :
 
 | Constante                                 | Valeur                               | Commentaire                                                                                                                                                                                                                 |
 | ----------------------------------------- | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -191,42 +191,42 @@ VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_
 
 
 ```4d
-//Set the cell value as specific date and time
+//Définir la valeur de la cellule sur une date et une heure spécifique
 VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";?14:30:10?;"format";vk pattern full date time))
 ```
 
-### Custom date and time formats
+### Formats date et heure personnalisés
 
 To create your own date and time patterns, in your current localization, you can use combinations of the following codes:
 
 
-|       | Code<br>(not case-sensitive) | Description                                    | Exemple            |
-| ----- | ---------------------------------- | ---------------------------------------------- | ------------------ |
-| Date  |                                    |                                                | (January 1, 2019)  |
-|       | m                                  | Month number without leading zero              | 1                  |
-|       | mm                                 | Month number with leading zero                 | 01                 |
-|       | mmm                                | Month name, short                              | Jan                |
-|       | mmmm                               | Month name, long                               | January            |
-|       | d                                  | Day number without leading zero                | 1                  |
-|       | dd                                 | Day number with leading zero                   | 01                 |
-|       | ddd                                | Day of week, short                             | Tue                |
-|       | dddd                               | Day of week, long                              | Tuesday            |
-|       | yy                                 | Year, short                                    | 19                 |
-|       | yyyy                               | Year, long                                     | 2019               |
-| Heure |                                    |                                                | (2:03:05 PM)       |
-|       | h                                  | Hour without leading zero. 0-23                | 2                  |
-|       | hh                                 | Hour with leading zero. 00-23                  | 02                 |
-|       | m                                  | Minutes without leading zero. 0-59             | 3                  |
-|       | mm                                 | Minutes with leading zero. 00-59               | 03                 |
-|       | s                                  | Seconds without leading zero. 0-59             | 5                  |
-|       | ss                                 | Seconds with leading zero. 00-59               | 05                 |
-|       | \[h]                              | Elapsed time in hours                          | 14 (can exceed 24) |
-|       | \[mm]                             | Elapsed time in minutes                        | 843                |
-|       | \[ss]                             | Elapsed time in seconds                        | 50585              |
-|       | AM/PM                              | Periods of day. 24 hour fomat used if omitted. | PM                 |
+|       | Code<br>(non sensible à la casse) | Description                                                                         | Exemple                       |
+| ----- | --------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------- |
+| Date  |                                         |                                                                                     | (January 1, 2019)             |
+|       | m                                       | Numéro du mois sans le premier zéro                                                 | 1                             |
+|       | mm                                      | Numéro du mois avec le zéro en préfixe                                              | 01                            |
+|       | mmm                                     | Nom du mois, court                                                                  | Jan                           |
+|       | mmmm                                    | Nom du mois, long                                                                   | January                       |
+|       | d                                       | Numéro du jour sans le zéro en préfixe                                              | 1                             |
+|       | dd                                      | Numéro du jour avec le zéro en préfixe                                              | 01                            |
+|       | ddd                                     | Jour de la semaine, court                                                           | Tue                           |
+|       | dddd                                    | Jour de la semaine, long                                                            | Tuesday                       |
+|       | yy                                      | Année, format court                                                                 | 19                            |
+|       | yyyy                                    | Année, long format                                                                  | 2019                          |
+| Heure |                                         |                                                                                     | (2:03:05 PM)                  |
+|       | h                                       | Heure sans le zéro en préfixe. 0-23                                                 | 2                             |
+|       | hh                                      | Heure avec le zéro en préfixe. 00-23                                                | 02                            |
+|       | m                                       | Minutes sans le zéro en préfixe. 0-59                                               | 3                             |
+|       | mm                                      | Minutes avec le zéro en préfixe. 00-59                                              | 03                            |
+|       | s                                       | Secondes sans le zéro en préfixe. 0-59                                              | 5                             |
+|       | ss                                      | Secondes avec le zéro en préfixe. 00-59                                             | 05                            |
+|       | \[h]                                   | Temps écoulé en heures                                                              | 14 (peut aller au delà de 24) |
+|       | \[mm]                                  | Temps écoulé en minutes                                                             | 843                           |
+|       | \[ss]                                  | Temps écoulé en secondes                                                            | 50585                         |
+|       | AM/PM                                   | Périodes de la journée. S'il est omis, c'est le fomat de 24 heures qui est utilisé. | PM                            |
 > The code 'm' is interpreted depending on its position in the pattern. If it's immediately after 'h' or 'hh' or immediately before 's' or 'ss', it will be interpreted as minutes, otherwise it will be interpreted as months.
 
-### Additional symbols
+### Symboles supplémentaires
 
 In addition to the special characters and codes described in the previous sections, there are additional characters and symbols that can be used in your format patterns. These additional characters and symbols do not require a \ or "" and do not impact the interpretation of the format pattern. They appear "as-is" within the pattern.
 
@@ -253,7 +253,7 @@ In addition to the special characters and codes described in the previous sectio
 
 
 
-## Print Attributes
+## Attributs d'impression
 
 4D View Pro print attributes allow you to control all aspects of printing 4D View Pro areas. These attributes are handled by the following commands:
 
@@ -262,7 +262,7 @@ In addition to the special characters and codes described in the previous sectio
 
 ### Colonnes / Lignes
 
-Column and row attributes are used to specify the beginning, end, and repetition of columns and rows.
+Les attributs de ligne et de colonne sont utilisés pour identifier le début, la fin et la répétition des lignes et colonnes.
 
 | Propriété         | Type        | Description                                                                                                |
 | ----------------- | ----------- | ---------------------------------------------------------------------------------------------------------- |
@@ -296,7 +296,7 @@ Header and footer attributes are used to specify text or images in the left, rig
 
 \* If using text type, pass the filepath (absolute or relative) of the image. If you pass a relative path, the file should be located next to the database structure file. In Windows, the file extension must be indicated. No matter the type used to set an image, the image itself (not a reference) is stored in the 4D View Pro area and is returned by [VP Get print info](method-list.md#vp-get-print-info).
 
-### Special Characters
+### Caractères spéciaux
 
 The following special characters allow the automatic addition or formatting of information in the header and footer when the 4D View Pro area is printed.
 
@@ -495,7 +495,7 @@ Exemple :
 
 
 
-## 4D View Pro Object
+## Objet 4D View Pro
 
 The 4D View Pro [object](Concepts/dt_object.md) stores the whole spreadsheet contents. It is automatically handled by 4D View Pro. You can set or get this object using the [VP IMPORT FROM OBJECT](method-list.md#vp-import-from-object) or [VP Export to object](method-list.md#vp-export-to-object) methods.
 

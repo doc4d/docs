@@ -86,6 +86,9 @@
       "API/SMTPTransporterClass": {
         "title": "SMTPTransporter"
       },
+      "API/SystemWorkerClass": {
+        "title": "SystemWorker"
+      },
       "API/Transporter": {
         "title": "Classe Transporter"
       },
@@ -232,7 +235,7 @@
         "title": "Client/Server Management"
       },
       "Desktop/user-settings": {
-        "title": "User Settings"
+        "title": "Paramètres utilisateur"
       },
       "Events/onActivate": {
         "title": "Sur activation"
@@ -787,6 +790,9 @@
       "REST/info": {
         "title": "$info"
       },
+      "REST/lock": {
+        "title": "$lock"
+      },
       "REST/method": {
         "title": "$method"
       },
@@ -996,7 +1002,7 @@
       "Form Object Properties": "Propriétés des objets formulaire",
       "Form Events": "Evénements formulaire",
       "Menus": "Menus",
-      "User Settings": "User Settings",
+      "User Settings": "Paramètres utilisateur",
       "Build application": "Build application",
       "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
@@ -1041,7 +1047,7 @@
     "Developing Plugins|no description given": "Plugins de développement",
     "Working with a project|no description given": "Working with a project",
     "Settings|no description given": "Settings",
-    "User Settings|no description given": "User Settings",
+    "User Settings|no description given": "Paramètres utilisateur",
     "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html|no description given": "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html",
     "Getting started|no description given": "Prise en main",
     "Core Development|no description given": "Développement",

@@ -1,6 +1,6 @@
 ---
 id: user-settings
-title: User Settings
+title: Paramètres utilisateur
 ---
 
 4D provides two modes of operation for project Settings:
@@ -31,7 +31,7 @@ To enable user settings, you need to check the **Settings** > **Security** > **E
 When you check this option, the settings are separated into three dialog boxes:
 
 * **Structure Settings**
-* **User Settings**
+* **Paramètres utilisateur**
 * **User Settings for Data file**
 
 You can access these dialog boxes using the **Design > Settings...** menu or the **Settings** button in the toolbar:

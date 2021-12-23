@@ -380,10 +380,13 @@ Vous pouvez verrouiller et déverrouiller des entités à la demande lorsque vou
 
 This feature is based upon two methods of the `Entity` class:
 
-*   `entity.lock()`
-*   `entity.unlock()`
+*   [`entity.lock()`](../API/EntityClass.md#lock)
+*   [`entity.unlock()`](../API/EntityClass.md#unlock)
 
 Pour plus d'informations, reportez-vous aux descriptions de ces méthodes.
+
+> Pessimistic locks can also be handled through the [REST API](../REST/$lock.md).
+
 
 
 ### Utilisation simultanée des verrouillages classiques 4D et des verrouillages pessimistes ORDA

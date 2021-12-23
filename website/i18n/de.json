@@ -86,6 +86,9 @@
       "API/SMTPTransporterClass": {
         "title": "SMTPTransporter"
       },
+      "API/SystemWorkerClass": {
+        "title": "SystemWorker"
+      },
       "API/Transporter": {
         "title": "Transporter Class"
       },
@@ -786,6 +789,9 @@
       },
       "REST/info": {
         "title": "$info"
+      },
+      "REST/lock": {
+        "title": "$lock"
       },
       "REST/method": {
         "title": "$method"

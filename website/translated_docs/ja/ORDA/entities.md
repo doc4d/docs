@@ -280,7 +280,7 @@ CALL WORKER("mailing"; "sendMails"; $paid; $unpaid)
 
  var $server; $transporter; $email; $status : Object
 
-  // メールの準備
+  //Prepare emails
  $server:=New object()
  $server.host:="exchange.company.com"
  $server.user:="myName@company.com"
@@ -289,16 +289,17 @@ CALL WORKER("mailing"; "sendMails"; $paid; $unpaid)
  $email:=New object()
  $email.from:="myName@company.com"
 
-  // エンティティセレクションをループします
+  //Loops on entity selections
  For each($invoice;$paid)
-    $email.to:=$invoice.customer.address // 顧客のメールアドレス
-    $email.subject:="請求書 # "+String($invoice.number) + "のお支払いを確認いたしました。"
+    $email.to:=$invoice.customer.address // email address of the customer
+    $email.subject:="Payment OK for invoice # "+String($invoice.number)
+
     $status:=$transporter.send($email)
  End for each
 
  For each($invoice;$unpaid)
-    $email.to:=$invoice.customer.address // 顧客のメールアドレス
-    $email.subject:="請求書 # "+String($invoice.number) + "のお支払いが確認できていません。"
+    $email.to:=$invoice.customer.address // email address of the customer
+    $email.subject:="Please pay invoice # "+String($invoice.number)
     $status:=$transporter.send($email)
  End for each
 ```
@@ -379,12 +380,15 @@ ORDA では、以下の二つのロックモードを提供しています:
 
 エンティティは、データアクセス時に任意にロックおよびアンロックすることができます。 エンティティがプロセスからロックされている場合、そのエンティティはプロセスに読み書き可能モードで読み込まれていますが、他のすべてのプロセスに対してロックされています。 ロックされたエンティティは、他のプロセスからは読み込みモードでのみ読み込むことができます。つまり、その値を編集・保存することはできません。
 
-この機能は `Entity` クラスの 2つのメソッドに基づいています:
+This feature is based upon two functions of the `Entity` class:
 
-*   `entity.lock()`
-*   `entity.unlock()`
+*   [`entity.lock()`](../API/EntityClass.md#lock)
+*   [`entity.unlock()`](../API/EntityClass.md#unlock)
 
-詳細な情報については、これらのメソッドの説明を参照してください。
+For more information, please refer to the descriptions for these functions.
+
+> Pessimistic locks can also be handled through the [REST API](../REST/$lock.md).
+
 
 
 ### 4Dクラシック・ロックとORDAのペシミスティック・ロックの組み合わせ
@@ -401,4 +405,4 @@ ORDA では、以下の二つのロックモードを提供しています:
 **トランザクションロック** はクラシックコマンドと ORDAコマンドの両方に適用されます。 マルチプロセスあるいはマルチユーザーアプリケーションにおいては、トランザクション内でクラシックコマンドを使用してレコードをロックした場合、そのトランザクションが OK あるいはキャンセルされるまで、他のプロセスからそのレコードに相当するエンティティをロックすることはできません (逆もまた然りです)。
 
 *   クラシックコマンドを使用してロックした場合:<br><br>![](assets/en/ORDA/concurrent2.png)
-*   ORDAメソッドを使用してロックした場合:<br><br>![](assets/en/ORDA/concurrent3.png)
+*   Example with a lock set by an ORDA function:<br><br>![](assets/en/ORDA/concurrent3.png)

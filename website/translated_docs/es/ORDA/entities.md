@@ -293,6 +293,7 @@ The `sendMails` method:
  For each($invoice;$paid)
     $email.to:=$invoice.customer.address // email address of the customer
     $email.subject:="Payment OK for invoice # "+String($invoice.number)
+
     $status:=$transporter.send($email)
  End for each
 
@@ -379,12 +380,15 @@ When this situation occurs, you can, for example, reload the entity from the dis
 
 You can lock and unlock entities on demand when accessing data. When an entity is getting locked by a process, it is loaded in read/write in this process but it is locked for all other processes. The entity can only be loaded in read-only mode in these processes; its values cannot be edited or saved.
 
-This feature is based upon two methods of the `Entity` class:
+This feature is based upon two functions of the `Entity` class:
 
-*   `entity.lock()`
-*   `entity.unlock()`
+*   [`entity.lock()`](../API/EntityClass.md#lock)
+*   [`entity.unlock()`](../API/EntityClass.md#unlock)
 
-For more information, please refer to the descriptions for these methods.
+For more information, please refer to the descriptions for these functions.
+
+> Pessimistic locks can also be handled through the [REST API](../REST/$lock.md).
+
 
 
 ### Concurrent use of 4D classic locks and ORDA pessimistic locks
@@ -401,4 +405,4 @@ These principles are shown in the following diagram:
 **Transaction locks** also apply to both classic and ORDA commands. In a multiprocess or a multi-user application, a lock set within a transaction on a record by a classic command will result in preventing any other processes to lock entities related to this record (or conversely), until the transaction is validated or canceled.
 
 *   Example with a lock set by a classic command:<br><br>![](assets/en/ORDA/concurrent2.png)
-*   Example with a lock set by an ORDA method:<br><br>![](assets/en/ORDA/concurrent3.png)
+*   Example with a lock set by an ORDA function:<br><br>![](assets/en/ORDA/concurrent3.png)
