@@ -4,7 +4,7 @@ title: WebServer
 ---
 
 
-The `WebServer` class API allows you to start and monitor a web server for the main (host) application as well as each hosted component (see the [Web Server object](WebServer/webServerObject.md) overview). Cette classe est disponible depuis le "class store" de `4D`.
+La classe `WebServer` vous permet de démarrer et de contrôler un serveur web pour l'application principale (hôte) ainsi que pour chaque composant (voir la présentation de l'[objet Web Server](WebServer/webServerObject.md)). Cette classe est disponible depuis le "class store" de `4D`.
 
 
 
@@ -59,10 +59,10 @@ Leurs propriétés et fonctions sont les suivantes :
 ## WEB Server
 
 <details><summary>Historique</summary>
-| Version | Modifications                      |
-| ------- | ---------------------------------- |
-| v18 R3  | Ajout                              |
-| v19     | support for .sessionCookieSameSite |
+| Version | Modifications                             |
+| ------- | ----------------------------------------- |
+| v18 R3  | Ajout                                     |
+| v19     | prise en charge de .sessionCookieSameSite |
 
 </details>
 
@@ -72,21 +72,21 @@ Leurs propriétés et fonctions sont les suivantes :
 
 <!-- REF #_command_.WEB Server.Params -->
 
-| Paramètres | Type         |    | Description                                                    |
-| ---------- | ------------ | -- | -------------------------------------------------------------- |
-| option     | Integer      | -> | Web server to get (default if omitted = `Web server database`) |
-| Résultat   | 4D.WebServer | <- | Objet Serveur Web                                              |
+| Paramètres | Type         |    | Description                                                       |
+| ---------- | ------------ | -- | ----------------------------------------------------------------- |
+| option     | Integer      | -> | Serveur Web à référencer (défaut si omis = `Web server database`) |
+| Résultat   | 4D.WebServer | <- | Objet Serveur Web                                                 |
 
 <!-- END REF -->
 
-The `WEB Server` command <!-- REF #_command_.WEB Server.Summary -->returns the default Web server object, or the Web server object defined through the *option* parameter<!-- END REF -->.
+La commande `WEB Server` <!-- REF #_command_.WEB Server.Summary -->retourne l'objet Web server par défaut ou l'objet Web server désigné par le paramètre *option*<!-- END REF -->.
 
-The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
+Par défaut, si le paramètre *option* est omis, la commande retourne une référence sur le serveur Web de la base de données, i.e. le serveur Web par défaut. Pour désigner le serveur Web à retourner, vous pouvez passer une des constantes suivantes dans le paramètre *option* :
 
 | Constante                      | Valeur | Commentaire                                              |
 | ------------------------------ | ------ | -------------------------------------------------------- |
 | `Web server database`          | 1      | Le serveur Web de la base courante (par défaut si omis)  |
-| `Web server host database`     | 2      | Web server of the host database of a component           |
+| `Web server host database`     | 2      | Le serveur Web de la base hôte du composant              |
 | `Web server receiving request` | 3      | Le serveur Web ayant reçu la requête (serveur Web cible) |
 
 The returned Web server object contains the current values of the Web server properties.
