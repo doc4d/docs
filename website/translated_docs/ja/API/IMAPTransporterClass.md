@@ -652,10 +652,12 @@ End if
 **.deleteBox**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| 引数   | タイプ    |    | 説明                |
-| ---- | ------ |:--:| ----------------- |
-| name | Text   | -> | 削除するメールボックスの名称    |
-| 戻り値  | Object | <- | deleteBox処理のステータス |
+| 引数   | タイプ  |    | 説明             |
+| ---- | ---- |:--:| -------------- |
+| name | Text | -> | 削除するメールボックスの名称 |
+
+
+|Result|Object|<-|Status of the mailbox deletion operation|
 <!-- END REF -->
 
 
@@ -738,7 +740,7 @@ End if
 <!-- REF IMAPTransporterClass.expunge().Params -->
 | 引数  | タイプ    |    | 説明              |
 | --- | ------ |:--:| --------------- |
-| 戻り値 | Object | <- | expunge処理のステータス |
+| 戻り値 | オブジェクト | <- | expunge処理のステータス |
 <!-- END REF -->
 
 #### 説明
@@ -795,8 +797,8 @@ $status:=$transporter.expunge()
 | バージョン  | 内容           |
 | ------ | ------------ |
 | v18 R5 | *name* は任意です |
-| v18 R4 | 追加           |
-</details>
+
+|v18 R4|Added| </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
@@ -804,8 +806,8 @@ $status:=$transporter.expunge()
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
 | 引数   | タイプ    |    | 説明             |
 | ---- | ------ |:--:| -------------- |
-| name | Text   | -> | メールボックスの名称     |
-| 戻り値  | Object | <- | boxInfo オブジェクト |
+| name | テキスト   | -> | メールボックスの名称     |
+| 戻り値  | オブジェクト | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
@@ -1117,7 +1119,7 @@ ID = 1のメッセージを取得します:
 | ----- | ---------- | ------------------------------------------------------------------------------------------------ |
 | list  | Collection | [`Email`](EmailObjectClass.md#email-オブジェクト) オブジェクトのコレクション。 Email オブジェクトが見つからない場合、空のコレクションが返されます。 |
 
-|notFound |Collection| 次の要素のコレクション:<br><ul><li>第一シンタックス - 指定した ID のうち、存在しなかったメッセージの ID</li><li>第二シンタックス - startMsg と endMsg の間の番号のうち、存在しなかったメッセージの番号</li></ul>すべてのメッセージが見つかった場合には、空のコレクションが返されます。|
+|notFound |Collection| Collection of:<br><ul><li>第一シンタックス - 指定した ID のうち、存在しなかったメッセージの ID</li><li>第二シンタックス - startMsg と endMsg の間の番号のうち、存在しなかったメッセージの番号</li></ul>An empty collection is returned if all messages are found.|
 
 
 #### 例題
@@ -1675,41 +1677,41 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 #### 利用可能な検索キー
 
-**ALL**: メールボックスの全メッセージ  
-**ANSWERED**: \Answered フラグが設定されたメッセージ  
-**UNANSWERED**: \Answered フラグが設定されていないメッセージ  
-**DELETED**: \Deleted フラグが設定されたメッセージ  
-**UNDELETED**: \Deleted フラグが設定されていないメッセージ  
-**DRAFT**: \Draft フラグが設定されているメッセージ  
-**UNDRAFT**: \Draft フラグが設定されていないメッセージ  
-**FLAGGED**: \Flagged フラグが設定されているメッセージ  
-**UNFLAGGED**: \Flagged フラグが設定されていないメッセージ  
-**RECENT**: \Recent フラグが設定されているメッセージ  
-**OLD**: \Recent フラグが設定されていないメッセージ  
-**SEEN**: \Seen フラグが設定されているメッセージ  
-**UNSEEN**: \Seen フラグが設定されていないメッセージ  
-**NEW**: \Recent フラグが設定されているが \Seen フラグが設定されていないメッセージ。 これは機能的には “(RECENT UNSEEN)” と同じです。  
-**KEYWORD** <flag>: 指定されたキーワードが設定されているメッセージ  
-**UNKEYWORD** <flag>: 指定されたキーワードが設定されていないメッセージ  
-**BEFORE** <date>: 内部の日付が指定日より前のメッセージ  
-**ON** <date>: 内部の日付が指定日に合致するメッセージ  
-**SINCE** <date>: 内部の日付が指定日より後のメッセージ  
-**SENTBEFORE** <date>: 日付ヘッダーが指定日より前のメッセージ  
-**SENTON** <date>: 日付ヘッダーが指定日に合致するメッセージ  
-**SENTSINCE** <date>: 日付ヘッダーが指定日以降のメッセージ  
-**TO** <string>: TO ヘッダーに指定文字列が含まれているメッセージ  
-**FROM** <string>: FROM ヘッダーに指定文字列が含まれているメッセージ  
-**CC** <string>: CC ヘッダーに指定文字列が含まれているメッセージ  
-**BCC** <string>: BCC ヘッダーに指定文字列が含まれているメッセージ  
-**SUBJECT** <string>: 件名ヘッダーに指定文字列が含まれているメッセージ  
-**BODY** <string>: メッセージ本文に指定文字列が含まれているメッセージ  
-**TEXT** <string>: ヘッダーまたはメッセージ本文に指定文字列が含まれているメッセージ  
-**HEADER** <field-name> <string>: 指定フィールド名のヘッダーを持ち、そのフィールド内に指定文字列が含まれているメッセージ  
-**UID** <message UID>: 指定された固有識別子に対応する固有識別子を持つメッセージ  
-**LARGER** <n>: 指定バイト数以上のサイズを持つメッセージ  
-**SMALLER** <n>: 指定バイト数以下のサイズを持つメッセージ  
-**NOT** <search-key>: 指定検索キーに合致しないメッセージ  
-**OR** <search-key1> <search-key2>: いずれかの検索キーに合致するメッセージ  
+**ALL**: All messages in the mailbox.  
+**ANSWERED**: Messages with the \Answered flag set.  
+**UNANSWERED**: Messages that do not have the \Answered flag set.  
+**DELETED**: Messages with the \Deleted flag set.  
+**UNDELETED**: Messages that do not have the \Deleted flag set.  
+**DRAFT**: Messages with the \Draft flag set.  
+**UNDRAFT**: Messages that do not have the \Draft flag set.  
+**FLAGGED**: Messages with the \Flagged flag set.  
+**UNFLAGGED**: Messages that do not have the \Flagged flag set.  
+**RECENT**: Messages that have the \Recent flag set.  
+**OLD**: Messages that do not have the \Recent flag set.  
+**SEEN**: Messages that have the \Seen flag set.  
+**UNSEEN**: Messages that do not have the \Seen flag set.  
+**NEW**: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to "(RECENT UNSEEN)".  
+***KEYWORD ***flag******: Messages with the specified keyword set.  
+***UNKEYWORD ***flag******: Messages that do not have the specified keyword set.  
+***BEFORE ***date******: Messages whose internal date is earlier than the specified date.  
+***ON ***date******: Messages whose internal date is within the specified date.  
+***SINCE ***date******: Messages whose internal date is within or later than the specified date.  
+***SENTBEFORE ***date******: Messages whose Date header is earlier than the specified date.  
+***SENTON ***date******: Messages whose Date header is within the specified date.  
+***SENTSINCE ***date******: Messages whose Date header is within or later than the specified date.  
+***TO ***string******: Messages that contain the specified string in the TO header.  
+***FROM ***string******: Messages that contain the specified string in the FROM header.  
+***CC ***string******: Messages that contain the specified string in the CC header.  
+***BCC ***string******: Messages that contain the specified string in the BCC header.  
+***SUBJECT ***string******: Messages that contain the specified string in the Subject header.  
+***BODY ***string******: Messages that contain the specified string in the message body.  
+***TEXT ***string******: Messages that contain the specified string in the header or in the message body.  
+***HEADER *field-name* ***string******: Messages that have a header with the specified field-name and that contain the specified string in the field-body.  
+***UID ***message-UID******: Messages with unique identifiers corresponding to the specified unique identifier set.  
+***LARGER ***n******: Messages with a size larger than the specified number of bytes.  
+***SMALLER ***n******: Messages with a size smaller than the specified number of bytes.  
+***NOT ***search-key******: Messages that do not match the specified search key.  
+***OR *search-key1* ***search-key2******: Messages that match either search key.  
 
 
 <!-- END REF -->
