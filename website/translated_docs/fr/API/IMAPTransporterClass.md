@@ -651,10 +651,12 @@ Pour supprimer tous les messages de la boîte de réception courante :
 **.deleteBox**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| Paramètres | Type   |    | Description                                   |
-| ---------- | ------ |:--:| --------------------------------------------- |
-| name       | Texte  | -> | Nom de la boîte de réception à supprimer      |
-| Résultat   | Object | <- | Statut de l'opération de suppression de boîte |
+| Paramètres | Type  |    | Description                              |
+| ---------- | ----- |:--:| ---------------------------------------- |
+| name       | Texte | -> | Nom de la boîte de réception à supprimer |
+
+
+|Result|Object|<-|Statut de l'opération de suppression|
 <!-- END REF -->
 
 
@@ -798,8 +800,8 @@ $status:=$transporter.expunge()
 | Version | Modifications        |
 | ------- | -------------------- |
 | v18 R5  | *name* est optionnel |
-| v18 R4  | Ajout                |
-</details>
+
+|v18 R4|Added| </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
@@ -1122,7 +1124,7 @@ Le paramètre optionnel *options* vous permet de définir les parties de message
 | liste     | Collection | Collection d'objets [`Email`](EmailObjectClass.md#email-object). Si aucun objet Email n'est trouvé, une collection vide est retournée. |
 
 
-|notFound |Collection| Collection de :<br><ul><li>première syntaxe - IDs de messages passés antérieurement qui n'existent pas</li><li>deuxième syntaxe - numéros de séquence des messages entre startMsg et endMsg qui n'existent pas</li></ul>Une collection vide est retournée si tous les messages sont trouvés.|
+|notFound |Collection| Collection of:<br><ul><li>première syntaxe - IDs de messages passés antérieurement qui n'existent pas</li><li>deuxième syntaxe - numéros de séquence des messages entre startMsg et endMsg qui n'existent pas</li></ul>An empty collection is returned if all messages are found.|
 
 #### Exemple
 
@@ -1690,27 +1692,27 @@ Les mots-clés de recherche peuvent traiter des valeurs des types suivants :
 **SEEN**: Messages comportant le marqueur \Seen.  
 **UNSEEN**: Messages ne comportant pas le marqueur \Seen.  
 **NEW**: Messages comportant le marqueur \Recent et pas le marqueur \Seen. Equivaut à “(RECENT UNSEEN)”.  
-**KEYWORD marqueur** <flag>: Messages comportant le marqueur spécifié.  
-**UNKEYWORD marqueur** <flag>: Messages ne comportant pas le marqueur spécifié.  
-**BEFORE date** <date>: Messages dont la date interne est antérieure à la date spécifiée.  
-**ON date** <date>: Messages dont la date interne est égale à la date spécifiée.  
-**SINCE date** <date>: Messages dont la date interne est égale ou postérieure à la date spécifiée.  
-**SENTBEFORE date** <date>: Messages dont l’en-tête Date est antérieur à la date spécifiée.  
-**SENTON date** <date>: Messages dont l’en-tête Date est égal à la date spécifiée.  
-**SENTSINCE** <date>: Messages whose Date header is within or later than the specified date.  
-**TO** <string>: Messages that contain the specified string in the TO header.  
-**FROM** <string>: Messages that contain the specified string in the FROM header.  
-**CC** <string>: Messages that contain the specified string in the CC header.  
-**BCC** <string>: Messages that contain the specified string in the BCC header.  
-**SUBJECT** <string>: Messages that contain the specified string in the Subject header.  
-**BODY** <string>: Messages that contain the specified string in the message body.  
-**TEXT** <string>: Messages that contain the specified string in the header or in the message body.  
-**HEADER** <field-name> <string>: Messages that have a header with the specified field-name and that contain the specified string in the field-body.  
-**UID** <message UID>: Messages with unique identifiers corresponding to the specified unique identifier set.  
-**LARGER** <n>: Messages with a size larger than the specified number of bytes.  
-**SMALLER** <n>: Messages with a size smaller than the specified number of bytes.  
-**NOT** <search-key>: Messages that do not match the specified search key.  
-**OU** <search-key1> <search-key2>: Messages that match either search key.  
+***KEYWORD ***flag******: Messages comportant le marqueur spécifié.  
+***UNKEYWORD ***flag******: Messages ne comportant pas le marqueur spécifié.  
+***BEFORE ***date******: Messages dont la date interne est antérieure à la date spécifiée.  
+***ON ***date******: Messages dont la date interne est égale à la date spécifiée.  
+***SINCE ***date******: Messages dont la date interne est égale ou postérieure à la date spécifiée.  
+***SENTBEFORE ***date******: Messages dont l’en-tête Date est antérieur à la date spécifiée.  
+***SENTON ***date******: Messages dont l’en-tête Date est égal à la date spécifiée.  
+***SENTSINCE ***date******: Messages dont l’en-tête Date est égal ou postérieur à la date spécifiée.  
+***TO ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Destinataire.  
+***FROM ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Emetteur.  
+***CC ***string******: Messages contenant la chaîne spécifiée dans l’en-tête CC.  
+***BCC ***string******: Messages contenant la chaîne spécifiée dans l’en-tête BCC.  
+***SUBJECT ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Objet.  
+***BODY ***string******: Messages dont le corps contient la chaîne spécifiée.  
+***TEXT ***string******: Messages contenant la chaîne spécifiée dans l’en-tête ou le corps.  
+***HEADER *field-name* ***string******: Messages dont l’en-tête contient le champ défini et dont ce champ contient la chaîne définie.  
+***UID ***message-UID******: Messages dont le numéro unique correspond à la valeur spécifiée.  
+***LARGER ***n******: Messages dont la taille en octets est supérieure à la taille spécifiée.  
+***SMALLER ***n******: Messages dont la taille en octets est inférieure à la taille spécifiée.  
+***NOT ***search-key******: Messages ne correspondant pas au critère spécifié.  
+***OR *search-key1* ***search-key2******: Messages correspondant au premier ou au deuxième critère spécifié.  
 
 
 <!-- END REF -->
