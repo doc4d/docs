@@ -662,6 +662,7 @@ To delete all messages in the current mailbox:
 |---------|--- |:---:|------|
 |name|Text|->|Name of the mailbox to delete|
 
+
 |Result|Object|<-|Status of the mailbox deletion operation|
 <!-- END REF -->
 
@@ -1714,7 +1715,7 @@ Examples:
 **OLD**: Messages that do not have the \Recent flag set.  
 **SEEN**: Messages that have the \Seen flag set.  
 **UNSEEN**: Messages that do not have the \Seen flag set.  
-**NEW**: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to “(RECENT UNSEEN)”.  
+**NEW**: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to "(RECENT UNSEEN)".  
 **KEYWORD *flag***: Messages with the specified keyword set.  
 **UNKEYWORD *flag***: Messages that do not have the specified keyword set.  
 **BEFORE *date***: Messages whose internal date is earlier than the specified date.  
