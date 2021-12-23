@@ -655,7 +655,7 @@ Pour supprimer tous les messages de la boîte de réception courante :
 | ---------- | ----- |:--:| ---------------------------------------- |
 | name       | Texte | -> | Nom de la boîte de réception à supprimer |
 
-|Result|Object|<-|Status of the mailbox deletion operation|
+|Result|Object|<-|Statut de l'opération de suppression|
 <!-- END REF -->
 
 
