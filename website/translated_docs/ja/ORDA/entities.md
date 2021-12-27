@@ -380,12 +380,12 @@ ORDA では、以下の二つのロックモードを提供しています:
 
 エンティティは、データアクセス時に任意にロックおよびアンロックすることができます。 エンティティがプロセスからロックされている場合、そのエンティティはプロセスに読み書き可能モードで読み込まれていますが、他のすべてのプロセスに対してロックされています。 ロックされたエンティティは、他のプロセスからは読み込みモードでのみ読み込むことができます。つまり、その値を編集・保存することはできません。
 
-This feature is based upon two functions of the `Entity` class:
+この機能は `Entity` クラスの 2つの関数に基づいています:
 
 *   [`entity.lock()`](../API/EntityClass.md#lock)
 *   [`entity.unlock()`](../API/EntityClass.md#unlock)
 
-For more information, please refer to the descriptions for these functions.
+詳細な情報については、これらの関数の説明を参照してください。
 
 > Pessimistic locks can also be handled through the [REST API](../REST/$lock.md).
 
@@ -405,4 +405,4 @@ For more information, please refer to the descriptions for these functions.
 **トランザクションロック** はクラシックコマンドと ORDAコマンドの両方に適用されます。 マルチプロセスあるいはマルチユーザーアプリケーションにおいては、トランザクション内でクラシックコマンドを使用してレコードをロックした場合、そのトランザクションが OK あるいはキャンセルされるまで、他のプロセスからそのレコードに相当するエンティティをロックすることはできません (逆もまた然りです)。
 
 *   クラシックコマンドを使用してロックした場合:<br><br>![](assets/en/ORDA/concurrent2.png)
-*   Example with a lock set by an ORDA function:<br><br>![](assets/en/ORDA/concurrent3.png)
+*   ORDA関数を使用してロックした場合:<br><br>![](assets/en/ORDA/concurrent3.png)
