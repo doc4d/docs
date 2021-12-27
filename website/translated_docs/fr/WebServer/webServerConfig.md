@@ -568,7 +568,7 @@ Nom du cookie utilisé pour stocker l'ID de session. Par défaut = "4DSID".
 | objet webServer         | [`sessionCookiePath`](API/WebServerClass.md#sessioncookiepath) |              |
 | `WEB SET OPTION`        | `Web session cookie path`                                      |              |
 
-Valeur du champ "domaine" du cookie de session. Utilisé pour contrôler la portée des cookies de session. Utile pour contrôler le scope des cookies de session Par exemple, si vous définissez la valeur "/*.4d.fr" pour ce sélecteur, le client enverra un cookie uniquement lorsque la requête est adressée au domaine ".4d.fr", ce qui exclut les serveurs hébergeant des données statiques externes.
+Valeur du champ "domaine" du cookie de session. Utilisé pour contrôler la portée des cookies de session. Par exemple, si vous définissez la valeur "/4DACTION" pour ce sélecteur, le client enverra un cookie uniquement pour les requêtes dynamiques commençant par 4DACTION, et non pour les images, les pages statiques, etc.
 
 ## Session Cookie SameSite
 
