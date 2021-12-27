@@ -1124,7 +1124,7 @@ Le paramètre optionnel *options* vous permet de définir les parties de message
 | liste     | Collection | Collection d'objets [`Email`](EmailObjectClass.md#email-object). Si aucun objet Email n'est trouvé, une collection vide est retournée. |
 
 
-|notFound |Collection| Collection of:<br><ul><li>première syntaxe - IDs de messages passés antérieurement qui n'existent pas</li><li>deuxième syntaxe - numéros de séquence des messages entre startMsg et endMsg qui n'existent pas</li></ul>An empty collection is returned if all messages are found.|
+|notFound |Collection| Collection de :<br><ul><li>première syntaxe - IDs de messages passés antérieurement qui n'existent pas</li><li>deuxième syntaxe - numéros de séquence des messages entre startMsg et endMsg qui n'existent pas</li></ul>Une collection vide est retournée si tous les messages sont trouvés.|
 
 #### Exemple
 
