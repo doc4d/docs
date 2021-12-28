@@ -27,7 +27,7 @@ title: 設定
 
 Webページキャッシュの有効化と設定をおこないます。
 
-4D Webサーバーにはキャッシュがあり、スタティックページ、GIF、JPEG (<512 kb)、そしてスタイルシート (.css ファイル) などがリクエストされると、メモリにロードされます。 キャッシュの利用は、スタティックページの送信時に Webサーバーのパフォーマンスを大幅に向上します。 キャッシュはすべての Webプロセスで共有されます。 When the cache is enabled, the 4D Web server looks for any static page requested by the browser in the cache first. If it finds the page, it sends it immediately. If not, 4D loads the page from disk and places it in the cache.
+4D Webサーバーにはキャッシュがあり、スタティックページ、GIF、JPEG (<512 kb)、そしてスタイルシート (.css ファイル) などがリクエストされると、メモリにロードされます。 キャッシュの利用は、スタティックページの送信時に Webサーバーのパフォーマンスを大幅に向上します。 キャッシュはすべての Webプロセスで共有されます。 キャッシュが有効化されている場合、4D Webサーバーは、ブラウザーからリクエストされた静的ページをまずキャッシュ内で探します。 ページが見つかれば、それを送信します。 見つからない場合、4D はディスクからページを読み込み、キャッシュに格納します。
 
 キャッシュのサイズは、**ページキャッシュサイズ** エリアで変更できます。 設定する値は、スタティックページのサイズや数、およびホストマシンで利用可能なリソースによります。
 > Webデータベースを利用する間、`WEB GET STATISTICS` コマンドを使用してキャッシュのパフォーマンスを検証できます。 たとえば、キャッシュ利用率が 100% に近い場合、キャッシュに割り当てたメモリ量を増やすことを考慮します。 [/4DSTATS] と [/4DHTMLSTATS] の URL も、キャッシュの状態を知るのに使用できます。
@@ -388,7 +388,7 @@ TLS を介した HTTPS接続を受け付ける IPポート番号。 デフォル
 | 3 | ELF形式で記録する | Extended Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                 |
 | 4 | WLF形式で記録する | WebStar Log Format - 設定ダイアログボックスにてカスタマイズします。                                                                                                                  |
 
-> Formats 3 and 4 are custom formats whose contents must be set beforehand in the [Settings dialog box](../settings/web.md#log-format). このページでフィールドを選択せずにこれらのフォーマットを使用した場合、ログファイルは生成されません。
+> フォーマット3、4はカスタムフォーマットで、あらかじめ [設定ダイアログボックス](../settings/web.md#ログフォーマット) にて内容を指定しておく必要があります。 このページでフィールドを選択せずにこれらのフォーマットを使用した場合、ログファイルは生成されません。
 
 
 ## 最大同時Webプロセス
