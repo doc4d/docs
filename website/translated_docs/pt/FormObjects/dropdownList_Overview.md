@@ -72,7 +72,7 @@ Form.myDrop.index //3
 
 ### Usar um array
 
-An [array](Concepts/arrays.md) is a list of values in memory that is referenced by the name of the array. A drop-down list can display an array as a list of values when you click on it.
+Um [array](Concepts/arrays.md) é uma lista de valores na memória que são referenciados pelo nome do array. A drop-down list can display an array as a list of values when you click on it.
 
 To initialize the array associated to the drop-down list, you can:
 
