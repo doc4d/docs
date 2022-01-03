@@ -64,7 +64,9 @@ You can pass an object with additional properties for the named formula in *opti
 VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 ```
 
+#### See also 
 
+[Cell references](formulas.md#cell-references)<br/>[VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP Get formula by name](#vp-get-formula-by-name)<br/>[VP Get names](#vp-get-names)
 
 ###  VP ADD RANGE NAME
 
@@ -110,6 +112,10 @@ $range:=VP Cell("ViewProArea";2;10)
 VP ADD RANGE NAME($range;"Total1")
 ```
 
+#### See also 
+
+[VP ADD FORMULA NAME](#vp-add-formula-name)<br/>[VP Get formula by name](#vp-get-formula-by-name)<br/>[VP Get names](#vp-get-names)<br/>[VP Name](#vp-name)
+
 
 
 ### VP ADD SELECTION
@@ -147,6 +153,10 @@ VP ADD SELECTION($currentSelection)
 Result:
 
 ![](assets/en/ViewPro/cmd_vpAddSelection2.PNG)
+
+#### See also 
+
+[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
 ### VP ADD SHEET 
 
@@ -187,6 +197,10 @@ VP ADD SHEET("ViewProArea";2;"March")
 ```
 
 ![vp-add-sheet](assets/en/ViewPro/vp-add-sheet.png)
+
+#### See also 
+
+[VP REMOVE SHEET](#vp-remove-sheet)
 
 ### VP ADD SPAN
 
@@ -229,6 +243,10 @@ To span the First quarter and Second quarter cells across the two cells beside t
 ```
 
 ![vp-add-span-result](assets/en/ViewPro/vp-add-span-2.png)
+
+#### See also
+
+[4D View Pro Range Object Properties](getting-started.md#using-range-objects)<br/>[VP Get spans](#vp-get-spans)<br/>[VP REMOVE SPAN](#vp-remove-span)
 
 
 ### VP ADD STYLESHEET
@@ -303,6 +321,9 @@ will create and apply the following style object named *GreenDashDotStyle*:
 }
 ```
 
+#### See also
+
+[4D View Pro Style Objects and Style Sheets](configuring.md#style-objects--style-sheets)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP Get stylesheets](#vp-get-stylesheets)<br/>[VP REMOVE STYLESHEET](#vp-remove-stylesheet)<br/>[VP SET CELL STYLE](#vp-set-cell-style)<br/>[VP SET DEFAULT STYLE](#vp-set-default-style)
 
 
 ### VP All
@@ -335,9 +356,6 @@ You want to define a range object for all of the cells of the current spreadshee
 ```4d
 $all:=VP All("ViewProArea") // all cells of the current sheet
 ```
-
-
-
 
 ## C
 
