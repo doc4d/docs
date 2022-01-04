@@ -175,7 +175,7 @@ La propriété **.accessKeyDefined** contient <!-- REF #WebServerClass.accessKey
 **.certificateFolder** : Text<!-- END REF -->
 
 
-Chemin du <!-- REF #WebServerClass.certificateFolder.Summary -->dossier contenant les fichiers des certificats<!-- END REF -->. Format POSIX du chemin d'accès complet à l'aide de filesystem. Lorsque cette propriété est utilisée dans le paramètre `settings` de la fonction [`.start()`](#start), il peut s'agir d'un objet [`Folder`](FolderClass.md).
+Chemin du <!-- REF #WebServerClass.certificateFolder.Summary -->dossier contenant les fichiers des certificats<!-- END REF -->. Chemin d'accès complet au format POSIX utilisant des filesystems. Lorsque cette propriété est utilisée dans le paramètre `settings` de la fonction [`.start()`](#start), il peut s'agir d'un objet [`Folder`](FolderClass.md).
 
 <!-- END REF -->
 
@@ -571,7 +571,7 @@ Valeurs possibles : 500000 - 2147483647
 <!-- REF #WebServerClass.maxSessions.Syntax -->
 **.maxSessions** : Number<!-- END REF -->
 
-> Cette propriété n'est pas retournée [en mode sessions évolutives](#scalablesession). <!-- REF #WebServerClass.maxSessions.Summary -->Nombre maximum de sessions legacy simultanées<!-- END REF -->. Lorsque vous atteignez la limite, la session la plus ancienne est fermée (et la méthode base `On Web Legacy Close Session` est appelée) si le serveur Web doit en créer une nouvelle. The number of simultaneous legacy sessions cannot exceed the total number of web processes (`maxConcurrentProcesses` property, 100 by default)
+> Cette propriété n'est pas retournée [en mode sessions évolutives](#scalablesession). <!-- REF #WebServerClass.maxSessions.Summary -->Nombre maximum de sessions legacy simultanées<!-- END REF -->. Lorsque vous atteignez la limite, la session la plus ancienne est fermée (et la méthode base `On Web Legacy Close Session` est appelée) si le serveur Web doit en créer une nouvelle. Le nombre de sessions legacy simultanées ne peut pas dépasser le nombre total de processus Web (propriété `maxConcurrentProcesses`, 100 par défaut)
 
 <!-- END REF -->
 
@@ -584,7 +584,7 @@ Valeurs possibles : 500000 - 2147483647
 **.minTLSVersion** : Number<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.minTLSVersion.Summary -->minimum TLS version accepted for connections<!-- END REF -->. Les tentatives de connexion de clients prenant en charge uniquement les versions inférieures au minimum seront rejetées.
+ <!-- REF #WebServerClass.minTLSVersion.Summary -->Version minimum de TLS acceptée pour les connexions<!-- END REF -->. Les tentatives de connexion de clients prenant en charge uniquement les versions inférieures au minimum seront rejetées.
 
 Valeurs possibles :
 
@@ -607,9 +607,7 @@ En cas de modification, le serveur doit être redémarré pour utiliser la nouve
 **.name** : Text<!-- END REF -->
 
 
-*Propriété en lecture seulement.*
-
-The <!-- REF #WebServerClass.name.Summary -->name of the web server application<!-- END REF -->.
+*Propriété en lecture seulement.* <!-- REF #WebServerClass.name.Summary -->Nom de l'application du serveur Web<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -623,9 +621,7 @@ The <!-- REF #WebServerClass.name.Summary -->name of the web server application<
 **.openSSLVersion** : Text<!-- END REF -->
 
 
-*Propriété en lecture seulement.*
-
-The <!-- REF #WebServerClass.openSSLVersion.Summary -->version of the OpenSSL library used<!-- END REF -->.
+*Propriété en lecture seulement.* <!-- REF #WebServerClass.openSSLVersion.Summary -->Version de la librairie OpenSSL utilisée<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -639,9 +635,7 @@ The <!-- REF #WebServerClass.openSSLVersion.Summary -->version of the OpenSSL li
 **.perfectForwardSecrecy** : Boolean<!-- END REF -->
 
 
-*Propriété en lecture seulement.*
-
-The <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->PFS availability on the server<!-- END REF -->.
+*Propriété en lecture seulement.* <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->Disponibilité du PFS sur le serveur<!-- END REF -->.
 
 <!-- END REF -->
 
@@ -654,7 +648,7 @@ The <!-- REF #WebServerClass.perfectForwardSecrecy.Summary -->PFS availability o
 **.rootFolder** : Text<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.rootFolder.Summary -->path of web server root folder<!-- END REF -->. Format POSIX du chemin d'accès complet à l'aide de filesystem. Peut être passé comme objet `Folder` dans le paramètre `settings`.
+ <!-- REF #WebServerClass.rootFolder.Summary -->Chemin du dossier racine du serveur Web<!-- END REF -->. Chemin d'accès complet au format POSIX utilisant des filesystems. Peut être passé comme objet `Folder` dans le paramètre `settings`.
 
 <!-- END REF -->
 
@@ -666,7 +660,7 @@ The <!-- REF #WebServerClass.rootFolder.Summary -->path of web server root folde
 **.scalableSession** : Boolean<!-- END REF -->
 
 
-<!-- REF #WebServerClass.scalableSession.Summary -->True if scalable sessions are used in the web server, and False otherwise<!-- END REF -->.
+<!-- REF #WebServerClass.scalableSession.Summary -->Vrai si les sessions évolutives (scalable sessions) sont activées dans le serveur Web, sinon Faux<!-- END REF -->.
 
 ##### Voir aussi:
 [.keepSession](#keepsession)
@@ -681,7 +675,7 @@ The <!-- REF #WebServerClass.rootFolder.Summary -->path of web server root folde
 **.sessionCookieDomain** : Text<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.sessionCookieDomain.Summary -->"domain" field of the session cookie<!-- END REF -->. Utilisé pour contrôler la portée des cookies de session. Par exemple, si vous définissez la valeur "/4DACTION" pour ce sélecteur, le client enverra un cookie uniquement pour les requêtes dynamiques commençant par 4DACTION, et non pour les images, les pages statiques, etc.
+ <!-- REF #WebServerClass.sessionCookieDomain.Summary -->Champ "domain" du cookie de session<!-- END REF -->. Utilisé pour contrôler la portée des cookies de session. Par exemple, si vous définissez la valeur "/4DACTION" pour ce sélecteur, le client enverra un cookie uniquement pour les requêtes dynamiques commençant par 4DACTION, et non pour les images, les pages statiques, etc.
 
 <!-- END REF -->
 
@@ -695,7 +689,7 @@ The <!-- REF #WebServerClass.sessionCookieDomain.Summary -->"domain" field of th
 **.sessionCookieName** : Text<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.sessionCookieName.Summary -->name of the cookie used for storing the session ID<!-- END REF -->.
+ <!-- REF #WebServerClass.sessionCookieName.Summary -->Nom du cookie utilisé pour stocker l'ID de session<!-- END REF -->.
 
 *Propriété en lecture seulement.*
 
@@ -711,7 +705,7 @@ The <!-- REF #WebServerClass.sessionCookieName.Summary -->name of the cookie use
 **.sessionCookiePath** : Text<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" field of the session cookie<!-- END REF -->. Utilisé pour contrôler la portée des cookies de session. Utile pour contrôler le scope des cookies de session Par exemple, si vous définissez la valeur "/*.4d.fr" pour ce sélecteur, le client enverra un cookie uniquement lorsque la requête est adressée au domaine ".4d.fr", ce qui exclut les serveurs hébergeant des données statiques externes.
+ <!-- REF #WebServerClass.sessionCookiePath.Summary -->Champ "path" du cookie de session<!-- END REF -->. Utilisé pour contrôler la portée des cookies de session. Par exemple, si vous définissez la valeur "/4DACTION" pour ce sélecteur, le client enverra un cookie uniquement pour les requêtes dynamiques commençant par 4DACTION, et non pour les images, les pages statiques, etc.
 
 <!-- END REF -->
 
@@ -729,15 +723,15 @@ The <!-- REF #WebServerClass.sessionCookiePath.Summary -->"path" field of the se
 **.sessionCookieSameSite** : Text<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->"SameSite" session cookie value<!-- END REF -->. Possible values (using constants):
+ <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->Valeur "SameSite" du cookie de session<!-- END REF -->. Valeurs possibles (avec constantes):
 
-| Constante           | Valeur   | Description                                                                                                                         |
-| ------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Web SameSite Strict | "Strict" | *Default value* - Cookies are only sent in a first-party context                                                                    |
-| Web SameSite Lax    | "Lax"    | Cookies are also sent on cross-site subrequests but only when a user is navigating to the origin site (i.e. when following a link). |
-| Web SameSite None   | "None"   | Cookies are sent in all contexts, i.e in responses to both first-party and cross-origin requests.                                   |
+| Constante           | Valeur   | Description                                                                                                                                                    |
+| ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Web SameSite Strict | "Strict" | *Valeur par défaut* - Les cookies sont envoyés uniquement dans un contexte interne (first-party)                                                               |
+| Web SameSite Lax    | "Lax"    | Les cookies sont également envoyés aux sous-requêtes intersites mais uniquement lorsque l'internaute navigue vers le site d'origine (i.e. en suivant un lien). |
+| Web SameSite None   | "None"   | Les cookies sont envoyés dans tous les contextes, i.e. en réponse aux requêtes internes (first-party) et aux requêtes cross-origin.                            |
 
-See the [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-samesite) description for detailed information.
+Voir la description de [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-samesite) pour plus d'informations.
 
 
 <!-- END REF -->
@@ -750,9 +744,7 @@ See the [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-sa
 <!-- REF #WebServerClass.sessionIPAddressValidation.Syntax -->
 **.sessionIPAddressValidation** : Boolean<!-- END REF -->
 
-> Cette propriété n'est pas utilisée dans le [mode de sessions évolutives](#scalablesession) (il n'existe pas de validation d'adresse IP).
-
-The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address validation for session cookies<!-- END REF -->. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. For example when mobile devices switch between WiFi and 3G/4G networks, their IP address will change. In this case, you can allow clients to be able to continue using their web sessions even when the IP addresses change (this setting lowers the security level of your application).
+> Cette propriété n'est pas utilisée dans le [mode de sessions évolutives](#scalablesession) (il n'existe pas de validation d'adresse IP). <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->Validation de l'adresse IP des cookies de session<!-- END REF -->. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. Par exemple, lorsque les appareils mobiles basculent entre les réseaux Wifi et 3G/4G, leur adresse IP change. Dans ce cas, vous pouvez permettre aux clients de continuer à utiliser leurs sessions Web même lorsque les adresses IP changent (ce paramétrage abaisse le niveau de sécurité de votre application).
 
 <!-- END REF -->
 
@@ -781,18 +773,18 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 <!-- END REF -->
 
-The `.start()` function <!-- REF #WebServerClass.start().Summary -->starts the web server on which it is applied<!-- END REF -->, using properties set in the optional *settings* object parameter.
+La fonction `.start()` function <!-- REF #WebServerClass.start().Summary -->démarre le serveur Web server auquel elle est appliquée<!-- END REF -->, en utilisant les propriétés définies dans le paramètre optionnel *settings*.
 
-The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
+Le serveur Web démarre avec les paramètres par défaut définis dans le fichier de settings du projet ou (base hôte uniquement) à l'aide de la commande `WEB SET OPTION`. Cependant, à l'aide du paramètre *settings*, vous pouvez définir des paramètres personnalisés pour la session du serveur Web.
 
-All settings of [Web Server objects](#web-server-object) can be customized, except read-only properties ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), and [.sessionCookieName](#sessioncookiename)).
+Tous les paramètres des [objets Web Server](#web-server-object) peuvent être personnalisés, hormis les propriétés en lecture seule ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), et [.sessionCookieName](#sessioncookiename)).
 
-Customized session settings will be reset when the [`.stop()`](#stop) function is called.
+Les paramètres de session personnalisés seront réinitialisés lorsque la fonction [`.stop()`](#stop) sera appelée.
 
 
 #### Objet retourné
 
-The function returns an object describing the Web server launch status. Cet objet peut avoir les propriétés suivantes :
+La fonction retourne un objet décrivant le statut démarré du serveur Web. Cet objet peut avoir les propriétés suivantes :
 
 | Propriété |                         | Type       | Description                                                               |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
@@ -842,15 +834,15 @@ The function returns an object describing the Web server launch status. Cet obje
 
  <!-- END REF -->
 
-The `.stop()` function <!-- REF #WebServerClass.stop().Summary -->stops the web server on which it is applied<!-- END REF -->.
+La fonction `.stop()` <!-- REF #WebServerClass.stop().Summary -->arrête le serveur Web auquel elle est appliquée<!-- END REF -->.
 
-If the web server was started, all web connections and web processes are closed, once the currently handled requests are finished. If the web server was not started, the method does nothing.
+Si le serveur Web était lancé, toutes les connexions Web et tous les process Web sont fermés une fois que les requêtes actuellement traitées sont terminées. Si le serveur Web n'était pas démarré, la fonction ne fait rien.
 > Cette fonction réinitialise les paramètres Web personnalisés définis pour la session à l'aide du paramètre *settings* de la fonction [`.start()`](#start), le cas échéant.
 
 
 #### Exemple
 
-To stop the database Web server:
+Pour arrêter le serveur Web de la base :
 
 ```4d
  var $webServer : 4D.WebServer
