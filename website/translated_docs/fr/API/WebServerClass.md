@@ -723,15 +723,15 @@ En cas de modification, le serveur doit être redémarré pour utiliser la nouve
 **.sessionCookieSameSite** : Text<!-- END REF -->
 
 
-The <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->"SameSite" session cookie value<!-- END REF -->. Possible values (using constants):
+ <!-- REF #WebServerClass.sessionCookieSameSite.Summary -->Valeur "SameSite" du cookie de session<!-- END REF -->. Valeurs possibles (avec constantes):
 
-| Constante           | Valeur   | Description                                                                                                                         |
-| ------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Web SameSite Strict | "Strict" | *Default value* - Cookies are only sent in a first-party context                                                                    |
-| Web SameSite Lax    | "Lax"    | Cookies are also sent on cross-site subrequests but only when a user is navigating to the origin site (i.e. when following a link). |
-| Web SameSite None   | "None"   | Cookies are sent in all contexts, i.e in responses to both first-party and cross-origin requests.                                   |
+| Constante           | Valeur   | Description                                                                                                                                                    |
+| ------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Web SameSite Strict | "Strict" | *Valeur par défaut* - Les cookies sont envoyés uniquement dans un contexte interne (first-party)                                                               |
+| Web SameSite Lax    | "Lax"    | Les cookies sont également envoyés aux sous-requêtes intersites mais uniquement lorsque l'internaute navigue vers le site d'origine (i.e. en suivant un lien). |
+| Web SameSite None   | "None"   | Les cookies sont envoyés dans tous les contextes, i.e. en réponse aux requêtes internes (first-party) et aux requêtes cross-origin.                            |
 
-See the [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-samesite) description for detailed information.
+Voir la description de [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-samesite) pour plus d'informations.
 
 
 <!-- END REF -->
@@ -746,7 +746,7 @@ See the [Session Cookie SameSite](WebServer/webServerConfig.md#session-cookie-sa
 
 > Cette propriété n'est pas utilisée dans le [mode de sessions évolutives](#scalablesession) (il n'existe pas de validation d'adresse IP).
 
-The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address validation for session cookies<!-- END REF -->. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. For example when mobile devices switch between WiFi and 3G/4G networks, their IP address will change. In this case, you can allow clients to be able to continue using their web sessions even when the IP addresses change (this setting lowers the security level of your application).
+The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address validation for session cookies<!-- END REF -->. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. Par exemple, lorsque les appareils mobiles basculent entre les réseaux Wifi et 3G/4G, leur adresse IP change. Dans ce cas, vous pouvez permettre aux clients de continuer à utiliser leurs sessions Web même lorsque les adresses IP changent (ce paramétrage abaisse le niveau de sécurité de votre application).
 
 <!-- END REF -->
 
@@ -776,18 +776,18 @@ The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address va
 
 <!-- END REF -->
 
-The `.start()` function <!-- REF #WebServerClass.start().Summary -->starts the web server on which it is applied<!-- END REF -->, using properties set in the optional *settings* object parameter.
+La fonction `.start()` function <!-- REF #WebServerClass.start().Summary -->démarre le serveur Web server auquel elle est appliquée<!-- END REF -->, en utilisant les propriétés définies dans le paramètre optionnel *settings*.
 
-The web server starts with default settings defined in the settings file of the project or (host database only) using the `WEB SET OPTION` command. However, using the *settings* parameter, you can define customized properties for the web server session.
+Le serveur Web démarre avec les paramètres par défaut définis dans le fichier de settings du projet ou (base hôte uniquement) à l'aide de la commande `WEB SET OPTION`. Cependant, à l'aide du paramètre *settings*, vous pouvez définir des paramètres personnalisés pour la session du serveur Web.
 
 Tous les paramètres des [objets Web server](#web-server-object) peuvent être personnalisés, à l'exception des propriétés en lecture seule ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), et [.sessionCookieName(#sessioncookiename)]).
 
-Customized session settings will be reset when the [`.stop()`](#stop) function is called.
+Les paramètres de session personnalisés seront réinitialisés lorsque la fonction [`.stop()`](#stop) sera appelée.
 
 
 #### Objet retourné
 
-The function returns an object describing the Web server launch status. Cet objet peut avoir les propriétés suivantes :
+La fonction retourne un objet décrivant le statut démarré du serveur Web. Cet objet peut avoir les propriétés suivantes :
 
 | Propriété |                         | Type       | Description                                                               |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
@@ -837,15 +837,15 @@ The function returns an object describing the Web server launch status. Cet obje
 
  <!-- END REF -->
 
-The `.stop()` function <!-- REF #WebServerClass.stop().Summary -->stops the web server on which it is applied<!-- END REF -->.
+La fonction `.stop()` <!-- REF #WebServerClass.stop().Summary -->arrête le serveur Web auquel elle est appliquée<!-- END REF -->.
 
-If the web server was started, all web connections and web processes are closed, once the currently handled requests are finished. If the web server was not started, the method does nothing.
+Si le serveur Web était lancé, toutes les connexions Web et tous les process Web sont fermés une fois que les requêtes actuellement traitées sont terminées. Si le serveur Web n'était pas démarré, la fonction ne fait rien.
 > Cette fonction réinitialise les paramètres Web personnalisés définis pour la session à l'aide du paramètre *settings* de la fonction [`.start()`](#start), le cas échéant.
 
 
 #### Exemple
 
-To stop the database Web server:
+Pour arrêter le serveur Web de la base :
 
 ```4d
  var $webServer : 4D.WebServer

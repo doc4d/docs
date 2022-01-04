@@ -52,26 +52,26 @@ The returned "__STATUS" object has the following properties:
 | success      |                | boolean | true if the lock action is successful (or if the entity is already locked in the current session), false otherwise (not returned in this case).             |
 |              |                |         | ***エラーの場合にのみ利用可能:***                                                                                                                                        |
 | status       |                | number  | エラーコード、以下参照                                                                                                                                                 |
-| statusText   |                | text    | エラーの詳細、以下参照                                                                                                                                                 |
+| statusText   |                | テキスト    | エラーの詳細、以下参照                                                                                                                                                 |
 | lockKind     |                | number  | Lock code                                                                                                                                                   |
-| lockKindText |                | text    | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                               |
-| lockInfo     |                | object  | Information about the lock origin. Returned properties depend on the lock origin (4D process or REST session).                                              |
+| lockKindText |                | テキスト    | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                               |
+| lockInfo     |                | object  | ロック元についての情報。 Returned properties depend on the lock origin (4D process or REST session).                                                                    |
 |              |                |         | ***Available only for a 4D process lock:***                                                                                                                 |
 |              | task_id        | number  | プロセスID                                                                                                                                                      |
-|              | user_name      | text    | マシン上でのセッションユーザー名                                                                                                                                            |
-|              | user4d_alias   | text    | 4D ユーザーの名前またはエイリアス                                                                                                                                          |
+|              | user_name      | テキスト    | マシン上でのセッションユーザー名                                                                                                                                            |
+|              | user4d_alias   | テキスト    | 4D ユーザーの名前またはエイリアス                                                                                                                                          |
 |              | user4d_id      | number  | 4DデータベースディレクトリでのユーザーID                                                                                                                                      |
-|              | host_name      | text    | マシン名                                                                                                                                                        |
-|              | task_name      | text    | プロセス名                                                                                                                                                       |
-|              | client_version | text    | Version of the client                                                                                                                                       |
+|              | host_name      | テキスト    | マシン名                                                                                                                                                        |
+|              | task_name      | テキスト    | プロセス名                                                                                                                                                       |
+|              | client_version | テキスト    | Version of the client                                                                                                                                       |
 |              |                |         | ***Available only for a REST session lock:***                                                                                                               |
-|              | host           | text    | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
-|              | IPAddr         | text    | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
+|              | host           | テキスト    | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
+|              | IPAddr         | テキスト    | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
 |              | recordNumber   | number  | Record number of the locked record                                                                                                                          |
-|              | userAgent      | text    | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
+|              | userAgent      | テキスト    | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 
 
-The following values can be returned in the *status* and *statusText* properties of the *__STATUS* object in case of error:
+エラー時には *__STATUS* オブジェクトの *status* および *statusText* プロパティに以下のいずれかの値が返されます:
 
 | status | statusText                      | 説明                                                              |
 | ------ | ------------------------------- | --------------------------------------------------------------- |

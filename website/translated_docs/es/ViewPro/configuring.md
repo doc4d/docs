@@ -40,14 +40,14 @@ With visible formula bar:
 
 Both the Ribbon and the Toolbar interfaces group related features into tabs:
 
-| Tab      | Acciones                        | Ribbon Interface | Toolbar Interface |
+| Pestaña  | Acciones                        | Ribbon Interface | Toolbar Interface |
 | -------- | ------------------------------- |:----------------:|:-----------------:|
 | File     | File manipulation               |        X         |                   |
-| Home     | Text appearance                 |        X         |         X         |
+| Inicio   | Text appearance                 |        X         |         X         |
 | Insert   | Add items                       |        X         |         X         |
 | Fórmulas | Formula calculation and library |        X         |         X         |
 | Datos    | Data manipulation               |        X         |         X         |
-| View     | Visual presentation             |        X         |         X         |
+| Mostrar  | Visual presentation             |        X         |         X         |
 | Settings | Sheet presentation reference    |        X         |                   |
 
 
