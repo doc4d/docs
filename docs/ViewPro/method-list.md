@@ -357,6 +357,11 @@ You want to define a range object for all of the cells of the current spreadshee
 $all:=VP All("ViewProArea") // all cells of the current sheet
 ```
 
+#### See also
+
+[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)<br/>[VP Row](#vp-row)
+
+
 ## C
 
 ### VP Cell
@@ -402,6 +407,9 @@ The code would be:
 $cell:=VP Cell("ViewProArea";2;4) // C5
 ```
 
+#### See also
+
+[VP All](#vp-all)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)<br/>[VP Row](#vp-row)
 
 
 ### VP Cells
@@ -457,6 +465,9 @@ The code would be:
 $cells:=VP Cells("ViewProArea";2;4;2;3) // C5 to D7
 ```
 
+#### See also
+
+[VP All](#vp-all)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)<br/>[VP Row](#vp-row)
 
 
 ### VP Column
@@ -499,6 +510,10 @@ The code would be:
  $column:=VP Column("ViewProArea";3) // column D
 ```
 
+#### See also
+
+[VP All](#vp-all)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)<br/>[VP Row](#vp-row)<br/>[VP SET COLUMN ATTRIBUTES](#vp-set-column-attributes)
+
 
 
 ### VP COLUMN AUTOFIT
@@ -519,7 +534,6 @@ The `VP COLUMN AUTOFIT` command <!-- REF #_method_.VP COLUMN AUTOFIT.Summary -->
 
 In *rangeObj*, pass a range object containing a range of the columns whose size will be automatically handled.
 
-
 #### Example  
 
 The following columns are all the same size and don't display some of the text: 
@@ -536,8 +550,9 @@ Selecting the columns and running this code:
 
 ![](assets/en/ViewPro/cmd_vpColumnAutoFit2.PNG)
 
+#### See also
 
-
+[VP ROW AUTOFIT](#vp-row-autofit)
 
 ### VP Combine Ranges
 
@@ -577,7 +592,9 @@ You want to combine cell, column, and row range objects in a new, distinct range
  $combine:=VP Combine ranges($cell;$column;$row)
 ```
 
+#### See also
 
+[VP All](#vp-all)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)<br/>[VP Row](#vp-row)<br/>[VP SET COLUMN ATTRIBUTES](#vp-set-column-attributes)
 
 ### VP Convert from 4D View
 
@@ -675,6 +692,10 @@ $vpAreaObj:=VP Export to object("ViewProArea")
 $vPict:=VP Convert to picture($vpAreaObj) //export the whole area
 ```
 
+#### See also
+
+[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)<br/>[VP SET PRINT INFO](#vp-set-print-info)
+
 ### VP Copy to object
 
 <details><summary>History</summary>
@@ -733,6 +754,7 @@ VP PASTE FROM OBJECT($targetRange; $dataObject; vk clipboard options all)
 #### See also 
 
 [VP PASTE FROM OBJECT](#vp-paste-from-object)<br/>[VP MOVE CELLS](#vp-move-cells)<br/>[VP Get workbook options](#vp-get-workbook-options)<br/>[VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
+
 ## D
 
 ### VP DELETE COLUMNS
@@ -770,6 +792,9 @@ use the following code:
 VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 ```
 
+#### See also
+
+[VP All](#vp-delete-rows)<br/>[VP Cells](#vp-insert-columns)<br/>[VP Column](#vp-insert-rows)
 
 
 ### VP DELETE ROWS
@@ -807,6 +832,9 @@ use the following code:
  VP DELETE ROWS(VP Get selection("ViewProArea"))
 ```
 
+#### See also
+
+[VP All](#vp-delete-columns)<br/>[VP Cells](#vp-insert-columns)<br/>[VP Column](#vp-insert-rows)
 
 
 ## E
@@ -965,6 +993,10 @@ Here's the result:
 
 ![example-export-csv](assets/en/ViewPro/vp-export-document-csv-result.png)
 
+#### See also
+
+[VP Convert to picture](#vp-convert-to-picture)<br/>[VP Export to object](#vp-export-to-object)<br/>[VP Column](#vp-import-document)<br/>[VP Print](#vp-print)
+
 ### VP Export to object
 
 <!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *option* : Object} ) : Object<!-- END REF -->  
@@ -1016,7 +1048,9 @@ var $vpObj : Object
 $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 ```
 
+#### See also
 
+[VP Convert to picture](#vp-convert-to-picture)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP IMPORT FROM OBJECT](#vp-import-from-object)
 
 ## F
 
@@ -1102,8 +1136,6 @@ End if
 ```
 
 
-
-
 ### VP FLUSH COMMANDS
 
 <!-- REF #_method_.VP FLUSH COMMANDS.Syntax -->**VP FLUSH COMMANDS** (  *vpAreaName* : Text )<!-- END REF -->  
@@ -1181,7 +1213,9 @@ size:16pt
 See example for [`VP Object to font`](#vp-object-to-font).
 
 
+#### See also
 
+[4D View Pro Style Objects and Style Sheets](configuring.md#style-objects--style-sheets)<br/>[VP Object to font](#vp-object-to-font)<br/>[VP SET CELL STYLE](#vp-set-cell-style)<br/>[VP SET DEFAULT STYLE](#vp-set-default-style)
 
 
 
@@ -1225,7 +1259,9 @@ $activeCell:=VP Get active cell("myVPArea")
   //$activeCell.ranges[0].sheet=0
 ```
 
+#### See also
 
+[VP ADD SELECTION](#vp-add-selection)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
 
 
@@ -1282,7 +1318,9 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 }
 ```
 
+#### See also
 
+[VP GET DEFAULT STYLE](#vp-get-default-style)<br/>[VP SET CELL STYLE](#vp-set-cell-style)
 
 ### VP Get column attributes
 
@@ -1321,7 +1359,9 @@ $attr:=VP Get column attributes($range)
 
 ![](assets/en/ViewPro/cmd_vpGetColumnAttributes.PNG)
 
+#### See also
 
+[VP Get row attributes](#vp-get-row-attributes)<br/>[VP SET COLUMN ATTRIBUTES](#vp-set-column-attributes)<br/>[VP SET ROW ATTRIBUTES](#vp-set-row-attributes)
 
 ### VP Get column count
 
@@ -1353,6 +1393,10 @@ The following code returns the number of columns in the 4D View Pro area:
 C_Integer($colCount)
 $colCount:=VP Get column count("ViewProarea")
 ```
+
+#### See also
+
+[VP Get row count](#vp-get-row-count)<br/>[VP SET COLUMN COUNT](#vp-set-column-count)<br/>[VP SET ROW COUNT](#vp-set-row-count)
 
 ### VP Get current sheet
 
@@ -1387,6 +1431,10 @@ The command returns 2:
 ```4d
 $index:=VP Get current sheet("ViewProArea")
 ```
+
+#### See also
+
+[VP SET CURRENT SHEET](#vp-set-current-sheet)
 
 ### VP Get default style
 
@@ -1433,6 +1481,9 @@ will return this information in the *$defaultStyle* object:
 }
 ```
 
+#### See also
+
+[VP Get cell style](#vp-get-cell-style)<br/>[VP SET DEFAULT STYLE](#vp-set-default-style)
 
 
 ### VP Get formula
@@ -1462,8 +1513,9 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
  
 $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 ```
+#### See also
 
-
+[VP Get formulas](#vp-get-formulas)<br/>[VP SET FORMULA](#vp-set-formula)<br/>[VP SET ROW COUNT](#vp-set-row-count)
 
 ### VP Get formula by name
 
@@ -1515,7 +1567,9 @@ $formula:=VP Get formula by name("ViewProArea";"Total")
   //$formula=null (if not existing)
 ```
 
+#### See also
 
+[VP ADD FORMULA NAME](#vp-add-formula-name)<br/>[VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP Get names](#vp-get-names)
 
 ### VP Get formulas
 
@@ -1556,7 +1610,9 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 //$formulas[2]=[Sum(B4:D4),Average(C4:D4)]
 ```
 
+#### See also
 
+[VP Get formula](#vp-get-formula)<br/>[VP Get values](#vp-get-values)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUES](#vp-set-values)
 
 ### VP Get frozen panes
 
@@ -1606,7 +1662,9 @@ The returned object contains, for example:
 
 ![](assets/en/ViewPro/cmd_vpGetFrozenpanes.PNG)
 
+#### See also
 
+[VP SET FROZEN PANES](#vp-set-frozen-panes)
 
 ### VP Get names
 
