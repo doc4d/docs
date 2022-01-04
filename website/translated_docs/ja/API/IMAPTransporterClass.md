@@ -656,7 +656,7 @@ End if
 | ---- | ---- |:--:| -------------- |
 | name | Text | -> | 削除するメールボックスの名称 |
 
-|Result|Object|<-|Status of the mailbox deletion operation|
+|Result|Object|<-|deleteBox処理のステータス|
 <!-- END REF -->
 
 
@@ -797,7 +797,7 @@ $status:=$transporter.expunge()
 | ------ | ------------ |
 | v18 R5 | *name* は任意です |
 
-|v18 R4|Added| </details>
+|v18 R4|追加| </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
@@ -824,7 +824,7 @@ $status:=$transporter.expunge()
 
 | プロパティ      | タイプ    | 説明                                         |
 | ---------- | ------ | ------------------------------------------ |
-| name       | text   | メールボックスの名称                                 |
+| name       | テキスト   | メールボックスの名称                                 |
 | mailCount  | number | メールボックス内のメッセージの数                           |
 | mailRecent | number | (新しいメッセージであることを表す) "recent" フラグがついたメッセージの数 |
 
@@ -882,7 +882,7 @@ $status:=$transporter.expunge()
 
 | プロパティ            | タイプ     | 説明                                                                          |
 | ---------------- | ------- | --------------------------------------------------------------------------- |
-| \[].name        | text    | メールボックスの名称                                                                  |
+| \[].name        | テキスト    | メールボックスの名称                                                                  |
 | \[].selectable  | boolean | アクセス権でメールボックスを選択できるかどうかを表します: <ul><li>true - メールボックスは選択可能</li><li>false - メールボックスは選択不可能</li></ul>                     |
 | \[].inferior    | boolean | アクセス権でメールボックス内に下の階層レベルを作成できるかどうかを表します: <ul><li>true - 下の階層レベルは作成可能</li><li>false - 下の階層レベルは作成不可能</li></ul>            |
 | \[].interesting | boolean | サーバーがメールボックスに “interesting” のマーク付けをしているかどうかを表します: <ul><li>true - メールボックスはサーバーから "interesting" のマーク付けをされています。 たとえば、メールボックスには新着メッセージが入っている場合が考えられます。</li><li>false - メールボックスはサーバーから "interesting" のマーク付けをされていません。</li></ul> |
@@ -1063,13 +1063,13 @@ ID = 1のメッセージを取得します:
 **.getMails**( *ids* : Collection { ; *options* : Object } ) : Object<br>**.getMails**( *startMsg* : Integer ; *endMsg* : Integer { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMails().Params -->
-| 引数       | タイプ    |    | 説明                                                       |
-| -------- | ------ |:--:| -------------------------------------------------------- |
-| ids      | コレクション | -> | メッセージID のコレクション                                          |
-| startMsg | 整数     | -> | 先頭メッセージのシーケンス番号                                          |
-| endMsg   | 整数     | -> | 最後のメッセージのシーケンス番号                                         |
-| options  | オブジェクト | -> | メッセージ管理オプション                                             |
-| 戻り値      | オブジェクト | <- | 次のコレクションを格納したオブジェクト:<br><ul><li>[Email オブジェクト](EmailObjectClass.md#email-オブジェクト) のコレクション</li><li>見つからなかったメッセージの ID または番号のコレクション</li></ul> |
+| 引数       | タイプ        |    | 説明                                                       |
+| -------- | ---------- |:--:| -------------------------------------------------------- |
+| ids      | Collection | -> | メッセージID のコレクション                                          |
+| startMsg | Integer    | -> | 先頭メッセージのシーケンス番号                                          |
+| endMsg   | Integer    | -> | 最後のメッセージのシーケンス番号                                         |
+| options  | Object     | -> | メッセージ管理オプション                                             |
+| 戻り値      | Object     | <- | 次のコレクションを格納したオブジェクト:<br><ul><li>[Email オブジェクト](EmailObjectClass.md#email-オブジェクト) のコレクション</li><li>見つからなかったメッセージの ID または番号のコレクション</li></ul> |
 <!-- END REF -->
 
 
@@ -1168,12 +1168,12 @@ ID = 1のメッセージを取得します:
 
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Params -->
-| 引数         | タイプ  |    | 説明                                                            |
-| ---------- | ---- |:--:| ------------------------------------------------------------- |
-| msgNumber  | 整数   | -> | メッセージのシーケンス番号                                                 |
-| msgID      | テキスト | -> | メッセージの固有ID                                                    |
-| updateSeen | ブール  | -> | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 |
-| 戻り値        | BLOB | <- | メールサーバーから返された MIME文字列の BLOB                                   |
+| 引数         | タイプ     |    | 説明                                                            |
+| ---------- | ------- |:--:| ------------------------------------------------------------- |
+| msgNumber  | Integer | -> | メッセージのシーケンス番号                                                 |
+| msgID      | Text    | -> | メッセージの固有ID                                                    |
+| updateSeen | Boolean | -> | true 時には、メールボックス内でメッセージを "既読" にします。 false 時にはメッセージの状態は変化しません。 |
+| 戻り値        | BLOB    | <- | メールサーバーから返された MIME文字列の BLOB                                   |
 <!-- END REF -->
 
 
@@ -1253,12 +1253,12 @@ ID = 1のメッセージを取得します:
 **.move**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.move**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.move().Params -->
-| 引数             | タイプ    |    | 説明                              |
-| -------------- | ------ |:--:| ------------------------------- |
-| msgsIDs        | コレクション | -> | メッセージの固有ID のコレクション (テキスト)       |
-| allMsgs        | 整数     | -> | `IMAP all`: 選択されたメールボックスの全メッセージ |
-| destinationBox | テキスト   | -> | メッセージの移動先のメールボックス               |
-| 戻り値            | オブジェクト | <- | move処理のステータス                    |
+| 引数             | タイプ        |    | 説明                              |
+| -------------- | ---------- |:--:| ------------------------------- |
+| msgsIDs        | Collection | -> | メッセージの固有ID のコレクション (テキスト)       |
+| allMsgs        | Integer    | -> | `IMAP all`: 選択されたメールボックスの全メッセージ |
+| destinationBox | Text       | -> | メッセージの移動先のメールボックス               |
+| 戻り値            | Object     | <- | move処理のステータス                    |
 <!-- END REF -->
 
 
@@ -1360,11 +1360,11 @@ ID = 1のメッセージを取得します:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.numToID().Params -->
-| 引数       | タイプ    |    | 説明               |
-| -------- | ------ |:--:| ---------------- |
-| startMsg | 整数     | -> | 先頭メッセージのシーケンス番号  |
-| endMsg   | 整数     | -> | 最後のメッセージのシーケンス番号 |
-| 戻り値      | コレクション | <- | 固有ID のコレクション     |
+| 引数       | タイプ        |    | 説明               |
+| -------- | ---------- |:--:| ---------------- |
+| startMsg | Integer    | -> | 先頭メッセージのシーケンス番号  |
+| endMsg   | Integer    | -> | 最後のメッセージのシーケンス番号 |
+| 戻り値      | Collection | <- | 固有ID のコレクション     |
 <!-- END REF -->
 
 
@@ -1423,11 +1423,11 @@ ID = 1のメッセージを取得します:
 **.removeFlags**( *msgIDs* : Collection ; *keywords* :  Object ) : Object<br>**.removeFlags**( *msgIDs* : Text ; *keywords* :  Object ) : Object<br>**.removeFlags**( *msgIDs* : Longint ; *keywords* :  Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.removeFlags().Params -->
-| 引数       | タイプ    |    | 説明                                                                                                        |
-| -------- | ------ |:--:| --------------------------------------------------------------------------------------------------------- |
-| msgIDs   | コレクション | -> | 文字列のコレクション: メッセージの固有ID (テキスト型)<br> テキスト: メッセージの固有ID<br> 倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
-| keywords | オブジェクト | -> | 削除するキーワードフラグ                                                                                              |
-| 戻り値      | オブジェクト | <- | removeFlags処理のステータス                                                                                       |
+| 引数       | タイプ        |    | 説明                                                                                                        |
+| -------- | ---------- |:--:| --------------------------------------------------------------------------------------------------------- |
+| msgIDs   | Collection | -> | 文字列のコレクション: メッセージの固有ID (テキスト型)<br> テキスト: メッセージの固有ID<br> 倍長整数 (IMAP all): 選択されたメールボックス内の全メッセージ |
+| keywords | Object     | -> | 削除するキーワードフラグ                                                                                              |
+| 戻り値      | Object     | <- | removeFlags処理のステータス                                                                                       |
 <!-- END REF -->
 
 
@@ -1516,9 +1516,9 @@ $status:=$transporter.removeFlags(IMAP all;$flags)
 <!-- REF #IMAPTransporterClass.renameBox().Params -->
 | 引数          | タイプ    |    | 説明                |
 | ----------- | ------ |:--:| ----------------- |
-| currentName | テキスト   | -> | カレントメールボックスの名称    |
-| newName     | テキスト   | -> | 新しいメールボックス名       |
-| 戻り値         | オブジェクト | <- | renameBox処理のステータス |
+| currentName | Text   | -> | カレントメールボックスの名称    |
+| newName     | Text   | -> | 新しいメールボックス名       |
+| 戻り値         | Object | <- | renameBox処理のステータス |
 <!-- END REF -->
 
 
@@ -1598,10 +1598,10 @@ End if
 **.searchMails**( *searchCriteria* : Text ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.searchMails().Params -->
-| 引数             | タイプ    |    | 説明             |
-| -------------- | ------ |:--:| -------------- |
-| searchCriteria | テキスト   | -> | 検索条件           |
-| 戻り値            | コレクション | <- | メッセージ番号のコレクション |
+| 引数             | タイプ        |    | 説明             |
+| -------------- | ---------- |:--:| -------------- |
+| searchCriteria | Text       | -> | 検索条件           |
+| 戻り値            | Collection | <- | メッセージ番号のコレクション |
 <!-- END REF -->
 
 
@@ -1677,41 +1677,41 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 #### 利用可能な検索キー
 
-**ALL**: All messages in the mailbox.  
-**ANSWERED**: Messages with the \Answered flag set.  
-**UNANSWERED**: Messages that do not have the \Answered flag set.  
-**DELETED**: Messages with the \Deleted flag set.  
-**UNDELETED**: Messages that do not have the \Deleted flag set.  
-**DRAFT**: Messages with the \Draft flag set.  
-**UNDRAFT**: Messages that do not have the \Draft flag set.  
-**FLAGGED**: Messages with the \Flagged flag set.  
-**UNFLAGGED**: Messages that do not have the \Flagged flag set.  
-**RECENT**: Messages that have the \Recent flag set.  
-**OLD**: Messages that do not have the \Recent flag set.  
-**SEEN**: Messages that have the \Seen flag set.  
-**UNSEEN**: Messages that do not have the \Seen flag set.  
-**NEW**: Messages that have the \Recent flag set but not the \Seen flag. This is functionally equivalent to “(RECENT UNSEEN)”.  
-***KEYWORD ***flag******: Messages with the specified keyword set.  
-***UNKEYWORD ***flag******: Messages that do not have the specified keyword set.  
-***BEFORE ***date******: Messages whose internal date is earlier than the specified date.  
-***ON ***date******: Messages whose internal date is within the specified date.  
-***SINCE ***date******: Messages whose internal date is within or later than the specified date.  
-***SENTBEFORE ***date******: Messages whose Date header is earlier than the specified date.  
-***SENTON ***date******: Messages whose Date header is within the specified date.  
-***SENTSINCE ***date******: Messages whose Date header is within or later than the specified date.  
-***TO ***string******: Messages that contain the specified string in the TO header.  
-***FROM ***string******: Messages that contain the specified string in the FROM header.  
-***CC ***string******: Messages that contain the specified string in the CC header.  
-***BCC ***string******: Messages that contain the specified string in the BCC header.  
-***SUBJECT ***string******: Messages that contain the specified string in the Subject header.  
-***BODY ***string******: Messages that contain the specified string in the message body.  
-***TEXT ***string******: Messages that contain the specified string in the header or in the message body.  
-***HEADER *field-name* ***string******: Messages that have a header with the specified field-name and that contain the specified string in the field-body.  
-***UID ***message-UID******: Messages with unique identifiers corresponding to the specified unique identifier set.  
-***LARGER ***n******: Messages with a size larger than the specified number of bytes.  
-***SMALLER ***n******: Messages with a size smaller than the specified number of bytes.  
-***NOT ***search-key******: Messages that do not match the specified search key.  
-***OR *search-key1* ***search-key2******: Messages that match either search key.  
+**ALL**: メールボックスの全メッセージ  
+**ANSWERED**: \Answered フラグが設定されたメッセージ  
+**UNANSWERED**: \Answered フラグが設定されていないメッセージ  
+**DELETED**: \Deleted フラグが設定されたメッセージ  
+**UNDELETED**: \Deleted フラグが設定されていないメッセージ  
+**DRAFT**: \Draft フラグが設定されているメッセージ  
+**UNDRAFT**: \Draft フラグが設定されていないメッセージ  
+**FLAGGED**: \Flagged フラグが設定されているメッセージ  
+**UNFLAGGED**: \Flagged フラグが設定されていないメッセージ  
+**RECENT**: \Recent フラグが設定されているメッセージ  
+**OLD**: \Recent フラグが設定されていないメッセージ  
+**SEEN**: \Seen フラグが設定されているメッセージ  
+**UNSEEN**: \Seen フラグが設定されていないメッセージ  
+**NEW**: \Recent フラグが設定されているが \Seen フラグが設定されていないメッセージ。 これは機能的には “(RECENT UNSEEN)” と同じです。  
+***KEYWORD ***flag******: 指定されたキーワードが設定されているメッセージ  
+***UNKEYWORD ***flag******: 指定されたキーワードが設定されていないメッセージ  
+***BEFORE ***date******: 内部の日付が指定日より前のメッセージ  
+***ON ***date******: 内部の日付が指定日に合致するメッセージ  
+***SINCE ***date******: 内部の日付が指定日より後のメッセージ  
+***SENTBEFORE ***date******: 日付ヘッダーが指定日より前のメッセージ  
+***SENTON ***date******: 日付ヘッダーが指定日に合致するメッセージ  
+***SENTSINCE ***date******: 日付ヘッダーが指定日以降のメッセージ  
+***TO ***string******: TO ヘッダーに指定文字列が含まれているメッセージ  
+***FROM ***string******: FROM ヘッダーに指定文字列が含まれているメッセージ  
+***CC ***string******: CC ヘッダーに指定文字列が含まれているメッセージ  
+***BCC ***string******: BCC ヘッダーに指定文字列が含まれているメッセージ  
+***SUBJECT ***string******: 件名ヘッダーに指定文字列が含まれているメッセージ  
+***BODY ***string******: メッセージ本文に指定文字列が含まれているメッセージ  
+***TEXT ***string******: ヘッダーまたはメッセージ本文に指定文字列が含まれているメッセージ  
+***HEADER *field-name* ***string******: 指定フィールド名のヘッダーを持ち、そのフィールド内に指定文字列が含まれているメッセージ  
+***UID ***message-UID******: 指定された固有識別子に対応する固有識別子を持つメッセージ  
+***LARGER ***n******: 指定バイト数以上のサイズを持つメッセージ  
+***SMALLER ***n******: 指定バイト数以下のサイズを持つメッセージ  
+***NOT ***search-key******: 指定検索キーに合致しないメッセージ  
+***OR *search-key1* ***search-key2******: いずれかの検索キーに合致するメッセージ  
 
 
 <!-- END REF -->
@@ -1815,14 +1815,14 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 
 この関数は、IMAP ステータスを表すオブジェクトを返します:
 
-| プロパティ      |                         | タイプ    | 説明                                                 |
-| ---------- | ----------------------- | ------ | -------------------------------------------------- |
-| success    |                         | ブール    | 処理が正常に終わった場合には true、それ以外は false                    |
-| statusText |                         | テキスト   | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
-| errors     |                         | コレクション | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値     | 4Dエラーコード                                           |
-|            | \[].message            | テキスト   | 4Dエラーの詳細                                           |
-|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                |
+| プロパティ      |                         | タイプ        | 説明                                                 |
+| ---------- | ----------------------- | ---------- | -------------------------------------------------- |
+| success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
+| statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
+| errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
+|            | \[].message            | Text       | 4Dエラーの詳細                                           |
+|            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
 
 
@@ -1873,8 +1873,8 @@ End if
 <!-- REF #IMAPTransporterClass.unsubscribe().Params -->
 | 引数   | タイプ    |    | 説明                  |
 | ---- | ------ |:--:| ------------------- |
-| name | テキスト   | -> | メールボックスの名称          |
-| 戻り値  | オブジェクト | <- | unsubscribe処理のステータス |
+| name | Text   | -> | メールボックスの名称          |
+| 戻り値  | Object | <- | unsubscribe処理のステータス |
 <!-- END REF -->
 
 
@@ -1888,14 +1888,14 @@ End if
 
 この関数は、IMAP ステータスを表すオブジェクトを返します:
 
-| プロパティ      |                         | タイプ    | 説明                                                 |
-| ---------- | ----------------------- | ------ | -------------------------------------------------- |
-| success    |                         | ブール    | 処理が正常に終わった場合には true、それ以外は false                    |
-| statusText |                         | テキスト   | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
-| errors     |                         | コレクション | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
-|            | \[].errcode            | 数値     | 4Dエラーコード                                           |
-|            | \[].message            | テキスト   | 4Dエラーの詳細                                           |
-|            | \[].componentSignature | テキスト   | エラーを返した内部コンポーネントの署名                                |
+| プロパティ      |                         | タイプ        | 説明                                                 |
+| ---------- | ----------------------- | ---------- | -------------------------------------------------- |
+| success    |                         | Boolean    | 処理が正常に終わった場合には true、それ以外は false                    |
+| statusText |                         | Text       | IMAPサーバーから返されたステータスメッセージ、または 4Dエラースタック内に返された最後のエラー |
+| errors     |                         | Collection | 4Dエラースタック (IMAPサーバーレスポンスが受信できた場合には返されません)          |
+|            | \[].errcode            | Number     | 4Dエラーコード                                           |
+|            | \[].message            | Text       | 4Dエラーの詳細                                           |
+|            | \[].componentSignature | Text       | エラーを返した内部コンポーネントの署名                                |
 
 
 
