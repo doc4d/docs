@@ -1709,6 +1709,9 @@ var $list : Collection
 $list:=VP Get names("ViewProArea";2) //names in 3rd sheet
 ```
 
+#### See also
+
+[VP ADD FORMULA NAME](#vp-get-formula)<br/>[VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP Get formula by name](#vp-get-formula-by-name)<br/>[VP Name](#vp-name)
 
 
 ### VP Get print info
@@ -1789,6 +1792,9 @@ zoomFactor:1
 }
 ```
 
+#### See also
+
+[4D View Pro Print Attributes](configuring.md#print-attributes)<br/>[VP SET PRINT INFO](#vp-set-print-info)
 
 
 ### VP Get row attributes
@@ -1827,6 +1833,9 @@ $attr:=VP Get row attributes($range)
 
 ![](assets/en/ViewPro/cmd_vpGetRowAttributes.PNG)
 
+#### See also
+
+[VP Get column attributes](#vp-get-column-attributes)<br/>[VP SET COLUMN ATTRIBUTES](#vp-set-column-attributes)<br/>[VP SET ROW ATTRIBUTES](#vp-set-row-attributes)
 
 
 ### VP Get row count
@@ -1860,6 +1869,9 @@ var $rowCount : Integer
 $rowCount:=VP Get row count("ViewProarea")
 ```
 
+#### See also
+
+[VP Get column count](#vp-get-column-count)<br/>[VP SET COLUMN COUNT](#vp-set-column-count)<br/>[VP SET ROW COUNT](#vp-set-row-count)
 
 
 ### VP Get selection
@@ -1901,7 +1913,9 @@ $currentSelection:=VP Get selection("myVPArea")
 //$currentSelection.ranges[0].rowCount=6
 ```
 
+#### See also
 
+[VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
 ### VP Get sheet count
 
@@ -1938,6 +1952,10 @@ Get the sheet count and set the current sheet to the last sheet:
 ```
 
 ![](assets/en/ViewPro/vp-sheet-3-select.png)
+
+#### See also
+
+[VP Get sheet index](#vp-get-sheet-index)<br/>[VP SET SHEET COUNT](#vp-set-sheet-count)
 
 ### VP Get sheet index
 
@@ -1976,6 +1994,10 @@ Get the index of the sheet called "Total first quarter":
 $index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
 ```
 
+#### See also
+
+[VP Get sheet count](#vp-get-sheet-count)<br/>[VP Get sheet name](#vp-get-sheet-name)
+
 ### VP Get sheet name
 
 <!-- REF #_method_.VP Get sheet name.Syntax -->**VP Get sheet name** ( *vpAreaName* : Text ; *sheet* : Integer ) : Text
@@ -2012,6 +2034,10 @@ Get the name of the third sheet in the document:
 ```4d
 $sheetName:=VP Get sheet name("ViewProArea";2)
 ```
+
+#### See also
+
+[VP Get sheet index](#vp-get-sheet-index)
 
 ### VP Get sheet options
 
@@ -2050,6 +2076,10 @@ If($options.colHeaderVisible) //column headers are visible
 End if
 ```
 
+#### See also
+
+[4D VIEW PRO SHEET OPTIONS](configuring.md#sheet-options)<br/>[VP SET SHEET OPTIONS](#vp-set-sheet-options)
+
 ### VP Get show print lines
 
 <!-- REF #_method_.VP Get show print lines.Syntax -->**VP Get show print lines** ( *vpAreaName* : Text {; *sheet* : Integer } ) : Boolean
@@ -2084,6 +2114,9 @@ The following code checks if preview lines are displayed or hidden in the docume
  $result:=VP Get show print lines("ViewProArea";1)
 ```
 
+#### See also
+
+[VP SET SHOW PRINT LINES](#vp-set-show-print-lines)
 
 ### VP Get spans
 
@@ -2119,7 +2152,9 @@ $style:=New object("vAlign";vk vertical align center;"hAlign";vk horizontal alig
 VP SET CELL STYLE($range;$style)
 ```
 
+#### See also
 
+[VP ADD SPAN](configuring.md#sheet-options)<br/>[VP REMOVE SPAN](#vp-remove-span)
 
 ### VP Get stylesheet
 
@@ -2168,6 +2203,9 @@ borderTop:{color:green,style:10}
 }
 ```
 
+#### See also
+
+[4D View Pro Style Objects and Style Sheets](configuring.md#style-objects--style-sheets)<br/>[VP ADD STYLESHEET](#vp-set-sheet-options)<br/>[VP Get stylesheets](#vp-get-stylesheets)<br/>[VP REMOVE STYLESHEET](#vp-remove-stylesheet)
 
 
 ### VP Get stylesheets
@@ -2221,7 +2259,9 @@ In this case, the current sheet uses two style objects:
    }
 ]
 ```
+#### See also
 
+[VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP REMOVE STYLESHEET](#vp-remove-stylesheet)
 
 
 ### VP Get value
@@ -2268,6 +2308,9 @@ If(Value type($value.value)=Is text)
 End if
 ```
 
+#### See also
+
+[VP Get values](#vp-get-values)<br/>[VP SET VALUE](#vp-set-value)<br/>[VP SET VALUES](#vp-set-values)
 
 
 ### VP Get values
@@ -2316,6 +2359,10 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 // $result[1]=[6,7,8,9,null]
 // $result[2]=[null,{time:42,value:2019-05-29T00:00:00.000Z},null,null,null]
 ```
+
+#### See also
+
+[VP Get formulas](#vp-get-formulas)<br/>[VP Get value](#vp-get-value)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUES](#vp-set-values)
 
 ### VP Get workbook options
 
@@ -2439,6 +2486,12 @@ VP IMPORT DOCUMENT("ViewProArea";"c:\\import\\my-file.txt";New object("csvOption
 Here's the result:
 ![example-import-csv](assets/en/ViewPro/vp-import-document-csv-result.png)
 
+
+#### See also
+
+[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP NEW DOCUMENT](#vp-new-document)
+
+
 ### VP IMPORT FROM OBJECT
 
 <!-- REF #_method_.VP IMPORT FROM OBJECT.Syntax -->**VP IMPORT FROM OBJECT** ( *vpAreaName* : Text  { ; *viewPro* : Object} ) <!-- END REF -->  
@@ -2473,6 +2526,9 @@ QUERY([VPWorkBooks];[VPWorkBooks]ID=10)
 VP IMPORT FROM OBJECT("ViewProArea1";[VPWorkBooks]SPBook)
 ```
 
+#### See also
+
+[VP Export to object](#vp-export-to-object)
 
 
 ### VP INSERT COLUMNS
@@ -2508,6 +2564,9 @@ The results is:
 
 ![](assets/en/ViewPro/cmd_vpInsertColumns.PNG)
 
+#### See also
+
+[VP DELETE COLUMNS](#vp-delete-columns)<br/>[VP DELETE ROWS](#vp-delete-rows)<br/>[VP INSERT ROWS](#vp-insert-rows)
 
 
 ### VP INSERT ROWS
@@ -2542,6 +2601,10 @@ VP INSERT ROWS(VP Row("ViewProArea";0;3))
 The results is:
 
 ![](assets/en/ViewPro/cmd_vpInsertRows.PNG)
+
+#### See also
+
+[VP DELETE COLUMNS](#vp-delete-columns)<br/>[VP DELETE ROWS](#vp-delete-rows)<br/>[VP INSERT COLUMNS](#vp-insert-columns)
 
 ## M 
 
@@ -2647,6 +2710,9 @@ $name:=VP Name("ViewProArea";" Total")
 VP SET NUM VALUE($name;285;"$#,###.00")
 ```
 
+#### See also 
+
+[VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP ALL](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Get names](#vp-get-names)<br/>[VP REMOVE NAME](#vp-remove-name)<br/>[VP Row](#vp-row)
 
 
 ### VP NEW DOCUMENT
