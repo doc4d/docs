@@ -2742,6 +2742,10 @@ You want to display an empty document in the "myVPArea" form object:
 VP NEW DOCUMENT("myVPArea")
 ```
 
+#### See also 
+
+[VP IMPORT DOCUMENT](#vp-import-document)
+
 ---
 
 ## O
@@ -2793,7 +2797,9 @@ $cellStyle.font:=VP Object to font($font)
 //$cellStyle.font contains "bolder oblique small-caps 16pt arial"
 ```
 
+#### See also
 
+[4D View Pro Style Objects and Style Sheets](configuring.md#style-objects--style-sheets)<br/>[VP Font to object](#vp-font-to-object)<br/>[VP SET CELL STYLE](#vp-set-cell-style)<br/>[VP SET DEFAULT STYLE](#vp-set-default-style)
 
 
 ## P
@@ -2894,7 +2900,9 @@ The following code:
 
 ![](assets/en/ViewPro/cmd_vpPrint.PNG)
 
+#### See also
 
+[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP SET PRINT INFO](#vp-set-print-info)
 
 ## R
 
@@ -2928,6 +2936,9 @@ To refresh all formulas in the workbook:
 VP RECOMPUTE FORMULAS("ViewProArea")
 ```
 
+#### See also
+
+[VP RESUME COMPUTING](#vp-resume-computing)<br/>[VP SUSPEND COMPUTING](#vp-suspend-computing)
 
 
 ### VP REMOVE NAME
@@ -2971,6 +2982,10 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 //$formula=null
 ```
 
+#### See also
+
+[VP Name](#vp-name)
+
 
 ### VP REMOVE SHEET
 
@@ -2982,7 +2997,11 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 |---|---|---|---|
 |vpAreaName |Text|->|4D View Pro area form object name|
 |index  |Integer|->|Index of the sheet to remove|
-<!-- END REF -->  
+<!-- END REF -->
+
+#### See also
+
+[VP ADD SHEET](#vp-add-sheet)
 
 
 #### Description
