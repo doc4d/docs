@@ -4898,6 +4898,10 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 
 ![](assets/en/ViewPro/cmd_vpSetValues.PNG)
 
+#### See also 
+
+[VP Get formulas](configuring.md#vp-get-formulas)<br/>[VP Get value](#vp-get-value)<br/>[VP Get Values](#vp-get-values)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUE](#vp-set-value)
+
 ### VP SET WORKBOOK OPTIONS 
 
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Syntax -->**VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->  
@@ -5061,7 +5065,9 @@ Result:
 
 ![](assets/en/ViewPro/cmd_vpShowCell2.PNG)
 
+#### See also 
 
+[VP ADD CELL](#vp-add-cell)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)
 
 ### VP SUSPEND COMPUTING
 
@@ -5110,5 +5116,9 @@ If(FORM Event.code=On Clicked)
  
 End if
 ```
+#### See Also 
+
+[VP RECOMUTE FORMULAS](#vp-recompute-formulas)<br/>[VP RESUME COMPUTING](#vp-resume-computing)
+
 
 <style> h2 { background: #d9ebff;}</style>
