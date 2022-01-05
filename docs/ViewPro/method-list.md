@@ -4664,7 +4664,7 @@ Result:
 
 #### See also 
 
-[4D View Pro sheet options](#configuring.md#sheet-options)<br/>[VP Get sheet options](#vp-get-sheet-options)
+[4D View Pro sheet options](configuring.md#sheet-options)<br/>[VP Get sheet options](#vp-get-sheet-options)
 
 ### VP SET SHOW PRINT LINES
 
