@@ -3039,13 +3039,11 @@ VP REMOVE SHEET("ViewProArea";2)
 |rangeObj   |Object|->|Range object|
 
 <!-- END REF -->  
-
 #### Description
 
 The `VP REMOVE SPAN` command <!-- REF #_method_.VP REMOVE SPAN.Summary -->removes the span from the cells in *rangeObj*<!-- END REF -->. 
 
 In *rangeObj*, pass a range object of the cell span. The spanned cells in the range are divided into individual cells.  
- 
  
 #### Example
 
@@ -3066,7 +3064,9 @@ Result:
 
 ![](assets/en/ViewPro/cmd_vpRemoveSpan2.PNG)
 
+#### See also
 
+[VP ADD SPAN](#vp-add-span)<br/>[VP Get spans](#vp-get-spans)
 
 ### VP REMOVE STYLESHEET
 
@@ -3102,7 +3102,9 @@ To remove the *GreenDashDotStyle* style object from the current sheet:
 ```4d
 VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 ```
+#### See also
 
+[VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP Get stylesheets](#vp-get-stylesheets)
 
 
 ### VP RESET SELECTION
@@ -3139,7 +3141,9 @@ You want to deselect all cells (the active cell and any selected cells):
 VP RESET SELECTION("myVPArea")
 ```
 
+#### See also
 
+[VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
 ### VP RESUME COMPUTING
 
@@ -3168,8 +3172,9 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 See example in [VP SUSPEND COMPUTING](#vp-suspend-computing).
 
+#### See also
 
-
+[VP RECOMPUTE FORMULAS](#vp-recompute-formulas)<br/>[VP SUSPEND COMPUTING](#vp-suspend-computing)
 
 ### VP Row
 
@@ -3214,9 +3219,13 @@ You can write:
 $row:=VP Row("ViewProArea";9) // row 10
 ```
 
+#### See also
 
+[VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
 
-### VP ROW AUTOFIT
+### VP ROW AUTOFIT#### See also
+
+[VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
 
 <!-- REF #_method_.VP ROW AUTOFIT.Syntax -->**VP ROW AUTOFIT** ( *rangeObj* : Object) <!-- END REF -->  
 
@@ -3251,7 +3260,9 @@ Result:
 
 ![](assets/en/ViewPro/cmd_vpRowAutoFit2.PNG)
 
+#### See also
 
+[VP Column autofit](#vp-column-autofit)
 
 ### VP Run offscreen area
 
@@ -3383,7 +3394,9 @@ $o:=cs.OffscreenArea.new()
 $result:=VP Run offscreen area($o)
 ```
 
+## See also
 
+[Blog post: End of document loading](https://blog.4d.com/4d-view-pro-end-of-document-loading/)
 
 ## S
 
@@ -3417,7 +3430,9 @@ VP SET ACTIVE CELL($activeCell)
 
 ![](assets/en/ViewPro/cmd_vpSetActiveCell.PNG)
 
+## See also 
 
+[VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
 ### VP SET ALLOWED METHODS
 
@@ -3491,7 +3506,9 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 > In 4D View Pro formulas, function names are automatically displayed in uppercase.
 
+## See also 
 
+[4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
 ### VP SET BOOLEAN VALUE
 
@@ -3521,7 +3538,9 @@ The *boolValue* parameter allows you to pass the boolean value (**True** or **Fa
 //Set the cell value as False
 VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 ```
+## See also 
 
+[VP SET VALUE](#vp-set-value)
 
 
 ### VP SET BORDER
@@ -3602,7 +3621,9 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 ![](assets/en/ViewPro/cmd_vpSETBORDER2.PNG)
 
+## See also 
 
+[VP SET CELL STYLE](#vp-set-cell-style)
 
 ### VP SET CELL STYLE
 
@@ -3647,8 +3668,9 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
  
 ![](assets/en/ViewPro/cmd_vpSetCellStyle.PNG)
+#### See also
 
-
+[VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Font to object](#vp-font-to-object)<br/>[VP Get cell style](#vp-get-cell-style)<br/>[VP Object to font](#vp-object-to-font)<br/>[VP SET BORDER](#vp-set-border)<br/>[VP SET DEFAULT STYLE](#vp-set-default-style)
 
 
 
@@ -3698,7 +3720,9 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
  
 ![](assets/en/ViewPro/cmd_vpSetColumnAttributes.PNG)
 
+#### See also
 
+[VP Column](#vp-column)<br/>[VP Get column attributes](#vp-get-column-attributes)<br/>[VP Get row attributes](#vp-get-row-attributes)<br/>[VP SET ROW ATTRIBUTES](#vp-set-row-attributes)
 
 ### VP SET COLUMN COUNT
 
@@ -3735,6 +3759,10 @@ VP SET COLUMN COUNT("ViewProArea";5)
 ```
 
 ![](assets/en/ViewPro/cmd_vpSetColumnCount.PNG)
+
+#### See also
+
+[VP Get column count](#vp-get-column-count)<br/>[VP Get row count](#vp-get-row-count)<br/>[VP SET ROW COUNT](#vp-set-row-count)
 
 ### VP SET CURRENT SHEET
 
@@ -3773,6 +3801,9 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 ![](assets/en/ViewPro/vp-sheet-3-select.png)
 
+#### See also
+
+[VP Get current sheet](#vp-get-current-sheet)
 ### VP SET CUSTOM FUNCTIONS
 
 <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Syntax -->**VP SET CUSTOM FUNCTIONS** ( *vpAreaName* : Text ; *formulaObj* : Object  ) <!-- END REF -->  
@@ -3853,7 +3884,9 @@ Case of
 End case
 ```
 
+#### See also
 
+[VP SET ALLOWED METHODS](#vp-set-allowed-methods)
 
 ### VP SET DATE TIME VALUE
 
@@ -3893,7 +3926,9 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";6;2);Current time;Current date;vk p
 VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pattern sortable date time)
 ```
 
+#### See also
 
+[4D View Pro cell format](configuring.md#cell-format)<br/>[VP SET DATE VALUE](#vp-set-date-value)<br/>[VP SET TIME VALUE](#vp-set-time-value)<br/>[VP SET VALUE](#vp-set-value)
 
 
 ### VP SET DATE VALUE
@@ -3942,7 +3977,9 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;4);Date("12/25/94");"d/m/yy ")
 VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 ```
 
+#### See also
 
+[4D View Pro cell format](configuring.md#cell-format)<br/>[VP SET DATE TIME VALUE](#vp-set-date-time-value)<br/>[VP SET VALUE](#vp-set-value)
 
 ### VP SET DEFAULT STYLE
 
@@ -3984,7 +4021,9 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 ![](assets/en/ViewPro/cmd_vpSetDefaultStyle.PNG)
 
+#### See also
 
+[VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Font to object](#vp-font-to-object)<br/>[VP Get default style](#vp-get-default-style)<br/>[VP Object to font](#vp-object-to-font)<br/>[VP SET BORDER](#vp-set-border)<br/>[VP SET CELL STYLE](#vp-set-cell-style)
 
 ### VP SET FIELD
 
@@ -4015,8 +4054,9 @@ The optional *formatPattern* defines a pattern for the *field* parameter. You ca
 ```4d
 VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 ```
+#### See also
 
-
+[VP SET VALUE](#vp-set-value)
 
 ### VP SET FORMULA
 
@@ -4058,7 +4098,9 @@ To remove the formula:
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 ```
 
+#### See also
 
+[Cell format](configuring.md#cell-format)<br/>[VP Get Formula](#vp-get-formula)<br/>[VP SET FORMULAS](#vp-set-formulas)<br/>[VP SET VALUE](#vp-set-value)
 
 ### VP SET FORMULAS
 
@@ -4119,6 +4161,9 @@ $formulas.push(New collection("";"")) // second collection
 VP SET FORMULAS(VP Cell("ViewProArea";0;0);$formulas) // Assign to cells
 ```
 
+#### See also
+
+[VP Get Formulas](#vp-get-formulas)<br/>[VP GET VALUES](#vp-get-values)[VP SET FORMULA](#vp-set-formula)<br/>[VP SET VALUES](#vp-set-values)
 
 
 ### VP SET FROZEN PANES
@@ -4175,7 +4220,9 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 
 ![](assets/en/ViewPro/cmd_vpSetFrozenPanes.PNG)
 
+#### See also
 
+[VP Get frozen panes](#vp-get-frozen-panes)
 
 ### VP SET NUM VALUE
 
@@ -4211,7 +4258,9 @@ VP SET NUM VALUE(VP Cell("ViewProArea";3;2);2)
 VP SET NUM VALUE(VP Cell("ViewProArea";3;2);12.356;"_($* #,##0.00_)")
 ```
 
+#### See also
 
+[Cell format](configuring.md#cell-format)<br/>[VP SET VALUE](#vp-set-value)
 
 ### VP SET PRINT INFO
 
@@ -4282,7 +4331,9 @@ The PDF:
 
 ![](assets/en/ViewPro/cmd_vpSetPrintInfo.PNG)
 
+#### See also
 
+[4D View Pro print attributes](configuring.md#print-attributes)<br/>[VP Convert to picture](#vp-convert-to-picture)<br/>[VP Get print info](#vp-get-print-info)<br/>[VP PRINT](#vp-print)
 
 ### VP SET ROW ATTRIBUTES
 
@@ -4329,7 +4380,9 @@ VP SET ROW ATTRIBUTES($row;$properties)
 
 ![](assets/en/ViewPro/cmd_vpSetRowAttributes.PNG)
 
+#### See also
 
+[VP Get row attributes](#vp-get-row-attributes)<br/>[VP get column attributes](#vp-get-column-attributes)<br/>[VP SET ROW ATTRIBUTES](#vp-set-row-attributes)
 
 ### VP SET ROW COUNT
 
@@ -4368,7 +4421,9 @@ VP SET ROW COUNT("ViewProArea";5)
 
 ![](assets/en/ViewPro/cmd_vpSetRowCount.PNG)
 
+#### See also
 
+[VP Get column count](#vp-get-column-count)<br/>[VP get row-count](#vp-get-row-count)<br/>[VP SET COLUMN COUNT](#vp-set-column-count)
 
 ### VP SET SELECTION
 
@@ -4396,6 +4451,10 @@ VP SET SELECTION($currentSelection)
 ```
 
 ![](assets/en/ViewPro/cmd_vpSetSelection.PNG)
+
+#### See also 
+
+[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP ADD SELECTION](#vp-add-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
 ### VP SET SHEET COUNT
 
@@ -4431,6 +4490,10 @@ VP SET SHEET COUNT("ViewProArea";3)
 ```
 
 ![](assets/en/ViewPro/vp-sheet-3.png)
+
+#### See also 
+
+[VP Get sheet count](#vp-get-sheet-count)
 
 ### VP SET SHEET NAME
 
@@ -4479,6 +4542,7 @@ VP SET SHEET NAME("ViewProArea";"Total first quarter";2)
 ```
 
 ![](assets/en/ViewPro/vp-sheet-index-name.png)
+
 
 ### VP SET SHEET OPTIONS
 
@@ -4598,6 +4662,10 @@ Result:
 
 ![](assets/en/ViewPro/cmd_vpSetSheetOptions2.PNG)
 
+#### See also 
+
+[4D View Pro sheet options](#configuring.md#sheet-options)<br/>[VP Get sheet options](#vp-get-sheet-options)
+
 ### VP SET SHOW PRINT LINES
 
 <!-- REF #_method_.VP SET SHOW PRINT LINES.Syntax -->**VP SET SHOW PRINT LINES** ( *vpAreaName* : Text {; visible : Boolean}{; index : Integer} ) 
@@ -4615,7 +4683,7 @@ Result:
 
 #### Description
 
-The `VP SET SHEET NAME` command <!-- REF #_method_.VP SET SHOW PRINT LINES.Summary --> sets whether to display print preview lines in a spreadsheet.<!-- END REF -->. 
+The `VP SET SHOW PRINT LINES` command <!-- REF #_method_.VP SET SHOW PRINT LINES.Summary --> sets whether to display print preview lines in a spreadsheet.<!-- END REF -->. 
 
 In *vpAreaName*, pass the name of the 4D View Pro area.
 
@@ -4643,6 +4711,9 @@ With a page break:
 
 ![set-show-print-lines-with-page-break](assets/en/ViewPro/vp-set-show-print-lines-page-break.png)
 
+#### See also 
+
+[4D Get show print lines](#vp-get-show-print-lines)
 
 ### VP SET TEXT VALUE
 
@@ -4675,7 +4746,9 @@ The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for
 VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 ```
 
+#### See also 
 
+[Cell Format](configuring.md#cell-format)<br/>[VP SET VALUE](#vp-set-value)
 
 ### VP SET TIME VALUE
 
@@ -4711,7 +4784,9 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);Current time)
 VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 ```
 
+#### See also 
 
+[Cell Format](configuring.md#cell-format)<br/>[VP SET DATE TIME VALUE](#vp-set-date-time-value)<br/>[VP SET VALUE](#vp-set-value)
 
 ### VP SET VALUE
 
@@ -4772,8 +4847,9 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 //Erase cell content
 VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 ```
+#### See also
 
-
+[Cell Format](configuring.md#cell-format)<br/>[VP Get values](#vp-get-value)<br/>[VP SET VALUE](#vp-set-value)<br/>[VP SET BOOLEAN VALUE](#vp-set-boolean-value)<br/>[VP SET DATE TIME VALUE](#vp-set-date-time-value)<br/>[VP SET FIELD](#vp-set-field)<br/>[VP SET FORMULA](#vp-set-formula)<br/>[VP SET NUM VALUE](#vp-set-num-value)<br/>[VP SET TEXT VALUE](#vp-set-text-value)<br/>[VP SET TIME VALUE](#vp-set-time-value)
 
 ### VP SET VALUES
 
