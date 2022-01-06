@@ -83,7 +83,7 @@ Function getArea($width : Integer; $height : Integer) -> $area : Integer
 ```
 
 
-Se aplican las siguientes reglas:
+The following rules apply:
 
 - La línea de declaración debe ser la primera línea del código del método o de la función, de lo contrario se mostrará un error (sólo los comentarios o los saltos de línea pueden preceder la declaración).
 - Los nombres de los parámetros deben comenzar con un carácter `$` y cumplir con [reglas de denominación de las propiedades](dt_object.md#object-property-identifiers).
@@ -104,7 +104,7 @@ En el código de la función clase, el valor de cada parámetro se copia en el p
 Function getArea($width : Integer; $height : Integer)-> $area : Integer
     $area:=$width*$height
 ```
-> Si no se define el tipo, el parámetro se definirá como [`Variant`](dt_variant.md).
+> If the type is not defined, the parameter will be defined as [`Variant`](dt_variant.md).
 
 Todos los tipos de métodos de 4D soportan la palabra clave `#DECLARE`, incluidos los métodos base. Por ejemplo, en el método base `On Web Authentication`, puede declarar parámetros temporales:
 
@@ -193,7 +193,7 @@ $NewPhrase:=Uppercase4("This is good.")
 
 En este ejemplo, la variable *$NewPhrase* recibe “THIS is good.”
 
-El valor devuelto, `$0`, es una variable local dentro de la subrutina. Puede utilizarse como tal dentro de la subrutina. Por ejemplo, puede escribir:
+El valor devuelto, `$0`, es una variable local dentro de la subrutina. Puede utilizarse como tal dentro de la subrutina. For example, you can write:
 
 ```4d
 // Do_something

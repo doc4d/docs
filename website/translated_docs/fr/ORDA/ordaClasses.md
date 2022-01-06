@@ -350,9 +350,9 @@ Les propriétés du paramètre *$event* sont les suivantes :
 
 | Propriété     | Type    | Description                                                                                                   |
 | ------------- | ------- | ------------------------------------------------------------------------------------------------------------- |
-| attributeName | Text    | Nom du champ calculé                                                                                          |
-| dataClassName | Text    | Nom de la dataclass                                                                                           |
-| kind          | Text    | "get"                                                                                                         |
+| attributeName | Texte   | Nom du champ calculé                                                                                          |
+| dataClassName | Texte   | Nom de la dataclass                                                                                           |
+| kind          | Texte   | "get"                                                                                                         |
 | result        | Variant | Optionnel. Complétez cette propriété avec la valeur Null si vous souhaitez qu'un champ scalaire retourne Null |
 
 

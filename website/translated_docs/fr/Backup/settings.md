@@ -1,6 +1,6 @@
 ---
 id: settings
-title: Préférences de sauvegarde
+title: Paramètres de sauvegarde
 ---
 
 Les paramètres de sauvegarde sont définis sur trois pages dans la [boîte de dialogue des Paramètres](../settings/overview.md). Vous pouvez définir :
@@ -11,7 +11,7 @@ Les paramètres de sauvegarde sont définis sur trois pages dans la [boîte de d
 
 > Les propriétés définies dans cette boîte de dialogue sont écrits dans le fichier *Backup.4DSettings*, stocké dans le [dossier Settings](Project/architecture.md#settings-folder).
 
-## Périodicité
+## Sauvegardes périodiques
 
 Vous pouvez automatiser les sauvegardes de vos applications ouvertes avec 4D ou 4D Server (même lorsqu’aucun poste distant n’est connecté). Le principe consiste à définir une fréquence de sauvegarde (en heures, jours, semaines ou mois) ; à chaque échéance, 4D déclenche automatiquement une sauvegarde en tenant compte des paramètres de sauvegarde courants.
 
