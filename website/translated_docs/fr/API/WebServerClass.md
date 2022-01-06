@@ -744,7 +744,9 @@ Voir la description de [Session Cookie SameSite](WebServer/webServerConfig.md#se
 <!-- REF #WebServerClass.sessionIPAddressValidation.Syntax -->
 **.sessionIPAddressValidation** : Boolean<!-- END REF -->
 
-> Cette propriété n'est pas utilisée dans le [mode de sessions évolutives](#scalablesession) (il n'existe pas de validation d'adresse IP). <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->Validation de l'adresse IP des cookies de session<!-- END REF -->. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. Par exemple, lorsque les appareils mobiles basculent entre les réseaux Wifi et 3G/4G, leur adresse IP change. Dans ce cas, vous pouvez permettre aux clients de continuer à utiliser leurs sessions Web même lorsque les adresses IP changent (ce paramétrage abaisse le niveau de sécurité de votre application).
+> Cette propriété n'est pas utilisée dans le [mode de sessions évolutives](#scalablesession) (il n'existe pas de validation d'adresse IP).
+
+The <!-- REF #WebServerClass.sessionIPAddressValidation.Summary -->IP address validation for session cookies<!-- END REF -->. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. Par exemple, lorsque les appareils mobiles basculent entre les réseaux Wifi et 3G/4G, leur adresse IP change. Dans ce cas, vous pouvez permettre aux clients de continuer à utiliser leurs sessions Web même lorsque les adresses IP changent (ce paramétrage abaisse le niveau de sécurité de votre application).
 
 <!-- END REF -->
 
@@ -760,6 +762,7 @@ Voir la description de [Session Cookie SameSite](WebServer/webServerConfig.md#se
 </details>
 
 <!-- REF #WebServerClass.start().Syntax -->
+
 **.start**() : Object<br>**.start**( *settings* : Object ) : Object<!-- END REF -->
 
 
@@ -788,11 +791,11 @@ La fonction retourne un objet décrivant le statut démarré du serveur Web. Cet
 
 | Propriété |                         | Type       | Description                                                               |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
-| success   |                         | Boolean    | Vrai si le serveur web a été correctement démarré, sinon Faux             |
+| success   |                         | Booléen    | Vrai si le serveur web a été correctement démarré, sinon Faux             |
 | errors    |                         | Collection | Pile d'erreurs 4D (non retournée si le serveur web a démarré avec succès) |
-|           | \[].errCode            | Number     | Code d'erreur 4D                                                          |
-|           | \[].message            | Text       | Description de l'erreur 4D                                                |
-|           | \[].componentSignature | Text       | Signature du composant interne qui a retourné l'erreur                    |
+|           | \[].errCode            | Nombre     | Code d'erreur 4D                                                          |
+|           | \[].message            | Texte      | Description de l'erreur 4D                                                |
+|           | \[].componentSignature | Texte      | Signature du composant interne qui a retourné l'erreur                    |
 > Si le serveur Web a déjà été lancé, une erreur est générée.
 
 #### Exemple

@@ -7,7 +7,7 @@ Un champ, une variable ou une expression de type booléen peut être soit VRAI s
 
 ## Fonctions booléennes
 
-Les fonctions booléennes de 4D traitent des valeurs telles que `Vrai`, `Faux` et `Non` dans le thème **Booléens** consacré. Pour plus d'informations, veuillez vous reporter à la description de ces commandes.
+Les fonctions booléennes de 4D traitent des valeurs telles que `Vrai`, `Faux` et `Non` dans le thème **Booléens** consacré. For more information, see the descriptions of these commands.
 
 ### Exemple
 
@@ -63,3 +63,5 @@ Voici la "table de vérité" pour l'opérateur logique "OR" :
 ```4d
  (Expr1|Expr2) & Not(Expr1 & Expr2)  
 ```
+
+> In boolean contexts, the 4D language also supports [short-circuit operators](operators.md#short-circuit-operators) (`&&` and `||`) and the [trushy and falsy](operators.md#truthy-and-falsy) concept. 
