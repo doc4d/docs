@@ -162,7 +162,7 @@ La propiedad `.fieldType` <!-- REF DataClassAttributeClass.fieldType.Summary -->
 
 
 <!-- REF DataClassAttributeClass.indexed.Syntax -->
-**.indexed**: Booleano<!-- END REF -->
+**.indexed** : Boolean<!-- END REF -->
 
 
 #### Descripción
@@ -284,7 +284,7 @@ Dada la siguiente tabla y relación:
 
 
 <!-- REF DataClassAttributeClass.mandatory.Syntax -->
-**.mandatory**: Booleano<!-- END REF -->
+**.mandatory** : Boolean<!-- END REF -->
 
 
 #### Descripción
