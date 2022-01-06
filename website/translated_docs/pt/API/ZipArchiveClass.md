@@ -40,9 +40,10 @@ End if
 ## ZIP Create archive
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças   |
-| ------ | ---------- |
-| v18    | Adicionado |
+| Versão | Mudanças                                                              |
+| ------ | --------------------------------------------------------------------- |
+| v19 R3 | Added `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` property |
+| v18    | Adicionado                                                            |
 </details>
 
 <!-- REF #_command_.ZIP Create archive.Syntax -->
@@ -175,7 +176,23 @@ Pode passar uma coleção de pastas e arquivos para compactar ao objeto *zipStru
 ```
 
 
+#### Exemplo 5
 
+You want to use an alternative compression algorithm with a high compression level:
+
+```4d
+var $destination : 4D.File
+var $zip; $err : Object
+
+$zip:=New object
+$zip.files:=New collection
+$zip.files.push(Folder(fk desktop folder).folder("images"))
+$zip.compression:=ZIP Compression LZMA
+$zip.level:=7 //default is 4
+
+$destination:=Folder(fk desktop folder).file("images.zip")
+$err:=ZIP Create archive($zip; $destination)
+```
 
 ## ZIP Read archive
 

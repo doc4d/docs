@@ -12,6 +12,24 @@ In addition to harmonizing an application's interface, style sheets provide thre
 *   Facilitates maintenance: Style sheets modify the appearance of any objects that uses them, so changing the font size in a style sheet will change the font size for all of the objects that use this same style sheet.
 *   Controls multi-platform development: You can have a style sheets that apply to both macOS and Windows platforms, only macOS, or only Windows. When a style sheet is applied, 4D automatically uses the appropriate style sheet.
 
+
+
+## Criação ou modificação de folhas de estilo
+
+Pode criar folhas de estilo utilizando seu editor de texto preferido e salvando o arquivo com extensão ".css" na pasta "/SOURCES" do projeto.
+
+A caixa de ferramentas de 4D oferece uma página **Hojas de estilo** como opção de acesso direto para criar e editar uma das três folhas de estilo com nomes específicas da plataforma.
+
+1.  Abra a página **Estilos** escolhendo a **Caixa de ferramentas > Styles** do menu Design ou clique no ícone **Caixa de ferramentas** da barra de ferramentas do editor de formulários.
+
+    ![](assets/en/FormEditor/stylesheets.png)
+
+2.  Selecione o tipo de folha de estilo que deseja criar E cliquer no botão **Criar** ou **Editar**: ![](assets/en/FormEditor/createButton.png)
+
+3. A folha de estilo se abrirá em seu editor de texto predeterminado.
+
+
+
 ## Arquivos folhas de estilo
 
 4D accepts three, specific style sheet files:
@@ -341,16 +359,6 @@ Durante a execução, 4D prioriza automaticamente as folhas de estilo na seguint
 > As rotas dos arquivos pedem ser relativas ou absolutas. * As rotas relativas se resolvem em relação com o arquivo de descrição do formulário JSON. * Por razões de segurança, só se aceitam as rotas do sistema de arquivos para as rotas absolutas. (*e.g.*, "/RESOURCES", "/DATA")
 
 
-## Criação ou modificação de folhas de estilo
+## See also
 
-Pode criar folhas de estilo utilizando seu editor de texto preferido e salvando o arquivo com extensão ".css" na pasta "/SOURCES" do projeto.
-
-A caixa de ferramentas de 4D oferece uma página **Hojas de estilo** como opção de acesso direto para criar e editar uma das três folhas de estilo com nomes específicas da plataforma.
-
-1.  Abra a página **Estilos** escolhendo a **Caixa de ferramentas > Styles** do menu Design ou clique no ícone **Caixa de ferramentas** da barra de ferramentas do editor de formulários.
-
-    ![](assets/en/FormEditor/stylesheets.png)
-
-2.  Selecione o tipo de folha de estilo que deseja criar E cliquer no botão **Criar** ou **Editar**: ![](assets/en/FormEditor/createButton.png)
-
-3. A folha de estilo se abrirá em seu editor de texto predeterminado.  
+See the [**CSS for 4D Forms**](https://www.youtube.com/watch?v=3Hk4FUQENyQ) video presentation.

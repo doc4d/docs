@@ -201,7 +201,7 @@ Ce dossier contient des **fichiers de propriétés utilisateur** utilisés pour 
 
 ## `userPreferences.<userName>`
 
-This folder contains files that memorize user configurations, e.g. break point or window positions. Vous pouvez simplement ignorer ce dossier. Il contient par exemple :
+Ce dossier contient des fichiers qui mémorisent les configurations utilisateur, par exemple la position des points de rupture ou de la fenêtre. Vous pouvez simplement ignorer ce dossier. Il contient par exemple :
 
 | Contenu                    | Description                                                           | Format |
 | -------------------------- | --------------------------------------------------------------------- | ------ |
