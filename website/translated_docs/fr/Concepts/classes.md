@@ -173,7 +173,7 @@ Lorsque 4D ne trouve pas de fonction ou de propriété dans une classe, il la re
 
 Des mots-clés 4D spécifiques peuvent être utilisés dans les définitions de classe :
 
-- `Function <Name>` pour définir les fonctions de classe des objets.
+- `Fonction <Name>` pour définir les fonctions de classe des objets.
 - `Function get <Name>` et `Function set <Name>` pour définir les propriétés calculées des objets.
 - `Class constructor` pour définir les propriétés statiques des objets.
 - `Class extends <ClassName>` pour définir l'héritage.
