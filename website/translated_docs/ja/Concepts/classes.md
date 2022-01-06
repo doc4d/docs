@@ -59,7 +59,7 @@ $hello:=$person.sayHello() // "Hello John Doe"
 
 
         * Sources
-            - Classes
+            - クラス
                 + Polygon.4dm
 
 ### クラスの削除
