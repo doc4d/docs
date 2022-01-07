@@ -57,12 +57,7 @@ Cette commande vous permet de vérifier que le serveur web, l'affichage de la pa
 
 À tout moment, vous pouvez vider le cache des pages et des images qu'il contient (si, par exemple, vous avez modifié une page statique et que vous souhaitez la recharger dans le cache).
 
-Pour ce faire, vous pouvez :
-
--   4D : cliquez sur le bouton **Vider le cache** dans la page Web/Options (I) de la boîte de dialogue des Paramètres.
--   4D Server : cliquez sur le bouton **Vider le cache** dans la page HTTP de la fenêtre [Administration de 4D Server](Admin/server-admin.md#http-server-page).
-
-Le cache est alors immédiatement effacé.
+4D : cliquez sur le bouton **Vider le cache** dans la page Web/Options (I) de la boîte de dialogue des Paramètres. Le cache est alors immédiatement effacé.
 > Vous pouvez aussi utiliser l'url [/4DCACHECLEAR](#cacheclear).
 
 
@@ -132,7 +127,7 @@ L'URL */4DWEBTEST* permet de vérifier l'état du serveur web. Lorsque cette URL
 
 
 
-## Logs
+## Fichiers d'historique
 
 4D vous permet de générer deux historiques de requêtes Web :
 

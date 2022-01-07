@@ -185,7 +185,7 @@ Si le nouvel indice de l'élément est au-delà du dernier élément existant de
 Vous pouvez passer tout nombre de valeurs de n'importe quel type pris en charge :
 
 *   nombre (réel, entier...). Les valeurs numériques sont toujours stockées sous forme de réels.
-*   text
+*   Texte
 *   boolean
 *   date
 *   heure (stockée en nombre de milliseconds - réel)

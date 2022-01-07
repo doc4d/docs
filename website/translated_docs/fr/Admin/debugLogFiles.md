@@ -3,7 +3,7 @@ id: debugLogFiles
 title: Description des fichiers historiques
 ---
 
-Les applications 4D peuvent générer plusieurs fichiers d'historique qui sont utiles pour le débogage ou l'optimisation de leur exécution. Les logs sont généralement démarrés ou arrêtés à l'aide des sélecteurs des commandes [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) ou [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) et sont stockés dans le dossier [Logs](Project/architecture.md#logs-folder) de la base.
+Les applications 4D peuvent générer plusieurs fichiers d'historique qui sont utiles pour le débogage ou l'optimisation de leur exécution. Logs are usually started or stopped using selectors of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) or [WEB SET OPTION](https://doc.4d.com/4dv19/help/command/en/page1210.html) commands and are stored in the [Logs folder](Project/architecture.md#logs) of the project.
 
 Les informations de l'historique doivent être analysées pour détecter et corriger les problèmes. Cette section fournit une description complète des fichiers journaux suivants :
 
@@ -17,18 +17,18 @@ Les informations de l'historique doivent être analysées pour détecter et corr
 *   [4DSMTPLog.txt](#4dsmtplogtxt-4dpop3logtxt-and-4dimaplogtxt)
 *   [Fichier d'historique des requêtes ORDA clientes](#orda-client-requests)
 
-> Lorsqu'un fichier d'historique peut être généré soit sur 4D Server, soit sur le client distant, le mot " Server " est ajouté au nom du fichier d'historique côté serveur, par exemple " 4DRequestsLogServer.txt"
+Note: When a log file can be generated either on 4D Server or on the remote client, the word "Server" is added to the server-side log file name, for example "4DRequestsLogServer.txt"
 
-Les fichiers de logs partagent certains champs, ce qui vous permet d'établir une chronologie et de faire des connexions entre les entrées lors du debugging :
+Log files share some fields so that you can establish a chronology and make connections between entries while debugging:
 
 *   `sequence_number` : ce numéro est unique parmi tous les fichiers d'historique de débogage et est incrémenté à chaque nouvelle entrée, quel que soit le fichier d'historique, de manière à ce que vous puissiez connaître la séquence exacte des opérations.
 *   `connection_uuid` : pour chaque process 4D créé sur un client 4D qui se connecte au serveur, cet UUID de connexion est stocké à la fois côté serveur et client. Il vous permet d'identifier facilement le client distant qui a lancé le process.
 
 ## 4DRequestsLog.txt
 
-Ce fichier de logs enregistre les requêtes standard envoyées par la machine du 4D Server, ou la machine à distance qui a exécuté la commande (requêtes web exclues).
+This log file records standard requests carried out by the 4D Server machine or the 4D remote machine that executed the command (excluding Web requests).
 
-Pour lancer cet historique :
+How to start this log:
 
 *   sur le serveur :
 
@@ -44,11 +44,11 @@ SET DATABASE PARAMETER(4D Server log recording;1)
 SET DATABASE PARAMETER(Client Log Recording;1)
 //côté distant
 ```
-> Cette déclaration démarre également l'historique du fichier [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt).
+> This statement also starts the [4DRequestsLog_ProcessInfo.txt](l#4drequestslog_processinfotxt) log file.
 
 #### En-têtes
 
-Ce fichier commence avec les en-têtes suivants :
+This file starts with the following headers:
 
 *   Log Session Identifier (Identifiant de session d'historique)
 *   Nom du serveur qui héberge l'application
@@ -56,9 +56,9 @@ Ce fichier commence avec les en-têtes suivants :
 
 #### Contenu
 
-Pour chaque requête, les champs suivants sont enregistrés :
+For each request, the following fields are logged:
 
-| Nom des champs                             | Description                                                                                                                                                                                                                                                                  |
+| Noms des champs                            | Description                                                                                                                                                                                                                                                                  |
 | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | sequence_number                            | Numéro d'opération séquentiel et unique dans la session d'historique                                                                                                                                                                                                         |
 | time                                       | Date et heure au format ISO 8601 : 'YYYY-MM-DDTHH:MM:SS.mmm'                                                                                                                                                                                                                 |
@@ -73,15 +73,15 @@ Pour chaque requête, les champs suivants sont enregistrés :
 | task_kind                                  | Préemptif ou coopératif (respectivement 'p' ou 'c')                                                                                                                                                                                                                          |
 | rtt                                        | Temps en microsecondes pris par le client pour envoyer la requête et pour qu'elle soit reçue par le serveur. Correspond respectivement aux chemins A vers D et E vers H dans l'image ci-dessous.<p><li>Mesuré uniquement lorsque la couche réseau ServerNet est utilisée, retourne 0 lorsque l'ancienne couche réseau est utilisée.</li><li>Dans les versions antérieures à Windows 10 ou à Windows Server 2016, l'appel retournera la valeur 0.</li> |
 
-Acheminement de la requête :
+Request flow:
 
 ![](assets/en/Admin/logRequestFlow.PNG)
 
 ## 4DRequestsLog_ProcessInfo.txt
 
-Ce fichier de logs enregistre des informations sur chaque process créé sur la machine du 4D Server, ou la machine à distance qui a exécuté la commande (requêtes web exclues).
+This log file records information on each process created on the 4D Server machine or the 4D remote machine that executed the command (excluding Web requests).
 
-Pour lancer cet historique :
+How to start this log:
 
 *   sur le serveur :
 
@@ -94,11 +94,11 @@ SET DATABASE PARAMETER(4D Server log recording;1) //côté serveur
 ```4d
 SET DATABASE PARAMETER(Client Log Recording;1) //côté distant
 ```
-> Cette déclaration démarre également l'historique du fichier [4DRequestsLog.txt](#4drequestslogtxt).
+> This statement also starts the [4DRequestsLog.txt](#4drequestslogtxt) log file.
 
 #### En-têtes
 
-Ce fichier commence avec les en-têtes suivants :
+This file starts with the following headers:
 
 *   Log Session Identifier (Identifiant de session d'historique)
 *   Nom du serveur qui héberge l'application
@@ -107,9 +107,9 @@ Ce fichier commence avec les en-têtes suivants :
 
 #### Contenu
 
-Pour chaque process, les champs suivants sont enregistrés :
+For each process, the following fields are logged:
 
-| Nom des champs                    | Description                                                          |
+| Noms des champs                   | Description                                                          |
 | --------------------------------- | -------------------------------------------------------------------- |
 | sequence_number                   | Numéro d'opération séquentiel et unique dans la session d'historique |
 | time                              | Date et heure au format ISO 8601 : "YYYY-MM-DDTHH:MM:SS.mmm"         |
@@ -129,16 +129,16 @@ Pour chaque process, les champs suivants sont enregistrés :
 
 ## HTTPDebugLog.txt
 
-Ce fichier d'historique enregistre chaque requête HTTP et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parts du body peuvent également être enregistrées.
+Ce fichier d'historique enregistre chaque requête HTTP et chaque réponse en mode brut (raw). Les requêtes sont enregistrées dans leur totalité (en-têtes compris). Les parts du body peuvent optionellement être enregistrées.
 
-Pour lancer cet historique :
+How to start this log:
 
 ```4d
 WEB SET OPTION(Web debug log;wdl enable without body)  
 //d'autres valeurs sont disponibles
 ```
 
-Les champs suivants sont enregistrés pour Requête et Réponse :
+Les champs suivants sont enregistrés pour chaque requête et réponse :
 
 | Noms des champs | Description                                                          |
 | --------------- | -------------------------------------------------------------------- |
@@ -151,9 +151,9 @@ Les champs suivants sont enregistrés pour Requête et Réponse :
 
 ## 4DDebugLog.txt (standard)
 
-Ce fichier d'historique enregistre chaque évènement qui a lieu au niveau de la programmation 4D. Le mode standard offre une vue d'ensemble des évènements.
+This log file records each event occurring at the 4D programming level. Standard mode provides a basic view of events.
 
-Pour lancer cet historique :
+How to start this log:
 
 ```4d
 SET DATABASE PARAMETER(Debug Log Recording;2)  
@@ -163,7 +163,7 @@ SET DATABASE PARAMETER(Current process debug log recording;2)
 //standard, process courant uniquement
 ```
 
-Les champs suivants sont enregistrés pour chaque évènement :
+The following fields are logged for each event:
 
 | Colonne # | Description                                                                                                                      |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -176,9 +176,9 @@ Les champs suivants sont enregistrés pour chaque évènement :
 
 ## 4DDebugLog.txt (tabulaire)
 
-Ce fichier de logs enregistre chaque évènement au niveau de la programmation 4D sous un format compact avec des tabulations, qui inclut des informations supplémentaires par rapport au format standard.
+This log file records each event occurring at the 4D programming level in a tabbed, compact format that includes additional information (compared to the standard format).
 
-Pour lancer cet historique :
+How to start this log:
 
 ```4d
 SET DATABASE PARAMETER(Debug Log Recording;2+4)  
@@ -188,7 +188,7 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
 //étendu, process courant uniquement
 ```
 
-Les champs suivants sont enregistrés pour chaque évènement :
+The following fields are logged for each event:
 
 | Colonne # | Noms des champs                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | --------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -319,198 +319,11 @@ SET DATABASE PARAMETER(Client Log Recording;0)
 
 The following fields are logged for each request:
 
-| Noms des champs | Description                                                          | Exemple                                                   |
-| --------------- | -------------------------------------------------------------------- | --------------------------------------------------------- |
-| sequenceNumber  | Numéro d'opération séquentiel et unique dans la session d'historique | 104                                                       |
-| url             | URL de la requête ORDA effectuée par le poste client                 | "rest/Persons(30001)"                                     |
-| startTime       | Date et heure de début au format ISO 8601                            | "2019-05-28T08:25:12.346Z"                                |
-| endTime         | Date et heure de fin au format ISO 8601                              | "2019-05-28T08:25:12.371Z"                                |
-| duration        | Durée de traitement client (ms)                                      | 25                                                        |
-| response        | Objet réponse du serveur                                             | {"status":200,"body":{"__entityModel":"Persons",\[...]}} |
-
-
-
-## Utilisation d'un fichier de configuration de log
-
-Vous pouvez utiliser un **fichier de configuration de log** pour gérer facilement l'enregistrement des journaux dans un environnement de production. Ce fichier est préconfiguré par le développeur. En général, il peut être envoyé aux clients pour qu'ils n'aient qu'à le sélectionner ou à le copier dans un dossier local. Une fois activé, le fichier de configuration de log déclenche l'enregistrement de journaux spécifiques.
-
-### Activation du fichier
-
-Il existe plusieurs façons d'activer le fichier de configuration des logs :
-
-- Sur le serveur 4D avec interface, vous pouvez ouvrir la page Maintenance et cliquer sur le bouton [Charger le fichier de configuration des logs](Admin/server-admin.md#load-logs-configuration-file), puis sélectionner le fichier. Dans ce cas, vous pouvez utiliser n'importe quel nom pour le fichier de configuration. Il est immédiatement activé sur le serveur.
-- Vous pouvez copier le fichier de configuration du journal dans le [dossier Settings](Project/architecture.md#settings-1) du projet. Dans ce cas, le fichier doit être nommé `logConfig.json`. Il est activé au démarrage du projet (uniquement sur le serveur en client/serveur).
-- Avec une application générée, vous pouvez copier le fichier `logConfig.json` dans le dossier suivant :
-    + Windows : `Users\[userName]\AppData\Roaming\[application]`
-    + macOS : `/Users/[userName]/Library/ApplicationSupport/[application]`
-
-> Si vous souhaitez activer le fichier de configuration log pour tous les projets dans les applications autonomes, les applications serveur et les applications distantes, copiez le ficher `logConfig.json` dans le dossier suivant : - Windows: `Users\[userName]\AppData\Roaming\4D ou \4D Server` - macOS: `/Users/[userName]/Library/ApplicationSupport/4D ou /4D Server`
-
-### Description du fichier JSON
-
-Le fichier de configuration de log est un fichier `.json` qui peut contenir les propriétés suivantes :
-
-```json
-{
-    "$schema": "http://json-schema.org/draft-07/schema",
-    "title": "Logs Configuration File",
-    "description": "A file that controls the state of different types of logs in 4D clients and servers",
-    "type": "object",
-    "properties": {
-        "forceLoggingConfiguration": {
-            "description": "Forcing the logs configuration described in the file ingoring changes coming from code or user interface",
-            "type": "boolean",
-            "default": true
-        },
-        "requestLogs": {
-            "description": "Configuration for request logs",
-            "type": "object",
-            "properties": {
-                "clientState": {
-                    "description": "Enable/Disable client request logs (from 0 to N)",
-                    "type": "integer",
-                    "minimum": 0
-                },
-                "serverState": {
-                    "description": "Enable/Disable server request logs (from 0 to N)",
-                    "type": "integer",
-                    "minimum": 0
-                }
-            }
-        },
-        "debugLogs": {
-            "description": "Configuration for debug logs",
-            "type": "object",
-            "properties": {
-                "commandList": {
-                    "description": "Commands to log or not log",
-                    "type": "array",
-                    "items": {
-                        "type": "string" 
-                    },
-                    "minItems": 1,
-                    "uniqueItems": true
-                },
-                "state": {
-                    "description": "integer to specify type of debuglog and options",
-
-                    "type": "integer",
-                    "minimum": 0
-                }
-            }
-        },
-        "diagnosticLogs":{
-            "description": "Configuration for debug logs",
-            "type": "object",
-            "properties": {
-                "state":{
-                    "description": "Enable/Disable diagnostic logs 0 or 1 (0 = do not record, 1 = record)",
-                    "type": "integer",
-                    "minimum": 0    
-                }
-            }
-          },
-        "httpDebugLogs": {
-            "description": "Configuration for http debug logs",
-            "type": "object",
-            "properties": {
-                "level": {
-                    "description": "Configure http request logs",
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 7
-                },
-                "state": {
-                    "description": "Enable/Disable recording of web requests",
-                    "type": "integer",
-                    "minimum": 0,
-                    "maximum": 4
-                }
-            }
-        },
-        "POP3Logs": {
-            "description": "Configuration for POP3 logs",
-            "type": "object",
-            "properties": {
-                "state": {
-                    "description": "Enable/Disable POP3 logs (from 0 to N)",
-                    "type": "integer",
-                    "minimum": 0
-                }
-            }
-        },
-        "SMTPLogs": {
-            "description": "Configuration for SMTP logs",
-            "type": "object",
-            "properties": {
-                "state": {
-                    "description": "Enable/Disable SMTP log recording (form 0 to N)",
-                    "type": "integer",
-                    "minimum": 0
-                }
-            }
-        },
-        "IMAPLogs": {
-            "description": "Configuration for IMAP logs",
-            "type": "object",
-            "properties": {
-                "state": {
-                    "description": "Enable/Disable IMAP log recording (form 0 to N)",
-                    "type": "integer" 
-                }
-            }
-        },
-        "ORDALogs": {
-            "description": "Configuration for ORDA logs",
-            "type": "object",
-            "properties": {
-                "state": {
-                    "description": "Enable/Disable ORDA logs (0 or 1)",
-                    "type": "integer" 
-                },
-                "filename": {
-                    "type": "string" 
-                }
-            }
-        }
-    }
-}
-```
-
-### Exemple
-
-Voici un exemple de fichier de configuration de log :
-
-```json
-{
-    "forceLoggingConfiguration": false,
-    "requestLogs": {
-        "clientState": 1,
-        "serverState": 1
-    },
-    "debugLogs": {
-        "commandList":["322","311","112"],
-        "state": 4
-    },
-    "diagnosticLogs":{
-        "state" : 1
-    },
-    "httpDebugLogs": {
-        "level": 5,
-        "state" : 1
-    },
-    "POP3Logs": {
-        "state" : 1 
-    },
-    "SMTPLogs": {
-        "state" : 1 
-    },
-    "IMAPLogs": {
-        "state" : 1 
-    },
-    "ORDALogs": {
-        "state" : 1,
-        "filename": "ORDALog.txt"
-    }
-}
-```
+| Noms des champs | Description                                                          | Exemple                                                 |
+| --------------- | -------------------------------------------------------------------- | ------------------------------------------------------- |
+| sequenceNumber  | Numéro d'opération séquentiel et unique dans la session d'historique | 104                                                     |
+| url             | URL de la requête ORDA effectuée par le poste client                 | "rest/Persons(30001)"                                   |
+| startTime       | Date et heure de début au format ISO 8601                            | "2019-05-28T08:25:12.346Z"                              |
+| endTime         | Date et heure de fin au format ISO 8601                              | "2019-05-28T08:25:12.371Z"                              |
+| duration        | Durée de traitement client (ms)                                      | 25                                                      |
+| response        | Objet réponse du serveur                                             | {"status":200,"body":{"__entityModel":"Persons",\[...] |

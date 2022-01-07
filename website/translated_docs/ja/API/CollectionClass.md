@@ -1,6 +1,6 @@
 ---
 id: CollectionClass
-title: Collection
+title: コレクション
 ---
 
 
@@ -1287,7 +1287,6 @@ $c2:=$c.extract("name";"City";"zc";"Zip") //$c2=[{Zip:35060},{City:null,Zip:3504
 | toSearch  | 式       | -> | コレクション内を検索する式                             |
 | startFrom | Integer | -> | 検索を開始するインデックス                             |
 | 戻り値       | Integer | <- | 最初に見つかった toSearch のインデックス。見つからなかった場合には -1 |
-
 <!-- END REF -->
 
 
@@ -1500,7 +1499,6 @@ propertyPath 比較演算子 値 {logicalOperator propertyPath 比較演算子 �
 | toSearch  | 式       | -> | コレクション内を検索する要素                            |
 | startFrom | Integer | -> | 検索を開始するインデックス                             |
 | 戻り値       | Integer | <- | 最後に見つかった toSearch のインデックス。見つからなかった場合には -1 |
-
 <!-- END REF -->
 
 

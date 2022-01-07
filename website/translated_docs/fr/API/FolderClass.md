@@ -293,7 +293,7 @@ When `Delete only if empty` is passed or if you omit the option parameter:
 *   Le dossier n'est supprimé que s'il est vide ; sinon, la commande ne fait rien et une erreur -47 est générée.
 *   Si le dossier n'existe pas, l'erreur -120 est générée.
 
-Lorsque la commande `Delete with contents` est passée :
+When `Delete with contents` is passed:
 
 *   Le dossier, ainsi que tout son contenu, est supprimé. **Attention** : Même si ce dossier et/ou son contenu sont verrouillés ou définis comme étant en lecture seule, si l'utilisateur dispose des droits d'accès appropriés, le dossier (et son contenu) est supprimé malgré tout.
 *   Si ce dossier, ou l'un des fichiers qu'il contient, ne peut être supprimé, la suppression est interrompue dès que le premier élément inaccessible est détecté, et une erreur(*) est retournée. Dans ce cas, le dossier ne peut être que partiellement supprimé. Lorsque la suppression est interrompue, vous pouvez utiliser la commande `GET LAST ERROR STACK` pour récupérer le nom et le chemin d'accès du dossier incriminé.
