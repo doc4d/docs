@@ -596,14 +596,14 @@ $status:=$transporter.send($email)
 | ---------- | ------ |:--:| ---------------------------------------------- |
 | mail       | Objeto | -> | Objeto Email                                   |
 | options    | Objeto | -> | Opciones de codificación y de charset del mail |
-| Resultado  | Texto  | <- | Email object converted to MIME                 |
+| Resultado  | Texto  | <- | Objeto email convertido en MIME                |
 <!-- END REF -->
 
 #### Descripción
 
-The `MAIL Convert to MIME` command <!-- REF #_command_.MAIL_Convert_to_MIME.Summary -->converts an email object into MIME text<!-- END REF -->. This command is called internally by [SMTP_transporter.send( )](API/SMTPTransporterClass.md#send) to format the email object before sending it. It can be used to analyze the MIME format of the object.
+El comando `MAIL Convert to MIME` <!-- REF #_command_.MAIL_Convert_to_MIME.Summary -->convierte un objeto de correo electrónico en texto MIME<!-- END REF -->. Este comando es llamado internamente por [SMTP_transporter.send( )](API/SMTPTransporterClass.md#send) para formatear el objeto de correo electrónico antes de enviarlo. Se puede utilizar para analizar el formato MIME del objeto.
 
-In *mail*, pass the content and the structure details of the email to convert. This includes information such as the email addresses (sender and recipient(s)), the message itself, and the type of display for the message.
+En *mail*, pase el contenido y los detalles de la estructura del correo electrónico a convertir. This includes information such as the email addresses (sender and recipient(s)), the message itself, and the type of display for the message.
 > 4D follows the [JMAP specification](https://jmap.io/spec-mail.html) to format the email object.
 
 In *options*, you can set a specific charset and encoding configuration for the mail. The following properties are available:
