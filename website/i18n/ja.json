@@ -17,9 +17,6 @@
       "Admin/licenses": {
         "title": "4D ライセンスの管理"
       },
-      "Admin/server-admin": {
-        "title": "4D Server 管理ウィンドウ"
-      },
       "Admin/tls": {
         "title": "TLSプロトコル (HTTPS)"
       },
@@ -30,10 +27,10 @@
         "title": "BLOB"
       },
       "API/ClassClass": {
-        "title": "Class"
+        "title": "クラス"
       },
       "API/CollectionClass": {
-        "title": "Collection"
+        "title": "コレクション"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -42,7 +39,7 @@
         "title": "DataClassAttribute"
       },
       "API/DataClassClass": {
-        "title": "DataClass"
+        "title": "データクラス"
       },
       "API/DataStoreClass": {
         "title": "DataStore"
@@ -57,7 +54,7 @@
         "title": "Email"
       },
       "API/EntityClass": {
-        "title": "Entity"
+        "title": "エンティティ"
       },
       "API/EntitySelectionClass": {
         "title": "EntitySelection"
@@ -84,7 +81,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "Session"
+        "title": "セッション"
       },
       "API/SignalClass": {
         "title": "Signal"
@@ -121,9 +118,6 @@
       },
       "Backup/settings": {
         "title": "バックアップ設定"
-      },
-      "code-editor/dropdown": {
-        "title": "Navigation dropdown"
       },
       "Concepts/about": {
         "title": "4D ランゲージについて"
@@ -226,7 +220,7 @@
         "title": "リモートマシンからのデバッグ"
       },
       "Desktop/building": {
-        "title": "アプリケーションビルド"
+        "title": "プロジェクトパッケージのビルド"
       },
       "Desktop/clientServer": {
         "title": "クライアント/サーバー管理"
@@ -724,9 +718,6 @@
       "Project/compiler": {
         "title": "コンパイル"
       },
-      "Project/components": {
-        "title": "4D コンポーネントライブラリ"
-      },
       "Project/creating": {
         "title": "プロジェクトを開発する"
       },
@@ -890,7 +881,6 @@
       "4D Language Concepts": "ランゲージのコンセプト",
       "ORDA": "ORDA",
       "Class API Reference": "クラス API リファレンス",
-      "Code Editor": "コードエディター",
       "Debugging": "デバッガー",
       "Preferences": "環境設定",
       "Administration": "管理",
@@ -907,7 +897,7 @@
       "Form Object Properties": "フォームオブジェクトプロパティ",
       "Form Events": "フォームイベント",
       "Menus": "メニュー",
-      "Build Application": "アプリケーションビルド"
+      "Build application": "アプリケーションビルド"
     }
   },
   "pages-strings": {
@@ -931,19 +921,16 @@
     "License Management|no description given": "ライセンス管理",
     "Build Application|no description given": "アプリケーションビルド",
     "Web Administration|no description given": "Web 管理",
-    "4D Server Administration Window|no description given": "4D Server 管理ウィンドウ",
-    "4D Components Library|no description given": "4D コンポーネントライブラリ",
     "Client/Server|no description given": "クライアント/サーバー",
     "TLS Protocol (HTTPS)|no description given": "TLSプロトコル (HTTPS)",
     "Debugging|no description given": "デバッガー",
-    "Code Editor|no description given": "コードエディター",
     "Web Data Explorer|no description given": "Webデータエクスプローラー",
     "Language Reference (4D Doc Center)|no description given": "ランゲージリファレンス (4D Doc Center)",
     "Access Rights|no description given": "アクセス権限",
     "Description of log files|no description given": "ログファイルの詳細",
     "Command Line Interface|no description given": "コマンドライン・インターフェース",
     "Preferences|no description given": "環境設定",
-    "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.en.html|no description given": "https://doc.4d.com/4Dv19R3/4D/19-R3/4D-Language-Reference.100-5582450.ja.html",
+    "https://doc.4d.com/4Dv19R2/4D/19-R2/4D-Language-Reference.100-5493454.en.html|no description given": "https://doc.4d.com/4Dv19R2/4D/19-R2/4D-Language-Reference.100-5493454.ja.html",
     "Getting started|no description given": "はじめに",
     "Core Development|no description given": "コア開発",
     "Administration|no description given": "管理",
