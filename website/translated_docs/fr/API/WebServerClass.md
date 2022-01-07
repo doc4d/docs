@@ -777,7 +777,7 @@ La fonction `.start()` function <!-- REF #WebServerClass.start().Summary -->dém
 
 Le serveur Web démarre avec les paramètres par défaut définis dans le fichier de settings du projet ou (base hôte uniquement) à l'aide de la commande `WEB SET OPTION`. Cependant, à l'aide du paramètre *settings*, vous pouvez définir des paramètres personnalisés pour la session du serveur Web.
 
-Tous les paramètres des [objets Web Server](#web-server-object) peuvent être personnalisés, hormis les propriétés en lecture seule ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), et [.sessionCookieName](#sessioncookiename)).
+Tous les paramètres des [objets Web server](#web-server-object) peuvent être personnalisés, à l'exception des propriétés en lecture seule ([.isRunning](#isrunning), [.name](#name), [.openSSLVersion](#opensslversion), [.perfectForwardSecrecy](#perfectforwardsecrecy), et [.sessionCookieName(#sessioncookiename)]).
 
 Les paramètres de session personnalisés seront réinitialisés lorsque la fonction [`.stop()`](#stop) sera appelée.
 
@@ -788,11 +788,11 @@ La fonction retourne un objet décrivant le statut démarré du serveur Web. Cet
 
 | Propriété |                         | Type       | Description                                                               |
 | --------- | ----------------------- | ---------- | ------------------------------------------------------------------------- |
-| success   |                         | Booléen    | Vrai si le serveur web a été correctement démarré, sinon Faux             |
+| success   |                         | Boolean    | Vrai si le serveur web a été correctement démarré, sinon Faux             |
 | errors    |                         | Collection | Pile d'erreurs 4D (non retournée si le serveur web a démarré avec succès) |
-|           | \[].errCode            | Nombre     | Code d'erreur 4D                                                          |
-|           | \[].message            | Texte      | Description de l'erreur 4D                                                |
-|           | \[].componentSignature | Texte      | Signature du composant interne qui a retourné l'erreur                    |
+|           | \[].errCode            | Number     | Code d'erreur 4D                                                          |
+|           | \[].message            | Text       | Description de l'erreur 4D                                                |
+|           | \[].componentSignature | Text       | Signature du composant interne qui a retourné l'erreur                    |
 > Si le serveur Web a déjà été lancé, une erreur est générée.
 
 #### Exemple

@@ -64,7 +64,7 @@ En plus des options système standard, la boîte de dialogue *Ouvrir* de 4D prop
 
 ### Ouvrir un projet avec un fichier 4DLink
 
-Vous pouvez utiliser un [fichier `.4DLink`](#about-4DLink-files) pour lancer l'application 4D et ouvrir le projet 4D cible. There are two ways to do this:
+Vous pouvez utiliser un [fichier `.4DLink`](#about-4DLink-files) pour lancer l'application 4D et ouvrir le projet 4D cible. Il existe deux façons de procéder :
 
 - double-cliquez ou faites glisser et déposez le fichier `.4DLink` sur l'application 4D
 - allez dans **Fichier** > **Ouvrir des projets récents** et sélectionnez un projet
@@ -104,7 +104,7 @@ Les éditeurs utilisant des fichiers sur le disque, d'éventuels conflits peuven
 
 Le développement 4D comprend un gestionnaire d’accès aux fichiers permettant de contrôler les accès simultanés :
 
-- if an open file is read-only at the OS level, a locked icon is displayed in the editor: ![](assets/en/Project/lockicon.png)
+- si un fichier ouvert est en lecture seule dans le système d'exploitation, une icône verrouillée s'affiche dans l'éditeur : ![](assets/en/Project/lockicon.png)
 - si un fichier ouvert est édité simultanément à partir de différents emplacements, 4D affichera une boîte de dialogue d'alerte lorsque vous tenterez d'enregistrer les modifications :
 
 ![](assets/en/Project/projectReload.png)

@@ -44,7 +44,7 @@ Un [Datastore](ORDA/dsMapping.md#datastore) correspond à l'objet d'interface fo
 <!-- REF #_command_.ds.Params -->
 | Paramètres | Type         |    | Description                            |
 | ---------- | ------------ | -- | -------------------------------------- |
-| localID    | Texte        | -> | Identifiant local du datastore distant |
+| localID    | Text         | -> | Identifiant local du datastore distant |
 | Résultat   | cs.DataStore | <- | Nouvelle référence de datastore        |
 <!-- END REF -->
 
@@ -60,12 +60,7 @@ Vous pouvez également obtenir une référence sur un datastore distant ouvert e
 
 Si aucun datastore nommé *localID* n'est trouvé, la commande renvoie **Null**.
 
-L'utilisation de `ds` nécessite que la base de données cible soit conforme à ORDA. Les règles suivantes s'appliquent :
-
-*   Un datastore ne référence que les tables avec une seule clé primaire. Les tables sans clé primaire ou avec une clé primaire composite ne sont pas référencées.
-*   Les attributs de type BLOB ne sont pas gérés via le datastore.
-
-
+Les objets disponibles dans le `cs.Datastore` sont mappés à partir de la base de données cible en respectant les [règles générales d'ORDA](Concepts/dsMapping.md#general-rules).
 
 #### Exemple 1
 
@@ -138,6 +133,8 @@ Si aucune base de données correspondante n'est trouvée, `Open datastore` retou
 
 *localID* est un alias local de la session ouverte sur le datastore distant. Si *localID* existe déjà dans l'application, il est utilisé. Sinon, une nouvelle session *localID* est créée lors de l’utilisation de l’objet datastore.
 
+Les objets disponibles dans le `cs.Datastore` sont mappés à partir de la base de données cible en respectant les [règles générales d'ORDA](Concepts/dsMapping.md#general-rules).
+
 Une fois la session ouverte, les instructions suivantes deviennent équivalentes et renvoient une référence sur le même objet datastore :
 
 ```4d
@@ -148,14 +145,14 @@ Une fois la session ouverte, les instructions suivantes deviennent équivalentes
 
 Passez dans *connectionInfo* un objet décrivant le datastore distant auquel vous souhaitez vous connecter. Il peut contenir les propriétés suivantes (toutes les propriétés sont optionnelles, à l'exception de *hostname*) :
 
-| Propriété   | Type        | Description                                                                                                                                                                                                                                                                                                                                      |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| hostname    | Texte       | Nom ou adresse IP de la base de données distante + " :" + numéro de port (le numéro de port est obligatoire)                                                                                                                                                                                                                                     |
-| user        | Texte       | Nom d'utilisateur                                                                                                                                                                                                                                                                                                                                |
-| password    | Texte       | Mot de passe de l'utilisateur                                                                                                                                                                                                                                                                                                                    |
-| idleTimeout | Entier long | Délai d'inactivité de la session (exprimé en minutes), au terme duquel la session est automatiquement fermée par 4D. Si cette propriété est omise, la valeur par défaut est 60 (1h). La valeur ne peut pas être < 60 (si une valeur inférieure est passée, le timeout est fixé à 60). Pour plus d'informations, voir **Fermeture des sessions**. |
-| tls         | Booléen     | Utilisez une connexion sécurisée(*). Si cette propriété est omise, "false" par défaut. L'utilisation d'une connexion sécurisée est recommandée dans la mesure du possible.                                                                                                                                                                       |
-| type        | Texte       | Doit être "4D Server"                                                                                                                                                                                                                                                                                                                            |
+| Propriété   | Type    | Description                                                                                                                                                                                                                                                                                                                                      |
+| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| hostname    | Text    | Nom ou adresse IP de la base de données distante + " :" + numéro de port (le numéro de port est obligatoire)                                                                                                                                                                                                                                     |
+| user        | Text    | Nom d'utilisateur                                                                                                                                                                                                                                                                                                                                |
+| password    | Text    | Mot de passe de l'utilisateur                                                                                                                                                                                                                                                                                                                    |
+| idleTimeout | Longint | Délai d'inactivité de la session (exprimé en minutes), au terme duquel la session est automatiquement fermée par 4D. Si cette propriété est omise, la valeur par défaut est 60 (1h). La valeur ne peut pas être < 60 (si une valeur inférieure est passée, le timeout est fixé à 60). Pour plus d'informations, voir **Fermeture des sessions**. |
+| tls         | Boolean | Utilisez une connexion sécurisée(*). Si cette propriété est omise, "false" par défaut. L'utilisation d'une connexion sécurisée est recommandée dans la mesure du possible.                                                                                                                                                                       |
+| type        | Text    | Doit être "4D Server"                                                                                                                                                                                                                                                                                                                            |
 
 (*) Si tls est vrai, le protocole HTTPS est utilisé si :
 
@@ -315,14 +312,14 @@ L'objet retourné contient les propriétés suivantes :
 
 | Propriété   |             |               | Type    | Description                                                                               |
 | ----------- | ----------- | ------------- | ------- | ----------------------------------------------------------------------------------------- |
-| isEncrypted |             |               | Booléen | Vrai si le fichier de données est chiffré                                                 |
-| keyProvided |             |               | Booléen | Vrai si la clé de chiffrement correspondant au fichier de données chiffré est fournie(*). |
+| isEncrypted |             |               | Boolean | Vrai si le fichier de données est chiffré                                                 |
+| keyProvided |             |               | Boolean | Vrai si la clé de chiffrement correspondant au fichier de données chiffré est fournie(*). |
 | tables      |             |               | Object  | Objet contenant autant de propriétés que de tables chiffrables ou chiffrées.              |
 |             | *tableName* |               | Object  | Table chiffrable ou chiffrée                                                              |
-|             |             | name          | Texte   | Nom de la table                                                                           |
-|             |             | num           | Nombre  | Numéro de la table                                                                        |
-|             |             | isEncryptable | Booléen | Vrai si la table est déclarée chiffrable dans le fichier de structure                     |
-|             |             | isEncrypted   | Booléen | Vrai si les enregistrements de la table sont chiffrés dans le fichier de données          |
+|             |             | name          | Text    | Nom de la table                                                                           |
+|             |             | num           | Number  | Numéro de la table                                                                        |
+|             |             | isEncryptable | Boolean | Vrai si la table est déclarée chiffrable dans le fichier de structure                     |
+|             |             | isEncrypted   | Boolean | Vrai si les enregistrements de la table sont chiffrés dans le fichier de données          |
 
 (*) La clé de chiffrement peut être fournie :
 
@@ -386,8 +383,8 @@ La fonction `.getInfo()` function <!-- REF #DataStoreClass.getInfo().Summary -->
 | ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D" : datastore principal, disponible via ds </li><li>"4D Server" : datastore distant ouvert avec Open datastore</li>                                                                                                                          |
 | networked  | boolean | <li>Vrai : le datastore est accessible via une connexion réseau.</li><li>Faux : le datastore n'est pas accessible via une connexion réseau (base locale)</li>                                                                                                                          |
-| localID    | Texte   | Identifiant du datastore sur la machine. Correspond à la chaîne localID donnée avec la commande `Open datastore`. Chaîne vide ("") pour le datastore principal.             |
-| connection | object  | Objet décrivant la connexion au datastore distant (non retourné pour le datastore principal). Propriétés disponibles :<p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>Texte</td><td>Adresse IP ou nom du datastore distant + ":" + numéro de port</td></tr><tr><td>tls</td><td>boolean</td><td>Vrai si une connexion sécurisée est utilisée avec le datastore distant</td></tr><tr><td>idleTimeout</td><td>number</td><td>Delai d'inactivité autorisé de la session (en minutes)</td></tr><tr><td>user</td><td>Texte</td><td>Utilisateur authentifié sur le datastore distant</td></tr></table> |
+| localID    | text    | Identifiant du datastore sur la machine. Correspond à la chaîne localID donnée avec la commande `Open datastore`. Chaîne vide ("") pour le datastore principal.             |
+| connection | object  | Objet décrivant la connexion au datastore distant (non retourné pour le datastore principal). Propriétés disponibles :<p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>hostname</td><td>text</td><td>Adresse IP ou nom du datastore distant + ":" + numéro de port</td></tr><tr><td>tls</td><td>boolean</td><td>Vrai si une connexion sécurisée est utilisée avec le datastore distant</td></tr><tr><td>idleTimeout</td><td>number</td><td>Delai d'inactivité autorisé de la session (en minutes)</td></tr><tr><td>user</td><td>text</td><td>Utilisateur authentifié sur le datastore distant</td></tr></table> |
 
 *   Si la fonction `.getInfo()` est exécutée sur un 4D Server ou un 4D monoposte, `networked` est Faux.
 *   Si la fonction `.getInfo()` est exécutée sur un 4D distant, `networked` est Vrai
@@ -482,7 +479,7 @@ Voir l'exemple 2 de [`.startRequestLog()`](#startrequestlog).
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
 | Paramètres | Type    |    | Description                                                                   |
 | ---------- | ------- |:--:| ----------------------------------------------------------------------------- |
-| Résultat   | Booléen | <- | Vrai si l'accès au Data Explorer est désactivé, Faux s'il est activé (défaut) |
+| Résultat   | Boolean | <- | Vrai si l'accès au Data Explorer est désactivé, Faux s'il est activé (défaut) |
 <!-- END REF -->
 
 
@@ -551,7 +548,7 @@ Lorsque cette méthode n'est pas appelée, les nouvelles sélections d'entités 
 <!-- REF #DataStoreClass.provideDataKey().Params -->
 | Paramètres    | Type   |    | Description                                                    |
 | ------------- | ------ | -- | -------------------------------------------------------------- |
-| curPassPhrase | Texte  | -> | Phrase secrète courante                                        |
+| curPassPhrase | Text   | -> | Phrase secrète courante                                        |
 | curDataKey    | Object | -> | Clé de chiffrement des données courante                        |
 | Résultat      | Object | <- | Résultat de la mise en correspondance de la clé de chiffrement |
 <!-- END REF -->
@@ -579,14 +576,14 @@ Le résultat de la commande est décrit dans l'objet retourné :
 
 | Propriété  |                          | Type       | Description                                                                        |
 | ---------- | ------------------------ | ---------- | ---------------------------------------------------------------------------------- |
-| success    |                          | Booléen    | Vrai si la clé de chiffrement fournie correspond aux données chiffrées, sinon Faux |
+| success    |                          | Boolean    | Vrai si la clé de chiffrement fournie correspond aux données chiffrées, sinon Faux |
 |            |                          |            | Les propriétés ci-dessous sont retournées uniquement si success est à *Faux*       |
-| status     |                          | Nombre     | Code d'erreur (4 si la clé de chiffrement fournie est erronée)                     |
-| statusText |                          | Texte      | Message d'erreur                                                                   |
+| status     |                          | Number     | Code d'erreur (4 si la clé de chiffrement fournie est erronée)                     |
+| statusText |                          | Text       | Message d'erreur                                                                   |
 | errors     |                          | Collection | Pile d'erreurs. La première erreur possède l'indice le plus élevé.                 |
-|            | \[ ].componentSignature | Texte      | Nom du composant interne                                                           |
-|            | \[ ].errCode            | Nombre     | Numéro de l'erreur                                                                 |
-|            | \[ ].message            | Texte      | Message d'erreur                                                                   |
+|            | \[ ].componentSignature | Text       | Nom du composant interne                                                           |
+|            | \[ ].errCode            | Number     | Numéro de l'erreur                                                                 |
+|            | \[ ].message            | Text       | Message d'erreur                                                                   |
 
 Si aucun paramètre *curPassphrase* ou *curDataKey* n'est fourni, `.provideDataKey()` retourne **null** (aucune erreur n'est générée).
 
@@ -628,7 +625,7 @@ Si aucun paramètre *curPassphrase* ou *curDataKey* n'est fourni, `.provideDataK
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
 | Paramètres | Type    |    | Description                                                                                                |
 | ---------- | ------- | -- | ---------------------------------------------------------------------------------------------------------- |
-| status     | Booléen | -> | Vrai pour désactiver l'accès au Data Explorer sur le port `webAdmin`, Faux (défaut) pour permettre l'accès |
+| status     | Boolean | -> | Vrai pour désactiver l'accès au Data Explorer sur le port `webAdmin`, Faux (défaut) pour permettre l'accès |
 <!-- END REF -->
 
 
@@ -649,7 +646,7 @@ Vous créez une méthode projet *protectDataFile* à appeler par exemple avant l
  ds.setAdminProtection(True) //Désactive l'accès aux données de l'Explorateur de données
 ```
 
-#### Voir aussi
+#### See also
 
 [`.isAdminProtected()`](#isadminprotected)
 
@@ -670,10 +667,10 @@ Vous créez une méthode projet *protectDataFile* à appeler par exemple avant l
 
 
 <!-- REF #DataStoreClass.startRequestLog().Params -->
-| Paramètres | Type        |    | Description                               |
-| ---------- | ----------- | -- | ----------------------------------------- |
-| file       | 4D.File     | -> | Objet File                                |
-| reqNum     | Entier long | -> | Nombre de requêtes à conserver en mémoire |
+| Paramètres | Type    |    | Description                               |
+| ---------- | ------- | -- | ----------------------------------------- |
+| file       | 4D.File | -> | Objet File                                |
+| reqNum     | Integer | -> | Nombre de requêtes à conserver en mémoire |
 <!-- END REF -->
 
 
