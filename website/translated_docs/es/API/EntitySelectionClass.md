@@ -38,7 +38,6 @@ Entity selections can be created from existing selections using various function
 | [<!-- INCLUDE #EntitySelectionClass.queryPath.Syntax -->](#querypath)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntitySelectionClass.queryPath.Summary -->|
 | [<!-- INCLUDE #EntitySelectionClass.queryPlan.Syntax -->](#queryplan)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntitySelectionClass.queryPlan.Summary -->|
 | [<!-- INCLUDE #EntitySelectionClass.refresh().Syntax -->](#refresh)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntitySelectionClass.refresh().Summary -->|
-| [<!-- INCLUDE #EntitySelectionClass.selected().Syntax -->](#selected)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntitySelectionClass.selected().Summary -->|
 | [<!-- INCLUDE #EntitySelectionClass.slice().Syntax -->](#slice)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntitySelectionClass.slice().Summary -->|
 | [<!-- INCLUDE #EntitySelectionClass.sum().Syntax -->](#sum)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntitySelectionClass.sum().Summary -->|
 | [<!-- INCLUDE #EntitySelectionClass.toCollection().Syntax -->](#tocollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntitySelectionClass.toCollection().Summary -->|
@@ -87,37 +86,6 @@ $employees:=Create entity selection([Employee])
 #### Ver también
 
 [`dataClass.newSelection()`](DataClassClass.md#newselection)
-
-
-## USE ENTITY SELECTION
-
-<!-- REF #_command_.USE ENTITY SELECTION.Syntax -->
-**USE ENTITY SELECTION** (*entitySelection*)<!-- END REF -->
-
-<!-- REF #_command_.USE ENTITY SELECTION.Params -->
-| Parámetros      | Tipo            |    | Descripción          |
-| --------------- | --------------- |:--:| -------------------- |
-| entitySelection | EntitySelection | -> | Una entity selection |
-<!-- END REF -->
-
-#### Descripción
-
-El comando `USE ENTITY SELECTION` actualiza la selección actual de la tabla que coincide con la dataclass del parámetro *entitySelection*, según el contenido de la entity selection.
-
-Este comando no puede utilizarse con un [datastore remoto](../ORDA/remoteDatastores.md).
-
-> Después de una llamada a `USE ENTITY SELECTION`, el primer registro de la selección actual actualizada (si no está vacío) se convierte en el registro actual, pero no se carga en la memoria. Si necesita utilizar los valores de los campos del registro actual, utilice el comando `LOAD RECORD` después del comando `USE ENTITY SELECTION`.
-
-#### Ejemplo
-
-```4d
-var $entitySel : Object
-
-$entitySel:=ds.Employee.query("lastName = :1";"M@") //$entitySel está asociado a la dataclass Employee 
-REDUCE SELECTION([Employee];0)
-USE ENTITY SELECTION($entitySel) //Se actualiza la selección actual de la tabla Employee
-```
-
 
 <!-- REF EntitySelectionClass.index.Desc -->
 ## &#91;*index*&#93;
@@ -1712,73 +1680,6 @@ Un list box muestra la entity selection Form.students y en la que varios cliente
 <!-- END REF -->
 
 
-<!-- REF EntitySelectionClass.selected().Desc -->
-## .selected()
-
-<details><summary>Histórico</summary>
-| Versión | Modificaciones |
-| ------- | -------------- |
-| v19 R3  | Añadidos       |
-
-</details>
-
-<!-- REF #EntitySelectionClass.selected().Syntax -->
-**.selected**( *selectedEntities* : 4D.EntitySelection ) : Object<!-- END REF -->
-
-<!-- REF #EntitySelectionClass.selected().Params -->
-| Parámetros       | Tipo               |    | Descripción                                                                                        |
-| ---------------- | ------------------ |:--:| -------------------------------------------------------------------------------------------------- |
-| selectedEntities | 4D.EntitySelection | -> | Selección de entidades con entidades para las cuales conocer el rango en la selección de entidades |
-| Resultado        | Objeto             | <- | Rango(s) de entidades seleccionadas en la selección de entidades                                   |
-<!-- END REF -->
-
-#### Descripción
-
-La función `.selected()` <!-- REF #EntitySelectionClass.selected().Summary -->devuelve un objeto que describe la(s) posición(es) de *selectedEntities* en la selección de entidades original<!-- END REF -->.
-> Esta función no modifica la selección de entidades original.
-
-Pase en el parámetro *selectedEntities* una selección de entidades que contenga entidades de las que desee conocer la posición en la selección de entidades original. *selectedEntities* debe ser una selección de entidades que pertenezca a la misma clase de datos que la selección de entidades original, de lo contrario se produce un error 1587 - "La selección de entidades procede de una clase de datos incompatible".
-
-#### Resultado
-
-El objeto devuelto contiene las siguientes propiedades:
-
-| Propiedad      | Tipo       | Descripción                             |
-| -------------- | ---------- | --------------------------------------- |
-| ranges         | Collection | Colección de objetos de rango           |
-| ranges[].start | Integer    | Primer índice de entidad en el rango    |
-| ranges[].end   | Integer    | Último índice de la entidad en el rango |
-
-Si una propiedad `ranges` contiene una sola entidad, `start` = `end`. El índice comienza en 0.
-
-La función devuelve una colección vacía en la propiedad `ranges` si la selección de entidades original o la selección de entidades *selectedEntities* está vacía.
-
-#### Ejemplo
-
-```4d
-var $invoices; $cashSel; $creditSel : cs.Invoices
-var $result1; $result2 : Object
-
-$invoices:=ds.Invoices.all()
-
-$cashSelection:=ds.Invoices.query("payment = :1"; "Cash")
-$creditSel:=ds.Invoices.query("payment IN :1"; New collection("Cash"; "Credit Card"))
-
-$result1:=$invoices.selected($cashSelection)
-$result2:=$invoices.selected($creditSel)
-
-//$result1 = {ranges:[{start:0;end:0},{start:3;end:3},{start:6;end:6}]}
-//$result2 = {ranges:[{start:0;end:1},{start:3;end:4},{start:6;end:7}]}
-
-```
-
-<!-- END REF -->
-
-
-
-
-
-
 
 <!-- REF EntitySelectionClass.slice().Desc -->
 ## .slice()
@@ -1992,7 +1893,6 @@ Devuelve:
         },
         "manager": {
             "__KEY": 412
-
         }
     },
     {
