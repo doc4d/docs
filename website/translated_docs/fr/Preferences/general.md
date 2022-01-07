@@ -22,7 +22,7 @@ Cette option permet de configurer l’affichage proposé par défaut par 4D au d
 
 > Cette option n'est utilisée que dans les bases de données binaires ; elle est ignorée dans l'architecture projets. Voir doc.4d.com.
 
-### Window tabbing (macOS only)
+#### Window tabbing (macOS only)
 
 Depuis macOS Sierra, les applications Mac bénéficient d'onglets automatiques facilitant l'organisation de l'écran lors de l'ouverture de fenêtres multiples : les fenêtres documents sont regroupées dans une seule fenêtre parente et sont accessibles via des onglets. Cette fonctionnalité est particulièrement utile avec les écrans de taille réduite ou lorsqu'un trackpad est utilisé.
 
@@ -48,21 +48,6 @@ Trois options sont disponibles :
 *   **Selon les préférences système** (défaut) : les fenêtres de 4D se comporteront comme elles ont été définies dans les Préférences Système de macOS (En plein écran uniquement, Toujours ou Manuellement).
 *   **Jamais** : L'ouverture d'un nouveau document dans l'éditeur de formulaires ou l'éditeur de méthodes de 4D provoquera toujours la création d'une nouvelle fenêtre (les onglets ne sont jamais créés).
 *   **Toujours** : L'ouverture d'un nouveau document dans l'éditeur de formulaires ou l'éditeur de méthodes de 4D provoquera l'ajout d'un onglet.
-
-### Apparence (macOS uniquement)
-
-Ce menu vous permet de sélectionner la palette de couleurs à utiliser pour l'environnement de **développement 4D**. Le schéma spécifié sera appliqué à tous les éditeurs et fenêtres du mode Développement.
-
-> You can also set the color scheme to use in your **desktop applications** in the "Interface" page of the Settings dialog box.
-
-Trois options sont disponibles :
-
-*   **According to System Color Scheme Preferences** (default): Use the color scheme defined in the macOS System Preferences.
-*   **Light**: Use the Light Theme
-*   **Dark**: Use the Dark Theme
-
-> This preference is only supported on macOS. On Windows, the "Light" scheme is always used.
-
 
 ### Exit Design when going to Application Environment
 
