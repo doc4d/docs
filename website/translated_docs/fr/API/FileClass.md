@@ -353,16 +353,16 @@ The function must be used with an existing .exe, .dll or .plist file. If the fil
 
 All property values are Text.
 
-| Propriété        | Type |
-| ---------------- | ---- |
-| InternalName     | Text |
-| ProductName      | Text |
-| CompanyName      | Text |
-| LegalCopyright   | Text |
-| ProductVersion   | Text |
-| FileDescription  | Text |
-| FileVersion      | Text |
-| OriginalFilename | Text |
+| Propriété        | Type  |
+| ---------------- | ----- |
+| InternalName     | Texte |
+| ProductName      | Texte |
+| CompanyName      | Texte |
+| LegalCopyright   | Texte |
+| ProductVersion   | Texte |
+| FileDescription  | Texte |
+| FileVersion      | Texte |
+| OriginalFilename | Texte |
 
 **Returned object with a .plist file**
 
@@ -584,16 +584,16 @@ The function must be used with an existing .exe, .dll or .plist file. If the fil
 
 Each valid property set in the *info* object parameter is written in the version resource of the .exe or .dll file. Available properties are (any other property will be ignored):
 
-| Propriété        | Type |
-| ---------------- | ---- |
-| InternalName     | Text |
-| ProductName      | Text |
-| CompanyName      | Text |
-| LegalCopyright   | Text |
-| ProductVersion   | Text |
-| FileDescription  | Text |
-| FileVersion      | Text |
-| OriginalFilename | Text |
+| Propriété        | Type  |
+| ---------------- | ----- |
+| InternalName     | Texte |
+| ProductName      | Texte |
+| CompanyName      | Texte |
+| LegalCopyright   | Texte |
+| ProductVersion   | Texte |
+| FileDescription  | Texte |
+| FileVersion      | Texte |
+| OriginalFilename | Texte |
 
 If you pass a null or empty text as value, an empty string is written in the property. If you pass a value type different from text, it is stringified.
 
