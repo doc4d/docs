@@ -354,8 +354,6 @@ C_TEXT($1;$2;$3;$4;$5;$6)
  End if
 ```
 
-
-
 ## Type de paramètre erroné
 
 L'appel d'un paramètre de type incorrect est une [erreur](error-handling.md) qui empêche une exécution correcte. Par exemple, si vous écrivez les méthodes suivantes :
@@ -458,21 +456,9 @@ ALERT("Etes*vous sûr?";"Oui, je le suis") //2 paramètres
 ALERT("Temps écoulé") //1 paramètre
 ```
 
-Les méthodes et les fonctions 4D acceptent également de ces paramètres optionnels. Vous pouvez déclarer un nombre quelconque de paramètres. Si vous appelez une méthode ou une fonction avec moins de paramètres que ceux déclarés, les paramètres manquants sont traités comme des valeurs par défaut dans le code appelé, [en fonction de leur type](data-types.md#default-values). Par exemple :
+Les méthodes projet 4D acceptent également des paramètres optionnels, en commençant par la droite. Cependant, il est difficile de gérer les paramètres optionnels lorsque certains d'entre eux sont manquants dans la méthode appelée - cela ne devrait jamais générer d'erreur. Une bonne pratique consisterait à assigner des valeurs par défaut aux paramètres non utilisés.
 
-```4d
-// fonction "concate" de myClass
-Function concate ($param1 : Text ; $param2 : Text)->$result : Text
-$result:=$param1+" "+$param2
-```
-```4d
-  // Méthode appelante
- $class:=cs.myClass.new()
- $class.concate("Hello") // "Hello "
- $class.concate() // Affiche " "
-```
-
-> Vous pouvez également appeler une méthode ou une fonction avec plus de paramètres que ceux déclarés. Ils seront disponibles dans le code appelé grâce à la [syntaxe ${N}](#parameter-indirection-n).
+> Lorsque les paramètres sont nécessaires dans vos méthodes, vous pouvez également envisager des [propriétés d'objet comme paramètres nommés](#using-objects-properties-as-named-parameters) pour gérer plusieurs paramètres de manière flexible.
 
 A l'aide de la commande `Count parameters` contenue dans la méthode appelée, vous pouvez détecter le nombre de paramètres et effectuer des opérations différentes en fonction de ce nombre.
 
@@ -502,7 +488,6 @@ APPEND TEXT(vtSomeText;$path) //Affiche le message et l'annexe au document dans 
 APPEND TEXT(vtSomeText;"";$wpArea) //Affiche le message et l'écrit dans $wpArea
 ```
 
-> Lorsque les paramètres sont nécessaires dans vos méthodes, vous pouvez également envisager des [propriétés d'objet comme paramètres nommés](#using-objects-properties-as-named-parameters) pour gérer plusieurs paramètres de manière flexible.
 
 
 
