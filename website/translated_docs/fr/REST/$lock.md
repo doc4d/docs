@@ -46,29 +46,29 @@ A `?$lock` request returns a JSON object with `"result"=true` if the lock operat
 
 The returned "__STATUS" object has the following properties:
 
-| Propriété    |                | Type    | Description                                                                                                                                                 |
-| ------------ | -------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|              |                |         | ***Available only in case of success:***                                                                                                                    |
-| success      |                | boolean | true if the lock action is successful (or if the entity is already locked in the current session), false otherwise (not returned in this case).             |
-|              |                |         | ***Disponible uniquement en cas d'erreur :***                                                                                                               |
-| status       |                | number  | Code d'erreur, voir ci-dessous                                                                                                                              |
-| statusText   |                | Texte   | Description de l'erreur, voir ci-dessous                                                                                                                    |
-| lockKind     |                | number  | Lock code                                                                                                                                                   |
-| lockKindText |                | Texte   | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                               |
-| lockInfo     |                | object  | Information about the lock origin. Returned properties depend on the lock origin (4D process or REST session).                                              |
-|              |                |         | ***Available only for a 4D process lock:***                                                                                                                 |
-|              | task_id        | number  | ID du process                                                                                                                                               |
-|              | user_name      | Texte   | Nom d'utilisateur de la session sur la machine                                                                                                              |
-|              | user4d_alias   | Texte   | Nom ou alias de l'utilisateur 4D                                                                                                                            |
-|              | user4d_id      | number  | Identifiant utilisateur dans le répertoire de la base 4D                                                                                                    |
-|              | host_name      | Texte   | Nom de la machine                                                                                                                                           |
-|              | task_name      | Texte   | Nom du process                                                                                                                                              |
-|              | client_version | Texte   | Version of the client                                                                                                                                       |
-|              |                |         | ***Available only for a REST session lock:***                                                                                                               |
-|              | host           | Texte   | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
-|              | IPAddr         | Texte   | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
-|              | recordNumber   | number  | Record number of the locked record                                                                                                                          |
-|              | userAgent      | Texte   | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
+| Propriété    |                | Type    | Description                                                                                                                                                                |
+| ------------ | -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|              |                |         | ***Available only in case of success:***                                                                                                                                   |
+| success      |                | boolean | true if the lock action is successful (or if the entity is already locked in the current session), false otherwise (not returned in this case).                            |
+|              |                |         | ***Disponible uniquement en cas d'erreur :***                                                                                                                              |
+| status       |                | number  | Code d'erreur, voir ci-dessous                                                                                                                                             |
+| statusText   |                | Texte   | Description de l'erreur, voir ci-dessous                                                                                                                                   |
+| lockKind     |                | number  | Lock code                                                                                                                                                                  |
+| lockKindText |                | Texte   | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                                              |
+| lockInfo     |                | object  | Information sur l'origine du verrouillage. Les propriétés retournées dépendent de l'origine du verrouillage (process 4D ou session REST).                                  |
+|              |                |         | ***Disponible uniquement pour un verrouillage par process 4D:***                                                                                                           |
+|              | task_id        | number  | ID du process                                                                                                                                                              |
+|              | user_name      | Texte   | Nom d'utilisateur de la session sur la machine                                                                                                                             |
+|              | user4d_alias   | Texte   | Nom ou alias de l'utilisateur 4D                                                                                                                                           |
+|              | user4d_id      | number  | Identifiant utilisateur dans le répertoire de la base 4D                                                                                                                   |
+|              | host_name      | Texte   | Nom de la machine                                                                                                                                                          |
+|              | task_name      | Texte   | Nom du process                                                                                                                                                             |
+|              | client_version | Texte   | Version du client                                                                                                                                                          |
+|              |                |         | ***Disponible uniquement pour un verrouillage par session REST :***                                                                                                        |
+|              | host           | Texte   | URL d'origine du verrouillage de l'entité (ex : "127.0.0.1:8043")                                                                                                          |
+|              | IPAddr         | Texte   | Adresse IP d'origine du verrouillage (ex. 127.0.0.1")                                                                                                                      |
+|              | recordNumber   | number  | Numéro de l'enregistrement verrouillé                                                                                                                                      |
+|              | userAgent      | Texte   | userAgent de l'origine du verouillage (ex : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 
 
 The following values can be returned in the *status* and *statusText* properties of the *__STATUS* object in case of error:
