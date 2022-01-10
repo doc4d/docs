@@ -121,7 +121,7 @@ Cette propriété n'est pas retournée si `.kind` = "relatedEntity" ou "relatedE
 <details><summary>Historique</summary>
 | Version | Modifications                       |
 | ------- | ----------------------------------- |
-| v19 R4  | Support of alias attributes         |
+| v19 R4  | Prise en charge des attributs alias |
 | v19 R3  | Prise en charge des champs calculés |
 </details>
 
@@ -234,7 +234,7 @@ Cette propriété n'est pas retournée si [`.kind`](#kind) = "relatedEntity" ou 
 <details><summary>Historique</summary>
 | Version | Modifications         |
 | ------- | --------------------- |
-| v19 R4  | Added "alias"         |
+| v19 R4  | Ajout de "alias"      |
 | v19 R3  | Ajout de "calculated" |
 </details>
 
@@ -248,8 +248,8 @@ Cette propriété n'est pas retournée si [`.kind`](#kind) = "relatedEntity" ou 
 La propriété `.kind` <!-- REF DataClassAttributeClass.kind.Summary -->retourne la catégorie de l'attribut<!-- END REF -->. La valeur retournée peut être l'une des chaînes suivantes :
 
 *   "storage" : attribut de stockage (ou scalaire), c'est-à-dire un attribut stockant une valeur, et non une référence à un autre attribut
-*   "calculated": computed attribute, i.e. defined through a [`get` function](ORDA/ordaClasses.md#function-get-attributename)
-*   "alias": attribute built upon [another attribute](ORDA/ordaClasses.md#alias-attributes-1)
+*   "calculated" : attribut calculé, c'est-à-dire défini par [la fonction `get`](ORDA/ordaClasses.md#function-get-attributename)
+*   "alias": attribut basé sur [un autre attribut](ORDA/ordaClasses.md#alias-attributes-1)
 *   "relatedEntity" : attribut relationnel N -> (référence vers une entité)
 *   "relatedEntities" : attribut relationnel 1 -> N (référence vers une entity selection)
 
@@ -344,7 +344,7 @@ La propriété `.name` <!-- REF DataClassAttributeClass.name.Summary -->retourne
 
 #### Description
 
-The `.path` property <!-- REF DataClassAttributeClass.path.Summary -->returns the path of an alias attribute based upon a relation<!-- END REF -->.
+La propriété `.path` <!-- REF DataClassAttributeClass.path.Summary -->retourne le chemin d'un attribut alias basé sur une relation<!-- END REF -->.
 
 #### Exemple
 
