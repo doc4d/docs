@@ -59,19 +59,19 @@ Ces options permettent de configurer les différentes couleurs utilisées dans l
 ![](assets/en/Preferences/categories.png)
 
 
-|                                                                | Description                                                                                                                                                              |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Background color**                                           | Couleur de fond de la fenêtre de l'éditeur de la méthode.                                                                                                                |
-| **Bordure de la ligne en cours d'exécution dans le débogueur** | Color of the border surrounding the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options) page.          |
-| **Cursor line background color**                               | Background color of line containing the cursor.                                                                                                                          |
-| **Execution line background color**                            | Background color of line being executed in the debugger.                                                                                                                 |
-| **Highlight of the found words**                               | Highlight color of words found in a search.                                                                                                                              |
-| **Highlight of the parentheses**                               | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                     |
-| **Highlight of the blocks**                                    | Highlight color for selected logical blocks when the "Highlight logical blocks" option is enabled in the [Options](#options).                                            |
-| **Highlight of the same variable or field**                    | Highlight color for other occurrences of the same variable or field text when one of the "Highlighting variables and text" option is enabled in the [Options](#options). |
-| **Highlight of the running line in the debugger**              | Highlight color of the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options).                            |
-| **Selection back color**                                       | Background color of selection.                                                                                                                                           |
-| **Suggested text**                                             | Color of autocomplete text suggested by the Method editor.                                                                                                               |
+|                                                                | Description                                                                                                                                                                              |
+| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Background color**                                           | Couleur de fond de la fenêtre de l'éditeur de la méthode.                                                                                                                                |
+| **Bordure de la ligne en cours d'exécution dans le débogueur** | Couleur de la bordure entourant la ligne en cours d'exécution dans le débogueur lorsque l'option "Surligner la ligne en cours d'exécution" est activée dans la page [Options](#options). |
+| **Cursor line background color**                               | Background color of line containing the cursor.                                                                                                                                          |
+| **Execution line background color**                            | Background color of line being executed in the debugger.                                                                                                                                 |
+| **Highlight of the found words**                               | Highlight color of words found in a search.                                                                                                                                              |
+| **Highlight of the parentheses**                               | Highlight color of corresponding parentheses (used when pairs of parentheses are signaled by highlighting, see [Options](#options)).                                                     |
+| **Highlight of the blocks**                                    | Highlight color for selected logical blocks when the "Highlight logical blocks" option is enabled in the [Options](#options).                                                            |
+| **Highlight of the same variable or field**                    | Highlight color for other occurrences of the same variable or field text when one of the "Highlighting variables and text" option is enabled in the [Options](#options).                 |
+| **Highlight of the running line in the debugger**              | Highlight color of the line currently running in the debugger when the "Highlight line running" option is enabled in the [Options](#options).                                            |
+| **Selection back color**                                       | Background color of selection.                                                                                                                                                           |
+| **Suggested text**                                             | Color of autocomplete text suggested by the Method editor.                                                                                                                               |
 
 
 
