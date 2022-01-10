@@ -920,34 +920,34 @@ Sinon, vous pouvez passer l'option `dk reload if stamp changed` dans le paramèt
 
 L'objet retourné par `.lock( )` contient les propriétés suivantes :
 
-| Propriété        |                     | Type                | Description                                                                                                                                                 |
-| ---------------- | ------------------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          |                     | boolean             | vrai si l'action de verrouillage a été effectuée avec succès (ou si l'entité est déjà verrouillée dans le process courant), sinon faux.                     |
-|                  |                     |                     | ***Disponible uniquement si l'option `dk reload if stamp changed` est utilisée :***                                                                         |
-| **wasReloaded**  |                     | boolean             | vrai si l'entité a été correctement rechargée, sinon faux.                                                                                                  |
-|                  |                     |                     | ***Disponible uniquement en cas d'erreur :***                                                                                                               |
-| status(\*)     |                     | number              | Code d'erreur, voir ci-dessous                                                                                                                              |
-| statusText(\*) |                     | text                | Description de l'erreur, voir ci-dessous                                                                                                                    |
-|                  |                     |                     | ***Disponible uniquement en cas d'erreur de verrouillage pessimiste :***                                                                                    |
-| lockKindText     |                     | text                | "Locked by record" if locked by a 4D process, "Locked by session" if locked by a REST session                                                               |
-| lockInfo         |                     | object              | Information about the lock origin. Returned properties depend on the lock origin (4D process or REST session).                                              |
-|                  |                     |                     | ***Available only for a 4D process lock:***                                                                                                                 |
-|                  | task_id             | number              | ID du process                                                                                                                                               |
-|                  | user_name           | text                | Nom d'utilisateur de la session sur la machine                                                                                                              |
-|                  | user4d_alias        | Texte               | Nom ou alias de l'utilisateur 4D                                                                                                                            |
-|                  | user4d_id           | number              | Identifiant utilisateur dans le répertoire de la base 4D                                                                                                    |
-|                  | host_name           | text                | Nom de la machine                                                                                                                                           |
-|                  | task_name           | text                | Nom du process                                                                                                                                              |
-|                  | client_version      | Texte               | Version of the client                                                                                                                                       |
-|                  |                     |                     | ***Available only for a REST session lock:***                                                                                                               |
-|                  | host                | text                | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
-|                  | IPAddr              | text                | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
-|                  | userAgent           | Texte               | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
-|                  |                     |                     | ***Disponible uniquement en cas d'erreur critique*** (clé primaire dupliquée, disque plein...) :                                                            |
-| errors           |                     | collection d'objets |                                                                                                                                                             |
-|                  | message             | Texte               | Message d'erreur                                                                                                                                            |
-|                  | component signature | Texte               | signature du composant interne (e.g. "dmbg" pour le composant de base de données)                                                                           |
-|                  | errCode             | number              | Code d'erreur                                                                                                                                               |
+| Propriété        |                     | Type                | Description                                                                                                                                                                |
+| ---------------- | ------------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success          |                     | boolean             | vrai si l'action de verrouillage a été effectuée avec succès (ou si l'entité est déjà verrouillée dans le process courant), sinon faux.                                    |
+|                  |                     |                     | ***Disponible uniquement si l'option `dk reload if stamp changed` est utilisée :***                                                                                        |
+| **wasReloaded**  |                     | boolean             | vrai si l'entité a été correctement rechargée, sinon faux.                                                                                                                 |
+|                  |                     |                     | ***Disponible uniquement en cas d'erreur :***                                                                                                                              |
+| status(\*)     |                     | number              | Code d'erreur, voir ci-dessous                                                                                                                                             |
+| statusText(\*) |                     | text                | Description de l'erreur, voir ci-dessous                                                                                                                                   |
+|                  |                     |                     | ***Disponible uniquement en cas d'erreur de verrouillage pessimiste :***                                                                                                   |
+| lockKindText     |                     | text                | "Locked by record" si verrouillage par un process 4D, "Locked by session" si verrouillage par une session REST                                                             |
+| lockInfo         |                     | object              | Information sur l'origine du verrouillage. Les propriétés retournées dépendent de l'origine du verrouillage (process 4D ou session REST).                                  |
+|                  |                     |                     | ***Disponible uniquement pour un verrouillage par process 4D:***                                                                                                           |
+|                  | task_id             | number              | ID du process                                                                                                                                                              |
+|                  | user_name           | text                | Nom d'utilisateur de la session sur la machine                                                                                                                             |
+|                  | user4d_alias        | Texte               | Nom ou alias de l'utilisateur 4D                                                                                                                                           |
+|                  | user4d_id           | number              | Identifiant utilisateur dans le répertoire de la base 4D                                                                                                                   |
+|                  | host_name           | text                | Nom de la machine                                                                                                                                                          |
+|                  | task_name           | text                | Nom du process                                                                                                                                                             |
+|                  | client_version      | Texte               | Version du client                                                                                                                                                          |
+|                  |                     |                     | ***Disponible uniquement pour un verrouillage par session REST :***                                                                                                        |
+|                  | host                | text                | URL d'origine du verrouillage de l'entité (ex : "127.0.0.1:8043")                                                                                                          |
+|                  | IPAddr              | text                | Adresse IP d'origine du verrouillage (ex. 127.0.0.1")                                                                                                                      |
+|                  | userAgent           | Texte               | userAgent de l'origine du verouillage (ex : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
+|                  |                     |                     | ***Disponible uniquement en cas d'erreur critique*** (clé primaire dupliquée, disque plein...) :                                                                           |
+| errors           |                     | collection d'objets |                                                                                                                                                                            |
+|                  | message             | Texte               | Message d'erreur                                                                                                                                                           |
+|                  | component signature | Texte               | signature du composant interne (e.g. "dmbg" pour le composant de base de données)                                                                                          |
+|                  | errCode             | number              | Code d'erreur                                                                                                                                                              |
 
 
 (\*) Les valeurs suivantes peuvent être retournées dans les propriétés *status* et *statusText* de l'objet *Résultat* en cas d'erreur :
@@ -1360,7 +1360,7 @@ Retourne :
     "employerID": 20,
     "photo": "[object Picture]",
     "extra": null,
-    "employer": { // relatedEntity extracted with simple form
+    "employer": { // relatedEntity extraite sous forme simple
         "__KEY": 20
     },
     "manager": {
