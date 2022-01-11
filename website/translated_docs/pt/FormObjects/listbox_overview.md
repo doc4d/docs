@@ -638,7 +638,7 @@ In this mode:
 
 A hierarchical list box is a list box in which the contents of the first column appears in hierarchical form. This type of representation is adapted to the presentation of information that includes repeated values and/or values that are hierarchically dependent (country/region/city and so on).
 
-> Only [array type list boxes](#array-list-boxes) can be hierarchical.
+> Apenas [list boxes de tipo array](#array-list-boxes) podem ser hierárquicos.
 
 Hierarchical list boxes are a particular way of representing data but they do not modify the data structure (arrays). Hierarchical list boxes are managed exactly the same way as regular list boxes.
 
