@@ -8,17 +8,18 @@ title: ピクチャー
 
 [ピクチャーボタン](pictureButton_overview.md)、[ピクチャーポップアップメニュー](picturePopupMenu_overview.md)、または [スタティックピクチャー](staticPicture.md) に表示させるピクチャーのパス名です。 POSIX シンタックスを使用します。
 
-ピクチャーパスに指定できる場所は次の 2箇所です:
+The following locations can be used for static pictures:
 
 - プロジェクトの **Resources** フォルダー。 プロジェクト内の複数のフォームで画像を共有する場合に適切です。 この場合、パス名は "/RESOURCES/\<picture path\>" となります。
 - フォームフォルダー内の画像用フォルダー (たとえば、**Images** と名付けたフォルダー)。 特定のフォームでしか画像が使われない場合や、そのフォームの全体を複製してプロジェクト内、または別のプロジェクトに移動させたい場合に適切です。 この場合、パス名は "\<picture path\>" となり、フォームフォルダーを基準とした相対パスです。
+- in a 4D picture variable. The picture must be loaded in memory when the form is executed. In this case, the Pathname is "var:\<variableName\>".
 
 
 #### JSON 文法
 
-|  名称   | データタイプ | とりうる値                           |
-|:-----:|:------:| ------------------------------- |
-| ピクチャー |  テキスト  | POSIX シンタックスの相対パス、またはファイルシステムパス |
+|  名称   | データタイプ | とりうる値                                                                                         |
+|:-----:|:------:| --------------------------------------------------------------------------------------------- |
+| ピクチャー |  テキスト  | Relative or filesystem path in POSIX syntax, or "var:\<variableName\>" for picture variable |
 
 
 #### 対象オブジェクト
