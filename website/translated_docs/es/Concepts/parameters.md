@@ -336,7 +336,7 @@ La declaración de parámetros también es obligatoria en los siguientes context
 C_TEXT($1;$2;$3;$4;$5;$6)
 ```
 
-> You can also use [named parameters](#named-parameters) with the `#DECLARE` keyword.
+> También puede utilizar [parámetros nombrados](#named-parameters) con la palabra clave `#DECLARE`.
 
 - Triggers - El parámetro $0 (Entero largo), que es el resultado de un trigger, será digitado por el compilador si el parámetro no ha sido declarado explícitamente. Sin embargo, si quiere declararlo, debe hacerlo en el propio trigger.
 
@@ -356,7 +356,7 @@ C_TEXT($1;$2;$3;$4;$5;$6)
 
 ## Tipo de parámetro equivocado
 
-Calling a parameter with an wrong type is an [error](error-handling.md) that prevents correct execution. For example, if you write the following methods:
+Llamar a un parámetro con un tipo incorrecto es un [error](error-handling.md) que impide la correcta ejecución. Por ejemplo, si escribe los siguientes métodos:
 
 ```4d
 // method1
@@ -365,10 +365,10 @@ Calling a parameter with an wrong type is an [error](error-handling.md) that pre
 
 ```4d
 // method2
-method1(42) //wrong type, text expected
+method1(42) //tipo incorrecto, texto esperado
 ```
 
-This case is handled by 4D depending on the context:
+Este caso es tratado por 4D en función del contexto:
 
 - in [compiled projects](interpreted.md), an error is generated at the compilation step whenever possible. Otherwise, an error is generated when the method is called.
 - in interpreted projects:
