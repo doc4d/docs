@@ -16,9 +16,9 @@ Two main locations can be used for static picture path:
 
 #### Gramática JSON
 
-| Nombre | Tipos de datos | Valores posibles                            |
-|:------:|:--------------:| ------------------------------------------- |
-| imagen |     texto      | Relative or filesystem path in POSIX syntax |
+| Nombre | Tipos de datos | Valores posibles                             |
+|:------:|:--------------:| -------------------------------------------- |
+| imagen |     texto      | Ruta relativa o filesystem en sintaxis POSIX |
 
 
 #### Objetos soportados
