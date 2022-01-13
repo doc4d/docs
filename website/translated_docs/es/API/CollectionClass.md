@@ -1747,11 +1747,11 @@ En *methodName*, pase un método de comparación que compare dos valores y devue
 
 *   *methodName* recibirá los siguientes parámetros:
     *   $1 (objeto), donde:
-        *   *$1.value* (any type): first element value to be compared
-        *   *$1.value2* (any type): second element value to be compared
-    *   $2...$N (any type): extra parameters
-*   *methodName* sets the following parameter:
-    *   *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise
+        *   *$1.value* (todo tipo): primer valor del elemento a comparar
+        *   *$1.value2* (todo tipo): segundo valor del elemento a comparar
+    *   $2...$N (cualquier tipo): parámetros adicionales
+*   *methodName* define el siguiente parámetro:
+    *   *$1.result* (boolean): **true** si *$1.value < $1.value2*, **false** de lo contrario
 
 #### Ejemplo 1
 
@@ -1799,13 +1799,13 @@ Ordenar los elementos de la colección por código de caracteres o alfabéticame
 var $strings1; $strings2 : Collection
 $strings1:=New collection("Alpha";"Charlie";"alpha";"bravo";"Bravo";"charlie")
 
-//using the character code:
+//utilizando el código de caracteres:
 $strings2:=$strings1.orderByMethod("sortCollection";sk character codes)
-// result : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
+// resultado : ["Alpha","Bravo","Charlie","alpha","bravo","charlie"]
 
-//using the language:
+//utilizando el lenguaje:
 $strings2:=$string1s.orderByMethod("sortCollection";sk strict)
-// result : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
+// resultado : ["alpha","Alpha","bravo","Bravo","charlie","Charlie"]
 ```
 
 El método ***sortCollection***:
@@ -1844,10 +1844,10 @@ Cuando se aplica a una colección vacía, `.pop()` devuelve ***undefined***.
  var $stack : Collection
  $stack:=New collection //$stack=[]
  $stack.push(1;2) //$stack=[1,2]
- $stack.pop() //$stack=[1]  Returns 2
+ $stack.pop() //$stack=[1]  Devuelve 2
  $stack.push(New collection(4;5)) //$stack=[[1,[4,5]]
- $stack.pop() //$stack=[1]  Returns [4,5]
- $stack.pop() //$stack=[]  Returns 1
+ $stack.pop() //$stack=[1]  Devuelve [4,5]
+ $stack.pop() //$stack=[]  Devuelve 1
 ```<!-- END REF --><!-- REF collection.push().Desc -->## .push()
 
 <details><summary>Histórico</summary>
@@ -1923,7 +1923,7 @@ propertyPath comparator value {logicalOperator propertyPath comparator value}
 
 Para obtener información detallada sobre cómo construir una consulta utilizando los parámetros *queryString*, *value* y *querySettings*, consulte la descripción de la función [`dataClass.query()`](DataClassClass.md#query).
 
-> Formulas are not supported by the `collection.query()` function, neither in the *queryString* parameter nor as *formula* object parameter.
+> Las fórmulas no son soportadas por la función `collection.query()`, ni en el parámetro *queryString* ni como parámetro del objeto *formula*.
 
 #### Ejemplo 1
 
@@ -1973,7 +1973,7 @@ Este ejemplo devuelve las personas cuyo nombre no empieza por una cadena de una 
 Este ejemplo devuelve las personas cuya edad no se conoce (propiedad definida como null o indefinida):
 
 ```4d
- $col:=$c.query("age=null") //placeholders not allowed with "null"
+ $col:=$c.query("age=null") //no están permitidos los marcadores de posición con "null"
   //$col=[{name:Wesson...},{name:Sterling...},{name:Mark...}]
 ```
 
@@ -2019,11 +2019,11 @@ Puede pasar el valor para inicializar el acumulador en *initValue*. Si se omite,
 
 *   en *$1.value*: valor del elemento a procesar
 *   en *$2: param*
-*   in *$N...*: *paramN...*
+*   en *$N...*: *paramN...*
 
 *methodName* define el(los) siguiente(s) parámetro(s):
 
-*   *$1.accumulator*: value to be modified by the function and which is initialized by *initValue*.
+*   *$1.accumulator*: valor que va a ser modificado por la función y que es inicializado por *initValue*.
 *   *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
 
 
@@ -2033,7 +2033,7 @@ Puede pasar el valor para inicializar el acumulador en *initValue*. Si se omite,
 ```4d
  C_COLLECTION($c)
  $c:=New collection(5;3;5;1;3;4;4;6;2;2)
- $r:=$c.reduce("Multiply";1) //returns 86400
+ $r:=$c.reduce("Multiply";1) //devuelve 86400
 ```
 
 Con el siguiente método ***Multiply***:
@@ -2088,11 +2088,11 @@ La función `.remove()`<!-- REF #collection.remove().Summary -->elimina uno o m�
 > Esta función modifica la colección original.
 
 En *index*, pase la posición donde quiere eliminar el elemento de la colección.
-> **Atención:** recuerde que los elementos de la colección están numerados desde 0. If *index* is greater than the length of the collection, actual starting index will be set to the length of the collection.
+> **Atención:** recuerde que los elementos de la colección están numerados desde 0. Si *índice* es mayor que la longitud de la colección, el índice inicial real se fijará en la longitud de la colección.
 
 *   Si *índice* < 0, se recalcula como *index:=index+length* (se considera el desplazamiento desde el final de la colección).
-*   If the calculated value < 0, *index* is set to 0.
-*   If the calculated value > the length of the collection, *index* is set to the length.
+*   Si el valor calculado < 0, *index* toma el valor 0.
+*   Si el valor calculado > la longitud de la colección, *index* se establece para la longitud.
 
 En *howMany*, pase el número de elementos a eliminar de *index*. Si no se especifica *howMany*, se elimina un elemento.
 
@@ -2133,8 +2133,8 @@ La función `.resize()`<!-- REF #collection.resize().Summary -->ajusta la longit
 .
 > Esta función modifica la colección original.
 
-*   If *size* < collection length, exceeding elements are removed from the collection.
-*   If *size* > collection length, the collection length is increased to size.
+*   Si *size* < la longitud de la colección, los elementos que exceden se eliminan de la colección.
+*   Si *size* > longitud de la colección, la longitud de la colección se incrementa al tamaño.
 
 Por defecto, los nuevos elementos se llenan con valores **null**. Puede especificar el valor a llenar en los elementos añadidos utilizando el parámetro *defaultValue*.
 
@@ -2236,9 +2236,9 @@ La función `.slice()`<!-- REF #collection.slice().Summary -->devuelve una porci
 La colección devuelta contiene el elemento especificado por *startFrom* y todos los elementos subsiguientes hasta, pero sin incluir, el elemento especificado por *end*. Si sólo se especifica el parámetro *startFrom*, la colección devuelta contiene todos los elementos desde *startFrom* hasta el último elemento de la colección original.
 
 *   Si *startFrom* < 0, se recalcula como *startFrom:=startFrom+length* (se considera el desplazamiento desde el final de la colección).
-*   If the calculated value < 0, *startFrom* is set to 0.
+*   Si el valor calculado < 0, *startFrom* toma el valor 0.
 *   Si *end* < 0 , se recalcula como *end:=end+length*.
-*   If *end < startFrom* (passed or calculated values), the method does nothing.
+*   Si *end < startFrom* (valores pasados o calculados), el método no hace nada.
 
 #### Ejemplo
 
@@ -2283,15 +2283,15 @@ En *methodName*, pase el nombre del método a utilizar para evaluar los elemento
 
 *methodName* define el(los) siguiente(s) parámetro(s):
 
-*   *$1.result* (boolean): **true** if the element value evaluation is successful, **false** otherwise.
+*   *$1.result* (boolean): **true** si la evaluación del valor del elemento tiene éxito, si no **false**.
 *   *$1.stop* (boolean, opcional): **true** para detener la retrollamada del método. El valor devuelto es el último calculado.
 
 En algún caso, en el momento en que la función `.some()` encuentre el primer elemento de la colección que devuelva true en *$1.result*, deja de llamar a *methodName* y devuelve **false**.
 
 Por defecto, `.some()` comprueba toda la colección. Opcionalmente, puede pasar el índice de un elemento desde el cual iniciar la prueba en *startFrom*.
 
-*   If *startFrom* >= the collection's length, **False** is returned, which means the collection is not tested.
-*   If *startFrom* < 0, it is considered as the offset from the end of the collection.
+*   Si *startFrom* >= la longitud de la colección, se devuelve **False**, lo que significa que la colección no se prueba.
+*   Si *startFrom* < 0, se considera como el desplazamiento desde el final de la colección.
 *   Si *startFrom* = 0, se busca en toda la colección (por defecto).
 
 
@@ -2303,9 +2303,9 @@ Por defecto, `.some()` comprueba toda la colección. Opcionalmente, puede pasar 
  var $b : Boolean
  $c:=New collection
  $c.push(-5;-3;-1;-4;-6;-2)
- $b:=$c.some("NumberGreaterThan0") // returns false
+ $b:=$c.some("NumberGreaterThan0") // devuelve false
  $c.push(1)
- $b:=$c.some("NumberGreaterThan0") // returns true
+ $b:=$c.some("NumberGreaterThan0") // devuelve true
 
  $c:=New collection
  $c.push(1;-5;-3;-1;-4;-6;-2)
@@ -2345,12 +2345,12 @@ Si desea ordenar los elementos de la colección en otro orden o clasificar cualq
 
 *   *methodName* recibirá los siguientes parámetros:
     *   $1 (objeto), donde:
-        *   *$1.value* (any type): first element value to be compared
-        *   *$1.value2* (any type): second element value to be compared
-    *   $2...$N (any type): extra parameters
+        *   *$1.value* (todo tipo): primer valor del elemento a comparar
+        *   *$1.value2* (todo tipo): segundo valor del elemento a comparar
+    *   $2...$N (cualquier tipo): parámetros adicionales
 
-*methodName* sets the following parameter:
-    *   *$1.result* (boolean): **true** if *$1.value < $1.value2*, **false** otherwise
+*methodName* define el siguiente parámetro:
+    *   *$1.result* (boolean): **true** si *$1.value < $1.value2*, **false** de lo contrario
 
 Si la colección contiene elementos de diferentes tipos, se agrupan primero por tipo y se ordenan después. Los tipos se devuelven en el siguiente orden:
 
@@ -2385,8 +2385,8 @@ Si la colección contiene elementos de diferentes tipos, se agrupan primero por 
 ```4d
  var $col; $col2; $col3 : Collection
  $col:=New collection(33;4;66;1111;222)
- $col2:=$col.sort() //numerical sort: [4,33,66,222,1111]
- $col3:=$col.sort("numberOrder") //alphabetical sort: [1111,222,33,4,66]
+ $col2:=$col.sort() //ordenación numérica: [4,33,66,222,1111]
+ $col3:=$col.sort("numberOrder") //ordenación alfabética: [1111,222,33,4,66]
 ```
 
 ```4d
