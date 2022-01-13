@@ -2290,8 +2290,8 @@ En algún caso, en el momento en que la función `.some()` encuentre el primer e
 
 Por defecto, `.some()` comprueba toda la colección. Opcionalmente, puede pasar el índice de un elemento desde el cual iniciar la prueba en *startFrom*.
 
-*   If *startFrom* >= the collection's length, **False** is returned, which means the collection is not tested.
-*   If *startFrom* < 0, it is considered as the offset from the end of the collection.
+*   Si *startFrom* >= la longitud de la colección, se devuelve **False**, lo que significa que la colección no se prueba.
+*   Si *startFrom* < 0, se considera como el desplazamiento desde el final de la colección.
 *   Si *startFrom* = 0, se busca en toda la colección (por defecto).
 
 
@@ -2303,9 +2303,9 @@ Por defecto, `.some()` comprueba toda la colección. Opcionalmente, puede pasar 
  var $b : Boolean
  $c:=New collection
  $c.push(-5;-3;-1;-4;-6;-2)
- $b:=$c.some("NumberGreaterThan0") // returns false
+ $b:=$c.some("NumberGreaterThan0") // devuelve false
  $c.push(1)
- $b:=$c.some("NumberGreaterThan0") // returns true
+ $b:=$c.some("NumberGreaterThan0") // devuelve true
 
  $c:=New collection
  $c.push(1;-5;-3;-1;-4;-6;-2)
@@ -2385,8 +2385,8 @@ Si la colección contiene elementos de diferentes tipos, se agrupan primero por 
 ```4d
  var $col; $col2; $col3 : Collection
  $col:=New collection(33;4;66;1111;222)
- $col2:=$col.sort() //numerical sort: [4,33,66,222,1111]
- $col3:=$col.sort("numberOrder") //alphabetical sort: [1111,222,33,4,66]
+ $col2:=$col.sort() //ordenación numérica: [4,33,66,222,1111]
+ $col3:=$col.sort("numberOrder") //ordenación alfabética: [1111,222,33,4,66]
 ```
 
 ```4d
