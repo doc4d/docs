@@ -72,12 +72,12 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 #### Description
 
 
-The `VP ADD RANGE NAME` command <!-- REF #_method_.VP ADD RANGE NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->.
+La commande `VP ADD RANGE NAME` <!-- REF #_method_.VP ADD RANGE NAME.Summary -->crée ou modifie une plage nommée dans le document ouvert<!-- END REF -->.
 > Les plages nommées créées par cette commande sont stockées dans le document.
 
-In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
+Dans *rangeObj*, passez la plage que vous souhaitez nommer, et passez le nouveau nom de la plage dans *name*. Si le nom est déjà utilisé dans le même scope, la nouvelle plage nommée remplace la plage existante. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
 
-You can pass an object with additional properties for the named range in *options*. Les propriétés suivantes sont prises en charge :
+Vous pouvez passer un objet avec des propriétés additionnelles pour la plage nommée dans *options*. Les propriétés suivantes sont prises en charge :
 
 
 | Propriété | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -90,7 +90,7 @@ You can pass an object with additional properties for the named range in *option
 
 #### Exemple
 
-You want to create a named range for a cell range:
+Vous souhaitez créer une plage nommée à partir d'une plage contenant une cellule :
 
 ```4d
 $range:=VP Cell("ViewProArea";2;10)
@@ -116,18 +116,18 @@ VP ADD RANGE NAME($range;"Total1")
 
 #### Description
 
-The `VP ADD SELECTION` command <!-- REF #_method_.VP ADD SELECTION.Summary -->adds the specified cells to the currently selected cells<!-- END REF -->.
+La commande `VP ADD SELECTION` <!-- REF #_method_.VP ADD SELECTION.Summary -->ajoute les cellules spécifiées aux cellules sélectionnées<!-- END REF -->.
 
-In *rangeObj*, pass a range object of cells to add to the current selection.
+Dans *rangeObj*, passez un objet plage de plusieurs cellules à ajouter à la sélection courante.
 > La cellule active n'est pas modifiée.
 
 #### Exemple
 
-You have cells currently selected:
+Les cellules sélectionnées sont les suivantes :
 
 ![](assets/en/ViewPro/cmd_vpAddSelection1.PNG)
 
-The following code will add cells to your selection:
+Le code suivant ajoutera des cellules à votre sélection :
 
 ```4d
 $currentSelection:=VP Cells("myVPArea";3;4;2;3)
@@ -158,22 +158,22 @@ Résultat :
 
 #### Description
 
-The `VP ADD SHEET` command <!-- REF #_method_.VP ADD SHEET.Summary -->inserts a sheet in the document loaded in *vpAreaName*.<!-- END REF --> 
+La commande `VP ADD SHEET` <!-- REF #_method_.VP ADD SHEET.Summary -->insère une feuille dans le document chargé dans *vpAreaName*.<!-- END REF --> 
 
 Pass the the name of the 4D View Pro area in *vpAreaName*.
 
-In *index*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
+Dans *index*, vous pouvez passer un index pour la nouvelle feuille. Si l'*index* passé est inférieur ou égal à 0, la commande insère la nouvelle feuille au début. Si l'*index* est supérieur au nombre de feuilles, la commande insère la nouvelle feuille après les feuilles existantes.
 > Indexing starts at 0.
 
-In *name*, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+Dans *name*, vous pouvez passer un nom pour la nouvelle feuille. Le nouveau nom ne peut pas contenir les caractères suivants : `*, :, [, ], ?,\,/`
 
 #### Exemple
 
-The document currently has 3 sheets:
+Le document comporte actuellement 3 feuilles :
 
 ![vp-document-with-3-sheets](assets/en/ViewPro/vp-sheet-3.png)
 
-To insert a sheet at the third position (index 2) and name it "March":
+Pour insérer une feuille à la troisième position (index 2) et la nommer "March" :
 
 ```4d
 VP ADD SHEET("ViewProArea";2;"March")
@@ -199,16 +199,16 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 #### Description
 
-The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of cells.
+La commande `VP ADD SPAN` combine les cellules de *rangeObj* en une seule cellule fusionnée.
 
-In *rangeObj*, pass a range object of cells. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Note that if cell ranges overlap, only the first cell range is used.
+Dans *rangeObj*, passez une plage de cellules. Les cellules de la plage sont jointes, afin de créer une cellule plus large qui s'étend sur plusieurs colonnes et/ou lignes. Vous pouvez passer plusieurs plages de cellules pour créer plusieurs fusions de cellules en même temps. A noter que si les plages de cellules se chevauchent, seule la première plage est utilisée.
 
 > - Seules les données contenues dans la cellule supérieure gauche sont affichées. Les données des autres cellules combinées sont cachées jusqu'à ce que la fusion soit retirée.
 > - Les données masquées, contenues dans les cellules fusionnées, sont accessibles via des formules (commençant par la cellule supérieure gauche).
 
 #### Exemple
 
-To span the First quarter and Second quarter cells across the two cells beside them, and the South area cell across the two rows below it:
+Pour fusionner les cellules First quarter et Second quarter avec les deux cellules côte à côte, et de fusionner la cellule South area avec les deux lignes en-dessous :
 
 ![initial-document](assets/en/ViewPro/vp-add-span.png)
 
@@ -249,18 +249,18 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 #### Description
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. If a style sheet with the same name and scope already exists in the document, this command will overwrite it with the new values.
+La commande `VP ADD STYLESHEET` <!-- REF #_method_.VP ADD STYLESHEET.Summary -->crée ou modifie la feuille de style *styleName* basée sur la combinaison de propriétés indiquées dans *styleObj* dans le document courant<!-- END REF -->. Si une feuille de style ayant le même nom et la même cible existe déjà dans le document, cette commande l'écrasera et le remplacera par les nouvelles valeurs.
 
 > Les feuilles de style créées par cette commande sont sauvegardées avec le document.
 
 
 Pass the the name of the 4D View Pro area in *vpAreaName*. Si vous passez un nom inexistant, une erreur est retournée.
 
-The *styleName* parameter lets you assign a name to the style sheet. If the name is already used within the same scope, the new style sheet replaces the existing one. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
+Le paramètre *styleName* vous permet de nommer la feuille de style. Si le nom existe déjà dans le même scope, la nouvelle feuille de style remplace la feuille existante. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
 
-Within the *styleObj*, designate the settings for the style sheet (e.g., font, text decoration, alignment, borders, etc.). For the full list of style properties, see [Style object properties](configuring.md#style-objects-properties).
+Dans *styleObj*, définissez les propriétés de la feuille de style (ex : police, alignement, bordures, etc.). Pour consulter la liste complète des propriétés, reportez-vous à la section [Propriétés des objets de style](configuring.md#style-objects-properties).
 
-You can designate where to define the style sheet in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+Vous pouvez désigner l'emplacement dans lequel vous souhaitez définir la feuille de style dans le paramètre optionnel *scope*, à l'aide de l'indice de la feuille (la numérotation commence à zéro) ou à l'aide des constantes suivantes :
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -4488,7 +4488,7 @@ In *index*, pass the index of the sheet to rename.
 
 If no *index* is passed, the command renames the current sheet.
 
-The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+Le nouveau nom ne peut pas contenir les caractères suivants : `*, :, [, ], ?,\,/`
 
 The command does nothing if:
 
