@@ -87,7 +87,7 @@
 			"API/SignalClass",
 			"API/SMTPTransporterClass",
 			"API/SystemWorkerClass",
-      "API/WebServerClass",
+			"API/WebServerClass",
 			"API/ZipArchiveClass",
 			"API/ZipFileClass",
 			"API/ZipFolderClass"
@@ -132,7 +132,7 @@
 			"ServerWindow/monitor",
 			"ServerWindow/users",
 			"ServerWindow/processes",
-			"ServerWindow/mainenance",
+			"ServerWindow/maintenance",
 			"ServerWindow/application-server",
 			"ServerWindow/sql-server",
 			"ServerWindow/http-server",
