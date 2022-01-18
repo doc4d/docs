@@ -3,24 +3,24 @@ id: compiler
 title: Compilation
 ---
 
-You can compile your projects, i.e., translate all of your methods into machine language. Compiling a project lets you check the consistency of the code and accelerate its execution, as well as making it possible to obfuscate the code in its entirety. Compilation is an indispensable step between the development of projects using 4D and their deployment as stand-alone applications.
+Vous pouvez compiler vos projets, c'est-à-dire traduire toutes vos méthodes en langage machine. La compilation d'un projet permet de vérifier la cohérence du code et d'accélérer son exécution, mais aussi de masquer le code dans son intégralité. La compilation est une étape indispensable, entre le développement de projets avec 4D et leur déploiement en tant qu'applications autonomes.
 
 
-## Compile
+## Compilation
 
-The compilation is handled from your 4D application and is entirely automatic.
+La compilation est gérée depuis votre application 4D et est entièrement automatique.
 
-> On macOS, the compilation requires that you install `Xcode`. See [this section](#silicon-compiler) for more information about this requirement.
+> Sur macOS, la compilation nécessite l'installation d'`Xcode`. Consultez [cette section](#silicon-compiler) pour plus d'informations sur ce pré-requis.
 
-1. Open the compiler window by selecting the **Compiler...** command in the **Design** menu or the **Compiler** toolbar button.
+1. Ouvrez la fenêtre de compilation en sélectionnant la commande **Compiler...** dans le menu **Design** ou le bouton **Compiler** de la barre d'outils.
 
     ![](assets/en/Project/compilerWin1.png)
 
     ![](assets/en/Project/comp1.png)
 
-> You can also launch directly the compilation by selecting the **Start Compilation** menu item from the **Design** menu.
+> Vous pouvez également lancer directement la compilation en sélectionnant l'élément de menu **Start Compilation** dans le menu **Design**.
 
-2. Click the **Compile** button to launch the compilation using the current [compilation settings](#compiler-settings).
+2. Cliquez sur le bouton **Compiler** pour lancer la compilation à l'aide des [paramètres de compilation](#compiler-settings) actuels.
 
 If no errors are detected, the actual compilation begins and the "Compilation successful" message is displayed at the bottom of the window when the compilation is completed:
 
