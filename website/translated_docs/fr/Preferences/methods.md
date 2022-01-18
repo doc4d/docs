@@ -78,7 +78,7 @@ Ces options permettent de configurer les différentes couleurs utilisées dans l
 ## Options
 
 
-This page configures Method editor display options.
+Cette page configure les options d'affichage de l'éditeur de méthodes.
 
 ![](assets/en/Preferences/options.png)
 
