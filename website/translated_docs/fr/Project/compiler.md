@@ -3,36 +3,36 @@ id: compiler
 title: Compilation
 ---
 
-You can compile your projects, i.e., translate all of your methods into machine language. Compiling a project lets you check the consistency of the code and accelerate its execution, as well as making it possible to obfuscate the code in its entirety. Compilation is an indispensable step between the development of projects using 4D and their deployment as stand-alone applications.
+Vous pouvez compiler vos projets, c'est-à-dire traduire toutes vos méthodes en langage machine. La compilation d'un projet permet de vérifier la cohérence du code et d'accélérer son exécution, mais aussi de masquer le code dans son intégralité. La compilation est une étape indispensable, entre le développement de projets avec 4D et leur déploiement en tant qu'applications autonomes.
 
 
-## Compile
+## Compilation
 
-The compilation is handled from your 4D application and is entirely automatic.
+La compilation est gérée depuis votre application 4D et est entièrement automatique.
 
-> On macOS, the compilation requires that you install `Xcode`. See [this section](#silicon-compiler) for more information about this requirement.
+> Sur macOS, la compilation nécessite l'installation d'`Xcode`. Consultez [cette section](#silicon-compiler) pour plus d'informations sur ce pré-requis.
 
-1. Open the compiler window by selecting the **Compiler...** command in the **Design** menu or the **Compiler** toolbar button.
+1. Ouvrez la fenêtre de compilation en sélectionnant la commande **Compiler...** dans le menu **Design** ou le bouton **Compiler** de la barre d'outils.
 
     ![](assets/en/Project/compilerWin1.png)
 
     ![](assets/en/Project/comp1.png)
 
-> You can also launch directly the compilation by selecting the **Start Compilation** menu item from the **Design** menu.
+> Vous pouvez également lancer directement la compilation en sélectionnant l'élément de menu **Start Compilation** dans le menu **Design**.
 
-2. Click the **Compile** button to launch the compilation using the current [compilation settings](#compiler-settings).
+2. Cliquez sur le bouton **Compiler** pour lancer la compilation à l'aide des [paramètres de compilation](#compiler-settings) actuels.
 
-If no errors are detected, the actual compilation begins and the "Compilation successful" message is displayed at the bottom of the window when the compilation is completed:
+Si aucune erreur n'est détectée, la compilation démarre et le message "Compilation successful" s'affiche au bas de la fenêtre lorsque la compilation est terminée :
 
 ![](assets/en/Project/success.png)
 
-You can immediately [run your application in compiled mode](#run-compiled) and see how faster it is.
+Vous pouvez immédiatement [exécuter votre application en mode compilé](#run-compiled) et identifier sa rapidité.
 
-If errors are detected, the process is stopped and the "Compilation failed" message is displayed. The information area of the window displays the method names and line numbers concerned in a hierarchical list:
+Si des erreurs sont détectées, le process est stoppé et le message "Compilation failed" s'affiche. La zone d'information de la fenêtre affiche les noms des méthodes et les numéros de ligne concernés dans une liste hiérarchique :
 
 ![](assets/en/Project/compilerWin2.png)
 
-Double-click on each error detected to open the method or class concerned directly in the 4D method editor. The line containing the error is highlighted and the type of error is displayed in the syntax area of the window.
+Double-cliquez sur chaque erreur détectée pour ouvrir la méthode ou la classe concernée directement dans l'éditeur de méthode 4D. La ligne contenant l'erreur est mise en évidence et le type d'erreur est affiché dans la zone syntaxique de la fenêtre.
 
 Use the **Previous Error** / **Next Error** commands of the **Method** menu to navigate from one error to the next.
 
