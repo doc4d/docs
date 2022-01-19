@@ -34,21 +34,21 @@ Si des erreurs sont détectées, le process est stoppé et le message "Compilati
 
 Double-cliquez sur chaque erreur détectée pour ouvrir la méthode ou la classe concernée directement dans l'éditeur de méthode 4D. La ligne contenant l'erreur est mise en évidence et le type d'erreur est affiché dans la zone syntaxique de la fenêtre.
 
-Use the **Previous Error** / **Next Error** commands of the **Method** menu to navigate from one error to the next.
+Utilisez les commandes **Erreur précédente** / **Erreur suivante** du menu **Méthode** pour naviguer d'une erreur à l'autre.
 
-The number of errors found during your first compilations may be daunting, but do not let this put you off. You will soon discover that they often spring from the same source, i.e., non-compliance with certain project conventions. The compiler always provides a [precise diagnosis](#error-files) of the errors in order to help you correct them.
+Le nombre d'erreurs trouvées lors de vos premières compilations peut être déconcertant, mais ne vous laissez pas décourager. Vous découvrirez rapidement qu'elles proviennent souvent de la même source, à savoir la non-conformité avec certaines conventions du projet. Le compilateur fournit toujours un [diagnostic précis](#error-files) des erreurs afin de vous aider à les corriger.
 
-> Compilation requires an appropriate license. Without this license, it is not possible to carry out a compilation (buttons are disabled). Nevertheless, it is still possible to check the syntax and generate Typing methods.
+> La compilation nécessite une licence appropriée. Sans cette licence, il n'est pas possible d'effectuer une compilation (les boutons sont désactivés). Néanmoins, il est toujours possible de vérifier la syntaxe et de générer des méthodes de typage.
 
-## Run Compiled
+## Exécuter la compilation
 
-Once a project is compiled, it is possible to switch from [interpreted mode to compiled mode](Concepts/interpreted.md), and vice versa, at any time and without having to quit the 4D application (except when the interpreted code has been removed). To do this, use tge **Restart Interpreted** and **Restart Compiled** commands of the **Run** menu. La [boîte de dialogue d'ouverture de projet](GettingStarted/creating.md#options) offre également le choix entre le mode interprété ou compilé pour le démarrage de la base de données.
+Une fois le projet compilé, il est possible de passer du [mode interprété au mode compilé](Concepts/interpreted.md), et vice versa, à tout moment et sans avoir à quitter l'application 4D (sauf si le code interprété a été supprimé). Pour ce faire, utilisez les commandes **Restart Interpreted** et **Restart Compiled** du menu **Run**. La [boîte de dialogue d'ouverture de projet](GettingStarted/creating.md#options) offre également le choix entre le mode interprété ou compilé pour le démarrage de la base de données.
 
-When you switch from one mode to the other, 4D closes the current mode and opens the new one. This is equivalent to exiting and reopening the application. Each time you change from one mode to another, 4D executes the two following database methods (if specified) in this order: `On Exit` -> `On Startup`.
+Lorsque vous passez d'un mode à l'autre, 4D ferme le mode courant et ouvre le nouveau. Cela équivaut à quitter et à rouvrir l'application. Chaque fois que vous passez d'un mode à l'autre, 4D exécute les deux méthodes base suivantes (si elles sont spécifiées) dans cet ordre : `On Exit` -> `On Startup`.
 
-If you modify your project in interpreted mode, you must recompile it in order to have your edits taken into account in compiled mode.
+Si vous modifiez votre projet en mode interprété, vous devez le recompiler pour que vos modifications soient prises en compte en mode compilé.
 
-## Compiler window features
+## Caractéristiques de la fenêtre du compilateur
 
 In addition to the [**Compile** button](#compile), the Compiler window provides additional features that are useful during the project development phase.
 
