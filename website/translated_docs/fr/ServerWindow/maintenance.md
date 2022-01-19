@@ -1,30 +1,30 @@
 ---
 id: maintenance
-title: Maintenance Page
+title: Page maintenance
 ---
 
 
-The **Maintenance** page of the 4D Server Administration window provides information concerning the current operation of the application. It also provides access to basic maintenance functions:
+La page **Maintenance** fournit diverses informations relatives au fonctionnement courant de la base. Elle donne également accès aux fonctions de maintenance élémentaires :
 
 ![](assets/en/Admin/server-maintenance.png)
 
 
-## Last verification/compacting
+## Dernière vérification/dernier compactage
 
-These areas indicate the date, time and status of the last [data verification](MSC/verify.md) and [compacting operation](MSC/compact.md) carried out on the database.
+Ces zones indiquent la date, l’heure et le statut de la dernière [vérification des données](MSC/verify.md) et de la dernière [opération de compactage](MSC/compact.md) effectuées sur la base.
 
-### Verify Records and Indexes
+### Vérifier enregistrements et index
 
-This button can be used to launch the verification operation directly, without interrupting the server. Note that the server may be noticeably slowed down during the operation.
+Ce bouton permet de lancer directement l’opération de vérification, sans interruption du serveur. A noter que le serveur peut être sensiblement ralenti durant l’opération.
 
-All the records and all the indexes of the database are verified. If you want to be able to target the verification or have additional options available, you will need to use the [Maintenance and Security Center](MSC/overview.md) (MSC).
+Tous les enregistrements et tous les index de la base sont vérifiés. Si vous souhaitez pouvoir cibler la vérification ou disposer d’options supplémentaires, vous devez utiliser le [Centre de sécurité et de maintenance](MSC/overview.md) (CSM).
 
-After verification, a report file is generated in XML format on the server in the [maintenance Logs](Project/architecture.md#logs) folder. The **View Report** button (named **Download Report** if the operation was carried out from a remote machine) lets you display the file in your browser.
+A l’issue de la vérification, un fichier de compte-rendu est généré au format XML sur le serveur, dans le dossier [maintenance Logs](Project/architecture.md#logs). Le bouton **Voir le compte rendu** (nommé **Télécharger le compte rendu** si l’opération a été effectuée depuis un poste distant) vous permet d’afficher le fichier dans votre navigateur.
 
 
-This area indicates the date, time and status of the last  carried out on the database data.
+Cette zone indique la date, l’heure et le statut de la dernière opération de vérification/compactage des données de la base.
 
-### Compact Data...
+### Compacter les données...
 
 Thus button can be used to launch a data compacting operation directly. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
 
@@ -36,7 +36,7 @@ Once the compacting is finished, 4D Server automatically restarts the applicatio
 
 > If the request for compacting was carried out from a remote 4D remote machine, this machine is automatically reconnected by 4D Server.
 
-After verification, a report file is generated in XML format on the server in the [maintenance Logs](Project/architecture.md#logs) folder. The **View Report** button (named **Download Report** if the operation was carried out from a remote machine) lets you display the file in your browser.
+A l’issue de la vérification, un fichier de compte-rendu est généré au format XML sur le serveur, dans le dossier [maintenance Logs](Project/architecture.md#logs). Le bouton **Voir le compte rendu** (nommé **Télécharger le compte rendu** si l’opération a été effectuée depuis un poste distant) vous permet d’afficher le fichier dans votre navigateur.
 
 
 ## Uptime
