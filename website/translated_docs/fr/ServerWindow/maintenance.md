@@ -23,15 +23,15 @@ A l’issue de la vérification, un fichier de compte-rendu est généré au for
 
 ### Compacter les données...
 
-Thus button can be used to launch a data compacting operation directly. This operation requires stopping the server: when you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation:
+Ce bouton permet de lancer directement une opération de compactage des données. Cette opération nécessite de stopper le serveur : lorsque vous cliquez sur le bouton, la boîte de dialogue de fermeture de la base 4D Server apparaît, vous permettant de choisir le mode d’interruption de l’exploitation :
 
 ![](assets/en/Admin/server-shut.png)
 
-After the actual interruption of the application service, 4D Server carries out a standard compacting operation on the database data. If you want to have additional options available, you will need to use the [MSC](MSC/overview.md).
+Après l’interruption effective de la base, 4D Server effectue un compactage standard des données de la base. Si vous souhaitez disposer d’options supplémentaires, vous devez utiliser le [Centre de sécurité et de maintenance (CSM)](MSC/overview.md).
 
-Once the compacting is finished, 4D Server automatically restarts the application. The 4D users can then be reconnected.
+Une fois le compactage terminé, 4D Server relance automatiquement l'application. Les utilisateurs 4D peuvent alors se reconnecter.
 
-> If the request for compacting was carried out from a remote 4D remote machine, this machine is automatically reconnected by 4D Server.
+> Si la demande de compactage a été effectuée depuis un client 4D distant, ce poste est automatiquement reconnecté par 4D Server.
 
 A l’issue de la vérification, un fichier de compte-rendu est généré au format XML sur le serveur, dans le dossier [maintenance Logs](Project/architecture.md#logs). Le bouton **Voir le compte rendu** (nommé **Télécharger le compte rendu** si l’opération a été effectuée depuis un poste distant) vous permet d’afficher le fichier dans votre navigateur.
 
@@ -43,7 +43,7 @@ This area indicates the duration of the 4D Server application execution since th
 
 ### Restart server...
 
-This button can be used to immediately close and restart the project. When you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation. After validation, 4D Server automatically closes and reopens the project. The 4D users can then be reconnected.
+This button can be used to immediately close and restart the project. When you click on this button, the 4D Server shutdown dialog box appears so that you can choose how to interrupt the operation. After validation, 4D Server automatically closes and reopens the project. Les utilisateurs 4D peuvent alors se reconnecter.
 
 > If the request for restarting was carried out from a remote 4D machine, this machine is automatically reconnected by 4D Server.
 
