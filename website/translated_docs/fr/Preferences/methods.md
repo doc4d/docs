@@ -87,9 +87,9 @@ Cette page configure les options d'affichage de l'éditeur de méthodes.
 
 
 
-#### 4D Programming Language (Use regional system settings)
+#### Langage de programmation 4D (Utiliser les paramètres régionaux du système)
 
-Allows you to disable/enable the "international" code settings for the local 4D application.
+Permet de désactiver/activer les paramètres du code "international" pour l'application 4D locale.
 - **unchecked** (default): English-US settings and the English programming language are used in 4D methods.
 - **checked**: Regional settings are used in 4D methods.
 
