@@ -848,10 +848,10 @@
         "title": "A propos des requêtes REST"
       },
       "ServerWindow/application-server": {
-        "title": "Application Server Page"
+        "title": "Page Serveur d’application"
       },
       "ServerWindow/http-server": {
-        "title": "HTTP Server Page"
+        "title": "Page Serveur HTTP"
       },
       "ServerWindow/maintenance": {
         "title": "Page maintenance"
@@ -866,10 +866,10 @@
         "title": "Page Process"
       },
       "ServerWindow/real-time-monitor": {
-        "title": "Real Time Monitor Page"
+        "title": "Page Moniteur temps réel"
       },
       "ServerWindow/sql-server": {
-        "title": "SQL Server Page"
+        "title": "Page Serveur SQL"
       },
       "ServerWindow/users": {
         "title": "Page Utilisateurs"
