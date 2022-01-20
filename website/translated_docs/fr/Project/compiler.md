@@ -90,19 +90,19 @@ When this option is checked, the warnings (if any) are displayed in the window, 
 
 Double-clicking a warning opens the corresponding method.
 
-#### Disabling warnings during compilation
+#### Désactiver les avertissements pendant la compilation
 
-You can selectively disable certain warnings during compilation by inserting the following into the code of a 4D method:
+Vous pouvez désactiver sélectivement certains avertissements lors de la compilation en insérant le texte suivant dans le code d'une méthode 4D :
 
 ```4d
   //%W-<warning number>
 ```
 
-Only warnings with numbers can be disabled. Warning numbers are specified at the end of each message in the list of compilation errors. For example, to disable the following warning:
+Seuls les avertissements comportant un numéro peuvent être désactivés. Les numéros d'avertissement sont indiqués à la fin de chaque message dans la liste des erreurs de compilation. Par exemple, pour désactiver l'avertissement suivant :
 
-*1: Pointer in an array declaration (518.5)*
+*1 : Pointeur dans une déclaration de tableau (518.5)*
 
-... you just need to write the following comment in a 4D method, preferably a `COMPILER_xxx` method (method compiled first):
+... il suffit d'écrire le commentaire suivant dans une méthode 4D, de préférence une méthode `COMPILER_xxx` (méthode compilée en premier) :
 
 ```4d
   //%W-518.5
@@ -110,9 +110,9 @@ Only warnings with numbers can be disabled. Warning numbers are specified at the
 
 
 
-## Compiler Settings
+## Paramètres du compilateur
 
-The "Compiler" page of the Settings dialog box lets you set parameters related to project compilation. You can directly open this page from the [compiler window](#compiler-window) by clicking on the **Compiler Settings** button:
+La page "Compilateur" de la boîte de dialogue Paramètres vous permet de définir les paramètres liés à la compilation du projet. Vous pouvez ouvrir directement cette page à partir de la [fenêtre du compilateur](#compiler-window) en cliquant sur le bouton **Paramètres du compilateur** :
 
 ![](assets/en/Project/compilerWin6.png)
 
