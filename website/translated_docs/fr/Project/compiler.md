@@ -50,15 +50,15 @@ Si vous modifiez votre projet en mode interprété, vous devez le recompiler pou
 
 ## Caractéristiques de la fenêtre du compilateur
 
-In addition to the [**Compile** button](#compile), the Compiler window provides additional features that are useful during the project development phase.
+En plus du bouton [**Compiler**](#compile), la fenêtre du Compilateur offre des fonctionnalités supplémentaires qui sont utiles durant la phase de développement du projet.
 
-### Check Syntax
+### Vérifier la syntaxe
 
-The **Check Syntax** button starts the execution of the syntax-checking phase. At the end of the checking process, any errors detected are listed in the information area. You can double–click on an error line in order to display the corresponding method.
+Le bouton **Vérifier la syntaxe** lance l'exécution de la phase de vérification de la syntaxe. À la fin du processus de vérification, les erreurs détectées sont listées dans la zone d'information. Vous pouvez double-cliquer sur une ligne d'erreur afin d'afficher la méthode correspondante.
 
-Syntax checking can also be launched directly using the **Check Syntax** command associated with the **Compiler** toolbar button. This option is the only one available if you do not have a suitable license to allow the compilation of applications.
+Le contrôle syntaxique peut également être lancé directement à l'aide de la commande **Check Syntax** associée au bouton de la barre d'outils **Compiler**. Cette option est la seule disponible si vous ne disposez pas d'une licence adéquate pour permettre la compilation d'applications.
 
-### Generate Typing
+### Générer le typage
 
 The **Generate Typing** button creates or updates typing compiler methods. Compiler methods are project methods that group together all the variable and array typing declarations (process and interprocess), as well as the method parameters. These methods, when they exist, are used directly by the compiler during code compilation, resulting in faster compilation times.
 
@@ -117,7 +117,7 @@ La page "Compilateur" de la boîte de dialogue Paramètres vous permet de défin
 ![](assets/en/Project/compilerWin6.png)
 
 
-### Compilation options
+### Options de compilation
 
 This area groups the generic options used during the compilation process.
 
