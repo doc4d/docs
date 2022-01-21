@@ -27,18 +27,18 @@ ASSERT($status.success)
 
 
 ### 概要
-|                                                                                                                                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [<!-- INCLUDE #4D.CryptoKey.new().Syntax -->](#4dcryptokeynew)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.CryptoKey.new().Summary -->|
-| [<!-- INCLUDE #CryptoKey.curve.Syntax -->](#curve)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.curve.Summary --> |
-| [<!-- INCLUDE #CryptoKey.decrypt().Syntax -->](#decrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.decrypt().Summary -->|
-| [<!-- INCLUDE #CryptoKey.encrypt().Syntax -->](#encrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.encrypt().Summary -->|
-| [<!-- INCLUDE #CryptoKey.getPrivateKey().Syntax -->](#getprivatekey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.getPrivateKey().Summary -->|
-| [<!-- INCLUDE #CryptoKey.getPublicKey().Syntax -->](#getpublickey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.getPublicKey().Summary -->|
-| [<!-- INCLUDE #CryptoKey.sign().Syntax -->](#sign)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.sign().Summary --> |
-| [<!-- INCLUDE #CryptoKey.size.Syntax -->](#size)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.size.Summary --> |
-| [<!-- INCLUDE #CryptoKey.type.Syntax -->](#type)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.type.Summary --> |
-| [<!-- INCLUDE #CryptoKey.verify().Syntax -->](#verify)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.verify().Summary -->|
+|                                                                                                         |
+| ------------------------------------------------------------------------------------------------------- |
+| [<!-- INCLUDE #4D.CryptoKey.new().Syntax -->](#4dcryptokeynew)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #4D.CryptoKey.new().Summary --></p>       |
+| [<!-- INCLUDE #CryptoKey.curve.Syntax -->](#curve)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.curve.Summary --> </p>                   |
+| [<!-- INCLUDE #CryptoKey.decrypt().Syntax -->](#decrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.decrypt().Summary --></p>             |
+| [<!-- INCLUDE #CryptoKey.encrypt().Syntax -->](#encrypt)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.encrypt().Summary --></p>             |
+| [<!-- INCLUDE #CryptoKey.getPrivateKey().Syntax -->](#getprivatekey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.getPrivateKey().Summary --></p> |
+| [<!-- INCLUDE #CryptoKey.getPublicKey().Syntax -->](#getpublickey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.getPublicKey().Summary --></p>   |
+| [<!-- INCLUDE #CryptoKey.sign().Syntax -->](#sign)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.sign().Summary --> </p>                   |
+| [<!-- INCLUDE #CryptoKey.size.Syntax -->](#size)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.size.Summary --> </p>                     |
+| [<!-- INCLUDE #CryptoKey.type.Syntax -->](#type)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.type.Summary --> </p>                     |
+| [<!-- INCLUDE #CryptoKey.verify().Syntax -->](#verify)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #CryptoKey.verify().Summary --></p>               |
 
 
 
@@ -61,7 +61,7 @@ ASSERT($status.success)
 <!-- REF #4D.CryptoKey.new().Params -->
 | 引数       | タイプ          |    | 説明                                               |
 | -------- | ------------ | -- | ------------------------------------------------ |
-| settings | Object       | -> | キーペアを生成・ロードするための設定                               |
+| settings | オブジェクト       | -> | キーペアを生成・ロードするための設定                               |
 | result   | 4D.CryptoKey | <- | 暗号化キーペアをカプセル化したオブジェクト|<!-- END REF -->
 
 
@@ -100,11 +100,13 @@ ASSERT($status.success)
 
 
 
-ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線名<!-- END REF -->。 通常、ES256 (デフォルト) の場合は "prime256v1", ES384 の場合は "secp384r1", ES512 の場合は "secp521r1"。
+ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線名<!-- END REF -->。
+
+通常、ES256 (デフォルト) の場合は "prime256v1", ES384 の場合は "secp384r1", ES512 の場合は "secp521r1"。
+
 <!-- END REF -->
 
 
-<!-- REF CryptoKey.decrypt().Desc -->
 ## .decrypt()
 
 <details><summary>履歴</summary>
@@ -119,10 +121,11 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 <!-- REF #CryptoKey.decrypt().Params -->
 | 引数      | タイプ    |    | 説明                                                |
 | ------- | ------ | -- | ------------------------------------------------- |
-| message | Text   | -> | `options.encodingEncrypted` を使ってデコードし復号するメッセージ文字列 |
-| options | Object | -> | デコーディングオプション                                      |
-| 戻り値     | Object | <- | ステータス                                             |
+| message | テキスト   | -> | `options.encodingEncrypted` を使ってデコードし復号するメッセージ文字列 |
+| options | オブジェクト | -> | デコーディングオプション                                      |
+| 戻り値     | オブジェクト | <- | ステータス                                             |
 <!-- END REF -->
+
 
 
 `.decrypt()` 関数は、 <!-- REF #CryptoKey.decrypt().Summary -->**秘密** 鍵を使って *message* を復号します<!-- END REF -->。 使用されるアルゴリズムはキーの種類に依存します。
@@ -150,7 +153,6 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 
 
 キーまたはアルゴリズムが合致しないなどの理由で *message* の復号に成功しなかった場合、返される `status` オブジェクトの `status.errors` プロパティにはエラーのコレクションが格納されます。
-<!-- END REF -->
 
 
 <!-- REF CryptoKey.encrypt().Desc -->
@@ -168,9 +170,9 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 <!-- REF #CryptoKey.encrypt().Params -->
 | 引数      | タイプ    |    | 説明                                                  |
 | ------- | ------ | -- | --------------------------------------------------- |
-| message | Text   | -> | `options.encodingDecrypted` を使ってエンコードし暗号化するメッセージ文字列 |
-| options | Object | -> | エンコーディングオプション                                       |
-| 戻り値     | Text   | <- | options.encodingEncrypted を使って暗号化およびエンコードされたメッセージ   |
+| message | テキスト   | -> | `options.encodingDecrypted` を使ってエンコードし暗号化するメッセージ文字列 |
+| options | オブジェクト | -> | エンコーディングオプション                                       |
+| 戻り値     | テキスト   | <- | options.encodingEncrypted を使って暗号化およびエンコードされたメッセージ   |
 <!-- END REF -->
 
 `.encrypt()` 関数は、 <!-- REF #CryptoKey.encrypt().Summary -->**公開** 鍵を使って *message* を暗号化します<!-- END REF -->。 使用されるアルゴリズムはキーの種類に依存します。
@@ -210,7 +212,7 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 <!-- REF #CryptoKey.getPrivateKey().Params -->
 | 引数  | タイプ  |    | 説明         |
 | --- | ---- | -- | ---------- |
-| 戻り値 | Text | <- | PEM 形式の秘密鍵 |
+| 戻り値 | テキスト | <- | PEM 形式の秘密鍵 |
 <!-- END REF -->
 
 `.getPrivateKey()` 関数は、  <!-- REF #CryptoKey.getPrivateKey().Summary -->`CryptoKey` オブジェクトの秘密鍵を返します<!-- END REF --> (PEM形式)。無い場合は空の文字列を返します。
@@ -237,7 +239,7 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 <!-- REF #CryptoKey.getPublicKey().Params -->
 | 引数  | タイプ  |    | 説明         |
 | --- | ---- | -- | ---------- |
-| 戻り値 | Text | <- | PEM 形式の公開鍵 |
+| 戻り値 | テキスト | <- | PEM 形式の公開鍵 |
 <!-- END REF -->
 
 
@@ -275,9 +277,9 @@ ECDSA キーのみ: <!-- REF #CryptoKey.curve.Summary -->キーの楕円曲線�
 | v18 R4 | 追加 |
 </details><!-- REF #CryptoKey.sign().Syntax -->.**sign** (*message* : Text ; *options* : Text) : Text<!-- END REF --><!-- REF #CryptoKey.sign().Params -->| 引数      | タイプ    |    | 説明                                              |
 | ------- | ------ | -- | ----------------------------------------------- |
-| message | Text   | -> | 署名をするメッセージ                                      |
-| options | Object | -> | 署名オプション                                         |
-| 戻り値     | Text   | <- | "encoding" オプションに応じて Base64 または Base64URL 形式の署名 |<!-- END REF -->`.sign()` 関数は、`CryptoKey` オブジェクトキーおよび指定された *options* を使って、<!-- REF #CryptoKey.sign().Summary -->utf8 形式の *message* 文字列を署名します
+| message | テキスト   | -> | 署名をするメッセージ                                      |
+| options | オブジェクト | -> | 署名オプション                                         |
+| 戻り値     | テキスト   | <- | "encoding" オプションに応じて Base64 または Base64URL 形式の署名 |<!-- END REF -->`.sign()` 関数は、`CryptoKey` オブジェクトキーおよび指定された *options* を使って、<!-- REF #CryptoKey.sign().Summary -->utf8 形式の *message* 文字列を署名します
 <!-- END REF -->
 
 
@@ -313,10 +315,10 @@ utf8 形式の *message* 文字列。<!-- END REF --><!-- REF CryptoKey.size -->
 | v18 R4 | 追加 |
 </details><!-- REF #CryptoKey.verify().Syntax -->**.verify**( *message* : Text ; *signature* : Text ; *options* : Object) : object<!-- END REF --><!-- REF #CryptoKey.verify().Params -->| 引数        | タイプ    |    | 説明                                                          |
 | --------- | ------ | -- | ----------------------------------------------------------- |
-| message   | Text   | -> | 署名生成時に使われたメッセージ文字列                                          |
-| signature | Text   | -> | 検証の対象である、`options.encoding` に応じて Base64 または Base64URL 形式の署名 |
-| options   | Object | -> | 署名オプション                                                     |
-| 戻り値       | Object | <- | 検証ステータス                                                     |<!-- END REF -->`.verify()` 関数は、`CryptoKey` オブジェクトキーおよび指定された *options* を使って、<!-- REF #CryptoKey.verify().Summary -->utf8 形式の message 文字列の署名を検証します
+| message   | テキスト   | -> | 署名生成時に使われたメッセージ文字列                                          |
+| signature | テキスト   | -> | 検証の対象である、`options.encoding` に応じて Base64 または Base64URL 形式の署名 |
+| options   | オブジェクト | -> | 署名オプション                                                     |
+| 戻り値       | オブジェクト | <- | 検証ステータス                                                     |<!-- END REF -->`.verify()` 関数は、`CryptoKey` オブジェクトキーおよび指定された *options* を使って、<!-- REF #CryptoKey.verify().Summary -->utf8 形式の message 文字列の署名を検証します
 <!-- END REF -->
 
 。
