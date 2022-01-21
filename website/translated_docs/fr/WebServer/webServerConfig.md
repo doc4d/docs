@@ -10,11 +10,11 @@ Les paramètres du serveur web 4D comprennent les paramètres de sécurité, les
 
 Vous pouvez configurer les paramètres du serveur web 4D, en fonction de la portée et du serveur que vous souhaitez configurer :
 
-| Setting location                                              | Portée                                                | Serveur web concerné                                                 |
-| ------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
-| [objet webServer](webServerObject.md)                         | Temporaire (session courante)                         | N'importe quel serveur web, y compris les serveurs Web de composants |
-| `WEB SET OPTION` ou commande `WEB XXX`                        | Temporaire (session courante)                         | Serveur principal                                                    |
-| [**Settings** dialog box](../settings/web.md) (**Web** pages) | Permanent (toutes les sessions, stocké sur le disque) | Serveur principal                                                    |
+| Setting location                                                           | Portée                                                | Serveur web concerné                                                 |
+| -------------------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |
+| [objet webServer](webServerObject.md)                                      | Temporaire (session courante)                         | N'importe quel serveur web, y compris les serveurs Web de composants |
+| `WEB SET OPTION` ou commande `WEB XXX`                                     | Temporaire (session courante)                         | Serveur principal                                                    |
+| [Boîte de dialogue des **Propriétés**](../settings/web.md) (pages **Web**) | Permanent (toutes les sessions, stocké sur le disque) | Serveur principal                                                    |
 
 > Certains paramètres ne sont pas disponibles depuis tous les emplacements.
 
@@ -27,7 +27,7 @@ Vous pouvez configurer les paramètres du serveur web 4D, en fonction de la port
 
 Active et configure le cache des pages web.
 
-Le serveur web 4D dispose d'un cache qui permet de charger les pages statiques, les images GIF, les images JPEG (<512 kb) et les feuilles de style (fichiers .css) en mémoire, au fur et à mesure qu'elles sont appelées. L'utilisation du cache permet d'augmenter considérablement les performances du serveur web lors de l'envoi de pages statiques. Le cache est partagé entre tous les processus web. When the cache is enabled, the 4D Web server looks for any static page requested by the browser in the cache first. If it finds the page, it sends it immediately. If not, 4D loads the page from disk and places it in the cache.
+Le serveur web 4D dispose d'un cache qui permet de charger les pages statiques, les images GIF, les images JPEG (<512 kb) et les feuilles de style (fichiers .css) en mémoire, au fur et à mesure qu'elles sont appelées. L'utilisation du cache permet d'augmenter considérablement les performances du serveur web lors de l'envoi de pages statiques. Le cache est partagé entre tous les processus web. Lorsque le cache est activé, le serveur Web 4D recherche d'abord dans le cache toute page statique demandée par le navigateur. S'il trouve la page, il l'envoie immédiatement. Sinon, 4D charge la page à partir du disque et la place dans le cache.
 
 Vous pouvez modifier la taille du cache dans la zone **Taille du cache des pages**. La valeur à définir dépend du nombre et de la taille des pages statiques de votre site Web, ainsi que des ressources dont dispose la machine hôte.
 > Lorsque vous utilisez votre base de données web, vous pouvez vérifier les performances du cache en utilisant la commande `WEB LIRE STATISTIQUES`. Si, par exemple, vous remarquez que le taux d'utilisation du cache est proche de 100 %, vous pouvez envisager d'augmenter la taille qui lui a été allouée. Les URL [/4DSTATS] et [/4DHTMLSTATS] vous permettent également d'obtenir des informations sur l'état du cache.
@@ -137,7 +137,7 @@ Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, nu
 |1|wdl enable without body|Le journal de débogage de Web HTTP est activé sans le body (la taille du body est fournie dans ce cas). |3|wdl enable with response body|Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la réponse |5|wdl enable with request body| Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la requête |7|wdl enable with all body parts|Web HTTP debug log est activé, le body est inclus dans la réponse et la requête|
 
 
-## Default Home page
+## Page d'accueil par défaut
 
 | Peut être configuré via  | Nom                                                                               | Commentaires                                 |
 | ------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------- |
@@ -357,13 +357,13 @@ Pour éviter cette confusion, nous recommandons d'utiliser la notation [ ] lorsq
 
 ## Keep Session
 
-| Peut être configuré via  | Nom                                                                                                                      | Commentaires               |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| objet webServer          | [`keepSession`](API/WebServerClass.md#keepsession)                                                                       |                            |
-| `WEB SET OPTION`         | `Web keep session`                                                                                                       |                            |
-| Fenêtre de configuration | [Options (I) page/Legacy sessions (single process sessions)](../settings/web.md#legacy-sessions-single-process-sessions) | only in converted projects |
+| Peut être configuré via  | Nom                                                                                                                      | Commentaires                          |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
+| objet webServer          | [`keepSession`](API/WebServerClass.md#keepsession)                                                                       |                                       |
+| `WEB SET OPTION`         | `Web keep session`                                                                                                       |                                       |
+| Fenêtre de configuration | [Options (I) page/Legacy sessions (single process sessions)](../settings/web.md#legacy-sessions-single-process-sessions) | uniquement dans les projets convertis |
 
-Legacy session management enabling status for the 4D web server (deprecated).
+Statut de la gestion de l'ancienne session pour le serveur Web 4D (obsolète).
 
 > Lorsque cette option est cochée, l'option "réutilisation des contextes temporaires" est automatiquement cochée (et verrouillée).
 
@@ -374,7 +374,7 @@ Legacy session management enabling status for the 4D web server (deprecated).
 | ------------------------ | ---------------------------------------------------- | ------------ |
 | objet webServer          | [`logRecording`](API/WebServerClass.md#logrecording) |              |
 | `WEB SET OPTION`         | `Web log recording`                                  |              |
-| Fenêtre de configuration | [Log (type) page](../settings/web.md#log-format)     | Menu popup   |
+| Fenêtre de configuration | [Page log (type)](../settings/web.md#log-format)     | Menu popup   |
 
 Démarre ou arrête l'enregistrement des requêtes reçues par le serveur Web 4D dans le fichier *logweb.txt* et définit son format. Par défaut, les requêtes ne sont pas enregistrées (0/Pas de journal). Lorsqu'il est activé, le fichier *logweb.txt* est automatiquement placé dans le dossier Logs.
 
