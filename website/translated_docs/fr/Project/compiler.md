@@ -119,20 +119,20 @@ La page "Compilateur" de la boîte de dialogue Paramètres vous permet de défin
 
 ### Options de compilation
 
-This area groups the generic options used during the compilation process.
+Cette zone regroupe les options génériques utilisées lors du processus de compilation.
 
-#### Generate the symbol file
+#### Générer le fichier de symboles
 
-Used to generate the symbol file (see [symbol file](#symbol-file)). Used to generate the symbol file (see [symbol file](#symbol-file)).
+Permet de générer le fichier de symboles (voir [fichier de symboles](#symbol-file)). Used to generate the symbol file (see [symbol file](#symbol-file)).
 
-#### Generate error file
+#### Générer le fichier d'erreurs
 
-Used to generate the error file (see [error file](#symbol-file)) at the time of syntax checking. The error file is created in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_errors.xml`.
+Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#symbol-file)) au moment du contrôle syntaxique. Le fichier d'erreur est créé dans le [dossier Logs](Project/architecture.md#logs) du projet portant le nom `ProjectName_errors.xml`.
 
 
-#### Compilation Path
+#### Chemin de compilation
 
-Used to set the number of passes (code parsing) performed by the compiler and thus the duration of compilation.
+Permet de définir le nombre de passages (analyse du code) effectués par le compilateur et donc la durée de la compilation.
 
 - **Type the variables**: Passes by all the stages that make compilation possible.
 - **Process and interprocess are typed**: The pass for typing process and interprocess variables is not carried out. This option can be used when you have already carried out the typing of all your process and interprocess variables either yourself or using the function for automatic generation of compiler methods.
