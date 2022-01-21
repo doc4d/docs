@@ -132,6 +132,7 @@ Séparez chaque méthode par un ";" (ex : "post;get"). Si Méthodes est vide, nu
 
 
 
+
 |1|wdl enable without body|Le journal de débogage de Web HTTP est activé sans le body (la taille du body est fournie dans ce cas). |3|wdl enable with response body|Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la réponse |5|wdl enable with request body| Le journal de débogage de Web HTTP est activé, le body est inclus uniquement dans la requête |7|wdl enable with all body parts|Web HTTP debug log est activé, le body est inclus dans la réponse et la requête|
 
 
@@ -592,16 +593,6 @@ La valeur de l'attribut `Secure` du cookie de session est automatiquement défin
 
 
 
-## Validation de l'adresse IP de la session
-
-Can be set with|Name|Comments| |---|---|---| |webServer object|[`sessionIPAddressValidation`](API/WebServerClass.md#sessionipaddressvalidation)|| |`WEB SET OPTION`|`Web session enable IP address validation`||
-
-Statut de validation d'adresse IP pour les cookies de session. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. Par exemple, lorsque les appareils mobiles basculent entre les réseaux Wifi et 4G/5G, leur adresse IP change. Dans ce cas, vous devez passer 0 à cette option pour permettre aux clients de continuer à utiliser leurs sessions Web même lorsque les adresses IP changent. Note : ce paramètre réduit le niveau de sécurité de votre application.
-
-Une fois modifiée, cette option prend effet immédiatement (il n'est pas nécessaire de redémarrer le serveur HTTP).
-
-Valeurs possibles: 0 (désactivé) ou 1 (activé, par défaut).
-
 
 
 
@@ -612,6 +603,12 @@ Les paramètres suivants sont toujours pris en charge mais reposent sur des fonc
 #### Autoriser l'accès à la base de données via les URL "4DSYNC"
 
 Cette option contrôle le support des requêtes de synchronisation HTTP contenant des URLs dépréciées */4DSYNC*.
+
+#### Validation de l'adresse IP de la session
+
+> Cette option n'est pas disponible en [mode sessions évolutives](WebServer/sessions.md) (il n'y a pas de validation).
+
+Statut de validation d'adresse IP pour les cookies de session. Pour des raisons de sécurité, le serveur Web vérifie par défaut l'adresse IP de chaque requête contenant un cookie de session et la rejette si cette adresse ne correspond pas à l'adresse IP utilisée pour créer le cookie. Dans certaines applications spécifiques, vous souhaiterez peut-être désactiver cette validation et accepter les cookies de session, même lorsque leurs adresses IP ne correspondent pas. Par exemple, lorsque les appareils mobiles basculent entre les réseaux Wifi et 4G/5G, leur adresse IP change. Dans ce cas, vous devez passer 0 à cette option pour permettre aux clients de continuer à utiliser leurs sessions Web même lorsque les adresses IP changent. Note : ce paramètre réduit le niveau de sécurité de votre application. Une fois modifiée, cette option prend effet immédiatement (il n'est pas nécessaire de redémarrer le serveur HTTP).
 
 
 #### Réutiliser les contextes temporaires (en mode distant)
