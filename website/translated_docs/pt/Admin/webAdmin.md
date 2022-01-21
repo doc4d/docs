@@ -84,28 +84,28 @@ Quando esta opção for marcada, pode conectar ao servidor web `WebAdmin` atrav�
 
 #### HTTP Port
 
-Port number to use for connections through HTTP to the `WebAdmin` web server when the **Accept HTTP connections on localhost** option is checked. Default value is 7080.
+Número de porta a usar para conexões com HTTP para o servidor web `WebAdmin` web server quando a opção **Accept HTTP connections on localhost** estiver marcada. Valor normal padrão é 7080
 
 
-#### Accept HTTPS
+#### Aceitar HTTPS
 
-When this option is checked, you will be able to connect to the `WebAdmin` web server through HTTPS. By default, this option is checked.
+Quando esta opção for marcada, pode se conectar ao servidor web `WebAdmin` através de HTTPS. Como padrão, essa opção é marcada.
 
-#### HTTPS Port
+#### Porta HTTPS
 
-Port number to use for connections through HTTPS to the `WebAdmin` web server when the **Accept HTTPS** option is checked. Default value is 7443.
+Número de porta a utilizar para as conexôes ao servidor web `WebAdmin` através de HTTPS quando a opção **HTTPS aceita** estiver marcada. Valor normal padrão é 7443
 
 
-#### Certificate folder path
+#### Rota da pasta de certificados
 
-Path of the folder where the TLS certificate files are located. By default, the certificate folder path is empty and 4D or 4D Server uses the certificate files embedded in the 4D application (custom certificates must be stored next to the project folder).
+Rota da pasta onde o certificado TLS está localizado. Como padrão, a rota da pasta de certificados está vazia e 4D ou Servidor 4D usa os arquivos de certificados contidos na apicação 4D (certificados personalizados devem ser armazenados do lado da pasta projeto).
 
-#### Debug log mode
+#### Modo de registro de depuração/debug
 
-Status or format of the HTTP request log file (HTTPDebugLog_*nn*.txt, stored in the "Logs" folder of the application -- *nn* is the file number). The following options are available:
+O estado ou formato do arquivo de registro da petição HTTP (HTTPDebugLog_*nn*.txt, armazenada na pasta "Logs" da aplicação -- *nn* é o número do arquivo). As opções abaixo estão disponíveis:
 
-- **Disable** (default)
-- **With all body parts** - enabled with body parts in response and request
+- **Desativado** (padrão)
+- **Com todas as partes do corpo** - habilitado com partes do cuerpo das petições e respostas
 - **Without body parts** - enabled without body parts (body size is provided)
 - **With request body** - enabled with body part in request only
 - **With response body** - enabled with body part in response only
