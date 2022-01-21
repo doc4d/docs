@@ -51,17 +51,17 @@ Trois options sont disponibles :
 
 ### Apparence (macOS uniquement)
 
-Ce menu vous permet de sélectionner la palette de couleurs à utiliser pour l'environnement de **développement 4D**. Le schéma spécifié sera appliqué à tous les éditeurs et fenêtres du mode Développement.
+Ce menu vous permet de sélectionner la palette de couleurs à utiliser pour l'environnement de **développement 4D**. La palette spécifiée sera appliquée à tous les éditeurs et fenêtres du mode Développement.
 
-> You can also set the color scheme to use in your **desktop applications** in the "Interface" page of the Settings dialog box.
+> Vous pouvez également définir la palette de couleurs à utiliser dans vos **applications de bureau** dans la page "Interface" de la boîte de dialogue des Paramètres.
 
 Trois options sont disponibles :
 
-*   **According to System Color Scheme Preferences** (default): Use the color scheme defined in the macOS System Preferences.
-*   **Light**: Use the Light Theme
-*   **Dark**: Use the Dark Theme
+*   **Selon les préférences de la palette de couleurs du système** (par défaut) : Utilisez la palette de couleurs définie dans les préférences système de macOS.
+*   **Clair** : Utiliser le thème clair
+*   **Sombre** : utiliser le thème sombre
 
-> This preference is only supported on macOS. On Windows, the "Light" scheme is always used.
+> Cette préférence n'est prise en charge que sur macOS. Sous Windows, la palette "Light" est toujours utilisée.
 
 
 ### Exit Design when going to Application Environment
