@@ -651,10 +651,11 @@ Pour supprimer tous les messages de la boîte de réception courante :
 **.deleteBox**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| Paramètres | Type   |    | Description                                   |
-| ---------- | ------ |:--:| --------------------------------------------- |
-| name       | Texte  | -> | Nom de la boîte de réception à supprimer      |
-| Résultat   | Object | <- | Statut de l'opération de suppression de boîte |
+| Paramètres | Type  |    | Description                              |
+| ---------- | ----- |:--:| ---------------------------------------- |
+| name       | Texte | -> | Nom de la boîte de réception à supprimer |
+
+|Result|Object|<-|Statut de l'opération de suppression|
 <!-- END REF -->
 
 
@@ -798,8 +799,8 @@ $status:=$transporter.expunge()
 | Version | Modifications        |
 | ------- | -------------------- |
 | v18 R5  | *name* est optionnel |
-| v18 R4  | Ajout                |
-</details>
+
+|v18 R4|Added| </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
@@ -1691,27 +1692,27 @@ Les mots-clés de recherche peuvent traiter des valeurs des types suivants :
 **SEEN**: Messages comportant le marqueur \Seen.  
 **UNSEEN**: Messages ne comportant pas le marqueur \Seen.  
 **NEW**: Messages comportant le marqueur \Recent et pas le marqueur \Seen. Equivaut à “(RECENT UNSEEN)”.  
-**KEYWORD marqueur** <flag>: Messages comportant le marqueur spécifié.  
-**UNKEYWORD marqueur** <flag>: Messages ne comportant pas le marqueur spécifié.  
-**BEFORE date** <date>: Messages dont la date interne est antérieure à la date spécifiée.  
-**ON date** <date>: Messages dont la date interne est égale à la date spécifiée.  
-**SINCE date** <date>: Messages dont la date interne est égale ou postérieure à la date spécifiée.  
-**SENTBEFORE date** <date>: Messages dont l’en-tête Date est antérieur à la date spécifiée.  
-**SENTON date** <date>: Messages dont l’en-tête Date est égal à la date spécifiée.  
-**SENTSINCE** <date>: Messages dont l’en-tête Date est égal ou postérieur à la date spécifiée.  
-**TO** <string>: Messages contenant la chaîne spécifiée dans l’en-tête Destinataire.  
-**FROM** <string>: Messages contenant la chaîne spécifiée dans l’en-tête Emetteur.  
-**CC** <string>: Messages contenant la chaîne spécifiée dans l’en-tête CC.  
-**BCC** <string>: Messages contenant la chaîne spécifiée dans l’en-tête BCC.  
-**SUBJECT** <string>: Messages contenant la chaîne spécifiée dans l’en-tête Objet.  
-**BODY** <string>: Messages dont le corps contient la chaîne spécifiée.  
-**TEXT** <string>: Messages contenant la chaîne spécifiée dans l’en-tête ou le corps.  
-**HEADER** <field-name> <string>: Messages dont l’en-tête contient le champ défini et dont ce champ contient la chaîne définie.  
-**UID** <message UID>: Messages dont le numéro unique correspond à la valeur spécifiée.  
-**LARGER** <n>: Messages dont la taille en octets est supérieure à la taille spécifiée.  
-**SMALLER** <n>: Messages dont la taille en octets est inférieure à la taille spécifiée.  
-**NOT** <search-key>: Messages ne correspondant pas au critère spécifié.  
-**OR** <search-key1> <search-key2>: Messages correspondant au premier ou au deuxième critère spécifié.  
+***KEYWORD ***flag******: Messages comportant le marqueur spécifié.  
+***UNKEYWORD ***flag******: Messages ne comportant pas le marqueur spécifié.  
+***BEFORE ***date******: Messages dont la date interne est antérieure à la date spécifiée.  
+***ON ***date******: Messages dont la date interne est égale à la date spécifiée.  
+***SINCE ***date******: Messages dont la date interne est égale ou postérieure à la date spécifiée.  
+***SENTBEFORE ***date******: Messages dont l’en-tête Date est antérieur à la date spécifiée.  
+***SENTON ***date******: Messages dont l’en-tête Date est égal à la date spécifiée.  
+***SENTSINCE ***date******: Messages dont l’en-tête Date est égal ou postérieur à la date spécifiée.  
+***TO ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Destinataire.  
+***FROM ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Emetteur.  
+***CC ***string******: Messages contenant la chaîne spécifiée dans l’en-tête CC.  
+***BCC ***string******: Messages contenant la chaîne spécifiée dans l’en-tête BCC.  
+***SUBJECT ***string******: Messages contenant la chaîne spécifiée dans l’en-tête Objet.  
+***BODY ***string******: Messages dont le corps contient la chaîne spécifiée.  
+***TEXT ***string******: Messages contenant la chaîne spécifiée dans l’en-tête ou le corps.  
+***HEADER *field-name* ***string******: Messages dont l’en-tête contient le champ défini et dont ce champ contient la chaîne définie.  
+***UID ***message-UID******: Messages dont le numéro unique correspond à la valeur spécifiée.  
+***LARGER ***n******: Messages dont la taille en octets est supérieure à la taille spécifiée.  
+***SMALLER ***n******: Messages dont la taille en octets est inférieure à la taille spécifiée.  
+***NOT ***search-key******: Messages ne correspondant pas au critère spécifié.  
+***OR *search-key1* ***search-key2******: Messages correspondant au premier ou au deuxième critère spécifié.  
 
 
 <!-- END REF -->
