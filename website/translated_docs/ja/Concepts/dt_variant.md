@@ -13,7 +13,7 @@ title: バリアント
 - date
 - 倍長整数
 - object
-- ピクチャー
+- picture
 - pointer
 - 実数
 - テキスト
