@@ -38,7 +38,7 @@ title: ドキュメンテーション
 `Documentation` フォルダーのアーキテクチャーは次のとおりです:
 
 - `Documentation`
-    + `クラス`
+    + `Classes`
         * myClass.md
     + `DatabaseMethods`
         * onStartup.md
