@@ -13,7 +13,7 @@ The [Product Download](https://us.4d.com/product-download) page on the 4D websit
 Additional technical details are available on the 4D website's [Resources page](https://us.4d.com/resources/feature-release).
 
 
-## Installation on disk
+## Instalación en disco
 
 4D products are installed from the 4D website:
 
