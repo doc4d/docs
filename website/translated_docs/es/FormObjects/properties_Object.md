@@ -8,7 +8,7 @@ title: Objetos
 
  `PARÁMETRO OBLIGATORIO`
 
-This property designates the type of the [active or inactive form object](formObjects_overview.md).
+Esta propiedad designa el tipo del [objeto formulario activo o inactivo](formObjects_overview.md).
 
 
 #### Gramática JSON
@@ -57,7 +57,7 @@ Here is the list of objects whose value can be saved:
 
 | Objeto                                        | Valor guardado                                                                         |
 | --------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Check Box](checkbox_overview.md)             | Value of associated variable (0, 1, 2)                                                 |
+| [Casilla a seleccionar](checkbox_overview.md) | Value of associated variable (0, 1, 2)                                                 |
 | [Lista desplegable](dropdownList_Overview.md) | Número de línea seleccionada                                                           |
 | [Botón radio](radio_overview.md)              | Value of associated variable (1, 0, True or False for buttons according to their type) |
 | [Control de pestañas](tabControl.md)          | Número de pestaña seleccionada                                                         |
