@@ -19,7 +19,7 @@ The following locations can be used for static pictures:
 
 |  Name  | Data Type | Possible Values                                                                               |
 |:------:|:---------:| --------------------------------------------------------------------------------------------- |
-| imagem |   text    | Relative or filesystem path in POSIX syntax, or "var:\<variableName\>" for picture variable |
+| imagem |   texto   | Relative or filesystem path in POSIX syntax, or "var:\<variableName\>" for picture variable |
 
 
 #### Objects Supported
