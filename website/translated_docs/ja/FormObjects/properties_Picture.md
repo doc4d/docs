@@ -17,9 +17,9 @@ The following locations can be used for static pictures:
 
 #### JSON 文法
 
-|  名称   | データタイプ | とりうる値                                                                                         |
-|:-----:|:------:| --------------------------------------------------------------------------------------------- |
-| ピクチャー |  テキスト  | Relative or filesystem path in POSIX syntax, or "var:\<variableName\>" for picture variable |
+|   名称    | データタイプ | とりうる値                                                                                         |
+|:-------:|:------:| --------------------------------------------------------------------------------------------- |
+| picture |  テキスト  | Relative or filesystem path in POSIX syntax, or "var:\<variableName\>" for picture variable |
 
 
 #### 対象オブジェクト
