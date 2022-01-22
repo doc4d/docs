@@ -6,6 +6,10 @@ title: ドキュメンテーション更新情報
 このドキュメントのおもな更新内容のリストです。 4D製品の新機能についての一般的な情報は、[doc.4d.com](https://doc.4d.com) の **リリースノート** を参照ください。
 
 
+## 4D v19 R5
+
+
+
 ## 4D v19 R4
 
 - [Alias attributes](ORDA/ordaClasses.md#alias-attributes) are available in ORDA classes.
