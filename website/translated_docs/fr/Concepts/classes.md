@@ -306,6 +306,8 @@ Les propriétés calculées sont conçues pour gérer les données qui n'ont pas
 
 Dans le fichier de définition de la classe, les déclarations de propriétés calculées utilisent les mots-clés `Function get` (le *getter*) et `Function set` (le *setter*), suivis du nom de la propriété.
 
+Dans le fichier de définition de la classe, les déclarations de propriétés calculées utilisent les mots-clés `Function get` (le *getter*) et `Function set` (le *setter*), suivis du nom de la propriété.
+
 Dans le fichier de définition de la classe, les déclarations de propriétés calculées utilisent les mots-clés `Function get` (le *getter*) et `Function set` (le *setter*), suivis du nom de la propriété. Le nom doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties). Le nom doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties).
 
 `Function get` retourne une valeur du type de la propriété et `Function set` prend un paramètre du type de la propriété. Les deux arguments doivent être conformes aux [paramètres standard des fonctions](#parameters).
@@ -631,6 +633,41 @@ $val:=$o.f() //8
 
 ```
 Dans cet exemple, l'objet assigné à la variable $o n'a pas sa propre propriété *f*, il l'hérite de sa classe. Since *f* is called as a method of $o, its `This` refers to $o.
+
+
+## Class commands
+
+Several commands of the 4D language allows you to handle class features.
+
+
+### `OB Class`
+
+#### OB Class ( object ) -> Object | Null
+
+`OB Class` returns the class of the object passed in parameter.
+
+
+### `OB Instance of`
+
+#### OB Instance of ( object ; class ) -> Boolean
+
+`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
+
+
+### `OB Instance of`
+
+#### OB Instance of ( object ; class ) -> Boolean
+
+`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
+
+
+### `OB Instance of`
+
+#### OB Instance of ( object ; class ) -> Boolean
+
+`OB Instance of` retourne `true` si `object` appartient à `class` ou à l'une de ses classes héritées, sinon retourne `false`. Since 
+
+*f* is called as a method of $o, its `This` refers to $o.</p>
 
 
 ## Class commands
