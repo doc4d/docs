@@ -51,17 +51,17 @@ Trois options sont disponibles :
 
 ### Apparence (macOS uniquement)
 
-Ce menu vous permet de sélectionner la palette de couleurs à utiliser pour l'environnement de **développement 4D**. Le schéma spécifié sera appliqué à tous les éditeurs et fenêtres du mode Développement.
+Ce menu vous permet de sélectionner la palette de couleurs à utiliser pour l'environnement de **développement 4D**. La palette spécifiée sera appliquée à tous les éditeurs et fenêtres du mode Développement.
 
-> You can also set the color scheme to use in your **desktop applications** in the "Interface" page of the Settings dialog box.
+> Vous pouvez également définir la palette de couleurs à utiliser dans vos **applications de bureau** dans la page "Interface" de la boîte de dialogue des Paramètres.
 
 Trois options sont disponibles :
 
-*   **According to System Color Scheme Preferences** (default): Use the color scheme defined in the macOS System Preferences.
-*   **Light**: Use the Light Theme
-*   **Dark**: Use the Dark Theme
+*   **Selon les préférences de la palette de couleurs du système** (par défaut) : Utilisez la palette de couleurs définie dans les préférences système de macOS.
+*   **Clair** : Utiliser le thème clair
+*   **Sombre** : utiliser le thème sombre
 
-> This preference is only supported on macOS. On Windows, the "Light" scheme is always used.
+> Cette préférence n'est prise en charge que sur macOS. Sous Windows, la palette "Light" est toujours utilisée.
 
 
 ### Exit Design when going to Application Environment
@@ -92,13 +92,13 @@ When this option is checked, 4D databases are automatically created in a folder 
 
 Thanks to this principle, under macOS the database folders appear as packages having specific properties. Under Windows, this has no particular impact.
 
-### Include tokens in project source files
+### Inclure les tokens dans les fichiers sources des projets
 
-When this option is checked, saved [method source files](../Project/architecture.md#sources) in new 4D projects will contain **tokens** for classic language and database objects (constants, commands, tables and fields). Tokens are additional characters such as `:C10` or `:5` inserted in the source code files, that allow renaming tables and fields and identifying elements whatever the 4D version (see [Using tokens in formulas](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html)).
+Lorsque cette option est cochée, les [fichiers sources des méthodes](../Project/architecture.md#sources) enregistrées dans les nouveaux projets 4D contiendront des **tokens** pour les objets classiques du langage et de la base (constantes, commandes, tables et champs). Les tokens sont des caractères supplémentaires tels que `:C10` ou `:5` insérés dans les fichiers de code source, qui permettent de renommer les tables et les champs et d'identifier les éléments indépendamment de la version 4D (voir [Utilisation des tokens dans les formules](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html)).
 
-If you intend to use VCS or external code editors with your new projects, you might want to uncheck this option for a better readability of the code with these tools.
+Si vous avez l'intention d'utiliser des VCS ou des éditeurs de code externes avec vos nouveaux projets, il est préférable de décocher cette option pour une meilleure lisibilité du code avec ces outils.
 
-> This option can only be applied to projects (binary databases always include tokens).
+> Cette option ne peut être appliquée qu'aux projets (les bases binaires incluent toujours les tokens).
 
 > You can always get the code with tokens by calling [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) with 1 in the *option* parameter.
 
