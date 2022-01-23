@@ -228,10 +228,10 @@ A função `.getBoxInfo()` <!-- REF #POP3TransporterClass.getBoxInfo().Summary -
 
 O objeto `boxInfo` retornado contém as funcionalidades abaixo:
 
-| Property  | Type   | Description                       |
-| --------- | ------ | --------------------------------- |
-| mailCount | Número | Number of messages in the mailbox |
-| size      | Número | Tamanho da mensagem em bytes      |
+| Propriedade | Type   | Description                       |
+| ----------- | ------ | --------------------------------- |
+| mailCount   | Número | Number of messages in the mailbox |
+| size        | Número | Tamanho da mensagem em bytes      |
 
 
 
@@ -339,14 +339,14 @@ Se quiser saber o emissário do primeiro email da mailbox:
 
 A função `.getMail()`<!-- REF #POP3TransporterClass.getMail().Summary -->retorna o objeto`mailInfo` correspondente a *msgNumber* na mailbox determinada pelo [`POP3 transporter`](#pop3-transporter-object)<!-- END REF -->. Essa função permite que recupere informação sobre o email.
 
-Passe em *msgNumber* o número da mensagem a recuperar. O número é retornado na propriedade número pelo método [`.getMailInfoList()`](#getmailinfo).
+Passe em *msgNumber* o número da mensagem a recuperar. O número é retornado na propriedade número pelo método [`.getMailInfoList()`](#getmailinfolist).
 
 O objeto `mailInfo` retornado contém as funcionalidades abaixo:
 
-| Property | Type   | Description                  |
-| -------- | ------ | ---------------------------- |
-| size     | Número | Tamanho da mensagem em bytes |
-| id       | Texto  | ID única da mensagem         |
+| Propriedade | Type   | Description                  |
+| ----------- | ------ | ---------------------------- |
+| size        | Número | Tamanho da mensagem em bytes |
+| id          | Texto  | ID única da mensagem         |
 
 O método retorna **Null** se:
 
@@ -391,9 +391,9 @@ O método retorna **Null** se:
 **.getMailInfoList()** : Collection<!-- END REF -->
 
 <!-- REF #POP3TransporterClass.getMailInfoList().Params -->
-| Parameter | Type       |    | Description                      |
-| --------- | ---------- |:--:| -------------------------------- |
-| Result    | Collection | <- | Collection of `mailInfo` objects |
+| Parameter | Type    |    | Description                      |
+| --------- | ------- |:--:| -------------------------------- |
+| Result    | Coleção | <- | Collection of `mailInfo` objects |
 <!-- END REF -->
 
 
@@ -403,7 +403,7 @@ A função`.getMailInfoList()` <!-- REF #POP3TransporterClass.getMailInfoList().
 
 Cada objeto `mailInfo` na coleção retornada contém as propriedades abaixo:
 
-| Property     | Type   | Description                                                    |
+| Propriedade  | Type   | Description                                                    |
 | ------------ | ------ | -------------------------------------------------------------- |
 | \[ ].size   | Número | Tamanho da mensagem em bytes                                   |
 | \[ ].number | Número | Número da mensagem                                             |

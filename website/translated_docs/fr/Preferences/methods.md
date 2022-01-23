@@ -3,7 +3,7 @@ id: methods
 title: Page Méthodes
 ---
 
-This page contains parameters defining the Method editor interface and its default display as well as options concerning its operation. Elle est divisée en deux parties, accessibles via les onglets Thèmes et Options.
+Cette page contient des paramètres permettant de définir l’interface, l’affichage par défaut et les options de l’éditeur de méthodes. Elle est divisée en deux parties, accessibles via les onglets Thèmes et Options.
 
 ## Thèmes
 
@@ -113,13 +113,13 @@ Cela vous permet d'afficher les numéros de ligne par défaut dans chaque fenêt
 
 Cela vous permet de choisir d'afficher ou non les listes d'objets (Commandes, Tables et champs, etc.) par défaut lorsque la fenêtre de l'éditeur de méthode est ouverte. Vous pouvez également afficher ou masquer chaque liste directement à partir de l'éditeur de méthode.
 
-#### Show clipboards
+#### Afficher les presse-papiers
 
-Lets you choose whether or not to show the multiple clipboards in the code editor.
+Vous permet de choisir d'afficher ou non les multiples presse-papiers dans l'éditeur de code.
 
 ![](assets/en/Preferences/show-clipboards.png)
 
-The corresponding [clipboard shorcuts](https://doc.4d.com/4Dv19R3/4D/19-R3/Writing-a-method.300-5612559.en.html#3977166) are still active when these clipboards are hidden.
+Les [raccourcis du presse-papiers](https://doc.4d.com/4Dv19R3/4D/19-R3/Writing-a-method.300-5612559.en.html#3977166) correspondants demeurent actifs lorsque ces presse-papiers sont masqués.
 
 #### Highlight the logical blocks
 

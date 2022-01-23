@@ -233,7 +233,7 @@ El objeto `4D.ZipArchive` revuelto contiene una sola propiedad, [`root`](#root),
 
 #### Ejemplo
 
-To retrieve and view the contents of a ZIP file object:
+Para recuperar y ver el contenido de un objeto ZIP file:
 
 ```4d
  var $archive : 4D.ZipArchive
@@ -243,14 +243,14 @@ To retrieve and view the contents of a ZIP file object:
  $archive:=ZIP Read archive($path)
 ```
 
-To retrieve the list of the files and folders in the archive:
+Para recuperar la lista de los archivos y carpetas del archivo:
 
 ```4d
  $folders:=$archive.root.folders()
  $files:=$archive.root.files()
 ```
 
-To read the contents of a file without extracting it from the root folder:
+Para leer el contenido de un archivo sin extraerlo de la carpeta root:
 
 ```4d
 
@@ -261,13 +261,13 @@ To read the contents of a file without extracting it from the root folder:
  End if
 ```
 
-To extract from the root folder:
+Para extraer desde la carpeta root:
 
 ```4d
-  //extract a file
+  //extraer un archivo
  $folderResult:=$files[$i].copyTo(Folder(fk desktop folder).folder("MyDocs"))
 
-  //extract all files
+  //extraer todos los archivos
  $folderResult:=$archive.root.copyTo(Folder(fk desktop folder).folder("MyDocs"))
 ```
 
@@ -281,9 +281,9 @@ To extract from the root folder:
 
 #### Descripción
 
-The `.root` property contains <!-- REF #ZipArchiveClass.root.Summary -->a virtual folder providing access to the contents of the ZIP archive<!-- END REF -->.
+La propiedad `.root` contiene <!-- REF #ZipArchiveClass.root.Summary -->una carpeta virtual que permite acceder al contenido del archivo ZIP<!-- END REF -->.
 
-The `root` folder and its contents can be manipulated with the [ZipFile](ZipFileClass.md) and [ZipFolder](ZipFolderClass.md) functions and properties.
+La carpeta `root` y su contenido pueden ser manipulados con las funciones y propiedades [ZipFile](ZipFileClass.md) y [ZipFolder](ZipFolderClass.md).
 
 Esta propiedad es **de sólo lectura**.
 

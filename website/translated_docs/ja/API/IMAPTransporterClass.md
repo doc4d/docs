@@ -652,10 +652,11 @@ End if
 **.deleteBox**( *name* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.deleteBox().Params -->
-| 引数   | タイプ    |    | 説明                |
-| ---- | ------ |:--:| ----------------- |
-| name | Text   | -> | 削除するメールボックスの名称    |
-| 戻り値  | Object | <- | deleteBox処理のステータス |
+| 引数   | タイプ  |    | 説明             |
+| ---- | ---- |:--:| -------------- |
+| name | Text | -> | 削除するメールボックスの名称 |
+
+|Result|Object|<-|deleteBox処理のステータス|
 <!-- END REF -->
 
 
@@ -738,7 +739,7 @@ End if
 <!-- REF IMAPTransporterClass.expunge().Params -->
 | 引数  | タイプ    |    | 説明              |
 | --- | ------ |:--:| --------------- |
-| 戻り値 | Object | <- | expunge処理のステータス |
+| 戻り値 | オブジェクト | <- | expunge処理のステータス |
 <!-- END REF -->
 
 #### 説明
@@ -795,8 +796,8 @@ $status:=$transporter.expunge()
 | バージョン  | 内容           |
 | ------ | ------------ |
 | v18 R5 | *name* は任意です |
-| v18 R4 | 追加           |
-</details>
+
+|v18 R4|追加| </details>
 
 <!-- REF #IMAPTransporterClass.getBoxInfo().Syntax -->
 **.getBoxInfo**( { *name* : Text }) : Object<!-- END REF -->
@@ -804,8 +805,8 @@ $status:=$transporter.expunge()
 <!-- REF #IMAPTransporterClass.getBoxInfo().Params -->
 | 引数   | タイプ    |    | 説明             |
 | ---- | ------ |:--:| -------------- |
-| name | Text   | -> | メールボックスの名称     |
-| 戻り値  | Object | <- | boxInfo オブジェクト |
+| name | テキスト   | -> | メールボックスの名称     |
+| 戻り値  | オブジェクト | <- | boxInfo オブジェクト |
 <!-- END REF -->
 
 
@@ -1690,27 +1691,27 @@ searchCriteria = CHARSET "ISO-8859" BODY "Help"
 **SEEN**: \Seen フラグが設定されているメッセージ  
 **UNSEEN**: \Seen フラグが設定されていないメッセージ  
 **NEW**: \Recent フラグが設定されているが \Seen フラグが設定されていないメッセージ。 これは機能的には “(RECENT UNSEEN)” と同じです。  
-**KEYWORD** <flag>: 指定されたキーワードが設定されているメッセージ  
-**UNKEYWORD** <flag>: 指定されたキーワードが設定されていないメッセージ  
-**BEFORE** <date>: 内部の日付が指定日より前のメッセージ  
-**ON** <date>: 内部の日付が指定日に合致するメッセージ  
-**SINCE** <date>: 内部の日付が指定日より後のメッセージ  
-**SENTBEFORE** <date>: 日付ヘッダーが指定日より前のメッセージ  
-**SENTON** <date>: 日付ヘッダーが指定日に合致するメッセージ  
-**SENTSINCE** <date>: 日付ヘッダーが指定日以降のメッセージ  
-**TO** <string>: TO ヘッダーに指定文字列が含まれているメッセージ  
-**FROM** <string>: FROM ヘッダーに指定文字列が含まれているメッセージ  
-**CC** <string>: CC ヘッダーに指定文字列が含まれているメッセージ  
-**BCC** <string>: BCC ヘッダーに指定文字列が含まれているメッセージ  
-**SUBJECT** <string>: 件名ヘッダーに指定文字列が含まれているメッセージ  
-**BODY** <string>: メッセージ本文に指定文字列が含まれているメッセージ  
-**TEXT** <string>: ヘッダーまたはメッセージ本文に指定文字列が含まれているメッセージ  
-**HEADER** <field-name> <string>: 指定フィールド名のヘッダーを持ち、そのフィールド内に指定文字列が含まれているメッセージ  
-**UID** <message UID>: 指定された固有識別子に対応する固有識別子を持つメッセージ  
-**LARGER** <n>: 指定バイト数以上のサイズを持つメッセージ  
-**SMALLER** <n>: 指定バイト数以下のサイズを持つメッセージ  
-**NOT** <search-key>: 指定検索キーに合致しないメッセージ  
-**OR** <search-key1> <search-key2>: いずれかの検索キーに合致するメッセージ  
+***KEYWORD ***flag******: 指定されたキーワードが設定されているメッセージ  
+***UNKEYWORD ***flag******: 指定されたキーワードが設定されていないメッセージ  
+***BEFORE ***date******: 内部の日付が指定日より前のメッセージ  
+***ON ***date******: 内部の日付が指定日に合致するメッセージ  
+***SINCE ***date******: 内部の日付が指定日より後のメッセージ  
+***SENTBEFORE ***date******: 日付ヘッダーが指定日より前のメッセージ  
+***SENTON ***date******: 日付ヘッダーが指定日に合致するメッセージ  
+***SENTSINCE ***date******: 日付ヘッダーが指定日以降のメッセージ  
+***TO ***string******: TO ヘッダーに指定文字列が含まれているメッセージ  
+***FROM ***string******: FROM ヘッダーに指定文字列が含まれているメッセージ  
+***CC ***string******: CC ヘッダーに指定文字列が含まれているメッセージ  
+***BCC ***string******: BCC ヘッダーに指定文字列が含まれているメッセージ  
+***SUBJECT ***string******: 件名ヘッダーに指定文字列が含まれているメッセージ  
+***BODY ***string******: メッセージ本文に指定文字列が含まれているメッセージ  
+***TEXT ***string******: ヘッダーまたはメッセージ本文に指定文字列が含まれているメッセージ  
+***HEADER *field-name* ***string******: 指定フィールド名のヘッダーを持ち、そのフィールド内に指定文字列が含まれているメッセージ  
+***UID ***message-UID******: 指定された固有識別子に対応する固有識別子を持つメッセージ  
+***LARGER ***n******: 指定バイト数以上のサイズを持つメッセージ  
+***SMALLER ***n******: 指定バイト数以下のサイズを持つメッセージ  
+***NOT ***search-key******: 指定検索キーに合致しないメッセージ  
+***OR *search-key1* ***search-key2******: いずれかの検索キーに合致するメッセージ  
 
 
 <!-- END REF -->

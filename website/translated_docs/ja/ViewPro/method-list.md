@@ -3669,7 +3669,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the colu
 | pageBreak | boolean | True to insert a page break before the first column of the range, else false |
 | visible   | boolean | True if the column is visible, else false                                    |
 | resizable | boolean | True if the column can be resized, else false                                |
-| header    | テキスト    | Column header text                                                           |
+| headers   | テキスト    | Column header text                                                           |
 
 
 #### 例題
@@ -4327,7 +4327,7 @@ The *propertyObj* parameter lets you specify the attributes to apply to the rows
 | pageBreak | boolean | True to insert a page break before the first row of the range, else false |
 | visible   | boolean | True if the row is visible, else false                                    |
 | resizable | boolean | True if the row can be resized, else false                                |
-| header    | テキスト    | Row header text                                                           |
+| headers   | テキスト    | Row header text                                                           |
 
 
 #### 例題
