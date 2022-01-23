@@ -37,7 +37,7 @@ Other options configure the display of various windows in the Application mode.
 
 This menu lets you select the color scheme to use at the main application level. A color scheme defines a global set of interface colors for texts, backgrounds, windows, etc., used in your forms.
 
-> This option only works on macOS. On Windows, the "Light" scheme is always used.
+> This option only works on macOS. Sous Windows, la palette "Light" est toujours utilisée.
 
 The following schemes are available:
 

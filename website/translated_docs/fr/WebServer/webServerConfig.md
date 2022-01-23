@@ -388,7 +388,7 @@ Ce paramètre vous permet de sélectionner le format de ce fichier. Valeurs poss
 | 3      | ELF            | Extended Log Format - À personnaliser dans la boîte de dialogue des Propriétés                                                                                                                                                                    |
 | 4      | WLF            | Webstar Log Format- À personnaliser dans la boîte de dialogue des Propriétés                                                                                                                                                                      |
 
-> Formats 3 and 4 are custom formats whose contents must be set beforehand in the [Settings dialog box](../settings/web.md#log-format). Si vous utilisez l'un de ces formats sans qu'aucun de ses champs n'ait été sélectionné sur cette page, le fichier d'enregistrement des logs ne sera pas généré.
+> Les formats 3 et 4 sont des formats personnalisés dont le contenu doit être défini au préalable dans la boîte de dialogue des [Paramètres](../settings/web.md#log-format). Si vous utilisez l'un de ces formats sans qu'aucun de ses champs n'ait été sélectionné sur cette page, le fichier d'enregistrement des logs ne sera pas généré.
 
 
 ## Nombre maximal de process Web simultanés
