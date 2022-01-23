@@ -27,7 +27,7 @@ If you pass the following query:
 __queryPlan: {
     And: [
         {
-            item: "Join on Table : Company : People.employer = Company.ID",
+            item: "Join on Table : Company : People.employer = Company. ID",
             subquery: [
                 {
                     item: "Company.name = acme"
