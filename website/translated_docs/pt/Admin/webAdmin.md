@@ -106,34 +106,34 @@ O estado ou formato do arquivo de registro da petição HTTP (HTTPDebugLog_*nn*.
 
 - **Desativado** (padrão)
 - **Com todas as partes do corpo** - habilitado com partes do cuerpo das petições e respostas
-- **Without body parts** - enabled without body parts (body size is provided)
-- **With request body** - enabled with body part in request only
-- **With response body** - enabled with body part in response only
+- **Sem as partes do corpo** - ativado sem partes do corpo (se indica o tamanho do corpo)
+- **Com os corpos das petições** - ativado com as partes do corpo unicamente nas petições
+- **Com a resposta corpos** - ativado com as partes do corpo unicamente nas respostas
 
 #### Access Key
 
-Defining an access key is mandatory to unlock access to the `WebAdmin` web server through an URL (access via a 4D menu command does not require an access key). When no access key is defined, no web client is allowed to connect through an URL to a web administration interface like the [Data Explorer page](dataExplorer.md). An error page is returned in case of connection request:
+A configuração de uma chave de acesso é obrigatória para desbloquear o acesso ao servidor web `WebAdmin` através de uma URL (o acesso através de um comando do menu 4D não exige uma chave de acesso). Quando nenhuma chave de acesso for definida, não é permitido que nenhum cliente web se conecte através de uma URL a uma interfaz de administração web como a página [Explorador de dados](dataExplorer.md). Uma página de erro é retornada no caso uma solicitação de conexão:
 
 ![alt-text](assets/en/Admin/accessKey.png)
 
-An access key is similar to a password but not associated to a login.
+Uma chave de acesso é parecida a uma senha, mas não está associada com um login.
 
-- To define a new access key: click the **Define** button, enter the access key string in the dialog box and click **OK**. The button label becomes **Modify**.
-- To modify the access key: click the **Modify** button, enter the new access key string in the dialog box and click **OK**.
-- To delete the access key: click the **Modify** button, let the access key area empty and click **OK**.
+- Para definir uma nova chave de acesso: clique no botão **Definir**, introduza a string da chave de acesso na caixa de diálogo e clique em **OK**. A etiqueta botão vira **Modificar**.
+- Para modificar a chave de acesso: clique no botão **Modificar**, introduza a nova string da chave de acesso na caixa de diálogo e clique em **OK**.
+- Para eliminar a chave de acesso: clique no botão**Modificar**, deixe vazia a área daa chave de acesso e clique em **OK**.
 
 
-## WebAdmin Headless Configuration
+## Configuração de WebAdmin sem interface
 
-All [WebAdmin settings](#webadmin-settings) are stored in the `WebAdmin.4DSettings` file. There is one default `WebAdmin.4DSettings` file per 4D and 4D Server application, so that it is possible to deploy multiple applications on the same host machine.
+Todos [os parâmetros de WebAdmin](#webadmin-settings) são armazenados no arquivo `WebAdmin.4DSettings`. Hay un arquivo `WebAdmin.4DSettings` por padrão para cada aplicação 4D e 4D Server, pelo qual é possível lançar várias aplicações na mesma máquina local.
 
-When running a 4D or 4D Server application headless, you can set and use the default `WebAdmin.4DSettings` file, or designate a custom `.4DSettings` file.
+Qiuando rodar uma aplicação sem interface 4D ou 4D Servidor, pode estabelecer e usar o arquivo padrão `WebAdmin.4DSettings` , ou dterminar um arquivo personalizado `.4DSettings`.
 
-To set the file contents, you can use the [WebAdmin settings dialog](#settings-dialog-box) of the 4D application with interface and run it headless afterwards. The default `WebAdmin.4DSettings` file is then used.
+Para estabelecer o conteúdo do arquivo, pode utilizar a [janela de parâmetros WebAdmin](#settings-dialog-box) da aplicação 4D com uma interface e ejecutá-la depois sem interface. Se utiliza então o arquivo padrão `WebAdmin.4DSettings`.
 
-Or, you can set a custom `.4DSettings` file (xml format) and use it instead of the default file. Several dedicated arguments are available in the [Command line interface](cli.md) to support this feature.
+Ou, pode estabelecer um arquivo personalizado `.4DSettings` (formato xml) e usar ao invés do arquivo padrão. Na [Interfaz de linha de comandos](cli.md) há vários argumentos dedicados para compatibilidade com esta funcionalidade.
 
-> The access key is not stored in clear in the `.4DSettings` file.
+> A chave de acesso não é armazenada de forma transparente no arquivo `.4DSettings`.
 
 Exemplo:
 
@@ -145,12 +145,12 @@ Exemplo:
 ```
 
 
-## Authentication and Session
+## Autenticação e sessão
 
-- When a web management page is accessed by entering an URL and without prior identification, an authentication is required. The user must enter the [access key](#access-key) in an authentication dialog box. If the access key was not defined in the `WebAdmin` settings, no access via URL is possible.
+- Quando acessar uma página de gestão entrando uma URL e sem identificação prévia, uma autenticação é exigida. O usuário deve introduzir a [chave-de-acesso](#access-key) em uma janela de autenticação. Se a chave de acesso nâo foi definida na configuração de `WebAdmin`, não é possível o acesso via URL.
 
-- When a web management page is accessed directly from a 4D or 4D Server menu item (such as **Records > Data Explorer** or **Window > Data Explorer** (4D Server)), access is granted without authentication, the user is automatically authenticated.
+- Quando uma página de gerenciamento é acessada diretamentee de um item menu 4D ou 4D Servidor (tal como **Records > Data Explorer** ou **Window > Data Explorer** (4D Server)), o acesso é garantido sem autenticação, e o usuário é autenticado automaticamente.
 
-Once the access is granted, a web [session](WebServer/sessions.md) with the "WebAdmin" privilege is created on the 4D application. As long as the current session has "WebAdmin" privilege, the `WebAdmin` component delivers requested pages.
+Quando o acesso é concedido, uma  [sessão web](WebServer/sessions.md) com o privilégio "WebAdmin" é criado na aplicação 4D. Enquanto a sessão atual tiver o privilégio "WebAdmin", o componente `WebAdmin` entrega páginas  solicitadas.
 
 
