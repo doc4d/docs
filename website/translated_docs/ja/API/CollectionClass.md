@@ -1,6 +1,6 @@
 ---
 id: CollectionClass
-title: コレクション
+title: Collection
 ---
 
 
@@ -76,10 +76,10 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 **New collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New collection.Params -->
-| 引数    | タイプ                                                                     |    | 説明             |
-| ----- | ----------------------------------------------------------------------- |:--:| -------------- |
-| value | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | コレクションの値       |
-| 戻り値   | コレクション                                                                  | <- | New collection |
+| 引数    | タイプ                                                                     |    | 説明        |
+| ----- | ----------------------------------------------------------------------- |:--:| --------- |
+| value | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | コレクションの値  |
+| 戻り値   | Collection                                                              | <- | 新しいコレクション |
 <!-- END REF -->
 
 
@@ -160,10 +160,10 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 **New shared collection** {( *...value* : any )} : Collection<!-- END REF -->
 
 <!-- REF #_command_.New shared collection.Params -->
-| 引数    | タイプ                                                                 |    | 説明                    |
-| ----- | ------------------------------------------------------------------- |:--:| --------------------- |
-| value | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | 共有コレクションの値            |
-| 戻り値   | コレクション                                                              | <- | New shared collection |
+| 引数    | タイプ                                                                 |    | 説明          |
+| ----- | ------------------------------------------------------------------- |:--:| ----------- |
+| value | Number, Text, Date, Time, Boolean, Shared object, Shared collection | -> | 共有コレクションの値  |
+| 戻り値   | Collection                                                          | <- | 新規の共有コレクション |
 <!-- END REF -->
 
 
@@ -187,8 +187,8 @@ Collectionクラスは [コレクション](Concepts/dt_collection.md) 型の変
 
 *   数値 (実数、倍長整数...)。 数値は常に実数として保存されます。
 *   テキスト
-*   boolean
-*   date
+*   ブール
+*   日付
 *   時間 (ミリ秒の数 (実数) として保存されます)。
 *   null
 *   共有オブジェクト(*)
