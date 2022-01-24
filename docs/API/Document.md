@@ -665,12 +665,12 @@ When you execute this code:
 
 with `\t` (tab) as separator and `\r` (CR) as line delimiter.
  
-Here is another example with the same file and a different line delimiter:
+Here is another example with the same file, but a different line delimiter:
 
 ```4d
  $txt:=$myFile.getText("UTF-8", Document with CRLF)
 ```
-In this case, the contents of `$txt` is as follows: 
+In this case, the contents of `$txt` are as follows: 
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
