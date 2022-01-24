@@ -119,13 +119,13 @@ When creating a new data file, 4D uses the language previously set in this menu.
 
 Cette zone permet de configurer l'accès à la documentation HTML de 4D qui s'affiche dans votre navigateur courant :
 
-*   When you hit the **F1** key while the cursor is inserted in a 4D class function or command name in the Method editor;
-*   When you double-click on a 4D command in the **Commands Page** of the Explorer.
+*   Lorsque vous appuyez sur la touche **F1** pendant que le curseur est inséré dans une fonction de classe 4D ou un nom de commande dans l'éditeur de méthode ;
+*   Lorsque l'utilisateur double-clique sur une commande dans la **page des commandes** de l'Explorateur .
 
 
-### Documentation language
+### Langue de documentation
 
-Language of the HTML documentation to display. You can select a documentation in a different language from the application language.
+Langue de la documentation HTML à afficher. Vous pouvez sélectionner une documentation dans une langue différente de celle de l'application.
 
 ### Commencer par consulter le dossier local
 
