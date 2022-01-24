@@ -43,10 +43,10 @@ title: ドキュメンテーション
     + `DatabaseMethods`
         * onStartup.md
         * ...
-    + `フォーム`
+    + `Forms`
         * loginDial.md
         * ...
-    + `メソッド`
+    + `Methods`
         * myMethod.md
         * ...
     + `TableForms`
