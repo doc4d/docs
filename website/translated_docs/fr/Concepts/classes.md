@@ -244,7 +244,7 @@ Vous pouvez également déclarer le paramètre de retour uniquement en ajoutant 
 Function add ($x : Variant; $y : Integer): Integer
      $0:=$x+$y
 ```
-> La [syntaxe 4D classique](parameters.md#sequential-parameters) des paramètres de méthode peut être utilisée pour déclarer les paramètres des fonctions de classe. Les deux syntaxes peuvent être mélangées. For example:
+> La [syntaxe 4D classique](parameters.md#sequential-parameters) des paramètres de méthode peut être utilisée pour déclarer les paramètres des fonctions de classe. Les deux syntaxes peuvent être mélangées. Par exemple :
 > 
 > ```4d
 > Function add($x : Integer)
@@ -256,7 +256,7 @@ Function add ($x : Variant; $y : Integer): Integer
 
 
 
-#### Example
+#### Exemple
 
 ```4d
 // Class: Rectangle
@@ -271,7 +271,7 @@ Function getArea()->$result : Integer
 ```
 
 ```4d
-// In a project method
+// Dans une méthode projet
 
 var $rect : cs.Rectangle
 var $area : Real
@@ -281,9 +281,9 @@ $area:=$rect.getArea() //5000
 ```
 
 
-### `Function get` and `Function set`
+### `Function get` et `Function set`
 
-#### Syntax
+#### Syntaxe
 
 ```4d
 Function get <name>()->$result : type
@@ -295,7 +295,7 @@ Function set <name>($parameterName : type)
 // code
 ```
 
-`Function get` and `Function set` are accessors defining **computed properties** in the class. Une propriété calculée est une propriété nommée avec un type de données qui masque un calcul. Lorsqu'on accède à une valeur de propriété calculée, 4D substitue le code correspondant :.
+`Function get` et `Function set` sont des accessoires permettant de définir des **propriétés calculées** dans la classe. Une propriété calculée est une propriété nommée avec un type de données qui masque un calcul. Lorsqu'on accède à une valeur de propriété calculée, 4D substitue le code correspondant :.
 
 - lorsque la propriété est lue, la fonction `get` est exécutée,.
 - lorsque la propriété est écrite, la fonction `set` est exécutée,.
@@ -360,7 +360,7 @@ Function get fullAddress()->$result : Object
 
 ### `Class Constructor`
 
-#### Syntax
+#### Syntaxe
 
 ```4d
 // Class: MyClass
@@ -398,7 +398,7 @@ $o:=cs.MyClass.new("HelloWorld")
 
 ### `Class extends <ClassName>`
 
-#### Syntax
+#### Syntaxe
 
 ```4d
 // Class: ChildClass
@@ -632,79 +632,23 @@ $o.b:=3
 $val:=$o.f() //8
 
 ```
-Dans cet exemple, l'objet assigné à la variable $o n'a pas sa propre propriété *f*, il l'hérite de sa classe. Since *f* is called as a method of $o, its `This` refers to $o.
+Dans cet exemple, l'objet assigné à la variable $o n'a pas sa propre propriété *f*, il l'hérite de sa classe. Puisque *f* est appelée comme une méthode de $o, son `This` fait référence à $o.
 
 
-## Class commands
+## Commandes de classe
 
-Several commands of the 4D language allows you to handle class features.
-
-
-### `OB Class`
-
-#### OB Class ( object ) -> Object | Null
-
-`OB Class` returns the class of the object passed in parameter.
+Plusieurs commandes du langage 4D permettent de manipuler les caractéristiques des classes.
 
 
-### `OB Instance of`
-
-#### OB Instance of ( object ; class ) -> Boolean
-
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
-
-
-### `OB Instance of`
-
-#### OB Instance of ( object ; class ) -> Boolean
-
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
-
-
-### `OB Instance of`
-
-#### OB Instance of ( object ; class ) -> Boolean
-
-`OB Instance of` retourne `true` si `object` appartient à `class` ou à l'une de ses classes héritées, sinon retourne `false`. Since 
-
-*f* is called as a method of $o, its `This` refers to $o.</p>
-
-
-## Class commands
-
-Several commands of the 4D language allows you to handle class features.
-
-
-### `OB Class`
+### OB Class</code>
 
 #### OB Class ( object ) -> Object | Null
 
-`OB Class` returns the class of the object passed in parameter.
+OB Class</code> retourne la classe de l'objet passé en paramètre.
 
 
 ### `OB Instance of`
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
-
-
-### `OB Instance of`
-
-#### OB Instance of ( object ; class ) -> Boolean
-
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
-
-
-### `OB Instance of`
-
-#### OB Instance of ( object ; class ) -> Boolean
-
-`OB Instance of` retourne `true` si `object` appartient à `class` ou à l'une de ses classes héritées, sinon retourne `false`.</p>
-
-
-### `OB Instance of`
-
-#### OB Instance of ( object ; class ) -> Boolean
-
-`OB Instance of` retourne `true` si `object` appartient à `class` ou à l'une de ses classes héritées, sinon retourne `false`.
+`OB Instance of` retourne `true` si `l'objet` appartient à la `classe` ou à l'une de ses classes héritées, sinon elle retourne `false`
