@@ -30,10 +30,10 @@
         "title": "BLOB"
       },
       "API/ClassClass": {
-        "title": "クラス"
+        "title": "Class"
       },
       "API/CollectionClass": {
-        "title": "コレクション"
+        "title": "Collection"
       },
       "API/CryptoKeyClass": {
         "title": "CryptoKey"
@@ -42,7 +42,7 @@
         "title": "DataClassAttribute"
       },
       "API/DataClassClass": {
-        "title": "データクラス"
+        "title": "DataClass"
       },
       "API/DataStoreClass": {
         "title": "DataStore"
@@ -57,7 +57,7 @@
         "title": "Email"
       },
       "API/EntityClass": {
-        "title": "エンティティ"
+        "title": "Entity"
       },
       "API/EntitySelectionClass": {
         "title": "EntitySelection"
@@ -84,7 +84,7 @@
         "title": "POP3Transporter"
       },
       "API/SessionClass": {
-        "title": "セッション"
+        "title": "Session"
       },
       "API/SignalClass": {
         "title": "Signal"
@@ -138,7 +138,7 @@
         "title": "ループ構造"
       },
       "Concepts/classes": {
-        "title": "Classes"
+        "title": "クラス"
       },
       "Concepts/components": {
         "title": "コンポーネント"
@@ -174,7 +174,7 @@
         "title": "ポインター"
       },
       "Concepts/string": {
-        "title": "String"
+        "title": "文字列"
       },
       "Concepts/time": {
         "title": "時間"
