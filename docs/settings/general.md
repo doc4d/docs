@@ -36,11 +36,19 @@ $rect:=cs.eGeometry.Rectangle.new(10;20)
 $area:=$rect.getArea()
 ```
 
-Of course, it is recommended to use a distinguished name to avoid any conflict with the other installed components. If a user class, or ORDA class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
+Of course, it is recommended to use a distinguished name to avoid any conflict with the other installed components. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
 
 ### Generate syntax file for code completion when compiled
 
-When you check this option, the file is automatically created when you compile the component, and placed in the \Resources\en.lproj folder of the project. If the component namespace is not present, the resources for the classes are not generated.
+To make your component easier to use for other developers, you can create a syntax file that will be used by 4D to generate contextual help in the code editor, such as code completion and function syntax.
+
+When you check this option, a syntax file (JSON format) is automatically created during the compilation phase, and placed in the \Resources\en.lproj folder of the component project. 4D uses the contents of that syntax file to generate contextual help. 
+
+![](assets/en/settingssyntax-code-completion-1.png)
+
+![](assets/en/settingssyntax-code-completion-2.png)
+
+If you don't enter a [component namespace](#component-namespace-in-the-class-store), the resources for the classes and methods are not generated even if the syntax file option is checked.
 
 #### Hidden classes
 
