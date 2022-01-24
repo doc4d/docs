@@ -617,7 +617,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 任意で、コンテンツの読み取りに使用する文字セットを渡します。 これには、次の二つの方法があります:
 
-- *charSetName* に標準の文字セット名を含んだ文字列 ("ISO-8859-1" や "UTF-8" など) を渡します。
+- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
 - *charSetNum* に標準の文字セット名の MIBEnum ID (倍長整数) を渡します。
 
 > 4D によってサポートされている文字セットの一覧については、`CONVERT FROM TEXT` コマンドを参照ください。
@@ -657,14 +657,24 @@ id name price vat
  $myFile:=Folder(fk documents folder).file("Billing.txt") // デフォルトでUTF-8
  $txt:=$myFile.getText()
 ```
-以下の結果が得られます:
+... you get the following for `$txt`:
+
+"id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
+
+with `\t` (tab) as separator and `\r` (CR) as line delimiter.
+
+Here is another example with the same file, but a different line delimiter:
 
 ```4d
-  // $Text = "id name price vat\r\n3 thé 1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
-  // \t = tab
-  // \r = CR (キャリッジリターン)
+ $txt:=$myFile.getText("UTF-8", Document with CRLF)
 ```
- 
+In this case, the contents of `$txt` are as follows:
+
+"id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
+
+This time `\r\n` (CRLF) is used as line delimiter.
+
+
 
 <!-- END REF -->
  
