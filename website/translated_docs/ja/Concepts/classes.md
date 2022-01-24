@@ -1,6 +1,6 @@
 ---
 id: classes
-title: Classes
+title: クラス
 ---
 
 
@@ -280,7 +280,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 For example:
+> メソッド内の引数宣言に使用される [従来の 4D シンタックス](parameters.md#sequential-parameters) を、クラス関数の引数宣言に使うこともできます。 両方のシンタックスは併用することができます。 たとえば:
 > 
 > ```4d
 > Function add($x : Integer)
@@ -294,18 +294,18 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### Example
+#### 例題
 
 
 
 ```4d
-// Class: Rectangle
+// クラス: Rectangle
 Class constructor($width : Integer; $height : Integer)
     This.name:="Rectangle"
     This.height:=$height
     This.width:=$width
 
-// Function definition
+// 関数定義
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
@@ -314,7 +314,7 @@ Function getArea()->$result : Integer
 
 
 ```4d
-// In a project method
+// プロジェクトメソッドにて
 
 var $rect : cs.Rectangle
 var $area : Real
@@ -327,17 +327,17 @@ $area:=$rect.getArea() //5000
 
 
 
-### `Function get` and `Function set`
+### `Function get` と `Function set`
 
 
 
-#### Syntax
+#### シンタックス
 
 
 
 ```4d
 Function get <name>()->$result : type
-// code
+// コード
 ```
 
 
@@ -345,11 +345,11 @@ Function get <name>()->$result : type
 
 ```4d
 Function set <name>($parameterName : type)
-// code
+// コード
 ```
 
 
-`Function get` and `Function set` are accessors defining **computed properties** in the class. 計算プロパティとは、計算をマスクするデータ型を持つ命名プロパティです。 計算プロパティの値にアクセスすると、4D は対応するアクセサーのコードを実行します:
+`Function get` と `Function set` は、クラスの **計算プロパティ** を定義するアクセサーです。 計算プロパティとは、計算をマスクするデータ型を持つ命名プロパティです。 計算プロパティの値にアクセスすると、4D は対応するアクセサーのコードを実行します:
 
 - プロパティを読み取るときには `Function get` が実行されます。
 - プロパティに書き込むときには `Function set` が実行されます。
