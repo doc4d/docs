@@ -1,27 +1,27 @@
 ---
 id: interface
-title: Interface page
+title: Page Interface
 ---
 
  
-You use the Interface page to set various options related to the project interface.
+La page Interface vous permet de régler diverses options liées à l'interface du projet.
 
-## General
+## Général
 
-This area lets you set various options concerning display.
+Cette zone vous permet de personnaliser diverses options d'affichage.
 
 ![](assets/en/settings/interface-page.png)
 
-### Font to use with the MESSAGE command
+### Police à utiliser avec la commande MESSAGE
 
-Click **Select...** to set the font and size for the characters used by the `MESSAGE` command.
+Le bouton **Sélectionner...** vous permet de définir la police et la taille des caractères utilisés par la commande `MESSAGE`.
 
-The default font and its size depend on the platform where 4D is running.
+La police et la taille de police par défaut dépendent de la plate-forme d'exécution de 4D.
 
-> This property also affects the following parts of 4D: <li>certain preview areas of the Explorer</li><li>the ruler of the Form editor</li>
-Other options configure the display of various windows in the Application mode.
+> Les parties suivantes de 4D sont également affectées par cette propriété : <li>certaines zones d’aperçu de l’Explorateur,</li><li>la règle de L'Editeur de formulaires</li>
+D'autres options permettent de configurer l'affichage de diverses fenêtres du mode Application.
 
--   **Splash screen**: When this option is deselected, the [splash screen of the current menu bar](Menus/bars.md#splash-screen) does not appear in the Application mode. When you hide this window, it is up to you to manage the display of all your windows by programming, for example in the `On Startup` database method.
+-   **Accueil** : lorsque cette option est désélectionnée, la [fenêtre d’accueil (ou “splash screen”) de la barre de menus courante](Menus/bars.md#splash-screen) en mode Application n’apparaît pas. When you hide this window, it is up to you to manage the display of all your windows by programming, for example in the `On Startup` database method.
 
 -   **Flushing progress**: When this option is checked, 4D displays a window at the bottom left of the screen while the data in the cache is flushed. Since this operation momentarily blocks user actions, displaying this window lets them know that flushing is underway.
 
