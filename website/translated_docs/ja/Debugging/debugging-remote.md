@@ -86,5 +86,5 @@ title: リモートマシンからのデバッグ
 
 このような場合に、デバッガーを有効化するには、以下のどちらかの条件が必要です:
 
-* the attached debugger is detached from the server or from the remote 4D client using respectively the **Detach debugger** or **Detach remote debugger** menu command,
-* the attached remote 4D client session is closed.
+* 有効化済デバッガーを、**リモートデバッガを無効化する** メニューコマンドでリモート4Dクライアントから外す、あるいは **デバッガを無効化する** コマンドを使用してサーバーから外す。
+* 有効化済デバッガーを使用しているリモート4Dクライアントセッションが閉じられる。
