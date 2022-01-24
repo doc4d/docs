@@ -48,13 +48,13 @@ The returned "__STATUS" object has the following properties:
 
 | Propriété    |                | Type    | Description                                                                                                                                                                |
 | ------------ | -------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|              |                |         | ***Available only in case of success:***                                                                                                                                   |
-| success      |                | boolean | true if the lock action is successful (or if the entity is already locked in the current session), false otherwise (not returned in this case).                            |
+|              |                |         | ***Disponible uniquement en cas de succès:***                                                                                                                              |
+| success      |                | boolean | vrai si l'action de verrouillage a été réussie (ou si l'entité est déjà verrouillée dans la session courante), sinon faux (non retourné dans ce cas).                      |
 |              |                |         | ***Disponible uniquement en cas d'erreur :***                                                                                                                              |
 | status       |                | number  | Code d'erreur, voir ci-dessous                                                                                                                                             |
 | statusText   |                | Texte   | Description de l'erreur, voir ci-dessous                                                                                                                                   |
-| lockKind     |                | number  | Lock code                                                                                                                                                                  |
-| lockKindText |                | Texte   | "Locked by session" if locked by a REST session, "Locked by record" if locked by a 4D process                                                                              |
+| lockKind     |                | number  | Code de verrouillage                                                                                                                                                       |
+| lockKindText |                | Texte   | "Locked by session" en cas de verrouillage par une session REST, "Locked by record" en cas de verrouillage par un process 4D                                               |
 | lockInfo     |                | object  | Information sur l'origine du verrouillage. Les propriétés retournées dépendent de l'origine du verrouillage (process 4D ou session REST).                                  |
 |              |                |         | ***Disponible uniquement pour un verrouillage par process 4D:***                                                                                                           |
 |              | task_id        | number  | ID du process                                                                                                                                                              |
@@ -71,7 +71,7 @@ The returned "__STATUS" object has the following properties:
 |              | userAgent      | Texte   | userAgent de l'origine du verouillage (ex : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 
 
-The following values can be returned in the *status* and *statusText* properties of the *__STATUS* object in case of error:
+Les valeurs suivantes peuvent être retournées dans les propriétés *status* et *statusText* de l'objet *__STATUS* en cas d'erreur :
 
 | status | statusText                      | Commentaire                                                                                                                                |
 | ------ | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -86,7 +86,7 @@ The following values can be returned in the *status* and *statusText* properties
 ## Exemple
 
 
-We lock an entity in a first browser:
+Nous verrouillons une entité dans un premier navigateur :
 
 ```
 GET /rest/Customers(1)/?$lock=true
@@ -103,7 +103,7 @@ GET /rest/Customers(1)/?$lock=true
 }
 ```
 
-In a second browser (other session), we send the same request.
+Dans un second navigateur (autre session), nous envoyons la même requête.
 
 **Réponse :**
 
