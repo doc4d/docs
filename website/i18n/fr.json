@@ -875,25 +875,25 @@
         "title": "Page Utilisateurs"
       },
       "settings/backup": {
-        "title": "Backup page"
+        "title": "Page Sauvegarde"
       },
       "settings/client-server": {
         "title": "Client-server page"
       },
       "settings/compatibility": {
-        "title": "Compatibility page"
+        "title": "Page de compatibilité"
       },
       "settings/compiler": {
-        "title": "Compiler page"
+        "title": "Page Compilateur"
       },
       "settings/database": {
         "title": "Database page"
       },
       "settings/general": {
-        "title": "General page"
+        "title": "Page Général"
       },
       "settings/interface": {
-        "title": "Interface page"
+        "title": "Page Interface"
       },
       "settings/overview": {
         "title": "Aperçu"
