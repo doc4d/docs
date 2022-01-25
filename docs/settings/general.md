@@ -40,13 +40,13 @@ Of course, it is recommended to use a distinguished name to avoid any conflict w
 
 ### Generate syntax file for code completion when compiled
 
-To make your component easier to use for other developers, you can create a syntax file that will be used by 4D to generate contextual help in the code editor, such as code completion and function syntax.
+To make your component easier to use for other developers, you can create a syntax file that will be used by 4D to generate contextual help in the code editor, such as code completion and function syntax:
 
-When you check this option, a syntax file (JSON format) is automatically created during the compilation phase, and placed in the \Resources\en.lproj folder of the component project. 4D uses the contents of that syntax file to generate contextual help. 
+![](assets/en/settings/syntax-code-completion-1.png)
 
-![](assets/en/settingssyntax-code-completion-1.png)
+![](assets/en/settings/syntax-code-completion-2.png)
 
-![](assets/en/settingssyntax-code-completion-2.png)
+When you check this option, a syntax file (JSON format) is automatically created during the compilation phase, filled with the syntax of your component's classes, functions, and methods, and placed in the \Resources\en.lproj folder of the component project. 4D uses the contents of that syntax file to generate contextual help. 
 
 If you don't enter a [component namespace](#component-namespace-in-the-class-store), the resources for the classes and methods are not generated even if the syntax file option is checked.
 
@@ -56,7 +56,7 @@ Just like in any project, you can create hidden classes and functions in a compo
 
 Hidden classes and functions can still be used if you know their names, but they do not appear as suggestions when using code completion.
 
-For example, the following syntax is valid even if the Rectangle class is hidden: 
+For example, the following syntax is valid even if the `Rectangle` class is hidden: 
 
 ```4d
 $rect:=cs.eGeometry._Rectangle.new(10;20)
