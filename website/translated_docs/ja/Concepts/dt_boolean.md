@@ -7,7 +7,7 @@ title: ブール
 
 ## ブール関数
 
-4Dにはブール演算に使用することのできる、ブール関数があります: `True`, `False`, `Not`。 For more information, see the descriptions of these commands.
+4Dにはブール演算に使用することのできる、ブール関数があります: `True`, `False`, `Not`。 詳細については、これらのコマンドの説明を参照ください。
 
 ### 例題
 
