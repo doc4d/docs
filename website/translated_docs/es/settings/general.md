@@ -36,11 +36,19 @@ $rect:=cs.eGeometry.Rectangle.new(10;20)
 $area:=$rect.getArea()
 ```
 
-Of course, it is recommended to use a distinguished name to avoid any conflict with the other installed components. If a user class, or ORDA class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
+Of course, it is recommended to use a distinguished name to avoid any conflict with the other installed components. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
 
 ### Generate syntax file for code completion when compiled
 
-When you check this option, the file is automatically created when you compile the component, and placed in the \Resources\en.lproj folder of the project. If the component namespace is not present, the resources for the classes are not generated.
+To make your component easier to use for other developers, you can create a syntax file that will be used by 4D to generate contextual help in the code editor, such as code completion and function syntax:
+
+![](assets/en/settings/syntax-code-completion-1.png)
+
+![](assets/en/settings/syntax-code-completion-2.png)
+
+When you check this option, a syntax file (JSON format) is automatically created during the compilation phase, filled with the syntax of your component's classes, functions, and methods, and placed in the \Resources\en.lproj folder of the component project. 4D uses the contents of that syntax file to generate contextual help.
+
+If you don't enter a [component namespace](#component-namespace-in-the-class-store), the resources for the classes and methods are not generated even if the syntax file option is checked.
 
 #### Hidden classes
 
@@ -48,7 +56,7 @@ Just like in any project, you can create hidden classes and functions in a compo
 
 Hidden classes and functions can still be used if you know their names, but they do not appear as suggestions when using code completion.
 
-For example, the following syntax is valid even if the Rectangle class is hidden:
+For example, the following syntax is valid even if the `Rectangle` class is hidden:
 
 ```4d
 $rect:=cs.eGeometry._Rectangle.new(10;20)
@@ -56,6 +64,10 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 
 #### Hidden class inheritance and code completion
 
-Inside components, the attributes of hidden parent classes are not suggested when using code completion with the child classes.
+When working with [built components](../Desktop/building.md#build-component) (.4dz files), the attributes of a hidden parent class are not suggested when using code completion with its child classes.
 
-For example, imagine you have a hidden parent class called `_Person` and a child class called  `Teacher`. When using code completion with `Teacher`, the functions inside `_Person` are displayed (including getter and setters), but not the attributes and function prototypes.
+For example, imagine that your component has a hidden class called `_Person` and a class called `Teacher` that [inherits](../Concepts/classes.md#inheritance) from `_Person`.
+
+When using code completion with `Teacher`:
+* the functions inside `_Person` appear as suggestions (including getter and setters)
+* the attributes and function syntax of `_Person`are not displayed
