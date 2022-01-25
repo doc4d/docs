@@ -64,8 +64,10 @@ $rect:=cs.eGeometry._Rectangle.new(10;20)
 
 #### Hidden class inheritance and code completion 
 
-Inside components, the attributes of a hidden parent class are not suggested when using code completion with its child classes. 
+When working with [built components](../Desktop/building.md#build-component) (.4dz files), the attributes of a hidden parent class are not suggested when using code completion with its child classes. 
 
 For example, imagine that your component has a hidden class called `_Person` and a class called `Teacher` that [inherits](../Concepts/classes.md#inheritance) from `_Person`.
 
-When using code completion with `Teacher`, the classes inside `_Person` appear as suggestions (including getter and setters), but not its attributes and function syntax.
+When using code completion with `Teacher`: 
+* the functions inside `_Person` appear as suggestions (including getter and setters)
+* the attributes and function syntax of `_Person`are not displayed
