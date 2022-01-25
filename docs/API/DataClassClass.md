@@ -1262,9 +1262,9 @@ We want to disallow formulas, for example when the user enters their query:
 </details>
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Syntax -->
-**.setRemoteCacheSettings(*settings* : Object)** <!-- END REF -->
+**.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
 
-<!-- REF #DataClassClass.getInfo().Params -->
+<!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
 |settings|Object|->|Object that sets the timeout and size of the ORDA cache for the dataclass|
@@ -1288,23 +1288,71 @@ The *settings* parameter, pass an object with the following properties:
 * the next time this data is needed, it will be asked to the server
 * 4D automatically removes expired data when space is needed
 
-`maxEntries`: Sets the max number of entities in the ORDA cache.
+`maxEntries` sets the max number of entities in the ORDA cache.
 
-The minimum number is 300 (cannot be set) so `maxEntries` must be >= 300. If not, it is ignored and the maximum number of entries is set to 300.
+The minimum number is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
 Default value: 30 000
 
-* If the parameter is not an object, it is ignored and the cache settings are unchanged
-* If the function is called on a scalar type (Text, Number, ... etc) --> error -10716 - Object or collection expected
-* If the function is called on a structured type which is not a dataclass  --> error 317 - A member function was expected
-* If the function is called on Null --> error -10701 Undefined object
-* If no valid properties timeout and maxEntries are given, the cache remains with its default or previous set values
+If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
 Setting a maxEntries property may alter the size of the entries Collection already present in the cache if the new value for maxEntries is < entries.length
 
-Setting a timeout property alters the entities already present in the cache in term of expiration: they will expire once this new timeout value is passed
+Setting a timeout property alters the entities already present in the cache in terms of expiration: they will expire once the new timeout value is passed
 
-When saving an entity, this entity is updated in the cache and it will expire once the timeout is passed
+When saving an entity, this entity is updated in the cache and it will expire once the timeout is reached.
+
+<!-- REF DataClassClass.getRemoteCache().Desc -->
+## getRemoteCache()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #DataClassClass.getRemoteCache().Syntax -->
+**.getRemoteCache**() : Object <!-- END REF -->
+
+<!-- REF #DataClassClass.getRemoteCache().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|result|Object|<-|Object describing the contents of the ORDA cache for the dataclass|
+<!-- END REF -->
+
+
+#### Description
+
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+
+The returned object has the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|maxEntries|Longint|Maximum number of entries collection|
+|stamp|Longint|Stamp of the cache|
+|timeout|Longint|Time remaining before the new entries in the cache are marked as expired |
+|entries|Collection of entry objects||
+
+Each entry object in `entries` has the following properties:
+
+|Property|Type|Description|
+|---|---|---|
+|data|Object|Object holding data on the entry|
+|expired|Boolean|True if the entry has expired|
+|key|Text|Primary key of the entity|
+
+The `data` object inside each entry has the following properties: 
+
+|Property|Type|Description|
+|---|---|---|
+|incomplete|Boolean|True if all the attributes are not present in the cache|
+|_KEY|String|Primary key of the entity|
+|_STAMP|Longint|Stamp of the entity in the database|
+|_TIMESTAMP|String|Timestamp of the entity. Format is YYYY-MM-DDTHH:MM:MM:SS:ms:Z|
+|dataClassAtrributeName - Variant|Longint|If there is some data in the cache for a dataclass attribute, it is returned in a property `dataclassAttributeName` with the same type as in database.|
+
+
 
 
 <style> h2 { background: #d9ebff;}</style>
