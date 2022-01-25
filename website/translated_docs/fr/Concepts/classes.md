@@ -658,15 +658,15 @@ Dans cet exemple, l'objet assigné à la variable $o n'a pas sa propre propriét
 Plusieurs commandes du langage 4D permettent de manipuler les caractéristiques des classes.
 
 
-### OB Class</code>
+### `OB Class`
 
 #### OB Class ( object ) -> Object | Null
 
-OB Class</code> retourne la classe de l'objet passé en paramètre.
+`OB Class` retourne la classe de l'objet passé en paramètre.
 
 
 ### `OB Instance of`
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` retourne `true` si `l'objet` appartient à la `classe` ou à l'une de ses classes héritées, sinon elle retourne `false`
+`OB Instance of` retourne `true` si `object` appartient à la `class` ou à l'une de ses classes héritées, sinon elle retourne `false`.
