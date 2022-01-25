@@ -1,9 +1,9 @@
 ---
 id: compatibility
-title: Compatibility page
+title: Page de compatibilité
 ---
 
-The Compatibility page groups together parameters related to maintaining compatibility with previous versions of 4D.
+La page Compatibilité regroupe les paramètres relatifs au maintien de la compatibilité avec les versions précédentes de 4D.
 
 > The number of options displayed depends on the version of 4D with which the original database/project was created, as well as the settings modified in this database/project.   
 > This page lists the compatibility options available for database/projects converted from 4D v18 onwards. For older compatibility options, refer to the [Compatibility page](https://doc.4d.com/4Dv19R3/4D/19-R3/Compatibility-page.300-5612610.en.html) on **doc.4d.com**.

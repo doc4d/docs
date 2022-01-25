@@ -52,9 +52,9 @@ The following table lists the pages of settings found in the **User Settings** a
 
 | **Page of Structure Settings**                                                        | **Page of User Settings**             | **Page of User Settings for Data File** |
 | ------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------- |
-| [General page](../settings/general.md)                                                | N/a                                   | N/a                                     |
-| [Interface page](../settings/interface.md)                                            | Identical to standard settings        | Identical to standard settings          |
-| [Compiler page](../settings/compiler.md)                                              | N/a                                   | N/a                                     |
+| [Page Général](../settings/general.md)                                                | N/a                                   | N/a                                     |
+| [Page Interface](../settings/interface.md)                                            | Identical to standard settings        | Identical to standard settings          |
+| [Page Compilateur](../settings/compiler.md)                                           | N/a                                   | N/a                                     |
 | [Database/Data storage page](../settings/database.md#data-storage)                    | N/a                                   | N/a                                     |
 | [Database/Memory page](../settings/database.md#memory)                                | Identical to standard settings        | Identical to standard settings          |
 | [Backup/Scheduler page](../settings/backup.md#scheduler)                              | N/a                                   | Identical to standard settings          |
@@ -71,7 +71,7 @@ The following table lists the pages of settings found in the **User Settings** a
 | [SQL page](../settings/sql.md)                                                        | Identical to standard settings        | Identical to standard settings          |
 | [PHP page](../settings/php.md)                                                        | Identical to standard settings        | Identical to standard settings          |
 | [Security page](../settings/security.md)                                              | N/a                                   | N/a                                     |
-| [Compatibility page](../settings/compatibility.md)                                    | N/a                                   | N/a                                     |
+| [Page de compatibilité](../settings/compatibility.md)                                 | N/a                                   | N/a                                     |
 
 When you edit settings in this dialog box, they are automatically stored in the corresponding *settings.4DSettings* file (see below).
 
