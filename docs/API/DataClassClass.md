@@ -1252,4 +1252,59 @@ We want to disallow formulas, for example when the user enters their query:
 [`.query()`](EntitySelectionClass.md#query) for entity selections
 <!-- END REF -->
 
+<!-- REF DataClassClass.setRemoteCacheSettings().Desc -->
+## .setRemoteCacheSettings()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #DataClassClass.setRemoteCacheSettings().Syntax -->
+**.setRemoteCacheSettings(*settings* : Object)** <!-- END REF -->
+
+<!-- REF #DataClassClass.getInfo().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|settings|Object|->|Object that sets the timeout and size of the ORDA cache for the dataclass|
+<!-- END REF -->
+
+
+#### Description
+
+The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and size of the ORDA cache for a dataclass.<!-- END REF -->.
+
+The *settings* parameter, pass an object with the following properties: 
+
+|Property|Type|Description|
+|---|---|---|
+|timeout|Longint|Timeout in seconds|
+|maxEntries|Longint|Number of entities|
+
+`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired, which means that:
+
+* the data is still there
+* the next time this data is needed, it will be asked to the server
+* 4D automatically removes expired data when space is needed
+
+`maxEntries`: Sets the max number of entities in the ORDA cache.
+
+The minimum number is 300 (cannot be set) so `maxEntries` must be >= 300. If not, it is ignored and the maximum number of entries is set to 300.
+
+Default value: 30 000
+
+* If the parameter is not an object, it is ignored and the cache settings are unchanged
+* If the function is called on a scalar type (Text, Number, ... etc) --> error -10716 - Object or collection expected
+* If the function is called on a structured type which is not a dataclass  --> error 317 - A member function was expected
+* If the function is called on Null --> error -10701 Undefined object
+* If no valid properties timeout and maxEntries are given, the cache remains with its default or previous set values
+
+Setting a maxEntries property may alter the size of the entries Collection already present in the cache if the new value for maxEntries is < entries.length
+
+Setting a timeout property alters the entities already present in the cache in term of expiration: they will expire once this new timeout value is passed
+
+When saving an entity, this entity is updated in the cache and it will expire once the timeout is passed
+
+
 <style> h2 { background: #d9ebff;}</style>
