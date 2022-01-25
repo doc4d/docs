@@ -70,7 +70,7 @@ The following table lists the pages of settings found in the **User Settings** a
 | [Web/Web Services page](../settings/web.md#web-services)                              | Method prefixing option not available | Method prefixing option not available   |
 | [SQL page](../settings/sql.md)                                                        | Identical to standard settings        | Identical to standard settings          |
 | [PHP page](../settings/php.md)                                                        | Identical to standard settings        | Identical to standard settings          |
-| [Security page](../settings/security.md)                                              | N/a                                   | N/a                                     |
+| [Page sécurité](../settings/security.md)                                              | N/a                                   | N/a                                     |
 | [Page de compatibilité](../settings/compatibility.md)                                 | N/a                                   | N/a                                     |
 
 When you edit settings in this dialog box, they are automatically stored in the corresponding *settings.4DSettings* file (see below).
