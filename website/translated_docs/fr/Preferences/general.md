@@ -138,26 +138,26 @@ When creating a new data file, 4D uses the language previously set in this menu.
 
 Cette zone permet de configurer l'accès à la documentation HTML de 4D qui s'affiche dans votre navigateur courant :
 
-*   When you hit the **F1** key while the cursor is inserted in a 4D class function or command name in the Method editor;
-*   When you double-click on a 4D command in the **Commands Page** of the Explorer.
+*   Lorsque vous appuyez sur la touche **F1** pendant que le curseur est inséré dans une fonction de classe 4D ou un nom de commande dans l'éditeur de méthode ;
+*   Lorsque l'utilisateur double-clique sur une commande dans la **page des commandes** de l'Explorateur .
 
 
-### Documentation language
+### Langue de documentation
 
-Language of the HTML documentation to display. You can select a documentation in a different language from the application language.
+Langue de la documentation HTML à afficher. Vous pouvez sélectionner une documentation dans une langue différente de celle de l'application.
 
 ### Commencer par consulter le dossier local
 
-> This option is only taken into account for command documentation access (excluding class functions).
+> Cette option n'est prise en compte que pour l'accès à la documentation des commandes (à l'exclusion des fonctions de classe).
 
-Sets where 4D will look for documentation pages.
+Définit l'emplacement des pages de documentation recherchées par 4D.
 
-*   When checked (default), 4D first looks for the page in the local folder (see below). If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
+*   Lorsque cette option est cochée (par défaut), 4D recherche d'abord la page dans le dossier local (voir ci-dessous). If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
 *   If it is not found, 4D displays an error message in the browser. When not checked, 4D looks for the desired page directly in the on-line documentation Web site and displays it in the current browser.
 
 ### Local folder
 
-> This option is only taken into account for command documentation access (excluding class functions).
+> Cette option n'est prise en compte que pour l'accès à la documentation des commandes (à l'exclusion des fonctions de classe).
 
 Indicates the location of the static HTML documentation. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red.
 

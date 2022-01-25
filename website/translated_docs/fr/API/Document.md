@@ -617,7 +617,7 @@ La fonction `.getText()` <!-- REF #document.getText().Summary -->retourne le con
 
 Optionnellement, vous pouvez indiquer le jeu de caractères à utiliser pour la lecture du contenu. Vous pouvez passer soit :
 
-- dans *charSetName*, une chaîne contenant le nom de jeu standard (par exemple "ISO-8859-1" ou ""UTF-8"),
+- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
 - ou dans *charSetNum*, l'ID MIBEnum (numéro) du nom du jeu standard.
 
 > Pour consulter la liste des jeux de caractères pris en charge par 4D, veuillez vous reporter à la description de la commande `CONVERT FROM TEXT`.
@@ -657,14 +657,24 @@ Lorsque vous exécutez ce code :
  $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 par défaut
  $txt:=$myFile.getText()
 ```
-... vous obtenez :
+... you get the following for `$txt`:
+
+"id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
+
+with `\t` (tab) as separator and `\r` (CR) as line delimiter.
+
+Here is another example with the same file, but a different line delimiter:
 
 ```4d
-  // $Text = "id name price vat\r\n3 thé 1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
-  // \t = tab
-  // \r = CR
+ $txt:=$myFile.getText("UTF-8", Document with CRLF)
 ```
- 
+In this case, the contents of `$txt` are as follows:
+
+"id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
+
+This time `\r\n` (CRLF) is used as line delimiter.
+
+
 
 <!-- END REF -->
  
