@@ -129,16 +129,16 @@ Langue de la documentation HTML à afficher. Vous pouvez sélectionner une docum
 
 ### Commencer par consulter le dossier local
 
-> This option is only taken into account for command documentation access (excluding class functions).
+> Cette option n'est prise en compte que pour l'accès à la documentation des commandes (à l'exclusion des fonctions de classe).
 
-Sets where 4D will look for documentation pages.
+Définit l'emplacement des pages de documentation recherchées par 4D.
 
-*   When checked (default), 4D first looks for the page in the local folder (see below). If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
+*   Lorsque cette option est cochée (par défaut), 4D recherche d'abord la page dans le dossier local (voir ci-dessous). If it is found, 4D displays the page in the current browser. If it is found, 4D displays the page in the current browser. This makes it possible to access the documentation even when you are offline.
 *   If it is not found, 4D displays an error message in the browser. When not checked, 4D looks for the desired page directly in the on-line documentation Web site and displays it in the current browser.
 
 ### Local folder
 
-> This option is only taken into account for command documentation access (excluding class functions).
+> Cette option n'est prise en compte que pour l'accès à la documentation des commandes (à l'exclusion des fonctions de classe).
 
 Indicates the location of the static HTML documentation. By default, this is the \Help\Command\language subfolder. You can view the location by clicking on the menu associated with the area. If this subfolder is not present, the location is shown in red.
 
