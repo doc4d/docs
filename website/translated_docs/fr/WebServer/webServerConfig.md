@@ -392,7 +392,7 @@ Ce paramètre vous permet de sélectionner le format de ce fichier. Valeurs poss
 > Les formats 3 et 4 sont des formats personnalisés dont le contenu doit être défini au préalable dans la boîte de dialogue des Propriétés. Si vous utilisez l'un de ces formats sans qu'aucun de ses champs n'ait été sélectionné sur cette page, le fichier d'enregistrement des logs ne sera pas généré.
 
 
-## Nombre maximal de process Web simultanés
+## Process Web simultanés maxi
 
 | Peut être configuré via  | Nom                                                                      | Commentaires |
 | ------------------------ | ------------------------------------------------------------------------ | ------------ |
