@@ -1301,7 +1301,7 @@ If no valid properties are passed as `timeout` and `maxEntries`, the cache remai
 When saving an entity, it is updated in the cache and expires once the timeout is reached.
 
 <!-- REF DataClassClass.getRemoteCache().Desc -->
-## getRemoteCache()
+## .getRemoteCache()
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -1486,10 +1486,11 @@ $cacheAddress:=$ds.Address.getRemoteCache()
 </details>
 
 <!-- REF #DataClassClass.clearRemoteCache().Syntax -->
-**.dataClass.clearRemoteCache()** <!-- END REF -->
+**.clearRemoteCache()** 
+<!-- END REF -->
 #### Description
 
-The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass.<!-- END REF -->.
+The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
 
 #### Example 
 
@@ -1516,7 +1517,7 @@ $ds.Persons.clearRemoteCache()
 ```
 
 <!-- REF DataClassClass.getRemoteContextInfo().Desc -->
-## getRemoteContextInfo()
+## .getRemoteContextInfo()
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -1533,14 +1534,13 @@ $ds.Persons.clearRemoteCache()
 |contextName|Text|->|Name of the context|
 <!-- END REF -->
 
-
 #### Description
 
-The `.getRemoteContextInfo()` function <!-- REF #DataClassClass.getRemoteContextInfo().Summary -->returns an object that holds information on the optimization context of a datastore.<!-- END REF -->.
+The `.getRemoteContextInfo()` function <!-- REF #DataClassClass.getRemoteContextInfo().Summary -->returns an object that holds information on the optimization context of a datastore<!-- END REF -->.
 
 For this function to properly return a context, one of the following conditions must be met: 
-* Some attributes must have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* This context has been linked to an entity selection / entity using one of the following functions:
+* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
+* This context has been linked to an entity selection or an entity using one of the following functions:
 
 * dataClass.query()
 * entitySelection.query()
@@ -1549,6 +1549,7 @@ For this function to properly return a context, one of the following conditions 
 * Create entity selection
 * dataClass.get()
 
+#### Properties of the returned object 
 The returned object has the following properties: 
 
 |Property|Type|Description|
@@ -1556,7 +1557,7 @@ The returned object has the following properties:
 |name|Text|Name of the context|
 |main|Text|Learnt attributes associated to the context separated by a comma|
 |dataclass|Text|The dataclass linked to the context|
-|currentItem (optional)*|Text|The attributes of the [page mode](../ORDA/datastores.md#entity-selection-based-list-box) if the context is linked to a list box|
+|currentItem (optional)*|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box|
 
 `currentItem` is returned as Null or an empty string if:
 * the context name is one used for a list box
@@ -1582,6 +1583,57 @@ End for each
 $info:=$ds.getRemoteContextInfo("contextA")
 //$info : {name:contextA,dataclass:Persons,main:firstname,address,address.city}
 ```
+
+<!-- REF DataClassClass.getAllRemoteContexts().Desc -->
+## .getAllRemoteContexts()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #DataClassClass.getAllRemoteContexts().Syntax -->
+**.getAllRemoteContexts()** : Collection 
+<!-- END REF -->
+#### Description
+
+The `.getAllRemoteContexts()` function <!-- REF #DataClassClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore.<!-- END REF -->.
+
+For this function to properly return all the active contexts, one of the following conditions must be met: 
+* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
+* Contexts have been linked to entities or entity selections using one of the following functions:
+
+* dataClass.query()
+* entitySelection.query()
+* dataClass.fromCollection()
+* dataClass.all()
+* Create entity selection
+* dataClass.get()
+
+Each object in the returned collection has [the properties listed in the .getContextInfo() section](#properties-of-the-returned-object) 
+#### Example 
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA; $info : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info : {name:contextA,dataclass:Persons,main:firstname,address,address.city}
+```
+
 
 
 
