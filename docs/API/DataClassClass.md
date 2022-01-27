@@ -1352,7 +1352,7 @@ The `data` object inside each entry has the following properties:
 |__TIMESTAMP|String|Timestamp of the entity. Format is YYYY-MM-DDTHH:MM:MM:SS:ms:Z|
 |dataClassAttributeName|Variant|Data present in the cache for a dataclass attribute is returned in this property with the same type as in the database.|
 
-Related entities requested from the server are also stored in the cache
+When an entity is requested from the server, the ORDA cache of its dataclass also includes its related entities.
 
 #### Example 
 
@@ -1476,6 +1476,113 @@ $cacheAddress:=$ds.Address.getRemoteCache()
 }
 
 ```
+
+## .clearRemoteCache()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #DataClassClass.clearRemoteCache().Syntax -->
+**.dataClass.clearRemoteCache()** <!-- END REF -->
+#### Description
+
+The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass.<!-- END REF -->.
+
+#### Example 
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cache : Object
+var $info : Collection
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$persons:=$ds.Persons.all()
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$cache:=$ds.Persons.getRemoteCache()
+
+$ds.Persons.clearRemoteCache()
+// Cache of the Persons dataclass = {timeout:30,maxEntries:30000,stamp:255,entries:[]}
+```
+
+<!-- REF DataClassClass.getRemoteContextInfo().Desc -->
+## getRemoteContextInfo()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #DataClassClass.getRemoteContextInfo().Syntax -->
+**.getRemoteContextInfo**(*contextName* : Text) : Object <!-- END REF -->
+
+<!-- REF #DataClassClass.getRemoteContextInfo().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|contextName|Text|->|Name of the context|
+<!-- END REF -->
+
+
+#### Description
+
+The `.getRemoteContextInfo()` function <!-- REF #DataClassClass.getRemoteContextInfo().Summary -->returns an object that holds information on the optimization context of a datastore.<!-- END REF -->.
+
+For this function to properly return a context, one of the following conditions must be met: 
+* Some attributes must have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
+* This context has been linked to an entity selection / entity using one of the following functions:
+
+* dataClass.query()
+* entitySelection.query()
+* dataClass.fromCollection()
+* dataClass.all()
+* Create entity selection
+* dataClass.get()
+
+The returned object has the following properties: 
+
+|Property|Type|Description|
+|---|---|---|
+|name|Text|Name of the context|
+|main|Text|Learnt attributes associated to the context separated by a comma|
+|dataclass|Text|The dataclass linked to the context|
+|currentItem (optional)*|Text|The attributes of the [page mode](../ORDA/datastores.md#entity-selection-based-list-box) if the context is linked to a list box|
+
+`currentItem` is returned as Null or an empty string if:
+* the context name is one used for a list box
+* there is no context for the currentitem
+#### Example 
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA; $info : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info : {name:contextA,dataclass:Persons,main:firstname,address,address.city}
+```
+
 
 
 
