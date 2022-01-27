@@ -26,7 +26,7 @@ Use this area to define a namespace for the component classes and functions in t
 
 By default, this area is empty: component classes are not available outside of the component context. 
 
-When you enter a value, you declare that component classes and functions will be available in the host project's code through the `cs.value` namespace. This also ensures that no conflict emerges when a host project uses components that have classes or functions with identical names.
+When you enter a value, you declare that component classes and functions will be available in the host project's code through the `cs.value` namespace. This also ensures that no conflict emerges when a host project uses two components that have classes or functions with identical names.
 
 > The component designation must be compliant with [property naming rules](Concepts/identifiers.md#object-properties).
 
