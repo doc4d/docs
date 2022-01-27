@@ -1267,7 +1267,7 @@ We want to disallow formulas, for example when the user enters their query:
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|settings|Object|->|Object that sets the timeout and size of the ORDA cache for the dataclass|
+|settings|Object|->|Object that sets the timeout and size of the ORDA cache for the dataclass.|
 <!-- END REF -->
 
 
@@ -1279,28 +1279,26 @@ The *settings* parameter, pass an object with the following properties:
 
 |Property|Type|Description|
 |---|---|---|
-|timeout|Longint|Timeout in seconds|
-|maxEntries|Longint|Number of entities|
+|timeout|Longint|Timeout in seconds.|
+|maxEntries|Longint|Number of entities.|
 
-`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired, which means that:
+`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired:
 
 * the data is still there
 * the next time this data is needed, it will be asked to the server
 * 4D automatically removes expired data when space is needed
 
-`maxEntries` sets the max number of entities in the ORDA cache.
+Setting a `timeout` property sets a new timeout for the entities already present in the cache.
 
-The minimum number is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
+`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
 
-Default value: 30 000
+The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
+
+> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection that is already in the cache. 
 
 If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
-Setting a maxEntries property may alter the size of the entries Collection already present in the cache if the new value for maxEntries is < entries.length
-
-Setting a timeout property alters the entities already present in the cache in terms of expiration: they will expire once the new timeout value is passed
-
-When saving an entity, this entity is updated in the cache and it will expire once the timeout is reached.
+When saving an entity, it is updated in the cache and expires once the timeout is reached.
 
 <!-- REF DataClassClass.getRemoteCache().Desc -->
 ## getRemoteCache()
@@ -1317,41 +1315,167 @@ When saving an entity, this entity is updated in the cache and it will expire on
 <!-- REF #DataClassClass.getRemoteCache().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|result|Object|<-|Object describing the contents of the ORDA cache for the dataclass|
+|result|Object|<-|Object describing the contents of the ORDA cache for the dataclass.|
 <!-- END REF -->
 
 
 #### Description
 
-The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+
+Calling this function from a 4D single-user application returns `Null`.
 
 The returned object has the following properties:
 
 |Property|Type|Description|
 |---|---|---|
-|maxEntries|Longint|Maximum number of entries collection|
-|stamp|Longint|Stamp of the cache|
-|timeout|Longint|Time remaining before the new entries in the cache are marked as expired |
-|entries|Collection of entry objects||
+|maxEntries|Longint|Maximum number of entries collection.|
+|stamp|Longint|Stamp of the cache.|
+|timeout|Longint|Time remaining before the new entries in the cache are marked as expired.|
+|entries|Collection|Contains an entry object for each entity in the cache.|
 
 Each entry object in `entries` has the following properties:
 
 |Property|Type|Description|
 |---|---|---|
-|data|Object|Object holding data on the entry|
-|expired|Boolean|True if the entry has expired|
-|key|Text|Primary key of the entity|
+|data|Object|Object holding data on the entry.|
+|expired|Boolean|True if the entry has expired.|
+|key|Text|Primary key of the entity.|
 
 The `data` object inside each entry has the following properties: 
 
 |Property|Type|Description|
 |---|---|---|
-|incomplete|Boolean|True if all the attributes are not present in the cache|
-|_KEY|String|Primary key of the entity|
-|_STAMP|Longint|Stamp of the entity in the database|
-|_TIMESTAMP|String|Timestamp of the entity. Format is YYYY-MM-DDTHH:MM:MM:SS:ms:Z|
-|dataClassAtrributeName - Variant|Longint|If there is some data in the cache for a dataclass attribute, it is returned in a property `dataclassAttributeName` with the same type as in database.|
+|__$$incomplete|Boolean|True if all the attributes are not present in the cache.|
+|__KEY|String|Primary key of the entity.|
+|__STAMP|Longint|Stamp of the entity in the database.|
+|__TIMESTAMP|String|Timestamp of the entity. Format is YYYY-MM-DDTHH:MM:MM:SS:ms:Z|
+|dataClassAttributeName|Variant|Data present in the cache for a dataclass attribute is returned in this property with the same type as in the database.|
 
+Related entities requested from the server are also stored in the cache
+
+#### Example 
+
+This piece of code makes use of a `Persons` dataclass and an `Address` dataclass. It first loads a `Person` entity with all its attributes, triggering an optimization, and the following requests only load the necessary attributes (only `firstname` and `address.city` are loaded).
+
+> **Note:** `address.city` is loaded in the cache of the `Persons` dataclass. The cache of the `Address` dataclass only contains the first entity, which is loaded during the first iteration of the loop.
+
+```4d 
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cachePersons; $cacheAddress : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$persons:=$ds.Persons.all()
+
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$cachePersons:=$ds.Persons.getRemoteCache()
+$cacheAddress:=$ds.Address.getRemoteCache()
+
+// Contents of the $cachePersons object:
+
+{
+  "timeout": 30,
+  "maxEntries": 30000,
+  "stamp": 1051,
+  "entries": [
+    {
+      "key": "1",
+      "expired": false,
+      "data": {
+        "__KEY": "1",
+        "__TIMESTAMP": "2021-10-21T11:33:22.244Z",
+        "__STAMP": 1,
+        "ID": 1,
+        "age": 18,
+        "lastname": "Peter",
+        "gender": "F",
+        "children": 1,
+        "addressID": 1,
+        "firstname": "Denise",
+        "address": {
+          "__deferred": {
+            "uri": "/rest/Address(1)",
+            "__KEY": "1" 
+          }
+        },
+        "__$$incomplete": true
+      }
+    },
+    {
+      "key": "2",
+      "expired": false,
+      "data": {
+        "__KEY": "2",
+        "__TIMESTAMP": "2021-10-21T11:33:22.244Z",
+        "__STAMP": 1,
+        "firstname": "Barry",
+        "address": {
+          "__KEY": "2",
+          "__TIMESTAMP": "2021-10-21T11:33:22.237Z",
+          "__STAMP": 1,
+          "city": "Lincolnville" 
+        },
+        "__$$incomplete": true
+      }
+    },
+    {
+      "key": "3",
+      "expired": false,
+      "data": {
+        "__KEY": "3",
+        "__TIMESTAMP": "2021-10-21T11:33:22.244Z",
+        "__STAMP": 1,
+        "firstname": "Angel",
+        "address": {
+          "__KEY": "3",
+          "__TIMESTAMP": "2021-10-21T11:33:22.237Z",
+          "__STAMP": 1,
+          "city": "Yonkers" 
+        },
+        "__$$incomplete": true
+      }
+    }
+  ]
+}
+
+//Contents of the $cacheAddress object
+
+{
+  "timeout": 30,
+  "maxEntries": 30000,
+  "stamp": 24,
+  "entries": [
+    {
+      "key": "1",
+      "expired": false,
+      "data": {
+        "__entityModel": "Address",
+        "__DATACLASS": "Address",
+        "__KEY": "1",
+        "__TIMESTAMP": "2021-10-21T11:33:22.237Z",
+        "__STAMP": 1,
+        "ID": 1,
+        "zipCode": "21902",
+        "city": "Perry Point",
+        "persons": {
+          "__deferred": {
+            "uri": "/rest/Address(1)/persons?$expand=persons" 
+          }
+        }
+      }
+    }
+  ]
+}
+
+```
 
 
 
