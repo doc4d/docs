@@ -1691,7 +1691,7 @@ $info:=$ds.getAllRemoteContexts()
 ```
 
 <!-- REF DataClassClass.setRemoteContextInfo().Desc -->
-## .setRemoteContextInfo()()
+## .setRemoteContextInfo()
 
 <!-- REF #DataClassClass.setRemoteContextInfo().Syntax -->
 **.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : String { ; contextType : Text} { ; pageLength : Integer})<br/>
