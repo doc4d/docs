@@ -391,7 +391,7 @@ Ce paramètre vous permet de sélectionner le format de ce fichier. Valeurs poss
 > Les formats 3 et 4 sont des formats personnalisés dont le contenu doit être défini au préalable dans la boîte de dialogue des [Paramètres](../settings/web.md#log-format). Si vous utilisez l'un de ces formats sans qu'aucun de ses champs n'ait été sélectionné sur cette page, le fichier d'enregistrement des logs ne sera pas généré.
 
 
-## Nombre maximal de process Web simultanés
+## Process Web simultanés maxi
 
 | Peut être configuré via  | Nom                                                                                              | Commentaires |
 | ------------------------ | ------------------------------------------------------------------------------------------------ | ------------ |
@@ -599,7 +599,7 @@ La valeur de l'attribut `Secure` du cookie de session est automatiquement défin
 
 Les paramètres suivants sont toujours pris en charge mais reposent sur des fonctionnalités ou des technologies obsolètes. Il est généralement recommandé de conserver les valeurs par défaut.
 
-#### Allow database access through 4DSYNC URLs
+#### Autoriser l'accès aux bases de données par le biais des URL 4DSYNC
 
 Cette option contrôle le support des requêtes de synchronisation HTTP contenant des URLs dépréciées */4DSYNC*.
 
