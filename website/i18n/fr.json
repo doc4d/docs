@@ -878,7 +878,7 @@
         "title": "Page Sauvegarde"
       },
       "settings/client-server": {
-        "title": "Client-server page"
+        "title": "Page Client/Serveur"
       },
       "settings/compatibility": {
         "title": "Page de compatibilité"
@@ -902,13 +902,13 @@
         "title": "PHP page"
       },
       "settings/security": {
-        "title": "Security page"
+        "title": "Page sécurité"
       },
       "settings/sql": {
         "title": "SQL page"
       },
       "settings/web": {
-        "title": "Web page"
+        "title": "Page Web"
       },
       "Tags/tags": {
         "title": "Balises de transformation"

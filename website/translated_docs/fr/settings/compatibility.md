@@ -5,8 +5,8 @@ title: Page de compatibilité
 
 La page Compatibilité regroupe les paramètres relatifs au maintien de la compatibilité avec les versions précédentes de 4D.
 
-> The number of options displayed depends on the version of 4D with which the original database/project was created, as well as the settings modified in this database/project.   
-> This page lists the compatibility options available for database/projects converted from 4D v18 onwards. For older compatibility options, refer to the [Compatibility page](https://doc.4d.com/4Dv19R3/4D/19-R3/Compatibility-page.300-5612610.en.html) on **doc.4d.com**.
+> Le nombre d’options affichées dépend de la version de 4D avec laquelle la base/le projet a été créé(e) à l’origine (2004. x, v11, v12...) ainsi que des paramétrages modifiés dans ce(tte) base/projet.   
+> Cette page liste les options de compatibilité disponibles pour les bases/projets converti(e) s depuis 4D v18 et les versions plus récentes. For older compatibility options, refer to the [Compatibility page](https://doc.4d.com/4Dv19R3/4D/19-R3/Compatibility-page.300-5612610.en.html) on **doc.4d.com**.
 
 - **Use legacy network layer**: Starting with 4D v15, 4D applications propose a new network layer, named *ServerNet*, to handle communications between 4D Server and remote 4D machines (clients). The former network layer has become obsolete, but it is kept to ensure compatibility with existing databases. Using this option, you can enable the former network layer at any time in your 4D Server applications depending on your needs. *ServerNet* is used automatically for new databases and databases converted from a v15 release or later. Note that in case of a modification, you need to restart the application for the change to be taken into account. Any client applications that were logged must also be restarted to be able to connect with the new network layer. **Note:** This option can also be managed by programming using the `SET DATABASE PARAMETER` command.
 

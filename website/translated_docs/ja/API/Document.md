@@ -617,7 +617,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 任意で、コンテンツの読み取りに使用する文字セットを渡します。 これには、次の二つの方法があります:
 
-- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
+- *charSetName* に標準の文字セット名を含んだ文字列 ("ISO-8859-1" や "UTF-8" など) を渡します。
 - *charSetNum* に標準の文字セット名の MIBEnum ID (倍長整数) を渡します。
 
 > 4D によってサポートされている文字セットの一覧については、`CONVERT FROM TEXT` コマンドを参照ください。
