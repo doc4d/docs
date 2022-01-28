@@ -1532,6 +1532,7 @@ $ds.Persons.clearRemoteCache()
 |Parameter|Type||Description|
 |---|---|---|---|
 |contextName|Text|->|Name of the context|
+|result|Object|<-|Object that holds information on the optimization context|
 <!-- END REF -->
 
 #### Description
@@ -1541,13 +1542,12 @@ The `.getRemoteContextInfo()` function <!-- REF #DataClassClass.getRemoteContext
 For this function to properly return a context, one of the following conditions must be met: 
 * Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
 * This context has been linked to an entity selection or an entity using one of the following functions:
-
-* dataClass.query()
-* entitySelection.query()
-* dataClass.fromCollection()
-* dataClass.all()
-* Create entity selection
-* dataClass.get()
+  * dataClass.query()
+  * entitySelection.query()
+  * dataClass.fromCollection()
+  * dataClass.all()
+  * Create entity selection
+  * dataClass.get()
 
 #### Properties of the returned object 
 The returned object has the following properties: 
@@ -1598,18 +1598,17 @@ $info:=$ds.getRemoteContextInfo("contextA")
 <!-- END REF -->
 #### Description
 
-The `.getAllRemoteContexts()` function <!-- REF #DataClassClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore.<!-- END REF -->.
+The `.getAllRemoteContexts()` function <!-- REF #DataClassClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
 
 For this function to properly return all the active contexts, one of the following conditions must be met: 
 * Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
 * Contexts have been linked to entities or entity selections using one of the following functions:
-
-* dataClass.query()
-* entitySelection.query()
-* dataClass.fromCollection()
-* dataClass.all()
-* Create entity selection
-* dataClass.get()
+  * dataClass.query()
+  * entitySelection.query()
+  * dataClass.fromCollection()
+  * dataClass.all()
+  * Create entity selection
+  * dataClass.get()
 
 Each object in the returned collection has [the properties listed in the .getContextInfo() section](#properties-of-the-returned-object) 
 #### Example 
@@ -1617,8 +1616,56 @@ Each object in the returned collection has [the properties listed in the .getCon
 ```4d
 var $ds : cs.DataStore
 var $persons : cs.PersonsSelection
+var $adresses : cs.AddressSelection
 var $p : cs.PersonsEntity
-var $contextA; $info : Object
+var $a : cs.AddressEntity
+var $contextA; $contextB : Object
+var $info : Collection
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$contextB:=New object("context"; "contextB")
+$adresses:=$ds.Address.all($contextB)
+$text:="" 
+For each ($a; $adresses)
+    $text:=$a.zipCode
+End for each 
+
+$info:=$ds.getAllRemoteContexts()
+//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
+```
+
+<!-- REF DataClassClass.clearAllRemoteContexts().Desc -->
+## .clearAllRemoteContexts()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #DataClassClass.clearAllRemoteContexts().Syntax -->
+**.clearAllRemoteContexts()** 
+<!-- END REF -->
+#### Description
+
+The `.clearAllRemoteContexts()` function <!-- REF #DataClassClass..clearAllRemoteContexts().Summary -->clears all the learnt attributes for all the active contexts in the datastore<!-- END REF -->.
+#### Example 
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA; $contextB : Object
+var $info : Collection
 var $text : Text
 
 $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
@@ -1630,9 +1677,219 @@ $text:=""
 For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info : {name:contextA,dataclass:Persons,main:firstname,address,address.city}
+$info:=$ds.getAllRemoteContexts()
+//$info : [{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
+
+$contextB:=New object("context"; "contextB")
+$ds.setRemoteContextInfo("contextB"; $ds.Address; "city")
+$info:=$ds.getAllRemoteContexts()
+//$info : [{name:contextB,dataclass:Address,main:city},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
+
+$ds.clearAllRemoteContexts()
+$info:=$ds.getAllRemoteContexts()
+//$info is empty
 ```
+
+<!-- REF DataClassClass.setRemoteContextInfo().Desc -->
+## .setRemoteContextInfo()()
+
+<!-- REF #DataClassClass.setRemoteContextInfo().Syntax -->
+**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : String { ; contextType : Text} { ; pageLength : Integer})<br/>
+**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : Object ; *attributesColl* : Collection)
+<!-- END REF -->
+
+<!-- REF #DataClassClass.setRemoteContextInfo().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|contextName|Text|->|Name of the context|
+|dataClassName|Text|->|Name of the dataclass|
+|dataclassObject|Object|->|dataclass object (e.g datastore.Employee)|
+|attributes|Text|->|Attribute list separated by a comma|
+|attributescoll|Collection of Text elements|->|Collection of attribute names|
+|contextType|Text|->|If provided, value must be "main" or "currentItem"|
+|pageLength|Integer|->|Page length of the entity selection associated to the context|
+<!-- END REF -->
+
+#### Description
+
+The `.setRemoteContextInfo()` function <!-- REF #DataClassClass.setRemoteContextInfo().Summary -->links dataclass attributes to an optimization context<!-- END REF -->.
+
+If an optimization context already exists for the specified attributes, this command replaces it.
+
+If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
+
+The REST requests optimization is triggered immediately if:
+* the first entity is not fully loaded as done in automatic mode
+* pages of 80 entities (or pageLength entities) are immediately asked to the server with only the attributes in the context
+
+In *contextName*, pass the name of the optimization context that will be linked to the dataclass attributes.
+
+In *dataclassName*, pass the name of the dataclass that holds the attributes to be linked to the optimization context. You can also pass a *dataClassObject*.
+
+In *attributes*, pass the list of attributes to be linked to the optimization context, in the form of a Text element. Attributes must be separated by a comma. You can also pass a collection of attribute names (*attributesColl*).
+
+If *attributes* is an empty String or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context.
+
+You can pass a *contextType* to specify if the context is a standard context or a context associated to an entity selection displayed in a list box. 
+
+If the value of *contextType* is set to "main" (default), the *contextName* designates a standard context.
+
+If the value of *contextType* is "currentItem", the attributes passed are put in the context of the current item. See [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
+
+In *pageLength*, specify the number of dataclass entities to request from the server. If the attributes are not strings or  collections, they are ignored.
+
+You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is attributeName:pageLength (e.g employees:20).
+#### Example 1
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA : Object
+var $info : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
+
+// This syntax is also possible
+//$ds.setRemoteContextInfo("contextA"; "Persons"; New collection("firstname"; "lastname"))
+//
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info = {name:contextA,dataclass:Persons,main:lastname,firstname}
+
+$contextA:=New object("context"; "contextA")
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city}
+```
+#### Example 2 
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA : Object
+var $info : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info = {name:contextA,dataclass:Persons,main:firstname,address,address.city}
+
+$ds.setRemoteContextInfo("contextA"; $ds.Persons; "gender, lastname")
+
+// The following syntax is also valid
+//$ds.setRemoteContextInfo("contextA"; "Persons"; New collection("gender"; "lastname"))
+
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info ={name:contextA,dataclass:Persons,main:lastname,gender}
+
+//The attributes have been replaced
+```
+#### Example 3
+
+```4d
+var $ds : cs.DataStore
+
+var $addresses : cs.AddressSelection
+var $a : cs.AddressEntity
+var $p : cs.PersonsEntity
+
+var $contextA : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname"; "main"; 30)
+//
+//The requests will ask for pages of 30 entities of dataclass Address
+//For each entity Address, 20 Persons entities will be returned
+//
+
+// This syntax is also possible
+//$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode"; "persons:20"; "persons.lastname"); "main"; 30)
+
+$contextA:=New object("context"; "contextA")
+$addresses:=$ds.Address.all($contextA)
+$text:="" 
+For each ($a; $addresses)
+    $text:=$a.zipCode
+
+    For each ($p; $a.persons)
+        $text:=$p.lastname
+    End for each 
+End for each 
+```
+
+#### Example 4 - Listbox
+
+```4d
+// When the form loads
+Case of 
+    : (Form event code=On Load)
+
+        Form.ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+       //Set the attributes of the page context
+        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
+
+        Form.settings:=New object("context"; "LB")
+        Form.persons:=Form.ds.Persons.all(Form.settings) // Form.persons is displayed in a list box
+End case 
+
+// When you get the attributes in the context of the current item:
+Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
+// Form.currentItemLearntAttributes = "age, gender, children" 
+```
+
+<!-- REF DataClassClass.getCount.Desc -->
+## .getCount()
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #DataClassClass.getCount().Syntax -->
+**.getCount()** : Integer 
+<!-- END REF -->
+
+<!-- REF #DataClassClass.getCount().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|result|Integer|<-|Number of entities in the dataclass|
+<!-- END REF -->
+#### Description
+
+The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+#### Example 
+
+```4d
+var $ds : cs.DataStore
+var $$number : Integer
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$number:=$ds.Persons.getCount() 
+```
+
 
 
 
