@@ -126,13 +126,13 @@ $t2*=2 // $t2="HelloHello"
 
 
 
-## Short-circuit operators
+## 短絡演算子
 
 The **&&** and **||** operators are **short circuit operators**. A short circuit operator is one that doesn't necessarily evaluate all of its operands.
 
 The difference with the single [**&** and **|** boolean operators](dt_boolean.md#logical-operators) is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as [truthy or falsy](#truthy-and-falsy), then return one of the expressions.
 
-### Short-circuit AND operator (&&)
+### AND 短絡演算子 (&&)
 
 The rule is as follows:
 
@@ -189,7 +189,7 @@ End if
 
 If $myObject is Null, the second argument is not executed, thus no error is thrown.
 
-### Short-circuit OR operator (||)
+### OR 短絡演算子 (||)
 
 The || operator returns the value of one of the specified operands. The expression is evaluated left to right and tested for possible "short-circuit" evaluation using the following rule:
 
@@ -282,7 +282,7 @@ var $fullname : Text
 $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
-## Truthy and falsy
+## Truthy と Falsy
 
 As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
 

@@ -657,18 +657,18 @@ id name price vat
  $myFile:=Folder(fk documents folder).file("Billing.txt") // デフォルトでUTF-8
  $txt:=$myFile.getText()
 ```
-... you get the following for `$txt`:
+以下の結果が `$txt` に得られます:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
-with `\t` (tab) as separator and `\r` (CR) as line delimiter.
+このとき、区切り文字は `\t` で、改行コードは `\r` (CR) です。
 
-Here is another example with the same file, but a different line delimiter:
+以下は、同じファイルで改行コードが異なる例です:
 
 ```4d
  $txt:=$myFile.getText("UTF-8", Document with CRLF)
 ```
-In this case, the contents of `$txt` are as follows:
+この場合、`$txt` の値は次の通りです:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
