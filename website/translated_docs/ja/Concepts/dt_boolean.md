@@ -64,4 +64,4 @@ myBoolean:=(myButton=1)
  (Expr1|Expr2) & Not(Expr1 & Expr2)  
 ```
 
-> In boolean contexts, the 4D language also supports [short-circuit operators](operators.md#short-circuit-operators) (`&&` and `||`) and the [trushy and falsy](operators.md#truthy-and-falsy) concept. 
+> 4Dランゲージはブールのコンテキストにおいて、[短絡演算子](operators.md#短絡演算子) (`&&` と `||`) および [Truthy (真的) と Falsy (偽的)](operators.md#truthy-と-falsy) の概念もサポートしています。 
