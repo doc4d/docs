@@ -20,7 +20,7 @@ title: ループ構造
 
 `While...End while` ループは、ブール式が true である限り、ループ内のステートメントを実行し続けます。 ループの始めにブール式を評価し、ブール式が FALSE の場合にはループをおこないません。
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+`break` および `continue` ステートメントについては [後述します](#break-と-continue)。
 
 一般に、`While...End while` ループに入る手前で、ブール式で判定する値を初期化しておきます。 通常はブール式が true になるように設定してからループに入ります。
 
@@ -59,7 +59,7 @@ Until(Boolean_Expression)
 
 もう一つの `While...End while` ループとの相違点は、 `Repeat...Until` はブール式が true になるまでループを続行することです。
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+`break` および `continue` ステートメントについては [後述します](#break-と-continue)。
 
 ### 例題
 
@@ -97,7 +97,7 @@ End for
 - *Start_Expression* と *End_Expression* が等しい場合、1回だけループがおこなわれます。
 - *Start_Expression* が *End_Expression* より大きい場合、*Increment_Expression* に負の値を指定しない限り、ループはおこなわれません。 次に例を示します。
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+`break` および `continue` ステートメントについては [後述します](#break-と-continue)。
 
 ### 基本的な使用例
 
@@ -319,7 +319,7 @@ The `break` and `continue` statements are [described below](#break-and-continue)
     - 整合性のため要素やプロパティを一括で処理しなくてはならない場合には、ループに入る前 (外側) に使います。
     - 要素やプロパティを個々に変更して差し支えない場合は、ループの中で使います。
 
-The `break` and `continue` statements are [described below](#break-and-continue).
+`break` および `continue` ステートメントについては [後述します](#break-と-continue)。
 
 ### コレクション内のループ
 
@@ -474,7 +474,7 @@ Employees データクラスの中から、英国の従業員の給与を引き�
  ALERT(String($total)) //$total = 1001 (1000+1)
 ```
 
-## `break` and `continue`
+## `break` と `continue`
 
 All looping structures above support both `break` and `continue` statements. These statements give you more control over the loops by allowing to exit the loop and to bypass the current iteration at any moment.
 
