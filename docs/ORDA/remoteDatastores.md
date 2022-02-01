@@ -150,3 +150,27 @@ For example, the following code loads the selected entity and allows browsing in
   //... do something
  $myEntity:=$myEntity.next() //loads the next entity using the same context
 ```
+
+### ORDA Cache 
+
+Data requested from the server via ORDA is loaded in the ORDA cache (which is different from the 4D cache). By default, the ORDA cache expires after 30 seconds. The data contained in the cache when the timeout is reached is considered as expired: the data remains in the cache until 4D unloads expired data when space is needed. 
+
+### List of class functions
+
+The following ORDA class functions can be used to handle the ORDA cache and the contents of the optimization context in a client/server configuration: 
+
+DataClass class: 
+* [.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
+* [.getRemoteCache()](../API/DataClassClass.md#getremotecache)
+* [.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)
+* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
+* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
+* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
+* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
+* [.getCount()](../API/DataClassClass.md#getcount)
+
+Entity Class:
+* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
+
+EntitySelectionClass: 
+* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
