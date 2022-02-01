@@ -476,7 +476,7 @@ Employees データクラスの中から、英国の従業員の給与を引き�
 
 ## `break` と `continue`
 
-All looping structures above support both `break` and `continue` statements. These statements give you more control over the loops by allowing to exit the loop and to bypass the current iteration at any moment.
+上記のループ構造はすべて、`break`文および `continue`文をサポートしています。 これらの文は、ループを完全に終了させたり、現在の繰り返しだけを終了させたりすることで、ループをよりコントロールすることができます。
 
 ### break
 
