@@ -157,7 +157,7 @@ Data requested from the server via ORDA is loaded in the ORDA cache (which is di
 
 ### List of class functions
 
-The following ORDA class functions can be used to handle the ORDA cache and the contents of the optimization context in a client/server configuration: 
+The following ORDA class functions can be used to handle the ORDA cache and the contents of the optimization context in a client/server configuration. For more details, check out their description:
 
 DataClass class: 
 * [.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
