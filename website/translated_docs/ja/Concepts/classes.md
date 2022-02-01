@@ -234,22 +234,22 @@ Function getFullname()->$fullname : Text
 
 アプリケーションのコード内では、クラス関数はオブジェクトインスタンスのメンバーメソッドとして呼び出され、<a href="#クラス関数の引数>引数</a> を受け取ることができます。 次のシンタックスがサポートされています:
 
-- `()` 演算子の使用 For example, `myObject.methodName("hello")`
-- use of a "4D.Function" class member method: 
+- `()` 演算子の使用 例: `myObject.methodName("hello")`
+- "4D.Function" クラスメンバーメソッドの使用: 
       - [`apply()`](API/FunctionClass.md#apply)
     - [`call()`](API/FunctionClass.md#call)
 
 
 
-> **Thread-safety warning:** If a class function is not thread-safe and called by a method with the "Can be run in preemptive process" attribute: - the compiler does not generate any error (which is different compared to regular methods), - an error is thrown by 4D only at runtime.
+> **スレッドセーフに関する警告:** クラス関数がスレッドセーフではないのに、"プリエンプティブプロセスで実行可能" なメソッドから呼び出された場合: <br /> - 普通のメソッドの場合とは異なり、コンパイラーはエラーを生成しません。 <br /> - ランタイムにおいてのみ、4D はエラーを生成します。
 
 
 
 
 
-#### Parameters
+#### 引数
 
-Function parameters are declared using the parameter name and the parameter type, separated by a colon. パラメーター名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。 複数のパラメーター (およびその型) を宣言する場合は、それらをセミコロン (;) で区切ります。 
+関数の引数は、引数名とデータ型をコロンで区切って宣言します。 パラメーター名は [プロパティ名の命名規則](Concepts/identifiers.md#オブジェクトプロパティ) に準拠している必要があります。 複数のパラメーター (およびその型) を宣言する場合は、それらをセミコロン (;) で区切ります。 
 
 
 
@@ -259,10 +259,10 @@ Function add($x; $y : Variant; $z : Integer; $xy : Object)
 
 
 
-> If the type is not stated, the parameter will be defined as `Variant`.
+> パラメーターの型が宣言されていない場合には、バリアント型 として定義されます。
 
 
-> The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. 両方のシンタックスは併用することができます。 For example:
+> クラス関数の引数を宣言するにあたっては、メソッド引数の場合と同様に [従来の 4Dシンタックス](parameters.md#順番引数) を使用することもできます。 両方のシンタックスは併用することができます。 たとえば:
 > 
 > ```4d
 > Function add($x : Integer)
@@ -274,9 +274,9 @@ Function add($x; $y : Variant; $z : Integer; $xy : Object)
 
 
 
-#### Return value
+#### 戻り値
 
-You declare the return parameter (optional) by adding an arrow (`->`) and the return parameter definition after the input parameter(s) list, or a colon (`:`) and the return parameter type only. For example:
+関数の戻り値を宣言するには (任意)、入力パラメーターリストに矢印 (`->`) と戻り値の定義を追加するか、コロン (`:`) と戻り値のデータ型のみを追加します。 For example:
 
 
 
