@@ -612,7 +612,38 @@ Las llaves primarias pueden ser números (enteros) o cadenas. Puede "forzar" que
  $employees:=ds.Employee.query("lastName=:1";"Smith")
  $employee:=$employees[0]
  ALERT("The primary key is "+$employee.getKey(dk key as string))
-```<!-- END REF --><!-- REF EntityClass.getSelection().Desc -->## .getSelection()
+```<!-- END REF --><!-- REF EntityClass.getRemoteContextAttributes().Desc -->## .getRemoteContextAttributes()<!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->**.getRemoteContextAttributes()** : Text<!-- END REF --><!-- REF #EntityClass.getRemoteContextAttributes().Params -->| Parámetros | Tipo  |    | Descripción                                                            |
+| ---------- | ----- | -- | ---------------------------------------------------------------------- |
+| result     | Texto | <- | Learnt attributes linked to the entity selection, separated by a comma |<!-- END REF -->#### Descripción
+
+The `.getRemoteContextAttributes()` function<!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity<!-- END REF -->.
+
+If there are no learnt attributes in the optimization context, the function returns an empty Text element.
+
+#### Ejemplo
+
+```4d
+var $ds : cs.DataStore
+var $address : cs.AddressEntity
+var $p : cs.PersonsEntity
+var $contextA : Object
+var $info : Text
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+
+$address:=$ds.Address.get(1; $contextA)
+$text:="" 
+For each ($p; $address.persons)
+    $text:=$p.firstname+" "+$p.lastname
+End for each 
+
+$info:=$address.getRemoteContextAttributes()
+
+//$info = persons,persons.lastname,persons.firstname
+```<!-- REF EntityClass.getSelection().Desc -->## .getSelection()
 
 <details><summary>Histórico</summary>
 | Versión | Modificaciones |
