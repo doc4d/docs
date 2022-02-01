@@ -476,34 +476,34 @@ Employees データクラスの中から、英国の従業員の給与を引き�
 
 ## `break` と `continue`
 
-All looping structures above support both `break` and `continue` statements. These statements give you more control over the loops by allowing to exit the loop and to bypass the current iteration at any moment.
+上記のループ構造はすべて、`break`文および `continue`文をサポートしています。 これらの文は、ループを完全に終了させたり、現在の繰り返しだけを終了させたりすることで、ループをよりコントロールすることができます。
 
 ### break
 
-The `break` statement terminates the loop containing it. Control of the program flows to the statement immediately after the body of the loop.
+`break`文は、その文が含まれるループを終了させます。 プログラムの制御は、ループ直後のステートメントに移ります。
 
-If the `break` statement is inside a [nested loop](#nested-forend-for-looping-structures) (loop inside another loop), the `break` statement will terminate the innermost loop.
+[入れ子になったループ](#forend-for-の入れ子構造) (ループ内に別のループがある) の中に `break`文がある場合、`break`文は最も内側のループを終了させます。
 
 
 #### 例題
 
 ```4d
 For (vCounter;1;100)
-    If ($tab{vCounter}="") //if a condition becomes true
-        break //end of the for loop
+    If ($tab{vCounter}="") // 条件が true になった場合
+        break // forループを終了させます
     End if
 End for
 ```
 
 ### continue
 
-The `continue` statement terminates execution of the statements in the current iteration of the current loop, and continues execution of the loop with the next iteration.
+`continue`文は、ループにおいて現在実行中の繰り返しだけを終了させ、次の繰り返しよりループの実行を継続させます。
 
 ```4d
 var $text : Text
 For ($i; 0; 9)
     If ($i=3)
-        continue //go directly to the next iteration
+        continue // 次の繰り返しに移行します
     End if
     $text:=$text+String($i)
 End for
