@@ -38,9 +38,9 @@ $rect:=cs.eGeometry.Rectangle.new(10;20)
 $area:=$rect.getArea()
 ```
 
-Of course, it is recommended to use a distinguished name to avoid any conflict with the other installed components. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
+Of course, it is recommended to use a distinguished name to avoid any conflict. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
 
-A component's ORDA classes are not available in its host project. For example, if there is a dataclass called `Employees` in your component, the corresponding `cs.Employee` class cannot be used in the host project.  
+A component's ORDA classes are not available in its host project. For example, if there is a dataclass called `Employees` in your component, you will not be able to use a `cs.Mycomponent.Employee` class in the host project.  
 
 ### Generate syntax file for code completion when compiled
 
@@ -56,7 +56,7 @@ If you don't enter a [component namespace](#component-namespace-in-the-class-sto
 
 #### Hidden classes
 
-Just like in any project, you can create hidden classes and functions in a component by prefixing class names with an underscore ("_").
+Just like in any project, you can create hidden classes and functions in a component by prefixing names with an underscore ("_").
 
 Hidden classes and functions can still be used if you know their names, but they do not appear as suggestions when using code completion.
 
@@ -66,10 +66,4 @@ For example, the following syntax is valid even if the `_Rectangle` class is hid
 $rect:=cs.eGeometry._Rectangle.new(10;20)
 ```
 
-#### Hidden class inheritance and code completion 
-
-When working with [built components](../Desktop/building.md#build-component) (.4dz files), the non-hidden functions inside a parent class (including getter and setters) appear as suggestions when you use code completion with its child class.
-
-For example, imagine that your component has a hidden class called `_Person` and a class called `Teacher` that [inherits](../Concepts/classes.md#inheritance) from `_Person`.
-
-When using code completion with `Teacher`, the functions inside `_Person` appear as suggestions and their syntax is displayed as contextual help.
+> Non-hidden functions inside a hidden class appear as suggestions when you use code completion with a class that [inherits](../Concepts/classes.md#inheritance) from it. For example, if a component has a `Teacher` class that inherits from a `_Person` class, code completion for `Teacher` suggests non-hidden functions from `_Person` and their syntax is displayed as contextual help.
