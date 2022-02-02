@@ -276,7 +276,7 @@ Function add($x; $y : Variant; $z : Integer; $xy : Object)
 
 #### 戻り値
 
-関数の戻り値を宣言するには (任意)、入力パラメーターリストに矢印 (`->`) と戻り値の定義を追加するか、コロン (`:`) と戻り値のデータ型のみを追加します。 For example:
+関数の戻り値を宣言するには (任意)、入力パラメーターリストに矢印 (`->`) と戻り値の定義を追加するか、コロン (`:`) と戻り値のデータ型のみを追加します。 たとえば:
 
 
 
@@ -286,13 +286,13 @@ Function add($x : Variant; $y : Integer)->$result : Integer
 ```
 
 
-You can also declare the return parameter by adding only `: type` and use the [`return expression`](parameters.md#return-expression) (it will also end the function execution). For example: 
+コロン (:) 記号の後に戻り値のデータ型だけを指定して戻り値を宣言し、[`return`](parameters.md#return-expression)文を使うこともできます (これは同時に関数の実行を終了します)。 たとえば: 
 
 
 
 ```4d
 Function add($x : Variant; $y : Integer): Integer
-    // some code
+    // なんらかのコード
     return $x+$y
 ```
 
@@ -300,18 +300,18 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### Example 1
+#### 例題 1
 
 
 
 ```4d
-// Class: Rectangle
+// クラス: Rectangle
 Class constructor($width : Integer; $height : Integer)
     This.name:="Rectangle"
     This.height:=$height
     This.width:=$width
 
-// Function definition
+// Function 定義
 Function getArea()->$result : Integer
     $result:=(This.height)*(This.width)
 ```
@@ -320,7 +320,7 @@ Function getArea()->$result : Integer
 
 
 ```4d
-// In a project method
+// プロジェクトメソッドにて
 
 var $rect : cs.Rectangle
 var $area : Real
@@ -332,9 +332,9 @@ $area:=$rect.getArea() //5000
 
 
 
-#### Example 1
+#### 例題 2
 
-This example uses the [`return expression`](parameters.md#return-expression):
+[`return`](parameters.md#return-expression)文を使った例です:
 
 
 
@@ -353,17 +353,17 @@ Function getRectArea($width : Integer; $height : Integer) : Integer
 
 
 
-### `Function get` and `Function set`
+### `Function get` と `Function set`
 
 
 
-#### Syntax
+#### シンタックス
 
 
 
 ```4d
 Function get <name>()->$result : type
-// code
+// コード
 ```
 
 
@@ -371,11 +371,11 @@ Function get <name>()->$result : type
 
 ```4d
 Function set <name>($parameterName : type)
-// code
+// コード
 ```
 
 
-`Function get` and `Function set` are accessors defining **computed properties** in the class. 計算プロパティとは、計算をマスクするデータ型を持つ命名プロパティです。 計算プロパティの値にアクセスすると、4D は対応するアクセサーのコードを実行します:
+`Function get` と `Function set` は、クラスの **計算プロパティ** を定義するアクセサーです。 計算プロパティとは、計算をマスクするデータ型を持つ命名プロパティです。 計算プロパティの値にアクセスすると、4D は対応するアクセサーのコードを実行します:
 
 - プロパティを読み取るときには `Function get` が実行されます。
 - プロパティに書き込むときには `Function set` が実行されます。
