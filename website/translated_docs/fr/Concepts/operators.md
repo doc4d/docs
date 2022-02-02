@@ -3,7 +3,7 @@ id: operators
 title: Opérateurs
 ---
 
-An operator is a symbol or a group of symbols that you use to check, modify, or combine values. Vous connaissez déjà la plupart des opérateurs. For example, `1 + 2` uses the addition (or plus sign) operator to add two numbers together, and the result is 3. Comparison operators, like = or >, let you compare two or more values.
+Un opérateur est un symbole ou un groupe de symboles que vous utilisez pour vérifier, modifier ou combiner des valeurs. Vous connaissez déjà la plupart des opérateurs. Par exemple, `1 + 2` utilise l'opérateur d'addition (ou le signe "plus") pour additionner deux nombres, et a pour résultat le chiffre 3. Les opérateurs de comparaison, comme = ou >, vous permettent de comparer deux valeurs ou plus.
 
 The 4D language supports the operators you may already know from other languages like C or JavaScript. However, the assignment operator is `:=` to prevent it from being mistakenly used when the equal to operator (`=`) is intended. [Basic operators](#basic-operators) such as arithmetic operators (+, -, *, /, %...) and comparison operators (=, >, >=...) can be used with numbers, but also with boolean, text, date, time, pointer, or picture data types. Like JavaScript, the 4D language supports the concept of [truthy and falsy values](#truthy-and-falsy), which in use in [short-cicrcuit operators](#short-circuit-operators).
 
@@ -102,7 +102,7 @@ $t+=" World" //$t="Hello World"
 $d:=!2000-11-10!
 $d+=10 //$d=!2000-11-20!
 
-// Subtraction
+// Soustraction
 $x1:=10
 $x1-=5 //$x1=5
 

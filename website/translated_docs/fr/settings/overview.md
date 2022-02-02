@@ -3,24 +3,24 @@ id: overview
 title: Aperçu
 ---
 
-The Settings configure how the current project functions. These parameters may be different for each project. They include the listening ports, backup configurations, security options, Web parameters, etc.
+Les Paramètres configurent le fonctionnement du projet en cours. Ces paramètres peuvent être différents pour chaque projet. Ils comprennent les ports d'écoute, les configurations de sauvegarde, les options de sécurité, les paramètres Web, etc.
 
 ![](assets/en/settings/main.png)
 
-> 4D provides another set of parameters, called **Preferences**, that apply to the 4D IDE application. For more information, refer to [Preferences](../Preferences/general.md).
+> 4D fournit un autre ensemble de paramètres, appelés **Préférences**, qui s'appliquent à l'application 4D IDE. Pour plus d'informations, reportez-vous à la section [Préférences](../Preferences/general.md).
 
 
-## Accessing the settings
+## Accès aux paramètres
 
-You can access the Settings dialog box:
+Vous pouvez accéder à la boîte de dialogue Paramètres :
 
--   using the **Design > Settings...** menu option
--   by clicking **Settings** on the 4D toolbar
--   on 4D Server, using the **Edit > Settings...** menu option
+-   en utilisant l'option de menu **Développement > Paramètres...**
+-   en cliquant sur **Paramètres** dans la barre d'outils 4D
+-   sur 4D Server, via l'option de menu **Edition > Paramètres...**
 
-When [**User settings** mode is enabled](../Desktop/user-settings.md), **Settings...** is renamed **Structure Settings...** and two additional menu commands are available at each location:
+Lorsque le mode [**Paramètres utilisateur** est activé](../Desktop/user-settings.md), **Paramètres...** est renommé **Paramètres de la structure...** et deux commandes de menu supplémentaires sont disponibles à chaque emplacement :
 
--   **User Settings...** gives you access to settings that can be stored externally in a user file. If these are modified, they are used instead of structure settings.
+-   **Paramètres utilisateur...** vous donne accès aux paramètres qui peuvent être stockés en externe dans un fichier utilisateur. Si ceux-ci sont modifiés, ils sont utilisés à la place des paramètres de structure.
 -   **User Settings for Data File...** gives you access to settings that can be stored externally in a user file attached to the current data file. If they are modified, they are used instead of user or structure settings.
 
 ### Locking information
