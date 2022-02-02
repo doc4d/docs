@@ -251,7 +251,7 @@ Used to indicate the current version number for the application generated. You m
 
 #### Embed the project Users and Groups in built server application
 
-When you check this option, the project's [Directory.json](../Users/handling_users_groups.md#directoryjson-file) file is copied in the user settings folder of the built 4D server application during the build application process.
+When you check this option, the project's [Directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the merged 4D Server application during the build application process.
 
 #### Allow connection of Silicon Mac clients
 
