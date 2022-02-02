@@ -3,52 +3,52 @@ id: user-settings
 title: Paramètres utilisateur
 ---
 
-4D provides two modes of operation for project Settings:
+4D propose deux modes de fonctionnement pour les Propriétés des projets :
 
-*   **Standard** mode: all [settings](../settings/overview.md) are stored in the [*settings.4DSettings* file at the project level](../Project/architecture.md#sources) and are applied in all cases. This is the default mode, suitable for development phase (all applications).
+*   Mode **standard** : tous les [paramètres](../settings/overview.md) sont stockés dans le fichier [*settings.4DSettings* au niveau du projet](../Project/architecture.md#sources) et sont appliqués dans tous les cas. C'est le mode par défaut, adapté à la phase de développement (toutes les applications).
 
-*  **User settings** mode: part of the custom settings are stored in a *settings.4DSettings* file [in the Settings folder](../Project/architecture.md#settings-1) (for all data files) or [in the Data folder](../Project/architecture.md#settings) (for this data file) and are used instead of the structure settings. This mode is suitable for deployment phase for Desktop applications. You enable this mode using an option located on the [Security page](../settings/security.md) of the Settings.
+*  Mode **paramètres utilisateur** : une partie des paramètres personnalisés sont stockés dans un fichier *settings.4DSettings* [dans le dossier Settings](../Project/architecture.md#settings-1) (pour tous les fichiers de données) ou [dans le dossier Data](../Project/architecture.md#settings) (pour ce fichier de données) et sont utilisés à la place des paramètres de structure. Ce mode convient à la phase de déploiement pour les applications Desktop. Activez ce mode à l'aide d'une option située sur la [page Sécurité](../settings/security.md) des Propriétés.
 
-By defining user settings, you can keep custom settings between updates of your 4D applications, or manage different settings for the same 4D application deployed on several different sites. It also makes it possible to use programming to manage setting files using XML.
+En définissant des paramètres utilisateur, vous pouvez conserver des paramètres personnalisés entre les mises à jour de vos applications 4D, ou gérer des paramètres différents pour une même application 4D déployée sur plusieurs sites différents. Cela permet également d'utiliser la programmation pour gérer les fichiers de paramètres à l'aide de XML.
 
-4D can generate and use two types of user settings:
+4D peut générer et utiliser deux types de propriétés utilisateur :
 
--   **User Settings (standard)**: They are used instead of structure settings for any data file opened with the application.
--   **User Settings for Data file**: They can be defined specifically for each data file used with your application, configuring for example the port ID or the server cache.
+-   **Les propriétés utilisateur (standard)** : elles sont utilisées à la place des propriétés de structure pour tout fichier de données ouvert avec l'application.
+-   **Propriétés utilisateur pour le fichier de données** : elles peuvent être définies spécifiquement pour chaque fichier de données utilisé avec votre application, en configurant par exemple l'ID du port ou le cache du serveur.
 
-With this option, you can easily deploy and update several copies of the same desktop application with several data files, each containing different settings.
+Avec cette option, vous pouvez facilement déployer et mettre à jour plusieurs copies de la même application Desktop avec plusieurs fichiers de données, chacun contenant des propriétés différentes.
 
-Consider for example the following configuration, where an application is duplicated and each copy uses a different Port ID setting. If this user setting is linked to the data file, you will be able to update the application without having to manually change the Port ID:
+Prenons par exemple la configuration suivante, où une application est dupliquée et où chaque copie utilise un paramètre d'ID de port différent. Si ce paramètre utilisateur est lié au fichier de données, vous pourrez mettre à jour l'application sans avoir à modifier manuellement l'ID du port :
 
 ![](assets/en/settings/user-settings-config.png)
 
-## Enabling User settings
+## Activer les paramètres utilisateur
 
-To enable user settings, you need to check the **Settings** > **Security** > **Enable User Settings** option:
+Pour activer les paramètres utilisateur, vous devez cocher l'option **Paramètres** > **Sécurité** > **Activer les paramètres utilisateur** :
 
 ![](assets/en/settings/user-settings-enable.png)
 
-When you check this option, the settings are separated into three dialog boxes:
+Lorsque vous cochez cette option, les paramètres sont séparés en trois boîtes de dialogue :
 
-* **Structure Settings**
+* **Paramètres de structure**
 * **Paramètres utilisateur**
-* **User Settings for Data file**
+* **Paramètres utilisateur pour le fichier de données**
 
-You can access these dialog boxes using the **Design > Settings...** menu or the **Settings** button in the toolbar:
+Vous pouvez accéder à ces boîtes de dialogue en utilisant le menu **Développement > Paramètres...** ou le bouton **Paramètres** dans la barre d'outils :
 
 ![](assets/en/settings/user-settings-dialog.png)
 
-You can also access these dialog boxes using the [OPEN SETTINGS WINDOW](https://doc.4d.com/4dv19R/help/command/en/page903.html) command with the appropriate *settingsType* selector.
+Vous pouvez également accéder à ces boîtes de dialogue à l'aide de la commande [OPEN SETTINGS WINDOW](https://doc.4d.com/4dv19R/help/command/en/page903.html) avec le sélecteur *settingsType* approprié.
 
-The Structure Settings dialog box is identical to the standard Settings, and provides access to all its properties (which can be overriden by user settings).
+La boîte de dialogue Paramètres de structure est identique aux paramètres standard et permet d'accéder à toutes ses propriétés (qui peuvent être remplacées par des paramètres utilisateur).
 
-## User Settings and User Settings for Data file
+## Paramètres utilisateur et paramètres utilisateur pour le fichier de données
 
-The **User Settings** and **User Settings for Data File** dialog boxes contain a selection of relevant properties that can be defined for all data files or a single data file:
+Les boîtes de dialogue **User Settings** et **User Settings for Data File** contiennent une sélection de propriétés pertinentes qui peuvent être définies pour tous les fichiers de données ou pour un seul fichier de données :
 
 ![](assets/en/settings/user-settings-2.png)
 
-The following table lists the pages of settings found in the **User Settings** and **User Settings for Data File** dialog boxes and describes their main differences with respect to standard settings:
+Le tableau suivant répertorie les pages de paramètres que l'on trouve dans les boîtes de dialogue **Paramètres utilisateur** et **Paramètres utilisateur pour le fichier de données** et décrit leurs principales différences par rapport aux paramètres standard :
 
 | **Page of Structure Settings**                                                        | **Page of User Settings**             | **Page of User Settings for Data File** |
 | ------------------------------------------------------------------------------------- | ------------------------------------- | --------------------------------------- |
@@ -75,46 +75,46 @@ The following table lists the pages of settings found in the **User Settings** a
 
 When you edit settings in this dialog box, they are automatically stored in the corresponding *settings.4DSettings* file (see below).
 
-## `SET DATABASE PARAMETER` and user settings
+## `SET DATABASE PARAMETER` et paramètres utilisateur
 
-Some of the user settings are also available through the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html) command. User settings are parameters with the **Kept between two sessions** property set to **Yes**.
+Certains des paramètres utilisateur sont également disponibles via la commande [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html). Les paramètres utilisateur sont des paramètres dont la propriété **Kept between two sessions** est définie sur **Yes**.
 
-When the **User Settings** feature is enabled, user settings edited by the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html) command are automatically saved in the user settings for the data file.
+Lorsque la fonction **Paramètres utilisateur** est activée, les paramètres utilisateur modifiés par la commande [SET DATABASE PARAMETER](https://doc.4d.com/4dv19R/help/command/en/page642.html) sont automatiquement enregistrés dans les paramètres utilisateur du fichier de données.
 
-> `Table sequence number` is an exception; this setting value is always saved in the data file itself.
+> `Le numéro de séquence de la table` est une exception ; cette valeur de réglage est toujours enregistrée dans le fichier de données lui-même.
 
-## settings.4DSettings files
+## fichiers settingd.4DSettings
 
-When you [check the **Enable User Settings** option](#enabling-user-settings), user settings files are automatically created. Their location depends on the type of user settings defined.
+Lorsque vous [cochez l'option **Activer les paramètres utilisateur**](#enabling-user-settings), des fichiers de paramètres utilisateur sont automatiquement créés. Leur emplacement dépend du type de paramètres utilisateur défini.
 
-### User Settings (standard)
+### Paramètres utilisateur (standard)
 
-The standard user settings file is automatically created and placed in a settings folder at the following location:
+Le fichier de paramètres utilisateur standard est automatiquement créé et placé dans un dossier de paramètres à l'emplacement suivant :
 
 [`ProjectFolder/Settings/settings.4DSettings`](../Project/architecture.md#settings-1)
 
-... where *ProjectFolder* is the name of the folder containing the project structure file.
+... où *ProjectFolder* est le nom du dossier contenant le fichier de structure du projet.
 
-In merged applications, the user settings file is placed at the following location:
+Dans les applications fusionnées, le fichier de paramètres utilisateur est placé à l'emplacement suivant :
 
-* In single-user versions: ProjectFolder/Database/Settings/settings.4DSettings
-* In client/server versions: ProjectFolder/Server Database/Settings/settings.4DSettings
+* Dans les versions mono-utilisateur : ProjectFolder/Database/Settings/settings.4DSettings
+* Dans les versions client/serveur : ProjectFolder/Database/Settings/settings.4DSettings
 
-### User Settings for Data File
+### Paramètres utilisateur pour le fichier de données
 
-The user settings file linked to the data file is automatically created and placed in a settings folder at the following location:
+Le fichier de paramètres utilisateur lié au fichier de données est automatiquement créé et placé dans un dossier de paramètres à l'emplacement suivant :
 
 [`Data/Settings/settings.4DSettings`](../Project/architecture.md#settings)
 
-... where *Data* is the name of the folder containing the current data file of the application.
+... où *Data* est le nom du dossier contenant le fichier de données actuel de l'application.
 
-> When the data file is located at the same level as the project structure file, structure-based and data-based user settings files share the same location and file. The **User Settings for Data File...** menu command is not proposed.
+> Lorsque le fichier de données est situé au même niveau que le fichier de structure du projet, les fichiers de paramètres utilisateur basés sur la structure et sur les données partagent le même emplacement et le même dossier. La commande de menu **Paramètres utilisateur pour le fichier de données...** n'est pas proposée.
 
-Settings files are XML files; they can be read and modified using integrated 4D XML commands or using an XML editor. This means that you can manage settings by programming, particularly in the context of applications compiled and merged with 4D Volume Desktop. When you modify this file by programming, the changes are only taken into account the next time the database is opened.
+Les fichiers de paramètres sont des fichiers XML ; ils peuvent être lus et modifiés à l'aide des commandes XML intégrées de 4D ou d'un éditeur XML. Cela signifie que vous pouvez gérer les paramètres par programmation, notamment dans le cadre d'applications compilées et fusionnées avec 4D Volume Desktop. Lorsque vous modifiez ce fichier par programmation, les changements ne sont pris en compte que lors de la prochaine ouverture de la base de données.
 
-## Priority of settings
+## Priorité des paramètres
 
-Settings can be stored at three levels. Each setting defined at one level overrides the same setting defined at a previous level, if any:
+Les paramètres peuvent être stockés à trois niveaux. Chaque paramètre défini à un niveau a priorité sur le même paramètre défini à un niveau précédent, le cas échéant :
 
 | **Priority level** | **Nom**                                                                   | **Location**                                                                                                                                                  | **Commentaires**                                                                                                     |
 | ------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
