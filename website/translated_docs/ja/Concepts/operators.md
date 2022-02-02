@@ -47,9 +47,9 @@ $col:=New collection // $col を空のコレクションで初期化します
 - [**文字列演算子**](dt_string.md#string-operators)
 
 
-## Compound assignment operators
+## 複合代入演算子
 
-4D provides **compound assignment operators** that combine assignment with another operation. One example is the addition assignment operator (`+=`):
+4Dでは、代入と演算を組み合わせた **複合代入演算子** をサポートしています。 その一例として、加算代入演算子 (`+=`) があります。
 
 ```4d
 $a:=1 
@@ -57,42 +57,42 @@ $a+=2 // $a=3
 ```
 
 
-The following compound assignment operators are supported:
+次の複合代入演算子がサポートされています:
 
-| 演算子      | シンタックス             | Assigns | 例題                                                                  |
-| -------- | ------------------ | ------- | ------------------------------------------------------------------- |
-| 加算 (足し算) | Text += Text       | テキスト    | `$t+=" World"  //$t:=$t+" World"`                                   |
-|          | Number += Number   | 数値      | `$n+=5 //$n:=$n+5`                                                  |
-|          | Date += Number     | 日付      | `$d+=5 //$d:=$d+5`                                                  |
-|          | Time += Time       | 時間      | `$t1+=$t2 //$t1:=$t1+$t2`                                           |
-|          | Time += Number     | 数値      | `$t1+=5 //$t1:=$t1+5`                                               |
-|          | Picture += Picture | ピクチャー   | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`             |
-|          | Picture += Number  | ピクチャー   | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)` |
-| 減算 (引き算) | Number -= Number   | 数値      | `$n-=5 //$n:=$n-5`                                                  |
-|          | Date -= Number     | 日付      | `$d-=5 //$d:=$d-5`                                                  |
-|          | Time -= Time       | 時間      | `$t1-=$t2 //$t1:=$t1-$t2`                                           |
-|          | Time -= Number     | 数値      | `$t1-=5 //$t1:=$t1-5`                                               |
-|          | Picture -= Number  | ピクチャー   | `$p1-=5 //$p1:=$p1-5 (move $p1 horizontally 5 pixels to the left)`  |
-| 除算 (割り算) | Number /= Number   | 数値      | `$n/=5 //$n:=$n/5`                                                  |
-|          | Time /= Time       | 時間      | `$t1/=$t2 //$t1:=$t1/$t2`                                           |
-|          | Time /= Number     | 数値      | `$t1/=5 //$t1:=$t1/5`                                               |
-|          | Picture /= Picture | ピクチャー   | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
-|          | Picture /= Number  | ピクチャー   | `$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`                |
-| 乗算 (かけ算) | Text *= Number     | テキスト    | `$t*="abc"  //$t:=$t*"abc"`                                         |
-|          | Number *= Number   | 数値      | `$n*=5 //$n:=$n*5`                                                  |
-|          | Time *= Time       | 時間      | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
-|          | Time *= Number     | 数値      | `$t1*=5 //$t1:=$t1*5`                                               |
-|          | Picture *= Number  | ピクチャー   | `$p1*=5 //$p1:=$p1*5 (resize $p1 by 5)`                             |
+| 演算子      | シンタックス             | 代入される型 | 例題                                             |
+| -------- | ------------------ | ------ | ---------------------------------------------- |
+| 加算 (足し算) | Text += Text       | テキスト   | `$t+=" World"  //$t:=$t+" World"`              |
+|          | Number += Number   | 数値     | `$n+=5 //$n:=$n+5`                             |
+|          | Date += Number     | 日付     | `$d+=5 //$d:=$d+5`                             |
+|          | Time += Time       | 時間     | `$t1+=$t2 //$t1:=$t1+$t2`                      |
+|          | Time += Number     | 数値     | `$t1+=5 //$t1:=$t1+5`                          |
+|          | Picture += Picture | ピクチャー  | `$p1+=$p2 //$p1:=$p1+$p2 ($p1 の右に $p2 を追加します)` |
+|          | Picture += Number  | ピクチャー  | `$p1+=5 //$p1:=$p1+5 ($p1 を 5ピクセル右に移動します)`     |
+| 減算 (引き算) | Number -= Number   | 数値     | `$n-=5 //$n:=$n-5`                             |
+|          | Date -= Number     | 日付     | `$d-=5 //$d:=$d-5`                             |
+|          | Time -= Time       | 時間     | `$t1-=$t2 //$t1:=$t1-$t2`                      |
+|          | Time -= Number     | 数値     | `$t1-=5 //$t1:=$t1-5`                          |
+|          | Picture -= Number  | ピクチャー  | `$p1-=5 //$p1:=$p1-5 ($p1 を 5ピクセル左に移動します)`     |
+| 除算 (割り算) | Number /= Number   | 数値     | `$n/=5 //$n:=$n/5`                             |
+|          | Time /= Time       | 時間     | `$t1/=$t2 //$t1:=$t1/$t2`                      |
+|          | Time /= Number     | 数値     | `$t1/=5 //$t1:=$t1/5`                          |
+|          | Picture /= Picture | ピクチャー  | `$p1/=$p2 //$p1:=$p1/$p2 ($p1 の下に $p2 を追加します)` |
+|          | Picture /= Number  | ピクチャー  | `$p1/=5 //$p1:=$p1/5 ($p1 を 5ピクセル垂直に移動します)`    |
+| 乗算 (かけ算) | Text *= Number     | テキスト   | `$t*="abc"  //$t:=$t*"abc"`                    |
+|          | Number *= Number   | 数値     | `$n*=5 //$n:=$n*5`                             |
+|          | Time *= Time       | 時間     | `$t1*=$t2 //$t1:=$t1*$t2`                      |
+|          | Time *= Number     | 数値     | `$t1*=5 //$t1:=$t1*5`                          |
+|          | Picture *= Number  | ピクチャー  | `$p1*=5 //$p1:=$p1*5 ($p1 を 5倍にリサイズします)`       |
 
-These operators apply on any [assignable expressions](quick-tour.md#assignable-vs-non-assignable-expressions) (except pictures as object properties or collection elements).
+これらの演算子は、あらゆる [代入可能な式](quick-tour.md#代入可-vs-代入不可の式) に適用できます (オブジェクトのプロパティやコレクション要素としてのピクチャーを除く)。
 
-The operation "source `operator` value" is not strictly equivalent to "source := source `operator` value" because the expression designating the source (variable, field, object property, collection element) is only evaluated once. For example, in such expression as `getPointer()->+=1` the `getPointer` method is called only once.
+"代入先 複合代入演算子 値" と "代入先 := 代入先 演算子 値" は、厳密には等価ではありません。なぜなら、前者の場合、代入先 (変数・フィールド・オブジェクトプロパティ・コレクション要素) は一度しか評価されないからです。 たとえば、`getPointer()->+=1` のような式では、`getPointer` メソッドは一度だけ呼び出されます。
 
-> [Character indexing in text](dt_string.md#character-reference-symbols) and [byte indexing in blob](dt_blob.md#accessing-a-scalar-blobs-bytes) do not support these operators.
+> [テキストの文字インデックス](dt_string.md#文字参照記号) および [BLOB のバイトインデックス](dt_blob.md#スカラーBLOB-のバイトへのアクセス) では、これらの演算子はサポートされません。
 #### 例題
 
 ```4d
-// Addition
+// 加算
 $x:=2
 $x+=5 //$x=7
 
@@ -102,19 +102,19 @@ $t+=" World" //$t="Hello World"
 $d:=!2000-11-10!
 $d+=10 //$d=!2000-11-20!
 
-// Subtraction
+// 減算
 $x1:=10
 $x1-=5 //$x1=5
 
 $d1:=!2000-11-10!
 $d1-=10 // $d1=!2000-10-31!
 
-// Division
+// 除算
 $x3:=10
 $x3/=2 // $x3=5
 
 
-// Multiplication
+// 乗算
 $x2:=10
 $x2*=5 // $x2=10
 
@@ -128,9 +128,9 @@ $t2*=2 // $t2="HelloHello"
 
 ## 短絡演算子
 
-The **&&** and **||** operators are **short circuit operators**. A short circuit operator is one that doesn't necessarily evaluate all of its operands.
+演算子 **&&** と **||** は、短絡演算子です。 短絡演算子とは、必ずしもすべてのオペランドを評価しない演算子のことです。
 
-The difference with the single [**&** and **|** boolean operators](dt_boolean.md#logical-operators) is that the short-circuit operators **&&** and **||** don't return a boolean value. They evaluate expressions as [truthy or falsy](#truthy-and-falsy), then return one of the expressions.
+[**&** や **|** 論理演算子](dt_boolean.md#論理演算子) と異なる点は、短絡演算子の **&&** と **||** はブール値を返さないことです。 これらは式を [truthy (真的) または falsy (偽的)](#truthy-と-falsy) で評価し、どちらかの式を返します。
 
 ### AND 短絡演算子 (&&)
 
