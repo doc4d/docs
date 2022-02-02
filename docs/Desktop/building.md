@@ -213,7 +213,7 @@ Items must be installed:
 
 On this tab, you can build customized client-server applications that are homogenous, cross-platform and with an automatic update option. 
 
-![](assets/en/Project/buildappCSProj.png)
+![](assets/en/Desktop/client-server-buildapp.png)
 
 ### What is a Client/Server application?  
 
