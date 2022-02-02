@@ -134,9 +134,9 @@ Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#symbol-f
 
 Permet de définir le nombre de passages (analyse du code) effectués par le compilateur et donc la durée de la compilation.
 
-- **Type the variables**: Passes by all the stages that make compilation possible.
-- **Process and interprocess are typed**: The pass for typing process and interprocess variables is not carried out. This option can be used when you have already carried out the typing of all your process and interprocess variables either yourself or using the function for automatic generation of compiler methods.
-- **All variables are typed**: The pass for typing local, process and interprocess variables is not carried out. Use this option when you are certain that all the process, interprocess and local variables have been clearly typed.
+- **Typez les variables** : Passe par toutes les étapes qui permettent la compilation.
+- **Les process et interprocess sont typés** : Le passage pour le typage des variables de process et interprocess n'est pas effectué. Cette option peut être utilisée lorsque vous avez déjà effectué le typage de toutes vos variables process et interprocess soit vous-même, soit en utilisant la fonction de génération automatique des méthodes de compilation.
+- **Toutes les variables sont typées** : Le pass pour le typage des variables locales, process et interprocess n'est pas effectué. Utilisez cette option lorsque vous êtes certain que toutes les variables process, interprocess et locales ont été clairement typées.
 
 #### Compilation Target
 
@@ -146,26 +146,26 @@ Permet de définir le nombre de passages (analyse du code) effectués par le com
 | v19     | Ajout         |
 </details>
 
-This setting allows you to select the processor family for which your 4D project must be natively compiled. The 4D compiler can build native code for two processor families:
+Ce paramètre vous permet de sélectionner la famille de processeurs pour laquelle votre projet 4D doit être compilé en mode natif. Le compilateur 4D peut construire du code natif pour deux familles de processeurs :
 
-- **Intel/AMD** processors (all machines),
-- **Apple Silicon** processors.
+- Les processeurs **Intel/AMD** (toutes les machines),
+- les processeurs **Apple Silicon**.
 
-Two target options are proposed. The result depends on the processor of the machine on which 4D is running.
+Deux options de cible sont proposées. Le résultat dépend du processeur de la machine sur laquelle 4D est exécuté.
 
-| *Option*                                         | *on Windows Intel/AMD*                                                                    | *on macOS Intel*                                                                            | *on macOS Silicon*                                                                          |
-| ------------------------------------------------ | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **All processors (Intel/AMD and Apple Silicon)** | Code for Intel/AMD<br>*It is not possible to produce Apple Silicon code on Windows* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* | Code for Apple Silicon + Code for Intel/AMD<br>*Two compiled codes will be available* |
-| **My processor (processor)**                     | Code for Intel/AMD                                                                        | Code for Intel/AMD                                                                          | Code for Apple Silicon                                                                      |
+| *Option*                                              | *sur Windows Intel/AMD*                                                                            | *sur macOS Intel*                                                                               | *sur macOS Silicon*                                                                             |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| **Tous les processeurs (Intel/AMD et Apple Silicon)** | Code pour Intel/AMD<br>*Il n'est pas possible de produire du code Apple Silicon sur Windows* | Code pour Apple Silicon + Code pour Intel/AMD<br>*Deux codes compilés seront disponibles* | Code pour Apple Silicon + Code pour Intel/AMD<br>*Deux codes compilés seront disponibles* |
+| **My processor (processor)**                          | Code for Intel/AMD                                                                                 | Code for Intel/AMD                                                                              | Code for Apple Silicon                                                                          |
 
 > Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang comes with the latest version of Xcode. See the [Silicon compiler requirements](#requirements) for more information.
 
-### Default typing
+### Type par défaut
 
-Use this area to set the default type for ambiguous database objects.
+Utilisez cette zone pour définir le type par défaut pour les objets de base de données ambigus.
 
-- **Numeric**: Used to force numeric typing in an unambiguous manner, either in real or longint. This will not override the directives you may have set in your project. You can optimize the running of your database by choosing the Longint type.
-- **Button**: Used to force button typing in an unambiguous manner, either in real or longint. This will not override the directives you may have set in your project. This type applies to buttons as well as check boxes, picture buttons, button grids, radio buttons, picture pop-up menus and drop-down lists.
+- **Numérique** : Permet de forcer le typage numérique de manière non ambiguë, soit en real ou longint. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. Vous pouvez optimiser le fonctionnement de votre base de données en choisissant le type Longint.
+- **Button**: Used to force button typing in an unambiguous manner, either in real or longint. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. This type applies to buttons as well as check boxes, picture buttons, button grids, radio buttons, picture pop-up menus and drop-down lists.
 
 ### Compiler Methods for...
 
