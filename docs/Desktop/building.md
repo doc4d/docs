@@ -257,7 +257,7 @@ When you execute a 4D Server application built with that option, the server firs
 
 The **directory.json** file user settings folder is read-only. All the modifications made to users, groups and permissions during server execution are stored in the **directory.json** inside the data folder. 
 
-Embedding the project **directory.json** file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications will be added to the data folder directory.json, allowing local customization. 
+Embedding the project **directory.json** file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications will be added to the data folder **directory.json**, allowing local customization. 
 
 #### Allow connection of Silicon Mac clients
 
