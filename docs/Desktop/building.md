@@ -213,7 +213,7 @@ Items must be installed:
 
 On this tab, you can build customized client-server applications that are homogenous, cross-platform and with an automatic update option. 
 
-![](assets/en/Project/buildappCSProj.png)
+![](assets/en/Desktop/client-server-buildapp.png)
 
 ### What is a Client/Server application?  
 
@@ -247,7 +247,11 @@ Click on the **[...]** button and use the *Browse for folder* dialog box to loca
 	
 #### Current version
 
-Used to indicate the current version number for the application generated. You may then accept or reject connections by client applications according to their version number. The interval of compatibility for client and server applications is set using specific [XML keys](#build-application-settings)).	
+Used to indicate the current version number for the application generated. You may then accept or reject connections by client applications according to their version number. The interval of compatibility for client and server applications is set using specific [XML keys](#build-application-settings)).
+
+#### Embed the project Users and Groups in built server application
+
+When you check this option, the project's [Directory.json](../Users/handling_users_groups.md#directoryjson-file) file is copied in the user settings folder of the built 4D server application during the build application process.
 
 #### Allow connection of Silicon Mac clients
 
