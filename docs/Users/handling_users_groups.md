@@ -214,17 +214,5 @@ This file can be stored at the following locations, depending on your needs:
 - If you want to use the same directory for all data files (or if you use a single data file), store the **directory.json** file in the user settings folder, i.e. in the "Settings" folder at the [same level as the "Project" folder](Project/architecture.md#project-folder) (default location). 
 - If you want to use a specific directory file per data file, store the **directory.json** file in the data settings folder, i.e. in the ["Settings" folder of the "Data" folder](Project/architecture.md#settings). If a **directory.json** file is present at this location, it takes priority over the file in the user settings folder. This custom/local Users and Groups configuration will left untouched by an application upgrade.  
 
-> If no password is assigned to the "Designer" user, the **directory.json** is not created.
-
-### Client/server user configuration 
-
-To allow for safe changes of passwords and group memberships in a deployed environment, you can include your `Directory.json` file in the server application during the build, using the [corresponding build application option](../Desktop/building.md#embed-the-project-users-and-groups-in-built-server-application).
-
-When you execute a 4D Server application built with that option, the server first loads the users, groups and permissions placed in the `Directory.json` file located in the server's user settings folder. Then, the server overrides them with the users, groups and permissions of the `Directory.json` file located in the data settings folder.
-
-The `Directory.json` file user settings folder is read-only. All the modifications made to users, groups and permissions during server execution are stored in the `Directory.json` inside the data folder. 
-
-This makes sure your defined users and groups always reappear at server startup, even if the administrator of the deployed 4D Server has deleted them.
-
-
+> To allow for safe changes of passwords and group memberships in a deployed environment, you can include your **directory.json** file in the server application during the build, using the [corresponding build application option](../Desktop/building.md#embed-the-project-users-and-groups-in-built-server-application).
 
