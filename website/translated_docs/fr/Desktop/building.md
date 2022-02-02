@@ -251,7 +251,7 @@ Des éléments doivent être installée :
 
 4D vous permet de générer des applications client/serveur personnalisées, homogènes, multi-plateformes et avec option de mise à jour automatique. 
 
-![](assets/en/Project/buildappCSProj.png)
+![](assets/en/Desktop/client-server-buildapp.png)
 
 
 
@@ -302,7 +302,13 @@ Utilisée pour indiquer le numéro de version courante de l'application génér�
 
 #### Data linking mode
 
-This option lets you choose the linking mode between the merged application and the local data file. 
+This option lets you choose the linking mode between the merged application and the local data file.
+
+
+
+#### Embed the project Users and Groups in built server application
+
+When you check this option, the project's [Directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the merged 4D Server application during the build application process.
 
 
 

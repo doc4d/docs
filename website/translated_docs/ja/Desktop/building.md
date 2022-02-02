@@ -211,7 +211,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 このページでは、クライアントの自動更新もサポートできるクロスプラットフォームなクライアント/サーバーアプリケーションをビルドするための設定をおこないます。
 
-![](assets/en/Project/buildappCSProj.png)
+![](assets/en/Desktop/client-server-buildapp.png)
 
 ### クライアント/サーバーアプリケーションとは
 
@@ -245,6 +245,10 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 #### 現在のバージョン
 
 生成されるアプリケーションのバージョン番号を指定します。 このバージョン番号をもとに、クライアントアプリケーションからの接続を受け入れたり拒否したりできます。 クライアントとサーバーアプリケーションで互換性のある番号の範囲は [XML キー](#アプリケーションビルド設定) で設定します。
+
+#### Embed the project Users and Groups in built server application
+
+When you check this option, the project's [Directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the merged 4D Server application during the build application process.
 
 #### Silicon macOS クライアントからの接続を許可
 

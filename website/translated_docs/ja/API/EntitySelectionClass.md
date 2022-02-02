@@ -938,7 +938,7 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Params -->
 | 引数     | タイプ  |    | 説明                                                                     |
 | ------ | ---- | -- | ---------------------------------------------------------------------- |
-| result | テキスト | <- | Learnt attributes linked to the entity selection, separated by a comma |
+| result | Text | <- | Learnt attributes linked to the entity selection, separated by a comma |
 <!-- END REF -->
 
 #### 説明

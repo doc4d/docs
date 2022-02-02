@@ -148,15 +148,15 @@ title: リモートデータストアの利用
  $myEntity:=$myEntity.next() // 次のエンティティも同じコンテキストを使用してロードされます
 ```
 
-### ORDA Cache
+### ORDAキャッシュ
 
-Data requested from the server via ORDA is loaded in the ORDA cache (which is different from the 4D cache). By default, the ORDA cache expires after 30 seconds. The data contained in the cache when the timeout is reached is considered as expired: the data remains in the cache until 4D unloads expired data when space is needed.
+ORDA経由でサーバーにリクエストしたデータは、(4Dキャッシュとは異なる) ORDAキャッシュに読み込まれます。 デフォルトでは、ORDAキャッシュは 30秒後に期限切れとなります。 タイムアウトが経過したキャッシュのデータは期限切れとみなされます。期限切れデータは、容量が必要なときに 4D に破棄されるまでキャッシュに残ります。
 
-### List of class functions
+### クラス関数一覧
 
-The following ORDA class functions can be used to handle the ORDA cache and the contents of the optimization context in a client/server configuration. For more details, check out their description:
+以下の ORDAクラス関数は、クライアント/サーバー構成で ORDAキャッシュと最適化コンテキストの内容を扱うために使用することができます。 詳細については、各関数の説明を参照ください:
 
-DataClass class:
+DataClass クラス:
 * [.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
 * [.getRemoteCache()](../API/DataClassClass.md#getremotecache)
 * [.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)
@@ -166,8 +166,8 @@ DataClass class:
 * [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
 * [.getCount()](../API/DataClassClass.md#getcount)
 
-Entity Class:
+Entity クラス:
 * [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
 
-EntitySelectionClass:
+EntitySelection クラス:
 * [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
