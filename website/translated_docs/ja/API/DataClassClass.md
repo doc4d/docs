@@ -1257,7 +1257,7 @@ softwares:{
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
 | 引数       | タイプ    |    | 説明                                                                         |
 | -------- | ------ | -- | -------------------------------------------------------------------------- |
-| settings | オブジェクト | -> | Object that sets the timeout and size of the ORDA cache for the dataclass. |
+| settings | Object | -> | Object that sets the timeout and size of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
 
@@ -1305,7 +1305,7 @@ When saving an entity, it is updated in the cache and expires once the timeout i
 <!-- REF #DataClassClass.getRemoteCache().Params -->
 | 引数     | タイプ    |    | 説明                                                                  |
 | ------ | ------ | -- | ------------------------------------------------------------------- |
-| result | オブジェクト | <- | Object describing the contents of the ORDA cache for the dataclass. |
+| result | Object | <- | Object describing the contents of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
 
@@ -1317,20 +1317,20 @@ Calling this function from a 4D single-user application returns `Null`.
 
 The returned object has the following properties:
 
-| プロパティ      | タイプ    | 説明                                                                        |
-| ---------- | ------ | ------------------------------------------------------------------------- |
-| maxEntries | 倍長整数   | Maximum number of entries collection.                                     |
-| stamp      | 倍長整数   | Stamp of the cache.                                                       |
-| timeout    | 倍長整数   | Time remaining before the new entries in the cache are marked as expired. |
-| entries    | コレクション | Contains an entry object for each entity in the cache.                    |
+| プロパティ      | タイプ        | 説明                                                                        |
+| ---------- | ---------- | ------------------------------------------------------------------------- |
+| maxEntries | Longint    | Maximum number of entries collection.                                     |
+| stamp      | Longint    | Stamp of the cache.                                                       |
+| timeout    | Longint    | Time remaining before the new entries in the cache are marked as expired. |
+| entries    | Collection | Contains an entry object for each entity in the cache.                    |
 
 Each entry object in the `entries` collection has the following properties:
 
-| プロパティ   | タイプ    | 説明                                |
-| ------- | ------ | --------------------------------- |
-| data    | オブジェクト | Object holding data on the entry. |
-| expired | ブール    | True if the entry has expired.    |
-| key     | テキスト   | Primary key of the entity.        |
+| プロパティ   | タイプ     | 説明                                |
+| ------- | ------- | --------------------------------- |
+| data    | Object  | Object holding data on the entry. |
+| expired | Boolean | True if the entry has expired.    |
+| key     | Text    | Primary key of the entity.        |
 
 ## .clearRemoteCache()
 
@@ -1386,8 +1386,8 @@ $ds.Persons.clearRemoteCache()
 <!-- REF #DataClassClass.getRemoteContextInfo().Params -->
 | 引数          | タイプ    |    | 説明                                                        |
 | ----------- | ------ | -- | --------------------------------------------------------- |
-| contextName | テキスト   | -> | Name of the context                                       |
-| result      | オブジェクト | <- | Object that holds information on the optimization context |
+| contextName | Text   | -> | Name of the context                                       |
+| result      | Object | <- | Object that holds information on the optimization context |
 <!-- END REF -->
 
 #### 説明
@@ -1407,12 +1407,12 @@ For this function to properly return a context, one of the following conditions 
 #### Properties of the returned object
 The returned object has the following properties:
 
-| プロパティ                   | タイプ  | 説明                                                                                                                                    |
-| ----------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| name                    | テキスト | Name of the context                                                                                                                   |
-| main                    | テキスト | Learnt attributes associated to the context separated by a comma                                                                      |
-| dataclass               | テキスト | The dataclass linked to the context                                                                                                   |
-| currentItem (optional)* | テキスト | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box |
+| プロパティ             | タイプ  | 説明                                                                                                                                    |
+| ----------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| name              | Text | Name of the context                                                                                                                   |
+| main              | Text | Learnt attributes associated to the context separated by a comma                                                                      |
+| dataclass         | Text | The dataclass linked to the context                                                                                                   |
+| currentItem (任意)* | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box |
 
 `currentItem` is returned as Null or an empty string if:
 * the context name is one used for a list box
@@ -1553,15 +1553,15 @@ $info:=$ds.getAllRemoteContexts()
 <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteContextInfo().Params -->
-| 引数              | タイプ                         |    | 説明                                                            |
-| --------------- | --------------------------- | -- | ------------------------------------------------------------- |
-| contextName     | テキスト                        | -> | Name of the context                                           |
-| dataClassName   | テキスト                        | -> | データクラスの名称                                                     |
-| dataclassObject | オブジェクト                      | -> | dataclass object (e.g datastore.Employee)                     |
-| attributes      | テキスト                        | -> | Attribute list separated by a comma                           |
-| attributescoll  | Collection of Text elements | -> | Collection of attribute names                                 |
-| contextType     | テキスト                        | -> | If provided, value must be "main" or "currentItem"            |
-| pageLength      | 整数                          | -> | Page length of the entity selection associated to the context |
+| 引数              | タイプ               |    | 説明                                                            |
+| --------------- | ----------------- | -- | ------------------------------------------------------------- |
+| contextName     | Text              | -> | Name of the context                                           |
+| dataClassName   | Text              | -> | データクラスの名称                                                     |
+| dataclassObject | Object            | -> | dataclass object (e.g datastore.Employee)                     |
+| attributes      | Text              | -> | Attribute list separated by a comma                           |
+| attributescoll  | Text の Collection | -> | Collection of attribute names                                 |
+| contextType     | Text              | -> | If provided, value must be "main" or "currentItem"            |
+| pageLength      | Integer           | -> | Page length of the entity selection associated to the context |
 <!-- END REF -->
 
 #### 説明
@@ -1726,9 +1726,9 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
-| 引数     | タイプ |    | 説明                                  |
-| ------ | --- | -- | ----------------------------------- |
-| result | 整数  | <- | Number of entities in the dataclass |
+| 引数     | タイプ     |    | 説明                                  |
+| ------ | ------- | -- | ----------------------------------- |
+| result | Integer | <- | Number of entities in the dataclass |
 <!-- END REF -->
 #### 説明
 
