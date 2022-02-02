@@ -663,7 +663,7 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
 | 引数     | タイプ  |    | 説明                                                                     |
 | ------ | ---- | -- | ---------------------------------------------------------------------- |
-| result | テキスト | <- | Learnt attributes linked to the entity selection, separated by a comma |
+| result | Text | <- | Learnt attributes linked to the entity selection, separated by a comma |
 <!-- END REF -->
 
 #### 説明
