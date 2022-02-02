@@ -3,45 +3,45 @@ id: operators
 title: 演算子
 ---
 
-An operator is a symbol or a group of symbols that you use to check, modify, or combine values. 日常的に使用されている演算子も多くあります。 For example, `1 + 2` uses the addition (or plus sign) operator to add two numbers together, and the result is 3. Comparison operators, like = or >, let you compare two or more values.
+演算子とは、値のチェック・変更・結合に使用する記号または記号のグループです。 日常的に使用されている演算子も多くあります。 例えば、`1 + 2` という式は加算演算子 (プラス記号) を使用し、2つの数値を足し合わせて、3という結果を返します。 = や > などの比較演算子は、2つ以上の値を比較するためのものです。
 
-The 4D language supports the operators you may already know from other languages like C or JavaScript. However, the assignment operator is `:=` to prevent it from being mistakenly used when the equal to operator (`=`) is intended. [Basic operators](#basic-operators) such as arithmetic operators (+, -, *, /, %...) and comparison operators (=, >, >=...) can be used with numbers, but also with boolean, text, date, time, pointer, or picture data types. Like JavaScript, the 4D language supports the concept of [truthy and falsy values](#truthy-and-falsy), which in use in [short-cicrcuit operators](#short-circuit-operators).
+4Dランゲージでサポートされている演算子は、C や JavaScript など他の言語でも使用されています。 ただし、等号比較演算子 (`=`) との誤用を防ぐため、代入演算子は `:=` となっています。 算術演算子 (+、-、*、/、%...) や、比較演算子 (=、>、>=...) などの [基本演算子](#基本演算子) は、数値のほか、ブール、テキスト、日付、時間、ポインター、ピクチャーのデータ型にも使用可能です。 JavaScript と同様に、4Dランゲージも [truthy (真的) と falsy (偽的)](#truthy-と-falsy) の概念をサポートしており、[短絡演算子](#短絡演算子) で使用されています。
 
 
 ## 用語
 
-The 4D language supports **binary** and **ternary** operators:
+4Dランゲージでは、**二項演算子** および **三項演算子** をサポートしています:
 
-- binary operators operate on two targets (such as 2 + 3) and appear in between their two targets.
-- ternary operators operate on three targets. Like C, 4D has only one ternary operator, the [ternary conditional operator](#ternary-operator) (`a ? b : c`).
+- 二項演算子とは、2つの対象に対して演算をおこない、その 2つの対象の間に表示されます (例: 2＋3)。
+- 三項演算子は 3つの対象に対して演算をおこないます。 C と同様、4D の三項演算子は 1つしかありません: 三項条件演算子 (a ? b : c</code>) です。
 
-The values that operators affect are operands. In the expression 1 + 2, the + symbol is a binary operator and its two operands are the values 1 and 2.
+演算子が影響を与える対象はオペランド (被演算子) と呼ばれます。 1 + 2 という式では、+ 記号は二項演算子であり、その 2つのオペランドは値 1 と 2 です。
 
 
 
 ## 代入
 
-The **assignment operator** (`a:=b`) initializes or updates the value of `a` with the value of `b`:
+**代入演算子** (`a:=b`) は、`a` の値を `b` の値で初期化、または更新します。
 
 ```4d
-$myNumber:=3 //assigns 3 to MyNumber variable  
-$myDate:=!2018/01/21! //assigns a date literal
-$myLength:=Length("Acme") //assigns the result of the command (4) to $myLength
-$col:=New collection //$col is initialized with an empty collection
+$myNumber:=3 // MyNumber 変数に 3 を代入します
+$myDate:=!2018/01/21! // 日付リテラルを代入します
+$myLength:=Length("Acme") // コマンドの結果 (4) を $myLength に代入します
+$col:=New collection // $col を空のコレクションで初期化します
 ```
 
-> Do NOT confuse the assignment operator `:=` with the equality comparison operator `=`. A different assignment operator (and not `=`) was deliberately chosen to avoid issues and confusion which often occur with == or === in other programming languages. このような間違いはコンパイラーにとっても発見しにくく、時間を消耗するトラブルシューティングのもとです。
+> 代入演算子 `:=` と等号比較演算子 `=` とを混同しないように注意してください。 `=` とは異なる代入演算子が採用されたのは意図的なことで、他のプログラミング言語で == や === の使用によって度々起こる間違いを避けるためです。 このような間違いはコンパイラーにとっても発見しにくく、時間を消耗するトラブルシューティングのもとです。
 
 
-## Basic operators
+## 基本演算子
 
-Operator results depend on the **data types** they are applied to. 4D supports different operators on scalar data types. They are described with the data types, in the following sections:
+演算の結果は、オペランドの **データ型** に依存します。4D はスカラーデータ型に対して様々な演算子をサポートしています。 詳細は、各データ型の項にて説明されています:
 
-- [**Logical operators**](dt_boolean.md#logical-operators) (on **boolean** expressions)
+- [**論理演算子**](dt_boolean.md#論理演算子) (**ブール** 式に使用)
 - [**日付演算子**](dt_date.md#date-operators)
 - [**時間演算子**](dt_time.md#time-operators)
 - [**数値演算子**](dt_number.md#number-operators)
-- [**Bitwise operators**](dt_number.md#bitwise-operators) (on **long integer** expressions)
+- [**ビットワイズ演算子**](dt_number.md#ビットワイズ演算子) (**倍長整数** 式に使用)
 - [**ピクチャー演算子**](dt_picture.md#picture-operators)
 - [**ポインター演算子**](dt_pointer.md#pointer-operators)
 - [**文字列演算子**](dt_string.md#string-operators)
