@@ -672,7 +672,7 @@ id name price vat
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
-This time `\r\n` (CRLF) is used as line delimiter.
+このとき、改行コードは `\r\n` (CRLF) です。
 
 
 

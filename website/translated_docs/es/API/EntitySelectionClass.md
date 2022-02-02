@@ -926,6 +926,27 @@ El siguiente código genérico duplica todas las entidades de la entity selectio
 
 <!-- END REF -->
 
+<!-- REF EntitySelectionClass.getRemoteContextAttributes().Desc -->
+## .getRemoteContextAttributes()
+
+<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Syntax -->
+**.getRemoteContextAttributes()** : Text
+<!-- END REF -->
+
+<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Params -->
+| Parámetros | Tipo  |    | Descripción                                                            |
+| ---------- | ----- | -- | ---------------------------------------------------------------------- |
+| result     | Texto | <- | Learnt attributes linked to the entity selection, separated by a comma |
+<!-- END REF -->
+
+#### Descripción
+
+The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
+
+If there are no learnt attributes in the optimization context, the function returns an empty Text element.
+
+#### Ejemplo 
+
 
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()

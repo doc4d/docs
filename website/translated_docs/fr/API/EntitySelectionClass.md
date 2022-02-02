@@ -926,6 +926,27 @@ Le code générique suivant duplique toutes les entités de l'entity selection :
 
 <!-- END REF -->
 
+<!-- REF EntitySelectionClass.getRemoteContextAttributes().Desc -->
+## .getRemoteContextAttributes()
+
+<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Syntax -->
+**.getRemoteContextAttributes()** : Text
+<!-- END REF -->
+
+<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Params -->
+| Paramètres | Type  |    | Description                                                            |
+| ---------- | ----- | -- | ---------------------------------------------------------------------- |
+| result     | Texte | <- | Learnt attributes linked to the entity selection, separated by a comma |
+<!-- END REF -->
+
+#### Description
+
+The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
+
+If there are no learnt attributes in the optimization context, the function returns an empty Text element.
+
+#### Exemple 
+
 
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()

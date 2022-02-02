@@ -928,6 +928,27 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 
 <!-- END REF -->
 
+<!-- REF EntitySelectionClass.getRemoteContextAttributes().Desc -->
+## .getRemoteContextAttributes()
+
+<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Syntax -->
+**.getRemoteContextAttributes()** : Text
+<!-- END REF -->
+
+<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Params -->
+| 引数     | タイプ  |    | 説明                                                                     |
+| ------ | ---- | -- | ---------------------------------------------------------------------- |
+| result | テキスト | <- | Learnt attributes linked to the entity selection, separated by a comma |
+<!-- END REF -->
+
+#### 説明
+
+The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
+
+If there are no learnt attributes in the optimization context, the function returns an empty Text element.
+
+#### 例題 
+
 
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()
