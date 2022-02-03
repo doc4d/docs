@@ -308,7 +308,13 @@ This option lets you choose the linking mode between the merged application and 
 
 #### Embed the project Users and Groups in built server application
 
-When you check this option, the project's [Directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the merged 4D Server application during the build application process.
+When you check this option, the project's [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the merged 4D Server application during the build application process.
+
+When you execute a 4D Server application built with that option, the server first loads the users, groups and permissions placed in the **directory.json** file located in the server's user settings folder (if any). Then, according to the standard [directory.json](../Users/handling_users_groups.md#directoryjson-file) file mechanism, the server overrides them with the users, groups and permissions of the **directory.json** file located in the data settings folder.
+
+The **directory.json** file user settings folder is read-only. All the modifications made to users, groups and permissions during server execution are stored in the **directory.json** inside the data folder. 
+
+Embedding the project **directory.json** file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications will be added to the data folder **directory.json**, allowing local customization. 
 
 
 
