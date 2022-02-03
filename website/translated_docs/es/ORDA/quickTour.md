@@ -78,7 +78,7 @@ $status:=$entity.save()
 
 
 
-The editor for users is located in the Toolbox of 4D.
+El editor de usuarios se encuentran en la caja de herramientas de 4D.
 
 ![](assets/en/Users/editor.png)
 
