@@ -127,7 +127,7 @@ Permet de générer le fichier de symboles (voir [fichier de symboles](#symbol-f
 
 #### Générer le fichier d'erreurs
 
-Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#symbol-file)) au moment du contrôle syntaxique. The error file is created in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_errors.xml`.
+Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#symbol-file)) au moment du contrôle syntaxique. Le fichier d'erreur est créé dans le [dossier Logs](Project/architecture.md#logs) du projet portant le nom `ProjectName_errors.xml`.
 
 
 #### Chemin de compilation
@@ -165,37 +165,37 @@ Deux options de cible sont proposées. Le résultat dépend du processeur de la 
 Utilisez cette zone pour définir le type par défaut pour les objets de base de données ambigus.
 
 - **Numérique** : Permet de forcer le typage numérique de manière non ambiguë, soit en real ou longint. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. Vous pouvez optimiser le fonctionnement de votre base de données en choisissant le type Longint.
-- **Button**: Used to force button typing in an unambiguous manner, either in real or longint. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. This type applies to buttons as well as check boxes, picture buttons, button grids, radio buttons, picture pop-up menus and drop-down lists.
+- **Bouton** : Utilisé pour forcer la saisie d'un bouton de manière non ambiguë, soit en real ou en longint. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. Ce type s'applique aux boutons ainsi qu'aux cases à cocher, aux boutons image, aux grilles de boutons, aux boutons radio, aux menus image pop-up et aux listes déroulantes.
 
-### Compiler Methods for...
+### Méthodes du compilateur pour...
 
-This area lets you rename the Compiler methods that are generated automatically by the compiler when you click [Generate Typing](#generate-typing).
+Cette zone vous permet de renommer les méthodes du compilateur qui sont générées automatiquement par le compilateur lorsque vous cliquez sur [Générer le typage](#generate-typing).
 
-Up to 5 compiler methods may be generated; a compiler method is only generated if the project contains the following items:
+Jusqu'à 5 méthodes de compilateur peuvent être générées ; une méthode de compilateur n'est générée que si le projet contient les éléments suivants :
 
-- **Variables**: Groups together process variable declarations;
-- **Interprocess Variables**: Groups together interprocess variable declarations;
-- **Arrays**: Groups together process array declarations;
-- **Interprocess Arrays**: Groups together interprocess array declarations;
-- **Methods**: Groups together method parameter declarations (for instance, `C_LONGINT(mymethod;$1;$2)`).
+- **Variables** : Regroupe les déclarations de variables process ;
+- **Variables interprocess** : Regroupe les déclarations de variables interprocess ;
+- **Tableaux** : Regroupe les déclarations de tableaux de process ;
+- **Tableaux interprocess** : Regroupe les déclarations de tableaux interprocess ;
+- **Méthodes** : Regroupe les déclarations de paramètres de méthodes (par exemple, `C_LONGINT(mymethod;$1;$2)`).
 
-You can rename each of these methods in the corresponding areas, but they will always be preceded by the label `Compiler_` (non-modifiable). The name of each method (prefix included) must be no longer than 31 characters. It must also be unique and comply with [4D rules for naming methods](Concepts/identifiers.md#project-methods).
+Vous pouvez renommer chacune de ces méthodes dans les zones correspondantes, mais elles seront toujours précédées de l'étiquette `Compiler_` (non modifiable). Le nom de chaque méthode (préfixe compris) ne doit pas comporter plus de 31 caractères. Il doit également être unique et respecter les [règles 4D de nommage des méthodes](Concepts/identifiers.md#project-methods).
 
 
-## Compilation tools
+## Outils de compilation
 
-### Symbol file
+### Fichier de symboles
 
-If you check the [**Generate the symbol file**](#generate-the-symbol-file) option in the compiler settings, a symbol file called `ProjectName_symbols.txt` is created in the [Logs folder](Project/architecture.md#logs) of the project during compilation. It is divided into several parts:
+Si vous cochez l'option [**Générer le fichier de symboles**](#generate-the-symbol-file) dans les propriétés du compilateur, un fichier de symboles appelé `ProjectName_symbols.txt` est créé dans le [dossier Logs](Project/architecture.md#logs) du projet pendant la compilation. Il est divisé en plusieurs parties :
 
-#### List of process and interprocess variables
+#### Liste des variables process et interprocess
 
-These two lists contain four columns:
+Ces deux listes contiennent quatre colonnes :
 
-- Names of process and interprocess variables and arrays used in your project. These variables are listed in alphabetical order.
-- Type of the variable. Types are set by compiler directive commands or are determined by the compiler based on the use of the variable. If the type of a variable cannot be determined, the column is empty.
-- Number of dimensions if the variable is an array.
-- Reference to the context in which the compiler established the type of the variable. If the variable is used in several contexts, the context mentioned is the one used by the compiler to determine its type.
+- Noms des variables process et interprocess et des tableaux utilisés dans votre projet. Ces variables sont classées par ordre alphabétique.
+- Le type de variable. Les types sont définis par des commandes de directive du compilateur ou sont déterminés par le compilateur en fonction de l'utilisation de la variable. Si le type d'une variable ne peut être déterminé, la colonne est vide.
+- Nombre de dimensions si la variable est un tableau.
+- Référence au contexte dans lequel le compilateur a établi le type de la variable. Si la variable est utilisée dans plusieurs contextes, le contexte mentionné est celui utilisé par le compilateur pour déterminer son type.
     - If the variable was found in a database method, the database method name is given, preceded by (M)*.
     - If the variable was found in a project method, the method is identified as it has been defined in 4D, preceded by (M).
     - If the variable was found in a trigger, the table name is given, preceded by (TM).
@@ -233,7 +233,7 @@ result data type, number of calls, Thread Safe or Thread Unsafe
 
 ### Error file
 
-You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. The error file is automatically named `projectName_errors.xml` and is placed in the [Logs folder](Project/architecture.md#logs) of the project.
+You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. Le fichier d'erreur est automatiquement nommé `projectName_errors.xml` et est placé dans le [dossier Logs](Project/architecture.md#logs) du projet.
 
 Although the errors can be accessed directly via the [compiler window](#compile), it can be useful to have an error file that can be transmitted from one machine to another. The error file is generated in XML format in order to facilitate automatic parsing of its contents. It also allows the creation of customized error display interfaces.
 
