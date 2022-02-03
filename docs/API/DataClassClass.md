@@ -1275,17 +1275,17 @@ We want to disallow formulas, for example when the user enters their query:
 
 The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and size of the ORDA cache for a dataclass.<!-- END REF -->.
 
-The *settings* parameter, pass an object with the following properties: 
+In the *settings* parameter, pass an object with the following properties: 
 
 |Property|Type|Description|
 |---|---|---|
 |timeout|Longint|Timeout in seconds.|
 |maxEntries|Longint|Number of entities.|
 
-`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired:
+`timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
 
 * the data is still there
-* the next time this data is needed, it will be asked to the server
+* the next time the data is needed, it will be asked to the server
 * 4D automatically removes expired data when space is needed
 
 Setting a `timeout` property sets a new timeout for the entities already present in the cache.
@@ -1294,11 +1294,11 @@ Setting a `timeout` property sets a new timeout for the entities already present
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
-> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection that is already in the cache. 
+> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection that is already in the cache.
 
 If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
-When saving an entity, it is updated in the cache and expires once the timeout is reached.
+When an entity is saved, it is updated in the cache and expires once the timeout is reached.
 
 <!-- REF DataClassClass.getRemoteCache().Desc -->
 ## .getRemoteCache()
@@ -1341,6 +1341,45 @@ Each entry object in the `entries` collection has the following properties:
 |data|Object|Object holding data on the entry.|
 |expired|Boolean|True if the entry has expired.|
 |key|Text|Primary key of the entity.|
+
+The `data` object in each entry contains the following properties:
+|Property|Type|Description|
+|---|---|---|
+|__$incomplete|Boolean_|True if all the attributes are not present in the cache|
+|__KEY|String|Primary key of the entity|
+|__STAMP|Longint|Timestamp of the entity in the database|
+|__TIMESTAMP|String|Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)|
+|dataClassAttributeName|Variant|If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database.|
+
+Data concerning related entities is stored in the cache of the data object.
+
+#### Example 
+
+In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggerred, so only `firstname` and `address.city` are loaded.
+
+Note that `address.city` is loaded in the cache of the `Persons` dataclass.
+
+Only the first entity of the `Address` dataclass is stored in the case. It is loaded during the first iteration of the loop.
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cachePersons; $cacheAddress : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$persons:=$ds.Persons.all()
+
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$cachePersons:=$ds.Persons.getRemoteCache()
+$cacheAddress:=$ds.Address.getRemoteCache()
+```
 
 ## .clearRemoteCache()
 
