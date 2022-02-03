@@ -100,30 +100,30 @@ Si vous avez l'intention d'utiliser des VCS ou des éditeurs de code externes av
 
 > Cette option ne peut être appliquée qu'aux projets (les bases binaires incluent toujours les tokens).
 
-> You can always get the code with tokens by calling [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) with 1 in the *option* parameter.
+> Vous pouvez toujours obtenir le code avec les tokens en appelant la [`METHOD GET CODE`](https://doc.4d.com/4dv19R/help/command/en/page1190.html) avec 1 dans le paramètre *option*.
 
-#### Excluding tokens in existing projects
+#### Exclusion des tokens dans les projets existants
 
-You can configure your existing projects to save code **without tokens** by inserting the following key in the [`<applicationName>.4DProject`](../Project/architecture.md#applicationname4dproject-file) file using a text editor:
+Vous pouvez configurer vos projets existants pour enregistrer le code **sans tokens** en insérant la clé suivante dans le fichier [`<applicationName>.4DProject`](../Project/architecture.md#applicationname4dproject-file) à l'aide d'un éditeur de texte :
 
 ```
-"tokenizedText": false
+"tokenizedText" : false
 ```
 
-> This setting is only taken into account when methods are saved. Existing methods in your projects are left untouched, unless you resave them.
+> Ce paramètre n'est pris en compte que lors de l'enregistrement des méthodes. Les méthodes existantes dans vos projets ne sont pas modifiées, sauf si vous les enregistrez à nouveau.
 
 
 ### Créer le fichier `.gitignore`
 
-You might need or want git to ignore some files in your new projects.
+Si vous avez besoin ou souhaitez que git ignore certains fichiers dans vos nouveaux projets.
 
-You can set this preference by checking the **Create .gitignore file**  option.
+Vous pouvez définir cette préférence en cochant l'option **Créer le fichier .gitignore**.
 
-When a project is created in 4D and that box is checked, 4D creates a `.gitignore` file at the same level as the `Project` folder (see [Architecture of a Project](Project/architecture.md#gitignore-file-optional)).
+Lorsqu'un projet est créé dans 4D et que cette case est cochée, 4D crée un fichier `.gitignore` au même niveau que le dossier `Project` (voir [Architecture d'un projet](Project/architecture.md#gitignore-file-optional)).
 
-You can define the default contents of the `.gitignore` file by clicking the pencil icon. This will open the .gitignore configuration file in your text editor. The contents of this file will be used to generate the `.gitignore` files in your new projects.
+Vous pouvez définir le contenu par défaut du fichier `.gitignore` en cliquant sur l'icône du crayon. Cela ouvrira le fichier de configuration .gitignore dans votre éditeur de texte. Le contenu de ce fichier sera utilisé pour générer les fichiers `.gitignore` dans vos nouveaux projets.
 
-The [official git documentation](https://git-scm.com/docs/gitignore) is a great resource to understand how `.gitignore` files work.
+La [documentation officielle de git](https://git-scm.com/docs/gitignore) est une excellente ressource pour comprendre le fonctionnement des fichiers `.gitignore`.
 
 ### Language of text comparison
 
