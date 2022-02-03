@@ -127,7 +127,7 @@ Permet de générer le fichier de symboles (voir [fichier de symboles](#symbol-f
 
 #### Générer le fichier d'erreurs
 
-Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#symbol-file)) au moment du contrôle syntaxique. The error file is created in the [Logs folder](Project/architecture.md#logs) of the project with the name `ProjectName_errors.xml`.
+Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#symbol-file)) au moment du contrôle syntaxique. Le fichier d'erreur est créé dans le [dossier Logs](Project/architecture.md#logs) du projet portant le nom `ProjectName_errors.xml`.
 
 
 #### Chemin de compilation
@@ -186,7 +186,7 @@ Vous pouvez renommer chacune de ces méthodes dans les zones correspondantes, ma
 
 ### Fichier de symboles
 
-If you check the [**Generate the symbol file**](#generate-the-symbol-file) option in the compiler settings, a symbol file called `ProjectName_symbols.txt` is created in the [Logs folder](Project/architecture.md#logs) of the project during compilation. Il est divisé en plusieurs parties :
+Si vous cochez l'option [**Générer le fichier de symboles**](#generate-the-symbol-file) dans les propriétés du compilateur, un fichier de symboles appelé `ProjectName_symbols.txt` est créé dans le [dossier Logs](Project/architecture.md#logs) du projet pendant la compilation. Il est divisé en plusieurs parties :
 
 #### Liste des variables process et interprocess
 
@@ -233,7 +233,7 @@ result data type, number of calls, Thread Safe or Thread Unsafe
 
 ### Error file
 
-You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. The error file is automatically named `projectName_errors.xml` and is placed in the [Logs folder](Project/architecture.md#logs) of the project.
+You can choose whether or not to generate an error file during compilation using the [**Generate error file**](#generate-error-file) option in the compiler settings. Le fichier d'erreur est automatiquement nommé `projectName_errors.xml` et est placé dans le [dossier Logs](Project/architecture.md#logs) du projet.
 
 Although the errors can be accessed directly via the [compiler window](#compile), it can be useful to have an error file that can be transmitted from one machine to another. The error file is generated in XML format in order to facilitate automatic parsing of its contents. It also allows the creation of customized error display interfaces.
 

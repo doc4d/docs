@@ -196,17 +196,5 @@ Ce fichier peut être stocké aux emplacements suivants, en fonction de vos beso
 - Si vous souhaitez utiliser le même répertoire pour tous les fichiers de données (ou si vous utilisez un seul fichier de données), stockez le fichier **directory.json** dans le dossier des paramètres utilisateur, c'est-à-dire dans le dossier "Settings" [au même niveau que le dossier "Project"](Project/architecture.md#project-folder) (emplacement par défaut).
 - Si vous souhaitez utiliser un fichier répertoire spécifique par fichier de données, stockez le fichier **directory.json** dans le dossier des paramètres des données, c'est-à-dire dans le dossier ["Settings" du dossier "Data"](Project/architecture.md#settings). Si un fichier **directory.json** se trouve à cet emplacement, il est prioritaire par rapport au fichier du dossier Settings utilisateur. Cette configuration personnalisée/locale des utilisateurs et des groupes ne sera pas modifiée par une mise à niveau de l'application.
 
-> Si aucun mot de passe n'est attribué au Super Utilisateur, le fichier **directory.json** n'est pas créé.
-
-### Client/server user configuration
-
-To allow for safe changes of passwords and group memberships in a deployed environment, you can include your `Directory.json` file in the server application during the build, using the [corresponding build application option](../Desktop/building.md#embed-the-project-users-and-groups-in-built-server-application).
-
-When you execute a 4D Server application built with that option, the server first loads the users, groups and permissions placed in the `Directory.json` file located in the server's user settings folder. Then, the server overrides them with the users, groups and permissions of the `Directory.json` file located in the data settings folder.
-
-The `Directory.json` file user settings folder is read-only. All the modifications made to users, groups and permissions during server execution are stored in the `Directory.json` inside the data folder.
-
-This makes sure your defined users and groups always reappear at server startup, even if the administrator of the deployed 4D Server has deleted them.
-
-
+> To allow for safe changes of passwords and group memberships in a deployed environment, you can include your **directory.json** file in the server application during the build, using the [corresponding build application option](../Desktop/building.md#embed-the-project-users-and-groups-in-built-server-application).
 
