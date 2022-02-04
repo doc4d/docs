@@ -1355,11 +1355,11 @@ Data concerning related entities is stored in the cache of the data object.
 
 #### Example 
 
-In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggerred, so only `firstname` and `address.city` are loaded.
+In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
 
 Note that `address.city` is loaded in the cache of the `Persons` dataclass.
 
-Only the first entity of the `Address` dataclass is stored in the case. It is loaded during the first iteration of the loop.
+Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
 
 ```4d
 var $ds : cs.DataStore
@@ -1454,6 +1454,7 @@ For this function to properly return a context, one of the following conditions 
   * dataClass.get()
 
 #### Properties of the returned object 
+
 The returned object has the following properties: 
 
 |Property|Type|Description|
@@ -1598,8 +1599,7 @@ $info:=$ds.getAllRemoteContexts()
 ## .setRemoteContextInfo()
 
 <!-- REF #DataClassClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : String { ; contextType : Text} { ; pageLength : Integer})<br/>
-**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : Object ; *attributesColl* : Collection)
+**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : String { ; contextType : Text} { ; pageLength : Integer})<br/>**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : Object ; *attributesColl* : Collection { ; contextType : Text} { ; pageLength : Integer})
 <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteContextInfo().Params -->
@@ -1622,9 +1622,9 @@ If an optimization context already exists for the specified attributes, this com
 
 If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
 
-The REST requests optimization is triggered immediately if:
+When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
 * the first entity is not fully loaded as done in automatic mode
-* pages of 80 entities (or pageLength entities) are immediately asked to the server with only the attributes in the context
+* pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
 
 In *contextName*, pass the name of the optimization context that will be linked to the dataclass attributes.
 

@@ -130,6 +130,22 @@ A same optimization context property can be passed to unlimited number of entity
  $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
 ```
 
+### Handling the context property
+
+You can use the following ORDA class functions to handle the contents of the optimization context in a client/server configuration. For more information, see the description of each function:
+
+DataClass class: 
+* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
+* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
+* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
+* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
+
+Entity Class:
+* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
+
+EntitySelectionClass: 
+* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
+
 ### Entity selection-based list box
 
 Entity selection optimization is automatically applied to entity selection-based list boxes in client/server configurations, when displaying and scrolling a list box content: only the attributes displayed in the list box are requested from the server.
@@ -155,22 +171,8 @@ For example, the following code loads the selected entity and allows browsing in
 
 Data requested from the server via ORDA is loaded in the ORDA cache (which is different from the 4D cache). By default, the ORDA cache expires after 30 seconds. The data contained in the cache when the timeout is reached is considered as expired: the data remains in the cache until 4D unloads expired data when space is needed. 
 
-### List of class functions
+The following ORDA class functions handle the contents of the ORDA cache. For more information, see the description of each function:
 
-The following ORDA class functions can be used to handle the ORDA cache and the contents of the optimization context in a client/server configuration. For more details, check out their description:
-
-DataClass class: 
 * [.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
 * [.getRemoteCache()](../API/DataClassClass.md#getremotecache)
 * [.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)
-* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
-* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
-* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
-* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
-* [.getCount()](../API/DataClassClass.md#getcount)
-
-Entity Class:
-* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
-
-EntitySelectionClass: 
-* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
