@@ -3,7 +3,7 @@ id: develop-components
 title: Composants de développement
 ---
 
-Un composant 4D est un ensemble de formulaires et de méthodes 4D représentant une ou plusieurs fonctionnalité(s) qu’il est possible [d’installer et d'utiliser dans des applications 4D](Concepts/components.md). Par exemple, vous pouvez développer un composant 4D de courrier électronique gérant tous les aspects de l’envoi, la réception et le stockage d’emails au sein des applications 4D.
+A 4D component is a set of 4D functions, methods, and forms representing one or more functionalities that can be [installed and used in 4D applications](Concepts/components.md). Par exemple, vous pouvez développer un composant 4D de courrier électronique gérant tous les aspects de l’envoi, la réception et le stockage d’emails au sein des applications 4D.
 
 Vous pouvez développer des composants 4D pour vos propres besoins et les garder privés. You can also [share your components with the 4D community](https://github.com/topics/4d-component).
 
@@ -19,9 +19,9 @@ Vous pouvez développer des composants 4D pour vos propres besoins et les garder
 La création et l’installation des composants 4D s’effectuent directement depuis 4D :
 
 - Pour installer un composant, il suffit de copier les fichiers du composant dans le dossier [`Components` du projet](Project/architecture.md). Vous pouvez utiliser des alias ou des raccourcis.
-- Un projet peut être à la fois "matrice" et "hôte", c'est-à-dire qu'un projet utilisé comme matrice peut lui-même utiliser un ou plusieurs composants. En revanche, un composant ne peut pas lui-même utiliser de "sous-composants".
-- Un composant peut appeler la plupart des éléments 4D : des méthodes projet, des formulaires projet, des barres de menus, des listes à choix multiples, etc. Il ne peut pas appeler des méthodes base et des triggers.
-- Il n’est pas possible d’exploiter des tables standard ou des fichiers de données dans les composants 4D. En revanche, un composant peut créer et/ou utiliser des tables, des champs et des fichiers de données via les mécanismes des bases externes. Les bases externes sont des bases 4D indépendantes manipulées via les commandes SQL.
+- A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. En revanche, un composant ne peut pas lui-même utiliser de "sous-composants".
+- A component can call on most of the 4D elements: classes, functions, project methods, project forms, menu bars, choice lists, and so on. Il ne peut pas appeler des méthodes base et des triggers.
+- You cannot use the datastore, standard tables, or data files in 4D components. En revanche, un composant peut créer et/ou utiliser des tables, des champs et des fichiers de données via les mécanismes des bases externes. Les bases externes sont des bases 4D indépendantes manipulées via les commandes SQL.
 - Un projet hôte fonctionnant en mode interprété peut utiliser des composants interprétés ou compilés. Un projet hôte fonctionnant en mode compilé ne peut pas utiliser de composants interprétés. Dans ce cas, seuls les composants compilés peuvent être utilisés.
 
 
@@ -42,7 +42,7 @@ La commande `COMPONENT LIST` permet de connaître la liste des composants charg�
 
 ### Commandes non utilisables
 
-Les commandes suivantes ne sont pas compatibles avec une utilisation dans le cadre d’un composant car elles modifient le fichier de structure — ouvert en lecture. Leur exécution dans un composant provoque l’erreur -10511, “La commande NomCommande ne peut pas être appelée depuis un composant” :
+Les commandes suivantes ne sont pas compatibles avec une utilisation dans le cadre d’un composant car elles modifient le fichier de structure — ouvert en lecture. Their execution in a component will generate the error -10511, "The CommandName command cannot be called from a component":
 
 - `ON EVENT CALL`
 - `Method called on event`
@@ -71,9 +71,13 @@ Les commandes suivantes ne sont pas compatibles avec une utilisation dans le cad
 
 ## Partage des méthodes projet
 
-Toutes les méthodes projet d’un projet utilisé comme matrice sont par définition incluses dans le composant (le projet est le composant), ce qui signifie qu’elles peuvent être appelées et exécutées par le composant.
+All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed within the component.
 
-En revanche, par défaut ces méthodes projet ne seront ni visibles ni appelables par le projet hôte. Vous devez explicitement désigner, dans le projet utilisé comme matrice, les méthodes que vous souhaitez partager avec le projet hôte. Ces méthodes projet peuvent être appelées dans le code de le projet hôte (mais elles ne pourront pas être modifiées dans l’éditeur de méthodes de le projet hôte). Ces méthodes constituent les **points d’entrée** dans le composant.
+En revanche, par défaut ces méthodes projet ne seront ni visibles ni appelables par le projet hôte. In the matrix project, you must explicitly designate the methods that you want to share with the host project by checking the **Shared by components and host project** box in the method properties dialog box:
+
+![](assets/en/Concepts/shared-methods.png)
+
+Shared project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). These methods are **entry points** of the component.
 
 A l’inverse, pour des raisons de sécurité, par défaut un composant ne peut pas exécuter de méthode projet appartenant au projet hôte. Dans certains cas, vous pourrez avoir besoin d’autoriser un composant à accéder à des méthodes projet de votre projet hôte. In certain cases, you may need to allow a component to access the project methods of your host project.
 
@@ -95,6 +99,55 @@ component_method("host_method_name")
 
 > Une base hôte interprétée qui contient des composants interprétés peut être compilée ou soumise à un contrôle syntaxique si elle n'appelle pas de méthodes du composant interprété. Dans le cas contraire, une boîte de dialogue d'avertissement apparaît lorsque vous tentez de lancer la compilation ou un contrôle syntaxique et il ne sera pas possible d'effectuer l'opération.   
 > A noter qu'une méthode interprétée peut appeler une méthode compilée, mais pas l'inverse, sauf si vous utilisez les commandes `EXECUTE METHOD` et `EXECUTE FORMULA`.
+
+
+## Sharing of classes and functions
+
+By default, component classes and functions cannot be called from the 4D method editor of the host project. If you want your component classes and functions to be exposed in the host projects, you need to declare a component namespace. Additionally, you can control how component classes and functions are suggested in the host method editor.
+
+### Declaring the component namespace
+
+To allow classes and functions of your component to be exposed in the host projects, enter a value in the [**Component namespace in the class store** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings. By default, the area is empty: component classes are not available outside of the component context.
+
+![](assets/en/settings/namespace.png)
+
+> A *namespace* ensures that no conflict emerges when a host project uses different components that have classes or functions with identical names. A component namespace must be compliant with [property naming rules](../Concepts/identifiers.md#object-properties).
+
+When you enter a value, you declare that component classes and functions will be available in the [user class store (**cs**)](../Concepts/classes.md#cs) of the host project's code, through the `cs.<value>` namespace. For example, if you enter "eGeometry" as component namespace, assuming that you have created a `Rectangle` class containing a `getArea()` function, once your project is installed as a component, the developer of the host project can write:
+
+```4d
+//in host project
+var $rect: cs.eGeometry.Rectangle 
+$rect:=cs.eGeometry.Rectangle.new(10;20)
+$area:=$rect.getArea()
+```
+
+Of course, it is recommended to use a distinguished name to avoid any conflict. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
+
+A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
+
+### Hidden classes
+
+Just like in any project, you can create hidden classes and functions in the component by prefixing names with an underscore ("_"). When a [component namespace is defined](#declaring-the-component-namespace), hidden classes and functions of the component will not appear as suggestions when using code completion.
+
+Note however that they can still be used if you know their names. For example, the following syntax is valid even if the `_Rectangle` class is hidden:
+
+```4d
+$rect:=cs.eGeometry._Rectangle.new(10;20)
+```
+
+> Non-hidden functions inside a hidden class appear as suggestions when you use code completion with a class that [inherits](../Concepts/classes.md#inheritance) from it. For example, if a component has a `Teacher` class that inherits from a `_Person` class, code completion for `Teacher` suggests non-hidden functions from `_Person`.
+
+
+## Code completion for compiled components
+
+To make your component easier to use for developers, you can check the [**Generate syntax file for code completion when compiled** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings.
+
+A syntax file (JSON format) is then automatically created during the compilation phase, filled with the syntax of your component's classes, functions, and [exposed methods](#sharing-of-project-methods), and placed in the \Resources\en.lproj folder of the component project. 4D uses the contents of that syntax file to generate contextual help in the code editor, such as code completion and function syntax:
+
+![](assets/en/settings/syntax-code-completion-2.png) ![](assets/en/settings/syntax-code-completion-1.png)
+
+If you don't enter a [component namespace](#declaring-the-component-namespace), the resources for the classes and exposed methods are not generated even if the syntax file option is checked.
 
 
 
@@ -226,7 +279,7 @@ Création de la base de données externe :
 Ecriture dans la base de données externe :
 
 ```4d
- $Ptr_1:=$2 // récupère des données depuis le projet hôte via des pointeurs
+ $Ptr_1:=$2 // retrieves data from the host project through pointers
  $Ptr_2:=$3
  $Ptr_3:=$4
  $Ptr_4:=$5
@@ -241,6 +294,7 @@ Ecriture dans la base de données externe :
         (:[$Ptr_1], :[$Ptr_2], :[$Ptr_3], :[$Ptr_4], :[$Ptr_5]);
 
         USE DATABASE SQL_INTERNAL;
+
 
  End SQL
 ```
@@ -273,7 +327,7 @@ Lecture dans une base de données externe :
 - Seuls les "formulaires projet" (formulaires non associés à une table en particulier) peuvent être exploités directement dans un composant. Les formulaires projet contenus dans le projet utilisé comme matrice peuvent être exploités par le composant.
 - Un composant peut faire appel à des formulaires table du projet hôte. A noter qu’il est nécessaire dans ce cas d’utiliser des pointeurs plutôt que des noms de table entre [] pour désigner les formulaires dans le code du composant.
 
-> Si un composant utilise la commande `ADD RECORD`, le formulaire Entrée courant du projet hôte sera affiché, dans le contexte du projet hôte. Par conséquent, si le formulaire comporte des variables, le composant n’y aura pas accès.
+> Si un composant utilise la commande `ADD RECORD`, le formulaire Entrée courant du projet hôte sera affiché, dans le contexte du projet hôte. Consequently, if the form includes variables, the component will not have access to them.
 
 - Vous pouvez publier des formulaires de composants comme sous-formulaires dans les projets hôtes. Avec ce principe, vous pouvez notamment développer des composants proposant des objets graphiques. Par exemple, les Widgets proposés par 4D sont basés sur l’emploi de sous-formulaires en composants.
 
@@ -295,19 +349,20 @@ Un composant peut exécuter automatiquement du code 4D lors de l'ouverture ou de
 
 L'exécution du code d'initialisation ou de fermeture se fait au moyen de la méthode base `On Host Database Event`.
 
-> Pour des raisons de sécurité, vous devez autoriser explicitement l'exécution de la méthode base`On Host Database Event` dans la base hôte afin de pouvoir l'appeler. Pour ce faire, vous devez cocher l'option **Exécuter la méthode "Sur événement base hôte" des composants** dans la page Sécurité des Paramètres.
+> Pour des raisons de sécurité, vous devez autoriser explicitement l'exécution de la méthode base`On Host Database Event` dans la base hôte afin de pouvoir l'appeler. To do this, you must check the [**Execute "On Host Database Event" method of the components** option](../settings/security.md#options) in the Security page of the Settings.
 
 
 ## Protection des composants : la compilation
 
-Par défaut, toutes les méthodes projet d’un projet utilisé comme matrice et installé comme composant sont virtuellement visibles depuis le projet hôte. En particulier :
+By default, all the code of a matrix project installed as a component is potentially visible from the host project. En particulier :
 
 - Les méthodes projet partagées sont accessibles dans la Page Méthodes de l’Explorateur et peuvent être appelées dans les méthodes du projet hôte. Leur contenu peut être sélectionné et copié dans la zone de prévisualisation de l’Explorateur. Elles peuvent également être visualisées dans le débogueur. Il n’est toutefois pas possible de les ouvrir dans l’éditeur de méthodes ni de les modifier.
 - Les autres méthodes projet du projet utilisé comme matrice n’apparaissent pas dans l’Explorateur mais peuvent également être visualisées dans le débogueur du projet hôte.
+- The non-hidden classes and functions can be viewed in the debugger [if a namespace is declared](#declaring-the-component-namespace).
 
-Pour assurer la protection des méthodes projet d'un composant, [compilez et générerez](Desktop/building.md#build-component) simplement le projet utilisé comme matrice et fournissez-le sous forme de fichier .4dz. Lorsqu’un projet compilé utilisé comme matrice est installé comme composant :
+To protect the code of a component effectively, simply [compile and build](Desktop/building.md#build-component) the matrix project and provide it in the form of a .4dz file. Lorsqu’un projet compilé utilisé comme matrice est installé comme composant :
 
-- Les méthodes projet partagées se trouvent dans la Page Méthodes de l’Explorateur et peuvent être appelées dans les méthodes du projet hôte. En revanche, leur contenu n’apparaît pas dans la zone de prévisualisation ni dans le débogueur.
+- The shared project methods, classes and functions can be called in the methods of the host project. Shared project methods are also visible on the Methods Page of the Explorer. En revanche, leur contenu n’apparaît pas dans la zone de prévisualisation ni dans le débogueur.
 - Les autres méthodes projet du projet utilisé comme matrice n’apparaissent jamais.
 
 
