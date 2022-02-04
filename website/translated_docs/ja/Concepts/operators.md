@@ -175,7 +175,7 @@ var $tax : Variant
 $tax:=$item.taxRate && ($item.price*$item.taxRate)
 ```
 
-taxRate が NULL (または undefined) の場合、`$tax` は NULL となり、それ以外の場合には計算結果が格納されます。
+taxRate が NULL (または未定義) の場合、`$tax` は NULL となり、それ以外の場合には計算結果が格納されます。
 
 #### 例題 3
 
@@ -253,53 +253,53 @@ $name:=$person.maidenName || $person.name
 
 シンタックスは次のとおりです:
 
-`condition ? exprIfTruthy : exprIfFalsy`
+`条件 ? truthy時の式 : falsy時の式`
 
-> Since the [token syntax](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.en.html) uses colons, we recommend inserting a space after the colon `:` or enclosing tokens using parentheses to avoid any conflicts.
+> [トークンシンタックス](https://doc.4d.com/4Dv19R3/4D/19-R3/Using-tokens-in-formulas.300-5583062.ja.html) にはコロンが使われているため、競合を避けるには、コロン `:` の後にスペースを入れる、または、トークンは括弧でくくることが推奨されます。
 
 ### 例題
 
-#### A simple example
+#### 単純な例
 
 ```4d
 var $age : Integer
 var $beverage : Text
 
 $age:=26
-$beverage:=($age>=21) ? "Beer" : "Juice"
+$beverage:=($age>=20) ? "ビール" : "ジュース"
 
-ALERT($beverage) // "Beer"
+ALERT($beverage) // "ビール"
 ```
 
-#### Handling data from a table
+#### テーブルのデータを扱う例
 
-This example stores a person's full name in a variable, and handles the case when no first name or last name has been specified:
+この例では、人のフルネームを変数に格納し、ファーストネームやラストネームが指定されていないケースに対応します:
 
 ```4d
 var $fullname : Text
 
-// If one of the names is missing, store the one that exists, otherwise store an empty string.
+// どちらか片方の情報が欠けている場合には存在する方を格納し、両方存在しない場合は空の文字列を格納します。
 $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
 ## Truthy と Falsy
 
-As well as a type, each value also has an inherent Boolean value, generally known as either **truthy** or **falsy**.
+各値はデータ型のほかに、固有のブール値を持ちます。このブール値は **truthy** (真的) または **falsy** (偽的) です。
 
-The following values are **falsy**:
+以下の値は **falsy** です:
 
 * false
 * Null
 * 未定義
-* Null object
-* Null collection
-* Null pointer
-* Null picture
-* Null date !00-00-00!
-* "" - Empty strings
-* [] - Empty collections
-* {} - Empty objects
+* Null オブジェクト
+* Null コレクション
+* Null ポインター
+* Null ピクチャー
+* Null 日付 !00-00-00!
+* "" - 空の文字列
+* [] - 空のコレクション
+* {} - 空のオブジェクト
 
-All other values are considered **truthy**, including:
+上記以外の値はすべて **truthy** と評価されます。次の値も **truthy** です:
 
-* 0 - numeric zero (Integer or otherwise)
+* 0 - 数値のゼロ (整数かどうかを問わず)
