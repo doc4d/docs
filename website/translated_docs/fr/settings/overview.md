@@ -21,34 +21,34 @@ Vous pouvez accéder à la boîte de dialogue Paramètres :
 Lorsque le mode [**Paramètres utilisateur** est activé](../Desktop/user-settings.md), **Paramètres...** est renommé **Paramètres de la structure...** et deux commandes de menu supplémentaires sont disponibles à chaque emplacement :
 
 -   **Paramètres utilisateur...** vous donne accès aux paramètres qui peuvent être stockés en externe dans un fichier utilisateur. Si ceux-ci sont modifiés, ils sont utilisés à la place des paramètres de structure.
--   **User Settings for Data File...** gives you access to settings that can be stored externally in a user file attached to the current data file. If they are modified, they are used instead of user or structure settings.
+-   **Paramètres utilisateur pour le fichier de données...** vous donne accès aux paramètres qui peuvent être stockés en externe dans un fichier utilisateur rattaché au fichier de données courant. S'ils sont modifiés, ils sont utilisés à la place des paramètres utilisateur ou des paramètres de structure.
 
-### Locking information
+### Informations sur le verrouillage
 
-Locking can occur in both Project and Client/server modes when:
+Le verrouillage peut se produire dans les modes Projet et Client/serveur lorsque :
 
--   The *settings.4DSettings* file is 'Read-only' (Projects only). Modifying a setting will display an alert to unlock it, if possible.
--   Two or more users attempt to modify the same settings at the same time. The settings cannot be used until the first user frees it by closing the window. (Client/server only)
+-   Le fichier *settings.4DSettings* est en 'Lecture seule' (Projets uniquement). La modification d'un paramètre affiche une alerte pour le déverrouiller, le cas échéant.
+-   Deux utilisateurs ou plus tentent de modifier les mêmes paramètres en même temps. Les paramètres ne peuvent pas être utilisés jusqu'à ce que le premier utilisateur les libère en fermant la fenêtre. (Client/serveur uniquement)
 
-In both cases, the settings can be opened in 'Read-only', but cannot be used until the lock is removed.
+Dans les deux cas, les paramètres peuvent être ouverts en 'Lecture seule', mais ne peuvent pas être utilisés tant qu'ils sont verrouillés.
 
 
 
-## Customizing parameters
+## Personnalisation des paramètres
 
-In the Settings dialog boxes, parameters whose values have been modified appear **in bold**:
+Dans les boîtes de dialogue des Propriétés, les paramètres dont les valeurs ont été modifiées apparaissent **en gras** :
 
 ![](assets/en/settings/customize-settings.png)
 
-Parameters indicated as customized may have been modified directly in the dialog box, or may have been modified previously in the case of a converted project.
+Les paramètres indiqués comme personnalisés peuvent avoir été modifiés directement dans la boîte de dialogue, ou avoir été modifiés précédemment dans le cas d'un projet converti.
 
 Un paramètre apparaît toujours en gras même lorsque sa valeur est remplacée manuellement par ses valeurs par défaut. Ainsi, il est toujours possible d'identifier visuellement les paramètres qui ont été personnalisés.
 
-Most of the settings are applied immediately. However, a few of them (such as the Startup environment setting) only take effect when the database is restarted. In this case, a dialog box appears to inform you that the change will take effect at the next startup.
+La plupart des paramètres sont appliqués immédiatement. Toutefois, certains d'entre eux (tels que le paramètre de démarrage) ne prennent effet que lorsque la base de données est redémarrée. Dans ce cas, une boîte de dialogue apparaît pour vous informer que la modification prendra effet au prochain démarrage.
 
 
-## Resetting the settings
+## Réinitialisation des paramètres
 
-To reset the parameters to their default values and remove the bold style indicating that they have been customized, click **Reset to factory settings**.
+Pour rétablir les paramètres à leurs valeurs par défaut et supprimer le style gras indiquant qu'ils ont été personnalisés, cliquez sur **Rétablir les paramètres d'usine**.
 
 Ce bouton réinitialise tous les paramètres de la page courante. Il devient actif lorsqu'au moins un paramètre a été modifié sur la page courante.
