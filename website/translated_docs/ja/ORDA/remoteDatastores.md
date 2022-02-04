@@ -63,6 +63,8 @@ title: リモートデータストアの利用
 
 4Dは、クライアント/サーバー環境において (`ds` または `Open datastore` によりアクセスされたデータストアの場合) エンティティセレクションを使用、あるいはエンティティを読み込む ORDAリクエストについて自動的に最適化する機構を提供しています。 この最適化機構は、ネットワーク間でやり取りされるデータの量を大幅に縮小させることで 4Dの実行速度を向上させます。
 
+![](assets/en/ORDA/cs-optimization-auto.png)
+
 この機能には、以下の最適化機構が実装されています:
 
 *   クライアントがサーバーに対してエンティティセレクションのリクエストを送ると、4D はコード実行の途中で、エンティティセレクションのどの属性がクライアント側で実際に使用されているかを自動的に "学習" し、それに対応した "最適化コンテキスト" をビルドします。 このコンテキストはエンティティセレクションに付随し、使用された属性を保存していきます。 他の属性があとで使用された場合には自動的に情報を更新していきます。
@@ -101,6 +103,8 @@ title: リモートデータストアの利用
 
 **context** プロパティを使用することで、最適化の利点をさらに増幅させることができます。 このプロパティは、あるエンティティセレクション用に "学習した" 最適化コンテキストを参照します。 これを新しいエンティティセレクションを返す ORDA メソッドに引数として渡すことで、その返されたエンティティセレクションでは学習フェーズを最初から省略して使用される属性をサーバーにリクエストできるようになります。
 
+![](assets/en/ORDA/cs-optimization-manual.png)
+
 同じ最適化 context プロパティは、同じデータクラスのエンティティセレクションに対してであればどのエンティティセレクションにも渡すことができます。 エンティティセレクションを扱うすべての ORDAメソッドは、contextプロパティをサポートします (たとえば`dataClass.query( )` あるいは `dataClass.all( )` メソッドなど)。 ただし、 コードの他の部分で新しい属性が使用された際にはコンテキストは自動的に更新されるという点に注意してください。 同じコンテキストを異なるコードで再利用しすぎると、コンテキストを読み込み過ぎて、結果として効率が落ちる可能性があります。
 > 同様の機構は読み込まれたエンティティにも実装されており、それによって使用した属性のみがリクエストされるようになります (`dataClass.get( )` メソッド参照)。
 
@@ -127,6 +131,22 @@ title: リモートデータストアの利用
  $data:=extractDetailedData($sel4) // extractDetailedData メソッドにおいて、"longList" のコンテキストに割り当てられている最適化が適用されます。
 ```
 
+### Handling the optimization context
+
+You can use the following ORDA class functions to handle the contents of the optimization context in a client/server configuration. For more information, see the description of each function:
+
+DataClass class:
+* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
+* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
+* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
+* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
+
+Entity Class:
+* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
+
+EntitySelectionClass:
+* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
+
 ### エンティティセレクション型リストボックス
 
 クライアント/サーバー環境におけるエンティティセレクション型リストボックスにおいては、そのコンテンツを表示またはスクロールする際に、最適化が自動的に適用されます。つまり、リストボックスに表示されている属性のみがサーバーにリクエストされます。
@@ -148,26 +168,12 @@ title: リモートデータストアの利用
  $myEntity:=$myEntity.next() // 次のエンティティも同じコンテキストを使用してロードされます
 ```
 
-### ORDAキャッシュ
+### ORDA Cache
 
-ORDA経由でサーバーにリクエストしたデータは、(4Dキャッシュとは異なる) ORDAキャッシュに読み込まれます。 デフォルトでは、ORDAキャッシュは 30秒後に期限切れとなります。 タイムアウトが経過したキャッシュのデータは期限切れとみなされます。期限切れデータは、容量が必要なときに 4D に破棄されるまでキャッシュに残ります。
+Data requested from the server via ORDA is loaded in the ORDA cache (which is different from the 4D cache). By default, the ORDA cache expires after 30 seconds. The data contained in the cache when the timeout is reached is considered as expired: the data remains in the cache until 4D unloads expired data when space is needed.
 
-### クラス関数一覧
+The following ORDA class functions handle the contents of the ORDA cache. For more information, see the description of each function:
 
-以下の ORDAクラス関数は、クライアント/サーバー構成で ORDAキャッシュと最適化コンテキストの内容を扱うために使用することができます。 詳細については、各関数の説明を参照ください:
-
-DataClass クラス:
 * [.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
 * [.getRemoteCache()](../API/DataClassClass.md#getremotecache)
 * [.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)
-* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
-* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
-* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
-* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
-* [.getCount()](../API/DataClassClass.md#getcount)
-
-Entity クラス:
-* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
-
-EntitySelection クラス:
-* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
