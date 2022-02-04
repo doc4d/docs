@@ -64,6 +64,8 @@ If a request is sent to the remote datastore after the session has been closed, 
 
 4D provides an automatic optimization for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). This optimization speeds up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. 
 
+![](assets/en/ORDA/cs-optimization-auto.png)
+
 The following optimization mechanisms are implemented:
 
 *	When a client requests an entity selection from the server, 4D automatically "learns" which attributes of the entity selection are actually used on the client side during the code execution, and builds a corresponding "optimization context". This context is attached to the entity selection and stores the used attributes. It will be dynamically updated if other attributes are used afterwards.
@@ -101,6 +103,8 @@ Thanks to the optimization, this request will only get data from used attributes
 ### Using the context property
 
 You can increase the benefits of the optimization by using the **context** property. This property references an optimization context "learned" for an entity selection. It can be passed as parameter to ORDA methods that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
+
+![](assets/en/ORDA/cs-optimization-manual.png)
 
 A same optimization context property can be passed to unlimited number of entity selections on the same dataclass. All ORDA methods that handle entity selections support the **context** property (for example `dataClass.query( )` or `dataClass.all( )` method). Keep in mind, however, that a context is automatically updated when new attributes are used in other parts of the code. Reusing the same context in different codes could result in overloading the context and then, reduce its efficiency. 
 

@@ -1657,11 +1657,8 @@ $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
-// This syntax is also possible
-//$ds.setRemoteContextInfo("contextA"; "Persons"; New collection("firstname"; "lastname"))
-//
 $info:=$ds.getRemoteContextInfo("contextA")
-//$info = {name:contextA,dataclass:Persons,main:lastname,firstname}
+// $info = {name:contextA,dataclass:Persons,main:lastname,firstname}
 
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
@@ -1671,7 +1668,7 @@ For each ($p; $persons)
 End for each 
 
 $info:=$ds.getRemoteContextInfo("contextA")
-//$info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city}
+// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city}
 ```
 #### Example 2 
 
@@ -1692,53 +1689,15 @@ For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
 
-
 $info:=$ds.getRemoteContextInfo("contextA")
 //$info = {name:contextA,dataclass:Persons,main:firstname,address,address.city}
 
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "gender, lastname")
 
-// The following syntax is also valid
-//$ds.setRemoteContextInfo("contextA"; "Persons"; New collection("gender"; "lastname"))
-
 $info:=$ds.getRemoteContextInfo("contextA")
 //$info ={name:contextA,dataclass:Persons,main:lastname,gender}
 
 //The attributes have been replaced
-```
-#### Example 3
-
-```4d
-var $ds : cs.DataStore
-
-var $addresses : cs.AddressSelection
-var $a : cs.AddressEntity
-var $p : cs.PersonsEntity
-
-var $contextA : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname"; "main"; 30)
-//
-//The requests will ask for pages of 30 entities of dataclass Address
-//For each entity Address, 20 Persons entities will be returned
-//
-
-// This syntax is also possible
-//$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode"; "persons:20"; "persons.lastname"); "main"; 30)
-
-$contextA:=New object("context"; "contextA")
-$addresses:=$ds.Address.all($contextA)
-$text:="" 
-For each ($a; $addresses)
-    $text:=$a.zipCode
-
-    For each ($p; $a.persons)
-        $text:=$p.lastname
-    End for each 
-End for each 
 ```
 
 #### Example 4 - Listbox
@@ -1750,7 +1709,7 @@ Case of
 
         Form.ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 
-       //Set the attributes of the page context
+       // Set the attributes of the page context
         Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
 
         Form.settings:=New object("context"; "LB")
