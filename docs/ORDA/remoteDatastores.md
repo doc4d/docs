@@ -134,7 +134,7 @@ A same optimization context property can be passed to unlimited number of entity
  $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
 ```
 
-### Handling the context property
+### Handling the optimization context
 
 You can use the following ORDA class functions to handle the contents of the optimization context in a client/server configuration. For more information, see the description of each function:
 
