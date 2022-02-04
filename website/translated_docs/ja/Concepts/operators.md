@@ -134,20 +134,20 @@ $t2*=2 // $t2="HelloHello"
 
 ### AND 短絡演算子 (&&)
 
-The rule is as follows:
+ルールは以下の通りです。
 
-Given `Expr1 && Expr2`:
+`Expr1 && Expr2` において:
 
-The short-circuit AND operator evaluates operands from left to right, returning immediately with the value of the first falsy operand it encounters; if all values are [truthy](#truthy-and-falsy), the value of the last operand is returned.
+AND短絡演算子はオペランドを左から右へ評価し、falsy と評価された最初のオペランドの値を直ちに返します。すべての値が [truthy](#truthy-と-falsy) であれば、最後のオペランドの値が返されます。
 
-The following table summarizes the different cases for the **&&** operator:
+次の表は、**&&** 演算子の様々なケースをまとめたものです:
 
-| Expr1  | Expr2  | Value returned |
-| ------ | ------ | -------------- |
-| truthy | truthy | Expr2          |
-| truthy | falsy  | Expr2          |
-| falsy  | truthy | Expr1          |
-| falsy  | falsy  | Expr1          |
+| Expr1  | Expr2  | 返される値 |
+| ------ | ------ | ----- |
+| truthy | truthy | Expr2 |
+| truthy | falsy  | Expr2 |
+| falsy  | truthy | Expr1 |
+| falsy  | falsy  | Expr1 |
 
 #### 例題 1
 
@@ -163,11 +163,11 @@ $v := 5 && 10 && "hello" //"hello"
 
 #### 例題 2
 
-Say you have an online store, and some products have a tax rate applied, and others don't.
+オンラインストアで、税率が適用される商品とされない商品があるとします。
 
-To calculate the tax, you multiply the price by the tax rate, which may not have been specified.
+税金を計算するには、価格に税率をかけますが、税率は指定されていない場合があります。
 
-So you can write this:
+そこで、次のように書くことができます:
 
 ```4d
 var $tax : Variant
@@ -175,42 +175,42 @@ var $tax : Variant
 $tax:=$item.taxRate && ($item.price*$item.taxRate)
 ```
 
-`$tax` will be NULL if taxRate is NULL (or undefined), otherwise it will store the result of the calculation.
+taxRate が NULL (または undefined) の場合、`$tax` は NULL となり、それ以外の場合には計算結果が格納されます。
 
 #### 例題 3
 
-Short-circuit operators are useful in tests such as:
+短絡演算子は、次のようなテストに有効です:
 
 ```4d
 If(($myObject#Null) && ($myObject.value>10))
-    //code
+    // コード
 End if
 ```
 
-If $myObject is Null, the second argument is not executed, thus no error is thrown.
+もし $myObject が Null であれば、第2引数は実行されないため、エラーは発生しません。
 
 ### OR 短絡演算子 (||)
 
-The || operator returns the value of one of the specified operands. The expression is evaluated left to right and tested for possible "short-circuit" evaluation using the following rule:
+|| 演算子は、指定されたオペランドのうち 1つの値を返します。 式は左から右に評価され、以下のルールに基づいて "短絡" 評価の可能性をテストされます。
 
-Given `Expr1 || Expr2`:
+`Expr1 || Expr2` において:
 
-If Expr1 is [truthy](#truthy-and-falsy), Expr2 is not evaluated and the calculation returns Expr1.
+Expr1 が [truthy](#truthy-と-falsy) であれば、Expr2 は評価されず、計算は Expr1 を返します。
 
-If Expr1 is [falsy](#truthy-and-falsy), the calculation returns Expr2.
+Expr1 が [falsy](#truthy-と-falsy) の場合、計算は Expr2 を返します。
 
-The following table summarizes the different cases and the value returned for the **||** operator:
+次の表は、**||** 演算子の様々なケースと返される値をまとめたものです:
 
-| Expr1  | Expr2  | Value returned |
-| ------ | ------ | -------------- |
-| truthy | truthy | Expr1          |
-| truthy | falsy  | Expr1          |
-| falsy  | truthy | Expr2          |
-| falsy  | falsy  | Expr2          |
+| Expr1  | Expr2  | 返される値 |
+| ------ | ------ | ----- |
+| truthy | truthy | Expr1 |
+| truthy | falsy  | Expr1 |
+| falsy  | truthy | Expr2 |
+| falsy  | falsy  | Expr2 |
 
 #### 例題 1
 
-Say you have a table called Employee. Some employees have entered a phone number, and others haven't. This means that `$emp.phone` could be NULL, and you cannot assign NULL to a Text variable. But you can write the following:
+Employee というテーブルがあるとします。 従業員には電話番号を入力している人と入力していない人がいます。 つまり、`$emp.phone` は NULL である可能性があり、テキスト変数に NULL を代入することはできません。 そこで、次のように書くことができます:
 
 ```4d
 var $phone : Text
@@ -218,13 +218,13 @@ var $phone : Text
 $phone:=$emp.phone || "n/a"
 ```
 
-In which case `$phone` will store either a phone number or the "n/a" string.
+この場合、`$phone` には電話番号か、"n/a" という文字列のどちらかが格納されます。
 
 #### 例題 2
 
-Given a table called Person with a *name* field, as well as a *maiden name* field for married women.
+*name* フィールドと、既婚女性のための *maiden name* (旧姓) フィールドを持つ Person テーブルがあるとします。
 
-The following example checks if there is a maiden name and stores it in a variable, otherwise it simply stores the person's name:
+次の例は、旧姓データがあれば変数に格納し、なければその人の名前を変数に格納します。
 
 ```4d
 var $name: Text
@@ -234,20 +234,20 @@ $name:=$person.maidenName || $person.name
 
 ### 優先順位
 
-The `&&` and `||` operators have the same precedence as the logical operators `&` and `|`, and are evaluated left to right.
+演算子 `&&` と `||` は、論理演算子 `&` および `|` と同じ優先順位を持ち、左から右へ評価されます。
 
-This means that `a || b && c` is evaluated as `(a || b) && c`.
+つまり、`a || b && c` は、`(a || b) && c` として評価されます。
 
 
-## Ternary operator
+## 三項演算子
 
-The ternary conditional operator allows you to write one-line conditional expressions. For example, it can replace a full sequence of [If…Else](./cf_branching.md#ifelseend-if) statements.
+三項演算子を使うと、条件式を 1行で書くことができます。 たとえば、[If...Else](./cf_branching.md#ifelseend-if) 文を完全に置き換えることができます。
 
-It takes three operands in the following order:
+三項演算子は 3つのオペランドを次の順序で受け取ります:
 
-* a condition followed by a question mark (?)
-* an expression to execute if the condition is [truthy](#truthy-and-falsy), followed by a colon (:)
-* an expression to execute if the condition is [falsy](#truthy-and-falsy)
+* 条件とクエスチョンマーク (?)
+* 条件が [truthy](#truthy-と-falsy) である場合に実行される式、その後にコロン (:)
+* 条件が [falsy](#truthy-と-falsy) の場合に実行される式
 
 ### シンタックス
 
