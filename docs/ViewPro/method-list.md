@@ -1436,6 +1436,45 @@ $index:=VP Get current sheet("ViewProArea")
 
 [VP SET CURRENT SHEET](#vp-set-current-sheet)
 
+### VP Get data context
+
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection
+<!-- END REF -->
+
+
+<!-- REF #_method_.VP Get data context.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|vpAreaName |Object|->|4D View Pro area form object name|
+|sheetIndex |Object|->|Index of the sheet to get the data context from|
+|Result |Object|<-|data context|
+|Result |Collection|<-|data context|
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the data context of a worksheet<!-- END REF -->.
+
+In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet.
+
+If there is no context for the worksheet, the command returns `Null`.
+
+The returned data context includes user modifications.
+
+ 
+#### Example
+
+```4d
+var $mycollection : Collection
+
+$myCollection:=VP Get data context("ViewProArea") 
+```
+
+#### See also 
+[VP SET DATA CONTEXT](#vp-set-data-context)
+
 ### VP Get default style
 
 <!-- REF #_method_.VP Get default style.Syntax -->**VP Get default style** ( *vpAreaName* : Text { ; *sheet* :  Integer } ) : Integer<!-- END REF -->  
@@ -3890,7 +3929,7 @@ End case
 
 ### VP SET DATA CONTEXT
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object ; *options* : Object ; *sheetIndex* : Integer )
 <!-- END REF -->
 
 
@@ -3903,7 +3942,7 @@ End case
 |options |Object|->|Additional options|
 |sheetIndex |Integer|->|Sheet index|
 
-<!-- END REF -->  
+<!-- END REF -->
 
 #### Description
 
@@ -3964,7 +4003,7 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 
 #### Example 3
 
-*data* is a collection that contains subcollections. Each subcollection defines the contents of a row:
+The *data* passed as a parameter is a collection that contains subcollections. Each subcollection defines the contents of a row:
 
 ```4d
 var $data : Collection
