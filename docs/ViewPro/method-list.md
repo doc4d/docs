@@ -3890,7 +3890,7 @@ End case
 
 ### VP SET DATA CONTEXT
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpArea* : Object ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpArea* : Object ; *data* : Object ; *options* : Object ; *options* : sheetIndex )<br/>**VP SET DATA CONTEXT** ( *vpArea* : Object ; *data* : Collection ; *options* : Object  ; *options* : sheetIndex  ) 
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>
 <!-- END REF -->
 
 
@@ -3898,23 +3898,95 @@ End case
 
 |Parameter|Type||Description|
 |---|---|---|---|
-|rangeObj |Object|->|Range object|
-|dateValue |Date|->|Date value to set|
-|timeValue |Time|->|Time value to set|
-|formatPattern |Text|->|Format of value|
+|vpAreaName |Object|->|4D View Pro area form object name|
+|data |Object|->|Data to load in the data context|
+|options |Object|->|Additional options|
+|sheetIndex |Integer|->|Sheet index|
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary --><!-- END REF -->. 
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is used to fill data automatically in worksheet cells.
 
+In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned. 
 
+In *data*, pass an object or a collection containing the data to load in the data context.
+
+In *options*, you can pass an object that specifies additional options. Possible properties are: 
+
+|Property|Type|Description|
+|---|---|---|
+|reset |Object|True to reset the sheet's context before loading the new context, False (default) otherwise.|
+|autoGenerateColumns|Object| If the data is a collection, specifies if columns are generated automatically when the data context is applied.|
+
+The following rules apply when columns are automatically generated:
+* If *data* is a collection of objects, attribute names are used a column titles (see example 2). 
+* If *data* is a collection that contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created..
+
+In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
  
 #### Example
 
+Pass an object and bind the context data to cells: 
+
 ```4d
+var $data; $options : Object
+
+$data:=New object
+$data.firstName:="Freehafer"
+$data.lastName:="Nancy"
+
+VP SET DATA CONTEXT("ViewProArea"; $p)
+
+VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
+VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 ```
+
+![](assets/en/ViewPro/vp-set-data-context.png)
+
+#### Example 2
+
+Pass a collection of objects and generate columns automatically: 
+
+```4d
+var $options : Object
+var $data : Collection
+
+$data:=New collection
+$data.push(New object("firstname"; "John"; "lastname"; "Smith"); New object("firstname"; "Mary"; "lastname"; "Poppins"))
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+![](assets/en/ViewPro/vp-set-data-context-2.png)
+
+#### Example 3
+
+*data* is a collection that contains subcollections. Each subcollection defines the contents of a row:
+
+```4d
+var $data : Collection
+var $options : Object
+
+$data:=New collection
+$data.push(New collection(1; 2; 3; False; ""))  // 5 columns are created
+$data.push(New collection)  // Second row is empty
+$data.push(New collection(4; 5; Null; "hello"; "world"))  // Third row has 5 values
+$data.push(New collection(6; 7; 8; 9))  // Fourth row has 4 values
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+
+![](assets/en/ViewPro/vp-set-data-context-3.png)
+
+#### See also
+
+[VP SET BINDING PATH](#vp-set-binding-path)
+[VP Get data context](#vp-get-data-context)
 
 ### VP SET DATE TIME VALUE
 
