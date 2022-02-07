@@ -3888,6 +3888,34 @@ End case
 
 [VP SET ALLOWED METHODS](#vp-set-allowed-methods)
 
+### VP SET DATA CONTEXT
+
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpArea* : Object ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpArea* : Object ; *data* : Object ; *options* : Object ; *options* : sheetIndex )<br/>**VP SET DATA CONTEXT** ( *vpArea* : Object ; *data* : Collection ; *options* : Object  ; *options* : sheetIndex  ) 
+<!-- END REF -->
+
+
+<!-- REF #_method_.VP SET DATA CONTEXT.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+|rangeObj |Object|->|Range object|
+|dateValue |Date|->|Date value to set|
+|timeValue |Time|->|Time value to set|
+|formatPattern |Text|->|Format of value|
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary --><!-- END REF -->. 
+
+
+ 
+#### Example
+
+```4d
+```
+
 ### VP SET DATE TIME VALUE
 
 <!-- REF #_method_.VP SET DATE TIME VALUE.Syntax -->**VP SET DATE TIME VALUE** ( *rangeObj* : Object ; *dateValue* : Date ; *timeValue* : Time {; *formatPattern* : Text } ) <!-- END REF -->  
