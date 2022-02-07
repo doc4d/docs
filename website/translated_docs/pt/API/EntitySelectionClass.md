@@ -1500,11 +1500,11 @@ In this example, the "marks" object field in the **Students** dataClass contains
 ## .query()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças                           |
-| ------ | ---------------------------------- |
-| v17 R6 | Support of Formula parameters      |
-| v17 R5 | Support of placeholders for values |
-| v17    | Adicionado                         |
+| Versão | Mudanças                               |
+| ------ | -------------------------------------- |
+| v17 R6 | Soporte dos Parâmetros Formula         |
+| v17 R5 | Suporte dos marcadores para os valores |
+| v17    | Adicionado                             |
 
 </details>
 
@@ -1514,8 +1514,8 @@ In this example, the "marks" object field in the **Students** dataClass contains
 <!-- REF #EntitySelectionClass.query().Params -->
 | Parameter     | Type               |    | Description                                                                                                                                                   |
 | ------------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| queryString   | Texto              | -> | Search criteria as string                                                                                                                                     |
-| formula       | Objeto             | -> | Search criteria as formula object                                                                                                                             |
+| queryString   | Texto              | -> | Criterios de pesquisa como string                                                                                                                             |
+| formula       | Objeto             | -> | Criterios de pesquisa como objeto fórmula                                                                                                                     |
 | value         | any                | -> | Value(s) to use for indexed placeholder(s)                                                                                                                    |
 | querySettings | Objeto             | -> | Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                                     |
 | Result        | 4D.EntitySelection | <- | New entity selection made up of entities from entity selection meeting the search criteria specified in *queryString* or *formula*|<!-- END REF -->
