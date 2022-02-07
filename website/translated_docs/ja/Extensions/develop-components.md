@@ -3,7 +3,7 @@ id: develop-components
 title: コンポーネントの開発
 ---
 
-A 4D component is a set of 4D functions, methods, and forms representing one or more functionalities that can be [installed and used in 4D applications](Concepts/components.md). たとえば、メールの送受信をおこない、それらを 4D アプリケーションに格納するための機能を持ったコンポーネントを作成できます。
+4D のコンポーネントとは、[4Dアプリケーションにインストール可能](Concepts/components.md) な、1つ以上の機能を持つ 4D関数やメソッド、フォームの一式です。 たとえば、メールの送受信をおこない、それらを 4D アプリケーションに格納するための機能を持ったコンポーネントを作成できます。
 
 ニーズに合わせて独自の 4Dコンポーネントを開発し、それを非公開とすることができます。 また、作成した [コンポーネントを4Dコミュニティで共有](https://github.com/topics/4d-component) することもできます。
 
@@ -19,9 +19,9 @@ A 4D component is a set of 4D functions, methods, and forms representing one or 
 4D コンポーネントの作成とインストールは直接 4D を使用しておこないます:
 
 - コンポーネントをインストールするには、[プロジェクトの `Components` フォルダー](Project/architecture.md) にコンポーネントファイルをコピーします。 エイリアスまたはショートカットも使用できます。
-- A project can be both a matrix and a host, in other words, a matrix project can itself use one or more components. しかしコンポーネントが "サブコンポーネント" を使用することはできません。
-- A component can call on most of the 4D elements: classes, functions, project methods, project forms, menu bars, choice lists, and so on. 反面、コンポーネントが呼び出せないものは、データベースメソッドとトリガーです。
-- You cannot use the datastore, standard tables, or data files in 4D components. しかし、外部データベースのメカニズムを使用すればテーブルやフィールドを作成し、そこにデータを格納したり読み出したりすることができます。 外部データベースは、メインの 4D データベースとは独立して存在し、SQLコマンドでアクセスします。
+- プロジェクトはマトリクスにもホストにもなりえます。言い換えれば、マトリクスプロジェクト自体も1 つ以上のコンポーネントを使用できます。 しかしコンポーネントが "サブコンポーネント" を使用することはできません。
+- コンポーネントは次の 4D の要素を呼び出すことができます: クラス、関数、プロジェクトメソッド、プロジェクトフォーム、メニューバー、選択リストなど。 反面、コンポーネントが呼び出せないものは、データベースメソッドとトリガーです。
+- コンポーネント内でデータストアや標準のテーブル、データファイルを使用することはできません。 しかし、外部データベースのメカニズムを使用すればテーブルやフィールドを作成し、そこにデータを格納したり読み出したりすることができます。 外部データベースは、メインの 4D データベースとは独立して存在し、SQLコマンドでアクセスします。
 - インタープリターモードで動作するホストプロジェクトは、インタープリターまたはコンパイル済みどちらのコンポーネントも使用できます。 コンパイルモードで実行されるホストデータベースでは、インタープリターのコンポーネントを使用できません。 この場合、コンパイル済みコンポーネントのみが利用可能です。
 
 
@@ -42,7 +42,7 @@ A 4D component is a set of 4D functions, methods, and forms representing one or 
 
 ### 使用できないコマンド
 
-(読み取り専用モードで開かれるため) ストラクチャーファイルを更新する以下のコマンドは、コンポーネントで使用することができません。 Their execution in a component will generate the error -10511, "The CommandName command cannot be called from a component":
+(読み取り専用モードで開かれるため) ストラクチャーファイルを更新する以下のコマンドは、コンポーネントで使用することができません。 コンポーネント中で以下のコマンドを実行すると、-10511, "CommandName コマンドをコンポーネントでコールすることはできません" のエラーが生成されます:
 
 - `ON EVENT CALL`
 - `Method called on event`
@@ -71,13 +71,13 @@ A 4D component is a set of 4D functions, methods, and forms representing one or 
 
 ## プロジェクトメソッドの共有
 
-All the project methods of a matrix project are by definition included in the component (the project is the component), which means that they can be called and executed within the component.
+マトリクスプロジェクトのすべてのプロジェクトメソッドは 、コンポーネントに含まれます。つまり、マトリクスプロジェクトをコンポーネント化しても、これらのプロジェクトメソッドは同コンポーネント内で呼び出して実行することができます。
 
 他方、デフォルトでは、これらのプロジェクトメソッドはホストプロジェクトに表示されず、呼び出すこともできません。 In the matrix project, you must explicitly designate the methods that you want to share with the host project by checking the **Shared by components and host project** box in the method properties dialog box:
 
 ![](assets/en/Concepts/shared-methods.png)
 
-Shared project methods can be called in the code of the host project (but they cannot be modified in the Method editor of the host project). These methods are **entry points** of the component.
+設定することで、共有されたプロジェクトメソッドはホストプロジェクトにて呼び出すことができるようになります (しかしホストプロジェクトのメソッドエディターで編集することはできません)。 これらのメソッドはコンポーネントの **エントリーポイント** となります。
 
 セキュリティのため、デフォルトでは、コンポーネントはホストプロジェクトのプロジェクトメソッドを実行することはできません。 特定の場合に、ホストプロジェクトのプロジェクトメソッドにコンポーネントがアクセスできるようにする必要があるかもしれません。 そうするには、ホストプロジェクトのプロジェクトメソッド側で、コンポーネントからのアクセスを可能にするよう明示的に指定しなければなりません。これはメソッドプロパティダイアログボックスの、**コンポーネントとホストプロジェクト間で共有** で設定します。
 
@@ -368,4 +368,4 @@ To protect the code of a component effectively, simply [compile and build](Deskt
 
 ## コンポーネントの共有
 
-開発したコンポーネントを [GitHub](https://github.com/topics/4d-component) で公開し、4D開発者のコミュニティをサポートすることをお勧めします。 We recommend that you use the **`4d-component`** topic to be correctly referenced.  
+開発したコンポーネントを [GitHub](https://github.com/topics/4d-component) で公開し、4D開発者のコミュニティをサポートすることをお勧めします。 正しく参照されるためには、**`4d-component`** トピックをご利用ください。  
