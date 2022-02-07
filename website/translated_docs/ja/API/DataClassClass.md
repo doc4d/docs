@@ -1265,7 +1265,7 @@ softwares:{
 
 The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and size of the ORDA cache for a dataclass.<!-- END REF -->.
 
-In the *settings* parameter, pass an object with the following properties:
+*settings* には、以下のプロパティを持つオブジェクトを渡します:
 
 | プロパティ      | タイプ  | 説明                  |
 | ---------- | ---- | ------------------- |
