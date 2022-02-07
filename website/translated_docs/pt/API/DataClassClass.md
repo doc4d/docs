@@ -193,7 +193,7 @@ Para cada objeto de *objectCol*:
     *   Se a chave primária não for dada, a entidade é criada e o valor da chave primária é assignado com respeito às regras padrão de database.
 > A propriedade "\__KEY" que contém um valor só levado em consideração qando a propriedade "\__NEW" se estabelece como **false** (ou se omite) e existe uma entidade correspondente. em todos os outros casos, o valor de propriedade "\_\_KEY" é ignorado, valores de chave primária devem ser pasados "tal qual".
 
-**Related entities**
+**Entidades relacionadas**
 
 Os objetos de *objectCol* podem conter um ou mais objetos aninhados que apresentam uma ou mais entidades relacionadas, o que pode ser útil para criar ou atualizar links entre entidades.
 
@@ -450,22 +450,22 @@ A função `.getDataStore( )` <!-- REF #DataClassClass.getDataStore().Summary --
 
 A datastore pode ser:
 
-*   a datastore principal, retournada pelo comando `ds`.
+*   a datastore principal, retornada pelo comando `ds`.
 *   uma datastore remota, aberta com o comando `Open datastore`.
 
 
 #### Exemplo
 
-The ***SearchDuplicate*** project method searches for duplicated values in any dataclass.
+O método de projeto ***SearchDuplicate*** procura por valores duplicados em qualquer dataclass.
 
 ```4d
  var $pet : cs.CatsEntity
- $pet:=ds.Cats.all().first() //get an entity
+ $pet:=ds.Cats.all().first() //obtém uma entidade
  SearchDuplicate($pet;"Dogs")
 ```
 
 ```4d
-  // SearchDuplicate method
+  // Pesquisa SearchDuplicate
   // SearchDuplicate(entity_to_search;dataclass_name)
 
  #DECLARE ($pet : Object ; $dataClassName : Text)
@@ -489,26 +489,26 @@ The ***SearchDuplicate*** project method searches for duplicated values in any d
 </details>
 
 <!-- REF #DataClassClass.getInfo().Syntax -->
-**.getInfo()** : Object <!-- END REF -->
+**.getInfo()** : Objeto <!-- END REF -->
 
 <!-- REF #DataClassClass.getInfo().Params -->
-| Parameter | Type   |    | Description                  |
-| --------- | ------ | -- | ---------------------------- |
-| Result    | Objeto | <- | Information on the dataclass |
+| Parâmetros | Tipo   |    | Descrição                |
+| ---------- | ------ | -- | ------------------------ |
+| Resultados | Objeto | <- | Informação da dataclass. |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns an object providing information about the dataclass<!-- END REF -->. This function is useful for setting up generic code.
+A função `.getInfo( )`<!-- REF #DataClassClass.getInfo().Sumário -->devolve um objeto que proporciona informação sobre a classe de dados<!-- END REF -->. Esta função é útil para configurar o código genérico.
 
-**Returned object**
+**Objeto devolvido**
 
-| Propriedade | Type    | Description                              |
-| ----------- | ------- | ---------------------------------------- |
-| name        | Texto   | Name of the dataclass                    |
-| primaryKey  | Texto   | Name of the primary key of the dataclass |
-| tableNumber | Integer | Internal 4D table number                 |
+| Propriedade | Tipo    | Descrição                                 |
+| ----------- | ------- | ----------------------------------------- |
+| name        | Texto   | Nome da dataclass                         |
+| primaryKey  | Texto   | Nome da chave primária da classe de dados |
+| tableNumber | Integer | Número daa tabela 4D interna              |
 
 
 
@@ -518,7 +518,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
  #DECLARE ($entity : Object)  
  var $status : Object
 
- computeEmployeeNumber($entity) //do some actions on entity
+ computeEmployeeNumber($entity) //faz uma ação na entidade
 
  $status:=$entity.save()
  if($status.success)
@@ -545,7 +545,7 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
  var $dataClassAttribute : Object
 
  $pk:=ds.Employee.getInfo().primaryKey
- $dataClassAttribute:=ds.Employee[$pk] // If needed the attribute matching the primary key is accessible
+ $dataClassAttribute:=ds.Employee[$pk] // Se necessário o atributo correspondente à chave primária é acessível
 ```
 
 <!-- END REF -->
@@ -565,29 +565,29 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 **.new()** : 4D.Entity <!-- END REF -->
 
 <!-- REF #DataClassClass.new().Params -->
-| Parameter | Type      |    | Description                       |
-| --------- | --------- | -- | --------------------------------- |
-| Result    | 4D.Entity | <- | New entity matching the Dataclass |
+| Parâmetros | Tipo      |    | Descrição                                        |
+| ---------- | --------- | -- | ------------------------------------------------ |
+| Resultado  | 4D.Entity | <- | Nova entidade que coincide com a classe de dados |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.new( )` function <!-- REF #DataClassClass.new().Summary -->creates in memory and returns a new blank entity related to the Dataclass<!-- END REF -->.
+A função `.new( )`<!-- REF #DataClassClass.new().Sumário -->cria em memória e devolve uma nova entidade em branco relacionada com a Dataclass<!-- END REF -->.
 
-The entity object is created in memory and is not saved in the database until the [`.save( )`](EntityClass.md#save) function is called. If the entity is deleted before being saved, it cannot be recovered.
+O objeto entidade se cria em memória e não se guarda no banco de dados até que se chama a função [`.save( )`](EntityClass.md#save). Se a entidade for apagada antes de ser salva, não se pode recuperar.
 
-**4D Server**: In client-server, if the primary key of the corresponding table is auto-incremented, it will be calculated when the entity is saved on the server.
+**4D Server**: eám cliente-servidor, se a chave primaria da tabela correspondente se autoincrementa, se calculará quando a entidade se guarde no servidor.
 
 #### Exemplo
 
-This example creates a new entity in the "Log" Dataclass and records information in the "info" attribute:
+Este ejemplo cria uma nova entidade na classe de dados "Log" e registra a informação no atributo "info":
 
 ```4d 
  var $entity : cs.LogEntity
- $entity:=ds.Log.new() //create a reference
- $entity.info:="New entry" //store some information
- $entity.save() //save the entity
+ $entity:=ds.Log.new() //cria uma referência
+ $entity.info:="New entry" //armazena informação
+ $entity.save() //salva a entidade
 ```
  
 <!-- END REF -->
@@ -608,23 +608,23 @@ This example creates a new entity in the "Log" Dataclass and records information
 **.newSelection**( { *keepOrder* : Integer } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #DataClassClass.newSelection().Params -->
-| Parameter | Type               |    | Description                                                                                                                                   |
-| --------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| keepOrder | Integer            | -> | `dk keep ordered`: creates an ordered entity selection,<br>`dk non ordered`: creates an unordered entity selection (default if omitted) |
-| Result    | 4D.EntitySelection | <- | New blank entity selection related to the dataclass                                                                                           |
+| Parámetros | Tipo               |    | Descrição                                                                                                                                           |
+| ---------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| keepOrder  | Integer            | -> | `dk keep ordered`: cria uma seleção de entidades ordenada,<br>`dk non ordered`: cria uma seleção de entidade não ordenada (padrão se omitido) |
+| Resultado  | 4D.EntitySelection | <- | Nova seleção de entidades em branco relacionadas com a classe de dados                                                                              |
 <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.newSelection( )` function <!-- REF #DataClassClass.newSelection().Summary -->creates a new, blank, non-shareable entity selection, related to the dataclass, in memory<!-- END REF -->.
+função `.newSelection( )` <!-- REF #DataClassClass.newSelection().Summary -->cria uma nova seleção de entidades em branco, não compartilhável, relacionado à dataclasse na memória<!-- END REF -->.
 
-> For information on non-shareable entity selections, please refer to [this section](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
+> Para mais informação sobre as seleçõees de entidades não compartilháveis, consulte [esta seção](ORDA/entities.md#shareable-or-non-shareable-entity-selections).
 
 
-If you want to create an ordered entity selection, pass the `dk keep ordered` selector in the *keepOrder* parameter. By default if you omit this parameter, or if you pass the `dk non ordered` selector, the method creates an unordered entity selection. Unordered entity selections are faster but you cannot rely on entity positions. For more information, please see [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
+Se quiser uma seleção de entidades ordenada, passe o seletor `dk keep ordered` no parâmetro *keepOrder*. Como padrão se omitir este parâmetro ou se passar o seletor `dk non ordered`, o método cria uma seleção de entidades não ordenada. As seleções de entidades desordenadas são mais rápidas mas não se pode confiar nas posições das entidades. Para mas informação, consulte [Seleções de entidades ordenadas e desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection).
 
-When created, the entity selection does not contain any entities (`mySelection.length` returns 0). This method lets you build entity selections gradually by making subsequent calls to the [`add()`](EntitySelectionClass.md#add) function.
+Quando for criada, a seleção de entidades não contém nenhuma entidade (`mySelection.length` devolve 0). Este método lhe permite criar seleções de entidades gradualmente fazendo chamadas posteriores à função [`add()`](EntitySelectionClass.md#add).
 
 
 #### Exemplo
@@ -632,8 +632,8 @@ When created, the entity selection does not contain any entities (`mySelection.l
 
 ```4d 
  var $USelection; $OSelection : cs.EmployeeSelection
- $USelection:=ds.Employee.newSelection() //create an unordered empty entity selection
- $OSelection:=ds.Employee.newSelection(dk keep ordered) //create an ordered empty entity selection
+ $USelection:=ds.Employee.newSelection() //cria uma seleção de entidade vazia não ordenada
+ $OSelection:=ds.Employee.newSelection(dk keep ordered) //cria uma seleção de entidade vazia ordenada
 ```
  
 
@@ -645,21 +645,21 @@ When created, the entity selection does not contain any entities (`mySelection.l
 ## .query()
 
 <details><summary>Histórico</summary>
-| Versão | Mudanças                           |
-| ------ | ---------------------------------- |
-| v17 R6 | Support of Formula parameters      |
-| v17 R5 | Support of placeholders for values |
-| v17    | Adicionado                         |
+| Versão | Mudanças                               |
+| ------ | -------------------------------------- |
+| v17 R6 | Soporte dos Parâmetros Formula         |
+| v17 R5 | Suporte dos marcadores para os valores |
+| v17    | Adicionado                             |
 </details>
 
 <!-- REF #DataClassClass.query().Syntax -->
 **.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #DataClassClass.query().Params -->
-| Parameter     | Type               |    | Description                                                                                                                 |
+| Parâmetros    | Tipo               |    | Descrição                                                                                                                   |
 | ------------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------- |
-| queryString   | Texto              | -> | Search criteria as string                                                                                                   |
-| formula       | Objeto             | -> | Search criteria as formula object                                                                                           |
+| queryString   | Texto              | -> | Criterios de pesquisa como string                                                                                           |
+| formula       | Objeto             | -> | Criterios de pesquisa como objeto fórmula                                                                                   |
 | value         | any                | -> | Value(s) to use for indexed placeholder(s)                                                                                  |
 | querySettings | Objeto             | -> | Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                   |
 | Result        | 4D.EntitySelection | <- | New entity selection made up of entities from dataclass meeting the search criteria specified in *queryString* or *formula* |
