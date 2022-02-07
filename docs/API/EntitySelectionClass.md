@@ -956,7 +956,7 @@ The following generic code duplicates all entities of the entity selection:
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
 
-If there are no learnt attributes in the optimization context, the function returns an empty Text element.
+If there are no attributes in the [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization), the function returns an empty Text.
 
 #### Example 
 

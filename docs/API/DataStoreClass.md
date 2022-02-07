@@ -296,7 +296,7 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 
 #### Description
 
-The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the learnt attributes for all the active contexts in the datastore<!-- END REF -->.
+The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
 #### Example 
 
 ```4d
@@ -322,7 +322,7 @@ $info:=$ds.getAllRemoteContexts()
 $contextB:=New object("context"; "contextB")
 $ds.setRemoteContextInfo("contextB"; $ds.Address; "city")
 $info:=$ds.getAllRemoteContexts()
-//$info : [{name:contextB,dataclass:Address,main:city},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
+//$info : [{name:contextB,dataclass:Address,main:city},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
 
 $ds.clearAllRemoteContexts()
 $info:=$ds.getAllRemoteContexts()
@@ -415,6 +415,12 @@ You want to know the number of encrypted tables in the current data file:
 <!-- REF #DataStoreClass.getAllRemoteContexts().Syntax -->
 **.getAllRemoteContexts()** : Collection<!-- END REF -->
 
+<!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
+|Parameter|Type||Description|
+|---|---|---|---|
+|Result|Object|<-|Collection of optimization context objects|
+<!-- END REF -->
+
 #### Description
 
 The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
@@ -422,14 +428,14 @@ The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteCont
 For this function to properly return all the active contexts, one of the following conditions must be met: 
 * Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
 * Contexts have been linked to entities or entity selections using one of the following functions:
-  * dataClass.query()
-  * entitySelection.query()
-  * dataClass.fromCollection()
-  * dataClass.all()
-  * Create entity selection
-  * dataClass.get()
+  * [dataClass.query()](./DataClassClass.md#query)
+  * [entitySelection.query](./EntitySelectionClass.md#query)
+  * [dataClass.fromCollection](./DataClassClass.md#fromcollection)
+  * [dataClass.all](./DataClassClass.md#all)
+  * [Create entity selection](./EntitySelectionClass.md#create-entity-selection)
+  * [dataClass.get](./DataClassClass.md#get)
 
-Each object in the returned collection has [the properties listed in the .getContextInfo() section](#properties-of-the-returned-object) 
+Each object in the returned collection has the [properties listed in the `.getContextInfo()` section](#properties-of-the-returned-object) 
 #### Example 
 
 ```4d
@@ -459,7 +465,7 @@ For each ($a; $adresses)
 End for each 
 
 $info:=$ds.getAllRemoteContexts()
-//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
+//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
 ```
 
 <!-- REF DataStoreClass.getInfo().Desc -->
@@ -548,37 +554,37 @@ On a remote datastore:
 |Parameter|Type||Description|
 |---|---|---|---|
 |contextName|Text|->|Name of the context|
-|result|Object|<-|Object that holds information on the optimization context|
+|Result|Object|<-|Description of the optimization context|
 <!-- END REF -->
 
 #### Description
 
-The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo().Summary -->returns an object that holds information on the optimization context of a datastore<!-- END REF -->.
+The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
+
+For more information, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization) section.
 
 For this function to properly return a context, one of the following conditions must be met: 
 * Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* This context has been linked to an entity selection or an entity using one of the following functions:
-  * dataClass.query()
-  * entitySelection.query()
-  * dataClass.fromCollection()
-  * dataClass.all()
-  * Create entity selection
-  * dataClass.get()
+* The context has been linked to an entity selection or an entity using one of the following functions:
+  * [dataClass.query()](./DataClassClass.md#query)
+  * [entitySelection.query](./EntitySelectionClass.md#query)
+  * [dataClass.fromCollection](./DataClassClass.md#fromcollection)
+  * [dataClass.all](./DataClassClass.md#all)
+  * [Create entity selection](./EntitySelectionClass.md#create-entity-selection)
+  * [dataClass.get](./DataClassClass.md#get)
 
-#### Properties of the returned object 
+#### Returned object 
 
 The returned object has the following properties: 
 
 |Property|Type|Description|
 |---|---|---|
 |name|Text|Name of the context|
-|main|Text|Learnt attributes associated to the context separated by a comma|
-|dataclass|Text|The dataclass linked to the context|
-|currentItem (optional)*|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box|
+|main|Text|Attributes associated to the context. If there are several attributes, they are separated by a comma|
+|dataclass|Text|Dataclass linked to the context|
+|currentItem (optional)*|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem|
 
-`currentItem` is returned as Null or an empty string if:
-* the context name is one used for a list box
-* there is no context for the currentitem
+
 #### Example 
 
 ```4d
@@ -587,18 +593,19 @@ var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 var $contextA; $info : Object
 var $text : Text
+var $info : Object
 
 $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
-$persons:=$ds.Persons.all($contextA)
+$persons:=$ds.Persons.all($contextA) // Link of the context
 $text:="" 
 For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
 $info:=$ds.getRemoteContextInfo("contextA")
-//$info : {name:contextA,dataclass:Persons,main:firstname,address,address.city}
+//$info : {name:contextA;dataclass:Persons;main:firstname;address;address.city}
 ```
 
 #### See also
@@ -838,7 +845,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 ## .setRemoteContextInfo()
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : String { ; contextType : Text} { ; pageLength : Integer})<br/>**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : Object ; *attributesColl* : Collection { ; contextType : Text} { ; pageLength : Integer})
+**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : Text { ; contextType : Text} { ; pageLength : Integer})<br/>**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : 4D.DataClass ; *attributesColl* : Collection { ; contextType : Text} { ; pageLength : Integer})
 <!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
@@ -848,40 +855,38 @@ You create a *protectDataFile* project method to call before deployments for exa
 |dataClassName|Text|->|Name of the dataclass|
 |dataclassObject|Object|->|dataclass object (e.g datastore.Employee)|
 |attributes|Text|->|Attribute list separated by a comma|
-|attributescoll|Collection of Text elements|->|Collection of attribute names|
+|attributesColl|Collection|->|Collection of attribute names (text)|
 |contextType|Text|->|If provided, value must be "main" or "currentItem"|
 |pageLength|Integer|->|Page length of the entity selection associated to the context|
 <!-- END REF -->
 
 #### Description
 
-The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->links dataclass attributes to an optimization context<!-- END REF -->.
-
-If an optimization context already exists for the specified attributes, this command replaces it.
-
-If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
+The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->links the specified dataclass attributes to the *contextName* optimization context<!-- END REF -->. If an optimization context already exists for the specified attributes, this command replaces it.
 
 When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
 * the first entity is not fully loaded as done in automatic mode
 * pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
 
-In *contextName*, pass the name of the optimization context that will be linked to the dataclass attributes.
+> For more information, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
 
-In *dataclassName*, pass the name of the dataclass that holds the attributes to be linked to the optimization context. You can also pass a *dataClassObject*.
+In *contextName*, pass the name of the optimization context to link to the dataclass attributes.
 
-In *attributes*, pass the list of attributes to be linked to the optimization context, in the form of a Text element. Attributes must be separated by a comma. You can also pass a collection of attribute names (*attributesColl*).
+To designate the attributes to link to the context, you can either:
+* pass a text in *dataClassName* and a list of comma-separated attribute names in *attributes*.
+* pass a 4D.DataClass object in *dataclassObject* and a collection of attribute names in *attributesColl*
 
-If *attributes* is an empty String or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context.
+If *attributes* is an empty Text or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
 
 You can pass a *contextType* to specify if the context is a standard context or a context associated to an entity selection displayed in a list box. 
 
-If the value of *contextType* is set to "main" (default), the *contextName* designates a standard context.
+You can pass a *contextType* to  specify if the context is a standard context or a context associated to an entity selection displayed in a list box: 
+* If it is set to "main" (default), the contextName designates a standard context.
+* If it is set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box)
 
-If the value of *contextType* is "currentItem", the attributes passed are put in the context of the current item. See [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
+In *pageLength*, specify the number of dataclass entities to request from the server. If the attributes are not text elements or collections, they are ignored.
 
-In *pageLength*, specify the number of dataclass entities to request from the server. If the attributes are not strings or  collections, they are ignored.
-
-You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is attributeName:pageLength (e.g employees:20).
+You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
 #### Example 1
 
 ```4d
@@ -939,7 +944,7 @@ $info:=$ds.getRemoteContextInfo("contextA")
 //The attributes have been replaced
 ```
 
-#### Example 4 - Listbox
+#### Example 3 - Listbox
 
 ```4d
 // When the form loads

@@ -669,14 +669,14 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|result|Text|<-|Learnt attributes linked to the entity selection, separated by a comma|
+|result|Text|<-|Attributes linked to the entity, separated by a comma|
 <!-- END REF -->
 
 #### Description
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
 
-If there are no learnt attributes in the optimization context, the function returns an empty Text element.
+If there are no attributes in the [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization), the function returns an empty Text.
 
 #### Example 
 
