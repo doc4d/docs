@@ -149,7 +149,7 @@ Defines the type of data to save in the field or variable associated to the [dro
 - Drop-down lists [associated to a choice list](dropdownList_Overview.md#using-a-choice-list).
 - Drop-down lists [associated to a hierarchical choice list](dropdownList_Overview.md#using-a-hierarchical-choice-list).
 
-Three options are available:
+Hay tres opciones disponibles:
 
 - **List reference**: declares that the drop-down list is hierarchical. It means that the drop-down list can display up to two hierarchical levels and its contents can be managed by the 4D language commands of the **Hierarchical Lists** theme.
 - **Selected item value** (default): the drop-down list is not hierarchical and the value of the item chosen in the list by the user is saved directly. For example, if the user chooses the value "Blue", then this value is saved in the field.

@@ -63,6 +63,8 @@ Si une demande est envoyée au datastore distant après la fermeture de la sessi
 
 4D provides an automatic optimization for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). Cette optimisation accélère l'exécution de votre application 4D en réduisant drastiquement le volume d'informations transmises sur le réseau.
 
+![](assets/en/ORDA/cs-optimization-auto.png)
+
 Les mécanismes d'optimisation suivants sont mis en œuvre :
 
 *   Lorsqu'un client demande une sélection d'entité au serveur, 4D "apprend" automatiquement attributs de la sélection d'entité sont réellement utilisés côté client lors de l'exécution du code, et génère un "contexte d'optimisation" correspondant. Ce contexte est relié à la sélection d'entité et stocke les attributs utilisés. Il sera mis à jour dynamiquement si d'autres attributs sont utilisés par la suite.
@@ -101,6 +103,8 @@ Thanks to the optimization, this request will only get data from used attributes
 
 Vous pouvez tirer un meilleur parti de l'optimisation en utilisant la propriété **context**. Cette propriété référence un contexte d'optimisation "appris" pour une sélection d'entités. Elle peut être passée comme paramètre aux méthodes ORDA qui retournent de nouvelles sélections d'entités, afin que les sélections d'entités demandent directement au serveur les attributs utilisés, sans passer par la phase d'apprentissage.
 
+![](assets/en/ORDA/cs-optimization-manual.png)
+
 Une même propriété de contexte d'optimisation peut être passée à un nombre illimité de sélections d'entités de la même dataclass. Toutes les méthodes ORDA qui gèrent les sélections d'entités prennent en charge la propriété **context** (par exemple les méthodes `dataClass.query( )` ou `dataClass.all( )`). Il est toutefois important de garder à l'esprit qu'un contexte est automatiquement mis à jour lorsque de nouveaux attributs sont utilisés dans d'autres parties du code. Si le même contexte est réutilisé dans différents codes, il risque d'être surchargé et de perdre en efficacité.
 > Un mécanisme similaire est mis en place pour des entités qui sont chargées, afin que seuls les attributs utilisés soient demandés (voir la méthode `dataClass.get( )`).
 
@@ -127,6 +131,22 @@ Une même propriété de contexte d'optimisation peut être passée à un nombre
  $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
 ```
 
+### Handling the optimization context
+
+You can use the following ORDA class functions to handle the contents of the optimization context in a client/server configuration. For more information, see the description of each function:
+
+DataClass class:
+* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
+* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
+* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
+* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
+
+Entity Class:
+* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
+
+EntitySelectionClass:
+* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
+
 ### Listbox basée sur une sélection d'entités
 
 L'optimisation d'une sélection d'entités s'applique automatiquement aux listbox basées sur une sélection d'entités dans les configurations client/serveur, au moment d'afficher et de dérouler le contenu d'une listbox : seuls les attributs affichés dans la listbox sont demandés depuis le serveur.
@@ -152,22 +172,8 @@ Par exemple, le code suivant charge l'entité sélectionnée et permet de navigu
 
 Data requested from the server via ORDA is loaded in the ORDA cache (which is different from the 4D cache). By default, the ORDA cache expires after 30 seconds. The data contained in the cache when the timeout is reached is considered as expired: the data remains in the cache until 4D unloads expired data when space is needed.
 
-### List of class functions
+The following ORDA class functions handle the contents of the ORDA cache. For more information, see the description of each function:
 
-The following ORDA class functions can be used to handle the ORDA cache and the contents of the optimization context in a client/server configuration. For more details, check out their description:
-
-DataClass class:
 * [.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
 * [.getRemoteCache()](../API/DataClassClass.md#getremotecache)
 * [.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)
-* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
-* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
-* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
-* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
-* [.getCount()](../API/DataClassClass.md#getcount)
-
-Entity Class:
-* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
-
-EntitySelectionClass:
-* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
