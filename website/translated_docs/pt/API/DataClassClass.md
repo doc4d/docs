@@ -460,17 +460,17 @@ Este exemplo ilustra o uso da propriedade *context* :
 **.getDataStore()** : cs.DataStore<!-- END REF -->
 
 <!-- REF #DataClassClass.getDataStore().Params -->
-| Parameter | Type         |    | Description                |
-| --------- | ------------ |:--:| -------------------------- |
-| Result    | cs.DataStore | <- | Datastore of the dataclass |
+| Parameter | Type         |    | Description                  |
+| --------- | ------------ |:--:| ---------------------------- |
+| Result    | cs.DataStore | <- | Datastore da classe de dados |
 <!-- END REF -->
 
 
 #### Description
 
-The `.getDataStore( )` function <!-- REF #DataClassClass.getDataStore().Summary -->returns the datastore for the specified dataclass<!-- END REF -->.
+A função `.getDataStore( )` <!-- REF #DataClassClass.getDataStore().Summary -->retorna a datastore para a classe de dados especificada<!-- END REF -->.
 
-The datastore can be:
+A datastore pode ser:
 
 *   the main datastore, as returned by the `ds` command.
 *   a remote datastore, opened using the `Open datastore` command.
