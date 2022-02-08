@@ -692,7 +692,6 @@ Each entry object in the `entries` collection has the following properties:
 The `data` object in each entry contains the following properties:
 |Property|Type|Description|
 |---|---|---|
-|__$incomplete|Boolean_|True if all the attributes are not present in the cache|
 |__KEY|String|Primary key of the entity|
 |__STAMP|Longint|Timestamp of the entity in the database|
 |__TIMESTAMP|String|Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)|

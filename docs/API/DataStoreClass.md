@@ -842,10 +842,9 @@ You create a *protectDataFile* project method to call before deployments for exa
 ## .setRemoteContextInfo()
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text )<br/>
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text )<br/>
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection )<br/>
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text ; contextType : Text { ; pageLength : Integer})<!-- END REF -->
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )
+
+<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 |Parameter|Type||Description|
