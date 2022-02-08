@@ -55,9 +55,6 @@ Par exemple, si vous souhaitez définir une classe nommée "Polygon", vous devez
 
 - Dossier Project
     + Project
-
-
-
         * Sources
             - Classes
                 + Polygon.4dm
