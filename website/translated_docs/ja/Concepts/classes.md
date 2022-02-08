@@ -55,9 +55,6 @@ $hello:=$person.sayHello() // "Hello John Doe"
 
 - Project フォルダー
     + Project
-
-
-
         * Sources
             - Classes
                 + Polygon.4dm
