@@ -66,7 +66,7 @@ If a request is sent to the remote datastore after the session has been closed, 
 * the context property
 * the ORDA cache
 
-![](assets/en/ORDA/cs-optimization.png)
+![](assets/en/ORDA/cs-optimization-process.png)
 
 The following mechanisms are implemented:
 
