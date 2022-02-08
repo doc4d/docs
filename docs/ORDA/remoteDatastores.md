@@ -62,19 +62,31 @@ If a request is sent to the remote datastore after the session has been closed, 
 
 ## Client/server optimization
 
-4D provides an automatic optimization for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). This optimization speeds up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. 
+4D provides an optimization for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). This optimization speeds up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. 
 
 ![](assets/en/ORDA/cs-optimization-auto.png)
 
-The following optimization mechanisms are implemented:
+An optimization context can be created in two ways:
+* automatically through a "learning phase", when an entity selection is requested from the server and used in your code 
+* by using the [.setRemoteContextInfo()](../API/DataStoreClass.md#setremotecontextinfo) class function
+
+In the case of an automatic optimization, the following mechanisms are implemented:
 
 *	When a client requests an entity selection from the server, 4D automatically "learns" which attributes of the entity selection are actually used on the client side during the code execution, and builds a corresponding "optimization context". This context is attached to the entity selection and stores the used attributes. It will be dynamically updated if other attributes are used afterwards.
 
 *	Subsequent requests sent to the server on the same entity selection automatically reuse the optimization context and only get necessary attributes from the server, which accelerates the processing. For example in an entity selection-based list box, the learning phase takes place during the display of the first rows, next rows display is very optimized. 
 
-*	An existing optimization context can be passed as a property to another entity selection of the same dataclass, thus bypassing the learning phase and accelerating the application (see [Using the context property](#using-the-context-property) below). 
+An existing optimization context can be passed as a property to another entity selection of the same dataclass, thus bypassing the learning phase and accelerating the application (see [Using the context property](#using-the-context-property) below). 
 
-The following methods automatically associate the optimization context of the source entity selection to the returned entity selection:
+The following methods and functions trigger the learning phase:
+* [Create entity selection](../API/EntitySelectionClass.md#create-entity-selection)
+* [dataClass.fromCollection()](../API/DataClassClass.md#fromcollection)
+* [dataClass.all()](../API/DataClassClass.md#all)
+* [dataClass.get()](../API/DataClassClass.md#get)
+* [dataClass.query()](../API/DataClassClass.md#query)
+* [entitySelection.query()](../API/EntitySelectionClass.md#query)
+
+The following class functions automatically associate the optimization context of the source entity selection to the returned entity selection:
 
 *	`entitySelection.and()`
 *	`entitySelection.minus()`
@@ -82,7 +94,6 @@ The following methods automatically associate the optimization context of the so
 *	`entitySelection.orderBy()`
 *	`entitySelection.slice()`
 *	`entitySelection.drop()`
-
 
 
 **Example**
@@ -138,11 +149,11 @@ A same optimization context property can be passed to unlimited number of entity
 
 You can use the following ORDA class functions to handle the contents of the optimization context in a client/server configuration. For more information, see the description of each function:
 
-DataClass class: 
-* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
-* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
-* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
-* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
+DataStore class: 
+* [.getRemoteContextInfo()](../API/DataStoreClass.md#getremotecontextinfo)
+* [.getAllRemoteContexts()](../API/DataStoreClass.md#getallremotecontexts)
+* [.clearAllRemoteContexts()](../API/DataStoreClass.md#clearallremotecontexts)
+* [.setRemoteContextInfo()](../API/DataStoreClass.md#setremotecontextinfo)
 
 Entity Class:
 * [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)

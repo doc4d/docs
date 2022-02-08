@@ -980,6 +980,14 @@ $info:=$persons.getRemoteContextAttributes()
 //$info = firstname,address,address.city
 ```
 
+#### See also 
+
+[Entity.getRemoteContextAttributes()](./EntityClass.md#getRemoteContextAttributes)
+[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)
+[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)
+[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)
+[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()   
 

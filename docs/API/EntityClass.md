@@ -703,6 +703,14 @@ $info:=$address.getRemoteContextAttributes()
 //$info = persons,persons.lastname,persons.firstname
 ```
 
+#### See also 
+
+[EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes)
+[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)
+[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)
+[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)
+[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+
 <!-- REF EntityClass.getSelection().Desc -->
 ## .getSelection()   
 

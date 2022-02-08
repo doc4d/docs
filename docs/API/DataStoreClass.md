@@ -297,6 +297,7 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 #### Description
 
 The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
+
 #### Example 
 
 ```4d
@@ -329,6 +330,11 @@ $info:=$ds.getAllRemoteContexts()
 //$info is empty
 ```
 
+#### See also 
+
+[.getRemoteContextInfo()](#getremotecontextinfo)
+[.getAllRemoteContexts()](#getallremotecontexts)
+[.setRemoteContextInfo()](#setremotecontextinfo)
 
 <!-- REF DataStoreClass.encryptionStatus().Desc -->
 ## .encryptionStatus()
@@ -425,17 +431,10 @@ You want to know the number of encrypted tables in the current data file:
 
 The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
 
-For this function to properly return all the active contexts, one of the following conditions must be met: 
-* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* Contexts have been linked to entities or entity selections using one of the following functions:
-  * [dataClass.query()](./DataClassClass.md#query)
-  * [entitySelection.query](./EntitySelectionClass.md#query)
-  * [dataClass.fromCollection](./DataClassClass.md#fromcollection)
-  * [dataClass.all](./DataClassClass.md#all)
-  * [Create entity selection](./EntitySelectionClass.md#create-entity-selection)
-  * [dataClass.get](./DataClassClass.md#get)
+> For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
 
 Each object in the returned collection has the [properties listed in the `.getContextInfo()` section](#properties-of-the-returned-object) 
+
 #### Example 
 
 ```4d
@@ -467,6 +466,12 @@ End for each
 $info:=$ds.getAllRemoteContexts()
 //$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
 ```
+
+#### See also
+
+[.getRemoteContextInfo()](#getremotecontextinfo)
+[.setRemoteContextInfo()](#setremotecontextinfo)
+[.clearAllRemoteContexts()](#clearallremotecontexts)
 
 <!-- REF DataStoreClass.getInfo().Desc -->
 ## .getInfo()   
@@ -561,17 +566,7 @@ On a remote datastore:
 
 The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
 
-For more information, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization) section.
-
-For this function to properly return a context, one of the following conditions must be met: 
-* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* The context has been linked to an entity selection or an entity using one of the following functions:
-  * [dataClass.query()](./DataClassClass.md#query)
-  * [entitySelection.query](./EntitySelectionClass.md#query)
-  * [dataClass.fromCollection](./DataClassClass.md#fromcollection)
-  * [dataClass.all](./DataClassClass.md#all)
-  * [Create entity selection](./EntitySelectionClass.md#create-entity-selection)
-  * [dataClass.get](./DataClassClass.md#get)
+For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
 
 #### Returned object 
 
@@ -610,7 +605,9 @@ $info:=$ds.getRemoteContextInfo("contextA")
 
 #### See also
 
-[.setRemoteContextInfo](#setremotecontextinfo)
+[.setRemoteContextInfo()](#setremotecontextinfo)
+[.getAllRemoteContexts()](#getallremotecontexts)
+[.clearAllRemoteContexts()](#clearallremotecontexts)
 
 <!-- REF DataStoreClass.getRequestLog().Desc -->
 ## .getRequestLog()
@@ -878,15 +875,14 @@ To designate the attributes to link to the context, you can either:
 
 If *attributes* is an empty Text or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
 
-You can pass a *contextType* to specify if the context is a standard context or a context associated to an entity selection displayed in a list box. 
-
 You can pass a *contextType* to  specify if the context is a standard context or a context associated to an entity selection displayed in a list box: 
-* If it is set to "main" (default), the contextName designates a standard context.
-* If it is set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box)
+* If set to "main" (default), the *contextName* designates a standard context.
+* If set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
 
 In *pageLength*, specify the number of dataclass entities to request from the server. If the attributes are not text elements or collections, they are ignored.
 
 You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
+
 #### Example 1
 
 ```4d
@@ -967,7 +963,9 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 #### See also
 
-[.getRemoteContextInfo](#getremotecontextinfo)
+[.getRemoteContextInfo()](#getremotecontextinfo)
+[.getAllRemoteContexts()](#getallremotecontexts)
+[.clearAllRemoteContexts()](#clearallremotecontexts)
 
 
 <!-- REF DataStoreClass.startRequestLog().Desc -->
