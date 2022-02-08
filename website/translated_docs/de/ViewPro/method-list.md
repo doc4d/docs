@@ -2400,7 +2400,7 @@ var $workbookOptions : Object
 $workbookOptions:=VP Get workbook options("ViewProArea")
 ```
 
-#### See Also
+#### See also
 
 [VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -3395,7 +3395,7 @@ $o:=cs.OffscreenArea.new()
 $result:=VP Run offscreen area($o)
 ```
 
-## See also
+#### See also
 
 [Blog post: End of document loading](https://blog.4d.com/4d-view-pro-end-of-document-loading/)
 
@@ -3431,7 +3431,7 @@ VP SET ACTIVE CELL($activeCell)
 
 ![](assets/en/ViewPro/cmd_vpSetActiveCell.PNG)
 
-## See also
+#### See also
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
@@ -3507,7 +3507,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 > In 4D View Pro formulas, function names are automatically displayed in uppercase.
 
-## See also
+#### See also
 
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
@@ -3539,7 +3539,7 @@ The *boolValue* parameter allows you to pass the boolean value (**True** or **Fa
 //Set the cell value as False
 VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 ```
-## See also
+#### See also
 
 [VP SET VALUE](#vp-set-value)
 
@@ -3622,7 +3622,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 ![](assets/en/ViewPro/cmd_vpSETBORDER2.PNG)
 
-## See also
+#### See also
 
 [VP SET CELL STYLE](#vp-set-cell-style)
 
@@ -5004,7 +5004,7 @@ $workbookOptions.allowExtendPasteRange:=True
 VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 ```
 
-#### See Also
+#### See also
 
 [VP Get workbook options](#vp-get-workbook-options)
 
@@ -5116,7 +5116,7 @@ If(FORM Event.code=On Clicked)
 
 End if
 ```
-#### See Also
+#### See also
 
 [VP RECOMUTE FORMULAS](#vp-recompute-formulas)<br/>[VP RESUME COMPUTING](#vp-resume-computing)
 
