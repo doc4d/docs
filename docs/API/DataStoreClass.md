@@ -852,7 +852,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 |---|---|---|---|
 |contextName|Text|->|Name of the context|
 |dataClassName|Text|->|Name of the dataclass|
-|dataClassObject|Object|->|dataclass object (e.g datastore.Employee)|
+|dataClassObject|4D.DataClass|->|dataclass object (e.g datastore.Employee)|
 |attributes|Text|->|Attribute list separated by a comma|
 |attributesColl|Collection|->|Collection of attribute names (text)|
 |contextType|Text|->|If provided, value must be "main" or "currentItem"|
