@@ -571,7 +571,7 @@
         "title": "Sous-formulaire"
       },
       "FormObjects/propertiesText": {
-        "title": "Texte"
+        "title": "Text"
       },
       "FormObjects/propertiesTextAndPicture": {
         "title": "Texte et Image"
@@ -607,7 +607,7 @@
         "title": "Onglets"
       },
       "FormObjects/text": {
-        "title": "Texte"
+        "title": "Text"
       },
       "FormObjects/viewProAreaOverview": {
         "title": "Zone 4D View Pro"
