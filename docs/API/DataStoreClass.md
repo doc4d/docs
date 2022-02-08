@@ -843,8 +843,8 @@ You create a *protectDataFile* project method to call before deployments for exa
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
 **.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text )<br/>
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.Dataclass ; *attributes* : Text )<br/>
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.Dataclass ; *attributesColl* : Collection )<br/>
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text )<br/>
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection )<br/>
 **.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text ; contextType : Text { ; pageLength : Integer})<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
