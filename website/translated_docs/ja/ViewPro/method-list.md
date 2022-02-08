@@ -2340,7 +2340,7 @@ VP NEW DOCUMENT("myVPArea")
 
 このオブジェクトは [VP Font to object](#vp-font-to-object) コマンドで作成することができます。
 
-The returned shorthand string can be assigned to the "font" property of a cell with the [VP SET CELL STYLE](#vp-set-cell-style), for example.
+返されるショートハンド文字列は、たとえば [VP SET CELL STYLE](#vp-set-cell-style) を使って、セルの "font" プロパティに割り当てることができます。
 
 
 #### 例題
@@ -2354,7 +2354,7 @@ $font.variant:=vk font variant small caps
 $font.weight:=vk font weight bolder
 
 $cellStyle.font:=VP Object to font($font)
-//$cellStyle.font contains "bolder oblique small-caps 16pt arial"
+//$cellStyle.font には "bolder oblique small-caps 16pt arial" が格納されます
 ```
 
 #### 参照
@@ -2370,36 +2370,36 @@ $cellStyle.font:=VP Object to font($font)
 | バージョン  | 内容 |
 | ------ | -- |
 | v19 R4 | 追加 |
-</details><!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *rangeObj* : Object ; *dataObject* : Object {; *options* : Longint} )<!-- END REF --><!-- REF #_method_.PASTE FROM OBJECT.Params -->| 引数         | タイプ    |    | 説明                                      |
-| ---------- | ------ | -- | --------------------------------------- |
-| rangeObj   | オブジェクト | -> | Cell range object                       |
-| dataObject | オブジェクト | -> | Object containing the data to be pasted |
-| options    | 倍長整数   | -> | Specifies what is pasted                |<!-- END REF -->#### 説明
+</details><!-- REF #_method_.PASTE FROM OBJECT.Syntax -->**VP PASTE FROM OBJECT** ( *rangeObj* : Object ; *dataObject* : Object {; *options* : Longint} )<!-- END REF --><!-- REF #_method_.PASTE FROM OBJECT.Params -->| 引数         | タイプ    |    | 説明                   |
+| ---------- | ------ | -- | -------------------- |
+| rangeObj   | オブジェクト | -> | セルレンジオブジェクト          |
+| dataObject | オブジェクト | -> | ペーストするデータを格納したオブジェクト |
+| options    | 倍長整数   | -> | ペーストする内容を指定します       |<!-- END REF -->#### 説明
 
-The `VP PASTE FROM OBJECT` command<!-- REF #_method_.PASTE FROM OBJECT.Summary -->pastes the contents, style and formulas stored in *dataObject* to the *rangeObj* object<!-- END REF -->.
+`VP PASTE FROM OBJECT` コマンドは、<!-- REF #_method_.PASTE FROM OBJECT.Summary -->*dataObject* のコンテンツ・スタイル・フォーミュラを *rangeObj* セルレンジオブジェクトにペーストします<!-- END REF -->。
 
-In *rangeObj*, pass the cell range object where the values, formatting, and/or formula cells will be pasted. If *rangeObj* refers to more than one cell, only the first one is used.
+*rangeObj* には、値・フォーマット・フォーミュラをペーストする先のセルレンジオブジェクトを渡します。 *rangeObj* が複数のセルを参照している場合は、最初のセルだけが使用されます。
 
-In *dataObject*, pass the object that contains the cell data, formatting, and formulas to be pasted.
+*dataObject* には、ペーストしたい値・フォーマット・フォーミュラを格納しているオブジェクトを渡します。
 
-In the optional *options* parameter, you can specify what to paste in the cell range. とりうる値:
+任意の *options* 引数を渡して、セルレンジにペーストする内容を指定することができます。 とりうる値:
 
 | 定数                                             | 説明                                       |
 | ---------------------------------------------- | ---------------------------------------- |
 | `vk clipboard options all`                     | 値・フォーマット・フォーミュラを含むすべてのデータオブジェクトをペーストします。 |
 | `vk clipboard options formatting`              | フォーマットだけをペーストします。                        |
 | `vk clipboard options formulas`                | フォーミュラだけをペーストします。                        |
-| `vk clipboard options formulas and formatting` | Pastes formulas and formatting.          |
-| `vk clipboard options values`                  | Pastes only values.                      |
-| `vk clipboard options value and formatting`    | Pastes values and formatting.            |
+| `vk clipboard options formulas and formatting` | フォーミュラとフォーマットをペーストします。                   |
+| `vk clipboard options values`                  | 値だけをペーストします。                             |
+| `vk clipboard options value and formatting`    | 値とフォーマットをペーストします。                        |
 
 [ワークブックオプション](#vp-set-workbook-options) で定義されている貼り付けオプションが考慮されます。
 
-If *options* refers to a paste option not present in the copied object (e.g. formulas), the command does nothing.
+dataObject に存在しない要素を *options* で指定した場合 (例: フォーミュラ) コマンドはなにもしません。
 
 #### 例題
 
-See example the example from [VP Copy to object](#vp-copy-to-object)
+[VP Copy to object](#vp-copy-to-object) の例題を参照ください。
 
 #### 参照
 
@@ -3395,7 +3395,7 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 
 ### VP SET FORMULAS<!-- REF #_method_.VP SET FORMULAS.Syntax -->**VP SET FORMULAS** ( *rangeObj* : Object ; *formulasCol* : Collection )<!-- END REF --><!-- REF #_method_.VP SET FORMULAS.Params -->| 引数          | タイプ    |    | 説明                     |
 | ----------- | ------ | -- | ---------------------- |
-| rangeObj    | オブジェクト | -> | Cell range object      |
+| rangeObj    | オブジェクト | -> | セルレンジオブジェクト            |
 | formulasCol | コレクション | -> | Collection of formulas |<!-- END REF -->#### 説明
 
 The `VP SET FORMULAS` command<!-- REF #_method_.VP SET FORMULAS.Summary -->assigns a collection of formulas starting at the specified cell range<!-- END REF -->.
