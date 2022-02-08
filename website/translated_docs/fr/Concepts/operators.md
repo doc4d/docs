@@ -61,7 +61,7 @@ The following compound assignment operators are supported:
 
 | Opérateur      | Syntaxe            | Assigne | Exemple                                                             |
 | -------------- | ------------------ | ------- | ------------------------------------------------------------------- |
-| Addition       | Text += Text       | Texte   | `$t+=" World"  //$t:=$t+" World"`                                   |
+| Addition       | Text += Text       | Text    | `$t+=" World"  //$t:=$t+" World"`                                   |
 |                | Number += Number   | Nombre  | `$n+=5 //$n:=$n+5`                                                  |
 |                | Date += Number     | Date    | `$d+=5 //$d:=$d+5`                                                  |
 |                | Time += Time       | Heure   | `$t1+=$t2 //$t1:=$t1+$t2`                                           |
@@ -78,7 +78,7 @@ The following compound assignment operators are supported:
 |                | Time /= Number     | Nombre  | `$t1/=5 //$t1:=$t1/5`                                               |
 |                | Picture /= Picture | Image   | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
 |                | Picture /= Number  | Image   | `$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`                |
-| Multiplication | Text *= Number     | Texte   | `$t*="abc"  //$t:=$t*"abc"`                                         |
+| Multiplication | Text *= Number     | Text    | `$t*="abc"  //$t:=$t*"abc"`                                         |
 |                | Number *= Number   | Nombre  | `$n*=5 //$n:=$n*5`                                                  |
 |                | Time *= Time       | Heure   | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
 |                | Time *= Number     | Nombre  | `$t1*=5 //$t1:=$t1*5`                                               |

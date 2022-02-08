@@ -586,7 +586,7 @@
         "title": "Sous-formulaire"
       },
       "FormObjects/propertiesText": {
-        "title": "Texte"
+        "title": "Text"
       },
       "FormObjects/propertiesTextAndPicture": {
         "title": "Texte et Image"
@@ -622,7 +622,7 @@
         "title": "Onglets"
       },
       "FormObjects/text": {
-        "title": "Texte"
+        "title": "Text"
       },
       "FormObjects/viewProAreaOverview": {
         "title": "Zone 4D View Pro"
@@ -929,7 +929,7 @@
         "title": "Prise en main"
       },
       "ViewPro/method-list": {
-        "title": "Liste de méthodes"
+        "title": "Liste des méthodes"
       },
       "WebServer/allowProject": {
         "title": "Allowing project methods"
@@ -1003,7 +1003,7 @@
       "Form Events": "Evénements formulaire",
       "Menus": "Menus",
       "User Settings": "Paramètres utilisateur",
-      "Build application": "Build application",
+      "Build application": "Générateur d'application",
       "Extensions": "Extensions",
       "4D View Pro": "4D View Pro"
     }

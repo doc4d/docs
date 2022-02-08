@@ -72,12 +72,12 @@ VP ADD FORMULA NAME("ViewProArea";"SUM($A$1:$A$10)";"Total2")
 #### 説明
 
 
-The `VP ADD RANGE NAME` command <!-- REF #_method_.VP ADD RANGE NAME.Summary -->creates or modifies a named range in the open document<!-- END REF -->.
+`VP ADD RANGE NAME` コマンドは、 <!-- REF #_method_.VP ADD RANGE NAME.Summary -->開いているドキュメント内に命名レンジを作成、または編集します<!-- END REF -->。
 > このコマンドで作成された命名レンジはドキュメントとともに保存されます。
 
-In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
+名前をつけたいレンジを *rangeObj* に、新しいレンジの名前は *name* に渡します。 同じスコープ内で名前が既に使用されている場合、新しい命名レンジは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
-You can pass an object with additional properties for the named range in *options*. 以下のオブジェクトプロパティがサポートされています:
+*options* 引数には、命名レンジの追加プロパティを格納したオブジェクト型を渡すことができます。 以下のオブジェクトプロパティがサポートされています:
 
 
 | プロパティ   | タイプ    | 説明                                                                                                                                                                                                                                                                                                                                        |
@@ -90,7 +90,7 @@ You can pass an object with additional properties for the named range in *option
 
 #### 例題
 
-You want to create a named range for a cell range:
+あるセルレンジに対して命名レンジを作成します:
 
 ```4d
 $range:=VP Cell("ViewProArea";2;10)
@@ -116,18 +116,18 @@ VP ADD RANGE NAME($range;"Total1")
 
 #### 説明
 
-The `VP ADD SELECTION` command <!-- REF #_method_.VP ADD SELECTION.Summary -->adds the specified cells to the currently selected cells<!-- END REF -->.
+`VP ADD SELECTION` コマンドは、 <!-- REF #_method_.VP ADD SELECTION.Summary -->指定されたセルを、現在選択されているセル範囲に追加します<!-- END REF -->。
 
-In *rangeObj*, pass a range object of cells to add to the current selection.
+*rangeObj* には、カレントセレクションに追加するセルのレンジオブジェクトを渡します。
 > アクティブセルは変更されません。
 
 #### 例題
 
-You have cells currently selected:
+以下のようにセルが選択されている場合:
 
 ![](assets/en/ViewPro/cmd_vpAddSelection1.PNG)
 
-The following code will add cells to your selection:
+以下のコードを実行すると、指定したセルを選択範囲に追加します:
 
 ```4d
 $currentSelection:=VP Cells("myVPArea";3;4;2;3)
@@ -158,22 +158,22 @@ VP ADD SELECTION($currentSelection)
 
 #### 説明
 
-The `VP ADD SHEET` command <!-- REF #_method_.VP ADD SHEET.Summary -->inserts a sheet in the document loaded in *vpAreaName*.<!-- END REF --> 
+`VP ADD SHEET` コマンドは、 <!-- REF #_method_.VP ADD SHEET.Summary -->*vpAreaName* にロードされているドキュメントにシートを挿入します。<!-- END REF --> 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *index*, you can pass an index for the new sheet. If the passed *index* is inferior to or equal to 0, the command inserts the new sheet at the beginning. If *index* exceeds the number of sheets, the command inserts the new sheet after the existing ones.
+*index* 引数として、新しいシートのインデックスを渡します。 渡した *index* 引数が 0以下だった場合、コマンドは新しいシートを先頭に挿入します。 *index* 引数がシートの総数より多い場合、コマンドは既存のシートの後に新しいシートを挿入します。
 > インデックスは 0 起点です。
 
-In *name*, you can pass a name for the new sheet. The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+*name* 引数として、新しいシートの名前を渡します。 新しい名前には、次の文字を含めることはできません: `*, :, [, ], ?,\,/`
 
 #### 例題
 
-The document currently has 3 sheets:
+ドキュメントには現在 3つのシートがあります:
 
 ![vp-document-with-3-sheets](assets/en/ViewPro/vp-sheet-3.png)
 
-To insert a sheet at the third position (index 2) and name it "March":
+新しいシートを 3つ目の位置 (インデックスは 2) に挿入し、名前を "March" にします:
 
 ```4d
 VP ADD SHEET("ViewProArea";2;"March")
@@ -199,16 +199,16 @@ VP ADD SHEET("ViewProArea";2;"March")
 
 #### 説明
 
-The `VP ADD SPAN` command combines the cells in *rangeObj* as a single span of cells.
+`VP ADD SPAN` コマンドは、*rangeObj* に渡したセルを単一のセルに結合します。
 
-In *rangeObj*, pass a range object of cells. The cells in the range are joined to create a larger cell extending across multiple columns and/or rows. You can pass multiple cell ranges to create several spans at the same time. Note that if cell ranges overlap, only the first cell range is used.
+*rangeObj* には、セルのレンジオブジェクトを渡します。 レンジ内のセルは結合され、複数のカラム/行にまたがる大きなセルが作成されます。 複数のセルレンジを渡すことで、一度に複数の結合セルを作成することもできます。 ただし、セルレンジが重なった場合、最初のセルレンジのみが使用されます。
 
 > - 結合セルでは、左上端セルのデータのみが表示されます。 他のセルのデータは結合が解除されるまで非表示になります。
 > - 結合セル内の非表示データは、フォーミュラを使用することでアクセス可能です (フォーミュラは左上端セルから始まります)。
 
 #### 例題
 
-To span the First quarter and Second quarter cells across the two cells beside them, and the South area cell across the two rows below it:
+"First quarter" セルと "Second quarter" セルを、それぞれ右 2つのセルと結合し、"South area" セルは下 2つのセルと結合します:
 
 ![initial-document](assets/en/ViewPro/vp-add-span.png)
 
@@ -249,14 +249,14 @@ To span the First quarter and Second quarter cells across the two cells beside t
 
 #### 説明
 
-The `VP ADD STYLESHEET` command <!-- REF #_method_.VP ADD STYLESHEET.Summary -->creates or modifies the *styleName* style sheet based upon the combination of the properties specified in *styleObj* in the open document<!-- END REF -->. If a style sheet with the same name and scope already exists in the document, this command will overwrite it with the new values.
+`VP ADD STYLESHEET` コマンドは、 <!-- REF #_method_.VP ADD STYLESHEET.Summary -->開いているドキュメント内にて、*styleName* 引数で指定したスタイルシートを、*styleObj* 引数のプロパティの組み合わせに基づいて作成または変更します<!-- END REF -->。 同じ名前とスコープを持つスタイルシートがドキュメント内にすでに存在する場合、このコマンドはそれを新しい値で上書きします。
 
 > このコマンドで作成されたスタイルシートはドキュメントとともに保存されます。
 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-The *styleName* parameter lets you assign a name to the style sheet. If the name is already used within the same scope, the new style sheet replaces the existing one. ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
+*styleName* 引数には、スタイルシートの名前を渡します。 同じスコープ内で名前が既に使用されている場合、新しいスタイルシートは既存のものを上書きします。 ただし異なるスコープであれば同じ名前を使用することが可能です (以下参照)。
 
 Within the *styleObj*, designate the settings for the style sheet (e.g., font, text decoration, alignment, borders, etc.). For the full list of style properties, see [Style object properties](configuring.md#style-objects-properties).
 
@@ -2369,7 +2369,7 @@ var $workbookOptions : Object
 $workbookOptions:=VP Get workbook options("ViewProArea")
 ```
 
-#### See Also
+#### 参照
 
 [VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -3364,7 +3364,7 @@ $o:=cs.OffscreenArea.new()
 $result:=VP Run offscreen area($o)
 ```
 
-## 参照
+#### 参照
 
 [Blog post: End of document loading](https://blog.4d.com/4d-view-pro-end-of-document-loading/)
 
@@ -3400,7 +3400,7 @@ VP SET ACTIVE CELL($activeCell)
 
 ![](assets/en/ViewPro/cmd_vpSetActiveCell.PNG)
 
-## 参照
+#### 参照
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
@@ -3476,7 +3476,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 > In 4D View Pro formulas, function names are automatically displayed in uppercase.
 
-## 参照
+#### 参照
 
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
@@ -3508,7 +3508,7 @@ The *boolValue* parameter allows you to pass the boolean value (**True** or **Fa
 //Set the cell value as False
 VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 ```
-## 参照
+#### 参照
 
 [VP SET VALUE](#vp-set-value)
 
@@ -3591,7 +3591,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 ![](assets/en/ViewPro/cmd_vpSETBORDER2.PNG)
 
-## 参照
+#### 参照
 
 [VP SET CELL STYLE](#vp-set-cell-style)
 
@@ -4488,7 +4488,7 @@ In *index*, pass the index of the sheet to rename.
 
 If no *index* is passed, the command renames the current sheet.
 
-The new name cannot contain the following characters: `*, :, [, ], ?,\,/`
+新しい名前には、次の文字を含めることはできません: `*, :, [, ], ?,\,/`
 
 The command does nothing if:
 
@@ -4965,7 +4965,7 @@ $workbookOptions.allowExtendPasteRange:=True
 VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 ```
 
-#### See Also
+#### 参照
 
 [VP Get workbook options](#vp-get-workbook-options)
 
@@ -5077,7 +5077,7 @@ If(FORM Event.code=On Clicked)
 
 End if
 ```
-#### See Also
+#### 参照
 
 [VP RECOMUTE FORMULAS](#vp-recompute-formulas)<br/>[VP RESUME COMPUTING](#vp-resume-computing)
 
