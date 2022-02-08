@@ -946,7 +946,7 @@ $info:=$ds.getRemoteContextInfo("contextA")
 //The attributes have been replaced
 ```
 
-### Example 3
+#### Example 3
 
 With the following piece of code, the requests will ask for pages of 30 entities of the `Address` dataclass. The returned entities will only contain the `zipCode` attribute.
 
