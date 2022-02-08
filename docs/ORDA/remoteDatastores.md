@@ -66,7 +66,7 @@ If a request is sent to the remote datastore after the session has been closed, 
 * the context property
 * the ORDA cache
 
-![](assets/en/ORDA/cs-optimization-auto.png)
+![](assets/en/ORDA/cs-optimization.png)
 
 The following mechanisms are implemented:
 
@@ -114,9 +114,7 @@ Given the following code:
 
 Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* after a learning phase. 
 
- 
-
-#### Using the context property
+### Using the context property
 
 You can increase the benefits of the optimization by using the **context** property. This property references an optimization context "learned" for an entity selection. It can be passed as parameter to ORDA methods that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
 
