@@ -550,7 +550,7 @@
         "title": "Sous-formulaire"
       },
       "FormObjects/propertiesText": {
-        "title": "Texte"
+        "title": "Text"
       },
       "FormObjects/propertiesTextAndPicture": {
         "title": "Texte et Image"
@@ -586,7 +586,7 @@
         "title": "Onglets"
       },
       "FormObjects/text": {
-        "title": "Texte"
+        "title": "Text"
       },
       "FormObjects/viewProAreaOverview": {
         "title": "Zone 4D View Pro"
@@ -881,7 +881,7 @@
       "Form Object Properties": "Propriétés des objets formulaire",
       "Form Events": "Evénements formulaire",
       "Menus": "Menus",
-      "Build application": "Build application"
+      "Build application": "Générateur d'application"
     }
   },
   "pages-strings": {

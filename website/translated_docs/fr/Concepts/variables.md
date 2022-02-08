@@ -63,7 +63,7 @@ Le tableau suivant répertorie toutes les valeurs `varType` prises en charge :
 
 | varType        | Contenu                                  |
 | -------------- | ---------------------------------------- |
-| Texte          | Valeur texte                             |
+| Text           | Valeur texte                             |
 | Date           | Valeur date                              |
 | Heure          | Valeur Heure                             |
 | Booléen        | Valeur booléen                           |
