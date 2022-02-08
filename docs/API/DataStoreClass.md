@@ -842,15 +842,17 @@ You create a *protectDataFile* project method to call before deployments for exa
 ## .setRemoteContextInfo()
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : Text { ; contextType : Text} { ; pageLength : Integer})<br/>**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : 4D.DataClass ; *attributesColl* : Collection { ; contextType : Text} { ; pageLength : Integer})
-<!-- END REF -->
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text )<br/>
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.Dataclass ; *attributes* : Text )<br/>
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.Dataclass ; *attributesColl* : Collection )<br/>
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text ; contextType : Text { ; pageLength : Integer})<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
 |contextName|Text|->|Name of the context|
 |dataClassName|Text|->|Name of the dataclass|
-|dataclassObject|Object|->|dataclass object (e.g datastore.Employee)|
+|dataClassObject|Object|->|dataclass object (e.g datastore.Employee)|
 |attributes|Text|->|Attribute list separated by a comma|
 |attributesColl|Collection|->|Collection of attribute names (text)|
 |contextType|Text|->|If provided, value must be "main" or "currentItem"|
@@ -865,7 +867,7 @@ When you pass a context to the ORDA class functions, the REST request optimizati
 * the first entity is not fully loaded as done in automatic mode
 * pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
 
-> For more information, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
+> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
 
 In *contextName*, pass the name of the optimization context to link to the dataclass attributes.
 
@@ -875,13 +877,17 @@ To designate the attributes to link to the context, you can either:
 
 If *attributes* is an empty Text or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
 
-You can pass a *contextType* to  specify if the context is a standard context or a context associated to an entity selection displayed in a list box: 
+You can pass a *contextType* to  specify if the context is a standard context or the context of the current entity selection item displayed in a list box: 
 * If set to "main" (default), the *contextName* designates a standard context.
 * If set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
 
-In *pageLength*, specify the number of dataclass entities to request from the server. If the attributes are not text elements or collections, they are ignored.
+In *pageLength*, specify the number of dataclass entities to request from the server. 
+
+Attributes that are not text elements or collections are ignored.
 
 You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
+
+
 
 #### Example 1
 
@@ -908,7 +914,7 @@ For each ($p; $persons)
 End for each 
 
 $info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city}
+// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city} // address.city is added to the context because it is used in the loop.
 ```
 #### Example 2 
 
@@ -940,7 +946,31 @@ $info:=$ds.getRemoteContextInfo("contextA")
 //The attributes have been replaced
 ```
 
-#### Example 3 - Listbox
+### Example 3
+
+With the following piece of code, the requests will ask for pages of 30 entities of the `Address` dataclass. The returned entities will only contain the `zipCode` attribute.
+
+For each `Address` entity, 20 Persons entities will be returned, and they will only contain the `lastname` and `firstname` attributes:
+
+```4d
+var $ds : cs.DataStore
+
+var $addresses : cs.AddressSelection
+var $a : cs.AddressEntity
+var $p : cs.PersonsEntity
+
+var $contextA : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname, persons.firstname"; "main"; 30)
+
+// Alternative syntax
+//$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode"; "persons:20"; "persons.lastname"; "persons.firstname"); "main"; 30)
+```
+
+#### Example 4 - Listbox
 
 ```4d
 // When the form loads

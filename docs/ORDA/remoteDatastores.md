@@ -78,7 +78,7 @@ The following mechanisms are implemented:
   * [dataClass.query()](../API/DataClassClass.md#query)
   * [entitySelection.query()](../API/EntitySelectionClass.md#query)
 
-*	Subsequent requests sent to the server on the same entity selection automatically reuse the optimization context and only get necessary attributes from the server, which accelerates the processing. For example in an entity selection-based list box, the learning phase takes place during the display of the first rows, next rows display is very optimized. 
+*	Subsequent requests sent to the server on the same entity selection automatically reuse the optimization context and only get necessary attributes from the server, which accelerates the processing. For example, in an entity selection-based list box, the learning phase takes place during the display of the first row. the display of the next rows is optimized. 
 
 * An existing optimization context can be passed as a property to another entity selection of the same dataclass, thus bypassing the learning phase and accelerating the application (see [Using the context property](#using-the-context-property) below). 
 

@@ -1418,13 +1418,13 @@ We want to disallow formulas, for example when the user enters their query:
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
 |Parameter|Type||Description|
 |---|---|---|---|
-|settings|Object|->|Object that sets the timeout and size of the ORDA cache for the dataclass.|
+|settings|Object|->|Object that sets the timeout and maximum size of the ORDA cache for the dataclass.|
 <!-- END REF -->
 
 
 #### Description
 
-The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and size of the ORDA cache for a dataclass.<!-- END REF -->.
+The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
 
 In the *settings* parameter, pass an object with the following properties: 
 
@@ -1445,10 +1445,21 @@ Setting a `timeout` property sets a new timeout for the entities already present
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
-> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection that is already in the cache.
+> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection when the cache is filled with new entities.
 
 If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
 When an entity is saved, it is updated in the cache and expires once the timeout is reached.
+
+#### Example 
+
+```4d
+var $ds : cs.DataStore
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
+```
+
 
 <style> h2 { background: #d9ebff;}</style>
