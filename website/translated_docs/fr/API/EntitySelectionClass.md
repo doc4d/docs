@@ -69,9 +69,9 @@ Si la table *dsTable* n'est pas exposée dans [`ds`](API/DataStoreClass.md#ds), 
 
 Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant la propriété suivante :
 
-| Propriété | Type  | Description                                                                                                 |
-| --------- | ----- | ----------------------------------------------------------------------------------------------------------- |
-| context   | Texte | Nom du [contexte d'optimisation](ORDA/entities.md#clientserver-optimization) appliqué à l'entity selection. |
+| Propriété | Type | Description                                                                                                 |
+| --------- | ---- | ----------------------------------------------------------------------------------------------------------- |
+| context   | Text | Nom du [contexte d'optimisation](ORDA/entities.md#clientserver-optimization) appliqué à l'entity selection. |
 
 
 #### Exemple
@@ -401,10 +401,10 @@ Nous voulons obtenir une sélection d'employés nommés "Jones" qui vivent à Ne
 **.average**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.average().Params -->
-| Paramètres    | Type  |    | Description                                                                                             |
-| ------------- | ----- |:--:| ------------------------------------------------------------------------------------------------------- |
-| attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul                                                          |
-| Résultat      | Réel  | <- | Moyenne arithmétique des valeurs des entités pour l'attribut (Undefined pour une entity selection vide) |
+| Paramètres    | Type |    | Description                                                                                             |
+| ------------- | ---- |:--:| ------------------------------------------------------------------------------------------------------- |
+| attributePath | Text | -> | Chemin de l'attribut à utiliser pour le calcul                                                          |
+| Résultat      | Réel | <- | Moyenne arithmétique des valeurs des entités pour l'attribut (Undefined pour une entity selection vide) |
 <!-- END REF -->
 
 #### Description
@@ -501,10 +501,10 @@ Si *entity* et l'entity selection n'appartiennent pas à la même dataclass, une
 **.count**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.count().Params -->
-| Paramètres    | Type  |    | Description                                                           |
-| ------------- | ----- |:--:| --------------------------------------------------------------------- |
-| attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul                        |
-| Résultat      | Réel  | <- | Nombre de valeurs de *attributePath* non null dans l'entity selection |
+| Paramètres    | Type |    | Description                                                           |
+| ------------- | ---- |:--:| --------------------------------------------------------------------- |
+| attributePath | Text | -> | Chemin de l'attribut à utiliser pour le calcul                        |
+| Résultat      | Réel | <- | Nombre de valeurs de *attributePath* non null dans l'entity selection |
 <!-- END REF -->
 
 #### Description
@@ -611,7 +611,7 @@ Cette entity selection est ensuite mise à jour avec les produits et vous souhai
 <!-- REF #EntitySelectionClass.distinct().Params -->
 | Paramètres    | Type       |    | Description                                                             |
 | ------------- | ---------- |:--:| ----------------------------------------------------------------------- |
-| attributePath | Texte      | -> | Chemin de l'attribut dont vous souhaitez obtenir les valeurs distinctes |
+| attributePath | Text       | -> | Chemin de l'attribut dont vous souhaitez obtenir les valeurs distinctes |
 | option        | Integer    | -> | `dk diacritical` : évaluation diacritique ("A" # "a" par exemple)       |
 | Résultat      | Collection | <- | Collection avec seulement les valeurs distinctes                        |
 <!-- END REF -->
@@ -734,8 +734,8 @@ Exemple avec l'option `dk stop dropping on first error` :
 <!-- REF #EntitySelectionClass.extract().Params -->
 | Paramètres    | Type       |    | Description                                                                                                                             |
 | ------------- | ---------- |:--:| --------------------------------------------------------------------------------------------------------------------------------------- |
-| attributePath | Texte      | -> | Chemin d'attribut dont les valeurs doivent être extraites dans la nouvelle collection                                                   |
-| targetPath    | Texte      | -> | Chemin ou nom d'attribut cible                                                                                                          |
+| attributePath | Text       | -> | Chemin d'attribut dont les valeurs doivent être extraites dans la nouvelle collection                                                   |
+| targetPath    | Text       | -> | Chemin ou nom d'attribut cible                                                                                                          |
 | option        | Integer    | -> | `ck keep null` : inclure les attributs null dans la collection retournée (ignorés par défaut). Paramètre ignoré si targetPath est passé |
 | Résultat      | Collection | <- | Collection contenant les valeurs extraites                                                                                              |
 <!-- END REF -->
@@ -1120,10 +1120,10 @@ Les entity selections ont toujours une propriété `.length`.
 
 
 <!-- REF #EntitySelectionClass.max().Params -->
-| Paramètres    | Type  |    | Description                                    |
-| ------------- | ----- |:--:| ---------------------------------------------- |
-| attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul |
-| Résultat      | any   | <- | Valeur la plus haute de l'attribut             |
+| Paramètres    | Type |    | Description                                    |
+| ------------- | ---- |:--:| ---------------------------------------------- |
+| attributePath | Text | -> | Chemin de l'attribut à utiliser pour le calcul |
+| Résultat      | any  | <- | Valeur la plus haute de l'attribut             |
 <!-- END REF -->
 
 #### Description
@@ -1172,10 +1172,10 @@ Nous souhaitons connaître le salaire le plus élevé parmi les employées :
 **.min**( *attributePath* : Text ) : any<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.min().Params -->
-| Paramètres    | Type  |    | Description                                    |
-| ------------- | ----- |:--:| ---------------------------------------------- |
-| attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul |
-| Résultat      | any   | <- | Valeur la plus basse de l'attribut             |
+| Paramètres    | Type |    | Description                                    |
+| ------------- | ---- |:--:| ---------------------------------------------- |
+| attributePath | Text | -> | Chemin de l'attribut à utiliser pour le calcul |
+| Résultat      | any  | <- | Valeur la plus basse de l'attribut             |
 <!-- END REF -->
 
 #### Description
@@ -1348,7 +1348,7 @@ Si l'entity selection initiale et le paramètre ne sont pas liés à la même da
 <!-- REF #EntitySelectionClass.orderBy().Params -->
 | Paramètres  | Type               |    | Description                                                       |
 | ----------- | ------------------ |:--:| ----------------------------------------------------------------- |
-| pathString  | Texte              | -> | Chemin(s) d'attribut(s) et mode(s) de tri pour l'entity selection |
+| pathString  | Text               | -> | Chemin(s) d'attribut(s) et mode(s) de tri pour l'entity selection |
 | pathObjects | Collection         | -> | Collection d'objets critère                                       |
 | Résultat    | 4D.EntitySelection | <- | Nouvelle entity selection dans l'ordre spécifié                   |
 <!-- END REF -->
@@ -1423,7 +1423,7 @@ Vous pouvez ajouter autant d'objets que nécessaire dans la collection de critè
 <!-- REF #EntitySelectionClass.orderByFormula().Params -->
 | Paramètres    | Type               |    | Description                                   |
 | ------------- | ------------------ |:--:| --------------------------------------------- |
-| formulaString | Texte              | -> | Chaîne formule                                |
+| formulaString | Text               | -> | Chaîne formule                                |
 | formulaObj    | Object             | -> | Objet formule                                 |
 | sortOrder     | Integer            | -> | `dk ascending` (par défaut) ou`dk descending` |
 | settings      | Object             | -> | Paramètre(s) de la formule                    |
@@ -1546,7 +1546,7 @@ Dans cet exemple, le champ objet "marks" de la dataclass **Students** contient l
 <!-- REF #EntitySelectionClass.query().Params -->
 | Paramètres    | Type               |    | Description                                                                                                                                                                        |
 | ------------- | ------------------ |:--:| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| queryString   | Texte              | -> | Critères de recherche en texte                                                                                                                                                     |
+| queryString   | Text               | -> | Critères de recherche en texte                                                                                                                                                     |
 | formula       | Object             | -> | Critères de recherche en objet formule                                                                                                                                             |
 | value         | any                | -> | Valeur(s) à utiliser comme placeholder(s)                                                                                                                                          |
 | querySettings | Object             | -> | Options de recherche : parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                                                  |
@@ -1854,10 +1854,10 @@ $slice:=ds.Employee.all().slice(-1;-2) //tente de retourner les entités de posi
 **.sum**( *attributePath* : Text ) : Real<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.sum().Params -->
-| Paramètres    | Type  |    | Description                                    |
-| ------------- | ----- |:--:| ---------------------------------------------- |
-| attributePath | Texte | -> | Chemin de l'attribut à utiliser pour le calcul |
-| Résultat      | Réel  | <- | Somme des valeurs de l'entity selection        |
+| Paramètres    | Type |    | Description                                    |
+| ------------- | ---- |:--:| ---------------------------------------------- |
+| attributePath | Text | -> | Chemin de l'attribut à utiliser pour le calcul |
+| Résultat      | Réel | <- | Somme des valeurs de l'entity selection        |
 <!-- END REF -->
 
 #### Description
@@ -1906,7 +1906,7 @@ $sum:=$sel.sum("salary")
 <!-- REF #EntitySelectionClass.toCollection().Params -->
 | Paramètres   | Type       |    | Description                                                                                  |
 | ------------ | ---------- |:--:| -------------------------------------------------------------------------------------------- |
-| filterString | Texte      | -> | Chemin(s) d'attribut(s) à extraire                                                           |
+| filterString | Text       | -> | Chemin(s) d'attribut(s) à extraire                                                           |
 | filterCol    | Collection | -> | Collection d'attribut(s) à extraire                                                          |
 | options      | Integer    | -> | `dk with primary key` : ajoute la clé primaire<br>`dk with stamp` : ajoute le marqueur |
 | begin        | Integer    | -> | Désigne la position de début                                                                 |

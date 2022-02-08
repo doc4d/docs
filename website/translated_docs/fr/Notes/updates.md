@@ -15,7 +15,7 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 - [L'éditeur de code](code-editor/navigation.md) inclut désormais un outil de liste déroulante et prend en charge les marqueurs pour une meilleure navigation dans le code.
 - Nouvelles préférences : [**Inclure les tokens dans les fichiers source du projet**](Preferences/general.md#include-tokens-in-project-source-files) et l'option [**Afficher les presse-papiers**](Preferences/methods.md#show-clipboards) sur la page Méthodes.
 - Nouvelle requête REST pour [verrouiller/déverrouiller](REST/$lock.md) les entités.
-- Ajout du chapitre [4D View Pro](ViewPro/getting-started.md) avec de nouvelles commandes : [VP Copy to object](ViewPro/method-list#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list#vp-paste-from-object).
+- [4D View Pro](ViewPro/getting-started.md) chapter added with new commands: [VP Copy to object](ViewPro/method-list.md#vp-copy-to-object), [VP MOVE CELLS](ViewPro/method-list.md#vp-move-cells), [VP PASTE FROM OBJECT](ViewPro/method-list.md#vp-paste-from-object).
 - Nouvelle [classe SystemWorker](API/SystemWorkerClass.md).
 
 
