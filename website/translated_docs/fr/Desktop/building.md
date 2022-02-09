@@ -308,13 +308,13 @@ This option lets you choose the linking mode between the merged application and 
 
 #### Embed the project Users and Groups in built server application
 
-When you check this option, the project's [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the merged 4D Server application during the build application process.
+Lorsque vous cochez cette option, le fichier [directory.json](../Users/handling_users_groups.md#directoryjson-file) situé dans le dossier des paramètres utilisateur du projet est copié dans le dossier des paramètres utilisateur de l'application 4D Server fusionnée durant la génération de l'application.
 
-When you execute a 4D Server application built with that option, the server first loads the users, groups and permissions placed in the **directory.json** file located in the server's user settings folder (if any). Then, according to the standard [directory.json](../Users/handling_users_groups.md#directoryjson-file) file mechanism, the server overrides them with the users, groups and permissions of the **directory.json** file located in the data settings folder.
+Lorsque vous exécutez une application 4D Server générée avec cette option, le serveur charge d'abord les utilisateurs, les groupes et les autorisations placés dans le fichier **directory.json** situé dans le dossier des paramètres utilisateur du serveur (le cas échéant). Ensuite, conformément au mécanisme standard du fichier [directory.json](../Users/handling_users_groups.md#directoryjson-file), le serveur les remplace par les utilisateurs, groupes et autorisations du fichier **directory.json** situé dans le dossier des paramètres de données.
 
-The **directory.json** file user settings folder is read-only. All the modifications made to users, groups and permissions during server execution are stored in the **directory.json** inside the data folder. 
+Le fichier **directory.json** situé dans le dossier paramètres utilisateurs est en lecture seule. Toutes les modifications apportées aux utilisateurs, groupes et autorisations pendant l'exécution du serveur sont stockées dans le fichier **directory.json** situé dans le dossier Data. 
 
-Embedding the project **directory.json** file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications will be added to the data folder **directory.json**, allowing local customization. 
+L'intégration du fichier **directory.json** du projet vous permet de déployer une application client/serveur avec une configuration de base de la sécurité des utilisateurs et des groupes. Les modifications ultérieures seront ajoutées au fichier **directory.json** du dossier Data, permettant ainsi une personnalisation locale. 
 
 
 
@@ -825,7 +825,7 @@ Le processus de connexion des applications clientes fusionnées prend en charge 
     - Si l'utilisateur clique sur le bouton **Quitter**, l'application client quitte.
 4. Si la connexion est établie avec succès, les paramètres de cette connexion sont sauvegardés dans le dossier de préférences utilisateur de l'application cliente, ce qui permettra de les réutiliser ultérieurement en cas de besoin.
 
-The whole procedure is described in the following diagram:
+La procédure complète est décrite dans le diagramme suivant :
 
 ![](assets/en/Desktop/client-connect.png)
 
