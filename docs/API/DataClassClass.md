@@ -727,6 +727,11 @@ $cachePersons:=$ds.Persons.getRemoteCache()
 $cacheAddress:=$ds.Address.getRemoteCache()
 ```
 
+#### See also 
+
+[.setRemoteCacheSettings()](#setremotecachesettings)<br/>[.clearRemoteCache()](#clearremotecache)
+
+
 <!-- REF DataClassClass.new().Desc -->
 ## .new()
 
@@ -1460,5 +1465,8 @@ $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 $ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```
 
+#### See also 
+
+[.clearRemoteCache()](#clearremotecache)<br/>[.getRemoteCache()](#clearremotecache)
 
 <style> h2 { background: #d9ebff;}</style>
