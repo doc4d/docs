@@ -55,9 +55,6 @@ Por ejemplo, si quiere definir una clase llamada "Polygon", tiene que crear el s
 
 - Carpeta Project
     + Project
-
-
-
         * Sources
             - Clases
                 + Polygon.4dm

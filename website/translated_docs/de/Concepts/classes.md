@@ -55,9 +55,6 @@ Um z.B. eine Klasse mit Namen "Polygon" zu definieren, müssen Sie folgende Date
 
 - Project folder
     + Project
-
-
-
         * Sources
             - Classes
                 + Polygon.4dm
