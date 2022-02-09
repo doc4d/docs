@@ -2038,7 +2038,7 @@ var $workbookOptions : Object
 $workbookOptions:=VP Get workbook options("ViewProArea")
 ```
 
-#### See Also
+#### 参照
 
 [VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -2410,20 +2410,20 @@ dataObject に存在しない要素を *options* で指定した場合 (例: フ
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名     |
 | sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート) |<!-- END REF -->#### 説明
 
-The `VP PRINT` command<!-- REF #_method_.VP PRINT.Summary -->opens a print dialog window to print *vpAreaName*<!-- END REF -->.
+`VP PRINT` コマンドは、<!-- REF #_method_.VP PRINT.Summary -->*vpAreaName* 引数で指定したエリアを印刷する印刷ダイアログウィンドウを開きます<!-- END REF -->。
 
-Pass the 4D View Pro area to be printed in *vpAreaName*. The command will open the system print dialog window where the printer can be specified and the page properties can be defined.
-> The properties defined in the print dialog window are for the printer paper, they are not the printing properties for the 4D View Pro area. Printing properties for 4D View Pro areas are defined using the [VP SET PRINT INFO](#vp-set-print-info) command. It is highly recommended that the properties for both the printer and the 4D View Pro area match, otherwise the printed document may not correspond to your expectations.
+*vpAreaName* には、印刷する 4D View Pro エリアの名前を渡します。 コマンドによって、システムの印刷ダイアログウィンドウが開かれ、プリンターを指定したりページプロパティを定義したりすることができます。
+> 印刷ダイアログウィンドウで定義されるプロパティはプリンター用紙のためのもので、4D View Pro エリアの印刷プロパティではありません。 4D View Pro エリアの印刷プロパティは [VP SET PRINT INFO](#vp-set-print-info) コマンドで定義されます。 プリンターと 4D View Pro エリアの両プロパティが合致することが強く推奨されます。そうでない場合、ドキュメントが期待通りに印刷されない可能性があります。
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). If omitted, the current sheet is used by default. You can explicitly select the current spreadsheet or entire workbook with the following constants:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、印刷するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートあるいはワークブック全体を明示的に選択することができます:
 
 *   `vk current sheet`
 *   `vk workbook`
 
 
-> * 4D View Pro areas can only be printed with the `VP PRINT` command. 
-> * Commands from the 4D **Printing** language theme are not supported by `VP PRINT`.
-> * This command is intended for individual printing by the final end user. For automated print jobs, it is advised to export the 4D View Pro area as a PDF with the [VP EXPORT DOCUMENT](#vp-export-document) method.
+> * 4D View Pro エリアは、`VP PRINT` コマンドによってのみ印刷可能です。 
+> * 4Dコマンドの **印刷** テーマのコマンドは、`VP PRINT` ではサポートされません。
+> * このコマンドは、最終的なエンドユーザーが個別に印刷を実行することを想定しています。 自動化印刷ジョブについては、[VP EXPORT DOCUMENT](#vp-export-document) コマンドで 4D View Pro エリアを PDF に書き出すことが推奨されます。
 
 
 #### 例題
@@ -2434,7 +2434,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
  VP PRINT("myVPArea")
 ```
 
-... will open a print dialog window:
+印刷ダイアログウィンドウを開きます:
 
 ![](assets/en/ViewPro/cmd_vpPrint.PNG)
 
@@ -2448,15 +2448,15 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 | ---------- | ---- | -- | ----------------------- |
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |<!-- END REF -->#### 説明
 
-The `VP RECOMPUTE FORMULAS` command<!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->immediately evaluates all formulas in *vpAreaName*<!-- END REF -->. By default, 4D automatically computes formulas when they are inserted, imported, or exported. `VP RECOMPUTE FORMULAS` allows you to force the compute at any time (e.g, in case modifications are made to the formulas or if the formulas contain calls to the database). The command launches the execution of the [VP FLUSH COMMANDS](#vp-flush-commands) command to execute any stored commands and clear the command buffer, then calculates all formulas in the workbook.
+`VP RECOMPUTE FORMULAS` コマンドは、<!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->*vpAreaName* 引数で指定したエリアの全フォーミュラを即座に評価します<!-- END REF -->。 デフォルトでは、4D はフォーミュラを挿入時、読み込み時、そして書き出し時のタイミングで自動計算します。 `VP RECOMPUTE FORMULAS` コマンドを使用すると、任意のタイミングで強制的に計算を実行することができます(例: フォーミュラに変更が加えられた場合、またはフォーミュラがデータベースへの呼び出しを格納している場合など)。 コマンドは [VP FLUSH COMMANDS](#vp-flush-commands) コマンドを実行することで、実行保留されていたコマンドをすべて実行し、コマンドバッファをクリアします。そしてワークブック内の全フォーミュラを計算します。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
-> Be sure the [VP SUSPEND COMPUTING](#vp-suspend-computing) command has not been executed before using `VP RECOMPUTE FORMULAS`, otherwise the command does nothing.
+> `VP RECOMPUTE FORMULAS` コマンドを使用する前に [VP SUSPEND COMPUTING](#vp-suspend-computing)コマンドが実行されていないようにしてください。そうでないと、このコマンドは何もしません。
 
 
 #### 例題
 
-To refresh all formulas in the workbook:
+ワークブック内の全フォーミュラを更新します:
 
 ```4d
 VP RECOMPUTE FORMULAS("ViewProArea")
@@ -2467,19 +2467,19 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 [VP RESUME COMPUTING](#vp-resume-computing)<br/>[VP SUSPEND COMPUTING](#vp-suspend-computing)
 
 
-### VP REMOVE NAME<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } )<!-- END REF --><!-- REF #_method_.VP REMOVE NAME.Params -->| 引数         | タイプ  |    | 説明                                                 |
-| ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                            |
-| name       | テキスト | -> | Name of the named range or named formula to remove |
-| scope      | 整数   | -> | ターゲットのスコープ (デフォルト=カレントシート)                         |<!-- END REF -->#### 説明
+### VP REMOVE NAME<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } )<!-- END REF --><!-- REF #_method_.VP REMOVE NAME.Params -->| 引数         | タイプ  |    | 説明                         |
+| ---------- | ---- | -- | -------------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名    |
+| name       | テキスト | -> | 削除する命名レンジまたは命名フォーミュラの名前    |
+| scope      | 整数   | -> | ターゲットのスコープ (デフォルト=カレントシート) |<!-- END REF -->#### 説明
 
-The `VP REMOVE NAME` command<!-- REF #_method_.VP REMOVE NAME.Summary -->removes the named range or named formula passed in the *name* parameter in the defined *scope*<!-- END REF -->.
+`VP REMOVE NAME` コマンドは、<!-- REF #_method_.VP REMOVE NAME.Summary -->*name* の命名レンジまたは命名フォーミュラを、定義された *scope* のスコープから削除します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-Pass the named range or named formula that you want to remove in *name*.
+*name* には、削除したい命名レンジあるいは命名フォーミュラの名前を渡します。
 
-You can define where to remove the name in *scope* using either the sheet index (counting begins at 0) or the following constants:
+*scope* 引数を使用することで、命名レンジまたは命名フォーミュラをどこから削除するのか、指定することができます。その際、シートのインデックス (0 起点) を渡すか、以下の定数のいずれかを渡します:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -2494,7 +2494,7 @@ VP ADD RANGE NAME("Total1";$range)
 
 VP REMOVE NAME("ViewProArea";"Total1")
 $formula:=VP Get formula by name("ViewProArea";"Total1")
-//$formula=null
+// $formula=null
 ```
 
 #### 参照
@@ -2502,30 +2502,30 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 [VP Name](#vp-name)
 
 
-### VP REMOVE SHEET<!-- REF #_method_.VP REMOVE SHEET.Syntax -->**VP REMOVE SHEET** ( *vpAreaName* : Text ; *index*: Integer )<!-- END REF --><!-- REF #_method_.VP REMOVE SHEET.Params -->| 引数         | タイプ  |    | 説明                           |
-| ---------- | ---- | -- | ---------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名      |
-| index      | 整数   | -> | Index of the sheet to remove |<!-- END REF -->#### 参照
+### VP REMOVE SHEET<!-- REF #_method_.VP REMOVE SHEET.Syntax -->**VP REMOVE SHEET** ( *vpAreaName* : Text ; *index*: Integer )<!-- END REF --><!-- REF #_method_.VP REMOVE SHEET.Params -->| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| index      | 整数   | -> | 削除するシートのインデックス          |<!-- END REF -->#### 参照
 
 [VP ADD SHEET](#vp-add-sheet)
 
 
 #### 説明
 
-The `VP REMOVE SHEET` command<!-- REF #_method_.VP REMOVE SHEET.Summary -->removes the sheet with the specified *index* from the document loaded in *vpAreaName*<!-- END REF -->.
+`VP REMOVE SHEET` コマンドは、<!-- REF #_method_.VP REMOVE SHEET.Summary -->*vpAreaName* 引数で指定したエリアにロードされているドキュメントから、*index* 引数で指定したインデックスのシートを削除します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *index*, pass the index of the sheet to remove. If the passed *index* does not exist, the command does nothing.
+*index* 引数には、削除したいシートのインデックスを渡します。 *index* 引数に渡したインデックスが存在しない場合、このコマンドは何もしません。
 > インデックスは 0 起点です。
 
 #### 例題
 
-The document currently has three sheets:
+ドキュメントには現在 3つのシートがあります:
 
 ![](assets/en/ViewPro/vp-sheet-3.png)
 
-Remove the third sheet:
+3つ目のシートを削除します:
 
 ```4d 
 VP REMOVE SHEET("ViewProArea";2)
@@ -2537,22 +2537,22 @@ VP REMOVE SHEET("ViewProArea";2)
 | -------- | ------ | -- | --------- |
 | rangeObj | オブジェクト | -> | レンジオブジェクト |<!-- END REF -->#### 説明
 
-The `VP REMOVE SPAN` command<!-- REF #_method_.VP REMOVE SPAN.Summary -->removes the span from the cells in *rangeObj*<!-- END REF -->.
+`VP REMOVE SPAN` コマンドは、<!-- REF #_method_.VP REMOVE SPAN.Summary -->*rangeObj* で指定したレンジ内のセル結合を解除します<!-- END REF -->。
 
-In *rangeObj*, pass a range object of the cell span. The spanned cells in the range are divided into individual cells.
+*rangeObj* には、セル結合しているレンジのオブジェクトを渡します。 レンジ内の結合セルは個別セルに分割されます。
 
 #### 例題
 
-To remove all cell spans from this document:
+ドキュメントのセル結合をすべて解除します:
 
 ![](assets/en/ViewPro/cmd_vpRemoveSpan1.PNG)
 
 ```4d
- //find all cell spans
+ // すべてのセル結合を探します
  $span:=VP Get spans(VP All("ViewProArea"))
 
 
-  //remove the cell spans
+  // すべてのセル結合を解除します
  VP REMOVE SPAN($span)
 ```
 
@@ -2567,23 +2567,23 @@ To remove all cell spans from this document:
 ### VP REMOVE STYLESHEET<!-- REF #_method_.VP REMOVE STYLESHEET.Syntax -->**VP REMOVE STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text { ; *scope* : Integer } )<!-- END REF --><!-- REF #_method_.VP REMOVE STYLESHEET.Params -->| 引数         | タイプ  |    | 説明                           |
 | ---------- | ---- | -- | ---------------------------- |
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名      |
-| styleName  | テキスト | -> | Name of style to remove      |
+| styleName  | テキスト | -> | 削除するスタイルの名前                  |
 | scope      | 整数   | -> | ターゲットのスコープ (デフォルト = カレントシート) |<!-- END REF -->#### 説明
 
-The `VP REMOVE STYLESHEET` command<!-- REF #_method_.VP REMOVE STYLESHEET.Summary -->removes the style sheet passed in the *styleName* from the *vpAreaName*<!-- END REF -->.
+`VP REMOVE STYLESHEET` コマンドは、<!-- REF #_method_.VP REMOVE STYLESHEET.Summary -->*vpAreaName* 引数で指定したエリアから、*styleName* で指定したスタイルシートを削除します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-Pass the style sheet to remove in the *styleName* parameter.
+*styleName* 引数には、削除するスタイルシートの名前を渡します。
 
-You can define where to remove the style in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+任意の *scope* 引数を使用することで、スタイルシートをどこから削除するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
 *   `vk current sheet`
 *   `vk workbook`
 
 #### 例題
 
-To remove the *GreenDashDotStyle* style object from the current sheet:
+カレントシートから、*GreenDashDotStyle* スタイルオブジェクトを削除します:
 
 ```4d
 VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
@@ -2598,20 +2598,20 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名     |
 | sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート) |<!-- END REF -->#### 説明
 
-The `VP RESET SELECTION` command<!-- REF #_method_.VP RESET SELECTION.Summary -->deselects all cells, resulting in no current selection or visible active cell<!-- END REF -->.
+`VP RESET SELECTION` コマンドは、<!-- REF #_method_.VP RESET SELECTION.Summary -->すべてのセル選択を解除し、その結果カレントセレクション (またはアクティブセル) がなくなります<!-- END REF -->。
 
-> A default active cell (cell A1) remains defined for 4D View Pro commands.
+> 4D View Pro コマンドに対して定義されているデフォルトのアクティブセル (A1 セル) は残ります。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
 
 #### 例題
 
-You want to deselect all cells (the active cell and any selected cells):
+セル選択 (アクティブセルと選択セル) をすべて解除します:
 
 ```4d
 VP RESET SELECTION("myVPArea")
@@ -2625,18 +2625,18 @@ VP RESET SELECTION("myVPArea")
 | ---------- | ---- | -- | ----------------------- |
 | vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |<!-- END REF -->#### 説明
 
-The `VP RESUME COMPUTING` command<!-- REF #_method_.VP RESUME COMPUTING.Summary -->restarts the calculation of formulas in *vpAreaName*<!-- END REF -->.
+`VP RESUME COMPUTING` こマンドは、<!-- REF #_method_.VP RESUME COMPUTING.Summary -->*vpAreaName* 引数で指定したエリア内の計算を再開します<!-- END REF -->。
 
-The command reactivates the calculation service in 4D View Pro. Any formulas impacted by changes made while calculations were suspended are updated, and formulas added after `VP RESUME COMPUTING` is executed are calculated.
+このコマンドは 4D View Pro 内の計算機能を再開します。 計算停止中におこなった編集に影響されたフォーミュラは更新され、`VP RESUME COMPUTING` 実行後に追加されるフォーミュラは計算されます。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-> The 4D View Pro calculation service maintains a counter of suspend/resume actions. Therefore, each execution of `VP RESUME COMPUTING` must be balanced by a corresponding execution of the [VP SUSPEND COMPUTING](#vp-suspend-computing) command.
+> 4D View Pro 計算機能は停止/再開アクションを内部的にカウントしています。 そのため、`VP RESUME COMPUTING` コマンドの実行数は、[VP SUSPEND COMPUTING](#vp-suspend-computing) コマンドの実行数と釣り合っていなければなりません。
 
 
 #### 例題
 
-See example in [VP SUSPEND COMPUTING](#vp-suspend-computing).
+[VP SUSPEND COMPUTING](#vp-suspend-computing) の例題を参照ください。
 
 #### 参照
 
@@ -2648,52 +2648,52 @@ See example in [VP SUSPEND COMPUTING](#vp-suspend-computing).
 | row        | 整数     | -> | 行のインデックス                    |
 | rowCount   | 整数     | -> | 行数                          |
 | sheet      | 整数     | -> | シートのインデックス (省略した場合はカレントシート) |
-| 戻り値        | オブジェクト | <- | Range object of row(s)      |<!-- END REF -->#### 説明
+| 戻り値        | オブジェクト | <- | 行のレンジオブジェクト                 |<!-- END REF -->#### 説明
 
-The `VP Row` command<!-- REF #_method_.VP Row.Summary -->returns a new range object referencing a specific row or rows<!-- END REF -->.
+`VP Row` コマンドは、<!-- REF #_method_.VP Row.Summary -->特定行、あるいは複数行を参照する新しいレンジオブジェクトを返します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-The *row* parameter defines the first row of the row range. この引数として行のインデックス (0 起点) を渡します。 If the range contains multiple rows, you should also use the optional *rowCount* parameter.
+*row* 引数で、セルレンジの先頭行を指定します。 この引数として行のインデックス (0 起点) を渡します。 レンジが複数行にわたる場合には、任意の *rowCount* 引数も併せて使用します。
 
-The optional *rowCount* parameter allows you to define the total number of rows of the range. *rowCount* 引数は 0 より大きい値でなくてはなりません。 If omitted, the value will be set to 1 by default.
+任意の *rowCount* には、レンジに含まれる行数を指定することができます。 *rowCount* 引数は 0 より大きい値でなくてはなりません。 省略時、デフォルトで値は 1 に設定されます。
 
-任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 If not specified, the current spreadsheet is used by default. You can explicitly select the current spreadsheet with the following constant:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
 
 #### 例題
 
-You want to define a range object for the row shown below (on the current spreadsheet):
+以下に表示されている (カレントスプレッドシートの) 行に対するレンジオブジェクトを定義します:
 
 ![](assets/en/ViewPro/cmd_vpRow.PNG)
 
 以下のように書くことができます:
 
 ```4d
-$row:=VP Row("ViewProArea";9) // row 10
+$row:=VP Row("ViewProArea";9) // 10行目
 ```
 
 #### 参照
 
 [VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
 
-### VP ROW AUTOFIT#### See also
+### VP ROW AUTOFIT
 
 [VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)<!-- REF #_method_.VP ROW AUTOFIT.Syntax -->**VP ROW AUTOFIT** ( *rangeObj* : Object)<!-- END REF --><!-- REF #_method_.VP ROW AUTOFIT.Params -->| 引数       | タイプ    |    | 説明        |
 | -------- | ------ | -- | --------- |
 | rangeObj | オブジェクト | -> | レンジオブジェクト |<!-- END REF -->#### 説明
 
-The `VP ROW AUTOFIT` command<!-- REF #_method_.VP ROW AUTOFIT.Summary -->automatically sizes the row(s) in *rangeObj* according to their contents<!-- END REF -->.
+`VP ROW AUTOFIT` コマンドは、<!-- REF #_method_.VP ROW AUTOFIT.Summary -->*rangeObj* 引数のレンジ内の行を、そのコンテンツに応じて自動的にリサイズします<!-- END REF -->。
 
 
-In *rangeObj*, pass a range object containing a range of the rows whose size will be automatically handled.
+*rangeObj* 引数として、サイズを自動調整したい行を格納しているレンジオブジェクトを渡します。
 
 
 #### 例題
 
-The following rows don't correctly display the text:
+以下の行では、テキストを正しく表示できていません:
 
 ![](assets/en/ViewPro/cmd_vpRowAutoFit1.PNG)
 
@@ -2710,36 +2710,36 @@ The following rows don't correctly display the text:
 
 [VP Column autofit](#vp-column-autofit)
 
-### VP Run offscreen area<!-- REF #_method_.VP Run offscreen area.Syntax -->**VP Run offscreen area** ( *parameters* : Object) : Mixed<!-- END REF --><!-- REF #_method_.VP Run offscreen area.Params -->| 引数         | タイプ    |    | 説明                                                                              |
-| ---------- | ------ | -- | ------------------------------------------------------------------------------- |
-| parameters | オブジェクト | -> | Object containing the offscreen area's attributes                               |
-| 戻り値        | Mixed  | <- | `.result` property of the `.onEvent` object, or Null if does not return a value |<!-- END REF -->#### 説明
+### VP Run offscreen area<!-- REF #_method_.VP Run offscreen area.Syntax -->**VP Run offscreen area** ( *parameters* : Object) : Mixed<!-- END REF --><!-- REF #_method_.VP Run offscreen area.Params -->| 引数         | タイプ    |    | 説明                                                    |
+| ---------- | ------ | -- | ----------------------------------------------------- |
+| parameters | オブジェクト | -> | オフスクリーンエリアの属性を格納するオブジェクト                              |
+| 戻り値        | Mixed  | <- | `.onEvent` オブジェクトの `.result` プロパティ、または値を返さない場合には Null |<!-- END REF -->#### 説明
 
-The `VP Run offscreen area` command<!-- REF #_method_.VP Run offscreen area.Summary -->creates an offscreen area in memory which can be used to process 4D View Pro area commands and functions<!-- END REF -->.
+`VP Run offscreen area` コマンド、<!-- REF #_method_.VP Run offscreen area.Summary -->メモリ内にオフスクリーンエリアを作成し、これを利用して 4D View Pro エリアのコマンドやファンクションを処理することができます<!-- END REF -->。
 
-In *parameters* object, pass any of the following optional properties. These properties will be available through the `This` command within the `onEvent` method and reference the instance:
+*parameters* オブジェクトには、以下の任意のプロパティのいずれかを渡します。 これらのプロパティは `onEvent` コールバックメソッド内において `This` コマンドを介して利用可能であり、そのインスタンスを参照することができます:
 
-| プロパティ              | タイプ              | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ------------------ | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| area               | テキスト             | The name of the offscreen area. If omitted or null, a generic name is assigned (e.g., "OffscreenArea1").                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| onEvent            | object (formula) | A callback method that will be launched when the offscreen area is ready. It can be either:<p><p><li>an `onEvent` function of a class, or</li><li>a `Formula` object</li><p><p>By default, the callback method is called on the [`On VP Ready`](Events/onVpReady.md), [`On Load`](Events/onLoad.md), [`On Unload`](Events/onUnload.md), [`On End URL Loading`](Events/onEndUrlLoading.md), [`On URL Loading Error`](Events/onUrlLoadingError.md), [`On VP Range Changed`](Events/onVpRangeChanged.md), or [`On Timer`](Events/onTimer.md) events. <p><p>The callback method can be used to access the [4D View Pro form object variable](configuring.md#4d-view-pro-form-object-variable). |
-| autoQuit           | boolean          | True (default value) if the command must stop the formula execution when the [`On End URL Loading`](Events/onEndUrlLoading.md) or [`On URL Loading Error`](Events/onUrlLoadingError.md) events occur.<p><p>If false, you must use the `CANCEL` or `ACCEPT` commands in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| timeout            | number           | Maximum time (expressed in seconds) before the area automatically closes if no event is generated. If set to 0, no limitation is applied. Default value: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| result             | 混合               | Result of the processing (if any)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| \<customProperty> | 混合               | Any custom attribute to be available in the *onEvent* callback method.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-
-
-The following property is automatically added by the command if necessary:
-
-| プロパティ          | タイプ     | 説明                                                 |
-| -------------- | ------- | -------------------------------------------------- |
-| timeoutReached | boolean | Added with true value if timeout has been exceeded |
+| プロパティ              | タイプ             | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| area               | テキスト            | オフスクリーンエリアの名前。 省略時あるいは null の場合、一般的な名前 (例: "OffscreenArea1") が割り当てられます。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| onEvent            | object (フォーミュラ) | オフスクリーンエリアの準備ができたときに実行されるコールバックメソッド。 以下のいずれかを渡すことができます:<p><p><li>クラスの `onEvent` 関数</li><li>`Formula` オブジェクト</li><p><p>デフォルトでは、コールバックメソッドは、[`On VP Ready`](Events/onVpReady.md), [`On Load`](Events/onLoad.md), [`On Unload`](Events/onUnload.md), [`On End URL Loading`](Events/onEndUrlLoading.md), [`On URL Loading Error`](Events/onUrlLoadingError.md), [`On VP Range Changed`](Events/onVpRangeChanged.md), または [`On Timer`](Events/onTimer.md) イベントで呼び出されます。 <p><p>コールバックメソッドを使用して [4D View Pro フォームオブジェクト変数](configuring.md#4d-view-pro-フォームオブジェクト変数) にアクセスすることができます。 |
+| autoQuit           | boolean         | True (デフォルト値) の場合、[`On End URL Loading`](Events/onEndUrlLoading.md) または [`On URL Loading Error`](Events/onUrlLoadingError.md) イベントが起きた際にはコマンドがフォーミュラの実行を中止します。<p><p>False の場合、*onEvent* コールバックメソッド内で `CANCEL` あるいは `ACCEPT` コマンドを使用する必要があります。                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| timeout            | number          | イベントが何も生成されない場合にエリアが自動的に閉まるまでの最大時間 (秒単位)。 0 に設定した場合、エリアは自動的には閉まりません。 デフォルト値: 60                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| result             | 混合              | 処理の結果 (あれば)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| \<customProperty> | 混合              | *onEvent* コールバックメソッドで利用可能なカスタムの属性。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 
-> The offscreen area is only available during the execution of the `VP Run offscreen area` command. It will automatically be destroyed once execution has ended.
+以下のプロパティは、必要に応じてコマンドによって自動的に追加されます:
+
+| プロパティ          | タイプ     | 説明                           |
+| -------------- | ------- | ---------------------------- |
+| timeoutReached | boolean | タイムアウトを超えた場合に true の値で追加されます |
 
 
-The following commands can be used in the callback method:
+> オフスクリーンエリアは、`VP Run offscreen area` コマンドの実行中にしか利用できません。 実行が終わるとエリアは自動的に消去されます。
+
+
+コールバックメソッドでは、以下のコマンドを使用することができます:
 
 *   `ACCEPT`
 *   `CANCEL`
@@ -2750,15 +2750,15 @@ The following commands can be used in the callback method:
 
 #### 例題 1
 
-You want to create an offscreen 4D View Pro area and get the value of a cell:
+オフスクリーンの 4D View Pro エリアを作成し、そこからセルの値を取得します:
 
 
 ```4d
-// cs.OffscreenArea class declaration 
+// cs.OffscreenArea クラス宣言 
 Class constructor ($path : Text)
     This.filePath:=$path
 
-// This function will be called on each event of the offscreen area 
+// この関数はオフスクリーンエリアの各イベントごとに呼び出されます
 Function onEvent()
     Case of
         :(FORM Event.code=On VP Ready)
@@ -2769,7 +2769,7 @@ Function onEvent()
     End case
 ```
 
-The *OffscreenArea* callback method:
+*OffscreenArea* コールバックメソッドの内容は以下の通りです:
 
 
 ```4d
@@ -2779,11 +2779,11 @@ $result:=VP Run offscreen area($o)
 
 #### 例題 2
 
-You want to load a large document offscreen, wait for all calculations to complete evaluating, and export it as a PDF:
+大きなドキュメントをオフスクリーンで読み込み、計算の評価が完了するのを待ってドキュメントを PDF として書き出します:
 
 
 ```4d
-//cs.OffscreenArea class declaration
+//cs.OffscreenArea クラス宣言
 Class constructor($pdfPath : Text)
     This.pdfPath:=$pdfPath
     This.autoQuit:=False
@@ -2792,29 +2792,29 @@ Class constructor($pdfPath : Text)
 Function onEvent()
     Case of
         :(FORM Event.code=On VP Ready)
-    // Document import
+    //  ドキュメントの読み込み
             VP IMPORT DOCUMENT(This.area;$largeDocument4VP)
             This.isWaiting:=True
 
-    // Start a timer to verify if all calculations are finished.
-    // If during this period the "On VP Range Changed" is thrown, the timer will be restarted
-    // The time must be defined according to the computer configuration.
+    // 計算が完了したかを検証するタイマーをスタートさせます
+    // この間に "On VP Range Changed" イベントが発生した場合、タイマーはリスタートされます
+  // 時間はコンピューターの設定に応じて定義されなければなりません
             SET TIMER(60)
 
         :(FORM Event.code=On VP Range Changed)
-    // End of calculation detected. Restarts the timer
+    // 計算の完了を感知し、 タイマーを再スタートさせます
             If(This.isWaiting)
                 SET TIMER(60)
             End if
 
         :(FORM Event.code=On Timer)
-    // To be sure to not restart the timer if you call others 4D View command after this point
+    // この時点以降、他の 4D View コマンドを呼び出してもタイマーが再スタートしないようにします
             This.isWaiting:=False
 
-    // Stop the timer
+    // タイマーを停止します
             SET TIMER(0)
 
-    // Start the PDF export
+    // PDF 書き出しを開始します
             VP EXPORT DOCUMENT(This.area;This.pdfPath;New object("formula";Formula(ACCEPT)))
 
         :(FORM Event.code=On URL Loading Error)
@@ -2822,7 +2822,7 @@ Function onEvent()
     End case
 ```
 
-The *OffscreenArea* callback method:
+*OffscreenArea* コールバックメソッドの内容は以下の通りです:
 
 ```4d
 $o:=cs.OffscreenArea.new()
@@ -2832,7 +2832,7 @@ $result:=VP Run offscreen area($o)
 
 ## 参照
 
-[Blog post: End of document loading](https://blog.4d.com/4d-view-pro-end-of-document-loading/)
+[ブログ記事 (英文): End of document loading](https://blog.4d.com/4d-view-pro-end-of-document-loading/)
 
 ## S
 
@@ -2840,14 +2840,14 @@ $result:=VP Run offscreen area($o)
 | -------- | ------ | -- | --------- |
 | rangeObj | オブジェクト | -> | レンジオブジェクト |<!-- END REF -->#### 説明
 
-The `VP SET ACTIVE CELL` command<!-- REF #_method_.VP SET ACTIVE CELL.Summary -->defines a specified cell as active<!-- END REF -->.
+`VP SET ACTIVE CELL` コマンドは、<!-- REF #_method_.VP SET ACTIVE CELL.Summary -->指定したセルをアクティブセルにします<!-- END REF -->。
 
-In *rangeObj*, pass a range containing a single cell as an object (see [VP Cell](#vp-cell)). If *rangeObj* is not a cell range or contains multiple ranges, the first cell of the first range is used.
+*rangeObj* 引数には、単独のセルを格納するレンジオブジェクトを渡します ([VP Cell](#vp-cell) 参照)。 *rangeObj* 引数のレンジが単独セルのレンジでない場合、あるいは複数レンジを指定している場合、最初のレンジの先頭セルが使用されます。
 
 
 #### 例題
 
-To set the cell in column D, row 5 as the active cell:
+カラム D、行 5 のセルをアクティブセルに設定します:
 
 ```4d
 $activeCell:=VP Cell("myVPArea";3;4)
@@ -2860,48 +2860,48 @@ VP SET ACTIVE CELL($activeCell)
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
-### VP SET ALLOWED METHODS<!-- REF #_method_.VP SET ALLOWED METHODS.Syntax -->**VP SET ALLOWED METHODS** ( *methodObj* : Object)<!-- END REF --><!-- REF #_method_.VP SET ALLOWED METHODS.Params -->| 引数        | タイプ    |    | 説明                                       |
-| --------- | ------ | -- | ---------------------------------------- |
-| methodObj | オブジェクト | -> | Allowed methods in the 4D View Pro areas |<!-- END REF -->> **互換性**
+### VP SET ALLOWED METHODS<!-- REF #_method_.VP SET ALLOWED METHODS.Syntax -->**VP SET ALLOWED METHODS** ( *methodObj* : Object)<!-- END REF --><!-- REF #_method_.VP SET ALLOWED METHODS.Params -->| 引数        | タイプ    |    | 説明                           |
+| --------- | ------ | -- | ---------------------------- |
+| methodObj | オブジェクト | -> | 4D View Pro エリアでの実行を許可するメソッド |<!-- END REF -->> **互換性**
 > 
-> For greater flexiblity, it is recommended to use the [`VP SET CUSTOM FUNCTIONS`](#vp-set-custom-functions) command which allows you to designate 4D formulas that can be called from 4D View Pro areas. As soon as `VP SET CUSTOM FUNCTIONS` is called, `VP SET ALLOWED METHODS` calls are ignored. 4D View Pro also supports 4D's generic `SET ALLOWED METHODS` command if neither `VP SET CUSTOM FUNCTIONS` nor `VP SET ALLOWED METHODS` are called, however using the generic command is not recommended.
+> より高い柔軟性のため、4D View Pro エリアから呼び出せる 4Dフォーミュラを指定できる [`VP SET CUSTOM FUNCTIONS`](#vp-set-custom-functions) コマンドの使用が推奨されます。 `VP SET CUSTOM FUNCTIONS` が呼び出された場合、`VP SET ALLOWED METHODS` の呼び出しは無視されます。 `VP SET CUSTOM FUNCTIONS` と `VP SET ALLOWED METHODS` のどちらも呼び出されていない場合、4D View Pro は 4D の汎用コマンド `SET ALLOWED METHODS` もサポートしますが、汎用コマンドの使用は推奨されません。
 
 #### 説明
 
-The `VP SET ALLOWED METHODS` command<!-- REF #_method_.VP SET ALLOWED METHODS.Summary -->designates the project methods that can be called in 4D View Pro formulas<!-- END REF -->. This command applies to all 4D View Pro areas initialized after its call during the session. It can be called multiple times in the same session to initialize different configurations.
+`VP SET ALLOWED METHODS` コマンドは、<!-- REF #_method_.VP SET ALLOWED METHODS.Summary -->4D View Pro フォーミュラから呼び出し可能なプロジェクトメソッドを指定します<!-- END REF -->。 このコマンドは、呼び出し後のセッション中に初期化される 4D View Pro エリアすべてに対して適用されます。 同じセッション中において異なる設定で初期化をするために、複数回呼び出すこともできます。
 
-By default for security reasons, if you do not execute the `VP SET ALLOWED METHODS` command, no method call is allowed in 4D View Pro areas -- except if 4D's generic `SET ALLOWED METHODS` command was used (see compatibility note). Using an unauthorized method in a formula prints a #NAME? error in the 4D View Pro area.
+セキュリティ上の理由により、 `VP SET ALLOWED METHODS` コマンドを実行していない場合のデフォルトでは、4D View Pro エリアにおいてはメソッドの呼び出しは許可されません (ただし、4D の汎用的な `SET ALLOWED METHODS` コマンドが呼び出されていた場合を除きます。前述の互換性に関する注記参照)。 許可されていないのメソッドをフォーミュラ内で使用した場合には、4D View Pro エリアに #NAME? エラーが表示されます。
 
 
-In the *methodObj* parameter, pass an object in which each property is the name of a function to define in the 4D View Pro areas:
+*methodObj* には、4D View Pro エリア内で定義したいファンクションの名前をプロパティとして格納しているオブジェクトを渡します:
 
-| プロパティ                  |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------- | ---------- | ---------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<functionName>` |            |            | オブジェクト              | Custom function definition. The `<functionName>` property name defines the name of the custom function to display in 4D View Pro formulas (no spaces allowed)                                                                                                                                                                                                                                                                                                                                                           |
-|                        | method     |            | テキスト                | (mandatory) Name of the existing 4D project method to allow                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                        | parameters |            | Object の Collection | Collection of parameters (in the order they are defined in the method).                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                        |            | \[ ].name | テキスト                | Name of a parameter to display for the `<functionName>`.<p><p>**Note**: Parameter names must not contain space characters.                                                                                                                                                                                                                                                                                                                                              |
-|                        |            | \[ ].type | 数値                  | Type of the parameter. サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>If omitted, by default the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](formulas.md#parameters) section). If type is `Is object`, the object has the same structure as the object returned by [`VP Get value`](#vp-get-value). |
-|                        | summary    |            | テキスト                | Function description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|                        | minParams  |            | 数値                  | Minimum number of parameters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                        | maxParams  |            | 数値                  | Maximum number of parameters. Passing a number higher than the length of parameters allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                  |
+| プロパティ                  |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                       |
+| ---------------------- | ---------- | ---------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<functionName>` |            |            | オブジェクト              | カスタムファンクションの名前。 `<functionName>` プロパティ名は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                                |
+|                        | method     |            | テキスト                | (必須) 許可する既存の 4D プロジェクトメソッドの名前                                                                                                                                                                                                                                                                                                                                                            |
+|                        | parameters |            | Object の Collection | 引数のコレクション (メソッド内で定義されている順)                                                                                                                                                                                                                                                                                                                                                               |
+|                        |            | \[ ].name | テキスト                | `<functionName>` 用に表示する引数の名前。<p><p>**注**: 引数の名前にスペースを含めることはできません。                                                                                                                                                                                                                                                                  |
+|                        |            | \[ ].type | 数値                  | 引数の型。 サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>省略時のデフォルトでは、値は型と一緒に渡されますが、日付と時間の値に関してはオブジェクトとして送られます ([引数](formulas.md#引数) の章を参照ください)。 type が `Is object` の場合、そのオブジェクトは [`VP Get value`](#vp-get-value) によって返されるオブジェクトと同じ構造を持ちます。 |
+|                        | summary    |            | テキスト                | 4D View Pro に表示するファンクションの説明                                                                                                                                                                                                                                                                                                                                                              |
+|                        | minParams  |            | 数値                  | 引数の最小の数                                                                                                                                                                                                                                                                                                                                                                                  |
+|                        | maxParams  |            | 数値                  | 引数の最大の数。 ここに parameters の length より大きな値を渡すことによって、デフォルトの型を持つ "任意の" 引数を宣言することができるようになります。                                                                                                                                                                                                                                                                                                  |
 
 
 
 #### 例題
 
-You want to allow two methods in your 4D View Pro areas:
+4D View Pro エリアにおいて、2つのメソッドを許可します:
 
 
 ```4d
 C_OBJECT($allowed)
-$allowed:=New object //parameter for the command
+$allowed:=New object // コマンドに渡す引数
 
-$allowed.Hello:=New object //create a first simple function named "Hello"
-$allowed.Hello.method:="My_Hello_Method" //sets the 4D method
+$allowed.Hello:=New object // "Hello" という名前の 1つ目の簡単なファンクションを作成します
+$allowed.Hello.method:="My_Hello_Method" // 4Dメソッドを設定します
 $allowed.Hello.summary:="Hello prints hello world"
 
-$allowed.Byebye:=New object //create a second function with parameters named "Byebye"
+$allowed.Byebye:=New object // "Byebye" という名前の、引数を受け付ける 2つ目のファンクションを作成
 $allowed.Byebye.method:="My_ByeBye_Method"
 $allowed.Byebye.parameters:=New collection
 $allowed.Byebye.parameters.push(New object("name";"Message";"type";Is text))
@@ -2914,33 +2914,33 @@ $allowed.Byebye.maxParams:=3
 VP SET ALLOWED METHODS($allowed)
 ```
 
-After this code is executed, the defined functions can be used in 4D View Pro formulas:
+このコードが実行されたあと、定義されたファンクションは 4D View Pro フォーミュラで使用することができるようになります:
 
 ![](assets/en/ViewPro/cmd_vpSetAllowedMethods.PNG)
 
 
-> In 4D View Pro formulas, function names are automatically displayed in uppercase.
+> 4D View Pro フォーミュラにおいて、ファンクション名は自動的に大文字で表示されます。
 
 ## 参照
 
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
-### VP SET BOOLEAN VALUE<!-- REF #_method_.VP SET BOOLEAN VALUE.Syntax -->**VP SET BOOLEAN VALUE** ( *rangeObj* : Object  ; *boolValue* : Boolean)<!-- END REF --><!-- REF #_method_.VP SET BOOLEAN VALUE.Params -->| 引数        | タイプ    |    | 説明                   |
-| --------- | ------ | -- | -------------------- |
-| rangeObj  | オブジェクト | -> | レンジオブジェクト            |
-| boolValue | ブール    | -> | Boolean value to set |<!-- END REF -->#### 説明
+### VP SET BOOLEAN VALUE<!-- REF #_method_.VP SET BOOLEAN VALUE.Syntax -->**VP SET BOOLEAN VALUE** ( *rangeObj* : Object  ; *boolValue* : Boolean)<!-- END REF --><!-- REF #_method_.VP SET BOOLEAN VALUE.Params -->| 引数        | タイプ    |    | 説明        |
+| --------- | ------ | -- | --------- |
+| rangeObj  | オブジェクト | -> | レンジオブジェクト |
+| boolValue | ブール    | -> | 設定するブール値  |<!-- END REF -->#### 説明
 
-The `VP SET BOOLEAN VALUE` command<!-- REF #_method_.VP SET BOOLEAN VALUE.Summary -->assigns a specified boolean value to a designated cell range<!-- END REF -->.
+`VP SET BOOLEAN VALUE` コマンドは、<!-- REF #_method_.VP SET BOOLEAN VALUE.Summary -->指定のセルレンジにブール値を割り当てます<!-- END REF -->。
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
-The *boolValue* parameter allows you to pass the boolean value (**True** or **False**) that will be assigned to the *rangeObj*.
+*boolValue* 引数には、*rangeObj* のセルレンジに割り当てるブール値 (**true** あるいは **false**) を渡します。
 
 
 #### 例題
 
 ```4d
-//Set the cell value as False
+// セルの値を false に設定
 VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 ```
 ## 参照
@@ -2948,17 +2948,17 @@ VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 [VP SET VALUE](#vp-set-value)
 
 
-### VP SET BORDER<!-- REF #_method_.VP SET BORDER.Syntax -->**VP SET BORDER** ( *rangeObj* : Object ; *borderStyleObj* : Object  ; *borderPosObj* : Object )<!-- END REF --><!-- REF #_method_.VP SET BORDER.Params -->| 引数             | タイプ    |    | 説明                                  |
-| -------------- | ------ | -- | ----------------------------------- |
-| rangeObj       | オブジェクト | -> | レンジオブジェクト                           |
-| borderStyleObj | オブジェクト | -> | Object containing border line style |
-| borderPosObj   | オブジェクト | -> | Object containing border placement  |<!-- END REF -->#### 説明
+### VP SET BORDER<!-- REF #_method_.VP SET BORDER.Syntax -->**VP SET BORDER** ( *rangeObj* : Object ; *borderStyleObj* : Object  ; *borderPosObj* : Object )<!-- END REF --><!-- REF #_method_.VP SET BORDER.Params -->| 引数             | タイプ    |    | 説明                 |
+| -------------- | ------ | -- | ------------------ |
+| rangeObj       | オブジェクト | -> | レンジオブジェクト          |
+| borderStyleObj | オブジェクト | -> | 境界線スタイルを格納したオブジェクト |
+| borderPosObj   | オブジェクト | -> | 境界線の位置を格納したオブジェクト  |<!-- END REF -->#### 説明
 
-The `VP SET BORDER` command<!-- REF #_method_.VP SET BORDER.Summary -->applies the border style(s) defined in *borderStyleObj* and *borderPosObj* to the range defined in the *rangeObj*<!-- END REF -->.
+`VP SET BORDER` コマンドは、<!-- REF #_method_.VP SET BORDER.Summary -->*rangeObj* のレンジに *borderStyleObj* および *borderPosObj* で定義される境界線スタイルを適用します<!-- END REF -->。
 
-In *rangeObj*, pass a range of cells where the border style will be applied. If the *rangeObj* contains multiple cells, borders applied with `VP SET BORDER` will be applied to the *rangeObj* as a whole (as opposed to the [`VP SET CELL STYLE`](#vp-set-cell-style) command which applies borders to each cell of the *rangeObj*). If a style sheet has already been applied, `VP SET BORDER` will override the previously applied border settings for the *rangeObj*.
+*rangeObj* 引数には、境界線スタイルを適用したいセルのレンジを渡します。 *rangeObj* 引数に複数のセルが含まれる場合、`VP SET BORDER` で適用される境界線は、*rangeObj* のレンジ全体を一つのセルとして適用されます (これに対し、[`VP SET CELL STYLE`](#vp-set-cell-style) コマンドでは*rangeObj* 引数のレンジに含まれる個々のセルに対し境界線が適用されます)。 スタイルシートがすでに適用されている場合、`VP SET BORDER` コマンドは *rangeObj* のレンジに対してすでに適用されていた境界線設定を上書きします。
 
-The *borderStyleObj* parameter allows you to define the style for the lines of the border. The *borderStyleObj* supports the following properties:
+*borderStyleObj* 引数を使用すると、境界線のスタイルを定義することができます。 *borderStyleObj* 引数は、以下のプロパティをサポートしています:
 
 | プロパティ | タイプ  | 説明                             | とりうる値                                                                                                                                                                                                                                                                                                                                                                        |
 | ----- | ---- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2966,26 +2966,26 @@ The *borderStyleObj* parameter allows you to define the style for the lines of t
 | style | 整数   | 境界線のスタイルを定義します。 デフォルト = empty。 | <li>`vk line style dash dot`</li><li>`vk line style dash dot dot`</li><li>`vk line style dashed`</li> <li>`vk line style dotted`</li><li>`vk line style double`</li><li>`vk line style empty`</li><li>`vk line style hair`</li> <li>`vk line style medium`</li><li>`vk line style medium dash dot`</li><li>`vk line style medium dash dot dot`</li><li>`vk line style medium dashed`</li><li>`vk line style slanted dash dot`</li><li>`vk line style thick`</li><li>`vk line style thin`</li> |
 
 
-You can define the position of the *borderStyleObj* (i.e., where the line is applied) with the *borderPosObj*:
+*borderStyleObj* の境界線スタイルの位置 (どこに境界線を引くか) は *borderPosObj* 引数で定義します:
 
 
 
-| プロパティ           | タイプ     | 説明                                                          |
-| --------------- | ------- | ----------------------------------------------------------- |
-| all             | boolean | Border line style applied to all borders.                   |
-| left            | boolean | Border line style applied to left border.                   |
-| top             | boolean | Border line style applied to top border.                    |
-| right           | boolean | Border line style applied to right border.                  |
-| bottom          | boolean | Border line style applied to bottom border.                 |
-| outline         | boolean | Border line style applied to outer borders only.            |
-| inside          | boolean | Border line style applied to inner borders only.            |
-| innerHorizontal | boolean | Border line style applied to inner horizontal borders only. |
-| innerVertical   | boolean | Border line style applied to inner vertical borders only.   |
+| プロパティ           | タイプ     | 説明                        |
+| --------------- | ------- | ------------------------- |
+| all             | boolean | 境界線スタイルはすべての境界に適用されます。    |
+| left            | boolean | 境界線スタイルは左の境界に適用されます。      |
+| top             | boolean | 境界線スタイルは上の境界に適用されます。      |
+| right           | boolean | 境界線スタイルは右の境界に適用されます。      |
+| bottom          | boolean | 境界線スタイルは下の境界に適用されます。      |
+| outline         | boolean | 境界線スタイルは外側の境界にのみ適用されます。   |
+| inside          | boolean | 境界線スタイルは内側の境界にのみ適用されます。   |
+| innerHorizontal | boolean | 境界線スタイルは内側の横の境界にのみ適用されます。 |
+| innerVertical   | boolean | 境界線スタイルは内側の縦の境界にのみ適用されます。 |
 
 
 #### 例題 1
 
-This code produces a border around the entire range:
+以下のコードは、レンジ全体の外周に境界線を生成します:
 
 ```4d
 $border:=New object("color";"red";"style";vk line style thick)
@@ -3109,7 +3109,7 @@ The `VP SET COLUMN COUNT` command<!-- REF #_method_.VP SET COLUMN COUNT.Summary 
 
 Pass the total number of columns in the *columnCount* parameter. *columnCount* 引数は 0 より大きい値でなくてはなりません。
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the *columnCount* will be applied (counting begins at 0). 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the *columnCount* will be applied (counting begins at 0). 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
@@ -3172,16 +3172,16 @@ The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when
 
 In the *formulaObj* parameter, pass an object containing the 4D formulas that can be called from 4D View Pro formulas as well as additional properties. Each `customFunction` property passed in *formulaObj* becomes the name of a function in the 4D View Pro area.
 
-| プロパティ                    |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ------------------------ | ---------- | ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `<customFunction>` |            |            | オブジェクト              | Custom function definition. `<customFunction>` defines the name of the custom function to display in 4D View Pro formulas (no spaces allowed)                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|                          | formula    |            | オブジェクト              | 4D formula object (mandatory). See the `Formula` command.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|                          | parameters |            | Object の Collection | Collection of parameters (in the order they are defined in the formula)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                          |            | \[ ].name | テキスト                | Name of parameter to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|                          |            | \[ ].type | 数値                  | Type of the parameter. サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](formulas.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value). |
-|                          | summary    |            | テキスト                | Formula description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|                          | minParams  |            | 数値                  | Minimum number of parameters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|                          | maxParams  |            | 数値                  | Maximum number of parameters. Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| プロパティ                    |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ------------------------ | ---------- | ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<customFunction>` |            |            | オブジェクト              | カスタムファンクションの名前。 `<customFunction>` defines the name of the custom function to display in 4D View Pro formulas (no spaces allowed)                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|                          | formula    |            | オブジェクト              | 4D formula object (mandatory). See the `Formula` command.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                          | parameters |            | Object の Collection | Collection of parameters (in the order they are defined in the formula)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|                          |            | \[ ].name | テキスト                | Name of parameter to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|                          |            | \[ ].type | 数値                  | 引数の型。 サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](formulas.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value). |
+|                          | summary    |            | テキスト                | Formula description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|                          | minParams  |            | 数値                  | 引数の最小の数                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|                          | maxParams  |            | 数値                  | 引数の最大の数。 Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 > **WARNING**
 > 
 > * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
@@ -3238,7 +3238,7 @@ End case
 
 The `VP SET DATE TIME VALUE` command<!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->assigns a specified date and time value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 The *dateValue* parameter specifies a date value to be assigned to the *rangeObj*.
 
@@ -3270,7 +3270,7 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 The `VP SET DATE VALUE` command<!-- REF #_method_.VP SET DATE VALUE.Summary -->assigns a specified date value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+In *rangeObj*, pass a range of the cell(s) whose value you want to specify. *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 The *dateValue* parameter specifies a date value to be assigned to the *rangeObj*.
 
@@ -3314,7 +3314,7 @@ The `VP SET DEFAULT STYLE` command<!-- REF #_method_.VP SET DEFAULT STYLE.Summar
 
 The *styleObj* lets you pass an object containing style settings. You can use an existing style sheet or you can create a new style. For more information, see the [Style objects](configuring.md#style-objects) paragraph.
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
@@ -3367,7 +3367,7 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 The `VP SET FORMULA` command<!-- REF #_method_.VP SET FORMULA.Summary -->assigns a specified formula or 4D method to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the formula specified will be linked in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 If *rangeObj* includes multiple cells, the formula specified will be linked in each cell.
 
 The *formula* parameter specifies a formula or 4D method name to be assigned to the *rangeObj*. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
 
@@ -3468,7 +3468,7 @@ You can pass an object defining the columns and rows to freeze in the *paneObj* 
 | rowCount            | 整数  | シートの上側にある固定化された行   |
 | trailingRowCount    | 整数  | シートの下側にある固定化された行   |
 
-任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、定義されるレンジが属するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
@@ -3502,7 +3502,7 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 
 The `VP SET NUM VALUE` command<!-- REF #_method_.VP SET NUM VALUE.Summary -->assigns a specified numeric value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 The *numberValue* parameter specifies a numeric value to be assigned to the *rangeObj*.
 
@@ -3534,7 +3534,7 @@ Pass the name of the 4D View Pro area to print in *vpAreaName*. 存在しない�
 
 You can pass an object containing definitions for various printing attributes in the *printInfo* parameter. To view the full list of the available attributes, see [Print Attributes](configuring.md#print-attributes).
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、印刷するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
@@ -3636,7 +3636,7 @@ The `VP SET ROW COUNT` command<!-- REF #_method_.VP SET ROW COUNT.Summary -->def
 
 Pass the total number of rows in the *rowCount* parameter. *rowCount* 引数は 0 より大きい値でなくてはなりません。
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the *rowCount* will be applied (counting begins at 0). 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+In the optional *sheet* parameter, you can designate a specific spreadsheet where the *rowCount* will be applied (counting begins at 0). 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
@@ -3754,7 +3754,7 @@ The `VP SET SHEET OPTIONS` command<!-- REF #_method_.VP SET SHEET OPTIONS.Summar
 
 Pass an object containing definitions for the options to set in the *sheetOptions* parameter. To view the full list of the available options, see the [Sheet Options](configuring.md#sheet-options) paragraph.
 
-任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、スプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、スプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
@@ -3900,7 +3900,7 @@ With a page break:
 
 The `VP SET TEXT VALUE` command<!-- REF #_method_.VP SET TEXT VALUE.Summary -->assigns a specified text value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 The *textValue* parameter specifies a text value to be assigned to the *rangeObj*.
 
@@ -3925,7 +3925,7 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 The `VP SET TIME VALUE` command<!-- REF #_method_.VP SET TIME VALUE.Summary -->assigns a specified time value to a designated cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 The *timeValue* parameter specifies a time expressed in seconds to be assigned to the *rangeObj*.
 
@@ -3954,7 +3954,7 @@ The `VP SET VALUE` command<!-- REF #_method_.VP SET VALUE.Summary -->assigns a s
 
 The command allows you to use a generic code to set and format the types of values in *rangeObj*, whereas other commands, such as [`VP SET TEXT VALUE`](#vp-set-text-value) and [`VP SET NUM VALUE`](#vp-set-num-value), reduce the values to specific types.
 
-In *rangeObj*, pass a range of the cell(s) (created for example with [`VP Cell`](#vp-cell) or [`VP Column`](#vp-column)) whose value you want to specify. If *rangeObj* includes multiple cells, the value specified will be repeated in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 
 The parameter *valueObj* is an object that includes properties for the value and the [format](configuring.md#cell-format) to assign to *rangeObj*. It can include the following properties :
@@ -4129,7 +4129,7 @@ $workbookOptions.allowExtendPasteRange:=True
 VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 ```
 
-#### See Also
+#### 参照
 
 [VP Get workbook options](#vp-get-workbook-options)
 
@@ -4194,7 +4194,7 @@ The `VP SUSPEND COMPUTING` command<!-- REF #_method_.VP SUSPEND COMPUTING.Summar
 The command pauses the calculation service in 4D View Pro. Formulas that have already been calculated remain unchanged, however any formulas added after `VP SUSPEND COMPUTING` command  is executed are not calculated.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
-> The 4D View Pro calculation service maintains a counter of suspend/resume actions. Therefore, each execution of `VP SUSPEND COMPUTING` command  must be balanced by a corresponding execution of the `VP RESUME COMPUTING` command. Any formula impacted by modifications made while calculations are suspended will be recalculated when the command is executed.
+> 4D View Pro 計算機能は停止/再開アクションを内部的にカウントしています。 Therefore, each execution of `VP SUSPEND COMPUTING` command  must be balanced by a corresponding execution of the `VP RESUME COMPUTING` command. Any formula impacted by modifications made while calculations are suspended will be recalculated when the command is executed.
 
 #### 例題
 
@@ -4221,7 +4221,7 @@ If(FORM Event.code=On Clicked)
 
 End if
 ```
-#### See Also
+#### 参照
 
 [VP RECOMUTE FORMULAS](#vp-recompute-formulas)<br/>[VP RESUME COMPUTING](#vp-resume-computing)
 
