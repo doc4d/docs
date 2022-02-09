@@ -663,6 +663,12 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 <!-- REF EntityClass.getRemoteContextAttributes().Desc -->
 ## .getRemoteContextAttributes()
 
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19R5|Added|
+</details>
+
 <!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->
 **.getRemoteContextAttributes()** : Text<!-- END REF -->
 

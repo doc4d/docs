@@ -295,6 +295,12 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 <!-- REF #DataStoreClass.clearAllRemoteContexts().Syntax -->
 **.clearAllRemoteContexts()**<!-- END REF -->
 
+<!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
+|Parameter|Type||Description|
+|---------|--- |:---:|------|
+||||Does not require any parameters|
+<!-- END REF -->
+
 #### Description
 
 The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
@@ -432,7 +438,7 @@ The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteCont
 
 > For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
 
-Each object in the returned collection has the [properties listed in the `.getContextInfo()` section](#properties-of-the-returned-object) 
+Each object in the returned collection has the properties listed in the [`.getContextInfo()`](#properties-of-the-returned-object) section.
 
 #### Example 
 
@@ -572,9 +578,9 @@ The returned object has the following properties:
 |Property|Type|Description|
 |---|---|---|
 |name|Text|Name of the context|
-|main|Text|Attributes associated to the context. If there are several attributes, they are separated by a comma|
+|main|Text|Attributes associated to the context (attribute names are separated by a comma) |
 |dataclass|Text|Dataclass linked to the context|
-|currentItem (optional)*|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem|
+|currentItem (optional)|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem|
 
 
 #### Example 
