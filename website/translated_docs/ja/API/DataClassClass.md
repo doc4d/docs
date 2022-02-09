@@ -160,6 +160,12 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 <!-- REF #DataClassClass.clearRemoteCache().Syntax -->
 **.clearRemoteCache()**<!-- END REF -->
 
+<!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
+| 引数 | タイプ |  | 説明                |
+| -- | --- |::| ----------------- |
+|    |     |  | このコマンドは引数を必要としません |
+<!-- END REF -->
+
 #### 説明
 
 The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
@@ -503,9 +509,9 @@ $ds.Persons.clearRemoteCache()
 **.getCount()** : Integer <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
-| 引数     | タイプ |    | 説明                  |
-| ------ | --- | -- | ------------------- |
-| result | 整数  | <- | データクラスに含まれる全エンティティ数 |
+| 引数     | タイプ |    | 説明                                  |
+| ------ | --- | -- | ----------------------------------- |
+| result | 整数  | <- | Number of entities in the dataclass |
 <!-- END REF -->
 #### 説明
 
@@ -673,9 +679,9 @@ Calling this function from a 4D single-user application returns `Null`.
 
 | プロパティ      | タイプ    | 説明                                                                        |
 | ---------- | ------ | ------------------------------------------------------------------------- |
-| maxEntries | 倍長整数   | Maximum number of entries collection.                                     |
-| stamp      | 倍長整数   | Stamp of the cache.                                                       |
-| timeout    | 倍長整数   | Time remaining before the new entries in the cache are marked as expired. |
+| maxEntries | 整数     | Maximum number of entries collection.                                     |
+| stamp      | 整数     | Stamp of the cache.                                                       |
+| timeout    | 整数     | Time remaining before the new entries in the cache are marked as expired. |
 | entries    | コレクション | Contains an entry object for each entity in the cache.                    |
 
 Each entry object in the `entries` collection has the following properties:
@@ -689,7 +695,7 @@ Each entry object in the `entries` collection has the following properties:
 The `data` object in each entry contains the following properties:
 | プロパティ                  | タイプ    | 説明                                                                                                                           |
 | ---------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| __KEY                  | String | エンティティのプライマリーキー                                                                                                              |
+| __KEY                  | String | Primary key of the entity                                                                                                    |
 | __STAMP                | 倍長整数   | Timestamp of the entity in the database                                                                                      |
 | __TIMESTAMP            | String | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
 | dataClassAttributeName | バリアント  | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
@@ -723,6 +729,11 @@ End for each
 $cachePersons:=$ds.Persons.getRemoteCache()
 $cacheAddress:=$ds.Address.getRemoteCache()
 ```
+
+#### 参照
+
+[.setRemoteCacheSettings()](#setremotecachesettings)<br/>[.clearRemoteCache()](#clearremotecache)
+
 
 <!-- REF DataClassClass.new().Desc -->
 ## .new()
@@ -1415,12 +1426,12 @@ softwares:{
 
 The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
 
-*settings* には、以下のプロパティを持つオブジェクトを渡します:
+In the *settings* parameter, pass an object with the following properties:
 
-| プロパティ      | タイプ  | 説明                  |
-| ---------- | ---- | ------------------- |
-| timeout    | 倍長整数 | タイムアウト (秒単位)        |
-| maxEntries | 倍長整数 | Number of entities. |
+| プロパティ      | タイプ | 説明                  |
+| ---------- | --- | ------------------- |
+| timeout    | 整数  | タイムアウト (秒単位)        |
+| maxEntries | 整数  | Number of entities. |
 
 `timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
 
@@ -1433,8 +1444,6 @@ Setting a `timeout` property sets a new timeout for the entities already present
 `maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
-
-> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection when the cache is filled with new entities.
 
 If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
@@ -1450,5 +1459,8 @@ $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 $ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```
 
+#### 参照
+
+[.clearRemoteCache()](#clearremotecache)<br/>[.getRemoteCache()](#clearremotecache)
 
 <style> h2 { background: #d9ebff;}</style>
