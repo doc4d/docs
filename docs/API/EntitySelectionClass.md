@@ -982,11 +982,7 @@ $info:=$persons.getRemoteContextAttributes()
 
 #### See also 
 
-[Entity.getRemoteContextAttributes()](./EntityClass.md#getRemoteContextAttributes)
-[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)
-[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)
-[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)
-[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+[Entity.getRemoteContextAttributes()](./EntityClass.md#getRemoteContextAttributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()   
