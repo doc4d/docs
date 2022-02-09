@@ -657,13 +657,19 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 <!-- REF EntityClass.getRemoteContextAttributes().Desc -->
 ## .getRemoteContextAttributes()
 
+<details><summary>履歴</summary>
+| バージョン | 内容 |
+| ----- | -- |
+| v19R5 | 追加 |
+</details>
+
 <!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->
 **.getRemoteContextAttributes()** : Text<!-- END REF -->
 
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
 | 引数     | タイプ  |    | 説明                                                    |
 | ------ | ---- | -- | ----------------------------------------------------- |
-| result | Text | <- | Attributes linked to the entity, separated by a comma |
+| result | テキスト | <- | Attributes linked to the entity, separated by a comma |
 <!-- END REF -->
 
 #### 説明
@@ -699,7 +705,7 @@ $info:=$address.getRemoteContextAttributes()
 
 #### 参照
 
-[EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes) [.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts) [.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo) [.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts) [.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+[EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
 <!-- REF EntityClass.getSelection().Desc -->
 ## .getSelection()
