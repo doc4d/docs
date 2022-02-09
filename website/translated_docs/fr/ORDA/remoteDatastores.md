@@ -61,30 +61,42 @@ Si une demande est envoyée au datastore distant après la fermeture de la sessi
 
 ## Optimisation client/serveur
 
-4D provides an automatic optimization for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). Cette optimisation accélère l'exécution de votre application 4D en réduisant drastiquement le volume d'informations transmises sur le réseau.
+4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. Elles incluent :
+* the **optimization context**
+* the **ORDA cache**
 
-![](assets/en/ORDA/cs-optimization-auto.png)
+### Context
 
-Les mécanismes d'optimisation suivants sont mis en œuvre :
+The optimization context is based upon the following implementations:
 
-*   Lorsqu'un client demande une sélection d'entité au serveur, 4D "apprend" automatiquement attributs de la sélection d'entité sont réellement utilisés côté client lors de l'exécution du code, et génère un "contexte d'optimisation" correspondant. Ce contexte est relié à la sélection d'entité et stocke les attributs utilisés. Il sera mis à jour dynamiquement si d'autres attributs sont utilisés par la suite.
+* Lorsqu'un client demande une sélection d'entité au serveur, 4D "apprend" automatiquement attributs de la sélection d'entité sont réellement utilisés côté client lors de l'exécution du code, et génère un "contexte d'optimisation" correspondant. Ce contexte est relié à la sélection d'entité et stocke les attributs utilisés. Il sera mis à jour dynamiquement si d'autres attributs sont utilisés par la suite. The following methods and functions trigger the learning phase:
+  * [`Créer une entity selection`](../API/EntitySelectionClass.md#create-entity-selection)
+  * [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
+  * [`dataClass.all()`](../API/DataClassClass.md#all)
+  * [`dataClass.get()`](../API/DataClassClass.md#get)
+  * [`dataClass.query()`](../API/DataClassClass.md#query)
+  * [`entitySelection.query()`](../API/EntitySelectionClass.md#query)
 
-*   Les requêtes ultérieures envoyées au serveur sur la même sélection d'entité réutilisent automatiquement le contexte d'optimisation et lisent uniquement les attributs nécessaires depuis le serveur, ce qui accélère le traitement. Par exemple, dans une list box basée sur une sélection d'entités, la phase d'apprentissage a lieu durant l'affichage des premières lignes et l'affichage des lignes suivantes est fortement optimisé.
+* Les requêtes ultérieures envoyées au serveur sur la même sélection d'entité réutilisent automatiquement le contexte d'optimisation et lisent uniquement les attributs nécessaires depuis le serveur, ce qui accélère le traitement. For example, in an [entity selection-based list box](#entity-selection-based-list-box), the learning phase takes place during the display of the first row. the display of the next rows is optimized. The following functions automatically associate the optimization context of the source entity selection to the returned entity selection:
+    *   [`entitySelection.and()`](../API/EntitySelectionClass.md#and)
+    *   [`entitySelection.minus()`](../API/EntitySelectionClass.md#minus)
+    *   [`entitySelection.or()`](../API/EntitySelectionClass.md#or)
+    *   [`entitySelection.orderBy()`](../API/EntitySelectionClass.md#orderBy)
+    *   [`entitySelection.slice()`](../API/EntitySelectionClass.md#slice)
+    *   [`entitySelection.drop()`](../API/EntitySelectionClass.md#drop)
 
-*   Un contexte d'optimisation existant peut être passé en tant que propriété à une autre sélection d'entité de la même dataclass, ce qui permet d'éviter la phase d'apprentissage et d'accélérer l'application (voir [Utilisation de la propriété context](#using-the-context-property) ci-dessous).
+* Un contexte d'optimisation existant peut être passé en tant que propriété à une autre sélection d'entité de la même dataclass, ce qui permet d'éviter la phase d'apprentissage et d'accélérer l'application (voir [Utilisation de la propriété context](#using-the-context-property) ci-dessous).
 
-Les méthodes suivantes associent automatiquement le contexte d'optimisation de la sélection d'entité d'origine à la sélection d'entité retournée :
+* You can bypass the learning phase or customize the optimization context using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function. Additionally, you can get information about running contexts using the following functions:
+    * [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo)
+    * [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts)
+    * [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes)
+    * [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes)
 
-*   `entitySelection.and()`
-*   `entitySelection.minus()`
-*   `entitySelection.or()`
-*   `entitySelection.orderBy()`
-*   `entitySelection.slice()`
-*   `entitySelection.drop()`
-
+![](assets/en/ORDA/cs-optimization.png)
 
 
-**Exemple**
+#### Exemple
 
 Considérons le code suivant :
 
@@ -97,20 +109,15 @@ Considérons le code suivant :
 
 Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* after a learning phase.
 
+#### Reusing the context property
 
+Vous pouvez tirer un meilleur parti de l'optimisation en utilisant la propriété **context**. Cette propriété référence un contexte d'optimisation "appris" pour une sélection d'entités. It can be passed as parameter to ORDA functions that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
+> You can also create contexts using the [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function.
 
-### Utilisation de la propriété context
+Une même propriété de contexte d'optimisation peut être passée à un nombre illimité de sélections d'entités de la même dataclass. All ORDA functions that handle entity selections support the **context** property (for example [`dataClass.query()`](../API/DataClassClass.md#query) or [`dataClass.all()`](../API/DataClassClass.md#all)). Il est toutefois important de garder à l'esprit qu'un contexte est automatiquement mis à jour lorsque de nouveaux attributs sont utilisés dans d'autres parties du code. Si le même contexte est réutilisé dans différents codes, il risque d'être surchargé et de perdre en efficacité.
+> A similar mechanism is implemented for entities that are loaded, so that only used attributes are requested (see the [`dataClass.get()`](../API/DataClassClass.md#get) function).
 
-Vous pouvez tirer un meilleur parti de l'optimisation en utilisant la propriété **context**. Cette propriété référence un contexte d'optimisation "appris" pour une sélection d'entités. Elle peut être passée comme paramètre aux méthodes ORDA qui retournent de nouvelles sélections d'entités, afin que les sélections d'entités demandent directement au serveur les attributs utilisés, sans passer par la phase d'apprentissage.
-
-![](assets/en/ORDA/cs-optimization-manual.png)
-
-Une même propriété de contexte d'optimisation peut être passée à un nombre illimité de sélections d'entités de la même dataclass. Toutes les méthodes ORDA qui gèrent les sélections d'entités prennent en charge la propriété **context** (par exemple les méthodes `dataClass.query( )` ou `dataClass.all( )`). Il est toutefois important de garder à l'esprit qu'un contexte est automatiquement mis à jour lorsque de nouveaux attributs sont utilisés dans d'autres parties du code. Si le même contexte est réutilisé dans différents codes, il risque d'être surchargé et de perdre en efficacité.
-> Un mécanisme similaire est mis en place pour des entités qui sont chargées, afin que seuls les attributs utilisés soient demandés (voir la méthode `dataClass.get( )`).
-
-
-
-**Exemple avec la méthode `dataClass.query( )` :**
+**Example with `dataClass.query()`:**
 
 ```4d
  var $sel1; $sel2; $sel3; $sel4; $querysettings; $querysettings2 : Object
@@ -131,34 +138,18 @@ Une même propriété de contexte d'optimisation peut être passée à un nombre
  $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
 ```
 
-### Handling the optimization context
-
-You can use the following ORDA class functions to handle the contents of the optimization context in a client/server configuration. For more information, see the description of each function:
-
-DataClass class:
-* [.getRemoteContextInfo()](../API/DataClassClass.md#getremotecontextinfo)
-* [.getAllRemoteContexts()](../API/DataClassClass.md#getallremotecontexts)
-* [.clearAllRemoteContexts()](../API/DataClassClass.md#clearallremotecontexts)
-* [.setRemoteContextInfo()](../API/DataClassClass.md#setremotecontextinfo)
-
-Entity Class:
-* [.getRemoteContextAttributes()](../API/EntityClass.md#getremotecontextattributes)
-
-EntitySelectionClass:
-* [.getRemoteContextAttributes()](../API/EntitySelectionClass.md#getremotecontextattributes)
-
-### Listbox basée sur une sélection d'entités
+#### Listbox basée sur une sélection d'entités
 
 L'optimisation d'une sélection d'entités s'applique automatiquement aux listbox basées sur une sélection d'entités dans les configurations client/serveur, au moment d'afficher et de dérouler le contenu d'une listbox : seuls les attributs affichés dans la listbox sont demandés depuis le serveur.
 
 Un contexte spécifique nommé "mode page" est également proposé lorsque l'entité courante de la sélection est chargée à l'aide de l'expression **élément courant** de la listbox (voir [List box de type collection ou entity selection](FormObjects/listbox_overview.md#list-box-types)). Cette fonctionnalité vous permet de ne pas surcharger le contexte initial de la listbox dans ce cas précis, notamment si la "page" requiert des attributs supplémentaires. A noter que seule l'utilisation de l'expression **Élément courant** permettra de créer/utiliser le contexte de la page (l'accès via `entitySelection[index]` modifiera le contexte de la sélection d'entité).
 
-Cette optimisation sera également prise en charge par les requêtes ultérieures envoyées au serveur via les méthodes de navigation des entités. Les méthodes suivantes associeront automatiquement le contexte d'optimisation de l'entité source à l'entité retournée :
+Subsequent requests to server sent by entity browsing functions will also support this optimization. The following functions automatically associate the optimization context of the source entity to the returned entity:
 
-*   `entity.next( )`
-*   `entity.first( )`
-*   `entity.last( )`
-*   `entity.previous( )`
+*   [`entity.next()`](../API/EntityClass.md#next)
+*   [`entity.first()`](../API/EntityClass.md#first)
+*   [`entity.last()`](../API/EntityClass.md#last)
+*   [`entity.previous()`](../API/EntityClass.md#previous)
 
 Par exemple, le code suivant charge l'entité sélectionnée et permet de naviguer dans la sélection d'entités. Les entités sont chargées dans un contexte séparé et le contexte initial de la listbox demeure inchangé :
 
@@ -170,10 +161,12 @@ Par exemple, le code suivant charge l'entité sélectionnée et permet de navigu
 
 ### ORDA Cache
 
-Data requested from the server via ORDA is loaded in the ORDA cache (which is different from the 4D cache). By default, the ORDA cache expires after 30 seconds. The data contained in the cache when the timeout is reached is considered as expired: the data remains in the cache until 4D unloads expired data when space is needed.
+For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). By default, the ORDA cache expires after 30 seconds.
 
-The following ORDA class functions handle the contents of the ORDA cache. For more information, see the description of each function:
+The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Expired data remains in the cache until space is needed.
 
-* [.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
-* [.getRemoteCache()](../API/DataClassClass.md#getremotecache)
-* [.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)
+By default, the ORDA cache is transparently handled by 4D. However, you can control its contents using the following ORDA class functions:
+
+* [dataClass.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
+* [dataClass.getRemoteCache()](../API/DataClassClass.md#getremotecache)
+* [dataClass.clearRemoteCache()](../API/DataClassClass.md#clearremotecache)

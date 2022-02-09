@@ -10,18 +10,22 @@ title: データクラス
 
 ### 概要
 
-|                                                                                                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
+| [<!-- INCLUDE #DataClassClass.clearRemoteCache().Syntax -->](#clearremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.clearRemoteCache().Summary -->|
 | [<!-- INCLUDE DataClassClass.exposed.Syntax -->](#exposed)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.exposed.Summary --> |
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
+| [<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getCount().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getDataStore().Syntax -->](#getdatastore)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getDataStore().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getInfo().Syntax -->](#getinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getInfo().Summary --> |
+| [<!-- INCLUDE #DataClassClass.getRemoteCache().Syntax -->](#getremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getRemoteCache().Summary --> |
 | [<!-- INCLUDE #DataClassClass.new().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.new().Summary --> |
 | [<!-- INCLUDE #DataClassClass.newSelection().Syntax -->](#newselection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.newSelection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.query().Syntax -->](#query)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.query().Summary --> |
+| [<!-- INCLUDE #DataClassClass.setRemoteCacheSettings().Syntax -->](#setremotecachesettings)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.setRemoteCacheSettings().Summary --> |
 
 
 
@@ -144,6 +148,46 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
  $allEmp:=ds.Employee.all()
 ```
 
+<!-- REF #DataClassClass.clearRemoteCache().Desc -->
+## .clearRemoteCache()
+
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R5 | 追加 |
+</details>
+
+<!-- REF #DataClassClass.clearRemoteCache().Syntax -->
+**.clearRemoteCache()**<!-- END REF -->
+
+#### 説明
+
+The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
+
+#### 例題
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cache : Object
+var $info : Collection
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$persons:=$ds.Persons.all()
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$cache:=$ds.Persons.getRemoteCache()
+
+$ds.Persons.clearRemoteCache()
+// Cache of the Persons dataclass = {timeout:30,maxEntries:30000,stamp:255,entries:[]}
+```
+
 
 <!-- END REF -->
 
@@ -185,8 +229,8 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 <!-- REF #DataClassClass.fromCollection().Params -->
 | 引数        | タイプ                |    | 説明                        |
 | --------- | ------------------ |:--:| ------------------------- |
-| objectCol | Collection         | -> | エンティティにマップするオブジェクトのコレクション |
-| settings  | Object             | -> | ビルドオプション: context         |
+| objectCol | コレクション             | -> | エンティティにマップするオブジェクトのコレクション |
+| settings  | オブジェクト             | -> | ビルドオプション: context         |
 | 戻り値       | 4D.EntitySelection | <- | コレクションから作成したエンティティセレクション  |
 <!-- END REF -->
 
@@ -383,11 +427,11 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 
 <!-- REF #DataClassClass.get().Params -->
-| 引数         | タイプ              |    | 説明                      |
-| ---------- | ---------------- |:--:| ----------------------- |
-| primaryKey | Integer または Text | -> | 取得するエンティティのプライマリーキー値    |
-| settings   | Object           | -> | ビルドオプション: context       |
-| 戻り値        | 4D.Entity        | <- | 指定したプライマリーキーに合致するエンティティ |
+| 引数         | タイプ       |    | 説明                      |
+| ---------- | --------- |:--:| ----------------------- |
+| primaryKey | 整数または文字列  | -> | 取得するエンティティのプライマリーキー値    |
+| settings   | オブジェクト    | -> | ビルドオプション: context       |
+| 戻り値        | 4D.Entity | <- | 指定したプライマリーキーに合致するエンティティ |
 <!-- END REF -->
 
 #### 説明
@@ -446,6 +490,36 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 <!-- END REF -->
 
+<!-- REF DataClassClass.getCount.Desc -->
+## .getCount()
+
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R5 | 追加 |
+</details>
+
+<!-- REF #DataClassClass.getCount().Syntax -->
+**.getCount()** : Integer <!-- END REF -->
+
+<!-- REF #DataClassClass.getCount().Params -->
+| 引数     | タイプ |    | 説明                  |
+| ------ | --- | -- | ------------------- |
+| result | 整数  | <- | データクラスに含まれる全エンティティ数 |
+<!-- END REF -->
+#### 説明
+
+The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+#### 例題
+
+```4d
+var $ds : cs.DataStore
+var $$number : Integer
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$number:=$ds.Persons.getCount() 
+```
 
 <!-- REF DataClassClass.getDataStore().Desc -->
 ## .getDataStore()
@@ -516,7 +590,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 <!-- REF #DataClassClass.getInfo().Params -->
 | 引数  | タイプ    |    | 説明        |
 | --- | ------ | -- | --------- |
-| 戻り値 | Object | <- | データクラスの情報 |
+| 戻り値 | オブジェクト | <- | データクラスの情報 |
 <!-- END REF -->
 
 
@@ -572,7 +646,83 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 <!-- END REF -->
 
+<!-- REF DataClassClass.getRemoteCache().Desc -->
+## .getRemoteCache()
 
+<details><summary>履歴</summary>
+| バージョン  | 内容 |
+| ------ | -- |
+| v19 R5 | 追加 |
+</details>
+
+<!-- REF #DataClassClass.getRemoteCache().Syntax -->
+**.getRemoteCache**() : Object <!-- END REF -->
+
+<!-- REF #DataClassClass.getRemoteCache().Params -->
+| 引数     | タイプ    |    | 説明                                                                  |
+| ------ | ------ | -- | ------------------------------------------------------------------- |
+| result | オブジェクト | <- | Object describing the contents of the ORDA cache for the dataclass. |
+<!-- END REF -->
+#### 説明
+
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+
+Calling this function from a 4D single-user application returns `Null`.
+
+戻り値のオブジェクトには、以下のプロパティが格納されています:
+
+| プロパティ      | タイプ    | 説明                                                                        |
+| ---------- | ------ | ------------------------------------------------------------------------- |
+| maxEntries | 倍長整数   | Maximum number of entries collection.                                     |
+| stamp      | 倍長整数   | Stamp of the cache.                                                       |
+| timeout    | 倍長整数   | Time remaining before the new entries in the cache are marked as expired. |
+| entries    | コレクション | Contains an entry object for each entity in the cache.                    |
+
+Each entry object in the `entries` collection has the following properties:
+
+| プロパティ   | タイプ    | 説明                                |
+| ------- | ------ | --------------------------------- |
+| data    | Object | Object holding data on the entry. |
+| expired | ブール    | True if the entry has expired.    |
+| key     | テキスト   | エンティティのプライマリーキー                   |
+
+The `data` object in each entry contains the following properties:
+| プロパティ                  | タイプ    | 説明                                                                                                                           |
+| ---------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| __KEY                  | String | エンティティのプライマリーキー                                                                                                              |
+| __STAMP                | 倍長整数   | Timestamp of the entity in the database                                                                                      |
+| __TIMESTAMP            | String | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
+| dataClassAttributeName | バリアント  | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
+
+Data concerning related entities is stored in the cache of the data object.
+
+#### 例題
+
+In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
+
+Note that `address.city` is loaded in the cache of the `Persons` dataclass.
+
+Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cachePersons; $cacheAddress : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$persons:=$ds.Persons.all()
+
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$cachePersons:=$ds.Persons.getRemoteCache()
+$cacheAddress:=$ds.Address.getRemoteCache()
+```
 
 <!-- REF DataClassClass.new().Desc -->
 ## .new()
@@ -636,7 +786,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 <!-- REF #DataClassClass.newSelection().Params -->
 | 引数        | タイプ                |    | 説明                                                                                                      |
 | --------- | ------------------ | -- | ------------------------------------------------------------------------------------------------------- |
-| keepOrder | Integer            | -> | `dk keep ordered`: 順列ありのエンティティセレクションを作成します<br>`dk non ordered` (あるいは省略時): 順列なしのエンティティセレクションを作成します |
+| keepOrder | 整数                 | -> | `dk keep ordered`: 順列ありのエンティティセレクションを作成します<br>`dk non ordered` (あるいは省略時): 順列なしのエンティティセレクションを作成します |
 | 戻り値       | 4D.EntitySelection | <- | データクラスの空の新規エンティティセレクション                                                                                 |
 <!-- END REF -->
 
@@ -684,10 +834,10 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 <!-- REF #DataClassClass.query().Params -->
 | 引数            | タイプ                |    | 説明                                                                                   |
 | ------------- | ------------------ | -- | ------------------------------------------------------------------------------------ |
-| queryString   | Text               | -> | 検索条件 (文字列)                                                                           |
-| formula       | Object             | -> | 検索条件 (フォーミュラオブジェクト)                                                                  |
+| queryString   | テキスト               | -> | 検索条件 (文字列)                                                                           |
+| formula       | オブジェクト             | -> | 検索条件 (フォーミュラオブジェクト)                                                                  |
 | value         | any                | -> | プレースホルダー用の値                                                                          |
-| querySettings | Object             | -> | クエリオプション: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan |
+| querySettings | オブジェクト             | -> | クエリオプション: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan |
 | 戻り値           | 4D.EntitySelection | <- | *queryString* または *formula* に渡した検索条件に合致するエンティティから構成された新しいエンティティセレクション                |
 <!-- END REF -->
 
@@ -919,15 +1069,15 @@ ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";
 
 *querySettings* 引数は、追加のオプションを格納したオブジェクトです。 以下のオブジェクトプロパティがサポートされています:
 
-| プロパティ         | タイプ     | 説明                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| parameters    | Object  | *queryString* または *formula* に **値の命名プレースホルダー** を使用した場合に渡すオブジェクト。 値は、プロパティ/値のペアで表現されます。プロパティは、*queryString* または *formula* に値の代わりに挿入されたプレースホルダー名 (":placeholder"など) で、値は、実際に比較される値です。 インデックスプレースホルダー (value引数として値を直接渡す方法) と命名プレースホルダーは、同じクエリ内で同時に使用することができます。                                                                                                                                              |
-| attributes    | Object  | *queryString* または *formula* に **属性パスの命名プレースホルダー** を使用した場合に渡すオブジェクト。 属性パスは、プロパティ/値のペアで表現されます。プロパティは、*queryString* または *formula* に属性パスの代わりに挿入されたプレースホルダー名 (":placeholder"など) で、値は、属性パスを表す文字列または文字列のコレクションです。 値には、データクラスのスカラー属性・リレート属性・オブジェクトフィールド内のプロパティへの属性パスを指定することができます。<p><table><tr><th>タイプ</th><th>説明</th></tr><tr><td>String</td><td>ドット記法を使用して表現された attributePath (例: "name" または "user.address.zipCode")</td></tr><tr><td>String の Collection</td><td>コレクションの各要素が attributePath の階層を表します (例: ["name"] または ["user","address","zipCode"])。 コレクションを使用することで、ドット記法に準じていない名前の属性に対してもクエリすることができます (例: \["4Dv17.1","en/fr"])。</td></tr></table>インデックスプレースホルダー (*value* 引数として値を直接渡す方法) と命名プレースホルダーは、同じクエリ内で同時に使用することができます。 |
-| args          | Object  | フォーミュラに渡す引数。 **args** オブジェクトは、フォーミュラ内の $1 が受け取るので、その値は *$1.property* という形で利用可能です (例題3 参照)。                                                                                                                                                                                                                                                                                                               |
-| allowFormulas | Boolean | クエリ内でフォーミュラの呼び出しを許可するには true (デフォルト)。 フォーミュラ実行を禁止するには false を渡します。 false に設定されているときに、フォーミュラが `query()` に渡された場合、エラーが発生します (1278 - フォーミュラはこのメンバーメソッドでは許可されていません)。                                                                                                                                                                                                                                          |
-| context       | Text    | エンティティセレクションに適用されている自動の最適化コンテキストのラベル。 エンティティセレクションを扱うコードはこのコンテキストを使うことで最適化の恩恵を受けます。 この機能はクライアント/サーバー処理を想定して設計されています。詳細な情報については、[**クライアント/サーバーの最適化**](entities.md#クライアントサーバーの最適化) の章を参照ください。                                                                                                                                                                                                              |
-| queryPlan     | Boolean | 戻り値のエンティティコレクションに、実行する直前のクエリの詳細 (クエリプラン) を含めるかどうかを指定します。 返されるプロパティは、クエリプラン あるいはサブクエリ (複合クエリの場合) を格納したオブジェクトです。 このオプションはアプリケーションの開発フェーズにおいて有用です。 このオプションは通常 queryPath と組み合わせて使用されます。 省略時のデフォルト: false。 **注:** このプロパティは `entitySelection.query( )` および `dataClass.query( )` 関数においてのみサポートされます。                                                                                                              |
-| queryPath     | Boolean | 戻り値のエンティティコレクションに、実際に実行されたクエリの詳細を含めるかどうかを指定します。 返されたプロパティは、クエリで実際に使用されたパス (通常は queryPlan と同一ですが、エンジンがクエリを最適化した場合には異なる場合があります)、処理時間と検出レコード数を格納したオブジェクトです。 このオプションはアプリケーションの開発フェーズにおいて有用です。 省略時のデフォルト: false。 **注:** このプロパティは `entitySelection.query( )` および `dataClass.query( )` 関数においてのみサポートされます。                                                                                                        |
+| プロパティ         | タイプ    | 説明                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| parameters    | オブジェクト | *queryString* または *formula* に **値の命名プレースホルダー** を使用した場合に渡すオブジェクト。 値は、プロパティ/値のペアで表現されます。プロパティは、*queryString* または *formula* に値の代わりに挿入されたプレースホルダー名 (":placeholder"など) で、値は、実際に比較される値です。 インデックスプレースホルダー (value引数として値を直接渡す方法) と命名プレースホルダーは、同じクエリ内で同時に使用することができます。                                                                                                                                              |
+| attributes    | オブジェクト | *queryString* または *formula* に **属性パスの命名プレースホルダー** を使用した場合に渡すオブジェクト。 属性パスは、プロパティ/値のペアで表現されます。プロパティは、*queryString* または *formula* に属性パスの代わりに挿入されたプレースホルダー名 (":placeholder"など) で、値は、属性パスを表す文字列または文字列のコレクションです。 値には、データクラスのスカラー属性・リレート属性・オブジェクトフィールド内のプロパティへの属性パスを指定することができます。<p><table><tr><th>タイプ</th><th>説明</th></tr><tr><td>String</td><td>ドット記法を使用して表現された attributePath (例: "name" または "user.address.zipCode")</td></tr><tr><td>文字列のコレクション</td><td>コレクションの各要素が attributePath の階層を表します (例: ["name"] または ["user","address","zipCode"])。 コレクションを使用することで、ドット記法に準じていない名前の属性に対してもクエリすることができます (例: \["4Dv17.1","en/fr"])。</td></tr></table>インデックスプレースホルダー (*value* 引数として値を直接渡す方法) と命名プレースホルダーは、同じクエリ内で同時に使用することができます。 |
+| args          | オブジェクト | フォーミュラに渡す引数。 **args** オブジェクトは、フォーミュラ内の $1 が受け取るので、その値は *$1.property* という形で利用可能です (例題3 参照)。                                                                                                                                                                                                                                                                                                               |
+| allowFormulas | ブール    | クエリ内でフォーミュラの呼び出しを許可するには true (デフォルト)。 フォーミュラ実行を禁止するには false を渡します。 false に設定されているときに、フォーミュラが `query()` に渡された場合、エラーが発生します (1278 - フォーミュラはこのメンバーメソッドでは許可されていません)。                                                                                                                                                                                                                                          |
+| context       | テキスト   | エンティティセレクションに適用されている自動の最適化コンテキストのラベル。 エンティティセレクションを扱うコードはこのコンテキストを使うことで最適化の恩恵を受けます。 この機能はクライアント/サーバー処理を想定して設計されています。詳細な情報については、[**クライアント/サーバーの最適化**](entities.md#クライアントサーバーの最適化) の章を参照ください。                                                                                                                                                                                                              |
+| queryPlan     | ブール    | 戻り値のエンティティコレクションに、実行する直前のクエリの詳細 (クエリプラン) を含めるかどうかを指定します。 返されるプロパティは、クエリプラン あるいはサブクエリ (複合クエリの場合) を格納したオブジェクトです。 このオプションはアプリケーションの開発フェーズにおいて有用です。 このオプションは通常 queryPath と組み合わせて使用されます。 省略時のデフォルト: false。 **注:** このプロパティは `entitySelection.query( )` および `dataClass.query( )` 関数においてのみサポートされます。                                                                                                              |
+| queryPath     | ブール    | 戻り値のエンティティコレクションに、実際に実行されたクエリの詳細を含めるかどうかを指定します。 返されたプロパティは、クエリで実際に使用されたパス (通常は queryPlan と同一ですが、エンジンがクエリを最適化した場合には異なる場合があります)、処理時間と検出レコード数を格納したオブジェクトです。 このオプションはアプリケーションの開発フェーズにおいて有用です。 省略時のデフォルト: false。 **注:** このプロパティは `entitySelection.query( )` および `dataClass.query( )` 関数においてのみサポートされます。                                                                                                        |
 
 **queryPlan と queryPath について**
 
@@ -1255,21 +1405,21 @@ softwares:{
 **.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
-| 引数       | タイプ    |    | 説明                                                                         |
-| -------- | ------ | -- | -------------------------------------------------------------------------- |
-| settings | Object | -> | Object that sets the timeout and size of the ORDA cache for the dataclass. |
+| 引数       | タイプ    |    | 説明                                                                                 |
+| -------- | ------ | -- | ---------------------------------------------------------------------------------- |
+| settings | オブジェクト | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
 
 #### 説明
 
-The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and size of the ORDA cache for a dataclass.<!-- END REF -->.
+The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
 
 *settings* には、以下のプロパティを持つオブジェクトを渡します:
 
 | プロパティ      | タイプ  | 説明                  |
 | ---------- | ---- | ------------------- |
-| timeout    | 倍長整数 | Timeout in seconds. |
+| timeout    | 倍長整数 | タイムアウト (秒単位)        |
 | maxEntries | 倍長整数 | Number of entities. |
 
 `timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
@@ -1284,468 +1434,21 @@ Setting a `timeout` property sets a new timeout for the entities already present
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
-> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection that is already in the cache.
+> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection when the cache is filled with new entities.
 
 If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
 When an entity is saved, it is updated in the cache and expires once the timeout is reached.
 
-<!-- REF DataClassClass.getRemoteCache().Desc -->
-## .getRemoteCache()
-
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v19 R5 | 追加 |
-</details>
-
-<!-- REF #DataClassClass.getRemoteCache().Syntax -->
-**.getRemoteCache**() : Object <!-- END REF -->
-
-<!-- REF #DataClassClass.getRemoteCache().Params -->
-| 引数     | タイプ    |    | 説明                                                                  |
-| ------ | ------ | -- | ------------------------------------------------------------------- |
-| result | Object | <- | Object describing the contents of the ORDA cache for the dataclass. |
-<!-- END REF -->
-
-
-#### 説明
-
-The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
-
-Calling this function from a 4D single-user application returns `Null`.
-
-The returned object has the following properties:
-
-| プロパティ      | タイプ        | 説明                                                                        |
-| ---------- | ---------- | ------------------------------------------------------------------------- |
-| maxEntries | Longint    | Maximum number of entries collection.                                     |
-| stamp      | Longint    | Stamp of the cache.                                                       |
-| timeout    | Longint    | Time remaining before the new entries in the cache are marked as expired. |
-| entries    | Collection | Contains an entry object for each entity in the cache.                    |
-
-Each entry object in the `entries` collection has the following properties:
-
-| プロパティ   | タイプ     | 説明                                |
-| ------- | ------- | --------------------------------- |
-| data    | Object  | Object holding data on the entry. |
-| expired | Boolean | True if the entry has expired.    |
-| key     | Text    | Primary key of the entity.        |
-
-The `data` object in each entry contains the following properties:
-| プロパティ                  | タイプ      | 説明                                                                                                                           |
-| ---------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| __$incomplete          | Boolean_ | True if all the attributes are not present in the cache                                                                      |
-| __KEY                  | String   | Primary key of the entity                                                                                                    |
-| __STAMP                | 倍長整数     | Timestamp of the entity in the database                                                                                      |
-| __TIMESTAMP            | String   | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
-| dataClassAttributeName | バリアント    | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
-
-Data concerning related entities is stored in the cache of the data object.
-
-#### 例題
-
-In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
-
-Note that `address.city` is loaded in the cache of the `Persons` dataclass.
-
-Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $cachePersons; $cacheAddress : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$persons:=$ds.Persons.all()
-
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$cachePersons:=$ds.Persons.getRemoteCache()
-$cacheAddress:=$ds.Address.getRemoteCache()
-```
-
-## .clearRemoteCache()
-
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v19 R5 | 追加 |
-</details>
-
-<!-- REF #DataClassClass.clearRemoteCache().Syntax -->
-**.clearRemoteCache()** 
-<!-- END REF -->
-#### 説明
-
-The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
-
 #### 例題
 
 ```4d
 var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $cache : Object
-var $info : Collection
-var $text : Text
 
 $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 
-$persons:=$ds.Persons.all()
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$cache:=$ds.Persons.getRemoteCache()
-
-$ds.Persons.clearRemoteCache()
-// Cache of the Persons dataclass = {timeout:30,maxEntries:30000,stamp:255,entries:[]}
+$ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```
-
-<!-- REF DataClassClass.getRemoteContextInfo().Desc -->
-## .getRemoteContextInfo()
-
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v19 R5 | 追加 |
-</details>
-
-<!-- REF #DataClassClass.getRemoteContextInfo().Syntax -->
-**.getRemoteContextInfo**(*contextName* : Text) : Object <!-- END REF -->
-
-<!-- REF #DataClassClass.getRemoteContextInfo().Params -->
-| 引数          | タイプ    |    | 説明                                                        |
-| ----------- | ------ | -- | --------------------------------------------------------- |
-| contextName | テキスト   | -> | Name of the context                                       |
-| result      | オブジェクト | <- | Object that holds information on the optimization context |
-<!-- END REF -->
-
-#### 説明
-
-The `.getRemoteContextInfo()` function <!-- REF #DataClassClass.getRemoteContextInfo().Summary -->returns an object that holds information on the optimization context of a datastore<!-- END REF -->.
-
-For this function to properly return a context, one of the following conditions must be met:
-* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* This context has been linked to an entity selection or an entity using one of the following functions:
-  * dataClass.query()
-  * entitySelection.query()
-  * dataClass.fromCollection()
-  * dataClass.all()
-  * Create entity selection
-  * dataClass.get()
-
-#### Properties of the returned object
-
-The returned object has the following properties:
-
-| プロパティ             | タイプ  | 説明                                                                                                                                    |
-| ----------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| name              | Text | Name of the context                                                                                                                   |
-| main              | Text | Learnt attributes associated to the context separated by a comma                                                                      |
-| dataclass         | Text | The dataclass linked to the context                                                                                                   |
-| currentItem (任意)* | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box |
-
-`currentItem` is returned as Null or an empty string if:
-* the context name is one used for a list box
-* there is no context for the currentitem
-#### 例題
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA; $info : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info : {name:contextA,dataclass:Persons,main:firstname,address,address.city}
-```
-
-<!-- REF DataClassClass.getAllRemoteContexts().Desc -->
-## .getAllRemoteContexts()
-
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v19 R5 | 追加 |
-</details>
-
-<!-- REF #DataClassClass.getAllRemoteContexts().Syntax -->
-**.getAllRemoteContexts()** : Collection 
-<!-- END REF -->
-#### 説明
-
-The `.getAllRemoteContexts()` function <!-- REF #DataClassClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
-
-For this function to properly return all the active contexts, one of the following conditions must be met:
-* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* Contexts have been linked to entities or entity selections using one of the following functions:
-  * dataClass.query()
-  * entitySelection.query()
-  * dataClass.fromCollection()
-  * dataClass.all()
-  * Create entity selection
-  * dataClass.get()
-
-Each object in the returned collection has [the properties listed in the .getContextInfo() section](#properties-of-the-returned-object)
-#### 例題
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $adresses : cs.AddressSelection
-var $p : cs.PersonsEntity
-var $a : cs.AddressEntity
-var $contextA; $contextB : Object
-var $info : Collection
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$contextB:=New object("context"; "contextB")
-$adresses:=$ds.Address.all($contextB)
-$text:="" 
-For each ($a; $adresses)
-    $text:=$a.zipCode
-End for each 
-
-$info:=$ds.getAllRemoteContexts()
-//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
-```
-
-<!-- REF DataClassClass.clearAllRemoteContexts().Desc -->
-## .clearAllRemoteContexts()
-
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v19 R5 | 追加 |
-</details>
-
-<!-- REF #DataClassClass.clearAllRemoteContexts().Syntax -->
-**.clearAllRemoteContexts()** 
-<!-- END REF -->
-#### 説明
-
-The `.clearAllRemoteContexts()` function <!-- REF #DataClassClass..clearAllRemoteContexts().Summary -->clears all the learnt attributes for all the active contexts in the datastore<!-- END REF -->.
-#### 例題
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA; $contextB : Object
-var $info : Collection
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-$info:=$ds.getAllRemoteContexts()
-//$info : [{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
-
-$contextB:=New object("context"; "contextB")
-$ds.setRemoteContextInfo("contextB"; $ds.Address; "city")
-$info:=$ds.getAllRemoteContexts()
-//$info : [{name:contextB,dataclass:Address,main:city},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
-
-$ds.clearAllRemoteContexts()
-$info:=$ds.getAllRemoteContexts()
-//$info is empty
-```
-
-<!-- REF DataClassClass.setRemoteContextInfo().Desc -->
-## .setRemoteContextInfo()
-
-<!-- REF #DataClassClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : String { ; contextType : Text} { ; pageLength : Integer})<br/>**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : Object ; *attributesColl* : Collection { ; contextType : Text} { ; pageLength : Integer})
-<!-- END REF -->
-
-<!-- REF #DataClassClass.setRemoteContextInfo().Params -->
-| 引数              | タイプ                         |    | 説明                                                            |
-| --------------- | --------------------------- | -- | ------------------------------------------------------------- |
-| contextName     | テキスト                        | -> | Name of the context                                           |
-| dataClassName   | テキスト                        | -> | データクラスの名称                                                     |
-| dataclassObject | オブジェクト                      | -> | dataclass object (e.g datastore.Employee)                     |
-| attributes      | テキスト                        | -> | Attribute list separated by a comma                           |
-| attributescoll  | Collection of Text elements | -> | Collection of attribute names                                 |
-| contextType     | テキスト                        | -> | If provided, value must be "main" or "currentItem"            |
-| pageLength      | 整数                          | -> | Page length of the entity selection associated to the context |
-<!-- END REF -->
-
-#### 説明
-
-The `.setRemoteContextInfo()` function <!-- REF #DataClassClass.setRemoteContextInfo().Summary -->links dataclass attributes to an optimization context<!-- END REF -->.
-
-If an optimization context already exists for the specified attributes, this command replaces it.
-
-If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
-
-When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
-* the first entity is not fully loaded as done in automatic mode
-* pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
-
-In *contextName*, pass the name of the optimization context that will be linked to the dataclass attributes.
-
-In *dataclassName*, pass the name of the dataclass that holds the attributes to be linked to the optimization context. You can also pass a *dataClassObject*.
-
-In *attributes*, pass the list of attributes to be linked to the optimization context, in the form of a Text element. Attributes must be separated by a comma. You can also pass a collection of attribute names (*attributesColl*).
-
-If *attributes* is an empty String or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context.
-
-You can pass a *contextType* to specify if the context is a standard context or a context associated to an entity selection displayed in a list box.
-
-If the value of *contextType* is set to "main" (default), the *contextName* designates a standard context.
-
-If the value of *contextType* is "currentItem", the attributes passed are put in the context of the current item. See [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
-
-In *pageLength*, specify the number of dataclass entities to request from the server. If the attributes are not strings or  collections, they are ignored.
-
-You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is attributeName:pageLength (e.g employees:20).
-#### 例題 1
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA : Object
-var $info : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
-
-$info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname}
-
-$contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city}
-```
-#### 例題 2
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA : Object
-var $info : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info = {name:contextA,dataclass:Persons,main:firstname,address,address.city}
-
-$ds.setRemoteContextInfo("contextA"; $ds.Persons; "gender, lastname")
-
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info ={name:contextA,dataclass:Persons,main:lastname,gender}
-
-//The attributes have been replaced
-```
-
-#### Example 4 - Listbox
-
-```4d
-// When the form loads
-Case of 
-    : (Form event code=On Load)
-
-        Form.ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-       // Set the attributes of the page context
-        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
-
-        Form.settings:=New object("context"; "LB")
-        Form.persons:=Form.ds.Persons.all(Form.settings) // Form.persons is displayed in a list box
-End case 
-
-// When you get the attributes in the context of the current item:
-Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
-// Form.currentItemLearntAttributes = "age, gender, children" 
-```
-
-<!-- REF DataClassClass.getCount.Desc -->
-## .getCount()
-
-<details><summary>履歴</summary>
-| バージョン  | 内容 |
-| ------ | -- |
-| v19 R5 | 追加 |
-</details>
-
-<!-- REF #DataClassClass.getCount().Syntax -->
-**.getCount()** : Integer 
-<!-- END REF -->
-
-<!-- REF #DataClassClass.getCount().Params -->
-| 引数     | タイプ |    | 説明                                  |
-| ------ | --- | -- | ----------------------------------- |
-| result | 整数  | <- | Number of entities in the dataclass |
-<!-- END REF -->
-#### 説明
-
-The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
-#### 例題
-
-```4d
-var $ds : cs.DataStore
-var $$number : Integer
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$number:=$ds.Persons.getCount() 
-```
-
-
-
-
 
 
 <style> h2 { background: #d9ebff;}</style>

@@ -13,9 +13,12 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 |                                                                                                                                                                                                                                        |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE #DataStoreClass.cancelTransaction().Syntax -->](#canceltransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.cancelTransaction().Summary -->|
+| [<!-- INCLUDE #DataStoreClass.clearAllRemoteContexts().Syntax -->](#clearallremotecontexts)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.clearAllRemoteContexts().Summary -->|
 | [<!-- INCLUDE DataStoreClass.dataclassName.Syntax -->](#dataclassname)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataStoreClass.dataclassName.Summary --> |
 | [<!-- INCLUDE #DataStoreClass.encryptionStatus().Syntax -->](#encryptionstatus)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.encryptionStatus().Summary --> |
+| [<!-- INCLUDE #DataStoreClass.getAllRemoteContexts().Syntax -->](#getallremotecontexts)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.getAllRemoteContexts().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.getInfo().Syntax -->](#getinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.getInfo().Summary --> |
+| [<!-- INCLUDE #DataStoreClass.getRemoteContextInfo().Syntax -->](#getremotecontextinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.getRemoteContextInfo().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.getRequestLog().Syntax -->](#getrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.getRequestLog().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.makeSelectionsAlterable().Syntax -->](#makeselectionsalterable)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.makeSelectionsAlterable().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.provideDataKey().Syntax -->](#providedatakey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.provideDataKey().Summary --> |
@@ -60,7 +63,7 @@ También puede obtener una referencia en un datastore remoto abierto pasando su 
 
 Si no se encuentra ningún almacén de datos *localID*, el comando devuelve **Null**.
 
-Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](Concepts/dsMapping.md#general-rules).
+Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
 
 #### Ejemplo 1
 
@@ -133,7 +136,7 @@ Si no se encuentra ninguna base de datos coincidente, `Open datastore` devuelve 
 
 *localID* es un alias local para la sesión abierta en el almacén de datos remoto. Si *localID* ya existe en la aplicación, se utiliza. En caso contrario, se crea una nueva sesión *localID* cuando se utiliza el objeto datastore.
 
-Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](Concepts/dsMapping.md#general-rules).
+Objects available in the `cs.Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
 
 Una vez abierta la sesión, las siguientes sentencias son equivalentes y devuelven una referencia sobre el mismo objeto datastore:
 
@@ -203,7 +206,6 @@ Trabajar con varios almacenes de datos remotos:
 #### Gestión de errores
 
 En caso de error, el comando devuelve **Null**. Si no se puede acceder al almacén de datos remoto (dirección incorrecta, servidor web no iniciado, http y https no habilitados...), se produce el error 1610 "Ha fallado una petición remota al host XXX". Puede interceptar este error con un método instalado por `ON ERR CALL`.
-
 
 
 <!-- REF DataStoreClass.dataclassName.Desc -->
@@ -279,6 +281,57 @@ Ver el ejemplo de la función [`.startTransaction()`](#starttransaction).
 <!-- END REF -->
 
 
+<!-- REF #DataStoreClass.clearAllRemoteContexts().Desc -->
+## .clearAllRemoteContexts()
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R5  | Añadidos       |
+</details>
+
+<!-- REF #DataStoreClass.clearAllRemoteContexts().Syntax -->
+**.clearAllRemoteContexts()**<!-- END REF -->
+
+#### Descripción
+
+The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
+
+#### Ejemplo
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA; $contextB : Object
+var $info : Collection
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+$info:=$ds.getAllRemoteContexts()
+//$info : [{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
+
+$contextB:=New object("context"; "contextB")
+$ds.setRemoteContextInfo("contextB"; $ds.Address; "city")
+$info:=$ds.getAllRemoteContexts()
+//$info : [{name:contextB,dataclass:Address,main:city},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
+
+$ds.clearAllRemoteContexts()
+$info:=$ds.getAllRemoteContexts()
+//$info is empty
+```
+
+#### Ver también
+
+[.getRemoteContextInfo()](#getremotecontextinfo) [.getAllRemoteContexts()](#getallremotecontexts) [.setRemoteContextInfo()](#setremotecontextinfo)
 
 <!-- REF DataStoreClass.encryptionStatus().Desc -->
 ## .encryptionStatus()
@@ -352,7 +405,67 @@ Quiere saber el número de tablas encriptadas en el archivo de datos actual:
 
 <!-- END REF -->
 
+<!-- REF DataClassClass.getAllRemoteContexts().Desc -->
+## .getAllRemoteContexts()
 
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R5  | Añadidos       |
+</details>
+
+<!-- REF #DataStoreClass.getAllRemoteContexts().Syntax -->
+**.getAllRemoteContexts()** : Collection<!-- END REF -->
+
+<!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
+| Parámetros | Tipo   |    | Descripción                                |
+| ---------- | ------ | -- | ------------------------------------------ |
+| Resultado  | Objeto | <- | Collection of optimization context objects |
+<!-- END REF -->
+
+#### Descripción
+
+The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
+
+> For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+
+Each object in the returned collection has the [properties listed in the `.getContextInfo()` section](#properties-of-the-returned-object)
+
+#### Ejemplo
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $adresses : cs.AddressSelection
+var $p : cs.PersonsEntity
+var $a : cs.AddressEntity
+var $contextA; $contextB : Object
+var $info : Collection
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$contextB:=New object("context"; "contextB")
+$adresses:=$ds.Address.all($contextB)
+$text:="" 
+For each ($a; $adresses)
+    $text:=$a.zipCode
+End for each 
+
+$info:=$ds.getAllRemoteContexts()
+//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
+```
+
+#### Ver también
+
+[.getRemoteContextInfo()](#getremotecontextinfo) [.setRemoteContextInfo()](#setremotecontextinfo) [.clearAllRemoteContexts()](#clearallremotecontexts)
 
 <!-- REF DataStoreClass.getInfo().Desc -->
 ## .getInfo()
@@ -382,7 +495,7 @@ La función `.getInfo()` <!-- REF #DataStoreClass.getInfo().Summary -->devuelve 
 | Propiedad  | Tipo     | Descripción                                                                                                                                                                                    |
 | ---------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | type       | cadena   | <li>"4D": almacén de datos principal, disponible a través de ds </li><li>"4D Server": almacén de datos remoto, abierto con Open datastore</li>                                                                                                                                             |
-| networked  | booleano | <li>True: el almacén de datos se alcanza a través de una conexión de red.</li><li>False: no se llega al almacén de datos a través de una conexión de red (base de datos local)</li>                                                                                                                                             |
+| networked  | booleano | <li>True: el almacén de datos se alcanza a través de una conexión de red.</li><li>False: no se llega al almacén de datos a través de una conexión de red (base de datos local)</li>                                                                                                                                           |
 | localID    | texto    | ID del almacén de datos en la máquina. Corresponde a la cadena localId dada con el comando `Open datastore`. Cadena vacía ("") para el almacén de datos principal.                             |
 | connection | objeto   | Objeto que describe la conexión del almacén de datos remoto (no se devuelve para el almacén de datos principal). Propiedades disponibles:<p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>hostname</td><td>texto</td><td>Dirección IP o nombre del datastore remoto + ":" + número de puerto</td></tr><tr><td>tls</td><td>booleano</td><td>True si se utiliza una conexión segura con el almacén de datos remoto</td></tr><tr><td>idleTimeout</td><td>number</td><td>Tiempo de inactividad de la sesión (en minutos)</td></tr><tr><td>user</td><td>texto</td><td>Usuario autentificado en el almacén de datos remoto</td></tr></table> |
 
@@ -424,6 +537,69 @@ En un almacén de datos remoto:
 <!-- END REF -->
 
 
+<!-- REF #DataStoreClass.getRemoteContextInfo().Desc -->
+## .getRemoteContextInfo()
+
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19 R5  | Añadidos       |
+</details>
+
+<!-- REF #DataStoreClass.getRemoteContextInfo().Syntax -->
+**.getRemoteContextInfo**(*contextName* : Text) : Object <!-- END REF -->
+
+<!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
+| Parámetros  | Tipo   |    | Descripción                             |
+| ----------- | ------ | -- | --------------------------------------- |
+| contextName | Texto  | -> | Name of the context                     |
+| Resultado   | Objeto | <- | Description of the optimization context |
+<!-- END REF -->
+
+#### Descripción
+
+The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
+
+For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+
+#### Objeto devuelto
+
+The returned object has the following properties:
+
+| Propiedad               | Tipo  | Descripción                                                                                                                                                                                                                                                                   |
+| ----------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                    | Texto | Name of the context                                                                                                                                                                                                                                                           |
+| main                    | Texto | Attributes associated to the context. If there are several attributes, they are separated by a comma                                                                                                                                                                          |
+| dataclass               | Texto | Dataclass linked to the context                                                                                                                                                                                                                                               |
+| currentItem (optional)* | Texto | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
+
+
+#### Ejemplo
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA; $info : Object
+var $text : Text
+var $info : Object
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+
+$persons:=$ds.Persons.all($contextA) // Link of the context
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info : {name:contextA;dataclass:Persons;main:firstname;address;address.city}
+```
+
+#### Ver también
+
+[.setRemoteContextInfo()](#setremotecontextinfo) [.getAllRemoteContexts()](#getallremotecontexts) [.clearAllRemoteContexts()](#clearallremotecontexts)
 
 <!-- REF DataStoreClass.getRequestLog().Desc -->
 ## .getRequestLog()
@@ -652,6 +828,162 @@ Se crea un método proyecto *protectDataFile* para llamar antes de los despliegu
 
 <!-- END REF -->
 
+<!-- REF #DataStoreClass.setRemoteContextInfo().Desc -->
+## .setRemoteContextInfo()
+
+<!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )
+
+<!-- END REF -->
+
+<!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
+| Parámetros      | Tipo         |    | Descripción                                                   |
+| --------------- | ------------ | -- | ------------------------------------------------------------- |
+| contextName     | Texto        | -> | Name of the context                                           |
+| dataClassName   | Texto        | -> | Nombre de la dataclass                                        |
+| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                     |
+| attributes      | Texto        | -> | Attribute list separated by a comma                           |
+| attributesColl  | Collection   | -> | Collection of attribute names (text)                          |
+| contextType     | Texto        | -> | If provided, value must be "main" or "currentItem"            |
+| pageLength      | Integer      | -> | Page length of the entity selection associated to the context |
+<!-- END REF -->
+
+#### Descripción
+
+The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->links the specified dataclass attributes to the *contextName* optimization context<!-- END REF -->. If an optimization context already exists for the specified attributes, this command replaces it.
+
+When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
+* the first entity is not fully loaded as done in automatic mode
+* pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
+
+> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
+
+In *contextName*, pass the name of the optimization context to link to the dataclass attributes.
+
+To designate the attributes to link to the context, you can either:
+* pass a text in *dataClassName* and a list of comma-separated attribute names in *attributes*.
+* pass a 4D.DataClass object in *dataclassObject* and a collection of attribute names in *attributesColl*
+
+If *attributes* is an empty Text or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
+
+You can pass a *contextType* to  specify if the context is a standard context or the context of the current entity selection item displayed in a list box:
+* If set to "main" (default), the *contextName* designates a standard context.
+* If set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
+
+In *pageLength*, specify the number of dataclass entities to request from the server.
+
+Attributes that are not text elements or collections are ignored.
+
+You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
+
+
+
+#### Ejemplo 1
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA : Object
+var $info : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
+
+$info:=$ds.getRemoteContextInfo("contextA")
+// $info = {name:contextA,dataclass:Persons,main:lastname,firstname}
+
+$contextA:=New object("context"; "contextA")
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$info:=$ds.getRemoteContextInfo("contextA")
+// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city} // address.city is added to the context because it is used in the loop.
+```
+#### Ejemplo 2
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $contextA : Object
+var $info : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$contextA:=New object("context"; "contextA")
+$persons:=$ds.Persons.all($contextA)
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info = {name:contextA,dataclass:Persons,main:firstname,address,address.city}
+
+$ds.setRemoteContextInfo("contextA"; $ds.Persons; "gender, lastname")
+
+$info:=$ds.getRemoteContextInfo("contextA")
+//$info ={name:contextA,dataclass:Persons,main:lastname,gender}
+
+//The attributes have been replaced
+```
+
+#### Ejemplo 3
+
+With the following piece of code, the requests will ask for pages of 30 entities of the `Address` dataclass. The returned entities will only contain the `zipCode` attribute.
+
+For each `Address` entity, 20 Persons entities will be returned, and they will only contain the `lastname` and `firstname` attributes:
+
+```4d
+var $ds : cs.DataStore
+
+var $addresses : cs.AddressSelection
+var $a : cs.AddressEntity
+var $p : cs.PersonsEntity
+
+var $contextA : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname, persons.firstname"; "main"; 30)
+
+// Alternative syntax
+//$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode"; "persons:20"; "persons.lastname"; "persons.firstname"); "main"; 30)
+```
+
+#### Example 4 - Listbox
+
+```4d
+// When the form loads
+Case of 
+    : (Form event code=On Load)
+
+        Form.ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+       // Set the attributes of the page context
+        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
+
+        Form.settings:=New object("context"; "LB")
+        Form.persons:=Form.ds.Persons.all(Form.settings) // Form.persons is displayed in a list box
+End case 
+
+// When you get the attributes in the context of the current item:
+Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
+// Form.currentItemLearntAttributes = "age, gender, children" 
+```
+
+#### Ver también
+
+[.getRemoteContextInfo()](#getremotecontextinfo) [.getAllRemoteContexts()](#getallremotecontexts) [.clearAllRemoteContexts()](#clearallremotecontexts)
+
 
 <!-- REF DataStoreClass.startRequestLog().Desc -->
 ## .startRequestLog()
@@ -867,5 +1199,7 @@ Puede anidar varias transacciones (subtransacciones). Si se cancela la transacci
 Ver el ejemplo de [`.startTransaction()`](#starttransaction).
 
 <!-- END REF -->
+
+
 
 <style> h2 { background: #d9ebff;}</style>

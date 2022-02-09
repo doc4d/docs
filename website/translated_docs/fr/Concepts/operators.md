@@ -59,32 +59,32 @@ $a+=2 // $a=3
 
 The following compound assignment operators are supported:
 
-| Opérateur      | Syntaxe            | Assigne | Exemple                                                             |
-| -------------- | ------------------ | ------- | ------------------------------------------------------------------- |
-| Addition       | Text += Text       | Text    | `$t+=" World"  //$t:=$t+" World"`                                   |
-|                | Number += Number   | Nombre  | `$n+=5 //$n:=$n+5`                                                  |
-|                | Date += Number     | Date    | `$d+=5 //$d:=$d+5`                                                  |
-|                | Time += Time       | Heure   | `$t1+=$t2 //$t1:=$t1+$t2`                                           |
-|                | Time += Number     | Nombre  | `$t1+=5 //$t1:=$t1+5`                                               |
-|                | Picture += Picture | Image   | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`             |
-|                | Picture += Number  | Image   | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)` |
-| Soustraction   | Number -= Number   | Nombre  | `$n-=5 //$n:=$n-5`                                                  |
-|                | Date -= Number     | Date    | `$d-=5 //$d:=$d-5`                                                  |
-|                | Time -= Time       | Heure   | `$t1-=$t2 //$t1:=$t1-$t2`                                           |
-|                | Time -= Number     | Nombre  | `$t1-=5 //$t1:=$t1-5`                                               |
-|                | Picture -= Number  | Image   | `$p1-=5 //$p1:=$p1-5 (move $p1 horizontally 5 pixels to the left)`  |
-| Division       | Number /= Number   | Nombre  | `$n/=5 //$n:=$n/5`                                                  |
-|                | Time /= Time       | Heure   | `$t1/=$t2 //$t1:=$t1/$t2`                                           |
-|                | Time /= Number     | Nombre  | `$t1/=5 //$t1:=$t1/5`                                               |
-|                | Picture /= Picture | Image   | `$p1/=$p2 //$p1:=$p1/$p2 (add $p2 to the bottom of $p1)`            |
-|                | Picture /= Number  | Image   | `$p1/=5 //$p1:=$p1/5 (move $p1 vertically 5 pixels)`                |
-| Multiplication | Text *= Number     | Text    | `$t*="abc"  //$t:=$t*"abc"`                                         |
-|                | Number *= Number   | Nombre  | `$n*=5 //$n:=$n*5`                                                  |
-|                | Time *= Time       | Heure   | `$t1*=$t2 //$t1:=$t1*$t2`                                           |
-|                | Time *= Number     | Nombre  | `$t1*=5 //$t1:=$t1*5`                                               |
-|                | Picture *= Number  | Image   | `$p1*=5 //$p1:=$p1*5 (resize $p1 by 5)`                             |
+| Opérateur      | Syntaxe            | Assigne | Exemple                                                                         |
+| -------------- | ------------------ | ------- | ------------------------------------------------------------------------------- |
+| Addition       | Text += Text       | Text    | `$t+=" World"  //$t:=$t+" World"`                                               |
+|                | Number += Number   | Nombre  | `$n+=5 //$n:=$n+5`                                                              |
+|                | Date += Number     | Date    | `$d+=5 //$d:=$d+5`                                                              |
+|                | Time += Time       | Heure   | `$t1+=$t2 //$t1:=$t1+$t2`                                                       |
+|                | Time += Number     | Nombre  | `$t1+=5 //$t1:=$t1+5`                                                           |
+|                | Picture += Picture | Image   | `$p1+=$p2 //$p1:=$p1+$p2 (add $p2 to the right of $p1)`                         |
+|                | Picture += Number  | Image   | `$p1+=5 //$p1:=$p1+5 (move $p1 horizontally 5 pixels to the right)`             |
+| Soustraction   | Number -= Number   | Nombre  | `$n-=5 //$n:=$n-5`                                                              |
+|                | Date -= Number     | Date    | `$d-=5 //$d:=$d-5`                                                              |
+|                | Time -= Time       | Heure   | `$t1-=$t2 //$t1:=$t1-$t2`                                                       |
+|                | Time -= Number     | Nombre  | `$t1-=5 //$t1:=$t1-5`                                                           |
+|                | Picture -= Number  | Image   | `$p1-=5 //$p1:=$p1-5 (déplacer horizontalement $p1 de 5 pixels vers la gauche)` |
+| Division       | Number /= Number   | Nombre  | `$n/=5 //$n:=$n/5`                                                              |
+|                | Time /= Time       | Heure   | `$t1/=$t2 //$t1:=$t1/$t2`                                                       |
+|                | Time /= Number     | Nombre  | `$t1/=5 //$t1:=$t1/5`                                                           |
+|                | Picture /= Picture | Image   | `$p1/=$p2 //$p1:=$p1/$p2 (ajouter $p2 vers le bas de $p1)`                      |
+|                | Picture /= Number  | Image   | `$p1/=5 //$p1:=$p1/5 (déplacer verticalement $p1 de 5 pixels)`                  |
+| Multiplication | Text *= Number     | Text    | `$t*="abc"  //$t:=$t*"abc"`                                                     |
+|                | Number *= Number   | Nombre  | `$n*=5 //$n:=$n*5`                                                              |
+|                | Time *= Time       | Heure   | `$t1*=$t2 //$t1:=$t1*$t2`                                                       |
+|                | Time *= Number     | Nombre  | `$t1*=5 //$t1:=$t1*5`                                                           |
+|                | Picture *= Number  | Image   | `$p1*=5 //$p1:=$p1*5 (redimensionner $p1 de 5)`                                 |
 
-These operators apply on any [assignable expressions](quick-tour.md#assignable-vs-non-assignable-expressions) (except pictures as object properties or collection elements).
+Ces opérateurs s'appliquent à toutes les [expressions assignables](quick-tour.md#assignable-vs-non-assignable-expressions) (à l'exception des images en tant que propriétés d'objet ou éléments de collection).
 
 The operation "source `operator` value" is not strictly equivalent to "source := source `operator` value" because the expression designating the source (variable, field, object property, collection element) is only evaluated once. For example, in such expression as `getPointer()->+=1` the `getPointer` method is called only once.
 

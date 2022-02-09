@@ -10,18 +10,22 @@ A [DataClass](ORDA/dsMapping.md#dataclass) provides an object interface to a dat
 
 ### Summary
 
-|                                                                                                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE DataClassClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.attributeName.Summary --> |
 | [<!-- INCLUDE #DataClassClass.all().Syntax -->](#all)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.all().Summary -->|
+| [<!-- INCLUDE #DataClassClass.clearRemoteCache().Syntax -->](#clearremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.clearRemoteCache().Summary -->|
 | [<!-- INCLUDE DataClassClass.exposed.Syntax -->](#exposed)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE DataClassClass.exposed.Summary --> |
 | [<!-- INCLUDE #DataClassClass.fromCollection().Syntax -->](#fromcollection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.fromCollection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.get().Syntax -->](#get)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.get().Summary --> |
+| [<!-- INCLUDE #DataClassClass.getCount().Syntax -->](#getcount)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getCount().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getDataStore().Syntax -->](#getdatastore)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getDataStore().Summary --> |
 | [<!-- INCLUDE #DataClassClass.getInfo().Syntax -->](#getinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getInfo().Summary --> |
+| [<!-- INCLUDE #DataClassClass.getRemoteCache().Syntax -->](#getremotecache)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.getRemoteCache().Summary --> |
 | [<!-- INCLUDE #DataClassClass.new().Syntax -->](#new)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.new().Summary --> |
 | [<!-- INCLUDE #DataClassClass.newSelection().Syntax -->](#newselection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.newSelection().Summary --> |
 | [<!-- INCLUDE #DataClassClass.query().Syntax -->](#query)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.query().Summary --> |
+| [<!-- INCLUDE #DataClassClass.setRemoteCacheSettings().Syntax -->](#setremotecachesettings)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataClassClass.setRemoteCacheSettings().Summary --> |
 
 
 
@@ -142,6 +146,46 @@ In the optional *settings* parameter, you can pass an object containing addition
 ```4d
  var $allEmp : cs.EmployeeSelection
  $allEmp:=ds.Employee.all()
+```
+
+<!-- REF #DataClassClass.clearRemoteCache().Desc -->
+## .clearRemoteCache()
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R5  | Added   |
+</details>
+
+<!-- REF #DataClassClass.clearRemoteCache().Syntax -->
+**.clearRemoteCache()**<!-- END REF -->
+
+#### Beschreibung
+
+The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
+
+#### Beispiel
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cache : Object
+var $info : Collection
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$persons:=$ds.Persons.all()
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$cache:=$ds.Persons.getRemoteCache()
+
+$ds.Persons.clearRemoteCache()
+// Cache of the Persons dataclass = {timeout:30,maxEntries:30000,stamp:255,entries:[]}
 ```
 
 
@@ -446,6 +490,36 @@ This example illustrates the use of the *context* property:
 
 <!-- END REF -->
 
+<!-- REF DataClassClass.getCount.Desc -->
+## .getCount()
+
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R5  | Added   |
+</details>
+
+<!-- REF #DataClassClass.getCount().Syntax -->
+**.getCount()** : Integer <!-- END REF -->
+
+<!-- REF #DataClassClass.getCount().Params -->
+| Parameter | Typ      |    | Beschreibung                        |
+| --------- | -------- | -- | ----------------------------------- |
+| result    | Ganzzahl | <- | Number of entities in the dataclass |
+<!-- END REF -->
+#### Beschreibung
+
+The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+#### Beispiel
+
+```4d
+var $ds : cs.DataStore
+var $$number : Integer
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$number:=$ds.Persons.getCount() 
+```
 
 <!-- REF DataClassClass.getDataStore().Desc -->
 ## .getDataStore()
@@ -572,7 +646,83 @@ The `.getInfo( )` function <!-- REF #DataClassClass.getInfo().Summary -->returns
 
 <!-- END REF -->
 
+<!-- REF DataClassClass.getRemoteCache().Desc -->
+## .getRemoteCache()
 
+<details><summary>History</summary>
+| Version | Changes |
+| ------- | ------- |
+| v19 R5  | Added   |
+</details>
+
+<!-- REF #DataClassClass.getRemoteCache().Syntax -->
+**.getRemoteCache**() : Object <!-- END REF -->
+
+<!-- REF #DataClassClass.getRemoteCache().Params -->
+| Parameter | Typ    |    | Beschreibung                                                        |
+| --------- | ------ | -- | ------------------------------------------------------------------- |
+| result    | Objekt | <- | Object describing the contents of the ORDA cache for the dataclass. |
+<!-- END REF -->
+#### Beschreibung
+
+The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
+
+Calling this function from a 4D single-user application returns `Null`.
+
+The returned object has the following properties:
+
+| Property   | Typ            | Beschreibung                                                              |
+| ---------- | -------------- | ------------------------------------------------------------------------- |
+| maxEntries | Lange Ganzzahl | Maximum number of entries collection.                                     |
+| stamp      | Lange Ganzzahl | Stamp of the cache.                                                       |
+| timeout    | Lange Ganzzahl | Time remaining before the new entries in the cache are marked as expired. |
+| entries    | Collection     | Contains an entry object for each entity in the cache.                    |
+
+Each entry object in the `entries` collection has the following properties:
+
+| Property | Typ     | Beschreibung                      |
+| -------- | ------- | --------------------------------- |
+| data     | Objekt  | Object holding data on the entry. |
+| expired  | Boolean | True if the entry has expired.    |
+| key      | Text    | Primary key of the entity.        |
+
+The `data` object in each entry contains the following properties:
+| Property               | Typ            | Beschreibung                                                                                                                 |
+| ---------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| __KEY                  | String         | Primary key of the entity                                                                                                    |
+| __STAMP                | Lange Ganzzahl | Timestamp of the entity in the database                                                                                      |
+| __TIMESTAMP            | String         | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
+| dataClassAttributeName | Variant        | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
+
+Data concerning related entities is stored in the cache of the data object.
+
+#### Beispiel
+
+In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
+
+Note that `address.city` is loaded in the cache of the `Persons` dataclass.
+
+Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
+
+```4d
+var $ds : cs.DataStore
+var $persons : cs.PersonsSelection
+var $p : cs.PersonsEntity
+var $cachePersons; $cacheAddress : Object
+var $text : Text
+
+$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+
+$persons:=$ds.Persons.all()
+
+$text:="" 
+For each ($p; $persons)
+    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+End for each 
+
+$cachePersons:=$ds.Persons.getRemoteCache()
+$cacheAddress:=$ds.Address.getRemoteCache()
+```
 
 <!-- REF DataClassClass.new().Desc -->
 ## .new()
@@ -1255,15 +1405,15 @@ We want to disallow formulas, for example when the user enters their query:
 **.setRemoteCacheSettings**(*settings* : Object) <!-- END REF -->
 
 <!-- REF #DataClassClass.setRemoteCacheSettings().Params -->
-| Parameter | Typ    |    | Beschreibung                                                               |
-| --------- | ------ | -- | -------------------------------------------------------------------------- |
-| settings  | Objekt | -> | Object that sets the timeout and size of the ORDA cache for the dataclass. |
+| Parameter | Typ    |    | Beschreibung                                                                       |
+| --------- | ------ | -- | ---------------------------------------------------------------------------------- |
+| settings  | Objekt | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
 
 #### Beschreibung
 
-The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and size of the ORDA cache for a dataclass.<!-- END REF -->.
+The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
 
 In the *settings* parameter, pass an object with the following properties:
 
@@ -1284,468 +1434,21 @@ Setting a `timeout` property sets a new timeout for the entities already present
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
-> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection that is already in the cache.
+> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection when the cache is filled with new entities.
 
 If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
 When an entity is saved, it is updated in the cache and expires once the timeout is reached.
 
-<!-- REF DataClassClass.getRemoteCache().Desc -->
-## .getRemoteCache()
-
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R5  | Added   |
-</details>
-
-<!-- REF #DataClassClass.getRemoteCache().Syntax -->
-**.getRemoteCache**() : Object <!-- END REF -->
-
-<!-- REF #DataClassClass.getRemoteCache().Params -->
-| Parameter | Typ    |    | Beschreibung                                                        |
-| --------- | ------ | -- | ------------------------------------------------------------------- |
-| result    | Objekt | <- | Object describing the contents of the ORDA cache for the dataclass. |
-<!-- END REF -->
-
-
-#### Beschreibung
-
-The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
-
-Calling this function from a 4D single-user application returns `Null`.
-
-The returned object has the following properties:
-
-| Property   | Typ            | Beschreibung                                                              |
-| ---------- | -------------- | ------------------------------------------------------------------------- |
-| maxEntries | Lange Ganzzahl | Maximum number of entries collection.                                     |
-| stamp      | Lange Ganzzahl | Stamp of the cache.                                                       |
-| timeout    | Lange Ganzzahl | Time remaining before the new entries in the cache are marked as expired. |
-| entries    | Collection     | Contains an entry object for each entity in the cache.                    |
-
-Each entry object in the `entries` collection has the following properties:
-
-| Property | Typ     | Beschreibung                      |
-| -------- | ------- | --------------------------------- |
-| data     | Objekt  | Object holding data on the entry. |
-| expired  | Boolean | True if the entry has expired.    |
-| key      | Text    | Primary key of the entity.        |
-
-The `data` object in each entry contains the following properties:
-| Property               | Typ            | Beschreibung                                                                                                                 |
-| ---------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| __$incomplete          | Boolean_       | True if all the attributes are not present in the cache                                                                      |
-| __KEY                  | String         | Primary key of the entity                                                                                                    |
-| __STAMP                | Lange Ganzzahl | Timestamp of the entity in the database                                                                                      |
-| __TIMESTAMP            | String         | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
-| dataClassAttributeName | Variant        | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
-
-Data concerning related entities is stored in the cache of the data object.
-
-#### Beispiel
-
-In the following example, `$ds.Persons.all()` loads the first entity with all its attributes. Then, the request optimization is triggered, so only `firstname` and `address.city` are loaded.
-
-Note that `address.city` is loaded in the cache of the `Persons` dataclass.
-
-Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $cachePersons; $cacheAddress : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$persons:=$ds.Persons.all()
-
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$cachePersons:=$ds.Persons.getRemoteCache()
-$cacheAddress:=$ds.Address.getRemoteCache()
-```
-
-## .clearRemoteCache()
-
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R5  | Added   |
-</details>
-
-<!-- REF #DataClassClass.clearRemoteCache().Syntax -->
-**.clearRemoteCache()** 
-<!-- END REF -->
-#### Beschreibung
-
-The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
-
 #### Beispiel
 
 ```4d
 var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $cache : Object
-var $info : Collection
-var $text : Text
 
 $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 
-$persons:=$ds.Persons.all()
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$cache:=$ds.Persons.getRemoteCache()
-
-$ds.Persons.clearRemoteCache()
-// Cache of the Persons dataclass = {timeout:30,maxEntries:30000,stamp:255,entries:[]}
+$ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```
-
-<!-- REF DataClassClass.getRemoteContextInfo().Desc -->
-## .getRemoteContextInfo()
-
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R5  | Added   |
-</details>
-
-<!-- REF #DataClassClass.getRemoteContextInfo().Syntax -->
-**.getRemoteContextInfo**(*contextName* : Text) : Object <!-- END REF -->
-
-<!-- REF #DataClassClass.getRemoteContextInfo().Params -->
-| Parameter   | Typ    |    | Beschreibung                                              |
-| ----------- | ------ | -- | --------------------------------------------------------- |
-| contextName | Text   | -> | Name of the context                                       |
-| result      | Objekt | <- | Object that holds information on the optimization context |
-<!-- END REF -->
-
-#### Beschreibung
-
-The `.getRemoteContextInfo()` function <!-- REF #DataClassClass.getRemoteContextInfo().Summary -->returns an object that holds information on the optimization context of a datastore<!-- END REF -->.
-
-For this function to properly return a context, one of the following conditions must be met:
-* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* This context has been linked to an entity selection or an entity using one of the following functions:
-  * dataClass.query()
-  * entitySelection.query()
-  * dataClass.fromCollection()
-  * dataClass.all()
-  * Create entity selection
-  * dataClass.get()
-
-#### Properties of the returned object
-
-The returned object has the following properties:
-
-| Property                | Typ  | Beschreibung                                                                                                                          |
-| ----------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| name                    | Text | Name of the context                                                                                                                   |
-| main                    | Text | Learnt attributes associated to the context separated by a comma                                                                      |
-| dataclass               | Text | The dataclass linked to the context                                                                                                   |
-| currentItem (optional)* | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box |
-
-`currentItem` is returned as Null or an empty string if:
-* the context name is one used for a list box
-* there is no context for the currentitem
-#### Beispiel
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA; $info : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info : {name:contextA,dataclass:Persons,main:firstname,address,address.city}
-```
-
-<!-- REF DataClassClass.getAllRemoteContexts().Desc -->
-## .getAllRemoteContexts()
-
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R5  | Added   |
-</details>
-
-<!-- REF #DataClassClass.getAllRemoteContexts().Syntax -->
-**.getAllRemoteContexts()** : Collection 
-<!-- END REF -->
-#### Beschreibung
-
-The `.getAllRemoteContexts()` function <!-- REF #DataClassClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
-
-For this function to properly return all the active contexts, one of the following conditions must be met:
-* Some attributes have been set previously in the context with the datastore using the `.setRemoteContextInfo()` function.
-* Contexts have been linked to entities or entity selections using one of the following functions:
-  * dataClass.query()
-  * entitySelection.query()
-  * dataClass.fromCollection()
-  * dataClass.all()
-  * Create entity selection
-  * dataClass.get()
-
-Each object in the returned collection has [the properties listed in the .getContextInfo() section](#properties-of-the-returned-object)
-#### Beispiel
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $adresses : cs.AddressSelection
-var $p : cs.PersonsEntity
-var $a : cs.AddressEntity
-var $contextA; $contextB : Object
-var $info : Collection
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$contextB:=New object("context"; "contextB")
-$adresses:=$ds.Address.all($contextB)
-$text:="" 
-For each ($a; $adresses)
-    $text:=$a.zipCode
-End for each 
-
-$info:=$ds.getAllRemoteContexts()
-//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
-```
-
-<!-- REF DataClassClass.clearAllRemoteContexts().Desc -->
-## .clearAllRemoteContexts()
-
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R5  | Added   |
-</details>
-
-<!-- REF #DataClassClass.clearAllRemoteContexts().Syntax -->
-**.clearAllRemoteContexts()** 
-<!-- END REF -->
-#### Beschreibung
-
-The `.clearAllRemoteContexts()` function <!-- REF #DataClassClass..clearAllRemoteContexts().Summary -->clears all the learnt attributes for all the active contexts in the datastore<!-- END REF -->.
-#### Beispiel
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA; $contextB : Object
-var $info : Collection
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-$info:=$ds.getAllRemoteContexts()
-//$info : [{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
-
-$contextB:=New object("context"; "contextB")
-$ds.setRemoteContextInfo("contextB"; $ds.Address; "city")
-$info:=$ds.getAllRemoteContexts()
-//$info : [{name:contextB,dataclass:Address,main:city},{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
-
-$ds.clearAllRemoteContexts()
-$info:=$ds.getAllRemoteContexts()
-//$info is empty
-```
-
-<!-- REF DataClassClass.setRemoteContextInfo().Desc -->
-## .setRemoteContextInfo()
-
-<!-- REF #DataClassClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**(*contextName* : Text ; *dataclassName* : Text ; *attributes* : String { ; contextType : Text} { ; pageLength : Integer})<br/>**.setRemoteContextInfo**(*contextName* : Text ; *dataclassObject* : Object ; *attributesColl* : Collection { ; contextType : Text} { ; pageLength : Integer})
-<!-- END REF -->
-
-<!-- REF #DataClassClass.setRemoteContextInfo().Params -->
-| Parameter       | Typ                         |    | Beschreibung                                                  |
-| --------------- | --------------------------- | -- | ------------------------------------------------------------- |
-| contextName     | Text                        | -> | Name of the context                                           |
-| dataClassName   | Text                        | -> | Name of the dataclass                                         |
-| dataclassObject | Objekt                      | -> | dataclass object (e.g datastore.Employee)                     |
-| attributes      | Text                        | -> | Attribute list separated by a comma                           |
-| attributescoll  | Collection of Text elements | -> | Collection of attribute names                                 |
-| contextType     | Text                        | -> | If provided, value must be "main" or "currentItem"            |
-| pageLength      | Ganzzahl                    | -> | Page length of the entity selection associated to the context |
-<!-- END REF -->
-
-#### Beschreibung
-
-The `.setRemoteContextInfo()` function <!-- REF #DataClassClass.setRemoteContextInfo().Summary -->links dataclass attributes to an optimization context<!-- END REF -->.
-
-If an optimization context already exists for the specified attributes, this command replaces it.
-
-If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
-
-When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
-* the first entity is not fully loaded as done in automatic mode
-* pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
-
-In *contextName*, pass the name of the optimization context that will be linked to the dataclass attributes.
-
-In *dataclassName*, pass the name of the dataclass that holds the attributes to be linked to the optimization context. You can also pass a *dataClassObject*.
-
-In *attributes*, pass the list of attributes to be linked to the optimization context, in the form of a Text element. Attributes must be separated by a comma. You can also pass a collection of attribute names (*attributesColl*).
-
-If *attributes* is an empty String or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context.
-
-You can pass a *contextType* to specify if the context is a standard context or a context associated to an entity selection displayed in a list box.
-
-If the value of *contextType* is set to "main" (default), the *contextName* designates a standard context.
-
-If the value of *contextType* is "currentItem", the attributes passed are put in the context of the current item. See [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
-
-In *pageLength*, specify the number of dataclass entities to request from the server. If the attributes are not strings or  collections, they are ignored.
-
-You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is attributeName:pageLength (e.g employees:20).
-#### Beispiel 1
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA : Object
-var $info : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
-
-$info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname}
-
-$contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city}
-```
-#### Beispiel 2
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA : Object
-var $info : Object
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info = {name:contextA,dataclass:Persons,main:firstname,address,address.city}
-
-$ds.setRemoteContextInfo("contextA"; $ds.Persons; "gender, lastname")
-
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info ={name:contextA,dataclass:Persons,main:lastname,gender}
-
-//The attributes have been replaced
-```
-
-#### Example 4 - Listbox
-
-```4d
-// When the form loads
-Case of 
-    : (Form event code=On Load)
-
-        Form.ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-       // Set the attributes of the page context
-        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
-
-        Form.settings:=New object("context"; "LB")
-        Form.persons:=Form.ds.Persons.all(Form.settings) // Form.persons is displayed in a list box
-End case 
-
-// When you get the attributes in the context of the current item:
-Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
-// Form.currentItemLearntAttributes = "age, gender, children" 
-```
-
-<!-- REF DataClassClass.getCount.Desc -->
-## .getCount()
-
-<details><summary>History</summary>
-| Version | Changes |
-| ------- | ------- |
-| v19 R5  | Added   |
-</details>
-
-<!-- REF #DataClassClass.getCount().Syntax -->
-**.getCount()** : Integer 
-<!-- END REF -->
-
-<!-- REF #DataClassClass.getCount().Params -->
-| Parameter | Typ      |    | Beschreibung                        |
-| --------- | -------- | -- | ----------------------------------- |
-| result    | Ganzzahl | <- | Number of entities in the dataclass |
-<!-- END REF -->
-#### Beschreibung
-
-The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
-#### Beispiel
-
-```4d
-var $ds : cs.DataStore
-var $$number : Integer
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$number:=$ds.Persons.getCount() 
-```
-
-
-
-
 
 
 <style> h2 { background: #d9ebff;}</style>
