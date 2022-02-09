@@ -2410,20 +2410,20 @@ dataObject に存在しない要素を *options* で指定した場合 (例: フ
 | vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名     |
 | sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |<!-- END REF -->#### 説明
 
-The `VP PRINT` command<!-- REF #_method_.VP PRINT.Summary -->opens a print dialog window to print *vpAreaName*<!-- END REF -->.
+`VP PRINT` コマンドは、<!-- REF #_method_.VP PRINT.Summary -->*vpAreaName* 引数で指定したエリアを印刷する印刷ダイアログウィンドウを開きます<!-- END REF -->。
 
-Pass the 4D View Pro area to be printed in *vpAreaName*. The command will open the system print dialog window where the printer can be specified and the page properties can be defined.
-> The properties defined in the print dialog window are for the printer paper, they are not the printing properties for the 4D View Pro area. Printing properties for 4D View Pro areas are defined using the [VP SET PRINT INFO](#vp-set-print-info) command. It is highly recommended that the properties for both the printer and the 4D View Pro area match, otherwise the printed document may not correspond to your expectations.
+*vpAreaName* には、印刷する 4D View Pro エリアの名前を渡します。 コマンドによって、システムの印刷ダイアログウィンドウが開かれ、プリンターを指定したりページプロパティを定義したりすることができます。
+> 印刷ダイアログウィンドウで定義されるプロパティはプリンター用紙のためのもので、4D View Pro エリアの印刷プロパティではありません。 4D View Pro エリアの印刷プロパティは [VP SET PRINT INFO](#vp-set-print-info) コマンドで定義されます。 プリンターと 4D View Pro エリアの両プロパティが合致することが強く推奨されます。そうでない場合、ドキュメントが期待通りに印刷されない可能性があります。
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). If omitted, the current sheet is used by default. You can explicitly select the current spreadsheet or entire workbook with the following constants:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、印刷するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートあるいはワークブック全体を明示的に選択することができます:
 
 *   `vk current sheet`
 *   `vk workbook`
 
 
-> * 4D View Pro areas can only be printed with the `VP PRINT` command. 
-> * Commands from the 4D **Printing** language theme are not supported by `VP PRINT`.
-> * This command is intended for individual printing by the final end user. For automated print jobs, it is advised to export the 4D View Pro area as a PDF with the [VP EXPORT DOCUMENT](#vp-export-document) method.
+> * 4D View Pro エリアは、`VP PRINT` コマンドによってのみ印刷可能です。 
+> * 4Dコマンドの **印刷** テーマのコマンドは、`VP PRINT` ではサポートされません。
+> * このコマンドは、最終的なエンドユーザーが個別に印刷を実行することを想定しています。 自動化印刷ジョブについては、[VP EXPORT DOCUMENT](#vp-export-document) コマンドで 4D View Pro エリアを PDF に書き出すことが推奨されます。
 
 
 #### 例題
@@ -2434,7 +2434,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
  VP PRINT("myVPArea")
 ```
 
-... will open a print dialog window:
+印刷ダイアログウィンドウを開きます:
 
 ![](assets/en/ViewPro/cmd_vpPrint.PNG)
 
@@ -2446,17 +2446,17 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet to p
 
 ### VP RECOMPUTE FORMULAS<!-- REF #_method_.VP RECOMPUTE FORMULAS.Syntax -->**VP RECOMPUTE FORMULAS** ( *vpAreaName* : Text )<!-- END REF --><!-- REF #_method_.VP RECOMPUTE FORMULAS.Params -->| 引数         | タイプ  |    | 説明                      |
 | ---------- | ---- | -- | ----------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |<!-- END REF -->#### 説明
+| vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名 |<!-- END REF -->#### 説明
 
-The `VP RECOMPUTE FORMULAS` command<!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->immediately evaluates all formulas in *vpAreaName*<!-- END REF -->. By default, 4D automatically computes formulas when they are inserted, imported, or exported. `VP RECOMPUTE FORMULAS` allows you to force the compute at any time (e.g, in case modifications are made to the formulas or if the formulas contain calls to the database). The command launches the execution of the [VP FLUSH COMMANDS](#vp-flush-commands) command to execute any stored commands and clear the command buffer, then calculates all formulas in the workbook.
+`VP RECOMPUTE FORMULAS` コマンドは、<!-- REF #_method_.VP RECOMPUTE FORMULAS.Summary -->*vpAreaName* 引数で指定したエリアの全フォーミュラを即座に評価します<!-- END REF -->。 デフォルトでは、4D はフォーミュラを挿入時、読み込み時、そして書き出し時のタイミングで自動計算します。 `VP RECOMPUTE FORMULAS` コマンドを使用すると、任意のタイミングで強制的に計算を実行することができます(例: フォーミュラに変更が加えられた場合、またはフォーミュラがデータベースへの呼び出しを格納している場合など)。 コマンドは [VP FLUSH COMMANDS](#vp-flush-commands) コマンドを実行することで、実行保留されていたコマンドをすべて実行し、コマンドバッファをクリアします。そしてワークブック内の全フォーミュラを計算します。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
-> Be sure the [VP SUSPEND COMPUTING](#vp-suspend-computing) command has not been executed before using `VP RECOMPUTE FORMULAS`, otherwise the command does nothing.
+> `VP RECOMPUTE FORMULAS` コマンドを使用する前に [VP SUSPEND COMPUTING](#vp-suspend-computing)コマンドが実行されていないようにしてください。そうでないと、このコマンドは何もしません。
 
 
 #### 例題
 
-To refresh all formulas in the workbook:
+ワークブック内の全フォーミュラを更新します:
 
 ```4d
 VP RECOMPUTE FORMULAS("ViewProArea")
@@ -2467,19 +2467,19 @@ VP RECOMPUTE FORMULAS("ViewProArea")
 [VP RESUME COMPUTING](#vp-resume-computing)<br/>[VP SUSPEND COMPUTING](#vp-suspend-computing)
 
 
-### VP REMOVE NAME<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } )<!-- END REF --><!-- REF #_method_.VP REMOVE NAME.Params -->| 引数         | タイプ  |    | 説明                                                 |
-| ---------- | ---- | -- | -------------------------------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名                            |
-| name       | テキスト | -> | Name of the named range or named formula to remove |
-| scope      | 整数   | -> | ターゲットのスコープ (デフォルト=カレントシート)                         |<!-- END REF -->#### 説明
+### VP REMOVE NAME<!-- REF #_method_.VP REMOVE NAME.Syntax -->**VP REMOVE NAME** ( *vpAreaName* : Text  ; *name*  : Text { ; *scope* : Integer } )<!-- END REF --><!-- REF #_method_.VP REMOVE NAME.Params -->| 引数         | タイプ     |    | 説明                         |
+| ---------- | ------- | -- | -------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名    |
+| name       | Text    | -> | 削除する命名レンジまたは命名フォーミュラの名前    |
+| scope      | Integer | -> | ターゲットのスコープ (デフォルト=カレントシート) |<!-- END REF -->#### 説明
 
-The `VP REMOVE NAME` command<!-- REF #_method_.VP REMOVE NAME.Summary -->removes the named range or named formula passed in the *name* parameter in the defined *scope*<!-- END REF -->.
+`VP REMOVE NAME` コマンドは、<!-- REF #_method_.VP REMOVE NAME.Summary -->*name* の命名レンジまたは命名フォーミュラを、定義された *scope* のスコープから削除します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-Pass the named range or named formula that you want to remove in *name*.
+*name* には、削除したい命名レンジあるいは命名フォーミュラの名前を渡します。
 
-You can define where to remove the name in *scope* using either the sheet index (counting begins at 0) or the following constants:
+*scope* 引数を使用することで、命名レンジまたは命名フォーミュラをどこから削除するのか、指定することができます。その際、シートのインデックス (0 起点) を渡すか、以下の定数のいずれかを渡します:
 
 *   `vk current sheet`
 *   `vk workbook`
@@ -2494,7 +2494,7 @@ VP ADD RANGE NAME("Total1";$range)
 
 VP REMOVE NAME("ViewProArea";"Total1")
 $formula:=VP Get formula by name("ViewProArea";"Total1")
-//$formula=null
+// $formula=null
 ```
 
 #### 参照
@@ -2502,30 +2502,30 @@ $formula:=VP Get formula by name("ViewProArea";"Total1")
 [VP Name](#vp-name)
 
 
-### VP REMOVE SHEET<!-- REF #_method_.VP REMOVE SHEET.Syntax -->**VP REMOVE SHEET** ( *vpAreaName* : Text ; *index*: Integer )<!-- END REF --><!-- REF #_method_.VP REMOVE SHEET.Params -->| 引数         | タイプ  |    | 説明                           |
-| ---------- | ---- | -- | ---------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名      |
-| index      | 整数   | -> | Index of the sheet to remove |<!-- END REF -->#### 参照
+### VP REMOVE SHEET<!-- REF #_method_.VP REMOVE SHEET.Syntax -->**VP REMOVE SHEET** ( *vpAreaName* : Text ; *index*: Integer )<!-- END REF --><!-- REF #_method_.VP REMOVE SHEET.Params -->| 引数         | タイプ     |    | 説明                      |
+| ---------- | ------- | -- | ----------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名 |
+| index      | Integer | -> | 削除するシートのインデックス          |<!-- END REF -->#### 参照
 
 [VP ADD SHEET](#vp-add-sheet)
 
 
 #### 説明
 
-The `VP REMOVE SHEET` command<!-- REF #_method_.VP REMOVE SHEET.Summary -->removes the sheet with the specified *index* from the document loaded in *vpAreaName*<!-- END REF -->.
+`VP REMOVE SHEET` コマンドは、<!-- REF #_method_.VP REMOVE SHEET.Summary -->*vpAreaName* 引数で指定したエリアにロードされているドキュメントから、*index* 引数で指定したインデックスのシートを削除します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *index*, pass the index of the sheet to remove. If the passed *index* does not exist, the command does nothing.
+*index* 引数には、削除したいシートのインデックスを渡します。 *index* 引数に渡したインデックスが存在しない場合、このコマンドは何もしません。
 > インデックスは 0 起点です。
 
 #### 例題
 
-The document currently has three sheets:
+ドキュメントには現在 3つのシートがあります:
 
 ![](assets/en/ViewPro/vp-sheet-3.png)
 
-Remove the third sheet:
+3つ目のシートを削除します:
 
 ```4d 
 VP REMOVE SHEET("ViewProArea";2)
@@ -2535,24 +2535,24 @@ VP REMOVE SHEET("ViewProArea";2)
 
 ### VP REMOVE SPAN<!-- REF #_method_.VP REMOVE SPAN.Syntax -->**VP REMOVE SPAN** ( *rangeObj* : Object )<!-- END REF --><!-- REF #_method_.VP REMOVE SPAN.Params -->| 引数       | タイプ    |    | 説明        |
 | -------- | ------ | -- | --------- |
-| rangeObj | オブジェクト | -> | レンジオブジェクト |<!-- END REF -->#### 説明
+| rangeObj | Object | -> | レンジオブジェクト |<!-- END REF -->#### 説明
 
-The `VP REMOVE SPAN` command<!-- REF #_method_.VP REMOVE SPAN.Summary -->removes the span from the cells in *rangeObj*<!-- END REF -->.
+`VP REMOVE SPAN` コマンドは、<!-- REF #_method_.VP REMOVE SPAN.Summary -->*rangeObj* で指定したレンジ内のセル結合を解除します<!-- END REF -->。
 
-In *rangeObj*, pass a range object of the cell span. The spanned cells in the range are divided into individual cells.
+*rangeObj* には、セル結合しているレンジのオブジェクトを渡します。 レンジ内の結合セルは個別セルに分割されます。
 
 #### 例題
 
-To remove all cell spans from this document:
+ドキュメントのセル結合をすべて解除します:
 
 ![](assets/en/ViewPro/cmd_vpRemoveSpan1.PNG)
 
 ```4d
- //find all cell spans
+ // すべてのセル結合を探します
  $span:=VP Get spans(VP All("ViewProArea"))
 
 
-  //remove the cell spans
+  // すべてのセル結合を解除します
  VP REMOVE SPAN($span)
 ```
 
@@ -2564,26 +2564,26 @@ To remove all cell spans from this document:
 
 [VP ADD SPAN](#vp-add-span)<br/>[VP Get spans](#vp-get-spans)
 
-### VP REMOVE STYLESHEET<!-- REF #_method_.VP REMOVE STYLESHEET.Syntax -->**VP REMOVE STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text { ; *scope* : Integer } )<!-- END REF --><!-- REF #_method_.VP REMOVE STYLESHEET.Params -->| 引数         | タイプ  |    | 説明                           |
-| ---------- | ---- | -- | ---------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名      |
-| styleName  | テキスト | -> | Name of style to remove      |
-| scope      | 整数   | -> | ターゲットのスコープ (デフォルト = カレントシート) |<!-- END REF -->#### 説明
+### VP REMOVE STYLESHEET<!-- REF #_method_.VP REMOVE STYLESHEET.Syntax -->**VP REMOVE STYLESHEET** ( *vpAreaName* : Text ; *styleName* : Text { ; *scope* : Integer } )<!-- END REF --><!-- REF #_method_.VP REMOVE STYLESHEET.Params -->| 引数         | タイプ     |    | 説明                           |
+| ---------- | ------- | -- | ---------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名      |
+| styleName  | Text    | -> | 削除するスタイルの名前                  |
+| scope      | Integer | -> | ターゲットのスコープ (デフォルト = カレントシート) |<!-- END REF -->#### 説明
 
-The `VP REMOVE STYLESHEET` command<!-- REF #_method_.VP REMOVE STYLESHEET.Summary -->removes the style sheet passed in the *styleName* from the *vpAreaName*<!-- END REF -->.
+`VP REMOVE STYLESHEET` コマンドは、<!-- REF #_method_.VP REMOVE STYLESHEET.Summary -->*vpAreaName* 引数で指定したエリアから、*styleName* で指定したスタイルシートを削除します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-Pass the style sheet to remove in the *styleName* parameter.
+*styleName* 引数には、削除するスタイルシートの名前を渡します。
 
-You can define where to remove the style in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
+任意の *scope* 引数を使用することで、スタイルシートをどこから削除するかを指定することができます。シートインデックス (0 起点) か、以下の定数のいずれかを渡すことができます:
 
 *   `vk current sheet`
 *   `vk workbook`
 
 #### 例題
 
-To remove the *GreenDashDotStyle* style object from the current sheet:
+カレントシートから、*GreenDashDotStyle* スタイルオブジェクトを削除します:
 
 ```4d
 VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
@@ -2593,10 +2593,10 @@ VP REMOVE STYLESHEET("ViewProArea";"GreenDashDotStyle")
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Get stylesheet](#vp-get-stylesheet)<br/>[VP Get stylesheets](#vp-get-stylesheets)
 
 
-### VP RESET SELECTION<!-- REF #_method_.VP RESET SELECTION.Syntax -->**VP RESET SELECTION** ( *vpAreaName* : Text { ; *sheet* : Integer } )<!-- END REF --><!-- REF #_method_.VP RESET SELECTION.Params -->| 引数         | タイプ  |    | 説明                          |
-| ---------- | ---- | -- | --------------------------- |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名     |
-| sheet      | 整数   | -> | シートのインデックス (省略した場合はカレントシート) |<!-- END REF -->#### 説明
+### VP RESET SELECTION<!-- REF #_method_.VP RESET SELECTION.Syntax -->**VP RESET SELECTION** ( *vpAreaName* : Text { ; *sheet* : Integer } )<!-- END REF --><!-- REF #_method_.VP RESET SELECTION.Params -->| 引数         | タイプ     |    | 説明                          |
+| ---------- | ------- | -- | --------------------------- |
+| vpAreaName | Text    | -> | 4D View Pro フォームオブジェクト名     |
+| sheet      | Integer | -> | シートのインデックス (省略した場合はカレントシート) |<!-- END REF -->#### 説明
 
 The `VP RESET SELECTION` command<!-- REF #_method_.VP RESET SELECTION.Summary -->deselects all cells, resulting in no current selection or visible active cell<!-- END REF -->.
 
@@ -3534,7 +3534,7 @@ Pass the name of the 4D View Pro area to print in *vpAreaName*. 存在しない�
 
 You can pass an object containing definitions for various printing attributes in the *printInfo* parameter. To view the full list of the available attributes, see [Print Attributes](configuring.md#print-attributes).
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet to print (counting begins at 0). 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、印刷するスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 You can explicitly select the current spreadsheet with the following constant:
 
 *   `vk current sheet`
 
