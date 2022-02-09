@@ -8,8 +8,8 @@ Une [entity](ORDA/dsMapping.md#entity) est une instance d'une [Dataclass](ORDA/d
 
 ### Sommaire
 
-|                                                                                                                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                                                                                                                                                                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [<!-- INCLUDE EntityClass.attributeName.Syntax -->](#attributename)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE EntityClass.attributeName.Summary -->|
 | [<!-- INCLUDE #EntityClass.clone().Syntax -->](#clone)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.clone().Summary -->|
 | [<!-- INCLUDE #EntityClass.diff().Syntax -->](#diff)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.diff().Summary -->|
@@ -18,6 +18,7 @@ Une [entity](ORDA/dsMapping.md#entity) est une instance d'une [Dataclass](ORDA/d
 | [<!-- INCLUDE #EntityClass.fromObject().Syntax -->](#fromobject)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.fromObject().Summary -->|
 | [<!-- INCLUDE #EntityClass.getDataClass().Syntax -->](#getdataclass)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getDataClass().Summary -->|
 | [<!-- INCLUDE #EntityClass.getKey().Syntax -->](#getkey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getKey().Summary -->|
+| [<!-- INCLUDE #EntityClass.getRemoteContextAttributes().Syntax -->](#getremotecontextattributes)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getRemoteContextAttributes().Summary -->|
 | [<!-- INCLUDE #EntityClass.getSelection().Syntax -->](#getselection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getSelection().Summary -->|
 | [<!-- INCLUDE #EntityClass.getStamp().Syntax -->](#getstamp)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.getStamp().Summary -->|
 | [<!-- INCLUDE #EntityClass.indexOf().Syntax -->](#indexof)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #EntityClass.indexOf().Summary -->|
@@ -657,20 +658,19 @@ Les clés primaires peuvent être des nombres (integer) ou des textes. Vous pouv
 ## .getRemoteContextAttributes()
 
 <!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->
-**.getRemoteContextAttributes()** : Text
-<!-- END REF -->
+**.getRemoteContextAttributes()** : Text<!-- END REF -->
 
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
-| Paramètres | Type |    | Description                                                            |
-| ---------- | ---- | -- | ---------------------------------------------------------------------- |
-| result     | Text | <- | Learnt attributes linked to the entity selection, separated by a comma |
+| Paramètres | Type |    | Description                                           |
+| ---------- | ---- | -- | ----------------------------------------------------- |
+| result     | Text | <- | Attributes linked to the entity, separated by a comma |
 <!-- END REF -->
 
 #### Description
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
 
-If there are no learnt attributes in the optimization context, the function returns an empty Text element.
+If there are no attributes in the [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization), the function returns an empty Text.
 
 #### Exemple
 
@@ -696,6 +696,10 @@ $info:=$address.getRemoteContextAttributes()
 
 //$info = persons,persons.lastname,persons.firstname
 ```
+
+#### Voir aussi
+
+[EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes) [.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts) [.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo) [.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts) [.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
 <!-- REF EntityClass.getSelection().Desc -->
 ## .getSelection()
