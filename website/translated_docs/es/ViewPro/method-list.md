@@ -36,7 +36,7 @@ Pass the 4D View Pro formula that you want to name in *vpFormula*. For detailed 
 
 Pass the new name for the formula in *name*. If the name is already used within the same scope, the new named formula replaces the existing one. Note that you can use the same name for different scopes (see below).
 
-You can pass an object with additional properties for the named formula in *options*. The following properties are supported:
+You can pass an object with additional properties for the named formula in *options*. Se soportan las siguientes propiedades:
 
 
 | Propiedad | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -77,7 +77,7 @@ The `VP ADD RANGE NAME` command<!-- REF #_method_.VP ADD RANGE NAME. Summary -->
 
 In *rangeObj*, pass the range that you want to name and in *name*, pass the new name for the range. If the name is already used within the same scope, the new named range replaces the existing one. Note that you can use the same name for different scopes (see below).
 
-You can pass an object with additional properties for the named range in *options*. The following properties are supported:
+You can pass an object with additional properties for the named range in *options*. Se soportan las siguientes propiedades:
 
 
 | Propiedad | Tipo   | Descripción                                                                                                                                                                                                                                                                                                                                                                                                                    |
@@ -1054,7 +1054,7 @@ In the *rangeObj* parameter, pass an object containing a range to search.
 
 The *searchValue* parameter lets you pass the text to search for within the *rangeObj*.
 
-You can pass the optional *searchCondition* parameter to specify how the search is performed. The following properties are supported:
+You can pass the optional *searchCondition* parameter to specify how the search is performed. Se soportan las siguientes propiedades:
 
 
 | Propiedad   | Tipo     | Descripción                                                                                                                                                                                                          |
@@ -2739,7 +2739,7 @@ VP NEW DOCUMENT("myVPArea")
 
 The `VP Font to object` utility command<!-- REF #_method_.VP Font to object. Summary -->returns an object from a font shorthand string<!-- END REF -->.
 
-In *fontObj*, pass an object containing the font properties. The following properties are supported:
+In *fontObj*, pass an object containing the font properties. Se soportan las siguientes propiedades:
 
 | Propiedad | Tipo  | Descripción                                                                                                                                                              | Possible values                                                                                                                                                                                                                                                                                                                                                   | Mandatory |
 | --------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- |
