@@ -94,7 +94,7 @@ The optimization context is based upon the following implementations:
 	* [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes)
 	* [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes)
 
-![](assets/en/ORDA/cs-optimization.png)
+![](assets/en/ORDA/cs-optimization-process.png)
 
 
 #### Example
