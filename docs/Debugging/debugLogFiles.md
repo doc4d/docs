@@ -428,7 +428,13 @@ The log configuration file is a `.json` file that can contain the following prop
                     "description": "Enable/Disable diagnostic logs 0 or 1 (0 = do not record, 1 = record)",
                     "type": "integer",
                     "minimum": 0    
-                }
+                },
+                "level": {
+            		"description": "Configure diagnostic logs",
+            		"type": "integer",
+            		"minimum": 2,
+            		"maximum": 6
+        		}
             }
           },
         "httpDebugLogs": {
