@@ -509,9 +509,9 @@ $ds.Persons.clearRemoteCache()
 **.getCount()** : Integer <!-- END REF -->
 
 <!-- REF #DataClassClass.getCount().Params -->
-| 引数     | タイプ |    | 説明                                  |
-| ------ | --- | -- | ----------------------------------- |
-| result | 整数  | <- | Number of entities in the dataclass |
+| 引数     | タイプ |    | 説明                  |
+| ------ | --- | -- | ------------------- |
+| result | 整数  | <- | データクラスに含まれる全エンティティ数 |
 <!-- END REF -->
 #### 説明
 
@@ -695,7 +695,7 @@ Each entry object in the `entries` collection has the following properties:
 The `data` object in each entry contains the following properties:
 | プロパティ                  | タイプ    | 説明                                                                                                                           |
 | ---------------------- | ------ | ---------------------------------------------------------------------------------------------------------------------------- |
-| __KEY                  | String | Primary key of the entity                                                                                                    |
+| __KEY                  | String | エンティティのプライマリーキー                                                                                                              |
 | __STAMP                | 倍長整数   | Timestamp of the entity in the database                                                                                      |
 | __TIMESTAMP            | String | Stamp of the entity in the database (format is YYYY-MM-DDTHH:MM:SS:ms:Z)                                                     |
 | dataClassAttributeName | バリアント  | If there is data in the cache for a dataclass attribute, it is returned in a property with the same type as in the database. |
@@ -1426,7 +1426,7 @@ softwares:{
 
 The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCacheSettings().Summary -->sets the timeout and maximum size of the ORDA cache for a dataclass.<!-- END REF -->.
 
-In the *settings* parameter, pass an object with the following properties:
+*settings* には、以下のプロパティを持つオブジェクトを渡します:
 
 | プロパティ      | タイプ | 説明                  |
 | ---------- | --- | ------------------- |
