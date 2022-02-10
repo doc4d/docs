@@ -334,42 +334,9 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
 
+This function is mainly used for debugging purposes. One thing to keep in mind is that the debugger sends requests to the server and queries all the dataclass attributes to display them. This can pollute your contexts with unnecessary data. 
 
-
-#### 例題
-
-
-
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA; $contextB : Object
-var $info : Collection
-var $text : Text
-
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-$info:=$ds.getAllRemoteContexts()
-//$info : [{name:contextA,dataclass:Persons,main:firstname,address,address.city}]
-
-$contextB:=New object("context"; "contextB")
-$ds.setRemoteContextInfo("contextB"; $ds.Address; "city")
-$info:=$ds.getAllRemoteContexts()
-//$info : [{name:contextB,dataclass:Address,main:city},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
-
-$ds.clearAllRemoteContexts()
-$info:=$ds.getAllRemoteContexts()
-//$info is empty
-```
-
+In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
 
 
 
@@ -499,7 +466,7 @@ var $contextA; $contextB : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
@@ -642,10 +609,11 @@ For more information on how optimization contexts can be created, see [client/se
 | ---------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name                   | テキスト | Name of the context                                                                                                                                                                                                                                                           |
 | main                   | テキスト | Attributes associated to the context (attribute names are separated by a comma)                                                                                                                                                                                               |
-| dataclass              | テキスト | Dataclass linked to the context                                                                                                                                                                                                                                               |
+| dataclass              | テキスト | データクラスの名称                                                                                                                                                                                                                                                                     |
 | currentItem (optional) | テキスト | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
 
 
+Since contexts behave as filters for attributes, if *main* is returned empty, it means that no filter is applied, and that the server returns all the dataclass attributes. 
 
 
 
@@ -661,7 +629,7 @@ var $contextA; $info : Object
 var $text : Text
 var $info : Object
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
@@ -671,7 +639,7 @@ For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
 $info:=$ds.getRemoteContextInfo("contextA")
-//$info : {name:contextA;dataclass:Persons;main:firstname;address;address.city}
+//$info : {name:contextA;dataclass:Persons;main:firstname;address:address.city}
 ```
 
 
@@ -942,7 +910,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 ## .setRemoteContextInfo()
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )
 
 <!-- END REF -->
 
@@ -973,12 +941,11 @@ When you pass a context to the ORDA class functions, the REST request optimizati
 
 In *contextName*, pass the name of the optimization context to link to the dataclass attributes.
 
-To designate the attributes to link to the context, you can either:
+To designate the dataclass that will receive the context, you can pass a *dataClassName* or a *dataclassObject*. 
 
-* pass a text in *dataClassName* and a list of comma-separated attribute names in *attributes*.
-* pass a 4D.DataClass object in *dataclassObject* and a collection of attribute names in *attributesColl*
+To designate the attributes to link to the context, pass either a list of attributes separated by a comma in *attributes* (Text), or a collection of attribute names in *attributesColl* (Collection of Text)
 
-If *attributes* is an empty Text or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
+If *attributes* is an empty Text, or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
 
 You can pass a *contextType* to  specify if the context is a standard context or the context of the current entity selection item displayed in a list box: 
 
@@ -1005,7 +972,7 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
@@ -1020,7 +987,8 @@ For each ($p; $persons)
 End for each 
 
 $info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city} // address.city is added to the context because it is used in the loop.
+// $info = {name:contextA,dataclass:Persons,main:lastname;firstname;address;address.city} 
+// address.city is added to the context because it is used in the loop.
 ```
 
 
@@ -1037,7 +1005,7 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
@@ -1071,7 +1039,7 @@ For each `Address` entity, 20 Persons entities will be returned, and they will o
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname, persons.firstname"; "main"; 30)
 
@@ -1082,7 +1050,7 @@ $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.
 
 
 
-#### 例題 4 - リストボックス
+#### Example 4 - Listbox
 
 
 
@@ -1091,7 +1059,7 @@ $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.
 Case of 
     : (Form event code=On Load)
 
-        Form.ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
        // Set the attributes of the page context
         Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
