@@ -2369,7 +2369,7 @@ var $workbookOptions : Object
 $workbookOptions:=VP Get workbook options("ViewProArea")
 ```
 
-#### See Also
+#### Voir aussi
 
 [VP SET WORKBOOK OPTIONS](#vp-set-workbook-options)
 
@@ -4969,7 +4969,7 @@ $workbookOptions.allowExtendPasteRange:=True
 VP SET WORKBOOK OPTIONS("ViewProArea";$workbookOptions)
 ```
 
-#### See Also
+#### Voir aussi
 
 [VP Get workbook options](#vp-get-workbook-options)
 
@@ -5081,7 +5081,7 @@ If(FORM Event.code=On Clicked)
 
 End if
 ```
-#### See Also
+#### Voir aussi
 
 [VP RECOMUTE FORMULAS](#vp-recompute-formulas)<br/>[VP RESUME COMPUTING](#vp-resume-computing)
 
