@@ -170,6 +170,8 @@ Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant d
 
 The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
 
+> This function does not reset the `timeout` and `maxEntries` values.
+
 #### Exemple
 
 ```4d
@@ -180,7 +182,7 @@ var $cache : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
@@ -516,13 +518,15 @@ Cet exemple illustre l'utilisation de la propriété *context* :
 #### Description
 
 The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
+
+If this function is used within a transaction, attributes created during the transaction will be taken into account.
 #### Exemple
 
 ```4d
 var $ds : cs.DataStore
 var $$number : Integer
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $number:=$ds.Persons.getCount() 
 ```
@@ -717,7 +721,7 @@ var $p : cs.PersonsEntity
 var $cachePersons; $cacheAddress : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $persons:=$ds.Persons.all()
 
@@ -1428,10 +1432,10 @@ The `.setRemoteCacheSettings()` function <!-- REF #DataClassClass.setRemoteCache
 
 In the *settings* parameter, pass an object with the following properties:
 
-| Propriété  | Type    | Description         |
-| ---------- | ------- | ------------------- |
-| timeout    | Integer | Timeout in seconds. |
-| maxEntries | Integer | Number of entities. |
+| Propriété  | Type    | Description                 |
+| ---------- | ------- | --------------------------- |
+| timeout    | Integer | Timeout in seconds.         |
+| maxEntries | Integer | Maximum number of entities. |
 
 `timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
 
@@ -1439,7 +1443,7 @@ In the *settings* parameter, pass an object with the following properties:
 * the next time the data is needed, it will be asked to the server
 * 4D automatically removes expired data when space is needed
 
-Setting a `timeout` property sets a new timeout for the entities already present in the cache.
+Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
 `maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
 
@@ -1454,7 +1458,7 @@ When an entity is saved, it is updated in the cache and expires once the timeout
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```
