@@ -160,6 +160,12 @@ Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant d
 <!-- REF #DataClassClass.clearRemoteCache().Syntax -->
 **.clearRemoteCache()**<!-- END REF -->
 
+<!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
+| Paramètres | Type |  | Description                 |
+| ---------- | ---- |::| --------------------------- |
+|            |      |  | Ne requiert aucun paramètre |
+<!-- END REF -->
+
 #### Description
 
 The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
@@ -673,9 +679,9 @@ The returned object has the following properties:
 
 | Propriété  | Type       | Description                                                               |
 | ---------- | ---------- | ------------------------------------------------------------------------- |
-| maxEntries | Longint    | Maximum number of entries collection.                                     |
-| stamp      | Longint    | Stamp of the cache.                                                       |
-| timeout    | Longint    | Time remaining before the new entries in the cache are marked as expired. |
+| maxEntries | Integer    | Maximum number of entries collection.                                     |
+| stamp      | Integer    | Stamp of the cache.                                                       |
+| timeout    | Integer    | Time remaining before the new entries in the cache are marked as expired. |
 | entries    | Collection | Contains an entry object for each entity in the cache.                    |
 
 Each entry object in the `entries` collection has the following properties:
@@ -723,6 +729,11 @@ End for each
 $cachePersons:=$ds.Persons.getRemoteCache()
 $cacheAddress:=$ds.Address.getRemoteCache()
 ```
+
+#### Voir aussi
+
+[.setRemoteCacheSettings()](#setremotecachesettings)<br/>[.clearRemoteCache()](#clearremotecache)
+
 
 <!-- REF DataClassClass.new().Desc -->
 ## .new()
@@ -1419,8 +1430,8 @@ In the *settings* parameter, pass an object with the following properties:
 
 | Propriété  | Type    | Description         |
 | ---------- | ------- | ------------------- |
-| timeout    | Longint | Timeout in seconds. |
-| maxEntries | Longint | Number of entities. |
+| timeout    | Integer | Timeout in seconds. |
+| maxEntries | Integer | Number of entities. |
 
 `timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
 
@@ -1433,8 +1444,6 @@ Setting a `timeout` property sets a new timeout for the entities already present
 `maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
-
-> If you enter a value for `maxEntries` that is inferior to the current number of entries, it can alter the size of the `entries` collection when the cache is filled with new entities.
 
 If no valid properties are passed as `timeout` and `maxEntries`, the cache remains unchanged, with its default or previously set values.
 
@@ -1450,5 +1459,8 @@ $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 $ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```
 
+#### Voir aussi
+
+[.clearRemoteCache()](#clearremotecache)<br/>[.getRemoteCache()](#clearremotecache)
 
 <style> h2 { background: #d9ebff;}</style>
