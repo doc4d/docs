@@ -619,13 +619,13 @@ Las llaves primarias pueden ser números (enteros) o cadenas. Puede "forzar" que
 | Versión | Modificaciones |
 | ------- | -------------- |
 | v19R5   | Añadidos       |
-</details><!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->**.getRemoteContextAttributes()** : Text<!-- END REF --><!-- REF #EntityClass.getRemoteContextAttributes().Params -->| Parámetros | Tipo  |    | Descripción                                           |
-| ---------- | ----- | -- | ----------------------------------------------------- |
-| result     | Texto | <- | Attributes linked to the entity, separated by a comma |<!-- END REF -->#### Descripción
+</details><!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->**.getRemoteContextAttributes()** : Text<!-- END REF --><!-- REF #EntityClass.getRemoteContextAttributes().Params -->| Parámetros | Tipo  |    | Descripción                                                   |
+| ---------- | ----- | -- | ------------------------------------------------------------- |
+| result     | Texto | <- | Context attributes linked to the entity, separated by a comma |<!-- END REF -->#### Descripción
 
 The `.getRemoteContextAttributes()` function<!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity<!-- END REF -->.
 
-If there are no attributes in the [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization), the function returns an empty Text.
+If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity, the function returns an empty Text.
 
 #### Ejemplo
 
@@ -637,7 +637,7 @@ var $contextA : Object
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
@@ -848,7 +848,7 @@ El objeto devuelto por `.lock( )` contiene las siguientes propiedades:
 |                  | task_name           | texto                 | Nombre del proceso                                                                                                                                          |
 |                  | client_version      | texto                 | Version of the client                                                                                                                                       |
 |                  |                     |                       | ***Available only for a REST session lock:***                                                                                                               |
-|                  | host                | texto                 | URL that locked the entity (e.g. "127.0.0.1:8043")                                                                                                          |
+|                  | host                | texto                 | URL that locked the entity (e.g. "www.myserver.com/data")                                                                                                   |
 |                  | IPAddr              | texto                 | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
 |                  | userAgent           | texto                 | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 |                  |                     |                       | ***Disponible sólo en caso de error grave*** (la llave primaria ya existe, el disco está lleno...):                                                         |
