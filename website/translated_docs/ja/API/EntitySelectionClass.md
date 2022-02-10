@@ -963,7 +963,7 @@ var $p : cs.PersonsEntity
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
