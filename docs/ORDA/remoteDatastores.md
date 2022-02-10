@@ -164,7 +164,7 @@ For example, the following code loads the selected entity and allows browsing in
 
 ### ORDA Cache 
 
-For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). Each dataclass has its own ORDA cache. By default, the ORDA cache expires after 30 seconds. 
+For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). The ORDA cache is organized by dataclass, and expires after 30 seconds. 
 
 The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Expired data remains in the cache until space is needed.
 
