@@ -23,6 +23,7 @@ Un [Datastore](ORDA/dsMapping.md#datastore) correspond à l'objet d'interface fo
 | [<!-- INCLUDE #DataStoreClass.makeSelectionsAlterable().Syntax -->](#makeselectionsalterable)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.makeSelectionsAlterable().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.provideDataKey().Syntax -->](#providedatakey)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.provideDataKey().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.setAdminProtection().Syntax -->](#setadminprotection)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.setAdminProtection().Summary --> |
+| [<!-- INCLUDE #DataStoreClass.setRemoteContextInfo().Syntax -->](#setremotecontextinfo)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.setRemoteContextInfo().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.startRequestLog().Syntax -->](#startrequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.startRequestLog().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.startTransaction().Syntax -->](#starttransaction)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.startTransaction().Summary --> |
 | [<!-- INCLUDE #DataStoreClass.stopRequestLog().Syntax -->](#stoprequestlog)<p>&nbsp;&nbsp;&nbsp;&nbsp;<!-- INCLUDE #DataStoreClass.stopRequestLog().Summary --> |
@@ -293,6 +294,12 @@ Voir l'exemple de la fonction [`.startTransaction()`](#starttransaction).
 <!-- REF #DataStoreClass.clearAllRemoteContexts().Syntax -->
 **.clearAllRemoteContexts()**<!-- END REF -->
 
+<!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
+| Paramètres | Type |  | Description                 |
+| ---------- | ---- |::| --------------------------- |
+|            |      |  | Ne requiert aucun paramètre |
+<!-- END REF -->
+
 #### Description
 
 The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
@@ -331,7 +338,7 @@ $info:=$ds.getAllRemoteContexts()
 
 #### Voir aussi
 
-[.getRemoteContextInfo()](#getremotecontextinfo) [.getAllRemoteContexts()](#getallremotecontexts) [.setRemoteContextInfo()](#setremotecontextinfo)
+[.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts)<br/>[.setRemoteContextInfo()](#setremotecontextinfo)
 
 <!-- REF DataStoreClass.encryptionStatus().Desc -->
 ## .encryptionStatus()
@@ -429,7 +436,7 @@ The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteCont
 
 > For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
 
-Each object in the returned collection has the [properties listed in the `.getContextInfo()` section](#properties-of-the-returned-object)
+Each object in the returned collection has the properties listed in the [`.getContextInfo()`](#properties-of-the-returned-object) section.
 
 #### Exemple
 
@@ -465,7 +472,7 @@ $info:=$ds.getAllRemoteContexts()
 
 #### Voir aussi
 
-[.getRemoteContextInfo()](#getremotecontextinfo) [.setRemoteContextInfo()](#setremotecontextinfo) [.clearAllRemoteContexts()](#clearallremotecontexts)
+[.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.setRemoteContextInfo()](#setremotecontextinfo)<br/>[.clearAllRemoteContexts()](#clearallremotecontexts)
 
 <!-- REF DataStoreClass.getInfo().Desc -->
 ## .getInfo()
@@ -566,12 +573,12 @@ For more information on how optimization contexts can be created, see [client/se
 
 The returned object has the following properties:
 
-| Propriété               | Type | Description                                                                                                                                                                                                                                                                   |
-| ----------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                    | Text | Name of the context                                                                                                                                                                                                                                                           |
-| main                    | Text | Attributes associated to the context. If there are several attributes, they are separated by a comma                                                                                                                                                                          |
-| dataclass               | Text | Dataclass linked to the context                                                                                                                                                                                                                                               |
-| currentItem (optional)* | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
+| Propriété              | Type | Description                                                                                                                                                                                                                                                                   |
+| ---------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                   | Text | Name of the context                                                                                                                                                                                                                                                           |
+| main                   | Text | Attributes associated to the context (attribute names are separated by a comma)                                                                                                                                                                                               |
+| dataclass              | Text | Dataclass linked to the context                                                                                                                                                                                                                                               |
+| currentItem (optional) | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
 
 
 #### Exemple
@@ -599,7 +606,7 @@ $info:=$ds.getRemoteContextInfo("contextA")
 
 #### Voir aussi
 
-[.setRemoteContextInfo()](#setremotecontextinfo) [.getAllRemoteContexts()](#getallremotecontexts) [.clearAllRemoteContexts()](#clearallremotecontexts)
+[.setRemoteContextInfo()](#setremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts) <br/>[.clearAllRemoteContexts()](#clearallremotecontexts)
 
 <!-- REF DataStoreClass.getRequestLog().Desc -->
 ## .getRequestLog()
@@ -829,6 +836,13 @@ Vous créez une méthode projet *protectDataFile* à appeler par exemple avant l
 <!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Desc -->
+
+<details><summary>Historique</summary>
+| Version | Modifications |
+| ------- | ------------- |
+| v19 R5  | Ajout         |
+</details>
+
 ## .setRemoteContextInfo()
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
@@ -871,8 +885,6 @@ You can pass a *contextType* to  specify if the context is a standard context or
 * If set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
 
 In *pageLength*, specify the number of dataclass entities to request from the server.
-
-Attributes that are not text elements or collections are ignored.
 
 You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
 
@@ -944,13 +956,6 @@ For each `Address` entity, 20 Persons entities will be returned, and they will o
 ```4d
 var $ds : cs.DataStore
 
-var $addresses : cs.AddressSelection
-var $a : cs.AddressEntity
-var $p : cs.PersonsEntity
-
-var $contextA : Object
-var $text : Text
-
 $ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname, persons.firstname"; "main"; 30)
@@ -982,7 +987,7 @@ Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes
 
 #### Voir aussi
 
-[.getRemoteContextInfo()](#getremotecontextinfo) [.getAllRemoteContexts()](#getallremotecontexts) [.clearAllRemoteContexts()](#clearallremotecontexts)
+[.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts)<br/>[.clearAllRemoteContexts()](#clearallremotecontexts)
 
 
 <!-- REF DataStoreClass.startRequestLog().Desc -->

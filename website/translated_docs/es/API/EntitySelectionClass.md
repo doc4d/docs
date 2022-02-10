@@ -930,20 +930,26 @@ El siguiente código genérico duplica todas las entidades de la entity selectio
 <!-- REF EntitySelectionClass.getRemoteContextAttributes().Desc -->
 ## .getRemoteContextAttributes()
 
+<details><summary>Histórico</summary>
+| Versión | Modificaciones |
+| ------- | -------------- |
+| v19R5   | Añadidos       |
+</details>
+
 <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Syntax -->
 **.getRemoteContextAttributes()** : Text<!-- END REF -->
 
 <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Params -->
-| Parámetros | Tipo  |    | Descripción                                                            |
-| ---------- | ----- | -- | ---------------------------------------------------------------------- |
-| result     | Texto | <- | Learnt attributes linked to the entity selection, separated by a comma |
+| Parámetros | Tipo  |    | Descripción                                                             |
+| ---------- | ----- | -- | ----------------------------------------------------------------------- |
+| result     | Texto | <- | Context attributes linked to the entity selection, separated by a comma |
 <!-- END REF -->
 
 #### Descripción
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
 
-If there are no attributes in the [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization), the function returns an empty Text.
+If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity selection, the function returns an empty Text.
 
 #### Ejemplo
 
@@ -969,7 +975,7 @@ $info:=$persons.getRemoteContextAttributes()
 
 #### Ver también
 
-[Entity.getRemoteContextAttributes()](./EntityClass.md#getRemoteContextAttributes) [.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts) [.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo) [.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts) [.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+[Entity.getRemoteContextAttributes()](./EntityClass.md#getRemoteContextAttributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
 <!-- REF EntitySelectionClass.isAlterable().Desc -->
 ## .isAlterable()

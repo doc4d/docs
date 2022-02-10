@@ -657,6 +657,12 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 <!-- REF EntityClass.getRemoteContextAttributes().Desc -->
 ## .getRemoteContextAttributes()
 
+<details><summary>Histórico</summary>
+| Versão | Mudanças   |
+| ------ | ---------- |
+| v19R5  | Adicionado |
+</details>
+
 <!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->
 **.getRemoteContextAttributes()** : Text<!-- END REF -->
 
@@ -699,7 +705,7 @@ $info:=$address.getRemoteContextAttributes()
 
 #### See also
 
-[EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes) [.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts) [.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo) [.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts) [.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
+[EntitySelection.getRemoteContextAttributes()](./EntitySelectionClass.md#getRemoteContextAttributes)<br/>[.clearAllRemoteContexts()](./DataStoreClass.md#clearallremotecontexts)<br/>[.getRemoteContextInfo()](./DataStoreClass.md#getremotecontextinfo)<br/>[.getAllRemoteContexts()](./DataStoreClass.md#getallremotecontexts)<br/>[.setRemoteContextInfo()](./DataStoreClass.md#setremotecontextinfo)
 
 <!-- REF EntityClass.getSelection().Desc -->
 ## .getSelection()
