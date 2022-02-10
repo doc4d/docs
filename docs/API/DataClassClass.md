@@ -171,6 +171,8 @@ In the optional *settings* parameter, you can pass an object containing addition
 
 The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().Summary -->empties the ORDA cache of a dataclass<!-- END REF -->.
 
+> This function does not reset the `timeout` and `maxEntries` values.
+
 #### Example 
 
 ```4d
@@ -1441,7 +1443,7 @@ In the *settings* parameter, pass an object with the following properties:
 |Property|Type|Description|
 |---|---|---|
 |timeout|Integer|Timeout in seconds.|
-|maxEntries|Integer|Number of entities.|
+|maxEntries|Integer|Maximum number of entities.|
 
 `timeout` sets the timeout of the ORDA cache for the dataclass (default is 30 seconds). Once the timeout has passed, the entities of the dataclass in the cache are considered as expired. This means that:
 
@@ -1449,9 +1451,9 @@ In the *settings* parameter, pass an object with the following properties:
 * the next time the data is needed, it will be asked to the server
 * 4D automatically removes expired data when space is needed
 
-Setting a `timeout` property sets a new timeout for the entities already present in the cache.
+Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
-`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000.
+`maxEntries` sets the max number of entities in the ORDA cache. Default is 30 000. 
 
 The minimum number of entries is 300, so the value of `maxEntries` must be equal to or higher than 300. Otherwise it is ignored and the maximum number of entries is set to 300.
 
