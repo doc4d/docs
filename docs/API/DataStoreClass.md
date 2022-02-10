@@ -305,9 +305,9 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 
 The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
  
-This function is mainly used for debugging purposes, when clearing the context is more efficient than restarting the client. 
- 
-Keep in mind that the debugger sends requests to the server and queries all the dataclass attributes. 
+This function is mainly used for debugging purposes. One thing to keep in mind is that the debugger sends requests to the server and queries all the dataclass attributes to display them. This can pollute your contexts with unnecessary data. 
+
+In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
 
 #### See also 
 
@@ -424,7 +424,7 @@ var $contextA; $contextB : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
@@ -552,8 +552,9 @@ The returned object has the following properties:
 |name|Text|Name of the context|
 |main|Text|Attributes associated to the context (attribute names are separated by a comma) |
 |dataclass|Text|Dataclass name|
-|currentItem (optional)|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem|
+|currentItem (optional)|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem| 
 
+Since contexts behave as filters for attributes, if *main* is returned empty, it means that no filter is applied, and that the server returns all the dataclass attributes. 
 
 #### Example 
 
@@ -565,7 +566,7 @@ var $contextA; $info : Object
 var $text : Text
 var $info : Object
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
@@ -575,7 +576,7 @@ For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
 $info:=$ds.getRemoteContextInfo("contextA")
-//$info : {name:contextA;dataclass:Persons;main:firstname;address;address.city}
+//$info : {name:contextA;dataclass:Persons;main:firstname;address:address.city}
 ```
 
 #### See also
@@ -877,7 +878,7 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
@@ -892,7 +893,8 @@ For each ($p; $persons)
 End for each 
 
 $info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname,address,address.city} // address.city is added to the context because it is used in the loop.
+// $info = {name:contextA,dataclass:Persons,main:lastname;firstname;address;address.city} 
+// address.city is added to the context because it is used in the loop.
 ```
 #### Example 2 
 
@@ -904,7 +906,7 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
@@ -933,7 +935,7 @@ For each `Address` entity, 20 Persons entities will be returned, and they will o
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname, persons.firstname"; "main"; 30)
 
@@ -948,7 +950,7 @@ $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.
 Case of 
     : (Form event code=On Load)
 
-        Form.ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
        // Set the attributes of the page context
         Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
