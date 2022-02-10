@@ -667,16 +667,16 @@ Les clés primaires peuvent être des nombres (integer) ou des textes. Vous pouv
 **.getRemoteContextAttributes()** : Text<!-- END REF -->
 
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
-| Paramètres | Type |    | Description                                           |
-| ---------- | ---- | -- | ----------------------------------------------------- |
-| result     | Text | <- | Attributes linked to the entity, separated by a comma |
+| Paramètres | Type |    | Description                                                   |
+| ---------- | ---- | -- | ------------------------------------------------------------- |
+| result     | Text | <- | Context attributes linked to the entity, separated by a comma |
 <!-- END REF -->
 
 #### Description
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
 
-If there are no attributes in the [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization), the function returns an empty Text.
+If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity, the function returns an empty Text.
 
 #### Exemple
 
@@ -688,7 +688,7 @@ var $contextA : Object
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "127.0.0.1:8043"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
@@ -992,7 +992,7 @@ L'objet retourné par `.lock( )` contient les propriétés suivantes :
 |                  | task_name           | Texte               | Nom du process                                                                                                                                                             |
 |                  | client_version      | Texte               | Version du client                                                                                                                                                          |
 |                  |                     |                     | ***Disponible uniquement pour un verrouillage par session REST :***                                                                                                        |
-|                  | host                | Texte               | URL d'origine du verrouillage de l'entité (ex : "127.0.0.1:8043")                                                                                                          |
+|                  | host                | Texte               | URL that locked the entity (e.g. "www.myserver.com/data")                                                                                                                  |
 |                  | IPAddr              | Texte               | Adresse IP d'origine du verrouillage (ex. 127.0.0.1")                                                                                                                      |
 |                  | userAgent           | Texte               | userAgent de l'origine du verouillage (ex : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 |                  |                     |                     | ***Disponible uniquement en cas d'erreur critique*** (clé primaire dupliquée, disque plein...) :                                                                           |
