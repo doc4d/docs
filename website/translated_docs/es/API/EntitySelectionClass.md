@@ -729,6 +729,7 @@ Ejemplo con la opción `dk stop dropping on first error`:
 </details>
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -961,7 +962,7 @@ var $p : cs.PersonsEntity
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
@@ -1141,6 +1142,7 @@ La propiedad `.length` <!-- REF #EntitySelectionClass.length.Summary -->devuelve
 
 Las entity selections siempre tienen una propiedad `.length`.
 
+> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](DataClassClass.md#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
 
 #### Ejemplo
 
@@ -1349,7 +1351,7 @@ La función `.or()` <!-- REF #EntitySelectionClass.or().Summary -->combina la en
 
 *   Si pasa *entity* como parámetro, se compara esta entidad con la entity selection. Si la entidad pertenece a la entity selection, se devuelve una nueva referencia a la entity selection. En caso contrario, se devuelve una nueva entity selection que contiene la entity selection original y la entidad.
 *   Si pasa *entitySelection* como parámetro, compara ambas entity selections. Se devuelve una nueva entity selection que contiene las entidades pertenecientes a la selección de entidades original o *entitySelection* (o no es exclusiva, las entidades referenciadas en ambas selecciones no se duplican en la selección resultante).
-> Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
+> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
 
 Si la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía. Si la entity selection original está vacía, se devuelve una referencia a *entitySelection* o una entity selection que sólo contiene *entity*.
 
@@ -1611,6 +1613,7 @@ La función `.query()` <!-- REF #EntitySelectionClass.query().Summary -->busca e
 
 Si no se encuentran entidades coincidentes, se devuelve una `EntitySelection` vacía.
 
+
 Para obtener información detallada sobre cómo construir una consulta utilizando los parámetros *queryString*, *value<* y *querySettings*, consulte la descripción de la función de dataClass [`.query()`](DataClassClass.md#query).
 > Por defecto, si se omite la declaración **order by** en *queryString*, la entity selection devuelta es [no ordenada](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). Sin embargo, tenga en cuenta que, en modo Cliente/Servidor, se comporta como una selección de entidades ordenada (las entidades se añaden al final de la selección).
 
@@ -1672,6 +1675,7 @@ Para más información, consulte el párrafo **querySettings** en la página [`.
 
 <!-- REF #EntitySelectionClass.queryPlan.Syntax -->
 **.queryPlan** : Text<!-- END REF -->
+
 
 
 #### Descripción
@@ -1902,6 +1906,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //intenta devolver entidades del índice 
 
 <!-- REF #EntitySelectionClass.sum().Syntax -->
 **.sum**( *attributePath* : Text ) : Real<!-- END REF -->
+
 
 <!-- REF #EntitySelectionClass.sum().Params -->
 | Parámetros    | Tipo  |    | Descripción                                        |
@@ -2162,7 +2167,6 @@ Devuelve:
 #### Ejemplo 4
 
 Ejemplo con el tipo `relatedEntity` con una forma simple:
-
 
 ```4d
 var $employeesCollection : Collection
