@@ -410,16 +410,14 @@ The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteCont
 
 > For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
 
-Each object in the returned collection has the properties listed in the [`.getContextInfo()`](#properties-of-the-returned-object) section.
+Each object in the returned collection has the properties listed in the [`.getRemoteContextInfo()`](#properties-of-the-returned-object) section.
 
 #### Example 
-
-Unlike other code samples, optimization context examples only aim at demonstrating how context optimization works. For optimal use, you'll need to adapt them to your environment.
 
 The following code sets up two contexts and retrieves them using `.getAllRemoteContexts()`:
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $adresses : cs.AddressSelection
 var $p : cs.PersonsEntity
@@ -449,9 +447,11 @@ End for each
 
 // Get all remote contexts (in this case, context A and context B)
 $info:=$ds.getAllRemoteContexts()
-//$info = [{name:contextB; dataclass:Address; main:zipCode},\
-{name:contextA;dataclass:Persons;main:firstname,address.city}]
+//$info = [{name:"contextB"; dataclass:"Address"; main:"zipCode"},
+{name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]
 ```
+
+> This example serves as a demonstration, it is not meant for real implementation.
 
 #### See also
 
@@ -567,7 +567,7 @@ Since contexts behave as filters for attributes, if *main* is returned empty, it
 
 #### Example 
 
-See the examples from the [.setRemoteContextInfo()](#setremotecontextinfo) section.
+See the examples from the [.setRemoteContextInfo()](#example-1-3) section.
 
 #### See also
 
@@ -813,7 +813,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 </details>
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<!-- END REF -->
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; *pageLength* : Integer }} )<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 |Parameter|Type||Description|
@@ -852,20 +852,10 @@ You can pass a *contextType* to  specify if the context is a standard context or
 In *pageLength*, specify the number of dataclass entities to request from the server. 
 
 You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
-
-#### Examples
-
-Unlike other code samples, optimization context examples only aim at demonstrating how context optimization works. For optimal use, you'll need to adapt them to your environment.
 #### Example 1
 
-The following code: 
-1. establishes a connexion to a remote datastore
-2. sets the contents of the optimization context
-3. sends requests to the server using a loop
-4. checks the contents of the context using `.getRemoteContextInfo()`
-
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 var $contextA : Object
@@ -883,46 +873,30 @@ $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
 For each ($p; $persons)
-    $text:=$p.firstname 
+    $text:=$p.firstname + " " + $p.lastname
 End for each 
 
 // Check contents of the context
 $info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname;} 
+// $info = {name:"contextA",dataclass:"Persons",main:"firstname, lastname"} 
 ```
-#### Example 2 
 
-This code modifies the contents of the optimization context from Example 1.
-
-```4d
-// Code from Example 1
-
-// Set different attributes for the context
-$ds.setRemoteContextInfo("contextA"; $ds.Persons; "gender, lastname")
-
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info ={name:contextA; dataclass:Persons; main:"lastname,gender"}
-```
-#### Example 3
+> This example serves as a demonstration, it is not meant for real implementation.
+#### Example 2
 
 The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. The returned entities only contain the `zipCode` attribute.
 
 For each `Address` entity, 20 Persons entities are returned, and they only contain the `lastname` and `firstname` attributes:
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20,\
 persons.lastname, persons.firstname"; "main"; 30)
-
-// Alternative syntax
-$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode";\n
-"persons:20";"persons.lastname"; "persons.firstname"); "main"; 30)
 ```
-
-#### Example 4 - Listbox
+#### Example 3 - Listbox
 
 ```4d
 // When the form loads
@@ -944,7 +918,6 @@ End case
 Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
 // Form.currentItemLearntAttributes = "age, gender, children" 
 ```
-
 #### See also
 
 [.getRemoteContextInfo()](#getremotecontextinfo)<br/>[.getAllRemoteContexts()](#getallremotecontexts)<br/>[.clearAllRemoteContexts()](#clearallremotecontexts)

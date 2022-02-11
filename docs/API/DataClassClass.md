@@ -178,7 +178,7 @@ The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().S
 #### Example 
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 var $cache : Object
@@ -525,11 +525,11 @@ This example illustrates the use of the *context* property:
 
 The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
 
-If this function is used within a transaction, attributes created during the transaction will be taken into account.
+If this function is used within a transaction, entities created during the transaction will be taken into account.
 #### Example 
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $number : Integer
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
@@ -721,7 +721,7 @@ Note that `address.city` is loaded in the cache of the `Persons` dataclass.
 Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 var $cachePersons; $cacheAddress : Object
@@ -1470,7 +1470,7 @@ When an entity is saved, it is updated in the cache and expires once the timeout
 #### Example 
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
