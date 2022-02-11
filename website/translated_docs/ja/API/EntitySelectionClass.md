@@ -731,6 +731,7 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 </details>
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -963,7 +964,7 @@ var $p : cs.PersonsEntity
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
@@ -1143,6 +1144,7 @@ Form.products.add(Form.product)
 
 エンティティセレクションは、常に `.length` プロパティを持っています。
 
+> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](DataClassClass.md#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
 
 #### 例題
 
@@ -1613,6 +1615,7 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 
 エンティティが見つからない場合、空のエンティティセレクションが返されます。
 
+
 *queryString* および *value* や *querySettings* パラメーターを使ってクエリをビルドする方法の詳細については、DataClass[`.query()`](DataClassClass.md#query) 関数を参照ください。
 > *queryString* 内で **order by** ステートメントを省略した場合のデフォルトでは、返されるエンティティセレクションは、[順列なし](ORDA/dsMapping.md#エンティティセレクションの順列あり順列なし)のものになります。 しかしながら、クライアント/サーバーモードにおいては、順列ありのエンティティセレクションのように振る舞う (エンティティはセレクションの終わりに追加されていく) 点に注意してください。
 
@@ -1674,6 +1677,7 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 
 <!-- REF #EntitySelectionClass.queryPlan.Syntax -->
 **.queryPlan** : Text<!-- END REF -->
+
 
 
 #### 説明
@@ -1904,6 +1908,7 @@ $slice:=ds.Employee.all().slice(-1;-2) // インデックス 9 から 8番まで
 
 <!-- REF #EntitySelectionClass.sum().Syntax -->
 **.sum**( *attributePath* : Text ) : Real<!-- END REF -->
+
 
 <!-- REF #EntitySelectionClass.sum().Params -->
 | 引数            | タイプ  |    | 説明                |
@@ -2164,7 +2169,6 @@ $employeesCollection:=$employees.toCollection($filter;0;0;2)
 #### 例題 4
 
 `relatedEntity` (リレートエンティティ) 型の属性を単純な形式で抽出した例:
-
 
 ```4d
 var $employeesCollection : Collection

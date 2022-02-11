@@ -85,15 +85,12 @@ The optimization context is based upon the following implementations:
     *   [`entitySelection.slice()`](../API/EntitySelectionClass.md#slice)
     *   [`entitySelection.drop()`](../API/EntitySelectionClass.md#drop)
 
-* Un contexte d'optimisation existant peut être passé en tant que propriété à une autre sélection d'entité de la même dataclass, ce qui permet d'éviter la phase d'apprentissage et d'accélérer l'application (voir [Utilisation de la propriété context](#using-the-context-property) ci-dessous).
+* An existing optimization context can be passed as a property to another entity selection of the same dataclass, thus bypassing the learning phase and accelerating the application (see [Using the context property](#reusing-the-context-property) below).
 
-* You can bypass the learning phase or customize the optimization context using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function. Additionally, you can get information about running contexts using the following functions:
-    * [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo)
-    * [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts)
-    * [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes)
-    * [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes)
+* You can build optimization contexts manually using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function (see [Preconfiguring contexts](#preconfiguring-contexts)).
 
 ![](assets/en/ORDA/cs-optimization-process.png)
+
 
 
 #### Exemple
@@ -107,14 +104,14 @@ Considérons le code suivant :
  End for each
 ```
 
-Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* after a learning phase.
+Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* from the second iteration of the loop.
 
 #### Reusing the context property
 
 Vous pouvez tirer un meilleur parti de l'optimisation en utilisant la propriété **context**. Cette propriété référence un contexte d'optimisation "appris" pour une sélection d'entités. It can be passed as parameter to ORDA functions that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
 > You can also create contexts using the [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function.
 
-Une même propriété de contexte d'optimisation peut être passée à un nombre illimité de sélections d'entités de la même dataclass. All ORDA functions that handle entity selections support the **context** property (for example [`dataClass.query()`](../API/DataClassClass.md#query) or [`dataClass.all()`](../API/DataClassClass.md#all)). Il est toutefois important de garder à l'esprit qu'un contexte est automatiquement mis à jour lorsque de nouveaux attributs sont utilisés dans d'autres parties du code. Si le même contexte est réutilisé dans différents codes, il risque d'être surchargé et de perdre en efficacité.
+The same optimization context property can be passed to unlimited number of entity selections on the same dataclass. All ORDA functions that handle entity selections support the **context** property (for example [`dataClass.query()`](../API/DataClassClass.md#query) or [`dataClass.all()`](../API/DataClassClass.md#all)). Il est toutefois important de garder à l'esprit qu'un contexte est automatiquement mis à jour lorsque de nouveaux attributs sont utilisés dans d'autres parties du code. Si le même contexte est réutilisé dans différents codes, il risque d'être surchargé et de perdre en efficacité.
 > A similar mechanism is implemented for entities that are loaded, so that only used attributes are requested (see the [`dataClass.get()`](../API/DataClassClass.md#get) function).
 
 **Example with `dataClass.query()`:**
@@ -126,16 +123,20 @@ Une même propriété de contexte d'optimisation peut être passée à un nombre
  $querysettings2:=New object("context";"longList")
 
  $sel1:=ds.Employee.query("lastname = S@";$querysettings)
- $data:=extractData($sel1) // In extractData method an optimization is triggered and associated to context "shortList"
+ $data:=extractData($sel1) // In extractData method an optimization is triggered   
+ // and associated to context "shortList"
 
  $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
- $data:=extractData($sel2) // In extractData method the optimization associated to context "shortList" is applied
+ $data:=extractData($sel2) // In extractData method the optimization associated   
+ // to context "shortList" is applied
 
  $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
- $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization is triggered and associated to context "longList"
+ $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization  
+ // is triggered and associated to context "longList"
 
  $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
- $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization associated to context "longList" is applied
+ $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization  
+ // associated to context "longList" is applied
 ```
 
 #### Listbox basée sur une sélection d'entités
@@ -158,6 +159,18 @@ Par exemple, le code suivant charge l'entité sélectionnée et permet de navigu
   //... faire quelque chose
  $myEntity:=$myEntity.next() //charge la prochaine entité à l'aide du même contexte
 ```
+
+#### Preconfiguring contexts
+
+An optimization context should be defined for every feature or algorithm of your application, in order to have the best performances. For example, a context can be used for queries about customers, another context for queries about products, etc.
+
+If you want to deliver final applications with the highest level of optimization, you can preconfigure your contexts and thus save learning phases by following these steps:
+
+1. Design your algorithms.
+2. Run your application and let the automatic learning mechanism fill the optimization contexts.
+3. Call the [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo) or [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts) function to collect  contexts. You can use the [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes) and [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes) functions to analyse how your algorithms use attributes.
+4. In the final step, call the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function to build contexts at application startup and [use them](#reusing-the-context-property) in your algorithms.
+
 
 ### ORDA Cache
 

@@ -124,7 +124,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 
 #### 説明
 
-`.all( )` 関数はデータストアをクエリして、 <!-- REF #DataClassClass.all().Summary -->データクラスの全エンティティをエンティティセレクションとして返します<!-- END REF -->。
+The `.all()` function <!-- REF #DataClassClass.all().Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->.
 
 エンティティはデフォルトの順番で返され、通常は作成順になっています。 ただし、エンティティ削除後に新規追加した場合には、デフォルトの順番は作成順を反映しない点に留意が必要です。
 
@@ -140,6 +140,8 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 | ------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | context | Text | エンティティセレクションに適用されている最適化コンテキストのラベル。 エンティティセレクションを扱うコードはこのコンテキストを使うことで最適化の恩恵を受けます。 この機能は [ORDA のクライアント/サーバー処理](ORDA/entities.md#クライアント/サーバーの最適化)を想定して設計されています。 |
 
+
+> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
 
 #### 例題
 
@@ -160,7 +162,7 @@ var $firstnameAtt;$employerAtt;$employeesAtt : Object
 <!-- REF #DataClassClass.clearRemoteCache().Syntax -->
 **.clearRemoteCache()**<!-- END REF -->
 
-<!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
+<!-- REF #DataStoreClass.clearRemoteCache().Params -->
 | 引数 | タイプ |  | 説明                |
 | -- | --- |::| ----------------- |
 |    |     |  | このコマンドは引数を必要としません |
@@ -182,7 +184,7 @@ var $cache : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
@@ -515,6 +517,7 @@ $ds.Persons.clearRemoteCache()
 | ------ | --- | -- | ------------------- |
 | result | 整数  | <- | データクラスに含まれる全エンティティ数 |
 <!-- END REF -->
+
 #### 説明
 
 The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
@@ -524,9 +527,9 @@ If this function is used within a transaction, attributes created during the tra
 
 ```4d
 var $ds : cs.DataStore
-var $$number : Integer
+var $number : Integer
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $number:=$ds.Persons.getCount() 
 ```
@@ -721,17 +724,17 @@ var $p : cs.PersonsEntity
 var $cachePersons; $cacheAddress : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 
 $text:="" 
 For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
+End for each
 
 $cachePersons:=$ds.Persons.getRemoteCache()
-$cacheAddress:=$ds.Address.getRemoteCache()
+$cachePersons:=$ds.Adress.getRemoteCache()
 ```
 
 #### 参照
@@ -1040,6 +1043,7 @@ ds.People.query("places.locations[].kind= :1 and places.locations[].city= :2";"h
 - 同じクエリ内に、異なるリンク条件を追加するには、別の文字を使用します。 単一のクエリ内では、最大で 26組のリンク条件を使用することができます。
 
 上記の 2件のエンティティにおいて、以下のように書いた場合:
+
 
 ```4d
 ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";"home";"paris")
@@ -1441,7 +1445,7 @@ In the *settings* parameter, pass an object with the following properties:
 
 * the data is still there
 * the next time the data is needed, it will be asked to the server
-* 4D automatically removes expired data when space is needed
+* 4D automatically removes expired data when the maximum number of entities is reached
 
 Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
@@ -1458,7 +1462,7 @@ When an entity is saved, it is updated in the cache and expires once the timeout
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```

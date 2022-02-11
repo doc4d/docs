@@ -729,6 +729,7 @@ Exemple avec l'option `dk stop dropping on first error` :
 </details>
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -961,7 +962,7 @@ var $p : cs.PersonsEntity
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
@@ -1141,6 +1142,7 @@ La propriété `.length` <!-- REF #EntitySelectionClass.length.Summary -->retour
 
 Les entity selections ont toujours une propriété `.length`.
 
+> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](DataClassClass.md#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
 
 #### Exemple
 
@@ -1611,6 +1613,7 @@ La fonction `.query()` <!-- REF #EntitySelectionClass.query().Summary -->recherc
 
 Si aucune entité correspondante n'est trouvée, une `EntitySelection` vide est retournée.
 
+
 Pour plus d'informations sur la génération d'une requête à l'aide des paramètres *queryString*, *value*, et *querySettings*, reportez-vous à la description de la fonction de dataclass [`.query()`](DataClassClass.md#query).
 > Par défaut, si vous omettez la déclaration **order by** dans *queryString*, l'entity selection retournée n'est [pas triée](ORDA/dsMapping.md#entity-selections-triees-vs-entity-selections-non-triees). A noter cependant qu'en client/server, elle se comporte comme une entity selection triée (les entités sont ajoutées à la fin de la sélection).
 
@@ -1672,6 +1675,7 @@ Pour plus d'informations, veuillez vous reporter au paragraphe **querySettings**
 
 <!-- REF #EntitySelectionClass.queryPlan.Syntax -->
 **.queryPlan** : Text<!-- END REF -->
+
 
 
 #### Description
@@ -1902,6 +1906,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //tente de retourner les entités de posi
 
 <!-- REF #EntitySelectionClass.sum().Syntax -->
 **.sum**( *attributePath* : Text ) : Real<!-- END REF -->
+
 
 <!-- REF #EntitySelectionClass.sum().Params -->
 | Paramètres    | Type |    | Description                                    |
@@ -2162,7 +2167,6 @@ Retourne :
 #### Exemple 4
 
 Exemple avec le type `relatedEntity` avec une forme simple :
-
 
 ```4d
 var $employeesCollection : Collection
