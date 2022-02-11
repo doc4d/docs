@@ -93,7 +93,7 @@ The optimization context is based upon the following implementations:
     * [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes)
     * [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes)
 
-![](assets/en/ORDA/cs-optimization.png)
+![](assets/en/ORDA/cs-optimization-process.png)
 
 
 #### 例題
@@ -161,7 +161,7 @@ The optimization context is based upon the following implementations:
 
 ### ORDAキャッシュ
 
-最適化のため、ORDA経由でサーバーにリクエストしたデータは、(4Dキャッシュとは異なる) ORDAリモートキャッシュに読み込まれます。 デフォルトでは、ORDAキャッシュは 30秒後に期限切れとなります。
+最適化のため、ORDA経由でサーバーにリクエストしたデータは、(4Dキャッシュとは異なる) ORDAリモートキャッシュに読み込まれます。 The ORDA cache is organized by dataclass, and expires after 30 seconds.
 
 The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Expired data remains in the cache until space is needed.
 

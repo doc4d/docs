@@ -47,9 +47,9 @@ Les résultats des opérateurs dépendent des **types de données** auxquels ils
 - [**Opérateurs sur les chaînes**](dt_string.md#string-operators)
 
 
-## Compound assignment operators
+## Opérateurs d'affectation composés
 
-4D provides **compound assignment operators** that combine assignment with another operation. One example is the addition assignment operator (`+=`):
+4D fournit des **opérateurs d'affectation composés** qui combinent l'affectation avec une autre opération. L'opérateur d'affectation d'addition (`+=`) en est un exemple :
 
 ```4d
 $a:=1 
@@ -57,7 +57,7 @@ $a+=2 // $a=3
 ```
 
 
-The following compound assignment operators are supported:
+Les opérateurs d'affectation composés suivants sont pris en charge :
 
 | Opérateur      | Syntaxe            | Assigne | Exemple                                                                         |
 | -------------- | ------------------ | ------- | ------------------------------------------------------------------------------- |
@@ -86,9 +86,9 @@ The following compound assignment operators are supported:
 
 Ces opérateurs s'appliquent à toutes les [expressions assignables](quick-tour.md#assignable-vs-non-assignable-expressions) (à l'exception des images en tant que propriétés d'objet ou éléments de collection).
 
-The operation "source `operator` value" is not strictly equivalent to "source := source `operator` value" because the expression designating the source (variable, field, object property, collection element) is only evaluated once. For example, in such expression as `getPointer()->+=1` the `getPointer` method is called only once.
+L'opération "source `operator` value" n'est pas strictement équivalente à "source := source `operator` valeur" car l'expression désignant la source (variable, champ, propriété d'objet, élément de collection) n'est évaluée qu'une seule fois. Par exemple, dans une expression telle que `getPointer()->+=1`, la méthode `getPointer` n'est appelée qu'une seule fois.
 
-> [Character indexing in text](dt_string.md#character-reference-symbols) and [byte indexing in blob](dt_blob.md#accessing-a-scalar-blobs-bytes) do not support these operators.
+> [L'indexation des caractères dans le texte](dt_string.md#character-reference-symbols) et [l'indexation des octets dans le blob](dt_blob.md#accessing-a-scalar-blobs-bytes) ne prennent pas en charge ces opérateurs.
 #### Exemples
 
 ```4d
