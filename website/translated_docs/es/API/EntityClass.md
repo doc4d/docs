@@ -637,7 +637,7 @@ var $contextA : Object
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
@@ -848,7 +848,7 @@ El objeto devuelto por `.lock( )` contiene las siguientes propiedades:
 |                  | task_name           | texto                 | Nombre del proceso                                                                                                                                          |
 |                  | client_version      | texto                 | Version of the client                                                                                                                                       |
 |                  |                     |                       | ***Available only for a REST session lock:***                                                                                                               |
-|                  | host                | texto                 | URL that locked the entity (e.g. "www.myserver.com/data")                                                                                                   |
+|                  | host                | texto                 | URL that locked the entity (e.g. "www.myserver.com")                                                                                                        |
 |                  | IPAddr              | texto                 | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
 |                  | userAgent           | texto                 | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 |                  |                     |                       | ***Disponible sólo en caso de error grave*** (la llave primaria ya existe, el disco está lleno...):                                                         |
