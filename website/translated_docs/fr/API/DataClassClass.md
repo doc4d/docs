@@ -124,7 +124,7 @@ Considérant les propriétés de table suivantes :
 
 #### Description
 
-La fonction `.all( )` <!-- REF #DataClassClass.all().Summary -->interroge le datastore pour trouver toutes les entités de la dataclass et les renvoie en tant qu"entity selection<!-- END REF -->.
+The `.all()` function <!-- REF #DataClassClass.all().Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->.
 
 Les entités sont renvoyées dans l'ordre par défaut, qui est initialement l'ordre dans lequel elles ont été créées. Notez cependant que, si des entités ont été supprimées et que de nouvelles entités ont été ajoutées, l'ordre par défaut ne reflète plus l'ordre de création.
 
@@ -140,6 +140,8 @@ Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant d
 | --------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | context   | Text | Nom du contexte d'optimisation appliqué à l'entity selection. Ce contexte sera utilisé par le code qui manipule l'entity selection afin de bénéficier de l'optimisation. Cette fonctionnalité est [conçue pour le traitement client/serveur ORDA](ORDA/entities.md#optimisation-client-server). |
 
+
+> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
 
 #### Exemple
 
@@ -160,7 +162,7 @@ Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant d
 <!-- REF #DataClassClass.clearRemoteCache().Syntax -->
 **.clearRemoteCache()**<!-- END REF -->
 
-<!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
+<!-- REF #DataStoreClass.clearRemoteCache().Params -->
 | Paramètres | Type |  | Description                 |
 | ---------- | ---- |::| --------------------------- |
 |            |      |  | Ne requiert aucun paramètre |
@@ -182,7 +184,7 @@ var $cache : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
@@ -515,6 +517,7 @@ Cet exemple illustre l'utilisation de la propriété *context* :
 | ---------- | ------- | -- | ----------------------------------- |
 | result     | Integer | <- | Number of entities in the dataclass |
 <!-- END REF -->
+
 #### Description
 
 The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
@@ -524,9 +527,9 @@ If this function is used within a transaction, attributes created during the tra
 
 ```4d
 var $ds : cs.DataStore
-var $$number : Integer
+var $number : Integer
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $number:=$ds.Persons.getCount() 
 ```
@@ -721,17 +724,17 @@ var $p : cs.PersonsEntity
 var $cachePersons; $cacheAddress : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 
 $text:="" 
 For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
+End for each
 
 $cachePersons:=$ds.Persons.getRemoteCache()
-$cacheAddress:=$ds.Address.getRemoteCache()
+$cachePersons:=$ds.Adress.getRemoteCache()
 ```
 
 #### Voir aussi
@@ -1040,6 +1043,7 @@ Si vous souhaitez obtenir uniquement les entités dont les arguments corresponda
 - Pour ajouter différents critères liés dans la même requête, utilisez une autre lettre. Vous pouvez créer jusqu'à 26 combinaisons de critères dans une seule requête.
 
 A l'aide des entités ci-dessus, si vous écrivez :
+
 
 ```4d
 ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";"home";"paris")
@@ -1441,7 +1445,7 @@ In the *settings* parameter, pass an object with the following properties:
 
 * the data is still there
 * the next time the data is needed, it will be asked to the server
-* 4D automatically removes expired data when space is needed
+* 4D automatically removes expired data when the maximum number of entities is reached
 
 Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
@@ -1458,7 +1462,7 @@ When an entity is saved, it is updated in the cache and expires once the timeout
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```
