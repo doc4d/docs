@@ -85,15 +85,12 @@ The optimization context is based upon the following implementations:
     *   [`entitySelection.slice()`](../API/EntitySelectionClass.md#slice)
     *   [`entitySelection.drop()`](../API/EntitySelectionClass.md#drop)
 
-* 既存の最適化コンテキストは、同じデータクラスの他のエンティティセレクションであればプロパティとして渡すことができるので、学習フェーズを省略して、アプリケーションをより速く実行することができます (以下の [contextプロパティの使用](#contextプロパティの使用) を参照してください)。
+* An existing optimization context can be passed as a property to another entity selection of the same dataclass, thus bypassing the learning phase and accelerating the application (see [Using the context property](#reusing-the-context-property) below).
 
-* You can bypass the learning phase or customize the optimization context using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function. Additionally, you can get information about running contexts using the following functions:
-    * [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo)
-    * [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts)
-    * [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes)
-    * [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes)
+* You can build optimization contexts manually using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function (see [Preconfiguring contexts](#preconfiguring-contexts)).
 
 ![](assets/en/ORDA/cs-optimization-process.png)
+
 
 
 #### 例題
@@ -107,14 +104,14 @@ The optimization context is based upon the following implementations:
  End for each
 ```
 
-最適化機構のおかげで、このリクエストは学習フェーズ以降は、*$sel* の中で実際に使用されている属性 (firstname, lastname, employer, employer.name) のデータのみを取得するようになります。
+Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* from the second iteration of the loop.
 
 #### contextプロパティの再利用
 
 **context** プロパティを使用することで、最適化の利点をさらに増幅させることができます。 このプロパティは、あるエンティティセレクション用に "学習した" 最適化コンテキストを参照します。 これを新しいエンティティセレクションを返す ORDA関数に引数として渡すことで、その返されたエンティティセレクションでは学習フェーズを最初から省略して使用される属性をサーバーにリクエストできるようになります。
 > You can also create contexts using the [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function.
 
-同じ最適化 context プロパティは、同じデータクラスのエンティティセレクションに対してであればどのエンティティセレクションにも渡すことができます。 エンティティセレクションを扱うすべての ORDA関数は、**context** プロパティをサポートします (たとえば [`dataClass.query( )`](../API/DataClassClass.md#query) あるいは [`dataClass.all( )`](../API/DataClassClass.md#all) など)。 ただし、 コードの他の部分で新しい属性が使用された際にはコンテキストは自動的に更新されるという点に注意してください。 同じコンテキストを異なるコードで再利用しすぎると、コンテキストを読み込み過ぎて、結果として効率が落ちる可能性があります。
+The same optimization context property can be passed to unlimited number of entity selections on the same dataclass. エンティティセレクションを扱うすべての ORDA関数は、**context** プロパティをサポートします (たとえば [`dataClass.query( )`](../API/DataClassClass.md#query) あるいは [`dataClass.all( )`](../API/DataClassClass.md#all) など)。 ただし、 コードの他の部分で新しい属性が使用された際にはコンテキストは自動的に更新されるという点に注意してください。 同じコンテキストを異なるコードで再利用しすぎると、コンテキストを読み込み過ぎて、結果として効率が落ちる可能性があります。
 > 同様の機構は読み込まれたエンティティにも実装されており、それによって使用した属性のみがリクエストされるようになります ([`dataClass.get( )`](../API/DataClassClass.md#get) 関数参照)。
 
 **`dataClass.query( )` を使用した例:**
@@ -126,16 +123,20 @@ The optimization context is based upon the following implementations:
  $querysettings2:=New object("context";"longList")
 
  $sel1:=ds.Employee.query("lastname = S@";$querysettings)
- $data:=extractData($sel1) // extractData メソッドにおいて、最適化はトリガーされており、"shortList" のコンテキストが割り当てられています。
+ $data:=extractData($sel1) // In extractData method an optimization is triggered   
+ // and associated to context "shortList"
 
  $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
- $data:=extractData($sel2) // extractData メソッドにおいて、"shortList" のコンテキストに割り当てられている最適化が適用されます。
+ $data:=extractData($sel2) // In extractData method the optimization associated   
+ // to context "shortList" is applied
 
  $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
- $data:=extractDetailedData($sel3) // extractDetailedData メソッドにおいて、最適化はトリガーされており、"longList" のコンテキストが割り当てられています。
+ $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization  
+ // is triggered and associated to context "longList"
 
  $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
- $data:=extractDetailedData($sel4) // extractDetailedData メソッドにおいて、"longList" のコンテキストに割り当てられている最適化が適用されます。
+ $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization  
+ // associated to context "longList" is applied
 ```
 
 #### エンティティセレクション型リストボックス
@@ -159,9 +160,21 @@ The optimization context is based upon the following implementations:
  $myEntity:=$myEntity.next() // 次のエンティティも同じコンテキストを使用してロードされます
 ```
 
+#### Preconfiguring contexts
+
+An optimization context should be defined for every feature or algorithm of your application, in order to have the best performances. For example, a context can be used for queries about customers, another context for queries about products, etc.
+
+If you want to deliver final applications with the highest level of optimization, you can preconfigure your contexts and thus save learning phases by following these steps:
+
+1. Design your algorithms.
+2. Run your application and let the automatic learning mechanism fill the optimization contexts.
+3. Call the [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo) or [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts) function to collect  contexts. You can use the [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes) and [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes) functions to analyse how your algorithms use attributes.
+4. In the final step, call the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function to build contexts at application startup and [use them](#reusing-the-context-property) in your algorithms.
+
+
 ### ORDAキャッシュ
 
-最適化のため、ORDA経由でサーバーにリクエストしたデータは、(4Dキャッシュとは異なる) ORDAリモートキャッシュに読み込まれます。 The ORDA cache is organized by dataclass, and expires after 30 seconds.
+For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). The ORDA cache is organized by dataclass, and expires after 30 seconds.
 
 The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Expired data remains in the cache until space is needed.
 
