@@ -125,7 +125,7 @@ Considering the following table properties:
 
 #### Description
 
-The `.all( )` function <!-- REF #DataClassClass.all().Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->. 
+The `.all()` function <!-- REF #DataClassClass.all().Summary -->queries the datastore to find all the entities related to the dataclass and returns them as an entity selection<!-- END REF -->. 
 
 The entities are returned in the default order, which is initially the order in which they were created. Note however that, if entities have been deleted and new ones added, the default order does not reflect the creation order anymore.
 
@@ -141,6 +141,8 @@ In the optional *settings* parameter, you can pass an object containing addition
 |---|---|---|
 |context|Text|Label for the optimization context applied to the entity selection. This context will be used by the code that handles the entity selection so that it can benefit from the optimization. This feature is [designed for ORDA client/server processing](ORDA/entities.md#client-server-optimization).|
 
+
+> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](#getcount) function which is more optimized than the `ds.myClass.all().length` expression. 
 
 #### Example 
 
@@ -518,6 +520,7 @@ This example illustrates the use of the *context* property:
 |---|---|---|---|
 |result|Integer|<-|Number of entities in the dataclass|
 <!-- END REF -->
+
 #### Description
 
 The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
@@ -527,7 +530,7 @@ If this function is used within a transaction, attributes created during the tra
 
 ```4d
 var $ds : cs.DataStore
-var $$number : Integer
+var $number : Integer
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
@@ -1049,6 +1052,7 @@ If you want to only get entities where matching arguments are in the same collec
 - To add different linked criteria in the same query, use another letter. You can create up to 26 combinations of criteria in a single query. 
 
 With the above entities, if you write:
+
 
 ```4d
 ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";"home";"paris")
