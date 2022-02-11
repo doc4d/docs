@@ -984,7 +984,7 @@ For each ($p; $persons)
 End for each 
 
 $info:=$persons.getRemoteContextAttributes()
-//$info = firstname,address,address.city
+//$info = "firstname,address,address.city"
 ```
 
 #### See also 

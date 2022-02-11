@@ -706,7 +706,7 @@ End for each
 
 $info:=$address.getRemoteContextAttributes()
 
-//$info = persons,persons.lastname,persons.firstname
+//$info = "persons,persons.lastname,persons.firstname"
 ```
 
 #### See also 
