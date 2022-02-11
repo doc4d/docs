@@ -1451,7 +1451,7 @@ In the *settings* parameter, pass an object with the following properties:
 
 * the data is still there
 * the next time the data is needed, it will be asked to the server
-* 4D automatically removes expired data when space is needed
+* 4D automatically removes expired data when the maximum number of entities is reached
 
 Setting a `timeout` property sets a new timeout for the entities already present in the cache. It is useful when working with data that does not change very frequently, and thus when new requests to the server are not necessary.
 
