@@ -742,6 +742,7 @@ Example with the `dk stop dropping on first error` option:
 </details>
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -1155,6 +1156,7 @@ The `.length` property <!-- REF #EntitySelectionClass.length.Summary -->returns 
 
 Entity selections always have a `.length` property.
 
+> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](DataClassClass.md#getcount) function which is more optimized than the `ds.myClass.all().length` expression. 
 
 #### Example 
 
@@ -1630,6 +1632,7 @@ The `.query()` function <!-- REF #EntitySelectionClass.query().Summary -->search
 
 If no matching entities are found, an empty `EntitySelection` is returned.
 
+
 For detailed information on how to build a query using *queryString*, *value*, and *querySettings* parameters, please refer to the DataClass [`.query()`](DataClassClass.md#query) function description.
 
 >By default if you omit the **order by** statement in the *queryString*, the returned entity selection is [not ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). Note however that, in Client/Server mode, it behaves like an ordered entity selection (entities are added at the end of the selection). 
@@ -1692,6 +1695,7 @@ For more information, refer to the **querySettings parameter** paragraph in the 
 
 <!-- REF #EntitySelectionClass.queryPlan.Syntax -->
 **.queryPlan** : Text<!-- END REF -->
+
 
 
 #### Description
@@ -1925,6 +1929,7 @@ $slice:=ds.Employee.all().slice(-1;-2) //tries to return entities from index 9 t
 
 <!-- REF #EntitySelectionClass.sum().Syntax -->
 **.sum**( *attributePath* : Text ) : Real<!-- END REF -->
+
 
 <!-- REF #EntitySelectionClass.sum().Params -->
 |Parameter|Type||Description|
@@ -2185,6 +2190,7 @@ Returns:
 #### Example 4  
 
 Example with `relatedEntity` type with simple form:
+
 
 
 ```4d
