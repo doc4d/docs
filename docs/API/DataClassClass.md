@@ -183,7 +183,7 @@ var $cache : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 $text:="" 
@@ -529,7 +529,7 @@ If this function is used within a transaction, attributes created during the tra
 var $ds : cs.DataStore
 var $$number : Integer
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $number:=$ds.Persons.getCount() 
 ```
@@ -724,7 +724,7 @@ var $p : cs.PersonsEntity
 var $cachePersons; $cacheAddress : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $persons:=$ds.Persons.all()
 
@@ -1468,7 +1468,7 @@ When an entity is saved, it is updated in the cache and expires once the timeout
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $ds.Buildings.setRemoteCacheSettings(New object("timeout"; 60; "maxEntries"; 350))
 ```

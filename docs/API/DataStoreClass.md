@@ -424,7 +424,7 @@ var $contextA; $contextB : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
@@ -567,7 +567,7 @@ var $contextA; $info : Object
 var $text : Text
 var $info : Object
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
@@ -876,7 +876,7 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
@@ -904,7 +904,7 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
@@ -933,7 +933,7 @@ For each `Address` entity, 20 Persons entities will be returned, and they will o
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20,\
 persons.lastname, persons.firstname"; "main"; 30)
@@ -953,7 +953,7 @@ ALERT("TEST")
 Case of 
     : (Form event code=On Load)
 
-        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
        // Set the attributes of the page context
         Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\
