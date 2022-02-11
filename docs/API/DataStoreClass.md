@@ -305,7 +305,7 @@ See example for the [`.startTransaction()`](#starttransaction) function.
 
 The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
  
-This function is mainly used for debugging purposes. One thing to keep in mind is that the debugger sends requests to the server and queries all the dataclass attributes to display them. This can pollute your contexts with unnecessary data. 
+This function is mainly used in the context of debugging. One thing to keep in mind is that when you open the debugger, it sends requests to the server and queries all the dataclass attributes to display them. This can overload your contexts with unnecessary data. 
 
 In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
 
@@ -404,6 +404,8 @@ You want to know the number of encrypted tables in the current data file:
 |Result|Object|<-|Collection of optimization context objects|
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
 #### Description
 
 The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
@@ -419,7 +421,7 @@ The following code sets up two contexts and retrieves them using `.getAllRemoteC
 ```4d
 var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
-var $adresses : cs.AddressSelection
+var $addresses : cs.AddressSelection
 var $p : cs.PersonsEntity
 var $a : cs.AddressEntity
 var $contextA; $contextB : Object
@@ -439,13 +441,13 @@ End for each
 
 // Set context B
 $contextB:=New object("context"; "contextB")
-$adresses:=$ds.Address.all($contextB)
+$addresses:=$ds.Address.all($contextB)
 $text:="" 
-For each ($a; $adresses)
+For each ($a; $addresses)
     $text:=$a.zipCode
 End for each 
 
-// Get all remote contexts (in this case, context A and context B)
+// Get all remote contexts (in this case, contextA and contextB)
 $info:=$ds.getAllRemoteContexts()
 //$info = [{name:"contextB"; dataclass:"Address"; main:"zipCode"},
 {name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]
@@ -546,6 +548,8 @@ On a remote datastore:
 |Result|Object|<-|Description of the optimization context|
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
 #### Description
 
 The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
@@ -559,7 +563,7 @@ The returned object has the following properties:
 |Property|Type|Description|
 |---|---|---|
 |name|Text|Name of the context|
-|main|Text|Attributes associated to the context (attribute names are separated by a comma) |
+|main|Text|Attribute(s) associated to the context (attribute names are separated by a comma) |
 |dataclass|Text|Dataclass name|
 |currentItem (optional)|Text|The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem| 
 
@@ -567,7 +571,7 @@ Since contexts behave as filters for attributes, if *main* is returned empty, it
 
 #### Example 
 
-See the examples from the [.setRemoteContextInfo()](#example-1-3) section.
+See the example from the [.setRemoteContextInfo()](#example-1-3) section.
 
 #### See also
 
@@ -813,7 +817,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 </details>
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; *pageLength* : Integer }} )<!-- END REF -->
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 |Parameter|Type||Description|
@@ -824,8 +828,12 @@ You create a *protectDataFile* project method to call before deployments for exa
 |attributes|Text|->|Attribute list separated by a comma|
 |attributesColl|Collection|->|Collection of attribute names (text)|
 |contextType|Text|->|If provided, value must be "main" or "currentItem"|
-|pageLength|Integer|->|Page length of the entity selection linked to the context. (Default is 80)|
+|pageLength|Integer|->|Page length of the entity selection linked to the context (default is 80)|
 <!-- END REF -->
+
+
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
 
 #### Description
 
@@ -839,9 +847,9 @@ When you pass a context to the ORDA class functions, the REST request optimizati
 
 In *contextName*, pass the name of the optimization context to link to the dataclass attributes.
 
-To designate the dataclass that will receive the context, you can pass a *dataClassName* or a *dataclassObject*. 
+To designate the dataclass that will receive the context, you can pass a *dataClassName* or a *dataClassObject*. 
 
-To designate the attributes to link to the context, pass either a list of attributes separated by a comma in *attributes* (Text), or a collection of attribute names in *attributesColl* (Collection of Text)
+To designate the attributes to link to the context, pass either a list of attributes separated by a comma in *attributes* (Text), or a collection of attribute names in *attributesColl* (collection of text).
 
 If *attributes* is an empty Text, or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
 
@@ -852,6 +860,7 @@ You can pass a *contextType* to  specify if the context is a standard context or
 In *pageLength*, specify the number of dataclass entities to request from the server. 
 
 You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
+
 #### Example 1
 
 ```4d
@@ -866,10 +875,10 @@ var $text : Text
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 // Set context info
+$contextA:=New object("context"; "contextA")
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
 // Send requests to the server using a loop
-$contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
 For each ($p; $persons)
@@ -878,10 +887,12 @@ End for each
 
 // Check contents of the context
 $info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:"contextA",dataclass:"Persons",main:"firstname, lastname"} 
+// $info = {name:"contextA";dataclass:"Persons";main:"firstname, lastname"} 
 ```
 
 > This example serves as a demonstration, it is not meant for real implementation.
+
+
 #### Example 2
 
 The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. The returned entities only contain the `zipCode` attribute.
@@ -896,6 +907,8 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 $ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20,\
 persons.lastname, persons.firstname"; "main"; 30)
 ```
+
+
 #### Example 3 - Listbox
 
 ```4d

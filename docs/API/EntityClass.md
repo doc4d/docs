@@ -678,6 +678,9 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 |result|Text|<-|Context attributes linked to the entity, separated by a comma|
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
+
 #### Description
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity <!-- END REF -->.

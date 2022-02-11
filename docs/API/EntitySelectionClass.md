@@ -743,6 +743,7 @@ Example with the `dk stop dropping on first error` option:
 
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -958,6 +959,9 @@ The following generic code duplicates all entities of the entity selection:
 |---|---|---|---|
 |result|Text|<-|Context attributes linked to the entity selection, separated by a comma|
 <!-- END REF -->
+
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
 
 #### Description
 
