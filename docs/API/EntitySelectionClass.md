@@ -968,7 +968,7 @@ If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-o
 #### Example 
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 
