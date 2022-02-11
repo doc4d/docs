@@ -925,9 +925,6 @@ $ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode";\n
 #### Example 4 - Listbox
 
 ```4d
-ALERT("TEST")
-```
-```4d
 // When the form loads
 Case of 
     : (Form event code=On Load)
