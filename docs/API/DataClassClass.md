@@ -161,7 +161,7 @@ In the optional *settings* parameter, you can pass an object containing addition
 <!-- REF #DataClassClass.clearRemoteCache().Syntax -->
 **.clearRemoteCache()**<!-- END REF -->
 
-<!-- REF #DataStoreClass.clearAllRemoteContexts().Params -->
+<!-- REF #DataStoreClass.clearRemoteCache().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
 ||||Does not require any parameters|
@@ -731,10 +731,10 @@ $persons:=$ds.Persons.all()
 $text:="" 
 For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
+End for each
 
 $cachePersons:=$ds.Persons.getRemoteCache()
-$cacheAddress:=$ds.Address.getRemoteCache()
+$cachePersons:=$ds.Adress.getRemoteCache()
 ```
 
 #### See also 

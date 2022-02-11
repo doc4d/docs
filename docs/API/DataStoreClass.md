@@ -441,7 +441,8 @@ For each ($a; $adresses)
 End for each 
 
 $info:=$ds.getAllRemoteContexts()
-//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
+//$info = [{name:contextB,dataclass:Address,main:zipCode},\
+{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
 ```
 
 #### See also
@@ -814,6 +815,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 <!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Desc -->
+## .setRemoteContextInfo()
 
 <details><summary>History</summary>
 |Version|Changes|
@@ -821,12 +823,8 @@ You create a *protectDataFile* project method to call before deployments for exa
 |v19 R5|Added|
 </details>
 
-## .setRemoteContextInfo()
-
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )
-
-<!-- END REF -->
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 |Parameter|Type||Description|
@@ -837,7 +835,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 |attributes|Text|->|Attribute list separated by a comma|
 |attributesColl|Collection|->|Collection of attribute names (text)|
 |contextType|Text|->|If provided, value must be "main" or "currentItem"|
-|pageLength|Integer|->|Page length of the entity selection associated to the context|
+|pageLength|Integer|->|Page length of the entity selection linked to the context. (Default is 80)|
 <!-- END REF -->
 
 #### Description
@@ -937,14 +935,19 @@ var $ds : cs.DataStore
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
-$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname, persons.firstname"; "main"; 30)
+$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20,\
+persons.lastname, persons.firstname"; "main"; 30)
 
 // Alternative syntax
-//$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode"; "persons:20"; "persons.lastname"; "persons.firstname"); "main"; 30)
+$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode";\n
+"persons:20";"persons.lastname"; "persons.firstname"); "main"; 30)
 ```
 
 #### Example 4 - Listbox
 
+```4d
+ALERT("TEST")
+```
 ```4d
 // When the form loads
 Case of 
@@ -953,10 +956,12 @@ Case of
         Form.ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
 
        // Set the attributes of the page context
-        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
+        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\
+        children"; "currentItem")
 
         Form.settings:=New object("context"; "LB")
-        Form.persons:=Form.ds.Persons.all(Form.settings) // Form.persons is displayed in a list box
+        Form.persons:=Form.ds.Persons.all(Form.settings) 
+        // Form.persons is displayed in a list box
 End case 
 
 // When you get the attributes in the context of the current item:
