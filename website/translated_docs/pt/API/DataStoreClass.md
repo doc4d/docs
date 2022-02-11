@@ -412,6 +412,10 @@ Each object in the returned collection has the properties listed in the [`.getCo
 
 #### Exemplo
 
+Unlike other code samples, optimization context examples only aim at demonstrating how context optimization works. For optimal use, you'll need to adapt them to your environment.
+
+The following code sets up two contexts and retrieves them using `.getAllRemoteContexts()`:
+
 ```4d
 var $ds : cs.DataStore
 var $persons : cs.PersonsSelection
@@ -422,8 +426,10 @@ var $contextA; $contextB : Object
 var $info : Collection
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+// Open remote datastore
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
+// Set context A
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
@@ -431,6 +437,7 @@ For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
 
+// Set context B
 $contextB:=New object("context"; "contextB")
 $adresses:=$ds.Address.all($contextB)
 $text:="" 
@@ -438,8 +445,10 @@ For each ($a; $adresses)
     $text:=$a.zipCode
 End for each 
 
+// Get all remote contexts (in this case, context A and context B)
 $info:=$ds.getAllRemoteContexts()
-//$info = [{name:contextB,dataclass:Address,main:zipCode},{name:contextA;dataclass:Persons;main:firstname;address:address.city}]
+//$info = [{name:contextB; dataclass:Address; main:zipCode},\
+{name:contextA;dataclass:Persons;main:firstname,address.city}]
 ```
 
 #### See also
@@ -556,26 +565,7 @@ Since contexts behave as filters for attributes, if *main* is returned empty, it
 
 #### Exemplo
 
-```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA; $info : Object
-var $text : Text
-var $info : Object
-
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-
-$persons:=$ds.Persons.all($contextA) // Link of the context
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info : {name:contextA;dataclass:Persons;main:firstname;address:address.city}
-```
+See the examples from the [.setRemoteContextInfo()](#setremotecontextinfo) section.
 
 #### See also
 
@@ -809,6 +799,7 @@ You create a *protectDataFile* project method to call before deployments for exa
 <!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Desc -->
+## .setRemoteContextInfo()
 
 <details><summary>Histórico</summary>
 | Versão | Mudanças   |
@@ -816,23 +807,19 @@ You create a *protectDataFile* project method to call before deployments for exa
 | v19 R5 | Adicionado |
 </details>
 
-## .setRemoteContextInfo()
-
 <!-- REF #DataStoreClass.setRemoteContextInfo().Syntax -->
-**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )
-
-<!-- END REF -->
+**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; contextType : Text { ; pageLength : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; contextType : Text { ; pageLength : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; contextType : Text { ; pageLength : Integer }} )<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
-| Parameter       | Type         |    | Description                                                   |
-| --------------- | ------------ | -- | ------------------------------------------------------------- |
-| contextName     | Texto        | -> | Name of the context                                           |
-| dataClassName   | Texto        | -> | Name of the dataclass                                         |
-| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                     |
-| attributes      | Texto        | -> | Attribute list separated by a comma                           |
-| attributesColl  | Coleção      | -> | Collection of attribute names (text)                          |
-| contextType     | Texto        | -> | If provided, value must be "main" or "currentItem"            |
-| pageLength      | Integer      | -> | Page length of the entity selection associated to the context |
+| Parameter       | Type         |    | Description                                                                |
+| --------------- | ------------ | -- | -------------------------------------------------------------------------- |
+| contextName     | Texto        | -> | Name of the context                                                        |
+| dataClassName   | Texto        | -> | Name of the dataclass                                                      |
+| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                                  |
+| attributes      | Texto        | -> | Attribute list separated by a comma                                        |
+| attributesColl  | Coleção      | -> | Collection of attribute names (text)                                       |
+| contextType     | Texto        | -> | If provided, value must be "main" or "currentItem"                         |
+| pageLength      | Integer      | -> | Page length of the entity selection linked to the context. (Default is 80) |
 <!-- END REF -->
 
 #### Description
@@ -861,9 +848,16 @@ In *pageLength*, specify the number of dataclass entities to request from the se
 
 You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
 
+#### Exemplos
 
-
+Unlike other code samples, optimization context examples only aim at demonstrating how context optimization works. For optimal use, you'll need to adapt them to your environment.
 #### Exemplo 1
+
+The following code:
+1. establishes a connexion to a remote datastore
+2. sets the contents of the optimization context
+3. sends requests to the server using a loop
+4. checks the contents of the context using `.getRemoteContextInfo()`
 
 ```4d
 var $ds : cs.DataStore
@@ -873,85 +867,75 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+// Open remote datastore
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
+// Set context info
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
-$info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname,firstname}
-
+// Send requests to the server using a loop
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
 For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
+    $text:=$p.firstname 
 End for each 
 
+// Check contents of the context
 $info:=$ds.getRemoteContextInfo("contextA")
-// $info = {name:contextA,dataclass:Persons,main:lastname;firstname;address;address.city} 
-// address.city is added to the context because it is used in the loop.
+// $info = {name:contextA,dataclass:Persons,main:lastname;} 
 ```
 #### Exemplo 2
 
+This code modifies the contents of the optimization context from Example 1.
+
 ```4d
-var $ds : cs.DataStore
-var $persons : cs.PersonsSelection
-var $p : cs.PersonsEntity
-var $contextA : Object
-var $info : Object
-var $text : Text
+// Code from Example 1
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
-
-$contextA:=New object("context"; "contextA")
-$persons:=$ds.Persons.all($contextA)
-$text:="" 
-For each ($p; $persons)
-    $text:=$p.firstname+" lives in "+$p.address.city+" / " 
-End for each 
-
-$info:=$ds.getRemoteContextInfo("contextA")
-//$info = {name:contextA,dataclass:Persons,main:firstname,address,address.city}
-
+// Set different attributes for the context
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "gender, lastname")
 
 $info:=$ds.getRemoteContextInfo("contextA")
-//$info ={name:contextA,dataclass:Persons,main:lastname,gender}
-
-//The attributes have been replaced
+//$info ={name:contextA; dataclass:Persons; main:"lastname,gender"}
 ```
-
 #### Exemplo 3
 
-With the following piece of code, the requests will ask for pages of 30 entities of the `Address` dataclass. The returned entities will only contain the `zipCode` attribute.
+The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. The returned entities only contain the `zipCode` attribute.
 
-For each `Address` entity, 20 Persons entities will be returned, and they will only contain the `lastname` and `firstname` attributes:
+For each `Address` entity, 20 Persons entities are returned, and they only contain the `lastname` and `firstname` attributes:
 
 ```4d
 var $ds : cs.DataStore
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20, persons.lastname, persons.firstname"; "main"; 30)
+$ds.setRemoteContextInfo("contextA"; $ds.Address; "zipCode, persons:20,\
+persons.lastname, persons.firstname"; "main"; 30)
 
 // Alternative syntax
-//$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode"; "persons:20"; "persons.lastname"; "persons.firstname"); "main"; 30)
+$ds.setRemoteContextInfo("contextA"; "Address"; New collection("zipCode";\n
+"persons:20";"persons.lastname"; "persons.firstname"); "main"; 30)
 ```
 
 #### Example 4 - Listbox
 
 ```4d
+ALERT("TEST")
+```
+```4d
 // When the form loads
 Case of 
     : (Form event code=On Load)
 
-        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+        Form.ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
        // Set the attributes of the page context
-        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender, children"; "currentItem")
+        Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\
+        children"; "currentItem")
 
         Form.settings:=New object("context"; "LB")
-        Form.persons:=Form.ds.Persons.all(Form.settings) // Form.persons is displayed in a list box
+        Form.persons:=Form.ds.Persons.all(Form.settings) 
+        // Form.persons is displayed in a list box
 End case 
 
 // When you get the attributes in the context of the current item:
