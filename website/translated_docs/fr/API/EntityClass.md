@@ -688,7 +688,7 @@ var $contextA : Object
 var $info : Text
 var $text : Text
 
-$ds:=Open datastore(New object("hostname"; "www.myserver.com/data"); "myDS")
+$ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
@@ -992,7 +992,7 @@ L'objet retourné par `.lock( )` contient les propriétés suivantes :
 |                  | task_name           | Texte               | Nom du process                                                                                                                                                             |
 |                  | client_version      | Texte               | Version du client                                                                                                                                                          |
 |                  |                     |                     | ***Disponible uniquement pour un verrouillage par session REST :***                                                                                                        |
-|                  | host                | Texte               | URL that locked the entity (e.g. "www.myserver.com/data")                                                                                                                  |
+|                  | host                | Texte               | URL that locked the entity (e.g. "www.myserver.com")                                                                                                                       |
 |                  | IPAddr              | Texte               | Adresse IP d'origine du verrouillage (ex. 127.0.0.1")                                                                                                                      |
 |                  | userAgent           | Texte               | userAgent de l'origine du verouillage (ex : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 |                  |                     |                     | ***Disponible uniquement en cas d'erreur critique*** (clé primaire dupliquée, disque plein...) :                                                                           |
