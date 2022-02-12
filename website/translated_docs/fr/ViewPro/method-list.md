@@ -867,36 +867,36 @@ Le paramètre optionnel *paramObj* vous permet de définir plusieurs propriété
 * L'export dans ce format est exécuté de manière asynchrone, utilisez la propriété *formula* de *paramObj* pour le code à exécuter après l'export.
 
 
-**Notes about PDF format**:
+**Notes sur le format PDF** :
 
-* When exporting a 4D View Pro document in PDF, the fonts used in the document are automatically embedded in the PDF file. Only OpenType fonts (.OTF or .TTF files) having a Unicode map can be embedded. If no valid font file is found for a font, a default font is used instead.
+* Lors de l'export d'un document 4D View Pro en un fichier au format PDF, les polices utilisées dans le document sont automatiquement intégrées dans le fichier PDF. Seules les polices OpenType (fichiers .OTF ou .TTF) ayant une table Unicode peuvent être intégrées. Si aucun fichier de polices valide n'est trouvé pour une police, une police par défaut est utilisée à sa place.
 * L'export dans ce format est exécuté de manière asynchrone, utilisez la propriété *formula* de *paramObj* pour le code à exécuter après l'export.
 
-**Notes about CSV format**:
+**Notes sur le format CSV** :
 
-* When exporting a 4D View Pro document to CSV, some settings may be lost, as only the text and values are saved.
-* All the values are saved as double-quoted strings. For more information on delimiter-separated values, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values).
+* Lors de l'export d'un document 4D View Pro en un fichier au format PDF, certains paramètres peuvent être perdus, car seuls le texte et les valeurs sont sauvegardés.
+* Toutes les valeurs sont enregistrées sous la forme de chaînes entre guillemets. Pour plus d'informations sur les valeurs séparées par des délimiteurs, consultez [cet article de Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
-Once the export operation is finished, `VP EXPORT DOCUMENT` automatically triggers the execution of the method set in the *formula* property of the *paramObj*, if used.
+Une fois que l'export est terminé, `VP EXPORT DOCUMENT` exécute automatiquement la méthode définie dans la propriété *formula* de *paramObj*, le cas échéant.
 
-#### Passing a callback method (formula)
+#### Passer une méthode callback (formula)
 
-When including the optional *paramObj* parameter, the `VP EXPORT DOCUMENT` command allows you to use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command to call a 4D method which will be executed once the export has completed. The callback method will receive the following values in local variables:
+Lorsque vous passez le paramètre optionnel *paramObj*, la commande `VP EXPORT DOCUMENT` vous permet d'utiliser la commande [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) pour appeler une méthode 4D qui sera exécutée une fois que l'export sera terminé. La méthode callback recevra les valeurs suivantes dans des variables locales :
 
-| Variable |               | Type    | Description                                            |
-| -------- | ------------- | ------- | ------------------------------------------------------ |
-| $1       |               | Texte   | The name of the 4D View Pro object                     |
-| $2       |               | Texte   | The filepath of the exported 4D View Pro object        |
-| $3       |               | object  | A reference to the command's *paramObj*                |
-| $4       |               | object  | An object returned by the method with a status message |
-|          | .success      | boolean | True if export with success, False otherwise.          |
-|          | .errorCode    | entier  | Error code. May be returned by 4D or JavaScript.       |
-|          | .errorMessage | Texte   | Error message. May be returned by 4D or JavaScript.    |
+| Variable |               | Type    | Description                                                |
+| -------- | ------------- | ------- | ---------------------------------------------------------- |
+| $1       |               | Texte   | Nom de l'objet 4D View Pro                                 |
+| $2       |               | Texte   | Chemin d'accès de l'objet 4D View Pro exporté              |
+| $3       |               | object  | Référence au *paramObj* de la commande                     |
+| $4       |               | object  | Objet retourné par la méthode avec un message de statut    |
+|          | .success      | boolean | Vrai si l'export est réussi, Faux sinon.                   |
+|          | .errorCode    | entier  | Code d'erreur. Peut être retourné par 4D ou JavaScript.    |
+|          | .errorMessage | Texte   | Message d'erreur. Peut être retourné par 4D ou JavaScript. |
 
 
 #### Exemple 1
 
-You want to export the contents of the "VPArea" area to a 4D View Pro document on disk:
+Vous souhaitez exporter le contenu de la zone "VPArea" vers un document 4D View Pro sur le disque :
 
 ```4d
 var $docPath: Text
@@ -909,7 +909,7 @@ VP EXPORT DOCUMENT("VPArea";$docPath)
 
 #### Exemple 2
 
-You want to export the current sheet in PDF:
+Vous souhaitez exporter la feuille courante au format PDF :
 
 ```4d
 var $params: Object
@@ -923,7 +923,7 @@ VP EXPORT DOCUMENT("VPArea";"report.pdf";$params)
 
 #### Exemple 3
 
-You want to export a 4D View Pro document in ".xlsx" format and call a method that will launch Microsoft Excel with the document open once the export has completed:
+Vous souhaitez exporter un document 4D View Pro au format ".xlsx" et appeler une méthode qui lance Microsoft Excel avec le document ouvert une fois que l'export est terminé :
 
 ```4d
  $params:=New object
@@ -934,7 +934,7 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
  VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\convertedfile";$params)
 ```
 
-***AfterExport*** method:
+Méthode ***AfterExport*** :
 
 ```4d
  C_TEXT($1;$2)
@@ -953,7 +953,7 @@ You want to export a 4D View Pro document in ".xlsx" format and call a method th
 
 #### Exemple 4
 
-You want to export the current sheet to a `.txt` file with pipe-separated values:
+Vous souhaitez exporter la feuille courante dans un fichier `.txt` avec des valeurs séparées par des "|" :
 
 ![example-export-csv](assets/en/ViewPro/vp-export-document-csv.png)
 
@@ -983,29 +983,29 @@ Here's the result:
 | Paramètres | Type   |    | Description                             |
 | ---------- | ------ | -- | --------------------------------------- |
 | vpAreaName | Text   | -> | Nom d'objet formulaire zone 4D View Pro |
-| option     | Object | -> | Export option                           |
+| option     | Object | -> | Option d'export                         |
 | Résultat   | Object | <- | Objet 4D View Pro                       |
 <!-- END REF -->  
 
 #### Description
 
-The `VP Export to object` command <!-- REF #_method_.VP Export to object.Summary --> returns the 4D View Pro object attached to the 4D View Pro area *vpAreaName*<!-- END REF -->. You can use this command for example to store the 4D View Pro area in a 4D database object field.
+La commande `VP Export to object` <!-- REF #_method_.VP Export to object.Summary --> retourne l'objet 4D View Pro associé à la zone 4D View Pro *vpAreaName*<!-- END REF -->. Vous pouvez utiliser cette commande par exemple pour stocker la zone 4D View Pro dans un champ objet de la base de données 4D.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-In the *option* parameter, you can pass the following export option, if required:
+Dans le paramètre *option*, vous pouvez passer l'option d'export suivante, si nécessaire :
 
 
-| Propriété         | Type    | Description                                                                                                                                                                                                                                                               |
-| ----------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| includeFormatInfo | boolean | True to include formatting information, false otherwise (default is **true**). Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. D'un autre côté, mettre cette propriété à **faux** permet de réduire la durée de l'export. |
+| Propriété         | Type    | Description                                                                                                                                                                                                                                                                   |
+| ----------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| includeFormatInfo | boolean | Vrai pour inclure les informations de formatage, sinon faux (**vrai** par défaut). Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. D'un autre côté, mettre cette propriété à **faux** permet de réduire la durée de l'export. |
 
-For more information on 4D View Pro objects, please refer to the [4D View Pro object](configuring.md#4d-view-pro-object) paragraph.
+Pour plus d'informations sur les objets 4D View Pro, veuillez vous référer au paragraphe [objet 4D View Pro](configuring.md#objet-4d-view-pro).
 
 
 #### Exemple 1
 
-You want to get the "version" property of the current 4D View Pro area:
+Vous souhaitez lire la propriété "version" de la zone 4D View Pro courante :
 
 ```4d
 var $vpAreaObj : Object
@@ -1018,7 +1018,7 @@ $vpVersion:=$vpAreaObj.version
 
 #### Exemple 2
 
-You want to export the area, excluding formatting information:
+Vous souhaitez exporter la zone, en excluant les informations de formatage :
 
 ```4d
 var $vpObj : Object
@@ -1038,13 +1038,13 @@ $vpObj:=VP Export to object("vpArea";New object("includeFormatInfo";False))
 
 <!-- REF #_method_.VP Find.Params -->
 
-| Paramètres      | Type   |    | Description                           |
-| --------------- | ------ | -- | ------------------------------------- |
-| rangeObj        | Object | -> | Objet plage                           |
-| searchValue     | Text   | -> | Search value                          |
-| searchCondition | Object | -> | Object containing search condition(s) |
-| replaceValue    | Text   | -> | Replacement value                     |
-| Résultat        | Object | <- | Objet plage                           |
+| Paramètres      | Type   |    | Description                                      |
+| --------------- | ------ | -- | ------------------------------------------------ |
+| rangeObj        | Object | -> | Objet plage                                      |
+| searchValue     | Text   | -> | Valeur de recherche                              |
+| searchCondition | Object | -> | Objet contenant la/les condition(s) de recherche |
+| replaceValue    | Text   | -> | Valeur de remplacement                           |
+| Résultat        | Object | <- | Objet plage                                      |
 <!-- END REF -->  
 
 #### Description
