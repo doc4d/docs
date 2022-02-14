@@ -730,6 +730,7 @@ Ejemplo con la opción `dk stop dropping on first error`:
 
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -946,6 +947,9 @@ El siguiente código genérico duplica todas las entidades de la entity selectio
 | result     | Texto | <- | Context attributes linked to the entity selection, separated by a comma |
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
+
 #### Descripción
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
@@ -955,7 +959,7 @@ If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-o
 #### Ejemplo
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 
@@ -971,7 +975,7 @@ For each ($p; $persons)
 End for each 
 
 $info:=$persons.getRemoteContextAttributes()
-//$info = firstname,address,address.city
+//$info = "firstname,address,address.city"
 ```
 
 #### Ver también
@@ -1285,7 +1289,7 @@ La función `.minus()` <!-- REF #EntitySelectionClass.minus().Summary -->excluye
 
 *   Si se pasa *entity* como parámetro, la función crea una nueva entity selection sin *entity* (si *entity* pertenece a la entity selection). Si *entity* no estaba incluida en la entity selection original, se devuelve una nueva referencia a la entity selection.
 *   Si se pasa *entitySelection* como parámetro, la función devuelve una entity selection que contiene las entidades pertenecientes a la entity selection original sin las entidades pertenecientes a *entitySelection*.
-> Puede comparar [entity selections ordenadas y/o desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). La selección resultante es siempre desordenada.
+> You can compare [ordered and/or unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). The resulting selection is always unordered.
 
 Si la entity selection inicial o la entity selection inicial y la del parámetro *entitySelection* están vacías, se devuelve una entity selection vacía.
 
