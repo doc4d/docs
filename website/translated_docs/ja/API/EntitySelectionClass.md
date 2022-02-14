@@ -732,6 +732,7 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -948,6 +949,9 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 | result | テキスト | <- | Context attributes linked to the entity selection, separated by a comma |
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
+
 #### 説明
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
@@ -957,7 +961,7 @@ If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-o
 #### 例題
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 
@@ -973,7 +977,7 @@ For each ($p; $persons)
 End for each 
 
 $info:=$persons.getRemoteContextAttributes()
-//$info = firstname,address,address.city
+//$info = "firstname,address,address.city"
 ```
 
 #### 参照
