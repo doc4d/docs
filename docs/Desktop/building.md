@@ -251,9 +251,13 @@ Used to indicate the current version number for the application generated. You m
 
 #### Embed the project Users and Groups in built server application
 
-When you check this option, the project's [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the merged 4D Server application during the build application process.
+When you check this option, the project's [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the built 4D Server application during the build application process.
 
-When a user, group or permission modification is requested and no **directory.json** file exists in the server's data settings folder, the server copies the user settings **directory.json** to the data settings **directory.json**, and then makes modifications in the data settings **directory.json**.
+When you execute a built 4D Server application:
+* If there is a **directory.json** file in the server's data settings folder , the server loads it.
+* If there is no **directory.json** file in the server's data settings folder, the server copies the **directory.json** file from its [user settings folder](../Project/architecture.md#settings-1) to its [data settings folder](../Project/architecture.md#settings).
+
+The **directory.json** file in the user settings folder is read-only. All the modifications made to users, groups and permissions during server execution are stored in the **directory.json** file inside the data settings folder.
 
 Embedding the project **directory.json** file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data folder **directory.json**, allowing local customization. 
 
