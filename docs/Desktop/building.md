@@ -251,15 +251,23 @@ Used to indicate the current version number for the application generated. You m
 
 #### Embed the project Users and Groups in built server application
 
-When you check this option, the project's [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the user settings folder of the project is copied to the user settings folder of the built 4D Server application during the build application process.
+Terms used in this section:
+
+|Name| Definition |
+| --- | --- |  
+| Project directory file | **directory.json** file located in the [Settings folder](../Project/architecture.md#settings-1) of the project | 
+| Application directory file | **directory.json** file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server | 
+| Data directory file | **directory.json** file in the [Data > Settings](../Project/architecture.md#settings) folder  | 
+
+When you check this option, the project directory file is copied to the application directory file at build time.
 
 When you execute a built 4D Server application:
-* If there is a **directory.json** file in the server's data settings folder , the server loads it.
-* If there is no **directory.json** file in the server's data settings folder, the server copies the **directory.json** file from its [user settings folder](../Project/architecture.md#settings-1) to its [data settings folder](../Project/architecture.md#settings).
+* If the server has a data directory file, it is loaded.
+* If the server does not have a data directory file, it uses the application directory file.
 
-The **directory.json** file in the user settings folder is read-only. All the modifications made to users, groups and permissions during server execution are stored in the **directory.json** file inside the data settings folder.
+The application directory file is read-only. Modifications made to users, groups and permissions during server execution are stored in the data directory file.
 
-Embedding the project **directory.json** file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data folder **directory.json**, allowing local customization. 
+Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file, allowing local customization. 
 
 #### Allow connection of Silicon Mac clients
 
