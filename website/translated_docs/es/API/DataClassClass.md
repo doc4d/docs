@@ -177,7 +177,7 @@ The `.clearRemoteCache()` function <!-- REF #DataClassClass.clearRemoteCache().S
 #### Ejemplo
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 var $cache : Object
@@ -195,7 +195,7 @@ End for each
 $cache:=$ds.Persons.getRemoteCache()
 
 $ds.Persons.clearRemoteCache()
-// Cache of the Persons dataclass = {timeout:30,maxEntries:30000,stamp:255,entries:[]}
+// Cache of the Persons dataclass = {timeout:30;maxEntries:30000;stamp:255;entries:[]}
 ```
 
 
@@ -522,11 +522,11 @@ Este ejemplo ilustra el uso de la propiedad *context*:
 
 The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
 
-If this function is used within a transaction, attributes created during the transaction will be taken into account.
+If this function is used within a transaction, entities created during the transaction will be taken into account.
 #### Ejemplo
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $number : Integer
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
@@ -676,6 +676,9 @@ La función `.getInfo( )` <!-- REF #DataClassClass.getInfo().Summary -->devuelve
 | ---------- | ------ | -- | ------------------------------------------------------------------- |
 | result     | Objeto | <- | Object describing the contents of the ORDA cache for the dataclass. |
 <!-- END REF -->
+
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
 #### Descripción
 
 The `.getRemoteCache()` function <!-- REF #DataClassClass.getRemoteCache().Summary -->returns an object that holds the contents of the ORDA cache for a dataclass.<!-- END REF -->.
@@ -718,7 +721,7 @@ Note that `address.city` is loaded in the cache of the `Persons` dataclass.
 Only the first entity of the `Address` dataclass is stored in the cache. It is loaded during the first iteration of the loop.
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 var $cachePersons; $cacheAddress : Object
@@ -734,7 +737,7 @@ For each ($p; $persons)
 End for each
 
 $cachePersons:=$ds.Persons.getRemoteCache()
-$cachePersons:=$ds.Adress.getRemoteCache()
+$cacheAddress:=$ds.Adress.getRemoteCache()
 ```
 
 #### Ver también
@@ -753,6 +756,7 @@ $cachePersons:=$ds.Adress.getRemoteCache()
 
 <!-- REF #DataClassClass.new().Syntax -->
 **.new()** : 4D.Entity <!-- END REF -->
+
 
 <!-- REF #DataClassClass.new().Params -->
 | Parámetros | Tipo      |    | Descripción                                      |
@@ -1429,6 +1433,7 @@ Queremos desautorizar las fórmulas, por ejemplo, cuando el usuario introduce su
 | parámetros | Objeto | -> | Object that sets the timeout and maximum size of the ORDA cache for the dataclass. |
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
 
 #### Descripción
 
@@ -1460,7 +1465,7 @@ When an entity is saved, it is updated in the cache and expires once the timeout
 #### Ejemplo
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
