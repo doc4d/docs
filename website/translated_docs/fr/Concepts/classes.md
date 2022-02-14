@@ -224,26 +224,26 @@ Dans le code de l'application, les fonctions de classe sont appelées en tant qu
 
 #### Paramètres
 
-Les paramètres de fonction sont déclarés à l'aide du nom du paramètre et du type de paramètre, séparés par deux points. Le nom du paramètre doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties). Multiple parameters (and types) are separated by semicolons (;).
+Les paramètres de fonction sont déclarés à l'aide du nom du paramètre et du type de paramètre, séparés par deux points. Le nom du paramètre doit être conforme aux [règles de nommage des propriétés](Concepts/identifiers.md#object-properties). Les multiples paramètres (et les types) sont séparés par des points-virgules (;).
 
 ```4d  
 Function add($x; $y : Variant; $z : Integer; $xy : Object)
 ```
-> If the type is not stated, the parameter will be defined as `Variant`.
+> Si le type n'est pas indiqué, le paramètre sera défini comme `Variant`.
 
-You declare the return parameter (optional) by adding an arrow (->) and the return parameter definition after the input parameter(s) list. Par exemple :
+Déclarez le paramètre de retour (facultatif) en ajoutant une flèche (->) et la définition du paramètre de retour après la liste des paramètres d'entrée. Par exemple :
 
 ```4d
 Function add ($x : Variant; $y : Integer)->$result : Integer
 ```
 
-Vous pouvez également déclarer le paramètre de retour uniquement en ajoutant `: type`, auquel cas il sera automatiquement disponible via $0. For example:
+Vous pouvez également déclarer le paramètre de retour uniquement en ajoutant `: type`, auquel cas il sera automatiquement disponible via $0. Par exemple :
 
 ```4d
-Function add($x : Variant; $y : Integer): Integer
-    $0:=$x+$y
+Function add ($x : Variant; $y : Integer): Integer
+     $0:=$x+$y
 ```
-> The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. Les deux syntaxes peuvent être mélangées. For example:
+> La [syntaxe 4D classique](parameters.md#sequential-parameters) des paramètres de méthode peut être utilisée pour déclarer les paramètres de fonction de classe. Les deux syntaxes peuvent être mélangées. Par exemple :
 > 
 > ```4d
 > Function add($x : Integer)
@@ -255,7 +255,7 @@ Function add($x : Variant; $y : Integer): Integer
 
 
 
-#### Example
+#### Exemple
 
 ```4d
 // Class: Rectangle
@@ -270,7 +270,7 @@ Function getArea()->$result : Integer
 ```
 
 ```4d
-// In a project method
+// Dans une méthode projet
 
 var $rect : cs.Rectangle
 var $area : Real
@@ -280,9 +280,9 @@ $area:=$rect.getArea() //5000
 ```
 
 
-### `Function get` and `Function set`
+### `Function get` et `Function set`
 
-#### Syntax
+#### Syntaxe
 
 ```4d
 Function get <name>()->$result : type
@@ -294,7 +294,7 @@ Function set <name>($parameterName : type)
 // code
 ```
 
-`Function get` and `Function set` are accessors defining **computed properties** in the class. Une propriété calculée est une propriété nommée avec un type de données qui masque un calcul. Lorsqu'on accède à une valeur de propriété calculée, 4D substitue le code correspondant :.
+`Function get` et `Function set` sont des accessoires permettant de définir des **propriétés calculées** dans la classe. Une propriété calculée est une propriété nommée avec un type de données qui masque un calcul. Lorsqu'on accède à une valeur de propriété calculée, 4D substitue le code correspondant :.
 
 - lorsque la propriété est lue, la fonction `get` est exécutée,.
 - lorsque la propriété est écrite, la fonction `set` est exécutée,.
