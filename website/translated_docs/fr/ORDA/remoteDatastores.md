@@ -6,7 +6,7 @@ title: Utiliser un datastore distant
 Un [datastore](dsMapping.md#datastore) exposé sur une application 4D Server est accessible simultanément via différents clients :
 
 - Les applications 4D distantes utilisant ORDA pour accéder au datastore principal à l’aide de la commande `ds`. A noter que l'application 4D distante peut toujours accéder à la base de données en mode classique. Ces accès sont gérés par le **serveur d'applications 4D**.
-- D'autres applications 4D (4D Remote, 4D Server) ouvrant une session sur le datastore distant via la commande `Open datastore`. Ces accès sont transmis par le **serveur HTTP REST**.
+- Other 4D applications (4D remote, 4D Server) opening a session on the remote datastore through the [`Open datastore`](../API/DataStoreClass.md#open-datastore) command. Ces accès sont transmis par le **serveur HTTP REST**.
 - [4D for iOS or 4D for Android](https://developer.4d.com/go-mobile/) queries for updating mobile applications. Ces accès sont remis par le **serveur HTTP**.
 
 
@@ -162,7 +162,7 @@ Par exemple, le code suivant charge l'entité sélectionnée et permet de navigu
 
 #### Preconfiguring contexts
 
-An optimization context should be defined for every feature or algorithm of your application, in order to have the best performances. For example, a context can be used for queries about customers, another context for queries about products, etc.
+An optimization context should be defined for every feature or algorithm of your application, in order to have the best performances. For example, a context can be used for queries on customers, another context for queries on products, etc.
 
 If you want to deliver final applications with the highest level of optimization, you can preconfigure your contexts and thus save learning phases by following these steps:
 
