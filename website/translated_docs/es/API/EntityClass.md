@@ -621,7 +621,10 @@ Las llaves primarias pueden ser números (enteros) o cadenas. Puede "forzar" que
 | v19R5   | Añadidos       |
 </details><!-- REF #EntityClass.getRemoteContextAttributes().Syntax -->**.getRemoteContextAttributes()** : Text<!-- END REF --><!-- REF #EntityClass.getRemoteContextAttributes().Params -->| Parámetros | Tipo  |    | Descripción                                                   |
 | ---------- | ----- | -- | ------------------------------------------------------------- |
-| result     | Texto | <- | Context attributes linked to the entity, separated by a comma |<!-- END REF -->#### Descripción
+| result     | Texto | <- | Context attributes linked to the entity, separated by a comma |<!-- END REF -->> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
+
+#### Descripción
 
 The `.getRemoteContextAttributes()` function<!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity<!-- END REF -->.
 
@@ -630,7 +633,7 @@ If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-o
 #### Ejemplo
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $address : cs.AddressEntity
 var $p : cs.PersonsEntity
 var $contextA : Object
@@ -649,7 +652,7 @@ End for each
 
 $info:=$address.getRemoteContextAttributes()
 
-//$info = persons,persons.lastname,persons.firstname
+//$info = "persons,persons.lastname,persons.firstname"
 ```
 
 #### Ver también

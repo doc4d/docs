@@ -672,6 +672,9 @@ Les clés primaires peuvent être des nombres (integer) ou des textes. Vous pouv
 | result     | Text | <- | Context attributes linked to the entity, separated by a comma |
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
+
 #### Description
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
@@ -681,7 +684,7 @@ If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-o
 #### Exemple
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $address : cs.AddressEntity
 var $p : cs.PersonsEntity
 var $contextA : Object
@@ -700,7 +703,7 @@ End for each
 
 $info:=$address.getRemoteContextAttributes()
 
-//$info = persons,persons.lastname,persons.firstname
+//$info = "persons,persons.lastname,persons.firstname"
 ```
 
 #### Voir aussi

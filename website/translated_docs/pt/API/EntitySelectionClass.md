@@ -730,6 +730,7 @@ Example with the `dk stop dropping on first error` option:
 
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -946,6 +947,9 @@ The following generic code duplicates all entities of the entity selection:
 | result    | Texto | <- | Context attributes linked to the entity selection, separated by a comma |
 <!-- END REF -->
 
+> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+
+
 #### Description
 
 The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
@@ -955,7 +959,7 @@ If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-o
 #### Exemplo
 
 ```4d
-var $ds : cs.DataStore
+var $ds : 4D.DataStoreImplementation
 var $persons : cs.PersonsSelection
 var $p : cs.PersonsEntity
 
@@ -971,7 +975,7 @@ For each ($p; $persons)
 End for each 
 
 $info:=$persons.getRemoteContextAttributes()
-//$info = firstname,address,address.city
+//$info = "firstname,address,address.city"
 ```
 
 #### See also
