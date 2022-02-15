@@ -1428,7 +1428,7 @@ $index:=VP Get current sheet("ViewProArea")
 
 #### Description
 
-The `VP Get default style` command <!-- REF #_method_.VP Get default style.Summary -->returns a default style object for a sheet<!-- END REF -->. The returned object contains basic document rendering properties as well as the default style settings (if any) previously set by the [VP SET DEFAULT STYLE](#vp-set-default-style) method. For more information about style properties, see [Style Objects & Style Sheets](configuring.md#style-objects--style-sheets).
+La commande `VP Get default style` <!-- REF #_method_.VP Get default style.Summary -->retourne un objet feuille de style par défaut pour une feuille<!-- END REF -->. L'objet retourné contient des propriétés basiques de rendu d'un document ainsi que les propriétés du style par défaut (le cas échéant) définies préalablement à l'aide de la méthode [VP SET DEFAULT STYLE](#vp-set-default-style). Pour plus d'informations sur les propriétés de style, consultez [Objets style et feuilles de style](configuring.md#style-objects--style-sheets).
 
 Dans *vpAreaName*, passez la propriété du nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
@@ -1437,7 +1437,7 @@ Vous pouvez définir l'emplacement du nombre de colonnes dans le paramère optio
 
 #### Exemple
 
-To get the details about the default style for this document:
+Pour lire les détails du style par défaut de ce document :
 
 ![](assets/en/ViewPro/cmd_vpGetDefaultStyle.PNG)
 
@@ -1447,7 +1447,7 @@ Le code suivant :
 $defaultStyle:=VP Get default style("myDoc")
 ```
 
-will return this information in the *$defaultStyle* object:
+retournera les informations suivantes dans l'objet *$defaultStyle* :
 
 ```4d
 {
@@ -1478,9 +1478,9 @@ will return this information in the *$defaultStyle* object:
 #### Description
 
 
-The `VP Get formula` command <!-- REF #_method_.VP Get formula.Summary -->retrieves the formula from a designated cell range<!-- END REF -->.
+La commande `VP Get formula` <!-- REF #_method_.VP Get formula.Summary -->récupère la formule depuis une plage de cellules désignée<!-- END REF -->.
 
-In *rangeObj*, pass a range whose formula you want to retrieve. If *rangeObj* designates multiple cells or multiple ranges, the formula of the first cell is returned. If *rangeObj* is a cell that does not contain a formula, the method returns an empty string.
+Dans *rangeObj*, passez la plage dont vous souhaitez récupérer la formule. If *rangeObj* designates multiple cells or multiple ranges, the formula of the first cell is returned. If *rangeObj* is a cell that does not contain a formula, the method returns an empty string.
 
 #### Exemple
 
