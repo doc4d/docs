@@ -1438,8 +1438,7 @@ $index:=VP Get current sheet("ViewProArea")
 
 ### VP Get data context
 
-<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection
-<!-- END REF -->
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get data context.Params -->
@@ -1457,11 +1456,9 @@ $index:=VP Get current sheet("ViewProArea")
 
 The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the data context of a worksheet<!-- END REF -->.
 
-In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet.
+In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet. If there is no context for the worksheet, the command returns `Null`.
 
-If there is no context for the worksheet, the command returns `Null`.
-
-The returned data context includes user modifications.
+The function returns an object or a collection depending on the type of data context set with [VP SET DATA CONTEXT](#vp-set-data-context). The returned context includes user modifications.
 
  
 #### Example
@@ -3549,6 +3546,46 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
+### VP SET BINDING PATH
+
+<!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *cellRange* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
+
+<!-- REF #_method_.VP SET BINDING PATH.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+| cellRange | Object | -> | Range object |
+| dataContextAttribute  | Text | -> | Attribute name to bind to *cellRange* |
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *cellRange*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *cellRange*.
+
+In *cellRange*, pass an object that is either a cell range or a combined range of cells. If the value passed in *cellRange* is not a cell range, the value of the first cell in the range is used. If *cellRange* contains several ranges, they are all bound to the attributes.
+
+In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding. Attributes of type collection are not supported. When you pass the name of a collection attribute, the command does nothing. 
+ 
+#### Example
+
+```4d
+var $p; $options : Object
+
+$p:=New object
+$p.firstName:="Freehafer"
+$p.lastName:="Nancy"
+
+VP SET DATA CONTEXT("ViewProArea"; $p)
+
+VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
+VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
+```
+
+#### See also
+
+[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+
 ### VP SET BOOLEAN VALUE
 
 <!-- REF #_method_.VP SET BOOLEAN VALUE.Syntax -->**VP SET BOOLEAN VALUE** ( *rangeObj* : Object  ; *boolValue* : Boolean) <!-- END REF -->  
@@ -3663,6 +3700,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 #### See also 
 
 [VP SET CELL STYLE](#vp-set-cell-style)
+
 
 ### VP SET CELL STYLE
 
