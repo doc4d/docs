@@ -308,13 +308,25 @@ This option lets you choose the linking mode between the merged application and 
 
 #### Embed the project Users and Groups in built server application
 
-Lorsque vous cochez cette option, le fichier [directory.json](../Users/handling_users_groups.md#directoryjson-file) situé dans le dossier des paramètres utilisateur du projet est copié dans le dossier des paramètres utilisateur de l'application 4D Server fusionnée durant la génération de l'application.
+Terms used in this section:
 
-Lorsque vous exécutez une application 4D Server générée avec cette option, le serveur charge d'abord les utilisateurs, les groupes et les autorisations placés dans le fichier **directory.json** situé dans le dossier des paramètres utilisateur du serveur (le cas échéant). Ensuite, conformément au mécanisme standard du fichier [directory.json](../Users/handling_users_groups.md#directoryjson-file), le serveur les remplace par les utilisateurs, groupes et autorisations du fichier **directory.json** situé dans le dossier des paramètres de données.
+| Nom                        | Définition                                                                                                             |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Project directory file     | **directory.json** file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
+| Application directory file | **directory.json** file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
+| Data directory file        | **directory.json** file in the [Data > Settings](../Project/architecture.md#settings) folder                           |
 
-Le fichier **directory.json** situé dans le dossier paramètres utilisateurs est en lecture seule. Toutes les modifications apportées aux utilisateurs, groupes et autorisations pendant l'exécution du serveur sont stockées dans le fichier **directory.json** situé dans le dossier Data. 
 
-L'intégration du fichier **directory.json** du projet vous permet de déployer une application client/serveur avec une configuration de base de la sécurité des utilisateurs et des groupes. Les modifications ultérieures seront ajoutées au fichier **directory.json** du dossier Data, permettant ainsi une personnalisation locale. 
+When you check this option, the project directory file is copied to the application directory file at build time.
+
+When you execute a built 4D Server application:
+
+* If the server has a data directory file, it is loaded.
+* If the server does not have a data directory file, it uses the application directory file.
+
+The application directory file is read-only. Modifications made to users, groups and permissions during server execution are stored in the data directory file.
+
+Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file, allowing local customization. 
 
 
 
