@@ -550,6 +550,7 @@ Selecting the columns and running this code:
 
 ![](assets/en/ViewPro/cmd_vpColumnAutoFit2.PNG)
 
+
 #### See also
 
 [VP ROW AUTOFIT](#vp-row-autofit)
@@ -879,6 +880,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 |formula|	object	|Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).|
 |valuesOnly|	boolean|	Specifies that only the values from formulas (if any) will be exported.|
 |includeFormatInfo|	boolean|	True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.|
+|includeBindingSource|	Boolean | True (default) to include the data context values in the exported document. When the document is opened, the values will be displayed, but the datacontext will be empty. 	|
 |sheetIndex|	number|	PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
 |pdfOptions|	object|	PDF only (optional) - Options for pdf export <p><table><tr><th>Property</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>|
 |csvOptions|object|	CSV only (optional) - Options for csv export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>range</td><td>object</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>Column delimiter. Default: ","</td></tr></table></p>|
@@ -1006,7 +1008,7 @@ Here's the result:
 |Parameter|Type| |Description|
 |---|---|---|---|
 |vpAreaName| Text|->|4D View Pro area form object name|
-|option| Object|->|Export option|
+|options| Object|->|Export options|
 |Result| Object|<-|4D View Pro object|
 <!-- END REF -->  
 
@@ -1016,12 +1018,13 @@ The `VP Export to object` command <!-- REF #_method_.VP Export to object.Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the *option* parameter, you can pass the following export option, if required:
+In the *option* parameter, you can pass the following export options, if required:
  
  
 |Property|	Type|	Description|
 |---|---|---
-|includeFormatInfo|	boolean|True to include formatting information, false otherwise (default is **true**). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.	|
+|includeFormatInfo|	Boolean | True (default) to include formatting information, false otherwise. Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to False allows reducing export time.	|
+|includeBindingSource|	Boolean | True (default) to include the data context values in the exported document. When the document is opened, the values will be displayed, but the datacontext will be empty. 	|
 
 For more information on 4D View Pro objects, please refer to the [4D View Pro object](configuring.md#4d-view-pro-object) paragraph.
 
@@ -1266,7 +1269,13 @@ $activeCell:=VP Get active cell("myVPArea")
 
 ### VP Get binding path
 
-<!-- REF #_method_.VP Get binding path.Syntax -->**VP SET BINDING PATH** ( *cellRange* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *cellRange* : Object ) : Text<!-- END REF -->  
 
 <!-- REF #_method_.VP Get binding path.Params -->
 
@@ -1480,6 +1489,12 @@ $index:=VP Get current sheet("ViewProArea")
 [VP SET CURRENT SHEET](#vp-set-current-sheet)
 
 ### VP Get data context
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
 
 <!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF -->
 
@@ -3302,7 +3317,7 @@ $row:=VP Row("ViewProArea";9) // row 10
 
 [VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
 
-### VP ROW AUTOFIT#### See also
+### VP ROW AUTOFIT
 
 [VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
 
@@ -3590,6 +3605,12 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
 ### VP SET BINDING PATH
+
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
 
 <!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *cellRange* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
 
@@ -4010,7 +4031,13 @@ End case
 
 ### VP SET DATA CONTEXT
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object ; *options* : Object ; *sheetIndex* : Integer )
+<details><summary>History</summary>
+|Version|Changes|
+|---|---|
+|v19 R5|Added|
+</details>
+
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection ; *options* : Object ; *sheetIndex* : Integer )
 <!-- END REF -->
 
 
@@ -4027,7 +4054,7 @@ End case
 
 #### Description
 
-The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is used to fill data automatically in worksheet cells.
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is used to fill data automatically in sheet cells.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned. 
 
@@ -4065,6 +4092,7 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 ![](assets/en/ViewPro/vp-set-data-context.png)
 
+
 #### Example 2
 
 Pass a collection of objects and generate columns automatically: 
@@ -4074,7 +4102,8 @@ var $options : Object
 var $data : Collection
 
 $data:=New collection
-$data.push(New object("firstname"; "John"; "lastname"; "Smith"); New object("firstname"; "Mary"; "lastname"; "Poppins"))
+$data.push(New object("firstname"; "John"; "lastname"; "Smith");\n
+New object("firstname"; "Mary"; "lastname"; "Poppins"))
 
 $options:=New object("autoGenerateColumns"; True)
 
@@ -4105,8 +4134,7 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 
 #### See also
 
-[VP SET BINDING PATH](#vp-set-binding-path)
-[VP Get data context](#vp-get-data-context)
+[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)
 
 ### VP SET DATE TIME VALUE
 
