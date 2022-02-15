@@ -1264,6 +1264,49 @@ $activeCell:=VP Get active cell("myVPArea")
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET ACTIVE CELL](#vp-set-active-cell)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
 
+### VP Get binding path
+
+<!-- REF #_method_.VP Get binding path.Syntax -->**VP SET BINDING PATH** ( *cellRange* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
+
+<!-- REF #_method_.VP Get binding path.Params -->
+
+|Parameter|Type||Description|
+|---|---|---|---|
+| cellRange | Object | -> | Range object |
+| Result  | Text | <- | attribute name bound to the cell |
+
+<!-- END REF -->  
+
+#### Description
+
+The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns the attribute name bound to the cell specified in *cellRange*<!-- END REF -->. 
+
+In *cellRange*, pass an object that is either a cell range or a combined range of cells.
+
+The returned Text is the name of the attribute bound to the cell in *cellRange*.
+ 
+#### Example
+
+```4d
+var $p; $options : Object
+var $myAttribute : Text
+
+$p:=New object
+$p.firstName:="Freehafer"
+$p.lastName:="Nancy"
+
+VP SET DATA CONTEXT("ViewProArea"; $p)
+
+VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
+VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
+
+$myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
+```
+
+#### See also
+
+[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+
 
 ### VP Get cell style
 
