@@ -1060,23 +1060,23 @@ Vous pouvez passer le paramètre optionnel *searchCondition* pour préciser le f
 | Propriété   | Type    | Description                                                                                                                                                                                                                          |
 | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | afterColumn | Integer | Le numéro de la colonne située juste avant la colonne de départ de la recherche. Si *rangeObj* est une plage combinée, le numéro de colonne indiqué doit provenir de la première plage. Valeur par défaut : -1 (début de *rangeObj*) |
-| afterRow    | Integer | Le numéro de la colonne située juste avant la colonne de départ de la recherche. If the *rangeObj* is a combined range, the row number given must be from the first range. Valeur par défaut : -1 (début de *rangeObj*)              |
-| all         | Booléen | <li>True - All cells in *rangeObj* corresponding to *searchValue* are returned</li><li>False - (default value) Only the first cell in *rangeObj* corresponding to *searchValue* is returned</li>                                                                                                                                                                                 |
-| flags       | Integer | <table><tr><td>`vk find flag exact match`</td><td>The entire content of the cell must completely match the search value</td></tr><tr><td>`vk find flag ignore case`</td><td>Capital and lower-case letters are considered the same. Ex: "a" is the same as "A".</td></tr><tr><td>`vk find flag none`</td><td>no search flags are considered (default)</td></tr><tr><td>`vk find flag use wild cards`</td><td>Wildcard characters (\*,?) can be used in the search string. Wildcard characters can be used in any string comparison to match any number of characters:<li>\* for zero or multiple characters (for example, searching for "bl*"  can find "bl", "black", or "blob")</li><li>? for a single character (for example, searching for "h?t" can find "hot", or "hit"</li></td></tr></table><p>These flags can be combined. Par exemple :<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code></p>                                                                                                            |
-| order       | Integer | <table><tr><td>`vk find order by columns`</td><td>The search is performed by columns. Each row of a column is searched before the search continues to the next column.</td></tr><tr><td>`vk find order by rows`</td><td>The search is performed by rows. Each column of a row is searched before the search continues to the next row (default)</td></tr></table>                                                                                                                                                                                                           |
-| target      | Integer | <table><tr><td>`vk find target formula`</td><td>The search is performed in the cell formula</td></tr><tr><td>`vk find target tag`</td><td>The search is performed in the cell tag</td></tr><tr><td>`vk find target text`</td><td>The search is performed in the cell text (default)</td></tr></table><p>These flags can be combined. Par exemple :<p> <code>$search.target:=vk find target formula+vk find target text</code></p>                                                                                                            |
+| afterRow    | Integer | Le numéro de la colonne située juste avant la colonne de départ de la recherche. Si *rangeObj* est une plage combinée, le numéro de ligne indiqué doit provenir de la première plage. Valeur par défaut : -1 (début de *rangeObj*)   |
+| all         | Booléen | <li>True -Toutes les cellules de *rangeObj* correspondant à *searchValue* sont retournées</li><li>False - (valeur par défaut) Seule la première cellule de *rangeObj* correspondant à *searchValue* est retournée</li>                                                                                                                                                                                 |
+| flags       | Integer | <table><tr><td>`vk find flag exact match`</td><td>Tout le contenu de la cellule doit entièrement correspondre à la valeur de recherche</td></tr><tr><td>`vk find flag ignore case`</td><td>Les majuscules et les minuscules sont considérées comme identiques. Ex : "a" est considérée comme identique à "A".</td></tr><tr><td>`vk find flag none`</td><td>Aucun indicateur de recherche n'est pris en compte (par défaut)</td></tr><tr><td>`vk find flag use wild cards`</td><td>Les caractères génériques (\*,?) peuvent être utilisés dans la chaîne de recherche. Les caractères joker peuvent être utilisés dans n'importe quelle comparaison de chaînes pour correspondre à n'importe quel nombre de caractères :<li>\*  - Pour le caractère zéro ou plusieurs caractères (par exemple, rechercher "bl*" peut donner comme résultat "bl", "black", "blue", et "blob")</li><li>? pour un seul caractère (par exemple, rechercher "h?t" peut donner comme résultat "hot", "hat", et "hit"</li></td></tr></table><p>Ces marqueurs peuvent être combinés. Par exemple :<p> <code>$search.flags:=vk find flag use wild cards+vk find flag ignore case</code></p>                                                                                                    |
+| order       | Integer | <table><tr><td>`vk find order by columns`</td><td>La recherche est effectuée par colonnes. Chaque ligne d'une colonne est recherchée avant que la recherche ne passe à la colonne suivante.</td></tr><tr><td>`vk find order by rows`</td><td>La recherche est effectuée par lignes. Chaque colonne d'une ligne est recherchée avant que la recherche ne passe à la colonne suivante (par défaut)</td></tr></table>                                                                                                                                                                                                           |
+| target      | Integer | <table><tr><td>`vk find target formula`</td><td>La recherche est effectuée dans la formule de la cellule</td></tr><tr><td>`vk find target tag`</td><td>La recherche est effectuée dans la balise de la cellule</td></tr><tr><td>`vk find target text`</td><td>La recherche est effectuée dans le texte de la cellule (par défaut)</td></tr></table><p>Ces marqueurs peuvent être combinés. Par exemple :<p> <code>$search.target:=vk find target formula+vk find target text</code></p>                                                                                                    |
 
-In the optional *replaceValue* parameter, you can pass text to take the place of any instance of the text in *searchValue* found in the *rangeObj*.
+Dans le paramètre optionnel *replaceValue*, vous pouvez passer du texte pour remplacer toute instance du texte dans la *searchValue* trouvée dans *rangeObj*.
 
 
 #### Returned Object
 
-The function returns a range object describing each search value that was found or replaced. An empty range object is returned if no results are found.
+La fonction retourne un objet de plage décrivant chaque valeur de recherche trouvée ou remplacée. Un objet de plage vide est retourné si aucun résultat n'est trouvé.
 
 
 #### Exemple 1
 
-To find the first cell containing the word "Total":
+Pour trouver la première cellule contenant le mot "Total" :
 
 ```4d
 var $range;$result : Object
@@ -1089,27 +1089,27 @@ $result:=VP Find($range;"Total")
 
 #### Exemple 2
 
-To find "Total" and replace it with "Grand Total":
+Pour trouver "Total" et le remplacer par "Grand Total" :
 
 ```4d
 var $range;$condition;$result : Object
-
-$range:=VP All("ViewProArea")
-
-$condition:=New object
-$condition.target:=vk find target text
-$condition.all:=True //Search entire document
-$condition.flags:=vk find flag exact match
-
-  // Replace the cells containing only 'Total' in the current sheet with "Grand Total"
-$result:=VP Find($range;"Total";$condition;"Grand Total")
-
-  // Check for empty range object 
-If($result.ranges.length=0)
-    ALERT("No result found")
-Else
-    ALERT($result.ranges.length+" results found")
-End if
+ 
+ $range:=VP All("ViewProArea")
+ 
+ $condition:=New object
+ $condition.target:=vk find target text
+ $condition.all:=True //Rechercher le document entier
+ $condition.flags:=vk find flag exact match
+ 
+  // Remplacer les cellules contenant uniquement 'Total' dans la feuille courante par "Grand Total"
+ $result:=VP Find($range;"Total";$condition;"Grand Total")
+ 
+  // Rechercher un objet de plage vide
+ If($result.ranges.length=0)
+    ALERT("Aucun résultat trouvé")
+ Else
+    ALERT($result.ranges.length+" résultats trouvés")
+ End if
 ```
 
 
@@ -1126,15 +1126,15 @@ End if
 
 #### Description
 
-The `VP FLUSH COMMANDS` command <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->immediately executes stored commands and clears the command buffer<!-- END REF -->.
+La commande `VP FLUSH COMMANDS` exécute <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->immédiatement les commandes empilées et vide le buffer de commandes<!-- END REF -->.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-In order to increase performance and reduce the number of requests sent, the 4D View Pro commands called by the developer are stored in a command buffer. When called, `VP FLUSH COMMANDS` executes the commands as a batch when leaving the method and empties the contents of the command buffer.
+Afin d'améliorer la performance et de réduire le nombre de requêtes envoyées, les commandes 4D View Pro appelées par le développeur sont stockées temporairement dans un buffer de commandes. Lorsqu'elle est appelée, la commande `VP FLUSH COMMANDS` exécute les commandes en lot au moment de quitter la méthode et vide le buffer de commandes.
 
 #### Exemple
 
-You want to trace the execution of the commands and empty the command buffer:
+Vous souhaitez tracer l'exécution des commandes et vider le buffer :
 
 ```4d
  VP SET TEXT VALUE(VP Cell("ViewProArea1";10;1);"INVOICE")
@@ -1153,28 +1153,28 @@ You want to trace the execution of the commands and empty the command buffer:
 
 <!-- REF #_method_.VP Font to object.Params -->
 
-| Paramètres | Type |    | Description           |
-| ---------- | ---- | -- | --------------------- |
-| font       | Text | -> | Font shorthand string |
+| Paramètres | Type |    | Description                                  |
+| ---------- | ---- | -- | -------------------------------------------- |
+| font       | Text | -> | Chaîne raccourcie pour la police (shorthand) |
 <!-- END REF -->  
 
 #### Description
 
-The `VP Font to object` utility command <!-- REF #_method_.VP Font to object.Summary -->returns an object from a font shorthand string<!-- END REF -->. This object can then be used to set or get font property settings via object notation.
+La commande utilitaire `VP Font to object` <!-- REF #_method_.VP Font to object.Summary -->retourne un objet d'une chaîne raccourcie pour la police (shorthand)<!-- END REF -->. Cet objet peut être utilisé pour définir ou lire les propriétés de la police via la notation objet.
 
-In the *font* parameter, pass a font shorthand string to specify the different properties of a font (e.g., "12 pt Arial"). You can learn more about font shorthand strings [in this page](https://www.w3schools.com/cssref/pr_font_font.asp) for example.
+Dans le paramètre *font*, passez une chaîne raccourcie pour la police pour indiquer les différentes propriétés d'une police (ex : "12 pt Arial"). Cliquez [ici](https://www.w3schools.com/cssref/pr_font_font.asp) pour en savoir plus sur les chaînes raccourcies pour la police.
 
-The returned object contains defined font attributes as properties. For more information about the available properties, see the [VP Object to font](#vp-object-to-font) command.
+L'objet retourné contient des attributs de police définis comme propriétés. Pour plus d'informations sur les propriétés disponibles, veuillez vous reporter à la commande [VP Object to font](#vp-object-to-font).
 
 #### Exemple 1
 
-This code:
+Le code suivant :
 
 ```4d
 $font:=VP Font to object("16pt arial")
 ```
 
-will return the following $font object:
+retournera l'objet $font suivant :
 
 ```4d
 {
@@ -1187,7 +1187,7 @@ size:16pt
 
 #### Exemple 2
 
-See example for [`VP Object to font`](#vp-object-to-font).
+Voir l'exemple de [`VP Object to font`](#vp-object-to-font).
 
 
 #### Voir aussi
@@ -1208,12 +1208,12 @@ See example for [`VP Object to font`](#vp-object-to-font).
 | ---------- | ------- | -- | ----------------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro         |
 | sheet      | Integer | -> | Indice de la feuille (feuille courante si omis) |
-| Résultat   | Object  | <- | Range object of single cell                     |
+| Résultat   | Object  | <- | Objet plage d'une seule cellule                 |
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get active cell` command <!-- REF #_method_.VP Get active cell.Summary -->returns a new range object referencing the cell which has the focus and where new data will be entered (the active cell)<!-- END REF -->.
+La commande `VP Get active cell` <!-- REF #_method_.VP Get active cell.Summary -->retourne un nouvel objet plage référençant la cellule active, dans laquelle de nouvelles données seront saisies<!-- END REF -->.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
@@ -1225,7 +1225,7 @@ Dans le paramètre optionnel *sheet*, vous pouvez désigner une feuille spécifi
 
 ![](assets/en/ViewPro/cmd_vpGetActiveCell.PNG)
 
-The following code will retrieve the coordinates of the active cell:
+Le code suivant récupèrera les coordonnées de la cellule active :
 
 ```4d
 $activeCell:=VP Get active cell("myVPArea")
@@ -1248,36 +1248,36 @@ $activeCell:=VP Get active cell("myVPArea")
 
 <!-- REF #_method_.VP Get cell style.Params -->
 
-| Paramètres | Type   |    | Description  |
-| ---------- | ------ | -- | ------------ |
-| rangeObj   | Object | -> | Objet plage  |
-| Résultat   | Object | <- | Style object |
+| Paramètres | Type   |    | Description |
+| ---------- | ------ | -- | ----------- |
+| rangeObj   | Object | -> | Objet plage |
+| Résultat   | Object | <- | Objet style |
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get cell style` command <!-- REF #_method_.VP Get cell style.Summary -->returns a [style object](configuring.md#style-objects) for the first cell in the *rangeObj*<!-- END REF -->.
+La commande `VP Get cell style` <!-- REF #_method_.VP Get cell style.Summary -->retourne un [objet style](configuring.md#style-objects) pour la première cellule de *rangeObj*<!-- END REF -->.
 
-In *rangeObj*, pass a range containing the style to retrieve.
+Dans *rangeObj*, passez une plage contenant le style à récupérer.
 
-*   If *rangeObj* contains a cell range, the cell style is returned.
-*   If *rangeObj* contains a range that is not a cell range, the style of the first cell in the range is returned.
-*   If *rangeObj* contains several ranges, only the style of the first cell in the first range is returned.
+*   Si *rangeObj* contient une plage cellule, le style de la cellule est retourné.
+*   Si *rangeObj* contient une plage qui n'est pas une plage cellule, le style de la première cellule de la plage est retourné.
+*   Si *rangeObj* contient plusieurs plages, seul le style de la première cellule de la première plage est retourné.
 
 
 #### Exemple
 
-To get the details about the style in the selected cell (B2):
+Pour obtenir les détails concernant le style de la cellule sélectionnée (B2) :
 
 ![](assets/en/ViewPro/cmd_vpGetCellStyle.PNG)
 
-This code:
+Le code suivant :
 
 ```4d
 $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 ```
 
-... will return this object:
+... retournera cet objet :
 
 ```4d
 {
@@ -1305,19 +1305,19 @@ $cellStyle:=VP Get cell style(VP Get selection("myDoc"))
 
 <!-- REF #_method_.VP Get column attributes.Params -->
 
-| Paramètres | Type       |    | Description                     |
-| ---------- | ---------- | -- | ------------------------------- |
-| rangeObj   | Object     | -> | Objet plage                     |
-| Résultat   | Collection | <- | Collection of column properties |
+| Paramètres | Type       |    | Description                          |
+| ---------- | ---------- | -- | ------------------------------------ |
+| rangeObj   | Object     | -> | Objet plage                          |
+| Résultat   | Collection | <- | Collection de propriétés de colonnes |
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get column attributes` command <!-- REF #_method_.VP Get column attributes.Summary -->returns a collection of properties for any column in the *rangeObj*<!-- END REF -->.
+La commande `VP Get column attributes` <!-- REF #_method_.VP Get column attributes.Summary -->retourne une collection de propriétés pour les colonnes de *rangeObj*<!-- END REF -->.
 
-In *rangeObj*, pass an object containing a range of the columns whose attributes will be retrieved.
+Dans *rangeObj*, passez un objet contenant une plage de colonnes dont les attributs seront récupérés.
 
-The returned collection contains any properties for the columns, whether or not they have been set by the [VP SET COLUMN ATTRIBUTES](#vp-set-column-attributes) command.
+La collection retournée contient les propriétés des colonnes, qu'elles aient ou non été définies par la commande [VP SET COLUMN ATTRIBUTES](#vp-set-column-attributes).
 
 
 #### Exemple
@@ -1332,7 +1332,7 @@ $range:=VP Column("ViewProArea";1;2)
 $attr:=VP Get column attributes($range)
 ```
 
-... will return a collection of the attributes within the given range:
+... retournera une collection d'attributs de la plage donnée :
 
 ![](assets/en/ViewPro/cmd_vpGetColumnAttributes.PNG)
 
@@ -1348,23 +1348,23 @@ $attr:=VP Get column attributes($range)
 
 | Paramètres | Type    |    | Description                                     |
 | ---------- | ------- | -- | ----------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro area from object name               |
+| vpAreaName | Text    | -> | Nom de la zone 4D View Pro dans le formulaire   |
 | sheet      | Integer | -> | Indice de la feuille (feuille courante si omis) |
-| Résultat   | Integer | <- | Total number of columns                         |
+| Résultat   | Integer | <- | Nombre total de colonnes                        |
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get column count` command <!-- REF #_method_.VP Get column count.Summary -->returns the total number of columns from the designated *sheet*<!-- END REF -->.
+La commande `VP Get column count` <!-- REF #_method_.VP Get column count.Summary -->retourne le nombre total de colonnes de la feuille (*sheet*) désignée<!-- END REF -->.
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. Si vous passez un nom inexistant, une erreur est retournée.
+Dans *vpAreaName*, passez la propriété du nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). Si le paramètre est omis ou si vous passez `vk current sheet`, la feuille courante est utilisée.
+Vous pouvez définir l'emplacement du nombre de colonnes dans le paramère optionnel *sheet* à l'aide de l'indice de la feuille (la numérotation démarre à zéro). Si le paramètre est omis ou si vous passez `vk current sheet`, la feuille courante est utilisée.
 
 
 #### Exemple
 
-The following code returns the number of columns in the 4D View Pro area:
+Le code suivant retourne le nombre de colonnes dans la zone 4D View Pro :
 
 ```4d
 C_Integer($colCount)
@@ -1385,12 +1385,12 @@ $colCount:=VP Get column count("ViewProarea")
 | Paramètres | Type    |    | Description                             |
 | ---------- | ------- | -- | --------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
-| Résultat   | Integer | <- | Index of the current sheet              |
+| Résultat   | Integer | <- | Indice de la feuille courante           |
 <!-- END REF --> 
 
 #### Description
 
-The `VP Get current sheet` command <!-- REF #_method_.VP Get current sheet.Summary -->returns the index of the current sheet in *vpAreaName*. The current sheet is the selected sheet in the document.
+La commande `VP Get current sheet` <!-- REF #_method_.VP Get current sheet.Summary -->retourne l'indice de la feuille courante dans *vpAreaName*. La feuille courante est la feuille sélectionnée dans le document.
 <!-- END REF --> 
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
@@ -1399,11 +1399,11 @@ Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
 #### Exemple
 
-When the third sheet is selected:
+Lorsque la troisième feuille est sélectionnée :
 
 ![third-sheet](assets/en/ViewPro/vp-sheet-3-select.png)
 
-The command returns 2:
+La commande retourne 2 :
 
 ```4d
 $index:=VP Get current sheet("ViewProArea")
@@ -1421,18 +1421,18 @@ $index:=VP Get current sheet("ViewProArea")
 
 | Paramètres | Type    |    | Description                                     |
 | ---------- | ------- | -- | ----------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro area from object name               |
+| vpAreaName | Text    | -> | Nom de la zone 4D View Pro dans le formulaire   |
 | sheet      | Integer | -> | Indice de la feuille (feuille courante si omis) |
-| Résultat   | Integer | <- | Total number of columns                         |
+| Résultat   | Integer | <- | Nombre total de colonnes                        |
 <!-- END REF -->  
 
 #### Description
 
 The `VP Get default style` command <!-- REF #_method_.VP Get default style.Summary -->returns a default style object for a sheet<!-- END REF -->. The returned object contains basic document rendering properties as well as the default style settings (if any) previously set by the [VP SET DEFAULT STYLE](#vp-set-default-style) method. For more information about style properties, see [Style Objects & Style Sheets](configuring.md#style-objects--style-sheets).
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. Si vous passez un nom inexistant, une erreur est retournée.
+Dans *vpAreaName*, passez la propriété du nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-You can define where to get the column count in the optional *sheet* parameter using the sheet index (counting begins at 0). Si le paramètre est omis ou si vous passez `vk current sheet`, la feuille courante est utilisée.
+Vous pouvez définir l'emplacement du nombre de colonnes dans le paramère optionnel *sheet* à l'aide de l'indice de la feuille (la numérotation démarre à zéro). Si le paramètre est omis ou si vous passez `vk current sheet`, la feuille courante est utilisée.
 
 
 #### Exemple
@@ -1441,7 +1441,7 @@ To get the details about the default style for this document:
 
 ![](assets/en/ViewPro/cmd_vpGetDefaultStyle.PNG)
 
-This code:
+Le code suivant :
 
 ```4d
 $defaultStyle:=VP Get default style("myDoc")
@@ -1716,7 +1716,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet (cou
 
 #### Exemple
 
-This code:
+Le code suivant :
 
 ```4d
 $pinfo:=VP Get print info("ViewProArea")
@@ -1823,7 +1823,7 @@ $attr:=VP Get row attributes($range)
 
 | Paramètres | Type    |    | Description                                     |
 | ---------- | ------- | -- | ----------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro area from object name               |
+| vpAreaName | Text    | -> | Nom de la zone 4D View Pro dans le formulaire   |
 | sheet      | Integer | -> | Indice de la feuille (feuille courante si omis) |
 | Résultat   | Integer | <- | Total number of rows                            |
 <!-- END REF -->  
@@ -1832,7 +1832,7 @@ $attr:=VP Get row attributes($range)
 
 The `VP Get row count` command <!-- REF #_method_.VP Get row count.Summary -->returns the total number of rows from the designated *sheet*<!-- END REF -->.
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. Si vous passez un nom inexistant, une erreur est retournée.
+Dans *vpAreaName*, passez la propriété du nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
 You can define where to get the row count in the optional *sheet* parameter using the sheet index (counting begins at 0). Si le paramètre est omis ou si vous passez `vk current sheet`, la feuille courante est utilisée.
 
@@ -1859,7 +1859,7 @@ $rowCount:=VP Get row count("ViewProarea")
 
 | Paramètres | Type    |    | Description                                     |
 | ---------- | ------- | -- | ----------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro area from object name               |
+| vpAreaName | Text    | -> | Nom de la zone 4D View Pro dans le formulaire   |
 | sheet      | Integer | -> | Indice de la feuille (feuille courante si omis) |
 | Résultat   | Object  | <- | Objet plage de toutes les cellules              |
 <!-- END REF -->  
@@ -2021,7 +2021,7 @@ $sheetName:=VP Get sheet name("ViewProArea";2)
 
 | Paramètres | Type    |    | Description                                     |
 | ---------- | ------- | -- | ----------------------------------------------- |
-| vpAreaName | Text    | -> | 4D View Pro area from object name               |
+| vpAreaName | Text    | -> | Nom de la zone 4D View Pro dans le formulaire   |
 | sheet      | Integer | -> | Indice de la feuille (feuille courante si omis) |
 | Résultat   | Object  | <- | Sheet options object                            |
 <!-- END REF -->  
@@ -2199,7 +2199,7 @@ borderTop:{color:green,style:10}
 
 The `VP Get stylesheets` command <!-- REF #_method_.VP Get stylesheets.Summary -->returns the collection of defined style sheet objects from the designated *scope*<!-- END REF -->.
 
-In *vpAreaName*, pass the name property of the 4D View Pro area. Si vous passez un nom inexistant, une erreur est retournée.
+Dans *vpAreaName*, passez la propriété du nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
 You can define where to get the style sheets in the optional *scope* parameter using the sheet index (counting begins at 0) or with the following constants:
 
@@ -3601,10 +3601,10 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 <!-- REF #_method_.VP SET CELL STYLE.Params -->
 
-| Paramètres | Type   |    | Description  |
-| ---------- | ------ | -- | ------------ |
-| rangeObj   | Object | -> | Objet plage  |
-| styleObj   | Object | -> | Style object |
+| Paramètres | Type   |    | Description |
+| ---------- | ------ | -- | ----------- |
+| rangeObj   | Object | -> | Objet plage |
+| styleObj   | Object | -> | Objet style |
 
 <!-- END REF -->  
 
@@ -3747,7 +3747,7 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 #### Description
 
-The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->sets the current sheet in *vpAreaName*<!-- END REF --> . The current sheet is the selected sheet in the document.
+The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->sets the current sheet in *vpAreaName*<!-- END REF --> . La feuille courante est la feuille sélectionnée dans le document.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
@@ -3956,7 +3956,7 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 | Paramètres | Type    |    | Description                             |
 | ---------- | ------- | -- | --------------------------------------- |
 | vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro |
-| styleObj   | Object  | -> | Style object                            |
+| styleObj   | Object  | -> | Objet style                             |
 | sheet      | Integer | -> | Sheet index (default = current sheet)   |
 
 <!-- END REF -->  
