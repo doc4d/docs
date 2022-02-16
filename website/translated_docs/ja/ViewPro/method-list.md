@@ -3025,14 +3025,14 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 | rangeObj | オブジェクト | -> | レンジオブジェクト  |
 | styleObj | オブジェクト | -> | スタイルオブジェクト |<!-- END REF -->#### 説明
 
-The `VP SET CELL STYLE` command<!-- REF #_method_.VP SET CELL STYLE.Summary -->applies the style(s) defined in the *styleObj* to the cells defined in the *rangeObj*<!-- END REF -->.
+`VP SET CELL STYLE` コマンドは、<!-- REF #_method_.VP SET CELL STYLE.Summary -->*styleObj* に定義されているスタイルを、*rangeObj* で定義されたセルに適用します<!-- END REF -->。
 
-In *rangeObj*, pass a range of cells where the style will be applied. If the *rangeObj* contains multiple cells, the style is applied to each cell.
-> Borders applied with `VP SET CELL STYLE` will be applied to each cell of the *rangeObj*, as opposed to the [VP SET BORDER](#vp-set-border) command which applies borders to the *rangeObj* as a whole.
+*rangeObj* 引数には、スタイルを適用したいセルのレンジを渡します。 *rangeObj* に複数のセルが含まれる場合、スタイルはそれぞれのセルに割り当てられます。
+> `VP SET CELL STYLE` で適用された境界線は、*rangeObj* の各セルに対して適用されます。これに対して [VP SET BORDER](#vp-set-border) コマンドは境界線を *rangeObj* のレンジ全体に対して適用されます。
 
-The *styleObj* parameter lets you pass an object containing style settings. You can use an existing style sheet or create a new style. If the *styleObj* contains both an existing style sheet and additional style settings, the existing style sheet is applied first, followed by the additional settings. Giving the *styleObj* parameter a NULL value will remove any style settings from the *rangeObj* and revert to the default style settings (if any).
+*styleObj* にはスタイル設定を格納したオブジェクトを渡します。 既存のスタイルシートを使用することもできますし、新しいスタイルを作成することも可能です。 *styleObj* に既存のスタイルシートと、追加のスタイル設定の両方が格納されている場合、既存のスタイルシートが先に適用され、そのあとに追加の設定が適用されます。 *styleObj* 引数として NULL値を渡した場合、*rangeObj* のレンジのスタイルシートはすべて削除され、デフォルトのスタイル設定 (あれば) に戻されます。
 
-For more information about style objects and style sheets, see the [Style Objects](configuring.md#style-objects) paragraph.
+スタイルオブジェクトとスタイルシートの詳細については、[スタイルオブジェクト](configuring.md#スタイルオブジェクト) を参照ください。
 
 
 #### 例題
@@ -3057,10 +3057,10 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 
 
-### VP SET COLUMN ATTRIBUTES<!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Syntax -->**VP SET COLUMN ATTRIBUTES** ( *rangeObj* : Object  ; *propertyObj* : Object)<!-- END REF --><!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Params -->| 引数          | タイプ    |    | 説明                                  |
-| ----------- | ------ | -- | ----------------------------------- |
-| rangeObj    | オブジェクト | -> | レンジオブジェクト                           |
-| propertyObj | オブジェクト | -> | Object containing column properties |<!-- END REF -->#### 説明
+### VP SET COLUMN ATTRIBUTES<!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Syntax -->**VP SET COLUMN ATTRIBUTES** ( *rangeObj* : Object  ; *propertyObj* : Object)<!-- END REF --><!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Params -->| 引数          | タイプ    |    | 説明                  |
+| ----------- | ------ | -- | ------------------- |
+| rangeObj    | オブジェクト | -> | レンジオブジェクト           |
+| propertyObj | オブジェクト | -> | カラムプロパティを格納したオブジェクト |<!-- END REF -->#### 説明
 
 The `VP SET COLUMN ATTRIBUTES` command<!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Summary -->applies the attributes defined in the *propertyObj* to the columns in the *rangeObj*<!-- END REF -->.
 
