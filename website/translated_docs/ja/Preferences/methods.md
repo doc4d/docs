@@ -146,13 +146,13 @@ title: メソッドページ
 
 #### Matching \[]\(){}
 
-Sets the graphic signaling of matching braces in the code. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. 次のオプションから選択することができます:
+コード中での対応する括弧を強調する方法を設定します。 この強調は、括弧 (大カッコ[]、中カッコ{}、小カッコ()) が選択されたときに表示されます。 次のオプションから選択することができます:
 
 - **なし**: 強調なし
-- **Rectangle** (default): Braces surrounded by a black line  
+- **四角** (デフォルト): 括弧が黒い四角で囲まれます。  
   ![](assets/en/Preferences/optionsRectangle.png)
-- **Background Color**: Braces highlighted (the color is set in the [Theme](#theme-definition) page).
-- **Bold**: Braces displayed in bold.
+- **背景色**: 括弧がハイライトされます (色は [テーマ](#テーマの定義) ページで設定します)。
+- **太字**: 括弧が太字で表示されます。
 
 #### 変数とフィールドを強調
 
