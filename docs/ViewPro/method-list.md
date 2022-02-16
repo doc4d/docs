@@ -1282,7 +1282,7 @@ $activeCell:=VP Get active cell("myVPArea")
 |Parameter|Type||Description|
 |---|---|---|---|
 | cellRange | Object | -> | Range object |
-| Result  | Text | <- | attribute name bound to the cell |
+| Result  | Text | <- | Attribute name bound to the cell |
 
 <!-- END REF -->  
 
@@ -1314,7 +1314,7 @@ $myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
 
 #### See also
 
-[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
 
 
 ### VP Get cell style
@@ -1505,8 +1505,8 @@ $index:=VP Get current sheet("ViewProArea")
 |---|---|---|---|
 |vpAreaName |Object|->|4D View Pro area form object name|
 |sheetIndex |Object|->|Index of the sheet to get the data context from|
-|Result |Object|<-|data context|
-|Result |Collection|<-|data context|
+|Result |Object|<-|Data context|
+|Result |Collection|<-|Data context|
 
 <!-- END REF -->  
 
@@ -1528,7 +1528,8 @@ $myCollection:=VP Get data context("ViewProArea")
 ```
 
 #### See also 
-[VP SET DATA CONTEXT](#vp-set-data-context)
+
+[VP SET DATA CONTEXT](#vp-set-data-context)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
 
 ### VP Get default style
 
@@ -3648,7 +3649,7 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 #### See also
 
-[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
 
 ### VP SET BOOLEAN VALUE
 
@@ -4054,7 +4055,7 @@ End case
 
 #### Description
 
-The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is used to fill data automatically in sheet cells.
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is used to automatically fill sheet cells with data.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned. 
 
@@ -4068,14 +4069,14 @@ In *options*, you can pass an object that specifies additional options. Possible
 |autoGenerateColumns|Object| If the data is a collection, specifies if columns are generated automatically when the data context is applied.|
 
 The following rules apply when columns are automatically generated:
-* If *data* is a collection of objects, attribute names are used a column titles (see example 2). 
-* If *data* is a collection that contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created..
+* If *data* is a collection of objects, attribute names are used as column titles (see example 2). 
+* If *data* is a collection that contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
  
 #### Example
 
-Pass an object and bind the context data to cells: 
+Pass an object and bind the context data to cells in the first row: 
 
 ```4d
 var $data; $options : Object
@@ -4134,7 +4135,7 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 
 #### See also
 
-[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)
+[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
 
 ### VP SET DATE TIME VALUE
 
