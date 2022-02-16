@@ -308,13 +308,13 @@ This option lets you choose the linking mode between the merged application and 
 
 #### Embed the project Users and Groups in built server application
 
-Terms used in this section:
+**Preliminary Note:** The following terms are used in this section:
 
 | Nom                        | Définition                                                                                                             |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Project directory file     | **directory.json** file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
 | Application directory file | **directory.json** file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
-| Data directory file        | **directory.json** file in the [Data > Settings](../Project/architecture.md#settings) folder                           |
+| Data directory file        | **directory.json** file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
 
 
 When you check this option, the project directory file is copied to the application directory file at build time.
@@ -322,9 +322,9 @@ When you check this option, the project directory file is copied to the applicat
 When you execute a built 4D Server application:
 
 * If the server has a data directory file, it is loaded.
-* If the server does not have a data directory file, it uses the application directory file.
+* If the server does not have a data directory file, the application directory file is loaded.
 
-The application directory file is read-only. Modifications made to users, groups and permissions during server execution are stored in the data directory file.
+The application directory file is read-only. Modifications made to users, groups and permissions during server execution are stored in the data directory file. If no data directory file already exists, it is automatically created. If the application directory file was embedded, it is duplicated as data directory file.
 
 Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file, allowing local customization. 
 
