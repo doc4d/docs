@@ -880,7 +880,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 |formula|	object	|Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).|
 |valuesOnly|	boolean|	Specifies that only the values from formulas (if any) will be exported.|
 |includeFormatInfo|	boolean|	True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.|
-|includeBindingSource|	Boolean | True (default) to include the data context values in the exported document. When the document is opened, the values will be displayed, but the datacontext will be empty. 	|
+|includeBindingSource|	Boolean | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported document.</li><li>False: Data context values are not exported.</li><ul><p>Cell binding is always exported</p> |
 |sheetIndex|	number|	PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
 |pdfOptions|	object|	PDF only (optional) - Options for pdf export <p><table><tr><th>Property</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>|
 |csvOptions|object|	CSV only (optional) - Options for csv export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>range</td><td>object</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>Column delimiter. Default: ","</td></tr></table></p>|
@@ -1024,7 +1024,7 @@ In the *options* parameter, you can pass the following export options, if requir
 |Property|	Type|	Description|
 |---|---|---
 |includeFormatInfo|	Boolean | True (default) to include formatting information, false otherwise. Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to False allows reducing export time.	|
-|includeBindingSource|	Boolean | True (default) to include the data context values in the exported document. When the document is opened, the values will be displayed, but the datacontext will be empty. 	|
+|includeBindingSource|	Boolean | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported object.</li><li>False: Data context values are not exported.</li></ul>  	|
 
 For more information on 4D View Pro objects, please refer to the [4D View Pro object](configuring.md#4d-view-pro-object) paragraph.
 
@@ -1275,24 +1275,24 @@ $activeCell:=VP Get active cell("myVPArea")
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *cellRange* : Object ) : Text<!-- END REF -->  
+<!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *rangeObj* : Object ) : Text<!-- END REF -->  
 
 <!-- REF #_method_.VP Get binding path.Params -->
 
 |Parameter|Type||Description|
 |---|---|---|---|
-| cellRange | Object | -> | Range object |
+| rangeObj | Object | -> | Range object |
 | Result  | Text | <- | Attribute name bound to the cell |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns the attribute name bound to the cell specified in *cellRange*<!-- END REF -->. 
+The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns the attribute name bound to the cell specified in *rangeObj*<!-- END REF -->. 
 
-In *cellRange*, pass an object that is either a cell range or a combined range of cells.
-
-The returned Text is the name of the attribute bound to the cell in *cellRange*.
+In *rangeObj*, pass an object that is either a cell range or a combined range of cells. Note that: 
+* If *rangeObj* is a combined range of cells, the command returns the attribute name linked to the first cell in the range.
+* If *rangeObj* contains several ranges, the command returns the attribute name linked to the first cell of the first range.
  
 #### Example
 
@@ -1314,7 +1314,7 @@ $myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
 
 #### See also
 
-[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
+[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
 
 
 ### VP Get cell style
@@ -1496,7 +1496,7 @@ $index:=VP Get current sheet("ViewProArea")
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF -->
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get data context.Params -->
@@ -1505,19 +1505,17 @@ $index:=VP Get current sheet("ViewProArea")
 |---|---|---|---|
 |vpAreaName |Object|->|4D View Pro area form object name|
 |sheetIndex |Object|->|Index of the sheet to get the data context from|
-|Result |Object|<-|Data context|
-|Result |Collection|<-|Data context|
+|Result |Object \| Collection |<-|Data context|
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the data context of a worksheet<!-- END REF -->.
+The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the current data context of a worksheet<!-- END REF -->. The returned context includes any modifications done to the contents of the data context.
 
 In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet. If there is no context for the worksheet, the command returns `Null`.
 
-The function returns an object or a collection depending on the type of data context set with [VP SET DATA CONTEXT](#vp-set-data-context). The returned context includes user modifications.
-
+The function returns an object or a collection depending on the type of data context set with [VP SET DATA CONTEXT](#vp-set-data-context).
  
 #### Example
 
@@ -3613,29 +3611,33 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *cellRange* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
+<!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *rangeObj* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
 
 <!-- REF #_method_.VP SET BINDING PATH.Params -->
 
 |Parameter|Type||Description|
 |---|---|---|---|
-| cellRange | Object | -> | Range object |
+| rangeObj | Object | -> | Range object |
 | dataContextAttribute  | Text | -> | Attribute name to bind to *cellRange* |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *cellRange*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *cellRange*.
+The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
 
-In *cellRange*, pass an object that is either a cell range or a combined range of cells. If the value passed in *cellRange* is not a cell range, the value of the first cell in the range is used. If *cellRange* contains several ranges, they are all bound to the attributes.
+In *rangeObj*, pass an object that is either a cell range or a combined range of cells.
+* If there are several cells in *rangeObj* the command binds the attribute to the first cell of the range.
+* If *rangeObj* contains several ranges of cells, the command binds the attribute to the first cell of each range.
 
-In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding. Attributes of type collection are not supported. When you pass the name of a collection attribute, the command does nothing. 
+In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding. 
+
+> Attributes of type collection are not supported. When you pass the name of a collection attribute, the command does nothing. 
  
 #### Example
 
 ```4d
-var $p; $options : Object
+var $p : Object
 
 $p:=New object
 $p.firstName:="Freehafer"
@@ -3649,7 +3651,7 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 
 #### See also
 
-[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
+[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
 
 ### VP SET BOOLEAN VALUE
 
@@ -4038,7 +4040,7 @@ End case
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection ; *options* : Object ; *sheetIndex* : Integer )
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; *options* : Object ; *sheetIndex* : Integer )
 <!-- END REF -->
 
 
@@ -4047,7 +4049,8 @@ End case
 |Parameter|Type||Description|
 |---|---|---|---|
 |vpAreaName |Object|->|4D View Pro area form object name|
-|data |Object|->|Data to load in the data context|
+|dataObj|Object|->|Data object to load in the data context|
+|dataColl|Object|->|Data collection to load in the data context|
 |options |Object|->|Additional options|
 |sheetIndex |Integer|->|Sheet index|
 
@@ -4055,22 +4058,19 @@ End case
 
 #### Description
 
-The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is used to automatically fill sheet cells with data.
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications. 
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned. 
 
-In *data*, pass an object or a collection containing the data to load in the data context.
+In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context.
 
 In *options*, you can pass an object that specifies additional options. Possible properties are: 
 
 |Property|Type|Description|
 |---|---|---|
-|reset |Object|True to reset the sheet's context before loading the new context, False (default) otherwise.|
-|autoGenerateColumns|Object| If the data is a collection, specifies if columns are generated automatically when the data context is applied.|
-
-The following rules apply when columns are automatically generated:
-* If *data* is a collection of objects, attribute names are used as column titles (see example 2). 
-* If *data* is a collection that contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.
+|reset |Object|True to reset the sheet's contents before loading the new context, False (default) otherwise.|
+|autoGenerateColumns|Object| Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2)</li>. 
+<li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul>|
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
  
@@ -4079,7 +4079,7 @@ In *sheetIndex*, pass the index of the sheet that will receive the data context.
 Pass an object and bind the context data to cells in the first row: 
 
 ```4d
-var $data; $options : Object
+var $data : Object
 
 $data:=New object
 $data.firstName:="Freehafer"
@@ -4135,7 +4135,7 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 
 #### See also
 
-[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
+[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)
 
 ### VP SET DATE TIME VALUE
 
