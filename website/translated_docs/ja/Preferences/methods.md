@@ -149,17 +149,18 @@ The corresponding [clipboard shorcuts](https://doc.4d.com/4Dv19R3/4D/19-R3/Writi
 
 - **閉じる }, ), ], "**: {, (, [, あるいは " などの開くカッコを入力した時に、対応する閉じるカッコが追加されます。 この機能により、カーソル位置に、あるいは選択されたテキストを囲むように、対応するカッコ記号を挿入できるようになります。 たとえば、文字列をハイライトして単一の " を入力すると、選択された文字列全体が "" で囲まれます:
 
-![](assets/en/Preferences/optionsClosing.png) -> " -> ![](assets/en/Preferences/optionsClosing2.png)
+![](assets/en/Preferences/optionsClosing.png)  
+![](assets/en/Preferences/optionsClosing2.png)
 
-#### 括弧のマッチング
+#### Matching \[]\(){}
 
-コード中での対応する括弧、二重引用符などを強調する方法を設定します。 この強調は、括弧 (大カッコ[]、中カッコ{}、小カッコ()) あるいは二重引用符 "" が選択されたときに表示されます。 次のオプションから選択することができます:
+Sets the graphic signaling of matching braces in the code. This signaling appears whenever a square bracket, parenthesis, or curly bracket is selected. 次のオプションから選択することができます:
 
 - **なし**: 強調なし
-- **四角** (デフォルト): 括弧や二重引用符が黒い四角で囲まれます。  
+- **Rectangle** (default): Braces surrounded by a black line  
   ![](assets/en/Preferences/optionsRectangle.png)
-- **背景色**: 括弧や二重引用符がハイライトされます (色は [テーマ](#テーマの定義) ページで設定します)。
-- **太字**: 括弧や二重引用符が太字で表示されます。
+- **Background Color**: Braces highlighted (the color is set in the [Theme](#theme-definition) page).
+- **Bold**: Braces displayed in bold.
 
 #### 変数とフィールドを強調
 
