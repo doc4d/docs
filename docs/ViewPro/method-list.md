@@ -1001,7 +1001,7 @@ Here's the result:
 
 ### VP Export to object
 
-<!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *option* : Object} ) : Object<!-- END REF -->  
+<!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *options* : Object} ) : Object<!-- END REF -->  
 
 <!-- REF #_method_.VP Export to object.Params -->
 
@@ -1018,7 +1018,7 @@ The `VP Export to object` command <!-- REF #_method_.VP Export to object.Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In the *option* parameter, you can pass the following export options, if required:
+In the *options* parameter, you can pass the following export options, if required:
  
  
 |Property|	Type|	Description|
