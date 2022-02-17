@@ -857,7 +857,7 @@ Le paramètre optionnel *paramObj* vous permet de définir plusieurs propriété
 | formula              | object  | Méthode callback à lancer lorsque l'export est terminé. L'utilisation d'une méthode callback est nécessaire lorsque l'export est asynchrone (ce qui est le cas pour les formats PDF et Excel) si vous avez besoin d'un code à exécuter après l'export. La méthode callback doit être utilisée avec la commande [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) (voir ci-dessous pour plus d'informations).                                                                                                                                                      |
 | valuesOnly           | boolean | Précise que seules les valeurs issues de formules (le cas échéant) seront exportées.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | includeFormatInfo    | boolean | Vrai pour inclure les informations de formatage, sinon faux (vrai par défaut). Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. D'un autre côté, mettre cette propriété à **faux** permet de réduire la durée de l'export.                                                                                                                                                                                                                                                                                                           |
-| includeBindingSource | Booléen | True (default) to include the data context values in the exported document. When the document is opened, the values will be displayed, but the datacontext will be empty.                                                                                                                                                                                                                                                                                                                                                                                                           |
+| includeBindingSource | Booléen | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported document.</li><li>False: Data context values are not exported.</li><ul><p>Cell binding is always exported</p>                                                                                                                                                                                                                                                                                                                                                            |
 | sheetIndex           | number  | PDF uniquement (optionnel) - Numéro de la feuille à exporter (débute à 0). -2=toutes les feuilles visibles (par défaut), -1=feuille courante uniquement                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | pdfOptions           | object  | PDF uniquement (optionnel) - Options pour l'export en PDF <p><table><tr><th>Propriété</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>Texte</td><td>nom de l'application qui a créé le document original à partir duquel il a été converti.</td></tr><tr><td>title</td><td>Texte</td><td>titre du document.</td></tr><tr><td>author</td><td>Texte</td><td>nom de la personne ayant créé ce document.</td></tr><tr><td>keywords</td><td>Texte</td><td>mots-clés associés au document.</td></tr><tr><td>subject</td><td>Texte</td><td>sujet du document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | csvOptions           | object  | CSV uniquement (optionnel) - Options pour l'export en CSV <p><table><tr><th>Propriété</th><th>Type</th><th>Description</th></tr><tr><td>range</td><td>object</td><td>Objet plage de toutes les cellules</td></tr><tr><td>rowDelimiter</td><td>Texte</td><td>Délimiteur de ligne. Par défaut : "\r\n"</td></tr><tr><td>columnDelimiter</td><td>Texte</td><td>Délimiteur de colonne. Par défaut : ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -978,7 +978,7 @@ Voici le résultat :
 
 ### VP Export to object
 
-<!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *option* : Object} ) : Object<!-- END REF -->  
+<!-- REF #_method_.VP Export to object.Syntax -->**VP Export to object** ( *vpAreaName* : Text {; *options* : Object} ) : Object<!-- END REF -->  
 
 <!-- REF #_method_.VP Export to object.Params -->
 
@@ -995,13 +995,13 @@ La commande `VP Export to object` <!-- REF #_method_.VP Export to object.Summary
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-In the *option* parameter, you can pass the following export options, if required:
+In the *options* parameter, you can pass the following export options, if required:
 
 
 | Propriété            | Type    | Description                                                                                                                                                                                                                                       |
 | -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | includeFormatInfo    | Booléen | True (default) to include formatting information, false otherwise. Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. On the other hand, setting this property to False allows reducing export time. |
-| includeBindingSource | Booléen | True (default) to include the data context values in the exported document. When the document is opened, the values will be displayed, but the datacontext will be empty.                                                                         |
+| includeBindingSource | Booléen | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported object.</li><li>False: Data context values are not exported.</li></ul>                                                                                                                                    |
 
 Pour plus d'informations sur les objets 4D View Pro, veuillez vous référer au paragraphe [objet 4D View Pro](configuring.md#objet-4d-view-pro).
 
@@ -1252,24 +1252,24 @@ $activeCell:=VP Get active cell("myVPArea")
 | v19 R5  | Ajout         |
 </details>
 
-<!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *cellRange* : Object ) : Text<!-- END REF -->  
+<!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *rangeObj* : Object ) : Text<!-- END REF -->  
 
 <!-- REF #_method_.VP Get binding path.Params -->
 
 | Paramètres | Type   |    | Description                      |
 | ---------- | ------ | -- | -------------------------------- |
-| cellRange  | Object | -> | Objet plage                      |
-| Résultat   | Text   | <- | attribute name bound to the cell |
+| rangeObj   | Object | -> | Objet plage                      |
+| Résultat   | Text   | <- | Attribute name bound to the cell |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns the attribute name bound to the cell specified in *cellRange*<!-- END REF -->.
+The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns the attribute name bound to the cell specified in *rangeObj*<!-- END REF -->.
 
-In *cellRange*, pass an object that is either a cell range or a combined range of cells.
-
-The returned Text is the name of the attribute bound to the cell in *cellRange*.
+In *rangeObj*, pass an object that is either a cell range or a combined range of cells. A noter que :
+* If *rangeObj* is a combined range of cells, the command returns the attribute name linked to the first cell in the range.
+* If *rangeObj* contains several ranges, the command returns the attribute name linked to the first cell of the first range.
 
 #### Exemple
 
@@ -1473,28 +1473,26 @@ $index:=VP Get current sheet("ViewProArea")
 | v19 R5  | Ajout         |
 </details>
 
-<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF -->
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get data context.Params -->
 
-| Paramètres | Type       |    | Description                                     |
-| ---------- | ---------- | -- | ----------------------------------------------- |
-| vpAreaName | Object     | -> | Nom d'objet formulaire zone 4D View Pro         |
-| sheetIndex | Object     | -> | Index of the sheet to get the data context from |
-| Résultat   | Object     | <- | data context                                    |
-| Résultat   | Collection | <- | data context                                    |
+| Paramètres | Type      |            | Description                                     |
+| ---------- | --------- | ---------- | ----------------------------------------------- |
+| vpAreaName | Object    | ->         | Nom d'objet formulaire zone 4D View Pro         |
+| sheetIndex | Object    | ->         | Index of the sheet to get the data context from |
+| Résultat   | Object \ | Collection | <-|Data context                                 |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the data context of a worksheet<!-- END REF -->.
+The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the current data context of a worksheet<!-- END REF -->. The returned context includes any modifications done to the contents of the data context.
 
 In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet. If there is no context for the worksheet, the command returns `Null`.
 
-The function returns an object or a collection depending on the type of data context set with [VP SET DATA CONTEXT](#vp-set-data-context). The returned context includes user modifications.
-
+The function returns an object or a collection depending on the type of data context set with [VP SET DATA CONTEXT](#vp-set-data-context).
 
 #### Exemple
 
@@ -1505,7 +1503,8 @@ $myCollection:=VP Get data context("ViewProArea")
 ```
 
 #### Voir aussi
-[VP SET DATA CONTEXT](#vp-set-data-context)
+
+[VP SET DATA CONTEXT](#vp-set-data-context)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
 
 ### VP Get default style
 
@@ -3582,29 +3581,33 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 | v19 R5  | Ajout         |
 </details>
 
-<!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *cellRange* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
+<!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *rangeObj* : Object  ; *dataContextAttribute*  : Text) <!-- END REF -->  
 
 <!-- REF #_method_.VP SET BINDING PATH.Params -->
 
 | Paramètres           | Type   |    | Description                           |
 | -------------------- | ------ | -- | ------------------------------------- |
-| cellRange            | Object | -> | Objet plage                           |
+| rangeObj             | Object | -> | Objet plage                           |
 | dataContextAttribute | Text   | -> | Attribute name to bind to *cellRange* |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *cellRange*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *cellRange*.
+The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
 
-In *cellRange*, pass an object that is either a cell range or a combined range of cells. If the value passed in *cellRange* is not a cell range, the value of the first cell in the range is used. If *cellRange* contains several ranges, they are all bound to the attributes.
+In *rangeObj*, pass an object that is either a cell range or a combined range of cells.
+* If there are several cells in *rangeObj* the command binds the attribute to the first cell of the range.
+* If *rangeObj* contains several ranges of cells, the command binds the attribute to the first cell of each range.
 
-In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding. Attributes of type collection are not supported. When you pass the name of a collection attribute, the command does nothing.
+In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding.
+
+> Attributes of type collection are not supported. When you pass the name of a collection attribute, the command does nothing.
 
 #### Exemple
 
 ```4d
-var $p; $options : Object
+var $p : Object
 
 $p:=New object
 $p.firstName:="Freehafer"
@@ -4003,48 +4006,46 @@ End case
 | v19 R5  | Ajout         |
 </details>
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *data* : Collection ; *options* : Object ; *sheetIndex* : Integer )
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; *options* : Object ; *sheetIndex* : Integer )
 <!-- END REF -->
 
 
 <!-- REF #_method_.VP SET DATA CONTEXT.Params -->
 
-| Paramètres | Type    |    | Description                             |
-| ---------- | ------- | -- | --------------------------------------- |
-| vpAreaName | Object  | -> | Nom d'objet formulaire zone 4D View Pro |
-| data       | Object  | -> | Data to load in the data context        |
-| options    | Object  | -> | Options supplémentaires                 |
-| sheetIndex | Integer | -> | Sheet index                             |
+| Paramètres | Type    |    | Description                                 |
+| ---------- | ------- | -- | ------------------------------------------- |
+| vpAreaName | Object  | -> | Nom d'objet formulaire zone 4D View Pro     |
+| dataObj    | Object  | -> | Data object to load in the data context     |
+| dataColl   | Object  | -> | Data collection to load in the data context |
+| options    | Object  | -> | Options supplémentaires                     |
+| sheetIndex | Integer | -> | Sheet index                                 |
 
 <!-- END REF -->
 
 #### Description
 
-The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is used to fill data automatically in sheet cells.
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-In *data*, pass an object or a collection containing the data to load in the data context.
+In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context.
 
 In *options*, you can pass an object that specifies additional options. Possible properties are:
 
-| Propriété           | Type   | Description                                                                                                     |
-| ------------------- | ------ | --------------------------------------------------------------------------------------------------------------- |
-| reset               | Object | True to reset the sheet's context before loading the new context, False (default) otherwise.                    |
-| autoGenerateColumns | Object | If the data is a collection, specifies if columns are generated automatically when the data context is applied. |
-
-The following rules apply when columns are automatically generated:
-* If *data* is a collection of objects, attribute names are used a column titles (see example 2).
-* If *data* is a collection that contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created..
+| Propriété           | Type   | Description                                                                                                                                                                                                                                 |
+| ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| reset               | Object | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                                               |
+| autoGenerateColumns | Object | Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2)</li>. |
+<li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul>|
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet.
 
 #### Exemple
 
-Pass an object and bind the context data to cells:
+Pass an object and bind the context data to cells in the first row:
 
 ```4d
-var $data; $options : Object
+var $data : Object
 
 $data:=New object
 $data.firstName:="Freehafer"
@@ -5194,11 +5195,11 @@ The following table lists the available workbook options:
 | showDragFillTip                       | boolean                 | Display the drag-fill tip.                                                                                                                                                                                                                             |
 | showHorizontalScrollbar               | boolean                 | Display the horizontal scroll bar.                                                                                                                                                                                                                     |
 | showResizeTip                         | number                  | How to display the resize tip. Valeurs disponibles : <table><tr><th>Constante</th><th>Valeur</th><th>Description</th></tr><tr><td> vk show resize tip both </td><td>3</td><td> Horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td>1</td><td> Only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td>0</td><td> No resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td>2</td><td> Only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                         |
-| showScrollTip                         | number                  | How to display the scroll tip. Valeurs disponibles : <table><tr><th>Constante</th><th>Valeur</th><th>Description</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                         |
+| showScrollTip                         | number                  | How to display the scroll tip. Valeurs disponibles : <table><tr><th>Constante</th><th>Valeur</th><th>Description</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                        |
 | showVerticalScrollbar                 | boolean                 | Display the vertical scroll bar.                                                                                                                                                                                                                       |
 | tabEditable                           | boolean                 | The sheet tab strip can be edited.                                                                                                                                                                                                                     |
 | tabNavigationVisible                  | boolean                 | Display the sheet tab navigation.                                                                                                                                                                                                                      |
-| tabStripPosition                      | number                  | Position of the tab strip. Valeurs disponibles : <table><tr><th>Constante</th><th>Valeur</th><th>Description</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                             |
+| tabStripPosition                      | number                  | Position of the tab strip. Valeurs disponibles : <table><tr><th>Constante</th><th>Valeur</th><th>Description</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                            |
 | tabStripRatio                         | number                  | Percentage value (0.x) that specifies how much of the horizontal space will be allocated to the tab strip. The rest of the horizontal area (1 - 0.x) will allocated to the horizontal scrollbar.                                                       |
 | tabStripVisible                       | boolean                 | Display the sheet tab strip.                                                                                                                                                                                                                           |
 | tabStripWidth                         | number                  | Width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                                      |
@@ -5243,14 +5244,14 @@ In *rangeObj*, pass a range of cells as an object to designate the cells to be v
 
 The following selectors are available:
 
-| Selector              | Description                                                                                                                                                                                                                                                                              | Available with *vPos* | Available with *hPos* |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
-| `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                         | X                     |                       |
-| `vk position center`  | Alignment to the center. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                           | X                     | X                     |
-| `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                   |                       | X                     |
+| Selector              | Description                                                                                                                                                                                                                                                                               | Available with *vPos* | Available with *hPos* |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
+| `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                          | X                     |                       |
+| `vk position center`  | Alignment to the center. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                          | X                     | X                     |
+| `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                    |                       | X                     |
 | `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | X                     | X                     |
-| `vk position right`   | Horizontal alignment to the right of the cell or column                                                                                                                                                                                                                                  |                       | X                     |
-| `vk position top`     | Vertical alignment to the top of cell or row                                                                                                                                                                                                                                             | X                     |                       |
+| `vk position right`   | Horizontal alignment to the right of the cell or column                                                                                                                                                                                                                                   |                       | X                     |
+| `vk position top`     | Vertical alignment to the top of cell or row                                                                                                                                                                                                                                              | X                     |                       |
 > This command is only effective if repositioning the view is possible. For example, if the *rangeObj* is in cell A1 (the first column and the first row) of the current sheet, repositioning the view will make no difference because the vertical and horizontal limits have already been reached (i.e., it is not possible to scroll any higher or any more to the left). The same is true if *rangeObj* is in cell C3 and the view is repositioned to the center or the bottom right. The view remains unaltered.
 
 #### Exemple
