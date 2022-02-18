@@ -1282,17 +1282,17 @@ $activeCell:=VP Get active cell("myVPArea")
 |Parameter|Type||Description|
 |---|---|---|---|
 | rangeObj | Object | -> | Range object |
-| Result  | Text | <- | Attribute name bound to the cell |
+| Result  | Text | <- | Name of the attribute bound to the cell |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns the attribute name bound to the cell specified in *rangeObj*<!-- END REF -->. 
+The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns name of the attribute bound to the cell specified in *rangeObj*<!-- END REF -->. 
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells. Note that: 
-* If *rangeObj* is a combined range of cells, the command returns the attribute name linked to the first cell in the range.
-* If *rangeObj* contains several ranges, the command returns the attribute name linked to the first cell of the first range.
+* If *rangeObj* is a range with several cells, the command returns the attribute name linked to the first cell in the range.
+* If *rangeObj* contains several ranges of cells, the command returns the attribute name linked to the first cell of the first range.
  
 #### Example
 
@@ -1314,7 +1314,7 @@ $myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
 
 #### See also
 
-[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
 
 
 ### VP Get cell style
@@ -1505,13 +1505,13 @@ $index:=VP Get current sheet("ViewProArea")
 |---|---|---|---|
 |vpAreaName |Object|->|4D View Pro area form object name|
 |sheetIndex |Object|->|Index of the sheet to get the data context from|
-|Result |Object \| Collection |<-|Data context|
+|Result |Object&#124;Collection |<-|Data context|
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the current data context of a worksheet<!-- END REF -->. The returned context includes any modifications done to the contents of the data context.
+The `VP Get data context` command <!-- REF #_method_.VP Get data context.Summary -->returns the current data context of a worksheet<!-- END REF -->. The returned context includes any modifications made to the contents of the data context.
 
 In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet. If there is no context for the worksheet, the command returns `Null`.
 
@@ -1527,7 +1527,7 @@ $myCollection:=VP Get data context("ViewProArea")
 
 #### See also 
 
-[VP SET DATA CONTEXT](#vp-set-data-context)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
+[VP SET DATA CONTEXT](#vp-set-data-context)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP SET BINDING PATH](#vp-set-binding-path)
 
 ### VP Get default style
 
@@ -3618,7 +3618,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 |Parameter|Type||Description|
 |---|---|---|---|
 | rangeObj | Object | -> | Range object |
-| dataContextAttribute  | Text | -> | Attribute name to bind to *cellRange* |
+| dataContextAttribute  | Text | -> | Name of the attribute to bind to *rangeObj* |
 
 <!-- END REF -->  
 
@@ -3627,7 +3627,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells.
-* If there are several cells in *rangeObj* the command binds the attribute to the first cell of the range.
+* If *rangeObj* contains several cells, the command binds the attribute to the first cell of the range.
 * If *rangeObj* contains several ranges of cells, the command binds the attribute to the first cell of each range.
 
 In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding. 
@@ -4069,8 +4069,7 @@ In *options*, you can pass an object that specifies additional options. Possible
 |Property|Type|Description|
 |---|---|---|
 |reset |Object|True to reset the sheet's contents before loading the new context, False (default) otherwise.|
-|autoGenerateColumns|Object| Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2)</li>. 
-<li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul>|
+|autoGenerateColumns|Object| Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul>|
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
  
