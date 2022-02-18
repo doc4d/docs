@@ -235,7 +235,7 @@ Entity クラスでは、専用のキーワードを使用して **計算属性*
 
 #### エイリアス属性
 
-Entity classes allow you to define **alias attributes**, usually over related attributes, using the `Alias` keyword:
+Entity クラスでは、`Alias` キーワードを使用して **エイリアス属性** を定義することができます (通常はリレート属性を対象に定義します):
 
 `Alias` *attributeName* *targetPath*
 
@@ -643,9 +643,9 @@ Function orderBy age($event : Object)-> $result : Text
 
 ### 概要
 
-An **alias** attribute is built above another attribute of the data model, named **target** attribute. The target attribute can belong to a related dataclass (available through any number of relation levels) or to the same dataclass. An alias attribute stores no data, but the path to its target attribute. You can define as many alias attributes as you want in a dataclass.
+**エイリアス** 属性は、**ターゲット** 属性と呼ばれるデータモデルの別の属性を元に定義されます。 ターゲット属性には、リレートデータクラス (リレートレベルは無制限) または同じデータクラスのものを使用できます。 エイリアス属性はデータではなく、ターゲット属性へのパスを格納します。 データクラスには、必要な数だけエイリアス属性を定義することができます。
 
-Alias attributes are particularly useful to handle N to N relations. They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
+エイリアス属性は、N対Nリレーションを扱うのに便利です。 They bring more readability and simplicity in the code and in queries by allowing to rely on business concepts instead of implementation details.
 
 ### How to define alias attributes
 
