@@ -682,23 +682,23 @@ Quando for criada, a seleção de entidades não contém nenhuma entidade (`mySe
 **.query**( *queryString* : Text { ; *...value* : any } { ; *querySettings* : Object } ) : 4D.EntitySelection <br>**.query**( *formula* : Object { ; *querySettings* : Object } ) : 4D.EntitySelection <!-- END REF -->
 
 <!-- REF #DataClassClass.query().Params -->
-| Parameter     | Type               |    | Description                                                                                                                 |
-| ------------- | ------------------ | -- | --------------------------------------------------------------------------------------------------------------------------- |
-| queryString   | Texto              | -> | Criterios de pesquisa como string                                                                                           |
-| formula       | Objeto             | -> | Criterios de pesquisa como objeto fórmula                                                                                   |
-| value         | any                | -> | Value(s) to use for indexed placeholder(s)                                                                                  |
-| querySettings | Objeto             | -> | Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                   |
-| Result        | 4D.EntitySelection | <- | New entity selection made up of entities from dataclass meeting the search criteria specified in *queryString* or *formula* |
+| Parameter     | Type               |    | Description                                                                                                                         |
+| ------------- | ------------------ | -- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| queryString   | Texto              | -> | Criterios de pesquisa como string                                                                                                   |
+| formula       | Objeto             | -> | Criterios de pesquisa como objeto fórmula                                                                                           |
+| value         | any                | -> | Valores a usar para placeholders indexados                                                                                          |
+| querySettings | Objeto             | -> | Opções de pesquisa: parâmetros, atributos, args, allowFormulas, contexto, queryPath,queryPlan                                       |
+| Result        | 4D.EntitySelection | <- | Nova seleção de entidade feita de entidades de dataclass realizano o critério de pesquia especificado em *queryString* or *formula* |
 <!-- END REF -->
 
 
 #### Description
 
-The `.query( )` function <!-- REF #DataClassClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s)<!-- END REF -->, for all the entities in the dataclass, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carregamento diferido/lazy loading.
+A `.query( )` função <!-- REF #DataClassClass.query().Summary -->pesquisa por entidades que encontram o critério de pesquisa especificado em *queryString* ou *formula* e (opcionalmente) *value*(s)<!-- END REF -->, para todas as entidades na dataclass e retorna um novo objeto de tipo `EntitySelection` contendo todas as entidades que foram encontradas. Se aplica carregamento diferido/lazy loading.
 
-If no matching entities are found, an empty `EntitySelection` is returned.
+Se não houver entidades correspondentes encontradas, uma `EntitySelection` vazia é retornada.
 
-**queryString parameter**
+**parâmetro queryString**
 
 O parâmetro *queryString* usa a sintaxe abaixo:
 
@@ -708,7 +708,7 @@ attributePath|formula comparator value
     {order by attributePath {desc | asc}}
 ```
 
-where:
+onde:
 
 *   **attributePath**: path of attribute on which you want to execute the query. This parameter can be a simple name (for example "country") or any valid attribute path (for example "country.name".) In case of an attribute path whose type is `Collection`, \[ ] notation is used to handle all the occurences (for example "children\[ ].age"). You can also use a **placeholder** (see below).
 > *You cannot use directly attributes whose name contains special characters such as ".", "\[ ]", or "=", ">", "#"..., because they will be incorrectly evaluated in the query string. If you need to query on such attributes, you must consider using placeholders, which allow an extended range of characters in attribute paths (see* **Using placeholders** *below).*

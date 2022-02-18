@@ -1548,8 +1548,8 @@ In this example, the "marks" object field in the **Students** dataClass contains
 | ------------- | ------------------ |:--:| ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | queryString   | Texto              | -> | Criterios de pesquisa como string                                                                                                                             |
 | formula       | Objeto             | -> | Criterios de pesquisa como objeto fórmula                                                                                                                     |
-| value         | any                | -> | Value(s) to use for indexed placeholder(s)                                                                                                                    |
-| querySettings | Objeto             | -> | Query options: parameters, attributes, args, allowFormulas, context, queryPath, queryPlan                                                                     |
+| value         | any                | -> | Valores a usar para placeholders indexados                                                                                                                    |
+| querySettings | Objeto             | -> | Opções de pesquisa: parâmetros, atributos, args, allowFormulas, contexto, queryPath,queryPlan                                                                 |
 | Result        | 4D.EntitySelection | <- | New entity selection made up of entities from entity selection meeting the search criteria specified in *queryString* or *formula*|<!-- END REF -->
 
 |
@@ -1559,7 +1559,7 @@ In this example, the "marks" object field in the **Students** dataClass contains
 The `.query()` function <!-- REF #EntitySelectionClass.query().Summary -->searches for entities that meet the search criteria specified in *queryString* or *formula* and (optionally) *value*(s) among all the entities in the entity selection<!-- END REF -->, and returns a new object of type `EntitySelection` containing all the entities that are found. Se aplica carregamento diferido/lazy loading.
 > This function does not modify the original entity selection.
 
-If no matching entities are found, an empty `EntitySelection` is returned.
+Se não houver entidades correspondentes encontradas, uma `EntitySelection` vazia é retornada.
 
 For detailed information on how to build a query using *queryString*, *value*, and *querySettings* parameters, please refer to the DataClass [`.query()`](DataClassClass.md#query) function description.
 > By default if you omit the **order by** statement in the *queryString*, the returned entity selection is [not ordered](ORDA/dsMapping.md#ordered-or-unordered-entity-selection). Note however that, in Client/Server mode, it behaves like an ordered entity selection (entities are added at the end of the selection).
