@@ -1288,7 +1288,7 @@ $activeCell:=VP Get active cell("myVPArea")
 
 #### Description
 
-The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns name of the attribute bound to the cell specified in *rangeObj*<!-- END REF -->. 
+The `VP Get binding path` command <!-- REF #_method_.VP Get binding path.Summary -->returns the name of the attribute bound to the cell specified in *rangeObj*<!-- END REF -->. 
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells. Note that: 
 * If *rangeObj* is a range with several cells, the command returns the attribute name linked to the first cell in the range.
@@ -3627,7 +3627,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells.
-* If *rangeObj* contains several cells, the command binds the attribute to the first cell of the range.
+* If *rangeObj* is a range with several cells, the command binds the attribute to the first cell of the range.
 * If *rangeObj* contains several ranges of cells, the command binds the attribute to the first cell of each range.
 
 In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding. 
