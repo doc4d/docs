@@ -880,7 +880,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 |formula|	object	|Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).|
 |valuesOnly|	boolean|	Specifies that only the values from formulas (if any) will be exported.|
 |includeFormatInfo|	boolean|	True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.|
-|includeBindingSource|	Boolean | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported document.</li><li>False: Data context values are not exported.</li><ul><p>Cell binding is always exported</p> |
+|includeBindingSource|	Boolean | 4D View Pro only. True (default) to include the data context values in the exported object. False otherwise. **Note:** The data contexts themselves are not exported. Cell binding is always exported.|
 |sheetIndex|	number|	PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only|
 |pdfOptions|	object|	PDF only (optional) - Options for pdf export <p><table><tr><th>Property</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>text</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>text</td><td>title of the document.</td></tr><tr><td>author</td><td>text</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>text</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>text</td><td>subject of the document.</td></tr></table></p>|
 |csvOptions|object|	CSV only (optional) - Options for csv export <p><table><tr><th>Property</th><th>Type</th><th>Description</th></tr><tr><td>range</td><td>object</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>text</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>text</td><td>Column delimiter. Default: ","</td></tr></table></p>|
@@ -1024,7 +1024,7 @@ In the *options* parameter, you can pass the following export options, if requir
 |Property|	Type|	Description|
 |---|---|---
 |includeFormatInfo|	Boolean | True (default) to include formatting information, false otherwise. Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to False allows reducing export time.	|
-|includeBindingSource|	Boolean | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported object.</li><li>False: Data context values are not exported.</li></ul>  	|
+|includeBindingSource|	Boolean | True (default) to include the data context values in the exported object. False otherwise. **Note:** The data contexts themselves are not exported. Cell binding is always exported.|
 
 For more information on 4D View Pro objects, please refer to the [4D View Pro object](configuring.md#4d-view-pro-object) paragraph.
 
