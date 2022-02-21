@@ -1519,10 +1519,14 @@ The function returns an object or a collection depending on the type of data con
  
 #### Example
 
-```4d
-var $mycollection : Collection
+To get the data context bound to the following cells: 
 
-$myCollection:=VP Get data context("ViewProArea") 
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
+
+```4d
+var $dataContext : Object
+
+$dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastName:Nancy}
 ```
 
 #### See also 
@@ -3636,6 +3640,8 @@ In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*
  
 #### Example
 
+Set a data context and bind the `firstName` and `lastName` attribute to cells: 
+
 ```4d
 var $p : Object
 
@@ -3648,6 +3654,8 @@ VP SET DATA CONTEXT("ViewProArea"; $p)
 VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 ```
+
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
 
 #### See also
 
@@ -4090,7 +4098,7 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 ```
 
-![](assets/en/ViewPro/vp-set-data-context.png)
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
 
 
 #### Example 2
