@@ -821,7 +821,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 | formula              | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                        |
 | valuesOnly           | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                              |
 | includeFormatInfo    | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                          |
-| includeBindingSource | ブール     | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported document.</li><li>False: Data context values are not exported.</li><ul><p>Cell binding is always exported</p>                                                                                                                                       |
+| includeBindingSource | ブール     | 4D View Pro only. True (default) to include the data context values in the exported object. False otherwise. **Note:** The data contexts themselves are not exported. Cell binding is always exported.                                                                                                                                                         |
 | sheetIndex           | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                   |
 | pdfOptions           | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</yh><th>説明</th></tr><tr><td>creator</td><td>テキスト</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>テキスト</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>テキスト</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>テキスト</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>テキスト</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
 | csvOptions           | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>テキスト</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>テキスト</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
@@ -956,7 +956,7 @@ In the *options* parameter, you can pass the following export options, if requir
 | プロパティ                | タイプ | 説明                                                                                                                                                                                          |
 | -------------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | includeFormatInfo    | ブール | True (default) to include formatting information, false otherwise. フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 On the other hand, setting this property to False allows reducing export time. |
-| includeBindingSource | ブール | 4D View Pro only. Specifies if the values of the current data contexts are exported.<ul><li>True (default): Data context values are included in the exported object.</li><li>False: Data context values are not exported.</li></ul>                                                                              |
+| includeBindingSource | ブール | True (default) to include the data context values in the exported object. False otherwise. **Note:** The data contexts themselves are not exported. Cell binding is always exported.        |
 
 4D View Pro オブジェクトについての詳細は [4D View Pro オブジェクト](configuring.md#4d-view-pro-オブジェクト) を参照ください。
 
@@ -1168,16 +1168,16 @@ $activeCell:=VP Get active cell("myVPArea")
 | バージョン  | 内容 |
 | ------ | -- |
 | v19 R5 | 追加 |
-</details><!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *rangeObj* : Object ) : Text<!-- END REF --><!-- REF #_method_.VP Get binding path.Params -->| 引数       | タイプ    |    | 説明                               |
-| -------- | ------ | -- | -------------------------------- |
-| rangeObj | Object | -> | レンジオブジェクト                        |
-| 戻り値      | テキスト   | <- | Attribute name bound to the cell |<!-- END REF -->#### 説明
+</details><!-- REF #_method_.VP Get binding path.Syntax -->**VP Get binding path** ( *rangeObj* : Object ) : Text<!-- END REF --><!-- REF #_method_.VP Get binding path.Params -->| 引数       | タイプ    |    | 説明                                      |
+| -------- | ------ | -- | --------------------------------------- |
+| rangeObj | Object | -> | レンジオブジェクト                               |
+| 戻り値      | テキスト   | <- | Name of the attribute bound to the cell |<!-- END REF -->#### 説明
 
-The `VP Get binding path` command<!-- REF #_method_.VP Get binding path.Summary -->returns the attribute name bound to the cell specified in *rangeObj*<!-- END REF -->.
+The `VP Get binding path` command<!-- REF #_method_.VP Get binding path.Summary -->returns the name of the attribute bound to the cell specified in *rangeObj*<!-- END REF -->.
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells. 注:
-* If *rangeObj* is a combined range of cells, the command returns the attribute name linked to the first cell in the range.
-* If *rangeObj* contains several ranges, the command returns the attribute name linked to the first cell of the first range.
+* If *rangeObj* is a range with several cells, the command returns the attribute name linked to the first cell in the range.
+* If *rangeObj* contains several ranges of cells, the command returns the attribute name linked to the first cell of the first range.
 
 #### 例題
 
@@ -1199,7 +1199,7 @@ $myAttribute:=VP Get binding path(VP Cell("ViewProArea"; 1; 0)) // "lastName"
 
 #### 参照
 
-[VP Get binding path](#vp-get-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
+[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP Get data context](#vp-get-data-context)<br/>[VP SET DATA CONTEXT](#vp-get-data-context)
 
 
 ### VP Get cell style<!-- REF #_method_.VP Get cell style.Syntax -->**VP Get cell style** (  *rangeObj* : Object ) : Object<!-- END REF --><!-- REF #_method_.VP Get cell style.Params -->| 引数       | タイプ    |    | 説明         |
@@ -1339,13 +1339,13 @@ $index:=VP Get current sheet("ViewProArea")
 | バージョン  | 内容 |
 | ------ | -- |
 | v19 R5 | 追加 |
-</details><!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF --><!-- REF #_method_.VP Get data context.Params -->| 引数         | タイプ       |        | 説明                                              |
-| ---------- | --------- | ------ | ----------------------------------------------- |
-| vpAreaName | Object    | ->     | 4D View Pro フォームオブジェクト名                         |
-| sheetIndex | オブジェクト    | ->     | Index of the sheet to get the data context from |
-| 戻り値        | Object \ | コレクション | <-|Data context                                 |<!-- END REF -->#### 説明
+</details><!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF --><!-- REF #_method_.VP Get data context.Params -->| 引数         | タイプ                    |    | 説明                                              |
+| ---------- | ---------------------- | -- | ----------------------------------------------- |
+| vpAreaName | Object                 | -> | 4D View Pro フォームオブジェクト名                         |
+| sheetIndex | オブジェクト                 | -> | Index of the sheet to get the data context from |
+| 戻り値        | Object&#124;Collection | <- | Data context                                    |<!-- END REF -->#### 説明
 
-The `VP Get data context` command<!-- REF #_method_.VP Get data context.Summary -->returns the current data context of a worksheet<!-- END REF -->. The returned context includes any modifications done to the contents of the data context.
+The `VP Get data context` command<!-- REF #_method_.VP Get data context.Summary -->returns the current data context of a worksheet<!-- END REF -->. The returned context includes any modifications made to the contents of the data context.
 
 In *sheetIndex*, pass the index of the sheet to get the data context from. If no index is passed, the command returns the data context of the current worksheet. If there is no context for the worksheet, the command returns `Null`.
 
@@ -1353,15 +1353,19 @@ The function returns an object or a collection depending on the type of data con
 
 #### 例題
 
-```4d
-var $mycollection : Collection
+To get the data context bound to the following cells:
 
-$myCollection:=VP Get data context("ViewProArea") 
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
+
+```4d
+var $dataContext : Object
+
+$dataContext:=VP Get data context("ViewProArea") // {firstName:Freehafer,lastName:Nancy}
 ```
 
 #### 参照
 
-[VP SET DATA CONTEXT](#vp-set-data-context)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP SET BINDING PATH](#vp-set-binding-path)<br/>[VP EXPORT DOCUMENT](#vp-export-document)<br/>[VP Export to object](#vp-export-to-object)
+[VP SET DATA CONTEXT](#vp-set-data-context)<br/>[VP Get binding path](#vp-get-binding-path)<br/>[VP SET BINDING PATH](#vp-set-binding-path)
 
 ### VP Get default style<!-- REF #_method_.VP Get default style.Syntax -->**VP Get default style** ( *vpAreaName* : Text { ; *sheet* :  Integer } ) : Integer<!-- END REF --><!-- REF #_method_.VP Get default style.Params -->| 引数         | タイプ  |    | 説明                          |
 | ---------- | ---- | -- | --------------------------- |
@@ -3003,15 +3007,15 @@ VP SET ALLOWED METHODS($allowed)
 | バージョン  | 内容 |
 | ------ | -- |
 | v19 R5 | 追加 |
-</details><!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *rangeObj* : Object  ; *dataContextAttribute*  : Text)<!-- END REF --><!-- REF #_method_.VP SET BINDING PATH.Params -->| 引数                   | タイプ    |    | 説明                                    |
-| -------------------- | ------ | -- | ------------------------------------- |
-| rangeObj             | オブジェクト | -> | レンジオブジェクト                             |
-| dataContextAttribute | テキスト   | -> | Attribute name to bind to *cellRange* |<!-- END REF -->#### 説明
+</details><!-- REF #_method_.VP SET BINDING PATH.Syntax -->**VP SET BINDING PATH** ( *rangeObj* : Object  ; *dataContextAttribute*  : Text)<!-- END REF --><!-- REF #_method_.VP SET BINDING PATH.Params -->| 引数                   | タイプ    |    | 説明                                          |
+| -------------------- | ------ | -- | ------------------------------------------- |
+| rangeObj             | オブジェクト | -> | レンジオブジェクト                                   |
+| dataContextAttribute | テキスト   | -> | Name of the attribute to bind to *rangeObj* |<!-- END REF -->#### 説明
 
 The `VP SET BINDING PATH` command<!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells.
-* If there are several cells in *rangeObj* the command binds the attribute to the first cell of the range.
+* If *rangeObj* is a range with several cells, the command binds the attribute to the first cell of the range.
 * If *rangeObj* contains several ranges of cells, the command binds the attribute to the first cell of each range.
 
 In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*. If *dataContextAttribute* is an empty string, the function removes the current binding.
@@ -3019,6 +3023,8 @@ In *dataContextAttribute*, pass the name of the attribute to bind to *cellRange*
 > Attributes of type collection are not supported. When you pass the name of a collection attribute, the command does nothing.
 
 #### 例題
+
+Set a data context and bind the `firstName` and `lastName` attribute to cells:
 
 ```4d
 var $p : Object
@@ -3032,6 +3038,8 @@ VP SET DATA CONTEXT("ViewProArea"; $p)
 VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 ```
+
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
 
 #### 参照
 
@@ -3364,11 +3372,10 @@ In *dataObj* or *dataColl*, pass an object or a collection containing the data t
 
 In *options*, you can pass an object that specifies additional options. Possible properties are:
 
-| プロパティ               | タイプ    | 説明                                                                                                                                                                                                                                          |
-| ------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| reset               | オブジェクト | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                                               |
-| autoGenerateColumns | オブジェクト | Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2)</li>. |
-<li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul>|
+| プロパティ               | タイプ    | 説明                                                                                                                                                                                                             |
+| ------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| reset               | オブジェクト | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                  |
+| autoGenerateColumns | オブジェクト | Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul> |
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet.
 
@@ -3389,7 +3396,7 @@ VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
 ```
 
-![](assets/en/ViewPro/vp-set-data-context.png)
+![](assets/en/ViewPro/vp-set-data-context-bind.png)
 
 
 #### 例題 2
@@ -4312,11 +4319,11 @@ The following table lists the available workbook options:
 | showDragFillTip                       | boolean                 | Display the drag-fill tip.                                                                                                                                                                                                                             |
 | showHorizontalScrollbar               | boolean                 | Display the horizontal scroll bar.                                                                                                                                                                                                                     |
 | showResizeTip                         | number                  | How to display the resize tip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk show resize tip both </td><td>3</td><td> Horizontal and vertical resize tips are displayed.</td></tr><tr><td> vk show resize tip column </td><td>1</td><td> Only the horizontal resize tip is displayed.</td></tr><tr><td> vk show resize tip none </td><td>0</td><td> No resize tip is displayed.</td></tr><tr><td> vk show resize tip row </td><td>2</td><td> Only the vertical resize tip is displayed.</td></tr></table>                                                                                                                                                                                       |
-| showScrollTip                         | number                  | How to display the scroll tip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                                      |
+| showScrollTip                         | number                  | How to display the scroll tip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk show scroll tip both </td><td>3</td><td> Horizontal and vertical scroll tips are displayed.</td></tr><tr><td> vk show scroll tip horizontal </td><td>1</td><td> Only the horizontal scroll tip is displayed.</td></tr><tr><td> vk show scroll tip none </td><td> No scroll tip is displayed.</td></tr><tr><td> vk show scroll tip vertical </td><td>2</td><td> Only the vertical scroll tip is displayed.</td></tr></table>                                                                                                                                                                                       |
 | showVerticalScrollbar                 | boolean                 | Display the vertical scroll bar.                                                                                                                                                                                                                       |
 | tabEditable                           | boolean                 | The sheet tab strip can be edited.                                                                                                                                                                                                                     |
 | tabNavigationVisible                  | boolean                 | Display the sheet tab navigation.                                                                                                                                                                                                                      |
-| tabStripPosition                      | number                  | Position of the tab strip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                                          |
+| tabStripPosition                      | number                  | Position of the tab strip. 使用可能な値: <table><tr><th>定数</th><th>値</th><th>説明</th></tr><tr><td> vk tab strip position bottom </td><td>0</td><td> Tab strip position is relative to the bottom of the workbook.</td></tr><tr><td> vk tab strip position left </td><td>2</td><td> Tab strip position is relative to the left of the workbook.</td></tr><tr><td> vk tab strip position right </td><td>3</td><td> Tab strip position is relative to the right of the workbook.</td></tr><tr><td> vk tab strip position top </td><td>1</td><td> Tab strip position is relative to the top of the workbook.</td></tr></table>                                                                                                                                                                                           |
 | tabStripRatio                         | number                  | Percentage value (0.x) that specifies how much of the horizontal space will be allocated to the tab strip. The rest of the horizontal area (1 - 0.x) will allocated to the horizontal scrollbar.                                                       |
 | tabStripVisible                       | boolean                 | Display the sheet tab strip.                                                                                                                                                                                                                           |
 | tabStripWidth                         | number                  | Width of the tab strip when position is left or right. Default and minimum is 80.                                                                                                                                                                      |
@@ -4351,14 +4358,14 @@ In *rangeObj*, pass a range of cells as an object to designate the cells to be v
 
 The following selectors are available:
 
-| Selector              | 説明                                                                                                                                                                                                                                                                                        | Available with *vPos* | Available with *hPos* |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
-| `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                          | ○                     |                       |
-| `vk position center`  | Alignment to the center. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                          | ○                     | ○                     |
-| `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                    |                       | ○                     |
+| Selector              | 説明                                                                                                                                                                                                                                                                                       | Available with *vPos* | Available with *hPos* |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- | --------------------- |
+| `vk position bottom`  | Vertical alignment to the bottom of cell or row.                                                                                                                                                                                                                                         | ○                     |                       |
+| `vk position center`  | Alignment to the center. The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position - cell or row</li><li>Horizontal view position - cell or column</li>                                                                                                           | ○                     | ○                     |
+| `vk position left`    | Horizontal alignment to the left of the cell or column                                                                                                                                                                                                                                   |                       | ○                     |
 | `vk position nearest` | Alignment to the closest limit (top, bottom, left, right, center). The alignment will be to the cell, row, or column limit according to the view position indicated:<li>Vertical view position (top, center, bottom) - cell or row </li><li>Horizontal view position (left, center, right) - cell or column | ○                     | ○                     |
-| `vk position right`   | Horizontal alignment to the right of the cell or column                                                                                                                                                                                                                                   |                       | ○                     |
-| `vk position top`     | Vertical alignment to the top of cell or row                                                                                                                                                                                                                                              | ○                     |                       |
+| `vk position right`   | Horizontal alignment to the right of the cell or column                                                                                                                                                                                                                                  |                       | ○                     |
+| `vk position top`     | Vertical alignment to the top of cell or row                                                                                                                                                                                                                                             | ○                     |                       |
 > This command is only effective if repositioning the view is possible. For example, if the *rangeObj* is in cell A1 (the first column and the first row) of the current sheet, repositioning the view will make no difference because the vertical and horizontal limits have already been reached (i.e., it is not possible to scroll any higher or any more to the left). The same is true if *rangeObj* is in cell C3 and the view is repositioned to the center or the bottom right. The view remains unaltered.
 
 #### 例題
