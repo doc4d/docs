@@ -66,8 +66,8 @@ ORDA データモデルユーザークラスのオブジェクトインスタン
 
 | バージョン  | 内容                                                                   |
 | ------ | -------------------------------------------------------------------- |
-| v19 R4 | Alias attributes in the Entity Class                                 |
-| v19 R3 | Computed attributes in the Entity Class                              |
+| v19 R4 | Entity クラスのエイリアス属性                                                   |
+| v19 R3 | Entity クラスの計算属性                                                      |
 | v18 R5 | データモデルクラス関数は、デフォルトでは REST に公開されません。 新しい `exposed` および `local` キーワード。 |
 </details>
 
