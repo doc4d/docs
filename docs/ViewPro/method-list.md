@@ -1496,7 +1496,7 @@ $index:=VP Get current sheet("ViewProArea")
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text { *sheetIndex* : Integer } ) : Collection<!-- END REF -->
+<!-- REF #_method_.VP Get data context.Syntax -->**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Object<br/>**VP Get data context** ( *vpAreaName* : Text {; *sheetIndex* : Integer } ) : Collection<!-- END REF -->
 
 
 <!-- REF #_method_.VP Get data context.Params -->
@@ -1504,8 +1504,8 @@ $index:=VP Get current sheet("ViewProArea")
 |Parameter|Type||Description|
 |---|---|---|---|
 |vpAreaName |Object|->|4D View Pro area form object name|
-|sheetIndex |Object|->|Index of the sheet to get the data context from|
-|Result |Object&#124;Collection |<-|Data context|
+|sheetIndex |Integer|->|Index of the sheet to get the data context from|
+|Result |Object &#124; Collection |<-|Data context|
 
 <!-- END REF -->  
 
@@ -3628,7 +3628,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 #### Description
 
-The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
+The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. After you set a data context using the [SET DATA CONTEXT](#vp-set-data-context) method. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells.
 * If *rangeObj* is a range with several cells, the command binds the attribute to the first cell of the range.
@@ -4048,8 +4048,7 @@ End case
 |v19 R5|Added|
 </details>
 
-<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object ; *options* : Object ; *sheetIndex* : Integer )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; *options* : Object ; *sheetIndex* : Integer )
-<!-- END REF -->
+<!-- REF #_method_.VP SET DATA CONTEXT.Syntax -->**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataObj* : Object {; *options* : Object {; *sheetIndex* : Integer}} )<br/>**VP SET DATA CONTEXT** ( *vpAreaName* : Text ; *dataColl* : Collection ; {*options* : Object {; *sheetIndex* : Integer}} )<!-- END REF -->
 
 
 <!-- REF #_method_.VP SET DATA CONTEXT.Params -->
@@ -4070,7 +4069,7 @@ The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned. 
 
-In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context.
+In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. When you pass an object, its attributes can then be bound to sheet cells using [VP SET BINDING PATH](#vp-set-binding-path). If you pass a collection, you can get 4D View Pro to automatically generate columns by passing the corresponding option.
 
 In *options*, you can pass an object that specifies additional options. Possible properties are: 
 
@@ -4082,6 +4081,8 @@ In *options*, you can pass an object that specifies additional options. Possible
 > In subcollections of scalar values, a time value must be passed as an attribute inside an object. See the description of [VP SET VALUES](#vp-set-values) for more details.
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
+
+If you export your document to an object using [VP Export to object](#vp-export-to-object), or to a 4DVP document using [VP EXPORT DOCUMENT](#vp-export-document), the `includeBindingSource` option lets you copy the contents of the current contexts as cell values in the exported object or document. For more details, refer to the description of those methods.
  
 #### Example
 
@@ -4111,9 +4112,9 @@ Pass a collection of objects and generate columns automatically:
 var $options : Object
 var $data : Collection
 
-$data:=New collection
-$data.push(New object("firstname"; "John"; "lastname"; "Smith");\n
-New object("firstname"; "Mary"; "lastname"; "Poppins"))
+$data:=New collection()
+$data.push(New object("firstname"; "John"; "lastname"; "Smith"))
+$data.push(New object("firstname"; "Mary"; "lastname"; "Poppins"))
 
 $options:=New object("autoGenerateColumns"; True)
 
