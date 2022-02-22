@@ -3628,7 +3628,7 @@ After this code is executed, the defined functions can be used in 4D View Pro fo
 
 #### Description
 
-The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. After you set a data context using the [SET DATA CONTEXT](#vp-set-data-context) method. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*.
+The `VP SET BINDING PATH` command <!-- REF #_method_.VP SET BINDING PATH.Summary -->binds an attribute from a sheet's data context to *rangeObj*<!-- END REF -->. After you set a data context using the [SET DATA CONTEXT](#vp-set-data-context) method. When loaded, if the data context contains the attribute, the value of *dataContextAttribute* is automatically displayed in the cells in *rangeObj*. 
 
 In *rangeObj*, pass an object that is either a cell range or a combined range of cells.
 * If *rangeObj* is a range with several cells, the command binds the attribute to the first cell of the range.
@@ -4065,11 +4065,18 @@ End case
 
 #### Description
 
-The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications. 
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells, either by using an autogenerate option or the [VP SET BINDING PATH](#vp-set-binding-path) method. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications. 
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned. 
 
-In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. When you pass an object, its attributes can then be bound to sheet cells using [VP SET BINDING PATH](#vp-set-binding-path). If you pass a collection, you can get 4D View Pro to automatically generate columns by passing the corresponding option.
+In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. Images are converted to data URI schemes. 
+
+To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object with the following properties (see example below):
+
+|Property|Type|Description|
+|---|---|---|
+|value|	Integer, Real, Boolean, Text, Date, Null|	Value to put in the context|
+|time	|Real	|Time value (in seconds) to put in the context|
 
 In *options*, you can pass an object that specifies additional options. Possible properties are: 
 
@@ -4077,8 +4084,6 @@ In *options*, you can pass an object that specifies additional options. Possible
 |---|---|---|
 |reset |Object|True to reset the sheet's contents before loading the new context, False (default) otherwise.|
 |autoGenerateColumns|Object| Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul>|
-
-> In subcollections of scalar values, a time value must be passed as an attribute inside an object. See the description of [VP SET VALUES](#vp-set-values) for more details.
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet. 
 
@@ -4142,6 +4147,32 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
 ![](assets/en/ViewPro/vp-set-data-context-3.png)
+
+#### Example 4 - Date and time syntax
+
+```4d
+var $data : Collection
+var $options : Object
+
+$data:= New collection()
+
+// Dates can be passed as scalar values
+$data.push(New collection("Date"; Current date)) 
+
+// Time values must be passed as object attributes
+$data.push(New collection("Time"; New object("time"; 5140)))
+
+// Date + time example
+$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140))) 
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+
+Here's the result once the columns are generated: 
+
+![](assets/en/ViewPro/vp-set-data-context-date-time.png)
 
 #### See also
 
