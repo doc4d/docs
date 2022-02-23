@@ -4071,7 +4071,7 @@ In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that 
 
 In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. Images are converted to data URI schemes. 
 
-To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object with the following properties (see example below):
+To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object with the following properties (see [example 4](#example-4---date-and-time-syntax)):
 
 |Property|Type|Description|
 |---|---|---|
