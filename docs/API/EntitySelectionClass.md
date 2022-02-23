@@ -744,6 +744,7 @@ Example with the `dk stop dropping on first error` option:
 
 
 
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -1191,6 +1192,7 @@ Entity selections always have a `.length` property.
 
 <!-- REF #EntitySelectionClass.max().Params -->
 |Parameter|Type||Description|
+
 |---------|--- |:---:|------|
 |attributePath |Text|->|Path of the attribute to be used for calculation|
 |Result|any|<-|Highest value of attribute|
@@ -1482,7 +1484,7 @@ You can add as many objects in the criteria collection as necessary.
 
 
 <!-- REF EntitySelectionClass.orderByFormula().Desc -->
-## .orderByFormula( )   
+## .orderByFormula()   
 
 <details><summary>History</summary>
 |Version|Changes|
