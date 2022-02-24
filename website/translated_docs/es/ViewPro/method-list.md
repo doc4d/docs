@@ -857,7 +857,7 @@ The optional *paramObj* parameter allows you to define multiple properties for t
 | formula              | objeto   | Callback method to be launched when the export has completed. Using a callback method is necessary when the export is asynchronous (which is the case for PDF and Excel formats) if you need some code to be executed after the export. The callback method must be used with the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command (see below for more information).                                                                                                                                                      |
 | valuesOnly           | booleano | Specifies that only the values from formulas (if any) will be exported.                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | includeFormatInfo    | booleano | True to include formatting information, false otherwise (default is true). Formatting information is useful in some cases, e.g. for export to SVG. On the other hand, setting this property to **false** allows reducing export time.                                                                                                                                                                                                                                                                                                                |
-| includeBindingSource | Booleano | 4DVP only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported.                                                                                                                                                                                                                                                                                                                                           |
+| includeBindingSource | Booleano | 4DVP only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).                                                                                                                                                                                            |
 | sheetIndex           | number   | PDF only (optional) - Index of sheet to export (starting from 0). -2=all visible sheets (**default**), -1=current sheet only                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | pdfOptions           | objeto   | PDF only (optional) - Options for pdf export <p><table><tr><th>Propiedad</th><th>Tipo</yh><th>Descripción</th></tr><tr><td>creator</td><td>texto</td><td>name of the application that created the original document from which it was converted.</td></tr><tr><td>title</td><td>texto</td><td>title of the document.</td></tr><tr><td>author</td><td>texto</td><td>name of the person who created that document.</td></tr><tr><td>keywords</td><td>texto</td><td>keywords associated with the document.</td></tr><tr><td>subject</td><td>texto</td><td>subject of the document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | csvOptions           | objeto   | CSV only (optional) - Options for csv export <p><table><tr><th>Propiedad</th><th>Tipo</th><th>Descripción</th></tr><tr><td>range</td><td>objeto</td><td>Range object of cells</td></tr><tr><td>rowDelimiter</td><td>texto</td><td>Row delimiter. Default: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>texto</td><td>Column delimiter. Default: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -4030,11 +4030,18 @@ End case
 
 #### Descripción
 
-The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications.
+The `VP SET DATA CONTEXT` command <!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells, either by using an autogenerate option or the [VP SET BINDING PATH](#vp-set-binding-path) method. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications.
 
 In *vpAreaName*, pass the name of the 4D View Pro area. If you pass a name that does not exist, an error is returned.
 
-In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. When you pass an object, its attributes can then be bound to sheet cells using [VP SET BINDING PATH](#vp-set-binding-path). If you pass a collection, you can get 4D View Pro to automatically generate columns by passing the corresponding option.
+In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. Images are converted to data URI schemes.
+
+To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object with the following properties (see [example 4](#example-4---date-and-time-syntax)):
+
+| Propiedad | Tipo                                     | Descripción                                   |
+| --------- | ---------------------------------------- | --------------------------------------------- |
+| value     | Integer, Real, Boolean, Text, Date, Null | Value to put in the context                   |
+| time      | Real                                     | Time value (in seconds) to put in the context |
 
 In *options*, you can pass an object that specifies additional options. Possible properties are:
 
@@ -4042,8 +4049,6 @@ In *options*, you can pass an object that specifies additional options. Possible
 | ------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | reset               | Objeto | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                  |
 | autoGenerateColumns | Objeto | Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul> |
-
-> In subcollections of scalar values, a time value must be passed as an attribute inside an object. See the description of [VP SET VALUES](#vp-set-values) for more details.
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet.
 
@@ -4107,6 +4112,32 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
 ![](assets/en/ViewPro/vp-set-data-context-3.png)
+
+#### Example 4 - Date and time syntax
+
+```4d
+var $data : Collection
+var $options : Object
+
+$data:= New collection()
+
+// Dates can be passed as scalar values
+$data.push(New collection("Date"; Current date)) 
+
+// Time values must be passed as object attributes
+$data.push(New collection("Time"; New object("time"; 5140)))
+
+// Date + time example
+$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140))) 
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+
+Here's the result once the columns are generated:
+
+![](assets/en/ViewPro/vp-set-data-context-date-time.png)
 
 #### Ver también
 
