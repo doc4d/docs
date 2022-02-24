@@ -821,7 +821,7 @@ VP DELETE COLUMNS(VP Get selection("ViewProArea"))
 | formula              | object  | 書き出しが完了した際に呼び出されるコールバックメソッド名。 書き出しが非同期でおこなわれる (PDF および Excel 形式での書き出しが該当します) 場合かつ、書き出し後にコードを実行したい場合には、コールバックメソッドが必要です。 コールバックメソッドは [`Formula`](https://doc.4d.com/4dv19/help/command/ja/page1597.html) コマンドと使用する必要があります (詳細は以下を参照ください)。                                                                                                                        |
 | valuesOnly           | boolean | フォーミュラ (あれば) の値のみを書き出すかどうかを指定します。                                                                                                                                                                                                                                                                                                                              |
 | includeFormatInfo    | boolean | フォーマット (書式) 情報を含めるには true、それ以外の場合には false (デフォルトは true)。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを **false** に設定することで書き出し時間を短縮することもできます。                                                                                                                                                                                                          |
-| includeBindingSource | ブール     | 4DVP only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported.                                                                                                                                                     |
+| includeBindingSource | ブール     | 4DVP only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).      |
 | sheetIndex           | number  | PDF のみ (任意) - 書き出すシートのインデックス (0 起点)。 -2 = 表示されている全シート (デフォルト)、-1 = カレントシートのみ                                                                                                                                                                                                                                                                                   |
 | pdfOptions           | object  | PDFのみ (任意) - pdf 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</yh><th>説明</th></tr><tr><td>creator</td><td>テキスト</td><td>変換されたドキュメントの変換元を作成したアプリケーション名。</td></tr><tr><td>title</td><td>テキスト</td><td>ドキュメント名。</td></tr><tr><td>author</td><td>テキスト</td><td>ドキュメントの作成者の名前。</td></tr><tr><td>keywords</td><td>テキスト</td><td>ドキュメントに割り当てられたキーワード。</td></tr><tr><td>subject</td><td>テキスト</td><td>ドキュメントの題名。</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
 | csvOptions           | object  | CSVのみ (任意) - csv 書き出しのオプション <p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>range</td><td>object</td><td>複数セルのレンジオブジェクト</td></tr><tr><td>rowDelimiter</td><td>テキスト</td><td>行の区切り文字。 デフォルト: "\r\n"</td></tr><tr><td>columnDelimiter</td><td>テキスト</td><td>カラムの区切り文字。 デフォルト: ","</td></tr></table></p>                                                                                                                                                                                                                                                                                                          |
@@ -3364,11 +3364,18 @@ End case
 | options    | オブジェクト | -> | 追加のオプション                                    |
 | sheetIndex | 整数     | -> | シートのインデックス                                  |<!-- END REF -->#### 説明
 
-The `VP SET DATA CONTEXT` command<!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications.
+The `VP SET DATA CONTEXT` command<!-- REF #_method_.VP SET DATA CONTEXT.Summary -->sets the data context of a sheet<!-- END REF -->. A data context is an object or a collection bound to a worksheet, and whose contents can be used to automatically fill the sheet cells, either by using an autogenerate option or the [VP SET BINDING PATH](#vp-set-binding-path) method. On the other hand, the [VP Get data context](#vp-get-data-context) command can return a context containing user modifications.
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. When you pass an object, its attributes can then be bound to sheet cells using [VP SET BINDING PATH](#vp-set-binding-path). If you pass a collection, you can get 4D View Pro to automatically generate columns by passing the corresponding option.
+In *dataObj* or *dataColl*, pass an object or a collection containing the data to load in the data context. Images are converted to data URI schemes.
+
+To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object with the following properties (see [example 4](#example-4---date-and-time-syntax)):
+
+| プロパティ | タイプ                                      | 説明                                            |
+| ----- | ---------------------------------------- | --------------------------------------------- |
+| value | Integer, Real, Boolean, Text, Date, Null | Value to put in the context                   |
+| time  | 実数                                       | Time value (in seconds) to put in the context |
 
 In *options*, you can pass an object that specifies additional options. Possible properties are:
 
@@ -3376,8 +3383,6 @@ In *options*, you can pass an object that specifies additional options. Possible
 | ------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | reset               | オブジェクト | True to reset the sheet's contents before loading the new context, False (default) otherwise.                                                                                                                  |
 | autoGenerateColumns | オブジェクト | Only used when data is a collection. True (default) to specify that columns must be generated automatically when the data context is bound. In this case, the following rules apply: <ul><li>If *dataColl* is a collection of objects, attribute names are used as column titles (see example 2).</li><li>If *dataColl* contains subcollections of scalar values, each subcollection defines the values in a row (see example 3). The first subcollection determines how many columns are created.</li></ul> |
-
-> In subcollections of scalar values, a time value must be passed as an attribute inside an object. See the description of [VP SET VALUES](#vp-set-values) for more details.
 
 In *sheetIndex*, pass the index of the sheet that will receive the data context. If no index is passed, the context is applied to the current sheet.
 
@@ -3441,6 +3446,32 @@ VP SET DATA CONTEXT("ViewProArea"; $data; $options)
 ```
 
 ![](assets/en/ViewPro/vp-set-data-context-3.png)
+
+#### Example 4 - Date and time syntax
+
+```4d
+var $data : Collection
+var $options : Object
+
+$data:= New collection()
+
+// Dates can be passed as scalar values
+$data.push(New collection("Date"; Current date)) 
+
+// Time values must be passed as object attributes
+$data.push(New collection("Time"; New object("time"; 5140)))
+
+// Date + time example
+$data.push(New collection("Date + Time"; New object("value"; Current date; "time"; 5140))) 
+
+$options:=New object("autoGenerateColumns"; True)
+
+VP SET DATA CONTEXT("ViewProArea"; $data; $options)
+```
+
+Here's the result once the columns are generated:
+
+![](assets/en/ViewPro/vp-set-data-context-date-time.png)
 
 #### 参照
 
