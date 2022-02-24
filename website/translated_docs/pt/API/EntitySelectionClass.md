@@ -81,8 +81,8 @@ No parâmetro opcional*settings* pode passar um objeto contendo as propriedades 
 var $employees : cs.EmployeeSelection
 ALL RECORDS([Employee])
 $employees:=Create entity selection([Employee]) 
-// The $employees entity selection now contains a set of reference
-// on all entities related to the Employee dataclass
+// A entity selection $employees agora contém um conjunto de referências
+// em todas as entidades relacionadas com a classe de dados Employee
 ```
 
 #### See also
