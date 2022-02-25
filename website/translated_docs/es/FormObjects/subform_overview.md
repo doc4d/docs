@@ -4,19 +4,19 @@ title: Subformulario
 ---
 
 
-A subform is a form included in another form.
+Un subformulario es un formulario incluido en otro formulario.
 
 
 ## Terminología
 
-In order to clearly define the concepts implemented with subforms, here are some definitions for certain terms used:
+Con el fin de definir claramente los conceptos implementados con los subformularios, aquí hay algunas definiciones para ciertos términos utilizados:
 
-*   **Subform**: a form intended for inclusion in another form, itself called the parent form.
-*   **Parent form**: a form containing one or more subform(s).
-*   **Subform container**: an object included in the parent form, displaying an instance of the subform.
-*   **Subform instance**: the representation of a subform in a parent form. This concept is important because it is possible to display several instances of the same subform in a parent form.
-*   **List form**: instance of subform displayed as a list.
-*   **Detail form**: page-type input form associated with a list-type subform that can be accessed by double-clicking in the list.
+*   **Subformulario**: un formulario destinado a ser incluido en otro formulario, llamado a su vez formulario padre.
+*   **Formulario padre**: un formulario que contiene uno o más subformularios.
+*   **Contenedor de subformulario**: un objeto incluido en el formulario padre, que muestra una instancia del subformulario.
+*   **Instancia de subformulario**: la representación de un subformulario en un formulario padre. Este concepto es importante porque es posible mostrar varias instancias del mismo subformulario en un formulario padre.
+*   **Formulario listado**: instancia de subformulario mostrada como una lista.
+*   **Formulario detallado**: formulario de entrada tipo página asociado a un subformulario tipo lista al que se accede haciendo doble clic en la lista.
 
 
 ## Sub-formularios en lista
