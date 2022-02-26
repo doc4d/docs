@@ -3,14 +3,14 @@ id: radiobuttonOverview
 title: Botón radio
 ---
 
-Radio buttons are objects that allow the user to select one of a group of buttons.
+Los botones radio son objetos que permiten al usuario seleccionar uno de un grupo de botones.
 
-Usually, a radio button shows a small bullseye with text. However, radio buttons can have [various appearances](#button-styles).
+Normalmente, un botón radio muestra una pequeña diana con texto. Sin embargo, los botones radio pueden tener [diferentes apariencias](#estilos-de-botón).
 
 ![](assets/en/FormObjects/radio1.png)
 
-A radio button is selected:
-- when the user clicks on it
+Se selecciona un botón radio:
+- cuando el usuario hace clic en él
 - when it has the focus and the user presses the **Space bar** key.
 
 
