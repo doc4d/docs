@@ -113,36 +113,36 @@ La comunicación entre el formulario padre y las instancias del subformulario pu
 - Ejecución de un método en el contexto del subformulario mediante el comando `EXECUTE METHOD IN SUBFORM`.
 
 
-#### Object get pointer and Object get name commands
-In addition to the `Object subform container` selector, the `OBJECT Get pointer` command accepts a parameter that indicates in which subform to search for the object whose name is specified in the second parameter. This syntax can only be used when the Object named selector is passed.
+#### Comandos Object get pointer y Object get name
+Además el selector `Object subform container`, el comando `OBJECT Get pointer` admite un parámetro que indica en qué subformulario buscar el objeto cuyo nombre se especifica en el segundo parámetro. Esta sintaxis sólo se puede utilizar cuando se pasa el selector Object named.
 
-For example, the following statement:
+Por ejemplo, la siguiente instrucción:
 
 ```4d
  $ptr:=OBJECT Get pointer(Object named;"MyButton";"MySubForm")
 ```
 
-... retrieves a pointer to the "MyButton" variable that is located in the "MySubForm" subform object. This syntax can be used to access from the parent form any object found in a subform. Also note the `OBJECT Get name` command which can be used to retrieve the name of the object that has the focus.
+... recupera un puntero a la variable "MyButton" que se encuentra en el objeto subformulario "MySubForm". Esta sintaxis se puede utilizar para acceder desde el formulario padre a todo objeto que se encuentre en un subformulario. También hay que tener en cuenta el comando `OBJECT Get name` que se puede utilizar para recuperar el nombre del objeto que tiene el foco.
 
-#### CALL SUBFORM CONTAINER command
+#### Comando CALL SUBFORM CONTAINER
 
-The `CALL SUBFORM CONTAINER` command lets a subform instance send an event to the subform container object, which can then process it in the context of the parent form. The event is received in the container object method. It may be at the origin of any event detected by the subform (click, drag-and-drop, etc.).
+El comando `CALL SUBFORM CONTAINER` permite que una instancia de subformulario envíe un evento al objeto contenedor del subformulario, que puede procesarlo en el contexto del formulario padre. El evento se recibe en el método del objeto contenedor. Puede estar en el origen de todo evento detectado por el subformulario (clic, arrastrar y soltar, etc.).
 
-The code of the event is unrestricted (for example, 20000 or -100). You can use a code that corresponds to an existing event (for example, 3 for `On Validate`), or use a custom code. In the first case, you can only use events that you have checked in the Property List for subform containers. In the second case, the code must not correspond to any existing form event. It is recommended to use a negative value to be sure that this code will not be used by 4D in future versions.
+El código del evento no tiene restricciones (por ejemplo, 20000 o -100). Puede utilizar un código que corresponda a un evento existente (por ejemplo, 3 para `On Validate`), o utilizar un código personalizado. En el primer caso, sólo puede utilizar los eventos que haya marcado en la lista de propiedades para los contenedores de subformulario. En el segundo caso, el código no debe corresponder a ningún evento de formulario existente. Se recomienda utilizar un valor negativo para asegurarse de que este código no será utilizado por 4D en futuras versiones.
 
-For more information, refer to the description of the `CALL SUBFORM CONTAINER` command.
+Para más información, consulte la descripción del comando `CALL SUBFORM CONTAINER`.
 
-#### EXECUTE METHOD IN SUBFORM command
-The `EXECUTE METHOD IN SUBFORM` command lets a form or one of its objects request the execution of a method in the context of the subform instance, which gives it access to the subform variables, objects, etc. This method can also receive parameters.
+#### Comando EXECUTE METHOD IN SUBFORM
+El comando `EXECUTE METHOD IN SUBFORM` permite que un formulario o uno de sus objetos solicite la ejecución de un método en el contexto de la instancia del subformulario, lo que le da acceso a las variables, objetos, etc. del subformulario. Este método también puede recibir parámetros.
 
-This mechanism is illustrated in the following diagram:
+Este mecanismo se ilustra en el siguiente diagrama:
 
 ![](assets/en/FormObjects/subforms6.png)
 
-For more information, refer to the description of the `EXECUTE METHOD IN SUBFORM` command.
+Para más información, consulte la descripción del comando `EXECUTE METHOD IN SUBFORM`.
 
-#### GOTO OBJECT command
-The `GOTO OBJECT` command looks for the destination object in the parent form even if it is executed from a subform.
+#### Comando GOTO OBJECT
+El comando `GOTO OBJECT` busca el objeto de destino en el formulario padre aunque se ejecute desde un subformulario.
 
 
 
