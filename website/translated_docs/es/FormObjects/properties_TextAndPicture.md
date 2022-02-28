@@ -6,9 +6,9 @@ title: Texto e Imagen
 ---
 ## Ruta de acceso fondo
 
-Define la ruta de la imagen que se dibujará en el fondo del objeto. If the object uses an [icon](#picture-pathname) with [different states](#number-of-states), the background picture will automatically support the same number of states.
+Define la ruta de la imagen que se dibujará en el fondo del objeto. Si el objeto utiliza un [icono](#picture-pathname) con [diferentes estados](#number-of-states), la imagen de fondo soportará automáticamente el mismo número de estados.
 
-The pathname to enter is similar as for the [Pathname property for static pictures](properties_Picture.md#pathname).
+El nombre de la ruta a introducir es similar al de [ la propiedad Ruta de acceso para las imágenes estáticas](properties_Picture.md#pathname).
 
 #### Gramática JSON
 
@@ -19,7 +19,7 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 
 #### Objetos soportados
 
-[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
+[Botón personalizado](button_overview.md#custom) - [Casilla de selección personalizada](checkbox_overview.md#custom) - [Botón radio personalizado](radio_overview.md#custom)
 
 
 
@@ -27,7 +27,7 @@ The pathname to enter is similar as for the [Pathname property for static pictur
 ---
 ## Estilos de botón
 
-General appearance of the button. The button style also plays a part in the availability of certain options.
+Aspecto general del botón. El estilo del botón también influye en la disponibilidad de ciertas opciones.
 
 
 #### Gramática JSON
@@ -39,7 +39,7 @@ General appearance of the button. The button style also plays a part in the avai
 
 #### Objetos soportados
 
-[Button](button_overview.md) - [Radio Button](radio_overview.md) - [Check Box](checkbox_overview.md) - [Radio Button](radio_overview.md)
+[Botón](button_overview.md) - [Botón radio](radio_overview.md) - [Casilla de selección](checkbox_overview.md) - [Botón Radio](radio_overview.md)
 
 
 
@@ -47,25 +47,25 @@ General appearance of the button. The button style also plays a part in the avai
 ---
 ## Margen horizontal
 
-This property allows setting the size (in pixels) of the horizontal margins of the button. This margin delimits the area that the button icon and title must not surpass.
+Esta propiedad permite definir el tamaño (en píxeles) de los márgenes horizontales del botón. Este margen delimita el área que el icono del botón y el título no deben sobrepasar.
 
-This parameter is useful, for example, when the background picture contains borders:
+Este parámetro es útil, por ejemplo, cuando la imagen de fondo contiene bordes:
 
-| Con / Sin            | Ejemplo                                                   |
-| -------------------- | --------------------------------------------------------- |
-| Sin margen           | ![](assets/en/FormObjects/property_horizontalMargin1.png) |
-| With 13-pixel margin | ![](assets/en/FormObjects/property_horizontalMargin2.png) |
-> This property works in conjunction with the [Vertical Margin](#vertical-margin) property.
+| Con / Sin                | Ejemplo                                                   |
+| ------------------------ | --------------------------------------------------------- |
+| Sin margen               | ![](assets/en/FormObjects/property_horizontalMargin1.png) |
+| Con un margen 13 píxeles | ![](assets/en/FormObjects/property_horizontalMargin2.png) |
+> Esta propiedad funciona junto con la propiedad [Margen vertical](#vertical-margin).
 
 #### Gramática JSON
 
-| Nombre        | Tipos de datos | Valores posibles                       |
-| ------------- | -------------- | -------------------------------------- |
-| customBorderX | number         | For use with "custom" style. Mínimo: 0 |
+| Nombre        | Tipos de datos | Valores posibles                                   |
+| ------------- | -------------- | -------------------------------------------------- |
+| customBorderX | number         | Para usar con el estilo "personalizado". Mínimo: 0 |
 
 #### Objetos soportados
 
-[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
+[Botón personalizado](button_overview.md#custom) - [Casilla de selección personalizada](checkbox_overview.md#custom) - [Botón radio personalizado](radio_overview.md#custom)
 
 
 
@@ -74,7 +74,7 @@ This parameter is useful, for example, when the background picture contains bord
 
 ## Ubicación del icono
 
-Designates the placement of an icon in relation to the form object.
+Designa la ubicación de un icono en relación con el objeto formulario.
 
 #### Gramática JSON
 
@@ -93,9 +93,9 @@ Designates the placement of an icon in relation to the form object.
 ---
 ## Desplazamiento icono
 
-Sets a custom offset value in pixels, which will be used when the button is clicked
+Define un valor de desplazamiento personalizado en píxeles, que se utilizará cuando se haga clic en el botón
 
-The title of the button will be shifted to the right and toward the bottom for the number of pixels entered. This allows applying a customized 3D effect when the button is clicked.
+El título del botón se desplazará hacia la derecha y hacia la parte inferior por el número de píxeles introducidos. This allows applying a customized 3D effect when the button is clicked.
 
 #### Gramática JSON
 
@@ -105,7 +105,7 @@ The title of the button will be shifted to the right and toward the bottom for t
 
 #### Objetos soportados
 
-[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
+[Botón personalizado](button_overview.md#custom) - [Casilla de selección personalizada](checkbox_overview.md#custom) - [Botón radio personalizado](radio_overview.md#custom)
 
 
 
@@ -144,7 +144,7 @@ The following states are represented:
 
 Sets the path of the picture that will be used as icon for the object.
 
-The pathname to enter is similar as for the [Pathname property for static pictures](properties_Picture.md#pathname).
+El nombre de la ruta a introducir es similar al de [ la propiedad Ruta de acceso para las imágenes estáticas](properties_Picture.md#pathname).
 
 > When used as icon for active objects, the picture must be designed to support a variable [number of states](#number-of-states).
 
@@ -192,7 +192,7 @@ Here are the results using the various options for this property:
 ---
 ## Margen vertical
 
-This property allows setting the size (in pixels) of the vertical margins of the button. This margin delimits the area that the button icon and title must not surpass.
+This property allows setting the size (in pixels) of the vertical margins of the button. Este margen delimita el área que el icono del botón y el título no deben sobrepasar.
 
 This parameter is useful, for example, when the background picture contains borders.
 
@@ -200,13 +200,13 @@ This parameter is useful, for example, when the background picture contains bord
 
 #### Gramática JSON
 
-| Nombre        | Tipos de datos | Valores posibles                       |
-| ------------- | -------------- | -------------------------------------- |
-| customBorderY | number         | For use with "custom" style. Mínimo: 0 |
+| Nombre        | Tipos de datos | Valores posibles                                   |
+| ------------- | -------------- | -------------------------------------------------- |
+| customBorderY | number         | Para usar con el estilo "personalizado". Mínimo: 0 |
 
 #### Objetos soportados
 
-[Custom Button](button_overview.md#custom) - [Custom Check Box](checkbox_overview.md#custom) - [Custom Radio Button](radio_overview.md#custom)
+[Botón personalizado](button_overview.md#custom) - [Casilla de selección personalizada](checkbox_overview.md#custom) - [Botón radio personalizado](radio_overview.md#custom)
 
 
 
