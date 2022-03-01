@@ -692,72 +692,72 @@ onde:
     *   **Text**: A string de fórmula deve ser precidida da declaração `eval( )`,para que o parser da pesquisa avalie a expressão corretamente. Por exemplo: *"eval(length(This.lastname) >=30)"*
     *   **Object**: o objeto [formula](FunctionClass.md) é passado como um **placeholder** (ver abaixo). A fórmula deve ter sido criada usando  [`Formula`](FunctionClass.md#formula) ou o comando[`Formula from string`](FunctionClass.md#formula-from-string) command.
 > * Lembre que fórmulas 4D só são compatíveis com os símbolos `&` e `|` como operadores lógicos.
-> * If the formula is not the only search criteria, the query engine optimizer could prior process other criteria (e.g. indexed attributes) and thus, the formula could be evaluated for only a subset of entities.
+> * Se a fórmula não for o único critério de pesquisa, o otimizador de motor debusca poderia processar outros critérios previamente (por exemplo atributos indexados) e assim, a fórmula poderia ser avaliada apenas para um subconjunto de entidades.
 
-    Formulas in queries can receive parameters through $1. This point is detailed in the **formula parameter** paragraph below.
-> * You can also pass directy a `formula` parameter object instead of the `queryString` parameter (recommended when formulas are more complex). See **formula parameter** paragraph below.
-> * For security reasons, formula calls within `query()` methods can be disallowed. See `querySettings` parameter description.
+    Fórmulas nas consultas podem receber parâmetros através de $1. Este ponto é detalhado no parágrafo **Parâmetro fórmula** mais abaixo.
+> * También pode passar diretamente um objeto parâmetro `formula` ao invés do parâmetro `queryString` (recomendado quando as fórmulas sejam mais complexas). Ver o parágrafo **Parâmetro fórmula** mais abaixo.
+> * Por razões de segurança, as chamadas a fórmulas dentro dos métodos `query()` podem ser desativadas. Veja a descrição do parâmetro `querySettings`.
 
-*   **comparator**: symbol that compares *attributePath* and *value*. The following symbols are supported:
+*   **comparator**: symbol que compara *attributePath* e *valor*. Os simbolos abaixo são compatíveis:
 
-    | Comparison                           | Symbol(s)   | Comment                                                                                                        |
-    | ------------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------- |
-    | Equal to                             | =, ==       | Gets matching data, supports the wildcard (@), neither case-sensitive nor diacritic.                           |
-    |                                      | ===, IS     | Gets matching data, considers the @ as a standard character, neither case-sensitive nor diacritic              |
-    | Not equal to                         | #, !=       | Supports the wildcard (@)                                                                                      |
-    |                                      | !==, IS NOT | Considers the @ as a standard character                                                                        |
-    | Less than                            | <           |                                                                                                                |
-    | Greater than                         | >           |                                                                                                                |
-    | Less than or equal to                | <=          |                                                                                                                |
-    | Greater than or equal to             | >=          |                                                                                                                |
-    | Included in                          | IN          | Gets data equal to at least one of the values in a collection or in a set of values, supports the wildcard (@) |
-    | Not condition applied on a statement | NOT         | Parenthesis are mandatory when NOT is used before a statement containing several operators                     |
-    | Contains keyword                     | %           | Keywords can be used in attributes of string or picture type                                                   |
+    | Comparação                               | Símbolos    | Comentário                                                                                                                     |
+    | ---------------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+    | Igual a                                  | =, ==       | Retorna os dados coincidentes, admite o coringa (@), não diferencia entre maiúsculas e minúsculas nem diacríticas.             |
+    |                                          | ===, IS     | Retorna os dados coincidentes, considera @ como caractere padrão, não diferencia entre maiúsculas e minúsculas nem diacríticas |
+    | Diferente de                             | #, !=       | Suporta o coringa (@)                                                                                                          |
+    |                                          | !==, IS NOT | Considera  @ como um caractere normal                                                                                          |
+    | Menor que                                | <           |                                                                                                                                |
+    | Maior que                                | >           |                                                                                                                                |
+    | Menor que ou igual a                     | <=          |                                                                                                                                |
+    | Maior ou igual a                         | >=          |                                                                                                                                |
+    | Incluído em                              | IN          | Retorna dados iguais a ao menos um dos valores de uma coleção ou de um conjunto de valores, admite o coringa (@)               |
+    | Não se aplica à condição de uma sentença | NOT         | Parentesis são obrigatórios quanod usar NOT antes de uma instrução que contenha vários operadores                              |
+    | Contém palavra chave                     | %           | As palavras chaves podem ser usadas em atributos de string ou imagem                                                           |
 
-*   **value**: the value to compare to the current value of the property of each entity in the entity selection or element in the collection. It can be a **placeholder** (see **Using placeholders** below) or any expression matching the data type property.<p><p> When using a constant value, the following rules must be respected:
-    *   **text** type constant can be passed with or without simple quotes (see **Using quotes** below). To query a string within a string (a "contains" query), use the wildcard symbol (@) in value to isolate the string to be searched for as shown in this example: "@Smith@". The following keywords are forbidden for text constants: true, false.
-    *   **boolean** type constants: **true** or **false** (case sensitive).
-    *   **numeric** type constants: decimals are separated by a '.' (period). date type constants: "YYYY-MM-DD" format
-    *   **null** constant: using the "null" keyword will find **null** and **undefined** properties.
-    *   in case of a query with an IN comparator, value must be a collection, or values matching the type of the attribute path between \[ ] separated by commas (for strings, " characters must be escaped with "\").
-*   **logicalOperator**: used to join multiple conditions in the query (optional). You can use one of the following logical operators (either the name or the symbol can be used):
+*   **value**: o valor a comparar ao valor atual da propriedade de cada entidade na seleção de entidade ou elemento na coleção. Pode ser um **marcador** (ver **Uso de marcadores** mais adiante) ou qualquer expressão que coincida com a propriedad de tipo de dados.<p><p> Quando usar um valor constante, as regras abaixo devem ser respeitadas:
+    *   A constante de tipo **texto** pode ser passada com ou sem aspas simples (ver **Uso de aspas** mais abaixo). Para pesquisar uma stirng dentro de uma string (uma pesquisa "contém") use o símbolo coringa (@) em valor para isolar a string a ser pesquisada como mostrado neste exemplo: "@Smith@". As palavras chaves abaixo são proibidas para constantes de texto: true, false.
+    *   Valores constantes de tipo **booleano** : **true** ou **false** (diferencia maiuscula de minúscula).
+    *   Valores constantes de tipo **numérico**: os decimais se separam com um '.' (ponto). constantes de tipo de data: formato "YYYY-MM-DD"
+    *   **null** constante: usando a palavra chave "null" encontra as propriedades **null** e **undefined**.
+    *   no caso de uma pesquisa com um comparador IN, o valor deve uma coleção, ou valores que coincidam com o tipo da rota do atributo entre \[ ] separados por vírgulas (para as strings, os caracteres " devem escapar-se com "\").
+*   **logicalOperator**: utilizado para unir condições múltiplas na pesquisa (opcional). Pode usaar um dos operadores lógicos abaixo (ou o nome ou o símbolo podem ser usados):
 
-    | Conjunction | Symbol(s)               |
-    | ----------- | ----------------------- |
-    | AND         | &, &&, and              |
-    | OR          | &#124;,&#124;&#124;, or |
+    | Conjunção | Símbolos                |
+    | --------- | ----------------------- |
+    | AND       | &, &&, and              |
+    | OU        | &#124;,&#124;&#124;, or |
 
-*   **order by attributePath**: you can include an order by *attributePath* statement in the query so that the resulting data will be sorted according to that statement. You can use multiple order by statements, separated by commas (e.g., order by *attributePath1* desc, *attributePath2* asc). By default, the order is ascending. Pass 'desc' to define a descending order and 'asc' to define an ascending order.
-> *If you use this statement, the returned entity selection is ordered (for more information, please refer to [Ordered vs Unordered entity selections](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
+*   **order by attributePath**: pode incluir uma declaração order by *attributePath* na pesquisa para que os dados resultantes sejam ordenados de acordo com esta declaração. Pode utilizar várias instruções de ordenação, separadas por vírgulas (por exemplo, ordenação por *attributePath1* desc, *attributePath2* asc). Como padrão, a ordem é ascendente. Passe 'desc'' para definir uma ordem descendente e 'asc' para definir uma ordem ascendente.
+> *Se usar esta declaração, a entity selection devolvida está ordenada (para saber mais, consulte [Entity selections ordenadas vs desordenadas](ORDA/dsMapping.md#ordered-or-unordered-entity-selection)).
 
-**Using quotes**
+**Usar aspas**
 
-When you use quotes within queries, you must use single quotes ' ' inside the query and double quotes " " to enclose the whole query, otherwise an error is returned. For example:
+Quando usar aspas com pesquisas, deve usar aspas simples '  '  dentro das pesquisas e aspas duplas "   "  para cercar a consulta inteira, senão um erro é retornado. Por exemplo:
 
 ```4d
 "employee.name = 'smith' AND employee.firstname = 'john'"
 ```
-> Single quotes (') are not supported in searched values since they would break the query string. For example "comp.name = 'John's pizza' " will generate an error. If you need to search on values with single quotes, you may consider using placeholders (see below).
+> Aspas siples (') não são permitidas nos valores pesquisados, já que quebrariam a string de pesquisa. Por exemplo, "comp.name = 'John's pizza' " gerará um erro. Se precisar pesquisar valores com aspas simples, pode considerar o uso de placeholders (ver abaixo).
 
-**Using parenthesis**
+**Usando parêntesis**
 
-You can use parentheses in the query to give priority to the calculation. For example, you can organize a query as follows:
+Pode usar parêntesis na pesquisa para dar prioridade ao cálculo Por exemplo, pode organizar uma pesquisa da seguinte maneira:
 
 ```4d
 "(employee.age >= 30 OR employee.age <= 65) AND (employee.salary <= 10000 OR employee.status = 'Manager')"
 ```
 
 
-**Using placeholders**
+**Uso de placeholders**
 
-4D allows you to use placeholders for *attributePath*, *formula* and *value* arguments within the *queryString* parameter. A placeholder is a parameter that you insert in query strings and that is replaced by another value when the query string is evaluated. The value of placeholders is evaluated once at the beginning of the query; it is not evaluated for each element.
+4D lhe permite utilizar placeholders, marcadores de posição, para os argumentos *attributePath*, *formula* e *value* dentro do parâmetro *queryString*. Um placeholder é um parâmetro que é inserido em strings de pesquisa e que pode ser substituído por outro valor quando a string for realizada. O valor dos placeholders é avaliado uma vez ao inicio da pesquisa - não é avaliado para cada elemento.
 
-Two types of placeholders can be used: **indexed placeholders** and **named placeholders**:
+Dois tipos de marcadores podem ser usados: **placeholders indexados ** e **placeholders nomeados**:
 
-| -          | Indexed placeholders                                                                                                                                                                                    | Named placeholders                                                                                                                                                    |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Definition | Parameters are inserted as :paramIndex (for example :1, :2...) in queryString and their corresponding values are provided by the sequence of value parameter(s). You can use up to 128 value parameters | Parameters are inserted as :paramName (for example :myparam) and their values are provided in the attributes and/or parameters objects in the querySettings parameter |
-| Exemplo    | $r:=class.query(":1=:2";"city";"Chicago")                                                                                                                                                               | $o.attributes:=New object("att";"city")<br> $o.parameters:=New object("name";"Chicago")<br> $r:=class.query(":att=:name";$o)                              |
+| -         | Marcadores de posição indexados                                                                                                                                                                              | Placeholders nomeados                                                                                                                                               |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Definição | Os parâmetros são inseridos como :paramIndex (por exemplo :1, :2...) em queryString e seus valores correspondentes são fornecidos pela sequência de parâmetros value. Pode usara até 128 parâmetros de valor | Os parâmetros são inseridos como: paramName (por exemplo :myparam) e seus valores se proporcionam nos atributos ou objetos de parâmetros no parámetro querySettings |
+| Exemplo   | $r:=class.query(":1=:2";"city";"Chicago")                                                                                                                                                                    | $o.attributes:=New object("att";"city")<br> $o.parameters:=New object("name";"Chicago")<br> $r:=class.query(":att=:name";$o)                            |
 
 You can mix all argument kinds in *queryString*. A *queryString* can contain, for *attributePath*, *formula* and *value* parameters:
 
