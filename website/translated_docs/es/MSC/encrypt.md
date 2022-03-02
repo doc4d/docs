@@ -21,74 +21,74 @@ Para cifrar los datos por primera vez con el CSM es necesario seguir los siguien
 3. Haga clic en el botón Encriptar imagen.  
    <img src="assets/es/MSC/MSC_encrypt3.png" alt=" />  
    Se le pedirá que introduzca una frase secreta para su archivo de datos: ![](assets/es/MSC/MSC_encrypt4.png) La frase secreta se utiliza para generar la llave de cifrado de los datos. Una frase secreta es una versión más segura de una contraseña y puede contener un gran número de caracteres. Por ejemplo, puede introducir una frase secreta como "Todos salimos a Montreux" o "¡Mi primera gran frase secreta!" El indicador de nivel de seguridad puede ayudarle a evaluar la fuerza de tu frase secreta: <img src="assets/es/MSC/MSC_encrypt5.png" alt=" /> (el verde intenso es el nivel más alto)
-4. Enter to confirm your secured passphrase.
+4. Introduzca para confirmar su frase secreta segura.
 
-The encrypting process is then launched. If the MSC was opened in standard mode, the application is reopened in maintenance mode.
+A continuación, se inicia el proceso de encriptación. If the MSC was opened in standard mode, the application is reopened in maintenance mode.
 
-4D offers to save the encryption key (see [Saving the encryption key](#saving-the-encryption-key) below). You can do it at this moment or later. You can also open the encryption log file.
+4D ofrece guardar la llave de encriptación (ver [Guardar la llave de encriptación](#saving-the-encryption-key) más abajo). Puedes hacerlo en este momento o más adelante. También puede abrir el archivo de historial de encriptación.
 
-If the encryption process is successful, the Encrypt page displays Encryption maintenance operations buttons.
+Si el proceso de encriptación es exitoso, la página de encriptación muestra los botones de operaciones de mantenimiento de encriptación.
 
-**Warning:** During the encryption operation, 4D creates a new, empty data file and fills it with data from the original data file. Records belonging to "encryptable" tables are encrypted then copied, other records are only copied (a compacting operation is also executed). If the operation is successful, the original data file is moved to a "Replaced Files (Encrypting)" folder. If you intend to deliver an encrypted data file, make sure to move/remove any unencrypted data file from the application folder beforehand.
+**Atención:** durante la operación de encriptación, 4D crea un nuevo archivo de datos vacío y lo llena con los datos del archivo de datos original. Los registros correspondientes a las tablas "encriptadas" se encriptan y luego se copian, los demás registros sólo se copian (también se ejecuta una operación de compactación). Si la operación tiene éxito, el archivo de datos original se traslada a una carpeta de "Archivos reemplazados (encriptados)". If you intend to deliver an encrypted data file, make sure to move/remove any unencrypted data file from the application folder beforehand.
 
-## Encryption maintenance operations
+## Operaciones de mantenimiento de la encriptación
 When an application is encrypted (see above), the Encrypt page provides several encryption maintenance operations, corresponding to standard scenarios. ![](assets/en/MSC/MSC_encrypt6.png)
 
 
-### Providing the current data encryption key
-For security reasons, all encryption maintenance operations require that the current data encryption key be provided.
+### Suministrar la llave de encriptación de datos actual
+Por razones de seguridad, todas las operaciones de mantenimiento del cifrado requieren necesitan la llave de cifrado de datos actual.
 
-- If the data encryption key is already loaded in the 4D keychain(1), it is automatically reused by 4D.
-- If the data encryption key is not found, you must provide it. The following dialog is displayed: ![](assets/en/MSC/MSC_encrypt7.png)
+- Si la llave de encriptación de datos ya está cargada en el llavero 4D(1), ésta es reutilizada automáticamente por 4D.
+- Si no se encuentra la llave de encriptación de datos, debe proporcionarla. Se muestra la siguiente caja de diálogo: ![](assets/en/MSC/MSC_encrypt7.png)
 
-At this step, you have two options:
-- enter the current passphrase(2) and click **OK**. O
-- connect a device such as a USB key and click the **Scan devices** button.
+En este paso, tiene dos opciones:
+- introduzca la frase secreta actual(2) y haga clic en **OK**. O
+- conecte un dispositivo como una llave USB y haga clic en el botón **Escanear dispositivos**.
 
-(1) The 4D keychain stores all valid data encrpytion keys entered during the application session.   
-(2) The current passphrase is the passphrase used to generate the current encryption key.
+(1) El llavero de 4D almacena todas las llaves de encriptación de datos válidas introducidas durante la sesión de la aplicación.   
+(2) La frase de contraseña actual corresponde a la contraseña utilizada para generar la llave de cifrado actual.
 
-In all cases, if valid information is provided, 4D restarts in maintenance mode (if not already the case) and executes the operation.
+En todos los casos, si se proporciona información válida, 4D se reinicia en modo de mantenimiento (si no es ya el caso) y ejecuta la operación.
 
-### Re-encrypt data with the current encryption key
+### Volver a cifrar los datos con la llave de cifrado actual
 
-This operation is useful when the **Encryptable** attribute has been modified for one or more tables containing data. In this case, to prevent inconsistencies in the data file, 4D disallows any write access to the records of the tables in the application. Re-encrypting data is then necessary to restore a valid encryption status.
+Esta operación es útil cuando se ha modificado el atributo **Encriptable** de una o varias tablas que contienen los datos. En este caso, para evitar incoherencias en el archivo de datos, 4D impide cualquier acceso de escritura a los registros de las tablas en la aplicación. Entonces es necesario volver a cifrar los datos para restablecer un estado de cifrado válido.
 
-1. Click on **Re-encrypt data with the current encryption key**.
-2. Enter the current data encryption key.
+1. Haga clic en **Recibir los datos con la llave de cifrado actual**.
+2. Introduzca la llave de encriptación de datos actual.
 
-The data file is properly re-encrypted with the current key and a confirmation message is displayed: ![](assets/en/MSC/MSC_encrypt8.png)
+El archivo de datos se vuelve a cifrar correctamente con la llave actual y se muestra un mensaje de confirmación: ![](assets/en/MSC/MSC_encrypt8.png)
 
-### Change your passphrase and re-encrypt data
-This operation is useful when you need to change the current encryption data key. For example, you may need to do so to comply with security rules (such as requiring changing the passphrase every three months).
+### Cambiar la frase secreta y volver a encriptar los datos
+Esta operación es útil cuando se necesita cambiar la llave de datos de encriptación actual. Por ejemplo, es posible que tenga que hacerlo para cumplir con las normas de seguridad (como la exigencia de cambiar la frase secreta cada tres meses).
 
-1. Click on **Change your passphrase and re-encrypt data**.
-2. Enter the current data encryption key.
+1. Haga clic en **Cambiar su frase de contraseña y volver a cifrar los datos**.
+2. Introduzca la llave de encriptación de datos actual.
 3. Enter the new passphrase (for added security, you are prompted to enter it twice): ![](assets/en/MSC/MSC_encrypt9.png) The data file is encrypted with the new key and the confirmation message is displayed. ![](assets/en/MSC/MSC_encrypt8.png)
 
 ### Desencriptar todos los datos
-This operation removes all encryption from the data file. If you no longer want to have your data encrypted:
+Esta operación elimina toda la codificación del archivo de datos. Si ya no desea tener sus datos encriptados:
 
-1. Click on **Decrypt all data**.
-2. Enter the current data encryption key (see Providing the current data encryption key).
+1. Haga clic en **Desencriptar todos los datos**.
+2. Introduzca la llave de encriptación de datos actual ( ver Suministrar la llave de encriptación de datos actual).
 
-The data file is fully decrypted and a confirmation message is displayed: ![](assets/en/MSC/MSC_encrypt10.png)
-> Once the data file is decrypted, the encryption status of tables do not match their Encryptable attributes. To restore a matching status, you must deselect all **Encryptable** attributes at the database structure level.
+El archivo de datos se descifra completamente y se muestra un mensaje de confirmación: ![](assets/en/MSC/MSC_encrypt10.png)
+> Una vez descifrado el archivo de datos, el estado de cifrado de las tablas no coincide con sus atributos Encriptables. Para restablecer un estado coincidente, debe anular la selección de todos los atributos **Encriptable** al nivel de la estructura de la base.
 
-## Saving the encryption key
+## Guardar la llave de encriptación
 
-4D allows you to save the data encryption key in a dedicated file. Storing this file on an external device such a USB key will facilitate the use of an encrypted application, since the user would only need to connect the device to provide the key before opening the application in order to access encrypted data.
+4D le permite guardar la llave de encriptación de datos en un archivo dedicado. Storing this file on an external device such a USB key will facilitate the use of an encrypted application, since the user would only need to connect the device to provide the key before opening the application in order to access encrypted data.
 
-You can save the encryption key each time a new passphrase has been provided:
+Puede guardar la llave de encriptación cada vez que se proporcione una nueva frase secreta:
 
 - when the application is encrypted for the first time,
 - when the application is re-encrypted with a new passphrase.
 
-Successive encryption keys can be stored on the same device.
+Las llaves de encriptación sucesivas pueden ser almacenadas en el mismo dispositivo.
 
 ## Archivo de historial
 After an encryption operation has been completed, 4D generates a file in the Logs folder of the application. It is created in XML format and named "*ApplicationName_Encrypt_Log_yyyy-mm-dd hh-mm-ss.xml*" or "*ApplicationName_Decrypt_Log_yyyy-mm-dd hh-mm-ss.xml*".
 
-An Open log file button is displayed on the MSC page each time a new log file has been generated.
+Cada vez que se genera un nuevo archivo de registro, aparece un botón para abrirlo en la página del CSM.
 
-The log file lists all internal operations executed pertaining to the encryption/decryption process, as well as errors (if any).
+El archivo de historial lista todas las operaciones internas ejecutadas relacionadas con el proceso de cifrado/descifrado, así como los errores (si los hay).
