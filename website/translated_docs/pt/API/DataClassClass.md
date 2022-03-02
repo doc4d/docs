@@ -779,7 +779,7 @@ All attributes of the entity are initialized with the **null** value.
 
 #### Exemplo
 
-Este ejemplo cria uma nova entidade na classe de dados "Log" e registra a informação no atributo "info":
+Este exemplo cria uma nova entidade na classe de dados "Log" e registra a informação no atributo "info":
 
 ```4d 
  var $entity : cs.LogEntity
@@ -957,13 +957,13 @@ Dois tipos de marcadores podem ser usados: **placeholders indexados ** e **place
 | Definition | Os parâmetros são inseridos como :paramIndex (por exemplo :1, :2...) em queryString e seus valores correspondentes são fornecidos pela sequência de parâmetros value. Pode usara até 128 parâmetros de valor | Os parâmetros são inseridos como: paramName (por exemplo :myparam) e seus valores se proporcionam nos atributos ou objetos de parâmetros no parámetro querySettings |
 | Exemplo    | $r:=class.query(":1=:2";"city";"Chicago")                                                                                                                                                                    | $o.attributes:=New object("att";"city")<br> $o.parameters:=New object("name";"Chicago")<br> $r:=class.query(":att=:name";$o)                            |
 
-You can mix all argument kinds in *queryString*. A *queryString* can contain, for *attributePath*, *formula* and *value* parameters:
+Pode misturar os tipos de argumentos em *queryString*. Um *queryString* pode conter, para os parâmetros *attributePath*, *formula* e *value* :
 
 
 *   direct values (no placeholders),
 *   indexed placeholders and/or named placeholders.
 
-**Using placeholders in queries is recommended** for the following reasons:
+**É recomendado usar marcadores de posição ou placeholders nas consultas** pelas razões abaixo:
 
 1.  It prevents malicious code insertion: if you directly use user-filled variables within the query string, a user could modifiy the query conditions by entering additional query arguments. For example, imagine a query string like:
 
