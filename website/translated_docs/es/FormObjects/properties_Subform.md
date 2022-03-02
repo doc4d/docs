@@ -6,13 +6,13 @@ title: Subformulario
 ---
 ## Autorizar la eliminación
 
-Specifies if the user can delete subrecords in a list subform.
+Especifica si el usuario puede eliminar subregistros en un subformulario listado.
 
 #### Gramática JSON
 
-| Nombre          | Tipos de datos | Valores posibles            |
-| --------------- | -------------- | --------------------------- |
-| deletableInList | booleano       | true, false (default: true) |
+| Nombre          | Tipos de datos | Valores posibles                |
+| --------------- | -------------- | ------------------------------- |
+| deletableInList | booleano       | true, false (por defecto: true) |
 
 #### Objetos soportados
 
@@ -22,10 +22,10 @@ Specifies if the user can delete subrecords in a list subform.
 ---
 ## Formulario detallado
 
-You use this property to declare the detail form to use in the subform. Puede ser:
+Esta propiedad se utiliza para declarar el formulario detallado que se utilizará en el subformulario. Puede ser:
 
-- a widget, i.e. a page-type subform endowed with specific functions. In this case, the [list subform](#list-form) and [Source](#source) properties must be empty or not present.   
-  You can select a component form name when it is published in the component.
+- un widget, es decir, un subformulario de tipo página dotado de funciones específicas. En este caso, las propiedades [subformulario de lista](#list-form) y [Fuente](#source) deben estar vacías o no estar presentes.   
+  Se puede seleccionar el nombre de un formulario de componente cuando se publica en el componente.
 > You can generate [components](Concepts/components.md) providing additional functionalities through subforms.
 
 - the detail form to associate a with the [list subform](#list-form). The detail form can be used to enter or view subrecords. It generally contains more information than the list subform. Naturally, the detail form must belong to the same table as the subform. You normally use an Output form as the list form and an Input form as the detail form. If you do not specify the form to use for full page entry, 4D automatically uses the default Input format of the table.
