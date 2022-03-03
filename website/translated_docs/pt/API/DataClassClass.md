@@ -695,7 +695,7 @@ onde:
 > * Se a fórmula não for o único critério de pesquisa, o otimizador de motor debusca poderia processar outros critérios previamente (por exemplo atributos indexados) e assim, a fórmula poderia ser avaliada apenas para um subconjunto de entidades.
 
     Fórmulas nas consultas podem receber parâmetros através de $1. Este ponto é detalhado no parágrafo **Parâmetro fórmula** mais abaixo.
-> * También pode passar diretamente um objeto parâmetro `formula` ao invés do parâmetro `queryString` (recomendado quando as fórmulas sejam mais complexas). Ver o parágrafo **Parâmetro fórmula** mais abaixo.
+> * Também pode passar diretamente um objeto parâmetro `formula` ao invés do parâmetro `queryString` (recomendado quando as fórmulas sejam mais complexas). Ver o parágrafo **Parâmetro fórmula** mais abaixo.
 > * Por razões de segurança, as chamadas a fórmulas dentro dos métodos `query()` podem ser desativadas. Veja a descrição do parâmetro `querySettings`.
 
 *   **comparator**: symbol que compara *attributePath* e *valor*. Os simbolos abaixo são compatíveis:
@@ -711,7 +711,7 @@ onde:
     | Menor que ou igual a                     | <=          |                                                                                                                                |
     | Maior ou igual a                         | >=          |                                                                                                                                |
     | Incluído em                              | IN          | Retorna dados iguais a ao menos um dos valores de uma coleção ou de um conjunto de valores, admite o coringa (@)               |
-    | Não se aplica à condição de uma sentença | NOT         | Parentesis são obrigatórios quanod usar NOT antes de uma instrução que contenha vários operadores                              |
+    | Não se aplica à condição de uma sentença | NOT         | Parentesis são obrigatórios quando usar NOT antes de uma instrução que contenha vários operadores                              |
     | Contém palavra chave                     | %           | As palavras chaves podem ser usadas em atributos de string ou imagem                                                           |
 
 *   **value**: o valor a comparar ao valor atual da propriedade de cada entidade na seleção de entidade ou elemento na coleção. Pode ser um **marcador** (ver **Uso de marcadores** mais adiante) ou qualquer expressão que coincida com a propriedad de tipo de dados.<p><p> Quando usar um valor constante, as regras abaixo devem ser respeitadas:
@@ -782,37 +782,37 @@ Pode misturar os tipos de argumentos em *queryString*. Um *queryString* pode con
      $result:=$col.query("status='public' & name=:1";myname)
     ```
 
-    Neste caso, se o usuário introduz *smith OR status='private'* na área *myname*, não se interpretará na string de pesquisa, só será passada como um valor. Looking for a person named "smith OR status='private'" will just fail.
+    Neste caso, se o usuário introduz *smith OR status='private'* na área *myname*, não se interpretará na string de pesquisa, só será passada como um valor. Procurando por  "smith OR status = 'private' vai falhar
 
-2.  It prevents having to worry about formatting or character issues, especially when handling *attributePath* or *value* parameters that might contain non-alphanumeric characters such as ".", "['...
+2.  Evita ter que se preocupar por questões de formato ou caracteres, especialmente quando se manejam os parâmetros *attributePath* o *value* que podem conter não alfanuméricos como ".", "['...
 
-3.  It allows the use of variables or expressions in query arguments. Exemplos:
+3.  Permite o uso de variáveis ou expressões nos argumentos de pesquisa. Exemplos:
 
     ```4d
     $result:=$col.query("address.city = :1 & name =:2";$city;$myVar+"@")
     $result2:=$col.query("company.name = :1";"John's Pizzas")
     ```
 
-**Looking for null values**
+**Pesquisa de valores null**
 
-When you look for null values, you cannot use the placeholder syntax because the query engine considers null as an unexpected comparison value. For example, if you execute the following query:
-
-```4d
-$vSingles:=ds.Person.query("spouse = :1";Null) // will NOT work
-```
-
-You will not get the expected result because the null value will be evaluated by 4D as an error resulting from the parameter evaluation (for example, an attribute coming from another query). For these kinds of queries, you must use the direct query syntax:
+Quando pesquisar por valores null não pode usar a sintaxe de placeholder porque o motor de pesquisa vai consider null como um valor de comparação inesperado. Por exemplo se executar esta pesquisa:
 
 ```4d
- $vSingles:=ds.Person.query("spouse = null") //correct syntax
+$vSingles:=ds.Person.query("spouse = :1";Null) // não vai funcionar
+```
+
+Você não vai conseguir o resultado esperado porque o valor null será avaliado por 4D como um erro resultante da avaliação de parâmetro (por exemplo, um atributo de outra pesquisa) Para este tipo de pesquisa, deve usar a sintaxe de pesquisa direta:
+
+```4d
+ $vSingles:=ds.Person.query("spouse = null") //sintaxe correta
 ```
 
 
-**Linking collection attribute query arguments**
+**Linkar os argumentos de pesquisa com os atributos de coleção**
 
-When searching in collections within object attributes using multiple query arguments joined by the AND operator, you may want to make sure that only entities containing elements that match all arguments are returned, and not entities where arguments can be found in different elements. To do this, you need to link query arguments to collection elements, so that only single elements containing linked arguments are found.
+Quando pesquisar em coleçõs dentro dos atributos dos objetos usando argumentos de pesquisa múltiplos unidos pelo operador AND, se quiser ter certeza que apenas entidades contendo elementos que correspondam a todos os argumentos são retornados, e não entidades cujos argumentos podem ser encontrados em elementos diferentes. Para fazer isso, é necessário vincular os argumentos de pesquisa para elementos de coleção, para que apenas elementos únicos contendo argumentos linkados são encontrados.
 
-For example, with the following two entities:
+Por exemplo, com as duas entidades abaixo:
 
 ```
 Entity 1:
@@ -907,7 +907,7 @@ In the *querySettings* parameter, you can pass an object containing additional o
 
 The information recorded in `queryPlan`/`queryPath` include the query type (indexed and sequential) and each necessary subquery along with conjunction operators. As rotas de acesso das petições também contém o número de entidades encontradas e o tempo necessário para executar cada critério de pesquisa. You may find it useful to analyze this information while developing your application(s). Geralmente a descrição do plano de pesquisa e sua rota são idênticas mas podem ser diferentes porque 4D pode implementar otimizações dinâmicas quando uma pesquisa for executada para melhorar a performance. Por exemplo, o motor 4D pode converter dinamicamente uma consulta indexada em uma consulta sequencial se estimar que seja mais rápido. Esse caso particular pode acontecer quando o número de entidades sendo pesquisada é baixo.
 
-For example, if you execute the following query:
+Por exemplo se executar esta pesquisa:
 
 ```4d
  $sel:=ds.Employee.query("salary < :1 and employer.name = :2 or employer.revenues > :3";\  
