@@ -26,9 +26,9 @@ Esta propiedad se utiliza para declarar el formulario detallado que se utilizar�
 
 - un widget, es decir, un subformulario de tipo página dotado de funciones específicas. En este caso, las propiedades [subformulario de lista](#list-form) y [Fuente](#source) deben estar vacías o no estar presentes.   
   Se puede seleccionar el nombre de un formulario de componente cuando se publica en el componente.
-> You can generate [components](Concepts/components.md) providing additional functionalities through subforms.
+> Puede generar [componentes](Concepts/components.md) que den funcionalidades adicionales a través de subformularios.
 
-- the detail form to associate a with the [list subform](#list-form). The detail form can be used to enter or view subrecords. It generally contains more information than the list subform. Naturally, the detail form must belong to the same table as the subform. You normally use an Output form as the list form and an Input form as the detail form. If you do not specify the form to use for full page entry, 4D automatically uses the default Input format of the table.
+- el formulario detallado a asociar al [subformulario listado](#formulario-de-lista). El formulario detallado puede utilizarse para introducir o ver los subregistros. Generalmente contiene más información que el subformulario lista. Naturalmente, el formulario detallado debe pertenecer a la misma tabla que el subformulario. Normalmente se utiliza un formulario de salida como formulario lista y un formulario de entrada como formulario detallado. Si no especifica el formulario a utilizar para la entrada de la página completa, 4D utiliza automáticamente el formato de entrada por defecto de la tabla.
 
 
 #### Gramática JSON
@@ -42,11 +42,11 @@ Esta propiedad se utiliza para declarar el formulario detallado que se utilizar�
 [Subformulario](subform_overview.md)
 
 ---
-## Double-click on empty row
+## Doble clic en línea vacía
 
-Acción a realizar en caso de doble clic en una línea vacía de un subformulario listado. The following options are available:
-- Do nothing: Ignores double-click.
-- Add Record: Creates a new record in the subform and changes to editing mode. The record will be created directly in the list if the [Enterable in List] property is enabled. Otherwise, it will be created in page mode, in the [detail form](detail-form) associated with the subform.
+Acción a realizar en caso de doble clic en una línea vacía de un subformulario listado. Las siguientes opciones están disponibles:
+- No hacer nada: ignora el doble clic.
+- Añadir registro: crea un nuevo registro en el subformulario y cambia al modo edición. El registro se creará directamente en la lista si la propiedad [Editable en la lista] está activada. Otherwise, it will be created in page mode, in the [detail form](detail-form) associated with the subform.
 
 
 #### Gramática JSON
