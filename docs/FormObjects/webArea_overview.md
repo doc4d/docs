@@ -196,11 +196,10 @@ This feature can only be used with onscreen web areas and requires that the foll
 	- the embedded web rendering engine is selected for the area
 	- the [context menu](properties_Entry.md#context-menu) for the web area is enabled
 	- the use of the inspector is expressly enabled in the area by means of the following statement:
-	
-```4d
-	WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
-```
-- a navigation action has occurred
+	```4d
+		WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
+	```
+	- a navigation action has occurred
 
 For more information, refer to the description of the `WA SET PREFERENCE` command.
 
