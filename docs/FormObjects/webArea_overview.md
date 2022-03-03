@@ -200,7 +200,7 @@ This feature can only be used with onscreen web areas and requires that the foll
 ```4d
 	WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
 ```
-	- a navigation action has occurred
+- a navigation action has occurred
 
 For more information, refer to the description of the `WA SET PREFERENCE` command.
 
