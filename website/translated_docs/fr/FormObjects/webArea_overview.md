@@ -188,10 +188,10 @@ Pour afficher l'inspecteur web, vous pouvez soit exécuter la commande `WA OPEN 
     - le moteur de rendu web intégré est sélectionné pour la zone
     - le [menu contextuel](properties_Entry.md#context-menu) de la zone Web est activé
     - l'utilisation de l'inspecteur est expressément autorisée dans la zone via la déclaration suivante :
-
-```4d
-    WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
-```
+    ```4d
+        WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
+    ```
+    - a navigation action has occurred
 
 Pour plus d'informations, reportez-vous à la description de la commande `WA SET PREFERENCE`.
 
