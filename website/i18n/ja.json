@@ -884,16 +884,16 @@
         "title": "Compatibility page"
       },
       "settings/compiler": {
-        "title": "Compiler page"
+        "title": "コンパイラーページ"
       },
       "settings/database": {
-        "title": "Database page"
+        "title": "データベースページ"
       },
       "settings/general": {
         "title": "一般ページ"
       },
       "settings/interface": {
-        "title": "Interface page"
+        "title": "インターフェースページ"
       },
       "settings/overview": {
         "title": "概要"
