@@ -1,16 +1,16 @@
 ---
 id: database
-title: Database page
+title: データベースページ
 ---
 
-## Data storage page
+## データストレージページ
 
-You use this page to configure data storage on disk for the 4D database.
+このページでは、4Dデータベースが使用するデータストレージに関する設定をおこないます。
 
-### General Settings
+### 一般設定
 
 
-#### Allow Read Only Data file Use
+#### 読み込みのみのデータファイルの使用を許可する
 
 This option allows configuration of the application operation when opening a locked data file at the operating system level. 4D includes a mechanism that automatically prevents the opening of a database when its data file, or one of its segments, is locked. In this case, when this detection option is activated, 4D displays a warning message and does not open the database:
 
