@@ -41,31 +41,31 @@ Puede utilizar un número de secuencia para crear un número único para cada re
 
 ---
 
-## Excluded List
+## Lista de excluidos
 
-Allows setting a list whose values cannot be entered in the object. Si se introduce un valor excluido, no se acepta y se muestra un mensaje de error.
-> If a specified list is hierarchical, only the items of the first level are taken into account.
+Permite definir una lista cuyos valores no pueden introducirse en el objeto. Si se introduce un valor excluido, no se acepta y se muestra un mensaje de error.
+> Si una lista especificada es jerárquica, sólo se tienen en cuenta los elementos del primer nivel.
 
 #### Gramática JSON
 
-| Nombre       | Tipos de datos | Valores posibles                 |
-| ------------ | -------------- | -------------------------------- |
-| excludedList | lista          | A list of values to be excluded. |
+| Nombre       | Tipos de datos | Valores posibles                |
+| ------------ | -------------- | ------------------------------- |
+| excludedList | lista          | Una lista de valores a excluir. |
 
 #### Objetos soportados
 
-[Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
+[Combo Box](comboBox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Entrada](input_overview.md)
 
 
 
 ---
 
-## Required List
+## Lista requerida
 
-Restricts the valid entries to the items on the list. For example, you may want to use a required list for job titles so that valid entries are limited to titles that have been approved by management.
+Restringe las entradas válidas a los elementos de la lista. Por ejemplo, es posible que desee utilizar una lista obligatoria para los títulos de los puestos de trabajo, de modo que las entradas válidas se limiten a los títulos que han sido aprobados por la dirección.
 
-Making a list required does not automatically display the list when the field is selected. If you want to display the required list, assign the same list to the [Choice List](properties_DataSource.md#choice-list) property. However, unlike the [Choice List](properties_DataSource.md#choice-list) property, when a required list is defined, keyboard entry is no longer possible, only the selection of a list value using the pop-up menu is allowed. If different lists are defined using the [Choice List](properties_DataSource.md#choice-list) and Required List properties, the Required List property has priority.
-> If a specified list is hierarchical, only the items of the first level are taken into account.
+La creación de una lista obligatoria no muestra automáticamente la lista cuando se selecciona el campo. Si desea mostrar la lista requerida, asigne la misma lista a la propiedad [Lista de opciones](properties_DataSource.md#choice-list). Sin embargo, a diferencia de la propiedad [Lista de selección](properties_DataSource.md#choice-list), cuando se define una lista requerida, ya no es posible la introducción mediante el teclado, sólo se permite la selección de un valor de la lista mediante el menú emergente. Si se definen diferentes listas utilizando las propiedades [Lista de selección](properties_DataSource.md#choice-list) y Lista requerida, la propiedad Lista requerida tiene prioridad.
+> Si una lista especificada es jerárquica, sólo se tienen en cuenta los elementos del primer nivel.
 
 #### Gramática JSON
 
@@ -75,7 +75,7 @@ Making a list required does not automatically display the list when the field is
 
 #### Objetos soportados
 
-[Combo Box](comboBox_overview.md) - [List Box Column](listbox_overview.md#list-box-columns) - [Input](input_overview.md)
+[Combo Box](comboBox_overview.md) - [Columna List Box](listbox_overview.md#list-box-columns) - [Entrada](input_overview.md)
 
 
 
