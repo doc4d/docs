@@ -120,7 +120,7 @@
         "title": "バックアップ設定"
       },
       "code-editor/navigation": {
-        "title": "Navigation dropdown"
+        "title": "ナビゲーションドロップダウン"
       },
       "Concepts/about": {
         "title": "4D ランゲージについて"
@@ -884,16 +884,16 @@
         "title": "Compatibility page"
       },
       "settings/compiler": {
-        "title": "Compiler page"
+        "title": "コンパイラーページ"
       },
       "settings/database": {
-        "title": "Database page"
+        "title": "データベースページ"
       },
       "settings/general": {
-        "title": "General page"
+        "title": "一般ページ"
       },
       "settings/interface": {
-        "title": "Interface page"
+        "title": "インターフェースページ"
       },
       "settings/overview": {
         "title": "概要"

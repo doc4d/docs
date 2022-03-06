@@ -10,11 +10,11 @@ You can manually restore an archive of the current application using the **Resto
 
 > 4D automatic recovery systems restore applications and include data log file when necessary.
 
-The list found in the left part of the window displays any existing backups of the application. You can also click on the **Browse...** button found just under the area in order to open any other archive file from a different location. It is then added to the list of archives.
+The list found in the left part of the window displays any existing backups of the application. You can also click on the **Browse...** button found just under the area in order to open any other archive file from a different location. A continuación, se añade a la lista de archivos.
 
-When you select a backup in this list, the right part of the window displays the information concerning this particular backup:
+Cuando se selecciona una copia de seguridad en esta lista, la parte derecha de la ventana muestra la información relativa a esta copia de seguridad en particular:
 
-- **Path**: Complete pathname of the selected backup file. Clicking the Show button opens the backup file in a system window.
+- **Ruta**: ruta de acceso completa del archivo de copia de seguridad seleccionado. Clicking the Show button opens the backup file in a system window.
 - **Date and Time**: Date and time of backup.
 - **Content**: Contents of the backup file. Each item in the list has a check box next to it which can be used to indicate whether or not you want to restore it. You can also use the **Check All** or **Uncheck All** buttons to set the list of items to be restored.
 - **Destination folder of the restored files**: Folder where the restored files will be placed. By default, 4D restores the files in a folder named “Archivename” (no extension) that is placed next to the Project folder. To change this location, click on **[...]** and specify the folder where you want the restored files to be placed.
