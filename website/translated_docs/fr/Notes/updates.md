@@ -8,17 +8,17 @@ La liste des principales mises à jour de cette documentation. Pour des informat
 
 ## 4D v19 R5
 
-- 4D View Pro:
-    - The new [VP SET DATA CONTEXT](ViewPro/method-list.md#vp-set-data-context), [VP Get data context](ViewPro/method-list.md#vp-get-data-context), [VP SET BINDING PATH](ViewPro/method-list.md#vp-set-binding-path), [VP Get binding path](ViewPro/method-list.md#vp-get-binding-path) commands allow you to create data contexts and bind their contents to sheet cells.
-    - [VP EXPORT DOCUMENT](ViewPro/method-list.md#vp-get-binding-path) and [VP Export to object](ViewPro/method-list.md#vp-get-binding-path) now accept the new `includeBindingSource` option that exports the contents of a data context as cell values.
+- 4D View Pro :
+    - Les nouvelles commandes [VP SET DATA CONTEXT](ViewPro/method-list.md#vp-set-data-context), [VP Get data context](ViewPro/method-list.md#vp-get-data-context), [VP SET BINDING PATH](ViewPro/method-list.md#vp-set-binding-path), [VP Get binding path](ViewPro/method-list.md#vp-get-binding-path) vous permettent de créer des contextes de données et de lier leur contenu aux cellules de la feuille.
+    - [VP EXPORT DOCUMENT](ViewPro/method-list.md#vp-get-binding-path) et [VP Export to object](ViewPro/method-list.md#vp-get-binding-path) acceptent désormais la nouvelle option `includeBindingSource` qui exporte le contenu d'un contexte de données en tant que valeurs de cellule.
 
-- Built Client/Server applications: The project [directory.json file](../Users/handling_users_groups.md#directoryjson-file) can now be [embedded in the server](Desktop/building.md#embed-the-project-users-and-groups-in-built-server-application) at build time, allowing you to deploy a client/server application with a basic security user and group configuration.
+- Applications client/serveur générées : Le [fichier directory.json](../Users/handling_users_groups.md#directoryjson-file) du projet peut désormais être [intégré au serveur](Desktop/building.md#embed-the-project-users-and-groups-in-built-server-application) au moment de la génération, ce qui vous permet de déployer une application client/serveur avec une configuration de base de la sécurité des utilisateurs et des groupes.
 
-- [Client/Server optimization](../ORDA/remoteDatastores.md#clientserver-optimization): New class functions allow you to handle the ORDA cache and the contents of an optimization context. See [Preconfiguring contexts](../ORDA/remoteDatastores.md#preconfiguring-contexts) and [ORDA Cache](../ORDA/remoteDatastores.md#orda-cache) for more information.
+- [Optimisation client/serveur](../ORDA/remoteDatastores.md#clientserver-optimization) : De nouvelles fonctions de classe vous permettent de gérer le cache ORDA et le contenu d'un contexte d'optimisation. Pour plus d'informations, consultez [Préconfiguration des contextes](../ORDA/remoteDatastores.md#preconfiguring-contexts) et [cache ORDA](../ORDA/remoteDatastores.md#orda-cache).
 
-    > These functions are intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use them.
+    > Ces fonctions sont destinées aux développeurs qui souhaitent personnaliser les fonctions par défaut d'ORDA pour des configurations spécifiques. Dans la plupart des cas, vous n'aurez pas besoin de les utiliser.
 
-- [DataClass class](../API/DataClassClass.md): The new [.getCount()](../API/DataClassClass.md#getcount) function returns the number of entities in a dataclass.
+- [DataClass class](../API/DataClassClass.md) : La nouvelle fonction [.getCount()](../API/DataClassClass.md#getcount) retourne le nombre d'entités d'une dataclass.
 
 
 
