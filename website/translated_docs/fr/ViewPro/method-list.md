@@ -1577,15 +1577,15 @@ retournera les informations suivantes dans l'objet *$defaultStyle* :
 
 La commande `VP Get formula` <!-- REF #_method_.VP Get formula.Summary -->récupère la formule depuis une plage de cellules désignée<!-- END REF -->.
 
-Dans *rangeObj*, passez la plage dont vous souhaitez récupérer la formule. If *rangeObj* designates multiple cells or multiple ranges, the formula of the first cell is returned. If *rangeObj* is a cell that does not contain a formula, the method returns an empty string.
+Dans *rangeObj*, passez la plage dont vous souhaitez récupérer la formule. Si *rangeObj* désigne plusieurs cellules ou plusieurs plages, la formule de la première cellule est retournée. Si *rangeObj* est une cellule qui ne contient pas de formule, la commande retourne une chaine vide.
 
 #### Exemple
 
 ```4d
-  //set a formula
-VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
-
-$result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
+  //fixer une formule
+ VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
+ 
+ $result:=VP Get formula(VP Cell("ViewProArea";5;2)) // $result="SUM($A$1:$C$10)"
 ```
 #### Voir aussi
 
