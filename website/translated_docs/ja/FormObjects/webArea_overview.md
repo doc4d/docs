@@ -188,10 +188,10 @@ Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コ�
     - エリアに対して "埋め込みWebレンダリングエンジンを使用" プロパティが選択されている。
     - エリアに対して [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) が有効化されている。
     - インスペクターの使用が、以下の宣言を用いて明示的に有効化されている:
-
-```4d
-    WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
-```
+    ```4d
+        WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
+    ```
+    - a navigation action has occurred
 
 詳細は `WA SET PREFERENCE` コマンドの説明を参照してください。
 
