@@ -1338,6 +1338,7 @@ Optionally, you can pass the index of collection from which to start the search 
 
 
 
+
 ```4d
  var $col : Collection
  var $i : Integer
@@ -1580,7 +1581,7 @@ Optionally, you can pass the index of collection from which to start a reverse s
 </details>
 
 <!-- REF #collection.length.Syntax -->
-**.length** : Integer<!-- END REF -->
+**.length** : Integer <!-- END REF -->
 
 
 
@@ -2176,6 +2177,7 @@ For detailed information on how to build a query using *queryString*, *value* an
 #### Example 1
 
 
+
 ```4d
  var $c; $c2; $c3 : Collection
  $c:=New collection
@@ -2537,6 +2539,7 @@ If the collection is empty, this method does nothing.
 ```
 
 <!-- END REF -->
+
 
 
 
