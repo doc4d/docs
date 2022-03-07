@@ -875,10 +875,10 @@
         "title": "ユーザーページ"
       },
       "settings/backup": {
-        "title": "Backup page"
+        "title": "バックアップページ"
       },
       "settings/client-server": {
-        "title": "Client-server page"
+        "title": "クライアント-サーバーページ"
       },
       "settings/compatibility": {
         "title": "Compatibility page"
