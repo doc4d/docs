@@ -2308,7 +2308,7 @@ With the following ***Multiply*** method:
  End if
 ```
 
-#### Example 
+#### Example 2
 
 This example allows reducing several collection elements to a single one:
 
@@ -2561,7 +2561,7 @@ If the collection is empty, this method does nothing.
 <!-- REF #collection.slice().Params -->
 |Parameter|Type||Description|
 |---------|--- |:---:|------|
-|startFrom |Integer |->|Index to start the search at (included)|
+|startFrom |Integer |->|Start index (included)|
 |end |Integer |->|End index (not included)|
 |Result|Collection|<-|New collection containing sliced elements (shallow copy)|
 <!-- END REF -->
