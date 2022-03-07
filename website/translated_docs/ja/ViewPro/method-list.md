@@ -682,7 +682,7 @@ $vPict:=VP Convert to picture($vpAreaObj) // エリア全体を書き出しま�
 | バージョン  | 内容 |
 | ------ | -- |
 | v19 R4 | 追加 |
-</details><!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *options* : Object} ) : Object<br /><!-- END REF --><!-- REF #_method_.Copy to object.Params -->| 引数       | タイプ    |    | 説明                              |
+</details><!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *options* : Object} ) : Object<!-- END REF --><!-- REF #_method_.Copy to object.Params -->| 引数       | タイプ    |    | 説明                              |
 | -------- | ------ | -- | ------------------------------- |
 | rangeObj | Object | -> | レンジオブジェクト                       |
 | options  | Object | -> | 追加のオプション                        |

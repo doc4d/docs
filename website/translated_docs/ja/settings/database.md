@@ -86,20 +86,20 @@ title: データベースページ
 
 ### データベースキャッシュ設定
 
--   **Calculation of adaptive cache**: When this option is checked, management of the memory cache is done dynamically by the system --- respecting limits that you set. This allows configuration of a high performance memory cache adapted to most configurations. The size of the memory cache is then calculated dynamically depending on set parameters. The values offered by default correspond to standard 4D usage.
+-   **起動時にキャッシュサイズを計算**: このオプションが選択されている場合、キャッシュメモリの管理は、設定された制限に基づき、4D起動時にキャッシュサイズが計算されます。 これにより、ほとんどのケースで高パフォーマンスのメモリ設定がおこなわれます。 キャッシュメモリのサイズは設定されたパラメーターに基づき動的に計算されます。 デフォルトで提案される値は標準の 4D の使用状況に対応します。
 
-    -   **Memory to be reserved for other applications and for the system**: Portion of the RAM memory to reserve for the System and other applications. This value is increased for optimization when other applications are running on the same machine as 4D.
-    -   **Percentage of available memory used for cache**: Percentage of the remaining memory allocated to the cache by default.\ To obtain the size allocated by default to the cache, simply perform the following calculation: (Physical memory -- Physical memory to be reserved) X Percentage of the memory used for the cache. In the adaptive mode, the size of the memory cache varies dynamically depending on the needs of the application and the system. You can set limits using the following two options:
-    -   **Minimum Size**: Minimum amount of memory that must be reserved for the cache. This value cannot be less than 100 MB.
-    -   **Maximum Size**: Maximum amount of memory that can be used by the cache. This value is virtually unlimited. Setting limits is particularly useful for databases that are distributed on machines for which you do not know the memory configuration a priori. In this case, the limits set let you guarantee a minimum performance in all cases. The following diagram illustrates this behavior:
+    -   **他のアプリケーションとシステムのために予約するメモリ**: システムや他のアプリケーションが使用するために取り置く RAMメモリ量。 4D が実行されるマシン上で他のアプリケーションも実行する場合、必要に応じてこの値を増やします。
+    -   **利用可能なメモリからキャッシュに使用する率**: 残りのメモリからキャッシュに割り当てる量の率。<br/> デフォルトでキャッシュに割り当てるサイズを取得するためには、以下の計算式を適用します: (物理メモリ – 予約したメモリ) X キャッシュに使用するメモリのパーセンテージ。 動的に計算するモードの場合、キャッシュメモリのサイズはアプリケーションやシステムのニーズに応じて動的に変化します。 以下のオプションを使用して上限と下限を設定できます:
+    -   **最小サイズ**: キャッシュ用に予約するメモリの最小量。 この値は 100MB以上でなければなりません。
+    -   **最大サイズ**: キャッシュが使用することのできるメモリの最大量。 この値は実質的には無制限です。 制限の設定は、メモリ搭載量が不明であるマシン用にアプリケーションを配布する際に便利です。 この場合、制限を設定することで最低限のパフォーマンスを保証できます。 この動作を図示すると以下のようになります:
 
-    Example for calculating cache memory: *Physical memory to reserve = 256 MB Percentage of the available memory used for the cache = 50% Maximum size = 1 GB Minimum size = 128 MB*
+    キャッシュメモリの計算例:<br/> *予約するメモリ量 = 256 MB<br/> キャッシュに利用するパーセンテージ = 50%<br/> 最大サイズ = 1 GB 最小サイズ = 128 MB*
 
     ![](assets/en/settings/memory-maximum-size.png)
 
--   **Calculation of adaptive cache not checked**:  this mode, you set the size of the memory cache for the database yourself. 4D then displays an entry area that allows setting the memory cache to use as well as information related to the physical memory (RAM available on the machine), the current cache and cache after restart (taking your changes into account).
+-   **起動時にキャッシュサイズを計算オプションがチェックされていない場合**: このモードでは、データベースのキャッシュメモリサイズを開発者が決定します。 4D はキャッシュメモリを設定する入力エリアと、物理メモリに関する情報 (マシンに実装されたRAM)、現在のキャッシュ、そして再起動後のキャッシュサイズを表示します。
 
-    The size of the memory cache that you enter will be reserved for the 4D database, regardless of the state of machine resources. This setting can be used in certain specific configurations, or when the database is designed to be used on dissimilar systems in terms of memory. In most cases, the adaptive cache offers better performance.
+    入力されたキャッシュサイズは、マシンのリソース状況にかかわらず、4Dデータベース用に予約されます。 この設定は、メモリ搭載量が分かっているなど、特定の状況で使用できます。 ほとんどのケースで起動時計算モードのキャッシュで良いパフォーマンスが提供されます。
 
 -   **Flush Cache every ... Seconds/Minutes**: Specifies the time period between each automatic saving of the data cache, i.e., its writing to disk. 4D saves the data placed in the cache at regular intervals. You can specify any time interval between 1 second and 500 minutes. By default, 4D saves your data every 20 seconds. The application also saves your data to disk each time you change to another environment or exit the application. You can also call the [FLUSH CACHE](https://doc.4d.com/4dv19R/help/command/en/page297.html) command to trigger the flush at any moment.
 

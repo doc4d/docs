@@ -18,14 +18,14 @@ Cette zone vous permet de personnaliser diverses options relatives au démarrage
 Ce menu permet de sélectionner le mode dans lequel vous souhaitez que la base soit ouverte par défaut : **Développement** ou **Application**. A moins que vous ne le spécifiiez, 4D s'ouvre par défaut en mode Développement s’il n’y a pas de mots de passe en contrôlant l’accès.
 
 
-## Component
+## Composant
 
-This area allows [component developers](../Extensions/develop-components.md) to configure how their component classes and functions will be exposed in the 4D method editor once the component is installed.
+Cette zone permet aux [développeurs de composants](../Extensions/develop-components.md) de configurer la manière dont les classes et les fonctions de leurs composants seront exposées dans l'éditeur de méthodes 4D une fois que le composant est installé.
 
 ### Component namespace in the class store
 
-Use this area to declare a namespace for the component classes and functions in the code on host projects. See [Declaring the component namespace](../Extensions/develop-components.md#declaring-the-component-namespace).
+Utilisez cette zone pour déclarer un namespace pour les classes et les fonctions du composant dans le code des projets hôtes. Voir [Déclaration du namespace du composant](../Extensions/develop-components.md#declaring-the-component-namespace).
 
 ### Generate syntax file for code completion when compiled
 
-When you check this option, a syntax file (JSON format) is automatically created during the compilation phase. See [Code completion for compiled components](../Extensions/develop-components.md#code-completion-for-compiled-components). 
+Lorsque vous cochez cette option, un fichier de syntaxe (format JSON) est automatiquement créé lors de la phase de compilation. Voir [Complétion de code pour les composants compilés](../Extensions/develop-components.md#code-completion-for-compiled-components). 
