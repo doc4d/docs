@@ -13,11 +13,11 @@ En Windows, los desarrolladores 4D pueden configurar sus aplicaciones fusionadas
 El modo SDI sólo está disponible en el siguiente entorno de ejecución:
 
 - Windows
-- Merged stand-alone or client 4D application
+- Aplicación 4D fusionada, monopuesto o cliente
 
 ## Activación del modo SDI
 
-Enabling and using the SDI mode in your application require the following steps:
+La activación y el uso del modo SDI en su aplicación requieren los siguientes pasos:
 
 1. Check the **Use SDI mode on Windows** option in the "Interface" page of the Settings dialog box.
 2. Build a merged application (standalone and/or client application).
