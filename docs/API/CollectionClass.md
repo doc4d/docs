@@ -1339,6 +1339,7 @@ Optionally, you can pass the index of collection from which to start the search 
 
 
 
+
 ```4d
  var $col : Collection
  var $i : Integer
@@ -1581,7 +1582,8 @@ Optionally, you can pass the index of collection from which to start a reverse s
 </details>
 
 <!-- REF #collection.length.Syntax -->
-**.length** : Integer <!-- END REF -->
+**.length** : Integer 
+<!-- END REF -->
 
 
 
@@ -1731,6 +1733,7 @@ If the collection is empty, `.max()` returns *Undefined*.
 |Version|Changes|
 |---|---|
 |v16 R6|Added|
+
 </details>
 
 <!-- REF #collection.min().Syntax -->
