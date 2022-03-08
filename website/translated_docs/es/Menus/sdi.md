@@ -13,34 +13,34 @@ En Windows, los desarrolladores 4D pueden configurar sus aplicaciones fusionadas
 El modo SDI sólo está disponible en el siguiente entorno de ejecución:
 
 - Windows
-- Merged stand-alone or client 4D application
+- Aplicación 4D fusionada, monopuesto o cliente
 
 ## Activación del modo SDI
 
-Enabling and using the SDI mode in your application require the following steps:
+La activación y el uso del modo SDI en su aplicación requieren los siguientes pasos:
 
 1. Check the **Use SDI mode on Windows** option in the "Interface" page of the Settings dialog box.
-2. Build a merged application (standalone and/or client application).
+2. Crear una aplicación fusionada (monopuesto y/o aplicación cliente).
 
-Then, when executed it in a supported context (see above), the merged application will work automatically in SDI mode.
+Entonces, cuando se ejecute en un contexto soportado (ver arriba), la aplicación fusionada funcionará automáticamente en modo SDI.
 
-## Managing applications in SDI mode
+## Gestión de aplicaciones en modo SDI
 
-Executing a 4D application in SDI mode does not require any specific implementation: existing menu bars are automatically moved in SDI windows themselves. However, you need to pay attention to specific principles that are listed below.
+La ejecución de una aplicación 4D en modo SDI no requiere ninguna implementación específica: las barras de menú existentes se desplazan automáticamente en las propias ventanas SDI. Sin embargo, debe prestar atención a los principios específicos que se enumeran a continuación.
 
 ### Menús en las ventanas
 
-In SDI mode, the process menu bar is automatically displayed in every document type window opened during the process life (this excludes, for example, floating palettes). When the process menu bar is not visible, menu item shortcuts remain active however.
+En modo SDI, la barra de menú del proceso se muestra automáticamente en cada ventana de tipo de documento abierta durante la vida del proceso (esto excluye, por ejemplo, las paletas flotantes). Sin embargo, cuando la barra de menús del proceso no está visible, los accesos directos a los elementos del menú permanecen activos.
 
-Menus are added above windows without modifiying their contents size:
+Los menús se añaden sobre las ventanas sin modificar el tamaño de su contenido:
 
 ![](assets/en/Menus/sdi1.png)
 
-Windows can therefore be used in MDI or SDI modes without having to recalculate the position of objects.
+Así, las ventanas pueden utilizarse en los modos MDI o SDI sin tener que recalcular la posición de los objetos.
 
 #### Sobre la pantalla de inicio
 
-- If the **Splash screen** interface option was selected in the Settings, the splash window will contain any menus that would have been displayed in the MDI window. Note also that closing the splash screen window will result in exiting the application, just like in MDI mode.
+- If the **Splash screen** interface option was selected in the Settings, the splash window will contain any menus that would have been displayed in the MDI window. Tenga en cuenta también que al cerrar la ventana de la pantalla de inicio se saldrá de la aplicación, al igual que en el modo MDI.
 - If the Splash screen option was not selected, menus will be displayed in opened windows only, depending on the programmer's choices.
 
 ### Salida automática

@@ -78,7 +78,7 @@ Une collection est initialisée avec :
 | Paramètres | Type                                                                    |    | Description             |
 | ---------- | ----------------------------------------------------------------------- |:--:| ----------------------- |
 | value      | Number, Text, Date, Time, Boolean, Object, Collection, Picture, Pointer | -> | Valeur(s) de collection |
-| Résultat   | Collection                                                              | <- | New collection          |
+| Résultat   | Collection                                                              | <- | Nouvelle collection     |
 <!-- END REF -->
 
 

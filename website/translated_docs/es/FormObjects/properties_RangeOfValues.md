@@ -23,15 +23,15 @@ El valor por defecto sólo puede utilizarse si el [tipo de fuente de datos](prop
 | #H    | Hora actual         |
 | #N    | Número de secuencia |
 
-Puede utilizar un número de secuencia para crear un número único para cada registro de la tabla para el archivo de datos actual. Un número de secuencia es un longint que se genera para cada nuevo registro. The numbers start at one (1) and increase incrementally by one (1). A sequence number is never repeated even if the record it is assigned to is deleted from the table. Each table has its own internal counter of sequence numbers. For more information, refer to the [Autoincrement](https://doc.4d.com/4Dv17R6/4D/17-R6/Field-properties.300-4354738.en.html#976029) paragraph.
+Puede utilizar un número de secuencia para crear un número único para cada registro de la tabla para el archivo de datos actual. Un número de secuencia es un longint que se genera para cada nuevo registro. Los números comienzan en uno (1) y van aumentando de uno en uno. Un número de secuencia no se repite nunca, incluso si el registro al que se asigna se elimina de la tabla. Cada tabla tiene su propio contador interno de números de secuencia. Para más información, consulte el párrafo [Autoincremento](https://doc.4d.com/4Dv17R6/4D/17-R6/Field-properties.300-4354738.en.html#976029).
 
-> Do not make confusion between this property and the "[default values](properties_DataSource.md#default-list-of-values)" property that allows to fill a list box column with static values.
+> No hay que confundir esta propiedad con la propiedad "valores por defecto" que permite llenar una columna list box con valores estáticos.
 
 #### Gramática JSON
 
-| Nombre       | Tipos de datos                      | Valores posibles                           |
-| ------------ | ----------------------------------- | ------------------------------------------ |
-| defaultValue | string, number, date, time, boolean | Any value and/or a stamp: "#D", "#H", "#N" |
+| Nombre       | Tipos de datos                      | Valores posibles                          |
+| ------------ | ----------------------------------- | ----------------------------------------- |
+| defaultValue | string, number, date, time, boolean | Todo valor y/o un sello: "#D", "#H", "#N" |
 
 #### Objetos soportados
 
