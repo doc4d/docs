@@ -14,22 +14,22 @@ The list found in the left part of the window displays any existing backups of t
 
 Cuando se selecciona una copia de seguridad en esta lista, la parte derecha de la ventana muestra la información relativa a esta copia de seguridad en particular:
 
-- **Ruta**: ruta de acceso completa del archivo de copia de seguridad seleccionado. Clicking the Show button opens the backup file in a system window.
-- **Date and Time**: Date and time of backup.
-- **Content**: Contents of the backup file. Each item in the list has a check box next to it which can be used to indicate whether or not you want to restore it. You can also use the **Check All** or **Uncheck All** buttons to set the list of items to be restored.
-- **Destination folder of the restored files**: Folder where the restored files will be placed. By default, 4D restores the files in a folder named “Archivename” (no extension) that is placed next to the Project folder. To change this location, click on **[...]** and specify the folder where you want the restored files to be placed.
+- **Ruta**: ruta de acceso completa del archivo de copia de seguridad seleccionado. Al hacer clic en el botón Mostrar se abre el archivo de copia de seguridad en una ventana del sistema.
+- **Fecha y hora**: fecha y hora de la copia de seguridad.
+- **Contenido**: contenido del archivo de copia de seguridad. Cada elemento de la lista tiene una casilla de selección al lado que se puede utilizar para indicar si se quiere restaurar o no. También puede utilizar los botones **Seleccionar todo** o **Deseleccionar todo** para definir la lista de los elementos que deben restaurarse.
+- **Carpeta de destino de los archivos restaurados**: carpeta donde se colocarán los archivos restaurados. By default, 4D restores the files in a folder named “Archivename” (no extension) that is placed next to the Project folder. Para cambiar esta ubicación, haga clic en **[...]** y designe la carpeta en la que desea colocar los archivos restaurados.
 
-The **Restore** button launches the manual restoration of the selected element(s).
+El botón **Restaurar** lanza la restauración manual del elemento o elementos seleccionados.
 
 ## Integración sucesiva de varios archivos de historial de datos
 
-The **Integrate one or more log file(s) after restore** option allows you to integrate several data log files successively into an application. If, for example, you have 4 journal file archives (.4BL) corresponding to 4 backups, you can restore the first backup then integrate the journal (data log) archives one by one. This means that you can, for example, recover a data file even when the last backup files are missing.
+The **Integrate one or more log file(s) after restore** option allows you to integrate several data log files successively into an application. If, for example, you have 4 journal file archives (.4BL) corresponding to 4 backups, you can restore the first backup then integrate the journal (data log) archives one by one. Esto significa que puede, por ejemplo, recuperar un archivo de datos incluso cuando faltan los últimos archivos de copia de seguridad.
 
-When this option is checked, 4D displays the standard Open file dialog box after the restore, which can be used to select journal file to be integrated. The Open file dialog box is displayed again after each integration until it is cancelled.
+Cuando esta opción está marcada, 4D muestra la caja de diálogo estándar Abrir archivo después de la restauración, que puede utilizarse para seleccionar el archivo del diario que se va a integrar. La caja de diálogo Abrir archivo se muestra de nuevo después de cada integración hasta que se cancela.
 
 ## Restauración de una base encriptada
 
-Keep in mind that the data encryption key (passphrase) may have been changed through several versions of backup files (.4BK), .journal files (.4BL) and the current application. Matching encryption keys must always be provided.
+Keep in mind that the data encryption key (passphrase) may have been changed through several versions of backup files (.4BK), .journal files (.4BL) and the current application. Siempre deben proporcionarse claves de encriptación coincidentes.
 
 When restoring a backup and integrating the current log file in a encrypted database:
 
