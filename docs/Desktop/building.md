@@ -84,7 +84,7 @@ This tab allows you to build a standard compiled structure file and/or a compile
 
 Builds an application containing only compiled code. 
 
-This feature creates a *.4dz* file within a *Compiled Database/\<project name>* folder. For example, if you have named your application “MyProject”, 4D will create: 
+This feature creates a *.4dz* file within a *Compiled Database/\<project name>* folder. For example, if you have named your application "MyProject", 4D will create: 
 
 *\<destination\>/Compiled Database/MyProject/MyProject.4dz*
 
@@ -475,29 +475,27 @@ Customizing the server-side cache folder name is useful when you run several ide
 
 ## Plugins & components page
 
-On this tab, you set each [plug-in](Concepts/plug-ins.md) and each [component](Concepts/components.md) that you will use in your stand-alone or client/server application. 
+On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](Concepts/components.md), and **module** that you will use in your stand-alone or client/server application. 
+
+> Modules are built-in code libraries used by 4D.  
 
 The page lists the elements loaded by the current 4D application:
 
 ![](assets/en/Project/buildapppluginsProj.png)
 
-*	 **Active** column - Indicates that the items will be integrated into the application package built. All the items are checked by default. To exclude a plug-in or a component, deselect the check box next to it. 
+*	 **Active** column - Indicates that the items will be integrated into the application package built. All the items are checked by default. To exclude a plug-in, a component, or a module, deselect the check box next to it. 
 
+*	**Plugins and components** column - Displays the name of the plug-in/component/module.
 
+*	**ID** column - Displays the element's identification number (if any).
 
-*	**Plugins and components** column - Displays the name of the plug-in/component.
-
-*	**ID** column - Displays the plug-in/component's identification number (if any).
-
-*	**Type** column - Indicates the type of item: plug-in or component.
+*	**Type** column - Indicates the type of item: Plug-in, Component, or Module.
 
 If you want to integrate other plug-ins or components into the executable application, you just need to place them in a **PlugIns** or **Components** folder next to the 4D Volume Desktop application or next to the 4D Server application. The mechanism for copying the contents of the source application folder (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)) can be used to integrate any type of file into the executable application.
 
 If there is a conflict between two different versions of the same plug-in (one loaded by 4D and the other located in the source application folder), priority goes to the plug-in installed in the 4D Volume Desktop/4D Server folder. However, if there are two instances of the same component, the application will not open.
 
 >The use of plug-ins and/or components in a deployment version requires the necessary license numbers.
-
-
 
 
 
