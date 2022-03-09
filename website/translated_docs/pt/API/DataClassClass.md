@@ -843,59 +843,59 @@ ds.People.query("places.locations[].kind= :1 and places.locations[].city= :2";"h
 
 ... a pesquisa devolverá "martin" **e** "smith" porque "smith" tem um elemento "locations" cujo "tipo" é "home" e um elemento "locations" cuja "cidade" é "paris", mesmo que sejam elementos diferentes.
 
-If you want to only get entities where matching arguments are in the same collection element, you need to **link arguments**. To link query arguments:
+Se quiser obter apenas entidades onde os argumentos correspondentes estão no mesmo elemento coleção, precisa  **linkar os argumentos**. Para linkar argumentos de pesquisa:
 
-- Add a letter between the \[] in the first path to link and repeat the same letter in all linked arguments. For example: `locations[a].city and locations[a].kind`. You can use any letter of the Latin alphabet (not case sensitive).
-- To add different linked criteria in the same query, use another letter. You can create up to 26 combinations of criteria in a single query.
+- Adicionar uma letra entre os \[] na primeira rota a linkar e repita a mesma letra em todos os argumentos linkados. Por exemplo: `locations[a].city and locations[a].kind`. Pode usar qualquer letra do alfabeto latino (não diferencia maiúsculas e minúsculas).
+- Para adicionar critérios linkados na mesma pesquisa, use outra letra. Pode criar até 26 combinações de critérios em uma única pesquisa.
 
-With the above entities, if you write:
+Com as entidades acima, se escreve:
 
 ```4d
 ds.People.query("places.locations[a].kind= :1 and places.locations[a].city= :2";"home";"paris")
 ```
 
-... the query will only return "martin" because it has a "locations" element whose "kind" is "home" and whose "city" is "paris". The query will not return "smith" because the values "home" and "paris" are not in the same collection element.
+... pesquisa só devolverá "martin" porque tem um elemento "locations" cujo "kind" é "home" e cujo "city" for "paris". A pesquisa não devolverá 'smith' porque os valores 'home' e 'paris' não estão no mesmo elemento de coleção.
 
 
 
-**formula parameter**
+**parâmetro de fórmula**
 
-As an alternative to formula insertion within the *queryString* parameter (see above), you can pass directly a formula object as a boolean search criteria. Using a formula object for queries is **recommended** since you benefit from tokenization, and code is easier to search/read.
+Como alternativa à inserção de fórmulas dentro do parâmetro *queryString* (ver acima), pode passar diretamente um objeto fórmula como critério de pesquisa booleano. A utilizaçã de um objeto fórmula para as pesquisas é **recomendada** já que se beneficia da tokenização, e o código é mais fácil de pesquisar/ler.
 
-The formula must have been created using the `Formula` or `Formula from string` command. In this case:
+A fórmula deve ter sido criada com o comando `Formula` ou `Formula from string`. Nesse modo:
 
-*   the *formula* is evaluated for each entity and must return true or false. During the execution of the query, if the formula's result is not a boolean, it is considered as false.
-*   within the *formula*, the entity is available through the `This` object.
-*   if the `Formula` object is **null**, the errror 1626 ("Expecting a text or formula") is generated, that you call intercept using a method installed with `ON ERR CALL`.
-> For security reasons, formula calls within `query(`) member methods can be disallowed. See *querySettings* parameter description.
+*   *fórmula* se avalia para cada entidade e deve devolver true ou false. Durante a execução da pesquisa, se o resultado da fórmula não for booleano, é considerado como False.
+*   dentro da *fórmula*, a entidade está disponível através do objeto `This`.
+*   Se o objeto `Formula` for **null**, o errro 1626 ("Expecting a text or formula") é gerado, então pode interceptar a chamada com o método instalado `ON ERR CALL`.
+> Por razões de segurança, as chamadas a fórmulas dentro dos métodos membro`query()` podem ser desativadas. Veja a descrição do parâmetro *querySettings*.
 
-**Passing parameters to formulas**
+**Passar parâmetros a fórmulas**
 
-Any *formula* called by the `query()` class function can receive parameters:
+Todo parâmetro *formula* chamado pela função `query()` pode receber parâmetros:
 
-*   Parameters must be passed through the **args** property (object) of the *querySettings* parameter.
-*   The formula receives this **args** object as a **$1** parameter.
+*   Parâmeters devem ser passados através da propriedade  **args**  (objeto) do parâmetro *querySettings*.
+*   A fórmula recebe este objeto **args** como um parâmetro **$1**.
 
-This small code shows the principles of how parameter are passed to methods:
+Este pequeno código mostra os principios de como são passados os parâmetros aos métodos:
 
 ```4d
- $settings:=New object("args";New object("exclude";"-")) //args object to pass parameters
- $es:=ds.Students.query("eval(checkName($1.exclude))";$settings) //args is received in $1
+ $settings:=New object("args";New object("exclude";"-")) //objeto args a passar os parâmetros
+ $es:=ds.Students.query("eval(checkName($1.exclude))";$settings) //args se recebe em $1
 ```
 
-Additional examples are provided in example 3.
+No exemplo 3 são oferecidos mais exemplos.
 
-**4D Server**: In client/server, formulas are executed on the server. In this context, only the `querySettings.args` object is sent to the formulas.
+**4D Server**: em cliente/servidor, as fórmulas são executadas no servidor. Neste contexto, só se envia às fórmulas o objeto `querySettings.args`.
 
 
 
-**querySettings parameter**
+**parâmetro querySettings**
 
-In the *querySettings* parameter, you can pass an object containing additional options. The following properties are supported:
+No  parâmetro *querySettings* é possível passar um objeto que conteha opções adicionais. As propriedades abaixo são compatíveis:
 
-| Propriedade   | Type     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Propriedade   | Tipo     | Descrição                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| parameters    | Objeto   | **Named placeholders for values** used in the *queryString* or *formula*. Values are expressed as property / value pairs, where property is the placeholder name inserted for a value in the *queryString* or *formula* (":placeholder") and value is the value to compare. You can mix indexed placeholders (values directly passed in value parameters) and named placeholder values in the same query.                                                                                                                                                                                                                                                   |
+| parameters    | Objeto   | **Marcadores nomeados para os valores** utilizados em *queryString* ou *fórmula*. Os valores se expressam como pares propriedade / valor, onde propriedade é o nome do marcador de posição inserido para um valor em *queryString* ou *formula* (":placeholder") e valor é o valor a comparar. You can mix indexed placeholders (values directly passed in value parameters) and named placeholder values in the same query.                                                                                                                                                                                                                                |
 | attributes    | Objeto   | **Named placeholders for attribute paths** used in the *queryString* or *formula*. Attributes are expressed as property / value pairs, where property is the placeholder name inserted for an attribute path in the *queryString* or *formula* (":placeholder"), and value can be a string or a collection of strings. Each value is a path that can designate either a scalar or a related attribute of the dataclass or a property in an object field of the dataclass<p><table><tr><th>Type</th><th>Description</th></tr><tr><td>String</td><td>attributePath expressed using the dot notation, e.g. "name" or "user.address.zipCode"</td></tr><tr><td>Collection of strings</td><td>Each string of the collection represents a level of attributePath, e.g. \["name"] or \["user","address","zipCode"]. Using a collection allows querying on attributes with names that are not compliant with dot notation, e.g. \["4Dv17.1","en/fr"]</td></tr></table>You can mix indexed placeholders (values directly passed in *value* parameters) and named placeholder values in the same query. |
 | args          | Objeto   | Parameter(s) to pass to formulas, if any. The **args** object will be received in $1 within formulas and thus its values will be available through *$1.property* (see example 3).                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | allowFormulas | Booleano | True to allow the formula calls in the query (default). Pass false to disallow formula execution. If set to false and `query()` is given a formula, an error is sent (1278 - Formula not allowed in this member method).                                                                                                                                                                                                                                                                                                                                                                                                                                    |
