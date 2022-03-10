@@ -3,19 +3,19 @@ id: info
 title: '$info'
 ---
 
-Returns information about the entity sets currently stored in 4D Server's cache as well as user sessions
+Devuelve información sobre los conjuntos de entidades almacenados actualmente en la caché de 4D Server, así como las sesiones usuario
 
 ## Descripción
-When you call this request for your project, you retrieve information in the following properties:
+Cuando llama a esta petición para su proyecto, se recupera la información en las propiedades siguientes:
 
-| Propiedad      | Tipo       | Descripción                                                                         |
-| -------------- | ---------- | ----------------------------------------------------------------------------------- |
-| cacheSize      | Número     | Tamaño de la caché del servidor 4D.                                                 |
-| usedCache      | Número     | How much of 4D Server's cache has been used.                                        |
-| entitySetCount | Número     | Number of entity selections.                                                        |
-| entitySet      | Collection | A collection in which each object contains information about each entity selection. |
-| ProgressInfo   | Collection | A collection containing information about progress indicator information.           |
-| sessionInfo    | Collection | A collection in which each object contains information about each user session.     |
+| Propiedad      | Tipo       | Descripción                                                                                 |
+| -------------- | ---------- | ------------------------------------------------------------------------------------------- |
+| cacheSize      | Número     | Tamaño de la caché del servidor 4D.                                                         |
+| usedCache      | Número     | Cuánto se ha utilizado de la caché de 4D Server.                                            |
+| entitySetCount | Número     | Número de selecciones de entidades.                                                         |
+| entitySet      | Collection | Una colección en la que cada objeto contiene información sobre cada selección de entidades. |
+| ProgressInfo   | Collection | A collection containing information about progress indicator information.                   |
+| sessionInfo    | Collection | A collection in which each object contains information about each user session.             |
 
 ### entitySet
 For each entity selection currently stored in 4D Server's cache, the following information is returned:
