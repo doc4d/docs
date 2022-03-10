@@ -501,13 +501,13 @@ If there is a conflict between two different versions of the same plug-in (one l
 
 ### Deselecting modules
 
-A module is a built-in code library used by 4D to control specific features. If you are certain that your built application does not use any of the features covered by a module, you can deselect it in the list to save time and place. 
+A module is a built-in code library used by 4D to control specific features. If you know that your built application does not use any of the features covered by a module, you can deselect it in the list to save time and place. 
 
-> **Warning:** Pay attention to the fact that deselecting a module could prevent your built application from working as expected. If you are not 100% certain that a module is not called by your application, it is recommended to keep it selected. 
+> **Warning:** Deselecting a module could prevent your built application from working as expected. If you are not 100% certain that a module is never called by your application, it is recommended to keep it selected. 
 
-The following modules can be deselected:
+The following optional modules can be deselected:
 
-- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md)(embedded engine) and [4D View Pro areas](../FormObjects/viewProArea_overview.md).
+- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) (embedded engine) and [4D View Pro areas](../FormObjects/viewProArea_overview.md).
 - **MeCab**: Library used for text indexing and spellchecking in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version). Deselecting this module will force text indexes to be rebuilt in Japanese language. 
 - **PHP**: Necessary to use PHP features and commands in 4D (see this [settings paragraph](../settings/php.md)).
 - **SpellChecker**: Used for built-in [spellchecking features](../FormObjects/properties_Entry.md#auto-spellcheck) and commands available for input areas and 4D Write Pro areas.
