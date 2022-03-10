@@ -4,7 +4,7 @@ title: Página Verificación
 sidebar_label: Página Verificación
 ---
 
-You use this page to verify data integrity. The verification can be carried out on records and/or indexes. This page only checks the data integrity. If errors are found and repairs are needed, you will be advised to use the [Repair page](repair.md).
+Esta página se utiliza para verificar la integridad de los datos. La verificación puede llevarse a cabo en los registros y/o índices. Esta página sólo comprueba la integridad de los datos. Si se encuentran errores y es necesario repararlos, se le indicará que utilice la página [Reparación](repair.md).
 
 
 ## Acciones
