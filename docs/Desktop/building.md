@@ -475,13 +475,12 @@ Customizing the server-side cache folder name is useful when you run several ide
 
 ## Plugins & components page
 
-On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](Concepts/components.md), and **module** that you will use in your stand-alone or client/server application. 
+On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](Concepts/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application. 
 
-> Modules are built-in code libraries used by 4D.  
 
 The page lists the elements loaded by the current 4D application:
 
-![](assets/en/Project/buildapppluginsProj.png)
+![](assets/en/Desktop/buildappcomps.png)
 
 *	 **Active** column - Indicates that the items will be integrated into the application package built. All the items are checked by default. To exclude a plug-in, a component, or a module, deselect the check box next to it. 
 
@@ -491,12 +490,28 @@ The page lists the elements loaded by the current 4D application:
 
 *	**Type** column - Indicates the type of item: Plug-in, Component, or Module.
 
+### Adding plug-ins or components
+
 If you want to integrate other plug-ins or components into the executable application, you just need to place them in a **PlugIns** or **Components** folder next to the 4D Volume Desktop application or next to the 4D Server application. The mechanism for copying the contents of the source application folder (see [Customizing the 4D Volume Desktop folder](#customizing-4d-volume-desktop-folder)) can be used to integrate any type of file into the executable application.
 
 If there is a conflict between two different versions of the same plug-in (one loaded by 4D and the other located in the source application folder), priority goes to the plug-in installed in the 4D Volume Desktop/4D Server folder. However, if there are two instances of the same component, the application will not open.
 
->The use of plug-ins and/or components in a deployment version requires the necessary license numbers.
+>The use of plug-ins and/or components in a deployment version may require license numbers.
 
+
+### Deselecting modules
+
+A module is a built-in code library used by 4D to control specific features. If you are certain that your built application does not use any of the features covered by a module, you can deselect it in the list to save time and place. 
+
+> **Warning:** Pay attention to the fact that deselecting a module could prevent your built application from working as expected. If you are not 100% certain that a module is not called by your application, it is recommended to keep it selected. 
+
+The following modules can be deselected:
+
+- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md)(embedded engine) and [4D View Pro areas](../FormObjects/viewProArea_overview.md).
+- **MeCab**: Library used for text indexing and spellchecking in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version). Deselecting this module will force text indexes to be rebuilt in Japanese language. 
+- **PHP**: Necessary to use PHP features and commands in 4D (see this [settings paragraph](../settings/php.md)).
+- **SpellChecker**: Used for built-in [spellchecking features](../FormObjects/properties_Entry.md#auto-spellcheck) and commands available for input areas and 4D Write Pro areas.
+- **4D Updater**: Controls the [automatic update](#what-is-a-clientserver-application) of client parts in a client/server built application. 
 
 
 
