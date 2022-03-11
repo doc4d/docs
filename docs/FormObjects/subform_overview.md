@@ -39,7 +39,31 @@ Page subforms can display the data of the current subrecord or any type of perti
 
 The page subform uses the input form indicated by the [Detail Form](properties_Subform.md#detail-form) property. Unlike a list subform, the form used can come from the same table as the parent form. It is also possible to use a project form. When executed, a page subform has the same standard display characteristics as an input form.
 
-> 4D Widgets are predefined compound objects based upon page subforms. They are described in detail in a separate manual, [4D Widgets](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-Widgets.100-4465257.en.html).
+> 4D Widgets are predefined compound objects based upon page subforms. They are described in detail in a separate manual, [4D Widgets](https://doc.4d.com/4Dv19/4D/19/4D-Widgets.100-5462909.en.html).
+
+
+### Using the bound variable or expression
+
+You can bind a [variable or an expression](properties_Object.md#variable-or-expression) to a subform container object. 
+
+By default, 4D creates a variable or expression of [object type](properties_Object.md#expression-type) for a subform container, which allows you to share values in a local context using the `Form` command (see below). However, you can use any type and that variable or expression can be displayed in the parent form. Modifying this variable triggers form events which let you synchronize the parent form and subform values:
+
+- Use the [On Data Change](../Events/onDataChange.md) form event to indicate to the subform container that the variable or expression value was modified in the subform.
+- Use the [On Bound Variable Change](../Events/onBoundVariableChange.md) form event to indicate to the subform (form method of subform) that the variable or expression was modified in the parent form.
+
+Binding the same variable or expression to your subform container and other objects of the parent form lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. For example, imagine a subform representing a clock, inserted into a parent form containing an enterable variable of the Time type:
+
+![](assets/en/FormObjects/subforms1.png)
+
+Both objects (time variable and subform container) *have the same variable or expression name*. In this case, you can easily synchronize objects from form to subform and vice versa by calling the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands in the form method of the subform in the [On Bound Variable Change](../Events/onBoundVariableChange.md) and [On Data Change](../Events/onDataChange.md) events (see below). 
+
+If the variable value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order:
+
+- 1-Object methods of subform
+- 2-Form method of subform
+- 3-Object methods of parent form
+- 4-Form method of parent form
+
 
 ### Using the subform bound object
 
@@ -68,19 +92,6 @@ You can modify the labels from the subform by assigning values to the *InvoiceAd
 
 ![](assets/en/FormObjects/subforms5.png)
 
-### Managing the bound variable or expression
-
-The [variable or expression](properties_Object.md#variable-or-expression) bound to a page subform lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. For example, imagine a subform representing a dynamic clock, inserted into a parent form containing an enterable variable of the Time type:
-
-![](assets/en/FormObjects/subforms1.png)
-
-Both objects (time variable and subform container) *have the same variable name or expression*. In this case, when you open the parent form, 4D synchronizes both values automatically. If the variable value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order:
-1-Object methods of subform
-2-Form method of subform
-3-Object methods of parent form
-4-Form method of parent form
-
-When the parent form is executed, the developer must take care to synchronize the variables using appropriate form events. Two types of interactions can occur: form to subform and vice versa.
 
 ### Advanced inter-form programming  
 Communication between the parent form and the instances of the subform may require going beyond the exchange of a value through the bound variable. In fact, you may want to update variables in subforms according to the actions carried out in the parent form and vice versa. If we use the previous example of the "dynamic clock" type subform, we may want to set one or more alarm times for each clock. 
