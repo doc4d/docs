@@ -14,23 +14,23 @@ Cuando llama a esta petición para su proyecto, se recupera la información en l
 | usedCache      | Número     | Cuánto se ha utilizado de la caché de 4D Server.                                            |
 | entitySetCount | Número     | Número de selecciones de entidades.                                                         |
 | entitySet      | Collection | Una colección en la que cada objeto contiene información sobre cada selección de entidades. |
-| ProgressInfo   | Collection | A collection containing information about progress indicator information.                   |
-| sessionInfo    | Collection | A collection in which each object contains information about each user session.             |
+| ProgressInfo   | Collection | Una colección que contiene información sobre el indicador de progreso.                      |
+| sessionInfo    | Collection | Una colección en la que cada objeto contiene información sobre cada sesión usuario.         |
 
 ### entitySet
-For each entity selection currently stored in 4D Server's cache, the following information is returned:
+Para cada selección de entidad almacenada actualmente en la caché de 4D Server, se devuelve la siguiente información:
 
 
-| Propiedad     | Tipo     | Descripción                                                                                                                                                                                                                                                               |
-| ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id            | Cadena   | A UUID that references the entity set.                                                                                                                                                                                                                                    |
-| dataClass     | Cadena   | Nombre de la dataclass.                                                                                                                                                                                                                                                   |
-| selectionSize | Número   | Number of entities in the entity selection.                                                                                                                                                                                                                               |
-| sorted        | Booleano | Devuelve true si el conjunto fue ordenado ( utilizando `$orderby`) o false si no está ordenado.                                                                                                                                                                           |
-| refreshed     | Fecha    | When the entity set was created or the last time it was used.                                                                                                                                                                                                             |
-| expires       | Fecha    | When the entity set will expire (this date/time changes each time when the entity set is refreshed). The difference between refreshed and expires is the timeout for an entity set. Este valor es de dos horas por defecto o lo que hayas definido utilizando `$timeout`. |
+| Propiedad     | Tipo     | Descripción                                                                                                                                                                                                                                                                                              |
+| ------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| id            | Cadena   | Un UUID que hace referencia al conjunto de entidades.                                                                                                                                                                                                                                                    |
+| dataClass     | Cadena   | Nombre de la dataclass.                                                                                                                                                                                                                                                                                  |
+| selectionSize | Número   | Número de entidades en la selección de entidades.                                                                                                                                                                                                                                                        |
+| sorted        | Booleano | Devuelve true si el conjunto fue ordenado ( utilizando `$orderby`) o false si no está ordenado.                                                                                                                                                                                                          |
+| refreshed     | Fecha    | Cuando se creó el conjunto de entidades o la última vez que se utilizó.                                                                                                                                                                                                                                  |
+| expires       | Fecha    | Cuándo expirará el conjunto de entidades (esta fecha/hora cambia cada vez que se actualiza el conjunto de entidades). La diferencia entre refrescado y vencido es el tiempo de espera de un conjunto de entidades. Este valor es de dos horas por defecto o lo que hayas definido utilizando `$timeout`. |
 
-For information about how to create an entity selection, refer to `$method=entityset`. If you want to remove the entity selection from 4D Server's cache, use `$method=release`.
+Para obtener información sobre cómo crear una selección de entidades, consulte `$method=entityset`. Si desea eliminar la selección de entidades de la caché de 4D Server, utilice `$method=release`.
 > 4D also creates its own entity selections for optimization purposes, so the ones you create with `$method=entityset` are not the only ones returned.
 > **IMPORTANT** If your project is in **Controlled Admin Access Mode**, you must first log into the project as a user in the Admin group.
 
