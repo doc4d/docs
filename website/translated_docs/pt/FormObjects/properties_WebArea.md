@@ -30,6 +30,8 @@ When this property is on, a special JavaScript object named `$4d` is instantiate
 
 Name of a Longint type variable. This variable will receive a value between 0 and 100, representing the page load completion percentage in the Web area. Automatically updated by 4D, cannot be modified manually.
 
+> As of 4DV19R5, this variable is no longer updated in Web Areas using the [Windows system rendering engine](./webAreaOverview.md#web-rendering-engine).
+
 #### JSON Grammar
 
 | Name           | Data Type | Possible Values            |
