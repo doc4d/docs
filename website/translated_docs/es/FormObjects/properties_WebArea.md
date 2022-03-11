@@ -30,6 +30,8 @@ Cuando esta propiedad está activada, se instancia un objeto JavaScript especial
 
 Nombre de una variable de tipo Longint. Esta variable recibirá un valor entre 0 y 100, que representa el porcentaje de finalización de la carga de la página en el área web. Actualizado automáticamente por 4D, no puede ser modificado manualmente.
 
+> As of 4DV19R5, this variable is no longer updated in Web Areas using the [Windows system rendering engine](./webAreaOverview.md#web-rendering-engine).
+
 #### Gramática JSON
 
 | Nombre         | Tipos de datos | Valores posibles               |

@@ -31,34 +31,34 @@ Una vez finalizado el procedimiento de reparación, aparece la página "Reparaci
 ## Reparación por encabezados de registros
 Utilice esta opción de reparación de bajo nivel sólo cuando el archivo de datos esté gravemente dañado y después de que todas las demás soluciones (restitución desde una copia de seguridad, reparación estándar) hayan resultado ineficaces.
 
-Los registros 4D varían en tamaño, por lo que es necesario mantener la ubicación donde se almacenan en el disco en una tabla específica, llamada tabla de direcciones, para poder encontrarlos de nuevo. Por lo tanto, el programa accede a la dirección del registro por medio de un índice y de la tabla de direcciones. If only records or indexes are damaged, the standard repair option is usually sufficient to resolve the problem. However, when the address table itself is affected, it requires a more sophisticated recovery since it will be necessary to reconstitute it. To do this, the MSC uses the marker located in the header of each record. The markers are compared to a summary of the record, including the bulk of their information, and from which it is possible to reconstruct the address table.
+Los registros 4D varían en tamaño, por lo que es necesario mantener la ubicación donde se almacenan en el disco en una tabla específica, llamada tabla de direcciones, para poder encontrarlos de nuevo. Por lo tanto, el programa accede a la dirección del registro por medio de un índice y de la tabla de direcciones. Si sólo están dañados los registros o los índices, la opción de reparación estándar suele ser suficiente para resolver el problema. Sin embargo, cuando la propia tabla de direcciones se ve afectada, requiere una recuperación más sofisticada, ya que será necesario reconstituirla. Para ello, el CSM utiliza el marcador situado en el encabezado de cada registro. Los marcadores se comparan con un resumen del registro, que incluye la mayor parte de su información, y a partir del cual es posible reconstruir la tabla de direcciones.
 
 > If you have deselected the **Records definitively deleted** option in the properties of a table in the structure, performing a recovery by header markers may cause records that were previously deleted to reappear. 
 > 
-> Recovery by headers does not take integrity constraints into account. More specifically, after this operation you may get duplicated values with unique fields or NULL values with fields declared **Never Null**.
+> La recuperación por encabezados no tiene en cuenta las restricciones de integridad. Más concretamente, tras esta operación puede obtener valores duplicados con campos únicos o valores NULL con campos declarados **Nunca Null**.
 
-When you click on **Scan and repair...**, 4D performs a complete scan of the data file. When the scan is complete, the results appear in the following window:
+Al hacer clic en **Escanear y reparar...**, 4D realiza un análisis completo del archivo de datos. Una vez finalizado el análisis, los resultados aparecen en la siguiente ventana:
 
 ![](assets/en/MSC/mscrepair2.png)
-> If all the records and all the tables have been assigned, only the main area is displayed.
+> Si todos los registros y todas las tablas han sido asignados, sólo se muestra el área principal.
 
-The "Records found in the data file" area includes two tables summarizing the information from the scan of the data file.
+El área "Registros encontrados en el archivo de datos" incluye dos tablas que resumen la información del análisis del archivo de datos.
 
-- The first table lists the information from the data file scan. Each row shows a group of recoverable records in the data file:
-    - The **Order** column indicates the recovery order for the group of records.
-    - The **Count** column indicates the number of the records in the table.
-    - The **Destination table** column indicates the names of tables that were automatically assigned to the groups of identified records. The names of tables assigned automatically appear in green. Groups that were not assigned, i.e. tables that could not be associated with any records appear in red.
-    - The **Recover** column lets you indicate, for each group, whether you want to recover the records. By default, this option is checked for every group with records that can be associated with a table.
+- La primera tabla lista la información del análisis del archivo de datos. Cada línea muestra un grupo de registros recuperables en el archivo de datos:
+    - La columna **Orden** indica el orden de recuperación del grupo de registros.
+    - La columna **Número** indica el número de los registros de la tabla.
+    - La columna **Tabla de destino** indica los nombres de las tablas que se asignaron automáticamente a los grupos de registros identificados. Los nombres de las tablas asignadas automáticamente aparecen en verde. Los grupos no asignados, es decir, las tablas a las que no se ha podido asociar ningún registro, aparecen en rojo.
+    - La columna **Recuperar** le permite indicar, para cada grupo, si quiere recuperar los registros. Por defecto, esta opción está marcada para todos los grupos con registros que pueden asociarse a una tabla.
 
-- The second table lists the tables of the project file.
+- La segunda tabla lista las tablas del archivo del proyecto.
 
 
 ### Asignación manual
-If several groups of records could not be assigned to tables due to a damaged address table, you can assign them manually. To do this, first select an unassigned group of records in the first table. The "Content of the records" area then displays a preview of the contents of the first records of the group to make it easier to assign them:
+Si varios grupos de registros no han podido ser asignados a las tablas debido a una tabla de direcciones dañada, puede asignarlos manualmente. Para ello, seleccione primero un grupo de registros sin asignar en la primera tabla. El área "Contenido de los registros" muestra entonces una vista previa del contenido de los primeros registros del grupo para facilitar su asignación:
 
 ![](assets/en/MSC/mscrepair3.png)
 
-Next select the table you want to assign to the group in the "Unassigned tables" table and click on the **Identify table** button. You can also assign a table using drag and drop. The group of records is then associated with the table and it will be recovered in this table. The names of tables that are assigned manually appear in black. Use the **Ignore records** button to remove the association made manually between the table and the group of records.
+A continuación, seleccione la tabla que desea asignar al grupo en la tabla "Tablas no asignadas" y haga clic en el botón **Identificar tabla**. También puede asignar una tabla utilizando arrastrar y soltar. El grupo de registros se asocia entonces a la tabla y se recupera en esta tabla. Los nombres de las tablas que se asignan manualmente aparecen en negro. Utilice el botón **Ignorar registros** para eliminar la asociación realizada manualmente entre la tabla y el grupo de registros.
 
 
 ## Abrir archivo de historial

@@ -40,47 +40,11 @@ The page subform uses the input form indicated by the [Detail Form](properties_S
 
 > 4D Widgets are predefined compound objects based upon page subforms. They are described in detail in a separate manual, [4D Widgets](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-Widgets.100-4465257.en.html).
 
-### Managing the bound variable
-
-The [variable](properties_Object.md#variable-or-expression) bound to a page subform lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. For example, imagine a subform representing a dynamic clock, inserted into a parent form containing an enterable variable of the Time type:
-
-![](assets/en/FormObjects/subforms1.png)
-
-Both objects (time variable and subform container) *have the same variable name*. In this case, when you open the parent form, 4D synchronizes both values automatically. If the variable value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order: 1-Object methods of subform 2-Form method of subform 3-Object methods of parent form 4-Form method of parent form
-
-When the parent form is executed, the developer must take care to synchronize the variables using appropriate form events. Two types of interactions can occur: form to subform and vice versa.
-
-#### Updating subform contents
-Case 1: The value of the parent form variable is modified and this modification must be passed on to the subform. In our example, the time of ParisTime changes to 12:15:00, either because the user entered it, or because it was updated dynamically (via the `Current time` command for example).
-
-In this case, you must use the On Bound Variable Change form event. This event must be selected in the subform properties; it is generated in the form method of the subform.
-
-![](assets/en/FormObjects/subforms2.png)
-
-The `On Bound Variable Change` form event is generated:
-
-- as soon as a value is assigned to the variable of the parent form, even if the same value is reassigned,
-- if the subform belongs to the current form page or to page 0.
-
-Note that, as in the above example, it is preferable to use the `OBJECT Get pointer` command which returns a pointer to the subform container rather than its variable because it is possible to insert several subforms in the same parent form (for example, a window displaying different time zones contains several clocks). In this case, only a pointer lets you know which subform container is at the origin of the event.
-
-#### Updating parent form contents
-
-Case 2: The contents of the subform are modified and this modification must be passed on to the parent form. In our example, imagine that the subform interface lets the user "manually" move the hands of the clock.
-
-In this case, from the subform, you must assign the object value to the variable of the parent subform container. As in the previous example, we recommend that you use the `OBJECT Get pointer` command with the `Object subform container` selector which returns a pointer to the subform container.
-
-Assigning the value to the variable generates the `On Data Change` form event in the object method of the parent subform container, which lets you perform any type of action. The event must be selected in the properties of the subform container.
-
-![](assets/en/FormObjects/subforms3.png)
-
-> If you "manually" move the hands of the clock, this also generates the `On Data Change` form event in the object method of the *clockValue* variable in the subform.
-
 ### Using the subform bound object
 
-4D automatically binds an object (`C_OBJECT`) to each subform. The contents of this object can be read and/or modified from within the context of the subform, allowing you to share values in a local context.
+4D automatically binds a variable of type object to each subform. The contents of this object can be read and/or modified from within the context of the subform, allowing you to share values in a local context.
 
-The object can be created automatically or be the parent container variable, if explicitely named and typed as Object (see below). In all cases, the object is returned by the `Form` command, which can be called directy the subform (using a pointer is useless). Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself.
+The object can be created automatically or be the parent container's variable, if explicitely named and typed as Object (see below). This object is returned by the `Form` command, which can be called directly in the subform (using a pointer is useless in this case). Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself.
 
 For example, in your subform, field labels are stored in the bound object so that you can display different languages:
 
@@ -103,17 +67,56 @@ You can modify the labels from the subform by assigning values to the *InvoiceAd
 
 ![](assets/en/FormObjects/subforms5.png)
 
+### Managing the bound variable or expression
+
+The [variable or expression](properties_Object.md#variable-or-expression) bound to a page subform lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. For example, imagine a subform representing a dynamic clock, inserted into a parent form containing an enterable variable of the Time type:
+
+![](assets/en/FormObjects/subforms1.png)
+
+Both objects (time variable and subform container) *have the same variable name or expression*. In this case, when you open the parent form, 4D synchronizes both values automatically. If the variable value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order: 1-Object methods of subform 2-Form method of subform 3-Object methods of parent form 4-Form method of parent form
+
+When the parent form is executed, the developer must take care to synchronize the variables using appropriate form events. Two types of interactions can occur: form to subform and vice versa.
+
 ### Advanced inter-form programming
 Communication between the parent form and the instances of the subform may require going beyond the exchange of a value through the bound variable. In fact, you may want to update variables in subforms according to the actions carried out in the parent form and vice versa. If we use the previous example of the "dynamic clock" type subform, we may want to set one or more alarm times for each clock.
 
 4D has implemented the following mechanisms to meet these needs:
 
-- Use of the "subform" parameter with the `OBJECT Get name` command to specify the subform object and the `OBJECT Get pointer` command.
-- Calling of a container object from the subform using the `CALL SUBFORM CONTAINER` command,
-- Execution of a method in the context of the subform via the `EXECUTE METHOD IN SUBFORM` command.
+- Use of the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE`
+- Calling of a container object from the subform using the `CALL SUBFORM CONTAINER` command
+- Execution of a method in the context of the subform via the `EXECUTE METHOD IN SUBFORM` command
+
+#### Updating the contents of a subform
+
+Case 1: The value of the parent form variable or expression is modified and this modification must be passed on to a subform. f In this example:
+* `Form.parisTime` is an expression of type Time attached to the Input object and the subform container.
+* `Form.parisTime` changes to 12:15:00, either because the user entered it, or because it was updated dynamically (via the `Current time` command for example). This triggers the On Bound Variable change from the subform's Form method, which updates the value of `Form.clockValue` in the subform:
+
+![](assets/en/FormObjects/update-subform.png)
+
+The `On Bound Variable Change` form event is generated:
+
+- as soon as a value is assigned to the variable of the parent form, even if the same value is reassigned
+- if the subform belongs to the current form page or to page 0.
+
+Note that, as in the above example, it is preferable to use the `OBJECT Get subform container value` command which returns the value of the expression in the subform container rather than its variable because it is possible to insert several subforms in the same parent form (for example, a window displaying different time zones contains several clocks).
+
+> In versions prior to v19 R5, you had to use the `OBJECT Get pointer` command to perform such operations.
+
+#### Updating the contents of a parent form
+
+Case 2: The contents of the subform are modified and this modification must be passed on to the parent form.
+
+Inside the subform, the button changes the value of the `Form.clockValue` expression of type Time attached to the clock object. This triggers the On Data Change event inside the clock object, which updates the `Form.parisTime` value in the main form:
+
+![](assets/en/FormObjects/update-main-form.png)
+
+Everytime the value of `Form.clockValue` changes in the subform, `Form.parisTime` in the subform container is also updated.
+
+> In versions prior to v19 R5, you had to use the `OBJECT Get pointer` command to perform such operations.
 
 
-#### Object get pointer and Object get name commands
+#### OBJECT get pointer and Object get name commands
 In addition to the `Object subform container` selector, the `OBJECT Get pointer` command accepts a parameter that indicates in which subform to search for the object whose name is specified in the second parameter. This syntax can only be used when the Object named selector is passed.
 
 For example, the following statement:

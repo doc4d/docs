@@ -40,47 +40,11 @@ El subformulario en página utiliza el formulario de entrada indicado por la pro
 
 > Los widgets 4D son objetos compuestos predefinidos basados en subformularios página. Se describen detalladamente en un manual aparte, [4D Widgets](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-Widgets.100-4465257.en.html).
 
-### Gestión de la variable vinculada
-
-La [variable](properties_Object.md#variable-or-expression) vinculada a un subformulario página le permite vincular los contextos del formulario padre y del subformulario para dar el toque final de las interfaces sofisticadas. Por ejemplo, imagine un subformulario que represente un reloj dinámico, insertado en un formulario padre que contenga una variable introducible de tipo hora:
-
-![](assets/en/FormObjects/subforms1.png)
-
-Ambos objetos (variable de tiempo y contenedor de subformulario) *tienen el mismo nombre de variable*. En este caso, al abrir el formulario padre, 4D sincroniza ambos valores automáticamente. Si el valor de la variable se define en varias ubicaciones, 4D utiliza el valor que se cargó en último lugar. Aplica el siguiente orden de carga: 1-Métodos objeto del subformulario 2-Método formulario del subformulario 3-Métodos objeto del formulario padre 4-Método formulario padre del formulario padre
-
-Cuando se ejecuta el formulario principal, el desarrollador debe tener cuidado de sincronizar las variables utilizando los eventos formularios apropiados. Pueden darse dos tipos de interacciones: de formulario a subformulario y viceversa.
-
-#### Actualización del contenido del subformulario
-Caso 1: se modifica el valor de la variable del formulario padre y esta modificación debe pasarse al subformulario. En nuestro ejemplo, la hora de Paris cambia a 12:15:00, ya sea porque el usuario la ha introducido o porque se ha actualizado dinámicamente (a través del comando `Current time`, por ejemplo).
-
-En este caso, debe utilizar el evento formulario On Bound Variable Change. Este evento debe ser seleccionado en las propiedades del subformulario; se genera en el método formulario del subformulario.
-
-![](assets/en/FormObjects/subforms2.png)
-
-Se genera el evento formulario `On Bound Variable Change`:
-
-- en cuanto se asigna un valor a la variable del formulario padre, incluso si se reasigna el mismo valor,
-- si el subformulario pertenece a la página formulario actual o a la página 0.
-
-Tenga en cuenta que, como en el ejemplo anterior, es preferible utilizar el comando `OBJECT Get pointer` que devuelve un puntero al contenedor del subformulario en lugar de su variable porque es posible insertar varios subformularios en el mismo formulario padre (por ejemplo, una ventana que muestra diferentes zonas horarias contiene varios relojes). En este caso, sólo un puntero permite saber qué contenedor de subformulario está en el origen del evento.
-
-#### Actualización del contenido del formulario padre
-
-Caso 2: se modifica el contenido del subformulario y esta modificación debe pasar al formulario padre. En nuestro ejemplo, imagine que la interfaz del subformulario permite al usuario mover "manualmente" las agujas del reloj.
-
-En este caso, desde el subformulario, debe asignar el valor del objeto a la variable del contenedor del subformulario padre. Al igual que en el ejemplo anterior, se recomienda utilizar el comando `OBJECT Get pointer` con el selector `Object subform container` que devuelve un puntero al contenedor del subformulario.
-
-Al asignar el valor a la variable se genera el evento formulario `On Data Change` en el método del objeto del contenedor del subformulario padre, que permite realizar todo tipo de acción. El evento debe estar seleccionado en las propiedades del contenedor del subformulario.
-
-![](assets/en/FormObjects/subforms3.png)
-
-> Si mueve "manualmente" las manecillas del reloj, esto también genera el evento de formulario `On Data Change` en el método del objeto de la variable *clockValue* en el subformulario.
-
 ### Utilizar el objeto asociado al subformulario
 
-4D vincula automáticamente un objeto (`C_OBJECT`) a cada subformulario. El contenido de este objeto puede ser leído y/o modificado desde el contexto del subformulario, lo que permite compartir valores en un contexto local.
+4D automatically binds a variable of type object to each subform. El contenido de este objeto puede ser leído y/o modificado desde el contexto del subformulario, lo que permite compartir valores en un contexto local.
 
-El objeto puede crearse automáticamente o ser la variable del contenedor padre, si se nombra explícitamente y se teclea como Object (ver abajo). En todos los casos, el objeto es devuelto por el comando `Form`, que puede ser llamado directamente al subformulario (utilizando un puntero es inútil). Como los objetos se pasan siempre por referencia, si el usuario modifica el valor de una propiedad en el subformulario, se guardará automáticamente en el propio objeto.
+The object can be created automatically or be the parent container's variable, if explicitely named and typed as Object (see below). This object is returned by the `Form` command, which can be called directly in the subform (using a pointer is useless in this case). Como los objetos se pasan siempre por referencia, si el usuario modifica el valor de una propiedad en el subformulario, se guardará automáticamente en el propio objeto.
 
 Por ejemplo, en su subformulario, las etiquetas de los campos se almacenan en el objeto vinculado para poder mostrar diferentes lenguajes:
 
@@ -103,17 +67,56 @@ Puede modificar las etiquetas desde el subformulario asignando valores al objeto
 
 ![](assets/en/FormObjects/subforms5.png)
 
+### Managing the bound variable or expression
+
+The [variable or expression](properties_Object.md#variable-or-expression) bound to a page subform lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. Por ejemplo, imagine un subformulario que represente un reloj dinámico, insertado en un formulario padre que contenga una variable introducible de tipo hora:
+
+![](assets/en/FormObjects/subforms1.png)
+
+Both objects (time variable and subform container) *have the same variable name or expression*. En este caso, al abrir el formulario padre, 4D sincroniza ambos valores automáticamente. Si el valor de la variable se define en varias ubicaciones, 4D utiliza el valor que se cargó en último lugar. Aplica el siguiente orden de carga: 1-Métodos objeto del subformulario 2-Método formulario del subformulario 3-Métodos objeto del formulario padre 4-Método formulario padre del formulario padre
+
+Cuando se ejecuta el formulario principal, el desarrollador debe tener cuidado de sincronizar las variables utilizando los eventos formularios apropiados. Pueden darse dos tipos de interacciones: de formulario a subformulario y viceversa.
+
 ### Programación entre formularios avanzada
 La comunicación entre el formulario padre y las instancias del subformulario puede requerir ir más allá del intercambio de un valor a través de la variable asociada. De hecho, es posible que desee actualizar las variables de los subformularios en función de las acciones realizadas en el formulario principal y viceversa. Si utilizamos el ejemplo anterior del subformulario de tipo "reloj dinámico", es posible que queramos definir una o varias horas de alarma para cada reloj.
 
 4D ha implementado los siguientes mecanismos para satisfacer estas necesidades:
 
-- Uso del parámetro "subform" con el comando `OBJECT Get name` para especificar el objeto subformulario y el comando `OBJECT Get pointer`.
-- Llamada de un objeto contenedor desde el subformulario utilizando el comando `CALL SUBFORM CONTAINER`,
-- Ejecución de un método en el contexto del subformulario mediante el comando `EXECUTE METHOD IN SUBFORM`.
+- Use of the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE`
+- Calling of a container object from the subform using the `CALL SUBFORM CONTAINER` command
+- Execution of a method in the context of the subform via the `EXECUTE METHOD IN SUBFORM` command
+
+#### Updating the contents of a subform
+
+Case 1: The value of the parent form variable or expression is modified and this modification must be passed on to a subform. f In this example:
+* `Form.parisTime` is an expression of type Time attached to the Input object and the subform container.
+* `Form.parisTime` changes to 12:15:00, either because the user entered it, or because it was updated dynamically (via the `Current time` command for example). This triggers the On Bound Variable change from the subform's Form method, which updates the value of `Form.clockValue` in the subform:
+
+![](assets/en/FormObjects/update-subform.png)
+
+Se genera el evento formulario `On Bound Variable Change`:
+
+- as soon as a value is assigned to the variable of the parent form, even if the same value is reassigned
+- si el subformulario pertenece a la página formulario actual o a la página 0.
+
+Note that, as in the above example, it is preferable to use the `OBJECT Get subform container value` command which returns the value of the expression in the subform container rather than its variable because it is possible to insert several subforms in the same parent form (for example, a window displaying different time zones contains several clocks).
+
+> In versions prior to v19 R5, you had to use the `OBJECT Get pointer` command to perform such operations.
+
+#### Updating the contents of a parent form
+
+Caso 2: se modifica el contenido del subformulario y esta modificación debe pasar al formulario padre.
+
+Inside the subform, the button changes the value of the `Form.clockValue` expression of type Time attached to the clock object. This triggers the On Data Change event inside the clock object, which updates the `Form.parisTime` value in the main form:
+
+![](assets/en/FormObjects/update-main-form.png)
+
+Everytime the value of `Form.clockValue` changes in the subform, `Form.parisTime` in the subform container is also updated.
+
+> In versions prior to v19 R5, you had to use the `OBJECT Get pointer` command to perform such operations.
 
 
-#### Comandos Object get pointer y Object get name
+#### OBJECT get pointer and Object get name commands
 Además el selector `Object subform container`, el comando `OBJECT Get pointer` admite un parámetro que indica en qué subformulario buscar el objeto cuyo nombre se especifica en el segundo parámetro. Esta sintaxis sólo se puede utilizar cuando se pasa el selector Object named.
 
 Por ejemplo, la siguiente instrucción:
