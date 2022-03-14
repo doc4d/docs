@@ -31,23 +31,23 @@ Para cada selección de entidad almacenada actualmente en la caché de 4D Server
 | expires       | Fecha    | Cuándo expirará el conjunto de entidades (esta fecha/hora cambia cada vez que se actualiza el conjunto de entidades). La diferencia entre refrescado y vencido es el tiempo de espera de un conjunto de entidades. Este valor es de dos horas por defecto o lo que hayas definido utilizando `$timeout`. |
 
 Para obtener información sobre cómo crear una selección de entidades, consulte `$method=entityset`. Si desea eliminar la selección de entidades de la caché de 4D Server, utilice `$method=release`.
-> 4D also creates its own entity selections for optimization purposes, so the ones you create with `$method=entityset` are not the only ones returned.
+> 4D también crea sus propias selecciones de entidades con fines de optimización, por lo que las que se crean con `$method=entityset` no son las únicas que se devuelven.
 > **IMPORTANT** If your project is in **Controlled Admin Access Mode**, you must first log into the project as a user in the Admin group.
 
 ### sessionInfo
 
-For each user session, the following information is returned in the *sessionInfo* collection:
+Para cada sesión de usuario, se devuelve la siguiente información en la colección *sessionInfo*:
 
-| Propiedad  | Tipo   | Descripción                                                  |
-| ---------- | ------ | ------------------------------------------------------------ |
-| sessionID  | Cadena | A UUID that references the session.                          |
-| userName   | Cadena | The name of the user who runs the session.                   |
-| lifeTime   | Número | The lifetime of a user session in seconds (3600 by default). |
-| expiration | Fecha  | The current expiration date and time of the user session.    |
+| Propiedad  | Tipo   | Descripción                                                       |
+| ---------- | ------ | ----------------------------------------------------------------- |
+| sessionID  | Cadena | Un UUID que referencia la sesión.                                 |
+| userName   | Cadena | El nombre del usuario que ejecuta la sesión.                      |
+| lifeTime   | Número | La duración de una sesión usuario en segundos (3600 por defecto). |
+| expiration | Fecha  | La fecha y la hora actuales de caducidad de la sesión de usuario. |
 
 ## Ejemplo
 
-Retrieve information about the entity sets currently stored in 4D Server's cache as well as user sessions:
+Recupera la información sobre los conjuntos de entidades almacenados actualmente en la caché de 4D Server, así como las sesiones usuario:
 
 `GET /rest/$info`
 
