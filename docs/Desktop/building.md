@@ -507,11 +507,13 @@ A module is a built-in code library used by 4D to control specific features. If 
 
 The following optional modules can be deselected:
 
-- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) (embedded engine) and [4D View Pro areas](../FormObjects/viewProArea_overview.md).
-- **MeCab**: Library used for text indexing and spellchecking in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version)). Deselecting this module will force text indexes to be rebuilt in Japanese language. 
+- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors. 
+- **MeCab**: Library used for text indexing in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version)). Deselecting this module will force text indexes to be rebuilt in Japanese language.
+> If you deselect MeCab in Japanese language, make sure to do it on both client/server build and [client application build](#build-client-application) (for the concurrent platform), otherwise it can create major malfunctions in the application. 
+ 
 - **PHP**: Necessary to use PHP features and commands in 4D (see this [settings paragraph](../settings/php.md)).
 - **SpellChecker**: Used for built-in [spellchecking features](../FormObjects/properties_Entry.md#auto-spellcheck) and commands available for input areas and 4D Write Pro areas.
-- **4D Updater**: Controls the [automatic update](#what-is-a-clientserver-application) of client parts in a client/server built application. 
+- **4D Updater**: Controls the [automatic update](#what-is-a-clientserver-application) of client parts and is used by the `SET UPDATE FOLDER` command for automated server updates. 
 
 
 
