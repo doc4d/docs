@@ -4066,7 +4066,7 @@ $data:=New object
 $data.firstName:="Freehafer"
 $data.lastName:="Nancy"
 
-VP SET DATA CONTEXT("ViewProArea"; $p)
+VP SET DATA CONTEXT("ViewProArea"; $data)
 
 VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")

@@ -3322,8 +3322,6 @@ $row:=VP Row("ViewProArea";9) // row 10
 
 ### VP ROW AUTOFIT
 
-[VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
-
 <!-- REF #_method_.VP ROW AUTOFIT.Syntax -->**VP ROW AUTOFIT** ( *rangeObj* : Object) <!-- END REF -->  
 
 <!-- REF #_method_.VP ROW AUTOFIT.Params -->
@@ -4100,7 +4098,7 @@ $data:=New object
 $data.firstName:="Freehafer"
 $data.lastName:="Nancy"
 
-VP SET DATA CONTEXT("ViewProArea"; $p)
+VP SET DATA CONTEXT("ViewProArea"; $data)
 
 VP SET BINDING PATH(VP Cell("ViewProArea"; 0; 0); "firstName")
 VP SET BINDING PATH(VP Cell("ViewProArea"; 1; 0); "lastName")
