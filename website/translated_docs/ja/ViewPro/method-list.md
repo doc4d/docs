@@ -3193,9 +3193,7 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 [VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
 
-### VP ROW AUTOFIT#### See also
-
-[VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
+### VP ROW AUTOFIT
 
 <!-- REF #_method_.VP ROW AUTOFIT.Syntax -->**VP ROW AUTOFIT** ( *rangeObj* : Object) <!-- END REF -->  
 
@@ -3364,7 +3362,7 @@ $o:=cs.OffscreenArea.new()
 $result:=VP Run offscreen area($o)
 ```
 
-## 参照
+#### 参照
 
 [ブログ記事 (英文): End of document loading](https://blog.4d.com/4d-view-pro-end-of-document-loading/)
 
@@ -3400,7 +3398,7 @@ VP SET ACTIVE CELL($activeCell)
 
 ![](assets/en/ViewPro/cmd_vpSetActiveCell.PNG)
 
-## 参照
+#### 参照
 
 [VP ADD SELECTION](#vp-add-selection)<br/>[VP Get active cell](#vp-get-active-cell)<br/>[VP Get selection](#vp-get-selection)<br/>[VP RESET SELECTION](#vp-reset-selection)<br/>[VP SET SELECTION](#vp-set-selection)<br/>[VP SHOW CELL](#vp-show-cell)
 
@@ -3476,7 +3474,7 @@ VP SET ALLOWED METHODS($allowed)
 
 > 4D View Pro フォーミュラにおいて、ファンクション名は自動的に大文字で表示されます。
 
-## 参照
+#### 参照
 
 [4D functions](formulas.md#4d-functions)<br/>[VP SET CUSTOM FUNCTIONS](#vp-set-custom-functions)
 
@@ -3508,7 +3506,7 @@ VP SET ALLOWED METHODS($allowed)
 // セルの値を false に設定
 VP SET BOOLEAN VALUE(VP Cell("ViewProArea";3;2);False)
 ```
-## 参照
+#### 参照
 
 [VP SET VALUE](#vp-set-value)
 
@@ -3591,7 +3589,7 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 ![](assets/en/ViewPro/cmd_vpSETBORDER2.PNG)
 
-## 参照
+#### 参照
 
 [VP SET CELL STYLE](#vp-set-cell-style)
 
