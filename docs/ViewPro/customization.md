@@ -9,7 +9,7 @@ A 4D View Pro Area is a [Web Area form object](../FormObjects/webArea_overview.m
 
 To hide the 4D View Pro Ribbon:
 
-1. Create a `VPDocument` class with a `hideRibbon` function written in Javascript:
+1. Inside your project, create a `VPDocument` class with a `hideRibbon` function written in Javascript:
 
 ```4d
 Function hideRibbon($hide : Boolean)
@@ -35,7 +35,7 @@ cs.VPDocument.new("ViewProArea").hideRibbon(True)
 
 `Utils` is a Javascript class built in 4D View Pro that makes it easier to perform several actions inside a 4D View Pro area, such as retrieving the current sheet.
 
-For example, you could write a function that makes sure the content is validated in the current sheet:
+For example, you could write a function that validates the contents of the current sheet, and call it before another action to avoid losing unvalidated data:
 
 ```4d 
 Function validateValue()
