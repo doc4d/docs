@@ -21,6 +21,6 @@ En nuestro ejemplo, primero llamamos a ``$savedfilter` con la llamada inicial pa
 
 `GET  /rest/People/?$filter="employer.name=Apple"&$savedfilter="employer.name=Apple"&$method=entityset`
 
-Then, when you access your entity set, you write the following to ensure that the entity set is always valid:
+A continuación, cuando se accede al conjunto de entidades, se escribe lo siguiente para garantizar que el conjunto de entidades sea siempre válido:
 
 `GET  /rest/People/$entityset/AEA452C2668B4F6E98B6FD2A1ED4A5A8?$savedfilter="employer.name=Apple"`
