@@ -120,10 +120,10 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 **Formula** ( *formulaExp* : Expression ) : 4D.Function<!-- END REF -->
 
 <!-- REF #_command_.Formula.Params -->
-| Parámetros | Tipo        |    | Descripción                               |
-| ---------- | ----------- |:--:| ----------------------------------------- |
-| formulaExp | Expresión   | -> | Formula to be returned as object          |
-| Resultado  | 4D.Function | <- | Native function encapsulating the formula |
+| Parámetros | Tipo        |    | Descripción                             |
+| ---------- | ----------- |:--:| --------------------------------------- |
+| formulaExp | Expresión   | -> | Fórmula a devolver como objeto          |
+| Resultado  | 4D.Function | <- | Función nativa que encapsula la fórmula |
 <!-- END REF -->
 
 
@@ -424,7 +424,7 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 
 #### Descripción
 
-The `.source` property <!-- REF #FunctionClass.source.Summary -->contains the source expression of the `formula` as text<!-- END REF -->.
+La propiedad `.source` <!-- REF #FunctionClass.source.Summary -->contiene la expresión fuente de la `fórmula` como texto<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**.
 
