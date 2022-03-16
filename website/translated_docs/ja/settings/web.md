@@ -1,105 +1,105 @@
 ---
 id: web
-title: Web page
+title: Web ページ
 ---
 
-Using the tabs on the **Web** page, you can configure various aspects of the integrated Web server of 4D (security, startup, connections, Web services, etc.). For more information about how the 4D Web server works, see [Web server](../WebServer/webServer.md). For more information about 4D Web services, refer to the [Publication and use of Web Services](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.en.html) chapter.
+**Web** ページのタブを使用して、4D に統合された Webサーバーの様々な設定 (セキュリティ、開始オプション、接続、Webサービス等) にアクセスできます。 4D Webサーバーの動作に関する詳細は [Web サーバー](../WebServer/webServer.md) を参照ください。 また、Webサービスに関する詳細は [Web サービスの公開と使用](https://doc.4d.com/4Dv19/4D/19/Publication-and-use-of-Web-Services.200-5416624.ja.html) を参照ください。
 
 ## 設定
 
-### Publishing Information
+### 公開情報
 
-#### Launch Web Server at Startup
+#### 開始時にWebサーバーを起動
 
-Indicates whether the Web server will be launched on startup of the 4D application. This option is described in the [Web server administration](../WebServer/webServerAdmin.md#starting-the-4d-web-server) section.
+4Dアプリケーションの起動時に Webサーバーを開始するか指定します。 このオプションは [4D Webサーバーの開始](../WebServer/webServerAdmin.md#4d-web-サーバーの開始) で説明しています。
 
 #### HTTPを有効化
 
-Indicates whether or not the Web server will accept non-secure connections. See [Enable HTTP](../WebServer/webServerConfig.md#enable-http).
+安全でない接続を Webサーバーが受け入れるかどうかを示します。 [HTTPを有効化](../WebServer/webServerConfig.md#httpを有効化) 参照。
 
 
 #### HTTP ポート
 
-HTTP接続を受け付ける IP (TCP) ポート番号。 See [HTTP Port](../WebServer/webServerConfig.md#http-port).
+HTTP接続を受け付ける IP (TCP) ポート番号。 [HTTP ポート](../WebServer/webServerConfig.md#http-ポート) 参照。
 
-#### IP Address
+#### IPアドレス
 
-IP address on which the 4D web server will receive HTTP requests (4D local and 4D Server). See [IP Address to listen](../WebServer/webServerConfig.md#ip-address-to-listen).
+4D Webサーバーが HTTPリクエストを受け付ける IPアドレスを指定できます (4Dローカルおよび 4D Server)。 [リクエストを受け付ける IPアドレス](../WebServer/webServerConfig.md#リクエストを受け付ける-ipアドレス) 参照
 
 
 #### HTTPSを有効にする
 
-Indicates whether or not the Web server will accept secure connections. See [Enable HTTPS](../WebServer/webServerConfig.md#enable-https).
+安全な接続を Webサーバーが受け入れるかどうかを示します。 [HTTPSを有効にする](../WebServer/webServerConfig.md#httpsを有効化にする) 参照。
 
 
 #### HTTPS ポート
 
-Allows you to modify the TCP/IP port number used by the Web server for secured HTTP connections over TLS (HTTPS protocol). See [HTTPS Port](../WebServer/webServerConfig.md#https-port).
+TLS (HTTPSプロトコル) を使用したセキュアな HTTP接続に対して Webサーバーが使用する TCP/IPポート番号を指定できます。 [HTTPS ポート](../WebServer/webServerConfig.md#https-ポート) 参照
 
-#### Allow database access through 4DSYNC URLs
+#### "4DSYNC" URLを使用したデータベースアクセスを許可
 
-*Compatibility Note*: This option is [deprecated](../WebServer/webServerConfig.md#deprecated-settings). For database access through HTTP, it is now recommended to use ORDA remote datastore features and REST requests.
-
-
-### Paths
-
-#### Default HTML Root
-
-Define the default location of the Web site files and to indicate the hierarchical level on the disk above which the files will not be accessible. See [Root Folder](../WebServer/webServerConfig.md#root-folder).
-
-#### Default Home Page
-
-Designate a default home page for the Web server. See [Default Home page](../WebServer/webServerConfig.md#default-home-page).
+*互換性に関する注記*: このオプションは [廃止予定](../WebServer/webServerConfig.md#廃止予定の設定) です。 今後、HTTP を介したデータベースアクセスには ORDA のリモートデータストア機能と RESTリクエストの使用が推奨されます。
 
 
+### パス
+
+#### デフォルトHTMLルート
+
+Webサイトファイルのデフォルトの位置を指定し、それより上のファイルにはアクセス不能なディスク上の階層レベルを指定します。 [ルートフォルダー](../WebServer/webServerConfig.md#ルートフォルダー) 参照。
+
+#### デフォルトホームページ
+
+Webサーバー用のデフォルトホームページを指定します。 [デフォルトホームページ](../WebServer/webServerConfig.md#デフォルトホームページ) 参照。
 
 
-## Options (I)
+
+
+## オプション (I)
 
 ### キャッシュ
 
 
-#### Use the 4D Web cache
+#### 4D Webキャッシュを使用する
 
-Enables the web page cache. See [Cache](../WebServer/webServerConfig.md#cache).
+Webページキャッシュを有効化します。 [キャッシュ](../WebServer/webServerConfig.md#キャッシュ) 参照。
 
-#### Pages Cache Size
+#### ページキャッシュサイズ
 
-Sets the cache size. See [Cache](../WebServer/webServerConfig.md#cache).
-
-
-#### Clear Cache
-
-いつでもページやイメージをキャッシュからクリアできます (たとえば、スタティックページを更新し、キャッシュにそれをリロードさせたい場合)。 To do so, you just have to click on the **Clear Cache** button. キャッシュは即座にクリアされます。
-
-> You can also use the special URL [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear).
-
-### Web Process
-
-This area allows you to configure how the web server will handle user sessions and their associated processes.
-
-> The **Legacy sessions** option is only available for compatibility in databases/projects created with 4D versions prior to 4D v18 R6.
-
-#### Scalable sessions (multi-process sessions)
-
-When you select this option (recommended), a user session is managed through a **Session** object. See the [User sessions page](../WebServer/sessions.md#enabling-sessions).
+キャッシュサイズを指定します。 [キャッシュ](../WebServer/webServerConfig.md#キャッシュ) 参照。
 
 
-#### No sessions
+#### キャッシュクリア
 
-When this option is selected, the web server does not provide any specific support for [user sessions](../WebServer/sessions.md). Successive requests from web clients are always independent and no context is maintained on the server.
+いつでもページやイメージをキャッシュからクリアできます (たとえば、スタティックページを更新し、キャッシュにそれをリロードさせたい場合)。 これをおこなうには、**キャッシュクリア** ボタンをクリックします。 キャッシュは即座にクリアされます。
 
-In this mode, you can configure additional web server setttings:
+> 特殊なURL [/4DCACHECLEAR](../WebServer/webServerAdmin.md#4dcacheclear) を使用することもできます。
+
+### Webプロセス
+
+このエリアでは、ユーザーセッションとそれに関連するプロセスを Webサーバーがどのように管理するかを設定します。
+
+> **旧式セッション** オプションは、4D v18 R6 以前のバージョンで作成されたデータベース/プロジェクトにおいて互換性のためにのみ利用可能です。
+
+#### スケーラブルセッション (マルチプロセスセッション)
+
+このオプションを選択すると (推奨)、ユーザーセッションは **Session** オブジェクトを介して管理されます。 [ユーザーセッション](../WebServer/sessions.md#セッションの有効化) のページを参照ください。
+
+
+#### セッションなし
+
+このオプションが選択されている場合、Webサーバーは [ユーザーセッション](../WebServer/sessions.md) 専用のサポートを提供しません。 Webクライアントからの連続したリクエストはどれも常に独立しており、サーバー上でコンテキストは維持されません。
+
+このモードでは、以下の追加の Web サーバー設定を設定することができます:
 
 -   [最大同時Webプロセス](#maximum-concurrent-web-processes)
--   [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts)
--   [Use preemptive processes](#use-preemptive-web-processes)
+-   [一時的なコンテキストを再利用する (リモートモード)](#reuse-temporary-contexts)
+-   [プリエンプティブプロセスを使用](#use-preemptive-web-processes)
 
-#### Legacy sessions (single process sessions)
+#### 旧式セッション (シングルプロセスセッション)
 
-*Compatibility Note:* This option is only available in databases/projects created with a 4D version prior to 4D v18 R6.
+*互換性に関する注記*: このオプションは 4D v18 R6 以前のバージョンで作成されたデータベース/プロジェクトでのみ利用可能です。
 
-This option enables the handling of legacy user sessions by the 4D HTTP server. This mechanism is described in the [Web Sessions Management (Legacy)](https://doc.4d.com/4Dv19/4D/19/Web-Sessions-Management-Legacy.300-5391806.en.html) section. See [Keep Session](../WebServer/webServerConfig.md#keep-session).
+このオプションは 4D HTTP サーバーの旧式ユーザーセッションの管理を有効化します。 この機構は [Webセッション管理(旧式)](https://doc.4d.com/4Dv19/4D/19/Web-Sessions-Management-Legacy.300-5391806.ja.html) にて詳細に説明されています。 See [Keep Session](../WebServer/webServerConfig.md#keep-session).
 
 When selected, the [Reuse Temporary Contexts (4D in remote mode)](#reuse-temporary-contexts) option is automatically checked (and locked).
 
@@ -116,7 +116,7 @@ Not available with [scalable sessions](../WebServer/sessions.md).
 
 Allows you to optimize the operation of the 4D Web server in remote mode. See [Reuse temporary contexts in remote mode)](../WebServer/webServerConfig.md#reuse-temporary-contexts-in-remote-mode).
 
-#### Use preemptive processes
+#### プリエンプティブプロセスを使用
 
 Not available with [scalable sessions](../WebServer/sessions.md).
 

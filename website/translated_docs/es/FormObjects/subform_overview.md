@@ -38,104 +38,154 @@ Los subformularios en modo página pueden mostrar los datos del subregistro actu
 
 El subformulario en página utiliza el formulario de entrada indicado por la propiedad [Formulario detallado](properties_Subform.md#detail-form). A diferencia de un subformulario en modo lista, el formulario utilizado puede proceder de la misma tabla que el formulario padre. También es posible utilizar un formulario proyecto. Cuando se ejecuta, un subformulario en modo página tiene las mismas características de visualización estándar que un formulario de entrada.
 
-> Los widgets 4D son objetos compuestos predefinidos basados en subformularios página. Se describen detalladamente en un manual aparte, [4D Widgets](https://doc.4d.com/4Dv17R6/4D/17-R6/4D-Widgets.100-4465257.en.html).
+> Los widgets 4D son objetos compuestos predefinidos basados en subformularios página. They are described in detail in a separate manual, [4D Widgets](https://doc.4d.com/4Dv19/4D/19/4D-Widgets.100-5462909.en.html).
 
-### Utilizar el objeto asociado al subformulario
 
-4D automatically binds a variable of type object to each subform. El contenido de este objeto puede ser leído y/o modificado desde el contexto del subformulario, lo que permite compartir valores en un contexto local.
+### Using the bound variable or expression
 
-The object can be created automatically or be the parent container's variable, if explicitely named and typed as Object (see below). This object is returned by the `Form` command, which can be called directly in the subform (using a pointer is useless in this case). Como los objetos se pasan siempre por referencia, si el usuario modifica el valor de una propiedad en el subformulario, se guardará automáticamente en el propio objeto.
+You can bind [a variable or an expression](properties_Object.md#variable-or-expression) to a subform container object. This is very useful to synchronize values from the parent form and its subform(s).
 
-Por ejemplo, en su subformulario, las etiquetas de los campos se almacenan en el objeto vinculado para poder mostrar diferentes lenguajes:
+By default, 4D creates a variable or expression of [object type](properties_Object.md#expression-type) for a subform container, which allows you to share values in the context of the subform using the `Form` command ([see below](#using-the-subform-bound-object)). However, you can use a variable or expression of any scalar type (time, integer, etc.) especially if you only need to share a single value:
 
-![](assets/en/FormObjects/subforms4.png)
+- Define a bound variable or expression of a scalar type and call the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands to exchange values when [On Bound Variable Change](../Events/onBoundVariableChange.md) or [On Data Change](../Events/onDataChange.md) form events occur. This solution is recommended to synchronize a single value.
+- Define a bound variable or expression of the **object** type and use the `Form` command to access its properties from the subform. This solution is recommended to synchronize several values.
 
-Puede modificar las etiquetas desde el subformulario asignando valores al objeto *InvoiceAddress*:
 
-```4d
- C_OBJECT($lang)
- $lang:=New object
- If(<>lang="fr")
-    $lang.CompanyName:="Société :"
-    $lang.LastName:="Nom :"
- Else
-    $lang.CompanyName:="Company:"
-    $lang.LastName:="Name:"
- End if
- InvoiceAddress. Label:=$lang
-```
 
-![](assets/en/FormObjects/subforms5.png)
+### Synchronizing parent form and subform (single value)
 
-### Managing the bound variable or expression
-
-The [variable or expression](properties_Object.md#variable-or-expression) bound to a page subform lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. Por ejemplo, imagine un subformulario que represente un reloj dinámico, insertado en un formulario padre que contenga una variable introducible de tipo hora:
+Binding the same variable or expression to your subform container and other objects of the parent form lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. Imagine a subform representing a clock, inserted into a parent form containing an enterable variable of the Time type:
 
 ![](assets/en/FormObjects/subforms1.png)
 
-Both objects (time variable and subform container) *have the same variable name or expression*. En este caso, al abrir el formulario padre, 4D sincroniza ambos valores automáticamente. Si el valor de la variable se define en varias ubicaciones, 4D utiliza el valor que se cargó en último lugar. Aplica el siguiente orden de carga: 1-Métodos objeto del subformulario 2-Método formulario del subformulario 3-Métodos objeto del formulario padre 4-Método formulario padre del formulario padre
+In the parent form, both objects (time variable and subform container) ***have the same value as ***Variable or Expression******. It can be a variable (e.g. `parisTime`), or an expression (e.g. `Form.parisTime`).
 
-Cuando se ejecuta el formulario principal, el desarrollador debe tener cuidado de sincronizar las variables utilizando los eventos formularios apropiados. Pueden darse dos tipos de interacciones: de formulario a subformulario y viceversa.
+In the subform, the clock object is managed through the `Form.clockValue` property.
 
-### Programación entre formularios avanzada
-La comunicación entre el formulario padre y las instancias del subformulario puede requerir ir más allá del intercambio de un valor a través de la variable asociada. De hecho, es posible que desee actualizar las variables de los subformularios en función de las acciones realizadas en el formulario principal y viceversa. Si utilizamos el ejemplo anterior del subformulario de tipo "reloj dinámico", es posible que queramos definir una o varias horas de alarma para cada reloj.
-
-4D ha implementado los siguientes mecanismos para satisfacer estas necesidades:
-
-- Use of the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE`
-- Calling of a container object from the subform using the `CALL SUBFORM CONTAINER` command
-- Execution of a method in the context of the subform via the `EXECUTE METHOD IN SUBFORM` command
 
 #### Updating the contents of a subform
 
-Case 1: The value of the parent form variable or expression is modified and this modification must be passed on to a subform. f In this example:
-* `Form.parisTime` is an expression of type Time attached to the Input object and the subform container.
-* `Form.parisTime` changes to 12:15:00, either because the user entered it, or because it was updated dynamically (via the `Current time` command for example). This triggers the On Bound Variable change from the subform's Form method, which updates the value of `Form.clockValue` in the subform:
+Case 1: The value of the parent form variable or expression is modified and this modification must be passed on to a subform.
+
+`Form.parisTime` changes to 12:15:00 in the parent form, either because the user entered it, or because it was updated dynamically (via the `Current time` command for example). This triggers the [On Bound Variable Change](../Events/onBoundVariableChange.md) event in the subform's Form method.
+
+The following code is executed:
+
+```4d  
+// Subform form method
+If (Form event code=On Bound Variable Change) //bound variable or expression was modified in the parent form
+    Form.clockValue:=OBJECT Get subform container value //synchonize the local value
+End if
+```
+
+It updates the value of `Form.clockValue` in the subform:
 
 ![](assets/en/FormObjects/update-subform.png)
 
-Se genera el evento formulario `On Bound Variable Change`:
+The [On Bound Variable Change](../Events/onBoundVariableChange.md) form event is generated:
 
-- as soon as a value is assigned to the variable of the parent form, even if the same value is reassigned
+- as soon as a value is assigned to the variable/expression of the parent form, even if the same value is reassigned
 - si el subformulario pertenece a la página formulario actual o a la página 0.
 
-Note that, as in the above example, it is preferable to use the `OBJECT Get subform container value` command which returns the value of the expression in the subform container rather than its variable because it is possible to insert several subforms in the same parent form (for example, a window displaying different time zones contains several clocks).
+Note that, as in the above example, it is preferable to use the `OBJECT Get subform container value` command which returns the value of the expression in the subform container rather than the expression itself because it is possible to insert several subforms in the same parent form (for example, a window displaying different time zones contains several clocks).
 
-> In versions prior to v19 R5, you had to use the `OBJECT Get pointer` command to perform such operations.
+Modifying the bound variable or expression triggers form events which let you synchronize the parent form and subform values:
+
+- Use the [On Bound Variable Change](../Events/onBoundVariableChange.md) form event to indicate to the subform (form method of subform) that the variable or expression was modified in the parent form.
+- Use the [On Data Change](../Events/onDataChange.md) form event to indicate to the subform container that the variable or expression value was modified in the subform.
+
+
 
 #### Updating the contents of a parent form
 
 Caso 2: se modifica el contenido del subformulario y esta modificación debe pasar al formulario padre.
 
-Inside the subform, the button changes the value of the `Form.clockValue` expression of type Time attached to the clock object. This triggers the On Data Change event inside the clock object, which updates the `Form.parisTime` value in the main form:
+Inside the subform, the button changes the value of the `Form.clockValue` expression of type Time attached to the clock object. This triggers the [On Data Change](../Events/onDataChange.md) form event inside the clock object (this event must be selected for the object), which updates the `Form.parisTime` value in the main form.
+
+The following code is executed:
+
+```4d  
+// subform clock object method
+If (Form event code=On Data Change) //whatever the way the value is changed
+    OBJECT SET SUBFORM CONTAINER VALUE(Form.clockValue) //Push the value to the container
+End if
+```
 
 ![](assets/en/FormObjects/update-main-form.png)
 
 Everytime the value of `Form.clockValue` changes in the subform, `Form.parisTime` in the subform container is also updated.
 
-> In versions prior to v19 R5, you had to use the `OBJECT Get pointer` command to perform such operations.
+
+> If the variable or expression value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order: 1-Object methods of subform, 2-Form method of subform, 3-Object methods of parent form, 4-Form method of parent form
 
 
-#### OBJECT get pointer and Object get name commands
-Además el selector `Object subform container`, el comando `OBJECT Get pointer` admite un parámetro que indica en qué subformulario buscar el objeto cuyo nombre se especifica en el segundo parámetro. Esta sintaxis sólo se puede utilizar cuando se pasa el selector Object named.
+### Synchronizing parent form and subform (multiple values)
 
-Por ejemplo, la siguiente instrucción:
+By default, 4D binds a variable or expression of [object type](properties_Object.md#expression-type) to each subform. The contents of this object can be read and/or modified from within the parent form and from the subform, allowing you to share multiple values in a local context.
+
+When bound a the subform container, this object is returned by the `Form` command directly in the subform. Since objects are always passed by reference, if the user modifies a property value in the subform, it will automatically be saved in the object itself and thus, available to the parent form. On the other hand, if a property of the object is modified by the user in the parent form or by programming, it will be automatically updated in the subform. No event management is necessary.
+
+For example, in a subform, inputs are bound to the `Form` object properties (of the subform form):
+
+![](assets/en/FormObjects/subnew1.png)
+
+In the parent form, you display the subfom twice. Each subform container is bound to an expression which is a property of the `Form` object (of the parent form):
+
+![](assets/en/FormObjects/subnew2.png)
+
+The button only creates `mother` and `father` properties in the parent's `Form` object:
 
 ```4d
- $ptr:=OBJECT Get pointer(Object named;"MyButton";"MySubForm")
+//Add values button object method
+Form.mother:=New object("lastname"; "Hotel"; "firstname"; "Anne")
+Form.father:=New object("lastname"; "Golf"; "firstname"; "Félix")
 ```
 
-... recupera un puntero a la variable "MyButton" que se encuentra en el objeto subformulario "MySubForm". Esta sintaxis se puede utilizar para acceder desde el formulario padre a todo objeto que se encuentre en un subformulario. También hay que tener en cuenta el comando `OBJECT Get name` que se puede utilizar para recuperar el nombre del objeto que tiene el foco.
+When you execute the form and click on the button, you see that all values are correctly displayed:
+
+![](assets/en/FormObjects/subnew3.png)
+
+If you modify a value either in the parent form or in the subform, it is automatically updated in the other form because the same object is used:
+
+![](assets/en/FormObjects/subnew4.png) ![](assets/en/FormObjects/subnew5.png)
+
+### Using pointers (compatibility)
+
+In versions prior to 4D v19 R5, synchronization between parent forms and subforms was handled through **pointers**. For example, to update a subform object, you could call the following code:
+
+```4d  
+// Subform form method
+If (Form event code=On Bound Variable Change) 
+    ptr:=OBJECT Get pointer(Object subform container) 
+    clockValue:=ptr-> 
+End if
+```
+
+**This principle is still supported for compatibility but is now deprecated since it does not allow binding expressions to subforms.** It should no longer be used in your developments. In any cases, we recommend to use the [`Form` command](#synchronizing-parent-form-and-subform-multiple-values) or the [`OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands](#synchronizing-parent-form-and-subform-single-value) to synchronize form and subform values.
+
+
+### Programación entre formularios avanzada
+
+Communication between the parent form and the instances of the subform may require going beyond the exchange of a values through the bound variable. De hecho, es posible que desee actualizar las variables de los subformularios en función de las acciones realizadas en el formulario principal y viceversa. Si utilizamos el ejemplo anterior del subformulario de tipo "reloj dinámico", es posible que queramos definir una o varias horas de alarma para cada reloj.
+
+4D ha implementado los siguientes mecanismos para satisfacer estas necesidades:
+
+- Calling of a container object from the subform using the `CALL SUBFORM CONTAINER` command
+- Execution of a method in the context of the subform via the `EXECUTE METHOD IN SUBFORM` command
+
+> El comando `GOTO OBJECT` busca el objeto de destino en el formulario padre aunque se ejecute desde un subformulario.
+
 
 #### Comando CALL SUBFORM CONTAINER
 
-El comando `CALL SUBFORM CONTAINER` permite que una instancia de subformulario envíe un evento al objeto contenedor del subformulario, que puede procesarlo en el contexto del formulario padre. El evento se recibe en el método del objeto contenedor. Puede estar en el origen de todo evento detectado por el subformulario (clic, arrastrar y soltar, etc.).
+The `CALL SUBFORM CONTAINER` command lets a subform instance send an [event](../Events/overview.md) to the subform container object, which can then process it in the context of the parent form. El evento se recibe en el método del objeto contenedor. Puede estar en el origen de todo evento detectado por el subformulario (clic, arrastrar y soltar, etc.).
 
 El código del evento no tiene restricciones (por ejemplo, 20000 o -100). Puede utilizar un código que corresponda a un evento existente (por ejemplo, 3 para `On Validate`), o utilizar un código personalizado. En el primer caso, sólo puede utilizar los eventos que haya marcado en la lista de propiedades para los contenedores de subformulario. En el segundo caso, el código no debe corresponder a ningún evento de formulario existente. Se recomienda utilizar un valor negativo para asegurarse de que este código no será utilizado por 4D en futuras versiones.
 
 Para más información, consulte la descripción del comando `CALL SUBFORM CONTAINER`.
 
 #### Comando EXECUTE METHOD IN SUBFORM
+
 El comando `EXECUTE METHOD IN SUBFORM` permite que un formulario o uno de sus objetos solicite la ejecución de un método en el contexto de la instancia del subformulario, lo que le da acceso a las variables, objetos, etc. del subformulario. Este método también puede recibir parámetros.
 
 Este mecanismo se ilustra en el siguiente diagrama:
@@ -144,8 +194,7 @@ Este mecanismo se ilustra en el siguiente diagrama:
 
 Para más información, consulte la descripción del comando `EXECUTE METHOD IN SUBFORM`.
 
-#### Comando GOTO OBJECT
-El comando `GOTO OBJECT` busca el objeto de destino en el formulario padre aunque se ejecute desde un subformulario.
+
 
 
 

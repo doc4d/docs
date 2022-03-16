@@ -3292,8 +3292,6 @@ $row:=VP Row("ViewProArea";9) // 10行目
 
 ### VP ROW AUTOFIT
 
-[VP All](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Name](#vp-name)
-
 <!-- REF #_method_.VP ROW AUTOFIT.Syntax -->**VP ROW AUTOFIT** ( *rangeObj* : Object) <!-- END REF -->  
 
 <!-- REF #_method_.VP ROW AUTOFIT.Params -->

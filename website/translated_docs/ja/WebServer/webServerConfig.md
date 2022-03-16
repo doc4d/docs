@@ -599,7 +599,7 @@ Webサーバーの PFS利用可否状況 ([TLS](Admin/tls.md#perfect-forward-sec
 
 以下の設定は現在もサポートされていますが、廃止予定の機能や技術に依存しています。 通常はデフォルト値のままにしておくことが推奨されます。
 
-#### Allow database access through 4DSYNC URLs
+#### "4DSYNC" URLを使用したデータベースアクセスを許可
 
 このオプションを使用して、廃止予定の */4DSYNC* URL による HTTP同期サポートを制御します。
 
