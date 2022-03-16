@@ -5,12 +5,12 @@ title: Formula
 
 
 
-The [Formula](#formula) and [Formula from string](#formula-from-string) commands allow you to create native [`4D.Function` objects](#about-4dfunction-objects) to execute any 4D expression or code expressed as text.
+Los comandos [Formula](#formula) y [Formula from string](#formula-from-string) le permiten crear los [objetos `4D.Function`](#about-4dfunction-objects) para ejecutar toda expresión o código 4D expresado como texto.
 
 
 ### Objetos Formula
 
-Formula objects can be encapsulated in object properties:
+Los objetos Formula pueden encapsularse en las propiedades de objeto:
 
 ```4d
  var $f : 4D.Function
@@ -18,7 +18,7 @@ Formula objects can be encapsulated in object properties:
  $f.message:=Formula(ALERT("Hello world"))
 ```
 
-This property is an "object function", i.e. a function which is bound to its parent object. To execute a function stored in an object property, use the **()** operator after the property name, such as:
+Esta propiedad es una "función objeto", es decir una función que está vinculada a su objeto padre. Para ejecutar una función almacenada en una propiedad objeto, utilice el operador **()** después del nombre de la propiedad, como:
 
 ```4d
  $f.message() //muestra "Hello world"
@@ -30,13 +30,13 @@ También se admite la sintaxis con paréntesis:
  $f["message"]() //muestra "Hello world"
 ```
 
-Note that, even if it does not have parameters (see below), an object function to be executed must be called with ( ) parenthesis. Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
+Tenga en cuenta que, aunque no tenga parámetros (ver arriba), una función objeto a ejecutar debe ser llamada con paréntesis ( ). Llamar sólo a la propiedad del objeto devolverá una nueva referencia a la fórmula (y no la ejecutará):
 
 ```4d
  $o:=$f.message //devuelve el objeto fórmula en $o 
 ```
 
-You can also execute a function using the [`apply()`](#apply) and [`call()`](#call) functions:
+Para ejecutar una función utilizando las funciones [`apply()`](#apply) y [`call()`](#call):
 
 ```4d
  $f.message.apply() //muestra "Hello world"
@@ -44,7 +44,7 @@ You can also execute a function using the [`apply()`](#apply) and [`call()`](#ca
 
 #### Paso de parámetros
 
-You can pass parameters to your formulas using the [sequential parameter syntax](Concepts/parameters.md#sequential-parameters) based upon $1, $2...$n. Por ejemplo, puede escribir:
+Puede pasar parámetros a sus fórmulas utilizando la [sintaxis secuencial de los parámetros](Concepts/parameters.md#sequential-parameters) basada en $1, $2...$n. Por ejemplo, puede escribir:
 
 ```4d
  var $f : Object
@@ -53,7 +53,7 @@ You can pass parameters to your formulas using the [sequential parameter syntax]
  $f.message("John") //muestra "Hello John"
 ```
 
-Or using the [.call()](#call) function:
+O utilizando la función [.call()](#call):
 
 ```4d
  var $f : Object
@@ -62,17 +62,17 @@ Or using the [.call()](#call) function:
  $text:=$f.call(Null;"Welcome to";String(Year of(Current date))) //devuelve "Welcome to 2019" (por ejemplo)
 ```
 
-#### Parameters to a single method
+#### Parámetros de un solo método
 
-For more convenience, when the formula is made of a single project method, parameters can be omitted in the formula object initialization. They can just be passed when the formula is called. Por ejemplo:
+Para mayor comodidad, cuando la fórmula se compone de un único método proyecto, se pueden omitir los parámetros en la inicialización del objeto fórmula. Simplemente se pueden pasar la fórmula se llama. Por ejemplo:
 
 ```4d
  var $f : 4D.Function
 
  $f:=Formula(myMethod)
-  //Writing Formula(myMethod($1;$2)) is not necessary
- $text:=$f.call(Null;"Hello";"World") //returns "Hello World"
- $text:=$f.call() //returns "How are you?"
+  //Writing Formula(myMethod($1;$2)) no es necesario
+ $text:=$f.call(Null;"Hello";"World") //devuelve "Hello World"
+ $text:=$f.call() //devuelve "How are you?"
 
   //myMethod
  #DECLARE ($param1 : Text; $param2 : Text)->$return : Text
@@ -83,15 +83,15 @@ For more convenience, when the formula is made of a single project method, param
  End if
 ```
 
-Parameters are received within the method, in the order they are specified in the call.
+Los parámetros se reciben en el método, en el orden en que se especifican en la llamada.
 
 ### Sobre los objetos 4D.Function
 
-A `4D.Function` object contains a piece of code that can be executed from an object, either using the `()` operator, or using the [`apply()`](#apply) and [`call()`](#call) functions. 4D proposes three kinds of Function objects:
+Un objeto `4D.Function` contiene un trozo de código que puede ser ejecutado desde un objeto, ya sea utilizando el operador `()`, o utilizando las funciones [`apply()`](#apply) y [`call()`](#call). 4D propone tres tipos de objetos Function:
 
-- native functions, i.e. built-in functions from various 4D classes such as `collection.sort()` or `file.copyTo()`.
-- user functions, created in user [classes](Concepts/classes.md) using the [Function keyword](Concepts/classes.md#function).
-- formula functions, i.e. functions that can execute any 4D formula.
+- las funciones nativas, es decir, las funciones integradas de varias clases 4D tales como `collection.sort()` o `file.copyTo()`.
+- las funciones usuario, creadas en las [clases](Concepts/classes.md) usuario utilizando la [palabra clave Function](Concepts/classes.md#function).
+- las funciones de fórmula, es decir, las funciones que pueden ejecutar cualquier fórmula 4D.
 
 
 
@@ -120,10 +120,10 @@ A `4D.Function` object contains a piece of code that can be executed from an obj
 **Formula** ( *formulaExp* : Expression ) : 4D.Function<!-- END REF -->
 
 <!-- REF #_command_.Formula.Params -->
-| Parámetros | Tipo        |    | Descripción                               |
-| ---------- | ----------- |:--:| ----------------------------------------- |
-| formulaExp | Expresión   | -> | Formula to be returned as object          |
-| Resultado  | 4D.Function | <- | Native function encapsulating the formula |
+| Parámetros | Tipo        |    | Descripción                             |
+| ---------- | ----------- |:--:| --------------------------------------- |
+| formulaExp | Expresión   | -> | Fórmula a devolver como objeto          |
+| Resultado  | 4D.Function | <- | Función nativa que encapsula la fórmula |
 <!-- END REF -->
 
 
@@ -424,7 +424,7 @@ Note that `.call()` is similar to [`.apply()`](#apply) except that parameters ar
 
 #### Descripción
 
-The `.source` property <!-- REF #FunctionClass.source.Summary -->contains the source expression of the `formula` as text<!-- END REF -->.
+La propiedad `.source` <!-- REF #FunctionClass.source.Summary -->contiene la expresión fuente de la `fórmula` como texto<!-- END REF -->.
 
 Esta propiedad es **de sólo lectura**.
 
