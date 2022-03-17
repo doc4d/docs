@@ -30,11 +30,9 @@ Function hideRibbon($hide : Boolean)
 ```4d 
 cs.VPDocument.new("ViewProArea").hideRibbon(True)
 ```
+## Using the SpreadJS Javascript methods
 
-## Using the SpreadJS method library
-
-Since 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/v14/online/overview.html), you can execute Javascript code inside a 4D View Pro area to extend its capabilities. The SpreadJS library includes a large number of methods that allow you to control the area.
-
+ Since 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/v14/online/overview.html), you can tap into the SpreadJS library of Javascript methods and call them directly in a 4D View Pro area to control your spreadsheets. 
 #### Example
 
 To create a function that validates the values in the current sheet: 
