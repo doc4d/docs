@@ -39,10 +39,10 @@ title: アプリケーションビルド
 ビルドをおこなう前にプロジェクトはコンパイルされていなければなりません。 まだコンパイルされていないプロジェクトでこのメニューコマンドを選択する、あるいはコンパイル後にコードが変更されていると、プロジェクトを (再) コンパイルしなければならない旨の警告ダイアログが表示されます。
 
 
-### アプリケーションビルド設定
+### buildApp.4DSettings
 
 
-アプリケーションビルドに関わる各パラメーター設定は XML キーの形で、`buildApp.4DSettings` という名称のアプリケーションプロジェクトファイルに保存されます。この XML ファイルはプロジェクトの `Settings` フォルダーに配置されます。
+アプリケーションビルドに関わる各パラメーター設定は XMLキーの形で、`buildApp.4DSettings` という名称のアプリケーションプロジェクトファイルに保存されます。この XMLファイルは [プロジェクトの `Settings` フォルダー](../Project/architecture.md#settings-1) に配置されます。
 
 アプリケーションビルドダイアログが初めて表示されるときにはデフォルトパラメーターが使用されます。 **ビルド** ボタンや **設定保存** ボタンをクリックすると、このプロジェクトファイルの内容が更新されます。 同じデータベースについて内容の異なる複数の XML ファイルを定義し、[BUILD APPLICATION](https://doc.4d.com/4Dv19/4D/19/BUILD-APPLICATION.301-5392523.ja.html) コマンドでそれらを使い分けることができます。
 
@@ -90,7 +90,7 @@ title: アプリケーションビルド
 
 .4dz ファイルは ZIP 圧縮されたプロジェクトフォルダーです (**注:** バイナリデータベースの場合に生成される .4DC ファイルと同義ではないことに注意が必要です)。 .4dz ファイルを開けるのは 4D Server、4D Volume ライセンス (組み込みアプリケーション)、および 4D です。 圧縮・最適化された .4dz ファイルによってプロジェクトパッケージの展開が容易になります。
 
-> .4dz ファイルを生成する際、4D はデフォルトで **標準的な** zip形式を使用します。 このフォーマットの利点は、あらゆる解凍ツールで簡単に読み取ることができることです。 この標準形式を使用したくない場合は、値を `False` に設定した `UseStandardZipFormat` XMLキーを [`buildApp.4DSettings`](#アプリケーションビルド設定) ファイルに追加します (詳細については、[doc.4d.com](https://doc.4d.com) の *アプリケーションビルド設定ファイル* マニュアルを参照ください)。
+> .4dz ファイルを生成する際、4D はデフォルトで **標準的な** zip形式を使用します。 このフォーマットの利点は、あらゆる解凍ツールで簡単に読み取ることができることです。 この標準形式を使用したくない場合は、値を `False` に設定した `UseStandardZipFormat` XMLキーを [`buildApp.4DSettings`](#アプリケーションビルド設定) ファイルに追加します (詳細については、[アプリケーションビルド設定ファイル](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.ja.html) マニュアルを参照ください)。
 
 
 
@@ -244,7 +244,7 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 #### 現在のバージョン
 
-生成されるアプリケーションのバージョン番号を指定します。 このバージョン番号をもとに、クライアントアプリケーションからの接続を受け入れたり拒否したりできます。 クライアントとサーバーアプリケーションで互換性のある番号の範囲は [XML キー](#アプリケーションビルド設定) で設定します。
+生成されるアプリケーションのバージョン番号を指定します。 このバージョン番号をもとに、クライアントアプリケーションからの接続を受け入れたり拒否したりできます。 クライアントとサーバーアプリケーションで互換性のある番号の範囲は [XMLキー](#アプリケーションビルド設定) で設定します。
 
 #### Embed the project Users and Groups in built server application
 
@@ -401,8 +401,8 @@ Windows用サーバーアプリケーションのビルドに使用される App
 
 インストール場所:
 *   **Windows**
-    *   **サーバーアプリケーション** - *Client Server executable\ \<ApplicationName>Server\Server Database* サブフォルダー内にこれらの項目を配置します。
-    *   **クライアントアプリケーション** - *Client Server executable\ \<ApplicationName>Client* サブフォルダー内にこれらの項目を配置します。
+    *   **サーバーアプリケーション** - *Client Server executable\/\<ApplicationName>Server/Server Database* サブフォルダー内にこれらの項目を配置します。
+    *   **クライアントアプリケーション** - *Client Server executable\/\<ApplicationName>Client* サブフォルダー内にこれらの項目を配置します。
 
 *   **macOS**
     *   **サーバーアプリケーション** - *\<ApplicationName>Server* ソフトウェアパッケージと同階層にこれらの項目を配置します。
@@ -471,29 +471,44 @@ Windows用サーバーアプリケーションのビルドに使用される App
 
 ## プラグイン＆コンポーネントページ
 
-このページでは、シングルユーザーまたはクライアント/サーバーアプリケーションに含める [プラグイン](Concepts/plug-ins.md) や [コンポーネント](Concepts/components.md) を設定できます。
+On this tab, you set each [**plug-in**](Concepts/plug-ins.md), [**component**](Concepts/components.md), and [**module**](#deselecting-modules) that you will use in your stand-alone or client/server application.
+
 
 このページには、現在の 4Dアプリケーションにロードされている要素がリストされます:
 
-![](assets/en/Project/buildapppluginsProj.png)
+![](assets/en/Desktop/buildappcomps.png)
 
-*    **アクティブ** 列 - ビルドするアプリケーションパッケージに項目を統合するかどうかを指定します。 デフォルトですべての項目が選択されています。 プラグインやコンポーネントを除外するには、チェックボックスの選択を外します。
+*    **アクティブ** 列 - ビルドするアプリケーションパッケージに項目を統合するかどうかを指定します。 デフォルトですべての項目が選択されています。 To exclude a plug-in, a component, or a module, deselect the check box next to it.
 
+*   **Plugins and components** column - Displays the name of the plug-in/component/module.
 
+*   **ID** column - Displays the element's identification number (if any).
 
-*   **プラグイン&コンポーネント** 列 - プラグイン/コンポーネントの名称を表示します。
+*   **Type** column - Indicates the type of item: Plug-in, Component, or Module.
 
-*   **ID** 列 - プラグイン/コンポーネントの ID (あれば) を表示します。
-
-*   **タイプ** 列 - その要素がプラグインであるかコンポーネントであるかが表示されます。
+### Adding plug-ins or components
 
 その他のプラグインやコンポーネントをアプリケーションに統合したい場合には、4D Server や 4D Volume Desktop の **Plugins** や **Components** フォルダーにそれらを配置します。 ソースアプリケーションのフォルダーから内容をコピーするメカニズム ([4D Volume Desktop フォルダーのカスタマイズ](#4d-volume-desktop-フォルダーのカスタマイズ) 参照) により、どんなタイプのファイルでもアプリケーションに統合することができます。
 
 同じプラグインの異なるバージョンが見つかった場合 (現在 4D にロードされているものと同じプラグインが、ソースアプリケーションのフォルダーにも配置されている場合など)、4D Volume Desktop/4D Server フォルダーにインストールされているバージョンが優先されます。 他方、同じコンポーネントが両方にインストールされていた場合は、アプリケーションを開くことはできません。
-> 配布するアプリケーションでプラグインやコンポーネントを使用するには、それぞれ適切なライセンスが必要です。
+> The use of plug-ins and/or components in a deployment version may require license numbers.
 
 
+### Deselecting modules
 
+A module is a built-in code library used by 4D to control specific features. If you know that your built application does not use any of the features covered by a module, you can deselect it in the list to reduce the size of your application files.
+
+> **Warning:** Deselecting a module could prevent your built application from working as expected. If you are not 100% certain that a module is never called by your application, it is recommended to keep it selected.
+
+The following optional modules can be deselected:
+
+- **CEF**: Chromium embedded library. It is necessary to run [Web areas](../FormObjects/webArea_overview.md) that use the embedded rendering engine and [4D View Pro areas](../FormObjects/viewProArea_overview.md). Calling such areas when CEF is deselected will display blank areas and/or generate errors.
+- **MeCab**: Library used for text indexing in Japanese language (see this [settings paragraph](../settings/database.md#support-of-mecab-japanese-version)). Deselecting this module will force text indexes to be rebuilt in Japanese language.
+> If you deselect MeCab for an application in Japanese language used on heterogeneous platforms, make sure to deselect it on both client/server build and [client application build](#build-client-application) (for the concurrent platform), otherwise major malfunctions will occur in the application.
+
+- **PHP**: Necessary to use PHP features and commands in 4D (see this [settings paragraph](../settings/php.md)).
+- **SpellChecker**: Used for built-in [spellchecking features](../FormObjects/properties_Entry.md#auto-spellcheck) and commands available for input areas and 4D Write Pro areas.
+- **4D Updater**: Controls the [automatic update](#what-is-a-clientserver-application) of client parts and is used by the `SET UPDATE FOLDER` command for [automated server updates](#automatic-updating-of-server-or-single-user-applications).
 
 
 
@@ -599,6 +614,7 @@ Apple の公証サービスを利用するのに必要な条件を満たすた�
 
 
 ## データファイルの管理
+
 
 ### データファイルを開く
 
@@ -721,3 +737,30 @@ userPrefs:=Get 4D folder(Active 4D Folder)
 
 - **エラーメッセージを表示し、サーバー選択ダイアログボックスへのアクセスを可能にする**。 ユーザーは **選択...** ボタンをクリックする事によってサーバー選択ウィンドウにアクセスできます。   
   `ServerSelectionAllowed`: **True**値 ![](assets/en/Project/connect2.png) ![](assets/en/Project/connect3.png)
+
+
+## Automatic updating of server or single-user applications
+
+In principle, updating server applications or merged single-user applications require user intervention (or programming custom system routines): whenever a new version of the merged application is available, you have to exit the application in production and manually replace the old files with the new ones; then restart the application and select the current data file.
+
+You can automate this procedure to a large extent using the following language commands: [`SET UPDATE FOLDER`](https://doc.4d.com/4dv19/help/command/en/page1291.html), [`RESTART 4D`](https://doc.4d.com/4dv19/help/command/en/page1292.html), and also [`Get last update log path`](https://doc.4d.com/4dv19/help/command/en/page1301.html) for monitoring operations. The idea is to implement a function in your 4D application triggering the automatic update sequence described below. It can be a menu command or a process running in the background and checking at regular intervals for the presence of an archive on a server.
+
+> You also have XML keys to elevate installation privileges so that you can use protected files under Windows (see the [4D XML Keys BuildApplication](https://doc.4d.com/4Dv19/4D/19/4D-XML-Keys-BuildApplication.100-5447429.en.html) manual).
+
+
+Here is the scenario for updating a server or merged single-user application:
+
+1. You transfer, for example using an HTTP server, the new version of the server application or the merged single-user application onto the machine in production.
+2. In the application in production, you call the `SET UPDATE FOLDER` command: this command designates the location of the folder where the "pending" update of the current application is found. Optionally, you can copy in this folder the custom elements of the version in production (user files).
+3. In the application in production, call the `RESTART 4D` command: this command automatically triggers execution of a utility program named "updater" that exits the current application, replaces it using the "pending" update if one is specified, and restarts the application with the current data file. The former version is renamed.
+
+> This sequence is compatible with Windows server applications run as a Service.
+
+
+### Update log
+
+The installation procedure produces a log file detailing the update operations of merged applications (client, server or single-user) on the target machines. This file is useful for analyzing any errors that occur during the installation process.
+
+The update log is named `YYYY-MM-DD_HH-MM-SS_log_X.txt`, for example, `2021-08-25_14-23-00_log_1.txt` for a file created on August 25, 2021 at 14:23.
+
+This file is created in the "Updater" application folder, within the system user folder. You can find out the location of this file at any time using the [`Get last update log path`](https://doc.4d.com/4dv19/help/command/en/page1301.html) command.
