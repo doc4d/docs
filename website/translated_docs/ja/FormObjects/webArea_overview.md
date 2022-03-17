@@ -6,7 +6,7 @@ title: Webエリア
 
 Webエリアは、静的および動的な HTMLページ、ファイル、ピクチャー、JavaScript などの様々な Webコンテンツをフォーム中で表示することのできるオブジェクトです。 Webエリアの描画エンジンは、アプリケーションの実行プラットフォームおよび [埋め込みWebレンダリングエンジンを使用](properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) オプションの設定状態により異なります。
 
-同じフォーム内に複数の Webエリアを配置できます。 しかしながら、Webエリアの挿入には [いくつかの制約](#webエリアのルール) がつく事に注意して下さい。
+同じフォーム内に複数の Webエリアを配置できます。 Note, however, that the use of web areas must follow [several rules](#web-area-rules).
 
 いくつかの専用の [標準アクション](#標準アクション)、多数の [ランゲージコマンド](https://doc.4d.com/4Dv18/4D/18/Web-Area.201-4504309.ja.html)、そして汎用および専用の [フォームイベント](#フォームイベント) を使用して、Webエリアの動作を制御することができます。 特別な変数を使用して、エリアと 4D環境間で情報を交換することも可能です。
 > Webエリアにおける Webプラグインおよび Javaアプレットの使用は推奨されていません。これらは、とくにイベント管理レベルにおいて 4D の動作を不安定にさせる可能性があります。
@@ -191,7 +191,7 @@ Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コ�
     ```4d
         WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
     ```
-    - a navigation action has occurred
+    - a navigation action has occurred (for example, the user has clicked a link)
 
 詳細は `WA SET PREFERENCE` コマンドの説明を参照してください。
 
