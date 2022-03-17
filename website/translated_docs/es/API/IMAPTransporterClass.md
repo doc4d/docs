@@ -821,7 +821,7 @@ If the mailbox *name* is not selectable or does not exist, the function generate
 
 **Objeto devuelto**
 
-The `boxInfo` object returned contains the following properties:
+El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 
 | Propiedad  | Tipo   | Descripción                                                         |
 | ---------- | ------ | ------------------------------------------------------------------- |
@@ -997,7 +997,7 @@ Mailbox name delimiter character.
 
 #### Descripción
 
-The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. This function allows you to locally handle the email contents.
+The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. Esta función le permite manejar localmente el contenido del correo electrónico.
 
 In the first parameter, you can pass either:
 
@@ -1174,7 +1174,7 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 | msgNumber  | Integer  | -> | Sequence number of the message                                                                |
 | msgID      | Texto    | -> | ID único del mensaje                                                                          |
 | updateSeen | Booleano | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
-| Resultado  | BLOB     | <- | Blob of the MIME string returned from the mail server                                         |
+| Resultado  | BLOB     | <- | Blob de la cadena MIME devuelta por el servidor de correo                                     |
 <!-- END REF -->
 
 
@@ -1200,7 +1200,7 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 
 #### Resultado
 
-`.getMIMEAsBlob()` returns a `BLOB` which can be archived in a database or converted to an [`Email` object](EmailObjectClass.md#email-object) with the `MAIL Convert from MIME` command.
+`.getMIMEAsBlob()` devuelve un `BLOB` que puede almacenarse en una base de datos o convertirse en un objeto [`Email`](EmailObjectClass.md#email-object) con el comando `MAIL Convert from MIME`.
 
 
 #### Ejemplo
@@ -1741,7 +1741,7 @@ Search-keys may request the value to search for:
 
 #### Descripción
 
-The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. This function allows you to retrieve information about the mailbox.
+The `.selectBox()` function <!-- REF #IMAPTransporterClass.selectBox().Summary -->selects the *name* mailbox as the current mailbox<!-- END REF -->. Esta función permite recuperar la información sobre el buzón.
 > To get the information from a mailbox without changing the current mailbox, use [`.getBoxInfo()`](#getboxinfo).
 
 In the *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
@@ -1758,7 +1758,7 @@ The optional *state* parameter defines the type of access to the mailbox. Los va
 
 **Objeto devuelto**
 
-The `boxInfo` object returned contains the following properties:
+El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 
 | Propiedad  | Tipo   | Descripción                                |
 | ---------- | ------ | ------------------------------------------ |
