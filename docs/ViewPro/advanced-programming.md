@@ -61,7 +61,7 @@ Function validateValue()
 cs.VPCellManagement.new("ViewProArea").validateValue()
 ```
 
-Utils is a Javascript class built in 4D View Pro that facilitates some actions such as retrieving the current sheet. See [Utils class](#utils-class).
+`Utils` is a Javascript class built in 4D View Pro. See [Utils class](#utils-class).
 
 ## Resources 
 
