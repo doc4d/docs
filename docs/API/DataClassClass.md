@@ -526,6 +526,7 @@ This example illustrates the use of the *context* property:
 The `.getCount()` function <!-- REF #DataClassClass.getCount().Summary --> returns the number of entities in a dataclass<!-- END REF -->.
 
 If this function is used within a transaction, entities created during the transaction will be taken into account.
+
 #### Example 
 
 ```4d
@@ -536,6 +537,9 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $number:=$ds.Persons.getCount() 
 ```
+
+<!-- END REF -->
+
 
 <!-- REF DataClassClass.getDataStore().Desc -->
 ## .getDataStore()
