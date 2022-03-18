@@ -7,7 +7,7 @@ A 4D View Pro Area is a [Web Area form object](../FormObjects/webArea_overview.m
 
 ## Hands-on example: Hiding the Ribbon
 
-To create a button that allows your users to dynamically hide the 4D View Pro **Ribbon**. Create a button in your 4D View Pro area, and insert the following code in its object method: 
+To create a button that allows your users to dynamically hide the 4D View Pro **Ribbon**, create a button in your 4D View Pro area, and insert the following code in its object method: 
 
 ```4d
 var $js; $answer : Text
