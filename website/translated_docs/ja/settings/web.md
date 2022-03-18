@@ -91,9 +91,9 @@ Webページキャッシュを有効化します。 [キャッシュ](../WebServ
 
 このモードでは、以下の追加の Web サーバー設定を設定することができます:
 
--   [最大同時Webプロセス](#maximum-concurrent-web-processes)
--   [一時的なコンテキストを再利用する (リモートモード)](#reuse-temporary-contexts)
--   [プリエンプティブプロセスを使用](#use-preemptive-web-processes)
+-   [最大同時Webプロセス](#最大同時Webプロセス)
+-   [一時的なコンテキストを再利用する (リモートモード)](#一時的なコンテキストを再利用する)
+-   [プリエンプティブプロセスを使用](#プリエンプティブWebプロセスの使用)
 
 #### 旧式セッション (シングルプロセスセッション)
 
@@ -281,22 +281,22 @@ CORSサービスで許可されたホストとメソッドの一覧。 [CORS設�
 -   **ウィザードメソッドプリフィクス**: このエリアでは、Webサービスウィザードを使用して 4D が自動生成するプロキシメソッドの接頭辞を設定します。 プロキシプロジェクトメソッドは 4Dアプリケーションと Webサービスサーバーとのリンクを形成します。 デフォルトで "proxy_" が使用されます。
 
 
-## Web Features
+## Web機能
 
-This page contains the options used to enable and control advanced Web features such as the REST server.
+このページには、RESTサーバーなどの高度な Web機能を有効化および制御するためのオプションが含まれています。
 
-### Publishing
+### 公開
 
-#### Expose as REST server
+#### RESTサーバーとして公開
 
-Starts and stops the REST Server. See [REST Server Configuration](../REST/configuration.md).
+RESTサーバーを開始/停止します。 [RESTサーバー設定](../REST/configuration.md) 参照。
 
 ### アクセス
 
-This option specifies a group of 4D users that is authorized to establish the link to the 4D database using REST requests. See [Configuring REST access](../REST/configuration.md#configuring-rest-access).
+この設定は、RESTリクエストを使って 4Dデータベースへのリンクを設立することのできる 4Dユーザーのグループを指定します。 [アクセス権の設定](../REST/configuration.md#アクセス権の設定) 参照。
 
 ### Web Studio
 
-#### Enable access to the web studio
+#### Web Studio へのアクセスを有効化する
 
-Enables general access to the web studio. You still need to configure it at every project level.
+Web Studio へのアクセスを有効化します。 さらに、プロジェクトレベルごとの設定が必要です。
