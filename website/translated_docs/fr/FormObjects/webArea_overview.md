@@ -6,7 +6,7 @@ title: Zone Web
 
 Les zones Web (Web Areas) peuvent afficher tout type de contenu Web à l’intérieur de vos formulaires : pages HTML au contenu statique ou dynamique, fichiers, images, JavaScript, etc. Le moteur de rendu de la zone web dépend de la plate-forme d’exécution de l’application et de [l'option de moteur de rendu](properties_WebArea.md#use-embedded-web-rendering-engine) sélectionnée.
 
-Il est possible de créer plusieurs zones web dans un même formulaire. A noter cependant que l'insertion de zones web est soumis à [quelques limitations](#web-areas-rules).
+Il est possible de créer plusieurs zones web dans un même formulaire. Note, however, that the use of web areas must follow [several rules](#web-area-rules).
 
 Plusieurs [actions standard](#standard-actions), de nombreuses [commandes de langage](https://doc.4d.com/4Dv18/4D/18/Web-Area.201-4504309.en.html) et [événements formulaires](#form-events) génériques et dédiés permettent au développeur de contrôler le fonctionnement des zones web. Des variables spécifiques permettent d’échanger des informations entre la zone et l’environnement 4D.
 > (*) L'usage de plugins web et d'applets Java est toutefois déconseillé dans les zones web car ils peuvent déstabiliser une opération menée par 4D, notamment au niveau de la gestion d'événement.
@@ -191,7 +191,7 @@ Pour afficher l'inspecteur web, vous pouvez soit exécuter la commande `WA OPEN 
     ```4d
         WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
     ```
-    - a navigation action has occurred
+    - a navigation action has occurred (for example, the user has clicked a link)
 
 Pour plus d'informations, reportez-vous à la description de la commande `WA SET PREFERENCE`.
 
