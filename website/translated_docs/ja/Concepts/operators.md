@@ -12,10 +12,10 @@ title: 演算子
 
 4Dランゲージでは、**二項演算子** および **三項演算子** をサポートしています:
 
-- 二項演算子とは、2つの対象に対して演算をおこない、その 2つの対象の間に表示されます (例: 2＋3)。
+- binary operators operate on two targets (such as `2 + 3`) and appear in between their two targets.
 - 三項演算子は 3つの対象に対して演算をおこないます。 C と同様、4D の三項演算子は 1つしかありません: 三項条件演算子 (a ? b : c</code>) です。
 
-演算子が影響を与える対象はオペランド (被演算子) と呼ばれます。 1 + 2 という式では、+ 記号は二項演算子であり、その 2つのオペランドは値 1 と 2 です。
+演算子が影響を与える対象はオペランド (被演算子) と呼ばれます。 In the expression `1 + 2`, the + symbol is a binary operator and its two operands are the values 1 and 2.
 
 
 
@@ -278,13 +278,15 @@ ALERT($beverage) // "ビール"
 ```4d
 var $fullname : Text
 
-// どちらか片方の情報が欠けている場合には存在する方を格納し、両方存在しない場合は空の文字列を格納します。
+// If one of the names is missing, store the one that exists, otherwise store an empty string
 $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$person.lastname) : ($person.lastname || $person.firstname) || ""
 ```
 
 ## Truthy と Falsy
 
 各値はデータ型のほかに、固有のブール値を持ちます。このブール値は **truthy** (真的) または **falsy** (偽的) です。
+
+> **truthy** and **falsy** values are only evaluated by [short-circuit](#short-circuit-operators) and [ternary](#ternary-operator) operators.
 
 以下の値は **falsy** です:
 
@@ -303,3 +305,22 @@ $fullname:=($person.firstname && $person.lastname) ? ($person.firstname+" "+$per
 上記以外の値はすべて **truthy** と評価されます。次の値も **truthy** です:
 
 * 0 - 数値のゼロ (整数かどうかを問わず)
+
+In 4D, **truthy** and **falsy** evaluation reflects the **usability** of a value, which means that a truthy value exists and can be processed by the code without generating errors or unexpected results. The rationale behind this is to provide a convenient way to handle *undefined* and *null* values in objects and collections, so that a reduced number of [If…Else](./cf_branching.md#ifelseend-if) statements are necessary to avoid runtime errors.
+
+For example, when you use a [short-circuit OR operator](#short-circuit-or-operator-):
+
+```4d
+$value:=$object.value || $defaultValue
+```
+
+... you get the default value whenever *$object* does not contain the `value` property OR when it is *null*. So this operator checks the existence or usability of the value instead of a specific value. Note that because the numerical value 0 exists and is usable, it is not treated specially, thus it is **truthy**.
+
+Regarding values representing collections, objects, or strings, "empty" values are considered as **falsy**, which is handy to assign a default value when you encounter an empty one. In this case, an empty string is considered as an empty collection of characters.
+
+```4d
+$phone:=$emp.phone || "n/a"
+```
+
+
+
