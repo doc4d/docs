@@ -51,7 +51,7 @@ Attachment objects provide the following read-only properties and functions:
 
 #### Descripción
 
-The `MAIL New attachment` command <!-- REF #_command_.MAIL_New_attachment.Summary -->allows you to create an attachment object that you can add to an [Email object](EmailObjectClass.md#email-object)<!-- END REF -->.
+El comando `MAIL New attachment` <!-- REF #_command_.MAIL_New_attachment.Summary -->le permite crear un objeto adjunto que puede asociar a un objeto [Email](EmailObjectClass.md#email-object)<!-- END REF -->.
 
 To define the attachment, you can use:
 
