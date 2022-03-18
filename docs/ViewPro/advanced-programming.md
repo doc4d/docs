@@ -7,28 +7,16 @@ A 4D View Pro Area is a [Web Area form object](../FormObjects/webArea_overview.m
 
 ## Hands-on example: Hiding the Ribbon
 
-You want to create a button that allows your users to dynamically hide the 4D View Pro **Ribbon**. You can do so using standard Javascript code:
-
-1. Inside your project, create a `VPDocument` class with a `hideRibbon` function written in Javascript:
+To create a button that allows your users to dynamically hide the 4D View Pro **Ribbon**. Create a button in your 4D View Pro area, and insert the following code in its object method: 
 
 ```4d
-Function hideRibbon($hide : Boolean)
-	var $js; $answer : Text
-	
-	If (Bool($hide))
-		$js:="document.getElementsByClassName('ribbon')[0].setAttribute('style','display: none');"
-	Else 
-		$js:="document.getElementsByClassName('ribbon')[0].setAttribute('style','display: block');"
-	End if 
-	$js:=$js+"window.dispatchEvent(new Event('resize'));"
-	
-	$answer:=WA Evaluate JavaScript(*; This.areaName; $js)
-```
+var $js; $answer : Text
 
-2. In your 4D View Pro Area, create a button that instantiates the `VPDocument` class and executes the `hideRibbon` function:
+$js:="document.getElementsByClassName('ribbon')[0].setAttribute('style','display: none');"
 
-```4d 
-cs.VPDocument.new("ViewProArea").hideRibbon(True)
+$js:=$js+"window.dispatchEvent(new Event('resize'));"
+
+$answer:=WA Evaluate JavaScript(*; "ViewProArea"; $js)
 ```
 ## Using the SpreadJS Javascript methods
 
