@@ -1615,7 +1615,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 
 ##### Objeto devuelto
 
-The command returns an object describing the frozen columns and rows. This object can contain the following properties:
+The command returns an object describing the frozen columns and rows. Este objeto puede contener las siguientes propiedades:
 
 | Propiedad           | Tipo    | Descripción                                            |
 | ------------------- | ------- | ------------------------------------------------------ |
