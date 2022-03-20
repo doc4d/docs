@@ -30,7 +30,7 @@ Webエリアで実行される JavaScripe コードから 4Dメソッドを呼�
 
 倍長整数型変数の名前です。 この変数には 0 から 100 までの値が格納され、この数値は Webエリアに表示されるページのロードされたパーセンテージを表します。 この変数は 4D が自動で更新します。手動で変更することはできません。
 
-> As of 4DV19R5, this variable is no longer updated in Web Areas using the [Windows system rendering engine](./webAreaOverview.md#web-rendering-engine).
+> As of 4D v19 R5, this variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
 
 #### JSON 文法
 
