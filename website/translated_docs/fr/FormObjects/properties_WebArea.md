@@ -30,7 +30,7 @@ Lorsque cette propriété est cochée, un objet JavaScript spécial `$4d` est in
 
 La variable "Progression" est de type Entier long. Elle contient une valeur entre 0 et 100, représentant le pourcentage du chargement complet de la page affichée dans la zone Web. La variable est mise à jour automatiquement par 4D. Il n’est pas possible de la modifier manuellement.
 
-> As of 4D v19 R5, this variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
+> À partir de 4D v19 R5, cette variable n'est plus mise à jour dans les zones Web utilisant le [moteur de rendu du système Windows](./webArea_overview.md#web-rendering-engine).
 
 #### Grammaire JSON
 
