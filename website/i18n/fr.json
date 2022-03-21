@@ -919,6 +919,9 @@
       "Users/overview": {
         "title": "Présentation du contrôle des accès"
       },
+      "ViewPro/advanced-programming": {
+        "title": "Advanced programming with Javascript"
+      },
       "ViewPro/configuring": {
         "title": "Configuration des zones 4D View Pro"
       },

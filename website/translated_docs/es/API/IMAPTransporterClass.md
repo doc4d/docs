@@ -231,22 +231,22 @@ $status:=$transporter.addFlags(IMAP all;$flags)
 **.append**( *mailObj* : Object ; *destinationBox* : Text ; *options* : Object ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.append().Params -->
-| Parámetros     | Tipo   |    | Descripción                        |
-| -------------- | ------ |:--:| ---------------------------------- |
-| mailObj        | Objeto | -> | Objeto Email                       |
-| destinationBox | Texto  | -> | Buzón para recibir el objeto Email |
-| options        | Objeto | -> | Object containing charset info     |
-| Resultado      | Objeto | <- | Status of the append operation     |
+| Parámetros     | Tipo   |    | Descripción                                 |
+| -------------- | ------ |:--:| ------------------------------------------- |
+| mailObj        | Objeto | -> | Objeto Email                                |
+| destinationBox | Texto  | -> | Buzón para recibir el objeto Email          |
+| options        | Objeto | -> | Objeto que contiene información del charset |
+| Resultado      | Objeto | <- | Status of the append operation              |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.append()` function <!-- REF #IMAPTransporterClass.append().Summary -->appends a `mailObj` to the `destinationBox`<!-- END REF -->.
+La función `.append()` <!-- REF #IMAPTransporterClass.append().Summary -->añade el objeto `mailObj` a la caja `destinationBox`<!-- END REF -->.
 
-In the `mailObj` parameter, pass an Email object. For a comprehensive description of mail properties, see [Email object](EmailObjectClass.md#email-object). The `.append()` function supports keyword tags in the Email object's `keywords` attribute.
+En el parámetro `mailObj`, pase un objeto Email. For a comprehensive description of mail properties, see [Email object](EmailObjectClass.md#email-object). La función `.append()` soporta los marcadores de palabras clave en el atributo `keywords` de los objetos email.
 
-The optional `destinationBox` parameter lets you pass the name of a mailbox where the `mailObj` will be appended. If omitted, the current mailbox is used.
+El parámetro opcional `destinationBox` permite pasar el nombre del buzón donde se añadirá el objeto `mailObj`. If omitted, the current mailbox is used.
 
 In the optional `options` parameter, you can pass an object to define the charset and encoding for specific parts of the email. Propiedades disponibles:
 
