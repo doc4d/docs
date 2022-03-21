@@ -316,7 +316,7 @@ $value:=$object.value || $defaultValue
 
 ... you get the default value whenever *$object* does not contain the `value` property OR when it is *null*. So this operator checks the existence or usability of the value instead of a specific value. Note that because the numerical value 0 exists and is usable, it is not treated specially, thus it is **truthy**.
 
-Regarding values representing collections, objects, or strings, "empty" values are considered as **falsy**, which is handy to assign a default value when you encounter an empty one. In this case, an empty string is considered as an empty collection of characters.
+Regarding values representing collections, objects, or strings, "empty" values are considered **falsy**. It is handy when you want to assign a default value whenever an empty one is encountered.
 
 ```4d
 $phone:=$emp.phone || "n/a"
