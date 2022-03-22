@@ -71,7 +71,7 @@ The following table lists the pages of settings found in the **User Settings** a
 | [SQL ページ](../settings/sql.md)                                                         | Identical to standard settings        | Identical to standard settings          |
 | [PHP ページ](../settings/php.md)                                                         | Identical to standard settings        | Identical to standard settings          |
 | [セキュリティページ](../settings/security.md)                                                  | N/a                                   | N/a                                     |
-| [Compatibility page](../settings/compatibility.md)                                    | N/a                                   | N/a                                     |
+| [互換性ページ](../settings/compatibility.md)                                                | N/a                                   | N/a                                     |
 
 When you edit settings in this dialog box, they are automatically stored in the corresponding *settings.4DSettings* file (see below).
 
