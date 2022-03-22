@@ -5,53 +5,41 @@ title: Advanced programming with Javascript
 
 A 4D View Pro Area is a [Web Area form object](../FormObjects/webArea_overview.md) that uses the [embedded web rendering engine](../FormObjects/properties_WebArea.md#use-embedded-web-rendering-engine). As such, it behaves just like any other web area, and you can get it to execute Javascript code by calling the [`WA Evaluate Javascript`](https://doc.4d.com/4dv19/help/command/en/page1029.html) 4D command. 
 
+Since 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/versions/v14/online/overview.html), you can also call SpreadJS Javascript methods in a 4D View Pro area.
+
 ## Hands-on example: Hiding the Ribbon
 
-To create a button that allows your users to dynamically hide the 4D View Pro **Ribbon**, create a button in your 4D View Pro area, and insert the following code in its object method: 
+Executing Javascript code in a 4D View Pro area allows you to select elements and modify their behavior. For example, you can create a button that hides the spreadJS **Ribbon**: 
 
 ```4d
-	//button object method
+//Button's object method
 
 var $js; $answer : Text
 
 $js:="document.getElementsByClassName('ribbon')[0].setAttribute('style','display: none');"
 
-$js:=$js+"window.dispatchEvent(new Event('resize'));"
+$js+="window.dispatchEvent(new Event('resize'));"
 
 $answer:=WA Evaluate JavaScript(*; "ViewProArea"; $js)
 ```
-## Using the SpreadJS Javascript methods
 
-Since 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/versions/v14/online/overview.html), you can tap into the SpreadJS library of Javascript methods and call them directly in a 4D View Pro area to control your spreadsheets. 
+
+## Calling SpreadJS Javascript methods
+
+You can tap into the SpreadJS library of Javascript methods and call them directly to control your spreadsheets. 
+
+To simplify the process of calling these methods on the current Area, 4D provides a built-in `Utils.spread` expression that points at the spreadJS [Workbook](https://www.grapecity.com/spreadjs/docs/latest/online/SpreadJS~GC.Spread.Sheets.Workbook.html).
 
 #### Example
 
-To create a function that validates the values in the current sheet: 
-
-1. Create a `VPCellManagement` [4D class](../Concepts/classes.md) that contains the following code: 
+To create an "Undo" action in your area, you could create a method with the following code:
 
 ```4d
-Class constructor($areaName : Text)
-	
-	This.areaName:=$areaName
-	This.activeSheet:="var activeSheet=Utils.spread.getActiveSheet();"
+var $areaName : Text
 
-Function validateValue()-> $answer : Text
-	var $js : Text
-	
-	$js:=This.activeSheet
-	$js:=$js+"Utils.spread.commandManager().execute({cmd: 'commitArrayFormula', sheetName: activeSheet.name()})"
-	$answer:=WA Evaluate JavaScript(*; This.areaName; $js)
+$areaName:="ViewProArea"
+WA Evaluate JavaScript(*; $areaName; "Utils.spread.undoManager().undo()")
 ```
-**Note:** `Utils` is a Javascript class built in 4D View Pro.
-
-2. You can then call the `validateValue()` function:
-
-```4d
-cs.VPCellManagement.new("ViewProArea").validateValue()
-```
-
-
 
 ## 4D View Pro Tips repository
 
