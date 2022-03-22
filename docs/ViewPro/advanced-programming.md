@@ -34,7 +34,7 @@ You can tap into the SpreadJS library of Javascript methods and call them direct
 The following code undoes the last action in the 4D View Pro area:
 
 ```4d
-WA Evaluate JavaScript(*; $areaName; "Utils.spread.undoManager().undo()")
+WA Evaluate JavaScript(*; "ViewProArea"; "Utils.spread.undoManager().undo()")
 ```
 
 ## 4D View Pro Tips repository
