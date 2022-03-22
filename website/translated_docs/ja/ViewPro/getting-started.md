@@ -9,7 +9,7 @@ title: はじめに
 
 ![](assets/en/ViewPro/vpSpreadsheet.PNG)
 
-スプレッドシートとは、セルのグリッドを格納したアプリケーションのことで、これらのセルに情報を入力したり、計算を実行させたり、あるいはピクチャーを表示したりすることができます。 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/versions/v14/online/overview.html) integrated in 4D.
+スプレッドシートとは、セルのグリッドを格納したアプリケーションのことで、これらのセルに情報を入力したり、計算を実行させたり、あるいはピクチャーを表示したりすることができます。 4D View Proは、4Dに統合された [SpreadJS スプレッドシートソリューション](https://www.grapecity.com/spreadjs/docs/versions/v14/online/overview.html) に基づいて動作します。
 
 フォームに 4D View Pro エリアを埋め込むことで、4D View Pro コマンドを使ってスプレッドシートドキュメントを読み込んだり書き出したりすることができます。
 
@@ -83,7 +83,7 @@ title: はじめに
 
 *   列や行のヘッダーをクリックした場合: コンテンツの **挿入**、**削除**、**非表示**、**再表示**
 *   セルあるいはセルレンジのクリック:
-    *   **Filter**: allows hiding row through filters (see [Filtering rows](https://www.grapecity.com/spreadjs/docs/versions/v14/online/filter.html) in the SpreadJS documentation).
+    *   **フィルタリング**: フィルタリングを使用して行を非表示にします (SpreadJS ドキュメントの [Filtering rows](https://www.grapecity.com/spreadjs/docs/versions/v14/online/filter.html) を参照ください)
     *   **ソート**: 列のコンテンツを並べ替えます。
     *   **コメントの挿入**: ユーザーコメントを入力できます。 コメントが入力されているセルには、小さな赤い三角形が表示されます:  
       ![](assets/en/ViewPro/vpContext2.PNG)
