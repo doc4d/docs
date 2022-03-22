@@ -1,16 +1,16 @@
 ---
 id: compatibility
-title: Compatibility page
+title: 互換性ページ
 ---
 
-The Compatibility page groups together parameters related to maintaining compatibility with previous versions of 4D.
+互換性ページには、以前の 4Dバージョンとの互換性を管理するためのパラメーターがまとめられています。
 
-> The number of options displayed depends on the version of 4D with which the original database/project was created, as well as the settings modified in this database/project.   
-> This page lists the compatibility options available for database/projects converted from 4D v18 onwards. For older compatibility options, refer to the [Compatibility page](https://doc.4d.com/4Dv19R3/4D/19-R3/Compatibility-page.300-5612610.en.html) on **doc.4d.com**.
+> 表示されるオプションの数は、元のデータベース/プロジェクトが作成されたバージョンや、そのデータベース/プロジェクトでおこなわれた設定の変更により異なります。   
+> このページでは、v18以降のバージョンから変換された 4Dデータベース/プロジェクトで利用可能な互換性オプションのみを説明します。 それ以前のバージョンから引引き継がれる互換性オプションについては **doc.4d.com** の [互換性ページ](https://doc.4d.com/4Dv19R3/4D/19-R3/Compatibility-page.300-5612610.ja.html) を参照ください。
 
-- **Use legacy network layer**: Starting with 4D v15, 4D applications propose a new network layer, named *ServerNet*, to handle communications between 4D Server and remote 4D machines (clients). The former network layer has become obsolete, but it is kept to ensure compatibility with existing databases. Using this option, you can enable the former network layer at any time in your 4D Server applications depending on your needs. *ServerNet* is used automatically for new databases and databases converted from a v15 release or later. Note that in case of a modification, you need to restart the application for the change to be taken into account. Any client applications that were logged must also be restarted to be able to connect with the new network layer. **Note:** This option can also be managed by programming using the `SET DATABASE PARAMETER` command.
+- **旧式ネットワークレイヤーを使用する**: 4D v15 のリリース以降、4Dアプリケーションは 4D Server とリモートの 4Dマシン (クライアント) 間の通信に、*ServerNet* という新しいネットワークレイヤーを使い始めました。 以前のネットワークレイヤーは廃止予定となりますが、既存のデータベースとの互換性を保つために保持されます。 このオプションを使用すると、4D Serverアプリケーションにおいて、必要に応じていつでも以前のネットワークレイヤーを有効化することができます。 *ServerNet* は新規に作成されたデータベースおよび v15 以降から変換されたデータベースにおいては自動的に使用されます (このオプションがチェックされます)。 この設定を変更する場合、変更を反映するにはアプリケーションを再起動する必要があります。 接続していたクライアントアプリケーションも、新しいネットワークレイヤーで接続するため再起動しなければなりません。 **注:** このオプションは、`SET DATABASE PARAMETER` コマンドを使い、プログラミングによって管理することもできます。
 
-- **Use standard XPath:** By default this option is unchecked for databases converted from a 4D version prior to v18 R3, and checked for databases created with 4D v18 R3 and higher. Starting with v18 R3, the XPath implementation in 4D has been modified to be more compliant and to support more predicates. As a consequence, non-standard features of the previous implementation no longer work. They include:
+- **標準のXPathを使用:** デフォルトでは、v18 R3 より前のバージョンの 4D から変換されたデータベースではチェックが外されており、4D v18 R3 以降で作成されたデータベースではチェックされています。 v18 R3 以降、4D の XPath 実装は、より多くの述語に対応しサポートするために変更されました。 結果的に、以前の標準でない一部の機能は動作しなくなります。 これには以下のような機能が含まれます:
     * initial "/" is not the root node only - using a / as first character in a XPath expression does not declare an absolute path from the root node
     * no implicit current node - the current node has to be included in the XPath expression
     * no recursive searches in repeated structures - only the first element is parsed.\
