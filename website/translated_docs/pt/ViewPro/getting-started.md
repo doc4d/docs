@@ -7,7 +7,7 @@ title: Começando
 4D View Pro is a [4D component](Concepts/components.md) that includes a [4D form area](FormObjects/viewProArea_overview.md) an specific [methods](method-list.md). It allows you to embed advanced spreadsheet features in your projects.
 
 
-![](assets/en/ViewPro/vpSpreadsheet.PNG)
+![](assets/en/ViewPro/vpSpreadsheet.png)
 
 A spreadsheet is an application containing a grid of cells into which you can enter information, execute calculations, or display pictures. 4D View Pro is powered by the [SpreadJS spreadsheet solution](https://www.grapecity.com/spreadjs/docs/versions/v14/online/overview.html) integrated in 4D.
 
