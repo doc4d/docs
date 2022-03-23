@@ -4651,16 +4651,16 @@ VP SET SHEET OPTIONS("ViewProArea";$options)
 
 *visible* には、印刷線を表示するには `True`、非表示にするには `False` を渡します。 デフォルトでは `True` が渡されます。
 
-In *index*, pass the index of the target sheet. If no index is specified, the command applies to the current sheet.
+*index* には、ターゲットシートのインデックスを渡します。 index が省略された場合、コマンドはカレントシートに対して適用されます。
 
 > インデックスは 0 起点です。
 
-The position of a spreadsheet's print lines varies according to that spreadsheet's page breaks.
+スプレッドシートの印刷線の位置は、スプレッドシートの改ページの位置によって変化します。
 
 
 #### 例題
 
-The following code displays print lines in a document's second sheet:
+以下のコードはドキュメントの 2番目のシートの印刷線を表示させます:
 
 ```4d
 VP SET SHOW PRINT LINES("ViewProArea";True;1)
@@ -4669,7 +4669,7 @@ VP SET SHOW PRINT LINES("ViewProArea";True;1)
 
 ![set-show-print-lines](assets/en/ViewPro/vp-set-show-print-lines.png)
 
-With a page break:
+改ページがある場合:
 
 ![set-show-print-lines-with-page-break](assets/en/ViewPro/vp-set-show-print-lines-page-break.png)
 
@@ -4683,23 +4683,23 @@ With a page break:
 
 <!-- REF #_method_.VP SET TEXT VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
-| textValue     | テキスト   | -> | Text value to set |
-| formatPattern | テキスト   | -> | 値のフォーマット          |
+| 引数            | タイプ    |    | 説明        |
+| ------------- | ------ | -- | --------- |
+| rangeObj      | Object | -> | レンジオブジェクト |
+| textValue     | Text   | -> | 設定するテキスト値 |
+| formatPattern | Text   | -> | 値のフォーマット  |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET TEXT VALUE` command <!-- REF #_method_.VP SET TEXT VALUE.Summary -->assigns a specified text value to a designated cell range<!-- END REF -->.
+`VP SET TEXT VALUE` コマンドは、 <!-- REF #_method_.VP SET TEXT VALUE.Summary -->指定されたセルレンジにテキスト値を割り当てます<!-- END REF -->。
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
-The *textValue* parameter specifies a text value to be assigned to the *rangeObj*.
+*textValue* 引数に、*rangeObj* 引数のレンジに割り当てたいテキスト値を指定します。
 
-The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *textValue* parameter.
+任意の *formatPattern* 引数は、*textValue* に対する [パターン](configuring.md#セルフォーマット) を定義します。
 
 
 #### 例題
@@ -4720,29 +4720,29 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 | 引数            | タイプ    |    | 説明        |
 | ------------- | ------ | -- | --------- |
-| rangeObj      | オブジェクト | -> | レンジオブジェクト |
-| timeValue     | テキスト   | -> | 設定する時間値   |
-| formatPattern | テキスト   | -> | 値のフォーマット  |
+| rangeObj      | Object | -> | レンジオブジェクト |
+| timeValue     | Text   | -> | 設定する時間値   |
+| formatPattern | Text   | -> | 値のフォーマット  |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET TIME VALUE` command <!-- REF #_method_.VP SET TIME VALUE.Summary -->assigns a specified time value to a designated cell range<!-- END REF -->.
+`VP SET TIME VALUE` コマンドは、 <!-- REF #_method_.VP SET TIME VALUE.Summary -->指定されたセルレンジに時間値を割り当てます<!-- END REF -->。
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
-The *timeValue* parameter specifies a time expressed in seconds to be assigned to the *rangeObj*.
+*timeValue* 引数に、*rangeObj* 引数のレンジに割り当てる時間 (秒単位) を指定します。
 
-The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *timeValue* parameter.
+任意の *formatPattern* 引数は、*timeValue* に対する [パターン](configuring.md#セルフォーマット) を定義します。
 
 #### 例題
 
 ```4d
-//Set the value to the current time
+// セルの値を現在の時間に設定します
 VP SET TIME VALUE(VP Cell("ViewProArea";5;2);Current time)
 
-//Set the value to a specific time with a designated format
+// セルの値を、指定されたフォーマットの特定の時間に設定します
 VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 ```
 
