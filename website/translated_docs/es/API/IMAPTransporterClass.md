@@ -157,15 +157,15 @@ La función `.addFlags()` <!-- REF #IMAPTransporterClass.addFlags().Summary -->a
 
 En el parámetro `msgIDs`, puede pasar:
 
-*   a *collection* containing the unique IDs of specific messages or
-*   the unique ID (*text*) of a single message or
-*   the following constant (*longint*) for all messages in the selected mailbox:
+*   una *collection* contiene los identificadores únicos de mensajes específicos, o
+*   el ID único (*texte*) de un solo mensaje o
+*   la siguiente constante (*longint*) para todos los mensajes del buzón seleccionado:
 
-    | Constante | Valor | Comentario                                  |
-    | --------- | ----- | ------------------------------------------- |
-    | IMAP all  | 1     | Select all messages in the selected mailbox |
+    | Constante | Valor | Comentario                                            |
+    | --------- | ----- | ----------------------------------------------------- |
+    | IMAP all  | 1     | Seleccionar todos los mensajes del buzón seleccionado |
 
-The `keywords` parameter lets you pass an object with keyword values for specific flags to add to `msgIDs`. You can pass any of the following keywords:
+El parámetro `keywords` le permite pasar un objeto con valores de palabras clave para las banderas específicas que se añadirán a `msgIDs`. Puede pasar cualquiera de las siguientes palabras claves:
 
 | Parámetros | Tipo     | Descripción                                        |
 | ---------- | -------- | -------------------------------------------------- |
@@ -246,23 +246,23 @@ La función `.append()` <!-- REF #IMAPTransporterClass.append().Summary -->añad
 
 En el parámetro `mailObj`, pase un objeto Email. Para una descripción completa de las propiedades del correo, ver [objeto Email](EmailObjectClass.md#email-object). La función `.append()` soporta los marcadores de palabras clave en el atributo `keywords` de los objetos email.
 
-El parámetro opcional `destinationBox` permite pasar el nombre del buzón donde se añadirá el objeto `mailObj`. If omitted, the current mailbox is used.
+El parámetro opcional `destinationBox` permite pasar el nombre del buzón donde se añadirá el objeto `mailObj`. Si se omite, se utiliza el buzón actual.
 
-In the optional `options` parameter, you can pass an object to define the charset and encoding for specific parts of the email. Propiedades disponibles:
+En el parámetro opcional `options`, puede pasar un objeto para definir el charset y la codificación para partes específicas del correo electrónico. Propiedades disponibles:
 
-| Propiedad     | Tipo  | Descripción                                                                                                                                                                    |
-| ------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| headerCharset | Texto | Charset and encoding used for the following parts of the email: subject, attachment filenames, and email name attribute(s). Possible values: See possible charsets table below |
-| bodyCharset   | Texto | Charset and encoding used for the html and text body contents of the email. Possible values: See possible charsets table below                                                 |
+| Propiedad     | Tipo  | Descripción                                                                                                                                                                                                                                   |
+| ------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| headerCharset | Texto | Charset y codificación utilizados para las siguientes partes del correo electrónico: asunto, nombres de archivos adjuntos y atributo(s) del nombre del correo electrónico. Valores posibles: ver la tabla de charsets posibles a continuación |
+| bodyCharset   | Texto | Charset y codificación utilizados para el contenido html y el texto del cuerpo del correo electrónico. Valores posibles: ver la tabla de charsets posibles a continuación                                                                     |
 
-Possible charsets:
+Charsets posibles:
 
-| Constante                | Valor                          | Comentario                                                                                                |
-| ------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------- |
-| mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & Quoted-printable if possible, otherwise UTF-8 & Quoted-printable</li><li>bodyCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                 |
-| mail mode ISO88591       | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                 |
-| mail mode UTF8           | US-ASCII_UTF8_QP             | headerCharset & bodyCharset: US-ASCII if possible, otherwise UTF-8 & Quoted-printable (**default value**) |
-| mail mode UTF8 in base64 | US-ASCII_UTF8_B64            | headerCharset & bodyCharset: US-ASCII if possible, otherwise UTF-8 & base64                               |
+| Constante                | Valor                          | Comentario                                                                                                            |
+| ------------------------ | ------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| mail mode ISO2022JP      | US-ASCII_ISO-2022-JP_UTF8_QP | <ul><li>headerCharset: US-ASCII si es posible, japonés (ISO-2022-JP) & Quoted-printable si es posible, de lo contrario UTF-8 & Quoted-printable</li><li>bodyCharset: US-ASCII if possible, Japanese (ISO-2022-JP) & 7-bit if possible, otherwise UTF-8 & Quoted-printable</li></ul>                                                                                             |
+| mail mode ISO88591       | ISO-8859-1                     | <ul><li>headerCharset: ISO-8859-1 & Quoted-printable</li><li>bodyCharset: ISO-8859-1 & 8-bit</li></ul>                                                                                             |
+| mail mode UTF8           | US-ASCII_UTF8_QP             | headerCharset & bodyCharset: US-ASCII si es posible, de lo contrario UTF-8 & Quoted-printable (**valor por defecto**) |
+| mail mode UTF8 in base64 | US-ASCII_UTF8_B64            | headerCharset & bodyCharset: US-ASCII si es posible, de lo contrario UTF-8 & base64                                   |
 
 
 **Objeto devuelto**
@@ -275,13 +275,13 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
 #### Ejemplo
 
-To save an email in the Drafts mailbox:
+Para guardar un correo electrónico en el buzón de borradores:
 
 ```4d
 var $settings; $status; $msg; $imap: Object
@@ -335,7 +335,7 @@ $status:=$imap.append($msg; "Drafts")
 
 #### Descripción
 
-The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->the maximum time (in seconds) allowed prior to checking the connection to the server<!-- END REF -->.  If this time is exceeded between two method calls, the connection to the server will be checked. By default, if the property has not been set in the *server* object, the value is 300.
+La propiedad `.checkConnectionDelay` contiene la <!-- REF #IMAPTransporterClass.checkConnectionDelay.Summary -->duración máxima (en segundos) permitida antes de verificar la conexión al servidor<!-- END REF -->.  Si se supera este tiempo entre dos llamadas al método, se comprobará la conexión con el servidor. Por defecto, si la propiedad no se ha definido en el objeto *server<*, el valor es de 300.
 > **Atención**: asegúrese de que el tiempo de espera definido sea menor que el tiempo de espera del servidor, de lo contrario el tiempo de espera del cliente será inútil.
 
 
@@ -357,25 +357,25 @@ The `.checkConnectionDelay` property contains <!-- REF #IMAPTransporterClass.che
 **.copy**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.copy**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.copy().Params -->
-| Parámetros     | Tipo       |    | Descripción                                      |
-| -------------- | ---------- |:--:| ------------------------------------------------ |
-| msgsIDs        | Collection | -> | Collection of message unique IDs (strings)       |
-| allMsgs        | Integer    | -> | `IMAP all`: All messages in the selected mailbox |
-| destinationBox | Texto      | -> | Mailbox to receive copied messages               |
-| Resultado      | Objeto     | <- | Status of the copy operation                     |
+| Parámetros     | Tipo       |    | Descripción                                               |
+| -------------- | ---------- |:--:| --------------------------------------------------------- |
+| msgsIDs        | Collection | -> | Colección de identificadores únicos de mensajes (cadenas) |
+| allMsgs        | Integer    | -> | `IMAP all`: todos los mensajes del buzón seleccionado     |
+| destinationBox | Texto      | -> | Buzón para recibir mensajes copiados                      |
+| Resultado      | Objeto     | <- | Estado de la operación de copia                           |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.copy()` function <!-- REF #IMAPTransporterClass.copy().Summary -->copies the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
+La función `.copy()` <!-- REF #IMAPTransporterClass.copy().Summary -->copia los mensajes definidos en *msgsIDs* o *allMsgs* en la *destinationBox* en el servidor IMAP<!-- END REF -->.
 
 Puede pasar:
 
-- in the *msgsIDs* parameter, a collection containing the unique IDs of the specific messages to copy, or
-- in the *allMsgs* parameter, the `IMAP all` constant (integer) to copy all messages in the selected mailbox.
+- en el parámetro *msgsIDs*, una colección contiene los IDs únicos de los mensajes específicos a copiar, o
+- en el parámetro *allMsgs*, la constante `IMAP all` (entero) para copiar todos los mensajes del buzón seleccionado.
 
-The *destinationBox* parameter allows you to pass a text value with the name of the mailbox where the copies of messages will be placed.
+El parámetro *destinationBox* permite pasar un valor texto con el nombre del buzón donde se colocarán las copias de los mensajes.
 
 
 **Objeto devuelto**
@@ -472,15 +472,15 @@ Para copiar todos los mensajes del buzón actual:
 
 #### Descripción
 
-The `.createBox()` function <!-- REF #IMAPTransporterClass.createBox().Summary -->creates a mailbox with the given `name`<!-- END REF -->. If the IMAP server’s hierarchy separator character appears elsewhere in the mailbox name, the IMAP server will create any parent names needed to create the given mailbox.
+La función `.createBox()` <!-- REF #IMAPTransporterClass.createBox().Summary -->crea un buzón con el `name` pasado<!-- END REF -->. Si el carácter separador de jerarquía del servidor IMAP aparece en otra parte del nombre del buzón, el servidor IMAP creará todos los nombre padre necesarios para crear el buzón dado.
 
-In other words, an attempt to create "Projects/IMAP/Doc" on a server in which "/" is the hierarchy separator character will create:
+En otras palabras, un intento de crear "Projects/IMAP/Doc" en un servidor en el que "/" es el carácter separador de jerarquía creará:
 
-*   Only the "Doc" mailbox if "Projects" & "IMAP" already exist.
-*   "IMAP" & "Doc" mailboxes if only “Projects” already exists.
-*   "Projects" & “IMAP” & "Doc" mailboxes, if they do not already exist.
+*   Sólo el buzón "Doc" si "Projects" & "IMAP" ya existen.
+*   Los buzones "IMAP" & "Doc" si sólo existe "Projects".
+*   Los buzones "Projects" & "IMAP" & "Doc", si no existen.
 
-In the `name` parameter, pass the name of the new mailbox.
+En el parámetro `name`, pasa el nombre del nuevo buzón.
 
 
 **Objeto devuelto**
@@ -548,24 +548,24 @@ End if
 **.delete**( *msgsIDs* : Collection ) : Object<br>**.delete**( *allMsgs* : Integer ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.delete().Params -->
-| Parámetros | Tipo       |    | Descripción                                      |
-| ---------- | ---------- |:--:| ------------------------------------------------ |
-| msgsIDs    | Collection | -> | Collection of message unique IDs (strings)       |
-| allMsgs    | Integer    | -> | `IMAP all`: All messages in the selected mailbox |
-| Resultado  | Objeto     | <- | Status of the delete operation                   |
+| Parámetros | Tipo       |    | Descripción                                               |
+| ---------- | ---------- |:--:| --------------------------------------------------------- |
+| msgsIDs    | Collection | -> | Colección de identificadores únicos de mensajes (cadenas) |
+| allMsgs    | Integer    | -> | `IMAP all`: todos los mensajes del buzón seleccionado     |
+| Resultado  | Objeto     | <- | Estado de la operación de eliminación                     |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.delete()` function <!-- REF #IMAPTransporterClass.delete().Summary -->sets the "deleted" flag for the messages defined in `msgsIDs` or `allMsgs`<!-- END REF -->.
+La función `.delete()` <!-- REF #IMAPTransporterClass.delete().Summary -->asocia el marcador "deleted" a los mensajes designados por `msgsIDs` o `allMsgs`<!-- END REF -->.
 
 Puede pasar:
 
-- in the `msgsIDs` parameter, a collection containing the unique IDs of the specific messages to delete, or
-- in the `allMsgs` parameter, the `IMAP all` constant (integer) to delete all messages in the selected mailbox.
+- en el parámetro `msgsIDs`, una colección contiene los IDs únicos de los mensajes específicos a eliminar, o
+- en el parámetro `allMsgs`, la constante `IMAP all` (entero) para eliminar todos los mensajes del buzón seleccionado.
 
-Executing this function does not actually remove messages. Messages with the "delete" flag can still be found by the [.searchMails()](#searchmails) function. Flagged messages are deleted from the IMAP server with the [`.expunge()`](#expunge) function or by selecting another mailbox or when the [transporter object](#imap-transporter-object) (created with [IMAP New transporter](#imap-new-transporter)) is destroyed.
+La ejecución de esta función no elimina realmente los mensajes. Los mensajes con la bandera "delete" pueden seguir siendo encontrados por la función [.searchMails()](#searchmails). Los mensajes marcados se eliminan del servidor IMAP con la función [`.expunge()`](#expunge) o al seleccionar otro buzón o cuando se destruye el objeto [transporter](#imap-transporter-object) (creado con [IMAP New transporter](#imap-new-transporter)).
 
 
 
@@ -658,16 +658,16 @@ Para eliminar todos los mensajes del buzón actual:
 | name       | Texto | -> | Nombre del buzón a eliminar |
 
 
-|Result|Object|<-|Status of the mailbox deletion operation|
+|Result|Object|<-|Estado de la operación de eliminación del buzón|
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.deleteBox()` function <!-- REF #IMAPTransporterClass.deleteBox().Summary -->permanently removes the mailbox with the given `name` from the IMAP server<!-- END REF -->. Attempting to delete an INBOX or a mailbox that does not exist will generate an error.
+La función `.deleteBox()` <!-- REF #IMAPTransporterClass.deleteBox().Summary -->selimina definitivamente el buzón llamado `name` en el servidor IMAP<!-- END REF -->. Intentar eliminar un INBOX o un buzón que no existe generará un error.
 
-In the `name` parameter, pass the name of the mailbox to delete.
-> * The function cannot delete a mailbox that has child mailboxes if the parent mailbox has the "\Noselect" attribute.
+En el parámetro `name`, pase el nombre del buzón a eliminar.
+> * La función no puede eliminar un buzón que tiene buzones hijos si el buzón padre tiene el atributo "\Noselect".
 > * All messages in the deleted mailbox will also be deleted.
 > * The ability to delete a mailbox depends on the mail server.
 
@@ -1257,12 +1257,12 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 **.move**( *msgsIDs* : Collection ; *destinationBox* : Text ) : Object<br>**.move**( *allMsgs* : Integer ; *destinationBox* : Text ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.move().Params -->
-| Parámetros     | Tipo       |    | Descripción                                      |
-| -------------- | ---------- |:--:| ------------------------------------------------ |
-| msgsIDs        | Collection | -> | Collection of message unique IDs (strings)       |
-| allMsgs        | Integer    | -> | `IMAP all`: All messages in the selected mailbox |
-| destinationBox | Texto      | -> | Mailbox to receive moved messages                |
-| Resultado      | Objeto     | <- | Status of the move operation                     |
+| Parámetros     | Tipo       |    | Descripción                                               |
+| -------------- | ---------- |:--:| --------------------------------------------------------- |
+| msgsIDs        | Collection | -> | Colección de identificadores únicos de mensajes (cadenas) |
+| allMsgs        | Integer    | -> | `IMAP all`: todos los mensajes del buzón seleccionado     |
+| destinationBox | Texto      | -> | Mailbox to receive moved messages                         |
+| Resultado      | Objeto     | <- | Status of the move operation                              |
 <!-- END REF -->
 
 
@@ -1441,15 +1441,15 @@ The `.removeFlags()` function <!-- REF #IMAPTransporterClass.removeFlags().Summa
 
 En el parámetro `msgIDs`, puede pasar:
 
-*   a *collection* containing the unique IDs of specific messages or
-*   the unique ID (*text*) of a single message or
-*   the following constant (*longint*) for all messages in the selected mailbox:
+*   una *collection* contiene los identificadores únicos de mensajes específicos, o
+*   el ID único (*texte*) de un solo mensaje o
+*   la siguiente constante (*longint*) para todos los mensajes del buzón seleccionado:
 
     | Constante | Valor | Comentario                                            |
     | --------- | ----- | ----------------------------------------------------- |
     | IMAP all  | 1     | Seleccionar todos los mensajes del buzón seleccionado |
 
-The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. You can pass any of the following keywords:
+The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. Puede pasar cualquiera de las siguientes palabras claves:
 
 | Parámetros | Tipo     | Descripción                                         |
 | ---------- | -------- | --------------------------------------------------- |
