@@ -731,6 +731,8 @@ Ejemplo con la opción `dk stop dropping on first error`:
 
 
 
+
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -1177,7 +1179,7 @@ Las entity selections siempre tienen una propiedad `.length`.
 
 <!-- REF #EntitySelectionClass.max().Params -->
 | Parámetros    | Tipo  |    | Descripción                                        |
-| ------------- | ----- |:--:| -------------------------------------------------- |
+| ------------- | ----- | -- | -------------------------------------------------- |
 | attributePath | Texto | -> | Ruta del atributo que se utilizará para el cálculo |
 | Resultado     | any   | <- | Valor más alto del atributo                        |
 <!-- END REF -->
@@ -1464,7 +1466,7 @@ Puede añadir tantos objetos en la colección de criterios como sea necesario.
 
 
 <!-- REF EntitySelectionClass.orderByFormula().Desc -->
-## .orderByFormula( )
+## .orderByFormula()
 
 <details><summary>Histórico</summary>
 | Versión | Modificaciones |
@@ -1789,6 +1791,7 @@ Un list box muestra la entity selection Form.students y en la que varios cliente
 | selectedEntities | 4D.EntitySelection | -> | Selección de entidades con entidades para las cuales conocer el rango en la selección de entidades |
 | Resultado        | Objeto             | <- | Rango(s) de entidades seleccionadas en la selección de entidades                                   |
 <!-- END REF -->
+
 
 #### Descripción
 
@@ -2144,6 +2147,7 @@ var $employees : cs.EmployeeSelection
 
 $employeesCollection:=New collection
 $filter:=New collection
+
 $filter.push("firstName")
 $filter.push("lastName")
 
