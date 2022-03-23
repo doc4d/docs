@@ -62,21 +62,21 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 <!-- REF FolderClass.Folder.Params -->
 | Paramètres     | Type      |    | Description                                        |
 | -------------- | --------- |:--:| -------------------------------------------------- |
-| path           | Text      | -> | Folder path                                        |
-| folderConstant | Integer   | -> | 4D folder constant                                 |
+| path           | Text      | -> | Chemin du dossier                                  |
+| folderConstant | Integer   | -> | Constante de dossier 4D                            |
 | pathType       | Integer   | -> | `fk posix path` (par défaut) ou `fk platform path` |
-| *              |           | -> | * to return folder of host database                |
-| Résultat       | 4D.Folder | <- | New folder object                                  |
+| *              |           | -> | * pour retourner le dossier de la base hôte        |
+| Résultat       | 4D.Folder | <- | Nouvel objet dossier                               |
 <!-- END REF -->
 
 
 #### Description
 
-The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. La commande accepte deux syntaxes :
+La commande `Folder` <!-- REF #_command_.Folder.Summary -->crée et retourne un nouvel objet de type `4D.Folder`<!-- END REF -->. La commande accepte deux syntaxes :
 
 **Folder ( path { ; pathType } { ; \* } )**
 
-In the *path* parameter, pass a folder path string. You can use a custom string or a filesystem (e.g., "/DATA").
+Dans le paramètre *path*, passez un chemin de dossier. Vous pouvez utiliser une chaine personnalisée ou un "filesystem" (ex : "/DATA").
 
 > Seuls les noms de chemin absolus sont pris en charge par la commande `Folder`.
 
@@ -89,23 +89,23 @@ Par défaut, 4D attend un chemin exprimé avec la syntaxe POSIX. Si vous travail
 
 **Folder ( folderConstant { ; \* } )**
 
-In the *folderConstant* parameter, pass a 4D built-in or system folder, using one of the following constants:
+Dans le paramètre *folderConstant*, passez un dossier 4D interne ou un dossier système, à l'aide d'une des constantes suivantes :
 
-| Constante                  | Valeur | Commentaire                                                                                         |
-| -------------------------- | ------ | --------------------------------------------------------------------------------------------------- |
-| fk applications folder     | 116    |                                                                                                     |
-| fk data folder             | 9      | Associated filesystem: "/DATA"                                                                      |
-| fk database folder         | 4      | Associated filesystem: "/PACKAGE"                                                                   |
-| fk desktop folder          | 115    |                                                                                                     |
-| fk documents folder        | 117    | Document folder of the user                                                                         |
-| fk licenses folder         | 1      | Folder containing the machine's 4D license files                                                    |
-| fk logs folder             | 7      | Associated filesystem: "/LOGS"                                                                      |
-| fk mobileApps folder       | 10     |                                                                                                     |
-| fk remote database folder  | 3      | 4D database folder created on each 4D remote machine                                                |
-| fk resources folder        | 6      | Associated filesystem: "/RESOURCES"                                                                 |
-| fk system folder           | 100    |                                                                                                     |
-| fk user preferences folder | 0      | 4D folder that stores user preference files within the \<userName> directory.                      |
-| fk web root folder         | 8      | Current Web root folder of the database: if within the package "/PACKAGE/path", otherwise full path |
+| Constante                  | Valeur | Commentaire                                                                                                                 |
+| -------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+| fk applications folder     | 116    |                                                                                                                             |
+| fk data folder             | 9      | Filesystem associé : "/DATA"                                                                                                |
+| fk database folder         | 4      | Filesystem associé : "/PACKAGE"                                                                                             |
+| fk desktop folder          | 115    |                                                                                                                             |
+| fk documents folder        | 117    | Dossier Documents de l'utilisateur                                                                                          |
+| fk licenses folder         | 1      | Dossier contenant les fichiers de licence 4D de la machine                                                                  |
+| fk logs folder             | 7      | Filesystem associé : "/LOGS"                                                                                                |
+| fk mobileApps folder       | 10     |                                                                                                                             |
+| fk remote database folder  | 3      | Dossier de la base de données 4D créé sur chaque machine 4D distante                                                        |
+| fk resources folder        | 6      | Filesystem associé : "/RESOURCES"                                                                                           |
+| fk system folder           | 100    |                                                                                                                             |
+| fk user preferences folder | 0      | Dossier 4D qui stocke les préférences utilisateur dans le <userName> répertoire de l'utilisateur.                           |
+| fk web root folder         | 8      | Dossier racine web courant du projet : "/PACKAGE/chemin" si son emplacement se trouve dans le package, sinon chemin complet |
 
 Si la commande est appelée à partir d'un composant, passez le paramètre optionnel * pour lire le chemin de la base hôte. Sinon, si vous omettez le paramètre *, un objet null est systématiquement retourné.
 
@@ -158,7 +158,7 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 
 The `.create()` function <!-- REF #FolderClass.create().Summary -->creates a folder on disk according to the properties of the `Folder` object<!-- END REF -->.
 
-If necessary, the function creates the folder hierachy as described in the [platformPath](#platformpath) or [path](#path) properties. If the folder already exists on disk, the function does nothing (no error is thrown) and returns false.
+Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur la description des propriétés [platformPath](#platformpath) ou [path](#path). If the folder already exists on disk, the function does nothing (no error is thrown) and returns false.
 
 **Valeur retournée**
 
@@ -208,12 +208,12 @@ End if
 
 
 <!--REF #FolderClass.createAlias().Params -->
-| Paramètres        | Type      |    | Description                                  |
-| ----------------- | --------- | -- | -------------------------------------------- |
-| destinationFolder | 4D.Folder | -> | Destination folder for the alias or shortcut |
-| aliasName         | Text      | -> | Name of the alias or shortcut                |
-| aliasType         | Integer   | -> | Type of the alias link                       |
-| Résultat          | 4D.File   | <- | Alias or shortcut reference                  |
+| Paramètres        | Type      |    | Description                                         |
+| ----------------- | --------- | -- | --------------------------------------------------- |
+| destinationFolder | 4D.Folder | -> | Dossier de destination pour l'alias ou le raccourci |
+| aliasName         | Text      | -> | Nom de l'alias ou du raccourci                      |
+| aliasType         | Integer   | -> | Type de lien de l'alias                             |
+| Résultat          | 4D.File   | <- | Alias or shortcut reference                         |
 <!-- END REF -->
 
 
@@ -221,20 +221,20 @@ End if
 
 The `.createAlias()` function <!-- REF #FolderClass.createAlias().Summary -->creates an alias (macOS) or a shortcut (Windows)<!-- END REF --> to the folder with the specified *aliasName* name in the folder designated by the *destinationFolder* object.
 
-Pass the name of the alias or shortcut to create in the *aliasName* parameter.
+Passez le nom de l'alias ou du raccourci à créer dans le paramètre *aliasName*.
 
-By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. Les constantes suivantes sont disponibles :
+Par défaut sur macOS, la fonction crée un alias standard. Vous pouvez également créer un lien symbolique à l'aide du paramètre *aliasType*. Les constantes suivantes sont disponibles :
 
-| Constante          | Valeur | Commentaire                |
-| ------------------ | ------ | -------------------------- |
-| `fk alias link`    | 0      | Alias link (default)       |
-| `fk symbolic link` | 1      | Symbolic link (macOS only) |
+| Constante          | Valeur | Commentaire                               |
+| ------------------ | ------ | ----------------------------------------- |
+| `fk alias link`    | 0      | Lien alias (macOS uniquement)(par défaut) |
+| `fk symbolic link` | 1      | Lien symbolique (macOS uniquement)        |
 
-On Windows, a shortcut (.lnk file) is always created (the *aliasType* parameter is ignored).
+Sur Windows, un raccourci (fichier .lnk) est toujours créé (le paramètre *aliasType* est ignoré).
 
 **Objet retourné**
 
-A `4D.File` object with the `isAlias` property set to **true**.
+Un objet `4D.File` avec la propriété `isAlias` mise à **true**.
 
 #### Exemple
 
@@ -466,7 +466,7 @@ You want to move and rename a folder:
 
 The `.rename()` function <!-- REF #FolderClass.rename().Summary -->renames the folder with the name you passed in *newName* and returns the renamed `Folder` object<!-- END REF -->.
 
-The *newName* parameter must comply with naming rules (e.g., it must not contain characters such as ":", "/", etc.), otherwise an error is returned. If a file with the same name already exists, an error is returned.
+Le paramètre *newName* doit être conforme aux règles de nommage (ex : il ne doit pas contenir des caractères tels que ":", "/", etc.), sinon une erreur est retournée. S'il existe déjà un fichier portant le même nom, une erreur est retournée.
 
 
 **Objet retourné**
