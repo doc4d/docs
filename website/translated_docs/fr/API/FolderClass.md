@@ -60,19 +60,19 @@ Form.curfolder:=Folder("C:\\Users\\JohnSmith\\";fk platform path)
 
 
 <!-- REF FolderClass.Folder.Params -->
-| Paramètres     | Type      |    | Description                                     |
-| -------------- | --------- |:--:| ----------------------------------------------- |
-| path           | Text      | -> | Folder path                                     |
-| folderConstant | Integer   | -> | 4D folder constant                              |
-| pathType       | Integer   | -> | `fk posix path` (default) or `fk platform path` |
-| *              |           | -> | * to return folder of host database             |
-| Résultat       | 4D.Folder | <- | New folder object                               |
+| Paramètres     | Type      |    | Description                                        |
+| -------------- | --------- |:--:| -------------------------------------------------- |
+| path           | Text      | -> | Folder path                                        |
+| folderConstant | Integer   | -> | 4D folder constant                                 |
+| pathType       | Integer   | -> | `fk posix path` (par défaut) ou `fk platform path` |
+| *              |           | -> | * to return folder of host database                |
+| Résultat       | 4D.Folder | <- | New folder object                                  |
 <!-- END REF -->
 
 
 #### Description
 
-The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. The command accepts two syntaxes:
+The `Folder` command <!-- REF #_command_.Folder.Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. La commande accepte deux syntaxes :
 
 **Folder ( path { ; pathType } { ; \* } )**
 
@@ -80,12 +80,12 @@ In the *path* parameter, pass a folder path string. You can use a custom string 
 
 > Seuls les noms de chemin absolus sont pris en charge par la commande `Folder`.
 
-By default, 4D expects a path expressed with the POSIX syntax. If you work with platform pathnames (Windows or macOS), you must declare it using the *pathType* parameter. The following constants are available:
+Par défaut, 4D attend un chemin exprimé avec la syntaxe POSIX. Si vous travaillez avec des chemins de plate-forme (Windows ou macOS), vous devez les déclarer à l'aide du paramètre *pathType*. Les constantes suivantes sont disponibles :
 
-| Constante        | Valeur | Commentaire                                                                             |
-| ---------------- | ------ | --------------------------------------------------------------------------------------- |
-| fk platform path | 1      | Path expressed with a platform-specific syntax (mandatory in case of platform pathname) |
-| fk posix path    | 0      | Path expressed with POSIX syntax (default)                                              |
+| Constante        | Valeur | Commentaire                                                                                               |
+| ---------------- | ------ | --------------------------------------------------------------------------------------------------------- |
+| fk platform path | 1      | Chemin exprimé dans une syntaxe spécifique à la plate-forme (obligatoire en cas de chemin de plate-forme) |
+| fk posix path    | 0      | Chemin exprimé avec la syntaxe POSIX (par défaut)                                                         |
 
 **Folder ( folderConstant { ; \* } )**
 
@@ -107,7 +107,7 @@ In the *folderConstant* parameter, pass a 4D built-in or system folder, using on
 | fk user preferences folder | 0      | 4D folder that stores user preference files within the \<userName> directory.                      |
 | fk web root folder         | 8      | Current Web root folder of the database: if within the package "/PACKAGE/path", otherwise full path |
 
-If the command is called from a component, pass the optional * parameter to get the path of the host database. Otherwise, if you omit the * parameter, a null object is always returned.
+Si la commande est appelée à partir d'un composant, passez le paramètre optionnel * pour lire le chemin de la base hôte. Sinon, si vous omettez le paramètre *, un objet null est systématiquement retourné.
 
 
 ## 4D.Folder.new()
@@ -223,7 +223,7 @@ The `.createAlias()` function <!-- REF #FolderClass.createAlias().Summary -->cre
 
 Pass the name of the alias or shortcut to create in the *aliasName* parameter.
 
-By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. The following constants are available:
+By default on macOS, the function creates a standard alias. You can also create a symbolic link by using the *aliasType* parameter. Les constantes suivantes sont disponibles :
 
 | Constante          | Valeur | Commentaire                |
 | ------------------ | ------ | -------------------------- |
