@@ -995,13 +995,13 @@ VP EXPORT DOCUMENT("ViewProArea";"c:\\tmp\\data.txt";New object("format";vk csv 
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-In the *options* parameter, you can pass the following export options, if required:
+*options* 引数として、必要に応じて以下の書き出しオプションを渡すことができます:
 
 
-| プロパティ                | タイプ | 説明                                                                                                                                                                                            |
-| -------------------- | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| includeFormatInfo    | ブール | True (default) to include formatting information, false otherwise. フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 On the other hand, setting this property to False allows reducing export time.   |
-| includeBindingSource | ブール | True (default) to export the current data context values as cell values in the exported object (data contexts themselves are not exported). False otherwise. Cell binding is always exported. |
+| プロパティ                | タイプ     | 説明                                                                                                                                                                                            |
+| -------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| includeFormatInfo    | Boolean | フォーマット (書式) 情報を含めるには true (デフォルト)、それ以外の場合には false。 フォーマット情報は特定の場合 (例: SVGへの書き出しなど) において有用です。 一方で、このプロパティを false に設定することで書き出し時間を短縮することもできます。                                                   |
+| includeBindingSource | Boolean | True (default) to export the current data context values as cell values in the exported object (data contexts themselves are not exported). False otherwise. Cell binding is always exported. |
 
 4D View Pro オブジェクトについての詳細は [4D View Pro オブジェクト](configuring.md#4d-view-pro-オブジェクト) を参照ください。
 
@@ -3807,29 +3807,29 @@ VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 
 #### 説明
 
-The `VP SET COLUMN ATTRIBUTES` command <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Summary --> applies the attributes defined in the *propertyObj* to the columns in the *rangeObj*<!-- END REF -->.
+`VP SET COLUMN ATTRIBUTES` コマンドは、 <!-- REF #_method_.VP SET COLUMN ATTRIBUTES.Summary --> *rangeObj* 引数で指定したカラムに対して*propertyObj* 引数で定義されている属性を適用します<!-- END REF -->。
 
-In *rangeObj*, pass an object containing a range. If the range contains both columns and rows, attributes are applied only to the columns.
+*rangeObj* 引数には、レンジオブジェクトを渡します。 レンジにカラムと列の両方が格納されている場合、属性はカラムに対してのみ適用されます。
 
-The *propertyObj* parameter lets you specify the attributes to apply to the columns in the *rangeObj*. These attributes are:
+*propertyObj* 引数は、*rangeObj* 引数のレンジ内のカラムに対して適用する属性を指定します。 指定できる属性は以下の通りです:
 
-| プロパティ     | タイプ     | 説明                                                                           |
-| --------- | ------- | ---------------------------------------------------------------------------- |
-| width     | number  | Column width expressed in pixels                                             |
-| pageBreak | boolean | True to insert a page break before the first column of the range, else false |
-| visible   | boolean | True if the column is visible, else false                                    |
-| resizable | boolean | True if the column can be resized, else false                                |
-| headers   | テキスト    | Column header text                                                           |
+| プロパティ     | タイプ     | 説明                                          |
+| --------- | ------- | ------------------------------------------- |
+| width     | number  | カラムの幅 (ピクセル単位)                              |
+| pageBreak | boolean | レンジ内の先頭カラムの前に改ページを挿入する場合には true、それ以外は false |
+| visible   | boolean | カラムが表示状態であれば true、それ以外は false               |
+| resizable | boolean | カラムがリサイズ可能であれば true、それ以外は false             |
+| headers   | テキスト    | カラムヘッダーのテキスト                                |
 
 
 #### 例題
 
-To change the size of the second column and set the header, you write:
+2列目のカラムの幅を変更して、ヘッダーを設定します:
 
 ```4d
 C_OBJECT($column;$properties)
 
-$column:=VP Column("ViewProArea";1) //column B
+$column:=VP Column("ViewProArea";1) // カラムB を取得
 $properties:=New object("width";100;"header";"Hello World")
 
 VP SET COLUMN ATTRIBUTES($column;$properties)
@@ -3858,19 +3858,19 @@ VP SET COLUMN ATTRIBUTES($column;$properties)
 
 #### 説明
 
-The `VP SET COLUMN COUNT` command <!-- REF #_method_.VP SET COLUMN COUNT.Summary -->defines the total number of columns in *vpAreaName*<!-- END REF -->.
+`VP SET COLUMN COUNT` コマンドは、 <!-- REF #_method_.VP SET COLUMN COUNT.Summary -->*vpAreaName* 引数内にあるカラムの総数を定義します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-Pass the total number of columns in the *columnCount* parameter. *columnCount* 引数は 0 より大きい値でなくてはなりません。
+*columnCount* には、カラムの総数を渡します。 *columnCount* 引数は 0 より大きい値でなくてはなりません。
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the *columnCount* will be applied (counting begins at 0). 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
+任意の *sheet* 引数として、シートのインデックス (0 起点) を渡すことで、*columnCount* が適用されるスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
 #### 例題
 
-The following code defines five columns in the 4D View Pro area:
+以下のコードは 4D View Pro エリア内に 5つのカラムを定義します:
 
 ```4d
 VP SET COLUMN COUNT("ViewProArea";5)
@@ -3889,29 +3889,29 @@ VP SET COLUMN COUNT("ViewProArea";5)
 
 <!-- REF #_method_.VP SET CURRENT SHEET.Params -->
 
-| 引数         | タイプ  |    | 説明                             |
-| ---------- | ---- | -- | ------------------------------ |
-| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名        |
-| index      | 整数   | <- | Index of the new current sheet |
+| 引数         | タイプ  |    | 説明                      |
+| ---------- | ---- | -- | ----------------------- |
+| vpAreaName | テキスト | -> | 4D View Pro フォームオブジェクト名 |
+| index      | 整数   | <- | 新しいカレントシートのインデックス       |
 <!-- END REF --> 
 
 #### 説明
 
-The `VP SET CURRENT SHEET` command <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->sets the current sheet in *vpAreaName*<!-- END REF --> . カレントシートとは、ドキュメント内で選択されているシートのことです。
+`VP SET CURRENT SHEET` コマンドは、 <!-- REF #_method_.VP SET CURRENT SHEET.Summary -->*vpAreaName* 引数で指定した View Pro エリアのカレントシートを設定します<!-- END REF --> 。 カレントシートとは、ドキュメント内で選択されているシートのことです。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *index*, pass the index of the sheet to be set as current sheet. If the index passed is inferior to 0 or exceeds the number of sheets, the command does nothing.
+*index* 引数には、カレントシートに設定したいシートのインデックスを渡します。 index 引数が 0未満の場合、またはシートの総数より多い場合、コマンドは何もしません。
 
 > インデックスは 0 起点です。
 
 #### 例題
 
-The document's current sheet is the first sheet:
+ドキュメントの最初のシートがカレントシートになっています:
 
 ![first-sheet-selected](assets/en/ViewPro/vp-sheet-3-select.png)
 
-Set the current sheet to the third sheet:
+カレントシートを第3シートに設定します:
 
 ```4d
 VP SET CURRENT SHEET("ViewProArea";2)
@@ -3937,34 +3937,34 @@ VP SET CURRENT SHEET("ViewProArea";2)
 
 #### 説明
 
-The `VP SET CUSTOM FUNCTIONS` command <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->designates the 4D formulas that can be called directly from 4D View Pro formulas<!-- END REF -->. Because custom functions are not stored in the document,`VP SET CUSTOM FUNCTIONS` must be executed in the `On Load` form event.
+`VP SET CUSTOM FUNCTIONS` コマンドは、 <!-- REF #_method_.VP SET CUSTOM FUNCTIONS.Summary -->4D View Pro フォーミュラから直接呼び出し可能な 4Dフォーミュラを指定します<!-- END REF -->。 カスタムのファンクションはドキュメント内に保存されていないので、`VP SET CUSTOM FUNCTIONS` は `On Load` フォームイベント内で呼び出される必要があります。
 
-The formulas specified by `VP SET CUSTOM FUNCTIONS` appear in a pop-up menu when the first letter of their name is entered. See the [Formulas and Functions](formulas.md) page.
+`VP SET CUSTOM FUNCTIONS` で指定されたフォーミュラは、最初の文字が入力されるとポップアップメニューに表示されます。 詳細については [式と関数](formulas.md) を参照ください。
 
-> If `VP SET CUSTOM FUNCTIONS` is called multiple times for the same area, in the same session, only the last call is taken into account.
+> `VP SET CUSTOM FUNCTIONS` が同一セッション中に同じエリアに対して複数回呼び出された場合、最後の呼び出しのみが有効になります。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-In the *formulaObj* parameter, pass an object containing the 4D formulas that can be called from 4D View Pro formulas as well as additional properties. Each `customFunction` property passed in *formulaObj* becomes the name of a function in the 4D View Pro area.
+*formulaObj* 引数として、4D View Pro フォーミュラから呼び出し可能な 4Dフォーミュラと、その追加のプロパティを格納したオブジェクトを渡します。 *formulaObj* 引数の各 `customFunction` プロパティが 4D View Pro エリア内でのファンクション名になります。
 
-| プロパティ                    |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| ------------------------ | ---------- | ---------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<customFunction>` |            |            | オブジェクト              | カスタムファンクションの名前。 `<customFunction>` defines the name of the custom function to display in 4D View Pro formulas (no spaces allowed)                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|                          | formula    |            | オブジェクト              | 4D formula object (mandatory). See the `Formula` command.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|                          | parameters |            | Object の Collection | Collection of parameters (in the order they are defined in the formula)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|                          |            | \[ ].name | テキスト                | Name of parameter to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|                          |            | \[ ].type | 数値                  | 引数の型。 サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>If *type* is omitted or if the default value (-1) is passed, the value is automatically sent with its type, except date or time values which are sent as an object (see [Parameters](formulas.md#parameters) section).<p><p>If *type* is `Is object`, the object has the same structure as the object returned by [VP Get value](#vp-get-value). |
-|                          | summary    |            | テキスト                | Formula description to display in 4D View Pro                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-|                          | minParams  |            | 数値                  | 引数の最小の数                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|                          | maxParams  |            | 数値                  | 引数の最大の数。 Passing a number higher than the length of *parameters* allows declaring "optional" parameters with default type                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-> **WARNING**
+| プロパティ                    |            |            | タイプ                 | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ------------------------ | ---------- | ---------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `<customFunction>` |            |            | オブジェクト              | カスタムファンクションの名前。 `<customFunction>` は、4D View Pro フォーミュラで表示するカスタムファンクションの名前を定義します (スペースは使用できません)                                                                                                                                                                                                                                                                                                                                                                 |
+|                          | formula    |            | オブジェクト              | 4Dフォーミュラオブジェクト (必須)。 `Formula` コマンド参照。                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                          | parameters |            | Object の Collection | 引数のコレクション (フォーミュラ内で定義されている順)                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+|                          |            | \[ ].name | テキスト                | 4D View Pro に表示する引数の名前。                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                          |            | \[ ].type | 数値                  | 引数の型。 サポートされている型:<li>`Is Boolean`</li><li>`Is date`</li><li>`Is Integer`</li><li>`Is object`</li><li>`Is real`</li><li>`Is text`</li><li>`Is time`</li>*type* 省略時、またはデフォルト値 (-1) が渡された場合、値は型と一緒に渡されますが、日付と時間の値に関してはオブジェクトとして送られます ([引数](formulas.md#引数) の章を参照ください)。<p><p>*type* が `Is object` の場合、そのオブジェクトは [`VP Get value`](#vp-get-value) によって返されるオブジェクトと同じ構造を持ちます。 |
+|                          | summary    |            | テキスト                | 4D View Pro に表示するフォーミュラの説明                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|                          | minParams  |            | 数値                  | 引数の最小の数                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                          | maxParams  |            | 数値                  | 引数の最大の数。 ここに *parameters* の length より大きな値を渡すことによって、デフォルトの型を持つ "任意の" 引数を宣言できるようになります。                                                                                                                                                                                                                                                                                                                                                                                  |
+> **警告**
 > 
-> * As soon as `VP SET CUSTOM FUNCTIONS` is called, the methods allowed by the [VP SET ALLOWED METHODS](#vp-set-allowed-methods) command (if any) are ignored in the 4D View Pro area.
+> * `VP SET CUSTOM FUNCTIONS` が呼び出された場合、[VP SET ALLOWED METHODS](#vp-set-allowed-methods) コマンドにより許可されたメソッド (あれば) は同 4D View Pro エリアにおいて無視されます。
 > * `VP SET CUSTOM FUNCTIONS` が呼び出されると、4D View Pro エリアは `SET TABLE TITLES` や `SET FIELD TITLES` コマンドに基づく機能を無視します。
 
 #### 例題
 
-You want to use formula objects in a 4D View Pro area to add numbers, retrieve a customer's last name and gender:
+4D View Pro エリア内で、フォーミュラオブジェクトを使用して、数値を追加/顧客の苗字/顧客の性別を取得します:
 
 ```4d
 Case of
@@ -3973,19 +3973,19 @@ Case of
        var $o : Object
        $o:=New object
 
-// Define "addnum" function from a method named "addnum"
+// "addnum" メソッドを使用した "addnum" ファンクションを定義します
        $o.addnum:=New object
        $o.addnum.formula:=Formula(addnum)
        $o.addnum.parameters:=New collection
        $o.addnum.parameters.push(New object("name";"num1";"type";Is Integer))
        $o.addnum.parameters.push(New object("name";"num2";"type";Is Integer))
 
-// Define "ClientLastName" function from a database field
-       $o.ClientLastName:=New object
+// データベースフィールドから "ClientLastName" ファンクションを定義します
+$o.ClientLastName:=New object
        $o.ClientLastName.formula:=Formula([Customers]lastname)
        $o.ClientLastName.summary:="Lastname of the current client"
 
-// Define "label" function from a 4D expression with one parameter
+// 引数を 1つ受け取る 4D式から "label" ファンクションを定義します
        $o.label:=New object
        $o.label.formula:=Formula(ds.Customers.get($1).label)
        $o.label.parameters:=New collection
@@ -4148,35 +4148,35 @@ Here's the result once the columns are generated:
 
 <!-- REF #_method_.VP SET DATE TIME VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
-| dateValue     | 日付     | -> | Date value to set |
-| timeValue     | 時間     | -> | Time value to set |
-| formatPattern | テキスト   | -> | Format of value   |
+| 引数            | タイプ    |    | 説明        |
+| ------------- | ------ | -- | --------- |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト |
+| dateValue     | 日付     | -> | 設定する日付値   |
+| timeValue     | 時間     | -> | 設定する時間値   |
+| formatPattern | テキスト   | -> | 値のフォーマット  |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET DATE TIME VALUE` command <!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->assigns a specified date and time value to a designated cell range<!-- END REF -->.
+`VP SET DATE TIME VALUE` コマンドは、 <!-- REF #_method_.VP SET DATE TIME VALUE.Summary -->指定されたセルレンジに日付・時間値を割り当てます<!-- END REF -->。
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
-The *dateValue* parameter specifies a date value to be assigned to the *rangeObj*.
+*dateValue* 引数に、*rangeObj* 引数のレンジに割り当てたい日付値を指定します。
 
-The *timeValue* parameter specifies a time value (expressed in seconds) to be assigned to the *rangeObj*.
+*timeValue* 引数に、*rangeObj* 引数のレンジに割り当てたい時間値 (秒単位) を指定します。
 
-The optional *formatPattern* defines a pattern for the *dateValue* and *timeValue* parameters. For information on patterns and formatting characters, please refer to the [Date and time formats](configuring.md#date-and-time-formats) section.
+任意の *formatPattern* 引数は、*dateValue* および *timeValue* 引数に対するパターンを定義します。 パターンおよびフォーマット文字に関しての情報については、[日付と時間のフォーマット](configuring.md#日付と時間のフォーマット) の章を参照してください。
 
 #### 例題
 
 
 ```4d
-//Set the cell value as the current date and time
+// セルの値をカレントの日付と時間に設定
 VP SET DATE TIME VALUE(VP Cell("ViewProArea";6;2);Current time;Current date;vk pattern full date time)
 
-//Set the cell value as the 18th of December
+// セルの値を 12月18日に設定
 VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pattern sortable date time)
 ```
 
@@ -4191,42 +4191,42 @@ VP SET DATE TIME VALUE(VP Cell("ViewProArea";3;9);!2024-12-18!;?14:30:10?;vk pat
 
 <!-- REF #_method_.VP SET DATE VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
-| dateValue     | 日付     | -> | Date value to set |
-| formatPattern | テキスト   | -> | Format of value   |
+| 引数            | タイプ    |    | 説明        |
+| ------------- | ------ | -- | --------- |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト |
+| dateValue     | 日付     | -> | 設定する日付値   |
+| formatPattern | テキスト   | -> | 値のフォーマット  |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET DATE VALUE` command <!-- REF #_method_.VP SET DATE VALUE.Summary -->assigns a specified date value to a designated cell range<!-- END REF -->.
+`VP SET DATE VALUE` コマンドは、 <!-- REF #_method_.VP SET DATE VALUE.Summary -->指定されたセルレンジに日付値を割り当てます<!-- END REF -->。
 
-In *rangeObj*, pass a range of the cell(s) whose value you want to specify. *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
+*rangeObj* には、値を割り当てたいセルのレンジを渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
-The *dateValue* parameter specifies a date value to be assigned to the *rangeObj*.
+*dateValue* 引数に、*rangeObj* 引数のレンジに割り当てたい日付値を指定します。
 
-The optional *formatPattern* defines a pattern for the *dateValue* parameter. Pass any custom format or you can use one of the following constants:
+任意の *formatPattern* 引数は、*dateValue* 引数に対するパターンを定義します。 カスタムのフォーマット、または以下の定数のいずれかを渡します:
 
-| 定数                      | 説明                                       | Default US pattern   |
-| ----------------------- | ---------------------------------------- | -------------------- |
-| `vk pattern long date`  | ISO 8601 format for the full date        | "dddd, dd MMMM yyyy" |
-| `vk pattern month day`  | ISO 8601 format for the month and day    | "MMMM dd"            |
-| `vk pattern short date` | Abbreviated ISO 8601 format for the date | "MM/dd/yyyy"         |
-| `vk pattern year month` | ISO 8601 format for the month and year   | "yyyy MMMM"          |
+| 定数                      | 説明                       | デフォルト US パターン        |
+| ----------------------- | ------------------------ | -------------------- |
+| `vk pattern long date`  | ISO 8601 フォーマットの完全な日付。   | "dddd, dd MMMM yyyy" |
+| `vk pattern month day`  | ISO 8601 フォーマットの月と日付。    | "MMMM dd"            |
+| `vk pattern short date` | 省略形の ISO 8601 フォーマットの日付。 | "MM/dd/yyyy"         |
+| `vk pattern year month` | ISO 8601 フォーマットの年と月。     | "yyyy MMMM"          |
 
-For information on patterns and formatting characters, please refer to the [Date and time formats](configuring.md#date-and-time-formats) section.
+パターンおよびフォーマット文字に関しての情報については、[日付と時間のフォーマット](configuring.md#日付と時間のフォーマット) の章を参照してください。
 
 
 #### 例題
 
 
 ```4d
-//Set the cell value to the current date
+// セルの日付をカレントの日付に設定します
 VP SET DATE VALUE(VP Cell("ViewProArea";4;2);Current date))
 
-//Set the cell value to a specific date with a designated format
+// セルの値を、指定されたフォーマットの特定の日付に設定します
 VP SET DATE VALUE(VP Cell("ViewProArea";4;4);Date("12/25/94");"d/m/yy ")
 VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 ```
@@ -4241,23 +4241,23 @@ VP SET DATE VALUE(VP Cell("ViewProArea";4;6);!2005-01-15!;vk pattern month day)
 
 <!-- REF #_method_.VP SET DEFAULT STYLE.Params -->
 
-| 引数         | タイプ    |    | 説明                                    |
-| ---------- | ------ | -- | ------------------------------------- |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名               |
-| styleObj   | オブジェクト | -> | スタイルオブジェクト                            |
-| sheet      | 整数     | -> | Sheet index (default = current sheet) |
+| 引数         | タイプ    |    | 説明                        |
+| ---------- | ------ | -- | ------------------------- |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名   |
+| styleObj   | オブジェクト | -> | スタイルオブジェクト                |
+| sheet      | 整数     | -> | シートインデックス (デフォルト=カレントシート) |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET DEFAULT STYLE` command <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->defines the style in the *styleObj* as the default style for a *sheet*<!-- END REF -->.
+`VP SET DEFAULT STYLE` コマンドは、 <!-- REF #_method_.VP SET DEFAULT STYLE.Summary -->*sheet* で指定したシートに対して、*styleObj* 引数のスタイルをデフォルトスタイルとして定義します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。 存在しない名前を渡した場合、エラーが返されます。
 
-The *styleObj* lets you pass an object containing style settings. You can use an existing style sheet or you can create a new style. For more information, see the [Style objects](configuring.md#style-objects) paragraph.
+*styleObj* にはスタイル設定を格納したオブジェクトを渡します。 既存のスタイルシートを使用することもできますし、新しいスタイルを作成することも可能です。 詳細については、[スタイルオブジェクト](configuring.md#スタイルオブジェクト) を参照ください。
 
-In the optional *sheet* parameter, you can designate a specific spreadsheet where the style will be defined. 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
+任意の *sheet* 引数として、シートのインデックスを渡すことで、スタイルが定義されるスプレッドシートを指定することができます。 省略された場合はデフォルトでカレントスプレッドシートが使用されます。 以下の定数を使用することでカレントのスプレッドシートを明示的に選択することができます:
 
 *   `vk current sheet`
 
@@ -4267,7 +4267,7 @@ In the optional *sheet* parameter, you can designate a specific spreadsheet wher
 $style:=New object
 $style.hAlign:=vk horizontal align left
 $style.font:="12pt papyrus"
-$style.backColor:="#E6E6FA" //light purple color
+$style.backColor:="#E6E6FA" // 薄い紫色
 
 VP SET DEFAULT STYLE("myDoc";$style)
 ```
@@ -4285,23 +4285,23 @@ VP SET DEFAULT STYLE("myDoc";$style)
 
 <!-- REF #_method_.VP SET FIELD.Params -->
 
-| 引数            | タイプ    |    | 説明                                      |
-| ------------- | ------ | -- | --------------------------------------- |
-| rangeObj      | オブジェクト | -> | レンジオブジェクト                               |
-| フィールド         | ポインター  | -> | Reference to field in virtual structure |
-| formatPattern | テキスト   | -> | Format of field                         |
+| 引数            | タイプ    |    | 説明                  |
+| ------------- | ------ | -- | ------------------- |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト           |
+| フィールド         | ポインター  | -> | 仮想ストラクチャーのフィールドへの参照 |
+| formatPattern | テキスト   | -> | フィールドのフォーマット        |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET FIELD` command <!-- REF #_method_.VP SET FIELD.Summary -->assigns a 4D database virtual field to a designated cell range<!-- END REF -->.
+`VP SET FIELD` コマンドは、 <!-- REF #_method_.VP SET FIELD.Summary -->指定されたセルレンジに、4Dデータベースの仮想フィールドを割り当てます<!-- END REF -->。
 
-In *rangeObj*, pass a range of the cell(s) whose value you want to specify. If *rangeObj* includes multiple cells, the specified field will be linked in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジを渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定されたフィールドはそれぞれのセルに対して繰り返し割り当てられます。
 
-The *field* parameter specifies a 4D database [virtual field](formulas.md#referencing-fields-using-the-virtual-structure) to be assigned to the *rangeObj*. The virtual structure name for *field* can be viewed in the formula bar. If any of the cells in *rangeObj* have existing content, it will be replaced by *field*.
+*field* 引数は、*rangeObj* のレンジに対して割り当てられる 4Dデータベースの [仮想フィールド](formulas.md#仮想ストラクチャーを使ったフィールド参照) を指定します。 フォーミュラバーには、*field* の仮想ストラクチャー名が表示されます。 *rangeObj* に含まれるセルに既存のコンテンツがあった場合、そのコンテンツは *field* で上書きされます。
 
-The optional *formatPattern* defines a pattern for the *field* parameter. You can pass any valid [custom format](configuring.md#cell-format).
+任意の *formatPattern* 引数は、*field* 引数に対するパターンを定義します。 有効な [カスタムフォーマット](configuring.md#セルフォーマット) を渡すことができます。
 
 #### 例題
 
@@ -4318,25 +4318,25 @@ VP SET FIELD(VP Cell("ViewProArea";5;2);->[TableName]Field)
 
 <!-- REF #_method_.VP SET FORMULA.Params -->
 
-| 引数            | タイプ    |    | 説明                   |
-| ------------- | ------ | -- | -------------------- |
-| rangeObj      | オブジェクト | -> | レンジオブジェクト            |
-| formula       | テキスト   | -> | Formula or 4D method |
-| formatPattern | テキスト   | -> | Format of field      |
+| 引数            | タイプ    |    | 説明               |
+| ------------- | ------ | -- | ---------------- |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト        |
+| formula       | テキスト   | -> | フォーミュラまたは 4Dメソッド |
+| formatPattern | テキスト   | -> | フィールドのフォーマット     |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET FORMULA` command <!-- REF #_method_.VP SET FORMULA.Summary -->assigns a specified formula or 4D method to a designated cell range<!-- END REF -->.
+`VP SET FORMULA` コマンドは、 <!-- REF #_method_.VP SET FORMULA.Summary -->指定されたセルレンジにフォーミュラまたは 4Dメソッドを割り当てます<!-- END REF -->。
 
-*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 If *rangeObj* includes multiple cells, the formula specified will be linked in each cell.
+*rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定されたフォーミュラはそれぞれのセルに対して繰り返し割り当てられます。
 
-The *formula* parameter specifies a formula or 4D method name to be assigned to the *rangeObj*. If a 4D method is used, it must be allowed with the [`VP SET ALLOWED METHODS`](#vp-set-allowed-method) command.
+*formula* 引数に、*rangeObj* 引数のレンジに割り当てたいフォーミュラまたは 4Dメソッド名を指定します。 4Dメソッドを使用する場合、そのメソッドは [`SET ALLOWED METHODS`](#vp-set-allowed-method) コマンドで許可されている必要があります。
 
-The optional *formatPattern* defines a [pattern](configuring.md#cell-format) for the *formula*.
+任意の *formatPattern* 引数は、*formula* に対する [パターン](configuring.md#セルフォーマット) を定義します。
 
-You remove the formula in *rangeObj* by replacing it with an empty string ("").
+*rangeObj* 内のフォーミュラは、空の文字列 ("") で置き換えることで削除することができます。
 
 #### 例題 1
 
@@ -4346,7 +4346,7 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"SUM($A$1:$C$10)")
 
 #### 例題 2
 
-To remove the formula:
+フォーミュラを削除します:
 
 ```4d
 VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
@@ -4362,18 +4362,18 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 
 <!-- REF #_method_.VP SET FORMULAS.Params -->
 
-| 引数          | タイプ    |    | 説明                     |
-| ----------- | ------ | -- | ---------------------- |
-| rangeObj    | オブジェクト | -> | セルレンジオブジェクト            |
-| formulasCol | コレクション | -> | Collection of formulas |
+| 引数          | タイプ    |    | 説明            |
+| ----------- | ------ | -- | ------------- |
+| rangeObj    | オブジェクト | -> | セルレンジオブジェクト   |
+| formulasCol | コレクション | -> | フォーミュラのコレクション |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET FORMULAS` command <!-- REF #_method_.VP SET FORMULAS.Summary -->assigns a collection of formulas starting at the specified cell range<!-- END REF -->.
+`VP SET FORMULAS` コマンドは、 <!-- REF #_method_.VP SET FORMULAS.Summary -->指定のセルレンジから開始してフォーミュラのコレクションを割り当てていきます<!-- END REF -->。
 
-In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose formula you want to specify. *rangeObj* のレンジが複数レンジを指定している場合、最初のレンジのみが使用されます。
+*rangeObj* には、フォーミュラを割り当てたいセルのレンジ ([VP Cell](#vp-cell) で作成されたレンジ) を渡します。 *rangeObj* のレンジが複数レンジを指定している場合、最初のレンジのみが使用されます。
 
 The *formulasCol* is a two-dimensional collection:
 
@@ -4487,7 +4487,7 @@ VP SET FROZEN PANES("ViewProArea";$panes)
 | ------------- | ------ | -- | ------------------- |
 | rangeObj      | オブジェクト | -> | レンジオブジェクト           |
 | numberValue   | 数値     | -> | Number value to set |
-| formatPattern | テキスト   | -> | Format of value     |
+| formatPattern | テキスト   | -> | 値のフォーマット            |
 
 <!-- END REF -->  
 
@@ -4607,7 +4607,7 @@ The `VP SET ROW ATTRIBUTES` command <!-- REF #_method_.VP SET ROW ATTRIBUTES.Sum
 
 In the *rangeObj*, pass an object containing a range. If the range contains both columns and rows, attributes are applied only to the rows.
 
-The *propertyObj* parameter lets you specify the attributes to apply to the rows in the *rangeObj*. These attributes are:
+The *propertyObj* parameter lets you specify the attributes to apply to the rows in the *rangeObj*. 指定できる属性は以下の通りです:
 
 | プロパティ     | タイプ     | 説明                                                                        |
 | --------- | ------- | ------------------------------------------------------------------------- |
@@ -4977,7 +4977,7 @@ With a page break:
 | ------------- | ------ | -- | ----------------- |
 | rangeObj      | オブジェクト | -> | レンジオブジェクト         |
 | textValue     | テキスト   | -> | Text value to set |
-| formatPattern | テキスト   | -> | Format of value   |
+| formatPattern | テキスト   | -> | 値のフォーマット          |
 
 <!-- END REF -->  
 
@@ -5008,11 +5008,11 @@ VP SET TEXT VALUE(VP Cell("ViewProArea";3;2);"Test 4D View Pro")
 
 <!-- REF #_method_.VP SET TIME VALUE.Params -->
 
-| 引数            | タイプ    |    | 説明                |
-| ------------- | ------ | -- | ----------------- |
-| rangeObj      | オブジェクト | -> | レンジオブジェクト         |
-| timeValue     | テキスト   | -> | Time value to set |
-| formatPattern | テキスト   | -> | Format of value   |
+| 引数            | タイプ    |    | 説明        |
+| ------------- | ------ | -- | --------- |
+| rangeObj      | オブジェクト | -> | レンジオブジェクト |
+| timeValue     | テキスト   | -> | 設定する時間値   |
+| formatPattern | テキスト   | -> | 値のフォーマット  |
 
 <!-- END REF -->  
 
