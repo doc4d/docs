@@ -823,11 +823,11 @@ If the mailbox *name* is not selectable or does not exist, the function generate
 
 El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 
-| Propiedad  | Tipo   | Descripción                                                         |
-| ---------- | ------ | ------------------------------------------------------------------- |
-| name       | texto  | Nombre del buzón                                                    |
-| mailCount  | number | Número de mensajes en el buzón                                      |
-| mailRecent | number | Number of messages with the "recent" flag (indicating new messages) |
+| Propiedad  | Tipo   | Descripción                                                                    |
+| ---------- | ------ | ------------------------------------------------------------------------------ |
+| name       | texto  | Nombre del buzón                                                               |
+| mailCount  | number | Número de mensajes en el buzón                                                 |
+| mailRecent | number | Número de mensajes con el marcador "reciente" (que indica los mensajes nuevos) |
 
 
 
@@ -875,18 +875,18 @@ In the optional `parameters` parameter, pass an object containing values to filt
 
 | Propiedad    | Tipo     | Descripción                                          |
 | ------------ | -------- | ---------------------------------------------------- |
-| isSubscribed | Booleano | <li>**True** to return only subscribed mailboxes</li><li> **False** to return all available mailboxes</li> |
+| isSubscribed | Booleano | <li>**True** para devolver sólo los buzones suscritos</li><li> **False** para devolver todos los buzones disponibles</li> |
 
 #### Resultado
 
 Each object of the returned collection contains the following properties:
 
-| Propiedad        | Tipo     | Descripción                                                                                                          |
-| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| \[].name        | texto    | Nombre del buzón                                                                                                     |
-| \[].selectable  | booleano | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
-| \[].inferior    | booleano | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
-| \[].interesting | booleano | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
+| Propiedad        | Tipo     | Descripción                                                                                                        |
+| ---------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| \[].name        | texto    | Nombre del buzón                                                                                                   |
+| \[].selectable  | booleano | Indica si los derechos de acceso permiten o no seleccionar el buzón: <ul><li>true - el buzón puede ser seleccionado</li><li>false - el buzón no puede ser seleccionado</li></ul>                     |
+| \[].inferior    | booleano | Indica si los derechos de acceso permiten o no crear una jerarquía inferior en el buzón: <ul><li>true - se puede crear un nivel inferior</li><li>false - no se puede crear un nivel inferior</li></ul> |
+| \[].interesting | booleano | Indica si el buzón ha sido marcado como "interesante" por el servidor: <ul><li>true - El buzón ha sido marcado como "interesante" por el servidor. Por ejemplo, puede contener mensajes nuevos.</li><li>false - El buzón no ha sido marcado como "interesante" por el servidor.</li></ul>                   |
 
 
 If the account does not contain any mailboxes, an empty collection is returned.
@@ -940,8 +940,8 @@ The `.getDelimiter()` function <!-- REF #IMAPTransporterClass.getDelimiter().Sum
 
 The delimiter is a character which can be used to:
 
-*   create lower level (inferior) mailboxes
-*   search higher or lower within the mailbox hierarchy
+*   crear buzones de nivel inferior
+*   buscar más arriba o más abajo en la jerarquía del buzón
 
 
 #### Resultado
@@ -1006,10 +1006,10 @@ In the first parameter, you can pass either:
 
 The optional *options* parameter allows you pass an object defining additional instructions for handling the message. Las siguientes propiedades están disponibles:
 
-| Propiedad  | Tipo     | Descripción                                                                                                                     |
-| ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | booleano | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Valor por defecto: True |
-| withBody   | booleano | Pass True to return the body of the message. If False, only the message header is returned. Valor por defecto: True             |
+| Propiedad  | Tipo     | Descripción                                                                                                                      |
+| ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen | booleano | Si True, el mensaje se marca como "visto" en el buzón. Si es False, el mensaje no se marca como "visto". Valor por defecto: True |
+| withBody   | booleano | Pase True para devolver el cuerpo del mensaje. Si es False, sólo se devuelve el encabezado del mensaje. Valor por defecto: True  |
 > * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
 > * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
