@@ -79,9 +79,9 @@ Dans le paramètre optionnel *settings*, vous pouvez passer un objet contenant l
 ```4d
 var $employees : cs.EmployeeSelection
 ALL RECORDS([Employee])
-$employees:=Create entity selection([Employee])
-// The $employees entity selection now contains a set of reference
-// on all entities related to the Employee dataclass
+$employees:=Create entity selection([Employee]) 
+// L'entity selection $employees contient maintenant un ensemble de 
+// références vers toutes les entités de la dataclass Employee
 ```
 
 #### Voir aussi
