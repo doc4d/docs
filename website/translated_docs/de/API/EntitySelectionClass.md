@@ -731,6 +731,8 @@ Example with the `dk stop dropping on first error` option:
 
 
 
+
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -1177,7 +1179,7 @@ Entity selections always have a `.length` property.
 
 <!-- REF #EntitySelectionClass.max().Params -->
 | Parameter     | Typ  |    | Beschreibung                                     |
-| ------------- | ---- |:--:| ------------------------------------------------ |
+| ------------- | ---- | -- | ------------------------------------------------ |
 | attributePath | Text | -> | Path of the attribute to be used for calculation |
 | Ergebnis      | any  | <- | Highest value of attribute                       |
 <!-- END REF -->
@@ -1464,7 +1466,7 @@ You can add as many objects in the criteria collection as necessary.
 
 
 <!-- REF EntitySelectionClass.orderByFormula().Desc -->
-## .orderByFormula( )
+## .orderByFormula()
 
 <details><summary>History</summary>
 | Version | Changes |
@@ -1789,6 +1791,7 @@ A list box displays the Form.students entity selection and several clients work 
 | selectedEntities | 4D.EntitySelection | -> | Entity selection with entities for which to know the rank in the entity selection |
 | Ergebnis         | Objekt             | <- | Range(s) of selected entities in entity selection                                 |
 <!-- END REF -->
+
 
 #### Beschreibung
 
@@ -2144,6 +2147,7 @@ var $employees : cs.EmployeeSelection
 
 $employeesCollection:=New collection
 $filter:=New collection
+
 $filter.push("firstName")
 $filter.push("lastName")
 

@@ -733,6 +733,8 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 
 
 
+
+
 <!-- REF #EntitySelectionClass.extract().Syntax -->**.extract**( *attributePath* : Text { ; *option* : Integer } ) : Collection<br>**.extract**( *attributePath* { ; *targetPath* } { ; *...attributePathN* : Text ; *targetPathN* : Text } ) : Collection<!-- END REF -->
 
 
@@ -1179,7 +1181,7 @@ Form.products.add(Form.product)
 
 <!-- REF #EntitySelectionClass.max().Params -->
 | 引数            | タイプ  |    | 説明          |
-| ------------- | ---- |:--:| ----------- |
+| ------------- | ---- | -- | ----------- |
 | attributePath | テキスト | -> | 計算に使用する属性パス |
 | 戻り値           | any  | <- | 属性の最大値      |
 <!-- END REF -->
@@ -1466,7 +1468,7 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 
 
 <!-- REF EntitySelectionClass.orderByFormula().Desc -->
-## .orderByFormula( )
+## .orderByFormula()
 
 <details><summary>履歴</summary>
 | バージョン  | 内容 |
@@ -1791,6 +1793,7 @@ pathObjects コレクションには必要な数だけオブジェクトを追�
 | selectedEntities | 4D.EntitySelection | -> | 呼び出し対象のエンティティセレクション内での位置を取得したい、選別されたエンティティのセレクション |
 | 戻り値              | オブジェクト             | <- | 呼び出し対象のエンティティセレクションにおける、選別したエンティティの位置範囲           |
 <!-- END REF -->
+
 
 #### 説明
 
@@ -2146,6 +2149,7 @@ var $employees : cs.EmployeeSelection
 
 $employeesCollection:=New collection
 $filter:=New collection
+
 $filter.push("firstName")
 $filter.push("lastName")
 
