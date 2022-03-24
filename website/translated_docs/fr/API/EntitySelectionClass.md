@@ -731,6 +731,7 @@ Avec cette syntaxe, `.extract()` remplit la collection retournée avec des valeu
 
 Par défaut, les entités pour lesquelles *attributePath* est *null* ou indéfini sont ignorées dans la collection résultante. Vous pouvez passer la constante `ck keep null` dans le paramètre *option* pour intégrer ces valeurs comme des éléments **null** dans la collection retournée.
 
+
 *   Les attributs dataclass avec [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" sont extraits sous forme de collection d'entités (les duplications sont conservées).
 *   Les attributs dataclass avec [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" sont extraits sous forme de collection d'entity selections.
 
@@ -757,33 +758,33 @@ Considérons les tables et relations suivantes :
  var $firstnames; $addresses; $mailing; $teachers : Collection
   //
   //
-  //$firstnames is a collection of Strings
+  //$firstnames est une collection de Chaînes
 
 
  $firstnames:=ds.Teachers.all().extract("firstname")
   //
-  //$addresses is a collection of entities related to dataclass Address
-  //Null values for address are extracted
+  //$addresses est une collection d'entités liées à la dataclass Address
+  //Les valeurs null d'Address sont extraites
  $addresses:=ds.Teachers.all().extract("address";ck keep null)
   //
   //
-  //$mailing is a collection of objects with properties "who" and "to"
-  //"who" property content is String type
-  //"to" property content is entity type (Address dataclass)
+  //$mailing est une collection d'objets avec les propriétés "who" et "to"
+  //Le contenu de la propriété "who" est de type Chaîne 
+  //Le contenu de la propriété "to" est de type entity (dataclass Address)
  $mailing:=ds.Teachers.all().extract("lastname";"who";"address";"to")
   //
   //
-  //$mailing is a collection of objects with properties "who" and "city"
-  //"who" property content is String type
-  //"city" property content is String type
+  //$mailing est une collection d'objets avec les propriétés "who" et "city"
+  //Le contenu de la propriété "who" est de type Chaîne 
+  //Le contenu de la propriété "city" est de type Chaîne 
  $mailing:=ds.Teachers.all().extract("lastname";"who";"address.city";"city")
   //
-  //$teachers is a collection of objects with properties "where" and "who"
-  //"where" property content is String
-  //"who" property content is an entity selection (Teachers dataclass)
+  //$teachers est une collection d'objets avec les propriétés "where" et "who"
+  //Le contenu de la propriété "where" est de type Chaîne
+  //Le contenu de la propriété "who" est une entity selection (dataclass Teachers)
  $teachers:=ds.Address.all().extract("city";"where";"teachers";"who")
   //
-  //$teachers is a collection of entity selections
+  //$teachers est une collection d'entity selections
  $teachers:=ds.Address.all().extract("teachers")
 ```
 
@@ -921,6 +922,7 @@ Le code générique suivant duplique toutes les entités de l'entity selection :
 #### Description
 
 La fonction `.isAlterable()` <!-- REF #EntitySelectionClass.isAlterable().Summary -->retourne Vrai si l'entity selection est modifiable (alterable)<!-- END REF -->, et Faux si elle n'est pas modifiable.
+
 
 Pour plus d'informations, voir [Entity selections partageables ou modifiables](ORDA/entities.md#entity-selections-partageables-ou-modifiables).
 
@@ -1091,9 +1093,10 @@ Les entity selections ont toujours une propriété `.length`.
 
 
 <!-- REF #EntitySelectionClass.max().Params -->
-|Parameter|Type||Description|
-
-|---------|--- |:---:|------| |attributePath |Text|->|Path of the attribute to be used for calculation| |Result|any|<-|Highest value of attribute|
+| Paramètres    | Type |    | Description                                    |
+| ------------- | ---- |:--:| ---------------------------------------------- |
+| attributePath | Text | -> | Chemin de l'attribut à utiliser pour le calcul |
+| Résultat      | any  | <- | Valeur la plus haute de l'attribut             |
 <!-- END REF -->
 
 #### Description
@@ -1218,9 +1221,9 @@ Si l'entity selection initiale et le paramètre ne sont pas liés à la même da
  var $employees; $result : cs.EmployeeSelection
  var $employee : cs.EmployeeEntity
 
- $employees:=ds.Employee.query("lastName = :1";"H@")
-  // The $employees entity selection contains the entity with primary key 710 and other entities
-  // for ex. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (clé primaire 710)
+ $employees:=ds.Employee.query("lastName = :1";"H@") 
+  // l'entity selection $employees contient l'entité avec la clé primaire 710 ainsi que d'autres entités
+  // par ex. "Colin Hetrick", "Grady Harness", "Sherlock Holmes" (clé primaire 710)
 
  $employee:=ds.Employee.get(710) // "Sherlock Holmes"
 
