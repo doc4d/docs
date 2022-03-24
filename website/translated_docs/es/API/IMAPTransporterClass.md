@@ -1006,10 +1006,10 @@ In the first parameter, you can pass either:
 
 The optional *options* parameter allows you pass an object defining additional instructions for handling the message. Las siguientes propiedades están disponibles:
 
-| Propiedad  | Tipo     | Descripción                                                                                                                     |
-| ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | booleano | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Valor por defecto: True |
-| withBody   | booleano | Pass True to return the body of the message. If False, only the message header is returned. Valor por defecto: True             |
+| Propiedad  | Tipo     | Descripción                                                                                                                      |
+| ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen | booleano | Si True, el mensaje se marca como "visto" en el buzón. Si es False, el mensaje no se marca como "visto". Valor por defecto: True |
+| withBody   | booleano | Pase True para devolver el cuerpo del mensaje. Si es False, sólo se devuelve el encabezado del mensaje. Valor por defecto: True  |
 > * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
 > * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
 > * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
