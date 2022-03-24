@@ -123,7 +123,7 @@ Si la commande est appelée à partir d'un composant, passez le paramètre optio
 
 #### Description
 
-The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and returns a new object of the `4D.Folder` type<!-- END REF -->. It is identical to the [`Folder`](#folder) command (shortcut).
+La fonction `4D.Folder.new()` <!-- REF #4D.Folder.new().Summary -->crée et retourne un nouvel objet de type `4D.Folder`<!-- END REF -->. Elle est identique à la commande [`Folder`](#folder) (raccourci).
 
 > Il est recommandé d'utiliser la commande raccourci [`Folder`](#folder) au lieu de `4D.Folder.new()`. 
 
@@ -147,18 +147,18 @@ The `4D.Folder.new()` function <!-- REF #4D.Folder.new().Summary -->creates and 
 **.create()** : Boolean<!-- END REF -->
 
 <!--REF #FolderClass.create().Params -->
-| Paramètres | Type    |    | Description                                                  |
-| ---------- | ------- | -- | ------------------------------------------------------------ |
-| Résultat   | Booléen | <- | True if the folder was created successfully, false otherwise |
+| Paramètres | Type    |    | Description                                           |
+| ---------- | ------- | -- | ----------------------------------------------------- |
+| Résultat   | Booléen | <- | Vrai si le dossier a été créé avec succès, sinon Faux |
 <!-- END REF -->
 
 
 
 #### Description
 
-The `.create()` function <!-- REF #FolderClass.create().Summary -->creates a folder on disk according to the properties of the `Folder` object<!-- END REF -->.
+La fonction `.create()` <!-- REF #FolderClass.create().Summary -->crée un dossier sur disque en fonction des propriétés de l'objet `Folder`<!-- END REF -->.
 
-Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur la description des propriétés [platformPath](#platformpath) ou [path](#path). If the folder already exists on disk, the function does nothing (no error is thrown) and returns false.
+Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur la description des propriétés [platformPath](#platformpath) ou [path](#path). Si le dossier existe déjà sur disque, la fonction ne fait rien (aucune erreur n'est générée) et retourne faux.
 
 **Valeur retournée**
 
@@ -167,7 +167,7 @@ Le cas échéant, la fonction crée la hiérarchie du dossier en se basant sur l
 
 #### Exemple 1
 
-Create an empty folder in the database folder:
+Créer un dossier vide dans le dossier principal :
 
 ```4d
 var $created : Boolean
@@ -176,7 +176,7 @@ $created:=Folder("/PACKAGE/SpecialPrefs").create()
 
 #### Exemple 2
 
-Creation of the "/Archives2019/January/" folder in the database folder:
+Création d'un dossier "/Archives2019/January/" dans le dossier principal :
 
 ```4d
 $newFolder:=Folder("/PACKAGE/Archives2019/January")
@@ -213,13 +213,13 @@ End if
 | destinationFolder | 4D.Folder | -> | Dossier de destination pour l'alias ou le raccourci |
 | aliasName         | Text      | -> | Nom de l'alias ou du raccourci                      |
 | aliasType         | Integer   | -> | Type de lien de l'alias                             |
-| Résultat          | 4D.File   | <- | Alias or shortcut reference                         |
+| Résultat          | 4D.File   | <- | Référence de l'alias ou du raccourci du dossier     |
 <!-- END REF -->
 
 
 #### Description
 
-The `.createAlias()` function <!-- REF #FolderClass.createAlias().Summary -->creates an alias (macOS) or a shortcut (Windows)<!-- END REF --> to the folder with the specified *aliasName* name in the folder designated by the *destinationFolder* object.
+La fonction `.createAlias()` <!-- REF #FolderClass.createAlias().Summary -->crée un alias (macOS) ou un raccourci (Windows) du dossier<!-- END REF --> avec le nom *aliasName* dans le dossier désigné par l'objet *destinationFolder*.
 
 Passez le nom de l'alias ou du raccourci à créer dans le paramètre *aliasName*.
 
@@ -238,7 +238,7 @@ Un objet `4D.File` avec la propriété `isAlias` mise à **true**.
 
 #### Exemple
 
-You want to create an alias to an archive folder in your database folder:
+Vous souhaitez créer un alias pour un dossier d'archives dans votre dossier principal :
 
 ```4d
 $myFolder:=Folder("C:\\Documents\\Archives\\2019\\January";fk platform path)
@@ -270,30 +270,30 @@ $aliasFile:=$myFolder.createAlias(Folder("/PACKAGE");"Jan2019")
 
 
 <!-- REF #FolderClass.delete().Params -->
-| Paramètres | Type    |    | Description            |
-| ---------- | ------- | -- | ---------------------- |
-| option     | Integer | -> | Folder deletion option |
+| Paramètres | Type    |    | Description                      |
+| ---------- | ------- | -- | -------------------------------- |
+| option     | Integer | -> | Option de suppression du dossier |
 <!-- END REF -->
 
 
 
 #### Description
 
-The `.delete()` function <!-- REF #FolderClass.delete().Summary -->deletes the folder<!-- END REF -->.
+La fonction `.delete()` <!-- REF #FolderClass.delete().Summary -->supprime le dossier<!-- END REF -->.
 
-By default, for security reasons, if you omit the option parameter, `.delete( )` only allows empty folders to be deleted. If you want the command to be able to delete folders that are not empty, you must use the option parameter with one of the following constants:
+Par défaut, pour des raisons de sécurité, si vous omettez le paramètre option, `.delete()` permet uniquement de supprimer les dossiers vides. Si vous souhaitez que la commande supprime des dossiers qui ne sont pas vides, vous devez utiliser le paramètre option avec l'une des constantes suivantes :
 
-| Constante              | Valeur | Commentaire                                      |
-| ---------------------- | ------ | ------------------------------------------------ |
-| `Delete only if empty` | 0      | Deletes folder only when it is empty             |
-| `Delete with contents` | 1      | Deletes folder along with everything it contains |
+| Constante              | Valeur | Commentaire                                        |
+| ---------------------- | ------ | -------------------------------------------------- |
+| `Delete only if empty` | 0      | Supprime le dossier uniquement s'il est vide       |
+| `Delete with contents` | 1      | Supprime le dossier ainsi que son éventuel contenu |
 
-When `Delete only if empty` is passed or if you omit the option parameter:
+Lorsque la constante `Delete only if empty` est passée ou si vous omettez le paramètre option :
 
 *   Le dossier n'est supprimé que s'il est vide ; sinon, la commande ne fait rien et une erreur -47 est générée.
 *   Si le dossier n'existe pas, l'erreur -120 est générée.
 
-When `Delete with contents` is passed:
+Lorsque la constante `Delete with contents` est passée :
 
 *   Le dossier, ainsi que tout son contenu, est supprimé. **Attention** : Même si ce dossier et/ou son contenu sont verrouillés ou définis comme étant en lecture seule, si l'utilisateur dispose des droits d'accès appropriés, le dossier (et son contenu) est supprimé malgré tout.
 *   Si ce dossier, ou l'un des fichiers qu'il contient, ne peut être supprimé, la suppression est interrompue dès que le premier élément inaccessible est détecté, et une erreur(*) est retournée. Dans ce cas, le dossier ne peut être que partiellement supprimé. Lorsque la suppression est interrompue, vous pouvez utiliser la commande `GET LAST ERROR STACK` pour récupérer le nom et le chemin d'accès du dossier incriminé.
@@ -387,26 +387,26 @@ When `Delete with contents` is passed:
 | Paramètres        | Type      |    | Description                    |
 | ----------------- | --------- | -- | ------------------------------ |
 | destinationFolder | 4D.Folder | -> | Dossier de destination         |
-| newName           | Text      | -> | Full name for the moved folder |
-| Résultat          | 4D.Folder | <- | Moved folder                   |
+| newName           | Text      | -> | Nom complet du dossier déplacé |
+| Résultat          | 4D.Folder | <- | Dossier déplacé                |
 <!-- END REF -->
 
 
 #### Description
 
-The `.moveTo( )` function <!-- REF #FolderClass.moveTo().Summary -->moves or renames the `Folder` object (source folder) into the specified *destinationFolder*<!-- END REF -->.
+La fonction `.moveTo()` <!-- REF #FolderClass.moveTo().Summary -->déplace ou déplace et renomme l'objet `Folder` source dans le dossier *destinationFolder*<!-- END REF -->.
 
 Le *destinationFolder* doit exister sur disque, sinon une erreur est générée.
 
-By default, the folder retains its name when moved. If you want to rename the moved folder, pass the new full name in the *newName* parameter. Le nouveau nom doit être conforme aux règles de nommage (ex : il ne doit pas contenir de caractères tels que ":", "/", etc.), sinon une erreur est retournée.
+Par défaut, le dossier garde le même nom lorsqu'il est déplacé. Si vous souhaitez renommer le dossier déplacé, passez le nouveau nom complet dans le paramètre *newName*. Le nouveau nom doit être conforme aux règles de nommage (ex : il ne doit pas contenir de caractères tels que ":", "/", etc.), sinon une erreur est retournée.
 
 **Objet retourné**
 
-The moved `Folder` object.
+L'objet `Folder` déplacé.
 
 #### Exemple
 
-You want to move and rename a folder:
+Vous souhaitez déplacer et renommer un dossier :
 
 ```4d
  var $tomove; $moved : Object
@@ -454,24 +454,24 @@ You want to move and rename a folder:
 
 
 <!--REF #FolderClass.rename().Params -->
-| Paramètres | Type      |    | Description                  |
-| ---------- | --------- | -- | ---------------------------- |
-| newName    | Text      | -> | New full name for the folder |
-| Résultat   | 4D.Folder | <- | Renamed folder               |
+| Paramètres | Type      |    | Description                    |
+| ---------- | --------- | -- | ------------------------------ |
+| newName    | Text      | -> | Nouveau nom complet du dossier |
+| Résultat   | 4D.Folder | <- | Dossier renommé                |
 <!-- END REF -->
 
 
 
 #### Description
 
-The `.rename()` function <!-- REF #FolderClass.rename().Summary -->renames the folder with the name you passed in *newName* and returns the renamed `Folder` object<!-- END REF -->.
+La fonction `.rename()` <!-- REF #FolderClass.rename().Summary -->renomme le dossier avec le nom que vous avez passé dans le paramètre *newName* et retourne l'objet `Folder` renommé<!-- END REF -->.
 
 Le paramètre *newName* doit être conforme aux règles de nommage (ex : il ne doit pas contenir des caractères tels que ":", "/", etc.), sinon une erreur est retournée. S'il existe déjà un fichier portant le même nom, une erreur est retournée.
 
 
 **Objet retourné**
 
-The renamed `Folder` object.
+L'objet `Folder` renommé.
 
 #### Exemple
 

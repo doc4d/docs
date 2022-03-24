@@ -140,7 +140,7 @@ Si la commande est appelée à partir d'un composant, passez le paramètre optio
 
 #### Description
 
-La fonction `4D.File.new()` <!-- REF #4D.File.new().Summary -->créer et retourne un nouvel objet de type `4D.File`<!-- END REF -->. Elle est identique à la commande [`File`](#file) (raccourci).
+La fonction `4D.File.new()` <!-- REF #4D.File.new().Summary -->crée et retourne un nouvel objet de type `4D.File`<!-- END REF -->. Elle est identique à la commande [`File`](#file) (raccourci).
 
 > Il est recommandé d'utiliser la commande raccourci [`File`](#file) au lieu de `4D.File.new()`.
 

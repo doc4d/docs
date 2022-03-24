@@ -668,8 +668,8 @@ La función `.deleteBox()` <!-- REF #IMAPTransporterClass.deleteBox().Summary --
 
 En el parámetro `name`, pase el nombre del buzón a eliminar.
 > * La función no puede eliminar un buzón que tiene buzones hijos si el buzón padre tiene el atributo "\Noselect".
-> * All messages in the deleted mailbox will also be deleted.
-> * The ability to delete a mailbox depends on the mail server.
+> * Todos los mensajes del buzón eliminado también se borrarán.
+> * La posibilidad de eliminar un buzón depende del servidor de correo.
 
 
 **Objeto devuelto**
@@ -690,7 +690,7 @@ La función devuelve un objeto que describe el estado IMAP:
 
 #### Ejemplo
 
-To delete the "Nova Orion Industries" child mailbox from the "Bills" mailbox hierarchy:
+Para eliminar el buzón secundario "Nova Orion Industries" del interior del buzón "Bills":
 
 ```4d
 var $pw; $name : text
@@ -746,7 +746,7 @@ End if
 
 #### Descripción
 
-The `.expunge()` function <!-- REF #IMAPTransporterClass.expunge().Summary -->removes all messages with the "deleted" flag from the IMAP mail server.<!-- END REF --> The "deleted" flag can be set with the [`.delete()`](#delete) or [`.addFlags()`](#addflags) methods.
+La función `.expunge()` <!-- REF #IMAPTransporterClass.expunge().Summary -->elimina todos los mensajes con el marcador "deleted" del servidor de correo IMAP.<!-- END REF --> El marcador "deleted" puede establecerse con los métodos [`.delete()`](#delete) o [`.addFlags()`](#addflags).
 
 **Objeto devuelto**
 
@@ -814,21 +814,21 @@ $status:=$transporter.expunge()
 
 #### Descripción
 
-The `.getBoxInfo()` function <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->returns a `boxInfo` object corresponding to the current maibox, or the mailbox *name*<!-- END REF -->. This function returns the same information as [`.selectBox()`](#selectbox) without changing the current mailbox.
+La función `.getBoxInfo()` <!-- REF #IMAPTransporterClass.getBoxInfo().Summary -->devuelve un objeto `boxInfo` correspondiente al buzón de recepción actual o al buzón llamado *name*<!-- END REF -->. Esta función devuelve la misma información que [`.selectBox()`](#selectbox) sin cambiar el buzón actual.
 
-In the optional *name* parameter, pass the name of the mailbox to access. The name represents an unambiguous left-to-right hierarchy with levels separated by a specific delimiter character. The delimiter can be found with the [`.getDelimiter()`](#getdelimiter) function.
+En el parámetro opcional *name*, pase el nombre del buzón a acceder. El nombre representa una jerarquía inequívoca de izquierda a derecha, con niveles separados por un carácter delimitador específico. El delimitador se puede recuperar con la función [`.getDelimiter()`](#getdelimiter).
 
-If the mailbox *name* is not selectable or does not exist, the function generates an error and returns **null**.
+Si el buzón *name* no es seleccionable o no existe, la función genera un error y devuelve **null**.
 
 **Objeto devuelto**
 
 El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 
-| Propiedad  | Tipo   | Descripción                                                         |
-| ---------- | ------ | ------------------------------------------------------------------- |
-| name       | texto  | Nombre del buzón                                                    |
-| mailCount  | number | Número de mensajes en el buzón                                      |
-| mailRecent | number | Number of messages with the "recent" flag (indicating new messages) |
+| Propiedad  | Tipo   | Descripción                                                                    |
+| ---------- | ------ | ------------------------------------------------------------------------------ |
+| name       | texto  | Nombre del buzón                                                               |
+| mailCount  | number | Número de mensajes en el buzón                                                 |
+| mailRecent | number | Número de mensajes con el marcador "reciente" (que indica los mensajes nuevos) |
 
 
 
@@ -863,36 +863,36 @@ El objeto `boxInfo` devuelto contiene las siguientes propiedades:
 <!-- REF #IMAPTransporterClass.getBoxList().Params -->
 | Parámetros | Tipo       |    | Descripción                  |
 | ---------- | ---------- |:--:| ---------------------------- |
-| parameters | Objeto     | -> | Parameter object             |
+| parameters | Objeto     | -> | Objeto de parámetro          |
 | Resultado  | Collection | <- | Colección de objetos mailbox |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getBoxList()` function <!-- REF #IMAPTransporterClass.getBoxList().Summary -->returns a collection of mailboxes describing all of the available mailboxes<!-- END REF -->. This function allows you to locally manage the list of messages located on the IMAP mail server.
+La función `.getBoxList()` <!-- REF #IMAPTransporterClass.getBoxList().Summary -->devuelve una colección de bandejas de entrada que describe todas las bandejas de entrada disponibles<!-- END REF -->. Esta función permite gestionar localmente la lista de mensajes localizados en el servidor de correo IMAP.
 
-In the optional `parameters` parameter, pass an object containing values to filter the returned mailboxes. Puede pasar:
+En el parámetro opcional `parameters`, pase un objeto que contenga valores para filtrar los buzones devueltos. Puede pasar:
 
 | Propiedad    | Tipo     | Descripción                                          |
 | ------------ | -------- | ---------------------------------------------------- |
-| isSubscribed | Booleano | <li>**True** to return only subscribed mailboxes</li><li> **False** to return all available mailboxes</li> |
+| isSubscribed | Booleano | <li>**True** para devolver sólo los buzones suscritos</li><li> **False** para devolver todos los buzones disponibles</li> |
 
 #### Resultado
 
-Each object of the returned collection contains the following properties:
+Cada objeto de la colección devuelta contiene las siguientes propiedades:
 
-| Propiedad        | Tipo     | Descripción                                                                                                          |
-| ---------------- | -------- | -------------------------------------------------------------------------------------------------------------------- |
-| \[].name        | texto    | Nombre del buzón                                                                                                     |
-| \[].selectable  | booleano | Indicates whether or not the access rights allow the mailbox to be selected: <ul><li>true - the mailbox can be selected</li><li>false - the mailbox can not be selected</li></ul>               |
-| \[].inferior    | booleano | Indicates whether or not the access rights allow creating a lower hierachy in the mailbox: <ul><li>true - a lower level can be created</li><li>false - a lower level can not be created</li></ul> |
-| \[].interesting | booleano | Indicates if the mailbox has been marked "interesting" by the server: <ul><li>true - The mailbox has been marked "interesting" by the server. For example, it may contain new messages.</li><li>false - The mailbox has not been marked "interesting" by the server.</li></ul>                      |
+| Propiedad        | Tipo     | Descripción                                                                                                        |
+| ---------------- | -------- | ------------------------------------------------------------------------------------------------------------------ |
+| \[].name        | texto    | Nombre del buzón                                                                                                   |
+| \[].selectable  | booleano | Indica si los derechos de acceso permiten o no seleccionar el buzón: <ul><li>true - el buzón puede ser seleccionado</li><li>false - el buzón no puede ser seleccionado</li></ul>                     |
+| \[].inferior    | booleano | Indica si los derechos de acceso permiten o no crear una jerarquía inferior en el buzón: <ul><li>true - se puede crear un nivel inferior</li><li>false - no se puede crear un nivel inferior</li></ul> |
+| \[].interesting | booleano | Indica si el buzón ha sido marcado como "interesante" por el servidor: <ul><li>true - El buzón ha sido marcado como "interesante" por el servidor. Por ejemplo, puede contener mensajes nuevos.</li><li>false - El buzón no ha sido marcado como "interesante" por el servidor.</li></ul>                   |
 
 
-If the account does not contain any mailboxes, an empty collection is returned.
-> * If there is no open connection, `.getBoxList()` will open a connection.
-> * If the connection has not been used since the designated connection delay (see `IMAP New transporter`), the `.checkConnection( )` function is automatically called.
+Si la cuenta no contiene buzones, se devuelve una colección vacía.
+> * Si no hay ninguna conexión abierta, `.getBoxList()` abrirá una conexión.
+> * Si la conexión no se ha utilizado desde el retraso de conexión designado (ver `IMAP New transporter`), se llama automáticamente a la función `.checkConnection( )`.
 
 
 #### Ejemplo
@@ -929,27 +929,27 @@ If the account does not contain any mailboxes, an empty collection is returned.
 **.getDelimiter()** : Text<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getDelimiter().Params -->
-| Parámetros | Tipo  |    | Descripción                   |
-| ---------- | ----- |:--:| ----------------------------- |
-| Resultado  | Texto | <- | Hierarchy delimiter character |
+| Parámetros | Tipo  |    | Descripción                       |
+| ---------- | ----- |:--:| --------------------------------- |
+| Resultado  | Texto | <- | Carácter delimitador de jerarquía |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getDelimiter()` function <!-- REF #IMAPTransporterClass.getDelimiter().Summary -->returns the character used to delimit levels of hierarchy in the mailbox name<!-- END REF -->.
+La función `.getDelimiter()` <!-- REF #IMAPTransporterClass.getDelimiter().Summary -->devuelve el carácter utilizado para delimitar los niveles de jerarquía en el nombre del buzón<!-- END REF -->.
 
-The delimiter is a character which can be used to:
+El delimitador es un carácter que puede utilizarse para:
 
-*   create lower level (inferior) mailboxes
-*   search higher or lower within the mailbox hierarchy
+*   crear buzones de nivel inferior
+*   buscar más arriba o más abajo en la jerarquía del buzón
 
 
 #### Resultado
 
-Mailbox name delimiter character.
-> * If there is no open connection, `.getDelimiter()` will open a connection.
-> * If the connection has not been used since the [designated connection delay](#checkconnectiondelay), the [`.checkConnection()`](#checkconnection) function is automatically called.
+Carácter delimitador del nombre del buzón.
+> * Si no hay ninguna conexión abierta, `getDelimiter()` abrirá una conexión.
+> * Si la conexión no se ha utilizado desde el [retraso de conexión](#checkconnectiondelay) designado, la función [`.checkConnection()`](#checkconnection) se llama automáticamente.
 
 
 
@@ -989,31 +989,31 @@ Mailbox name delimiter character.
 <!-- REF #IMAPTransporterClass.getMail().Params -->
 | Parámetros | Tipo    |    | Descripción                                      |
 | ---------- | ------- |:--:| ------------------------------------------------ |
-| msgNumber  | Integer | -> | Sequence number of the message                   |
+| msgNumber  | Integer | -> | Número de secuencia del mensaje                  |
 | msgID      | Texto   | -> | ID único del mensaje                             |
-| options    | Objeto  | -> | Message handling instructions                    |
+| options    | Objeto  | -> | Instrucciones sobre el manejo de mensajes        |
 | Resultado  | Objeto  | <- | [Objeto Email](EmailObjectClass.md#email-object) |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getMail()` function <!-- REF #IMAPTransporterClass.getMail().Summary -->returns the `Email` object corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->. Esta función le permite manejar localmente el contenido del correo electrónico.
+La función `.getMail()` <!-- REF #IMAPTransporterClass.getMail().Summary -->devuelve el objeto `Email` correspondiente al *msgNumber* o *msgID* en el buzón designado por `IMAP_transporter`<!-- END REF -->. Esta función le permite manejar localmente el contenido del correo electrónico.
 
-In the first parameter, you can pass either:
+En el primer parámetro, puede pasar:
 
-*   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
-*   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
+*   *msgNumber*, un valor *integer* indicando el número de secuencia del mensaje a recuperar o
+*   *msgID*, un valor *text* indicando el ID único del mensaje a recuperar.
 
-The optional *options* parameter allows you pass an object defining additional instructions for handling the message. Las siguientes propiedades están disponibles:
+El parámetro opcional *options* permite pasar un objeto que define las instrucciones adicionales para la gestión del mensaje. Las siguientes propiedades están disponibles:
 
-| Propiedad  | Tipo     | Descripción                                                                                                                     |
-| ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| updateSeen | booleano | If True, the message is marked as "seen" in the mailbox. If False, the message is not marked as "seen". Valor por defecto: True |
-| withBody   | booleano | Pass True to return the body of the message. If False, only the message header is returned. Valor por defecto: True             |
-> * The function generates an error and returns **Null** if *msgID* designates a non-existing message,
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) function, an error is generated,
-> * If there is no open connection, `.getMail()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox)`.
+| Propiedad  | Tipo     | Descripción                                                                                                                      |
+| ---------- | -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| updateSeen | booleano | Si True, el mensaje se marca como "visto" en el buzón. Si es False, el mensaje no se marca como "visto". Valor por defecto: True |
+| withBody   | booleano | Pase True para devolver el cuerpo del mensaje. Si es False, sólo se devuelve el encabezado del mensaje. Valor por defecto: True  |
+> * La función genera un error y devuelve **Null** si *msgID* designa un mensaje inexistente,
+> * Si no se selecciona ningún buzón con la función [`.selectBox()`](#selectbox), se genera un error,
+> * Si no hay ninguna conexión abierta, `.getMail()` abrirá una conexión con el último buzón especificado por [`.selectBox()`](#selectbox).
 
 
 
@@ -1021,11 +1021,11 @@ The optional *options* parameter allows you pass an object defining additional i
 
 
 
-`.getMail()` returns an [`Email` object](EmailObjectClass.md#email-object) with the following specific IMAP properties: *id*, *receivedAt*, and *size*.
+`.getMail()` devuelve un [`objet Email`](EmailObjectClass.md#objet-email) con las propiedades IMAP adicionales siguientes: *id*, *receivedAt* y *size*.
 
 #### Ejemplo
 
-You want to get the message with ID = 1:
+Quiere obtener el mensaje con ID = 1:
 
 ```4d
  var $server : Object
@@ -1067,7 +1067,7 @@ You want to get the message with ID = 1:
 <!-- REF #IMAPTransporterClass.getMails().Params -->
 | Parámetros | Tipo       |    | Descripción                                            |
 | ---------- | ---------- |:--:| ------------------------------------------------------ |
-| ids        | Collection | -> | Collection of message ID                               |
+| ids        | Collection | -> | Colección de identificadores de mensajes               |
 | startMsg   | Integer    | -> | Sequence number of the first message                   |
 | endMsg     | Integer    | -> | Sequence number of the last message                    |
 | options    | Objeto     | -> | Message handling instructions                          |

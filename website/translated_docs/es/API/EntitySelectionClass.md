@@ -731,6 +731,7 @@ Con esta sintaxis, `.extract()` llena la colección devuelta con los valores *at
 
 Por defecto, las entidades para las que *attributePath* es *null* o indefinida se ignoran en la colección resultante. Puede pasar la constante `ck keep null` en el parámetro *option* para incluir estos valores como elementos **null** en la colección devuelta.
 
+
 *   Los atributos dataclass [.kind](DataClassAttributeClass.md#kind) = "relatedEntity" se extraen como una colección de entidades (se mantienen las duplicaciones).
 *   Los atributos dataclass con [.kind](DataClassAttributeClass.md#kind) = "relatedEntities" se extraen como una colección de entity selections.
 
@@ -922,6 +923,7 @@ El siguiente código genérico duplica todas las entidades de la entity selectio
 
 La función `.isAlterable()` <!-- REF #EntitySelectionClass.isAlterable().Summary -->devuelve True si la entity selection es modificable<!-- END REF -->, y False si no lo es.
 
+
 Para más información, consulte la sección [Entity selections compartibles o modificables](ORDA/entities.md#shareable-or-alterable-entity-selections).
 
 #### Ejemplo
@@ -1091,9 +1093,10 @@ Las entity selections siempre tienen una propiedad `.length`.
 
 
 <!-- REF #EntitySelectionClass.max().Params -->
-|Parameter|Type||Description|
-
-|---------|--- |:---:|------| |attributePath |Text|->|Path of the attribute to be used for calculation| |Result|any|<-|Highest value of attribute|
+| Parámetros    | Tipo  |    | Descripción                                        |
+| ------------- | ----- |:--:| -------------------------------------------------- |
+| attributePath | Texto | -> | Ruta del atributo que se utilizará para el cálculo |
+| Resultado     | any   | <- | Valor más alto del atributo                        |
 <!-- END REF -->
 
 #### Descripción
