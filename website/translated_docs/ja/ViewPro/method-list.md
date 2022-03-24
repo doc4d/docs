@@ -4756,57 +4756,57 @@ VP SET TIME VALUE(VP Cell("ViewProArea";5;2);?12:15:06?;vk pattern long time)
 
 <!-- REF #_method_.VP SET VALUE.Params -->
 
-| 引数       | タイプ    |    | 説明                             |
-| -------- | ------ | -- | ------------------------------ |
-| rangeObj | オブジェクト | -> | レンジオブジェクト                      |
-| valueObj | オブジェクト | -> | Cell values and format options |
+| 引数       | タイプ    |    | 説明               |
+| -------- | ------ | -- | ---------------- |
+| rangeObj | Object | -> | レンジオブジェクト        |
+| valueObj | Object | -> | セルの値とフォーマットオプション |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET VALUE` command <!-- REF #_method_.VP SET VALUE.Summary -->assigns a specified value to a designated cell range<!-- END REF -->.
+`VP SET VALUE` コマンドは、 <!-- REF #_method_.VP SET VALUE.Summary -->指定されたセルレンジに値を割り当てます<!-- END REF -->。
 
-The command allows you to use a generic code to set and format the types of values in *rangeObj*, whereas other commands, such as [`VP SET TEXT VALUE`](#vp-set-text-value) and [`VP SET NUM VALUE`](#vp-set-num-value), reduce the values to specific types.
+このコマンドを使用すると、汎用的なコードで *rangeObj* のレンジに様々な型の値とそのフォーマットを設定できます。それに対して [`VP SET TEXT VALUE`](#vp-set-text-value) や [`VP SET NUM VALUE`](#vp-set-num-value) などの他のコマンドは、設定する値の型が限定されています。
 
 *rangeObj* には、値を割り当てたいセルのレンジ (たとえば [`VP Cell`](#vp-cell) あるいは [`VP Column`](#vp-column) で作成されたレンジ) を渡します。 *rangeObj* 引数に複数のセルが含まれる場合、指定された値はそれぞれのセルに対して繰り返し割り当てられます。
 
 
-The parameter *valueObj* is an object that includes properties for the value and the [format](configuring.md#cell-format) to assign to *rangeObj*. It can include the following properties :
+*valueObj* 引数は、*rangeObj* のレンジに対して割り当てたい値と[フォーマット](configuring.md#セルフォーマット) のプロパティを格納しているオブジェクトです。 このオブジェクトには以下のプロパティを含めることができます:
 
-| プロパティ  | タイプ                                      | 説明                                                                                                                                           |
-| ------ | ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| value  | Integer, Real, Boolean, Text, Date, Null | Value to assign to *rangeObj* (except- time). Pass null to erase the content of the cell.                                                    |
-| time   | 実数                                       | Time value (in seconds) to assign to *rangeObj*                                                                                              |
-| format | テキスト                                     | 値や日時に対するパターン For information on patterns and formatting characters, please refer to the [Cell Format](configuring.md#cell-format) paragraph. |
+| プロパティ  | タイプ                                      | 説明                                                                                         |
+| ------ | ---------------------------------------- | ------------------------------------------------------------------------------------------ |
+| value  | Integer, Real, Boolean, Text, Date, Null | *rangeObj* のレンジに対して割り当てる値 (時間型を除く)。 セルの中身を消去するためには Null を渡します。                             |
+| time   | Real                                     | *rangeObj* のレンジに対して割り当てる時間 (秒単位)                                                           |
+| format | Text                                     | 値や日時に対するパターン。 パターンおよびフォーマット文字に関しての情報については、[セルフォーマット](configuring.md#セルフォーマット) の章を参照してください。 |
 
 
 
 #### 例題
 
 ```4d
-//Set the cell value as False
+// セルの値を False に設定します
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";False))
 
-//Set the cell value as 2
+// セルの値を 2 に設定します
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";2))
 
-//Set the cell value as $125,571.35
+// セルの値を $125,571.35 に設定します
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";125571.35;"format";"_($* #,##0.00_)"))
 
-//Set the cell value as Hello World!
+// セルの値を Hello World! に設定します
 VP SET VALUE(VP Cell("ViewProArea";3;2);New object("value";"Hello World!"))
 
-//Set the cell value as current date
+// セルの値を現在の日付に設定します
 VP SET VALUE(VP Cell("ViewProArea";4;2);New object("value";Current date))
 
-//Set the cell value as current hour
+// セルの値を現在の時間に設定します
 VP SET VALUE(VP Cell("ViewProArea";5;2);New object("time";Current hour))
 
-//Set the cell value as specific date and time
+// セルの値を特定の日付と時間に設定します
 VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";?14:30:10?;"format";vk pattern full date time))
 
-//Erase cell content
+// セルの中身を消去します
 VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 ```
 #### 参照
@@ -4819,40 +4819,40 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 <!-- REF #_method_.VP SET VALUES.Params -->
 
-| 引数        | タイプ    |    | 説明        |
-| --------- | ------ | -- | --------- |
-| rangeObj  | オブジェクト | -> | レンジオブジェクト |
-| valuesCol | コレクション | -> | 値のコレクション  |
+| 引数        | タイプ        |    | 説明        |
+| --------- | ---------- | -- | --------- |
+| rangeObj  | Object     | -> | レンジオブジェクト |
+| valuesCol | Collection | -> | 値のコレクション  |
 
 <!-- END REF -->  
 
 #### 説明
 
-The `VP SET VALUES` command <!-- REF #_method_.VP SET VALUES.Summary -->assigns a collection of values starting at the specified cell range<!-- END REF -->.
+`VP SET VALUES` コマンドは、 <!-- REF #_method_.VP SET VALUES.Summary -->指定のセルレンジから開始して値のコレクションを割り当てていきます<!-- END REF -->。
 
-In *rangeObj*, pass a range for the cell (created with [`VP Cell`](#vp-cell)) whose value you want to specify. The cell defined in the *rangeObj* is used to determine the starting point.
-> * If *rangeObj* is not a cell range, only the first cell of the range is used.
-> * If *rangeObj* includes multiple ranges, only the first cell of the first range is used.
+*rangeObj* には、値を割り当てたいセルのレンジ ([`VP Cell`](#vp-cell) で作成されたレンジ) を渡します。 *rangeObj* 引数で定義されたセルは、開始ポイントを決定します。
+> * *rangeObj* がセルレンジではない場合、レンジの最初のセルが使用されます。
+> * *rangeObj* のレンジが複数レンジを指定している場合、最初のレンジの先頭セルのみが使用されます。
 
-The *valuesCol* parameter is two-dimensional:
+*valuesCol* 引数は 2次元構造のコレクションです:
 
-*   The first-level collection contains subcollections of values. それぞれのサブコレクションは行を定義します。 Pass an empty collection to skip a row.
-*   それぞれのサブコレクションは行におけるセルの値を定義します。 Values can be Integer, Real, Boolean, Text, Date, Null, or Object. If the value is an object, it can have the following properties:
+*   第1レベルのコレクションは、値のサブコレクションを格納しています。 それぞれのサブコレクションは行を定義します。 行をスキップするには空のコレクションを渡します。
+*   それぞれのサブコレクションは行におけるセルの値を定義します。 値は整数、実数、ブール、テキスト、日付、Null、オブジェクトのいずれかです。 値がオブジェクトの場合、以下のプロパティを持つことができます:
 
-    | プロパティ | タイプ                                      | 説明                      |
-    | ----- | ---------------------------------------- | ----------------------- |
-    | value | Integer, Real, Boolean, Text, Date, Null | セルの値 (時間部分を除く)          |
-    | time  | 実数                                       | Time value (in seconds) |
+    | プロパティ | タイプ                                      | 説明             |
+    | ----- | ---------------------------------------- | -------------- |
+    | value | Integer, Real, Boolean, Text, Date, Null | セルの値 (時間部分を除く) |
+    | time  | Real                                     | 時間値 (秒単位)      |
 
 #### 例題
 
 ```4d
 $param:=New collection
-$param.push(New collection(1;2;3;False)) //first row, 4 values
-$param.push(New collection) //second row, untouched
-$param.push(New collection(4;5;Null;"hello";"world")) // third row, 5 values
-$param.push(New collection(6;7;8;9)) // fourth row, 4 values
-$param.push(New collection(Null;New object("value";Current date;"time";42))) //fifth row, 1 value
+$param.push(New collection(1;2;3;False)) // 1行目用に 4つの値を設定します
+$param.push(New collection) // 2行目は空行です
+$param.push(New collection(4;5;Null;"hello";"world")) // 3行目用に 5つの値を設定します
+$param.push(New collection(6;7;8;9)) // 4行目用に 4つの値を設定します
+$param.push(New collection(Null;New object("value";Current date;"time";42))) // 5行目用に 1つの値を設定します
 
 VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 ```
@@ -4868,26 +4868,26 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Syntax -->**VP SET WORKBOOK OPTIONS** ( *vpAreaName* : Text ; *optionObj* : Object)<!-- END REF -->  
 
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
-| 引数         | タイプ    |    | 説明                                               |
-| ---------- | ------ | -- | ------------------------------------------------ |
-| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名                          |
-| optionObj  | オブジェクト | -> | Object containing the workbook options to be set |
+| 引数         | タイプ    |    | 説明                         |
+| ---------- | ------ | -- | -------------------------- |
+| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名    |
+| optionObj  | Object | -> | 設定するワークブックオプションを格納したオブジェクト |
 <!-- END REF -->  
 
 #### 説明
 
-`VP SET WORKBOOK OPTIONS` <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
-sets the workbook options in *vpAreaName*<!-- END REF -->.
+`VP SET WORKBOOK OPTIONS` コマンドは、 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Summary -->
+*vpAreaName* 引数で指定した View Pro エリアのワークブックオプションを設定します<!-- END REF -->。
 
 *vpAreaName* には、4D View Pro エリアの名前を渡します。
 
-In *optionObj*, pass the workbook options to apply to *vpAreaName*.
+*optionObj*には、*vpAreaName* のエリアに対して適用するワークブックオプションを渡します。
 
-If *optionObj* is empty, the command does nothing.
+*optionObj* 引数が空の場合、このコマンドは何もしません。
 
-Modified workbook options are saved with the document.
+変更されたワークブックオプションはドキュメントとともに保存されます。
 
-The following table lists the available workbook options:
+次の表は、利用可能なワークブックオプションの一覧です:
 
 | プロパティ                                 | タイプ                     | 説明                                                                                                                                                                                                                                                     |
 | ------------------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
