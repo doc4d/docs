@@ -302,22 +302,22 @@ La fonction `.setPrivileges()` <!-- REF #SessionClass.setPrivileges().Summary --
 
 - Dans le paramètre *settings*, passez un objet contenant les propriétés suivantes :
 
-| Propriété  | Type                | Description                                        |
-| ---------- | ------------------- | -------------------------------------------------- |
-| privileges | Texte ou Collection | <li>String containing a privilege name, or</li><li>Collection of strings containing privilege names</li> |
-| userName   | Text                | User name to associate to the session (optional)   |
+| Propriété  | Type               | Description                                           |
+| ---------- | ------------------ | ----------------------------------------------------- |
+| privileges | Text ou Collection | <li>Chaîne contenant un nom de privilège, ou</li><li>Collection de chaînes contenant des noms de privilèges</li>    |
+| userName   | Text               | Nom d'utilisateur à associer à la session (optionnel) |
 
-If the `privileges` property contains an invalid privilege name, it is ignored.
+Si la propriété `privileges` contient un nom de privilège invalide, il est ignoré.
 
 > Dans l'implémentation actuelle, seul le privilège "WebAdmin" est disponible.
 
-By default when no privilege is associated to the session, the session is a [Guest session](#isguest).
+Par défaut lorsqu'aucun privilège n'est associé à la session, la session est une [session Guest](#isguest).
 
-The [`userName`](#username) property is available at session object level (read-only).
+La propriété [`userName`](#username) est accessible au niveau de l'objet session (lecture seulement).
 
 #### Exemple
 
-In a custom authentication method, you set the "WebAdmin" privilege to the user:
+Dans une méthode d'authentification personnalisée, vous assignez le privilège "WebAdmin" à l'utilisateur :
 
 ```4d
 var $userOK : Boolean
@@ -351,17 +351,17 @@ End if
 
 #### Description
 
-The `.storage` property contains <!-- REF #SessionClass.storage.Summary -->a shared object that can be used to store information available to all requests of the web client<!-- END REF -->.
+La propriété `.storage` contient <!-- REF #SessionClass.storage.Summary -->un objet partagé qui peut être utilisé pour stocker des informations disponibles pour toutes les requêtes du client web<!-- END REF -->.
 
-When a `Session` object is created, the `.storage` property is empty. Since it is a shared object, this property will be available in the `Storage` object of the server.
+Lorsqu'un objet `Session` est créé, la propriété `.storage` est vide. Puisqu'il s'agit d'un objet partagé, cette propriété sera disponible dans l'objet `Storage` du serveur.
 
 > Tout comme l'objet `Storage` du serveur, la propriété `.storage` est toujours "single" : l'ajout d'un objet partagé ou d'une collection partagée à `.storage` ne crée pas de groupe partagé.
 
-This property is **read only** itself but it returns a read-write object.
+Cette propriété est elle-même en **lecture seulement** mais elle retourne un objet en lecture-écriture.
 
 #### Exemple
 
-You want to store the client IP in the `.storage` property. You can write in the `On Web Authentication` database method:
+Vous voulez stocker l'adresse IP du client dans la propriété `.storage`. Vous pouvez écrire dans la méthode base `On Web Authentication` :
 
 ```4d
 If (Session.storage.clientIP=Null) //premier accès
@@ -393,11 +393,11 @@ End if
 
 #### Description
 
-The `.userName` property contains <!-- REF #SessionClass.userName.Summary -->the user name associated to the session<!-- END REF -->. You can use it to identify the user within your code.
+La propriété `.userName` contient <!-- REF #SessionClass.userName.Summary -->le nom d'utilisateur associé à la session<!-- END REF -->. Vous pouvez vous en servir pour identifier l'utilisateur dans votre code.
 
-This property is an empty string by default. It can be set using the `privileges` property of the [`setPrivileges()`](#setprivileges) function.
+Cette propriété est une chaîne vide par défaut. Elle peut être définie via la propriété `privileges` de la fonction [`setPrivileges()`](#setprivileges).
 
-This property is **read only**. 
+Cette propriété est en **lecture seule**. 
 
 
 
