@@ -178,39 +178,36 @@ For reasons related to window redrawing mechanisms, the insertion of a web area 
 
 In Windows, it is not recommended to access, via a web area, the Web server of the 4D application containing the area because this configuration could lead to a conflict that freezes the application. Of course, a remote 4D can access the Web server of 4D Server, but not its own web server.
 
-### Insertion of protocol (macOS)  
+### Insertion of protocol (macOS) 
+
 The URLs handled by programming in web areas in macOS must begin with the protocol. For example, you need to pass the string "http://www.mysite.com" and not just "www.mysite.com".
 
 
-## Access to web inspector  
+## Web inspector  
 
-You can view and use a web inspector within web areas in your forms or in offscreen web areas. The web inspector is a debugger which is provided by the embedded Web engine. It allows parsing the code and the flow of information of the web pages.
+You can view and use a web inspector within web areas in your forms or in offscreen web areas. The web inspector is a debugger which allows parsing the code and the flow of information of the web pages.
 
-### Displaying the web inspector  
+> The Web inspector is only available with the [**embedded web rendering engine**](properties_WebArea.md#use-embedded-web-rendering-engine).
 
-To display the web inspector, you can either execute the `WA OPEN WEB INSPECTOR` command, or use the context menu of the web area. 
+To display the Web inspector, you can either execute the `WA OPEN WEB INSPECTOR` command, or use the context menu of the web area. 
 
 - **Execute the `WA OPEN WEB INSPECTOR` command**<br>
 	This command can be used directly with onscreen (form object) and offscreen web areas. 
-In the case of an onscreen web area, you must have [selected the embedded web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) for the area (the web inspector is only available with this configuration).
 
 - **Use the web area context menu**<br>
-This feature can only be used with onscreen web areas and requires that the following conditions are met:
-	- the embedded web rendering engine is selected for the area
+	This feature can only be used with onscreen web areas and requires that the following conditions are met:
 	- the [context menu](properties_Entry.md#context-menu) for the web area is enabled
 	- the use of the inspector is expressly enabled in the area by means of the following statement:
 	```4d
 		WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
 	```
-	- a navigation action has occurred (for example, the user has clicked a link)
+	- a navigation action has occurred in the area (for example, a page has been loaded)
 
 For more information, refer to the description of the `WA SET PREFERENCE` command.
 
-### Using the web inspector  
-
 When you have done the settings as described above, you then have new options such as **Inspect Element** in the context menu of the area. When you select this option, the web inspector window is displayed.   
 
-> The web inspector is included in the embedded web rendering engine. For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
+> For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
 
 
 
