@@ -21,6 +21,8 @@ Two specific variables can be associated with each web area:
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the web area. 
 
+	> As of 4D v19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
+
 ### Web rendering engine
 
 You can choose between [two rendering engines](properties_WebArea.md#use-embedded-web-rendering-engine) for the web area, depending on the specifics of your application.
