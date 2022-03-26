@@ -598,7 +598,7 @@ Icono de archivo [picture](../Concepts/picture.html).
 </details>
 
 <!-- REF #document.getText().Syntax -->
-**.getText**( { *charSetName* : Text } { ; } { *breakMode* : integer} ) : Text<br>**.getText**( { *charSetNum* : integer } { ; } { *breakMode* : integer} ) : Text<!-- END REF -->
+**.getText**( { *charSetName* : Text { ; *breakMode* : Integer } } ) : Text<br>**.getText**( { *charSetNum* : Integer { ; *breakMode* : Integer } } ) : Text<!-- END REF -->
 
 
 <!-- REF #document.getText().Params -->
@@ -616,7 +616,7 @@ La función `.getText()` <!-- REF #document.getText().Summary -->devuelve el con
 
 Opcionalmente, puede designar el conjunto de caracteres que se utilizará para leer el contenido. Puede pasar:
 
-- en *charSetName*, una cadena que contiene el nombre del conjunto estándar (por ejemplo "ISO-8859-1" o ""UTF-8"),
+- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
 - o en *charSetNum*, el ID MIBEnum (número) del nombre del conjunto estándar.
 
 > Para conocer la lista de los conjuntos de caracteres que soporta 4D, consulte la descripción del comando `CONVERT FROM TEXT`.
@@ -656,14 +656,24 @@ Cuando se ejecuta este código:
  $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 por defecto
  $txt:=$myFile.getText()
 ```
-... obtiene:
+... you get the following for `$txt`:
+
+"id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
+
+with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
+
+Here is another example with the same file, but a different line delimiter:
 
 ```4d
-  // $Text = "id name price vat\r\n3 thé 1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
-  // \t = tab
-  // \r = CR
+ $txt:=$myFile.getText("UTF-8", Document with LF)
 ```
- 
+In this case, the contents of `$txt` are as follows:
+
+"id\tname\tprice\tvat\n3\tthé\t1.06€\t19.6\n2\tcafé\t1.05€\t19.6"
+
+This time `\n` (LF) is used as line delimiter.
+
+
 
 <!-- END REF -->
  
