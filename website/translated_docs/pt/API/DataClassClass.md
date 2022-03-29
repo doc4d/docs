@@ -975,7 +975,7 @@ Pesquisa com marcador de posição indexado que inclui uma instrução de ordem 
 $entitySelection:=ds.Student.query("nationality = :1 order by campus.name desc, lastname";"French")
 ```
 
-Query with named placeholders for values:
+Pesquisa com marcadores de posição com nome para os valores:
 
 ```4d
 var $querySettings : Object
