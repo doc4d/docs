@@ -616,7 +616,7 @@ La función `.getText()` <!-- REF #document.getText().Summary -->devuelve el con
 
 Opcionalmente, puede designar el conjunto de caracteres que se utilizará para leer el contenido. Puede pasar:
 
-- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
+- en *charSetName*, una cadena que contiene el nombre del conjunto estándar (por ejemplo "ISO-8859-1" o "UTF-8"),
 - o en *charSetNum*, el ID MIBEnum (número) del nombre del conjunto estándar.
 
 > Para conocer la lista de los conjuntos de caracteres que soporta 4D, consulte la descripción del comando `CONVERT FROM TEXT`.
@@ -656,18 +656,18 @@ Cuando se ejecuta este código:
  $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 por defecto
  $txt:=$myFile.getText()
 ```
-... you get the following for `$txt`:
+... obtiene para `$txt`:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
 with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
 
-Here is another example with the same file, but a different line delimiter:
+Aquí hay otro ejemplo con el mismo archivo, pero con un delimitador de línea diferente:
 
 ```4d
  $txt:=$myFile.getText("UTF-8", Document with LF)
 ```
-In this case, the contents of `$txt` are as follows:
+En este caso, el contenido de `$txt` es el siguiente:
 
 "id\tname\tprice\tvat\n3\tthé\t1.06€\t19.6\n2\tcafé\t1.05€\t19.6"
 
