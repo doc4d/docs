@@ -989,7 +989,7 @@ Pesquisa com marcadores de posição indexados para os valores:
 $entitySelection:=ds.Customer.query("(firstName = :1 or firstName = :2) and (lastName = :3 or lastName = :4)";"D@";"R@";"S@";"K@")
 ```
 
-Pesquisa com marcadores de posição indexxados paara valores em u ma dataclass relacionada:
+Pesquisa com marcadores de posição indexados para valores em u ma dataclass relacionada:
 
 ```4d
 $entitySelection:=ds.Employee.query("lastName = :1 and manager.lastName = :2";"M@";"S@")
@@ -1001,7 +1001,7 @@ Pesquisa com marcador de posição indexado que inclui uma instrução de ordem 
 $entitySelection:=ds.Student.query("nationality = :1 order by campus.name desc, lastname";"French")
 ```
 
-Query with named placeholders for values:
+Pesquisa com marcadores de posição com nome para os valores:
 
 ```4d
 var $querySettings : Object
