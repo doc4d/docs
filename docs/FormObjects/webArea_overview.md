@@ -162,7 +162,7 @@ When the form is executed, standard browser interface functions are available to
 - **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. Display of the context menu can be controlled using the `WA SET PREFERENCE` command.
 - **Drag and drop**: The user can drag and drop text, pictures and documents within the web area or between a web area and the 4D form objects, according to the 4D object properties.
 For security reasons, changing the contents of a web area by means of dragging and dropping a file or URL is not allowed by default. In this case, the cursor displays a "forbidden" icon ![](assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE` command to explicitly allow the dropping of URLs or files in the web area.
-	> On Windows, this preference is only available for Web Areas using the [embedded web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine).
+> In embedded and Windows system web rendering [engines](properties_WebArea.md#use-embedded-web-rendering-engine), this preference only manages the interface part of the operation. To actually open a dropped content, you need to call the `WA OPEN URL` command within the [`On Window Opening Denied`](Events/onWindowOpeningDenied.md) event. 
 
 ### Subforms
 
@@ -187,8 +187,6 @@ The URLs handled by programming in web areas in macOS must begin with the protoc
 
 You can view and use a web inspector within web areas in your forms or in offscreen web areas. The web inspector is a debugger which allows parsing the code and the flow of information of the web pages.
 
-> The Web inspector is only available with the [embedded web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine).
-
 To display the Web inspector, you can either execute the `WA OPEN WEB INSPECTOR` command, or use the context menu of the web area. 
 
 - **Execute the `WA OPEN WEB INSPECTOR` command**<br>
@@ -199,9 +197,10 @@ To display the Web inspector, you can either execute the `WA OPEN WEB INSPECTOR`
 	- the [context menu](properties_Entry.md#context-menu) for the web area is enabled
 	- the use of the inspector is expressly enabled in the area by means of the following statement:
 	```4d
-		WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
+		WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)  
 	```
-	- a navigation action has occurred in the area (for example, a page has been loaded)
+
+> With [Windows system rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine), a change in this preference requires a navigation action in the area (for example, a page refresh) to be taken into account. 
 
 For more information, refer to the description of the `WA SET PREFERENCE` command.
 
