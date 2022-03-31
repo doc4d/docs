@@ -40,10 +40,10 @@ End if
 ## ZIP Create archive
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                                                        |
-| ------- | --------------------------------------------------------------------- |
-| v19 R3  | Added `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` property |
-| v18     | Añadidos                                                              |
+| Versión | Modificaciones                                                                    |
+| ------- | --------------------------------------------------------------------------------- |
+| v19 R3  | Adición de las propiedades `ZIP Compression LZMA`, `ZIP Compression xy`, `.level` |
+| v18     | Añadidos                                                                          |
 </details>
 
 <!-- REF #_command_.ZIP Create archive.Syntax -->
