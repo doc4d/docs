@@ -9,7 +9,7 @@ title: Gestión de usuarios y grupos 4D
 
 ## Diseñador y administrador
 
-El usuario más poderoso se llama el **Diseñador**. No aspect of the application is closed to the Designer. El diseñador puede:
+El usuario más poderoso se llama el **Diseñador**. Ningún aspecto de la aplicación es inaccesible al Diseñador. El diseñador puede:
 - access all application servers without restriction,
 - crear usuarios y grupos,
 - asignar privilegios de acceso a los grupos,
@@ -26,7 +26,7 @@ El administrador no puede:
 - modificar el usuario Diseñador
 - by default, access to protected parts of the application. En particular, el administrador no puede acceder al modo Diseño si está restringido. The Administrator must be part of one or more groups to have access privileges in the application. El administrador se coloca en todos los grupos nuevos, pero puede eliminar el nombre del administrador de cualquier grupo.
 
-Both the Designer and Administrator are available by default in all applications. En la [caja de diálogo de gestión de usuarios](#users-and-groups-editor), los iconos del Diseñador y del Administrador se muestran en rojo y verde respectivamente:
+Tanto el Diseñador como el Administrador están disponibles por defecto en todas las aplicaciones. En la [caja de diálogo de gestión de usuarios](#users-and-groups-editor), los iconos del Diseñador y del Administrador se muestran en rojo y verde respectivamente:
 
 - Icono Diseñador: ![](assets/en/Users/iconDesigner.png)
 - Icono del Administrador: ![](assets/en/Users/iconAdmin.png)
