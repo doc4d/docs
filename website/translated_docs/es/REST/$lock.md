@@ -32,7 +32,7 @@ The locks triggered by the REST API are put at the [session](authUsers.md#openin
 
 A locked entity is seen as *locked* (i.e. lock / unlock / update / delete actions are not possible) by:
 
-- other REST sessions
+- otras sesiones REST
 - 4D processes (client/server, remote datastore, standalone) running on the REST server.
 
 An entity locked by the REST API can only be unlocked:
@@ -48,7 +48,7 @@ The returned "__STATUS" object has the following properties:
 
 | Propiedad    |  | Tipo     | Descripción                                                                                                                                     |
 | ------------ |  | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-|              |  |          | ***Available only in case of success:***                                                                                                        |
+|              |  |          | ***Disponible sólo en caso de éxito:***                                                                                                         |
 | success      |  | booleano | true if the lock action is successful (or if the entity is already locked in the current session), false otherwise (not returned in this case). |
 |              |  |          | ***Disponible sólo en caso de error:***                                                                                                         |
 | status       |  | number   | Código de error, ver abajo                                                                                                                      |
@@ -72,7 +72,7 @@ The following values can be returned in the *status* and *statusText* properties
 ## Ejemplo
 
 
-We lock an entity in a first browser:
+Bloqueamos una entidad en un primer navegador:
 
 ```
 GET /rest/Customers(1)/?$lock=true
@@ -89,7 +89,7 @@ GET /rest/Customers(1)/?$lock=true
 }
 ```
 
-In a second browser (other session), we send the same request.
+En un segundo navegador (otra sesión), enviamos la misma petición.
 
 **Respuesta:**
 

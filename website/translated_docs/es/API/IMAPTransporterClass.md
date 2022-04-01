@@ -1065,67 +1065,67 @@ Quiere obtener el mensaje con ID = 1:
 **.getMails**( *ids* : Collection { ; *options* : Object } ) : Object<br>**.getMails**( *startMsg* : Integer ; *endMsg* : Integer { ; *options* : Object } ) : Object<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.getMails().Params -->
-| Parámetros | Tipo       |    | Descripción                                            |
-| ---------- | ---------- |:--:| ------------------------------------------------------ |
-| ids        | Collection | -> | Colección de identificadores de mensajes               |
-| startMsg   | Integer    | -> | Sequence number of the first message                   |
-| endMsg     | Integer    | -> | Sequence number of the last message                    |
-| options    | Objeto     | -> | Message handling instructions                          |
-| Resultado  | Objeto     | <- | Object containing:<br><ul><li>a collection of [Email objects](EmailObjectClass.md#email-object) and</li><li>a collection of IDs or numbers for missing messages, if any</li></ul> |
+| Parámetros | Tipo       |    | Descripción                                              |
+| ---------- | ---------- |:--:| -------------------------------------------------------- |
+| ids        | Collection | -> | Colección de identificadores de mensajes                 |
+| startMsg   | Integer    | -> | Número de secuencia del primer mensaje                   |
+| endMsg     | Integer    | -> | Número de secuencia del último mensaje                   |
+| options    | Objeto     | -> | Instrucciones sobre la gestión de mensajes               |
+| Resultado  | Objeto     | <- | Objeto que contiene:<br><ul><li>una colección de [objetos Email](EmailObjectClass.md#email-object) y</li><li>una colección de identificadores o números para los mensajes que faltan, si los hay</li></ul> |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.getMails()` function <!-- REF #IMAPTransporterClass.getMails().Summary -->returns an object containing a collection of `Email` objects<!-- END REF -->.
+La función `.getMails()` <!-- REF #IMAPTransporterClass.getMails().Summary -->devuelve un objeto que contiene una colección de objetos `Email`<!-- END REF -->.
 
 **Primera sintaxis:**
 
 ***.getMails( ids { ; options } ) -> result***
 
-The first syntax allows you to retrieve messages based on their IDs.
+La primera sintaxis permite recuperar los mensajes en función de sus identificadores.
 
-In the *ids* parameter, pass a collection of IDs for the messages to return. You can get the IDs with [`.getMail()`](#getmail).
+En el parámetro *ids*, pase una colección de IDs para los mensajes a devolver. Puede obtener los IDs con [`.getMail()`](#getmail).
 
-The optional *options* parameter allows you to define the parts of the messages to be returned. See the **Options** table below for a description of the available properties.
+El parámetro opcional *options* permite definir las partes de los mensajes a devolver. Consulte la tabla **Opciones** a continuación para obtener una descripción de las propiedades disponibles.
 
 **Segunda sintaxis:**
 
  ***.getMails( startMsg ; endMsg { ; options } ) -> result***
 
-The second syntax allows you to retrieve messages based on a sequential range. The values passed represent the position of the messages in the mailbox.
+La segunda sintaxis permite recuperar los mensajes en función de un rango secuencial. Los valores pasados representan la posición de los mensajes en el buzón.
 
-In the *startMsg* parameter, pass an *integer* value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+En el parámetro *startMsg*, pase un valor *entero* correspondiente al número del primer mensaje en un rango secuencial. Si se pasa un número negativo (*startMsg* <= 0), se utilizará el primer mensaje del buzón como inicio de la secuencia.
 
-In the *endMsg* parameter, pass an *integer* value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (*endMsg* <= 0), the last message of the mailbox will be used as the end of the sequence.
+En el parámetro *endMsg*, pase un valor *entero* correspondiente al número del último mensaje a incluir en un rango secuencial. Si se pasa un número negativo (*endMsg* <= 0), se utilizará el último mensaje del buzón como fin de secuencia.
 
-The optional *options* parameter allows you to define the parts of the messages to be returned.
+El parámetro opcional *options* permite definir las partes de los mensajes a devolver.
 
 **Opciones**
 
 | Propiedad  | Tipo     | Descripción                                                                                                                                         |
 | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | updateSeen | Booleano | Si True, los mensajes especificados se marcan como "vistos" en el buzón. Si False, los mensajes no se marcan como "vistos". Valor por defecto: True |
-| withBody   | Booleano | Pass True to return the body of the specified messages. If False, only the message headers are returned. Valor por defecto: True                    |
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated.
-> * If there is no open connection, `.getMails()` will open a connection the last mailbox specified with [`.selectBox()`](#selectbox).
+| withBody   | Booleano | Pase True para devolver el cuerpo de los mensajes específicos. Si False, sólo se devuelve los encabezados de los mensajes. Valor por defecto: True  |
+> * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error.
+> * Si no hay ninguna conexión abierta, `.getMails()` abrirá una conexión con el último buzón especificado por [`.selectBox()`](#selectbox).
 
 
 #### Resultado
 
-`.getMails()` returns an object containing the following collections:
+`.getMails()` devuelve un objeto que contiene las siguientes colecciones:
 
 
-| Propiedad | Tipo       | Descripción                                                                                                                        |
-| --------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| lista     | Collection | Collection of [`Email` objects](EmailObjectClass.md#email-object). If no Email objects are found, an empty collection is returned. |
+| Propiedad | Tipo       | Descripción                                                                                                                           |
+| --------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| lista     | Collection | Colección de objetos [`Email`](EmailObjectClass.md#email-object). Si no se encuentran objetos Email, se devuelve una colección vacía. |
 
-|notFound |Collection| Collection of:<br><ul><li>first syntax - previously passed message IDs that do not exist</li><li>second syntax - sequence numbers of messages between startMsg and endMsg that do not exist</li></ul>An empty collection is returned if all messages are found.|
+|notFound |Collection| Colección de:<br><ul><li>primera sintaxis - IDs de mensajes pasados previamente que no existen</li><li>segunda sintaxis - números de secuencia de los mensajes entre startMsg y endMsg que no existen</li></ul>Se devuelve una colección vacía si se encuentran todos los mensajes.|
 
 
 #### Ejemplo
 
-You want to retrieve the 20 most recent emails without changing their "seen" status:
+Quiere recuperar los 20 correos electrónicos más recientes sin cambiar el estado "visto":
 
 ```4d
  var $server,$boxInfo,$result : Object
@@ -1171,12 +1171,12 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 
 <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Params -->
-| Parámetros | Tipo     |    | Descripción                                                                                   |
-| ---------- | -------- |:--:| --------------------------------------------------------------------------------------------- |
-| msgNumber  | Integer  | -> | Sequence number of the message                                                                |
-| msgID      | Texto    | -> | ID único del mensaje                                                                          |
-| updateSeen | Booleano | -> | If True, the message is marked "seen" in the mailbox. If False the message is left untouched. |
-| Resultado  | BLOB     | <- | Blob de la cadena MIME devuelta por el servidor de correo                                     |
+| Parámetros | Tipo     |    | Descripción                                                                                |
+| ---------- | -------- |:--:| ------------------------------------------------------------------------------------------ |
+| msgNumber  | Integer  | -> | Número de secuencia del mensaje                                                            |
+| msgID      | Texto    | -> | ID único del mensaje                                                                       |
+| updateSeen | Booleano | -> | Si True, el mensaje se marca como "visto" en el buzón. Si False, el mensaje se deja igual. |
+| Resultado  | BLOB     | <- | Blob de la cadena MIME devuelta por el servidor de correo                                  |
 <!-- END REF -->
 
 
@@ -1184,20 +1184,20 @@ You want to retrieve the 20 most recent emails without changing their "seen" sta
 
 #### Descripción
 
-The `.getMIMEAsBlob()` function <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->returns a BLOB containing the MIME contents for the message corresponding to the *msgNumber* or *msgID* in the mailbox designated by the `IMAP_transporter`<!-- END REF -->.
+La función `.getMIMEAsBlob()` <!-- REF #IMAPTransporterClass.getMIMEAsBlob().Summary -->devuelve un BLOB con el contenido MIME del mensaje correspondiente al *msgNumber* o *msgID* en el buzón designado por el `IMAP_transporter`<!-- END REF -->.
 
-In the first parameter, you can pass either:
+En el primer parámetro, puede pasar:
 
-*   *msgNumber*, an *integer* value indicating the sequence number of the message to retrieve or
-*   *msgID*, a *text* value indicating the unique ID of the message to retrieve.
+*   *msgNumber*, un valor *integer* indicando el número de secuencia del mensaje a recuperar o
+*   *msgID*, un valor *text* indicando el ID único del mensaje a recuperar.
 
-The optional *updateSeen* parameter allows you to specify if the message is marked as "seen" in the mailbox. Puede pasar:
+El parámetro opcional *updateSeen* permite indicar si el mensaje está marcado como "visto" en el buzón. Puede pasar:
 
-*   **True** - to mark the message as "seen" (indicating the message has been read)
+*   **True** - para marcar el mensaje como "visto" (indicando que el mensaje ha sido leído)
 *   **False** - para dejar intacto el estado "visto" del mensaje
-> * The function returns an empty BLOB if *msgNumber* or msgID* designates a non-existing message,
-> * If no mailbox is selected with the [`.selectBox()`](#selectbox) command, an error is generated,
-> * If there is no open connection, `.getMIMEAsBlob()` will open a connection the last mailbox specified with `.selectBox()`.
+> * La función devuelve un BLOB vacío si *msgNumber* o msgID* designa un mensaje inexistente,
+> * Si no se selecciona ningún buzón con el comando [`.selectBox()`](#selectbox), se genera un error,
+> * Si no hay ninguna conexión abierta, `.getMIMEAsBlob()` abrirá una conexión con el último buzón especificado por `.selectBox()`.
 
 
 #### Resultado
@@ -1261,21 +1261,21 @@ The optional *updateSeen* parameter allows you to specify if the message is mark
 | -------------- | ---------- |:--:| --------------------------------------------------------- |
 | msgsIDs        | Collection | -> | Colección de identificadores únicos de mensajes (cadenas) |
 | allMsgs        | Integer    | -> | `IMAP all`: todos los mensajes del buzón seleccionado     |
-| destinationBox | Texto      | -> | Mailbox to receive moved messages                         |
-| Resultado      | Objeto     | <- | Status of the move operation                              |
+| destinationBox | Texto      | -> | Buzón para recibir mensajes desplazados                   |
+| Resultado      | Objeto     | <- | Estado de la operación de desplazamiento                  |
 <!-- END REF -->
 
 
 #### Descripción
 
-The `.move()` function <!-- REF #IMAPTransporterClass.move().Summary -->moves the messages defined by *msgsIDs* or *allMsgs* to the *destinationBox* on the IMAP server<!-- END REF -->.
+La función `.move()` <!-- REF #IMAPTransporterClass.move().Summary -->mueve los mensajes definidos en *msgsIDs* o *allMsgs* a la *destinationBox* en el servidor IMAP<!-- END REF -->.
 
 Puede pasar:
 
-- in the *msgsIDs* parameter, a collection containing the unique IDs of the specific messages to move, or
-- in the *allMsgs* parameter, the `IMAP all` constant (integer) to move all messages in the selected mailbox.
+- en el parámetro *msgsIDs*, una colección contiene los IDs únicos de los mensajes específicos a mover, o
+- en el parámetro *allMsgs*, la constante `IMAP all` (entero) para mover todos los mensajes del buzón seleccionado.
 
-The *destinationBox* parameter allows you to pass a text value with the name of the mailbox where the messages will be moved.
+El parámetro *destinationBox* permite pasar un valor texto con el nombre del buzón donde los mensajes serán desplazados.
 
 > Esta función sólo la soportan los servidores IMAP que cumplen con el RFC [8474](https://tools.ietf.org/html/rfc8474).
 
@@ -1364,11 +1364,11 @@ Para mover todos los mensajes del buzón actual:
 **.numToID**( *startMsg* : Integer ; *endMsg* : Integer ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.numToID().Params -->
-| Parámetros | Tipo       |    | Descripción                          |
-| ---------- | ---------- |:--:| ------------------------------------ |
-| startMsg   | Integer    | -> | Sequence number of the first message |
-| endMsg     | Integer    | -> | Sequence number of the last message  |
-| Resultado  | Collection | <- | Collection of unique IDs             |
+| Parámetros | Tipo       |    | Descripción                                     |
+| ---------- | ---------- |:--:| ----------------------------------------------- |
+| startMsg   | Integer    | -> | Número de secuencia del primer mensaje          |
+| endMsg     | Integer    | -> | Número de secuencia del último mensaje          |
+| Resultado  | Collection | <- | Colección de identificadores de mensajes únicos |
 <!-- END REF -->
 
 
@@ -1895,7 +1895,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
