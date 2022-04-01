@@ -216,10 +216,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | 時間 |                           |                               | (2:03:05 PM)      |
 |    | h                         | 先頭のゼロなしの時間。 0-23の値            | 2                 |
 |    | hh                        | 先頭のゼロありの時間。 00-23の値           | 02                |
-|    | m                         | 先頭のゼロなしの分数。 0-59の値            | 3                 |
-|    | mm                        | 先頭のゼロありの分数。 00-59の値           | 03                |
-|    | s                         | 先頭のゼロなしの秒数。 0-59の値            | 5                 |
-|    | ss                        | 先頭のゼロありの秒数。 00-59の値           | 05                |
+|    | m                         | 先頭のゼロなしの秒数。 0-59の値            | 3                 |
+|    | mm                        | 先頭のゼロありの秒数。 00-59の値           | 03                |
+|    | s                         | 先頭のゼロなしの分数。 0-59の値            | 5                 |
+|    | ss                        | 先頭のゼロありの分数。 00-59の値           | 05                |
 |    | \[h]                     | 経過時間の時間数                      | 14 (24 を超える表示も可能) |
 |    | \[mm]                    | 経過時間の分数                       | 843               |
 |    | \[ss]                    | 経過時間の秒数                       | 50585             |
@@ -327,8 +327,8 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 | margin |         | object  | 印刷マージン                              |
 |        | top     | longint | 上部マージン、100分の1インチ単位。 デフォルト値 = 75     |
 |        | bottom  | longint | 下部マージン、100分の1インチ単位。 デフォルト値 = 75     |
-|        | left    | longint | 左マージン、100分の1インチ単位。 デフォルト値 = 70      |
-|        | right   | longint | 右マージン、100分の1インチ単位。 デフォルト値 = 70      |
+|        | left    | longint | 右マージン、100分の1インチ単位。 デフォルト値 = 70      |
+|        | right   | longint | 左マージン、100分の1インチ単位。 デフォルト値 = 70      |
 |        | headers | longint | ヘッダーのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
 |        | footer  | longint | フッターのオフセット、100分の1インチ単位。 デフォルト値 = 30 |
 
@@ -363,12 +363,12 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 *   カスタムサイズ - height と width 属性を使用
 *   規格サイズ - kind 属性を使用
 
-| プロパティ     |        | タイプ     | 説明                                                                              |
-| --------- | ------ | ------- | ------------------------------------------------------------------------------- |
-| paperSize |        | object  | 印刷に使用する用紙の寸法 (height、width) または規格 (kind)                                        |
-|           | height | longint | 用紙の高さ、100分の1インチ単位                                                               |
-|           | width  | longint | 用紙の幅、100分の1インチ単位                                                                |
-|           | kind   | テキスト    | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。`GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
+| プロパティ     |        | タイプ     | 説明                                                                               |
+| --------- | ------ | ------- | -------------------------------------------------------------------------------- |
+| paperSize |        | object  | 印刷に使用する用紙の寸法 (height、width) または規格 (kind)                                         |
+|           | height | longint | 用紙の高さ、100分の1インチ単位                                                                |
+|           | width  | longint | 用紙の幅、100分の1インチ単位                                                                 |
+|           | kind   | テキスト    | 用紙の規格サイズの名前 (例: A2、A4、legal、など)。 `GET PRINT OPTION` によって返されます。 デフォルト値 = "letter" |
 
 ### スケール
 
@@ -423,7 +423,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";!2024-12-18!);"time";
 
 スタイルシートは [VP ADD STYLESHEET](method-list.md#vp-add-stylesheet) コマンドで作成され、[VP SET DEFAULT STYLE](method-list.md#vp-set-default-style) あるいは [VP SET CELL STYLE](method-list.md#vp-set-cell-style) コマンドで適用されます。 スタイルシートは [VP REMOVE STYLESHEET](method-list.md#vp-remove-stylesheet) コマンドで削除できます。
 
-[VP Get stylesheet](method-list.md#vp-get-stylesheet) コマンドを使用することでスタイルシートのスタイルオブジェクトを取得できます。また、[VP Get stylesheets](method-list.md#vp-get-stylesheets) コマンドを使用して複数のスタイルシートのスタイルオブジェクトのコレクションを取得することもできます。
+[VP Get stylesheet](method-list.md#vp-get-stylesheet) コマンドを使用することでスタイルシートのスタイルオブジェクトを取得できます。 また、[VP Get stylesheets](method-list.md#vp-get-stylesheets) コマンドを使用して複数のスタイルシートのスタイルオブジェクトのコレクションを取得することもできます。
 
 ### スタイルオブジェクトプロパティ
 
