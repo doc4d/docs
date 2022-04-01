@@ -677,16 +677,16 @@ Primary keys can be numbers (Integer) or strings. You can "force" the returned p
 
 #### Description
 
-The `.getRemoteContextAttributes()` function <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
+The `.getRemoteContextAttributes()` function<!-- REF #EntityClass.getRemoteContextAttributes(). Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
 
 If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity, the function returns an empty Text.
 
 #### Exemplo
 
 ```4d
-var $ds : 4D.DataStoreImplementation
-var $address : cs.AddressEntity
-var $p : cs.PersonsEntity
+var $ds : 4D. DataStoreImplementation
+var $address : cs. AddressEntity
+var $p : cs. PersonsEntity
 var $contextA : Object
 var $info : Text
 var $text : Text
@@ -695,11 +695,9 @@ $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
 $contextA:=New object("context"; "contextA")
 
-$address:=$ds.Address.get(1; $contextA)
-$text:="" 
-For each ($p; $address.persons)
-    $text:=$p.firstname+" "+$p.lastname
-End for each 
+$address:=$ds. Address.get(1; $contextA)
+$text:="" For each ($p; $address.persons)
+    $text:=$p.firstname+" "+$p.lastname End for each 
 
 $info:=$address.getRemoteContextAttributes()
 
