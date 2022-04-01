@@ -20,6 +20,8 @@ Two specific variables can be associated with each web area:
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the web area.
 
+    > As of 4D v19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
+
 ### Motor de renderización web
 
 You can choose between [two rendering engines](properties_WebArea.md#use-embedded-web-rendering-engine) for the web area, depending on the specifics of your application.
@@ -154,7 +156,7 @@ When the form is executed, standard browser interface functions are available to
 
 - **Edit menu commands**: When the web area has the focus, the **Edit** menu commands can be used to carry out actions such as copy, paste, select all, etc., according to the selection.
 - **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. La visualización del menú contextual se puede controlar con el comando `WA SET PREFERENCE`.
-- **Drag and drop**: The user can drag and drop text, pictures and documents within the web area or between a web area and the 4D form objects, according to the 4D object properties. For security reasons, changing the contents of a web area by means of dragging and dropping a file or URL is not allowed by default. In this case, the cursor displays a "forbidden" icon ![](assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE` command to explicitly allow the dropping of URLs or files in the web area. > *Note:* This preference is not available for Web Areas using the [Windows system rendering engine](#web-rendering-engine).
+- **Drag and drop**: The user can drag and drop text, pictures and documents within the web area or between a web area and the 4D form objects, according to the 4D object properties. For security reasons, changing the contents of a web area by means of dragging and dropping a file or URL is not allowed by default. In this case, the cursor displays a "forbidden" icon ![](assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE` command to explicitly allow the dropping of URLs or files in the web area. > *Note:* This preference is not available for Web Areas using the [Windows system rendering engine](#web-rendering-engine). To actually open a dropped content, you need to call the `WA OPEN URL` command within the [`On Window Opening Denied`](Events/onWindowOpeningDenied.md) event.
 
 ### Subformularios
 
@@ -171,6 +173,7 @@ For reasons related to window redrawing mechanisms, the insertion of a web area 
 In Windows, it is not recommended to access, via a web area, the Web server of the 4D application containing the area because this configuration could lead to a conflict that freezes the application. Of course, a remote 4D can access the Web server of 4D Server, but not its own web server.
 
 ### Inserción del protocolo (macOS)
+
 The URLs handled by programming in web areas in macOS must begin with the protocol. Por ejemplo, debe pasar la cadena "http://www.mysite.com" y no sólo "www.mysite.com".
 
 
@@ -178,28 +181,24 @@ The URLs handled by programming in web areas in macOS must begin with the protoc
 
 You can view and use a web inspector within web areas in your forms or in offscreen web areas. The web inspector is a debugger which is provided by the embedded Web engine. It allows parsing the code and the flow of information of the web pages.
 
-### Displaying the web inspector
-
 To display the web inspector, you can either execute the `WA OPEN WEB INSPECTOR` command, or use the context menu of the web area.
 
-- **Execute the `WA OPEN WEB INSPECTOR` command**<br> This command can be used directly with onscreen (form object) and offscreen web areas. In the case of an onscreen web area, you must have [selected the embedded web rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine) for the area (the web inspector is only available with this configuration).
+- **Execute the `WA OPEN WEB INSPECTOR` command**<br> This command can be used directly with onscreen (form object) and offscreen web areas.
 
 - **Use the web area context menu**<br> This feature can only be used with onscreen web areas and requires that the following conditions are met:
-    - the embedded web rendering engine is selected for the area
     - the [context menu](properties_Entry.md#context-menu) for the web area is enabled
     - the use of the inspector is expressly enabled in the area by means of the following statement:
     ```4d
-        WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
+        WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)  
     ```
-    - a navigation action has occurred (for example, the user has clicked a link)
+
+> With [Windows system rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine), a change in this preference requires a navigation action in the area (for example, a page refresh) to be taken into account.
 
 For more information, refer to the description of the `WA SET PREFERENCE` command.
 
-### Utilización del inspector web
-
 Cuando haya realizado los ajustes como se ha descrito anteriormente, entonces tendrá nuevas opciones como **Inspeccionar elemento** en el menú contextual del área. When you select this option, the web inspector window is displayed.
 
-> The web inspector is included in the embedded web rendering engine. For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
+> For a detailed description of the features of this debugger, refer to the documentation provided by the web rendering engine.
 
 
 
