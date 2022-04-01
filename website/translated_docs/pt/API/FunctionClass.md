@@ -320,7 +320,7 @@ O código abaixo cria um diálogo aceitando uma fórmula em formato texto:
 
 #### Description
 
-The `.apply()` function <!-- REF #FunctionClass.apply().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. O objeto fórmula pode ser criado usando os comandos `Formula` or `Formula from string`.
+A função`.apply()` <!-- REF #FunctionClass.apply().Summary -->executa o objeto `formula` ao qual é aplicada é retorna o valor resultante<!-- END REF -->. O objeto fórmula pode ser criado usando os comandos `Formula` or `Formula from string`.
 
 
 No parâmetro *thisObj* pode passar uma referência ao objeto a ser usada como `This` dentro da fórmula.

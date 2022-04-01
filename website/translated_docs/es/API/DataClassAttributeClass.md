@@ -118,9 +118,9 @@ This property is not returned if `.kind` = "relatedEntity" or "relatedEntities".
 ## .fieldType
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                 |
-| ------- | ------------------------------ |
-| v19 R3  | Support of computed attributes |
+| Versión | Modificaciones               |
+| ------- | ---------------------------- |
+| v19 R3  | Soporta atributos calculados |
 </details>
 
 
@@ -229,9 +229,9 @@ Esta propiedad no se devuelve si [`.kind`](#kind) = "relatedEntity" o "relatedEn
 ## .kind
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones     |
-| ------- | ------------------ |
-| v19 R3  | Added "calculated" |
+| Versión | Modificaciones          |
+| ------- | ----------------------- |
+| v19 R3  | Adición de "calculated" |
 </details>
 
 
@@ -392,9 +392,9 @@ Dadas las siguientes tablas y relaciones:
 ## .type
 
 <details><summary>Histórico</summary>
-| Versión | Modificaciones                 |
-| ------- | ------------------------------ |
-| v19 R3  | Support of computed attributes |
+| Versión | Modificaciones               |
+| ------- | ---------------------------- |
+| v19 R3  | Soporta atributos calculados |
 </details>
 
 
