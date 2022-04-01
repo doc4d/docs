@@ -599,7 +599,7 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 </details>
 
 <!-- REF #document.getText().Syntax -->
-**.getText**( { *charSetName* : Text } { ; } { *breakMode* : integer} ) : Text<br>**.getText**( { *charSetNum* : integer } { ; } { *breakMode* : integer} ) : Text<!-- END REF -->
+**.getText**( { *charSetName* : Text { ; *breakMode* : Integer } } ) : Text<br>**.getText**( { *charSetNum* : Integer { ; *breakMode* : Integer } } ) : Text<!-- END REF -->
 
 
 <!-- REF #document.getText().Params -->
@@ -661,18 +661,18 @@ id name price vat
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
-このとき、区切り文字は `\t` で、改行コードは `\r` (CR) です。
+このとき、区切り文字は `\t` (タブ) で、改行コードは `\r\n` (CRLF) です。
 
 以下は、同じファイルで改行コードが異なる例です:
 
 ```4d
- $txt:=$myFile.getText("UTF-8", Document with CRLF)
+ $txt:=$myFile.getText("UTF-8", Document with LF)
 ```
 この場合、`$txt` の値は次の通りです:
 
-"id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
+"id\tname\tprice\tvat\n3\tthé\t1.06€\t19.6\n2\tcafé\t1.05€\t19.6"
 
-このとき、改行コードは `\r\n` (CRLF) です。
+このとき、改行コードは `\n` (LF) です。
 
 
 
