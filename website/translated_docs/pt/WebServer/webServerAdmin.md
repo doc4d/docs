@@ -230,7 +230,7 @@ The automatic backup parameters for the logweb.txt are set on the **Web/Log (bac
 
 ![](assets/en/WebServer/backup.png)
 
-First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
+Configure the automatic backup parameters for the request log. First you must choose the frequency (days, weeks, etc.) or the file size limit criterion by clicking on the corresponding radio button. You must then specify the precise moment of the backup if necessary.
 
 *   **No Backup**: The scheduled backup function is deactivated.
 

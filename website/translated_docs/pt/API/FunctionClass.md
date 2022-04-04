@@ -381,7 +381,7 @@ Note que `.apply()` é similar a [`.call()`](#call) exceto que parâmetros são 
 
 #### Descrição
 
-The `.call()` function <!-- REF #FunctionClass.call().Summary -->executes the `formula` object to which it is applied and returns the resulting value<!-- END REF -->. O objeto fórmula pode ser criado usando os comandos `Formula` or `Formula from string`.
+A função `.call()` <!-- REF #FunctionClass.call().Summary -->executa o objeto `formula` ao qual é aplicado e retorna o valor resultante<!-- END REF -->. O objeto fórmula pode ser criado usando os comandos `Formula` or `Formula from string`.
 
 No parâmetro *thisObj* pode passar uma referência ao objeto a ser usada como `This` dentro da fórmula.
 
@@ -422,9 +422,9 @@ Note que `.call()` é similar a [`.apply()`](#apply) exceto que parâmetros são
 **.source** : Text <!-- END REF -->
 
 
-#### Description
+#### Descrição
 
-The `.source` property <!-- REF #FunctionClass.source.Summary -->contains the source expression of the `formula` as text<!-- END REF -->.
+A propriedade `.source` <!-- REF #FunctionClass.source.Summary -->contém a expressão fonte da `fórmula` como texto<!-- END REF -->.
 
 Essa propriedade é**apenas leitura**.
 
