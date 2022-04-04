@@ -72,10 +72,8 @@ Case 1: The value of the parent form variable or expression is modified and this
 The following code is executed:
 
 ```4d  
-// Subform form method
-If (Form event code=On Bound Variable Change) //bound variable or expression was modified in the parent form
-    Form.clockValue:=OBJECT Get subform container value //synchonize the local value
-End if
+// Subform form method If (Form event code=On Bound Variable Change) //bound variable or expression was modified in the parent form
+    Form.clockValue:=OBJECT Get subform container value //synchonize the local value End if
 ```
 
 It updates the value of `Form.clockValue` in the subform:
@@ -105,10 +103,8 @@ Inside the subform, the button changes the value of the `Form.clockValue` expres
 The following code is executed:
 
 ```4d  
-// subform clock object method
-If (Form event code=On Data Change) //whatever the way the value is changed
-    OBJECT SET SUBFORM CONTAINER VALUE(Form.clockValue) //Push the value to the container
-End if
+// subform clock object method If (Form event code=On Data Change) //whatever the way the value is changed
+    OBJECT SET SUBFORM CONTAINER VALUE(Form.clockValue) //Push the value to the container End if
 ```
 
 ![](assets/en/FormObjects/update-main-form.png)
@@ -136,8 +132,7 @@ In the parent form, you display the subfom twice. Each subform container is boun
 The button only creates `mother` and `father` properties in the parent's `Form` object:
 
 ```4d
-//Add values button object method
-Form.mother:=New object("lastname"; "Hotel"; "firstname"; "Anne")
+//Add values button object method Form.mother:=New object("lastname"; "Hotel"; "firstname"; "Anne")
 Form.father:=New object("lastname"; "Golf"; "firstname"; "Félix")
 ```
 
@@ -154,11 +149,9 @@ If you modify a value either in the parent form or in the subform, it is automat
 In versions prior to 4D v19 R5, synchronization between parent forms and subforms was handled through **pointers**. For example, to update a subform object, you could call the following code:
 
 ```4d  
-// Subform form method
-If (Form event code=On Bound Variable Change) 
+// Subform form method If (Form event code=On Bound Variable Change) 
     ptr:=OBJECT Get pointer(Object subform container) 
-    clockValue:=ptr-> 
-End if
+    clockValue:=ptr-> End if
 ```
 
 **This principle is still supported for compatibility but is now deprecated since it does not allow binding expressions to subforms.** It should no longer be used in your developments. In any cases, we recommend to use the [`Form` command](#synchronizing-parent-form-and-subform-multiple-values) or the [`OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands](#synchronizing-parent-form-and-subform-single-value) to synchronize form and subform values.

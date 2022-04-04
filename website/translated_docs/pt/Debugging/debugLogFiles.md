@@ -227,6 +227,22 @@ Os campos abaixo estão registrados para cada evento:
 
 Dependendo do evento, vários outros campos podem ser registrados, como task, socket, etc.
 
+### Diagnostic log levels
+
+The *4DDiagnosticLog.txt* file can log different levels of messages, from `ERROR` (most important) to `TRACE` (less important). By default, the `INFO` level is set, which means that the file will log only important events, including errors and unexpected results (see below).
+
+You can select the level of messages using the `Diagnostic log level` selector of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) command, depending on your needs. When you select a level, levels above (which are more important) are implicitely selected also. The following levels are available:
+
+| Message level | Description                                                                                   | When selected, includes         |
+| ------------- | --------------------------------------------------------------------------------------------- | ------------------------------- |
+| ERROR         | A part of the application does not work                                                       | ERROR                           |
+| WARN          | Potential error, use of a deprecated function, poor uses, undesirable or unexpected situation | ERROR, WARN                     |
+| INFO          | *Default level* - Important application event                                                 | ERROR, WARN, INFO               |
+| DEBUG         | Detail of application flow (for 4D technical services)                                        | ERROR, WARN, INFO, DEBUG        |
+| TRACE         | Other internal information (for 4D technical services)                                        | ERROR, WARN, INFO, DEBUG, TRACE |
+
+
+
 ## 4DSMTPLog.txt, 4DPOP3Log.txt, and 4DIMAPLog.txt
 
 Esses históricos registram cada troca entre a aplicação 4D e o servidor de mail (SMTP, POP3, IMAP) que foram iniciados pelos comandos abaixo:
@@ -407,6 +423,12 @@ The log configuration file is a `.json` file that can contain the following prop
                     "description": "Enable/Disable diagnostic logs 0 or 1 (0 = do not record, 1 = record)",
                     "type": "integer",
                     "minimum": 0    
+                },
+                "level": {
+                    "description": "Configure diagnostic logs",
+                    "type": "integer",
+                    "minimum": 2,
+                    "maximum": 6
                 }
             }
           },

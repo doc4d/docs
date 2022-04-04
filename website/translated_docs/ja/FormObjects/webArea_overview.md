@@ -20,6 +20,8 @@ Webエリアには 2つの特別な変数が自動で割り当てられます:
 - [`URL`](properties_WebArea.md#url) -- Webエリアに表示されている URL の管理に使用します。
 - [`進捗状況変数`](properties_WebArea.md#進捗状況変数) -- Webエリアにロード中のページのパーセンテージを知るために使用します。
 
+    > As of 4D v19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
+
 ### Webレンダリングエンジン
 
 Webエリアでは、[2つの描画エンジン](properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) うちから使用するものを選択することができます。
@@ -154,7 +156,7 @@ Webエリアを自動で管理するために、4つの特別な自動アクシ�
 
 - **編集メニューコマンド**: Webエリアにフォーカスがあるとき、**編集** メニューコマンドを使用してコピーやペースト、すべてを選択などのアクションを選択に応じて実行できます。
 - **コンテキストメニュー**: Webエリアで、システム標準の [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) を使用できます。 コンテキストメニューの表示は、`WA SET PREFERENCE` コマンドを使用することで管理可能です。
-- **ドラッグ＆ドロップ**: 4D のオブジェクトプロパティに基づき、ユーザーは Webエリア内で、または Webエリアと 4Dフォームオブジェクト間で、テキストやピクチャー、ドキュメントをドラッグ＆ドロップできます。 セキュリティ上の理由から、ファイルまたは URL のドラッグ＆ドロップによって Webエリアのコンテンツを変更することは、デフォルトで禁止されています。 この場合、カーソルは "禁止" アイコン ![](assets/en/FormObjects/forbidden.png) を表示します。 エリアへのファイルや URL のドロップを許可するには、`WA SET PREFERENCE` コマンドを使用して明示的にドロップを許可する必要があります。 > *Note:* This preference is not available for Web Areas using the [Windows system rendering engine](#web-rendering-engine).
+- **ドラッグ＆ドロップ**: 4D のオブジェクトプロパティに基づき、ユーザーは Webエリア内で、または Webエリアと 4Dフォームオブジェクト間で、テキストやピクチャー、ドキュメントをドラッグ＆ドロップできます。 セキュリティ上の理由から、ファイルまたは URL のドラッグ＆ドロップによって Webエリアのコンテンツを変更することは、デフォルトで禁止されています。 この場合、カーソルは "禁止" アイコン ![](assets/en/FormObjects/forbidden.png) を表示します。 エリアへのファイルや URL のドロップを許可するには、`WA SET PREFERENCE` コマンドを使用して明示的にドロップを許可する必要があります。 > *Note:* This preference is not available for Web Areas using the [Windows system rendering engine](#web-rendering-engine). To actually open a dropped content, you need to call the `WA OPEN URL` command within the [`On Window Opening Denied`](Events/onWindowOpeningDenied.md) event.
 
 ### サブフォーム
 
@@ -171,6 +173,7 @@ Webエリアを自動で管理するために、4つの特別な自動アクシ�
 Windows においては、Webエリアから、同じ 4Dアプリケーションで起動中の Webサーバーへのアクセスはお勧めできません。これをおこなうとコンフリクトが発生し、アプリケーションがフリーズすることがあります。 もちろん、リモートの 4D から 4D Server の Webサーバーにアクセスすることはできます。自身の Webサーバーにアクセスできないということです。
 
 ### プロトコルの挿入 (macOS)
+
 macOS 上の Webエリアで、プログラムにより処理される URL は、プロトコルで開始されていなければなりません。 つまり、"www.mysite.com" ではな、"http://www.mysite.com" 文字列を渡さなければならないということです。
 
 
@@ -178,28 +181,24 @@ macOS 上の Webエリアで、プログラムにより処理される URL は�
 
 オフスクリーンの Webエリアや、フォームのWeb エリア内において、Webインスペクターを見たり使用したりすることができます。 Webインスペクターは、埋め込みWebエンジンによって提供されているデバッガーです。 Webページの情報の、コードとフローを解析します。
 
-### Webインスペクターの表示
-
 Webインスペクターを表示させるには、`WA OPEN WEB INSPECTOR` コマンドを実行するか、 Webエリアのコンテキストメニューを使用します。
 
-- **`WA OPEN WEB INSPECTOR` コマンドの実行**<br> このコマンドはスクリーン上 (フォームオブジェクト) の、またはオフスクリーンの Webエリアに対して直接使用することができます。 オフスクリーンの Webエリアの場合、そのエリアは [埋め込みWebレンダリングエンジン](properties_WebArea.md#埋め込みwebレンダリングエンジンを使用) を使用している必要があります (Webインスペクターはこの設定でのみ利用可能です)。
+- **`WA OPEN WEB INSPECTOR` コマンドの実行**<br> このコマンドはスクリーン上 (フォームオブジェクト) の、またはオフスクリーンの Webエリアに対して直接使用することができます。
 
 - **Webエリアコンテキストメニューの使用**<br> この機能はオンスクリーンの Webエリアでのみ使用することができ、以下の条件を満たしている必要があります:
-    - エリアに対して "埋め込みWebレンダリングエンジンを使用" プロパティが選択されている。
     - エリアに対して [コンテキストメニュー](properties_Entry.md#コンテキストメニュー) が有効化されている。
     - インスペクターの使用が、以下の宣言を用いて明示的に有効化されている:
     ```4d
-        WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)
+        WA SET PREFERENCE(*;"WA";WA enable Web inspector;True)  
     ```
-    - a navigation action has occurred (for example, the user has clicked a link)
+
+> With [Windows system rendering engine](properties_WebArea.md#use-embedded-web-rendering-engine), a change in this preference requires a navigation action in the area (for example, a page refresh) to be taken into account.
 
 詳細は `WA SET PREFERENCE` コマンドの説明を参照してください。
 
-### Webインスペクターの使用
-
 上記のとおり設定を完了すると、エリア内のコンテキストメニュー内に **要素を調査** という新しいオプションが追加されているはずです: この項目を選択すると、Webインスペクターウィンドウが表示されます。
 
-> この Webインスペクターは、埋め込みWebレンダリングエンジンに含まれています。 このデバッガーの機能の詳細に関しては、Webレンダリングエンジンにより提供されているドキュメントを参照してください。
+> このデバッガーの機能の詳細に関しては、Webレンダリングエンジンにより提供されているドキュメントを参照してください。
 
 
 

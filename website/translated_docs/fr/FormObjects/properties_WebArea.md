@@ -83,7 +83,10 @@ La variable URL produit les mêmes effets que la commande [WA OUVRIR URL](https:
 
 Cette option vous permet de choisir entre deux moteurs de rendus pour la zone Web, en fonction des spécificités de votre application :
 
-*   **unchecked** - `JSON value: system` (default): In this case, 4D uses the "best" engine corresponding to the system. Sous Windows, 4D utilise automatiquement la plus version la plus récente du navigateur présent sur la machine (IE11, MS Edge, etc.). Sur macOS, 4D utilise la version courante du WebKit (Safari). Ce fonctionnement vous permet de bénéficier automatiquement des dernières avancées en matière de rendu Web, via HTML5 ou JavaScript. En revanche, vous pouvez rencontrer des différences de rendu entre les implémentations d’Internet Explorer/Edge et de WebKit.
+*   **unchecked** - `JSON value: system` (default): In this case, 4D uses the "best" engine corresponding to the system. **unchecked** - `JSON value: system` (default): In this case, 4D uses the "best" engine corresponding to the system. Sur macOS, 4D utilise la version courante du WebKit (Safari). Ce fonctionnement vous permet de bénéficier automatiquement des dernières avancées en matière de rendu Web, via HTML5 ou JavaScript. En revanche, vous pouvez rencontrer des différences de rendu entre les implémentations d’Internet Explorer/Edge et de WebKit.
+
+> On Windows, if WebView2 Runtime is not installed, 4D uses the Blink engine from Google (CEF) as system rendering engine.
+
 *   **coché** - `valeur JSON : embedded` : Dans ce cas, 4D utilise Blink à partir de Google (CEF). L’utilisation d'un moteur Web intégré vous permet d’avoir l’assurance que le rendu et le fonctionnement des zones Web de votre application seront quasiment identiques, quelle que soit la plate-forme d’exécution de 4D (de légères variations de pixels ou des différences liées à l’implémentation réseau pourront toutefois être constatées). En contrepartie, vous ne bénéficiez plus des mises à jour automatiques du moteur Web effectuées par le système d’exploitation. Des nouvelles versions du moteur seront toutefois proposées via 4D.
 
 A noter que le moteur Blink est soumis aux restrictions suivantes :

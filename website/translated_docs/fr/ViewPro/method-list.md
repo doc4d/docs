@@ -77,7 +77,7 @@ La commande `VP ADD RANGE NAME` <!-- REF #_method_.VP ADD RANGE NAME.Summary -->
 
 Dans *rangeObj*, passez la plage que vous souhaitez nommer, et passez le nouveau nom de la plage dans *name*. Si le nom est déjà utilisé dans le même scope, la nouvelle plage nommée remplace la plage existante. A noter que vous pouvez utiliser le même nom pour plusieurs scopes (ci-dessous).
 
-In *fontObj*, pass an object containing the font properties. Les propriétés suivantes sont prises en charge :
+In *options*, you can pass an object that specifies additional options. Les propriétés suivantes sont prises en charge :
 
 
 | Propriété | Type   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
@@ -653,7 +653,7 @@ Les contenus de document sont convertis en tenant compte de leurs attributs d'af
 *   Hauteur de lignes
 *   Largeur de colonnes
 *   Visibilité : colonnes / lignes cachées.
-> > > Gridline visibility depends on document attribute defined with [VP SET PRINT INFO](#vp-set-print-info).
+> La numérotation démarre à 0.
 
 #### Résultat
 
@@ -756,7 +756,7 @@ Dans *rangeObj*, passez un objet contenant les colonnes à supprimer. Si la plag
 
 *   des lignes et des colonnes, seules les colonnes sont supprimées.
 *   uniquement des lignes, la commande ne fait rien.
-> Les colonnes sont supprimées de droite à gauche.
+> La numérotation démarre à 0.
 
 
 #### Exemple
@@ -795,7 +795,7 @@ Dans *rangeObj*, passez un objet contenant les lignes à supprimer. Si la plage 
 
 *   des lignes et des colonnes, seules les lignes sont supprimées.
 *   uniquement des colonnes, la commande ne fait rien.
-> Les lignes sont supprimées du bas vers le haut.
+> La numérotation démarre à 0.
 
 
 #### Exemple
@@ -856,7 +856,7 @@ Le paramètre optionnel *paramObj* vous permet de définir plusieurs propriété
 | password             | Texte   | Microsoft Excel uniquement (optionnel) - Mot de passe utilisé pour protéger le document MS Excel                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | formula              | object  | Méthode callback à lancer lorsque l'export est terminé. L'utilisation d'une méthode callback est nécessaire lorsque l'export est asynchrone (ce qui est le cas pour les formats PDF et Excel) si vous avez besoin d'un code à exécuter après l'export. La méthode callback doit être utilisée avec la commande [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) (voir ci-dessous pour plus d'informations).                                                                                                                                                      |
 | valuesOnly           | boolean | Précise que seules les valeurs issues de formules (le cas échéant) seront exportées.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| includeFormatInfo    | boolean | Vrai pour inclure les informations de formatage, sinon faux (vrai par défaut). Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. D'un autre côté, mettre cette propriété à **faux** permet de réduire la durée de l'export.                                                                                                                                                                                                                                                                                                           |
+| includeFormatInfo    | boolean | True (default) to include formatting information, false otherwise. Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. On the other hand, setting this property to False allows reducing export time.                                                                                                                                                                                                                                                                                                                                   |
 | includeBindingSource | Booléen | 4DVP only. True (default) to export the current data context values as cell values in the exported document (data contexts themselves are not exported). False otherwise. Cell binding is always exported. For data context and cell binding management, see [VP SET DATA CONTEXT](#vp-set-data-context) and [VP SET BINDING PATH](#vp-set-binding-path).                                                                                                                                                                                                                           |
 | sheetIndex           | number  | PDF uniquement (optionnel) - Numéro de la feuille à exporter (débute à 0). -2=toutes les feuilles visibles (par défaut), -1=feuille courante uniquement                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | pdfOptions           | object  | PDF uniquement (optionnel) - Options pour l'export en PDF <p><table><tr><th>Propriété</th><th>Type</yh><th>Description</th></tr><tr><td>creator</td><td>Texte</td><td>nom de l'application qui a créé le document original à partir duquel il a été converti.</td></tr><tr><td>title</td><td>Texte</td><td>titre du document.</td></tr><tr><td>author</td><td>Texte</td><td>nom de la personne ayant créé ce document.</td></tr><tr><td>keywords</td><td>Texte</td><td>mots-clés associés au document.</td></tr><tr><td>subject</td><td>Texte</td><td>sujet du document.</td></tr></table></p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -998,10 +998,10 @@ Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom i
 In the *options* parameter, you can pass the following export options, if required:
 
 
-| Propriété            | Type    | Description                                                                                                                                                                                                                                       |
-| -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| includeFormatInfo    | Booléen | True (default) to include formatting information, false otherwise. Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. On the other hand, setting this property to False allows reducing export time. |
-| includeBindingSource | Booléen | True (default) to export the current data context values as cell values in the exported object (data contexts themselves are not exported). False otherwise. Cell binding is always exported.                                                     |
+| Propriété            | Type    | Description                                                                                                                                                                                                                                                               |
+| -------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| includeFormatInfo    | Booléen | Vrai pour inclure les informations de formatage, sinon faux (vrai par défaut). Les informations de formatage sont utiles dans certains cas, par exemple pour un export en SVG. D'un autre côté, mettre cette propriété à **faux** permet de réduire la durée de l'export. |
+| includeBindingSource | Booléen | True (default) to export the current data context values as cell values in the exported object (data contexts themselves are not exported). False otherwise. Cell binding is always exported.                                                                             |
 
 Pour plus d'informations sur les objets 4D View Pro, veuillez vous référer au paragraphe [objet 4D View Pro](configuring.md#objet-4d-view-pro).
 
@@ -1096,17 +1096,17 @@ Pour trouver "Total" et le remplacer par "Grand Total" :
 
 ```4d
 var $range;$condition;$result : Object
- 
+
  $range:=VP All("ViewProArea")
- 
+
  $condition:=New object
  $condition.target:=vk find target text
  $condition.all:=True //Rechercher le document entier
  $condition.flags:=vk find flag exact match
- 
+
   // Remplacer les cellules contenant uniquement 'Total' dans la feuille courante par "Grand Total"
  $result:=VP Find($range;"Total";$condition;"Grand Total")
- 
+
   // Rechercher un objet de plage vide
  If($result.ranges.length=0)
     ALERT("Aucun résultat trouvé")
@@ -4041,7 +4041,7 @@ To pass a time value in *dataObj* or *dataColl*, encapsulate it in an object wit
 | value     | Integer, Real, Boolean, Text, Date, Null | Value to put in the context                   |
 | time      | Réel                                     | Time value (in seconds) to put in the context |
 
-In *options*, you can pass an object that specifies additional options. Possible properties are:
+Le paramètre *valueObj* est un objet qui définit la valeur et le [format](configuring.md#cell-format) à assigner à *rangeObj*. Il peut contenir les propriétés suivantes :
 
 | Propriété           | Type   | Description                                                                                                                                                                                                    |
 | ------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -92,7 +92,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-La propiedad `.extension` devuelve <!-- REF #document.extension.Summary -->la extensión del nombre del archivo (si lo hay)<!-- END REF -->. An extension always starts with ".". The property returns an empty string if the file name does not have an extension.
+La propiedad `.extension` devuelve <!-- REF #document.extension.Summary -->la extensión del nombre del archivo (si lo hay)<!-- END REF -->. Una extensión siempre comienza por ".". La propiedad devuelve una cadena vacía si el nombre del archivo no tiene extensión.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -235,7 +235,7 @@ Esta propiedad es **de sólo lectura**.
 #### Descripción
 
 La propiedad `.isWritable` devuelve <!-- REF #document.isWritable.Summary -->true si el archivo existe en el disco y es escribible<!-- END REF -->.
-> The property checks the ability of the 4D application to write on the disk (access rights), it does not solely rely on the *writable* attribute of the file.
+> La propiedad verifica la capacidad de la aplicación 4D a escribir en el disco (derechos de acceso), no se basa únicamente en el atributo *writable* del archivo.
 
 Esta propiedad es **de sólo lectura**.
 
@@ -339,10 +339,10 @@ Esta propiedad es **de sólo lectura**.
 
 La propiedad `.original` devuelve<!-- REF #documento.original.Resumen -->el elemento de destino para un alias, un acceso directo o un archivo de enlace simbólico<!-- END REF -->. El elemento objetivo puede ser:
 
-*   a file object
+*   un objeto File
 *   un objeto de la carpeta
 
-For non-alias files, the property returns the same file object as the file.
+Para los archivos sin alias, la propiedad devuelve el mismo objeto File que el archivo.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -366,7 +366,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-La propiedad `.parent` devuelve <!-- REF #document.parent.Summary -->el objeto carpeta padre del archivo<!-- END REF -->. If the path represents a system path (e.g., "/DATA/"), the system path is returned.
+La propiedad `.parent` devuelve <!-- REF #document.parent.Summary -->el objeto carpeta padre del archivo<!-- END REF -->. Si la ruta representa una filesystem (por ejemplo, "/DATA/"), se devuelve el filesystem.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -390,7 +390,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-La propiedad `.path` devuelve <!-- REF #document.path.Summary -->la ruta POSIX del archivo<!-- END REF -->. If the path represents a filesystem (e.g., "/DATA/"), the filesystem is returned.
+La propiedad `.path` devuelve <!-- REF #document.path.Summary -->la ruta POSIX del archivo<!-- END REF -->. Si la ruta representa un filesystem (por ejemplo, "/DATA/"), se devuelve el filesystem.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -437,7 +437,7 @@ Esta propiedad es **de sólo lectura**.
 
 #### Descripción
 
-La propiedad `.size` devuelve <!-- REF #document.size.Summary -->el tamaño del archivo expresado en bytes<!-- END REF -->. If the file does not exist on disk, the size is 0.
+La propiedad `.size` devuelve <!-- REF #document.size.Summary -->el tamaño del archivo expresado en bytes<!-- END REF -->. Si el archivo no existe en el disco, el tamaño es 0.
 
 Esta propiedad es **de sólo lectura**. 
 
@@ -484,9 +484,9 @@ Por defecto, el archivo se copia con el nombre del archivo original. Si desea ca
 
 Si ya existe un archivo con el mismo nombre en la *destinationFolder*, por defecto 4D genera un error. Puede pasar la constante `fk overwrite` en el parámetro *overwrite* para ignorar y sobrescribir el archivo existente
 
-| Constante      | Valor | Comentario                          |
-| -------------- | ----- | ----------------------------------- |
-| `fk overwrite` | 4     | Overwrite existing elements, if any |
+| Constante      | Valor | Comentario                                        |
+| -------------- | ----- | ------------------------------------------------- |
+| `fk overwrite` | 4     | Sobrescribir los elementos existentes, si los hay |
 
 
 **Valor devuelto**
@@ -529,11 +529,11 @@ $copy:=$source.copyTo(Folder("/PACKAGE");fk overwrite)
 
 #### Descripción
 
-The `.getContent()` function  <!-- REF #document.getContent().Summary -->returns a `4D.Blob` object containing the entire content of a file<!-- END REF -->. Para obtener información sobre los BLOB, consulte la sección [BLOB](Conceptos/dt_blob.md).
+La función `.getContent()`  <!-- REF #document.getContent().Summary -->devuelve un objeto `4D.Blob` que contiene todo el contenido de un archivo<!-- END REF -->. Para obtener información sobre los BLOB, consulte la sección [BLOB](Conceptos/dt_blob.md).
 
 **Valor devuelto**
 
-A `4D.Blob` object.
+Un objeto `4D.Blob`.
 
 #### Ejemplo
 
@@ -542,7 +542,7 @@ Para guardar el contenido de un documento en un campo `BLOB`:
 ```4d
  var $vPath : Text
  $vPath:=Select document("";"*";"Select a document";0)
- If(OK=1) //If a document has been chosen
+ If(OK=1) //Si se ha seleccionado un documento
     [aTable]aBlobField:=File($vPath;fk platform path).getContent()
  End if
 ```
@@ -599,7 +599,7 @@ Icono de archivo [picture](../Concepts/picture.html).
 </details>
 
 <!-- REF #document.getText().Syntax -->
-**.getText**( { *charSetName* : Text } { ; } { *breakMode* : integer} ) : Text<br>**.getText**( { *charSetNum* : integer } { ; } { *breakMode* : integer} ) : Text<!-- END REF -->
+**.getText**( { *charSetName* : Text { ; *breakMode* : Integer } } ) : Text<br>**.getText**( { *charSetNum* : Integer { ; *breakMode* : Integer } } ) : Text<!-- END REF -->
 
 
 <!-- REF #document.getText().Params -->
@@ -617,10 +617,10 @@ La función `.getText()` <!-- REF #document.getText().Summary -->devuelve el con
 
 Opcionalmente, puede designar el conjunto de caracteres que se utilizará para leer el contenido. Puede pasar:
 
-- in *charSetName*, a string containing the standard set name (for example "ISO-8859-1" or "UTF-8"),
-- or in *charSetNum*, the MIBEnum ID (number) of the standard set name.
+- en *charSetName*, una cadena que contiene el nombre del conjunto estándar (por ejemplo "ISO-8859-1" o "UTF-8"),
+- o en *charSetNum*, el ID MIBEnum (número) del nombre del conjunto estándar.
 
-> For the list of character sets supported by 4D, refer to the description of the `CONVERT FROM TEXT` command.
+> Para conocer la lista de los conjuntos de caracteres que soporta 4D, consulte la descripción del comando `CONVERT FROM TEXT`.
 
 Si el documento contiene una marca de orden de bytes (BOM), 4D utiliza el conjunto de caracteres que ha establecido en lugar del especificado en *charSetName* o *charSetNum* (este parámetro se ignora entonces). Si el documento no contiene una BOM y si *charSetName* o *charSetNum* se omite, por defecto 4D utiliza el conjunto de caracteres "UTF-8".
 
@@ -657,22 +657,22 @@ Cuando se ejecuta este código:
  $myFile:=Folder(fk documents folder).file("Billing.txt") //UTF-8 por defecto
  $txt:=$myFile.getText()
 ```
-... you get the following for `$txt`:
+... obtiene para `$txt`:
 
 "id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
 
-with `\t` (tab) as separator and `\r` (CR) as line delimiter.
+with `\t` (tab) as separator and `\r\n` (CRLF) as line delimiter.
 
-Here is another example with the same file, but a different line delimiter:
+Aquí hay otro ejemplo con el mismo archivo, pero con un delimitador de línea diferente:
 
 ```4d
- $txt:=$myFile.getText("UTF-8", Document with CRLF)
+ $txt:=$myFile.getText("UTF-8", Document with LF)
 ```
-In this case, the contents of `$txt` are as follows:
+En este caso, el contenido de `$txt` es el siguiente:
 
-"id\tname\tprice\tvat\r\n3\tthé\t1.06€\t19.6\r\n2\tcafé\t1.05€\t19.6"
+"id\tname\tprice\tvat\n3\tthé\t1.06€\t19.6\n2\tcafé\t1.05€\t19.6"
 
-This time `\r\n` (CRLF) is used as line delimiter.
+This time `\n` (LF) is used as line delimiter.
 
 
 

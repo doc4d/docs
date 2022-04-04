@@ -17,7 +17,7 @@ title: ログファイルの詳細
 *   [4DSMTPLog.txt](#4dsmtplogtxt-4dpop3logtxt-および-4dimaplogtxt)
 *   [ORDA クライアントリクエストのログファイル](#ordaクライアントリクエスト)
 
-> サーバーとクライアントの両方においてログファイルが生成可能な場合、サーバー側のログファイル名には "Server" が追加されます。たとえば、"4DRequestsLogServer.txt" のようにです。
+> サーバーとクライアントの両方においてログファイルが生成可能な場合、サーバー側のログファイル名には "Server" が追加されます。 たとえば、"4DRequestsLogServer.txt" のようにです。
 
 これらのログファイルは、デバッグ中に時系列を確立しエントリー間のつながりを分かりやすくするために、いくつかのフィールドを共有しています:
 
@@ -225,6 +225,22 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
 | message            | ログエントリーの詳細                                     |
 
 イベントによって、タスク、ソケットなど様々な他のフィールドを記録に含めることができます。
+
+### ファイルを有効化する方法
+
+The *4DDiagnosticLog.txt* file can log different levels of messages, from `ERROR` (most important) to `TRACE` (less important). By default, the `INFO` level is set, which means that the file will log only important events, including errors and unexpected results (see below).
+
+You can select the level of messages using the `Diagnostic log level` selector of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) command, depending on your needs. When you select a level, levels above (which are more important) are implicitely selected also. The following levels are available:
+
+| カラム番号 | 説明                                                     | When selected, includes         |
+| ----- | ------------------------------------------------------ | ------------------------------- |
+| ERROR | ログセッション内で固有かつシーケンシャルなオペレーション番号                         | ERROR                           |
+| WARN  | RFC3339 フォーマットの日付と時間 (yyyy-mm-ddThh:mm:ss.ms)          | ERROR, WARN                     |
+| INFO  | 4DプロセスID                                               | ERROR, WARN, INFO               |
+| DEBUG | 固有プロセスID                                               | ERROR, WARN, INFO, DEBUG        |
+| TRACE | Other internal information (for 4D technical services) | ERROR, WARN, INFO, DEBUG, TRACE |
+
+
 
 ## 4DSMTPLog.txt, 4DPOP3Log.txt, および 4DIMAPLog.txt
 

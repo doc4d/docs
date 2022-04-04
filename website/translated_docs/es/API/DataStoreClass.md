@@ -447,7 +447,7 @@ End for each
 
 // Get all remote contexts (in this case, contextA and contextB)
 $info:=$ds.getAllRemoteContexts()
-//$info = [{name:"contextB"; dataclass:"Address"; main:"zipCode"},
+//$info = [{name:"contextB"; dataclass: "Address"; main:"zipCode"},
 {name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]
 ```
 
@@ -819,7 +819,7 @@ Se crea un método proyecto *protectDataFile* para llamar antes de los despliegu
 | --------------- | ------------ | -- | ------------------------------------------------------------------------- |
 | contextName     | Texto        | -> | Name of the context                                                       |
 | dataClassName   | Texto        | -> | Nombre de la dataclass                                                    |
-| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                                 |
+| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore. Employee)                                |
 | attributes      | Texto        | -> | Attribute list separated by a comma                                       |
 | attributesColl  | Collection   | -> | Collection of attribute names (text)                                      |
 | contextType     | Texto        | -> | If provided, value must be "main" or "currentItem"                        |
@@ -922,8 +922,7 @@ Case of
         // Form.persons is displayed in a list box
 End case 
 
-// When you get the attributes in the context of the current item:
-Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
+// When you get the attributes in the context of the current item: Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
 // Form.currentItemLearntAttributes = "age, gender, children" 
 ```
 #### Ver también

@@ -111,7 +111,7 @@ Thanks to the optimization, this request will only get data from used attributes
 You can increase the benefits of the optimization by using the **context** property. This property references an optimization context "learned" for an entity selection. It can be passed as parameter to ORDA functions that return new entity selections, so that entity selections directly request used attributes to the server and bypass the learning phase.
 > You can also create contexts using the [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function.
 
-The same optimization context property can be passed to unlimited number of entity selections on the same dataclass. All ORDA functions that handle entity selections support the **context** property (for example [`dataClass.query()`](../API/DataClassClass.md#query) or [`dataClass.all()`](../API/DataClassClass.md#all)). Keep in mind, however, that a context is automatically updated when new attributes are used in other parts of the code. Reusing the same context in different codes could result in overloading the context and then, reduce its efficiency.
+All ORDA functions that handle entity selections support the **context** property (for example [`dataClass.query()`](../API/DataClassClass.md#query) or [`dataClass.all()`](../API/DataClassClass.md#all)). The same optimization context property can be passed to unlimited number of entity selections on the same dataclass. Keep in mind, however, that a context is automatically updated when new attributes are used in other parts of the code. Reusing the same context in different codes could result in overloading the context and then, reduce its efficiency.
 > A similar mechanism is implemented for entities that are loaded, so that only used attributes are requested (see the [`dataClass.get()`](../API/DataClassClass.md#get) function).
 
 **Example with `dataClass.query()`:**
@@ -122,19 +122,19 @@ The same optimization context property can be passed to unlimited number of enti
  $querysettings:=New object("context";"shortList")
  $querysettings2:=New object("context";"longList")
 
- $sel1:=ds.Employee.query("lastname = S@";$querysettings)
+ $sel1:=ds. Employee.query("lastname = S@";$querysettings)
  $data:=extractData($sel1) // In extractData method an optimization is triggered   
  // and associated to context "shortList"
 
- $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
+ $sel2:=ds. Employee.query("lastname = Sm@";$querysettings)
  $data:=extractData($sel2) // In extractData method the optimization associated   
  // to context "shortList" is applied
 
- $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
+ $sel3:=ds. Employee.query("lastname = Smith";$querysettings2)
  $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization  
  // is triggered and associated to context "longList"
 
- $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
+ $sel4:=ds. Employee.query("lastname = Brown";$querysettings2)
  $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization  
  // associated to context "longList" is applied
 ```

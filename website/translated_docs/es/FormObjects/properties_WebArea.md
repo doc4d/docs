@@ -83,7 +83,10 @@ La variable URL produce los mismos efectos que el comando [WA OPEN URL](https://
 
 Esta opción permite elegir entre dos motores de renderizado para el área web, dependiendo de las particularidades de su aplicación:
 
-*   **no marcado** - `valor JSON: sistema` (por defecto): en este caso, 4D utiliza el "mejor" motor correspondiente al sistema. En Windows, 4D utiliza automáticamente la versión más reciente del navegador encontrado en la máquina (IE11, MS Edge, etc.). En macOS, 4D utiliza la versión actual de WebKit (Safari). Esto significa que usted se beneficia automáticamente de los últimos avances en la renderización web, a través de HTML5 o JavaScript. However, you may notice some rendering differences between Internet Explorer/Edge implementations and WebKit ones.
+*   **no marcado** - `valor JSON: sistema` (por defecto): en este caso, 4D utiliza el "mejor" motor correspondiente al sistema. **no marcado** - `valor JSON: sistema` (por defecto): en este caso, 4D utiliza el "mejor" motor correspondiente al sistema. En macOS, 4D utiliza la versión actual de WebKit (Safari). Esto significa que usted se beneficia automáticamente de los últimos avances en la renderización web, a través de HTML5 o JavaScript. However, you may notice some rendering differences between Internet Explorer/Edge implementations and WebKit ones.
+
+> On Windows, if WebView2 Runtime is not installed, 4D uses the Blink engine from Google (CEF) as system rendering engine.
+
 *   **checked** - `JSON value: embedded`: In this case, 4D uses Blink engine from Google (CEF). La utilización del motor web integrado significa que la representación de las áreas web y su funcionamiento en su aplicación son idénticos independientemente de la plataforma utilizada para ejecutar 4D (no obstante, pueden observarse ligeras variaciones de píxeles o diferencias relacionadas con la implementación de la red). Cuando se elige esta opción, ya no se beneficia de las actualizaciones automáticas del motor web realizadas por el sistema operativo; sin embargo, las nuevas versiones de los motores se ofrecen a través de 4D.
 
 The Blink engine has the following limitations:
