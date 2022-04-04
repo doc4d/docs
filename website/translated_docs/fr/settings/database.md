@@ -79,7 +79,7 @@ To disable *MeCab*, just check the **Consider only non-alphanumeric chars for ke
 
 ## Memory page
 
-You use the settings on this tab to configure the cache memory for the database.
+Utilisez les paramètres de cet onglet pour configurer la mémoire cache de la base.
 
 ### Database Cache Settings
 
