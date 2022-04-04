@@ -19,10 +19,10 @@ Cet événement est généré lorsque l'ouverture d'une fenêtre pop-up est bloq
 
 Vous pouvez identifier l'URL bloquée à l'aide de la commande `WA Get last filtered URL`.
 
-This event is also triggered when a drop operation has been done in the Web area (with embedded and Wwindows system [engines](properties_WebArea.md#use-embedded-web-rendering-engine)) if the [Drag and drop](FormObjects/webArea_Overview.md#user-interface) option is also enabled for the area. You can accept the drop by calling:
+Cet événement est également déclenché après une opération de déposer dans la zone Web (avec des [moteurs](properties_WebArea.md#use-embedded-web-rendering-engine) système Windows et intégrés) si l'option [Glisser Déposer](FormObjects/webArea_Overview.md#user-interface) est également activée pour la zone. Vous pouvez accepter l'action de déposer en appelant :
 
 ```4d
-//web area object method
+//méthode objet zone web
 If (FORM Event.code=On Window Opening Denied)
     WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))
 End if 
