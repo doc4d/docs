@@ -57,6 +57,7 @@ For example, if you want to define a class named "Polygon", you need to create t
 	+ Project
 
 
+
 		* Sources
 			- Classes
 				+ Polygon.4dm
@@ -291,7 +292,7 @@ $rect:=cs.Rectangle.new(50;100)
 $area:=$rect.getArea() //5000
 ```
 
-#### Example 1
+#### Example 2
 
 This example uses the [`return expression`](parameters.md#return-expression):
 
@@ -458,6 +459,7 @@ Class constructor ($side : Integer)
 	// In derived classes, Super must be called before you
 	// can use 'This'
 	This.name:="Square"
+
 
 	Function getArea()
 		C_LONGINT($0)
