@@ -56,6 +56,7 @@ For example, if you want to define a class named "Polygon", you need to create t
 - Project folder
 	+ Project
 
+
 		* Sources
 			- Classes
 				+ Polygon.4dm
@@ -465,8 +466,11 @@ Class constructor ($side : Integer)
 
 ### `Super`
 
+#### Syntax
 
-#### `Super {( param{;...;paramN} )} {-> Object}`
+```4d
+Super {( param{;...;paramN} )} {-> Object}
+```
 
 |Parameter|Type||Description|  
 |---|---|---|---|
@@ -573,7 +577,11 @@ $message:=$square.description() //I have 4 sides which are all equal
 
 ### `This`
 
-#### `This -> Object`
+#### Syntax
+
+```4d
+This -> Object
+```
 
 |Parameter|Type||Description|  
 |---|---|---|---|	
