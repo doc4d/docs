@@ -149,11 +149,11 @@ $key:=4D.CryptoKey.new(New object("type";"ECDSA";"curve";"prime256v1"))
 
 ## L'objet classe
 
-Lorsqu'une classe est [définie](#class-definition) dans le projet, elle est chargée dans l'environnement de langage 4D. Une classe est un objet de la [classe "Class"](API/ClassClass.md). Une classe est un objet lui-même de la [classe "Class"](API/classClass.md).
+Lorsqu'une classe est [définie](#class-definition) dans le projet, elle est chargée dans l'environnement de langage 4D. Une classe est un objet de la [classe "Class"](API/ClassClass.md). Un objet classe possède les propriétés et fonctions suivantes :
 
 - chaîne [`name`](API/ClassClass.md#name)
-- objet [`superclass`](API/ClassClass.md#superclass) (nul si aucun)
-- fonction [`new()`](API/ClassClass.md#new), permettant d'instancier des objets de classe.
+- objet [`superclass`](API/ClassClass.md#superclass) (null si aucun)
+- fonction [`new()`](API/ClassClass.md#new), permettant d'instancier les objets de la classe.
 
 De plus, un objet classe peut référencer un objet [`constructor`](#class-constructor) (facultatif).
 
@@ -161,7 +161,7 @@ Un objet de classe est un [objet partagé](shared.md) et est donc accessible sim
 
 ### Héritage
 
-Si une classe hérite d'une autre classe (c'est-à-dire que le mot-clé [Class extends](classes.md#class-extends-classname) est utilisé dans sa définition), la classe parente est sa [`superclasse`](API/ClassClass.md#superclass).
+Si une classe hérite d'une autre classe (c'est-à-dire que le mot-clé [Class extends](classes.md#class-extends-classname) est utilisé dans sa définition), la classe parente est sa [`superclass`](API/ClassClass.md#superclass).
 
 Lorsque 4D ne trouve pas de fonction ou de propriété dans une classe, il la recherche dans sa [`superclasse`](API/ClassClass.md#superclass); s'il ne la trouve pas, 4D continue la recherche dans la superclasse de la superclasse, et ainsi de suite, jusqu'à ce qu'il n'y ait plus de superclasse (tous les objets héritent de la superclasse "Object").
 
