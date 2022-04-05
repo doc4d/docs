@@ -230,8 +230,7 @@ $o.DRIVERS_LICENCE.parameters.push(New object("name"; "ID"; "type"; Is longint))
 
 サポートされている引数の型の詳細については、[VP SET CUSTOM FUNCTIONS](method-list.md#vp-set-custom-functions) メソッドの説明を参照ください。
 
-> 引数を宣言していない場合には、メソッドに値を順番に渡すことができ ($1、$2... に受け取られます)、それらの型は自動的に変換されます。 *jstype* の日付は、4Dコードでは 2つのプロパティを持つ オブジェクト   
-> として渡されます:   
+> 引数を宣言していない場合には、メソッドに値を順番に渡すことができ ($1、$2... に受け取られます)、それらの型は自動的に変換されます。 *jstype* の日付は、4Dコードでは 2つのプロパティを持つ [オブジェクト](Concepts/dt_object.md) として渡されます:   
 > |プロパティ|    型|   説明| |---|---|---| |value|   Date|   日付| |time |Real|  時間 (秒単位)|
 
 4Dプロジェクトメソッドは、$0 を介して 4D View Pro のセルフォーミュラに値を返すこともできます。 以下のデータ型の戻り値がサポートされています:
@@ -242,9 +241,7 @@ $o.DRIVERS_LICENCE.parameters.push(New object("name"; "ID"; "type"; Is longint))
 * [時間](Concepts/dt_time.md) (4D View Pro 内で JS日付型に変換 - 日付は基準日、つまり 1899年12月30日)
 * [ブール](Concepts/dt_boolean.md) (4D View Pro 内でブールに変換)
 * [ピクチャー](Concepts/dt_picture.md) (jpg,png,gif,bmp,svg, その他のタイプは png に変換) の場合、URI (data:image/png;base64,xxxx) が作成され、フォーミュラを実行した 4D View Pro のセルにおいて背景として使用されます。
-* 次の 2つのプロパティを持つ [オブジェクト](Concepts/dt_object.md) (日付と時間の受け渡しを可能にします):   
-    
-  | プロパティ | タイプ  | 説明       | | ----- | ---- | -------- | | value | Date | 日付値      | | time  | Real | 数値 (秒単位) |
+* 次の 2つのプロパティを持つ [オブジェクト](Concepts/dt_object.md) (日付と時間の受け渡しを可能にします):
 
     | プロパティ | タイプ  | 説明       |
     | ----- | ---- | -------- |

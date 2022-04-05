@@ -684,10 +684,10 @@ $vPict:=VP Convert to picture($vpAreaObj) //exporter toute la zone
 | v19 R4  | Ajout         |
 </details>
 
-<!-- REF #_method_.Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *options* : Object} ) : Object
+<!-- REF #_method_.VP Copy to object.Syntax -->**VP Copy to object** ( *rangeObj* : Object {; *options* : Object} ) : Object
 <!-- END REF -->  
 
-<!-- REF #_method_.Copy to object.Params -->
+<!-- REF #_method_.VP Copy to object.Params -->
 
 | Paramètres | Type   |    | Description                              |
 | ---------- | ------ | -- | ---------------------------------------- |
@@ -697,7 +697,7 @@ $vPict:=VP Convert to picture($vpAreaObj) //exporter toute la zone
 <!-- END REF -->  
 #### Description
 
-La commande `VP Copy to object` <!-- REF #_method_.Copy to object.Summary -->copie les contenus, styles et formules de *rangeObj* dans un objet<!-- END REF -->.
+The `VP Copy to object` command <!-- REF #_method_.VP Copy to object.Summary -->copies the contents, style and formulas from *rangeObj* to an object<!-- END REF -->.
 
 Dans *rangeObj*, passez la plage de cellules contenant les valeurs, formatages et formules à copier. Si *rangeObj* est une plage combinée, seule la première est utilisée.
 
