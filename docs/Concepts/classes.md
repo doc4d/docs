@@ -56,6 +56,7 @@ For example, if you want to define a class named "Polygon", you need to create t
 - Project folder
 	+ Project
 
+
 		* Sources
 			- Classes
 				+ Polygon.4dm
@@ -474,7 +475,7 @@ Super {( param{;...;paramN} )} {-> Object}
 
 |Parameter|Type||Description|  
 |---|---|---|---|
-|param|mixed|->|Parameter(s) to pass to the parent constructor	
+|param|mixed|->|Parameter(s) to pass to the parent constructor|
 |Result|object|<-|Object's parent|
 
 The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
