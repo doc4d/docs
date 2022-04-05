@@ -55,6 +55,7 @@ For example, if you want to define a class named "Polygon", you need to create t
 
 - Project folder
 	+ Project
+
 		* Sources
 			- Classes
 				+ Polygon.4dm
@@ -102,6 +103,7 @@ In the various 4D windows (code editor, compiler, debugger, runtime explorer), c
 ## Class stores
 
 Available classes are accessible from their class stores. Two class stores are available:
+
 
 
 - `cs` for user class store
@@ -209,7 +211,7 @@ Function getFullname()->$fullname : Text
 	$fullname:=This.firstName+" "+Uppercase(This.lastName)
 ```
   
-For a class function, the `Current method name` command returns: "*\<ClassName>.\<FunctionName>*", for example "MyClass.myMethod".
+For a class function, the `Current method name` command returns: `<ClassName>.<FunctionName>`, for example "MyClass.myFunction".
 
 In the application code, class functions are called as member methods of the object instance and can receive [parameters](#class-function-parameters) if any. The following syntaxes are supported:
 
@@ -236,15 +238,15 @@ Function add($x; $y : Variant; $z : Integer; $xy : Object)
 
 
 
->The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. Both syntaxes can be mixed. For example:
->
->```4d
->Function add($x : Integer)
->	var $2; $value : Integer
->	var $0 : Text
->	$value:=$x+$2
->	$0:=String($value)
->```
+The [classic 4D syntax](parameters.md#sequential-parameters) for method parameters can be used to declare class function parameters. Both syntaxes can be mixed. For example:
+
+```4d
+Function add($x : Integer)
+	var $2; $value : Integer
+	var $0 : Text
+	$value:=$x+$2
+	$0:=String($value)
+```
 
 #### Return value 
 
@@ -353,7 +355,6 @@ Function set fullName( $fullName : Text )
 	$p:=Position(" "; $fullName)
 	This.firstName:=Substring($fullName; 1; $p-1)
 	This.lastName:=Substring($fullName; $p+1)
-	
 ```
 
 ```4d
@@ -391,7 +392,7 @@ A class constructor function, which can accept [parameters](#parameters), can be
 
 In that case, when you call the [`new()`](API/ClassClass.md#new) function, the class constructor is called with the parameters optionally passed to the `new()` function.
 
-For a class constructor function, the `Current method name` command returns: "*\<ClassName>:constructor*", for example "MyClass:constructor".
+For a class constructor function, the `Current method name` command returns: `<ClassName>:constructor`, for example "MyClass:constructor".
 
   
 
@@ -465,22 +466,22 @@ Class constructor ($side : Integer)
 ### `Super`
 
 
-#### Super {( param{;...;paramN} )} {-> Object} 
+#### `Super {( param{;...;paramN} )} {-> Object}`
 
 |Parameter|Type||Description|  
 |---|---|---|---|
-|param|mixed|->|Parameter(s) to pass to the parent constructor	
+|param|mixed|->|Parameter(s) to pass to the parent constructor|
 |Result|object|<-|Object's parent|
 
 The `Super` keyword allows calls to the `superclass`, i.e. the parent class.
 
 `Super` serves two different purposes:
 
-- inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used. 
-	- If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid. 
-	- If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated. 
+1. Inside a [constructor code](#class-constructor), `Super` is a command that allows to call the constructor of the superclass. When used in a constructor, the `Super` command appears alone and must be used before the `This` keyword is used. 
 
-	- If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
+- If all class constructors in the inheritance tree are not properly called, error -10748 is generated. It's 4D developer to make sure calls are valid. 
+- If the `This` command is called on an object whose superclasses have not been constructed, error -10743 is generated. 
+- If `Super` is called out of an object scope, or on an object whose superclass constructor has already been called, error -10746 is generated.
 	
 ```4d
 // inside myClass constructor
@@ -489,7 +490,7 @@ Super($text1) //calls superclass constructor with a text param
 This.param:=$text2 // use second param
 ```
 
-- inside a [class member function](#class-function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
+2. Inside a [class member function](#class-function), `Super` designates the prototype of the superclass and allows to call a function of the superclass hierarchy.
 
 ```4d
 Super.doSomething(42) //calls "doSomething" function  
@@ -572,7 +573,7 @@ $message:=$square.description() //I have 4 sides which are all equal
 
 ### `This`
 
-#### This -> Object
+#### `This -> Object`
 
 |Parameter|Type||Description|  
 |---|---|---|---|	
@@ -628,6 +629,7 @@ $o.b:=3
 $val:=$o.f() //8
 
 ```
+
 In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Since *f* is called as a method of $o, its `This` refers to $o. 
 
 
@@ -638,13 +640,13 @@ Several commands of the 4D language allows you to handle class features.
 
 ### `OB Class`
 
-#### OB Class ( object ) -> Object | Null
+#### `OB Class ( object ) -> Object | Null`
 
 `OB Class` returns the class of the object passed in parameter. 
 
 
 ### `OB Instance of`
 
-#### OB Instance of ( object ; class ) -> Boolean
+#### `OB Instance of ( object ; class ) -> Boolean`
 
 `OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
