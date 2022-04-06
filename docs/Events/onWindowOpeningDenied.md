@@ -24,9 +24,10 @@ This event is also triggered when a drop operation has been done in the Web area
 ```4d
 //web area object method
 If (FORM Event.code=On Window Opening Denied)
-	WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))
+	WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))  
+	// or UrlVariable:=WA Get last filtered URL(*; "WebArea")  
+	// where UrlVariable is the URL variable associated to the web area
 End if 
-
 ```
 
 

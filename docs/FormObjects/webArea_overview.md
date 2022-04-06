@@ -19,13 +19,13 @@ Two specific variables can be associated with each web area:
 - [`URL`](properties_WebArea.md#url) --to control the URL displayed by the web area
 - [`Progression`](properties_WebArea.md#progression) -- to control the loading percentage of the page displayed in the web area. 
 
-	> As of 4D v19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
+> As of 4D v19 R5, the Progression variable is no longer updated in Web Areas using the [Windows system rendering engine](./webArea_overview.md#web-rendering-engine).
 
 ### Web rendering engine
 
 You can choose between [two rendering engines](properties_WebArea.md#use-embedded-web-rendering-engine) for the web area, depending on the specifics of your application.
 
-Selecting the embedded web rendering engine allows you to call 4D methods from the web area.
+Selecting the embedded web rendering engine allows you to call 4D methods from the web area and to make sure features on macOS and Windows are similar. Selecting the system rendering engine is recommended when the web area is connected to the Internet because it always benefits from the latest security updates.     
 
 ### Access 4D methods 
 
@@ -159,8 +159,8 @@ When the form is executed, standard browser interface functions are available to
 - **Edit menu commands**: When the web area has the focus, the **Edit** menu commands can be used to carry out actions such as copy, paste, select all, etc., according to the selection.
 - **Context menu**: It is possible to use the standard [context menu](properties_Entry.md#context-menu) of the system with the web area. Display of the context menu can be controlled using the `WA SET PREFERENCE` command.
 - **Drag and drop**: The user can drag and drop text, pictures and documents within the web area or between a web area and the 4D form objects, according to the 4D object properties.
-For security reasons, changing the contents of a web area by means of dragging and dropping a file or URL is not allowed by default. In this case, the cursor displays a "forbidden" icon ![](assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE` command to explicitly allow the dropping of URLs or files in the web area.
-> In embedded and Windows system web rendering [engines](properties_WebArea.md#use-embedded-web-rendering-engine), this preference only manages the interface part of the operation. To actually open a dropped content, you need to call the `WA OPEN URL` command within the [`On Window Opening Denied`](Events/onWindowOpeningDenied.md) event. 
+For security reasons, changing the contents of a web area by means of dragging and dropping a file or URL is not allowed by default. In this case, the cursor displays a "forbidden" icon ![](assets/en/FormObjects/forbidden.png). You have to use the `WA SET PREFERENCE(*;"warea";WA enable URL drop;True)` statement to display a "drop" icon and generate the [`On Window Opening Denied`](Events/onWindowOpeningDenied.md) event. In this event, you can call the [`WA OPEN URL`](https://doc.4d.com/4dv19/help/command/en/page1020.html) command or set the [URL variable](properties_WebArea.md#url) in response to a user drop.
+
 
 ### Subforms
 
