@@ -360,7 +360,7 @@ In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts an
 <!-- REF #DataStoreClass.encryptionStatus().Params -->
 | 引数  | タイプ    |    | 説明                           |
 | --- | ------ |:--:| ---------------------------- |
-| 戻り値 | オブジェクト | <- | カレントデータストアと、各テーブルの暗号化についての情報 |
+| 戻り値 | Object | <- | カレントデータストアと、各テーブルの暗号化についての情報 |
 <!-- END REF -->
 
 
@@ -437,10 +437,10 @@ In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts an
 <!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
 | 引数  | タイプ    |    | 説明                                         |
 | --- | ------ | -- | ------------------------------------------ |
-| 戻り値 | オブジェクト | <- | Collection of optimization context objects |
+| 戻り値 | Object | <- | Collection of optimization context objects |
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+> **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 
 
@@ -525,7 +525,7 @@ $info:=$ds.getAllRemoteContexts()
 <!-- REF #DataStoreClass.getInfo().Params -->
 | 引数  | タイプ    |    | 説明           |
 | --- | ------ |:--:| ------------ |
-| 戻り値 | オブジェクト | <- | データストアのプロパティ |
+| 戻り値 | Object | <- | データストアのプロパティ |
 <!-- END REF -->
 
 #### 説明
@@ -538,8 +538,8 @@ $info:=$ds.getAllRemoteContexts()
 | ---------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
 | type       | string  | <li>"4D": ds で利用可能なメインデータストア </li><li>"4D Server": Open datastore で開かれたリモートデータストア</li>                                                                   |
 | networked  | boolean | <li>true: ネットワーク接続を介してアクセスされたデータストア</li><li>false: ネットワーク接続を介さずにアクセスしているデータストア (ローカルデータベース)</li>                                                                 |
-| localID    | テキスト    | マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。                             |
-| connection | object  | リモートデータストア接続の情報を格納したオブジェクト (メインデータストアの場合は返されません)。 次のプロパティを含みます:<p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>hostname</td><td>テキスト</td><td>リモートデータストアの IPアドレスまたは名称 + ":" + ポート番号</td></tr><tr><td>tls</td><td>boolean</td><td>リモートデータストアとセキュア接続を利用している場合は true</td></tr><tr><td>idleTimeout</td><td>number</td><td>セッション非アクティブタイムアウト (分単位)。</td></tr><tr><td>user</td><td>テキスト</td><td>リモートデータストアにて認証されたユーザー</td></tr></table> |
+| localID    | text    | マシン上のデータストアID。 これは、`Open datastore` コマンドで返される localId 文字列です。 メインデータストアの場合は空の文字列 ("") です。                             |
+| connection | object  | リモートデータストア接続の情報を格納したオブジェクト (メインデータストアの場合は返されません)。 次のプロパティを含みます:<p><table><tr><th>プロパティ</th><th>タイプ</th><th>説明</th></tr><tr><td>hostname</td><td>text</td><td>リモートデータストアの IPアドレスまたは名称 + ":" + ポート番号</td></tr><tr><td>tls</td><td>boolean</td><td>リモートデータストアとセキュア接続を利用している場合は true</td></tr><tr><td>idleTimeout</td><td>number</td><td>セッション非アクティブタイムアウト (分単位)。</td></tr><tr><td>user</td><td>text</td><td>リモートデータストアにて認証されたユーザー</td></tr></table> |
 
 
 *   `.getInfo()` 関数が、4D Server またはシングルユーザー版 4D 上で実行された場合、`networked` は false となります。
@@ -604,11 +604,11 @@ $info:=$ds.getAllRemoteContexts()
 <!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
 | 引数          | タイプ    |    | 説明                                      |
 | ----------- | ------ | -- | --------------------------------------- |
-| contextName | テキスト   | -> | Name of the context                     |
-| 戻り値         | オブジェクト | <- | Description of the optimization context |
+| contextName | Text   | -> | Name of the context                     |
+| 戻り値         | Object | <- | Description of the optimization context |
 <!-- END REF -->
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+> **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 
 
@@ -626,10 +626,10 @@ For more information on how optimization contexts can be created, see [client/se
 
 | プロパティ                  | タイプ  | 説明                                                                                                                                                                                                                                                                            |
 | ---------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                   | テキスト | Name of the context                                                                                                                                                                                                                                                           |
-| main                   | テキスト | Attribute(s) associated to the context (attribute names are separated by a comma)                                                                                                                                                                                             |
-| dataclass              | テキスト | データクラスの名称                                                                                                                                                                                                                                                                     |
-| currentItem (optional) | テキスト | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
+| name                   | Text | Name of the context                                                                                                                                                                                                                                                           |
+| main                   | Text | Attribute(s) associated to the context (attribute names are separated by a comma)                                                                                                                                                                                             |
+| dataclass              | Text | データクラスの名称                                                                                                                                                                                                                                                                     |
+| currentItem (optional) | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
 
 
 Since contexts behave as filters for attributes, if *main* is returned empty, it means that no filter is applied, and that the server returns all the dataclass attributes. 
@@ -659,9 +659,9 @@ See the example from the [.setRemoteContextInfo()](#example-1-3) section.
 **.getRequestLog()** : Collection<!-- END REF -->
 
 <!-- REF #DataStoreClass.getRequestLog().Params -->
-| 引数  | タイプ    |    | 説明                                 |
-| --- | ------ |:--:| ---------------------------------- |
-| 戻り値 | コレクション | <- | オブジェクトのコレクション (要素毎に一つのリクエストを記述します) |
+| 引数  | タイプ        |    | 説明                                 |
+| --- | ---------- |:--:| ---------------------------------- |
+| 戻り値 | Collection | <- | オブジェクトのコレクション (要素毎に一つのリクエストを記述します) |
 <!-- END REF -->
 
 
@@ -700,9 +700,9 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 **.isAdminProtected()** : Boolean<!-- END REF -->
 
 <!-- REF #DataStoreClass.isAdminProtected().Params -->
-| 引数  | タイプ |    | 説明                                                         |
-| --- | --- |:--:| ---------------------------------------------------------- |
-| 戻り値 | ブール | <- | データエクスプローラーへのアクセスが無効に設定されているの場合は true、有効の場合は false (デフォルト) |
+| 引数  | タイプ     |    | 説明                                                         |
+| --- | ------- |:--:| ---------------------------------------------------------- |
+| 戻り値 | Boolean | <- | データエクスプローラーへのアクセスが無効に設定されているの場合は true、有効の場合は false (デフォルト) |
 <!-- END REF -->
 
 
@@ -777,9 +777,9 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 <!-- REF #DataStoreClass.provideDataKey().Params -->
 | 引数            | タイプ    |    | 説明            |
 | ------------- | ------ | -- | ------------- |
-| curPassPhrase | テキスト   | -> | カレントのパスフレーズ   |
-| curDataKey    | オブジェクト | -> | カレントのデータ暗号化キー |
-| 戻り値           | オブジェクト | <- | 暗号化キーのチェックの結果 |
+| curPassPhrase | Text   | -> | カレントのパスフレーズ   |
+| curDataKey    | Object | -> | カレントのデータ暗号化キー |
+| 戻り値           | Object | <- | 暗号化キーのチェックの結果 |
 <!-- END REF -->
 
 
@@ -804,16 +804,16 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 コマンドの実行結果は、戻り値のオブジェクトに格納されます:
 
-| プロパティ      |                          | タイプ    | 説明                                          |
-| ---------- | ------------------------ | ------ | ------------------------------------------- |
-| success    |                          | ブール    | 提供された暗号化キーが暗号化データと合致すれば true、それ以外は false    |
-|            |                          |        | 以下のプロパティは、success が *FALSE* であった場合にのみ返されます。 |
-| status     |                          | 数値     | エラーコード (提供された暗号化キーが間違っていた場合には 4)            |
-| statusText |                          | テキスト   | エラーメッセージ                                    |
-| errors     |                          | コレクション | エラーのスタック。 最初のエラーに最も高いインデックスが割り当てられます。       |
-|            | \[ ].componentSignature | テキスト   | 内部コンポーネント名                                  |
-|            | \[ ].errCode            | 数値     | エラー番号                                       |
-|            | \[ ].message            | テキスト   | エラーメッセージ                                    |
+| プロパティ      |                          | タイプ        | 説明                                          |
+| ---------- | ------------------------ | ---------- | ------------------------------------------- |
+| success    |                          | Boolean    | 提供された暗号化キーが暗号化データと合致すれば true、それ以外は false    |
+|            |                          |            | 以下のプロパティは、success が *FALSE* であった場合にのみ返されます。 |
+| status     |                          | Number     | エラーコード (提供された暗号化キーが間違っていた場合には 4)            |
+| statusText |                          | Text       | エラーメッセージ                                    |
+| errors     |                          | Collection | エラーのスタック。 最初のエラーに最も高いインデックスが割り当てられます。       |
+|            | \[ ].componentSignature | Text       | 内部コンポーネント名                                  |
+|            | \[ ].errCode            | Number     | エラー番号                                       |
+|            | \[ ].message            | Text       | エラーメッセージ                                    |
 
 
 *curPassphrase* および *curDataKey* のどちらの引数も渡されなかった場合、`.provideDataKey()` は **null** を返します (この場合エラーは生成されません)。
@@ -858,9 +858,9 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 
 <!-- REF #DataStoreClass.setAdminProtection().Params -->
-| 引数     | タイプ |    | 説明                                                                            |
-| ------ | --- | -- | ----------------------------------------------------------------------------- |
-| status | ブール | -> | `webAdmin`ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト) |
+| 引数     | タイプ     |    | 説明                                                                            |
+| ------ | ------- | -- | ----------------------------------------------------------------------------- |
+| status | Boolean | -> | `webAdmin`ポート上で、データエクスプローラーによるデータアクセスを無効にするには true、アクセスを有効にするには false (デフォルト) |
 <!-- END REF -->
 
 
@@ -909,17 +909,17 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 | 引数              | タイプ          |    | 説明                                                                        |
 | --------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| contextName     | テキスト         | -> | Name of the context                                                       |
-| dataClassName   | テキスト         | -> | データクラスの名称                                                                 |
+| contextName     | Text         | -> | Name of the context                                                       |
+| dataClassName   | Text         | -> | データクラスの名称                                                                 |
 | dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                                 |
-| attributes      | テキスト         | -> | Attribute list separated by a comma                                       |
-| attributesColl  | コレクション       | -> | Collection of attribute names (text)                                      |
-| contextType     | テキスト         | -> | If provided, value must be "main" or "currentItem"                        |
-| pageLength      | 整数           | -> | Page length of the entity selection linked to the context (default is 80) |
+| attributes      | Text         | -> | Attribute list separated by a comma                                       |
+| attributesColl  | Collection   | -> | Collection of attribute names (text)                                      |
+| contextType     | Text         | -> | If provided, value must be "main" or "currentItem"                        |
+| pageLength      | Integer      | -> | Page length of the entity selection linked to the context (default is 80) |
 <!-- END REF -->
 
 
-> **Advanced mode:** This function is intended for developers who need to customize ORDA default features for specific configurations. In most cases, you will not need to use it.
+> **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
 
 
 

@@ -22,12 +22,13 @@ title: On Window Opening Denied
 This event is also triggered when a drop operation has been done in the Web area (with embedded and Wwindows system [engines](properties_WebArea.md#use-embedded-web-rendering-engine)) if the [Drag and drop](FormObjects/webArea_Overview.md#user-interface) option is also enabled for the area. You can accept the drop by calling:
 
 ```4d
-<code>WA Get last filtered URL</code> コマンドコマンドを使用してブロックされた URL を知ることができます。 
-
+//web area object method
+If (FORM Event.code=On Window Opening Denied)
+    WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))  
+    // or UrlVariable:=WA Get last filtered URL(*; "WebArea")  
+    // where UrlVariable is the URL variable associated to the web area
+End if 
 ```
- コマンドコマンドを使用してブロックされた URL を知ることができます。 
-
-</code>
 
 
 ### 参照

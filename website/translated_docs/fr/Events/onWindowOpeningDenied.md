@@ -22,11 +22,12 @@ Vous pouvez identifier l'URL bloquée à l'aide de la commande `WA Get last filt
 Cet événement est également déclenché après une opération de déposer dans la zone Web (avec des [moteurs](properties_WebArea.md#use-embedded-web-rendering-engine) système Windows et intégrés) si l'option [Glisser Déposer](FormObjects/webArea_Overview.md#user-interface) est également activée pour la zone. Vous pouvez accepter l'action de déposer en appelant :
 
 ```4d
-//méthode objet zone web
+//web area object method
 If (FORM Event.code=On Window Opening Denied)
-    WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))
+    WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))  
+    // or UrlVariable:=WA Get last filtered URL(*; "WebArea")  
+    // where UrlVariable is the URL variable associated to the web area
 End if 
-
 ```
 
 
