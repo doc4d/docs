@@ -330,7 +330,7 @@ Los siguientes campos se registran para cada petición:
 
 
 
-## Using a log configuration file
+## Utilización de un archivo de configuración de log
 
 You can use a **log configuration file** to easily manage log recording in a production environment. This file is preconfigured by the developer. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
 
