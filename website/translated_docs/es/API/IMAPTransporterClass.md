@@ -1374,16 +1374,16 @@ Para mover todos los mensajes del buzón actual:
 
 #### Descripción
 
-The `.numToID()` function <!-- REF #IMAPTransporterClass.numToID().Summary -->converts the sequence numbers to IMAP unique IDs for the messages in the sequential range designated by *startMsg* and *endMsg*<!-- END REF --> in the currently selected mailbox.
+La función `.numToID()` <!-- REF #IMAPTransporterClass.numToID().Summary -->convierte los números de secuencia en IDs únicos IMAP para los mensajes en el rango secuencial designado por *startMsg* y *endMsg*<!-- END REF --> en el buzón actualmente seleccionado.
 
-In the *startMsg* parameter, pass an integer value corresponding to the number of the first message in a sequential range. If you pass a negative number (*startMsg* <= 0), the first message of the mailbox will be used as the beginning of the sequence.
+En el parámetro *startMsg*, pase un valor entero correspondiente al número del primer mensaje en un rango secuencial. Si se pasa un número negativo (*startMsg* <= 0), se utilizará el primer mensaje del buzón como inicio de la secuencia.
 
-In the *endMsg* parameter, pass an integer value corresponding to the number of the last message to be included in a sequential range. If you pass a negative number (*endMsg* <= 0), the last message of the mailbox will be used as the end of the sequence.
+En el parámetro *endMsg*, pase un valor entero correspondiente al número del último mensaje a incluir en un rango secuencial. Si se pasa un número negativo (*endMsg* <= 0), se utilizará el último mensaje del buzón como fin de secuencia.
 
 
 #### Resultado
 
-The function returns a collection of strings (unique IDs).
+La función devuelve una colección de cadenas (IDs únicos).
 
 #### Ejemplo
 
@@ -1437,7 +1437,7 @@ The function returns a collection of strings (unique IDs).
 
 #### Descripción
 
-The `.removeFlags()` function <!-- REF #IMAPTransporterClass.removeFlags().Summary -->removes flags from the `msgIDs` for the specified `keywords`<!-- END REF -->.
+La función `.removeFlags()` <!-- REF #IMAPTransporterClass.removeFlags().Summary -->elimina las banderas de los `msgIDs` para las `keywords` definidas<!-- END REF -->.
 
 En el parámetro `msgIDs`, puede pasar:
 
@@ -1449,15 +1449,15 @@ En el parámetro `msgIDs`, puede pasar:
     | --------- | ----- | ----------------------------------------------------- |
     | IMAP all  | 1     | Seleccionar todos los mensajes del buzón seleccionado |
 
-The `keywords` parameter lets you pass an object with keyword values for specific flags to remove from `msgIDs`. Puede pasar cualquiera de las siguientes palabras claves:
+El parámetro `keywords` le permite pasar un objeto con valores de palabras clave para las banderas específicas a eliminar de los `msgIDs`. Puede pasar cualquiera de las siguientes palabras claves:
 
-| Parámetros | Tipo     | Descripción                                         |
-| ---------- | -------- | --------------------------------------------------- |
-| $draft     | Booleano | True to remove the "draft" flag from the message    |
-| $seen      | Booleano | True to remove the "seen" flag from the message     |
-| $flagged   | Booleano | True to remove the "flagged" flag from the message  |
-| $answered  | Booleano | True to remove the "answered" flag from the message |
-| $deleted   | Booleano | True to remove the "deleted" flag from the message  |
+| Parámetros | Tipo     | Descripción                                           |
+| ---------- | -------- | ----------------------------------------------------- |
+| $draft     | Booleano | True para eliminar el marcador "draft" del mensaje    |
+| $seen      | Booleano | True para eliminar el marcador "seen" del mensaje     |
+| $flagged   | Booleano | True para eliminar el marcador "flagged" del mensaje  |
+| $answered  | Booleano | True para eliminar el marcador "answered" del mensaje |
+| $deleted   | Booleano | True para eliminar el marcador "deleted" del mensaje  |
 
 Note que los valores falsos se ignoran.
 
@@ -1599,10 +1599,10 @@ End if
 **.searchMails**( *searchCriteria* : Text ) : Collection<!-- END REF -->
 
 <!-- REF #IMAPTransporterClass.searchMails().Params -->
-| Parámetros     | Tipo       |    | Descripción                   |
-| -------------- | ---------- |:--:| ----------------------------- |
-| searchCriteria | Texto      | -> | Criterio de búsqueda          |
-| Resultado      | Collection | <- | Collection of message numbers |
+| Parámetros     | Tipo       |    | Descripción                      |
+| -------------- | ---------- |:--:| -------------------------------- |
+| searchCriteria | Texto      | -> | Criterio de búsqueda             |
+| Resultado      | Collection | <- | Colección de números de mensajes |
 <!-- END REF -->
 
 
@@ -1822,7 +1822,7 @@ La función devuelve un objeto que describe el estado IMAP:
 | statusText |                         | Texto      | Mensaje de estado devuelto por el servidor IMAP, o último error devuelto en la pila de errores de 4D |
 | errors     |                         | Collection | Pila de errores 4D (no se devuelve si se recibe una respuesta del servidor IMAP)                     |
 |            | \[].errcode            | Número     | Código de error 4D                                                                                   |
-|            | \[].message            | Texto      | Description of the 4D error                                                                          |
+|            | \[].message            | Texto      | Descripción del error 4D                                                                             |
 |            | \[].componentSignature | Texto      | Firma del componente interno que ha devuelto el error                                                |
 
 
