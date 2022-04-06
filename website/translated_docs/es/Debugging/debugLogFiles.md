@@ -346,13 +346,13 @@ Los siguientes campos se registran para cada petición:
 
 
 
-## Using a log configuration file
+## Utilización de un archivo de configuración de log
 
 You can use a **log configuration file** to easily manage log recording in a production environment. This file is preconfigured by the developer. Typically, it can be sent to customers so that they just need to select it or copy it in a local folder. Once enabled, the log configuration file triggers the recording of specific logs.
 
 ### Cómo activar el archivo
 
-There are several ways to enable the log configuration file:
+Hay varias maneras de activar el archivo de configuración de los logs:
 
 - On 4D Server with interface, you can open the Maintenance page and click on the [Load logs configuration file](ServerWindow/maintenance.md#load-logs-configuration-file) button, then select the file. In this case, you can use any name for the configuration file. It is immediately enabled on the server.
 - You can copy the log configuration file in the [Settings folder](Project/architecture.md#settings-1) of the project. In this case, the file must be named `logConfig.json`. It is enabled at project startup (only on the server in client/server).
@@ -364,7 +364,7 @@ There are several ways to enable the log configuration file:
 
 ### Descripción del archivo JSON
 
-The log configuration file is a `.json` file that can contain the following properties:
+El archivo de configuración de log es un archivo `.json` que puede contener las siguientes propiedades:
 
 ```json
 {
@@ -495,7 +495,7 @@ The log configuration file is a `.json` file that can contain the following prop
 
 ### Ejemplo
 
-Here is an example of log configuration file:
+Este es un ejemplo de archivo de configuración de log:
 
 ```json
 {

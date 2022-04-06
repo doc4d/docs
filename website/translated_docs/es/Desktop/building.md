@@ -295,7 +295,7 @@ Para más información sobre el modo de vinculación de datos, consulte la secci
 
 Checking this option generates the client part of your application during the building phase.
 
-You can check this option:
+Puede marcar esta opción:
 
 - along with the [**Build server application**](#build-server-application) option to build matching server and client parts for the current platform and (optionally) include the automatic update archive files,
 - without selecting the [**Build server application**](#build-server-application) option, usually to build the update archive file to be selected from the "concurrent" platform when building the server part.

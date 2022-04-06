@@ -961,34 +961,34 @@ De lo contrario, puede pasar la opción `dk reload if stamp changed` en el pará
 
 El objeto devuelto por `.lock( )` contiene las siguientes propiedades:
 
-| Propiedad        |                     | Tipo                  | Descripción                                                                                                                                                 |
-| ---------------- | ------------------- | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| success          |                     | booleano              | true si la acción de bloqueo tiene éxito (o si la entidad ya está bloqueada en el proceso actual), false en caso contrario.                                 |
-|                  |                     |                       | ***Disponible sólo si se utiliza la opción `dk reload if stamp changed`:***                                                                                 |
-| **wasReloaded**  |                     | booleano              | true si la entidad fue recargada con éxito, false en caso contrario.                                                                                        |
-|                  |                     |                       | ***Disponible sólo en caso de error:***                                                                                                                     |
-| status(\*)     |                     | number                | Código de error, ver abajo                                                                                                                                  |
-| statusText(\*) |                     | texto                 | Descripción del error, ver abajo                                                                                                                            |
-|                  |                     |                       | ***Disponible sólo en caso de error de bloqueo pesimista:***                                                                                                |
-| lockKindText     |                     | texto                 | "Locked by record" if locked by a 4D process, "Locked by session" if locked by a REST session                                                               |
-| lockInfo         |                     | objeto                | Información sobre el origen del bloqueo. Returned properties depend on the lock origin (4D process or REST session).                                        |
-|                  |                     |                       | ***Available only for a 4D process lock:***                                                                                                                 |
-|                  | task_id             | number                | ID del Proceso                                                                                                                                              |
-|                  | user_name           | texto                 | Nombre de usuario de la sesión en la máquina                                                                                                                |
-|                  | user4d_alias        | texto                 | Nombre o alias del usuario 4D                                                                                                                               |
-|                  | user4d_id           | number                | ID del usuario en el directorio de la base de datos 4D                                                                                                      |
-|                  | host_name           | texto                 | Nombre de la máquina                                                                                                                                        |
-|                  | task_name           | texto                 | Nombre del proceso                                                                                                                                          |
-|                  | client_version      | texto                 | Version of the client                                                                                                                                       |
-|                  |                     |                       | ***Available only for a REST session lock:***                                                                                                               |
-|                  | host                | texto                 | URL that locked the entity (e.g. "www.myserver.com")                                                                                                        |
-|                  | IPAddr              | texto                 | IP address of the locker (e.g. "127.0.0.1")                                                                                                                 |
-|                  | userAgent           | texto                 | userAgent of the locker (e.g. Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
-|                  |                     |                       | ***Disponible sólo en caso de error grave*** (la llave primaria ya existe, el disco está lleno...):                                                         |
-| errors           |                     | collection of objects |                                                                                                                                                             |
-|                  | message             | texto                 | Mensaje de error                                                                                                                                            |
-|                  | component signature | texto                 | firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                                                       |
-|                  | errCode             | number                | Error code                                                                                                                                                  |
+| Propiedad        |                     | Tipo                  | Descripción                                                                                                                                                          |
+| ---------------- | ------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| success          |                     | booleano              | true si la acción de bloqueo tiene éxito (o si la entidad ya está bloqueada en el proceso actual), false en caso contrario.                                          |
+|                  |                     |                       | ***Disponible sólo si se utiliza la opción `dk reload if stamp changed`:***                                                                                          |
+| **wasReloaded**  |                     | booleano              | true si la entidad fue recargada con éxito, false en caso contrario.                                                                                                 |
+|                  |                     |                       | ***Disponible sólo en caso de error:***                                                                                                                              |
+| status(\*)     |                     | number                | Código de error, ver abajo                                                                                                                                           |
+| statusText(\*) |                     | texto                 | Descripción del error, ver abajo                                                                                                                                     |
+|                  |                     |                       | ***Disponible sólo en caso de error de bloqueo pesimista:***                                                                                                         |
+| lockKindText     |                     | texto                 | "Locked by record" si está bloqueado por un proceso 4D, "Locked by session" si está bloqueado por una sesión REST                                                    |
+| lockInfo         |                     | objeto                | Información sobre el origen del bloqueo. Las propiedades devueltas dependen del origen del bloqueo (proceso 4D o sesión REST).                                       |
+|                  |                     |                       | ***Disponible sólo para un bloqueo por proceso 4D:***                                                                                                                |
+|                  | task_id             | number                | ID del Proceso                                                                                                                                                       |
+|                  | user_name           | texto                 | Nombre de usuario de la sesión en la máquina                                                                                                                         |
+|                  | user4d_alias        | texto                 | Nombre o alias del usuario 4D                                                                                                                                        |
+|                  | user4d_id           | number                | ID del usuario en el directorio de la base de datos 4D                                                                                                               |
+|                  | host_name           | texto                 | Nombre de la máquina                                                                                                                                                 |
+|                  | task_name           | texto                 | Nombre del proceso                                                                                                                                                   |
+|                  | client_version      | texto                 | Versión del cliente                                                                                                                                                  |
+|                  |                     |                       | ***Disponible sólo para un bloqueo por sesión REST:***                                                                                                               |
+|                  | host                | texto                 | URL que bloqueó la entidad (por ejemplo, "www.myserver.com")                                                                                                         |
+|                  | IPAddr              | texto                 | Dirección IP del bloqueo ("127.0.0.1", por ejemplo)                                                                                                                  |
+|                  | userAgent           | texto                 | userAgent del origin del bloqueo (ej: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
+|                  |                     |                       | ***Disponible sólo en caso de error grave*** (la llave primaria ya existe, el disco está lleno...):                                                                  |
+| errors           |                     | collection of objects |                                                                                                                                                                      |
+|                  | message             | texto                 | Mensaje de error                                                                                                                                                     |
+|                  | component signature | texto                 | firma del componente interno (por ejemplo, "dmbg" significa el componente de la base)                                                                                |
+|                  | errCode             | number                | Código de error                                                                                                                                                      |
 
 
 (\*) Los siguientes valores pueden ser devueltos en las propiedades *status* y *statusText* del objeto *Result* en caso de error:
@@ -1651,11 +1651,11 @@ En este ejemplo, comprobamos si es necesario guardar la entidad:
 ```4d
  var $emp : cs.EmployeeEntity
  $emp:=ds.Employee.get(672)
- $emp.firstName:=$emp.firstName //Even if updated with the same value, the attribute is marked as touched
+ $emp.firstName:=$emp.firstName //Aunque se actualice con el mismo valor, el atributo se marca como tocado
 
- If($emp.touched()) //if at least one of the attributes has been changed
+ If($emp.touched()) //si se ha modificado al menos uno de los atributos
     $emp.save()
- End if // otherwise, no need to save the entity
+ End if // de lo contrario, no es necesario guardar la entidad
 ```
 
 
@@ -1701,7 +1701,7 @@ Si no se ha tocado ningún atributo de entidad, el método devuelve una colecci�
 
  $touchedAttributes:=New collection
  $emp:=ds.Employee.get(725)
- $emp.firstName:=$emp.firstName //Even if updated with the same value, the attribute is marked as touched
+ $emp.firstName:=$emp.firstName //Aunque se actualice con el mismo valor, el atributo se marca como tocado
  $emp.lastName:="Martin"
  $touchedAttributes:=$emp.touchedAttributes()
   //$touchedAttributes: ["firstName","lastName"]
@@ -1732,9 +1732,9 @@ Si no se ha tocado ningún atributo de entidad, el método devuelve una colecci�
 
 En este caso:
 
-*   firstName and lastName have a `storage` kind
-*   employer has a `relatedEntity` kind
-*   employerID is the foreign key of the employer related entity
+*   firstName y lastName tienen un tipo `storage`
+*   employer tiene un tipo `relatedEntity`
+*   employerID es la llave extranjera de la entidad relacionada con el empleador
 
 <!-- END REF -->
 
