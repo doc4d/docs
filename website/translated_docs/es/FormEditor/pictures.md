@@ -34,7 +34,7 @@ Este icono indica que la imagen no puede ser visualizada o manipulada localmente
 
 4D soporta imágenes de alta resolución tanto en plataformas macOS como Windows. Las imágenes de alta resolución pueden definirse por el factor de escala o dpi.
 
-### Scale factor
+### Factor de escala
 
 Las pantallas de alta resolución tienen una mayor densidad de píxeles que las pantallas estándar tradicionales. Para que las imágenes se muestren correctamente en pantallas de alta resolución, el número de píxeles de la imagen debe multiplicarse por el *factor de escala* (*es decir*, dos veces más grande, tres veces más grande, etc.).
 
@@ -67,24 +67,24 @@ Las imágenes de alta resolución con la convención @nx pueden utilizarse en lo
 
 Aunque 4D prioriza automáticamente la resolución más alta, existen, sin embargo, algunas diferencias de comportamiento en función de los ppp de la pantalla y de la imagen*(\*)*, y del formato de la imagen:
 
-| Operación                                                                                                                                | Comportamiento                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Soltar o pegar                                                                                                                           | Si la imagen tiene:<ul><li>**72dpi o 96dpi** - La imagen tiene el formato "[Center](FormObjects/properties_Picture.md#center--truncated-non-centered)" y el objeto que contiene la imagen tiene el mismo número de píxeles.</li><li>**Otro dpi** - La imagen tiene el formato "{Escalada para encajar](FormObjects/properties_Picture.md#scaled-to-fit)" y el objeto que contiene la imagen es igual a (número de píxeles de la imagen * dpi de la pantalla) / (dpi de la imagen)</li> <li>**Sin dpi** - La imagen tiene el formato "{Escala para ajustar](FormObjects/properties_Picture.md#scaled-to-fit)".</li> |
-| [Automatic Size](https://doc.4d.com/4Dv19/4D/19/Setting-object-display-properties.300-5416671.en.html#148057) (Form Editor context menu) | Si el formato de visualización de la imagen es:<ul><li>**[Scaled](FormObjects/properties_Picture.md#scaled-to-fit)** - El objeto que contiene la imagen se redimensiona según (número de píxeles de la imagen * dpi de la pantalla) / (dpide la imagen) </li> <li>**Sin escalar** - El objeto que contiene la imagen tiene el mismo número de píxeles que la imagen.</li></ul>                                                 |
+| Operación                                                                                                                                                    | Comportamiento                                                                                                           |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Soltar o pegar                                                                                                                                               | Si la imagen tiene:<ul><li>**72dpi o 96dpi** - La imagen tiene el formato "[Center](FormObjects/properties_Picture.md#center--truncated-non-centered)" y el objeto que contiene la imagen tiene el mismo número de píxeles.</li><li>**Otro dpi** - La imagen tiene el formato "{Escalada para encajar](FormObjects/properties_Picture.md#scaled-to-fit)" y el objeto que contiene la imagen es igual a (número de píxeles de la imagen * dpi de la pantalla) / (dpi de la imagen)</li> <li>**Sin dpi** - La imagen tiene el formato "{Escala para ajustar](FormObjects/properties_Picture.md#scaled-to-fit)".</li> |
+| [Tamaño automático](https://doc.4d.com/4Dv19/4D/19/Setting-object-display-properties.300-5416671.en.html#148057) (menú contextual del editor de formularios) | Si el formato de visualización de la imagen es:<ul><li>**[Scaled](FormObjects/properties_Picture.md#scaled-to-fit)** - El objeto que contiene la imagen se redimensiona según (número de píxeles de la imagen * dpi de la pantalla) / (dpide la imagen) </li> <li>**Sin escalar** - El objeto que contiene la imagen tiene el mismo número de píxeles que la imagen.</li></ul>                                                 |
 
 *(\*) Generalmente, macOS = 72 dpi, Windows = 96 dpi*
 
 
-## Dark mode pictures (macOS only)
+## Imágenes en modo oscuro (sólo en macOS)
 
-You can define specific pictures and icons to be used instead of standard pictures when [forms use the dark scheme](properties_FormProperties.md#color-scheme).
+Puede definir imágenes e iconos específicos que se utilizarán en lugar de las imágenes estándar cuando [los formularios utilicen el esquema oscuro](properties_FormProperties.md#color-scheme).
 
-A dark mode picture is defined in the following way:
+Una imagen en modo oscuro se define de la siguiente manera:
 
-- dark mode picture has the same name as the standard (light scheme) version with the suffix "`_dark`"
-- dark mode picture is stored next to the standard version.
+- la imagen en modo oscuro tiene el mismo nombre que la versión estándar (modo claro) con el sufijo "`_dark`"
+- la imagen en modo oscuro se almacena junto a la versión estándar.
 
-At runtime, 4D will automatically load the light or dark image according to the [current form color scheme](https://doc.4d.com/4dv19/help/command/en/1761.html).
+En tiempo de ejecución, 4D cargará automáticamente la imagen clara u oscura según el [modo de colores de formulario actual](https://doc.4d.com/4dv19/help/command/en/1761.html).
 
 ![](assets/en/FormEditor/darkicon.png)
 
