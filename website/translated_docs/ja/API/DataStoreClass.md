@@ -332,11 +332,11 @@ user / password / timeout / tls を指定してリモートデータストアに
 
 #### 説明
 
-The `.clearAllRemoteContexts()` function <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->clears all the attributes for all the active contexts in the datastore<!-- END REF -->.
+`.clearAllRemoteContexts()` 関数は、 <!-- REF #DataStoreClass.clearAllRemoteContexts().Summary -->データストアのすべてのアクティブコンテキストの全属性をクリアします<!-- END REF -->。
 
-This function is mainly used in the context of debugging. One thing to keep in mind is that when you open the debugger, it sends requests to the server and queries all the dataclass attributes to display them. This can overload your contexts with unnecessary data. 
+この機能は主にデバッグで使用されます。 注意しなければならないのは、デバッガーを開くと、デバッガーはサーバーにリクエストを送り、データクラス属性をすべてクエリして表示することです。 このため、不要なデータでコンテキストが過負荷になることがあります。 
 
-In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts and keep them clean.
+そのような場合は、`.clearAllRemoteContexts()` を使用してコンテキストをクリアし、クリーンな状態を保つことができます。
 
 
 
@@ -435,9 +435,9 @@ In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts an
 **.getAllRemoteContexts()** : Collection<!-- END REF -->
 
 <!-- REF #DataStoreClass.getAllRemoteContexts().Params -->
-| 引数  | タイプ    |    | 説明                                         |
-| --- | ------ | -- | ------------------------------------------ |
-| 戻り値 | Object | <- | Collection of optimization context objects |
+| 引数  | タイプ    |    | 説明                     |
+| --- | ------ | -- | ---------------------- |
+| 戻り値 | Object | <- | 最適化コンテキストオブジェクトのコレクション |
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
@@ -446,19 +446,19 @@ In such cases, you can use `.clearAllRemoteContexts()` to clear your contexts an
 
 #### 説明
 
-The `.getAllRemoteContexts()` function <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->returns a collection of objects containing information on all the active optimization contexts in the datastore<!-- END REF -->.
+`.getAllRemoteContexts()` 関数は、 <!-- REF #DataStoreClass.getAllRemoteContexts().Summary -->データストア内のすべてのアクティブな最適化コンテキストに関する情報を格納するオブジェクトのコレクションを返します<!-- END REF -->。
 
 
 
-> For more information on how contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+> コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/remoteDatastores.md#クライアントサーバーの最適化) を参照ください。
 
-Each object in the returned collection has the properties listed in the [`.getRemoteContextInfo()`](#properties-of-the-returned-object) section.
+返されたコレクション内の各オブジェクトは、[`.getRemoteContextInfo()`](#返されるオブジェクト) セクションに記載されているプロパティを持ちます。
 
 
 
 #### 例題
 
-The following code sets up two contexts and retrieves them using `.getAllRemoteContexts()`:
+次のコードは 2つのコンテキストを設定し、`.getAllRemoteContexts()` を使用してそれらを取得します:
 
 
 
@@ -472,10 +472,10 @@ var $contextA; $contextB : Object
 var $info : Collection
 var $text : Text
 
-// Open remote datastore
+// リモートデータストアを開きます
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-// Set context A
+// コンテキストA を設定します
 $contextA:=New object("context"; "contextA")
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
@@ -483,7 +483,7 @@ For each ($p; $persons)
     $text:=$p.firstname+" lives in "+$p.address.city+" / " 
 End for each 
 
-// Set context B
+// コンテキストB を設定します
 $contextB:=New object("context"; "contextB")
 $addresses:=$ds.Address.all($contextB)
 $text:="" 
@@ -491,7 +491,7 @@ For each ($a; $addresses)
     $text:=$a.zipCode
 End for each 
 
-// Get all remote contexts (in this case, contextA and contextB)
+// すべてのリモートコンテキストを取得します (contextA と contextB)
 $info:=$ds.getAllRemoteContexts()
 //$info = [{name:"contextB"; dataclass:"Address"; main:"zipCode"},
 {name:"contextA";dataclass:"Persons";main:"firstname,address.city"}]
@@ -500,7 +500,7 @@ $info:=$ds.getAllRemoteContexts()
 
 
 
-> This example serves as a demonstration, it is not meant for real implementation.
+> この例はデモンストレーションであり、実際の実装を想定したものではありません。
 
 
 
@@ -602,10 +602,10 @@ $info:=$ds.getAllRemoteContexts()
 **.getRemoteContextInfo**(*contextName* : Text) : Object <!-- END REF -->
 
 <!-- REF #DataStoreClass.getRemoteContextInfo().Params -->
-| 引数          | タイプ    |    | 説明                                      |
-| ----------- | ------ | -- | --------------------------------------- |
-| contextName | Text   | -> | Name of the context                     |
-| 戻り値         | Object | <- | Description of the optimization context |
+| 引数          | タイプ    |    | 説明           |
+| ----------- | ------ | -- | ------------ |
+| contextName | Text   | -> | コンテキストの名称    |
+| 戻り値         | Object | <- | 最適化コンテキストの詳細 |
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
@@ -614,9 +614,9 @@ $info:=$ds.getAllRemoteContexts()
 
 #### 説明
 
-The `.getRemoteContextInfo()` function <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> returns an object that holds information on the *contextName* optimization context in the datastore.<!-- END REF -->.
+`.getRemoteContextInfo()` 関数は、 <!-- REF #DataStoreClass.getRemoteContextInfo().Summary --> *contextName* で指定したデータストアの最適化コンテキストに関する情報を格納するオブジェクトを返します<!-- END REF -->。
 
-For more information on how optimization contexts can be created, see [client/server optimization](../ORDA/remoteDatastores.md#clientserver-optimization).
+最適化コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/remoteDatastores.md#クライアントサーバーの最適化) を参照ください。
 
 
 
@@ -624,12 +624,12 @@ For more information on how optimization contexts can be created, see [client/se
 
 戻り値のオブジェクトには、以下のプロパティが格納されています: 
 
-| プロパティ                  | タイプ  | 説明                                                                                                                                                                                                                                                                            |
-| ---------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name                   | Text | Name of the context                                                                                                                                                                                                                                                           |
-| main                   | Text | Attribute(s) associated to the context (attribute names are separated by a comma)                                                                                                                                                                                             |
-| dataclass              | Text | データクラスの名称                                                                                                                                                                                                                                                                     |
-| currentItem (optional) | Text | The attributes of the [page mode](../ORDA/remoteDatastores.md#entity-selection-based-list-box) if the context is linked to a list box. Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
+| プロパティ            | タイプ  | 説明                                                                                                                                                                                                                               |
+| ---------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name             | Text | コンテキストの名称                                                                                                                                                                                                                        |
+| main             | Text | コンテキストに関連する属性 (複数の場合はカンマ区切り)                                                                                                                                                                                                     |
+| dataclass        | Text | データクラスの名称                                                                                                                                                                                                                        |
+| currentItem (任意) | Text | コンテキストがリストボックスとリンクしている場合の [ページモード](../ORDA/remoteDatastores.md#エンティティセレクション型リストボックス) の属性。 Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
 
 
 Since contexts behave as filters for attributes, if *main* is returned empty, it means that no filter is applied, and that the server returns all the dataclass attributes. 
@@ -909,7 +909,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
 | 引数              | タイプ          |    | 説明                                                                        |
 | --------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| contextName     | Text         | -> | Name of the context                                                       |
+| contextName     | Text         | -> | コンテキストの名称                                                                 |
 | dataClassName   | Text         | -> | データクラスの名称                                                                 |
 | dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                                 |
 | attributes      | Text         | -> | Attribute list separated by a comma                                       |
@@ -990,7 +990,7 @@ $info:=$ds.getRemoteContextInfo("contextA")
 
 
 
-> This example serves as a demonstration, it is not meant for real implementation.
+> この例はデモンストレーションであり、実際の実装を想定したものではありません。
 
 
 
