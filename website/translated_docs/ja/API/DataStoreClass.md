@@ -624,21 +624,21 @@ $info:=$ds.getAllRemoteContexts()
 
 戻り値のオブジェクトには、以下のプロパティが格納されています: 
 
-| プロパティ            | タイプ  | 説明                                                                                                                                                                                                                               |
-| ---------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name             | Text | コンテキストの名称                                                                                                                                                                                                                        |
-| main             | Text | コンテキストに関連する属性 (複数の場合はカンマ区切り)                                                                                                                                                                                                     |
-| dataclass        | Text | データクラスの名称                                                                                                                                                                                                                        |
-| currentItem (任意) | Text | コンテキストがリストボックスとリンクしている場合の [ページモード](../ORDA/remoteDatastores.md#エンティティセレクション型リストボックス) の属性。 Returned as `Null` or empty text element if the context name is not used for a list box, or if there is no context for the currentItem |
+| プロパティ            | タイプ  | 説明                                                                                                                                                                                    |
+| ---------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name             | Text | コンテキストの名称                                                                                                                                                                             |
+| main             | Text | コンテキストに関連する属性 (複数の場合はカンマ区切り)                                                                                                                                                          |
+| dataclass        | Text | データクラスの名称                                                                                                                                                                             |
+| currentItem (任意) | Text | コンテキストがリストボックスとリンクしている場合の [ページモード](../ORDA/remoteDatastores.md#エンティティセレクション型リストボックス) の属性。 コンテキスト名がリストボックスに使用されていない場合、または currentItem に対応するコンテキストが存在しない場合は、`Null` または空のテキスト要素として返されます。 |
 
 
-Since contexts behave as filters for attributes, if *main* is returned empty, it means that no filter is applied, and that the server returns all the dataclass attributes. 
+コンテキストは属性に対するフィルターとして動作するため、*main* が空で返された場合、それはフィルターが適用されておらず、サーバーがすべてのデータクラス属性を返すことを意味します。 
 
 
 
 #### 例題
 
-See the example from the [.setRemoteContextInfo()](#example-1-3) section.
+[.setRemoteContextInfo()](#example-1-3) の例題を参照ください。
 
 
 
@@ -907,15 +907,15 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 **.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer}})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassName* : Text; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributes* : Text {; *contextType* : Text { ; *pageLength* : Integer }})<br/>**.setRemoteContextInfo**( *contextName* : Text ; *dataClassObject* : 4D.DataClass ; *attributesColl* : Collection {; *contextType* : Text { ; *pageLength* : Integer }} )<!-- END REF -->
 
 <!-- REF #DataStoreClass.setRemoteContextInfo().Params -->
-| 引数              | タイプ          |    | 説明                                                                        |
-| --------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| contextName     | Text         | -> | コンテキストの名称                                                                 |
-| dataClassName   | Text         | -> | データクラスの名称                                                                 |
-| dataClassObject | 4D.DataClass | -> | dataclass object (e.g datastore.Employee)                                 |
-| attributes      | Text         | -> | Attribute list separated by a comma                                       |
-| attributesColl  | Collection   | -> | Collection of attribute names (text)                                      |
-| contextType     | Text         | -> | If provided, value must be "main" or "currentItem"                        |
-| pageLength      | Integer      | -> | Page length of the entity selection linked to the context (default is 80) |
+| 引数              | タイプ          |    | 説明                                         |
+| --------------- | ------------ | -- | ------------------------------------------ |
+| contextName     | Text         | -> | コンテキストの名称                                  |
+| dataClassName   | Text         | -> | データクラスの名称                                  |
+| dataClassObject | 4D.DataClass | -> | DataClass オブジェクト (例: datastore.Employee)   |
+| attributes      | Text         | -> | カンマ区切りの属性リスト                               |
+| attributesColl  | Collection   | -> | 属性名 (テキスト) のコレクション                         |
+| contextType     | Text         | -> | 渡す場合、値は "main" または "currentItem" のいずれか     |
+| pageLength      | Integer      | -> | コンテキストにリンクされたエンティティセレクションのページ長 (デフォルトは 80) |
 <!-- END REF -->
 
 
@@ -926,7 +926,7 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 #### 説明
 
-The `.setRemoteContextInfo()` function <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->links the specified dataclass attributes to the *contextName* optimization context<!-- END REF -->. If an optimization context already exists for the specified attributes, this command replaces it.
+`.setRemoteContextInfo()` 関数は、 <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->指定したデータクラス属性を *contextName* の最適化コンテキストにリンクします<!-- END REF -->。 指定した属性に対して最適化コンテキストが既に存在する場合、このコマンドはそれを置き換えます。
 
 When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
 
