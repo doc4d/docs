@@ -58,6 +58,7 @@ For example, if you want to define a class named "Polygon", you need to create t
 
 
 
+
 		* Sources
 			- Classes
 				+ Polygon.4dm
@@ -461,6 +462,7 @@ Class constructor ($side : Integer)
 	This.name:="Square"
 
 
+
 	Function getArea()
 		C_LONGINT($0)
 		$0:=This.height*This.width
@@ -521,6 +523,7 @@ Function sayName()
 // Function definition
 Function getArea()
 	var $0 : Integer
+
 	$0:=(This.height)*(This.width)
 ```
 
@@ -589,7 +592,7 @@ This -> Object
 |---|---|---|---|	
 |Result|object|<-|Current object|
 
-The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.en.html).
+The `This` keyword returns a reference to the currently processed object. In 4D, it can be used in [different contexts](https://doc.4d.com/4Dv19/help/command/page1470.html).
 
 In most cases, the value of `This` is determined by how a function is called. It can't be set by assignment during execution, and it may be different each time the function is called. 
 
