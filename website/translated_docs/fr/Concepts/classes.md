@@ -104,7 +104,7 @@ Les classes disponibles sont accessibles depuis leurs class stores. Deux class s
 
 
 - `cs` pour le class store utilisateur
-- `cs` pour le class store intégré
+- `4D` pour le class store intégré
 
 
 
