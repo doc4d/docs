@@ -121,23 +121,23 @@ Vous permet de choisir d'afficher ou non les multiples presse-papiers dans l'éd
 
 Les [raccourcis du presse-papiers](https://doc.4d.com/4Dv19R3/4D/19-R3/Writing-a-method.300-5612559.en.html#3977166) correspondants demeurent actifs lorsque ces presse-papiers sont masqués.
 
-#### Highlight the logical blocks
+#### Surbrillance des blocs logiques
 
-When checked, the whole code belonging to a logical block (If/End if for example) is highlighted when the mouse is placed over the expanded node:
+Lorsque vous cochez l'option, tout le code correspondant à un bloc logique (Si/Fin de si par exemple) est surligné lorsque la souris est placée au-dessus de l'icône plier/déplier :
 
 ![](assets/en/Preferences/optionsLogicalBlocks.png)
 
-The highlight color can be set in the [Theme](#theme-definition) page.
+La couleur de surlignage peut être modifiée dans la page [Définition d'un thème](#définition-dun-thème).
 
-#### Always show block lines
+#### Toujours afficher les lignes de blocs
 
-Allows to hide vertical block lines permanently. The block lines are designed to visually connect nodes. By default, they are always displayed (except when collapse/expand icons are hidden, see below).
+Permet de cacher de façon permanente les lignes verticales de blocs. Les lignes de blocs sont conçues pour visualiser les blocs logiques. Par défaut, elles sont toujours affichées, excepté lorsque les icônes plier/déplier sont masquées (voir ci-dessous).
 
 ![](assets/en/Preferences/optionsBlockLines.png)
 
-#### Hide collapse/expand icons
+#### Masquer les icônes plier/déplier
 
-Allows you to hide all expand/collapse icons by default when displaying code. When the option is checked, node icons (as well as local block lines, see above), are displayed temporarily when the mouse is placed over a node:
+Permet de masquer, par défaut, toutes les icônes plier/déplier lorsque vous affichez le code. Lorsque cette option est cochée, les icônes plier/déplier (ainsi que les lignes de blocs locales, voir ci-dessus) sont affichées temporairement lorsque la souris survole une icône :
 
 ![](assets/en/Preferences/optionsHideIcons.png)
 
@@ -172,7 +172,7 @@ Allows to highlight all occurrences of the same variable or field in an open met
 - **Sur curseur** : Toutes les occurrences sont mises en évidence lorsque le texte est cliqué
 - **Sur sélection** : Toutes les occurrences sont mises en évidence lorsque le texte est sélectionné
 
-The highlight color can be set in the [Theme](#theme-definition) page.
+La couleur de surlignage peut être modifiée dans la page [Définition d'un thème](#définition-dun-thème).
 
 #### Debug (Highlight the line running)
 
