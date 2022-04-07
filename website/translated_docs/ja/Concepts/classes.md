@@ -58,6 +58,7 @@ $hello:=$person.sayHello() // "Hello John Doe"
 
 
 
+
         * Sources
             - Classes
                 + Polygon.4dm
@@ -542,20 +543,21 @@ Class extends <ParentClass>
 
 
 ```4d
-// クラス: Square
+//Class: Square
 
-// パス: Classes/Square.4dm 
+//path: Classes/Square.4dm 
 
 Class extends Polygon
 
 Class constructor ($side : Integer)
 
-    // 親クラスのコンストラクターを呼び出します
-    // 長方形の高さ・幅パラメーターに正方形の一辺の長さを引数として渡します
+    // It calls the parent class's constructor with lengths
+    // provided for the Polygon's width and height
     Super($side;$side)
-    // 派生クラスにおいては、'This' を使用するより先に
-    // Super を呼び出しておく必要があります
+    // In derived classes, Super must be called before you
+    // can use 'This'
     This.name:="Square"
+
 
 
     Function getArea()
@@ -634,9 +636,10 @@ Class constructor($width : Integer; $height : Integer)
 Function sayName()
     ALERT("Hi, I am a "+This.name+".")
 
-// 関数定義
+// Function definition
 Function getArea()
     var $0 : Integer
+
     $0:=(This.height)*(This.width)
 ```
 
@@ -727,7 +730,7 @@ This -> Object
 | 戻り値 | object | <- | カレントオブジェクト |
 
 
-`This` キーワードは、現在処理中のオブジェクトへの参照を返します。 `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv18/4D/18/This.301-4504875.ja.html) で使用することができます。
+`This` キーワードは、現在処理中のオブジェクトへの参照を返します。 `This` は、4Dにおいて [様々なコンテキスト](https://doc.4d.com/4Dv19/4D/19.1/This.301-5654037.ja.html) で使用することができます。
 
 `This` の値は、呼ばれ方によって決まります。 `This` の値は実行時に代入により設定することはできません。また、呼び出されるたびに違う値となりえます。 
 
