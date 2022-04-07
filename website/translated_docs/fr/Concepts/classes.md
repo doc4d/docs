@@ -107,7 +107,7 @@ Les classes disponibles sont accessibles depuis leurs class stores. Deux class s
 
 
 - `cs` pour le class store utilisateur
-- `cs` pour le class store intégré
+- `4D` pour le class store intégré
 
 
 
@@ -583,43 +583,43 @@ $message:=$square.description() //I have 4 sides which are all equal
 This -> Object
 ```
 
-| Paramètres | Type   |    | Description    |
-| ---------- | ------ | -- | -------------- |
-| Résultat   | object | <- | Current object |
+| Paramètres | Type   |    | Description   |
+| ---------- | ------ | -- | ------------- |
+| Résultat   | object | <- | Objet courant |
 
-The `This` keyword returns a reference to the currently processed object. Dans 4D, il peut être utilisé dans [différents contextes](https://doc.4d.com/4Dv19/help/command/page1470.html).
+Le mot-clé `This` retourne une référence vers l'objet en cours de traitement. Dans 4D, il peut être utilisé dans [différents contextes](https://doc.4d.com/4Dv19/help/command/page1470.html).
 
-In most cases, the value of `This` is determined by how a function is called. Il ne peut pas être défini par affectation lors de l'exécution, et il peut être différent à chaque fois que la fonction est appelée.
+Dans la plupart des cas, la valeur de `This` est déterminée par la manière dont une fonction est appelée. Il ne peut pas être défini par affectation lors de l'exécution, et il peut être différent à chaque fois que la fonction est appelée.
 
-When a formula is called as a member method of an object, its `This` is set to the object the method is called on. Par exemple :
+Lorsqu'une formule est appelée en tant que méthode membre d'un objet, son `This` désigne l'objet sur lequel la méthode est appelée. Par exemple :
 
 ```4d
 $o:=New object("prop";42;"f";Formula(This.prop))
 $val:=$o.f() //42
 ```
 
-When a [class constructor](#class-constructor) function is used (with the [`new()`](API/ClassClass.md#new) function), its `This` is bound to the new object being constructed.
+Lorsqu'une fonction [class constructor](#class-constructor) est utilisée (avec la fonction [`new()`](API/ClassClass.md#new)), son `This` désigne le nouvel objet en cours de construction.
 
 ```4d
 //Class: ob
 
 Class Constructor  
 
-    // Create properties on This as
-    // desired by assigning to them
+    // Créer des propriétés en
+    // les assignant au This 
     This.a:=42 
 ```
 
 ```4d
-// in a 4D method  
+// dans une méthode 4D  
 $o:=cs.ob.new()
 $val:=$o.a //42
 ```
 
-> When calling the superclass constructor in a constructor using the [Super](#super) keyword, keep in mind that `This` must not be called before the superclass constructor, otherwise an error is generated. See [this example](#example-1).
+> En cas d'appel de la superclasse du constructeur depuis le constructeur en utilisant le mot-clé [Super](#super), n'oubliez pas que `This` ne doit pas être appelé avant le constructeur de la superclasse, sinon une erreur est générée. Voir [cet exemple](#example-1).
 
 
-In any cases, `This` refers to the object the method was called on, as if the method were on the object.
+Dans tous les cas, `This` se réfère à l'objet sur lequel la fonction a été appelée, comme s'il s'agissait d'une fonction de l'objet.
 
 ```4d
 //Class: ob
@@ -637,23 +637,23 @@ $o.b:=3
 $val:=$o.f() //8
 ```
 
-In this example, the object assigned to the variable $o doesn't have its own *f* property, it inherits it from its class. Since *f* is called as a method of $o, its `This` refers to $o.
+Dans cet exemple, l'objet affecté à la variable $o n'a pas de propriété *f*, il hérite de celle de sa classe. Comme *f* est appelée comme une méthode de $o, son `This` se réfère à $o.
 
 
-## Class commands
+## Commandes de classes
 
-Several commands of the 4D language allows you to handle class features.
+Plusieurs commandes du langage 4D se rapportent à la manipulation des classes.
 
 
 ### `OB Class`
 
 #### OB Class ( object ) -> Object | Null
 
-`OB Class` returns the class of the object passed in parameter.
+`OB Class` retourne la classe de l'objet passé en paramètre.
 
 
 ### `OB Instance of`
 
 #### OB Instance of ( object ; class ) -> Boolean
 
-`OB Instance of` returns `true` if `object` belongs to `class` or to one of its inherited classes, and `false` otherwise.
+`OB Instance of` retourne `true` si `object` appartient à la `class` ou à l'une de ses classes héritées, et `false` sinon.
