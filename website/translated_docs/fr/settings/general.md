@@ -22,10 +22,10 @@ Ce menu permet de sélectionner le mode dans lequel vous souhaitez que la base s
 
 Cette zone permet aux [développeurs de composants](../Extensions/develop-components.md) de configurer la manière dont les classes et les fonctions de leurs composants seront exposées dans l'éditeur de méthodes 4D une fois que le composant est installé.
 
-### Component namespace in the class store
+### Namespace du composant dans le class store
 
-Utilisez cette zone pour déclarer un namespace pour les classes et les fonctions du composant dans le code des projets hôtes. Voir [Déclaration du namespace du composant](../Extensions/develop-components.md#declaring-the-component-namespace).
+Utilisez cette zone pour déclarer un espace de nommage pour les classes et les fonctions du composant dans le code des projets hôtes. Voir [Déclaration du namespace du composant](../Extensions/develop-components.md#declaring-the-component-namespace).
 
-### Generate syntax file for code completion when compiled
+### Générer le fichier de syntaxe pour l'auto-complétion à la compilation
 
 Lorsque vous cochez cette option, un fichier de syntaxe (format JSON) est automatiquement créé lors de la phase de compilation. Voir [Complétion de code pour les composants compilés](../Extensions/develop-components.md#code-completion-for-compiled-components). 
