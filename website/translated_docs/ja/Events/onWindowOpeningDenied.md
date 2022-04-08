@@ -8,9 +8,9 @@ title: On Window Opening Denied
 | 53  | [Webエリア](FormObjects/webArea_overview.md) | ポップアップウィンドウがブロックされた |
 
 <details><summary>履歴</summary>
-| バージョン  | 内容                |
-| ------ | ----------------- |
-| v19 R5 | Triggered on drop |
+| バージョン  | 内容         |
+| ------ | ---------- |
+| v19 R5 | ドロップ時にトリガー |
 </details>
 
 ## 説明
@@ -19,14 +19,14 @@ title: On Window Opening Denied
 
 `WA Get last filtered URL` コマンドコマンドを使用してブロックされた URL を知ることができます。
 
-This event is also triggered when a drop operation has been done in the Web area (with embedded and Wwindows system [engines](properties_WebArea.md#use-embedded-web-rendering-engine)) if the [Drag and drop](FormObjects/webArea_Overview.md#user-interface) option is also enabled for the area. You can accept the drop by calling:
+このイベントは、Webエリア (埋め込みおよび Windowsシステム [エンジン](properties_WebArea.md#埋め込みwebレンダリングエンジンを使用)) で [ドラッグ＆ドロップ](FormObjects/webArea_Overview.md#ユーザーインターフェース) オプションが有効になっている場合に、ドロップ操作がおこなわれたときにも発生します。 次を呼び出すことで、ドロップを受け入れることができます:
 
 ```4d
-//web area object method
+// Webエリアオブジェクトメドッド
 If (FORM Event.code=On Window Opening Denied)
     WA OPEN URL(*; "WebArea"; WA Get last filtered URL(*; "WebArea"))  
-    // or UrlVariable:=WA Get last filtered URL(*; "WebArea")  
-    // where UrlVariable is the URL variable associated to the web area
+    // または UrlVariable:=WA Get last filtered URL(*; "WebArea")  
+    // (UrlVariable は Webエリアに関連づけられた URL変数)
 End if 
 ```
 
