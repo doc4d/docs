@@ -2685,6 +2685,7 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 
 #### 参照
 
+
 [VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP ALL](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Get names](#vp-get-names)<br/>[VP REMOVE NAME](#vp-remove-name)<br/>[VP Row](#vp-row)
 
 
@@ -3613,7 +3614,12 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 *rangeObj* 引数には、スタイルを適用したいセルのレンジを渡します。 *rangeObj* に複数のセルが含まれる場合、スタイルはそれぞれのセルに割り当てられます。
 > `VP SET CELL STYLE` で適用された境界線は、*rangeObj* の各セルに対して適用されます。これに対して [VP SET BORDER](#vp-set-border) コマンドは境界線を *rangeObj* のレンジ全体に対して適用されます。
 
-*styleObj* にはスタイル設定を格納したオブジェクトを渡します。 既存のスタイルシートを使用することもできますし、新しいスタイルを作成することも可能です。 *styleObj* に既存のスタイルシートと、追加のスタイル設定の両方が格納されている場合、既存のスタイルシートが先に適用され、そのあとに追加の設定が適用されます。 *styleObj* 引数として NULL値を渡した場合、*rangeObj* のレンジのスタイルシートはすべて削除され、デフォルトのスタイル設定 (あれば) に戻されます。
+*styleObj* にはスタイル設定を格納したオブジェクトを渡します。 既存のスタイルシートを使用することもできますし、新しいスタイルを作成することも可能です。 *styleObj* に既存のスタイルシートと、追加のスタイル設定の両方が格納されている場合、既存のスタイルシートが先に適用され、そのあとに追加の設定が適用されます。
+
+スタイルを削除してデフォルトのスタイル設定 (あれば) に戻すには、NULL値を渡します:
+
+- *styleObj* 引数として NULL値を渡した場合、*rangeObj* のレンジのスタイルシートはすべて削除されます。
+- 属性に NULL値を指定すると、当該属性は *rangeObj* から削除されます。
 
 スタイルオブジェクトとスタイルシートの詳細については、[スタイルオブジェクト](configuring.md#スタイルオブジェクト) を参照ください。
 
@@ -3628,12 +3634,14 @@ $style.foreColor:="red"
 $style.hAlign:=1
 $style.isVerticalText:=True
 $style.borderBottom:=New object("color";"#800080";"style";vk line style thick)
+$style.backgroundImage:=Null // 特定の属性を削除します
 
 VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 ```
 
 
 ![](assets/en/ViewPro/cmd_vpSetCellStyle.PNG)
+
 #### 参照
 
 [VP ADD STYLESHEET](#vp-add-stylesheet)<br/>[VP Font to object](#vp-font-to-object)<br/>[VP Get cell style](#vp-get-cell-style)<br/>[VP Object to font](#vp-object-to-font)<br/>[VP SET BORDER](#vp-set-border)<br/>[VP SET DEFAULT STYLE](#vp-set-default-style)
@@ -4842,7 +4850,7 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
     | プロパティ | タイプ                                      | 説明             |
     | ----- | ---------------------------------------- | -------------- |
     | value | Integer, Real, Boolean, Text, Date, Null | セルの値 (時間部分を除く) |
-    | time  | Real                                     | 時間値 (秒単位)      |
+    | time  | 実数                                       | 時間値 (秒単位)      |
 
 #### 例題
 
@@ -4870,8 +4878,8 @@ VP SET VALUES(VP Cell("ViewProArea";2;1);$param)
 <!-- REF #_method_.VP SET WORKBOOK OPTIONS.Params -->
 | 引数         | タイプ    |    | 説明                         |
 | ---------- | ------ | -- | -------------------------- |
-| vpAreaName | Text   | -> | 4D View Pro フォームオブジェクト名    |
-| optionObj  | Object | -> | 設定するワークブックオプションを格納したオブジェクト |
+| vpAreaName | テキスト   | -> | 4D View Pro フォームオブジェクト名    |
+| optionObj  | オブジェクト | -> | 設定するワークブックオプションを格納したオブジェクト |
 <!-- END REF -->  
 
 #### 説明
