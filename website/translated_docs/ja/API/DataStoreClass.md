@@ -928,31 +928,31 @@ ORDAリクエストログのフォーマットの詳細は、[**ORDAクライア
 
 `.setRemoteContextInfo()` 関数は、 <!-- REF #DataStoreClass.setRemoteContextInfo().Summary -->指定したデータクラス属性を *contextName* の最適化コンテキストにリンクします<!-- END REF -->。 指定した属性に対して最適化コンテキストが既に存在する場合、このコマンドはそれを置き換えます。
 
-When you pass a context to the ORDA class functions, the REST request optimization is triggered immediately:
+ORDAクラスの関数にコンテキストを渡すと、RESTリクエストの最適化が即座に発動します:
 
-* the first entity is not fully loaded as done in automatic mode
-* pages of 80 entities (or `pageLength` entities) are immediately asked to the server with only the attributes in the context
+* 自動モードのときとは異なり、先頭エンティティは完全にロードされません。
+* 80件のエンティティ (または `pageLength` に対応するエンティティ数) のページが直ちにサーバーに要求される際、コンテキストの属性のみが要求されます。
 
 
 
-> For more information on how optimization contexts are built, refer to the [client/server optimization paragraph](../ORDA/remoteDatastores.md#clientserver-optimization)
+> 最適化コンテキストの作成に関する詳細については、[クライアント/サーバーの最適化](../ORDA/remoteDatastores.md#クライアントサーバーの最適化) を参照ください。
 
-In *contextName*, pass the name of the optimization context to link to the dataclass attributes.
+*contextName* には、データクラス属性にリンクする最適化コンテキストの名前を渡します。
 
-To designate the dataclass that will receive the context, you can pass a *dataClassName* or a *dataClassObject*. 
+コンテキストを受け取るデータクラスを指定するために、*dataClassName* または *dataClassObject* を渡すことができます。 
 
-To designate the attributes to link to the context, pass either a list of attributes separated by a comma in *attributes* (Text), or a collection of attribute names in *attributesColl* (collection of text).
+コンテキストにリンクする属性を指定するには、*attributes* (テキスト) にカンマ区切りの属性リストを渡すか、属性名のコレクションを *attributesColl* (テキストのコレクション) に渡します。
 
-If *attributes* is an empty Text, or *attributesColl* is an empty collection, all the scalar attributes of the dataclass are put in the optimization context. If you pass an attribute that does not exist in the dataclass, the function ignores it and an error is thrown.
+*attributes* が空のテキスト、または *attributesColl* が空のコレクションの場合、データクラスのすべてのスカラー属性が最適化コンテキストに置かれます。 データクラスに存在しない属性を渡した場合、それは無視され、エラーが返されます。
 
-You can pass a *contextType* to  specify if the context is a standard context or the context of the current entity selection item displayed in a list box: 
+*contextType* を渡して、コンテキストが標準コンテキストか、リストボックスに表示されているカレントエンティティセレクション項目のコンテキストかを指定することができます。 
 
-* If set to "main" (default), the *contextName* designates a standard context.
-* If set to "currentItem", the attributes passed are put in the context of the current item.  See  [Entity selection-based list box](../ORDA/remoteDatastores.md#entity-selection-based-list-box).
+* "main" (デフォルト) を渡すと、*contextName* は標準コンテキストを指定します。
+* "currentItem" の場合には、渡された属性はカレント項目のコンテキストに置かれます。  [エンティティセレクション型リストボックス](../ORDA/remoteDatastores.md#エンティティセレクション型リストボックス) を参照ください。
 
-In *pageLength*, specify the number of dataclass entities to request from the server. 
+*pageLength* には、サーバーに要求するデータクラスエンティティの数を指定します。 
 
-You can pass a *pageLength* for a relation attribute which is an entity selection (one to many). The syntax is `relationAttributeName:pageLength` (e.g employees:20).
+エンティティセレクションであるリレーション属性 (1対N) について、*pageLength* を渡すことができます。 シンタックスは、`relationAttributeName:pageLength` です (例: employees:20)。
 
 
 
@@ -968,21 +968,21 @@ var $contextA : Object
 var $info : Object
 var $text : Text
 
-// Open remote datastore
+// リモートデータストアを開きます
 $ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-// Set context info
+// コンテキストを設定します
 $contextA:=New object("context"; "contextA")
 $ds.setRemoteContextInfo("contextA"; $ds.Persons; "firstname, lastname")
 
-// Send requests to the server using a loop
+// ループを使い、サーバーにリクエストを送信します
 $persons:=$ds.Persons.all($contextA)
 $text:="" 
 For each ($p; $persons)
     $text:=$p.firstname + " " + $p.lastname
 End for each 
 
-// Check contents of the context
+// コンテキストの情報を確認します
 $info:=$ds.getRemoteContextInfo("contextA")
 // $info = {name:"contextA";dataclass:"Persons";main:"firstname, lastname"} 
 ```
@@ -997,9 +997,9 @@ $info:=$ds.getRemoteContextInfo("contextA")
 
 #### 例題 2
 
-The following piece of code requests pages of 30 entities of the `Address` dataclass from the server. The returned entities only contain the `zipCode` attribute.
+以下のコードでは、`Address` データクラスのエンティティ 30件のページをサーバーに要求しています。 返されるエンティティは、`zipCode` 属性のみを含みます。
 
-For each `Address` entity, 20 Persons entities are returned, and they only contain the `lastname` and `firstname` attributes:
+各 `Address` エンティティに対して、20件の Persons エンティティが返され、それらには `lastname` と `firstname` 属性のみが含まれます:
 
 
 
@@ -1016,27 +1016,27 @@ persons.lastname, persons.firstname"; "main"; 30)
 
 
 
-#### Example 3 - Listbox
+#### 例題 3 - リストボックス
 
 
 
 ```4d
-// When the form loads
+// フォームのロード時に
 Case of 
     : (Form event code=On Load)
 
         Form.ds:=Open datastore(New object("hostname"; "www.myserver.com"); "myDS")
 
-       // Set the attributes of the page context
+       // ページコンテキストの属性を設定します
         Form.ds.setRemoteContextInfo("LB"; Form.ds.Persons; "age, gender,\
         children"; "currentItem")
 
         Form.settings:=New object("context"; "LB")
         Form.persons:=Form.ds.Persons.all(Form.settings) 
-        // Form.persons is displayed in a list box
+        // Form.persons がリストボックスに表示されます
 End case 
 
-// When you get the attributes in the context of the current item:
+// カレント項目のコンテキストの属性を取得します
 Form.currentItemLearntAttributes:=Form.selectedPerson.getRemoteContextAttributes()
 // Form.currentItemLearntAttributes = "age, gender, children" 
 ```
