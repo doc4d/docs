@@ -543,19 +543,19 @@ Class extends <ParentClass>
 
 
 ```4d
-//Class: Square
+//クラス: Square
 
-//path: Classes/Square.4dm 
+// パス: Classes/Square.4dm 
 
 Class extends Polygon
 
 Class constructor ($side : Integer)
 
-    // It calls the parent class's constructor with lengths
-    // provided for the Polygon's width and height
+    // 親クラスのコンストラクターを呼び出します
+    // 長方形の高さ・幅パラメーターに正方形の一辺の長さを引数として渡します
     Super($side;$side)
-    // In derived classes, Super must be called before you
-    // can use 'This'
+    // 派生クラスにおいては、'This' を使用するより先に
+    // Super を呼び出しておく必要があります
     This.name:="Square"
 
 
@@ -636,10 +636,9 @@ Class constructor($width : Integer; $height : Integer)
 Function sayName()
     ALERT("Hi, I am a "+This.name+".")
 
-// Function definition
+// 関数定義
 Function getArea()
     var $0 : Integer
-
     $0:=(This.height)*(This.width)
 ```
 
