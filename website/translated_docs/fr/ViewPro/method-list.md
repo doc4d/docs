@@ -1127,6 +1127,7 @@ var $range;$condition;$result : Object
 | vpAreaName | Text | -> | Nom d'objet formulaire zone 4D View Pro |
 <!-- END REF -->  
 
+
 #### Description
 
 La commande `VP FLUSH COMMANDS` exécute <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->immédiatement les commandes empilées et vide le buffer de commandes<!-- END REF -->.
@@ -1176,6 +1177,7 @@ Le code suivant :
 ```4d
 $font:=VP Font to object("16pt arial")
 ```
+
 
 retournera l'objet $font suivant :
 
@@ -1703,6 +1705,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 
 #### Description
 
+
 La commande `VP Get frozen panes` <!-- REF #_method_.VP Get frozen panes.Summary -->retourne un objet contenant des informations sur les lignes et colonnes figées de *vpAreaName*<!-- END REF -->.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
@@ -2046,12 +2049,12 @@ Pour obtenir le nombre de feuilles et définir la feuille courante comme étant 
 
 #### Description
 
-The `VP Get sheet index` command <!-- REF #_method_.VP Get sheet index.Summary -->returns the index of a sheet based on its name in *vpAreaName*.
+La commande `VP Get sheet index` <!-- REF #_method_.VP Get sheet index.Summary -->retourne l'index d'une feuille en fonction de son nom dans *vpAreaName*.
 <!-- END REF --> 
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
-In *name*, pass the name of the sheet whose index will be returned. If no sheet named *name* is found in the document, the method returns -1.
+Dans *name*, passez le nom de la feuille dont l'index sera retourné. Si aucune feuille nommée *name* n'est trouvée dans le document, la méthode retourne -1.
 > La numérotation démarre à 0.
 
 #### Exemple
@@ -2060,10 +2063,10 @@ Dans le document suivant :
 
 ![](assets/en/ViewPro/vp-sheet-index-name.png)
 
-Get the index of the sheet called "Total first quarter":
+Lire l'index de la feuille appelée "Total premier trimester" :
 
 ```4d
-$index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
+$index:=VP Get sheet index("ViewProArea";"Total premier trimestre") //retourne 2
 ```
 
 #### Voir aussi
@@ -2087,19 +2090,19 @@ $index:=VP Get sheet index("ViewProArea";"Total first quarter") //returns 2
 
 #### Description
 
-The `VP Get sheet name` command <!-- REF #_method_.VP Get sheet name.Summary -->returns the name of a sheet based on its index in *vpAreaName*.
+La commande `VP Get sheet name` <!-- REF #_method_.VP Get sheet name.Summary -->retourne le nom d'une feuille en fonction de son index dans *vpAreaName*.
 <!-- END REF --> 
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
-In *sheet*, pass the index of the sheet whose name will be returned.
+Dans *sheet*, passez l'index de la feuille dont le nom sera retourné.
 
-If the passed sheet index does not exist, the method returns an empty name.
+Si l'index passé n'existe pas, la méthode retourne un nom vide.
 > La numérotation démarre à 0.
 
 #### Exemple
 
-Get the name of the third sheet in the document:
+Lire le nom de la troisième feuille du document :
 
 ```4d
 $sheetName:=VP Get sheet name("ViewProArea";2)
@@ -2157,27 +2160,27 @@ $options:=VP Get sheet options("ViewProArea")
 
 <!-- REF #_method_.VP Get show print lines.Params -->
 
-| Paramètres | Type    |    | Description                                      |
-| ---------- | ------- | -- | ------------------------------------------------ |
-| vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro          |
-| sheet      | Integer | <- | Sheet index                                      |
-| Résultat   | Booléen | <- | True if print lines are visible, False otherwise |
+| Paramètres | Type    |    | Description                                                |
+| ---------- | ------- | -- | ---------------------------------------------------------- |
+| vpAreaName | Text    | -> | Nom d'objet formulaire zone 4D View Pro                    |
+| sheet      | Integer | <- | Sheet index                                                |
+| Résultat   | Booléen | <- | True si les lignes d'impression sont visibles, sinon False |
 <!-- END REF --> 
 
 #### Description
 
-The `VP Get show print lines` command <!-- REF #_method_.VP Get show print lines.Summary -->returns `True` if the print preview lines are visible and `False` if they are hidden.
+La commande `VP Get show print lines` <!-- REF #_method_.VP Get show print lines.Summary -->retourne `True` si les lignes d'aperçu avant impression sont visibles et `False` si elles sont masquées.
 <!-- END REF --> 
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro.
 
-In *sheet*, pass the index of the target sheet. If *sheet* is omitted, the command applies to the current sheet.
+Dans *sheet*, passez l'index de la page cible. Si *sheet* est omis, la commande s'applique à la feuille courante.
 
 > La numérotation démarre à 0.
 
 #### Exemple
 
-The following code checks if preview lines are displayed or hidden in the document:
+Le code suivant permet de vérifier si les lignes d'aperçu sont visibles ou masquées dans le document :
 
 ```4d
  var $result : Boolean
@@ -2354,19 +2357,20 @@ Dans *rangeObj*, passez la plage dont vous souhaitez récupérer la valeur.
 
 #### Objet retourné
 
-L'objet retourné contiendra la propriété `value`, et la propriété `time` dans le cas d'une valeur date :
+The object returned will contain the `value` property, and, in case of a js date value, a `time` property:
 
-| Propriété | Type                               | Description                                                               |
-| --------- | ---------------------------------- | ------------------------------------------------------------------------- |
-| value     | Integer, Real, Boolean, Text, Date | Value in the *rangeObj* (except- time)                                    |
-| time      | Réel                               | Time value (in seconds) if *rangeObj* if the value is of the js date type |
+| Propriété | Type                                    | Description                                            |
+| --------- | --------------------------------------- | ------------------------------------------------------ |
+| value     | Entier long, Réel, Booléen, Texte, Date | Valeur de *rangeObj* (exceptée - time)                 |
+| time      | Réel                                    | Valeur heure (en secondes) si la valeur est du type js |
 
-If the object returned includes a date or time, it is treated as a datetime and completed as follows:
+Si l'objet retourné inclut une date ou une heure, il est traité en tant que datetime et est complété comme suit :
 
-*   time value - the date portion is completed as December 30, 1899 in dd/MM/yyyy format (30/12/1899)
-*   date value - the time portion is completed as midnight in HH:mm:ss format (00:00:00)
+*   valeur heure - la date est complétée comme suit : December 30, 1899 au format dd/MM/yyyy (30/12/1899)
+*   valeur date - l'heure est complétée comme suit : minuit au format HH:mm:ss (00:00:00)
 
-If *rangeObj* contains multiple cells or multiple ranges, the value of the first cell is returned. The command returns a null object if the cell is empty.
+
+Si *rangeObj* contient plusieurs cellules ou plusieurs plages, la valeur de la première cellule est retournée. La commande retourne un objet null si la cellule est vide.
 
 #### Exemple
 
@@ -2389,37 +2393,37 @@ End if
 
 <!-- REF #_method_.VP Get values.Params -->
 
-| Paramètres | Type       |    | Description          |
-| ---------- | ---------- | -- | -------------------- |
-| rangeObj   | Object     | -> | Objet plage          |
-| Résultat   | Collection | <- | Collection of values |
+| Paramètres | Type       |    | Description           |
+| ---------- | ---------- | -- | --------------------- |
+| rangeObj   | Object     | -> | Objet plage           |
+| Résultat   | Collection | <- | Collection de valeurs |
 <!-- END REF -->  
 
 #### Description
 
-The `VP Get values` command <!-- REF #_method_.VP Get values.Summary --> retrieves the values from the designated *rangeObj*<!-- END REF -->.
+La commande `VP Get values` <!-- REF #_method_.VP Get values.Summary --> récupère les valeurs du paramètre *rangeObj* désigné<!-- END REF -->.
 
-In *rangeObj*, pass a range whose values you want to retrieve. If *rangeObj* includes multiple ranges, only the first range is used.
+Dans *rangeObj*, passez une plage dont vous souhaitez récupérer les valeurs. Si *rangeObj* comprend plusieurs plages, seule la première plage est utilisée.
 
-The collection returned by `VP Get values` contains a two-dimensional collection:
+La collection retournée par `VP Get values` contient une collection bidimensionnelle :
 
-*   Each element of the first-level collection represents a row and contains a subcollection of values
-*   Each subcollection contains cell values for the row. Values can be Integer, Real, Boolean, Text, Null. If a value is a date or time, it is returned in an object with the following properties:
+*   Chaque élément de la collection de premier niveau représente une ligne et contient une sous-collection de valeurs
+*   Chaque sous-collection contient des valeurs des cellule de la ligne. Les valeurs peuvent être de type entier, réel, booléen, texte, null. Si une valeur est de type date ou heure, elle est retournée en un objet dont les propriétés sont les suivantes :
 
-    | Propriété | Type | Description                                                 |
-    | --------- | ---- | ----------------------------------------------------------- |
-    | value     | Date | Value in the cell (except- time)                            |
-    | time      | Réel | Time value (in seconds) if the value is of the js date type |
+    | Propriété | Type | Description                                            |
+    | --------- | ---- | ------------------------------------------------------ |
+    | value     | Date | Valeur de la cellule (excepté - time)                  |
+    | time      | Réel | Valeur heure (en secondes) si la valeur est du type js |
 
 
-Dates or times are treated as a datetime and completed as follows:
+Les dates ou les heures sont considérées comme un datetime et sont complétées comme suit :
 
-* time value - the date portion is completed as December 30, 1899
-* date value - the time portion is completed as midnight (00:00:00:000)
+* valeur de type heure - la partie date est complétée comme étant le 30 décembre 1899
+* valeur de type date - la partie heure est complétée comme étant minuit (00:00:00:000)
 
 #### Exemple
 
-You want to get values from C4 to G6:
+Vous souhaitez lire les valeurs allant de C4 à G6 :
 
 ![](assets/en/ViewPro/cmd_vpGetValues.PNG)
 
@@ -2442,7 +2446,7 @@ $result:=VP Get values(VP Cells("ViewProArea";2;3;5;3))
 | Paramètres | Type   |    | Description                             |
 | ---------- | ------ | -- | --------------------------------------- |
 | vpAreaName | Text   | -> | Nom d'objet formulaire zone 4D View Pro |
-| Résultat   | Object | <- | Object containing the workbook options  |
+| Résultat   | Object | <- | Objet contenant les options de workbook |
 <!-- END REF -->  
 
 #### Description
@@ -2481,49 +2485,49 @@ $workbookOptions:=VP Get workbook options("ViewProArea")
 | ---------- | ------ | -- | --------------------------------------- |
 | vpAreaName | Text   | -> | Nom d'objet formulaire zone 4D View Pro |
 | filePath   | Text   | -> | Chemin d'accès du document              |
-| paramObj   | Object | -> | Import options                          |
+| paramObj   | Object | -> | Options d'import                        |
 
 <!-- END REF -->  
 
 #### Description
 
-The `VP IMPORT DOCUMENT` command <!-- REF #_method_.VP IMPORT DOCUMENT.Summary -->imports and displays the document designated by *filePath* in the 4D View Pro area *vpAreaName*<!-- END REF -->. The imported document replaces any data already inserted in the area.
+La commande `VP IMPORT DOCUMENT` <!-- REF #_method_.VP IMPORT DOCUMENT.Summary -->importe et affiche le document désigné par le dont le chemin d'accès est indiqué dans *filePath* dans la zone *vpAreaName* de 4D View Pro<!-- END REF -->. Le document importé remplace toutes les données déjà présentes dans la zone.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-In *filePath*, pass the path and name of the document to be imported. The following formats are supported :
+Dans *filePath*, passez le chemin et le nom du document à importer. Les formats suivants sont pris en charge :
 
-* 4D View Pro documents (extension ".4vp")
+* Les documents 4D View Pro (extension ".4vp")
 * Microsoft Excel (extension ".xlsx")
-* text documents (extension ".txt", ".csv", the document must be in utf-8)
+* documents texte (extension ".txt", ".csv", le document doit être en utf-8)
 
-If the document extension is not a recognized extension, such as `.4vp` or `.xlsx`, the document is considered a text document. You must pass a full path, unless the document is located at the same level as the Project folder, in which case you can just pass its name.
+Si l'extension du document n'est pas une extension reconnue, telle que `.4vp` ou `.xslx`, le document est considéré comme un document texte. Vous devez passer un chemin d'accès complet, sauf si le document est situé au même niveau que le dossier Project, auquel cas vous pouvez simplement passer son nom.
 
 > When importing a Microsoft Excel-formatted file into a 4D View Pro document, some settings may be lost. You can verify your settings with [this list from GrapeCity](http://help.grapecity.com/spread/SpreadSheets10/webframe.html#excelexport.html).
 
-An error is returned if the `filePath` parameter is invalid, or if the file is missing or malformed.
+Une erreur est retournée si le paramètre `filePath` est invalide, ou si le fichier est manquant ou mal-formé.
 
-The optional *paramObj* parameter allows you to define properties for the imported document:
+Le paramètre optionnel *paramObj* vous permet de définir les propriétés du document importé :
 
-| Paramètres |                 | Type   | Description                                                                                                                                                                                                                                              |
-| ---------- | --------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| formula    |                 | object | A callback method name to be launched when the import has completed. The method must use the [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html) command. See [Passing a callback method (formula)](#passing-a-callback-method-formula). |
-| password   |                 | Texte  | Microsoft Excel only (optional) - The password used to protect a MS Excel document.                                                                                                                                                                      |
-| csvOptions |                 | object | options for csv import                                                                                                                                                                                                                                   |
-|            | range           | object | Cell range that contains the first cell where the data will be written. If the specified range is not a cell range, only the first cell of the range is used.                                                                                            |
-|            | rowDelimiter    | Texte  | Délimiteur de ligne. If not present, the delimiter is automatically determined by 4D.                                                                                                                                                                    |
-|            | columnDelimiter | Texte  | Délimiteur de colonne. Par défaut : ","                                                                                                                                                                                                                  |
+| Paramètres |                 | Type   | Description                                                                                                                                                                                                                                                                           |
+| ---------- | --------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| formula    |                 | object | Nom d'une méthode callback (ou méthode rétro-rappel) à lancer lorsque l'import est terminé. La méthode doit utiliser la commande [`Formula`](https://doc.4d.com/4dv19/help/command/en/page1597.html). Voir [Passing a callback method (formula)](#passing-a-callback-method-formula). |
+| password   |                 | Texte  | Microsoft Excel uniquement (optionnel) - Mot de passe utilisé pour protéger un document Microsoft Excel.                                                                                                                                                                              |
+| csvOptions |                 | object | options d'import csv                                                                                                                                                                                                                                                                  |
+|            | range           | object | Plage de cellules contenant la première cellule dans laquelle les données seront saisies. Si la plage spécifiée n'est pas une plage de cellules, seule la première cellule de la plage est utilisée.                                                                                  |
+|            | rowDelimiter    | Texte  | Délimiteur de ligne. S'il n'est pas défini, le délimiteur est automatiquement déterminé par 4D.                                                                                                                                                                                       |
+|            | columnDelimiter | Texte  | Délimiteur de colonne. Par défaut : ","                                                                                                                                                                                                                                               |
 
 > For more information on the CSV format and delimiter-separated values in general, see [this article on Wikipedia](https://en.wikipedia.org/wiki/Delimiter-separated_values)
 
 
 #### Exemple 1
 
-You want to import a default 4D View Pro document stored on the disk when the form is open:
+Vous souhaitez importer un document 4D View Pro stocké sur le disque, à l'ouverture du formulaire :
 
 ```4d
 C_TEXT($docPath)
-If(Form event code=On VP Ready) //4D View Pro area loaded and ready
+If(Form event code=On VP Ready) //La zone 4D View Pro est chargée et prête
     $docPath:="C:\\Bases\\ViewProDocs\\MyExport.4VP"
     VP IMPORT DOCUMENT("VPArea";$docPath)
 End if
@@ -2531,7 +2535,7 @@ End if
 
 #### Exemple 2
 
-You want to import a password protected Microsoft Excel document into a 4D View Pro area:
+Vous souhaitez importer un document Microsoft Excel protégé par un mot de passe dans 4D View Pro :
 
 
 ```4d
@@ -2541,9 +2545,9 @@ $o.password:="excel123"
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
 
-#### Exemple 2
+#### Exemple 3
 
-You want to import a `.txt` file that uses a comma (",") as delimiter:
+Vous souhaitez importer un fichier `.txt` qui utilise une virgule (",") comme délimiteur :
 
 ![example-import-csv](assets/en/ViewPro/vp-import-document-csv.png)
 
@@ -2577,18 +2581,18 @@ Here's the result: ![example-import-csv](assets/en/ViewPro/vp-import-document-cs
 
 #### Description
 
-The `VP IMPORT FROM OBJECT` command <!-- REF #_method_.VP IMPORT FROM OBJECT.Summary -->imports and displays the *viewPro* 4D View Pro object in the *vpAreaName* 4D View Pro area<!-- END REF -->. The imported object contents replaces any data already inserted in the area.
+La commande `VP IMPORT FROM OBJECT` <!-- REF #_method_.VP IMPORT FROM OBJECT.Summary -->importe l'objet 4D View Pro *viewPro* et l'affiche dans la zone 4D View Pro *vpAreaName*<!-- END REF -->. Le contenu de l'objet importé remplace toutes les données insérées auparavant dans la zone.
 
 Dans *vpAreaName*, passez le nom de la zone 4D View Pro. Si vous passez un nom inexistant, une erreur est retournée.
 
-In *viewPro*, pass a valid 4D View Pro object. This object can have been created using [VP Export to object](#vp-export-to-object) or manually. For more information on 4D View Pro objects, please refer to the [4D View Pro object](languageOverview.html#4d-view-pro-object) section.
+Dans *viewPro*, passez un objet 4D View Pro valide. Cet objet peut avoir été créé en utilisant [VP Export to object](#vp-export-to-object) ou manuellement. Pour plus d'informations sur les objets 4D View Pro, référez-vous à la section [Objet 4D View Pro](languageOverview.html#4d-view-pro-object).
 
-An error is returned if the *viewPro* object is invalid.
+Une erreur est retournée si l'objet *viewPro* est invalide.
 
 
 #### Exemple
 
-You want to import a spreadsheet that was previously saved in an object field:
+Vous souhaitez importer une feuille de calcul stockée dans un champ objet :
 
 ```4d
 QUERY([VPWorkBooks];[VPWorkBooks]ID=10)
@@ -2614,11 +2618,11 @@ VP IMPORT FROM OBJECT("ViewProArea1";[VPWorkBooks]SPBook)
 
 #### Description
 
-The `VP INSERT COLUMNS` command <!-- REF #_method_.VP INSERT COLUMNS.Summary -->inserts columns into the *rangeObj*<!-- END REF -->.
+La commande `VP INSERT COLUMNS` <!-- REF #_method_.VP INSERT COLUMNS.Summary -->insère les colonnes définies par *rangeObj*<!-- END REF -->.
 
-In *rangeObj*, pass an object containing a range of the starting column (the column which designates where the new column will be inserted) and the number of columns to insert. If the number of column to insert is omitted (not defined), a single column is inserted.
+Dans *rangeObj*, passez un objet plage indiquant la colonne de début (la colonne qui définit l'emplacement de la nouvelle colonne à insérer) et le nombre de colonnes à insérer. Si le nombre de colonnes à insérer est omis (non défini), une seule colonne est insérée.
 
-New columns are inserted on the left, directly before the starting column in the *rangeObj*.
+De nouvelles colonnes sont insérées sur la gauche, directement avant la première colonne de *rangeObj*.
 
 
 #### Exemple
@@ -2780,6 +2784,7 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 ```
 
 #### Voir aussi
+
 
 
 [VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP ALL](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Get names](#vp-get-names)<br/>[VP REMOVE NAME](#vp-remove-name)<br/>[VP Row](#vp-row)
@@ -4380,7 +4385,7 @@ VP SET FORMULA(VP Cell("ViewProArea";5;2);"")
 
 The `VP SET FORMULAS` command <!-- REF #_method_.VP SET FORMULAS.Summary -->assigns a collection of formulas starting at the specified cell range<!-- END REF -->.
 
-In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose formula you want to specify. If *rangeObj* includes multiple ranges, only the first range is used.
+In *rangeObj*, pass a range of the cell (created with [VP Cell](#vp-cell)) whose formula you want to specify. Si *rangeObj* comprend plusieurs plages, seule la première plage est utilisée.
 
 The *formulasCol* is a two-dimensional collection:
 
@@ -5133,10 +5138,10 @@ VP SET VALUE(VP Cell("ViewProArea";3;9);New object("value";Null))
 
 <!-- REF #_method_.VP SET VALUES.Params -->
 
-| Paramètres | Type       |    | Description          |
-| ---------- | ---------- | -- | -------------------- |
-| rangeObj   | Object     | -> | Objet plage          |
-| valuesCol  | Collection | -> | Collection of values |
+| Paramètres | Type       |    | Description           |
+| ---------- | ---------- | -- | --------------------- |
+| rangeObj   | Object     | -> | Objet plage           |
+| valuesCol  | Collection | -> | Collection de valeurs |
 
 <!-- END REF -->  
 
@@ -5153,10 +5158,10 @@ Le paramètre *valuesCol* est bidimensionnel :
 *   La collection de premier niveau contient des sous-collections de valeurs. Each subcollection defines a row. Passez une collection vide pour sauter une ligne.
 *   Chaque sous-collection définit les valeurs des cellules de la ligne. Les valeurs peuvent être de type entier long, réel, booléen, texte, date, null ou objet. Si la valeur est un objet, elle peut avoir les propriétés suivantes :
 
-    | Propriété | Type                                     | Description                      |
-    | --------- | ---------------------------------------- | -------------------------------- |
-    | value     | Integer, Real, Boolean, Text, Date, Null | Value in the cell (except- time) |
-    | time      | Réel                                     | Valeur heure (en secondes)       |
+    | Propriété | Type                                     | Description                           |
+    | --------- | ---------------------------------------- | ------------------------------------- |
+    | value     | Integer, Real, Boolean, Text, Date, Null | Valeur de la cellule (excepté - time) |
+    | time      | Réel                                     | Valeur heure (en secondes)            |
 
 #### Exemple
 
