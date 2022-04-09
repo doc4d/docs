@@ -24,12 +24,20 @@ Webプロセスに対してプリエンプティブモードの使用が可能�
 
 ## Webサーバーにおいてプリエンプティブモードを有効化する
 
-アプリケーションの Webサーバーコードにおいてプリエンプティブモードを有効化するには、データベース設定ダイアログボックスの "Web / オプション (I)" ページの、**プリエンプティブプロセスを使用** にチェックをつける必要があります:
+To enable the preemptive mode for your application's web server code, you must check the **Use preemptive processes** option on the "Web/Options (I)" page of the Settings dialog box:
 
 ![](assets/en/WebServer/preemptive.png)
 
 このオプションがチェックされているとき、4Dコンパイラは Web関連のコードそれぞれのスレッドセーフプロパティを自動的に評価し (以下参照)、違反があった場合にはエラーを返します。
-> このオプションは Webサービスプロセス (サーバーあるいはクライアント) には適用されません。 Webサービスプロセスのプリエンプティブモードは、メソッドレベルでサポートされています。公開済みの SOAPサーバーメソッド (*4Dで Web サービスを公開する* 参照) あるいはプロキシクライアントメソッド (*4Dから Web サービスへサブスクライブする* 参照) の "プリエンプティブプロセスで実行可能" プロパティをチェックし、メソッドがコンパイラーによってスレッドセーフと確認されるようにします。
+
+
+This option does not apply in the following contexts:
+
+- [**REST processes in compiled mode**](../REST/ClassFunctions.md) - The REST server automatically uses preemptive processes in compiled projects. All 4D code called from REST requests must be thread-safe.
+- [**Scalable sessions**](sessions.md#enabling-sessions) - Web server scalable sessions are automatically handled through preemptive processes, even in interpreted mode (the option is not available when scalable sessions are enabled).
+- **Web service processes** (server or client) - Preemptive mode is supported by web service processes at method level: you just have to select "Can be run in preemptive processes" property for published SOAP server methods ((see [Publishing a Web Service with 4D](https://doc.4d.com/4Dv19/4D/19/Publishing-a-Web-Service-with-4D.300-5416868.en.html)) or proxy client methods (see [Subscribing to a Web Service in 4D](https://doc.4d.com/4Dv19/4D/19/Subscribing-to-a-Web-Service-in-4D.300-5416870.en.html)) and make sure they are confirmed thread-safe by the compiler.
+
+
 
 ## スレッドセーフなWebサーバーコードの書き方
 
