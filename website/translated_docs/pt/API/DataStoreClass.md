@@ -46,29 +46,29 @@ A [Datastore](ORDA/dsMapping.md#datastore) is the interface object provided by O
 **ds** { ( *localID* : Text ) } : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.ds.Params -->
-| Parameter | Type         |    | Description                                |
-| --------- | ------------ | -- | ------------------------------------------ |
-| localID   | Texto        | -> | Local ID of the remote datastore to return |
-| Result    | cs.DataStore | <- | Reference to the datastore                 |
+| Parameter | Type         |    | Description                                     |
+| --------- | ------------ | -- | ----------------------------------------------- |
+| localID   | Texto        | -> | ID local del armazém de dados remoto a devolver |
+| Result    | cs.DataStore | <- | Referencia ao armazém de dados                  |
 <!-- END REF -->
 
 
 #### Description
 
-The `ds` command <!-- REF #_command_.ds.Summary -->returns a reference to the datastore matching the current 4D database or the database designated by *localID*<!-- END REF -->.
+O comando `ds` <!-- REF #_command_.ds.Summary -->devolve uma referência ao armazém de dados que coincide com o banco de dados 4D atual ou com o banco de dados designada por *localID*<!-- END REF -->.
 
-If you omit the *localID* parameter (or pass an empty string ""), the command returns a reference to the datastore matching the local 4D database (or the 4D Server database in case of opening a remote database on 4D Server). The datastore is opened automatically and available directly through `ds`.
+Se omitir o parâmetro *localID* (ou se passa uma string vazia ""), o comando devolve uma referência ao armazém de dados que coincide com a base de dados local de 4D (ou  a base de datos de 4D Server em caso de abrir uma base de dados remota em 4D Server). O armazém de dados se abre automaticamente e está disponível diretamente através de `ds`.
 
-You can also get a reference on an open remote datastore by passing its local id in the *localID* parameter. The datastore must have been previously opened with the [`Open datastore`](#open-datastore) command by the current database (host or component). The local id is defined when using this command.
+Também pode obter uma referencia em um datastore remoto aberto passando seu id local no parâmetro *localID*. O armazém de dados deve ter sido aberto previamente com o comando [`Open datastore`](#open-datastore) pelo banco de dados atual (local ou componente). A identificação local se define quando se utilizar este comando.
 > The scope of the local id is the database where the datastore has been opened.
 
-If no *localID* datastore is found, the command returns **Null**.
+Se não encontrar nenhum armazém de dados *localID*, o comando devolve **Null**.
 
 Objects available in the `cs. Datastore` are mapped from the target database with respect to the [ORDA general rules](ORDA/dsMapping.md#general-rules).
 
 #### Exemplo 1
 
-Using the main datastore on the 4D database:
+Usar a datastore principal do banco de dados 4D:
 
 ```4d
  $result:=ds.Employee.query("firstName = :1";"S@")
@@ -115,17 +115,17 @@ Using the main datastore on the 4D database:
 **Open datastore**( *connectionInfo* : Object ; *localID* : Text ) : cs.DataStore <!-- END REF -->
 
 <!-- REF #_command_.Open datastore.Params -->
-| Parameter      | Type         |    | Description                                                               |
-| -------------- | ------------ | -- | ------------------------------------------------------------------------- |
-| connectionInfo | Objeto       | -> | Connection properties used to reach the remote datastore                  |
-| localID        | Texto        | -> | Id to assign to the opened datastore on the local application (mandatory) |
-| Result         | cs.DataStore | <- | Datastore object                                                          |
+| Parameter      | Type         |    | Description                                                                  |
+| -------------- | ------------ | -- | ---------------------------------------------------------------------------- |
+| connectionInfo | Objeto       | -> | Propriedades de conexão utilizadas para alcançar o armazém de datos remoto   |
+| localID        | Texto        | -> | Id para assignar ao armazém de dados aberto na aplicação local (obrigatorio) |
+| Result         | cs.DataStore | <- | Objeto do armazém de dados                                                   |
 <!-- END REF -->
 
 
 #### Description
 
-The `Open datastore` command <!-- REF #_command_.Open datastore.Summary -->connects the application to the 4D database identified by the *connectionInfo* parameter<!-- END REF --> and returns a matching `cs.DataStore` object associated with the *localID* local alias.
+O comando `Open datastore` <!-- REF #_command_.Open datastore.Summary -->conecta a aplicação ao banco identificado por *connectionInfo* parameter<!-- END REF --> e retorna um objeto correpondente `cs.DataStore` associado com o alias local *localID*.
 
 The *connectionInfo* 4D database must be available as a remote datastore, i.e.:
 
