@@ -78,7 +78,7 @@ Suite cryptographique utilisée pour le protocole sécurisé. Fixe la priorité 
 | `WEB SET OPTION`         | `Web CORS settings`                                                           | Collection d'objets (Liste des hôtes et méthodes autorisées pour le service CORS)       |
 | Fenêtre de configuration | Propriétés > Web > Options (II) > Noms de domaine et Méthodes HTTP autorisées | Cliquez sur le bouton [+] pour ajouter un nom de domaine autorisé et sa ou ses méthodes |
 
-List of allowed hosts and methods for the CORS service.
+Liste des hôtes et méthodes autorisées pour le service CORS.
 
 #### Noms de domaine
 
@@ -296,7 +296,7 @@ Activation de la méthode HTTP TRACE dans le serveur web 4D. Pour des raisons de
 Numéro de port IP d'écoute pour les connections HTTP via TLS. La valeur par défaut est 443 (valeur standard). Voir aussi [HTTP Port](#http-port) pour plus d'informations sur les numéros de port.
 
 
-## Durée de vie des process inactifs
+## Conservation des process inactifs
 
 | Peut être configuré via  | Nom                                                                      | Commentaires |
 | ------------------------ | ------------------------------------------------------------------------ | ------------ |
