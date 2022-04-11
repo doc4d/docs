@@ -92,8 +92,8 @@ Utilisez les paramètres de cet onglet pour configurer la mémoire cache de la b
     -   **Mémoire disponible utilisée pour le cache** : pourcentage de la mémoire restante alloué par défaut au cache.\
   Pour obtenir la taille allouée par défaut au cache, il suffit donc d’effectuer le calcul suivant : (Mémoire physique - Mémoire physique à réserver) x Pourcentage de la mémoire utilisé pour le cache. Dans le mode adaptatif, la taille de mémoire cache varie dynamiquement en fonction des besoins de l’application et du système. Vous pouvez fixer les bornes de ces variations à l’aide des deux options suivantes :
     -   **Taille minimale** : Quantité minimale de mémoire devant être réservée pour le cache. Cette valeur ne peut être inférieure à 100 Mo.
-    -   **Taille maximale** : Quantité maximale de mémoire pouvant être utilisée par le cache. This value is virtually unlimited.\  
-      Setting limits is particularly useful for databases that are distributed on machines for which you do not know the memory configuration a priori. Dans ce cas, les bornes vous permettent de garantir des performances minimales dans tous les cas. Le schéma suivant illustre ce fonctionnement :
+    -   **Taille maximale** : Quantité maximale de mémoire pouvant être utilisée par le cache. Cette valeur est virtuellement illimitée.\  
+      La définition de bornes est utile dans le cadre des bases diffusées sur des machines dont vous ne connaissez pas a priori la configuration mémoire. Dans ce cas, les bornes vous permettent de garantir des performances minimales dans tous les cas. Le schéma suivant illustre ce fonctionnement :
 
     Exemple de calcul de la mémoire cache : *Mémoire physique à réserver = 256 Mo Pourcentage de la mémoire disponible utilisé pour le cache = 50 % Taille maximale = 1 Go Taille minimale = 128 Mo*
 
@@ -103,7 +103,7 @@ Utilisez les paramètres de cet onglet pour configurer la mémoire cache de la b
 
     La taille de mémoire cache que vous saisissez sera réservée pour la base 4D, quel que soit l’état des ressources de la machine. Ce paramétrage peut être utilisé dans certaines configurations spécifiques, ou lorsque la base est destinée à fonctionner sur des systèmes disparates en termes de mémoire. Dans la plupart des cas, le cache adaptatif est plus performant.
 
--   **Flush Cache every...Seconds/Minutes**: Specifies the time period between each automatic saving of the data cache, i.e., its writing to disk. 4D écrit les données placées dans le cache à intervalles fixes. Vous pouvez définir tout intervalle compris entre 1 seconde et 500 minutes. Par défaut, 4D stocke vos données toutes les 20 secondes. L’application écrit aussi vos données sur disque lorsque vous changez de mode ou quittez l’application. Vous pouve aussi appeler la commande [FLUSH CACHE](https://doc.4d.com/4dv19/help/command/en/page297.html) pour déclencher l'écriture du cache à tout moment.
+-   **Ecriture cache toutes les… minutes/secondes**: spécifie la fréquence de sauvegarde automatique du cache de données, c’est-à-dire son écriture sur le disque. 4D écrit les données placées dans le cache à intervalles fixes. Vous pouvez définir tout intervalle compris entre 1 seconde et 500 minutes. Par défaut, 4D stocke vos données toutes les 20 secondes. L’application écrit aussi vos données sur disque lorsque vous changez de mode ou quittez l’application. Vous pouve aussi appeler la commande [FLUSH CACHE](https://doc.4d.com/4dv19/help/command/en/page297.html) pour déclencher l'écriture du cache à tout moment.
 
     Quand vous prévoyez de saisir beaucoup de données, il est souhaitable de fixer un intervalle court. En effet, en cas de coupure de courant, vous ne perdriez que les données saisies depuis la dernière écriture (si la base fonctionne sans fichier d’historique).
 
