@@ -127,7 +127,7 @@ Symbolファイルを生成するのに使用します ([Symbolファイル](#sy
 
 #### エラーファイルを生成
 
-シンタックスチェック時にエラーファイルを生成するのに使用します ([エラーファイル](#エラーファイル) 参照)。 エラーファイルは、[Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_error.xml` という名前で作成されます。
+Used to generate the error file (see [error file](#error-file)) at the time of syntax checking. エラーファイルは、[Logs フォルダー](Project/architecture.md#logs) 内に `ProjectName_error.xml` という名前で作成されます。
 
 
 #### コンパイルパス
