@@ -12,15 +12,15 @@ La compilation est gérée depuis votre application 4D et est entièrement autom
 
 > Sur macOS, la compilation nécessite l'installation d'`Xcode`. Consultez [cette section](#silicon-compiler) pour plus d'informations sur ce pré-requis.
 
-1. Ouvrez la fenêtre de compilation en sélectionnant la commande **Compiler...** dans le menu **Design** ou le bouton **Compiler** de la barre d'outils.
+1. Ouvrez la fenêtre de compilation en sélectionnant la commande **Compilateur...** dans le menu **Développement** ou le bouton **Compilateur** de la barre d'outils.
 
     ![](assets/en/Project/compilerWin1.png)
 
     ![](assets/en/Project/comp1.png)
 
-> Vous pouvez également lancer directement la compilation en sélectionnant l'élément de menu **Start Compilation** dans le menu **Design**.
+> Vous pouvez également lancer directement la compilation en sélectionnant l'élément de menu **Lancer la compilation** dans le menu **Développement**.
 
-2. Cliquez sur le bouton **Compiler** pour lancer la compilation à l'aide des [paramètres de compilation](#compiler-settings) actuels.
+2. Cliquez sur le bouton **Compiler** pour lancer la compilation à l'aide des [paramètres de compilation](#compiler-settings) courants.
 
 Si aucune erreur n'est détectée, la compilation démarre et le message "Compilation successful" s'affiche au bas de la fenêtre lorsque la compilation est terminée :
 
@@ -42,7 +42,7 @@ Le nombre d'erreurs trouvées lors de vos premières compilations peut être dé
 
 ## Exécuter la compilation
 
-Une fois le projet compilé, il est possible de passer du [mode interprété au mode compilé](Concepts/interpreted.md), et vice versa, à tout moment et sans avoir à quitter l'application 4D (sauf si le code interprété a été supprimé). Pour ce faire, utilisez les commandes **Restart Interpreted** et **Restart Compiled** du menu **Run**. The [Open project dialog box](creating.md#options) also offers a choice between interpreted or compiled mode for database startup.
+Une fois le projet compilé, il est possible de passer du [mode interprété au mode compilé](Concepts/interpreted.md), et vice versa, à tout moment et sans avoir à quitter l'application 4D (sauf si le code interprété a été supprimé). Pour ce faire, utilisez les commandes **Redémarrer en interprété** et **Redémarrer en compilé** du menu **Exécution**. The [Open project dialog box](creating.md#options) also offers a choice between interpreted or compiled mode for database startup.
 
 Lorsque vous passez d'un mode à l'autre, 4D ferme le mode courant et ouvre le nouveau. Cela équivaut à quitter et à rouvrir l'application. Chaque fois que vous passez d'un mode à l'autre, 4D exécute les deux méthodes base suivantes (si elles sont spécifiées) dans cet ordre : `On Exit` -> `On Startup`.
 
@@ -112,7 +112,7 @@ Seuls les avertissements comportant un numéro peuvent être désactivés. Les n
 
 ## Paramètres du compilateur
 
-La page "Compilateur" de la boîte de dialogue Paramètres vous permet de définir les paramètres liés à la compilation du projet. Vous pouvez ouvrir directement cette page à partir de la [fenêtre du compilateur](#compiler-window) en cliquant sur le bouton **Paramètres du compilateur** :
+La page "Compilateur" de la boîte de dialogue de Propriétés vous permet de définir les paramètres liés à la compilation du projet. Vous pouvez ouvrir directement cette page à partir de la [fenêtre du compilateur](#compiler-window) en cliquant sur le bouton **Paramètres du compilateur** :
 
 ![](assets/en/Project/compilerWin6.png)
 
@@ -123,11 +123,11 @@ Cette zone regroupe les options génériques utilisées lors du processus de com
 
 #### Générer le fichier de symboles
 
-Permet de générer le fichier de symboles (voir [fichier de symboles](#symbol-file)). Permet de générer le fichier de symboles (voir [fichier de symboles](#symbol-file)).
+Permet de générer le fichier de symboles (voir [fichier de symboles](#symbol-file)). Le fichier de symboles est créé dans le [dossier Logs](Project/architecture.md#logs) du projet et est nommé `ProjectName_symbols.xml`.
 
 #### Générer le fichier d'erreurs
 
-Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#symbol-file)) au moment du contrôle syntaxique. Le fichier d'erreur est créé dans le [dossier Logs](Project/architecture.md#logs) du projet portant le nom `ProjectName_errors.xml`.
+Utilisé pour générer le fichier d'erreurs (voir [fichier d'erreurs](#error-file)) au moment du contrôle syntaxique. Le fichier d'erreur est créé dans le [dossier Logs](Project/architecture.md#logs) du projet et est nommé `ProjectName_errors.xml`.
 
 
 #### Chemin de compilation
@@ -138,7 +138,7 @@ Permet de définir le nombre de passages (analyse du code) effectués par le com
 - **Les process et interprocess sont typés** : Le passage pour le typage des variables de process et interprocess n'est pas effectué. Cette option peut être utilisée lorsque vous avez déjà effectué le typage de toutes vos variables process et interprocess soit vous-même, soit en utilisant la fonction de génération automatique des méthodes de compilation.
 - **Toutes les variables sont typées** : Le pass pour le typage des variables locales, process et interprocess n'est pas effectué. Utilisez cette option lorsque vous êtes certain que toutes les variables process, interprocess et locales ont été clairement typées.
 
-#### Compilation Target
+#### Cible de compilation
 
 <details><summary>Historique</summary>
 | Version | Modifications |
@@ -146,7 +146,7 @@ Permet de définir le nombre de passages (analyse du code) effectués par le com
 | v19     | Ajout         |
 </details>
 
-Ce paramètre vous permet de sélectionner la famille de processeurs pour laquelle votre projet 4D doit être compilé en mode natif. Le compilateur 4D peut construire du code natif pour deux familles de processeurs :
+Ce paramètre vous permet de sélectionner la famille de processeurs pour laquelle votre projet 4D doit être compilé en mode natif. Le compilateur 4D peut générer du code natif pour deux familles de processeurs :
 
 - Les processeurs **Intel/AMD** (toutes les machines),
 - les processeurs **Apple Silicon**.
@@ -156,16 +156,16 @@ Deux options de cible sont proposées. Le résultat dépend du processeur de la 
 | *Option*                                              | *sur Windows Intel/AMD*                                                                            | *sur macOS Intel*                                                                               | *sur macOS Silicon*                                                                             |
 | ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | **Tous les processeurs (Intel/AMD et Apple Silicon)** | Code pour Intel/AMD<br>*Il n'est pas possible de produire du code Apple Silicon sur Windows* | Code pour Apple Silicon + Code pour Intel/AMD<br>*Deux codes compilés seront disponibles* | Code pour Apple Silicon + Code pour Intel/AMD<br>*Deux codes compilés seront disponibles* |
-| **My processor (processor)**                          | Code for Intel/AMD                                                                                 | Code for Intel/AMD                                                                              | Code for Apple Silicon                                                                          |
+| **Mon processeur (processeur)**                       | Code pour Intel/AMD                                                                                | Code pour Intel/AMD                                                                             | Code pour Apple Silicon                                                                         |
 
-> Apple Silicon compiler target requires that the **Clang** application be installed on your machine. Clang comes with the latest version of Xcode. See the [Silicon compiler requirements](#requirements) for more information.
+> La cible de compilation Apple Silicon nécessite que l'application **Clang** soit installée sur votre machine. Clang est fournie avec la dernière version de Xcode. Voir les [pré-requis du compilateur Silicon](#requirements) pour plus d'informations.
 
 ### Type par défaut
 
 Utilisez cette zone pour définir le type par défaut pour les objets de base de données ambigus.
 
-- **Numérique** : Permet de forcer le typage numérique de manière non ambiguë, soit en real ou longint. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. Vous pouvez optimiser le fonctionnement de votre base de données en choisissant le type Longint.
-- **Bouton** : Utilisé pour forcer la saisie d'un bouton de manière non ambiguë, soit en real ou en longint. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. Ce type s'applique aux boutons ainsi qu'aux cases à cocher, aux boutons image, aux grilles de boutons, aux boutons radio, aux menus image pop-up et aux listes déroulantes.
+- **Numérique** : Permet de forcer le typage numérique de manière non ambiguë, soit en Réel, soit en Entier long. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. Vous pouvez optimiser le fonctionnement de votre base de données en choisissant le type Entier long.
+- **Bouton** : Utilisé pour forcer le typage d'un bouton de manière non ambiguë, soit en Réel, soit en Entier long. Ceci ne remplacera pas les directives que vous avez pu définir dans votre projet. Ce type s'applique aux boutons ainsi qu'aux cases à cocher, aux boutons image, aux grilles de boutons, aux pop-up menus image et aux listes déroulantes.
 
 ### Méthodes du compilateur pour...
 
