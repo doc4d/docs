@@ -122,7 +122,7 @@ Webプロセスの最大同時接続数の厳格な上限です。 [最大同時
 
 コンパイル済みアプリケーションにおいてプリエンプティブWebプロセスを有効化します。 **プリエンプティブプロセスを使用** が選択されているとき、Web関連のコード (4D グと Webデータベースメソッドを含む) は、コンパイル時にプリエンティブな実行が可能かどうかが評価されます。 詳細な情報については、[プリエンプティブWebプロセスの使用](../WebServer/preemptiveWeb.md) を参照ください。
 
-> This option does not apply to scalable sessions, REST processes (compiled mode), and web service processes (server or client).  See [Enabling the preemptive mode for the web server](../WebServer/preemptiveWeb.md#enabling-the-preemptive-mode-for-the-web-server).
+> このオプションは スケーラブルセッション、RESTプロセス (コンパイル済みモード)、および Webサービスプロセス (サーバーあるいはクライアント) には適用されません。  [Webサーバーにおいてプリエンプティブモードを有効化する](../WebServer/preemptiveWeb.md#webサーバーにおいてプリエンプティブモードを有効化する) 参照。
 
 
 #### 非動作プロセスのタイムアウト
