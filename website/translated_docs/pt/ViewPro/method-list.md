@@ -2252,17 +2252,18 @@ In *rangeObj*, pass a range whose value you want to retrieve.
 
 #### Returned object
 
-The object returned will contain the `value` property, as well as a `time` property in case of date value:
+The object returned will contain the `value` property, and, in case of a js date value, a `time` property:
 
-| Propriedade | Type                               | Description                                                               |
-| ----------- | ---------------------------------- | ------------------------------------------------------------------------- |
-| value       | Integer, Real, Boolean, Text, Date | Value in the *rangeObj* (except- time)                                    |
-| time        | Real                               | Time value (in seconds) if *rangeObj* if the value is of the js date type |
+| Propriedade | Type                               | Description                                                 |
+| ----------- | ---------------------------------- | ----------------------------------------------------------- |
+| value       | Integer, Real, Boolean, Text, Date | Value in the *rangeObj* (except- time)                      |
+| time        | Real                               | Time value (in seconds) if the value is of the js date type |
 
 If the object returned includes a date or time, it is treated as a datetime and completed as follows:
 
 *   time value - the date portion is completed as December 30, 1899 in dd/MM/yyyy format (30/12/1899)
 *   date value - the time portion is completed as midnight in HH:mm:ss format (00:00:00)
+
 
 If *rangeObj* contains multiple cells or multiple ranges, the value of the first cell is returned. The command returns a null object if the cell is empty.
 
@@ -2678,6 +2679,7 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 ```
 
 #### See also
+
 
 
 [VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP ALL](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Get names](#vp-get-names)<br/>[VP REMOVE NAME](#vp-remove-name)<br/>[VP Row](#vp-row)
