@@ -2358,7 +2358,7 @@ $styles:=VP Get stylesheets("ViewProArea")
 
 #### 返されるオブジェクト
 
-The object returned will contain the `value` property, and, in case of a js date value, a `time` property:
+返されるオブジェクトには `value` プロパティと、JS日付値の場合に返される `time` プロパティが格納されます:
 
 | プロパティ | タイプ                                | 説明                           |
 | ----- | ---------------------------------- | ---------------------------- |
