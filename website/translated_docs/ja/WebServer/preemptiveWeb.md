@@ -24,7 +24,7 @@ Webプロセスに対してプリエンプティブモードの使用が可能�
 
 ## Webサーバーにおいてプリエンプティブモードを有効化する
 
-To enable the preemptive mode for your application's web server code, you must check the **Use preemptive processes** option on the "Web/Options (I)" page of the Settings dialog box:
+アプリケーションの Webサーバーコードにおいてプリエンプティブモードを有効化するには、設定ダイアログボックスの "Web / オプション (I)" ページの、**プリエンプティブプロセスを使用** にチェックをつける必要があります:
 
 ![](assets/en/WebServer/preemptive.png)
 
