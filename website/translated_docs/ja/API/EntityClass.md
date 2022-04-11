@@ -667,9 +667,9 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 **.getRemoteContextAttributes()** : Text<!-- END REF -->
 
 <!-- REF #EntityClass.getRemoteContextAttributes().Params -->
-| 引数     | タイプ  |    | 説明                                                            |
-| ------ | ---- | -- | ------------------------------------------------------------- |
-| result | テキスト | <- | Context attributes linked to the entity, separated by a comma |
+| 引数     | タイプ  |    | 説明                             |
+| ------ | ---- | -- | ------------------------------ |
+| result | テキスト | <- | エンティティにリンクされたコンテキスト属性 (カンマ区切り) |
 <!-- END REF -->
 
 > **上級者向け:** この機能は、特定の構成のため、ORDAのデフォルト機能をカスタマイズする必要がある開発者向けです。 ほとんどの場合、使用する必要はないでしょう。
@@ -677,9 +677,9 @@ vCompareResult3 ($e1 において更新された (touch された) 属性のみ�
 
 #### 説明
 
-The `.getRemoteContextAttributes()` function <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity <!-- END REF -->.
+`.getRemoteContextAttributes()` 関数は、 <!-- REF #EntityClass.getRemoteContextAttributes().Summary -->エンティティによって使われている最適化コンテキストの情報を返します <!-- END REF -->。
 
-If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity, the function returns an empty Text.
+エンティティについて [最適化コンテキスト](../ORDA/remoteDatastores.md#クライアントサーバーの最適化) が存在しない場合、関数は空のテキストを返します。
 
 #### 例題
 
@@ -996,7 +996,7 @@ $info:=$address.getRemoteContextAttributes()
 |                  | task_name           | テキスト                | プロセス名                                                                                                                                             |
 |                  | client_version      | テキスト                | クライアントのバージョン                                                                                                                                      |
 |                  |                     |                     | ***RESTセッションによるロックの場合:***                                                                                                                         |
-|                  | host                | テキスト                | URL that locked the entity (e.g. "www.myserver.com")                                                                                              |
+|                  | host                | テキスト                | エンティティをロックした URL (例: "www.myserver.com")                                                                                                          |
 |                  | IPAddr              | テキスト                | ロック元の IPアドレス (例: "127.0.0.1")                                                                                                                     |
 |                  | userAgent           | テキスト                | ロック元の userAgent (例: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36") |
 |                  |                     |                     | ***深刻なエラーの場合にのみ利用可能*** (深刻なエラーとは、プライマリーキーを重複させようとした、ディスクがいっぱいであった、などです):                                                                          |

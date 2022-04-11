@@ -963,9 +963,9 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 
 
 <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Params -->
-| 引数     | タイプ  |    | 説明                                                                      |
-| ------ | ---- | -- | ----------------------------------------------------------------------- |
-| result | テキスト | <- | Context attributes linked to the entity selection, separated by a comma |
+| 引数     | タイプ  |    | 説明                                   |
+| ------ | ---- | -- | ------------------------------------ |
+| result | Text | <- | エンティティセレクションにリンクされたコンテキスト属性 (カンマ区切り) |
 
 <!-- END REF -->
 
@@ -974,9 +974,9 @@ $values:=ds.Employee.all().distinct("extra.nicknames[].first")
 
 #### 説明
 
-The `.getRemoteContextAttributes()` function <!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->returns information about the optimization context used by the entity selection<!-- END REF -->.
+`.getRemoteContextAttributes()` 関数は、<!-- REF #EntitySelectionClass.getRemoteContextAttributes().Summary -->エンティティセレクションによって使われている最適化コンテキストの情報を返します<!-- END REF -->。
 
-If there is no [optimization context](../ORDA/remoteDatastores.md#clientserver-optimization) for the entity selection, the function returns an empty Text.
+エンティティセレクションについて [最適化コンテキスト](../ORDA/remoteDatastores.md#クライアントサーバーの最適化) が存在しない場合、関数は空のテキストを返します。
 
 #### 例題
 
@@ -1170,7 +1170,7 @@ Form.products.add(Form.product)
 
 エンティティセレクションは、常に `.length` プロパティを持っています。
 
-> To know the total number of entities in a dataclass, it is recommended to use the [`getCount()`](DataClassClass.md#getcount) function which is more optimized than the `ds.myClass.all().length` expression.
+> データクラス内の総エンティティ数を知るには、`ds.myClass.all().length` 式よりも最適化された [`getCount()`](DataClassClass.md#getcount) 関数を使用することが推奨されます。
 
 #### 例題
 

@@ -228,17 +228,17 @@ SET DATABASE PARAMETER(Current process debug log recording;2+4)
 
 ### ファイルを有効化する方法
 
-The *4DDiagnosticLog.txt* file can log different levels of messages, from `ERROR` (most important) to `TRACE` (less important). By default, the `INFO` level is set, which means that the file will log only important events, including errors and unexpected results (see below).
+*4DDiagnosticLog.txt* ファイルは、`ERROR` (最も重要) から `TRACE` (あまり重要でない) まで、異なるレベルのメッセージをログに記録することができます。 デフォルトでは、`INFO` レベルが設定されており、エラーや予期せぬ結果などの重要なイベントのみを記録します (後述参照)。
 
-You can select the level of messages using the `Diagnostic log level` selector of the [SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/en/page642.html) command, depending on your needs. When you select a level, levels above (which are more important) are implicitely selected also. The following levels are available:
+[SET DATABASE PARAMETER](https://doc.4d.com/4dv19/help/command/ja/page642.html) コマンドの `Diagnostic log level` セレクターを使用して、必要に応じてメッセージのレベルを選択することができます。 あるレベルを選択すると、その上のレベル (より重要なもの) も暗黙のうちに選択されます。 次のレベルが利用可能です:
 
-| カラム番号 | 説明                                                     | When selected, includes         |
-| ----- | ------------------------------------------------------ | ------------------------------- |
-| ERROR | ログセッション内で固有かつシーケンシャルなオペレーション番号                         | ERROR                           |
-| WARN  | RFC3339 フォーマットの日付と時間 (yyyy-mm-ddThh:mm:ss.ms)          | ERROR, WARN                     |
-| INFO  | 4DプロセスID                                               | ERROR, WARN, INFO               |
-| DEBUG | 固有プロセスID                                               | ERROR, WARN, INFO, DEBUG        |
-| TRACE | Other internal information (for 4D technical services) | ERROR, WARN, INFO, DEBUG, TRACE |
+| カラム番号 | 説明                                            | 選択時に次を含みます                      |
+| ----- | --------------------------------------------- | ------------------------------- |
+| ERROR | ログセッション内で固有かつシーケンシャルなオペレーション番号                | ERROR                           |
+| WARN  | RFC3339 フォーマットの日付と時間 (yyyy-mm-ddThh:mm:ss.ms) | ERROR, WARN                     |
+| INFO  | 4DプロセスID                                      | ERROR, WARN, INFO               |
+| DEBUG | 固有プロセスID                                      | ERROR, WARN, INFO, DEBUG        |
+| TRACE | その他の内部情報 (4Dテクニカルサービス用)                       | ERROR, WARN, INFO, DEBUG, TRACE |
 
 
 

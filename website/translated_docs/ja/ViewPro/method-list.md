@@ -1127,6 +1127,7 @@ End if
 | vpAreaName | Text | -> | 4D View Pro フォームオブジェクト名 |
 <!-- END REF -->  
 
+
 #### 説明
 
 `VP FLUSH COMMANDS` コマンドは、 <!-- REF #_method_.VP FLUSH COMMANDS.Summary -->保存されているコマンドをただちに実行し、コマンドバッファをクリアします<!-- END REF -->。
@@ -1176,6 +1177,7 @@ End if
 ```4d
 $font:=VP Font to object("16pt arial")
 ```
+
 
 以下の $font オブジェクトが返されます:
 
@@ -1702,6 +1704,7 @@ $formulas:=VP Get formulas(VP Cells("ViewProArea";5;1;2;3))
 <!-- END REF -->  
 
 #### 説明
+
 
 `VP Get frozen panes` コマンドは、 <!-- REF #_method_.VP Get frozen panes.Summary -->*vpAreaName* 引数で指定した View Pro エリア内の、固定化されたカラムと行についての情報を格納したオブジェクトを返します<!-- END REF -->。
 
@@ -2355,17 +2358,18 @@ $styles:=VP Get stylesheets("ViewProArea")
 
 #### 返されるオブジェクト
 
-返されるオブジェクトには `value` プロパティと、日付値の場合に返される `time` プロパティが格納されます:
+返されるオブジェクトには `value` プロパティと、JS日付値の場合に返される `time` プロパティが格納されます:
 
-| プロパティ | タイプ                                | 説明                                      |
-| ----- | ---------------------------------- | --------------------------------------- |
-| value | Integer, Real, Boolean, Text, Date | *rangeObj* レンジの値 (ただし時間型を除く)            |
-| time  | 実数                                 | *rangeObj* レンジの値が js 日付型だった場合の時間値 (秒単位) |
+| プロパティ | タイプ                                | 説明                           |
+| ----- | ---------------------------------- | ---------------------------- |
+| value | Integer, Real, Boolean, Text, Date | *rangeObj* レンジの値 (ただし時間型を除く) |
+| time  | 実数                                 | 値が js 日付型の場合、時間値 (秒単位)       |
 
 返されるオブジェクトに日付または時間が含まれている場合、これは "日付時間"として扱われ、以下のように補完されます:
 
 *   時間値 - 日付部分は DD/MM/YYYY フォーマットの、1899年12月30日 (30/12/1899) として補完されます。
 *   日付値 - 時間部分は HH:MM:SS フォーマットの、真夜中 (00:00:00) として補完されます。
+
 
 *rangeObj* のレンジが複数セルあるいは複数レンジを含んでいる場合、最初のセルの値が返されます。 セルが空の場合には、コマンドは null オブジェクトを返します。
 
@@ -2542,7 +2546,7 @@ $o.password:="excel123"
 VP IMPORT DOCUMENT("ViewProArea";"c:\\tmp\\excelfilefile.xlsx";$o)
 ```
 
-#### 例題 2
+#### 例題 3
 
 カンマ (",") を区切り文字として使用している `.txt` ファイルを読み込みます:
 
@@ -2781,6 +2785,7 @@ VP SET NUM VALUE($name;285;"$#,###.00")
 ```
 
 #### 参照
+
 
 
 [VP ADD RANGE NAME](#vp-add-range-name)<br/>[VP ALL](#vp-all)<br/>[VP Cell](#vp-cell)<br/>[VP Cells](#vp-cells)<br/>[VP Column](#vp-column)<br/>[VP Combine ranges](#vp-combine-ranges)<br/>[VP Get names](#vp-get-names)<br/>[VP REMOVE NAME](#vp-remove-name)<br/>[VP Row](#vp-row)
@@ -3768,10 +3773,10 @@ VP SET CELL STYLE(VP Cells("ViewProArea";4;4;3;3);$cellStyle)
 
 *styleObj* にはスタイル設定を格納したオブジェクトを渡します。 既存のスタイルシートを使用することもできますし、新しいスタイルを作成することも可能です。 *styleObj* に既存のスタイルシートと、追加のスタイル設定の両方が格納されている場合、既存のスタイルシートが先に適用され、そのあとに追加の設定が適用されます。
 
-To remove a style and revert to the default style settings (if any), pass a NULL value:
+スタイルを削除してデフォルトのスタイル設定 (あれば) に戻すには、NULL値を渡します:
 
-- giving the *styleObj* parameter a NULL value will remove any style settings from the *rangeObj*,
-- giving an attribute a NULL value will remove this specific attribute from the *rangeObj*.
+- *styleObj* 引数として NULL値を渡した場合、*rangeObj* のレンジのスタイルシートはすべて削除されます。
+- 属性に NULL値を指定すると、当該属性は *rangeObj* から削除されます。
 
 スタイルオブジェクトとスタイルシートの詳細については、[スタイルオブジェクト](configuring.md#スタイルオブジェクト) を参照ください。
 
@@ -3786,7 +3791,7 @@ $style.foreColor:="red"
 $style.hAlign:=1
 $style.isVerticalText:=True
 $style.borderBottom:=New object("color";"#800080";"style";vk line style thick)
-$style.backgroundImage:=Null //remove a specific attribute
+$style.backgroundImage:=Null // 特定の属性を削除します
 
 VP SET CELL STYLE(VP Cell("ViewProArea";1;1);$style)
 ```
