@@ -65,13 +65,13 @@ title: データベースページ
 
 -   **テキスト検索用の文字列比較を使用する**: このオプションは日本語が選択されている場合にのみ表示されます。 このオプションは "カタカナ-ひらがなでの長音記号" および、"ゝ" または "ゞ" などの繰り返し記号 (踊り字) などの文字の解釈を変更します。 一般的には、この設定が有効化されている方が日本語話者にとって望ましい結果が得られます。
 
-#### Support of MeCab (Japanese version)
+#### MeCab のサポート (日本語版)
 
-On Japanese systems, 4D supports the *MeCab* library, with a indexing algorithm for keywords that is particularly suited for the Japanese language.
+日本語版の 4D では、 *MeCab* ライブラリーがサポートされており、日本語用に調整されたキーワードのインデックスアルゴリズムを兼ね備えています。
 
-日本語版の 4D ではこのアルゴリズムがデフォルトで使用されています。 If needed, you can disable the use of the *MeCab* algorithm and use the conventional *ICU* library.
+日本語版の 4D ではこのアルゴリズムがデフォルトで使用されています。 必要であれば *MeCab* アルゴリズムを無効にして、以前と同じ *ICU* ライブラリーを使用することもできます。
 
-To disable *MeCab*, just check the **Consider only non-alphanumeric chars for keywords** option:
+*MeCab* を無効化するには、**非文字・非数字のみをキーワード区切り文字とする** のオプションにチェックを入れます:
 
 
 ![](assets/en/settings/non-alphanumeric-chars.png)
