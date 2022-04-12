@@ -6,7 +6,7 @@ title: リモートデータストアの利用
 4D アプリケーション上で公開された [データストア](dsMapping.md#データストア) は、異なるクライアントにより同時にアクセスすることができます:
 
 - 4D リモートアプリケーションは ORDA を使っていれば、`ds` コマンドでメインデータストアにアクセスできます。 この 4D リモートアプリケーションは従来のモードでもデータベースにアクセスできます。 これらのアクセスを処理するのは **4Dアプリケーションサーバー** です。
-- Other 4D applications (4D remote, 4D Server) opening a session on the remote datastore through the [`Open datastore`](../API/DataStoreClass.md#open-datastore) command. アクセスを処理するのは **HTTP REST サーバー** です。
+- 他の 4Dアプリケーション (4Dリモート、4D Server) は、[`Open datastore`](../API/DataStoreClass.md#open-datastore) コマンドを使ってリモートデータストアのセッションを開始できます。 アクセスを処理するのは **HTTP REST サーバー** です。
 - モバイルアプリケーションを更新するための [4D for iOS または 4D for Android](https://developer.4d.com/go-mobile/) のクエリでアクセスできます。 アクセスを処理するのは **HTTP サーバー** です。
 
 
@@ -61,15 +61,15 @@ title: リモートデータストアの利用
 
 ## クライアント/サーバーの最適化
 
-4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. これには以下のような機能が含まれます:
-* the **optimization context**
-* the **ORDA cache**
+4Dは、クライアント/サーバー環境において (`ds` または `Open datastore` によりアクセスされたデータストアの場合) エンティティセレクションを使用、あるいはエンティティを読み込む ORDAリクエストについて最適化する機構を提供しています。 この最適化機構は、ネットワーク間でやり取りされるデータの量を大幅に縮小させることで 4Dの実行速度を向上させます。 これには以下のような機能が含まれます:
+* **最適化コンテキスト**
+* **ORDAキャッシュ**
 
-### Context
+### コンテキスト
 
-The optimization context is based upon the following implementations:
+最適化コンテキストは、以下の実装に基づいています:
 
-* クライアントがサーバーに対してエンティティセレクションのリクエストを送ると、4D はコード実行の途中で、エンティティセレクションのどの属性がクライアント側で実際に使用されているかを自動的に "学習" し、それに対応した "最適化コンテキスト" をビルドします。 このコンテキストはエンティティセレクションに付随し、使用された属性を保存していきます。 他の属性があとで使用された場合には自動的に情報を更新していきます。 The following methods and functions trigger the learning phase:
+* クライアントがサーバーに対してエンティティセレクションのリクエストを送ると、4D はコード実行の途中で、エンティティセレクションのどの属性がクライアント側で実際に使用されているかを自動的に "学習" し、それに対応した "最適化コンテキスト" をビルドします。 このコンテキストはエンティティセレクションに付随し、使用された属性を保存していきます。 他の属性があとで使用された場合には自動的に情報を更新していきます。 以下のメソッドや関数が学習のトリガーとなります:
   * [`Create entity selection`](../API/EntitySelectionClass.md#create-entity-selection)
   * [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
   * [`dataClass.all()`](../API/DataClassClass.md#all)
@@ -77,7 +77,7 @@ The optimization context is based upon the following implementations:
   * [`dataClass.query()`](../API/DataClassClass.md#query)
   * [`entitySelection.query()`](../API/EntitySelectionClass.md#query)
 
-* サーバー上の同じエンティティセレクションに対してその後に送られたリクエストは、最適化コンテキストを再利用して、サーバーから必要な属性のみを取得していくことで、処理を速くします。 For example, in an [entity selection-based list box](#entity-selection-based-list-box), the learning phase takes place during the display of the first row. the display of the next rows is optimized. 以下の関数は、ソースのエンティティセレクションの最適化コンテキストを、戻り値のエンティティセレクションに自動的に付与します:
+* サーバー上の同じエンティティセレクションに対してその後に送られたリクエストは、最適化コンテキストを再利用して、サーバーから必要な属性のみを取得していくことで、処理を速くします。 たとえば、[エンティティセレクション型のリストボックス](#エンティティセレクション型リストボックス) では、先頭行の表示中に学習がおこなわれます。 次の行からは、表示が最適化されます。 以下の関数は、ソースのエンティティセレクションの最適化コンテキストを、戻り値のエンティティセレクションに自動的に付与します:
     *   [`entitySelection.and()`](../API/EntitySelectionClass.md#and)
     *   [`entitySelection.minus()`](../API/EntitySelectionClass.md#minus)
     *   [`entitySelection.or()`](../API/EntitySelectionClass.md#or)
@@ -87,7 +87,7 @@ The optimization context is based upon the following implementations:
 
 * 既存の最適化コンテキストは、同じデータクラスの他のエンティティセレクションであればプロパティとして渡すことができるので、学習フェーズを省略して、アプリケーションをより速く実行することができます (以下の [contextプロパティの使用](#contextプロパティの使用) を参照してください)。
 
-* You can build optimization contexts manually using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function (see [Preconfiguring contexts](#preconfiguring-contexts)).
+* [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) 関数を使用して、最適化コンテキストを手動で構築することができます ([コンテキストの事前設定](#コンテキストの事前設定) 参照)。
 
 ![](assets/en/ORDA/cs-optimization-process.png)
 
@@ -104,7 +104,7 @@ The optimization context is based upon the following implementations:
  End for each
 ```
 
-Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* from the second iteration of the loop.
+最適化機構のおかげでこのリクエストは、ループの 2回目の繰り返しより、*$sel* の中で実際に使用されている属性 (firstname, lastname, employer, employer.name) のデータのみを取得するようになります。
 
 #### contextプロパティの再利用
 
@@ -160,7 +160,7 @@ Thanks to the optimization, this request will only get data from used attributes
  $myEntity:=$myEntity.next() // 次のエンティティも同じコンテキストを使用してロードされます
 ```
 
-#### Preconfiguring contexts
+#### コンテキストの事前設定
 
 An optimization context should be defined for every feature or algorithm of your application, in order to have the best performances. For example, a context can be used for queries on customers, another context for queries on products, etc.
 
