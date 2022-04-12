@@ -71,9 +71,9 @@ title: コンポーネントの開発
 
 ## プロジェクトメソッドの共有
 
-マトリクスプロジェクトのすべてのプロジェクトメソッドは 、コンポーネントに含まれます。 つまり、マトリクスプロジェクトをコンポーネント化しても、これらのプロジェクトメソッドは同コンポーネント内で呼び出して実行することができます。
+マトリクスプロジェクトのすべてのプロジェクトメソッドは 、コンポーネントに含まれます。 つまり、マトリクスプロジェクトをコンポーネント化した後、これらのプロジェクトメソッドは同コンポーネント内で呼び出して実行することができます。
 
-他方、デフォルトでは、これらのプロジェクトメソッドはホストプロジェクトに表示されず、呼び出すこともできません。 In the matrix project, you must explicitly designate the methods that you want to share with the host project by checking the **Shared by components and host project** box in the method properties dialog box:
+他方、デフォルトでは、これらのプロジェクトメソッドはホストプロジェクトに表示されず、呼び出すこともできません。 マトリクスプロジェクトで、メソッドプロパティダイアログボックスの **コンポーネントとホストプロジェクト間で共有** ボックスをチェックすることで、ホストプロジェクトと共有したいメソッドを明示的に設定することができます。
 
 ![](assets/en/Concepts/shared-methods.png)
 
@@ -101,53 +101,53 @@ component_method("host_method_name")
 > 一般的に、インタープリターメソッドはコンパイル済みメソッドを呼び出せますが、逆はできません。これをおこなうには `EXECUTE METHOD`   や `EXECUTE FORMULA` コマンドを使用します。
 
 
-## Sharing of classes and functions
+## クラスや関数の共有
 
-By default, component classes and functions cannot be called from the 4D method editor of the host project. If you want your component classes and functions to be exposed in the host projects, you need to declare a component namespace. Additionally, you can control how component classes and functions are suggested in the host method editor.
+デフォルトでは、ホストプロジェクトの 4Dメソッドエディターからコンポーネントのクラスと関数を呼び出すことはできません。 コンポーネントのクラスと関数をホストプロジェクトに公開したい場合は、コンポーネント名前空間を宣言する必要があります。 また、コンポーネントのクラスや関数がホストメソッドエディターでどのように提案されるかをコントロールすることもできます。
 
-### Declaring the component namespace
+### コンポーネント名前空間の宣言
 
-To allow classes and functions of your component to be exposed in the host projects, enter a value in the [**Component namespace in the class store** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings. By default, the area is empty: component classes are not available outside of the component context.
+コンポーネントのクラスや関数をホストプロジェクトに公開するには、マトリクスプロジェクトの設定の [一般ページにある **クラスストア内でのコンポーネント名前空間** オプション](../settings/general.md#クラスストア内でのコンポーネント名前空間) に値を入力します。 デフォルトでは、このエリアは空です。つまり、コンポーネントのクラスはコンポーネント外で利用できません。
 
 ![](assets/en/settings/namespace.png)
 
-> A *namespace* ensures that no conflict emerges when a host project uses different components that have classes or functions with identical names. A component namespace must be compliant with [property naming rules](../Concepts/identifiers.md#object-properties).
+> *名前空間* は、同じ名前のクラスや関数を持つ異なるコンポーネントがホストプロジェクトで使用されている場合に、競合が発生しないようにします。 コンポーネント名前空間は、[プロパティの命名規則](../Concepts/identifiers.md#オブジェクトプロパティ) に準拠する必要があります。
 
-When you enter a value, you declare that component classes and functions will be available in the [user class store (**cs**)](../Concepts/classes.md#cs) of the host project's code, through the `cs.<value>` namespace. For example, if you enter "eGeometry" as component namespace, assuming that you have created a `Rectangle` class containing a `getArea()` function, once your project is installed as a component, the developer of the host project can write:
+値を入力すると、ホストプロジェクトのコードにおいてユーザークラスストア (cs) 内の cs.&lt;値&gt; 名前空間を介して、コンポーネントのクラスと関数が利用可能になることを宣言することになります。 たとえば、`getArea()` 関数を持つ `Rectangle` クラスが存在する場合に、コンポーネント名前空間として "eGeometry" を入力すると、このプロジェクトがコンポーネントとしてインストールされると、ホストプロジェクトの開発者は次のように記述することができます:
 
 ```4d
-//in host project
+// ホストプロジェクトにて
 var $rect: cs.eGeometry.Rectangle 
 $rect:=cs.eGeometry.Rectangle.new(10;20)
 $area:=$rect.getArea()
 ```
 
-Of course, it is recommended to use a distinguished name to avoid any conflict. If a user class with the same name as a component already exists in the project, the user class is taken into account and the component classes are ignored.
+競合を避けるためには、優れた識別名の使用が推奨されます。 もし、コンポーネントと同じ名前のユーザークラスがすでにプロジェクトに存在していた場合、そのユーザークラスが考慮され、コンポーネントクラスは無視されます。
 
-A component's ORDA classes are not available in its host project. For example, if there is a dataclass called Employees in your component, you will not be able to use a "cs.Mycomponent.Employee" class in the host project.
+コンポーネントの ORDAクラスは、ホストプロジェクトでは使用できません。 たとえば、コンポーネントに Employees というデータクラスがある場合、ホストプロジェクトで "cs.Mycomponent.Employee" クラスを使用することはできません。
 
-### Hidden classes
+### 非表示クラス
 
-Just like in any project, you can create hidden classes and functions in the component by prefixing names with an underscore ("_"). When a [component namespace is defined](#declaring-the-component-namespace), hidden classes and functions of the component will not appear as suggestions when using code completion.
+アンダースコア ("_") を名前の前に付けることで、コンポーネントのクラスや関数を非表示にすることができます。 [コンポーネント名前空間が定義されている](#コンポーネント名前空間の宣言) 場合、非表示のクラスや関数はコード補完の際に提案されません。
 
-Note however that they can still be used if you know their names. For example, the following syntax is valid even if the `_Rectangle` class is hidden:
+ただし、名前がわかっていれば使用することは可能です。 たとえば、`_Rectangle` クラスが非表示の場合でも、次のシンタックスは有効です:
 
 ```4d
 $rect:=cs.eGeometry._Rectangle.new(10;20)
 ```
 
-> Non-hidden functions inside a hidden class appear as suggestions when you use code completion with a class that [inherits](../Concepts/classes.md#inheritance) from it. For example, if a component has a `Teacher` class that inherits from a `_Person` class, code completion for `Teacher` suggests non-hidden functions from `_Person`.
+> 非表示のクラス内の、非表示でない関数は、そのクラスを [継承](../Concepts/classes.md#継承) するクラスでコード補完を使用すると提案されます。 たとえば、あるコンポーネントに `_Person` クラスを継承した `Teacher` クラスがある場合、`Teacher` のコード補完では `_Person` の非表示でない関数が提案されます。
 
 
-## Code completion for compiled components
+## コンパイル済みコンポーネントのコード補完
 
-To make your component easier to use for developers, you can check the [**Generate syntax file for code completion when compiled** option in the General page](../settings/general.md#component-namespace-in-the-class-store) of the matrix project Settings.
+開発者に向けてコンポーネントを使いやすくするため、マトリクスプロジェクトの設定で、 [一般ページの **コンパイル時にコード補完用のシンタックスファイルを生成する** オプション](../settings/general.md#component-namespace-in-the-class-store) をチェックすることができます。
 
-A syntax file (JSON format) is then automatically created during the compilation phase, filled with the syntax of your component's classes, functions, and [exposed methods](#sharing-of-project-methods), and placed in the \Resources\en.lproj folder of the component project. 4D uses the contents of that syntax file to generate contextual help in the code editor, such as code completion and function syntax:
+すると、コンパイル時にシンタックスファイル (JSON形式) が自動生成され、そこにコンポーネントのクラス、関数、および [公開メソッド](#プロジェクトメソッドの共有) のシンタックスを格納し、コンポーネントプロジェクトの \Resources\ja.lproj フォルダーに配置されます。 4D は、このシンタックスファイルをもとに、コード補完や関数シンタックスなどのコードエディター用のヘルプを生成します。
 
 ![](assets/en/settings/syntax-code-completion-2.png) ![](assets/en/settings/syntax-code-completion-1.png)
 
-If you don't enter a [component namespace](#declaring-the-component-namespace), the resources for the classes and exposed methods are not generated even if the syntax file option is checked.
+[コンポーネント名前空間](#コンポーネント名前空間の宣言) を入力しない場合、シンタックスファイル生成のオプションがチェックされていても、クラスや公開メソッド用のリソースは生成されませ ん。
 
 
 
@@ -279,7 +279,7 @@ SAVE RECORD($tablepointer->)
 外部データベースへのデータ書き込み:
 
 ```4d
- $Ptr_1:=$2 // retrieves data from the host project through pointers
+ $Ptr_1:=$2 // ポインターを介してホストプロジェクトからデータを取得します
  $Ptr_2:=$3
  $Ptr_3:=$4
  $Ptr_4:=$5
@@ -327,7 +327,7 @@ SAVE RECORD($tablepointer->)
 - 特定のテーブルに属さない" プロジェクトフォーム" のみが、コンポーネント内で利用できます。 マトリクスプロジェクトのすべてのプロジェクトフォームをコンポーネントで使用することができます。
 - コンポーネントはホストプロジェクトのテーブルフォームを使用できます。 この場合、コンポーネントのコードでフォームを指定するにあたっては、テーブル名ではなく、テーブルへのポインターを使用しなければならないことに注意してください。
 
-> コンポーネントが `ADD RECORD` コマンドを使用すると、ホストプロジェクトのコンテキストで、ホストプロジェクトのカレントの入力フォームが表示されます。 Consequently, if the form includes variables, the component will not have access to them.
+> コンポーネントが `ADD RECORD` コマンドを使用すると、ホストプロジェクトのコンテキストで、ホストプロジェクトのカレントの入力フォームが表示されます。 したがって、その入力フォーム上に変数が含まれている場合、コンポーネントはその変数にアクセスできません。
 
 - コンポーネントフォームをホストプロジェクト内でサブフォームとして公開することができます。 これは具体的には、グラフィックオブジェクトを提供するコンポーネントを開発できることを意味します。 たとえば、4D社が提供するウィジェットはコンポーネントのサブフォーム利用に基づいています。
 
@@ -354,15 +354,15 @@ SAVE RECORD($tablepointer->)
 
 ## コンポーネントの保護: コンパイル
 
-By default, all the code of a matrix project installed as a component is potentially visible from the host project. 特に:
+コンポーネントとしてインストールされたマトリクスプロジェクトのコードは、ホストプロジェクトからデフォルトでアクセス可能です。 特に:
 
 - エクスプローラーのメソッドページに存在する共有のプロジェクトメソッドは、ホストプロジェクトのメソッドから呼び出し可能です。 エクスプローラーのプレビューエリアでそれらの内容を選択してコピーすることが可能です。 また、その内容はデバッガーで見ることもできます。 しかし、それらをメソッドエディター上で開いたり編集したりすることはできません。
 - マトリクスプロジェクトの他のプロジェクトメソッドはエクスプローラーに現れません。しかし、ホストプロジェクトのデバッガーには内容が表示されます。
-- The non-hidden classes and functions can be viewed in the debugger [if a namespace is declared](#declaring-the-component-namespace).
+- [名前空間が宣言されていれば](#コンポーネント名前空間の宣言)、非表示でないクラスや関数はデバッガーで確認することができます。
 
-To protect the code of a component effectively, simply [compile and build](Desktop/building.md#build-component) the matrix project and provide it in the form of a .4dz file. コンパイルされたマトリクスプロジェクトがコンポーネントとしてインストールされると:
+コンポーネントのコードを効果的に保護するには、マトリクスプロジェクトを [コンパイルしビルドして](Desktop/building.md#コンポーネントをビルド)、.4dz ファイルとして提供します。 コンパイルされたマトリクスプロジェクトがコンポーネントとしてインストールされると:
 
-- The shared project methods, classes and functions can be called in the methods of the host project. Shared project methods are also visible on the Methods Page of the Explorer. しかし、その内容はプレビューエリアにもデバッガーにも表示されません。
+- 共有のプロジェクトメソッド、クラス、および関数は、ホストプロジェクトのメソッドから呼び出し可能です。 共有のプロジェクトメソッドは、エクスプローラーのメソッドページにも表示されます。 しかし、その内容はプレビューエリアにもデバッガーにも表示されません。
 - マトリクスプロジェクトの他のプロジェクトメソッドは一切表示されません。
 
 

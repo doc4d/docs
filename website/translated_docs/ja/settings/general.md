@@ -18,14 +18,14 @@ title: 一般ページ
 このメニューを使用して、データベースのデフォルトの起動モードを、**デザイン** モードまたは **アプリケーション** モードに設定できます。 特記されない限り、パスワードアクセスシステムが無効の場合には、4D はデフォルトでデザインモードで開きます。
 
 
-## Component
+## コンポーネント
 
-This area allows [component developers](../Extensions/develop-components.md) to configure how their component classes and functions will be exposed in the 4D method editor once the component is installed.
+このエリアでは、[コンポーネントの開発者](../Extensions/develop-components.md) に向けて、コンポーネントインストール後にそのクラスや関数を 4Dメソッドエディターに公開するための設定を提供しています。
 
-### Component namespace in the class store
+### クラスストア内でのコンポーネント名前空間
 
-Use this area to declare a namespace for the component classes and functions in the code on host projects. See [Declaring the component namespace](../Extensions/develop-components.md#declaring-the-component-namespace).
+このエリアでは、ホストプロジェクトのコードにおける、コンポーネントのクラスおよび関数の名前空間を宣言します。 [コンポーネント名前空間の宣言](../Extensions/develop-components.md#コンポーネント名前空間の宣言) 参照。
 
-### Generate syntax file for code completion when compiled
+### コンパイル時にコード補完用のシンタックスファイルを生成する
 
-When you check this option, a syntax file (JSON format) is automatically created during the compilation phase. See [Code completion for compiled components](../Extensions/develop-components.md#code-completion-for-compiled-components). 
+このオプションをチェックすると、コンパイル時にシンタックスファイル (JSON形式) が自動作成されます。 [コンパイル済みコンポーネントのコード補完](../Extensions/develop-components.md#コンパイル済みコンポーネントのコード補完) 参照。 
