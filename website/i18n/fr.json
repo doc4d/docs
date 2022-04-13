@@ -634,7 +634,7 @@
         "title": "Zone 4D Write Pro"
       },
       "GettingStarted/creating": {
-        "title": "Working with a project"
+        "title": "Travailler avec des projets"
       },
       "GettingStarted/installation": {
         "title": "Installation"
@@ -1049,7 +1049,7 @@
     "Overview|no description given": "Aperçu",
     "Developing Components|no description given": "Composants de développement",
     "Developing Plugins|no description given": "Plugins de développement",
-    "Working with a project|no description given": "Working with a project",
+    "Working with a project|no description given": "Travailler avec des projets",
     "Settings|no description given": "Settings",
     "Transformation Tags|no description given": "Transformation Tags",
     "User Settings|no description given": "Propriétés utilisateur",

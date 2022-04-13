@@ -91,8 +91,8 @@ URL変数は [WA OPEN URL](https://doc.4d.com/4Dv18/4D/18/WA-OPEN-URL.301-450484
 
 CEFエンジンには以下のような制約があります:
 
-- [WA SET PAGE CONTENT](https://doc.4d.com/4dv19/help/command/en/page1037.html): using this command requires that at least one page is already loaded in the area (through a call to [`WA OPEN URL`](https://doc.4d.com/4dv19/help/command/en/page1020.html) or an assignment to the URL variable associated to the area).
-- When URL drops are enabled by the `WA enable URL drop` selector of the [WA SET PREFERENCE](https://doc.4d.com/4dv19/help/command/en/page1041.html) command, the first drop must be preceded by at least one call to [WA OPEN URL](https://doc.4d.com/4dv19/help/command/en/page1020.html) or one assignment to the URL variable associated to the area.
+- [WA SET PAGE CONTENT](https://doc.4d.com/4dv19/help/command/ja/page1037.html): このコマンドを使用する場合、([`WA OPEN URL`](https://doc.4d.com/4dv19/help/command/ja/page1020.html) コマンドを呼び出すかあるいはエリアに割り当てられた URL変数への代入を通して) 少なくとも既に 1ページがエリア内に読み込まれている必要があります。
+- [WA SET PREFERENCE](https://doc.4d.com/4dv19/help/command/ja/page1041.html) コマンドの `WA enable URL drop` セレクターによって URLドロップが許可されている場合、最初のドロップをする前に少なくとも 1度は [WA OPEN URL](https://doc.4d.com/4dv19/help/command/ja/page1020.html) コマンドを呼び出すか、またはエリアに割り当てられている URL変数に URL が渡されている必要があります。
 
 #### JSON 文法
 

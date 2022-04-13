@@ -246,25 +246,25 @@ Windows においては、.exe 拡張子のついた実行ファイルが作成�
 
 生成されるアプリケーションのバージョン番号を指定します。 このバージョン番号をもとに、クライアントアプリケーションからの接続を受け入れたり拒否したりできます。 クライアントとサーバーアプリケーションで互換性のある番号の範囲は [XMLキー](#アプリケーションビルド設定) で設定します。
 
-#### Embed the project Users and Groups in built server application
+#### ビルドしたサーバーアプリケーションにプロジェクトのユーザーとグループを埋め込む
 
-**Preliminary Note:** The following terms are used in this section:
+**注記**: ここでは、以下の用語を使用します:
 
-| 名称                         | 定義                                                                                                                                                                         |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Project directory file     | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the project         |
-| Application directory file | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file located in the [Settings folder](../Project/architecture.md#settings-1) of the built 4D Server |
-| Data directory file        | [directory.json](../Users/handling_users_groups.md#directoryjson-file) file in the [Data > Settings folder](../Project/architecture.md#settings)                           |
+| 名称                  | 定義                                                                                                                                                           |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| プロジェクトのディレクトリファイル   | プロジェクトの [Settings フォルダー](../Project/architecture.md#settings-1) に置かれた [directory.json](../Users/handling_users_groups.md#directoryjson-file) ファイル            |
+| アプリケーションのディレクトリファイル | ビルドされた 4D Server の [Settings フォルダー](../Project/architecture.md#settings-1) に置かれた [directory.json](../Users/handling_users_groups.md#directoryjson-file) ファイル |
+| データのディレクトリファイル      | [Data ＞ Settings フォルダー](../Project/architecture.md#settings) に置かれた [directory.json](../Users/handling_users_groups.md#directoryjson-file) ファイル               |
 
-When you check this option, the project directory file is copied to the application directory file at build time.
+このオプションをチェックすると、ビルド時にプロジェクトのディレクトリファイルがアプリケーションのディレクトリファイルとしてコピーされます。
 
-When you execute a built 4D Server application:
-* If the server has a data directory file, it is loaded.
-* If the server does not have a data directory file, the application directory file is loaded.
+ビルドした 4D Server アプリケーションを実行すると:
+* データのディレクトリファイルがサーバーにある場合は、それがロードされます。
+* データのディレクトリファイルがサーバーにない場合は、アプリケーションのディレクトリファイルがロードされます。
 
-The application directory file is read-only. Modifications made to users, groups and permissions during server execution are stored in the data directory file. If no data directory file already exists, it is automatically created. If the application directory file was embedded, it is duplicated as data directory file.
+アプリケーションのディレクトリファイルは読み取り専用です。 ユーザー・グループ・パーミッションに対してサーバー実行中におこなわれた変更は、データのディレクトリファイルに保存されます。 データのディレクトリファイルが存在しない場合は、自動作成されます。 アプリケーションのディレクトリファイルが埋め込まれている場合は、データのディレクトリファイルとして複製されます。
 
-Embedding the project directory file allows you to deploy a client/server application with a basic security user and group configuration. Subsequent modifications are added to the data directory file.
+プロジェクトのディレクトリファイルを埋め込むことで、基本的なセキュリティのユーザーとグループ構成でクライアント/サーバーアプリケーションを運用することができます。 その後の編集は、データのディレクトリファイルに追加されます。
 
 #### Silicon macOS クライアントからの接続を許可
 

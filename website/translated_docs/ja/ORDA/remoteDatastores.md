@@ -6,7 +6,7 @@ title: リモートデータストアの利用
 4D アプリケーション上で公開された [データストア](dsMapping.md#データストア) は、異なるクライアントにより同時にアクセスすることができます:
 
 - 4D リモートアプリケーションは ORDA を使っていれば、`ds` コマンドでメインデータストアにアクセスできます。 この 4D リモートアプリケーションは従来のモードでもデータベースにアクセスできます。 これらのアクセスを処理するのは **4Dアプリケーションサーバー** です。
-- Other 4D applications (4D remote, 4D Server) opening a session on the remote datastore through the [`Open datastore`](../API/DataStoreClass.md#open-datastore) command. アクセスを処理するのは **HTTP REST サーバー** です。
+- 他の 4Dアプリケーション (4Dリモート、4D Server) は、[`Open datastore`](../API/DataStoreClass.md#open-datastore) コマンドを使ってリモートデータストアのセッションを開始できます。 アクセスを処理するのは **HTTP REST サーバー** です。
 - モバイルアプリケーションを更新するための [4D for iOS または 4D for Android](https://developer.4d.com/go-mobile/) のクエリでアクセスできます。 アクセスを処理するのは **HTTP サーバー** です。
 
 
@@ -61,15 +61,15 @@ title: リモートデータストアの利用
 
 ## クライアント/サーバーの最適化
 
-4D provides optimizations for ORDA requests that use entity selections or load entities in client/server configurations (datastore accessed remotely through `ds` or via `Open datastore`). These optimizations speed up the execution of your 4D application by reducing drastically the volume of information transmitted over the network. これには以下のような機能が含まれます:
-* the **optimization context**
-* the **ORDA cache**
+4Dは、クライアント/サーバー環境において (`ds` または `Open datastore` によりアクセスされたデータストアの場合) エンティティセレクションを使用、あるいはエンティティを読み込む ORDAリクエストについて最適化する機構を提供しています。 この最適化機構は、ネットワーク間でやり取りされるデータの量を大幅に縮小させることで 4Dの実行速度を向上させます。 これには以下のような機能が含まれます:
+* **最適化コンテキスト**
+* **ORDAキャッシュ**
 
-### Context
+### コンテキスト
 
-The optimization context is based upon the following implementations:
+最適化コンテキストは、以下の実装に基づいています:
 
-* クライアントがサーバーに対してエンティティセレクションのリクエストを送ると、4D はコード実行の途中で、エンティティセレクションのどの属性がクライアント側で実際に使用されているかを自動的に "学習" し、それに対応した "最適化コンテキスト" をビルドします。 このコンテキストはエンティティセレクションに付随し、使用された属性を保存していきます。 他の属性があとで使用された場合には自動的に情報を更新していきます。 The following methods and functions trigger the learning phase:
+* クライアントがサーバーに対してエンティティセレクションのリクエストを送ると、4D はコード実行の途中で、エンティティセレクションのどの属性がクライアント側で実際に使用されているかを自動的に "学習" し、それに対応した "最適化コンテキスト" をビルドします。 このコンテキストはエンティティセレクションに付随し、使用された属性を保存していきます。 他の属性があとで使用された場合には自動的に情報を更新していきます。 以下のメソッドや関数が学習のトリガーとなります:
   * [`Create entity selection`](../API/EntitySelectionClass.md#create-entity-selection)
   * [`dataClass.fromCollection()`](../API/DataClassClass.md#fromcollection)
   * [`dataClass.all()`](../API/DataClassClass.md#all)
@@ -77,7 +77,7 @@ The optimization context is based upon the following implementations:
   * [`dataClass.query()`](../API/DataClassClass.md#query)
   * [`entitySelection.query()`](../API/EntitySelectionClass.md#query)
 
-* サーバー上の同じエンティティセレクションに対してその後に送られたリクエストは、最適化コンテキストを再利用して、サーバーから必要な属性のみを取得していくことで、処理を速くします。 For example, in an [entity selection-based list box](#entity-selection-based-list-box), the learning phase takes place during the display of the first row. the display of the next rows is optimized. 以下の関数は、ソースのエンティティセレクションの最適化コンテキストを、戻り値のエンティティセレクションに自動的に付与します:
+* サーバー上の同じエンティティセレクションに対してその後に送られたリクエストは、最適化コンテキストを再利用して、サーバーから必要な属性のみを取得していくことで、処理を速くします。 たとえば、[エンティティセレクション型のリストボックス](#エンティティセレクション型リストボックス) では、先頭行の表示中に学習がおこなわれます。 次の行からは、表示が最適化されます。 以下の関数は、ソースのエンティティセレクションの最適化コンテキストを、戻り値のエンティティセレクションに自動的に付与します:
     *   [`entitySelection.and()`](../API/EntitySelectionClass.md#and)
     *   [`entitySelection.minus()`](../API/EntitySelectionClass.md#minus)
     *   [`entitySelection.or()`](../API/EntitySelectionClass.md#or)
@@ -87,7 +87,7 @@ The optimization context is based upon the following implementations:
 
 * 既存の最適化コンテキストは、同じデータクラスの他のエンティティセレクションであればプロパティとして渡すことができるので、学習フェーズを省略して、アプリケーションをより速く実行することができます (以下の [contextプロパティの使用](#contextプロパティの使用) を参照してください)。
 
-* You can build optimization contexts manually using the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function (see [Preconfiguring contexts](#preconfiguring-contexts)).
+* [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) 関数を使用して、最適化コンテキストを手動で構築することができます ([コンテキストの事前設定](#コンテキストの事前設定) 参照)。
 
 ![](assets/en/ORDA/cs-optimization-process.png)
 
@@ -104,12 +104,12 @@ The optimization context is based upon the following implementations:
  End for each
 ```
 
-Thanks to the optimization, this request will only get data from used attributes (firstname, lastname, employer, employer.name) in *$sel* from the second iteration of the loop.
+最適化機構のおかげでこのリクエストは、ループの 2回目の繰り返しより、*$sel* の中で実際に使用されている属性 (firstname, lastname, employer, employer.name) のデータのみを取得するようになります。
 
 #### contextプロパティの再利用
 
 **context** プロパティを使用することで、最適化の利点をさらに増幅させることができます。 このプロパティは、あるエンティティセレクション用に "学習した" 最適化コンテキストを参照します。 これを新しいエンティティセレクションを返す ORDA関数に引数として渡すことで、その返されたエンティティセレクションでは学習フェーズを最初から省略して使用される属性をサーバーにリクエストできるようになります。
-> You can also create contexts using the [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function.
+> [`.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) 関数を使って、コンテキストを作成することもできます。
 
 エンティティセレクションを扱うすべての ORDA関数は、**context** プロパティをサポートします (たとえば [`dataClass.query( )`](../API/DataClassClass.md#query) あるいは [`dataClass.all( )`](../API/DataClassClass.md#all) など)。 同じ最適化 context プロパティは、同じデータクラスのエンティティセレクションに対してであればどのエンティティセレクションにも渡すことができます。 ただし、 コードの他の部分で新しい属性が使用された際にはコンテキストは自動的に更新されるという点に注意してください。 同じコンテキストを異なるコードで再利用しすぎると、コンテキストを読み込み過ぎて、結果として効率が落ちる可能性があります。
 > 同様の機構は読み込まれたエンティティにも実装されており、それによって使用した属性のみがリクエストされるようになります ([`dataClass.get( )`](../API/DataClassClass.md#get) 関数参照)。
@@ -123,20 +123,20 @@ Thanks to the optimization, this request will only get data from used attributes
  $querysettings2:=New object("context";"longList")
 
  $sel1:=ds.Employee.query("lastname = S@";$querysettings)
- $data:=extractData($sel1) // In extractData method an optimization is triggered   
- // and associated to context "shortList"
+ $data:=extractData($sel1) // extractData メソッド内で最適化がトリガーされ、
+ // コンテキスト "shortList" に紐づけられます
 
  $sel2:=ds.Employee.query("lastname = Sm@";$querysettings)
- $data:=extractData($sel2) // In extractData method the optimization associated   
- // to context "shortList" is applied
+ $data:=extractData($sel2) // extractData メソッド内で最適化がトリガーされ、
+ // コンテキスト "shortList" に紐づけられます
 
  $sel3:=ds.Employee.query("lastname = Smith";$querysettings2)
- $data:=extractDetailedData($sel3) // In extractDetailedData method an optimization  
- // is triggered and associated to context "longList"
+ $data:=extractDetailedData($sel3) // extractDetailedData メソッド内で最適化がトリガーされ、
+ // コンテキスト "longList" に紐づけられます
 
  $sel4:=ds.Employee.query("lastname = Brown";$querysettings2)
- $data:=extractDetailedData($sel4) // In extractDetailedData method the optimization  
- // associated to context "longList" is applied
+ $data:=extractDetailedData($sel4) // extractDetailedData メソッド内で最適化がトリガーされ、
+ // コンテキスト "longList" に紐づけられます
 ```
 
 #### エンティティセレクション型リストボックス
@@ -160,25 +160,25 @@ Thanks to the optimization, this request will only get data from used attributes
  $myEntity:=$myEntity.next() // 次のエンティティも同じコンテキストを使用してロードされます
 ```
 
-#### Preconfiguring contexts
+#### コンテキストの事前設定
 
-An optimization context should be defined for every feature or algorithm of your application, in order to have the best performances. For example, a context can be used for queries on customers, another context for queries on products, etc.
+最高のパフォーマンスを得るには、アプリケーションの機能またはアルゴリズムごとに最適化コンテキストが定義されていることが推奨されます。 たとえば、あるコンテキストは顧客に関するクエリに、別のコンテキストは商品に関するクエリに使用することができます。
 
-If you want to deliver final applications with the highest level of optimization, you can preconfigure your contexts and thus save learning phases by following these steps:
+最高レベルに最適化された最終アプリケーションを提供したい場合、以下の手順でコンテキストを事前に設定することで、学習フェーズを省略することができます:
 
-1. Design your algorithms.
-2. Run your application and let the automatic learning mechanism fill the optimization contexts.
-3. Call the [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo) or [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts) function to collect  contexts. You can use the [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes) and [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes) functions to analyse how your algorithms use attributes.
-4. In the final step, call the [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) function to build contexts at application startup and [use them](#reusing-the-context-property) in your algorithms.
+1. アルゴリズムを設計します。
+2. アプリケーションを実行し、自動学習メカニズムに最適化コンテキストを作成させます。
+3. [`dataStore.getRemoteContextInfo()`](../API/DataStoreClass.md#getremotecontextinfo) または [`dataStore.getAllRemoteContexts()`](../API/DataStoreClass.md#getallremotecontexts) 関数を呼び出して、コンテキストを収集します。 [`entitySelection.getRemoteContextAttributes()`](../API/EntitySelectionClass.md#getremotecontextattributes) と [`entity.getRemoteContextAttributes()`](../API/EntityClass.md#getremotecontextattributes) 関数を使用して、アルゴリズムがどのように属性を使用するかを分析することができます。
+4. 最後に、アプリケーション起動時に [`dataStore.setRemoteContextInfo()`](../API/DataStoreClass.md#setremotecontextinfo) 関数を呼び出してコンテキストを構築し、[これらをアルゴリズムで使用します](#contextプロパティの再利用)。
 
 
-### ORDA cache
+### ORDAキャッシュ
 
-For optimization reasons, data requested from the server via ORDA is loaded in the ORDA remote cache (which is different from the 4D cache). The ORDA cache is organized by dataclass, and expires after 30 seconds.
+最適化のため、ORDA経由でサーバーにリクエストしたデータは、(4Dキャッシュとは異なる) ORDAリモートキャッシュに読み込まれます。 ORDAキャッシュはデータクラスごとに構成され、30秒後に失効します。
 
-The data contained in the cache is considered as expired when the timeout is reached. Any access to expired data will send a request to the server. Expired data remains in the cache until space is needed.
+キャッシュに含まれるデータは、タイムアウトに達すると期限切れとみなされます。 期限切れデータにアクセスする場合は、サーバーにリクエストが送信されます。 期限切れデータは、スペースが必要になるまでキャッシュに残ります。
 
-By default, the ORDA cache is transparently handled by 4D. However, you can control its contents using the following ORDA class functions:
+デフォルトでは、ORDAキャッシュは 4D によって透過的に処理されます。 しかし、以下の ORDAクラスの関数を使用して、その内容を制御することができます:
 
 * [dataClass.setRemoteCacheSettings()](../API/DataClassClass.md#setremotecachesettings)
 * [dataClass.getRemoteCache()](../API/DataClassClass.md#getremotecache)
