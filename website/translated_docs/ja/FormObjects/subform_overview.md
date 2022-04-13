@@ -47,62 +47,62 @@ title: サブフォーム
 
 デフォルトでは、4D はサブフォームコンテナーごとに [オブジェクト型](properties_Object.md#expression-type) の変数あるいは式をバインドします。 このオブジェクトの内容は、親フォームおよびサブフォームから読み取り・変更が可能なため、両者間で複数の値を共有することができます。
 
-- Define a bound variable or expression of a scalar type and call the `OBJECT Get subform container value` and `OBJECT SET SUBFORM CONTAINER VALUE` commands to exchange values when [On Bound Variable Change](../Events/onBoundVariableChange.md) or [On Data Change](../Events/onDataChange.md) form events occur. This solution is recommended to synchronize a single value.
-- Define a bound variable or expression of the **object** type and use the `Form` command to access its properties from the subform. This solution is recommended to synchronize several values.
+- まず、バインドされたスカラー型の変数あるいは式を定義し、[On Bound Variable Change](../Events/onBoundVariableChange.md) や [On Data Change](../Events/onDataChange.md) フォームイベントが発生したときに、`OBJECT Get subform container value` や `OBJECT SET SUBFORM CONTAINER VALUE` コマンドを呼び出して値を共有します。 この方法は、単一の値を同期させるのに推奨されます。
+- または、バインドされた **オブジェクト** 型の変数あるいは式を定義し、`Form` コマンドを使用してサブフォームからそのプロパティにアクセスします。 この方法は、複数の値を同期させるのに推奨されます。
 
 
 
-### Synchronizing parent form and subform (single value)
+### 親フォームとサブフォームの同期 (単一値)
 
-Binding the same variable or expression to your subform container and other objects of the parent form lets you link the parent form and subform contexts to put the finishing touches on sophisticated interfaces. Imagine a subform representing a clock, inserted into a parent form containing an enterable variable of the Time type:
+親フォームの他のオブジェクトとサブフォームコンテナーとに同じ変数あるいは式をバインドすることで、親フォームとサブフォームのコンテキストをリンクし、洗練されたインターフェースを作成することができます。 たとえば、時計を提供するサブフォームを置くとします。このサブフォームが置かれる親フォームには入力可の時間型変数が置かれています:
 
 ![](assets/en/FormObjects/subforms1.png)
 
-In the parent form, both objects (time variable and subform container) ***have the same value as ***Variable or Expression******. It can be a variable (e.g. `parisTime`), or an expression (e.g. `Form.parisTime`).
+親フォームでは、両方のオブジェクト (時間変数とサブフォームコンテナー) の******変数あるいは式***として同じ値を持ちます***。 変数 (例: `parisTime`)、あるいは式 (例: `Form.parisTime`) の使用が可能です。
 
-In the subform, the clock object is managed through the `Form.clockValue` property.
+サブフォームでは、時計オブジェクトは `Form.clockValue` プロパティで管理されます。
 
 
-#### Updating the contents of a subform
+#### サブフォームの内容を更新する
 
-Case 1: The value of the parent form variable or expression is modified and this modification must be passed on to a subform.
+ケース1: 親フォームの変数あるいは式の値が更新され、この更新をサブフォームに反映させる必要があります。
 
-`Form.parisTime` changes to 12:15:00 in the parent form, either because the user entered it, or because it was updated dynamically (via the `Current time` command for example). This triggers the [On Bound Variable Change](../Events/onBoundVariableChange.md) event in the subform's Form method.
+この例では、親フォームにおいて `Form.parisTime` の値がユーザー入力、あるいは動的に (たとえば `Current time` コマンドで) 12:15:00 に変更されました。 これは、サブフォームのフォームメソッドの [On Bound Variable Change](../Events/onBoundVariableChange.md) イベントをトリガーします。
 
-The following code is executed:
+以下のコードが実行されます:
 
 ```4d  
-// Subform form method
-If (Form event code=On Bound Variable Change) //bound variable or expression was modified in the parent form
-    Form.clockValue:=OBJECT Get subform container value //synchonize the local value
+// サブフォームメソッド
+If (Form event code=On Bound Variable Change) // 親フォーム内でバインドされた変数あるいは式が変更されました
+    Form.clockValue:=OBJECT Get subform container value // ローカルの値を同期させます
 End if
 ```
 
-It updates the value of `Form.clockValue` in the subform:
+上のコードは、サブフォームの `Form.clockValue` の値を更新します:
 
 ![](assets/en/FormObjects/update-subform.png)
 
-The [On Bound Variable Change](../Events/onBoundVariableChange.md) form event is generated:
+[On Bound Variable Change](../Events/onBoundVariableChange.md) フォームイベントは以下のときに生成されます:
 
-- as soon as a value is assigned to the variable/expression of the parent form, even if the same value is reassigned
+- 親フォームの変数/式に値が割り当てられたとき (同じ値が再代入された場合でも) で、
 - サブフォームが 0ページまたはカレントフォームページに置かれているとき。
 
-Note that, as in the above example, it is preferable to use the `OBJECT Get subform container value` command which returns the value of the expression in the subform container rather than the expression itself because it is possible to insert several subforms in the same parent form (for example, a window displaying different time zones contains several clocks).
+先の例のとおり、式を直接使用するのではなく、サブフォームコンテナーの式の値を返す `OBJECT Get subform container value` コマンドの利用が推奨されます。親フォームに同じサブフォームを複数配置することが可能だからです (たとえば、複数のタイムゾーンを表示するために時計を複数表示するウィンドウ)。
 
-Modifying the bound variable or expression triggers form events which let you synchronize the parent form and subform values:
+バインドされた変数あるいは式を変更すると、フォームイベントが発生し、親フォームとサブフォームの値を同期させることができます:
 
-- Use the [On Bound Variable Change](../Events/onBoundVariableChange.md) form event to indicate to the subform (form method of subform) that the variable or expression was modified in the parent form.
-- Use the [On Data Change](../Events/onDataChange.md) form event to indicate to the subform container that the variable or expression value was modified in the subform.
+- 親フォームで変数あるいは式が変更されたことをサブフォーム (のフォームメソッド) に通知するには、[On Bound Variable Change](../Events/onBoundVariableChange.md) フォームイベントを使用します。
+- サブフォーム内で変数あるいは式の値が変更されたことをサブフォームコンテナーに通知するには、[On Data Change](../Events/onDataChange.md) フォームイベントを使用します。
 
 
 
-#### Updating the contents of a parent form
+#### 親フォームの内容を更新する
 
 ケース2: サブフォームの内容が更新され、その更新を親フォームに反映させる必要があります。
 
-Inside the subform, the button changes the value of the `Form.clockValue` expression of type Time attached to the clock object. This triggers the [On Data Change](../Events/onDataChange.md) form event inside the clock object (this event must be selected for the object), which updates the `Form.parisTime` value in the main form.
+サブフォーム内では、時計オブジェクトに紐づいた `Form.clockValue` 式 (時間型) の値がボタンによって変更されます。 This triggers the [On Data Change](../Events/onDataChange.md) form event inside the clock object (this event must be selected for the object), which updates the `Form.parisTime` value in the main form.
 
-The following code is executed:
+以下のコードが実行されます:
 
 ```4d  
 // subform clock object method
@@ -119,7 +119,7 @@ Everytime the value of `Form.clockValue` changes in the subform, `Form.parisTime
 > If the variable or expression value is set at several locations, 4D uses the value that was loaded last. It applies the following loading order: 1-Object methods of subform, 2-Form method of subform, 3-Object methods of parent form, 4-Form method of parent form
 
 
-### Synchronizing parent form and subform (multiple values)
+### 親フォームとサブフォームの同期 (複数値)
 
 By default, 4D creates a variable or expression of [object type](properties_Object.md#expression-type) for a subform container, which allows you to share values in the context of the subform using the `Form` command ([see below](#using-the-subform-bound-object)). The contents of this object can be read and/or modified from within the parent form and from the subform, allowing you to share multiple values in a local context.
 
